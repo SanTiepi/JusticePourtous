@@ -1,7 +1,7 @@
 services:
-  vosdroits:
+  justicepourtous:
     build: .
-    container_name: vosdroits
+    container_name: justicepourtous
     restart: unless-stopped
     environment:
       - NODE_ENV=production

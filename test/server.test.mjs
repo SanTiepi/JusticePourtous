@@ -74,7 +74,7 @@ describe('Server API', () => {
     const res = await request('/');
     assert.equal(res.status, 200);
     const text = res.text();
-    assert.ok(text.includes('VosDroits'));
+    assert.ok(text.includes('JusticePourtous'));
   });
 
   it('GET /api/health retourne 200', async () => {

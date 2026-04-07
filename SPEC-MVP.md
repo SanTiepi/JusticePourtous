@@ -1,4 +1,4 @@
-# VosDroits — Spec MVP complète
+# JusticePourtous — Spec MVP complète
 
 ## Architecture 2 tiers
 
@@ -257,7 +257,7 @@ test/server.test.mjs
 
 ## Disclaimer (obligatoire sur CHAQUE page et CHAQUE réponse API)
 
-"VosDroits fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+"JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
 
 ## Notes importantes
 

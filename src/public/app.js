@@ -1,4 +1,4 @@
-// VosDroits Frontend Logic
+// JusticePourtous Frontend Logic
 // Vanilla JS — zero framework, zero deps
 
 var currentQuestions = [];

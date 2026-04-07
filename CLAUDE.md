@@ -1,8 +1,8 @@
-# CLAUDE.md — VosDroits.ch
+# CLAUDE.md — JusticePourtous.ch
 
 ## Projet
-- Nom : VosDroits
-- Domaine : vosdroits.ch
+- Nom : JusticePourtous
+- Domaine : justicepourtous.ch
 - Description : La base de données ultime du droit suisse. Pré-conseil juridique gratuit + assistance à la rédaction avancée. Plus besoin d'avocat pour les affaires simples.
 - Stack : Node.js ESM, zero deps, native http
 - Marché : 8.9M habitants, 72% citent le coût comme barrière #1 à la justice
@@ -10,7 +10,7 @@
 
 ## Vision
 
-VosDroits.ch est la couche d'accès intelligente entre le droit suisse et les citoyens. Un avocat coûte 300 CHF/h. Un LLM coûte 0.03 CHF/requête. Le gap est de 10'000x — mais le citoyen ne sait pas écrire un prompt juridique. VosDroits est le traducteur.
+JusticePourtous.ch est la couche d'accès intelligente entre le droit suisse et les citoyens. Un avocat coûte 300 CHF/h. Un LLM coûte 0.03 CHF/requête. Le gap est de 10'000x — mais le citoyen ne sait pas écrire un prompt juridique. JusticePourtous est le traducteur.
 
 **3 niveaux :**
 1. **Gratuit** — Base de données juridique exhaustive. 500+ fiches avec articles de loi, jurisprudence TF, modèles de lettres, annuaire services. Le Wikipedia du droit suisse pratique.
@@ -42,7 +42,7 @@ VosDroits.ch est la couche d'accès intelligente entre le droit suisse et les ci
 - Suivre le projet de loi IA du Conseil fédéral (fin 2026)
 
 ## Hub écosystème
-VosDroits connecte tous les projets du studio :
+JusticePourtous connecte tous les projets du studio :
 - Bail → Habiter + GarantieCheck
 - Travail → Refugio
 - Dettes → Boussole

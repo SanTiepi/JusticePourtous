@@ -1,10 +1,10 @@
-# VosDroits — Vision
+# JusticePourtous — Vision
 
 ## Problème
 72% des Suisses citent le coût comme barrière principale à la justice. Un avocat coûte 300-500 CHF/h. Les permanences juridiques gratuites (ordre des avocats) ont des semaines d'attente. Résultat : les gens renoncent à exercer leurs droits. Les plus touchés : locataires, travailleurs précaires, personnes endettées, migrants.
 
 ## Solution
-Chatbot juridique gratuit. L'utilisateur décrit son problème en langage courant → VosDroits identifie le domaine juridique, explique les droits en langage clair, cite les articles de loi, oriente vers les services compétents, et génère des courriers types si applicable.
+Chatbot juridique gratuit. L'utilisateur décrit son problème en langage courant → JusticePourtous identifie le domaine juridique, explique les droits en langage clair, cite les articles de loi, oriente vers les services compétents, et génère des courriers types si applicable.
 
 ## Ce qui existe ailleurs
 - Portugal : GPJ (chatbot gouvernemental)
@@ -21,7 +21,7 @@ Chatbot juridique gratuit. L'utilisateur décrit son problème en langage couran
 6. Annuaire services juridiques par canton
 
 ## Synergie écosystème
-VosDroits EST le hub central qui connecte tous les autres projets :
+JusticePourtous EST le hub central qui connecte tous les autres projets :
 - Question sur le bail → oriente vers Habiter + GarantieCheck
 - Question sur le travail → oriente vers Refugio
 - Question sur les dettes → oriente vers Boussole

@@ -14,7 +14,7 @@ const publicDir = join(__dirname, 'public');
 // Load domaines
 const domainesData = JSON.parse(readFileSync(join(__dirname, 'data', 'domaines.json'), 'utf-8'));
 
-const DISCLAIMER = "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes.";
+const DISCLAIMER = "VosDroits fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes.";
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -162,7 +162,7 @@ const PORT = process.env.PORT || 3000;
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   server.listen(PORT, () => {
-    console.log(`JusticeBot running on http://localhost:${PORT}`);
+    console.log(`VosDroits running on http://localhost:${PORT}`);
   });
 }
 

@@ -1,4 +1,4 @@
-# TASKS — JusticeBot
+# TASKS — VosDroits
 
 ## Priorité 1 — MVP Chatbot juridique
 
@@ -23,4 +23,4 @@
 - 2026-04-07 : Identifié comme blue ocean total en Suisse (score tendance 5/5).
 - Le contraire vrai : le problème n'est pas l'absence de droit, c'est que personne ne peut se permettre de l'exercer.
 - ATTENTION précédent FTC/DoNotPay : rester modeste, informer pas conseiller.
-- JusticeBot = hub central de l'écosystème studio.
+- VosDroits = hub central de l'écosystème studio.

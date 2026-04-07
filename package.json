@@ -1,8 +1,8 @@
 {
-  "name": "justicebot",
+  "name": "vosdroits.ch",
   "version": "1.0.0",
   "type": "module",
-  "description": "JusticeBot — Vos droits en 5 clics. Gratuit. Anonyme.",
+  "description": "VosDroits — Vos droits en 5 clics. Gratuit. Anonyme.",
   "main": "src/server.mjs",
   "scripts": {
     "start": "node src/server.mjs",

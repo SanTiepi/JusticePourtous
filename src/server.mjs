@@ -6,7 +6,10 @@ import { dirname, join, extname } from 'node:path';
 import { getAllFiches, getFicheById } from './services/fiches.mjs';
 import { consulter, getQuestionsForDomaine } from './services/consultation.mjs';
 import { getServicesByCanton } from './services/annuaire.mjs';
-import { acheterWallet, getCredits, analyser, genererLettre, ocrDocument } from './services/premium.mjs';
+import {
+  acheterWallet, getCredits, analyser, genererLettre, ocrDocument,
+  analyserAI, ocrDocumentAI, genererLettreAI, estimerCout, getHistorique
+} from './services/premium.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const publicDir = join(__dirname, 'public');
@@ -25,6 +28,8 @@ const MIME_TYPES = {
   '.svg': 'image/svg+xml',
   '.ico': 'image/x-icon'
 };
+
+const MAX_UPLOAD_SIZE = 10 * 1024 * 1024; // 10MB
 
 function setSecurityHeaders(res) {
   res.setHeader('X-Content-Type-Options', 'nosniff');
@@ -49,6 +54,28 @@ function parseBody(req) {
       } catch {
         reject(new Error('Invalid JSON'));
       }
+    });
+    req.on('error', reject);
+  });
+}
+
+function parseRawBody(req, maxSize) {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    let size = 0;
+    let tooLarge = false;
+    req.on('data', chunk => {
+      size += chunk.length;
+      if (size > maxSize) {
+        tooLarge = true;
+        // Stop collecting but don't destroy — let the request drain
+        chunks.length = 0;
+      }
+      if (!tooLarge) chunks.push(chunk);
+    });
+    req.on('end', () => {
+      if (tooLarge) return reject(new Error('BODY_TOO_LARGE'));
+      resolve(Buffer.concat(chunks));
     });
     req.on('error', reject);
   });
@@ -106,7 +133,7 @@ const server = createServer(async (req, res) => {
       return json(res, 200, { services, canton: canton.toUpperCase(), disclaimer: DISCLAIMER });
     }
 
-    // Premium routes
+    // Legacy premium routes (kept for backward compat)
     if (path === '/api/premium/acheter' && method === 'POST') {
       const result = acheterWallet();
       return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
@@ -139,6 +166,70 @@ const server = createServer(async (req, res) => {
       const sessionCode = body.session || req.headers['x-session'];
       const result = ocrDocument(sessionCode);
       return json(res, result.status, result.error ? { error: result.error, disclaimer: DISCLAIMER } : { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // --- New AI-powered premium routes ---
+
+    if (path === '/api/premium/analyze' && method === 'POST') {
+      const body = await parseBody(req);
+      const sessionCode = body.session || req.headers['x-session'];
+      const result = await analyserAI(sessionCode, {
+        ficheId: body.ficheId,
+        userContext: body.userContext,
+        question: body.question
+      });
+      return json(res, result.status, result.error
+        ? { error: result.error, disclaimer: DISCLAIMER, ...(result.data || {}) }
+        : { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/premium/analyze-ocr' && method === 'POST') {
+      // Accept raw body for file upload
+      let buffer;
+      try {
+        buffer = await parseRawBody(req, MAX_UPLOAD_SIZE);
+      } catch (err) {
+        if (err.message === 'BODY_TOO_LARGE') {
+          return json(res, 413, { error: 'Document trop volumineux (max 10MB)', disclaimer: DISCLAIMER });
+        }
+        throw err;
+      }
+      const sessionCode = req.headers['x-session'];
+      const filename = req.headers['x-filename'] || 'document.pdf';
+      const result = await ocrDocumentAI(sessionCode, buffer, filename);
+      return json(res, result.status, result.error
+        ? { error: result.error, disclaimer: DISCLAIMER }
+        : { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/premium/generate-letter' && method === 'POST') {
+      const body = await parseBody(req);
+      const sessionCode = body.session || req.headers['x-session'];
+      const result = await genererLettreAI(sessionCode, {
+        ficheId: body.ficheId,
+        userContext: body.userContext,
+        type: body.type
+      });
+      return json(res, result.status, result.error
+        ? { error: result.error, disclaimer: DISCLAIMER }
+        : { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/premium/estimate' && method === 'GET') {
+      const action = url.searchParams.get('action');
+      const ficheId = url.searchParams.get('ficheId');
+      const result = estimerCout(action, { ficheId });
+      return json(res, result.status, result.error
+        ? { error: result.error, disclaimer: DISCLAIMER }
+        : { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/premium/history' && method === 'GET') {
+      const sessionCode = url.searchParams.get('session') || req.headers['x-session'];
+      const result = getHistorique(sessionCode);
+      return json(res, result.status, result.error
+        ? { error: result.error, disclaimer: DISCLAIMER }
+        : { ...result.data, disclaimer: DISCLAIMER });
     }
 
     // Static files

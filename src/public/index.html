@@ -3,26 +3,117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JusticeBot — Vos droits en 5 clics</title>
+  <title>JusticeBot — Vos droits. Gratuitement. En 5 clics.</title>
+  <meta name="description" content="72% des Suisses renoncent a faire valoir leurs droits a cause du cout. JusticeBot vous donne acces au droit suisse, gratuitement et anonymement.">
+  <meta property="og:title" content="JusticeBot — Vos droits. Gratuitement. En 5 clics.">
+  <meta property="og:description" content="Acces gratuit et anonyme au droit suisse : articles de loi, jurisprudence TF, modeles de lettres, annuaire des services.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2696;</text></svg>">
   <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "JusticeBot",
+    "description": "Acces gratuit et anonyme au droit suisse",
+    "url": "https://justicebot.ch",
+    "applicationCategory": "LegalService",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CHF" },
+    "provider": {
+      "@type": "Organization",
+      "name": "JusticeBot",
+      "description": "Droit suisse accessible a tous"
+    }
+  }
+  </script>
 </head>
 <body>
   <div class="container">
+    <nav class="nav">
+      <a href="/" class="nav-brand">
+        <span class="logo-mark"></span>
+        JusticeBot
+      </a>
+      <ul class="nav-links">
+        <li><a href="/annuaire.html">Annuaire</a></li>
+        <li><a href="/premium.html">Premium</a></li>
+      </ul>
+    </nav>
+
     <header>
-      <h1>JusticeBot</h1>
-      <p>Vos droits en 5 clics. Gratuit. Anonyme.</p>
+      <h1>Vos droits.<br><span class="highlight">Gratuitement.</span><br>En 5 clics.</h1>
+      <p class="subtitle">72% des Suisses renoncent a faire valoir leurs droits a cause du cout. JusticeBot vous donne acces au droit suisse, gratuitement et anonymement.</p>
     </header>
 
-    <div class="hero-stat">
-      <strong>72%</strong> des Suisses ne font pas valoir leurs droits a cause du cout.
-      <br>JusticeBot change la donne.
+    <section class="section">
+      <h2 class="section-title">Choisissez votre domaine</h2>
+      <div class="tiles" id="domaines"></div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Comment ca marche</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <div>
+            <h3>Decrivez votre situation</h3>
+            <p>5 questions simples pour comprendre votre cas. Aucune connaissance juridique requise.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <div>
+            <h3>Recevez vos droits</h3>
+            <p>Articles de loi, jurisprudence du Tribunal federal, modeles de lettres.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <div>
+            <h3>Agissez</h3>
+            <p>Copiez les modeles, contactez les services competents, faites valoir vos droits.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Ce que vous obtenez</h2>
+      <div class="features">
+        <div class="feature">
+          <h4>Articles de loi</h4>
+          <p>References exactes du CO, CC, LOI avec liens Fedlex.</p>
+        </div>
+        <div class="feature">
+          <h4>Jurisprudence TF</h4>
+          <p>Arrets du Tribunal federal applicables a votre situation.</p>
+        </div>
+        <div class="feature">
+          <h4>Modeles de lettres</h4>
+          <p>Courriers types prets a envoyer, copiables en un clic.</p>
+        </div>
+        <div class="feature">
+          <h4>Annuaire des services</h4>
+          <p>ASLOCA, CSP, syndicats, aide juridictionnelle de votre canton.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="privacy-badge">
+      <h3>Gratuit et anonyme</h3>
+      <p>Aucune inscription. Aucune donnee stockee. Aucun cookie. Aucun tracking.</p>
+      <div class="privacy-items">
+        <span class="privacy-item"><span class="check">&check;</span> Aucun compte</span>
+        <span class="privacy-item"><span class="check">&check;</span> Aucune donnee</span>
+        <span class="privacy-item"><span class="check">&check;</span> Aucun cookie</span>
+        <span class="privacy-item"><span class="check">&check;</span> Open source</span>
+      </div>
     </div>
 
-    <div class="tiles" id="domaines"></div>
-
-    <div class="card" style="margin-top: 2rem; text-align: center;">
-      <h3>Annuaire des services</h3>
-      <p style="color: var(--text-muted); margin-bottom: 1rem;">Trouvez les services juridiques de votre canton</p>
+    <div class="card" style="text-align:center;">
+      <h3>Annuaire cantonal</h3>
+      <p class="text-muted mb-2">Trouvez les services juridiques de votre canton</p>
       <a href="/annuaire.html" class="btn btn-outline">Consulter l'annuaire</a>
     </div>
 
@@ -31,23 +122,33 @@
     </div>
 
     <footer>
-      &copy; 2026 JusticeBot — Droit suisse accessible a tous
+      &copy; 2026 JusticeBot &mdash; Droit suisse accessible a tous
     </footer>
   </div>
 
   <script>
     async function loadDomaines() {
-      const res = await fetch('/api/domaines');
-      const data = await res.json();
       const container = document.getElementById('domaines');
-      for (const d of data.domaines) {
-        const tile = document.createElement('a');
-        tile.className = 'tile';
-        tile.href = `/consulter.html?domaine=${d.id}`;
-        tile.innerHTML = `<h2>${d.nom}</h2><p>${d.description}</p>`;
-        tile.style.borderLeftColor = d.couleur;
-        tile.style.borderLeftWidth = '4px';
-        container.appendChild(tile);
+      try {
+        const res = await fetch('/api/domaines');
+        if (!res.ok) throw new Error('API indisponible');
+        const data = await res.json();
+        const icons = { bail: 'LOGEMENT', travail: 'TRAVAIL', famille: 'FAMILLE', dettes: 'DETTES', etrangers: 'ETRANGERS' };
+        for (const d of data.domaines) {
+          const tile = document.createElement('a');
+          tile.className = 'tile';
+          tile.href = '/consulter.html?domaine=' + d.id;
+          tile.style.borderLeftColor = d.couleur;
+          tile.innerHTML =
+            '<div class="tile-content">' +
+              '<div class="tile-label">' + (icons[d.id] || d.id.toUpperCase()) + '</div>' +
+              '<h2>' + d.nom + '</h2>' +
+              '<p>' + d.description + '</p>' +
+            '</div>';
+          container.appendChild(tile);
+        }
+      } catch (e) {
+        container.innerHTML = '<div class="error-box">Impossible de charger les domaines. Verifiez que le serveur est en marche.</div>';
       }
     }
     loadDomaines();

@@ -3,17 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JusticeBot — Resultat</title>
+  <title>JusticeBot — Resultat de votre consultation</title>
+  <meta name="description" content="Resultat de votre consultation juridique gratuite. Articles de loi, jurisprudence, modeles de lettres et services competents.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2696;</text></svg>">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <div class="container">
-    <header>
-      <h1><a href="/" style="text-decoration:none;color:var(--accent)">JusticeBot</a></h1>
-    </header>
+    <nav class="nav">
+      <a href="/" class="nav-brand">
+        <span class="logo-mark"></span>
+        JusticeBot
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Nouvelle consultation</a></li>
+        <li><a href="/annuaire.html">Annuaire</a></li>
+      </ul>
+    </nav>
+
+    <div class="dossier-ref" id="dossierRef"></div>
 
     <div id="resultat">
-      <p style="text-align:center;color:var(--text-muted)">Chargement du resultat...</p>
+      <div class="loading">Chargement du resultat</div>
     </div>
 
     <div class="disclaimer">
@@ -25,9 +36,18 @@
 
   <script src="/app.js"></script>
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const ficheId = params.get('fiche');
-    if (ficheId) loadResultat(ficheId);
+    // Dossier ref
+    var year = new Date().getFullYear();
+    var num = String(Math.floor(Math.random() * 9000) + 1000);
+    document.getElementById('dossierRef').textContent = 'Ref. JB-' + year + '-' + num;
+
+    var params = new URLSearchParams(window.location.search);
+    var ficheId = params.get('fiche');
+    if (ficheId) {
+      loadResultat(ficheId);
+    } else {
+      document.getElementById('resultat').innerHTML = '<div class="error-box">Aucune fiche specifiee. <a href="/">Retour a l\'accueil</a></div>';
+    }
   </script>
 </body>
 </html>

@@ -4,20 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JusticeBot — Espace Premium</title>
+  <meta name="description" content="Analyse juridique personnalisee par IA. CHF 50 pour un wallet de CHF 30.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2696;</text></svg>">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <div class="container">
+    <nav class="nav">
+      <a href="/" class="nav-brand">
+        <span class="logo-mark"></span>
+        JusticeBot
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/annuaire.html">Annuaire</a></li>
+      </ul>
+    </nav>
+
     <header>
-      <h1><a href="/" style="text-decoration:none;color:var(--accent)">JusticeBot</a></h1>
-      <p>Espace Premium</p>
+      <h1>Espace Premium</h1>
+      <p class="subtitle">Analyse juridique personnalisee par intelligence artificielle.</p>
     </header>
 
     <div id="noSession">
       <div class="card" style="text-align:center">
         <h3>Analyse juridique personnalisee</h3>
-        <p style="color:var(--text-muted);margin:1rem 0">CHF 50 — wallet de CHF 30 (200-1100 requetes)</p>
-        <button class="btn btn-full" onclick="acheter()">Acheter un wallet</button>
+        <p class="text-muted mb-2">CHF 50 &mdash; wallet de CHF 30 (200 a 1100 requetes)</p>
+        <button class="btn btn-red btn-full" onclick="acheter()">Acheter un wallet</button>
       </div>
     </div>
 
@@ -29,9 +42,9 @@
 
       <div class="card">
         <h3>Analyser votre situation</h3>
-        <p style="color:var(--text-muted);margin-bottom:1rem">Cout estime : CHF 0.03-0.10</p>
-        <textarea id="question" placeholder="Decrivez votre situation juridique..." style="width:100%;min-height:100px;background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:0.75rem;font-family:Inter,sans-serif;resize:vertical"></textarea>
-        <button class="btn btn-full" style="margin-top:0.75rem" onclick="analyserQuestion()">Analyser</button>
+        <p class="text-muted mb-2">Cout estime : CHF 0.03 a 0.10</p>
+        <textarea id="question" placeholder="Decrivez votre situation juridique..."></textarea>
+        <button class="btn btn-full mt-2" onclick="analyserQuestion()">Analyser</button>
       </div>
 
       <div id="reponseIA" class="card hidden">
@@ -41,7 +54,7 @@
 
       <div class="card">
         <h3>Historique</h3>
-        <div id="historique"><p style="color:var(--text-muted)">Aucune action</p></div>
+        <div id="historique"><p class="text-muted">Aucune action</p></div>
       </div>
     </div>
 
@@ -53,49 +66,73 @@
   </div>
 
   <script>
-    let sessionCode = localStorage.getItem('jb_session');
+    var sessionCode = localStorage.getItem('jb_session');
 
     async function acheter() {
-      const res = await fetch('/api/premium/acheter', { method: 'POST' });
-      const data = await res.json();
-      sessionCode = data.sessionCode;
-      localStorage.setItem('jb_session', sessionCode);
-      showSession();
-      refreshCredits();
-    }
-
-    async function refreshCredits() {
-      const res = await fetch(`/api/premium/credits?session=${sessionCode}`);
-      const data = await res.json();
-      if (data.error) { localStorage.removeItem('jb_session'); sessionCode = null; showNoSession(); return; }
-      document.getElementById('solde').textContent = `CHF ${(data.solde / 100).toFixed(2)}`;
-      const hist = document.getElementById('historique');
-      if (data.historique && data.historique.length) {
-        hist.innerHTML = data.historique.map(h =>
-          `<div class="service-item"><span class="nom">${h.action}</span><span>${h.montant > 0 ? '+' : ''}CHF ${(h.montant / 100).toFixed(2)}</span></div>`
-        ).join('');
+      try {
+        var res = await fetch('/api/premium/acheter', { method: 'POST' });
+        if (!res.ok) throw new Error('Erreur');
+        var data = await res.json();
+        sessionCode = data.sessionCode;
+        localStorage.setItem('jb_session', sessionCode);
+        showSession();
+        refreshCredits();
+      } catch (e) {
+        alert('Erreur lors de l\'achat. Reessayez.');
       }
     }
 
-    async function analyserQuestion() {
-      const q = document.getElementById('question').value;
-      if (!q.trim()) return;
-      const res = await fetch('/api/premium/analyser', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ session: sessionCode, question: q })
-      });
-      const data = await res.json();
-      const box = document.getElementById('reponseIA');
-      const txt = document.getElementById('reponseTexte');
-      if (data.error) { txt.textContent = data.error; }
-      else { txt.textContent = data.reponse; }
-      box.classList.remove('hidden');
-      refreshCredits();
+    async function refreshCredits() {
+      try {
+        var res = await fetch('/api/premium/credits?session=' + sessionCode);
+        var data = await res.json();
+        if (data.error) {
+          localStorage.removeItem('jb_session');
+          sessionCode = null;
+          showNoSession();
+          return;
+        }
+        document.getElementById('solde').textContent = 'CHF ' + (data.solde / 100).toFixed(2);
+        var hist = document.getElementById('historique');
+        if (data.historique && data.historique.length) {
+          hist.innerHTML = data.historique.map(function(h) {
+            return '<div class="service-item"><span class="nom">' + h.action + '</span><span>' + (h.montant > 0 ? '+' : '') + 'CHF ' + (h.montant / 100).toFixed(2) + '</span></div>';
+          }).join('');
+        }
+      } catch (e) { /* silent fail */ }
     }
 
-    function showSession() { document.getElementById('noSession').classList.add('hidden'); document.getElementById('session').classList.remove('hidden'); }
-    function showNoSession() { document.getElementById('noSession').classList.remove('hidden'); document.getElementById('session').classList.add('hidden'); }
+    async function analyserQuestion() {
+      var q = document.getElementById('question').value;
+      if (!q.trim()) return;
+      try {
+        var res = await fetch('/api/premium/analyser', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ session: sessionCode, question: q })
+        });
+        var data = await res.json();
+        var box = document.getElementById('reponseIA');
+        var txt = document.getElementById('reponseTexte');
+        if (data.error) { txt.textContent = data.error; }
+        else { txt.textContent = data.reponse; }
+        box.classList.remove('hidden');
+        refreshCredits();
+      } catch (e) {
+        document.getElementById('reponseTexte').textContent = 'Erreur lors de l\'analyse. Reessayez.';
+        document.getElementById('reponseIA').classList.remove('hidden');
+      }
+    }
+
+    function showSession() {
+      document.getElementById('noSession').classList.add('hidden');
+      document.getElementById('session').classList.remove('hidden');
+    }
+
+    function showNoSession() {
+      document.getElementById('noSession').classList.remove('hidden');
+      document.getElementById('session').classList.add('hidden');
+    }
 
     if (sessionCode) { showSession(); refreshCredits(); }
   </script>

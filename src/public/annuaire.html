@@ -3,30 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JusticeBot — Annuaire des services</title>
+  <title>JusticeBot — Annuaire des services juridiques</title>
+  <meta name="description" content="Annuaire des services juridiques cantonaux : ASLOCA, CSP, syndicats, aide juridictionnelle, conciliation. Telephones et adresses.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2696;</text></svg>">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <div class="container">
+    <nav class="nav">
+      <a href="/" class="nav-brand">
+        <span class="logo-mark"></span>
+        JusticeBot
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/premium.html">Premium</a></li>
+      </ul>
+    </nav>
+
     <header>
-      <h1><a href="/" style="text-decoration:none;color:var(--accent)">JusticeBot</a></h1>
-      <p>Annuaire des services juridiques</p>
+      <h1>Annuaire des services juridiques</h1>
+      <p class="subtitle">Trouvez les services competents dans votre canton.</p>
     </header>
 
-    <div class="card">
-      <h3>Selectionnez votre canton</h3>
+    <section class="card">
+      <h3>Canton</h3>
       <select id="cantonSelect" onchange="loadServices()">
         <option value="">-- Choisir un canton --</option>
-        <option value="VD">Vaud (VD)</option>
-        <option value="GE">Geneve (GE)</option>
-        <option value="VS">Valais (VS)</option>
-        <option value="FR">Fribourg (FR)</option>
-        <option value="NE">Neuchatel (NE)</option>
-        <option value="JU">Jura (JU)</option>
+        <option value="AG">Argovie (AG)</option>
+        <option value="AI">Appenzell Rh.-Int. (AI)</option>
+        <option value="AR">Appenzell Rh.-Ext. (AR)</option>
         <option value="BE">Berne (BE)</option>
-        <option value="ZH">Zurich (ZH)</option>
+        <option value="BL">Bale-Campagne (BL)</option>
+        <option value="BS">Bale-Ville (BS)</option>
+        <option value="FR">Fribourg (FR)</option>
+        <option value="GE">Geneve (GE)</option>
+        <option value="GL">Glaris (GL)</option>
+        <option value="GR">Grisons (GR)</option>
+        <option value="JU">Jura (JU)</option>
+        <option value="LU">Lucerne (LU)</option>
+        <option value="NE">Neuchatel (NE)</option>
+        <option value="NW">Nidwald (NW)</option>
+        <option value="OW">Obwald (OW)</option>
+        <option value="SG">Saint-Gall (SG)</option>
+        <option value="SH">Schaffhouse (SH)</option>
+        <option value="SO">Soleure (SO)</option>
+        <option value="SZ">Schwyz (SZ)</option>
+        <option value="TG">Thurgovie (TG)</option>
         <option value="TI">Tessin (TI)</option>
+        <option value="UR">Uri (UR)</option>
+        <option value="VD">Vaud (VD)</option>
+        <option value="VS">Valais (VS)</option>
+        <option value="ZG">Zoug (ZG)</option>
+        <option value="ZH">Zurich (ZH)</option>
       </select>
+    </section>
+
+    <div class="filter-bar hidden" id="filterBar">
+      <button class="filter-btn active" data-type="all" onclick="filterServices('all', this)">Tous</button>
+      <button class="filter-btn" data-type="asloca" onclick="filterServices('asloca', this)">ASLOCA</button>
+      <button class="filter-btn" data-type="csp" onclick="filterServices('csp', this)">CSP</button>
+      <button class="filter-btn" data-type="syndicat" onclick="filterServices('syndicat', this)">Syndicat</button>
+      <button class="filter-btn" data-type="conciliation" onclick="filterServices('conciliation', this)">Conciliation</button>
+      <button class="filter-btn" data-type="aide" onclick="filterServices('aide', this)">Aide juridictionnelle</button>
     </div>
 
     <div id="services"></div>
@@ -39,32 +78,82 @@
   </div>
 
   <script>
+    var allServices = [];
+
     async function loadServices() {
-      const canton = document.getElementById('cantonSelect').value;
-      const container = document.getElementById('services');
-      if (!canton) { container.innerHTML = ''; return; }
+      var canton = document.getElementById('cantonSelect').value;
+      var container = document.getElementById('services');
+      var filterBar = document.getElementById('filterBar');
 
-      const res = await fetch(`/api/services/${canton}`);
-      const data = await res.json();
-
-      if (!data.services || data.services.length === 0) {
-        container.innerHTML = '<div class="card"><p style="color:var(--text-muted)">Aucun service reference pour ce canton.</p></div>';
+      if (!canton) {
+        container.innerHTML = '';
+        filterBar.classList.add('hidden');
+        allServices = [];
         return;
       }
 
-      container.innerHTML = '<div class="card"><h3>Services disponibles</h3>' +
-        data.services.map(s => `
-          <div class="service-item">
-            <div>
-              <div class="nom">${s.nom}</div>
-              <div style="font-size:0.8rem;color:var(--text-muted)">${s.type || ''}</div>
-            </div>
-            <div style="text-align:right">
-              ${s.tel ? `<a href="tel:${s.tel}" class="tel">${s.tel}</a><br>` : ''}
-              ${s.url ? `<a href="${s.url}" target="_blank" style="font-size:0.85rem">Site web</a>` : ''}
-            </div>
-          </div>
-        `).join('') + '</div>';
+      try {
+        var res = await fetch('/api/services/' + canton);
+        if (!res.ok) throw new Error('Erreur serveur');
+        var data = await res.json();
+
+        if (!data.services || data.services.length === 0) {
+          container.innerHTML = '<div class="card"><p class="text-muted">Aucun service reference pour ce canton.</p></div>';
+          filterBar.classList.add('hidden');
+          allServices = [];
+          return;
+        }
+
+        allServices = data.services;
+        filterBar.classList.remove('hidden');
+        // Reset filter
+        document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelector('[data-type="all"]').classList.add('active');
+        renderServices(allServices);
+      } catch (e) {
+        container.innerHTML = '<div class="error-box">Impossible de charger les services. Verifiez que le serveur est en marche.</div>';
+        filterBar.classList.add('hidden');
+      }
+    }
+
+    function filterServices(type, btn) {
+      document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      if (type === 'all') {
+        renderServices(allServices);
+      } else {
+        var filtered = allServices.filter(function(s) {
+          var t = (s.type || '').toLowerCase();
+          return t.indexOf(type) !== -1;
+        });
+        renderServices(filtered);
+      }
+    }
+
+    function renderServices(services) {
+      var container = document.getElementById('services');
+      if (services.length === 0) {
+        container.innerHTML = '<div class="card"><p class="text-muted">Aucun service de ce type dans ce canton.</p></div>';
+        return;
+      }
+
+      var html = '<div class="card"><h3>Services disponibles (' + services.length + ')</h3>';
+      services.forEach(function(s, i) {
+        html += '<div class="service-item" style="opacity:0;animation:revealBlock 0.2s ease ' + (i * 0.1) + 's forwards">';
+        html += '<div>';
+        html += '<div class="nom">' + s.nom + '</div>';
+        if (s.type) html += '<span class="type-tag">' + s.type + '</span>';
+        if (s.adresse) html += '<div class="adresse">' + s.adresse + '</div>';
+        html += '</div>';
+        html += '<div style="text-align:right">';
+        if (s.tel) html += '<a href="tel:' + s.tel + '" class="tel">' + s.tel + '</a><br>';
+        if (s.url) html += '<a href="' + s.url + '" target="_blank" rel="noopener" style="font-size:0.85rem">Site web</a>';
+        html += '</div>';
+        html += '</div>';
+      });
+      html += '</div>';
+      container.innerHTML = html;
     }
   </script>
 </body>

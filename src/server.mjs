@@ -10,6 +10,7 @@ import {
   acheterWallet, getCredits, analyser, genererLettre, ocrDocument,
   analyserAI, ocrDocumentAI, genererLettreAI, estimerCout, getHistorique
 } from './services/premium.mjs';
+import { getAllStatistiques, getStatistiquesByDomaine } from './services/statistiques.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const publicDir = join(__dirname, 'public');
@@ -230,6 +231,19 @@ const server = createServer(async (req, res) => {
       return json(res, result.status, result.error
         ? { error: result.error, disclaimer: DISCLAIMER }
         : { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // --- Statistiques routes ---
+
+    if (path === '/api/statistiques' && method === 'GET') {
+      const result = getAllStatistiques();
+      return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    if (path.match(/^\/api\/statistiques\/([^/]+)$/) && method === 'GET') {
+      const domaine = decodeURIComponent(path.match(/^\/api\/statistiques\/([^/]+)$/)[1]);
+      const result = getStatistiquesByDomaine(domaine);
+      return json(res, result.status, result.error ? { error: result.error, disclaimer: DISCLAIMER } : { ...result.data, disclaimer: DISCLAIMER });
     }
 
     // Static files

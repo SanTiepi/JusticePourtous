@@ -1,0 +1,61 @@
+{
+  "VD": [
+    { "nom": "ASLOCA Vaud", "type": "asloca", "tel": "021 617 11 37", "url": "https://vaud.asloca.ch" },
+    { "nom": "Centre social protestant VD", "type": "csp", "tel": "021 560 60 60", "url": "https://www.csp.ch" },
+    { "nom": "Syndicat Unia Vaud", "type": "syndicat", "tel": "0848 606 606", "url": "https://www.unia.ch" },
+    { "nom": "Commission de conciliation en matiere de baux VD", "type": "conciliation", "url": "https://www.vd.ch/themes/territoire-et-construction/baux-a-loyer" },
+    { "nom": "Aide juridictionnelle VD", "type": "aide_juridictionnelle", "url": "https://www.vd.ch/themes/etat-droit-finances/aide-juridictionnelle" },
+    { "nom": "Centre LAVI Vaud", "type": "lavi", "tel": "021 631 03 00", "url": "https://www.centrelavi.ch" },
+    { "nom": "BRAPA Vaud (recouvrement pensions)", "type": "recouvrement", "tel": "021 316 52 52", "url": "https://www.vd.ch/themes/soutien-social/pensions-alimentaires" },
+    { "nom": "Ordre des avocats VD", "type": "avocats", "url": "https://www.avocats-vaud.ch" },
+    { "nom": "Caritas Vaud", "type": "csp", "tel": "021 317 59 80", "url": "https://www.caritas-vaud.ch" },
+    { "nom": "Service de la population VD (SPOP)", "type": "administration", "url": "https://www.vd.ch/themes/population/population-etrangere" }
+  ],
+  "GE": [
+    { "nom": "ASLOCA Geneve", "type": "asloca", "tel": "022 716 18 00", "url": "https://www.asloca.ch/asloca-geneve" },
+    { "nom": "Centre social protestant GE", "type": "csp", "url": "https://www.csp.ch/geneve" },
+    { "nom": "Syndicat Unia Geneve", "type": "syndicat", "tel": "022 949 13 00", "url": "https://www.unia.ch/fr/region/geneve" },
+    { "nom": "Tribunal des baux et loyers GE", "type": "conciliation", "url": "https://justice.ge.ch/fr/institution/tribunal-des-baux-et-loyers" },
+    { "nom": "Tribunal des prud'hommes GE", "type": "conciliation", "url": "https://justice.ge.ch/fr/institution/tribunal-des-prudhommes" },
+    { "nom": "Centre LAVI Geneve", "type": "lavi", "tel": "022 320 01 02", "url": "https://www.centrelavi-ge.ch" },
+    { "nom": "SCARPA Geneve (recouvrement pensions)", "type": "recouvrement", "tel": "022 546 52 00", "url": "https://www.ge.ch/organisation/service-cantonal-avance-recouvrement-pensions-alimentaires-scarpa" },
+    { "nom": "Ordre des avocats GE", "type": "avocats", "url": "https://www.odage.ch" },
+    { "nom": "Caritas Geneve", "type": "csp", "tel": "022 708 04 44", "url": "https://www.caritas-geneve.ch" },
+    { "nom": "OCPM Geneve", "type": "administration", "url": "https://www.ge.ch/organisation/office-cantonal-population-migrations-ocpm" },
+    { "nom": "Syndicat SIT Geneve", "type": "syndicat", "tel": "022 818 03 00", "url": "https://www.sit-syndicat.ch" }
+  ],
+  "VS": [
+    { "nom": "ASLOCA Valais", "type": "asloca", "tel": "027 322 92 49", "url": "https://www.asloca.ch/asloca-valais" },
+    { "nom": "Centre de consultation LAVI Valais", "type": "lavi", "tel": "027 607 40 40" },
+    { "nom": "Caritas Valais", "type": "csp", "url": "https://www.caritas-valais.ch" },
+    { "nom": "Syndicat Unia Valais", "type": "syndicat", "url": "https://www.unia.ch/fr/region/valais" }
+  ],
+  "FR": [
+    { "nom": "ASLOCA Fribourg", "type": "asloca", "tel": "026 322 83 54", "url": "https://www.asloca.ch/asloca-fribourg" },
+    { "nom": "Caritas Fribourg", "type": "csp", "url": "https://www.caritas-fribourg.ch" },
+    { "nom": "Centre LAVI Fribourg", "type": "lavi", "tel": "026 305 15 80" }
+  ],
+  "NE": [
+    { "nom": "ASLOCA Neuchatel", "type": "asloca", "tel": "032 724 54 54", "url": "https://www.asloca.ch/asloca-neuchatel" },
+    { "nom": "Centre social protestant NE", "type": "csp", "url": "https://www.csp.ch/neuchatel" },
+    { "nom": "Centre LAVI Neuchatel", "type": "lavi", "tel": "032 889 66 49" }
+  ],
+  "JU": [
+    { "nom": "ASLOCA Jura", "type": "asloca", "url": "https://www.asloca.ch" },
+    { "nom": "Caritas Jura", "type": "csp", "url": "https://www.caritas-jura.ch" }
+  ],
+  "BE": [
+    { "nom": "Mieterverband Bern / ASLOCA Berne", "type": "asloca", "tel": "031 301 90 87", "url": "https://www.mieterverband.ch/bern" },
+    { "nom": "Caritas Bern", "type": "csp", "url": "https://www.caritas-bern.ch" },
+    { "nom": "Syndicat Unia Bern", "type": "syndicat", "url": "https://www.unia.ch/de/region/bern" }
+  ],
+  "ZH": [
+    { "nom": "Mieterverband Zurich", "type": "asloca", "tel": "044 491 94 31", "url": "https://www.mieterverband.ch/zh" },
+    { "nom": "Caritas Zurich", "type": "csp", "url": "https://www.caritas-zuerich.ch" },
+    { "nom": "Syndicat Unia Zurich", "type": "syndicat", "url": "https://www.unia.ch/de/region/zuerich-schaffhausen" }
+  ],
+  "TI": [
+    { "nom": "Associazione Svizzera Inquilini TI", "type": "asloca", "url": "https://www.asi-inchiesta.ch" },
+    { "nom": "Caritas Ticino", "type": "csp", "url": "https://www.caritas-ticino.ch" }
+  ]
+}

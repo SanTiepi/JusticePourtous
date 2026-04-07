@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JusticeBot — Vos droits en 5 clics</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>JusticeBot</h1>
+      <p>Vos droits en 5 clics. Gratuit. Anonyme.</p>
+    </header>
+
+    <div class="hero-stat">
+      <strong>72%</strong> des Suisses ne font pas valoir leurs droits a cause du cout.
+      <br>JusticeBot change la donne.
+    </div>
+
+    <div class="tiles" id="domaines"></div>
+
+    <div class="card" style="margin-top: 2rem; text-align: center;">
+      <h3>Annuaire des services</h3>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">Trouvez les services juridiques de votre canton</p>
+      <a href="/annuaire.html" class="btn btn-outline">Consulter l'annuaire</a>
+    </div>
+
+    <div class="disclaimer">
+      JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes.
+    </div>
+
+    <footer>
+      &copy; 2026 JusticeBot — Droit suisse accessible a tous
+    </footer>
+  </div>
+
+  <script>
+    async function loadDomaines() {
+      const res = await fetch('/api/domaines');
+      const data = await res.json();
+      const container = document.getElementById('domaines');
+      for (const d of data.domaines) {
+        const tile = document.createElement('a');
+        tile.className = 'tile';
+        tile.href = `/consulter.html?domaine=${d.id}`;
+        tile.innerHTML = `<h2>${d.nom}</h2><p>${d.description}</p>`;
+        tile.style.borderLeftColor = d.couleur;
+        tile.style.borderLeftWidth = '4px';
+        container.appendChild(tile);
+      }
+    }
+    loadDomaines();
+  </script>
+</body>
+</html>

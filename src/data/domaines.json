@@ -1,0 +1,37 @@
+[
+  {
+    "id": "bail",
+    "nom": "Logement",
+    "description": "Bail, loyer, défauts, résiliation, sous-location",
+    "icone": "home",
+    "couleur": "#2ecc71"
+  },
+  {
+    "id": "travail",
+    "nom": "Travail",
+    "description": "Licenciement, salaire, harcèlement, certificat, vacances",
+    "icone": "briefcase",
+    "couleur": "#3498db"
+  },
+  {
+    "id": "famille",
+    "nom": "Famille",
+    "description": "Divorce, pension, garde, succession, violence conjugale",
+    "icone": "users",
+    "couleur": "#e74c3c"
+  },
+  {
+    "id": "dettes",
+    "nom": "Dettes",
+    "description": "Poursuites, saisie, faillite, arrangement, minimum vital",
+    "icone": "credit-card",
+    "couleur": "#f39c12"
+  },
+  {
+    "id": "etrangers",
+    "nom": "Etrangers",
+    "description": "Permis, naturalisation, regroupement, asile, renvoi",
+    "icone": "globe",
+    "couleur": "#9b59b6"
+  }
+]

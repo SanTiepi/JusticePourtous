@@ -1,0 +1,354 @@
+[
+  {
+    "id": "famille_pension_impayee",
+    "domaine": "famille",
+    "sousDomaine": "pension",
+    "tags": ["pension", "alimentaire", "impaye", "entretien", "recouvrement"],
+    "questions": [
+      { "id": "q1", "text": "Qui est le beneficiaire ?", "options": ["enfant", "ex-conjoint", "les deux"] },
+      { "id": "q2", "text": "Combien de mois impayes ?", "options": ["1-2 mois", "3-6 mois", ">6 mois"] },
+      { "id": "q3", "text": "Avez-vous un jugement fixant la pension ?", "options": ["oui", "non, convention seulement"] },
+      { "id": "q4", "text": "Le debiteur a-t-il un revenu connu ?", "options": ["oui, salarie", "independant", "inconnu", "sans revenu"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Le non-paiement de la pension alimentaire est une infraction penale punie d'une peine privative de liberte de 3 ans au plus ou d'une peine pecuniaire (art. 217 CP). Le creancier peut : (1) porter plainte penale aupres du Ministere public, (2) engager une poursuite (LP) pour recouvrer les arrierages, (3) demander l'aide du Bureau cantonal de recouvrement et d'avances de pensions alimentaires (BRAPA/SCARPA) qui peut avancer les pensions et se retourner contre le debiteur. Le droit a l'avance est soumis a des conditions de revenus. Les pensions se prescrivent par 5 ans (art. 128 ch. 1 CO). En cas de changement de situation du debiteur, le tribunal peut adapter le montant (art. 286 al. 2 CC).",
+      "articles": [
+        { "ref": "CP 217", "titre": "Violation d'une obligation d'entretien", "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_217" },
+        { "ref": "CC 276", "titre": "Obligation d'entretien des pere et mere", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_276" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 6B_608/2017", "resume": "Condamnation pour violation de l'art. 217 CP : le debiteur doit prouver son incapacite objective de payer, la simple difficulte ne suffit pas." },
+        { "ref": "TF 5A_760/2016", "resume": "Le BRAPA peut agir par subrogation pour recouvrer les pensions avancees." }
+      ],
+      "modeleLettre": "Objet : Mise en demeure — pension alimentaire impayee\n\nRecommande\n\nMadame/Monsieur,\n\nConformement au jugement du [date] / a la convention du [date], vous etes tenu(e) de verser une pension alimentaire mensuelle de CHF [montant].\n\nA ce jour, les mois de [mois] ne m'ont pas ete verses, soit un arrierage total de CHF [montant].\n\nJe vous mets en demeure de payer cette somme dans un delai de 10 jours. A defaut, je deposerai une plainte penale (art. 217 CP) et engagerai une poursuite.\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "BRAPA Vaud (Bureau de recouvrement)", "tel": "021 316 52 52", "url": "https://www.vd.ch/themes/soutien-social/pensions-alimentaires", "canton": "VD" },
+        { "nom": "SCARPA Geneve", "tel": "022 546 52 00", "url": "https://www.ge.ch/organisation/service-cantonal-avance-recouvrement-pensions-alimentaires-scarpa", "canton": "GE" },
+        { "nom": "Centre de consultation LAVI", "tel": "0800 000 001", "url": "https://www.centrelavi.ch", "canton": "VD" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CC/CP etat 2025-01-01"
+  },
+  {
+    "id": "famille_divorce_procedure",
+    "domaine": "famille",
+    "sousDomaine": "divorce",
+    "tags": ["divorce", "procedure", "requete", "commun accord", "tribunal"],
+    "questions": [
+      { "id": "q1", "text": "Type de divorce ?", "options": ["commun accord", "unilateral", "je ne sais pas"] },
+      { "id": "q2", "text": "Duree du mariage ?", "options": ["<5 ans", "5-15 ans", ">15 ans"] },
+      { "id": "q3", "text": "Enfants mineurs ?", "options": ["oui", "non"] },
+      { "id": "q4", "text": "Accord sur le partage des biens ?", "options": ["oui", "partiellement", "non"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Le divorce peut etre demande par requete commune des deux epoux (art. 111 CC) ou par demande unilaterale apres 2 ans de separation (art. 114 CC). Le divorce sur requete commune est plus rapide : les epoux deposent une convention reglant les effets du divorce (pension, garde, liquidation regime matrimonial) et le tribunal l'approuve si elle est equilibree (art. 111-112 CC). La procedure est simplifiee au sens de l'art. 274 CPC. Le cout varie selon les cantons (CHF 1'000-3'000 de frais judiciaires pour un divorce amiable). Le tribunal doit obligatoirement regler la garde et l'autorite parentale, la pension alimentaire pour enfants et conjoint, la liquidation du regime matrimonial et le partage de la prevoyance professionnelle (LPP). Un avocat n'est pas obligatoire mais vivement recommande.",
+      "articles": [
+        { "ref": "CC 111", "titre": "Divorce sur requete commune avec accord complet", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_111" },
+        { "ref": "CC 114", "titre": "Divorce apres separation de 2 ans", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_114" },
+        { "ref": "CPC 274", "titre": "Procedure en matiere de droit matrimonial", "lien": "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_274" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 5A_104/2018", "resume": "Le tribunal doit verifier d'office si la convention de divorce protege adequatement les interets des enfants." },
+        { "ref": "TF 5A_880/2011", "resume": "Le delai de 2 ans de separation pour le divorce unilateral court des la separation effective, pas de la date de la procedure." }
+      ],
+      "modeleLettre": "",
+      "services": [
+        { "nom": "Ordre des avocats VD", "url": "https://www.avocats-vaud.ch", "canton": "VD" },
+        { "nom": "Ordre des avocats GE", "url": "https://www.odage.ch", "canton": "GE" },
+        { "nom": "Aide juridictionnelle VD", "url": "https://www.vd.ch/themes/etat-droit-finances/aide-juridictionnelle", "canton": "VD" },
+        { "nom": "Mediation familiale Vaud", "url": "https://www.vd.ch/themes/vie-privee/famille/mediation-familiale", "canton": "VD" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CC/CPC etat 2025-01-01"
+  },
+  {
+    "id": "famille_garde_modification",
+    "domaine": "famille",
+    "sousDomaine": "garde",
+    "tags": ["garde", "modification", "autorite parentale", "droit de visite", "changement"],
+    "questions": [
+      { "id": "q1", "text": "Situation actuelle ?", "options": ["garde alternee", "garde exclusive", "droit de visite"] },
+      { "id": "q2", "text": "Motif du changement souhaite ?", "options": ["demenagement", "maltraitance suspectee", "souhait de l'enfant", "changement de situation", "non-respect du regime"] },
+      { "id": "q3", "text": "Age de l'enfant ?", "options": ["<6 ans", "6-12 ans", ">12 ans"] },
+      { "id": "q4", "text": "Accord de l'autre parent ?", "options": ["oui", "non"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "La modification de l'attribution de la garde ou de l'autorite parentale ne peut etre demandee que lorsque des faits nouveaux importants le commandent et que le bien de l'enfant l'exige (art. 134 al. 1 CC pour les situations post-divorce, art. 298d CC pour les parents non maries). Le juge statue en tenant compte de l'interet superieur de l'enfant (art. 296 al. 1 CC). L'audition de l'enfant est obligatoire des qu'il est capable de discernement (en general vers 6 ans, art. 314a CC). La garde alternee est favorisee depuis la reforme de 2017 si les deux parents sont aptes et que c'est dans l'interet de l'enfant. Un demenagement a l'etranger avec l'enfant necessite le consentement de l'autre parent ou l'autorisation du juge (art. 301a CC). L'APEA (autorite de protection de l'enfant et de l'adulte) peut intervenir d'office en cas de mise en danger.",
+      "articles": [
+        { "ref": "CC 134", "titre": "Modification de l'attribution de la garde", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_134" },
+        { "ref": "CC 296", "titre": "Interet de l'enfant", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_296" },
+        { "ref": "CC 301a", "titre": "Lieu de residence de l'enfant", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_301_a" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 5A_459/2015", "resume": "La garde alternee suppose une bonne capacite de communication entre les parents et une proximite geographique suffisante." },
+        { "ref": "TF 5A_30/2017", "resume": "Le souhait d'un enfant de 13 ans de vivre chez l'autre parent est un element important mais non determinant." }
+      ],
+      "modeleLettre": "Objet : Requete de modification de la garde\n\nAu Tribunal [competent],\n\nMadame, Monsieur le/la Juge,\n\nJe sollicite la modification de la decision relative a la garde de [nom de l'enfant], rendue le [date], pour les motifs suivants :\n\n- [Description des faits nouveaux importants]\n\nConformement a l'art. 134 CC, je demande que la garde soit [modifiee selon...]\n\nVeuillez agreer, Madame, Monsieur le/la Juge, l'expression de ma haute consideration.\n\n[Signature]",
+      "services": [
+        { "nom": "Service de protection des mineurs VD", "url": "https://www.vd.ch/themes/soutien-social/enfance-et-jeunesse/protection-des-mineurs", "canton": "VD" },
+        { "nom": "Service de protection des mineurs GE", "url": "https://www.ge.ch/organisation/service-protection-mineurs-spmi", "canton": "GE" },
+        { "nom": "Mediation familiale Vaud", "url": "https://www.vd.ch/themes/vie-privee/famille/mediation-familiale", "canton": "VD" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CC etat 2025-01-01"
+  },
+  {
+    "id": "famille_pension_montant",
+    "domaine": "famille",
+    "sousDomaine": "pension",
+    "tags": ["pension", "montant", "calcul", "entretien", "enfant", "conjoint"],
+    "questions": [
+      { "id": "q1", "text": "Pour qui ?", "options": ["enfant mineur", "enfant majeur en formation", "ex-conjoint"] },
+      { "id": "q2", "text": "Nombre d'enfants ?", "options": ["1", "2", "3+"] },
+      { "id": "q3", "text": "Revenus mensuels du debiteur ?", "options": ["<5000", "5000-8000", "8000-12000", ">12000"] },
+      { "id": "q4", "text": "Garde ?", "options": ["exclusive un parent", "alternee", "pas encore fixee"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "La contribution d'entretien doit couvrir les besoins concrets de l'enfant : logement, nourriture, vetements, assurance maladie, formation, activites extrascolaires (art. 285 al. 1 CC). Depuis 2017, la contribution comprend aussi la part de prise en charge (couvrant le deficit du parent gardien qui reduit son activite, art. 285 al. 2 CC). Le calcul suit la methode en deux etapes du Tribunal federal : (1) determiner le minimum vital elargi de chaque parent et des enfants, (2) repartir l'excedent equitablement. Le minimum vital du debiteur est intangible (environ CHF 1'200 pour une personne seule, CHF 1'350 avec enfants). Pour l'entretien de l'ex-conjoint, le principe du « clean break » s'applique : chaque conjoint doit subvenir a ses propres besoins apres le divorce, sauf si le mariage a eu un impact concret sur sa situation (art. 125 CC). Les tabelles zurichoises ou les recommandations de la CSEC servent de reference pour les besoins de l'enfant.",
+      "articles": [
+        { "ref": "CC 285", "titre": "Contribution d'entretien — contenu", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_285" },
+        { "ref": "CC 125", "titre": "Contribution d'entretien — ex-conjoint", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_125" },
+        { "ref": "CC 276", "titre": "Obligation d'entretien des parents", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_276" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 5A_311/2019", "resume": "Le Tribunal federal a unifie la methode de calcul : methode en deux etapes avec repartition de l'excedent (arret de principe)." },
+        { "ref": "TF 5A_907/2018", "resume": "La contribution de prise en charge est due au parent qui reduit son activite pour s'occuper de l'enfant, independamment du sexe." }
+      ],
+      "modeleLettre": "",
+      "services": [
+        { "nom": "Aide juridictionnelle VD", "url": "https://www.vd.ch/themes/etat-droit-finances/aide-juridictionnelle", "canton": "VD" },
+        { "nom": "Ordre des avocats GE", "url": "https://www.odage.ch", "canton": "GE" },
+        { "nom": "BRAPA Vaud", "tel": "021 316 52 52", "url": "https://www.vd.ch/themes/soutien-social/pensions-alimentaires", "canton": "VD" }
+      ],
+      "routageEcosysteme": { "boussole": { "condition": "calcul_budget", "url": "boussole.app" } },
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CC etat 2025-01-01"
+  },
+  {
+    "id": "famille_violence_conjugale",
+    "domaine": "famille",
+    "sousDomaine": "violence",
+    "tags": ["violence", "conjugale", "protection", "mesures", "urgence"],
+    "questions": [
+      { "id": "q1", "text": "Type de violence ?", "options": ["physique", "psychologique", "economique", "sexuelle", "multiple"] },
+      { "id": "q2", "text": "Y a-t-il des enfants ?", "options": ["oui", "non"] },
+      { "id": "q3", "text": "Etes-vous en securite actuellement ?", "options": ["oui", "non, danger immediat"] },
+      { "id": "q4", "text": "Avez-vous deja porte plainte ?", "options": ["oui", "non"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "En cas de violence conjugale, plusieurs mesures de protection existent : (1) Protection civile : le tribunal peut ordonner l'expulsion du conjoint violent du logement commun, interdire l'approche et le contact (art. 28b CC). (2) Protection penale : les voies de fait (art. 126 CP), les lesions corporelles (art. 122-123 CP), les menaces (art. 180 CP) sont poursuivies d'office en cas de violence conjugale (meme sans plainte de la victime depuis 2004). (3) Mesures protectrices de l'union conjugale : en urgence, le tribunal peut attribuer le logement a la victime et regler la garde des enfants (art. 176 CC). (4) La police peut prononcer une mesure d'eloignement immediate (lois cantonales). La victime a droit a l'aide LAVI (Loi sur l'aide aux victimes) : aide psychologique, juridique et financiere gratuite. En cas de danger immediat : appelez le 117 (police).",
+      "articles": [
+        { "ref": "CC 28b", "titre": "Mesures de protection en cas de violence", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_28_b" },
+        { "ref": "CP 126", "titre": "Voies de fait", "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_126" },
+        { "ref": "CP 180", "titre": "Menaces", "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_180" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 5A_377/2016", "resume": "Expulsion du conjoint violent du logement familial ordonnee pour une duree de 6 mois, renouvelable." },
+        { "ref": "TF 6B_1072/2018", "resume": "Les violences psychologiques repetees (menaces, humiliations) constituent des voies de fait au sens de l'art. 126 CP." }
+      ],
+      "modeleLettre": "",
+      "services": [
+        { "nom": "Urgence police", "tel": "117", "canton": "VD" },
+        { "nom": "Centre LAVI Vaud (aide aux victimes)", "tel": "021 631 03 00", "url": "https://www.centrelavi.ch", "canton": "VD" },
+        { "nom": "Centre LAVI Geneve", "tel": "022 320 01 02", "url": "https://www.centrelavi-ge.ch", "canton": "GE" },
+        { "nom": "Solidarite Femmes (foyer d'accueil)", "tel": "0800 110 110", "url": "https://www.solidaritefemmes.ch", "canton": "VD" },
+        { "nom": "Centre MalleyPrairie", "tel": "021 620 76 76", "url": "https://www.malleyprairie.ch", "canton": "VD" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CC/CP etat 2025-01-01"
+  },
+  {
+    "id": "famille_succession_reserve",
+    "domaine": "famille",
+    "sousDomaine": "succession",
+    "tags": ["succession", "reserve", "heritier", "testament", "quotite disponible"],
+    "questions": [
+      { "id": "q1", "text": "Situation ?", "options": ["heritier lesie", "testateur voulant desheriter", "contestation testament"] },
+      { "id": "q2", "text": "Lien avec le defunt ?", "options": ["conjoint", "enfant", "parent", "autre"] },
+      { "id": "q3", "text": "Existe-t-il un testament ?", "options": ["oui", "non", "je ne sais pas"] },
+      { "id": "q4", "text": "Regime matrimonial ?", "options": ["participation aux acquets", "separation de biens", "communaute", "je ne sais pas"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Le droit successoral suisse a ete revise au 1er janvier 2023. Les reserves hereditaires (part minimale garantie aux heritiers reservataires) sont desormais : 1/2 de la part legale pour les descendants (au lieu de 3/4, art. 471 ch. 1 CC). La reserve des parents a ete supprimee. Le conjoint survivant conserve sa reserve de 1/2 de sa part legale (art. 471 ch. 3 CC). La quotite disponible (part que le testateur peut attribuer librement) est donc plus large depuis 2023. Les parts legales restent : conjoint + descendants = conjoint 1/2, descendants 1/2 ; conjoint + parents = conjoint 3/4, parents 1/4. L'heritier reservataire dont la reserve est lesee peut intenter une action en reduction dans l'annee suivant la connaissance de la lesion, et au plus tard 10 ans apres l'ouverture de la succession (art. 533 CC). Les pactes successoraux sont possibles (art. 494 CC).",
+      "articles": [
+        { "ref": "CC 470", "titre": "Quotite disponible", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_470" },
+        { "ref": "CC 471", "titre": "Reserves hereditaires", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_471" },
+        { "ref": "CC 533", "titre": "Action en reduction — prescription", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_533" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 5A_557/2018", "resume": "L'action en reduction doit etre intentee dans l'annee suivant la connaissance de la lesion ; la connaissance de l'existence du testament suffit." },
+        { "ref": "TF 5A_686/2012", "resume": "Les donations entre vifs faites dans les 5 ans precedant le deces peuvent etre soumises a reduction si elles lesent les reserves." }
+      ],
+      "modeleLettre": "Objet : Reclamation pour lesion de la reserve hereditaire\n\nMadame, Monsieur le/la notaire,\n\nSuite au deces de [nom] le [date], je constate que les dispositions testamentaires lesent ma reserve hereditaire en tant que [lien de parente].\n\nConformement aux art. 470-471 CC, ma reserve est de [montant/proportion].\n\nJe me reserve le droit d'intenter une action en reduction (art. 522 ss CC) si mes droits ne sont pas respectes.\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "Ordre des avocats VD", "url": "https://www.avocats-vaud.ch", "canton": "VD" },
+        { "nom": "Chambre des notaires VD", "url": "https://www.notaires-vaud.ch", "canton": "VD" },
+        { "nom": "Chambre des notaires GE", "url": "https://notaires-geneve.ch", "canton": "GE" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CC etat 2023-01-01"
+  },
+  {
+    "id": "famille_reconnaissance_paternite",
+    "domaine": "famille",
+    "sousDomaine": "filiation",
+    "tags": ["paternite", "reconnaissance", "filiation", "ADN", "contestation"],
+    "questions": [
+      { "id": "q1", "text": "Situation ?", "options": ["reconnaissance volontaire", "action en paternite", "contestation de paternite"] },
+      { "id": "q2", "text": "Les parents sont-ils maries ?", "options": ["oui", "non"] },
+      { "id": "q3", "text": "L'enfant est-il ne ?", "options": ["oui", "non, a naitre"] },
+      { "id": "q4", "text": "Le pere presume est-il cooperant ?", "options": ["oui", "non"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Si les parents ne sont pas maries, la filiation paternelle s'etablit par reconnaissance devant l'officier de l'etat civil ou par jugement (art. 260 al. 1 CC). La reconnaissance peut etre faite avant ou apres la naissance. Si le pere refuse de reconnaitre l'enfant, la mere (ou l'enfant) peut intenter une action en paternite (art. 261 CC). L'action doit etre intentee avant la majorite de l'enfant (art. 263 al. 1 CC). Le tribunal ordonnera en general un test ADN. La presomption de paternite s'applique si le pere a eu des relations avec la mere pendant la periode de conception (art. 262 CC). Le pere presume peut contester une reconnaissance ou la presomption de paternite du mari par action en desaveu dans l'annee suivant la connaissance de la naissance (art. 256c CC). La reconnaissance fonde l'obligation d'entretien et l'autorite parentale conjointe (sur demande).",
+      "articles": [
+        { "ref": "CC 260", "titre": "Reconnaissance de l'enfant", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_260" },
+        { "ref": "CC 261", "titre": "Action en paternite", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_261" },
+        { "ref": "CC 263", "titre": "Delai pour l'action en paternite", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_263" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 5A_748/2014", "resume": "Le refus de se soumettre a un test ADN peut etre pris en compte par le juge comme indice de paternite." },
+        { "ref": "TF 5A_316/2012", "resume": "L'action en paternite est imprescriptible pour l'enfant mineur ; le delai d'un an ne court qu'a partir de la majorite." }
+      ],
+      "modeleLettre": "",
+      "services": [
+        { "nom": "Etat civil cantonal VD", "url": "https://www.vd.ch/themes/population/etat-civil", "canton": "VD" },
+        { "nom": "Etat civil cantonal GE", "url": "https://www.ge.ch/organisation/service-etat-civil", "canton": "GE" },
+        { "nom": "Aide juridictionnelle VD", "url": "https://www.vd.ch/themes/etat-droit-finances/aide-juridictionnelle", "canton": "VD" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CC etat 2025-01-01"
+  },
+  {
+    "id": "famille_mesures_provisionnelles",
+    "domaine": "famille",
+    "sousDomaine": "procedure",
+    "tags": ["mesures provisionnelles", "urgence", "protection", "superprovisionnelles"],
+    "questions": [
+      { "id": "q1", "text": "Motif de l'urgence ?", "options": ["violence", "depart avec enfant", "dissipation des biens", "autre"] },
+      { "id": "q2", "text": "Procedure principale en cours ?", "options": ["oui", "non, pas encore"] },
+      { "id": "q3", "text": "Delai d'urgence ?", "options": ["immediat", "quelques jours", "quelques semaines"] },
+      { "id": "q4", "text": "Avez-vous un avocat ?", "options": ["oui", "non"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Les mesures provisionnelles permettent d'obtenir une protection rapide avant ou pendant une procedure judiciaire (art. 261-269 CPC). Le requerant doit rendre vraisemblable : (1) qu'il a droit a une pretention, (2) qu'il est menace d'un prejudice difficilement reparable. En cas d'urgence particuliere (depart imminent avec l'enfant a l'etranger, violence), le tribunal peut ordonner des mesures superprovisionnelles sans entendre la partie adverse (art. 265 CPC). En droit de la famille, les mesures les plus courantes sont : l'attribution du logement conjugal, la garde provisoire des enfants, l'interdiction de demenager avec l'enfant, le blocage des comptes bancaires, la fixation d'une pension provisoire. Les mesures protectrices de l'union conjugale (art. 172 ss CC) constituent un type special de mesures provisionnelles pour les epoux. La requete doit etre motivee et accompagnee de pieces justificatives.",
+      "articles": [
+        { "ref": "CPC 261", "titre": "Mesures provisionnelles — principe", "lien": "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_261" },
+        { "ref": "CPC 265", "titre": "Mesures superprovisionnelles", "lien": "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_265" },
+        { "ref": "CC 172", "titre": "Mesures protectrices de l'union conjugale", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_172" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 5A_549/2016", "resume": "Mesures superprovisionnelles ordonnees dans les 24 heures pour empecher le depart d'un parent avec l'enfant a l'etranger." },
+        { "ref": "TF 5A_373/2015", "resume": "Le blocage provisoire des comptes communs est admis lorsque la dissipation des biens est vraisemblable." }
+      ],
+      "modeleLettre": "Objet : Requete de mesures provisionnelles urgentes\n\nAu President/a la Presidente du Tribunal [competent],\n\nMadame, Monsieur le/la President(e),\n\nJe requiers d'urgence les mesures provisionnelles suivantes :\n\n1. [Description des mesures demandees]\n\nMotifs d'urgence :\n- [Description du prejudice imminent]\n\nConformement a l'art. 261 CPC, ces mesures sont necessaires pour prevenir un prejudice difficilement reparable.\n\n[Si urgence extreme :] Je sollicite des mesures superprovisionnelles (art. 265 CPC) sans audition prealable de la partie adverse.\n\nPieces jointes : [liste]\n\nVeuillez agreer l'expression de ma haute consideration.\n\n[Signature]",
+      "services": [
+        { "nom": "Ordre des avocats VD", "url": "https://www.avocats-vaud.ch", "canton": "VD" },
+        { "nom": "Ordre des avocats GE", "url": "https://www.odage.ch", "canton": "GE" },
+        { "nom": "Aide juridictionnelle VD", "url": "https://www.vd.ch/themes/etat-droit-finances/aide-juridictionnelle", "canton": "VD" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CPC/CC etat 2025-01-01"
+  },
+  {
+    "id": "famille_droit_visite",
+    "domaine": "famille",
+    "sousDomaine": "visite",
+    "tags": ["droit de visite", "relations personnelles", "week-end", "vacances", "refus"],
+    "questions": [
+      { "id": "q1", "text": "Probleme ?", "options": ["droit de visite refuse", "horaires inadaptes", "pas de droit fixe", "enfant refuse de venir"] },
+      { "id": "q2", "text": "Qui a la garde ?", "options": ["l'autre parent", "garde alternee", "institution"] },
+      { "id": "q3", "text": "Age de l'enfant ?", "options": ["<3 ans", "3-12 ans", ">12 ans"] },
+      { "id": "q4", "text": "Droit de visite fixe par ?", "options": ["tribunal", "convention", "rien de fixe"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Le parent qui n'a pas la garde a le droit d'entretenir des relations personnelles avec son enfant (art. 273 al. 1 CC). Ce droit est aussi un droit de l'enfant. Le droit de visite usuel comprend en general un week-end sur deux et la moitie des vacances scolaires, mais le tribunal peut l'adapter. Le parent gardien ne peut pas empecher l'exercice du droit de visite sans motif grave (mise en danger de l'enfant). En cas de refus injustifie, le parent lese peut saisir l'APEA ou le tribunal pour faire executer le droit de visite (art. 273 al. 2 CC). Dans les cas graves, un droit de visite surveille peut etre ordonne (art. 274 al. 2 CC). Si l'enfant refuse le contact, l'APEA peut ordonner une curatelle de surveillance du droit de visite. L'alienation parentale est prise en compte par les tribunaux.",
+      "articles": [
+        { "ref": "CC 273", "titre": "Relations personnelles — droit de visite", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_273" },
+        { "ref": "CC 274", "titre": "Restriction du droit de visite", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_274" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 5A_699/2017", "resume": "Le parent gardien qui entrave systematiquement le droit de visite peut se voir retirer la garde." },
+        { "ref": "TF 5A_463/2017", "resume": "Le droit de visite peut etre elargi progressivement pour un pere qui n'a pas eu de contact avec son enfant pendant plusieurs annees." }
+      ],
+      "modeleLettre": "Objet : Requete en execution du droit de visite\n\nA l'APEA / au Tribunal competent,\n\nMadame, Monsieur,\n\nLe droit de visite fixe par [jugement/convention du date] prevoit [description du regime].\n\nOr, depuis le [date], le parent gardien [nom] empeche l'exercice de ce droit en [description].\n\nJe demande qu'il soit ordonne au parent gardien de respecter le droit de visite sous la menace de la peine prevue a l'art. 292 CP.\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "APEA du district (autorite de protection)", "url": "https://www.vd.ch/themes/soutien-social/curatelles-et-tutelles", "canton": "VD" },
+        { "nom": "Tribunal de protection GE", "url": "https://justice.ge.ch/fr/institution/tribunal-protection-adulte-enfant", "canton": "GE" },
+        { "nom": "Mediation familiale Vaud", "url": "https://www.vd.ch/themes/vie-privee/famille/mediation-familiale", "canton": "VD" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CC etat 2025-01-01"
+  },
+  {
+    "id": "famille_curatelle",
+    "domaine": "famille",
+    "sousDomaine": "protection",
+    "tags": ["curatelle", "tutelle", "protection", "adulte", "incapacite"],
+    "questions": [
+      { "id": "q1", "text": "Pour qui ?", "options": ["personne agee", "personne handicapee", "personne avec addiction", "personne en crise"] },
+      { "id": "q2", "text": "Motif ?", "options": ["gestion financiere", "decisions medicales", "protection globale", "representation juridique"] },
+      { "id": "q3", "text": "La personne est-elle d'accord ?", "options": ["oui", "non", "incapable de s'exprimer"] },
+      { "id": "q4", "text": "Qui fait la demande ?", "options": ["la personne elle-meme", "famille", "medecin", "autorite"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Depuis 2013, le droit de la protection de l'adulte prevoit quatre types de curatelle modulables selon les besoins (art. 390-398 CC) : (1) curatelle d'accompagnement (soutien dans la vie courante, art. 393 CC), (2) curatelle de representation (actes juridiques specifiques, art. 394 CC), (3) curatelle de gestion (gestion du patrimoine, art. 395 CC), (4) curatelle de portee generale (cas grave, remplace l'ancienne tutelle, art. 398 CC). L'APEA (autorite de protection de l'enfant et de l'adulte) est competente pour instituer une curatelle. Toute personne peut signaler a l'APEA une situation de mise en danger (art. 443 CC). La personne concernee est entendue (art. 447 CC) et peut contester la mesure. Les directives anticipees (art. 370 CC) et le mandat pour cause d'inaptitude (art. 360 CC) permettent de prevenir une curatelle non souhaitee. Le curateur doit respecter l'autonomie de la personne dans la mesure du possible.",
+      "articles": [
+        { "ref": "CC 390", "titre": "Conditions de la curatelle", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_390" },
+        { "ref": "CC 393", "titre": "Curatelle d'accompagnement", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_393" },
+        { "ref": "CC 398", "titre": "Curatelle de portee generale", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_398" },
+        { "ref": "CC 360", "titre": "Mandat pour cause d'inaptitude", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_360" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 5A_795/2014", "resume": "La curatelle de portee generale ne doit etre prononcee qu'en dernier recours, quand des mesures moins restrictives sont insuffisantes (principe de proportionnalite)." },
+        { "ref": "TF 5A_614/2016", "resume": "Le mandat pour cause d'inaptitude prime une curatelle si le document est valable et que le mandataire est apte." }
+      ],
+      "modeleLettre": "",
+      "services": [
+        { "nom": "APEA du district VD", "url": "https://www.vd.ch/themes/soutien-social/curatelles-et-tutelles", "canton": "VD" },
+        { "nom": "Tribunal de protection GE", "url": "https://justice.ge.ch/fr/institution/tribunal-protection-adulte-enfant", "canton": "GE" },
+        { "nom": "Pro Senectute", "tel": "0848 00 13 13", "url": "https://www.prosenectute.ch", "canton": "VD" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CC etat 2025-01-01"
+  }
+]

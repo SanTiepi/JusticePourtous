@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JusticeBot — Annuaire des services</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><a href="/" style="text-decoration:none;color:var(--accent)">JusticeBot</a></h1>
+      <p>Annuaire des services juridiques</p>
+    </header>
+
+    <div class="card">
+      <h3>Selectionnez votre canton</h3>
+      <select id="cantonSelect" onchange="loadServices()">
+        <option value="">-- Choisir un canton --</option>
+        <option value="VD">Vaud (VD)</option>
+        <option value="GE">Geneve (GE)</option>
+        <option value="VS">Valais (VS)</option>
+        <option value="FR">Fribourg (FR)</option>
+        <option value="NE">Neuchatel (NE)</option>
+        <option value="JU">Jura (JU)</option>
+        <option value="BE">Berne (BE)</option>
+        <option value="ZH">Zurich (ZH)</option>
+        <option value="TI">Tessin (TI)</option>
+      </select>
+    </div>
+
+    <div id="services"></div>
+
+    <div class="disclaimer">
+      JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise.
+    </div>
+
+    <footer>&copy; 2026 JusticeBot</footer>
+  </div>
+
+  <script>
+    async function loadServices() {
+      const canton = document.getElementById('cantonSelect').value;
+      const container = document.getElementById('services');
+      if (!canton) { container.innerHTML = ''; return; }
+
+      const res = await fetch(`/api/services/${canton}`);
+      const data = await res.json();
+
+      if (!data.services || data.services.length === 0) {
+        container.innerHTML = '<div class="card"><p style="color:var(--text-muted)">Aucun service reference pour ce canton.</p></div>';
+        return;
+      }
+
+      container.innerHTML = '<div class="card"><h3>Services disponibles</h3>' +
+        data.services.map(s => `
+          <div class="service-item">
+            <div>
+              <div class="nom">${s.nom}</div>
+              <div style="font-size:0.8rem;color:var(--text-muted)">${s.type || ''}</div>
+            </div>
+            <div style="text-align:right">
+              ${s.tel ? `<a href="tel:${s.tel}" class="tel">${s.tel}</a><br>` : ''}
+              ${s.url ? `<a href="${s.url}" target="_blank" style="font-size:0.85rem">Site web</a>` : ''}
+            </div>
+          </div>
+        `).join('') + '</div>';
+    }
+  </script>
+</body>
+</html>

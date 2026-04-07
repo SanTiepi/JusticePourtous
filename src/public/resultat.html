@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JusticeBot — Resultat</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><a href="/" style="text-decoration:none;color:var(--accent)">JusticeBot</a></h1>
+    </header>
+
+    <div id="resultat">
+      <p style="text-align:center;color:var(--text-muted)">Chargement du resultat...</p>
+    </div>
+
+    <div class="disclaimer">
+      JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes.
+    </div>
+
+    <footer>&copy; 2026 JusticeBot</footer>
+  </div>
+
+  <script src="/app.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const ficheId = params.get('fiche');
+    if (ficheId) loadResultat(ficheId);
+  </script>
+</body>
+</html>

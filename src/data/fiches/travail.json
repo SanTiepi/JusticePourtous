@@ -1,0 +1,347 @@
+[
+  {
+    "id": "travail_licenciement_maladie",
+    "domaine": "travail",
+    "sousDomaine": "licenciement",
+    "tags": ["licenciement", "maladie", "protection", "incapacite", "periode"],
+    "questions": [
+      { "id": "q1", "text": "Depuis combien de temps travaillez-vous ?", "options": ["<1 an", "1-5 ans", "5-10 ans", ">10 ans"] },
+      { "id": "q2", "text": "Etes-vous actuellement en arret maladie ?", "options": ["oui", "non"] },
+      { "id": "q3", "text": "Le licenciement a ete notifie quand ?", "options": ["pendant l'arret", "avant l'arret", "apres le retour"] },
+      { "id": "q4", "text": "Avez-vous un certificat medical ?", "options": ["oui", "non"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Le droit suisse prevoit une protection contre le licenciement pendant l'incapacite de travail pour cause de maladie (art. 336c al. 1 let. b CO). Un conge notifie pendant cette periode est nul (et non pas simplement annulable). La duree de protection varie selon l'anciennete : 30 jours durant la 1ere annee de service, 90 jours de la 2e a la 5e annee, 180 jours des la 6e annee. Si le licenciement a ete notifie avant la maladie, le delai de conge est suspendu pendant l'incapacite et reprend a la guerison (art. 336c al. 2 CO). L'employeur a l'obligation de continuer a payer le salaire pendant une duree limitee selon l'echelle applicable (Berne, Zurich ou Bale), sauf si une assurance perte de gain (APG maladie) couvre ce risque. L'assurance perte de gain couvre generalement 80% du salaire pendant 720 jours.",
+      "articles": [
+        { "ref": "CO 336c", "titre": "Resiliation en temps inopportun — employeur", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_336_c" },
+        { "ref": "CO 324a", "titre": "Empechemets de travailler — obligation de payer le salaire", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_324_a" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 4A_98/2014", "resume": "Conge nul notifie pendant un arret maladie, meme si l'employeur ignorait l'incapacite. La protection est absolue." },
+        { "ref": "TF 4A_571/2008", "resume": "Apres 6 ans de service, la protection de 180 jours s'applique meme en cas d'incapacites successives non liees." }
+      ],
+      "modeleLettre": "Objet : Contestation du licenciement — periode de protection maladie\n\nMadame, Monsieur,\n\nJe conteste le licenciement qui m'a ete notifie le [date]. A cette date, j'etais en incapacite de travail pour cause de maladie, comme l'atteste le certificat medical joint.\n\nConformement a l'art. 336c al. 1 let. b CO, un conge notifie pendant une periode de protection est nul. Avec [X] annees de service, je beneficie d'une periode de protection de [30/90/180] jours.\n\nJe vous invite a considerer ce licenciement comme nul et non avenu.\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "Syndicat Unia", "tel": "0848 606 606", "url": "https://www.unia.ch", "canton": "VD" },
+        { "nom": "Syndicat Unia Geneve", "tel": "022 949 13 00", "url": "https://www.unia.ch/fr/region/geneve", "canton": "GE" },
+        { "nom": "Office cantonal de conciliation VD", "url": "https://www.vd.ch/themes/economie/travail", "canton": "VD" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CO etat 2025-01-01"
+  },
+  {
+    "id": "travail_salaire_impaye",
+    "domaine": "travail",
+    "sousDomaine": "salaire",
+    "tags": ["salaire", "impaye", "retard", "paiement", "mise en demeure"],
+    "questions": [
+      { "id": "q1", "text": "Combien de mois impayes ?", "options": ["1 mois", "2-3 mois", ">3 mois"] },
+      { "id": "q2", "text": "L'employeur a-t-il donne une raison ?", "options": ["difficultes financieres", "litige sur le montant", "aucune raison", "autre"] },
+      { "id": "q3", "text": "Avez-vous une preuve ecrite du salaire ?", "options": ["contrat ecrit", "fiches de paie", "rien"] },
+      { "id": "q4", "text": "Etes-vous encore en poste ?", "options": ["oui", "non"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "L'employeur est tenu de payer le salaire a la fin de chaque mois, sauf convention contraire (art. 323 al. 1 CO). En cas de retard de paiement, le salaire est exigible et porte interet moratoire a 5% des l'echeance (art. 104 CO). Le travailleur peut, apres mise en demeure infructueuse, refuser de travailler (exception d'inexecution, art. 82 CO) ou resilier le contrat avec effet immediat si le retard se prolonge (art. 337 CO). La resiliation immediate pour justes motifs donne droit au salaire jusqu'a la fin du delai de conge ordinaire, plus une indemnite pouvant aller jusqu'a 6 mois de salaire (art. 337c CO). Pour les litiges jusqu'a CHF 30'000, la procedure est gratuite (art. 114 CPC). L'action en paiement de salaire se prescrit par 5 ans (art. 128 ch. 3 CO).",
+      "articles": [
+        { "ref": "CO 322", "titre": "Obligation de payer le salaire", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_322" },
+        { "ref": "CO 323", "titre": "Epoques de paiement", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_323" },
+        { "ref": "CO 337", "titre": "Resiliation immediate pour justes motifs", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_337" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 4A_69/2011", "resume": "Le retard de paiement de 2 mois constitue un juste motif de resiliation immediate apres mise en demeure restee sans effet." },
+        { "ref": "TF 4A_228/2015", "resume": "L'absence de contrat ecrit ne prive pas le travailleur de son droit au salaire convenu oralement." }
+      ],
+      "modeleLettre": "Objet : Mise en demeure — salaire impaye\n\nRecommande avec accuse de reception\n\nMadame, Monsieur,\n\nA ce jour, le salaire du mois de [mois] d'un montant de CHF [montant] brut ne m'a pas ete verse.\n\nConformement aux art. 322-323 CO, je vous mets en demeure de proceder au paiement dans un delai de 5 jours ouvrables.\n\nA defaut de paiement dans ce delai, je me reserve le droit de resilier le contrat avec effet immediat pour justes motifs (art. 337 CO) et de reclamer l'indemnite prevue a l'art. 337c CO.\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "Syndicat Unia", "tel": "0848 606 606", "url": "https://www.unia.ch", "canton": "VD" },
+        { "nom": "Syndicat Unia Geneve", "tel": "022 949 13 00", "url": "https://www.unia.ch/fr/region/geneve", "canton": "GE" },
+        { "nom": "Tribunal des prud'hommes Geneve", "url": "https://justice.ge.ch/fr/institution/tribunal-des-prudhommes", "canton": "GE" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CO etat 2025-01-01"
+  },
+  {
+    "id": "travail_heures_sup",
+    "domaine": "travail",
+    "sousDomaine": "salaire",
+    "tags": ["heures supplementaires", "heures sup", "supplement", "temps de travail", "compensation"],
+    "questions": [
+      { "id": "q1", "text": "Les heures sup sont-elles documentees ?", "options": ["oui, pointeuse", "oui, notes personnelles", "non"] },
+      { "id": "q2", "text": "Votre contrat prevoit-il une clause ?", "options": ["compensation en temps", "incluses dans le salaire", "rien de prevu", "je ne sais pas"] },
+      { "id": "q3", "text": "Nombre d'heures par semaine ?", "options": ["42-45h", "45-50h", ">50h"] },
+      { "id": "q4", "text": "Categorie professionnelle ?", "options": ["employe soumis LTr", "cadre superieur", "je ne sais pas"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Il faut distinguer les heures supplementaires (CO) du travail supplementaire (LTr). Les heures supplementaires sont celles effectuees au-dela de l'horaire contractuel mais en dessous du maximum legal. Elles sont compensees par un conge de meme duree ou payees avec un supplement de 25% (art. 321c al. 3 CO), sauf accord ecrit contraire. Le travail supplementaire au sens de la LTr depasse les 45h/semaine (industrie, personnel de bureau, employes techniques) ou 50h (autres) et doit etre compense obligatoirement avec un supplement de 25% ou en temps (art. 13 LTr). Le maximum annuel de travail supplementaire est de 170h (45h/sem) ou 140h (50h/sem). Le fardeau de la preuve des heures supplementaires incombe au travailleur. Les cadres superieurs ne sont pas soumis a la LTr mais restent soumis au CO.",
+      "articles": [
+        { "ref": "CO 321c", "titre": "Heures de travail supplementaires", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_321_c" },
+        { "ref": "LTr 12", "titre": "Duree maximum de travail", "lien": "https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/fr#art_12" },
+        { "ref": "LTr 13", "titre": "Travail supplementaire", "lien": "https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/fr#art_13" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 4A_482/2017", "resume": "Le travailleur doit prouver les heures supplementaires par des pieces (pointeuse, emails, temoignages). De simples allegations ne suffisent pas." },
+        { "ref": "TF 4A_611/2012", "resume": "Une clause forfaitaire incluant les heures sup dans le salaire n'est valable que si elle couvre un nombre raisonnable d'heures et que le salaire reste au-dessus du minimum." }
+      ],
+      "modeleLettre": "Objet : Reclamation d'heures supplementaires\n\nMadame, Monsieur,\n\nJ'ai effectue [nombre] heures supplementaires durant la periode du [date] au [date], comme l'attestent [releves de pointeuse / mes notes / emails].\n\nConformement a l'art. 321c al. 3 CO, ces heures doivent etre compensees par un conge equivalent ou remunerees avec un supplement de 25%.\n\nJe vous prie de proceder a la compensation dans le prochain decompte de salaire.\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "Syndicat Unia", "tel": "0848 606 606", "url": "https://www.unia.ch", "canton": "VD" },
+        { "nom": "Inspection du travail VD", "url": "https://www.vd.ch/themes/economie/travail/conditions-de-travail", "canton": "VD" },
+        { "nom": "Office cantonal de l'inspection du travail GE", "url": "https://www.ge.ch/organisation/office-cantonal-inspection-relations-travail-ocirt", "canton": "GE" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CO/LTr etat 2025-01-01"
+  },
+  {
+    "id": "travail_harcelement",
+    "domaine": "travail",
+    "sousDomaine": "protection",
+    "tags": ["harcelement", "mobbing", "sexuel", "personnalite", "protection"],
+    "questions": [
+      { "id": "q1", "text": "Type de harcelement ?", "options": ["mobbing (psychologique)", "sexuel", "discrimination", "autre"] },
+      { "id": "q2", "text": "Depuis quand ?", "options": ["<1 mois", "1-6 mois", ">6 mois"] },
+      { "id": "q3", "text": "Qui est l'auteur ?", "options": ["superieur hierarchique", "collegue", "plusieurs personnes"] },
+      { "id": "q4", "text": "Avez-vous des preuves ?", "options": ["emails/messages", "temoins", "notes personnelles", "aucune"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "L'employeur a une obligation legale de proteger la personnalite de ses travailleurs (art. 328 CO) et de prevenir le harcelement. Le mobbing se definit comme des agissements hostiles repetes sur une longue duree visant a isoler, marginaliser ou exclure une personne. Le harcelement sexuel est interdit par la Loi sur l'egalite (art. 4 LEg) et comprend tout comportement a connotation sexuelle non desire. L'employeur qui ne protege pas ses employes peut etre condamne a des dommages-interets (art. 49 CO pour tort moral) et l'employe peut resilier avec effet immediat (art. 337 CO). En cas de harcelement sexuel, le travailleur peut demander une indemnite allant jusqu'a 6 mois de salaire (art. 5 al. 3 LEg). Le travailleur doit documenter les faits de maniere precise (dates, faits, temoins).",
+      "articles": [
+        { "ref": "CO 328", "titre": "Protection de la personnalite du travailleur", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_328" },
+        { "ref": "LEg 4", "titre": "Harcelement sexuel — interdiction", "lien": "https://www.fedlex.admin.ch/eli/cc/1996/1498_1498_1498/fr#art_4" },
+        { "ref": "LEg 5", "titre": "Droits des travailleurs — indemnite", "lien": "https://www.fedlex.admin.ch/eli/cc/1996/1498_1498_1498/fr#art_5" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 4A_245/2009", "resume": "Indemnite pour tort moral de CHF 10'000 pour mobbing systematique d'une duree de 18 mois par un superieur hierarchique." },
+        { "ref": "TF 4A_310/2019", "resume": "L'employeur qui ne prend aucune mesure apres signalement de harcelement sexuel viole son obligation de protection (art. 328 CO)." }
+      ],
+      "modeleLettre": "Objet : Signalement de harcelement — demande de mesures\n\nConfidentiel\n\nA la Direction / aux Ressources humaines,\n\nMadame, Monsieur,\n\nJe me permets de vous signaler que je fais l'objet de [harcelement psychologique / harcelement sexuel] de la part de [identite] depuis le [date].\n\nFaits constates :\n- [Date] : [description precise]\n- [Date] : [description precise]\n\nConformement a l'art. 328 CO, vous avez l'obligation de proteger ma personnalite. Je vous demande de prendre les mesures necessaires pour faire cesser ces agissements.\n\nJe me reserve le droit de saisir les autorites competentes en l'absence de mesures dans un delai de 15 jours.\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "Syndicat Unia", "tel": "0848 606 606", "url": "https://www.unia.ch", "canton": "VD" },
+        { "nom": "Bureau de l'egalite VD", "url": "https://www.vd.ch/themes/etat-droit-finances/egalite", "canton": "VD" },
+        { "nom": "Bureau de l'egalite GE", "url": "https://www.ge.ch/organisation/service-egalite", "canton": "GE" },
+        { "nom": "Centre LAVI (aide aux victimes)", "tel": "0800 000 001", "url": "https://www.centrelavi.ch", "canton": "VD" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CO/LEg etat 2025-01-01"
+  },
+  {
+    "id": "travail_licenciement_abusif",
+    "domaine": "travail",
+    "sousDomaine": "licenciement",
+    "tags": ["licenciement", "abusif", "indemnite", "contestation", "motif"],
+    "questions": [
+      { "id": "q1", "text": "Motif du licenciement ?", "options": ["pas de motif donne", "performance", "restructuration", "conflit personnel", "apres reclamation"] },
+      { "id": "q2", "text": "Anciennete ?", "options": ["<1 an", "1-5 ans", "5-10 ans", ">10 ans"] },
+      { "id": "q3", "text": "Avez-vous conteste dans les delais ?", "options": ["oui", "non", "je ne sais pas quel delai"] },
+      { "id": "q4", "text": "Avez-vous recu une lettre de licenciement ?", "options": ["oui", "non, oral seulement"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "En droit suisse, le licenciement est en principe libre (liberte de resiliation). Cependant, le conge est abusif dans les cas enumeres a l'art. 336 CO, notamment : conge pour une raison inherente a la personnalite (race, sexe, religion), en represailles apres l'exercice d'un droit, pour empecher la naissance de pretentions (bonus, anciennete), ou en raison de l'activite syndicale. L'indemnite pour licenciement abusif peut aller jusqu'a 6 mois de salaire (art. 336a al. 2 CO). Le travailleur doit faire opposition par ecrit au licenciement avant la fin du delai de conge (art. 336b al. 1 CO), puis agir en justice dans les 180 jours suivant la fin des rapports de travail (art. 336b al. 2 CO). La procedure est gratuite jusqu'a CHF 30'000 (art. 114 CPC).",
+      "articles": [
+        { "ref": "CO 336", "titre": "Resiliation abusive — motifs", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_336" },
+        { "ref": "CO 336a", "titre": "Resiliation abusive — indemnite", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_336_a" },
+        { "ref": "CO 336b", "titre": "Resiliation abusive — procedure", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_336_b" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 4A_419/2011", "resume": "Conge abusif car donne en represailles 2 mois apres une reclamation de salaire. Indemnite de 4 mois de salaire." },
+        { "ref": "TF 4A_293/2019", "resume": "Le conge donne juste avant la naissance de pretentions liees a l'anciennete (bonus 5 ans) est presume abusif." }
+      ],
+      "modeleLettre": "Objet : Opposition au licenciement\n\nRecommande avec accuse de reception\n\nMadame, Monsieur,\n\nPar courrier du [date], vous m'avez notifie la resiliation de mon contrat de travail pour le [date].\n\nJe fais opposition a ce licenciement que je considere abusif au sens de l'art. 336 CO pour les motifs suivants :\n- [Description des motifs]\n\nJe vous demande de reconsiderer votre decision. A defaut, je me reserve le droit d'agir en justice conformement a l'art. 336b CO.\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "Syndicat Unia", "tel": "0848 606 606", "url": "https://www.unia.ch", "canton": "VD" },
+        { "nom": "Tribunal des prud'hommes Geneve", "url": "https://justice.ge.ch/fr/institution/tribunal-des-prudhommes", "canton": "GE" },
+        { "nom": "Ordre des avocats VD", "url": "https://www.avocats-vaud.ch", "canton": "VD" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CO etat 2025-01-01"
+  },
+  {
+    "id": "travail_certificat",
+    "domaine": "travail",
+    "sousDomaine": "certificat",
+    "tags": ["certificat", "travail", "attestation", "reference", "formulation"],
+    "questions": [
+      { "id": "q1", "text": "Situation ?", "options": ["certificat non remis", "formulation negative", "certificat incomplet", "attestation de travail"] },
+      { "id": "q2", "text": "Depuis quand la demande ?", "options": ["<1 mois", "1-3 mois", ">3 mois"] },
+      { "id": "q3", "text": "Type de document souhaite ?", "options": ["certificat complet", "attestation simple", "certificat intermediaire"] },
+      { "id": "q4", "text": "Etes-vous encore en poste ?", "options": ["oui", "non"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Le travailleur peut demander en tout temps un certificat de travail portant sur la nature et la duree des rapports de travail, ainsi que sur la qualite de son travail et sa conduite (art. 330a al. 1 CO). Le certificat doit etre veridique (vrai) et bienveillant (ne pas entraver inutilement l'avenir professionnel). Il existe un code des certificats de travail (formulations codees) : par exemple, « a notre entiere satisfaction » est la meilleure note, tandis que « a notre satisfaction » est une note moyenne. Le travailleur peut exiger la rectification d'un certificat inexact ou incomplet. Si l'employeur refuse de delivrer ou de modifier le certificat, le travailleur peut agir en justice (procedure gratuite jusqu'a CHF 30'000). Le travailleur peut aussi demander une simple attestation ne portant que sur la nature et la duree des rapports (art. 330a al. 2 CO).",
+      "articles": [
+        { "ref": "CO 330a", "titre": "Certificat de travail", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_330_a" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 4A_137/2014", "resume": "Le certificat doit etre globalement bienveillant. La mention d'un avertissement isole disproportionne doit etre supprimee." },
+        { "ref": "TF 4A_117/2007", "resume": "L'employeur doit delivrer le certificat dans un delai raisonnable (2-4 semaines). Le retard injustifie fonde une action en execution." }
+      ],
+      "modeleLettre": "Objet : Demande de certificat de travail\n\nMadame, Monsieur,\n\nConformement a l'art. 330a CO, je vous prie de bien vouloir me delivrer un certificat de travail complet portant sur la nature et la duree de mes rapports de travail, la qualite de mon travail et ma conduite.\n\nJe vous remercie de me transmettre ce document dans un delai de 15 jours.\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "Syndicat Unia", "tel": "0848 606 606", "url": "https://www.unia.ch", "canton": "VD" },
+        { "nom": "Syndicat SIT Geneve", "tel": "022 818 03 00", "url": "https://www.sit-syndicat.ch", "canton": "GE" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CO etat 2025-01-01"
+  },
+  {
+    "id": "travail_vacances",
+    "domaine": "travail",
+    "sousDomaine": "vacances",
+    "tags": ["vacances", "conge", "jours", "report", "compensation"],
+    "questions": [
+      { "id": "q1", "text": "Probleme ?", "options": ["vacances refusees", "solde non paye", "report refuse", "vacances imposees"] },
+      { "id": "q2", "text": "Jours de vacances contractuels ?", "options": ["4 semaines", "5 semaines", ">5 semaines"] },
+      { "id": "q3", "text": "Age ?", "options": ["<20 ans", "20-50 ans", ">50 ans"] },
+      { "id": "q4", "text": "Restez-vous en poste ?", "options": ["oui", "non, fin de contrat"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Le droit aux vacances est de 4 semaines minimum par an (5 semaines pour les jeunes jusqu'a 20 ans revolus, art. 329a CO). Les vacances doivent etre prises en nature — leur compensation financiere n'est admise qu'a la fin des rapports de travail (art. 329d al. 2 CO). L'employeur fixe la date des vacances en tenant compte des desirs du travailleur dans la mesure compatible avec les interets de l'entreprise (art. 329c al. 2 CO). Au moins 2 semaines consecutives doivent etre accordees par an (art. 329c al. 1 CO). Les vacances ne peuvent pas etre reduites en raison d'une absence pour maladie durant le premier mois d'incapacite. Au-dela, une reduction proportionnelle est possible (art. 329b CO). En cas de licenciement, les vacances doivent en principe etre prises pendant le delai de conge, sauf si cela est deraisonnable (recherche d'emploi).",
+      "articles": [
+        { "ref": "CO 329a", "titre": "Duree des vacances", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_329_a" },
+        { "ref": "CO 329c", "titre": "Fixation des vacances", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_329_c" },
+        { "ref": "CO 329d", "titre": "Salaire afferent aux vacances", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_329_d" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 4A_434/2014", "resume": "L'indemnisation des vacances non prises n'est admise qu'a la fin des rapports de travail, pas pendant le contrat." },
+        { "ref": "TF 4A_117/2017", "resume": "L'employeur ne peut pas imposer la totalite des vacances pendant le delai de conge si le travailleur a besoin de temps pour chercher un emploi." }
+      ],
+      "modeleLettre": "Objet : Demande de solde de vacances\n\nMadame, Monsieur,\n\nA la fin de mes rapports de travail le [date], il me reste [nombre] jours de vacances non pris.\n\nConformement a l'art. 329d al. 2 CO, je vous demande de m'indemniser ce solde dans le decompte final de salaire.\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "Syndicat Unia", "tel": "0848 606 606", "url": "https://www.unia.ch", "canton": "VD" },
+        { "nom": "Syndicat Unia Geneve", "tel": "022 949 13 00", "url": "https://www.unia.ch/fr/region/geneve", "canton": "GE" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CO etat 2025-01-01"
+  },
+  {
+    "id": "travail_grossesse",
+    "domaine": "travail",
+    "sousDomaine": "protection",
+    "tags": ["grossesse", "maternite", "protection", "conge", "allaitement"],
+    "questions": [
+      { "id": "q1", "text": "Situation ?", "options": ["licenciement pendant grossesse", "refus conge maternite", "discrimination", "amenagement poste"] },
+      { "id": "q2", "text": "Stade ?", "options": ["enceinte", "conge maternite", "retour apres conge"] },
+      { "id": "q3", "text": "L'employeur est-il informe ?", "options": ["oui", "non"] },
+      { "id": "q4", "text": "Taille de l'entreprise ?", "options": ["<10 employes", "10-50", ">50"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "La travailleuse enceinte beneficie d'une protection absolue contre le licenciement pendant toute la grossesse et les 16 semaines suivant l'accouchement (art. 336c al. 1 let. c CO). Un conge notifie pendant cette periode est nul. Le conge maternite est de 14 semaines minimum avec 80% du salaire (allocations APG, art. 16b-16d LAPG). Il est interdit d'employer une femme pendant les 8 semaines suivant l'accouchement (art. 35a al. 3 LTr). Les meres qui allaitent ont droit a des pauses payees (art. 60 OLT 1). La LEg interdit toute discrimination fondee sur la grossesse, notamment lors de l'embauche (art. 3 LEg). L'employeur doit amenager les conditions de travail pour proteger la sante de la femme enceinte (art. 35 LTr) : pas de travaux penibles ou dangereux, pas de travail de nuit apres la 8e semaine de grossesse.",
+      "articles": [
+        { "ref": "CO 336c", "titre": "Protection contre le licenciement — grossesse", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_336_c" },
+        { "ref": "LEg 3", "titre": "Interdiction de discriminer", "lien": "https://www.fedlex.admin.ch/eli/cc/1996/1498_1498_1498/fr#art_3" },
+        { "ref": "LTr 35a", "titre": "Protection de la maternite", "lien": "https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/fr#art_35_a" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 4A_400/2019", "resume": "Conge nul notifie pendant la grossesse meme si l'employeur ignorait l'etat de grossesse au moment du licenciement." },
+        { "ref": "TF 4A_59/2019", "resume": "Discrimination a l'embauche : l'employeur ne peut pas poser de questions sur un projet de grossesse lors de l'entretien d'embauche." }
+      ],
+      "modeleLettre": "Objet : Contestation du licenciement — protection maternite\n\nRecommande\n\nMadame, Monsieur,\n\nVous m'avez notifie un licenciement le [date]. Or, a cette date, j'etais enceinte, comme l'atteste le certificat medical joint.\n\nConformement a l'art. 336c al. 1 let. c CO, ce licenciement est nul car notifie pendant la grossesse.\n\nJe vous demande de confirmer la nullite de ce conge et la poursuite de mes rapports de travail.\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "Bureau de l'egalite VD", "url": "https://www.vd.ch/themes/etat-droit-finances/egalite", "canton": "VD" },
+        { "nom": "Bureau de l'egalite GE", "url": "https://www.ge.ch/organisation/service-egalite", "canton": "GE" },
+        { "nom": "Syndicat Unia", "tel": "0848 606 606", "url": "https://www.unia.ch", "canton": "VD" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CO/LEg/LTr etat 2025-01-01"
+  },
+  {
+    "id": "travail_accident",
+    "domaine": "travail",
+    "sousDomaine": "accident",
+    "tags": ["accident", "travail", "LAA", "declaration", "indemnite"],
+    "questions": [
+      { "id": "q1", "text": "Type d'accident ?", "options": ["accident professionnel", "accident trajet", "maladie professionnelle"] },
+      { "id": "q2", "text": "L'employeur a-t-il declare l'accident ?", "options": ["oui", "non", "je ne sais pas"] },
+      { "id": "q3", "text": "Duree d'incapacite ?", "options": ["<3 jours", "3 jours - 1 mois", ">1 mois"] },
+      { "id": "q4", "text": "Assurance LAA connue ?", "options": ["oui", "non"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Tout travailleur salarie est obligatoirement assure contre les accidents professionnels et, s'il travaille au moins 8 heures par semaine, contre les accidents non professionnels (art. 6 LAA). L'employeur doit declarer l'accident a l'assureur LAA dans les plus brefs delais (art. 45 LAA). Les prestations comprennent : la prise en charge des frais medicaux a 100%, une indemnite journaliere de 80% du salaire des le 3e jour d'incapacite (art. 16-17 LAA), une rente d'invalidite si l'incapacite est durable (art. 18 LAA), et une indemnite pour atteinte a l'integrite (IPAI) en cas de sequelles permanentes (art. 24-25 LAA). Les 2 premiers jours sont a la charge de l'employeur. L'accident de trajet est couvert s'il survient sur le chemin le plus direct entre le domicile et le lieu de travail.",
+      "articles": [
+        { "ref": "LAA 6", "titre": "Champ d'application — personnes assurees", "lien": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr#art_6" },
+        { "ref": "LAA 16", "titre": "Indemnite journaliere", "lien": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr#art_16" },
+        { "ref": "LAA 45", "titre": "Declaration de l'accident", "lien": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr#art_45" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 8C_816/2009", "resume": "Un accident survenu lors d'un detour raisonnable sur le chemin du travail (arret courses rapides) reste couvert comme accident de trajet." },
+        { "ref": "TF 8C_62/2019", "resume": "Le refus de l'assureur de reconnaitre un accident doit etre conteste par opposition dans les 30 jours." }
+      ],
+      "modeleLettre": "Objet : Declaration d'accident de travail\n\nMadame, Monsieur,\n\nJe vous informe avoir subi un accident [professionnel / de trajet] le [date] a [lieu].\n\nCirconstances : [description]\n\nJe vous prie de proceder a la declaration aupres de l'assurance LAA conformement a l'art. 45 LAA.\n\nPieces jointes : certificat medical.\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "SUVA (Caisse nationale d'assurance)", "tel": "0848 820 820", "url": "https://www.suva.ch", "canton": "VD" },
+        { "nom": "Inspection du travail VD", "url": "https://www.vd.ch/themes/economie/travail/conditions-de-travail", "canton": "VD" },
+        { "nom": "Inspection du travail GE", "url": "https://www.ge.ch/organisation/office-cantonal-inspection-relations-travail-ocirt", "canton": "GE" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "LAA etat 2025-01-01"
+  },
+  {
+    "id": "travail_contrat_oral",
+    "domaine": "travail",
+    "sousDomaine": "contrat",
+    "tags": ["contrat", "oral", "verbal", "preuve", "travail au noir"],
+    "questions": [
+      { "id": "q1", "text": "Avez-vous un contrat ecrit ?", "options": ["non, rien", "email/SMS confirmant", "contrat partiel"] },
+      { "id": "q2", "text": "Combien de temps avez-vous travaille ?", "options": ["<1 mois", "1-6 mois", ">6 mois"] },
+      { "id": "q3", "text": "Comment etes-vous paye ?", "options": ["virement", "especes", "pas paye"] },
+      { "id": "q4", "text": "Charges sociales prelevees ?", "options": ["oui", "non", "je ne sais pas"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "En droit suisse, le contrat de travail n'exige aucune forme particuliere et peut etre conclu oralement (art. 320 al. 1 CO). Meme le contrat de travail conclu tacitement (par comportement) est valable : le fait de travailler pour quelqu'un qui l'accepte suffit a creer un contrat de travail avec toutes les obligations legales (art. 320 al. 2 CO). L'employeur qui ne declare pas ses employes (travail au noir) s'expose a des sanctions administratives et penales (LTN), mais le travailleur conserve tous ses droits (salaire, assurances, protection). En cas de litige, le travailleur peut prouver l'existence du contrat par tous moyens : temoignages, messages, virements, photos. Si aucun salaire n'a ete convenu, le salaire usuel de la branche s'applique (art. 322 al. 1 CO).",
+      "articles": [
+        { "ref": "CO 320", "titre": "Contrat individuel de travail — forme", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_320" },
+        { "ref": "CO 322", "titre": "Salaire — principe", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_322" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 4A_200/2015", "resume": "Le contrat de travail oral est pleinement valable. Le travailleur au noir conserve tous ses droits et peut reclamer le salaire convenu." },
+        { "ref": "TF 4A_53/2021", "resume": "En l'absence de contrat ecrit, la preuve peut etre apportee par SMS, temoignages et tout autre moyen." }
+      ],
+      "modeleLettre": "Objet : Reclamation de salaire — contrat de travail\n\nRecommande\n\nMadame, Monsieur,\n\nJ'ai travaille pour votre compte du [date] au [date] en qualite de [fonction]. Bien qu'aucun contrat ecrit n'ait ete signe, un contrat de travail existe au sens de l'art. 320 CO.\n\nLe salaire convenu de CHF [montant] par [heure/mois] ne m'a pas ete verse pour la periode [mois].\n\nJe vous mets en demeure de proceder au paiement dans un delai de 10 jours.\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "Syndicat Unia", "tel": "0848 606 606", "url": "https://www.unia.ch", "canton": "VD" },
+        { "nom": "Syndicat SIT Geneve", "tel": "022 818 03 00", "url": "https://www.sit-syndicat.ch", "canton": "GE" },
+        { "nom": "Tribunal des prud'hommes Geneve", "url": "https://justice.ge.ch/fr/institution/tribunal-des-prudhommes", "canton": "GE" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CO etat 2025-01-01"
+  }
+]

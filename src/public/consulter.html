@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JusticeBot — Consultation</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><a href="/" style="text-decoration:none;color:var(--accent)">JusticeBot</a></h1>
+    </header>
+
+    <div class="progress-bar"><div class="fill" id="progress" style="width:0%"></div></div>
+
+    <div class="question-card" id="questionCard">
+      <h2 id="questionText">Chargement...</h2>
+      <div class="options" id="options"></div>
+      <div class="nav-buttons">
+        <button class="btn btn-outline" id="prevBtn" onclick="prevQuestion()" disabled>Precedent</button>
+        <button class="btn" id="nextBtn" onclick="nextQuestion()" disabled>Suivant</button>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise.
+    </div>
+
+    <footer>&copy; 2026 JusticeBot</footer>
+  </div>
+
+  <script src="/app.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const domaine = params.get('domaine');
+    if (domaine) initConsultation(domaine);
+    else window.location.href = '/';
+  </script>
+</body>
+</html>

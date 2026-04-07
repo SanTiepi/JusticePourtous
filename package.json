@@ -1,0 +1,13 @@
+{
+  "name": "justicebot",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "JusticeBot — Vos droits en 5 clics. Gratuit. Anonyme.",
+  "main": "src/server.mjs",
+  "scripts": {
+    "start": "node src/server.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "keywords": ["justice", "droit", "suisse", "juridique"],
+  "license": "UNLICENSED"
+}

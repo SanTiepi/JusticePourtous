@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JusticeBot — Espace Premium</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><a href="/" style="text-decoration:none;color:var(--accent)">JusticeBot</a></h1>
+      <p>Espace Premium</p>
+    </header>
+
+    <div id="noSession">
+      <div class="card" style="text-align:center">
+        <h3>Analyse juridique personnalisee</h3>
+        <p style="color:var(--text-muted);margin:1rem 0">CHF 50 — wallet de CHF 30 (200-1100 requetes)</p>
+        <button class="btn btn-full" onclick="acheter()">Acheter un wallet</button>
+      </div>
+    </div>
+
+    <div id="session" class="hidden">
+      <div class="card wallet-display">
+        <div class="label">Solde restant</div>
+        <div class="solde" id="solde">CHF 0.00</div>
+      </div>
+
+      <div class="card">
+        <h3>Analyser votre situation</h3>
+        <p style="color:var(--text-muted);margin-bottom:1rem">Cout estime : CHF 0.03-0.10</p>
+        <textarea id="question" placeholder="Decrivez votre situation juridique..." style="width:100%;min-height:100px;background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:0.75rem;font-family:Inter,sans-serif;resize:vertical"></textarea>
+        <button class="btn btn-full" style="margin-top:0.75rem" onclick="analyserQuestion()">Analyser</button>
+      </div>
+
+      <div id="reponseIA" class="card hidden">
+        <h3>Reponse</h3>
+        <div id="reponseTexte"></div>
+      </div>
+
+      <div class="card">
+        <h3>Historique</h3>
+        <div id="historique"><p style="color:var(--text-muted)">Aucune action</p></div>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise.
+    </div>
+
+    <footer>&copy; 2026 JusticeBot</footer>
+  </div>
+
+  <script>
+    let sessionCode = localStorage.getItem('jb_session');
+
+    async function acheter() {
+      const res = await fetch('/api/premium/acheter', { method: 'POST' });
+      const data = await res.json();
+      sessionCode = data.sessionCode;
+      localStorage.setItem('jb_session', sessionCode);
+      showSession();
+      refreshCredits();
+    }
+
+    async function refreshCredits() {
+      const res = await fetch(`/api/premium/credits?session=${sessionCode}`);
+      const data = await res.json();
+      if (data.error) { localStorage.removeItem('jb_session'); sessionCode = null; showNoSession(); return; }
+      document.getElementById('solde').textContent = `CHF ${(data.solde / 100).toFixed(2)}`;
+      const hist = document.getElementById('historique');
+      if (data.historique && data.historique.length) {
+        hist.innerHTML = data.historique.map(h =>
+          `<div class="service-item"><span class="nom">${h.action}</span><span>${h.montant > 0 ? '+' : ''}CHF ${(h.montant / 100).toFixed(2)}</span></div>`
+        ).join('');
+      }
+    }
+
+    async function analyserQuestion() {
+      const q = document.getElementById('question').value;
+      if (!q.trim()) return;
+      const res = await fetch('/api/premium/analyser', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ session: sessionCode, question: q })
+      });
+      const data = await res.json();
+      const box = document.getElementById('reponseIA');
+      const txt = document.getElementById('reponseTexte');
+      if (data.error) { txt.textContent = data.error; }
+      else { txt.textContent = data.reponse; }
+      box.classList.remove('hidden');
+      refreshCredits();
+    }
+
+    function showSession() { document.getElementById('noSession').classList.add('hidden'); document.getElementById('session').classList.remove('hidden'); }
+    function showNoSession() { document.getElementById('noSession').classList.remove('hidden'); document.getElementById('session').classList.add('hidden'); }
+
+    if (sessionCode) { showSession(); refreshCredits(); }
+  </script>
+</body>
+</html>

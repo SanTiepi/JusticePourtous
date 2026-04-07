@@ -1,0 +1,353 @@
+[
+  {
+    "id": "etranger_permis_b_c",
+    "domaine": "etrangers",
+    "sousDomaine": "permis",
+    "tags": ["permis", "B", "C", "sejour", "etablissement", "conditions"],
+    "questions": [
+      { "id": "q1", "text": "Quel permis avez-vous ?", "options": ["permis B", "permis L", "permis F", "aucun"] },
+      { "id": "q2", "text": "Depuis combien de temps en Suisse ?", "options": ["<5 ans", "5-10 ans", ">10 ans"] },
+      { "id": "q3", "text": "Nationalite ?", "options": ["UE/AELE", "pays tiers", "refugie reconnu"] },
+      { "id": "q4", "text": "Casier judiciaire ?", "options": ["vierge", "infraction mineure", "condamnation"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Le permis C (etablissement) est accorde en principe apres 10 ans de sejour regulier en Suisse, dont 5 ans au cours des dernieres annees (art. 34 al. 2 LEI). Pour les ressortissants de certains pays (UE/AELE, USA, Canada), le delai est reduit a 5 ans (art. 34 al. 4 LEI). Conditions : integration reussie (respect de la securite et de l'ordre publics, respect des valeurs constitutionnelles, competences linguistiques, participation a la vie economique). Les competences linguistiques requises sont le niveau A2 a l'oral et A1 a l'ecrit dans la langue du lieu de domicile (art. 58a LEI). Le permis C est renouvelable automatiquement et confere un droit quasi illimite de sejour et de travail. Le passage de B a C peut etre avance en cas d'integration exemplaire (art. 34 al. 4 LEI). Le permis C peut etre revoque en cas de condamnation penale grave ou de dependance a l'aide sociale (art. 63 LEI).",
+      "articles": [
+        { "ref": "LEI 34", "titre": "Autorisation d'etablissement (permis C)", "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_34" },
+        { "ref": "LEI 58a", "titre": "Criteres d'integration", "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_58_a" },
+        { "ref": "LEI 63", "titre": "Revocation de l'autorisation d'etablissement", "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_63" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 2C_175/2020", "resume": "Le recours a l'aide sociale pendant une periode limitee (maladie, chomage) ne justifie pas a lui seul le refus du permis C." },
+        { "ref": "TF 2C_846/2018", "resume": "Les exigences linguistiques doivent etre proportionnees a l'age et a la situation personnelle du requerant." }
+      ],
+      "modeleLettre": "Objet : Demande de permis d'etablissement (permis C)\n\nAu Service [cantonal] de la population,\n\nMadame, Monsieur,\n\nTitulaire d'un permis B depuis le [date], je remplis les conditions de l'art. 34 LEI et sollicite l'octroi d'un permis d'etablissement (C).\n\n- Duree de sejour en Suisse : [X] ans\n- Integration : [description]\n- Competences linguistiques : [niveau atteste]\n- Situation professionnelle : [emploi stable]\n- Casier judiciaire : vierge\n\nPieces jointes : [attestation employeur, certificat de langue, extrait casier]\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "Service de la population VD (SPOP)", "url": "https://www.vd.ch/themes/population/population-etrangere", "canton": "VD" },
+        { "nom": "Office cantonal de la population et des migrations GE (OCPM)", "url": "https://www.ge.ch/organisation/office-cantonal-population-migrations-ocpm", "canton": "GE" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "LEI etat 2025-01-01"
+  },
+  {
+    "id": "etranger_naturalisation",
+    "domaine": "etrangers",
+    "sousDomaine": "naturalisation",
+    "tags": ["naturalisation", "citoyennete", "suisse", "passeport", "conditions"],
+    "questions": [
+      { "id": "q1", "text": "Type de naturalisation ?", "options": ["ordinaire", "facilitee (conjoint)", "reintegration"] },
+      { "id": "q2", "text": "Duree de sejour en Suisse ?", "options": ["<10 ans", "10-15 ans", ">15 ans"] },
+      { "id": "q3", "text": "Permis actuel ?", "options": ["permis C", "permis B", "autre"] },
+      { "id": "q4", "text": "Niveau de francais ?", "options": ["A2-B1", "B2+", "je ne sais pas"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "La naturalisation ordinaire requiert 10 ans de sejour en Suisse (les annees entre 8 et 18 ans comptent double, art. 9 LN) et le permis C (art. 9 al. 1 let. a LN). Le requerant doit etre integre, se conformer a l'ordre juridique, ne pas compromettre la securite de la Suisse (art. 11-12 LN). Les exigences linguistiques sont de B1 a l'oral et A2 a l'ecrit dans la langue du lieu de domicile. La procedure comprend trois niveaux : federal (SEM), cantonal et communal. La duree varie de 1 a 4 ans selon le canton. La naturalisation facilitee (art. 21 LN) est possible pour le conjoint etranger d'un Suisse apres 5 ans de residence et 3 ans de mariage. Les frais varient : CHF 100 (federation) + frais cantonaux et communaux (CHF 500-3'000). La double nationalite est autorisee. Le requerant ne doit pas etre dependant de l'aide sociale et ne pas avoir de poursuites en cours.",
+      "articles": [
+        { "ref": "LN 9", "titre": "Conditions formelles — naturalisation ordinaire", "lien": "https://www.fedlex.admin.ch/eli/cc/2016/404/fr#art_9" },
+        { "ref": "LN 11", "titre": "Conditions materielles — integration", "lien": "https://www.fedlex.admin.ch/eli/cc/2016/404/fr#art_11" },
+        { "ref": "LN 12", "titre": "Criteres d'integration", "lien": "https://www.fedlex.admin.ch/eli/cc/2016/404/fr#art_12" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 1D_1/2021", "resume": "Le refus de naturalisation pour absence d'integration doit etre motive concretement ; un simple sentiment subjectif de la commune ne suffit pas." },
+        { "ref": "TF 1D_5/2018", "resume": "Le port du voile ne constitue pas a lui seul un motif de refus de naturalisation (liberte religieuse)." }
+      ],
+      "modeleLettre": "",
+      "services": [
+        { "nom": "Service de la population VD (SPOP)", "url": "https://www.vd.ch/themes/population/naturalisation", "canton": "VD" },
+        { "nom": "Office cantonal de la population et des migrations GE", "url": "https://www.ge.ch/organisation/office-cantonal-population-migrations-ocpm", "canton": "GE" },
+        { "nom": "SEM (Secretariat d'Etat aux migrations)", "url": "https://www.sem.admin.ch", "canton": "VD" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "LN etat 2025-01-01"
+  },
+  {
+    "id": "etranger_regroupement",
+    "domaine": "etrangers",
+    "sousDomaine": "regroupement",
+    "tags": ["regroupement", "familial", "conjoint", "enfant", "delai"],
+    "questions": [
+      { "id": "q1", "text": "Qui voulez-vous faire venir ?", "options": ["conjoint", "enfant", "parent", "autre membre famille"] },
+      { "id": "q2", "text": "Votre statut ?", "options": ["suisse", "permis C", "permis B", "permis F"] },
+      { "id": "q3", "text": "La personne est de quelle nationalite ?", "options": ["UE/AELE", "pays tiers"] },
+      { "id": "q4", "text": "Logement disponible ?", "options": ["oui, conforme", "en recherche", "trop petit"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Le regroupement familial permet de faire venir sa famille en Suisse. Les conditions varient selon le statut du requerant : (1) Citoyen suisse : droit au regroupement pour le conjoint et les enfants de moins de 18 ans (art. 42 LEI), sans condition de delai ni de revenu. (2) Titulaire permis C : droit au regroupement pour conjoint et enfants <18 ans (art. 43 LEI), logement conforme requis. (3) Titulaire permis B : regroupement possible pour conjoint et enfants <18 ans (art. 44 LEI), conditions strictes : logement conforme, pas de dependance a l'aide sociale, vie commune. (4) Permis F : tres restrictif, delai d'attente de 3 ans (art. 85 al. 7 LEI). Le delai pour demander le regroupement est de 5 ans pour le conjoint et les enfants de plus de 12 ans, 1 an pour les enfants de moins de 12 ans (art. 47 LEI). Passe ce delai, le regroupement peut etre refuse.",
+      "articles": [
+        { "ref": "LEI 42", "titre": "Regroupement familial — membres de la famille d'un ressortissant suisse", "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_42" },
+        { "ref": "LEI 43", "titre": "Regroupement familial — conjoint et enfants (permis C)", "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_43" },
+        { "ref": "LEI 44", "titre": "Regroupement familial — conjoint et enfants (permis B)", "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_44" },
+        { "ref": "LEI 47", "titre": "Delai pour le regroupement familial", "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_47" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 2C_276/2021", "resume": "Le depassement du delai de regroupement peut etre excuse si le requerant prouve des raisons familiales majeures." },
+        { "ref": "TF 2C_781/2017", "resume": "Le logement doit etre conforme aux besoins de la famille mais les exigences ne doivent pas etre disproportionnees." }
+      ],
+      "modeleLettre": "Objet : Demande de regroupement familial\n\nAu Service [cantonal] de la population,\n\nMadame, Monsieur,\n\nTitulaire d'un permis [type] (n° [numero]), je sollicite le regroupement familial pour :\n\n- [Nom, prenom, date de naissance, lien de parente]\n\nConformement a l'art. [42/43/44] LEI, je remplis les conditions suivantes :\n- Logement : [adresse, nombre de pieces]\n- Revenus : CHF [montant] / mois\n- Pas de dependance a l'aide sociale\n\nPieces jointes : [acte de mariage, actes de naissance, contrat de bail, fiches de salaire]\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "Service de la population VD (SPOP)", "url": "https://www.vd.ch/themes/population/population-etrangere", "canton": "VD" },
+        { "nom": "OCPM Geneve", "url": "https://www.ge.ch/organisation/office-cantonal-population-migrations-ocpm", "canton": "GE" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "LEI etat 2025-01-01"
+  },
+  {
+    "id": "etranger_renvoi",
+    "domaine": "etrangers",
+    "sousDomaine": "renvoi",
+    "tags": ["renvoi", "expulsion", "recours", "interdiction entree"],
+    "questions": [
+      { "id": "q1", "text": "Type de decision ?", "options": ["renvoi", "expulsion penale", "interdiction d'entree", "refus renouvellement"] },
+      { "id": "q2", "text": "Avez-vous recu une decision ecrite ?", "options": ["oui", "non, orale seulement"] },
+      { "id": "q3", "text": "Delai de recours ?", "options": ["<30 jours", "expire", "je ne sais pas"] },
+      { "id": "q4", "text": "Attaches en Suisse ?", "options": ["conjoint/enfant suisse", "longue duree de sejour", "aucune particuliere"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Le renvoi (art. 64 LEI) est ordonne lorsqu'une autorisation est refusee ou revoquee. Il doit respecter le principe de proportionnalite et la CEDH (art. 8 CEDH, droit a la vie privee et familiale). L'expulsion penale (art. 66a CP) est prononcee par le juge penal pour certaines infractions graves et est en principe obligatoire, sauf clause de rigueur (art. 66a al. 2 CP). Le recours contre une decision de renvoi doit etre depose dans les 30 jours aupres du tribunal cantonal competent (art. 64 al. 3 LEI). Le recours a un effet suspensif en principe. Des mesures de contrainte (detention administrative) peuvent etre ordonnees pour assurer l'execution du renvoi (art. 76 LEI), limitees a 6 mois (18 mois maximum). Le renvoi est impossible vers un pays ou la personne risque la torture ou des traitements inhumains (art. 25 al. 3 Cst., non-refoulement).",
+      "articles": [
+        { "ref": "LEI 64", "titre": "Decision de renvoi", "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_64" },
+        { "ref": "CP 66a", "titre": "Expulsion obligatoire", "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_66_a" },
+        { "ref": "LEI 76", "titre": "Detention en vue du renvoi", "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_76" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 2C_13/2018", "resume": "Le renvoi d'un parent etranger d'un enfant suisse viole l'art. 8 CEDH si le lien familial est effectif et etroit." },
+        { "ref": "ATF 145 IV 55", "resume": "La clause de rigueur de l'art. 66a al. 2 CP doit etre appliquee restrictivement mais ne peut pas etre ignoree." }
+      ],
+      "modeleLettre": "Objet : Recours contre la decision de renvoi\n\nAu Tribunal [cantonal/TAF],\n\nMadame, Monsieur le/la Juge,\n\nJe forme recours contre la decision de [autorite] du [date] ordonnant mon renvoi de Suisse.\n\nMotifs :\n1. Violation de l'art. 8 CEDH : [attaches familiales en Suisse]\n2. Violation du principe de proportionnalite : [duree de sejour, integration]\n3. [Autres motifs]\n\nJe demande l'effet suspensif du recours (art. 55 PA).\n\nVeuillez agreer l'expression de ma haute consideration.\n\n[Signature]",
+      "services": [
+        { "nom": "Consultation juridique pour etrangers VD", "url": "https://www.csp.ch/vaud/prestations/etrangers", "canton": "VD" },
+        { "nom": "Centre social protestant GE", "url": "https://www.csp.ch/geneve", "canton": "GE" },
+        { "nom": "Caritas Suisse (aide migrants)", "url": "https://www.caritas.ch", "canton": "VD" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "LEI/CP etat 2025-01-01"
+  },
+  {
+    "id": "etranger_permis_travail",
+    "domaine": "etrangers",
+    "sousDomaine": "travail",
+    "tags": ["permis", "travail", "emploi", "marche", "admission"],
+    "questions": [
+      { "id": "q1", "text": "Nationalite ?", "options": ["UE/AELE", "pays tiers"] },
+      { "id": "q2", "text": "Type de travail ?", "options": ["emploi fixe", "stagiaire", "independant", "detache"] },
+      { "id": "q3", "text": "Duree prevue ?", "options": ["<90 jours", "90 jours - 1 an", ">1 an"] },
+      { "id": "q4", "text": "L'employeur a-t-il fait des demarches ?", "options": ["oui", "non", "je ne sais pas"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "L'admission sur le marche du travail depend de la nationalite : (1) Ressortissants UE/AELE : liberte de circulation, droit de travailler avec simple annonce (accord ALCP). Pour les sejours >3 mois, un permis B UE/AELE est delivre sur presentation du contrat de travail. (2) Ressortissants de pays tiers : admission restrictive, soumise a des conditions strictes (art. 18-25 LEI) : priorite des travailleurs nationaux et UE, conditions de remuneration et de travail conformes aux usages, qualifications particulieres du travailleur (cadres, specialistes), contingents annuels. L'employeur doit demontrer qu'il n'a pas trouve de candidat sur le marche local (art. 21 LEI). Le travailleur independant doit prouver un interet economique pour la Suisse. Les stagiaires peuvent obtenir un permis dans le cadre d'accords bilateraux. Le travail au noir est sanctionne (LTN) tant pour l'employeur que pour le travailleur.",
+      "articles": [
+        { "ref": "LEI 18", "titre": "Admission en vue d'une activite lucrative", "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_18" },
+        { "ref": "LEI 21", "titre": "Priorite des travailleurs", "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_21" },
+        { "ref": "LEI 22", "titre": "Conditions de remuneration et de travail", "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_22" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 2C_116/2017", "resume": "Le refus d'un permis de travail est justifie si l'employeur n'a pas fait d'efforts suffisants pour recruter sur le marche local." },
+        { "ref": "TF 2C_1026/2015", "resume": "Les qualifications particulieres (art. 23 LEI) s'apprecient par rapport au marche du travail suisse, pas en termes absolus." }
+      ],
+      "modeleLettre": "",
+      "services": [
+        { "nom": "Service de l'emploi VD (SDE)", "url": "https://www.vd.ch/themes/economie/travail", "canton": "VD" },
+        { "nom": "Office cantonal de l'emploi GE (OCE)", "url": "https://www.ge.ch/organisation/office-cantonal-emploi-oce", "canton": "GE" },
+        { "nom": "SEM (Secretariat d'Etat aux migrations)", "url": "https://www.sem.admin.ch", "canton": "VD" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "LEI etat 2025-01-01"
+  },
+  {
+    "id": "etranger_asile_procedure",
+    "domaine": "etrangers",
+    "sousDomaine": "asile",
+    "tags": ["asile", "refugie", "procedure", "SEM", "audition"],
+    "questions": [
+      { "id": "q1", "text": "Etat de la procedure ?", "options": ["pas encore depose", "en attente", "decision negative", "decision positive"] },
+      { "id": "q2", "text": "Avez-vous un representant juridique ?", "options": ["oui", "non"] },
+      { "id": "q3", "text": "Motif de la demande ?", "options": ["persecution politique", "guerre", "persecution religieuse", "violence", "autre"] },
+      { "id": "q4", "text": "Procedure acceleree ou etendue ?", "options": ["acceleree", "etendue (transfere au canton)", "je ne sais pas"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "La procedure d'asile en Suisse est regie par la LAsi. Depuis 2019, la procedure restructuree prevoit : (1) une phase preparatoire dans un centre federal (enregistrement, examen Dublin), (2) une audition sur les motifs d'asile, (3) une decision. La procedure acceleree (majorite des cas) dure environ 140 jours dans un centre federal. Si le cas est complexe, il est transfere au canton (procedure etendue, ~1 an). Le requerant a droit a un representant juridique gratuit (art. 102f LAsi). La qualite de refugie est reconnue si la personne est persecutee en raison de sa race, religion, nationalite, appartenance a un groupe social ou opinions politiques (art. 3 LAsi). Le recours contre une decision negative doit etre depose dans les 7 jours ouvrables (acceleree) ou 30 jours (etendue) aupres du TAF (art. 108 LAsi). L'admission provisoire (permis F) est accordee si le renvoi est illicite, inexigible ou impossible (art. 83 LEI).",
+      "articles": [
+        { "ref": "LAsi 3", "titre": "Definition du refugie", "lien": "https://www.fedlex.admin.ch/eli/cc/1999/358/fr#art_3" },
+        { "ref": "LAsi 26", "titre": "Phase preparatoire", "lien": "https://www.fedlex.admin.ch/eli/cc/1999/358/fr#art_26" },
+        { "ref": "LAsi 108", "titre": "Delai de recours", "lien": "https://www.fedlex.admin.ch/eli/cc/1999/358/fr#art_108" }
+      ],
+      "jurisprudence": [
+        { "ref": "ATAF 2014/26", "resume": "Les personnes fuyant un conflit arme generalize ne remplissent pas automatiquement les conditions de refugie ; une persecution individuelle est requise." },
+        { "ref": "ATAF 2015/3", "resume": "Les victimes de violence domestique dans un pays ou l'Etat ne les protege pas peuvent etre reconnues comme refugiees (persecution liee au genre)." }
+      ],
+      "modeleLettre": "",
+      "services": [
+        { "nom": "Organisation suisse d'aide aux refugies (OSAR)", "tel": "031 370 75 75", "url": "https://www.osar.ch", "canton": "VD" },
+        { "nom": "Centre social protestant — secteur refugies", "url": "https://www.csp.ch/vaud/prestations/refugies", "canton": "VD" },
+        { "nom": "Caritas Geneve (aide migrants)", "url": "https://www.caritas-geneve.ch", "canton": "GE" },
+        { "nom": "Permanence juridique pour requerants d'asile", "url": "https://www.eper.ch", "canton": "VD" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "LAsi etat 2025-01-01"
+  },
+  {
+    "id": "etranger_sans_papiers_droits",
+    "domaine": "etrangers",
+    "sousDomaine": "sans-papiers",
+    "tags": ["sans-papiers", "droits", "travail", "illegale", "regularisation"],
+    "questions": [
+      { "id": "q1", "text": "Depuis combien de temps en Suisse ?", "options": ["<2 ans", "2-5 ans", "5-10 ans", ">10 ans"] },
+      { "id": "q2", "text": "Travaillez-vous ?", "options": ["oui, employe", "oui, independant", "non"] },
+      { "id": "q3", "text": "Enfants scolarises en Suisse ?", "options": ["oui", "non"] },
+      { "id": "q4", "text": "Avez-vous eu un permis auparavant ?", "options": ["oui, expire", "non, jamais"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Meme sans titre de sejour, les personnes sans papiers ont des droits fondamentaux en Suisse : (1) Le contrat de travail est valable meme sans permis ; le travailleur peut reclamer son salaire (art. 320 al. 2 CO, confirme par TF). (2) Les enfants ont droit a l'education (scolarisation obligatoire, art. 19 Cst.). (3) Acces aux soins d'urgence (art. 12 Cst., droit a l'aide d'urgence). (4) L'assurance maladie est obligatoire et les assureurs ne peuvent pas denoncer les sans-papiers (secret medical). L'operation « Papyrus » a Geneve (2017-2018) a permis la regularisation d'environ 3'000 personnes remplissant des criteres stricts : sejour continu de 5 ans (10 ans pour les familles), independance financiere, integration, casier vierge. D'autres cantons etudient des modeles similaires. La denonciation de sans-papiers par des services publics est un sujet debattu (certains cantons protegeant la confidentialite).",
+      "articles": [
+        { "ref": "CO 320", "titre": "Contrat de travail — validite meme sans permis", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_320" },
+        { "ref": "Cst 12", "titre": "Droit d'obtenir de l'aide dans des situations de detresse", "lien": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_12" },
+        { "ref": "LEI 30", "titre": "Derogation aux conditions d'admission — cas de rigueur", "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_30" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 4A_338/2014", "resume": "Le travailleur sans papiers a les memes droits que tout travailleur : salaire, heures supplementaires, protection contre le licenciement." },
+        { "ref": "ATF 136 I 285", "resume": "Le droit a l'aide d'urgence (art. 12 Cst.) s'applique a toute personne sur le territoire suisse, independamment de son statut." }
+      ],
+      "modeleLettre": "",
+      "services": [
+        { "nom": "Collectif de soutien aux sans-papiers VD", "url": "https://www.sans-papiers-vaud.ch", "canton": "VD" },
+        { "nom": "Centre de contact Suisses-Immigres GE (CCSI)", "tel": "022 731 02 36", "url": "https://www.ccsi.ch", "canton": "GE" },
+        { "nom": "Syndicat SIT Geneve (permanence sans-papiers)", "tel": "022 818 03 00", "url": "https://www.sit-syndicat.ch", "canton": "GE" },
+        { "nom": "Centre social protestant VD", "url": "https://www.csp.ch", "canton": "VD" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CO/Cst/LEI etat 2025-01-01"
+  },
+  {
+    "id": "etranger_violence_permis",
+    "domaine": "etrangers",
+    "sousDomaine": "violence",
+    "tags": ["violence", "permis", "conjoint", "separation", "poursuite sejour"],
+    "questions": [
+      { "id": "q1", "text": "Votre permis depend-il de votre conjoint ?", "options": ["oui", "non", "je ne sais pas"] },
+      { "id": "q2", "text": "Type de violence ?", "options": ["physique", "psychologique", "economique", "sexuelle"] },
+      { "id": "q3", "text": "Avez-vous quitte le domicile ?", "options": ["oui", "non, j'ai peur de perdre mon permis"] },
+      { "id": "q4", "text": "Duree du mariage ?", "options": ["<3 ans", "3-5 ans", ">5 ans"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "L'art. 50 LEI protege le conjoint etranger victime de violence conjugale : meme apres la dissolution du mariage ou de la communaute conjugale, le droit au sejour est maintenu si (1) l'union conjugale a dure au moins 3 ans et que l'integration est reussie (art. 50 al. 1 let. a LEI), OU si (2) la poursuite du sejour s'impose pour des raisons personnelles majeures, notamment la violence conjugale (art. 50 al. 1 let. b LEI). La violence doit etre rendue vraisemblable (certificats medicaux, rapports de police, attestations de foyers), pas prouvee de maniere absolue. La violence psychologique systematique est reconnue comme raison personnelle majeure. Le conjoint victime peut se separer SANS perdre son permis. En cas d'urgence, les centres d'aide LAVI offrent un hebergement et un accompagnement confidentiel. Le permis est prolonge d'annee en annee le temps que la situation se clarifie.",
+      "articles": [
+        { "ref": "LEI 50", "titre": "Dissolution de la famille — poursuite du sejour", "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_50" },
+        { "ref": "LEI 77", "titre": "Protection des victimes de violence", "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_77" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 2C_777/2015", "resume": "La violence conjugale psychologique repetee (isolement, controle, humiliations) constitue une raison personnelle majeure au sens de l'art. 50 al. 1 let. b LEI." },
+        { "ref": "TF 2C_1085/2017", "resume": "La victime de violence n'a pas a prouver la violence au-dela du doute ; la vraisemblance suffit (temoignages, rapports medicaux)." }
+      ],
+      "modeleLettre": "",
+      "services": [
+        { "nom": "Centre LAVI Vaud", "tel": "021 631 03 00", "url": "https://www.centrelavi.ch", "canton": "VD" },
+        { "nom": "Centre LAVI Geneve", "tel": "022 320 01 02", "url": "https://www.centrelavi-ge.ch", "canton": "GE" },
+        { "nom": "Solidarite Femmes", "tel": "0800 110 110", "url": "https://www.solidaritefemmes.ch", "canton": "VD" },
+        { "nom": "Centre de contact Suisses-Immigres GE", "tel": "022 731 02 36", "url": "https://www.ccsi.ch", "canton": "GE" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "LEI etat 2025-01-01"
+  },
+  {
+    "id": "etranger_aide_urgence",
+    "domaine": "etrangers",
+    "sousDomaine": "aide",
+    "tags": ["aide urgence", "detresse", "constitutionnel", "NEM", "debout"],
+    "questions": [
+      { "id": "q1", "text": "Votre situation ?", "options": ["requete asile rejetee", "sans papiers", "permis expire", "autre"] },
+      { "id": "q2", "text": "Avez-vous acces a un logement ?", "options": ["oui", "non"] },
+      { "id": "q3", "text": "Avez-vous acces a de la nourriture ?", "options": ["oui", "difficilement", "non"] },
+      { "id": "q4", "text": "Avez-vous besoin de soins medicaux ?", "options": ["oui, urgents", "oui, non urgents", "non"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "L'art. 12 de la Constitution federale garantit a toute personne en situation de detresse le droit d'obtenir de l'aide. Ce droit est absolu et s'applique independamment du statut de sejour (ATF 131 I 166). L'aide d'urgence comprend : un hebergement de base, la nourriture, les vetements et les soins medicaux d'urgence. Elle est versee en nature (pas en especes) par le canton de sejour. Les requerants d'asile deboutes (NEM) y ont droit. Le montant est tres modeste (environ CHF 8-12/jour selon les cantons). L'aide d'urgence n'est pas l'aide sociale : elle couvre uniquement le minimum vital absolu. La personne doit se presenter regulierement aupres des autorites. Le refus d'accorder l'aide d'urgence peut faire l'objet d'un recours au tribunal cantonal puis au Tribunal federal. Les enfants beneficient d'une protection renforcee.",
+      "articles": [
+        { "ref": "Cst 12", "titre": "Droit d'obtenir de l'aide dans des situations de detresse", "lien": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_12" },
+        { "ref": "LAsi 82", "titre": "Aide sociale et aide d'urgence", "lien": "https://www.fedlex.admin.ch/eli/cc/1999/358/fr#art_82" }
+      ],
+      "jurisprudence": [
+        { "ref": "ATF 131 I 166", "resume": "L'art. 12 Cst. garantit un droit constitutionnel justiciable a l'aide d'urgence, independamment de la nationalite ou du statut de sejour." },
+        { "ref": "ATF 135 I 119", "resume": "L'aide d'urgence doit etre accordee sans condition de cooperation a l'execution du renvoi ; le droit a la dignite humaine est inconditionnel." }
+      ],
+      "modeleLettre": "Objet : Demande d'aide d'urgence (art. 12 Cst.)\n\nAu Service [cantonal] de l'aide sociale / de l'asile,\n\nMadame, Monsieur,\n\nJe me trouve dans une situation de detresse et sollicite l'aide d'urgence garantie par l'art. 12 de la Constitution federale.\n\nMa situation :\n- [Sans hebergement / sans nourriture / besoin de soins medicaux]\n\nConformement a la jurisprudence du Tribunal federal (ATF 131 I 166), ce droit est inconditionnel.\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature ou identification]",
+      "services": [
+        { "nom": "EVAM (Etablissement vaudois d'accueil des migrants)", "tel": "021 557 07 07", "url": "https://www.evam.ch", "canton": "VD" },
+        { "nom": "Hospice general Geneve", "tel": "022 420 52 00", "url": "https://www.hospicegeneral.ch", "canton": "GE" },
+        { "nom": "Medecins Sans Frontieres Suisse", "url": "https://www.msf.ch", "canton": "VD" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "Cst/LAsi etat 2025-01-01"
+  },
+  {
+    "id": "etranger_recours_renvoi",
+    "domaine": "etrangers",
+    "sousDomaine": "recours",
+    "tags": ["recours", "TAF", "renvoi", "delai", "effet suspensif"],
+    "questions": [
+      { "id": "q1", "text": "Quelle decision contestez-vous ?", "options": ["refus d'asile", "renvoi", "refus de permis", "revocation de permis"] },
+      { "id": "q2", "text": "Delai de recours ?", "options": ["<7 jours", "7-30 jours", "expire", "je ne sais pas"] },
+      { "id": "q3", "text": "Avez-vous un avocat ?", "options": ["oui", "non", "je n'ai pas les moyens"] },
+      { "id": "q4", "text": "Avez-vous de nouveaux elements ?", "options": ["oui", "non"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Les decisions en matiere d'asile et de droit des etrangers peuvent faire l'objet d'un recours au Tribunal administratif federal (TAF). En matiere d'asile, le delai est de 7 jours ouvrables en procedure acceleree et 30 jours en procedure etendue (art. 108 LAsi). En droit des etrangers (permis), le recours cantonal est d'abord exerce dans les 30 jours, puis le recours au Tribunal federal dans les 30 jours (art. 100 LTF). L'assistance judiciaire gratuite (avocat commis d'office) est accordee si le recours n'est pas voue a l'echec et que le requerant est indigent (art. 65 PA). Le recours a generalement un effet suspensif (le renvoi ne peut pas etre execute pendant la procedure), sauf decision contraire du tribunal. Le memoire de recours doit etre motive en fait et en droit. Les nouveaux elements (novae) sont en principe admis devant le TAF mais exclus devant le TF.",
+      "articles": [
+        { "ref": "LAsi 108", "titre": "Delai de recours en matiere d'asile", "lien": "https://www.fedlex.admin.ch/eli/cc/1999/358/fr#art_108" },
+        { "ref": "LTAF 31", "titre": "Competence du TAF", "lien": "https://www.fedlex.admin.ch/eli/cc/2006/352/fr#art_31" },
+        { "ref": "PA 65", "titre": "Assistance judiciaire", "lien": "https://www.fedlex.admin.ch/eli/cc/1969/737_757_755/fr#art_65" }
+      ],
+      "jurisprudence": [
+        { "ref": "ATAF 2014/1", "resume": "Le TAF peut accorder l'effet suspensif provisoire dans les 24 heures en cas de risque de renvoi imminent." },
+        { "ref": "TF 2C_200/2017", "resume": "L'assistance judiciaire doit etre accordee lorsque le recours souleve des questions juridiques serieuses, meme si les chances de succes sont incertaines." }
+      ],
+      "modeleLettre": "Objet : Recours contre la decision du [date]\n\nAu Tribunal administratif federal,\n\nMadame, Monsieur le/la Juge,\n\n1. Je forme recours contre la decision du SEM / de [autorite] du [date], ref. [numero].\n\n2. Je demande :\n   a) L'annulation de la decision attaquee\n   b) L'octroi de l'effet suspensif\n   c) L'octroi de l'assistance judiciaire gratuite (art. 65 PA)\n\n3. Motifs :\n   [Violation du droit federal / etablissement inexact des faits / inopportunite]\n\n4. Moyens de preuve : [liste]\n\nVeuillez agreer l'expression de ma haute consideration.\n\n[Signature]",
+      "services": [
+        { "nom": "Consultation juridique pour etrangers VD", "url": "https://www.csp.ch/vaud/prestations/etrangers", "canton": "VD" },
+        { "nom": "OSAR (Organisation suisse d'aide aux refugies)", "tel": "031 370 75 75", "url": "https://www.osar.ch", "canton": "VD" },
+        { "nom": "Centre social protestant GE", "url": "https://www.csp.ch/geneve", "canton": "GE" },
+        { "nom": "Aide juridictionnelle VD", "url": "https://www.vd.ch/themes/etat-droit-finances/aide-juridictionnelle", "canton": "VD" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "LAsi/LTAF/PA etat 2025-01-01"
+  }
+]

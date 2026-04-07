@@ -1,0 +1,342 @@
+[
+  {
+    "id": "bail_defaut_moisissure",
+    "domaine": "bail",
+    "sousDomaine": "defaut",
+    "tags": ["moisissure", "humidite", "defaut", "regie", "reduction", "loyer"],
+    "questions": [
+      { "id": "q1", "text": "Quel type de defaut ?", "options": ["moisissure", "bruit", "chauffage", "eau", "autre"] },
+      { "id": "q2", "text": "Depuis combien de temps ?", "options": ["<1 mois", "1-6 mois", ">6 mois"] },
+      { "id": "q3", "text": "Avez-vous signale le probleme ?", "options": ["oui ecrit", "oui oral", "non"] },
+      { "id": "q4", "text": "La regie a-t-elle repondu ?", "options": ["oui action", "oui sans action", "non"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "En droit suisse, le bailleur est tenu de maintenir le logement dans un etat approprie a l'usage convenu (art. 256 al. 1 CO). La moisissure constitue un defaut au sens de l'art. 258 CO lorsqu'elle resulte d'un probleme structurel (infiltration, ventilation insuffisante) et non du comportement du locataire. Le locataire dispose de trois moyens d'action : (1) exiger la remise en etat (art. 259a al. 1 let. a CO), (2) demander une reduction proportionnelle du loyer (art. 259a al. 1 let. b CO), ou (3) consigner le loyer aupres de l'autorite competente si le bailleur reste inactif (art. 259g CO). La consignation doit etre precedee d'un avis ecrit fixant un delai raisonnable pour la reparation. La jurisprudence accorde generalement une reduction de 5% a 25% selon la gravite et l'etendue du defaut.",
+      "articles": [
+        { "ref": "CO 256", "titre": "Obligation de delivrer la chose", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_256" },
+        { "ref": "CO 259a", "titre": "Droits du locataire en cas de defaut", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_259_a" },
+        { "ref": "CO 259g", "titre": "Consignation du loyer", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_259_g" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 4A_32/2018", "resume": "Reduction de 20% accordee pour moisissure persistante dans la salle de bain due a un defaut de ventilation structurel." },
+        { "ref": "TF 4A_395/2017", "resume": "Pas de reduction lorsque la moisissure est causee par un comportement inadequat du locataire (aeration insuffisante)." }
+      ],
+      "modeleLettre": "Objet : Mise en demeure — defaut du logement (moisissure)\n\nMadame, Monsieur,\n\nPar la presente, je vous informe de la presence de moisissure dans mon logement sis [adresse], constatee depuis le [date].\n\nConformement a l'art. 256 al. 1 CO, le bailleur est tenu de maintenir la chose louee dans un etat approprie a l'usage convenu. La moisissure constitue un defaut de la chose louee au sens de l'art. 258 CO.\n\nJe vous mets en demeure de proceder a la reparation de ce defaut dans un delai de 30 jours des reception de la presente.\n\nA defaut, je me reserve le droit de consigner mon loyer aupres de l'autorite competente (art. 259g CO) et de demander une reduction proportionnelle du loyer (art. 259a CO).\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "ASLOCA Vaud", "tel": "021 617 11 37", "url": "https://vaud.asloca.ch", "canton": "VD" },
+        { "nom": "ASLOCA Geneve", "tel": "022 716 18 00", "url": "https://www.asloca.ch/asloca-geneve", "canton": "GE" },
+        { "nom": "Commission de conciliation en matiere de baux", "url": "https://www.vd.ch/themes/territoire-et-construction/baux-a-loyer", "canton": "VD" },
+        { "nom": "Tribunal des baux et loyers Geneve", "url": "https://justice.ge.ch/fr/institution/tribunal-des-baux-et-loyers", "canton": "GE" }
+      ],
+      "routageEcosysteme": { "habiter": { "condition": "defaut_physique", "url": "habiter.app" } },
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CO etat 2025-01-01"
+  },
+  {
+    "id": "bail_defaut_bruit",
+    "domaine": "bail",
+    "sousDomaine": "defaut",
+    "tags": ["bruit", "nuisance", "voisin", "defaut", "immission"],
+    "questions": [
+      { "id": "q1", "text": "Quel type de defaut ?", "options": ["moisissure", "bruit", "chauffage", "eau", "autre"] },
+      { "id": "q2", "text": "Depuis combien de temps ?", "options": ["<1 mois", "1-6 mois", ">6 mois"] },
+      { "id": "q3", "text": "Avez-vous signale le probleme ?", "options": ["oui ecrit", "oui oral", "non"] },
+      { "id": "q4", "text": "Le bruit provient de ?", "options": ["voisins", "chantier", "installation technique", "exterieur"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Les nuisances sonores peuvent constituer un defaut de la chose louee si elles excedent ce qui est tolerable (art. 259a CO combine avec art. 684 CC sur les immissions excessives). Le bailleur est responsable du bruit cause par d'autres locataires de l'immeuble et doit intervenir. Pour le bruit de chantier a proximite, la jurisprudence distingue selon que le bailleur pouvait le prevoir lors de la conclusion du bail. Le locataire doit documenter les nuisances (journal, temoignages, mesures sonores) et les signaler par ecrit au bailleur en fixant un delai. Une reduction de loyer de 5% a 15% est habituellement accordee pour du bruit excessif regulier. En cas de bruit nocturne repetitif, une plainte penale peut etre deposee (reglement de police communal).",
+      "articles": [
+        { "ref": "CO 259a", "titre": "Droits du locataire en cas de defaut", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_259_a" },
+        { "ref": "CC 684", "titre": "Immissions excessives", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_684" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 4A_127/2014", "resume": "Reduction de 10% pour bruit de chantier continu durant les heures de travail, lorsque le bailleur avait connaissance du chantier prevu." },
+        { "ref": "TF 4C.219/2005", "resume": "Le bailleur repond du bruit cause par les autres locataires s'il n'intervient pas apres signalement." }
+      ],
+      "modeleLettre": "Objet : Signalement de nuisances sonores\n\nMadame, Monsieur,\n\nJe me permets de vous informer que je subis des nuisances sonores excessives dans mon logement sis [adresse] depuis le [date].\n\nCes nuisances proviennent de [source] et se manifestent [description : frequence, horaires, intensite].\n\nConformement a l'art. 259a CO, je vous demande de prendre les mesures necessaires pour faire cesser ces nuisances dans un delai de 15 jours.\n\nA defaut, je me reserve le droit de demander une reduction proportionnelle du loyer.\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "ASLOCA Vaud", "tel": "021 617 11 37", "url": "https://vaud.asloca.ch", "canton": "VD" },
+        { "nom": "ASLOCA Geneve", "tel": "022 716 18 00", "url": "https://www.asloca.ch/asloca-geneve", "canton": "GE" },
+        { "nom": "Service de l'environnement — police du bruit", "url": "https://www.vd.ch/themes/environnement", "canton": "VD" }
+      ],
+      "routageEcosysteme": { "habiter": { "condition": "nuisance_sonore", "url": "habiter.app" } },
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CO etat 2025-01-01"
+  },
+  {
+    "id": "bail_resiliation_conteste",
+    "domaine": "bail",
+    "sousDomaine": "resiliation",
+    "tags": ["resiliation", "conge", "contestation", "abusif", "protection"],
+    "questions": [
+      { "id": "q1", "text": "Qui a resilie le bail ?", "options": ["bailleur", "locataire"] },
+      { "id": "q2", "text": "Motif invoque ?", "options": ["vente", "renovation", "besoin propre", "retard loyer", "aucun motif"] },
+      { "id": "q3", "text": "Delai de resiliation respecte ?", "options": ["oui", "non", "je ne sais pas"] },
+      { "id": "q4", "text": "Duree du bail ?", "options": ["<1 an", "1-5 ans", ">5 ans"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Le locataire peut contester un conge abusif dans les 30 jours suivant sa reception aupres de la commission de conciliation (art. 273 CO). Le conge est annulable s'il est donne en represailles apres une reclamation (conge-vengeance, art. 271a al. 1 let. a CO), pendant une procedure judiciaire (art. 271a al. 1 let. d CO), ou sans motif legitime (art. 271 CO). Les delais de resiliation legaux sont de 3 mois pour les logements (art. 266c CO), sauf clause contractuelle plus longue. Meme si le conge est valable, le locataire peut demander une prolongation de bail de 4 ans maximum pour les logements (art. 272 et 272b CO) s'il demontre que le conge entraine des consequences penibles et que les interets du bailleur ne le justifient pas.",
+      "articles": [
+        { "ref": "CO 271", "titre": "Annulabilite du conge — principe", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_271" },
+        { "ref": "CO 271a", "titre": "Annulabilite du conge — cas particuliers", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_271_a" },
+        { "ref": "CO 272", "titre": "Prolongation du bail", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_272" },
+        { "ref": "CO 273", "titre": "Delai pour contester", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_273" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 4A_200/2017", "resume": "Conge annule car donne en represailles dans les 3 ans suivant une procedure de conciliation engagee par le locataire." },
+        { "ref": "TF 4A_475/2015", "resume": "Prolongation de 3 ans accordee a une famille avec enfants scolarises, marche locatif tendu." }
+      ],
+      "modeleLettre": "Objet : Contestation du conge — demande de conciliation\n\nA la Commission de conciliation en matiere de baux,\n\nMadame, Monsieur,\n\nPar courrier du [date], mon bailleur [nom] m'a notifie la resiliation de mon bail pour le logement sis [adresse], avec effet au [date].\n\nJe conteste ce conge pour les motifs suivants :\n- [Le conge est abusif car donne en represailles / sans motif legitime / pendant une procedure...]\n\nSubsidiairement, je sollicite une prolongation du bail conformement aux art. 272 ss CO.\n\nJe vous prie de bien vouloir citer les parties a une audience de conciliation.\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "ASLOCA Vaud", "tel": "021 617 11 37", "url": "https://vaud.asloca.ch", "canton": "VD" },
+        { "nom": "ASLOCA Geneve", "tel": "022 716 18 00", "url": "https://www.asloca.ch/asloca-geneve", "canton": "GE" },
+        { "nom": "Commission de conciliation en matiere de baux VD", "url": "https://www.vd.ch/themes/territoire-et-construction/baux-a-loyer", "canton": "VD" },
+        { "nom": "Tribunal des baux et loyers Geneve", "url": "https://justice.ge.ch/fr/institution/tribunal-des-baux-et-loyers", "canton": "GE" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CO etat 2025-01-01"
+  },
+  {
+    "id": "bail_loyer_abusif",
+    "domaine": "bail",
+    "sousDomaine": "loyer",
+    "tags": ["loyer", "abusif", "excessif", "rendement", "contestation"],
+    "questions": [
+      { "id": "q1", "text": "Type de probleme ?", "options": ["loyer initial trop eleve", "augmentation en cours de bail", "loyer superieur au quartier"] },
+      { "id": "q2", "text": "Depuis quand etes-vous locataire ?", "options": ["<1 an", "1-5 ans", ">5 ans"] },
+      { "id": "q3", "text": "Connaissez-vous le loyer du precedent locataire ?", "options": ["oui, plus bas", "oui, identique", "non"] },
+      { "id": "q4", "text": "Taux hypothecaire a la signature du bail ?", "options": ["je sais", "je ne sais pas"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Le loyer est abusif lorsqu'il permet au bailleur d'obtenir un rendement excessif de la chose louee ou lorsqu'il resulte d'un prix d'achat manifestement exagere (art. 269 CO). Le rendement admissible est de 0,5% au-dessus du taux hypothecaire de reference (art. 269a let. b CO). Le locataire peut contester le loyer initial dans les 30 jours suivant la prise de possession si le loyer est sensiblement superieur au precedent ou s'il a contracte sous la contrainte (art. 270 al. 1 CO). En cours de bail, le locataire peut demander une baisse de loyer lorsque le taux hypothecaire de reference baisse (art. 270a CO). Le calcul de rendement net admissible se base sur les fonds propres investis, les charges d'exploitation et les reserves pour les travaux d'entretien.",
+      "articles": [
+        { "ref": "CO 269", "titre": "Loyers abusifs — principe", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_269" },
+        { "ref": "CO 269a", "titre": "Loyers abusifs — cas particuliers", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_269_a" },
+        { "ref": "CO 270", "titre": "Contestation du loyer initial", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_270" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 4A_554/2013", "resume": "Un rendement net superieur a 3.5% (taux hypothecaire + 0.5%) est presume abusif, le bailleur doit justifier ses couts." },
+        { "ref": "TF 4A_400/2017", "resume": "Contestation du loyer initial admise lorsque le loyer avait augmente de 40% par rapport au precedent locataire sans travaux justificatifs." }
+      ],
+      "modeleLettre": "Objet : Demande de baisse de loyer\n\nMadame, Monsieur,\n\nLe taux hypothecaire de reference a baisse de [ancien taux] a [nouveau taux] depuis la derniere fixation de mon loyer.\n\nConformement a l'art. 270a CO, je vous demande par la presente une reduction de mon loyer proportionnelle a cette baisse.\n\nSelon la methode de calcul du Tribunal federal, chaque baisse de 0.25% du taux hypothecaire correspond a une reduction d'environ 2.91% du loyer.\n\nJe vous prie de me communiquer votre position dans un delai de 30 jours. A defaut d'accord, je saisirai la commission de conciliation competente.\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "ASLOCA Vaud", "tel": "021 617 11 37", "url": "https://vaud.asloca.ch", "canton": "VD" },
+        { "nom": "ASLOCA Geneve", "tel": "022 716 18 00", "url": "https://www.asloca.ch/asloca-geneve", "canton": "GE" },
+        { "nom": "Calculateur de loyer ASLOCA", "url": "https://www.asloca.ch/calculateur", "canton": "VD" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CO etat 2025-01-01"
+  },
+  {
+    "id": "bail_depot_garantie",
+    "domaine": "bail",
+    "sousDomaine": "garantie",
+    "tags": ["garantie", "depot", "caution", "restitution", "compte bloque"],
+    "questions": [
+      { "id": "q1", "text": "Situation ?", "options": ["depot non restitue", "montant conteste", "depot non place sur compte bloque"] },
+      { "id": "q2", "text": "Fin du bail depuis ?", "options": ["<1 mois", "1-6 mois", ">6 mois", "bail en cours"] },
+      { "id": "q3", "text": "Montant du depot ?", "options": ["1 mois", "2 mois", "3 mois", ">3 mois"] },
+      { "id": "q4", "text": "Etat des lieux de sortie fait ?", "options": ["oui", "non"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Le depot de garantie (couramment appele caution) est limite a 3 mois de loyer maximum pour les logements (art. 257e al. 1 CO). Il doit imperativement etre depose sur un compte d'epargne bloque au nom du locataire aupres d'une banque (art. 257e al. 2 CO). Le bailleur qui ne respecte pas cette obligation peut etre poursuivi penalement. A la fin du bail, le bailleur ne peut retenir la garantie que pour des pretentions en lien avec le bail (loyers impayes, degats). Sans pretentions, la banque libere le depot sur demande conjointe des deux parties. Si le bailleur refuse, il doit agir en justice dans l'annee. Apres un an sans action du bailleur, le locataire peut exiger la liberation aupres de la banque. Alternative : la garantie de loyer sans depot (assurance), comme SwissCaution ou SmartCaution.",
+      "articles": [
+        { "ref": "CO 257e", "titre": "Surete fournie par le locataire", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_257_e" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 4A_524/2018", "resume": "Le bailleur qui ne place pas la garantie sur un compte bloque doit restituer le montant avec interets et peut etre condamne penalement." },
+        { "ref": "TF 4A_140/2014", "resume": "Le bailleur ne peut retenir la garantie que pour des pretentions suffisamment vraisemblables ; une contestation generique ne suffit pas." }
+      ],
+      "modeleLettre": "Objet : Demande de restitution du depot de garantie\n\nMadame, Monsieur,\n\nMon bail pour le logement sis [adresse] a pris fin le [date]. L'etat des lieux de sortie a ete effectue le [date].\n\nA ce jour, mon depot de garantie de CHF [montant] n'a pas ete libere.\n\nConformement a l'art. 257e CO, je vous mets en demeure de proceder a la liberation conjointe de la garantie locative aupres de [banque] dans un delai de 10 jours.\n\nA defaut, je saisirai la commission de conciliation competente.\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "ASLOCA Vaud", "tel": "021 617 11 37", "url": "https://vaud.asloca.ch", "canton": "VD" },
+        { "nom": "ASLOCA Geneve", "tel": "022 716 18 00", "url": "https://www.asloca.ch/asloca-geneve", "canton": "GE" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CO etat 2025-01-01"
+  },
+  {
+    "id": "bail_charges_contestees",
+    "domaine": "bail",
+    "sousDomaine": "charges",
+    "tags": ["charges", "frais accessoires", "decompte", "chauffage", "forfait"],
+    "questions": [
+      { "id": "q1", "text": "Type de charges ?", "options": ["forfait", "acompte avec decompte", "je ne sais pas"] },
+      { "id": "q2", "text": "Probleme ?", "options": ["decompte absent", "montant conteste", "charges non prevues au bail"] },
+      { "id": "q3", "text": "Depuis quand ?", "options": ["<1 an", "1-3 ans", ">3 ans"] },
+      { "id": "q4", "text": "Avez-vous demande les justificatifs ?", "options": ["oui", "non"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Les frais accessoires ne sont a la charge du locataire que s'ils ont ete convenus dans le bail (art. 257a al. 2 CO). Il s'agit typiquement du chauffage, de l'eau chaude, des frais de concierge, etc. Si les charges sont fixees par acompte, le bailleur doit fournir un decompte detaille annuellement (art. 257b CO). Le locataire a le droit de consulter les pieces justificatives. Si le decompte n'est pas fourni dans un delai raisonnable (en general 6 mois apres la fin de la periode de decompte), le locataire peut refuser de payer le supplement. Les charges forfaitaires ne font pas l'objet d'un decompte, mais le forfait doit correspondre aux frais effectifs previsibles. Le bailleur ne peut pas facturer des charges non prevues dans le bail.",
+      "articles": [
+        { "ref": "CO 257a", "titre": "Frais accessoires — definition", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_257_a" },
+        { "ref": "CO 257b", "titre": "Frais accessoires — decompte", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_257_b" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 4A_364/2015", "resume": "Le bailleur qui ne fournit pas de decompte de charges pendant 3 ans ne peut pas reclamer retroactivement les supplements." },
+        { "ref": "TF 4A_45/2019", "resume": "Les charges non expressement prevues dans le bail sont incluses dans le loyer et ne peuvent etre facturees separement." }
+      ],
+      "modeleLettre": "Objet : Demande de decompte de charges\n\nMadame, Monsieur,\n\nJe n'ai pas recu de decompte de charges pour la periode [annee]. Conformement a l'art. 257b CO, je vous prie de me transmettre un decompte detaille ainsi que les pieces justificatives dans un delai de 30 jours.\n\nA defaut, je me reserve le droit de contester toute demande de supplement.\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "ASLOCA Vaud", "tel": "021 617 11 37", "url": "https://vaud.asloca.ch", "canton": "VD" },
+        { "nom": "ASLOCA Geneve", "tel": "022 716 18 00", "url": "https://www.asloca.ch/asloca-geneve", "canton": "GE" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CO etat 2025-01-01"
+  },
+  {
+    "id": "bail_sous_location",
+    "domaine": "bail",
+    "sousDomaine": "sous-location",
+    "tags": ["sous-location", "airbnb", "colocation", "autorisation"],
+    "questions": [
+      { "id": "q1", "text": "Type de sous-location ?", "options": ["chambre dans logement", "logement entier temporaire", "Airbnb", "colocation"] },
+      { "id": "q2", "text": "Avez-vous l'accord du bailleur ?", "options": ["oui ecrit", "oui oral", "non", "pas encore demande"] },
+      { "id": "q3", "text": "Duree prevue ?", "options": ["<3 mois", "3-12 mois", ">1 an", "indefinie"] },
+      { "id": "q4", "text": "Loyer du sous-locataire ?", "options": ["inferieur a mon loyer", "egal", "superieur"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Le locataire peut sous-louer tout ou partie de son logement avec le consentement du bailleur (art. 262 al. 1 CO). Le bailleur ne peut refuser que pour trois raisons : (1) le locataire refuse de communiquer les conditions de la sous-location, (2) les conditions sont abusives comparees au contrat principal, ou (3) la sous-location cause un inconvenient majeur (art. 262 al. 2 CO). La sous-location sans autorisation constitue un motif de resiliation anticipee du bail (art. 257f al. 3 CO) apres un avertissement ecrit reste sans effet. Pour Airbnb et la location de courte duree, la jurisprudence recente tend a considerer que cela depasse la sous-location traditionnelle et peut etre refuse. Le sous-locataire a un loyer abusif si celui-ci depasse le loyer principal proportionnellement.",
+      "articles": [
+        { "ref": "CO 262", "titre": "Sous-location", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_262" },
+        { "ref": "CO 257f", "titre": "Resiliation anticipee — demeure", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_257_f" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 4A_594/2018", "resume": "La location Airbnb reguliere depasse la sous-location classique et peut justifier un refus du bailleur." },
+        { "ref": "TF 4A_367/2010", "resume": "Le bailleur qui ne repond pas dans un delai raisonnable a une demande de sous-location est repute avoir consenti." }
+      ],
+      "modeleLettre": "Objet : Demande d'autorisation de sous-location\n\nMadame, Monsieur,\n\nConformement a l'art. 262 CO, je souhaite sous-louer [partie/totalite] de mon logement sis [adresse] a [nom du sous-locataire] pour la periode du [date] au [date].\n\nConditions de la sous-location :\n- Loyer mensuel : CHF [montant]\n- Charges : CHF [montant]\n\nJe vous prie de bien vouloir m'accorder votre autorisation ecrite.\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "ASLOCA Vaud", "tel": "021 617 11 37", "url": "https://vaud.asloca.ch", "canton": "VD" },
+        { "nom": "ASLOCA Geneve", "tel": "022 716 18 00", "url": "https://www.asloca.ch/asloca-geneve", "canton": "GE" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CO etat 2025-01-01"
+  },
+  {
+    "id": "bail_travaux_non_faits",
+    "domaine": "bail",
+    "sousDomaine": "entretien",
+    "tags": ["travaux", "reparation", "entretien", "bailleur", "obligation"],
+    "questions": [
+      { "id": "q1", "text": "Type de travaux ?", "options": ["reparation urgente", "entretien courant", "renovation", "mise aux normes"] },
+      { "id": "q2", "text": "Depuis combien de temps la demande ?", "options": ["<1 mois", "1-6 mois", ">6 mois"] },
+      { "id": "q3", "text": "Avez-vous fait la demande par ecrit ?", "options": ["oui", "non"] },
+      { "id": "q4", "text": "Impact sur l'habitabilite ?", "options": ["grave", "modere", "mineur"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "Le bailleur a l'obligation legale d'entretenir la chose louee en etat de servir a l'usage convenu et de remedier aux defauts qui ne sont pas a la charge du locataire (art. 256 al. 1 et 259b CO). Le menu entretien (petites reparations) incombe au locataire (art. 259 CO) — il s'agit traditionnellement des reparations n'excedant pas environ CHF 150-200. Pour les reparations a charge du bailleur, le locataire doit : (1) signaler le defaut par ecrit, (2) fixer un delai raisonnable, (3) menacer d'exercer ses droits (reduction, consignation, execution par substitution). En cas d'urgence (rupture de conduite, chauffage en hiver), le locataire peut faire proceder aux travaux aux frais du bailleur sans delai (art. 259b let. b CO).",
+      "articles": [
+        { "ref": "CO 256", "titre": "Obligation de delivrer et entretenir la chose", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_256" },
+        { "ref": "CO 259", "titre": "Menu entretien", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_259" },
+        { "ref": "CO 259b", "titre": "Droits en cas de defaut — reparation", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_259_b" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 4A_281/2009", "resume": "Le remplacement d'un appareil electromenager vetuste (refrigerateur de 15 ans) est a la charge du bailleur, pas du menu entretien." },
+        { "ref": "TF 4C.377/2004", "resume": "Le locataire qui fait realiser des travaux urgents sans avertir le bailleur ne peut reclamer remboursement que si l'urgence est demontree." }
+      ],
+      "modeleLettre": "Objet : Mise en demeure — travaux d'entretien\n\nMadame, Monsieur,\n\nJe vous ai signale le [date] la necessite de proceder a [description des travaux] dans mon logement sis [adresse].\n\nA ce jour, aucune intervention n'a eu lieu. Conformement a l'art. 256 CO, ces travaux relevent de votre obligation d'entretien.\n\nJe vous mets en demeure de proceder a ces reparations dans un delai de [15/30] jours. A defaut, j'exercerai mes droits selon les art. 259a ss CO.\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "ASLOCA Vaud", "tel": "021 617 11 37", "url": "https://vaud.asloca.ch", "canton": "VD" },
+        { "nom": "ASLOCA Geneve", "tel": "022 716 18 00", "url": "https://www.asloca.ch/asloca-geneve", "canton": "GE" }
+      ],
+      "routageEcosysteme": { "habiter": { "condition": "entretien_logement", "url": "habiter.app" } },
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CO etat 2025-01-01"
+  },
+  {
+    "id": "bail_augmentation_loyer",
+    "domaine": "bail",
+    "sousDomaine": "loyer",
+    "tags": ["augmentation", "hausse", "loyer", "taux hypothecaire", "contestation"],
+    "questions": [
+      { "id": "q1", "text": "Motif de l'augmentation ?", "options": ["taux hypothecaire", "travaux plus-value", "IPC", "adaptation au quartier", "aucun motif indique"] },
+      { "id": "q2", "text": "Pourcentage d'augmentation ?", "options": ["<5%", "5-10%", ">10%"] },
+      { "id": "q3", "text": "Formulaire officiel utilise ?", "options": ["oui", "non", "je ne sais pas"] },
+      { "id": "q4", "text": "Delai avant echeance ?", "options": ["<10 jours", "10-30 jours", ">30 jours"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "L'augmentation de loyer doit etre notifiee sur formule officielle agreee par le canton (art. 269d al. 1 CO), a defaut elle est nulle. Elle doit etre communiquee au moins 10 jours avant le debut du delai de resiliation et prendre effet pour le prochain terme de resiliation (art. 269d al. 1 CO). Le locataire peut contester la hausse dans les 30 jours aupres de la commission de conciliation (art. 270b CO). La hausse est abusive si elle ne repose pas sur un motif legitime : hausse du taux hypothecaire de reference, rencherissement (IPC), travaux a plus-value, adaptation aux loyers du quartier. Chaque hausse de 0.25% du taux hypothecaire justifie en principe une hausse d'environ 2.91% du loyer. Le bailleur doit indiquer le motif de la hausse sur le formulaire officiel.",
+      "articles": [
+        { "ref": "CO 269d", "titre": "Notification de l'augmentation", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_269_d" },
+        { "ref": "CO 270b", "titre": "Contestation de l'augmentation", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_270_b" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 4A_475/2012", "resume": "Hausse nulle car notifiee par courrier simple sans le formulaire officiel cantonal obligatoire." },
+        { "ref": "TF 4A_250/2015", "resume": "Le cumul de motifs de hausse (taux hypothecaire + IPC + travaux) est admis mais le bailleur doit les detailler." }
+      ],
+      "modeleLettre": "Objet : Contestation de la hausse de loyer\n\nA la Commission de conciliation en matiere de baux,\n\nMadame, Monsieur,\n\nMon bailleur m'a notifie une augmentation de loyer de CHF [montant] pour mon logement sis [adresse], avec effet au [date].\n\nJe conteste cette hausse pour les motifs suivants :\n- [Le formulaire officiel n'a pas ete utilise / le motif n'est pas justifie / le calcul est errone...]\n\nJe vous prie de convoquer une audience de conciliation.\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "ASLOCA Vaud", "tel": "021 617 11 37", "url": "https://vaud.asloca.ch", "canton": "VD" },
+        { "nom": "ASLOCA Geneve", "tel": "022 716 18 00", "url": "https://www.asloca.ch/asloca-geneve", "canton": "GE" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CO etat 2025-01-01"
+  },
+  {
+    "id": "bail_etat_des_lieux",
+    "domaine": "bail",
+    "sousDomaine": "restitution",
+    "tags": ["etat des lieux", "sortie", "degats", "restitution", "nettoyage"],
+    "questions": [
+      { "id": "q1", "text": "Situation ?", "options": ["etat des lieux a venir", "contestation apres etat des lieux", "retenue sur garantie"] },
+      { "id": "q2", "text": "Problemes signales ?", "options": ["degats", "nettoyage insuffisant", "usure normale contestee", "aucun"] },
+      { "id": "q3", "text": "Photos de l'etat d'entree ?", "options": ["oui", "non"] },
+      { "id": "q4", "text": "Duree du bail ?", "options": ["<3 ans", "3-10 ans", ">10 ans"] },
+      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+    ],
+    "reponse": {
+      "explication": "A la restitution du logement, le bailleur doit verifier l'etat de la chose et aviser immediatement le locataire des defauts dont celui-ci repond (art. 267a CO). Les defauts non signales lors de l'etat des lieux de sortie sont presumes acceptes. L'usure normale n'est jamais a la charge du locataire (art. 267 al. 1 CO). Le bailleur utilise une table d'amortissement (durees de vie) pour distinguer l'usure normale des degats : par exemple, une peinture a une duree de vie de 8-10 ans, un parquet de 20-25 ans. Si le logement a ete occupe 8 ans, le bailleur ne peut rien reclamer pour la peinture meme abimee. Le locataire est responsable des degats excedant l'usure normale, proportionnellement a la valeur residuelle. Le nettoyage de fin de bail doit etre « soigne » selon les usages locaux (souvent un nettoyage professionnel est exige contractuellement).",
+      "articles": [
+        { "ref": "CO 267", "titre": "Restitution de la chose", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_267" },
+        { "ref": "CO 267a", "titre": "Verification et avis des defauts", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_267_a" }
+      ],
+      "jurisprudence": [
+        { "ref": "TF 4A_129/2011", "resume": "Le bailleur qui n'avise pas immediatement des defauts lors de l'etat des lieux perd son droit de reclamer reparation." },
+        { "ref": "TF 4C.261/2006", "resume": "L'usure normale d'un parquet apres 15 ans d'occupation ne peut etre mise a la charge du locataire, la duree de vie etant de 20 ans." }
+      ],
+      "modeleLettre": "Objet : Contestation de l'etat des lieux de sortie\n\nMadame, Monsieur,\n\nSuite a l'etat des lieux de sortie du [date] pour le logement sis [adresse], je conteste les elements suivants :\n\n- [Description du point conteste] : il s'agit d'usure normale apres [X] ans d'occupation, la duree de vie selon la table paritaire etant de [Y] ans.\n\nJe vous prie de reviser votre decompte en consequence.\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguees.\n\n[Signature]",
+      "services": [
+        { "nom": "ASLOCA Vaud", "tel": "021 617 11 37", "url": "https://vaud.asloca.ch", "canton": "VD" },
+        { "nom": "ASLOCA Geneve", "tel": "022 716 18 00", "url": "https://www.asloca.ch/asloca-geneve", "canton": "GE" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticeBot fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CO etat 2025-01-01"
+  }
+]

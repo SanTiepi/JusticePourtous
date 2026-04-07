@@ -1,0 +1,22 @@
+# ============================================================================
+# VosDroits.ch — Base de données ultime du droit suisse
+# ============================================================================
+# INSTRUCTIONS : Ajouter ce bloc à la fin du Caddyfile principal
+# /home/ubuntu/Batiscan-V4/Caddyfile
+# Puis : docker exec batiscan_caddy caddy reload --config /etc/caddy/Caddyfile
+# ============================================================================
+
+droitclair.ch {
+    encode gzip zstd
+    header X-Content-Type-Options "nosniff"
+    header X-Frame-Options "DENY"
+    header Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    header Referrer-Policy "strict-origin-when-cross-origin"
+    header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:"
+
+    reverse_proxy vosdroits:3000
+}
+
+www.droitclair.ch {
+    redir https://droitclair.ch{uri} permanent
+}

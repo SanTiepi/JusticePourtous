@@ -1,0 +1,20 @@
+services:
+  vosdroits:
+    build: .
+    container_name: vosdroits
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    networks:
+      - batiscan-network
+
+networks:
+  batiscan-network:
+    external: true
+    name: batiscan-v4_batiscan-network

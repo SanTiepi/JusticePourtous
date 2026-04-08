@@ -46,16 +46,24 @@
 
 ## Mode actif (éphémère — contexte de la session en cours)
 
-### État actuel
-- 180 tests verts, score couverture 90%
-- Triage engine v3 (LLM navigator + fallback semantic), routes API en place
-- Paperclip configuré : 5 agents, tickets #1-#2 done, #3 frontend done par agents
-- Prochaine action : vérifier le frontend fait par les agents, tester end-to-end
+### État actuel (mis à jour 2026-04-08)
+- 180 tests verts, 4448 articles, 2487 arrêts TF, 182 fiches enrichies
+- Pipeline V3 implémenté (pipeline-v3.mjs) avec CLI fallback
+- CONSTITUTION.md créée — document canonique
+- Golden cases : 100% claim grounding rate sur 2 cas complets
+- Site live https://justicepourtous.ch avec design system premium
+- Endpoint premium /api/premium/analyze-v3 déployé
+
+### Prochaine action (séquence constitution)
+1. Source registry (formaliser les 3 tiers)
+2. Objectification (structurer les objets gelés)
+3. Retrieval hybride (lexical + sémantique + RRF)
+4. Page résultat refaite avec design system V3
 
 ### Blockers
-- Pas de clé ANTHROPIC_API_KEY en production → triage en mode fallback (basique)
-- Frontend fait par Paperclip → qualité à vérifier
-- Zéro utilisateur réel
+- API Anthropic sans crédits → CLI fallback local OK, prod non
+- Page résultat encore en ancien format
+- LEI Fedlex harvest 0 articles (URL ELI à corriger)
 
 ## Commandes
 ```bash

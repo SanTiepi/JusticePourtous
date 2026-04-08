@@ -102,7 +102,27 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "L'employe a ete licencie pendant un arret maladie et veut savoir si c'est legal.",
+    "profane_aliases": [
+      "vire pendant maladie",
+      "licencie en arret",
+      "mon patron m'a foutu dehors j'etais malade",
+      "licenciement pendant certificat medical",
+      "renvoye alors que je suis malade"
+    ],
+    "negative_signals": [
+      "demission volontaire",
+      "fin de contrat a duree determinee",
+      "licenciement sans lien avec la maladie"
+    ],
+    "required_facts": [
+      "anciennete",
+      "type de contrat",
+      "certificat medical",
+      "date du licenciement",
+      "date de debut de l'arret maladie"
+    ]
   },
   {
     "id": "travail_salaire_impaye",
@@ -213,7 +233,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "L'employeur ne paie pas le salaire ou le paie en retard et l'employe veut recuperer son du.",
+    "profane_aliases": [
+      "pas paye",
+      "salaire en retard",
+      "mon patron me doit de l'argent",
+      "salaire pas verse",
+      "patron qui ne paie pas"
+    ],
+    "negative_signals": [
+      "litige sur le montant du bonus",
+      "desaccord sur le taux horaire negocie",
+      "retenue legale sur salaire"
+    ],
+    "required_facts": [
+      "montant du",
+      "nombre de mois impayes",
+      "mises en demeure envoyees",
+      "type de contrat"
+    ]
   },
   {
     "id": "travail_heures_sup",
@@ -324,7 +363,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO/LTr etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "L'employe fait des heures en plus et veut savoir s'il a droit a une compensation ou un supplement.",
+    "profane_aliases": [
+      "heures sup pas payees",
+      "je travaille plus que prevu",
+      "overtime non compense",
+      "mon patron me fait bosser plus sans payer",
+      "surplus d'heures"
+    ],
+    "negative_signals": [
+      "horaire flexible choisi par l'employe",
+      "cadre dirigeant avec salaire global",
+      "discussion sur l'amenagement du temps de travail"
+    ],
+    "required_facts": [
+      "nombre d'heures supplementaires",
+      "preuve des heures (pointage, emails)",
+      "ce que dit le contrat sur les heures sup",
+      "taux d'activite contractuel"
+    ]
   },
   {
     "id": "travail_harcelement",
@@ -442,7 +500,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO/LEg etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "L'employe subit du harcelement moral ou sexuel au travail et cherche comment se proteger.",
+    "profane_aliases": [
+      "mobbing au travail",
+      "harcelement par mon chef",
+      "on me fait la vie dure au boulot",
+      "harcelement sexuel au travail",
+      "ambiance toxique au bureau"
+    ],
+    "negative_signals": [
+      "simple conflit ponctuel entre collegues",
+      "critique justifiee du travail par le superieur",
+      "stress lie a la charge de travail normale"
+    ],
+    "required_facts": [
+      "type de harcelement (moral ou sexuel)",
+      "duree et frequence",
+      "preuves (emails, temoins, journal)",
+      "demarches deja entreprises (RH, medecin)"
+    ]
   },
   {
     "id": "travail_licenciement_abusif",
@@ -554,7 +631,27 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "L'employe pense avoir ete licencie pour un motif injuste et veut contester ou obtenir une indemnite.",
+    "profane_aliases": [
+      "vire sans raison",
+      "licenciement injuste",
+      "mon patron m'a vire par vengeance",
+      "licencie parce que j'ai reclame mes droits",
+      "renvoye pour rien"
+    ],
+    "negative_signals": [
+      "licenciement pendant la periode d'essai sans motif discriminatoire",
+      "fin de contrat a duree determinee",
+      "resiliation d'un commun accord"
+    ],
+    "required_facts": [
+      "motif invoque par l'employeur",
+      "anciennete",
+      "contexte du licenciement",
+      "opposition ecrite envoyee ou non",
+      "delai depuis la notification"
+    ]
   },
   {
     "id": "travail_certificat",
@@ -650,7 +747,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "L'employe veut obtenir ou contester un certificat de travail incomplet, negatif ou inexact.",
+    "profane_aliases": [
+      "certificat de travail negatif",
+      "pas recu mon certificat",
+      "mon ancien patron ecrit du mal de moi",
+      "attestation de travail manquante",
+      "certificat avec des codes"
+    ],
+    "negative_signals": [
+      "demande de lettre de recommandation personnelle",
+      "reference telephonique informelle",
+      "question sur le CV"
+    ],
+    "required_facts": [
+      "certificat recu ou non",
+      "contenu conteste (formulation precise)",
+      "duree du rapport de travail",
+      "demandes ecrites deja faites"
+    ]
   },
   {
     "id": "travail_vacances",
@@ -756,7 +872,27 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "L'employe a un probleme avec ses jours de vacances: refus, report, compensation ou solde non paye.",
+    "profane_aliases": [
+      "vacances refusees",
+      "jours de conge pas payes",
+      "mon patron refuse mes vacances",
+      "solde de vacances a la fin du contrat",
+      "vacances imposees par l'employeur"
+    ],
+    "negative_signals": [
+      "demande de conge non paye",
+      "absence injustifiee",
+      "jour ferie tombe un week-end"
+    ],
+    "required_facts": [
+      "nombre de jours restants",
+      "taux d'activite",
+      "ce que dit le contrat",
+      "vacances deja prises dans l'annee",
+      "fin du contrat prevue ou non"
+    ]
   },
   {
     "id": "travail_grossesse",
@@ -866,7 +1002,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO/LEg/LTr etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "La travailleuse enceinte ou en conge maternite veut connaitre ses droits face a un licenciement ou des conditions de travail.",
+    "profane_aliases": [
+      "viree parce que enceinte",
+      "licenciement pendant grossesse",
+      "droits pendant la maternite",
+      "conge maternite refuse",
+      "mon patron veut me licencier je suis enceinte"
+    ],
+    "negative_signals": [
+      "demande de conge paternite",
+      "question sur l'allocation de maternite APG uniquement",
+      "fin de contrat a duree determinee arrivant a terme"
+    ],
+    "required_facts": [
+      "stade de la grossesse ou date d'accouchement",
+      "date du licenciement",
+      "type de contrat",
+      "employeur informe ou non de la grossesse"
+    ]
   },
   {
     "id": "travail_accident",
@@ -975,7 +1130,27 @@
     "maj": "2026-04-07",
     "sourceLoi": "LAA etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "L'employe a eu un accident au travail ou sur le trajet et veut savoir quels sont ses droits.",
+    "profane_aliases": [
+      "accident au boulot",
+      "blesse au travail",
+      "accident sur le chemin du travail",
+      "mon employeur ne declare pas mon accident",
+      "indemnite apres accident professionnel"
+    ],
+    "negative_signals": [
+      "accident de loisir sans lien avec le travail",
+      "maladie professionnelle (voir fiche burnout/maladie)",
+      "accident pendant les vacances"
+    ],
+    "required_facts": [
+      "type d'accident (professionnel ou trajet)",
+      "date de l'accident",
+      "declaration faite ou non",
+      "taux d'occupation (plus ou moins de 8h/semaine)",
+      "certificat medical"
+    ]
   },
   {
     "id": "travail_contrat_oral",
@@ -1081,7 +1256,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "L'employe travaille sans contrat ecrit et veut savoir s'il a quand meme des droits.",
+    "profane_aliases": [
+      "pas de contrat ecrit",
+      "travail au noir",
+      "accord verbal avec mon patron",
+      "embauche sans papiers signes",
+      "je travaille sans contrat"
+    ],
+    "negative_signals": [
+      "contrat ecrit existant mais conteste",
+      "travail benevole volontaire",
+      "mandat independant"
+    ],
+    "required_facts": [
+      "nature du travail effectue",
+      "duree de la relation de travail",
+      "preuves existantes (SMS, virements, temoins)",
+      "remuneration convenue"
+    ]
   },
   {
     "id": "travail_periode_essai",
@@ -1180,7 +1374,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "L'employe est licencie pendant la periode d'essai et se demande si c'est legal ou quels sont les delais.",
+    "profane_aliases": [
+      "vire pendant l'essai",
+      "periode d'essai licenciement",
+      "renvoye apres 2 semaines",
+      "droits pendant la periode d'essai",
+      "preavis en periode d'essai"
+    ],
+    "negative_signals": [
+      "licenciement apres la fin de la periode d'essai",
+      "demission volontaire pendant l'essai",
+      "pas encore commence a travailler"
+    ],
+    "required_facts": [
+      "duree de la periode d'essai prevue au contrat",
+      "date de debut du travail",
+      "date de la resiliation",
+      "motif invoque"
+    ]
   },
   {
     "id": "travail_non_concurrence",
@@ -1285,7 +1498,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "L'employe a une clause de non-concurrence et veut savoir si elle est valable ou comment s'en liberer.",
+    "profane_aliases": [
+      "clause de non-concurrence",
+      "interdit de travailler chez un concurrent",
+      "mon ancien patron m'empeche de bosser",
+      "non-concurrence abusive",
+      "clause restrictive apres licenciement"
+    ],
+    "negative_signals": [
+      "simple devoir de fidelite pendant le contrat",
+      "clause de confidentialite seule",
+      "interdiction de debaucher des clients (pas de non-concurrence)"
+    ],
+    "required_facts": [
+      "texte exact de la clause",
+      "qui a resilie le contrat",
+      "duree et perimetre de la clause",
+      "acces a la clientele ou secrets d'affaires"
+    ]
   },
   {
     "id": "travail_secret_professionnel",
@@ -1386,7 +1618,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO/CP etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "L'employe se demande ce qu'il a le droit de dire ou non sur son ancien ou actuel employeur.",
+    "profane_aliases": [
+      "secret professionnel au travail",
+      "droit de parler de mon entreprise",
+      "devoir de discretion employe",
+      "j'ai revele des infos de mon employeur",
+      "whistleblowing au travail"
+    ],
+    "negative_signals": [
+      "secret medical ou d'avocat",
+      "question de protection des donnees personnelles",
+      "publication sur les reseaux sociaux sans lien avec des secrets"
+    ],
+    "required_facts": [
+      "nature des informations concernees",
+      "contrat de travail (clause de confidentialite)",
+      "infos deja divulguees ou non",
+      "motif de la divulgation envisagee"
+    ]
   },
   {
     "id": "travail_temps_partiel",
@@ -1485,7 +1736,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "L'employe a temps partiel veut savoir s'il a les memes droits que ses collegues a plein temps.",
+    "profane_aliases": [
+      "droits en temps partiel",
+      "discrimination temps partiel",
+      "travail sur appel droits",
+      "mi-temps et vacances",
+      "temps partiel et licenciement"
+    ],
+    "negative_signals": [
+      "demande de reduction du taux d'activite",
+      "passage volontaire de plein temps a temps partiel",
+      "freelance ou independant"
+    ],
+    "required_facts": [
+      "taux d'activite contractuel",
+      "type de contrat (fixe ou sur appel)",
+      "probleme precis (salaire, vacances, assurances)",
+      "comparaison avec collegues a plein temps"
+    ]
   },
   {
     "id": "travail_teletravail",
@@ -1588,7 +1858,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "L'employe veut savoir ses droits en teletravail: frais, equipement, obligation ou refus.",
+    "profane_aliases": [
+      "teletravail droits",
+      "homeoffice impose",
+      "frais de teletravail",
+      "mon patron refuse le teletravail",
+      "travailler depuis la maison"
+    ],
+    "negative_signals": [
+      "question sur le coworking",
+      "travail a l'etranger (droit international)",
+      "freelance travaillant depuis chez lui"
+    ],
+    "required_facts": [
+      "accord ecrit sur le teletravail ou non",
+      "qui a initie le teletravail",
+      "frais engages (internet, materiel)",
+      "ce que dit le contrat ou le reglement"
+    ]
   },
   {
     "id": "travail_burnout",
@@ -1705,7 +1994,27 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO/LTr etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "L'employe est en epuisement professionnel et veut connaitre ses droits en matiere de protection et d'arret.",
+    "profane_aliases": [
+      "burnout au travail",
+      "epuisement professionnel",
+      "je craque a cause du boulot",
+      "depression liee au travail",
+      "arret pour surmenage"
+    ],
+    "negative_signals": [
+      "stress passager sans incapacite",
+      "maladie physique sans lien avec le travail",
+      "demande de vacances pour se reposer"
+    ],
+    "required_facts": [
+      "diagnostic medical (certificat)",
+      "duree de l'incapacite",
+      "anciennete",
+      "demarches aupres de l'employeur",
+      "assurance perte de gain existante ou non"
+    ]
   },
   {
     "id": "travail_assurance_chomage",
@@ -1823,7 +2132,27 @@
     "maj": "2026-04-07",
     "sourceLoi": "LACI etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "La personne a perdu son emploi et veut savoir si elle a droit au chomage et combien elle touchera.",
+    "profane_aliases": [
+      "droit au chomage",
+      "combien je touche au chomage",
+      "indemnites chomage apres licenciement",
+      "conditions pour le chomage",
+      "ai-je droit au chomage"
+    ],
+    "negative_signals": [
+      "chomage partiel (RHT)",
+      "independant qui cesse son activite",
+      "retraite anticipee"
+    ],
+    "required_facts": [
+      "duree de cotisation (mois travailles sur 2 ans)",
+      "motif de fin de contrat",
+      "age",
+      "dernier salaire",
+      "inscription ORP faite ou non"
+    ]
   },
   {
     "id": "travail_orp_inscription",
@@ -1918,7 +2247,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "LACI etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "La personne doit s'inscrire a l'ORP et veut savoir comment faire et quelles sont ses obligations.",
+    "profane_aliases": [
+      "inscription ORP",
+      "comment s'inscrire au chomage",
+      "obligations ORP",
+      "recherche emploi ORP",
+      "rendez-vous ORP"
+    ],
+    "negative_signals": [
+      "question sur le montant des indemnites uniquement",
+      "recherche d'emploi sans etre au chomage",
+      "inscription a l'aide sociale"
+    ],
+    "required_facts": [
+      "date de fin du contrat",
+      "commune de domicile",
+      "inscription deja faite ou non",
+      "preuves de recherche d'emploi existantes"
+    ]
   },
   {
     "id": "travail_delai_conge",
@@ -2013,7 +2361,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "CO etat 2025-01-01"
+    "sourceLoi": "CO etat 2025-01-01",
+    "match_description": "L'employe ou l'employeur veut connaitre le delai de preavis applicable pour mettre fin au contrat.",
+    "profane_aliases": [
+      "delai de preavis",
+      "combien de temps avant de partir",
+      "preavis de licenciement",
+      "quand est-ce que mon contrat se termine",
+      "delai pour demissionner"
+    ],
+    "negative_signals": [
+      "resiliation immediate pour justes motifs",
+      "fin de contrat a duree determinee",
+      "accord mutuel de resiliation"
+    ],
+    "required_facts": [
+      "anciennete",
+      "ce que dit le contrat sur le preavis",
+      "CCT applicable ou non",
+      "periode d'essai en cours ou non"
+    ]
   },
   {
     "id": "travail_indemnite_depart",
@@ -2113,7 +2480,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "CO etat 2025-01-01"
+    "sourceLoi": "CO etat 2025-01-01",
+    "match_description": "L'employe de longue date veut savoir s'il a droit a une indemnite de depart apres son licenciement.",
+    "profane_aliases": [
+      "indemnite de depart",
+      "prime de licenciement",
+      "compensation apres 20 ans",
+      "indemnite anciennete",
+      "mon patron me doit quelque chose apres tant d'annees"
+    ],
+    "negative_signals": [
+      "indemnite pour licenciement abusif (autre fiche)",
+      "solde de vacances",
+      "demission volontaire d'un jeune employe"
+    ],
+    "required_facts": [
+      "age de l'employe",
+      "nombre d'annees de service",
+      "prevoyance professionnelle (LPP) existante",
+      "motif de fin de contrat"
+    ]
   },
   {
     "id": "travail_convention_collective",
@@ -2216,7 +2602,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "CO etat 2025-01-01"
+    "sourceLoi": "CO etat 2025-01-01",
+    "match_description": "L'employe veut savoir si une convention collective s'applique a son cas et quels droits supplementaires elle donne.",
+    "profane_aliases": [
+      "convention collective",
+      "CCT applicable",
+      "est-ce que j'ai une CCT",
+      "droits supplementaires de ma branche",
+      "salaire minimum CCT"
+    ],
+    "negative_signals": [
+      "question uniquement sur le CO sans CCT",
+      "employe du secteur public (droit public)",
+      "independant sans employes"
+    ],
+    "required_facts": [
+      "branche d'activite",
+      "canton",
+      "employeur membre d'une association patronale ou non",
+      "probleme precis (salaire, vacances, etc.)"
+    ]
   },
   {
     "id": "travail_temporaire",
@@ -2323,7 +2728,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LSE etat 2025-01-01"
+    "sourceLoi": "LSE etat 2025-01-01",
+    "match_description": "Le travailleur temporaire (interimaire) veut connaitre ses droits face a l'agence ou l'entreprise de mission.",
+    "profane_aliases": [
+      "interim droits",
+      "travail temporaire droits",
+      "agence de placement probleme",
+      "mission temporaire",
+      "employe d'une agence"
+    ],
+    "negative_signals": [
+      "CDD classique directement avec l'employeur",
+      "freelance ou mandat",
+      "stage en entreprise"
+    ],
+    "required_facts": [
+      "nom de l'agence",
+      "duree de la mission",
+      "contrat signe avec l'agence ou non",
+      "probleme precis (salaire, fin de mission, accident)"
+    ]
   },
   {
     "id": "travail_stagiaire",
@@ -2419,7 +2843,27 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "CO etat 2025-01-01"
+    "sourceLoi": "CO etat 2025-01-01",
+    "match_description": "Le stagiaire veut savoir s'il a droit a un salaire et aux memes protections qu'un employe.",
+    "profane_aliases": [
+      "droits du stagiaire",
+      "stage non paye",
+      "stage exploite",
+      "stagiaire ou employe deguise",
+      "mon stage n'est pas un vrai stage"
+    ],
+    "negative_signals": [
+      "stage de formation obligatoire dans un cursus scolaire",
+      "benevolat volontaire",
+      "apprentissage (autre fiche)"
+    ],
+    "required_facts": [
+      "duree du stage",
+      "remuneration ou non",
+      "contenu reel du travail effectue",
+      "convention de stage signee ou non",
+      "lien avec une formation"
+    ]
   },
   {
     "id": "travail_apprenti",
@@ -2535,7 +2979,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "CO etat 2025-01-01"
+    "sourceLoi": "CO etat 2025-01-01",
+    "match_description": "L'apprenti ou ses parents veulent connaitre ses droits en cas de probleme pendant l'apprentissage.",
+    "profane_aliases": [
+      "droits de l'apprenti",
+      "probleme pendant l'apprentissage",
+      "patron d'apprentissage abusif",
+      "resiliation du contrat d'apprentissage",
+      "apprenti mal traite"
+    ],
+    "negative_signals": [
+      "stagiaire (autre fiche)",
+      "etudiant en job d'ete",
+      "formation continue d'un adulte"
+    ],
+    "required_facts": [
+      "annee d'apprentissage",
+      "type de formation (CFC, AFP)",
+      "probleme precis",
+      "commissaire professionnel contacte ou non"
+    ]
   },
   {
     "id": "travail_13e_salaire",
@@ -2633,7 +3096,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "CO etat 2025-01-01"
+    "sourceLoi": "CO etat 2025-01-01",
+    "match_description": "L'employe veut savoir s'il a droit au 13e salaire et si son patron doit le payer.",
+    "profane_aliases": [
+      "13e salaire",
+      "treizieme pas paye",
+      "droit au 13e",
+      "mon patron refuse le 13e salaire",
+      "13eme au prorata"
+    ],
+    "negative_signals": [
+      "bonus discretionnaire (autre fiche)",
+      "salaire mensuel normal impaye",
+      "question sur les impots"
+    ],
+    "required_facts": [
+      "ce que dit le contrat de travail",
+      "CCT applicable",
+      "usage dans l'entreprise",
+      "en cours d'annee ou fin de contrat"
+    ]
   },
   {
     "id": "travail_gratification",
@@ -2734,7 +3216,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "CO etat 2025-01-01"
+    "sourceLoi": "CO etat 2025-01-01",
+    "match_description": "L'employe veut savoir si son bonus ou sa prime est obligatoire ou si l'employeur peut la supprimer.",
+    "profane_aliases": [
+      "bonus supprime",
+      "prime pas versee",
+      "gratification obligatoire ou pas",
+      "mon bonus a ete coupe",
+      "droit au bonus annuel"
+    ],
+    "negative_signals": [
+      "13e salaire contractuel (autre fiche)",
+      "augmentation de salaire refusee",
+      "participation aux benefices de l'entreprise"
+    ],
+    "required_facts": [
+      "montant et historique du bonus (verse chaque annee ou non)",
+      "ce que dit le contrat",
+      "communication de l'employeur sur le bonus",
+      "proportion du bonus par rapport au salaire"
+    ]
   },
   {
     "id": "travail_frais_professionnels",
@@ -2831,7 +3332,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "CO etat 2025-01-01"
+    "sourceLoi": "CO etat 2025-01-01",
+    "match_description": "L'employe a des frais lies a son travail et veut savoir si l'employeur doit les rembourser.",
+    "profane_aliases": [
+      "frais pas rembourses",
+      "frais de deplacement",
+      "mon patron refuse de payer mes frais",
+      "remboursement frais de travail",
+      "frais de voiture pour le boulot"
+    ],
+    "negative_signals": [
+      "frais de trajet domicile-travail habituels",
+      "achat personnel non lie au travail",
+      "frais de formation volontaire"
+    ],
+    "required_facts": [
+      "type de frais (deplacement, repas, materiel)",
+      "accord ecrit ou reglement interne",
+      "montants engages",
+      "forfait frais existant ou non"
+    ]
   },
   {
     "id": "travail_protection_donnees",
@@ -2934,7 +3454,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "CO/LPD etat 2025-01-01"
+    "sourceLoi": "CO/LPD etat 2025-01-01",
+    "match_description": "L'employe veut savoir ce que son employeur a le droit de faire avec ses donnees personnelles.",
+    "profane_aliases": [
+      "donnees personnelles au travail",
+      "mon patron fouille mes donnees",
+      "vie privee au bureau",
+      "employeur qui consulte mon dossier",
+      "protection donnees employe"
+    ],
+    "negative_signals": [
+      "surveillance video (autre fiche)",
+      "question sur la LPD sans lien avec l'emploi",
+      "protection des donnees clients"
+    ],
+    "required_facts": [
+      "type de donnees concernees",
+      "ce que l'employeur fait ou veut faire",
+      "consentement donne ou non",
+      "reglement interne existant"
+    ]
   },
   {
     "id": "travail_surveillance",
@@ -3038,7 +3577,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "CO/OLT 3 etat 2025-01-01"
+    "sourceLoi": "CO/OLT 3 etat 2025-01-01",
+    "match_description": "L'employe est surveille par son employeur (cameras, GPS, emails) et veut savoir si c'est legal.",
+    "profane_aliases": [
+      "cameras au travail",
+      "patron qui lit mes emails",
+      "GPS sur le vehicule de fonction",
+      "surveillance au bureau",
+      "employeur qui espionne"
+    ],
+    "negative_signals": [
+      "surveillance justifiee pour la securite (banque, bijouterie)",
+      "controle de qualite transparent et annonce",
+      "video de securite dans un lieu public"
+    ],
+    "required_facts": [
+      "type de surveillance (camera, GPS, email, logiciel)",
+      "employes informes ou non",
+      "but declare de la surveillance",
+      "reglement interne ou accord"
+    ]
   },
   {
     "id": "travail_reference_negative",
@@ -3137,7 +3695,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "CO etat 2025-01-01"
+    "sourceLoi": "CO etat 2025-01-01",
+    "match_description": "L'ancien employeur donne de mauvaises references et cela empeche l'employe de retrouver du travail.",
+    "profane_aliases": [
+      "mauvaise reference",
+      "ancien patron qui dit du mal",
+      "reference negative qui empeche de trouver un job",
+      "ancien employeur qui sabote",
+      "reference telephonique negative"
+    ],
+    "negative_signals": [
+      "certificat de travail ecrit (autre fiche)",
+      "reference honnete sur un point faible reel",
+      "question sur le CV"
+    ],
+    "required_facts": [
+      "contenu de la reference negative",
+      "comment l'employe l'a appris",
+      "preuves (temoignage du nouvel employeur)",
+      "certificat de travail ecrit deja en possession"
+    ]
   },
   {
     "id": "travail_chomage",
@@ -3260,7 +3837,27 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LACI etat 2025-01-01"
+    "sourceLoi": "LACI etat 2025-01-01",
+    "match_description": "La personne est au chomage ou va l'etre et veut comprendre ses droits aux indemnites et ses obligations.",
+    "profane_aliases": [
+      "droits au chomage",
+      "comment fonctionne le chomage",
+      "indemnites chomage suisse",
+      "combien de temps dure le chomage",
+      "chomage apres licenciement"
+    ],
+    "negative_signals": [
+      "chomage partiel RHT (reduction horaire)",
+      "fin de droit au chomage (aide sociale)",
+      "independant sans cotisation chomage"
+    ],
+    "required_facts": [
+      "mois de cotisation sur les 2 dernieres annees",
+      "age",
+      "motif de la perte d'emploi",
+      "inscription ORP effectuee ou non",
+      "charges de famille"
+    ]
   },
   {
     "id": "travail_maladie",
@@ -3375,7 +3972,27 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "CO/LCA etat 2025-01-01"
+    "sourceLoi": "CO/LCA etat 2025-01-01",
+    "match_description": "L'employe est malade et veut savoir combien de temps il est protege et s'il sera paye.",
+    "profane_aliases": [
+      "arret maladie droits",
+      "combien de temps paye en maladie",
+      "protection pendant maladie",
+      "salaire pendant arret maladie",
+      "malade et peur d'etre vire"
+    ],
+    "negative_signals": [
+      "accident professionnel (autre fiche)",
+      "maladie sans certificat medical",
+      "absence d'un jour sans consequence"
+    ],
+    "required_facts": [
+      "anciennete",
+      "certificat medical",
+      "assurance perte de gain (IJM) existante ou non",
+      "duree de l'arret actuel",
+      "canton de travail"
+    ]
   },
   {
     "id": "travail_saisie_salaire",
@@ -3490,6 +4107,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "L'employe se fait saisir une partie de son salaire par l'office des poursuites et veut connaitre ses droits.",
+    "profane_aliases": [
+      "saisie sur salaire",
+      "poursuite sur mon salaire",
+      "combien peuvent prendre sur ma paie",
+      "minimum vital saisie",
+      "office des poursuites salaire"
+    ],
+    "negative_signals": [
+      "retenue volontaire sur salaire (avance)",
+      "compensation avec une dette envers l'employeur",
+      "impot a la source"
+    ],
+    "required_facts": [
+      "montant du salaire net",
+      "charges de famille (conjoint, enfants)",
+      "montant de la saisie notifiee",
+      "loyer et primes d'assurance maladie",
+      "commandement de payer recu"
+    ]
   }
 ]

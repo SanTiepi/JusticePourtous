@@ -49,6 +49,9 @@ const cascadesData = JSON.parse(readFileSync(join(__dirname, 'data', 'cascades',
 
 const DISCLAIMER = "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes.";
 
+// In-memory feedback store
+const feedbackStore = [];
+
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
@@ -575,6 +578,31 @@ const server = createServer(async (req, res) => {
     if (path === '/api/couverture' && method === 'GET') {
       const result = getCouverture();
       return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // --- Feedback ---
+
+    if (path === '/api/feedback' && method === 'POST') {
+      const body = await parseBody(req);
+      if (!body.ficheId || !body.rating) {
+        return json(res, 400, { error: 'ficheId et rating requis', disclaimer: DISCLAIMER });
+      }
+      if (!['oui', 'non', 'partiel'].includes(body.rating)) {
+        return json(res, 400, { error: 'rating: oui, non, ou partiel', disclaimer: DISCLAIMER });
+      }
+      feedbackStore.push({
+        ficheId: body.ficheId,
+        rating: body.rating,
+        comment: body.comment || null,
+        timestamp: new Date().toISOString()
+      });
+      return json(res, 200, { ok: true, disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/admin/feedback' && method === 'GET') {
+      const stats = { oui: 0, non: 0, partiel: 0, total: feedbackStore.length };
+      for (const f of feedbackStore) stats[f.rating]++;
+      return json(res, 200, { stats, recent: feedbackStore.slice(-20), disclaimer: DISCLAIMER });
     }
 
     // Static files

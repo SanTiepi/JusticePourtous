@@ -18,6 +18,7 @@ import {
 } from './services/knowledge-engine.mjs';
 import { generateActionPlan } from './services/action-planner.mjs';
 import { triage, estimateCost } from './services/triage-engine.mjs';
+import { analyserCas } from './services/pipeline-v3.mjs';
 import {
   getAllArticles, searchArticles,
   getAllArrets, searchArrets,
@@ -578,6 +579,120 @@ const server = createServer(async (req, res) => {
     if (path === '/api/couverture' && method === 'GET') {
       const result = getCouverture();
       return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // === PREMIUM V3 — Analyse contradictoire ===
+
+    if (path === '/api/premium/analyze-v3' && method === 'POST') {
+      const body = await parseBody(req);
+      if (!body.texte) return json(res, 400, { error: 'texte requis', disclaimer: DISCLAIMER });
+
+      // Scope V1: bail, travail, dettes uniquement
+      const SUPPORTED_V3 = ['bail', 'travail', 'dettes'];
+
+      try {
+        const result = await analyserCas(body.texte, body.canton, body.reponses);
+        if (!result) {
+          return json(res, 503, { error: 'Service IA indisponible', verification_status: 'insufficient', disclaimer: DISCLAIMER });
+        }
+
+        // Mode crise
+        if (result.mode_crise) {
+          return json(res, 200, {
+            mode_crise: true,
+            resume: result.resume,
+            verification_status: 'not_applicable',
+            disclaimer: DISCLAIMER
+          });
+        }
+
+        // Check scope
+        const domaines = result.dossier_summary?.domaines || [];
+        const outOfScope = domaines.filter(d => !SUPPORTED_V3.includes(d));
+
+        // Determine verification status
+        let verification_status = 'verified';
+        if (!result.analysis) verification_status = 'degraded';
+        else if (!result.analysis.claims?.length) verification_status = 'insufficient';
+
+        return json(res, 200, {
+          mode_crise: false,
+          complet: result.complet,
+          verification_status,
+          scope_warning: outOfScope.length > 0 ? `Domaines hors perimetre V1: ${outOfScope.join(', ')}. Analyse partielle.` : null,
+          resume: result.resume,
+          questions: result.questions,
+          issues: result.comprehension?.issues,
+          claims: result.analysis?.claims || [],
+          objections_summary: result.analysis?.objections || [],
+          next_actions: result.analysis?.plan_action || null,
+          critical_deadlines: result.compiled?.delais_critiques || [],
+          documents_required: result.compiled?.documents_requis || [],
+          fatal_errors: result.compiled?.erreurs_fatales || [],
+          contacts: result.compiled?.contacts || [],
+          amount_range: result.compiled?.fourchette_montant || null,
+          unknowns: result.analysis?.ce_quon_ne_sait_pas || [],
+          need_lawyer: result.analysis?.besoin_avocat || false,
+          need_lawyer_reason: result.analysis?.besoin_avocat_raison || null,
+          sources_count: result.dossier_summary?.sources_count || 0,
+          usage: result.usage,
+          disclaimer: DISCLAIMER
+        });
+      } catch (err) {
+        console.error('V3 analysis error:', err.message);
+        return json(res, 500, { error: 'Erreur analyse', verification_status: 'insufficient', disclaimer: DISCLAIMER });
+      }
+    }
+
+    if (path === '/api/premium/analyze-v3/refine' && method === 'POST') {
+      const body = await parseBody(req);
+      if (!body.texte || !body.reponses) {
+        return json(res, 400, { error: 'texte et reponses requis', disclaimer: DISCLAIMER });
+      }
+      // Re-run with answers
+      try {
+        const result = await analyserCas(body.texte, body.canton, body.reponses);
+        if (!result) return json(res, 503, { error: 'Service IA indisponible', disclaimer: DISCLAIMER });
+
+        let verification_status = 'verified';
+        if (!result.analysis) verification_status = 'degraded';
+
+        return json(res, 200, {
+          complet: true,
+          verification_status,
+          resume: result.resume,
+          questions: [],
+          claims: result.analysis?.claims || [],
+          next_actions: result.analysis?.plan_action || null,
+          critical_deadlines: result.compiled?.delais_critiques || [],
+          documents_required: result.compiled?.documents_requis || [],
+          fatal_errors: result.compiled?.erreurs_fatales || [],
+          contacts: result.compiled?.contacts || [],
+          unknowns: result.analysis?.ce_quon_ne_sait_pas || [],
+          need_lawyer: result.analysis?.besoin_avocat || false,
+          usage: result.usage,
+          disclaimer: DISCLAIMER
+        });
+      } catch (err) {
+        return json(res, 500, { error: 'Erreur analyse', verification_status: 'insufficient', disclaimer: DISCLAIMER });
+      }
+    }
+
+    if (path === '/api/premium/estimate' && method === 'GET') {
+      const action = url.searchParams.get('action');
+      if (action === 'analyze_v3') {
+        return json(res, 200, {
+          action: 'analyze_v3',
+          description: 'Analyse contradictoire verifiee — dossier complet avec claims, objections, plan action',
+          cost_min_chf: 5,
+          cost_max_chf: 10,
+          cost_api_estimate_chf: 0.50,
+          includes: ['Qualification juridique', 'Dossier avec articles + jurisprudence', 'Verification multi-modele', 'Plan action + delais + contacts', 'Erreurs a eviter'],
+          scope: 'bail, travail, dettes (V1)',
+          disclaimer: DISCLAIMER
+        });
+      }
+      // Fall through to existing estimate handler
     }
 
     // --- Feedback ---

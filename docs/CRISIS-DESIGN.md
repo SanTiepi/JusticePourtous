@@ -97,6 +97,37 @@ Si notre système ne détecte PAS un cas de danger imminent.
 - FR : Centre LAVI Fribourg — 026 305 15 80
 - JU : Centre LAVI Delémont — 032 420 81 90
 
+## Corrections après review Codex (2026-04-08)
+
+### Erreurs dans le design initial
+- ~~APEA pas la police pour mineurs~~ → FAUX. Si danger immédiat : 117/144, TOUJOURS. APEA = suivi, pas urgence.
+- ~~Écran rouge contraste maximal~~ → Un bon écran de crise CALME. Tons bleu foncé/blanc, sobre, pas agressif. Inspiré RAINN.
+- ~~Log des détections + aucune donnée stockée~~ → Contradiction retirée. ZÉRO log en mode crise, même pas les métadonnées.
+
+### Angles loupés ajoutés
+- **Violence numérique** : spyware, AirTag, sextortion, revenge porn, deepfakes, contrôle bancaire/téléphone. En 2026, c'est aussi fréquent que la violence physique. Ajouter des ressources NCSC et prévention.
+- **"Il est à côté / je ne peux pas parler"** : le design ne peut pas reposer uniquement sur des numéros de téléphone. Proposer : chat silencieux, SMS au 143, formulaire web LAVI, code discret.
+- **Populations invisibilisées** : hommes victimes, personnes LGBTQ+, personnes handicapées, personnes âgées. Les ressources et le langage doivent être inclusifs (pas "femme battue" mais "personne victime de violence").
+- **Cas extrêmes** : strangulation (urgence vitale immédiate → 144), sidération/suicidalité (143), soumission chimique (urgences + constat), dépendance permis de séjour (violence + perte du droit de rester → double piège).
+
+### Flow crise inspiré Crisis Text Line
+```
+Étape 1: "Êtes-vous en sécurité en ce moment ?"
+  → Non → 117 (police) + 144 (ambulance) + "allez dans un lieu sûr"
+  → Oui → continue
+
+Étape 2: "Pouvez-vous parler librement ?"
+  → Non → options silencieuses : chat 143, SMS, formulaire web
+  → Oui → numéros d'appel + consignes incognito/historique
+
+Étape 3: "C'est pour vous ou pour quelqu'un d'autre ?"
+  → Moi → ressources victimes
+  → Quelqu'un d'autre → ressources témoins/signalement
+```
+
+### Message d'entrée (inspiré RAINN)
+"Ce service est anonyme et confidentiel. Nous ne vous demanderons pas votre nom. Nous ne stockons aucune donnée."
+
 ## Ce que le système NE FAIT PAS en mode crise
 
 - Ne pose PAS de questions détaillées sur les faits

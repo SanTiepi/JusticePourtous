@@ -11,6 +11,7 @@
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { execSync } from 'node:child_process';
 import https from 'node:https';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -106,10 +107,29 @@ RÉPONDS EN JSON:
   "resume": "Phrase résumant la compréhension de la situation"
 }`;
 
-async function step1_comprendre(texte, canton, reponsesPrec) {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) return null;
+// CLI fallback — uses Claude CLI (subscription) instead of API (paid credits)
+function callClaudeCLI(systemPrompt, userPrompt) {
+  const fullPrompt = `${systemPrompt}\n\n---\n\n${userPrompt}`;
+  // Always use stdin — command line args have length limits
+  const result = execSync('claude --print', {
+    input: fullPrompt,
+    timeout: 120000,
+    encoding: 'utf-8',
+    maxBuffer: 2 * 1024 * 1024
+  });
+  return result.trim();
+}
 
+function parseJSONResponse(text) {
+  const clean = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+  // Try to find JSON in the response
+  const jsonStart = clean.indexOf('{');
+  const jsonEnd = clean.lastIndexOf('}');
+  if (jsonStart === -1 || jsonEnd === -1) throw new Error('No JSON found in response');
+  return JSON.parse(clean.slice(jsonStart, jsonEnd + 1));
+}
+
+async function step1_comprendre(texte, canton, reponsesPrec) {
   let userPrompt = `SITUATION DU CITOYEN:\n${texte}`;
   if (canton) userPrompt += `\nCanton: ${canton}`;
   if (reponsesPrec && Object.keys(reponsesPrec).length > 0) {
@@ -119,31 +139,52 @@ async function step1_comprendre(texte, canton, reponsesPrec) {
     }
   }
 
-  const body = JSON.stringify({
-    model: 'claude-sonnet-4-20250514',
-    max_tokens: 1500,
-    system: STEP1_SYSTEM,
-    messages: [{ role: 'user', content: userPrompt }]
-  });
+  let text;
+  let usage = { input: 0, output: 0 };
 
-  const resp = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01'
-    },
-    body
-  });
+  // Try API first, fall back to CLI
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (apiKey) {
+    try {
+      const body = JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1500,
+        system: STEP1_SYSTEM,
+        messages: [{ role: 'user', content: userPrompt }]
+      });
 
-  if (!resp.ok) throw new Error(`Claude API error ${resp.status}`);
+      const resp = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey,
+          'anthropic-version': '2023-06-01'
+        },
+        body
+      });
 
-  const data = await resp.json();
-  const text = data.content[0].text;
+      if (resp.ok) {
+        const data = await resp.json();
+        text = data.content[0].text;
+        usage = { input: data.usage?.input_tokens || 0, output: data.usage?.output_tokens || 0 };
+      } else {
+        console.log(`API error ${resp.status}, falling back to CLI...`);
+        text = callClaudeCLI(STEP1_SYSTEM, userPrompt);
+        usage = { input: 0, output: 0, mode: 'cli' };
+      }
+    } catch (e) {
+      console.log(`API exception, falling back to CLI: ${e.message}`);
+      text = callClaudeCLI(STEP1_SYSTEM, userPrompt);
+      usage = { input: 0, output: 0, mode: 'cli' };
+    }
+  } else {
+    // No API key — use CLI directly
+    text = callClaudeCLI(STEP1_SYSTEM, userPrompt);
+    usage = { input: 0, output: 0, mode: 'cli' };
+  }
 
-  // Parse JSON
-  const clean = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
-  const parsed = JSON.parse(clean);
+  // Parse JSON response
+  const parsed = parseJSONResponse(text);
 
   // Validate fiche_ids exist
   const validIds = new Set(ALL_FICHES.map(f => f.id));
@@ -153,7 +194,7 @@ async function step1_comprendre(texte, canton, reponsesPrec) {
 
   return {
     comprehension: parsed,
-    usage: { input: data.usage?.input_tokens || 0, output: data.usage?.output_tokens || 0 }
+    usage
   };
 }
 
@@ -405,20 +446,58 @@ RÉPONDS EN JSON:
 }`;
 
 async function step3_raisonner(dossier) {
-  // Try OpenAI first (GPT), fall back to Claude
   const openaiKey = process.env.OPENAI_API_KEY;
   const anthropicKey = process.env.ANTHROPIC_API_KEY;
 
-  const dossierStr = JSON.stringify(dossier, null, 0); // compact
+  // Compact dossier — limit size for token efficiency
+  const compactDossier = {
+    faits: dossier.faits,
+    canton: dossier.canton,
+    issues: dossier.issues.map(iss => ({
+      issue_id: iss.issue_id,
+      qualification: iss.qualification,
+      domaine: iss.domaine,
+      conditions_remplies: iss.conditions_remplies,
+      conditions_manquantes: iss.conditions_manquantes,
+      articles: iss.articles.slice(0, 3),
+      arrets: iss.arrets.slice(0, 3).map(a => ({ signature: a.signature, resume: a.resume, resultat: a.resultat, montant: a.montant, source_id: a.source_id })),
+      delais: iss.delais,
+      anti_erreurs: iss.anti_erreurs,
+      patterns: iss.patterns.slice(0, 2),
+      cas_pratiques: iss.cas_pratiques.slice(0, 2),
+      contacts: iss.contacts.slice(0, 3)
+    }))
+  };
+  const dossierStr = JSON.stringify(compactDossier, null, 0);
+  const userMsg = `DOSSIER:\n${dossierStr}\n\nAnalyse et vérifie.`;
 
+  // Try OpenAI API first (cross-model check)
   if (openaiKey) {
-    return await callOpenAI(STEP3_SYSTEM, `DOSSIER:\n${dossierStr}\n\nAnalyse et vérifie.`, openaiKey);
-  } else if (anthropicKey) {
-    // Fallback: use Claude again (less ideal — same model, no cross-check)
-    return await callClaude(STEP3_SYSTEM, `DOSSIER:\n${dossierStr}\n\nAnalyse et vérifie.`, anthropicKey);
+    try {
+      return await callOpenAI(STEP3_SYSTEM, userMsg, openaiKey);
+    } catch (e) {
+      console.log(`OpenAI error, trying Claude API: ${e.message}`);
+    }
   }
 
-  return null;
+  // Try Claude API
+  if (anthropicKey) {
+    try {
+      return await callClaude(STEP3_SYSTEM, userMsg, anthropicKey);
+    } catch (e) {
+      console.log(`Claude API error, falling back to CLI: ${e.message}`);
+    }
+  }
+
+  // Fallback: Claude CLI (subscription, free)
+  try {
+    const text = callClaudeCLI(STEP3_SYSTEM, userMsg);
+    const parsed = parseJSONResponse(text);
+    return { analysis: parsed, usage: { input: 0, output: 0, mode: 'cli' }, model: 'claude-cli' };
+  } catch (e) {
+    console.error(`CLI fallback also failed: ${e.message}`);
+    return null;
+  }
 }
 
 async function callClaude(system, user, apiKey) {

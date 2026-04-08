@@ -259,26 +259,75 @@ function step2_dossier(comprehension, canton) {
       }
     }
 
-    // Articles de loi (texte complet)
-    for (const ref of (issue.base_legale_probable || [])) {
+    // Articles de loi — texte complet + articles connexes
+    const articleRefs = new Set(issue.base_legale_probable || []);
+    // Also add articles from the fiche
+    if (issueDossier.fiche?.articles) {
+      for (const a of issueDossier.fiche.articles) articleRefs.add(a.ref);
+    }
+    for (const ref of articleRefs) {
       const article = ALL_ARTICLES.find(a => a.ref === ref);
       if (article) {
         issueDossier.articles.push({
           ref: article.ref,
           titre: article.titre,
-          texteSimple: article.texteSimple,
+          texteSimple: article.texteSimple || article.texte || '',
           exemplesConcrets: article.exemplesConcrets,
           lienFedlex: article.lienFedlex,
+          articlesLies: article.articlesLies,
           source_id: `art_${article.ref.replace(/\s/g, '_')}`
         });
+        // Load linked articles too (1 level deep)
+        for (const linked of (article.articlesLies || []).slice(0, 3)) {
+          if (!articleRefs.has(linked)) {
+            articleRefs.add(linked);
+            const linkedArt = ALL_ARTICLES.find(a => a.ref === linked);
+            if (linkedArt) {
+              issueDossier.articles.push({
+                ref: linkedArt.ref,
+                titre: linkedArt.titre,
+                texteSimple: linkedArt.texteSimple || linkedArt.texte || '',
+                lienFedlex: linkedArt.lienFedlex,
+                source_id: `art_${linkedArt.ref.replace(/\s/g, '_')}`,
+                role: 'connexe'
+              });
+            }
+          }
+        }
       }
     }
 
-    // Arrêts TF du même domaine (top 5 les plus pertinents)
-    const domainArrets = ALL_ARRETS.filter(a =>
-      a.domaine === domaine || a.theme?.toLowerCase().includes(domaine)
-    );
-    issueDossier.arrets = domainArrets.slice(0, 5).map(a => ({
+    // Arrêts TF — séparés en FAVORABLES et DÉFAVORABLES
+    // Score pertinence par mots-clés de la qualification
+    const qualWords = (issue.qualification || '').toLowerCase().split(/\s+/);
+    const scoredArrets = ALL_ARRETS
+      .filter(a => {
+        const text = [a.resume, a.theme, a.principeCle, ...(a.articlesAppliques || [])].join(' ').toLowerCase();
+        // Must match at least 1 article ref OR 2 keywords
+        const matchesArticle = (issue.base_legale_probable || []).some(ref => text.includes(ref.toLowerCase()));
+        const matchesKeywords = qualWords.filter(w => w.length > 3 && text.includes(w)).length;
+        return matchesArticle || matchesKeywords >= 2;
+      })
+      .map(a => {
+        const text = [a.resume, a.theme, a.principeCle].join(' ').toLowerCase();
+        const relevance = qualWords.filter(w => w.length > 3 && text.includes(w)).length;
+        return { ...a, relevance };
+      })
+      .sort((a, b) => b.relevance - a.relevance);
+
+    const favorables = scoredArrets.filter(a =>
+      a.resultat?.includes('favorable') && !a.resultat?.includes('défavorable')
+    ).slice(0, 3);
+
+    const defavorables = scoredArrets.filter(a =>
+      a.resultat?.includes('défavorable') || a.resultat?.includes('rejeté')
+    ).slice(0, 2);
+
+    const neutres = scoredArrets.filter(a =>
+      !favorables.includes(a) && !defavorables.includes(a)
+    ).slice(0, 2);
+
+    const formatArret = (a, role) => ({
       signature: a.signature,
       date: a.date,
       resume: a.resume,
@@ -287,8 +336,15 @@ function step2_dossier(comprehension, canton) {
       montant: a.montant,
       fourchetteMontant: a.fourchetteMontant,
       articlesAppliques: a.articlesAppliques,
-      source_id: `arret_${a.signature?.replace(/[\/\s]/g, '_')}`
-    }));
+      source_id: `arret_${a.signature?.replace(/[\/\s]/g, '_')}`,
+      role // 'favorable', 'defavorable', 'neutre'
+    });
+
+    issueDossier.arrets = [
+      ...favorables.map(a => formatArret(a, 'favorable')),
+      ...defavorables.map(a => formatArret(a, 'defavorable')),
+      ...neutres.map(a => formatArret(a, 'neutre'))
+    ];
 
     // Délais du domaine
     issueDossier.delais = ALL_DELAIS

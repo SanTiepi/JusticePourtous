@@ -158,7 +158,8 @@ async function batchImport(maxPerChamber, concurrency) {
   if (!existsSync(jurisDir)) mkdirSync(jurisDir, { recursive: true });
 
   // Load filenames
-  const filenamesPath = join(process.env.TEMP || process.env.TMP || '/tmp', 'bger_filenames.json');
+  const filenamesArg = args.find(a => a.startsWith('--filenames='))?.split('=')[1];
+  const filenamesPath = filenamesArg || join(process.env.TEMP || process.env.TMP || '/tmp', 'bger_filenames.json');
   if (!existsSync(filenamesPath)) {
     console.error('ERROR: bger_filenames.json not found. Run directory listing extraction first.');
     process.exit(1);

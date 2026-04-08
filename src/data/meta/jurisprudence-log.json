@@ -136,7 +136,41 @@
           "total": 511
         }
       }
+    },
+    {
+      "date": "2026-04-08T04:01:19.380Z",
+      "type": "batch-import",
+      "downloaded": 3000,
+      "classified": 537,
+      "errors": 0,
+      "domaines": {
+        "bail": {
+          "existing": 346,
+          "new": 62,
+          "total": 408
+        },
+        "travail": {
+          "existing": 453,
+          "new": 110,
+          "total": 563
+        },
+        "famille": {
+          "existing": 212,
+          "new": 64,
+          "total": 276
+        },
+        "dettes": {
+          "existing": 426,
+          "new": 126,
+          "total": 552
+        },
+        "etrangers": {
+          "existing": 511,
+          "new": 177,
+          "total": 688
+        }
+      }
     }
   ],
-  "lastRun": "2026-04-08T03:59:34.136Z"
+  "lastRun": "2026-04-08T04:01:19.380Z"
 }

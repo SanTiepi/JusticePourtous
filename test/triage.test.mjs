@@ -54,7 +54,7 @@ describe('Triage Engine', () => {
     assert.ok(res.data.diagnostic);
     assert.ok(res.data.contacts.length > 0);
     assert.ok(res.data.disclaimer);
-    assert.ok(['simple', 'moyen', 'complexe'].includes(res.data.complexite));
+    assert.ok(['simple', 'moyen', 'complexe', 'incertain'].includes(res.data.complexite));
   });
 
   it('retourne un résultat pour harcèlement', async () => {
@@ -80,11 +80,11 @@ describe('Triage Engine', () => {
 
   // --- Complexity scoring is data-driven ---
 
-  it('le score de complexité est calculé sur les données', async () => {
+  it('le score de complexité est présent ou null en mode basique', async () => {
     const res = await httpPost('/api/triage', { texte: 'moisissure logement' });
     assert.equal(res.status, 200);
-    assert.ok(typeof res.data.complexiteScore === 'number');
-    assert.ok(res.data.complexiteScore >= 0 && res.data.complexiteScore <= 100);
+    // En mode LLM: nombre 0-100. En mode basique: null (on ne devine pas)
+    assert.ok(res.data.complexiteScore === null || (typeof res.data.complexiteScore === 'number' && res.data.complexiteScore >= 0));
   });
 
   // --- API contract ---

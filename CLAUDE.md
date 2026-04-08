@@ -26,6 +26,17 @@
 - Données : 182 fiches, 622 articles, 217 arrêts, 10 domaines, graphe bidirectionnel
 - Orchestration : Paperclip (http://localhost:3100), 5 agents GStack model
 
+### Pipeline agents (D005 — séquentiel)
+| Agent | Trigger | Mécanisme |
+|---|---|---|
+| CTO-Claude | 1x/jour 9h | heartbeatCron: "0 9 * * *" sur agent |
+| DataEngineer | Après brief CTO | `POST /api/routines/c74f66e5-35de-49a5-8b99-1a6dcb5fa85a/run` |
+| FrontendDev | Après changement API | `POST /api/routines/4390f2b5-2236-4b69-991b-2d8318c96558/run` |
+| CodexReviewer | Après commit | Webhook: `POST /api/routine-triggers/public/f6128f8bf46a0157d3c86f79/fire` (Bearer secret dans .env) |
+
+**Règle** : CTO crée brief → POST routine Engineer. Engineer merge → POST routine Frontend. Engineer ou Frontend commit → webhook Reviewer (git post-commit hook).
+**Contre-exemple** : ne pas paralléliser — 4 agents en parallèle = conflits git (D005).
+
 ### Erreurs passées (pitfalls)
 - Ne pas construire un "OS d'attention" ou un "gouverneur cognitif" — c'est de l'abstraction élégante qui ne livre rien. Attendre les meilleurs modèles.
 - Ne pas faire la course aux données vs Swisslex. On gagne sur l'intelligence du triage, pas le volume.

@@ -210,6 +210,15 @@ async function loadResultat(ficheId) {
   html += '<p>' + r.explication + '</p>';
   html += '</div>';
 
+  // Avocat CTA — toujours visible apres le resume
+  html += '<div class="avocat-cta">';
+  html += '<div class="avocat-cta-text">';
+  html += '<strong>Situation complexe ou urgente ?</strong>';
+  html += '<p>Trouvez un service juridique gratuit ou un avocat dans votre canton.</p>';
+  html += '</div>';
+  html += '<a href="/annuaire.html" class="btn btn-red">J\'ai besoin d\'un avocat</a>';
+  html += '</div>';
+
   // Articles de loi
   if (r.articles && r.articles.length) {
     html += '<div class="card"' + stagger() + '>';
@@ -349,6 +358,15 @@ function renderTaxonomieResult(data, query, container) {
   if (q.domaine) html += '<p class="mt-2 text-muted" style="font-size:0.85rem">Domaine : ' + escHtml(q.domaine) + '</p>';
   html += '</div>';
 
+  // Avocat CTA
+  html += '<div class="avocat-cta">';
+  html += '<div class="avocat-cta-text">';
+  html += '<strong>Situation complexe ou urgente ?</strong>';
+  html += '<p>Trouvez un service juridique gratuit ou un avocat dans votre canton.</p>';
+  html += '</div>';
+  html += '<a href="/annuaire.html" class="btn btn-red">J\'ai besoin d\'un avocat</a>';
+  html += '</div>';
+
   if (q.qualification_juridique) {
     html += '<div class="card">';
     html += '<h3>Qualification</h3>';
@@ -382,6 +400,15 @@ function renderEnrichedResult(data, query, container) {
     if (fiche.domaine) html += '<p class="mt-1" style="font-size:0.8rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.05em">' + escHtml(fiche.domaine) + '</p>';
     html += '</div>';
   }
+
+  // Avocat CTA — toujours visible apres le resume
+  html += '<div class="avocat-cta"' + stagger() + '>';
+  html += '<div class="avocat-cta-text">';
+  html += '<strong>Situation complexe ou urgente ?</strong>';
+  html += '<p>Trouvez un service juridique gratuit ou un avocat dans votre canton.</p>';
+  html += '</div>';
+  html += '<a href="/annuaire.html" class="btn btn-red">J\'ai besoin d\'un avocat</a>';
+  html += '</div>';
 
   // Quick actions (mobile-first: buttons at top)
   html += '<div class="result-actions"' + stagger() + '>';

@@ -299,7 +299,7 @@ async function refineTriage(sessionId, reponses) {
 
 function triageFallback(texte, canton) {
   const allFiches = getAllFiches();
-  const results = semanticSearch(texte, allFiches, 3);
+  const results = semanticSearch(texte, allFiches, 5);
 
   if (results.length === 0) {
     return {
@@ -308,47 +308,64 @@ function triageFallback(texte, canton) {
     };
   }
 
-  const ficheId = results[0].fiche.id;
-  const complete = queryComplete(ficheId);
+  // IMPORTANT: en mode basique, on ne CHOISIT PAS une fiche.
+  // On propose les 3 meilleures et l'utilisateur confirme.
+  // Un mauvais match avec un plan d'action = conseil FAUX = dangereux.
 
-  if (complete.status !== 200) {
-    return { status: 200, data: buildNoMatchResult(null, canton) };
-  }
+  const topMatches = results.slice(0, 3).map(r => {
+    const fiche = r.fiche;
+    return {
+      id: fiche.id,
+      domaine: fiche.domaine,
+      tags: fiche.tags,
+      description: fiche.reponse?.explication?.slice(0, 200) + '...',
+      score: r.score
+    };
+  });
 
-  const primary = complete.data;
-  const scoring = scoreComplexity(primary, [primary]);
-  const urgence = deriveUrgency(primary);
-  const besoinAvocat = needsLawyer(scoring, urgence, primary);
-  const planAction = generateActionPlan(primary, canton);
+  // On donne quand même le domaine le plus probable et les contacts
+  const bestDomaine = topMatches[0].domaine;
+  const bestFicheId = topMatches[0].id;
+  const complete = queryComplete(bestFicheId);
+  const primary = complete.status === 200 ? complete.data : null;
 
   return {
     status: 200,
     data: {
       trouve: true,
-      complet: false, // Fallback = less precise
+      complet: false,
       sessionId: null,
-      mode: 'basique', // Signal that this is the free fallback
-      domaine: primary.fiche.domaine,
-      ficheId: primary.fiche.id,
-      complexite: scoring.level,
-      complexiteScore: scoring.score,
-      besoinAvocat,
-      urgence,
-      questionsManquantes: (primary.fiche.questions || []).map(q => ({
-        id: q.id, question: q.text, choix: q.options || [], importance: 'utile'
-      })),
-      diagnostic: buildDiagnostic(primary, scoring, besoinAvocat, urgence, true) +
-        ' (Analyse basique — activez l\'analyse complète pour un diagnostic personnalisé)',
-      planAction: planAction ? {
-        etapes: planAction.etapes?.slice(0, 4),
-        pieges: planAction.pieges?.slice(0, 2)
-      } : null,
-      contacts: filterContacts(primary.escalade || [], canton),
-      delaisCritiques: (primary.delais || [])
-        .filter(d => d.domaine === primary.fiche.domaine).slice(0, 2)
-        .map(d => ({ procedure: d.procedure, delai: d.delai })),
-      confiance: primary.confiance || 'variable',
-      lacunes: ['Analyse basique (sans IA). Pour un diagnostic précis, utilisez l\'analyse complète.'],
+      mode: 'basique',
+      domaine: bestDomaine,
+
+      // On montre les 3 possibilités, pas 1 seule
+      situationsPossibles: topMatches,
+
+      diagnostic: `Nous avons identifié ${topMatches.length} situations qui pourraient correspondre à votre problème. ` +
+        'Sélectionnez celle qui vous correspond le mieux pour obtenir un plan d\'action précis. ' +
+        'Pour une analyse automatique et personnalisée, utilisez l\'analyse complète.',
+
+      // PAS de plan d'action en mode basique — trop risqué de donner le mauvais
+      planAction: null,
+
+      // Les contacts et délais du domaine sont fiables même sans match exact
+      // Pas de complexité calculée en mode basique — on ne sait pas assez
+      complexite: 'incertain',
+      complexiteScore: null,
+      besoinAvocat: null, // On ne sait pas — mieux que de deviner faux
+      urgence: 'ce_mois',
+
+      contacts: primary ? filterContacts(primary.escalade || [], canton) : filterContacts([], canton),
+      delaisCritiques: primary ? (primary.delais || [])
+        .filter(d => d.domaine === bestDomaine).slice(0, 3)
+        .map(d => ({ procedure: d.procedure, delai: d.delai, consequence: d.consequence })) : [],
+      confiance: 'incertain',
+      lacunes: [
+        'Mode basique : nous ne sommes pas certains d\'avoir identifié la bonne situation.',
+        'Vérifiez les situations proposées ci-dessus.',
+        'Pour une identification automatique et fiable, utilisez l\'analyse complète.'
+      ],
+      alternatives: topMatches.slice(1),
       disclaimer: buildDisclaimer()
     }
   };

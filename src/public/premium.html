@@ -21,6 +21,10 @@
       </ul>
     </nav>
 
+    <div class="notice-juridique" role="note">
+      <strong>Information juridique generale</strong> — JusticePourtous ne remplace pas un conseil d'avocat personalise. Les informations sont fournies a titre indicatif, sans garantie d'exhaustivite.
+    </div>
+
     <header>
       <h1>Espace Premium</h1>
       <p class="subtitle">Analyse juridique personnalisee par intelligence artificielle.</p>
@@ -29,8 +33,12 @@
     <div id="noSession">
       <div class="card" style="text-align:center">
         <h3>Analyse juridique personnalisee</h3>
-        <p class="text-muted mb-2">CHF 50 &mdash; wallet de CHF 30 (200 a 1100 requetes)</p>
-        <button class="btn btn-red btn-full" onclick="acheter()">Acheter un wallet</button>
+        <div class="cout-box">
+          <div class="cout-label">Cout unique</div>
+          <div class="cout-montant">CHF 50</div>
+          <div class="cout-detail">Wallet de CHF 30 de credits IA — 200 a 1100 analyses selon complexite</div>
+        </div>
+        <button class="btn btn-red btn-full" onclick="acheter()">Acheter un wallet &mdash; CHF 50</button>
       </div>
     </div>
 
@@ -42,7 +50,7 @@
 
       <div class="card">
         <h3>Analyser votre situation</h3>
-        <p class="text-muted mb-2">Cout estime : CHF 0.03 a 0.10</p>
+        <span class="cout-estimate">Cout estime : CHF 0.03 a 0.10 par analyse</span>
         <textarea id="question" placeholder="Decrivez votre situation juridique..."></textarea>
         <button class="btn btn-full mt-2" onclick="analyserQuestion()">Analyser</button>
       </div>
@@ -56,10 +64,6 @@
         <h3>Historique</h3>
         <div id="historique"><p class="text-muted">Aucune action</p></div>
       </div>
-    </div>
-
-    <div class="disclaimer">
-      JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise.
     </div>
 
     <footer>&copy; 2026 JusticePourtous</footer>

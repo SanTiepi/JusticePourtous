@@ -3,1015 +3,3525 @@
     "id": "dettes_commandement_payer",
     "domaine": "dettes",
     "sousDomaine": "poursuite",
-    "tags": ["commandement", "payer", "poursuite", "requisition", "office"],
+    "tags": [
+      "commandement",
+      "payer",
+      "poursuite",
+      "requisition",
+      "office"
+    ],
     "questions": [
-      { "id": "q1", "text": "Situation ?", "options": ["j'ai recu un commandement", "je veux poursuivre quelqu'un", "je ne comprends pas le document"] },
-      { "id": "q2", "text": "Montant ?", "options": ["<1000 CHF", "1000-10000 CHF", ">10000 CHF"] },
-      { "id": "q3", "text": "Delai pour reagir ?", "options": ["<10 jours", "10-20 jours", ">20 jours", "expire"] },
-      { "id": "q4", "text": "Connaissez-vous le creancier ?", "options": ["oui", "non"] },
-      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Situation ?",
+        "options": [
+          "j'ai recu un commandement",
+          "je veux poursuivre quelqu'un",
+          "je ne comprends pas le document"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Montant ?",
+        "options": [
+          "<1000 CHF",
+          "1000-10000 CHF",
+          ">10000 CHF"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Delai pour reagir ?",
+        "options": [
+          "<10 jours",
+          "10-20 jours",
+          ">20 jours",
+          "expire"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Connaissez-vous le creancier ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "Le commandement de payer est le premier acte de la procedure de poursuite (art. 69 LP). L'office des poursuites le notifie au debiteur sur requisition du creancier. Le debiteur dispose de 10 jours des la notification pour former opposition (art. 74 LP). L'opposition n'a pas besoin d'etre motivee — il suffit de cocher la case ou de le declarer verbalement a l'office. Si le debiteur ne fait pas opposition dans les 10 jours, le creancier peut requete la continuation de la poursuite. Attention : recevoir un commandement de payer n'est pas un jugement et ne signifie pas que la dette est reconnue. Toute personne peut envoyer un commandement de payer pour n'importe quelle pretention, meme infondee. Le cout de la requisition est a la charge du creancier (CHF 40-200 selon le montant). Former opposition est gratuit et bloque la poursuite.",
       "articles": [
-        { "ref": "LP 69", "titre": "Requisition de poursuite — commandement de payer", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_69" },
-        { "ref": "LP 74", "titre": "Opposition au commandement de payer", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_74" },
-        { "ref": "LP 75", "titre": "Delai d'opposition", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_75" }
+        {
+          "ref": "LP 69",
+          "titre": "Requisition de poursuite — commandement de payer",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_69"
+        },
+        {
+          "ref": "LP 74",
+          "titre": "Opposition au commandement de payer",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_74"
+        },
+        {
+          "ref": "LP 75",
+          "titre": "Delai d'opposition",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_75"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_208/2014", "resume": "L'opposition tardive (apres 10 jours) peut etre restituee si le debiteur prouve qu'il n'a pas pu agir dans le delai (art. 33 al. 4 LP)." },
-        { "ref": "TF 5A_860/2011", "resume": "Un commandement de payer notifie a une mauvaise adresse est nul et ne fait pas courir le delai d'opposition." }
+        {
+          "ref": "TF 5A_208/2014",
+          "resume": "L'opposition tardive (apres 10 jours) peut etre restituee si le debiteur prouve qu'il n'a pas pu agir dans le delai (art. 33 al. 4 LP)."
+        },
+        {
+          "ref": "TF 5A_860/2011",
+          "resume": "Un commandement de payer notifie a une mauvaise adresse est nul et ne fait pas courir le delai d'opposition."
+        }
       ],
       "modeleLettre": "",
       "services": [
-        { "nom": "Office des poursuites du district", "url": "https://www.vd.ch/themes/etat-droit-finances/poursuites-et-faillites", "canton": "VD" },
-        { "nom": "Office des poursuites Geneve", "url": "https://www.ge.ch/organisation/office-poursuites", "canton": "GE" },
-        { "nom": "Centre social protestant (aide dettes)", "tel": "021 560 60 60", "url": "https://www.csp.ch", "canton": "VD" }
+        {
+          "nom": "Office des poursuites du district",
+          "url": "https://www.vd.ch/themes/etat-droit-finances/poursuites-et-faillites",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office des poursuites Geneve",
+          "url": "https://www.ge.ch/organisation/office-poursuites",
+          "canton": "GE"
+        },
+        {
+          "nom": "Centre social protestant (aide dettes)",
+          "tel": "021 560 60 60",
+          "url": "https://www.csp.ch",
+          "canton": "VD"
+        }
       ],
-      "routageEcosysteme": { "boussole": { "condition": "probleme_dettes", "url": "boussole.app" } },
+      "routageEcosysteme": {
+        "boussole": {
+          "condition": "probleme_dettes",
+          "url": "boussole.app"
+        }
+      },
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "La personne a recu un commandement de payer et ne sait pas comment reagir",
+    "profane_aliases": [
+      "j'ai recu un commandement de payer",
+      "poursuite contre moi",
+      "papier de l'office des poursuites",
+      "on me reclame de l'argent",
+      "lettre commandement payer"
+    ],
+    "negative_signals": [
+      "veut envoyer un commandement de payer a quelqu'un",
+      "simple facture impayee sans poursuite"
+    ],
+    "required_facts": [
+      "delai restant pour opposition",
+      "montant reclame",
+      "creancier identifie",
+      "dette reconnue ou contestee"
+    ]
   },
   {
     "id": "dettes_opposition",
     "domaine": "dettes",
     "sousDomaine": "poursuite",
-    "tags": ["opposition", "mainlevee", "titre", "executoire", "reconnaissance"],
+    "tags": [
+      "opposition",
+      "mainlevee",
+      "titre",
+      "executoire",
+      "reconnaissance"
+    ],
     "questions": [
-      { "id": "q1", "text": "Avez-vous fait opposition ?", "options": ["oui", "non, delai expire", "je ne savais pas"] },
-      { "id": "q2", "text": "Avez-vous signe un document reconnaissant la dette ?", "options": ["oui, contrat", "oui, facture signee", "non"] },
-      { "id": "q3", "text": "La dette est-elle contestee ?", "options": ["totalement", "partiellement", "non, mais je ne peux pas payer"] },
-      { "id": "q4", "text": "Type de creancier ?", "options": ["particulier", "entreprise", "etat/impots", "assurance"] },
-      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Avez-vous fait opposition ?",
+        "options": [
+          "oui",
+          "non, delai expire",
+          "je ne savais pas"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Avez-vous signe un document reconnaissant la dette ?",
+        "options": [
+          "oui, contrat",
+          "oui, facture signee",
+          "non"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "La dette est-elle contestee ?",
+        "options": [
+          "totalement",
+          "partiellement",
+          "non, mais je ne peux pas payer"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Type de creancier ?",
+        "options": [
+          "particulier",
+          "entreprise",
+          "etat/impots",
+          "assurance"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "Apres opposition du debiteur, le creancier doit obtenir la mainlevee pour continuer la poursuite. Il existe deux types : (1) la mainlevee definitive (art. 80 LP) si le creancier dispose d'un jugement executoire ou d'un titre equivalent, (2) la mainlevee provisoire (art. 82 LP) si le creancier dispose d'une reconnaissance de dette signee (contrat, facture acceptee, billet a ordre). Pour la mainlevee provisoire, le debiteur peut s'opposer en rendant vraisemblable sa liberation (paiement, prescription, compensation). Si la mainlevee provisoire est accordee, le debiteur peut encore agir en liberation de dette dans les 20 jours (art. 83 al. 2 LP). La procedure de mainlevee est sommaire et rapide (quelques semaines). Sans titre de mainlevee, le creancier doit agir en justice au fond (procedure ordinaire) pour obtenir un jugement, puis revenir avec la mainlevee definitive.",
       "articles": [
-        { "ref": "LP 74", "titre": "Opposition", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_74" },
-        { "ref": "LP 80", "titre": "Mainlevee definitive", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_80" },
-        { "ref": "LP 82", "titre": "Mainlevee provisoire", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_82" },
-        { "ref": "LP 83", "titre": "Action en liberation de dette", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_83" }
+        {
+          "ref": "LP 74",
+          "titre": "Opposition",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_74"
+        },
+        {
+          "ref": "LP 80",
+          "titre": "Mainlevee definitive",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_80"
+        },
+        {
+          "ref": "LP 82",
+          "titre": "Mainlevee provisoire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_82"
+        },
+        {
+          "ref": "LP 83",
+          "titre": "Action en liberation de dette",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_83"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_326/2013", "resume": "Une facture envoyee sans signature du debiteur ne constitue pas une reconnaissance de dette au sens de l'art. 82 LP." },
-        { "ref": "TF 5A_450/2012", "resume": "Le contrat de bail signe vaut reconnaissance de dette pour les loyers echus et justifie la mainlevee provisoire." }
+        {
+          "ref": "TF 5A_326/2013",
+          "resume": "Une facture envoyee sans signature du debiteur ne constitue pas une reconnaissance de dette au sens de l'art. 82 LP."
+        },
+        {
+          "ref": "TF 5A_450/2012",
+          "resume": "Le contrat de bail signe vaut reconnaissance de dette pour les loyers echus et justifie la mainlevee provisoire."
+        }
       ],
       "modeleLettre": "",
       "services": [
-        { "nom": "Centre social protestant VD", "tel": "021 560 60 60", "url": "https://www.csp.ch", "canton": "VD" },
-        { "nom": "Caritas Geneve (conseil en dettes)", "tel": "022 708 04 44", "url": "https://www.caritas-geneve.ch", "canton": "GE" }
+        {
+          "nom": "Centre social protestant VD",
+          "tel": "021 560 60 60",
+          "url": "https://www.csp.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caritas Geneve (conseil en dettes)",
+          "tel": "022 708 04 44",
+          "url": "https://www.caritas-geneve.ch",
+          "canton": "GE"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "La personne a fait ou veut faire opposition a un commandement de payer et le creancier demande la mainlevee",
+    "profane_aliases": [
+      "j'ai fait opposition et maintenant",
+      "mainlevee c'est quoi",
+      "le creancier continue la poursuite",
+      "opposition au commandement de payer",
+      "contester une poursuite"
+    ],
+    "negative_signals": [
+      "pas encore recu de commandement de payer",
+      "simple question sur le paiement d'une facture"
+    ],
+    "required_facts": [
+      "opposition faite ou non",
+      "titre du creancier (jugement, contrat)",
+      "dette contestee ou non",
+      "montant en jeu"
+    ]
   },
   {
     "id": "dettes_minimum_vital",
     "domaine": "dettes",
     "sousDomaine": "saisie",
-    "tags": ["minimum vital", "insaisissable", "saisie", "calcul", "subsistance"],
+    "tags": [
+      "minimum vital",
+      "insaisissable",
+      "saisie",
+      "calcul",
+      "subsistance"
+    ],
     "questions": [
-      { "id": "q1", "text": "Situation familiale ?", "options": ["seul", "couple", "famille avec enfants"] },
-      { "id": "q2", "text": "Faites-vous l'objet d'une saisie ?", "options": ["oui, en cours", "annoncee", "non"] },
-      { "id": "q3", "text": "Revenu mensuel net ?", "options": ["<4000", "4000-6000", "6000-8000", ">8000"] },
-      { "id": "q4", "text": "Charges speciales ?", "options": ["pension alimentaire", "frais medicaux", "aucune"] },
-      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Situation familiale ?",
+        "options": [
+          "seul",
+          "couple",
+          "famille avec enfants"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Faites-vous l'objet d'une saisie ?",
+        "options": [
+          "oui, en cours",
+          "annoncee",
+          "non"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Revenu mensuel net ?",
+        "options": [
+          "<4000",
+          "4000-6000",
+          "6000-8000",
+          ">8000"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Charges speciales ?",
+        "options": [
+          "pension alimentaire",
+          "frais medicaux",
+          "aucune"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "Le minimum vital (minimum d'existence) est insaisissable (art. 93 LP). L'office des poursuites ne peut saisir que ce qui depasse ce minimum. Le calcul se base sur les normes d'insaisissabilite fixees par la Conference des preposes aux poursuites et faillites : base mensuelle d'environ CHF 1'200 pour une personne seule, CHF 1'350 pour le chef de famille, CHF 600 par enfant, plus le loyer effectif (dans les limites raisonnables), les primes d'assurance maladie obligatoire (apres subsides), les frais de transport professionnel, et les pensions alimentaires dues. Les impots courants ne sont pas inclus dans le minimum vital LP (contrairement au minimum vital du droit de la famille). Si le debiteur estime que la saisie ne respecte pas son minimum vital, il peut porter plainte a l'autorite de surveillance (art. 17 LP) dans les 10 jours.",
       "articles": [
-        { "ref": "LP 93", "titre": "Biens insaisissables — revenus", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_93" },
-        { "ref": "LP 92", "titre": "Biens absolument insaisissables", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_92" },
-        { "ref": "LP 17", "titre": "Plainte a l'autorite de surveillance", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_17" }
+        {
+          "ref": "LP 93",
+          "titre": "Biens insaisissables — revenus",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_93"
+        },
+        {
+          "ref": "LP 92",
+          "titre": "Biens absolument insaisissables",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_92"
+        },
+        {
+          "ref": "LP 17",
+          "titre": "Plainte a l'autorite de surveillance",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_17"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_919/2012", "resume": "Le loyer effectif doit etre pris en compte dans le calcul du minimum vital, meme s'il est superieur a la moyenne, sauf abus manifeste." },
-        { "ref": "TF 5A_111/2015", "resume": "Les frais de vehicule ne sont inclus dans le minimum vital que si le vehicule est indispensable a l'activite professionnelle." }
+        {
+          "ref": "TF 5A_919/2012",
+          "resume": "Le loyer effectif doit etre pris en compte dans le calcul du minimum vital, meme s'il est superieur a la moyenne, sauf abus manifeste."
+        },
+        {
+          "ref": "TF 5A_111/2015",
+          "resume": "Les frais de vehicule ne sont inclus dans le minimum vital que si le vehicule est indispensable a l'activite professionnelle."
+        }
       ],
       "modeleLettre": "Objet : Plainte contre le calcul de la saisie\n\nA l'Autorite de surveillance en matiere de poursuites et faillites,\n\nMadame, Monsieur,\n\nJe forme plainte au sens de l'art. 17 LP contre le proces-verbal de saisie du [date], etabli par l'Office des poursuites de [lieu], poursuite n° [numero].\n\nLe minimum vital a ete calcule a CHF [montant] alors qu'il devrait etre de CHF [montant] en tenant compte de :\n- [Charges non prises en compte]\n\nJe demande la rectification du calcul.\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
       "services": [
-        { "nom": "Centre social protestant VD", "tel": "021 560 60 60", "url": "https://www.csp.ch", "canton": "VD" },
-        { "nom": "Caritas Geneve", "tel": "022 708 04 44", "url": "https://www.caritas-geneve.ch", "canton": "GE" },
-        { "nom": "Office des poursuites VD", "url": "https://www.vd.ch/themes/etat-droit-finances/poursuites-et-faillites", "canton": "VD" }
+        {
+          "nom": "Centre social protestant VD",
+          "tel": "021 560 60 60",
+          "url": "https://www.csp.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caritas Geneve",
+          "tel": "022 708 04 44",
+          "url": "https://www.caritas-geneve.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Office des poursuites VD",
+          "url": "https://www.vd.ch/themes/etat-droit-finances/poursuites-et-faillites",
+          "canton": "VD"
+        }
       ],
-      "routageEcosysteme": { "boussole": { "condition": "calcul_budget", "url": "boussole.app" } },
+      "routageEcosysteme": {
+        "boussole": {
+          "condition": "calcul_budget",
+          "url": "boussole.app"
+        }
+      },
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "La personne fait l'objet d'une saisie et veut connaitre le montant insaisissable",
+    "profane_aliases": [
+      "minimum vital c'est combien",
+      "on peut pas tout me prendre",
+      "ce qu'on ne peut pas saisir",
+      "calcul du minimum vital",
+      "il me reste plus rien pour vivre"
+    ],
+    "negative_signals": [
+      "question sur les dettes sans procedure de saisie",
+      "calcul d'un budget hors poursuite"
+    ],
+    "required_facts": [
+      "situation familiale",
+      "revenu mensuel net",
+      "charges fixes (loyer, assurance)",
+      "saisie en cours ou annoncee"
+    ]
   },
   {
     "id": "dettes_acte_defaut_biens",
     "domaine": "dettes",
     "sousDomaine": "poursuite",
-    "tags": ["acte defaut biens", "prescription", "poursuite", "insolvabilite"],
+    "tags": [
+      "acte defaut biens",
+      "prescription",
+      "poursuite",
+      "insolvabilite"
+    ],
     "questions": [
-      { "id": "q1", "text": "Avez-vous recu un acte de defaut de biens ?", "options": ["oui", "non, mais je n'ai rien a saisir"] },
-      { "id": "q2", "text": "Date de l'acte ?", "options": ["<5 ans", "5-10 ans", "10-20 ans", ">20 ans"] },
-      { "id": "q3", "text": "Votre situation a-t-elle change ?", "options": ["oui, meilleur revenu", "non, toujours precaire", "je ne sais pas"] },
-      { "id": "q4", "text": "Montant de l'acte ?", "options": ["<5000", "5000-20000", ">20000"] },
-      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Avez-vous recu un acte de defaut de biens ?",
+        "options": [
+          "oui",
+          "non, mais je n'ai rien a saisir"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Date de l'acte ?",
+        "options": [
+          "<5 ans",
+          "5-10 ans",
+          "10-20 ans",
+          ">20 ans"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Votre situation a-t-elle change ?",
+        "options": [
+          "oui, meilleur revenu",
+          "non, toujours precaire",
+          "je ne sais pas"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Montant de l'acte ?",
+        "options": [
+          "<5000",
+          "5000-20000",
+          ">20000"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "L'acte de defaut de biens (ADB) est delivre par l'office des poursuites lorsque la saisie n'a pas permis de couvrir la creance (art. 149 LP). L'ADB vaut reconnaissance de dette et se prescrit par 20 ans (art. 149a LP). Le creancier peut relancer une poursuite sur la base de l'ADB si la situation financiere du debiteur s'ameliore, mais il ne peut saisir que le revenu depassant le minimum vital. L'ADB figure au registre des poursuites et peut nuire a la recherche de logement ou de credit. Apres 5 ans, l'extrait des poursuites ne mentionne plus les ADB anciens (pratique de l'office). Le debiteur peut proposer un arrangement (paiement partiel) au creancier en echange de la radiation de l'ADB. Il n'existe pas de procedure de desendettement comme dans certains pays europeens, sauf la faillite personnelle (art. 191 LP).",
       "articles": [
-        { "ref": "LP 149", "titre": "Acte de defaut de biens — saisie", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_149" },
-        { "ref": "LP 149a", "titre": "Prescription de l'acte de defaut de biens", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_149_a" }
+        {
+          "ref": "LP 149",
+          "titre": "Acte de defaut de biens — saisie",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_149"
+        },
+        {
+          "ref": "LP 149a",
+          "titre": "Prescription de l'acte de defaut de biens",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_149_a"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_364/2008", "resume": "La prescription de 20 ans de l'ADB court des sa delivrance, sans interruption possible par une nouvelle poursuite." },
-        { "ref": "TF 5A_583/2012", "resume": "Le creancier muni d'un ADB peut relancer une poursuite sans nouvelle mainlevee (l'ADB vaut titre)." }
+        {
+          "ref": "TF 5A_364/2008",
+          "resume": "La prescription de 20 ans de l'ADB court des sa delivrance, sans interruption possible par une nouvelle poursuite."
+        },
+        {
+          "ref": "TF 5A_583/2012",
+          "resume": "Le creancier muni d'un ADB peut relancer une poursuite sans nouvelle mainlevee (l'ADB vaut titre)."
+        }
       ],
       "modeleLettre": "",
       "services": [
-        { "nom": "Centre social protestant VD", "tel": "021 560 60 60", "url": "https://www.csp.ch", "canton": "VD" },
-        { "nom": "Caritas Geneve", "tel": "022 708 04 44", "url": "https://www.caritas-geneve.ch", "canton": "GE" }
+        {
+          "nom": "Centre social protestant VD",
+          "tel": "021 560 60 60",
+          "url": "https://www.csp.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caritas Geneve",
+          "tel": "022 708 04 44",
+          "url": "https://www.caritas-geneve.ch",
+          "canton": "GE"
+        }
       ],
-      "routageEcosysteme": { "boussole": { "condition": "surendettement", "url": "boussole.app" } },
+      "routageEcosysteme": {
+        "boussole": {
+          "condition": "surendettement",
+          "url": "boussole.app"
+        }
+      },
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "La personne a recu un acte de defaut de biens apres une poursuite infructueuse",
+    "profane_aliases": [
+      "acte de defaut de biens c'est quoi",
+      "la poursuite n'a rien donne",
+      "insolvable et maintenant",
+      "prescription de l'acte de defaut",
+      "la dette est effacee ou pas"
+    ],
+    "negative_signals": [
+      "poursuite en cours avant saisie",
+      "question sur le commandement de payer"
+    ],
+    "required_facts": [
+      "date de l'acte de defaut",
+      "montant de la creance",
+      "situation financiere actuelle",
+      "relance du creancier ou non"
+    ]
   },
   {
     "id": "dettes_faillite_personnelle",
     "domaine": "dettes",
     "sousDomaine": "faillite",
-    "tags": ["faillite", "personnelle", "insolvabilite", "declaration", "liquidation"],
+    "tags": [
+      "faillite",
+      "personnelle",
+      "insolvabilite",
+      "declaration",
+      "liquidation"
+    ],
     "questions": [
-      { "id": "q1", "text": "Etes-vous inscrit au registre du commerce ?", "options": ["oui", "non"] },
-      { "id": "q2", "text": "Nombre de creanciers ?", "options": ["1-3", "4-10", ">10"] },
-      { "id": "q3", "text": "Montant total des dettes ?", "options": ["<20000", "20000-100000", ">100000"] },
-      { "id": "q4", "text": "Avez-vous des biens saisissables ?", "options": ["oui", "peu", "rien"] },
-      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Etes-vous inscrit au registre du commerce ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Nombre de creanciers ?",
+        "options": [
+          "1-3",
+          "4-10",
+          ">10"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Montant total des dettes ?",
+        "options": [
+          "<20000",
+          "20000-100000",
+          ">100000"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous des biens saisissables ?",
+        "options": [
+          "oui",
+          "peu",
+          "rien"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "La faillite personnelle est possible dans deux cas : (1) si la personne est inscrite au registre du commerce (art. 39 LP), (2) sinon, par declaration d'insolvabilite (art. 191 LP). L'art. 191 LP permet a un debiteur non inscrit de demander sa propre faillite au tribunal, qui l'accorde s'il n'existe pas de perspective raisonnable de desendettement. La faillite entraine la liquidation de tous les biens saisissables au profit de l'ensemble des creanciers. Les dettes non couvertes donnent lieu a des ADB. La faillite est inscrite au registre des poursuites pendant 5 ans. Avantage : elle permet de repartir sur des bases plus saines, car les creanciers ne peuvent plus poursuivre pour les ADB issus de la faillite pendant un certain temps. Inconvenient : la perte de tous les biens et l'impact sur la reputation. Consultation prealable avec un service de conseil en dettes fortement recommandee.",
       "articles": [
-        { "ref": "LP 191", "titre": "Declaration d'insolvabilite", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_191" },
-        { "ref": "LP 39", "titre": "Personnes soumises a la poursuite par voie de faillite", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_39" }
+        {
+          "ref": "LP 191",
+          "titre": "Declaration d'insolvabilite",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_191"
+        },
+        {
+          "ref": "LP 39",
+          "titre": "Personnes soumises a la poursuite par voie de faillite",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_39"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_272/2012", "resume": "La declaration d'insolvabilite (art. 191 LP) ne doit pas etre utilisee de maniere abusive pour echapper a une seule dette contestee." },
-        { "ref": "TF 5A_462/2009", "resume": "Le tribunal peut refuser la faillite personnelle si le debiteur a des perspectives reelles de remboursement a moyen terme." }
+        {
+          "ref": "TF 5A_272/2012",
+          "resume": "La declaration d'insolvabilite (art. 191 LP) ne doit pas etre utilisee de maniere abusive pour echapper a une seule dette contestee."
+        },
+        {
+          "ref": "TF 5A_462/2009",
+          "resume": "Le tribunal peut refuser la faillite personnelle si le debiteur a des perspectives reelles de remboursement a moyen terme."
+        }
       ],
       "modeleLettre": "",
       "services": [
-        { "nom": "Centre social protestant VD", "tel": "021 560 60 60", "url": "https://www.csp.ch", "canton": "VD" },
-        { "nom": "Caritas Geneve", "tel": "022 708 04 44", "url": "https://www.caritas-geneve.ch", "canton": "GE" },
-        { "nom": "Tribunal d'arrondissement (faillite)", "url": "https://www.vd.ch/autorites/ordre-judiciaire", "canton": "VD" }
+        {
+          "nom": "Centre social protestant VD",
+          "tel": "021 560 60 60",
+          "url": "https://www.csp.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caritas Geneve",
+          "tel": "022 708 04 44",
+          "url": "https://www.caritas-geneve.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Tribunal d'arrondissement (faillite)",
+          "url": "https://www.vd.ch/autorites/ordre-judiciaire",
+          "canton": "VD"
+        }
       ],
-      "routageEcosysteme": { "boussole": { "condition": "surendettement_grave", "url": "boussole.app" } },
+      "routageEcosysteme": {
+        "boussole": {
+          "condition": "surendettement_grave",
+          "url": "boussole.app"
+        }
+      },
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "La personne est insolvable et envisage de se declarer en faillite personnelle",
+    "profane_aliases": [
+      "me declarer en faillite",
+      "faillite personnelle Suisse",
+      "je peux plus payer mes dettes",
+      "surendettement total",
+      "faillite volontaire"
+    ],
+    "negative_signals": [
+      "simple retard de paiement",
+      "poursuite pour une seule dette"
+    ],
+    "required_facts": [
+      "montant total des dettes",
+      "revenus et patrimoine",
+      "poursuites en cours",
+      "statut (salarie ou independant)"
+    ]
   },
   {
     "id": "dettes_saisie_salaire",
     "domaine": "dettes",
     "sousDomaine": "saisie",
-    "tags": ["saisie", "salaire", "retenue", "employeur", "calcul"],
+    "tags": [
+      "saisie",
+      "salaire",
+      "retenue",
+      "employeur",
+      "calcul"
+    ],
     "questions": [
-      { "id": "q1", "text": "Votre employeur retient-il votre salaire ?", "options": ["oui, sur ordre de l'office", "oui, de sa propre initiative", "pas encore"] },
-      { "id": "q2", "text": "Connaissez-vous le montant saisi ?", "options": ["oui", "non"] },
-      { "id": "q3", "text": "Situation familiale ?", "options": ["seul", "couple sans enfant", "famille avec enfants"] },
-      { "id": "q4", "text": "Combien de poursuites ?", "options": ["1", "2-5", ">5"] },
-      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Votre employeur retient-il votre salaire ?",
+        "options": [
+          "oui, sur ordre de l'office",
+          "oui, de sa propre initiative",
+          "pas encore"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Connaissez-vous le montant saisi ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Situation familiale ?",
+        "options": [
+          "seul",
+          "couple sans enfant",
+          "famille avec enfants"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Combien de poursuites ?",
+        "options": [
+          "1",
+          "2-5",
+          ">5"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "La saisie de salaire est le mode de saisie le plus courant. L'office des poursuites notifie a l'employeur un ordre de retenue sur salaire (art. 93 LP). L'employeur est tenu de verser la part saisissable directement a l'office. Le montant saisi est la difference entre le salaire net et le minimum vital (art. 93 al. 1 LP). Le 13e salaire, les bonus et les gratifications sont egalement saisissables. En cas de pluralite de poursuites, les saisies sont groupees par serie d'un an (art. 110 LP). L'office recalcule la saisie si la situation change (augmentation de salaire, naissance d'un enfant). Le debiteur peut contester le calcul par plainte a l'autorite de surveillance dans les 10 jours (art. 17 LP). L'employeur ne peut pas licencier un employe en raison d'une saisie de salaire (potentiellement licenciement abusif, art. 336 CO).",
       "articles": [
-        { "ref": "LP 93", "titre": "Saisie du revenu — minimum vital", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_93" },
-        { "ref": "LP 110", "titre": "Saisie successive — groupe", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_110" }
+        {
+          "ref": "LP 93",
+          "titre": "Saisie du revenu — minimum vital",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_93"
+        },
+        {
+          "ref": "LP 110",
+          "titre": "Saisie successive — groupe",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_110"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_763/2012", "resume": "Le 13e salaire et les bonus sont saisissables au meme titre que le salaire mensuel." },
-        { "ref": "TF 5A_417/2018", "resume": "L'office doit prendre en compte les charges effectives du debiteur, pas des forfaits theoriques." }
+        {
+          "ref": "TF 5A_763/2012",
+          "resume": "Le 13e salaire et les bonus sont saisissables au meme titre que le salaire mensuel."
+        },
+        {
+          "ref": "TF 5A_417/2018",
+          "resume": "L'office doit prendre en compte les charges effectives du debiteur, pas des forfaits theoriques."
+        }
       ],
       "modeleLettre": "",
       "services": [
-        { "nom": "Centre social protestant VD", "tel": "021 560 60 60", "url": "https://www.csp.ch", "canton": "VD" },
-        { "nom": "Caritas Geneve", "tel": "022 708 04 44", "url": "https://www.caritas-geneve.ch", "canton": "GE" }
+        {
+          "nom": "Centre social protestant VD",
+          "tel": "021 560 60 60",
+          "url": "https://www.csp.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caritas Geneve",
+          "tel": "022 708 04 44",
+          "url": "https://www.caritas-geneve.ch",
+          "canton": "GE"
+        }
       ],
-      "routageEcosysteme": { "boussole": { "condition": "saisie_salaire", "url": "boussole.app" } },
+      "routageEcosysteme": {
+        "boussole": {
+          "condition": "saisie_salaire",
+          "url": "boussole.app"
+        }
+      },
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "L'employeur retient une partie du salaire suite a une saisie ordonnee par l'office des poursuites",
+    "profane_aliases": [
+      "saisie sur mon salaire",
+      "mon patron retient mon salaire",
+      "retenue sur salaire poursuite",
+      "combien on peut me prendre sur mon salaire",
+      "saisie de salaire trop elevee"
+    ],
+    "negative_signals": [
+      "saisie de biens mobiliers",
+      "question sur le minimum vital sans saisie"
+    ],
+    "required_facts": [
+      "montant du salaire net",
+      "montant retenu",
+      "situation familiale",
+      "charges fixes mensuelles"
+    ]
   },
   {
     "id": "dettes_arrangement_amiable",
     "domaine": "dettes",
     "sousDomaine": "arrangement",
-    "tags": ["arrangement", "amiable", "negociation", "plan", "paiement"],
+    "tags": [
+      "arrangement",
+      "amiable",
+      "negociation",
+      "plan",
+      "paiement"
+    ],
     "questions": [
-      { "id": "q1", "text": "Nombre de creanciers ?", "options": ["1", "2-5", ">5"] },
-      { "id": "q2", "text": "Pouvez-vous payer quelque chose ?", "options": ["oui, partiellement", "oui, mais en plusieurs fois", "rien du tout"] },
-      { "id": "q3", "text": "Montant total des dettes ?", "options": ["<10000", "10000-50000", ">50000"] },
-      { "id": "q4", "text": "Avez-vous deja contacte un service d'aide ?", "options": ["oui", "non"] },
-      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Nombre de creanciers ?",
+        "options": [
+          "1",
+          "2-5",
+          ">5"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Pouvez-vous payer quelque chose ?",
+        "options": [
+          "oui, partiellement",
+          "oui, mais en plusieurs fois",
+          "rien du tout"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Montant total des dettes ?",
+        "options": [
+          "<10000",
+          "10000-50000",
+          ">50000"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous deja contacte un service d'aide ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "L'arrangement amiable (ou concordat prive) n'est pas reglement specifiquement par la loi suisse, mais la pratique est bien etablie. Il consiste a negocier avec les creanciers un plan de remboursement echelonne ou une remise partielle de dette. Les services de conseil en dettes (Caritas, Centre social protestant, services sociaux communaux) peuvent servir d'intermediaires. L'avantage est d'eviter les frais de poursuite et de preserver la relation avec les creanciers. En general, les creanciers preferent un arrangement a une poursuite qui aboutit a un ADB (0% de recouvrement). Conseils : (1) dresser un inventaire complet des dettes, (2) etablir un budget realiste, (3) proposer un plan de paiement concret avec montants et echeances, (4) demander l'arret des interets moratoires. Le concordat judiciaire (art. 293 ss LP) est une alternative plus formelle mais coutant plus cher.",
       "articles": [
-        { "ref": "LP 293", "titre": "Concordat — sursis concordataire", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_293" }
+        {
+          "ref": "LP 293",
+          "titre": "Concordat — sursis concordataire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_293"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_53/2017", "resume": "L'arrangement amiable n'a pas force executoire, mais un creancier qui l'accepte par ecrit est lie par cet accord (droit des contrats)." }
+        {
+          "ref": "TF 5A_53/2017",
+          "resume": "L'arrangement amiable n'a pas force executoire, mais un creancier qui l'accepte par ecrit est lie par cet accord (droit des contrats)."
+        }
       ],
       "modeleLettre": "Objet : Proposition d'arrangement amiable\n\nMadame, Monsieur,\n\nJe suis votre debiteur pour un montant de CHF [montant] (poursuite n° [numero] / facture n° [numero]).\n\nMa situation financiere ne me permet pas de regler cette dette en une fois. Je vous propose l'arrangement suivant :\n\n- Versement mensuel de CHF [montant] pendant [nombre] mois\n- Premier versement le [date]\n\nEn contrepartie, je vous demande de :\n- Suspendre toute procedure de poursuite\n- Renoncer aux interets moratoires\n\nJe vous prie de m'indiquer votre accord ou une contre-proposition.\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
       "services": [
-        { "nom": "Caritas Vaud (conseil en dettes)", "tel": "021 317 59 80", "url": "https://www.caritas-vaud.ch", "canton": "VD" },
-        { "nom": "Caritas Geneve", "tel": "022 708 04 44", "url": "https://www.caritas-geneve.ch", "canton": "GE" },
-        { "nom": "Centre social protestant VD", "tel": "021 560 60 60", "url": "https://www.csp.ch", "canton": "VD" },
-        { "nom": "Service social communal", "canton": "VS" }
+        {
+          "nom": "Caritas Vaud (conseil en dettes)",
+          "tel": "021 317 59 80",
+          "url": "https://www.caritas-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caritas Geneve",
+          "tel": "022 708 04 44",
+          "url": "https://www.caritas-geneve.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Centre social protestant VD",
+          "tel": "021 560 60 60",
+          "url": "https://www.csp.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Service social communal",
+          "canton": "VS"
+        }
       ],
-      "routageEcosysteme": { "boussole": { "condition": "gestion_budget", "url": "boussole.app" } },
+      "routageEcosysteme": {
+        "boussole": {
+          "condition": "gestion_budget",
+          "url": "boussole.app"
+        }
+      },
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "La personne veut negocier un arrangement de paiement avec ses creanciers",
+    "profane_aliases": [
+      "arrangement avec mes creanciers",
+      "payer en plusieurs fois",
+      "negocier mes dettes",
+      "plan de paiement",
+      "proposer un echelonnement"
+    ],
+    "negative_signals": [
+      "deja en procedure de faillite",
+      "creancier refuse tout contact"
+    ],
+    "required_facts": [
+      "nombre de creanciers",
+      "montant total des dettes",
+      "capacite de paiement mensuelle",
+      "poursuites en cours"
+    ]
   },
   {
     "id": "dettes_primes_maladie",
     "domaine": "dettes",
     "sousDomaine": "assurance",
-    "tags": ["primes", "maladie", "LAMal", "reduction", "subsides", "impaye"],
+    "tags": [
+      "primes",
+      "maladie",
+      "LAMal",
+      "reduction",
+      "subsides",
+      "impaye"
+    ],
     "questions": [
-      { "id": "q1", "text": "Situation ?", "options": ["primes impayees", "demande de subsides", "poursuivie pour primes", "retrait liste noire"] },
-      { "id": "q2", "text": "Revenu du menage ?", "options": ["<40000/an", "40000-60000", "60000-80000", ">80000"] },
-      { "id": "q3", "text": "Nombre de personnes dans le menage ?", "options": ["1", "2", "3", "4+"] },
-      { "id": "q4", "text": "Avez-vous des subsides actuellement ?", "options": ["oui", "non", "je ne sais pas"] },
-      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Situation ?",
+        "options": [
+          "primes impayees",
+          "demande de subsides",
+          "poursuivie pour primes",
+          "retrait liste noire"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Revenu du menage ?",
+        "options": [
+          "<40000/an",
+          "40000-60000",
+          "60000-80000",
+          ">80000"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Nombre de personnes dans le menage ?",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4+"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous des subsides actuellement ?",
+        "options": [
+          "oui",
+          "non",
+          "je ne sais pas"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "L'assurance maladie est obligatoire en Suisse (art. 3 LAMal). Les personnes de condition modeste ont droit a une reduction de primes (subsides, art. 65 LAMal). Les conditions et montants varient selon le canton. En cas de non-paiement des primes, l'assureur peut engager une poursuite. Certains cantons tiennent une « liste noire » des assures en retard, limitant la prise en charge aux urgences (pratique controversee). Pour sortir de la spirale : (1) demander immediatement les subsides aupres du canton (formulaire annuel, certains cantons sont proactifs), (2) changer pour une caisse moins chere (franchise plus haute = primes plus basses), (3) negocier un echelonnement avec la caisse, (4) en dernier recours, contacter l'aide sociale. Les enfants de moins de 18 ans et les jeunes en formation ont droit a des subsides supplementaires dans la plupart des cantons.",
       "articles": [
-        { "ref": "LAMal 3", "titre": "Obligation de s'assurer", "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_3" },
-        { "ref": "LAMal 65", "titre": "Reduction de primes par les cantons", "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_65" },
-        { "ref": "LAMal 64a", "titre": "Effets du non-paiement des primes", "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_64_a" }
+        {
+          "ref": "LAMal 3",
+          "titre": "Obligation de s'assurer",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_3"
+        },
+        {
+          "ref": "LAMal 65",
+          "titre": "Reduction de primes par les cantons",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_65"
+        },
+        {
+          "ref": "LAMal 64a",
+          "titre": "Effets du non-paiement des primes",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_64_a"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 9C_750/2014", "resume": "La liste noire des assures en retard est admissible si le canton prevoit un systeme garantissant les soins d'urgence." },
-        { "ref": "ATF 141 V 173", "resume": "Les subsides doivent etre accordes de maniere a couvrir les primes dans une mesure appreciable, pas symbolique." }
+        {
+          "ref": "TF 9C_750/2014",
+          "resume": "La liste noire des assures en retard est admissible si le canton prevoit un systeme garantissant les soins d'urgence."
+        },
+        {
+          "ref": "ATF 141 V 173",
+          "resume": "Les subsides doivent etre accordes de maniere a couvrir les primes dans une mesure appreciable, pas symbolique."
+        }
       ],
       "modeleLettre": "Objet : Demande de reduction de primes d'assurance maladie\n\nAu Service [cantonal] des assurances sociales,\n\nMadame, Monsieur,\n\nJe sollicite une reduction de mes primes d'assurance maladie obligatoire conformement a l'art. 65 LAMal.\n\nMa situation financiere :\n- Revenu imposable : CHF [montant]\n- Nombre de personnes dans le menage : [nombre]\n- Caisse maladie : [nom]\n- Prime mensuelle : CHF [montant]\n\nJe vous remercie de bien vouloir examiner ma demande.\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
       "services": [
-        { "nom": "Office vaudois de l'assurance-maladie (OVAM)", "url": "https://www.vd.ch/themes/sante-soins-et-handicap/assurance-maladie", "canton": "VD" },
-        { "nom": "Service de l'assurance-maladie GE (SAM)", "url": "https://www.ge.ch/organisation/service-assurance-maladie-sam", "canton": "GE" },
-        { "nom": "Centre social protestant VD", "tel": "021 560 60 60", "url": "https://www.csp.ch", "canton": "VD" }
+        {
+          "nom": "Office vaudois de l'assurance-maladie (OVAM)",
+          "url": "https://www.vd.ch/themes/sante-soins-et-handicap/assurance-maladie",
+          "canton": "VD"
+        },
+        {
+          "nom": "Service de l'assurance-maladie GE (SAM)",
+          "url": "https://www.ge.ch/organisation/service-assurance-maladie-sam",
+          "canton": "GE"
+        },
+        {
+          "nom": "Centre social protestant VD",
+          "tel": "021 560 60 60",
+          "url": "https://www.csp.ch",
+          "canton": "VD"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LAMal etat 2025-01-01"
+    "sourceLoi": "LAMal etat 2025-01-01",
+    "match_description": "La personne ne peut pas payer ses primes d'assurance maladie et risque des poursuites",
+    "profane_aliases": [
+      "j'arrive pas a payer la caisse maladie",
+      "primes maladie trop cheres",
+      "poursuivi pour primes LAMal",
+      "subsides assurance maladie",
+      "aide pour payer la caisse maladie"
+    ],
+    "negative_signals": [
+      "question sur les prestations d'assurance (remboursements)",
+      "changement de caisse maladie"
+    ],
+    "required_facts": [
+      "montant des arrieres",
+      "subsides deja demandes ou non",
+      "revenu du menage",
+      "canton de domicile"
+    ]
   },
   {
     "id": "dettes_impots_arrieres",
     "domaine": "dettes",
     "sousDomaine": "impots",
-    "tags": ["impots", "arrieres", "remise", "echelonnement", "fiscal"],
+    "tags": [
+      "impots",
+      "arrieres",
+      "remise",
+      "echelonnement",
+      "fiscal"
+    ],
     "questions": [
-      { "id": "q1", "text": "Type d'impots ?", "options": ["impot sur le revenu", "TVA", "impot foncier", "autre"] },
-      { "id": "q2", "text": "Montant ?", "options": ["<5000", "5000-20000", ">20000"] },
-      { "id": "q3", "text": "Nombre d'annees en retard ?", "options": ["1 an", "2-3 ans", ">3 ans"] },
-      { "id": "q4", "text": "Avez-vous fait une demande de remise ?", "options": ["oui", "non", "je ne savais pas que c'etait possible"] },
-      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Type d'impots ?",
+        "options": [
+          "impot sur le revenu",
+          "TVA",
+          "impot foncier",
+          "autre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Montant ?",
+        "options": [
+          "<5000",
+          "5000-20000",
+          ">20000"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Nombre d'annees en retard ?",
+        "options": [
+          "1 an",
+          "2-3 ans",
+          ">3 ans"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous fait une demande de remise ?",
+        "options": [
+          "oui",
+          "non",
+          "je ne savais pas que c'etait possible"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "La remise d'impot est possible lorsque le paiement integral entrainerait des consequences tres dures pour le contribuable (art. 167 LIFD pour l'impot federal direct). Elle est accordee pour des motifs d'indigence, pas de convenance. La demande doit etre motivee et accompagnee de justificatifs financiers complets. Conditions : le contribuable ne doit pas avoir cause lui-meme sa situation difficile (jeu, depenses somptuaires). L'echelonnement du paiement est generalement plus facile a obtenir que la remise. Il suffit de contacter l'administration fiscale et de proposer un plan de versements. Les interets moratoires (generalement 3-5% selon le canton) continuent de courir. L'administration fiscale peut aussi engager des poursuites pour les impots impayes. Attention : les dettes fiscales ne sont pas liberes par un acte de defaut de biens ordinaire et se prescrivent par 5 ans (art. 121 LIFD) respectivement 15 ans en cas de soustraction.",
       "articles": [
-        { "ref": "LIFD 167", "titre": "Remise d'impot", "lien": "https://www.fedlex.admin.ch/eli/cc/1991/1184_1184_1184/fr#art_167" },
-        { "ref": "LIFD 168", "titre": "Remise — conditions", "lien": "https://www.fedlex.admin.ch/eli/cc/1991/1184_1184_1184/fr#art_168" }
+        {
+          "ref": "LIFD 167",
+          "titre": "Remise d'impot",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1991/1184_1184_1184/fr#art_167"
+        },
+        {
+          "ref": "LIFD 168",
+          "titre": "Remise — conditions",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1991/1184_1184_1184/fr#art_168"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 2C_180/2013", "resume": "La remise d'impot est un droit, pas une faveur. L'administration doit examiner chaque demande sur le fond." },
-        { "ref": "TF 2C_258/2017", "resume": "Le contribuable qui a contracte des dettes de jeu ne peut pas invoquer l'art. 167 LIFD pour obtenir une remise." }
+        {
+          "ref": "TF 2C_180/2013",
+          "resume": "La remise d'impot est un droit, pas une faveur. L'administration doit examiner chaque demande sur le fond."
+        },
+        {
+          "ref": "TF 2C_258/2017",
+          "resume": "Le contribuable qui a contracte des dettes de jeu ne peut pas invoquer l'art. 167 LIFD pour obtenir une remise."
+        }
       ],
       "modeleLettre": "Objet : Demande de remise d'impot / echelonnement\n\nA l'Administration fiscale cantonale,\n\nMadame, Monsieur,\n\nJe sollicite [une remise / un echelonnement] de mes arrieres d'impots pour les annees [annees], d'un montant total de CHF [montant].\n\nMa situation financiere ne me permet pas de regler cette dette :\n- Revenu mensuel : CHF [montant]\n- Charges : CHF [montant]\n- [Circonstances particulieres : maladie, perte d'emploi...]\n\n[Si echelonnement :] Je propose un versement mensuel de CHF [montant].\n\nPieces jointes : [fiches de salaire, budget, attestation aide sociale...]\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
       "services": [
-        { "nom": "Administration cantonale des impots VD", "url": "https://www.vd.ch/themes/etat-droit-finances/impots", "canton": "VD" },
-        { "nom": "Administration fiscale cantonale GE", "url": "https://www.ge.ch/organisation/administration-fiscale-cantonale-afc", "canton": "GE" },
-        { "nom": "Centre social protestant VD", "tel": "021 560 60 60", "url": "https://www.csp.ch", "canton": "VD" }
+        {
+          "nom": "Administration cantonale des impots VD",
+          "url": "https://www.vd.ch/themes/etat-droit-finances/impots",
+          "canton": "VD"
+        },
+        {
+          "nom": "Administration fiscale cantonale GE",
+          "url": "https://www.ge.ch/organisation/administration-fiscale-cantonale-afc",
+          "canton": "GE"
+        },
+        {
+          "nom": "Centre social protestant VD",
+          "tel": "021 560 60 60",
+          "url": "https://www.csp.ch",
+          "canton": "VD"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LIFD etat 2025-01-01"
+    "sourceLoi": "LIFD etat 2025-01-01",
+    "match_description": "La personne a des arrieres d'impots et cherche une solution pour regulariser sa situation",
+    "profane_aliases": [
+      "arrieres d'impots",
+      "j'ai pas paye mes impots",
+      "echelonnement des impots",
+      "remise d'impot",
+      "le fisc me poursuit"
+    ],
+    "negative_signals": [
+      "simple question sur la declaration d'impots",
+      "optimisation fiscale"
+    ],
+    "required_facts": [
+      "montant des arrieres",
+      "annees concernees",
+      "poursuites engagees ou non",
+      "situation financiere actuelle"
+    ]
   },
   {
     "id": "dettes_creancier_abusif",
     "domaine": "dettes",
     "sousDomaine": "abus",
-    "tags": ["creancier", "abusif", "harcelement", "plainte", "office"],
+    "tags": [
+      "creancier",
+      "abusif",
+      "harcelement",
+      "plainte",
+      "office"
+    ],
     "questions": [
-      { "id": "q1", "text": "Type d'abus ?", "options": ["poursuites repetees sans fondement", "harcelement telephonique", "menaces", "violation vie privee"] },
-      { "id": "q2", "text": "Qui est le creancier ?", "options": ["societe de recouvrement", "particulier", "entreprise", "administration"] },
-      { "id": "q3", "text": "La dette est-elle legitime ?", "options": ["non, contestee", "oui, mais methodes abusives", "partiellement"] },
-      { "id": "q4", "text": "Avez-vous fait opposition ?", "options": ["oui", "non"] },
-      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Type d'abus ?",
+        "options": [
+          "poursuites repetees sans fondement",
+          "harcelement telephonique",
+          "menaces",
+          "violation vie privee"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Qui est le creancier ?",
+        "options": [
+          "societe de recouvrement",
+          "particulier",
+          "entreprise",
+          "administration"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "La dette est-elle legitime ?",
+        "options": [
+          "non, contestee",
+          "oui, mais methodes abusives",
+          "partiellement"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous fait opposition ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "Le debiteur dispose de moyens de defense contre les comportements abusifs des creanciers et des societes de recouvrement. Les poursuites manifestement injustifiees et repetitives peuvent faire l'objet d'une plainte a l'autorite de surveillance des offices des poursuites (art. 20a LP). L'envoi de commandements de payer pour des dettes inexistantes dans le seul but de nuire est constitutif de poursuite abusive, ouvrant droit a des dommages-interets (art. 41 CO). Le harcelement telephonique ou les menaces de la part de societes de recouvrement peuvent constituer une atteinte a la personnalite (art. 28 CC) ou des contraintes (art. 181 CP). Le creancier ne peut pas contacter l'employeur ni informer des tiers de la dette du debiteur (protection des donnees, LPD). Le debiteur peut demander la radiation des poursuites abusives (art. 8a LP).",
       "articles": [
-        { "ref": "LP 20a", "titre": "Plainte — poursuite abusive", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_20_a" },
-        { "ref": "LP 8a", "titre": "Registre des poursuites — radiation", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_8_a" },
-        { "ref": "CC 28", "titre": "Protection de la personnalite", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_28" }
+        {
+          "ref": "LP 20a",
+          "titre": "Plainte — poursuite abusive",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_20_a"
+        },
+        {
+          "ref": "LP 8a",
+          "titre": "Registre des poursuites — radiation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_8_a"
+        },
+        {
+          "ref": "CC 28",
+          "titre": "Protection de la personnalite",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_28"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_250/2015", "resume": "La repetition de poursuites pour la meme dette deja contestee peut constituer un abus de droit ouvrant droit a des dommages-interets." },
-        { "ref": "TF 5A_822/2012", "resume": "Le debiteur peut demander la radiation d'une poursuite injustifiee du registre (art. 8a LP) s'il prouve l'inexistence de la dette." }
+        {
+          "ref": "TF 5A_250/2015",
+          "resume": "La repetition de poursuites pour la meme dette deja contestee peut constituer un abus de droit ouvrant droit a des dommages-interets."
+        },
+        {
+          "ref": "TF 5A_822/2012",
+          "resume": "Le debiteur peut demander la radiation d'une poursuite injustifiee du registre (art. 8a LP) s'il prouve l'inexistence de la dette."
+        }
       ],
       "modeleLettre": "Objet : Plainte pour poursuite abusive\n\nA l'Autorite cantonale de surveillance des offices des poursuites,\n\nMadame, Monsieur,\n\nJe forme plainte au sens de l'art. 20a LP contre [creancier/societe de recouvrement] pour les faits suivants :\n\n- [Description des abus : poursuites repetees, harcelement, menaces...]\n\nJe demande :\n1. La constatation du caractere abusif de ces poursuites\n2. L'interdiction de nouvelles poursuites sur la meme base\n3. La radiation des poursuites infondees de mon extrait (art. 8a LP)\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
       "services": [
-        { "nom": "Autorite de surveillance des poursuites VD", "url": "https://www.vd.ch/autorites/ordre-judiciaire", "canton": "VD" },
-        { "nom": "Centre social protestant VD", "tel": "021 560 60 60", "url": "https://www.csp.ch", "canton": "VD" },
-        { "nom": "Caritas Geneve", "tel": "022 708 04 44", "url": "https://www.caritas-geneve.ch", "canton": "GE" }
+        {
+          "nom": "Autorite de surveillance des poursuites VD",
+          "url": "https://www.vd.ch/autorites/ordre-judiciaire",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre social protestant VD",
+          "tel": "021 560 60 60",
+          "url": "https://www.csp.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caritas Geneve",
+          "tel": "022 708 04 44",
+          "url": "https://www.caritas-geneve.ch",
+          "canton": "GE"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "Un creancier ou une societe de recouvrement harcele le debiteur de maniere abusive",
+    "profane_aliases": [
+      "le creancier me harcele",
+      "appels repetitifs pour dettes",
+      "societe de recouvrement abusive",
+      "menaces pour une dette",
+      "on m'intimide pour payer"
+    ],
+    "negative_signals": [
+      "creancier qui envoie des rappels normaux",
+      "simple commandement de payer sans abus"
+    ],
+    "required_facts": [
+      "nature des comportements abusifs",
+      "creancier identifie",
+      "dette reconnue ou contestee",
+      "preuves (messages, appels)"
+    ]
   },
   {
     "id": "dettes_commandement_contestation",
     "domaine": "dettes",
     "sousDomaine": "poursuite",
-    "tags": ["commandement", "payer", "contestation", "opposition", "tardive"],
+    "tags": [
+      "commandement",
+      "payer",
+      "contestation",
+      "opposition",
+      "tardive"
+    ],
     "questions": [
-      { "id": "q1", "text": "Avez-vous recu le commandement de payer ?", "options": ["oui, en main propre", "oui, par courrier", "non, j'ai ete absent"] },
-      { "id": "q2", "text": "Le delai de 10 jours est-il depasse ?", "options": ["non, il reste du temps", "oui, recemment", "oui, depuis longtemps"] },
-      { "id": "q3", "text": "Motif de contestation ?", "options": ["dette inexistante", "montant errone", "prescription", "deja payee", "pas le bon debiteur"] },
-      { "id": "q4", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Avez-vous recu le commandement de payer ?",
+        "options": [
+          "oui, en main propre",
+          "oui, par courrier",
+          "non, j'ai ete absent"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Le delai de 10 jours est-il depasse ?",
+        "options": [
+          "non, il reste du temps",
+          "oui, recemment",
+          "oui, depuis longtemps"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Motif de contestation ?",
+        "options": [
+          "dette inexistante",
+          "montant errone",
+          "prescription",
+          "deja payee",
+          "pas le bon debiteur"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "Le commandement de payer peut etre conteste par opposition dans les 10 jours des sa notification (art. 74 LP). L'opposition n'a pas besoin d'etre motivee. Si le delai est depasse, une opposition tardive (art. 77 LP) est possible si le debiteur rend vraisemblable qu'il n'a pas pu agir dans le delai sans faute de sa part (maladie, absence, notification irreguliere). La restitution du delai doit etre demandee dans les 10 jours suivant la cessation de l'empechement, avec un delai absolu d'un an (art. 33 al. 4 LP). Si la notification elle-meme est viciee (mauvaise adresse, remise a un tiers non autorise), le commandement est nul et peut etre conteste en tout temps par voie de plainte LP (art. 17 LP). Le debiteur peut aussi invoquer la prescription de la creance (art. 127-142 CO) ou la compensation (art. 120 CO) dans le cadre de la procedure de mainlevee.",
       "articles": [
-        { "ref": "LP 74", "titre": "Opposition au commandement de payer", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_74" },
-        { "ref": "LP 77", "titre": "Opposition tardive", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_77" },
-        { "ref": "LP 33", "titre": "Restitution de delai", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_33" }
+        {
+          "ref": "LP 74",
+          "titre": "Opposition au commandement de payer",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_74"
+        },
+        {
+          "ref": "LP 77",
+          "titre": "Opposition tardive",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_77"
+        },
+        {
+          "ref": "LP 33",
+          "titre": "Restitution de delai",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_33"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_208/2014", "resume": "L'opposition tardive est admise lorsque le debiteur prouve qu'il etait hospitalise et n'a pas pu prendre connaissance du commandement dans le delai." },
-        { "ref": "TF 5A_126/2017", "resume": "La notification d'un commandement de payer a un voisin sans procuration est irreguliere et le commandement est nul." }
+        {
+          "ref": "TF 5A_208/2014",
+          "resume": "L'opposition tardive est admise lorsque le debiteur prouve qu'il etait hospitalise et n'a pas pu prendre connaissance du commandement dans le delai."
+        },
+        {
+          "ref": "TF 5A_126/2017",
+          "resume": "La notification d'un commandement de payer a un voisin sans procuration est irreguliere et le commandement est nul."
+        }
       ],
       "modeleLettre": "Objet : Opposition tardive au commandement de payer no [numero]\n\nA l'Office des poursuites de [district],\n\nMadame, Monsieur,\n\nJe forme opposition tardive au commandement de payer no [numero], poursuite no [numero], conformement a l'art. 77 LP.\n\nLe delai d'opposition a ete manque pour le motif suivant : [maladie/absence/notification irreguliere].\n\nJ'ai pris connaissance du commandement le [date] et forme la presente opposition dans les 10 jours suivant la cessation de l'empechement.\n\nPieces jointes : [certificat medical / preuve d'absence].\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
       "services": [
-        { "nom": "Office des poursuites VD", "url": "https://www.vd.ch/themes/etat-droit-finances/poursuites-et-faillites", "canton": "VD" },
-        { "nom": "Office des poursuites GE", "url": "https://www.ge.ch/organisation/office-poursuites", "canton": "GE" }
+        {
+          "nom": "Office des poursuites VD",
+          "url": "https://www.vd.ch/themes/etat-droit-finances/poursuites-et-faillites",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office des poursuites GE",
+          "url": "https://www.ge.ch/organisation/office-poursuites",
+          "canton": "GE"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "La personne veut contester un commandement de payer car elle estime ne pas devoir le montant reclame",
+    "profane_aliases": [
+      "contester une poursuite",
+      "commandement de payer injustifie",
+      "je ne dois pas cet argent",
+      "opposition tardive",
+      "fausse dette poursuite"
+    ],
+    "negative_signals": [
+      "dette reconnue mais impossibilite de payer",
+      "question sur le plan de paiement"
+    ],
+    "required_facts": [
+      "motif de la contestation",
+      "delai d'opposition respecte ou non",
+      "preuves de non-dette",
+      "montant conteste"
+    ]
   },
   {
     "id": "dettes_mainlevee_provisoire",
     "domaine": "dettes",
     "sousDomaine": "mainlevee",
-    "tags": ["mainlevee", "provisoire", "reconnaissance", "dette", "titre"],
+    "tags": [
+      "mainlevee",
+      "provisoire",
+      "reconnaissance",
+      "dette",
+      "titre"
+    ],
     "questions": [
-      { "id": "q1", "text": "Situation ?", "options": ["je suis creancier et veux la mainlevee", "je suis debiteur et on me demande la mainlevee", "je veux comprendre"] },
-      { "id": "q2", "text": "Quel titre avez-vous ?", "options": ["contrat signe", "facture acceptee", "billet a ordre", "reconnaissance de dette", "aucun titre signe"] },
-      { "id": "q3", "text": "Le debiteur conteste-t-il la dette ?", "options": ["oui, totalement", "oui, partiellement", "non, mais ne paie pas"] },
-      { "id": "q4", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Situation ?",
+        "options": [
+          "je suis creancier et veux la mainlevee",
+          "je suis debiteur et on me demande la mainlevee",
+          "je veux comprendre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quel titre avez-vous ?",
+        "options": [
+          "contrat signe",
+          "facture acceptee",
+          "billet a ordre",
+          "reconnaissance de dette",
+          "aucun titre signe"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Le debiteur conteste-t-il la dette ?",
+        "options": [
+          "oui, totalement",
+          "oui, partiellement",
+          "non, mais ne paie pas"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "La mainlevee provisoire (art. 82 LP) est accordee lorsque le creancier produit une reconnaissance de dette signee par le debiteur. Constituent des reconnaissances de dette : un contrat de pret signe, une facture acceptee, un billet a ordre, un decompte signe, un contrat de bail pour les loyers echus. Le juge de la mainlevee examine sommairement si le titre constitue une reconnaissance de dette. Le debiteur peut s'y opposer en rendant vraisemblable sa liberation : paiement, compensation, prescription, vice de consentement (art. 82 al. 2 LP). Si la mainlevee provisoire est prononcee, le debiteur dispose de 20 jours pour ouvrir une action en liberation de dette (art. 83 al. 2 LP). La procedure est sommaire (quelques semaines). Le juge ne tranche pas le fond du litige. Si le creancier n'a aucun titre signe, il doit d'abord obtenir un jugement au fond, puis demander la mainlevee definitive.",
       "articles": [
-        { "ref": "LP 82", "titre": "Mainlevee provisoire", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_82" },
-        { "ref": "LP 83", "titre": "Action en liberation de dette", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_83" }
+        {
+          "ref": "LP 82",
+          "titre": "Mainlevee provisoire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_82"
+        },
+        {
+          "ref": "LP 83",
+          "titre": "Action en liberation de dette",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_83"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_326/2013", "resume": "Une facture envoyee sans acceptation du debiteur ne constitue pas une reconnaissance de dette au sens de l'art. 82 LP." },
-        { "ref": "TF 5A_450/2012", "resume": "Le contrat de bail signe vaut reconnaissance de dette pour les loyers echus ; la mainlevee provisoire est accordee." }
+        {
+          "ref": "TF 5A_326/2013",
+          "resume": "Une facture envoyee sans acceptation du debiteur ne constitue pas une reconnaissance de dette au sens de l'art. 82 LP."
+        },
+        {
+          "ref": "TF 5A_450/2012",
+          "resume": "Le contrat de bail signe vaut reconnaissance de dette pour les loyers echus ; la mainlevee provisoire est accordee."
+        }
       ],
       "modeleLettre": "",
       "services": [
-        { "nom": "Tribunal d'arrondissement VD", "url": "https://www.vd.ch/autorites/ordre-judiciaire", "canton": "VD" },
-        { "nom": "Tribunal de premiere instance GE", "url": "https://justice.ge.ch", "canton": "GE" }
+        {
+          "nom": "Tribunal d'arrondissement VD",
+          "url": "https://www.vd.ch/autorites/ordre-judiciaire",
+          "canton": "VD"
+        },
+        {
+          "nom": "Tribunal de premiere instance GE",
+          "url": "https://justice.ge.ch",
+          "canton": "GE"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "Le creancier demande la mainlevee provisoire sur la base d'une reconnaissance de dette",
+    "profane_aliases": [
+      "mainlevee provisoire c'est quoi",
+      "j'ai signe un contrat et on me poursuit",
+      "reconnaissance de dette",
+      "le creancier a un papier signe",
+      "comment bloquer la mainlevee"
+    ],
+    "negative_signals": [
+      "mainlevee definitive (jugement executoire)",
+      "pas de document signe"
+    ],
+    "required_facts": [
+      "document invoque par le creancier",
+      "dette contestee ou non",
+      "montant",
+      "moyens de liberation (paiement, prescription)"
+    ]
   },
   {
     "id": "dettes_mainlevee_definitive",
     "domaine": "dettes",
     "sousDomaine": "mainlevee",
-    "tags": ["mainlevee", "definitive", "jugement", "executoire", "titre"],
+    "tags": [
+      "mainlevee",
+      "definitive",
+      "jugement",
+      "executoire",
+      "titre"
+    ],
     "questions": [
-      { "id": "q1", "text": "Quel titre executoire avez-vous ?", "options": ["jugement suisse", "jugement etranger", "transaction judiciaire", "decision administrative", "acte authentique executoire"] },
-      { "id": "q2", "text": "Le jugement est-il entre en force ?", "options": ["oui", "non, appel en cours", "je ne sais pas"] },
-      { "id": "q3", "text": "Le debiteur a-t-il fait opposition ?", "options": ["oui", "non"] },
-      { "id": "q4", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Quel titre executoire avez-vous ?",
+        "options": [
+          "jugement suisse",
+          "jugement etranger",
+          "transaction judiciaire",
+          "decision administrative",
+          "acte authentique executoire"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Le jugement est-il entre en force ?",
+        "options": [
+          "oui",
+          "non, appel en cours",
+          "je ne sais pas"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Le debiteur a-t-il fait opposition ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "La mainlevee definitive (art. 80 LP) est accordee lorsque le creancier produit un jugement executoire ou un titre assimile (transaction judiciaire, acte authentique executoire, decision administrative definitive). Contrairement a la mainlevee provisoire, le debiteur ne peut s'y opposer qu'en prouvant par titre que la dette a ete eteinte apres le jugement : paiement, remise de dette, prescription, compensation (art. 81 LP). La mainlevee definitive est plus solide que la provisoire — pas d'action en liberation de dette possible. Pour les jugements etrangers, la reconnaissance et l'executabilite selon la Convention de Lugano (UE/AELE) ou la LDIP doivent etre verifiees. La procedure est sommaire et rapide. Les frais de la mainlevee sont a la charge du debiteur s'ils sont accordes.",
       "articles": [
-        { "ref": "LP 80", "titre": "Mainlevee definitive", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_80" },
-        { "ref": "LP 81", "titre": "Moyens de defense du debiteur", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_81" }
+        {
+          "ref": "LP 80",
+          "titre": "Mainlevee definitive",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_80"
+        },
+        {
+          "ref": "LP 81",
+          "titre": "Moyens de defense du debiteur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_81"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_867/2015", "resume": "Un jugement etranger reconnu en Suisse selon la Convention de Lugano vaut titre de mainlevee definitive." },
-        { "ref": "TF 5A_441/2017", "resume": "Le debiteur ne peut invoquer que des faits posterieurs au jugement pour s'opposer a la mainlevee definitive." }
+        {
+          "ref": "TF 5A_867/2015",
+          "resume": "Un jugement etranger reconnu en Suisse selon la Convention de Lugano vaut titre de mainlevee definitive."
+        },
+        {
+          "ref": "TF 5A_441/2017",
+          "resume": "Le debiteur ne peut invoquer que des faits posterieurs au jugement pour s'opposer a la mainlevee definitive."
+        }
       ],
       "modeleLettre": "",
       "services": [
-        { "nom": "Tribunal d'arrondissement VD", "url": "https://www.vd.ch/autorites/ordre-judiciaire", "canton": "VD" },
-        { "nom": "Tribunal de premiere instance GE", "url": "https://justice.ge.ch", "canton": "GE" }
+        {
+          "nom": "Tribunal d'arrondissement VD",
+          "url": "https://www.vd.ch/autorites/ordre-judiciaire",
+          "canton": "VD"
+        },
+        {
+          "nom": "Tribunal de premiere instance GE",
+          "url": "https://justice.ge.ch",
+          "canton": "GE"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "Le creancier dispose d'un jugement et demande la mainlevee definitive pour continuer la poursuite",
+    "profane_aliases": [
+      "mainlevee definitive",
+      "j'ai perdu au tribunal et maintenant",
+      "jugement executoire et poursuite",
+      "le tribunal a donne raison au creancier",
+      "la poursuite reprend apres jugement"
+    ],
+    "negative_signals": [
+      "pas encore de jugement rendu",
+      "mainlevee provisoire uniquement"
+    ],
+    "required_facts": [
+      "jugement invoque",
+      "montant",
+      "recours encore possible",
+      "execution deja lancee"
+    ]
   },
   {
     "id": "dettes_saisie_salaire_quotite",
     "domaine": "dettes",
     "sousDomaine": "saisie",
-    "tags": ["saisie", "salaire", "quotite", "saisissable", "employeur"],
+    "tags": [
+      "saisie",
+      "salaire",
+      "quotite",
+      "saisissable",
+      "employeur"
+    ],
     "questions": [
-      { "id": "q1", "text": "Votre salaire est-il saisi ?", "options": ["oui, actuellement", "annonce", "je veux savoir ce qui est saisissable"] },
-      { "id": "q2", "text": "Type de dette ?", "options": ["dette ordinaire", "pension alimentaire", "impots", "mixte"] },
-      { "id": "q3", "text": "Situation familiale ?", "options": ["seul", "couple sans enfants", "couple avec enfants", "monoparental"] },
-      { "id": "q4", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Votre salaire est-il saisi ?",
+        "options": [
+          "oui, actuellement",
+          "annonce",
+          "je veux savoir ce qui est saisissable"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Type de dette ?",
+        "options": [
+          "dette ordinaire",
+          "pension alimentaire",
+          "impots",
+          "mixte"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Situation familiale ?",
+        "options": [
+          "seul",
+          "couple sans enfants",
+          "couple avec enfants",
+          "monoparental"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "La saisie de salaire est la mesure d'execution la plus courante (art. 93 LP). L'office des poursuites determine la quotite saisissable : la difference entre le revenu net et le minimum vital du debiteur et de sa famille. Le minimum vital LP comprend le montant de base (CHF 1'200 pour une personne seule, CHF 1'700 pour un couple), le loyer effectif, les primes d'assurance maladie obligatoire, les frais de transport professionnel et les contributions d'entretien dues. Tout ce qui depasse le minimum vital est saisissable. Exception importante : pour les pensions alimentaires, le minimum vital peut etre entame (art. 93 al. 2 LP). La saisie est notifiee a l'employeur qui doit verser directement la part saisissable a l'office. La saisie dure en principe un an (art. 93a LP). Le debiteur peut contester le calcul du minimum vital par plainte a l'autorite de surveillance (art. 17 LP).",
       "articles": [
-        { "ref": "LP 93", "titre": "Revenus saisissables — minimum vital", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_93" },
-        { "ref": "LP 93a", "titre": "Duree de la saisie sur les revenus", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_93_a" },
-        { "ref": "LP 17", "titre": "Plainte a l'autorite de surveillance", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_17" }
+        {
+          "ref": "LP 93",
+          "titre": "Revenus saisissables — minimum vital",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_93"
+        },
+        {
+          "ref": "LP 93a",
+          "titre": "Duree de la saisie sur les revenus",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_93_a"
+        },
+        {
+          "ref": "LP 17",
+          "titre": "Plainte a l'autorite de surveillance",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_17"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_919/2017", "resume": "Le minimum vital LP ne peut pas etre reduit en dessous du minimum d'existence, meme pour des pensions alimentaires, si cela met en danger la sante du debiteur." },
-        { "ref": "TF 5A_502/2018", "resume": "Les frais de vehicule professionnel doivent etre inclus dans le minimum vital si le debiteur ne peut pas utiliser les transports publics." }
+        {
+          "ref": "TF 5A_919/2017",
+          "resume": "Le minimum vital LP ne peut pas etre reduit en dessous du minimum d'existence, meme pour des pensions alimentaires, si cela met en danger la sante du debiteur."
+        },
+        {
+          "ref": "TF 5A_502/2018",
+          "resume": "Les frais de vehicule professionnel doivent etre inclus dans le minimum vital si le debiteur ne peut pas utiliser les transports publics."
+        }
       ],
       "modeleLettre": "",
       "services": [
-        { "nom": "Office des poursuites VD", "url": "https://www.vd.ch/themes/etat-droit-finances/poursuites-et-faillites", "canton": "VD" },
-        { "nom": "Office des poursuites GE", "url": "https://www.ge.ch/organisation/office-poursuites", "canton": "GE" },
-        { "nom": "Centre social protestant VD", "tel": "021 560 60 60", "url": "https://www.csp.ch", "canton": "VD" }
+        {
+          "nom": "Office des poursuites VD",
+          "url": "https://www.vd.ch/themes/etat-droit-finances/poursuites-et-faillites",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office des poursuites GE",
+          "url": "https://www.ge.ch/organisation/office-poursuites",
+          "canton": "GE"
+        },
+        {
+          "nom": "Centre social protestant VD",
+          "tel": "021 560 60 60",
+          "url": "https://www.csp.ch",
+          "canton": "VD"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "La personne veut savoir quelle part de son salaire peut etre saisie et comment la calculer",
+    "profane_aliases": [
+      "combien on peut prendre sur mon salaire",
+      "quotite saisissable",
+      "calcul saisie de salaire",
+      "part insaisissable du salaire",
+      "reste a vivre apres saisie"
+    ],
+    "negative_signals": [
+      "saisie de biens et non de salaire",
+      "question sur les impots a la source"
+    ],
+    "required_facts": [
+      "salaire mensuel net",
+      "situation familiale",
+      "charges fixes",
+      "montant de la saisie annoncee"
+    ]
   },
   {
     "id": "dettes_minimum_vital_lp",
     "domaine": "dettes",
     "sousDomaine": "saisie",
-    "tags": ["minimum", "vital", "LP", "calcul", "normes", "insaisissable"],
+    "tags": [
+      "minimum",
+      "vital",
+      "LP",
+      "calcul",
+      "normes",
+      "insaisissable"
+    ],
     "questions": [
-      { "id": "q1", "text": "Situation familiale ?", "options": ["personne seule", "couple sans enfants", "couple avec enfants", "parent seul avec enfants"] },
-      { "id": "q2", "text": "Votre loyer mensuel ?", "options": ["<1000 CHF", "1000-1500 CHF", "1500-2000 CHF", ">2000 CHF"] },
-      { "id": "q3", "text": "Avez-vous un vehicule necessaire au travail ?", "options": ["oui", "non"] },
-      { "id": "q4", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Situation familiale ?",
+        "options": [
+          "personne seule",
+          "couple sans enfants",
+          "couple avec enfants",
+          "parent seul avec enfants"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Votre loyer mensuel ?",
+        "options": [
+          "<1000 CHF",
+          "1000-1500 CHF",
+          "1500-2000 CHF",
+          ">2000 CHF"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous un vehicule necessaire au travail ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "Le minimum vital LP (art. 93 LP) est le montant insaisissable destine a couvrir les besoins essentiels du debiteur et de sa famille. Il est calcule selon les normes de la Conference des preposes aux poursuites et faillites. Composantes : (1) montant de base mensuel : CHF 1'200 personne seule, CHF 1'700 couple, CHF 400-600 par enfant selon l'age, (2) loyer effectif (dans les limites raisonnables du marche local), (3) primes LAMal obligatoires (deduction faite des subsides), (4) frais de repas hors domicile si necessaire, (5) frais de transport professionnel, (6) contributions d'entretien dues a des tiers. Ne sont PAS inclus : loisirs, vacances, epargne, cotisations 3e pilier, remboursement de dettes. Le minimum vital LP est inferieur au minimum vital du droit de la famille (qui inclut un supplement de 20%). Le debiteur peut contester le calcul par plainte LP (art. 17 LP) dans les 10 jours.",
       "articles": [
-        { "ref": "LP 93", "titre": "Biens insaisissables — revenus", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_93" },
-        { "ref": "LP 92", "titre": "Biens absolument insaisissables", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_92" }
+        {
+          "ref": "LP 93",
+          "titre": "Biens insaisissables — revenus",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_93"
+        },
+        {
+          "ref": "LP 92",
+          "titre": "Biens absolument insaisissables",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_92"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_703/2019", "resume": "Le loyer effectif doit etre pris en compte dans le minimum vital meme s'il est eleve, a condition que le debiteur ne puisse pas trouver moins cher dans un delai raisonnable." },
-        { "ref": "TF 5A_181/2016", "resume": "Les frais de garderie sont inclus dans le minimum vital s'ils sont indispensables a l'activite professionnelle du debiteur." }
+        {
+          "ref": "TF 5A_703/2019",
+          "resume": "Le loyer effectif doit etre pris en compte dans le minimum vital meme s'il est eleve, a condition que le debiteur ne puisse pas trouver moins cher dans un delai raisonnable."
+        },
+        {
+          "ref": "TF 5A_181/2016",
+          "resume": "Les frais de garderie sont inclus dans le minimum vital s'ils sont indispensables a l'activite professionnelle du debiteur."
+        }
       ],
       "modeleLettre": "",
       "services": [
-        { "nom": "Office des poursuites VD", "url": "https://www.vd.ch/themes/etat-droit-finances/poursuites-et-faillites", "canton": "VD" },
-        { "nom": "Office des poursuites GE", "url": "https://www.ge.ch/organisation/office-poursuites", "canton": "GE" },
-        { "nom": "Caritas VD (conseil budget)", "tel": "021 317 59 80", "url": "https://www.caritas-vaud.ch", "canton": "VD" }
+        {
+          "nom": "Office des poursuites VD",
+          "url": "https://www.vd.ch/themes/etat-droit-finances/poursuites-et-faillites",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office des poursuites GE",
+          "url": "https://www.ge.ch/organisation/office-poursuites",
+          "canton": "GE"
+        },
+        {
+          "nom": "Caritas VD (conseil budget)",
+          "tel": "021 317 59 80",
+          "url": "https://www.caritas-vaud.ch",
+          "canton": "VD"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "La personne veut connaitre les normes de calcul du minimum vital selon la LP",
+    "profane_aliases": [
+      "normes du minimum vital LP",
+      "montants de base insaisissables",
+      "combien pour vivre selon la loi",
+      "calcul minimum vital LP",
+      "baremes minimum vital"
+    ],
+    "negative_signals": [
+      "minimum vital du droit de la famille",
+      "question hors procedure de poursuite"
+    ],
+    "required_facts": [
+      "situation familiale",
+      "canton de domicile",
+      "charges effectives",
+      "revenus"
+    ]
   },
   {
     "id": "dettes_acte_defaut_biens_effets",
     "domaine": "dettes",
     "sousDomaine": "poursuite",
-    "tags": ["acte", "defaut", "biens", "insolvabilite", "prescription"],
+    "tags": [
+      "acte",
+      "defaut",
+      "biens",
+      "insolvabilite",
+      "prescription"
+    ],
     "questions": [
-      { "id": "q1", "text": "Situation ?", "options": ["j'ai recu un acte de defaut de biens", "je veux savoir ce que c'est", "je veux en contester un", "un creancier a un ADB contre moi"] },
-      { "id": "q2", "text": "Combien d'ADB avez-vous ?", "options": ["1", "2-5", ">5", "je ne sais pas"] },
-      { "id": "q3", "text": "Depuis combien de temps ?", "options": ["<1 an", "1-5 ans", "5-20 ans", ">20 ans"] },
-      { "id": "q4", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Situation ?",
+        "options": [
+          "j'ai recu un acte de defaut de biens",
+          "je veux savoir ce que c'est",
+          "je veux en contester un",
+          "un creancier a un ADB contre moi"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Combien d'ADB avez-vous ?",
+        "options": [
+          "1",
+          "2-5",
+          ">5",
+          "je ne sais pas"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Depuis combien de temps ?",
+        "options": [
+          "<1 an",
+          "1-5 ans",
+          "5-20 ans",
+          ">20 ans"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "L'acte de defaut de biens (ADB, art. 149 LP) est delivre au creancier lorsque la poursuite n'a pas permis de recouvrer la totalite de la creance (saisie infructueuse). L'ADB constate le solde impaye et vaut reconnaissance de dette (art. 149 al. 2 LP). Le creancier peut engager une nouvelle poursuite a tout moment s'il estime que la situation financiere du debiteur s'est amelioree, sans avoir besoin d'un nouveau titre. L'ADB se prescrit par 20 ans (art. 149a LP). Le debiteur qui ameliore sa situation peut etre poursuivi a nouveau. L'ADB est inscrit au registre des poursuites et peut etre consulte par des tiers (employeurs, bailleurs) dans l'extrait du registre des poursuites. Le debiteur peut demander la radiation de l'ADB en payant la dette + interets. L'ADB n'est pas une faillite personnelle et ne prive pas le debiteur de ses droits civils.",
       "articles": [
-        { "ref": "LP 149", "titre": "Acte de defaut de biens — delivrance", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_149" },
-        { "ref": "LP 149a", "titre": "Prescription de la creance constatee par ADB", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_149_a" }
+        {
+          "ref": "LP 149",
+          "titre": "Acte de defaut de biens — delivrance",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_149"
+        },
+        {
+          "ref": "LP 149a",
+          "titre": "Prescription de la creance constatee par ADB",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_149_a"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_441/2019", "resume": "Le creancier porteur d'un ADB peut engager une nouvelle poursuite sans prouver un changement de situation du debiteur." },
-        { "ref": "TF 5A_342/2013", "resume": "L'ADB delivre dans une poursuite nulle (vice de notification) est lui-meme nul et doit etre annule." }
+        {
+          "ref": "TF 5A_441/2019",
+          "resume": "Le creancier porteur d'un ADB peut engager une nouvelle poursuite sans prouver un changement de situation du debiteur."
+        },
+        {
+          "ref": "TF 5A_342/2013",
+          "resume": "L'ADB delivre dans une poursuite nulle (vice de notification) est lui-meme nul et doit etre annule."
+        }
       ],
       "modeleLettre": "",
       "services": [
-        { "nom": "Office des poursuites VD", "url": "https://www.vd.ch/themes/etat-droit-finances/poursuites-et-faillites", "canton": "VD" },
-        { "nom": "Office des poursuites GE", "url": "https://www.ge.ch/organisation/office-poursuites", "canton": "GE" },
-        { "nom": "Centre social protestant VD", "tel": "021 560 60 60", "url": "https://www.csp.ch", "canton": "VD" }
+        {
+          "nom": "Office des poursuites VD",
+          "url": "https://www.vd.ch/themes/etat-droit-finances/poursuites-et-faillites",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office des poursuites GE",
+          "url": "https://www.ge.ch/organisation/office-poursuites",
+          "canton": "GE"
+        },
+        {
+          "nom": "Centre social protestant VD",
+          "tel": "021 560 60 60",
+          "url": "https://www.csp.ch",
+          "canton": "VD"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "La personne veut comprendre les consequences d'un acte de defaut de biens sur sa situation",
+    "profane_aliases": [
+      "consequences acte de defaut de biens",
+      "ma dette est-elle effacee",
+      "acte de defaut et inscription",
+      "reprendre une poursuite apres acte de defaut",
+      "je suis fiche"
+    ],
+    "negative_signals": [
+      "question sur la saisie en cours",
+      "acte de defaut non encore delivre"
+    ],
+    "required_facts": [
+      "date de l'acte de defaut",
+      "montant",
+      "amelioration de la situation financiere",
+      "nouvelle poursuite recue ou non"
+    ]
   },
   {
     "id": "dettes_faillite_personnelle_procedure",
     "domaine": "dettes",
     "sousDomaine": "faillite",
-    "tags": ["faillite", "personnelle", "insolvabilite", "declaration", "liquidation"],
+    "tags": [
+      "faillite",
+      "personnelle",
+      "insolvabilite",
+      "declaration",
+      "liquidation"
+    ],
     "questions": [
-      { "id": "q1", "text": "Etes-vous inscrit au registre du commerce ?", "options": ["oui", "non"] },
-      { "id": "q2", "text": "Nombre de poursuites en cours ?", "options": ["1-3", "4-10", ">10"] },
-      { "id": "q3", "text": "Avez-vous des biens (immobilier, vehicule) ?", "options": ["oui", "peu", "non"] },
-      { "id": "q4", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Etes-vous inscrit au registre du commerce ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Nombre de poursuites en cours ?",
+        "options": [
+          "1-3",
+          "4-10",
+          ">10"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous des biens (immobilier, vehicule) ?",
+        "options": [
+          "oui",
+          "peu",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "En droit suisse, la faillite personnelle concerne principalement les personnes inscrites au registre du commerce (art. 39 LP). Pour les autres personnes, la voie ordinaire est la poursuite par saisie. Cependant, tout debiteur peut demander sa propre mise en faillite s'il se declare insolvable (art. 191 LP). La faillite est prononcee par le tribunal et entraine la liquidation de l'ensemble du patrimoine saisissable. Les creanciers produisent leurs creances dans un delai fixe. L'office des faillites realise les actifs et distribue le produit. Les creances non couvertes donnent lieu a des actes de defaut de biens. La faillite est publiee dans la FOSC et les journaux. Apres la cloture de la faillite, le debiteur peut redemarrer mais reste tenu des soldes non payes (ADB de 20 ans). La faillite est inscrite au registre des poursuites pendant 20 ans.",
       "articles": [
-        { "ref": "LP 191", "titre": "Declaration d'insolvabilite par le debiteur", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_191" },
-        { "ref": "LP 39", "titre": "Poursuite par voie de faillite", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_39" },
-        { "ref": "LP 265", "titre": "Cloture de la faillite", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_265" }
+        {
+          "ref": "LP 191",
+          "titre": "Declaration d'insolvabilite par le debiteur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_191"
+        },
+        {
+          "ref": "LP 39",
+          "titre": "Poursuite par voie de faillite",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_39"
+        },
+        {
+          "ref": "LP 265",
+          "titre": "Cloture de la faillite",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_265"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_549/2014", "resume": "Le tribunal peut refuser la declaration de faillite personnelle si le debiteur n'est manifestement pas insolvable ou s'il agit abusivement." },
-        { "ref": "TF 5A_87/2017", "resume": "La faillite personnelle ne libere pas le debiteur de ses dettes ; les ADB subsistent pendant 20 ans." }
+        {
+          "ref": "TF 5A_549/2014",
+          "resume": "Le tribunal peut refuser la declaration de faillite personnelle si le debiteur n'est manifestement pas insolvable ou s'il agit abusivement."
+        },
+        {
+          "ref": "TF 5A_87/2017",
+          "resume": "La faillite personnelle ne libere pas le debiteur de ses dettes ; les ADB subsistent pendant 20 ans."
+        }
       ],
       "modeleLettre": "",
       "services": [
-        { "nom": "Office des faillites VD", "url": "https://www.vd.ch/themes/etat-droit-finances/poursuites-et-faillites", "canton": "VD" },
-        { "nom": "Office des faillites GE", "url": "https://www.ge.ch/organisation/office-poursuites", "canton": "GE" },
-        { "nom": "Caritas Geneve (conseil en dettes)", "tel": "022 708 04 44", "url": "https://www.caritas-geneve.ch", "canton": "GE" }
+        {
+          "nom": "Office des faillites VD",
+          "url": "https://www.vd.ch/themes/etat-droit-finances/poursuites-et-faillites",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office des faillites GE",
+          "url": "https://www.ge.ch/organisation/office-poursuites",
+          "canton": "GE"
+        },
+        {
+          "nom": "Caritas Geneve (conseil en dettes)",
+          "tel": "022 708 04 44",
+          "url": "https://www.caritas-geneve.ch",
+          "canton": "GE"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "La personne veut connaitre les etapes concretes de la procedure de faillite personnelle",
+    "profane_aliases": [
+      "comment se passe une faillite",
+      "etapes de la faillite personnelle",
+      "procedure de faillite pour un particulier",
+      "declaration de faillite mode d'emploi",
+      "que se passe-t-il apres la faillite"
+    ],
+    "negative_signals": [
+      "faillite d'une entreprise (SA/Sarl)",
+      "simple surendettement sans volonte de faillite"
+    ],
+    "required_facts": [
+      "statut (salarie ou independant)",
+      "montant total des dettes",
+      "biens possedes",
+      "procedure de poursuite en cours"
+    ]
   },
   {
     "id": "dettes_concordat",
     "domaine": "dettes",
     "sousDomaine": "concordat",
-    "tags": ["concordat", "arrangement", "creanciers", "remise", "echelonnement"],
+    "tags": [
+      "concordat",
+      "arrangement",
+      "creanciers",
+      "remise",
+      "echelonnement"
+    ],
     "questions": [
-      { "id": "q1", "text": "Type de concordat envisage ?", "options": ["concordat-dividende (remise partielle)", "concordat par abandon d'actifs", "sursis concordataire", "je ne sais pas"] },
-      { "id": "q2", "text": "Etes-vous une entreprise ou un particulier ?", "options": ["entreprise", "particulier", "independant"] },
-      { "id": "q3", "text": "Les creanciers sont-ils prets a negocier ?", "options": ["oui, certains", "non", "je n'ai pas encore approche"] },
-      { "id": "q4", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Type de concordat envisage ?",
+        "options": [
+          "concordat-dividende (remise partielle)",
+          "concordat par abandon d'actifs",
+          "sursis concordataire",
+          "je ne sais pas"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Etes-vous une entreprise ou un particulier ?",
+        "options": [
+          "entreprise",
+          "particulier",
+          "independant"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Les creanciers sont-ils prets a negocier ?",
+        "options": [
+          "oui, certains",
+          "non",
+          "je n'ai pas encore approche"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "Le concordat (art. 293-336 LP) est une procedure judiciaire permettant au debiteur de trouver un arrangement avec ses creanciers, alternative a la faillite. Il existe deux types principaux : (1) le concordat-dividende : le debiteur s'engage a payer un pourcentage de ses dettes (generalement 15-50%) et est libere du solde, (2) le concordat par abandon d'actifs : les actifs sont liquides et repartis entre creanciers. La procedure commence par une demande de sursis concordataire au tribunal (art. 293 LP). Le tribunal nomme un commissaire. Le sursis dure en principe 4 mois, prolongeable a 24 mois. Pendant le sursis, les poursuites sont suspendues. Le concordat doit etre accepte par la majorite des creanciers representant les 2/3 des creances (art. 305 LP) puis homologue par le tribunal. Le concordat homologue est obligatoire pour tous les creanciers, meme ceux qui ont vote contre.",
       "articles": [
-        { "ref": "LP 293", "titre": "Requete de sursis concordataire", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_293" },
-        { "ref": "LP 305", "titre": "Acceptation du concordat", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_305" },
-        { "ref": "LP 310", "titre": "Homologation du concordat", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_310" }
+        {
+          "ref": "LP 293",
+          "titre": "Requete de sursis concordataire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_293"
+        },
+        {
+          "ref": "LP 305",
+          "titre": "Acceptation du concordat",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_305"
+        },
+        {
+          "ref": "LP 310",
+          "titre": "Homologation du concordat",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_310"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_364/2017", "resume": "Le concordat-dividende de 25% a ete homologue car il offrait aux creanciers un meilleur resultat que la faillite." },
-        { "ref": "TF 5A_112/2015", "resume": "Le tribunal peut refuser l'homologation si le concordat est manifestement desavantageux pour les creanciers par rapport a la faillite." }
+        {
+          "ref": "TF 5A_364/2017",
+          "resume": "Le concordat-dividende de 25% a ete homologue car il offrait aux creanciers un meilleur resultat que la faillite."
+        },
+        {
+          "ref": "TF 5A_112/2015",
+          "resume": "Le tribunal peut refuser l'homologation si le concordat est manifestement desavantageux pour les creanciers par rapport a la faillite."
+        }
       ],
       "modeleLettre": "",
       "services": [
-        { "nom": "Tribunal d'arrondissement VD", "url": "https://www.vd.ch/autorites/ordre-judiciaire", "canton": "VD" },
-        { "nom": "Tribunal de premiere instance GE", "url": "https://justice.ge.ch", "canton": "GE" }
+        {
+          "nom": "Tribunal d'arrondissement VD",
+          "url": "https://www.vd.ch/autorites/ordre-judiciaire",
+          "canton": "VD"
+        },
+        {
+          "nom": "Tribunal de premiere instance GE",
+          "url": "https://justice.ge.ch",
+          "canton": "GE"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "La personne cherche un accord global avec ses creanciers par un concordat",
+    "profane_aliases": [
+      "concordat c'est quoi",
+      "accord avec tous mes creanciers",
+      "alternative a la faillite",
+      "concordat judiciaire",
+      "remise de dette collective"
+    ],
+    "negative_signals": [
+      "arrangement amiable avec un seul creancier",
+      "faillite deja prononcee"
+    ],
+    "required_facts": [
+      "montant total des dettes",
+      "nombre de creanciers",
+      "capacite de paiement",
+      "type de concordat envisage"
+    ]
   },
   {
     "id": "dettes_sursis_concordataire",
     "domaine": "dettes",
     "sousDomaine": "concordat",
-    "tags": ["sursis", "concordataire", "suspension", "poursuites", "commissaire"],
+    "tags": [
+      "sursis",
+      "concordataire",
+      "suspension",
+      "poursuites",
+      "commissaire"
+    ],
     "questions": [
-      { "id": "q1", "text": "Objectif du sursis ?", "options": ["preparer un concordat", "gagner du temps pour reorganiser", "eviter la faillite imminente"] },
-      { "id": "q2", "text": "Duree souhaitee ?", "options": ["4 mois", "jusqu'a 24 mois", "je ne sais pas"] },
-      { "id": "q3", "text": "Avez-vous un plan de restructuration ?", "options": ["oui", "en preparation", "non"] },
-      { "id": "q4", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Objectif du sursis ?",
+        "options": [
+          "preparer un concordat",
+          "gagner du temps pour reorganiser",
+          "eviter la faillite imminente"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Duree souhaitee ?",
+        "options": [
+          "4 mois",
+          "jusqu'a 24 mois",
+          "je ne sais pas"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous un plan de restructuration ?",
+        "options": [
+          "oui",
+          "en preparation",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "Le sursis concordataire (art. 293-295 LP) est accorde par le tribunal pour permettre au debiteur d'elaborer un concordat avec ses creanciers. La demande peut etre faite par le debiteur ou par un creancier. Le sursis provisoire est de 4 mois maximum (art. 293a LP). Le tribunal nomme un commissaire au sursis qui surveille les operations et elabore un rapport. Si les perspectives de concordat sont reelles, le sursis definitif peut durer jusqu'a 24 mois (art. 295a LP). Effets du sursis : toutes les poursuites sont suspendues (sauf pour pensions alimentaires), le debiteur ne peut pas aliener d'immeubles ni constituer de sureILtés sans l'accord du commissaire. Le debiteur continue a gerer ses affaires courantes sous surveillance. Si aucun concordat n'est possible, le tribunal prononce la faillite. Le sursis est publie dans la FOSC.",
       "articles": [
-        { "ref": "LP 293", "titre": "Requete de sursis concordataire", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_293" },
-        { "ref": "LP 293a", "titre": "Sursis provisoire", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_293_a" },
-        { "ref": "LP 295a", "titre": "Sursis definitif", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_295_a" }
+        {
+          "ref": "LP 293",
+          "titre": "Requete de sursis concordataire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_293"
+        },
+        {
+          "ref": "LP 293a",
+          "titre": "Sursis provisoire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_293_a"
+        },
+        {
+          "ref": "LP 295a",
+          "titre": "Sursis definitif",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_295_a"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_493/2018", "resume": "Le sursis concordataire ne peut etre accorde que s'il existe des perspectives serieuses de concordat ; un simple report de la faillite ne suffit pas." },
-        { "ref": "TF 5A_231/2016", "resume": "Le commissaire au sursis peut recommander la faillite si le debiteur ne coopere pas." }
+        {
+          "ref": "TF 5A_493/2018",
+          "resume": "Le sursis concordataire ne peut etre accorde que s'il existe des perspectives serieuses de concordat ; un simple report de la faillite ne suffit pas."
+        },
+        {
+          "ref": "TF 5A_231/2016",
+          "resume": "Le commissaire au sursis peut recommander la faillite si le debiteur ne coopere pas."
+        }
       ],
       "modeleLettre": "",
       "services": [
-        { "nom": "Tribunal d'arrondissement VD", "url": "https://www.vd.ch/autorites/ordre-judiciaire", "canton": "VD" },
-        { "nom": "Tribunal de premiere instance GE", "url": "https://justice.ge.ch", "canton": "GE" }
+        {
+          "nom": "Tribunal d'arrondissement VD",
+          "url": "https://www.vd.ch/autorites/ordre-judiciaire",
+          "canton": "VD"
+        },
+        {
+          "nom": "Tribunal de premiere instance GE",
+          "url": "https://justice.ge.ch",
+          "canton": "GE"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "La personne veut obtenir un sursis concordataire pour geler les poursuites et reorganiser ses finances",
+    "profane_aliases": [
+      "sursis concordataire",
+      "geler les poursuites",
+      "suspendre les poursuites pendant negociation",
+      "commissaire au sursis",
+      "protection contre les creanciers"
+    ],
+    "negative_signals": [
+      "simple opposition a une poursuite",
+      "arrangement amiable direct"
+    ],
+    "required_facts": [
+      "situation financiere globale",
+      "poursuites en cours",
+      "perspective d'assainissement",
+      "accompagnement professionnel"
+    ]
   },
   {
     "id": "dettes_sequestre",
     "domaine": "dettes",
     "sousDomaine": "sequestre",
-    "tags": ["sequestre", "mesure", "conservatoire", "biens", "blocage"],
+    "tags": [
+      "sequestre",
+      "mesure",
+      "conservatoire",
+      "biens",
+      "blocage"
+    ],
     "questions": [
-      { "id": "q1", "text": "Situation ?", "options": ["je veux faire sequestrer des biens", "mes biens ont ete sequestres", "je veux comprendre le sequestre"] },
-      { "id": "q2", "text": "Type de biens vises ?", "options": ["compte bancaire", "bien immobilier", "vehicule", "autre"] },
-      { "id": "q3", "text": "Le debiteur est-il en Suisse ?", "options": ["oui", "non, a l'etranger", "je ne sais pas"] },
-      { "id": "q4", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Situation ?",
+        "options": [
+          "je veux faire sequestrer des biens",
+          "mes biens ont ete sequestres",
+          "je veux comprendre le sequestre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Type de biens vises ?",
+        "options": [
+          "compte bancaire",
+          "bien immobilier",
+          "vehicule",
+          "autre"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Le debiteur est-il en Suisse ?",
+        "options": [
+          "oui",
+          "non, a l'etranger",
+          "je ne sais pas"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "Le sequestre (art. 271-281 LP) est une mesure conservatoire permettant au creancier de bloquer les biens du debiteur avant ou pendant une poursuite. Le creancier doit rendre vraisemblable sa creance et invoquer un cas de sequestre (art. 271 LP) : debiteur sans domicile fixe, debiteur qui fait disparaitre ses biens, debiteur de passage, debiteur domicilie a l'etranger si la creance a un lien suffisant avec la Suisse (cas le plus frequent en pratique). L'ordonnance de sequestre est rendue par le tribunal sans audition prealable du debiteur (procedure ex parte). Le sequestre est execute par l'office des poursuites. Le creancier doit valider le sequestre par une poursuite ou une action en justice dans les 10 jours (art. 279 LP). Le debiteur peut s'opposer au sequestre (art. 278 LP). Les frais (sureILtés) sont a la charge du creancier — en cas de sequestre injustifie, il doit reparer le dommage (art. 273 LP).",
       "articles": [
-        { "ref": "LP 271", "titre": "Cas de sequestre", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_271" },
-        { "ref": "LP 278", "titre": "Opposition au sequestre", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_278" },
-        { "ref": "LP 279", "titre": "Validation du sequestre", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_279" }
+        {
+          "ref": "LP 271",
+          "titre": "Cas de sequestre",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_271"
+        },
+        {
+          "ref": "LP 278",
+          "titre": "Opposition au sequestre",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_278"
+        },
+        {
+          "ref": "LP 279",
+          "titre": "Validation du sequestre",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_279"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_548/2015", "resume": "Le sequestre d'un compte bancaire est admis lorsque le debiteur domicilie a l'etranger detient des avoirs en Suisse." },
-        { "ref": "TF 5A_371/2018", "resume": "Le creancier qui obtient un sequestre injustifie repond du dommage cause au debiteur (art. 273 LP)." }
+        {
+          "ref": "TF 5A_548/2015",
+          "resume": "Le sequestre d'un compte bancaire est admis lorsque le debiteur domicilie a l'etranger detient des avoirs en Suisse."
+        },
+        {
+          "ref": "TF 5A_371/2018",
+          "resume": "Le creancier qui obtient un sequestre injustifie repond du dommage cause au debiteur (art. 273 LP)."
+        }
       ],
       "modeleLettre": "",
       "services": [
-        { "nom": "Tribunal d'arrondissement VD", "url": "https://www.vd.ch/autorites/ordre-judiciaire", "canton": "VD" },
-        { "nom": "Tribunal de premiere instance GE", "url": "https://justice.ge.ch", "canton": "GE" }
+        {
+          "nom": "Tribunal d'arrondissement VD",
+          "url": "https://www.vd.ch/autorites/ordre-judiciaire",
+          "canton": "VD"
+        },
+        {
+          "nom": "Tribunal de premiere instance GE",
+          "url": "https://justice.ge.ch",
+          "canton": "GE"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "La personne veut bloquer les biens de son debiteur pour garantir le paiement",
+    "profane_aliases": [
+      "bloquer les biens de mon debiteur",
+      "sequestre sur un compte bancaire",
+      "mesure conservatoire poursuite",
+      "empecher mon debiteur de cacher ses biens",
+      "sequestrer des avoirs"
+    ],
+    "negative_signals": [
+      "saisie (apres commandement de payer)",
+      "simple mise en demeure"
+    ],
+    "required_facts": [
+      "cas de sequestre invoque",
+      "biens a sequestrer",
+      "creance et son fondement",
+      "canton des biens"
+    ]
   },
   {
     "id": "dettes_poursuite_effets_change",
     "domaine": "dettes",
     "sousDomaine": "poursuite",
-    "tags": ["effets", "change", "lettre", "billet", "ordre", "poursuite"],
+    "tags": [
+      "effets",
+      "change",
+      "lettre",
+      "billet",
+      "ordre",
+      "poursuite"
+    ],
     "questions": [
-      { "id": "q1", "text": "Type d'effet de change ?", "options": ["lettre de change", "billet a ordre", "cheque", "je ne sais pas"] },
-      { "id": "q2", "text": "Situation ?", "options": ["je suis porteur et veux poursuivre", "on me poursuit sur un effet", "l'effet est impaye"] },
-      { "id": "q3", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Type d'effet de change ?",
+        "options": [
+          "lettre de change",
+          "billet a ordre",
+          "cheque",
+          "je ne sais pas"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Situation ?",
+        "options": [
+          "je suis porteur et veux poursuivre",
+          "on me poursuit sur un effet",
+          "l'effet est impaye"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "La poursuite pour effets de change (art. 177-189 LP) est une voie speciale acceleree. Le porteur d'une lettre de change, d'un billet a ordre ou d'un cheque impaye peut engager une poursuite par voie de change. La particularite : l'opposition du debiteur ne suspend pas la poursuite (art. 182 LP), contrairement a la poursuite ordinaire. Le debiteur doit faire valoir ses moyens devant le juge dans une action en liberation. Le delai d'opposition est de 5 jours (au lieu de 10). La poursuite pour effets de change est exclusivement par voie de saisie, jamais par faillite (art. 177 LP). L'effet de change doit etre regulier en la forme (mentions obligatoires selon la Loi sur les lettres de change et billets a ordre). Le porteur peut agir contre tous les signataires solidairement. Cette voie est rare en pratique pour les particuliers mais frequente en commerce.",
       "articles": [
-        { "ref": "LP 177", "titre": "Poursuite pour effets de change", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_177" },
-        { "ref": "LP 182", "titre": "Effets de l'opposition dans la poursuite pour effets de change", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_182" }
+        {
+          "ref": "LP 177",
+          "titre": "Poursuite pour effets de change",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_177"
+        },
+        {
+          "ref": "LP 182",
+          "titre": "Effets de l'opposition dans la poursuite pour effets de change",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_182"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_96/2012", "resume": "Un billet a ordre irregulier (mention manquante) ne peut pas fonder une poursuite pour effets de change, mais peut servir de reconnaissance de dette pour une mainlevee provisoire." }
+        {
+          "ref": "TF 5A_96/2012",
+          "resume": "Un billet a ordre irregulier (mention manquante) ne peut pas fonder une poursuite pour effets de change, mais peut servir de reconnaissance de dette pour une mainlevee provisoire."
+        }
       ],
       "modeleLettre": "",
       "services": [
-        { "nom": "Office des poursuites VD", "url": "https://www.vd.ch/themes/etat-droit-finances/poursuites-et-faillites", "canton": "VD" },
-        { "nom": "Office des poursuites GE", "url": "https://www.ge.ch/organisation/office-poursuites", "canton": "GE" }
+        {
+          "nom": "Office des poursuites VD",
+          "url": "https://www.vd.ch/themes/etat-droit-finances/poursuites-et-faillites",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office des poursuites GE",
+          "url": "https://www.ge.ch/organisation/office-poursuites",
+          "canton": "GE"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "La poursuite concerne des effets de change (lettres de change, billets a ordre)",
+    "profane_aliases": [
+      "poursuite pour effet de change",
+      "billet a ordre impaye",
+      "lettre de change protestee",
+      "poursuite par voie de change",
+      "effets de change et poursuite"
+    ],
+    "negative_signals": [
+      "poursuite ordinaire sans effet de change",
+      "simple facture impayee"
+    ],
+    "required_facts": [
+      "type d'effet (lettre de change, billet a ordre)",
+      "montant",
+      "protest effectue ou non",
+      "delai"
+    ]
   },
   {
     "id": "dettes_revendication",
     "domaine": "dettes",
     "sousDomaine": "saisie",
-    "tags": ["revendication", "tiers", "saisie", "propriete", "action"],
+    "tags": [
+      "revendication",
+      "tiers",
+      "saisie",
+      "propriete",
+      "action"
+    ],
     "questions": [
-      { "id": "q1", "text": "Situation ?", "options": ["un bien m'appartenant a ete saisi chez le debiteur", "l'office a saisi un bien qui appartient a un tiers", "je veux revendiquer un bien"] },
-      { "id": "q2", "text": "Type de bien ?", "options": ["meuble", "vehicule", "objet de valeur", "argent sur un compte"] },
-      { "id": "q3", "text": "Avez-vous une preuve de propriete ?", "options": ["oui, facture/contrat", "oui, temoins", "non"] },
-      { "id": "q4", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Situation ?",
+        "options": [
+          "un bien m'appartenant a ete saisi chez le debiteur",
+          "l'office a saisi un bien qui appartient a un tiers",
+          "je veux revendiquer un bien"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Type de bien ?",
+        "options": [
+          "meuble",
+          "vehicule",
+          "objet de valeur",
+          "argent sur un compte"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous une preuve de propriete ?",
+        "options": [
+          "oui, facture/contrat",
+          "oui, temoins",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "La revendication (art. 106-109 LP) est le moyen pour un tiers de faire valoir un droit de propriete ou un autre droit reel sur un bien saisi dans le cadre d'une poursuite. Si un bien appartenant a un tiers est saisi chez le debiteur (ou dans un logement commun), le tiers doit faire valoir sa revendication aupres de l'office des poursuites. L'office transmet la revendication aux parties. Si le creancier conteste, l'office fixe un delai de 10 jours pour agir en justice (art. 107 LP). La charge de la preuve depend de la possession : si le tiers possede le bien, c'est au creancier de contester ; si le debiteur possede le bien, c'est au tiers de prouver son droit. En cas de copropriete ou de propriete commune (regime matrimonial), des regles speciales s'appliquent. L'epoux non debiteur peut revendiquer sa part des biens communs.",
       "articles": [
-        { "ref": "LP 106", "titre": "Revendication de tiers", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_106" },
-        { "ref": "LP 107", "titre": "Procedure de revendication", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_107" },
-        { "ref": "LP 109", "titre": "Action en revendication", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_109" }
+        {
+          "ref": "LP 106",
+          "titre": "Revendication de tiers",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_106"
+        },
+        {
+          "ref": "LP 107",
+          "titre": "Procedure de revendication",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_107"
+        },
+        {
+          "ref": "LP 109",
+          "titre": "Action en revendication",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_109"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_180/2016", "resume": "L'epouse peut revendiquer les biens propres saisis dans le logement conjugal en prouvant sa propriete." },
-        { "ref": "TF 5A_742/2012", "resume": "Une facture au nom du tiers constitue un indice de propriete mais n'est pas suffisante a elle seule." }
+        {
+          "ref": "TF 5A_180/2016",
+          "resume": "L'epouse peut revendiquer les biens propres saisis dans le logement conjugal en prouvant sa propriete."
+        },
+        {
+          "ref": "TF 5A_742/2012",
+          "resume": "Une facture au nom du tiers constitue un indice de propriete mais n'est pas suffisante a elle seule."
+        }
       ],
       "modeleLettre": "Objet : Revendication de propriete — poursuite no [numero]\n\nA l'Office des poursuites de [district],\n\nMadame, Monsieur,\n\nDans le cadre de la poursuite no [numero] contre [nom du debiteur], les biens suivants ont ete saisis : [description].\n\nJe revendique la propriete de ces biens conformement a l'art. 106 LP.\n\nPreuves de propriete jointes : [facture, contrat d'achat, photos].\n\nJe vous prie de bien vouloir admettre ma revendication ou a defaut de transmettre le dossier au tribunal.\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
       "services": [
-        { "nom": "Office des poursuites VD", "url": "https://www.vd.ch/themes/etat-droit-finances/poursuites-et-faillites", "canton": "VD" },
-        { "nom": "Office des poursuites GE", "url": "https://www.ge.ch/organisation/office-poursuites", "canton": "GE" }
+        {
+          "nom": "Office des poursuites VD",
+          "url": "https://www.vd.ch/themes/etat-droit-finances/poursuites-et-faillites",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office des poursuites GE",
+          "url": "https://www.ge.ch/organisation/office-poursuites",
+          "canton": "GE"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "Un tiers revendique la propriete d'un bien saisi par l'office des poursuites",
+    "profane_aliases": [
+      "on a saisi un objet qui ne m'appartient pas",
+      "mon bien a ete saisi chez quelqu'un d'autre",
+      "revendication de propriete lors d'une saisie",
+      "l'office a pris mes affaires chez mon ex",
+      "objet saisi par erreur"
+    ],
+    "negative_signals": [
+      "saisie de ses propres biens",
+      "contestation du montant saisi"
+    ],
+    "required_facts": [
+      "bien revendique",
+      "preuves de propriete",
+      "procedure de saisie en cours",
+      "delai pour revendiquer"
+    ]
   },
   {
     "id": "dettes_plainte_lp",
     "domaine": "dettes",
     "sousDomaine": "plainte",
-    "tags": ["plainte", "LP", "surveillance", "office", "poursuites", "irregularite"],
+    "tags": [
+      "plainte",
+      "LP",
+      "surveillance",
+      "office",
+      "poursuites",
+      "irregularite"
+    ],
     "questions": [
-      { "id": "q1", "text": "Motif de plainte ?", "options": ["erreur de l'office", "notification irreguliere", "calcul minimum vital errone", "saisie excessive", "delai non respecte"] },
-      { "id": "q2", "text": "Delai depuis l'acte conteste ?", "options": ["<10 jours", "10-30 jours", ">30 jours"] },
-      { "id": "q3", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Motif de plainte ?",
+        "options": [
+          "erreur de l'office",
+          "notification irreguliere",
+          "calcul minimum vital errone",
+          "saisie excessive",
+          "delai non respecte"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Delai depuis l'acte conteste ?",
+        "options": [
+          "<10 jours",
+          "10-30 jours",
+          ">30 jours"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "La plainte LP (art. 17 LP) est le moyen de contester les actes de l'office des poursuites ou des faillites. Elle est adressee a l'autorite cantonale de surveillance dans un delai de 10 jours des la connaissance de l'acte conteste (art. 17 al. 2 LP). La plainte est gratuite. Motifs possibles : erreur dans le calcul du minimum vital, notification irreguliere, saisie de biens insaisissables, refus injustifie de l'office, retard inexcusable. L'autorite de surveillance peut annuler ou modifier l'acte conteste. En cas de nullite absolue (vice grave), la plainte n'est soumise a aucun delai (art. 22 LP). La decision de l'autorite cantonale de surveillance peut etre attaquee au Tribunal federal par recours en matiere civile (art. 72 al. 2 let. a LTF). La plainte n'a pas d'effet suspensif sauf decision contraire de l'autorite.",
       "articles": [
-        { "ref": "LP 17", "titre": "Plainte a l'autorite de surveillance", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_17" },
-        { "ref": "LP 22", "titre": "Nullite des actes", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_22" }
+        {
+          "ref": "LP 17",
+          "titre": "Plainte a l'autorite de surveillance",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_17"
+        },
+        {
+          "ref": "LP 22",
+          "titre": "Nullite des actes",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_22"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_867/2017", "resume": "La plainte LP est le seul moyen de contester les actes de l'office ; une action en justice ordinaire est irrecevable." },
-        { "ref": "TF 5A_341/2014", "resume": "L'erreur dans le calcul du minimum vital peut etre corrigee en tout temps par voie de plainte si elle constitue un vice grave." }
+        {
+          "ref": "TF 5A_867/2017",
+          "resume": "La plainte LP est le seul moyen de contester les actes de l'office ; une action en justice ordinaire est irrecevable."
+        },
+        {
+          "ref": "TF 5A_341/2014",
+          "resume": "L'erreur dans le calcul du minimum vital peut etre corrigee en tout temps par voie de plainte si elle constitue un vice grave."
+        }
       ],
       "modeleLettre": "Objet : Plainte LP (art. 17 LP) — poursuite no [numero]\n\nA l'Autorite cantonale de surveillance en matiere de poursuites et faillites,\n\nMadame, Monsieur,\n\nJe forme plainte contre la decision/l'acte suivant de l'Office des poursuites de [district] : [description de l'acte conteste, date].\n\nMotifs : [description detaillee de l'irregularite].\n\nJe demande l'annulation/la modification de cet acte.\n\nPieces jointes : [copie de l'acte conteste, preuves].\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
       "services": [
-        { "nom": "Autorite de surveillance LP VD (Tribunal cantonal)", "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunal-cantonal", "canton": "VD" },
-        { "nom": "Autorite de surveillance LP GE (Cour de justice)", "url": "https://justice.ge.ch", "canton": "GE" }
+        {
+          "nom": "Autorite de surveillance LP VD (Tribunal cantonal)",
+          "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunal-cantonal",
+          "canton": "VD"
+        },
+        {
+          "nom": "Autorite de surveillance LP GE (Cour de justice)",
+          "url": "https://justice.ge.ch",
+          "canton": "GE"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "La personne veut se plaindre d'une irregularite commise par l'office des poursuites",
+    "profane_aliases": [
+      "erreur de l'office des poursuites",
+      "plainte contre l'office",
+      "l'office a fait une faute",
+      "irregularite dans la poursuite",
+      "contester un acte de l'office des poursuites"
+    ],
+    "negative_signals": [
+      "plainte contre le creancier",
+      "simple opposition au commandement de payer"
+    ],
+    "required_facts": [
+      "acte conteste",
+      "irregularite invoquee",
+      "delai (10 jours)",
+      "autorite de surveillance"
+    ]
   },
   {
     "id": "dettes_for_poursuite",
     "domaine": "dettes",
     "sousDomaine": "poursuite",
-    "tags": ["for", "poursuite", "competence", "domicile", "lieu"],
+    "tags": [
+      "for",
+      "poursuite",
+      "competence",
+      "domicile",
+      "lieu"
+    ],
     "questions": [
-      { "id": "q1", "text": "Ou est domicilie le debiteur ?", "options": ["en Suisse, meme canton", "en Suisse, autre canton", "a l'etranger", "adresse inconnue"] },
-      { "id": "q2", "text": "Le debiteur est-il une personne physique ou morale ?", "options": ["physique", "morale (entreprise)"] },
-      { "id": "q3", "text": "Y a-t-il un gage immobilier ?", "options": ["oui", "non"] },
-      { "id": "q4", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Ou est domicilie le debiteur ?",
+        "options": [
+          "en Suisse, meme canton",
+          "en Suisse, autre canton",
+          "a l'etranger",
+          "adresse inconnue"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Le debiteur est-il une personne physique ou morale ?",
+        "options": [
+          "physique",
+          "morale (entreprise)"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Y a-t-il un gage immobilier ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "Le for de la poursuite (art. 46-53 LP) determine quel office des poursuites est competent. Regle generale : la poursuite a lieu au domicile du debiteur (art. 46 LP). Pour les personnes morales, c'est le siege social (art. 46 LP). Exceptions : la poursuite en realisation de gage immobilier a lieu au lieu de situation de l'immeuble (art. 51 LP), le debiteur sans domicile fixe en Suisse peut etre poursuivi au lieu de sejour (art. 48 LP), le debiteur domicilie a l'etranger peut etre poursuivi en Suisse au lieu ou il possede des biens (sequestre, art. 271 LP). Une poursuite engagee au mauvais for est nulle (art. 22 LP) et peut etre contestee par plainte en tout temps. L'office doit verifier d'office sa competence. En cas de demenagement pendant la poursuite, celle-ci se poursuit au for initial.",
       "articles": [
-        { "ref": "LP 46", "titre": "For de la poursuite — domicile", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_46" },
-        { "ref": "LP 51", "titre": "For en cas de gage immobilier", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_51" },
-        { "ref": "LP 48", "titre": "Debiteur sans domicile fixe", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_48" }
+        {
+          "ref": "LP 46",
+          "titre": "For de la poursuite — domicile",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_46"
+        },
+        {
+          "ref": "LP 51",
+          "titre": "For en cas de gage immobilier",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_51"
+        },
+        {
+          "ref": "LP 48",
+          "titre": "Debiteur sans domicile fixe",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_48"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_328/2017", "resume": "La poursuite engagee dans un for incompetent est nulle ; la nullite peut etre invoquee en tout temps par voie de plainte." },
-        { "ref": "TF 5A_544/2013", "resume": "Le domicile determinant est celui au moment de la notification du commandement de payer." }
+        {
+          "ref": "TF 5A_328/2017",
+          "resume": "La poursuite engagee dans un for incompetent est nulle ; la nullite peut etre invoquee en tout temps par voie de plainte."
+        },
+        {
+          "ref": "TF 5A_544/2013",
+          "resume": "Le domicile determinant est celui au moment de la notification du commandement de payer."
+        }
       ],
       "modeleLettre": "",
       "services": [
-        { "nom": "Office des poursuites VD", "url": "https://www.vd.ch/themes/etat-droit-finances/poursuites-et-faillites", "canton": "VD" },
-        { "nom": "Office des poursuites GE", "url": "https://www.ge.ch/organisation/office-poursuites", "canton": "GE" }
+        {
+          "nom": "Office des poursuites VD",
+          "url": "https://www.vd.ch/themes/etat-droit-finances/poursuites-et-faillites",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office des poursuites GE",
+          "url": "https://www.ge.ch/organisation/office-poursuites",
+          "canton": "GE"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "La personne veut savoir dans quel lieu (for) la poursuite doit etre introduite",
+    "profane_aliases": [
+      "ou lancer la poursuite",
+      "competence de l'office des poursuites",
+      "for de la poursuite",
+      "quel office des poursuites est competent",
+      "poursuite dans quel canton"
+    ],
+    "negative_signals": [
+      "question sur le for judiciaire (tribunal)",
+      "poursuite deja en cours"
+    ],
+    "required_facts": [
+      "domicile du debiteur",
+      "nature de la creance",
+      "debiteur en Suisse ou a l'etranger",
+      "siege social si entreprise"
+    ]
   },
   {
     "id": "dettes_prescription",
     "domaine": "dettes",
     "sousDomaine": "prescription",
-    "tags": ["prescription", "dette", "delai", "interruption", "liberation"],
+    "tags": [
+      "prescription",
+      "dette",
+      "delai",
+      "interruption",
+      "liberation"
+    ],
     "questions": [
-      { "id": "q1", "text": "Type de dette ?", "options": ["contrat (achat, pret)", "loyer", "facture medicale", "impots", "pension alimentaire", "autre"] },
-      { "id": "q2", "text": "Depuis combien de temps n'avez-vous pas paye ?", "options": ["<1 an", "1-5 ans", "5-10 ans", ">10 ans"] },
-      { "id": "q3", "text": "Avez-vous recu un commandement de payer ?", "options": ["oui, recemment", "oui, il y a longtemps", "non"] },
-      { "id": "q4", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Type de dette ?",
+        "options": [
+          "contrat (achat, pret)",
+          "loyer",
+          "facture medicale",
+          "impots",
+          "pension alimentaire",
+          "autre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Depuis combien de temps n'avez-vous pas paye ?",
+        "options": [
+          "<1 an",
+          "1-5 ans",
+          "5-10 ans",
+          ">10 ans"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous recu un commandement de payer ?",
+        "options": [
+          "oui, recemment",
+          "oui, il y a longtemps",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "La prescription eteint le droit d'agir du creancier mais pas la dette elle-meme (obligation naturelle). Delais principaux (art. 127-142 CO) : 10 ans pour les dettes ordinaires (prets, contrats, art. 127 CO), 5 ans pour les loyers, pensions, salaires, honoraires (art. 128 CO), 3 ans pour la responsabilite civile (art. 60 CO), 1 an pour les vices de la chose vendue (art. 210 CO). La prescription est interrompue par : un commandement de payer, une action en justice, la reconnaissance de la dette par le debiteur (art. 135 CO). Apres interruption, un nouveau delai complet recommence (art. 137 CO). Le debiteur doit invoquer la prescription ; le tribunal ne l'applique pas d'office (art. 142 CO). Un acte de defaut de biens porte la prescription a 20 ans (art. 149a LP). Les impots ont des regles de prescription speciales selon le droit fiscal.",
       "articles": [
-        { "ref": "CO 127", "titre": "Prescription ordinaire de 10 ans", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_127" },
-        { "ref": "CO 128", "titre": "Prescription de 5 ans", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_128" },
-        { "ref": "CO 135", "titre": "Interruption de la prescription", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_135" }
+        {
+          "ref": "CO 127",
+          "titre": "Prescription ordinaire de 10 ans",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_127"
+        },
+        {
+          "ref": "CO 128",
+          "titre": "Prescription de 5 ans",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_128"
+        },
+        {
+          "ref": "CO 135",
+          "titre": "Interruption de la prescription",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_135"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 4A_305/2017", "resume": "La prescription doit etre invoquee par le debiteur ; le tribunal ne l'applique pas d'office." },
-        { "ref": "TF 4A_178/2014", "resume": "Un commandement de payer interrompt la prescription meme si le debiteur fait opposition." }
+        {
+          "ref": "TF 4A_305/2017",
+          "resume": "La prescription doit etre invoquee par le debiteur ; le tribunal ne l'applique pas d'office."
+        },
+        {
+          "ref": "TF 4A_178/2014",
+          "resume": "Un commandement de payer interrompt la prescription meme si le debiteur fait opposition."
+        }
       ],
       "modeleLettre": "",
       "services": [
-        { "nom": "Centre social protestant VD", "tel": "021 560 60 60", "url": "https://www.csp.ch", "canton": "VD" },
-        { "nom": "Caritas Geneve", "tel": "022 708 04 44", "url": "https://www.caritas-geneve.ch", "canton": "GE" }
+        {
+          "nom": "Centre social protestant VD",
+          "tel": "021 560 60 60",
+          "url": "https://www.csp.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caritas Geneve",
+          "tel": "022 708 04 44",
+          "url": "https://www.caritas-geneve.ch",
+          "canton": "GE"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "CO/LP etat 2025-01-01"
+    "sourceLoi": "CO/LP etat 2025-01-01",
+    "match_description": "La personne veut savoir si sa dette est prescrite ou combien de temps le creancier peut encore agir",
+    "profane_aliases": [
+      "ma dette est prescrite",
+      "delai de prescription dette",
+      "au bout de combien de temps la dette s'efface",
+      "prescription des factures",
+      "la dette est trop vieille"
+    ],
+    "negative_signals": [
+      "question sur l'acte de defaut de biens",
+      "dette recente sans enjeu de prescription"
+    ],
+    "required_facts": [
+      "type de dette",
+      "date de la derniere reconnaissance ou poursuite",
+      "interruptions eventuelles",
+      "montant"
+    ]
   },
   {
     "id": "dettes_remise_dette",
     "domaine": "dettes",
     "sousDomaine": "extinction",
-    "tags": ["remise", "dette", "liberation", "creancier", "accord"],
+    "tags": [
+      "remise",
+      "dette",
+      "liberation",
+      "creancier",
+      "accord"
+    ],
     "questions": [
-      { "id": "q1", "text": "Le creancier accepte-t-il une remise ?", "options": ["oui, totale", "oui, partielle", "non", "je n'ai pas demande"] },
-      { "id": "q2", "text": "Type de creancier ?", "options": ["particulier", "entreprise", "banque", "etat/impots", "assurance maladie"] },
-      { "id": "q3", "text": "Avez-vous une offre ecrite ?", "options": ["oui", "non, que verbal", "non"] },
-      { "id": "q4", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Le creancier accepte-t-il une remise ?",
+        "options": [
+          "oui, totale",
+          "oui, partielle",
+          "non",
+          "je n'ai pas demande"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Type de creancier ?",
+        "options": [
+          "particulier",
+          "entreprise",
+          "banque",
+          "etat/impots",
+          "assurance maladie"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous une offre ecrite ?",
+        "options": [
+          "oui",
+          "non, que verbal",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "La remise de dette (art. 115 CO) est un contrat par lequel le creancier renonce a tout ou partie de sa creance. Elle peut etre totale ou partielle. Aucune forme n'est requise — un accord oral suffit, mais l'ecrit est vivement recommande comme preuve. La remise peut etre gratuite ou moyennant une contre-prestation (paiement partiel immediat). La remise de dette profite au debiteur principal et aux codébiteurs solidaires, sauf convention contraire (art. 147 CO). En matiere de TVA et d'impots, la remise de dette peut avoir des consequences fiscales pour le debiteur (revenu imposable). Certains creanciers publics (impots, AVS) peuvent accorder des remises selon leurs lois specifiques. Les assurances maladie ne peuvent pas remettre les primes LAMal mais le canton peut les subsidier. Il est recommande de formaliser la remise par ecrit et de mentionner explicitement que le solde est abandonne.",
       "articles": [
-        { "ref": "CO 115", "titre": "Remise de dette", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_115" },
-        { "ref": "CO 147", "titre": "Solidarite — effets de la remise", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_147" }
+        {
+          "ref": "CO 115",
+          "titre": "Remise de dette",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_115"
+        },
+        {
+          "ref": "CO 147",
+          "titre": "Solidarite — effets de la remise",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_147"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 4A_266/2016", "resume": "La remise de dette peut resulter d'un comportement concluant du creancier (silence prolonge apres proposition de reglement)." },
-        { "ref": "TF 4A_509/2014", "resume": "La remise partielle acceptee par le debiteur eteint definitivement la part remise ; le creancier ne peut pas revenir dessus." }
+        {
+          "ref": "TF 4A_266/2016",
+          "resume": "La remise de dette peut resulter d'un comportement concluant du creancier (silence prolonge apres proposition de reglement)."
+        },
+        {
+          "ref": "TF 4A_509/2014",
+          "resume": "La remise partielle acceptee par le debiteur eteint definitivement la part remise ; le creancier ne peut pas revenir dessus."
+        }
       ],
       "modeleLettre": "Objet : Proposition de reglement amiable — solde de CHF [montant]\n\nRecommande\n\nMadame, Monsieur,\n\nJe vous ecris concernant la creance de CHF [montant initial] que vous detenez a mon encontre.\n\nMa situation financiere ne me permet pas de m'acquitter de l'integralite de cette somme. Je vous propose le reglement definitif suivant : paiement immediat de CHF [montant propose] valant solde de tout compte.\n\nEn contrepartie de ce paiement, je vous demande de me confirmer par ecrit la remise du solde de CHF [difference] conformement a l'art. 115 CO.\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
       "services": [
-        { "nom": "Centre social protestant VD", "tel": "021 560 60 60", "url": "https://www.csp.ch", "canton": "VD" },
-        { "nom": "Caritas Geneve", "tel": "022 708 04 44", "url": "https://www.caritas-geneve.ch", "canton": "GE" }
+        {
+          "nom": "Centre social protestant VD",
+          "tel": "021 560 60 60",
+          "url": "https://www.csp.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caritas Geneve",
+          "tel": "022 708 04 44",
+          "url": "https://www.caritas-geneve.ch",
+          "canton": "GE"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "CO etat 2025-01-01"
+    "sourceLoi": "CO etat 2025-01-01",
+    "match_description": "Le creancier accepte d'annuler tout ou partie de la dette",
+    "profane_aliases": [
+      "le creancier efface ma dette",
+      "remise de dette",
+      "annulation de dette",
+      "abandon de creance",
+      "mon creancier renonce a me poursuivre"
+    ],
+    "negative_signals": [
+      "prescription de la dette",
+      "arrangement de paiement (dette maintenue)"
+    ],
+    "required_facts": [
+      "accord du creancier ecrit ou non",
+      "montant remis",
+      "dette partielle ou totale",
+      "consequences fiscales"
+    ]
   },
   {
     "id": "dettes_arrangement_amiable_negociation",
     "domaine": "dettes",
     "sousDomaine": "negociation",
-    "tags": ["arrangement", "amiable", "echelonnement", "negociation", "plan", "paiement"],
+    "tags": [
+      "arrangement",
+      "amiable",
+      "echelonnement",
+      "negociation",
+      "plan",
+      "paiement"
+    ],
     "questions": [
-      { "id": "q1", "text": "Nombre de creanciers ?", "options": ["1", "2-5", ">5"] },
-      { "id": "q2", "text": "Avez-vous deja tente de negocier ?", "options": ["non", "oui, sans succes", "oui, partiellement"] },
-      { "id": "q3", "text": "Pouvez-vous payer des mensualites ?", "options": ["oui, petites", "oui, raisonnables", "non, rien du tout"] },
-      { "id": "q4", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Nombre de creanciers ?",
+        "options": [
+          "1",
+          "2-5",
+          ">5"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Avez-vous deja tente de negocier ?",
+        "options": [
+          "non",
+          "oui, sans succes",
+          "oui, partiellement"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Pouvez-vous payer des mensualites ?",
+        "options": [
+          "oui, petites",
+          "oui, raisonnables",
+          "non, rien du tout"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "L'arrangement amiable est un accord negocie entre le debiteur et ses creanciers en dehors de toute procedure judiciaire. Il est souvent plus avantageux que les poursuites pour les deux parties (pas de frais de poursuite, paiement plus rapide). Les types d'arrangements courants : echelonnement du paiement, remise partielle contre paiement immediat du solde, moratoire (suspension temporaire). L'arrangement n'est pas reglemente par la loi mais releve de la liberte contractuelle (art. 19 CO). Il est vivement conseille de formaliser tout accord par ecrit, avec mention du montant total, des mensualites, des delais, et la clause de desistement en cas de respect du plan. Les services de conseil en dettes (CSP, Caritas, ARTIAS) peuvent intervenir comme intermediaires neutres pour negocier avec les creanciers. L'arrangement amiable ne figure pas au registre des poursuites.",
       "articles": [
-        { "ref": "CO 19", "titre": "Liberte contractuelle", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_19" },
-        { "ref": "CO 75", "titre": "Exigibilite de la dette", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_75" }
+        {
+          "ref": "CO 19",
+          "titre": "Liberte contractuelle",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_19"
+        },
+        {
+          "ref": "CO 75",
+          "titre": "Exigibilite de la dette",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_75"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 4A_103/2015", "resume": "Un plan de paiement convenu entre les parties est un contrat qui lie les deux parties ; le creancier ne peut pas poursuivre tant que le debiteur respecte le plan." }
+        {
+          "ref": "TF 4A_103/2015",
+          "resume": "Un plan de paiement convenu entre les parties est un contrat qui lie les deux parties ; le creancier ne peut pas poursuivre tant que le debiteur respecte le plan."
+        }
       ],
       "modeleLettre": "Objet : Proposition d'arrangement amiable\n\nRecommande\n\nMadame, Monsieur,\n\nConcernant la creance de CHF [montant] que vous detenez a mon encontre, je vous propose l'arrangement suivant :\n\n- Paiement en [nombre] mensualites de CHF [montant mensuel]\n- Premier versement le [date]\n- Dernier versement le [date]\n\nEn contrepartie, je vous demande de suspendre toute poursuite pendant la duree du plan.\n\nJe m'engage a respecter ce plan de paiement. En cas de defaut de paiement de plus de 30 jours, vous pourrez reprendre les demarches de recouvrement.\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
       "services": [
-        { "nom": "Centre social protestant VD", "tel": "021 560 60 60", "url": "https://www.csp.ch", "canton": "VD" },
-        { "nom": "Caritas Geneve (conseil en dettes)", "tel": "022 708 04 44", "url": "https://www.caritas-geneve.ch", "canton": "GE" },
-        { "nom": "ARTIAS (association romande)", "url": "https://www.artias.ch", "canton": "VD" }
+        {
+          "nom": "Centre social protestant VD",
+          "tel": "021 560 60 60",
+          "url": "https://www.csp.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caritas Geneve (conseil en dettes)",
+          "tel": "022 708 04 44",
+          "url": "https://www.caritas-geneve.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "ARTIAS (association romande)",
+          "url": "https://www.artias.ch",
+          "canton": "VD"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "CO etat 2025-01-01"
+    "sourceLoi": "CO etat 2025-01-01",
+    "match_description": "La personne veut negocier concretement avec ses creanciers un plan de paiement echelonne",
+    "profane_aliases": [
+      "negocier un plan de paiement",
+      "payer ma dette en mensualites",
+      "proposer un echelonnement",
+      "ecrire a mon creancier pour negocier",
+      "modele lettre arrangement dettes"
+    ],
+    "negative_signals": [
+      "concordat judiciaire",
+      "creancier refuse toute discussion"
+    ],
+    "required_facts": [
+      "nombre de creanciers",
+      "montants dus",
+      "capacite mensuelle de remboursement",
+      "poursuites en cours"
+    ]
   },
   {
     "id": "dettes_mediation_dettes",
     "domaine": "dettes",
     "sousDomaine": "mediation",
-    "tags": ["mediation", "dettes", "tiers", "neutre", "conseil"],
+    "tags": [
+      "mediation",
+      "dettes",
+      "tiers",
+      "neutre",
+      "conseil"
+    ],
     "questions": [
-      { "id": "q1", "text": "Situation actuelle ?", "options": ["poursuites en cours", "avant poursuites", "apres saisie", "actes de defaut de biens"] },
-      { "id": "q2", "text": "Avez-vous deja contacte un service de conseil ?", "options": ["non", "oui, sans resultat", "oui, en cours"] },
-      { "id": "q3", "text": "Revenus stables ?", "options": ["oui", "irreguliers", "au chomage", "a l'aide sociale"] },
-      { "id": "q4", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Situation actuelle ?",
+        "options": [
+          "poursuites en cours",
+          "avant poursuites",
+          "apres saisie",
+          "actes de defaut de biens"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Avez-vous deja contacte un service de conseil ?",
+        "options": [
+          "non",
+          "oui, sans resultat",
+          "oui, en cours"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Revenus stables ?",
+        "options": [
+          "oui",
+          "irreguliers",
+          "au chomage",
+          "a l'aide sociale"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "La mediation en matiere de dettes fait intervenir un tiers neutre (service social, Caritas, CSP) entre le debiteur et ses creanciers pour trouver une solution acceptable. Le mediateur analyse la situation financiere globale, etablit un budget, identifie les priorites (loyer, assurance maladie, impots) et negocie avec les creanciers. Ce service est generalement gratuit ou a faible cout. Avantages : le mediateur est credible aupres des creanciers, connait les droits du debiteur et les limites legales, peut negocier des remises ou des echelonnements. La mediation n'est pas une procedure legale et ne suspend pas les poursuites, mais de nombreux creanciers (notamment les collectivites publiques) cooperent. Certains cantons disposent de services specifiques de desendettement qui peuvent intervenir de maniere plus structuree. La mediation est particulierement utile quand le debiteur a de multiples creanciers.",
       "articles": [
-        { "ref": "CPC 213", "titre": "Mediation — principes", "lien": "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_213" }
+        {
+          "ref": "CPC 213",
+          "titre": "Mediation — principes",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_213"
+        }
       ],
       "jurisprudence": [],
       "modeleLettre": "",
       "services": [
-        { "nom": "Centre social protestant VD (service dettes)", "tel": "021 560 60 60", "url": "https://www.csp.ch", "canton": "VD" },
-        { "nom": "Caritas Geneve (service desendettement)", "tel": "022 708 04 44", "url": "https://www.caritas-geneve.ch", "canton": "GE" },
-        { "nom": "Dettes Conseils Suisse", "url": "https://www.schulden.ch/fr", "canton": "VD" }
+        {
+          "nom": "Centre social protestant VD (service dettes)",
+          "tel": "021 560 60 60",
+          "url": "https://www.csp.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caritas Geneve (service desendettement)",
+          "tel": "022 708 04 44",
+          "url": "https://www.caritas-geneve.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Dettes Conseils Suisse",
+          "url": "https://www.schulden.ch/fr",
+          "canton": "VD"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "CPC etat 2025-01-01"
+    "sourceLoi": "CPC etat 2025-01-01",
+    "match_description": "La personne veut recourir a un mediateur ou service de conseil pour gerer ses dettes",
+    "profane_aliases": [
+      "aide pour mes dettes",
+      "conseil en desendettement",
+      "ou trouver de l'aide pour mes dettes",
+      "service social dettes",
+      "mediateur pour mes dettes"
+    ],
+    "negative_signals": [
+      "mediation familiale",
+      "dettes deja en procedure judiciaire avancee"
+    ],
+    "required_facts": [
+      "nombre de creanciers",
+      "montant total",
+      "revenus et charges",
+      "demarches deja entreprises"
+    ]
   },
   {
     "id": "dettes_budget_conseil",
     "domaine": "dettes",
     "sousDomaine": "prevention",
-    "tags": ["budget", "conseil", "prevention", "gestion", "finances"],
+    "tags": [
+      "budget",
+      "conseil",
+      "prevention",
+      "gestion",
+      "finances"
+    ],
     "questions": [
-      { "id": "q1", "text": "Situation ?", "options": ["je n'arrive pas a boucler mes fins de mois", "j'ai des dettes et veux un plan", "je veux prevenir les problemes", "j'ai besoin d'aide pour mon budget"] },
-      { "id": "q2", "text": "Revenus du menage ?", "options": ["<4000 CHF", "4000-6000 CHF", "6000-8000 CHF", ">8000 CHF"] },
-      { "id": "q3", "text": "Avez-vous des credits en cours ?", "options": ["oui, plusieurs", "oui, un seul", "non"] },
-      { "id": "q4", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Situation ?",
+        "options": [
+          "je n'arrive pas a boucler mes fins de mois",
+          "j'ai des dettes et veux un plan",
+          "je veux prevenir les problemes",
+          "j'ai besoin d'aide pour mon budget"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Revenus du menage ?",
+        "options": [
+          "<4000 CHF",
+          "4000-6000 CHF",
+          "6000-8000 CHF",
+          ">8000 CHF"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous des credits en cours ?",
+        "options": [
+          "oui, plusieurs",
+          "oui, un seul",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "Le conseil en budget est la premiere etape pour reprendre le controle de ses finances. Les services specialises aident gratuitement a : (1) etablir un budget realiste base sur les normes de la CSI (Conference suisse des institutions d'action sociale) ou de Budget-conseil Suisse, (2) identifier les depenses compressibles, (3) prioriser les paiements (loyer, assurance maladie, impots courants = priorites absolues), (4) negocier des echelonnements avec les creanciers, (5) verifier l'eligibilite aux prestations sociales (subsides LAMal, PC, aide sociale). Les normes Budget-conseil Suisse fixent les montants de reference pour les depenses courantes d'un menage (alimentation, vetements, transports, etc.). Un budget sain prevoit : max. 30% du revenu pour le loyer, une epargne de precaution, pas de credit a la consommation pour des depenses courantes. La Loi sur le credit a la consommation (LCC) protege les consommateurs contre le surendettement.",
       "articles": [
-        { "ref": "LCC 28", "titre": "Examen de la capacite de contracter un credit", "lien": "https://www.fedlex.admin.ch/eli/cc/2002/593/fr#art_28" },
-        { "ref": "LCC 3", "titre": "Champ d'application de la LCC", "lien": "https://www.fedlex.admin.ch/eli/cc/2002/593/fr#art_3" }
+        {
+          "ref": "LCC 28",
+          "titre": "Examen de la capacite de contracter un credit",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2002/593/fr#art_28"
+        },
+        {
+          "ref": "LCC 3",
+          "titre": "Champ d'application de la LCC",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2002/593/fr#art_3"
+        }
       ],
       "jurisprudence": [],
       "modeleLettre": "",
       "services": [
-        { "nom": "Budget-conseil Suisse", "url": "https://www.budgetberatung.ch/fr", "canton": "VD" },
-        { "nom": "Centre social protestant VD", "tel": "021 560 60 60", "url": "https://www.csp.ch", "canton": "VD" },
-        { "nom": "Caritas Geneve", "tel": "022 708 04 44", "url": "https://www.caritas-geneve.ch", "canton": "GE" },
-        { "nom": "Dettes Conseils Suisse", "url": "https://www.schulden.ch/fr", "canton": "VD" }
+        {
+          "nom": "Budget-conseil Suisse",
+          "url": "https://www.budgetberatung.ch/fr",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre social protestant VD",
+          "tel": "021 560 60 60",
+          "url": "https://www.csp.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caritas Geneve",
+          "tel": "022 708 04 44",
+          "url": "https://www.caritas-geneve.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Dettes Conseils Suisse",
+          "url": "https://www.schulden.ch/fr",
+          "canton": "VD"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LCC etat 2025-01-01"
+    "sourceLoi": "LCC etat 2025-01-01",
+    "match_description": "La personne a besoin d'aide pour etablir un budget et eviter le surendettement",
+    "profane_aliases": [
+      "aide pour faire un budget",
+      "je n'arrive pas a joindre les deux bouts",
+      "conseil budget",
+      "prevention surendettement",
+      "gerer mon argent"
+    ],
+    "negative_signals": [
+      "deja en poursuite (depasse la prevention)",
+      "question d'investissement ou d'epargne"
+    ],
+    "required_facts": [
+      "revenus mensuels",
+      "charges fixes",
+      "dettes existantes",
+      "composition du menage"
+    ]
   },
   {
     "id": "dettes_assainissement_financier",
     "domaine": "dettes",
     "sousDomaine": "assainissement",
-    "tags": ["assainissement", "financier", "desendettement", "plan", "global"],
+    "tags": [
+      "assainissement",
+      "financier",
+      "desendettement",
+      "plan",
+      "global"
+    ],
     "questions": [
-      { "id": "q1", "text": "Montant total des dettes ?", "options": ["<10'000 CHF", "10'000-50'000 CHF", "50'000-100'000 CHF", ">100'000 CHF"] },
-      { "id": "q2", "text": "Nombre de creanciers ?", "options": ["1-3", "4-10", ">10"] },
-      { "id": "q3", "text": "Avez-vous des actes de defaut de biens ?", "options": ["oui", "non", "je ne sais pas"] },
-      { "id": "q4", "text": "Votre situation est-elle stable (emploi, logement) ?", "options": ["oui", "partiellement", "non"] },
-      { "id": "q5", "text": "Votre canton ?", "type": "canton" }
+      {
+        "id": "q1",
+        "text": "Montant total des dettes ?",
+        "options": [
+          "<10'000 CHF",
+          "10'000-50'000 CHF",
+          "50'000-100'000 CHF",
+          ">100'000 CHF"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Nombre de creanciers ?",
+        "options": [
+          "1-3",
+          "4-10",
+          ">10"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous des actes de defaut de biens ?",
+        "options": [
+          "oui",
+          "non",
+          "je ne sais pas"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre situation est-elle stable (emploi, logement) ?",
+        "options": [
+          "oui",
+          "partiellement",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
     ],
     "reponse": {
       "explication": "L'assainissement financier est un processus global visant a sortir durablement du surendettement. Il combine plusieurs outils : (1) etablissement d'un budget strict, (2) negociation avec chaque creancier (remise partielle, echelonnement), (3) priorisation des dettes (loyer, LAMal, impots courants d'abord), (4) consolidation eventuelle des dettes (un seul paiement mensuel), (5) suivi sur 2-5 ans. En Suisse, il n'existe pas de procedure de surendettement des particuliers comme en France (loi Borloo). Le debiteur doit negocier individuellement avec chaque creancier. Les services de conseil en dettes jouent un role crucial d'intermediaire. Certains cantons (GE, VD) financent des programmes specifiques de desendettement pour les beneficiaires de l'aide sociale. Les conditions de succes : revenus suffisants pour couvrir le minimum vital + un montant pour les remboursements, stabilite de la situation, motivation du debiteur. Le processus prend generalement 3 a 7 ans.",
       "articles": [
-        { "ref": "LP 93", "titre": "Minimum vital LP", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_93" },
-        { "ref": "LP 149a", "titre": "Prescription des ADB — 20 ans", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_149_a" }
+        {
+          "ref": "LP 93",
+          "titre": "Minimum vital LP",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_93"
+        },
+        {
+          "ref": "LP 149a",
+          "titre": "Prescription des ADB — 20 ans",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_149_a"
+        }
       ],
       "jurisprudence": [],
       "modeleLettre": "",
       "services": [
-        { "nom": "Centre social protestant VD (programme desendettement)", "tel": "021 560 60 60", "url": "https://www.csp.ch", "canton": "VD" },
-        { "nom": "Caritas Geneve (service desendettement)", "tel": "022 708 04 44", "url": "https://www.caritas-geneve.ch", "canton": "GE" },
-        { "nom": "Dettes Conseils Suisse", "url": "https://www.schulden.ch/fr", "canton": "VD" },
-        { "nom": "Hospice general GE", "url": "https://www.hospicegeneral.ch", "canton": "GE" }
+        {
+          "nom": "Centre social protestant VD (programme desendettement)",
+          "tel": "021 560 60 60",
+          "url": "https://www.csp.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caritas Geneve (service desendettement)",
+          "tel": "022 708 04 44",
+          "url": "https://www.caritas-geneve.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Dettes Conseils Suisse",
+          "url": "https://www.schulden.ch/fr",
+          "canton": "VD"
+        },
+        {
+          "nom": "Hospice general GE",
+          "url": "https://www.hospicegeneral.ch",
+          "canton": "GE"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "La personne est surendettee et cherche un plan global pour se desendetter",
+    "profane_aliases": [
+      "plan de desendettement",
+      "assainissement financier",
+      "sortir du surendettement",
+      "je croule sous les dettes",
+      "repartir a zero financierement"
+    ],
+    "negative_signals": [
+      "simple retard de paiement ponctuel",
+      "question sur un seul creancier"
+    ],
+    "required_facts": [
+      "liste complete des dettes",
+      "revenus et charges",
+      "biens possedes",
+      "accompagnement professionnel en cours"
+    ]
   },
   {
     "id": "dettes_faillite",
     "domaine": "dettes",
     "sousDomaine": "faillite",
-    "tags": ["faillite", "personnelle", "insolvabilite", "rehabilitation", "LP", "concordat", "acte defaut biens"],
+    "tags": [
+      "faillite",
+      "personnelle",
+      "insolvabilite",
+      "rehabilitation",
+      "LP",
+      "concordat",
+      "acte defaut biens"
+    ],
     "questions": [
       {
         "id": "q1",
         "text": "Quelle est votre situation ?",
-        "options": ["je ne peux plus payer mes dettes", "une faillite a ete prononcee", "je veux me rehabiliter apres faillite"]
+        "options": [
+          "je ne peux plus payer mes dettes",
+          "une faillite a ete prononcee",
+          "je veux me rehabiliter apres faillite"
+        ]
       },
       {
         "id": "q2",
         "text": "Etes-vous inscrit au registre du commerce ?",
-        "options": ["oui", "non"]
+        "options": [
+          "oui",
+          "non"
+        ]
       },
       {
         "id": "q3",
         "text": "Quel est le montant total de vos dettes ?",
-        "options": ["<20'000 CHF", "20'000-100'000 CHF", ">100'000 CHF"]
+        "options": [
+          "<20'000 CHF",
+          "20'000-100'000 CHF",
+          ">100'000 CHF"
+        ]
       },
       {
         "id": "q4",
         "text": "Avez-vous des actes de defaut de biens ?",
-        "options": ["oui", "non", "je ne sais pas"]
+        "options": [
+          "oui",
+          "non",
+          "je ne sais pas"
+        ]
       },
       {
         "id": "q5",
@@ -1022,26 +3532,84 @@
     "reponse": {
       "explication": "La faillite personnelle en Suisse est possible uniquement pour les personnes inscrites au registre du commerce (art. 39 LP) ou par declaration d'insolvabilite (art. 191 LP) pour les non-inscrits. La declaration d'insolvabilite permet au debiteur de demander au juge l'ouverture de la faillite lorsqu'il n'a manifestement pas les moyens de payer ses dettes. Les effets : tous les biens saisissables sont liquides, les creanciers non satisfaits recoivent un acte de defaut de biens (art. 265 LP) qui reste valable 20 ans (art. 149a LP). Le debiteur peut demander un concordat (sursis concordataire, art. 293 ss LP) pour eviter la faillite. Apres faillite, les dettes ne sont pas effacees mais les creanciers ne peuvent plus poursuivre pendant la faillite. La rehabilitation consiste a payer les dettes attestees par les actes de defaut de biens. Il est recommande de consulter un service de desendettement avant de demander la faillite.",
       "articles": [
-        { "ref": "LP 191", "titre": "Declaration d'insolvabilite du debiteur", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_191" },
-        { "ref": "LP 265", "titre": "Acte de defaut de biens — faillite", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_265" },
-        { "ref": "LP 149a", "titre": "Acte de defaut de biens — prescription", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_149_a" },
-        { "ref": "LP 293", "titre": "Sursis concordataire", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_293" }
+        {
+          "ref": "LP 191",
+          "titre": "Declaration d'insolvabilite du debiteur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_191"
+        },
+        {
+          "ref": "LP 265",
+          "titre": "Acte de defaut de biens — faillite",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_265"
+        },
+        {
+          "ref": "LP 149a",
+          "titre": "Acte de defaut de biens — prescription",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_149_a"
+        },
+        {
+          "ref": "LP 293",
+          "titre": "Sursis concordataire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_293"
+        }
       ],
       "jurisprudence": [
-        { "ref": "ATF 133 III 562", "resume": "La declaration d'insolvabilite de l'art. 191 LP suppose que le debiteur soit reellement insolvable et non qu'il refuse simplement de payer." },
-        { "ref": "TF 5A_465/2019", "resume": "Le juge peut refuser l'ouverture de la faillite s'il apparait que la procedure n'apportera rien aux creanciers (faillite sans actif)." }
+        {
+          "ref": "ATF 133 III 562",
+          "resume": "La declaration d'insolvabilite de l'art. 191 LP suppose que le debiteur soit reellement insolvable et non qu'il refuse simplement de payer."
+        },
+        {
+          "ref": "TF 5A_465/2019",
+          "resume": "Le juge peut refuser l'ouverture de la faillite s'il apparait que la procedure n'apportera rien aux creanciers (faillite sans actif)."
+        }
       ],
       "modeleLettre": "Objet : Declaration d'insolvabilite (art. 191 LP)\n\nAu Tribunal de [lieu],\n\nJe soussigne(e) [nom, prenom], ne(e) le [date], domicilie(e) a [adresse],\n\nDECLARE etre dans l'impossibilite manifeste de payer mes dettes et requiers l'ouverture de la faillite au sens de l'art. 191 LP.\n\nSituation financiere :\n- Revenus mensuels : CHF [montant]\n- Charges mensuelles : CHF [montant]\n- Dettes totales : CHF [montant]\n- Poursuites en cours : [nombre et montants]\n\nPieces jointes : liste des creanciers, extraits de poursuites, fiches de salaire, declaration fiscale.\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
       "services": [
-        { "nom": "Dettes Conseils Suisse", "url": "https://www.dettes.ch", "canton": "VD" },
-        { "nom": "Centre social protestant (CSP) VD", "tel": "021 560 60 60", "url": "https://www.csp-vd.ch", "canton": "VD" },
-        { "nom": "Centre social protestant (CSP) GE", "tel": "022 807 07 00", "url": "https://www.csp-ge.ch", "canton": "GE" },
-        { "nom": "Caritas desendettement GE", "url": "https://www.caritas-geneve.ch", "canton": "GE" }
+        {
+          "nom": "Dettes Conseils Suisse",
+          "url": "https://www.dettes.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre social protestant (CSP) VD",
+          "tel": "021 560 60 60",
+          "url": "https://www.csp-vd.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre social protestant (CSP) GE",
+          "tel": "022 807 07 00",
+          "url": "https://www.csp-ge.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Caritas desendettement GE",
+          "url": "https://www.caritas-geneve.ch",
+          "canton": "GE"
+        }
       ],
       "routageEcosysteme": {},
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP etat 2025-01-01"
+    "sourceLoi": "LP etat 2025-01-01",
+    "match_description": "La personne veut comprendre la faillite personnelle et ses consequences globales",
+    "profane_aliases": [
+      "faillite personnelle en Suisse",
+      "consequences d'une faillite",
+      "apres la faillite que se passe-t-il",
+      "rehabilitation apres faillite",
+      "faillite et acte de defaut de biens"
+    ],
+    "negative_signals": [
+      "faillite d'entreprise",
+      "simple poursuite sans insolvabilite"
+    ],
+    "required_facts": [
+      "montant total des dettes",
+      "biens a realiser",
+      "statut professionnel",
+      "famille a charge"
+    ]
   }
 ]

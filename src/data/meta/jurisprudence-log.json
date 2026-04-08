@@ -1,0 +1,50 @@
+{
+  "runs": [
+    {
+      "date": "2026-04-08T03:29:26.138Z",
+      "domaines": {
+        "bail": {
+          "existing": 117,
+          "new": 0,
+          "total": 117,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\jurisprudence\\index-bail.json"
+        }
+      },
+      "errors": [
+        {
+          "keyword": "bail",
+          "error": "API error 404: <!DOCTYPE html>\n<html style=\"height:100%\">\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\n<title> 404 Not Found\r\n</title><style>@media (prefers-color-s"
+        },
+        {
+          "keyword": "loyer",
+          "error": "API error 404: <!DOCTYPE html>\n<html style=\"height:100%\">\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\n<title> 404 Not Found\r\n</title><style>@media (prefers-color-s"
+        },
+        {
+          "keyword": "locataire",
+          "error": "API error 404: <!DOCTYPE html>\n<html style=\"height:100%\">\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\n<title> 404 Not Found\r\n</title><style>@media (prefers-color-s"
+        },
+        {
+          "keyword": "bailleur",
+          "error": "API error 404: <!DOCTYPE html>\n<html style=\"height:100%\">\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\n<title> 404 Not Found\r\n</title><style>@media (prefers-color-s"
+        },
+        {
+          "keyword": "résiliation bail",
+          "error": "API error 404: <!DOCTYPE html>\n<html style=\"height:100%\">\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\n<title> 404 Not Found\r\n</title><style>@media (prefers-color-s"
+        },
+        {
+          "keyword": "CO 253",
+          "error": "API error 404: <!DOCTYPE html>\n<html style=\"height:100%\">\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\n<title> 404 Not Found\r\n</title><style>@media (prefers-color-s"
+        },
+        {
+          "keyword": "CO 259",
+          "error": "API error 404: <!DOCTYPE html>\n<html style=\"height:100%\">\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\n<title> 404 Not Found\r\n</title><style>@media (prefers-color-s"
+        },
+        {
+          "keyword": "CO 271",
+          "error": "API error 404: <!DOCTYPE html>\n<html style=\"height:100%\">\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\n<title> 404 Not Found\r\n</title><style>@media (prefers-color-s"
+        }
+      ]
+    }
+  ],
+  "lastRun": "2026-04-08T03:29:26.138Z"
+}

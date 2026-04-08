@@ -54,7 +54,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LCA/LAMal etat 2025-01-01"
+    "sourceLoi": "LCA/LAMal etat 2025-01-01",
+    "match_description": "L'assure en arret maladie ne recoit plus ses indemnites journalieres ou l'assurance refuse de payer",
+    "profane_aliases": [
+      "mon assurance ne me paie plus pendant mon arret",
+      "IJM coupees sans raison",
+      "en arret maladie et plus de salaire",
+      "l'assurance dit que je peux travailler",
+      "medecin-conseil m'a declare apte mais je suis malade"
+    ],
+    "negative_signals": [
+      "probleme de salaire avec l'employeur sans lien avec l'assurance",
+      "accident de travail (releve de la LAA, pas IJM)",
+      "chomage sans arret maladie"
+    ],
+    "required_facts": [
+      "type d'assurance IJM (LCA ou LAMal)",
+      "duree de l'arret de travail",
+      "motif du refus ou de l'arret des prestations",
+      "canton"
+    ]
   },
   {
     "id": "assurance_ai_rente",
@@ -111,7 +130,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LAI/LPGA etat 2025-01-01"
+    "sourceLoi": "LAI/LPGA etat 2025-01-01",
+    "match_description": "La personne en incapacite de travail durable souhaite deposer une demande AI ou contester un refus de rente",
+    "profane_aliases": [
+      "comment demander l'AI",
+      "on m'a refuse la rente AI",
+      "je ne peux plus travailler depuis longtemps",
+      "quel taux d'invalidite pour toucher une rente",
+      "mon dossier AI traine depuis des mois"
+    ],
+    "negative_signals": [
+      "arret maladie temporaire de quelques semaines",
+      "probleme de chomage sans atteinte a la sante",
+      "demande de prestations complementaires uniquement"
+    ],
+    "required_facts": [
+      "duree de l'incapacite de travail",
+      "etat de la demande AI (deposee ou non)",
+      "pathologie ou atteinte a la sante",
+      "canton"
+    ]
   },
   {
     "id": "assurance_prestations_complementaires",
@@ -168,7 +206,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LPC etat 2025-01-01"
+    "sourceLoi": "LPC etat 2025-01-01",
+    "match_description": "La personne touchant une rente AVS ou AI n'arrive pas a boucler ses fins de mois et veut savoir si elle a droit aux prestations complementaires",
+    "profane_aliases": [
+      "ma rente AVS ne suffit pas pour vivre",
+      "comment toucher les PC",
+      "je n'arrive plus a payer mon loyer avec ma rente",
+      "aide financiere pour retraites pauvres",
+      "complement a la rente AI"
+    ],
+    "negative_signals": [
+      "pas de rente AVS ou AI en cours",
+      "fortune superieure a 100'000 CHF sans rente",
+      "demande d'aide sociale sans rente AVS/AI"
+    ],
+    "required_facts": [
+      "type de rente percue (AVS, AI ou les deux)",
+      "situation de fortune",
+      "composition du menage",
+      "canton"
+    ]
   },
   {
     "id": "assurance_laa",
@@ -225,7 +282,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LAA etat 2025-01-01"
+    "sourceLoi": "LAA etat 2025-01-01",
+    "match_description": "Le travailleur a eu un accident professionnel ou non professionnel et veut connaitre ses droits LAA ou faire une declaration",
+    "profane_aliases": [
+      "accident au travail que faire",
+      "je me suis blesse au boulot",
+      "la SUVA doit payer quoi",
+      "accident sur le trajet du travail",
+      "mon patron n'a pas declare mon accident"
+    ],
+    "negative_signals": [
+      "maladie sans evenement accidentel",
+      "accident d'un independant sans couverture LAA",
+      "contestation d'une decision LAA deja rendue"
+    ],
+    "required_facts": [
+      "type d'accident (professionnel ou non professionnel)",
+      "nombre d'heures travaillees par semaine",
+      "declaration faite ou non",
+      "canton"
+    ]
   },
   {
     "id": "assurance_laa_contestation",
@@ -277,6 +353,25 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LAA/LPGA etat 2025-01-01"
+    "sourceLoi": "LAA/LPGA etat 2025-01-01",
+    "match_description": "L'assure conteste une decision de l'assurance-accidents (refus, arret des prestations ou taux d'invalidite trop bas)",
+    "profane_aliases": [
+      "la SUVA refuse de me payer",
+      "on m'a coupe mes indemnites accident",
+      "je ne suis pas d'accord avec le taux d'invalidite",
+      "comment faire opposition contre la SUVA",
+      "l'assurance accident dit que c'est fini mais j'ai encore mal"
+    ],
+    "negative_signals": [
+      "accident pas encore declare (fiche declaration)",
+      "litige avec l'employeur sans decision de l'assureur",
+      "contestation d'une decision AI (pas LAA)"
+    ],
+    "required_facts": [
+      "nature de la decision contestee",
+      "date de reception de la decision",
+      "opposition deja faite ou non",
+      "canton"
+    ]
   }
 ]

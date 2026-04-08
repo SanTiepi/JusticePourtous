@@ -55,7 +55,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "CC/LAVI/CP etat 2025-01-01"
+    "sourceLoi": "CC/LAVI/CP etat 2025-01-01",
+    "match_description": "La personne subit des violences de la part de son conjoint ou partenaire et cherche protection ou aide",
+    "profane_aliases": [
+      "mon mari me frappe",
+      "violence a la maison que faire",
+      "je suis battue par mon compagnon",
+      "il me menace et j'ai peur",
+      "comment faire eloigner mon conjoint violent"
+    ],
+    "negative_signals": [
+      "conflit de couple verbal ponctuel sans violence",
+      "violence au travail par un collegue (harcelement professionnel)",
+      "violence entre voisins sans lien conjugal"
+    ],
+    "required_facts": [
+      "type de violence (physique, psychologique, sexuelle, economique)",
+      "danger immediat ou non",
+      "cohabitation actuelle avec l'auteur",
+      "canton"
+    ]
   },
   {
     "id": "violence_foyer_accueil",
@@ -106,7 +125,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LAVI/CC etat 2025-01-01"
+    "sourceLoi": "LAVI/CC etat 2025-01-01",
+    "match_description": "La victime de violence domestique cherche un foyer d'accueil securise pour se mettre en securite avec ou sans enfants",
+    "profane_aliases": [
+      "ou aller quand on fuit son conjoint",
+      "foyer pour femmes battues",
+      "refuge d'urgence violence conjugale",
+      "je veux partir avec mes enfants mais ou aller",
+      "hebergement securise pour fuir la violence"
+    ],
+    "negative_signals": [
+      "recherche de logement social classique sans violence",
+      "hebergement d'urgence SDF sans contexte de violence",
+      "besoin juridique sans besoin d'hebergement"
+    ],
+    "required_facts": [
+      "seul ou avec enfants",
+      "danger immediat ou depart planifie",
+      "contact prealable avec un centre LAVI",
+      "canton"
+    ]
   },
   {
     "id": "violence_plainte",
@@ -164,6 +202,25 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "CP/CPP/LAVI etat 2025-01-01"
+    "sourceLoi": "CP/CPP/LAVI etat 2025-01-01",
+    "match_description": "La victime de violence veut deposer une plainte penale et connaitre la procedure, les delais et ses droits",
+    "profane_aliases": [
+      "comment porter plainte pour violence",
+      "je veux denoncer mon agresseur",
+      "delai pour deposer plainte apres des coups",
+      "plainte penale pour menaces",
+      "est-ce que je peux porter plainte sans preuves"
+    ],
+    "negative_signals": [
+      "litige civil sans violence (voisinage, contrat)",
+      "plainte pour vol ou escroquerie sans violence physique",
+      "contestation d'une decision administrative"
+    ],
+    "required_facts": [
+      "type de violence subie",
+      "date des faits",
+      "preuves disponibles (constat medical, temoins, messages)",
+      "lien avec l'auteur (conjoint, ex, inconnu)"
+    ]
   }
 ]

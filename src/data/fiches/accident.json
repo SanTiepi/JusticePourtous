@@ -54,7 +54,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LAA/LPGA etat 2025-01-01"
+    "sourceLoi": "LAA/LPGA etat 2025-01-01",
+    "match_description": "Le travailleur s'est blesse au travail et doit declarer l'accident ou obtenir ses prestations LAA",
+    "profane_aliases": [
+      "je me suis fait mal au travail",
+      "accident sur le chantier que faire",
+      "mon employeur refuse de declarer mon accident",
+      "indemnites apres un accident professionnel",
+      "blesse au boulot qui paie"
+    ],
+    "negative_signals": [
+      "maladie progressive sans evenement soudain",
+      "accident de voiture hors travail (accident circulation)",
+      "independant sans assurance LAA"
+    ],
+    "required_facts": [
+      "date et circonstances de l'accident",
+      "declaration faite a l'employeur ou non",
+      "nature des blessures",
+      "canton"
+    ]
   },
   {
     "id": "accident_circulation",
@@ -111,7 +130,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LCR/CO etat 2025-01-01"
+    "sourceLoi": "LCR/CO etat 2025-01-01",
+    "match_description": "La personne a ete impliquee dans un accident de la route et veut connaitre ses droits ou faire valoir ses dommages",
+    "profane_aliases": [
+      "accident de voiture que faire",
+      "on m'a rentre dedans avec la voiture",
+      "pieton renverse par une voiture",
+      "comment remplir le constat amiable",
+      "l'autre conducteur a fui apres l'accident"
+    ],
+    "negative_signals": [
+      "accident de travail sur un chantier (LAA)",
+      "panne de voiture sans collision",
+      "amende de circulation sans accident"
+    ],
+    "required_facts": [
+      "role dans l'accident (conducteur, passager, pieton, cycliste)",
+      "presence de blesses",
+      "intervention de la police",
+      "canton"
+    ]
   },
   {
     "id": "accident_responsabilite_civile",
@@ -168,6 +206,25 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "CO etat 2025-01-01"
+    "sourceLoi": "CO etat 2025-01-01",
+    "match_description": "La personne a subi un dommage cause par un tiers et veut obtenir reparation (dommages-interets, tort moral)",
+    "profane_aliases": [
+      "quelqu'un m'a cause un dommage qui paie",
+      "je veux des dommages et interets",
+      "mon voisin a casse ma cloture",
+      "comment demander reparation apres une blessure",
+      "responsabilite civile de quelqu'un qui m'a blesse"
+    ],
+    "negative_signals": [
+      "accident de voiture (fiche circulation specifique)",
+      "defaut d'un produit achete (droit de la consommation)",
+      "litige contractuel sans dommage physique ou materiel"
+    ],
+    "required_facts": [
+      "type de dommage (corporel, materiel ou les deux)",
+      "identite du responsable",
+      "date du dommage",
+      "canton"
+    ]
   }
 ]

@@ -121,7 +121,54 @@
         }
       },
       "errors": []
+    },
+    {
+      "date": "2026-04-08T03:52:20.465Z",
+      "domaines": {
+        "bail": {
+          "existing": 21,
+          "harvested": 54,
+          "total": 54,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\loi\\bail-fedlex.json"
+        },
+        "travail": {
+          "existing": 156,
+          "harvested": 243,
+          "total": 243,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\loi\\travail-fedlex.json"
+        },
+        "famille": {
+          "existing": 328,
+          "harvested": 360,
+          "total": 360,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\loi\\famille-fedlex.json"
+        },
+        "dettes": {
+          "existing": 394,
+          "harvested": 394,
+          "total": 394,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\loi\\dettes-fedlex.json"
+        },
+        "etrangers": {
+          "existing": 0,
+          "harvested": 294,
+          "total": 294,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\loi\\etrangers-fedlex.json"
+        },
+        "general": {
+          "existing": 2073,
+          "harvested": 2481,
+          "total": 2481,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\loi\\general-fedlex.json"
+        }
+      },
+      "errors": [
+        {
+          "rs": "142.31",
+          "error": "No HTML found for any consolidation date"
+        }
+      ]
     }
   ],
-  "lastRun": "2026-04-08T03:47:54.401Z"
+  "lastRun": "2026-04-08T03:52:20.465Z"
 }

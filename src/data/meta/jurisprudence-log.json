@@ -56,7 +56,87 @@
         }
       },
       "errors": []
+    },
+    {
+      "date": "2026-04-08T03:52:58.411Z",
+      "domaines": {
+        "bail": {
+          "existing": 117,
+          "new": 0,
+          "total": 117,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\jurisprudence\\index-bail.json"
+        }
+      },
+      "errors": []
+    },
+    {
+      "date": "2026-04-08T03:59:10.540Z",
+      "type": "batch-import",
+      "downloaded": 2400,
+      "classified": 444,
+      "errors": 0,
+      "domaines": {
+        "bail": {
+          "existing": 117,
+          "new": 51,
+          "total": 168
+        },
+        "travail": {
+          "existing": 25,
+          "new": 104,
+          "total": 129
+        },
+        "famille": {
+          "existing": 25,
+          "new": 57,
+          "total": 82
+        },
+        "dettes": {
+          "existing": 25,
+          "new": 100,
+          "total": 125
+        },
+        "etrangers": {
+          "existing": 25,
+          "new": 132,
+          "total": 157
+        }
+      }
+    },
+    {
+      "date": "2026-04-08T03:59:34.136Z",
+      "type": "batch-import",
+      "downloaded": 9000,
+      "classified": 1278,
+      "errors": 0,
+      "domaines": {
+        "bail": {
+          "existing": 168,
+          "new": 178,
+          "total": 346
+        },
+        "travail": {
+          "existing": 129,
+          "new": 324,
+          "total": 453
+        },
+        "famille": {
+          "existing": 82,
+          "new": 130,
+          "total": 212
+        },
+        "dettes": {
+          "existing": 125,
+          "new": 301,
+          "total": 426
+        },
+        "etrangers": {
+          "existing": 157,
+          "new": 354,
+          "total": 511
+        }
+      }
     }
   ],
-  "lastRun": "2026-04-08T03:47:26.375Z"
+  "lastRun": "2026-04-08T03:59:34.136Z"
 }

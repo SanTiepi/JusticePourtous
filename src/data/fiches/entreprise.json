@@ -54,7 +54,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LP/CO etat 2025-01-01"
+    "sourceLoi": "LP/CO etat 2025-01-01",
+    "match_description": "Le dirigeant d'une PME en difficultes financieres cherche des solutions pour eviter la faillite ou proteger les salaires",
+    "profane_aliases": [
+      "mon entreprise ne peut plus payer ses factures",
+      "PME en difficulte que faire",
+      "je n'arrive plus a payer les salaires",
+      "comment eviter la faillite de ma boite",
+      "sursis concordataire comment ca marche"
+    ],
+    "negative_signals": [
+      "difficultes financieres personnelles sans entreprise",
+      "surendettement avere avec bilan negatif (fiche surendettement)",
+      "creation d'entreprise sans difficultes"
+    ],
+    "required_facts": [
+      "forme juridique de l'entreprise",
+      "duree des difficultes",
+      "poursuites en cours ou non",
+      "salaires payes ou en retard"
+    ]
   },
   {
     "id": "entreprise_surendettement",
@@ -106,6 +125,25 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "CO/LP etat 2025-01-01"
+    "sourceLoi": "CO/LP etat 2025-01-01",
+    "match_description": "La SA ou Sarl est surendettee et les administrateurs doivent agir pour eviter leur responsabilite personnelle",
+    "profane_aliases": [
+      "ma societe a plus de dettes que d'actifs",
+      "obligation d'aviser le juge faillite",
+      "responsabilite personnelle de l'administrateur",
+      "article 725 CO que faire",
+      "ma Sarl est en faillite technique"
+    ],
+    "negative_signals": [
+      "difficultes passageres de tresorerie sans surendettement",
+      "dettes personnelles du dirigeant (pas de la societe)",
+      "creation d'entreprise ou question de gouvernance sans crise"
+    ],
+    "required_facts": [
+      "etat financier (perte de capital ou surendettement)",
+      "bilan intermediaire etabli ou non",
+      "organe de revision informe ou non",
+      "canton"
+    ]
   }
 ]

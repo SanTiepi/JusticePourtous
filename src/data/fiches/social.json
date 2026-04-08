@@ -48,7 +48,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "Cst etat 2025-01-01"
+    "sourceLoi": "Cst etat 2025-01-01",
+    "match_description": "La personne est a la rue ou sur le point de perdre son logement et cherche un hebergement d'urgence pour la nuit",
+    "profane_aliases": [
+      "je suis SDF ou trouver dormir",
+      "je n'ai nulle part ou aller ce soir",
+      "foyer d'urgence pour sans-abri",
+      "on m'a mis a la porte je dors dehors",
+      "hebergement gratuit pour la nuit"
+    ],
+    "negative_signals": [
+      "recherche d'un appartement a louer (pas d'urgence)",
+      "probleme de bail avec un logement existant",
+      "demande d'aide sociale financiere sans urgence de logement"
+    ],
+    "required_facts": [
+      "situation actuelle (a la rue ou menace)",
+      "seul ou en famille",
+      "statut de sejour",
+      "canton"
+    ]
   },
   {
     "id": "social_aide_sociale",
@@ -104,7 +123,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "Cst/LASoc etat 2025-01-01"
+    "sourceLoi": "Cst/LASoc etat 2025-01-01",
+    "match_description": "La personne sans ressources suffisantes veut demander l'aide sociale ou conteste une decision de l'aide sociale",
+    "profane_aliases": [
+      "je n'ai plus d'argent pour vivre",
+      "comment demander le RI",
+      "aide sociale Vaud ou Geneve",
+      "je n'ai plus droit au chomage et pas de travail",
+      "l'Hospice general me coupe mes prestations"
+    ],
+    "negative_signals": [
+      "personne avec un emploi stable et un salaire suffisant",
+      "demande de prestations complementaires AVS/AI",
+      "personne sans papiers (releve de l'aide d'urgence)"
+    ],
+    "required_facts": [
+      "situation professionnelle actuelle",
+      "autres prestations percues (chomage, AI, etc.)",
+      "composition du menage",
+      "canton"
+    ]
   },
   {
     "id": "social_aide_urgence",
@@ -155,6 +193,25 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "Cst/LAsi etat 2025-01-01"
+    "sourceLoi": "Cst/LAsi etat 2025-01-01",
+    "match_description": "La personne sans statut legal en Suisse (deboute de l'asile, sans papiers) a besoin d'une aide minimale pour survivre",
+    "profane_aliases": [
+      "sans papiers et sans rien",
+      "aide d'urgence pour deboute asile",
+      "NEM comment manger et dormir",
+      "je n'ai aucun droit mais je suis en Suisse",
+      "aide minimale sans permis de sejour"
+    ],
+    "negative_signals": [
+      "personne avec un permis de sejour valable (aide sociale ordinaire)",
+      "demandeur d'asile en procedure (releve de l'aide sociale pour requerants)",
+      "citoyen suisse en difficulte (aide sociale ordinaire)"
+    ],
+    "required_facts": [
+      "situation administrative (NEM, permis expire, sans statut)",
+      "aide actuellement percue ou non",
+      "besoins medicaux urgents",
+      "canton"
+    ]
   }
 ]

@@ -41,18 +41,19 @@ const LAW_SOURCES = {
   etrangers: [
     { rs: '142.20', titre: 'Loi sur les étrangers et l\'intégration (LEI)', eliPath: 'eli/cc/2007/758', articleRange: null, prefix: 'LEI' },
     { rs: '142.31', titre: 'Loi sur l\'asile (LAsi)', eliPath: 'eli/cc/1999/358', articleRange: null, prefix: 'LAsi' },
+    { rs: '142.31', titre: 'Loi sur l\'asile (LAsi, ancienne)', eliPath: 'eli/cc/1980/1718_1718_1718', articleRange: null, prefix: 'LAsi' },
     { rs: '141.0', titre: 'Loi sur la nationalité suisse (LN)', eliPath: 'eli/cc/2016/404', articleRange: null, prefix: 'LN' },
   ],
   // Extra: full CO and CC for general coverage
   general: [
     { rs: '220', titre: 'Code des obligations (CO)', eliPath: 'eli/cc/27/317_321_377', articleRange: null, prefix: 'CO' },
     { rs: '210', titre: 'Code civil suisse (CC)', eliPath: 'eli/cc/24/233_245_233', articleRange: null, prefix: 'CC' },
-    { rs: '272', titre: 'Code de procédure civile (CPC)', eliPath: 'eli/cc/2000/374', articleRange: null, prefix: 'CPC' },
+    { rs: '272', titre: 'Code de procédure civile (CPC)', eliPath: 'eli/cc/2010/262', articleRange: null, prefix: 'CPC' },
   ]
 };
 
-// Consolidation dates to try (most recent first)
-const CONSOLIDATION_DATES = ['20260101', '20250101', '20240101', '20230101'];
+// Fallback consolidation dates to try if SPARQL fails
+const FALLBACK_DATES = ['20250101', '20260101', '20240101', '20230101', '20220101', '20210101', '20200101'];
 
 // HTTP GET helper
 function httpGet(url) {
@@ -84,15 +85,71 @@ function httpGet(url) {
   });
 }
 
+// SPARQL query to discover HTML manifestation dates for a law
+async function discoverHtmlDates(eliPath) {
+  const uri = `https://fedlex.data.admin.ch/${eliPath}`;
+  const query = `PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>
+SELECT DISTINCT ?manif WHERE {
+  ?consol jolux:isMemberOf <${uri}> .
+  ?consol jolux:isRealizedBy ?expr .
+  ?expr jolux:language <http://publications.europa.eu/resource/authority/language/FRA> .
+  ?expr jolux:isEmbodiedBy ?manif .
+  FILTER(CONTAINS(STR(?manif), 'html'))
+} ORDER BY DESC(?manif) LIMIT 5`;
+
+  try {
+    const postData = `query=${encodeURIComponent(query)}`;
+    const res = await new Promise((resolve, reject) => {
+      const req = https.request({
+        hostname: 'fedlex.data.admin.ch',
+        path: '/sparqlendpoint',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Accept': 'application/sparql-results+json',
+          'Content-Length': Buffer.byteLength(postData)
+        },
+        timeout: 15000
+      }, (res) => {
+        let body = '';
+        res.on('data', chunk => body += chunk);
+        res.on('end', () => resolve({ status: res.statusCode, body }));
+      });
+      req.on('error', reject);
+      req.on('timeout', () => { req.destroy(); reject(new Error('SPARQL timeout')); });
+      req.write(postData);
+      req.end();
+    });
+
+    if (res.status === 200) {
+      const data = JSON.parse(res.body);
+      // Extract dates from manifestation URIs like .../20250101/fr/html
+      return data.results.bindings
+        .map(b => {
+          const match = b.manif.value.match(/\/(\d{8})\/fr\/html/);
+          return match ? match[1] : null;
+        })
+        .filter(Boolean);
+    }
+  } catch (e) {
+    console.log(`    SPARQL date discovery failed: ${e.message}`);
+  }
+  return [];
+}
+
 // Build the filestore URL for a given law
 function buildFilestoreUrl(eliPath, date) {
   const slug = `fedlex-data-admin-ch-${eliPath.replace(/\//g, '-')}-${date}-fr-html`;
   return `https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/${eliPath}/${date}/fr/html/${slug}.html`;
 }
 
-// Fetch HTML for a law, trying multiple consolidation dates
+// Fetch HTML for a law, trying SPARQL-discovered dates first, then fallbacks
 async function fetchLawHtml(eliPath) {
-  for (const date of CONSOLIDATION_DATES) {
+  // First: discover actual dates from SPARQL
+  const sparqlDates = await discoverHtmlDates(eliPath);
+  const datesToTry = [...new Set([...sparqlDates, ...FALLBACK_DATES])];
+
+  for (const date of datesToTry) {
     const url = buildFilestoreUrl(eliPath, date);
     try {
       const res = await httpGet(url);

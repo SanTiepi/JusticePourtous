@@ -4,27 +4,61 @@
     "tribunal": "TF",
     "date": "2018-03-20",
     "theme": "Divorce — contribution d'entretien du conjoint",
-    "tags": ["divorce", "entretien", "conjoint", "pension alimentaire", "clean break"],
+    "tags": [
+      "divorce",
+      "entretien",
+      "conjoint",
+      "pension alimentaire",
+      "clean break"
+    ],
     "resume": "Divorce après 18 ans de mariage. Le TF fixe la contribution d'entretien de l'épouse à CHF 3'500/mois jusqu'à l'âge de la retraite AVS, rejetant le clean break demandé par le mari.",
     "montant": "CHF 3'500/mois",
     "resultat": "favorable_epouse",
-    "articlesAppliques": ["CC 125", "CC 125 al. 2"],
+    "articlesAppliques": [
+      "CC 125",
+      "CC 125 al. 2"
+    ],
     "principeCle": "Le conjoint qui a renoncé à sa carrière pour le ménage a droit à un entretien lui permettant de maintenir un niveau de vie convenable.",
-    "facteursCles": ["durée du mariage", "répartition des tâches", "capacité de gain", "âge", "formation"],
-    "fourchetteMontant": { "min": "CHF 1'500/mois", "max": "CHF 6'000/mois", "median": "CHF 3'000/mois" }
+    "facteursCles": [
+      "durée du mariage",
+      "répartition des tâches",
+      "capacité de gain",
+      "âge",
+      "formation"
+    ],
+    "fourchetteMontant": {
+      "min": "CHF 1'500/mois",
+      "max": "CHF 6'000/mois",
+      "median": "CHF 3'000/mois"
+    }
   },
   {
     "signature": "5A_621/2019",
     "tribunal": "TF",
     "date": "2019-10-08",
     "theme": "Garde alternée — intérêt de l'enfant",
-    "tags": ["garde alternée", "intérêt de l'enfant", "autorité parentale", "domicile"],
+    "tags": [
+      "garde alternée",
+      "intérêt de l'enfant",
+      "autorité parentale",
+      "domicile"
+    ],
     "resume": "Père demande la garde alternée. Le TF l'accorde malgré le conflit parental, estimant que la capacité éducative des deux parents et la proximité géographique le justifient.",
     "montant": null,
     "resultat": "garde_alternee_accordee",
-    "articlesAppliques": ["CC 298", "CC 298a", "CC 301a"],
+    "articlesAppliques": [
+      "CC 298",
+      "CC 298a",
+      "CC 301a"
+    ],
     "principeCle": "La garde alternée doit être examinée en priorité lorsque les deux parents sont aptes; le conflit seul ne suffit pas à l'exclure.",
-    "facteursCles": ["capacité éducative", "proximité géographique", "disponibilité", "volonté de l'enfant", "coopération parentale"],
+    "facteursCles": [
+      "capacité éducative",
+      "proximité géographique",
+      "disponibilité",
+      "volonté de l'enfant",
+      "coopération parentale"
+    ],
     "fourchetteMontant": null
   },
   {
@@ -32,27 +66,57 @@
     "tribunal": "TF",
     "date": "2020-07-14",
     "theme": "Pension alimentaire enfant — méthode du minimum vital",
-    "tags": ["pension alimentaire", "enfant", "minimum vital", "entretien convenable"],
+    "tags": [
+      "pension alimentaire",
+      "enfant",
+      "minimum vital",
+      "entretien convenable"
+    ],
     "resume": "Le TF fixe la contribution pour deux enfants en appliquant la méthode en deux étapes du minimum vital élargi, incluant les frais de garde et activités extrascolaires.",
     "montant": "CHF 1'350/mois par enfant",
     "resultat": "favorable_enfant",
-    "articlesAppliques": ["CC 285", "CC 276"],
+    "articlesAppliques": [
+      "CC 285",
+      "CC 276"
+    ],
     "principeCle": "La contribution d'entretien de l'enfant se calcule selon la méthode du minimum vital avec prise de charge, incluant les coûts directs et indirects.",
-    "facteursCles": ["coûts directs de l'enfant", "prise en charge", "capacité contributive des parents", "allocations familiales"],
-    "fourchetteMontant": { "min": "CHF 800/mois", "max": "CHF 2'500/mois", "median": "CHF 1'300/mois" }
+    "facteursCles": [
+      "coûts directs de l'enfant",
+      "prise en charge",
+      "capacité contributive des parents",
+      "allocations familiales"
+    ],
+    "fourchetteMontant": {
+      "min": "CHF 800/mois",
+      "max": "CHF 2'500/mois",
+      "median": "CHF 1'300/mois"
+    }
   },
   {
     "signature": "5A_459/2017",
     "tribunal": "TF",
     "date": "2017-11-21",
     "theme": "Autorité parentale conjointe — retrait pour mise en danger",
-    "tags": ["autorité parentale", "retrait", "mise en danger", "protection"],
+    "tags": [
+      "autorité parentale",
+      "retrait",
+      "mise en danger",
+      "protection"
+    ],
     "resume": "Le TF retire l'autorité parentale du père pour cause de violences répétées sur l'enfant et refus de coopérer avec le SPJ.",
     "montant": null,
     "resultat": "autorite_parentale_retiree",
-    "articlesAppliques": ["CC 311", "CC 312"],
+    "articlesAppliques": [
+      "CC 311",
+      "CC 312"
+    ],
     "principeCle": "L'autorité parentale peut être retirée lorsque d'autres mesures de protection sont restées sans effet et que le bien de l'enfant l'exige.",
-    "facteursCles": ["mise en danger concrète", "épuisement des mesures", "coopération avec les autorités", "intérêt de l'enfant"],
+    "facteursCles": [
+      "mise en danger concrète",
+      "épuisement des mesures",
+      "coopération avec les autorités",
+      "intérêt de l'enfant"
+    ],
     "fourchetteMontant": null
   },
   {
@@ -60,55 +124,123 @@
     "tribunal": "TF",
     "date": "2019-12-10",
     "theme": "Modification du jugement de divorce — pension",
-    "tags": ["modification", "pension", "changement de situation", "clause rebus sic stantibus"],
+    "tags": [
+      "modification",
+      "pension",
+      "changement de situation",
+      "clause rebus sic stantibus"
+    ],
     "resume": "Père demande une réduction de la pension après une perte d'emploi. Le TF réduit la contribution de CHF 2'800 à CHF 1'500/mois vu la baisse durable de revenus.",
     "montant": "CHF 1'500/mois (réduit de 2'800)",
     "resultat": "modification_accordee",
-    "articlesAppliques": ["CC 286 al. 2", "CC 134"],
+    "articlesAppliques": [
+      "CC 286 al. 2",
+      "CC 134"
+    ],
     "principeCle": "La modification de la contribution d'entretien suppose un changement notable et durable des circonstances.",
-    "facteursCles": ["caractère durable du changement", "efforts de reconversion", "nouveau minimum vital", "proportionnalité"],
-    "fourchetteMontant": { "min": "CHF 800/mois", "max": "CHF 3'000/mois", "median": "CHF 1'500/mois" }
+    "facteursCles": [
+      "caractère durable du changement",
+      "efforts de reconversion",
+      "nouveau minimum vital",
+      "proportionnalité"
+    ],
+    "fourchetteMontant": {
+      "min": "CHF 800/mois",
+      "max": "CHF 3'000/mois",
+      "median": "CHF 1'500/mois"
+    }
   },
   {
     "signature": "5A_88/2018",
     "tribunal": "TF",
     "date": "2018-06-05",
     "theme": "Liquidation du régime matrimonial — participation aux acquêts",
-    "tags": ["régime matrimonial", "acquêts", "liquidation", "partage"],
+    "tags": [
+      "régime matrimonial",
+      "acquêts",
+      "liquidation",
+      "partage"
+    ],
     "resume": "Divorce d'époux soumis au régime de la participation aux acquêts. Le TF ordonne le partage des acquêts incluant la plus-value d'un bien immobilier acquis pendant le mariage.",
     "montant": "CHF 185'000 (part de la plus-value)",
     "resultat": "favorable_epouse",
-    "articlesAppliques": ["CC 197", "CC 204", "CC 215"],
+    "articlesAppliques": [
+      "CC 197",
+      "CC 204",
+      "CC 215"
+    ],
     "principeCle": "Chaque époux a droit à la moitié du bénéfice de l'autre; la plus-value d'un bien acquis pendant le mariage est un acquêt.",
-    "facteursCles": ["qualification acquêts/biens propres", "date d'acquisition", "financement", "plus-value conjoncturelle"],
-    "fourchetteMontant": { "min": "CHF 20'000", "max": "CHF 500'000", "median": "CHF 120'000" }
+    "facteursCles": [
+      "qualification acquêts/biens propres",
+      "date d'acquisition",
+      "financement",
+      "plus-value conjoncturelle"
+    ],
+    "fourchetteMontant": {
+      "min": "CHF 20'000",
+      "max": "CHF 500'000",
+      "median": "CHF 120'000"
+    }
   },
   {
     "signature": "5A_192/2021",
     "tribunal": "TF",
     "date": "2021-05-18",
     "theme": "Succession — réduction pour atteinte à la réserve",
-    "tags": ["succession", "réserve héréditaire", "réduction", "libéralités"],
+    "tags": [
+      "succession",
+      "réserve héréditaire",
+      "réduction",
+      "libéralités"
+    ],
     "resume": "Enfant lésé dans sa réserve par des donations excessives du défunt à un tiers. Le TF ordonne la réduction des libéralités pour rétablir la réserve.",
     "montant": "CHF 210'000 (réserve rétablie)",
     "resultat": "favorable_heritier",
-    "articlesAppliques": ["CC 522", "CC 471", "CC 474"],
+    "articlesAppliques": [
+      "CC 522",
+      "CC 471",
+      "CC 474"
+    ],
     "principeCle": "Les libéralités qui portent atteinte aux réserves héréditaires sont réductibles sur action des héritiers réservataires.",
-    "facteursCles": ["calcul de la réserve", "masse de calcul", "date des libéralités", "délai d'action"],
-    "fourchetteMontant": { "min": "CHF 30'000", "max": "CHF 1'000'000", "median": "CHF 150'000" }
+    "facteursCles": [
+      "calcul de la réserve",
+      "masse de calcul",
+      "date des libéralités",
+      "délai d'action"
+    ],
+    "fourchetteMontant": {
+      "min": "CHF 30'000",
+      "max": "CHF 1'000'000",
+      "median": "CHF 150'000"
+    }
   },
   {
     "signature": "5A_334/2020",
     "tribunal": "TF",
     "date": "2020-11-24",
     "theme": "Violence conjugale — mesures protectrices de l'union conjugale",
-    "tags": ["violence conjugale", "mesures protectrices", "éloignement", "domicile"],
+    "tags": [
+      "violence conjugale",
+      "mesures protectrices",
+      "éloignement",
+      "domicile"
+    ],
     "resume": "Épouse victime de violences demande l'attribution du domicile conjugal et l'interdiction de périmètre. Le TF confirme les mesures protectrices.",
     "montant": null,
     "resultat": "mesures_accordees",
-    "articlesAppliques": ["CC 172", "CC 175", "CC 176"],
+    "articlesAppliques": [
+      "CC 172",
+      "CC 175",
+      "CC 176"
+    ],
     "principeCle": "En cas de violence conjugale, le juge peut attribuer le domicile conjugal à la victime et prononcer une interdiction de périmètre.",
-    "facteursCles": ["gravité des violences", "crédibilité", "vraisemblance", "intérêt des enfants", "urgence"],
+    "facteursCles": [
+      "gravité des violences",
+      "crédibilité",
+      "vraisemblance",
+      "intérêt des enfants",
+      "urgence"
+    ],
     "fourchetteMontant": null
   },
   {
@@ -116,13 +248,28 @@
     "tribunal": "TF",
     "date": "2019-04-16",
     "theme": "Enlèvement international d'enfant — Convention de La Haye",
-    "tags": ["enlèvement", "international", "La Haye", "retour", "résidence habituelle"],
+    "tags": [
+      "enlèvement",
+      "international",
+      "La Haye",
+      "retour",
+      "résidence habituelle"
+    ],
     "resume": "Mère déplace l'enfant de France en Suisse sans le consentement du père. Le TF ordonne le retour immédiat de l'enfant en France, rejetant l'exception de l'art. 13b CLaH.",
     "montant": null,
     "resultat": "retour_ordonne",
-    "articlesAppliques": ["CLaH 80 art. 3", "CLaH 80 art. 12", "CLaH 80 art. 13"],
+    "articlesAppliques": [
+      "CLaH 80 art. 3",
+      "CLaH 80 art. 12",
+      "CLaH 80 art. 13"
+    ],
     "principeCle": "L'enfant déplacé illicitement doit être immédiatement retourné dans l'État de sa résidence habituelle, sauf risque grave.",
-    "facteursCles": ["résidence habituelle", "consentement du parent", "durée depuis le déplacement", "risque grave pour l'enfant"],
+    "facteursCles": [
+      "résidence habituelle",
+      "consentement du parent",
+      "durée depuis le déplacement",
+      "risque grave pour l'enfant"
+    ],
     "fourchetteMontant": null
   },
   {
@@ -130,13 +277,27 @@
     "tribunal": "TF",
     "date": "2018-09-25",
     "theme": "Adoption — adoption de l'enfant du conjoint",
-    "tags": ["adoption", "enfant du conjoint", "consentement", "intérêt de l'enfant"],
+    "tags": [
+      "adoption",
+      "enfant du conjoint",
+      "consentement",
+      "intérêt de l'enfant"
+    ],
     "resume": "Beau-père demande l'adoption de l'enfant de son épouse après 6 ans de vie commune. Le TF accorde l'adoption malgré l'opposition du père biologique vu l'absence de relations.",
     "montant": null,
     "resultat": "adoption_accordee",
-    "articlesAppliques": ["CC 264c", "CC 265a", "CC 268a"],
+    "articlesAppliques": [
+      "CC 264c",
+      "CC 265a",
+      "CC 268a"
+    ],
     "principeCle": "L'adoption de l'enfant du conjoint peut être prononcée même sans le consentement du parent biologique si celui-ci s'est durablement désintéressé de l'enfant.",
-    "facteursCles": ["intérêt de l'enfant", "durée de la relation", "désintérêt du parent biologique", "consentement de l'enfant si 12+ ans"],
+    "facteursCles": [
+      "intérêt de l'enfant",
+      "durée de la relation",
+      "désintérêt du parent biologique",
+      "consentement de l'enfant si 12+ ans"
+    ],
     "fourchetteMontant": null
   },
   {
@@ -144,13 +305,27 @@
     "tribunal": "TF",
     "date": "2017-08-08",
     "theme": "Droit de visite — refus et sanctions",
-    "tags": ["droit de visite", "refus", "exécution", "curatelle de surveillance"],
+    "tags": [
+      "droit de visite",
+      "refus",
+      "exécution",
+      "curatelle de surveillance"
+    ],
     "resume": "Mère empêche systématiquement le père d'exercer son droit de visite. Le TF ordonne une curatelle de surveillance et menace de transfert de garde.",
     "montant": null,
     "resultat": "favorable_pere",
-    "articlesAppliques": ["CC 273", "CC 274", "CC 307 al. 3"],
+    "articlesAppliques": [
+      "CC 273",
+      "CC 274",
+      "CC 307 al. 3"
+    ],
     "principeCle": "Le parent gardien a l'obligation de favoriser les relations personnelles de l'enfant avec l'autre parent; le refus systématique peut justifier un changement de garde.",
-    "facteursCles": ["obstruction documentée", "intérêt de l'enfant", "mesures antérieures", "coopération parentale"],
+    "facteursCles": [
+      "obstruction documentée",
+      "intérêt de l'enfant",
+      "mesures antérieures",
+      "coopération parentale"
+    ],
     "fourchetteMontant": null
   },
   {
@@ -158,27 +333,61 @@
     "tribunal": "TF",
     "date": "2021-08-31",
     "theme": "Partage de la prévoyance professionnelle — divorce",
-    "tags": ["prévoyance professionnelle", "LPP", "partage", "divorce", "avoirs"],
+    "tags": [
+      "prévoyance professionnelle",
+      "LPP",
+      "partage",
+      "divorce",
+      "avoirs"
+    ],
     "resume": "Le TF ordonne le partage par moitié des avoirs LPP accumulés pendant le mariage, rejetant la demande de dérogation du mari.",
     "montant": "CHF 145'000 (transfert LPP)",
     "resultat": "partage_ordonne",
-    "articlesAppliques": ["CC 122", "CC 123", "CC 124a"],
+    "articlesAppliques": [
+      "CC 122",
+      "CC 123",
+      "CC 124a"
+    ],
     "principeCle": "Les avoirs de prévoyance professionnelle acquis pendant le mariage sont partagés par moitié au divorce, sauf si cela serait manifestement inéquitable.",
-    "facteursCles": ["durée du mariage", "avoirs accumulés pendant le mariage", "équité", "âge de la retraite"],
-    "fourchetteMontant": { "min": "CHF 20'000", "max": "CHF 400'000", "median": "CHF 120'000" }
+    "facteursCles": [
+      "durée du mariage",
+      "avoirs accumulés pendant le mariage",
+      "équité",
+      "âge de la retraite"
+    ],
+    "fourchetteMontant": {
+      "min": "CHF 20'000",
+      "max": "CHF 400'000",
+      "median": "CHF 120'000"
+    }
   },
   {
     "signature": "5A_745/2018",
     "tribunal": "TF",
     "date": "2018-12-18",
     "theme": "Contestation de paternité",
-    "tags": ["paternité", "contestation", "ADN", "filiation", "délai"],
+    "tags": [
+      "paternité",
+      "contestation",
+      "ADN",
+      "filiation",
+      "délai"
+    ],
     "resume": "Mari conteste la paternité de l'enfant après découverte d'une infidélité. Le TF admet l'action en désaveu malgré le délai d'un an, la tromperie de l'épouse constituant un juste motif de restitution.",
     "montant": null,
     "resultat": "desaveu_admis",
-    "articlesAppliques": ["CC 256", "CC 256c", "CC 260c"],
+    "articlesAppliques": [
+      "CC 256",
+      "CC 256c",
+      "CC 260c"
+    ],
     "principeCle": "Le mari peut désavouer l'enfant dans l'année qui suit la connaissance de la naissance; un juste motif peut restituer le délai.",
-    "facteursCles": ["analyse ADN", "connaissance de la naissance", "juste motif de restitution", "intérêt de l'enfant"],
+    "facteursCles": [
+      "analyse ADN",
+      "connaissance de la naissance",
+      "juste motif de restitution",
+      "intérêt de l'enfant"
+    ],
     "fourchetteMontant": null
   },
   {
@@ -186,13 +395,27 @@
     "tribunal": "TF",
     "date": "2019-06-11",
     "theme": "Placement d'enfant — mesure de protection",
-    "tags": ["placement", "APEA", "protection", "retrait du droit de garde"],
+    "tags": [
+      "placement",
+      "APEA",
+      "protection",
+      "retrait du droit de garde"
+    ],
     "resume": "L'APEA place un enfant en foyer après des signalements répétés de négligence. Le TF confirme le placement vu l'échec des mesures ambulatoires préalables.",
     "montant": null,
     "resultat": "placement_confirme",
-    "articlesAppliques": ["CC 310", "CC 307", "CC 308"],
+    "articlesAppliques": [
+      "CC 310",
+      "CC 307",
+      "CC 308"
+    ],
     "principeCle": "Le placement est une mesure de dernier recours lorsque les mesures moins incisives sont insuffisantes pour protéger l'enfant.",
-    "facteursCles": ["subsidiarité", "gravité de la mise en danger", "échec des mesures antérieures", "intérêt de l'enfant"],
+    "facteursCles": [
+      "subsidiarité",
+      "gravité de la mise en danger",
+      "échec des mesures antérieures",
+      "intérêt de l'enfant"
+    ],
     "fourchetteMontant": null
   },
   {
@@ -200,27 +423,56 @@
     "tribunal": "TF",
     "date": "2020-09-29",
     "theme": "Entretien de l'enfant majeur — formation",
-    "tags": ["enfant majeur", "entretien", "formation", "études"],
+    "tags": [
+      "enfant majeur",
+      "entretien",
+      "formation",
+      "études"
+    ],
     "resume": "Enfant de 20 ans en formation universitaire demande une contribution d'entretien à son père. Le TF accorde CHF 1'800/mois vu la capacité du père et l'absence de retard de formation.",
     "montant": "CHF 1'800/mois",
     "resultat": "favorable_enfant",
-    "articlesAppliques": ["CC 277 al. 2"],
+    "articlesAppliques": [
+      "CC 277 al. 2"
+    ],
     "principeCle": "Le parent doit contribuer à l'entretien de l'enfant majeur jusqu'à l'achèvement d'une formation appropriée, dans la mesure de ses moyens.",
-    "facteursCles": ["formation appropriée", "durée raisonnable", "capacité financière du parent", "efforts de l'enfant"],
-    "fourchetteMontant": { "min": "CHF 800/mois", "max": "CHF 3'000/mois", "median": "CHF 1'500/mois" }
+    "facteursCles": [
+      "formation appropriée",
+      "durée raisonnable",
+      "capacité financière du parent",
+      "efforts de l'enfant"
+    ],
+    "fourchetteMontant": {
+      "min": "CHF 800/mois",
+      "max": "CHF 3'000/mois",
+      "median": "CHF 1'500/mois"
+    }
   },
   {
     "signature": "5A_678/2017",
     "tribunal": "TF",
     "date": "2017-04-25",
     "theme": "Déshéritement — juste motif",
-    "tags": ["déshéritement", "exhérédation", "juste motif", "réserve"],
+    "tags": [
+      "déshéritement",
+      "exhérédation",
+      "juste motif",
+      "réserve"
+    ],
     "resume": "Père déshérite son fils pour infractions pénales graves commises à son encontre. Le TF confirme la validité de l'exhérédation.",
     "montant": null,
     "resultat": "desheritement_confirme",
-    "articlesAppliques": ["CC 477", "CC 478", "CC 479"],
+    "articlesAppliques": [
+      "CC 477",
+      "CC 478",
+      "CC 479"
+    ],
     "principeCle": "L'exhérédation est admissible lorsque l'héritier a commis un crime ou un délit grave envers le défunt ou ses proches.",
-    "facteursCles": ["gravité de l'infraction", "mention dans le testament", "motivation suffisante"],
+    "facteursCles": [
+      "gravité de l'infraction",
+      "mention dans le testament",
+      "motivation suffisante"
+    ],
     "fourchetteMontant": null
   },
   {
@@ -228,13 +480,25 @@
     "tribunal": "TF",
     "date": "2021-06-22",
     "theme": "Attribution du logement familial — divorce",
-    "tags": ["logement familial", "attribution", "divorce", "intérêt des enfants"],
+    "tags": [
+      "logement familial",
+      "attribution",
+      "divorce",
+      "intérêt des enfants"
+    ],
     "resume": "Les deux époux revendiquent le logement familial. Le TF l'attribue à la mère qui a la garde principale des enfants, moyennant reprise du bail.",
     "montant": null,
     "resultat": "logement_attribue_mere",
-    "articlesAppliques": ["CC 121"],
+    "articlesAppliques": [
+      "CC 121"
+    ],
     "principeCle": "Le logement familial est attribué en priorité au parent qui a la garde principale, dans l'intérêt des enfants.",
-    "facteursCles": ["garde des enfants", "stabilité", "capacité financière", "alternatives de logement"],
+    "facteursCles": [
+      "garde des enfants",
+      "stabilité",
+      "capacité financière",
+      "alternatives de logement"
+    ],
     "fourchetteMontant": null
   },
   {
@@ -242,27 +506,58 @@
     "tribunal": "TF",
     "date": "2019-08-20",
     "theme": "Couple non marié — contribution d'entretien pour l'enfant",
-    "tags": ["concubinage", "enfant hors mariage", "entretien", "prise en charge"],
+    "tags": [
+      "concubinage",
+      "enfant hors mariage",
+      "entretien",
+      "prise en charge"
+    ],
     "resume": "Mère non mariée demande une contribution de prise en charge au père de l'enfant. Le TF fixe la contribution à CHF 2'200/mois couvrant le déficit de la mère lié à la prise en charge.",
     "montant": "CHF 2'200/mois (contribution de prise en charge)",
     "resultat": "favorable_mere",
-    "articlesAppliques": ["CC 285 al. 2", "CC 276"],
+    "articlesAppliques": [
+      "CC 285 al. 2",
+      "CC 276"
+    ],
     "principeCle": "La contribution de prise en charge couvre le déficit du parent gardien lié à la réduction de son activité lucrative pour s'occuper de l'enfant.",
-    "facteursCles": ["taux d'occupation exigible", "âge de l'enfant", "capacité contributive du père", "minimum vital"],
-    "fourchetteMontant": { "min": "CHF 1'000/mois", "max": "CHF 3'500/mois", "median": "CHF 2'000/mois" }
+    "facteursCles": [
+      "taux d'occupation exigible",
+      "âge de l'enfant",
+      "capacité contributive du père",
+      "minimum vital"
+    ],
+    "fourchetteMontant": {
+      "min": "CHF 1'000/mois",
+      "max": "CHF 3'500/mois",
+      "median": "CHF 2'000/mois"
+    }
   },
   {
     "signature": "5A_148/2018",
     "tribunal": "TF",
     "date": "2018-05-08",
     "theme": "Mesures superprovisionnelles — urgence familiale",
-    "tags": ["mesures superprovisionnelles", "urgence", "protection", "domicile"],
+    "tags": [
+      "mesures superprovisionnelles",
+      "urgence",
+      "protection",
+      "domicile"
+    ],
     "resume": "Le juge ordonne l'éloignement immédiat du conjoint violent sur mesures superprovisionnelles. Le TF confirme la compétence du juge en cas d'urgence manifeste.",
     "montant": null,
     "resultat": "mesures_confirmees",
-    "articlesAppliques": ["CPC 261", "CPC 265", "CC 172"],
+    "articlesAppliques": [
+      "CPC 261",
+      "CPC 265",
+      "CC 172"
+    ],
     "principeCle": "Des mesures superprovisionnelles peuvent être ordonnées sans audition de l'autre partie en cas de danger imminent.",
-    "facteursCles": ["urgence", "vraisemblance du danger", "proportionnalité", "durée limitée"],
+    "facteursCles": [
+      "urgence",
+      "vraisemblance du danger",
+      "proportionnalité",
+      "durée limitée"
+    ],
     "fourchetteMontant": null
   },
   {
@@ -270,41 +565,90 @@
     "tribunal": "TF",
     "date": "2020-06-02",
     "theme": "Divorce — revenu hypothétique imputé",
-    "tags": ["revenu hypothétique", "capacité de gain", "imputation", "divorce"],
+    "tags": [
+      "revenu hypothétique",
+      "capacité de gain",
+      "imputation",
+      "divorce"
+    ],
     "resume": "Le TF impute un revenu hypothétique à l'épouse de 42 ans qui n'a pas repris d'activité professionnelle 3 ans après la séparation malgré la possibilité de travailler à 70%.",
     "montant": "CHF 4'200/mois (revenu hypothétique)",
     "resultat": "revenu_impute",
-    "articlesAppliques": ["CC 125", "CC 276"],
+    "articlesAppliques": [
+      "CC 125",
+      "CC 276"
+    ],
     "principeCle": "Un revenu hypothétique peut être imputé au conjoint qui ne fait pas les efforts raisonnables pour exercer une activité lucrative.",
-    "facteursCles": ["âge", "formation", "marché du travail", "délai de transition", "efforts de recherche d'emploi"],
-    "fourchetteMontant": { "min": "CHF 2'000/mois", "max": "CHF 7'000/mois", "median": "CHF 4'000/mois" }
+    "facteursCles": [
+      "âge",
+      "formation",
+      "marché du travail",
+      "délai de transition",
+      "efforts de recherche d'emploi"
+    ],
+    "fourchetteMontant": {
+      "min": "CHF 2'000/mois",
+      "max": "CHF 7'000/mois",
+      "median": "CHF 4'000/mois"
+    }
   },
   {
     "signature": "5A_502/2017",
     "tribunal": "TF",
     "date": "2017-09-12",
     "theme": "Succession — partage et rapport des libéralités",
-    "tags": ["succession", "partage", "rapport", "libéralités", "avancement d'hoirie"],
+    "tags": [
+      "succession",
+      "partage",
+      "rapport",
+      "libéralités",
+      "avancement d'hoirie"
+    ],
     "resume": "Héritier demande le rapport d'un don immobilier de CHF 300'000 fait par le défunt à un autre héritier. Le TF ordonne le rapport à la masse successorale.",
     "montant": "CHF 300'000 (valeur au jour de l'ouverture)",
     "resultat": "rapport_ordonne",
-    "articlesAppliques": ["CC 626", "CC 627", "CC 628"],
+    "articlesAppliques": [
+      "CC 626",
+      "CC 627",
+      "CC 628"
+    ],
     "principeCle": "Les libéralités reçues à titre d'avancement d'hoirie sont rapportées à la masse successorale, sauf dispense expresse du défunt.",
-    "facteursCles": ["qualification de la libéralité", "dispense de rapport", "valeur au jour de l'ouverture", "préciput"],
-    "fourchetteMontant": { "min": "CHF 50'000", "max": "CHF 1'000'000", "median": "CHF 200'000" }
+    "facteursCles": [
+      "qualification de la libéralité",
+      "dispense de rapport",
+      "valeur au jour de l'ouverture",
+      "préciput"
+    ],
+    "fourchetteMontant": {
+      "min": "CHF 50'000",
+      "max": "CHF 1'000'000",
+      "median": "CHF 200'000"
+    }
   },
   {
     "signature": "5A_615/2021",
     "tribunal": "TF",
     "date": "2021-10-19",
     "theme": "Couple de même sexe — mariage et filiation",
-    "tags": ["couple de même sexe", "mariage", "filiation", "présomption de parentalité"],
+    "tags": [
+      "couple de même sexe",
+      "mariage",
+      "filiation",
+      "présomption de parentalité"
+    ],
     "resume": "Suite à l'entrée en vigueur du mariage pour tous, le TF reconnaît la filiation automatique de l'épouse de la mère biologique pour un enfant conçu par PMA.",
     "montant": null,
     "resultat": "filiation_reconnue",
-    "articlesAppliques": ["CC 255a", "CC 252"],
+    "articlesAppliques": [
+      "CC 255a",
+      "CC 252"
+    ],
     "principeCle": "L'épouse de la mère est automatiquement reconnue comme parent de l'enfant né pendant le mariage par procréation médicalement assistée.",
-    "facteursCles": ["mariage", "PMA consentie", "consentement documenté"],
+    "facteursCles": [
+      "mariage",
+      "PMA consentie",
+      "consentement documenté"
+    ],
     "fourchetteMontant": null
   },
   {
@@ -312,41 +656,2344 @@
     "tribunal": "TF",
     "date": "2019-03-05",
     "theme": "Pension alimentaire — impayés et exécution",
-    "tags": ["pension", "impayés", "exécution", "aide au recouvrement"],
+    "tags": [
+      "pension",
+      "impayés",
+      "exécution",
+      "aide au recouvrement"
+    ],
     "resume": "Le père ne paie plus la pension depuis 8 mois. Le TF confirme le droit au recouvrement par l'office spécialisé et le caractère exécutoire du jugement de divorce.",
     "montant": "CHF 19'200 (8 × CHF 2'400 arriérés)",
     "resultat": "favorable_creancier",
-    "articlesAppliques": ["CC 131a", "CC 290", "CC 292"],
+    "articlesAppliques": [
+      "CC 131a",
+      "CC 290",
+      "CC 292"
+    ],
     "principeCle": "Le jugement fixant la contribution d'entretien constitue un titre de mainlevée définitive; l'aide au recouvrement peut être sollicitée.",
-    "facteursCles": ["arriérés accumulés", "capacité de payer", "aide au recouvrement cantonal", "avis aux débiteurs"],
-    "fourchetteMontant": { "min": "CHF 5'000", "max": "CHF 50'000", "median": "CHF 15'000" }
+    "facteursCles": [
+      "arriérés accumulés",
+      "capacité de payer",
+      "aide au recouvrement cantonal",
+      "avis aux débiteurs"
+    ],
+    "fourchetteMontant": {
+      "min": "CHF 5'000",
+      "max": "CHF 50'000",
+      "median": "CHF 15'000"
+    }
   },
   {
     "signature": "5A_267/2020",
     "tribunal": "TF",
     "date": "2020-04-21",
     "theme": "Divorce — prestation compensatoire et indemnité équitable",
-    "tags": ["prestation compensatoire", "indemnité équitable", "disparité", "séparation de biens"],
+    "tags": [
+      "prestation compensatoire",
+      "indemnité équitable",
+      "disparité",
+      "séparation de biens"
+    ],
     "resume": "Époux mariés sous le régime de la séparation de biens. Le TF accorde une indemnité équitable de CHF 80'000 à l'épouse pour compenser sa contribution non rémunérée à l'entreprise du mari.",
     "montant": "CHF 80'000",
     "resultat": "favorable_epouse",
-    "articlesAppliques": ["CC 165"],
+    "articlesAppliques": [
+      "CC 165"
+    ],
     "principeCle": "Le conjoint qui a collaboré à l'activité de l'autre dans une mesure notablement supérieure à sa contribution aux charges du ménage a droit à une indemnité équitable.",
-    "facteursCles": ["collaboration prouvée", "durée", "contribution au ménage", "enrichissement de l'autre"],
-    "fourchetteMontant": { "min": "CHF 20'000", "max": "CHF 200'000", "median": "CHF 60'000" }
+    "facteursCles": [
+      "collaboration prouvée",
+      "durée",
+      "contribution au ménage",
+      "enrichissement de l'autre"
+    ],
+    "fourchetteMontant": {
+      "min": "CHF 20'000",
+      "max": "CHF 200'000",
+      "median": "CHF 60'000"
+    }
   },
   {
     "signature": "5A_410/2021",
     "tribunal": "TF",
     "date": "2021-03-16",
     "theme": "Audition de l'enfant — obligation procédurale",
-    "tags": ["audition", "enfant", "procédure", "opinion de l'enfant", "CIDE"],
+    "tags": [
+      "audition",
+      "enfant",
+      "procédure",
+      "opinion de l'enfant",
+      "CIDE"
+    ],
     "resume": "Le tribunal cantonal n'a pas auditionné l'enfant de 10 ans dans une procédure de garde. Le TF casse la décision pour violation du droit d'être entendu de l'enfant.",
     "montant": null,
     "resultat": "decision_cassee",
-    "articlesAppliques": ["CPC 298", "CC 314a", "CIDE 12"],
+    "articlesAppliques": [
+      "CPC 298",
+      "CC 314a",
+      "CIDE 12"
+    ],
     "principeCle": "L'enfant capable de discernement doit être entendu personnellement dans toute procédure le concernant, en principe dès 6 ans.",
-    "facteursCles": ["âge de l'enfant", "capacité de discernement", "adaptation des modalités", "prise en compte de l'avis"],
+    "facteursCles": [
+      "âge de l'enfant",
+      "capacité de discernement",
+      "adaptation des modalités",
+      "prise en compte de l'avis"
+    ],
     "fourchetteMontant": null
+  },
+  {
+    "signature": "5A 1040/2020",
+    "date": "2021-06-08",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (contribution d'entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 08.06.2021 5A 1040/2020 (5A_1040/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=08.06.2021&to_date=08.06.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=9&azaclir=aza&highlight_docid=aza%3A%2F%2F08-06-2021-5A_1040-2020&number_of_ranks=35",
+    "harvestDate": "2026-04-08T03:59:08.671Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 1054/2018",
+    "date": "2019-01-23",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "modification du jugement de divorce (droits parentaux, garde) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 23.01.2019 5A 1054/2018 (5A_1054/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=23.01.2019&to_date=23.01.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=12&azaclir=aza&highlight_docid=aza%3A%2F%2F23-01-2019-5A_1054-2018&number_of_ranks=36",
+    "harvestDate": "2026-04-08T03:59:08.672Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 1061/2020",
+    "date": "2021-06-30",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "entretien de l'enfant majeur, recouvrement des arriérés de contributions | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 30.06.2021 5A 1061/2020 (5A_1061/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=30.06.2021&to_date=30.06.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=24&azaclir=aza&highlight_docid=aza%3A%2F%2F30-06-2021-5A_1061-2020&number_of_ranks=46",
+    "harvestDate": "2026-04-08T03:59:08.672Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 119/2022",
+    "date": "2022-11-07",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "autorité parentale conjointe | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 07.11.2022 5A 119/2022 (5A_119/2022)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=5&from_date=05.11.2022&to_date=08.11.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=48&azaclir=aza&highlight_docid=aza%3A%2F%2F07-11-2022-5A_119-2022&number_of_ranks=64",
+    "harvestDate": "2026-04-08T03:59:08.705Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 136/2018",
+    "date": "2018-06-26",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "droit aux relations personnelles (compétence ratione loci et élargissement du droit de visite) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 26.06.2018 5A 136/2018 (5A_136/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=26.06.2018&to_date=26.06.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=2&azaclir=aza&highlight_docid=aza%3A%2F%2F26-06-2018-5A_136-2018&number_of_ranks=35",
+    "harvestDate": "2026-04-08T03:59:08.706Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 18/2018",
+    "date": "2018-03-16",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 16.03.2018 5A 18/2018 (5A_18/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=16.03.2018&to_date=16.03.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=1&azaclir=aza&highlight_docid=aza%3A%2F%2F16-03-2018-5A_18-2018&number_of_ranks=38",
+    "harvestDate": "2026-04-08T03:59:08.760Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 182/2018",
+    "date": "2018-06-25",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "décision incidente de compétence à raison du lieu (art. 92 LTF), effets accessoires du divorce | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 25.06.2018 5A 182/2018 (5A_182/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=25.06.2018&to_date=25.06.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=27&azaclir=aza&highlight_docid=aza%3A%2F%2F25-06-2018-5A_182-2018&number_of_ranks=51",
+    "harvestDate": "2026-04-08T03:59:08.760Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 202/2023",
+    "date": "2023-12-20",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles de divorce (attribution du domicile conjugal, contributions d'entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 20.12.2023 5A 202/2023 (5A_202/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=5&from_date=20.12.2023&to_date=20.12.2023&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=44&azaclir=aza&highlight_docid=aza%3A%2F%2F20-12-2023-5A_202-2023&number_of_ranks=44",
+    "harvestDate": "2026-04-08T03:59:08.781Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 26/2019",
+    "date": "2019-06-06",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures protectrices de l'union conjugale (garde et entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 06.06.2019 5A 26/2019 (5A_26/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=06.06.2019&to_date=06.06.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=25&azaclir=aza&highlight_docid=aza%3A%2F%2F06-06-2019-5A_26-2019&number_of_ranks=34",
+    "harvestDate": "2026-04-08T03:59:08.866Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 262/2022",
+    "date": "2022-08-03",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "restitution d'un délai (divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 03.08.2022 5A 262/2022 (5A_262/2022)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=03.08.2022&to_date=03.08.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=10&azaclir=aza&highlight_docid=aza%3A%2F%2F03-08-2022-5A_262-2022&number_of_ranks=31",
+    "harvestDate": "2026-04-08T03:59:08.866Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 267/2018",
+    "date": "2018-07-05",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles prises pour la durée de la procédure de divorce (modification de mesures protectrices de l'union conjugale; contribution d'entretien | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 05.07.2018 5A 267/2018 (5A_267/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=05.07.2018&to_date=05.07.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=4&azaclir=aza&highlight_docid=aza%3A%2F%2F05-07-2018-5A_267-2018&number_of_ranks=41",
+    "harvestDate": "2026-04-08T03:59:08.867Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 278/2019",
+    "date": "2019-05-23",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "modification de jugement de divorce (appel tardif) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 23.05.2019 5A 278/2019 (5A_278/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=23.05.2019&to_date=23.05.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=15&azaclir=aza&highlight_docid=aza%3A%2F%2F23-05-2019-5A_278-2019&number_of_ranks=26",
+    "harvestDate": "2026-04-08T03:59:08.867Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 280/2020",
+    "date": "2020-07-08",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "restitution de délai (divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 08.07.2020 5A 280/2020 (5A_280/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=08.07.2020&to_date=08.07.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=1&azaclir=aza&highlight_docid=aza%3A%2F%2F08-07-2020-5A_280-2020&number_of_ranks=41",
+    "harvestDate": "2026-04-08T03:59:08.884Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 360/2019",
+    "date": "2020-03-30",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (entretien post-divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 30.03.2020 5A 360/2019 (5A_360/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=5&from_date=29.03.2020&to_date=01.04.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=47&azaclir=aza&highlight_docid=aza%3A%2F%2F30-03-2020-5A_360-2019&number_of_ranks=72",
+    "harvestDate": "2026-04-08T03:59:08.934Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 375/2020",
+    "date": "2020-10-01",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles (divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 01.10.2020 5A 375/2020 (5A_375/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=29.09.2020&to_date=02.10.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=30&azaclir=aza&highlight_docid=aza%3A%2F%2F01-10-2020-5A_375-2020&number_of_ranks=98",
+    "harvestDate": "2026-04-08T03:59:08.956Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 380/2024",
+    "date": "2024-07-31",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "complément d'un jugement de divorce étranger, partage de la prévoyance professionnelle | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 31.07.2024 5A 380/2024 (5A_380/2024)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=29.07.2024&to_date=01.08.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=7&azaclir=aza&highlight_docid=aza%3A%2F%2F31-07-2024-5A_380-2024&number_of_ranks=67",
+    "harvestDate": "2026-04-08T03:59:08.956Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 392/2021",
+    "date": "2021-07-20",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (contributions d'entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 20.07.2021 5A 392/2021 (5A_392/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=9&from_date=20.07.2021&to_date=23.07.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=87&azaclir=aza&highlight_docid=aza%3A%2F%2F20-07-2021-5A_392-2021&number_of_ranks=89",
+    "harvestDate": "2026-04-08T03:59:08.971Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 451/2020",
+    "date": "2021-03-31",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (entretien post-divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 31.03.2021 5A 451/2020 (5A_451/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=30.03.2021&to_date=02.04.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=29&azaclir=aza&highlight_docid=aza%3A%2F%2F31-03-2021-5A_451-2020&number_of_ranks=78",
+    "harvestDate": "2026-04-08T03:59:09.027Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 453/2018",
+    "date": "2018-06-06",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "droit de visite provisionnel | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 06.06.2018 5A 453/2018 (5A_453/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=06.06.2018&to_date=06.06.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=9&azaclir=aza&highlight_docid=aza%3A%2F%2F06-06-2018-5A_453-2018&number_of_ranks=32",
+    "harvestDate": "2026-04-08T03:59:09.027Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 461/2019",
+    "date": "2020-03-06",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "modification des mesures provisionnelles de divorce (contribution à charges du logement conjugal) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 06.03.2020 5A 461/2019 (5A_461/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=05.03.2020&to_date=08.03.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=9&azaclir=aza&highlight_docid=aza%3A%2F%2F06-03-2020-5A_461-2019&number_of_ranks=52",
+    "harvestDate": "2026-04-08T03:59:09.027Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 472/2019",
+    "date": "2020-11-03",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "effets accessoires du divorce (entretien post-divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 03.11.2020 5A 472/2019 (5A_472/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=31.10.2020&to_date=03.11.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=5&azaclir=aza&highlight_docid=aza%3A%2F%2F03-11-2020-5A_472-2019&number_of_ranks=88",
+    "harvestDate": "2026-04-08T03:59:09.042Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 476/2024",
+    "date": "2024-09-17",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "retrait de garde et du droit de déterminer le lieu de résidence des enfants | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 17.09.2024 5A 476/2024 (5A_476/2024)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=5&from_date=15.09.2024&to_date=18.09.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=42&azaclir=aza&highlight_docid=aza%3A%2F%2F17-09-2024-5A_476-2024&number_of_ranks=78",
+    "harvestDate": "2026-04-08T03:59:09.043Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 5/2020",
+    "date": "2020-04-27",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures protectrices de l'union conjugale (entretien de l'enfant) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 27.04.2020 5A 5/2020 (5A_5/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=27.04.2020&to_date=27.04.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=17&azaclir=aza&highlight_docid=aza%3A%2F%2F27-04-2020-5A_5-2020&number_of_ranks=36",
+    "harvestDate": "2026-04-08T03:59:09.060Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 517/2019",
+    "date": "2019-07-18",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "entretien de l'enfant mineur | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 18.07.2019 5A 517/2019 (5A_517/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=18.07.2019&to_date=18.07.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=23&azaclir=aza&highlight_docid=aza%3A%2F%2F18-07-2019-5A_517-2019&number_of_ranks=33",
+    "harvestDate": "2026-04-08T03:59:09.076Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 535/2021",
+    "date": "2021-07-02",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "attribution de l'autorité parentale, fixation des relations personnelles | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 02.07.2021 5A 535/2021 (5A_535/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=02.07.2021&to_date=02.07.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=13&azaclir=aza&highlight_docid=aza%3A%2F%2F02-07-2021-5A_535-2021&number_of_ranks=30",
+    "harvestDate": "2026-04-08T03:59:09.135Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 547/2019",
+    "date": "2019-07-08",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures protectrices de l'union conjugale (garde et entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 08.07.2019 5A 547/2019 (5A_547/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=08.07.2019&to_date=08.07.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=27&azaclir=aza&highlight_docid=aza%3A%2F%2F08-07-2019-5A_547-2019&number_of_ranks=36",
+    "harvestDate": "2026-04-08T03:59:09.135Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 55/2020",
+    "date": "2020-01-24",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "modification du droit de garde (parents non mariés) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 24.01.2020 5A 55/2020 (5A_55/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=24.01.2020&to_date=24.01.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=20&azaclir=aza&highlight_docid=aza%3A%2F%2F24-01-2020-5A_55-2020&number_of_ranks=27",
+    "harvestDate": "2026-04-08T03:59:09.135Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 565/2020",
+    "date": "2021-05-27",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (jugement partiel sur le principe) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 27.05.2021 5A 565/2020 (5A_565/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=27.05.2021&to_date=27.05.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=3&azaclir=aza&highlight_docid=aza%3A%2F%2F27-05-2021-5A_565-2020&number_of_ranks=22",
+    "harvestDate": "2026-04-08T03:59:09.157Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 575/2018",
+    "date": "2018-07-20",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "droit de visite | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 20.07.2018 5A 575/2018 (5A_575/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=20.07.2018&to_date=20.07.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=28&azaclir=aza&highlight_docid=aza%3A%2F%2F20-07-2018-5A_575-2018&number_of_ranks=28",
+    "harvestDate": "2026-04-08T03:59:09.173Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 628/2018",
+    "date": "2018-08-03",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "effet suspensif (autorité parentale; placement de l'enfant) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 03.08.2018 5A 628/2018 (5A_628/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=03.08.2018&to_date=03.08.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=15&azaclir=aza&highlight_docid=aza%3A%2F%2F03-08-2018-5A_628-2018&number_of_ranks=31",
+    "harvestDate": "2026-04-08T03:59:09.206Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 634/2023",
+    "date": "2023-09-12",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (contributions d'entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 12.09.2023 5A 634/2023 (5A_634/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=6&from_date=10.09.2023&to_date=13.09.2023&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=60&azaclir=aza&highlight_docid=aza%3A%2F%2F12-09-2023-5A_634-2023&number_of_ranks=85",
+    "harvestDate": "2026-04-08T03:59:09.207Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 636/2019",
+    "date": "2019-10-11",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (entretien post-divorce et enfant majeur) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 11.10.2019 5A 636/2019 (5A_636/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=11.10.2019&to_date=11.10.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=1&azaclir=aza&highlight_docid=aza%3A%2F%2F11-10-2019-5A_636-2019&number_of_ranks=21",
+    "harvestDate": "2026-04-08T03:59:09.225Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 648/2020",
+    "date": "2021-07-12",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures protectrices de l'union conjugale (garde et contribution d'entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 12.07.2021 5A 648/2020 (5A_648/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=12.07.2021&to_date=12.07.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=3&azaclir=aza&highlight_docid=aza%3A%2F%2F12-07-2021-5A_648-2020&number_of_ranks=29",
+    "harvestDate": "2026-04-08T03:59:09.226Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 665/2019",
+    "date": "2019-09-03",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "prononcé incident de disjonction (divorce, principe et effets accessoires) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 03.09.2019 5A 665/2019 (5A_665/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=4&from_date=03.09.2019&to_date=03.09.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=39&azaclir=aza&highlight_docid=aza%3A%2F%2F03-09-2019-5A_665-2019&number_of_ranks=39",
+    "harvestDate": "2026-04-08T03:59:09.246Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 676/2021",
+    "date": "2021-08-31",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles de divorce (prérogatives parentales) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 31.08.2021 5A 676/2021 (5A_676/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=6&from_date=29.08.2021&to_date=01.09.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=59&azaclir=aza&highlight_docid=aza%3A%2F%2F31-08-2021-5A_676-2021&number_of_ranks=94",
+    "harvestDate": "2026-04-08T03:59:09.247Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 679/2022",
+    "date": "2023-04-25",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "autorité parentale conjointe, droit aux relations personnelles | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 25.04.2023 5A 679/2022 (5A_679/2022)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=5&from_date=23.04.2023&to_date=26.04.2023&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=49&azaclir=aza&highlight_docid=aza%3A%2F%2F25-04-2023-5A_679-2022&number_of_ranks=89",
+    "harvestDate": "2026-04-08T03:59:09.262Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 697/2018",
+    "date": "2019-02-18",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 18.02.2019 5A 697/2018 (5A_697/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=18.02.2019&to_date=18.02.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=2&azaclir=aza&highlight_docid=aza%3A%2F%2F18-02-2019-5A_697-2018&number_of_ranks=28",
+    "harvestDate": "2026-04-08T03:59:09.263Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 70/2021",
+    "date": "2021-10-18",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "reconnaissance et exequatur d'un jugement étranger (modification du jugement de divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 18.10.2021 5A 70/2021 (5A_70/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=4&from_date=16.10.2021&to_date=19.10.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=40&azaclir=aza&highlight_docid=aza%3A%2F%2F18-10-2021-5A_70-2021&number_of_ranks=65",
+    "harvestDate": "2026-04-08T03:59:09.280Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 751/2018",
+    "date": "2018-09-14",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures protectrices de l'union conjugale (garde de l'enfant) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 14.09.2018 5A 751/2018 (5A_751/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=14.09.2018&to_date=14.09.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=11&azaclir=aza&highlight_docid=aza%3A%2F%2F14-09-2018-5A_751-2018&number_of_ranks=20",
+    "harvestDate": "2026-04-08T03:59:09.312Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 759/2020",
+    "date": "2020-09-22",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 22.09.2020 5A 759/2020 (5A_759/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=4&from_date=22.09.2020&to_date=22.09.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=40&azaclir=aza&highlight_docid=aza%3A%2F%2F22-09-2020-5A_759-2020&number_of_ranks=41",
+    "harvestDate": "2026-04-08T03:59:09.312Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 76/2024",
+    "date": "2024-05-01",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "droit aux relations personnelles ensuite de la séparation des partenaires enregistrées (art. 27 al. 2 LPart et 274a CC) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 01.05.2024 5A 76/2024 (5A_76/2024)",
+    "articlesLies": [
+      "art. 27 al. 2 LP"
+    ],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=01.05.2024&to_date=01.05.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=4&azaclir=aza&highlight_docid=aza%3A%2F%2F01-05-2024-5A_76-2024&number_of_ranks=29",
+    "harvestDate": "2026-04-08T03:59:09.313Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 772/2022",
+    "date": "2023-02-14",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (art. 283 al 2 CPC ; disjonction de la liquidation du régime matrimonial) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 14.02.2023 5A 772/2022 (5A_772/2022)",
+    "articlesLies": [
+      "art. 283 al 2 CPC"
+    ],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=14.02.2023&to_date=14.02.2023&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=18&azaclir=aza&highlight_docid=aza%3A%2F%2F14-02-2023-5A_772-2022&number_of_ranks=34",
+    "harvestDate": "2026-04-08T03:59:09.330Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 78/2020",
+    "date": "2021-02-05",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (contribution d'entretien et liquidation des rapports patrimoniaux) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 05.02.2021 5A 78/2020 (5A_78/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=05.02.2021&to_date=05.02.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=16&azaclir=aza&highlight_docid=aza%3A%2F%2F05-02-2021-5A_78-2020&number_of_ranks=42",
+    "harvestDate": "2026-04-08T03:59:09.330Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 782/2019",
+    "date": "2020-06-15",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (contribution d'entretien | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 15.06.2020 5A 782/2019 (5A_782/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=6&from_date=13.06.2020&to_date=16.06.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=54&azaclir=aza&highlight_docid=aza%3A%2F%2F15-06-2020-5A_782-2019&number_of_ranks=81",
+    "harvestDate": "2026-04-08T03:59:09.331Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 788/2022",
+    "date": "2024-01-18",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles de divorce (modification des mesures protectrices de l'union conjugale; contributions d'entretien | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 18.01.2024 5A 788/2022 (5A_788/2022)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=5&from_date=17.01.2024&to_date=20.01.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=47&azaclir=aza&highlight_docid=aza%3A%2F%2F18-01-2024-5A_788-2022&number_of_ranks=83",
+    "harvestDate": "2026-04-08T03:59:09.347Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 800/2021",
+    "date": "2022-01-25",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "modification de la garde, subsidiairement du droit aux relations personnelles (enfant de parents non mariés) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 25.01.2022 5A 800/2021 (5A_800/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=25.01.2022&to_date=25.01.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=11&azaclir=aza&highlight_docid=aza%3A%2F%2F25-01-2022-5A_800-2021&number_of_ranks=36",
+    "harvestDate": "2026-04-08T03:59:09.348Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 805/2019",
+    "date": "2020-03-27",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures protectrices de l'union conjugale (garde et entretien de l'enfant) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 27.03.2020 5A 805/2019 (5A_805/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=25.03.2020&to_date=28.03.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=7&azaclir=aza&highlight_docid=aza%3A%2F%2F27-03-2020-5A_805-2019&number_of_ranks=87",
+    "harvestDate": "2026-04-08T03:59:09.348Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 823/2021",
+    "date": "2022-06-10",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce, partage des prestations de sortie (art. 122 ss CC) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 10.06.2022 5A 823/2021 (5A_823/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=10.06.2022&to_date=13.06.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=26&azaclir=aza&highlight_docid=aza%3A%2F%2F10-06-2022-5A_823-2021&number_of_ranks=48",
+    "harvestDate": "2026-04-08T03:59:09.366Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 843/2020",
+    "date": "2022-02-03",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (ratification d'une convention sur les effets accessoires) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 03.02.2022 5A 843/2020 (5A_843/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=03.02.2022&to_date=03.02.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=16&azaclir=aza&highlight_docid=aza%3A%2F%2F03-02-2022-5A_843-2020&number_of_ranks=27",
+    "harvestDate": "2026-04-08T03:59:09.383Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 87/2023",
+    "date": "2024-12-02",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "Divorce (liquidation du régime matrimonial, contribution d'entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 02.12.2024 5A 87/2023 (5A_87/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=5&from_date=30.11.2024&to_date=03.12.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=45&azaclir=aza&highlight_docid=aza%3A%2F%2F02-12-2024-5A_87-2023&number_of_ranks=91",
+    "harvestDate": "2026-04-08T03:59:09.399Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 897/2020",
+    "date": "2022-02-18",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (attribution du logement, indemnité selon l'art. 165 CC, liquidation du régime matrimonial) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 18.02.2022 5A 897/2020 (5A_897/2020)",
+    "articlesLies": [
+      "art. 165 CC"
+    ],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=5&from_date=18.02.2022&to_date=21.02.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=42&azaclir=aza&highlight_docid=aza%3A%2F%2F18-02-2022-5A_897-2020&number_of_ranks=48",
+    "harvestDate": "2026-04-08T03:59:09.429Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 903/2019",
+    "date": "2020-07-06",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (contribution d'entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 06.07.2020 5A 903/2019 (5A_903/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=03.07.2020&to_date=06.07.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=5&azaclir=aza&highlight_docid=aza%3A%2F%2F06-07-2020-5A_903-2019&number_of_ranks=64",
+    "harvestDate": "2026-04-08T03:59:09.429Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 910/2023",
+    "date": "2024-01-22",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "frais judiciaires (modification du jugement de divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 22.01.2024 5A 910/2023 (5A_910/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=8&from_date=21.01.2024&to_date=24.01.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=78&azaclir=aza&highlight_docid=aza%3A%2F%2F22-01-2024-5A_910-2023&number_of_ranks=78",
+    "harvestDate": "2026-04-08T03:59:09.430Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 912/2022",
+    "date": "2023-01-25",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "retrait de la garde, effet suspensif | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 25.01.2023 5A 912/2022 (5A_912/2022)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=10&from_date=25.01.2023&to_date=28.01.2023&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=94&azaclir=aza&highlight_docid=aza%3A%2F%2F25-01-2023-5A_912-2022&number_of_ranks=95",
+    "harvestDate": "2026-04-08T03:59:09.430Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 929/2019",
+    "date": "2020-04-20",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles de divorce (contribution d'entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 20.04.2020 5A 929/2019 (5A_929/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=5&from_date=18.04.2020&to_date=21.04.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=50&azaclir=aza&highlight_docid=aza%3A%2F%2F20-04-2020-5A_929-2019&number_of_ranks=72",
+    "harvestDate": "2026-04-08T03:59:09.445Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 940/2023",
+    "date": "2024-12-17",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (partage des avoirs de prévoyance professionnelle) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 17.12.2024 5A 940/2023 (5A_940/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=17.12.2024&to_date=17.12.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=1&azaclir=aza&highlight_docid=aza%3A%2F%2F17-12-2024-5A_940-2023&number_of_ranks=42",
+    "harvestDate": "2026-04-08T03:59:09.463Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5D 166/2023",
+    "date": "2024-04-17",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (taxation des honoraires du conseil d'office) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 17.04.2024 5D 166/2023 (5D_166/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=5&from_date=17.04.2024&to_date=20.04.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=48&azaclir=aza&highlight_docid=aza%3A%2F%2F17-04-2024-5D_166-2023&number_of_ranks=69",
+    "harvestDate": "2026-04-08T03:59:09.535Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 1001/2018",
+    "date": "2018-12-13",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 13.12.2018 5A 1001/2018 (5A_1001/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=13.12.2018&to_date=13.12.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=23&azaclir=aza&highlight_docid=aza%3A%2F%2F13-12-2018-5A_1001-2018&number_of_ranks=31",
+    "harvestDate": "2026-04-08T03:59:28.031Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 1053/2020",
+    "date": "2021-10-13",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "contribution d'entretien (divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 13.10.2021 5A 1053/2020 (5A_1053/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=4&from_date=12.10.2021&to_date=15.10.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=32&azaclir=aza&highlight_docid=aza%3A%2F%2F13-10-2021-5A_1053-2020&number_of_ranks=82",
+    "harvestDate": "2026-04-08T03:59:28.131Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 1055/2020",
+    "date": "2021-06-22",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures protectrices de l'union conjugale (garde et entretien de l'enfant) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 22.06.2021 5A 1055/2020 (5A_1055/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=22.06.2021&to_date=22.06.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=7&azaclir=aza&highlight_docid=aza%3A%2F%2F22-06-2021-5A_1055-2020&number_of_ranks=33",
+    "harvestDate": "2026-04-08T03:59:28.131Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 106/2020",
+    "date": "2021-03-17",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce sur demande unilatérale (liquidation du régime matrimonial) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 17.03.2021 5A 106/2020 (5A_106/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=17.03.2021&to_date=17.03.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=6&azaclir=aza&highlight_docid=aza%3A%2F%2F17-03-2021-5A_106-2020&number_of_ranks=41",
+    "harvestDate": "2026-04-08T03:59:28.131Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 108/2022",
+    "date": "2022-06-07",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "récusation (divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 07.06.2022 5A 108/2022 (5A_108/2022)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=8&from_date=06.06.2022&to_date=09.06.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=74&azaclir=aza&highlight_docid=aza%3A%2F%2F07-06-2022-5A_108-2022&number_of_ranks=95",
+    "harvestDate": "2026-04-08T03:59:28.148Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 111/2022",
+    "date": "2024-01-10",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "modification du jugement de divorce (entretien des enfants mineurs) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 10.01.2024 5A 111/2022 (5A_111/2022)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=10.01.2024&to_date=10.01.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=7&azaclir=aza&highlight_docid=aza%3A%2F%2F10-01-2024-5A_111-2022&number_of_ranks=27",
+    "harvestDate": "2026-04-08T03:59:28.166Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 127/2021",
+    "date": "2021-10-01",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (entretien de l'enfant mineur) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 01.10.2021 5A 127/2021 (5A_127/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=30.09.2021&to_date=03.10.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=1&azaclir=aza&highlight_docid=aza%3A%2F%2F01-10-2021-5A_127-2021&number_of_ranks=53",
+    "harvestDate": "2026-04-08T03:59:28.222Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 130/2018",
+    "date": "2018-04-11",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "modification du jugement de divorce (autorité parentale et garde des enfants) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 11.04.2018 5A 130/2018 (5A_130/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=11.04.2018&to_date=11.04.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=5&azaclir=aza&highlight_docid=aza%3A%2F%2F11-04-2018-5A_130-2018&number_of_ranks=22",
+    "harvestDate": "2026-04-08T03:59:28.222Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 146/2020",
+    "date": "2020-02-28",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles de divorce (entretien des enfants, revenu hypothétique) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 28.02.2020 5A 146/2020 (5A_146/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=26.02.2020&to_date=29.02.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=29&azaclir=aza&highlight_docid=aza%3A%2F%2F28-02-2020-5A_146-2020&number_of_ranks=92",
+    "harvestDate": "2026-04-08T03:59:28.276Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 15/2021",
+    "date": "2021-11-25",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (contribution d'entretien entre époux, liquidation du régime matrimonial) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 25.11.2021 5A 15/2021 (5A_15/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=5&from_date=25.11.2021&to_date=28.11.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=45&azaclir=aza&highlight_docid=aza%3A%2F%2F25-11-2021-5A_15-2021&number_of_ranks=55",
+    "harvestDate": "2026-04-08T03:59:28.277Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 151/2023",
+    "date": "2023-02-28",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "suspension du droit de visite (mesures provisionnelles) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 28.02.2023 5A 151/2023 (5A_151/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=5&from_date=26.02.2023&to_date=01.03.2023&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=43&azaclir=aza&highlight_docid=aza%3A%2F%2F28-02-2023-5A_151-2023&number_of_ranks=83",
+    "harvestDate": "2026-04-08T03:59:28.277Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 152/2022",
+    "date": "2023-06-05",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (prérogatives parentales et entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 05.06.2023 5A 152/2022 (5A_152/2022)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=02.06.2023&to_date=05.06.2023&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=20&azaclir=aza&highlight_docid=aza%3A%2F%2F05-06-2023-5A_152-2022&number_of_ranks=89",
+    "harvestDate": "2026-04-08T03:59:28.293Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 153/2019",
+    "date": "2019-09-03",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (prérogatives parentales, partage de la prévoyance professionnelle) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 03.09.2019 5A 153/2019 (5A_153/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=03.09.2019&to_date=03.09.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=8&azaclir=aza&highlight_docid=aza%3A%2F%2F03-09-2019-5A_153-2019&number_of_ranks=39",
+    "harvestDate": "2026-04-08T03:59:28.293Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 157/2020",
+    "date": "2020-08-07",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles (divorce), fourniture de sûretés | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 07.08.2020 5A 157/2020 (5A_157/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=07.08.2020&to_date=07.08.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=13&azaclir=aza&highlight_docid=aza%3A%2F%2F07-08-2020-5A_157-2020&number_of_ranks=22",
+    "harvestDate": "2026-04-08T03:59:28.294Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 158/2020",
+    "date": "2020-12-21",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "avis aux débiteurs, reconnaissance d'un jugement de divorce étranger | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 21.12.2020 5A 158/2020 (5A_158/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=18.12.2020&to_date=21.12.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=2&azaclir=aza&highlight_docid=aza%3A%2F%2F21-12-2020-5A_158-2020&number_of_ranks=47",
+    "harvestDate": "2026-04-08T03:59:28.294Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 159/2020",
+    "date": "2020-05-04",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (garde et liquidation du régime matrimonial) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 04.05.2020 5A 159/2020 (5A_159/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=04.05.2020&to_date=04.05.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=5&azaclir=aza&highlight_docid=aza%3A%2F%2F04-05-2020-5A_159-2020&number_of_ranks=30",
+    "harvestDate": "2026-04-08T03:59:28.312Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 168/2024",
+    "date": "2024-12-20",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures protectrices de l'union conjugale, contribution à l'entretien de l'enfant | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 20.12.2024 5A 168/2024 (5A_168/2024)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=20.12.2024&to_date=23.12.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=30&azaclir=aza&highlight_docid=aza%3A%2F%2F20-12-2024-5A_168-2024&number_of_ranks=65",
+    "harvestDate": "2026-04-08T03:59:28.342Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 179/2024",
+    "date": "2024-06-21",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "effet suspensif (suspension du droit de visite) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 21.06.2024 5A 179/2024 (5A_179/2024)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=20.06.2024&to_date=23.06.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=16&azaclir=aza&highlight_docid=aza%3A%2F%2F21-06-2024-5A_179-2024&number_of_ranks=51",
+    "harvestDate": "2026-04-08T03:59:28.379Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 18/2021",
+    "date": "2021-01-13",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (droits et devoirs parentaux) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 13.01.2021 5A 18/2021 (5A_18/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=6&from_date=13.01.2021&to_date=16.01.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=55&azaclir=aza&highlight_docid=aza%3A%2F%2F13-01-2021-5A_18-2021&number_of_ranks=72",
+    "harvestDate": "2026-04-08T03:59:28.379Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 185/2024",
+    "date": "2024-06-03",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "autorité parentale conjointe, retrait de la garde et du droit de déterminer le lieu de résidence des enfants | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 03.06.2024 5A 185/2024 (5A_185/2024)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=4&from_date=31.05.2024&to_date=03.06.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=39&azaclir=aza&highlight_docid=aza%3A%2F%2F03-06-2024-5A_185-2024&number_of_ranks=60",
+    "harvestDate": "2026-04-08T03:59:28.396Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 19/2018",
+    "date": "2018-05-16",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles (enquête en limitation de l'autorité parentale, retrait provisoire du droit de déterminer le lieu de résidence, placement des enfants) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 16.05.2018 5A 19/2018 (5A_19/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=16.05.2018&to_date=16.05.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=2&azaclir=aza&highlight_docid=aza%3A%2F%2F16-05-2018-5A_19-2018&number_of_ranks=35",
+    "harvestDate": "2026-04-08T03:59:28.396Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 211/2020",
+    "date": "2020-11-03",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (partage des avoirs de prévoyance professionnelle) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 03.11.2020 5A 211/2020 (5A_211/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=31.10.2020&to_date=03.11.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=4&azaclir=aza&highlight_docid=aza%3A%2F%2F03-11-2020-5A_211-2020&number_of_ranks=88",
+    "harvestDate": "2026-04-08T03:59:28.471Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 226/2023",
+    "date": "2024-05-03",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "récusation (divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 03.05.2024 5A 226/2023 (5A_226/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=5&from_date=03.05.2024&to_date=06.05.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=49&azaclir=aza&highlight_docid=aza%3A%2F%2F03-05-2024-5A_226-2023&number_of_ranks=54",
+    "harvestDate": "2026-04-08T03:59:28.508Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 230/2019",
+    "date": "2020-01-31",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "modification du jugement de divorce (entretien de l'enfant mineur) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 31.01.2020 5A 230/2019 (5A_230/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=31.01.2020&to_date=31.01.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=7&azaclir=aza&highlight_docid=aza%3A%2F%2F31-01-2020-5A_230-2019&number_of_ranks=22",
+    "harvestDate": "2026-04-08T03:59:28.509Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 241/2022",
+    "date": "2022-07-11",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "assistance judiciaire (modification du jugement de divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 11.07.2022 5A 241/2022 (5A_241/2022)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=08.07.2022&to_date=11.07.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=5&azaclir=aza&highlight_docid=aza%3A%2F%2F11-07-2022-5A_241-2022&number_of_ranks=39",
+    "harvestDate": "2026-04-08T03:59:28.545Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 248/2019",
+    "date": "2019-12-09",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles de divorce (provisio ad litem) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 09.12.2019 5A 248/2019 (5A_248/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=09.12.2019&to_date=09.12.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=28&azaclir=aza&highlight_docid=aza%3A%2F%2F09-12-2019-5A_248-2019&number_of_ranks=41",
+    "harvestDate": "2026-04-08T03:59:28.564Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 25/2018",
+    "date": "2018-02-02",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles (droit de visite) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 02.02.2018 5A 25/2018 (5A_25/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=02.02.2018&to_date=02.02.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=13&azaclir=aza&highlight_docid=aza%3A%2F%2F02-02-2018-5A_25-2018&number_of_ranks=23",
+    "harvestDate": "2026-04-08T03:59:28.564Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 255/2021",
+    "date": "2021-04-16",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "modification de mesures protectrices de l'union conjugale, mesures provisionnelles de divorce (entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 16.04.2021 5A 255/2021 (5A_255/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=15.04.2021&to_date=18.04.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=21&azaclir=aza&highlight_docid=aza%3A%2F%2F16-04-2021-5A_255-2021&number_of_ranks=69",
+    "harvestDate": "2026-04-08T03:59:28.583Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 26/2022",
+    "date": "2022-03-14",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "rejet assistance judiciaire (révision du jugement de divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 14.03.2022 5A 26/2022 (5A_26/2022)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=14.03.2022&to_date=14.03.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=24&azaclir=aza&highlight_docid=aza%3A%2F%2F14-03-2022-5A_26-2022&number_of_ranks=40",
+    "harvestDate": "2026-04-08T03:59:28.604Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 277/2021",
+    "date": "2021-11-30",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (prérogatives parentales et partage LPP) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 30.11.2021 5A 277/2021 (5A_277/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=30.11.2021&to_date=30.11.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=9&azaclir=aza&highlight_docid=aza%3A%2F%2F30-11-2021-5A_277-2021&number_of_ranks=20",
+    "harvestDate": "2026-04-08T03:59:28.644Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 281/2020",
+    "date": "2021-04-27",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "autorité parentale, garde et droit de déterminer le lieu de résidence d'un enfant né hors mariage (mesures provisionnelles) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 27.04.2021 5A 281/2020 (5A_281/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=27.04.2021&to_date=27.04.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=10&azaclir=aza&highlight_docid=aza%3A%2F%2F27-04-2021-5A_281-2020&number_of_ranks=29",
+    "harvestDate": "2026-04-08T03:59:28.662Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 286/2020",
+    "date": "2020-04-28",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "autorité parentale, garde et droit de déterminer le lieu de résidence d'un enfant né hors mariage (mesures provisionnelles) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 28.04.2020 5A 286/2020 (5A_286/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=4&from_date=28.04.2020&to_date=28.04.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=34&azaclir=aza&highlight_docid=aza%3A%2F%2F28-04-2020-5A_286-2020&number_of_ranks=35",
+    "harvestDate": "2026-04-08T03:59:28.663Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 304/2023",
+    "date": "2023-11-17",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "contribution à l'entretien des enfants (modification du jugement de divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 17.11.2023 5A 304/2023 (5A_304/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=17.11.2023&to_date=17.11.2023&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=1&azaclir=aza&highlight_docid=aza%3A%2F%2F17-11-2023-5A_304-2023&number_of_ranks=20",
+    "harvestDate": "2026-04-08T03:59:28.719Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 309/2018",
+    "date": "2018-07-31",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles en modification de jugement de divorce (contribution d'entretien de l'ex-épouse) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 31.07.2018 5A 309/2018 (5A_309/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=31.07.2018&to_date=31.07.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=3&azaclir=aza&highlight_docid=aza%3A%2F%2F31-07-2018-5A_309-2018&number_of_ranks=24",
+    "harvestDate": "2026-04-08T03:59:28.736Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 322/2022",
+    "date": "2023-10-05",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "recevabilité de la demande en divorce, respect du délai de séparation (art. 114 CC) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 05.10.2023 5A 322/2022 (5A_322/2022)",
+    "articlesLies": [
+      "art. 114 CC"
+    ],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=05.10.2023&to_date=08.10.2023&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=30&azaclir=aza&highlight_docid=aza%3A%2F%2F05-10-2023-5A_322-2022&number_of_ranks=61",
+    "harvestDate": "2026-04-08T03:59:28.775Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 329/2018",
+    "date": "2018-04-20",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "demande d'exequatur du jugement de divorce | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 20.04.2018 5A 329/2018 (5A_329/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=4&from_date=20.04.2018&to_date=20.04.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=32&azaclir=aza&highlight_docid=aza%3A%2F%2F20-04-2018-5A_329-2018&number_of_ranks=36",
+    "harvestDate": "2026-04-08T03:59:28.794Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 335/2019",
+    "date": "2019-09-04",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles de divorce (modification) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 04.09.2019 5A 335/2019 (5A_335/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=04.09.2019&to_date=04.09.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=7&azaclir=aza&highlight_docid=aza%3A%2F%2F04-09-2019-5A_335-2019&number_of_ranks=24",
+    "harvestDate": "2026-04-08T03:59:28.814Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 337/2018",
+    "date": "2018-04-25",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "Mesures provisionnelles de divorce (contributions d'entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 25.04.2018 5A 337/2018 (5A_337/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=4&from_date=25.04.2018&to_date=25.04.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=33&azaclir=aza&highlight_docid=aza%3A%2F%2F25-04-2018-5A_337-2018&number_of_ranks=34",
+    "harvestDate": "2026-04-08T03:59:28.814Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 343/2018",
+    "date": "2018-05-17",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles (droit de visite) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 17.05.2018 5A 343/2018 (5A_343/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=17.05.2018&to_date=17.05.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=22&azaclir=aza&highlight_docid=aza%3A%2F%2F17-05-2018-5A_343-2018&number_of_ranks=48",
+    "harvestDate": "2026-04-08T03:59:28.832Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 362/2018",
+    "date": "2019-07-02",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "Entraide judiciaire internationale en matière civile (divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 02.07.2019 5A 362/2018 (5A_362/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=02.07.2019&to_date=02.07.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=20&azaclir=aza&highlight_docid=aza%3A%2F%2F02-07-2019-5A_362-2018&number_of_ranks=27",
+    "harvestDate": "2026-04-08T03:59:28.888Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 374/2021",
+    "date": "2022-06-02",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "Divorce (décision séparée sur le prinicipe du divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 02.06.2022 5A 374/2021 (5A_374/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=02.06.2022&to_date=05.06.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=22&azaclir=aza&highlight_docid=aza%3A%2F%2F02-06-2022-5A_374-2021&number_of_ranks=53",
+    "harvestDate": "2026-04-08T03:59:28.908Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 382/2019",
+    "date": "2019-12-09",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "garde et relations personnelles | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 09.12.2019 5A 382/2019 (5A_382/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=4&from_date=09.12.2019&to_date=09.12.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=37&azaclir=aza&highlight_docid=aza%3A%2F%2F09-12-2019-5A_382-2019&number_of_ranks=41",
+    "harvestDate": "2026-04-08T03:59:28.929Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 396/2019",
+    "date": "2019-09-11",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures protectrices de l'union conjugale (garde, droit de visite et entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 11.09.2019 5A 396/2019 (5A_396/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=4&from_date=11.09.2019&to_date=11.09.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=31&azaclir=aza&highlight_docid=aza%3A%2F%2F11-09-2019-5A_396-2019&number_of_ranks=36",
+    "harvestDate": "2026-04-08T03:59:28.965Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 407/2018",
+    "date": "2019-01-11",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "effets accessoires du divorce (contribution d'entretien post-divorce et partage de la prévoyance professionnelle) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 11.01.2019 5A 407/2018 (5A_407/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=11.01.2019&to_date=11.01.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=13&azaclir=aza&highlight_docid=aza%3A%2F%2F11-01-2019-5A_407-2018&number_of_ranks=21",
+    "harvestDate": "2026-04-08T03:59:29.000Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 407/2021",
+    "date": "2022-05-06",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (contribution d'entretien | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 06.05.2022 5A 407/2021 (5A_407/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=05.05.2022&to_date=08.05.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=8&azaclir=aza&highlight_docid=aza%3A%2F%2F06-05-2022-5A_407-2021&number_of_ranks=56",
+    "harvestDate": "2026-04-08T03:59:29.000Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 42/2022",
+    "date": "2022-05-19",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles de divorce (entretien, modification des contributions) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 19.05.2022 5A 42/2022 (5A_42/2022)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=19.05.2022&to_date=19.05.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=14&azaclir=aza&highlight_docid=aza%3A%2F%2F19-05-2022-5A_42-2022&number_of_ranks=44",
+    "harvestDate": "2026-04-08T03:59:29.037Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 443/2018",
+    "date": "2018-11-06",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "demande unilatérale en divorce (partage de la prévoyance professionnelle) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 06.11.2018 5A 443/2018 (5A_443/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=06.11.2018&to_date=06.11.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=18&azaclir=aza&highlight_docid=aza%3A%2F%2F06-11-2018-5A_443-2018&number_of_ranks=24",
+    "harvestDate": "2026-04-08T03:59:29.090Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 447/2019",
+    "date": "2019-06-04",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 04.06.2019 5A 447/2019 (5A_447/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=04.06.2019&to_date=04.06.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=28&azaclir=aza&highlight_docid=aza%3A%2F%2F04-06-2019-5A_447-2019&number_of_ranks=35",
+    "harvestDate": "2026-04-08T03:59:29.090Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 45/2019",
+    "date": "2019-01-28",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce, tardiveté de la demande de motivation (art. 239 al. 2 CPC) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 28.01.2019 5A 45/2019 (5A_45/2019)",
+    "articlesLies": [
+      "art. 239 al. 2 CPC"
+    ],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=28.01.2019&to_date=28.01.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=13&azaclir=aza&highlight_docid=aza%3A%2F%2F28-01-2019-5A_45-2019&number_of_ranks=32",
+    "harvestDate": "2026-04-08T03:59:29.107Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 452/2019",
+    "date": "2019-07-10",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles de divorce (logement familial, entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 10.07.2019 5A 452/2019 (5A_452/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=10.07.2019&to_date=10.07.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=11&azaclir=aza&highlight_docid=aza%3A%2F%2F10-07-2019-5A_452-2019&number_of_ranks=22",
+    "harvestDate": "2026-04-08T03:59:29.107Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 454/2019",
+    "date": "2020-04-16",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "demande unilatérale en divorce (droit aux relations personelles) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 16.04.2020 5A 454/2019 (5A_454/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=16.04.2020&to_date=16.04.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=17&azaclir=aza&highlight_docid=aza%3A%2F%2F16-04-2020-5A_454-2019&number_of_ranks=38",
+    "harvestDate": "2026-04-08T03:59:29.107Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 458/2020",
+    "date": "2020-08-05",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (assistance judiciaire) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 05.08.2020 5A 458/2020 (5A_458/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=05.08.2020&to_date=05.08.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=24&azaclir=aza&highlight_docid=aza%3A%2F%2F05-08-2020-5A_458-2020&number_of_ranks=35",
+    "harvestDate": "2026-04-08T03:59:29.132Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 46/2020",
+    "date": "2020-11-17",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "interprétation d'une convention de divorce ratifiée pour valoir jugement (irrecevabilité) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 17.11.2020 5A 46/2020 (5A_46/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=17.11.2020&to_date=17.11.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=4&azaclir=aza&highlight_docid=aza%3A%2F%2F17-11-2020-5A_46-2020&number_of_ranks=38",
+    "harvestDate": "2026-04-08T03:59:29.132Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 475/2023",
+    "date": "2023-08-31",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (contributions d'entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 31.08.2023 5A 475/2023 (5A_475/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=31.08.2023&to_date=31.08.2023&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=11&azaclir=aza&highlight_docid=aza%3A%2F%2F31-08-2023-5A_475-2023&number_of_ranks=49",
+    "harvestDate": "2026-04-08T03:59:29.186Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 477/2020",
+    "date": "2021-01-27",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "curatelle au sens de l'art. 308 al. 1 et 2 CC, autorité parentale et garde de l'enfant | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 27.01.2021 5A 477/2020 (5A_477/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=25.01.2021&to_date=28.01.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=26&azaclir=aza&highlight_docid=aza%3A%2F%2F27-01-2021-5A_477-2020&number_of_ranks=88",
+    "harvestDate": "2026-04-08T03:59:29.187Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 479/2021",
+    "date": "2021-06-14",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (liquidation du régime matrimonial et autorité parentale) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 14.06.2021 5A 479/2021 (5A_479/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=14.06.2021&to_date=14.06.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=7&azaclir=aza&highlight_docid=aza%3A%2F%2F14-06-2021-5A_479-2021&number_of_ranks=31",
+    "harvestDate": "2026-04-08T03:59:29.187Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 484/2020",
+    "date": "2021-02-16",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 16.02.2021 5A 484/2020 (5A_484/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=16.02.2021&to_date=16.02.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=4&azaclir=aza&highlight_docid=aza%3A%2F%2F16-02-2021-5A_484-2020&number_of_ranks=27",
+    "harvestDate": "2026-04-08T03:59:29.211Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 501/2022",
+    "date": "2023-06-21",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures protectrices de l'union conjugale (droit de visite et entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 21.06.2023 5A 501/2022 (5A_501/2022)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=21.06.2023&to_date=21.06.2023&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=15&azaclir=aza&highlight_docid=aza%3A%2F%2F21-06-2023-5A_501-2022&number_of_ranks=47",
+    "harvestDate": "2026-04-08T03:59:29.249Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 509/2022",
+    "date": "2023-04-06",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (entretien post-divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 06.04.2023 5A 509/2022 (5A_509/2022)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=03.04.2023&to_date=06.04.2023&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=1&azaclir=aza&highlight_docid=aza%3A%2F%2F06-04-2023-5A_509-2022&number_of_ranks=98",
+    "harvestDate": "2026-04-08T03:59:29.266Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 523/2021",
+    "date": "2022-03-29",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "modification du jugement de divorce (entretien et garde du mineur) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 29.03.2022 5A 523/2021 (5A_523/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=26.03.2022&to_date=29.03.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=22&azaclir=aza&highlight_docid=aza%3A%2F%2F29-03-2022-5A_523-2021&number_of_ranks=80",
+    "harvestDate": "2026-04-08T03:59:29.305Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 539/2020",
+    "date": "2020-08-17",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (garde et autorisation de déplacer le lieu de résidence de l'enfant à l'étranger) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 17.08.2020 5A 539/2020 (5A_539/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=9&from_date=16.08.2020&to_date=19.08.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=90&azaclir=aza&highlight_docid=aza%3A%2F%2F17-08-2020-5A_539-2020&number_of_ranks=92",
+    "harvestDate": "2026-04-08T03:59:29.365Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 564/2021",
+    "date": "2022-02-21",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles de divorce (entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 21.02.2022 5A 564/2021 (5A_564/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=4&from_date=18.02.2022&to_date=21.02.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=34&azaclir=aza&highlight_docid=aza%3A%2F%2F21-02-2022-5A_564-2021&number_of_ranks=48",
+    "harvestDate": "2026-04-08T03:59:29.423Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 568/2018",
+    "date": "2018-07-11",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "Jugement de divorce (entretien post-divorce, augmentation des conclusions) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 11.07.2018 5A 568/2018 (5A_568/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=11.07.2018&to_date=11.07.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=24&azaclir=aza&highlight_docid=aza%3A%2F%2F11-07-2018-5A_568-2018&number_of_ranks=31",
+    "harvestDate": "2026-04-08T03:59:29.442Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 572/2024",
+    "date": "2024-12-20",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "report d'audience (divorce sur demande unilatérale) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 20.12.2024 5A 572/2024 (5A_572/2024)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=7&from_date=20.12.2024&to_date=23.12.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=62&azaclir=aza&highlight_docid=aza%3A%2F%2F20-12-2024-5A_572-2024&number_of_ranks=65",
+    "harvestDate": "2026-04-08T03:59:29.442Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 601/2018",
+    "date": "2018-07-23",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "assistance judiciaire (divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 23.07.2018 5A 601/2018 (5A_601/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=23.07.2018&to_date=23.07.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=23&azaclir=aza&highlight_docid=aza%3A%2F%2F23-07-2018-5A_601-2018&number_of_ranks=26",
+    "harvestDate": "2026-04-08T03:59:29.531Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 601/2024",
+    "date": "2024-10-22",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles (retrait de l'autorité parentale) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 22.10.2024 5A 601/2024 (5A_601/2024)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=4&from_date=22.10.2024&to_date=22.10.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=33&azaclir=aza&highlight_docid=aza%3A%2F%2F22-10-2024-5A_601-2024&number_of_ranks=35",
+    "harvestDate": "2026-04-08T03:59:29.531Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 610/2022",
+    "date": "2022-11-02",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "prérogatives parentales (autorité parentale) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 02.11.2022 5A 610/2022 (5A_610/2022)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=02.11.2022&to_date=02.11.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=29&azaclir=aza&highlight_docid=aza%3A%2F%2F02-11-2022-5A_610-2022&number_of_ranks=41",
+    "harvestDate": "2026-04-08T03:59:29.549Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 615/2023",
+    "date": "2023-09-07",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "effet suspensif (garde de l'enfant né hors hors mariage; mesures provisionnelles) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 07.09.2023 5A 615/2023 (5A_615/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=5&from_date=06.09.2023&to_date=09.09.2023&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=47&azaclir=aza&highlight_docid=aza%3A%2F%2F07-09-2023-5A_615-2023&number_of_ranks=88",
+    "harvestDate": "2026-04-08T03:59:29.565Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 621/2019",
+    "date": "2019-09-04",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles de divorce (droit aux relations personnelles) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 04.09.2019 5A 621/2019 (5A_621/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=04.09.2019&to_date=04.09.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=13&azaclir=aza&highlight_docid=aza%3A%2F%2F04-09-2019-5A_621-2019&number_of_ranks=24",
+    "harvestDate": "2026-04-08T03:59:29.566Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 633/2022",
+    "date": "2023-03-08",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "parents non mariés, modification de la garde | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 08.03.2023 5A 633/2022 (5A_633/2022)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=08.03.2023&to_date=08.03.2023&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=2&azaclir=aza&highlight_docid=aza%3A%2F%2F08-03-2023-5A_633-2022&number_of_ranks=34",
+    "harvestDate": "2026-04-08T03:59:29.610Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 635/2018",
+    "date": "2019-01-14",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles (divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 14.01.2019 5A 635/2018 (5A_635/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=14.01.2019&to_date=14.01.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=4&azaclir=aza&highlight_docid=aza%3A%2F%2F14-01-2019-5A_635-2018&number_of_ranks=23",
+    "harvestDate": "2026-04-08T03:59:29.611Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 64/2018",
+    "date": "2018-08-14",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles (divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 14.08.2018 5A 64/2018 (5A_64/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=14.08.2018&to_date=14.08.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=6&azaclir=aza&highlight_docid=aza%3A%2F%2F14-08-2018-5A_64-2018&number_of_ranks=26",
+    "harvestDate": "2026-04-08T03:59:29.628Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 645/2021",
+    "date": "2022-02-02",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles de divorce (contributions d'entretien, irrecevabilité) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 02.02.2022 5A 645/2021 (5A_645/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=02.02.2022&to_date=02.02.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=8&azaclir=aza&highlight_docid=aza%3A%2F%2F02-02-2022-5A_645-2021&number_of_ranks=50",
+    "harvestDate": "2026-04-08T03:59:29.648Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 65/2022",
+    "date": "2023-01-16",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (contributions d'entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 16.01.2023 5A 65/2022 (5A_65/2022)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=13.01.2023&to_date=16.01.2023&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=8&azaclir=aza&highlight_docid=aza%3A%2F%2F16-01-2023-5A_65-2022&number_of_ranks=56",
+    "harvestDate": "2026-04-08T03:59:29.649Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 659/2021",
+    "date": "2022-05-10",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (contribution d'entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 10.05.2022 5A 659/2021 (5A_659/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=10.05.2022&to_date=10.05.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=10&azaclir=aza&highlight_docid=aza%3A%2F%2F10-05-2022-5A_659-2021&number_of_ranks=21",
+    "harvestDate": "2026-04-08T03:59:29.687Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 669/2020",
+    "date": "2021-03-25",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (garde des enfants, liquidation du régime matrimonial) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 25.03.2021 5A 669/2020 (5A_669/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=4&from_date=25.03.2021&to_date=25.03.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=34&azaclir=aza&highlight_docid=aza%3A%2F%2F25-03-2021-5A_669-2020&number_of_ranks=44",
+    "harvestDate": "2026-04-08T03:59:29.704Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 678/2023",
+    "date": "2024-06-20",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (garde, contributions d'entretien, etc.) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 20.06.2024 5A 678/2023 (5A_678/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=4&from_date=20.06.2024&to_date=23.06.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=40&azaclir=aza&highlight_docid=aza%3A%2F%2F20-06-2024-5A_678-2023&number_of_ranks=51",
+    "harvestDate": "2026-04-08T03:59:29.722Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 679/2019",
+    "date": "2021-07-05",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 05.07.2021 5A 679/2019 (5A_679/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=5&from_date=04.07.2021&to_date=07.07.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=41&azaclir=aza&highlight_docid=aza%3A%2F%2F05-07-2021-5A_679-2019&number_of_ranks=73",
+    "harvestDate": "2026-04-08T03:59:29.722Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 683/2023",
+    "date": "2024-06-13",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "droit de visite des parents d'accueil | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 13.06.2024 5A 683/2023 (5A_683/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=5&from_date=12.06.2024&to_date=15.06.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=43&azaclir=aza&highlight_docid=aza%3A%2F%2F13-06-2024-5A_683-2023&number_of_ranks=94",
+    "harvestDate": "2026-04-08T03:59:29.739Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 687/2022",
+    "date": "2022-11-02",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 02.11.2022 5A 687/2022 (5A_687/2022)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=02.11.2022&to_date=02.11.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=18&azaclir=aza&highlight_docid=aza%3A%2F%2F02-11-2022-5A_687-2022&number_of_ranks=41",
+    "harvestDate": "2026-04-08T03:59:29.759Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 689/2019",
+    "date": "2020-03-05",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (décision partielle sur le principe du divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 05.03.2020 5A 689/2019 (5A_689/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=05.03.2020&to_date=08.03.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=20&azaclir=aza&highlight_docid=aza%3A%2F%2F05-03-2020-5A_689-2019&number_of_ranks=52",
+    "harvestDate": "2026-04-08T03:59:29.760Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 690/2020",
+    "date": "2020-11-05",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "garde et relations personnelles, déplacement du lieu de résidence des enfants à l'étranger | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 05.11.2020 5A 690/2020 (5A_690/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=04.11.2020&to_date=07.11.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=22&azaclir=aza&highlight_docid=aza%3A%2F%2F05-11-2020-5A_690-2020&number_of_ranks=65",
+    "harvestDate": "2026-04-08T03:59:29.760Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 692/2023",
+    "date": "2024-07-04",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (garde; contributions d'entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 04.07.2024 5A 692/2023 (5A_692/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=04.07.2024&to_date=04.07.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=7&azaclir=aza&highlight_docid=aza%3A%2F%2F04-07-2024-5A_692-2023&number_of_ranks=31",
+    "harvestDate": "2026-04-08T03:59:29.760Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 694/2020",
+    "date": "2021-05-07",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles, modification de la contribution à l'entretien de l'enfant | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 07.05.2021 5A 694/2020 (5A_694/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=07.05.2021&to_date=07.05.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=6&azaclir=aza&highlight_docid=aza%3A%2F%2F07-05-2021-5A_694-2020&number_of_ranks=31",
+    "harvestDate": "2026-04-08T03:59:29.777Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 718/2021",
+    "date": "2022-06-02",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "Divorce (décision séparée sur le principe du divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 02.06.2022 5A 718/2021 (5A_718/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=02.06.2022&to_date=05.06.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=21&azaclir=aza&highlight_docid=aza%3A%2F%2F02-06-2022-5A_718-2021&number_of_ranks=53",
+    "harvestDate": "2026-04-08T03:59:29.832Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 728/2020",
+    "date": "2022-01-12",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 12.01.2022 5A 728/2020 (5A_728/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=09.01.2022&to_date=12.01.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=19&azaclir=aza&highlight_docid=aza%3A%2F%2F12-01-2022-5A_728-2020&number_of_ranks=82",
+    "harvestDate": "2026-04-08T03:59:29.860Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 745/2019",
+    "date": "2020-04-02",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (entretien post-divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 02.04.2020 5A 745/2019 (5A_745/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=02.04.2020&to_date=05.04.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=24&azaclir=aza&highlight_docid=aza%3A%2F%2F02-04-2020-5A_745-2019&number_of_ranks=42",
+    "harvestDate": "2026-04-08T03:59:29.919Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 751/2022",
+    "date": "2024-07-03",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "modification de jugement de divorce (contributions d'entretien | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 03.07.2024 5A 751/2022 (5A_751/2022)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=03.07.2024&to_date=03.07.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=7&azaclir=aza&highlight_docid=aza%3A%2F%2F03-07-2024-5A_751-2022&number_of_ranks=34",
+    "harvestDate": "2026-04-08T03:59:29.936Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 759/2023",
+    "date": "2024-03-20",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "droit de visite (enfant né hors mariage) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 20.03.2024 5A 759/2023 (5A_759/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=20.03.2024&to_date=20.03.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=18&azaclir=aza&highlight_docid=aza%3A%2F%2F20-03-2024-5A_759-2023&number_of_ranks=35",
+    "harvestDate": "2026-04-08T03:59:29.954Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 762/2020",
+    "date": "2021-02-09",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "modification de la garde de l'enfant et de la contribution d'entretien en sa faveur (parents non mariés) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 09.02.2021 5A 762/2020 (5A_762/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=06.02.2021&to_date=09.02.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=5&azaclir=aza&highlight_docid=aza%3A%2F%2F09-02-2021-5A_762-2020&number_of_ranks=63",
+    "harvestDate": "2026-04-08T03:59:29.954Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 763/2021",
+    "date": "2021-10-11",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles de divorce (contribution d'entretien entre époux) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 11.10.2021 5A 763/2021 (5A_763/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=08.10.2021&to_date=11.10.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=17&azaclir=aza&highlight_docid=aza%3A%2F%2F11-10-2021-5A_763-2021&number_of_ranks=39",
+    "harvestDate": "2026-04-08T03:59:29.954Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 768/2019",
+    "date": "2022-03-21",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "modification des mesures protectrices de l'union conjuugale (garde et attribution du logement familial) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 21.03.2022 5A 768/2019 (5A_768/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=18.03.2022&to_date=21.03.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=9&azaclir=aza&highlight_docid=aza%3A%2F%2F21-03-2022-5A_768-2019&number_of_ranks=65",
+    "harvestDate": "2026-04-08T03:59:29.971Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 779/2021",
+    "date": "2022-12-16",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (contribution entre époux, liquidation du régime matrimonial) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 16.12.2022 5A 779/2021 (5A_779/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=15.12.2022&to_date=18.12.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=14&azaclir=aza&highlight_docid=aza%3A%2F%2F16-12-2022-5A_779-2021&number_of_ranks=62",
+    "harvestDate": "2026-04-08T03:59:30.013Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 781/2018",
+    "date": "2018-10-08",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "retrait de l'autorité parentale (mesures provisionnelles) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 08.10.2018 5A 781/2018 (5A_781/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=4&from_date=08.10.2018&to_date=08.10.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=32&azaclir=aza&highlight_docid=aza%3A%2F%2F08-10-2018-5A_781-2018&number_of_ranks=46",
+    "harvestDate": "2026-04-08T03:59:30.013Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 788/2019",
+    "date": "2019-10-21",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (liquidation des rapports patrimoniaux, entretien post-divorce et partage des avoirs LPP) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 21.10.2019 5A 788/2019 (5A_788/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=21.10.2019&to_date=21.10.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=15&azaclir=aza&highlight_docid=aza%3A%2F%2F21-10-2019-5A_788-2019&number_of_ranks=24",
+    "harvestDate": "2026-04-08T03:59:30.030Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 791/2018",
+    "date": "2018-10-04",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles de divorce (autorisation à déplacer le lieu de résidence de l'enfant) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 04.10.2018 5A 791/2018 (5A_791/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=04.10.2018&to_date=04.10.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=18&azaclir=aza&highlight_docid=aza%3A%2F%2F04-10-2018-5A_791-2018&number_of_ranks=20",
+    "harvestDate": "2026-04-08T03:59:30.031Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 8/2023",
+    "date": "2024-04-02",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles de divorce (contributions d'entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 02.04.2024 5A 8/2023 (5A_8/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=02.04.2024&to_date=02.04.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=5&azaclir=aza&highlight_docid=aza%3A%2F%2F02-04-2024-5A_8-2023&number_of_ranks=50",
+    "harvestDate": "2026-04-08T03:59:30.051Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 80/2023",
+    "date": "2023-10-11",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "Divorce (contribution d'entretien, liquidation du régime matrimonial) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 11.10.2023 5A 80/2023 (5A_80/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=11.10.2023&to_date=11.10.2023&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=2&azaclir=aza&highlight_docid=aza%3A%2F%2F11-10-2023-5A_80-2023&number_of_ranks=30",
+    "harvestDate": "2026-04-08T03:59:30.070Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 801/2019",
+    "date": "2020-05-26",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (contributions d'entretien post-divorce et liquidation du régime matrimonial)) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 26.05.2020 5A 801/2019 (5A_801/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=26.05.2020&to_date=26.05.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=7&azaclir=aza&highlight_docid=aza%3A%2F%2F26-05-2020-5A_801-2019&number_of_ranks=67",
+    "harvestDate": "2026-04-08T03:59:30.070Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 808/2022",
+    "date": "2023-06-12",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures protectrices de l'union conjugale (garde des enfants mineurs, contributions d'entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 12.06.2023 5A 808/2022 (5A_808/2022)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=5&from_date=10.06.2023&to_date=13.06.2023&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=45&azaclir=aza&highlight_docid=aza%3A%2F%2F12-06-2023-5A_808-2022&number_of_ranks=57",
+    "harvestDate": "2026-04-08T03:59:30.089Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 815/2024",
+    "date": "2024-12-17",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles (retrait du droit de déterminer le lieu de résidence et la garde des mineurs) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 17.12.2024 5A 815/2024 (5A_815/2024)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=4&from_date=17.12.2024&to_date=17.12.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=37&azaclir=aza&highlight_docid=aza%3A%2F%2F17-12-2024-5A_815-2024&number_of_ranks=42",
+    "harvestDate": "2026-04-08T03:59:30.106Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 821/2019",
+    "date": "2020-07-14",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures protectrices de l'union conjugale (garde et entretien de l'enfant) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 14.07.2020 5A 821/2019 (5A_821/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=11.07.2020&to_date=14.07.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=1&azaclir=aza&highlight_docid=aza%3A%2F%2F14-07-2020-5A_821-2019&number_of_ranks=52",
+    "harvestDate": "2026-04-08T03:59:30.125Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 842/2022",
+    "date": "2023-11-23",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (contributions d'entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 23.11.2023 5A 842/2022 (5A_842/2022)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=4&from_date=22.11.2023&to_date=25.11.2023&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=36&azaclir=aza&highlight_docid=aza%3A%2F%2F23-11-2023-5A_842-2022&number_of_ranks=84",
+    "harvestDate": "2026-04-08T03:59:30.181Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 843/2023",
+    "date": "2024-06-28",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "attribution de la garde d'un enfant mineur | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 28.06.2024 5A 843/2023 (5A_843/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=5&from_date=28.06.2024&to_date=01.07.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=46&azaclir=aza&highlight_docid=aza%3A%2F%2F28-06-2024-5A_843-2023&number_of_ranks=50",
+    "harvestDate": "2026-04-08T03:59:30.181Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 847/2021",
+    "date": "2023-01-10",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (liquidation du régime matrimonial) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 10.01.2023 5A 847/2021 (5A_847/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=10.01.2023&to_date=10.01.2023&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=5&azaclir=aza&highlight_docid=aza%3A%2F%2F10-01-2023-5A_847-2021&number_of_ranks=26",
+    "harvestDate": "2026-04-08T03:59:30.181Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 857/2021",
+    "date": "2021-11-11",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "récusation (annulation d'un jugement de divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 11.11.2021 5A 857/2021 (5A_857/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=4&from_date=11.11.2021&to_date=11.11.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=31&azaclir=aza&highlight_docid=aza%3A%2F%2F11-11-2021-5A_857-2021&number_of_ranks=41",
+    "harvestDate": "2026-04-08T03:59:30.214Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 866/2018",
+    "date": "2019-03-18",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (droit de visite; frais et dépens) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 18.03.2019 5A 866/2018 (5A_866/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=18.03.2019&to_date=18.03.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=10&azaclir=aza&highlight_docid=aza%3A%2F%2F18-03-2019-5A_866-2018&number_of_ranks=29",
+    "harvestDate": "2026-04-08T03:59:30.233Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 869/2019",
+    "date": "2019-11-12",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles de divorce (entretien des enfants) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 12.11.2019 5A 869/2019 (5A_869/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=5&from_date=12.11.2019&to_date=12.11.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=42&azaclir=aza&highlight_docid=aza%3A%2F%2F12-11-2019-5A_869-2019&number_of_ranks=43",
+    "harvestDate": "2026-04-08T03:59:30.234Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 880/2023",
+    "date": "2024-10-21",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "modification d'un jugement de divorce étranger | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 21.10.2024 5A 880/2023 (5A_880/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=21.10.2024&to_date=21.10.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=10&azaclir=aza&highlight_docid=aza%3A%2F%2F21-10-2024-5A_880-2023&number_of_ranks=34",
+    "harvestDate": "2026-04-08T03:59:30.320Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 897/2023",
+    "date": "2024-01-08",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "retrait de garde et du droit de déterminer le lieu de résidence des enfants | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 08.01.2024 5A 897/2023 (5A_897/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=05.01.2024&to_date=08.01.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=13&azaclir=aza&highlight_docid=aza%3A%2F%2F08-01-2024-5A_897-2023&number_of_ranks=44",
+    "harvestDate": "2026-04-08T03:59:30.357Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 902/2020",
+    "date": "2021-01-25",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "modification de jugement de divorce | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 25.01.2021 5A 902/2020 (5A_902/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=7&from_date=25.01.2021&to_date=28.01.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=66&azaclir=aza&highlight_docid=aza%3A%2F%2F25-01-2021-5A_902-2020&number_of_ranks=88",
+    "harvestDate": "2026-04-08T03:59:30.376Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 904/2018",
+    "date": "2019-02-20",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "retrait de garde, droit de déterminer le lieu de résidence des enfants (ratification d'une clause-péril ) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 20.02.2019 5A 904/2018 (5A_904/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=20.02.2019&to_date=20.02.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=15&azaclir=aza&highlight_docid=aza%3A%2F%2F20-02-2019-5A_904-2018&number_of_ranks=35",
+    "harvestDate": "2026-04-08T03:59:30.376Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 912/2019",
+    "date": "2020-07-13",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (partage LPP) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 13.07.2020 5A 912/2019 (5A_912/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=11.07.2020&to_date=14.07.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=23&azaclir=aza&highlight_docid=aza%3A%2F%2F13-07-2020-5A_912-2019&number_of_ranks=52",
+    "harvestDate": "2026-04-08T03:59:30.393Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 914/2023",
+    "date": "2024-07-10",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "avis aux débiteurs, reconnaissance d'un jugement de divorce étranger | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 10.07.2024 5A 914/2023 (5A_914/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=10.07.2024&to_date=10.07.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=2&azaclir=aza&highlight_docid=aza%3A%2F%2F10-07-2024-5A_914-2023&number_of_ranks=42",
+    "harvestDate": "2026-04-08T03:59:30.415Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 928/2023",
+    "date": "2023-12-12",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 12.12.2023 5A 928/2023 (5A_928/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=5&from_date=12.12.2023&to_date=12.12.2023&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=42&azaclir=aza&highlight_docid=aza%3A%2F%2F12-12-2023-5A_928-2023&number_of_ranks=43",
+    "harvestDate": "2026-04-08T03:59:30.437Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 943/2019",
+    "date": "2020-04-29",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "modification de l'attribution de l'autorité parentale, droit aux relations personnelles, entretien | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 29.04.2020 5A 943/2019 (5A_943/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=29.04.2020&to_date=29.04.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=26&azaclir=aza&highlight_docid=aza%3A%2F%2F29-04-2020-5A_943-2019&number_of_ranks=36",
+    "harvestDate": "2026-04-08T03:59:30.480Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 951/2020",
+    "date": "2021-02-17",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "autorité parentale (modification) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 17.02.2021 5A 951/2020 (5A_951/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=17.02.2021&to_date=17.02.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=2&azaclir=aza&highlight_docid=aza%3A%2F%2F17-02-2021-5A_951-2020&number_of_ranks=43",
+    "harvestDate": "2026-04-08T03:59:30.498Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 952/2019",
+    "date": "2020-12-02",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (LPP, entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 02.12.2020 5A 952/2019 (5A_952/2019)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=3&from_date=02.12.2020&to_date=02.12.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=23&azaclir=aza&highlight_docid=aza%3A%2F%2F02-12-2020-5A_952-2019&number_of_ranks=40",
+    "harvestDate": "2026-04-08T03:59:30.498Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 967/2020",
+    "date": "2021-07-02",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "modification du jugement de divorce (contribution d'entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 02.07.2021 5A 967/2020 (5A_967/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=02.07.2021&to_date=02.07.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=1&azaclir=aza&highlight_docid=aza%3A%2F%2F02-07-2021-5A_967-2020&number_of_ranks=30",
+    "harvestDate": "2026-04-08T03:59:30.533Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 967/2023",
+    "date": "2024-11-04",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (contributions d'entretien, indemnité équitable; liquidation du régime matrimonial) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 04.11.2024 5A 967/2023 (5A_967/2023)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=5&from_date=02.11.2024&to_date=05.11.2024&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=47&azaclir=aza&highlight_docid=aza%3A%2F%2F04-11-2024-5A_967-2023&number_of_ranks=76",
+    "harvestDate": "2026-04-08T03:59:30.533Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 971/2020",
+    "date": "2021-11-19",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "modification de mesures protectrices de l'union conjugale, mesures provisionnelles de divorce (entretien) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 19.11.2021 5A 971/2020 (5A_971/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=17.11.2021&to_date=20.11.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=4&azaclir=aza&highlight_docid=aza%3A%2F%2F19-11-2021-5A_971-2020&number_of_ranks=78",
+    "harvestDate": "2026-04-08T03:59:30.550Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 978/2018",
+    "date": "2019-04-15",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "divorce (entretien des enfants) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 15.04.2019 5A 978/2018 (5A_978/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=15.04.2019&to_date=15.04.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=8&azaclir=aza&highlight_docid=aza%3A%2F%2F15-04-2019-5A_978-2018&number_of_ranks=29",
+    "harvestDate": "2026-04-08T03:59:30.550Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 981/2021",
+    "date": "2022-03-16",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles de divorce | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 16.03.2022 5A 981/2021 (5A_981/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=4&from_date=16.03.2022&to_date=16.03.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=35&azaclir=aza&highlight_docid=aza%3A%2F%2F16-03-2022-5A_981-2021&number_of_ranks=36",
+    "harvestDate": "2026-04-08T03:59:30.573Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 987/2021",
+    "date": "2022-04-12",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "fixation des relations personnelles, garde (enfant né hors mariage) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 12.04.2022 5A 987/2021 (5A_987/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=12.04.2022&to_date=12.04.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=5&azaclir=aza&highlight_docid=aza%3A%2F%2F12-04-2022-5A_987-2021&number_of_ranks=24",
+    "harvestDate": "2026-04-08T03:59:30.593Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 998/2018",
+    "date": "2019-02-25",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "récusation (divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 25.02.2019 5A 998/2018 (5A_998/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=25.02.2019&to_date=25.02.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=10&azaclir=aza&highlight_docid=aza%3A%2F%2F25-02-2019-5A_998-2018&number_of_ranks=41",
+    "harvestDate": "2026-04-08T03:59:30.612Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5A 999/2018",
+    "date": "2019-05-15",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "mesures provisionnelles en instance de divorce | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 15.05.2019 5A 999/2018 (5A_999/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=15.05.2019&to_date=15.05.2019&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=6&azaclir=aza&highlight_docid=aza%3A%2F%2F15-05-2019-5A_999-2018&number_of_ranks=47",
+    "harvestDate": "2026-04-08T03:59:30.613Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5D 116/2018",
+    "date": "2018-07-02",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "assistance judiciaire (divorce, dépens) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 02.07.2018 5D 116/2018 (5D_116/2018)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=2&from_date=02.07.2018&to_date=02.07.2018&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=17&azaclir=aza&highlight_docid=aza%3A%2F%2F02-07-2018-5D_116-2018&number_of_ranks=33",
+    "harvestDate": "2026-04-08T03:59:30.646Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5D 118/2021",
+    "date": "2021-10-15",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "rémunération du conseil juridique commis d'office (divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 15.10.2021 5D 118/2021 (5D_118/2021)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=12.10.2021&to_date=15.10.2021&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=3&azaclir=aza&highlight_docid=aza%3A%2F%2F15-10-2021-5D_118-2021&number_of_ranks=82",
+    "harvestDate": "2026-04-08T03:59:30.646Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5D 31/2022",
+    "date": "2022-08-11",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "indemnité du conseil d'office (divorce) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 11.08.2022 5D 31/2022 (5D_31/2022)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=09.08.2022&to_date=12.08.2022&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=7&azaclir=aza&highlight_docid=aza%3A%2F%2F11-08-2022-5D_31-2022&number_of_ranks=63",
+    "harvestDate": "2026-04-08T03:59:30.880Z",
+    "source": "entscheidsuche.ch"
+  },
+  {
+    "signature": "5D 36/2020",
+    "date": "2020-03-09",
+    "tribunal": "TF",
+    "domaine": "famille",
+    "resume": "frais et dépens (divorce, reconnaissance et complément) | Droit de la famille",
+    "principe": "Tribunal fédéral IIe Cour de droit civil 09.03.2020 5D 36/2020 (5D_36/2020)",
+    "articlesLies": [],
+    "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=4&from_date=09.03.2020&to_date=09.03.2020&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=&rank=32&azaclir=aza&highlight_docid=aza%3A%2F%2F09-03-2020-5D_36-2020&number_of_ranks=35",
+    "harvestDate": "2026-04-08T03:59:30.896Z",
+    "source": "entscheidsuche.ch"
   }
 ]

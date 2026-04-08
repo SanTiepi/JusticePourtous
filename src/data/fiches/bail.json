@@ -121,7 +121,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire constate de la moisissure ou de l'humidite persistante dans son logement loue",
+    "profane_aliases": [
+      "appart moisi",
+      "mur noir humide",
+      "odeur d'humidite chez moi",
+      "champignon sur les murs",
+      "taches noires au plafond"
+    ],
+    "negative_signals": [
+      "probleme de charges, pas de defaut physique",
+      "bruit du voisin sans defaut materiel",
+      "moisissure causee par le locataire lui-meme"
+    ],
+    "required_facts": [
+      "duree du probleme",
+      "signalement ecrit au bailleur",
+      "canton",
+      "localisation du defaut dans le logement"
+    ]
   },
   {
     "id": "bail_defaut_bruit",
@@ -235,7 +254,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire subit des nuisances sonores importantes dans son logement loue",
+    "profane_aliases": [
+      "voisins trop bruyants",
+      "bruit insupportable dans l'immeuble",
+      "chantier a cote de chez moi",
+      "je n'arrive plus a dormir a cause du bruit",
+      "tapage nocturne repetitif"
+    ],
+    "negative_signals": [
+      "bruit ponctuel un soir isole",
+      "bruit venant de la rue sans lien avec l'immeuble",
+      "nuisances olfactives sans bruit"
+    ],
+    "required_facts": [
+      "type de bruit",
+      "frequence et horaires",
+      "signalement ecrit au bailleur ou a la regie",
+      "canton"
+    ]
   },
   {
     "id": "bail_resiliation_conteste",
@@ -357,7 +395,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire a recu un conge de son bailleur et souhaite le contester",
+    "profane_aliases": [
+      "on me vire de mon appart",
+      "j'ai recu une lettre de resiliation",
+      "la regie veut me mettre dehors",
+      "mon bail est resilie c'est legal ?",
+      "conge abusif"
+    ],
+    "negative_signals": [
+      "le locataire veut lui-meme resilier son bail",
+      "litige sur le loyer sans conge recu",
+      "demande de prolongation sans contestation"
+    ],
+    "required_facts": [
+      "date de reception du conge",
+      "motif invoque par le bailleur",
+      "duree du bail",
+      "canton"
+    ]
   },
   {
     "id": "bail_loyer_abusif",
@@ -467,7 +524,27 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire pense que son loyer est trop eleve par rapport au marche ou au rendement de l'immeuble",
+    "profane_aliases": [
+      "mon loyer est trop cher",
+      "loyer excessif par rapport au quartier",
+      "la regie abuse sur le prix",
+      "est-ce que je paye trop de loyer ?",
+      "loyer injuste"
+    ],
+    "negative_signals": [
+      "contestation du loyer initial a l'entree",
+      "litige sur les charges, pas sur le loyer de base",
+      "augmentation de loyer contestee"
+    ],
+    "required_facts": [
+      "montant du loyer actuel",
+      "loyer du locataire precedent si connu",
+      "date de debut du bail",
+      "canton",
+      "taux hypothecaire de reference"
+    ]
   },
   {
     "id": "bail_depot_garantie",
@@ -564,7 +641,27 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire a un probleme avec sa garantie de loyer ou sa caution",
+    "profane_aliases": [
+      "la regie ne rend pas ma caution",
+      "on me demande 3 mois de caution",
+      "depot de garantie bloque",
+      "je veux recuperer ma garantie",
+      "probleme avec ma caution de loyer"
+    ],
+    "negative_signals": [
+      "litige sur le loyer mensuel",
+      "probleme de charges",
+      "contestation de l'etat des lieux sans lien avec la garantie"
+    ],
+    "required_facts": [
+      "montant de la garantie",
+      "date de fin du bail",
+      "garantie sur compte bloque ou assurance",
+      "canton",
+      "degats contestes"
+    ]
   },
   {
     "id": "bail_charges_contestees",
@@ -664,7 +761,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire conteste le decompte de charges ou les frais accessoires demandes par le bailleur",
+    "profane_aliases": [
+      "decompte de charges trop eleve",
+      "charges locatives abusives",
+      "on me facture des trucs bizarres",
+      "frais de chauffage exageres",
+      "je dois payer un supplement de charges"
+    ],
+    "negative_signals": [
+      "contestation du loyer de base",
+      "probleme de defaut physique du logement",
+      "litige sur la garantie de loyer"
+    ],
+    "required_facts": [
+      "type de charges contestees",
+      "forfait ou acompte",
+      "decompte recu ou non",
+      "canton"
+    ]
   },
   {
     "id": "bail_sous_location",
@@ -767,7 +883,27 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire veut sous-louer tout ou partie de son logement",
+    "profane_aliases": [
+      "je veux mettre mon appart sur Airbnb",
+      "puis-je sous-louer une chambre ?",
+      "sous-location pendant mes vacances",
+      "je pars 6 mois, je veux quelqu'un dans l'appart",
+      "droit de sous-louer"
+    ],
+    "negative_signals": [
+      "refus de sous-location par le bailleur",
+      "colocation avec contrat commun",
+      "echange de logement"
+    ],
+    "required_facts": [
+      "duree de la sous-location",
+      "tout ou partie du logement",
+      "accord du bailleur demande ou non",
+      "loyer de sous-location prevu",
+      "canton"
+    ]
   },
   {
     "id": "bail_travaux_non_faits",
@@ -878,7 +1014,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le bailleur refuse ou tarde a effectuer des reparations necessaires dans le logement",
+    "profane_aliases": [
+      "la regie ne repare rien",
+      "travaux jamais faits dans mon appart",
+      "chaudiere en panne et personne ne vient",
+      "fuite d'eau pas reparee",
+      "bailleur qui ne fait rien"
+    ],
+    "negative_signals": [
+      "menu entretien a charge du locataire",
+      "travaux de renovation volontaires du bailleur",
+      "defaut cause par le locataire"
+    ],
+    "required_facts": [
+      "nature du defaut ou de la reparation",
+      "signalement ecrit au bailleur",
+      "delai depuis la demande",
+      "canton"
+    ]
   },
   {
     "id": "bail_augmentation_loyer",
@@ -981,7 +1136,27 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire a recu une notification d'augmentation de loyer et veut la contester",
+    "profane_aliases": [
+      "mon loyer augmente",
+      "hausse de loyer abusive",
+      "la regie monte le prix",
+      "augmentation a cause du taux hypothecaire",
+      "on me demande plus de loyer"
+    ],
+    "negative_signals": [
+      "loyer initial conteste a l'entree",
+      "baisse de loyer souhaitee sans augmentation recue",
+      "charges en hausse, pas le loyer de base"
+    ],
+    "required_facts": [
+      "montant actuel et nouveau loyer",
+      "motif invoque",
+      "formulaire officiel recu ou non",
+      "date de reception",
+      "canton"
+    ]
   },
   {
     "id": "bail_etat_des_lieux",
@@ -1082,7 +1257,27 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire quitte son logement et a un probleme avec l'etat des lieux de sortie",
+    "profane_aliases": [
+      "probleme a la remise des cles",
+      "degats contestes a la sortie",
+      "on me facture des reparations abusives",
+      "etat des lieux de sortie injuste",
+      "nettoyage pas accepte"
+    ],
+    "negative_signals": [
+      "etat des lieux d'entree",
+      "litige pendant le bail sans restitution",
+      "probleme de garantie sans lien avec l'etat des lieux"
+    ],
+    "required_facts": [
+      "date de sortie",
+      "defauts contestes",
+      "etat des lieux d'entree disponible",
+      "nettoyage professionnel effectue ou non",
+      "canton"
+    ]
   },
   {
     "id": "bail_sous_location_refusee",
@@ -1181,7 +1376,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le bailleur a refuse la demande de sous-location du locataire",
+    "profane_aliases": [
+      "la regie refuse ma sous-location",
+      "refus Airbnb par le bailleur",
+      "pas le droit de sous-louer",
+      "sous-location interdite dans mon bail",
+      "bailleur bloque ma sous-location"
+    ],
+    "negative_signals": [
+      "sous-location pas encore demandee",
+      "le locataire n'a jamais fait de demande ecrite",
+      "litige sur le montant du sous-loyer"
+    ],
+    "required_facts": [
+      "motif du refus",
+      "demande ecrite faite ou non",
+      "duree et conditions prevues",
+      "canton"
+    ]
   },
   {
     "id": "bail_animaux",
@@ -1279,7 +1493,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire veut savoir s'il peut garder un animal dans son logement loue",
+    "profane_aliases": [
+      "est-ce que j'ai le droit d'avoir un chien ?",
+      "le bail interdit les animaux",
+      "la regie refuse mon chat",
+      "animal de compagnie en appartement",
+      "clause animaux dans le bail"
+    ],
+    "negative_signals": [
+      "nuisances causees par l'animal d'un voisin",
+      "degats causes par un animal a l'etat des lieux",
+      "allergie d'un voisin"
+    ],
+    "required_facts": [
+      "type d'animal",
+      "clause du bail sur les animaux",
+      "taille du logement",
+      "canton"
+    ]
   },
   {
     "id": "bail_nuisances_voisins",
@@ -1396,7 +1629,27 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire subit des nuisances repetees de la part de ses voisins",
+    "profane_aliases": [
+      "voisin insupportable",
+      "musique a fond la nuit",
+      "voisin qui fait du bruit tout le temps",
+      "odeurs du voisin",
+      "conflits de voisinage dans l'immeuble"
+    ],
+    "negative_signals": [
+      "bruit de chantier exterieur",
+      "defaut de l'immeuble sans lien avec un voisin",
+      "nuisance ponctuelle isolee"
+    ],
+    "required_facts": [
+      "type de nuisance",
+      "frequence",
+      "signalement a la regie ou au bailleur",
+      "preuves recueillies",
+      "canton"
+    ]
   },
   {
     "id": "bail_renovation_forcee",
@@ -1507,7 +1760,27 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le bailleur impose des travaux de renovation dans le logement occupe par le locataire",
+    "profane_aliases": [
+      "travaux forces dans mon appart",
+      "renovation imposee par la regie",
+      "chantier dans l'immeuble pendant que j'habite",
+      "on me deplace pour des travaux",
+      "gros travaux sans mon accord"
+    ],
+    "negative_signals": [
+      "travaux demandes par le locataire",
+      "reparations urgentes necessaires",
+      "renovation apres le depart du locataire"
+    ],
+    "required_facts": [
+      "type de travaux",
+      "duree estimee",
+      "impact sur l'habitabilite",
+      "preavis recu",
+      "canton"
+    ]
   },
   {
     "id": "bail_loyer_initial_abusif",
@@ -1616,7 +1889,27 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire vient d'emmenager et pense que le loyer initial est trop eleve",
+    "profane_aliases": [
+      "loyer de depart trop cher",
+      "le premier loyer est abusif",
+      "ancien locataire payait moins",
+      "prix du loyer a la signature trop haut",
+      "formulaire de loyer initial"
+    ],
+    "negative_signals": [
+      "augmentation de loyer en cours de bail",
+      "contestation apres plusieurs annees",
+      "loyer commercial, pas d'habitation"
+    ],
+    "required_facts": [
+      "loyer actuel",
+      "loyer du locataire precedent si connu",
+      "formulaire officiel recu",
+      "date d'entree dans le logement",
+      "canton"
+    ]
   },
   {
     "id": "bail_frais_chauffage",
@@ -1727,7 +2020,27 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO/OBLF etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire conteste les frais de chauffage ou le decompte de chauffage recu",
+    "profane_aliases": [
+      "facture de chauffage enorme",
+      "decompte chauffage abusif",
+      "on me demande un supplement de chauffage",
+      "frais de mazout trop eleves",
+      "charges de chauffage exagerees"
+    ],
+    "negative_signals": [
+      "chauffage en panne (releve du defaut)",
+      "charges generales, pas specifiquement le chauffage",
+      "probleme de temperature sans litige financier"
+    ],
+    "required_facts": [
+      "montant conteste",
+      "forfait ou acompte",
+      "decompte detaille recu ou non",
+      "type de chauffage",
+      "canton"
+    ]
   },
   {
     "id": "bail_parking",
@@ -1824,7 +2137,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire a un litige concernant sa place de parking louee",
+    "profane_aliases": [
+      "probleme avec ma place de parking",
+      "parking trop cher",
+      "on m'enleve ma place de parc",
+      "resiliation du parking seul",
+      "place de garage liee au bail"
+    ],
+    "negative_signals": [
+      "probleme de stationnement dans la rue",
+      "amende de parking public",
+      "litige sur le logement sans lien avec le parking"
+    ],
+    "required_facts": [
+      "parking lie au bail principal ou contrat separe",
+      "nature du litige",
+      "preavis recu",
+      "canton"
+    ]
   },
   {
     "id": "bail_cave_grenier",
@@ -1926,7 +2258,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire a un probleme avec sa cave ou son grenier attribue avec le logement",
+    "profane_aliases": [
+      "inondation dans ma cave",
+      "on m'enleve mon grenier",
+      "cave humide",
+      "probleme avec le local de depot",
+      "cave cambriolee, qui repare ?"
+    ],
+    "negative_signals": [
+      "probleme dans le logement principal",
+      "local commercial",
+      "garage ou parking"
+    ],
+    "required_facts": [
+      "nature du probleme",
+      "cave ou grenier mentionne dans le bail",
+      "signalement au bailleur",
+      "canton"
+    ]
   },
   {
     "id": "bail_colocation",
@@ -2029,7 +2380,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire en colocation a un probleme juridique lie au bail commun",
+    "profane_aliases": [
+      "coloc qui part sans payer",
+      "je veux quitter la colocation",
+      "bail solidaire colocation",
+      "un colocataire ne paie pas sa part",
+      "probleme de coloc et de bail"
+    ],
+    "negative_signals": [
+      "sous-location d'une chambre",
+      "conflit personnel sans enjeu juridique",
+      "colocation en bail individuel separe"
+    ],
+    "required_facts": [
+      "type de bail (solidaire ou individuel)",
+      "nombre de colocataires",
+      "nature du litige",
+      "canton"
+    ]
   },
   {
     "id": "bail_deces_locataire",
@@ -2129,7 +2499,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO/CC etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Un locataire est decede et les proches se demandent ce qu'il advient du bail",
+    "profane_aliases": [
+      "mon parent est decede, que faire avec l'appart ?",
+      "deces du locataire et bail",
+      "heritier et bail du defunt",
+      "que devient le bail apres un deces ?",
+      "succession et logement loue"
+    ],
+    "negative_signals": [
+      "locataire vivant qui veut resilier",
+      "deces du bailleur",
+      "separation ou divorce sans deces"
+    ],
+    "required_facts": [
+      "lien avec le defunt",
+      "bail au nom du defunt seul ou conjoint",
+      "heritiers connus",
+      "canton"
+    ]
   },
   {
     "id": "bail_faillite_locataire",
@@ -2233,7 +2622,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire est en difficulte financiere ou en faillite et craint de perdre son logement",
+    "profane_aliases": [
+      "je suis en faillite, je perds mon appart ?",
+      "poursuite et bail",
+      "je n'arrive plus a payer le loyer",
+      "acte de defaut de biens et logement",
+      "suretes demandees par le bailleur"
+    ],
+    "negative_signals": [
+      "retard de paiement simple sans poursuite",
+      "faillite du bailleur",
+      "litige sur le montant du loyer"
+    ],
+    "required_facts": [
+      "stade de la procedure (faillite ou poursuite)",
+      "loyers en retard",
+      "suretes demandees",
+      "canton"
+    ]
   },
   {
     "id": "bail_changement_proprietaire",
@@ -2339,7 +2747,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "L'immeuble a ete vendu et le locataire s'inquiete pour son bail avec le nouveau proprietaire",
+    "profane_aliases": [
+      "l'immeuble est vendu, je perds mon bail ?",
+      "nouveau proprietaire veut me virer",
+      "vente de l'immeuble, que devient mon bail ?",
+      "changement de regie apres vente",
+      "rachat immeuble et locataires"
+    ],
+    "negative_signals": [
+      "changement de gerance sans vente",
+      "travaux du nouveau proprietaire",
+      "litige avec l'ancien proprietaire"
+    ],
+    "required_facts": [
+      "date de la vente",
+      "bail en cours ou renouvele",
+      "conge recu du nouveau proprietaire",
+      "canton"
+    ]
   },
   {
     "id": "bail_droit_preemption",
@@ -2435,7 +2862,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire veut savoir s'il a un droit de preemption pour acheter son logement mis en vente",
+    "profane_aliases": [
+      "est-ce que je peux racheter mon appart ?",
+      "priorite d'achat locataire",
+      "l'immeuble est a vendre, j'ai la priorite ?",
+      "droit de preemption du locataire",
+      "acheter le logement que je loue"
+    ],
+    "negative_signals": [
+      "vente sans interet d'achat du locataire",
+      "changement de proprietaire simple",
+      "copropriete sans vente"
+    ],
+    "required_facts": [
+      "clause contractuelle de preemption",
+      "type de bien (logement ou commercial)",
+      "notification de vente recue",
+      "canton"
+    ]
   },
   {
     "id": "bail_prolongation",
@@ -2548,7 +2994,27 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire a recu un conge et veut demander une prolongation de bail pour eviter les consequences penibles",
+    "profane_aliases": [
+      "je veux rester plus longtemps apres le conge",
+      "prolongation de bail",
+      "je ne trouve pas de logement avant la fin du bail",
+      "consequences penibles du demenagement",
+      "delai supplementaire pour partir"
+    ],
+    "negative_signals": [
+      "contestation du conge (et non prolongation)",
+      "locataire qui veut partir plus tot",
+      "renouvellement automatique du bail"
+    ],
+    "required_facts": [
+      "date du conge",
+      "motif des consequences penibles",
+      "duree de prolongation souhaitee",
+      "recherches de logement effectuees",
+      "canton"
+    ]
   },
   {
     "id": "bail_expulsion",
@@ -2652,7 +3118,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO/CPC etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire fait face a une procedure d'expulsion ou a ete expulse de son logement",
+    "profane_aliases": [
+      "on m'expulse de chez moi",
+      "huissier a la porte",
+      "evacuation forcee",
+      "le bailleur a change les serrures",
+      "procedure d'expulsion en cours"
+    ],
+    "negative_signals": [
+      "conge recu sans procedure d'expulsion",
+      "menace verbale sans acte juridique",
+      "depart volontaire"
+    ],
+    "required_facts": [
+      "jugement d'expulsion rendu ou non",
+      "date prevue de l'expulsion",
+      "recours en cours",
+      "canton"
+    ]
   },
   {
     "id": "bail_etat_lieux_conteste",
@@ -2755,7 +3240,27 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire conteste les defauts ou degats notes dans l'etat des lieux de sortie",
+    "profane_aliases": [
+      "etat des lieux truque",
+      "on m'accuse de degats que j'ai pas faits",
+      "usure normale ou degat ?",
+      "contestation des reparations a la sortie",
+      "desaccord sur l'etat de l'appart"
+    ],
+    "negative_signals": [
+      "etat des lieux d'entree, pas de sortie",
+      "litige sur la garantie sans contestation des degats",
+      "probleme pendant le bail sans restitution"
+    ],
+    "required_facts": [
+      "defauts contestes",
+      "etat des lieux d'entree disponible",
+      "photos ou preuves",
+      "duree d'occupation",
+      "canton"
+    ]
   },
   {
     "id": "bail_reparations_locataire",
@@ -2858,7 +3363,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire se demande quelles reparations sont a sa charge et lesquelles au bailleur",
+    "profane_aliases": [
+      "c'est a moi ou au bailleur de reparer ?",
+      "menu entretien locataire",
+      "qui paie les reparations ?",
+      "joint de douche a changer, c'est a qui ?",
+      "petites reparations dans l'appart"
+    ],
+    "negative_signals": [
+      "grosse reparation structurelle",
+      "defaut existant avant l'entree",
+      "travaux de renovation"
+    ],
+    "required_facts": [
+      "nature de la reparation",
+      "cout estime",
+      "clause du bail sur l'entretien",
+      "canton"
+    ]
   },
   {
     "id": "bail_modification_contrat",
@@ -2955,7 +3479,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le bailleur ou le locataire veut modifier les conditions du bail en cours",
+    "profane_aliases": [
+      "le bailleur change les regles du bail",
+      "modification du contrat de location",
+      "avenant au bail impose",
+      "nouvelles conditions de bail",
+      "on veut changer mon bail"
+    ],
+    "negative_signals": [
+      "augmentation de loyer (procedure specifique)",
+      "resiliation de bail",
+      "renouvellement de bail standard"
+    ],
+    "required_facts": [
+      "modification demandee",
+      "par qui (bailleur ou locataire)",
+      "accord mutuel ou unilateral",
+      "canton"
+    ]
   },
   {
     "id": "bail_droit_retractation",
@@ -3057,7 +3600,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire vient de signer un bail et veut se retracter ou annuler sa signature",
+    "profane_aliases": [
+      "je regrette d'avoir signe le bail",
+      "annuler un bail signe",
+      "delai pour changer d'avis apres signature",
+      "puis-je me desengager du bail ?",
+      "bail signe trop vite"
+    ],
+    "negative_signals": [
+      "resiliation normale en cours de bail",
+      "vice du consentement ou erreur grave",
+      "bail pas encore signe"
+    ],
+    "required_facts": [
+      "date de signature",
+      "date de debut du bail",
+      "motif de la retractation",
+      "canton"
+    ]
   },
   {
     "id": "bail_logement_insalubre",
@@ -3183,7 +3745,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire habite un logement insalubre qui met sa sante en danger",
+    "profane_aliases": [
+      "appart insalubre",
+      "logement dangereux pour la sante",
+      "pas d'eau chaude depuis des semaines",
+      "cafards et logement delabre",
+      "appartement inhabitable"
+    ],
+    "negative_signals": [
+      "defaut mineur sans impact sur la sante",
+      "logement vetuste mais habitable",
+      "nuisances de voisinage"
+    ],
+    "required_facts": [
+      "nature du probleme d'insalubrite",
+      "signalement au bailleur",
+      "rapport medical si impact sante",
+      "canton"
+    ]
   },
   {
     "id": "bail_recherche_logement",
@@ -3309,7 +3890,27 @@
     "maj": "2026-04-07",
     "sourceLoi": "CC/CPC etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "La personne cherche un logement en urgence apres une expulsion, separation ou situation de crise",
+    "profane_aliases": [
+      "je suis a la rue",
+      "ou trouver un logement en urgence ?",
+      "expulse et sans toit",
+      "separation et pas de logement",
+      "aide pour trouver un appart rapidement"
+    ],
+    "negative_signals": [
+      "recherche de logement classique sans urgence",
+      "litige sur un bail existant",
+      "achat immobilier"
+    ],
+    "required_facts": [
+      "raison de l'urgence",
+      "situation familiale",
+      "canton",
+      "revenus et budget",
+      "aides sociales en cours"
+    ]
   },
   {
     "id": "bail_loyers_impayes",
@@ -3434,6 +4035,26 @@
     "maj": "2026-04-07",
     "sourceLoi": "CO etat 2025-01-01",
     "dateVerification": "2026-04-08",
-    "verificationOk": true
+    "verificationOk": true,
+    "match_description": "Le locataire est en retard de paiement de loyer et risque une resiliation ou des poursuites",
+    "profane_aliases": [
+      "j'ai pas paye mon loyer",
+      "retard de loyer, que faire ?",
+      "mise en demeure pour loyer impaye",
+      "je risque de perdre mon appart pour loyer en retard",
+      "menace de resiliation pour non-paiement"
+    ],
+    "negative_signals": [
+      "litige sur le montant du loyer",
+      "loyer consigne volontairement",
+      "charges impayees, pas le loyer de base"
+    ],
+    "required_facts": [
+      "nombre de mois de retard",
+      "mise en demeure recue ou non",
+      "delai fixe par le bailleur",
+      "canton",
+      "capacite a regulariser"
+    ]
   }
 ]

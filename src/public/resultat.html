@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JusticePourtous — Resultat de votre consultation</title>
-  <meta name="description" content="Resultat de votre consultation juridique gratuite. Articles de loi, jurisprudence, modeles de lettres et services competents.">
+  <title>JusticePourtous — Résultat de votre consultation</title>
+  <meta name="description" content="Résultat de votre consultation juridique gratuite. Articles de loi, jurisprudence, modèles de lettres et services compétents.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2696;</text></svg>">
   <link rel="stylesheet" href="/style.css">
 </head>
@@ -22,14 +22,14 @@
     </nav>
 
     <div class="notice-juridique" role="note">
-      <strong>Information juridique generale</strong> — JusticePourtous ne remplace pas un conseil d'avocat personalise. Les informations sont fournies a titre indicatif, sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit.
+      <strong>Information juridique générale</strong> — JusticePourtous ne remplace pas un conseil d'avocat personnalisé. Les informations sont fournies à titre indicatif, sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit.
     </div>
 
     <!-- Search bar replayed at top of results -->
     <div class="result-search-bar" id="resultSearchBar">
       <form onsubmit="refineSearch(event)">
         <div class="search-box search-box-sm">
-          <input type="text" id="refineInput" class="search-input" maxlength="300" autocomplete="off" aria-label="Preciser votre recherche">
+          <input type="text" id="refineInput" class="search-input" maxlength="300" autocomplete="off" aria-label="Préciser votre recherche">
           <button type="submit" class="search-btn search-btn-sm">Relancer</button>
         </div>
       </form>
@@ -60,7 +60,7 @@
     } else if (ficheId) {
       loadResultat(ficheId);
     } else {
-      document.getElementById('resultat').innerHTML = '<div class="error-box">Aucune recherche specifiee. <a href="/">Retour a l\'accueil</a></div>';
+      document.getElementById('resultat').innerHTML = '<div class="error-box">Aucune recherche spécifiée. <a href="/">Retour à l\'accueil</a></div>';
     }
 
     function refineSearch(e) {

@@ -3,98 +3,172 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JusticePourtous — Vos droits. Gratuitement. En 5 clics.</title>
-  <meta name="description" content="72% des Suisses renoncent a faire valoir leurs droits a cause du cout. JusticePourtous vous donne acces au droit suisse, gratuitement et anonymement.">
-  <meta property="og:title" content="JusticePourtous — Vos droits. Gratuitement. En 5 clics.">
-  <meta property="og:description" content="Acces gratuit et anonyme au droit suisse : articles de loi, jurisprudence TF, modeles de lettres, annuaire des services.">
+  <title>JusticePourtous — Le droit suisse, accessible à tous</title>
+  <meta name="description" content="Décrivez votre problème juridique en quelques mots. JusticePourtous identifie votre situation, vos droits, vos délais et les services gratuits près de chez vous.">
+  <meta property="og:title" content="JusticePourtous — Le droit suisse, accessible à tous">
+  <meta property="og:description" content="Triage juridique intelligent. Sources vérifiées. Anonyme et confidentiel.">
   <meta property="og:type" content="website">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2696;</text></svg>">
   <link rel="stylesheet" href="/style.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "JusticePourtous",
-    "description": "Acces gratuit et anonyme au droit suisse",
-    "url": "https://justicepourtous.ch",
-    "applicationCategory": "LegalService",
-    "operatingSystem": "Web",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CHF" },
-    "provider": {
-      "@type": "Organization",
-      "name": "JusticePourtous",
-      "description": "Droit suisse accessible a tous"
-    }
-  }
-  </script>
 </head>
 <body>
-  <div class="container">
-    <nav class="nav">
+
+  <!-- Quick exit -->
+  <a href="https://www.meteosuisse.admin.ch" class="quick-exit" id="quickExit" title="Quitter rapidement" aria-label="Quitter rapidement ce site">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
       <a href="/" class="nav-brand">
-        <span class="logo-mark"></span>
-        JusticePourtous
+        <span class="nav-mark" aria-hidden="true"></span>
+        <span class="nav-wordmark">JusticePourtous</span>
       </a>
-      <ul class="nav-links">
-        <li><a href="/annuaire.html">Annuaire</a></li>
-        <li><a href="/premium.html">Premium</a></li>
-      </ul>
-    </nav>
-
-    <div class="notice-juridique" role="note">
-      <strong>Information juridique generale</strong> — JusticePourtous ne remplace pas un conseil d'avocat personalise. Les informations sont fournies a titre indicatif, sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit.
+      <div class="nav-links">
+        <a href="/annuaire.html">Annuaire</a>
+        <a href="/methodologie.html">Méthodologie</a>
+      </div>
     </div>
+  </nav>
 
-    <header class="hero-search">
-      <h1>Quel est votre <span class="highlight">probleme juridique</span>&nbsp;?</h1>
-      <p class="subtitle">Decrivez votre situation en quelques mots. JusticePourtous trouve les lois, les recours et les services — gratuitement et anonymement.</p>
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-inner">
 
-      <form class="search-form" id="searchForm" onsubmit="handleSearch(event)">
-        <div class="search-box">
+      <!-- Disclaimer visible — requis sur chaque page -->
+      <div class="notice-juridique" role="note">
+        <strong>Information juridique générale</strong> — JusticePourtous ne remplace pas un conseil d'avocat personnalisé. Les informations sont fournies à titre indicatif, sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit.
+      </div>
+
+      <p class="hero-eyebrow">Droit suisse pratique</p>
+      <h1 class="hero-title">
+        Décrivez votre problème.<br>
+        <span class="hero-accent">On vous guide.</span>
+      </h1>
+      <p class="hero-subtitle">
+        JusticePourtous identifie votre situation juridique, vous dit quoi faire,
+        dans quel délai, et vers qui vous tourner &mdash; gratuitement et anonymement.
+      </p>
+
+      <form class="search" id="searchForm" onsubmit="handleSearch(event)">
+        <div class="search-field">
           <input
             type="text"
             id="searchInput"
             class="search-input"
-            placeholder="Ex : mon propriétaire refuse de rembourser ma caution..."
+            placeholder="Mon propriétaire refuse de rembourser ma caution..."
             autocomplete="off"
             autocorrect="off"
             spellcheck="false"
-            maxlength="300"
-            aria-label="Decrivez votre probleme juridique"
+            maxlength="500"
+            aria-label="Décrivez votre problème juridique"
           >
-          <button type="submit" class="search-btn" aria-label="Rechercher">
-            Analyser
+          <button type="submit" class="search-submit">
+            Analyser ma situation
           </button>
         </div>
-        <div class="search-hints">
-          <button type="button" class="search-hint" onclick="fillSearch('mon propriétaire refuse de rembourser ma caution')">caution non remboursee</button>
-          <button type="button" class="search-hint" onclick="fillSearch('licenciement abusif pendant maladie')">licenciement maladie</button>
-          <button type="button" class="search-hint" onclick="fillSearch('heures supplementaires non payees')">heures sup non payees</button>
-          <button type="button" class="search-hint" onclick="fillSearch('commandement de payer opposition')">commandement de payer</button>
+        <div class="search-suggestions">
+          <button type="button" class="suggestion" onclick="fillSearch('mon propriétaire refuse de rembourser ma caution')">Caution non remboursée</button>
+          <button type="button" class="suggestion" onclick="fillSearch('licenciement pendant arrêt maladie')">Licenciement &amp; maladie</button>
+          <button type="button" class="suggestion" onclick="fillSearch('heures supplémentaires non payées')">Heures sup impayées</button>
+          <button type="button" class="suggestion" onclick="fillSearch('j\'ai reçu un commandement de payer')">Commandement de payer</button>
+          <button type="button" class="suggestion" onclick="fillSearch('mon ex ne paie pas la pension')">Pension impayée</button>
         </div>
       </form>
-    </header>
+    </div>
+  </header>
 
-    <section class="domains-section">
-      <h2 class="section-title">Ou parcourez par domaine</h2>
-      <div class="tiles" id="domaines"></div>
-    </section>
-
-    <div class="privacy-badge">
-      <h3>Gratuit et anonyme</h3>
-      <p>Aucune inscription. Aucune donnee stockee. Aucun cookie. Aucun tracking.</p>
-      <div class="privacy-items">
-        <span class="privacy-item"><span class="check">&check;</span> Aucun compte</span>
-        <span class="privacy-item"><span class="check">&check;</span> Aucune donnee</span>
-        <span class="privacy-item"><span class="check">&check;</span> Aucun cookie</span>
-        <span class="privacy-item"><span class="check">&check;</span> Open source</span>
+  <!-- Trust band -->
+  <section class="trust">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <svg class="trust-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 1L3 5V9.5C3 14 6 17.5 10 19C14 17.5 17 14 17 9.5V5L10 1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <div><strong>Anonyme</strong><span>Aucune donnée stockée</span></div>
+      </div>
+      <div class="trust-item">
+        <svg class="trust-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M7 10L9.5 12.5L13.5 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><strong>Sources vérifiées</strong><span>Fedlex, jurisprudence TF</span></div>
+      </div>
+      <div class="trust-item">
+        <svg class="trust-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 8H17M8 8V17" stroke="currentColor" stroke-width="1.5"/></svg>
+        <div><strong>Droit suisse</strong><span>Fédéral et cantonal</span></div>
+      </div>
+      <div class="trust-item">
+        <svg class="trust-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2V18M2 10H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div><strong>Gratuit</strong><span>Consultation libre</span></div>
       </div>
     </div>
+  </section>
 
-    <footer>
-      &copy; 2026 JusticePourtous &mdash; Droit suisse accessible a tous
-    </footer>
-  </div>
+  <!-- How it works -->
+  <section class="process">
+    <div class="process-inner">
+      <h2 class="section-eyebrow">Comment ça marche</h2>
+      <div class="process-steps">
+        <div class="process-step reveal">
+          <span class="process-number">01</span>
+          <div>
+            <h3>Décrivez</h3>
+            <p>Expliquez votre situation en quelques mots, comme vous le feriez à un ami.</p>
+          </div>
+        </div>
+        <div class="process-step reveal" style="animation-delay:.06s">
+          <span class="process-number">02</span>
+          <div>
+            <h3>Comprenez</h3>
+            <p>On identifie votre situation juridique, les lois applicables et la jurisprudence.</p>
+          </div>
+        </div>
+        <div class="process-step reveal" style="animation-delay:.12s">
+          <span class="process-number">03</span>
+          <div>
+            <h3>Agissez</h3>
+            <p>Délais, documents, autorité compétente, modèle de lettre et contacts gratuits.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Domains -->
+  <section class="domains">
+    <div class="domains-inner">
+      <h2 class="section-eyebrow">Parcourir par domaine</h2>
+      <div class="domains-grid" id="domaines"></div>
+    </div>
+  </section>
+
+  <!-- Stat -->
+  <section class="stat">
+    <div class="stat-inner">
+      <div class="stat-number">72<span class="stat-pct">%</span></div>
+      <p class="stat-text">
+        des Suisses renoncent à faire valoir leurs droits à cause du coût.
+        <span class="stat-source">sondage gfs.bern, 2023</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="nav-mark" aria-hidden="true"></span>
+        <span>JusticePourtous</span>
+      </div>
+      <div class="footer-links">
+        <a href="/methodologie.html">Méthodologie</a>
+        <a href="/annuaire.html">Annuaire</a>
+      </div>
+      <div class="footer-legal">
+        JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur.
+        Ce service ne remplace pas un conseil d'avocat personnalisé.
+        En cas de doute, consultez un professionnel du droit.
+      </div>
+      <div class="footer-copy">&copy; 2026 JusticePourtous</div>
+    </div>
+  </footer>
 
   <script>
     function handleSearch(e) {
@@ -110,30 +184,48 @@
       input.focus();
     }
 
+    /* Quick exit: double ESC */
+    var escCount = 0;
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        escCount++;
+        if (escCount >= 2) window.location.replace('https://www.meteosuisse.admin.ch');
+        setTimeout(function() { escCount = 0; }, 500);
+      }
+    });
+
+    /* Nav shadow on scroll */
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('nav-scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    /* Load domains */
     async function loadDomaines() {
       var container = document.getElementById('domaines');
       try {
         var res = await fetch('/api/domaines');
-        if (!res.ok) throw new Error('API indisponible');
+        if (!res.ok) return;
         var data = await res.json();
-        var icons = { bail: 'LOGEMENT', travail: 'TRAVAIL', famille: 'FAMILLE', dettes: 'DETTES', etrangers: 'ETRANGERS' };
-        for (var i = 0; i < data.domaines.length; i++) {
+        var colors = {
+          bail: '#2C5F7C', travail: '#5B4A8A', famille: '#8B5E3C',
+          dettes: '#8B2500', etrangers: '#2D6A4F',
+          assurances: '#4A6741', social: '#6B5B73', violence: '#9B1B30',
+          accident: '#7C5B2C', entreprise: '#3D5A6E'
+        };
+        for (var i = 0; i < data.domaines.length && i < 6; i++) {
           var d = data.domaines[i];
-          var tile = document.createElement('a');
-          tile.className = 'tile';
-          tile.href = '/consulter.html?domaine=' + d.id;
-          tile.style.borderLeftColor = d.couleur;
-          tile.innerHTML =
-            '<div class="tile-content">' +
-              '<div class="tile-label">' + (icons[d.id] || d.id.toUpperCase()) + '</div>' +
-              '<h2>' + d.nom + '</h2>' +
-              '<p>' + d.description + '</p>' +
-            '</div>';
-          container.appendChild(tile);
+          var card = document.createElement('a');
+          card.className = 'domain-card reveal';
+          card.href = '/consulter.html?domaine=' + d.id;
+          card.style.setProperty('--domain-color', colors[d.id] || '#2C5F7C');
+          card.style.animationDelay = (i * 0.06) + 's';
+          card.innerHTML =
+            '<h3 class="domain-name">' + d.nom + '</h3>' +
+            '<p class="domain-desc">' + d.description + '</p>';
+          container.appendChild(card);
         }
-      } catch (e) {
-        container.innerHTML = '';
-      }
+      } catch (e) { /* silent */ }
     }
     loadDomaines();
   </script>

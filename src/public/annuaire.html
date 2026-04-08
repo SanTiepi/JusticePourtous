@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JusticePourtous — Annuaire des services juridiques</title>
-  <meta name="description" content="Annuaire des services juridiques cantonaux : ASLOCA, CSP, syndicats, aide juridictionnelle, conciliation. Telephones et adresses.">
+  <meta name="description" content="Annuaire des services juridiques cantonaux : ASLOCA, CSP, syndicats, aide juridictionnelle, conciliation. Téléphones et adresses.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2696;</text></svg>">
   <link rel="stylesheet" href="/style.css">
 </head>
@@ -22,12 +22,12 @@
     </nav>
 
     <div class="notice-juridique" role="note">
-      <strong>Information juridique generale</strong> — JusticePourtous ne remplace pas un conseil d'avocat personalise. Les informations sont fournies a titre indicatif, sans garantie d'exhaustivite.
+      <strong>Information juridique générale</strong> — JusticePourtous ne remplace pas un conseil d'avocat personnalisé. Les informations sont fournies à titre indicatif, sans garantie d'exhaustivité.
     </div>
 
     <header>
       <h1>Annuaire des services juridiques</h1>
-      <p class="subtitle">Trouvez les services competents dans votre canton.</p>
+      <p class="subtitle">Trouvez les services compétents dans votre canton.</p>
     </header>
 
     <section class="card">
@@ -98,7 +98,7 @@
         var data = await res.json();
 
         if (!data.services || data.services.length === 0) {
-          container.innerHTML = '<div class="card"><p class="text-muted">Aucun service reference pour ce canton.</p></div>';
+          container.innerHTML = '<div class="card"><p class="text-muted">Aucun service référencé pour ce canton.</p></div>';
           filterBar.classList.add('hidden');
           allServices = [];
           return;
@@ -111,7 +111,7 @@
         document.querySelector('[data-type="all"]').classList.add('active');
         renderServices(allServices);
       } catch (e) {
-        container.innerHTML = '<div class="error-box">Impossible de charger les services. Verifiez que le serveur est en marche.</div>';
+        container.innerHTML = '<div class="error-box">Impossible de charger les services. Vérifiez que le serveur est en marche.</div>';
         filterBar.classList.add('hidden');
       }
     }
@@ -138,7 +138,7 @@
         return;
       }
 
-      var html = '<div class="card"><h3>Services disponibles (' + services.length + ')</h3>';
+      var html = '<div class="card"><h3>Services disponibles&nbsp;(' + services.length + ')</h3>';
       services.forEach(function(s, i) {
         html += '<div class="service-item" style="opacity:0;animation:revealBlock 0.2s ease ' + (i * 0.1) + 's forwards">';
         html += '<div>';

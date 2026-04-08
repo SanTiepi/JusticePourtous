@@ -1,0 +1,300 @@
+[
+  {
+    "id": "cas_bail_001",
+    "domaine": "bail",
+    "titre": "Moisissure chronique — consignation et réduction de loyer",
+    "situation": "Locataire à Lausanne, moisissure dans chambre et salle de bain depuis 18 mois. Régie notifiée 3 fois par courrier recommandé. Aucune intervention malgré les promesses.",
+    "actions_entreprises": [
+      "3 mises en demeure par courrier recommandé avec photos datées",
+      "Consignation du loyer auprès de la Préfecture du district de Lausanne",
+      "Requête en conciliation devant la commission de conciliation des baux"
+    ],
+    "resultat": "Réduction de loyer de 20% accordée rétroactivement sur 12 mois. Travaux ordonnés sous 60 jours. Remboursement du trop-perçu de CHF 3'600.",
+    "base_legale": ["CO 259a", "CO 259d", "CO 259g"],
+    "lecons": ["Toujours documenter les défauts par photos datées", "La consignation est un levier puissant — le bailleur réagit quand l'argent est bloqué", "Ne jamais réduire le loyer sans consigner d'abord"],
+    "confiance": "certain"
+  },
+  {
+    "id": "cas_bail_002",
+    "domaine": "bail",
+    "titre": "Congé contesté — prolongation obtenue pour famille avec enfants",
+    "situation": "Famille de 4 personnes (2 enfants scolarisés) à Genève. Congé ordinaire reçu pour le prochain terme. Marché locatif très tendu, aucun logement comparable trouvé malgré 30 visites.",
+    "actions_entreprises": [
+      "Contestation du congé dans les 30 jours auprès de la commission de conciliation",
+      "Production de preuves de recherches actives (30 candidatures documentées)",
+      "Attestation scolaire des enfants"
+    ],
+    "resultat": "Congé jugé valable mais prolongation de 4 ans accordée (maximum légal pour habitation). Famille maintenue dans le logement.",
+    "base_legale": ["CO 272", "CO 272b"],
+    "lecons": ["Même si le congé n'est pas annulable, la prolongation est un droit", "Documenter les recherches de logement renforce considérablement la demande", "La scolarisation des enfants est un critère important pour le juge"],
+    "confiance": "certain"
+  },
+  {
+    "id": "cas_bail_003",
+    "domaine": "bail",
+    "titre": "Hausse de loyer annulée — formule officielle non conforme",
+    "situation": "Locataire à Neuchâtel reçoit un avis de hausse de CHF 200/mois par simple courrier, sans formule officielle agréée par le canton.",
+    "actions_entreprises": [
+      "Vérification que l'avis ne respecte pas la formule officielle",
+      "Contestation dans les 30 jours par précaution",
+      "Argument de nullité absolue soulevé en conciliation"
+    ],
+    "resultat": "Hausse déclarée nulle de plein droit. Loyer maintenu à l'ancien montant. Pas de frais de procédure.",
+    "base_legale": ["CO 269d", "CO 270b"],
+    "lecons": ["Une hausse sans formule officielle est nulle — même pas besoin de la contester formellement", "Toujours vérifier la forme avant le fond"],
+    "confiance": "certain"
+  },
+  {
+    "id": "cas_bail_004",
+    "domaine": "bail",
+    "titre": "Garantie de loyer bloquée — libération forcée après 1 an",
+    "situation": "Locataire ayant quitté un appartement à Fribourg. Bailleur refuse de signer la libération de la garantie bancaire (CHF 4'500) invoquant des dégâts non documentés lors de l'état des lieux.",
+    "actions_entreprises": [
+      "Mise en demeure au bailleur avec délai de 30 jours",
+      "Après 12 mois sans action du bailleur, demande de libération à la banque"
+    ],
+    "resultat": "Banque a libéré la garantie après le délai d'un an (CO 257e al. 3). Bailleur n'avait pas agi en justice dans le délai.",
+    "base_legale": ["CO 257e"],
+    "lecons": ["Le bailleur doit agir en justice dans l'année pour bloquer la garantie", "Connaître ses droits évite des mois d'attente inutile"],
+    "confiance": "certain"
+  },
+  {
+    "id": "cas_travail_001",
+    "domaine": "travail",
+    "titre": "Licenciement abusif — indemnité de 4 mois de salaire",
+    "situation": "Employé de 52 ans dans une PME vaudoise, licencié après 15 ans de service suite à une restructuration. Remplacé par un jeune employé moins cher. Aucun reproche formulé auparavant.",
+    "actions_entreprises": [
+      "Opposition écrite par courrier recommandé pendant le délai de congé",
+      "Conciliation aux prud'hommes (VD — gratuit jusqu'à CHF 30'000)",
+      "Action en indemnité pour licenciement abusif"
+    ],
+    "resultat": "Transaction à l'audience de conciliation : indemnité de 4 mois de salaire (CHF 28'000). Certificat de travail excellent.",
+    "base_legale": ["CO 336", "CO 336a al. 2", "CO 336b"],
+    "lecons": ["L'opposition écrite pendant le délai de congé est la condition sine qua non", "L'ancienneté et l'âge sont des facteurs aggravants pour l'employeur", "La conciliation résout la majorité des cas"],
+    "confiance": "certain"
+  },
+  {
+    "id": "cas_travail_002",
+    "domaine": "travail",
+    "titre": "Salaires impayés — recouvrement après faillite de l'employeur",
+    "situation": "Serveuse à Sion, 3 mois de salaire impayés (CHF 12'600 total). Employeur (restaurant) déclaré en faillite.",
+    "actions_entreprises": [
+      "Production de créance dans la faillite",
+      "Demande d'indemnité en cas d'insolvabilité auprès de la caisse de chômage"
+    ],
+    "resultat": "Indemnité insolvabilité versée par la caisse de chômage couvrant les 3 derniers mois (LACI 51-58). Montant intégral récupéré.",
+    "base_legale": ["LACI 51-58", "LP 219"],
+    "lecons": ["L'indemnité en cas d'insolvabilité couvre jusqu'à 4 mois de salaire", "Agir vite : la demande doit être déposée dans les 60 jours", "Les créances salariales sont privilégiées en cas de faillite (1ère classe LP 219)"],
+    "confiance": "certain"
+  },
+  {
+    "id": "cas_travail_003",
+    "domaine": "travail",
+    "titre": "Licenciement pendant grossesse — nullité du congé",
+    "situation": "Vendeuse à Genève, licenciée au 4e mois de grossesse. L'employeur prétend ne pas avoir été informé de la grossesse.",
+    "actions_entreprises": [
+      "Envoi d'un certificat médical confirmant la grossesse antérieure au licenciement",
+      "Lettre recommandée invoquant la nullité du congé (CO 336c)",
+      "Demande de maintien au poste"
+    ],
+    "resultat": "Congé déclaré nul. Réintégration effective. Salaires dus pendant toute la période. L'employeur ne peut résilier qu'après les 16 semaines post-accouchement.",
+    "base_legale": ["CO 336c al. 1 lit. c"],
+    "lecons": ["Le congé est nul de plein droit — pas besoin d'action en justice pour le contester", "Conserver un certificat médical avec date de début de grossesse", "La protection dure pendant toute la grossesse + 16 semaines"],
+    "confiance": "certain"
+  },
+  {
+    "id": "cas_travail_004",
+    "domaine": "travail",
+    "titre": "Heures supplémentaires non payées — 200 heures récupérées",
+    "situation": "Informaticien à Zurich, 200 heures supplémentaires accumulées sur 2 ans. Employeur refuse de les payer invoquant une clause forfaitaire dans le contrat.",
+    "actions_entreprises": [
+      "Relevé détaillé des heures via logs de connexion au système informatique",
+      "Mise en demeure avec décompte précis",
+      "Action aux prud'hommes"
+    ],
+    "resultat": "Clause forfaitaire jugée invalide car trop vague. Paiement de 180 heures à 125% (supplément CO 321c). Total : CHF 18'500.",
+    "base_legale": ["CO 321c", "CO 321c al. 3"],
+    "lecons": ["Les clauses forfaitaires sur les heures sup doivent être claires et limitées pour être valables", "Les logs informatiques sont des preuves recevables", "Toujours garder une trace de ses heures"],
+    "confiance": "probable"
+  },
+  {
+    "id": "cas_famille_001",
+    "domaine": "famille",
+    "titre": "Pension alimentaire impayée — recouvrement via BRAPA",
+    "situation": "Mère de 2 enfants à Lausanne, ex-mari ne verse plus la pension depuis 6 mois (CHF 1'200/mois/enfant). Aucune réaction aux relances.",
+    "actions_entreprises": [
+      "Demande d'avance auprès du BRAPA (Bureau de recouvrement et d'avances de pensions alimentaires)",
+      "Poursuite (LP) pour les arriérés",
+      "Plainte pénale (CP 217)"
+    ],
+    "resultat": "BRAPA verse les avances mensuellement. Poursuite en cours. Le père a été condamné à 30 jours-amende avec sursis (CP 217).",
+    "base_legale": ["CC 276-277", "CP 217", "Loi vaudoise sur le recouvrement"],
+    "lecons": ["Le BRAPA/SCARPA avance les pensions et se retourne contre le débiteur", "La plainte pénale a un effet dissuasif puissant", "Ne pas attendre des mois avant d'agir"],
+    "confiance": "certain"
+  },
+  {
+    "id": "cas_famille_002",
+    "domaine": "famille",
+    "titre": "Violence conjugale — mesures d'éloignement obtenues en 24h",
+    "situation": "Femme victime de violences physiques répétées à Bienne. Certificat médical attestant de contusions. 2 enfants mineurs au domicile.",
+    "actions_entreprises": [
+      "Appel à la police et dépôt de plainte pénale",
+      "Centre LAVI contacté pour soutien psychologique et juridique",
+      "Requête de mesures superprovisionnelles d'éloignement"
+    ],
+    "resultat": "Mesures superprovisionnelles prononcées en 24h : interdiction de s'approcher du domicile et des enfants. Logement conjugal attribué à l'épouse. Mesures protectrices confirmées après 2 semaines.",
+    "base_legale": ["CC 28b", "CC 172", "LAVI 1-2"],
+    "lecons": ["En cas de violence : appeler la police EN PREMIER", "Le Centre LAVI offre une aide gratuite et confidentielle", "Les mesures superprovisionnelles sont rapides et efficaces"],
+    "confiance": "certain"
+  },
+  {
+    "id": "cas_famille_003",
+    "domaine": "famille",
+    "titre": "Modification de la pension après perte d'emploi",
+    "situation": "Père divorcé à Genève, perd son emploi après 2 ans. Pension fixée à CHF 2'500/mois pour 2 enfants. Nouvelles ressources limitées aux indemnités de chômage.",
+    "actions_entreprises": [
+      "Demande de modification de la contribution d'entretien au tribunal",
+      "Production du certificat de chômage et du nouveau budget",
+      "Demande de mesures provisionnelles pour réduction immédiate"
+    ],
+    "resultat": "Réduction provisoire de la pension à CHF 1'500/mois pendant la durée du chômage. Clause de réexamen après 12 mois ou reprise d'emploi.",
+    "base_legale": ["CC 286 al. 2", "CC 179"],
+    "lecons": ["Un changement durable de situation justifie la modification", "Continuer à payer l'ancien montant en attendant la décision — ne jamais réduire unilatéralement", "Agir rapidement car la modification ne vaut que pour l'avenir"],
+    "confiance": "certain"
+  },
+  {
+    "id": "cas_famille_004",
+    "domaine": "famille",
+    "titre": "Garde alternée imposée malgré conflit parental",
+    "situation": "Parents non mariés à Nyon, séparation conflictuelle. Père demande la garde alternée, mère souhaite la garde exclusive. Enfant de 5 ans.",
+    "actions_entreprises": [
+      "Expertise du SPJ (Service de protection de la jeunesse) ordonnée par le tribunal",
+      "Audition de l'enfant par le juge délégué",
+      "Médiation parentale tentée mais échouée"
+    ],
+    "resultat": "Garde alternée accordée (5-2/2-5) malgré le conflit, car l'expertise a établi que les deux parents étaient compétents et l'enfant bien adapté aux deux environnements. Curatelle d'organisation et de surveillance instaurée.",
+    "base_legale": ["CC 298 al. 2ter", "CC 298b"],
+    "lecons": ["La garde alternée est la norme en Suisse depuis 2017 quand les conditions le permettent", "Le conflit parental seul ne suffit pas à refuser la garde alternée", "L'intérêt de l'enfant prime sur les souhaits des parents"],
+    "confiance": "probable"
+  },
+  {
+    "id": "cas_dettes_001",
+    "domaine": "dettes",
+    "titre": "Opposition au commandement de payer — créance prescrite",
+    "situation": "Retraité à Yverdon reçoit un commandement de payer de CHF 8'000 pour une facture médicale de 2014. Aucune interruption de la prescription depuis.",
+    "actions_entreprises": [
+      "Opposition formée dans les 10 jours (oral à l'office des poursuites)",
+      "Créancier demande la mainlevée",
+      "Exception de prescription soulevée devant le tribunal"
+    ],
+    "resultat": "Mainlevée refusée. Créance prescrite (plus de 5 ans sans interruption). Poursuite annulée. Radiation de l'office des poursuites.",
+    "base_legale": ["LP 74", "CO 128 ch. 3", "CO 135"],
+    "lecons": ["TOUJOURS former opposition — c'est gratuit et sans risque", "Vérifier la prescription avant de payer une vieille dette", "La prescription n'est pas soulevée d'office — il faut l'invoquer"],
+    "confiance": "certain"
+  },
+  {
+    "id": "cas_dettes_002",
+    "domaine": "dettes",
+    "titre": "Saisie de salaire excessive — correction du minimum vital",
+    "situation": "Mère célibataire de 2 enfants à Delémont. Saisie de salaire de CHF 1'200/mois sur un salaire de CHF 4'500. Minimum vital mal calculé (enfants non pris en compte correctement).",
+    "actions_entreprises": [
+      "Demande du détail du calcul du minimum vital à l'office des poursuites",
+      "Plainte à l'autorité de surveillance des offices de poursuite (LP 17)",
+      "Production des justificatifs de charges réelles"
+    ],
+    "resultat": "Minimum vital recalculé avec les montants corrects pour 2 enfants. Saisie réduite à CHF 350/mois. Remboursement du trop-perçu des 3 derniers mois.",
+    "base_legale": ["LP 93", "LP 17", "Lignes directrices CSEP"],
+    "lecons": ["Le minimum vital inclut un montant de base par enfant + charges effectives", "Toujours vérifier et contester le calcul si nécessaire", "La plainte LP 17 a un délai de 10 jours"],
+    "confiance": "certain"
+  },
+  {
+    "id": "cas_dettes_003",
+    "domaine": "dettes",
+    "titre": "Plan de désendettement — 45'000 CHF de dettes apurées en 3 ans",
+    "situation": "Couple à Berne avec CHF 45'000 de dettes cumulées (petit crédit, impôts, assurance maladie). Revenus combinés de CHF 7'500/mois. Plus aucune capacité d'emprunt.",
+    "actions_entreprises": [
+      "Consultation gratuite auprès de Caritas Berne (service de désendettement)",
+      "Établissement d'un budget détaillé",
+      "Négociation avec tous les créanciers pour un plan de paiement échelonné"
+    ],
+    "resultat": "Plan de désendettement sur 3 ans avec paiements mensuels de CHF 1'250. Plusieurs créanciers ont accepté une réduction (intérêts abandonnés). Dettes soldées en 36 mois.",
+    "base_legale": ["Pas de base légale spécifique — convention amiable"],
+    "lecons": ["Les services de désendettement gratuits (Caritas, CSP) sont très efficaces comme médiateurs", "Les créanciers préfèrent un plan réaliste plutôt que rien", "Agir avant l'accumulation des poursuites"],
+    "confiance": "certain"
+  },
+  {
+    "id": "cas_dettes_004",
+    "domaine": "dettes",
+    "titre": "Acte de défaut de biens — nouvelle poursuite contestée",
+    "situation": "Homme à Montreux, acte de défaut de biens de CHF 15'000 datant de 2007. Le créancier relance une poursuite en 2025 (prescription de 20 ans non atteinte).",
+    "actions_entreprises": [
+      "Opposition au nouveau commandement de payer",
+      "Vérification que la dette originale n'a pas été modifiée",
+      "Contestation des intérêts cumulés"
+    ],
+    "resultat": "Poursuite maintenue pour le capital (dette non prescrite — 20 ans pour les ADB). Intérêts réduits car certains étaient prescrits. Nouveau plan de paiement négocié à CHF 200/mois.",
+    "base_legale": ["LP 149a", "CO 137 al. 2"],
+    "lecons": ["Un ADB permet au créancier de poursuivre pendant 20 ans", "Les intérêts sur l'ADB sont soumis à la prescription ordinaire de 5 ans", "Négocier un plan de paiement est souvent préférable"],
+    "confiance": "probable"
+  },
+  {
+    "id": "cas_etrangers_001",
+    "domaine": "etrangers",
+    "titre": "Regroupement familial tardif — recours gagné",
+    "situation": "Titulaire d'un permis C à Zurich depuis 10 ans. Demande de regroupement familial pour sa fille de 14 ans restée au pays. Refus du service des migrations car délai de 1 an dépassé (LEI 47).",
+    "actions_entreprises": [
+      "Recours au tribunal administratif cantonal",
+      "Arguments : raisons familiales majeures, intérêt supérieur de l'enfant (Convention des droits de l'enfant)",
+      "Production de preuves des contacts réguliers père-fille"
+    ],
+    "resultat": "Recours admis. Le tribunal a retenu des raisons familiales majeures justifiant le regroupement tardif. Permis de séjour accordé pour la fille.",
+    "base_legale": ["LEI 47 al. 4", "CDE 3 (intérêt supérieur de l'enfant)"],
+    "lecons": ["Le dépassement du délai n'est pas toujours fatal s'il y a des raisons majeures", "L'intérêt supérieur de l'enfant est un argument puissant", "Toujours recourir — les chances sont meilleures qu'on ne le croit"],
+    "confiance": "probable"
+  },
+  {
+    "id": "cas_etrangers_002",
+    "domaine": "etrangers",
+    "titre": "Admission provisoire obtenue — renvoi inexigible",
+    "situation": "Demandeur d'asile débouté d'Afghanistan, à Berne. Décision de renvoi du SEM. Situation sécuritaire catastrophique dans la province d'origine.",
+    "actions_entreprises": [
+      "Recours au TAF avec demande d'effet suspensif",
+      "Production de rapports UNHCR et Amnesty sur la situation sécuritaire",
+      "Argumentation sur l'inexigibilité du renvoi (LAsi 83 al. 4)"
+    ],
+    "resultat": "Renvoi jugé inexigible. Admission provisoire (permis F) accordée. Droit de travailler et accès aux prestations sociales.",
+    "base_legale": ["LEI 83 al. 4", "LAsi 44"],
+    "lecons": ["L'admission provisoire est une alternative importante au renvoi", "Les rapports d'organisations internationales sont des preuves clés", "Le permis F donne accès au marché du travail"],
+    "confiance": "certain"
+  },
+  {
+    "id": "cas_etrangers_003",
+    "domaine": "etrangers",
+    "titre": "Révocation du permis C contestée — proportionnalité",
+    "situation": "Résident portugais à Genève depuis 20 ans (permis C). Condamné à 18 mois avec sursis pour escroquerie. Service des migrations révoque le permis C.",
+    "actions_entreprises": [
+      "Recours au tribunal administratif cantonal",
+      "Argumentation sur la proportionnalité : 20 ans de résidence, famille en Suisse, pas de récidive",
+      "Lettre de soutien de l'employeur actuel"
+    ],
+    "resultat": "Révocation annulée par le tribunal. La mesure jugée disproportionnée vu l'enracinement en Suisse, l'absence de récidive et le sursis. Avertissement formel émis.",
+    "base_legale": ["LEI 63", "CEDH 8 (droit à la vie privée et familiale)"],
+    "lecons": ["La proportionnalité est toujours examinée — durée de séjour, famille, intégration", "Un premier délit avec sursis ne justifie pas automatiquement la révocation", "CEDH art. 8 est un argument puissant pour les résidents de longue durée"],
+    "confiance": "probable"
+  },
+  {
+    "id": "cas_etrangers_004",
+    "domaine": "etrangers",
+    "titre": "Cas de rigueur — régularisation après 10 ans de séjour illégal",
+    "situation": "Femme sans-papiers à Lausanne depuis 12 ans. Travail régulier comme aide ménagère, enfants scolarisés et parfaitement intégrés. Aucun antécédent pénal.",
+    "actions_entreprises": [
+      "Demande de permis de séjour pour cas de rigueur (LEI 30 al. 1 lit. b)",
+      "Dossier complet : attestations d'employeurs, bulletins scolaires, certificats médicaux",
+      "Soutien d'un collectif de régularisation et d'un avocat spécialisé"
+    ],
+    "resultat": "Permis B accordé au titre du cas de rigueur. Intégration exceptionnelle et intérêt des enfants reconnus comme déterminants.",
+    "base_legale": ["LEI 30 al. 1 lit. b", "OASA 31"],
+    "lecons": ["L'opération Papyrus (GE) a montré la voie mais d'autres cantons appliquent aussi les cas de rigueur", "La durée de séjour seule ne suffit pas — l'intégration doit être démontrée", "Le soutien d'un avocat spécialisé est crucial"],
+    "confiance": "probable"
+  }
+]

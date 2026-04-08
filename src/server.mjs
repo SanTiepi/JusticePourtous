@@ -11,12 +11,41 @@ import {
   analyserAI, ocrDocumentAI, genererLettreAI, estimerCout, getHistorique
 } from './services/premium.mjs';
 import { getAllStatistiques, getStatistiquesByDomaine } from './services/statistiques.mjs';
+import { CALCULATEURS } from './services/calculateurs.mjs';
+import {
+  queryByProblem, queryByArticle, queryByDecision,
+  queryByDomain, queryComplete, getTableDesMatieres, getCompleteness
+} from './services/knowledge-engine.mjs';
+import { generateActionPlan } from './services/action-planner.mjs';
+import { triage, estimateCost } from './services/triage-engine.mjs';
+import {
+  getAllArticles, searchArticles,
+  getAllArrets, searchArrets,
+  getNiveauxConfiance,
+  getRecevabilite, getRecevabiliteByProcedure,
+  getDelais, getDelaisByDomaine,
+  getPreuves,
+  getTaxonomie, searchTaxonomie,
+  getAntiErreurs, getAntiErreursByDomaine,
+  getPatterns, getPatternsByDomaine,
+  getCasPratiques, getCasByDomaine,
+  getEscalade, getEscaladeByDomaine,
+  getAnnuaireComplet, getAnnuaireByCanton,
+  getCantons, getCantonByCode,
+  getCouts,
+  getTemplates, getTemplateById,
+  getCouverture
+} from './services/donnees-juridiques.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const publicDir = join(__dirname, 'public');
 
 // Load domaines
 const domainesData = JSON.parse(readFileSync(join(__dirname, 'data', 'domaines.json'), 'utf-8'));
+
+// Load workflows & cascades
+const workflowsData = JSON.parse(readFileSync(join(__dirname, 'data', 'workflows', 'moments-de-vie.json'), 'utf-8'));
+const cascadesData = JSON.parse(readFileSync(join(__dirname, 'data', 'cascades', 'cascades.json'), 'utf-8'));
 
 const DISCLAIMER = "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes.";
 
@@ -244,6 +273,308 @@ const server = createServer(async (req, res) => {
       const domaine = decodeURIComponent(path.match(/^\/api\/statistiques\/([^/]+)$/)[1]);
       const result = getStatistiquesByDomaine(domaine);
       return json(res, result.status, result.error ? { error: result.error, disclaimer: DISCLAIMER } : { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // --- Calculateurs routes ---
+
+    if (path === '/api/calculateurs' && method === 'GET') {
+      const liste = Object.values(CALCULATEURS).map(({ id, nom, description, parametres }) => ({ id, nom, description, parametres }));
+      return json(res, 200, { calculateurs: liste, disclaimer: DISCLAIMER });
+    }
+
+    if (path.match(/^\/api\/calculateurs\/([^/]+)$/) && method === 'POST') {
+      const calcId = decodeURIComponent(path.match(/^\/api\/calculateurs\/([^/]+)$/)[1]);
+      const calc = CALCULATEURS[calcId];
+      if (!calc) return json(res, 404, { error: `Calculateur '${calcId}' non trouvé`, disclaimer: DISCLAIMER });
+      const body = await parseBody(req);
+      const result = calc.fn(body);
+      if (result.erreur) return json(res, 400, { error: result.erreur, disclaimer: DISCLAIMER });
+      return json(res, 200, { ...result, disclaimer: DISCLAIMER });
+    }
+
+    // --- Workflows routes ---
+
+    if (path === '/api/workflows' && method === 'GET') {
+      const liste = workflowsData.map(({ id, titre, description, dureeEstimee }) => ({ id, titre, description, dureeEstimee }));
+      return json(res, 200, { workflows: liste, disclaimer: DISCLAIMER });
+    }
+
+    if (path.match(/^\/api\/workflows\/([^/]+)$/) && method === 'GET') {
+      const wfId = decodeURIComponent(path.match(/^\/api\/workflows\/([^/]+)$/)[1]);
+      const wf = workflowsData.find(w => w.id === wfId);
+      if (!wf) return json(res, 404, { error: `Workflow '${wfId}' non trouvé`, disclaimer: DISCLAIMER });
+      return json(res, 200, { workflow: wf, disclaimer: DISCLAIMER });
+    }
+
+    // --- Cascades routes ---
+
+    if (path === '/api/cascades' && method === 'GET') {
+      const liste = cascadesData.map(({ id, depart, prevention }) => ({ id, depart, prevention }));
+      return json(res, 200, { cascades: liste, disclaimer: DISCLAIMER });
+    }
+
+    if (path.match(/^\/api\/cascades\/([^/]+)$/) && method === 'GET') {
+      const cascId = decodeURIComponent(path.match(/^\/api\/cascades\/([^/]+)$/)[1]);
+      const cascade = cascadesData.find(c => c.id === cascId);
+      if (!cascade) return json(res, 404, { error: `Cascade '${cascId}' non trouvée`, disclaimer: DISCLAIMER });
+      return json(res, 200, { cascade, disclaimer: DISCLAIMER });
+    }
+
+    // === KNOWLEDGE ENGINE — Moteur de décision traçable ===
+
+    // === TRIAGE — Le produit principal ===
+
+    if (path === '/api/triage' && method === 'POST') {
+      const body = await parseBody(req);
+      const result = await triage(body.texte, body.canton, body.sessionId, body.reponses);
+      return json(res, result.status, result.error
+        ? { error: result.error, disclaimer: DISCLAIMER }
+        : { ...result.data });
+    }
+
+    if (path === '/api/triage' && method === 'GET') {
+      const q = url.searchParams.get('q');
+      const canton = url.searchParams.get('canton');
+      const result = await triage(q, canton);
+      return json(res, result.status, result.error
+        ? { error: result.error, disclaimer: DISCLAIMER }
+        : { ...result.data });
+    }
+
+    if (path === '/api/triage/refine' && method === 'POST') {
+      const body = await parseBody(req);
+      const result = await triage(null, null, body.sessionId, body.reponses);
+      return json(res, result.status, result.error
+        ? { error: result.error, disclaimer: DISCLAIMER }
+        : { ...result.data });
+    }
+
+    if (path === '/api/triage/cost' && method === 'GET') {
+      const type = url.searchParams.get('type') || 'triage';
+      const cost = estimateCost(type);
+      return json(res, cost ? 200 : 404, cost
+        ? { ...cost, disclaimer: DISCLAIMER }
+        : { error: 'Type inconnu', disclaimer: DISCLAIMER });
+    }
+
+    // Recherche sémantique (profane → juridique)
+    if (path === '/api/search' && method === 'GET') {
+      const q = url.searchParams.get('q');
+      const canton = url.searchParams.get('canton');
+      if (!q) return json(res, 400, { error: 'Paramètre q requis', disclaimer: DISCLAIMER });
+      const result = queryByProblem(q, canton);
+      return json(res, result.status, result.error
+        ? { error: result.error, disclaimer: DISCLAIMER }
+        : { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // Citoyen: cherche par problème
+    if (path === '/api/query/problem' && method === 'GET') {
+      const q = url.searchParams.get('q');
+      const canton = url.searchParams.get('canton');
+      const result = queryByProblem(q, canton);
+      return json(res, result.status, result.error
+        ? { error: result.error, disclaimer: DISCLAIMER }
+        : { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // Avocat: cherche par article de loi
+    if (path === '/api/query/article' && method === 'GET') {
+      const ref = url.searchParams.get('ref');
+      const result = queryByArticle(ref);
+      return json(res, result.status, result.error
+        ? { error: result.error, disclaimer: DISCLAIMER }
+        : { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // Juge: cherche par décision
+    if (path === '/api/query/decision' && method === 'GET') {
+      const sig = url.searchParams.get('signature');
+      const result = queryByDecision(sig);
+      return json(res, result.status, result.error
+        ? { error: result.error, disclaimer: DISCLAIMER }
+        : { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // Association: cherche par domaine
+    if (path === '/api/query/domain' && method === 'GET') {
+      const domain = url.searchParams.get('domaine');
+      const canton = url.searchParams.get('canton');
+      const result = queryByDomain(domain, { canton });
+      return json(res, result.status, result.error
+        ? { error: result.error, disclaimer: DISCLAIMER }
+        : { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // Enrichir une fiche avec TOUT le contexte
+    if (path.match(/^\/api\/query\/fiche\/([^/]+)$/) && method === 'GET') {
+      const ficheId = decodeURIComponent(path.match(/^\/api\/query\/fiche\/([^/]+)$/)[1]);
+      const result = queryComplete(ficheId);
+      return json(res, result.status, result.error
+        ? { error: result.error, disclaimer: DISCLAIMER }
+        : { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // Tables des matières des codes
+    if (path === '/api/tdm' && method === 'GET') {
+      const code = url.searchParams.get('code');
+      const result = getTableDesMatieres(code);
+      return json(res, result.status, result.error
+        ? { error: result.error, disclaimer: DISCLAIMER }
+        : { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // Plan d'action (le killer feature)
+    if (path === '/api/action-plan' && method === 'GET') {
+      const q = url.searchParams.get('q');
+      const ficheId = url.searchParams.get('fiche');
+      const canton = url.searchParams.get('canton');
+
+      let enriched;
+      if (ficheId) {
+        const result = queryComplete(ficheId);
+        if (result.error) return json(res, result.status, { error: result.error, disclaimer: DISCLAIMER });
+        enriched = result.data;
+      } else if (q) {
+        const result = queryByProblem(q, canton);
+        if (result.error) return json(res, result.status, { error: result.error, disclaimer: DISCLAIMER });
+        enriched = result.data;
+      } else {
+        return json(res, 400, { error: 'Paramètre q ou fiche requis', disclaimer: DISCLAIMER });
+      }
+
+      const plan = generateActionPlan(enriched, canton);
+      if (!plan) return json(res, 404, { error: 'Impossible de générer un plan', disclaimer: DISCLAIMER });
+      return json(res, 200, { ...plan, disclaimer: DISCLAIMER });
+    }
+
+    // Dashboard complétude (admin)
+    if (path === '/api/admin/completeness' && method === 'GET') {
+      const result = getCompleteness();
+      return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // --- Loi (articles) ---
+    if (path === '/api/loi' && method === 'GET') {
+      const query = url.searchParams.get('q');
+      const result = query ? searchArticles(query) : getAllArticles();
+      return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // --- Jurisprudence (arrêts) ---
+    if (path === '/api/jurisprudence' && method === 'GET') {
+      const query = url.searchParams.get('q');
+      const result = query ? searchArrets(query) : getAllArrets();
+      return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // --- Confiance ---
+    if (path === '/api/confiance' && method === 'GET') {
+      const result = getNiveauxConfiance();
+      return json(res, result.status, result.error ? { error: result.error, disclaimer: DISCLAIMER } : { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // --- Recevabilité ---
+    if (path === '/api/recevabilite' && method === 'GET') {
+      const result = getRecevabilite();
+      return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    if (path.match(/^\/api\/recevabilite\/([^/]+)$/) && method === 'GET') {
+      const proc = decodeURIComponent(path.match(/^\/api\/recevabilite\/([^/]+)$/)[1]);
+      const result = getRecevabiliteByProcedure(proc);
+      return json(res, result.status, result.error ? { error: result.error, disclaimer: DISCLAIMER } : { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // --- Délais ---
+    if (path === '/api/delais' && method === 'GET') {
+      const domaine = url.searchParams.get('domaine');
+      const result = domaine ? getDelaisByDomaine(domaine) : getDelais();
+      return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // --- Preuves ---
+    if (path === '/api/preuves' && method === 'GET') {
+      const result = getPreuves();
+      return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // --- Taxonomie ---
+    if (path === '/api/taxonomie' && method === 'GET') {
+      const query = url.searchParams.get('q');
+      const result = query ? searchTaxonomie(query) : getTaxonomie();
+      return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // --- Anti-erreurs ---
+    if (path === '/api/anti-erreurs' && method === 'GET') {
+      const domaine = url.searchParams.get('domaine');
+      const result = domaine ? getAntiErreursByDomaine(domaine) : getAntiErreurs();
+      return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // --- Patterns praticien ---
+    if (path === '/api/patterns' && method === 'GET') {
+      const domaine = url.searchParams.get('domaine');
+      const result = domaine ? getPatternsByDomaine(domaine) : getPatterns();
+      return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // --- Cas pratiques ---
+    if (path === '/api/cas-pratiques' && method === 'GET') {
+      const domaine = url.searchParams.get('domaine');
+      const result = domaine ? getCasByDomaine(domaine) : getCasPratiques();
+      return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // --- Escalade (réseau relais) ---
+    if (path === '/api/escalade' && method === 'GET') {
+      const domaine = url.searchParams.get('domaine');
+      const result = domaine ? getEscaladeByDomaine(domaine) : getEscalade();
+      return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // --- Annuaire complet ---
+    if (path === '/api/annuaire' && method === 'GET') {
+      const canton = url.searchParams.get('canton');
+      const result = canton ? getAnnuaireByCanton(canton) : getAnnuaireComplet();
+      return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // --- Cantons ---
+    if (path === '/api/cantons' && method === 'GET') {
+      const result = getCantons();
+      return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    if (path.match(/^\/api\/cantons\/([^/]+)$/) && method === 'GET') {
+      const code = path.match(/^\/api\/cantons\/([^/]+)$/)[1];
+      const result = getCantonByCode(code);
+      return json(res, result.status, result.error ? { error: result.error, disclaimer: DISCLAIMER } : { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // --- Coûts ---
+    if (path === '/api/couts' && method === 'GET') {
+      const result = getCouts();
+      return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // --- Templates ---
+    if (path === '/api/templates' && method === 'GET') {
+      const result = getTemplates();
+      return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    if (path.match(/^\/api\/templates\/([^/]+)$/) && method === 'GET') {
+      const id = decodeURIComponent(path.match(/^\/api\/templates\/([^/]+)$/)[1]);
+      const result = getTemplateById(id);
+      return json(res, result.status, result.error ? { error: result.error, disclaimer: DISCLAIMER } : { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // --- Couverture (meta) ---
+    if (path === '/api/couverture' && method === 'GET') {
+      const result = getCouverture();
+      return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
     }
 
     // Static files

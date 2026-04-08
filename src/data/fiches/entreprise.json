@@ -1,0 +1,111 @@
+[
+  {
+    "id": "entreprise_difficultes_paiement",
+    "domaine": "entreprise",
+    "sousDomaine": "difficultes",
+    "tags": ["PME", "difficultes", "paiement", "restructuration", "concordat", "sursis", "tresorerie"],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la forme juridique de votre entreprise ?",
+        "options": ["raison individuelle", "Sarl", "SA", "association", "autre"]
+      },
+      {
+        "id": "q2",
+        "text": "Depuis combien de temps avez-vous des difficultes ?",
+        "options": ["<3 mois", "3-6 mois", "6-12 mois", ">1 an"]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous des poursuites en cours ?",
+        "options": ["oui", "non", "menacees"]
+      },
+      {
+        "id": "q4",
+        "text": "Les salaires sont-ils payes ?",
+        "options": ["oui, a jour", "en retard", "non"]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Une PME en difficultes de paiement dispose de plusieurs options avant la faillite. Le sursis concordataire (art. 293 ss LP) permet de geler les poursuites pendant 4 mois (prolongeables a 24 mois) pour reorganiser l'entreprise. Le concordat ordinaire (art. 314 ss LP) propose aux creanciers un remboursement partiel. Le concordat par abandon d'actifs (art. 317 ss LP) liquide les actifs de maniere ordonnee. En amont, l'entreprise peut negocier directement avec ses creanciers (moratoire contractuel). L'art. 725 CO impose aux dirigeants de SA/Sarl d'agir en cas de perte de capital (al. 1) ou de surendettement (al. 2). Le non-respect de ces obligations engage la responsabilite personnelle des administrateurs (art. 754 CO). Les salaires des employes beneficient d'un privilege de rang (art. 219 LP, 1ere classe) et l'assurance-insolvabilite (art. 51 ss LACI) couvre jusqu'a 4 mois de salaire impaye. Il est vivement recommande de consulter un fiduciaire ou un avocat specialise avant que la situation ne devienne irreversible.",
+      "articles": [
+        { "ref": "LP 293", "titre": "Sursis concordataire", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_293" },
+        { "ref": "CO 725", "titre": "Perte de capital et surendettement", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_725" },
+        { "ref": "CO 754", "titre": "Responsabilite des administrateurs", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_754" },
+        { "ref": "LP 219", "titre": "Privilege des creances salariales", "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_219" }
+      ],
+      "jurisprudence": [
+        { "ref": "ATF 138 III 204", "resume": "L'administrateur qui tarde a aviser le juge en cas de surendettement (art. 725 al. 2 CO) engage sa responsabilite personnelle envers les creanciers." },
+        { "ref": "TF 4A_596/2018", "resume": "Le sursis concordataire doit offrir de reelles perspectives d'assainissement ; le juge refuse le sursis si la reorganisation est illusoire." }
+      ],
+      "modeleLettre": "Objet : Requete de sursis concordataire (art. 293 LP)\n\nAu Tribunal de [lieu],\n\nLa societe [nom], inscrite au RC de [canton] sous le n° [CHE-xxx], representee par [nom du representant],\n\nRequiert l'octroi d'un sursis concordataire provisoire au sens de l'art. 293 LP.\n\nSituation de la societe :\n- Chiffre d'affaires annuel : CHF [montant]\n- Dettes totales : CHF [montant]\n- Nombre d'employes : [nombre]\n- Causes des difficultes : [decrire]\n\nPlan d'assainissement envisage : [grandes lignes]\n\nPieces jointes : bilan, compte de resultat, liste des creanciers, plan de tresorerie, plan d'assainissement.\n\n[Signature du representant autorise]",
+      "services": [
+        { "nom": "Chambre vaudoise du commerce et de l'industrie (CVCI)", "tel": "021 613 35 35", "url": "https://www.cvci.ch", "canton": "VD" },
+        { "nom": "Chambre de commerce et d'industrie de Geneve (CCIG)", "tel": "022 819 91 11", "url": "https://www.ccig.ch", "canton": "GE" },
+        { "nom": "Genilem (soutien PME)", "url": "https://www.genilem.ch", "canton": "VD" },
+        { "nom": "Ordre des avocats VD", "url": "https://www.avocats-vaud.ch", "canton": "VD" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "LP/CO etat 2025-01-01"
+  },
+  {
+    "id": "entreprise_surendettement",
+    "domaine": "entreprise",
+    "sousDomaine": "surendettement",
+    "tags": ["surendettement", "CO 725", "faillite", "bilan", "avis juge", "responsabilite", "administrateur"],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est l'etat financier de l'entreprise ?",
+        "options": ["perte de capital (>50% fonds propres)", "surendettement (dettes > actifs)", "les deux"]
+      },
+      {
+        "id": "q2",
+        "text": "Un bilan intermediaire a-t-il ete etabli ?",
+        "options": ["oui", "non"]
+      },
+      {
+        "id": "q3",
+        "text": "L'organe de revision a-t-il ete informe ?",
+        "options": ["oui", "non", "pas d'organe de revision"]
+      },
+      {
+        "id": "q4",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'art. 725 CO impose aux organes dirigeants (conseil d'administration SA, gerants Sarl) des obligations strictes en cas de difficultes financieres. En cas de perte de la moitie du capital-actions (art. 725 al. 1 CO), le CA doit convoquer immediatement une assemblee generale et proposer des mesures d'assainissement (augmentation de capital, abandon de creances, reduction des couts). En cas de surendettement fonde (passifs > actifs, art. 725 al. 2 CO), le CA doit etablir un bilan aux valeurs d'exploitation et aux valeurs de liquidation, puis aviser le juge sauf si des creanciers acceptent de posterposer leurs creances a hauteur du decouvert. Le juge decide de la faillite ou du sursis concordataire. Les administrateurs qui tardent a agir engagent leur responsabilite personnelle (art. 754 CO) envers les creanciers sociaux pour le dommage cause par le retard (difference entre le decouvert au moment ou l'avis aurait du etre donne et le decouvert effectif). La prescription est de 5 ans (art. 760 CO).",
+      "articles": [
+        { "ref": "CO 725", "titre": "Perte de capital et surendettement", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_725" },
+        { "ref": "CO 725a", "titre": "Risque d'insolvabilite", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_725_a" },
+        { "ref": "CO 725b", "titre": "Surendettement — avis au juge", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_725_b" },
+        { "ref": "CO 754", "titre": "Responsabilite des organes", "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_754" }
+      ],
+      "jurisprudence": [
+        { "ref": "ATF 136 III 322", "resume": "Le dommage de la posterposition tardive de l'avis au juge se calcule par la difference entre le decouvert au moment ou l'avis aurait du etre donne et le decouvert au moment de la faillite effective." },
+        { "ref": "ATF 132 III 564", "resume": "Chaque administrateur repond solidairement sauf s'il prouve avoir pris toutes les mesures que l'on pouvait raisonnablement attendre de lui." }
+      ],
+      "modeleLettre": "Objet : Avis au juge de surendettement (art. 725b CO)\n\nAu President du Tribunal de [lieu],\n\nLe conseil d'administration / les gerants de la societe [nom], inscrite au RC sous le n° [CHE-xxx],\n\nAvise le tribunal que la societe est surendettee au sens de l'art. 725b CO.\n\nSituation financiere :\n- Total des actifs (valeur d'exploitation) : CHF [montant]\n- Total des actifs (valeur de liquidation) : CHF [montant]\n- Total des passifs : CHF [montant]\n- Decouvert : CHF [montant]\n\nAucun creancier n'a accepte de posterposer sa creance a hauteur du decouvert.\n\nNous requierons [l'ouverture de la faillite / l'octroi d'un sursis concordataire (art. 293 LP)].\n\nPieces jointes : bilans intermediaires (exploitation et liquidation), rapport de l'organe de revision, liste des creanciers.\n\n[Signature(s) du/des administrateur(s)]",
+      "services": [
+        { "nom": "Tribunal d'arrondissement de Lausanne", "url": "https://www.vd.ch/autorites/ordre-judiciaire", "canton": "VD" },
+        { "nom": "Tribunal de premiere instance GE", "url": "https://justice.ge.ch", "canton": "GE" },
+        { "nom": "Fiduciaire Suisse (section VD)", "url": "https://www.fiduciairesuisse.ch", "canton": "VD" },
+        { "nom": "Ordre des avocats GE", "url": "https://www.odage.ch", "canton": "GE" }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-07",
+    "sourceLoi": "CO/LP etat 2025-01-01"
+  }
+]

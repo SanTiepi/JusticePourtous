@@ -310,3 +310,264 @@ function copyLettre() {
     window.getSelection().addRange(range);
   });
 }
+
+// ===== Search result page =====
+
+async function loadSearchResultat(query) {
+  var container = document.getElementById('resultat');
+  container.innerHTML = '<div class="loading">Analyse en cours</div>';
+
+  try {
+    var res = await fetch('/api/search?q=' + encodeURIComponent(query));
+    var data = await res.json();
+
+    if (!res.ok || data.error) {
+      container.innerHTML =
+        '<div class="error-box">' + (data.error || 'Aucun resultat') + '<br><a href="/">Retour a l\'accueil</a></div>';
+      return;
+    }
+
+    if (data.type === 'taxonomie') {
+      renderTaxonomieResult(data, query, container);
+    } else {
+      renderEnrichedResult(data, query, container);
+    }
+  } catch (e) {
+    container.innerHTML = '<div class="error-box">Erreur de connexion. <a href="/">Retour a l\'accueil</a></div>';
+  }
+}
+
+function renderTaxonomieResult(data, query, container) {
+  var q = data.qualification || {};
+  var html = '';
+
+  html += '<div class="result-query-echo"><span class="result-query-label">Votre recherche</span> ' + escHtml(query) + '</div>';
+
+  html += '<div class="card-highlight">';
+  html += '<h3>Qualification juridique</h3>';
+  html += '<p>' + escHtml(data.suggestion || 'Votre probleme releve du domaine juridique suivant.') + '</p>';
+  if (q.domaine) html += '<p class="mt-2 text-muted" style="font-size:0.85rem">Domaine : ' + escHtml(q.domaine) + '</p>';
+  html += '</div>';
+
+  if (q.qualification_juridique) {
+    html += '<div class="card">';
+    html += '<h3>Qualification</h3>';
+    html += '<p>' + escHtml(q.qualification_juridique) + '</p>';
+    html += '</div>';
+  }
+
+  html += renderSearchActions(query);
+  container.innerHTML = html;
+}
+
+function renderEnrichedResult(data, query, container) {
+  var html = '';
+  var delay = 0;
+
+  function stagger() {
+    delay += 0.07;
+    return ' style="animation-delay:' + delay.toFixed(2) + 's"';
+  }
+
+  // Query echo
+  html += '<div class="result-query-echo"><span class="result-query-label">Votre recherche</span> ' + escHtml(query) + '</div>';
+
+  // Main fiche summary
+  var fiche = data.fiche || {};
+  var explication = fiche.explication || fiche.description || (data.fiche && data.fiche.tags ? data.fiche.tags.join(', ') : '');
+  if (explication) {
+    html += '<div class="card-highlight"' + stagger() + '>';
+    html += '<h3>Votre situation</h3>';
+    html += '<p>' + escHtml(explication) + '</p>';
+    if (fiche.domaine) html += '<p class="mt-1" style="font-size:0.8rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.05em">' + escHtml(fiche.domaine) + '</p>';
+    html += '</div>';
+  }
+
+  // Quick actions (mobile-first: buttons at top)
+  html += '<div class="result-actions"' + stagger() + '>';
+  html += '<button class="btn btn-sm btn-print" onclick="window.print()">Imprimer / PDF</button>';
+  html += '<a href="/" class="btn btn-sm btn-outline">Nouvelle recherche</a>';
+  html += '<a href="/annuaire.html" class="btn btn-sm btn-secondary">Annuaire</a>';
+  html += '</div>';
+
+  // Articles de loi
+  var articles = data.articles || [];
+  if (articles.length) {
+    html += '<div class="card"' + stagger() + '>';
+    html += '<h3>Articles de loi applicables</h3>';
+    articles.forEach(function(a) {
+      var lien = a.lien || ('https://www.fedlex.admin.ch/search?q=' + encodeURIComponent(a.ref || ''));
+      html += '<a href="' + escAttr(lien) + '" target="_blank" rel="noopener" class="article-link">';
+      html += '<span class="ref">' + escHtml(a.ref || '') + '</span>';
+      if (a.titre) html += ' <span class="titre">&mdash; ' + escHtml(a.titre) + '</span>';
+      html += '</a>';
+    });
+    html += '</div>';
+  }
+
+  // Delais importants
+  var delais = data.delais || [];
+  var delaisUrgents = delais.filter(function(d) { return d.critique || d.urgent; });
+  if (delaisUrgents.length) {
+    html += '<div class="card card-warn"' + stagger() + '>';
+    html += '<h3>Delais critiques</h3>';
+    delaisUrgents.forEach(function(d) {
+      html += '<div class="delai-item">';
+      html += '<span class="delai-duree">' + escHtml(d.duree || d.delai || '') + '</span>';
+      html += '<span class="delai-label">' + escHtml(d.procedure || d.nom || d.label || '') + '</span>';
+      html += '</div>';
+    });
+    html += '</div>';
+  }
+
+  // Jurisprudence
+  var juris = data.jurisprudence || data.jurisprudenceElargie || [];
+  if (juris.length) {
+    html += '<div class="card"' + stagger() + '>';
+    html += '<h3>Jurisprudence du Tribunal federal</h3>';
+    juris.slice(0, 3).forEach(function(j) {
+      html += '<div class="jurisprudence">';
+      html += '<div class="ref">' + escHtml(j.signature || j.ref || '') + '</div>';
+      html += '<div class="resume">' + escHtml(j.resume || j.description || '') + '</div>';
+      html += '</div>';
+    });
+    html += '</div>';
+  }
+
+  // Templates (modeles de lettres)
+  var templates = data.templates || [];
+  if (templates.length) {
+    html += '<div class="card"' + stagger() + '>';
+    html += '<h3>Modeles de lettres</h3>';
+    templates.forEach(function(t, i) {
+      var tplId = 'tpl-' + i;
+      html += '<div class="template-item">';
+      html += '<div class="template-header" onclick="toggleTemplate(\'' + tplId + '\')">';
+      html += '<span class="template-title">' + escHtml(t.nom || t.titre || t.type || 'Modele') + '</span>';
+      html += '<span class="template-toggle" id="toggle-' + tplId + '">Afficher</span>';
+      html += '</div>';
+      html += '<div class="lettre-box hidden" id="' + tplId + '">';
+      html += '<button class="copy-btn" onclick="copyTemplate(\'' + tplId + '\')">Copier</button>';
+      html += '<pre id="text-' + tplId + '">' + escHtml(t.contenu || t.template || t.texte || '') + '</pre>';
+      html += '</div>';
+      html += '</div>';
+    });
+    html += '</div>';
+  }
+
+  // Anti-erreurs
+  var antiErreurs = data.antiErreurs || [];
+  if (antiErreurs.length) {
+    html += '<div class="card"' + stagger() + '>';
+    html += '<h3>Erreurs a eviter</h3>';
+    antiErreurs.slice(0, 3).forEach(function(ae) {
+      html += '<div class="anti-erreur">';
+      html += '<span class="anti-erreur-icon">!</span>';
+      html += '<div><strong>' + escHtml(ae.erreur || ae.titre || '') + '</strong>';
+      if (ae.correctif || ae.conseil) html += '<p>' + escHtml(ae.correctif || ae.conseil) + '</p>';
+      html += '</div></div>';
+    });
+    html += '</div>';
+  }
+
+  // Services / escalade
+  var escalade = data.escalade || [];
+  if (escalade.length) {
+    html += '<div class="card"' + stagger() + '>';
+    html += '<h3>Services competents</h3>';
+    escalade.slice(0, 5).forEach(function(s) {
+      html += '<div class="service-item">';
+      html += '<div><div class="nom">' + escHtml(s.nom || s.service || '') + '</div>';
+      if (s.type) html += '<span class="type-tag">' + escHtml(s.type) + '</span>';
+      if (s.description) html += '<div class="adresse">' + escHtml(s.description) + '</div>';
+      html += '</div>';
+      html += '<div style="text-align:right;flex-shrink:0">';
+      if (s.tel) html += '<a href="tel:' + escAttr(s.tel) + '" class="tel">' + escHtml(s.tel) + '</a><br>';
+      if (s.url) html += '<a href="' + escAttr(s.url) + '" target="_blank" rel="noopener" style="font-size:0.85rem">Site web</a>';
+      html += '</div></div>';
+    });
+    html += '</div>';
+  }
+
+  // Alternatives
+  var alts = data.alternatives || [];
+  if (alts.length) {
+    html += '<div class="card"' + stagger() + '>';
+    html += '<h3>Situations similaires</h3>';
+    alts.forEach(function(a) {
+      html += '<a href="/resultat.html?fiche=' + escAttr(a.id) + '" class="alt-link">';
+      html += escHtml(a.id.replace(/_/g, ' '));
+      html += '<span class="alt-arrow">&rarr;</span></a>';
+    });
+    html += '</div>';
+  }
+
+  // Bottom actions (repeat for mobile scroll)
+  html += renderSearchActions(query, true);
+
+  // Upsell premium
+  html += '<div class="upsell">';
+  html += '<h3>Besoin d\'une analyse personnalisee ?</h3>';
+  html += '<p>Notre IA analyse votre situation en detail pour CHF 0.03 a 0.10 par question.</p>';
+  html += '<a href="/premium.html" class="btn btn-sm">Espace Premium</a>';
+  html += '</div>';
+
+  container.innerHTML = html;
+}
+
+function renderSearchActions(query, isBottom) {
+  var cls = isBottom ? 'result-actions result-actions-bottom' : 'result-actions';
+  var html = '<div class="' + cls + '">';
+  html += '<button class="btn btn-sm btn-print" onclick="window.print()">Imprimer / PDF</button>';
+  html += '<a href="/" class="btn btn-sm btn-outline">Nouvelle recherche</a>';
+  html += '<a href="/annuaire.html" class="btn btn-sm btn-secondary">Annuaire</a>';
+  html += '</div>';
+  return html;
+}
+
+function toggleTemplate(id) {
+  var box = document.getElementById(id);
+  var toggle = document.getElementById('toggle-' + id);
+  if (!box) return;
+  if (box.classList.contains('hidden')) {
+    box.classList.remove('hidden');
+    if (toggle) toggle.textContent = 'Masquer';
+  } else {
+    box.classList.add('hidden');
+    if (toggle) toggle.textContent = 'Afficher';
+  }
+}
+
+function copyTemplate(id) {
+  var el = document.getElementById('text-' + id);
+  if (!el) return;
+  var text = el.textContent;
+  navigator.clipboard.writeText(text).then(function() {
+    var btn = document.querySelector('#' + id + ' .copy-btn');
+    if (btn) {
+      btn.textContent = 'Copie !';
+      btn.classList.add('copied');
+      setTimeout(function() { btn.textContent = 'Copier'; btn.classList.remove('copied'); }, 2000);
+    }
+  }).catch(function() {
+    var range = document.createRange();
+    range.selectNode(el);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+  });
+}
+
+function escHtml(s) {
+  if (!s) return '';
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function escAttr(s) {
+  if (!s) return '';
+  return String(s).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}

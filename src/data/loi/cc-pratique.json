@@ -1,0 +1,813 @@
+[
+  {
+    "ref": "CC 8",
+    "titre": "Fardeau de la preuve",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_8",
+    "texteSimple": "Celui qui invoque un droit doit prouver les faits sur lesquels il se fonde. Si vous réclamez quelque chose en justice, c'est à vous d'apporter la preuve.",
+    "exemplesConcrets": [
+      "Vous réclamez un remboursement → c'est à vous de prouver que vous avez payé",
+      "Vous contestez une dette → c'est au créancier de prouver qu'elle existe"
+    ],
+    "domaines": ["procédure", "général"],
+    "articlesLies": ["CC 28"]
+  },
+  {
+    "ref": "CC 28",
+    "titre": "Protection de la personnalité",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_28",
+    "texteSimple": "Toute personne dont la personnalité est atteinte illicitement peut agir en justice pour faire cesser l'atteinte. Cela couvre l'honneur, la vie privée, l'image, le nom, etc.",
+    "exemplesConcrets": [
+      "Un journal publie des photos privées sans consentement → action en cessation",
+      "Diffamation sur les réseaux sociaux → demande de suppression et dommages-intérêts"
+    ],
+    "domaines": ["personnalité", "général"],
+    "articlesLies": ["CC 8", "CC 30"]
+  },
+  {
+    "ref": "CC 30",
+    "titre": "Nom — Protection",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_30",
+    "texteSimple": "Si vous avez un intérêt légitime, vous pouvez demander au gouvernement cantonal un changement de nom. Le fiancé dont le nom ne deviendra pas nom de famille peut aussi déclarer vouloir garder son nom.",
+    "exemplesConcrets": [
+      "Demande de changement de nom après un divorce pour reprendre son nom de naissance",
+      "Changement de nom suite à un changement de genre"
+    ],
+    "domaines": ["personnalité", "famille"],
+    "articlesLies": ["CC 28", "CC 160", "CC 270"]
+  },
+  {
+    "ref": "CC 90",
+    "titre": "Mariage — Célébration",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_90",
+    "texteSimple": "Le mariage est célébré par l'officier de l'état civil. Les fiancés déclarent vouloir s'unir et l'officier prononce le mariage.",
+    "exemplesConcrets": [
+      "Mariage célébré à l'état civil, suivi d'une cérémonie religieuse facultative"
+    ],
+    "domaines": ["famille", "mariage"],
+    "articlesLies": ["CC 119", "CC 160"]
+  },
+  {
+    "ref": "CC 119",
+    "titre": "Divorce — Nom après le divorce",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_119",
+    "texteSimple": "L'époux qui a changé de nom lors du mariage conserve ce nom après le divorce, sauf s'il déclare vouloir reprendre son nom de célibataire.",
+    "exemplesConcrets": [
+      "Après le divorce, Mme Dupont-Müller peut reprendre le nom Müller par simple déclaration à l'état civil"
+    ],
+    "domaines": ["famille", "divorce"],
+    "articlesLies": ["CC 30", "CC 160"]
+  },
+  {
+    "ref": "CC 124a",
+    "titre": "Divorce — Partage de la prévoyance professionnelle (rente)",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_124a",
+    "texteSimple": "Si un époux reçoit déjà une rente de vieillesse ou d'invalidité au moment du divorce, le juge décide quelle part de la rente est attribuée à l'autre époux.",
+    "exemplesConcrets": [
+      "L'ex-mari touche déjà sa retraite LPP → le juge attribue une partie de la rente à l'ex-épouse"
+    ],
+    "domaines": ["famille", "divorce", "prévoyance"],
+    "articlesLies": ["CC 125"]
+  },
+  {
+    "ref": "CC 125",
+    "titre": "Divorce — Contribution d'entretien post-divorce",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_125",
+    "texteSimple": "Si un époux n'est pas en mesure de subvenir seul à ses besoins après le divorce, l'autre peut être tenu de lui verser une pension. Le juge tient compte de la durée du mariage, de l'âge, de la santé et des revenus.",
+    "exemplesConcrets": [
+      "Après 20 ans de mariage, l'épouse qui a renoncé à sa carrière reçoit une pension",
+      "Mariage court sans enfant → pas de pension en principe"
+    ],
+    "domaines": ["famille", "divorce"],
+    "articlesLies": ["CC 124a", "CC 163", "CC 176"]
+  },
+  {
+    "ref": "CC 133",
+    "titre": "Divorce — Effets sur les enfants",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_133",
+    "texteSimple": "Le juge règle les droits et devoirs des parents envers les enfants : garde, relations personnelles, contribution d'entretien. Il ratifie la convention des parents ou décide lui-même.",
+    "exemplesConcrets": [
+      "Les parents se mettent d'accord sur une garde alternée → le juge la valide",
+      "Pas d'accord → le juge fixe la garde chez un parent et un droit de visite pour l'autre"
+    ],
+    "domaines": ["famille", "divorce", "enfants"],
+    "articlesLies": ["CC 276", "CC 296", "CC 298a"]
+  },
+  {
+    "ref": "CC 160",
+    "titre": "Nom des époux",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_160",
+    "texteSimple": "Chaque époux conserve son nom. Les fiancés peuvent toutefois déclarer vouloir porter un nom de famille commun (celui de l'un ou de l'autre).",
+    "exemplesConcrets": [
+      "Marie Dupont et Jean Müller → chacun garde son nom, ou ils choisissent Dupont ou Müller comme nom de famille"
+    ],
+    "domaines": ["famille", "mariage"],
+    "articlesLies": ["CC 30", "CC 119", "CC 270"]
+  },
+  {
+    "ref": "CC 163",
+    "titre": "Entretien de la famille",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_163",
+    "texteSimple": "Chaque époux contribue à l'entretien de la famille selon ses facultés. Ils conviennent de la manière dont chacun contribue : argent, travail au foyer, soins aux enfants.",
+    "exemplesConcrets": [
+      "Un époux travaille à plein temps, l'autre s'occupe des enfants → les deux contributions sont équivalentes",
+      "Les deux travaillent → chacun contribue financièrement selon ses revenus"
+    ],
+    "domaines": ["famille", "mariage"],
+    "articlesLies": ["CC 125", "CC 173", "CC 176"]
+  },
+  {
+    "ref": "CC 173",
+    "titre": "Mesures protectrices — Contribution financière",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_173",
+    "texteSimple": "Si un époux ne remplit pas son devoir d'entretien, le juge peut fixer les contributions financières dues. Il peut aussi autoriser un époux à encaisser certains revenus de l'autre.",
+    "exemplesConcrets": [
+      "Le mari ne verse plus rien pour le ménage → le juge ordonne le versement direct d'une partie du salaire"
+    ],
+    "domaines": ["famille", "mariage"],
+    "articlesLies": ["CC 163", "CC 176", "CC 179"]
+  },
+  {
+    "ref": "CC 176",
+    "titre": "Mesures protectrices — Vie séparée",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_176",
+    "texteSimple": "Si la vie commune est suspendue, le juge fixe la contribution d'entretien, attribue le logement conjugal, et règle la garde des enfants. Ce sont les mesures protectrices de l'union conjugale (MPUC).",
+    "exemplesConcrets": [
+      "Séparation de fait → le juge attribue l'appartement au parent gardien et fixe une pension",
+      "Violence conjugale → le juge attribue le logement à la victime"
+    ],
+    "domaines": ["famille", "séparation"],
+    "articlesLies": ["CC 163", "CC 173", "CC 179"]
+  },
+  {
+    "ref": "CC 179",
+    "titre": "Mesures protectrices — Modification",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_179",
+    "texteSimple": "Si les circonstances changent, chaque époux peut demander au juge de modifier les mesures protectrices (pension, garde, logement).",
+    "exemplesConcrets": [
+      "Perte d'emploi → demande de réduction de la pension alimentaire",
+      "Déménagement d'un parent → modification de la garde"
+    ],
+    "domaines": ["famille", "séparation"],
+    "articlesLies": ["CC 176", "CC 173"]
+  },
+  {
+    "ref": "CC 197",
+    "titre": "Régime matrimonial — Acquêts",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_197",
+    "texteSimple": "Les acquêts sont les biens acquis pendant le mariage à titre onéreux : salaire, revenus, épargne issue du travail. En cas de divorce, les acquêts sont partagés par moitié.",
+    "exemplesConcrets": [
+      "Le salaire épargné pendant le mariage = acquêts → partagé 50/50 au divorce",
+      "Un héritage reçu pendant le mariage = bien propre, pas un acquêt"
+    ],
+    "domaines": ["famille", "régime matrimonial"],
+    "articlesLies": ["CC 209", "CC 215"]
+  },
+  {
+    "ref": "CC 209",
+    "titre": "Régime matrimonial — Récompenses entre masses",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_209",
+    "texteSimple": "Lors de la liquidation du régime, si un époux a financé avec ses acquêts un bien propre de l'autre (ou inversement), une récompense est due. Chaque masse récupère ce qui lui revient.",
+    "exemplesConcrets": [
+      "Le salaire (acquêts) a servi à rénover la maison héritée (bien propre) → récompense due",
+      "L'héritage (bien propre) a servi à rembourser un crédit commun → récompense"
+    ],
+    "domaines": ["famille", "régime matrimonial"],
+    "articlesLies": ["CC 197", "CC 215"]
+  },
+  {
+    "ref": "CC 215",
+    "titre": "Régime matrimonial — Liquidation et partage",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_215",
+    "texteSimple": "Chaque époux a droit à la moitié du bénéfice de l'autre (acquêts moins dettes). C'est le partage par moitié des acquêts nets.",
+    "exemplesConcrets": [
+      "Acquêts du mari = 200'000 CHF, acquêts de la femme = 50'000 CHF → chacun donne la moitié à l'autre, solde = 75'000 CHF pour la femme"
+    ],
+    "domaines": ["famille", "régime matrimonial"],
+    "articlesLies": ["CC 197", "CC 209"]
+  },
+  {
+    "ref": "CC 256",
+    "titre": "Filiation — Contestation de paternité par l'enfant",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_256",
+    "texteSimple": "L'enfant peut agir en contestation du lien de filiation avec le mari de sa mère, s'il prouve que celui-ci n'est pas son père biologique.",
+    "exemplesConcrets": [
+      "L'enfant devenu majeur apprend que son père légal n'est pas son père biologique → il peut contester la paternité"
+    ],
+    "domaines": ["famille", "filiation"],
+    "articlesLies": ["CC 260", "CC 261"]
+  },
+  {
+    "ref": "CC 257e",
+    "titre": "Filiation — Contestation de la reconnaissance",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_257e",
+    "texteSimple": "Lorsqu'un homme a reconnu un enfant qui n'est pas le sien, il peut contester la reconnaissance dans un délai d'un an dès qu'il apprend que les conditions ne sont pas remplies.",
+    "exemplesConcrets": [
+      "Un homme reconnaît un enfant par erreur puis apprend via un test ADN qu'il n'est pas le père → contestation possible"
+    ],
+    "domaines": ["famille", "filiation"],
+    "articlesLies": ["CC 256", "CC 260"]
+  },
+  {
+    "ref": "CC 260",
+    "titre": "Filiation — Reconnaissance de paternité",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_260",
+    "texteSimple": "Si les parents ne sont pas mariés, le père peut reconnaître l'enfant par déclaration devant l'officier de l'état civil, par testament ou par déclaration devant le juge.",
+    "exemplesConcrets": [
+      "Le père célibataire se rend à l'état civil pour reconnaître son enfant né hors mariage"
+    ],
+    "domaines": ["famille", "filiation"],
+    "articlesLies": ["CC 261", "CC 256"]
+  },
+  {
+    "ref": "CC 261",
+    "titre": "Filiation — Action en paternité",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_261",
+    "texteSimple": "Si le père ne reconnaît pas l'enfant, la mère ou l'enfant peut intenter une action en paternité. La paternité est présumée si le défendeur a eu des rapports avec la mère pendant la période de conception.",
+    "exemplesConcrets": [
+      "Le père refuse de reconnaître l'enfant → la mère saisit le juge, un test ADN est ordonné"
+    ],
+    "domaines": ["famille", "filiation"],
+    "articlesLies": ["CC 260", "CC 256", "CC 276"]
+  },
+  {
+    "ref": "CC 264",
+    "titre": "Adoption — Conditions",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_264",
+    "texteSimple": "Une personne peut adopter un enfant si elle lui a fourni des soins et une éducation pendant au moins un an et que l'adoption sert le bien de l'enfant.",
+    "exemplesConcrets": [
+      "Un couple marié depuis 5 ans accueille un enfant depuis 2 ans → demande d'adoption possible",
+      "Le beau-parent veut adopter l'enfant de son conjoint après plusieurs années de vie commune"
+    ],
+    "domaines": ["famille", "adoption"],
+    "articlesLies": ["CC 260", "CC 296"]
+  },
+  {
+    "ref": "CC 270",
+    "titre": "Nom de l'enfant",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_270",
+    "texteSimple": "L'enfant de parents mariés porte le nom de famille choisi par les époux. L'enfant de parents non mariés porte le nom du parent qui a l'autorité parentale (en principe la mère, sauf déclaration commune).",
+    "exemplesConcrets": [
+      "Parents mariés sous le nom Dupont → l'enfant s'appelle Dupont",
+      "Parents non mariés → l'enfant porte le nom de la mère sauf si les parents font une déclaration conjointe"
+    ],
+    "domaines": ["famille", "filiation"],
+    "articlesLies": ["CC 160", "CC 30", "CC 296"]
+  },
+  {
+    "ref": "CC 276",
+    "titre": "Entretien de l'enfant — Obligation générale",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_276",
+    "texteSimple": "Les parents doivent pourvoir à l'entretien de l'enfant, y compris les frais d'éducation, de formation et de protection. L'obligation dure jusqu'à la majorité, voire au-delà si l'enfant est en formation.",
+    "exemplesConcrets": [
+      "L'enfant de 20 ans en études universitaires → les parents doivent continuer à l'entretenir",
+      "Fin de l'apprentissage à 18 ans → l'obligation prend fin sauf si l'enfant poursuit une formation"
+    ],
+    "domaines": ["famille", "enfants"],
+    "articlesLies": ["CC 133", "CC 296", "CC 261"]
+  },
+  {
+    "ref": "CC 296",
+    "titre": "Autorité parentale — Principe",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_296",
+    "texteSimple": "L'autorité parentale sert le bien de l'enfant. Les père et mère exercent l'autorité parentale conjointement. En cas de parents non mariés, l'autorité parentale conjointe s'établit par déclaration commune.",
+    "exemplesConcrets": [
+      "Parents mariés → autorité parentale conjointe automatique",
+      "Parents non mariés → déclaration conjointe à l'état civil pour l'autorité parentale conjointe"
+    ],
+    "domaines": ["famille", "enfants"],
+    "articlesLies": ["CC 298a", "CC 298b", "CC 133"]
+  },
+  {
+    "ref": "CC 298a",
+    "titre": "Autorité parentale — Parents non mariés",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_298a",
+    "texteSimple": "Les parents non mariés obtiennent l'autorité parentale conjointe par une déclaration commune auprès de l'état civil. Cette déclaration confirme qu'ils s'engagent à assumer ensemble la responsabilité de l'enfant.",
+    "exemplesConcrets": [
+      "Couple non marié à la naissance → ils font une déclaration d'autorité parentale conjointe à l'état civil"
+    ],
+    "domaines": ["famille", "enfants"],
+    "articlesLies": ["CC 296", "CC 298b"]
+  },
+  {
+    "ref": "CC 298b",
+    "titre": "Autorité parentale — Attribution par l'APEA ou le juge",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_298b",
+    "texteSimple": "Si les parents non mariés ne font pas de déclaration conjointe, l'APEA attribue l'autorité parentale conjointe à la demande d'un parent, sauf si le bien de l'enfant commande une attribution exclusive.",
+    "exemplesConcrets": [
+      "Le père demande l'autorité parentale conjointe → l'APEA l'accorde sauf risque pour l'enfant"
+    ],
+    "domaines": ["famille", "enfants"],
+    "articlesLies": ["CC 296", "CC 298a"]
+  },
+  {
+    "ref": "CC 306",
+    "titre": "Enfant — Exercice des droits civils",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_306",
+    "texteSimple": "L'enfant sous autorité parentale est représenté par ses parents dans les actes juridiques. Si les intérêts des parents et de l'enfant sont opposés, l'autorité nomme un curateur.",
+    "exemplesConcrets": [
+      "L'enfant hérite d'un bien que le parent convoite aussi → un curateur est nommé pour représenter l'enfant"
+    ],
+    "domaines": ["famille", "enfants"],
+    "articlesLies": ["CC 296", "CC 307", "CC 308"]
+  },
+  {
+    "ref": "CC 307",
+    "titre": "Protection de l'enfant — Mesures appropriées",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_307",
+    "texteSimple": "Si le développement de l'enfant est menacé et que les parents ne peuvent pas y remédier, l'APEA prend les mesures nécessaires pour protéger l'enfant (rappel aux devoirs, directives, surveillance).",
+    "exemplesConcrets": [
+      "Enfant en échec scolaire grave par négligence parentale → l'APEA ordonne un suivi éducatif",
+      "Conflits parentaux nuisant à l'enfant → l'APEA impose une médiation"
+    ],
+    "domaines": ["famille", "protection de l'enfant"],
+    "articlesLies": ["CC 308", "CC 310", "CC 312"]
+  },
+  {
+    "ref": "CC 308",
+    "titre": "Protection de l'enfant — Curatelle éducative",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_308",
+    "texteSimple": "L'APEA peut nommer un curateur pour assister les parents dans la prise en charge de l'enfant. Le curateur a des pouvoirs définis (surveillance, médiation, conseil).",
+    "exemplesConcrets": [
+      "Parents dépassés par le comportement de l'adolescent → un curateur éducatif est désigné pour les soutenir"
+    ],
+    "domaines": ["famille", "protection de l'enfant"],
+    "articlesLies": ["CC 307", "CC 310", "CC 312"]
+  },
+  {
+    "ref": "CC 310",
+    "titre": "Protection de l'enfant — Retrait du droit de garde",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_310",
+    "texteSimple": "Si les autres mesures n'ont pas suffi, l'APEA peut retirer la garde de l'enfant aux parents et le placer dans un foyer ou une famille d'accueil.",
+    "exemplesConcrets": [
+      "Maltraitance avérée malgré le suivi → l'enfant est placé en famille d'accueil",
+      "Toxicomanie grave empêchant tout encadrement → placement de l'enfant"
+    ],
+    "domaines": ["famille", "protection de l'enfant"],
+    "articlesLies": ["CC 307", "CC 308", "CC 312"]
+  },
+  {
+    "ref": "CC 312",
+    "titre": "Protection de l'enfant — Retrait de l'autorité parentale",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_312",
+    "texteSimple": "L'APEA retire l'autorité parentale si les parents ne sont pas en mesure de l'exercer comme il convient et qu'aucune autre mesure ne suffit. Un tuteur est alors nommé.",
+    "exemplesConcrets": [
+      "Parent condamné pour violence grave et répétée sur l'enfant → retrait de l'autorité parentale"
+    ],
+    "domaines": ["famille", "protection de l'enfant"],
+    "articlesLies": ["CC 307", "CC 308", "CC 310", "CC 315a"]
+  },
+  {
+    "ref": "CC 315a",
+    "titre": "Protection de l'enfant — Compétence en cas de procédure matrimoniale",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_315a",
+    "texteSimple": "Quand un juge est saisi d'une procédure de divorce ou de protection de l'union conjugale, c'est lui (et non l'APEA) qui est compétent pour prendre les mesures de protection de l'enfant.",
+    "exemplesConcrets": [
+      "Divorce en cours → c'est le juge du divorce qui décide du placement éventuel de l'enfant, pas l'APEA"
+    ],
+    "domaines": ["famille", "protection de l'enfant"],
+    "articlesLies": ["CC 133", "CC 307", "CC 312"]
+  },
+  {
+    "ref": "CC 327a",
+    "titre": "Biens de l'enfant — Administration",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_327a",
+    "texteSimple": "Les parents administrent les biens de l'enfant avec diligence. L'APEA peut ordonner des mesures si la gestion met en danger le patrimoine de l'enfant.",
+    "exemplesConcrets": [
+      "L'enfant hérite de 100'000 CHF → les parents doivent gérer cet argent dans l'intérêt de l'enfant, pas pour leurs propres dépenses"
+    ],
+    "domaines": ["famille", "enfants"],
+    "articlesLies": ["CC 306", "CC 296"]
+  },
+  {
+    "ref": "CC 360",
+    "titre": "Directives anticipées du patient",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_360",
+    "texteSimple": "Toute personne capable de discernement peut rédiger des directives anticipées pour indiquer les traitements médicaux qu'elle accepte ou refuse si elle devient incapable de discernement.",
+    "exemplesConcrets": [
+      "Rédaction de directives anticipées refusant l'acharnement thérapeutique",
+      "Désignation d'un représentant thérapeutique en cas de démence"
+    ],
+    "domaines": ["protection de l'adulte", "santé"],
+    "articlesLies": ["CC 370", "CC 388"]
+  },
+  {
+    "ref": "CC 370",
+    "titre": "Mandat pour cause d'inaptitude",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_370",
+    "texteSimple": "Toute personne capable de discernement peut charger une personne physique ou morale de prendre soin de sa personne ou de gérer ses biens si elle devient incapable de discernement.",
+    "exemplesConcrets": [
+      "Rédaction d'un mandat confiant la gestion financière à son fils en cas de démence",
+      "Mandat désignant un ami de confiance pour les décisions médicales"
+    ],
+    "domaines": ["protection de l'adulte"],
+    "articlesLies": ["CC 360", "CC 388", "CC 390"]
+  },
+  {
+    "ref": "CC 388",
+    "titre": "Protection de l'adulte — But des mesures",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_388",
+    "texteSimple": "Les mesures de protection de l'adulte visent à assurer le bien-être de la personne concernée, à préserver son autonomie autant que possible, et à la protéger dans ses relations juridiques.",
+    "exemplesConcrets": [
+      "Personne âgée qui se fait escroquer → mesure de curatelle pour la protéger"
+    ],
+    "domaines": ["protection de l'adulte"],
+    "articlesLies": ["CC 390", "CC 394", "CC 398"]
+  },
+  {
+    "ref": "CC 390",
+    "titre": "Protection de l'adulte — Conditions de la curatelle",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_390",
+    "texteSimple": "L'APEA institue une curatelle quand une personne majeure ne peut pas gérer certaines affaires en raison d'une déficience mentale, de troubles psychiques ou d'un autre état de faiblesse, et que l'assistance fournie par les proches ne suffit pas.",
+    "exemplesConcrets": [
+      "Personne atteinte d'Alzheimer ne gérant plus ses factures → curatelle de gestion",
+      "Jeune adulte avec un handicap mental → curatelle de représentation"
+    ],
+    "domaines": ["protection de l'adulte"],
+    "articlesLies": ["CC 388", "CC 394", "CC 395", "CC 396"]
+  },
+  {
+    "ref": "CC 394",
+    "titre": "Curatelle d'accompagnement",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_394",
+    "texteSimple": "La curatelle d'accompagnement est instituée avec le consentement de la personne concernée. Le curateur l'aide dans ses tâches quotidiennes sans la remplacer dans ses décisions.",
+    "exemplesConcrets": [
+      "Personne dépressive ayant besoin d'aide pour ses démarches administratives → curatelle d'accompagnement volontaire"
+    ],
+    "domaines": ["protection de l'adulte"],
+    "articlesLies": ["CC 390", "CC 395", "CC 396"]
+  },
+  {
+    "ref": "CC 395",
+    "titre": "Curatelle de représentation",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_395",
+    "texteSimple": "La curatelle de représentation permet au curateur d'agir au nom de la personne concernée pour certains actes précis. L'APEA peut limiter ou supprimer l'exercice des droits civils de la personne pour ces actes.",
+    "exemplesConcrets": [
+      "Personne hospitalisée incapable de gérer ses affaires → le curateur signe les contrats à sa place"
+    ],
+    "domaines": ["protection de l'adulte"],
+    "articlesLies": ["CC 390", "CC 394", "CC 396", "CC 398"]
+  },
+  {
+    "ref": "CC 396",
+    "titre": "Curatelle de gestion",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_396",
+    "texteSimple": "La curatelle de gestion porte sur l'administration du patrimoine ou d'une partie du patrimoine de la personne concernée.",
+    "exemplesConcrets": [
+      "Personne âgée confuse → le curateur gère ses comptes bancaires et paie ses factures"
+    ],
+    "domaines": ["protection de l'adulte"],
+    "articlesLies": ["CC 390", "CC 394", "CC 395", "CC 398"]
+  },
+  {
+    "ref": "CC 398",
+    "titre": "Curatelle de portée générale",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_398",
+    "texteSimple": "La curatelle de portée générale est instituée quand une personne a besoin d'aide permanente et ne peut plus du tout gérer ses affaires. Elle entraîne la perte de l'exercice des droits civils.",
+    "exemplesConcrets": [
+      "Personne en état végétatif → curatelle de portée générale, le curateur gère tout",
+      "Handicap mental sévère empêchant toute autonomie → curatelle de portée générale"
+    ],
+    "domaines": ["protection de l'adulte"],
+    "articlesLies": ["CC 390", "CC 395", "CC 396", "CC 400"]
+  },
+  {
+    "ref": "CC 400",
+    "titre": "Curateur — Nomination et acceptation",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_400",
+    "texteSimple": "L'APEA nomme comme curateur une personne physique qui possède les aptitudes et les connaissances nécessaires, et qui dispose du temps requis. Elle tient compte des souhaits de la personne concernée.",
+    "exemplesConcrets": [
+      "La personne sous curatelle souhaite que son frère soit curateur → l'APEA en tient compte si c'est approprié"
+    ],
+    "domaines": ["protection de l'adulte"],
+    "articlesLies": ["CC 390", "CC 398"]
+  },
+  {
+    "ref": "CC 446",
+    "titre": "APEA — Procédure (maxime inquisitoire)",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_446",
+    "texteSimple": "L'APEA établit les faits d'office (maxime inquisitoire). Elle recueille elle-même les informations nécessaires et n'est pas liée par les conclusions des parties.",
+    "exemplesConcrets": [
+      "L'APEA ordonne une expertise psychiatrique même si aucune partie ne l'a demandée"
+    ],
+    "domaines": ["protection de l'adulte", "procédure"],
+    "articlesLies": ["CC 449a", "CC 450"]
+  },
+  {
+    "ref": "CC 449a",
+    "titre": "APEA — Recours (effet suspensif)",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_449a",
+    "texteSimple": "Le recours contre une décision de l'APEA a un effet suspensif, sauf si l'APEA ou l'instance de recours en décide autrement.",
+    "exemplesConcrets": [
+      "Recours contre un placement → la mesure est suspendue jusqu'à la décision, sauf urgence"
+    ],
+    "domaines": ["protection de l'adulte", "procédure"],
+    "articlesLies": ["CC 446", "CC 450"]
+  },
+  {
+    "ref": "CC 450",
+    "titre": "APEA — Droit de recours",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_450",
+    "texteSimple": "Toute personne qui a un intérêt juridique peut recourir contre une décision de l'APEA auprès du juge compétent dans un délai de 30 jours.",
+    "exemplesConcrets": [
+      "Fils en désaccord avec la curatelle imposée à sa mère → recours au tribunal dans les 30 jours"
+    ],
+    "domaines": ["protection de l'adulte", "procédure"],
+    "articlesLies": ["CC 446", "CC 449a", "CC 453"]
+  },
+  {
+    "ref": "CC 453",
+    "titre": "APEA — Audition de la personne concernée",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_453",
+    "texteSimple": "La personne concernée doit être entendue personnellement par l'APEA, sauf si cela est disproportionné. En cas de placement, elle doit obligatoirement être entendue.",
+    "exemplesConcrets": [
+      "Avant d'instituer une curatelle → l'APEA convoque la personne pour l'entendre"
+    ],
+    "domaines": ["protection de l'adulte", "procédure"],
+    "articlesLies": ["CC 446", "CC 450", "CC 455"]
+  },
+  {
+    "ref": "CC 455",
+    "titre": "APEA — Placement à des fins d'assistance (PAFA)",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_455",
+    "texteSimple": "L'APEA examine le placement au plus tard 6 mois après son début, puis tous les 6 mois. Elle libère la personne dès que les conditions du placement ne sont plus remplies.",
+    "exemplesConcrets": [
+      "Personne placée en institution psychiatrique → l'APEA réexamine tous les 6 mois si le placement est encore justifié"
+    ],
+    "domaines": ["protection de l'adulte"],
+    "articlesLies": ["CC 453", "CC 446"]
+  },
+  {
+    "ref": "CC 457",
+    "titre": "Successions — Héritiers légaux (parentèle)",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_457",
+    "texteSimple": "Les héritiers légaux du défunt sont d'abord ses descendants (enfants, petits-enfants). S'il n'a pas de descendants, ses père et mère héritent, puis les frères et sœurs, etc.",
+    "exemplesConcrets": [
+      "Le défunt laisse 2 enfants → ils héritent à parts égales",
+      "Pas d'enfants → les parents du défunt héritent, ou à défaut ses frères et sœurs"
+    ],
+    "domaines": ["successions"],
+    "articlesLies": ["CC 462", "CC 470", "CC 471"]
+  },
+  {
+    "ref": "CC 462",
+    "titre": "Successions — Part du conjoint survivant",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_462",
+    "texteSimple": "Le conjoint ou partenaire enregistré survivant reçoit : la moitié de la succession en concours avec les descendants ; les 3/4 en concours avec les père et mère ; la totalité s'il n'y a pas d'héritiers des deux premières parentèles.",
+    "exemplesConcrets": [
+      "Décès avec 2 enfants → le conjoint reçoit 1/2, les enfants se partagent l'autre 1/2",
+      "Décès sans enfant, parents vivants → le conjoint reçoit 3/4, les parents 1/4"
+    ],
+    "domaines": ["successions"],
+    "articlesLies": ["CC 457", "CC 470", "CC 471"]
+  },
+  {
+    "ref": "CC 470",
+    "titre": "Dispositions pour cause de mort — Quotité disponible",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_470",
+    "texteSimple": "Toute personne peut disposer par testament de la part de ses biens qui dépasse les réserves héréditaires. Cette part est appelée la quotité disponible.",
+    "exemplesConcrets": [
+      "Le défunt a des enfants → il peut léguer librement la part qui excède les 3/4 réservés aux enfants",
+      "Pas d'héritiers réservataires → le défunt peut disposer de la totalité de ses biens"
+    ],
+    "domaines": ["successions"],
+    "articlesLies": ["CC 471", "CC 457", "CC 462"]
+  },
+  {
+    "ref": "CC 471",
+    "titre": "Réserve héréditaire — Quotités",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_471",
+    "texteSimple": "Les descendants reçoivent les 3/4 de leur part légale comme réserve. Le conjoint reçoit la 1/2 de sa part légale comme réserve. Ces parts ne peuvent pas être supprimées par testament.",
+    "exemplesConcrets": [
+      "Le père veut tout léguer à sa nouvelle femme → les enfants peuvent réclamer 3/4 de leur part légale",
+      "Testament qui déshérite le conjoint → le conjoint peut exiger au minimum 1/2 de sa part légale"
+    ],
+    "domaines": ["successions"],
+    "articlesLies": ["CC 470", "CC 457", "CC 462"]
+  },
+  {
+    "ref": "CC 473",
+    "titre": "Usufruit du conjoint survivant",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_473",
+    "texteSimple": "Le testateur peut attribuer l'usufruit de toute la part dévolue aux descendants communs au conjoint survivant. Cet usufruit remplace le droit de succession légal du conjoint.",
+    "exemplesConcrets": [
+      "Le père lègue l'usufruit de la maison familiale à la mère → les enfants sont nus-propriétaires mais la mère y vit sa vie durant"
+    ],
+    "domaines": ["successions"],
+    "articlesLies": ["CC 471", "CC 462", "CC 470"]
+  },
+  {
+    "ref": "CC 477",
+    "titre": "Exhérédation",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_477",
+    "texteSimple": "Le testateur peut priver un héritier réservataire de sa réserve si celui-ci a commis une infraction pénale grave contre le défunt ou ses proches, ou s'il a gravement manqué à ses obligations familiales.",
+    "exemplesConcrets": [
+      "Un fils a tenté de tuer son père → le père peut l'exhéréder par testament",
+      "Un enfant refuse tout contact et tout soutien à un parent dans le besoin → exhérédation possible"
+    ],
+    "domaines": ["successions"],
+    "articlesLies": ["CC 471", "CC 470"]
+  },
+  {
+    "ref": "CC 494",
+    "titre": "Pacte successoral",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_494",
+    "texteSimple": "Le disposant peut s'obliger par pacte successoral à laisser sa succession ou un legs à l'autre partie contractante. Il conserve la libre disposition de ses biens de son vivant.",
+    "exemplesConcrets": [
+      "Deux époux signent un pacte de renonciation mutuelle à leur réserve pour avantager un tiers",
+      "Un parent promet par pacte successoral de léguer la maison familiale à l'enfant qui s'en occupe"
+    ],
+    "domaines": ["successions"],
+    "articlesLies": ["CC 512", "CC 470", "CC 505"]
+  },
+  {
+    "ref": "CC 505",
+    "titre": "Testament — Forme olographe",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_505",
+    "texteSimple": "Le testament olographe doit être écrit entièrement à la main, daté et signé par le testateur. Un testament tapé à l'ordinateur ou non signé est nul.",
+    "exemplesConcrets": [
+      "Testament rédigé à la main et signé → valable",
+      "Testament tapé sur ordinateur et imprimé → nul, même s'il est signé"
+    ],
+    "domaines": ["successions"],
+    "articlesLies": ["CC 512", "CC 494"]
+  },
+  {
+    "ref": "CC 512",
+    "titre": "Testament — Révocation",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_512",
+    "texteSimple": "Le testateur peut révoquer son testament à tout moment, soit en rédigeant un nouveau testament, soit en détruisant le document. Un testament postérieur remplace l'ancien sur les points où il le contredit.",
+    "exemplesConcrets": [
+      "Rédaction d'un nouveau testament → l'ancien est automatiquement remplacé sur les points contradictoires",
+      "Déchirer son testament devant témoins → révocation valable"
+    ],
+    "domaines": ["successions"],
+    "articlesLies": ["CC 505", "CC 494"]
+  },
+  {
+    "ref": "CC 517",
+    "titre": "Exécuteur testamentaire — Nomination",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_517",
+    "texteSimple": "Le testateur peut désigner une ou plusieurs personnes comme exécuteurs testamentaires. L'exécuteur est chargé de veiller à l'exécution des volontés du défunt.",
+    "exemplesConcrets": [
+      "Le testateur nomme son avocat comme exécuteur testamentaire pour gérer le partage de la succession"
+    ],
+    "domaines": ["successions"],
+    "articlesLies": ["CC 518", "CC 505"]
+  },
+  {
+    "ref": "CC 518",
+    "titre": "Exécuteur testamentaire — Pouvoirs",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_518",
+    "texteSimple": "L'exécuteur testamentaire administre la succession, paie les dettes, acquitte les legs et procède au partage conformément aux volontés du testateur. Il représente la succession en justice.",
+    "exemplesConcrets": [
+      "L'exécuteur testamentaire vend un immeuble de la succession pour payer les dettes puis distribue le solde aux héritiers"
+    ],
+    "domaines": ["successions"],
+    "articlesLies": ["CC 517", "CC 603"]
+  },
+  {
+    "ref": "CC 540",
+    "titre": "Indignité successorale",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_540",
+    "texteSimple": "Est indigne de succéder celui qui a intentionnellement tué le défunt, l'a mis dans l'impossibilité de tester, l'a contraint à faire ou révoquer un testament, ou a détruit/supprimé un testament.",
+    "exemplesConcrets": [
+      "Un héritier a détruit le testament pour hériter davantage → il est exclu de la succession",
+      "Un héritier a tué le défunt → il perd tout droit successoral"
+    ],
+    "domaines": ["successions"],
+    "articlesLies": ["CC 477", "CC 457"]
+  },
+  {
+    "ref": "CC 559",
+    "titre": "Ouverture de la succession — Répudiation (délai)",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_559",
+    "texteSimple": "L'héritier légal ou institué dispose de 3 mois pour répudier (refuser) la succession. Ce délai court dès le moment où il a connaissance du décès ou de sa qualité d'héritier.",
+    "exemplesConcrets": [
+      "Le défunt laisse plus de dettes que de biens → l'héritier répudie dans les 3 mois pour ne pas hériter des dettes"
+    ],
+    "domaines": ["successions"],
+    "articlesLies": ["CC 567", "CC 580"]
+  },
+  {
+    "ref": "CC 567",
+    "titre": "Répudiation — Effets",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_567",
+    "texteSimple": "Si un héritier répudie la succession, sa part passe à ses propres descendants s'il en a. Si tous les héritiers du même degré répudient, la succession passe à la parentèle suivante.",
+    "exemplesConcrets": [
+      "Le fils répudie → ses propres enfants (petits-enfants du défunt) sont appelés à hériter",
+      "Tous les enfants répudient → les parents du défunt héritent"
+    ],
+    "domaines": ["successions"],
+    "articlesLies": ["CC 559", "CC 580"]
+  },
+  {
+    "ref": "CC 580",
+    "titre": "Bénéfice d'inventaire",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_580",
+    "texteSimple": "L'héritier peut demander un inventaire officiel (bénéfice d'inventaire) dans le délai de répudiation. L'inventaire recense les actifs et les passifs de la succession, ce qui permet de décider en connaissance de cause.",
+    "exemplesConcrets": [
+      "Succession d'un entrepreneur → l'héritier demande l'inventaire pour savoir si les dettes dépassent les actifs avant de décider"
+    ],
+    "domaines": ["successions"],
+    "articlesLies": ["CC 559", "CC 567"]
+  },
+  {
+    "ref": "CC 603",
+    "titre": "Partage — Règles",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_603",
+    "texteSimple": "Les héritiers ont un droit égal au partage. Ils conviennent librement du mode de partage. En cas de désaccord, le juge ordonne la vente ou l'attribution.",
+    "exemplesConcrets": [
+      "Trois héritiers n'arrivent pas à se mettre d'accord sur la maison familiale → le juge peut ordonner la vente aux enchères et le partage du produit"
+    ],
+    "domaines": ["successions"],
+    "articlesLies": ["CC 612a", "CC 518", "CC 457"]
+  },
+  {
+    "ref": "CC 612a",
+    "titre": "Partage — Attribution du logement familial",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_612a",
+    "texteSimple": "Le conjoint survivant peut demander que le logement familial et le mobilier de ménage lui soient attribués sur sa part successorale.",
+    "exemplesConcrets": [
+      "Le mari décède → la veuve demande à conserver l'appartement familial en imputation sur sa part d'héritage"
+    ],
+    "domaines": ["successions", "famille"],
+    "articlesLies": ["CC 462", "CC 603"]
+  },
+  {
+    "ref": "CC 684",
+    "titre": "Droits réels — Rapports de voisinage (immissions)",
+    "rs": "210",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_684",
+    "texteSimple": "Chacun est tenu d'exercer sa propriété sans nuire excessivement aux voisins. Les immissions comme le bruit, la fumée, les odeurs ou les vibrations sont illicites si elles excèdent la tolérance normale.",
+    "exemplesConcrets": [
+      "Le voisin fait des travaux de nuit avec un marteau-piqueur → nuisance excessive",
+      "Barbecue occasionnel en été → tolérance normale, pas d'action possible"
+    ],
+    "domaines": ["voisinage", "droits réels"],
+    "articlesLies": ["CC 28"]
+  }
+]

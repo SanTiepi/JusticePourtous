@@ -1,0 +1,717 @@
+[
+  {
+    "code": "VD",
+    "nom": "Vaud",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Lignes directrices Conférence des préposés aux poursuites et faillites de Suisse (2009, mises à jour annuellement)"
+    },
+    "aideJuridictionnelle": {
+      "seuilRevenu": "Basé sur minimum vital LP élargi (minimum vital + 30% environ)",
+      "formulaire": "https://www.vd.ch/prestation/demander-lassistance-judiciaire",
+      "tribunal": "Tribunal cantonal, Route du Signal 8, 1014 Lausanne",
+      "telephone": "021 316 15 15"
+    },
+    "conciliationBail": {
+      "autorite": "Commissions préfectorales de conciliation en matière de baux à loyer",
+      "adresse": "Variable selon le district (Lausanne, Nyon, Yverdon, etc.)",
+      "formulaire": "https://www.vd.ch/etat-droit-finances/districts-/-prefectures/prefectures/prestations-des-prefectures/commissions-prefectorales-de-conciliation",
+      "cout": "Gratuit",
+      "delai": "2-4 semaines",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Office des poursuites du district de Lausanne",
+      "adresse": "Chemin du Trabandan 28, 1014 Lausanne",
+      "telephone": "021 316 64 64",
+      "email": "info.opl@vd.ch",
+      "formulaireEnLigne": "https://www.poursuites-plus.ch/adresse/office/office-des-poursuites-du-district-de-lausanne/"
+    },
+    "prudhommes": {
+      "tribunal": "Tribunal de prud'hommes de l'arrondissement de Lausanne",
+      "adresse": "Route du Signal 8, 1014 Lausanne",
+      "gratuit": "Oui jusqu'à CHF 30'000 (art. 114 CPC)",
+      "delai": "3-6 mois",
+      "url": "https://www.vd.ch/ojv/tribunaux-de-prudhommes/lausanne"
+    },
+    "BRAPA": {
+      "nom": "BRAPA (Bureau de recouvrement et d'avances sur pensions alimentaires)",
+      "adresse": "Bâtiment administratif de la Pontaise, Route des Plaines-du-Loup 1, 1014 Lausanne",
+      "telephone": "021 316 52 21",
+      "email": "info.brapa@vd.ch",
+      "url": "https://www.vd.ch/prestation/demander-des-avances-sur-pensions-alimentaires",
+      "horaires": "Lu-Ve 08h30-11h30 / 13h30-16h30"
+    },
+    "APEA": {
+      "nom": "Justice de paix (APEA du canton de Vaud)",
+      "adresse": "Variable selon le district — Lausanne : Palais de justice, Route du Signal 8, 1014 Lausanne",
+      "telephone": "021 316 15 15",
+      "url": "https://www.vd.ch/etat-droit-finances/statistique/statistiques-par-domaine/19-criminalite-et-droit/protection-de-ladulte-et-de-lenfant"
+    },
+    "centreLAVI": {
+      "nom": "Centre LAVI — Consultation pour victimes d'infractions (Profa)",
+      "adresse": "Grand-Pont 2bis, 1003 Lausanne",
+      "telephone": "021 631 03 00",
+      "url": "https://www.profa.ch",
+      "horaires": "Sur rendez-vous",
+      "gratuit": true
+    },
+    "ORP": {
+      "nom": "Office régional de placement (ORP) de Lausanne",
+      "adresse": "Place Chauderon 9, 3e étage, 1001 Lausanne",
+      "telephone": "021 315 78 99",
+      "email": "orp@lausanne.ch",
+      "url": "https://www.lausanne.ch/vie-pratique/travail/aide-demandeurs-emploi.html",
+      "horaires": "Lu-Ve 08h00-11h45, 13h30-17h00"
+    },
+    "subsidesLAMal": {
+      "seuil": "Basé sur le revenu déterminant unifié (RDU) — primes limitées à max. 10% du revenu",
+      "formulaire": "Octroi automatique selon taxation fiscale",
+      "url": "https://www.vd.ch/sante-soins-et-handicap/assurance-maladie/subside-a-lassurance-maladie"
+    },
+    "naturalisationOrdinaire": {
+      "dureeResidenceCanton": "2 ans dans le canton",
+      "dureeResidenceCommune": "Variable selon commune",
+      "dureeResidenceSuisse": "10 ans en Suisse (dont 3 des 5 dernières années)",
+      "langue": "B1 oral + A2 écrit (français)",
+      "taxe": "Variable selon commune (CHF 500-2000 env.)",
+      "url": "https://www.vd.ch/prestation/demander-une-naturalisation-ordinaire-dans-le-canton-de-vaud"
+    }
+  },
+  {
+    "code": "GE",
+    "nom": "Genève",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Normes d'insaisissabilité NI-2026, Chambre de surveillance des Offices des poursuites et faillites (rsGE E 3 60.04)"
+    },
+    "aideJuridictionnelle": {
+      "seuilRevenu": "Revenu et fortune ne couvrent pas le minimum vital + 20%",
+      "formulaire": "https://justice.ge.ch/en/content/application-forms",
+      "tribunal": "Greffe de l'assistance juridique, Pouvoir judiciaire, Place du Bourg-de-Four 1, 1204 Genève",
+      "telephone": "022 327 63 00"
+    },
+    "conciliationBail": {
+      "autorite": "Commission de conciliation en matière de baux et loyers",
+      "adresse": "Rue de l'Athénée 6-8, 1205 Genève",
+      "telephone": "022 327 62 10",
+      "formulaire": "https://justice.ge.ch/en/content/commission-de-conciliation-en-matiere-de-baux-et-loyers",
+      "cout": "Gratuit",
+      "delai": "2-4 semaines",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Office des poursuites de Genève",
+      "adresse": "Rue du Stand 46, 1211 Genève 8",
+      "telephone": "022 388 90 90",
+      "email": "ocp@etat.ge.ch",
+      "formulaireEnLigne": "https://www.ge.ch/organisation/ocp-direction-office-cantonal-poursuites"
+    },
+    "prudhommes": {
+      "tribunal": "Tribunal des prud'hommes de Genève",
+      "adresse": "Place du Bourg-de-Four 1, 1204 Genève",
+      "gratuit": "Oui jusqu'à CHF 30'000 (art. 114 CPC)",
+      "delai": "3-6 mois",
+      "url": "https://justice.ge.ch/en/content/tribunal-des-prudhommes"
+    },
+    "BRAPA": {
+      "nom": "SCARPA (Service cantonal d'avance et de recouvrement des pensions alimentaires)",
+      "adresse": "Rue Ardutius-de-Faucigny 2, 1204 Genève",
+      "telephone": "022 546 30 00",
+      "url": "https://www.ge.ch/organisation/service-cantonal-avance-recouvrement-pensions-alimentaires"
+    },
+    "APEA": {
+      "nom": "Tribunal de protection de l'adulte et de l'enfant (TPAE)",
+      "adresse": "Rue des Chaudronniers 3, 1204 Genève",
+      "telephone": "022 327 92 92",
+      "url": "https://justice.ge.ch"
+    },
+    "centreLAVI": {
+      "nom": "Centre LAVI de Genève — Centre d'aide aux victimes d'agressions violentes",
+      "adresse": "Boulevard Saint-Georges 72, 1205 Genève",
+      "telephone": "022 320 01 02",
+      "url": "https://centrelavi-ge.ch",
+      "horaires": "Lu-Ve 14h00-17h00, consultations sur rendez-vous",
+      "gratuit": true
+    },
+    "ORP": {
+      "nom": "Office cantonal de l'emploi (OCE) — ORP de Genève",
+      "adresse": "Rue des Gares 16, CP 2555, 1211 Genève 2",
+      "telephone": "022 546 36 66",
+      "email": "info.oce@etat.ge.ch",
+      "url": "https://www.ge.ch/organisation/office-cantonal-emploi-oce",
+      "horaires": "Lu-Ve 08h00-16h30"
+    },
+    "subsidesLAMal": {
+      "seuil": "Octroi automatique selon le revenu fiscal — pas de demande nécessaire",
+      "formulaire": "Automatique (déduit des primes par l'assureur)",
+      "url": "https://www.ge.ch/informations-generales-subside-assurance-maladie"
+    },
+    "naturalisationOrdinaire": {
+      "dureeResidenceCanton": "2 ans dans le canton (dont 12 derniers mois)",
+      "dureeResidenceCommune": "Pas d'exigence communale spécifique",
+      "dureeResidenceSuisse": "10 ans en Suisse (dont 3 des 5 dernières années)",
+      "langue": "B1 oral + A2 écrit (français)",
+      "taxe": "CHF 500-1500 environ",
+      "url": "https://www.ge.ch/devenir-suisse/naturalisation-ordinaire-conditions-remplir"
+    }
+  },
+  {
+    "code": "VS",
+    "nom": "Valais",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Lignes directrices Conférence des préposés aux poursuites et faillites de Suisse"
+    },
+    "aideJuridictionnelle": {
+      "seuilRevenu": "Basé sur minimum vital LP élargi",
+      "formulaire": "https://www.vs.ch/web/sj/assistance-judiciaire",
+      "tribunal": "Tribunal cantonal, Palais de justice, Avenue Mathieu-Schiner 1, 1950 Sion",
+      "telephone": "027 606 58 00"
+    },
+    "conciliationBail": {
+      "autorite": "Commission cantonale de conciliation en matière de bail à loyer",
+      "adresse": "Avenue du Midi 7, 1950 Sion",
+      "telephone": "027 606 73 09",
+      "formulaire": "https://www.vs.ch",
+      "cout": "Gratuit",
+      "delai": "2-6 semaines",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Office des poursuites du district de Sion, Hérens et Conthey",
+      "adresse": "Route de la Piscine 10, Case postale 634, 1951 Sion",
+      "telephone": "027 606 16 10",
+      "email": "op-sio-her-con@admin.vs.ch",
+      "formulaireEnLigne": "https://www.poursuites-plus.ch/adresse/office/office-des-poursuites-du-district-de-sion/"
+    },
+    "prudhommes": {
+      "tribunal": "Tribunal du travail du canton du Valais",
+      "adresse": "Palais de justice, Avenue Mathieu-Schiner 1, 1950 Sion",
+      "gratuit": "Oui jusqu'à CHF 30'000 (art. 114 CPC)",
+      "delai": "3-6 mois"
+    },
+    "BRAPA": {
+      "nom": "Office de recouvrement et d'avances des pensions alimentaires (ORAPA)",
+      "adresse": "Avenue du Midi 7, 1950 Sion",
+      "telephone": "027 606 48 60",
+      "url": "https://www.vs.ch"
+    },
+    "APEA": {
+      "nom": "Autorité de protection de l'enfant et de l'adulte (APEA)",
+      "adresse": "Variable selon le district — Sion : Avenue de la Gare 39, 1950 Sion",
+      "telephone": "027 606 17 50",
+      "url": "https://www.vs.ch/web/sjsj/autorites-de-protection-de-l-enfant-et-de-l-adulte1"
+    },
+    "centreLAVI": {
+      "nom": "Centre LAVI Valais romand",
+      "adresse": "Rue des Vergers 1, 1950 Sion",
+      "telephone": "027 607 31 00",
+      "url": "https://www.aide-aux-victimes.ch",
+      "gratuit": true
+    },
+    "ORP": {
+      "nom": "Office régional de placement de Sion",
+      "adresse": "Place du Midi 40, 1950 Sion",
+      "telephone": "027 606 93 00",
+      "url": "https://www.vs.ch/web/sict/offices-regionaux-de-placement"
+    },
+    "subsidesLAMal": {
+      "seuil": "Basé sur la taxation fiscale 2023 (pour subsides 2025)",
+      "formulaire": "https://www.vs.ch",
+      "url": "https://www.vs.ch"
+    },
+    "naturalisationOrdinaire": {
+      "dureeResidenceCanton": "3 ans dans le canton",
+      "dureeResidenceCommune": "1-3 ans selon commune",
+      "dureeResidenceSuisse": "10 ans en Suisse (dont 3 des 5 dernières années)",
+      "langue": "B1 oral + A2 écrit (français ou allemand selon district)",
+      "taxe": "Variable selon commune (CHF 500-3000 env.)",
+      "url": "https://www.vs.ch"
+    }
+  },
+  {
+    "code": "FR",
+    "nom": "Fribourg",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Lignes directrices Conférence des préposés — cf. fr.ch minimum vital"
+    },
+    "aideJuridictionnelle": {
+      "seuilRevenu": "Basé sur minimum vital LP élargi",
+      "formulaire": "https://www.fr.ch/etat-et-droit/justice",
+      "tribunal": "Tribunal cantonal, Route des Arsenaux 16, 1700 Fribourg",
+      "telephone": "026 305 15 00"
+    },
+    "conciliationBail": {
+      "autorite": "Commission de conciliation en matière de bail du district de la Sarine",
+      "adresse": "Route des Arsenaux 16, 1700 Fribourg",
+      "telephone": "026 305 15 80",
+      "formulaire": "https://www.fr.ch",
+      "cout": "Gratuit",
+      "delai": "2-4 semaines",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Office des poursuites de la Sarine",
+      "adresse": "Avenue de Beauregard 13, 1700 Fribourg",
+      "telephone": "026 305 40 00",
+      "email": "poursuitessarine@fr.ch",
+      "formulaireEnLigne": "https://www.poursuites-plus.ch/adresse/office/office-des-poursuites-de-la-sarine/",
+      "horaires": "Lu, Ma, Me, Ve 08h00-11h30 / 13h30-16h30"
+    },
+    "prudhommes": {
+      "tribunal": "Tribunal des prud'hommes du canton de Fribourg",
+      "adresse": "Route des Arsenaux 16, 1700 Fribourg",
+      "gratuit": "Oui jusqu'à CHF 30'000 (art. 114 CPC)",
+      "delai": "3-6 mois",
+      "url": "https://www.fr.ch/etat-et-droit/justice/pouvoir-judiciaire-tribunal-des-prudhommes"
+    },
+    "BRAPA": {
+      "nom": "Bureau de recouvrement et d'avances sur pensions alimentaires (BRAPA)",
+      "adresse": "Route des Arsenaux 16, 1700 Fribourg",
+      "telephone": "026 305 15 85",
+      "url": "https://www.fr.ch"
+    },
+    "APEA": {
+      "nom": "Justice de paix (APEA) de la Sarine",
+      "adresse": "Route des Arsenaux 16, 1700 Fribourg",
+      "telephone": "026 305 15 80"
+    },
+    "centreLAVI": {
+      "nom": "Centre de consultation LAVI pour enfants, hommes et victimes de la circulation",
+      "adresse": "Boulevard de Pérolles 18A, 1701 Fribourg",
+      "telephone": "026 305 15 80",
+      "url": "https://www.fr.ch",
+      "horaires": "Lu-Ve 08h00-11h30, 14h00-17h00",
+      "gratuit": true
+    },
+    "ORP": {
+      "nom": "Office régional de placement de Fribourg",
+      "adresse": "Boulevard de Pérolles 25, 1700 Fribourg",
+      "telephone": "026 305 96 50",
+      "url": "https://www.fr.ch/travail-et-entreprises/chomage/contacter-un-orp"
+    },
+    "subsidesLAMal": {
+      "seuil": "Selon revenu fiscal — barème cantonal progressif",
+      "formulaire": "https://www.fr.ch",
+      "url": "https://www.fr.ch"
+    },
+    "naturalisationOrdinaire": {
+      "dureeResidenceCanton": "3 ans dans le canton (dont 2 des 5 dernières années)",
+      "dureeResidenceCommune": "1-3 ans selon commune",
+      "dureeResidenceSuisse": "10 ans en Suisse (dont 3 des 5 dernières années)",
+      "langue": "B1 oral + A2 écrit (français ou allemand selon district)",
+      "taxe": "Variable selon commune",
+      "url": "https://www.fr.ch/vie-quotidienne/permis-de-sejour-et-naturalisation/la-naturalisation/naturalisation-ordinaire"
+    }
+  },
+  {
+    "code": "NE",
+    "nom": "Neuchâtel",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Normes d'insaisissabilité 2026 — ne.ch"
+    },
+    "aideJuridictionnelle": {
+      "seuilRevenu": "Basé sur minimum vital LP élargi",
+      "formulaire": "https://www.ne.ch",
+      "tribunal": "Tribunal cantonal, Rue du Pommier 1, 2000 Neuchâtel",
+      "telephone": "032 889 62 22"
+    },
+    "conciliationBail": {
+      "autorite": "Commission de conciliation en matière de bail du district de Neuchâtel",
+      "adresse": "Rue du Pommier 1, 2000 Neuchâtel",
+      "telephone": "032 889 62 22",
+      "cout": "Gratuit",
+      "delai": "2-4 semaines",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Office des poursuites de Neuchâtel",
+      "adresse": "Avenue Léopold-Robert 63, Case postale 1204, 2301 La Chaux-de-Fonds",
+      "telephone": "032 889 61 16",
+      "email": "office.poursuites@ne.ch",
+      "formulaireEnLigne": "https://www.poursuites-plus.ch/adresse/office/office-des-poursuites-de-neuchatel/"
+    },
+    "prudhommes": {
+      "tribunal": "Tribunal régional — section prud'hommes",
+      "adresse": "Rue du Pommier 1, 2000 Neuchâtel",
+      "gratuit": "Oui jusqu'à CHF 30'000 (art. 114 CPC)",
+      "delai": "3-6 mois"
+    },
+    "BRAPA": {
+      "nom": "Office de recouvrement et d'avances des pensions alimentaires (ORAPA)",
+      "adresse": "Rue du Pommier 1, 2000 Neuchâtel",
+      "telephone": "032 889 66 00",
+      "url": "https://www.ne.ch"
+    },
+    "APEA": {
+      "nom": "Autorité de protection de l'enfant et de l'adulte (APEA)",
+      "adresse": "Tribunal régional, Rue du Pommier 1, 2000 Neuchâtel",
+      "telephone": "032 889 62 22",
+      "url": "https://www.ne.ch/autorites/PJNE/tribunaux-regionaux/Pages/INST-apea2.aspx"
+    },
+    "centreLAVI": {
+      "nom": "Service d'aide aux victimes (SAVI)",
+      "adresse": "Rue des Poudrières 135, 2000 Neuchâtel",
+      "telephone": "032 889 66 49",
+      "url": "https://www.ne.ch",
+      "gratuit": true
+    },
+    "ORP": {
+      "nom": "ORP ProEmployés — Neuchâtel",
+      "adresse": "Avenue Léopold-Robert 90, 2300 La Chaux-de-Fonds",
+      "telephone": "032 889 68 20",
+      "url": "https://www.ne.ch/autorites/DECS/SEMP/organisation/Pages/Secteur-ORP-ProEmployes.aspx"
+    },
+    "subsidesLAMal": {
+      "seuil": "Selon revenu — budget cantonal de 151 millions CHF pour la réduction de primes",
+      "formulaire": "https://www.ne.ch",
+      "url": "https://www.ne.ch"
+    },
+    "naturalisationOrdinaire": {
+      "dureeResidenceCanton": "5 ans dans le canton",
+      "dureeResidenceCommune": "1 an dans la commune",
+      "dureeResidenceSuisse": "10 ans en Suisse (dont 3 des 5 dernières années)",
+      "langue": "B1 oral + A2 écrit (français)",
+      "taxe": "Variable selon commune",
+      "url": "https://www.ne.ch/autorites/DESC/SCPO/naturalisation/Pages/Naturalisation-ordinaire.aspx"
+    }
+  },
+  {
+    "code": "JU",
+    "nom": "Jura",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Lignes directrices Conférence des préposés aux poursuites et faillites de Suisse"
+    },
+    "aideJuridictionnelle": {
+      "seuilRevenu": "Basé sur minimum vital LP élargi",
+      "formulaire": "https://www.jura.ch",
+      "tribunal": "Tribunal cantonal, Rue du 24-Septembre 2, 2800 Delémont",
+      "telephone": "032 420 90 00"
+    },
+    "conciliationBail": {
+      "autorite": "Commission de conciliation en matière de bail — District de Delémont",
+      "adresse": "Hôtel de Ville, Case postale, 2800 Delémont",
+      "telephone": "079 522 70 51",
+      "email": "commission.conciliation@delemont.ch",
+      "cout": "Gratuit",
+      "delai": "2-6 semaines",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Office des poursuites de Delémont",
+      "adresse": "Rue de l'Avenir 2, 2800 Delémont",
+      "telephone": "032 420 56 60",
+      "email": "secr.pfd@jura.ch",
+      "formulaireEnLigne": "https://www.poursuites-plus.ch/adresse/office/office-des-poursuites-de-delemont/"
+    },
+    "prudhommes": {
+      "tribunal": "Tribunal de première instance — section prud'hommes",
+      "adresse": "Rue du 24-Septembre 2, 2800 Delémont",
+      "gratuit": "Oui jusqu'à CHF 30'000 (art. 114 CPC)",
+      "delai": "3-6 mois"
+    },
+    "BRAPA": {
+      "nom": "Bureau de recouvrement et d'avances de pensions alimentaires",
+      "adresse": "Rue du 24-Septembre 2, 2800 Delémont",
+      "telephone": "032 420 51 40",
+      "url": "https://www.jura.ch"
+    },
+    "APEA": {
+      "nom": "Autorité de protection de l'enfant et de l'adulte (APEA)",
+      "adresse": "Rue de la Préfecture 12, 2800 Delémont",
+      "telephone": "032 420 90 60",
+      "email": "secr.apea@jura.ch"
+    },
+    "centreLAVI": {
+      "nom": "Centre LAVI Jura",
+      "adresse": "Quai de la Sorne 22, 2800 Delémont",
+      "telephone": "032 420 81 00",
+      "url": "https://www.aide-aux-victimes.ch",
+      "gratuit": true
+    },
+    "ORP": {
+      "nom": "Office régional de placement de Delémont",
+      "adresse": "Rue de l'Avenir 2, 2800 Delémont",
+      "telephone": "032 420 56 56",
+      "url": "https://www.jura.ch"
+    },
+    "subsidesLAMal": {
+      "seuil": "Selon revenu fiscal",
+      "formulaire": "https://www.jura.ch",
+      "url": "https://www.jura.ch"
+    },
+    "naturalisationOrdinaire": {
+      "dureeResidenceCanton": "3 ans dans le canton",
+      "dureeResidenceCommune": "2 ans dans la commune",
+      "dureeResidenceSuisse": "10 ans en Suisse (dont 3 des 5 dernières années)",
+      "langue": "B1 oral + A2 écrit (français)",
+      "taxe": "Variable selon commune",
+      "url": "https://www.jura.ch"
+    }
+  },
+  {
+    "code": "ZH",
+    "nom": "Zürich",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Lignes directrices Conférence des préposés aux poursuites et faillites de Suisse — appliquées uniformément"
+    },
+    "aideJuridictionnelle": {
+      "seuilRevenu": "Basé sur minimum vital LP élargi",
+      "formulaire": "https://www.gerichte-zh.ch",
+      "tribunal": "Obergericht des Kantons Zürich, Hirschengraben 13-15, 8001 Zürich",
+      "telephone": "044 257 91 91"
+    },
+    "conciliationBail": {
+      "autorite": "Mietgericht und Schlichtungsbehörde in Mietsachen",
+      "adresse": "Wengistrasse 30, 8004 Zürich",
+      "telephone": "044 412 36 36",
+      "formulaire": "https://www.gerichte-zh.ch/organisation/bezirksgerichte/bezirksgericht-zuerich/kontakt/adressen-telefonnummern/mietgericht-und-schlichtungsbehoerde.html",
+      "cout": "Gratuit",
+      "delai": "2-4 semaines",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Betreibungsamt Zürich 1",
+      "adresse": "Paradeplatz / Poststrasse 6, 8001 Zürich",
+      "telephone": "044 412 62 62",
+      "email": "betreibungsamt1@zuerich.ch",
+      "formulaireEnLigne": "https://www.poursuites-plus.ch/adresse/office/betreibungsamt-zuerich-1/"
+    },
+    "prudhommes": {
+      "tribunal": "Arbeitsgericht Zürich",
+      "adresse": "Wengistrasse 28, 8004 Zürich",
+      "gratuit": "Oui jusqu'à CHF 30'000 (art. 114 CPC)",
+      "delai": "3-6 mois",
+      "url": "https://www.gerichte-zh.ch"
+    },
+    "BRAPA": {
+      "nom": "Alimentenhilfe — Service communal (géré par les communes)",
+      "adresse": "Variable selon commune de domicile — Zürich : Soziale Dienste, Verwaltungszentrum Werd, Werdstrasse 75, 8004 Zürich",
+      "telephone": "044 412 60 60",
+      "url": "https://www.stadt-zuerich.ch"
+    },
+    "APEA": {
+      "nom": "KESB (Kindes- und Erwachsenenschutzbehörde) Bezirk Zürich",
+      "adresse": "Stauffacherstrasse 45, 8004 Zürich",
+      "telephone": "044 412 72 72",
+      "url": "https://www.kesb-zh.ch"
+    },
+    "centreLAVI": {
+      "nom": "Opferhilfe — Beratungsstelle für Opfer von Gewaltdelikten Zürich",
+      "adresse": "Gartenhofstrasse 17, 8004 Zürich",
+      "telephone": "044 299 40 50",
+      "url": "https://opferhilfe-schweiz.ch",
+      "gratuit": true
+    },
+    "ORP": {
+      "nom": "RAV Zürich (Regionales Arbeitsvermittlungszentrum)",
+      "adresse": "Aemtlerstrasse 6, 8003 Zürich",
+      "telephone": "043 259 60 00",
+      "url": "https://info-rav-zh.ch"
+    },
+    "subsidesLAMal": {
+      "seuil": "Selon revenu imposable — barème cantonal",
+      "formulaire": "https://www.zh.ch",
+      "url": "https://www.zh.ch"
+    },
+    "naturalisationOrdinaire": {
+      "dureeResidenceCanton": "2 ans dans le canton",
+      "dureeResidenceCommune": "2 ans dans la commune (Zürich ville)",
+      "dureeResidenceSuisse": "10 ans en Suisse (dont 3 des 5 dernières années)",
+      "langue": "B1 oral + A2 écrit (allemand)",
+      "taxe": "CHF 500-2000 selon commune",
+      "url": "https://www.stadt-zuerich.ch"
+    }
+  },
+  {
+    "code": "BE",
+    "nom": "Berne",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Lignes directrices Conférence des préposés aux poursuites et faillites de Suisse"
+    },
+    "aideJuridictionnelle": {
+      "seuilRevenu": "Basé sur minimum vital LP élargi",
+      "formulaire": "https://www.zsg.justice.be.ch/fr/start/themen/zivilrecht/kosten/unentgeltliche-rechtspflege.html",
+      "tribunal": "Obergericht des Kantons Bern, Hochschulstrasse 17, 3012 Bern",
+      "telephone": "031 635 48 48"
+    },
+    "conciliationBail": {
+      "autorite": "Schlichtungsbehörde Bern-Mittelland",
+      "adresse": "Effingerstrasse 32, 3011 Bern",
+      "telephone": "031 635 47 50",
+      "email": "Schlichtungsbehoerde.Bern@justice.be.ch",
+      "cout": "Gratuit",
+      "delai": "2-4 semaines",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Betreibungsamt Bern-Mittelland",
+      "adresse": "Poststrasse 25, 3071 Ostermundigen",
+      "telephone": "031 635 90 00",
+      "email": "ba.mittelland@be.ch",
+      "formulaireEnLigne": "https://www.poursuites-plus.ch/adresse/office/betreibungsamt-bern-mittelland-dienststelle-mittelland/"
+    },
+    "prudhommes": {
+      "tribunal": "Regionalgericht Bern-Mittelland — Arbeitsgericht",
+      "adresse": "Effingerstrasse 32, 3011 Bern",
+      "gratuit": "Oui jusqu'à CHF 30'000 (art. 114 CPC)",
+      "delai": "3-6 mois"
+    },
+    "BRAPA": {
+      "nom": "Alimentenhilfe — Service communal (géré par les communes)",
+      "adresse": "Variable — contacter la commune de domicile",
+      "telephone": "031 321 61 11 (Ville de Berne)",
+      "url": "https://www.kja.dij.be.ch/fr/start/alimentenhilfe.html"
+    },
+    "APEA": {
+      "nom": "KESB (Kindes- und Erwachsenenschutzbehörde) Bern",
+      "adresse": "Weltpoststrasse 5, 3000 Berne 15",
+      "telephone": "031 635 20 00",
+      "email": "apea@be.ch",
+      "url": "https://www.kesb.dij.be.ch"
+    },
+    "centreLAVI": {
+      "nom": "Beratungsstelle Opferhilfe Bern (Centre LAVI Berne)",
+      "adresse": "Seftigenstrasse 41, 3007 Bern",
+      "telephone": "031 370 30 70",
+      "url": "https://www.opferhilfe-bern.ch",
+      "gratuit": true
+    },
+    "ORP": {
+      "nom": "RAV Bern Zentrum (Regionales Arbeitsvermittlungszentrum)",
+      "adresse": "Reiterstrasse 9B, 3013 Bern",
+      "telephone": "031 636 02 62",
+      "url": "https://www.weu.be.ch"
+    },
+    "subsidesLAMal": {
+      "seuil": "Selon revenu imposable — barème cantonal",
+      "formulaire": "https://www.be.ch",
+      "url": "https://www.be.ch"
+    },
+    "naturalisationOrdinaire": {
+      "dureeResidenceCanton": "2 ans dans le canton",
+      "dureeResidenceCommune": "Variable — Bienne : résidence effective exigée",
+      "dureeResidenceSuisse": "10 ans en Suisse (dont 3 des 5 dernières années)",
+      "langue": "B1 oral + A2 écrit (français ou allemand selon district)",
+      "taxe": "CHF 1150 (canton) + CHF 1400-1600 (commune, ex. Bienne) + CHF 100 (Confédération)",
+      "url": "https://www.einbuergerung.sid.be.ch"
+    }
+  },
+  {
+    "code": "BS",
+    "nom": "Bâle-Ville",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Lignes directrices Conférence des préposés aux poursuites et faillites de Suisse"
+    },
+    "aideJuridictionnelle": {
+      "seuilRevenu": "Basé sur minimum vital LP élargi",
+      "formulaire": "https://www.gerichte-bs.ch",
+      "tribunal": "Zivilgericht Basel-Stadt, Bäumleingasse 1, 4051 Basel",
+      "telephone": "061 267 81 81"
+    },
+    "conciliationBail": {
+      "autorite": "Staatliche Schlichtungsstelle für Mietstreitigkeiten Basel-Stadt",
+      "adresse": "Bäumleingasse 5, Postfach 964, 4051 Basel",
+      "telephone": "061 267 81 81",
+      "formulaire": "https://www.bs.ch/regierungsrat/staatskanzlei/staatliche-schlichtungsstelle-fuer-mietstreitigkeiten",
+      "cout": "Gratuit",
+      "delai": "2-4 semaines",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Betreibungsamt Basel-Stadt",
+      "adresse": "Aeschenvorstadt 56, 4051 Basel",
+      "telephone": "061 267 81 81",
+      "email": "bka@bs.ch",
+      "formulaireEnLigne": "https://www.poursuites-plus.ch/adresse/office/betreibungsamt-basel-stadt/"
+    },
+    "prudhommes": {
+      "tribunal": "Zivilgericht Basel-Stadt — Arbeitsgericht",
+      "adresse": "Bäumleingasse 1, 4051 Basel",
+      "gratuit": "Oui jusqu'à CHF 30'000 (art. 114 CPC)",
+      "delai": "3-6 mois"
+    },
+    "BRAPA": {
+      "nom": "Alimentenhilfe Basel-Stadt — Amt für Sozialbeiträge",
+      "adresse": "Grenzacherstrasse 62, 4058 Basel",
+      "telephone": "061 267 86 86",
+      "url": "https://www.bs.ch"
+    },
+    "APEA": {
+      "nom": "KESB (Kindes- und Erwachsenenschutzbehörde) Basel-Stadt",
+      "adresse": "Rheinsprung 16/18, 4051 Basel",
+      "telephone": "061 267 45 55",
+      "url": "https://www.bs.ch"
+    },
+    "centreLAVI": {
+      "nom": "Opferhilfe beider Basel",
+      "adresse": "Steinenring 53, 4051 Basel",
+      "telephone": "061 205 09 10",
+      "url": "https://opferhilfe-beiderbasel.ch",
+      "horaires": "Ligne 24h disponible",
+      "gratuit": true
+    },
+    "ORP": {
+      "nom": "RAV Basel-Stadt (Regionales Arbeitsvermittlungszentrum)",
+      "adresse": "Hochstrasse 37, 4002 Basel",
+      "telephone": "061 267 50 13",
+      "url": "https://www.bs.ch"
+    },
+    "subsidesLAMal": {
+      "seuil": "Selon revenu imposable — barème cantonal",
+      "formulaire": "https://www.bs.ch",
+      "url": "https://www.bs.ch"
+    },
+    "naturalisationOrdinaire": {
+      "dureeResidenceCanton": "3 ans dans le canton",
+      "dureeResidenceCommune": "3 ans à Bâle-Ville",
+      "dureeResidenceSuisse": "10 ans en Suisse (dont 3 des 5 dernières années)",
+      "langue": "B1 oral + A2 écrit (allemand)",
+      "taxe": "CHF 500-2000 environ",
+      "url": "https://www.bs.ch"
+    }
+  }
+]

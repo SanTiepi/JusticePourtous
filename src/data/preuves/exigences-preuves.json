@@ -1,0 +1,470 @@
+[
+  {
+    "procedure": "Contestation de congé (bail)",
+    "domaine": "bail",
+    "preuves_necessaires": [
+      "Copie du bail signé",
+      "Lettre de résiliation reçue (avec date de réception)",
+      "Preuve d'envoi de la contestation dans les 30 jours"
+    ],
+    "preuves_utiles": [
+      "Correspondance avec la régie/propriétaire",
+      "Attestation de bonne conduite (paiement régulier)",
+      "Situation familiale (enfants scolarisés, âge, santé)"
+    ],
+    "charge_de_la_preuve": "Le locataire doit prouver que le congé est abusif (CO 271-271a)",
+    "moyens_admis": ["Documents écrits", "Témoins", "Expertise"],
+    "attention": "Le simple fait de contester ne suspend PAS le congé — demander une prolongation en parallèle",
+    "base_legale": "CO 271-271a, CPC 150 ss"
+  },
+  {
+    "procedure": "Demande de baisse de loyer",
+    "domaine": "bail",
+    "preuves_necessaires": [
+      "Copie du bail en cours",
+      "Avis officiel de baisse du taux hypothécaire de référence",
+      "Calcul du loyer admissible (méthode absolue ou relative)"
+    ],
+    "preuves_utiles": [
+      "Statistiques de loyers comparatifs (quartier, taille)",
+      "Historique des hausses de loyer subies",
+      "Indices des prix à la consommation (IPC)"
+    ],
+    "charge_de_la_preuve": "Le locataire doit démontrer que le loyer est abusif au sens de l'OBLF 269 ss",
+    "moyens_admis": ["Documents écrits", "Statistiques officielles", "Expertise immobilière"],
+    "attention": "La demande doit être faite pour le prochain terme de résiliation — respecter les délais contractuels",
+    "base_legale": "CO 269-270e, OBLF 11-13"
+  },
+  {
+    "procedure": "Consignation de loyer pour défauts",
+    "domaine": "bail",
+    "preuves_necessaires": [
+      "Mise en demeure écrite au bailleur avec délai raisonnable",
+      "Preuve du défaut (photos, constats, rapports)",
+      "Preuve de la consignation auprès de l'autorité compétente"
+    ],
+    "preuves_utiles": [
+      "Rapports d'expertise (humidité, moisissures, bruit)",
+      "Attestation médicale si impact sur la santé",
+      "Correspondance antérieure avec le bailleur"
+    ],
+    "charge_de_la_preuve": "Le locataire doit prouver l'existence du défaut et la mise en demeure préalable",
+    "moyens_admis": ["Documents écrits", "Photos/vidéos", "Expertise technique", "Témoins"],
+    "attention": "Consigner SANS mise en demeure préalable = risque de résiliation pour demeure du locataire",
+    "base_legale": "CO 259a-259i, CPC 150 ss"
+  },
+  {
+    "procedure": "Contestation de hausse de loyer",
+    "domaine": "bail",
+    "preuves_necessaires": [
+      "Avis de hausse reçu (formulaire officiel obligatoire)",
+      "Copie du bail en cours",
+      "Preuve de la contestation dans les 30 jours"
+    ],
+    "preuves_utiles": [
+      "Taux hypothécaire de référence à la date de la hausse",
+      "Statistiques de loyers comparatifs",
+      "Calcul du rendement net du bailleur (si accessible)"
+    ],
+    "charge_de_la_preuve": "Le bailleur doit justifier la hausse — le locataire doit contester dans le délai",
+    "moyens_admis": ["Documents écrits", "Statistiques officielles", "Expertise"],
+    "attention": "Si l'avis de hausse n'utilise pas la formule officielle, la hausse est nulle de plein droit",
+    "base_legale": "CO 269d, 270b, OBLF 19"
+  },
+  {
+    "procedure": "Demande de prolongation de bail",
+    "domaine": "bail",
+    "preuves_necessaires": [
+      "Copie du bail et du congé reçu",
+      "Preuve des recherches de logement de remplacement",
+      "Situation personnelle et familiale documentée"
+    ],
+    "preuves_utiles": [
+      "Attestation de scolarisation des enfants",
+      "Certificat médical (âge, maladie, handicap)",
+      "Attestation d'ancienneté dans le logement",
+      "Preuves de la difficulté du marché locatif local"
+    ],
+    "charge_de_la_preuve": "Le locataire doit démontrer que le congé entraîne des conséquences pénibles (CO 272)",
+    "moyens_admis": ["Documents écrits", "Témoins", "Attestations officielles"],
+    "attention": "La prolongation peut être de 4 ans max (habitation) ou 6 ans max (local commercial) — cumulable 2 fois",
+    "base_legale": "CO 272-272d"
+  },
+  {
+    "procedure": "Licenciement abusif",
+    "domaine": "travail",
+    "preuves_necessaires": [
+      "Contrat de travail signé",
+      "Lettre de licenciement (avec date de réception)",
+      "Preuve de l'opposition écrite dans le délai de congé"
+    ],
+    "preuves_utiles": [
+      "Évaluations de performance positives",
+      "Courriels/messages prouvant le motif réel du licenciement",
+      "Témoignages de collègues",
+      "Certificat médical si licenciement pendant maladie"
+    ],
+    "charge_de_la_preuve": "Le travailleur doit rendre vraisemblable le caractère abusif — le fardeau passe ensuite à l'employeur",
+    "moyens_admis": ["Documents écrits", "Témoins", "Courriels/SMS", "Expertise"],
+    "attention": "L'opposition doit être faite PAR ÉCRIT avant la fin du délai de congé, sinon le droit à l'indemnité est perdu",
+    "base_legale": "CO 336-336b"
+  },
+  {
+    "procedure": "Réclamation de salaire impayé",
+    "domaine": "travail",
+    "preuves_necessaires": [
+      "Contrat de travail ou preuves des conditions convenues",
+      "Fiches de salaire (si existantes)",
+      "Décompte des heures travaillées"
+    ],
+    "preuves_utiles": [
+      "Relevés bancaires montrant les versements reçus",
+      "Correspondance de réclamation envoyée à l'employeur",
+      "Témoignages de collègues sur les horaires",
+      "CCT applicable (salaires minimaux)"
+    ],
+    "charge_de_la_preuve": "Le travailleur doit prouver les heures travaillées et le salaire convenu",
+    "moyens_admis": ["Documents écrits", "Témoins", "Relevés bancaires", "Pointages"],
+    "attention": "La créance de salaire se prescrit par 5 ans (CO 128) — agir sans tarder",
+    "base_legale": "CO 322-324, 128"
+  },
+  {
+    "procedure": "Contestation d'un certificat de travail",
+    "domaine": "travail",
+    "preuves_necessaires": [
+      "Certificat de travail contesté",
+      "Contrat de travail et cahier des charges",
+      "Demande écrite de rectification adressée à l'employeur"
+    ],
+    "preuves_utiles": [
+      "Évaluations de performance antérieures",
+      "Courriels de félicitations ou de reconnaissance",
+      "Descriptions de projets réalisés",
+      "Témoignages de supérieurs ou collègues"
+    ],
+    "charge_de_la_preuve": "Le travailleur doit prouver que le certificat ne reflète pas la réalité — l'employeur doit justifier les formulations",
+    "moyens_admis": ["Documents écrits", "Témoins", "Évaluations internes"],
+    "attention": "Le certificat doit être bienveillant ET véridique — un certificat codé négativement peut être contesté",
+    "base_legale": "CO 330a"
+  },
+  {
+    "procedure": "Demande d'indemnité pour heures supplémentaires",
+    "domaine": "travail",
+    "preuves_necessaires": [
+      "Contrat de travail (horaire convenu)",
+      "Décompte précis des heures supplémentaires effectuées",
+      "Preuve que l'employeur a ordonné ou toléré les heures sup"
+    ],
+    "preuves_utiles": [
+      "Pointages, badgeages, logs informatiques",
+      "Courriels envoyés hors horaire",
+      "Témoignages de collègues",
+      "Directives internes sur le temps de travail"
+    ],
+    "charge_de_la_preuve": "Le travailleur doit prouver chaque heure supplémentaire de manière précise et détaillée",
+    "moyens_admis": ["Documents écrits", "Logs électroniques", "Témoins"],
+    "attention": "Les cadres supérieurs sont souvent exclus — vérifier le contrat et la LTr. Prescription : 5 ans",
+    "base_legale": "CO 321c, LTr 12-13"
+  },
+  {
+    "procedure": "Harcèlement au travail (mobbing)",
+    "domaine": "travail",
+    "preuves_necessaires": [
+      "Journal chronologique des incidents (dates, faits, témoins)",
+      "Preuves écrites des signalements à l'employeur",
+      "Certificats médicaux attestant de l'impact sur la santé"
+    ],
+    "preuves_utiles": [
+      "Courriels, messages, captures d'écran",
+      "Témoignages de collègues",
+      "Rapport d'un médecin du travail ou psychologue",
+      "Enregistrements (attention: légalité variable selon canton)"
+    ],
+    "charge_de_la_preuve": "Le travailleur doit rendre vraisemblable le harcèlement — fardeau allégé mais pas inversé",
+    "moyens_admis": ["Documents écrits", "Témoins", "Expertise médicale", "Courriels/SMS"],
+    "attention": "L'employeur a une obligation de protection (CO 328). Documenter CHAQUE incident dès le début",
+    "base_legale": "CO 328, LEg 4-5 (si discriminatoire), LTr 6"
+  },
+  {
+    "procedure": "Divorce par requête commune",
+    "domaine": "famille",
+    "preuves_necessaires": [
+      "Requête commune signée par les deux époux",
+      "Convention complète sur les effets du divorce (enfants, pension, partage)",
+      "Acte de mariage et actes de naissance des enfants"
+    ],
+    "preuves_utiles": [
+      "Attestation de revenus des deux parties",
+      "Inventaire des biens et dettes",
+      "Attestation de prévoyance professionnelle (LPP)"
+    ],
+    "charge_de_la_preuve": "Les deux époux présentent une convention — le juge vérifie qu'elle protège les intérêts des enfants",
+    "moyens_admis": ["Documents écrits", "Convention signée", "Audition des parties"],
+    "attention": "Le juge peut refuser la convention s'il estime qu'elle lèse un époux ou les enfants",
+    "base_legale": "CC 111-112"
+  },
+  {
+    "procedure": "Modification de la contribution d'entretien (pension alimentaire)",
+    "domaine": "famille",
+    "preuves_necessaires": [
+      "Jugement ou convention actuelle fixant la pension",
+      "Preuves du changement notable de situation (perte d'emploi, maladie, nouveau revenu)",
+      "Justificatifs de revenus et charges actuels des deux parents"
+    ],
+    "preuves_utiles": [
+      "Fiches de salaire récentes",
+      "Attestation de chômage ou AI",
+      "Preuves des besoins accrus de l'enfant (formation, santé)",
+      "Budget détaillé du parent gardien"
+    ],
+    "charge_de_la_preuve": "Le demandeur doit prouver un changement durable et notable des circonstances",
+    "moyens_admis": ["Documents écrits", "Expertise financière", "Témoins"],
+    "attention": "Un changement temporaire (3-6 mois) ne suffit généralement pas — il faut un caractère durable",
+    "base_legale": "CC 286 al. 2, CC 129"
+  },
+  {
+    "procedure": "Mesures protectrices de l'union conjugale (MPUC)",
+    "domaine": "famille",
+    "preuves_necessaires": [
+      "Requête décrivant la situation de crise conjugale",
+      "Preuves de la situation financière des deux époux",
+      "Si violence: preuves (plainte pénale, certificat médical, rapport police)"
+    ],
+    "preuves_utiles": [
+      "Attestation de logement séparé",
+      "Preuves des besoins des enfants",
+      "Attestation de revenus et charges",
+      "Rapport du SPMI/SPJ si existant"
+    ],
+    "charge_de_la_preuve": "Vraisemblance suffit (mesures provisoires) — pas besoin de preuve complète",
+    "moyens_admis": ["Documents écrits", "Certificats médicaux", "Rapports de police"],
+    "attention": "Procédure sommaire et rapide — le juge statue sur la base de la vraisemblance, pas de la certitude",
+    "base_legale": "CC 172-179"
+  },
+  {
+    "procedure": "Demande de droit de visite / garde (autorité parentale)",
+    "domaine": "famille",
+    "preuves_necessaires": [
+      "Preuves du lien parent-enfant (acte de naissance, reconnaissance)",
+      "Proposition concrète de droit de visite ou de garde",
+      "Preuves de capacité parentale (logement adapté, disponibilité)"
+    ],
+    "preuves_utiles": [
+      "Attestation de l'école ou crèche sur l'implication du parent",
+      "Rapport d'un curateur ou du SPJ",
+      "Témoignages de proches",
+      "Attestation de suivi thérapeutique si pertinent"
+    ],
+    "charge_de_la_preuve": "Le juge décide selon le bien de l'enfant — chaque parent doit montrer sa capacité parentale",
+    "moyens_admis": ["Documents écrits", "Rapports d'experts", "Audition de l'enfant (dès ~6 ans)", "Témoins"],
+    "attention": "L'enfant doit être entendu personnellement par le juge ou un spécialiste dès qu'il est capable de discernement",
+    "base_legale": "CC 133, 273, 298, CDE 12"
+  },
+  {
+    "procedure": "Protection de l'adulte (curatelle)",
+    "domaine": "famille",
+    "preuves_necessaires": [
+      "Requête motivée décrivant la situation de vulnérabilité",
+      "Certificat médical récent attestant de l'état de la personne",
+      "Preuves de l'incapacité à gérer ses affaires"
+    ],
+    "preuves_utiles": [
+      "Attestation de proches ou voisins",
+      "Rapport des services sociaux",
+      "Historique médical pertinent",
+      "Preuves de mise en danger (dettes accumulées, abus de tiers)"
+    ],
+    "charge_de_la_preuve": "L'autorité de protection instruit d'office — le requérant doit fournir les éléments initiaux",
+    "moyens_admis": ["Documents écrits", "Expertise médicale", "Rapports sociaux", "Audition de la personne concernée"],
+    "attention": "La personne concernée DOIT être entendue personnellement sauf si son état ne le permet absolument pas",
+    "base_legale": "CC 390-399"
+  },
+  {
+    "procedure": "Opposition à un commandement de payer",
+    "domaine": "dettes",
+    "preuves_necessaires": [
+      "Commandement de payer reçu (numéro de poursuite)",
+      "Opposition formée dans les 10 jours (oral ou écrit à l'Office des poursuites)"
+    ],
+    "preuves_utiles": [
+      "Preuves que la dette n'existe pas ou est prescrite",
+      "Quittances de paiement",
+      "Correspondance avec le créancier"
+    ],
+    "charge_de_la_preuve": "Aucune preuve nécessaire pour OPPOSER — il suffit de dire non. Le créancier devra ensuite prouver sa créance",
+    "moyens_admis": ["Déclaration orale ou écrite à l'Office des poursuites"],
+    "attention": "Le délai de 10 jours est ABSOLU — passé ce délai, l'opposition n'est plus possible. Compter dès la notification",
+    "base_legale": "LP 74-75"
+  },
+  {
+    "procedure": "Demande de minimum vital (insaisissabilité)",
+    "domaine": "dettes",
+    "preuves_necessaires": [
+      "Procès-verbal de saisie contesté",
+      "Preuves de tous les revenus du ménage",
+      "Justificatifs de toutes les charges (loyer, assurance maladie, etc.)"
+    ],
+    "preuves_utiles": [
+      "Primes d'assurance maladie avec subsides éventuels",
+      "Frais de transport professionnels",
+      "Pensions alimentaires dues",
+      "Frais médicaux non couverts"
+    ],
+    "charge_de_la_preuve": "Le débiteur doit documenter TOUTES ses charges — l'Office calcule selon les normes cantonales",
+    "moyens_admis": ["Documents écrits", "Attestations officielles"],
+    "attention": "Les normes de minimum vital varient selon les cantons (Lignes directrices de la CSIAS) — se renseigner localement",
+    "base_legale": "LP 92-93"
+  },
+  {
+    "procedure": "Requête de faillite personnelle (art. 191 LP)",
+    "domaine": "dettes",
+    "preuves_necessaires": [
+      "Preuves de surendettement durable (dettes > actifs)",
+      "Liste complète des créanciers et montants",
+      "Justificatifs de revenus et patrimoine"
+    ],
+    "preuves_utiles": [
+      "Extraits du registre des poursuites",
+      "Avis de saisie infructueuse",
+      "Budget montrant l'impossibilité de désendettement",
+      "Tentatives de négociation avec les créanciers"
+    ],
+    "charge_de_la_preuve": "Le débiteur doit démontrer un surendettement durable sans perspective d'assainissement",
+    "moyens_admis": ["Documents écrits", "Extraits officiels", "Attestations bancaires"],
+    "attention": "La faillite personnelle a des conséquences graves et durables (inscription au registre). Explorer d'abord le concordat ou l'assainissement amiable",
+    "base_legale": "LP 191"
+  },
+  {
+    "procedure": "Plainte contre l'Office des poursuites",
+    "domaine": "dettes",
+    "preuves_necessaires": [
+      "Acte de poursuite contesté (PV de saisie, avis, etc.)",
+      "Plainte déposée dans les 10 jours dès la connaissance de la mesure",
+      "Description précise de la violation reprochée"
+    ],
+    "preuves_utiles": [
+      "Correspondance avec l'Office des poursuites",
+      "Preuves que la procédure n'a pas été respectée",
+      "Calcul alternatif du minimum vital"
+    ],
+    "charge_de_la_preuve": "Le plaignant doit démontrer que l'Office a violé la loi ou commis un abus",
+    "moyens_admis": ["Documents écrits", "Actes de poursuite"],
+    "attention": "Le délai de 10 jours est strict — dès la CONNAISSANCE de la mesure, pas dès la décision elle-même",
+    "base_legale": "LP 17-19"
+  },
+  {
+    "procedure": "Action en annulation ou suspension de la poursuite",
+    "domaine": "dettes",
+    "preuves_necessaires": [
+      "Commandement de payer avec opposition rejetée (mainlevée accordée)",
+      "Preuves que la dette n'existe pas, est éteinte ou prescrite",
+      "Requête déposée dans les 20 jours dès la mainlevée provisoire"
+    ],
+    "preuves_utiles": [
+      "Quittances de paiement",
+      "Preuves de prescription (date de la créance)",
+      "Correspondance prouvant un accord différent",
+      "Compensation avec une contre-créance"
+    ],
+    "charge_de_la_preuve": "Le débiteur doit prouver par titre que la dette n'est pas due (action en libération de dette)",
+    "moyens_admis": ["Documents écrits", "Témoins", "Expertise"],
+    "attention": "Ne pas confondre mainlevée provisoire (le débiteur peut agir en libération) et définitive (il faut une action en répétition de l'indu)",
+    "base_legale": "LP 83 al. 2, 85-86"
+  },
+  {
+    "procedure": "Recours contre un refus de permis de séjour",
+    "domaine": "étrangers",
+    "preuves_necessaires": [
+      "Décision de refus (avec motivation)",
+      "Preuves du droit invoqué (regroupement familial, activité lucrative, etc.)",
+      "Recours déposé dans le délai légal (généralement 30 jours)"
+    ],
+    "preuves_utiles": [
+      "Preuves d'intégration (langue, travail, vie sociale)",
+      "Attestation de l'employeur (si permis de travail)",
+      "Preuves des liens familiaux en Suisse",
+      "Casier judiciaire vierge"
+    ],
+    "charge_de_la_preuve": "Le requérant doit prouver qu'il remplit les conditions légales — l'autorité doit motiver son refus",
+    "moyens_admis": ["Documents écrits", "Attestations officielles", "Témoins"],
+    "attention": "Le recours n'a pas toujours d'effet suspensif — demander la restitution de l'effet suspensif si nécessaire",
+    "base_legale": "LEI 33-40, CEDH 8"
+  },
+  {
+    "procedure": "Demande d'asile (procédure accélérée/étendue)",
+    "domaine": "étrangers",
+    "preuves_necessaires": [
+      "Récit détaillé et cohérent des persécutions subies ou craintes",
+      "Documents d'identité (si disponibles)",
+      "Tout document prouvant les persécutions (rapports médicaux, articles, photos)"
+    ],
+    "preuves_utiles": [
+      "Rapports de pays d'origine (UNHCR, Amnesty, etc.)",
+      "Certificats médicaux attestant de séquelles de torture",
+      "Témoignages de proches restés au pays",
+      "Preuves d'appartenance à un groupe persécuté"
+    ],
+    "charge_de_la_preuve": "Le demandeur doit rendre vraisemblable sa persécution — standard de preuve allégé (vraisemblance)",
+    "moyens_admis": ["Déclarations orales", "Documents écrits", "Expertise médicale", "Rapports d'ONG"],
+    "attention": "La cohérence du récit est CRUCIALE — les contradictions sont le premier motif de rejet. Préparer le récit en détail",
+    "base_legale": "LAsi 3-7, Convention de Genève 1951"
+  },
+  {
+    "procedure": "Recours contre un renvoi (ordre de quitter la Suisse)",
+    "domaine": "étrangers",
+    "preuves_necessaires": [
+      "Décision de renvoi notifiée",
+      "Recours dans le délai (5 jours en procédure accélérée, 30 jours sinon)",
+      "Motifs d'inexigibilité du renvoi (santé, situation au pays, famille)"
+    ],
+    "preuves_utiles": [
+      "Certificats médicaux (traitement impossible au pays d'origine)",
+      "Rapports sur la situation dans le pays d'origine",
+      "Preuves de liens familiaux en Suisse (CEDH art. 8)",
+      "Preuves d'intégration avancée"
+    ],
+    "charge_de_la_preuve": "Le recourant doit rendre vraisemblable que le renvoi est inexigible, illicite ou impossible",
+    "moyens_admis": ["Documents écrits", "Expertise médicale", "Rapports de pays", "Jurisprudence CEDH"],
+    "attention": "En procédure accélérée, le délai de recours est de 5 jours ouvrables SEULEMENT — agir immédiatement",
+    "base_legale": "LAsi 44-45, LEI 83"
+  },
+  {
+    "procedure": "Demande de regroupement familial",
+    "domaine": "étrangers",
+    "preuves_necessaires": [
+      "Permis de séjour valable du requérant en Suisse (B, C ou F reconnu)",
+      "Preuves du lien familial (acte de mariage, actes de naissance légalisés)",
+      "Preuves de logement approprié et de moyens financiers suffisants"
+    ],
+    "preuves_utiles": [
+      "Contrat de bail montrant un logement adapté à la taille de la famille",
+      "Fiches de salaire et contrat de travail",
+      "Preuve de non-dépendance à l'aide sociale",
+      "Preuves de connaissances linguistiques du conjoint (selon canton)"
+    ],
+    "charge_de_la_preuve": "Le requérant doit prouver les liens familiaux, les moyens financiers et le logement adéquat",
+    "moyens_admis": ["Documents écrits légalisés", "Attestations officielles", "Test ADN (si doute sur la filiation)"],
+    "attention": "Délais stricts : 5 ans pour le conjoint/enfants (permis B), 12 mois pour les titulaires d'un permis F",
+    "base_legale": "LEI 42-52, CEDH 8"
+  },
+  {
+    "procedure": "Demande de naturalisation ordinaire",
+    "domaine": "étrangers",
+    "preuves_necessaires": [
+      "Permis C depuis au moins 10 ans (dont 3-5 dans le canton/commune selon canton)",
+      "Preuves d'intégration réussie (langue niveau B1 oral/A2 écrit minimum)",
+      "Extrait de casier judiciaire vierge"
+    ],
+    "preuves_utiles": [
+      "Attestations de cours de langue ou diplômes",
+      "Preuves de participation à la vie associative ou communale",
+      "Attestation de l'employeur",
+      "Preuve de non-dépendance à l'aide sociale (3 dernières années)",
+      "Preuves de connaissances civiques (selon canton)"
+    ],
+    "charge_de_la_preuve": "Le candidat doit démontrer son intégration réussie selon les critères fédéraux et cantonaux",
+    "moyens_admis": ["Documents écrits", "Attestations officielles", "Entretien de naturalisation"],
+    "attention": "Les critères varient fortement selon les cantons et les communes — se renseigner localement AVANT de déposer",
+    "base_legale": "LN 9-16, OLN"
+  }
+]

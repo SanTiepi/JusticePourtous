@@ -1,0 +1,122 @@
+[
+  {
+    "id": "licenciement_cascade",
+    "depart": "Licenciement",
+    "etapes": [
+      { "probleme": "Perte de revenu", "delai": "Immédiat", "fichesConcernees": ["travail_licenciement_abusif"] },
+      { "probleme": "Inscription chômage (ORP)", "delai": "7 jours max", "fichesConcernees": ["travail_chomage"] },
+      { "probleme": "Risque de retard paiements", "delai": "1-3 mois", "fichesConcernees": ["dettes_commandement_payer"] },
+      { "probleme": "Saisie sur salaire", "delai": "3-6 mois", "fichesConcernees": ["dettes_saisie_salaire"], "calculateur": "calculSaisieSalaire" },
+      { "probleme": "Aide sociale", "delai": "Fin de droit chômage (2 ans)", "fichesConcernees": ["dettes_arrangement_amiable"] }
+    ],
+    "prevention": "Contester le licenciement immédiatement si abusif. S'inscrire à l'ORP dans les 7 jours."
+  },
+  {
+    "id": "separation_cascade",
+    "depart": "Séparation / Divorce",
+    "etapes": [
+      { "probleme": "Besoin de logement séparé", "delai": "Immédiat", "fichesConcernees": ["bail_recherche_logement"] },
+      { "probleme": "Pension alimentaire à fixer", "delai": "1-2 semaines", "fichesConcernees": ["famille_pension"], "calculateur": "calculPensionIndicative" },
+      { "probleme": "Garde des enfants à organiser", "delai": "1-4 semaines", "fichesConcernees": ["famille_garde"] },
+      { "probleme": "Baisse du niveau de vie (double ménage)", "delai": "1-3 mois", "fichesConcernees": ["dettes_arrangement_amiable"] },
+      { "probleme": "Partage LPP et liquidation des biens", "delai": "6-18 mois", "fichesConcernees": ["famille_divorce"] }
+    ],
+    "prevention": "Demander des MPUC (mesures protectrices) rapidement pour sécuriser la situation financière et la garde."
+  },
+  {
+    "id": "maladie_longue_cascade",
+    "depart": "Maladie longue durée",
+    "etapes": [
+      { "probleme": "Arrêt de travail", "delai": "Immédiat", "fichesConcernees": ["travail_maladie"] },
+      { "probleme": "Fin des indemnités journalières", "delai": "720 jours (IJM) / 2 ans", "fichesConcernees": ["assurance_ijm"] },
+      { "probleme": "Risque de licenciement (après protection)", "delai": "30-180 jours selon ancienneté", "fichesConcernees": ["travail_licenciement_abusif"], "calculateur": "calculProtectionMaladie" },
+      { "probleme": "Demande AI", "delai": "Dès 1 an d'atteinte", "fichesConcernees": ["assurance_ai_rente"] },
+      { "probleme": "Prestations complémentaires", "delai": "Si revenus insuffisants", "fichesConcernees": ["assurance_prestations_complementaires"], "calculateur": "calculEligibiliteAJ" }
+    ],
+    "prevention": "Déposer la demande AI tôt (6 mois de délai de carence). Vérifier la couverture IJM dans le contrat de travail."
+  },
+  {
+    "id": "accident_cascade",
+    "depart": "Accident (travail ou circulation)",
+    "etapes": [
+      { "probleme": "Frais médicaux urgents", "delai": "Immédiat", "fichesConcernees": ["accident_travail", "accident_circulation"] },
+      { "probleme": "Perte de gain (incapacité)", "delai": "3 jours (délai de carence LAA)", "fichesConcernees": ["assurance_laa"] },
+      { "probleme": "Litige avec l'assurance", "delai": "1-6 mois", "fichesConcernees": ["assurance_laa_contestation"] },
+      { "probleme": "Invalidité potentielle", "delai": "1 an +", "fichesConcernees": ["assurance_ai_rente"], "calculateur": "calculCoutProcedure" },
+      { "probleme": "Demande RC (tort moral, dommages)", "delai": "1 an dès connaissance", "fichesConcernees": ["accident_responsabilite_civile"] }
+    ],
+    "prevention": "Documenter immédiatement (photos, témoins, certificat médical). Déclarer à l'assurance dans les 7 jours."
+  },
+  {
+    "id": "deces_conjoint_cascade",
+    "depart": "Décès du conjoint",
+    "etapes": [
+      { "probleme": "Perte de revenu immédiate", "delai": "Immédiat", "fichesConcernees": ["succession_reserves"] },
+      { "probleme": "Rentes de survivants (AVS/LPP)", "delai": "1-2 semaines", "fichesConcernees": ["assurance_rente_survivant"] },
+      { "probleme": "Succession — accepter ou répudier", "delai": "3 mois", "fichesConcernees": ["succession_repudiation"] },
+      { "probleme": "Logement (bail au nom du défunt)", "delai": "1-3 mois", "fichesConcernees": ["bail_deces_locataire"] },
+      { "probleme": "Pension alimentaire des enfants", "delai": "Variable", "fichesConcernees": ["famille_pension"], "calculateur": "calculPensionIndicative" }
+    ],
+    "prevention": "Vérifier les assurances-vie et la LPP du défunt. Demander les rentes de survivants sans attendre."
+  },
+  {
+    "id": "surendettement_cascade",
+    "depart": "Surendettement",
+    "etapes": [
+      { "probleme": "Retards de paiement multiples", "delai": "Progressif", "fichesConcernees": ["dettes_arrangement_amiable"] },
+      { "probleme": "Commandements de payer", "delai": "1-3 mois", "fichesConcernees": ["dettes_commandement_payer"] },
+      { "probleme": "Saisie sur salaire", "delai": "3-6 mois", "fichesConcernees": ["dettes_saisie_salaire"], "calculateur": "calculSaisieSalaire" },
+      { "probleme": "Actes de défaut de biens", "delai": "6-12 mois", "fichesConcernees": ["dettes_acte_defaut_biens"], "calculateur": "calculPrescription" },
+      { "probleme": "Impact sur bail et emploi", "delai": "Variable", "fichesConcernees": ["bail_loyers_impayes", "travail_saisie_salaire"] }
+    ],
+    "prevention": "Consulter un service de désendettement (Caritas, CSP) dès les premiers retards. Ne pas ignorer les courriers."
+  },
+  {
+    "id": "perte_logement_cascade",
+    "depart": "Perte de logement",
+    "etapes": [
+      { "probleme": "Résiliation du bail / expulsion", "delai": "Immédiat", "fichesConcernees": ["bail_resiliation_conteste"] },
+      { "probleme": "Besoin d'hébergement d'urgence", "delai": "Jour même", "fichesConcernees": ["social_hebergement_urgence"] },
+      { "probleme": "Difficulté à retrouver un logement (poursuites)", "delai": "1-3 mois", "fichesConcernees": ["bail_recherche_logement"] },
+      { "probleme": "Garantie de loyer bloquée", "delai": "Jusqu'à 1 an", "fichesConcernees": ["bail_depot_garantie"], "calculateur": "calculAmortissementGarantie" },
+      { "probleme": "Aide sociale ou logement d'urgence", "delai": "Si sans solution", "fichesConcernees": ["social_aide_sociale"] }
+    ],
+    "prevention": "Contester la résiliation dans les 30 jours auprès de l'autorité de conciliation. Demander une prolongation du bail."
+  },
+  {
+    "id": "migration_forcee_cascade",
+    "depart": "Migration forcée (renvoi, perte de permis)",
+    "etapes": [
+      { "probleme": "Décision de renvoi", "delai": "Immédiat", "fichesConcernees": ["etrangers_renvoi"] },
+      { "probleme": "Recours contre la décision", "delai": "30 jours", "fichesConcernees": ["etrangers_recours"], "calculateur": "calculCoutProcedure" },
+      { "probleme": "Perte d'emploi (permis lié au travail)", "delai": "Immédiat si permis B/L", "fichesConcernees": ["travail_licenciement_abusif"] },
+      { "probleme": "Scolarisation des enfants menacée", "delai": "Variable", "fichesConcernees": ["etrangers_regroupement"] },
+      { "probleme": "Aide d'urgence (si débouté)", "delai": "Si toutes les voies épuisées", "fichesConcernees": ["social_aide_urgence"], "calculateur": "calculEligibiliteAJ" }
+    ],
+    "prevention": "Consulter un service juridique spécialisé (CSP, EPER, Caritas) dès la réception de la décision."
+  },
+  {
+    "id": "violence_domestique_cascade",
+    "depart": "Violence domestique",
+    "etapes": [
+      { "probleme": "Danger immédiat", "delai": "Immédiat", "fichesConcernees": ["violence_domestique"] },
+      { "probleme": "Besoin d'hébergement protégé", "delai": "Jour même", "fichesConcernees": ["violence_foyer_accueil"] },
+      { "probleme": "Procédure pénale (plainte)", "delai": "3 mois", "fichesConcernees": ["violence_plainte"] },
+      { "probleme": "Séparation et mesures protectrices", "delai": "1-4 semaines", "fichesConcernees": ["famille_mesures_protection"], "calculateur": "calculPensionIndicative" },
+      { "probleme": "Impact sur les enfants (APEA)", "delai": "Variable", "fichesConcernees": ["famille_protection_enfant"] }
+    ],
+    "prevention": "Appeler le 117 (police) ou le 143 (La Main Tendue) en cas de danger. Les centres LAVI offrent une aide immédiate et gratuite."
+  },
+  {
+    "id": "faillite_independant_cascade",
+    "depart": "Faillite d'indépendant",
+    "etapes": [
+      { "probleme": "Cessation des paiements", "delai": "Progressif", "fichesConcernees": ["entreprise_difficultes_paiement"] },
+      { "probleme": "Avis de surendettement au juge (Sàrl/SA)", "delai": "Dès constatation", "fichesConcernees": ["entreprise_surendettement"] },
+      { "probleme": "Procédure de faillite", "delai": "1-6 mois", "fichesConcernees": ["dettes_faillite"], "calculateur": "calculCoutProcedure" },
+      { "probleme": "Dettes personnelles (responsabilité RI)", "delai": "Post-faillite", "fichesConcernees": ["dettes_acte_defaut_biens"], "calculateur": "calculSaisieSalaire" },
+      { "probleme": "Reconstruction (inscription chômage impossible pour indépendant)", "delai": "Post-faillite", "fichesConcernees": ["social_aide_sociale"] }
+    ],
+    "prevention": "Consulter un fiduciaire dès les premiers signes. Envisager un sursis concordataire (LP 293ss) avant la faillite."
+  }
+]

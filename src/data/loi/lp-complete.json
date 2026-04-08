@@ -1,0 +1,162 @@
+[
+  {
+    "ref": "LP 22",
+    "titre": "Poursuite — For de la poursuite des personnes morales",
+    "rs": "RS 281.1",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_22",
+    "texteSimple": "Les personnes morales (SA, Sàrl, associations) sont poursuivies à leur siège. Les sociétés en nom collectif et en commandite sont poursuivies au lieu de leur siège commercial.",
+    "exemplesConcrets": ["Poursuite contre une Sàrl → office des poursuites du lieu du siège social", "Entreprise avec succursale → poursuite au siège principal"],
+    "domaines": ["poursuites"],
+    "articlesLies": ["LP 46", "LP 51"]
+  },
+  {
+    "ref": "LP 39",
+    "titre": "Poursuite — Notification du commandement de payer",
+    "rs": "RS 281.1",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_39",
+    "texteSimple": "Le commandement de payer est notifié au poursuivi en personne ou à un membre adulte de son ménage, un employé, ou au représentant. En cas d'absence, il peut être déposé.",
+    "exemplesConcrets": ["Commandement de payer remis au conjoint → notification valable", "Notification glissée dans la boîte aux lettres si personne n'est là"],
+    "domaines": ["poursuites"],
+    "articlesLies": ["LP 38", "LP 67"]
+  },
+  {
+    "ref": "LP 46",
+    "titre": "Poursuite — For de la poursuite (domicile)",
+    "rs": "RS 281.1",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_46",
+    "texteSimple": "Le débiteur domicilié en Suisse est poursuivi au lieu de son domicile. Le débiteur qui n'a pas de domicile est poursuivi au lieu de sa résidence.",
+    "exemplesConcrets": ["Vous habitez Lausanne → la poursuite se fait à Lausanne", "Débiteur sans domicile fixe → poursuivi là où il réside"],
+    "domaines": ["poursuites"],
+    "articlesLies": ["LP 22", "LP 51"]
+  },
+  {
+    "ref": "LP 51",
+    "titre": "Poursuite — For alternatif (lieu d'exécution)",
+    "rs": "RS 281.1",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_51",
+    "texteSimple": "La poursuite peut aussi être exercée au lieu où le débiteur doit exécuter sa prestation si ce lieu a été expressément convenu entre les parties.",
+    "exemplesConcrets": ["Contrat prévoyant le paiement à Genève → poursuite possible à Genève", "Clause de for dans un contrat de bail → poursuite au lieu de l'immeuble"],
+    "domaines": ["poursuites"],
+    "articlesLies": ["LP 46", "LP 22"]
+  },
+  {
+    "ref": "LP 83",
+    "titre": "Poursuite — Mainlevée définitive",
+    "rs": "RS 281.1",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_83",
+    "texteSimple": "Si le créancier possède un jugement exécutoire, il peut demander la mainlevée définitive de l'opposition. Le juge prononce la mainlevée à moins que le débiteur prouve par titre que la dette a été éteinte ou suspendue depuis le jugement.",
+    "exemplesConcrets": ["Jugement condamnant au paiement de 5000 CHF → mainlevée définitive", "Preuve de paiement intégral depuis le jugement → opposition maintenue"],
+    "domaines": ["poursuites"],
+    "articlesLies": ["LP 80", "LP 82"]
+  },
+  {
+    "ref": "LP 107",
+    "titre": "Saisie — Revendication de tiers",
+    "rs": "RS 281.1",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_107",
+    "texteSimple": "Si un tiers prétend avoir un droit de propriété ou un droit de gage sur un bien saisi, il peut faire valoir sa revendication. L'office fixe un délai au tiers pour agir en justice.",
+    "exemplesConcrets": ["Objet saisi appartient en réalité au colocataire → revendication possible", "Véhicule saisi au nom du conjoint → le conjoint peut revendiquer"],
+    "domaines": ["poursuites", "saisie"],
+    "articlesLies": ["LP 106", "LP 109"]
+  },
+  {
+    "ref": "LP 109",
+    "titre": "Saisie — Action en revendication",
+    "rs": "RS 281.1",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_109",
+    "texteSimple": "Le tiers qui prétend avoir un droit de propriété ou un droit réel sur un bien saisi doit agir en justice dans un délai de 20 jours. Si l'action n'est pas introduite dans le délai, le droit est périmé.",
+    "exemplesConcrets": ["20 jours pour ouvrir action en revendication après notification", "Délai dépassé → le bien reste saisi et sera réalisé"],
+    "domaines": ["poursuites", "saisie"],
+    "articlesLies": ["LP 107", "LP 106"]
+  },
+  {
+    "ref": "LP 177",
+    "titre": "Faillite — Collocation des créances",
+    "rs": "RS 281.1",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_177",
+    "texteSimple": "L'administration de la faillite examine les créances produites et décide de leur admission ou de leur rejet. Le résultat est consigné dans un état de collocation soumis aux intéressés.",
+    "exemplesConcrets": ["Créancier produit sa facture impayée → l'administration vérifie et admet", "Créance contestée → le créancier peut agir en justice pour l'admission"],
+    "domaines": ["faillite"],
+    "articlesLies": ["LP 182", "LP 191"]
+  },
+  {
+    "ref": "LP 182",
+    "titre": "Faillite — Distribution des deniers",
+    "rs": "RS 281.1",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_182",
+    "texteSimple": "Le produit de la liquidation est distribué aux créanciers selon l'état de collocation et l'ordre des classes de créanciers (1re, 2e, 3e classe). Les créanciers de même rang sont payés proportionnellement.",
+    "exemplesConcrets": ["Salaires impayés = 1re classe, prioritaires", "Créanciers chirographaires = 3e classe, souvent peu ou pas remboursés"],
+    "domaines": ["faillite"],
+    "articlesLies": ["LP 177", "LP 191"]
+  },
+  {
+    "ref": "LP 278",
+    "titre": "Séquestre — Conditions",
+    "rs": "RS 281.1",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_278",
+    "texteSimple": "Le séquestre est ordonné par le juge dans les cas prévus par la loi (débiteur sans domicile fixe, qui dissimule ses biens, etc.). Le créancier doit rendre vraisemblable sa créance et le cas de séquestre.",
+    "exemplesConcrets": ["Débiteur qui s'apprête à fuir avec ses biens → séquestre possible", "Le juge peut exiger des sûretés du créancier en cas de séquestre injustifié"],
+    "domaines": ["poursuites", "séquestre"],
+    "articlesLies": ["LP 271", "LP 279"]
+  },
+  {
+    "ref": "LP 279",
+    "titre": "Séquestre — Validation du séquestre",
+    "rs": "RS 281.1",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_279",
+    "texteSimple": "Le créancier qui a obtenu un séquestre doit, dans les 10 jours, requérir une poursuite ou une action en validation. Si le créancier ne valide pas à temps, le séquestre est caduc.",
+    "exemplesConcrets": ["Séquestre obtenu → 10 jours pour déposer la poursuite", "Oubli du délai de 10 jours → le séquestre tombe"],
+    "domaines": ["poursuites", "séquestre"],
+    "articlesLies": ["LP 278", "LP 271"]
+  },
+  {
+    "ref": "LP 293",
+    "titre": "Concordat — Sursis concordataire provisoire",
+    "rs": "RS 281.1",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_293",
+    "texteSimple": "Le juge peut accorder un sursis concordataire provisoire de 4 mois au maximum. Pendant ce délai, un commissaire est nommé pour examiner la situation du débiteur et déterminer si un assainissement est possible.",
+    "exemplesConcrets": ["Entreprise en difficulté demande un sursis → 4 mois pour trouver une solution", "Le commissaire analyse les comptes et propose un plan"],
+    "domaines": ["faillite", "concordat"],
+    "articlesLies": ["LP 293a", "LP 295a"]
+  },
+  {
+    "ref": "LP 293a",
+    "titre": "Concordat — Sursis concordataire définitif",
+    "rs": "RS 281.1",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_293a",
+    "texteSimple": "Le sursis concordataire définitif est accordé pour une durée de 4 à 24 mois si un assainissement ou un concordat paraît possible. Le commissaire surveille l'activité du débiteur.",
+    "exemplesConcrets": ["Sursis définitif de 12 mois pour restructurer l'entreprise", "Le commissaire approuve les actes de gestion importants"],
+    "domaines": ["faillite", "concordat"],
+    "articlesLies": ["LP 293", "LP 295a"]
+  },
+  {
+    "ref": "LP 295a",
+    "titre": "Concordat — Effets du sursis sur les contrats en cours",
+    "rs": "RS 281.1",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_295a",
+    "texteSimple": "Pendant le sursis concordataire, le débiteur peut résilier les contrats de durée avec un préavis de 3 mois. Le cocontractant a une créance en dommages-intérêts qui est une créance concordataire.",
+    "exemplesConcrets": ["Résiliation d'un bail commercial pendant le sursis avec 3 mois de préavis", "Le bailleur a droit à des dommages-intérêts traités comme créance concordataire"],
+    "domaines": ["faillite", "concordat"],
+    "articlesLies": ["LP 293", "LP 293a"]
+  },
+  {
+    "ref": "LP 305",
+    "titre": "Concordat — Homologation",
+    "rs": "RS 281.1",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_305",
+    "texteSimple": "Le concordat est homologué par le juge si les majorités requises sont atteintes et si le dividende proposé est suffisamment garanti. L'homologation lie tous les créanciers.",
+    "exemplesConcrets": ["Majorité des créanciers accepte 40% de remboursement → le juge homologue", "Le concordat homologué s'impose même aux créanciers qui ont voté contre"],
+    "domaines": ["faillite", "concordat"],
+    "articlesLies": ["LP 293", "LP 310"]
+  },
+  {
+    "ref": "LP 310",
+    "titre": "Concordat — Effets du concordat homologué",
+    "rs": "RS 281.1",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_310",
+    "texteSimple": "Le concordat homologué lie tous les créanciers dont les créances sont nées avant l'octroi du sursis. Les créanciers reçoivent le dividende prévu et ne peuvent plus poursuivre pour le solde.",
+    "exemplesConcrets": ["Concordat à 50% → créancier de 10 000 CHF reçoit 5 000 CHF et ne peut plus réclamer le reste", "Les nouvelles dettes (post-sursis) doivent être payées intégralement"],
+    "domaines": ["faillite", "concordat"],
+    "articlesLies": ["LP 305", "LP 293"]
+  }
+]

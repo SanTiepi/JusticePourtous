@@ -41,63 +41,39 @@
       </ul>
     </nav>
 
-    <header>
-      <h1>Vos droits.<br><span class="highlight">Gratuitement.</span><br>En 5 clics.</h1>
-      <p class="subtitle">72% des Suisses renoncent a faire valoir leurs droits a cause du cout. JusticePourtous vous donne acces au droit suisse, gratuitement et anonymement.</p>
+    <header class="hero-search">
+      <h1>Quel est votre <span class="highlight">probleme juridique</span>&nbsp;?</h1>
+      <p class="subtitle">Decrivez votre situation en quelques mots. JusticePourtous trouve les lois, les recours et les services — gratuitement et anonymement.</p>
+
+      <form class="search-form" id="searchForm" onsubmit="handleSearch(event)">
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Ex : mon propriétaire refuse de rembourser ma caution..."
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+            maxlength="300"
+            aria-label="Decrivez votre probleme juridique"
+          >
+          <button type="submit" class="search-btn" aria-label="Rechercher">
+            Analyser
+          </button>
+        </div>
+        <div class="search-hints">
+          <button type="button" class="search-hint" onclick="fillSearch('mon propriétaire refuse de rembourser ma caution')">caution non remboursee</button>
+          <button type="button" class="search-hint" onclick="fillSearch('licenciement abusif pendant maladie')">licenciement maladie</button>
+          <button type="button" class="search-hint" onclick="fillSearch('heures supplementaires non payees')">heures sup non payees</button>
+          <button type="button" class="search-hint" onclick="fillSearch('commandement de payer opposition')">commandement de payer</button>
+        </div>
+      </form>
     </header>
 
-    <section class="section">
-      <h2 class="section-title">Choisissez votre domaine</h2>
+    <section class="domains-section">
+      <h2 class="section-title">Ou parcourez par domaine</h2>
       <div class="tiles" id="domaines"></div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">Comment ca marche</h2>
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">01</div>
-          <div>
-            <h3>Decrivez votre situation</h3>
-            <p>5 questions simples pour comprendre votre cas. Aucune connaissance juridique requise.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-number">02</div>
-          <div>
-            <h3>Recevez vos droits</h3>
-            <p>Articles de loi, jurisprudence du Tribunal federal, modeles de lettres.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-number">03</div>
-          <div>
-            <h3>Agissez</h3>
-            <p>Copiez les modeles, contactez les services competents, faites valoir vos droits.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">Ce que vous obtenez</h2>
-      <div class="features">
-        <div class="feature">
-          <h4>Articles de loi</h4>
-          <p>References exactes du CO, CC, LOI avec liens Fedlex.</p>
-        </div>
-        <div class="feature">
-          <h4>Jurisprudence TF</h4>
-          <p>Arrets du Tribunal federal applicables a votre situation.</p>
-        </div>
-        <div class="feature">
-          <h4>Modeles de lettres</h4>
-          <p>Courriers types prets a envoyer, copiables en un clic.</p>
-        </div>
-        <div class="feature">
-          <h4>Annuaire des services</h4>
-          <p>ASLOCA, CSP, syndicats, aide juridictionnelle de votre canton.</p>
-        </div>
-      </div>
     </section>
 
     <div class="privacy-badge">
@@ -111,12 +87,6 @@
       </div>
     </div>
 
-    <div class="card" style="text-align:center;">
-      <h3>Annuaire cantonal</h3>
-      <p class="text-muted mb-2">Trouvez les services juridiques de votre canton</p>
-      <a href="/annuaire.html" class="btn btn-outline">Consulter l'annuaire</a>
-    </div>
-
     <div class="disclaimer">
       JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes.
     </div>
@@ -127,15 +97,29 @@
   </div>
 
   <script>
+    function handleSearch(e) {
+      e.preventDefault();
+      var q = document.getElementById('searchInput').value.trim();
+      if (!q) return;
+      window.location.href = '/resultat.html?q=' + encodeURIComponent(q);
+    }
+
+    function fillSearch(text) {
+      var input = document.getElementById('searchInput');
+      input.value = text;
+      input.focus();
+    }
+
     async function loadDomaines() {
-      const container = document.getElementById('domaines');
+      var container = document.getElementById('domaines');
       try {
-        const res = await fetch('/api/domaines');
+        var res = await fetch('/api/domaines');
         if (!res.ok) throw new Error('API indisponible');
-        const data = await res.json();
-        const icons = { bail: 'LOGEMENT', travail: 'TRAVAIL', famille: 'FAMILLE', dettes: 'DETTES', etrangers: 'ETRANGERS' };
-        for (const d of data.domaines) {
-          const tile = document.createElement('a');
+        var data = await res.json();
+        var icons = { bail: 'LOGEMENT', travail: 'TRAVAIL', famille: 'FAMILLE', dettes: 'DETTES', etrangers: 'ETRANGERS' };
+        for (var i = 0; i < data.domaines.length; i++) {
+          var d = data.domaines[i];
+          var tile = document.createElement('a');
           tile.className = 'tile';
           tile.href = '/consulter.html?domaine=' + d.id;
           tile.style.borderLeftColor = d.couleur;
@@ -148,7 +132,7 @@
           container.appendChild(tile);
         }
       } catch (e) {
-        container.innerHTML = '<div class="error-box">Impossible de charger les domaines. Verifiez que le serveur est en marche.</div>';
+        container.innerHTML = '';
       }
     }
     loadDomaines();

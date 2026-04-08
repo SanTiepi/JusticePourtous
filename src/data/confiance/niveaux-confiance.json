@@ -1,0 +1,39 @@
+{
+  "niveaux": [
+    {
+      "code": "certain",
+      "label": "Certain",
+      "couleur": "#16a34a",
+      "description": "Texte de loi fédérale en vigueur, pas d'ambiguïté",
+      "exemple": "Le délai de résiliation est de 3 mois (CO 266c)"
+    },
+    {
+      "code": "probable",
+      "label": "Très probable",
+      "couleur": "#2563eb",
+      "description": "Jurisprudence TF constante, pas de revirement récent",
+      "exemple": "La moisissure justifie une réduction de 15-25% (jurisprudence constante)"
+    },
+    {
+      "code": "variable",
+      "label": "Variable selon canton",
+      "couleur": "#d97706",
+      "description": "La règle dépend du canton, de la commune ou de la pratique locale",
+      "exemple": "Le délai d'aide juridictionnelle varie de 2 à 8 semaines selon le canton"
+    },
+    {
+      "code": "incertain",
+      "label": "Incertain",
+      "couleur": "#dc2626",
+      "description": "Pas de jurisprudence claire, doctrine divisée, ou cas particulier",
+      "exemple": "L'impact du télétravail sur le for juridique n'est pas encore tranché"
+    },
+    {
+      "code": "non_verifie",
+      "label": "Non vérifié",
+      "couleur": "#6b7280",
+      "description": "Information non confirmée par une source primaire",
+      "exemple": "Pratique alléguée mais pas vérifiée"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+[
+  {
+    "procedure": "Conciliation bail (loyer)",
+    "cout": "Gratuit",
+    "details": "Gratuit pour les deux parties dans tous les cantons. Concerne les litiges relatifs aux baux d'habitation et locaux commerciaux.",
+    "source": "CPC art. 113 al. 2 let. c"
+  },
+  {
+    "procedure": "Conciliation droit du travail (jusqu'à CHF 30'000)",
+    "cout": "Gratuit",
+    "details": "Gratuit pour les deux parties. Concerne les litiges portant sur le contrat de travail jusqu'à une valeur litigieuse de CHF 30'000.",
+    "source": "CPC art. 113 al. 2 let. d"
+  },
+  {
+    "procedure": "Conciliation Loi sur l'égalité (LEg)",
+    "cout": "Gratuit",
+    "details": "Gratuit pour les litiges fondés sur la Loi sur l'égalité entre femmes et hommes.",
+    "source": "CPC art. 113 al. 2 let. b"
+  },
+  {
+    "procedure": "Tribunal des prud'hommes (jusqu'à CHF 30'000)",
+    "cout": "Gratuit",
+    "details": "Pas de frais judiciaires pour les litiges en droit du travail dont la valeur litigieuse n'excède pas CHF 30'000. Au-delà, frais selon valeur litigieuse.",
+    "source": "CPC art. 114 let. c"
+  },
+  {
+    "procedure": "Tribunal des prud'hommes (CHF 30'001 - 100'000)",
+    "cout": "CHF 200 - 4'000",
+    "details": "Frais judiciaires proportionnels à la valeur litigieuse. Variable selon le canton. En moyenne CHF 200-2000 pour CHF 30-50k, CHF 1000-4000 pour CHF 50-100k.",
+    "source": "Règlements cantonaux sur les frais de procédure"
+  },
+  {
+    "procedure": "Commandement de payer",
+    "cout": "CHF 50 - 103",
+    "details": "CHF 50 (créance jusqu'à CHF 10'000), CHF 71 (CHF 10'001 à 100'000), CHF 103 (plus de CHF 100'000). Émolument pour la rédaction, établissement en double, enregistrement et notification. + CHF 7 par tentative de notification.",
+    "source": "OELP (RS 281.35) Annexe 1"
+  },
+  {
+    "procedure": "Mainlevée provisoire",
+    "cout": "CHF 50 - 300",
+    "details": "Émolument selon valeur litigieuse. CHF 50-100 (< CHF 10'000), CHF 100-200 (CHF 10-100k), CHF 200-300 (> CHF 100k). Avance de frais requise.",
+    "source": "CPC art. 98 + règlements cantonaux"
+  },
+  {
+    "procedure": "Mainlevée définitive",
+    "cout": "CHF 50 - 300",
+    "details": "Mêmes tarifs que la mainlevée provisoire. Procédure sommaire basée sur un titre exécutoire (jugement, acte authentique).",
+    "source": "LP art. 80-81 + règlements cantonaux"
+  },
+  {
+    "procedure": "Continuation de poursuite (réquisition de saisie)",
+    "cout": "CHF 40 - 80",
+    "details": "Émolument pour la réquisition de continuer la poursuite. Variable selon montant de la créance.",
+    "source": "OELP Annexe 1"
+  },
+  {
+    "procedure": "Réquisition de faillite",
+    "cout": "CHF 100 - 500",
+    "details": "Avance de frais de CHF 100 à 500 selon le canton. En cas de faillite effectivement ouverte, les frais sont nettement supérieurs (CHF 4'000+ d'avance pour frais de liquidation).",
+    "source": "LP art. 169 + OELP"
+  },
+  {
+    "procedure": "Divorce par requête commune (accord complet)",
+    "cout": "CHF 500 - 1'830",
+    "details": "Droits de greffe variables par canton : Genève CHF 600, Vaud CHF 700, Fribourg CHF 800, Neuchâtel CHF 1'000, Valais CHF 1'200, Jura CHF 1'830. Sans compter les honoraires d'avocat.",
+    "source": "CC art. 111 + règlements cantonaux sur les frais"
+  },
+  {
+    "procedure": "Divorce contentieux",
+    "cout": "CHF 1'000 - 10'000+",
+    "details": "Frais judiciaires variables selon la valeur litigieuse (liquidation du régime matrimonial) et la complexité. Peuvent atteindre CHF 5'000-10'000+. Honoraires d'avocat en sus (CHF 250-600/heure).",
+    "source": "Règlements cantonaux sur les frais de procédure"
+  },
+  {
+    "procedure": "Mesures provisionnelles (mesures protectrices de l'union conjugale)",
+    "cout": "CHF 200 - 2'000",
+    "details": "Frais judiciaires pour les mesures d'urgence : garde des enfants, pension alimentaire provisoire, attribution du logement conjugal. Variable selon canton et complexité.",
+    "source": "CPC art. 261 ss + CC art. 172 ss"
+  },
+  {
+    "procedure": "Tribunal civil — valeur litigieuse jusqu'à CHF 10'000",
+    "cout": "CHF 100 - 800",
+    "details": "Frais de procédure pour les litiges civils de faible valeur. Procédure simplifiée applicable (jusqu'à CHF 30'000).",
+    "source": "CPC art. 243 + règlements cantonaux"
+  },
+  {
+    "procedure": "Tribunal civil — valeur litigieuse CHF 10'001 à 100'000",
+    "cout": "CHF 800 - 6'000",
+    "details": "Procédure simplifiée (jusqu'à CHF 30'000) ou procédure ordinaire (CHF 30'001-100'000). Frais proportionnels à la valeur litigieuse.",
+    "source": "CPC art. 219 + règlements cantonaux"
+  },
+  {
+    "procedure": "Tribunal civil — valeur litigieuse CHF 100'001 à 500'000",
+    "cout": "CHF 3'000 - 20'000",
+    "details": "Procédure ordinaire. Frais judiciaires importants, proportionnels à la valeur litigieuse. Avance de frais à verser.",
+    "source": "Règlements cantonaux sur les frais"
+  },
+  {
+    "procedure": "Tribunal civil — valeur litigieuse > CHF 500'000",
+    "cout": "CHF 10'000 - 100'000+",
+    "details": "Procédure ordinaire. Frais très élevés pour les litiges de grande valeur. Peuvent représenter 1 à 3% de la valeur litigieuse.",
+    "source": "Règlements cantonaux sur les frais"
+  },
+  {
+    "procedure": "Procédure APEA (protection de l'adulte/enfant)",
+    "cout": "Gratuit à CHF 2'000",
+    "details": "Gratuit en principe pour les mesures ordonnées d'office. Frais possibles pour les mesures demandées par une partie. Variable selon canton.",
+    "source": "CC art. 450 ss"
+  },
+  {
+    "procedure": "Naturalisation ordinaire — taxes fédérales",
+    "cout": "CHF 100",
+    "details": "Émolument fédéral de CHF 100 par personne majeure. Gratuit pour les mineurs inclus dans la demande d'un parent.",
+    "source": "OEC art. 13"
+  },
+  {
+    "procedure": "Naturalisation ordinaire — taxes cantonales et communales",
+    "cout": "CHF 500 - 3'500",
+    "details": "Très variable selon canton et commune. Exemples : Bienne (BE) CHF 1'150 cantonal + CHF 1'400-1'600 communal. Genève CHF 500-1'500. Certaines communes ne facturent rien, d'autres jusqu'à CHF 3'500.",
+    "source": "Législations cantonales sur le droit de cité"
+  },
+  {
+    "procedure": "Assistance judiciaire (aide juridictionnelle)",
+    "cout": "Gratuit (sous conditions)",
+    "details": "Exonération totale ou partielle des frais judiciaires et désignation d'un avocat d'office si : indigence, affaire non dénuée de chances de succès, nécessité d'un avocat. Remboursement ultérieur si situation financière s'améliore.",
+    "source": "CPC art. 117-123"
+  },
+  {
+    "procedure": "Honoraires d'avocat — tarif moyen Suisse romande",
+    "cout": "CHF 250 - 450/heure",
+    "details": "Tarif horaire moyen en Suisse romande. Genève : CHF 300-500/h. Vaud : CHF 250-450/h. Valais/Fribourg/Neuchâtel/Jura : CHF 250-400/h. Première consultation souvent CHF 200-300.",
+    "source": "Ordres cantonaux des avocats — tarifs indicatifs"
+  },
+  {
+    "procedure": "Honoraires d'avocat — tarif moyen Suisse alémanique",
+    "cout": "CHF 300 - 600/heure",
+    "details": "Tarif horaire moyen. Zürich : CHF 350-600/h. Berne : CHF 300-500/h. Bâle : CHF 300-550/h. Plus élevé en raison du coût de la vie.",
+    "source": "Ordres cantonaux des avocats — tarifs indicatifs"
+  },
+  {
+    "procedure": "Consultation juridique gratuite (permanences)",
+    "cout": "Gratuit",
+    "details": "Première consultation de 15-30 minutes offerte par les ordres des avocats cantonaux, CSP, Caritas, ASLOCA (membres), syndicats (membres). Sans engagement.",
+    "source": "Ordres des avocats cantonaux + associations"
+  }
+]

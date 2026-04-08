@@ -1,0 +1,113 @@
+{
+  "date": "2026-04-07T22:47:14.938Z",
+  "score": 144,
+  "maxScore": 160,
+  "lacunes": [
+    {
+      "type": "tracabilite",
+      "message": "182 fiches sans référence légale explicite"
+    }
+  ],
+  "couverture": {
+    "bail": {
+      "fiches": 32,
+      "cible": 30,
+      "score": "10/10"
+    },
+    "travail": {
+      "fiches": 33,
+      "cible": 30,
+      "score": "10/10"
+    },
+    "famille": {
+      "fiches": 37,
+      "cible": 30,
+      "score": "10/10"
+    },
+    "dettes": {
+      "fiches": 31,
+      "cible": 30,
+      "score": "10/10"
+    },
+    "etrangers": {
+      "fiches": 33,
+      "cible": 30,
+      "score": "10/10"
+    },
+    "articles": {
+      "total": 622,
+      "cible": 3000,
+      "score": "10/10"
+    },
+    "arrets": {
+      "total": 217,
+      "cible": 5000,
+      "score": "4/10"
+    },
+    "delais": {
+      "total": 28,
+      "cible": 25,
+      "score": "10/10"
+    },
+    "antiErreurs": {
+      "total": 25,
+      "cible": 25,
+      "score": "10/10"
+    },
+    "patterns": {
+      "total": 30,
+      "cible": 15,
+      "score": "10/10"
+    },
+    "casPratiques": {
+      "total": 20,
+      "cible": 20,
+      "score": "10/10"
+    },
+    "cantons": {
+      "couverts": [
+        "VD",
+        "GE",
+        "VS",
+        "FR",
+        "NE",
+        "JU",
+        "ZH",
+        "BE",
+        "BS",
+        "CH"
+      ],
+      "manquants": [],
+      "score": "10/10"
+    },
+    "templates": {
+      "total": 50,
+      "cible": 200,
+      "score": "10/10"
+    },
+    "escalade": {
+      "total": 20,
+      "cible": 20,
+      "score": "5/5"
+    },
+    "taxonomie": {
+      "total": 30,
+      "cible": 30,
+      "score": "5/5"
+    },
+    "workflows": {
+      "total": 15,
+      "cible": 10,
+      "score": "5/5"
+    },
+    "cascades": {
+      "total": 10,
+      "cible": 5,
+      "score": "5/5"
+    }
+  },
+  "recommandations": [
+    "CRITIQUE: Ajouter les références légales aux fiches sans source"
+  ],
+  "scorePct": 90
+}

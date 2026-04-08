@@ -1,0 +1,922 @@
+[
+  {
+    "id": "je_demenage",
+    "titre": "Je déménage",
+    "description": "Tout ce qu'il faut faire quand on quitte son logement en Suisse",
+    "etapes": [
+      {
+        "ordre": 1,
+        "titre": "Résilier le bail",
+        "delai": "3 mois avant (vérifier le contrat)",
+        "details": "Lettre recommandée au bailleur. Utiliser le formulaire officiel si disponible. La résiliation doit parvenir au bailleur au plus tard le dernier jour du mois.",
+        "baseLegale": "CO 266a-266o",
+        "templateLettre": "bail_resiliation",
+        "calculateur": null,
+        "attention": "Si bail commun (couple), les DEUX doivent signer la résiliation."
+      },
+      {
+        "ordre": 2,
+        "titre": "Vérifier les termes de résiliation",
+        "delai": "Immédiatement après résiliation",
+        "details": "Le bail prévoit souvent des termes fixes (fin mars, fin juin, fin septembre). Hors terme = résiliation au prochain terme possible.",
+        "baseLegale": "CO 266c",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Certains baux prévoient un délai plus long que le minimum légal."
+      },
+      {
+        "ordre": 3,
+        "titre": "Annoncer le déménagement à la commune",
+        "delai": "8 à 14 jours avant le départ (selon commune)",
+        "details": "Se présenter au contrôle des habitants de la commune de départ et de la commune d'arrivée. Emporter pièce d'identité et contrat de bail du nouveau logement.",
+        "baseLegale": "Loi cantonale sur le contrôle des habitants",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Amendes possibles en cas de non-annonce. Penser aussi à La Poste (réexpédition du courrier)."
+      },
+      {
+        "ordre": 4,
+        "titre": "État des lieux de sortie",
+        "delai": "Jour de la remise des clés",
+        "details": "Le bailleur doit vérifier l'état du logement en votre présence. Tout défaut doit être consigné par écrit. L'usure normale n'est pas à votre charge.",
+        "baseLegale": "CO 267-267a",
+        "templateLettre": null,
+        "calculateur": "calculAmortissementGarantie",
+        "attention": "Prenez des photos AVANT l'état des lieux. Contestez les défauts d'usure normale."
+      },
+      {
+        "ordre": 5,
+        "titre": "Récupérer la garantie de loyer",
+        "delai": "Jusqu'à 1 an après la sortie",
+        "details": "Le bailleur a 1 an pour faire valoir des prétentions sur la garantie. Sans contestation, la banque libère les fonds. En cas de désaccord, saisir l'autorité de conciliation.",
+        "baseLegale": "CO 257e; OBLF 8",
+        "templateLettre": "bail_garantie_liberation",
+        "calculateur": "calculAmortissementGarantie",
+        "attention": "Ne signez pas un accord qui vous semble injuste. Vous pouvez contester devant la conciliation gratuitement."
+      },
+      {
+        "ordre": 6,
+        "titre": "Transférer les assurances et abonnements",
+        "delai": "1 mois avant le déménagement",
+        "details": "Assurance ménage (adapter à la nouvelle surface), électricité, internet, redevance radio-TV (Serafe). Vérifier si le contrat permet une résiliation extraordinaire en cas de déménagement.",
+        "baseLegale": "LCA art. 54 (assurance); LCD",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Certains contrats télécom ne sont PAS résiliables pour déménagement."
+      }
+    ],
+    "fichesLiees": ["bail_depot_garantie", "bail_etat_des_lieux", "bail_resiliation_conteste"],
+    "calculateurs": ["calculAmortissementGarantie"],
+    "dureeEstimee": "2-3 mois de procédure"
+  },
+  {
+    "id": "je_perds_mon_emploi",
+    "titre": "Je perds mon emploi",
+    "description": "Les étapes clés après un licenciement en Suisse",
+    "etapes": [
+      {
+        "ordre": 1,
+        "titre": "Vérifier la validité du licenciement",
+        "delai": "Immédiatement",
+        "details": "Vérifier que le congé respecte les délais légaux, qu'il n'est pas donné pendant une période de protection (maladie, grossesse, service militaire) et qu'il n'est pas abusif.",
+        "baseLegale": "CO 335-336d",
+        "templateLettre": "travail_contestation_licenciement",
+        "calculateur": "calculDelaiConge",
+        "attention": "Faire opposition par écrit AVANT la fin du délai de congé si le licenciement semble abusif."
+      },
+      {
+        "ordre": 2,
+        "titre": "Demander le motif par écrit",
+        "delai": "Immédiatement",
+        "details": "L'employeur est tenu de motiver le licenciement par écrit si vous le demandez (CO 335 al. 2).",
+        "baseLegale": "CO 335 al. 2",
+        "templateLettre": "travail_demande_motif",
+        "calculateur": null,
+        "attention": "L'absence de motif écrit peut renforcer la thèse du licenciement abusif."
+      },
+      {
+        "ordre": 3,
+        "titre": "S'inscrire à l'ORP",
+        "delai": "Au plus tard le 1er jour de chômage (idéalement avant)",
+        "details": "L'inscription à l'Office régional de placement est obligatoire pour toucher les indemnités de chômage. Préparer: pièce d'identité, contrat de travail, lettre de licenciement, certificats de travail.",
+        "baseLegale": "LACI art. 17",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Inscription tardive = jours de suspension ! S'inscrire le plus tôt possible."
+      },
+      {
+        "ordre": 4,
+        "titre": "Demander le certificat de travail",
+        "delai": "Avant le dernier jour de travail",
+        "details": "Vous avez droit à un certificat complet (qualifié) mentionnant la nature du travail, la durée et la qualité. Vous pouvez aussi demander une simple attestation.",
+        "baseLegale": "CO 330a",
+        "templateLettre": "travail_certificat",
+        "calculateur": null,
+        "attention": "Contester un certificat négatif ou incomplet par écrit."
+      },
+      {
+        "ordre": 5,
+        "titre": "Calculer les indemnités dues",
+        "delai": "Dernier jour de travail",
+        "details": "Solde de vacances, heures supplémentaires, 13e salaire pro rata, éventuelle indemnité de départ (CO 339b si 20+ ans de service et 50+ ans).",
+        "baseLegale": "CO 339b, 329d",
+        "templateLettre": null,
+        "calculateur": "calculIndemniteLicenciement",
+        "attention": "Vérifier le décompte final ligne par ligne."
+      },
+      {
+        "ordre": 6,
+        "titre": "Transférer la prévoyance (LPP)",
+        "delai": "Dans les 6 mois",
+        "details": "L'avoir de prévoyance doit être transféré sur un compte de libre passage si vous ne retrouvez pas immédiatement un emploi.",
+        "baseLegale": "LFLP art. 4",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Sans instruction de votre part, le transfert se fait automatiquement à la Fondation institution supplétive après 6 mois."
+      }
+    ],
+    "fichesLiees": ["travail_licenciement_abusif", "travail_chomage", "travail_certificat"],
+    "calculateurs": ["calculDelaiConge", "calculIndemniteLicenciement", "calculProtectionMaladie"],
+    "dureeEstimee": "1-6 mois selon contestation"
+  },
+  {
+    "id": "je_me_separe_divorce",
+    "titre": "Je me sépare / divorce",
+    "description": "Guide complet pour la séparation ou le divorce en Suisse",
+    "etapes": [
+      {
+        "ordre": 1,
+        "titre": "Choisir entre séparation et divorce",
+        "delai": "Réflexion personnelle",
+        "details": "Séparation de corps : le mariage subsiste mais les époux vivent séparément. Divorce : dissolution définitive du mariage. Divorce sur requête commune (accord) ou sur demande unilatérale (2 ans de séparation).",
+        "baseLegale": "CC art. 111-112 (requête commune), 114 (unilatéral)",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Un divorce sur requête commune est plus rapide, moins cher et moins conflictuel."
+      },
+      {
+        "ordre": 2,
+        "titre": "Mesures protectrices de l'union conjugale (MPUC)",
+        "delai": "Dès la séparation effective",
+        "details": "Demander au tribunal les MPUC pour régler provisoirement : garde des enfants, pension alimentaire, attribution du logement, séparation de biens.",
+        "baseLegale": "CC art. 172-179",
+        "templateLettre": "famille_mpuc",
+        "calculateur": "calculPensionIndicative",
+        "attention": "Les MPUC sont provisoires mais exécutoires. Ne pas quitter le logement sans régler la question."
+      },
+      {
+        "ordre": 3,
+        "titre": "Calculer la pension alimentaire",
+        "delai": "Pendant la procédure",
+        "details": "La pension couvre les besoins des enfants et éventuellement du conjoint. Basée sur le minimum vital, les revenus et les charges de chaque parent.",
+        "baseLegale": "CC art. 276, 285, 125",
+        "templateLettre": null,
+        "calculateur": "calculPensionIndicative",
+        "attention": "La pension pour enfants prime toujours sur la pension pour conjoint (manque-à-gagner)."
+      },
+      {
+        "ordre": 4,
+        "titre": "Liquidation du régime matrimonial",
+        "delai": "Pendant la procédure de divorce",
+        "details": "Partage des acquêts (régime ordinaire). Chacun reprend ses biens propres, les acquêts sont partagés par moitié. Inclut aussi le partage LPP (splitting).",
+        "baseLegale": "CC art. 196-220 (acquêts), 122-124 (LPP)",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Le splitting LPP est obligatoire sauf accord contraire homologué par le juge."
+      },
+      {
+        "ordre": 5,
+        "titre": "Convention de divorce",
+        "delai": "Avant l'audience",
+        "details": "En cas de requête commune, préparer une convention réglant : garde/autorité parentale, pension alimentaire, partage des biens, logement, LPP.",
+        "baseLegale": "CC art. 111",
+        "templateLettre": "famille_convention_divorce",
+        "calculateur": null,
+        "attention": "Le juge vérifie que la convention protège les intérêts des enfants. Elle peut être refusée."
+      }
+    ],
+    "fichesLiees": ["famille_divorce", "famille_pension", "famille_garde"],
+    "calculateurs": ["calculPensionIndicative", "calculCoutProcedure"],
+    "dureeEstimee": "3-18 mois selon la procédure"
+  },
+  {
+    "id": "j_ai_un_accident",
+    "titre": "J'ai un accident",
+    "description": "Que faire après un accident (circulation, travail, privé) en Suisse",
+    "etapes": [
+      {
+        "ordre": 1,
+        "titre": "Annoncer l'accident",
+        "delai": "Immédiatement / dans les 24h",
+        "details": "Accident de travail : annoncer à l'employeur immédiatement. Accident de circulation : remplir le constat européen. Conserver tous les justificatifs médicaux.",
+        "baseLegale": "LAA art. 45; LCR art. 51",
+        "templateLettre": "accident_declaration",
+        "calculateur": null,
+        "attention": "Ne jamais reconnaître sa faute sur place. Prendre des photos et noter les témoins."
+      },
+      {
+        "ordre": 2,
+        "titre": "Consulter un médecin",
+        "delai": "Le jour même",
+        "details": "Faire constater les blessures médicalement, même si elles semblent bénignes. Le certificat médical initial est crucial pour la suite.",
+        "baseLegale": "LAA art. 10",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Un certificat tardif affaiblit vos prétentions. Consultez le jour même."
+      },
+      {
+        "ordre": 3,
+        "titre": "Déclarer à l'assurance",
+        "delai": "Dans les 7 jours (LAA), dans les 30 jours (RC auto)",
+        "details": "Accident professionnel : l'employeur déclare à la SUVA/assurance LAA. Accident privé : déclarer à l'assurance accidents non professionnels. Circulation : déclarer à votre RC et à l'assurance du responsable.",
+        "baseLegale": "LAA art. 45; LCA art. 38",
+        "templateLettre": "accident_declaration_assurance",
+        "calculateur": null,
+        "attention": "Ne signez aucun document de l'assurance adverse sans conseil juridique."
+      },
+      {
+        "ordre": 4,
+        "titre": "Faire valoir vos prestations",
+        "delai": "Dès la stabilisation médicale",
+        "details": "Indemnités journalières (80% du salaire LAA), frais médicaux, éventuelle rente d'invalidité, indemnité pour atteinte à l'intégrité, dommages-intérêts et tort moral.",
+        "baseLegale": "LAA art. 16-18; CO 41-49 (RC)",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "La LAA ne couvre pas le tort moral. Celui-ci doit être réclamé au responsable (RC)."
+      },
+      {
+        "ordre": 5,
+        "titre": "Contester une décision d'assurance",
+        "delai": "30 jours dès notification",
+        "details": "En cas de refus de prestations ou de réduction, faire opposition dans les 30 jours. En cas de rejet de l'opposition, recours au tribunal cantonal des assurances.",
+        "baseLegale": "LPGA art. 52 (opposition), 56 (recours)",
+        "templateLettre": "accident_opposition",
+        "calculateur": "calculCoutProcedure",
+        "attention": "La procédure en assurances sociales est gratuite en première instance dans la plupart des cantons."
+      }
+    ],
+    "fichesLiees": ["accident_travail", "accident_circulation", "assurance_laa"],
+    "calculateurs": ["calculCoutProcedure"],
+    "dureeEstimee": "Variable — quelques semaines à plusieurs années"
+  },
+  {
+    "id": "je_deviens_parent",
+    "titre": "Je deviens parent",
+    "description": "Droits et démarches autour de la naissance d'un enfant en Suisse",
+    "etapes": [
+      {
+        "ordre": 1,
+        "titre": "Informer l'employeur de la grossesse",
+        "delai": "Dès confirmation médicale (recommandé)",
+        "details": "Pas d'obligation légale d'annoncer un délai précis, mais recommandé pour activer la protection contre le licenciement. La protection court dès que l'employeur est informé.",
+        "baseLegale": "CO 336c al. 1 let. c; LEg art. 3",
+        "templateLettre": null,
+        "calculateur": "calculProtectionMaladie",
+        "attention": "Protection absolue contre le licenciement pendant la grossesse et 16 semaines après l'accouchement."
+      },
+      {
+        "ordre": 2,
+        "titre": "Allocations de maternité (APG)",
+        "delai": "Dès l'accouchement — durée 14 semaines",
+        "details": "80% du salaire pendant 14 semaines, max 220 CHF/jour. Conditions: avoir été assurée AVS les 9 mois précédant l'accouchement et avoir exercé une activité lucrative pendant 5 mois.",
+        "baseLegale": "LAPG art. 16b-16h",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Reprendre le travail avant la fin des 14 semaines met fin aux APG."
+      },
+      {
+        "ordre": 3,
+        "titre": "Congé paternité (APG)",
+        "delai": "Dans les 6 mois suivant la naissance",
+        "details": "2 semaines de congé paternité (10 jours ouvrables), à prendre en bloc ou par jours isolés dans les 6 mois.",
+        "baseLegale": "LAPG art. 16i-16l",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Le délai de 6 mois est impératif. Planifier avec l'employeur."
+      },
+      {
+        "ordre": 4,
+        "titre": "Reconnaissance de l'enfant (parents non mariés)",
+        "delai": "Avant ou après la naissance",
+        "details": "Si les parents ne sont pas mariés, le père doit reconnaître l'enfant auprès de l'état civil. L'autorité parentale conjointe nécessite une déclaration commune.",
+        "baseLegale": "CC art. 252-260",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Sans reconnaissance, le père n'a aucun droit ni obligation envers l'enfant."
+      },
+      {
+        "ordre": 5,
+        "titre": "Allocations familiales",
+        "delai": "Dès la naissance",
+        "details": "Allocation de naissance (selon canton) + allocation pour enfant (min. 200 CHF/mois, variable par canton). Demander auprès de la caisse de compensation.",
+        "baseLegale": "LAFam art. 3",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Si les deux parents travaillent, un seul touche les allocations (celui avec le revenu le plus élevé dans le canton de domicile de l'enfant)."
+      }
+    ],
+    "fichesLiees": ["travail_grossesse", "famille_reconnaissance", "famille_allocations"],
+    "calculateurs": ["calculProtectionMaladie"],
+    "dureeEstimee": "9 mois + premières semaines"
+  },
+  {
+    "id": "un_proche_decede",
+    "titre": "Un proche décède",
+    "description": "Démarches administratives et juridiques après un décès en Suisse",
+    "etapes": [
+      {
+        "ordre": 1,
+        "titre": "Déclaration de décès",
+        "delai": "Dans les 2 jours",
+        "details": "Le décès doit être annoncé à l'état civil du lieu de décès. Le médecin délivre le certificat de décès. L'état civil établit l'acte de décès.",
+        "baseLegale": "OEC art. 9",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "L'entreprise de pompes funèbres se charge souvent de ces formalités."
+      },
+      {
+        "ordre": 2,
+        "titre": "Informer les institutions",
+        "delai": "Dans les 14 jours",
+        "details": "AVS/AI, caisse de pension (LPP), assurance maladie, banques, bailleur, employeur du défunt, assurances (vie, ménage, RC).",
+        "baseLegale": "Divers",
+        "templateLettre": "deces_avis",
+        "calculateur": null,
+        "attention": "La caisse maladie doit être informée rapidement pour éviter de continuer à payer les primes."
+      },
+      {
+        "ordre": 3,
+        "titre": "Rente de survivants (AVS/LPP)",
+        "delai": "Dès que possible",
+        "details": "Rente de veuf/veuve AVS si enfants à charge. Rente d'orphelin AVS. Prestations de la caisse de pension (LPP) du défunt. Demander auprès de la caisse de compensation.",
+        "baseLegale": "LAVS art. 23-24; LPP art. 18-22",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Les concubins n'ont en principe PAS droit aux rentes de survivants AVS (mais parfois LPP selon le règlement)."
+      },
+      {
+        "ordre": 4,
+        "titre": "Succession — accepter ou répudier",
+        "delai": "3 mois dès la connaissance du décès",
+        "details": "Vous avez 3 mois pour répudier (refuser) la succession si elle est surendettée. Possibilité de demander un inventaire officiel (bénéfice d'inventaire).",
+        "baseLegale": "CC art. 566-579",
+        "templateLettre": "succession_repudiation",
+        "calculateur": null,
+        "attention": "Si vous vous mêlez de la succession (ex: vider l'appartement), vous risquez d'être considéré comme ayant accepté."
+      },
+      {
+        "ordre": 5,
+        "titre": "Partage successoral",
+        "delai": "Pas de délai légal, mais les héritiers sont copropriétaires",
+        "details": "Réserves héréditaires (descendants: 50%, conjoint: 50%). Quotité disponible. Convention de partage entre héritiers ou, en cas de litige, action en partage.",
+        "baseLegale": "CC art. 602-640",
+        "templateLettre": null,
+        "calculateur": "calculCoutProcedure",
+        "attention": "Chaque héritier peut exiger le partage à tout moment. Pas de prescription pour l'action en partage."
+      }
+    ],
+    "fichesLiees": ["succession_reserves", "succession_repudiation", "succession_partage"],
+    "calculateurs": ["calculCoutProcedure"],
+    "dureeEstimee": "3 mois à 2 ans"
+  },
+  {
+    "id": "je_cree_mon_entreprise",
+    "titre": "Je crée mon entreprise",
+    "description": "Les étapes juridiques pour lancer une activité en Suisse",
+    "etapes": [
+      {
+        "ordre": 1,
+        "titre": "Choisir la forme juridique",
+        "delai": "Phase de planification",
+        "details": "Raison individuelle (pas de capital min), Sàrl (capital min 20'000 CHF), SA (capital min 100'000 CHF dont 50'000 libéré). La RI est la plus simple mais vous êtes responsable sur vos biens personnels.",
+        "baseLegale": "CO art. 552ss (RI), 772ss (Sàrl), 620ss (SA)",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Pour une activité à risque, préférer une Sàrl ou SA pour limiter la responsabilité."
+      },
+      {
+        "ordre": 2,
+        "titre": "Inscription au Registre du commerce",
+        "delai": "Avant le début de l'activité (obligatoire dès 100'000 CHF/an pour RI)",
+        "details": "Inscription obligatoire pour Sàrl et SA. Pour la RI, obligatoire dès 100'000 CHF de CA annuel. Notaire nécessaire pour Sàrl et SA.",
+        "baseLegale": "ORC art. 36ss",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "L'inscription est constitutive pour la Sàrl et la SA (elles n'existent qu'après inscription)."
+      },
+      {
+        "ordre": 3,
+        "titre": "S'affilier aux assurances sociales",
+        "delai": "Dès le début de l'activité",
+        "details": "AVS/AI/APG (obligatoire), prévoyance professionnelle LPP (si employés), assurance accidents LAA (si employés), assurance chômage (pour employés). L'indépendant en RI n'a pas droit au chômage.",
+        "baseLegale": "LAVS art. 3; LAA art. 1a; LPP art. 2",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "En tant qu'indépendant, vous ne cotisez PAS au chômage. Prévoir une réserve personnelle."
+      },
+      {
+        "ordre": 4,
+        "titre": "TVA — inscription",
+        "delai": "Dès que le CA annuel dépasse 100'000 CHF",
+        "details": "Inscription obligatoire à l'AFC dès 100'000 CHF de chiffre d'affaires annuel. En dessous, inscription volontaire possible.",
+        "baseLegale": "LTVA art. 10",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Même sous le seuil, l'inscription volontaire peut être avantageuse (récupération de la TVA sur les achats)."
+      },
+      {
+        "ordre": 5,
+        "titre": "Autorisations et assurances",
+        "delai": "Avant le début de l'activité",
+        "details": "Vérifier si votre activité nécessite une autorisation cantonale (restauration, santé, transport, finance). Souscrire une RC professionnelle.",
+        "baseLegale": "Variable selon le canton et l'activité",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Exercer sans autorisation peut entraîner des amendes et la fermeture de l'activité."
+      }
+    ],
+    "fichesLiees": ["entreprise_creation", "entreprise_tva", "entreprise_assurances_sociales"],
+    "calculateurs": ["calculCoutProcedure"],
+    "dureeEstimee": "2-8 semaines"
+  },
+  {
+    "id": "je_suis_harcele_au_travail",
+    "titre": "Je suis harcelé au travail",
+    "description": "Harcèlement moral ou sexuel : comment réagir et se protéger",
+    "etapes": [
+      {
+        "ordre": 1,
+        "titre": "Documenter les faits",
+        "delai": "Immédiatement et en continu",
+        "details": "Tenir un journal daté des incidents : date, heure, lieu, personnes présentes, description des faits, conséquences. Conserver emails, messages, témoignages écrits.",
+        "baseLegale": "LEg art. 4 (harcèlement sexuel); CO 328 (protection de la personnalité)",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Le journal est un élément de preuve essentiel. Soyez factuel et précis."
+      },
+      {
+        "ordre": 2,
+        "titre": "Signaler en interne",
+        "delai": "Dès que la situation est établie",
+        "details": "Informer le supérieur hiérarchique, les RH ou la personne de confiance. L'employeur a l'obligation légale de protéger la personnalité de ses employés.",
+        "baseLegale": "CO 328; LEg art. 5",
+        "templateLettre": "travail_signalement_harcelement",
+        "calculateur": null,
+        "attention": "Si le harceleur est votre supérieur direct, adressez-vous directement aux RH ou à la direction."
+      },
+      {
+        "ordre": 3,
+        "titre": "Consulter un médecin",
+        "delai": "Dès l'apparition de symptômes",
+        "details": "Le harcèlement a souvent des conséquences sur la santé (stress, anxiété, dépression). Un certificat médical documente l'impact et peut justifier un arrêt de travail.",
+        "baseLegale": "LAA; LAMal",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Un arrêt maladie déclenche la protection contre le licenciement (CO 336c)."
+      },
+      {
+        "ordre": 4,
+        "titre": "Saisir l'inspection du travail ou le tribunal",
+        "delai": "Si l'employeur ne réagit pas",
+        "details": "Action en protection de la personnalité auprès du tribunal. En cas de harcèlement sexuel, allègement du fardeau de la preuve (LEg art. 6). L'inspection du travail peut aussi intervenir.",
+        "baseLegale": "CO 328; LEg art. 4-5; CPC 243 (procédure simplifiée jusqu'à 30'000 CHF)",
+        "templateLettre": "travail_action_tribunal",
+        "calculateur": "calculCoutProcedure",
+        "attention": "L'action en discrimination (LEg) est gratuite jusqu'à 30'000 CHF de valeur litigieuse."
+      },
+      {
+        "ordre": 5,
+        "titre": "Demander réparation",
+        "delai": "Pendant la procédure",
+        "details": "Indemnité pour tort moral, dommages-intérêts (frais médicaux, perte de gain), indemnité LEg (jusqu'à 6 mois de salaire pour harcèlement sexuel).",
+        "baseLegale": "CO 49 (tort moral); LEg art. 5 al. 3",
+        "templateLettre": null,
+        "calculateur": "calculIndemniteLicenciement",
+        "attention": "Les délais de prescription varient : 1 an dès connaissance (responsabilité délictuelle), 5 ans pour les prétentions contractuelles."
+      }
+    ],
+    "fichesLiees": ["travail_harcelement_moral", "travail_harcelement_sexuel", "travail_protection_personnalite"],
+    "calculateurs": ["calculCoutProcedure", "calculIndemniteLicenciement"],
+    "dureeEstimee": "Plusieurs mois à 2 ans"
+  },
+  {
+    "id": "je_recois_commandement_de_payer",
+    "titre": "Je reçois un commandement de payer",
+    "description": "Comment réagir face à une poursuite en Suisse",
+    "etapes": [
+      {
+        "ordre": 1,
+        "titre": "Comprendre le commandement de payer",
+        "delai": "Immédiatement à réception",
+        "details": "Le commandement de payer est la première étape de la poursuite (LP). Il indique le créancier, le montant, le motif. Ce n'est PAS un jugement — c'est une simple prétention du créancier.",
+        "baseLegale": "LP art. 69-73",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Tout le monde peut déposer un commandement de payer contre n'importe qui. Cela ne signifie pas que la dette est justifiée."
+      },
+      {
+        "ordre": 2,
+        "titre": "Faire opposition (si la dette est contestée)",
+        "delai": "10 jours dès la notification",
+        "details": "Écrire 'OPPOSITION' directement sur le commandement de payer OU la formuler verbalement auprès de l'office des poursuites. L'opposition bloque la poursuite.",
+        "baseLegale": "LP art. 74-77",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Le délai de 10 jours est IMPÉRATIF. En cas de notification par substitution, le délai court dès la notification effective."
+      },
+      {
+        "ordre": 3,
+        "titre": "Vérifier la prescription",
+        "delai": "Après opposition",
+        "details": "Certaines dettes sont prescrites. La prescription doit être invoquée par le débiteur — le juge ne la soulève pas d'office en droit privé.",
+        "baseLegale": "CO 127-142",
+        "templateLettre": null,
+        "calculateur": "calculPrescription",
+        "attention": "Une poursuite interrompt la prescription (LP art. 135 ch. 2). Mais si la dette était déjà prescrite avant la poursuite, l'opposition est fondée."
+      },
+      {
+        "ordre": 4,
+        "titre": "Se préparer à la mainlevée",
+        "delai": "20 jours (provisoire) ou procédure ordinaire",
+        "details": "Si vous faites opposition, le créancier doit agir en mainlevée (provisoire s'il a un titre, définitive s'il a un jugement) ou en procédure ordinaire.",
+        "baseLegale": "LP art. 80-84",
+        "templateLettre": "dette_opposition_mainlevee",
+        "calculateur": "calculCoutProcedure",
+        "attention": "Si le créancier a une reconnaissance de dette signée, la mainlevée provisoire sera probablement accordée."
+      },
+      {
+        "ordre": 5,
+        "titre": "Négocier un arrangement de paiement",
+        "delai": "À tout moment",
+        "details": "Si la dette est justifiée, proposer un plan de paiement échelonné. Demander un retrait de la poursuite une fois la dette payée. Le créancier n'est pas obligé d'accepter.",
+        "baseLegale": "LP art. 85 (annulation de la poursuite si payée)",
+        "templateLettre": "dette_arrangement_paiement",
+        "calculateur": "calculSaisieSalaire",
+        "attention": "Un arrangement amiable est presque toujours préférable à une saisie. Mettez tout par écrit."
+      }
+    ],
+    "fichesLiees": ["dettes_commandement_payer", "dettes_opposition", "dettes_saisie_salaire", "dettes_arrangement_amiable"],
+    "calculateurs": ["calculPrescription", "calculCoutProcedure", "calculSaisieSalaire"],
+    "dureeEstimee": "2 semaines à 6 mois"
+  },
+  {
+    "id": "je_veux_me_naturaliser",
+    "titre": "Je veux me naturaliser",
+    "description": "Procédure de naturalisation suisse (ordinaire et facilitée)",
+    "etapes": [
+      {
+        "ordre": 1,
+        "titre": "Vérifier les conditions",
+        "delai": "Avant la demande",
+        "details": "Naturalisation ordinaire : 10 ans de résidence en Suisse (dont 3 dans le canton les 5 dernières années). Facilitée : conjoint étranger d'un(e) Suisse(sse) après 5 ans de résidence et 3 ans de mariage.",
+        "baseLegale": "LN art. 9-12 (ordinaire), 21-25 (facilitée)",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Les années entre 8 et 18 ans comptent double. Les critères d'intégration sont aussi évalués."
+      },
+      {
+        "ordre": 2,
+        "titre": "Réunir les documents",
+        "delai": "1-2 mois avant la demande",
+        "details": "Extrait de casier judiciaire, attestation de non-poursuite, preuves de connaissance linguistique (B1 oral, A2 écrit), justificatifs de résidence, attestation d'intégration.",
+        "baseLegale": "LN art. 12; OLN",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Les documents doivent être récents (moins de 3 mois pour certains). Prévoir des traductions officielles si nécessaire."
+      },
+      {
+        "ordre": 3,
+        "titre": "Déposer la demande",
+        "delai": "Quand le dossier est complet",
+        "details": "Demande auprès du SEM (fédéral) via la commune de domicile. Frais : 100 CHF fédéral + frais cantonaux et communaux (variable, souvent 1'000-3'000 CHF).",
+        "baseLegale": "LN art. 13",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "La procédure peut prendre 1-3 ans selon le canton. Certaines communes organisent un entretien ou un vote."
+      },
+      {
+        "ordre": 4,
+        "titre": "Entretien de naturalisation",
+        "delai": "Convocation par la commune",
+        "details": "Questions sur la Suisse (institutions, géographie, histoire), sur votre intégration, vos liens avec la Suisse. Pas un examen formel dans tous les cantons.",
+        "baseLegale": "LN art. 12 al. 1",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Préparez-vous en consultant les guides de naturalisation de votre commune et canton."
+      },
+      {
+        "ordre": 5,
+        "titre": "Décision et recours",
+        "delai": "Variable",
+        "details": "En cas de refus, vous pouvez recourir : au tribunal cantonal (naturalisation ordinaire), au TAF (naturalisation facilitée). Délai de recours : 30 jours.",
+        "baseLegale": "LN art. 46-50",
+        "templateLettre": "naturalisation_recours",
+        "calculateur": "calculCoutProcedure",
+        "attention": "Un refus n'empêche pas une nouvelle demande après un délai raisonnable (souvent 2 ans)."
+      }
+    ],
+    "fichesLiees": ["etrangers_naturalisation", "etrangers_permis_c", "etrangers_regroupement"],
+    "calculateurs": ["calculCoutProcedure"],
+    "dureeEstimee": "1-3 ans"
+  },
+  {
+    "id": "je_suis_victime_de_violence",
+    "titre": "Je suis victime de violence",
+    "description": "Violence domestique ou agression : vos droits et protections immédiates",
+    "etapes": [
+      {
+        "ordre": 1,
+        "titre": "Se mettre en sécurité",
+        "delai": "Immédiatement",
+        "details": "Appeler la police (117) en cas de danger immédiat. Les centres d'aide aux victimes (LAVI) offrent hébergement d'urgence, conseil gratuit et confidentiel.",
+        "baseLegale": "LAVI art. 1; CP art. 28b (protection de la personnalité)",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "La police peut expulser l'auteur du domicile pour 14 jours (mesure d'éloignement, selon le canton)."
+      },
+      {
+        "ordre": 2,
+        "titre": "Déposer plainte",
+        "delai": "Dans les 3 mois (délai de plainte pénale)",
+        "details": "Plainte pénale auprès de la police ou du Ministère public. Pour les infractions poursuivies d'office (lésions corporelles graves, viol), pas de délai de plainte.",
+        "baseLegale": "CP art. 31 (délai de plainte); CP 123, 126, 180, 189, 190",
+        "templateLettre": "violence_plainte_penale",
+        "calculateur": null,
+        "attention": "Vous pouvez retirer votre plainte, mais seulement pour les infractions poursuivies sur plainte (pas d'office)."
+      },
+      {
+        "ordre": 3,
+        "titre": "Aide aux victimes (LAVI)",
+        "delai": "Dès que possible",
+        "details": "Les centres LAVI offrent : conseil juridique gratuit, soutien psychologique, aide financière d'urgence, accompagnement en procédure. Tout est confidentiel.",
+        "baseLegale": "LAVI art. 2-15",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "L'aide LAVI est indépendante du dépôt de plainte. Vous pouvez en bénéficier même sans porter plainte."
+      },
+      {
+        "ordre": 4,
+        "titre": "Mesures de protection civile",
+        "delai": "Parallèlement à la procédure pénale",
+        "details": "Demander au juge civil : interdiction de contact, interdiction de périmètre, attribution du logement conjugal. En cas d'urgence, mesures superprovisionnelles (immédiat, sans audience).",
+        "baseLegale": "CC art. 28b; CPC art. 261-262",
+        "templateLettre": "violence_mesures_protection",
+        "calculateur": null,
+        "attention": "Les mesures superprovisionnelles sont possibles sans entendre l'autre partie en cas de danger imminent."
+      },
+      {
+        "ordre": 5,
+        "titre": "Indemnisation et réparation",
+        "delai": "5 ans dès l'infraction (LAVI), 1 an dès connaissance (RC)",
+        "details": "Indemnisation LAVI (frais médicaux, perte de gain, réparation morale), dommages-intérêts en procédure civile ou par voie d'adhésion (CPP art. 122).",
+        "baseLegale": "LAVI art. 19-24; CO 41, 49",
+        "templateLettre": null,
+        "calculateur": "calculCoutProcedure",
+        "attention": "L'indemnisation LAVI est subsidiaire (après assurances sociales et RC). Mais elle est rapide et peu formelle."
+      }
+    ],
+    "fichesLiees": ["violence_domestique", "violence_plainte", "famille_mesures_protection"],
+    "calculateurs": ["calculCoutProcedure"],
+    "dureeEstimee": "Immédiat (protection) à 2 ans (procédure)"
+  },
+  {
+    "id": "mon_locataire_ne_paie_pas",
+    "titre": "Mon locataire ne paie pas",
+    "description": "Procédure de recouvrement et d'expulsion pour le bailleur en Suisse",
+    "etapes": [
+      {
+        "ordre": 1,
+        "titre": "Rappel et mise en demeure",
+        "delai": "Dès le premier retard",
+        "details": "Envoyer un rappel écrit (recommandé). Fixer un délai de paiement de 30 jours minimum avec menace de résiliation extraordinaire (CO 257d).",
+        "baseLegale": "CO 257d",
+        "templateLettre": "bail_mise_en_demeure",
+        "calculateur": null,
+        "attention": "La mise en demeure avec menace de résiliation doit être envoyée par formulaire officiel cantonal (dans les cantons qui l'exigent)."
+      },
+      {
+        "ordre": 2,
+        "titre": "Résiliation extraordinaire",
+        "delai": "Si non-paiement après 30 jours",
+        "details": "Résiliation avec effet à 30 jours pour la fin d'un mois (CO 257d al. 2). Utiliser le formulaire officiel cantonal. Envoyer séparément à chaque locataire.",
+        "baseLegale": "CO 257d",
+        "templateLettre": "bail_resiliation_extraordinaire",
+        "calculateur": null,
+        "attention": "Si le locataire paie INTÉGRALEMENT dans le délai de 30 jours, la menace de résiliation tombe."
+      },
+      {
+        "ordre": 3,
+        "titre": "Procédure d'expulsion (cas clair)",
+        "delai": "Après la fin du bail",
+        "details": "Si le locataire ne part pas, saisir le tribunal en procédure de protection en cas clair (CPC 257). Requête rapide si la situation est limpide.",
+        "baseLegale": "CPC art. 257",
+        "templateLettre": null,
+        "calculateur": "calculCoutProcedure",
+        "attention": "Si le locataire conteste la résiliation, le tribunal peut renvoyer en procédure ordinaire (plus lent)."
+      },
+      {
+        "ordre": 4,
+        "titre": "Exécution forcée de l'expulsion",
+        "delai": "Après jugement exécutoire",
+        "details": "Si le locataire ne part toujours pas malgré le jugement, demander l'exécution forcée (huissier). Le canton fixe un dernier délai puis procède à l'expulsion physique.",
+        "baseLegale": "CPC art. 343; LP art. 282ss",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "L'expulsion forcée est un dernier recours. Les délais totaux peuvent atteindre 6-12 mois."
+      },
+      {
+        "ordre": 5,
+        "titre": "Recouvrement des loyers impayés",
+        "delai": "En parallèle de l'expulsion",
+        "details": "Poursuite LP pour les loyers impayés. Commandement de payer, puis continuation de la poursuite (saisie ou faillite selon le statut du locataire).",
+        "baseLegale": "LP art. 67ss",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Le droit de rétention du bailleur (CO 268) porte sur les meubles du locataire présents dans les locaux."
+      }
+    ],
+    "fichesLiees": ["bail_loyers_impayes", "bail_resiliation_extraordinaire", "dettes_commandement_payer"],
+    "calculateurs": ["calculCoutProcedure"],
+    "dureeEstimee": "2-12 mois"
+  },
+  {
+    "id": "je_conteste_mon_loyer",
+    "titre": "Je conteste mon loyer",
+    "description": "Comment contester un loyer initial ou une augmentation de loyer en Suisse",
+    "etapes": [
+      {
+        "ordre": 1,
+        "titre": "Vérifier le formulaire officiel",
+        "delai": "À la signature du bail ou à réception de l'avis d'augmentation",
+        "details": "Dans les cantons qui l'exigent (GE, VD, ZH...), le bailleur doit notifier le loyer initial ou l'augmentation sur un formulaire officiel. L'absence de formulaire rend l'augmentation contestable.",
+        "baseLegale": "CO 269d; OBLF art. 19",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Sans formulaire officiel quand il est exigé, l'augmentation est NULLE."
+      },
+      {
+        "ordre": 2,
+        "titre": "Contester le loyer initial",
+        "delai": "30 jours dès la remise de la chose",
+        "details": "Si le loyer initial est abusif (pénurie de logements), saisir l'autorité de conciliation dans les 30 jours. Le bailleur doit justifier son loyer.",
+        "baseLegale": "CO 270",
+        "templateLettre": "bail_contestation_loyer_initial",
+        "calculateur": "calculRendementAdmissible",
+        "attention": "Le délai de 30 jours est IMPÉRATIF. Passé ce délai, le loyer est réputé accepté."
+      },
+      {
+        "ordre": 3,
+        "titre": "Contester une augmentation",
+        "delai": "30 jours dès réception de l'avis",
+        "details": "Saisir l'autorité de conciliation si l'augmentation n'est pas justifiée (hausse du taux hypothécaire, hausse des charges, travaux à plus-value).",
+        "baseLegale": "CO 270b",
+        "templateLettre": "bail_contestation_augmentation",
+        "calculateur": "calculRendementAdmissible",
+        "attention": "L'autorité de conciliation est gratuite. Pas besoin d'avocat."
+      },
+      {
+        "ordre": 4,
+        "titre": "Demander une baisse de loyer",
+        "delai": "À tout moment (si baisse du taux de référence)",
+        "details": "Quand le taux hypothécaire de référence baisse, vous pouvez demander une baisse de loyer correspondante. Le bailleur doit répondre dans un délai raisonnable.",
+        "baseLegale": "CO 270a",
+        "templateLettre": "bail_demande_baisse",
+        "calculateur": "calculRendementAdmissible",
+        "attention": "Calculer la baisse attendue AVANT de demander. Le formulaire de calcul de l'ASLOCA est utile."
+      },
+      {
+        "ordre": 5,
+        "titre": "Procédure devant le tribunal",
+        "delai": "30 jours après échec de la conciliation",
+        "details": "Si la conciliation échoue, vous recevez une autorisation de procéder (CPC 209). Agir devant le tribunal des baux dans les 30 jours.",
+        "baseLegale": "CPC art. 209; CO 274d",
+        "templateLettre": null,
+        "calculateur": "calculCoutProcedure",
+        "attention": "La procédure en matière de bail est gratuite jusqu'à une certaine valeur litigieuse (variable selon le canton)."
+      }
+    ],
+    "fichesLiees": ["bail_loyer_abusif", "bail_augmentation", "bail_baisse_loyer"],
+    "calculateurs": ["calculRendementAdmissible", "calculCoutProcedure"],
+    "dureeEstimee": "1-6 mois"
+  },
+  {
+    "id": "je_veux_faire_valoir_mon_ai",
+    "titre": "Je veux faire valoir mon AI",
+    "description": "Procédure de demande et contestation auprès de l'assurance-invalidité",
+    "etapes": [
+      {
+        "ordre": 1,
+        "titre": "Déposer la demande AI",
+        "delai": "Dès que l'atteinte à la santé dure depuis 1 an ou risque de durer",
+        "details": "Formulaire de demande AI auprès de l'office AI du canton de domicile. Joindre tous les rapports médicaux. La demande déclenche l'instruction.",
+        "baseLegale": "LAI art. 29; RAI art. 40",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Déposer tôt : la rente AI n'est en principe versée que 6 mois après le dépôt de la demande (au plus tôt)."
+      },
+      {
+        "ordre": 2,
+        "titre": "Mesures de réadaptation",
+        "delai": "Décision de l'office AI",
+        "details": "L'AI privilégie la réadaptation sur la rente. Mesures possibles : reclassement professionnel, aide au placement, moyens auxiliaires, mesures médicales.",
+        "baseLegale": "LAI art. 8-16",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Refuser une mesure de réadaptation peut entraîner une réduction ou un refus de rente."
+      },
+      {
+        "ordre": 3,
+        "titre": "Évaluation du degré d'invalidité",
+        "delai": "Pendant l'instruction",
+        "details": "L'office AI détermine le degré d'invalidité par comparaison des revenus (avec/sans invalidité). 40% = quart de rente, 50% = demi-rente, 60% = trois-quarts, 70% = rente entière.",
+        "baseLegale": "LAI art. 28; LPGA art. 16",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Demander une copie du rapport du SMR (service médical régional). Vous pouvez vous y opposer."
+      },
+      {
+        "ordre": 4,
+        "titre": "Préavis et décision",
+        "delai": "30 jours pour se prononcer sur le préavis",
+        "details": "L'office AI envoie un préavis avant la décision finale. Vous avez 30 jours pour vous prononcer et produire des pièces supplémentaires.",
+        "baseLegale": "RAI art. 73ter",
+        "templateLettre": "ai_opposition_preavis",
+        "calculateur": null,
+        "attention": "Le préavis est CRUCIAL. C'est votre dernière chance d'influencer la décision avant le recours."
+      },
+      {
+        "ordre": 5,
+        "titre": "Recours au tribunal cantonal",
+        "delai": "30 jours dès la notification de la décision",
+        "details": "Recours au tribunal cantonal des assurances sociales. Procédure gratuite (pas d'émolument judiciaire). Examen complet des faits et du droit.",
+        "baseLegale": "LPGA art. 56; LAI art. 69",
+        "templateLettre": "ai_recours",
+        "calculateur": "calculCoutProcedure",
+        "attention": "La procédure est gratuite mais les frais d'avocat restent à votre charge (sauf aide juridictionnelle)."
+      }
+    ],
+    "fichesLiees": ["assurance_ai_rente", "assurance_ai_readaptation", "assurance_ai_recours"],
+    "calculateurs": ["calculCoutProcedure", "calculEligibiliteAJ"],
+    "dureeEstimee": "1-3 ans"
+  },
+  {
+    "id": "j_aide_un_proche_dependant",
+    "titre": "J'aide un proche dépendant",
+    "description": "Droits et démarches pour les proches aidants en Suisse",
+    "etapes": [
+      {
+        "ordre": 1,
+        "titre": "Évaluer les besoins et les allocations",
+        "delai": "Dès la constatation de la dépendance",
+        "details": "Allocation pour impotent AVS/AI (faible, moyenne, grave). Contribution d'assistance AI. Bonnification pour tâches d'assistance AVS.",
+        "baseLegale": "LAVS art. 43bis; LAI art. 42-42ter; LAI art. 42quater",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "La demande d'allocation pour impotent peut prendre plusieurs mois. Déposer tôt."
+      },
+      {
+        "ordre": 2,
+        "titre": "Congé pour proche aidant (travail)",
+        "delai": "En cas de maladie/accident du proche",
+        "details": "3 jours par événement, max 10 jours par an pour les soins à un proche malade/accidenté. Congé de prise en charge de 14 semaines pour enfant gravement malade.",
+        "baseLegale": "CO 329h; LAPG art. 16n-16s",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Le congé de prise en charge de 14 semaines n'est possible que pour les ENFANTS (pas les parents âgés)."
+      },
+      {
+        "ordre": 3,
+        "titre": "Mandat pour cause d'inaptitude",
+        "delai": "Idéalement AVANT la perte de discernement",
+        "details": "Le mandat pour cause d'inaptitude permet de désigner à l'avance qui gèrera vos affaires si vous perdez le discernement. Forme : manuscrit intégral ou acte authentique.",
+        "baseLegale": "CC art. 360-369",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "Sans mandat, c'est l'APEA (autorité de protection) qui désignera un curateur — procédure plus lourde."
+      },
+      {
+        "ordre": 4,
+        "titre": "Curatelle (si pas de mandat)",
+        "delai": "Quand la personne ne peut plus gérer ses affaires",
+        "details": "Signaler à l'APEA (autorité de protection de l'enfant et de l'adulte). Celle-ci évalue la situation et peut instituer une curatelle (accompagnement, représentation, coopération, ou de portée générale).",
+        "baseLegale": "CC art. 390-399",
+        "templateLettre": null,
+        "calculateur": null,
+        "attention": "La curatelle est subsidiaire : elle n'est instituée que si les mesures moins contraignantes ne suffisent pas."
+      },
+      {
+        "ordre": 5,
+        "titre": "Prestations complémentaires et aide sociale",
+        "delai": "Si les revenus ne suffisent pas",
+        "details": "Prestations complémentaires AVS/AI pour financer les soins et le maintien à domicile. Aide sociale en dernier recours. Les cantons ont aussi des programmes spécifiques.",
+        "baseLegale": "LPC; Lois cantonales d'aide sociale",
+        "templateLettre": null,
+        "calculateur": "calculEligibiliteAJ",
+        "attention": "Les PC sont un droit, pas de l'aide sociale. Ne pas hésiter à les demander."
+      }
+    ],
+    "fichesLiees": ["famille_curatelle", "famille_mandat_inaptitude", "assurance_allocation_impotent"],
+    "calculateurs": ["calculEligibiliteAJ"],
+    "dureeEstimee": "Durée indéterminée (situation de longue durée)"
+  }
+]

@@ -84,11 +84,11 @@ describe('Server API', () => {
     assert.equal(data.status, 'ok');
   });
 
-  it('GET /api/domaines retourne 5 domaines', async () => {
+  it('GET /api/domaines retourne les domaines', async () => {
     const res = await request('/api/domaines');
     assert.equal(res.status, 200);
     const data = res.json();
-    assert.equal(data.domaines.length, 5);
+    assert.ok(data.domaines.length >= 5, `Au moins 5 domaines, trouvé ${data.domaines.length}`);
   });
 
   it('POST /api/consulter valide retourne fiche', async () => {

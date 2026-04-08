@@ -1,66 +1,64 @@
-# CLAUDE.md — JusticePourtous.ch
+# CLAUDE.md — JusticePourtous
 
-## Projet
-- Nom : JusticePourtous
-- Domaine : justicepourtous.ch
-- Description : La base de données ultime du droit suisse. Pré-conseil juridique gratuit + assistance à la rédaction avancée. Plus besoin d'avocat pour les affaires simples.
+## Constitution (immuable)
+
+- **Mission** : Triage juridique citoyen suisse. Pas une base documentaire — un connecteur intelligent entre citoyens et ressources juridiques.
+- **Principe** : Le LLM navigue sur nos données vérifiées. Il ne rédige JAMAIS de contenu juridique. Il identifie, extrait, questionne. Le contenu vient de nos fiches.
+- **Cadre légal** : La LLCA ne réserve PAS le conseil juridique aux avocats. Disclaimer obligatoire sur CHAQUE réponse. Ne jamais dire "avocat IA".
+
+## Stratégie (mutable — dernière mise à jour 2026-04-08)
+
+### Positionnement
+- Tous les concurrents (Silex, SwissLegalAI, Omnilex, Weblaw) visent les AVOCATS
+- Nous visons les CITOYENS — remplacer l'avocat quand c'est possible, rediriger quand c'est nécessaire
+- Modèle : payant dès le triage (2 CHF), gratuit = consultation fiches seulement
+- Notre moat = traçabilité + triage citoyen + données cantonales. Pas le volume de données.
+
+### Décisions verrouillées
+- Quand tu génères une réponse juridique, ne rédige JAMAIS le contenu toi-même. Navigue vers la bonne fiche et affiche SON contenu. Contre-exemple : la v1 générait des keywords → fragile, inutile.
+- Quand tu évalues la complexité, utilise les DIMENSIONS STRUCTURÉES (cascades, confiance, templates, jurisprudence). Jamais des mots-clés. Contre-exemple : la v1 matchait "international" → complexe. Un loyer "international" n'est pas complexe.
+- Quand tu poses des questions à l'utilisateur, extrais D'ABORD ce qui est déjà dans le texte. Ne repose pas ce que l'utilisateur a déjà dit. Contre-exemple : "moisissure depuis 6 mois à Lausanne" → ne pas redemander durée ni canton.
+- Quand une situation touche plusieurs fiches, identifie-les TOUTES. Contre-exemple : "expulsé ET moisissure" = 2 fiches, pas 1.
+
+### Architecture technique
 - Stack : Node.js ESM, zero deps, native http
-- Marché : 8.9M habitants, 72% citent le coût comme barrière #1 à la justice
-- Score tendance : 5/5 (blue ocean total en Suisse)
+- Services clés : knowledge-engine.mjs (graphe), llm-navigator.mjs (cerveau), triage-engine.mjs (orchestration), action-planner.mjs (plans), semantic-search.mjs (fallback)
+- Données : 182 fiches, 622 articles, 217 arrêts, 10 domaines, graphe bidirectionnel
+- Orchestration : Paperclip (http://localhost:3100), 5 agents GStack model
 
-## Vision
+### Erreurs passées (pitfalls)
+- Ne pas construire un "OS d'attention" ou un "gouverneur cognitif" — c'est de l'abstraction élégante qui ne livre rien. Attendre les meilleurs modèles.
+- Ne pas faire la course aux données vs Swisslex. On gagne sur l'intelligence du triage, pas le volume.
+- Ne pas lancer de chatbot IA conversationnel. Le triage structuré est plus fiable.
+- Ne pas paralléliser des agents sur les mêmes fichiers. Pipeline séquentiel.
+- Un agent avec un brief chirurgical (fichiers + critères + contre-exemples) est 3-5x plus rapide qu'un agent qui explore.
 
-JusticePourtous.ch est la couche d'accès intelligente entre le droit suisse et les citoyens. Un avocat coûte 300 CHF/h. Un LLM coûte 0.03 CHF/requête. Le gap est de 10'000x — mais le citoyen ne sait pas écrire un prompt juridique. JusticePourtous est le traducteur.
+## Mode actif (éphémère — contexte de la session en cours)
 
-**3 niveaux :**
-1. **Gratuit** — Base de données juridique exhaustive. 500+ fiches avec articles de loi, jurisprudence TF, modèles de lettres, annuaire services. Le Wikipedia du droit suisse pratique.
-2. **Premium (CHF 50)** — Analyse personnalisée par IA. Upload de documents, OCR, génération de courriers sur mesure, estimation des chances. Wallet transparent (coût affiché AVANT chaque action).
-3. **Pro (futur)** — API pour associations, assurances PJ, services sociaux. Intégration écosystème.
+### État actuel
+- 180 tests verts, score couverture 90%
+- Triage engine v3 (LLM navigator + fallback semantic), routes API en place
+- Paperclip configuré : 5 agents, tickets #1-#2 done, #3 frontend done par agents
+- Prochaine action : vérifier le frontend fait par les agents, tester end-to-end
 
-## Positionnement
-- PAS un "avocat robot" (leçon DoNotPay)
-- PAS juste un FAQ (différence avec lex4youGPT du TCS)
-- C'est un **outil d'action** : chaque fiche mène à un geste concret (lettre, formulaire, numéro, démarche)
-
-## Le moat
-1. **L'index juridique suisse** — 500+ fiches pré-rédigées avec articles exacts, jurisprudence TF, barèmes. Le LLM est interchangeable. L'index ne l'est pas.
-2. **La traduction problème → prompt** — arbre de décision qui cible AVANT que l'IA analyse
-3. **La traduction réponse → action** — pas "voici l'article 259a CO" mais "voici la lettre à envoyer lundi"
-4. **Connaissance locale** — CO 259a, barème SVIT, commissions de conciliation vaudoises, BRAPA vs SCARPA. Aucun LLM généraliste ne connaît ça.
-
-## Sources de données
-- Fedlex SPARQL API (gratuit, legislation fédérale)
-- entscheidsuche.ch API REST (gratuit, jurisprudence fédérale + cantonale)
-- LexFind (lois cantonales)
-- HuggingFace dataset 116k+ arrêts TF
-
-## Cadre juridique
-- La LLCA ne réserve PAS le conseil juridique aux avocats. Seule la représentation en justice est réservée.
-- Disclaimer obligatoire sur CHAQUE réponse
-- Ne jamais dire "avocat IA" ou "remplace un avocat"
-- Assurance RC pro à prévoir
-- Suivre le projet de loi IA du Conseil fédéral (fin 2026)
-
-## Hub écosystème
-JusticePourtous connecte tous les projets du studio :
-- Bail → Habiter + GarantieCheck
-- Travail → Refugio
-- Dettes → Boussole
-- Permis → PermisGuide
-- Droits sociaux → DroitsRadar
-- Anti-scam → Trankill
+### Blockers
+- Pas de clé ANTHROPIC_API_KEY en production → triage en mode fallback (basique)
+- Frontend fait par Paperclip → qualité à vérifier
+- Zéro utilisateur réel
 
 ## Commandes
 ```bash
 npm test
 npm start
+node src/services/graph-builder.mjs
+node scripts/coverage-audit.mjs
 ```
 
 ## Structure
 ```
-src/           — API + services
-src/services/  — consultation, fiches, annuaire, premium
-src/data/      — fiches JSON (5 domaines), annuaire, domaines
-src/public/    — frontend (5 pages HTML + CSS + JS)
-test/          — tests (node:test)
+src/services/     — triage-engine, knowledge-engine, llm-navigator, action-planner, semantic-search
+src/data/         — fiches (10 domaines), loi (622), jurisprudence (217), index/graph.json
+src/public/       — frontend (HTML/CSS/JS vanilla)
+test/             — 180 tests (node:test)
+scripts/          — harvesters, coverage audit
 ```

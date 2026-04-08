@@ -16,15 +16,25 @@
         JusticePourtous
       </a>
       <ul class="nav-links">
-        <li><a href="/">Nouvelle consultation</a></li>
+        <li><a href="/">Nouvelle recherche</a></li>
         <li><a href="/annuaire.html">Annuaire</a></li>
       </ul>
     </nav>
 
+    <!-- Search bar replayed at top of results -->
+    <div class="result-search-bar" id="resultSearchBar">
+      <form onsubmit="refineSearch(event)">
+        <div class="search-box search-box-sm">
+          <input type="text" id="refineInput" class="search-input" maxlength="300" autocomplete="off" aria-label="Preciser votre recherche">
+          <button type="submit" class="search-btn search-btn-sm">Relancer</button>
+        </div>
+      </form>
+    </div>
+
     <div class="dossier-ref" id="dossierRef"></div>
 
     <div id="resultat">
-      <div class="loading">Chargement du resultat</div>
+      <div class="loading">Analyse en cours</div>
     </div>
 
     <div class="disclaimer">
@@ -36,17 +46,28 @@
 
   <script src="/app.js"></script>
   <script>
-    // Dossier ref
     var year = new Date().getFullYear();
     var num = String(Math.floor(Math.random() * 9000) + 1000);
     document.getElementById('dossierRef').textContent = 'Ref. JB-' + year + '-' + num;
 
     var params = new URLSearchParams(window.location.search);
     var ficheId = params.get('fiche');
-    if (ficheId) {
+    var query = params.get('q');
+
+    if (query) {
+      document.getElementById('refineInput').value = query;
+      loadSearchResultat(query);
+    } else if (ficheId) {
       loadResultat(ficheId);
     } else {
-      document.getElementById('resultat').innerHTML = '<div class="error-box">Aucune fiche specifiee. <a href="/">Retour a l\'accueil</a></div>';
+      document.getElementById('resultat').innerHTML = '<div class="error-box">Aucune recherche specifiee. <a href="/">Retour a l\'accueil</a></div>';
+    }
+
+    function refineSearch(e) {
+      e.preventDefault();
+      var q = document.getElementById('refineInput').value.trim();
+      if (!q) return;
+      window.location.href = '/resultat.html?q=' + encodeURIComponent(q);
     }
   </script>
 </body>

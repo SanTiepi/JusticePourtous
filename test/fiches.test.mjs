@@ -27,7 +27,20 @@ describe('Fiches juridiques', () => {
     for (const f of allFiches) {
       for (const a of f.reponse.articles) {
         assert.ok(a.lien, `Article ${a.ref} dans ${f.id} sans lien`);
-        assert.ok(a.lien.startsWith('https://www.fedlex.admin.ch/eli/'), `Lien fedlex invalide pour ${a.ref}: ${a.lien}`);
+        const validPrefixes = [
+          'https://www.fedlex.admin.ch/eli/',
+          'https://www.echr.coe.int/',          // CEDH
+          'https://eur-lex.europa.eu/',          // EU law (Schengen, Dublin)
+          'https://www.unhcr.org/',              // UNHCR conventions
+          'https://www.ohchr.org/',              // UN human rights
+          'https://www.hcch.net/',               // Hague conventions
+          'https://www.lexfind.ch/',             // Lois cantonales
+          'https://www.bger.ch/',                // Tribunal fédéral
+          'https://www.suva.ch/',                // SUVA (assurance accidents)
+          'https://www.ahv-iv.ch/',              // AVS/AI
+          'https://www.arbeit.swiss/',            // ORP/chômage
+        ];
+        assert.ok(validPrefixes.some(p => a.lien.startsWith(p)), `Lien invalide pour ${a.ref}: ${a.lien}`);
       }
     }
   });

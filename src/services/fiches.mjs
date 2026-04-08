@@ -1,11 +1,14 @@
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const dataDir = join(__dirname, '..', 'data', 'fiches');
 
-const domaines = ['bail', 'travail', 'famille', 'dettes', 'etrangers'];
+// Load all domaines dynamically from JSON files
+const domaines = readdirSync(dataDir)
+  .filter(f => f.endsWith('.json'))
+  .map(f => f.replace('.json', ''));
 const fichesMap = new Map();
 const fichesByDomaine = new Map();
 

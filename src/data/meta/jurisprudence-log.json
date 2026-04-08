@@ -44,7 +44,19 @@
           "error": "API error 404: <!DOCTYPE html>\n<html style=\"height:100%\">\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\n<title> 404 Not Found\r\n</title><style>@media (prefers-color-s"
         }
       ]
+    },
+    {
+      "date": "2026-04-08T03:47:26.375Z",
+      "domaines": {
+        "bail": {
+          "existing": 117,
+          "new": 0,
+          "total": 117,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\jurisprudence\\index-bail.json"
+        }
+      },
+      "errors": []
     }
   ],
-  "lastRun": "2026-04-08T03:29:26.138Z"
+  "lastRun": "2026-04-08T03:47:26.375Z"
 }

@@ -25,7 +25,103 @@
         }
       },
       "errors": []
+    },
+    {
+      "date": "2026-04-08T03:46:52.529Z",
+      "domaines": {
+        "bail": {
+          "existing": 0,
+          "harvested": 21,
+          "total": 21,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\loi\\bail-fedlex.json"
+        },
+        "travail": {
+          "existing": 0,
+          "harvested": 156,
+          "total": 156,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\loi\\travail-fedlex.json"
+        },
+        "famille": {
+          "existing": 0,
+          "harvested": 328,
+          "total": 328,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\loi\\famille-fedlex.json"
+        },
+        "dettes": {
+          "existing": 0,
+          "harvested": 394,
+          "total": 394,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\loi\\dettes-fedlex.json"
+        },
+        "etrangers": {
+          "existing": 0,
+          "harvested": 0,
+          "total": 0,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\loi\\etrangers-fedlex.json"
+        },
+        "general": {
+          "existing": 0,
+          "harvested": 2073,
+          "total": 2073,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\loi\\general-fedlex.json"
+        }
+      },
+      "errors": []
+    },
+    {
+      "date": "2026-04-08T03:47:25.983Z",
+      "domaines": {
+        "bail": {
+          "existing": 21,
+          "harvested": 21,
+          "total": 21,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\loi\\bail-fedlex.json"
+        }
+      },
+      "errors": []
+    },
+    {
+      "date": "2026-04-08T03:47:54.401Z",
+      "domaines": {
+        "bail": {
+          "existing": 21,
+          "harvested": 21,
+          "total": 21,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\loi\\bail-fedlex.json"
+        },
+        "travail": {
+          "existing": 156,
+          "harvested": 156,
+          "total": 156,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\loi\\travail-fedlex.json"
+        },
+        "famille": {
+          "existing": 328,
+          "harvested": 328,
+          "total": 328,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\loi\\famille-fedlex.json"
+        },
+        "dettes": {
+          "existing": 394,
+          "harvested": 394,
+          "total": 394,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\loi\\dettes-fedlex.json"
+        },
+        "etrangers": {
+          "existing": 0,
+          "harvested": 0,
+          "total": 0,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\loi\\etrangers-fedlex.json"
+        },
+        "general": {
+          "existing": 2073,
+          "harvested": 2073,
+          "total": 2073,
+          "file": "C:\\PROJET IA\\JusticeBot\\src\\data\\loi\\general-fedlex.json"
+        }
+      },
+      "errors": []
     }
   ],
-  "lastRun": "2026-04-08T03:29:08.042Z"
+  "lastRun": "2026-04-08T03:47:54.401Z"
 }

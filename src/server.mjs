@@ -19,6 +19,14 @@ import {
 import { generateActionPlan } from './services/action-planner.mjs';
 import { triage, estimateCost } from './services/triage-engine.mjs';
 import { analyserCas } from './services/pipeline-v3.mjs';
+import { getRegistryStats, getSourceById, getSourcesByDomain, getSourcesByTier, validateClaimSources } from './services/source-registry.mjs';
+import { getObjectStats, getObjectsByType, getObjectById, getObjectsByDomain, getDossierObjects, VERIFIED_CLAIM_SCHEMA } from './services/object-registry.mjs';
+import { getChecklistDefinition } from './services/coverage-certificate.mjs';
+import { GOLDEN_CASES, RUBRICS } from './services/eval-harness.mjs';
+import { analyzeIssue } from './services/argumentation-engine.mjs';
+import { analyzeFrontier, getNextIngestionPriorities, getSourceCatalog } from './services/source-frontier.mjs';
+import { compile as compileNormative, getRuleDefinitions } from './services/normative-compiler.mjs';
+import { deepAnalysis } from './services/deep-analysis.mjs';
 import {
   getAllArticles, searchArticles,
   getAllArrets, searchArrets,
@@ -361,15 +369,40 @@ const server = createServer(async (req, res) => {
         : { error: 'Type inconnu', disclaimer: DISCLAIMER });
     }
 
-    // Recherche sémantique (profane → juridique)
+    // Recherche — LLM-first, keyword fallback
     if (path === '/api/search' && method === 'GET') {
       const q = url.searchParams.get('q');
       const canton = url.searchParams.get('canton');
       if (!q) return json(res, 400, { error: 'Paramètre q requis', disclaimer: DISCLAIMER });
+
+      // LLM-first: use triage engine which calls LLM navigator
+      const triageResult = await triage(q, canton);
+      if (triageResult.status === 200 && triageResult.data?.trouve) {
+        // LLM understood the query — enrich the primary fiche
+        const ficheId = triageResult.data.ficheId;
+        const enriched = queryByProblem(q, canton);
+        // Merge LLM intelligence with enriched data
+        return json(res, 200, {
+          ...(enriched.status === 200 ? enriched.data : {}),
+          // Override with LLM-identified fiche if different
+          llm_triage: {
+            ficheId: triageResult.data.ficheId,
+            domaine: triageResult.data.domaine,
+            resume: triageResult.data.resumeSituation,
+            confiance: triageResult.data.confiance,
+            questions: triageResult.data.questionsManquantes,
+            complet: triageResult.data.complet,
+          },
+          triage_method: 'llm',
+          disclaimer: DISCLAIMER,
+        });
+      }
+
+      // Fallback: keyword search (degraded mode)
       const result = queryByProblem(q, canton);
       return json(res, result.status, result.error
         ? { error: result.error, disclaimer: DISCLAIMER }
-        : { ...result.data, disclaimer: DISCLAIMER });
+        : { ...result.data, triage_method: 'keyword_fallback', disclaimer: DISCLAIMER });
     }
 
     // Citoyen: cherche par problème
@@ -579,6 +612,158 @@ const server = createServer(async (req, res) => {
     if (path === '/api/couverture' && method === 'GET') {
       const result = getCouverture();
       return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // === SOURCE REGISTRY ===
+
+    if (path === '/api/sources/stats' && method === 'GET') {
+      return json(res, 200, { ...getRegistryStats(), disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/sources/tier' && method === 'GET') {
+      const tier = parseInt(url.searchParams.get('tier'));
+      if (!tier || tier < 1 || tier > 3) return json(res, 400, { error: 'tier requis (1, 2 ou 3)', disclaimer: DISCLAIMER });
+      const sources = getSourcesByTier(tier);
+      return json(res, 200, { tier, count: sources.length, sources: sources.slice(0, 100), disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/sources/domain' && method === 'GET') {
+      const domaine = url.searchParams.get('domaine');
+      if (!domaine) return json(res, 400, { error: 'domaine requis', disclaimer: DISCLAIMER });
+      const sources = getSourcesByDomain(domaine);
+      return json(res, 200, { domaine, count: sources.length, sources, disclaimer: DISCLAIMER });
+    }
+
+    if (path.match(/^\/api\/sources\/([^/]+)$/) && method === 'GET') {
+      const sourceId = decodeURIComponent(path.match(/^\/api\/sources\/([^/]+)$/)[1]);
+      const source = getSourceById(sourceId);
+      if (!source) return json(res, 404, { error: `Source '${sourceId}' non trouvée`, disclaimer: DISCLAIMER });
+      return json(res, 200, { ...source, disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/sources/validate' && method === 'POST') {
+      const body = await parseBody(req);
+      if (!body.source_ids || !Array.isArray(body.source_ids)) {
+        return json(res, 400, { error: 'source_ids (array) requis', disclaimer: DISCLAIMER });
+      }
+      const result = validateClaimSources(body.source_ids);
+      return json(res, 200, { ...result, disclaimer: DISCLAIMER });
+    }
+
+    // === OBJECT REGISTRY (Constitution frozen objects) ===
+
+    if (path === '/api/objects/stats' && method === 'GET') {
+      return json(res, 200, { ...getObjectStats(), disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/objects/types' && method === 'GET') {
+      const type = url.searchParams.get('type');
+      if (!type) return json(res, 400, { error: 'type requis (norm_fragment, decision_holding, ...)', disclaimer: DISCLAIMER });
+      const objects = getObjectsByType(type);
+      return json(res, 200, { type, count: objects.length, objects: objects.slice(0, 100), disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/objects/domain' && method === 'GET') {
+      const type = url.searchParams.get('type');
+      const domaine = url.searchParams.get('domaine');
+      if (!type || !domaine) return json(res, 400, { error: 'type et domaine requis', disclaimer: DISCLAIMER });
+      const objects = getObjectsByDomain(type, domaine);
+      return json(res, 200, { type, domaine, count: objects.length, objects, disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/objects/dossier' && method === 'GET') {
+      const domaine = url.searchParams.get('domaine');
+      if (!domaine) return json(res, 400, { error: 'domaine requis', disclaimer: DISCLAIMER });
+      const dossier = getDossierObjects(domaine);
+      const counts = {};
+      for (const [k, v] of Object.entries(dossier)) counts[k] = v.length;
+      return json(res, 200, { domaine, counts, dossier, disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/objects/claim-schema' && method === 'GET') {
+      return json(res, 200, { ...VERIFIED_CLAIM_SCHEMA, disclaimer: DISCLAIMER });
+    }
+
+    // === COVERAGE CERTIFICATE & EVAL ===
+
+    if (path === '/api/certificate/checklist' && method === 'GET') {
+      return json(res, 200, { checklist: getChecklistDefinition(), disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/eval/golden-cases' && method === 'GET') {
+      return json(res, 200, {
+        cases: GOLDEN_CASES.map(gc => ({ id: gc.id, domaine: gc.domaine, description: gc.description, query: gc.query })),
+        rubrics: RUBRICS.map(r => ({ id: r.id, label: r.label, weight: r.weight })),
+        total: GOLDEN_CASES.length,
+        disclaimer: DISCLAIMER
+      });
+    }
+
+    // === DEEP ANALYSIS (multi-tour, qualité max) ===
+
+    if (path === '/api/deep-analysis' && method === 'POST') {
+      const body = await parseBody(req);
+      if (!body.texte) return json(res, 400, { error: 'texte requis', disclaimer: DISCLAIMER });
+      try {
+        const result = await deepAnalysis(body.texte, body.canton, body.reponses);
+        return json(res, 200, { ...result, disclaimer: DISCLAIMER });
+      } catch (err) {
+        return json(res, 503, { error: 'Analyse indisponible: ' + err.message, disclaimer: DISCLAIMER });
+      }
+    }
+
+    // === NORMATIVE COMPILER ===
+
+    if (path === '/api/compiler/rules' && method === 'GET') {
+      return json(res, 200, { rules: getRuleDefinitions(), total: getRuleDefinitions().length, disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/compiler/execute' && method === 'POST') {
+      const body = await parseBody(req);
+      if (!body.facts) return json(res, 400, { error: 'facts requis', disclaimer: DISCLAIMER });
+      const result = compileNormative(body.facts);
+      return json(res, 200, { ...result, disclaimer: DISCLAIMER });
+    }
+
+    // === BARÈMES & RÉFÉRENCES ===
+
+    if (path === '/api/baremes' && method === 'GET') {
+      const { readFileSync } = await import('node:fs');
+      const { join } = await import('node:path');
+      try {
+        const baremes = JSON.parse(readFileSync(join(__dirname, 'data', 'baremes', 'references-nationales.json'), 'utf-8'));
+        return json(res, 200, { ...baremes, disclaimer: DISCLAIMER });
+      } catch {
+        return json(res, 404, { error: 'Barèmes non disponibles', disclaimer: DISCLAIMER });
+      }
+    }
+
+    if (path === '/api/baremes/taux-hypothecaire' && method === 'GET') {
+      const { readFileSync } = await import('node:fs');
+      const { join } = await import('node:path');
+      try {
+        const baremes = JSON.parse(readFileSync(join(__dirname, 'data', 'baremes', 'references-nationales.json'), 'utf-8'));
+        return json(res, 200, { ...baremes.taux_hypothecaire_reference, disclaimer: DISCLAIMER });
+      } catch {
+        return json(res, 404, { error: 'Taux non disponible', disclaimer: DISCLAIMER });
+      }
+    }
+
+    // === SOURCE FRONTIER ===
+
+    if (path === '/api/frontier/analysis' && method === 'GET') {
+      return json(res, 200, { ...analyzeFrontier(), disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/frontier/priorities' && method === 'GET') {
+      const n = parseInt(url.searchParams.get('n')) || 10;
+      const priorities = getNextIngestionPriorities(n);
+      return json(res, 200, { count: priorities.length, priorities, disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/frontier/catalog' && method === 'GET') {
+      const catalog = getSourceCatalog();
+      return json(res, 200, { count: catalog.length, sources: catalog, disclaimer: DISCLAIMER });
     }
 
     // === PREMIUM V3 — Analyse contradictoire ===

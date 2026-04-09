@@ -16,6 +16,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { buildGraph, loadAllData } from './graph-builder.mjs';
 import { semanticSearch, expandQuery } from './semantic-search.mjs';
+import { getSourceByRef, getSourceBySignature } from './source-registry.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const dataDir = join(__dirname, '..', 'data');
@@ -44,16 +45,26 @@ function enrichFiche(ficheId) {
   const fiche = ficheMap.get(ficheId);
   if (!fiche) return null;
 
-  // Articles complets (pas juste les refs)
+  // Articles complets (pas juste les refs) — enrichis avec source_id
   const articleRefs = graph.ficheToArticles[ficheId] || [];
   const articles = articleRefs
-    .map(ref => articleMap.get(ref))
+    .map(ref => {
+      const art = articleMap.get(ref);
+      if (!art) return null;
+      const src = getSourceByRef(ref);
+      return { ...art, source_id: src?.source_id || null, tier: src?.tier || null };
+    })
     .filter(Boolean);
 
-  // Jurisprudence
+  // Jurisprudence — enrichie avec source_id + role citoyen
   const jurisRefs = graph.ficheToJurisprudence[ficheId] || [];
   const jurisprudence = jurisRefs
-    .map(sig => arretMap.get(sig))
+    .map(sig => {
+      const arret = arretMap.get(sig);
+      if (!arret) return null;
+      const src = getSourceBySignature(sig);
+      return { ...arret, source_id: src?.source_id || null, role: classifyArretRole(arret.resultat) };
+    })
     .filter(Boolean);
 
   // Also find jurisprudence via shared articles
@@ -63,8 +74,26 @@ function enrichFiche(ficheId) {
       jurisViaArticles.add(sig);
     }
   }
+  // Also find contra jurisprudence from same domain (for contradictoire)
+  // This ensures the dossier has both pro AND contra even when articles don't overlap
+  const domainArretSigs = graph.domaineToArrets[fiche.domaine] || [];
+  for (const sig of domainArretSigs) {
+    if (jurisViaArticles.has(sig)) continue;
+    const arret = arretMap.get(sig);
+    if (!arret) continue;
+    const role = classifyArretRole(arret.resultat);
+    if (role === 'defavorable' || role === 'neutre') {
+      jurisViaArticles.add(sig);
+    }
+  }
+
   const jurisprudenceElargie = [...jurisViaArticles]
-    .map(sig => arretMap.get(sig))
+    .map(sig => {
+      const arret = arretMap.get(sig);
+      if (!arret) return null;
+      const src = getSourceBySignature(sig);
+      return { ...arret, source_id: src?.source_id || null, role: classifyArretRole(arret.resultat) };
+    })
     .filter(Boolean);
 
   // Templates liés (via articles partagés)
@@ -430,6 +459,25 @@ function determineConfiance(fiche, articles, jurisprudence) {
   if (articles.length >= 1) return 'variable';
   if (jurisprudence.length >= 1) return 'variable';
   return 'incertain';
+}
+
+// Citizen-perspective role classification (same logic as object-registry)
+const CITIZEN_ACTORS = new Set(['locataire', 'employe', 'debiteur', 'etranger', 'enfant', 'epouse', 'mere', 'pere', 'heritier']);
+const AUTHORITY_ACTORS = new Set(['bailleur', 'employeur', 'creancier', 'autorite']);
+
+function classifyArretRole(resultat) {
+  if (!resultat) return 'neutre';
+  const n = resultat.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  if (n.includes('rejete') || n.includes('rejet')) return 'defavorable';
+  if (n.startsWith('partiellement')) return 'neutre';
+  if (n.startsWith('favorable_')) {
+    const actor = n.replace('favorable_', '');
+    if (CITIZEN_ACTORS.has(actor)) return 'favorable';
+    if (AUTHORITY_ACTORS.has(actor)) return 'defavorable';
+    return 'favorable';
+  }
+  if (n.includes('favorable')) return 'favorable';
+  return 'neutre';
 }
 
 function detectLacunes(fiche, articles, jurisprudence, delais) {

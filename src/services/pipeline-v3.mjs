@@ -13,9 +13,25 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { execSync } from 'node:child_process';
 import https from 'node:https';
+import { getSourceByRef, getSourceBySignature, articleSourceId, arretSourceId } from './source-registry.mjs';
+import { certifyDossier } from './coverage-certificate.mjs';
+import { analyzeDossier } from './argumentation-engine.mjs';
+import { generateDossierQuestions } from './marginal-questioner.mjs';
+import { analyzeWithCommittee } from './committee-engine.mjs';
+import { compile as compileNormative } from './normative-compiler.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const dataDir = join(__dirname, '..', 'data');
+
+// ============================================================
+// RELEVANCE SCORING — filtre par pertinence, pas par domaine seul
+// ============================================================
+
+function scoreRelevance(text, queryWords) {
+  if (!text || !queryWords.length) return 0;
+  const lower = text.toLowerCase();
+  return queryWords.filter(w => w.length > 3 && lower.includes(w)).length;
+}
 
 // ============================================================
 // DATA LOADING — nos objets structurés (le moat)
@@ -275,7 +291,7 @@ function step2_dossier(comprehension, canton) {
           exemplesConcrets: article.exemplesConcrets,
           lienFedlex: article.lienFedlex,
           articlesLies: article.articlesLies,
-          source_id: `art_${article.ref.replace(/\s/g, '_')}`
+          source_id: getSourceByRef(article.ref)?.source_id || `art_${article.ref.replace(/\s/g, '_')}`
         });
         // Load linked articles too (1 level deep)
         for (const linked of (article.articlesLies || []).slice(0, 3)) {
@@ -288,7 +304,7 @@ function step2_dossier(comprehension, canton) {
                 titre: linkedArt.titre,
                 texteSimple: linkedArt.texteSimple || linkedArt.texte || '',
                 lienFedlex: linkedArt.lienFedlex,
-                source_id: `art_${linkedArt.ref.replace(/\s/g, '_')}`,
+                source_id: getSourceByRef(linkedArt.ref)?.source_id || `art_${linkedArt.ref.replace(/\s/g, '_')}`,
                 role: 'connexe'
               });
             }
@@ -315,12 +331,30 @@ function step2_dossier(comprehension, canton) {
       })
       .sort((a, b) => b.relevance - a.relevance);
 
+    // Citizen-perspective role classification
+    const CITIZEN = new Set(['locataire','employe','debiteur','etranger','enfant','epouse','mere','pere','heritier']);
+    const AUTHORITY = new Set(['bailleur','employeur','creancier','autorite']);
+    function classifyResultat(r) {
+      if (!r) return 'neutre';
+      const n = r.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+      if (n.includes('rejete') || n.includes('rejet')) return 'defavorable';
+      if (n.startsWith('partiellement')) return 'neutre';
+      if (n.startsWith('favorable_')) {
+        const actor = n.replace('favorable_', '');
+        if (CITIZEN.has(actor)) return 'favorable';
+        if (AUTHORITY.has(actor)) return 'defavorable';
+        return 'favorable';
+      }
+      if (n.includes('favorable')) return 'favorable';
+      return 'neutre';
+    }
+
     const favorables = scoredArrets.filter(a =>
-      a.resultat?.includes('favorable') && !a.resultat?.includes('défavorable')
+      classifyResultat(a.resultat) === 'favorable'
     ).slice(0, 3);
 
     const defavorables = scoredArrets.filter(a =>
-      a.resultat?.includes('défavorable') || a.resultat?.includes('rejeté')
+      classifyResultat(a.resultat) === 'defavorable'
     ).slice(0, 2);
 
     const neutres = scoredArrets.filter(a =>
@@ -336,7 +370,7 @@ function step2_dossier(comprehension, canton) {
       montant: a.montant,
       fourchetteMontant: a.fourchetteMontant,
       articlesAppliques: a.articlesAppliques,
-      source_id: `arret_${a.signature?.replace(/[\/\s]/g, '_')}`,
+      source_id: getSourceBySignature(a.signature)?.source_id || `arret_${a.signature?.replace(/[\/\s]/g, '_')}`,
       role // 'favorable', 'defavorable', 'neutre'
     });
 
@@ -359,7 +393,7 @@ function step2_dossier(comprehension, canton) {
         source_id: `delai_${d.procedure?.replace(/\s/g, '_')}`
       }));
 
-    // Anti-erreurs du domaine
+    // Anti-erreurs du domaine — filtrées par pertinence
     issueDossier.anti_erreurs = ALL_ANTI_ERREURS
       .filter(ae => ae.domaine === domaine)
       .map(ae => ({
@@ -368,23 +402,34 @@ function step2_dossier(comprehension, canton) {
         consequence: ae.consequence,
         correction: ae.correction,
         base_legale: ae.base_legale,
-        source_id: `ae_${ae.erreur?.slice(0, 30).replace(/\s/g, '_')}`
-      }));
+        source_id: `ae_${ae.erreur?.slice(0, 30).replace(/\s/g, '_')}`,
+        _relevance: scoreRelevance(
+          [ae.erreur, ae.consequence, ae.correction].join(' '),
+          qualWords
+        )
+      }))
+      .sort((a, b) => b._relevance - a._relevance)
+      .slice(0, 5);
 
-    // Patterns praticien
+    // Patterns praticien — filtrés par pertinence
     issueDossier.patterns = ALL_PATTERNS
       .filter(p => p.domaine === domaine)
-      .slice(0, 3)
       .map(p => ({
         situation: p.situation,
         strategieOptimale: p.strategieOptimale,
         neJamaisFaire: p.neJamaisFaire,
         signauxFaibles: p.signauxFaibles,
         tempsTypique: p.tempsTypique,
-        source_id: `pattern_${p.situation?.slice(0, 30).replace(/\s/g, '_')}`
-      }));
+        source_id: `pattern_${p.situation?.slice(0, 30).replace(/\s/g, '_')}`,
+        _relevance: scoreRelevance(
+          [p.situation, ...(p.signauxFaibles || [])].join(' '),
+          qualWords
+        )
+      }))
+      .sort((a, b) => b._relevance - a._relevance)
+      .slice(0, 3);
 
-    // Preuves
+    // Preuves — filtrées par pertinence
     issueDossier.preuves = ALL_PREUVES
       .filter(p => p.domaine === domaine)
       .map(p => ({
@@ -392,20 +437,31 @@ function step2_dossier(comprehension, canton) {
         preuves_necessaires: p.preuves_necessaires,
         preuves_utiles: p.preuves_utiles,
         charge_de_la_preuve: p.charge_de_la_preuve,
-        source_id: `preuve_${p.procedure?.replace(/\s/g, '_')}`
-      }));
+        source_id: `preuve_${p.procedure?.replace(/\s/g, '_')}`,
+        _relevance: scoreRelevance(
+          [p.procedure, ...(p.preuves_necessaires || [])].join(' '),
+          qualWords
+        )
+      }))
+      .sort((a, b) => b._relevance - a._relevance)
+      .slice(0, 3);
 
-    // Cas pratiques
+    // Cas pratiques — filtrés par pertinence
     issueDossier.cas_pratiques = ALL_CAS_PRATIQUES
       .filter(c => c.domaine === domaine)
-      .slice(0, 3)
       .map(c => ({
         titre: c.titre,
         situation: c.situation,
         resultat: c.resultat,
         lecons: c.lecons,
-        source_id: `cas_${c.id}`
-      }));
+        source_id: `cas_${c.id}`,
+        _relevance: scoreRelevance(
+          [c.titre, c.situation, c.resultat].join(' '),
+          qualWords
+        )
+      }))
+      .sort((a, b) => b._relevance - a._relevance)
+      .slice(0, 3);
 
     // Templates
     issueDossier.templates = ALL_TEMPLATES
@@ -691,22 +747,58 @@ export async function analyserCas(texte, canton, reponsesPrec) {
   // Étape 2: Construire le dossier
   const dossier = step2_dossier(comprehension, canton);
 
+  // Étape 2.5: Certificat de suffisance contradictoire
+  const certificate = certifyDossier(dossier);
+
+  // Étape 2.6: Argumentation graph (Dung/Toulmin resolved by code)
+  const argumentation = analyzeDossier(dossier);
+
+  // Étape 2.7: Committee vote on argumentation results
+  const committeeResults = argumentation.issues.map((argIssue, i) => {
+    const issueCert = certificate.issues?.[i] || null;
+    return analyzeWithCommittee(argIssue, issueCert);
+  });
+
   // Étape 3: Raisonner + Vérifier
+  // Gate: if certificate is insufficient, skip step 3 and return degraded
   let analysis = null;
   let step3Usage = { input: 0, output: 0 };
-  try {
-    const step3 = await step3_raisonner(dossier);
-    if (step3) {
-      analysis = step3.analysis;
-      step3Usage = step3.usage;
+  if (certificate.status === 'insufficient') {
+    // Don't waste LLM tokens on an insufficient dossier
+    analysis = {
+      claims: [],
+      objections: [],
+      plan_action: null,
+      ce_quon_ne_sait_pas: certificate.issues
+        .flatMap(i => i.missing.filter(m => m.critical).map(m => m.label)),
+      besoin_avocat: true,
+      besoin_avocat_raison: `Dossier insuffisant: ${certificate.issues.flatMap(i => i.critical_fails).join(', ')}`,
+      _degraded: true,
+      _certificate_status: 'insufficient',
+    };
+  } else {
+    try {
+      const step3 = await step3_raisonner(dossier);
+      if (step3) {
+        analysis = step3.analysis;
+        step3Usage = step3.usage;
+      }
+    } catch (err) {
+      console.error('Step 3 error:', err.message);
+      // Continue without verification — degraded mode
     }
-  } catch (err) {
-    console.error('Step 3 error:', err.message);
-    // Continue without verification — degraded mode
   }
 
-  // Compilateur déterministe
+  // Compilateur déterministe (legacy)
   const compiled = step_compile(dossier, analysis);
+
+  // Compilateur normatif V4 — règles juridiques en code exécutable
+  const normativeFacts = {
+    domaine: dossier.issues?.[0]?.domaine,
+    canton: dossier.canton || comprehension.canton,
+    ...(comprehension.extractions || {}),
+  };
+  const normative = compileNormative(normativeFacts);
 
   return {
     mode_crise: false,
@@ -717,9 +809,15 @@ export async function analyserCas(texte, canton, reponsesPrec) {
       sources_count: dossier.sources_count,
       domaines: [...new Set(dossier.issues.map(i => i.domaine))]
     },
+    certificate,
+    argumentation,
+    committee: committeeResults,
     analysis,
     compiled,
-    questions: hasQuestions ? comprehension.questions_critiques : [],
+    normative,
+    questions: hasQuestions
+      ? generateDossierQuestions(comprehension, dossier, certificate, 3)
+      : [],
     resume: comprehension.resume,
     usage: {
       step1: step1.usage,

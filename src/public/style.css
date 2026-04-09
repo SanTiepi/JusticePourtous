@@ -2581,3 +2581,231 @@ body.has-disclaimer {
   .method-stats { grid-template-columns: repeat(2, 1fr); }
   .method-two-col { grid-template-columns: 1fr; }
 }
+
+/* ============================================================================
+   V3 Result Components — Evidence-first design
+   ============================================================================ */
+
+/* Confidence indicator */
+.confidence-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.3em 0.8em;
+  border-radius: 100px;
+  line-height: 1;
+}
+.confidence-certain { background: #E8F5E9; color: #1B5E20; }
+.confidence-probable { background: #E3F2FD; color: #0D47A1; }
+.confidence-variable { background: #FFF8E1; color: #E65100; }
+.confidence-incertain { background: #FCE4EC; color: #880E4F; }
+
+.confidence-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.confidence-certain .confidence-dot { background: #2E7D32; }
+.confidence-probable .confidence-dot { background: #1565C0; }
+.confidence-variable .confidence-dot { background: #EF6C00; }
+.confidence-incertain .confidence-dot { background: #AD1457; }
+
+/* Tier badge */
+.tier-badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.15em 0.5em;
+  border-radius: 3px;
+  letter-spacing: 0.03em;
+  vertical-align: middle;
+  margin-left: 0.4rem;
+}
+.tier-1 { background: #1B5E20; color: #fff; }
+.tier-2 { background: #1565C0; color: #fff; }
+.tier-3 { background: #78909C; color: #fff; }
+
+/* Role badge (jurisprudence) */
+.role-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15em 0.6em;
+  border-radius: 3px;
+  margin-right: 0.3rem;
+}
+.role-favorable { background: #C8E6C9; color: #1B5E20; }
+.role-defavorable { background: #FFCDD2; color: #B71C1C; }
+.role-neutre { background: #E0E0E0; color: #424242; }
+
+/* Severity badge */
+.severity-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15em 0.5em;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.severity-critique { background: #B71C1C; color: #fff; }
+.severity-elevee { background: #E65100; color: #fff; }
+.severity-moyenne { background: #F9A825; color: #1B1B1B; }
+
+/* Lacunes / coverage gaps */
+.lacune-box {
+  background: #FFF3E0;
+  border-left: 4px solid var(--accent-warning);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-sm);
+}
+.lacune-box .lacune-type {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent-warning);
+  margin-bottom: 0.25rem;
+}
+.lacune-box p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Result header with confidence */
+.result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+.result-header h3 { margin: 0; }
+
+/* Source count footer */
+.source-footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}
+.source-footer .source-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* Jurisprudence V3 card */
+.juris-card {
+  padding: var(--space-md);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-sm);
+  background: var(--surface-elevated);
+}
+.juris-card .juris-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: 0.35rem;
+}
+.juris-card .juris-date {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+.juris-card .juris-principle {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 0.35rem;
+}
+.juris-card .juris-range {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-secondary);
+  margin-top: 0.35rem;
+}
+
+/* Anti-erreur V3 */
+.ae-card {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-sm);
+  background: #FFF8F6;
+  border: 1px solid #FFCCBC;
+}
+.ae-card .ae-icon {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #fff;
+}
+.ae-card .ae-icon.critique { background: #B71C1C; }
+.ae-card .ae-icon.elevee { background: #E65100; }
+.ae-card .ae-icon.moyenne { background: #F9A825; color: #1B1B1B; }
+.ae-card .ae-content { flex: 1; }
+.ae-card .ae-title {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+.ae-card .ae-correction {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Delai V3 */
+.delai-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-sm);
+  background: #FFF8E1;
+  border: 1px solid #FFE082;
+}
+.delai-card .delai-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent-warning);
+  flex-shrink: 0;
+  min-width: 80px;
+  text-align: center;
+}
+.delai-card .delai-info { flex: 1; }
+.delai-card .delai-procedure {
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+.delai-card .delai-consequence {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .result-header { flex-direction: column; align-items: flex-start; }
+  .delai-card { flex-direction: column; text-align: center; }
+  .delai-card .delai-value { min-width: auto; }
+}

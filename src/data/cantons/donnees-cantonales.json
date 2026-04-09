@@ -713,5 +713,148 @@
       "taxe": "CHF 500-2000 environ",
       "url": "https://www.bs.ch"
     }
+  },
+  {
+    "code": "LU",
+    "nom": "Lucerne",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Richtlinien KBV LU"
+    },
+    "conciliationBail": {
+      "autorite": "Schlichtungsbehörde in Mietsachen Luzern",
+      "adresse": "Obergrundstrasse 46, 6002 Luzern",
+      "formulaire": "https://www.lu.ch/verwaltung/JSD/gericht/schlichtungsbehoerde",
+      "cout": "Gratuit",
+      "delai": "2-4 semaines",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Betreibungs- und Konkursamt Luzern",
+      "adresse": "Obergrundstrasse 46, 6002 Luzern",
+      "telephone": "041 228 54 54"
+    },
+    "ORP": {
+      "nom": "RAV Luzern",
+      "adresse": "Bürgenstrasse 12, 6005 Luzern",
+      "telephone": "041 228 67 10",
+      "url": "https://www.lu.ch/verwaltung/FD/dienststelle_wira/rav"
+    }
+  },
+  {
+    "code": "SG",
+    "nom": "Saint-Gall",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Richtlinien Konferenz der Betreibungs- und Konkursbeamten SG"
+    },
+    "conciliationBail": {
+      "autorite": "Schlichtungsbehörde für Mietverhältnisse",
+      "adresse": "Oberer Graben 2, 9000 St. Gallen",
+      "cout": "Gratuit",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Betreibungsamt St. Gallen",
+      "adresse": "Neugasse 3, 9000 St. Gallen",
+      "telephone": "071 224 53 53"
+    },
+    "ORP": {
+      "nom": "RAV St. Gallen",
+      "telephone": "058 229 61 00",
+      "url": "https://www.sg.ch/wirtschaft-arbeit/arbeitsmarkt/arbeitslosenversicherung/rav.html"
+    }
+  },
+  {
+    "code": "AG",
+    "nom": "Argovie",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Richtlinien KBV AG"
+    },
+    "conciliationBail": {
+      "autorite": "Schlichtungsbehörde für Miete und Pacht",
+      "adresse": "Variable selon Bezirk",
+      "cout": "Gratuit",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Betreibungsamt Aarau",
+      "adresse": "Rain 24, 5001 Aarau",
+      "telephone": "062 835 35 50"
+    },
+    "ORP": {
+      "nom": "RAV Aarau",
+      "telephone": "062 835 17 40",
+      "url": "https://www.ag.ch/de/verwaltung/dvi/wirtschaft-arbeit/arbeitsmarkt/rav"
+    }
+  },
+  {
+    "code": "TI",
+    "nom": "Tessin",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Direttive Ufficio esecuzioni TI"
+    },
+    "conciliationBail": {
+      "autorite": "Ufficio di conciliazione in materia di locazione",
+      "adresse": "Palazzo di giustizia, Via Pretorio 16, 6901 Lugano",
+      "cout": "Gratuit",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Ufficio di esecuzione Lugano",
+      "adresse": "Via Bossi 2a, 6901 Lugano",
+      "telephone": "091 815 55 11"
+    },
+    "ORP": {
+      "nom": "URC Lugano",
+      "telephone": "091 814 71 11",
+      "url": "https://www4.ti.ch/dfe/de/urc/ufficio-regionale-di-collocamento"
+    }
+  },
+  {
+    "code": "SO",
+    "nom": "Soleure",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Richtlinien KBV SO"
+    },
+    "conciliationBail": {
+      "autorite": "Schlichtungsbehörde in Mietsachen",
+      "adresse": "Variable selon Amtei",
+      "cout": "Gratuit",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Betreibungsamt Solothurn",
+      "adresse": "Bielstrasse 9, 4502 Solothurn",
+      "telephone": "032 627 64 64"
+    },
+    "ORP": {
+      "nom": "RAV Solothurn",
+      "telephone": "032 627 89 40",
+      "url": "https://www.so.ch/verwaltung/volkswirtschaftsdepartement/amt-fuer-wirtschaft-und-arbeit/rav"
+    }
   }
 ]

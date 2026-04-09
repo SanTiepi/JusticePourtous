@@ -84,10 +84,12 @@ function loadAllData() {
   const cascades = loadJSON(join(dataDir, 'cascades', 'cascades.json')) || [];
   const formulaires = loadAllInDir(join(dataDir, 'formulaires'));
   const couts = loadAllInDir(join(dataDir, 'couts'));
+  const cantons = loadJSON(join(dataDir, 'cantons', 'donnees-cantonales.json')) || [];
+  const baremes = loadJSON(join(dataDir, 'baremes', 'references-nationales.json')) || {};
 
   return { fiches, articles, arrets, templates, delais, patterns, antiErreurs,
            casPratiques, escalade, preuves, taxonomie, recevabilite,
-           workflows, cascades, formulaires, couts };
+           workflows, cascades, formulaires, couts, cantons, baremes };
 }
 
 // --- Build the graph ---

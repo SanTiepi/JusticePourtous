@@ -46,19 +46,58 @@
 
 ## Mode actif (éphémère — contexte de la session en cours)
 
-### État actuel (mis à jour 2026-04-08)
-- 180 tests verts, 4448 articles, 2487 arrêts TF, 182 fiches enrichies
+### État actuel (mis à jour 2026-04-09)
+- 368 tests verts, 4448 articles, 2487 arrêts TF, 182 fiches enrichies, 14 cantons
 - Pipeline V3 implémenté (pipeline-v3.mjs) avec CLI fallback
 - CONSTITUTION.md créée — document canonique
 - Golden cases : 100% claim grounding rate sur 2 cas complets
 - Site live https://justicepourtous.ch avec design system premium
 - Endpoint premium /api/premium/analyze-v3 déployé
+- **Source registry** (source-registry.mjs) — 3 tiers, source_id universel, validation claims
+- **Object registry** (object-registry.mjs) — 10 objets gelés structurés avec evidence metadata
+- **Retrieval optimisé** — 100% top-1, relevance scoring dans dossier builder, vrais source_ids
+- **Page résultat V3** — confidence badges, tier indicators, role badges juris, délais visuels, lacunes, anti-erreurs avec gravité
+- **Coverage certificate** (coverage-certificate.mjs) — gate contradictoire avant toute réponse, 10 checks dont 3 critiques
+- **Eval harness** (eval-harness.mjs) — 10 golden cases × 10 rubrics, mesure reproductible par domaine
+- **389 tests** dont 47 adversariaux, 16 argumentation, 21 compiler, 10 questioner, 8 committee, 14 frontier, 11 baremes, 7 freshness
+- **Argumentation engine** (argumentation-engine.mjs) — graphe Dung/Toulmin résolu par code, tier-aware
+- **Marginal questioner** (marginal-questioner.mjs) — questions à plus haute valeur décisionnelle
+- **Committee engine** (committee-engine.mjs) — 4 rôles votant sur objets normalisés
+- **Freshness check** (scripts/freshness-check.mjs) — 86% fresh, 0 stale, 622 sans date
+- **Source Frontier** (source-frontier.mjs) — 23 sources cartographiées (dont 6 vulgarisation), 22% ingérées
+- **Normative compiler** (normative-compiler.mjs) — 14 règles juridiques en code exécutable (bail/travail/dettes/transversal)
+- **Barèmes nationaux** — taux hypothécaire OFL 1.75%, minimum vital 14 cantons, 5 CCT principales
+- **14 cantons** enrichis (VD/GE/VS/FR/NE/JU/ZH/BE/BS/LU/SG/AG/TI/SO)
+- **Deep analysis** (deep-analysis.mjs) — multi-tour adaptatif: comprendre → approfondir → conclure
+- **LLM-as-judge** (llm-judge.mjs) — évaluation qualitative par LLM
+- **LLM-first triage** — Haiku identifie la situation, keyword = fallback only
+- **LLM augmenté** — navigator reçoit règles normatives, barèmes, délais en contexte
+- Pipeline complet : LLM comprendre → dossier → certificat → argumentation → comité → LLM approfondir → LLM conclure → compiler
 
-### Prochaine action (séquence constitution)
-1. Source registry (formaliser les 3 tiers)
-2. Objectification (structurer les objets gelés)
-3. Retrieval hybride (lexical + sémantique + RRF)
-4. Page résultat refaite avec design system V3
+### Séquence constitution — TERMINÉE
+1. ~~Source registry~~ ✓
+2. ~~Objectification~~ ✓
+3. ~~Retrieval~~ ✓ (audit: déjà 100% top-1, optimisé dossier builder)
+4. ~~Page résultat V3~~ ✓
+
+### Innovations V4 (docs/innovations-v4.md) — 5/5 TERMINÉES
+1. ~~Moteur d'arguments réfutables~~ ✓ Dung/Toulmin grounded semantics + tier resolution
+2. ~~Certificat de suffisance~~ ✓ Gate actif (contradictoire = critique, bloque si insufficient)
+3. ~~Questionneur marginal~~ ✓ Questions par valeur décisionnelle, pas conversationnelle
+4. ~~Comité à désaccord contrôlé~~ ✓ 4 rôles, votes sur objets normalisés, désaccord = signal
+5. ~~Compilateur normatif~~ ✓ 14 règles JS exécutables (bail/travail/dettes) avec exceptions et source_ids
+
+### Source Frontier — Top 5 priorités ingestion
+1. Autorités conciliation bail (tous cantons) — impacte moisissure + caution
+2. Formulaires officiels bail cantonaux — impacte augmentation + expulsion  
+3. Taux hypothécaire de référence OFL — impacte augmentation loyer
+4. Jurisprudence cantonale (entscheidsuche) — couvre les gaps contradictoire
+5. CCT/CCNT (conventions collectives) — impacte salaire impayé
+
+### Prochaine action
+- Ingérer les sources de vulgarisation (Mobilière, droitpourlapratique, guidesocial, ASLOCA kit)
+- Deploy site avec toutes les nouvelles features
+- Feedback utilisateurs réels sur bail/travail/dettes
 
 ### Blockers
 - API Anthropic sans crédits → CLI fallback local OK, prod non

@@ -387,21 +387,54 @@ function renderEnrichedResult(data, query, container) {
     return ' style="animation-delay:' + delay.toFixed(2) + 's"';
   }
 
+  // Confidence badge helper
+  function confidenceBadge(level) {
+    var labels = { certain: 'Certain', probable: 'Probable', variable: 'Variable', incertain: 'Incertain' };
+    var label = labels[level] || level || 'Inconnu';
+    var cls = 'confidence-' + (level || 'incertain');
+    return '<span class="confidence-badge ' + cls + '"><span class="confidence-dot"></span>' + label + '</span>';
+  }
+
+  // Tier badge helper
+  function tierBadge(tier) {
+    if (!tier) return '';
+    var labels = { 1: 'LOI', 2: 'TF', 3: 'PRATIQUE' };
+    return '<span class="tier-badge tier-' + tier + '">' + (labels[tier] || 'T' + tier) + '</span>';
+  }
+
   // Query echo
   html += '<div class="result-query-echo"><span class="result-query-label">Votre recherche</span> ' + escHtml(query) + '</div>';
 
-  // Main fiche summary
+  // Main fiche summary + confidence
   var fiche = data.fiche || {};
+  var confiance = data.confiance || 'incertain';
   var explication = fiche.explication || fiche.description || (data.fiche && data.fiche.tags ? data.fiche.tags.join(', ') : '');
   if (explication) {
     html += '<div class="card-highlight"' + stagger() + '>';
+    html += '<div class="result-header">';
     html += '<h3>Votre situation</h3>';
+    html += confidenceBadge(confiance);
+    html += '</div>';
     html += '<p>' + escHtml(explication) + '</p>';
-    if (fiche.domaine) html += '<p class="mt-1" style="font-size:0.8rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.05em">' + escHtml(fiche.domaine) + '</p>';
+    if (fiche.domaine) html += '<p class="mt-1" style="font-size:0.8rem;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:0.05em">' + escHtml(fiche.domaine) + '</p>';
     html += '</div>';
   }
 
-  // Avocat CTA — toujours visible apres le resume
+  // Lacunes (coverage gaps) — show what we DON'T know
+  var lacunes = data.lacunes || [];
+  if (lacunes.length) {
+    html += '<div class="card"' + stagger() + '>';
+    html += '<h3>Ce que nous ne savons pas encore</h3>';
+    lacunes.forEach(function(l) {
+      html += '<div class="lacune-box">';
+      html += '<div class="lacune-type">' + escHtml(l.type || 'Information manquante') + '</div>';
+      html += '<p>' + escHtml(l.message || '') + '</p>';
+      html += '</div>';
+    });
+    html += '</div>';
+  }
+
+  // Avocat CTA
   html += '<div class="avocat-cta"' + stagger() + '>';
   html += '<div class="avocat-cta-text">';
   html += '<strong>Situation complexe ou urgente ?</strong>';
@@ -410,52 +443,98 @@ function renderEnrichedResult(data, query, container) {
   html += '<a href="/annuaire.html" class="btn btn-red">J\'ai besoin d\'un avocat</a>';
   html += '</div>';
 
-  // Quick actions (mobile-first: buttons at top)
+  // Quick actions
   html += '<div class="result-actions"' + stagger() + '>';
   html += '<button class="btn btn-sm btn-print" onclick="window.print()">Imprimer / PDF</button>';
   html += '<a href="/" class="btn btn-sm btn-outline">Nouvelle recherche</a>';
   html += '<a href="/annuaire.html" class="btn btn-sm btn-secondary">Annuaire</a>';
   html += '</div>';
 
-  // Articles de loi
+  // Delais — V3 card design (show ALL, not just urgent)
+  var delais = data.delais || [];
+  if (delais.length) {
+    html += '<div class="card"' + stagger() + '>';
+    html += '<h3>Delais a connaitre</h3>';
+    delais.slice(0, 5).forEach(function(d) {
+      html += '<div class="delai-card">';
+      html += '<div class="delai-value">' + escHtml(d.duree || d.delai || '?') + '</div>';
+      html += '<div class="delai-info">';
+      html += '<div class="delai-procedure">' + escHtml(d.procedure || d.nom || d.label || '') + '</div>';
+      if (d.consequence) html += '<div class="delai-consequence">' + escHtml(d.consequence) + '</div>';
+      html += '</div></div>';
+    });
+    html += '</div>';
+  }
+
+  // Articles de loi — with tier badges
   var articles = data.articles || [];
   if (articles.length) {
     html += '<div class="card"' + stagger() + '>';
     html += '<h3>Articles de loi applicables</h3>';
     articles.forEach(function(a) {
-      var lien = a.lien || ('https://www.fedlex.admin.ch/search?q=' + encodeURIComponent(a.ref || ''));
+      var lien = a.lienFedlex || a.lien || ('https://www.fedlex.admin.ch/search?q=' + encodeURIComponent(a.ref || ''));
       html += '<a href="' + escAttr(lien) + '" target="_blank" rel="noopener" class="article-link">';
       html += '<span class="ref">' + escHtml(a.ref || '') + '</span>';
+      html += tierBadge(a.lienFedlex ? 1 : 3);
       if (a.titre) html += ' <span class="titre">&mdash; ' + escHtml(a.titre) + '</span>';
       html += '</a>';
     });
     html += '</div>';
   }
 
-  // Delais importants
-  var delais = data.delais || [];
-  var delaisUrgents = delais.filter(function(d) { return d.critique || d.urgent; });
-  if (delaisUrgents.length) {
-    html += '<div class="card card-warn"' + stagger() + '>';
-    html += '<h3>Delais critiques</h3>';
-    delaisUrgents.forEach(function(d) {
-      html += '<div class="delai-item">';
-      html += '<span class="delai-duree">' + escHtml(d.duree || d.delai || '') + '</span>';
-      html += '<span class="delai-label">' + escHtml(d.procedure || d.nom || d.label || '') + '</span>';
-      html += '</div>';
-    });
+  // Barèmes de référence (loaded async for bail domain)
+  var ficheDomaine = (data.fiche || {}).domaine;
+  if (ficheDomaine === 'bail') {
+    html += '<div class="card" id="baremes-card" style="display:none"' + stagger() + '>';
+    html += '<h3>Taux de reference</h3>';
+    html += '<div id="baremes-content"></div>';
     html += '</div>';
+    // Async load
+    fetch('/api/baremes/taux-hypothecaire').then(function(r) { return r.json(); }).then(function(b) {
+      if (b.valeur_actuelle) {
+        var el = document.getElementById('baremes-content');
+        var card = document.getElementById('baremes-card');
+        if (el && card) {
+          card.style.display = '';
+          el.innerHTML = '<div class="delai-card">' +
+            '<div class="delai-value">' + b.valeur_actuelle.taux + '%</div>' +
+            '<div class="delai-info">' +
+            '<div class="delai-procedure">Taux hypothecaire de reference OFL</div>' +
+            '<div class="delai-consequence">Base pour contester une augmentation de loyer (CO 269a). Publie le ' + (b.valeur_actuelle.date_publication || '') + '</div>' +
+            '</div></div>';
+        }
+      }
+    }).catch(function() {});
   }
 
-  // Jurisprudence
+  // Jurisprudence — V3 card design with role badges
   var juris = data.jurisprudence || data.jurisprudenceElargie || [];
   if (juris.length) {
     html += '<div class="card"' + stagger() + '>';
     html += '<h3>Jurisprudence du Tribunal federal</h3>';
-    juris.slice(0, 3).forEach(function(j) {
-      html += '<div class="jurisprudence">';
-      html += '<div class="ref">' + escHtml(j.signature || j.ref || '') + '</div>';
+    // Show up to 3 favorable + 2 defavorable for contradictoire
+    var favJuris = juris.filter(function(j) { return j.role === 'favorable'; }).slice(0, 3);
+    var contraJuris = juris.filter(function(j) { return j.role === 'defavorable'; }).slice(0, 2);
+    var neutreJuris = juris.filter(function(j) { return j.role === 'neutre' || !j.role; }).slice(0, 2);
+    var displayJuris = favJuris.concat(contraJuris).concat(neutreJuris);
+
+    displayJuris.forEach(function(j) {
+      var roleCls = j.role || 'neutre';
+      var roleLabel = roleCls === 'favorable' ? 'Favorable' : roleCls === 'defavorable' ? 'Defavorable' : 'Neutre';
+
+      html += '<div class="juris-card">';
+      html += '<div class="juris-header">';
+      html += '<span class="role-badge role-' + roleCls + '">' + roleLabel + '</span>';
+      html += '<span class="ref">' + escHtml(j.signature || j.ref || '') + '</span>';
+      html += tierBadge(2);
+      if (j.date) html += '<span class="juris-date">' + escHtml(j.date) + '</span>';
+      html += '</div>';
       html += '<div class="resume">' + escHtml(j.resume || j.description || '') + '</div>';
+      if (j.principeCle) html += '<div class="juris-principle">' + escHtml(j.principeCle) + '</div>';
+      if (j.fourchetteMontant) {
+        var fm = j.fourchetteMontant;
+        html += '<div class="juris-range">' + escHtml(fm.min || '') + ' &mdash; ' + escHtml(fm.max || '') + (fm.median ? ' (median: ' + escHtml(fm.median) + ')' : '') + '</div>';
+      }
       html += '</div>';
     });
     html += '</div>';
@@ -482,16 +561,20 @@ function renderEnrichedResult(data, query, container) {
     html += '</div>';
   }
 
-  // Anti-erreurs
+  // Anti-erreurs — V3 card design with severity
   var antiErreurs = data.antiErreurs || [];
   if (antiErreurs.length) {
     html += '<div class="card"' + stagger() + '>';
     html += '<h3>Erreurs a eviter</h3>';
-    antiErreurs.slice(0, 3).forEach(function(ae) {
-      html += '<div class="anti-erreur">';
-      html += '<span class="anti-erreur-icon">!</span>';
-      html += '<div><strong>' + escHtml(ae.erreur || ae.titre || '') + '</strong>';
-      if (ae.correctif || ae.conseil) html += '<p>' + escHtml(ae.correctif || ae.conseil) + '</p>';
+    antiErreurs.slice(0, 4).forEach(function(ae) {
+      var gravite = (ae.gravite || 'moyenne').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      var icon = gravite === 'critique' ? '!' : gravite === 'elevee' ? '!' : '!';
+      html += '<div class="ae-card">';
+      html += '<div class="ae-icon ' + escAttr(gravite) + '">' + icon + '</div>';
+      html += '<div class="ae-content">';
+      html += '<div class="ae-title">' + escHtml(ae.erreur || ae.titre || '') + '</div>';
+      if (ae.consequence) html += '<div class="ae-correction" style="color:var(--accent-danger);margin-bottom:0.2rem">' + escHtml(ae.consequence) + '</div>';
+      if (ae.correction || ae.correctif || ae.conseil) html += '<div class="ae-correction">' + escHtml(ae.correction || ae.correctif || ae.conseil) + '</div>';
       html += '</div></div>';
     });
     html += '</div>';
@@ -529,7 +612,14 @@ function renderEnrichedResult(data, query, container) {
     html += '</div>';
   }
 
-  // Bottom actions (repeat for mobile scroll)
+  // Source footer — meta stats
+  var meta = data._meta || {};
+  html += '<div class="source-footer">';
+  html += '<span>Sources : <span class="source-count">' + (meta.articlesCount || articles.length || 0) + ' articles</span>, ';
+  html += '<span class="source-count">' + (meta.jurisprudenceCount || juris.length || 0) + ' arrets</span></span>';
+  html += '</div>';
+
+  // Bottom actions
   html += renderSearchActions(query, true);
 
   // Upsell premium

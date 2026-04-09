@@ -1,0 +1,127 @@
+{
+  "taux_hypothecaire_reference": {
+    "source": "Office fédéral du logement (OFL)",
+    "source_url": "https://www.bwo.admin.ch/bwo/fr/home/mietrecht/referenzzinssatz.html",
+    "source_id": "ofl:taux_hypothecaire",
+    "tier": 1,
+    "type": "bareme_officiel",
+    "description": "Taux hypothécaire de référence pour le calcul des loyers. Publié trimestriellement par l'OFL. Base pour contester une augmentation ou demander une baisse de loyer.",
+    "valeur_actuelle": {
+      "taux": 1.75,
+      "date_publication": "2025-12-02",
+      "applicable_des": "2025-12-02",
+      "unite": "%"
+    },
+    "historique": [
+      { "date": "2025-12-02", "taux": 1.75 },
+      { "date": "2025-09-02", "taux": 1.75 },
+      { "date": "2025-06-02", "taux": 1.75 },
+      { "date": "2025-03-03", "taux": 1.75 },
+      { "date": "2024-12-02", "taux": 1.75 },
+      { "date": "2024-06-03", "taux": 1.75 },
+      { "date": "2023-12-01", "taux": 1.75 },
+      { "date": "2023-06-02", "taux": 1.50 },
+      { "date": "2022-06-01", "taux": 1.25 },
+      { "date": "2020-03-02", "taux": 1.25 },
+      { "date": "2017-06-01", "taux": 1.50 },
+      { "date": "2008-09-01", "taux": 3.50 }
+    ],
+    "usage_juridique": {
+      "contestation_augmentation": "Si le taux de référence a baissé depuis la dernière fixation du loyer, le locataire peut demander une baisse. Si le bailleur augmente le loyer en raison d'une hausse du taux, l'augmentation maximale est de ~3% par quart de point.",
+      "calcul_rendement": "Le taux de référence sert de base au calcul du rendement admissible selon CO 269.",
+      "base_legale": "CO 269a lit. b, OBLF art. 12a, 13"
+    }
+  },
+  "minimum_vital_base": {
+    "source": "Conférence des préposés aux poursuites et faillites de Suisse",
+    "source_id": "cpf:minimum_vital",
+    "tier": 2,
+    "type": "directive_nationale",
+    "description": "Montants de base du minimum vital pour le calcul de la quotité saisissable (LP 93). Les cantons peuvent adapter ces montants.",
+    "base_legale": "LP 93",
+    "montants_base_2025": {
+      "debiteur_seul": 1200,
+      "couple": 1700,
+      "enfant_moins_10": 400,
+      "enfant_10_plus": 600,
+      "supplements": {
+        "loyer_effectif": "selon justificatifs",
+        "primes_assurance_maladie": "primes effectives LAMal",
+        "frais_professionnels": "forfait ou effectifs",
+        "pensions_alimentaires": "montants dus selon jugement"
+      },
+      "unite": "CHF/mois"
+    },
+    "variations_cantonales": {
+      "VD": { "debiteur_seul": 1200, "source": "Directives OPF VD" },
+      "GE": { "debiteur_seul": 1350, "source": "Normes d'insaisissabilité GE", "note": "Genève applique des montants plus élevés" },
+      "ZH": { "debiteur_seul": 1200, "source": "Richtlinien KGS ZH" },
+      "BE": { "debiteur_seul": 1200, "source": "Weisungen BVD BE" },
+      "BS": { "debiteur_seul": 1250, "source": "Richtlinien BS" },
+      "VS": { "debiteur_seul": 1200, "source": "Directives Office des poursuites VS" },
+      "FR": { "debiteur_seul": 1200, "source": "Directives OPF FR" },
+      "NE": { "debiteur_seul": 1200, "source": "Directives OPF NE" }
+    }
+  },
+  "cct_principales": [
+    {
+      "id": "cct_hotellerie",
+      "branche": "Hôtellerie-restauration",
+      "source_id": "cct:hotellerie",
+      "type": "convention_collective",
+      "tier": 2,
+      "salaire_minimum_2025": { "non_qualifie": 3582, "qualifie_cfc": 4102, "unite": "CHF/mois" },
+      "semaine_travail": "42h",
+      "vacances": "5 semaines",
+      "source_url": "https://www.l-gav.ch/fr",
+      "etendue": true,
+      "note": "CCNT la plus importante de Suisse (>200'000 soumis)"
+    },
+    {
+      "id": "cct_nettoyage",
+      "branche": "Nettoyage en bâtiment",
+      "source_id": "cct:nettoyage",
+      "type": "convention_collective",
+      "tier": 2,
+      "salaire_minimum_2025": { "non_qualifie": 19.60, "qualifie": 22.40, "unite": "CHF/heure" },
+      "semaine_travail": "42h",
+      "source_url": "https://www.seco.admin.ch",
+      "etendue": true
+    },
+    {
+      "id": "cct_construction",
+      "branche": "Construction (gros œuvre)",
+      "source_id": "cct:construction",
+      "type": "convention_collective",
+      "tier": 2,
+      "salaire_minimum_2025": { "ouvrier_a": 6243, "ouvrier_b": 5826, "ouvrier_c": 5417, "unite": "CHF/mois" },
+      "semaine_travail": "variable selon saison",
+      "source_url": "https://www.cn-construction.ch",
+      "etendue": true
+    },
+    {
+      "id": "cct_commerce_detail",
+      "branche": "Commerce de détail",
+      "source_id": "cct:commerce_detail",
+      "type": "convention_collective",
+      "tier": 2,
+      "salaire_minimum_2025": { "non_qualifie": 3900, "qualifie_cfc": 4200, "unite": "CHF/mois" },
+      "semaine_travail": "41h",
+      "source_url": "https://www.seco.admin.ch",
+      "etendue": false,
+      "note": "Pas déclarée de force obligatoire au niveau national, mais cantons romands ont des CCT régionales"
+    },
+    {
+      "id": "cct_location_services",
+      "branche": "Location de services (travail temporaire)",
+      "source_id": "cct:location_services",
+      "type": "convention_collective",
+      "tier": 2,
+      "salaire_minimum_2025": { "non_qualifie": 21.09, "qualifie": 25.13, "unite": "CHF/heure" },
+      "semaine_travail": "selon entreprise locataire",
+      "source_url": "https://www.tempcontrol.ch",
+      "etendue": true,
+      "note": "Concerne ~300'000 travailleurs temporaires"
+    }
+  ]
+}

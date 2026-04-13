@@ -1,6 +1,6 @@
 [
   {
-    "id": "bail_défaut_moisissure",
+    "id": "bail_defaut_moisissure",
     "domaine": "bail",
     "sousDomaine": "défaut",
     "tags": [
@@ -143,7 +143,7 @@
     ]
   },
   {
-    "id": "bail_défaut_bruit",
+    "id": "bail_defaut_bruit",
     "domaine": "bail",
     "sousDomaine": "défaut",
     "tags": [
@@ -278,9 +278,9 @@
   {
     "id": "bail_resiliation_conteste",
     "domaine": "bail",
-    "sousDomaine": "resiliation",
+    "sousDomaine": "résiliation",
     "tags": [
-      "resiliation",
+      "résiliation",
       "conge",
       "contestation",
       "abusif",
@@ -552,7 +552,7 @@
     "sousDomaine": "garantie",
     "tags": [
       "garantie",
-      "depot",
+      "dépôt",
       "caution",
       "restitution",
       "compte bloque"
@@ -911,7 +911,7 @@
     "sousDomaine": "entretien",
     "tags": [
       "travaux",
-      "reparation",
+      "réparation",
       "entretien",
       "bailleur",
       "obligation"
@@ -1165,7 +1165,7 @@
     "tags": [
       "etat des lieux",
       "sortie",
-      "degats",
+      "dégâts",
       "restitution",
       "nettoyage"
     ],
@@ -1183,7 +1183,7 @@
         "id": "q2",
         "text": "Problemes signales ?",
         "options": [
-          "degats",
+          "dégâts",
           "nettoyage insuffisant",
           "usure normale contestee",
           "aucun"
@@ -1435,7 +1435,7 @@
           "non",
           "bruit",
           "odeurs",
-          "degats"
+          "dégâts"
         ]
       },
       {
@@ -1658,7 +1658,7 @@
     "tags": [
       "renovation",
       "travaux",
-      "tolerance",
+      "tolérance",
       "relogement",
       "reduction"
     ],
@@ -1771,7 +1771,7 @@
     ],
     "negative_signals": [
       "travaux demandes par le locataire",
-      "reparations urgentes necessaires",
+      "réparations urgentes necessaires",
       "renovation après le depart du locataire"
     ],
     "required_facts": [
@@ -2167,7 +2167,7 @@
       "grenier",
       "local",
       "accessoire",
-      "depot"
+      "dépôt"
     ],
     "questions": [
       {
@@ -2406,11 +2406,11 @@
     "domaine": "bail",
     "sousDomaine": "fin",
     "tags": [
-      "deces",
+      "décès",
       "locataire",
       "succession",
       "heritiers",
-      "resiliation"
+      "résiliation"
     ],
     "questions": [
       {
@@ -2529,7 +2529,7 @@
       "locataire",
       "poursuite",
       "garantie",
-      "resiliation"
+      "résiliation"
     ],
     "questions": [
       {
@@ -2669,7 +2669,7 @@
         "text": "Le nouveau proprietaire veut ?",
         "options": [
           "augmenter loyer",
-          "resilier",
+          "résilier",
           "rien changer",
           "je ne sais pas"
         ]
@@ -3146,7 +3146,7 @@
     "tags": [
       "etat des lieux",
       "contestation",
-      "degats",
+      "dégâts",
       "usure",
       "sortie"
     ],
@@ -3267,7 +3267,7 @@
     "domaine": "bail",
     "sousDomaine": "entretien",
     "tags": [
-      "reparations",
+      "réparations",
       "menu entretien",
       "a charge",
       "locataire"
@@ -3354,7 +3354,7 @@
       ],
       "routageEcosysteme": {
         "habiter": {
-          "condition": "reparation",
+          "condition": "réparation",
           "url": "habiter.app"
         }
       },
@@ -3918,10 +3918,10 @@
     "sousDomaine": "loyer",
     "tags": [
       "loyer",
-      "impaye",
+      "impayé",
       "retard",
       "paiement",
-      "resiliation",
+      "résiliation",
       "mise en demeure",
       "expulsion"
     ],

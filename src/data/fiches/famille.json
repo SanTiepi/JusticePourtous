@@ -6,7 +6,7 @@
     "tags": [
       "pension",
       "alimentaire",
-      "impaye",
+      "impayé",
       "entretien",
       "recouvrement"
     ],
@@ -128,7 +128,7 @@
     "sousDomaine": "divorce",
     "tags": [
       "divorce",
-      "procedure",
+      "procédure",
       "requete",
       "commun accord",
       "tribunal"
@@ -900,7 +900,7 @@
   {
     "id": "famille_mesures_provisionnelles",
     "domaine": "famille",
-    "sousDomaine": "procedure",
+    "sousDomaine": "procédure",
     "tags": [
       "mesures provisionnelles",
       "urgence",
@@ -1551,7 +1551,7 @@
       }
     ],
     "reponse": {
-      "explication": "L'adoption en Suisse est regie par les art. 264-269d CC. L'adoption conjointe est reservee aux couples maries (ou en partenariat) depuis au moins 3 ans, ou aux personnes seules de 28 ans revolus (art. 264b CC). L'adoptant doit avoir au moins 16 ans de plus que l'adopte. Le consentement des parents biologiques est indispensable (art. 265a CC), sauf si leur residence est inconnue ou s'ils se sont desinteresses de l'enfant depuis plus d'un an. L'adoption de l'enfant du conjoint est possible après 1 an de menage commun (art. 264c CC). La procedure comprend un accueil prealable d'au moins 1 an sous surveillance de l'autorite (art. 264 CC) et une enquete sociale. Pour l'adoption internationale, la Convention de La Haye de 1993 s'applique (art. 264g CC). L'autorite cantonale de protection de l'enfant prononce l'adoption. Les frais varient entre CHF 2'000 et CHF 40'000 selon la complexite.",
+      "explication": "L'adoption en Suisse est regie par les art. 264-269d CC. L'adoption conjointe est reservee aux couples maries (ou en partenariat) depuis au moins 3 ans, ou aux personnes seules de 28 ans revolus (art. 264b CC). L'adoptant doit avoir au moins 16 ans de plus que l'adopte. Le consentement des parents biologiques est indispensable (art. 265a CC), sauf si leur residence est inconnue ou s'ils se sont desintéressés de l'enfant depuis plus d'un an. L'adoption de l'enfant du conjoint est possible après 1 an de menage commun (art. 264c CC). La procedure comprend un accueil prealable d'au moins 1 an sous surveillance de l'autorite (art. 264 CC) et une enquete sociale. Pour l'adoption internationale, la Convention de La Haye de 1993 s'applique (art. 264g CC). L'autorite cantonale de protection de l'enfant prononce l'adoption. Les frais varient entre CHF 2'000 et CHF 40'000 selon la complexite.",
       "articles": [
         {
           "ref": "CC 264",
@@ -2331,7 +2331,7 @@
         "text": "Contexte de la liquidation ?",
         "options": [
           "divorce",
-          "deces",
+          "décès",
           "changement de regime"
         ]
       },
@@ -2447,7 +2447,7 @@
       "succession",
       "ab intestat",
       "heritier",
-      "legal",
+      "légal",
       "partage"
     ],
     "questions": [
@@ -3841,7 +3841,7 @@
       "divorce",
       "requete commune",
       "unilaterale",
-      "procedure",
+      "procédure",
       "séparation",
       "convention"
     ],
@@ -4352,7 +4352,7 @@
       "parts reservees aux enfants",
       "quotite disponible combien",
       "ce que je peux donner librement",
-      "limites du testament"
+      "limités du testament"
     ],
     "negative_signals": [
       "contestation d'un testament",

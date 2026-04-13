@@ -130,7 +130,7 @@
     "sousDomaine": "salaire",
     "tags": [
       "salaire",
-      "impaye",
+      "impayé",
       "retard",
       "paiement",
       "mise en demeure"
@@ -661,7 +661,7 @@
       "certificat",
       "travail",
       "attestation",
-      "reference",
+      "référence",
       "formulation"
     ],
     "questions": [
@@ -1283,7 +1283,7 @@
     "sousDomaine": "contrat",
     "tags": [
       "periode d essai",
-      "resiliation",
+      "résiliation",
       "délai",
       "debut"
     ],
@@ -2269,13 +2269,13 @@
     ]
   },
   {
-    "id": "travail_délai_conge",
+    "id": "travail_delai_conge",
     "domaine": "travail",
-    "sousDomaine": "resiliation",
+    "sousDomaine": "résiliation",
     "tags": [
       "délai",
       "conge",
-      "resiliation",
+      "résiliation",
       "preavis",
       "fin contrat"
     ],
@@ -2385,7 +2385,7 @@
   {
     "id": "travail_indemnite_depart",
     "domaine": "travail",
-    "sousDomaine": "resiliation",
+    "sousDomaine": "résiliation",
     "tags": [
       "indemnite",
       "depart",
@@ -2757,7 +2757,7 @@
       "stage",
       "stagiaire",
       "droits",
-      "remuneration",
+      "rémunération",
       "formation"
     ],
     "questions": [
@@ -2891,7 +2891,7 @@
         "id": "q2",
         "text": "Probleme ?",
         "options": [
-          "resiliation",
+          "résiliation",
           "salaire",
           "conditions de travail",
           "formation insuffisante",
@@ -3008,7 +3008,7 @@
       "13e salaire",
       "gratification",
       "bonus",
-      "remuneration"
+      "rémunération"
     ],
     "questions": [
       {
@@ -3603,7 +3603,7 @@
     "domaine": "travail",
     "sousDomaine": "fin",
     "tags": [
-      "reference",
+      "référence",
       "negative",
       "certificat",
       "ancien employeur",

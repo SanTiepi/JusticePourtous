@@ -4,13 +4,19 @@
     "source_id": "asloca_kit",
     "section": "signature",
     "numero": "1.1",
-    "question": "Le contrat de bail doit-il \u00eatre fait par \u00e9crit ?",
-    "reponse_courte": "Non. Pour \u00eatre valable, un contrat de bail peut \u00eatre conclu par \u00e9crit, par oral ou encore par actes concluants.",
-    "reponse_detail": "La loi n\u2019impose aucune forme particuli\u00e8re pour conclure un contrat de bail. Le simple fait de poss\u00e9der les cl\u00e9s d\u2019un logement et de payer une somme d\u2019argent pour pouvoir l\u2019utiliser pendant une certaine dur\u00e9e, sans que le bailleur ne s\u2019y oppose, constitue un contrat de bail avec tous les droits et obligations qui en d\u00e9coulent. En pratique, la forme \u00e9crite est g\u00e9n\u00e9ralement pr\u00e9f\u00e9r\u00e9e. Elle permet de d\u00e9terminer clairement la dur\u00e9e du contrat, le montant du loyer \u00e0 payer et d\u2019y pr\u00e9ciser d\u2019\u00e9ventuelles particularit\u00e9s. Lorsque la forme \u00e9crite est utilis\u00e9e, le contrat est conclu d\u00e9finitivement lorsque toutes les parties l\u2019ont sign\u00e9 de mani\u00e8re manuscrite.",
-    "fiches_liees": ["bail_modification_contrat"],
-    "articles_cles": ["CO 253"],
+    "question": "Le contrat de bail doit-il être fait par écrit ?",
+    "réponse_courte": "Non. Pour être valable, un contrat de bail peut être conclu par écrit, par oral ou encore par actes concluants.",
+    "réponse_detail": "La loi n’impose aucune forme particulière pour conclure un contrat de bail. Le simple fait de posséder les clés d’un logement et de payer une somme d’argent pour pouvoir l’utiliser pendant une certaine durée, sans que le bailleur ne s’y oppose, constitue un contrat de bail avec tous les droits et obligations qui en découlent. En pratique, la forme écrite est généralement préférée. Elle permet de déterminer clairement la durée du contrat, le montant du loyer à payer et d’y préciser d’éventuelles particularités. Lorsque la forme écrite est utilisée, le contrat est conclu définitivement lorsque toutes les parties l’ont signé de manière manuscrite.",
+    "fiches_liees": [
+      "bail_modification_contrat"
+    ],
+    "articles_cles": [
+      "CO 253"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Croire qu\u2019un bail oral n\u2019est pas valable"],
+    "anti_erreurs": [
+      "Croire qu’un bail oral n’est pas valable"
+    ],
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 6
   },
@@ -19,13 +25,20 @@
     "source_id": "asloca_kit",
     "section": "signature",
     "numero": "1.2",
-    "question": "Un contrat de bail peut-il \u00eatre de dur\u00e9e d\u00e9termin\u00e9e ?",
-    "reponse_courte": "Oui. Un contrat de bail peut valablement \u00eatre conclu pour une dur\u00e9e d\u00e9termin\u00e9e, sous r\u00e9serve des cas de fraude \u00e0 la loi.",
-    "reponse_detail": "La loi pr\u00e9sume que les contrats de bail \u00e0 loyer ont une dur\u00e9e ind\u00e9termin\u00e9e. Le TF reconna\u00eet qu\u2019il est interdit de conclure des baux de dur\u00e9e d\u00e9termin\u00e9e sans que les circonstances ne le justifient, car cela constitue une fraude \u00e0 la loi. Le locataire peut contester la dur\u00e9e du contrat 60 jours au plus tard avant la fin du contrat. Si le bail de dur\u00e9e d\u00e9termin\u00e9e ne se justifie pas, elle requalifiera le contrat en un bail de dur\u00e9e ind\u00e9termin\u00e9e.",
-    "fiches_liees": ["bail_prolongation", "bail_resiliation_conteste"],
-    "articles_cles": ["CO 255"],
+    "question": "Un contrat de bail peut-il être de durée déterminée ?",
+    "réponse_courte": "Oui. Un contrat de bail peut valablement être conclu pour une durée déterminée, sous réserve des cas de fraude à la loi.",
+    "réponse_detail": "La loi présume que les contrats de bail à loyer ont une durée indéterminée. Le TF reconnaît qu’il est interdit de conclure des baux de durée déterminée sans que les circonstances ne le justifient, car cela constitue une fraude à la loi. Le locataire peut contester la durée du contrat 60 jours au plus tard avant la fin du contrat. Si le bail de durée déterminée ne se justifie pas, elle requalifiera le contrat en un bail de durée indéterminée.",
+    "fiches_liees": [
+      "bail_prolongation",
+      "bail_résiliation_conteste"
+    ],
+    "articles_cles": [
+      "CO 255"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Accepter un bail \u00e0 dur\u00e9e d\u00e9termin\u00e9e sans raison valable — le TF peut le requalifier"],
+    "anti_erreurs": [
+      "Accepter un bail à durée déterminée sans raison valable — le TF peut le requalifier"
+    ],
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 7
   },
@@ -34,13 +47,21 @@
     "source_id": "asloca_kit",
     "section": "signature",
     "numero": "1.3",
-    "question": "De quoi est compos\u00e9 le loyer ?",
-    "reponse_courte": "Le loyer comprend en g\u00e9n\u00e9ral un loyer net auquel s\u2019ajoute des charges et d\u2019\u00e9ventuels frais annexes.",
-    "reponse_detail": "Le locataire doit payer un loyer comme contre-prestation \u00e0 l\u2019utilisation de la chose (loyer net). Le contrat de bail peut en outre pr\u00e9voir des charges suppl\u00e9mentaires et d\u2019autres frais annexes (loyer brut). Les charges peuvent \u00eatre per\u00e7ues sous forme d\u2019acomptes ou de forfait. Tous ces frais doivent express\u00e9ment figurer dans le contrat pour pouvoir \u00eatre imput\u00e9s au locataire.",
-    "fiches_liees": ["bail_charges_contestees", "bail_frais_chauffage"],
-    "articles_cles": ["CO 257a", "CO 257b"],
+    "question": "De quoi est composé le loyer ?",
+    "réponse_courte": "Le loyer comprend en général un loyer net auquel s’ajoute des charges et d’éventuels frais annexes.",
+    "réponse_detail": "Le locataire doit payer un loyer comme contre-prestation à l’utilisation de la chose (loyer net). Le contrat de bail peut en outre prévoir des charges supplémentaires et d’autres frais annexes (loyer brut). Les charges peuvent être perçues sous forme d’acomptes ou de forfait. Tous ces frais doivent expressément figurer dans le contrat pour pouvoir être imputés au locataire.",
+    "fiches_liees": [
+      "bail_charges_contestees",
+      "bail_frais_chauffage"
+    ],
+    "articles_cles": [
+      "CO 257a",
+      "CO 257b"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Payer des charges non pr\u00e9vues au contrat — elles doivent y figurer express\u00e9ment"],
+    "anti_erreurs": [
+      "Payer des charges non prévues au contrat — elles doivent y figurer expressément"
+    ],
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 8
   },
@@ -50,13 +71,20 @@
     "section": "signature",
     "numero": "1.4",
     "question": "Est-il possible de contester le loyer ?",
-    "reponse_courte": "Le montant du loyer peut \u00eatre contest\u00e9 dans les 30 jours suivant la r\u00e9ception des cl\u00e9s, pour autant que certaines conditions soient remplies.",
-    "reponse_detail": "La loi offre la possibilit\u00e9 au locataire de contester le montant du loyer fix\u00e9 par le contrat de bail : si le bailleur a sensiblement augment\u00e9 le loyer initial au changement de locataire (>10% du pr\u00e9c\u00e9dent loyer), ou s\u2019il a \u00e9t\u00e9 contraint de conclure le bail par n\u00e9cessit\u00e9 personnelle ou familiale. Les cantons souffrant d\u2019une p\u00e9nurie de logements peuvent rendre obligatoire l\u2019usage d\u2019une formule officielle (GE, VD, FR, ZH).",
-    "fiches_liees": ["bail_loyer_initial_abusif", "bail_loyer_abusif"],
-    "articles_cles": ["CO 270"],
+    "réponse_courte": "Le montant du loyer peut être contesté dans les 30 jours suivant la réception des clés, pour autant que certaines conditions soient remplies.",
+    "réponse_detail": "La loi offre la possibilité au locataire de contester le montant du loyer fixé par le contrat de bail : si le bailleur a sensiblement augmenté le loyer initial au changement de locataire (>10% du précédent loyer), ou s’il a été contraint de conclure le bail par nécessité personnelle ou familiale. Les cantons souffrant d’une pénurie de logements peuvent rendre obligatoire l’usage d’une formule officielle (GE, VD, FR, ZH).",
+    "fiches_liees": [
+      "bail_loyer_initial_abusif",
+      "bail_loyer_abusif"
+    ],
+    "articles_cles": [
+      "CO 270"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Laisser passer le d\u00e9lai de 30 jours pour contester le loyer initial"],
-    "delai": "30 jours d\u00e8s r\u00e9ception des cl\u00e9s",
+    "anti_erreurs": [
+      "Laisser passer le délai de 30 jours pour contester le loyer initial"
+    ],
+    "delai": "30 jours dès réception des clés",
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 9
   },
@@ -66,12 +94,19 @@
     "section": "signature",
     "numero": "1.5",
     "question": "Est-il obligatoire de constituer une garantie bancaire ?",
-    "reponse_courte": "Uniquement si le contrat de bail le pr\u00e9voit et sur un compte bancaire au nom du locataire.",
-    "reponse_detail": "Une garantie bancaire doit \u00eatre pr\u00e9vue par le contrat de bail et ne peut d\u00e9passer, pour les baux d\u2019habitation, le montant de trois mois de loyer. Cette garantie doit obligatoirement \u00eatre d\u00e9pos\u00e9e aupr\u00e8s d\u2019une banque, sur un compte au nom du locataire, mais en aucun cas \u00eatre vers\u00e9e directement au patrimoine du bailleur. La garantie locative reste propri\u00e9t\u00e9 du locataire. Les soci\u00e9t\u00e9s comme Swisscaution ou Firstcaution ne sont pas un syst\u00e8me d\u2019assurance mais un moyen de d\u00e9panner le locataire qui ne peut constituer une garantie dans l\u2019imm\u00e9diat.",
-    "fiches_liees": ["bail_depot_garantie"],
-    "articles_cles": ["CO 257e"],
+    "réponse_courte": "Uniquement si le contrat de bail le prévoit et sur un compte bancaire au nom du locataire.",
+    "réponse_detail": "Une garantie bancaire doit être prévue par le contrat de bail et ne peut dépasser, pour les baux d’habitation, le montant de trois mois de loyer. Cette garantie doit obligatoirement être déposée auprès d’une banque, sur un compte au nom du locataire, mais en aucun cas être versée directement au patrimoine du bailleur. La garantie locative reste propriété du locataire. Les sociétés comme Swisscaution ou Firstcaution ne sont pas un système d’assurance mais un moyen de dépanner le locataire qui ne peut constituer une garantie dans l’immédiat.",
+    "fiches_liees": [
+      "bail_depot_garantie"
+    ],
+    "articles_cles": [
+      "CO 257e"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Verser la garantie directement au bailleur — elle doit aller sur un compte bancaire bloqu\u00e9", "Accepter une garantie de plus de 3 mois de loyer"],
+    "anti_erreurs": [
+      "Verser la garantie directement au bailleur — elle doit aller sur un compte bancaire bloqué",
+      "Accepter une garantie de plus de 3 mois de loyer"
+    ],
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 10
   },
@@ -80,13 +115,19 @@
     "source_id": "asloca_kit",
     "section": "signature",
     "numero": "1.6",
-    "question": "Est-il possible de renoncer \u00e0 un contrat apr\u00e8s l\u2019avoir sign\u00e9 ?",
-    "reponse_courte": "Non. Une fois sign\u00e9, le contrat de bail lie les parties.",
-    "reponse_detail": "Le futur locataire qui change d\u2019avis et souhaite se d\u00e9faire d\u2019un bail sign\u00e9 doit proc\u00e9der \u00e0 la r\u00e9siliation du contrat, m\u00eame si cela intervient plusieurs semaines avant l\u2019emm\u00e9nager. Le locataire doit r\u00e9silier pour la prochaine \u00e9ch\u00e9ance contractuelle ou se d\u00e9partir du contrat dans les 30 jours, pour autant qu\u2019il trouve un locataire de remplacement pr\u00eat \u00e0 reprendre le bail aux m\u00eames conditions. N\u00e9anmoins, il reste toujours possible de n\u00e9gocier avec le bailleur.",
-    "fiches_liees": ["bail_droit_retractation"],
-    "articles_cles": ["CO 264"],
+    "question": "Est-il possible de renoncer à un contrat après l’avoir signé ?",
+    "réponse_courte": "Non. Une fois signé, le contrat de bail lie les parties.",
+    "réponse_detail": "Le futur locataire qui change d’avis et souhaite se défaire d’un bail signé doit procéder à la résiliation du contrat, même si cela intervient plusieurs semaines avant l’emménager. Le locataire doit résilier pour la prochaine échéance contractuelle ou se départir du contrat dans les 30 jours, pour autant qu’il trouve un locataire de remplacement prêt à reprendre le bail aux mêmes conditions. Néanmoins, il reste toujours possible de négocier avec le bailleur.",
+    "fiches_liees": [
+      "bail_droit_retractation"
+    ],
+    "articles_cles": [
+      "CO 264"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Croire qu\u2019on peut se r\u00e9tracter librement apr\u00e8s signature"],
+    "anti_erreurs": [
+      "Croire qu’on peut se rétracter librement après signature"
+    ],
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 11
   },
@@ -95,13 +136,19 @@
     "source_id": "asloca_kit",
     "section": "signature",
     "numero": "1.7",
-    "question": "Quand le loyer doit-il \u00eatre pay\u00e9 ?",
-    "reponse_courte": "En r\u00e8gle g\u00e9n\u00e9rale, le loyer est d\u00fb par le locataire avant la fin du mois pour le mois suivant.",
-    "reponse_detail": "Il est important que le locataire suive cette r\u00e8gle \u00e0 la lettre, car celui qui s\u2019acquitte de son loyer de mani\u00e8re tardive, m\u00eame de quelques jours, s\u2019expose \u00e0 la r\u00e9siliation de son contrat de bail. Toutefois, les parties sont libres de d\u00e9terminer contractuellement une \u00e9ch\u00e9ance de paiement plus favorable au locataire.",
-    "fiches_liees": ["bail_loyers_impayes"],
-    "articles_cles": ["CO 257c"],
+    "question": "Quand le loyer doit-il être payé ?",
+    "réponse_courte": "En règle générale, le loyer est dû par le locataire avant la fin du mois pour le mois suivant.",
+    "réponse_detail": "Il est important que le locataire suive cette règle à la lettre, car celui qui s’acquitte de son loyer de manière tardive, même de quelques jours, s’expose à la résiliation de son contrat de bail. Toutefois, les parties sont libres de déterminer contractuellement une échéance de paiement plus favorable au locataire.",
+    "fiches_liees": [
+      "bail_loyers_impayés"
+    ],
+    "articles_cles": [
+      "CO 257c"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Payer le loyer en retard m\u00eame de quelques jours — risque de r\u00e9siliation"],
+    "anti_erreurs": [
+      "Payer le loyer en retard même de quelques jours — risque de résiliation"
+    ],
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 12
   },
@@ -110,13 +157,19 @@
     "source_id": "asloca_kit",
     "section": "signature",
     "numero": "1.8",
-    "question": "Est-il possible d\u2019adopter un animal domestique alors que le contrat me l\u2019interdit ?",
-    "reponse_courte": "Cela d\u00e9pend si le contrat de bail l\u2019interdit valablement ou non.",
-    "reponse_detail": "En r\u00e8gle g\u00e9n\u00e9rale, le locataire a le droit de d\u00e9tenir des animaux domestiques, pour autant que ce soit en nombre raisonnable. Le contrat de bail peut pr\u00e9voir une interdiction. La restriction n\u2019est valable que si elle repose sur un juste motif. La majorit\u00e9 des auteurs et tribunaux soutiennent qu\u2019une clause contractuelle prohibant la d\u00e9tention d\u2019animaux est toujours valable. Dans le canton de Vaud, les r\u00e8gles et usages locatifs stipulent que les animaux sont tol\u00e9r\u00e9s \u00e0 condition qu\u2019ils ne g\u00eanent pas les autres locataires.",
-    "fiches_liees": ["bail_animaux"],
-    "articles_cles": ["CO 256"],
+    "question": "Est-il possible d’adopter un animal domestique alors que le contrat me l’interdit ?",
+    "réponse_courte": "Cela dépend si le contrat de bail l’interdit valablement ou non.",
+    "réponse_detail": "En règle générale, le locataire a le droit de détenir des animaux domestiques, pour autant que ce soit en nombre raisonnable. Le contrat de bail peut prévoir une interdiction. La restriction n’est valable que si elle repose sur un juste motif. La majorité des auteurs et tribunaux soutiennent qu’une clause contractuelle prohibant la détention d’animaux est toujours valable. Dans le canton de Vaud, les règles et usages locatifs stipulent que les animaux sont tolérés à condition qu’ils ne gênent pas les autres locataires.",
+    "fiches_liees": [
+      "bail_animaux"
+    ],
+    "articles_cles": [
+      "CO 256"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Ignorer une clause d\u2019interdiction d\u2019animaux — la violation peut mener \u00e0 la r\u00e9siliation"],
+    "anti_erreurs": [
+      "Ignorer une clause d’interdiction d’animaux — la violation peut mener à la résiliation"
+    ],
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 13
   },
@@ -126,12 +179,18 @@
     "section": "signature",
     "numero": "1.9",
     "question": "Est-il possible de changer de colocataire en cours de bail ?",
-    "reponse_courte": "Non, il n\u2019est pas possible d\u2019imposer au bailleur un changement de colocataire.",
-    "reponse_detail": "Il y a colocation uniquement lorsque tous les locataires ont tous sign\u00e9 le contrat de bail avec le bailleur. Toutes les personnes qui signent un m\u00eame contrat s\u2019engagent ensemble \u00e0 louer le bien en question et deviennent solidairement responsables. Le d\u00e9part ou le remplacement d\u2019un colocataire est assimil\u00e9 \u00e0 une volont\u00e9 de r\u00e9silier le contrat de bail en entier. Le bailleur peut accepter ou refuser.",
-    "fiches_liees": ["bail_colocation"],
-    "articles_cles": ["CO 263"],
+    "réponse_courte": "Non, il n’est pas possible d’imposer au bailleur un changement de colocataire.",
+    "réponse_detail": "Il y a colocation uniquement lorsque tous les locataires ont tous signé le contrat de bail avec le bailleur. Toutes les personnes qui signent un même contrat s’engagent ensemble à louer le bien en question et deviennent solidairement responsables. Le départ ou le remplacement d’un colocataire est assimilé à une volonté de résilier le contrat de bail en entier. Le bailleur peut accepter ou refuser.",
+    "fiches_liees": [
+      "bail_colocation"
+    ],
+    "articles_cles": [
+      "CO 263"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Croire qu\u2019on peut remplacer un colocataire sans l\u2019accord du bailleur"],
+    "anti_erreurs": [
+      "Croire qu’on peut remplacer un colocataire sans l’accord du bailleur"
+    ],
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 14
   },
@@ -140,13 +199,19 @@
     "source_id": "asloca_kit",
     "section": "signature",
     "numero": "1.10",
-    "question": "Un \u00e9tat des lieux d\u2019entr\u00e9e est-il obligatoire ?",
-    "reponse_courte": "Non, l\u2019\u00e9tat des lieux d\u2019entr\u00e9e n\u2019est pas obligatoire, sauf dans certains cantons.",
-    "reponse_detail": "L\u2019\u00e9tat des lieux d\u2019entr\u00e9e a pour but de d\u00e9terminer pr\u00e9cis\u00e9ment l\u2019\u00e9tat de l\u2019appartement \u00e0 la r\u00e9ception des cl\u00e9s. Cela permet au locataire de d\u00e9montrer l\u2019existence de certains d\u00e9fauts et d\u2019en exiger la r\u00e9paration. En pratique, l\u2019absence de l\u2019\u00e9tat des lieux d\u2019entr\u00e9e n\u2019a pas de grandes cons\u00e9quences pour le locataire : sans \u00e9tat des lieux, le bailleur ne pourra pas prouver que les d\u00e9t\u00e9riorations constat\u00e9es en fin de bail n\u2019\u00e9taient pas d\u00e9j\u00e0 pr\u00e9sentes auparavant. Le locataire dispose de quelques jours suppl\u00e9mentaires pour aviser le bailleur d\u2019autres d\u00e9fauts constat\u00e9s.",
-    "fiches_liees": ["bail_etat_des_lieux"],
-    "articles_cles": ["CO 267"],
+    "question": "Un état des lieux d’entrée est-il obligatoire ?",
+    "réponse_courte": "Non, l’état des lieux d’entrée n’est pas obligatoire, sauf dans certains cantons.",
+    "réponse_detail": "L’état des lieux d’entrée a pour but de déterminer précisément l’état de l’appartement à la réception des clés. Cela permet au locataire de démontrer l’existence de certains défauts et d’en exiger la réparation. En pratique, l’absence de l’état des lieux d’entrée n’a pas de grandes conséquences pour le locataire : sans état des lieux, le bailleur ne pourra pas prouver que les détériorations constatées en fin de bail n’étaient pas déjà présentes auparavant. Le locataire dispose de quelques jours supplémentaires pour aviser le bailleur d’autres défauts constatés.",
+    "fiches_liees": [
+      "bail_etat_des_lieux"
+    ],
+    "articles_cles": [
+      "CO 267"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Ne pas signaler les d\u00e9fauts d\u00e8s l\u2019entr\u00e9e — le bailleur pourra les imputer au locataire en fin de bail"],
+    "anti_erreurs": [
+      "Ne pas signaler les défauts dès l’entrée — le bailleur pourra les imputer au locataire en fin de bail"
+    ],
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 15
   },
@@ -156,12 +221,19 @@
     "section": "en_cours",
     "numero": "2.1",
     "question": "Dois-je informer le bailleur si je sous-loue mon logement ?",
-    "reponse_courte": "Oui. Toute personne qui souhaite sous-louer tout ou partie de son logement doit obtenir le consentement du bailleur.",
-    "reponse_detail": "Bien plus qu\u2019un simple devoir d\u2019information, le locataire a l\u2019obligation de demander, par \u00e9crit, \u00e0 son bailleur une autorisation de sous-louer. Le bailleur ne peut refuser que dans 3 cas : si le locataire refuse de communiquer les conditions, si les conditions sont abusives, ou si la sous-location pr\u00e9sente des inconv\u00e9nients majeurs. Certains cantons sont plus restrictifs (VD : sous-louer l\u2019entier uniquement pour dur\u00e9e limit\u00e9e). Le sous-locataire du locataire principal devient le bailleur du sous-locataire.",
-    "fiches_liees": ["bail_sous_location", "bail_sous_location_refusee"],
-    "articles_cles": ["CO 262"],
+    "réponse_courte": "Oui. Toute personne qui souhaite sous-louer tout ou partie de son logement doit obtenir le consentement du bailleur.",
+    "réponse_detail": "Bien plus qu’un simple devoir d’information, le locataire a l’obligation de demander, par écrit, à son bailleur une autorisation de sous-louer. Le bailleur ne peut refuser que dans 3 cas : si le locataire refuse de communiquer les conditions, si les conditions sont abusives, ou si la sous-location présente des inconvénients majeurs. Certains cantons sont plus restrictifs (VD : sous-louer l’entier uniquement pour durée limitée). Le sous-locataire du locataire principal devient le bailleur du sous-locataire.",
+    "fiches_liees": [
+      "bail_sous_location",
+      "bail_sous_location_refusee"
+    ],
+    "articles_cles": [
+      "CO 262"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Sous-louer sans demander l\u2019autorisation \u00e9crite du bailleur"],
+    "anti_erreurs": [
+      "Sous-louer sans demander l’autorisation écrite du bailleur"
+    ],
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 18
   },
@@ -170,14 +242,21 @@
     "source_id": "asloca_kit",
     "section": "en_cours",
     "numero": "2.2",
-    "question": "Est-ce que le bailleur peut acc\u00e9der au logement ?",
-    "reponse_courte": "Oui. Le bailleur doit pouvoir visiter le logement lou\u00e9. En revanche, il lui est interdit d\u2019y acc\u00e9der sans l\u2019accord pr\u00e9alable du locataire.",
-    "reponse_detail": "Le bailleur peut avoir besoin de visiter le logement en raison d\u2019une future vente, de sa relocation ou pour v\u00e9rifier si des travaux d\u2019entretien sont n\u00e9cessaires. Le locataire doit tol\u00e9rer les visites, pour autant qu\u2019elles ne soient pas en nombre excessif et qu\u2019il en ait \u00e9t\u00e9 avis\u00e9 au moins 5 jours \u00e0 l\u2019avance. En cas de refus injustifi\u00e9, il s\u2019expose \u00e0 des dommages-int\u00e9r\u00eats. Le bailleur qui s\u2019introduit chez un locataire sans accord commet une violation de domicile au sens p\u00e9nal.",
-    "fiches_liees": ["bail_travaux_non_faits"],
-    "articles_cles": ["CO 257h"],
+    "question": "Est-ce que le bailleur peut accéder au logement ?",
+    "réponse_courte": "Oui. Le bailleur doit pouvoir visiter le logement loué. En revanche, il lui est interdit d’y accéder sans l’accord préalable du locataire.",
+    "réponse_detail": "Le bailleur peut avoir besoin de visiter le logement en raison d’une future vente, de sa relocation ou pour vérifier si des travaux d’entretien sont nécessaires. Le locataire doit tolérer les visites, pour autant qu’elles ne soient pas en nombre excessif et qu’il en ait été avisé au moins 5 jours à l’avance. En cas de refus injustifié, il s’expose à des dommages-intérêts. Le bailleur qui s’introduit chez un locataire sans accord commet une violation de domicile au sens pénal.",
+    "fiches_liees": [
+      "bail_travaux_non_faits"
+    ],
+    "articles_cles": [
+      "CO 257h"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Refuser syst\u00e9matiquement les visites du bailleur — risque de dommages-int\u00e9r\u00eats", "Laisser le bailleur entrer sans pr\u00e9avis — violation de domicile"],
-    "delai": "5 jours de pr\u00e9avis minimum pour une visite",
+    "anti_erreurs": [
+      "Refuser systématiquement les visites du bailleur — risque de dommages-intérêts",
+      "Laisser le bailleur entrer sans préavis — violation de domicile"
+    ],
+    "delai": "5 jours de préavis minimum pour une visite",
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 19
   },
@@ -186,13 +265,20 @@
     "source_id": "asloca_kit",
     "section": "en_cours",
     "numero": "2.3",
-    "question": "Quels travaux peuvent \u00eatre exig\u00e9s par le locataire ?",
-    "reponse_courte": "Le locataire peut exiger du bailleur qu\u2019il proc\u00e8de \u00e0 tous les travaux destin\u00e9s \u00e0 l\u2019entretien et \u00e0 la r\u00e9paration de l\u2019objet lou\u00e9. Les travaux de r\u00e9novation sont exclus.",
-    "reponse_detail": "Le bailleur doit mettre \u00e0 disposition un logement en \u00e9tat appropri\u00e9 et l\u2019entretenir pendant toute la dur\u00e9e du contrat. Tout d\u00e9faut qui entrave ou restreint l\u2019utilisation du logement doit \u00eatre \u00e9limin\u00e9 \u00e0 ses frais. Le fait que les installations atteignent un certain \u00e2ge ne justifie pas \u00e0 lui seul un droit \u00e0 des travaux. Le bailleur n\u2019est pas tenu de rem\u00e9dier aux d\u00e9fauts provoqu\u00e9s par une utilisation anormale du locataire.",
-    "fiches_liees": ["bail_travaux_non_faits"],
-    "articles_cles": ["CO 256", "CO 259a"],
+    "question": "Quels travaux peuvent être exigés par le locataire ?",
+    "réponse_courte": "Le locataire peut exiger du bailleur qu’il procède à tous les travaux destinés à l’entretien et à la réparation de l’objet loué. Les travaux de rénovation sont exclus.",
+    "réponse_detail": "Le bailleur doit mettre à disposition un logement en état approprié et l’entretenir pendant toute la durée du contrat. Tout défaut qui entrave ou restreint l’utilisation du logement doit être éliminé à ses frais. Le fait que les installations atteignent un certain âge ne justifie pas à lui seul un droit à des travaux. Le bailleur n’est pas tenu de remédier aux défauts provoqués par une utilisation anormale du locataire.",
+    "fiches_liees": [
+      "bail_travaux_non_faits"
+    ],
+    "articles_cles": [
+      "CO 256",
+      "CO 259a"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Exiger la r\u00e9novation (am\u00e9lioration) alors que seul l\u2019entretien (r\u00e9paration) est d\u00fb"],
+    "anti_erreurs": [
+      "Exiger la rénovation (amélioration) alors que seul l’entretien (réparation) est dû"
+    ],
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 20
   },
@@ -201,13 +287,20 @@
     "source_id": "asloca_kit",
     "section": "en_cours",
     "numero": "2.4",
-    "question": "Quels sont les travaux \u00e0 charge du locataire ?",
-    "reponse_courte": "Le locataire doit assumer \u00e0 ses frais les menus travaux d\u2019entretien et de r\u00e9paration.",
-    "reponse_detail": "Les simples travaux de nettoyage ainsi que l\u2019entretien et la r\u00e9paration des installations que le locataire est capable d\u2019effectuer sans comp\u00e9tences techniques font partie des menus travaux : changer les ampoules, le filtre de la hotte, remplacer le flexible de douche, graisser les serrures. Tous travaux n\u00e9cessitant l\u2019intervention d\u2019un professionnel ne sont pas \u00e0 charge du locataire. Toute clause contraire du bail est nulle.",
-    "fiches_liees": ["bail_reparations_locataire"],
-    "articles_cles": ["CO 259"],
+    "question": "Quels sont les travaux à charge du locataire ?",
+    "réponse_courte": "Le locataire doit assumer à ses frais les menus travaux d’entretien et de réparation.",
+    "réponse_detail": "Les simples travaux de nettoyage ainsi que l’entretien et la réparation des installations que le locataire est capable d’effectuér sans compétences techniques font partie des menus travaux : changer les ampoules, le filtre de la hotte, remplacer le flexible de douche, graisser les serrures. Tous travaux nécessitant l’intervention d’un professionnel ne sont pas à charge du locataire. Toute clause contraire du bail est nulle.",
+    "fiches_liees": [
+      "bail_réparations_locataire"
+    ],
+    "articles_cles": [
+      "CO 259"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Payer un professionnel pour des r\u00e9parations qui sont \u00e0 la charge du bailleur", "Clause du bail imposant des travaux professionnels au locataire — elle est nulle"],
+    "anti_erreurs": [
+      "Payer un professionnel pour des réparations qui sont à la charge du bailleur",
+      "Clause du bail imposant des travaux professionnels au locataire — elle est nulle"
+    ],
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 21
   },
@@ -216,13 +309,19 @@
     "source_id": "asloca_kit",
     "section": "en_cours",
     "numero": "2.5",
-    "question": "Le locataire peut-il proc\u00e9der \u00e0 ses frais \u00e0 la r\u00e9novation de son appartement ?",
-    "reponse_courte": "Oui, mais uniquement si le bailleur lui donne pr\u00e9alablement son accord par \u00e9crit.",
-    "reponse_detail": "Toute location impose au locataire d\u2019user de la chose avec soin et de la rendre en fin de bail dans le m\u00eame \u00e9tat. Aucune modification irr\u00e9versible n\u2019est autoris\u00e9e sans accord \u00e9crit du bailleur. Le locataire qui effectue des r\u00e9novations sans accord risque une r\u00e9siliation du contrat et/ou de devoir tout remettre dans l\u2019\u00e9tat initial \u00e0 son d\u00e9part.",
-    "fiches_liees": ["bail_renovation_forcee"],
-    "articles_cles": ["CO 260a"],
+    "question": "Le locataire peut-il procéder à ses frais à la rénovation de son appartement ?",
+    "réponse_courte": "Oui, mais uniquement si le bailleur lui donne préalablement son accord par écrit.",
+    "réponse_detail": "Toute location impose au locataire d’user de la chose avec soin et de la rendre en fin de bail dans le même état. Aucune modification irréversible n’est autorisée sans accord écrit du bailleur. Le locataire qui effectué des rénovations sans accord risque une résiliation du contrat et/ou de devoir tout remettre dans l’état initial à son départ.",
+    "fiches_liees": [
+      "bail_renovation_forcee"
+    ],
+    "articles_cles": [
+      "CO 260a"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["R\u00e9nover sans accord \u00e9crit du bailleur — risque de r\u00e9siliation + remise en \u00e9tat"],
+    "anti_erreurs": [
+      "Rénover sans accord écrit du bailleur — risque de résiliation + remise en état"
+    ],
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 22
   },
@@ -231,13 +330,20 @@
     "source_id": "asloca_kit",
     "section": "en_cours",
     "numero": "2.6",
-    "question": "Quels d\u00e9fauts permettent au locataire de se d\u00e9partir imm\u00e9diatement du contrat ?",
-    "reponse_courte": "Seuls les d\u00e9fauts qualifi\u00e9s de graves justifient une r\u00e9siliation avec effet imm\u00e9diat par le locataire.",
-    "reponse_detail": "Les d\u00e9fauts graves sont ceux qui excluent ou entravent consid\u00e9rablement l\u2019usage de la chose, qui emp\u00eachent objectivement le locataire de continuer \u00e0 y vivre car cela est impossible ou repr\u00e9senterait un danger pour sa sant\u00e9 ou sa s\u00e9curit\u00e9. L\u2019absence totale d\u2019eau chaude, une toiture qui menace de s\u2019effondrer ou un incendie constituent des d\u00e9fauts graves. La notion de d\u00e9faut grave est interpr\u00e9t\u00e9e de mani\u00e8re restrictive : il est d\u00e9conseill\u00e9 de faire usage de ce droit sans assistance juridique.",
-    "fiches_liees": ["bail_logement_insalubre", "bail_defaut_moisissure"],
-    "articles_cles": ["CO 259b"],
+    "question": "Quels défauts permettent au locataire de se départir immédiatement du contrat ?",
+    "réponse_courte": "Seuls les défauts qualifiés de graves justifient une résiliation avec effet immédiat par le locataire.",
+    "réponse_detail": "Les défauts graves sont ceux qui excluent ou entravent considérablement l’usage de la chose, qui empêchent objectivement le locataire de continuer à y vivre car cela est impossible ou représenterait un danger pour sa santé ou sa sécurité. L’absence totale d’eau chaude, une toiture qui menace de s’effondrer ou un incendie constituent des défauts graves. La notion de défaut grave est interprétée de manière restrictive : il est déconseillé de faire usage de ce droit sans assistance juridique.",
+    "fiches_liees": [
+      "bail_logement_insalubre",
+      "bail_defaut_moisissure"
+    ],
+    "articles_cles": [
+      "CO 259b"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["R\u00e9silier avec effet imm\u00e9diat pour un d\u00e9faut mineur — lourdes cons\u00e9quences financi\u00e8res possibles"],
+    "anti_erreurs": [
+      "Résilier avec effet immédiat pour un défaut mineur — lourdes conséquences financières possibles"
+    ],
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 23
   },
@@ -246,13 +352,21 @@
     "source_id": "asloca_kit",
     "section": "en_cours",
     "numero": "2.7",
-    "question": "Qu\u2019est-ce qui justifie une r\u00e9duction du loyer ?",
-    "reponse_courte": "Lorsque le logement est affect\u00e9 par un d\u00e9faut qui entrave ou restreint son usage normal, le locataire peut pr\u00e9tendre \u00e0 une r\u00e9duction de son loyer.",
-    "reponse_detail": "La r\u00e9duction est un pourcentage du loyer net calcul\u00e9 en fonction de toutes les circonstances du cas concret : situation de l\u2019immeuble, son \u00e2ge, l\u2019intensit\u00e9 et fr\u00e9quence des nuisances. Peuvent donner droit \u00e0 r\u00e9duction : pr\u00e9sence de travaux dans l\u2019immeuble, d\u00e9g\u00e2t d\u2019eau, peintures d\u00e9fra\u00eechies, installations hors-service, chauffage insuffisant, absence de volets, manque de propret\u00e9 dans les locaux communs. Le locataire doit prouver le d\u00e9faut et la connaissance du bailleur.",
-    "fiches_liees": ["bail_defaut_moisissure", "bail_defaut_bruit"],
-    "articles_cles": ["CO 259d"],
+    "question": "Qu’est-ce qui justifie une réduction du loyer ?",
+    "réponse_courte": "Lorsque le logement est affecté par un défaut qui entrave ou restreint son usage normal, le locataire peut prétendre à une réduction de son loyer.",
+    "réponse_detail": "La réduction est un pourcentage du loyer net calculé en fonction de toutes les circonstances du cas concret : situation de l’immeuble, son âge, l’intensité et fréquence des nuisances. Peuvent donner droit à réduction : présence de travaux dans l’immeuble, dégât d’eau, peintures défraîchies, installations hors-service, chauffage insuffisant, absence de volets, manque de propreté dans les locaux communs. Le locataire doit prouver le défaut et la connaissance du bailleur.",
+    "fiches_liees": [
+      "bail_defaut_moisissure",
+      "bail_defaut_bruit"
+    ],
+    "articles_cles": [
+      "CO 259d"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Ne pas signaler le d\u00e9faut au bailleur — condition n\u00e9cessaire pour obtenir la r\u00e9duction", "Ne pas garder de preuves du d\u00e9faut (photos, vid\u00e9os, enregistrements)"],
+    "anti_erreurs": [
+      "Ne pas signaler le défaut au bailleur — condition nécessaire pour obtenir la réduction",
+      "Ne pas garder de preuves du défaut (photos, vidéos, enrégistrements)"
+    ],
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 24
   },
@@ -262,12 +376,20 @@
     "section": "en_cours",
     "numero": "2.8",
     "question": "Le bailleur peut-il augmenter le loyer ?",
-    "reponse_courte": "Oui. Le bailleur peut augmenter le loyer en cours de bail, \u00e0 certaines conditions.",
-    "reponse_detail": "La hausse doit respecter le pr\u00e9avis de r\u00e9siliation plus 10 jours pour entrer en vigueur au minimum \u00e0 la prochaine \u00e9ch\u00e9ance contractuelle. Une hausse doit toujours \u00eatre notifi\u00e9e sur une formule officielle qui indiquera le motif de la hausse et les d\u00e9lais pour s\u2019y opposer. Le bailleur doit mentionner pr\u00e9cis\u00e9ment le motif : travaux de r\u00e9novation, hausse des co\u00fbts, loyers du quartier ou rendement insuffisant. La hausse ne doit pas \u00eatre assortie d\u2019une menace de r\u00e9siliation. Le locataire peut s\u2019y opposer dans les 30 jours.",
-    "fiches_liees": ["bail_augmentation_loyer"],
-    "articles_cles": ["CO 269d", "CO 270b"],
+    "réponse_courte": "Oui. Le bailleur peut augmenter le loyer en cours de bail, à certaines conditions.",
+    "réponse_detail": "La hausse doit respecter le préavis de résiliation plus 10 jours pour entrer en vigueur au minimum à la prochaine échéance contractuelle. Une hausse doit toujours être notifiée sur une formule officielle qui indiquera le motif de la hausse et les délais pour s’y opposer. Le bailleur doit mentionner précisément le motif : travaux de rénovation, hausse des coûts, loyers du quartier ou rendement insuffisant. La hausse ne doit pas être assortie d’une menace de résiliation. Le locataire peut s’y opposer dans les 30 jours.",
+    "fiches_liees": [
+      "bail_augmentation_loyer"
+    ],
+    "articles_cles": [
+      "CO 269d",
+      "CO 270b"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Accepter une hausse sans formule officielle — elle est nulle", "Laisser passer le d\u00e9lai de 30 jours pour contester la hausse"],
+    "anti_erreurs": [
+      "Accepter une hausse sans formule officielle — elle est nulle",
+      "Laisser passer le délai de 30 jours pour contester la hausse"
+    ],
     "delai": "30 jours pour contester une hausse de loyer",
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 25
@@ -277,14 +399,20 @@
     "source_id": "asloca_kit",
     "section": "en_cours",
     "numero": "2.9",
-    "question": "Le locataire peut-il pr\u00e9tendre \u00e0 une baisse de loyer en cours de bail ?",
-    "reponse_courte": "Oui. Principalement en raison de la baisse du taux hypoth\u00e9caire, tout locataire peut demander \u00e0 son bailleur une baisse pour la prochaine \u00e9ch\u00e9ance contractuelle.",
-    "reponse_detail": "La baisse du taux hypoth\u00e9caire de r\u00e9f\u00e9rence en constitue la principale cause. D\u2019autres motifs sont possibles : rendement abusif, adaptation aux loyers pratiques dans le quartier, diminution des prestations. La demande doit parvenir au bailleur dans le d\u00e9lai de pr\u00e9avis contractuel ou l\u00e9gal. En cas de refus, le locataire peut saisir l\u2019autorit\u00e9 de conciliation dans les 30 jours. Une baisse n\u2019est donc jamais r\u00e9troactive. En pr\u00e9sence d\u2019un bail de dur\u00e9e d\u00e9termin\u00e9e, une baisse de loyer en cours de bail n\u2019est pas envisageable.",
-    "fiches_liees": ["bail_loyer_abusif"],
-    "articles_cles": ["CO 270a"],
+    "question": "Le locataire peut-il prétendre à une baisse de loyer en cours de bail ?",
+    "réponse_courte": "Oui. Principalement en raison de la baisse du taux hypothécaire, tout locataire peut demander à son bailleur une baisse pour la prochaine échéance contractuelle.",
+    "réponse_detail": "La baisse du taux hypothécaire de référence en constitue la principale cause. D’autres motifs sont possibles : rendement abusif, adaptation aux loyers pratiques dans le quartier, diminution des prestations. La demande doit parvenir au bailleur dans le délai de préavis contractuel ou légal. En cas de refus, le locataire peut saisir l’autorité de conciliation dans les 30 jours. Une baisse n’est donc jamais rétroactive. En présence d’un bail de durée déterminée, une baisse de loyer en cours de bail n’est pas envisageable.",
+    "fiches_liees": [
+      "bail_loyer_abusif"
+    ],
+    "articles_cles": [
+      "CO 270a"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Demander une baisse r\u00e9troactive — impossible, effet au plus t\u00f4t \u00e0 la prochaine \u00e9ch\u00e9ance"],
-    "delai": "30 jours pour saisir l\u2019autorit\u00e9 de conciliation en cas de refus",
+    "anti_erreurs": [
+      "Demander une baisse rétroactive — impossible, effet au plus tôt à la prochaine échéance"
+    ],
+    "delai": "30 jours pour saisir l’autorité de conciliation en cas de refus",
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 26
   },
@@ -293,14 +421,23 @@
     "source_id": "asloca_kit",
     "section": "en_cours",
     "numero": "2.10",
-    "question": "Quels sont mes droits face au d\u00e9compte de chauffage ?",
-    "reponse_courte": "Un d\u00e9compte de chauffage doit suivre des r\u00e8gles sp\u00e9cifiques et doit \u00eatre \u00e9tabli dans le respect des prescriptions cantonales et f\u00e9d\u00e9rales.",
-    "reponse_detail": "Lorsque le locataire partage l\u2019immeuble avec d\u2019autres personnes et qu\u2019il paie des acomptes de charges mensuels, le bailleur qui lui fait parvenir un d\u00e9compte de frais accessoires une fois par an, mais au plus tard dans les cinq ans faute de quoi le d\u00e9compte est prescrit. La r\u00e8gle principale est que le bailleur ne peut uniquement facturer les frais pr\u00e9vus par le contrat de bail. Le locataire peut demander au bailleur de recevoir les pi\u00e8ces justificatives, puis les faire contr\u00f4ler. En cas de litige, saisir l\u2019autorit\u00e9 de conciliation comp\u00e9tente.",
-    "fiches_liees": ["bail_frais_chauffage", "bail_charges_contestees"],
-    "articles_cles": ["CO 257a", "CO 257b"],
+    "question": "Quels sont mes droits face au décompte de chauffage ?",
+    "réponse_courte": "Un décompte de chauffage doit suivre des règles spécifiques et doit être établi dans le respect des prescriptions cantonales et fédérales.",
+    "réponse_detail": "Lorsque le locataire partage l’immeuble avec d’autres personnes et qu’il paie des acomptes de charges mensuels, le bailleur qui lui fait parvenir un décompte de frais accessoires une fois par an, mais au plus tard dans les cinq ans faute de quoi le décompte est prescrit. La règle principale est que le bailleur ne peut uniquement facturer les frais prévus par le contrat de bail. Le locataire peut demander au bailleur de recevoir les pièces justificatives, puis les faire contrôler. En cas de litige, saisir l’autorité de conciliation compétente.",
+    "fiches_liees": [
+      "bail_frais_chauffage",
+      "bail_charges_contestees"
+    ],
+    "articles_cles": [
+      "CO 257a",
+      "CO 257b"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Payer un d\u00e9compte sans v\u00e9rifier les pi\u00e8ces justificatives", "Laisser passer 5 ans — le d\u00e9compte est prescrit"],
-    "delai": "5 ans pour \u00e9tablir le d\u00e9compte de chauffage",
+    "anti_erreurs": [
+      "Payer un décompte sans vérifier les pièces justificatives",
+      "Laisser passer 5 ans — le décompte est prescrit"
+    ],
+    "delai": "5 ans pour établir le décompte de chauffage",
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 27
   },
@@ -309,13 +446,20 @@
     "source_id": "asloca_kit",
     "section": "fin",
     "numero": "3.1",
-    "question": "Comment r\u00e9silier le contrat de bail ?",
-    "reponse_courte": "Chaque partie peut r\u00e9silier le contrat pour la prochaine \u00e9ch\u00e9ance contractuelle, en respectant le d\u00e9lai imparti.",
-    "reponse_detail": "Le d\u00e9lai de pr\u00e9avis est en temps minimum qu\u2019il faut respecter pour annoncer la r\u00e9siliation. L\u2019\u00e9ch\u00e9ance est la date pour laquelle on le fait. Par exemple, si le contrat pr\u00e9voit un pr\u00e9avis de 3 mois (d\u00e9lai) pour le 30 septembre (terme ou \u00e9ch\u00e9ance), elle devra \u00eatre re\u00e7ue par l\u2019autre partie au plus tard le 30 juin. Une r\u00e9siliation doit obligatoirement respecter la forme \u00e9crite et \u00eatre sign\u00e9e par tous les locataires figurant sur le contrat de bail. Le bailleur doit notifier le cong\u00e9 \u00e0 tous les locataires au moyen d\u2019une formule officielle.",
-    "fiches_liees": ["bail_resiliation_conteste"],
-    "articles_cles": ["CO 266a", "CO 266l"],
+    "question": "Comment résilier le contrat de bail ?",
+    "réponse_courte": "Chaque partie peut résilier le contrat pour la prochaine échéance contractuelle, en respectant le délai imparti.",
+    "réponse_detail": "Le délai de préavis est en temps minimum qu’il faut respecter pour annoncer la résiliation. L’échéance est la date pour laquelle on le fait. Par exemple, si le contrat prévoit un préavis de 3 mois (délai) pour le 30 septembre (terme ou échéance), elle devra être reçue par l’autre partie au plus tard le 30 juin. Une résiliation doit obligatoirement respecter la forme écrite et être signée par tous les locataires figurant sur le contrat de bail. Le bailleur doit notifier le congé à tous les locataires au moyen d’une formule officielle.",
+    "fiches_liees": [
+      "bail_résiliation_conteste"
+    ],
+    "articles_cles": [
+      "CO 266a",
+      "CO 266l"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["R\u00e9silier trop tard (apr\u00e8s le d\u00e9lai de pr\u00e9avis) — le cong\u00e9 sera report\u00e9 \u00e0 la prochaine \u00e9ch\u00e9ance"],
+    "anti_erreurs": [
+      "Résilier trop tard (après le délai de préavis) — le congé sera reporté à la prochaine échéance"
+    ],
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 30
   },
@@ -324,14 +468,22 @@
     "source_id": "asloca_kit",
     "section": "fin",
     "numero": "3.2",
-    "question": "Comment se d\u00e9fendre face \u00e0 une r\u00e9siliation ?",
-    "reponse_courte": "Le locataire qui re\u00e7oit la r\u00e9siliation de son contrat de bail peut en demander l\u2019annulation ou une prolongation.",
-    "reponse_detail": "La loi offre aux locataires une protection en cas de r\u00e9siliation. Le cong\u00e9 doit \u00eatre contest\u00e9 dans les 30 jours aupr\u00e8s de l\u2019autorit\u00e9 de conciliation. Un cong\u00e9 sera annul\u00e9 s\u2019il est contraire aux r\u00e8gles de la bonne foi (cong\u00e9 par vengeance, en exc\u00e8s de mauvaise humeur, li\u00e9 \u00e0 une proc\u00e9dure judiciaire dans les 3 ans). Si le cong\u00e9 est valable, le locataire peut demander un d\u00e9lai suppl\u00e9mentaire (prolongation) — ne peut d\u00e9passer 4 ans pour les locaux d\u2019habitation. La prolongation est d\u00e9termin\u00e9e en fonction du march\u00e9, de la situation personnelle, familiale et financi\u00e8re.",
-    "fiches_liees": ["bail_resiliation_conteste", "bail_prolongation"],
-    "articles_cles": ["CO 271", "CO 272"],
+    "question": "Comment se défendre face à une résiliation ?",
+    "réponse_courte": "Le locataire qui reçoit la résiliation de son contrat de bail peut en demander l’annulation ou une prolongation.",
+    "réponse_detail": "La loi offre aux locataires une protection en cas de résiliation. Le congé doit être contesté dans les 30 jours auprès de l’autorité de conciliation. Un congé sera annulé s’il est contraire aux règles de la bonne foi (congé par vengeance, en excès de mauvaise humeur, lié à une procédure judiciaire dans les 3 ans). Si le congé est valable, le locataire peut demander un délai supplémentaire (prolongation) — ne peut dépasser 4 ans pour les locaux d’habitation. La prolongation est déterminée en fonction du marché, de la situation personnelle, familiale et financière.",
+    "fiches_liees": [
+      "bail_résiliation_conteste",
+      "bail_prolongation"
+    ],
+    "articles_cles": [
+      "CO 271",
+      "CO 272"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Laisser passer le d\u00e9lai de 30 jours pour contester le cong\u00e9 — apr\u00e8s il est trop tard"],
-    "delai": "30 jours pour contester un cong\u00e9",
+    "anti_erreurs": [
+      "Laisser passer le délai de 30 jours pour contester le congé — après il est trop tard"
+    ],
+    "delai": "30 jours pour contester un congé",
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 31
   },
@@ -340,13 +492,20 @@
     "source_id": "asloca_kit",
     "section": "fin",
     "numero": "3.3",
-    "question": "Qu\u2019arrive-t-il \u00e0 l\u2019\u00e9ch\u00e9ance des baux de dur\u00e9e d\u00e9termin\u00e9e ?",
-    "reponse_courte": "Un bail de dur\u00e9e d\u00e9termin\u00e9e prend automatiquement fin \u00e0 la date pr\u00e9alablement convenue par les parties, sauf dans certaines hypoth\u00e8ses.",
-    "reponse_detail": "Le locataire peut d\u00e9poser une demande de prolongation aupr\u00e8s de l\u2019autorit\u00e9 de conciliation au plus tard 60 jours avant la fin du contrat. Lorsque le locataire doute de la l\u00e9gitimit\u00e9 du bail \u00e0 dur\u00e9e d\u00e9termin\u00e9e, il peut saisir l\u2019autorit\u00e9 de conciliation pour le faire requalifier en bail de dur\u00e9e ind\u00e9termin\u00e9e. Il arrive parfois que le locataire ne quitte pas le logement \u00e0 l\u2019expiration du contrat et continue \u00e0 payer son loyer sans que le bailleur ne s\u2019y oppose — dans ce cas, le contrat est reconduit tacitement.",
-    "fiches_liees": ["bail_prolongation"],
-    "articles_cles": ["CO 255", "CO 272"],
+    "question": "Qu’arrive-t-il à l’échéance des baux de durée déterminée ?",
+    "réponse_courte": "Un bail de durée déterminée prend automatiquement fin à la date préalablement convenue par les parties, sauf dans certaines hypothèses.",
+    "réponse_detail": "Le locataire peut déposer une demande de prolongation auprès de l’autorité de conciliation au plus tard 60 jours avant la fin du contrat. Lorsque le locataire doute de la légitimité du bail à durée déterminée, il peut saisir l’autorité de conciliation pour le faire requalifier en bail de durée indéterminée. Il arrive parfois que le locataire ne quitte pas le logement à l’expiration du contrat et continue à payer son loyer sans que le bailleur ne s’y oppose — dans ce cas, le contrat est reconduit tacitement.",
+    "fiches_liees": [
+      "bail_prolongation"
+    ],
+    "articles_cles": [
+      "CO 255",
+      "CO 272"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Oublier le d\u00e9lai de 60 jours avant la fin du contrat pour demander une prolongation"],
+    "anti_erreurs": [
+      "Oublier le délai de 60 jours avant la fin du contrat pour demander une prolongation"
+    ],
     "delai": "60 jours avant la fin du bail pour demander une prolongation",
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 32
@@ -356,14 +515,24 @@
     "source_id": "asloca_kit",
     "section": "fin",
     "numero": "3.4",
-    "question": "Le bailleur peut-il r\u00e9silier hors \u00e9ch\u00e9ance ?",
-    "reponse_courte": "En principe, le bailleur n\u2019a pas la possibilit\u00e9 de r\u00e9silier le contrat avant l\u2019\u00e9ch\u00e9ance contractuelle, sauf dans certains cas particuliers.",
-    "reponse_detail": "Les cas de r\u00e9siliation extraordinaire sont principalement : non-paiement du loyer (pr\u00e9avis de 30 jours apr\u00e8s un ultime d\u00e9lai de paiement de 30 jours), violation du devoir de diligence (comportement insupportable pour les autres personnes habitant l\u2019immeuble), faillite du locataire. Lorsque le locataire re\u00e7oit ce type de cong\u00e9, il dispose d\u2019un d\u00e9lai de 30 jours pour le contester. Si le cong\u00e9 extraordinaire est reconnu valide, le locataire n\u2019aura droit \u00e0 aucune prolongation.",
-    "fiches_liees": ["bail_resiliation_conteste", "bail_expulsion", "bail_loyers_impayes"],
-    "articles_cles": ["CO 257d", "CO 266g", "CO 266h"],
+    "question": "Le bailleur peut-il résilier hors échéance ?",
+    "réponse_courte": "En principe, le bailleur n’a pas la possibilité de résilier le contrat avant l’échéance contractuelle, sauf dans certains cas particuliers.",
+    "réponse_detail": "Les cas de résiliation extraordinaire sont principalement : non-paiement du loyer (préavis de 30 jours après un ultime délai de paiement de 30 jours), violation du devoir de diligence (comportement insupportable pour les autres personnes habitant l’immeuble), faillite du locataire. Lorsque le locataire reçoit ce type de congé, il dispose d’un délai de 30 jours pour le contester. Si le congé extraordinaire est reconnu valide, le locataire n’aura droit à aucune prolongation.",
+    "fiches_liees": [
+      "bail_résiliation_conteste",
+      "bail_expulsion",
+      "bail_loyers_impayés"
+    ],
+    "articles_cles": [
+      "CO 257d",
+      "CO 266g",
+      "CO 266h"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Ignorer un cong\u00e9 extraordinaire — les d\u00e9lais sont tr\u00e8s courts"],
-    "delai": "30 jours pour contester un cong\u00e9 extraordinaire",
+    "anti_erreurs": [
+      "Ignorer un congé extraordinaire — les délais sont très courts"
+    ],
+    "delai": "30 jours pour contester un congé extraordinaire",
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 33
   },
@@ -372,14 +541,20 @@
     "source_id": "asloca_kit",
     "section": "fin",
     "numero": "3.5",
-    "question": "Comment se d\u00e9partir du contrat de bail avant l\u2019\u00e9ch\u00e9ance ?",
-    "reponse_courte": "Le locataire qui souhaite quitter son logement avant l\u2019\u00e9ch\u00e9ance doit trouver un locataire de remplacement.",
-    "reponse_detail": "La loi accorde au locataire la possibilit\u00e9 de se d\u00e9partir du contrat de bail dans un d\u00e9lai de 30 jours pour le 15 ou la fin du mois, pour autant qu\u2019il pr\u00e9sente au bailleur un candidat solvable, c\u2019est-\u00e0-dire \u00e0 m\u00eame de payer le loyer, pr\u00eat \u00e0 reprendre le bail aux m\u00eames conditions. Un seul candidat suffit. Le bailleur doit avoir au moins 30 jours pour examiner le dossier. S\u2019il ne trouve pas de rempla\u00e7ant, le locataire est tenu de s\u2019acquitter des loyers jusqu\u2019\u00e0 la relocation de l\u2019appartement, mais au plus tard \u00e0 la prochaine \u00e9ch\u00e9ance contractuelle.",
-    "fiches_liees": ["bail_droit_retractation"],
-    "articles_cles": ["CO 264"],
+    "question": "Comment se départir du contrat de bail avant l’échéance ?",
+    "réponse_courte": "Le locataire qui souhaite quitter son logement avant l’échéance doit trouver un locataire de remplacement.",
+    "réponse_detail": "La loi accorde au locataire la possibilité de se départir du contrat de bail dans un délai de 30 jours pour le 15 ou la fin du mois, pour autant qu’il présente au bailleur un candidat solvable, c’est-à-dire à même de payer le loyer, prêt à reprendre le bail aux mêmes conditions. Un seul candidat suffit. Le bailleur doit avoir au moins 30 jours pour examiner le dossier. S’il ne trouve pas de remplaçant, le locataire est tenu de s’acquitter des loyers jusqu’à la relocation de l’appartement, mais au plus tard à la prochaine échéance contractuelle.",
+    "fiches_liees": [
+      "bail_droit_retractation"
+    ],
+    "articles_cles": [
+      "CO 264"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Partir sans pr\u00e9senter de rempla\u00e7ant — obligation de payer le loyer jusqu\u2019\u00e0 la prochaine \u00e9ch\u00e9ance"],
-    "delai": "30 jours de pr\u00e9avis avec rempla\u00e7ant",
+    "anti_erreurs": [
+      "Partir sans présenter de remplaçant — obligation de payer le loyer jusqu’à la prochaine échéance"
+    ],
+    "delai": "30 jours de préavis avec remplaçant",
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 34
   },
@@ -388,14 +563,23 @@
     "source_id": "asloca_kit",
     "section": "fin",
     "numero": "3.6",
-    "question": "Que faut-il savoir sur l\u2019\u00e9tat des lieux de sortie ?",
-    "reponse_courte": "L\u2019\u00e9tat des lieux de sortie est une inspection du logement \u00e0 la fin du contrat de bail. Il a pour but de constater par \u00e9crit l\u2019\u00e9tat des locaux.",
-    "reponse_detail": "Le locataire a l\u2019obligation de restituer le logement au bailleur dans le m\u00eame \u00e9tat qu\u2019il l\u2019a re\u00e7u, sous r\u00e9serve de l\u2019usure normale. Le locataire n\u2019est pas tenu de rem\u00e9dier aux d\u00e9fauts provenant de l\u2019usure normale. Il doit par exemple reboucher les trous dans les murs et remettre les \u00e9l\u00e9ments du r\u00e9frig\u00e9rateur. Toutes les parties au contrat doivent \u00eatre pr\u00e9sentes \u00e0 l\u2019\u00e9tat des lieux et le constater. Les tablettes \u00e9lectroniques sont de plus en plus utilis\u00e9es. Le locataire n\u2019a aucune obligation de signer le proc\u00e8s-verbal. Si le bailleur souhaite mettre \u00e0 charge du locataire certains dommages, il doit le lui parvenir, par courrier recommand\u00e9, dans les 2 \u00e0 3 jours ouvrables qui suivent l\u2019\u00e9tat des lieux de sortie.",
-    "fiches_liees": ["bail_etat_des_lieux", "bail_etat_lieux_conteste"],
-    "articles_cles": ["CO 267", "CO 267a"],
+    "question": "Que faut-il savoir sur l’état des lieux de sortie ?",
+    "réponse_courte": "L’état des lieux de sortie est une inspection du logement à la fin du contrat de bail. Il a pour but de constater par écrit l’état des locaux.",
+    "réponse_detail": "Le locataire a l’obligation de restituér le logement au bailleur dans le même état qu’il l’a reçu, sous réserve de l’usure normale. Le locataire n’est pas tenu de remédier aux défauts provenant de l’usure normale. Il doit par exemple reboucher les trous dans les murs et remettre les éléments du réfrigérateur. Toutes les parties au contrat doivent être présentes à l’état des lieux et le constater. Les tablettes électroniques sont de plus en plus utilisées. Le locataire n’a aucune obligation de signer le procès-verbal. Si le bailleur souhaite mettre à charge du locataire certains dommages, il doit le lui parvenir, par courrier recommandé, dans les 2 à 3 jours ouvrables qui suivent l’état des lieux de sortie.",
+    "fiches_liees": [
+      "bail_etat_des_lieux",
+      "bail_etat_lieux_conteste"
+    ],
+    "articles_cles": [
+      "CO 267",
+      "CO 267a"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Signer le proc\u00e8s-verbal sans le lire attentivement", "Ne pas distinguer usure normale vs d\u00e9g\u00e2ts — seuls les d\u00e9g\u00e2ts sont \u00e0 charge du locataire"],
-    "delai": "2-3 jours ouvrables pour le bailleur pour envoyer la liste des d\u00e9fauts",
+    "anti_erreurs": [
+      "Signer le procès-verbal sans le lire attentivement",
+      "Ne pas distinguer usure normale vs dégâts — seuls les dégâts sont à charge du locataire"
+    ],
+    "delai": "2-3 jours ouvrables pour le bailleur pour envoyer la liste des défauts",
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 35
   },
@@ -404,13 +588,19 @@
     "source_id": "asloca_kit",
     "section": "fin",
     "numero": "3.7",
-    "question": "Les frais de r\u00e9siliation de bail sont-ils dus ?",
-    "reponse_courte": "Non, le bailleur ne peut pas imposer au locataire des frais administratifs en raison de la r\u00e9siliation du contrat, m\u00eame si ce dernier le pr\u00e9voit.",
-    "reponse_detail": "Il est fr\u00e9quent que le bailleur, par le biais d\u2019une g\u00e9rance, stipule dans le contrat de bail que le locataire est tenu de payer des frais, g\u00e9n\u00e9ralement autour d\u2019une centaine de francs, s\u2019il proc\u00e8de \u00e0 la restitution anticip\u00e9e de la chose lou\u00e9e. Le Tribunal f\u00e9d\u00e9ral s\u2019est pench\u00e9 sur la question et a statu\u00e9 que le bailleur ne peut pas l\u00e9galement imposer le paiement de ces frais au locataire d\u00e9sirant remettre son logement.",
-    "fiches_liees": ["bail_resiliation_conteste"],
-    "articles_cles": ["CO 264"],
+    "question": "Les frais de résiliation de bail sont-ils dus ?",
+    "réponse_courte": "Non, le bailleur ne peut pas imposer au locataire des frais administratifs en raison de la résiliation du contrat, même si ce dernier le prévoit.",
+    "réponse_detail": "Il est fréquent que le bailleur, par le biais d’une gérance, stipule dans le contrat de bail que le locataire est tenu de payer des frais, généralement autour d’une centaine de francs, s’il procède à la restitution anticipée de la chose louée. Le Tribunal fédéral s’est penché sur la question et a statué que le bailleur ne peut pas légalement imposer le paiement de ces frais au locataire désirant remettre son logement.",
+    "fiches_liees": [
+      "bail_résiliation_conteste"
+    ],
+    "articles_cles": [
+      "CO 264"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Payer des frais de r\u00e9siliation — le TF a jug\u00e9 que le bailleur ne peut pas les imposer"],
+    "anti_erreurs": [
+      "Payer des frais de résiliation — le TF a jugé que le bailleur ne peut pas les imposer"
+    ],
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 36
   },
@@ -419,14 +609,21 @@
     "source_id": "asloca_kit",
     "section": "fin",
     "numero": "3.8",
-    "question": "Quand le locataire peut-il r\u00e9cup\u00e9rer la garantie bancaire ?",
-    "reponse_courte": "La garantie bancaire est restitu\u00e9e lorsque le bailleur donne son accord, qu\u2019un jugement le pr\u00e9voit ou si une ann\u00e9e s\u2019est \u00e9coul\u00e9e depuis la fin du bail.",
-    "reponse_detail": "Lorsque le contrat de bail prend fin, la banque est tenue de restituer la garantie au locataire : si le bailleur donne son accord (total ou partiel), si un jugement d\u00e9finitif l\u2019ordonne, ou lorsqu\u2019une ann\u00e9e s\u2019est \u00e9coul\u00e9e depuis la fin du contrat et que le bailleur n\u2019a pas saisi l\u2019autorit\u00e9 de conciliation. Certains bailleurs introduisent des poursuites pour tenter de faire obstacle \u00e0 la lib\u00e9ration. Dans le canton de Vaud, ce proc\u00e9d\u00e9 n\u2019est pas suffisant — la banque doit lib\u00e9rer la garantie sans consulter le bailleur. Si la garantie a \u00e9t\u00e9 constitu\u00e9e via Swisscaution ou Firstcaution, aucune somme ne sera restitu\u00e9e au locataire.",
-    "fiches_liees": ["bail_depot_garantie"],
-    "articles_cles": ["CO 257e"],
+    "question": "Quand le locataire peut-il récupérer la garantie bancaire ?",
+    "réponse_courte": "La garantie bancaire est restituée lorsque le bailleur donne son accord, qu’un jugement le prévoit ou si une année s’est écoulée depuis la fin du bail.",
+    "réponse_detail": "Lorsque le contrat de bail prend fin, la banque est tenue de restituér la garantie au locataire : si le bailleur donne son accord (total ou partiel), si un jugement définitif l’ordonne, ou lorsqu’une année s’est écoulée depuis la fin du contrat et que le bailleur n’a pas saisi l’autorité de conciliation. Certains bailleurs introduisent des poursuites pour tenter de faire obstacle à la libération. Dans le canton de Vaud, ce procédé n’est pas suffisant — la banque doit libérer la garantie sans consulter le bailleur. Si la garantie a été constituée via Swisscaution ou Firstcaution, aucune somme ne sera restituée au locataire.",
+    "fiches_liees": [
+      "bail_depot_garantie"
+    ],
+    "articles_cles": [
+      "CO 257e"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Attendre passivement la lib\u00e9ration de la garantie — demander activement apr\u00e8s 1 an si le bailleur ne r\u00e9pond pas", "Confondre garantie bancaire et Swisscaution — avec Swisscaution, aucun remboursement"],
-    "delai": "1 an apr\u00e8s la fin du bail pour la lib\u00e9ration automatique",
+    "anti_erreurs": [
+      "Attendre passivement la libération de la garantie — demander activement après 1 an si le bailleur ne répond pas",
+      "Confondre garantie bancaire et Swisscaution — avec Swisscaution, aucun remboursement"
+    ],
+    "delai": "1 an après la fin du bail pour la libération automatique",
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 37
   },
@@ -435,13 +632,19 @@
     "source_id": "asloca_kit",
     "section": "fin",
     "numero": "3.9",
-    "question": "Le bailleur peut-il \u00e9mettre des pr\u00e9tentions envers le locataire plusieurs mois apr\u00e8s la fin du contrat de bail ?",
-    "reponse_courte": "Oui. La dur\u00e9e d\u00e9pend du d\u00e9lai de prescription applicable \u00e0 la pr\u00e9tention du bailleur.",
-    "reponse_detail": "En principe, le bailleur et le locataire r\u00e8glent leurs dettes respectives lors de l\u2019\u00e9tat des lieux de sortie. Si des d\u00e9fauts sont constat\u00e9s \u00e0 la restitution des cl\u00e9s, le bailleur doit faire parvenir au locataire la liste des frais qu\u2019il entend lui mettre \u00e0 charge dans les 2 \u00e0 3 jours ouvrables. Certains d\u00e9fauts cach\u00e9s ne peuvent \u00eatre d\u00e9couverts que plus tard. Le bailleur peut agir d\u00e8s qu\u2019il a connaissance du d\u00e9faut, mais au plus tard 10 ans apr\u00e8s la fin du contrat de bail. Il ne peut pas mettre \u00e0 charge du locataire des frais de nettoyage jamais mentionn\u00e9s lors de l\u2019\u00e9tat des lieux de sortie.",
-    "fiches_liees": ["bail_etat_lieux_conteste"],
-    "articles_cles": ["CO 267a"],
+    "question": "Le bailleur peut-il émettre des prétentions envers le locataire plusieurs mois après la fin du contrat de bail ?",
+    "réponse_courte": "Oui. La durée dépend du délai de prescription applicable à la prétention du bailleur.",
+    "réponse_detail": "En principe, le bailleur et le locataire règlent leurs dettes respectives lors de l’état des lieux de sortie. Si des défauts sont constatés à la restitution des clés, le bailleur doit faire parvenir au locataire la liste des frais qu’il entend lui mettre à charge dans les 2 à 3 jours ouvrables. Certains défauts cachés ne peuvent être découverts que plus tard. Le bailleur peut agir dès qu’il a connaissance du défaut, mais au plus tard 10 ans après la fin du contrat de bail. Il ne peut pas mettre à charge du locataire des frais de nettoyage jamais mentionnés lors de l’état des lieux de sortie.",
+    "fiches_liees": [
+      "bail_etat_lieux_conteste"
+    ],
+    "articles_cles": [
+      "CO 267a"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Croire que tout est r\u00e9gl\u00e9 apr\u00e8s l\u2019\u00e9tat des lieux — le bailleur peut agir jusqu\u2019\u00e0 10 ans pour les d\u00e9fauts cach\u00e9s"],
+    "anti_erreurs": [
+      "Croire que tout est réglé après l’état des lieux — le bailleur peut agir jusqu’à 10 ans pour les défauts cachés"
+    ],
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 38
   },
@@ -450,13 +653,21 @@
     "source_id": "asloca_kit",
     "section": "fin",
     "numero": "3.10",
-    "question": "Comment r\u00e9agir \u00e0 la r\u00e9ception d\u2019un commandement de payer ?",
-    "reponse_courte": "Si le bailleur envoie un commandement de payer au locataire, ce dernier doit formuler une opposition totale dans le but de sauvegarder ses droits.",
-    "reponse_detail": "\u00c0 la fin du contrat de bail, le bailleur qui d\u00e9sire mettre \u00e0 charge du locataire le paiement de certains frais peut d\u00e9cider de notifier un commandement de payer. Un commandement de payer signifie que le bailleur exige du locataire le paiement d\u2019une somme, peu importe si cette derni\u00e8re est justifi\u00e9e ou non. En faisant opposition totale, le locataire oblige alors le bailleur \u00e0 saisir l\u2019autorit\u00e9 comp\u00e9tente en mati\u00e8re de bail \u00e0 loyer afin de prouver que la somme demand\u00e9e est effectivement due.",
-    "fiches_liees": ["bail_loyers_impayes", "bail_expulsion"],
-    "articles_cles": ["LP 74", "LP 75"],
+    "question": "Comment réagir à la réception d’un commandement de payer ?",
+    "réponse_courte": "Si le bailleur envoie un commandement de payer au locataire, ce dernier doit formuler une opposition totale dans le but de sauvegarder ses droits.",
+    "réponse_detail": "À la fin du contrat de bail, le bailleur qui désire mettre à charge du locataire le paiement de certains frais peut décider de notifier un commandement de payer. Un commandement de payer signifie que le bailleur exige du locataire le paiement d’une somme, peu importe si cette dernière est justifiée ou non. En faisant opposition totale, le locataire oblige alors le bailleur à saisir l’autorité compétente en matière de bail à loyer afin de prouver que la somme demandée est effectivement due.",
+    "fiches_liees": [
+      "bail_loyers_impayés",
+      "bail_expulsion"
+    ],
+    "articles_cles": [
+      "LP 74",
+      "LP 75"
+    ],
     "domaine": "bail",
-    "anti_erreurs": ["Ne pas faire opposition au commandement de payer — le bailleur pourra continuer la poursuite sans avoir \u00e0 prouver sa cr\u00e9ance"],
+    "anti_erreurs": [
+      "Ne pas faire opposition au commandement de payer — le bailleur pourra continuer la poursuite sans avoir à prouver sa créance"
+    ],
     "delai": "10 jours pour faire opposition au commandement de payer",
     "source_url": "https://vaud.asloca.ch/sites/vaud.asloca.ch/files/2022-12/10_KIT-WEB.pdf",
     "page": 39

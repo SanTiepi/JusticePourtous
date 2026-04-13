@@ -3,27 +3,52 @@
     "id": "violence_domestique",
     "domaine": "violence",
     "sousDomaine": "domestique",
-    "tags": ["violence", "domestique", "conjugale", "eloignement", "LAVI", "protection", "mesures"],
+    "tags": [
+      "violence",
+      "domestique",
+      "conjugale",
+      "eloignement",
+      "LAVI",
+      "protection",
+      "mesures"
+    ],
     "questions": [
       {
         "id": "q1",
         "text": "Êtes-vous victime ou temoin ?",
-        "options": ["victime directe", "temoin / proche", "professionnel qui accompagne"]
+        "options": [
+          "victime directe",
+          "temoin / proche",
+          "professionnel qui accompagne"
+        ]
       },
       {
         "id": "q2",
         "text": "Quel type de violence ?",
-        "options": ["physique", "psychologique", "sexuelle", "economique", "multiple"]
+        "options": [
+          "physique",
+          "psychologique",
+          "sexuelle",
+          "economique",
+          "multiple"
+        ]
       },
       {
         "id": "q3",
         "text": "Êtes-vous en danger immédiat ?",
-        "options": ["oui", "non, mais j'ai peur", "non"]
+        "options": [
+          "oui",
+          "non, mais j'ai peur",
+          "non"
+        ]
       },
       {
         "id": "q4",
         "text": "Vivez-vous encore avec l'auteur ?",
-        "options": ["oui", "non"]
+        "options": [
+          "oui",
+          "non"
+        ]
       },
       {
         "id": "q5",
@@ -31,28 +56,73 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "La violence domestique est prise en charge par plusieurs mecanismes juridiques en droit suisse. L'art. 28b CC permet de demander au juge civil des mesures d'eloignement : interdiction d'approcher, de contacter, ou d'acceder au logement commun. La police cantonale peut prononcer une expulsion immédiate de l'auteur pour 10 a 14 jours selon les cantons (lois cantonales sur les violences domestiques). La LAVI (loi sur l'aide aux victimes, art. 1-2) garantit aux victimes : un soutien gratuit et confidentiel par un centre LAVI, une aide financiere d'urgence, une aide a plus long terme (frais d'avocat, therapie, relogement), et le droit a une indemnisation (art. 19-20 LAVI). En cas de danger immédiat, appelez le 117 (police). Les centres LAVI sont accessibles 24h/24 par telephone. Si les époux sont maries, des MPUC (mesures protectrices) peuvent etre demandees en urgence (art. 172 ss CC). La procédure pénale est indépendante : la violence conjugale est poursuivie d'office pour les lesions corporelles simples (art. 123 ch. 2 CP) et les voies de fait répétées (art. 126 al. 2 CP).",
+    "réponse": {
+      "explication": "La violence domestique est prise en charge par plusieurs mecanismes juridiques en droit suisse. L'art. 28b CC permet de demander au juge civil des mesures d'eloignement : interdiction d'approcher, de contacter, ou d'acceder au logement commun. La police cantonale peut prononcer une expulsion immédiate de l'auteur pour 10 a 14 jours selon les cantons (lois cantonales sur les violences domestiques). La LAVI (loi sur l'aide aux victimes, art. 1-2) garantit aux victimes : un soutien gratuit et confidentiel par un centre LAVI, une aide financiere d'urgence, une aide a plus long terme (frais d'avocat, therapie, relogement), et le droit a une indemnisation (art. 19-20 LAVI). En cas de danger immédiat, appeléz le 117 (police). Les centres LAVI sont accessibles 24h/24 par telephone. Si les époux sont maries, des MPUC (mesures protectrices) peuvent etre demandees en urgence (art. 172 ss CC). La procédure pénale est indépendante : la violence conjugale est poursuivie d'office pour les lésions corporelles simples (art. 123 ch. 2 CP) et les voies de fait répétées (art. 126 al. 2 CP).",
       "articles": [
-        { "ref": "CC 28b", "titre": "Violence, menaces, harcelement — protection", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_28_b" },
-        { "ref": "LAVI 1-2", "titre": "But et champ d'application de l'aide aux victimes", "lien": "https://www.fedlex.admin.ch/eli/cc/2008/232/fr#art_1" },
-        { "ref": "CP 123 ch. 2", "titre": "Lesions corporelles simples — poursuite d'office (conjoint)", "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_123" },
-        { "ref": "CP 126 al. 2", "titre": "Voies de fait répétées — poursuite d'office", "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_126" }
+        {
+          "ref": "CC 28b",
+          "titre": "Violence, menaces, harcélément — protection",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_28_b"
+        },
+        {
+          "ref": "LAVI 1-2",
+          "titre": "But et champ d'application de l'aide aux victimes",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2008/232/fr#art_1"
+        },
+        {
+          "ref": "CP 123 ch. 2",
+          "titre": "Lesions corporelles simples — poursuite d'office (conjoint)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_123"
+        },
+        {
+          "ref": "CP 126 al. 2",
+          "titre": "Voies de fait répétées — poursuite d'office",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_126"
+        }
       ],
       "jurisprudence": [
-        { "ref": "ATF 134 II 235", "resume": "L'expulsion du logement commun au sens de l'art. 28b CC peut etre ordonnee en procédure superprovisionnelle si la victime est en danger." },
-        { "ref": "TF 6B_1072/2018", "resume": "Les violences psychologiques répétées peuvent constituer des voies de fait au sens de l'art. 126 CP, même sans lesion physique." }
+        {
+          "ref": "ATF 134 II 235",
+          "resume": "L'expulsion du logement commun au sens de l'art. 28b CC peut etre ordonnee en procédure superprovisionnelle si la victime est en danger."
+        },
+        {
+          "ref": "TF 6B_1072/2018",
+          "resume": "Les violences psychologiques répétées peuvent constituer des voies de fait au sens de l'art. 126 CP, même sans lésion physique."
+        }
       ],
       "modeleLettre": "",
       "services": [
-        { "nom": "Centre LAVI VD (Profa)", "tel": "021 631 03 31", "url": "https://www.profa.ch/lavi", "canton": "VD" },
-        { "nom": "Centre LAVI GE", "tel": "022 320 01 02", "url": "https://www.centrelavi-ge.ch", "canton": "GE" },
-        { "nom": "Ligne d'urgence violence 24h", "tel": "143", "url": "https://www.143.ch", "canton": "VD" },
-        { "nom": "Police (urgence)", "tel": "117", "canton": "VD" },
-        { "nom": "Solidarite femmes (foyer VD)", "tel": "021 323 46 56", "canton": "VD" }
+        {
+          "nom": "Centre LAVI VD (Profa)",
+          "tel": "021 631 03 31",
+          "url": "https://www.profa.ch/lavi",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre LAVI GE",
+          "tel": "022 320 01 02",
+          "url": "https://www.centrelavi-ge.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ligne d'urgence violence 24h",
+          "tel": "143",
+          "url": "https://www.143.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Police (urgence)",
+          "tel": "117",
+          "canton": "VD"
+        },
+        {
+          "nom": "Solidarite femmes (foyer VD)",
+          "tel": "021 323 46 56",
+          "canton": "VD"
+        }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC/LAVI/CP état 2025-01-01",
@@ -66,7 +136,7 @@
     ],
     "negative_signals": [
       "conflit de couple verbal ponctuel sans violence",
-      "violence au travail par un collegue (harcelement professionnel)",
+      "violence au travail par un collegue (harcélément professionnel)",
       "violence entre voisins sans lien conjugal"
     ],
     "required_facts": [
@@ -80,22 +150,40 @@
     "id": "violence_foyer_accueil",
     "domaine": "violence",
     "sousDomaine": "foyer",
-    "tags": ["foyer", "accueil", "hebergement", "femmes", "enfants", "confidentialite", "refuge"],
+    "tags": [
+      "foyer",
+      "accueil",
+      "hébergement",
+      "femmes",
+      "enfants",
+      "confidentialite",
+      "refuge"
+    ],
     "questions": [
       {
         "id": "q1",
         "text": "Pour qui cherchez-vous un foyer ?",
-        "options": ["pour moi seul(e)", "pour moi et mes enfants", "pour quelqu'un d'autre"]
+        "options": [
+          "pour moi seul(e)",
+          "pour moi et mes enfants",
+          "pour quelqu'un d'autre"
+        ]
       },
       {
         "id": "q2",
         "text": "Êtes-vous en danger immédiat ?",
-        "options": ["oui", "non, mais je planifie un depart"]
+        "options": [
+          "oui",
+          "non, mais je planifie un depart"
+        ]
       },
       {
         "id": "q3",
         "text": "Avez-vous déjà contacte un centre LAVI ?",
-        "options": ["oui", "non"]
+        "options": [
+          "oui",
+          "non"
+        ]
       },
       {
         "id": "q4",
@@ -103,26 +191,64 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "Les foyers d'accueil pour victimes de violence domestique offrent un hebergement securise et confidentiel, generalement pour les femmes et leurs enfants. L'adresse est strictement secrete. L'admission se fait directement ou via le Centre LAVI, la police, ou un service social. Les prestations incluent : hebergement gratuit ou a faible cout, accompagnement psychosocial, aide aux demarches juridiques et administratives, soutien educatif pour les enfants. La durée de sejour est generalement de quelques semaines a quelques mois. Le financement est assuré par les cantons et la LAVI. Les droits des residents : confidentialite absolue de l'adresse, droit de quitter a tout moment, aide au relogement en sortie. Les enfants continuent leur scolarite (avec mise en place de mesures de protection). En VD, Solidarite femmes gere le foyer Malley-Prairie. En GE, Au Coeur des Grottes et la Fondation Foyer Arabelle accueillent les victimes.",
+    "réponse": {
+      "explication": "Les foyers d'accueil pour victimes de violence domestique offrent un hébergement securise et confidentiel, généralement pour les femmes et leurs enfants. L'adresse est strictement secrete. L'admission se fait directement ou via le Centre LAVI, la police, ou un service social. Les prestations incluent : hébergement gratuit ou a faible cout, accompagnement psychosocial, aide aux demarches juridiques et administratives, soutien educatif pour les enfants. La durée de sejour est généralement de quelques semaines a quelques mois. Le financement est assuré par les cantons et la LAVI. Les droits des residents : confidentialite absolue de l'adresse, droit de quitter a tout moment, aide au relogement en sortie. Les enfants continuent leur scolarite (avec mise en place de mesures de protection). En VD, Solidarite femmes gere le foyer Malley-Prairie. En GE, Au Coeur des Grottes et la Fondation Foyer Arabelle accueillent les victimes.",
       "articles": [
-        { "ref": "LAVI 9-15", "titre": "Centres de consultation — prestations", "lien": "https://www.fedlex.admin.ch/eli/cc/2008/232/fr#art_9" },
-        { "ref": "LAVI 14", "titre": "Aide aux victimes — hebergement d'urgence", "lien": "https://www.fedlex.admin.ch/eli/cc/2008/232/fr#art_14" },
-        { "ref": "CC 28b", "titre": "Protection contre la violence", "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_28_b" }
+        {
+          "ref": "LAVI 9-15",
+          "titre": "Centres de consultation — prestations",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2008/232/fr#art_9"
+        },
+        {
+          "ref": "LAVI 14",
+          "titre": "Aide aux victimes — hébergement d'urgence",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2008/232/fr#art_14"
+        },
+        {
+          "ref": "CC 28b",
+          "titre": "Protection contre la violence",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_28_b"
+        }
       ],
       "jurisprudence": [
-        { "ref": "TF 5A_830/2018", "resume": "Le droit de la victime a la protection de sa vie privee (art. 28 CC) justifie le maintien du secret sur l'adresse du foyer d'accueil." }
+        {
+          "ref": "TF 5A_830/2018",
+          "resume": "Le droit de la victime a la protection de sa vie privee (art. 28 CC) justifie le maintien du secret sur l'adresse du foyer d'accueil."
+        }
       ],
       "modeleLettre": "",
       "services": [
-        { "nom": "Solidarite femmes (foyer Malley-Prairie) VD", "tel": "021 323 46 56", "canton": "VD" },
-        { "nom": "Foyer Arabelle GE (Fondation)", "tel": "022 320 91 91", "url": "https://www.arabelle.ch", "canton": "GE" },
-        { "nom": "Au Coeur des Grottes GE", "tel": "022 344 40 44", "canton": "GE" },
-        { "nom": "Centre LAVI VD", "tel": "021 631 03 31", "url": "https://www.profa.ch/lavi", "canton": "VD" },
-        { "nom": "Centre LAVI GE", "tel": "022 320 01 02", "url": "https://www.centrelavi-ge.ch", "canton": "GE" }
+        {
+          "nom": "Solidarite femmes (foyer Malley-Prairie) VD",
+          "tel": "021 323 46 56",
+          "canton": "VD"
+        },
+        {
+          "nom": "Foyer Arabelle GE (Fondation)",
+          "tel": "022 320 91 91",
+          "url": "https://www.arabelle.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Au Coeur des Grottes GE",
+          "tel": "022 344 40 44",
+          "canton": "GE"
+        },
+        {
+          "nom": "Centre LAVI VD",
+          "tel": "021 631 03 31",
+          "url": "https://www.profa.ch/lavi",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre LAVI GE",
+          "tel": "022 320 01 02",
+          "url": "https://www.centrelavi-ge.ch",
+          "canton": "GE"
+        }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "LAVI/CC état 2025-01-01",
@@ -132,12 +258,12 @@
       "foyer pour femmes battues",
       "refuge d'urgence violence conjugale",
       "je veux partir avec mes enfants mais ou aller",
-      "hebergement securise pour fuir la violence"
+      "hébergement securise pour fuir la violence"
     ],
     "negative_signals": [
       "recherche de logement social classique sans violence",
-      "hebergement d'urgence SDF sans contexte de violence",
-      "besoin juridique sans besoin d'hebergement"
+      "hébergement d'urgence SDF sans contexte de violence",
+      "besoin juridique sans besoin d'hébergement"
     ],
     "required_facts": [
       "seul ou avec enfants",
@@ -150,27 +276,57 @@
     "id": "violence_plainte",
     "domaine": "violence",
     "sousDomaine": "plainte",
-    "tags": ["plainte", "pénale", "violence", "procédure", "délais", "poursuite", "office", "dépôt"],
+    "tags": [
+      "plainte",
+      "pénale",
+      "violence",
+      "procédure",
+      "délais",
+      "poursuite",
+      "office",
+      "dépôt"
+    ],
     "questions": [
       {
         "id": "q1",
         "text": "Quel type de violence avez-vous subi ?",
-        "options": ["physique (coups, blessures)", "menaces", "contrainte sexuelle", "harcelement (stalking)", "autre"]
+        "options": [
+          "physique (coups, blessures)",
+          "menaces",
+          "contrainte sexuelle",
+          "harcélément (stalking)",
+          "autre"
+        ]
       },
       {
         "id": "q2",
         "text": "Quand les faits se sont-ils produits ?",
-        "options": ["<7 jours", "7 jours - 3 mois", ">3 mois", ">1 an"]
+        "options": [
+          "<7 jours",
+          "7 jours - 3 mois",
+          ">3 mois",
+          ">1 an"
+        ]
       },
       {
         "id": "q3",
         "text": "Avez-vous des preuves ?",
-        "options": ["constat medical", "photos", "temoins", "messages/SMS", "rien"]
+        "options": [
+          "constat médical",
+          "photos",
+          "temoins",
+          "messages/SMS",
+          "rien"
+        ]
       },
       {
         "id": "q4",
         "text": "L'auteur est-il votre conjoint/partenaire ?",
-        "options": ["oui, actuel", "oui, ex", "non"]
+        "options": [
+          "oui, actuel",
+          "oui, ex",
+          "non"
+        ]
       },
       {
         "id": "q5",
@@ -178,28 +334,72 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "La plainte pénale pour violence se déposé auprès de la police ou du Ministere public (art. 304 CPP). Certaines infractions sont poursuivies sur plainte (délai de 3 mois, art. 31 CP) et d'autres d'office. Sont poursuivies d'office : les lesions corporelles simples entre conjoints/partenaires (art. 123 ch. 2 CP), les lesions graves (art. 122 CP), la contrainte sexuelle (art. 189 CP), le viol (art. 190 CP). Sont poursuivies sur plainte : les voies de fait simples non répétées (art. 126 CP), les menaces (art. 180 CP), les injures (art. 177 CP). Delais de prescription : 10 ans pour les lesions graves, 7 ans pour les lesions simples, imprescriptibles pour les crimes sexuels sur mineurs. Il est recommande de : faire constater les blessures par un medecin (constat medico-légal), conserver toutes les preuves (messages, photos), noter les dates et circonstances. Le Centre LAVI peut accompagner la victime dans la procédure et fournir un avocat gratuitement.",
+    "réponse": {
+      "explication": "La plainte pénale pour violence se déposé auprès de la police ou du Ministere public (art. 304 CPP). Certaines infractions sont poursuivies sur plainte (délai de 3 mois, art. 31 CP) et d'autres d'office. Sont poursuivies d'office : les lésions corporelles simples entre conjoints/partenaires (art. 123 ch. 2 CP), les lésions graves (art. 122 CP), la contrainte sexuelle (art. 189 CP), le viol (art. 190 CP). Sont poursuivies sur plainte : les voies de fait simples non répétées (art. 126 CP), les menaces (art. 180 CP), les injures (art. 177 CP). Delais de prescription : 10 ans pour les lésions graves, 7 ans pour les lésions simples, imprescriptibles pour les crimes sexuels sur mineurs. Il est recommandé de : faire constater les blessures par un medecin (constat medico-légal), conserver toutes les preuves (messages, photos), noter les dates et circonstances. Le Centre LAVI peut accompagner la victime dans la procédure et fournir un avocat gratuitement.",
       "articles": [
-        { "ref": "CPP 304", "titre": "Dépôt de plainte / denonciation", "lien": "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_304" },
-        { "ref": "CP 31", "titre": "Delai de plainte (3 mois)", "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_31" },
-        { "ref": "CP 123", "titre": "Lesions corporelles simples", "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_123" },
-        { "ref": "CP 189-190", "titre": "Contrainte sexuelle et viol", "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_189" }
+        {
+          "ref": "CPP 304",
+          "titre": "Dépôt de plainte / denonciation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_304"
+        },
+        {
+          "ref": "CP 31",
+          "titre": "Delai de plainte (3 mois)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_31"
+        },
+        {
+          "ref": "CP 123",
+          "titre": "Lesions corporelles simples",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_123"
+        },
+        {
+          "ref": "CP 189-190",
+          "titre": "Contrainte sexuelle et viol",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_189"
+        }
       ],
       "jurisprudence": [
-        { "ref": "ATF 129 IV 216", "resume": "La contrainte sexuelle entre époux est punissable au même titre que hors mariage depuis la revision de 1992, poursuivie d'office depuis 2004." },
-        { "ref": "TF 6B_894/2018", "resume": "La credibilite de la victime peut suffire a établir les faits si son recit est constant, detaille et coherent, même sans autre preuve directe." }
+        {
+          "ref": "ATF 129 IV 216",
+          "resume": "La contrainte sexuelle entre époux est punissable au même titre que hors mariage depuis la revision de 1992, poursuivie d'office depuis 2004."
+        },
+        {
+          "ref": "TF 6B_894/2018",
+          "resume": "La credibilite de la victime peut suffire a établir les faits si son recit est constant, detaille et coherent, même sans autre preuve directe."
+        }
       ],
-      "modeleLettre": "Objet : Plainte pénale pour violence\n\nAu Ministere public de [canton] / A la Police de [lieu],\n\nJe soussigne(e) [nom, prenom], ne(e) le [date], domicilie(e) a [adresse],\n\nDepose plainte pénale contre [nom de l'auteur si connu, sinon 'inconnu'] pour les faits suivants :\n\nDate des faits : [date]\nLieu : [adresse]\n\nDescription des faits : [recit chronologique et factuel]\n\nConsequences : [blessures, impact psychologique]\n\nPreuves : [constat medical, photos, temoins, messages]\n\nJe me constitue partie plaignante au pénal et au civil (art. 118-119 CPP).\n\nJe demande a etre informe(e) de la suite de la procédure.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Plainte pénale pour violence\n\nAu Ministere public de [canton] / A la Police de [lieu],\n\nJe soussigné(e) [nom, prenom], ne(e) le [date], domicilié(e) a [adresse],\n\nDepose plainte pénale contre [nom de l'auteur si connu, sinon 'inconnu'] pour les faits suivants :\n\nDate des faits : [date]\nLieu : [adresse]\n\nDescription des faits : [recit chronologique et factuel]\n\nConsequences : [blessures, impact psychologique]\n\nPreuves : [constat médical, photos, temoins, messages]\n\nJe me constitue partie plaignante au pénal et au civil (art. 118-119 CPP).\n\nJe demande a etre informe(e) de la suite de la procédure.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
       "services": [
-        { "nom": "Centre LAVI VD (Profa)", "tel": "021 631 03 31", "url": "https://www.profa.ch/lavi", "canton": "VD" },
-        { "nom": "Centre LAVI GE", "tel": "022 320 01 02", "url": "https://www.centrelavi-ge.ch", "canton": "GE" },
-        { "nom": "Ministere public VD", "url": "https://www.vd.ch/autorites/ordre-judiciaire/ministere-public", "canton": "VD" },
-        { "nom": "Ministere public GE", "url": "https://justice.ge.ch/fr/institution/ministere-public", "canton": "GE" },
-        { "nom": "Unite de medecine des violences (CHUV)", "tel": "021 314 00 60", "canton": "VD" }
+        {
+          "nom": "Centre LAVI VD (Profa)",
+          "tel": "021 631 03 31",
+          "url": "https://www.profa.ch/lavi",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre LAVI GE",
+          "tel": "022 320 01 02",
+          "url": "https://www.centrelavi-ge.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ministere public VD",
+          "url": "https://www.vd.ch/autorites/ordre-judiciaire/ministere-public",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ministere public GE",
+          "url": "https://justice.ge.ch/fr/institution/ministere-public",
+          "canton": "GE"
+        },
+        {
+          "nom": "Unite de medecine des violences (CHUV)",
+          "tel": "021 314 00 60",
+          "canton": "VD"
+        }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CP/CPP/LAVI état 2025-01-01",
@@ -219,7 +419,7 @@
     "required_facts": [
       "type de violence subie",
       "date des faits",
-      "preuves disponibles (constat medical, temoins, messages)",
+      "preuves disponibles (constat médical, temoins, messages)",
       "lien avec l'auteur (conjoint, ex, inconnu)"
     ]
   }

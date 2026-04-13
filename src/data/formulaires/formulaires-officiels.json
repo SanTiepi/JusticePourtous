@@ -6,11 +6,23 @@
     "autorite": "Commission de conciliation en matière de baux",
     "gratuit": true,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/themes/territoire-et-construction/baux-a-loyer/commission-de-conciliation", "format": "En ligne ou papier" },
-      "GE": { "url": "https://www.ge.ch/loyers-baux/commission-conciliation", "format": "En ligne" },
-      "FR": { "url": "https://www.fr.ch/tpf/commission-de-conciliation-en-matiere-de-baux-a-loyer", "format": "Papier" }
+      "VD": {
+        "url": "https://www.vd.ch/themes/territoire-et-construction/baux-a-loyer/commission-de-conciliation",
+        "format": "En ligne ou papier"
+      },
+      "GE": {
+        "url": "https://www.ge.ch/loyers-baux/commission-conciliation",
+        "format": "En ligne"
+      },
+      "FR": {
+        "url": "https://www.fr.ch/tpf/commission-de-conciliation-en-matiere-de-baux-a-loyer",
+        "format": "Papier"
+      }
     },
-    "documentsJoints": ["Copie du bail", "Pièces justificatives du litige"],
+    "documentsJoints": [
+      "Copie du bail",
+      "Pièces justificatives du litige"
+    ],
     "delai": "Aucun délai spécifique sauf si lié à contestation de congé (30 jours)",
     "conseil": "Toujours joindre une copie complète du bail avec les avenants"
   },
@@ -21,10 +33,20 @@
     "autorite": "Commission de conciliation en matière de baux",
     "gratuit": true,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/themes/territoire-et-construction/baux-a-loyer/commission-de-conciliation", "format": "En ligne ou papier" },
-      "GE": { "url": "https://www.ge.ch/loyers-baux/commission-conciliation", "format": "En ligne" }
+      "VD": {
+        "url": "https://www.vd.ch/themes/territoire-et-construction/baux-a-loyer/commission-de-conciliation",
+        "format": "En ligne ou papier"
+      },
+      "GE": {
+        "url": "https://www.ge.ch/loyers-baux/commission-conciliation",
+        "format": "En ligne"
+      }
     },
-    "documentsJoints": ["Copie du bail", "Lettre de résiliation", "Preuve de la date de réception"],
+    "documentsJoints": [
+      "Copie du bail",
+      "Lettre de résiliation",
+      "Preuve de la date de réception"
+    ],
     "delai": "30 jours dès réception du congé",
     "conseil": "Demander simultanément la prolongation du bail — les deux procédures sont liées"
   },
@@ -35,10 +57,20 @@
     "autorite": "Commission de conciliation en matière de baux",
     "gratuit": true,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/themes/territoire-et-construction/baux-a-loyer/commission-de-conciliation", "format": "En ligne ou papier" },
-      "GE": { "url": "https://www.ge.ch/loyers-baux/commission-conciliation", "format": "En ligne" }
+      "VD": {
+        "url": "https://www.vd.ch/themes/territoire-et-construction/baux-a-loyer/commission-de-conciliation",
+        "format": "En ligne ou papier"
+      },
+      "GE": {
+        "url": "https://www.ge.ch/loyers-baux/commission-conciliation",
+        "format": "En ligne"
+      }
     },
-    "documentsJoints": ["Copie du bail", "Congé reçu", "Preuves de recherches de logement"],
+    "documentsJoints": [
+      "Copie du bail",
+      "Congé reçu",
+      "Preuves de recherches de logement"
+    ],
     "delai": "30 jours dès réception du congé (même délai que contestation)",
     "conseil": "Documenter les recherches de logement de remplacement — c'est un critère d'appréciation du juge"
   },
@@ -49,10 +81,20 @@
     "autorite": "Commission de conciliation en matière de baux",
     "gratuit": true,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/themes/territoire-et-construction/baux-a-loyer/commission-de-conciliation", "format": "En ligne ou papier" },
-      "GE": { "url": "https://www.ge.ch/loyers-baux/commission-conciliation", "format": "En ligne" }
+      "VD": {
+        "url": "https://www.vd.ch/themes/territoire-et-construction/baux-a-loyer/commission-de-conciliation",
+        "format": "En ligne ou papier"
+      },
+      "GE": {
+        "url": "https://www.ge.ch/loyers-baux/commission-conciliation",
+        "format": "En ligne"
+      }
     },
-    "documentsJoints": ["Copie du bail", "Calcul du loyer admissible", "Taux hypothécaire de référence"],
+    "documentsJoints": [
+      "Copie du bail",
+      "Calcul du loyer admissible",
+      "Taux hypothécaire de référence"
+    ],
     "delai": "Avant le prochain terme de résiliation du bail",
     "conseil": "Utiliser le calculateur ASLOCA ou les outils cantonaux pour estimer la baisse possible"
   },
@@ -63,10 +105,19 @@
     "autorite": "Office de consignation cantonal / Tribunal compétent",
     "gratuit": true,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/themes/territoire-et-construction/baux-a-loyer/consignation-du-loyer", "format": "Papier" },
-      "GE": { "url": "https://www.ge.ch/loyers-baux/consigner-loyer", "format": "En ligne" }
+      "VD": {
+        "url": "https://www.vd.ch/themes/territoire-et-construction/baux-a-loyer/consignation-du-loyer",
+        "format": "Papier"
+      },
+      "GE": {
+        "url": "https://www.ge.ch/loyers-baux/consigner-loyer",
+        "format": "En ligne"
+      }
     },
-    "documentsJoints": ["Mise en demeure envoyée au bailleur", "Preuves du défaut (photos, constats)"],
+    "documentsJoints": [
+      "Mise en demeure envoyée au bailleur",
+      "Preuves du défaut (photos, constats)"
+    ],
     "delai": "Après mise en demeure avec délai raisonnable resté sans effet",
     "conseil": "TOUJOURS envoyer la mise en demeure en recommandé AVANT de consigner — sinon risque d'expulsion"
   },
@@ -77,10 +128,20 @@
     "autorite": "Commission de conciliation en matière de baux",
     "gratuit": true,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/themes/territoire-et-construction/baux-a-loyer/commission-de-conciliation", "format": "En ligne ou papier" },
-      "GE": { "url": "https://www.ge.ch/loyers-baux/commission-conciliation", "format": "En ligne" }
+      "VD": {
+        "url": "https://www.vd.ch/themes/territoire-et-construction/baux-a-loyer/commission-de-conciliation",
+        "format": "En ligne ou papier"
+      },
+      "GE": {
+        "url": "https://www.ge.ch/loyers-baux/commission-conciliation",
+        "format": "En ligne"
+      }
     },
-    "documentsJoints": ["Copie du bail", "Avis de hausse reçu (formulaire officiel)", "Taux hypothécaire de référence"],
+    "documentsJoints": [
+      "Copie du bail",
+      "Avis de hausse reçu (formulaire officiel)",
+      "Taux hypothécaire de référence"
+    ],
     "delai": "30 jours dès réception de l'avis de hausse",
     "conseil": "Vérifier d'abord si l'avis utilise la formule officielle obligatoire — si non, la hausse est nulle"
   },
@@ -91,10 +152,20 @@
     "autorite": "Tribunal des prud'hommes / Tribunal civil (selon canton)",
     "gratuit": true,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunal-de-prudhommes", "format": "Papier" },
-      "GE": { "url": "https://justice.ge.ch/fr/juridictions/tribunal-des-prudhommes", "format": "En ligne ou papier" }
+      "VD": {
+        "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunal-de-prudhommes",
+        "format": "Papier"
+      },
+      "GE": {
+        "url": "https://justice.ge.ch/fr/juridictions/tribunal-des-prudhommes",
+        "format": "En ligne ou papier"
+      }
     },
-    "documentsJoints": ["Contrat de travail", "Fiches de salaire", "Lettre de licenciement (si applicable)"],
+    "documentsJoints": [
+      "Contrat de travail",
+      "Fiches de salaire",
+      "Lettre de licenciement (si applicable)"
+    ],
     "delai": "Attention à la prescription (5 ans pour salaires, 6 mois pour indemnité de licenciement abusif après rejet de l'opposition)",
     "conseil": "Procédure gratuite jusqu'à 30'000 CHF de valeur litigieuse — au-delà, frais de justice possibles"
   },
@@ -105,10 +176,18 @@
     "autorite": "Envoi direct à l'employeur (recommandé)",
     "gratuit": true,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunal-de-prudhommes", "format": "Lettre recommandée" },
-      "GE": { "url": "https://justice.ge.ch/fr/juridictions/tribunal-des-prudhommes", "format": "Lettre recommandée" }
+      "VD": {
+        "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunal-de-prudhommes",
+        "format": "Lettre recommandée"
+      },
+      "GE": {
+        "url": "https://justice.ge.ch/fr/juridictions/tribunal-des-prudhommes",
+        "format": "Lettre recommandée"
+      }
     },
-    "documentsJoints": ["Aucun document obligatoire — la lettre d'opposition suffit"],
+    "documentsJoints": [
+      "Aucun document obligatoire — la lettre d'opposition suffit"
+    ],
     "delai": "AVANT la fin du délai de congé — délai impératif",
     "conseil": "Envoyer TOUJOURS en recommandé. Garder une copie. L'opposition est une condition pour réclamer l'indemnité"
   },
@@ -119,10 +198,19 @@
     "autorite": "Envoi direct à l'employeur / Tribunal des prud'hommes si refus",
     "gratuit": true,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunal-de-prudhommes", "format": "Lettre recommandée puis requête" },
-      "GE": { "url": "https://justice.ge.ch/fr/juridictions/tribunal-des-prudhommes", "format": "Lettre recommandée puis requête" }
+      "VD": {
+        "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunal-de-prudhommes",
+        "format": "Lettre recommandée puis requête"
+      },
+      "GE": {
+        "url": "https://justice.ge.ch/fr/juridictions/tribunal-des-prudhommes",
+        "format": "Lettre recommandée puis requête"
+      }
     },
-    "documentsJoints": ["Certificat contesté", "Proposition de formulation alternative"],
+    "documentsJoints": [
+      "Certificat contesté",
+      "Proposition de formulation alternative"
+    ],
     "delai": "Pas de délai légal mais agir rapidement — la prescription est de 10 ans (CO 127)",
     "conseil": "D'abord demander par écrit à l'employeur, puis saisir le tribunal en cas de refus"
   },
@@ -133,10 +221,20 @@
     "autorite": "Tribunal des prud'hommes / Tribunal civil",
     "gratuit": true,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunal-de-prudhommes", "format": "Papier" },
-      "GE": { "url": "https://justice.ge.ch/fr/juridictions/tribunal-des-prudhommes", "format": "En ligne ou papier" }
+      "VD": {
+        "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunal-de-prudhommes",
+        "format": "Papier"
+      },
+      "GE": {
+        "url": "https://justice.ge.ch/fr/juridictions/tribunal-des-prudhommes",
+        "format": "En ligne ou papier"
+      }
     },
-    "documentsJoints": ["Contrat de travail", "Décompte détaillé des heures", "Fiches de salaire"],
+    "documentsJoints": [
+      "Contrat de travail",
+      "Décompte détaillé des heures",
+      "Fiches de salaire"
+    ],
     "delai": "Prescription de 5 ans (CO 128 ch. 3)",
     "conseil": "Tenir un journal quotidien des heures dès maintenant — les décomptes approximatifs sont souvent rejetés"
   },
@@ -147,10 +245,20 @@
     "autorite": "Inspection du travail / Tribunal des prud'hommes",
     "gratuit": true,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/themes/economie-et-innovation/inspection-du-travail", "format": "En ligne ou papier" },
-      "GE": { "url": "https://www.ge.ch/signaler-cas-harcelement-travail", "format": "En ligne" }
+      "VD": {
+        "url": "https://www.vd.ch/themes/economie-et-innovation/inspection-du-travail",
+        "format": "En ligne ou papier"
+      },
+      "GE": {
+        "url": "https://www.ge.ch/signaler-cas-harcélément-travail",
+        "format": "En ligne"
+      }
     },
-    "documentsJoints": ["Journal chronologique des incidents", "Preuves écrites (emails, messages)", "Certificats médicaux"],
+    "documentsJoints": [
+      "Journal chronologique des incidents",
+      "Preuves écrites (emails, messages)",
+      "Certificats médicaux"
+    ],
     "delai": "Pas de délai spécifique mais agir vite — les preuves s'effacent",
     "conseil": "Signaler d'abord en interne (RH, direction) par écrit recommandé. Garder toutes les preuves. Consulter un syndicat"
   },
@@ -161,10 +269,21 @@
     "autorite": "Office régional de placement (ORP)",
     "gratuit": true,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/themes/economie-et-innovation/emploi-chomage/inscription-au-chomage", "format": "En ligne" },
-      "GE": { "url": "https://www.ge.ch/inscrire-au-chomage", "format": "En ligne" }
+      "VD": {
+        "url": "https://www.vd.ch/themes/economie-et-innovation/emploi-chomage/inscription-au-chomage",
+        "format": "En ligne"
+      },
+      "GE": {
+        "url": "https://www.ge.ch/inscrire-au-chomage",
+        "format": "En ligne"
+      }
     },
-    "documentsJoints": ["Attestation de l'employeur (formulaire de l'assurance-chômage)", "Contrat de travail", "Fiches de salaire des 6-12 derniers mois", "Pièce d'identité"],
+    "documentsJoints": [
+      "Attestation de l'employeur (formulaire de l'assurance-chômage)",
+      "Contrat de travail",
+      "Fiches de salaire des 6-12 derniers mois",
+      "Pièce d'identité"
+    ],
     "delai": "S'inscrire le PREMIER jour ouvrable après la fin du contrat — tout retard = jours de pénalité",
     "conseil": "Commencer les recherches d'emploi AVANT la fin du contrat — l'ORP exige des preuves de recherches"
   },
@@ -175,10 +294,22 @@
     "autorite": "Tribunal civil / Tribunal de district",
     "gratuit": false,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunaux-darrondissement", "format": "Papier" },
-      "GE": { "url": "https://justice.ge.ch/fr/juridictions/tribunal-de-premiere-instance", "format": "Papier" }
+      "VD": {
+        "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunaux-darrondissement",
+        "format": "Papier"
+      },
+      "GE": {
+        "url": "https://justice.ge.ch/fr/juridictions/tribunal-de-première-instance",
+        "format": "Papier"
+      }
     },
-    "documentsJoints": ["Requête commune signée", "Convention sur les effets du divorce", "Acte de mariage", "Actes de naissance des enfants", "Attestation LPP des deux époux"],
+    "documentsJoints": [
+      "Requête commune signée",
+      "Convention sur les effets du divorce",
+      "Acte de mariage",
+      "Actes de naissance des enfants",
+      "Attestation LPP des deux époux"
+    ],
     "delai": "Aucun délai — peut être déposée à tout moment d'un commun accord",
     "conseil": "Faire vérifier la convention par un avocat même si l'accord est amiable — protège les deux parties"
   },
@@ -189,10 +320,21 @@
     "autorite": "Tribunal civil / Tribunal de district",
     "gratuit": false,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunaux-darrondissement", "format": "Papier" },
-      "GE": { "url": "https://justice.ge.ch/fr/juridictions/tribunal-de-premiere-instance", "format": "Papier" }
+      "VD": {
+        "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunaux-darrondissement",
+        "format": "Papier"
+      },
+      "GE": {
+        "url": "https://justice.ge.ch/fr/juridictions/tribunal-de-première-instance",
+        "format": "Papier"
+      }
     },
-    "documentsJoints": ["Demande motivée", "Acte de mariage", "Preuve de la séparation de 2 ans", "Situation financière des deux époux"],
+    "documentsJoints": [
+      "Demande motivée",
+      "Acte de mariage",
+      "Preuve de la séparation de 2 ans",
+      "Situation financière des deux époux"
+    ],
     "delai": "Possible après 2 ans de séparation effective (CC 114)",
     "conseil": "Si l'autre époux consent finalement, passer en requête commune pour accélérer la procédure"
   },
@@ -203,10 +345,20 @@
     "autorite": "Tribunal civil / Tribunal de district",
     "gratuit": false,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunaux-darrondissement", "format": "Papier" },
-      "GE": { "url": "https://justice.ge.ch/fr/juridictions/tribunal-de-premiere-instance", "format": "Papier" }
+      "VD": {
+        "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunaux-darrondissement",
+        "format": "Papier"
+      },
+      "GE": {
+        "url": "https://justice.ge.ch/fr/juridictions/tribunal-de-première-instance",
+        "format": "Papier"
+      }
     },
-    "documentsJoints": ["Jugement de divorce ou convention en vigueur", "Preuves du changement de situation", "Justificatifs de revenus et charges actuels"],
+    "documentsJoints": [
+      "Jugement de divorce ou convention en vigueur",
+      "Preuves du changement de situation",
+      "Justificatifs de revenus et charges actuels"
+    ],
     "delai": "Dès que le changement de situation est avéré et durable",
     "conseil": "Constituer un dossier solide prouvant le changement DURABLE — un changement temporaire ne suffit pas"
   },
@@ -217,10 +369,21 @@
     "autorite": "Tribunal civil (mesures sommaires)",
     "gratuit": false,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunaux-darrondissement", "format": "Papier" },
-      "GE": { "url": "https://justice.ge.ch/fr/juridictions/tribunal-de-premiere-instance", "format": "Papier" }
+      "VD": {
+        "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunaux-darrondissement",
+        "format": "Papier"
+      },
+      "GE": {
+        "url": "https://justice.ge.ch/fr/juridictions/tribunal-de-première-instance",
+        "format": "Papier"
+      }
     },
-    "documentsJoints": ["Requête décrivant la situation", "Acte de mariage", "Justificatifs de revenus", "Preuves de violence le cas échéant"],
+    "documentsJoints": [
+      "Requête décrivant la situation",
+      "Acte de mariage",
+      "Justificatifs de revenus",
+      "Preuves de violence le cas échéant"
+    ],
     "delai": "Aucun délai — procédure d'urgence possible si violence",
     "conseil": "En cas de violence, demander des mesures superprovisionnelles (attribution du logement sous 24-48h)"
   },
@@ -231,10 +394,20 @@
     "autorite": "Tribunal civil / APEA (si parents non mariés)",
     "gratuit": false,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/autorites/ordre-judiciaire/justice-de-paix", "format": "Papier" },
-      "GE": { "url": "https://justice.ge.ch/fr/juridictions/tribunal-de-protection-adultes-enfants", "format": "Papier" }
+      "VD": {
+        "url": "https://www.vd.ch/autorites/ordre-judiciaire/justice-de-paix",
+        "format": "Papier"
+      },
+      "GE": {
+        "url": "https://justice.ge.ch/fr/juridictions/tribunal-de-protection-adultes-enfants",
+        "format": "Papier"
+      }
     },
-    "documentsJoints": ["Acte de naissance de l'enfant", "Proposition de régime de garde/visite", "Preuves de capacité parentale"],
+    "documentsJoints": [
+      "Acte de naissance de l'enfant",
+      "Proposition de régime de garde/visite",
+      "Preuves de capacité parentale"
+    ],
     "delai": "Aucun délai — dès que la situation le justifie",
     "conseil": "Le bien de l'enfant prime TOUJOURS — présenter un projet concret et réaliste, pas des accusations"
   },
@@ -245,10 +418,20 @@
     "autorite": "Tribunal civil (mesures superprovisionnelles possibles)",
     "gratuit": true,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/themes/sante-soins-et-handicap/violence-domestique", "format": "Papier ou téléphone" },
-      "GE": { "url": "https://www.ge.ch/violence-domestique/obtenir-aide", "format": "En ligne ou papier" }
+      "VD": {
+        "url": "https://www.vd.ch/themes/sante-soins-et-handicap/violence-domestique",
+        "format": "Papier ou téléphone"
+      },
+      "GE": {
+        "url": "https://www.ge.ch/violence-domestique/obtenir-aide",
+        "format": "En ligne ou papier"
+      }
     },
-    "documentsJoints": ["Dépôt de plainte pénale (recommandé mais pas obligatoire)", "Certificat médical", "Rapport de police"],
+    "documentsJoints": [
+      "Dépôt de plainte pénale (recommandé mais pas obligatoire)",
+      "Certificat médical",
+      "Rapport de police"
+    ],
     "delai": "Immédiat — mesures superprovisionnelles en 24-48h",
     "conseil": "Appeler la police d'abord (117), puis contacter le Centre LAVI du canton. Les mesures sont possibles MÊME sans plainte pénale"
   },
@@ -259,10 +442,20 @@
     "autorite": "Autorité de protection de l'enfant et de l'adulte (APEA/Justice de paix)",
     "gratuit": true,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/autorites/ordre-judiciaire/justice-de-paix", "format": "Papier" },
-      "GE": { "url": "https://justice.ge.ch/fr/juridictions/tribunal-de-protection-adultes-enfants", "format": "Papier" }
+      "VD": {
+        "url": "https://www.vd.ch/autorites/ordre-judiciaire/justice-de-paix",
+        "format": "Papier"
+      },
+      "GE": {
+        "url": "https://justice.ge.ch/fr/juridictions/tribunal-de-protection-adultes-enfants",
+        "format": "Papier"
+      }
     },
-    "documentsJoints": ["Requête ou signalement motivé", "Certificat médical récent", "Preuves de la situation de vulnérabilité"],
+    "documentsJoints": [
+      "Requête ou signalement motivé",
+      "Certificat médical récent",
+      "Preuves de la situation de vulnérabilité"
+    ],
     "delai": "Aucun délai — toute personne peut signaler une situation préoccupante",
     "conseil": "Le signalement peut être anonyme. L'APEA est tenue d'enquêter dès qu'elle est informée"
   },
@@ -273,10 +466,18 @@
     "autorite": "Office des poursuites",
     "gratuit": true,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/autorites/office-des-poursuites", "format": "Oral au guichet ou écrit" },
-      "GE": { "url": "https://www.ge.ch/faire-opposition-commandement-payer", "format": "Oral au guichet ou écrit" }
+      "VD": {
+        "url": "https://www.vd.ch/autorites/office-des-poursuites",
+        "format": "Oral au guichet ou écrit"
+      },
+      "GE": {
+        "url": "https://www.ge.ch/faire-opposition-commandement-payer",
+        "format": "Oral au guichet ou écrit"
+      }
     },
-    "documentsJoints": ["Aucun document nécessaire — il suffit de déclarer l'opposition"],
+    "documentsJoints": [
+      "Aucun document nécessaire — il suffit de déclarer l'opposition"
+    ],
     "delai": "10 jours dès notification du commandement de payer — DÉLAI ABSOLU",
     "conseil": "Opposer TOUJOURS dans le doute — on peut retirer l'opposition plus tard, mais on ne peut pas opposer après le délai"
   },
@@ -287,10 +488,20 @@
     "autorite": "Tribunal civil (juge de la mainlevée)",
     "gratuit": false,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunaux-darrondissement", "format": "Papier" },
-      "GE": { "url": "https://justice.ge.ch/fr/juridictions/tribunal-de-premiere-instance", "format": "Papier" }
+      "VD": {
+        "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunaux-darrondissement",
+        "format": "Papier"
+      },
+      "GE": {
+        "url": "https://justice.ge.ch/fr/juridictions/tribunal-de-première-instance",
+        "format": "Papier"
+      }
     },
-    "documentsJoints": ["Reconnaissance de dette ou titre de mainlevée", "Commandement de payer avec opposition", "Pièces justifiant la créance"],
+    "documentsJoints": [
+      "Reconnaissance de dette ou titre de mainlevée",
+      "Commandement de payer avec opposition",
+      "Pièces justifiant la créance"
+    ],
     "delai": "1 an dès la notification du commandement de payer (LP 88)",
     "conseil": "La mainlevée provisoire exige une reconnaissance de dette signée — la mainlevée définitive exige un jugement exécutoire"
   },
@@ -301,10 +512,20 @@
     "autorite": "Autorité cantonale de surveillance des offices des poursuites",
     "gratuit": true,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunal-cantonal/cour-des-poursuites-et-faillites", "format": "Papier" },
-      "GE": { "url": "https://justice.ge.ch/fr/juridictions/chambre-surveillance", "format": "Papier" }
+      "VD": {
+        "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunal-cantonal/cour-des-poursuites-et-faillites",
+        "format": "Papier"
+      },
+      "GE": {
+        "url": "https://justice.ge.ch/fr/juridictions/chambre-surveillance",
+        "format": "Papier"
+      }
     },
-    "documentsJoints": ["PV de saisie contesté", "Justificatifs de toutes les charges", "Preuves de revenus"],
+    "documentsJoints": [
+      "PV de saisie contesté",
+      "Justificatifs de toutes les charges",
+      "Preuves de revenus"
+    ],
     "delai": "10 jours dès la communication du PV de saisie",
     "conseil": "Préparer un budget complet avec TOUTES les pièces — l'autorité de surveillance recalcule elle-même le minimum vital"
   },
@@ -315,12 +536,23 @@
     "autorite": "Tribunal civil",
     "gratuit": false,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunaux-darrondissement", "format": "Papier" },
-      "GE": { "url": "https://justice.ge.ch/fr/juridictions/tribunal-de-premiere-instance", "format": "Papier" }
+      "VD": {
+        "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunaux-darrondissement",
+        "format": "Papier"
+      },
+      "GE": {
+        "url": "https://justice.ge.ch/fr/juridictions/tribunal-de-première-instance",
+        "format": "Papier"
+      }
     },
-    "documentsJoints": ["Liste complète des créanciers", "État des actifs et passifs", "Justificatifs de revenus", "Extrait du registre des poursuites"],
+    "documentsJoints": [
+      "Liste complète des créanciers",
+      "État des actifs et passifs",
+      "Justificatifs de revenus",
+      "Extrait du régistre des poursuites"
+    ],
     "delai": "Aucun délai — à tout moment si surendettement avéré",
-    "conseil": "Explorer TOUTES les alternatives avant (plan de désendettement, concordat). La faillite reste inscrite et peut bloquer l'accès au crédit pendant des années"
+    "conseil": "Explorer TOUTES les alternatives avant (plan de désendettement, concordat). La faillite reste inscrite et peut bloquér l'accès au crédit pendant des années"
   },
   {
     "id": "form_dettes_aide_sociale",
@@ -329,10 +561,22 @@
     "autorite": "Centre social régional (CSR) / Hospice général",
     "gratuit": true,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/themes/soutien-social/aide-sociale/revenu-dinsertion-ri", "format": "En ligne ou papier" },
-      "GE": { "url": "https://www.hospicegeneral.ch/fr/aide-sociale-et-financiere", "format": "En ligne ou papier" }
+      "VD": {
+        "url": "https://www.vd.ch/themes/soutien-social/aide-sociale/revenu-dinsertion-ri",
+        "format": "En ligne ou papier"
+      },
+      "GE": {
+        "url": "https://www.hospicegénéral.ch/fr/aide-sociale-et-financiere",
+        "format": "En ligne ou papier"
+      }
     },
-    "documentsJoints": ["Pièce d'identité", "Justificatifs de revenus (ou absence de revenus)", "Relevés bancaires des 3 derniers mois", "Justificatifs de charges (loyer, assurance maladie)", "Attestation de l'ORP si au chômage"],
+    "documentsJoints": [
+      "Pièce d'identité",
+      "Justificatifs de revenus (ou absence de revenus)",
+      "Relevés bancaires des 3 derniers mois",
+      "Justificatifs de charges (loyer, assurance maladie)",
+      "Attestation de l'ORP si au chômage"
+    ],
     "delai": "Aucun délai — dès que la situation financière devient critique",
     "conseil": "L'aide sociale est subsidiaire — il faut d'abord épuiser les autres prestations (chômage, AI, APG). L'aide peut être remboursable selon les cantons"
   },
@@ -343,10 +587,21 @@
     "autorite": "Service de désendettement cantonal / Caritas / CSP",
     "gratuit": true,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/themes/soutien-social/aide-sociale/desendettement", "format": "Téléphone ou en personne" },
-      "GE": { "url": "https://www.caritas-geneve.ch/nos-activites/conseil-en-desendettement", "format": "Téléphone ou en personne" }
+      "VD": {
+        "url": "https://www.vd.ch/themes/soutien-social/aide-sociale/desendettement",
+        "format": "Téléphone ou en personne"
+      },
+      "GE": {
+        "url": "https://www.caritas-geneve.ch/nos-activités/conseil-en-desendettement",
+        "format": "Téléphone ou en personne"
+      }
     },
-    "documentsJoints": ["Liste de toutes les dettes", "Justificatifs de revenus", "Charges mensuelles", "Extraits de poursuites"],
+    "documentsJoints": [
+      "Liste de toutes les dettes",
+      "Justificatifs de revenus",
+      "Charges mensuelles",
+      "Extraits de poursuites"
+    ],
     "delai": "Aucun délai — consulter dès les premiers signes de difficulté",
     "conseil": "Ces services sont gratuits et confidentiels. Ils peuvent négocier avec les créanciers et monter un plan de remboursement"
   },
@@ -357,10 +612,22 @@
     "autorite": "Service de la population / Office cantonal de la population",
     "gratuit": false,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/themes/population/titres-de-sejour-et-டravail", "format": "En ligne" },
-      "GE": { "url": "https://www.ge.ch/demander-renouveler-autorisation-sejour", "format": "En ligne" }
+      "VD": {
+        "url": "https://www.vd.ch/themes/population/titres-de-sejour-et-டravail",
+        "format": "En ligne"
+      },
+      "GE": {
+        "url": "https://www.ge.ch/demander-renouveler-autorisation-sejour",
+        "format": "En ligne"
+      }
     },
-    "documentsJoints": ["Passeport valide", "Photos d'identité", "Contrat de travail ou attestation d'études", "Assurance maladie", "Justificatif de logement"],
+    "documentsJoints": [
+      "Passeport valide",
+      "Photos d'identité",
+      "Contrat de travail ou attestation d'études",
+      "Assurance maladie",
+      "Justificatif de logement"
+    ],
     "delai": "Demander le renouvellement AU MOINS 2 mois avant l'expiration",
     "conseil": "Ne jamais laisser expirer son permis — un séjour sans titre valable peut compromettre tout futur renouvellement"
   },
@@ -371,10 +638,22 @@
     "autorite": "Service de la population / Office cantonal de la population",
     "gratuit": false,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/themes/population/titres-de-sejour-et-travail/regroupement-familial", "format": "En ligne ou papier" },
-      "GE": { "url": "https://www.ge.ch/demander-regroupement-familial", "format": "En ligne" }
+      "VD": {
+        "url": "https://www.vd.ch/themes/population/titres-de-sejour-et-travail/regroupement-familial",
+        "format": "En ligne ou papier"
+      },
+      "GE": {
+        "url": "https://www.ge.ch/demander-regroupement-familial",
+        "format": "En ligne"
+      }
     },
-    "documentsJoints": ["Copie du permis du requérant", "Acte de mariage ou de naissance (légalisé et traduit)", "Preuve de logement adapté", "Preuves de moyens financiers suffisants", "Assurance maladie pour le membre de la famille"],
+    "documentsJoints": [
+      "Copie du permis du requérant",
+      "Acte de mariage ou de naissance (légalisé et traduit)",
+      "Preuve de logement adapté",
+      "Preuves de moyens financiers suffisants",
+      "Assurance maladie pour le membre de la famille"
+    ],
     "delai": "5 ans dès l'octroi du permis B pour conjoint/enfants. 12 mois pour titulaires d'un permis F",
     "conseil": "Faire légaliser et traduire tous les documents étrangers par un traducteur assermenté AVANT de déposer"
   },
@@ -385,10 +664,22 @@
     "autorite": "Commune de domicile / Service cantonal des naturalisations / SEM",
     "gratuit": false,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/themes/population/naturalisation", "format": "En ligne ou papier" },
-      "GE": { "url": "https://www.ge.ch/demander-naturalisation", "format": "En ligne" }
+      "VD": {
+        "url": "https://www.vd.ch/themes/population/naturalisation",
+        "format": "En ligne ou papier"
+      },
+      "GE": {
+        "url": "https://www.ge.ch/demander-naturalisation",
+        "format": "En ligne"
+      }
     },
-    "documentsJoints": ["Permis C", "Extrait du casier judiciaire", "Attestation de langue (B1 oral/A2 écrit)", "Preuves d'intégration", "Attestation de non-dépendance à l'aide sociale"],
+    "documentsJoints": [
+      "Permis C",
+      "Extrait du casier judiciaire",
+      "Attestation de langue (B1 oral/A2 écrit)",
+      "Preuves d'intégration",
+      "Attestation de non-dépendance à l'aide sociale"
+    ],
     "delai": "10 ans de séjour en Suisse dont 2-5 dans le canton (selon canton)",
     "conseil": "Commencer par se renseigner auprès de la commune — les exigences locales varient énormément (test civique, entretien, etc.)"
   },
@@ -399,26 +690,47 @@
     "autorite": "Tribunal cantonal / Tribunal administratif fédéral (TAF)",
     "gratuit": false,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunal-cantonal/cour-de-droit-administratif-et-public", "format": "Papier" },
-      "GE": { "url": "https://justice.ge.ch/fr/juridictions/chambre-administrative", "format": "Papier" }
+      "VD": {
+        "url": "https://www.vd.ch/autorites/ordre-judiciaire/tribunal-cantonal/cour-de-droit-administratif-et-public",
+        "format": "Papier"
+      },
+      "GE": {
+        "url": "https://justice.ge.ch/fr/juridictions/chambre-administrative",
+        "format": "Papier"
+      }
     },
-    "documentsJoints": ["Décision contestée", "Mémoire de recours motivé", "Preuves à l'appui", "Demande d'assistance judiciaire (si nécessaire)"],
+    "documentsJoints": [
+      "Décision contestée",
+      "Mémoire de recours motivé",
+      "Preuves à l'appui",
+      "Demande d'assistance judiciaire (si nécessaire)"
+    ],
     "delai": "30 jours dès notification de la décision (10 jours si mesures provisionnelles)",
     "conseil": "Demander un avocat d'office si ressources insuffisantes — le recours en droit des étrangers est technique"
   },
   {
     "id": "form_etrangers_asile",
-    "titre": "Enregistrement de demande d'asile",
+    "titre": "Enrégistrement de demande d'asile",
     "domaine": "étrangers",
     "autorite": "Secrétariat d'État aux migrations (SEM) / Centre fédéral pour requérants d'asile",
     "gratuit": true,
     "cantons": {
-      "VD": { "url": "https://www.sem.admin.ch/sem/fr/home/asyl/asylverfahren.html", "format": "En personne au centre fédéral" },
-      "GE": { "url": "https://www.sem.admin.ch/sem/fr/home/asyl/asylverfahren.html", "format": "En personne au centre fédéral" }
+      "VD": {
+        "url": "https://www.sem.admin.ch/sem/fr/home/asyl/asylverfahren.html",
+        "format": "En personne au centre fédéral"
+      },
+      "GE": {
+        "url": "https://www.sem.admin.ch/sem/fr/home/asyl/asylverfahren.html",
+        "format": "En personne au centre fédéral"
+      }
     },
-    "documentsJoints": ["Documents d'identité (si disponibles)", "Tout document prouvant les persécutions", "Certificats médicaux (si pertinent)"],
+    "documentsJoints": [
+      "Documents d'identité (si disponibles)",
+      "Tout document prouvant les persécutions",
+      "Certificats médicaux (si pertinent)"
+    ],
     "delai": "Dès l'arrivée en Suisse — se présenter à un centre fédéral ou au poste-frontière",
-    "conseil": "Un représentant juridique gratuit est attribué automatiquement dès l'enregistrement. Préparer un récit chronologique détaillé"
+    "conseil": "Un représentant juridique gratuit est attribué automatiquement dès l'enrégistrement. Préparer un récit chronologique détaillé"
   },
   {
     "id": "form_etrangers_lavi",
@@ -427,10 +739,18 @@
     "autorite": "Centre de consultation LAVI",
     "gratuit": true,
     "cantons": {
-      "VD": { "url": "https://www.vd.ch/themes/securite/aide-aux-victimes-lavi", "format": "Téléphone ou en personne" },
-      "GE": { "url": "https://www.ge.ch/aide-aux-victimes-infractions", "format": "Téléphone ou en personne" }
+      "VD": {
+        "url": "https://www.vd.ch/themes/securite/aide-aux-victimes-lavi",
+        "format": "Téléphone ou en personne"
+      },
+      "GE": {
+        "url": "https://www.ge.ch/aide-aux-victimes-infractions",
+        "format": "Téléphone ou en personne"
+      }
     },
-    "documentsJoints": ["Aucun document obligatoire pour un premier contact"],
+    "documentsJoints": [
+      "Aucun document obligatoire pour un premier contact"
+    ],
     "delai": "Aucun délai pour les consultations. Attention: les demandes d'indemnisation ont un délai de 5 ans",
     "conseil": "L'aide LAVI est accessible à TOUTE victime d'infraction, y compris sans titre de séjour. Anonymat garanti au premier contact"
   }

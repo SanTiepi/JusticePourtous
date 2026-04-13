@@ -1,6 +1,6 @@
 [
   {
-    "procedure": "conciliation_bail",
+    "procédure": "conciliation_bail",
     "titre": "Requête de conciliation en matière de bail",
     "baseLegale": "CPC 197-212",
     "conditionsRecevabilite": {
@@ -8,7 +8,10 @@
       "interet": "Intérêt actuel et personnel",
       "conciliationPrealable": "Non (c'est la conciliation elle-même)",
       "forme": "Requête écrite ou orale au greffe",
-      "annexes": ["Copie du contrat de bail", "Correspondance avec la partie adverse"],
+      "annexes": [
+        "Copie du contrat de bail",
+        "Correspondance avec la partie adversé"
+      ],
       "signature": "Requérant ou son représentant",
       "avanceFrais": "Aucune (gratuit, CPC 113 al. 2 let. c)",
       "delai": "Pas de délai de prescription pour saisir, mais respecter les délais de contestation (30 jours pour hausse de loyer)"
@@ -18,16 +21,28 @@
       "Dépasser le délai de 30 jours pour contester une hausse → forclusion",
       "Ne pas se présenter à l'audience → radiation"
     ],
-    "documentsRecommandes": [
-      { "document": "Contrat de bail", "importance": "obligatoire" },
-      { "document": "Correspondance avec régie", "importance": "fortement recommandé" },
-      { "document": "Photos des défauts", "importance": "recommandé" },
-      { "document": "Témoignages écrits", "importance": "utile" }
+    "documentsRecommandés": [
+      {
+        "document": "Contrat de bail",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Correspondance avec régie",
+        "importance": "fortement recommandé"
+      },
+      {
+        "document": "Photos des défauts",
+        "importance": "recommandé"
+      },
+      {
+        "document": "Témoignages écrits",
+        "importance": "utile"
+      }
     ],
     "confiance": "certain"
   },
   {
-    "procedure": "tribunal_prudhommes",
+    "procédure": "tribunal_prudhommes",
     "titre": "Action devant le Tribunal des prud'hommes",
     "baseLegale": "CPC 34, 197 ss; CO 319 ss",
     "conditionsRecevabilite": {
@@ -35,7 +50,12 @@
       "interet": "Intérêt actuel et personnel, créance exigible",
       "conciliationPrealable": "Oui obligatoire (CPC 197), sauf si valeur litigieuse > 100'000 CHF et accord des parties (CPC 199)",
       "forme": "Requête écrite (CPC 130) ou orale au greffe si valeur litigieuse < 30'000 CHF",
-      "annexes": ["Contrat de travail", "Décomptes de salaire", "Certificat de travail", "Correspondance"],
+      "annexes": [
+        "Contrat de travail",
+        "Décomptes de salaire",
+        "Certificat de travail",
+        "Correspondance"
+      ],
       "signature": "Demandeur ou son représentant",
       "avanceFrais": "Aucune avance si valeur litigieuse ≤ 30'000 CHF (CPC 113 al. 2 let. d); au-delà, avance selon tarif cantonal",
       "delai": "Respecter les délais de prescription (CO 128 ch. 3 : 5 ans pour salaires)"
@@ -45,16 +65,28 @@
       "Ne pas tenter la conciliation préalable → irrecevable",
       "Se tromper de for (lieu de travail ou domicile du défendeur, CPC 34)"
     ],
-    "documentsRecommandes": [
-      { "document": "Contrat de travail", "importance": "obligatoire" },
-      { "document": "Décomptes de salaire", "importance": "obligatoire" },
-      { "document": "Correspondance de résiliation", "importance": "fortement recommandé" },
-      { "document": "Décompte d'heures supplémentaires", "importance": "recommandé" }
+    "documentsRecommandés": [
+      {
+        "document": "Contrat de travail",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Décomptes de salaire",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Correspondance de résiliation",
+        "importance": "fortement recommandé"
+      },
+      {
+        "document": "Décompte d'heures supplémentaires",
+        "importance": "recommandé"
+      }
     ],
     "confiance": "certain"
   },
   {
-    "procedure": "tribunal_civil_petit",
+    "procédure": "tribunal_civil_petit",
     "titre": "Action au tribunal civil (valeur litigieuse < 30'000 CHF) — procédure simplifiée",
     "baseLegale": "CPC 243-247",
     "conditionsRecevabilite": {
@@ -62,7 +94,10 @@
       "interet": "Intérêt actuel et personnel",
       "conciliationPrealable": "Oui obligatoire (CPC 197)",
       "forme": "Requête écrite ou orale au greffe (CPC 244)",
-      "annexes": ["Autorisation de procéder", "Pièces justificatives numérotées"],
+      "annexes": [
+        "Autorisation de procéder",
+        "Pièces justificatives numérotées"
+      ],
       "signature": "Demandeur ou représentant",
       "avanceFrais": "Avance de frais selon tarif cantonal (en général 200-2000 CHF)",
       "delai": "Respecter le délai de l'autorisation de procéder (CPC 209 : 3 mois après conciliation)"
@@ -72,15 +107,24 @@
       "Oublier la conciliation préalable → irrecevable",
       "Ne pas payer l'avance de frais dans le délai → non-entrée en matière"
     ],
-    "documentsRecommandes": [
-      { "document": "Autorisation de procéder", "importance": "obligatoire" },
-      { "document": "Pièces justificatives", "importance": "obligatoire" },
-      { "document": "Bordereau de pièces numéroté", "importance": "fortement recommandé" }
+    "documentsRecommandés": [
+      {
+        "document": "Autorisation de procéder",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Pièces justificatives",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Bordereau de pièces numéroté",
+        "importance": "fortement recommandé"
+      }
     ],
     "confiance": "certain"
   },
   {
-    "procedure": "tribunal_civil_grand",
+    "procédure": "tribunal_civil_grand",
     "titre": "Action au tribunal civil (valeur litigieuse > 30'000 CHF) — procédure ordinaire",
     "baseLegale": "CPC 219-242",
     "conditionsRecevabilite": {
@@ -88,7 +132,12 @@
       "interet": "Intérêt actuel et personnel",
       "conciliationPrealable": "Oui obligatoire (CPC 197), sauf si les parties acceptent de soumettre directement au tribunal (CPC 199)",
       "forme": "Demande écrite motivée (CPC 221)",
-      "annexes": ["Autorisation de procéder", "Pièces justificatives", "Liste de témoins", "Procuration si représenté"],
+      "annexes": [
+        "Autorisation de procéder",
+        "Pièces justificatives",
+        "Liste de témoins",
+        "Procuration si représenté"
+      ],
       "signature": "Demandeur ou son avocat",
       "avanceFrais": "Avance de frais selon tarif cantonal (souvent 3-10% de la valeur litigieuse)",
       "delai": "3 mois dès l'autorisation de procéder (CPC 209)"
@@ -98,16 +147,28 @@
       "Demande insuffisamment motivée → renvoi pour correction ou irrecevabilité",
       "Non-paiement de l'avance de frais → non-entrée en matière"
     ],
-    "documentsRecommandes": [
-      { "document": "Autorisation de procéder", "importance": "obligatoire" },
-      { "document": "Demande motivée avec conclusions chiffrées", "importance": "obligatoire" },
-      { "document": "Bordereau de pièces complet", "importance": "obligatoire" },
-      { "document": "Procuration d'avocat", "importance": "obligatoire si représenté" }
+    "documentsRecommandés": [
+      {
+        "document": "Autorisation de procéder",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Demande motivée avec conclusions chiffrées",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Bordereau de pièces complet",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Procuration d'avocat",
+        "importance": "obligatoire si représenté"
+      }
     ],
     "confiance": "certain"
   },
   {
-    "procedure": "opposition_commandement_payer",
+    "procédure": "opposition_commandement_payer",
     "titre": "Opposition au commandement de payer",
     "baseLegale": "LP 74-78",
     "conditionsRecevabilite": {
@@ -125,14 +186,20 @@
       "Ne pas former opposition → risque de continuation de la poursuite",
       "Oublier l'opposition partielle quand seule une partie est contestée"
     ],
-    "documentsRecommandes": [
-      { "document": "Commandement de payer reçu", "importance": "obligatoire" },
-      { "document": "Preuves de paiement si dette contestée", "importance": "recommandé" }
+    "documentsRecommandés": [
+      {
+        "document": "Commandement de payer reçu",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Preuves de paiement si dette contestée",
+        "importance": "recommandé"
+      }
     ],
     "confiance": "certain"
   },
   {
-    "procedure": "mainlevee_provisoire",
+    "procédure": "mainlevee_provisoire",
     "titre": "Requête de mainlevée provisoire",
     "baseLegale": "LP 82",
     "conditionsRecevabilite": {
@@ -140,7 +207,11 @@
       "interet": "Lever l'opposition du débiteur pour continuer la poursuite",
       "conciliationPrealable": "Non (procédure sommaire LP)",
       "forme": "Requête écrite au tribunal du lieu de la poursuite",
-      "annexes": ["Commandement de payer", "Reconnaissance de dette signée", "Contrat, factures, etc."],
+      "annexes": [
+        "Commandement de payer",
+        "Reconnaissance de dette signée",
+        "Contrat, factures, etc."
+      ],
       "signature": "Créancier ou représentant",
       "avanceFrais": "Avance de frais selon tarif cantonal",
       "delai": "Pas de délai légal, mais agir rapidement après l'opposition"
@@ -150,15 +221,24 @@
       "Présenter un titre insuffisant (simple facture sans signature) → rejet",
       "Se tromper de tribunal (for de la poursuite)"
     ],
-    "documentsRecommandes": [
-      { "document": "Commandement de payer notifié", "importance": "obligatoire" },
-      { "document": "Reconnaissance de dette originale", "importance": "obligatoire" },
-      { "document": "Contrat signé", "importance": "fortement recommandé" }
+    "documentsRecommandés": [
+      {
+        "document": "Commandement de payer notifié",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Reconnaissance de dette originale",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Contrat signé",
+        "importance": "fortement recommandé"
+      }
     ],
     "confiance": "certain"
   },
   {
-    "procedure": "mainlevee_definitive",
+    "procédure": "mainlevee_definitive",
     "titre": "Requête de mainlevée définitive",
     "baseLegale": "LP 80-81",
     "conditionsRecevabilite": {
@@ -166,7 +246,11 @@
       "interet": "Lever l'opposition pour continuer la poursuite",
       "conciliationPrealable": "Non (procédure sommaire LP)",
       "forme": "Requête écrite au tribunal du lieu de la poursuite",
-      "annexes": ["Jugement exécutoire", "Commandement de payer", "Attestation de force exécutoire si nécessaire"],
+      "annexes": [
+        "Jugement exécutoire",
+        "Commandement de payer",
+        "Attestation de force exécutoire si nécessaire"
+      ],
       "signature": "Créancier ou représentant",
       "avanceFrais": "Avance de frais selon tarif cantonal",
       "delai": "Pas de délai légal strict"
@@ -176,15 +260,24 @@
       "Créance prescrite depuis le jugement → rejet possible",
       "Titre étranger non reconnu en Suisse → rejet"
     ],
-    "documentsRecommandes": [
-      { "document": "Jugement exécutoire", "importance": "obligatoire" },
-      { "document": "Commandement de payer", "importance": "obligatoire" },
-      { "document": "Attestation de force exécutoire", "importance": "fortement recommandé" }
+    "documentsRecommandés": [
+      {
+        "document": "Jugement exécutoire",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Commandement de payer",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Attestation de force exécutoire",
+        "importance": "fortement recommandé"
+      }
     ],
     "confiance": "certain"
   },
   {
-    "procedure": "requete_faillite_191",
+    "procédure": "requete_faillite_191",
     "titre": "Requête de faillite personnelle (art. 191 LP)",
     "baseLegale": "LP 191",
     "conditionsRecevabilite": {
@@ -192,7 +285,12 @@
       "interet": "Débiteur surendetté souhaitant la liquidation de ses dettes",
       "conciliationPrealable": "Non",
       "forme": "Requête écrite au tribunal de la faillite du domicile",
-      "annexes": ["État des dettes complet", "État des actifs", "Justificatifs de revenus", "Tentatives d'arrangements préalables"],
+      "annexes": [
+        "État des dettes complet",
+        "État des actifs",
+        "Justificatifs de revenus",
+        "Tentatives d'arrangements préalables"
+      ],
       "signature": "Le débiteur personnellement",
       "avanceFrais": "Avance de frais (1000-3000 CHF selon canton) ou requête d'assistance judiciaire",
       "delai": "Pas de délai, mais urgence liée à l'insolvabilité"
@@ -202,16 +300,28 @@
       "Ne pas avoir tenté d'arrangement amiable avant → tribunal peut refuser",
       "Non-paiement de l'avance de frais sans assistance judiciaire → irrecevable"
     ],
-    "documentsRecommandes": [
-      { "document": "Liste complète des créanciers et montants", "importance": "obligatoire" },
-      { "document": "Dernière déclaration d'impôt", "importance": "obligatoire" },
-      { "document": "Attestation de revenu", "importance": "obligatoire" },
-      { "document": "Preuves de tentatives d'arrangement", "importance": "fortement recommandé" }
+    "documentsRecommandés": [
+      {
+        "document": "Liste complète des créanciers et montants",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Dernière déclaration d'impôt",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Attestation de revenu",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Preuves de tentatives d'arrangement",
+        "importance": "fortement recommandé"
+      }
     ],
     "confiance": "certain"
   },
   {
-    "procedure": "mesures_provisionnelles",
+    "procédure": "mesures_provisionnelles",
     "titre": "Requête de mesures provisionnelles",
     "baseLegale": "CPC 261-269",
     "conditionsRecevabilite": {
@@ -219,7 +329,11 @@
       "interet": "Urgence : risque de préjudice difficilement réparable",
       "conciliationPrealable": "Non (CPC 198 let. a)",
       "forme": "Requête écrite motivée avec vraisemblance du droit et urgence",
-      "annexes": ["Preuves de la vraisemblance du droit invoqué", "Preuves de l'urgence", "Preuves du risque de préjudice"],
+      "annexes": [
+        "Preuves de la vraisemblance du droit invoqué",
+        "Preuves de l'urgence",
+        "Preuves du risque de préjudice"
+      ],
       "signature": "Requérant ou son avocat",
       "avanceFrais": "Avance de frais ou sûretés (CPC 264)",
       "delai": "Aucun délai fixe, mais l'urgence doit être démontrée"
@@ -229,16 +343,28 @@
       "Droit invoqué pas rendu vraisemblable → rejet",
       "Demander des mesures provisionnelles pour un droit déjà éteint → rejet"
     ],
-    "documentsRecommandes": [
-      { "document": "Requête motivée détaillée", "importance": "obligatoire" },
-      { "document": "Preuves du droit invoqué", "importance": "obligatoire" },
-      { "document": "Preuves de l'urgence", "importance": "obligatoire" },
-      { "document": "Évaluation du préjudice", "importance": "fortement recommandé" }
+    "documentsRecommandés": [
+      {
+        "document": "Requête motivée détaillée",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Preuves du droit invoqué",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Preuves de l'urgence",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Évaluation du préjudice",
+        "importance": "fortement recommandé"
+      }
     ],
     "confiance": "certain"
   },
   {
-    "procedure": "divorce_requete_commune",
+    "procédure": "divorce_requete_commune",
     "titre": "Divorce sur requête commune",
     "baseLegale": "CC 111-112",
     "conditionsRecevabilite": {
@@ -246,7 +372,12 @@
       "interet": "Volonté commune de divorcer",
       "conciliationPrealable": "Non (pas nécessaire pour le divorce)",
       "forme": "Requête commune écrite avec convention complète ou partielle (CC 111-112)",
-      "annexes": ["Convention de divorce signée", "Documents d'état civil", "Certificats de famille", "Attestation AVS/LPP"],
+      "annexes": [
+        "Convention de divorce signée",
+        "Documents d'état civil",
+        "Certificats de famille",
+        "Attestation AVS/LPP"
+      ],
       "signature": "Les deux époux",
       "avanceFrais": "Avance de frais partagée (500-2000 CHF selon canton)",
       "delai": "Aucun délai minimal de séparation si requête commune avec convention complète"
@@ -256,17 +387,32 @@
       "Un époux retire son consentement avant le jugement → conversion en divorce contentieux",
       "Oublier le partage LPP → le tribunal doit le traiter d'office"
     ],
-    "documentsRecommandes": [
-      { "document": "Convention de divorce complète", "importance": "obligatoire" },
-      { "document": "Acte de mariage", "importance": "obligatoire" },
-      { "document": "Actes de naissance des enfants", "importance": "obligatoire si enfants" },
-      { "document": "Attestation de prévoyance LPP des deux époux", "importance": "obligatoire" },
-      { "document": "Déclaration d'impôts récente", "importance": "fortement recommandé" }
+    "documentsRecommandés": [
+      {
+        "document": "Convention de divorce complète",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Acte de mariage",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Actes de naissance des enfants",
+        "importance": "obligatoire si enfants"
+      },
+      {
+        "document": "Attestation de prévoyance LPP des deux époux",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Déclaration d'impôts récente",
+        "importance": "fortement recommandé"
+      }
     ],
     "confiance": "certain"
   },
   {
-    "procedure": "divorce_contentieux",
+    "procédure": "divorce_contentieux",
     "titre": "Divorce contentieux (unilatéral)",
     "baseLegale": "CC 114-115",
     "conditionsRecevabilite": {
@@ -274,7 +420,10 @@
       "interet": "Rupture du lien conjugal",
       "conciliationPrealable": "Non (pas pour le divorce)",
       "forme": "Demande unilatérale écrite au tribunal du domicile (CPC 23)",
-      "annexes": ["Documents d'état civil", "Preuves de la séparation de 2 ans (CC 114) ou motifs graves (CC 115)"],
+      "annexes": [
+        "Documents d'état civil",
+        "Preuves de la séparation de 2 ans (CC 114) ou motifs graves (CC 115)"
+      ],
       "signature": "Époux demandeur ou son avocat",
       "avanceFrais": "Avance de frais complète à charge du demandeur (1000-5000 CHF selon canton et complexité)",
       "delai": "2 ans de séparation (CC 114) sauf motifs graves (CC 115)"
@@ -284,16 +433,28 @@
       "Ne pas pouvoir prouver la durée de séparation → rejet",
       "Demande au mauvais tribunal → renvoi"
     ],
-    "documentsRecommandes": [
-      { "document": "Acte de mariage", "importance": "obligatoire" },
-      { "document": "Preuves de séparation effective (contrats séparés, attestation commune)", "importance": "obligatoire" },
-      { "document": "Documents financiers complets", "importance": "obligatoire" },
-      { "document": "Attestations LPP", "importance": "obligatoire" }
+    "documentsRecommandés": [
+      {
+        "document": "Acte de mariage",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Preuves de séparation effective (contrats séparés, attestation commune)",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Documents financiers complets",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Attestations LPP",
+        "importance": "obligatoire"
+      }
     ],
     "confiance": "certain"
   },
   {
-    "procedure": "requete_apea",
+    "procédure": "requete_apea",
     "titre": "Requête à l'APEA (Autorité de protection de l'adulte et de l'enfant)",
     "baseLegale": "CC 307-317 (enfant), CC 360-456 (adulte)",
     "conditionsRecevabilite": {
@@ -301,7 +462,11 @@
       "interet": "Protection d'un enfant ou d'un adulte en danger",
       "conciliationPrealable": "Non",
       "forme": "Requête écrite ou signalement oral (l'APEA instruit d'office)",
-      "annexes": ["Description de la situation", "Rapports médicaux si disponibles", "Témoignages"],
+      "annexes": [
+        "Description de la situation",
+        "Rapports médicaux si disponibles",
+        "Témoignages"
+      ],
       "signature": "Requérant (peut être anonyme pour signalement)",
       "avanceFrais": "Gratuit",
       "delai": "Aucun délai, agir dès que la situation est connue"
@@ -311,15 +476,24 @@
       "Signalement malveillant → peut engager la responsabilité du signalant",
       "Ne pas signaler une situation de danger en tant que professionnel → infraction (obligation légale)"
     ],
-    "documentsRecommandes": [
-      { "document": "Description factuelle de la situation", "importance": "obligatoire" },
-      { "document": "Rapports médicaux ou psychologiques", "importance": "fortement recommandé" },
-      { "document": "Témoignages de tiers", "importance": "recommandé" }
+    "documentsRecommandés": [
+      {
+        "document": "Description factuelle de la situation",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Rapports médicaux ou psychologiques",
+        "importance": "fortement recommandé"
+      },
+      {
+        "document": "Témoignages de tiers",
+        "importance": "recommandé"
+      }
     ],
     "confiance": "certain"
   },
   {
-    "procedure": "plainte_penale",
+    "procédure": "plainte_pénale",
     "titre": "Plainte pénale",
     "baseLegale": "CPP 118-121, CP 30-33",
     "conditionsRecevabilite": {
@@ -327,7 +501,10 @@
       "interet": "Avoir subi une atteinte directe à un bien juridique protégé",
       "conciliationPrealable": "Non",
       "forme": "Plainte écrite ou orale auprès de la police ou du Ministère public",
-      "annexes": ["Preuves disponibles", "Certificat médical si lésions corporelles"],
+      "annexes": [
+        "Preuves disponibles",
+        "Certificat médical si lésions corporelles"
+      ],
       "signature": "Le lésé ou son représentant légal",
       "avanceFrais": "Gratuit (mais risque d'indemnité si plainte téméraire)",
       "delai": "3 mois dès la connaissance de l'auteur (CP 31) pour les infractions sur plainte"
@@ -337,16 +514,28 @@
       "Porter plainte pour une infraction poursuivie d'office → c'est une dénonciation, pas une plainte",
       "Retirer la plainte puis vouloir la redéposer → impossible (CP 33 al. 2)"
     ],
-    "documentsRecommandes": [
-      { "document": "Description détaillée des faits", "importance": "obligatoire" },
-      { "document": "Certificat médical", "importance": "obligatoire si lésions" },
-      { "document": "Photos, captures d'écran", "importance": "fortement recommandé" },
-      { "document": "Liste de témoins", "importance": "recommandé" }
+    "documentsRecommandés": [
+      {
+        "document": "Description détaillée des faits",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Certificat médical",
+        "importance": "obligatoire si lésions"
+      },
+      {
+        "document": "Photos, captures d'écran",
+        "importance": "fortement recommandé"
+      },
+      {
+        "document": "Liste de témoins",
+        "importance": "recommandé"
+      }
     ],
     "confiance": "certain"
   },
   {
-    "procedure": "denonciation_penale",
+    "procédure": "denonciation_pénale",
     "titre": "Dénonciation pénale",
     "baseLegale": "CPP 301",
     "conditionsRecevabilite": {
@@ -354,7 +543,9 @@
       "interet": "Signaler une infraction poursuivie d'office",
       "conciliationPrealable": "Non",
       "forme": "Écrite ou orale auprès de la police ou du Ministère public",
-      "annexes": ["Éléments factuels à disposition"],
+      "annexes": [
+        "Éléments factuels à disposition"
+      ],
       "signature": "Peut être anonyme",
       "avanceFrais": "Gratuit",
       "delai": "Pas de délai pour dénoncer (mais prescription de l'infraction, CP 97-101)"
@@ -364,14 +555,20 @@
       "Dénonciation calomnieuse → infraction pénale (CP 303)",
       "Confondre dénonciation et plainte → si l'infraction est sur plainte et qu'on n'est pas lésé, pas de suite"
     ],
-    "documentsRecommandes": [
-      { "document": "Description des faits observés", "importance": "obligatoire" },
-      { "document": "Preuves matérielles", "importance": "recommandé" }
+    "documentsRecommandés": [
+      {
+        "document": "Description des faits observés",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Preuves matérielles",
+        "importance": "recommandé"
+      }
     ],
     "confiance": "certain"
   },
   {
-    "procedure": "aide_juridictionnelle",
+    "procédure": "aide_juridictionnelle",
     "titre": "Requête d'aide juridictionnelle (assistance judiciaire)",
     "baseLegale": "CPC 117-123, Cst. 29 al. 3",
     "conditionsRecevabilite": {
@@ -379,7 +576,12 @@
       "interet": "Ne pas pouvoir assumer les frais du procès",
       "conciliationPrealable": "Non",
       "forme": "Requête écrite au tribunal compétent",
-      "annexes": ["Formulaire cantonal rempli", "Justificatifs de revenus et fortune", "Avis de taxation", "Attestation d'aide sociale si applicable"],
+      "annexes": [
+        "Formulaire cantonal rempli",
+        "Justificatifs de revenus et fortune",
+        "Avis de taxation",
+        "Attestation d'aide sociale si applicable"
+      ],
       "signature": "Le requérant",
       "avanceFrais": "Aucune",
       "delai": "Avant ou au début de la procédure (idéalement avec la demande au fond)"
@@ -389,17 +591,32 @@
       "Fournir des informations financières incomplètes → refus ou retard",
       "Ne pas signaler un changement de situation financière → révocation"
     ],
-    "documentsRecommandes": [
-      { "document": "Formulaire d'assistance judiciaire du canton", "importance": "obligatoire" },
-      { "document": "3 dernières fiches de salaire", "importance": "obligatoire" },
-      { "document": "Dernière taxation fiscale", "importance": "obligatoire" },
-      { "document": "Relevés bancaires (3 mois)", "importance": "obligatoire" },
-      { "document": "Budget mensuel détaillé", "importance": "fortement recommandé" }
+    "documentsRecommandés": [
+      {
+        "document": "Formulaire d'assistance judiciaire du canton",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "3 dernières fiches de salaire",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Dernière taxation fiscale",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Relevés bancaires (3 mois)",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Budget mensuel détaillé",
+        "importance": "fortement recommandé"
+      }
     ],
     "confiance": "certain"
   },
   {
-    "procedure": "recours_tribunal_cantonal",
+    "procédure": "recours_tribunal_cantonal",
     "titre": "Recours/appel au tribunal cantonal",
     "baseLegale": "CPC 308-318",
     "conditionsRecevabilite": {
@@ -407,7 +624,10 @@
       "interet": "Grief contre le jugement de première instance",
       "conciliationPrealable": "Non",
       "forme": "Appel écrit motivé (CPC 311)",
-      "annexes": ["Jugement attaqué", "Pièces nouvelles si conditions remplies (CPC 317)"],
+      "annexes": [
+        "Jugement attaqué",
+        "Pièces nouvelles si conditions remplies (CPC 317)"
+      ],
       "signature": "Appelant ou son avocat",
       "avanceFrais": "Avance de frais selon tarif cantonal",
       "delai": "30 jours dès notification du jugement motivé (CPC 311)"
@@ -417,15 +637,24 @@
       "Appel insuffisamment motivé → irrecevable",
       "Valeur litigieuse insuffisante pour l'appel (< 10'000 CHF, CPC 308) → utiliser le recours limité"
     ],
-    "documentsRecommandes": [
-      { "document": "Jugement de première instance", "importance": "obligatoire" },
-      { "document": "Mémoire d'appel motivé", "importance": "obligatoire" },
-      { "document": "Nouvelles pièces si recevables", "importance": "recommandé" }
+    "documentsRecommandés": [
+      {
+        "document": "Jugement de première instance",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Mémoire d'appel motivé",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Nouvelles pièces si recevables",
+        "importance": "recommandé"
+      }
     ],
     "confiance": "certain"
   },
   {
-    "procedure": "recours_tf",
+    "procédure": "recours_tf",
     "titre": "Recours au Tribunal fédéral",
     "baseLegale": "LTF 42-43, 72-89, 100",
     "conditionsRecevabilite": {
@@ -433,7 +662,11 @@
       "interet": "Violation du droit fédéral (pas revue des faits sauf arbitraire)",
       "conciliationPrealable": "Non",
       "forme": "Mémoire de recours écrit, motivé, en 2 exemplaires (LTF 42)",
-      "annexes": ["Décision attaquée", "Procuration si représenté", "Pièces du dossier cantonal"],
+      "annexes": [
+        "Décision attaquée",
+        "Procuration si représenté",
+        "Pièces du dossier cantonal"
+      ],
       "signature": "Recourant ou son avocat",
       "avanceFrais": "Avance de frais (800-7000 CHF selon type d'affaire)",
       "delai": "30 jours dès notification de la décision attaquée (LTF 100)"
@@ -444,15 +677,24 @@
       "Contester les faits sans démontrer l'arbitraire → irrecevable",
       "Mémoire mal motivé (pas de griefs constitutionnels précis) → irrecevable"
     ],
-    "documentsRecommandes": [
-      { "document": "Décision cantonale attaquée", "importance": "obligatoire" },
-      { "document": "Mémoire de recours en 2 exemplaires", "importance": "obligatoire" },
-      { "document": "Bordereau de pièces", "importance": "obligatoire" }
+    "documentsRecommandés": [
+      {
+        "document": "Décision cantonale attaquée",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Mémoire de recours en 2 exemplaires",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Bordereau de pièces",
+        "importance": "obligatoire"
+      }
     ],
     "confiance": "certain"
   },
   {
-    "procedure": "naturalisation",
+    "procédure": "naturalisation",
     "titre": "Requête de naturalisation ordinaire",
     "baseLegale": "LN 9-16, CC 37",
     "conditionsRecevabilite": {
@@ -460,7 +702,13 @@
       "interet": "Obtenir la nationalité suisse",
       "conciliationPrealable": "Non",
       "forme": "Formulaire officiel auprès de la commune de domicile",
-      "annexes": ["Permis de séjour/établissement", "Attestation de résidence", "Casier judiciaire vierge", "Certificats de langue", "Attestation d'intégration"],
+      "annexes": [
+        "Permis de séjour/établissement",
+        "Attestation de résidence",
+        "Casier judiciaire vierge",
+        "Certificats de langue",
+        "Attestation d'intégration"
+      ],
       "signature": "Le requérant",
       "avanceFrais": "Émoluments communaux + cantonaux + fédéraux (1000-5000 CHF selon canton)",
       "delai": "10 ans de résidence en Suisse dont 5 dans le canton, 2 dans la commune (délais cantonaux variables)"
@@ -471,17 +719,32 @@
       "Niveau de langue insuffisant → refus",
       "Dépendance à l'aide sociale → refus possible"
     ],
-    "documentsRecommandes": [
-      { "document": "Permis C (établissement)", "importance": "obligatoire" },
-      { "document": "Casier judiciaire vierge", "importance": "obligatoire" },
-      { "document": "Certificat de langue (B1 oral, A2 écrit minimum)", "importance": "obligatoire" },
-      { "document": "Attestation de résidence continue", "importance": "obligatoire" },
-      { "document": "Preuves d'intégration (associations, bénévolat)", "importance": "recommandé" }
+    "documentsRecommandés": [
+      {
+        "document": "Permis C (établissement)",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Casier judiciaire vierge",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Certificat de langue (B1 oral, A2 écrit minimum)",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Attestation de résidence continue",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Preuves d'intégration (associations, bénévolat)",
+        "importance": "recommandé"
+      }
     ],
     "confiance": "variable"
   },
   {
-    "procedure": "recours_lei",
+    "procédure": "recours_lei",
     "titre": "Recours en matière de droit des étrangers (LEI)",
     "baseLegale": "LEI, LTAF 31-33, LTF 83",
     "conditionsRecevabilite": {
@@ -489,7 +752,11 @@
       "interet": "Intérêt actuel à obtenir ou maintenir un titre de séjour",
       "conciliationPrealable": "Non",
       "forme": "Recours écrit motivé auprès du tribunal administratif cantonal, puis TAF, puis TF (limité)",
-      "annexes": ["Décision attaquée", "Preuves d'intégration", "Documents de situation personnelle"],
+      "annexes": [
+        "Décision attaquée",
+        "Preuves d'intégration",
+        "Documents de situation personnelle"
+      ],
       "signature": "Recourant ou son mandataire",
       "avanceFrais": "Avance de frais selon instance (200-1500 CHF)",
       "delai": "30 jours dès notification de la décision (variable selon canton)"
@@ -499,16 +766,28 @@
       "Ne pas demander l'effet suspensif → risque d'exécution du renvoi pendant le recours",
       "Recours au TF contre une décision de renvoi → en principe irrecevable (LTF 83 let. c)"
     ],
-    "documentsRecommandes": [
-      { "document": "Décision attaquée", "importance": "obligatoire" },
-      { "document": "Preuves de séjour et d'intégration", "importance": "obligatoire" },
-      { "document": "Attestation de travail", "importance": "fortement recommandé" },
-      { "document": "Certificats de langue", "importance": "recommandé" }
+    "documentsRecommandés": [
+      {
+        "document": "Décision attaquée",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Preuves de séjour et d'intégration",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Attestation de travail",
+        "importance": "fortement recommandé"
+      },
+      {
+        "document": "Certificats de langue",
+        "importance": "recommandé"
+      }
     ],
     "confiance": "certain"
   },
   {
-    "procedure": "mesures_superprovisionnelles",
+    "procédure": "mesures_superprovisionnelles",
     "titre": "Requête de mesures superprovisionnelles",
     "baseLegale": "CPC 265",
     "conditionsRecevabilite": {
@@ -516,7 +795,10 @@
       "interet": "Urgence extrême, risque de préjudice irréparable si on attend",
       "conciliationPrealable": "Non",
       "forme": "Requête écrite (ou exceptionnellement orale) immédiate au tribunal",
-      "annexes": ["Preuves de l'urgence extrême", "Preuves du droit invoqué"],
+      "annexes": [
+        "Preuves de l'urgence extrême",
+        "Preuves du droit invoqué"
+      ],
       "signature": "Requérant ou son avocat",
       "avanceFrais": "Couvert par les frais de la procédure provisionnelle principale",
       "delai": "Immédiat — le tribunal statue sans entendre l'autre partie"
@@ -526,14 +808,20 @@
       "Demande trop tardive par rapport aux faits → contredit l'urgence",
       "Oublier de déposer rapidement la requête de mesures provisionnelles complète → caducité"
     ],
-    "documentsRecommandes": [
-      { "document": "Requête motivée avec urgence documentée", "importance": "obligatoire" },
-      { "document": "Toute preuve disponible", "importance": "obligatoire" }
+    "documentsRecommandés": [
+      {
+        "document": "Requête motivée avec urgence documentée",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Toute preuve disponible",
+        "importance": "obligatoire"
+      }
     ],
     "confiance": "certain"
   },
   {
-    "procedure": "plainte_lp_office",
+    "procédure": "plainte_lp_office",
     "titre": "Plainte LP contre l'office des poursuites",
     "baseLegale": "LP 17-19",
     "conditionsRecevabilite": {
@@ -541,7 +829,10 @@
       "interet": "Contester un acte ou une omission de l'office",
       "conciliationPrealable": "Non",
       "forme": "Plainte écrite à l'autorité de surveillance LP",
-      "annexes": ["Acte contesté de l'office", "Preuves du préjudice ou de l'irrégularité"],
+      "annexes": [
+        "Acte contesté de l'office",
+        "Preuves du préjudice ou de l'irrégularité"
+      ],
       "signature": "Plaignant ou représentant",
       "avanceFrais": "Gratuit",
       "delai": "10 jours dès la connaissance de l'acte contesté (LP 17 al. 2)"
@@ -551,10 +842,19 @@
       "Contester une décision qui n'est pas un acte de l'office → irrecevable (utiliser une autre voie)",
       "Plainte contre un jugement (au lieu d'un acte de l'office) → mauvaise voie de droit"
     ],
-    "documentsRecommandes": [
-      { "document": "Acte de l'office contesté", "importance": "obligatoire" },
-      { "document": "Preuves de l'irrégularité", "importance": "obligatoire" },
-      { "document": "Correspondance avec l'office", "importance": "recommandé" }
+    "documentsRecommandés": [
+      {
+        "document": "Acte de l'office contesté",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Preuves de l'irrégularité",
+        "importance": "obligatoire"
+      },
+      {
+        "document": "Correspondance avec l'office",
+        "importance": "recommandé"
+      }
     ],
     "confiance": "certain"
   }

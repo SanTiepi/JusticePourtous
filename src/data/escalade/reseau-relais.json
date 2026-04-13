@@ -2,8 +2,21 @@
   {
     "id": "asloca",
     "nom": "ASLOCA (Association suisse des locataires)",
-    "domaines": ["bail"],
-    "cantons": ["VD", "GE", "VS", "NE", "FR", "JU", "BE", "ZH", "BS", "TI"],
+    "domaines": [
+      "bail"
+    ],
+    "cantons": [
+      "VD",
+      "GE",
+      "VS",
+      "NE",
+      "FR",
+      "JU",
+      "BE",
+      "ZH",
+      "BS",
+      "TI"
+    ],
     "type": "association",
     "gratuit": true,
     "conditions": "Cotisation annuelle ~70-90 CHF selon canton. Consultations juridiques réservées aux membres",
@@ -14,8 +27,22 @@
   {
     "id": "caritas_desendettement",
     "nom": "Caritas — Service de désendettement",
-    "domaines": ["dettes"],
-    "cantons": ["VD", "GE", "VS", "NE", "FR", "BE", "ZH", "BS", "LU", "SG", "TI"],
+    "domaines": [
+      "dettes"
+    ],
+    "cantons": [
+      "VD",
+      "GE",
+      "VS",
+      "NE",
+      "FR",
+      "BE",
+      "ZH",
+      "BS",
+      "LU",
+      "SG",
+      "TI"
+    ],
     "type": "association",
     "gratuit": true,
     "conditions": "Gratuit, sur rendez-vous. Priorité aux situations de surendettement avéré",
@@ -26,8 +53,18 @@
   {
     "id": "csp",
     "nom": "CSP (Centre social protestant)",
-    "domaines": ["dettes", "bail", "etrangers", "famille"],
-    "cantons": ["VD", "GE", "NE", "BE"],
+    "domaines": [
+      "dettes",
+      "bail",
+      "étrangers",
+      "famille"
+    ],
+    "cantons": [
+      "VD",
+      "GE",
+      "NE",
+      "BE"
+    ],
     "type": "association",
     "gratuit": true,
     "conditions": "Gratuit, ouvert à toutes les confessions et aux sans-confession. Sur rendez-vous",
@@ -38,8 +75,16 @@
   {
     "id": "aide_juridique_vd",
     "nom": "Bureau de l'assistance juridique — Canton de Vaud",
-    "domaines": ["bail", "travail", "famille", "dettes", "etrangers"],
-    "cantons": ["VD"],
+    "domaines": [
+      "bail",
+      "travail",
+      "famille",
+      "dettes",
+      "étrangers"
+    ],
+    "cantons": [
+      "VD"
+    ],
     "type": "aide_juridique_etatique",
     "gratuit": true,
     "conditions": "Sous conditions de revenus. Formulaire de demande + pièces justificatives (revenus, charges, fortune)",
@@ -50,8 +95,16 @@
   {
     "id": "aide_juridique_ge",
     "nom": "Service de l'assistance juridique — Canton de Genève",
-    "domaines": ["bail", "travail", "famille", "dettes", "etrangers"],
-    "cantons": ["GE"],
+    "domaines": [
+      "bail",
+      "travail",
+      "famille",
+      "dettes",
+      "étrangers"
+    ],
+    "cantons": [
+      "GE"
+    ],
     "type": "aide_juridique_etatique",
     "gratuit": true,
     "conditions": "Sous conditions de revenus. L'affaire ne doit pas être dépourvue de chances de succès",
@@ -62,8 +115,21 @@
   {
     "id": "centre_lavi",
     "nom": "Centres LAVI (Loi sur l'aide aux victimes d'infractions)",
-    "domaines": ["famille"],
-    "cantons": ["VD", "GE", "VS", "NE", "FR", "BE", "ZH", "BS", "TI", "JU"],
+    "domaines": [
+      "famille"
+    ],
+    "cantons": [
+      "VD",
+      "GE",
+      "VS",
+      "NE",
+      "FR",
+      "BE",
+      "ZH",
+      "BS",
+      "TI",
+      "JU"
+    ],
     "type": "service_etatique",
     "gratuit": true,
     "conditions": "Toute personne victime d'une infraction portant atteinte à son intégrité physique, psychique ou sexuelle",
@@ -74,8 +140,23 @@
   {
     "id": "syndicat_unia",
     "nom": "Unia — Syndicat interprofessionnel",
-    "domaines": ["travail"],
-    "cantons": ["VD", "GE", "VS", "NE", "FR", "BE", "ZH", "BS", "TI", "LU", "SG", "AG"],
+    "domaines": [
+      "travail"
+    ],
+    "cantons": [
+      "VD",
+      "GE",
+      "VS",
+      "NE",
+      "FR",
+      "BE",
+      "ZH",
+      "BS",
+      "TI",
+      "LU",
+      "SG",
+      "AG"
+    ],
     "type": "syndicat",
     "gratuit": true,
     "conditions": "Cotisation syndicale (~1% du salaire). Protection juridique incluse après 6 mois de cotisation",
@@ -86,8 +167,21 @@
   {
     "id": "syndicat_syna",
     "nom": "Syna — Le syndicat",
-    "domaines": ["travail"],
-    "cantons": ["VD", "GE", "VS", "FR", "BE", "ZH", "BS", "TI", "SG", "LU"],
+    "domaines": [
+      "travail"
+    ],
+    "cantons": [
+      "VD",
+      "GE",
+      "VS",
+      "FR",
+      "BE",
+      "ZH",
+      "BS",
+      "TI",
+      "SG",
+      "LU"
+    ],
     "type": "syndicat",
     "gratuit": true,
     "conditions": "Cotisation syndicale. Protection juridique après 6 mois de cotisation",
@@ -98,8 +192,15 @@
   {
     "id": "permanence_juridique_lausanne",
     "nom": "Permanence juridique gratuite de l'Ordre des avocats vaudois",
-    "domaines": ["bail", "travail", "famille", "dettes"],
-    "cantons": ["VD"],
+    "domaines": [
+      "bail",
+      "travail",
+      "famille",
+      "dettes"
+    ],
+    "cantons": [
+      "VD"
+    ],
     "type": "permanence",
     "gratuit": true,
     "conditions": "Consultation de 20-30 minutes, sans rendez-vous, premier conseil uniquement",
@@ -110,8 +211,16 @@
   {
     "id": "permanence_juridique_geneve",
     "nom": "Consultation juridique gratuite du Barreau de Genève",
-    "domaines": ["bail", "travail", "famille", "dettes", "etrangers"],
-    "cantons": ["GE"],
+    "domaines": [
+      "bail",
+      "travail",
+      "famille",
+      "dettes",
+      "étrangers"
+    ],
+    "cantons": [
+      "GE"
+    ],
     "type": "permanence",
     "gratuit": true,
     "conditions": "Consultation gratuite de 30 minutes pour les personnes à faibles revenus. Sur inscription",
@@ -122,32 +231,49 @@
   {
     "id": "brapa_vd",
     "nom": "BRAPA — Bureau de recouvrement et d'avances de pensions alimentaires (VD)",
-    "domaines": ["famille"],
-    "cantons": ["VD"],
+    "domaines": [
+      "famille"
+    ],
+    "cantons": [
+      "VD"
+    ],
     "type": "service_etatique",
     "gratuit": true,
     "conditions": "Créance alimentaire fixée par jugement ou convention. Avance jusqu'à concurrence du montant fixé",
     "contact": "https://www.vd.ch/themes/population/pensions-alimentaires",
-    "quandEscalader": "Quand l'ex-conjoint ne verse pas la pension alimentaire fixée par le tribunal",
+    "quandEscalader": "Quand l'ex-conjoint ne versé pas la pension alimentaire fixée par le tribunal",
     "delaiReponse": "2-4 semaines pour la mise en place"
   },
   {
     "id": "scarpa_ge",
     "nom": "SCARPA — Service cantonal d'avance et de recouvrement des pensions alimentaires (GE)",
-    "domaines": ["famille"],
-    "cantons": ["GE"],
+    "domaines": [
+      "famille"
+    ],
+    "cantons": [
+      "GE"
+    ],
     "type": "service_etatique",
     "gratuit": true,
     "conditions": "Pension alimentaire fixée par décision judiciaire ou convention approuvée. Domicile à Genève",
     "contact": "https://www.ge.ch/demander-aide-pour-recouvrement-pensions-alimentaires",
-    "quandEscalader": "Quand l'ex-conjoint ne verse pas la pension alimentaire et que la personne réside à Genève",
+    "quandEscalader": "Quand l'ex-conjoint ne versé pas la pension alimentaire et que la personne réside à Genève",
     "delaiReponse": "2-3 semaines"
   },
   {
     "id": "eper_csr",
     "nom": "EPER/CSR (Entraide protestante suisse) — Service juridique pour les migrants",
-    "domaines": ["etrangers"],
-    "cantons": ["VD", "GE", "NE", "BE", "ZH", "FR"],
+    "domaines": [
+      "étrangers"
+    ],
+    "cantons": [
+      "VD",
+      "GE",
+      "NE",
+      "BE",
+      "ZH",
+      "FR"
+    ],
     "type": "association",
     "gratuit": true,
     "conditions": "Personnes migrantes en situation précaire. Consultations juridiques gratuites en droit des étrangers et asile",
@@ -158,8 +284,13 @@
   {
     "id": "ssp_permanence_sans_papiers",
     "nom": "Collectif de soutien aux sans-papiers",
-    "domaines": ["etrangers"],
-    "cantons": ["VD", "GE"],
+    "domaines": [
+      "étrangers"
+    ],
+    "cantons": [
+      "VD",
+      "GE"
+    ],
     "type": "association",
     "gratuit": true,
     "conditions": "Personnes sans statut légal en Suisse",
@@ -170,8 +301,21 @@
   {
     "id": "apea_cantonal",
     "nom": "APEA — Autorité de protection de l'enfant et de l'adulte",
-    "domaines": ["famille"],
-    "cantons": ["VD", "GE", "VS", "NE", "FR", "BE", "ZH", "BS", "TI", "JU"],
+    "domaines": [
+      "famille"
+    ],
+    "cantons": [
+      "VD",
+      "GE",
+      "VS",
+      "NE",
+      "FR",
+      "BE",
+      "ZH",
+      "BS",
+      "TI",
+      "JU"
+    ],
     "type": "autorite_judiciaire",
     "gratuit": true,
     "conditions": "Signalement possible par toute personne. Procédure d'office si danger pour un enfant ou un adulte vulnérable",
@@ -182,20 +326,37 @@
   {
     "id": "mediation_familiale_vd",
     "nom": "Association vaudoise pour la médiation familiale (AVMF)",
-    "domaines": ["famille"],
-    "cantons": ["VD"],
+    "domaines": [
+      "famille"
+    ],
+    "cantons": [
+      "VD"
+    ],
     "type": "mediateur",
     "gratuit": false,
     "conditions": "CHF 150-250/heure. Certains cantons subsidient la première séance. Participation volontaire des deux parties",
-    "contact": "https://www.mediation-vaud.ch",
+    "contact": "https://www.médiation-vaud.ch",
     "quandEscalader": "Quand les parents peuvent encore dialoguer et qu'une solution négociée est préférable à un procès (garde, pension, modalités)",
     "delaiReponse": "1-2 semaines"
   },
   {
     "id": "office_poursuites",
     "nom": "Office des poursuites et faillites (cantonal)",
-    "domaines": ["dettes"],
-    "cantons": ["VD", "GE", "VS", "NE", "FR", "BE", "ZH", "BS", "TI", "JU"],
+    "domaines": [
+      "dettes"
+    ],
+    "cantons": [
+      "VD",
+      "GE",
+      "VS",
+      "NE",
+      "FR",
+      "BE",
+      "ZH",
+      "BS",
+      "TI",
+      "JU"
+    ],
     "type": "autorite_administrative",
     "gratuit": true,
     "conditions": "Compétent pour le lieu de domicile du débiteur. Guichet public",
@@ -206,8 +367,20 @@
   {
     "id": "commission_conciliation_baux",
     "nom": "Commission de conciliation en matière de baux et loyers",
-    "domaines": ["bail"],
-    "cantons": ["VD", "GE", "VS", "NE", "FR", "BE", "ZH", "BS", "TI"],
+    "domaines": [
+      "bail"
+    ],
+    "cantons": [
+      "VD",
+      "GE",
+      "VS",
+      "NE",
+      "FR",
+      "BE",
+      "ZH",
+      "BS",
+      "TI"
+    ],
     "type": "autorite_judiciaire",
     "gratuit": true,
     "conditions": "Gratuit. Préalable obligatoire avant toute action en justice en matière de bail (CPC 197)",
@@ -218,8 +391,17 @@
   {
     "id": "tribunal_prudhommes",
     "nom": "Tribunal des prud'hommes",
-    "domaines": ["travail"],
-    "cantons": ["VD", "GE", "NE", "BE", "ZH", "BS"],
+    "domaines": [
+      "travail"
+    ],
+    "cantons": [
+      "VD",
+      "GE",
+      "NE",
+      "BE",
+      "ZH",
+      "BS"
+    ],
     "type": "autorite_judiciaire",
     "gratuit": true,
     "conditions": "Gratuit jusqu'à CHF 30'000 de valeur litigieuse dans la plupart des cantons (VD, GE, etc.)",
@@ -230,12 +412,27 @@
   {
     "id": "association_mediation_suisse",
     "nom": "FSM — Fédération suisse des associations de médiation",
-    "domaines": ["bail", "travail", "famille", "dettes"],
-    "cantons": ["VD", "GE", "VS", "NE", "FR", "BE", "ZH", "BS", "TI"],
+    "domaines": [
+      "bail",
+      "travail",
+      "famille",
+      "dettes"
+    ],
+    "cantons": [
+      "VD",
+      "GE",
+      "VS",
+      "NE",
+      "FR",
+      "BE",
+      "ZH",
+      "BS",
+      "TI"
+    ],
     "type": "mediateur",
     "gratuit": false,
     "conditions": "CHF 150-300/heure selon le médiateur. Annuaire de médiateurs certifiés FSM/SDM",
-    "contact": "https://www.mediation-ch.org",
+    "contact": "https://www.médiation-ch.org",
     "quandEscalader": "Quand les parties souhaitent une résolution amiable encadrée, alternative au tribunal",
     "delaiReponse": "1-2 semaines"
   }

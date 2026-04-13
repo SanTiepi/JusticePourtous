@@ -5,7 +5,7 @@
     "gravite": "critique",
     "consequence": "Résiliation pour défaut de paiement (CO 257d) — le bailleur peut résilier avec un préavis de 30 jours",
     "correction": "Toujours consigner le loyer auprès de l'autorité de conciliation ou de la préfecture AVANT de réduire",
-    "base_legale": "CO 259g-259h",
+    "base_légale": "CO 259g-259h",
     "frequence": "Très fréquente"
   },
   {
@@ -14,25 +14,25 @@
     "gravite": "critique",
     "consequence": "Perte définitive du droit de contestation et de prolongation du bail",
     "correction": "Saisir la commission de conciliation dans les 30 jours dès réception du congé — délai non prolongeable",
-    "base_legale": "CO 273 al. 1",
+    "base_légale": "CO 273 al. 1",
     "frequence": "Très fréquente"
   },
   {
     "domaine": "bail",
     "erreur": "Quitter l'appartement avant la fin du bail sans trouver de remplaçant solvable",
-    "gravite": "elevee",
+    "gravite": "élevée",
     "consequence": "Le locataire reste redevable du loyer jusqu'à ce que le bailleur reloue ou jusqu'à l'échéance du bail",
     "correction": "Proposer un remplaçant solvable et acceptable (CO 264) — le bail est libéré dès son entrée",
-    "base_legale": "CO 264",
+    "base_légale": "CO 264",
     "frequence": "Fréquente"
   },
   {
     "domaine": "bail",
     "erreur": "Ne pas vérifier si l'avis de hausse de loyer est sur formule officielle",
-    "gravite": "elevee",
+    "gravite": "élevée",
     "consequence": "On accepte une hausse potentiellement nulle — la hausse sans formule officielle est nulle de plein droit",
     "correction": "Vérifier que la hausse est communiquée sur la formule officielle agréée par le canton",
-    "base_legale": "CO 269d",
+    "base_légale": "CO 269d",
     "frequence": "Fréquente"
   },
   {
@@ -41,7 +41,7 @@
     "gravite": "moyenne",
     "consequence": "Impossibilité de prouver le défaut et sa durée devant le tribunal",
     "correction": "Photographier avec date, envoyer des mises en demeure par courrier recommandé, garder les copies",
-    "base_legale": "CO 259a-259d",
+    "base_légale": "CO 259a-259d",
     "frequence": "Très fréquente"
   },
   {
@@ -50,7 +50,7 @@
     "gravite": "critique",
     "consequence": "L'action en indemnité pour licenciement abusif devient irrecevable (CO 336b al. 1)",
     "correction": "Envoyer une opposition écrite (recommandé) à l'employeur AVANT la fin du délai de congé",
-    "base_legale": "CO 336b al. 1",
+    "base_légale": "CO 336b al. 1",
     "frequence": "Très fréquente"
   },
   {
@@ -59,25 +59,25 @@
     "gravite": "critique",
     "consequence": "Indemnité de 25% du salaire mensuel due à l'employeur + dommages-intérêts (CO 337d)",
     "correction": "Vérifier si les conditions de la résiliation immédiate pour justes motifs sont remplies (CO 337). En cas de doute, continuer à travailler et consulter",
-    "base_legale": "CO 337, 337d",
+    "base_légale": "CO 337, 337d",
     "frequence": "Fréquente"
   },
   {
     "domaine": "travail",
     "erreur": "Ne pas s'inscrire au chômage le premier jour ouvrable après la fin du contrat",
-    "gravite": "elevee",
+    "gravite": "élevée",
     "consequence": "Perte d'indemnités pour chaque jour de retard — les indemnités ne sont pas rétroactives",
     "correction": "S'inscrire à l'ORP le premier jour ouvrable suivant la fin du contrat. Commencer les recherches d'emploi avant",
-    "base_legale": "LACI 17, OACI 18",
+    "base_légale": "LACI 17, OACI 18",
     "frequence": "Fréquente"
   },
   {
     "domaine": "travail",
     "erreur": "Accepter une convention de départ sans vérifier les conséquences sur le chômage",
-    "gravite": "elevee",
+    "gravite": "élevée",
     "consequence": "Suspension des indemnités de chômage (jusqu'à 60 jours) si résiliation d'un commun accord assimilée à un départ volontaire",
     "correction": "Faire rédiger la convention de manière à ce qu'il apparaisse que l'initiative vient de l'employeur. Consulter avant de signer",
-    "base_legale": "LACI 30 al. 1 lit. a, OACI 44",
+    "base_légale": "LACI 30 al. 1 lit. a, OACI 44",
     "frequence": "Fréquente"
   },
   {
@@ -86,16 +86,16 @@
     "gravite": "moyenne",
     "consequence": "Impossibilité de prouver les heures supplémentaires — le fardeau de la preuve incombe au travailleur",
     "correction": "Tenir un relevé quotidien des heures avec copie (email à soi-même, app de suivi). Faire signer par le supérieur si possible",
-    "base_legale": "CO 321c",
+    "base_légale": "CO 321c",
     "frequence": "Très fréquente"
   },
   {
     "domaine": "famille",
     "erreur": "Quitter le domicile conjugal sans mesures protectrices préalables",
-    "gravite": "elevee",
+    "gravite": "élevée",
     "consequence": "Le conjoint qui part peut perdre l'attribution du logement conjugal et se voir reprocher l'abandon du domicile",
     "correction": "Demander des mesures protectrices de l'union conjugale (CC 172) AVANT de quitter, sauf en cas de violence (alors quitter immédiatement et demander des mesures d'urgence)",
-    "base_legale": "CC 172-176",
+    "base_légale": "CC 172-176",
     "frequence": "Fréquente"
   },
   {
@@ -104,16 +104,16 @@
     "gravite": "critique",
     "consequence": "Poursuite pénale pour violation de l'obligation d'entretien (CP 217) — peine privative de liberté possible",
     "correction": "Demander une modification de la contribution d'entretien au tribunal si les circonstances ont changé (CC 286 al. 2). Continuer à payer en attendant",
-    "base_legale": "CC 286 al. 2, CP 217",
+    "base_légale": "CC 286 al. 2, CP 217",
     "frequence": "Fréquente"
   },
   {
     "domaine": "famille",
     "erreur": "Refuser le droit de visite de l'autre parent sans décision de l'APEA ou du tribunal",
-    "gravite": "elevee",
+    "gravite": "élevée",
     "consequence": "Sanctions de l'APEA (avertissement, amende, curatelle), voire modification de la garde en faveur de l'autre parent",
     "correction": "Si danger pour l'enfant : demander des mesures urgentes à l'APEA. Ne jamais prendre unilatéralement la décision de supprimer le droit de visite",
-    "base_legale": "CC 273-274, CC 307-310",
+    "base_légale": "CC 273-274, CC 307-310",
     "frequence": "Fréquente"
   },
   {
@@ -122,7 +122,7 @@
     "gravite": "critique",
     "consequence": "Enlèvement international d'enfant (Convention de La Haye) — retour immédiat ordonné + conséquences pénales",
     "correction": "Obtenir l'accord écrit de l'autre parent ou l'autorisation du tribunal (CC 301a) AVANT tout déménagement",
-    "base_legale": "CC 301a, Convention de La Haye 1980",
+    "base_légale": "CC 301a, Convention de La Haye 1980",
     "frequence": "Moyenne"
   },
   {
@@ -131,7 +131,7 @@
     "gravite": "moyenne",
     "consequence": "Perte de revenu et difficultés financières évitables — le canton peut avancer et se retourner contre le débiteur",
     "correction": "Contacter le BRAPA (VD), SCARPA (GE), ou service équivalent du canton pour demander l'avance des pensions non payées",
-    "base_legale": "Lois cantonales sur le recouvrement des pensions alimentaires",
+    "base_légale": "Lois cantonales sur le recouvrement des pensions alimentaires",
     "frequence": "Très fréquente"
   },
   {
@@ -139,17 +139,17 @@
     "erreur": "Ne pas former opposition au commandement de payer par peur ou ignorance",
     "gravite": "critique",
     "consequence": "Le créancier peut requérir la continuation de la poursuite, même si la dette est contestée",
-    "correction": "TOUJOURS former opposition dans les 10 jours — c'est gratuit, oral ou écrit, et bloque la poursuite",
-    "base_legale": "LP 74",
+    "correction": "TOUJOURS former opposition dans les 10 jours — c'est gratuit, oral ou écrit, et bloqué la poursuite",
+    "base_légale": "LP 74",
     "frequence": "Très fréquente"
   },
   {
     "domaine": "dettes",
     "erreur": "Payer une vieille dette prescrite suite à la pression d'un bureau de recouvrement",
-    "gravite": "elevee",
+    "gravite": "élevée",
     "consequence": "Perte d'argent — une dette prescrite n'est plus exigible juridiquement",
     "correction": "Vérifier la prescription (5 ou 10 ans selon le type de dette). Soulever l'exception de prescription si poursuivi",
-    "base_legale": "CO 127-128, CO 142",
+    "base_légale": "CO 127-128, CO 142",
     "frequence": "Fréquente"
   },
   {
@@ -158,70 +158,70 @@
     "gravite": "critique",
     "consequence": "Sans réaction : continuation de la poursuite → saisie de salaire → acte de défaut de biens (inscrit pendant 20 ans)",
     "correction": "Réagir immédiatement : former opposition si la dette est contestée, ou contacter un service de désendettement",
-    "base_legale": "LP 74, 149a",
+    "base_légale": "LP 74, 149a",
     "frequence": "Très fréquente"
   },
   {
     "domaine": "dettes",
     "erreur": "Contracter un nouveau crédit pour rembourser des dettes existantes",
-    "gravite": "elevee",
+    "gravite": "élevée",
     "consequence": "Spirale de surendettement — intérêts cumulés et aggravation de la situation financière",
     "correction": "Consulter un service de désendettement gratuit (Caritas, CSP, centres sociaux cantonaux) avant tout nouvel emprunt",
-    "base_legale": "LCC 28-31 (loi sur le crédit à la consommation)",
+    "base_légale": "LCC 28-31 (loi sur le crédit à la consommation)",
     "frequence": "Très fréquente"
   },
   {
     "domaine": "dettes",
     "erreur": "Ne pas contester le calcul du minimum vital lors d'une saisie de salaire",
-    "gravite": "elevee",
+    "gravite": "élevée",
     "consequence": "Saisie excessive — le minimum vital protège les besoins essentiels et varie selon la situation familiale",
     "correction": "Demander le détail du calcul à l'office des poursuites. Déposer une plainte à l'autorité de surveillance (LP 17) si le calcul est erroné",
-    "base_legale": "LP 93, Lignes directrices de la CSEP",
+    "base_légale": "LP 93, Lignes directrices de la CSEP",
     "frequence": "Fréquente"
   },
   {
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "erreur": "Ne pas recourir contre un refus de permis en pensant que c'est inutile",
     "gravite": "critique",
     "consequence": "La décision entre en force — obligation de quitter la Suisse sans possibilité de contestation ultérieure",
     "correction": "Toujours recourir dans le délai de 30 jours si des arguments juridiques existent. Consulter un service d'aide juridique gratuit",
-    "base_legale": "LEI 64, LTAF 50",
+    "base_légale": "LEI 64, LTAF 50",
     "frequence": "Très fréquente"
   },
   {
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "erreur": "Travailler sans autorisation pendant la procédure d'asile avant le délai de 6 mois",
-    "gravite": "elevee",
+    "gravite": "élevée",
     "consequence": "Sanction administrative, impact négatif sur la procédure d'asile, voire renvoi",
     "correction": "Attendre l'écoulement du délai de 6 mois et obtenir l'autorisation de l'employeur via le SEM (LAsi 43)",
-    "base_legale": "LAsi 43, OA 1 52",
+    "base_légale": "LAsi 43, OA 1 52",
     "frequence": "Fréquente"
   },
   {
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "erreur": "Ne pas annoncer un changement de situation (mariage, séparation, emploi) au service des migrations",
-    "gravite": "elevee",
+    "gravite": "élevée",
     "consequence": "Révocation du permis pour dissimulation (LEI 62 al. 1 lit. a), voire interdiction d'entrée",
     "correction": "Annoncer tout changement significatif dans les 14 jours au service cantonal des migrations",
-    "base_legale": "LEI 62 al. 1 lit. a, LEI 90",
+    "base_légale": "LEI 62 al. 1 lit. a, LEI 90",
     "frequence": "Fréquente"
   },
   {
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "erreur": "Quitter la Suisse trop longtemps avec un permis B ou C sans annoncer",
-    "gravite": "elevee",
+    "gravite": "élevée",
     "consequence": "Extinction du permis après 6 mois d'absence (permis B/C) — LEI 61 al. 2",
     "correction": "Annoncer tout séjour à l'étranger de plus de quelques mois. Demander le maintien du permis avant de partir",
-    "base_legale": "LEI 61 al. 2",
+    "base_légale": "LEI 61 al. 2",
     "frequence": "Moyenne"
   },
   {
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "erreur": "Ne pas demander l'effet suspensif dans un recours contre une décision de renvoi",
     "gravite": "critique",
     "consequence": "Le renvoi peut être exécuté pendant la procédure de recours",
     "correction": "Inclure systématiquement une demande d'effet suspensif dans tout recours contre un renvoi",
-    "base_legale": "LAsi 108 al. 2, PA 55",
+    "base_légale": "LAsi 108 al. 2, PA 55",
     "frequence": "Fréquente"
   }
 ]

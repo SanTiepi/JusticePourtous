@@ -3,300 +3,503 @@
     "probleme_profane": "Mon propriétaire veut m'expulser",
     "qualification_juridique": "Résiliation de bail / congé ordinaire ou extraordinaire",
     "domaine": "bail",
-    "autorite_competente": "Commission de conciliation en matière de baux",
-    "acte_necessaire": "Contestation du congé (CO 271-271a)",
+    "autorite_compétente": "Commission de conciliation en matière de baux",
+    "acte_nécessaire": "Contestation du congé (CO 271-271a)",
     "delai": "30 jours dès réception",
-    "risques": ["Perte du logement", "Frais de déménagement", "Difficulté à retrouver un logement"],
-    "issues_possibles": ["Annulation du congé", "Prolongation du bail (4 ans max habitation)", "Congé maintenu"]
+    "risques": [
+      "Perte du logement",
+      "Frais de déménagement",
+      "Difficulté à retrouver un logement"
+    ],
+    "issues_possibles": [
+      "Annulation du congé",
+      "Prolongation du bail (4 ans max habitation)",
+      "Congé maintenu"
+    ]
   },
   {
     "probleme_profane": "Mon loyer a augmenté sans explication",
     "qualification_juridique": "Hausse de loyer abusive / contestation de la hausse",
     "domaine": "bail",
-    "autorite_competente": "Commission de conciliation en matière de baux",
-    "acte_necessaire": "Contestation de la hausse (CO 270b)",
+    "autorite_compétente": "Commission de conciliation en matière de baux",
+    "acte_nécessaire": "Contestation de la hausse (CO 270b)",
     "delai": "30 jours dès réception de l'avis de hausse",
-    "risques": ["Acceptation tacite de la hausse si pas de contestation"],
-    "issues_possibles": ["Hausse annulée (formule non officielle)", "Hausse réduite", "Hausse maintenue"]
+    "risques": [
+      "Acceptation tacite de la hausse si pas de contestation"
+    ],
+    "issues_possibles": [
+      "Hausse annulée (formule non officielle)",
+      "Hausse réduite",
+      "Hausse maintenue"
+    ]
   },
   {
     "probleme_profane": "Il y a de la moisissure dans mon appartement et le propriétaire ne fait rien",
     "qualification_juridique": "Défaut de la chose louée / obligation d'entretien du bailleur",
     "domaine": "bail",
-    "autorite_competente": "Commission de conciliation en matière de baux",
-    "acte_necessaire": "Mise en demeure écrite, consignation du loyer (CO 259g), requête en élimination du défaut",
+    "autorite_compétente": "Commission de conciliation en matière de baux",
+    "acte_nécessaire": "Mise en demeure écrite, consignation du loyer (CO 259g), requête en élimination du défaut",
     "delai": "Agir sans tarder après mise en demeure infructueuse",
-    "risques": ["Dégradation de la santé", "Perte de la réduction si pas de consignation préalable"],
-    "issues_possibles": ["Réduction de loyer (10-30%)", "Travaux ordonnés", "Résiliation anticipée par le locataire"]
+    "risques": [
+      "Dégradation de la santé",
+      "Perte de la réduction si pas de consignation préalable"
+    ],
+    "issues_possibles": [
+      "Réduction de loyer (10-30%)",
+      "Travaux ordonnés",
+      "Résiliation anticipée par le locataire"
+    ]
   },
   {
     "probleme_profane": "Mon propriétaire refuse de me rendre la garantie de loyer",
     "qualification_juridique": "Libération de la garantie de loyer / compte de dépôt",
     "domaine": "bail",
-    "autorite_competente": "Commission de conciliation en matière de baux, puis tribunal des baux",
-    "acte_necessaire": "Mise en demeure, puis action en libération du dépôt",
+    "autorite_compétente": "Commission de conciliation en matière de baux, puis tribunal des baux",
+    "acte_nécessaire": "Mise en demeure, puis action en libération du dépôt",
     "delai": "Le bailleur doit agir dans l'année suivant la fin du bail, sinon la banque libère (CO 257e)",
-    "risques": ["Attente prolongée", "Déductions contestables pour dégâts"],
-    "issues_possibles": ["Libération totale", "Libération partielle après déduction des dégâts", "Refus justifié"]
+    "risques": [
+      "Attente prolongée",
+      "Déductions contestables pour dégâts"
+    ],
+    "issues_possibles": [
+      "Libération totale",
+      "Libération partielle après déduction des dégâts",
+      "Refus justifié"
+    ]
   },
   {
     "probleme_profane": "On veut augmenter mes charges sans justificatif",
     "qualification_juridique": "Contestation du décompte de charges / frais accessoires abusifs",
     "domaine": "bail",
-    "autorite_competente": "Commission de conciliation en matière de baux",
-    "acte_necessaire": "Demande de consultation des pièces justificatives (CO 257b), contestation",
+    "autorite_compétente": "Commission de conciliation en matière de baux",
+    "acte_nécessaire": "Demande de consultation des pièces justificatives (CO 257b), contestation",
     "delai": "Agir dans un délai raisonnable après réception du décompte",
-    "risques": ["Paiement de charges injustifiées"],
-    "issues_possibles": ["Correction du décompte", "Remboursement du trop-perçu", "Décompte maintenu"]
+    "risques": [
+      "Paiement de charges injustifiées"
+    ],
+    "issues_possibles": [
+      "Correction du décompte",
+      "Remboursement du trop-perçu",
+      "Décompte maintenu"
+    ]
   },
   {
     "probleme_profane": "Mon nouveau logement est beaucoup trop cher par rapport à l'ancien locataire",
     "qualification_juridique": "Contestation du loyer initial abusif",
     "domaine": "bail",
-    "autorite_competente": "Commission de conciliation en matière de baux",
-    "acte_necessaire": "Contestation du loyer initial (CO 270)",
+    "autorite_compétente": "Commission de conciliation en matière de baux",
+    "acte_nécessaire": "Contestation du loyer initial (CO 270)",
     "delai": "30 jours dès la remise de la chose (entrée dans les locaux)",
-    "risques": ["Acceptation tacite du loyer", "Relations tendues avec le bailleur"],
-    "issues_possibles": ["Réduction du loyer", "Loyer maintenu si justifié par le marché"]
+    "risques": [
+      "Acceptation tacite du loyer",
+      "Relations tendues avec le bailleur"
+    ],
+    "issues_possibles": [
+      "Réduction du loyer",
+      "Loyer maintenu si justifié par le marché"
+    ]
   },
   {
     "probleme_profane": "J'ai été viré sans raison",
     "qualification_juridique": "Licenciement abusif (CO 336)",
     "domaine": "travail",
-    "autorite_competente": "Tribunal des prud'hommes (gratuit jusqu'à 30'000 CHF dans la plupart des cantons)",
-    "acte_necessaire": "Opposition écrite pendant le délai de congé, puis action en indemnité (CO 336b)",
+    "autorite_compétente": "Tribunal des prud'hommes (gratuit jusqu'à 30'000 CHF dans la plupart des cantons)",
+    "acte_nécessaire": "Opposition écrite pendant le délai de congé, puis action en indemnité (CO 336b)",
     "delai": "Opposition avant fin du délai de congé + action dans 180 jours dès fin du contrat",
-    "risques": ["Perte de l'indemnité si pas d'opposition écrite", "Prescription de 180 jours"],
-    "issues_possibles": ["Indemnité jusqu'à 6 mois de salaire", "Transaction/accord", "Rejet de la demande"]
+    "risques": [
+      "Perte de l'indemnité si pas d'opposition écrite",
+      "Prescription de 180 jours"
+    ],
+    "issues_possibles": [
+      "Indemnité jusqu'à 6 mois de salaire",
+      "Transaction/accord",
+      "Rejet de la demande"
+    ]
   },
   {
     "probleme_profane": "Mon patron ne me paie pas mon salaire",
     "qualification_juridique": "Demeure de l'employeur / salaire impayé",
     "domaine": "travail",
-    "autorite_competente": "Tribunal des prud'hommes",
-    "acte_necessaire": "Mise en demeure écrite, puis action en paiement du salaire",
+    "autorite_compétente": "Tribunal des prud'hommes",
+    "acte_nécessaire": "Mise en demeure écrite, puis action en paiement du salaire",
     "delai": "Prescription de 5 ans (CO 128 ch. 3)",
-    "risques": ["Prescription mois par mois", "Difficulté de preuve si pas de contrat écrit"],
-    "issues_possibles": ["Paiement du salaire + intérêts moratoires 5%", "Résiliation immédiate par le travailleur (CO 337)"]
+    "risques": [
+      "Prescription mois par mois",
+      "Difficulté de preuve si pas de contrat écrit"
+    ],
+    "issues_possibles": [
+      "Paiement du salaire + intérêts moratoires 5%",
+      "Résiliation immédiate par le travailleur (CO 337)"
+    ]
   },
   {
     "probleme_profane": "Je suis harcelé au travail",
     "qualification_juridique": "Mobbing / atteinte à la personnalité du travailleur",
     "domaine": "travail",
-    "autorite_competente": "Tribunal des prud'hommes, inspectorat du travail (SECO/cantonal)",
-    "acte_necessaire": "Signalement interne, mise en demeure à l'employeur (CO 328), plainte à l'inspectorat, action civile",
+    "autorite_compétente": "Tribunal des prud'hommes, inspectorat du travail (SECO/cantonal)",
+    "acte_nécessaire": "Signalement interne, mise en demeure à l'employeur (CO 328), plainte à l'inspectorat, action civile",
     "delai": "Agir sans tarder — documenter les faits de harcèlement",
-    "risques": ["Dégradation de la santé", "Licenciement de représailles (contestable)", "Difficulté probatoire"],
-    "issues_possibles": ["Indemnité pour tort moral", "Mesures ordonnées à l'employeur", "Résiliation immédiate justifiée"]
+    "risques": [
+      "Dégradation de la santé",
+      "Licenciement de représailles (contestable)",
+      "Difficulté probatoire"
+    ],
+    "issues_possibles": [
+      "Indemnité pour tort moral",
+      "Mesures ordonnées à l'employeur",
+      "Résiliation immédiate justifiée"
+    ]
   },
   {
     "probleme_profane": "Mon employeur refuse de me donner un certificat de travail",
     "qualification_juridique": "Droit au certificat de travail (CO 330a)",
     "domaine": "travail",
-    "autorite_competente": "Tribunal des prud'hommes",
-    "acte_necessaire": "Demande écrite, mise en demeure, action en délivrance",
+    "autorite_compétente": "Tribunal des prud'hommes",
+    "acte_nécessaire": "Demande écrite, mise en demeure, action en délivrance",
     "delai": "Prescription de 10 ans (CO 127)",
-    "risques": ["Difficulté à trouver un nouvel emploi"],
-    "issues_possibles": ["Certificat complet délivré", "Modification d'un certificat inexact", "Certificat simple (attestation)"]
+    "risques": [
+      "Difficulté à trouver un nouvel emploi"
+    ],
+    "issues_possibles": [
+      "Certificat complet délivré",
+      "Modification d'un certificat inexact",
+      "Certificat simple (attestation)"
+    ]
   },
   {
     "probleme_profane": "On m'a licencié pendant que j'étais malade",
     "qualification_juridique": "Licenciement en temps inopportun / protection contre le congé",
     "domaine": "travail",
-    "autorite_competente": "Tribunal des prud'hommes",
-    "acte_necessaire": "Faire constater la nullité du congé, opposition écrite",
+    "autorite_compétente": "Tribunal des prud'hommes",
+    "acte_nécessaire": "Faire constater la nullité du congé, opposition écrite",
     "delai": "Le congé est nul de plein droit — mais contester rapidement",
-    "risques": ["L'employeur peut licencier à nouveau après la période de protection"],
-    "issues_possibles": ["Nullité du congé (CO 336c)", "Report de la fin du contrat", "Nouveau congé valable après protection"]
+    "risques": [
+      "L'employeur peut licencier à nouveau après la période de protection"
+    ],
+    "issues_possibles": [
+      "Nullité du congé (CO 336c)",
+      "Report de la fin du contrat",
+      "Nouveau congé valable après protection"
+    ]
   },
   {
     "probleme_profane": "J'ai des heures supplémentaires non payées",
     "qualification_juridique": "Rémunération des heures supplémentaires (CO 321c)",
     "domaine": "travail",
-    "autorite_competente": "Tribunal des prud'hommes",
-    "acte_necessaire": "Décompte détaillé des heures, mise en demeure, action en paiement",
+    "autorite_compétente": "Tribunal des prud'hommes",
+    "acte_nécessaire": "Décompte détaillé des heures, mise en demeure, action en paiement",
     "delai": "Prescription de 5 ans (CO 128 ch. 3)",
-    "risques": ["Preuve difficile sans relevé", "Clause contractuelle de renonciation (limitée)"],
-    "issues_possibles": ["Paiement des heures + 25% de supplément", "Compensation en temps libre", "Rejet si heures non prouvées"]
+    "risques": [
+      "Preuve difficile sans relevé",
+      "Clause contractuelle de renonciation (limitée)"
+    ],
+    "issues_possibles": [
+      "Paiement des heures + 25% de supplément",
+      "Compensation en temps libre",
+      "Rejet si heures non prouvées"
+    ]
   },
   {
     "probleme_profane": "Je veux divorcer mais mon conjoint refuse",
     "qualification_juridique": "Divorce unilatéral sur requête (CC 114-115)",
     "domaine": "famille",
-    "autorite_competente": "Tribunal civil du domicile",
-    "acte_necessaire": "Requête unilatérale de divorce après 2 ans de séparation, ou immédiatement si raisons graves (CC 115)",
+    "autorite_compétente": "Tribunal civil du domicile",
+    "acte_nécessaire": "Requête unilatérale de divorce après 2 ans de séparation, ou immédiatement si raisons graves (CC 115)",
     "delai": "Après 2 ans de vie séparée (CC 114), ou sans délai si continuation intolérable (CC 115)",
-    "risques": ["Procédure longue et conflictuelle", "Frais d'avocat élevés"],
-    "issues_possibles": ["Divorce prononcé", "Convention sur les effets accessoires", "Mesures provisoires"]
+    "risques": [
+      "Procédure longue et conflictuelle",
+      "Frais d'avocat élevés"
+    ],
+    "issues_possibles": [
+      "Divorce prononcé",
+      "Convention sur les effets accessoires",
+      "Mesures provisoires"
+    ]
   },
   {
-    "probleme_profane": "Mon ex ne me verse pas la pension alimentaire",
+    "probleme_profane": "Mon ex ne me versé pas la pension alimentaire",
     "qualification_juridique": "Non-paiement de la contribution d'entretien / violation d'obligation d'entretien",
     "domaine": "famille",
-    "autorite_competente": "Office des poursuites + tribunal pénal (CP 217)",
-    "acte_necessaire": "Poursuite (LP), plainte pénale (CP 217), demande d'avance auprès du service cantonal (BRAPA/SCARPA)",
+    "autorite_compétente": "Office des poursuites + tribunal pénal (CP 217)",
+    "acte_nécessaire": "Poursuite (LP), plainte pénale (CP 217), demande d'avance auprès du service cantonal (BRAPA/SCARPA)",
     "delai": "Prescription 5 ans par créance mensuelle (CO 128)",
-    "risques": ["Insolvabilité du débiteur", "Prescription des arriérés"],
-    "issues_possibles": ["Paiement par voie de poursuite", "Avance du canton (BRAPA/SCARPA)", "Condamnation pénale du débiteur"]
+    "risques": [
+      "Insolvabilité du débiteur",
+      "Prescription des arriérés"
+    ],
+    "issues_possibles": [
+      "Paiement par voie de poursuite",
+      "Avance du canton (BRAPA/SCARPA)",
+      "Condamnation pénale du débiteur"
+    ]
   },
   {
     "probleme_profane": "Je veux la garde de mes enfants",
     "qualification_juridique": "Attribution de l'autorité parentale et de la garde (CC 296-298)",
     "domaine": "famille",
-    "autorite_competente": "Tribunal civil (dans le cadre du divorce) ou APEA (hors mariage)",
-    "acte_necessaire": "Requête dans le cadre de la procédure de divorce ou requête séparée à l'APEA",
+    "autorite_compétente": "Tribunal civil (dans le cadre du divorce) ou APEA (hors mariage)",
+    "acte_nécessaire": "Requête dans le cadre de la procédure de divorce ou requête séparée à l'APEA",
     "delai": "Pas de délai formel — intérêt de l'enfant prime",
-    "risques": ["Enquête sociale longue", "Garde alternée imposée si dans l'intérêt de l'enfant"],
-    "issues_possibles": ["Garde exclusive", "Garde alternée", "Droit de visite élargi"]
+    "risques": [
+      "Enquête sociale longue",
+      "Garde alternée imposée si dans l'intérêt de l'enfant"
+    ],
+    "issues_possibles": [
+      "Garde exclusive",
+      "Garde alternée",
+      "Droit de visite élargi"
+    ]
   },
   {
     "probleme_profane": "Mon ex-conjoint veut déménager à l'étranger avec notre enfant",
     "qualification_juridique": "Déplacement du lieu de résidence de l'enfant (CC 301a)",
     "domaine": "famille",
-    "autorite_competente": "APEA ou tribunal civil",
-    "acte_necessaire": "Opposition au déplacement, requête de mesures provisionnelles si urgence",
+    "autorite_compétente": "APEA ou tribunal civil",
+    "acte_nécessaire": "Opposition au déplacement, requête de mesures provisionnelles si urgence",
     "delai": "Agir immédiatement — demander des mesures superprovisionnelles",
-    "risques": ["Enlèvement international d'enfant (Convention de La Haye)", "Perte du contact régulier"],
-    "issues_possibles": ["Interdiction de déménager", "Autorisation avec adaptation du droit de visite", "Transfert de la garde"]
+    "risques": [
+      "Enlèvement international d'enfant (Convention de La Haye)",
+      "Perte du contact régulier"
+    ],
+    "issues_possibles": [
+      "Interdiction de déménager",
+      "Autorisation avec adaptation du droit de visite",
+      "Transfert de la garde"
+    ]
   },
   {
     "probleme_profane": "Je subis des violences conjugales",
     "qualification_juridique": "Violence domestique / mesures de protection (CC 28b, LAVI)",
     "domaine": "famille",
-    "autorite_competente": "Tribunal civil (mesures protectrices CC 172), tribunal pénal (plainte), Centre LAVI",
-    "acte_necessaire": "Mesures superprovisionnelles d'éloignement, plainte pénale, Centre LAVI pour aide aux victimes",
+    "autorite_compétente": "Tribunal civil (mesures protectrices CC 172), tribunal pénal (plainte), Centre LAVI",
+    "acte_nécessaire": "Mesures superprovisionnelles d'éloignement, plainte pénale, Centre LAVI pour aide aux victimes",
     "delai": "Immédiat — mesures superprovisionnelles le jour même",
-    "risques": ["Escalade de la violence", "Danger pour les enfants"],
-    "issues_possibles": ["Éloignement du conjoint violent", "Attribution du logement conjugal", "Indemnisation LAVI"]
+    "risques": [
+      "Escalade de la violence",
+      "Danger pour les enfants"
+    ],
+    "issues_possibles": [
+      "Éloignement du conjoint violent",
+      "Attribution du logement conjugal",
+      "Indemnisation LAVI"
+    ]
   },
   {
     "probleme_profane": "Mon enfant adulte vit chez moi et ne travaille pas",
     "qualification_juridique": "Obligation d'entretien de l'enfant majeur en formation (CC 277 al. 2)",
     "domaine": "famille",
-    "autorite_competente": "Tribunal civil",
-    "acte_necessaire": "L'obligation s'éteint si l'enfant majeur ne fait pas d'efforts raisonnables de formation",
+    "autorite_compétente": "Tribunal civil",
+    "acte_nécessaire": "L'obligation s'éteint si l'enfant majeur ne fait pas d'efforts raisonnables de formation",
     "delai": "Pas de délai formel",
-    "risques": ["Obligation maintenue si enfant en formation"],
-    "issues_possibles": ["Fin de l'obligation si pas de formation", "Maintien si formation sérieuse", "Contribution réduite"]
+    "risques": [
+      "Obligation maintenue si enfant en formation"
+    ],
+    "issues_possibles": [
+      "Fin de l'obligation si pas de formation",
+      "Maintien si formation sérieuse",
+      "Contribution réduite"
+    ]
   },
   {
     "probleme_profane": "J'ai des dettes et je ne peux plus payer",
     "qualification_juridique": "Surendettement / procédure de faillite ou assainissement",
     "domaine": "dettes",
-    "autorite_competente": "Office des poursuites, service de désendettement cantonal",
-    "acte_necessaire": "Consultation d'un service de désendettement, plan de remboursement, éventuellement faillite personnelle (LP 191)",
+    "autorite_compétente": "Office des poursuites, service de désendettement cantonal",
+    "acte_nécessaire": "Consultation d'un service de désendettement, plan de remboursement, éventuellement faillite personnelle (LP 191)",
     "delai": "Agir avant que les poursuites s'accumulent",
-    "risques": ["Saisie de salaire", "Actes de défaut de biens (20 ans)", "Stress et problèmes de santé"],
-    "issues_possibles": ["Plan de désendettement", "Faillite personnelle (si inscrit au RC)", "Acte de défaut de biens"]
+    "risques": [
+      "Saisie de salaire",
+      "Actes de défaut de biens (20 ans)",
+      "Stress et problèmes de santé"
+    ],
+    "issues_possibles": [
+      "Plan de désendettement",
+      "Faillite personnelle (si inscrit au RC)",
+      "Acte de défaut de biens"
+    ]
   },
   {
     "probleme_profane": "On me saisit mon salaire",
     "qualification_juridique": "Saisie de salaire / minimum vital (LP 93)",
     "domaine": "dettes",
-    "autorite_competente": "Office des poursuites",
-    "acte_necessaire": "Vérifier le calcul du minimum vital, plainte à l'autorité de surveillance (LP 17)",
+    "autorite_compétente": "Office des poursuites",
+    "acte_nécessaire": "Vérifier le calcul du minimum vital, plainte à l'autorité de surveillance (LP 17)",
     "delai": "10 jours pour la plainte à l'autorité de surveillance (LP 17 al. 2)",
-    "risques": ["Saisie excessive si minimum vital mal calculé"],
-    "issues_possibles": ["Correction du calcul du minimum vital", "Réduction de la saisie", "Saisie maintenue"]
+    "risques": [
+      "Saisie excessive si minimum vital mal calculé"
+    ],
+    "issues_possibles": [
+      "Correction du calcul du minimum vital",
+      "Réduction de la saisie",
+      "Saisie maintenue"
+    ]
   },
   {
     "probleme_profane": "J'ai reçu un commandement de payer mais je ne dois rien",
     "qualification_juridique": "Opposition au commandement de payer (LP 74)",
     "domaine": "dettes",
-    "autorite_competente": "Office des poursuites (opposition), puis tribunal (mainlevée/action en libération)",
-    "acte_necessaire": "Former opposition immédiatement (LP 74) — oralement ou par écrit",
+    "autorite_compétente": "Office des poursuites (opposition), puis tribunal (mainlevée/action en libération)",
+    "acte_nécessaire": "Former opposition immédiatement (LP 74) — oralement ou par écrit",
     "delai": "10 jours dès notification du commandement",
-    "risques": ["Sans opposition : le créancier peut continuer la poursuite"],
-    "issues_possibles": ["Opposition maintenue (créancier doit agir en justice)", "Mainlevée prononcée", "Action en libération de dette"]
+    "risques": [
+      "Sans opposition : le créancier peut continuer la poursuite"
+    ],
+    "issues_possibles": [
+      "Opposition maintenue (créancier doit agir en justice)",
+      "Mainlevée prononcée",
+      "Action en libération de dette"
+    ]
   },
   {
     "probleme_profane": "Un huissier veut saisir mes meubles",
     "qualification_juridique": "Saisie mobilière / biens insaisissables (LP 92)",
     "domaine": "dettes",
-    "autorite_competente": "Office des poursuites, autorité de surveillance LP",
-    "acte_necessaire": "Vérifier les biens insaisissables (LP 92), plainte à l'autorité de surveillance (LP 17)",
+    "autorite_compétente": "Office des poursuites, autorité de surveillance LP",
+    "acte_nécessaire": "Vérifier les biens insaisissables (LP 92), plainte à l'autorité de surveillance (LP 17)",
     "delai": "10 jours pour la plainte (LP 17 al. 2)",
-    "risques": ["Perte de biens", "Vente forcée à prix dérisoire"],
-    "issues_possibles": ["Exclusion des biens insaisissables", "Suspension de la saisie", "Saisie exécutée"]
+    "risques": [
+      "Perte de biens",
+      "Vente forcée à prix dérisoire"
+    ],
+    "issues_possibles": [
+      "Exclusion des biens insaisissables",
+      "Suspension de la saisie",
+      "Saisie exécutée"
+    ]
   },
   {
     "probleme_profane": "Je suis facturé pour une dette que je ne reconnais pas",
     "qualification_juridique": "Contestation de créance / action négatoire en constatation de droit",
     "domaine": "dettes",
-    "autorite_competente": "Tribunal civil",
-    "acte_necessaire": "Opposition au commandement de payer si poursuite, action en constatation de droit négative",
+    "autorite_compétente": "Tribunal civil",
+    "acte_nécessaire": "Opposition au commandement de payer si poursuite, action en constatation de droit négative",
     "delai": "10 jours pour l'opposition (LP 74), 20 jours pour l'action en libération de dette (LP 83)",
-    "risques": ["Mainlevée si titre de créance existe", "Frais de justice"],
-    "issues_possibles": ["Créance annulée", "Créance réduite", "Créance confirmée"]
+    "risques": [
+      "Mainlevée si titre de créance existe",
+      "Frais de justice"
+    ],
+    "issues_possibles": [
+      "Créance annulée",
+      "Créance réduite",
+      "Créance confirmée"
+    ]
   },
   {
     "probleme_profane": "Mon permis de séjour a été refusé",
     "qualification_juridique": "Refus d'octroi d'autorisation de séjour (LEI 33)",
-    "domaine": "etrangers",
-    "autorite_competente": "Tribunal cantonal administratif, puis TAF",
-    "acte_necessaire": "Recours dans le délai imparti, demande d'effet suspensif",
+    "domaine": "étrangers",
+    "autorite_compétente": "Tribunal cantonal administratif, puis TAF",
+    "acte_nécessaire": "Recours dans le délai imparti, demande d'effet suspensif",
     "delai": "30 jours dès notification de la décision",
-    "risques": ["Obligation de quitter la Suisse", "Détention administrative possible"],
-    "issues_possibles": ["Annulation du refus", "Renvoi pour nouvel examen", "Refus confirmé"]
+    "risques": [
+      "Obligation de quitter la Suisse",
+      "Détention administrative possible"
+    ],
+    "issues_possibles": [
+      "Annulation du refus",
+      "Renvoi pour nouvel examen",
+      "Refus confirmé"
+    ]
   },
   {
     "probleme_profane": "Je risque d'être renvoyé dans mon pays",
     "qualification_juridique": "Décision de renvoi / exécution du renvoi (LEI 64-69)",
-    "domaine": "etrangers",
-    "autorite_competente": "SEM, TAF, tribunal cantonal",
-    "acte_necessaire": "Recours avec demande d'effet suspensif, demande d'admission provisoire si renvoi inexigible",
+    "domaine": "étrangers",
+    "autorite_compétente": "SEM, TAF, tribunal cantonal",
+    "acte_nécessaire": "Recours avec demande d'effet suspensif, demande d'admission provisoire si renvoi inexigible",
     "delai": "30 jours (recours ordinaire), 5 jours ouvrables (procédure accélérée asile)",
-    "risques": ["Renvoi exécuté avant décision sur recours si pas d'effet suspensif", "Détention administrative"],
-    "issues_possibles": ["Annulation du renvoi", "Admission provisoire (permis F)", "Renvoi exécuté"]
+    "risques": [
+      "Renvoi exécuté avant décision sur recours si pas d'effet suspensif",
+      "Détention administrative"
+    ],
+    "issues_possibles": [
+      "Annulation du renvoi",
+      "Admission provisoire (permis F)",
+      "Renvoi exécuté"
+    ]
   },
   {
     "probleme_profane": "Mon conjoint est étranger et nous voulons vivre ensemble en Suisse",
     "qualification_juridique": "Regroupement familial (LEI 42-45, 47)",
-    "domaine": "etrangers",
-    "autorite_competente": "Service cantonal des migrations",
-    "acte_necessaire": "Demande de regroupement familial avec pièces justificatives",
+    "domaine": "étrangers",
+    "autorite_compétente": "Service cantonal des migrations",
+    "acte_nécessaire": "Demande de regroupement familial avec pièces justificatives",
     "delai": "5 ans pour conjoint si titulaire B, 1 an si titulaire C et famille à l'étranger (LEI 47)",
-    "risques": ["Refus si conditions non remplies (logement, revenus)", "Mariage fictif suspecté"],
-    "issues_possibles": ["Permis de séjour accordé", "Refus avec recours possible", "Enquête complémentaire"]
+    "risques": [
+      "Refus si conditions non remplies (logement, revenus)",
+      "Mariage fictif suspecté"
+    ],
+    "issues_possibles": [
+      "Permis de séjour accordé",
+      "Refus avec recours possible",
+      "Enquête complémentaire"
+    ]
   },
   {
     "probleme_profane": "Je suis sans-papiers et j'ai besoin d'aide médicale",
     "qualification_juridique": "Droit aux soins des personnes en situation irrégulière",
-    "domaine": "etrangers",
-    "autorite_competente": "Hôpitaux publics, services sociaux, associations d'aide",
-    "acte_necessaire": "Consultation médicale d'urgence (garantie), affiliation LAMal possible même sans papiers",
+    "domaine": "étrangers",
+    "autorite_compétente": "Hôpitaux publics, services sociaux, associations d'aide",
+    "acte_nécessaire": "Consultation médicale d'urgence (garantie), affiliation LAMal possible même sans papiers",
     "delai": "Aucun délai — droit aux soins d'urgence garanti",
-    "risques": ["Peur de dénonciation (mais secret médical protège)", "Coûts non couverts hors urgence"],
-    "issues_possibles": ["Soins d'urgence garantis", "Affiliation LAMal", "Demande de régularisation (cas de rigueur LEI 30 al. 1 lit. b)"]
+    "risques": [
+      "Peur de dénonciation (mais secret médical protège)",
+      "Coûts non couverts hors urgence"
+    ],
+    "issues_possibles": [
+      "Soins d'urgence garantis",
+      "Affiliation LAMal",
+      "Demande de régularisation (cas de rigueur LEI 30 al. 1 lit. b)"
+    ]
   },
   {
     "probleme_profane": "Ma demande d'asile a été rejetée",
     "qualification_juridique": "Rejet de la demande d'asile / décision de renvoi (LAsi 44)",
-    "domaine": "etrangers",
-    "autorite_competente": "TAF (recours), SEM (demande de réexamen)",
-    "acte_necessaire": "Recours au TAF, ou demande de réexamen si faits nouveaux",
+    "domaine": "étrangers",
+    "autorite_compétente": "TAF (recours), SEM (demande de réexamen)",
+    "acte_nécessaire": "Recours au TAF, ou demande de réexamen si faits nouveaux",
     "delai": "30 jours (procédure étendue), 7 jours ouvrables (procédure accélérée au CFA)",
-    "risques": ["Renvoi si pas de recours", "Aide d'urgence uniquement"],
-    "issues_possibles": ["Admission provisoire", "Renvoi au SEM pour nouvel examen", "Rejet confirmé"]
+    "risques": [
+      "Renvoi si pas de recours",
+      "Aide d'urgence uniquement"
+    ],
+    "issues_possibles": [
+      "Admission provisoire",
+      "Renvoi au SEM pour nouvel examen",
+      "Rejet confirmé"
+    ]
   },
   {
     "probleme_profane": "Mon patron m'a renvoyé parce que je suis enceinte",
     "qualification_juridique": "Licenciement en temps inopportun pendant la grossesse (CO 336c al. 1 lit. c)",
     "domaine": "travail",
-    "autorite_competente": "Tribunal des prud'hommes",
-    "acte_necessaire": "Faire constater la nullité du congé (CO 336c), opposition écrite",
+    "autorite_compétente": "Tribunal des prud'hommes",
+    "acte_nécessaire": "Faire constater la nullité du congé (CO 336c), opposition écrite",
     "delai": "Le congé est nul de plein droit pendant la grossesse et 16 semaines après l'accouchement",
-    "risques": ["L'employeur peut licencier après la période de protection"],
-    "issues_possibles": ["Nullité du congé", "Maintien du poste", "Indemnité si licenciement abusif après protection"]
+    "risques": [
+      "L'employeur peut licencier après la période de protection"
+    ],
+    "issues_possibles": [
+      "Nullité du congé",
+      "Maintien du poste",
+      "Indemnité si licenciement abusif après protection"
+    ]
   },
   {
     "probleme_profane": "Mon assurance maladie me poursuit pour des primes impayées",
     "qualification_juridique": "Poursuite pour primes LAMal / liste noire des mauvais payeurs",
     "domaine": "dettes",
-    "autorite_competente": "Office des poursuites, canton (service social)",
-    "acte_necessaire": "Demande de réduction de primes (subsides), plan de paiement, opposition si montant contesté",
+    "autorite_compétente": "Office des poursuites, canton (service social)",
+    "acte_nécessaire": "Demande de réduction de primes (subsides), plan de paiement, opposition si montant contesté",
     "delai": "10 jours pour l'opposition au commandement de payer (LP 74)",
-    "risques": ["Inscription sur la liste des assurés en retard de paiement (restriction des soins dans certains cantons)", "Acte de défaut de biens"],
-    "issues_possibles": ["Obtention de subsides LAMal", "Plan de paiement échelonné", "Prise en charge par le service social"]
+    "risques": [
+      "Inscription sur la liste des assurés en retard de paiement (restriction des soins dans certains cantons)",
+      "Acte de défaut de biens"
+    ],
+    "issues_possibles": [
+      "Obtention de subsides LAMal",
+      "Plan de paiement échelonné",
+      "Prise en charge par le service social"
+    ]
   }
 ]

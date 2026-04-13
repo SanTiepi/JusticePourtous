@@ -41,7 +41,7 @@
         "id": "q4",
         "text": "Le debiteur a-t-il un revenu connu ?",
         "options": [
-          "oui, salarie",
+          "oui, salarié",
           "indépendant",
           "inconnu",
           "sans revenu"
@@ -53,7 +53,7 @@
         "type": "canton"
       }
     ],
-    "reponse": {
+    "réponse": {
       "explication": "Le non-paiement de la pension alimentaire est une infraction pénale punie d'une peine privative de liberte de 3 ans au plus ou d'une peine pecuniaire (art. 217 CP). Le creancier peut : (1) porter plainte pénale auprès du Ministere public, (2) engager une poursuite (LP) pour recouvrer les arrierages, (3) demander l'aide du Bureau cantonal de recouvrement et d'avances de pensions alimentaires (BRAPA/SCARPA) qui peut avancer les pensions et se retourner contre le debiteur. Le droit a l'avance est soumis a des conditions de revenus. Les pensions se prescrivent par 5 ans (art. 128 ch. 1 CO). En cas de changement de situation du debiteur, le tribunal peut adapter le montant (art. 286 al. 2 CC).",
       "articles": [
         {
@@ -77,7 +77,7 @@
           "resume": "Le BRAPA peut agir par subrogation pour recouvrer les pensions avancees."
         }
       ],
-      "modeleLettre": "Objet : Mise en demeure — pension alimentaire impayée\n\nRecommande\n\nMadame/Monsieur,\n\nConformement au jugement du [date] / a la convention du [date], vous etes tenu(e) de verser une pension alimentaire mensuelle de CHF [montant].\n\nA ce jour, les mois de [mois] ne m'ont pas ete versés, soit un arrierage total de CHF [montant].\n\nJe vous mets en demeure de payer cette somme dans un délai de 10 jours. A défaut, je deposerai une plainte pénale (art. 217 CP) et engagerai une poursuite.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Mise en demeure — pension alimentaire impayée\n\nRecommandé\n\nMadame/Monsieur,\n\nConformement au jugement du [date] / a la convention du [date], vous etes tenu(e) de versér une pension alimentaire mensuelle de CHF [montant].\n\nA ce jour, les mois de [mois] ne m'ont pas ete versés, soit un arrierage total de CHF [montant].\n\nJe vous mets en demeure de payer cette somme dans un délai de 10 jours. A défaut, je deposerai une plainte pénale (art. 217 CP) et engagerai une poursuite.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
       "services": [
         {
           "nom": "BRAPA Vaud (Bureau de recouvrement)",
@@ -99,7 +99,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC/CP état 2025-01-01",
@@ -175,8 +175,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "Le divorce peut etre demande par requete commune des deux époux (art. 111 CC) ou par demande unilaterale après 2 ans de séparation (art. 114 CC). Le divorce sur requete commune est plus rapide : les époux deposent une convention reglant les effets du divorce (pension, garde, liquidation regime matrimonial) et le tribunal l'approuve si elle est equilibree (art. 111-112 CC). La procédure est simplifiee au sens de l'art. 274 CPC. Le cout varie selon les cantons (CHF 1'000-3'000 de frais judiciaires pour un divorce amiable). Le tribunal doit obligatoirement regler la garde et l'autorite parentale, la pension alimentaire pour enfants et conjoint, la liquidation du regime matrimonial et le partage de la prevoyance professionnelle (LPP). Un avocat n'est pas obligatoire mais vivement recommande.",
+    "réponse": {
+      "explication": "Le divorce peut etre demande par requete commune des deux époux (art. 111 CC) ou par demande unilaterale après 2 ans de séparation (art. 114 CC). Le divorce sur requete commune est plus rapide : les époux deposent une convention reglant les effets du divorce (pension, garde, liquidation régime matrimonial) et le tribunal l'approuve si elle est equilibree (art. 111-112 CC). La procédure est simplifiee au sens de l'art. 274 CPC. Le cout varie selon les cantons (CHF 1'000-3'000 de frais judiciaires pour un divorce amiable). Le tribunal doit obligatoirement regler la garde et l'autorite parentale, la pension alimentaire pour enfants et conjoint, la liquidation du régime matrimonial et le partage de la prevoyance professionnelle (LPP). Un avocat n'est pas obligatoire mais vivement recommandé.",
       "articles": [
         {
           "ref": "CC 111",
@@ -223,12 +223,12 @@
         },
         {
           "nom": "Mediation familiale Vaud",
-          "url": "https://www.vd.ch/themes/vie-privee/famille/mediation-familiale",
+          "url": "https://www.vd.ch/themes/vie-privee/famille/médiation-familiale",
           "canton": "VD"
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC/CPC état 2025-01-01",
@@ -276,11 +276,11 @@
         "id": "q2",
         "text": "Motif du changement souhaite ?",
         "options": [
-          "demenagement",
+          "deménagement",
           "maltraitance suspectee",
           "souhait de l'enfant",
           "changement de situation",
-          "non-respect du regime"
+          "non-respect du régime"
         ]
       },
       {
@@ -306,8 +306,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "La modification de l'attribution de la garde ou de l'autorite parentale ne peut etre demandee que lorsque des faits nouveaux importants le commandent et que le bien de l'enfant l'exige (art. 134 al. 1 CC pour les situations post-divorce, art. 298d CC pour les parents non maries). Le juge statue en tenant compte de l'interet supérieur de l'enfant (art. 296 al. 1 CC). L'audition de l'enfant est obligatoire des qu'il est capable de discernement (en général vers 6 ans, art. 314a CC). La garde alternee est favorisee depuis la reforme de 2017 si les deux parents sont aptes et que c'est dans l'interet de l'enfant. Un demenagement a l'étranger avec l'enfant nécessité le consentement de l'autre parent ou l'autorisation du juge (art. 301a CC). L'APEA (autorite de protection de l'enfant et de l'adulte) peut intervenir d'office en cas de mise en danger.",
+    "réponse": {
+      "explication": "La modification de l'attribution de la garde ou de l'autorite parentale ne peut etre demandee que lorsque des faits nouveaux importants le commandent et que le bien de l'enfant l'exige (art. 134 al. 1 CC pour les situations post-divorce, art. 298d CC pour les parents non maries). Le juge statue en tenant compte de l'interet supérieur de l'enfant (art. 296 al. 1 CC). L'audition de l'enfant est obligatoire des qu'il est capable de discernement (en général vers 6 ans, art. 314a CC). La garde alternee est favorisee depuis la reforme de 2017 si les deux parents sont aptes et que c'est dans l'interet de l'enfant. Un deménagement a l'étranger avec l'enfant nécessité le consentement de l'autre parent ou l'autorisation du juge (art. 301a CC). L'APEA (autorite de protection de l'enfant et de l'adulte) peut intervenir d'office en cas de mise en danger.",
       "articles": [
         {
           "ref": "CC 134",
@@ -332,10 +332,10 @@
         },
         {
           "ref": "TF 5A_30/2017",
-          "resume": "Le souhait d'un enfant de 13 ans de vivre chez l'autre parent est un élément important mais non determinant."
+          "resume": "Le souhait d'un enfant de 13 ans de vivre chez l'autre parent est un élément important mais non déterminant."
         }
       ],
-      "modeleLettre": "Objet : Requete de modification de la garde\n\nAu Tribunal [competent],\n\nMadame, Monsieur le/la Juge,\n\nJe sollicite la modification de la decision relative a la garde de [nom de l'enfant], rendue le [date], pour les motifs suivants :\n\n- [Description des faits nouveaux importants]\n\nConformement a l'art. 134 CC, je demande que la garde soit [modifiee selon...]\n\nVeuillez agréer, Madame, Monsieur le/la Juge, l'expression de ma haute consideration.\n\n[Signature]",
+      "modeleLettre": "Objet : Requete de modification de la garde\n\nAu Tribunal [compétent],\n\nMadame, Monsieur le/la Juge,\n\nJe sollicite la modification de la decision relative a la garde de [nom de l'enfant], rendue le [date], pour les motifs suivants :\n\n- [Description des faits nouveaux importants]\n\nConformement a l'art. 134 CC, je demande que la garde soit [modifiee selon...]\n\nVeuillez agréer, Madame, Monsieur le/la Juge, l'expression de ma haute consideration.\n\n[Signature]",
       "services": [
         {
           "nom": "Service de protection des mineurs VD",
@@ -349,12 +349,12 @@
         },
         {
           "nom": "Mediation familiale Vaud",
-          "url": "https://www.vd.ch/themes/vie-privee/famille/mediation-familiale",
+          "url": "https://www.vd.ch/themes/vie-privee/famille/médiation-familiale",
           "canton": "VD"
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -362,7 +362,7 @@
     "profane_aliases": [
       "changer la garde de mon enfant",
       "je veux la garde alternee",
-      "mon ex veut demenager avec les enfants",
+      "mon ex veut deménager avec les enfants",
       "modifier le jugement de garde",
       "l'enfant veut vivre chez moi"
     ],
@@ -371,7 +371,7 @@
       "simple conflit ponctuel sans demande de changement"
     ],
     "required_facts": [
-      "regime de garde actuel",
+      "régime de garde actuel",
       "motif du changement",
       "age de l'enfant",
       "accord ou opposition de l'autre parent"
@@ -433,8 +433,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "La contribution d'entretien doit couvrir les besoins concrets de l'enfant : logement, nourriture, vetements, assurance maladie, formation, activites extrascolaires (art. 285 al. 1 CC). Depuis 2017, la contribution comprend aussi la part de prise en charge (couvrant le deficit du parent gardien qui reduit son activite, art. 285 al. 2 CC). Le calcul suit la methode en deux etapes du Tribunal fédéral : (1) determiner le minimum vital elargi de chaque parent et des enfants, (2) repartir l'excedent equitablement. Le minimum vital du debiteur est intangible (environ CHF 1'200 pour une personne seule, CHF 1'350 avec enfants). Pour l'entretien de l'ex-conjoint, le principe du « clean break » s'applique : chaque conjoint doit subvenir a ses propres besoins après le divorce, sauf si le mariage a eu un impact concret sur sa situation (art. 125 CC). Les tabelles zurichoises ou les recommandations de la CSEC servent de reference pour les besoins de l'enfant.",
+    "réponse": {
+      "explication": "La contribution d'entretien doit couvrir les besoins concrets de l'enfant : logement, nourriture, vetements, assurance maladie, formation, activités extrascolaires (art. 285 al. 1 CC). Depuis 2017, la contribution comprend aussi la part de prise en charge (couvrant le deficit du parent gardien qui reduit son activité, art. 285 al. 2 CC). Le calcul suit la methode en deux etapes du Tribunal fédéral : (1) determiner le minimum vital elargi de chaque parent et des enfants, (2) repartir l'excedent équitablement. Le minimum vital du debiteur est intangible (environ CHF 1'200 pour une personne seule, CHF 1'350 avec enfants). Pour l'entretien de l'ex-conjoint, le principe du « clean break » s'applique : chaque conjoint doit subvenir a ses propres besoins après le divorce, sauf si le mariage a eu un impact concret sur sa situation (art. 125 CC). Les tabelles zurichoises ou les recommandations de la CSEC servent de reference pour les besoins de l'enfant.",
       "articles": [
         {
           "ref": "CC 285",
@@ -459,7 +459,7 @@
         },
         {
           "ref": "TF 5A_907/2018",
-          "resume": "La contribution de prise en charge est due au parent qui reduit son activite pour s'occuper de l'enfant, independamment du sexe."
+          "resume": "La contribution de prise en charge est due au parent qui reduit son activité pour s'occuper de l'enfant, independamment du sexe."
         }
       ],
       "modeleLettre": "",
@@ -487,7 +487,7 @@
           "url": "boussole.app"
         }
       },
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -563,8 +563,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "En cas de violence conjugale, plusieurs mesures de protection existent : (1) Protection civile : le tribunal peut ordonner l'expulsion du conjoint violent du logement commun, interdire l'approche et le contact (art. 28b CC). (2) Protection pénale : les voies de fait (art. 126 CP), les lesions corporelles (art. 122-123 CP), les menaces (art. 180 CP) sont poursuivies d'office en cas de violence conjugale (même sans plainte de la victime depuis 2004). (3) Mesures protectrices de l'union conjugale : en urgence, le tribunal peut attribuer le logement a la victime et regler la garde des enfants (art. 176 CC). (4) La police peut prononcer une mesure d'eloignement immédiate (lois cantonales). La victime a droit a l'aide LAVI (Loi sur l'aide aux victimes) : aide psychologique, juridique et financiere gratuite. En cas de danger immédiat : appelez le 117 (police).",
+    "réponse": {
+      "explication": "En cas de violence conjugale, plusieurs mesures de protection existent : (1) Protection civile : le tribunal peut ordonner l'expulsion du conjoint violent du logement commun, interdire l'approche et le contact (art. 28b CC). (2) Protection pénale : les voies de fait (art. 126 CP), les lésions corporelles (art. 122-123 CP), les menaces (art. 180 CP) sont poursuivies d'office en cas de violence conjugale (même sans plainte de la victime depuis 2004). (3) Mesures protectrices de l'union conjugale : en urgence, le tribunal peut attribuer le logement a la victime et regler la garde des enfants (art. 176 CC). (4) La police peut prononcer une mesure d'eloignement immédiate (lois cantonales). La victime a droit a l'aide LAVI (Loi sur l'aide aux victimes) : aide psychologique, juridique et financiere gratuite. En cas de danger immédiat : appeléz le 117 (police).",
       "articles": [
         {
           "ref": "CC 28b",
@@ -592,7 +592,7 @@
           "resume": "Les violences psychologiques répétées (menaces, humiliations) constituent des voies de fait au sens de l'art. 126 CP."
         }
       ],
-      "modeleLettre": "Objet : Requête de mesures protectrices de l'union conjugale — URGENT — art. 172 ss CC\n\nTribunal [COMPÉTENT — ex. Tribunal d'arrondissement / Tribunal de première instance]\n[ADRESSE DU TRIBUNAL]\n\n[LIEU], le [DATE]\n\nMadame, Monsieur le/la Président(e),\n\nJe soussigné(e), [NOM, PRÉNOM], né(e) le [DATE], domicilié(e) à [ADRESSE], sollicite en urgence des mesures protectrices de l'union conjugale au sens des art. 172 ss CC et 28b CC à l'encontre de mon conjoint/ma conjointe [NOM, PRÉNOM DU CONJOINT].\n\nJe suis victime de violences [PHYSIQUES / PSYCHOLOGIQUES / ÉCONOMIQUES] de la part de mon conjoint depuis [DURÉE / DATE]. [DESCRIPTION SUCCINCTE DES FAITS PRINCIPAUX].\n\nJe demande au tribunal :\n1. L'attribution exclusive du logement familial sis [ADRESSE] (art. 176 al. 1 ch. 2 CC)\n2. L'interdiction pour le conjoint de s'approcher de moi et de me contacter (art. 28b CC)\n3. [Le cas échéant : la garde provisoire des enfants mineurs : NOMS, DATES DE NAISSANCE]\n4. [Le cas échéant : la fixation d'une contribution d'entretien provisoire]\n\nEn cas de danger immédiat, je sollicite des mesures superprovisionnelles sans audition de la partie adverse.\n\nAnnexes : [CERTIFICAT MÉDICAL, RAPPORT DE POLICE, ATTESTATION CENTRE LAVI, PHOTOS]\n\nVeuillez agréer, Madame, Monsieur le/la Président(e), mes salutations distinguées.\n\n[NOM, PRÉNOM]\n[ADRESSE COMPLÈTE]\n[SIGNATURE]",
+      "modeleLettre": "Objet : Requête de mesures protectrices de l'union conjugale — URGENT — art. 172 ss CC\n\nTribunal [COMPÉTENT — ex. Tribunal d'arrondissement / Tribunal de première instance]\n[ADRESSE DU TRIBUNAL]\n\n[LIEU], le [DATE]\n\nMadame, Monsieur le/la Président(e),\n\nJe soussigné(e), [NOM, PRÉNOM], né(e) le [DATE], domicilié(e) à [ADRESSE], sollicite en urgence des mesures protectrices de l'union conjugale au sens des art. 172 ss CC et 28b CC à l'encontre de mon conjoint/ma conjointe [NOM, PRÉNOM DU CONJOINT].\n\nJe suis victime de violences [PHYSIQUES / PSYCHOLOGIQUES / ÉCONOMIQUES] de la part de mon conjoint depuis [DURÉE / DATE]. [DESCRIPTION SUCCINCTE DES FAITS PRINCIPAUX].\n\nJe demande au tribunal :\n1. L'attribution exclusive du logement familial sis [ADRESSE] (art. 176 al. 1 ch. 2 CC)\n2. L'interdiction pour le conjoint de s'approcher de moi et de me contacter (art. 28b CC)\n3. [Le cas échéant : la garde provisoire des enfants mineurs : NOMS, DATES DE NAISSANCE]\n4. [Le cas échéant : la fixation d'une contribution d'entretien provisoire]\n\nEn cas de danger immédiat, je sollicite des mesures superprovisionnelles sans audition de la partie adversé.\n\nAnnexes : [CERTIFICAT MÉDICAL, RAPPORT DE POLICE, ATTESTATION CENTRE LAVI, PHOTOS]\n\nVeuillez agréer, Madame, Monsieur le/la Président(e), mes salutations distinguées.\n\n[NOM, PRÉNOM]\n[ADRESSE COMPLÈTE]\n[SIGNATURE]",
       "services": [
         {
           "nom": "Urgence police",
@@ -625,7 +625,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC/CP état 2025-01-01",
@@ -704,8 +704,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "Le droit successoral suisse a ete revise au 1er janvier 2023. Les reserves hereditaires (part minimale garantie aux heritiers reservataires) sont desormais : 1/2 de la part légale pour les descendants (au lieu de 3/4, art. 471 ch. 1 CC). La reserve des parents a ete supprimee. Le conjoint survivant conserve sa reserve de 1/2 de sa part légale (art. 471 ch. 3 CC). La quotite disponible (part que le testateur peut attribuer librement) est donc plus large depuis 2023. Les parts légales restent : conjoint + descendants = conjoint 1/2, descendants 1/2 ; conjoint + parents = conjoint 3/4, parents 1/4. L'heritier reservataire dont la reserve est lesee peut intenter une action en reduction dans l'annee suivant la connaissance de la lesion, et au plus tard 10 ans après l'ouverture de la succession (art. 533 CC). Les pactes successoraux sont possibles (art. 494 CC).",
+    "réponse": {
+      "explication": "Le droit successoral suisse a ete revise au 1er janvier 2023. Les reserves hereditaires (part minimale garantie aux heritiers reservataires) sont desormais : 1/2 de la part légale pour les descendants (au lieu de 3/4, art. 471 ch. 1 CC). La reserve des parents a ete supprimee. Le conjoint survivant conserve sa reserve de 1/2 de sa part légale (art. 471 ch. 3 CC). La quotite disponible (part que le testateur peut attribuer librement) est donc plus large depuis 2023. Les parts légales restent : conjoint + descendants = conjoint 1/2, descendants 1/2 ; conjoint + parents = conjoint 3/4, parents 1/4. L'heritier reservataire dont la reserve est lésée peut intenter une action en reduction dans l'annee suivant la connaissance de la lésion, et au plus tard 10 ans après l'ouverture de la succession (art. 533 CC). Les pactes successoraux sont possibles (art. 494 CC).",
       "articles": [
         {
           "ref": "CC 470",
@@ -726,14 +726,14 @@
       "jurisprudence": [
         {
           "ref": "TF 5A_557/2018",
-          "resume": "L'action en reduction doit etre intentee dans l'annee suivant la connaissance de la lesion ; la connaissance de l'existence du testament suffit."
+          "resume": "L'action en reduction doit etre intentee dans l'annee suivant la connaissance de la lésion ; la connaissance de l'existence du testament suffit."
         },
         {
           "ref": "TF 5A_686/2012",
-          "resume": "Les donations entre vifs faites dans les 5 ans precedant le décès peuvent etre soumises a reduction si elles lesent les reserves."
+          "resume": "Les donations entre vifs faites dans les 5 ans precedant le décès peuvent etre soumises a reduction si elles lésént les reserves."
         }
       ],
-      "modeleLettre": "Objet : Reclamation pour lesion de la reserve hereditaire\n\nMadame, Monsieur le/la notaire,\n\nSuite au décès de [nom] le [date], je constate que les dispositions testamentaires lesent ma reserve hereditaire en tant que [lien de parente].\n\nConformement aux art. 470-471 CC, ma reserve est de [montant/proportion].\n\nJe me reserve le droit d'intenter une action en reduction (art. 522 ss CC) si mes droits ne sont pas respectes.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Reclamation pour lésion de la reserve hereditaire\n\nMadame, Monsieur le/la notaire,\n\nSuite au décès de [nom] le [date], je constate que les dispositions testamentaires lésént ma reserve hereditaire en tant que [lien de parente].\n\nConformement aux art. 470-471 CC, ma reserve est de [montant/proportion].\n\nJe me reserve le droit d'intenter une action en reduction (art. 522 ss CC) si mes droits ne sont pas respectes.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
       "services": [
         {
           "nom": "Ordre des avocats VD",
@@ -752,7 +752,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2023-01-01",
@@ -826,8 +826,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "Si les parents ne sont pas maries, la filiation paternelle s'etablit par reconnaissance devant l'officier de l'etat civil ou par jugement (art. 260 al. 1 CC). La reconnaissance peut etre faite avant ou après la naissance. Si le pere refuse de reconnaitre l'enfant, la mere (ou l'enfant) peut intenter une action en paternite (art. 261 CC). L'action doit etre intentee avant la majorite de l'enfant (art. 263 al. 1 CC). Le tribunal ordonnera en général un test ADN. La presomption de paternite s'applique si le pere a eu des relations avec la mere pendant la periode de conception (art. 262 CC). Le pere presume peut contester une reconnaissance ou la presomption de paternite du mari par action en desaveu dans l'annee suivant la connaissance de la naissance (art. 256c CC). La reconnaissance fonde l'obligation d'entretien et l'autorite parentale conjointe (sur demande).",
+    "réponse": {
+      "explication": "Si les parents ne sont pas maries, la filiation paternelle s'établit par reconnaissance devant l'officier de l'etat civil ou par jugement (art. 260 al. 1 CC). La reconnaissance peut etre faite avant ou après la naissance. Si le pere refuse de reconnaitre l'enfant, la mere (ou l'enfant) peut intenter une action en paternite (art. 261 CC). L'action doit etre intentee avant la majorite de l'enfant (art. 263 al. 1 CC). Le tribunal ordonnera en général un test ADN. La presomption de paternite s'applique si le pere a eu des relations avec la mere pendant la periode de conception (art. 262 CC). Le pere presume peut contester une reconnaissance ou la presomption de paternite du mari par action en desaveu dans l'annee suivant la connaissance de la naissance (art. 256c CC). La reconnaissance fonde l'obligation d'entretien et l'autorite parentale conjointe (sur demande).",
       "articles": [
         {
           "ref": "CC 260",
@@ -874,7 +874,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -949,8 +949,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "Les mesures provisionnelles permettent d'obtenir une protection rapide avant ou pendant une procédure judiciaire (art. 261-269 CPC). Le requérant doit rendre vraisemblable : (1) qu'il a droit a une prétention, (2) qu'il est menace d'un prejudice difficilement reparable. En cas d'urgence particulière (depart imminent avec l'enfant a l'étranger, violence), le tribunal peut ordonner des mesures superprovisionnelles sans entendre la partie adverse (art. 265 CPC). En droit de la famille, les mesures les plus courantes sont : l'attribution du logement conjugal, la garde provisoire des enfants, l'interdiction de demenager avec l'enfant, le blocage des comptes bancaires, la fixation d'une pension provisoire. Les mesures protectrices de l'union conjugale (art. 172 ss CC) constituent un type spécial de mesures provisionnelles pour les époux. La requete doit etre motivee et accompagnee de pieces justificatives.",
+    "réponse": {
+      "explication": "Les mesures provisionnelles permettent d'obtenir une protection rapide avant ou pendant une procédure judiciaire (art. 261-269 CPC). Le requérant doit rendre vraisemblable : (1) qu'il a droit a une prétention, (2) qu'il est menace d'un prejudice difficilement reparable. En cas d'urgence particulière (depart imminent avec l'enfant a l'étranger, violence), le tribunal peut ordonner des mesures superprovisionnelles sans entendre la partie adversé (art. 265 CPC). En droit de la famille, les mesures les plus courantes sont : l'attribution du logement conjugal, la garde provisoire des enfants, l'interdiction de deménager avec l'enfant, le blocage des comptes bancaires, la fixation d'une pension provisoire. Les mesures protectrices de l'union conjugale (art. 172 ss CC) constituent un type spécial de mesures provisionnelles pour les époux. La requete doit etre motivee et accompagnee de pieces justificatives.",
       "articles": [
         {
           "ref": "CPC 261",
@@ -978,7 +978,7 @@
           "resume": "Le blocage provisoire des comptes communs est admis lorsque la dissipation des biens est vraisemblable."
         }
       ],
-      "modeleLettre": "Objet : Requete de mesures provisionnelles urgentes\n\nAu President/a la Presidente du Tribunal [competent],\n\nMadame, Monsieur le/la President(e),\n\nJe requiers d'urgence les mesures provisionnelles suivantes :\n\n1. [Description des mesures demandees]\n\nMotifs d'urgence :\n- [Description du prejudice imminent]\n\nConformement a l'art. 261 CPC, ces mesures sont nécessaires pour prevenir un prejudice difficilement reparable.\n\n[Si urgence extreme :] Je sollicite des mesures superprovisionnelles (art. 265 CPC) sans audition prealable de la partie adverse.\n\nPieces jointes : [liste]\n\nVeuillez agréer l'expression de ma haute consideration.\n\n[Signature]",
+      "modeleLettre": "Objet : Requete de mesures provisionnelles urgentes\n\nAu President/a la Presidente du Tribunal [compétent],\n\nMadame, Monsieur le/la President(e),\n\nJe requiers d'urgence les mesures provisionnelles suivantes :\n\n1. [Description des mesures demandees]\n\nMotifs d'urgence :\n- [Description du prejudice imminent]\n\nConformement a l'art. 261 CPC, ces mesures sont nécessaires pour prevenir un prejudice difficilement reparable.\n\n[Si urgence extreme :] Je sollicite des mesures superprovisionnelles (art. 265 CPC) sans audition prealable de la partie adversé.\n\nPieces jointes : [liste]\n\nVeuillez agréer l'expression de ma haute consideration.\n\n[Signature]",
       "services": [
         {
           "nom": "Ordre des avocats VD",
@@ -997,7 +997,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CPC/CC état 2025-01-01",
@@ -1007,7 +1007,7 @@
       "en attendant le jugement",
       "il faut agir vite",
       "mesures provisionnelles c'est quoi",
-      "bloquer les biens de mon ex"
+      "bloquér les biens de mon ex"
     ],
     "negative_signals": [
       "procédure terminee avec jugement definitif",
@@ -1075,8 +1075,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "Le parent qui n'a pas la garde a le droit d'entretenir des relations personnelles avec son enfant (art. 273 al. 1 CC). Ce droit est aussi un droit de l'enfant. Le droit de visite usuel comprend en général un week-end sur deux et la moitie des vacances scolaires, mais le tribunal peut l'adapter. Le parent gardien ne peut pas empecher l'exercice du droit de visite sans motif grave (mise en danger de l'enfant). En cas de refus injustifie, le parent lese peut saisir l'APEA ou le tribunal pour faire exécuter le droit de visite (art. 273 al. 2 CC). Dans les cas graves, un droit de visite surveille peut etre ordonne (art. 274 al. 2 CC). Si l'enfant refuse le contact, l'APEA peut ordonner une curatelle de surveillance du droit de visite. L'alienation parentale est prise en compte par les tribunaux.",
+    "réponse": {
+      "explication": "Le parent qui n'a pas la garde a le droit d'entretenir des relations personnelles avec son enfant (art. 273 al. 1 CC). Ce droit est aussi un droit de l'enfant. Le droit de visite usuel comprend en général un week-end sur deux et la moitie des vacances scolaires, mais le tribunal peut l'adapter. Le parent gardien ne peut pas empecher l'exercice du droit de visite sans motif grave (mise en danger de l'enfant). En cas de refus injustifie, le parent lésé peut saisir l'APEA ou le tribunal pour faire exécuter le droit de visite (art. 273 al. 2 CC). Dans les cas graves, un droit de visite surveille peut etre ordonne (art. 274 al. 2 CC). Si l'enfant refuse le contact, l'APEA peut ordonner une curatelle de surveillance du droit de visite. L'alienation parentale est prise en compte par les tribunaux.",
       "articles": [
         {
           "ref": "CC 273",
@@ -1099,7 +1099,7 @@
           "resume": "Le droit de visite peut etre elargi progressivement pour un pere qui n'a pas eu de contact avec son enfant pendant plusieurs annees."
         }
       ],
-      "modeleLettre": "Objet : Requete en exécution du droit de visite\n\nA l'APEA / au Tribunal compétent,\n\nMadame, Monsieur,\n\nLe droit de visite fixe par [jugement/convention du date] prevoit [description du regime].\n\nOr, depuis le [date], le parent gardien [nom] empeche l'exercice de ce droit en [description].\n\nJe demande qu'il soit ordonne au parent gardien de respecter le droit de visite sous la menace de la peine prévue a l'art. 292 CP.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Requete en exécution du droit de visite\n\nA l'APEA / au Tribunal compétent,\n\nMadame, Monsieur,\n\nLe droit de visite fixe par [jugement/convention du date] prevoit [description du régime].\n\nOr, depuis le [date], le parent gardien [nom] empeche l'exercice de ce droit en [description].\n\nJe demande qu'il soit ordonne au parent gardien de respecter le droit de visite sous la menace de la peine prévue a l'art. 292 CP.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
       "services": [
         {
           "nom": "APEA du district (autorite de protection)",
@@ -1113,12 +1113,12 @@
         },
         {
           "nom": "Mediation familiale Vaud",
-          "url": "https://www.vd.ch/themes/vie-privee/famille/mediation-familiale",
+          "url": "https://www.vd.ch/themes/vie-privee/famille/médiation-familiale",
           "canton": "VD"
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -1135,7 +1135,7 @@
       "droit de visite des grands-parents"
     ],
     "required_facts": [
-      "regime de visite actuel",
+      "régime de visite actuel",
       "ce qui ne fonctionne pas",
       "age de l'enfant",
       "jugement ou convention existante"
@@ -1168,7 +1168,7 @@
         "text": "Motif ?",
         "options": [
           "gestion financiere",
-          "decisions medicales",
+          "decisions médicales",
           "protection globale",
           "representation juridique"
         ]
@@ -1198,7 +1198,7 @@
         "type": "canton"
       }
     ],
-    "reponse": {
+    "réponse": {
       "explication": "Depuis 2013, le droit de la protection de l'adulte prevoit quatre types de curatelle modulables selon les besoins (art. 390-398 CC) : (1) curatelle d'accompagnement (soutien dans la vie courante, art. 393 CC), (2) curatelle de representation (actes juridiques spécifiques, art. 394 CC), (3) curatelle de gestion (gestion du patrimoine, art. 395 CC), (4) curatelle de portee générale (cas grave, remplace l'ancienne tutelle, art. 398 CC). L'APEA (autorite de protection de l'enfant et de l'adulte) est compétente pour instituer une curatelle. Toute personne peut signaler a l'APEA une situation de mise en danger (art. 443 CC). La personne concernee est entendue (art. 447 CC) et peut contester la mesure. Les directives anticipees (art. 370 CC) et le mandat pour cause d'inaptitude (art. 360 CC) permettent de prevenir une curatelle non souhaitee. Le curateur doit respecter l'autonomie de la personne dans la mesure du possible.",
       "articles": [
         {
@@ -1252,7 +1252,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -1328,8 +1328,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "Un mariage celebre a l'étranger est reconnu en Suisse s'il a ete celebre valablement selon le droit du lieu de celebration (art. 45 LDIP). La transcription se fait auprès de l'office de l'etat civil du domicile suisse. Il faut presenter l'acte de mariage étranger apostille ou legalise, traduit par un traducteur jure. Le mariage n'est pas reconnu s'il est contraire a l'ordre public suisse, notamment en cas de mariage force (art. 105 ch. 5 CC), de mariage avec un mineur ou de bigamie. Un mariage par procuration ou religieux sans celebrite civile n'est en principe pas reconnu. Le délai de traitement est de quelques semaines a plusieurs mois. En cas de refus, un recours est possible auprès de l'autorite cantonale de surveillance.",
+    "réponse": {
+      "explication": "Un mariage celebre a l'étranger est reconnu en Suisse s'il a ete celebre valablement selon le droit du lieu de celebration (art. 45 LDIP). La transcription se fait auprès de l'office de l'etat civil du domicile suisse. Il faut présenter l'acte de mariage étranger apostille ou légalise, traduit par un traducteur jure. Le mariage n'est pas reconnu s'il est contraire a l'ordre public suisse, notamment en cas de mariage force (art. 105 ch. 5 CC), de mariage avec un mineur ou de bigamie. Un mariage par procuration ou religieux sans celebrite civile n'est en principe pas reconnu. Le délai de traitement est de quelques semaines a plusieurs mois. En cas de refus, un recours est possible auprès de l'autorite cantonale de surveillance.",
       "articles": [
         {
           "ref": "LDIP 45",
@@ -1366,7 +1366,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC/LDIP état 2025-01-01",
@@ -1376,7 +1376,7 @@
       "transcrire mon mariage",
       "reconnaitre mon mariage",
       "je me suis marie au pays",
-      "mariage étranger enregistrement"
+      "mariage étranger enrégistrement"
     ],
     "negative_signals": [
       "mariage celebre en Suisse",
@@ -1395,7 +1395,7 @@
     "sousDomaine": "partenariat",
     "tags": [
       "partenariat",
-      "enregistre",
+      "enrégistre",
       "couple",
       "même sexe",
       "LPart"
@@ -1405,7 +1405,7 @@
         "id": "q1",
         "text": "Votre situation ?",
         "options": [
-          "je veux enregistrer un partenariat",
+          "je veux enrégistrer un partenariat",
           "je veux le dissoudre",
           "je veux connaitre mes droits"
         ]
@@ -1434,12 +1434,12 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "Depuis le 1er juillet 2022, le mariage est ouvert aux couples de même sexe en Suisse. La LPart (Loi sur le partenariat enregistre) ne permet plus de conclure de nouveaux partenariats, mais les partenariats existants restent valables. Les partenaires enregistres peuvent les convertir en mariage par simple declaration auprès de l'etat civil (art. 35 LPart modifie). La dissolution d'un partenariat existant suit les regles de la LPart (art. 29-32 LPart) : elle est prononcee par le tribunal sur requete commune ou unilaterale après 1 an de séparation. Les effets patrimoniaux du partenariat enregistre different legerement de ceux du mariage, notamment l'absence de regime matrimonial légal (séparation des biens par défaut). En matiere successorale, le partenaire enregistre a les memes droits que le conjoint survivant (art. 462 CC).",
+    "réponse": {
+      "explication": "Depuis le 1er juillet 2022, le mariage est ouvert aux couples de même sexe en Suisse. La LPart (Loi sur le partenariat enrégistre) ne permet plus de conclure de nouveaux partenariats, mais les partenariats existants restent valables. Les partenaires enrégistres peuvent les convertir en mariage par simple declaration auprès de l'etat civil (art. 35 LPart modifie). La dissolution d'un partenariat existant suit les regles de la LPart (art. 29-32 LPart) : elle est prononcee par le tribunal sur requete commune ou unilaterale après 1 an de séparation. Les effets patrimoniaux du partenariat enrégistre different legerement de ceux du mariage, notamment l'absence de régime matrimonial légal (séparation des biens par défaut). En matiere successorale, le partenaire enrégistre a les memes droits que le conjoint survivant (art. 462 CC).",
       "articles": [
         {
           "ref": "LPart 1",
-          "titre": "Partenariat enregistre — principe",
+          "titre": "Partenariat enrégistre — principe",
           "lien": "https://www.fedlex.admin.ch/eli/cc/2005/782/fr#art_1"
         },
         {
@@ -1456,7 +1456,7 @@
       "jurisprudence": [
         {
           "ref": "TF 5A_748/2019",
-          "resume": "Les partenaires enregistres beneficient de la même protection que les conjoints en matiere de logement familial."
+          "resume": "Les partenaires enrégistres bénéficient de la même protection que les conjoints en matiere de logement familial."
         }
       ],
       "modeleLettre": "",
@@ -1473,13 +1473,13 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "LPart/CC état 2025-01-01",
-    "match_description": "La personne veut s'informer sur le partenariat enregistre (couple de même sexe) ou sa dissolution",
+    "match_description": "La personne veut s'informer sur le partenariat enrégistre (couple de même sexe) ou sa dissolution",
     "profane_aliases": [
-      "partenariat enregistre droits",
+      "partenariat enrégistre droits",
       "pacs en Suisse",
       "union entre personnes du même sexe",
       "dissoudre un partenariat",
@@ -1550,8 +1550,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "L'adoption en Suisse est regie par les art. 264-269d CC. L'adoption conjointe est reservee aux couples maries (ou en partenariat) depuis au moins 3 ans, ou aux personnes seules de 28 ans revolus (art. 264b CC). L'adoptant doit avoir au moins 16 ans de plus que l'adopte. Le consentement des parents biologiques est indispensable (art. 265a CC), sauf si leur residence est inconnue ou s'ils se sont desintéressés de l'enfant depuis plus d'un an. L'adoption de l'enfant du conjoint est possible après 1 an de ménage commun (art. 264c CC). La procédure comprend un accueil prealable d'au moins 1 an sous surveillance de l'autorite (art. 264 CC) et une enquete sociale. Pour l'adoption internationale, la Convention de La Haye de 1993 s'applique (art. 264g CC). L'autorite cantonale de protection de l'enfant prononce l'adoption. Les frais varient entre CHF 2'000 et CHF 40'000 selon la complexite.",
+    "réponse": {
+      "explication": "L'adoption en Suisse est régie par les art. 264-269d CC. L'adoption conjointe est reservee aux couples maries (ou en partenariat) depuis au moins 3 ans, ou aux personnes seules de 28 ans revolus (art. 264b CC). L'adoptant doit avoir au moins 16 ans de plus que l'adopte. Le consentement des parents biologiques est indispensable (art. 265a CC), sauf si leur residence est inconnue ou s'ils se sont desintéressés de l'enfant depuis plus d'un an. L'adoption de l'enfant du conjoint est possible après 1 an de ménage commun (art. 264c CC). La procédure comprend un accueil prealable d'au moins 1 an sous surveillance de l'autorite (art. 264 CC) et une enquete sociale. Pour l'adoption internationale, la Convention de La Haye de 1993 s'applique (art. 264g CC). L'autorite cantonale de protection de l'enfant prononce l'adoption. Les frais varient entre CHF 2'000 et CHF 40'000 selon la complexite.",
       "articles": [
         {
           "ref": "CC 264",
@@ -1598,7 +1598,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -1676,8 +1676,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "Depuis 2014, l'autorite parentale conjointe est la regle, y compris pour les parents non maries (art. 296 al. 2 CC). Pour les parents maries, l'autorite parentale conjointe est automatique. Pour les parents non maries, elle s'etablit par declaration commune auprès de l'etat civil ou de l'APEA (art. 298a CC). Si un parent refuse, l'autre peut saisir l'APEA qui accorde l'autorite parentale conjointe sauf si le bien de l'enfant commande autrement (art. 298b CC). L'autorite parentale conjointe implique que les decisions importantes concernant l'enfant (scolarite, sante, religion, lieu de residence) sont prises conjointement. Le parent qui a la garde quotidienne prend seul les decisions courantes. En cas de desaccord, chaque parent peut saisir l'APEA (art. 307 ss CC). Le retrait de l'autorite parentale a un parent n'est possible qu'en cas de danger pour l'enfant.",
+    "réponse": {
+      "explication": "Depuis 2014, l'autorite parentale conjointe est la regle, y compris pour les parents non maries (art. 296 al. 2 CC). Pour les parents maries, l'autorite parentale conjointe est automatique. Pour les parents non maries, elle s'établit par declaration commune auprès de l'etat civil ou de l'APEA (art. 298a CC). Si un parent refuse, l'autre peut saisir l'APEA qui accorde l'autorite parentale conjointe sauf si le bien de l'enfant commande autrement (art. 298b CC). L'autorite parentale conjointe implique que les decisions importantes concernant l'enfant (scolarite, sante, religion, lieu de residence) sont prises conjointement. Le parent qui a la garde quotidienne prend seul les decisions courantes. En cas de desaccord, chaque parent peut saisir l'APEA (art. 307 ss CC). Le retrait de l'autorite parentale a un parent n'est possible qu'en cas de danger pour l'enfant.",
       "articles": [
         {
           "ref": "CC 296",
@@ -1705,7 +1705,7 @@
           "resume": "Le pere non marie peut demander l'autorite parentale conjointe même si la mere s'y oppose ; le tribunal statue selon le bien de l'enfant."
         }
       ],
-      "modeleLettre": "Objet : Demande d'autorite parentale conjointe\n\nA l'Autorite de protection de l'enfant et de l'adulte (APEA),\n\nMadame, Monsieur,\n\nJe soussigne(e) [Nom], pere/mere de l'enfant [Prenom Nom], ne(e) le [date], sollicite l'établissement de l'autorite parentale conjointe conformement a l'art. 298b CC.\n\nL'enfant a ete reconnu par le pere le [date] auprès de l'etat civil de [lieu].\n\nLa mere/le pere refuse la declaration commune. Je considere que l'autorite parentale conjointe est dans l'interet de l'enfant pour les raisons suivantes : [motifs].\n\nPieces jointes : acte de naissance, acte de reconnaissance.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Demande d'autorite parentale conjointe\n\nA l'Autorite de protection de l'enfant et de l'adulte (APEA),\n\nMadame, Monsieur,\n\nJe soussigné(e) [Nom], pere/mere de l'enfant [Prenom Nom], ne(e) le [date], sollicite l'établissement de l'autorite parentale conjointe conformement a l'art. 298b CC.\n\nL'enfant a ete reconnu par le pere le [date] auprès de l'etat civil de [lieu].\n\nLa mere/le pere refuse la declaration commune. Je considere que l'autorite parentale conjointe est dans l'interet de l'enfant pour les raisons suivantes : [motifs].\n\nPieces jointes : acte de naissance, acte de reconnaissance.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
       "services": [
         {
           "nom": "Justice de paix VD (APEA)",
@@ -1719,7 +1719,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -1797,8 +1797,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "L'enlevement international d'enfant est regi par la Convention de La Haye du 25 octobre 1980 (CLaH 80) et la loi fédérale LF-EEA (RS 211.222.32). Le deplacement ou la retention d'un enfant est illicite s'il viole le droit de garde effectivement exerce (art. 3 CLaH 80). L'autorite centrale suisse est l'Office fédéral de la justice (OFJ). La demande de retour doit etre introduite dans l'annee suivant le deplacement (art. 12 CLaH 80). Passe ce délai, le retour peut etre refuse si l'enfant s'est integre dans son nouveau milieu. Le retour ne peut etre refuse que dans des cas exceptionnels : risque grave de danger physique ou psychique pour l'enfant, ou opposition de l'enfant ayant atteint un age et une maturite suffisants (art. 13 CLaH 80). La procédure est gratuite et acceleree. En urgence, des mesures provisionnelles (interdiction de quitter le territoire) peuvent etre ordonnees.",
+    "réponse": {
+      "explication": "L'enlevement international d'enfant est régi par la Convention de La Haye du 25 octobre 1980 (CLaH 80) et la loi fédérale LF-EEA (RS 211.222.32). Le deplacement ou la retention d'un enfant est illicite s'il viole le droit de garde effectivement exerce (art. 3 CLaH 80). L'autorite centrale suisse est l'Office fédéral de la justice (OFJ). La demande de retour doit etre introduite dans l'annee suivant le deplacement (art. 12 CLaH 80). Passe ce délai, le retour peut etre refuse si l'enfant s'est integre dans son nouveau milieu. Le retour ne peut etre refuse que dans des cas exceptionnels : risque grave de danger physique ou psychique pour l'enfant, ou opposition de l'enfant ayant atteint un age et une maturite suffisants (art. 13 CLaH 80). La procédure est gratuite et acceleree. En urgence, des mesures provisionnelles (interdiction de quitter le territoire) peuvent etre ordonnees.",
       "articles": [
         {
           "ref": "CLaH 80 art. 3",
@@ -1845,7 +1845,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CLaH 80/LF-EEA état 2025-01-01",
@@ -1858,7 +1858,7 @@
       "Convention de La Haye enfant"
     ],
     "negative_signals": [
-      "demenagement a l'étranger avec accord des deux parents",
+      "deménagement a l'étranger avec accord des deux parents",
       "simple voyage de vacances"
     ],
     "required_facts": [
@@ -1911,8 +1911,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "Si les parents sont maries, le mari est presume etre le pere (art. 255 CC). Pour les parents non maries, la filiation paternelle s'etablit par reconnaissance volontaire auprès de l'etat civil (art. 260 CC) ou par action en paternite (art. 261 CC). La reconnaissance peut se faire avant ou après la naissance. Elle est irrevocable, sauf action en contestation dans un délai d'un an des la decouverte que le reconnaissant n'est pas le pere biologique (art. 260a-260c CC). Si le pere refuse de reconnaitre l'enfant, la mere ou l'enfant peut introduire une action en paternite devant le tribunal (art. 261 CC). Le tribunal ordonne une expertise ADN. L'action se prescrit par 1 an des la majorite de l'enfant si introduite par celui-ci. L'assistance juridique est disponible. L'établissement de la filiation donne droit a l'entretien (art. 276 CC), a la succession et au nom.",
+    "réponse": {
+      "explication": "Si les parents sont maries, le mari est presume etre le pere (art. 255 CC). Pour les parents non maries, la filiation paternelle s'établit par reconnaissance volontaire auprès de l'etat civil (art. 260 CC) ou par action en paternite (art. 261 CC). La reconnaissance peut se faire avant ou après la naissance. Elle est irrevocable, sauf action en contestation dans un délai d'un an des la decouverte que le reconnaissant n'est pas le pere biologique (art. 260a-260c CC). Si le pere refuse de reconnaitre l'enfant, la mere ou l'enfant peut introduire une action en paternite devant le tribunal (art. 261 CC). Le tribunal ordonne une expertise ADN. L'action se prescrit par 1 an des la majorite de l'enfant si introduite par celui-ci. L'assistance juridique est disponible. L'établissement de la filiation donne droit a l'entretien (art. 276 CC), a la succession et au nom.",
       "articles": [
         {
           "ref": "CC 255",
@@ -1959,7 +1959,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -1969,7 +1969,7 @@
       "declaration de paternite",
       "comment reconnaitre un bebe",
       "reconnaissance avant la naissance",
-      "devenir pere legalement"
+      "devenir pere légalement"
     ],
     "negative_signals": [
       "contestation de paternite",
@@ -2027,8 +2027,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "L'action en desaveu de paternite permet au mari de contester la presomption de paternite (art. 256 CC). Le délai est d'un an des la connaissance de la naissance et du fait qu'il n'est pas le pere, ou des la connaissance du fait qu'un tiers a cohabite avec la mere pendant la periode de conception, avec un délai absolu de 5 ans des la naissance (art. 256c CC). L'enfant peut lui-même agir en contestation, avec un délai d'un an après sa majorite (art. 256c al. 3 CC). Si l'action aboutit, le lien de filiation paternelle est supprime retroactivement. Le mari n'est plus tenu a l'entretien pour le futur, mais les prestations passees ne sont en principe pas remboursees. Le tribunal ordonne generalement une expertise ADN. L'action est introduite devant le tribunal du domicile de l'une des parties.",
+    "réponse": {
+      "explication": "L'action en desaveu de paternite permet au mari de contester la presomption de paternite (art. 256 CC). Le délai est d'un an des la connaissance de la naissance et du fait qu'il n'est pas le pere, ou des la connaissance du fait qu'un tiers a cohabite avec la mere pendant la periode de conception, avec un délai absolu de 5 ans des la naissance (art. 256c CC). L'enfant peut lui-même agir en contestation, avec un délai d'un an après sa majorite (art. 256c al. 3 CC). Si l'action aboutit, le lien de filiation paternelle est supprime rétroactivement. Le mari n'est plus tenu a l'entretien pour le futur, mais les prestations passees ne sont en principe pas remboursees. Le tribunal ordonne généralement une expertise ADN. L'action est introduite devant le tribunal du domicile de l'une des parties.",
       "articles": [
         {
           "ref": "CC 256",
@@ -2070,7 +2070,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -2130,7 +2130,7 @@
         "type": "canton"
       }
     ],
-    "reponse": {
+    "réponse": {
       "explication": "Depuis 2013, les époux conservent chacun leur nom de celibataire après le mariage (art. 160 CC). Ils peuvent neanmoins choisir un nom de famille commun, soit celui du mari, soit celui de l'épouse (art. 160 al. 2 CC). L'enfant de parents maries porte le nom de famille commun, ou a défaut celui choisi par les parents lors de la declaration a l'etat civil (art. 270 CC). En cas de divorce, l'époux qui a change de nom peut reprendre son nom de celibataire par simple declaration a l'etat civil (art. 119 CC). Le changement de nom en dehors du mariage/divorce est possible pour justes motifs auprès du gouvernement cantonal (art. 30 CC). Les motifs admis sont notamment : nom ridicule, changement de genre, integration. Le double nom (alliance) n'existe plus dans le droit suisse actuel.",
       "articles": [
         {
@@ -2173,7 +2173,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -2199,9 +2199,9 @@
   {
     "id": "famille_regime_matrimonial",
     "domaine": "famille",
-    "sousDomaine": "regime_matrimonial",
+    "sousDomaine": "régime_matrimonial",
     "tags": [
-      "regime",
+      "régime",
       "matrimonial",
       "participation",
       "acquets",
@@ -2211,7 +2211,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Quel regime matrimonial ?",
+        "text": "Quel régime matrimonial ?",
         "options": [
           "participation aux acquets (défaut)",
           "communaute de biens",
@@ -2231,7 +2231,7 @@
         "id": "q3",
         "text": "Situation ?",
         "options": [
-          "je veux changer de regime",
+          "je veux changer de régime",
           "divorce en cours",
           "décès du conjoint",
           "simple information"
@@ -2243,8 +2243,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "Le regime matrimonial légal en Suisse est la participation aux acquets (art. 196-220 CC). Chaque époux conserve ses biens propres (anterieurs au mariage, herites, recus en donation) et acquiert des acquets (revenus du travail, rendement des biens propres). A la dissolution du regime (divorce, décès), chaque époux a droit a la moitie du benefice des acquets de l'autre (art. 215 CC). Les époux peuvent choisir un autre regime par contrat de mariage notarie : la communaute de biens (art. 221-246 CC) ou la séparation de biens (art. 247-251 CC). Le contrat peut etre modifie a tout moment par acte notarie (art. 182 CC). Les avoirs LPP sont partages separement. En cas de modification pendant le mariage, les droits des creanciers sont preserves.",
+    "réponse": {
+      "explication": "Le régime matrimonial légal en Suisse est la participation aux acquets (art. 196-220 CC). Chaque époux conserve ses biens propres (antérieurs au mariage, herites, recus en donation) et acquiert des acquets (revenus du travail, rendement des biens propres). A la dissolution du régime (divorce, décès), chaque époux a droit a la moitie du benefice des acquets de l'autre (art. 215 CC). Les époux peuvent choisir un autre régime par contrat de mariage notarie : la communaute de biens (art. 221-246 CC) ou la séparation de biens (art. 247-251 CC). Le contrat peut etre modifie a tout moment par acte notarie (art. 182 CC). Les avoirs LPP sont partages separement. En cas de modification pendant le mariage, les droits des creanciers sont preserves.",
       "articles": [
         {
           "ref": "CC 196",
@@ -2265,7 +2265,7 @@
       "jurisprudence": [
         {
           "ref": "TF 5A_803/2017",
-          "resume": "Les acquets doivent etre calcules au moment de la dissolution du regime, pas au moment de la séparation effective."
+          "resume": "Les acquets doivent etre calcules au moment de la dissolution du régime, pas au moment de la séparation effective."
         },
         {
           "ref": "TF 5A_145/2016",
@@ -2291,36 +2291,36 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
-    "match_description": "La personne veut comprendre les regimes matrimoniaux ou en choisir un",
+    "match_description": "La personne veut comprendre les régimes matrimoniaux ou en choisir un",
     "profane_aliases": [
       "contrat de mariage nécessaire",
       "séparation de biens c'est quoi",
-      "regime matrimonial par défaut",
+      "régime matrimonial par défaut",
       "protéger mes biens en me mariant",
       "qu'est-ce que la participation aux acquets"
     ],
     "negative_signals": [
-      "liquidation du regime lors du divorce",
+      "liquidation du régime lors du divorce",
       "simple question sur le divorce"
     ],
     "required_facts": [
       "situation (avant mariage, pendant, divorce)",
       "biens propres importants",
-      "activite indépendante ou non",
+      "activité indépendante ou non",
       "contrat de mariage existant"
     ]
   },
   {
     "id": "famille_liquidation_regime",
     "domaine": "famille",
-    "sousDomaine": "regime_matrimonial",
+    "sousDomaine": "régime_matrimonial",
     "tags": [
       "liquidation",
-      "regime",
+      "régime",
       "partage",
       "acquets",
       "divorce"
@@ -2332,7 +2332,7 @@
         "options": [
           "divorce",
           "décès",
-          "changement de regime"
+          "changement de régime"
         ]
       },
       {
@@ -2368,8 +2368,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "La liquidation du regime matrimonial est obligatoire lors du divorce ou du décès d'un époux. Sous le regime légal (participation aux acquets), on procede en quatre etapes : (1) séparation des biens propres de chaque époux (art. 198-199 CC), (2) calcul des acquets de chaque époux (art. 197 CC), (3) calcul du benefice de chaque masse d'acquets (acquets - dettes des acquets), (4) partage : chaque époux reçoit la moitie du benefice des acquets de l'autre (art. 215 CC). Les recompenses entre masses (biens propres ayant finance des acquets ou inversement) sont prises en compte (art. 209 CC). La valeur des biens est estimee au moment de la liquidation. Le partage LPP (2e pilier) est effectué separement. Si les époux ne s'accordent pas, le tribunal liquide le regime dans le cadre du jugement de divorce. La liquidation peut etre complexe en presence d'entreprise ou d'immobilier.",
+    "réponse": {
+      "explication": "La liquidation du régime matrimonial est obligatoire lors du divorce ou du décès d'un époux. Sous le régime légal (participation aux acquets), on procede en quatre etapes : (1) séparation des biens propres de chaque époux (art. 198-199 CC), (2) calcul des acquets de chaque époux (art. 197 CC), (3) calcul du benefice de chaque masse d'acquets (acquets - dettes des acquets), (4) partage : chaque époux reçoit la moitie du benefice des acquets de l'autre (art. 215 CC). Les recompenses entre masses (biens propres ayant finance des acquets ou inversément) sont prises en compte (art. 209 CC). La valeur des biens est estimee au moment de la liquidation. Le partage LPP (2e pilier) est effectué separement. Si les époux ne s'accordent pas, le tribunal liquide le régime dans le cadre du jugement de divorce. La liquidation peut etre complexe en presence d'entreprise ou d'immobilier.",
       "articles": [
         {
           "ref": "CC 197",
@@ -2394,7 +2394,7 @@
         },
         {
           "ref": "TF 5A_111/2018",
-          "resume": "Le moment determinant pour l'estimation des biens est celui du jugement de divorce, pas celui de la séparation."
+          "resume": "Le moment déterminant pour l'estimation des biens est celui du jugement de divorce, pas celui de la séparation."
         }
       ],
       "modeleLettre": "",
@@ -2411,29 +2411,29 @@
         },
         {
           "nom": "Mediation civile VD",
-          "url": "https://www.vd.ch/themes/etat-droit-finances/mediation",
+          "url": "https://www.vd.ch/themes/etat-droit-finances/médiation",
           "canton": "VD"
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
-    "match_description": "Les époux divorcent et doivent partager leurs biens selon le regime matrimonial",
+    "match_description": "Les époux divorcent et doivent partager leurs biens selon le régime matrimonial",
     "profane_aliases": [
       "partage des biens au divorce",
       "qui garde la maison",
       "partager le 2e pilier",
-      "liquidation du regime matrimonial",
+      "liquidation du régime matrimonial",
       "comment on partage au divorce"
     ],
     "negative_signals": [
-      "choix du regime avant le mariage",
+      "choix du régime avant le mariage",
       "question sur la pension alimentaire seule"
     ],
     "required_facts": [
-      "regime matrimonial applicable",
+      "régime matrimonial applicable",
       "biens a partager",
       "dettes communes",
       "accord ou desaccord sur le partage"
@@ -2494,8 +2494,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "En l'absence de testament, la succession est reglee par la loi (succession ab intestat, art. 457-466 CC). Le systeme suisse repose sur les parenteles : 1re parentele = descendants (enfants, petits-enfants), 2e parentele = pere et mere et leurs descendants (freres/soeurs), 3e parentele = grands-parents et leurs descendants. Le conjoint survivant herite en concours avec les autres heritiers : avec des descendants, il reçoit 1/2 de la succession ; avec la 2e parentele, il reçoit 3/4 ; seul, il reçoit la totalite (art. 462 CC). Depuis le 1er janvier 2023, la reforme du droit successoral reduit les reserves hereditaires des descendants a 1/2 (au lieu de 3/4) et supprime la reserve des parents (art. 471 CC revise). Le conjoint survivant beneficie aussi d'un droit d'usufruit ou d'attribution du logement familial (art. 219 CC).",
+    "réponse": {
+      "explication": "En l'absence de testament, la succession est reglee par la loi (succession ab intestat, art. 457-466 CC). Le systeme suisse repose sur les parenteles : 1re parentele = descendants (enfants, petits-enfants), 2e parentele = pere et mere et leurs descendants (freres/soeurs), 3e parentele = grands-parents et leurs descendants. Le conjoint survivant herite en concours avec les autres heritiers : avec des descendants, il reçoit 1/2 de la succession ; avec la 2e parentele, il reçoit 3/4 ; seul, il reçoit la totalite (art. 462 CC). Depuis le 1er janvier 2023, la reforme du droit successoral reduit les reserves hereditaires des descendants a 1/2 (au lieu de 3/4) et supprime la reserve des parents (art. 471 CC revise). Le conjoint survivant bénéficie aussi d'un droit d'usufruit ou d'attribution du logement familial (art. 219 CC).",
       "articles": [
         {
           "ref": "CC 457",
@@ -2516,7 +2516,7 @@
       "jurisprudence": [
         {
           "ref": "TF 5A_488/2018",
-          "resume": "Les enfants heritent par parts egales ; un enfant predecedeest represente par ses propres descendants (representation successorale)."
+          "resume": "Les enfants heritent par parts egales ; un enfant predécédéest représente par ses propres descendants (representation successorale)."
         },
         {
           "ref": "TF 5A_795/2017",
@@ -2542,7 +2542,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -2611,8 +2611,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "Le testament olographe (art. 505 CC) doit etre entierement écrit a la main, date (jour, mois, annee) et signe par le testateur. Aucun temoin n'est nécessaire. Un testament dactylographie ou informatique est nul. Le testateur peut disposer librement de la quotite disponible, mais doit respecter les reserves hereditaires (art. 471 CC) : 1/2 de la part légale pour les descendants, 1/2 pour le conjoint (depuis le 1er janvier 2023, les parents n'ont plus de reserve). Le testament peut contenir des legs, des charges, la designation d'un executeur testamentaire, des clauses de substitution. Il peut etre revoque a tout moment par un nouveau testament ou par destruction (art. 509-510 CC). Il est recommande de le déposer auprès d'un notaire ou d'un office des testaments pour eviter sa perte. Le testament est ouvert après le décès par l'autorite compétente (justice de paix ou notaire selon le canton).",
+    "réponse": {
+      "explication": "Le testament olographe (art. 505 CC) doit etre entièrement écrit a la main, date (jour, mois, annee) et signe par le testateur. Aucun temoin n'est nécessaire. Un testament dactylographie ou informatique est nul. Le testateur peut disposer librement de la quotite disponible, mais doit respecter les reserves hereditaires (art. 471 CC) : 1/2 de la part légale pour les descendants, 1/2 pour le conjoint (depuis le 1er janvier 2023, les parents n'ont plus de reserve). Le testament peut contenir des legs, des charges, la designation d'un exécutéur testamentaire, des clauses de substitution. Il peut etre revoque a tout moment par un nouveau testament ou par destruction (art. 509-510 CC). Il est recommandé de le déposer auprès d'un notaire ou d'un office des testaments pour eviter sa perte. Le testament est ouvert après le décès par l'autorite compétente (justice de paix ou notaire selon le canton).",
       "articles": [
         {
           "ref": "CC 505",
@@ -2640,7 +2640,7 @@
           "resume": "L'absence de date precise (mois/annee seulement) rend le testament annulable mais pas automatiquement nul."
         }
       ],
-      "modeleLettre": "TESTAMENT\n\n[Lieu], le [date complete]\n\nJe soussigne(e) [Prenom Nom], ne(e) le [date], domicilie(e) a [adresse], sain(e) d'esprit, dispose de mes biens comme suit pour après mon décès :\n\n1. Je legue a [bénéficiaire] : [description des biens/montants].\n2. Je designe comme executeur testamentaire : [Nom, adresse].\n3. Le solde de ma succession reviendra a [heritier(s)].\n\nCe testament revoque toutes dispositions anterieures.\n\n[Signature manuscrite]",
+      "modeleLettre": "TESTAMENT\n\n[Lieu], le [date complete]\n\nJe soussigné(e) [Prenom Nom], ne(e) le [date], domicilié(e) a [adresse], sain(e) d'esprit, dispose de mes biens comme suit pour après mon décès :\n\n1. Je legue a [bénéficiaire] : [description des biens/montants].\n2. Je designe comme exécutéur testamentaire : [Nom, adresse].\n3. Le solde de ma succession reviendra a [heritier(s)].\n\nCe testament revoque toutes dispositions antérieures.\n\n[Signature manuscrite]",
       "services": [
         {
           "nom": "Chambre des notaires VD",
@@ -2659,7 +2659,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -2726,7 +2726,7 @@
         "type": "canton"
       }
     ],
-    "reponse": {
+    "réponse": {
       "explication": "Le pacte successoral (art. 494-497 CC) est un contrat par lequel le disposant s'engage envers un tiers concernant sa succession. Il peut contenir une institution d'heritier, un legs, ou une renonciation a la succession. Contrairement au testament, il ne peut pas etre revoque unilateralement (art. 513 CC) — il faut l'accord de toutes les parties ou un juste motif (art. 514 CC : ingratitude, crime). La forme requise est celle du testament public, c'est-a-dire un acte authentique notarie avec deux temoins (art. 512 CC). Le pacte de renonciation est frequent dans la planification successorale : un heritier renonce a sa reserve contre compensation immédiate. Le pacte successoral est souvent utilise en contexte d'entreprise familiale pour assurer la transmission. Attention : un pacte ne peut pas priver un heritier de sa reserve sans son consentement.",
       "articles": [
         {
@@ -2769,7 +2769,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -2839,7 +2839,7 @@
         "type": "canton"
       }
     ],
-    "reponse": {
+    "réponse": {
       "explication": "La reserve hereditaire est la part minimale de la succession a laquelle certains heritiers ont droit et dont le disposant ne peut pas les priver (art. 470-471 CC). Depuis le 1er janvier 2023, les reserves sont : 1/2 de la part légale pour les descendants, 1/2 de la part légale pour le conjoint/partenaire. Les parents n'ont plus de reserve. La quotite disponible est la difference entre la succession et les reserves. Par exemple, si le defunt laisse un conjoint et deux enfants : la part légale du conjoint est 1/2, sa reserve est 1/4 ; la part légale des enfants est 1/2 (1/4 chacun), leur reserve est 1/4 (1/8 chacun). La quotite disponible est donc 3/8 de la succession. L'exheredation (privation totale de la reserve) n'est possible que pour motifs graves : infraction pénale grave contre le disposant ou un de ses proches, ou violation grave des obligations familiales (art. 477 CC).",
       "articles": [
         {
@@ -2887,7 +2887,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -2947,8 +2947,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "L'indignite successorale (art. 540 CC) prive automatiquement un heritier de ses droits s'il a : (1) intentionnellement et illicitement cause ou tente de causer la mort du defunt, (2) mis le defunt dans l'impossibilite permanente de disposer pour cause de mort, (3) par dol, menace ou violence, amene le defunt a faire ou revoquer une disposition pour cause de mort, ou empeche le defunt de le faire, (4) detruit ou supprime une disposition pour cause de mort. L'indignite s'etend aussi aux heritiers reservataires — ils perdent leur reserve. L'indigne est traite comme s'il etait predecedeIL : ses propres descendants heritent a sa place par representation. L'indignite peut etre invoquee par tout intéressé et doit etre constatee par le tribunal. Le pardon du defunt efface l'indignite (art. 540 al. 2 CC).",
+    "réponse": {
+      "explication": "L'indignite successorale (art. 540 CC) prive automatiquement un heritier de ses droits s'il a : (1) intentionnellement et illicitement cause ou tente de causer la mort du defunt, (2) mis le defunt dans l'impossibilite permanente de disposer pour cause de mort, (3) par dol, menace ou violence, amene le defunt a faire ou revoquer une disposition pour cause de mort, ou empeche le defunt de le faire, (4) detruit ou supprime une disposition pour cause de mort. L'indignite s'etend aussi aux heritiers reservataires — ils perdent leur reserve. L'indigne est traite comme s'il etait predécédéIL : ses propres descendants heritent a sa place par representation. L'indignite peut etre invoquee par tout intéressé et doit etre constatee par le tribunal. Le pardon du defunt efface l'indignite (art. 540 al. 2 CC).",
       "articles": [
         {
           "ref": "CC 540",
@@ -2985,7 +2985,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -3013,7 +3013,7 @@
     "domaine": "famille",
     "sousDomaine": "succession",
     "tags": [
-      "executeur",
+      "exécutéur",
       "testamentaire",
       "administration",
       "succession",
@@ -3024,10 +3024,10 @@
         "id": "q1",
         "text": "Situation ?",
         "options": [
-          "je veux designer un executeur",
-          "j'ai ete designe executeur",
-          "conflit avec l'executeur",
-          "l'executeur ne fait rien"
+          "je veux designer un exécutéur",
+          "j'ai ete designe exécutéur",
+          "conflit avec l'exécutéur",
+          "l'exécutéur ne fait rien"
         ]
       },
       {
@@ -3045,28 +3045,28 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "L'executeur testamentaire (art. 517-518 CC) est designe par le testateur dans son testament. Sa mission est d'administrer la succession, payer les dettes du defunt, exécuter les legs, et procéder au partage selon la volonte du defunt. L'executeur a la possession des biens de la succession et represente celle-ci en justice. Il a droit a une rémunération équitable (art. 517 al. 3 CC), generalement entre 1% et 5% de la masse successorale selon la complexite. L'executeur doit fournir un inventaire, tenir une comptabilite et rendre des comptes aux heritiers. Il peut etre revoque par l'autorite de surveillance pour juste motif (négligénce, conflit d'interets, art. 518 al. 2 CC). Toute personne capable de discernement peut etre executeur, y compris un heritier, un avocat ou un professionnel. L'executeur peut refuser le mandat.",
+    "réponse": {
+      "explication": "L'exécutéur testamentaire (art. 517-518 CC) est designe par le testateur dans son testament. Sa mission est d'administrer la succession, payer les dettes du defunt, exécuter les legs, et procéder au partage selon la volonte du defunt. L'exécutéur a la possession des biens de la succession et représente celle-ci en justice. Il a droit a une rémunération équitable (art. 517 al. 3 CC), généralement entre 1% et 5% de la masse successorale selon la complexite. L'exécutéur doit fournir un inventaire, tenir une comptabilite et rendre des comptes aux heritiers. Il peut etre revoque par l'autorite de surveillance pour juste motif (négligénce, conflit d'interets, art. 518 al. 2 CC). Toute personne capable de discernement peut etre exécutéur, y compris un heritier, un avocat ou un professionnel. L'exécutéur peut refuser le mandat.",
       "articles": [
         {
           "ref": "CC 517",
-          "titre": "Designation de l'executeur testamentaire",
+          "titre": "Designation de l'exécutéur testamentaire",
           "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_517"
         },
         {
           "ref": "CC 518",
-          "titre": "Droits et devoirs de l'executeur",
+          "titre": "Droits et devoirs de l'exécutéur",
           "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_518"
         }
       ],
       "jurisprudence": [
         {
           "ref": "TF 5A_395/2018",
-          "resume": "L'executeur testamentaire peut etre revoque s'il ne remplit pas ses obligations avec la diligence requise."
+          "resume": "L'exécutéur testamentaire peut etre revoque s'il ne remplit pas ses obligations avec la diligence requise."
         },
         {
           "ref": "TF 5A_181/2015",
-          "resume": "La rémunération de l'executeur est fixee equitablement ; une rémunération de 3% de la masse a ete jugee appropriee pour une succession complexe."
+          "resume": "La rémunération de l'exécutéur est fixee équitablement ; une rémunération de 3% de la masse a ete jugee appropriee pour une succession complexe."
         }
       ],
       "modeleLettre": "",
@@ -3088,17 +3088,17 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
-    "match_description": "La personne veut designer un executeur testamentaire ou en comprendre le role",
+    "match_description": "La personne veut designer un exécutéur testamentaire ou en comprendre le role",
     "profane_aliases": [
       "qui exécuté mon testament",
-      "nommer un executeur testamentaire",
-      "role de l'executeur testamentaire",
+      "nommer un exécutéur testamentaire",
+      "role de l'exécutéur testamentaire",
       "administration de la succession",
-      "comment choisir un executeur"
+      "comment choisir un exécutéur"
     ],
     "negative_signals": [
       "administration officielle par l'APEA",
@@ -3120,14 +3120,14 @@
       "heritier",
       "attestation",
       "banque",
-      "registre foncier"
+      "régistre foncier"
     ],
     "questions": [
       {
         "id": "q1",
         "text": "Pourquoi avez-vous besoin du certificat ?",
         "options": [
-          "debloquer un compte bancaire",
+          "debloquér un compte bancaire",
           "transferer un bien immobilier",
           "prouver ma qualite d'heritier",
           "autre"
@@ -3157,8 +3157,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "Le certificat d'heritier (art. 559 CC) est un document officiel attestant la qualite d'heritier et la part successorale de chacun. Il est delivre par l'autorite compétente (justice de paix dans le canton de Vaud, notaire a Geneve). Il est indispensable pour : debloquer les comptes bancaires du defunt, inscrire le transfert immobilier au registre foncier, gerer les affaires courantes de la succession. Pour l'obtenir, il faut presenter l'acte de décès, le livret de famille, le testament éventuel, et la preuve des liens de parente. Le certificat est delivre après le délai de repudiation d'un mois (art. 567 CC). Si un heritier conteste la qualite d'un autre, le certificat peut etre refuse jusqu'a clarification judiciaire. Les frais varient de CHF 200 a CHF 1'000 selon le canton et la complexite. Le certificat d'heritier ne vaut pas acceptation de la succession.",
+    "réponse": {
+      "explication": "Le certificat d'heritier (art. 559 CC) est un document officiel attestant la qualite d'heritier et la part successorale de chacun. Il est delivre par l'autorite compétente (justice de paix dans le canton de Vaud, notaire a Geneve). Il est indispensable pour : debloquér les comptes bancaires du defunt, inscrire le transfert immobilier au régistre foncier, gerer les affaires courantes de la succession. Pour l'obtenir, il faut présenter l'acte de décès, le livret de famille, le testament éventuel, et la preuve des liens de parente. Le certificat est delivre après le délai de repudiation d'un mois (art. 567 CC). Si un heritier conteste la qualite d'un autre, le certificat peut etre refuse jusqu'a clarification judiciaire. Les frais varient de CHF 200 a CHF 1'000 selon le canton et la complexite. Le certificat d'heritier ne vaut pas acceptation de la succession.",
       "articles": [
         {
           "ref": "CC 559",
@@ -3174,14 +3174,14 @@
       "jurisprudence": [
         {
           "ref": "TF 5A_420/2019",
-          "resume": "La banque ne peut refuser de debloquer les fonds si un certificat d'heritier valable est presente."
+          "resume": "La banque ne peut refuser de debloquér les fonds si un certificat d'heritier valable est présente."
         },
         {
           "ref": "TF 5A_203/2016",
           "resume": "Le certificat d'heritier peut etre annule si de nouveaux faits revelent l'existence d'un testament inconnu."
         }
       ],
-      "modeleLettre": "Objet : Demande de certificat d'heritier\n\nA la Justice de paix / au Notaire,\n\nMadame, Monsieur,\n\nSuite au décès de [Prenom Nom], survenu le [date] a [lieu], je sollicite la delivrance d'un certificat d'heritier.\n\nLe defunt etait domicilie a [adresse]. Les heritiers connus sont :\n- [Nom, lien de parente]\n- [Nom, lien de parente]\n\nPieces jointes : acte de décès, livret de famille, testament (le cas echeant).\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Demande de certificat d'heritier\n\nA la Justice de paix / au Notaire,\n\nMadame, Monsieur,\n\nSuite au décès de [Prenom Nom], survenu le [date] a [lieu], je sollicite la delivrance d'un certificat d'heritier.\n\nLe defunt etait domicilié a [adresse]. Les heritiers connus sont :\n- [Nom, lien de parente]\n- [Nom, lien de parente]\n\nPieces jointes : acte de décès, livret de famille, testament (le cas echeant).\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
       "services": [
         {
           "nom": "Justice de paix VD",
@@ -3195,13 +3195,13 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
-    "match_description": "La personne a besoin d'un certificat d'heritier pour debloquer des comptes bancaires ou le registre foncier",
+    "match_description": "La personne a besoin d'un certificat d'heritier pour debloquér des comptes bancaires ou le régistre foncier",
     "profane_aliases": [
-      "debloquer le compte du defunt",
+      "debloquér le compte du defunt",
       "certificat d'heritier comment obtenir",
       "la banque demande un certificat",
       "prouver que je suis heritier",
@@ -3215,7 +3215,7 @@
       "existence d'un testament",
       "nombre d'heritiers connus",
       "canton du dernier domicile du defunt",
-      "biens a debloquer"
+      "biens a debloquér"
     ]
   },
   {
@@ -3227,7 +3227,7 @@
       "succession",
       "repudiation",
       "benefice inventaire",
-      "responsabilite"
+      "responsabilité"
     ],
     "questions": [
       {
@@ -3263,7 +3263,7 @@
         "type": "canton"
       }
     ],
-    "reponse": {
+    "réponse": {
       "explication": "Les heritiers repondent solidairement des dettes du defunt sur leurs propres biens (art. 603 CC). Pour se protéger, l'heritier dispose de trois options : (1) repudier la succession dans le délai de 3 mois des la connaissance du décès (art. 567 CC) — il perd tout droit mais n'assume aucune dette, (2) demander un benefice d'inventaire dans le même délai (art. 580 CC) — un inventaire officiel est dresse et l'heritier peut accepter ou repudier en connaissance de cause, (3) demander la liquidation officielle (art. 593 CC) si la succession est probablement insolvable. Attention : tout acte d'immixtion dans la succession (vendre un bien, encaisser un loyer) vaut acceptation tacite et empeche la repudiation. Si tous les heritiers repudient, la succession est liquidee par l'office des faillites. La repudiation est irrevocable.",
       "articles": [
         {
@@ -3292,7 +3292,7 @@
           "resume": "Le fait de vider l'appartement du defunt et de prendre des objets constitue un acte d'immixtion valant acceptation tacite."
         }
       ],
-      "modeleLettre": "Objet : Declaration de repudiation de succession\n\nA la Justice de paix / Autorite compétente,\n\nMadame, Monsieur,\n\nJe soussigne(e) [Prenom Nom], heritier/heritiere de feu [Prenom Nom du defunt], décédé(e) le [date], declare par la presente repudier la succession conformement a l'art. 567 CC.\n\nJe n'ai pose aucun acte d'immixtion dans la succession.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Declaration de repudiation de succession\n\nA la Justice de paix / Autorite compétente,\n\nMadame, Monsieur,\n\nJe soussigné(e) [Prenom Nom], heritier/heritiere de feu [Prenom Nom du defunt], décédé(e) le [date], declare par la présente repudier la succession conformement a l'art. 567 CC.\n\nJe n'ai pose aucun acte d'immixtion dans la succession.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
       "services": [
         {
           "nom": "Justice de paix VD",
@@ -3306,7 +3306,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -3375,8 +3375,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "Le conjoint survivant peut demander l'attribution de l'usufruit sur la part des enfants en lieu et place de sa part en propriete (art. 473 CC). Par exemple, si le conjoint a droit a 1/2 en propriete, il peut choisir l'usufruit sur la totalite de la succession (ou sur le logement et le mobilier). Cet usufruit lui permet de continuer a habiter le logement familial et d'en percevoir les revenus sans en etre proprietaire. L'usufruit s'eteint au décès de l'usufruitier ou par renonciation. De plus, le conjoint survivant a un droit légal a l'attribution du logement familial et du mobilier en imputation sur ses droits (art. 219 CC pour le regime matrimonial, art. 612a CC pour le partage). Ce droit d'attribution prime celui des autres heritiers. L'usufruit est inscrit au registre foncier et est opposable aux tiers.",
+    "réponse": {
+      "explication": "Le conjoint survivant peut demander l'attribution de l'usufruit sur la part des enfants en lieu et place de sa part en propriete (art. 473 CC). Par exemple, si le conjoint a droit a 1/2 en propriete, il peut choisir l'usufruit sur la totalite de la succession (ou sur le logement et le mobilier). Cet usufruit lui permet de continuer a habiter le logement familial et d'en percevoir les revenus sans en etre proprietaire. L'usufruit s'eteint au décès de l'usufruitier ou par renonciation. De plus, le conjoint survivant a un droit légal a l'attribution du logement familial et du mobilier en imputation sur ses droits (art. 219 CC pour le régime matrimonial, art. 612a CC pour le partage). Ce droit d'attribution prime celui des autres heritiers. L'usufruit est inscrit au régistre foncier et est opposable aux tiers.",
       "articles": [
         {
           "ref": "CC 473",
@@ -3390,7 +3390,7 @@
         },
         {
           "ref": "CC 219",
-          "titre": "Attribution dans le regime matrimonial",
+          "titre": "Attribution dans le régime matrimonial",
           "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_219"
         }
       ],
@@ -3418,12 +3418,12 @@
         },
         {
           "nom": "Registre foncier VD",
-          "url": "https://www.vd.ch/themes/territoire-et-construction/registre-foncier",
+          "url": "https://www.vd.ch/themes/territoire-et-construction/régistre-foncier",
           "canton": "VD"
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -3441,7 +3441,7 @@
     ],
     "required_facts": [
       "propriete du logement (commun ou personnel)",
-      "regime matrimonial",
+      "régime matrimonial",
       "testament existant",
       "accord ou conflit avec les autres heritiers"
     ]
@@ -3482,8 +3482,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "Le droit de retour (art. 249 CO pour les donations, art. 636 CC pour les avancements d'hoirie) permet au donateur de recuperer le bien donne si le donataire predecedeIL sans descendants. Le droit de retour légal (art. 249 CO) est automatique pour les donations : si le donataire meurt avant le donateur et qu'il n'y a pas de descendants du donataire, le bien donne fait retour au donateur ou a sa succession, a condition que le bien existe encore en nature. Le donateur peut aussi stipuler un droit de retour conventionnel plus large dans l'acte de donation. En matiere successorale, le rapport des liberalites (art. 626 CC) oblige les heritiers a rapporter les donations recues du defunt pour assurer l'egalite entre heritiers, sauf dispense du disposant. Le droit de retour pour les immeubles peut etre annote au registre foncier pour etre opposable aux tiers (art. 960 CC).",
+    "réponse": {
+      "explication": "Le droit de retour (art. 249 CO pour les donations, art. 636 CC pour les avancements d'hoirie) permet au donateur de recuperer le bien donne si le donataire predécédéIL sans descendants. Le droit de retour légal (art. 249 CO) est automatique pour les donations : si le donataire meurt avant le donateur et qu'il n'y a pas de descendants du donataire, le bien donne fait retour au donateur ou a sa succession, a condition que le bien existe encore en nature. Le donateur peut aussi stipuler un droit de retour conventionnel plus large dans l'acte de donation. En matiere successorale, le rapport des liberalites (art. 626 CC) oblige les heritiers a rapporter les donations recues du defunt pour assurer l'egalite entre heritiers, sauf dispense du disposant. Le droit de retour pour les immeubles peut etre annote au régistre foncier pour etre opposable aux tiers (art. 960 CC).",
       "articles": [
         {
           "ref": "CO 249",
@@ -3508,7 +3508,7 @@
         },
         {
           "ref": "TF 5A_513/2015",
-          "resume": "Le droit de retour conventionnel annote au registre foncier est opposable a l'acheteur de l'immeuble."
+          "resume": "Le droit de retour conventionnel annote au régistre foncier est opposable a l'acheteur de l'immeuble."
         }
       ],
       "modeleLettre": "",
@@ -3530,7 +3530,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC/CO état 2025-01-01",
@@ -3601,7 +3601,7 @@
         "options": [
           "perte/baisse revenu",
           "nouveau ménage",
-          "demenagement enfant",
+          "deménagement enfant",
           "non"
         ]
       },
@@ -3611,8 +3611,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "La pension alimentaire (contribution d'entretien) est regie par les art. 276-295 CC pour les enfants et 125 CC pour l'ex-conjoint. Le calcul se base sur la methode en deux etapes du Tribunal fédéral (ATF 147 III 265) : on determine d'abord le minimum vital LP de chaque partie, puis on repartit l'excedent. Pour l'enfant, les besoins concrets comprennent : part de loyer, nourriture, assurance-maladie, frais de garde, activites, et un montant pour les soins (prise en charge par le parent gardien). La pension peut etre modifiee si les circonstances changent durablement et notablement (art. 286 al. 2 CC). La demande se fait auprès du tribunal civil du domicile de l'enfant. L'enfant majeur en formation a droit a l'entretien jusqu'a l'achevement d'une formation appropriee (art. 277 al. 2 CC). Le BRPFC (Bureau de recouvrement des pensions alimentaires) peut recouvrer les pensions impayees.",
+    "réponse": {
+      "explication": "La pension alimentaire (contribution d'entretien) est régie par les art. 276-295 CC pour les enfants et 125 CC pour l'ex-conjoint. Le calcul se base sur la methode en deux etapes du Tribunal fédéral (ATF 147 III 265) : on determine d'abord le minimum vital LP de chaque partie, puis on repartit l'excedent. Pour l'enfant, les besoins concrets comprennent : part de loyer, nourriture, assurance-maladie, frais de garde, activités, et un montant pour les soins (prise en charge par le parent gardien). La pension peut etre modifiee si les circonstances changent durablement et notablement (art. 286 al. 2 CC). La demande se fait auprès du tribunal civil du domicile de l'enfant. L'enfant majeur en formation a droit a l'entretien jusqu'a l'achevement d'une formation appropriee (art. 277 al. 2 CC). Le BRPFC (Bureau de recouvrement des pensions alimentaires) peut recouvrer les pensions impayées.",
       "articles": [
         {
           "ref": "CC 276",
@@ -3645,7 +3645,7 @@
           "resume": "La contribution de prise en charge couvre le manque a gagner du parent gardien et fait partie de l'entretien de l'enfant."
         }
       ],
-      "modeleLettre": "Objet : Demande de modification de la contribution d'entretien\n\nAu Tribunal de [lieu],\n\nJe soussigne(e) [nom], domicilie(e) a [adresse], parent de [nom de l'enfant], ne(e) le [date],\n\nATTENDU QUE par jugement/convention du [date], une contribution d'entretien de CHF [montant] par mois a ete fixee ;\n\nATTENDU QUE ma situation a change de maniere durable depuis le [date] : [decrire le changement] ;\n\nJe requiers la modification de la contribution d'entretien a CHF [nouveau montant] par mois, avec effet au [date].\n\nPieces jointes : [justificatifs de revenus, charges, changement de situation]\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Demande de modification de la contribution d'entretien\n\nAu Tribunal de [lieu],\n\nJe soussigné(e) [nom], domicilié(e) a [adresse], parent de [nom de l'enfant], ne(e) le [date],\n\nATTENDU QUE par jugement/convention du [date], une contribution d'entretien de CHF [montant] par mois a ete fixee ;\n\nATTENDU QUE ma situation a change de maniere durable depuis le [date] : [décrire le changement] ;\n\nJe requiers la modification de la contribution d'entretien a CHF [nouveau montant] par mois, avec effet au [date].\n\nPieces jointes : [justificatifs de revenus, charges, changement de situation]\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
       "services": [
         {
           "nom": "BRPFC Vaud",
@@ -3671,7 +3671,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -3750,8 +3750,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "L'autorite parentale conjointe est la regle en droit suisse (art. 296 al. 2 CC), même en cas de séparation ou divorce. La garde (droit de determiner le lieu de residence) est distincte de l'autorite parentale. La garde alternee est favorisee lorsqu'elle est dans l'interet de l'enfant (ATF 142 III 612). Le juge tient compte de : la capacite educative de chaque parent, la disponibilite, la stabilite, les relations de l'enfant, et sa volonte s'il a le discernement (generalement des 12 ans). Le droit de visite minimum usuel est un week-end sur deux et la moitie des vacances (art. 273 CC). Un demenagement du parent gardien a l'étranger ou loin requiert l'accord de l'autre parent ou l'autorisation du juge (art. 301a CC). En cas de danger pour l'enfant, l'APEA peut prendre des mesures de protection (art. 307 ss CC).",
+    "réponse": {
+      "explication": "L'autorite parentale conjointe est la regle en droit suisse (art. 296 al. 2 CC), même en cas de séparation ou divorce. La garde (droit de determiner le lieu de residence) est distincte de l'autorite parentale. La garde alternee est favorisee lorsqu'elle est dans l'interet de l'enfant (ATF 142 III 612). Le juge tient compte de : la capacite educative de chaque parent, la disponibilite, la stabilite, les relations de l'enfant, et sa volonte s'il a le discernement (généralement des 12 ans). Le droit de visite minimum usuel est un week-end sur deux et la moitie des vacances (art. 273 CC). Un deménagement du parent gardien a l'étranger ou loin requiert l'accord de l'autre parent ou l'autorisation du juge (art. 301a CC). En cas de danger pour l'enfant, l'APEA peut prendre des mesures de protection (art. 307 ss CC).",
       "articles": [
         {
           "ref": "CC 296",
@@ -3770,7 +3770,7 @@
         },
         {
           "ref": "CC 301a",
-          "titre": "Demenagement — lieu de residence de l'enfant",
+          "titre": "Deménagement — lieu de residence de l'enfant",
           "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_301_a"
         }
       ],
@@ -3784,7 +3784,7 @@
           "resume": "L'avis de l'enfant doit etre recueilli et pris en compte des qu'il a le discernement (en principe des 6 ans environ)."
         }
       ],
-      "modeleLettre": "Objet : Requete en modification du droit de garde\n\nAu Tribunal de [lieu],\n\nJe soussigne(e) [nom], parent de [nom de l'enfant], ne(e) le [date],\n\nATTENDU QUE la garde a ete attribuee a [parent] par jugement/convention du [date] ;\n\nATTENDU QUE les circonstances ont evolue : [decrire les changements] ;\n\nATTENDU QUE l'interet supérieur de l'enfant commande une modification ;\n\nJe requiers [la garde alternee / un elargissement du droit de visite / autre demande].\n\nPieces jointes : [justificatifs]\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Requete en modification du droit de garde\n\nAu Tribunal de [lieu],\n\nJe soussigné(e) [nom], parent de [nom de l'enfant], ne(e) le [date],\n\nATTENDU QUE la garde a ete attribuee a [parent] par jugement/convention du [date] ;\n\nATTENDU QUE les circonstances ont evolue : [décrire les changements] ;\n\nATTENDU QUE l'interet supérieur de l'enfant commande une modification ;\n\nJe requiers [la garde alternee / un elargissement du droit de visite / autre demande].\n\nPieces jointes : [justificatifs]\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
       "services": [
         {
           "nom": "Service de protection de la jeunesse (SPJ) VD",
@@ -3810,7 +3810,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -3886,8 +3886,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "Le divorce peut etre demande sur requete commune (art. 111 CC) lorsque les deux époux sont d'accord, ou sur demande unilaterale après 2 ans de séparation (art. 114 CC). La requete commune peut etre avec convention complete (art. 111 CC) ou avec accord partiel (art. 112 CC). Le divorce sur requete commune avec convention complete est le plus rapide (quelques semaines a quelques mois). La procédure est introduite devant le tribunal du domicile de l'un des époux (art. 23 CPC). Les effets accessoires comprennent : liquidation du regime matrimonial, partage LPP (art. 122 CC), pension alimentaire (art. 125 CC), sort des enfants (garde, pension, autorite parentale). Les époux peuvent se presenter sans avocat pour une requete commune mais c'est deconseille en cas de patrimoine ou d'enfants. L'assistance juridique gratuite est accessible sous conditions de revenus.",
+    "réponse": {
+      "explication": "Le divorce peut etre demande sur requete commune (art. 111 CC) lorsque les deux époux sont d'accord, ou sur demande unilaterale après 2 ans de séparation (art. 114 CC). La requete commune peut etre avec convention complete (art. 111 CC) ou avec accord partiel (art. 112 CC). Le divorce sur requete commune avec convention complete est le plus rapide (quelques semaines a quelques mois). La procédure est introduite devant le tribunal du domicile de l'un des époux (art. 23 CPC). Les effets accessoires comprennent : liquidation du régime matrimonial, partage LPP (art. 122 CC), pension alimentaire (art. 125 CC), sort des enfants (garde, pension, autorite parentale). Les époux peuvent se présenter sans avocat pour une requete commune mais c'est deconseille en cas de patrimoine ou d'enfants. L'assistance juridique gratuite est accessible sous conditions de revenus.",
       "articles": [
         {
           "ref": "CC 111",
@@ -3920,7 +3920,7 @@
           "resume": "La rente post-divorce doit permettre au creancier de maintenir le niveau de vie du mariage si le mariage a ete lebenspragend (>10 ans ou enfants)."
         }
       ],
-      "modeleLettre": "Objet : Requete commune de divorce (art. 111 CC)\n\nAu Tribunal de [lieu],\n\nNous soussignes [nom epoux] et [nom epouse], maries le [date] a [lieu],\n\nREQUERONS le prononce de notre divorce sur requete commune au sens de l'art. 111 CC.\n\nNous joignons notre convention complete reglant :\n- la liquidation du regime matrimonial\n- le partage de la prevoyance professionnelle\n- la contribution d'entretien\n- le sort des enfants (garde, visite, pension)\n\nPieces jointes : convention signee, acte de mariage, livret de famille, extraits fiscaux.\n\nVeuillez agréer nos salutations distinguées.\n\n[Signatures des deux epoux]",
+      "modeleLettre": "Objet : Requete commune de divorce (art. 111 CC)\n\nAu Tribunal de [lieu],\n\nNous soussignés [nom époux] et [nom épouse], maries le [date] a [lieu],\n\nREQUERONS le prononce de notre divorce sur requete commune au sens de l'art. 111 CC.\n\nNous joignons notre convention complete reglant :\n- la liquidation du régime matrimonial\n- le partage de la prevoyance professionnelle\n- la contribution d'entretien\n- le sort des enfants (garde, visite, pension)\n\nPieces jointes : convention signee, acte de mariage, livret de famille, extraits fiscaux.\n\nVeuillez agréer nos salutations distinguées.\n\n[Signatures des deux époux]",
       "services": [
         {
           "nom": "Tribunal d'arrondissement de Lausanne",
@@ -3944,7 +3944,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC/CPC état 2025-01-01",
@@ -4020,7 +4020,7 @@
         "type": "canton"
       }
     ],
-    "reponse": {
+    "réponse": {
       "explication": "Les mesures protectrices de l'union conjugale (MPUC, art. 172-179 CC) sont des mesures provisoires qui reglent la vie séparée sans passer par un divorce. Elles sont souvent demandees en urgence. Le juge peut : attribuer la jouissance du logement familial (art. 176 al. 1 ch. 2 CC), fixer les contributions d'entretien (art. 176 al. 1 ch. 1 CC), regler la garde des enfants, et interdire au conjoint de disposer de certains biens. La requete est déposée auprès du tribunal du domicile conjugal. En cas de violence, des mesures superprovisionnelles peuvent etre ordonnees en quelques heures (art. 265 CPC). La procédure est orale et sommaire (art. 271-294 CPC). Les MPUC restent en vigueur jusqu'au divorce ou a leur modification. Elles sont souvent la première etape avant une procédure de divorce.",
       "articles": [
         {
@@ -4054,7 +4054,7 @@
           "resume": "Le logement familial est attribue au parent qui a la garde principale des enfants, sauf circonstances exceptionnelles."
         }
       ],
-      "modeleLettre": "Objet : Requete de mesures protectrices de l'union conjugale (art. 172 ss CC)\n\nAu Tribunal de [lieu],\n\nJe soussigne(e) [nom], époux/épouse de [nom du conjoint],\n\nATTENDU QUE la vie commune est devenue insupportable en raison de [decrire brievement] ;\n\nJe requiers qu'il plaise au Tribunal :\n1. D'autoriser la suspension de la vie commune\n2. De m'attribuer la jouissance du logement familial\n3. De fixer la contribution d'entretien a CHF [montant] par mois\n4. De regler la garde des enfants [le cas echeant]\n\n[En cas d'urgence :] Je requiers en outre des mesures superprovisionnelles au sens de l'art. 265 CPC.\n\nPieces jointes : [certificat de mariage, justificatifs de revenus, eventuels constats de violence]\n\n[Signature]",
+      "modeleLettre": "Objet : Requete de mesures protectrices de l'union conjugale (art. 172 ss CC)\n\nAu Tribunal de [lieu],\n\nJe soussigné(e) [nom], époux/épouse de [nom du conjoint],\n\nATTENDU QUE la vie commune est devenue insupportable en raison de [décrire brievement] ;\n\nJe requiers qu'il plaise au Tribunal :\n1. D'autoriser la suspension de la vie commune\n2. De m'attribuer la jouissance du logement familial\n3. De fixer la contribution d'entretien a CHF [montant] par mois\n4. De regler la garde des enfants [le cas echeant]\n\n[En cas d'urgence :] Je requiers en outre des mesures superprovisionnelles au sens de l'art. 265 CPC.\n\nPieces jointes : [certificat de mariage, justificatifs de revenus, éventuels constats de violence]\n\n[Signature]",
       "services": [
         {
           "nom": "Tribunal d'arrondissement de Lausanne",
@@ -4080,7 +4080,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC/CPC état 2025-01-01",
@@ -4094,7 +4094,7 @@
     ],
     "negative_signals": [
       "divorce déjà en cours",
-      "simple mediation de couple"
+      "simple médiation de couple"
     ],
     "required_facts": [
       "situation conjugale",
@@ -4153,7 +4153,7 @@
         "type": "canton"
       }
     ],
-    "reponse": {
+    "réponse": {
       "explication": "La protection de l'enfant est assurée par l'APEA (autorite de protection de l'enfant et de l'adulte, art. 307-317 CC). Lorsque le developpement de l'enfant est menace et que les parents n'y remedient pas, l'APEA prend les mesures nécessaires selon le principe de proportionnalite : (1) rappel aux devoirs (art. 307 al. 3 CC), (2) curatelle educative (art. 308 CC) pour accompagner les parents, (3) curatelle de representation (art. 308 al. 2 CC) pour des actes juridiques precis, (4) retrait du droit de garde et placement (art. 310 CC) en dernier recours. Toute personne peut signaler un enfant en danger a l'APEA (art. 314c CC). Les professionnels (enseignants, medecins) ont une obligation de signalement dans la plupart des cantons. Les parents peuvent contester les decisions de l'APEA par recours au tribunal cantonal dans les 30 jours (art. 450 CC).",
       "articles": [
         {
@@ -4187,7 +4187,7 @@
           "resume": "Le droit d'etre entendu des parents impose que l'APEA les informe et les consulte avant toute mesure, sauf urgence absolue."
         }
       ],
-      "modeleLettre": "Objet : Recours contre la decision de l'APEA du [date]\n\nAu Tribunal [cantonal competent],\n\nJe soussigne(e) [nom], parent de [nom de l'enfant], ne(e) le [date],\n\nForme recours contre la decision de l'APEA de [lieu] du [date], notifiee le [date], ordonnant [decrire la mesure].\n\nMotifs :\n1. [Decrire pourquoi la mesure est disproportionnee]\n2. [Expliquer les mesures alternatives possibles]\n3. [Elements nouveaux ou non pris en compte]\n\nJe requiers l'effet suspensif au present recours.\n\nPieces jointes : [decision attaquee, justificatifs]\n\n[Signature]",
+      "modeleLettre": "Objet : Recours contre la decision de l'APEA du [date]\n\nAu Tribunal [cantonal compétent],\n\nJe soussigné(e) [nom], parent de [nom de l'enfant], ne(e) le [date],\n\nForme recours contre la decision de l'APEA de [lieu] du [date], notifiee le [date], ordonnant [décrire la mesure].\n\nMotifs :\n1. [Décrire pourquoi la mesure est disproportionnee]\n2. [Expliquer les mesures alternatives possibles]\n3. [Elements nouveaux ou non pris en compte]\n\nJe requiers l'effet suspensif au present recours.\n\nPieces jointes : [decision attaquee, justificatifs]\n\n[Signature]",
       "services": [
         {
           "nom": "Justice de paix (APEA) VD",
@@ -4213,7 +4213,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -4271,7 +4271,7 @@
       },
       {
         "id": "q3",
-        "text": "Estimez-vous que votre reserve est lesee ?",
+        "text": "Estimez-vous que votre reserve est lésée ?",
         "options": [
           "oui",
           "non",
@@ -4284,8 +4284,8 @@
         "type": "canton"
       }
     ],
-    "reponse": {
-      "explication": "Le droit suisse protégé certains heritiers par des reserves hereditaires (art. 470-471 CC, revision entree en vigueur le 1er janvier 2023). Depuis la revision, les reserves sont : 1/2 de la part légale pour les descendants (avant : 3/4), 1/2 pour le conjoint survivant (avant : 1/2, inchange). Les parents n'ont plus de reserve. La quotite disponible est donc plus large qu'avant. Si un testament ou un pacte successoral lese la reserve d'un heritier, celui-ci peut intenter une action en reduction (art. 522 CC) dans le délai d'un an des la connaissance de la lesion et au plus tard 10 ans après l'ouverture de la succession (art. 533 CC). L'action se dirige contre les personnes qui ont reçu plus que la quotite disponible. Les donations entre vifs peuvent egalement etre reduites si elles lesent la reserve (art. 527 CC).",
+    "réponse": {
+      "explication": "Le droit suisse protégé certains heritiers par des reserves hereditaires (art. 470-471 CC, revision entree en vigueur le 1er janvier 2023). Depuis la revision, les reserves sont : 1/2 de la part légale pour les descendants (avant : 3/4), 1/2 pour le conjoint survivant (avant : 1/2, inchange). Les parents n'ont plus de reserve. La quotite disponible est donc plus large qu'avant. Si un testament ou un pacte successoral lésé la reserve d'un heritier, celui-ci peut intenter une action en reduction (art. 522 CC) dans le délai d'un an des la connaissance de la lésion et au plus tard 10 ans après l'ouverture de la succession (art. 533 CC). L'action se dirige contre les personnes qui ont reçu plus que la quotite disponible. Les donations entre vifs peuvent egalement etre reduites si elles lésént la reserve (art. 527 CC).",
       "articles": [
         {
           "ref": "CC 471",
@@ -4318,7 +4318,7 @@
           "resume": "L'action en reduction doit etre exercee dans le délai d'un an des la connaissance du testament lesant la reserve."
         }
       ],
-      "modeleLettre": "Objet : Action en reduction (art. 522 CC)\n\nAu Tribunal de [lieu],\n\nJe soussigne(e) [nom], heritier/heritiere reservataire de feu [nom du defunt], décédé(e) le [date],\n\nATTENDU QUE le testament du [date] attribue [decrire les dispositions] ;\n\nATTENDU QUE ma reserve hereditaire de [fraction] est lesee par ces dispositions ;\n\nJe requiers la reduction des liberalites excedant la quotite disponible afin de retablir ma reserve, conformement aux art. 522 ss CC.\n\nPieces jointes : [testament, certificat d'heritier, estimation de la masse successorale]\n\n[Signature]",
+      "modeleLettre": "Objet : Action en reduction (art. 522 CC)\n\nAu Tribunal de [lieu],\n\nJe soussigné(e) [nom], heritier/heritiere reservataire de feu [nom du defunt], décédé(e) le [date],\n\nATTENDU QUE le testament du [date] attribue [décrire les dispositions] ;\n\nATTENDU QUE ma reserve hereditaire de [fraction] est lésée par ces dispositions ;\n\nJe requiers la reduction des liberalites excedant la quotite disponible afin de rétablir ma reserve, conformement aux art. 522 ss CC.\n\nPieces jointes : [testament, certificat d'heritier, estimation de la masse successorale]\n\n[Signature]",
       "services": [
         {
           "nom": "Ordre des avocats VD",
@@ -4342,7 +4342,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -4384,7 +4384,7 @@
         "options": [
           "dettes du defunt",
           "conflit familial",
-          "desinteressement",
+          "desintéressément",
           "autre"
         ]
       },
@@ -4413,7 +4413,7 @@
         "type": "canton"
       }
     ],
-    "reponse": {
+    "réponse": {
       "explication": "Tout heritier peut repudier (renoncer a) la succession dans un délai de 3 mois des le jour ou il a connaissance du décès et de sa qualite d'heritier (art. 567 CC). La repudiation se fait par declaration auprès de l'autorite compétente (justice de paix en VD, tribunal de première instance en GE). Elle est irrevocable. Attention : la succession est presumee repudiee si le defunt etait notoirement insolvable ou en faillite (art. 566 al. 2 CC). Si un heritier s'est immisce dans la gestion de la succession (actes d'heritier), il peut perdre le droit de repudier (art. 571 CC). Avant de repudier, il est possible de demander un inventaire (benefice d'inventaire, art. 580 CC) pour connaitre l'etat exact de la succession. Tous les heritiers du même rang doivent etre informes de la repudiation car elle fait passer la succession au rang suivant.",
       "articles": [
         {
@@ -4447,7 +4447,7 @@
           "resume": "L'utilisation d'un bien successoral pour payer les frais funeraires ne constitue pas un acte d'immixtion empechant la repudiation."
         }
       ],
-      "modeleLettre": "Objet : Declaration de repudiation de succession (art. 566-567 CC)\n\nA [l'autorite compétente du canton],\n\nJe soussigne(e) [nom, prenom], ne(e) le [date], domicilie(e) a [adresse],\n\nheritier/heritiere [legal(e)/institue(e)] de feu [nom du defunt], décédé(e) le [date] a [lieu], dernier domicile a [adresse],\n\nDECLARE renoncer a la succession conformement aux art. 566-567 CC.\n\nJe n'ai pose aucun acte d'immixtion dans la succession.\n\nPieces jointes : acte de décès, piece d'identite.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Declaration de repudiation de succession (art. 566-567 CC)\n\nA [l'autorite compétente du canton],\n\nJe soussigné(e) [nom, prenom], ne(e) le [date], domicilié(e) a [adresse],\n\nheritier/heritiere [légal(e)/institue(e)] de feu [nom du defunt], décédé(e) le [date] a [lieu], dernier domicile a [adresse],\n\nDECLARE renoncer a la succession conformement aux art. 566-567 CC.\n\nJe n'ai pose aucun acte d'immixtion dans la succession.\n\nPieces jointes : acte de décès, piece d'identite.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
       "services": [
         {
           "nom": "Justice de paix VD (successions)",
@@ -4471,11 +4471,11 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
-    "match_description": "L'heritier veut renoncer a une succession, souvent parce que les dettes depassent les actifs",
+    "match_description": "L'heritier veut renoncer a une succession, souvent parce que les dettes dépassent les actifs",
     "profane_aliases": [
       "renoncer a un heritage",
       "refuser une succession",

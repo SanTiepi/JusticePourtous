@@ -1,5 +1,5 @@
 {
-  "taux_hypothecaire_reference": {
+  "taux_hypothécaire_reference": {
     "source": "Office fédéral du logement (OFL)",
     "source_url": "https://www.bwo.admin.ch/bwo/fr/home/mietrecht/referenzzinssatz.html",
     "source_id": "ofl:taux_hypothecaire",
@@ -13,23 +13,59 @@
       "unite": "%"
     },
     "historique": [
-      { "date": "2025-12-02", "taux": 1.75 },
-      { "date": "2025-09-02", "taux": 1.75 },
-      { "date": "2025-06-02", "taux": 1.75 },
-      { "date": "2025-03-03", "taux": 1.75 },
-      { "date": "2024-12-02", "taux": 1.75 },
-      { "date": "2024-06-03", "taux": 1.75 },
-      { "date": "2023-12-01", "taux": 1.75 },
-      { "date": "2023-06-02", "taux": 1.50 },
-      { "date": "2022-06-01", "taux": 1.25 },
-      { "date": "2020-03-02", "taux": 1.25 },
-      { "date": "2017-06-01", "taux": 1.50 },
-      { "date": "2008-09-01", "taux": 3.50 }
+      {
+        "date": "2025-12-02",
+        "taux": 1.75
+      },
+      {
+        "date": "2025-09-02",
+        "taux": 1.75
+      },
+      {
+        "date": "2025-06-02",
+        "taux": 1.75
+      },
+      {
+        "date": "2025-03-03",
+        "taux": 1.75
+      },
+      {
+        "date": "2024-12-02",
+        "taux": 1.75
+      },
+      {
+        "date": "2024-06-03",
+        "taux": 1.75
+      },
+      {
+        "date": "2023-12-01",
+        "taux": 1.75
+      },
+      {
+        "date": "2023-06-02",
+        "taux": 1.5
+      },
+      {
+        "date": "2022-06-01",
+        "taux": 1.25
+      },
+      {
+        "date": "2020-03-02",
+        "taux": 1.25
+      },
+      {
+        "date": "2017-06-01",
+        "taux": 1.5
+      },
+      {
+        "date": "2008-09-01",
+        "taux": 3.5
+      }
     ],
     "usage_juridique": {
       "contestation_augmentation": "Si le taux de référence a baissé depuis la dernière fixation du loyer, le locataire peut demander une baisse. Si le bailleur augmente le loyer en raison d'une hausse du taux, l'augmentation maximale est de ~3% par quart de point.",
       "calcul_rendement": "Le taux de référence sert de base au calcul du rendement admissible selon CO 269.",
-      "base_legale": "CO 269a lit. b, OBLF art. 12a, 13"
+      "base_légale": "CO 269a lit. b, OBLF art. 12a, 13"
     }
   },
   "minimum_vital_base": {
@@ -38,7 +74,7 @@
     "tier": 2,
     "type": "directive_nationale",
     "description": "Montants de base du minimum vital pour le calcul de la quotité saisissable (LP 93). Les cantons peuvent adapter ces montants.",
-    "base_legale": "LP 93",
+    "base_légale": "LP 93",
     "montants_base_2025": {
       "debiteur_seul": 1200,
       "couple": 1700,
@@ -53,14 +89,39 @@
       "unite": "CHF/mois"
     },
     "variations_cantonales": {
-      "VD": { "debiteur_seul": 1200, "source": "Directives OPF VD" },
-      "GE": { "debiteur_seul": 1350, "source": "Normes d'insaisissabilité GE", "note": "Genève applique des montants plus élevés" },
-      "ZH": { "debiteur_seul": 1200, "source": "Richtlinien KGS ZH" },
-      "BE": { "debiteur_seul": 1200, "source": "Weisungen BVD BE" },
-      "BS": { "debiteur_seul": 1250, "source": "Richtlinien BS" },
-      "VS": { "debiteur_seul": 1200, "source": "Directives Office des poursuites VS" },
-      "FR": { "debiteur_seul": 1200, "source": "Directives OPF FR" },
-      "NE": { "debiteur_seul": 1200, "source": "Directives OPF NE" }
+      "VD": {
+        "debiteur_seul": 1200,
+        "source": "Directives OPF VD"
+      },
+      "GE": {
+        "debiteur_seul": 1350,
+        "source": "Normes d'insaisissabilité GE",
+        "note": "Genève applique des montants plus élevés"
+      },
+      "ZH": {
+        "debiteur_seul": 1200,
+        "source": "Richtlinien KGS ZH"
+      },
+      "BE": {
+        "debiteur_seul": 1200,
+        "source": "Weisungen BVD BE"
+      },
+      "BS": {
+        "debiteur_seul": 1250,
+        "source": "Richtlinien BS"
+      },
+      "VS": {
+        "debiteur_seul": 1200,
+        "source": "Directives Office des poursuites VS"
+      },
+      "FR": {
+        "debiteur_seul": 1200,
+        "source": "Directives OPF FR"
+      },
+      "NE": {
+        "debiteur_seul": 1200,
+        "source": "Directives OPF NE"
+      }
     }
   },
   "cct_principales": [
@@ -70,7 +131,11 @@
       "source_id": "cct:hotellerie",
       "type": "convention_collective",
       "tier": 2,
-      "salaire_minimum_2025": { "non_qualifie": 3582, "qualifie_cfc": 4102, "unite": "CHF/mois" },
+      "salaire_minimum_2025": {
+        "non_qualifie": 3582,
+        "qualifie_cfc": 4102,
+        "unite": "CHF/mois"
+      },
       "semaine_travail": "42h",
       "vacances": "5 semaines",
       "source_url": "https://www.l-gav.ch/fr",
@@ -83,7 +148,11 @@
       "source_id": "cct:nettoyage",
       "type": "convention_collective",
       "tier": 2,
-      "salaire_minimum_2025": { "non_qualifie": 19.60, "qualifie": 22.40, "unite": "CHF/heure" },
+      "salaire_minimum_2025": {
+        "non_qualifie": 19.6,
+        "qualifie": 22.4,
+        "unite": "CHF/heure"
+      },
       "semaine_travail": "42h",
       "source_url": "https://www.seco.admin.ch",
       "etendue": true
@@ -94,7 +163,12 @@
       "source_id": "cct:construction",
       "type": "convention_collective",
       "tier": 2,
-      "salaire_minimum_2025": { "ouvrier_a": 6243, "ouvrier_b": 5826, "ouvrier_c": 5417, "unite": "CHF/mois" },
+      "salaire_minimum_2025": {
+        "ouvrier_a": 6243,
+        "ouvrier_b": 5826,
+        "ouvrier_c": 5417,
+        "unite": "CHF/mois"
+      },
       "semaine_travail": "variable selon saison",
       "source_url": "https://www.cn-construction.ch",
       "etendue": true
@@ -105,7 +179,11 @@
       "source_id": "cct:commerce_detail",
       "type": "convention_collective",
       "tier": 2,
-      "salaire_minimum_2025": { "non_qualifie": 3900, "qualifie_cfc": 4200, "unite": "CHF/mois" },
+      "salaire_minimum_2025": {
+        "non_qualifie": 3900,
+        "qualifie_cfc": 4200,
+        "unite": "CHF/mois"
+      },
       "semaine_travail": "41h",
       "source_url": "https://www.seco.admin.ch",
       "etendue": false,
@@ -117,7 +195,11 @@
       "source_id": "cct:location_services",
       "type": "convention_collective",
       "tier": 2,
-      "salaire_minimum_2025": { "non_qualifie": 21.09, "qualifie": 25.13, "unite": "CHF/heure" },
+      "salaire_minimum_2025": {
+        "non_qualifie": 21.09,
+        "qualifie": 25.13,
+        "unite": "CHF/heure"
+      },
       "semaine_travail": "selon entreprise locataire",
       "source_url": "https://www.tempcontrol.ch",
       "etendue": true,

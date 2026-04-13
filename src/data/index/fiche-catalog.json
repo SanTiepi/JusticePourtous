@@ -90,12 +90,12 @@
           "oui, moi",
           "oui, l'autre partie",
           "oui, les deux",
-          "non, que des degats materiels"
+          "non, que des dégâts materiels"
         ]
       },
       {
         "id": "q3",
-        "text": "La police a-t-elle ete appelee ?",
+        "text": "La police a-t-elle ete appelée ?",
         "options": [
           "oui",
           "non"
@@ -119,16 +119,16 @@
   {
     "id": "accident_responsabilite_civile",
     "domaine": "accident",
-    "sousDomaine": "responsabilite_civile",
+    "sousDomaine": "responsabilité_civile",
     "tags": [
-      "responsabilite",
+      "responsabilité",
       "civile",
       "dommages",
       "interets",
       "delai",
       "preuve",
       "CO",
-      "reparation"
+      "réparation"
     ],
     "questions": [
       {
@@ -183,7 +183,7 @@
       "IJM",
       "indemnites journalieres",
       "maladie",
-      "incapacite",
+      "incapacité",
       "LCA",
       "LAMal",
       "assurance"
@@ -210,7 +210,7 @@
       },
       {
         "id": "q3",
-        "text": "L'assurance verse-t-elle les indemnites ?",
+        "text": "L'assurance versé-t-elle les indemnites ?",
         "options": [
           "oui",
           "partiellement",
@@ -240,12 +240,12 @@
     "tags": [
       "AI",
       "rente",
-      "invalidite",
+      "invalidité",
       "demande",
       "taux",
       "LAI",
       "delai carence",
-      "mesures reinsertion"
+      "mesures réinsertion"
     ],
     "questions": [
       {
@@ -259,7 +259,7 @@
       },
       {
         "id": "q2",
-        "text": "Depuis combien de temps etes-vous en incapacite ?",
+        "text": "Depuis combien de temps etes-vous en incapacité ?",
         "options": [
           "<6 mois",
           "6-12 mois",
@@ -268,7 +268,7 @@
       },
       {
         "id": "q3",
-        "text": "Avez-vous beneficie de mesures de reinsertion ?",
+        "text": "Avez-vous bénéficie de mesures de réinsertion ?",
         "options": [
           "oui",
           "non",
@@ -277,7 +277,7 @@
       },
       {
         "id": "q4",
-        "text": "Votre taux d'invalidite estime ?",
+        "text": "Votre taux d'invalidité estime ?",
         "options": [
           "<40%",
           "40-49%",
@@ -299,7 +299,7 @@
     "sousDomaine": "pc",
     "tags": [
       "PC",
-      "prestations complementaires",
+      "prestations complémentaires",
       "AVS",
       "AI",
       "minimum vital",
@@ -328,7 +328,7 @@
       },
       {
         "id": "q3",
-        "text": "Avez-vous de la fortune (epargne, immobilier) ?",
+        "text": "Avez-vous de la fortune (épargne, immobilier) ?",
         "options": [
           "non",
           "<100'000 CHF",
@@ -397,8 +397,8 @@
         "options": [
           "arret temporaire",
           "sequelles durables",
-          "invalidite",
-          "en evaluation"
+          "invalidité",
+          "en évaluation"
         ]
       },
       {
@@ -418,7 +418,7 @@
       "opposition",
       "recours",
       "refus",
-      "causalite",
+      "causalité",
       "expertise"
     ],
     "questions": [
@@ -428,7 +428,7 @@
         "options": [
           "refus de prise en charge",
           "arret des prestations",
-          "taux d'invalidite",
+          "taux d'invalidité",
           "montant IPAI",
           "autre"
         ]
@@ -466,7 +466,7 @@
       "moisissure",
       "humidite",
       "defaut",
-      "regie",
+      "régie",
       "reduction",
       "loyer"
     ],
@@ -495,14 +495,14 @@
         "id": "q3",
         "text": "Avez-vous signale le probleme ?",
         "options": [
-          "oui ecrit",
+          "oui écrit",
           "oui oral",
           "non"
         ]
       },
       {
         "id": "q4",
-        "text": "La regie a-t-elle repondu ?",
+        "text": "La régie a-t-elle repondu ?",
         "options": [
           "oui action",
           "oui sans action",
@@ -552,7 +552,7 @@
         "id": "q3",
         "text": "Avez-vous signale le probleme ?",
         "options": [
-          "oui ecrit",
+          "oui écrit",
           "oui oral",
           "non"
         ]
@@ -577,9 +577,9 @@
   {
     "id": "bail_resiliation_conteste",
     "domaine": "bail",
-    "sousDomaine": "resiliation",
+    "sousDomaine": "résiliation",
     "tags": [
-      "resiliation",
+      "résiliation",
       "conge",
       "contestation",
       "abusif",
@@ -588,7 +588,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Qui a resilie le bail ?",
+        "text": "Qui a résilié le bail ?",
         "options": [
           "bailleur",
           "locataire"
@@ -607,7 +607,7 @@
       },
       {
         "id": "q3",
-        "text": "Delai de resiliation respecte ?",
+        "text": "Delai de résiliation respecte ?",
         "options": [
           "oui",
           "non",
@@ -646,9 +646,9 @@
         "id": "q1",
         "text": "Type de probleme ?",
         "options": [
-          "loyer initial trop eleve",
+          "loyer initial trop élevé",
           "augmentation en cours de bail",
-          "loyer superieur au quartier"
+          "loyer supérieur au quartier"
         ]
       },
       {
@@ -662,7 +662,7 @@
       },
       {
         "id": "q3",
-        "text": "Connaissez-vous le loyer du precedent locataire ?",
+        "text": "Connaissez-vous le loyer du précédent locataire ?",
         "options": [
           "oui, plus bas",
           "oui, identique",
@@ -671,7 +671,7 @@
       },
       {
         "id": "q4",
-        "text": "Taux hypothecaire a la signature du bail ?",
+        "text": "Taux hypothécaire a la signature du bail ?",
         "options": [
           "je sais",
           "je ne sais pas"
@@ -693,16 +693,16 @@
       "depot",
       "caution",
       "restitution",
-      "compte bloque"
+      "compte bloqué"
     ],
     "questions": [
       {
         "id": "q1",
         "text": "Situation ?",
         "options": [
-          "depot non restitue",
+          "depot non restitué",
           "montant conteste",
-          "depot non place sur compte bloque"
+          "depot non place sur compte bloqué"
         ]
       },
       {
@@ -767,7 +767,7 @@
         "options": [
           "decompte absent",
           "montant conteste",
-          "charges non prevues au bail"
+          "charges non prévues au bail"
         ]
       },
       {
@@ -819,7 +819,7 @@
         "id": "q2",
         "text": "Avez-vous l'accord du bailleur ?",
         "options": [
-          "oui ecrit",
+          "oui écrit",
           "oui oral",
           "non",
           "pas encore demande"
@@ -827,7 +827,7 @@
       },
       {
         "id": "q3",
-        "text": "Duree prevue ?",
+        "text": "Duree prévue ?",
         "options": [
           "<3 mois",
           "3-12 mois",
@@ -839,9 +839,9 @@
         "id": "q4",
         "text": "Loyer du sous-locataire ?",
         "options": [
-          "inferieur a mon loyer",
+          "inférieur a mon loyer",
           "egal",
-          "superieur"
+          "supérieur"
         ]
       },
       {
@@ -857,7 +857,7 @@
     "sousDomaine": "entretien",
     "tags": [
       "travaux",
-      "reparation",
+      "réparation",
       "entretien",
       "bailleur",
       "obligation"
@@ -867,7 +867,7 @@
         "id": "q1",
         "text": "Type de travaux ?",
         "options": [
-          "reparation urgente",
+          "réparation urgente",
           "entretien courant",
           "renovation",
           "mise aux normes"
@@ -884,7 +884,7 @@
       },
       {
         "id": "q3",
-        "text": "Avez-vous fait la demande par ecrit ?",
+        "text": "Avez-vous fait la demande par écrit ?",
         "options": [
           "oui",
           "non"
@@ -914,7 +914,7 @@
       "augmentation",
       "hausse",
       "loyer",
-      "taux hypothecaire",
+      "taux hypothécaire",
       "contestation"
     ],
     "questions": [
@@ -922,7 +922,7 @@
         "id": "q1",
         "text": "Motif de l'augmentation ?",
         "options": [
-          "taux hypothecaire",
+          "taux hypothécaire",
           "travaux plus-value",
           "IPC",
           "adaptation au quartier",
@@ -949,7 +949,7 @@
       },
       {
         "id": "q4",
-        "text": "Delai avant echeance ?",
+        "text": "Delai avant échéance ?",
         "options": [
           "<10 jours",
           "10-30 jours",
@@ -968,9 +968,9 @@
     "domaine": "bail",
     "sousDomaine": "restitution",
     "tags": [
-      "etat des lieux",
+      "état des lieux",
       "sortie",
-      "degats",
+      "dégâts",
       "restitution",
       "nettoyage"
     ],
@@ -979,8 +979,8 @@
         "id": "q1",
         "text": "Situation ?",
         "options": [
-          "etat des lieux a venir",
-          "contestation apres etat des lieux",
+          "état des lieux a venir",
+          "contestation apres état des lieux",
           "retenue sur garantie"
         ]
       },
@@ -988,7 +988,7 @@
         "id": "q2",
         "text": "Problemes signales ?",
         "options": [
-          "degats",
+          "dégâts",
           "nettoyage insuffisant",
           "usure normale contestee",
           "aucun"
@@ -1031,7 +1031,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Avez-vous demande l autorisation par ecrit ?",
+        "text": "Avez-vous demande l autorisation par écrit ?",
         "options": [
           "oui",
           "non"
@@ -1043,12 +1043,12 @@
         "options": [
           "oui",
           "non",
-          "pas de reponse"
+          "pas de réponse"
         ]
       },
       {
         "id": "q3",
-        "text": "Duree prevue de la sous-location ?",
+        "text": "Duree prévue de la sous-location ?",
         "options": [
           "<1 an",
           "1-2 ans",
@@ -1057,7 +1057,7 @@
       },
       {
         "id": "q4",
-        "text": "Le sous-loyer depasse-t-il votre loyer ?",
+        "text": "Le sous-loyer dépassé-t-il votre loyer ?",
         "options": [
           "oui",
           "non",
@@ -1109,7 +1109,7 @@
           "non",
           "bruit",
           "odeurs",
-          "degats"
+          "dégâts"
         ]
       },
       {
@@ -1190,7 +1190,7 @@
     "tags": [
       "renovation",
       "travaux",
-      "tolerance",
+      "tolérance",
       "relogement",
       "reduction"
     ],
@@ -1260,7 +1260,7 @@
       },
       {
         "id": "q2",
-        "text": "Loyer du precedent locataire connu ?",
+        "text": "Loyer du précédent locataire connu ?",
         "options": [
           "oui plus bas",
           "identique",
@@ -1371,7 +1371,7 @@
         "id": "q2",
         "text": "Probleme ?",
         "options": [
-          "resiliation du parking seul",
+          "résiliation du parking seul",
           "loyer excessif",
           "place inutilisable",
           "attribution refusee"
@@ -1388,7 +1388,7 @@
       },
       {
         "id": "q4",
-        "text": "Reglement specifique ?",
+        "text": "Reglement spécifique ?",
         "options": [
           "oui",
           "non"
@@ -1427,7 +1427,7 @@
         "text": "Probleme ?",
         "options": [
           "acces refuse",
-          "humidite/degats",
+          "humidite/dégâts",
           "vol",
           "changement d attribution"
         ]
@@ -1444,7 +1444,7 @@
         "id": "q4",
         "text": "Probleme signale ?",
         "options": [
-          "oui ecrit",
+          "oui écrit",
           "oui oral",
           "non"
         ]
@@ -1482,7 +1482,7 @@
         "text": "Probleme ?",
         "options": [
           "depart colocataire",
-          "impaye colocataire",
+          "impayé colocataire",
           "nuisances",
           "ajout colocataire"
         ]
@@ -1517,11 +1517,11 @@
     "domaine": "bail",
     "sousDomaine": "fin",
     "tags": [
-      "deces",
+      "décès",
       "locataire",
       "succession",
       "heritiers",
-      "resiliation"
+      "résiliation"
     ],
     "questions": [
       {
@@ -1574,7 +1574,7 @@
       "locataire",
       "poursuite",
       "garantie",
-      "resiliation"
+      "résiliation"
     ],
     "questions": [
       {
@@ -1582,7 +1582,7 @@
         "text": "Situation ?",
         "options": [
           "faillite",
-          "procedure en cours",
+          "procédure en cours",
           "poursuites sans faillite"
         ]
       },
@@ -1596,7 +1596,7 @@
       },
       {
         "id": "q3",
-        "text": "Menace de resiliation ?",
+        "text": "Menace de résiliation ?",
         "options": [
           "oui",
           "non"
@@ -1643,7 +1643,7 @@
         "text": "Le nouveau proprietaire veut ?",
         "options": [
           "augmenter loyer",
-          "resilier",
+          "résilier",
           "rien changer",
           "je ne sais pas"
         ]
@@ -1659,7 +1659,7 @@
       },
       {
         "id": "q4",
-        "text": "Avis de resiliation recu ?",
+        "text": "Avis de résiliation recu ?",
         "options": [
           "oui",
           "non"
@@ -1790,7 +1790,7 @@
     "tags": [
       "expulsion",
       "evacuation",
-      "execution forcee",
+      "exécution forcee",
       "huissier"
     ],
     "questions": [
@@ -1809,12 +1809,12 @@
         "options": [
           "oui",
           "non",
-          "delai depasse"
+          "delai dépassé"
         ]
       },
       {
         "id": "q3",
-        "text": "Huissier presente ?",
+        "text": "Huissier présente ?",
         "options": [
           "oui",
           "non"
@@ -1840,9 +1840,9 @@
     "domaine": "bail",
     "sousDomaine": "fin",
     "tags": [
-      "etat des lieux",
+      "état des lieux",
       "contestation",
-      "degats",
+      "dégâts",
       "usure",
       "sortie"
     ],
@@ -1897,7 +1897,7 @@
     "domaine": "bail",
     "sousDomaine": "entretien",
     "tags": [
-      "reparations",
+      "réparations",
       "menu entretien",
       "a charge",
       "locataire"
@@ -1905,7 +1905,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Type de reparation ?",
+        "text": "Type de réparation ?",
         "options": [
           "robinet",
           "serrure",
@@ -2027,7 +2027,7 @@
       },
       {
         "id": "q2",
-        "text": "Deja emmenage ?",
+        "text": "Deja emménage ?",
         "options": [
           "oui",
           "non"
@@ -2045,7 +2045,7 @@
       },
       {
         "id": "q4",
-        "text": "Depot ou premier loyer verse ?",
+        "text": "Depot ou premier loyer versé ?",
         "options": [
           "oui",
           "non"
@@ -2092,7 +2092,7 @@
       },
       {
         "id": "q3",
-        "text": "Constat medical ou d expert ?",
+        "text": "Constat médical ou d expert ?",
         "options": [
           "oui",
           "non"
@@ -2100,7 +2100,7 @@
       },
       {
         "id": "q4",
-        "text": "Bailleur alerte par ecrit ?",
+        "text": "Bailleur alerte par écrit ?",
         "options": [
           "oui",
           "non"
@@ -2139,7 +2139,7 @@
       },
       {
         "id": "q2",
-        "text": "Etes-vous inscrit aupres d'une regie ou office ?",
+        "text": "Etes-vous inscrit auprès d'une régie ou office ?",
         "options": [
           "oui",
           "non"
@@ -2157,7 +2157,7 @@
         "id": "q4",
         "text": "Quel est votre delai ?",
         "options": [
-          "immediat",
+          "immédiat",
           "<1 mois",
           "1-3 mois",
           ">3 mois"
@@ -2176,10 +2176,10 @@
     "sousDomaine": "loyer",
     "tags": [
       "loyer",
-      "impaye",
+      "impayé",
       "retard",
       "paiement",
-      "resiliation",
+      "résiliation",
       "mise en demeure",
       "expulsion"
     ],
@@ -2290,7 +2290,7 @@
       "opposition",
       "mainlevee",
       "titre",
-      "executoire",
+      "exécutoire",
       "reconnaissance"
     ],
     "questions": [
@@ -2380,10 +2380,10 @@
       },
       {
         "id": "q4",
-        "text": "Charges speciales ?",
+        "text": "Charges spéciales ?",
         "options": [
           "pension alimentaire",
-          "frais medicaux",
+          "frais médicaux",
           "aucune"
         ]
       },
@@ -2462,7 +2462,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Etes-vous inscrit au registre du commerce ?",
+        "text": "Etes-vous inscrit au régistre du commerce ?",
         "options": [
           "oui",
           "non"
@@ -2620,14 +2620,14 @@
       "LAMal",
       "reduction",
       "subsides",
-      "impaye"
+      "impayé"
     ],
     "questions": [
       {
         "id": "q1",
         "text": "Situation ?",
         "options": [
-          "primes impayees",
+          "primes impayées",
           "demande de subsides",
           "poursuivie pour primes",
           "retrait liste noire"
@@ -2635,7 +2635,7 @@
       },
       {
         "id": "q2",
-        "text": "Revenu du menage ?",
+        "text": "Revenu du ménage ?",
         "options": [
           "<40000/an",
           "40000-60000",
@@ -2645,7 +2645,7 @@
       },
       {
         "id": "q3",
-        "text": "Nombre de personnes dans le menage ?",
+        "text": "Nombre de personnes dans le ménage ?",
         "options": [
           "1",
           "2",
@@ -2732,7 +2732,7 @@
     "tags": [
       "creancier",
       "abusif",
-      "harcelement",
+      "harcélément",
       "plainte",
       "office"
     ],
@@ -2742,7 +2742,7 @@
         "text": "Type d'abus ?",
         "options": [
           "poursuites repetees sans fondement",
-          "harcelement telephonique",
+          "harcélément telephonique",
           "menaces",
           "violation vie privee"
         ]
@@ -2804,7 +2804,7 @@
       },
       {
         "id": "q2",
-        "text": "Le delai de 10 jours est-il depasse ?",
+        "text": "Le delai de 10 jours est-il dépassé ?",
         "options": [
           "non, il reste du temps",
           "oui, recemment",
@@ -2885,19 +2885,19 @@
       "mainlevee",
       "definitive",
       "jugement",
-      "executoire",
+      "exécutoire",
       "titre"
     ],
     "questions": [
       {
         "id": "q1",
-        "text": "Quel titre executoire avez-vous ?",
+        "text": "Quel titre exécutoire avez-vous ?",
         "options": [
           "jugement suisse",
-          "jugement etranger",
+          "jugement étranger",
           "transaction judiciaire",
           "decision administrative",
-          "acte authentique executoire"
+          "acte authentique exécutoire"
         ]
       },
       {
@@ -3007,7 +3007,7 @@
       },
       {
         "id": "q3",
-        "text": "Avez-vous un vehicule necessaire au travail ?",
+        "text": "Avez-vous un vehicule nécessaire au travail ?",
         "options": [
           "oui",
           "non"
@@ -3083,7 +3083,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Etes-vous inscrit au registre du commerce ?",
+        "text": "Etes-vous inscrit au régistre du commerce ?",
         "options": [
           "oui",
           "non"
@@ -3142,7 +3142,7 @@
         "options": [
           "entreprise",
           "particulier",
-          "independant"
+          "indépendant"
         ]
       },
       {
@@ -3177,7 +3177,7 @@
         "id": "q1",
         "text": "Objectif du sursis ?",
         "options": [
-          "preparer un concordat",
+          "préparer un concordat",
           "gagner du temps pour reorganiser",
           "eviter la faillite imminente"
         ]
@@ -3196,7 +3196,7 @@
         "text": "Avez-vous un plan de restructuration ?",
         "options": [
           "oui",
-          "en preparation",
+          "en préparation",
           "non"
         ]
       },
@@ -3243,7 +3243,7 @@
         "text": "Le debiteur est-il en Suisse ?",
         "options": [
           "oui",
-          "non, a l'etranger",
+          "non, a l'étranger",
           "je ne sais pas"
         ]
       },
@@ -3283,7 +3283,7 @@
         "options": [
           "je suis porteur et veux poursuivre",
           "on me poursuit sur un effet",
-          "l'effet est impaye"
+          "l'effet est impayé"
         ]
       },
       {
@@ -3358,7 +3358,7 @@
         "text": "Motif de plainte ?",
         "options": [
           "erreur de l'office",
-          "notification irreguliere",
+          "notification irrégulière",
           "calcul minimum vital errone",
           "saisie excessive",
           "delai non respecte"
@@ -3387,18 +3387,18 @@
     "tags": [
       "for",
       "poursuite",
-      "competence",
+      "compétence",
       "domicile",
       "lieu"
     ],
     "questions": [
       {
         "id": "q1",
-        "text": "Ou est domicilie le debiteur ?",
+        "text": "Ou est domicilié le debiteur ?",
         "options": [
           "en Suisse, meme canton",
           "en Suisse, autre canton",
-          "a l'etranger",
+          "a l'étranger",
           "adresse inconnue"
         ]
       },
@@ -3434,7 +3434,7 @@
       "dette",
       "delai",
       "interruption",
-      "liberation"
+      "libération"
     ],
     "questions": [
       {
@@ -3443,7 +3443,7 @@
         "options": [
           "contrat (achat, pret)",
           "loyer",
-          "facture medicale",
+          "facture médicale",
           "impots",
           "pension alimentaire",
           "autre"
@@ -3482,7 +3482,7 @@
     "tags": [
       "remise",
       "dette",
-      "liberation",
+      "libération",
       "creancier",
       "accord"
     ],
@@ -3510,7 +3510,7 @@
       },
       {
         "id": "q3",
-        "text": "Avez-vous une offre ecrite ?",
+        "text": "Avez-vous une offre écrite ?",
         "options": [
           "oui",
           "non, que verbal",
@@ -3574,9 +3574,9 @@
   {
     "id": "dettes_mediation_dettes",
     "domaine": "dettes",
-    "sousDomaine": "mediation",
+    "sousDomaine": "médiation",
     "tags": [
-      "mediation",
+      "médiation",
       "dettes",
       "tiers",
       "neutre",
@@ -3607,7 +3607,7 @@
         "text": "Revenus stables ?",
         "options": [
           "oui",
-          "irreguliers",
+          "irréguliers",
           "au chomage",
           "a l'aide sociale"
         ]
@@ -3643,7 +3643,7 @@
       },
       {
         "id": "q2",
-        "text": "Revenus du menage ?",
+        "text": "Revenus du ménage ?",
         "options": [
           "<4000 CHF",
           "4000-6000 CHF",
@@ -3748,7 +3748,7 @@
       },
       {
         "id": "q2",
-        "text": "Etes-vous inscrit au registre du commerce ?",
+        "text": "Etes-vous inscrit au régistre du commerce ?",
         "options": [
           "oui",
           "non"
@@ -3782,10 +3782,10 @@
   {
     "id": "entreprise_difficultes_paiement",
     "domaine": "entreprise",
-    "sousDomaine": "difficultes",
+    "sousDomaine": "difficultés",
     "tags": [
       "PME",
-      "difficultes",
+      "difficultés",
       "paiement",
       "restructuration",
       "concordat",
@@ -3806,7 +3806,7 @@
       },
       {
         "id": "q2",
-        "text": "Depuis combien de temps avez-vous des difficultes ?",
+        "text": "Depuis combien de temps avez-vous des difficultés ?",
         "options": [
           "<3 mois",
           "3-6 mois",
@@ -3849,7 +3849,7 @@
       "faillite",
       "bilan",
       "avis juge",
-      "responsabilite",
+      "responsabilité",
       "administrateur"
     ],
     "questions": [
@@ -3864,7 +3864,7 @@
       },
       {
         "id": "q2",
-        "text": "Un bilan intermediaire a-t-il ete etabli ?",
+        "text": "Un bilan intermediaire a-t-il ete établi ?",
         "options": [
           "oui",
           "non"
@@ -3888,14 +3888,14 @@
   },
   {
     "id": "etranger_permis_b_c",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "permis",
     "tags": [
       "permis",
       "B",
       "C",
       "sejour",
-      "etablissement",
+      "établissement",
       "conditions"
     ],
     "questions": [
@@ -3945,7 +3945,7 @@
   },
   {
     "id": "etranger_naturalisation",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "naturalisation",
     "tags": [
       "naturalisation",
@@ -4000,7 +4000,7 @@
   },
   {
     "id": "etranger_regroupement",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "regroupement",
     "tags": [
       "regroupement",
@@ -4056,7 +4056,7 @@
   },
   {
     "id": "etranger_renvoi",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "renvoi",
     "tags": [
       "renvoi",
@@ -4070,14 +4070,14 @@
         "text": "Type de decision ?",
         "options": [
           "renvoi",
-          "expulsion penale",
+          "expulsion pénale",
           "interdiction d'entree",
           "refus renouvellement"
         ]
       },
       {
         "id": "q2",
-        "text": "Avez-vous recu une decision ecrite ?",
+        "text": "Avez-vous recu une decision écrite ?",
         "options": [
           "oui",
           "non, orale seulement"
@@ -4098,7 +4098,7 @@
         "options": [
           "conjoint/enfant suisse",
           "longue duree de sejour",
-          "aucune particuliere"
+          "aucune particulière"
         ]
       },
       {
@@ -4110,7 +4110,7 @@
   },
   {
     "id": "etranger_permis_travail",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "travail",
     "tags": [
       "permis",
@@ -4134,13 +4134,13 @@
         "options": [
           "emploi fixe",
           "stagiaire",
-          "independant",
+          "indépendant",
           "detache"
         ]
       },
       {
         "id": "q3",
-        "text": "Duree prevue ?",
+        "text": "Duree prévue ?",
         "options": [
           "<90 jours",
           "90 jours - 1 an",
@@ -4165,19 +4165,19 @@
   },
   {
     "id": "etranger_asile_procedure",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "asile",
     "tags": [
       "asile",
       "refugie",
-      "procedure",
+      "procédure",
       "SEM",
       "audition"
     ],
     "questions": [
       {
         "id": "q1",
-        "text": "Etat de la procedure ?",
+        "text": "Etat de la procédure ?",
         "options": [
           "pas encore depose",
           "en attente",
@@ -4222,13 +4222,13 @@
   },
   {
     "id": "etranger_sans_papiers_droits",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "sans-papiers",
     "tags": [
       "sans-papiers",
       "droits",
       "travail",
-      "illegale",
+      "illégale",
       "regularisation"
     ],
     "questions": [
@@ -4247,7 +4247,7 @@
         "text": "Travaillez-vous ?",
         "options": [
           "oui, employe",
-          "oui, independant",
+          "oui, indépendant",
           "non"
         ]
       },
@@ -4276,7 +4276,7 @@
   },
   {
     "id": "etranger_violence_permis",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "violence",
     "tags": [
       "violence",
@@ -4331,7 +4331,7 @@
   },
   {
     "id": "etranger_aide_urgence",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "aide",
     "tags": [
       "aide urgence",
@@ -4370,7 +4370,7 @@
       },
       {
         "id": "q4",
-        "text": "Avez-vous besoin de soins medicaux ?",
+        "text": "Avez-vous besoin de soins médicaux ?",
         "options": [
           "oui, urgents",
           "oui, non urgents",
@@ -4386,7 +4386,7 @@
   },
   {
     "id": "etranger_recours_renvoi",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "recours",
     "tags": [
       "recours",
@@ -4427,7 +4427,7 @@
       },
       {
         "id": "q4",
-        "text": "Avez-vous de nouveaux elements ?",
+        "text": "Avez-vous de nouveaux éléments ?",
         "options": [
           "oui",
           "non"
@@ -4442,7 +4442,7 @@
   },
   {
     "id": "etranger_permis_b_renouvellement",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "permis",
     "tags": [
       "permis B",
@@ -4464,7 +4464,7 @@
       },
       {
         "id": "q2",
-        "text": "Le permis arrive a echeance dans combien de temps ?",
+        "text": "Le permis arrive a échéance dans combien de temps ?",
         "options": [
           "<3 mois",
           "3-6 mois",
@@ -4486,7 +4486,7 @@
         "options": [
           "non",
           "infraction mineure",
-          "condamnation penale"
+          "condamnation pénale"
         ]
       },
       {
@@ -4498,11 +4498,11 @@
   },
   {
     "id": "etranger_permis_c_conditions",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "permis",
     "tags": [
       "permis C",
-      "etablissement",
+      "établissement",
       "conditions",
       "integration",
       "duree"
@@ -4553,7 +4553,7 @@
   },
   {
     "id": "etranger_naturalisation_facilitee",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "naturalisation",
     "tags": [
       "naturalisation",
@@ -4601,7 +4601,7 @@
   },
   {
     "id": "etranger_regroupement_familial",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "regroupement",
     "tags": [
       "regroupement",
@@ -4660,7 +4660,7 @@
   },
   {
     "id": "etranger_renvoi_recours",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "renvoi",
     "tags": [
       "renvoi",
@@ -4694,7 +4694,7 @@
         "text": "Avez-vous des enfants en Suisse ?",
         "options": [
           "oui, suisses",
-          "oui, etrangers",
+          "oui, étrangers",
           "non"
         ]
       },
@@ -4707,7 +4707,7 @@
   },
   {
     "id": "etranger_admission_provisoire_f",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "permis",
     "tags": [
       "admission",
@@ -4723,7 +4723,7 @@
         "options": [
           "j'ai un permis F",
           "ma demande d'asile a ete rejetee",
-          "je suis en procedure"
+          "je suis en procédure"
         ]
       },
       {
@@ -4753,7 +4753,7 @@
   },
   {
     "id": "etranger_cas_rigueur",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "regularisation",
     "tags": [
       "cas",
@@ -4776,7 +4776,7 @@
         "id": "q2",
         "text": "Situation actuelle ?",
         "options": [
-          "sans statut legal",
+          "sans statut légal",
           "permis F depuis longtemps",
           "permis refuse mais toujours present"
         ]
@@ -4808,7 +4808,7 @@
   },
   {
     "id": "etranger_integration_criteres",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "integration",
     "tags": [
       "integration",
@@ -4825,7 +4825,7 @@
           "permis B",
           "permis F",
           "permis C",
-          "en procedure"
+          "en procédure"
         ]
       },
       {
@@ -4857,7 +4857,7 @@
   },
   {
     "id": "etranger_cours_langue_obligatoires",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "integration",
     "tags": [
       "cours",
@@ -4905,7 +4905,7 @@
   },
   {
     "id": "etranger_aide_sociale_permis",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "aide_sociale",
     "tags": [
       "aide",
@@ -4953,7 +4953,7 @@
   },
   {
     "id": "etranger_travail_asile",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "travail",
     "tags": [
       "travail",
@@ -4974,7 +4974,7 @@
       },
       {
         "id": "q2",
-        "text": "Avez-vous un employeur interesse ?",
+        "text": "Avez-vous un employeur intéressé ?",
         "options": [
           "oui",
           "non"
@@ -4982,7 +4982,7 @@
       },
       {
         "id": "q3",
-        "text": "Depuis combien de temps etes-vous en procedure ?",
+        "text": "Depuis combien de temps etes-vous en procédure ?",
         "options": [
           "<3 mois",
           "3-6 mois",
@@ -4998,7 +4998,7 @@
   },
   {
     "id": "etranger_permis_frontalier_g",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "permis",
     "tags": [
       "frontalier",
@@ -5032,7 +5032,7 @@
         "options": [
           "CDI",
           "CDD",
-          "independant",
+          "indépendant",
           "detache"
         ]
       },
@@ -5045,13 +5045,13 @@
   },
   {
     "id": "etranger_detachement_travailleurs",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "travail",
     "tags": [
       "detachement",
       "travailleurs",
       "entreprise",
-      "etrangere",
+      "étrangere",
       "prestation"
     ],
     "questions": [
@@ -5074,7 +5074,7 @@
       },
       {
         "id": "q3",
-        "text": "Secteur d'activite ?",
+        "text": "Secteur d'activité ?",
         "options": [
           "construction",
           "hotellerie",
@@ -5091,14 +5091,14 @@
   },
   {
     "id": "etranger_reconnaissance_diplomes",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "formation",
     "tags": [
       "reconnaissance",
       "diplomes",
       "equivalence",
       "formation",
-      "etranger"
+      "étranger"
     ],
     "questions": [
       {
@@ -5107,7 +5107,7 @@
         "options": [
           "universitaire",
           "professionnel (CFC equivalent)",
-          "medical/sante",
+          "médical/sante",
           "enseignement",
           "autre"
         ]
@@ -5138,7 +5138,7 @@
   },
   {
     "id": "etranger_assurances_sociales",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "assurances",
     "tags": [
       "assurances",
@@ -5146,7 +5146,7 @@
       "AVS",
       "AI",
       "chomage",
-      "etranger"
+      "étranger"
     ],
     "questions": [
       {
@@ -5164,8 +5164,8 @@
         "id": "q2",
         "text": "Travaillez-vous en Suisse ?",
         "options": [
-          "oui, salarie",
-          "oui, independant",
+          "oui, salarié",
+          "oui, indépendant",
           "non"
         ]
       },
@@ -5187,7 +5187,7 @@
   },
   {
     "id": "etranger_double_nationalite",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "nationalite",
     "tags": [
       "double",
@@ -5225,7 +5225,7 @@
   },
   {
     "id": "etranger_apatridie",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "nationalite",
     "tags": [
       "apatride",
@@ -5250,7 +5250,7 @@
         "options": [
           "oui",
           "non",
-          "en procedure"
+          "en procédure"
         ]
       },
       {
@@ -5262,7 +5262,7 @@
   },
   {
     "id": "etranger_mna_mineurs",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "asile",
     "tags": [
       "MNA",
@@ -5285,10 +5285,10 @@
         "id": "q2",
         "text": "Statut actuel ?",
         "options": [
-          "en procedure d'asile",
+          "en procédure d'asile",
           "asile accorde",
           "admission provisoire (F)",
-          "renvoi prevu"
+          "renvoi prévu"
         ]
       },
       {
@@ -5309,7 +5309,7 @@
   },
   {
     "id": "etranger_dublin_transfert",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "asile",
     "tags": [
       "Dublin",
@@ -5354,7 +5354,7 @@
         "options": [
           "bonne sante",
           "probleme de sante",
-          "traitement medical en cours",
+          "traitement médical en cours",
           "probleme psychologique"
         ]
       }
@@ -5362,7 +5362,7 @@
   },
   {
     "id": "etranger_visa_schengen_refus",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "visa",
     "tags": [
       "visa",
@@ -5379,7 +5379,7 @@
           "visa touristique (C)",
           "visa de visite familiale",
           "visa d'affaires",
-          "visa medical"
+          "visa médical"
         ]
       },
       {
@@ -5410,7 +5410,7 @@
   },
   {
     "id": "etrangers_renvoi",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "renvoi",
     "tags": [
       "renvoi",
@@ -5428,7 +5428,7 @@
         "options": [
           "renvoi apres refus asile",
           "renvoi apres refus permis",
-          "renvoi penal",
+          "renvoi pénal",
           "menace de renvoi"
         ]
       },
@@ -5468,7 +5468,7 @@
   },
   {
     "id": "etrangers_recours",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "recours",
     "tags": [
       "recours",
@@ -5518,7 +5518,7 @@
   },
   {
     "id": "etrangers_regroupement",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "regroupement",
     "tags": [
       "regroupement",
@@ -5583,14 +5583,14 @@
     "tags": [
       "pension",
       "alimentaire",
-      "impaye",
+      "impayé",
       "entretien",
       "recouvrement"
     ],
     "questions": [
       {
         "id": "q1",
-        "text": "Qui est le beneficiaire ?",
+        "text": "Qui est le bénéficiaire ?",
         "options": [
           "enfant",
           "ex-conjoint",
@@ -5599,7 +5599,7 @@
       },
       {
         "id": "q2",
-        "text": "Combien de mois impayes ?",
+        "text": "Combien de mois impayés ?",
         "options": [
           "1-2 mois",
           "3-6 mois",
@@ -5618,8 +5618,8 @@
         "id": "q4",
         "text": "Le debiteur a-t-il un revenu connu ?",
         "options": [
-          "oui, salarie",
-          "independant",
+          "oui, salarié",
+          "indépendant",
           "inconnu",
           "sans revenu"
         ]
@@ -5637,7 +5637,7 @@
     "sousDomaine": "divorce",
     "tags": [
       "divorce",
-      "procedure",
+      "procédure",
       "requete",
       "commun accord",
       "tribunal"
@@ -5710,11 +5710,11 @@
         "id": "q2",
         "text": "Motif du changement souhaite ?",
         "options": [
-          "demenagement",
+          "deménagement",
           "maltraitance suspectee",
           "souhait de l'enfant",
           "changement de situation",
-          "non-respect du regime"
+          "non-respect du régime"
         ]
       },
       {
@@ -5834,7 +5834,7 @@
         "text": "Etes-vous en securite actuellement ?",
         "options": [
           "oui",
-          "non, danger immediat"
+          "non, danger immédiat"
         ]
       },
       {
@@ -5964,7 +5964,7 @@
   {
     "id": "famille_mesures_provisionnelles",
     "domaine": "famille",
-    "sousDomaine": "procedure",
+    "sousDomaine": "procédure",
     "tags": [
       "mesures provisionnelles",
       "urgence",
@@ -5994,7 +5994,7 @@
         "id": "q3",
         "text": "Delai d'urgence ?",
         "options": [
-          "immediat",
+          "immédiat",
           "quelques jours",
           "quelques semaines"
         ]
@@ -6079,7 +6079,7 @@
       "tutelle",
       "protection",
       "adulte",
-      "incapacite"
+      "incapacité"
     ],
     "questions": [
       {
@@ -6097,7 +6097,7 @@
         "text": "Motif ?",
         "options": [
           "gestion financiere",
-          "decisions medicales",
+          "decisions médicales",
           "protection globale",
           "representation juridique"
         ]
@@ -6134,7 +6134,7 @@
     "sousDomaine": "mariage",
     "tags": [
       "mariage",
-      "etranger",
+      "étranger",
       "reconnaissance",
       "transcription",
       "validite"
@@ -6160,7 +6160,7 @@
       },
       {
         "id": "q3",
-        "text": "Les deux epoux etaient majeurs et consentants ?",
+        "text": "Les deux époux etaient majeurs et consentants ?",
         "options": [
           "oui",
           "non",
@@ -6188,7 +6188,7 @@
     "sousDomaine": "partenariat",
     "tags": [
       "partenariat",
-      "enregistre",
+      "enrégistre",
       "couple",
       "meme sexe",
       "LPart"
@@ -6198,7 +6198,7 @@
         "id": "q1",
         "text": "Votre situation ?",
         "options": [
-          "je veux enregistrer un partenariat",
+          "je veux enrégistrer un partenariat",
           "je veux le dissoudre",
           "je veux connaitre mes droits"
         ]
@@ -6214,7 +6214,7 @@
       },
       {
         "id": "q3",
-        "text": "Votre partenaire est-il/elle etranger/ere ?",
+        "text": "Votre partenaire est-il/elle étranger/ere ?",
         "options": [
           "non",
           "oui UE/AELE",
@@ -6264,7 +6264,7 @@
         "text": "Origine de l'enfant ?",
         "options": [
           "Suisse",
-          "etranger"
+          "étranger"
         ]
       },
       {
@@ -6355,7 +6355,7 @@
         "id": "q1",
         "text": "Situation ?",
         "options": [
-          "mon enfant a ete emmene a l'etranger",
+          "mon enfant a ete emmene a l'étranger",
           "mon enfant est retenu en Suisse",
           "je crains un enlevement"
         ]
@@ -6526,9 +6526,9 @@
   {
     "id": "famille_regime_matrimonial",
     "domaine": "famille",
-    "sousDomaine": "regime_matrimonial",
+    "sousDomaine": "régime_matrimonial",
     "tags": [
-      "regime",
+      "régime",
       "matrimonial",
       "participation",
       "acquets",
@@ -6538,7 +6538,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Quel regime matrimonial ?",
+        "text": "Quel régime matrimonial ?",
         "options": [
           "participation aux acquets (defaut)",
           "communaute de biens",
@@ -6558,9 +6558,9 @@
         "id": "q3",
         "text": "Situation ?",
         "options": [
-          "je veux changer de regime",
+          "je veux changer de régime",
           "divorce en cours",
-          "deces du conjoint",
+          "décès du conjoint",
           "simple information"
         ]
       },
@@ -6574,10 +6574,10 @@
   {
     "id": "famille_liquidation_regime",
     "domaine": "famille",
-    "sousDomaine": "regime_matrimonial",
+    "sousDomaine": "régime_matrimonial",
     "tags": [
       "liquidation",
-      "regime",
+      "régime",
       "partage",
       "acquets",
       "divorce"
@@ -6588,8 +6588,8 @@
         "text": "Contexte de la liquidation ?",
         "options": [
           "divorce",
-          "deces",
-          "changement de regime"
+          "décès",
+          "changement de régime"
         ]
       },
       {
@@ -6634,7 +6634,7 @@
       "succession",
       "ab intestat",
       "heritier",
-      "legal",
+      "légal",
       "partage"
     ],
     "questions": [
@@ -6846,10 +6846,10 @@
       },
       {
         "id": "q2",
-        "text": "L'heritier a-t-il ete condamne penalement ?",
+        "text": "L'heritier a-t-il ete condamne pénalement ?",
         "options": [
           "oui",
-          "procedure en cours",
+          "procédure en cours",
           "non"
         ]
       },
@@ -6865,7 +6865,7 @@
     "domaine": "famille",
     "sousDomaine": "succession",
     "tags": [
-      "executeur",
+      "exécutéur",
       "testamentaire",
       "administration",
       "succession",
@@ -6876,10 +6876,10 @@
         "id": "q1",
         "text": "Situation ?",
         "options": [
-          "je veux designer un executeur",
-          "j'ai ete designe executeur",
-          "conflit avec l'executeur",
-          "l'executeur ne fait rien"
+          "je veux designer un exécutéur",
+          "j'ai ete designe exécutéur",
+          "conflit avec l'exécutéur",
+          "l'exécutéur ne fait rien"
         ]
       },
       {
@@ -6907,14 +6907,14 @@
       "heritier",
       "attestation",
       "banque",
-      "registre foncier"
+      "régistre foncier"
     ],
     "questions": [
       {
         "id": "q1",
         "text": "Pourquoi avez-vous besoin du certificat ?",
         "options": [
-          "debloquer un compte bancaire",
+          "debloquér un compte bancaire",
           "transferer un bien immobilier",
           "prouver ma qualite d'heritier",
           "autre"
@@ -6954,7 +6954,7 @@
       "succession",
       "repudiation",
       "benefice inventaire",
-      "responsabilite"
+      "responsabilité"
     ],
     "questions": [
       {
@@ -7054,7 +7054,7 @@
         "id": "q1",
         "text": "Situation ?",
         "options": [
-          "j'ai fait une donation et le donataire est decede",
+          "j'ai fait une donation et le donataire est décédé",
           "j'ai recu une donation et je veux la garder",
           "je suis heritier et un bien doit revenir au donateur"
         ]
@@ -7063,7 +7063,7 @@
         "id": "q2",
         "text": "La donation a-t-elle une clause de retour ?",
         "options": [
-          "oui, ecrite",
+          "oui, écrite",
           "non",
           "je ne sais pas"
         ]
@@ -7122,8 +7122,8 @@
         "text": "Y a-t-il un changement de situation ?",
         "options": [
           "perte/baisse revenu",
-          "nouveau menage",
-          "demenagement enfant",
+          "nouveau ménage",
+          "deménagement enfant",
           "non"
         ]
       },
@@ -7199,7 +7199,7 @@
       "divorce",
       "requete commune",
       "unilaterale",
-      "procedure",
+      "procédure",
       "separation",
       "convention"
     ],
@@ -7325,7 +7325,7 @@
       },
       {
         "id": "q2",
-        "text": "Y a-t-il un danger immediat pour l'enfant ?",
+        "text": "Y a-t-il un danger immédiat pour l'enfant ?",
         "options": [
           "oui",
           "non, mais preoccupant",
@@ -7385,7 +7385,7 @@
       },
       {
         "id": "q3",
-        "text": "Estimez-vous que votre reserve est lesee ?",
+        "text": "Estimez-vous que votre reserve est lésée ?",
         "options": [
           "oui",
           "non",
@@ -7418,13 +7418,13 @@
         "options": [
           "dettes du defunt",
           "conflit familial",
-          "desinteressement",
+          "desintéressément",
           "autre"
         ]
       },
       {
         "id": "q2",
-        "text": "Quand le deces a-t-il eu lieu ?",
+        "text": "Quand le décès a-t-il eu lieu ?",
         "options": [
           "<1 mois",
           "1-2 mois",
@@ -7451,9 +7451,9 @@
   {
     "id": "social_hebergement_urgence",
     "domaine": "social",
-    "sousDomaine": "hebergement",
+    "sousDomaine": "hébergement",
     "tags": [
-      "hebergement",
+      "hébergement",
       "urgence",
       "SDF",
       "sans-abri",
@@ -7515,7 +7515,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Etes-vous deja beneficiaire de l'aide sociale ?",
+        "text": "Etes-vous deja bénéficiaire de l'aide sociale ?",
         "options": [
           "oui",
           "non, je souhaite faire une demande"
@@ -7544,7 +7544,7 @@
         "text": "Avez-vous de la fortune ou un bien immobilier ?",
         "options": [
           "non",
-          "epargne modeste",
+          "épargne modeste",
           "bien immobilier"
         ]
       },
@@ -7575,7 +7575,7 @@
         "options": [
           "deboute de l'asile (NEM)",
           "permis expire",
-          "sans statut legal",
+          "sans statut légal",
           "en attente de decision"
         ]
       },
@@ -7590,7 +7590,7 @@
       },
       {
         "id": "q3",
-        "text": "Avez-vous des besoins medicaux urgents ?",
+        "text": "Avez-vous des besoins médicaux urgents ?",
         "options": [
           "oui",
           "non"
@@ -7611,7 +7611,7 @@
       "licenciement",
       "maladie",
       "protection",
-      "incapacite",
+      "incapacité",
       "periode"
     ],
     "questions": [
@@ -7644,7 +7644,7 @@
       },
       {
         "id": "q4",
-        "text": "Avez-vous un certificat medical ?",
+        "text": "Avez-vous un certificat médical ?",
         "options": [
           "oui",
           "non"
@@ -7663,7 +7663,7 @@
     "sousDomaine": "salaire",
     "tags": [
       "salaire",
-      "impaye",
+      "impayé",
       "retard",
       "paiement",
       "mise en demeure"
@@ -7671,7 +7671,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Combien de mois impayes ?",
+        "text": "Combien de mois impayés ?",
         "options": [
           "1 mois",
           "2-3 mois",
@@ -7682,7 +7682,7 @@
         "id": "q2",
         "text": "L'employeur a-t-il donne une raison ?",
         "options": [
-          "difficultes financieres",
+          "difficultés financieres",
           "litige sur le montant",
           "aucune raison",
           "autre"
@@ -7690,9 +7690,9 @@
       },
       {
         "id": "q3",
-        "text": "Avez-vous une preuve ecrite du salaire ?",
+        "text": "Avez-vous une preuve écrite du salaire ?",
         "options": [
-          "contrat ecrit",
+          "contrat écrit",
           "fiches de paie",
           "rien"
         ]
@@ -7717,7 +7717,7 @@
     "domaine": "travail",
     "sousDomaine": "salaire",
     "tags": [
-      "heures supplementaires",
+      "heures supplémentaires",
       "heures sup",
       "supplement",
       "temps de travail",
@@ -7739,7 +7739,7 @@
         "options": [
           "compensation en temps",
           "incluses dans le salaire",
-          "rien de prevu",
+          "rien de prévu",
           "je ne sais pas"
         ]
       },
@@ -7757,7 +7757,7 @@
         "text": "Categorie professionnelle ?",
         "options": [
           "employe soumis LTr",
-          "cadre superieur",
+          "cadre supérieur",
           "je ne sais pas"
         ]
       },
@@ -7773,7 +7773,7 @@
     "domaine": "travail",
     "sousDomaine": "protection",
     "tags": [
-      "harcelement",
+      "harcélément",
       "mobbing",
       "sexuel",
       "personnalite",
@@ -7782,7 +7782,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Type de harcelement ?",
+        "text": "Type de harcélément ?",
         "options": [
           "mobbing (psychologique)",
           "sexuel",
@@ -7803,7 +7803,7 @@
         "id": "q3",
         "text": "Qui est l'auteur ?",
         "options": [
-          "superieur hierarchique",
+          "supérieur hierarchique",
           "collegue",
           "plusieurs personnes"
         ]
@@ -7845,7 +7845,7 @@
           "performance",
           "restructuration",
           "conflit personnel",
-          "apres reclamation"
+          "apres réclamation"
         ]
       },
       {
@@ -8011,7 +8011,7 @@
           "licenciement pendant grossesse",
           "refus conge maternite",
           "discrimination",
-          "amenagement poste"
+          "aménagement poste"
         ]
       },
       {
@@ -8079,7 +8079,7 @@
       },
       {
         "id": "q3",
-        "text": "Duree d'incapacite ?",
+        "text": "Duree d'incapacité ?",
         "options": [
           "<3 jours",
           "3 jours - 1 mois",
@@ -8115,7 +8115,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Avez-vous un contrat ecrit ?",
+        "text": "Avez-vous un contrat écrit ?",
         "options": [
           "non, rien",
           "email/SMS confirmant",
@@ -8142,7 +8142,7 @@
       },
       {
         "id": "q4",
-        "text": "Charges sociales prelevees ?",
+        "text": "Charges sociales prélevées ?",
         "options": [
           "oui",
           "non",
@@ -8162,16 +8162,16 @@
     "sousDomaine": "contrat",
     "tags": [
       "periode d essai",
-      "resiliation",
+      "résiliation",
       "delai",
       "debut"
     ],
     "questions": [
       {
         "id": "q1",
-        "text": "Duree de la periode d essai prevue ?",
+        "text": "Duree de la periode d essai prévue ?",
         "options": [
-          "1 mois (legal)",
+          "1 mois (légal)",
           "2 mois",
           "3 mois",
           "aucune mention"
@@ -8179,7 +8179,7 @@
       },
       {
         "id": "q2",
-        "text": "Qui a resilie ?",
+        "text": "Qui a résilié ?",
         "options": [
           "employeur",
           "employe"
@@ -8249,7 +8249,7 @@
       },
       {
         "id": "q4",
-        "text": "Qui a resilie le contrat ?",
+        "text": "Qui a résilié le contrat ?",
         "options": [
           "employeur sans juste motif",
           "employe",
@@ -8353,9 +8353,9 @@
         "text": "Type de contrat ?",
         "options": [
           "fixe",
-          "sur appel regulier",
-          "sur appel irregulier",
-          "pas de contrat ecrit"
+          "sur appel régulier",
+          "sur appel irrégulier",
+          "pas de contrat écrit"
         ]
       },
       {
@@ -8388,10 +8388,10 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Le teletravail est-il prevu au contrat ?",
+        "text": "Le teletravail est-il prévu au contrat ?",
         "options": [
           "oui",
-          "non mais tolere",
+          "non mais toléré",
           "non"
         ]
       },
@@ -8439,12 +8439,12 @@
       "maladie professionnelle",
       "epuisement",
       "sante",
-      "incapacite"
+      "incapacité"
     ],
     "questions": [
       {
         "id": "q1",
-        "text": "Avez-vous un certificat medical ?",
+        "text": "Avez-vous un certificat médical ?",
         "options": [
           "oui arret total",
           "oui arret partiel",
@@ -8456,7 +8456,7 @@
         "text": "Cause principale ?",
         "options": [
           "surcharge",
-          "harcelement",
+          "harcélément",
           "pression",
           "conditions de travail"
         ]
@@ -8499,7 +8499,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Avez-vous cotise 12 mois dans les 2 dernieres annees ?",
+        "text": "Avez-vous cotise 12 mois dans les 2 dernières annees ?",
         "options": [
           "oui",
           "non",
@@ -8599,11 +8599,11 @@
   {
     "id": "travail_delai_conge",
     "domaine": "travail",
-    "sousDomaine": "resiliation",
+    "sousDomaine": "résiliation",
     "tags": [
       "delai",
       "conge",
-      "resiliation",
+      "résiliation",
       "preavis",
       "fin contrat"
     ],
@@ -8629,7 +8629,7 @@
       },
       {
         "id": "q3",
-        "text": "Clause contractuelle specifique ?",
+        "text": "Clause contractuelle spécifique ?",
         "options": [
           "oui",
           "non"
@@ -8654,11 +8654,11 @@
   {
     "id": "travail_indemnite_depart",
     "domaine": "travail",
-    "sousDomaine": "resiliation",
+    "sousDomaine": "résiliation",
     "tags": [
       "indemnite",
       "depart",
-      "anciennete",
+      "ancienneté",
       "licenciement",
       "age"
     ],
@@ -8693,7 +8693,7 @@
       },
       {
         "id": "q4",
-        "text": "Qui a resilie ?",
+        "text": "Qui a résilié ?",
         "options": [
           "employeur",
           "employe"
@@ -8742,7 +8742,7 @@
         "id": "q3",
         "text": "Probleme ?",
         "options": [
-          "salaire inferieur CCT",
+          "salaire inférieur CCT",
           "conditions non respectees",
           "pas d information",
           "autre"
@@ -8807,7 +8807,7 @@
       },
       {
         "id": "q4",
-        "text": "Contrat ecrit ?",
+        "text": "Contrat écrit ?",
         "options": [
           "oui contrat cadre",
           "oui contrat de mission",
@@ -8829,7 +8829,7 @@
       "stage",
       "stagiaire",
       "droits",
-      "remuneration",
+      "rémunération",
       "formation"
     ],
     "questions": [
@@ -8864,7 +8864,7 @@
       },
       {
         "id": "q4",
-        "text": "Contrat ecrit ?",
+        "text": "Contrat écrit ?",
         "options": [
           "oui",
           "non"
@@ -8903,11 +8903,11 @@
         "id": "q2",
         "text": "Probleme ?",
         "options": [
-          "resiliation",
+          "résiliation",
           "salaire",
           "conditions de travail",
           "formation insuffisante",
-          "harcelement"
+          "harcélément"
         ]
       },
       {
@@ -8941,12 +8941,12 @@
       "13e salaire",
       "gratification",
       "bonus",
-      "remuneration"
+      "rémunération"
     ],
     "questions": [
       {
         "id": "q1",
-        "text": "Le 13e salaire est-il prevu ?",
+        "text": "Le 13e salaire est-il prévu ?",
         "options": [
           "oui au contrat",
           "oui CCT",
@@ -8958,7 +8958,7 @@
         "id": "q2",
         "text": "Probleme ?",
         "options": [
-          "pas verse",
+          "pas versé",
           "montant incorrect",
           "pro rata conteste",
           "supprime"
@@ -9000,11 +9000,11 @@
     "questions": [
       {
         "id": "q1",
-        "text": "La gratification est-elle prevue au contrat ?",
+        "text": "La gratification est-elle prévue au contrat ?",
         "options": [
           "oui montant fixe",
           "oui variable",
-          "non mais versee regulierement",
+          "non mais versée régulièrement",
           "non"
         ]
       },
@@ -9020,7 +9020,7 @@
       },
       {
         "id": "q3",
-        "text": "Clause de reserve ecrite ?",
+        "text": "Clause de reserve écrite ?",
         "options": [
           "oui",
           "non",
@@ -9029,7 +9029,7 @@
       },
       {
         "id": "q4",
-        "text": "Motif du non-versement ?",
+        "text": "Motif du non-versément ?",
         "options": [
           "resultat entreprise",
           "performance individuelle",
@@ -9069,7 +9069,7 @@
       },
       {
         "id": "q2",
-        "text": "Remboursement prevu au contrat ?",
+        "text": "Remboursement prévu au contrat ?",
         "options": [
           "oui forfait",
           "oui sur justificatifs",
@@ -9127,7 +9127,7 @@
         "id": "q2",
         "text": "Avez-vous demande l acces ?",
         "options": [
-          "oui par ecrit",
+          "oui par écrit",
           "oui oralement",
           "non"
         ]
@@ -9290,7 +9290,7 @@
           "licencie",
           "fin CDD",
           "demission",
-          "independant",
+          "indépendant",
           "primo-demandeur"
         ]
       },
@@ -9306,7 +9306,7 @@
       },
       {
         "id": "q3",
-        "text": "Avez-vous cotise au moins 12 mois sur les 2 dernieres annees ?",
+        "text": "Avez-vous cotise au moins 12 mois sur les 2 dernières annees ?",
         "options": [
           "oui",
           "non",
@@ -9339,7 +9339,7 @@
       "IJM",
       "licenciement",
       "protection",
-      "incapacite"
+      "incapacité"
     ],
     "questions": [
       {
@@ -9475,7 +9475,7 @@
       },
       {
         "id": "q3",
-        "text": "Etes-vous en danger immediat ?",
+        "text": "Etes-vous en danger immédiat ?",
         "options": [
           "oui",
           "non, mais j'ai peur",
@@ -9504,7 +9504,7 @@
     "tags": [
       "foyer",
       "accueil",
-      "hebergement",
+      "hébergement",
       "femmes",
       "enfants",
       "confidentialite",
@@ -9522,7 +9522,7 @@
       },
       {
         "id": "q2",
-        "text": "Etes-vous en danger immediat ?",
+        "text": "Etes-vous en danger immédiat ?",
         "options": [
           "oui",
           "non, mais je planifie un depart"
@@ -9549,9 +9549,9 @@
     "sousDomaine": "plainte",
     "tags": [
       "plainte",
-      "penale",
+      "pénale",
       "violence",
-      "procedure",
+      "procédure",
       "delais",
       "poursuite",
       "office",
@@ -9565,7 +9565,7 @@
           "physique (coups, blessures)",
           "menaces",
           "contrainte sexuelle",
-          "harcelement (stalking)",
+          "harcélément (stalking)",
           "autre"
         ]
       },
@@ -9583,7 +9583,7 @@
         "id": "q3",
         "text": "Avez-vous des preuves ?",
         "options": [
-          "constat medical",
+          "constat médical",
           "photos",
           "temoins",
           "messages/SMS",

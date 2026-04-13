@@ -10,7 +10,7 @@
         "delai": "3 mois avant (vérifier le contrat)",
         "details": "Lettre recommandée au bailleur. Utiliser le formulaire officiel si disponible. La résiliation doit parvenir au bailleur au plus tard le dernier jour du mois.",
         "baseLegale": "CO 266a-266o",
-        "templateLettre": "bail_resiliation",
+        "templateLettre": "bail_résiliation",
         "calculateur": null,
         "attention": "Si bail commun (couple), les DEUX doivent signer la résiliation."
       },
@@ -50,7 +50,7 @@
         "delai": "Jusqu'à 1 an après la sortie",
         "details": "Le bailleur a 1 an pour faire valoir des prétentions sur la garantie. Sans contestation, la banque libère les fonds. En cas de désaccord, saisir l'autorité de conciliation.",
         "baseLegale": "CO 257e; OBLF 8",
-        "templateLettre": "bail_garantie_liberation",
+        "templateLettre": "bail_garantie_libération",
         "calculateur": "calculAmortissementGarantie",
         "attention": "Ne signez pas un accord qui vous semble injuste. Vous pouvez contester devant la conciliation gratuitement."
       },
@@ -65,8 +65,14 @@
         "attention": "Certains contrats télécom ne sont PAS résiliables pour déménagement."
       }
     ],
-    "fichesLiees": ["bail_depot_garantie", "bail_etat_des_lieux", "bail_resiliation_conteste"],
-    "calculateurs": ["calculAmortissementGarantie"],
+    "fichesLiees": [
+      "bail_depot_garantie",
+      "bail_etat_des_lieux",
+      "bail_résiliation_conteste"
+    ],
+    "calculateurs": [
+      "calculAmortissementGarantie"
+    ],
     "dureeEstimee": "2-3 mois de procédure"
   },
   {
@@ -135,8 +141,16 @@
         "attention": "Sans instruction de votre part, le transfert se fait automatiquement à la Fondation institution supplétive après 6 mois."
       }
     ],
-    "fichesLiees": ["travail_licenciement_abusif", "travail_chomage", "travail_certificat"],
-    "calculateurs": ["calculDelaiConge", "calculIndemniteLicenciement", "calculProtectionMaladie"],
+    "fichesLiees": [
+      "travail_licenciement_abusif",
+      "travail_chomage",
+      "travail_certificat"
+    ],
+    "calculateurs": [
+      "calculDelaiConge",
+      "calculIndemniteLicenciement",
+      "calculProtectionMaladie"
+    ],
     "dureeEstimee": "1-6 mois selon contestation"
   },
   {
@@ -195,8 +209,15 @@
         "attention": "Le juge vérifie que la convention protège les intérêts des enfants. Elle peut être refusée."
       }
     ],
-    "fichesLiees": ["famille_divorce", "famille_pension", "famille_garde"],
-    "calculateurs": ["calculPensionIndicative", "calculCoutProcedure"],
+    "fichesLiees": [
+      "famille_divorce",
+      "famille_pension",
+      "famille_garde"
+    ],
+    "calculateurs": [
+      "calculPensionIndicative",
+      "calculCoutProcedure"
+    ],
     "dureeEstimee": "3-18 mois selon la procédure"
   },
   {
@@ -232,7 +253,7 @@
         "baseLegale": "LAA art. 45; LCA art. 38",
         "templateLettre": "accident_declaration_assurance",
         "calculateur": null,
-        "attention": "Ne signez aucun document de l'assurance adverse sans conseil juridique."
+        "attention": "Ne signez aucun document de l'assurance adversé sans conseil juridique."
       },
       {
         "ordre": 4,
@@ -255,8 +276,14 @@
         "attention": "La procédure en assurances sociales est gratuite en première instance dans la plupart des cantons."
       }
     ],
-    "fichesLiees": ["accident_travail", "accident_circulation", "assurance_laa"],
-    "calculateurs": ["calculCoutProcedure"],
+    "fichesLiees": [
+      "accident_travail",
+      "accident_circulation",
+      "assurance_laa"
+    ],
+    "calculateurs": [
+      "calculCoutProcedure"
+    ],
     "dureeEstimee": "Variable — quelques semaines à plusieurs années"
   },
   {
@@ -315,8 +342,14 @@
         "attention": "Si les deux parents travaillent, un seul touche les allocations (celui avec le revenu le plus élevé dans le canton de domicile de l'enfant)."
       }
     ],
-    "fichesLiees": ["travail_grossesse", "famille_reconnaissance", "famille_allocations"],
-    "calculateurs": ["calculProtectionMaladie"],
+    "fichesLiees": [
+      "travail_grossesse",
+      "famille_reconnaissance",
+      "famille_allocations"
+    ],
+    "calculateurs": [
+      "calculProtectionMaladie"
+    ],
     "dureeEstimee": "9 mois + premières semaines"
   },
   {
@@ -340,7 +373,7 @@
         "delai": "Dans les 14 jours",
         "details": "AVS/AI, caisse de pension (LPP), assurance maladie, banques, bailleur, employeur du défunt, assurances (vie, ménage, RC).",
         "baseLegale": "Divers",
-        "templateLettre": "deces_avis",
+        "templateLettre": "décès_avis",
         "calculateur": null,
         "attention": "La caisse maladie doit être informée rapidement pour éviter de continuer à payer les primes."
       },
@@ -375,8 +408,14 @@
         "attention": "Chaque héritier peut exiger le partage à tout moment. Pas de prescription pour l'action en partage."
       }
     ],
-    "fichesLiees": ["succession_reserves", "succession_repudiation", "succession_partage"],
-    "calculateurs": ["calculCoutProcedure"],
+    "fichesLiees": [
+      "succession_reserves",
+      "succession_repudiation",
+      "succession_partage"
+    ],
+    "calculateurs": [
+      "calculCoutProcedure"
+    ],
     "dureeEstimee": "3 mois à 2 ans"
   },
   {
@@ -435,8 +474,14 @@
         "attention": "Exercer sans autorisation peut entraîner des amendes et la fermeture de l'activité."
       }
     ],
-    "fichesLiees": ["entreprise_creation", "entreprise_tva", "entreprise_assurances_sociales"],
-    "calculateurs": ["calculCoutProcedure"],
+    "fichesLiees": [
+      "entreprise_creation",
+      "entreprise_tva",
+      "entreprise_assurances_sociales"
+    ],
+    "calculateurs": [
+      "calculCoutProcedure"
+    ],
     "dureeEstimee": "2-8 semaines"
   },
   {
@@ -460,7 +505,7 @@
         "delai": "Dès que la situation est établie",
         "details": "Informer le supérieur hiérarchique, les RH ou la personne de confiance. L'employeur a l'obligation légale de protéger la personnalité de ses employés.",
         "baseLegale": "CO 328; LEg art. 5",
-        "templateLettre": "travail_signalement_harcelement",
+        "templateLettre": "travail_signalement_harcélément",
         "calculateur": null,
         "attention": "Si le harceleur est votre supérieur direct, adressez-vous directement aux RH ou à la direction."
       },
@@ -495,8 +540,15 @@
         "attention": "Les délais de prescription varient : 1 an dès connaissance (responsabilité délictuelle), 5 ans pour les prétentions contractuelles."
       }
     ],
-    "fichesLiees": ["travail_harcelement_moral", "travail_harcelement_sexuel", "travail_protection_personnalite"],
-    "calculateurs": ["calculCoutProcedure", "calculIndemniteLicenciement"],
+    "fichesLiees": [
+      "travail_harcélément_moral",
+      "travail_harcélément_sexuel",
+      "travail_protection_personnalite"
+    ],
+    "calculateurs": [
+      "calculCoutProcedure",
+      "calculIndemniteLicenciement"
+    ],
     "dureeEstimee": "Plusieurs mois à 2 ans"
   },
   {
@@ -518,7 +570,7 @@
         "ordre": 2,
         "titre": "Faire opposition (si la dette est contestée)",
         "delai": "10 jours dès la notification",
-        "details": "Écrire 'OPPOSITION' directement sur le commandement de payer OU la formuler verbalement auprès de l'office des poursuites. L'opposition bloque la poursuite.",
+        "details": "Écrire 'OPPOSITION' directement sur le commandement de payer OU la formuler verbalement auprès de l'office des poursuites. L'opposition bloqué la poursuite.",
         "baseLegale": "LP art. 74-77",
         "templateLettre": null,
         "calculateur": null,
@@ -555,8 +607,17 @@
         "attention": "Un arrangement amiable est presque toujours préférable à une saisie. Mettez tout par écrit."
       }
     ],
-    "fichesLiees": ["dettes_commandement_payer", "dettes_opposition", "dettes_saisie_salaire", "dettes_arrangement_amiable"],
-    "calculateurs": ["calculPrescription", "calculCoutProcedure", "calculSaisieSalaire"],
+    "fichesLiees": [
+      "dettes_commandement_payer",
+      "dettes_opposition",
+      "dettes_saisie_salaire",
+      "dettes_arrangement_amiable"
+    ],
+    "calculateurs": [
+      "calculPrescription",
+      "calculCoutProcedure",
+      "calculSaisieSalaire"
+    ],
     "dureeEstimee": "2 semaines à 6 mois"
   },
   {
@@ -615,8 +676,14 @@
         "attention": "Un refus n'empêche pas une nouvelle demande après un délai raisonnable (souvent 2 ans)."
       }
     ],
-    "fichesLiees": ["etrangers_naturalisation", "etrangers_permis_c", "etrangers_regroupement"],
-    "calculateurs": ["calculCoutProcedure"],
+    "fichesLiees": [
+      "étrangers_naturalisation",
+      "étrangers_permis_c",
+      "étrangers_regroupement"
+    ],
+    "calculateurs": [
+      "calculCoutProcedure"
+    ],
     "dureeEstimee": "1-3 ans"
   },
   {
@@ -640,7 +707,7 @@
         "delai": "Dans les 3 mois (délai de plainte pénale)",
         "details": "Plainte pénale auprès de la police ou du Ministère public. Pour les infractions poursuivies d'office (lésions corporelles graves, viol), pas de délai de plainte.",
         "baseLegale": "CP art. 31 (délai de plainte); CP 123, 126, 180, 189, 190",
-        "templateLettre": "violence_plainte_penale",
+        "templateLettre": "violence_plainte_pénale",
         "calculateur": null,
         "attention": "Vous pouvez retirer votre plainte, mais seulement pour les infractions poursuivies sur plainte (pas d'office)."
       },
@@ -675,8 +742,14 @@
         "attention": "L'indemnisation LAVI est subsidiaire (après assurances sociales et RC). Mais elle est rapide et peu formelle."
       }
     ],
-    "fichesLiees": ["violence_domestique", "violence_plainte", "famille_mesures_protection"],
-    "calculateurs": ["calculCoutProcedure"],
+    "fichesLiees": [
+      "violence_domestique",
+      "violence_plainte",
+      "famille_mesures_protection"
+    ],
+    "calculateurs": [
+      "calculCoutProcedure"
+    ],
     "dureeEstimee": "Immédiat (protection) à 2 ans (procédure)"
   },
   {
@@ -700,7 +773,7 @@
         "delai": "Si non-paiement après 30 jours",
         "details": "Résiliation avec effet à 30 jours pour la fin d'un mois (CO 257d al. 2). Utiliser le formulaire officiel cantonal. Envoyer séparément à chaque locataire.",
         "baseLegale": "CO 257d",
-        "templateLettre": "bail_resiliation_extraordinaire",
+        "templateLettre": "bail_résiliation_extraordinaire",
         "calculateur": null,
         "attention": "Si le locataire paie INTÉGRALEMENT dans le délai de 30 jours, la menace de résiliation tombe."
       },
@@ -735,8 +808,14 @@
         "attention": "Le droit de rétention du bailleur (CO 268) porte sur les meubles du locataire présents dans les locaux."
       }
     ],
-    "fichesLiees": ["bail_loyers_impayes", "bail_resiliation_extraordinaire", "dettes_commandement_payer"],
-    "calculateurs": ["calculCoutProcedure"],
+    "fichesLiees": [
+      "bail_loyers_impayés",
+      "bail_résiliation_extraordinaire",
+      "dettes_commandement_payer"
+    ],
+    "calculateurs": [
+      "calculCoutProcedure"
+    ],
     "dureeEstimee": "2-12 mois"
   },
   {
@@ -795,8 +874,15 @@
         "attention": "La procédure en matière de bail est gratuite jusqu'à une certaine valeur litigieuse (variable selon le canton)."
       }
     ],
-    "fichesLiees": ["bail_loyer_abusif", "bail_augmentation", "bail_baisse_loyer"],
-    "calculateurs": ["calculRendementAdmissible", "calculCoutProcedure"],
+    "fichesLiees": [
+      "bail_loyer_abusif",
+      "bail_augmentation",
+      "bail_baisse_loyer"
+    ],
+    "calculateurs": [
+      "calculRendementAdmissible",
+      "calculCoutProcedure"
+    ],
     "dureeEstimee": "1-6 mois"
   },
   {
@@ -855,8 +941,15 @@
         "attention": "La procédure est gratuite mais les frais d'avocat restent à votre charge (sauf aide juridictionnelle)."
       }
     ],
-    "fichesLiees": ["assurance_ai_rente", "assurance_ai_readaptation", "assurance_ai_recours"],
-    "calculateurs": ["calculCoutProcedure", "calculEligibiliteAJ"],
+    "fichesLiees": [
+      "assurance_ai_rente",
+      "assurance_ai_readaptation",
+      "assurance_ai_recours"
+    ],
+    "calculateurs": [
+      "calculCoutProcedure",
+      "calculEligibiliteAJ"
+    ],
     "dureeEstimee": "1-3 ans"
   },
   {
@@ -915,8 +1008,14 @@
         "attention": "Les PC sont un droit, pas de l'aide sociale. Ne pas hésiter à les demander."
       }
     ],
-    "fichesLiees": ["famille_curatelle", "famille_mandat_inaptitude", "assurance_allocation_impotent"],
-    "calculateurs": ["calculEligibiliteAJ"],
+    "fichesLiees": [
+      "famille_curatelle",
+      "famille_mandat_inaptitude",
+      "assurance_allocation_impotent"
+    ],
+    "calculateurs": [
+      "calculEligibiliteAJ"
+    ],
     "dureeEstimee": "Durée indéterminée (situation de longue durée)"
   }
 ]

@@ -293,11 +293,11 @@ export async function generateDocxFromParts({
     day: 'numeric', month: 'long', year: 'numeric'
   }).format(new Date());
 
-  const senderName = expediteur.nom || '[Votre nom et prénom]';
-  const senderAddr = expediteur.adresse || '[Votre adresse]\n[NPA Localité]';
-  const destName = destinataire.nom || '[Nom du destinataire]';
-  const destAddr = destinataire.adresse || '[Adresse du destinataire]\n[NPA Localité]';
-  const locationStr = lieu || '[Localité]';
+  const senderName = expediteur.nom || '[VOTRE NOM ET PRÉNOM]';
+  const senderAddr = expediteur.adresse || '[VOTRE ADRESSE]\n[NPA LOCALITÉ]';
+  const destName = destinataire.nom || '[NOM DU DESTINATAIRE]';
+  const destAddr = destinataire.adresse || '[ADRESSE DU DESTINATAIRE]\n[NPA LOCALITÉ]';
+  const locationStr = lieu || '[LOCALITÉ]';
 
   const fullText = `${senderName}
 ${senderAddr}

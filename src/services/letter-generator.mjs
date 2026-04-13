@@ -2,20 +2,20 @@ import { getFicheById } from './fiches.mjs';
 
 const VALID_TYPES = ['mise_en_demeure', 'contestation', 'opposition', 'resiliation', 'plainte'];
 
-const DISCLAIMER = "AVERTISSEMENT : Cette lettre est generee automatiquement a titre de modele. Elle ne constitue PAS un document juridique definitif. Faites-la relire par un professionnel du droit avant envoi. JusticePourtous decline toute responsabilite.";
+const DISCLAIMER = "AVERTISSEMENT : Cette lettre est générée automatiquement à titre de modèle. Elle ne constitue PAS un document juridique définitif. Faites-la relire par un professionnel du droit avant envoi. JusticePourtous décline toute responsabilité.";
 
 const TYPE_LABELS = {
   mise_en_demeure: 'Mise en demeure',
   contestation: 'Contestation',
   opposition: 'Opposition',
-  resiliation: 'Resiliation',
+  resiliation: 'Résiliation',
   plainte: 'Plainte'
 };
 
 function formatDate() {
   const d = new Date();
-  const months = ['janvier', 'fevrier', 'mars', 'avril', 'mai', 'juin',
-    'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'decembre'];
+  const months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin',
+    'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
   return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
 }
 
@@ -27,7 +27,7 @@ function fillPlaceholders(template, userContext) {
   text = text.replace(/\[date\]/gi, ctx.dateEvenement || '[date de l\'evenement]');
   text = text.replace(/\[source\]/gi, ctx.source || '[source du probleme]');
   text = text.replace(/\[description[^\]]*\]/gi, ctx.description || '[description detaillee]');
-  text = text.replace(/\[Signature\]/gi, ctx.nom || '[Votre nom et prenom]');
+  text = text.replace(/\[Signature\]/gi, ctx.nom || '[Votre nom et prénom]');
   text = text.replace(/\[nom[^\]]*\]/gi, ctx.nom || '[Votre nom]');
 
   return text;
@@ -35,10 +35,10 @@ function fillPlaceholders(template, userContext) {
 
 function buildSwissLetterFormat({ nom, adresse, lieu, destinataire, objet, corps, type }) {
   const dateStr = formatDate();
-  const senderName = nom || '[Votre nom et prenom]';
-  const senderAddress = adresse || '[Votre adresse]\n[NPA Localite]';
-  const dest = destinataire || '[Nom du destinataire]\n[Adresse du destinataire]\n[NPA Localite]';
-  const locationStr = lieu || '[Localite]';
+  const senderName = nom || '[Votre nom et prénom]';
+  const senderAddress = adresse || '[Votre adresse]\n[NPA Localité]';
+  const dest = destinataire || '[Nom du destinataire]\n[Adresse du destinataire]\n[NPA Localité]';
+  const locationStr = lieu || '[Localité]';
 
   return `${senderName}
 ${senderAddress}
@@ -47,13 +47,13 @@ ${dest}
 
 ${locationStr}, le ${dateStr}
 
-Envoi en recommande
+Envoi en recommandé
 
 Objet : ${objet || TYPE_LABELS[type] || type}
 
 ${corps}
 
-Dans l'attente de votre reponse, je vous prie d'agreer, Madame, Monsieur, mes salutations distinguees.
+Dans l'attente de votre réponse, je vous prie d'agréer, Madame, Monsieur, mes salutations distinguées.
 
 ${senderName}
 
@@ -87,13 +87,13 @@ function generateTemplateFromFiche(fiche, userContext, type) {
 
   // No template in fiche — generate a generic one
   const articlesStr = articles.map(a => `${a.ref} (${a.titre})`).join(', ');
-  const corps = `Par la presente, je me permets de vous adresser cette ${TYPE_LABELS[type].toLowerCase()} concernant ${fiche.sousDomaine} dans le domaine ${fiche.domaine}.
+  const corps = `Par la présente, je me permets de vous adresser cette ${TYPE_LABELS[type].toLowerCase()} concernant ${fiche.sousDomaine} dans le domaine ${fiche.domaine}.
 
 ${userContext?.description || '[Description de votre situation]'}
 
-Conformement aux dispositions legales applicables${articlesStr ? ' (' + articlesStr + ')' : ''}, je vous demande de bien vouloir donner suite a la presente dans un delai de 30 jours.
+Conformément aux dispositions légales applicables${articlesStr ? ' (' + articlesStr + ')' : ''}, je vous demande de bien vouloir donner suite à la présente dans un délai de 30 jours.
 
-Je me reserve le droit de saisir les autorites competentes en cas d'absence de reponse.`;
+Je me réserve le droit de saisir les autorités compétentes en cas d'absence de réponse.`;
 
   return buildSwissLetterFormat({
     nom: userContext?.nom,
@@ -109,26 +109,27 @@ Je me reserve le droit de saisir les autorites competentes en cas d'absence de r
 async function callClaudeForLetter(fiche, userContext, type) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
 
-  const systemPrompt = `Tu es un redacteur juridique suisse. Tu rediges des lettres formelles en francais selon le format suisse standard.
+  const systemPrompt = `Tu es un rédacteur juridique suisse. Tu rédiges des lettres formelles en français selon le format suisse standard.
 
-FICHE DE REFERENCE :
+FICHE DE RÉFÉRENCE :
 Domaine: ${fiche.domaine}
 Explication: ${fiche.reponse.explication}
 Articles: ${fiche.reponse.articles.map(a => `${a.ref}: ${a.titre}`).join(', ')}
 
-MODELE DE BASE :
-${fiche.reponse.modeleLettre || 'Aucun modele disponible'}
+MODÈLE DE BASE :
+${fiche.reponse.modeleLettre || 'Aucun modèle disponible'}
 
-REGLES :
-- Format lettre suisse (expediteur, destinataire, lieu/date, objet, corps, salutations)
+RÈGLES :
+- Format lettre suisse (expéditeur, destinataire, lieu/date, objet, corps, salutations)
 - Cite les articles de loi pertinents
 - Ton formel et professionnel
-- Pas de jargon inutile`;
+- Pas de jargon inutile
+- N'inclus PAS de ligne "Objet :" dans le corps — je l'ajoute séparément`;
 
-  const userPrompt = `Redige une lettre de type "${TYPE_LABELS[type]}" pour cette situation :
+  const userPrompt = `Rédige une lettre de type "${TYPE_LABELS[type]}" pour cette situation :
 ${JSON.stringify(userContext)}
 
-Retourne UNIQUEMENT le corps de la lettre (sans en-tete ni signature, je les ajouterai).`;
+Retourne UNIQUEMENT le corps de la lettre (Madame, Monsieur, ... jusqu'avant les salutations finales). Pas d'en-tête, pas de signature, pas de ligne "Objet".`;
 
   const body = JSON.stringify({
     model: 'claude-sonnet-4-20250514',
@@ -166,7 +167,7 @@ Retourne UNIQUEMENT le corps de la lettre (sans en-tete ni signature, je les ajo
 export async function generateLetter({ ficheId, userContext, type }) {
   if (!ficheId) throw new Error('ficheId requis');
   if (!type || !VALID_TYPES.includes(type)) {
-    throw new Error(`Type invalide. Types acceptes : ${VALID_TYPES.join(', ')}`);
+    throw new Error(`Type invalide. Types acceptés : ${VALID_TYPES.join(', ')}`);
   }
 
   const fiche = getFicheById(ficheId);
@@ -175,13 +176,17 @@ export async function generateLetter({ ficheId, userContext, type }) {
   // With API key → Claude-personalized letter
   if (process.env.ANTHROPIC_API_KEY) {
     try {
-      const corps = await callClaudeForLetter(fiche, userContext || {}, type);
+      let corps = await callClaudeForLetter(fiche, userContext || {}, type);
+      // Remove any "Objet:" line the LLM may have included (we add our own)
+      const objetMatch = corps.match(/Objet\s*:\s*(.+)/);
+      const objet = objetMatch ? objetMatch[1].trim() : `${TYPE_LABELS[type]} — ${fiche.sousDomaine}`;
+      corps = corps.replace(/Objet\s*:.+\n?/g, '').trim();
       const lettre = buildSwissLetterFormat({
         nom: userContext?.nom,
         adresse: userContext?.adresse,
         lieu: userContext?.lieu,
         destinataire: userContext?.destinataire,
-        objet: `${TYPE_LABELS[type]} — ${fiche.sousDomaine}`,
+        objet,
         corps,
         type
       });

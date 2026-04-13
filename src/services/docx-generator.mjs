@@ -171,7 +171,7 @@ export async function generateDocx(letterText, meta = {}) {
     }
 
     // "Madame, Monsieur," salutation
-    if (trimmed.startsWith('Madame, Monsieur') || trimmed.startsWith('Dans l\'attente') || trimmed.startsWith('Dans l'attente') || trimmed.startsWith('Je vous prie') || trimmed.startsWith('Veuillez')) {
+    if (trimmed.startsWith('Madame, Monsieur') || trimmed.startsWith('Dans l') || trimmed.startsWith('Je vous prie') || trimmed.startsWith('Veuillez')) {
       paragraphs.push(new Paragraph({
         spacing: { before: 200, after: 100 },
         children: parseLineWithPlaceholders(trimmed),

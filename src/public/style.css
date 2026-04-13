@@ -1952,7 +1952,6 @@ body.has-disclaimer {
 .hero {
   text-align: center;
   padding: var(--space-3xl) 0 var(--space-2xl);
-  min-height: 60vh;
   display: flex;
   align-items: center;
 }
@@ -2212,6 +2211,28 @@ body.has-disclaimer {
   font-size: 0.85rem;
   line-height: 1.5;
   color: var(--text-secondary);
+}
+
+/* --- Search section (standalone, below domains) --- */
+.search-section {
+  padding: var(--space-3xl) 0;
+  background: var(--surface-sunken);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.search-section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+  text-align: center;
+}
+
+.search-section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 540px;
+  margin: 0 auto var(--space-xl);
 }
 
 /* --- Stat section --- */

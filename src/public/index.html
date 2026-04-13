@@ -46,39 +46,13 @@
     <div class="hero-inner">
       <p class="hero-eyebrow">Droit suisse pratique</p>
       <h1 class="hero-title">
-        Décrivez votre problème.<br>
-        <span class="hero-accent">On vous guide.</span>
+        Le droit suisse,<br>
+        <span class="hero-accent">accessible à tous.</span>
       </h1>
       <p class="hero-subtitle">
         JusticePourtous identifie votre situation juridique, vous dit quoi faire,
         dans quel délai, et vers qui vous tourner &mdash; gratuitement et anonymement.
       </p>
-
-      <form class="search" id="searchForm" onsubmit="handleSearch(event)">
-        <div class="search-field">
-          <input
-            type="text"
-            id="searchInput"
-            class="search-input"
-            placeholder="Mon propriétaire refuse de rembourser ma caution..."
-            autocomplete="off"
-            autocorrect="off"
-            spellcheck="false"
-            maxlength="500"
-            aria-label="Décrivez votre problème juridique"
-          >
-          <button type="submit" class="search-submit">
-            Analyser ma situation
-          </button>
-        </div>
-        <div class="search-suggestions">
-          <button type="button" class="suggestion" onclick="fillSearch('mon propriétaire refuse de rembourser ma caution')">Caution non remboursée</button>
-          <button type="button" class="suggestion" onclick="fillSearch('licenciement pendant arrêt maladie')">Licenciement &amp; maladie</button>
-          <button type="button" class="suggestion" onclick="fillSearch('heures supplémentaires non payées')">Heures sup impayées</button>
-          <button type="button" class="suggestion" onclick="fillSearch('j\'ai reçu un commandement de payer')">Commandement de payer</button>
-          <button type="button" class="suggestion" onclick="fillSearch('mon ex ne paie pas la pension')">Pension impayée</button>
-        </div>
-      </form>
     </div>
   </header>
 
@@ -139,6 +113,39 @@
     <div class="domains-inner">
       <h2 class="section-eyebrow">Parcourir par domaine</h2>
       <div class="domains-grid" id="domaines"></div>
+    </div>
+  </section>
+
+  <!-- Search / Analyze -->
+  <section class="search-section">
+    <div class="search-section-inner">
+      <h2 class="section-eyebrow">Analyser ma situation</h2>
+      <p class="search-section-subtitle">Décrivez votre problème et notre IA identifie vos droits, vos délais et les démarches à suivre.</p>
+      <form class="search" id="searchForm" onsubmit="handleSearch(event)">
+        <div class="search-field">
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Mon propriétaire refuse de rembourser ma caution..."
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+            maxlength="500"
+            aria-label="Décrivez votre problème juridique"
+          >
+          <button type="submit" class="search-submit">
+            Analyser
+          </button>
+        </div>
+        <div class="search-suggestions">
+          <button type="button" class="suggestion" onclick="fillSearch('mon propriétaire refuse de rembourser ma caution')">Caution non remboursée</button>
+          <button type="button" class="suggestion" onclick="fillSearch('licenciement pendant arrêt maladie')">Licenciement &amp; maladie</button>
+          <button type="button" class="suggestion" onclick="fillSearch('heures supplémentaires non payées')">Heures sup impayées</button>
+          <button type="button" class="suggestion" onclick="fillSearch('j\'ai reçu un commandement de payer')">Commandement de payer</button>
+          <button type="button" class="suggestion" onclick="fillSearch('mon ex ne paie pas la pension')">Pension impayée</button>
+        </div>
+      </form>
     </div>
   </section>
 

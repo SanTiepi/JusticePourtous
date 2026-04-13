@@ -452,6 +452,14 @@
         html += '<div class="source-footer"><span>Analyse basée sur <span class="source-count">' + data.sources_count + ' sources</span></span></div>';
       }
 
+      // Cost info
+      if (data.cost && data.cost.charged_centimes) {
+        html += '<div class="premium-cost-receipt">';
+        html += 'Coût de cette analyse : <strong>CHF ' + (data.cost.charged_centimes / 100).toFixed(2) + '</strong>';
+        html += ' — Solde restant : CHF ' + (data.cost.solde_restant / 100).toFixed(2);
+        html += '</div>';
+      }
+
       if (!html) html = '<p>Aucun résultat. Vérifiez votre description.</p>';
       txt.innerHTML = html;
     }

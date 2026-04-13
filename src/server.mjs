@@ -7,7 +7,7 @@ import { getAllFiches, getFicheById } from './services/fiches.mjs';
 import { consulter, getQuestionsForDomaine } from './services/consultation.mjs';
 import { getServicesByCanton } from './services/annuaire.mjs';
 import {
-  acheterWallet, getCredits, analyser, genererLettre, ocrDocument,
+  acheterWallet, getCredits, debitSession, analyser, genererLettre, ocrDocument,
   analyserAI, ocrDocumentAI, genererLettreAI, estimerCout, getHistorique
 } from './services/premium.mjs';
 import { getAllStatistiques, getStatistiquesByDomaine } from './services/statistiques.mjs';
@@ -898,6 +898,11 @@ const server = createServer(async (req, res) => {
       const body = await parseBody(req);
       if (!body.texte) return json(res, 400, { error: 'texte requis', disclaimer: DISCLAIMER });
 
+      // Session check — require valid wallet
+      const sessionCode = body.session || req.headers['x-session'];
+      const walletCheck = getCredits(sessionCode);
+      if (walletCheck.error) return json(res, walletCheck.status || 403, { error: walletCheck.error, disclaimer: DISCLAIMER });
+
       // Scope V1: bail, travail, dettes uniquement
       const SUPPORTED_V3 = ['bail', 'travail', 'dettes'];
 
@@ -930,6 +935,17 @@ const server = createServer(async (req, res) => {
         const ficheId = result.comprehension?.ficheId || result.comprehension?.fiches_pertinentes?.[0];
         const vulg = ficheId ? getVulgarisationForFiche(ficheId) : null;
 
+        // Debit wallet based on actual token usage (with 50% margin)
+        const usage = result.usage || {};
+        const totalTokens = (usage.total_input || 0) + (usage.total_output || 0);
+        // Approximate cost: Sonnet rates ~3$/1M input + 15$/1M output ≈ avg 9$/1M → ~0.8 CHF/1M → 0.08 ct/1K
+        const apiCostCentimes = Math.max(3, Math.ceil(totalTokens / 1000 * 0.08));
+        const debitResult = debitSession(sessionCode, apiCostCentimes, 'analyse_v3');
+        // Don't block on insufficient funds for test accounts — just log
+        if (debitResult.error && !debitResult.error.includes('test')) {
+          console.log('Debit warning:', debitResult.error, 'session:', sessionCode);
+        }
+
         return json(res, 200, {
           mode_crise: false,
           complet: result.complet,
@@ -957,6 +973,7 @@ const server = createServer(async (req, res) => {
           normative: result.normative || null,
           vulgarisation: vulg,
           usage: result.usage,
+          cost: debitResult.charged ? { charged_centimes: debitResult.charged, solde_restant: debitResult.solde } : null,
           disclaimer: DISCLAIMER
         });
       } catch (err) {

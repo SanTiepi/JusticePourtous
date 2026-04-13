@@ -3437,6 +3437,18 @@ body.has-disclaimer {
   color: var(--text-primary);
 }
 
+/* Premium cost receipt */
+.premium-cost-receipt {
+  margin-top: var(--space-lg);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(45, 106, 79, 0.06);
+  border: 1px solid rgba(45, 106, 79, 0.15);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .premium-pricing-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto var(--space-xl); }
 }

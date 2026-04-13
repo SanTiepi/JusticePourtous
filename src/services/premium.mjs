@@ -63,6 +63,25 @@ wallets.set(TEST_SESSION, {
   ]
 });
 
+const MARGIN_MULTIPLIER = 1.5; // 50% margin on API costs
+
+/**
+ * Debit a session wallet. Cost in centimes, with margin applied.
+ * @param {string} sessionCode
+ * @param {number} apiCostCentimes — raw API cost
+ * @param {string} action — description for history
+ * @returns {{error?: string, status?: number, charged?: number}}
+ */
+export function debitSession(sessionCode, apiCostCentimes, action = 'analyse') {
+  const { wallet, error, status } = getWallet(sessionCode);
+  if (error) return { error, status };
+
+  const charged = Math.max(1, Math.ceil(apiCostCentimes * MARGIN_MULTIPLIER));
+  const err = debit(wallet, charged, action);
+  if (err) return err;
+  return { charged, solde: wallet.solde };
+}
+
 export function acheterWallet(montantCentimes) {
   const solde = montantCentimes || WALLET_CREDITS_CENTIMES;
   const sessionCode = generateSessionCode();

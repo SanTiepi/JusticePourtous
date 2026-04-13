@@ -2,7 +2,8 @@ import { describe, it, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   compile, getRulesForDomain, getRuleDefinitions, execRule,
-  ALL_RULES, BAIL_RULES, TRAVAIL_RULES, DETTES_RULES
+  ALL_RULES, BAIL_RULES, TRAVAIL_RULES, DETTES_RULES,
+  CONSOMMATION_RULES, ASSURANCES_RULES, VOISINAGE_RULES
 } from '../src/services/normative-compiler.mjs';
 import { server } from '../src/server.mjs';
 
@@ -206,6 +207,103 @@ describe('Normative Compiler', () => {
     it('POST /api/compiler/execute without facts returns 400', async () => {
       const res = await httpPost('/api/compiler/execute', {});
       assert.equal(res.status, 400);
+    });
+  });
+
+  describe('consommation rules', () => {
+    it('has at least 3 rules', () => {
+      assert.ok(CONSOMMATION_RULES.length >= 3, `Only ${CONSOMMATION_RULES.length} consommation rules`);
+    });
+
+    it('garantie défaut: 2 ans pour achat neuf', () => {
+      const result = compile({ domaine: 'consommation', achat_defectueux: true, achat_neuf: true, prix_achat: 500 });
+      const garantie = result.results.find(r => r.rule_id === 'consommation_garantie_legale');
+      assert.ok(garantie?.applicable);
+      assert.equal(garantie.consequence.prescription, '2 ans');
+    });
+
+    it('garantie exclue si défaut connu', () => {
+      const result = compile({ domaine: 'consommation', achat_defectueux: true, defaut_connu_achat: true });
+      const garantie = result.results.find(r => r.rule_id === 'consommation_garantie_legale');
+      assert.ok(!garantie?.applicable);
+    });
+
+    it('révocation démarchage = 14 jours', () => {
+      const result = compile({ domaine: 'consommation', demarchage_domicile: true, prix_achat: 500 });
+      const revo = result.results.find(r => r.rule_id === 'consommation_droit_revocation_demarchage');
+      assert.ok(revo?.applicable);
+      assert.equal(revo.consequence.delai_jours, 14);
+    });
+
+    it('révocation bloquée sous CHF 100', () => {
+      const result = compile({ domaine: 'consommation', demarchage_domicile: true, prix_achat: 50 });
+      const revo = result.results.find(r => r.rule_id === 'consommation_droit_revocation_demarchage');
+      assert.ok(!revo?.applicable);
+    });
+  });
+
+  describe('assurances rules', () => {
+    it('has at least 3 rules', () => {
+      assert.ok(ASSURANCES_RULES.length >= 3, `Only ${ASSURANCES_RULES.length} assurances rules`);
+    });
+
+    it('contestation décision = 30 jours', () => {
+      const result = compile({ domaine: 'assurances', decision_assurance_contestee: true });
+      const contest = result.results.find(r => r.rule_id === 'assurance_contestation_decision');
+      assert.ok(contest?.applicable);
+      assert.equal(contest.consequence.delai_jours, 30);
+      assert.equal(contest.consequence.gratuit, true);
+    });
+
+    it('accident professionnel: annonce 3 jours', () => {
+      const result = compile({ domaine: 'assurances', accident_professionnel: true });
+      const accident = result.results.find(r => r.rule_id === 'assurance_accident_delai_annonce');
+      assert.ok(accident?.applicable);
+      assert.ok(accident.consequence.prestations.includes('frais médicaux 100%'));
+    });
+  });
+
+  describe('voisinage rules', () => {
+    it('has at least 3 rules', () => {
+      assert.ok(VOISINAGE_RULES.length >= 3, `Only ${VOISINAGE_RULES.length} voisinage rules`);
+    });
+
+    it('immissions excessives: applicable si nuisance voisin en bail', () => {
+      const result = compile({ domaine: 'bail', nuisance_voisin: true });
+      const immissions = result.results.find(r => r.rule_id === 'voisinage_immissions_excessives');
+      assert.ok(immissions?.applicable, 'immissions should apply to bail+nuisance_voisin');
+    });
+
+    it('arbres distance: 5m haute tige', () => {
+      const result = compile({ domaine: 'voisinage', probleme_plantations: true, canton: 'VD' });
+      const arbres = result.results.find(r => r.rule_id === 'voisinage_arbres_distance');
+      assert.ok(arbres?.applicable);
+      assert.equal(arbres.consequence.distance_haute_tige, '5 mètres (à défaut de droit cantonal)');
+    });
+
+    it('droit de passage: applicable si enclave', () => {
+      const result = compile({ domaine: 'voisinage', enclave: true });
+      const passage = result.results.find(r => r.rule_id === 'voisinage_droit_passage');
+      assert.ok(passage?.applicable);
+    });
+
+    it('zone industrielle = tolérance plus élevée (non bloquant)', () => {
+      const result = compile({ domaine: 'voisinage', nuisance_voisin: true, zone_industrielle: true });
+      const immissions = result.results.find(r => r.rule_id === 'voisinage_immissions_excessives');
+      assert.ok(immissions?.applicable, 'should still be applicable');
+      assert.ok(immissions.exceptions.some(e => e.triggered), 'zone industrielle exception should trigger');
+    });
+  });
+
+  describe('cross-domain rule count', () => {
+    it('total rules >= 22 (13 original + 9 new)', () => {
+      assert.ok(ALL_RULES.length >= 22, `Only ${ALL_RULES.length} rules, expected >=22`);
+    });
+
+    it('rule IDs are all unique', () => {
+      const ids = ALL_RULES.map(r => r.id);
+      const unique = new Set(ids);
+      assert.equal(ids.length, unique.size, 'duplicate rule IDs');
     });
   });
 });

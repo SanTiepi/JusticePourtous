@@ -386,9 +386,198 @@ const TRANSVERSAL_RULES = [
   },
 ];
 
+// ═══════════════════════════════════════════════════════════════
+// CONSOMMATION RULES
+// ═══════════════════════════════════════════════════════════════
+
+const CONSOMMATION_RULES = [
+  {
+    id: 'consommation_garantie_legale',
+    label: 'Garantie légale des défauts (vente)',
+    base_legale: 'CO 197-210',
+    source_ids: ['fedlex:rs220:co-197'],
+    condition: (f) => f.domaine === 'consommation' && f.achat_defectueux,
+    consequence: (f) => {
+      const delaiSignalement = f.achat_neuf ? '2 ans' : '1 an (usage)';
+      return {
+        text: `L'acheteur doit signaler le défaut immédiatement après sa découverte. La prescription est de ${delaiSignalement} dès la livraison.`,
+        delai_signalement: 'immédiat (dès découverte)',
+        prescription: delaiSignalement,
+        droits: ['réduction du prix (CO 205)', 'résolution de la vente (CO 205)', 'remplacement si chose de genre (CO 206)'],
+        condition_prealable: 'Le défaut ne doit pas avoir été connu à l\'achat.',
+      };
+    },
+    computation: (f) => f.prix_achat ? `Prix payé: ${f.prix_achat} CHF — remboursement partiel ou total possible` : null,
+    exceptions: [
+      {
+        id: 'consommation_garantie_exclue_connue',
+        label: 'Défaut connu à l\'achat',
+        condition: (f) => f.defaut_connu_achat,
+        consequence: 'Si l\'acheteur connaissait le défaut au moment de l\'achat, il ne peut plus s\'en prévaloir (CO 200).',
+        source_id: 'fedlex:rs220:co-200',
+        blocks: true,
+      },
+    ],
+  },
+  {
+    id: 'consommation_droit_revocation_demarchage',
+    label: 'Droit de révocation (démarchage à domicile)',
+    base_legale: 'CO 40a-40g',
+    source_ids: ['fedlex:rs220:co-40a'],
+    condition: (f) => f.domaine === 'consommation' && f.demarchage_domicile,
+    consequence: () => ({
+      text: 'En cas de démarchage à domicile ou de contrat conclu dans des circonstances similaires (foire, rue), le consommateur dispose de 14 jours pour révoquer le contrat.',
+      delai: '14 jours',
+      delai_jours: 14,
+      point_depart: 'réception de la chose ou conclusion du contrat',
+      forme: 'Déclaration écrite (pas de motivation nécessaire)',
+      consequence: 'Le vendeur doit restituer le prix payé.',
+    }),
+    exceptions: [
+      {
+        id: 'consommation_revocation_montant_min',
+        label: 'Pas de révocation sous CHF 100',
+        condition: (f) => f.prix_achat && f.prix_achat < 100,
+        consequence: 'Le droit de révocation ne s\'applique pas aux contrats portant sur moins de CHF 100 (CO 40a al. 2).',
+        source_id: 'fedlex:rs220:co-40a',
+        blocks: true,
+      },
+    ],
+  },
+  {
+    id: 'consommation_retard_livraison',
+    label: 'Retard de livraison — droits de l\'acheteur',
+    base_legale: 'CO 107-109',
+    source_ids: ['fedlex:rs220:co-107'],
+    condition: (f) => f.domaine === 'consommation' && f.retard_livraison,
+    consequence: () => ({
+      text: 'En cas de retard de livraison, l\'acheteur doit fixer un délai supplémentaire raisonnable par écrit. Passé ce délai, il peut renoncer à la livraison et demander des dommages-intérêts, ou maintenir sa demande.',
+      etapes: [
+        { numero: 1, action: 'Mise en demeure écrite avec délai supplémentaire', delai: 'raisonnable (7-30 jours selon l\'objet)' },
+        { numero: 2, action: 'Si toujours pas livré: choix entre résolution ou exécution', delai: 'après expiration du délai' },
+      ],
+    }),
+    exceptions: [],
+  },
+];
+
+// ═══════════════════════════════════════════════════════════════
+// ASSURANCES RULES
+// ═══════════════════════════════════════════════════════════════
+
+const ASSURANCES_RULES = [
+  {
+    id: 'assurance_lamal_subsides',
+    label: 'Droit aux subsides LAMal',
+    base_legale: 'LAMal 65',
+    source_ids: ['fedlex:rs832.10:lamal-65'],
+    condition: (f) => f.domaine === 'assurances' && f.difficulte_primes_lamal,
+    consequence: (f) => ({
+      text: 'Les personnes de condition économique modeste ont droit à des subsides cantonaux pour réduire leurs primes d\'assurance-maladie.',
+      demarche: f.canton
+        ? `Contacter le service des subsides du canton de ${f.canton}.`
+        : 'Contacter le service cantonal des subsides LAMal.',
+      delai: 'Demande possible en tout temps',
+      retroactivite: 'Certains cantons accordent des subsides rétroactifs (max. 5 ans).',
+    }),
+    exceptions: [],
+  },
+  {
+    id: 'assurance_contestation_decision',
+    label: 'Opposition à une décision d\'assurance sociale',
+    base_legale: 'LPGA 52',
+    source_ids: ['fedlex:rs830.1:lpga-52'],
+    condition: (f) => f.domaine === 'assurances' && f.decision_assurance_contestee,
+    consequence: () => ({
+      text: 'Toute décision d\'un assureur social (AI, AVS, LAA, etc.) peut être contestée par opposition dans les 30 jours.',
+      delai: '30 jours',
+      delai_jours: 30,
+      point_depart: 'notification de la décision',
+      forme: 'Opposition écrite et motivée à l\'assureur qui a rendu la décision',
+      gratuit: true,
+      etape_suivante: 'Si l\'opposition est rejetée: recours au tribunal cantonal des assurances dans les 30 jours.',
+    }),
+    exceptions: [],
+  },
+  {
+    id: 'assurance_accident_delai_annonce',
+    label: 'Délai d\'annonce d\'un accident professionnel',
+    base_legale: 'LAA 45, OLAA 53',
+    source_ids: ['fedlex:rs832.20:laa-45'],
+    condition: (f) => f.domaine === 'assurances' && f.accident_professionnel,
+    consequence: () => ({
+      text: 'L\'accident doit être annoncé immédiatement à l\'employeur, qui le transmet à l\'assurance-accidents. L\'employeur a 3 jours pour annoncer.',
+      delai_employeur: '3 jours dès connaissance de l\'accident',
+      delai_travailleur: 'immédiatement',
+      consequence_retard: 'Un retard d\'annonce peut réduire les prestations si l\'assureur subit un préjudice.',
+      prestations: ['frais médicaux 100%', 'indemnité journalière 80% du salaire', 'rente invalidité si séquelles'],
+    }),
+    exceptions: [],
+  },
+];
+
+// ═══════════════════════════════════════════════════════════════
+// VOISINAGE RULES
+// ═══════════════════════════════════════════════════════════════
+
+const VOISINAGE_RULES = [
+  {
+    id: 'voisinage_immissions_excessives',
+    label: 'Protection contre les immissions excessives',
+    base_legale: 'CC 684',
+    source_ids: ['fedlex:rs210:cc-684'],
+    condition: (f) => f.domaine === 'voisinage' || (f.domaine === 'bail' && f.nuisance_voisin),
+    consequence: () => ({
+      text: 'La propriété est grevée d\'une interdiction d\'émettre des immissions excessives (bruit, fumée, odeurs, vibrations). Le voisin lésé peut agir en cessation et en dommages-intérêts.',
+      demarche: 'Action civile au tribunal de district/arrondissement',
+      mesures_provisionnelles: 'Possibilité de mesures superprovisionnelles en cas d\'urgence',
+      preuve: 'Documenter les nuisances (journal, photos, témoignages, mesures de décibels)',
+    }),
+    exceptions: [
+      {
+        id: 'voisinage_immissions_usage_local',
+        label: 'Tolérance selon usage local',
+        condition: (f) => f.zone_industrielle || f.zone_agricole,
+        consequence: 'En zone industrielle ou agricole, le seuil de tolérance est plus élevé (CC 684 al. 2).',
+        source_id: 'fedlex:rs210:cc-684',
+        blocks: false,
+      },
+    ],
+  },
+  {
+    id: 'voisinage_arbres_distance',
+    label: 'Distance des plantations à la limite',
+    base_legale: 'CC 687',
+    source_ids: ['fedlex:rs210:cc-687'],
+    condition: (f) => f.domaine === 'voisinage' && f.probleme_plantations,
+    consequence: (f) => ({
+      text: 'Le droit cantonal fixe les distances minimales pour les plantations. En l\'absence de règle cantonale, les arbres de haute tige doivent être à 5m de la limite, les autres à 0.5m.',
+      distance_haute_tige: '5 mètres (à défaut de droit cantonal)',
+      distance_autres: '0.5 mètre (à défaut de droit cantonal)',
+      note: f.canton ? `Vérifier le droit cantonal de ${f.canton} qui peut prévoir des distances différentes.` : 'Le droit cantonal prime.',
+      action: 'Demander l\'arrachage ou l\'élagage si les distances ne sont pas respectées.',
+    }),
+    exceptions: [],
+  },
+  {
+    id: 'voisinage_droit_passage',
+    label: 'Droit de passage nécessaire',
+    base_legale: 'CC 694',
+    source_ids: ['fedlex:rs210:cc-694'],
+    condition: (f) => f.domaine === 'voisinage' && f.enclave,
+    consequence: () => ({
+      text: 'Le propriétaire qui n\'a pas d\'accès suffisant à la voie publique peut exiger un droit de passage sur le fonds voisin, contre pleine indemnité.',
+      conditions: ['pas d\'accès suffisant à la voie publique', 'nécessité effective', 'indemnité au voisin'],
+      forme: 'Accord amiable ou action au tribunal',
+      inscription: 'Servitude inscrite au registre foncier',
+    }),
+    exceptions: [],
+  },
+];
+
 // ─── All rules registry ─────────────────────────────────────────
 
-const ALL_RULES = [...BAIL_RULES, ...TRAVAIL_RULES, ...DETTES_RULES, ...TRANSVERSAL_RULES];
+const ALL_RULES = [...BAIL_RULES, ...TRAVAIL_RULES, ...DETTES_RULES, ...TRANSVERSAL_RULES, ...CONSOMMATION_RULES, ...ASSURANCES_RULES, ...VOISINAGE_RULES];
 
 // ─── Public API ─────────────────────────────────────────────────
 
@@ -438,4 +627,4 @@ export function getRuleDefinitions() {
   }));
 }
 
-export { ALL_RULES, BAIL_RULES, TRAVAIL_RULES, DETTES_RULES, TRANSVERSAL_RULES, execRule };
+export { ALL_RULES, BAIL_RULES, TRAVAIL_RULES, DETTES_RULES, TRANSVERSAL_RULES, CONSOMMATION_RULES, ASSURANCES_RULES, VOISINAGE_RULES, execRule };

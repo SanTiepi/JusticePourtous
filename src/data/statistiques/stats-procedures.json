@@ -1,6 +1,6 @@
 [
   {
-    "procédure": "Conciliation bail a loyer",
+    "procedure": "Conciliation bail a loyer",
     "domaine": "bail",
     "tauxSucces": "59% (conciliation aboutie par transaction, acquiescement ou desistement)",
     "sourceSucces": "OFL (Office fédéral du logement), Statistiques des procédures de conciliation, 1er semestre 2025",
@@ -17,7 +17,7 @@
     "risques": "Si échec → autorisation de procéder (valable 30 jours, CPC art. 209). 13.5% des cas se terminent par une autorisation de procéder."
   },
   {
-    "procédure": "Tribunal des prud'hommes (litiges de travail)",
+    "procedure": "Tribunal des prud'hommes (litiges de travail)",
     "domaine": "travail",
     "tauxSucces": "26.5% concilies en phase de conciliation, 55.6% renvoyes au tribunal. ~50% des jugements de 1ere instance sont attaques en appel, taux de succes en appel ~50%",
     "sourceSucces": "Pouvoir judiciaire Geneve, Tribunal des prud'hommes, rapport d'activité",
@@ -34,7 +34,7 @@
     "risques": "Procedure longue (1-2 ans). Un jugement sur deux est attaque en appel. Risque de frais d'avocat élevés si la valeur litigieuse dépassé CHF 30'000."
   },
   {
-    "procédure": "Licenciement abusif (art. 336-336b CO)",
+    "procedure": "Licenciement abusif (art. 336-336b CO)",
     "domaine": "travail",
     "tauxSucces": "Difficile a quantifier — seule une minorite des licencies conteste. L'indemnite est accordee quand le caractere abusif est prouve",
     "sourceSucces": "Art. 336a CO, jurisprudence du Tribunal fédéral",
@@ -51,7 +51,7 @@
     "risques": "Pas de reintegration possible en droit suisse (contrairement a d'autres pays). L'indemnite reste plafonnee a 6 mois meme pour les cas graves."
   },
   {
-    "procédure": "Poursuites (commandement de payer, LP)",
+    "procedure": "Poursuites (commandement de payer, LP)",
     "domaine": "poursuites",
     "tauxSucces": null,
     "sourceSucces": null,
@@ -68,7 +68,7 @@
     "risques": "L'opposition bloqué la poursuite mais le creancier peut demander la mainlevee au tribunal. Sans opposition, la poursuite continue automatiquement vers la saisie."
   },
   {
-    "procédure": "Assistance judiciaire (aide juridictionnelle)",
+    "procedure": "Assistance judiciaire (aide juridictionnelle)",
     "domaine": "assistance-judiciaire",
     "tauxSucces": "Taux d'octroi non publie au niveau national. Conditions cumulatives: indigence + chances de succes de la cause",
     "sourceSucces": "CPC art. 117-123, jurisprudence TF",
@@ -85,7 +85,7 @@
     "risques": "Si refusee, les frais restent a votre charge. En cas de gain du procès, l'assistance peut etre revoquee rétroactivement si votre situation financiere s'ameliore."
   },
   {
-    "procédure": "Divorce",
+    "procedure": "Divorce",
     "domaine": "famille",
     "tauxSucces": "Taux de divorce en Suisse: 39.8% (2024). Divorce sur requete commune: ~60% des cas",
     "sourceSucces": "OFS, Statistiques de la divortialite 2024",
@@ -102,7 +102,7 @@
     "risques": "En cas de desaccord: procédure longue et couteuse. Les enfants, la pension et le partage de la prevoyance professionnelle sont les principaux points de litige."
   },
   {
-    "procédure": "Naturalisation ordinaire",
+    "procedure": "Naturalisation ordinaire",
     "domaine": "nationalite",
     "tauxSucces": "~40'000 naturalisations accordees par an. Taux d'acceptation non publie globalement. Depuis 2018, profil plus selectif: 2/3 des demandes proviennent de personnes hautement qualifiees",
     "sourceSucces": "SEM (Secretariat d'Etat aux migrations), CFM (Commission fédérale des migrations)",
@@ -119,7 +119,7 @@
     "risques": "Refus possible a chaque niveau (fédéral, cantonal, communal). Certaines communes ont des procédures d'audition. Recours possible au tribunal administratif."
   },
   {
-    "procédure": "Assurance invalidité (AI) — demande de rente",
+    "procedure": "Assurance invalidité (AI) — demande de rente",
     "domaine": "assurances-sociales",
     "tauxSucces": "Taux d'octroi de nouvelles rentes: 3.7 pour mille (2024). 76% des 254'200 bénéficiaires de rentes percoivent une rente entière",
     "sourceSucces": "OFAS, Statistique de l'AI 2024; Inclusion Handicap",
@@ -136,7 +136,7 @@
     "risques": "Procedure longue (1-2 ans). Fort taux de refus initial. Revision possible de la rente tous les 3-5 ans. Recours possible au tribunal cantonal des assurances sociales."
   },
   {
-    "procédure": "Faillite personnelle (art. 191 LP)",
+    "procedure": "Faillite personnelle (art. 191 LP)",
     "domaine": "poursuites",
     "tauxSucces": "Pas de statistiques separees pour les faillites personnelles (art. 191 LP). Total faillites (entreprises + personnes): 17'036 en 2024 (record historique, +10.3% vs 2023)",
     "sourceSucces": "OFS, Statistique des poursuites et faillites 2024",
@@ -153,7 +153,7 @@
     "risques": "Les dettes non couvertes ne sont PAS effacees (contrairement a d'autres pays). Actes de defaut de biens valables 20 ans. Impact majeur sur la situation financiere et la reputation."
   },
   {
-    "procédure": "Violence domestique / LAVI (aide aux victimes)",
+    "procedure": "Violence domestique / LAVI (aide aux victimes)",
     "domaine": "pénal",
     "tauxSucces": "33% des affaires de violence domestique donnent lieu a une expulsion de l'auteur (Vaud 2024, +10% vs 2023)",
     "sourceSucces": "Etat de Vaud, Rapport violence domestique 2024; OFS",

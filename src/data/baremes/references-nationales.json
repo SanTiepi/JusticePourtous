@@ -1,5 +1,5 @@
 {
-  "taux_hypothécaire_reference": {
+  "taux_hypothecaire_reference": {
     "source": "Office fédéral du logement (OFL)",
     "source_url": "https://www.bwo.admin.ch/bwo/fr/home/mietrecht/referenzzinssatz.html",
     "source_id": "ofl:taux_hypothecaire",
@@ -65,7 +65,7 @@
     "usage_juridique": {
       "contestation_augmentation": "Si le taux de référence a baissé depuis la dernière fixation du loyer, le locataire peut demander une baisse. Si le bailleur augmente le loyer en raison d'une hausse du taux, l'augmentation maximale est de ~3% par quart de point.",
       "calcul_rendement": "Le taux de référence sert de base au calcul du rendement admissible selon CO 269.",
-      "base_légale": "CO 269a lit. b, OBLF art. 12a, 13"
+      "base_legale": "CO 269a lit. b, OBLF art. 12a, 13"
     }
   },
   "minimum_vital_base": {
@@ -74,7 +74,7 @@
     "tier": 2,
     "type": "directive_nationale",
     "description": "Montants de base du minimum vital pour le calcul de la quotité saisissable (LP 93). Les cantons peuvent adapter ces montants.",
-    "base_légale": "LP 93",
+    "base_legale": "LP 93",
     "montants_base_2025": {
       "debiteur_seul": 1200,
       "couple": 1700,

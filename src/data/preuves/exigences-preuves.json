@@ -1,8 +1,8 @@
 [
   {
-    "procédure": "Contestation de congé (bail)",
+    "procedure": "Contestation de congé (bail)",
     "domaine": "bail",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Copie du bail signé",
       "Lettre de résiliation reçue (avec date de réception)",
       "Preuve d'envoi de la contestation dans les 30 jours"
@@ -19,12 +19,12 @@
       "Expertise"
     ],
     "attention": "Le simple fait de contester ne suspend PAS le congé — demander une prolongation en parallèle",
-    "base_légale": "CO 271-271a, CPC 150 ss"
+    "base_legale": "CO 271-271a, CPC 150 ss"
   },
   {
-    "procédure": "Demande de baisse de loyer",
+    "procedure": "Demande de baisse de loyer",
     "domaine": "bail",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Copie du bail en cours",
       "Avis officiel de baisse du taux hypothécaire de référence",
       "Calcul du loyer admissible (méthode absolue ou relative)"
@@ -41,12 +41,12 @@
       "Expertise immobilière"
     ],
     "attention": "La demande doit être faite pour le prochain terme de résiliation — respecter les délais contractuels",
-    "base_légale": "CO 269-270e, OBLF 11-13"
+    "base_legale": "CO 269-270e, OBLF 11-13"
   },
   {
-    "procédure": "Consignation de loyer pour défauts",
+    "procedure": "Consignation de loyer pour défauts",
     "domaine": "bail",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Mise en demeure écrite au bailleur avec délai raisonnable",
       "Preuve du défaut (photos, constats, rapports)",
       "Preuve de la consignation auprès de l'autorité compétente"
@@ -64,12 +64,12 @@
       "Témoins"
     ],
     "attention": "Consigner SANS mise en demeure préalable = risque de résiliation pour demeure du locataire",
-    "base_légale": "CO 259a-259i, CPC 150 ss"
+    "base_legale": "CO 259a-259i, CPC 150 ss"
   },
   {
-    "procédure": "Contestation de hausse de loyer",
+    "procedure": "Contestation de hausse de loyer",
     "domaine": "bail",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Avis de hausse reçu (formulaire officiel obligatoire)",
       "Copie du bail en cours",
       "Preuve de la contestation dans les 30 jours"
@@ -86,12 +86,12 @@
       "Expertise"
     ],
     "attention": "Si l'avis de hausse n'utilise pas la formule officielle, la hausse est nulle de plein droit",
-    "base_légale": "CO 269d, 270b, OBLF 19"
+    "base_legale": "CO 269d, 270b, OBLF 19"
   },
   {
-    "procédure": "Demande de prolongation de bail",
+    "procedure": "Demande de prolongation de bail",
     "domaine": "bail",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Copie du bail et du congé reçu",
       "Preuve des recherches de logement de remplacement",
       "Situation personnelle et familiale documentée"
@@ -109,12 +109,12 @@
       "Attestations officielles"
     ],
     "attention": "La prolongation peut être de 4 ans max (habitation) ou 6 ans max (local commercial) — cumulable 2 fois",
-    "base_légale": "CO 272-272d"
+    "base_legale": "CO 272-272d"
   },
   {
-    "procédure": "Licenciement abusif",
+    "procedure": "Licenciement abusif",
     "domaine": "travail",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Contrat de travail signé",
       "Lettre de licenciement (avec date de réception)",
       "Preuve de l'opposition écrite dans le délai de congé"
@@ -133,12 +133,12 @@
       "Expertise"
     ],
     "attention": "L'opposition doit être faite PAR ÉCRIT avant la fin du délai de congé, sinon le droit à l'indemnité est perdu",
-    "base_légale": "CO 336-336b"
+    "base_legale": "CO 336-336b"
   },
   {
-    "procédure": "Réclamation de salaire impayé",
+    "procedure": "Réclamation de salaire impayé",
     "domaine": "travail",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Contrat de travail ou preuves des conditions convenues",
       "Fiches de salaire (si existantes)",
       "Décompte des heures travaillées"
@@ -157,12 +157,12 @@
       "Pointages"
     ],
     "attention": "La créance de salaire se prescrit par 5 ans (CO 128) — agir sans tarder",
-    "base_légale": "CO 322-324, 128"
+    "base_legale": "CO 322-324, 128"
   },
   {
-    "procédure": "Contestation d'un certificat de travail",
+    "procedure": "Contestation d'un certificat de travail",
     "domaine": "travail",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Certificat de travail contesté",
       "Contrat de travail et cahier des charges",
       "Demande écrite de rectification adressée à l'employeur"
@@ -180,12 +180,12 @@
       "Évaluations internes"
     ],
     "attention": "Le certificat doit être bienveillant ET véridique — un certificat codé négativement peut être contesté",
-    "base_légale": "CO 330a"
+    "base_legale": "CO 330a"
   },
   {
-    "procédure": "Demande d'indemnité pour heures supplémentaires",
+    "procedure": "Demande d'indemnité pour heures supplémentaires",
     "domaine": "travail",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Contrat de travail (horaire convenu)",
       "Décompte précis des heures supplémentaires effectuées",
       "Preuve que l'employeur a ordonné ou toléré les heures sup"
@@ -203,12 +203,12 @@
       "Témoins"
     ],
     "attention": "Les cadres supérieurs sont souvent exclus — vérifier le contrat et la LTr. Prescription : 5 ans",
-    "base_légale": "CO 321c, LTr 12-13"
+    "base_legale": "CO 321c, LTr 12-13"
   },
   {
-    "procédure": "Harcèlement au travail (mobbing)",
+    "procedure": "Harcèlement au travail (mobbing)",
     "domaine": "travail",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Journal chronologique des incidents (dates, faits, témoins)",
       "Preuves écrites des signalements à l'employeur",
       "Certificats médicaux attestant de l'impact sur la santé"
@@ -227,12 +227,12 @@
       "Courriels/SMS"
     ],
     "attention": "L'employeur a une obligation de protection (CO 328). Documenter CHAQUE incident dès le début",
-    "base_légale": "CO 328, LEg 4-5 (si discriminatoire), LTr 6"
+    "base_legale": "CO 328, LEg 4-5 (si discriminatoire), LTr 6"
   },
   {
-    "procédure": "Divorce par requête commune",
+    "procedure": "Divorce par requête commune",
     "domaine": "famille",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Requête commune signée par les deux époux",
       "Convention complète sur les effets du divorce (enfants, pension, partage)",
       "Acte de mariage et actes de naissance des enfants"
@@ -249,12 +249,12 @@
       "Audition des parties"
     ],
     "attention": "Le juge peut refuser la convention s'il estime qu'elle lèse un époux ou les enfants",
-    "base_légale": "CC 111-112"
+    "base_legale": "CC 111-112"
   },
   {
-    "procédure": "Modification de la contribution d'entretien (pension alimentaire)",
+    "procedure": "Modification de la contribution d'entretien (pension alimentaire)",
     "domaine": "famille",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Jugement ou convention actuelle fixant la pension",
       "Preuves du changement notable de situation (perte d'emploi, maladie, nouveau revenu)",
       "Justificatifs de revenus et charges actuels des deux parents"
@@ -272,12 +272,12 @@
       "Témoins"
     ],
     "attention": "Un changement temporaire (3-6 mois) ne suffit généralement pas — il faut un caractère durable",
-    "base_légale": "CC 286 al. 2, CC 129"
+    "base_legale": "CC 286 al. 2, CC 129"
   },
   {
-    "procédure": "Mesures protectrices de l'union conjugale (MPUC)",
+    "procedure": "Mesures protectrices de l'union conjugale (MPUC)",
     "domaine": "famille",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Requête décrivant la situation de crise conjugale",
       "Preuves de la situation financière des deux époux",
       "Si violence: preuves (plainte pénale, certificat médical, rapport police)"
@@ -295,12 +295,12 @@
       "Rapports de police"
     ],
     "attention": "Procédure sommaire et rapide — le juge statue sur la base de la vraisemblance, pas de la certitude",
-    "base_légale": "CC 172-179"
+    "base_legale": "CC 172-179"
   },
   {
-    "procédure": "Demande de droit de visite / garde (autorité parentale)",
+    "procedure": "Demande de droit de visite / garde (autorité parentale)",
     "domaine": "famille",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Preuves du lien parent-enfant (acte de naissance, reconnaissance)",
       "Proposition concrète de droit de visite ou de garde",
       "Preuves de capacité parentale (logement adapté, disponibilité)"
@@ -319,12 +319,12 @@
       "Témoins"
     ],
     "attention": "L'enfant doit être entendu personnellement par le juge ou un spécialiste dès qu'il est capable de discernement",
-    "base_légale": "CC 133, 273, 298, CDE 12"
+    "base_legale": "CC 133, 273, 298, CDE 12"
   },
   {
-    "procédure": "Protection de l'adulte (curatelle)",
+    "procedure": "Protection de l'adulte (curatelle)",
     "domaine": "famille",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Requête motivée décrivant la situation de vulnérabilité",
       "Certificat médical récent attestant de l'état de la personne",
       "Preuves de l'incapacité à gérer ses affaires"
@@ -343,12 +343,12 @@
       "Audition de la personne concernée"
     ],
     "attention": "La personne concernée DOIT être entendue personnellement sauf si son état ne le permet absolument pas",
-    "base_légale": "CC 390-399"
+    "base_legale": "CC 390-399"
   },
   {
-    "procédure": "Opposition à un commandement de payer",
+    "procedure": "Opposition à un commandement de payer",
     "domaine": "dettes",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Commandement de payer reçu (numéro de poursuite)",
       "Opposition formée dans les 10 jours (oral ou écrit à l'Office des poursuites)"
     ],
@@ -362,12 +362,12 @@
       "Déclaration orale ou écrite à l'Office des poursuites"
     ],
     "attention": "Le délai de 10 jours est ABSOLU — passé ce délai, l'opposition n'est plus possible. Compter dès la notification",
-    "base_légale": "LP 74-75"
+    "base_legale": "LP 74-75"
   },
   {
-    "procédure": "Demande de minimum vital (insaisissabilité)",
+    "procedure": "Demande de minimum vital (insaisissabilité)",
     "domaine": "dettes",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Procès-verbal de saisie contesté",
       "Preuves de tous les revenus du ménage",
       "Justificatifs de toutes les charges (loyer, assurance maladie, etc.)"
@@ -384,12 +384,12 @@
       "Attestations officielles"
     ],
     "attention": "Les normes de minimum vital varient selon les cantons (Lignes directrices de la CSIAS) — se renseigner localement",
-    "base_légale": "LP 92-93"
+    "base_legale": "LP 92-93"
   },
   {
-    "procédure": "Requête de faillite personnelle (art. 191 LP)",
+    "procedure": "Requête de faillite personnelle (art. 191 LP)",
     "domaine": "dettes",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Preuves de surendettement durable (dettes > actifs)",
       "Liste complète des créanciers et montants",
       "Justificatifs de revenus et patrimoine"
@@ -407,12 +407,12 @@
       "Attestations bancaires"
     ],
     "attention": "La faillite personnelle a des conséquences graves et durables (inscription au régistre). Explorer d'abord le concordat ou l'assainissement amiable",
-    "base_légale": "LP 191"
+    "base_legale": "LP 191"
   },
   {
-    "procédure": "Plainte contre l'Office des poursuites",
+    "procedure": "Plainte contre l'Office des poursuites",
     "domaine": "dettes",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Acte de poursuite contesté (PV de saisie, avis, etc.)",
       "Plainte déposée dans les 10 jours dès la connaissance de la mesure",
       "Description précise de la violation reprochée"
@@ -428,12 +428,12 @@
       "Actes de poursuite"
     ],
     "attention": "Le délai de 10 jours est strict — dès la CONNAISSANCE de la mesure, pas dès la décision elle-même",
-    "base_légale": "LP 17-19"
+    "base_legale": "LP 17-19"
   },
   {
-    "procédure": "Action en annulation ou suspension de la poursuite",
+    "procedure": "Action en annulation ou suspension de la poursuite",
     "domaine": "dettes",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Commandement de payer avec opposition rejetée (mainlevée accordée)",
       "Preuves que la dette n'existe pas, est éteinte ou prescrite",
       "Requête déposée dans les 20 jours dès la mainlevée provisoire"
@@ -451,12 +451,12 @@
       "Expertise"
     ],
     "attention": "Ne pas confondre mainlevée provisoire (le débiteur peut agir en libération) et définitive (il faut une action en répétition de l'indu)",
-    "base_légale": "LP 83 al. 2, 85-86"
+    "base_legale": "LP 83 al. 2, 85-86"
   },
   {
-    "procédure": "Recours contre un refus de permis de séjour",
+    "procedure": "Recours contre un refus de permis de séjour",
     "domaine": "étrangers",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Décision de refus (avec motivation)",
       "Preuves du droit invoqué (regroupement familial, activité lucrative, etc.)",
       "Recours déposé dans le délai légal (généralement 30 jours)"
@@ -474,12 +474,12 @@
       "Témoins"
     ],
     "attention": "Le recours n'a pas toujours d'effet suspensif — demander la restitution de l'effet suspensif si nécessaire",
-    "base_légale": "LEI 33-40, CEDH 8"
+    "base_legale": "LEI 33-40, CEDH 8"
   },
   {
-    "procédure": "Demande d'asile (procédure accélérée/étendue)",
+    "procedure": "Demande d'asile (procédure accélérée/étendue)",
     "domaine": "étrangers",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Récit détaillé et cohérent des persécutions subies ou craintes",
       "Documents d'identité (si disponibles)",
       "Tout document prouvant les persécutions (rapports médicaux, articles, photos)"
@@ -498,12 +498,12 @@
       "Rapports d'ONG"
     ],
     "attention": "La cohérence du récit est CRUCIALE — les contradictions sont le premier motif de rejet. Préparer le récit en détail",
-    "base_légale": "LAsi 3-7, Convention de Genève 1951"
+    "base_legale": "LAsi 3-7, Convention de Genève 1951"
   },
   {
-    "procédure": "Recours contre un renvoi (ordre de quitter la Suisse)",
+    "procedure": "Recours contre un renvoi (ordre de quitter la Suisse)",
     "domaine": "étrangers",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Décision de renvoi notifiée",
       "Recours dans le délai (5 jours en procédure accélérée, 30 jours sinon)",
       "Motifs d'inexigibilité du renvoi (santé, situation au pays, famille)"
@@ -522,12 +522,12 @@
       "Jurisprudence CEDH"
     ],
     "attention": "En procédure accélérée, le délai de recours est de 5 jours ouvrables SEULEMENT — agir immédiatement",
-    "base_légale": "LAsi 44-45, LEI 83"
+    "base_legale": "LAsi 44-45, LEI 83"
   },
   {
-    "procédure": "Demande de regroupement familial",
+    "procedure": "Demande de regroupement familial",
     "domaine": "étrangers",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Permis de séjour valable du requérant en Suisse (B, C ou F reconnu)",
       "Preuves du lien familial (acte de mariage, actes de naissance légalisés)",
       "Preuves de logement approprié et de moyens financiers suffisants"
@@ -545,12 +545,12 @@
       "Test ADN (si doute sur la filiation)"
     ],
     "attention": "Délais stricts : 5 ans pour le conjoint/enfants (permis B), 12 mois pour les titulaires d'un permis F",
-    "base_légale": "LEI 42-52, CEDH 8"
+    "base_legale": "LEI 42-52, CEDH 8"
   },
   {
-    "procédure": "Demande de naturalisation ordinaire",
+    "procedure": "Demande de naturalisation ordinaire",
     "domaine": "étrangers",
-    "preuves_nécessaires": [
+    "preuves_necessaires": [
       "Permis C depuis au moins 10 ans (dont 3-5 dans le canton/commune selon canton)",
       "Preuves d'intégration réussie (langue niveau B1 oral/A2 écrit minimum)",
       "Extrait de casier judiciaire vierge"
@@ -569,6 +569,6 @@
       "Entretien de naturalisation"
     ],
     "attention": "Les critères varient fortement selon les cantons et les communes — se renseigner localement AVANT de déposer",
-    "base_légale": "LN 9-16, OLN"
+    "base_legale": "LN 9-16, OLN"
   }
 ]

@@ -140,7 +140,28 @@
     {
       "nom": "Syndicat Unia Valais",
       "type": "syndicat",
-      "url": "https://www.unia.ch/fr/région/valais"
+      "url": "https://www.unia.ch/fr/region/valais"
+    },
+    {
+      "nom": "Commission de conciliation en matière de baux à loyer VS",
+      "type": "conciliation",
+      "url": "https://www.vs.ch/web/sj/commissions-de-conciliation"
+    },
+    {
+      "nom": "Assistance judiciaire Valais",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.vs.ch/web/sj/assistance-judiciaire"
+    },
+    {
+      "nom": "Ordre des avocats valaisans",
+      "type": "avocats",
+      "url": "https://www.oav-vs.ch"
+    },
+    {
+      "nom": "Service de la population et des migrations VS (SPM)",
+      "type": "administration",
+      "tel": "027 606 55 51",
+      "url": "https://www.vs.ch/web/spm"
     }
   ],
   "FR": [
@@ -159,6 +180,34 @@
       "nom": "Centre LAVI Fribourg",
       "type": "lavi",
       "tel": "026 305 15 80"
+    },
+    {
+      "nom": "Commission de conciliation en matière de baux à loyer FR",
+      "type": "conciliation",
+      "tel": "026 304 15 90",
+      "url": "https://www.fr.ch/sj/commission-de-conciliation-en-matiere-de-baux-a-loyer"
+    },
+    {
+      "nom": "Assistance judiciaire Fribourg",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.fr.ch/sj/assistance-judiciaire"
+    },
+    {
+      "nom": "Syndicat Unia Fribourg",
+      "type": "syndicat",
+      "tel": "026 347 31 31",
+      "url": "https://www.unia.ch/fr/region/fribourg"
+    },
+    {
+      "nom": "Ordre des avocats fribourgeois",
+      "type": "avocats",
+      "url": "https://www.oaf-avocats.ch"
+    },
+    {
+      "nom": "Service de la population et des migrants FR (SPoMi)",
+      "type": "administration",
+      "tel": "026 305 14 92",
+      "url": "https://www.fr.ch/spomi"
     }
   ],
   "NE": [
@@ -174,9 +223,36 @@
       "url": "https://www.csp.ch/neuchatel"
     },
     {
-      "nom": "Centre LAVI Neuchatel",
+      "nom": "Centre LAVI Neuchâtel",
       "type": "lavi",
       "tel": "032 889 66 49"
+    },
+    {
+      "nom": "Commission de conciliation en matière de baux à loyer NE",
+      "type": "conciliation",
+      "url": "https://www.ne.ch/autorites/DJSC/JUST/Pages/conciliation-baux.aspx"
+    },
+    {
+      "nom": "Assistance judiciaire Neuchâtel",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.ne.ch/autorites/DJSC/JUST/Pages/assistance-judiciaire.aspx"
+    },
+    {
+      "nom": "Syndicat Unia Neuchâtel",
+      "type": "syndicat",
+      "tel": "032 729 30 29",
+      "url": "https://www.unia.ch/fr/region/neuchatel"
+    },
+    {
+      "nom": "Ordre des avocats neuchâtelois",
+      "type": "avocats",
+      "url": "https://www.oan.ch"
+    },
+    {
+      "nom": "Service des migrations NE (SMIG)",
+      "type": "administration",
+      "tel": "032 889 63 16",
+      "url": "https://www.ne.ch/autorites/DEAS/SMIG/Pages/accueil.aspx"
     }
   ],
   "JU": [
@@ -189,6 +265,39 @@
       "nom": "Caritas Jura",
       "type": "csp",
       "url": "https://www.caritas-jura.ch"
+    },
+    {
+      "nom": "Commission de conciliation en matière de baux à loyer JU",
+      "type": "conciliation",
+      "url": "https://www.jura.ch/DEN/SDT/Logement/Commission-de-conciliation.html"
+    },
+    {
+      "nom": "Assistance judiciaire Jura",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.jura.ch/DFIN/OPE/Assistance-judiciaire.html"
+    },
+    {
+      "nom": "Syndicat Unia Transjurane",
+      "type": "syndicat",
+      "tel": "032 421 60 60",
+      "url": "https://www.unia.ch/fr/region/transjurane"
+    },
+    {
+      "nom": "Centre LAVI Jura",
+      "type": "lavi",
+      "tel": "032 420 81 00",
+      "url": "https://www.jura.ch/DEN/SSA/Centre-LAVI.html"
+    },
+    {
+      "nom": "Ordre des avocats jurassiens",
+      "type": "avocats",
+      "url": "https://www.oaj.ch"
+    },
+    {
+      "nom": "Service de la population JU",
+      "type": "administration",
+      "tel": "032 420 56 10",
+      "url": "https://www.jura.ch/DIN/SPO.html"
     }
   ],
   "BE": [

@@ -1,6 +1,6 @@
 [
   {
-    "procédure": "conciliation_bail",
+    "procedure": "conciliation_bail",
     "titre": "Requête de conciliation en matière de bail",
     "baseLegale": "CPC 197-212",
     "conditionsRecevabilite": {
@@ -21,7 +21,7 @@
       "Dépasser le délai de 30 jours pour contester une hausse → forclusion",
       "Ne pas se présenter à l'audience → radiation"
     ],
-    "documentsRecommandés": [
+    "documentsRecommandes": [
       {
         "document": "Contrat de bail",
         "importance": "obligatoire"
@@ -42,7 +42,7 @@
     "confiance": "certain"
   },
   {
-    "procédure": "tribunal_prudhommes",
+    "procedure": "tribunal_prudhommes",
     "titre": "Action devant le Tribunal des prud'hommes",
     "baseLegale": "CPC 34, 197 ss; CO 319 ss",
     "conditionsRecevabilite": {
@@ -65,7 +65,7 @@
       "Ne pas tenter la conciliation préalable → irrecevable",
       "Se tromper de for (lieu de travail ou domicile du défendeur, CPC 34)"
     ],
-    "documentsRecommandés": [
+    "documentsRecommandes": [
       {
         "document": "Contrat de travail",
         "importance": "obligatoire"
@@ -86,7 +86,7 @@
     "confiance": "certain"
   },
   {
-    "procédure": "tribunal_civil_petit",
+    "procedure": "tribunal_civil_petit",
     "titre": "Action au tribunal civil (valeur litigieuse < 30'000 CHF) — procédure simplifiée",
     "baseLegale": "CPC 243-247",
     "conditionsRecevabilite": {
@@ -107,7 +107,7 @@
       "Oublier la conciliation préalable → irrecevable",
       "Ne pas payer l'avance de frais dans le délai → non-entrée en matière"
     ],
-    "documentsRecommandés": [
+    "documentsRecommandes": [
       {
         "document": "Autorisation de procéder",
         "importance": "obligatoire"
@@ -124,7 +124,7 @@
     "confiance": "certain"
   },
   {
-    "procédure": "tribunal_civil_grand",
+    "procedure": "tribunal_civil_grand",
     "titre": "Action au tribunal civil (valeur litigieuse > 30'000 CHF) — procédure ordinaire",
     "baseLegale": "CPC 219-242",
     "conditionsRecevabilite": {
@@ -147,7 +147,7 @@
       "Demande insuffisamment motivée → renvoi pour correction ou irrecevabilité",
       "Non-paiement de l'avance de frais → non-entrée en matière"
     ],
-    "documentsRecommandés": [
+    "documentsRecommandes": [
       {
         "document": "Autorisation de procéder",
         "importance": "obligatoire"
@@ -168,7 +168,7 @@
     "confiance": "certain"
   },
   {
-    "procédure": "opposition_commandement_payer",
+    "procedure": "opposition_commandement_payer",
     "titre": "Opposition au commandement de payer",
     "baseLegale": "LP 74-78",
     "conditionsRecevabilite": {
@@ -186,7 +186,7 @@
       "Ne pas former opposition → risque de continuation de la poursuite",
       "Oublier l'opposition partielle quand seule une partie est contestée"
     ],
-    "documentsRecommandés": [
+    "documentsRecommandes": [
       {
         "document": "Commandement de payer reçu",
         "importance": "obligatoire"
@@ -199,7 +199,7 @@
     "confiance": "certain"
   },
   {
-    "procédure": "mainlevee_provisoire",
+    "procedure": "mainlevee_provisoire",
     "titre": "Requête de mainlevée provisoire",
     "baseLegale": "LP 82",
     "conditionsRecevabilite": {
@@ -221,7 +221,7 @@
       "Présenter un titre insuffisant (simple facture sans signature) → rejet",
       "Se tromper de tribunal (for de la poursuite)"
     ],
-    "documentsRecommandés": [
+    "documentsRecommandes": [
       {
         "document": "Commandement de payer notifié",
         "importance": "obligatoire"
@@ -238,7 +238,7 @@
     "confiance": "certain"
   },
   {
-    "procédure": "mainlevee_definitive",
+    "procedure": "mainlevee_definitive",
     "titre": "Requête de mainlevée définitive",
     "baseLegale": "LP 80-81",
     "conditionsRecevabilite": {
@@ -260,7 +260,7 @@
       "Créance prescrite depuis le jugement → rejet possible",
       "Titre étranger non reconnu en Suisse → rejet"
     ],
-    "documentsRecommandés": [
+    "documentsRecommandes": [
       {
         "document": "Jugement exécutoire",
         "importance": "obligatoire"
@@ -277,7 +277,7 @@
     "confiance": "certain"
   },
   {
-    "procédure": "requete_faillite_191",
+    "procedure": "requete_faillite_191",
     "titre": "Requête de faillite personnelle (art. 191 LP)",
     "baseLegale": "LP 191",
     "conditionsRecevabilite": {
@@ -300,7 +300,7 @@
       "Ne pas avoir tenté d'arrangement amiable avant → tribunal peut refuser",
       "Non-paiement de l'avance de frais sans assistance judiciaire → irrecevable"
     ],
-    "documentsRecommandés": [
+    "documentsRecommandes": [
       {
         "document": "Liste complète des créanciers et montants",
         "importance": "obligatoire"
@@ -321,7 +321,7 @@
     "confiance": "certain"
   },
   {
-    "procédure": "mesures_provisionnelles",
+    "procedure": "mesures_provisionnelles",
     "titre": "Requête de mesures provisionnelles",
     "baseLegale": "CPC 261-269",
     "conditionsRecevabilite": {
@@ -343,7 +343,7 @@
       "Droit invoqué pas rendu vraisemblable → rejet",
       "Demander des mesures provisionnelles pour un droit déjà éteint → rejet"
     ],
-    "documentsRecommandés": [
+    "documentsRecommandes": [
       {
         "document": "Requête motivée détaillée",
         "importance": "obligatoire"
@@ -364,7 +364,7 @@
     "confiance": "certain"
   },
   {
-    "procédure": "divorce_requete_commune",
+    "procedure": "divorce_requete_commune",
     "titre": "Divorce sur requête commune",
     "baseLegale": "CC 111-112",
     "conditionsRecevabilite": {
@@ -387,7 +387,7 @@
       "Un époux retire son consentement avant le jugement → conversion en divorce contentieux",
       "Oublier le partage LPP → le tribunal doit le traiter d'office"
     ],
-    "documentsRecommandés": [
+    "documentsRecommandes": [
       {
         "document": "Convention de divorce complète",
         "importance": "obligatoire"
@@ -412,7 +412,7 @@
     "confiance": "certain"
   },
   {
-    "procédure": "divorce_contentieux",
+    "procedure": "divorce_contentieux",
     "titre": "Divorce contentieux (unilatéral)",
     "baseLegale": "CC 114-115",
     "conditionsRecevabilite": {
@@ -433,7 +433,7 @@
       "Ne pas pouvoir prouver la durée de séparation → rejet",
       "Demande au mauvais tribunal → renvoi"
     ],
-    "documentsRecommandés": [
+    "documentsRecommandes": [
       {
         "document": "Acte de mariage",
         "importance": "obligatoire"
@@ -454,7 +454,7 @@
     "confiance": "certain"
   },
   {
-    "procédure": "requete_apea",
+    "procedure": "requete_apea",
     "titre": "Requête à l'APEA (Autorité de protection de l'adulte et de l'enfant)",
     "baseLegale": "CC 307-317 (enfant), CC 360-456 (adulte)",
     "conditionsRecevabilite": {
@@ -476,7 +476,7 @@
       "Signalement malveillant → peut engager la responsabilité du signalant",
       "Ne pas signaler une situation de danger en tant que professionnel → infraction (obligation légale)"
     ],
-    "documentsRecommandés": [
+    "documentsRecommandes": [
       {
         "document": "Description factuelle de la situation",
         "importance": "obligatoire"
@@ -493,7 +493,7 @@
     "confiance": "certain"
   },
   {
-    "procédure": "plainte_pénale",
+    "procedure": "plainte_pénale",
     "titre": "Plainte pénale",
     "baseLegale": "CPP 118-121, CP 30-33",
     "conditionsRecevabilite": {
@@ -514,7 +514,7 @@
       "Porter plainte pour une infraction poursuivie d'office → c'est une dénonciation, pas une plainte",
       "Retirer la plainte puis vouloir la redéposer → impossible (CP 33 al. 2)"
     ],
-    "documentsRecommandés": [
+    "documentsRecommandes": [
       {
         "document": "Description détaillée des faits",
         "importance": "obligatoire"
@@ -535,7 +535,7 @@
     "confiance": "certain"
   },
   {
-    "procédure": "denonciation_pénale",
+    "procedure": "denonciation_pénale",
     "titre": "Dénonciation pénale",
     "baseLegale": "CPP 301",
     "conditionsRecevabilite": {
@@ -555,7 +555,7 @@
       "Dénonciation calomnieuse → infraction pénale (CP 303)",
       "Confondre dénonciation et plainte → si l'infraction est sur plainte et qu'on n'est pas lésé, pas de suite"
     ],
-    "documentsRecommandés": [
+    "documentsRecommandes": [
       {
         "document": "Description des faits observés",
         "importance": "obligatoire"
@@ -568,7 +568,7 @@
     "confiance": "certain"
   },
   {
-    "procédure": "aide_juridictionnelle",
+    "procedure": "aide_juridictionnelle",
     "titre": "Requête d'aide juridictionnelle (assistance judiciaire)",
     "baseLegale": "CPC 117-123, Cst. 29 al. 3",
     "conditionsRecevabilite": {
@@ -591,7 +591,7 @@
       "Fournir des informations financières incomplètes → refus ou retard",
       "Ne pas signaler un changement de situation financière → révocation"
     ],
-    "documentsRecommandés": [
+    "documentsRecommandes": [
       {
         "document": "Formulaire d'assistance judiciaire du canton",
         "importance": "obligatoire"
@@ -616,7 +616,7 @@
     "confiance": "certain"
   },
   {
-    "procédure": "recours_tribunal_cantonal",
+    "procedure": "recours_tribunal_cantonal",
     "titre": "Recours/appel au tribunal cantonal",
     "baseLegale": "CPC 308-318",
     "conditionsRecevabilite": {
@@ -637,7 +637,7 @@
       "Appel insuffisamment motivé → irrecevable",
       "Valeur litigieuse insuffisante pour l'appel (< 10'000 CHF, CPC 308) → utiliser le recours limité"
     ],
-    "documentsRecommandés": [
+    "documentsRecommandes": [
       {
         "document": "Jugement de première instance",
         "importance": "obligatoire"
@@ -654,7 +654,7 @@
     "confiance": "certain"
   },
   {
-    "procédure": "recours_tf",
+    "procedure": "recours_tf",
     "titre": "Recours au Tribunal fédéral",
     "baseLegale": "LTF 42-43, 72-89, 100",
     "conditionsRecevabilite": {
@@ -677,7 +677,7 @@
       "Contester les faits sans démontrer l'arbitraire → irrecevable",
       "Mémoire mal motivé (pas de griefs constitutionnels précis) → irrecevable"
     ],
-    "documentsRecommandés": [
+    "documentsRecommandes": [
       {
         "document": "Décision cantonale attaquée",
         "importance": "obligatoire"
@@ -694,7 +694,7 @@
     "confiance": "certain"
   },
   {
-    "procédure": "naturalisation",
+    "procedure": "naturalisation",
     "titre": "Requête de naturalisation ordinaire",
     "baseLegale": "LN 9-16, CC 37",
     "conditionsRecevabilite": {
@@ -719,7 +719,7 @@
       "Niveau de langue insuffisant → refus",
       "Dépendance à l'aide sociale → refus possible"
     ],
-    "documentsRecommandés": [
+    "documentsRecommandes": [
       {
         "document": "Permis C (établissement)",
         "importance": "obligatoire"
@@ -744,7 +744,7 @@
     "confiance": "variable"
   },
   {
-    "procédure": "recours_lei",
+    "procedure": "recours_lei",
     "titre": "Recours en matière de droit des étrangers (LEI)",
     "baseLegale": "LEI, LTAF 31-33, LTF 83",
     "conditionsRecevabilite": {
@@ -766,7 +766,7 @@
       "Ne pas demander l'effet suspensif → risque d'exécution du renvoi pendant le recours",
       "Recours au TF contre une décision de renvoi → en principe irrecevable (LTF 83 let. c)"
     ],
-    "documentsRecommandés": [
+    "documentsRecommandes": [
       {
         "document": "Décision attaquée",
         "importance": "obligatoire"
@@ -787,7 +787,7 @@
     "confiance": "certain"
   },
   {
-    "procédure": "mesures_superprovisionnelles",
+    "procedure": "mesures_superprovisionnelles",
     "titre": "Requête de mesures superprovisionnelles",
     "baseLegale": "CPC 265",
     "conditionsRecevabilite": {
@@ -808,7 +808,7 @@
       "Demande trop tardive par rapport aux faits → contredit l'urgence",
       "Oublier de déposer rapidement la requête de mesures provisionnelles complète → caducité"
     ],
-    "documentsRecommandés": [
+    "documentsRecommandes": [
       {
         "document": "Requête motivée avec urgence documentée",
         "importance": "obligatoire"
@@ -821,7 +821,7 @@
     "confiance": "certain"
   },
   {
-    "procédure": "plainte_lp_office",
+    "procedure": "plainte_lp_office",
     "titre": "Plainte LP contre l'office des poursuites",
     "baseLegale": "LP 17-19",
     "conditionsRecevabilite": {
@@ -842,7 +842,7 @@
       "Contester une décision qui n'est pas un acte de l'office → irrecevable (utiliser une autre voie)",
       "Plainte contre un jugement (au lieu d'un acte de l'office) → mauvaise voie de droit"
     ],
-    "documentsRecommandés": [
+    "documentsRecommandes": [
       {
         "document": "Acte de l'office contesté",
         "importance": "obligatoire"

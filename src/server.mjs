@@ -73,6 +73,50 @@ const MIME_TYPES = {
 };
 
 const MAX_UPLOAD_SIZE = 10 * 1024 * 1024; // 10MB
+const MAX_QUERY_LENGTH = 2000; // max chars for search queries
+const MAX_BODY_SIZE = 100 * 1024; // 100KB for JSON bodies
+
+// ─── Rate limiter (in-memory, per IP) ────────────────────────────
+const rateLimitStore = new Map();
+const RATE_LIMIT = { windowMs: 60000, maxRequests: 60 }; // 60 req/min
+
+function rateLimit(ip) {
+  const now = Date.now();
+  let entry = rateLimitStore.get(ip);
+  if (!entry || now - entry.windowStart > RATE_LIMIT.windowMs) {
+    entry = { windowStart: now, count: 0 };
+    rateLimitStore.set(ip, entry);
+  }
+  entry.count++;
+  if (entry.count > RATE_LIMIT.maxRequests) return false;
+  return true;
+}
+
+// Cleanup rate limit store every 5 min
+setInterval(() => {
+  const cutoff = Date.now() - RATE_LIMIT.windowMs * 2;
+  for (const [ip, entry] of rateLimitStore) {
+    if (entry.windowStart < cutoff) rateLimitStore.delete(ip);
+  }
+}, 300000);
+
+// ─── Triage audit log (in-memory, last 1000) ─────────────────────
+const triageLog = [];
+const MAX_TRIAGE_LOG = 1000;
+
+function logTriage(input, output, method, durationMs) {
+  const entry = {
+    timestamp: new Date().toISOString(),
+    input: typeof input === 'string' ? input.slice(0, 200) : '(structured)',
+    method,
+    ficheId: output?.ficheId || output?.fiche?.id || null,
+    domaine: output?.domaine || output?.fiche?.domaine || null,
+    confiance: output?.confiance || null,
+    durationMs: Math.round(durationMs),
+  };
+  triageLog.push(entry);
+  if (triageLog.length > MAX_TRIAGE_LOG) triageLog.shift();
+}
 
 function setSecurityHeaders(res) {
   res.setHeader('X-Content-Type-Options', 'nosniff');
@@ -90,7 +134,12 @@ function json(res, statusCode, data) {
 function parseBody(req) {
   return new Promise((resolve, reject) => {
     let body = '';
-    req.on('data', chunk => { body += chunk; });
+    let size = 0;
+    req.on('data', chunk => {
+      size += chunk.length;
+      if (size > MAX_BODY_SIZE) { req.destroy(); reject(new Error('Body too large')); return; }
+      body += chunk;
+    });
     req.on('end', () => {
       try {
         resolve(body ? JSON.parse(body) : {});
@@ -142,9 +191,26 @@ const server = createServer(async (req, res) => {
   const method = req.method;
 
   try {
+    // Rate limiting
+    const clientIp = req.headers['x-forwarded-for']?.split(',')[0]?.trim() || req.socket.remoteAddress || 'unknown';
+    if (path.startsWith('/api/') && !rateLimit(clientIp)) {
+      return json(res, 429, { error: 'Trop de requêtes. Réessayez dans une minute.', disclaimer: DISCLAIMER });
+    }
+
+    // Input length validation for query params
+    const q = url.searchParams.get('q');
+    if (q && q.length > MAX_QUERY_LENGTH) {
+      return json(res, 400, { error: `Requête trop longue (max ${MAX_QUERY_LENGTH} caractères)`, disclaimer: DISCLAIMER });
+    }
+
     // API routes
     if (path === '/api/health' && method === 'GET') {
       return json(res, 200, { status: 'ok', timestamp: new Date().toISOString(), disclaimer: DISCLAIMER });
+    }
+
+    // Triage audit log endpoint
+    if (path === '/api/admin/triage-log' && method === 'GET') {
+      return json(res, 200, { entries: triageLog.slice(-50), total: triageLog.length });
     }
 
     if (path === '/api/domaines' && method === 'GET') {
@@ -402,15 +468,15 @@ const server = createServer(async (req, res) => {
       }
 
       // LLM-first: use triage engine which calls LLM navigator
+      const triageStart = Date.now();
       const triageResult = await triage(q, canton);
       if (triageResult.status === 200 && triageResult.data?.trouve) {
         // LLM understood the query — enrich the primary fiche
         const ficheId = triageResult.data.ficheId;
         const enriched = queryByProblem(q, canton);
         // Merge LLM intelligence with enriched data
-        return json(res, 200, enrichV4({
+        const responseData = enrichV4({
           ...(enriched.status === 200 ? enriched.data : {}),
-          // Override with LLM-identified fiche if different
           llm_triage: {
             ficheId: triageResult.data.ficheId,
             domaine: triageResult.data.domaine,
@@ -421,14 +487,17 @@ const server = createServer(async (req, res) => {
           },
           triage_method: 'llm',
           disclaimer: DISCLAIMER,
-        }));
+        });
+        logTriage(q, triageResult.data, 'llm', Date.now() - triageStart);
+        return json(res, 200, responseData);
       }
 
       // Fallback: keyword search (degraded mode)
       const result = queryByProblem(q, canton);
-      return json(res, result.status, result.error
-        ? { error: result.error, disclaimer: DISCLAIMER }
-        : enrichV4({ ...result.data, triage_method: 'keyword_fallback', disclaimer: DISCLAIMER }));
+      if (result.error) return json(res, result.status, { error: result.error, disclaimer: DISCLAIMER });
+      const fallbackData = enrichV4({ ...result.data, triage_method: 'keyword_fallback', disclaimer: DISCLAIMER });
+      logTriage(q, result.data, 'keyword_fallback', Date.now() - triageStart);
+      return json(res, result.status, fallbackData);
     }
 
     // Citoyen: cherche par problème

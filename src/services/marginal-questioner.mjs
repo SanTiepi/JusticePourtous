@@ -17,6 +17,21 @@ import { analyzeIssue } from './argumentation-engine.mjs';
 
 // ─── Fact dimensions that affect legal outcomes ─────────────────
 
+/**
+ * Normalize faits from comprehension — can be an object {acteurs, dates, montants, ...}
+ * or an array of strings. Returns a flat array of strings for searching.
+ */
+function normalizeFaits(comprehension) {
+  const faits = comprehension.faits;
+  if (!faits) return [];
+  if (Array.isArray(faits)) return faits.filter(f => typeof f === 'string');
+  // Object format: {acteurs:[], dates:[], montants:[], actions_faites:[], documents:[]}
+  if (typeof faits === 'object') {
+    return Object.values(faits).flat().filter(f => typeof f === 'string');
+  }
+  return [];
+}
+
 const FACT_DIMENSIONS = [
   {
     id: 'canton',
@@ -31,7 +46,7 @@ const FACT_DIMENSIONS = [
     why: 'La durée détermine les délais de prescription et les montants de réduction.',
     impacts: ['delai', 'montant', 'prescription'],
     detect_missing: (comprehension) => {
-      const facts = comprehension.faits || [];
+      const facts = normalizeFaits(comprehension);
       return !facts.some(f =>
         typeof f === 'string' && (f.includes('mois') || f.includes('an') || f.includes('jour') || f.includes('semaine'))
       );
@@ -43,7 +58,7 @@ const FACT_DIMENSIONS = [
     why: 'Le montant détermine la procédure (simplifiée vs ordinaire) et les coûts.',
     impacts: ['procedure', 'cout', 'montant'],
     detect_missing: (comprehension) => {
-      const facts = comprehension.faits || [];
+      const facts = normalizeFaits(comprehension);
       return !facts.some(f =>
         typeof f === 'string' && (f.includes('CHF') || f.includes('francs') || /\d{3,}/.test(f))
       );
@@ -55,7 +70,7 @@ const FACT_DIMENSIONS = [
     why: 'La mise en demeure est souvent une condition préalable obligatoire.',
     impacts: ['recevabilite', 'procedure', 'delai'],
     detect_missing: (comprehension) => {
-      const facts = comprehension.faits || [];
+      const facts = normalizeFaits(comprehension);
       const docs = comprehension.documents || [];
       return !facts.some(f => typeof f === 'string' && (f.includes('mise en demeure') || f.includes('recommandé')))
         && !docs.some(d => typeof d === 'string' && (d.includes('mise en demeure') || d.includes('recommandé')));
@@ -79,7 +94,7 @@ const FACT_DIMENSIONS = [
     why: 'Certaines procédures exigent une tentative de conciliation préalable.',
     impacts: ['recevabilite', 'procedure'],
     detect_missing: (comprehension) => {
-      const facts = comprehension.faits || [];
+      const facts = normalizeFaits(comprehension);
       return !facts.some(f =>
         typeof f === 'string' && (f.includes('contact') || f.includes('négoci') || f.includes('concili'))
       );
@@ -91,7 +106,7 @@ const FACT_DIMENSIONS = [
     why: 'L\'ancienneté détermine les délais de congé, la protection et les indemnités.',
     impacts: ['delai_conge', 'protection', 'indemnite'],
     detect_missing: (comprehension) => {
-      const facts = comprehension.faits || [];
+      const facts = normalizeFaits(comprehension);
       return !facts.some(f =>
         typeof f === 'string' && (f.includes('année') || f.includes('ans') || f.includes('ancienneté'))
       );
@@ -103,7 +118,7 @@ const FACT_DIMENSIONS = [
     why: 'Une urgence peut nécessiter des mesures provisionnelles immédiates.',
     impacts: ['procedure', 'delai', 'mesures_provisionnelles'],
     detect_missing: (comprehension) => {
-      const facts = comprehension.faits || [];
+      const facts = normalizeFaits(comprehension);
       return !facts.some(f =>
         typeof f === 'string' && (f.includes('urgent') || f.includes('demain') || f.includes('délai') || f.includes('expuls'))
       );

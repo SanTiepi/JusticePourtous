@@ -28,7 +28,7 @@ async function initConsultation(domaine) {
       errBox.textContent = 'Impossible de charger les questions. ';
       var link = document.createElement('a');
       link.href = '/';
-      link.textContent = "Retour a l'accueil";
+      link.textContent = "Retour à l'accueil";
       errBox.appendChild(link);
       errBox.classList.remove('hidden');
     }
@@ -157,11 +157,11 @@ async function submitConsultation() {
       sessionStorage.setItem('jb_result', JSON.stringify(data));
       window.location.href = '/resultat.html?fiche=' + data.fiche.id;
     } else {
-      throw new Error('Aucune fiche trouvee');
+      throw new Error('Aucune fiche trouvée');
     }
   } catch (e) {
     if (card) {
-      card.innerHTML = '<div class="error-box">Erreur lors de l\'analyse. <a href="/">Retour a l\'accueil</a></div>';
+      card.innerHTML = '<div class="error-box">Erreur lors de l\'analyse. <a href="/">Retour à l\'accueil</a></div>';
     }
   }
 }
@@ -181,17 +181,17 @@ async function loadResultat(ficheId) {
   if (!data) {
     try {
       var res = await fetch('/api/fiches/' + ficheId);
-      if (!res.ok) throw new Error('Fiche non trouvee');
+      if (!res.ok) throw new Error('Fiche non trouvée');
       data = await res.json();
     } catch (e) {
-      document.getElementById('resultat').innerHTML = '<div class="error-box">Fiche non trouvee. <a href="/">Retour a l\'accueil</a></div>';
+      document.getElementById('resultat').innerHTML = '<div class="error-box">Fiche non trouvée. <a href="/">Retour à l\'accueil</a></div>';
       return;
     }
   }
 
   var fiche = data.fiche;
   if (!fiche) {
-    document.getElementById('resultat').innerHTML = '<div class="error-box">Fiche non trouvee. <a href="/">Retour a l\'accueil</a></div>';
+    document.getElementById('resultat').innerHTML = '<div class="error-box">Fiche non trouvée. <a href="/">Retour à l\'accueil</a></div>';
     return;
   }
 
@@ -235,7 +235,7 @@ async function loadResultat(ficheId) {
   // Jurisprudence
   if (r.jurisprudence && r.jurisprudence.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Jurisprudence du Tribunal federal</h3>';
+    html += '<h3>Jurisprudence du Tribunal fédéral</h3>';
     r.jurisprudence.forEach(function(j) {
       html += '<div class="jurisprudence">';
       html += '<div class="ref">' + j.ref + '</div>';
@@ -248,7 +248,7 @@ async function loadResultat(ficheId) {
   // Modele lettre
   if (r.modeleLettre) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Modele de lettre</h3>';
+    html += '<h3>Modèle de lettre</h3>';
     html += '<div class="lettre-box">';
     html += '<button class="copy-btn" onclick="copyLettre()">Copier</button>';
     html += '<pre id="lettreText">' + r.modeleLettre + '</pre>';
@@ -259,7 +259,7 @@ async function loadResultat(ficheId) {
   // Services
   if (r.services && r.services.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Services competents</h3>';
+    html += '<h3>Services compétents</h3>';
     r.services.forEach(function(s) {
       html += '<div class="service-item">';
       html += '<div><div class="nom">' + s.nom + '</div>';
@@ -282,15 +282,15 @@ async function loadResultat(ficheId) {
 
   // Upsell premium (discret)
   html += '<div class="upsell">';
-  html += '<h3>Besoin d\'une analyse personnalisee ?</h3>';
-  html += '<p>Notre IA analyse votre situation en detail pour CHF 0.03 a 0.10 par question.</p>';
+  html += '<h3>Besoin d\'une analyse personnalisée ?</h3>';
+  html += '<p>Notre IA analyse votre situation en détail pour CHF 0.03 à 0.10 par question.</p>';
   html += '<a href="/premium.html" class="btn btn-sm">Espace Premium</a>';
   html += '</div>';
 
   // Routage ecosysteme
   if (r.routageEcosysteme && Object.keys(r.routageEcosysteme).length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Vous pourriez aussi etre interesse par</h3>';
+    html += '<h3>Vous pourriez aussi être intéressé par</h3>';
     Object.entries(r.routageEcosysteme).forEach(function(entry) {
       var key = entry[0], val = entry[1];
       html += '<p><a href="https://' + val.url + '" target="_blank" rel="noopener">' + key + '</a> &mdash; ' + val.condition + '</p>';
@@ -332,7 +332,7 @@ async function loadSearchResultat(query) {
 
     if (!res.ok || data.error) {
       container.innerHTML =
-        '<div class="error-box">' + (data.error || 'Aucun resultat') + '<br><a href="/">Retour a l\'accueil</a></div>';
+        '<div class="error-box">' + (data.error || 'Aucun résultat') + '<br><a href="/">Retour à l\'accueil</a></div>';
       return;
     }
 
@@ -342,7 +342,7 @@ async function loadSearchResultat(query) {
       renderEnrichedResult(data, query, container);
     }
   } catch (e) {
-    container.innerHTML = '<div class="error-box">Erreur de connexion. <a href="/">Retour a l\'accueil</a></div>';
+    container.innerHTML = '<div class="error-box">Erreur de connexion. <a href="/">Retour à l\'accueil</a></div>';
   }
 }
 
@@ -354,7 +354,7 @@ function renderTaxonomieResult(data, query, container) {
 
   html += '<div class="card-highlight">';
   html += '<h3>Qualification juridique</h3>';
-  html += '<p>' + escHtml(data.suggestion || 'Votre probleme releve du domaine juridique suivant.') + '</p>';
+  html += '<p>' + escHtml(data.suggestion || 'Votre problème relève du domaine juridique suivant.') + '</p>';
   if (q.domaine) html += '<p class="result-domaine-tag">' + escHtml(q.domaine) + '</p>';
   html += '</div>';
 
@@ -454,7 +454,7 @@ function renderEnrichedResult(data, query, container) {
   var delais = data.delais || [];
   if (delais.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Delais a connaitre</h3>';
+    html += '<h3>Délais à connaître</h3>';
     delais.slice(0, 5).forEach(function(d) {
       html += '<div class="delai-card">';
       html += '<div class="delai-value">' + escHtml(d.duree || d.delai || '?') + '</div>';
@@ -486,7 +486,7 @@ function renderEnrichedResult(data, query, container) {
   var ficheDomaine = (data.fiche || {}).domaine;
   if (ficheDomaine === 'bail') {
     html += '<div class="card" id="baremes-card" style="display:none"' + stagger() + '>';
-    html += '<h3>Taux de reference</h3>';
+    html += '<h3>Taux de référence</h3>';
     html += '<div id="baremes-content"></div>';
     html += '</div>';
     // Async load
@@ -499,8 +499,8 @@ function renderEnrichedResult(data, query, container) {
           el.innerHTML = '<div class="delai-card">' +
             '<div class="delai-value">' + b.valeur_actuelle.taux + '%</div>' +
             '<div class="delai-info">' +
-            '<div class="delai-procedure">Taux hypothecaire de reference OFL</div>' +
-            '<div class="delai-consequence">Base pour contester une augmentation de loyer (CO 269a). Publie le ' + (b.valeur_actuelle.date_publication || '') + '</div>' +
+            '<div class="delai-procedure">Taux hypothécaire de référence OFL</div>' +
+            '<div class="delai-consequence">Base pour contester une augmentation de loyer (CO 269a). Publié le ' + (b.valeur_actuelle.date_publication || '') + '</div>' +
             '</div></div>';
         }
       }
@@ -511,8 +511,8 @@ function renderEnrichedResult(data, query, container) {
   var juris = data.jurisprudence || data.jurisprudenceElargie || [];
   if (juris.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Jurisprudence du Tribunal federal</h3>';
-    // Show up to 3 favorable + 2 defavorable for contradictoire
+    html += '<h3>Jurisprudence du Tribunal fédéral</h3>';
+    // Show up to 3 favorable + 2 défavorable for contradictoire
     var favJuris = juris.filter(function(j) { return j.role === 'favorable'; }).slice(0, 3);
     var contraJuris = juris.filter(function(j) { return j.role === 'defavorable'; }).slice(0, 2);
     var neutreJuris = juris.filter(function(j) { return j.role === 'neutre' || !j.role; }).slice(0, 2);
@@ -520,7 +520,7 @@ function renderEnrichedResult(data, query, container) {
 
     displayJuris.forEach(function(j) {
       var roleCls = j.role || 'neutre';
-      var roleLabel = roleCls === 'favorable' ? 'Favorable' : roleCls === 'defavorable' ? 'Defavorable' : 'Neutre';
+      var roleLabel = roleCls === 'favorable' ? 'Favorable' : roleCls === 'defavorable' ? 'Défavorable' : 'Neutre';
 
       html += '<div class="juris-card">';
       html += '<div class="juris-header">';
@@ -533,7 +533,7 @@ function renderEnrichedResult(data, query, container) {
       if (j.principeCle) html += '<div class="juris-principle">' + escHtml(j.principeCle) + '</div>';
       if (j.fourchetteMontant) {
         var fm = j.fourchetteMontant;
-        html += '<div class="juris-range">' + escHtml(fm.min || '') + ' &mdash; ' + escHtml(fm.max || '') + (fm.median ? ' (median: ' + escHtml(fm.median) + ')' : '') + '</div>';
+        html += '<div class="juris-range">' + escHtml(fm.min || '') + ' &mdash; ' + escHtml(fm.max || '') + (fm.median ? ' (médian: ' + escHtml(fm.median) + ')' : '') + '</div>';
       }
       html += '</div>';
     });
@@ -544,12 +544,12 @@ function renderEnrichedResult(data, query, container) {
   var templates = data.templates || [];
   if (templates.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Modeles de lettres</h3>';
+    html += '<h3>Modèles de lettres</h3>';
     templates.forEach(function(t, i) {
       var tplId = 'tpl-' + i;
       html += '<div class="template-item">';
       html += '<div class="template-header" onclick="toggleTemplate(\'' + tplId + '\')">';
-      html += '<span class="template-title">' + escHtml(t.nom || t.titre || t.type || 'Modele') + '</span>';
+      html += '<span class="template-title">' + escHtml(t.nom || t.titre || t.type || 'Modèle') + '</span>';
       html += '<span class="template-toggle" id="toggle-' + tplId + '">Afficher</span>';
       html += '</div>';
       html += '<div class="lettre-box hidden" id="' + tplId + '">';
@@ -565,7 +565,7 @@ function renderEnrichedResult(data, query, container) {
   var antiErreurs = data.antiErreurs || [];
   if (antiErreurs.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Erreurs a eviter</h3>';
+    html += '<h3>Erreurs à éviter</h3>';
     antiErreurs.slice(0, 4).forEach(function(ae) {
       var gravite = (ae.gravite || 'moyenne').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
       var icon = gravite === 'critique' ? '!' : gravite === 'elevee' ? '!' : '!';
@@ -584,7 +584,7 @@ function renderEnrichedResult(data, query, container) {
   var escalade = data.escalade || [];
   if (escalade.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Services competents</h3>';
+    html += '<h3>Services compétents</h3>';
     escalade.slice(0, 5).forEach(function(s) {
       html += '<div class="service-item">';
       html += '<div><div class="nom">' + escHtml(s.nom || s.service || '') + '</div>';
@@ -616,7 +616,7 @@ function renderEnrichedResult(data, query, container) {
   var vulg = data.vulgarisation || null;
   if (vulg && vulg.questions_citoyennes && vulg.questions_citoyennes.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Questions frequentes des citoyens</h3>';
+    html += '<h3>Questions fréquentes des citoyens</h3>';
     vulg.questions_citoyennes.slice(0, 5).forEach(function(q, i) {
       var qId = 'vulg-' + i;
       html += '<div class="vulg-qa">';
@@ -638,7 +638,7 @@ function renderEnrichedResult(data, query, container) {
   // V4: Vulgarisation anti-erreurs (supplement existing)
   if (vulg && vulg.anti_erreurs && vulg.anti_erreurs.length && (!antiErreurs || antiErreurs.length === 0)) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Erreurs a eviter</h3>';
+    html += '<h3>Erreurs à éviter</h3>';
     vulg.anti_erreurs.slice(0, 4).forEach(function(ae) {
       html += '<div class="ae-card">';
       html += '<div class="ae-icon elevee">!</div>';
@@ -653,7 +653,7 @@ function renderEnrichedResult(data, query, container) {
   // V4: Vulgarisation deadlines (supplement existing)
   if (vulg && vulg.delais && vulg.delais.length && (!delais || delais.length === 0)) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Delais a connaitre</h3>';
+    html += '<h3>Délais à connaître</h3>';
     vulg.delais.forEach(function(d) {
       html += '<div class="delai-card">';
       html += '<div class="delai-value">' + escHtml(d.delai) + '</div>';
@@ -668,7 +668,7 @@ function renderEnrichedResult(data, query, container) {
   var normRules = data.normative_rules || [];
   if (normRules.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Regles juridiques applicables</h3>';
+    html += '<h3>Règles juridiques applicables</h3>';
     normRules.slice(0, 5).forEach(function(r) {
       html += '<div class="norm-rule">';
       html += '<div class="norm-rule-header">';
@@ -685,9 +685,9 @@ function renderEnrichedResult(data, query, container) {
   var meta = data._meta || {};
   html += '<div class="source-footer">';
   html += '<span>Sources : <span class="source-count">' + (meta.articlesCount || articles.length || 0) + ' articles</span>, ';
-  html += '<span class="source-count">' + (meta.jurisprudenceCount || juris.length || 0) + ' arrets</span>';
+  html += '<span class="source-count">' + (meta.jurisprudenceCount || juris.length || 0) + ' arrêts</span>';
   if (vulg) html += ', <span class="source-count">ASLOCA Kit</span>';
-  if (normRules.length) html += ', <span class="source-count">' + normRules.length + ' regles</span>';
+  if (normRules.length) html += ', <span class="source-count">' + normRules.length + ' règles</span>';
   html += '</span></div>';
 
   // Bottom actions
@@ -695,8 +695,8 @@ function renderEnrichedResult(data, query, container) {
 
   // Upsell premium
   html += '<div class="upsell">';
-  html += '<h3>Besoin d\'une analyse personnalisee ?</h3>';
-  html += '<p>Notre IA analyse votre situation en detail pour CHF 0.03 a 0.10 par question.</p>';
+  html += '<h3>Besoin d\'une analyse personnalisée ?</h3>';
+  html += '<p>Notre IA analyse votre situation en détail pour CHF 0.03 à 0.10 par question.</p>';
   html += '<a href="/premium.html" class="btn btn-sm">Espace Premium</a>';
   html += '</div>';
 

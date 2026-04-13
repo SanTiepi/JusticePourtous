@@ -56,7 +56,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le permis C (etablissement) est accorde en principe apres 10 ans de sejour regulier en Suisse, dont 5 ans au cours des dernieres annees (art. 34 al. 2 LEI). Pour les ressortissants de certains pays (UE/AELE, USA, Canada), le delai est reduit a 5 ans (art. 34 al. 4 LEI). Conditions : integration reussie (respect de la securite et de l'ordre publics, respect des valeurs constitutionnelles, competences linguistiques, participation a la vie economique). Les competences linguistiques requises sont le niveau A2 a l'oral et A1 a l'ecrit dans la langue du lieu de domicile (art. 58a LEI). Le permis C est renouvelable automatiquement et confere un droit quasi illimite de sejour et de travail. Le passage de B a C peut etre avance en cas d'integration exemplaire (art. 34 al. 4 LEI). Le permis C peut etre revoque en cas de condamnation penale grave ou de dependance a l'aide sociale (art. 63 LEI).",
+      "explication": "Le permis C (etablissement) est accorde en principe après 10 ans de sejour regulier en Suisse, dont 5 ans au cours des dernieres annees (art. 34 al. 2 LEI). Pour les ressortissants de certains pays (UE/AELE, USA, Canada), le délai est reduit a 5 ans (art. 34 al. 4 LEI). Conditions : integration reussie (respect de la securite et de l'ordre publics, respect des valeurs constitutionnelles, competences linguistiques, participation a la vie economique). Les competences linguistiques requises sont le niveau A2 a l'oral et A1 a l'ecrit dans la langue du lieu de domicile (art. 58a LEI). Le permis C est renouvelable automatiquement et confere un droit quasi illimite de sejour et de travail. Le passage de B a C peut etre avance en cas d'integration exemplaire (art. 34 al. 4 LEI). Le permis C peut etre revoque en cas de condamnation penale grave ou de dependance a l'aide sociale (art. 63 LEI).",
       "articles": [
         {
           "ref": "LEI 34",
@@ -81,10 +81,10 @@
         },
         {
           "ref": "TF 2C_846/2018",
-          "resume": "Les exigences linguistiques doivent etre proportionnees a l'age et a la situation personnelle du requerant."
+          "resume": "Les exigences linguistiques doivent etre proportionnees a l'age et a la situation personnelle du requérant."
         }
       ],
-      "modeleLettre": "Objet : Demande de permis d'etablissement (permis C)\n\nAu Service [cantonal] de la population,\n\nMadame, Monsieur,\n\nTitulaire d'un permis B depuis le [date], je remplis les conditions de l'art. 34 LEI et sollicite l'octroi d'un permis d'etablissement (C).\n\n- Duree de sejour en Suisse : [X] ans\n- Integration : [description]\n- Competences linguistiques : [niveau atteste]\n- Situation professionnelle : [emploi stable]\n- Casier judiciaire : vierge\n\nPieces jointes : [attestation employeur, certificat de langue, extrait casier]\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
+      "modeleLettre": "Objet : Demande de permis d'etablissement (permis C)\n\nAu Service [cantonal] de la population,\n\nMadame, Monsieur,\n\nTitulaire d'un permis B depuis le [date], je remplis les conditions de l'art. 34 LEI et sollicite l'octroi d'un permis d'etablissement (C).\n\n- Durée de sejour en Suisse : [X] ans\n- Integration : [description]\n- Competences linguistiques : [niveau atteste]\n- Situation professionnelle : [emploi stable]\n- Casier judiciaire : vierge\n\nPieces jointes : [attestation employeur, certificat de langue, extrait casier]\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
       "services": [
         {
           "nom": "Service de la population VD (SPOP)",
@@ -115,7 +115,7 @@
       "renouvellement de permis B sans demande de C"
     ],
     "required_facts": [
-      "duree de sejour en Suisse",
+      "durée de sejour en Suisse",
       "nationalite",
       "integration (langue, travail)",
       "casier judiciaire"
@@ -144,7 +144,7 @@
       },
       {
         "id": "q2",
-        "text": "Duree de sejour en Suisse ?",
+        "text": "Durée de sejour en Suisse ?",
         "options": [
           "<10 ans",
           "10-15 ans",
@@ -176,7 +176,7 @@
       }
     ],
     "reponse": {
-      "explication": "La naturalisation ordinaire requiert 10 ans de sejour en Suisse (les annees entre 8 et 18 ans comptent double, art. 9 LN) et le permis C (art. 9 al. 1 let. a LN). Le requerant doit etre integre, se conformer a l'ordre juridique, ne pas compromettre la securite de la Suisse (art. 11-12 LN). Les exigences linguistiques sont de B1 a l'oral et A2 a l'ecrit dans la langue du lieu de domicile. La procedure comprend trois niveaux : federal (SEM), cantonal et communal. La duree varie de 1 a 4 ans selon le canton. La naturalisation facilitee (art. 21 LN) est possible pour le conjoint etranger d'un Suisse apres 5 ans de residence et 3 ans de mariage. Les frais varient : CHF 100 (federation) + frais cantonaux et communaux (CHF 500-3'000). La double nationalite est autorisee. Le requerant ne doit pas etre dependant de l'aide sociale et ne pas avoir de poursuites en cours.",
+      "explication": "La naturalisation ordinaire requiert 10 ans de sejour en Suisse (les annees entre 8 et 18 ans comptent double, art. 9 LN) et le permis C (art. 9 al. 1 let. a LN). Le requérant doit etre integre, se conformer a l'ordre juridique, ne pas compromettre la securite de la Suisse (art. 11-12 LN). Les exigences linguistiques sont de B1 a l'oral et A2 a l'ecrit dans la langue du lieu de domicile. La procedure comprend trois niveaux : federal (SEM), cantonal et communal. La durée varie de 1 a 4 ans selon le canton. La naturalisation facilitee (art. 21 LN) est possible pour le conjoint etranger d'un Suisse après 5 ans de residence et 3 ans de mariage. Les frais varient : CHF 100 (federation) + frais cantonaux et communaux (CHF 500-3'000). La double nationalite est autorisee. Le requérant ne doit pas etre dependant de l'aide sociale et ne pas avoir de poursuites en cours.",
       "articles": [
         {
           "ref": "LN 9",
@@ -240,7 +240,7 @@
       "simple renouvellement de permis"
     ],
     "required_facts": [
-      "duree de sejour",
+      "durée de sejour",
       "permis actuel",
       "niveau de langue",
       "casier judiciaire et poursuites"
@@ -255,7 +255,7 @@
       "familial",
       "conjoint",
       "enfant",
-      "delai"
+      "délai"
     ],
     "questions": [
       {
@@ -302,7 +302,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le regroupement familial permet de faire venir sa famille en Suisse. Les conditions varient selon le statut du requerant : (1) Citoyen suisse : droit au regroupement pour le conjoint et les enfants de moins de 18 ans (art. 42 LEI), sans condition de delai ni de revenu. (2) Titulaire permis C : droit au regroupement pour conjoint et enfants <18 ans (art. 43 LEI), logement conforme requis. (3) Titulaire permis B : regroupement possible pour conjoint et enfants <18 ans (art. 44 LEI), conditions strictes : logement conforme, pas de dependance a l'aide sociale, vie commune. (4) Permis F : tres restrictif, delai d'attente de 3 ans (art. 85 al. 7 LEI). Le delai pour demander le regroupement est de 5 ans pour le conjoint et les enfants de plus de 12 ans, 1 an pour les enfants de moins de 12 ans (art. 47 LEI). Passe ce delai, le regroupement peut etre refuse.",
+      "explication": "Le regroupement familial permet de faire venir sa famille en Suisse. Les conditions varient selon le statut du requérant : (1) Citoyen suisse : droit au regroupement pour le conjoint et les enfants de moins de 18 ans (art. 42 LEI), sans condition de délai ni de revenu. (2) Titulaire permis C : droit au regroupement pour conjoint et enfants <18 ans (art. 43 LEI), logement conforme requis. (3) Titulaire permis B : regroupement possible pour conjoint et enfants <18 ans (art. 44 LEI), conditions strictes : logement conforme, pas de dependance a l'aide sociale, vie commune. (4) Permis F : tres restrictif, délai d'attente de 3 ans (art. 85 al. 7 LEI). Le délai pour demander le regroupement est de 5 ans pour le conjoint et les enfants de plus de 12 ans, 1 an pour les enfants de moins de 12 ans (art. 47 LEI). Passe ce délai, le regroupement peut etre refuse.",
       "articles": [
         {
           "ref": "LEI 42",
@@ -328,7 +328,7 @@
       "jurisprudence": [
         {
           "ref": "TF 2C_276/2021",
-          "resume": "Le depassement du delai de regroupement peut etre excuse si le requerant prouve des raisons familiales majeures."
+          "resume": "Le depassement du délai de regroupement peut etre excuse si le requérant prouve des raisons familiales majeures."
         },
         {
           "ref": "TF 2C_781/2017",
@@ -395,7 +395,7 @@
       },
       {
         "id": "q2",
-        "text": "Avez-vous recu une decision ecrite ?",
+        "text": "Avez-vous reçu une decision ecrite ?",
         "options": [
           "oui",
           "non, orale seulement"
@@ -415,7 +415,7 @@
         "text": "Attaches en Suisse ?",
         "options": [
           "conjoint/enfant suisse",
-          "longue duree de sejour",
+          "longue durée de sejour",
           "aucune particuliere"
         ]
       },
@@ -426,7 +426,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le renvoi (art. 64 LEI) est ordonne lorsqu'une autorisation est refusee ou revoquee. Il doit respecter le principe de proportionnalite et la CEDH (art. 8 CEDH, droit a la vie privee et familiale). L'expulsion penale (art. 66a CP) est prononcee par le juge penal pour certaines infractions graves et est en principe obligatoire, sauf clause de rigueur (art. 66a al. 2 CP). Le recours contre une decision de renvoi doit etre depose dans les 30 jours aupres du tribunal cantonal competent (art. 64 al. 3 LEI). Le recours a un effet suspensif en principe. Des mesures de contrainte (detention administrative) peuvent etre ordonnees pour assurer l'execution du renvoi (art. 76 LEI), limitees a 6 mois (18 mois maximum). Le renvoi est impossible vers un pays ou la personne risque la torture ou des traitements inhumains (art. 25 al. 3 Cst., non-refoulement).",
+      "explication": "Le renvoi (art. 64 LEI) est ordonne lorsqu'une autorisation est refusee ou revoquee. Il doit respecter le principe de proportionnalite et la CEDH (art. 8 CEDH, droit a la vie privee et familiale). L'expulsion penale (art. 66a CP) est prononcee par le juge penal pour certaines infractions graves et est en principe obligatoire, sauf clause de rigueur (art. 66a al. 2 CP). Le recours contre une decision de renvoi doit etre déposé dans les 30 jours aupres du tribunal cantonal competent (art. 64 al. 3 LEI). Le recours a un effet suspensif en principe. Des mesures de contrainte (detention administrative) peuvent etre ordonnees pour assurer l'execution du renvoi (art. 76 LEI), limitees a 6 mois (18 mois maximum). Le renvoi est impossible vers un pays ou la personne risque la torture ou des traitements inhumains (art. 25 al. 3 Cst., non-refoulement).",
       "articles": [
         {
           "ref": "LEI 64",
@@ -454,7 +454,7 @@
           "resume": "La clause de rigueur de l'art. 66a al. 2 CP doit etre appliquee restrictivement mais ne peut pas etre ignoree."
         }
       ],
-      "modeleLettre": "Objet : Recours contre la decision de renvoi\n\nAu Tribunal [cantonal/TAF],\n\nMadame, Monsieur le/la Juge,\n\nJe forme recours contre la decision de [autorite] du [date] ordonnant mon renvoi de Suisse.\n\nMotifs :\n1. Violation de l'art. 8 CEDH : [attaches familiales en Suisse]\n2. Violation du principe de proportionnalite : [duree de sejour, integration]\n3. [Autres motifs]\n\nJe demande l'effet suspensif du recours (art. 55 PA).\n\nVeuillez agreer l'expression de ma haute consideration.\n\n[Signature]",
+      "modeleLettre": "Objet : Recours contre la decision de renvoi\n\nAu Tribunal [cantonal/TAF],\n\nMadame, Monsieur le/la Juge,\n\nJe forme recours contre la decision de [autorite] du [date] ordonnant mon renvoi de Suisse.\n\nMotifs :\n1. Violation de l'art. 8 CEDH : [attaches familiales en Suisse]\n2. Violation du principe de proportionnalite : [durée de sejour, integration]\n3. [Autres motifs]\n\nJe demande l'effet suspensif du recours (art. 55 PA).\n\nVeuillez agreer l'expression de ma haute consideration.\n\n[Signature]",
       "services": [
         {
           "nom": "Consultation juridique pour etrangers VD",
@@ -491,8 +491,8 @@
     ],
     "required_facts": [
       "motif du renvoi",
-      "delai de depart",
-      "recours depose ou non",
+      "délai de depart",
+      "recours déposé ou non",
       "famille en Suisse"
     ]
   },
@@ -528,7 +528,7 @@
       },
       {
         "id": "q3",
-        "text": "Duree prevue ?",
+        "text": "Durée prevue ?",
         "options": [
           "<90 jours",
           "90 jours - 1 an",
@@ -637,7 +637,7 @@
         "id": "q1",
         "text": "Etat de la procedure ?",
         "options": [
-          "pas encore depose",
+          "pas encore déposé",
           "en attente",
           "decision negative",
           "decision positive"
@@ -678,7 +678,7 @@
       }
     ],
     "reponse": {
-      "explication": "La procedure d'asile en Suisse est regie par la LAsi. Depuis 2019, la procedure restructuree prevoit : (1) une phase preparatoire dans un centre federal (enregistrement, examen Dublin), (2) une audition sur les motifs d'asile, (3) une decision. La procedure acceleree (majorite des cas) dure environ 140 jours dans un centre federal. Si le cas est complexe, il est transfere au canton (procedure etendue, ~1 an). Le requerant a droit a un representant juridique gratuit (art. 102f LAsi). La qualite de refugie est reconnue si la personne est persecutee en raison de sa race, religion, nationalite, appartenance a un groupe social ou opinions politiques (art. 3 LAsi). Le recours contre une decision negative doit etre depose dans les 7 jours ouvrables (acceleree) ou 30 jours (etendue) aupres du TAF (art. 108 LAsi). L'admission provisoire (permis F) est accordee si le renvoi est illicite, inexigible ou impossible (art. 83 LEI).",
+      "explication": "La procedure d'asile en Suisse est regie par la LAsi. Depuis 2019, la procedure restructuree prevoit : (1) une phase preparatoire dans un centre federal (enregistrement, examen Dublin), (2) une audition sur les motifs d'asile, (3) une decision. La procedure acceleree (majorite des cas) dure environ 140 jours dans un centre federal. Si le cas est complexe, il est transfere au canton (procedure etendue, ~1 an). Le requérant a droit a un representant juridique gratuit (art. 102f LAsi). La qualite de refugie est reconnue si la personne est persecutee en raison de sa race, religion, nationalite, appartenance a un groupe social ou opinions politiques (art. 3 LAsi). Le recours contre une decision negative doit etre déposé dans les 7 jours ouvrables (acceleree) ou 30 jours (etendue) aupres du TAF (art. 108 LAsi). L'admission provisoire (permis F) est accordee si le renvoi est illicite, inexigible ou impossible (art. 83 LEI).",
       "articles": [
         {
           "ref": "LAsi 3",
@@ -725,7 +725,7 @@
           "canton": "GE"
         },
         {
-          "nom": "Permanence juridique pour requerants d'asile",
+          "nom": "Permanence juridique pour requérants d'asile",
           "url": "https://www.eper.ch",
           "canton": "VD"
         }
@@ -741,7 +741,7 @@
       "procedure d'asile etapes",
       "refugie en Suisse",
       "centre d'enregistrement asile",
-      "comment deposer une demande d'asile"
+      "comment déposer une demande d'asile"
     ],
     "negative_signals": [
       "demande de visa touristique",
@@ -808,11 +808,11 @@
       }
     ],
     "reponse": {
-      "explication": "Meme sans titre de sejour, les personnes sans papiers ont des droits fondamentaux en Suisse : (1) Le contrat de travail est valable meme sans permis ; le travailleur peut reclamer son salaire (art. 320 al. 2 CO, confirme par TF). (2) Les enfants ont droit a l'education (scolarisation obligatoire, art. 19 Cst.). (3) Acces aux soins d'urgence (art. 12 Cst., droit a l'aide d'urgence). (4) L'assurance maladie est obligatoire et les assureurs ne peuvent pas denoncer les sans-papiers (secret medical). L'operation « Papyrus » a Geneve (2017-2018) a permis la regularisation d'environ 3'000 personnes remplissant des criteres stricts : sejour continu de 5 ans (10 ans pour les familles), independance financiere, integration, casier vierge. D'autres cantons etudient des modeles similaires. La denonciation de sans-papiers par des services publics est un sujet debattu (certains cantons protegeant la confidentialite).",
+      "explication": "Même sans titre de sejour, les personnes sans papiers ont des droits fondamentaux en Suisse : (1) Le contrat de travail est valable même sans permis ; le travailleur peut reclamer son salaire (art. 320 al. 2 CO, confirme par TF). (2) Les enfants ont droit a l'education (scolarisation obligatoire, art. 19 Cst.). (3) Acces aux soins d'urgence (art. 12 Cst., droit a l'aide d'urgence). (4) L'assurance maladie est obligatoire et les assureurs ne peuvent pas denoncer les sans-papiers (secret medical). L'operation « Papyrus » a Geneve (2017-2018) a permis la regularisation d'environ 3'000 personnes remplissant des criteres stricts : sejour continu de 5 ans (10 ans pour les familles), independance financiere, integration, casier vierge. D'autres cantons etudient des modeles similaires. La denonciation de sans-papiers par des services publics est un sujet debattu (certains cantons protegeant la confidentialite).",
       "articles": [
         {
           "ref": "CO 320",
-          "titre": "Contrat de travail — validite meme sans permis",
+          "titre": "Contrat de travail — validite même sans permis",
           "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_320"
         },
         {
@@ -879,7 +879,7 @@
       "touriste en sejour legal"
     ],
     "required_facts": [
-      "duree de presence en Suisse",
+      "durée de presence en Suisse",
       "attaches familiales",
       "activite professionnelle",
       "etat de sante"
@@ -893,7 +893,7 @@
       "violence",
       "permis",
       "conjoint",
-      "separation",
+      "séparation",
       "poursuite sejour"
     ],
     "questions": [
@@ -926,7 +926,7 @@
       },
       {
         "id": "q4",
-        "text": "Duree du mariage ?",
+        "text": "Durée du mariage ?",
         "options": [
           "<3 ans",
           "3-5 ans",
@@ -940,7 +940,7 @@
       }
     ],
     "reponse": {
-      "explication": "L'art. 50 LEI protege le conjoint etranger victime de violence conjugale : meme apres la dissolution du mariage ou de la communaute conjugale, le droit au sejour est maintenu si (1) l'union conjugale a dure au moins 3 ans et que l'integration est reussie (art. 50 al. 1 let. a LEI), OU si (2) la poursuite du sejour s'impose pour des raisons personnelles majeures, notamment la violence conjugale (art. 50 al. 1 let. b LEI). La violence doit etre rendue vraisemblable (certificats medicaux, rapports de police, attestations de foyers), pas prouvee de maniere absolue. La violence psychologique systematique est reconnue comme raison personnelle majeure. Le conjoint victime peut se separer SANS perdre son permis. En cas d'urgence, les centres d'aide LAVI offrent un hebergement et un accompagnement confidentiel. Le permis est prolonge d'annee en annee le temps que la situation se clarifie.",
+      "explication": "L'art. 50 LEI protege le conjoint etranger victime de violence conjugale : même après la dissolution du mariage ou de la communaute conjugale, le droit au sejour est maintenu si (1) l'union conjugale a dure au moins 3 ans et que l'integration est reussie (art. 50 al. 1 let. a LEI), OU si (2) la poursuite du sejour s'impose pour des raisons personnelles majeures, notamment la violence conjugale (art. 50 al. 1 let. b LEI). La violence doit etre rendue vraisemblable (certificats medicaux, rapports de police, attestations de foyers), pas prouvee de maniere absolue. La violence psychologique systematique est reconnue comme raison personnelle majeure. Le conjoint victime peut se separer SANS perdre son permis. En cas d'urgence, les centres d'aide LAVI offrent un hebergement et un accompagnement confidentiel. Le permis est prolonge d'annee en annee le temps que la situation se clarifie.",
       "articles": [
         {
           "ref": "LEI 50",
@@ -956,7 +956,7 @@
       "jurisprudence": [
         {
           "ref": "TF 2C_777/2015",
-          "resume": "La violence conjugale psychologique repetee (isolement, controle, humiliations) constitue une raison personnelle majeure au sens de l'art. 50 al. 1 let. b LEI."
+          "resume": "La violence conjugale psychologique répétée (isolement, controle, humiliations) constitue une raison personnelle majeure au sens de l'art. 50 al. 1 let. b LEI."
         },
         {
           "ref": "TF 2C_1085/2017",
@@ -999,18 +999,18 @@
     "profane_aliases": [
       "violence conjugale et permis de sejour",
       "mon mari me frappe et j'ai peur de perdre mon permis",
-      "separation et permis",
+      "séparation et permis",
       "je suis battue mais j'ai besoin de mon permis",
       "violence et risque d'expulsion"
     ],
     "negative_signals": [
       "violence sans enjeu migratoire",
-      "separation amiable sans violence"
+      "séparation amiable sans violence"
     ],
     "required_facts": [
       "type de permis",
       "preuves de violence",
-      "duree du mariage",
+      "durée du mariage",
       "enfants"
     ]
   },
@@ -1069,7 +1069,7 @@
       }
     ],
     "reponse": {
-      "explication": "L'art. 12 de la Constitution federale garantit a toute personne en situation de detresse le droit d'obtenir de l'aide. Ce droit est absolu et s'applique independamment du statut de sejour (ATF 131 I 166). L'aide d'urgence comprend : un hebergement de base, la nourriture, les vetements et les soins medicaux d'urgence. Elle est versee en nature (pas en especes) par le canton de sejour. Les requerants d'asile deboutes (NEM) y ont droit. Le montant est tres modeste (environ CHF 8-12/jour selon les cantons). L'aide d'urgence n'est pas l'aide sociale : elle couvre uniquement le minimum vital absolu. La personne doit se presenter regulierement aupres des autorites. Le refus d'accorder l'aide d'urgence peut faire l'objet d'un recours au tribunal cantonal puis au Tribunal federal. Les enfants beneficient d'une protection renforcee.",
+      "explication": "L'art. 12 de la Constitution federale garantit a toute personne en situation de detresse le droit d'obtenir de l'aide. Ce droit est absolu et s'applique independamment du statut de sejour (ATF 131 I 166). L'aide d'urgence comprend : un hebergement de base, la nourriture, les vetements et les soins medicaux d'urgence. Elle est versee en nature (pas en especes) par le canton de sejour. Les requérants d'asile deboutes (NEM) y ont droit. Le montant est tres modeste (environ CHF 8-12/jour selon les cantons). L'aide d'urgence n'est pas l'aide sociale : elle couvre uniquement le minimum vital absolu. La personne doit se presenter regulierement aupres des autorites. Le refus d'accorder l'aide d'urgence peut faire l'objet d'un recours au tribunal cantonal puis au Tribunal federal. Les enfants beneficient d'une protection renforcee.",
       "articles": [
         {
           "ref": "Cst 12",
@@ -1144,7 +1144,7 @@
       "recours",
       "TAF",
       "renvoi",
-      "delai",
+      "délai",
       "effet suspensif"
     ],
     "questions": [
@@ -1192,7 +1192,7 @@
       }
     ],
     "reponse": {
-      "explication": "Les decisions en matiere d'asile et de droit des etrangers peuvent faire l'objet d'un recours au Tribunal administratif federal (TAF). En matiere d'asile, le delai est de 7 jours ouvrables en procedure acceleree et 30 jours en procedure etendue (art. 108 LAsi). En droit des etrangers (permis), le recours cantonal est d'abord exerce dans les 30 jours, puis le recours au Tribunal federal dans les 30 jours (art. 100 LTF). L'assistance judiciaire gratuite (avocat commis d'office) est accordee si le recours n'est pas voue a l'echec et que le requerant est indigent (art. 65 PA). Le recours a generalement un effet suspensif (le renvoi ne peut pas etre execute pendant la procedure), sauf decision contraire du tribunal. Le memoire de recours doit etre motive en fait et en droit. Les nouveaux elements (novae) sont en principe admis devant le TAF mais exclus devant le TF.",
+      "explication": "Les decisions en matiere d'asile et de droit des etrangers peuvent faire l'objet d'un recours au Tribunal administratif federal (TAF). En matiere d'asile, le délai est de 7 jours ouvrables en procedure acceleree et 30 jours en procedure etendue (art. 108 LAsi). En droit des etrangers (permis), le recours cantonal est d'abord exerce dans les 30 jours, puis le recours au Tribunal federal dans les 30 jours (art. 100 LTF). L'assistance judiciaire gratuite (avocat commis d'office) est accordee si le recours n'est pas voue a l'echec et que le requérant est indigent (art. 65 PA). Le recours a generalement un effet suspensif (le renvoi ne peut pas etre execute pendant la procedure), sauf decision contraire du tribunal. Le memoire de recours doit etre motive en fait et en droit. Les nouveaux elements (novae) sont en principe admis devant le TAF mais exclus devant le TF.",
       "articles": [
         {
           "ref": "LAsi 108",
@@ -1217,7 +1217,7 @@
         },
         {
           "ref": "TF 2C_200/2017",
-          "resume": "L'assistance judiciaire doit etre accordee lorsque le recours souleve des questions juridiques serieuses, meme si les chances de succes sont incertaines."
+          "resume": "L'assistance judiciaire doit etre accordee lorsque le recours souleve des questions juridiques serieuses, même si les chances de succes sont incertaines."
         }
       ],
       "modeleLettre": "Objet : Recours contre la decision du [date]\n\nAu Tribunal administratif federal,\n\nMadame, Monsieur le/la Juge,\n\n1. Je forme recours contre la decision du SEM / de [autorite] du [date], ref. [numero].\n\n2. Je demande :\n   a) L'annulation de la decision attaquee\n   b) L'octroi de l'effet suspensif\n   c) L'octroi de l'assistance judiciaire gratuite (art. 65 PA)\n\n3. Motifs :\n   [Violation du droit federal / etablissement inexact des faits / inopportunite]\n\n4. Moyens de preuve : [liste]\n\nVeuillez agreer l'expression de ma haute consideration.\n\n[Signature]",
@@ -1254,16 +1254,16 @@
       "recours contre renvoi",
       "contester une expulsion",
       "recours au TAF",
-      "delai pour faire recours",
+      "délai pour faire recours",
       "effet suspensif renvoi"
     ],
     "negative_signals": [
-      "renvoi deja execute",
+      "renvoi déjà execute",
       "depart volontaire accepte"
     ],
     "required_facts": [
       "date de la decision",
-      "delai de recours (30 jours)",
+      "délai de recours (30 jours)",
       "motifs du recours",
       "effet suspensif demande"
     ]
@@ -1296,7 +1296,7 @@
         "options": [
           "<3 mois",
           "3-6 mois",
-          "deja expire"
+          "déjà expire"
         ]
       },
       {
@@ -1324,7 +1324,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le permis B (autorisation de sejour) est renouvele a condition que le motif d'octroi subsiste et qu'il n'y ait pas de motif de revocation (art. 33 LEI). Pour les ressortissants UE/AELE, le renouvellement est quasi automatique s'ils exercent une activite ou disposent de moyens financiers suffisants (ALCP art. 6). Pour les ressortissants de pays tiers, les conditions sont plus strictes : emploi stable, integration, absence de dependance a l'aide sociale, respect de l'ordre public. Le permis B peut etre refuse au renouvellement en cas de condamnation penale grave (art. 62 LEI), de dependance durable a l'aide sociale (art. 62 al. 1 let. e LEI), ou de non-respect des conditions d'integration (art. 58a LEI). La demande de renouvellement doit etre deposee avant l'expiration. Un recours est possible en cas de refus (delai de 30 jours). Le sejour reste legal pendant la procedure de recours.",
+      "explication": "Le permis B (autorisation de sejour) est renouvele a condition que le motif d'octroi subsiste et qu'il n'y ait pas de motif de revocation (art. 33 LEI). Pour les ressortissants UE/AELE, le renouvellement est quasi automatique s'ils exercent une activite ou disposent de moyens financiers suffisants (ALCP art. 6). Pour les ressortissants de pays tiers, les conditions sont plus strictes : emploi stable, integration, absence de dependance a l'aide sociale, respect de l'ordre public. Le permis B peut etre refuse au renouvellement en cas de condamnation penale grave (art. 62 LEI), de dependance durable a l'aide sociale (art. 62 al. 1 let. e LEI), ou de non-respect des conditions d'integration (art. 58a LEI). La demande de renouvellement doit etre déposée avant l'expiration. Un recours est possible en cas de refus (délai de 30 jours). Le sejour reste legal pendant la procedure de recours.",
       "articles": [
         {
           "ref": "LEI 33",
@@ -1398,7 +1398,7 @@
       "etablissement",
       "conditions",
       "integration",
-      "duree"
+      "durée"
     ],
     "questions": [
       {
@@ -1411,7 +1411,7 @@
       },
       {
         "id": "q2",
-        "text": "Duree de sejour en Suisse ?",
+        "text": "Durée de sejour en Suisse ?",
         "options": [
           "<5 ans",
           "5-10 ans",
@@ -1444,7 +1444,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le permis C (autorisation d'etablissement) est le statut le plus stable pour un etranger en Suisse. Conditions generales (art. 34 LEI) : 10 ans de sejour regulier (dont 5 dans les annees precedant la demande), integration reussie. Pour les UE/AELE, le delai est de 5 ans (art. 34 al. 4 LEI / ALCP). Integration requise (art. 58a LEI) : respect de la securite et de l'ordre publics, respect des valeurs constitutionnelles, competences linguistiques (A2 oral, A1 ecrit minimum), participation a la vie economique ou formation. L'octroi anticipe est possible en cas d'integration particulierement reussie (art. 34 al. 4 LEI) : B1 oral, A2 ecrit, bonne integration. Le permis C confere un droit quasi illimite au sejour et au travail. Il peut etre retrograde en permis B (art. 63 al. 2 LEI) en cas d'aide sociale durable ou revoque en cas de condamnation grave. La demande se fait aupres du service cantonal de la population.",
+      "explication": "Le permis C (autorisation d'etablissement) est le statut le plus stable pour un etranger en Suisse. Conditions generales (art. 34 LEI) : 10 ans de sejour regulier (dont 5 dans les annees precedant la demande), integration reussie. Pour les UE/AELE, le délai est de 5 ans (art. 34 al. 4 LEI / ALCP). Integration requise (art. 58a LEI) : respect de la securite et de l'ordre publics, respect des valeurs constitutionnelles, competences linguistiques (A2 oral, A1 ecrit minimum), participation a la vie economique ou formation. L'octroi anticipe est possible en cas d'integration particulierement reussie (art. 34 al. 4 LEI) : B1 oral, A2 ecrit, bonne integration. Le permis C confere un droit quasi illimite au sejour et au travail. Il peut etre retrograde en permis B (art. 63 al. 2 LEI) en cas d'aide sociale durable ou revoque en cas de condamnation grave. La demande se fait aupres du service cantonal de la population.",
       "articles": [
         {
           "ref": "LEI 34",
@@ -1503,7 +1503,7 @@
       "question sur le permis B uniquement"
     ],
     "required_facts": [
-      "duree de sejour",
+      "durée de sejour",
       "integration",
       "aide sociale",
       "casier judiciaire"
@@ -1533,7 +1533,7 @@
       },
       {
         "id": "q2",
-        "text": "Duree de residence en Suisse ?",
+        "text": "Durée de residence en Suisse ?",
         "options": [
           "<5 ans",
           "5-10 ans",
@@ -1542,7 +1542,7 @@
       },
       {
         "id": "q3",
-        "text": "Duree du mariage ?",
+        "text": "Durée du mariage ?",
         "options": [
           "<3 ans",
           "3-5 ans",
@@ -1557,7 +1557,7 @@
       }
     ],
     "reponse": {
-      "explication": "La naturalisation facilitee (art. 21-24 LN) est accessible principalement au conjoint etranger d'un citoyen suisse : conditions de 5 ans de residence en Suisse, 3 ans de mariage, integration reussie, pas de mise en danger de la securite (art. 21 LN). Elle est aussi accessible aux enfants de parent suisse n'ayant pas acquis la nationalite et aux etrangers de 3e generation (art. 24a LN). La procedure est federale (SEM), plus rapide que la naturalisation ordinaire (12-18 mois). Le requetant ne doit pas etre dependant de l'aide sociale, doit avoir un casier judiciaire vierge et des competences linguistiques suffisantes. Attention : le mariage ou partenariat doit etre effectif, pas seulement formel — un mariage de complaisance entraine l'annulation (art. 36 LN). Le conjoint etranger vivant a l'etranger peut aussi beneficier de la naturalisation facilitee apres 6 ans de mariage et des liens etroits avec la Suisse (art. 21 al. 2 LN).",
+      "explication": "La naturalisation facilitee (art. 21-24 LN) est accessible principalement au conjoint etranger d'un citoyen suisse : conditions de 5 ans de residence en Suisse, 3 ans de mariage, integration reussie, pas de mise en danger de la securite (art. 21 LN). Elle est aussi accessible aux enfants de parent suisse n'ayant pas acquis la nationalite et aux etrangers de 3e generation (art. 24a LN). La procedure est federale (SEM), plus rapide que la naturalisation ordinaire (12-18 mois). Le requetant ne doit pas etre dependant de l'aide sociale, doit avoir un casier judiciaire vierge et des competences linguistiques suffisantes. Attention : le mariage ou partenariat doit etre effectif, pas seulement formel — un mariage de complaisance entraine l'annulation (art. 36 LN). Le conjoint etranger vivant a l'etranger peut aussi beneficier de la naturalisation facilitee après 6 ans de mariage et des liens etroits avec la Suisse (art. 21 al. 2 LN).",
       "articles": [
         {
           "ref": "LN 21",
@@ -1582,7 +1582,7 @@
         },
         {
           "ref": "TF 1C_440/2017",
-          "resume": "La separation peu apres la naturalisation constitue un indice de mariage de complaisance mais ne suffit pas a elle seule."
+          "resume": "La séparation peu après la naturalisation constitue un indice de mariage de complaisance mais ne suffit pas a elle seule."
         }
       ],
       "modeleLettre": "",
@@ -1621,8 +1621,8 @@
       "simple question sur le mariage"
     ],
     "required_facts": [
-      "duree du mariage",
-      "duree de residence en Suisse",
+      "durée du mariage",
+      "durée de residence en Suisse",
       "integration",
       "lien avec la Suisse"
     ]
@@ -1636,7 +1636,7 @@
       "familial",
       "conjoint",
       "enfant",
-      "delai",
+      "délai",
       "conditions"
     ],
     "questions": [
@@ -1658,12 +1658,12 @@
           "permis C",
           "permis B",
           "permis F",
-          "requerant d'asile"
+          "requérant d'asile"
         ]
       },
       {
         "id": "q3",
-        "text": "Depuis combien de temps etes-vous en Suisse ?",
+        "text": "Depuis combien de temps êtes-vous en Suisse ?",
         "options": [
           "<1 an",
           "1-3 ans",
@@ -1686,7 +1686,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le regroupement familial permet de faire venir en Suisse le conjoint et les enfants mineurs (art. 42-52 LEI). Pour les Suisses : droit au regroupement du conjoint et des enfants mineurs, sans condition de delai ni de revenus (art. 42 LEI). Pour les titulaires d'un permis C : memes conditions que les Suisses, avec exigence de logement convenable (art. 43 LEI). Pour les titulaires d'un permis B : regroupement possible si logement convenable, pas de dependance a l'aide sociale, et dans les 5 ans suivant l'octroi du permis pour le conjoint / 12 mois pour les enfants de plus de 12 ans (art. 44-47 LEI). Le regroupement avec des parents (ascendants) n'est possible qu'en cas de dependance au sens de l'art. 8 CEDH. Pour les UE/AELE, les conditions sont plus souples (ALCP). Les titulaires d'un permis F ont un droit au regroupement apres 3 ans (art. 85 al. 7 LEI).",
+      "explication": "Le regroupement familial permet de faire venir en Suisse le conjoint et les enfants mineurs (art. 42-52 LEI). Pour les Suisses : droit au regroupement du conjoint et des enfants mineurs, sans condition de délai ni de revenus (art. 42 LEI). Pour les titulaires d'un permis C : memes conditions que les Suisses, avec exigence de logement convenable (art. 43 LEI). Pour les titulaires d'un permis B : regroupement possible si logement convenable, pas de dependance a l'aide sociale, et dans les 5 ans suivant l'octroi du permis pour le conjoint / 12 mois pour les enfants de plus de 12 ans (art. 44-47 LEI). Le regroupement avec des parents (ascendants) n'est possible qu'en cas de dependance au sens de l'art. 8 CEDH. Pour les UE/AELE, les conditions sont plus souples (ALCP). Les titulaires d'un permis F ont un droit au regroupement après 3 ans (art. 85 al. 7 LEI).",
       "articles": [
         {
           "ref": "LEI 42",
@@ -1712,7 +1712,7 @@
       "jurisprudence": [
         {
           "ref": "TF 2C_276/2018",
-          "resume": "Le delai de regroupement familial de 5 ans est un delai de peremption ; passe ce delai, le regroupement n'est possible que pour des raisons familiales majeures."
+          "resume": "Le délai de regroupement familial de 5 ans est un délai de peremption ; passe ce délai, le regroupement n'est possible que pour des raisons familiales majeures."
         },
         {
           "ref": "TF 2C_340/2017",
@@ -1740,19 +1740,19 @@
     "match_description": "La personne veut connaitre les conditions detaillees du regroupement familial",
     "profane_aliases": [
       "conditions regroupement familial",
-      "delai regroupement familial",
+      "délai regroupement familial",
       "faire venir conjoint en Suisse",
       "regroupement familial refuse",
       "logement pour regroupement"
     ],
     "negative_signals": [
       "mariage en Suisse sans question de sejour",
-      "visite familiale courte duree"
+      "visite familiale courte durée"
     ],
     "required_facts": [
       "statut en Suisse",
       "lien familial",
-      "delais respectes",
+      "délais respectes",
       "logement et revenu suffisants"
     ]
   },
@@ -1764,7 +1764,7 @@
       "renvoi",
       "recours",
       "expulsion",
-      "delai",
+      "délai",
       "effet suspensif"
     ],
     "questions": [
@@ -1775,12 +1775,12 @@
           "refus de permis",
           "non-renouvellement",
           "revocation de permis",
-          "renvoi apres asile refuse"
+          "renvoi après asile refuse"
         ]
       },
       {
         "id": "q2",
-        "text": "Depuis quand avez-vous recu la decision ?",
+        "text": "Depuis quand avez-vous reçu la decision ?",
         "options": [
           "<10 jours",
           "10-30 jours",
@@ -1803,7 +1803,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le renvoi est la consequence du refus, du non-renouvellement ou de la revocation d'un permis de sejour (art. 64 LEI). Le recours doit etre depose dans un delai de 30 jours aupres de l'autorite cantonale competente (tribunal administratif cantonal) ou du TAF pour les decisions federales (art. 112 LEI). Le recours n'a pas automatiquement d'effet suspensif — il faut le demander expressement au tribunal. Pendant la procedure de recours avec effet suspensif, le renvoi ne peut pas etre execute. Arguments frequents de recours : proportionnalite, droit au respect de la vie familiale (art. 8 CEDH), integration, interet des enfants. L'expulsion penale (art. 66a CP) est distincte du renvoi administratif et peut etre prononcee par le juge penal pour certaines infractions graves. L'assistance juridique gratuite est disponible si les conditions sont remplies.",
+      "explication": "Le renvoi est la consequence du refus, du non-renouvellement ou de la revocation d'un permis de sejour (art. 64 LEI). Le recours doit etre déposé dans un délai de 30 jours aupres de l'autorite cantonale competente (tribunal administratif cantonal) ou du TAF pour les decisions federales (art. 112 LEI). Le recours n'a pas automatiquement d'effet suspensif — il faut le demander expressement au tribunal. Pendant la procedure de recours avec effet suspensif, le renvoi ne peut pas etre execute. Arguments frequents de recours : proportionnalite, droit au respect de la vie familiale (art. 8 CEDH), integration, interet des enfants. L'expulsion penale (art. 66a CP) est distincte du renvoi administratif et peut etre prononcee par le juge penal pour certaines infractions graves. L'assistance juridique gratuite est disponible si les conditions sont remplies.",
       "articles": [
         {
           "ref": "LEI 64",
@@ -1828,7 +1828,7 @@
         },
         {
           "ref": "TF 2C_641/2018",
-          "resume": "Un long sejour en Suisse (>10 ans) cree un droit au respect de la vie privee au sens de l'art. 8 CEDH, meme sans famille en Suisse."
+          "resume": "Un long sejour en Suisse (>10 ans) cree un droit au respect de la vie privee au sens de l'art. 8 CEDH, même sans famille en Suisse."
         }
       ],
       "modeleLettre": "",
@@ -1868,8 +1868,8 @@
       "depart volontaire organise"
     ],
     "required_facts": [
-      "decision de renvoi recue",
-      "date et delai de recours",
+      "decision de renvoi reçue",
+      "date et délai de recours",
       "motifs de contestation",
       "attaches en Suisse"
     ]
@@ -1920,7 +1920,7 @@
       }
     ],
     "reponse": {
-      "explication": "L'admission provisoire (permis F) est accordee lorsque le renvoi est illicite, inexigible ou impossible (art. 83 LEI). Illicite : violation du principe de non-refoulement (art. 25 Cst., Convention de Geneve). Inexigible : situation de guerre, violence generalisee, ou raisons medicales graves dans le pays d'origine. Impossible : raisons techniques (pas de documents, pays refuse le retour). Le permis F est renouvelable annuellement tant que les conditions subsistent. Il permet de travailler sans restriction sectorielle ni geographique (art. 85a LEI). Le regroupement familial est possible apres 3 ans si le titulaire a un revenu suffisant et un logement (art. 85 al. 7 LEI). Le passage au permis B est possible apres 5 ans de sejour si l'integration est reussie (art. 84 al. 5 LEI — cas de rigueur). Le permis F est souvent mal compris : il ne signifie pas un statut precaire definitif mais peut mener a une stabilisation.",
+      "explication": "L'admission provisoire (permis F) est accordee lorsque le renvoi est illicite, inexigible ou impossible (art. 83 LEI). Illicite : violation du principe de non-refoulement (art. 25 Cst., Convention de Geneve). Inexigible : situation de guerre, violence generalisee, ou raisons medicales graves dans le pays d'origine. Impossible : raisons techniques (pas de documents, pays refuse le retour). Le permis F est renouvelable annuellement tant que les conditions subsistent. Il permet de travailler sans restriction sectorielle ni geographique (art. 85a LEI). Le regroupement familial est possible après 3 ans si le titulaire a un revenu suffisant et un logement (art. 85 al. 7 LEI). Le passage au permis B est possible après 5 ans de sejour si l'integration est reussie (art. 84 al. 5 LEI — cas de rigueur). Le permis F est souvent mal compris : il ne signifie pas un statut precaire definitif mais peut mener a une stabilisation.",
       "articles": [
         {
           "ref": "LEI 83",
@@ -1945,7 +1945,7 @@
         },
         {
           "ref": "TF E-3220/2015 (TAF)",
-          "resume": "Le renvoi vers un pays en situation de violence generalisee est inexigible meme si le requerant n'est pas personnellement menace."
+          "resume": "Le renvoi vers un pays en situation de violence generalisee est inexigible même si le requérant n'est pas personnellement menace."
         }
       ],
       "modeleLettre": "",
@@ -1981,7 +1981,7 @@
     ],
     "negative_signals": [
       "permis B regulier",
-      "requerant d'asile en procedure (permis N)"
+      "requérant d'asile en procedure (permis N)"
     ],
     "required_facts": [
       "date d'obtention du permis F",
@@ -2004,7 +2004,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Depuis combien de temps etes-vous en Suisse ?",
+        "text": "Depuis combien de temps êtes-vous en Suisse ?",
         "options": [
           "<5 ans",
           "5-10 ans",
@@ -2045,7 +2045,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le cas de rigueur (art. 30 al. 1 let. b LEI et art. 31 OASA) permet l'octroi d'un permis B a une personne ne remplissant pas les conditions ordinaires si sa situation personnelle est particulierement grave. Criteres evalues : duree de sejour (en general 5+ ans), integration socioprofessionnelle, competences linguistiques, respect de l'ordre public, situation familiale (enfants scolarises), etat de sante, possibilite de reintegration dans le pays d'origine. L'operation Papyrus (GE, 2017-2018) a regularise environ 3'000 personnes selon ces criteres. Le canton transmet la demande au SEM avec un preavis. Le SEM a le pouvoir de decision finale. La procedure est longue (6-18 mois). L'assistance d'un avocat specialise ou d'une association est vivement recommandee. Le demandeur ne doit pas avoir de casier judiciaire ni etre aide social (sauf raisons de sante).",
+      "explication": "Le cas de rigueur (art. 30 al. 1 let. b LEI et art. 31 OASA) permet l'octroi d'un permis B a une personne ne remplissant pas les conditions ordinaires si sa situation personnelle est particulierement grave. Criteres evalues : durée de sejour (en general 5+ ans), integration socioprofessionnelle, competences linguistiques, respect de l'ordre public, situation familiale (enfants scolarises), etat de sante, possibilite de reintegration dans le pays d'origine. L'operation Papyrus (GE, 2017-2018) a regularise environ 3'000 personnes selon ces criteres. Le canton transmet la demande au SEM avec un preavis. Le SEM a le pouvoir de decision finale. La procedure est longue (6-18 mois). L'assistance d'un avocat specialise ou d'une association est vivement recommandee. Le demandeur ne doit pas avoir de casier judiciaire ni etre aide social (sauf raisons de sante).",
       "articles": [
         {
           "ref": "LEI 30",
@@ -2105,7 +2105,7 @@
       "personne avec permis valide"
     ],
     "required_facts": [
-      "duree de presence en Suisse",
+      "durée de presence en Suisse",
       "integration (travail, langue, liens)",
       "casier judiciaire",
       "independance financiere"
@@ -2160,7 +2160,7 @@
       }
     ],
     "reponse": {
-      "explication": "Les criteres d'integration (art. 58a LEI, art. 77a-77g OASA) sont evalues pour le renouvellement et le changement de permis. Criteres : (1) respect de la securite et de l'ordre publics (pas de condamnations), (2) respect des valeurs constitutionnelles (egalite, tolerance, non-discrimination), (3) competences linguistiques : A1 oral pour le renouvellement du permis B, A2 oral + A1 ecrit pour le permis C, B1 oral + A2 ecrit pour la naturalisation, (4) participation a la vie economique (emploi ou formation) ou raison valable de ne pas travailler (maladie, enfants en bas age). En cas d'integration insuffisante, l'autorite peut imposer une convention d'integration (art. 58b LEI) fixant des objectifs concrets a atteindre dans un delai donne. Le non-respect de la convention peut entrainer le non-renouvellement du permis. Les cours d'integration sont finances par les cantons (programme d'integration cantonal PIC).",
+      "explication": "Les criteres d'integration (art. 58a LEI, art. 77a-77g OASA) sont evalues pour le renouvellement et le changement de permis. Criteres : (1) respect de la securite et de l'ordre publics (pas de condamnations), (2) respect des valeurs constitutionnelles (egalite, tolerance, non-discrimination), (3) competences linguistiques : A1 oral pour le renouvellement du permis B, A2 oral + A1 ecrit pour le permis C, B1 oral + A2 ecrit pour la naturalisation, (4) participation a la vie economique (emploi ou formation) ou raison valable de ne pas travailler (maladie, enfants en bas age). En cas d'integration insuffisante, l'autorite peut imposer une convention d'integration (art. 58b LEI) fixant des objectifs concrets a atteindre dans un délai donne. Le non-respect de la convention peut entrainer le non-renouvellement du permis. Les cours d'integration sont finances par les cantons (programme d'integration cantonal PIC).",
       "articles": [
         {
           "ref": "LEI 58a",
@@ -2181,7 +2181,7 @@
       "jurisprudence": [
         {
           "ref": "TF 2C_631/2018",
-          "resume": "Le defaut d'integration linguistique doit etre evalue en tenant compte des efforts fournis, pas seulement du resultat."
+          "resume": "Le défaut d'integration linguistique doit etre evalue en tenant compte des efforts fournis, pas seulement du resultat."
         },
         {
           "ref": "TF 2C_50/2017",
@@ -2216,7 +2216,7 @@
     ],
     "negative_signals": [
       "question sur le permis sans enjeu d'integration",
-      "naturalisation deja obtenue"
+      "naturalisation déjà obtenue"
     ],
     "required_facts": [
       "type de permis vise",
@@ -2249,7 +2249,7 @@
       },
       {
         "id": "q2",
-        "text": "Avez-vous recu une convention d'integration ?",
+        "text": "Avez-vous reçu une convention d'integration ?",
         "options": [
           "oui, avec obligation de cours",
           "non",
@@ -2273,7 +2273,7 @@
       }
     ],
     "reponse": {
-      "explication": "Les cours de langue peuvent etre imposes par l'autorite migratoire dans le cadre d'une convention d'integration (art. 58b LEI). Les niveaux requis varient selon le permis vise : renouvellement permis B (A1 oral), permis C (A2 oral + A1 ecrit), naturalisation (B1 oral + A2 ecrit). Les certificats reconnus sont ceux du fide (test de langue officiel pour les migrants, www.fide-info.ch) ou des diplomes equivalents (DELF, Goethe, etc.). Les cours sont finances en partie par le Programme d'integration cantonal (PIC). Les beneficiaires de l'aide d'urgence ou de l'asile ont acces a des cours gratuits dans la plupart des cantons. Le non-respect de l'obligation de suivre les cours peut avoir des consequences sur le renouvellement du permis. Les cantons de VD et GE offrent un large eventail de cours allant de l'alphabetisation au B2, souvent integres a des formations professionnelles.",
+      "explication": "Les cours de langue peuvent etre imposes par l'autorite migratoire dans le cadre d'une convention d'integration (art. 58b LEI). Les niveaux requis varient selon le permis vise : renouvellement permis B (A1 oral), permis C (A2 oral + A1 ecrit), naturalisation (B1 oral + A2 ecrit). Les certificats reconnus sont ceux du fide (test de langue officiel pour les migrants, www.fide-info.ch) ou des diplomes equivalents (DELF, Goethe, etc.). Les cours sont finances en partie par le Programme d'integration cantonal (PIC). Les bénéficiaires de l'aide d'urgence ou de l'asile ont acces a des cours gratuits dans la plupart des cantons. Le non-respect de l'obligation de suivre les cours peut avoir des consequences sur le renouvellement du permis. Les cantons de VD et GE offrent un large eventail de cours allant de l'alphabetisation au B2, souvent integres a des formations professionnelles.",
       "articles": [
         {
           "ref": "LEI 58a",
@@ -2289,7 +2289,7 @@
       "jurisprudence": [
         {
           "ref": "TF 2C_846/2018",
-          "resume": "Les exigences linguistiques doivent etre proportionnees a l'age, la formation et la situation personnelle du requerant."
+          "resume": "Les exigences linguistiques doivent etre proportionnees a l'age, la formation et la situation personnelle du requérant."
         }
       ],
       "modeleLettre": "",
@@ -2382,7 +2382,7 @@
       }
     ],
     "reponse": {
-      "explication": "La perception de l'aide sociale peut avoir des consequences graves sur le droit de sejour (art. 62 al. 1 let. e et art. 63 al. 1 let. c LEI). Pour le permis B, la dependance a l'aide sociale est un motif de non-renouvellement (art. 62 LEI). Pour le permis C, une dependance durable peut entrainer la retrogradation en permis B ou la revocation (art. 63 al. 2 LEI). L'autorite doit examiner la proportionnalite : causes de la dependance (maladie, chomage involontaire), efforts d'insertion, duree probable, situation familiale, duree du sejour. Pour les UE/AELE, les regles sont plus protectrices (ALCP). Les titulaires d'un permis F recoivent une aide d'urgence reduite. Le SEM a emis des directives precisant les montants-seuils. L'etranger a droit a l'aide sociale au meme titre que les Suisses tant qu'il a un permis valable, mais cette perception est prise en compte lors du renouvellement.",
+      "explication": "La perception de l'aide sociale peut avoir des consequences graves sur le droit de sejour (art. 62 al. 1 let. e et art. 63 al. 1 let. c LEI). Pour le permis B, la dependance a l'aide sociale est un motif de non-renouvellement (art. 62 LEI). Pour le permis C, une dependance durable peut entrainer la retrogradation en permis B ou la revocation (art. 63 al. 2 LEI). L'autorite doit examiner la proportionnalite : causes de la dependance (maladie, chomage involontaire), efforts d'insertion, durée probable, situation familiale, durée du sejour. Pour les UE/AELE, les regles sont plus protectrices (ALCP). Les titulaires d'un permis F recoivent une aide d'urgence reduite. Le SEM a emis des directives precisant les montants-seuils. L'etranger a droit a l'aide sociale au même titre que les Suisses tant qu'il a un permis valable, mais cette perception est prise en compte lors du renouvellement.",
       "articles": [
         {
           "ref": "LEI 62",
@@ -2407,7 +2407,7 @@
         },
         {
           "ref": "TF 2C_1064/2017",
-          "resume": "La retrogradation du permis C en permis B pour perception d'aide sociale doit etre proportionnee a la duree du sejour et a l'integration."
+          "resume": "La retrogradation du permis C en permis B pour perception d'aide sociale doit etre proportionnee a la durée du sejour et a l'integration."
         }
       ],
       "modeleLettre": "",
@@ -2447,7 +2447,7 @@
     ],
     "required_facts": [
       "type de permis",
-      "duree de la dependance",
+      "durée de la dependance",
       "montant de l'aide",
       "perspectives de sortie"
     ]
@@ -2459,7 +2459,7 @@
     "tags": [
       "travail",
       "asile",
-      "requerant",
+      "requérant",
       "permis N",
       "interdiction"
     ],
@@ -2468,7 +2468,7 @@
         "id": "q1",
         "text": "Votre statut ?",
         "options": [
-          "requerant d'asile (permis N)",
+          "requérant d'asile (permis N)",
           "admission provisoire (permis F)",
           "asile refuse, aide d'urgence"
         ]
@@ -2483,7 +2483,7 @@
       },
       {
         "id": "q3",
-        "text": "Depuis combien de temps etes-vous en procedure ?",
+        "text": "Depuis combien de temps êtes-vous en procedure ?",
         "options": [
           "<3 mois",
           "3-6 mois",
@@ -2497,11 +2497,11 @@
       }
     ],
     "reponse": {
-      "explication": "Les requerants d'asile (permis N) ne peuvent exercer une activite lucrative qu'apres un delai d'attente de 3 mois (art. 43 LAsi). L'autorisation est accordee si les conditions salariales et de travail sont respectees et si le marche de l'emploi le permet. Le salaire est soumis a une contribution speciale de 10% maximum au titre de garantie des couts (art. 86 LAsi). Les personnes admises provisoirement (permis F) ont un acces au marche du travail sans restriction sectorielle ni geographique (art. 85a LEI). L'employeur doit simplement annoncer l'engagement au service cantonal de l'emploi. Les personnes dont la demande d'asile a ete definitivement rejetee et qui percoivent l'aide d'urgence n'ont en principe pas le droit de travailler. Des programmes d'occupation et de formation sont proposes dans les centres d'accueil. La taxe speciale est prelevee directement sur le salaire.",
+      "explication": "Les requérants d'asile (permis N) ne peuvent exercer une activite lucrative qu'après un délai d'attente de 3 mois (art. 43 LAsi). L'autorisation est accordee si les conditions salariales et de travail sont respectees et si le marche de l'emploi le permet. Le salaire est soumis a une contribution speciale de 10% maximum au titre de garantie des couts (art. 86 LAsi). Les personnes admises provisoirement (permis F) ont un acces au marche du travail sans restriction sectorielle ni geographique (art. 85a LEI). L'employeur doit simplement annoncer l'engagement au service cantonal de l'emploi. Les personnes dont la demande d'asile a ete definitivement rejetee et qui percoivent l'aide d'urgence n'ont en principe pas le droit de travailler. Des programmes d'occupation et de formation sont proposes dans les centres d'accueil. La taxe speciale est prelevee directement sur le salaire.",
       "articles": [
         {
           "ref": "LAsi 43",
-          "titre": "Activite lucrative des requerants d'asile",
+          "titre": "Activite lucrative des requérants d'asile",
           "lien": "https://www.fedlex.admin.ch/eli/cc/1999/358/fr#art_43"
         },
         {
@@ -2518,7 +2518,7 @@
       "jurisprudence": [
         {
           "ref": "TF 2C_1018/2016",
-          "resume": "Le refus d'autorisation de travail pour un requerant d'asile doit etre motive par des raisons concretes liees au marche de l'emploi."
+          "resume": "Le refus d'autorisation de travail pour un requérant d'asile doit etre motive par des raisons concretes liees au marche de l'emploi."
         }
       ],
       "modeleLettre": "",
@@ -2544,9 +2544,9 @@
     },
     "maj": "2026-04-07",
     "sourceLoi": "LAsi/LEI etat 2025-01-01",
-    "match_description": "Un requerant d'asile veut savoir s'il peut travailler en Suisse",
+    "match_description": "Un requérant d'asile veut savoir s'il peut travailler en Suisse",
     "profane_aliases": [
-      "travailler comme requerant d'asile",
+      "travailler comme requérant d'asile",
       "permis N et travail",
       "interdiction de travail asile",
       "demandeur d'asile peut-il travailler",
@@ -2558,7 +2558,7 @@
     ],
     "required_facts": [
       "statut (permis N, F, ou refugie)",
-      "delai depuis la demande d'asile",
+      "délai depuis la demande d'asile",
       "canton",
       "offre d'emploi concrete"
     ]
@@ -2610,7 +2610,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le permis G (autorisation frontaliere) est delivre aux etrangers residant dans la zone frontaliere d'un Etat voisin et travaillant en Suisse (art. 35 LEI). Pour les ressortissants UE/AELE, le permis G est accorde de droit si l'interesse a un emploi et retourne a son domicile au moins une fois par semaine (ALCP art. 7). Le permis est valable 5 ans si le contrat est d'au moins 1 an, ou pour la duree du contrat si inferieure a 1 an. Pour les ressortissants de pays tiers, le permis G est soumis aux conditions generales (marche de l'emploi, salaires). Le frontalier est impose a la source dans le canton de travail (sauf convention de double imposition specifique, ex. France/GE). Il est affilie aux assurances sociales suisses (AVS/AI/APG/AC) mais peut choisir entre LAMal suisse et assurance maladie de son pays de residence. Depuis 2023, la zone frontaliere a ete elargie pour les UE/AELE.",
+      "explication": "Le permis G (autorisation frontaliere) est delivre aux etrangers residant dans la zone frontaliere d'un Etat voisin et travaillant en Suisse (art. 35 LEI). Pour les ressortissants UE/AELE, le permis G est accorde de droit si l'interesse a un emploi et retourne a son domicile au moins une fois par semaine (ALCP art. 7). Le permis est valable 5 ans si le contrat est d'au moins 1 an, ou pour la durée du contrat si inferieure a 1 an. Pour les ressortissants de pays tiers, le permis G est soumis aux conditions generales (marche de l'emploi, salaires). Le frontalier est impose a la source dans le canton de travail (sauf convention de double imposition specifique, ex. France/GE). Il est affilie aux assurances sociales suisses (AVS/AI/APG/AC) mais peut choisir entre LAMal suisse et assurance maladie de son pays de residence. Depuis 2023, la zone frontaliere a ete elargie pour les UE/AELE.",
       "articles": [
         {
           "ref": "LEI 35",
@@ -2680,7 +2680,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Duree du detachement ?",
+        "text": "Durée du detachement ?",
         "options": [
           "<90 jours",
           "90-120 jours",
@@ -2733,7 +2733,7 @@
       "jurisprudence": [
         {
           "ref": "TF 2C_246/2016",
-          "resume": "Le non-respect de l'obligation d'annonce de 8 jours entraine une amende, meme si les conditions de travail sont respectees."
+          "resume": "Le non-respect de l'obligation d'annonce de 8 jours entraine une amende, même si les conditions de travail sont respectees."
         }
       ],
       "modeleLettre": "",
@@ -2767,7 +2767,7 @@
       "frontalier individuel"
     ],
     "required_facts": [
-      "duree de la prestation",
+      "durée de la prestation",
       "pays de l'entreprise",
       "nombre de travailleurs",
       "secteur d'activite"
@@ -2820,7 +2820,7 @@
       }
     ],
     "reponse": {
-      "explication": "La reconnaissance des diplomes etrangers en Suisse depend du type de diplome et de la profession. Pour les professions reglementees (medecin, avocat, enseignant, ingenieur dans certains domaines), une reconnaissance officielle est obligatoire. L'autorite competente varie : SEFRI pour les professions non universitaires, swissuniversities pour les diplomes universitaires, MEBEKO pour les professions medicales, CDIP pour l'enseignement. Pour les diplomes UE/AELE, la reconnaissance est facilitee par l'ALCP et les directives europeennes. Pour les pays tiers, la procedure est plus complexe et peut necessiter des formations complementaires ou des examens. La reconnaissance n'est pas automatique — elle depend du contenu de la formation, de sa duree et de sa comparabilite avec la formation suisse. Les frais varient de CHF 150 a CHF 1'000. Le SEFRI tient une liste des professions reglementees sur son site. Pour les professions non reglementees, une evaluation indicative est possible mais pas obligatoire.",
+      "explication": "La reconnaissance des diplomes etrangers en Suisse depend du type de diplome et de la profession. Pour les professions reglementees (medecin, avocat, enseignant, ingenieur dans certains domaines), une reconnaissance officielle est obligatoire. L'autorite competente varie : SEFRI pour les professions non universitaires, swissuniversities pour les diplomes universitaires, MEBEKO pour les professions medicales, CDIP pour l'enseignement. Pour les diplomes UE/AELE, la reconnaissance est facilitee par l'ALCP et les directives europeennes. Pour les pays tiers, la procedure est plus complexe et peut necessiter des formations complementaires ou des examens. La reconnaissance n'est pas automatique — elle depend du contenu de la formation, de sa durée et de sa comparabilite avec la formation suisse. Les frais varient de CHF 150 a CHF 1'000. Le SEFRI tient une liste des professions reglementees sur son site. Pour les professions non reglementees, une evaluation indicative est possible mais pas obligatoire.",
       "articles": [
         {
           "ref": "ALCP Annexe III",
@@ -2925,7 +2925,7 @@
       }
     ],
     "reponse": {
-      "explication": "Les etrangers travaillant en Suisse sont affilies aux assurances sociales (AVS/AI/APG/AC) comme les Suisses, quel que soit leur permis (art. 1a LAVS). Specificites par permis : (1) Permis B/C : memes droits que les Suisses. (2) Permis F : droit aux prestations AI apres 1 an de cotisation, pas d'export des rentes AI a l'etranger sauf convention. (3) Permis N : cotisations obligatoires mais droits limites. (4) Permis G : affiliation en Suisse, droits coordonnes avec le pays de residence (reglements UE). En quittant la Suisse : le 2e pilier (LPP) est verse en prestation de libre passage ; pour les non-UE/AELE, la part obligatoire peut etre retiree en especes ; pour les UE/AELE, seule la part surobligatoire peut etre retiree si la personne reste assujettie dans un pays UE. L'AVS peut etre exportee dans tous les pays avec convention de securite sociale. Les conventions bilaterales (avec 50+ pays) coordonnent les droits.",
+      "explication": "Les etrangers travaillant en Suisse sont affilies aux assurances sociales (AVS/AI/APG/AC) comme les Suisses, quel que soit leur permis (art. 1a LAVS). Specificites par permis : (1) Permis B/C : memes droits que les Suisses. (2) Permis F : droit aux prestations AI après 1 an de cotisation, pas d'export des rentes AI a l'etranger sauf convention. (3) Permis N : cotisations obligatoires mais droits limites. (4) Permis G : affiliation en Suisse, droits coordonnes avec le pays de residence (reglements UE). En quittant la Suisse : le 2e pilier (LPP) est verse en prestation de libre passage ; pour les non-UE/AELE, la part obligatoire peut etre retiree en especes ; pour les UE/AELE, seule la part surobligatoire peut etre retiree si la personne reste assujettie dans un pays UE. L'AVS peut etre exportee dans tous les pays avec convention de securite sociale. Les conventions bilaterales (avec 50+ pays) coordonnent les droits.",
       "articles": [
         {
           "ref": "LAVS 1a",
@@ -2941,7 +2941,7 @@
       "jurisprudence": [
         {
           "ref": "TF 9C_488/2017",
-          "resume": "Le ressortissant UE/AELE quittant la Suisse ne peut retirer que la part surobligatoire de son 2e pilier s'il reste assure dans un pays UE."
+          "resume": "Le ressortissant UE/AELE quittant la Suisse ne peut retirer que la part surobligatoire de son 2e pilier s'il reste assuré dans un pays UE."
         }
       ],
       "modeleLettre": "",
@@ -2981,7 +2981,7 @@
     ],
     "required_facts": [
       "type de permis",
-      "duree de cotisation",
+      "durée de cotisation",
       "prestation demandee (AVS, AI, chomage)",
       "accords bilateraux applicables"
     ]
@@ -3117,7 +3117,7 @@
       }
     ],
     "reponse": {
-      "explication": "L'apatridie est le fait de n'etre reconnu comme ressortissant par aucun Etat. La Suisse est partie a la Convention relative au statut des apatrides de 1954 (RS 0.142.40). La reconnaissance du statut d'apatride se fait par le SEM sur demande. L'apatride reconnu recoit un titre de voyage pour apatrides et un permis de sejour B (art. 31 OASA). Il beneficie d'un traitement au moins aussi favorable que les etrangers en general pour l'emploi, le logement, l'education et l'aide sociale (Convention de 1954, art. 17-24). La Suisse a aussi ratifie la Convention de 1961 sur la reduction des cas d'apatridie : un enfant ne en Suisse qui serait autrement apatride peut acquerir la nationalite suisse (art. 30 al. 1 let. b CC). La procedure de reconnaissance est longue (6-18 mois). L'apatride doit prouver qu'aucun Etat ne le reconnait comme ressortissant, ce qui peut etre difficile sans documents.",
+      "explication": "L'apatridie est le fait de n'etre reconnu comme ressortissant par aucun Etat. La Suisse est partie a la Convention relative au statut des apatrides de 1954 (RS 0.142.40). La reconnaissance du statut d'apatride se fait par le SEM sur demande. L'apatride reconnu reçoit un titre de voyage pour apatrides et un permis de sejour B (art. 31 OASA). Il beneficie d'un traitement au moins aussi favorable que les etrangers en general pour l'emploi, le logement, l'education et l'aide sociale (Convention de 1954, art. 17-24). La Suisse a aussi ratifie la Convention de 1961 sur la reduction des cas d'apatridie : un enfant ne en Suisse qui serait autrement apatride peut acquerir la nationalite suisse (art. 30 al. 1 let. b CC). La procedure de reconnaissance est longue (6-18 mois). L'apatride doit prouver qu'aucun Etat ne le reconnait comme ressortissant, ce qui peut etre difficile sans documents.",
       "articles": [
         {
           "ref": "Convention apatrides 1954",
@@ -3133,7 +3133,7 @@
       "jurisprudence": [
         {
           "ref": "TF 2C_36/2012",
-          "resume": "Le SEM doit examiner d'office si le requerant est apatride lorsque les indices sont suffisants."
+          "resume": "Le SEM doit examiner d'office si le requérant est apatride lorsque les indices sont suffisants."
         }
       ],
       "modeleLettre": "",
@@ -3170,7 +3170,7 @@
       "raison de l'apatridie",
       "preuves d'absence de nationalite",
       "sejour en Suisse",
-      "demarches deja effectuees"
+      "demarches déjà effectuees"
     ]
   },
   {
@@ -3287,7 +3287,7 @@
       "age declare",
       "pays d'origine",
       "date d'arrivee",
-      "demande d'asile deposee ou non"
+      "demande d'asile déposée ou non"
     ]
   },
   {
@@ -3307,7 +3307,7 @@
         "text": "Situation ?",
         "options": [
           "on veut me transferer dans un autre pays",
-          "j'ai deja ete dans un autre pays Dublin",
+          "j'ai déjà ete dans un autre pays Dublin",
           "je ne comprends pas la decision"
         ]
       },
@@ -3343,7 +3343,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le Reglement Dublin III (Reglement UE 604/2013, applicable en Suisse) determine quel Etat est responsable de l'examen d'une demande d'asile. En principe, c'est le premier Etat Dublin dans lequel le requerant a ete enregistre (empreintes, demande d'asile). La Suisse peut demander le transfert du requerant vers cet Etat. Exceptions : la Suisse peut exercer sa clause de souverainete et examiner la demande elle-meme (art. 17 Dublin III), obligatoirement en cas de risque de traitement inhumain dans l'Etat responsable (arret CEDH Tarakhel c. Suisse 2014 pour l'Italie). Les criteres de responsabilite sont (par ordre) : regroupement familial (mineur, conjoint), visa delivre, entree irreguliere, entree legale. Le recours contre le transfert doit etre depose dans les 5 jours ouvrables aupres du TAF (art. 108 LAsi). L'effet suspensif doit etre demande expressement. Le delai de transfert est de 6 mois (18 mois si le requerant se soustrait).",
+      "explication": "Le Reglement Dublin III (Reglement UE 604/2013, applicable en Suisse) determine quel Etat est responsable de l'examen d'une demande d'asile. En principe, c'est le premier Etat Dublin dans lequel le requérant a ete enregistre (empreintes, demande d'asile). La Suisse peut demander le transfert du requérant vers cet Etat. Exceptions : la Suisse peut exercer sa clause de souverainete et examiner la demande elle-même (art. 17 Dublin III), obligatoirement en cas de risque de traitement inhumain dans l'Etat responsable (arrêt CEDH Tarakhel c. Suisse 2014 pour l'Italie). Les criteres de responsabilite sont (par ordre) : regroupement familial (mineur, conjoint), visa delivre, entree irreguliere, entree legale. Le recours contre le transfert doit etre déposé dans les 5 jours ouvrables aupres du TAF (art. 108 LAsi). L'effet suspensif doit etre demande expressement. Le délai de transfert est de 6 mois (18 mois si le requérant se soustrait).",
       "articles": [
         {
           "ref": "Dublin III art. 3",
@@ -3461,7 +3461,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le visa Schengen de type C (court sejour, max. 90 jours) peut etre refuse pour les motifs prevus par le Code des visas (Reglement CE 810/2009, applicable en Suisse). Motifs frequents : justification insuffisante de l'objet du sejour, doute sur la volonte de retour, moyens financiers insuffisants, assurance voyage inexistante, menace pour l'ordre public. Le refus doit etre motive et notifie par ecrit (art. 32 Code des visas). Le recours se fait aupres du Tribunal administratif federal (TAF) dans un delai de 30 jours (art. 65 LEI). Le cout du recours est de CHF 200. Une nouvelle demande peut etre deposee a tout moment avec des documents complementaires. Conseils pratiques : fournir une invitation notariee, une preuve d'hebergement, une attestation d'emploi dans le pays d'origine, une preuve de liens familiaux, une assurance voyage et une preuve de moyens financiers (CHF 100/jour environ). L'assistance d'un avocat est possible mais pas obligatoire.",
+      "explication": "Le visa Schengen de type C (court sejour, max. 90 jours) peut etre refuse pour les motifs prevus par le Code des visas (Reglement CE 810/2009, applicable en Suisse). Motifs frequents : justification insuffisante de l'objet du sejour, doute sur la volonte de retour, moyens financiers insuffisants, assurance voyage inexistante, menace pour l'ordre public. Le refus doit etre motive et notifie par ecrit (art. 32 Code des visas). Le recours se fait aupres du Tribunal administratif federal (TAF) dans un délai de 30 jours (art. 65 LEI). Le cout du recours est de CHF 200. Une nouvelle demande peut etre déposée a tout moment avec des documents complementaires. Conseils pratiques : fournir une invitation notariee, une preuve d'hebergement, une attestation d'emploi dans le pays d'origine, une preuve de liens familiaux, une assurance voyage et une preuve de moyens financiers (CHF 100/jour environ). L'assistance d'un avocat est possible mais pas obligatoire.",
       "articles": [
         {
           "ref": "Code des visas art. 32",
@@ -3511,7 +3511,7 @@
       "on m'a refuse le visa"
     ],
     "negative_signals": [
-      "visa accorde avec question sur la duree",
+      "visa accorde avec question sur la durée",
       "permis de sejour (pas un visa)"
     ],
     "required_facts": [
@@ -3537,26 +3537,26 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Quelle decision avez-vous recue ?",
+        "text": "Quelle decision avez-vous reçue ?",
         "options": [
-          "renvoi apres refus asile",
-          "renvoi apres refus permis",
+          "renvoi après refus asile",
+          "renvoi après refus permis",
           "renvoi penal",
           "menace de renvoi"
         ]
       },
       {
         "id": "q2",
-        "text": "Avez-vous deja fait recours ?",
+        "text": "Avez-vous déjà fait recours ?",
         "options": [
           "oui",
           "non",
-          "le delai est passe"
+          "le délai est passe"
         ]
       },
       {
         "id": "q3",
-        "text": "Depuis combien de temps etes-vous en Suisse ?",
+        "text": "Depuis combien de temps êtes-vous en Suisse ?",
         "options": [
           "<1 an",
           "1-5 ans",
@@ -3579,7 +3579,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le renvoi est ordonne lorsque l'etranger ne remplit plus les conditions de sejour ou que sa demande d'asile est rejetee. La decision est prise par le SEM (Secretariat d'Etat aux migrations) ou le service cantonal des migrations. Le recours contre une decision de renvoi doit etre depose dans les 30 jours aupres du TAF (Tribunal administratif federal, art. 112 LEI). En matiere d'asile, le delai peut etre reduit a 5 jours ouvrables en procedure acceleree (art. 108 LAsi). Le recours n'a pas automatiquement d'effet suspensif (art. 64 PA) ; il faut le demander expressement. Le principe de non-refoulement (art. 25 Cst, art. 33 Convention de Geneve) interdit le renvoi vers un pays ou la personne risque la torture ou des traitements inhumains. L'inexigibilite du renvoi peut etre invoquee pour raisons medicales, de guerre ou de situation personnelle (art. 83 LEI). L'admission provisoire (permis F) est accordee quand le renvoi est illicite, inexigible ou impossible.",
+      "explication": "Le renvoi est ordonne lorsque l'etranger ne remplit plus les conditions de sejour ou que sa demande d'asile est rejetee. La decision est prise par le SEM (Secretariat d'Etat aux migrations) ou le service cantonal des migrations. Le recours contre une decision de renvoi doit etre déposé dans les 30 jours aupres du TAF (Tribunal administratif federal, art. 112 LEI). En matiere d'asile, le délai peut etre reduit a 5 jours ouvrables en procedure acceleree (art. 108 LAsi). Le recours n'a pas automatiquement d'effet suspensif (art. 64 PA) ; il faut le demander expressement. Le principe de non-refoulement (art. 25 Cst, art. 33 Convention de Geneve) interdit le renvoi vers un pays ou la personne risque la torture ou des traitements inhumains. L'inexigibilite du renvoi peut etre invoquee pour raisons medicales, de guerre ou de situation personnelle (art. 83 LEI). L'admission provisoire (permis F) est accordee quand le renvoi est illicite, inexigible ou impossible.",
       "articles": [
         {
           "ref": "LEI 64",
@@ -3605,7 +3605,7 @@
       "jurisprudence": [
         {
           "ref": "ATAF 2014/26",
-          "resume": "L'inexigibilite du renvoi doit etre examinee concretement au vu de la situation personnelle, medicale et securitaire du requerant."
+          "resume": "L'inexigibilite du renvoi doit etre examinee concretement au vu de la situation personnelle, medicale et securitaire du requérant."
         },
         {
           "ref": "TF 2C_396/2019",
@@ -3648,7 +3648,7 @@
       "renvoi de Suisse recours",
       "expulsion et droits",
       "je dois partir de Suisse",
-      "interdiction d'entree apres renvoi"
+      "interdiction d'entree après renvoi"
     ],
     "negative_signals": [
       "depart volontaire sans decision de renvoi",
@@ -3656,8 +3656,8 @@
     ],
     "required_facts": [
       "base legale du renvoi (LEI, asile)",
-      "delai pour quitter",
-      "recours depose",
+      "délai pour quitter",
+      "recours déposé",
       "risques en cas de retour"
     ]
   },
@@ -3669,7 +3669,7 @@
       "recours",
       "TAF",
       "migration",
-      "delai",
+      "délai",
       "permis",
       "refus",
       "opposition"
@@ -3688,7 +3688,7 @@
       },
       {
         "id": "q2",
-        "text": "Quand avez-vous recu la decision ?",
+        "text": "Quand avez-vous reçu la decision ?",
         "options": [
           "<10 jours",
           "10-30 jours",
@@ -3711,7 +3711,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le recours contre une decision en matiere de droit des etrangers suit un systeme a plusieurs niveaux. Contre une decision cantonale : recours au tribunal cantonal dans les 30 jours (selon la loi cantonale de procedure). Contre une decision du SEM : recours au TAF dans les 30 jours (art. 50 PA). Contre une decision du TAF : recours au Tribunal federal dans les 30 jours si le droit federal est en jeu, SAUF pour les permis pour lesquels il n'existe aucun droit (art. 83 let. c ch. 2 LTF — pas de recours au TF pour les autorisations discretionnaires). Le recours doit etre motive : il faut expliquer en quoi la decision viole le droit (art. 49 PA : violation du droit, constatation inexacte des faits, inopportunite). L'effet suspensif n'est pas automatique et doit etre demande. L'assistance juridique gratuite est accordee si les chances de succes ne sont pas nulles et que le requerant est indigent (art. 65 PA).",
+      "explication": "Le recours contre une decision en matiere de droit des etrangers suit un systeme a plusieurs niveaux. Contre une decision cantonale : recours au tribunal cantonal dans les 30 jours (selon la loi cantonale de procedure). Contre une decision du SEM : recours au TAF dans les 30 jours (art. 50 PA). Contre une decision du TAF : recours au Tribunal federal dans les 30 jours si le droit federal est en jeu, SAUF pour les permis pour lesquels il n'existe aucun droit (art. 83 let. c ch. 2 LTF — pas de recours au TF pour les autorisations discretionnaires). Le recours doit etre motive : il faut expliquer en quoi la decision viole le droit (art. 49 PA : violation du droit, constatation inexacte des faits, inopportunite). L'effet suspensif n'est pas automatique et doit etre demande. L'assistance juridique gratuite est accordee si les chances de succes ne sont pas nulles et que le requérant est indigent (art. 65 PA).",
       "articles": [
         {
           "ref": "PA 49",
@@ -3737,14 +3737,14 @@
       "jurisprudence": [
         {
           "ref": "ATF 139 I 330",
-          "resume": "Le titulaire d'un permis C beneficie d'un droit au renouvellement ; le recours au TF est donc ouvert meme en matiere discretionnaire."
+          "resume": "Le titulaire d'un permis C beneficie d'un droit au renouvellement ; le recours au TF est donc ouvert même en matiere discretionnaire."
         },
         {
           "ref": "ATAF 2017/VII/7",
           "resume": "Le TAF dispose d'un plein pouvoir d'examen en fait et en droit dans les recours contre les decisions du SEM."
         }
       ],
-      "modeleLettre": "Objet : Recours contre la decision du [autorite] du [date]\n\nAu [Tribunal cantonal / Tribunal administratif federal],\n\nJe soussigne(e) [nom, prenom], ne(e) le [date], national(e) de [pays],\n\nForme recours dans le delai legal contre la decision du [autorite] du [date], notifiee le [date], refusant [decrire l'objet : permis, renouvellement, regroupement].\n\nJe requiers :\n1. L'annulation de la decision attaquee\n2. L'octroi de [l'autorisation demandee]\n3. L'effet suspensif\n4. L'assistance juridique gratuite\n\nMotifs de recours :\n1. Violation du droit : [decrire]\n2. Constatation inexacte des faits : [decrire]\n\nPieces jointes : [decision attaquee, pieces justificatives]\n\n[Signature]",
+      "modeleLettre": "Objet : Recours contre la decision du [autorite] du [date]\n\nAu [Tribunal cantonal / Tribunal administratif federal],\n\nJe soussigne(e) [nom, prenom], ne(e) le [date], national(e) de [pays],\n\nForme recours dans le délai legal contre la decision du [autorite] du [date], notifiee le [date], refusant [decrire l'objet : permis, renouvellement, regroupement].\n\nJe requiers :\n1. L'annulation de la decision attaquee\n2. L'octroi de [l'autorisation demandee]\n3. L'effet suspensif\n4. L'assistance juridique gratuite\n\nMotifs de recours :\n1. Violation du droit : [decrire]\n2. Constatation inexacte des faits : [decrire]\n\nPieces jointes : [decision attaquee, pieces justificatives]\n\n[Signature]",
       "services": [
         {
           "nom": "Tribunal administratif federal (TAF)",
@@ -3789,7 +3789,7 @@
     "required_facts": [
       "type de decision contestee",
       "autorite qui a decide",
-      "delai de recours",
+      "délai de recours",
       "motifs de contestation"
     ]
   },
@@ -3802,7 +3802,7 @@
       "familial",
       "conjoint",
       "enfant",
-      "delai",
+      "délai",
       "permis",
       "LEI"
     ],
@@ -3839,7 +3839,7 @@
       },
       {
         "id": "q4",
-        "text": "Etes-vous financierement autonome ?",
+        "text": "Êtes-vous financierement autonome ?",
         "options": [
           "oui",
           "non (aide sociale)",
@@ -3853,7 +3853,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le regroupement familial permet de faire venir en Suisse son conjoint et ses enfants mineurs. Les conditions varient selon le statut : Permis C : droit au regroupement pour le conjoint et les enfants de moins de 18 ans (art. 43 LEI), demande dans les 5 ans (conjoint) ou 12 mois (enfants de plus de 12 ans). Permis B : possible si menage commun, logement adapte et pas de dependance a l'aide sociale (art. 44 LEI). Citoyen suisse : droit au regroupement pour le conjoint et les enfants (art. 42 LEI). Permis F : possible apres 3 ans de sejour, avec logement adapte et autonomie financiere (art. 85 al. 7 LEI). Conditions generales : logement suffisant (pas de suroccupation), pas de dependance a l'aide sociale, respect des delais. Le regroupement familial inverse (parents) n'est possible que dans des cas exceptionnels (art. 8 CEDH). Le delai est strict : passe le delai, le regroupement devient discretionnaire.",
+      "explication": "Le regroupement familial permet de faire venir en Suisse son conjoint et ses enfants mineurs. Les conditions varient selon le statut : Permis C : droit au regroupement pour le conjoint et les enfants de moins de 18 ans (art. 43 LEI), demande dans les 5 ans (conjoint) ou 12 mois (enfants de plus de 12 ans). Permis B : possible si menage commun, logement adapte et pas de dependance a l'aide sociale (art. 44 LEI). Citoyen suisse : droit au regroupement pour le conjoint et les enfants (art. 42 LEI). Permis F : possible après 3 ans de sejour, avec logement adapte et autonomie financiere (art. 85 al. 7 LEI). Conditions generales : logement suffisant (pas de suroccupation), pas de dependance a l'aide sociale, respect des délais. Le regroupement familial inverse (parents) n'est possible que dans des cas exceptionnels (art. 8 CEDH). Le délai est strict : passe le délai, le regroupement devient discretionnaire.",
       "articles": [
         {
           "ref": "LEI 42",
@@ -3879,11 +3879,11 @@
       "jurisprudence": [
         {
           "ref": "ATF 137 I 284",
-          "resume": "Le regroupement familial tardif peut etre refuse si le delai est depasse sans raison valable, meme si les conditions materielles sont remplies."
+          "resume": "Le regroupement familial tardif peut etre refuse si le délai est dépassé sans raison valable, même si les conditions materielles sont remplies."
         },
         {
           "ref": "TF 2C_781/2019",
-          "resume": "L'art. 8 CEDH impose un examen de proportionnalite individuaelise meme en cas de dependance partielle a l'aide sociale."
+          "resume": "L'art. 8 CEDH impose un examen de proportionnalite individuaelise même en cas de dependance partielle a l'aide sociale."
         }
       ],
       "modeleLettre": "Objet : Demande de regroupement familial\n\nA [Service cantonal des migrations],\n\nJe soussigne(e) [nom, prenom], titulaire du permis [type], N° [numero], domicilie(e) a [adresse],\n\nDEMANDE le regroupement familial au sens de l'art. [42/43/44] LEI pour :\n- [Nom, prenom, date de naissance, nationalite du membre de famille]\n- Lien de parente : [conjoint/enfant]\n\nJe remplis les conditions suivantes :\n- Logement adapte : [adresse, nombre de pieces]\n- Revenus : CHF [montant] par mois (pieces justificatives jointes)\n- Pas de dependance a l'aide sociale\n\nPieces jointes : [acte de mariage/naissance, passeport, bail, fiches de salaire, extrait de poursuite vierge]\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
@@ -3922,7 +3922,7 @@
       "regroupement familial Suisse",
       "faire venir ma femme et mes enfants",
       "conditions pour le regroupement",
-      "delai pour le regroupement familial",
+      "délai pour le regroupement familial",
       "regroupement familial refuse que faire"
     ],
     "negative_signals": [
@@ -3932,7 +3932,7 @@
     "required_facts": [
       "statut en Suisse (permis)",
       "lien familial concerne",
-      "delais de demande respectes",
+      "délais de demande respectes",
       "logement et revenus suffisants"
     ]
   }

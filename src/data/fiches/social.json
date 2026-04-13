@@ -12,7 +12,7 @@
       },
       {
         "id": "q2",
-        "text": "Etes-vous seul ou en famille ?",
+        "text": "Êtes-vous seul ou en famille ?",
         "options": ["seul", "en couple", "avec enfants", "famille complete"]
       },
       {
@@ -27,13 +27,13 @@
       }
     ],
     "reponse": {
-      "explication": "En Suisse, l'hebergement d'urgence releve de la competence cantonale et communale. Chaque canton dispose de dispositifs d'accueil d'urgence accessibles meme sans statut de sejour regulier (art. 12 Cst — droit a des conditions minimales d'existence). A Lausanne, la Fondation Marmotte et le Sleep-In offrent des places d'urgence. Le dispositif hivernal (novembre-mars) augmente les capacites. A Geneve, l'accueil de nuit est coordonne par le 0800 47 47 47 (ligne d'urgence sociale). L'Hospice general et le CASS (Centre d'action sociale et de sante) orientent les personnes en detresse. Pour les familles avec enfants, la protection est renforcee : les communes ont une obligation d'hebergement. Les personnes sans papiers ont droit a l'aide d'urgence au sens de l'art. 12 Cst (ATF 131 I 166). Les abris de protection civile sont utilises en dernier recours dans certains cantons.",
+      "explication": "En Suisse, l'hebergement d'urgence releve de la competence cantonale et communale. Chaque canton dispose de dispositifs d'accueil d'urgence accessibles même sans statut de sejour regulier (art. 12 Cst — droit a des conditions minimales d'existence). A Lausanne, la Fondation Marmotte et le Sleep-In offrent des places d'urgence. Le dispositif hivernal (novembre-mars) augmente les capacites. A Geneve, l'accueil de nuit est coordonne par le 0800 47 47 47 (ligne d'urgence sociale). L'Hospice general et le CASS (Centre d'action sociale et de sante) orientent les personnes en detresse. Pour les familles avec enfants, la protection est renforcee : les communes ont une obligation d'hebergement. Les personnes sans papiers ont droit a l'aide d'urgence au sens de l'art. 12 Cst (ATF 131 I 166). Les abris de protection civile sont utilises en dernier recours dans certains cantons.",
       "articles": [
         { "ref": "Cst 12", "titre": "Droit d'obtenir de l'aide dans des situations de detresse", "lien": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_12" },
         { "ref": "Cst 41 al. 1 let. e", "titre": "Buts sociaux — logement", "lien": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_41" }
       ],
       "jurisprudence": [
-        { "ref": "ATF 131 I 166", "resume": "Le droit a des conditions minimales d'existence (art. 12 Cst) garantit un hebergement, de la nourriture et des soins de base meme aux personnes sans statut legal." },
+        { "ref": "ATF 131 I 166", "resume": "Le droit a des conditions minimales d'existence (art. 12 Cst) garantit un hebergement, de la nourriture et des soins de base même aux personnes sans statut legal." },
         { "ref": "ATF 139 I 272", "resume": "L'aide d'urgence doit couvrir les besoins elementaires : nourriture, vetements, hebergement et soins medicaux de base." }
       ],
       "modeleLettre": "",
@@ -77,7 +77,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Etes-vous deja beneficiaire de l'aide sociale ?",
+        "text": "Êtes-vous déjà bénéficiaire de l'aide sociale ?",
         "options": ["oui", "non, je souhaite faire une demande"]
       },
       {
@@ -102,7 +102,7 @@
       }
     ],
     "reponse": {
-      "explication": "L'aide sociale (revenu d'insertion/RI en VD, aide sociale de l'Hospice general en GE) est le dernier filet social en Suisse. Elle est subsidiaire a toutes les autres prestations (chomage, AI, PC, pensions). Les normes CSIAS (Conference suisse des institutions d'action sociale) fixent les standards : forfait d'entretien d'environ CHF 997/mois pour une personne seule (2024), plus loyer effectif plafonne et prime LAMal. L'aide sociale est un droit mais implique des devoirs : recherche active d'emploi, participation aux mesures d'insertion, annonce de tout changement de situation. A Vaud, la demande se fait aupres du CSR (Centre social regional). A Geneve, aupres de l'Hospice general. L'aide sociale peut etre remboursable si la situation financiere s'ameliore significativement (art. 40 LASV en VD). Les etrangers beneficiaires risquent un non-renouvellement de permis (art. 62 al. 1 let. e LEI pour le permis B). Les decisions peuvent etre contestees par recours.",
+      "explication": "L'aide sociale (revenu d'insertion/RI en VD, aide sociale de l'Hospice general en GE) est le dernier filet social en Suisse. Elle est subsidiaire a toutes les autres prestations (chomage, AI, PC, pensions). Les normes CSIAS (Conference suisse des institutions d'action sociale) fixent les standards : forfait d'entretien d'environ CHF 997/mois pour une personne seule (2024), plus loyer effectif plafonne et prime LAMal. L'aide sociale est un droit mais implique des devoirs : recherche active d'emploi, participation aux mesures d'insertion, annonce de tout changement de situation. A Vaud, la demande se fait aupres du CSR (Centre social regional). A Geneve, aupres de l'Hospice general. L'aide sociale peut etre remboursable si la situation financiere s'ameliore significativement (art. 40 LASV en VD). Les etrangers bénéficiaires risquent un non-renouvellement de permis (art. 62 al. 1 let. e LEI pour le permis B). Les decisions peuvent etre contestees par recours.",
       "articles": [
         { "ref": "Cst 12", "titre": "Droit d'obtenir de l'aide dans des situations de detresse", "lien": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_12" },
         { "ref": "Cst 115", "titre": "Assistance des personnes dans le besoin", "lien": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_115" },
@@ -204,7 +204,7 @@
     ],
     "negative_signals": [
       "personne avec un permis de sejour valable (aide sociale ordinaire)",
-      "demandeur d'asile en procedure (releve de l'aide sociale pour requerants)",
+      "demandeur d'asile en procedure (releve de l'aide sociale pour requérants)",
       "citoyen suisse en difficulte (aide sociale ordinaire)"
     ],
     "required_facts": [

@@ -15,7 +15,7 @@
         "id": "q1",
         "text": "Situation ?",
         "options": [
-          "j'ai recu un commandement",
+          "j'ai reçu un commandement",
           "je veux poursuivre quelqu'un",
           "je ne comprends pas le document"
         ]
@@ -54,7 +54,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le commandement de payer est le premier acte de la procedure de poursuite (art. 69 LP). L'office des poursuites le notifie au debiteur sur requisition du creancier. Le debiteur dispose de 10 jours des la notification pour former opposition (art. 74 LP). L'opposition n'a pas besoin d'etre motivee — il suffit de cocher la case ou de le declarer verbalement a l'office. Si le debiteur ne fait pas opposition dans les 10 jours, le creancier peut requete la continuation de la poursuite. Attention : recevoir un commandement de payer n'est pas un jugement et ne signifie pas que la dette est reconnue. Toute personne peut envoyer un commandement de payer pour n'importe quelle pretention, meme infondee. Le cout de la requisition est a la charge du creancier (CHF 40-200 selon le montant). Former opposition est gratuit et bloque la poursuite.",
+      "explication": "Le commandement de payer est le premier acte de la procedure de poursuite (art. 69 LP). L'office des poursuites le notifie au debiteur sur requisition du creancier. Le debiteur dispose de 10 jours des la notification pour former opposition (art. 74 LP). L'opposition n'a pas besoin d'etre motivee — il suffit de cocher la case ou de le declarer verbalement a l'office. Si le debiteur ne fait pas opposition dans les 10 jours, le creancier peut requete la continuation de la poursuite. Attention : recevoir un commandement de payer n'est pas un jugement et ne signifie pas que la dette est reconnue. Toute personne peut envoyer un commandement de payer pour n'importe quelle pretention, même infondee. Le cout de la requisition est a la charge du creancier (CHF 40-200 selon le montant). Former opposition est gratuit et bloque la poursuite.",
       "articles": [
         {
           "ref": "LP 69",
@@ -75,11 +75,11 @@
       "jurisprudence": [
         {
           "ref": "TF 5A_208/2014",
-          "resume": "L'opposition tardive (apres 10 jours) peut etre restituee si le debiteur prouve qu'il n'a pas pu agir dans le delai (art. 33 al. 4 LP)."
+          "resume": "L'opposition tardive (après 10 jours) peut etre restituee si le debiteur prouve qu'il n'a pas pu agir dans le délai (art. 33 al. 4 LP)."
         },
         {
           "ref": "TF 5A_860/2011",
-          "resume": "Un commandement de payer notifie a une mauvaise adresse est nul et ne fait pas courir le delai d'opposition."
+          "resume": "Un commandement de payer notifie a une mauvaise adresse est nul et ne fait pas courir le délai d'opposition."
         }
       ],
       "modeleLettre": "",
@@ -111,9 +111,9 @@
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP etat 2025-01-01",
-    "match_description": "La personne a recu un commandement de payer et ne sait pas comment reagir",
+    "match_description": "La personne a reçu un commandement de payer et ne sait pas comment reagir",
     "profane_aliases": [
-      "j'ai recu un commandement de payer",
+      "j'ai reçu un commandement de payer",
       "poursuite contre moi",
       "papier de l'office des poursuites",
       "on me reclame de l'argent",
@@ -124,7 +124,7 @@
       "simple facture impayee sans poursuite"
     ],
     "required_facts": [
-      "delai restant pour opposition",
+      "délai restant pour opposition",
       "montant reclame",
       "creancier identifie",
       "dette reconnue ou contestee"
@@ -147,7 +147,7 @@
         "text": "Avez-vous fait opposition ?",
         "options": [
           "oui",
-          "non, delai expire",
+          "non, délai expire",
           "je ne savais pas"
         ]
       },
@@ -186,7 +186,7 @@
       }
     ],
     "reponse": {
-      "explication": "Apres opposition du debiteur, le creancier doit obtenir la mainlevee pour continuer la poursuite. Il existe deux types : (1) la mainlevee definitive (art. 80 LP) si le creancier dispose d'un jugement executoire ou d'un titre equivalent, (2) la mainlevee provisoire (art. 82 LP) si le creancier dispose d'une reconnaissance de dette signee (contrat, facture acceptee, billet a ordre). Pour la mainlevee provisoire, le debiteur peut s'opposer en rendant vraisemblable sa liberation (paiement, prescription, compensation). Si la mainlevee provisoire est accordee, le debiteur peut encore agir en liberation de dette dans les 20 jours (art. 83 al. 2 LP). La procedure de mainlevee est sommaire et rapide (quelques semaines). Sans titre de mainlevee, le creancier doit agir en justice au fond (procedure ordinaire) pour obtenir un jugement, puis revenir avec la mainlevee definitive.",
+      "explication": "Après opposition du debiteur, le creancier doit obtenir la mainlevee pour continuer la poursuite. Il existe deux types : (1) la mainlevee definitive (art. 80 LP) si le creancier dispose d'un jugement executoire ou d'un titre equivalent, (2) la mainlevee provisoire (art. 82 LP) si le creancier dispose d'une reconnaissance de dette signee (contrat, facture acceptee, billet a ordre). Pour la mainlevee provisoire, le debiteur peut s'opposer en rendant vraisemblable sa liberation (paiement, prescription, compensation). Si la mainlevee provisoire est accordee, le debiteur peut encore agir en liberation de dette dans les 20 jours (art. 83 al. 2 LP). La procedure de mainlevee est sommaire et rapide (quelques semaines). Sans titre de mainlevee, le creancier doit agir en justice au fond (procedure ordinaire) pour obtenir un jugement, puis revenir avec la mainlevee definitive.",
       "articles": [
         {
           "ref": "LP 74",
@@ -248,7 +248,7 @@
       "contester une poursuite"
     ],
     "negative_signals": [
-      "pas encore recu de commandement de payer",
+      "pas encore reçu de commandement de payer",
       "simple question sur le paiement d'une facture"
     ],
     "required_facts": [
@@ -314,7 +314,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le minimum vital (minimum d'existence) est insaisissable (art. 93 LP). L'office des poursuites ne peut saisir que ce qui depasse ce minimum. Le calcul se base sur les normes d'insaisissabilite fixees par la Conference des preposes aux poursuites et faillites : base mensuelle d'environ CHF 1'200 pour une personne seule, CHF 1'350 pour le chef de famille, CHF 600 par enfant, plus le loyer effectif (dans les limites raisonnables), les primes d'assurance maladie obligatoire (apres subsides), les frais de transport professionnel, et les pensions alimentaires dues. Les impots courants ne sont pas inclus dans le minimum vital LP (contrairement au minimum vital du droit de la famille). Si le debiteur estime que la saisie ne respecte pas son minimum vital, il peut porter plainte a l'autorite de surveillance (art. 17 LP) dans les 10 jours.",
+      "explication": "Le minimum vital (minimum d'existence) est insaisissable (art. 93 LP). L'office des poursuites ne peut saisir que ce qui dépassé ce minimum. Le calcul se base sur les normes d'insaisissabilite fixees par la Conference des preposes aux poursuites et faillites : base mensuelle d'environ CHF 1'200 pour une personne seule, CHF 1'350 pour le chef de famille, CHF 600 par enfant, plus le loyer effectif (dans les limites raisonnables), les primes d'assurance maladie obligatoire (après subsides), les frais de transport professionnel, et les pensions alimentaires dues. Les impots courants ne sont pas inclus dans le minimum vital LP (contrairement au minimum vital du droit de la famille). Si le debiteur estime que la saisie ne respecte pas son minimum vital, il peut porter plainte a l'autorite de surveillance (art. 17 LP) dans les 10 jours.",
       "articles": [
         {
           "ref": "LP 93",
@@ -335,7 +335,7 @@
       "jurisprudence": [
         {
           "ref": "TF 5A_919/2012",
-          "resume": "Le loyer effectif doit etre pris en compte dans le calcul du minimum vital, meme s'il est superieur a la moyenne, sauf abus manifeste."
+          "resume": "Le loyer effectif doit etre pris en compte dans le calcul du minimum vital, même s'il est superieur a la moyenne, sauf abus manifeste."
         },
         {
           "ref": "TF 5A_111/2015",
@@ -392,11 +392,11 @@
     ]
   },
   {
-    "id": "dettes_acte_defaut_biens",
+    "id": "dettes_acte_défaut_biens",
     "domaine": "dettes",
     "sousDomaine": "poursuite",
     "tags": [
-      "acte defaut biens",
+      "acte défaut biens",
       "prescription",
       "poursuite",
       "insolvabilite"
@@ -404,7 +404,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Avez-vous recu un acte de defaut de biens ?",
+        "text": "Avez-vous reçu un acte de défaut de biens ?",
         "options": [
           "oui",
           "non, mais je n'ai rien a saisir"
@@ -445,16 +445,16 @@
       }
     ],
     "reponse": {
-      "explication": "L'acte de defaut de biens (ADB) est delivre par l'office des poursuites lorsque la saisie n'a pas permis de couvrir la creance (art. 149 LP). L'ADB vaut reconnaissance de dette et se prescrit par 20 ans (art. 149a LP). Le creancier peut relancer une poursuite sur la base de l'ADB si la situation financiere du debiteur s'ameliore, mais il ne peut saisir que le revenu depassant le minimum vital. L'ADB figure au registre des poursuites et peut nuire a la recherche de logement ou de credit. Apres 5 ans, l'extrait des poursuites ne mentionne plus les ADB anciens (pratique de l'office). Le debiteur peut proposer un arrangement (paiement partiel) au creancier en echange de la radiation de l'ADB. Il n'existe pas de procedure de desendettement comme dans certains pays europeens, sauf la faillite personnelle (art. 191 LP).",
+      "explication": "L'acte de défaut de biens (ADB) est delivre par l'office des poursuites lorsque la saisie n'a pas permis de couvrir la creance (art. 149 LP). L'ADB vaut reconnaissance de dette et se prescrit par 20 ans (art. 149a LP). Le creancier peut relancer une poursuite sur la base de l'ADB si la situation financiere du debiteur s'ameliore, mais il ne peut saisir que le revenu depassant le minimum vital. L'ADB figure au registre des poursuites et peut nuire a la recherche de logement ou de credit. Après 5 ans, l'extrait des poursuites ne mentionne plus les ADB anciens (pratique de l'office). Le debiteur peut proposer un arrangement (paiement partiel) au creancier en echange de la radiation de l'ADB. Il n'existe pas de procedure de desendettement comme dans certains pays europeens, sauf la faillite personnelle (art. 191 LP).",
       "articles": [
         {
           "ref": "LP 149",
-          "titre": "Acte de defaut de biens — saisie",
+          "titre": "Acte de défaut de biens — saisie",
           "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_149"
         },
         {
           "ref": "LP 149a",
-          "titre": "Prescription de l'acte de defaut de biens",
+          "titre": "Prescription de l'acte de défaut de biens",
           "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_149_a"
         }
       ],
@@ -493,12 +493,12 @@
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP etat 2025-01-01",
-    "match_description": "La personne a recu un acte de defaut de biens apres une poursuite infructueuse",
+    "match_description": "La personne a reçu un acte de défaut de biens après une poursuite infructueuse",
     "profane_aliases": [
-      "acte de defaut de biens c'est quoi",
+      "acte de défaut de biens c'est quoi",
       "la poursuite n'a rien donne",
       "insolvable et maintenant",
-      "prescription de l'acte de defaut",
+      "prescription de l'acte de défaut",
       "la dette est effacee ou pas"
     ],
     "negative_signals": [
@@ -506,7 +506,7 @@
       "question sur le commandement de payer"
     ],
     "required_facts": [
-      "date de l'acte de defaut",
+      "date de l'acte de défaut",
       "montant de la creance",
       "situation financiere actuelle",
       "relance du creancier ou non"
@@ -526,7 +526,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Etes-vous inscrit au registre du commerce ?",
+        "text": "Êtes-vous inscrit au registre du commerce ?",
         "options": [
           "oui",
           "non"
@@ -708,7 +708,7 @@
       "jurisprudence": [
         {
           "ref": "TF 5A_763/2012",
-          "resume": "Le 13e salaire et les bonus sont saisissables au meme titre que le salaire mensuel."
+          "resume": "Le 13e salaire et les bonus sont saisissables au même titre que le salaire mensuel."
         },
         {
           "ref": "TF 5A_417/2018",
@@ -800,7 +800,7 @@
       },
       {
         "id": "q4",
-        "text": "Avez-vous deja contacte un service d'aide ?",
+        "text": "Avez-vous déjà contacte un service d'aide ?",
         "options": [
           "oui",
           "non"
@@ -813,7 +813,7 @@
       }
     ],
     "reponse": {
-      "explication": "L'arrangement amiable (ou concordat prive) n'est pas reglement specifiquement par la loi suisse, mais la pratique est bien etablie. Il consiste a negocier avec les creanciers un plan de remboursement echelonne ou une remise partielle de dette. Les services de conseil en dettes (Caritas, Centre social protestant, services sociaux communaux) peuvent servir d'intermediaires. L'avantage est d'eviter les frais de poursuite et de preserver la relation avec les creanciers. En general, les creanciers preferent un arrangement a une poursuite qui aboutit a un ADB (0% de recouvrement). Conseils : (1) dresser un inventaire complet des dettes, (2) etablir un budget realiste, (3) proposer un plan de paiement concret avec montants et echeances, (4) demander l'arret des interets moratoires. Le concordat judiciaire (art. 293 ss LP) est une alternative plus formelle mais coutant plus cher.",
+      "explication": "L'arrangement amiable (ou concordat prive) n'est pas reglement specifiquement par la loi suisse, mais la pratique est bien etablie. Il consiste a negocier avec les creanciers un plan de remboursement echelonne ou une remise partielle de dette. Les services de conseil en dettes (Caritas, Centre social protestant, services sociaux communaux) peuvent servir d'intermediaires. L'avantage est d'eviter les frais de poursuite et de preserver la relation avec les creanciers. En general, les creanciers preferent un arrangement a une poursuite qui aboutit a un ADB (0% de recouvrement). Conseils : (1) dresser un inventaire complet des dettes, (2) etablir un budget realiste, (3) proposer un plan de paiement concret avec montants et echeances, (4) demander l'arrêt des interets moratoires. Le concordat judiciaire (art. 293 ss LP) est une alternative plus formelle mais coutant plus cher.",
       "articles": [
         {
           "ref": "LP 293",
@@ -871,7 +871,7 @@
       "proposer un echelonnement"
     ],
     "negative_signals": [
-      "deja en procedure de faillite",
+      "déjà en procedure de faillite",
       "creancier refuse tout contact"
     ],
     "required_facts": [
@@ -1006,7 +1006,7 @@
     ],
     "required_facts": [
       "montant des arrieres",
-      "subsides deja demandes ou non",
+      "subsides déjà demandes ou non",
       "revenu du menage",
       "canton de domicile"
     ]
@@ -1067,7 +1067,7 @@
       }
     ],
     "reponse": {
-      "explication": "La remise d'impot est possible lorsque le paiement integral entrainerait des consequences tres dures pour le contribuable (art. 167 LIFD pour l'impot federal direct). Elle est accordee pour des motifs d'indigence, pas de convenance. La demande doit etre motivee et accompagnee de justificatifs financiers complets. Conditions : le contribuable ne doit pas avoir cause lui-meme sa situation difficile (jeu, depenses somptuaires). L'echelonnement du paiement est generalement plus facile a obtenir que la remise. Il suffit de contacter l'administration fiscale et de proposer un plan de versements. Les interets moratoires (generalement 3-5% selon le canton) continuent de courir. L'administration fiscale peut aussi engager des poursuites pour les impots impayes. Attention : les dettes fiscales ne sont pas liberes par un acte de defaut de biens ordinaire et se prescrivent par 5 ans (art. 121 LIFD) respectivement 15 ans en cas de soustraction.",
+      "explication": "La remise d'impot est possible lorsque le paiement integral entrainerait des consequences tres dures pour le contribuable (art. 167 LIFD pour l'impot federal direct). Elle est accordee pour des motifs d'indigence, pas de convenance. La demande doit etre motivee et accompagnee de justificatifs financiers complets. Conditions : le contribuable ne doit pas avoir cause lui-même sa situation difficile (jeu, depenses somptuaires). L'echelonnement du paiement est generalement plus facile a obtenir que la remise. Il suffit de contacter l'administration fiscale et de proposer un plan de versements. Les interets moratoires (generalement 3-5% selon le canton) continuent de courir. L'administration fiscale peut aussi engager des poursuites pour les impots impayes. Attention : les dettes fiscales ne sont pas liberes par un acte de défaut de biens ordinaire et se prescrivent par 5 ans (art. 121 LIFD) respectivement 15 ans en cas de soustraction.",
       "articles": [
         {
           "ref": "LIFD 167",
@@ -1117,7 +1117,7 @@
     "match_description": "La personne a des arrieres d'impots et cherche une solution pour regulariser sa situation",
     "profane_aliases": [
       "arrieres d'impots",
-      "j'ai pas paye mes impots",
+      "j'ai pas payé mes impots",
       "echelonnement des impots",
       "remise d'impot",
       "le fisc me poursuit"
@@ -1149,7 +1149,7 @@
         "id": "q1",
         "text": "Type d'abus ?",
         "options": [
-          "poursuites repetees sans fondement",
+          "poursuites répétées sans fondement",
           "harcelement telephonique",
           "menaces",
           "violation vie privee"
@@ -1210,14 +1210,14 @@
       "jurisprudence": [
         {
           "ref": "TF 5A_250/2015",
-          "resume": "La repetition de poursuites pour la meme dette deja contestee peut constituer un abus de droit ouvrant droit a des dommages-interets."
+          "resume": "La repetition de poursuites pour la même dette déjà contestee peut constituer un abus de droit ouvrant droit a des dommages-interets."
         },
         {
           "ref": "TF 5A_822/2012",
           "resume": "Le debiteur peut demander la radiation d'une poursuite injustifiee du registre (art. 8a LP) s'il prouve l'inexistence de la dette."
         }
       ],
-      "modeleLettre": "Objet : Plainte pour poursuite abusive\n\nA l'Autorite cantonale de surveillance des offices des poursuites,\n\nMadame, Monsieur,\n\nJe forme plainte au sens de l'art. 20a LP contre [creancier/societe de recouvrement] pour les faits suivants :\n\n- [Description des abus : poursuites repetees, harcelement, menaces...]\n\nJe demande :\n1. La constatation du caractere abusif de ces poursuites\n2. L'interdiction de nouvelles poursuites sur la meme base\n3. La radiation des poursuites infondees de mon extrait (art. 8a LP)\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
+      "modeleLettre": "Objet : Plainte pour poursuite abusive\n\nA l'Autorite cantonale de surveillance des offices des poursuites,\n\nMadame, Monsieur,\n\nJe forme plainte au sens de l'art. 20a LP contre [creancier/societe de recouvrement] pour les faits suivants :\n\n- [Description des abus : poursuites répétées, harcelement, menaces...]\n\nJe demande :\n1. La constatation du caractere abusif de ces poursuites\n2. L'interdiction de nouvelles poursuites sur la même base\n3. La radiation des poursuites infondees de mon extrait (art. 8a LP)\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
       "services": [
         {
           "nom": "Autorite de surveillance des poursuites VD",
@@ -1275,7 +1275,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Avez-vous recu le commandement de payer ?",
+        "text": "Avez-vous reçu le commandement de payer ?",
         "options": [
           "oui, en main propre",
           "oui, par courrier",
@@ -1284,7 +1284,7 @@
       },
       {
         "id": "q2",
-        "text": "Le delai de 10 jours est-il depasse ?",
+        "text": "Le délai de 10 jours est-il dépassé ?",
         "options": [
           "non, il reste du temps",
           "oui, recemment",
@@ -1298,7 +1298,7 @@
           "dette inexistante",
           "montant errone",
           "prescription",
-          "deja payee",
+          "déjà payée",
           "pas le bon debiteur"
         ]
       },
@@ -1309,7 +1309,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le commandement de payer peut etre conteste par opposition dans les 10 jours des sa notification (art. 74 LP). L'opposition n'a pas besoin d'etre motivee. Si le delai est depasse, une opposition tardive (art. 77 LP) est possible si le debiteur rend vraisemblable qu'il n'a pas pu agir dans le delai sans faute de sa part (maladie, absence, notification irreguliere). La restitution du delai doit etre demandee dans les 10 jours suivant la cessation de l'empechement, avec un delai absolu d'un an (art. 33 al. 4 LP). Si la notification elle-meme est viciee (mauvaise adresse, remise a un tiers non autorise), le commandement est nul et peut etre conteste en tout temps par voie de plainte LP (art. 17 LP). Le debiteur peut aussi invoquer la prescription de la creance (art. 127-142 CO) ou la compensation (art. 120 CO) dans le cadre de la procedure de mainlevee.",
+      "explication": "Le commandement de payer peut etre conteste par opposition dans les 10 jours des sa notification (art. 74 LP). L'opposition n'a pas besoin d'etre motivee. Si le délai est dépassé, une opposition tardive (art. 77 LP) est possible si le debiteur rend vraisemblable qu'il n'a pas pu agir dans le délai sans faute de sa part (maladie, absence, notification irreguliere). La restitution du délai doit etre demandee dans les 10 jours suivant la cessation de l'empechement, avec un délai absolu d'un an (art. 33 al. 4 LP). Si la notification elle-même est viciee (mauvaise adresse, remise a un tiers non autorise), le commandement est nul et peut etre conteste en tout temps par voie de plainte LP (art. 17 LP). Le debiteur peut aussi invoquer la prescription de la creance (art. 127-142 CO) ou la compensation (art. 120 CO) dans le cadre de la procedure de mainlevee.",
       "articles": [
         {
           "ref": "LP 74",
@@ -1323,21 +1323,21 @@
         },
         {
           "ref": "LP 33",
-          "titre": "Restitution de delai",
+          "titre": "Restitution de délai",
           "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_33"
         }
       ],
       "jurisprudence": [
         {
           "ref": "TF 5A_208/2014",
-          "resume": "L'opposition tardive est admise lorsque le debiteur prouve qu'il etait hospitalise et n'a pas pu prendre connaissance du commandement dans le delai."
+          "resume": "L'opposition tardive est admise lorsque le debiteur prouve qu'il etait hospitalise et n'a pas pu prendre connaissance du commandement dans le délai."
         },
         {
           "ref": "TF 5A_126/2017",
           "resume": "La notification d'un commandement de payer a un voisin sans procuration est irreguliere et le commandement est nul."
         }
       ],
-      "modeleLettre": "Objet : Opposition tardive au commandement de payer no [numero]\n\nA l'Office des poursuites de [district],\n\nMadame, Monsieur,\n\nJe forme opposition tardive au commandement de payer no [numero], poursuite no [numero], conformement a l'art. 77 LP.\n\nLe delai d'opposition a ete manque pour le motif suivant : [maladie/absence/notification irreguliere].\n\nJ'ai pris connaissance du commandement le [date] et forme la presente opposition dans les 10 jours suivant la cessation de l'empechement.\n\nPieces jointes : [certificat medical / preuve d'absence].\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
+      "modeleLettre": "Objet : Opposition tardive au commandement de payer no [numero]\n\nA l'Office des poursuites de [district],\n\nMadame, Monsieur,\n\nJe forme opposition tardive au commandement de payer no [numero], poursuite no [numero], conformement a l'art. 77 LP.\n\nLe délai d'opposition a ete manque pour le motif suivant : [maladie/absence/notification irreguliere].\n\nJ'ai pris connaissance du commandement le [date] et forme la presente opposition dans les 10 jours suivant la cessation de l'empechement.\n\nPieces jointes : [certificat medical / preuve d'absence].\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
       "services": [
         {
           "nom": "Office des poursuites VD",
@@ -1369,7 +1369,7 @@
     ],
     "required_facts": [
       "motif de la contestation",
-      "delai d'opposition respecte ou non",
+      "délai d'opposition respecte ou non",
       "preuves de non-dette",
       "montant conteste"
     ]
@@ -1529,7 +1529,7 @@
       }
     ],
     "reponse": {
-      "explication": "La mainlevee definitive (art. 80 LP) est accordee lorsque le creancier produit un jugement executoire ou un titre assimile (transaction judiciaire, acte authentique executoire, decision administrative definitive). Contrairement a la mainlevee provisoire, le debiteur ne peut s'y opposer qu'en prouvant par titre que la dette a ete eteinte apres le jugement : paiement, remise de dette, prescription, compensation (art. 81 LP). La mainlevee definitive est plus solide que la provisoire — pas d'action en liberation de dette possible. Pour les jugements etrangers, la reconnaissance et l'executabilite selon la Convention de Lugano (UE/AELE) ou la LDIP doivent etre verifiees. La procedure est sommaire et rapide. Les frais de la mainlevee sont a la charge du debiteur s'ils sont accordes.",
+      "explication": "La mainlevee definitive (art. 80 LP) est accordee lorsque le creancier produit un jugement executoire ou un titre assimile (transaction judiciaire, acte authentique executoire, decision administrative definitive). Contrairement a la mainlevee provisoire, le debiteur ne peut s'y opposer qu'en prouvant par titre que la dette a ete eteinte après le jugement : paiement, remise de dette, prescription, compensation (art. 81 LP). La mainlevee definitive est plus solide que la provisoire — pas d'action en liberation de dette possible. Pour les jugements etrangers, la reconnaissance et l'executabilite selon la Convention de Lugano (UE/AELE) ou la LDIP doivent etre verifiees. La procedure est sommaire et rapide. Les frais de la mainlevee sont a la charge du debiteur s'ils sont accordes.",
       "articles": [
         {
           "ref": "LP 80",
@@ -1576,7 +1576,7 @@
       "j'ai perdu au tribunal et maintenant",
       "jugement executoire et poursuite",
       "le tribunal a donne raison au creancier",
-      "la poursuite reprend apres jugement"
+      "la poursuite reprend après jugement"
     ],
     "negative_signals": [
       "pas encore de jugement rendu",
@@ -1586,7 +1586,7 @@
       "jugement invoque",
       "montant",
       "recours encore possible",
-      "execution deja lancee"
+      "execution déjà lancee"
     ]
   },
   {
@@ -1637,7 +1637,7 @@
       }
     ],
     "reponse": {
-      "explication": "La saisie de salaire est la mesure d'execution la plus courante (art. 93 LP). L'office des poursuites determine la quotite saisissable : la difference entre le revenu net et le minimum vital du debiteur et de sa famille. Le minimum vital LP comprend le montant de base (CHF 1'200 pour une personne seule, CHF 1'700 pour un couple), le loyer effectif, les primes d'assurance maladie obligatoire, les frais de transport professionnel et les contributions d'entretien dues. Tout ce qui depasse le minimum vital est saisissable. Exception importante : pour les pensions alimentaires, le minimum vital peut etre entame (art. 93 al. 2 LP). La saisie est notifiee a l'employeur qui doit verser directement la part saisissable a l'office. La saisie dure en principe un an (art. 93a LP). Le debiteur peut contester le calcul du minimum vital par plainte a l'autorite de surveillance (art. 17 LP).",
+      "explication": "La saisie de salaire est la mesure d'execution la plus courante (art. 93 LP). L'office des poursuites determine la quotite saisissable : la difference entre le revenu net et le minimum vital du debiteur et de sa famille. Le minimum vital LP comprend le montant de base (CHF 1'200 pour une personne seule, CHF 1'700 pour un couple), le loyer effectif, les primes d'assurance maladie obligatoire, les frais de transport professionnel et les contributions d'entretien dues. Tout ce qui dépassé le minimum vital est saisissable. Exception importante : pour les pensions alimentaires, le minimum vital peut etre entame (art. 93 al. 2 LP). La saisie est notifiee a l'employeur qui doit verser directement la part saisissable a l'office. La saisie dure en principe un an (art. 93a LP). Le debiteur peut contester le calcul du minimum vital par plainte a l'autorite de surveillance (art. 17 LP).",
       "articles": [
         {
           "ref": "LP 93",
@@ -1646,7 +1646,7 @@
         },
         {
           "ref": "LP 93a",
-          "titre": "Duree de la saisie sur les revenus",
+          "titre": "Durée de la saisie sur les revenus",
           "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_93_a"
         },
         {
@@ -1658,7 +1658,7 @@
       "jurisprudence": [
         {
           "ref": "TF 5A_919/2017",
-          "resume": "Le minimum vital LP ne peut pas etre reduit en dessous du minimum d'existence, meme pour des pensions alimentaires, si cela met en danger la sante du debiteur."
+          "resume": "Le minimum vital LP ne peut pas etre reduit en dessous du minimum d'existence, même pour des pensions alimentaires, si cela met en danger la sante du debiteur."
         },
         {
           "ref": "TF 5A_502/2018",
@@ -1695,7 +1695,7 @@
       "quotite saisissable",
       "calcul saisie de salaire",
       "part insaisissable du salaire",
-      "reste a vivre apres saisie"
+      "reste a vivre après saisie"
     ],
     "negative_signals": [
       "saisie de biens et non de salaire",
@@ -1772,7 +1772,7 @@
       "jurisprudence": [
         {
           "ref": "TF 5A_703/2019",
-          "resume": "Le loyer effectif doit etre pris en compte dans le minimum vital meme s'il est eleve, a condition que le debiteur ne puisse pas trouver moins cher dans un delai raisonnable."
+          "resume": "Le loyer effectif doit etre pris en compte dans le minimum vital même s'il est eleve, a condition que le debiteur ne puisse pas trouver moins cher dans un délai raisonnable."
         },
         {
           "ref": "TF 5A_181/2016",
@@ -1823,12 +1823,12 @@
     ]
   },
   {
-    "id": "dettes_acte_defaut_biens_effets",
+    "id": "dettes_acte_défaut_biens_effets",
     "domaine": "dettes",
     "sousDomaine": "poursuite",
     "tags": [
       "acte",
-      "defaut",
+      "défaut",
       "biens",
       "insolvabilite",
       "prescription"
@@ -1838,7 +1838,7 @@
         "id": "q1",
         "text": "Situation ?",
         "options": [
-          "j'ai recu un acte de defaut de biens",
+          "j'ai reçu un acte de défaut de biens",
           "je veux savoir ce que c'est",
           "je veux en contester un",
           "un creancier a un ADB contre moi"
@@ -1871,11 +1871,11 @@
       }
     ],
     "reponse": {
-      "explication": "L'acte de defaut de biens (ADB, art. 149 LP) est delivre au creancier lorsque la poursuite n'a pas permis de recouvrer la totalite de la creance (saisie infructueuse). L'ADB constate le solde impaye et vaut reconnaissance de dette (art. 149 al. 2 LP). Le creancier peut engager une nouvelle poursuite a tout moment s'il estime que la situation financiere du debiteur s'est amelioree, sans avoir besoin d'un nouveau titre. L'ADB se prescrit par 20 ans (art. 149a LP). Le debiteur qui ameliore sa situation peut etre poursuivi a nouveau. L'ADB est inscrit au registre des poursuites et peut etre consulte par des tiers (employeurs, bailleurs) dans l'extrait du registre des poursuites. Le debiteur peut demander la radiation de l'ADB en payant la dette + interets. L'ADB n'est pas une faillite personnelle et ne prive pas le debiteur de ses droits civils.",
+      "explication": "L'acte de défaut de biens (ADB, art. 149 LP) est delivre au creancier lorsque la poursuite n'a pas permis de recouvrer la totalite de la creance (saisie infructueuse). L'ADB constate le solde impaye et vaut reconnaissance de dette (art. 149 al. 2 LP). Le creancier peut engager une nouvelle poursuite a tout moment s'il estime que la situation financiere du debiteur s'est amelioree, sans avoir besoin d'un nouveau titre. L'ADB se prescrit par 20 ans (art. 149a LP). Le debiteur qui ameliore sa situation peut etre poursuivi a nouveau. L'ADB est inscrit au registre des poursuites et peut etre consulte par des tiers (employeurs, bailleurs) dans l'extrait du registre des poursuites. Le debiteur peut demander la radiation de l'ADB en payant la dette + interets. L'ADB n'est pas une faillite personnelle et ne prive pas le debiteur de ses droits civils.",
       "articles": [
         {
           "ref": "LP 149",
-          "titre": "Acte de defaut de biens — delivrance",
+          "titre": "Acte de défaut de biens — delivrance",
           "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_149"
         },
         {
@@ -1891,7 +1891,7 @@
         },
         {
           "ref": "TF 5A_342/2013",
-          "resume": "L'ADB delivre dans une poursuite nulle (vice de notification) est lui-meme nul et doit etre annule."
+          "resume": "L'ADB delivre dans une poursuite nulle (vice de notification) est lui-même nul et doit etre annule."
         }
       ],
       "modeleLettre": "",
@@ -1918,23 +1918,23 @@
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP etat 2025-01-01",
-    "match_description": "La personne veut comprendre les consequences d'un acte de defaut de biens sur sa situation",
+    "match_description": "La personne veut comprendre les consequences d'un acte de défaut de biens sur sa situation",
     "profane_aliases": [
-      "consequences acte de defaut de biens",
+      "consequences acte de défaut de biens",
       "ma dette est-elle effacee",
-      "acte de defaut et inscription",
-      "reprendre une poursuite apres acte de defaut",
+      "acte de défaut et inscription",
+      "reprendre une poursuite après acte de défaut",
       "je suis fiche"
     ],
     "negative_signals": [
       "question sur la saisie en cours",
-      "acte de defaut non encore delivre"
+      "acte de défaut non encore delivre"
     ],
     "required_facts": [
-      "date de l'acte de defaut",
+      "date de l'acte de défaut",
       "montant",
       "amelioration de la situation financiere",
-      "nouvelle poursuite recue ou non"
+      "nouvelle poursuite reçue ou non"
     ]
   },
   {
@@ -1951,7 +1951,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Etes-vous inscrit au registre du commerce ?",
+        "text": "Êtes-vous inscrit au registre du commerce ?",
         "options": [
           "oui",
           "non"
@@ -1982,7 +1982,7 @@
       }
     ],
     "reponse": {
-      "explication": "En droit suisse, la faillite personnelle concerne principalement les personnes inscrites au registre du commerce (art. 39 LP). Pour les autres personnes, la voie ordinaire est la poursuite par saisie. Cependant, tout debiteur peut demander sa propre mise en faillite s'il se declare insolvable (art. 191 LP). La faillite est prononcee par le tribunal et entraine la liquidation de l'ensemble du patrimoine saisissable. Les creanciers produisent leurs creances dans un delai fixe. L'office des faillites realise les actifs et distribue le produit. Les creances non couvertes donnent lieu a des actes de defaut de biens. La faillite est publiee dans la FOSC et les journaux. Apres la cloture de la faillite, le debiteur peut redemarrer mais reste tenu des soldes non payes (ADB de 20 ans). La faillite est inscrite au registre des poursuites pendant 20 ans.",
+      "explication": "En droit suisse, la faillite personnelle concerne principalement les personnes inscrites au registre du commerce (art. 39 LP). Pour les autres personnes, la voie ordinaire est la poursuite par saisie. Cependant, tout debiteur peut demander sa propre mise en faillite s'il se declare insolvable (art. 191 LP). La faillite est prononcee par le tribunal et entraine la liquidation de l'ensemble du patrimoine saisissable. Les creanciers produisent leurs creances dans un délai fixe. L'office des faillites realise les actifs et distribue le produit. Les creances non couvertes donnent lieu a des actes de défaut de biens. La faillite est publiee dans la FOSC et les journaux. Après la cloture de la faillite, le debiteur peut redemarrer mais reste tenu des soldes non payés (ADB de 20 ans). La faillite est inscrite au registre des poursuites pendant 20 ans.",
       "articles": [
         {
           "ref": "LP 191",
@@ -2040,7 +2040,7 @@
       "etapes de la faillite personnelle",
       "procedure de faillite pour un particulier",
       "declaration de faillite mode d'emploi",
-      "que se passe-t-il apres la faillite"
+      "que se passe-t-il après la faillite"
     ],
     "negative_signals": [
       "faillite d'une entreprise (SA/Sarl)",
@@ -2077,7 +2077,7 @@
       },
       {
         "id": "q2",
-        "text": "Etes-vous une entreprise ou un particulier ?",
+        "text": "Êtes-vous une entreprise ou un particulier ?",
         "options": [
           "entreprise",
           "particulier",
@@ -2100,7 +2100,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le concordat (art. 293-336 LP) est une procedure judiciaire permettant au debiteur de trouver un arrangement avec ses creanciers, alternative a la faillite. Il existe deux types principaux : (1) le concordat-dividende : le debiteur s'engage a payer un pourcentage de ses dettes (generalement 15-50%) et est libere du solde, (2) le concordat par abandon d'actifs : les actifs sont liquides et repartis entre creanciers. La procedure commence par une demande de sursis concordataire au tribunal (art. 293 LP). Le tribunal nomme un commissaire. Le sursis dure en principe 4 mois, prolongeable a 24 mois. Pendant le sursis, les poursuites sont suspendues. Le concordat doit etre accepte par la majorite des creanciers representant les 2/3 des creances (art. 305 LP) puis homologue par le tribunal. Le concordat homologue est obligatoire pour tous les creanciers, meme ceux qui ont vote contre.",
+      "explication": "Le concordat (art. 293-336 LP) est une procedure judiciaire permettant au debiteur de trouver un arrangement avec ses creanciers, alternative a la faillite. Il existe deux types principaux : (1) le concordat-dividende : le debiteur s'engage a payer un pourcentage de ses dettes (generalement 15-50%) et est libere du solde, (2) le concordat par abandon d'actifs : les actifs sont liquides et repartis entre creanciers. La procedure commence par une demande de sursis concordataire au tribunal (art. 293 LP). Le tribunal nomme un commissaire. Le sursis dure en principe 4 mois, prolongeable a 24 mois. Pendant le sursis, les poursuites sont suspendues. Le concordat doit etre accepte par la majorite des creanciers representant les 2/3 des creances (art. 305 LP) puis homologue par le tribunal. Le concordat homologue est obligatoire pour tous les creanciers, même ceux qui ont vote contre.",
       "articles": [
         {
           "ref": "LP 293",
@@ -2156,7 +2156,7 @@
     ],
     "negative_signals": [
       "arrangement amiable avec un seul creancier",
-      "faillite deja prononcee"
+      "faillite déjà prononcee"
     ],
     "required_facts": [
       "montant total des dettes",
@@ -2188,7 +2188,7 @@
       },
       {
         "id": "q2",
-        "text": "Duree souhaitee ?",
+        "text": "Durée souhaitee ?",
         "options": [
           "4 mois",
           "jusqu'a 24 mois",
@@ -2378,7 +2378,7 @@
       "sequestrer des avoirs"
     ],
     "negative_signals": [
-      "saisie (apres commandement de payer)",
+      "saisie (après commandement de payer)",
       "simple mise en demeure"
     ],
     "required_facts": [
@@ -2427,7 +2427,7 @@
       }
     ],
     "reponse": {
-      "explication": "La poursuite pour effets de change (art. 177-189 LP) est une voie speciale acceleree. Le porteur d'une lettre de change, d'un billet a ordre ou d'un cheque impaye peut engager une poursuite par voie de change. La particularite : l'opposition du debiteur ne suspend pas la poursuite (art. 182 LP), contrairement a la poursuite ordinaire. Le debiteur doit faire valoir ses moyens devant le juge dans une action en liberation. Le delai d'opposition est de 5 jours (au lieu de 10). La poursuite pour effets de change est exclusivement par voie de saisie, jamais par faillite (art. 177 LP). L'effet de change doit etre regulier en la forme (mentions obligatoires selon la Loi sur les lettres de change et billets a ordre). Le porteur peut agir contre tous les signataires solidairement. Cette voie est rare en pratique pour les particuliers mais frequente en commerce.",
+      "explication": "La poursuite pour effets de change (art. 177-189 LP) est une voie speciale acceleree. Le porteur d'une lettre de change, d'un billet a ordre ou d'un cheque impaye peut engager une poursuite par voie de change. La particularite : l'opposition du debiteur ne suspend pas la poursuite (art. 182 LP), contrairement a la poursuite ordinaire. Le debiteur doit faire valoir ses moyens devant le juge dans une action en liberation. Le délai d'opposition est de 5 jours (au lieu de 10). La poursuite pour effets de change est exclusivement par voie de saisie, jamais par faillite (art. 177 LP). L'effet de change doit etre regulier en la forme (mentions obligatoires selon la Loi sur les lettres de change et billets a ordre). Le porteur peut agir contre tous les signataires solidairement. Cette voie est rare en pratique pour les particuliers mais frequente en commerce.",
       "articles": [
         {
           "ref": "LP 177",
@@ -2480,7 +2480,7 @@
       "type d'effet (lettre de change, billet a ordre)",
       "montant",
       "protest effectue ou non",
-      "delai"
+      "délai"
     ]
   },
   {
@@ -2530,7 +2530,7 @@
       }
     ],
     "reponse": {
-      "explication": "La revendication (art. 106-109 LP) est le moyen pour un tiers de faire valoir un droit de propriete ou un autre droit reel sur un bien saisi dans le cadre d'une poursuite. Si un bien appartenant a un tiers est saisi chez le debiteur (ou dans un logement commun), le tiers doit faire valoir sa revendication aupres de l'office des poursuites. L'office transmet la revendication aux parties. Si le creancier conteste, l'office fixe un delai de 10 jours pour agir en justice (art. 107 LP). La charge de la preuve depend de la possession : si le tiers possede le bien, c'est au creancier de contester ; si le debiteur possede le bien, c'est au tiers de prouver son droit. En cas de copropriete ou de propriete commune (regime matrimonial), des regles speciales s'appliquent. L'epoux non debiteur peut revendiquer sa part des biens communs.",
+      "explication": "La revendication (art. 106-109 LP) est le moyen pour un tiers de faire valoir un droit de propriete ou un autre droit reel sur un bien saisi dans le cadre d'une poursuite. Si un bien appartenant a un tiers est saisi chez le debiteur (ou dans un logement commun), le tiers doit faire valoir sa revendication aupres de l'office des poursuites. L'office transmet la revendication aux parties. Si le creancier conteste, l'office fixe un délai de 10 jours pour agir en justice (art. 107 LP). La charge de la preuve depend de la possession : si le tiers possede le bien, c'est au creancier de contester ; si le debiteur possede le bien, c'est au tiers de prouver son droit. En cas de copropriete ou de propriete commune (regime matrimonial), des regles speciales s'appliquent. L'epoux non debiteur peut revendiquer sa part des biens communs.",
       "articles": [
         {
           "ref": "LP 106",
@@ -2558,7 +2558,7 @@
           "resume": "Une facture au nom du tiers constitue un indice de propriete mais n'est pas suffisante a elle seule."
         }
       ],
-      "modeleLettre": "Objet : Revendication de propriete — poursuite no [numero]\n\nA l'Office des poursuites de [district],\n\nMadame, Monsieur,\n\nDans le cadre de la poursuite no [numero] contre [nom du debiteur], les biens suivants ont ete saisis : [description].\n\nJe revendique la propriete de ces biens conformement a l'art. 106 LP.\n\nPreuves de propriete jointes : [facture, contrat d'achat, photos].\n\nJe vous prie de bien vouloir admettre ma revendication ou a defaut de transmettre le dossier au tribunal.\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
+      "modeleLettre": "Objet : Revendication de propriete — poursuite no [numero]\n\nA l'Office des poursuites de [district],\n\nMadame, Monsieur,\n\nDans le cadre de la poursuite no [numero] contre [nom du debiteur], les biens suivants ont ete saisis : [description].\n\nJe revendique la propriete de ces biens conformement a l'art. 106 LP.\n\nPreuves de propriete jointes : [facture, contrat d'achat, photos].\n\nJe vous prie de bien vouloir admettre ma revendication ou a défaut de transmettre le dossier au tribunal.\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
       "services": [
         {
           "nom": "Office des poursuites VD",
@@ -2592,7 +2592,7 @@
       "bien revendique",
       "preuves de propriete",
       "procedure de saisie en cours",
-      "delai pour revendiquer"
+      "délai pour revendiquer"
     ]
   },
   {
@@ -2616,7 +2616,7 @@
           "notification irreguliere",
           "calcul minimum vital errone",
           "saisie excessive",
-          "delai non respecte"
+          "délai non respecte"
         ]
       },
       {
@@ -2635,7 +2635,7 @@
       }
     ],
     "reponse": {
-      "explication": "La plainte LP (art. 17 LP) est le moyen de contester les actes de l'office des poursuites ou des faillites. Elle est adressee a l'autorite cantonale de surveillance dans un delai de 10 jours des la connaissance de l'acte conteste (art. 17 al. 2 LP). La plainte est gratuite. Motifs possibles : erreur dans le calcul du minimum vital, notification irreguliere, saisie de biens insaisissables, refus injustifie de l'office, retard inexcusable. L'autorite de surveillance peut annuler ou modifier l'acte conteste. En cas de nullite absolue (vice grave), la plainte n'est soumise a aucun delai (art. 22 LP). La decision de l'autorite cantonale de surveillance peut etre attaquee au Tribunal federal par recours en matiere civile (art. 72 al. 2 let. a LTF). La plainte n'a pas d'effet suspensif sauf decision contraire de l'autorite.",
+      "explication": "La plainte LP (art. 17 LP) est le moyen de contester les actes de l'office des poursuites ou des faillites. Elle est adressee a l'autorite cantonale de surveillance dans un délai de 10 jours des la connaissance de l'acte conteste (art. 17 al. 2 LP). La plainte est gratuite. Motifs possibles : erreur dans le calcul du minimum vital, notification irreguliere, saisie de biens insaisissables, refus injustifie de l'office, retard inexcusable. L'autorite de surveillance peut annuler ou modifier l'acte conteste. En cas de nullite absolue (vice grave), la plainte n'est soumise a aucun délai (art. 22 LP). La decision de l'autorite cantonale de surveillance peut etre attaquee au Tribunal federal par recours en matiere civile (art. 72 al. 2 let. a LTF). La plainte n'a pas d'effet suspensif sauf decision contraire de l'autorite.",
       "articles": [
         {
           "ref": "LP 17",
@@ -2691,7 +2691,7 @@
     "required_facts": [
       "acte conteste",
       "irregularite invoquee",
-      "delai (10 jours)",
+      "délai (10 jours)",
       "autorite de surveillance"
     ]
   },
@@ -2711,7 +2711,7 @@
         "id": "q1",
         "text": "Ou est domicilie le debiteur ?",
         "options": [
-          "en Suisse, meme canton",
+          "en Suisse, même canton",
           "en Suisse, autre canton",
           "a l'etranger",
           "adresse inconnue"
@@ -2796,7 +2796,7 @@
     ],
     "negative_signals": [
       "question sur le for judiciaire (tribunal)",
-      "poursuite deja en cours"
+      "poursuite déjà en cours"
     ],
     "required_facts": [
       "domicile du debiteur",
@@ -2812,7 +2812,7 @@
     "tags": [
       "prescription",
       "dette",
-      "delai",
+      "délai",
       "interruption",
       "liberation"
     ],
@@ -2831,7 +2831,7 @@
       },
       {
         "id": "q2",
-        "text": "Depuis combien de temps n'avez-vous pas paye ?",
+        "text": "Depuis combien de temps n'avez-vous pas payé ?",
         "options": [
           "<1 an",
           "1-5 ans",
@@ -2841,7 +2841,7 @@
       },
       {
         "id": "q3",
-        "text": "Avez-vous recu un commandement de payer ?",
+        "text": "Avez-vous reçu un commandement de payer ?",
         "options": [
           "oui, recemment",
           "oui, il y a longtemps",
@@ -2855,7 +2855,7 @@
       }
     ],
     "reponse": {
-      "explication": "La prescription eteint le droit d'agir du creancier mais pas la dette elle-meme (obligation naturelle). Delais principaux (art. 127-142 CO) : 10 ans pour les dettes ordinaires (prets, contrats, art. 127 CO), 5 ans pour les loyers, pensions, salaires, honoraires (art. 128 CO), 3 ans pour la responsabilite civile (art. 60 CO), 1 an pour les vices de la chose vendue (art. 210 CO). La prescription est interrompue par : un commandement de payer, une action en justice, la reconnaissance de la dette par le debiteur (art. 135 CO). Apres interruption, un nouveau delai complet recommence (art. 137 CO). Le debiteur doit invoquer la prescription ; le tribunal ne l'applique pas d'office (art. 142 CO). Un acte de defaut de biens porte la prescription a 20 ans (art. 149a LP). Les impots ont des regles de prescription speciales selon le droit fiscal.",
+      "explication": "La prescription eteint le droit d'agir du creancier mais pas la dette elle-même (obligation naturelle). Delais principaux (art. 127-142 CO) : 10 ans pour les dettes ordinaires (prets, contrats, art. 127 CO), 5 ans pour les loyers, pensions, salaires, honoraires (art. 128 CO), 3 ans pour la responsabilite civile (art. 60 CO), 1 an pour les vices de la chose vendue (art. 210 CO). La prescription est interrompue par : un commandement de payer, une action en justice, la reconnaissance de la dette par le debiteur (art. 135 CO). Après interruption, un nouveau délai complet recommence (art. 137 CO). Le debiteur doit invoquer la prescription ; le tribunal ne l'applique pas d'office (art. 142 CO). Un acte de défaut de biens porte la prescription a 20 ans (art. 149a LP). Les impots ont des regles de prescription speciales selon le droit fiscal.",
       "articles": [
         {
           "ref": "CO 127",
@@ -2880,7 +2880,7 @@
         },
         {
           "ref": "TF 4A_178/2014",
-          "resume": "Un commandement de payer interrompt la prescription meme si le debiteur fait opposition."
+          "resume": "Un commandement de payer interrompt la prescription même si le debiteur fait opposition."
         }
       ],
       "modeleLettre": "",
@@ -2906,13 +2906,13 @@
     "match_description": "La personne veut savoir si sa dette est prescrite ou combien de temps le creancier peut encore agir",
     "profane_aliases": [
       "ma dette est prescrite",
-      "delai de prescription dette",
+      "délai de prescription dette",
       "au bout de combien de temps la dette s'efface",
       "prescription des factures",
       "la dette est trop vieille"
     ],
     "negative_signals": [
-      "question sur l'acte de defaut de biens",
+      "question sur l'acte de défaut de biens",
       "dette recente sans enjeu de prescription"
     ],
     "required_facts": [
@@ -2987,7 +2987,7 @@
       "jurisprudence": [
         {
           "ref": "TF 4A_266/2016",
-          "resume": "La remise de dette peut resulter d'un comportement concluant du creancier (silence prolonge apres proposition de reglement)."
+          "resume": "La remise de dette peut resulter d'un comportement concluant du creancier (silence prolonge après proposition de reglement)."
         },
         {
           "ref": "TF 4A_509/2014",
@@ -3057,7 +3057,7 @@
       },
       {
         "id": "q2",
-        "text": "Avez-vous deja tente de negocier ?",
+        "text": "Avez-vous déjà tente de negocier ?",
         "options": [
           "non",
           "oui, sans succes",
@@ -3080,7 +3080,7 @@
       }
     ],
     "reponse": {
-      "explication": "L'arrangement amiable est un accord negocie entre le debiteur et ses creanciers en dehors de toute procedure judiciaire. Il est souvent plus avantageux que les poursuites pour les deux parties (pas de frais de poursuite, paiement plus rapide). Les types d'arrangements courants : echelonnement du paiement, remise partielle contre paiement immediat du solde, moratoire (suspension temporaire). L'arrangement n'est pas reglemente par la loi mais releve de la liberte contractuelle (art. 19 CO). Il est vivement conseille de formaliser tout accord par ecrit, avec mention du montant total, des mensualites, des delais, et la clause de desistement en cas de respect du plan. Les services de conseil en dettes (CSP, Caritas, ARTIAS) peuvent intervenir comme intermediaires neutres pour negocier avec les creanciers. L'arrangement amiable ne figure pas au registre des poursuites.",
+      "explication": "L'arrangement amiable est un accord negocie entre le debiteur et ses creanciers en dehors de toute procedure judiciaire. Il est souvent plus avantageux que les poursuites pour les deux parties (pas de frais de poursuite, paiement plus rapide). Les types d'arrangements courants : echelonnement du paiement, remise partielle contre paiement immediat du solde, moratoire (suspension temporaire). L'arrangement n'est pas reglemente par la loi mais releve de la liberte contractuelle (art. 19 CO). Il est vivement conseille de formaliser tout accord par ecrit, avec mention du montant total, des mensualites, des délais, et la clause de desistement en cas de respect du plan. Les services de conseil en dettes (CSP, Caritas, ARTIAS) peuvent intervenir comme intermediaires neutres pour negocier avec les creanciers. L'arrangement amiable ne figure pas au registre des poursuites.",
       "articles": [
         {
           "ref": "CO 19",
@@ -3099,7 +3099,7 @@
           "resume": "Un plan de paiement convenu entre les parties est un contrat qui lie les deux parties ; le creancier ne peut pas poursuivre tant que le debiteur respecte le plan."
         }
       ],
-      "modeleLettre": "Objet : Proposition d'arrangement amiable\n\nRecommande\n\nMadame, Monsieur,\n\nConcernant la creance de CHF [montant] que vous detenez a mon encontre, je vous propose l'arrangement suivant :\n\n- Paiement en [nombre] mensualites de CHF [montant mensuel]\n- Premier versement le [date]\n- Dernier versement le [date]\n\nEn contrepartie, je vous demande de suspendre toute poursuite pendant la duree du plan.\n\nJe m'engage a respecter ce plan de paiement. En cas de defaut de paiement de plus de 30 jours, vous pourrez reprendre les demarches de recouvrement.\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
+      "modeleLettre": "Objet : Proposition d'arrangement amiable\n\nRecommande\n\nMadame, Monsieur,\n\nConcernant la creance de CHF [montant] que vous detenez a mon encontre, je vous propose l'arrangement suivant :\n\n- Paiement en [nombre] mensualites de CHF [montant mensuel]\n- Premier versement le [date]\n- Dernier versement le [date]\n\nEn contrepartie, je vous demande de suspendre toute poursuite pendant la durée du plan.\n\nJe m'engage a respecter ce plan de paiement. En cas de défaut de paiement de plus de 30 jours, vous pourrez reprendre les demarches de recouvrement.\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
       "services": [
         {
           "nom": "Centre social protestant VD",
@@ -3161,13 +3161,13 @@
         "options": [
           "poursuites en cours",
           "avant poursuites",
-          "apres saisie",
-          "actes de defaut de biens"
+          "après saisie",
+          "actes de défaut de biens"
         ]
       },
       {
         "id": "q2",
-        "text": "Avez-vous deja contacte un service de conseil ?",
+        "text": "Avez-vous déjà contacte un service de conseil ?",
         "options": [
           "non",
           "oui, sans resultat",
@@ -3235,13 +3235,13 @@
     ],
     "negative_signals": [
       "mediation familiale",
-      "dettes deja en procedure judiciaire avancee"
+      "dettes déjà en procedure judiciaire avancee"
     ],
     "required_facts": [
       "nombre de creanciers",
       "montant total",
       "revenus et charges",
-      "demarches deja entreprises"
+      "demarches déjà entreprises"
     ]
   },
   {
@@ -3345,7 +3345,7 @@
       "gerer mon argent"
     ],
     "negative_signals": [
-      "deja en poursuite (depasse la prevention)",
+      "déjà en poursuite (dépassé la prevention)",
       "question d'investissement ou d'epargne"
     ],
     "required_facts": [
@@ -3388,7 +3388,7 @@
       },
       {
         "id": "q3",
-        "text": "Avez-vous des actes de defaut de biens ?",
+        "text": "Avez-vous des actes de défaut de biens ?",
         "options": [
           "oui",
           "non",
@@ -3411,7 +3411,7 @@
       }
     ],
     "reponse": {
-      "explication": "L'assainissement financier est un processus global visant a sortir durablement du surendettement. Il combine plusieurs outils : (1) etablissement d'un budget strict, (2) negociation avec chaque creancier (remise partielle, echelonnement), (3) priorisation des dettes (loyer, LAMal, impots courants d'abord), (4) consolidation eventuelle des dettes (un seul paiement mensuel), (5) suivi sur 2-5 ans. En Suisse, il n'existe pas de procedure de surendettement des particuliers comme en France (loi Borloo). Le debiteur doit negocier individuellement avec chaque creancier. Les services de conseil en dettes jouent un role crucial d'intermediaire. Certains cantons (GE, VD) financent des programmes specifiques de desendettement pour les beneficiaires de l'aide sociale. Les conditions de succes : revenus suffisants pour couvrir le minimum vital + un montant pour les remboursements, stabilite de la situation, motivation du debiteur. Le processus prend generalement 3 a 7 ans.",
+      "explication": "L'assainissement financier est un processus global visant a sortir durablement du surendettement. Il combine plusieurs outils : (1) etablissement d'un budget strict, (2) negociation avec chaque creancier (remise partielle, echelonnement), (3) priorisation des dettes (loyer, LAMal, impots courants d'abord), (4) consolidation eventuelle des dettes (un seul paiement mensuel), (5) suivi sur 2-5 ans. En Suisse, il n'existe pas de procedure de surendettement des particuliers comme en France (loi Borloo). Le debiteur doit negocier individuellement avec chaque creancier. Les services de conseil en dettes jouent un role crucial d'intermediaire. Certains cantons (GE, VD) financent des programmes specifiques de desendettement pour les bénéficiaires de l'aide sociale. Les conditions de succes : revenus suffisants pour couvrir le minimum vital + un montant pour les remboursements, stabilite de la situation, motivation du debiteur. Le processus prend generalement 3 a 7 ans.",
       "articles": [
         {
           "ref": "LP 93",
@@ -3485,7 +3485,7 @@
       "rehabilitation",
       "LP",
       "concordat",
-      "acte defaut biens"
+      "acte défaut biens"
     ],
     "questions": [
       {
@@ -3494,12 +3494,12 @@
         "options": [
           "je ne peux plus payer mes dettes",
           "une faillite a ete prononcee",
-          "je veux me rehabiliter apres faillite"
+          "je veux me rehabiliter après faillite"
         ]
       },
       {
         "id": "q2",
-        "text": "Etes-vous inscrit au registre du commerce ?",
+        "text": "Êtes-vous inscrit au registre du commerce ?",
         "options": [
           "oui",
           "non"
@@ -3516,7 +3516,7 @@
       },
       {
         "id": "q4",
-        "text": "Avez-vous des actes de defaut de biens ?",
+        "text": "Avez-vous des actes de défaut de biens ?",
         "options": [
           "oui",
           "non",
@@ -3530,7 +3530,7 @@
       }
     ],
     "reponse": {
-      "explication": "La faillite personnelle en Suisse est possible uniquement pour les personnes inscrites au registre du commerce (art. 39 LP) ou par declaration d'insolvabilite (art. 191 LP) pour les non-inscrits. La declaration d'insolvabilite permet au debiteur de demander au juge l'ouverture de la faillite lorsqu'il n'a manifestement pas les moyens de payer ses dettes. Les effets : tous les biens saisissables sont liquides, les creanciers non satisfaits recoivent un acte de defaut de biens (art. 265 LP) qui reste valable 20 ans (art. 149a LP). Le debiteur peut demander un concordat (sursis concordataire, art. 293 ss LP) pour eviter la faillite. Apres faillite, les dettes ne sont pas effacees mais les creanciers ne peuvent plus poursuivre pendant la faillite. La rehabilitation consiste a payer les dettes attestees par les actes de defaut de biens. Il est recommande de consulter un service de desendettement avant de demander la faillite.",
+      "explication": "La faillite personnelle en Suisse est possible uniquement pour les personnes inscrites au registre du commerce (art. 39 LP) ou par declaration d'insolvabilite (art. 191 LP) pour les non-inscrits. La declaration d'insolvabilite permet au debiteur de demander au juge l'ouverture de la faillite lorsqu'il n'a manifestement pas les moyens de payer ses dettes. Les effets : tous les biens saisissables sont liquides, les creanciers non satisfaits recoivent un acte de défaut de biens (art. 265 LP) qui reste valable 20 ans (art. 149a LP). Le debiteur peut demander un concordat (sursis concordataire, art. 293 ss LP) pour eviter la faillite. Après faillite, les dettes ne sont pas effacees mais les creanciers ne peuvent plus poursuivre pendant la faillite. La rehabilitation consiste a payer les dettes attestees par les actes de défaut de biens. Il est recommande de consulter un service de desendettement avant de demander la faillite.",
       "articles": [
         {
           "ref": "LP 191",
@@ -3539,12 +3539,12 @@
         },
         {
           "ref": "LP 265",
-          "titre": "Acte de defaut de biens — faillite",
+          "titre": "Acte de défaut de biens — faillite",
           "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_265"
         },
         {
           "ref": "LP 149a",
-          "titre": "Acte de defaut de biens — prescription",
+          "titre": "Acte de défaut de biens — prescription",
           "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_149_a"
         },
         {
@@ -3597,9 +3597,9 @@
     "profane_aliases": [
       "faillite personnelle en Suisse",
       "consequences d'une faillite",
-      "apres la faillite que se passe-t-il",
-      "rehabilitation apres faillite",
-      "faillite et acte de defaut de biens"
+      "après la faillite que se passe-t-il",
+      "rehabilitation après faillite",
+      "faillite et acte de défaut de biens"
     ],
     "negative_signals": [
       "faillite d'entreprise",

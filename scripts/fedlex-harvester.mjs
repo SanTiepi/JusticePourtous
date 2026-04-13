@@ -41,7 +41,6 @@ const LAW_SOURCES = {
   etrangers: [
     { rs: '142.20', titre: 'Loi sur les étrangers et l\'intégration (LEI)', eliPath: 'eli/cc/2007/758', articleRange: null, prefix: 'LEI' },
     { rs: '142.31', titre: 'Loi sur l\'asile (LAsi)', eliPath: 'eli/cc/1999/358', articleRange: null, prefix: 'LAsi' },
-    { rs: '142.31', titre: 'Loi sur l\'asile (LAsi, ancienne)', eliPath: 'eli/cc/1980/1718_1718_1718', articleRange: null, prefix: 'LAsi' },
     { rs: '141.0', titre: 'Loi sur la nationalité suisse (LN)', eliPath: 'eli/cc/2016/404', articleRange: null, prefix: 'LN' },
   ],
   // Extra: full CO and CC for general coverage

@@ -102,7 +102,7 @@
 ### Blockers
 - API Anthropic sans crédits → CLI fallback local OK, prod non
 - Page résultat encore en ancien format
-- LEI Fedlex harvest 0 articles (URL ELI à corriger)
+- ~~LEI Fedlex harvest~~ RÉSOLU — 294 articles (LEI 123, LAsi 119, LN 52)
 
 ## Commandes
 ```bash

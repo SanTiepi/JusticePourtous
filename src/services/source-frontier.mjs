@@ -282,7 +282,8 @@ const SOURCE_CATALOG = {
     domaines: ['bail', 'travail'],
     freshness: 'mise à jour régulière',
     ingestion_strategy: 'Extraire les textes simplifiés et modèles de lettres. Structure HTML propre.',
-    our_status: 'not_mapped',
+    our_status: 'assessed',
+    ingestion_blocker: 'SPA — requires browser-based scraping (Playwright/Puppeteer)',
     gap: 'excellente source de texteSimple pour nos articles — langage citoyen vérifié par des juristes',
   },
   droitpourlapratique: {
@@ -296,7 +297,8 @@ const SOURCE_CATALOG = {
     domaines: ['bail', 'travail', 'dettes'],
     freshness: 'mise à jour continue',
     ingestion_strategy: 'Résumés d\'arrêts en langage pratique. Complémente nos arrêts bruts avec des résumés accessibles.',
-    our_status: 'not_mapped',
+    our_status: 'assessed',
+    ingestion_blocker: 'SPA — requires browser-based scraping',
     gap: 'nos arrêts ont des résumés juridiques, pas des résumés citoyens',
   },
   guidesocial: {
@@ -310,7 +312,8 @@ const SOURCE_CATALOG = {
     domaines: ['bail', 'travail', 'dettes', 'famille', 'social'],
     freshness: 'mise à jour annuelle',
     ingestion_strategy: 'Fiches thématiques cantonales. Structure claire par thème/canton. Bonne source pour les spécificités romandes.',
-    our_status: 'not_mapped',
+    our_status: 'assessed',
+    ingestion_blocker: 'SPA — fiches sociojuridiques require authenticated search filters',
     gap: 'nos fiches manquent de contexte cantonal romand structuré',
   },
   questiondedroit: {
@@ -324,7 +327,8 @@ const SOURCE_CATALOG = {
     domaines: ['bail', 'travail', 'famille'],
     freshness: 'variable',
     ingestion_strategy: 'Q&A en langage profane. Source de profane_aliases et match_description pour nos fiches.',
-    our_status: 'not_mapped',
+    our_status: 'assessed',
+    ingestion_blocker: 'Site is a law firm, not a public FAQ — low value vs initial assessment',
     gap: 'nos fiches utilisent du jargon — ces Q&A montrent comment les citoyens posent leurs questions',
   },
   asloca_kit: {
@@ -338,8 +342,9 @@ const SOURCE_CATALOG = {
     domaines: ['bail'],
     freshness: 'édition 2022',
     ingestion_strategy: 'Guide complet bail en langage citoyen. Couvre signature, vie du bail, fin du bail. Source de practitioner_patterns + anti_erreurs citoyens.',
-    our_status: 'not_mapped',
-    gap: 'anti-erreurs orientées citoyen (pas praticien) manquantes',
+    our_status: 'ingested',
+    our_count: 30,
+    gap: null,
   },
   ch_ch_themes: {
     id: 'ch_ch_themes',
@@ -352,7 +357,8 @@ const SOURCE_CATALOG = {
     domaines: ['bail', 'travail', 'dettes', 'famille', 'etrangers'],
     freshness: 'mise à jour continue',
     ingestion_strategy: 'Pages thématiques en langage citoyen. Validées par la Chancellerie fédérale. Source officielle de vulgarisation.',
-    our_status: 'not_mapped',
+    our_status: 'assessed',
+    ingestion_blocker: 'SPA (Angular) — requires browser-based scraping, 404 on direct URLs',
     gap: 'textes simplifiés officiels non exploités',
   },
 

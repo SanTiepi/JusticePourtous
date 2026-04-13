@@ -1,14 +1,14 @@
 [
   {
     "id": "etranger_permis_b_c",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "permis",
     "tags": [
       "permis",
       "B",
       "C",
       "sejour",
-      "etablissement",
+      "établissement",
       "conditions"
     ],
     "questions": [
@@ -56,11 +56,11 @@
       }
     ],
     "reponse": {
-      "explication": "Le permis C (etablissement) est accorde en principe après 10 ans de sejour regulier en Suisse, dont 5 ans au cours des dernieres annees (art. 34 al. 2 LEI). Pour les ressortissants de certains pays (UE/AELE, USA, Canada), le délai est reduit a 5 ans (art. 34 al. 4 LEI). Conditions : integration reussie (respect de la securite et de l'ordre publics, respect des valeurs constitutionnelles, competences linguistiques, participation a la vie economique). Les competences linguistiques requises sont le niveau A2 a l'oral et A1 a l'ecrit dans la langue du lieu de domicile (art. 58a LEI). Le permis C est renouvelable automatiquement et confere un droit quasi illimite de sejour et de travail. Le passage de B a C peut etre avance en cas d'integration exemplaire (art. 34 al. 4 LEI). Le permis C peut etre revoque en cas de condamnation penale grave ou de dependance a l'aide sociale (art. 63 LEI).",
+      "explication": "Le permis C (établissement) est accorde en principe après 10 ans de sejour régulier en Suisse, dont 5 ans au cours des dernières annees (art. 34 al. 2 LEI). Pour les ressortissants de certains pays (UE/AELE, USA, Canada), le délai est reduit a 5 ans (art. 34 al. 4 LEI). Conditions : integration reussie (respect de la securite et de l'ordre publics, respect des valeurs constitutionnelles, compétences linguistiques, participation a la vie economique). Les compétences linguistiques requises sont le niveau A2 a l'oral et A1 a l'écrit dans la langue du lieu de domicile (art. 58a LEI). Le permis C est renouvelable automatiquement et confere un droit quasi illimite de sejour et de travail. Le passage de B a C peut etre avance en cas d'integration exemplaire (art. 34 al. 4 LEI). Le permis C peut etre revoque en cas de condamnation pénale grave ou de dependance a l'aide sociale (art. 63 LEI).",
       "articles": [
         {
           "ref": "LEI 34",
-          "titre": "Autorisation d'etablissement (permis C)",
+          "titre": "Autorisation d'établissement (permis C)",
           "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_34"
         },
         {
@@ -70,7 +70,7 @@
         },
         {
           "ref": "LEI 63",
-          "titre": "Revocation de l'autorisation d'etablissement",
+          "titre": "Revocation de l'autorisation d'établissement",
           "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_63"
         }
       ],
@@ -84,11 +84,11 @@
           "resume": "Les exigences linguistiques doivent etre proportionnees a l'age et a la situation personnelle du requérant."
         }
       ],
-      "modeleLettre": "Objet : Demande de permis d'etablissement (permis C)\n\nAu Service [cantonal] de la population,\n\nMadame, Monsieur,\n\nTitulaire d'un permis B depuis le [date], je remplis les conditions de l'art. 34 LEI et sollicite l'octroi d'un permis d'etablissement (C).\n\n- Durée de sejour en Suisse : [X] ans\n- Integration : [description]\n- Competences linguistiques : [niveau atteste]\n- Situation professionnelle : [emploi stable]\n- Casier judiciaire : vierge\n\nPieces jointes : [attestation employeur, certificat de langue, extrait casier]\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
+      "modeleLettre": "Objet : Demande de permis d'établissement (permis C)\n\nAu Service [cantonal] de la population,\n\nMadame, Monsieur,\n\nTitulaire d'un permis B depuis le [date], je remplis les conditions de l'art. 34 LEI et sollicite l'octroi d'un permis d'établissement (C).\n\n- Durée de sejour en Suisse : [X] ans\n- Integration : [description]\n- Competences linguistiques : [niveau atteste]\n- Situation professionnelle : [emploi stable]\n- Casier judiciaire : vierge\n\nPieces jointes : [attestation employeur, certificat de langue, extrait casier]\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
       "services": [
         {
           "nom": "Service de la population VD (SPOP)",
-          "url": "https://www.vd.ch/themes/population/population-etrangere",
+          "url": "https://www.vd.ch/themes/population/population-étrangère",
           "canton": "VD"
         },
         {
@@ -98,14 +98,14 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LEI etat 2025-01-01",
-    "match_description": "La personne a un permis B et veut obtenir le permis C d'etablissement",
+    "sourceLoi": "LEI état 2025-01-01",
+    "match_description": "La personne a un permis B et veut obtenir le permis C d'établissement",
     "profane_aliases": [
       "passer du permis B au C",
-      "permis d'etablissement conditions",
+      "permis d'établissement conditions",
       "combien d'annees pour le permis C",
       "permis C Suisse",
       "avoir le permis C"
@@ -123,7 +123,7 @@
   },
   {
     "id": "etranger_naturalisation",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "naturalisation",
     "tags": [
       "naturalisation",
@@ -176,7 +176,7 @@
       }
     ],
     "reponse": {
-      "explication": "La naturalisation ordinaire requiert 10 ans de sejour en Suisse (les annees entre 8 et 18 ans comptent double, art. 9 LN) et le permis C (art. 9 al. 1 let. a LN). Le requérant doit etre integre, se conformer a l'ordre juridique, ne pas compromettre la securite de la Suisse (art. 11-12 LN). Les exigences linguistiques sont de B1 a l'oral et A2 a l'ecrit dans la langue du lieu de domicile. La procedure comprend trois niveaux : federal (SEM), cantonal et communal. La durée varie de 1 a 4 ans selon le canton. La naturalisation facilitee (art. 21 LN) est possible pour le conjoint etranger d'un Suisse après 5 ans de residence et 3 ans de mariage. Les frais varient : CHF 100 (federation) + frais cantonaux et communaux (CHF 500-3'000). La double nationalite est autorisee. Le requérant ne doit pas etre dependant de l'aide sociale et ne pas avoir de poursuites en cours.",
+      "explication": "La naturalisation ordinaire requiert 10 ans de sejour en Suisse (les annees entre 8 et 18 ans comptent double, art. 9 LN) et le permis C (art. 9 al. 1 let. a LN). Le requérant doit etre integre, se conformer a l'ordre juridique, ne pas compromettre la securite de la Suisse (art. 11-12 LN). Les exigences linguistiques sont de B1 a l'oral et A2 a l'écrit dans la langue du lieu de domicile. La procédure comprend trois niveaux : fédéral (SEM), cantonal et communal. La durée varie de 1 a 4 ans selon le canton. La naturalisation facilitee (art. 21 LN) est possible pour le conjoint étranger d'un Suisse après 5 ans de residence et 3 ans de mariage. Les frais varient : CHF 100 (federation) + frais cantonaux et communaux (CHF 500-3'000). La double nationalite est autorisee. Le requérant ne doit pas etre dependant de l'aide sociale et ne pas avoir de poursuites en cours.",
       "articles": [
         {
           "ref": "LN 9",
@@ -223,10 +223,10 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LN etat 2025-01-01",
+    "sourceLoi": "LN état 2025-01-01",
     "match_description": "La personne veut devenir Suisse par la naturalisation ordinaire",
     "profane_aliases": [
       "devenir Suisse",
@@ -248,7 +248,7 @@
   },
   {
     "id": "etranger_regroupement",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "regroupement",
     "tags": [
       "regroupement",
@@ -335,11 +335,11 @@
           "resume": "Le logement doit etre conforme aux besoins de la famille mais les exigences ne doivent pas etre disproportionnees."
         }
       ],
-      "modeleLettre": "Objet : Demande de regroupement familial\n\nAu Service [cantonal] de la population,\n\nMadame, Monsieur,\n\nTitulaire d'un permis [type] (n° [numero]), je sollicite le regroupement familial pour :\n\n- [Nom, prenom, date de naissance, lien de parente]\n\nConformement a l'art. [42/43/44] LEI, je remplis les conditions suivantes :\n- Logement : [adresse, nombre de pieces]\n- Revenus : CHF [montant] / mois\n- Pas de dependance a l'aide sociale\n\nPieces jointes : [acte de mariage, actes de naissance, contrat de bail, fiches de salaire]\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
+      "modeleLettre": "Objet : Demande de regroupement familial\n\nAu Service [cantonal] de la population,\n\nMadame, Monsieur,\n\nTitulaire d'un permis [type] (n° [numero]), je sollicite le regroupement familial pour :\n\n- [Nom, prenom, date de naissance, lien de parente]\n\nConformement a l'art. [42/43/44] LEI, je remplis les conditions suivantes :\n- Logement : [adresse, nombre de pieces]\n- Revenus : CHF [montant] / mois\n- Pas de dependance a l'aide sociale\n\nPieces jointes : [acte de mariage, actes de naissance, contrat de bail, fiches de salaire]\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
       "services": [
         {
           "nom": "Service de la population VD (SPOP)",
-          "url": "https://www.vd.ch/themes/population/population-etrangere",
+          "url": "https://www.vd.ch/themes/population/population-étrangère",
           "canton": "VD"
         },
         {
@@ -349,10 +349,10 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LEI etat 2025-01-01",
+    "sourceLoi": "LEI état 2025-01-01",
     "match_description": "La personne veut faire venir un membre de sa famille en Suisse",
     "profane_aliases": [
       "faire venir ma famille en Suisse",
@@ -374,7 +374,7 @@
   },
   {
     "id": "etranger_renvoi",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "renvoi",
     "tags": [
       "renvoi",
@@ -388,14 +388,14 @@
         "text": "Type de decision ?",
         "options": [
           "renvoi",
-          "expulsion penale",
+          "expulsion pénale",
           "interdiction d'entree",
           "refus renouvellement"
         ]
       },
       {
         "id": "q2",
-        "text": "Avez-vous reçu une decision ecrite ?",
+        "text": "Avez-vous reçu une decision écrite ?",
         "options": [
           "oui",
           "non, orale seulement"
@@ -416,7 +416,7 @@
         "options": [
           "conjoint/enfant suisse",
           "longue durée de sejour",
-          "aucune particuliere"
+          "aucune particulière"
         ]
       },
       {
@@ -426,7 +426,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le renvoi (art. 64 LEI) est ordonne lorsqu'une autorisation est refusee ou revoquee. Il doit respecter le principe de proportionnalite et la CEDH (art. 8 CEDH, droit a la vie privee et familiale). L'expulsion penale (art. 66a CP) est prononcee par le juge penal pour certaines infractions graves et est en principe obligatoire, sauf clause de rigueur (art. 66a al. 2 CP). Le recours contre une decision de renvoi doit etre déposé dans les 30 jours aupres du tribunal cantonal competent (art. 64 al. 3 LEI). Le recours a un effet suspensif en principe. Des mesures de contrainte (detention administrative) peuvent etre ordonnees pour assurer l'execution du renvoi (art. 76 LEI), limitees a 6 mois (18 mois maximum). Le renvoi est impossible vers un pays ou la personne risque la torture ou des traitements inhumains (art. 25 al. 3 Cst., non-refoulement).",
+      "explication": "Le renvoi (art. 64 LEI) est ordonne lorsqu'une autorisation est refusee ou revoquee. Il doit respecter le principe de proportionnalite et la CEDH (art. 8 CEDH, droit a la vie privee et familiale). L'expulsion pénale (art. 66a CP) est prononcee par le juge pénal pour certaines infractions graves et est en principe obligatoire, sauf clause de rigueur (art. 66a al. 2 CP). Le recours contre une decision de renvoi doit etre déposé dans les 30 jours auprès du tribunal cantonal compétent (art. 64 al. 3 LEI). Le recours a un effet suspensif en principe. Des mesures de contrainte (detention administrative) peuvent etre ordonnees pour assurer l'exécution du renvoi (art. 76 LEI), limitees a 6 mois (18 mois maximum). Le renvoi est impossible vers un pays ou la personne risque la torture ou des traitements inhumains (art. 25 al. 3 Cst., non-refoulement).",
       "articles": [
         {
           "ref": "LEI 64",
@@ -447,18 +447,18 @@
       "jurisprudence": [
         {
           "ref": "TF 2C_13/2018",
-          "resume": "Le renvoi d'un parent etranger d'un enfant suisse viole l'art. 8 CEDH si le lien familial est effectif et etroit."
+          "resume": "Le renvoi d'un parent étranger d'un enfant suisse viole l'art. 8 CEDH si le lien familial est effectif et etroit."
         },
         {
           "ref": "ATF 145 IV 55",
           "resume": "La clause de rigueur de l'art. 66a al. 2 CP doit etre appliquee restrictivement mais ne peut pas etre ignoree."
         }
       ],
-      "modeleLettre": "Objet : Recours contre la decision de renvoi\n\nAu Tribunal [cantonal/TAF],\n\nMadame, Monsieur le/la Juge,\n\nJe forme recours contre la decision de [autorite] du [date] ordonnant mon renvoi de Suisse.\n\nMotifs :\n1. Violation de l'art. 8 CEDH : [attaches familiales en Suisse]\n2. Violation du principe de proportionnalite : [durée de sejour, integration]\n3. [Autres motifs]\n\nJe demande l'effet suspensif du recours (art. 55 PA).\n\nVeuillez agreer l'expression de ma haute consideration.\n\n[Signature]",
+      "modeleLettre": "Objet : Recours contre la decision de renvoi\n\nAu Tribunal [cantonal/TAF],\n\nMadame, Monsieur le/la Juge,\n\nJe forme recours contre la decision de [autorite] du [date] ordonnant mon renvoi de Suisse.\n\nMotifs :\n1. Violation de l'art. 8 CEDH : [attaches familiales en Suisse]\n2. Violation du principe de proportionnalite : [durée de sejour, integration]\n3. [Autres motifs]\n\nJe demande l'effet suspensif du recours (art. 55 PA).\n\nVeuillez agréer l'expression de ma haute consideration.\n\n[Signature]",
       "services": [
         {
-          "nom": "Consultation juridique pour etrangers VD",
-          "url": "https://www.csp.ch/vaud/prestations/etrangers",
+          "nom": "Consultation juridique pour étrangers VD",
+          "url": "https://www.csp.ch/vaud/prestations/étrangers",
           "canton": "VD"
         },
         {
@@ -473,10 +473,10 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LEI/CP etat 2025-01-01",
+    "sourceLoi": "LEI/CP état 2025-01-01",
     "match_description": "La personne est menacee de renvoi ou d'expulsion de Suisse",
     "profane_aliases": [
       "on veut me renvoyer",
@@ -498,7 +498,7 @@
   },
   {
     "id": "etranger_permis_travail",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "travail",
     "tags": [
       "permis",
@@ -522,13 +522,13 @@
         "options": [
           "emploi fixe",
           "stagiaire",
-          "independant",
+          "indépendant",
           "detache"
         ]
       },
       {
         "id": "q3",
-        "text": "Durée prevue ?",
+        "text": "Durée prévue ?",
         "options": [
           "<90 jours",
           "90 jours - 1 an",
@@ -551,7 +551,7 @@
       }
     ],
     "reponse": {
-      "explication": "L'admission sur le marche du travail depend de la nationalite : (1) Ressortissants UE/AELE : liberte de circulation, droit de travailler avec simple annonce (accord ALCP). Pour les sejours >3 mois, un permis B UE/AELE est delivre sur presentation du contrat de travail. (2) Ressortissants de pays tiers : admission restrictive, soumise a des conditions strictes (art. 18-25 LEI) : priorite des travailleurs nationaux et UE, conditions de remuneration et de travail conformes aux usages, qualifications particulieres du travailleur (cadres, specialistes), contingents annuels. L'employeur doit demontrer qu'il n'a pas trouve de candidat sur le marche local (art. 21 LEI). Le travailleur independant doit prouver un interet economique pour la Suisse. Les stagiaires peuvent obtenir un permis dans le cadre d'accords bilateraux. Le travail au noir est sanctionne (LTN) tant pour l'employeur que pour le travailleur.",
+      "explication": "L'admission sur le marche du travail depend de la nationalite : (1) Ressortissants UE/AELE : liberte de circulation, droit de travailler avec simple annonce (accord ALCP). Pour les sejours >3 mois, un permis B UE/AELE est delivre sur presentation du contrat de travail. (2) Ressortissants de pays tiers : admission restrictive, soumise a des conditions strictes (art. 18-25 LEI) : priorite des travailleurs nationaux et UE, conditions de rémunération et de travail conformes aux usages, qualifications particulières du travailleur (cadres, specialistes), contingents annuels. L'employeur doit demontrer qu'il n'a pas trouve de candidat sur le marche local (art. 21 LEI). Le travailleur indépendant doit prouver un interet economique pour la Suisse. Les stagiaires peuvent obtenir un permis dans le cadre d'accords bilateraux. Le travail au noir est sanctionne (LTN) tant pour l'employeur que pour le travailleur.",
       "articles": [
         {
           "ref": "LEI 18",
@@ -565,7 +565,7 @@
         },
         {
           "ref": "LEI 22",
-          "titre": "Conditions de remuneration et de travail",
+          "titre": "Conditions de rémunération et de travail",
           "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_22"
         }
       ],
@@ -576,7 +576,7 @@
         },
         {
           "ref": "TF 2C_1026/2015",
-          "resume": "Les qualifications particulieres (art. 23 LEI) s'apprecient par rapport au marche du travail suisse, pas en termes absolus."
+          "resume": "Les qualifications particulières (art. 23 LEI) s'apprecient par rapport au marche du travail suisse, pas en termes absolus."
         }
       ],
       "modeleLettre": "",
@@ -598,17 +598,17 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LEI etat 2025-01-01",
-    "match_description": "La personne etrangere veut obtenir un permis de travail en Suisse",
+    "sourceLoi": "LEI état 2025-01-01",
+    "match_description": "La personne étrangère veut obtenir un permis de travail en Suisse",
     "profane_aliases": [
       "travailler en Suisse sans permis",
       "permis de travail comment obtenir",
-      "autorisation de travail etranger",
+      "autorisation de travail étranger",
       "mon employeur doit demander un permis",
-      "travailler en Suisse en tant qu'etranger"
+      "travailler en Suisse en tant qu'étranger"
     ],
     "negative_signals": [
       "citoyen suisse cherchant un emploi",
@@ -623,7 +623,7 @@
   },
   {
     "id": "etranger_asile_procedure",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "asile",
     "tags": [
       "asile",
@@ -635,7 +635,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Etat de la procedure ?",
+        "text": "Etat de la procédure ?",
         "options": [
           "pas encore déposé",
           "en attente",
@@ -678,7 +678,7 @@
       }
     ],
     "reponse": {
-      "explication": "La procedure d'asile en Suisse est regie par la LAsi. Depuis 2019, la procedure restructuree prevoit : (1) une phase preparatoire dans un centre federal (enregistrement, examen Dublin), (2) une audition sur les motifs d'asile, (3) une decision. La procedure acceleree (majorite des cas) dure environ 140 jours dans un centre federal. Si le cas est complexe, il est transfere au canton (procedure etendue, ~1 an). Le requérant a droit a un representant juridique gratuit (art. 102f LAsi). La qualite de refugie est reconnue si la personne est persecutee en raison de sa race, religion, nationalite, appartenance a un groupe social ou opinions politiques (art. 3 LAsi). Le recours contre une decision negative doit etre déposé dans les 7 jours ouvrables (acceleree) ou 30 jours (etendue) aupres du TAF (art. 108 LAsi). L'admission provisoire (permis F) est accordee si le renvoi est illicite, inexigible ou impossible (art. 83 LEI).",
+      "explication": "La procédure d'asile en Suisse est regie par la LAsi. Depuis 2019, la procédure restructuree prevoit : (1) une phase preparatoire dans un centre fédéral (enregistrement, examen Dublin), (2) une audition sur les motifs d'asile, (3) une decision. La procédure acceleree (majorite des cas) dure environ 140 jours dans un centre fédéral. Si le cas est complexe, il est transfere au canton (procédure etendue, ~1 an). Le requérant a droit a un representant juridique gratuit (art. 102f LAsi). La qualite de refugie est reconnue si la personne est persecutee en raison de sa race, religion, nationalite, appartenance a un groupe social ou opinions politiques (art. 3 LAsi). Le recours contre une decision negative doit etre déposé dans les 7 jours ouvrables (acceleree) ou 30 jours (etendue) auprès du TAF (art. 108 LAsi). L'admission provisoire (permis F) est accordee si le renvoi est illicite, inexigible ou impossible (art. 83 LEI).",
       "articles": [
         {
           "ref": "LAsi 3",
@@ -703,7 +703,7 @@
         },
         {
           "ref": "ATAF 2015/3",
-          "resume": "Les victimes de violence domestique dans un pays ou l'Etat ne les protege pas peuvent etre reconnues comme refugiees (persecution liee au genre)."
+          "resume": "Les victimes de violence domestique dans un pays ou l'Etat ne les protégé pas peuvent etre reconnues comme refugiees (persecution liee au genre)."
         }
       ],
       "modeleLettre": "",
@@ -731,14 +731,14 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LAsi etat 2025-01-01",
-    "match_description": "La personne demande l'asile en Suisse et veut comprendre la procedure",
+    "sourceLoi": "LAsi état 2025-01-01",
+    "match_description": "La personne demande l'asile en Suisse et veut comprendre la procédure",
     "profane_aliases": [
       "demander l'asile en Suisse",
-      "procedure d'asile etapes",
+      "procédure d'asile etapes",
       "refugie en Suisse",
       "centre d'enregistrement asile",
       "comment déposer une demande d'asile"
@@ -756,7 +756,7 @@
   },
   {
     "id": "etranger_sans_papiers_droits",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "sans-papiers",
     "tags": [
       "sans-papiers",
@@ -781,7 +781,7 @@
         "text": "Travaillez-vous ?",
         "options": [
           "oui, employe",
-          "oui, independant",
+          "oui, indépendant",
           "non"
         ]
       },
@@ -808,7 +808,7 @@
       }
     ],
     "reponse": {
-      "explication": "Même sans titre de sejour, les personnes sans papiers ont des droits fondamentaux en Suisse : (1) Le contrat de travail est valable même sans permis ; le travailleur peut reclamer son salaire (art. 320 al. 2 CO, confirme par TF). (2) Les enfants ont droit a l'education (scolarisation obligatoire, art. 19 Cst.). (3) Acces aux soins d'urgence (art. 12 Cst., droit a l'aide d'urgence). (4) L'assurance maladie est obligatoire et les assureurs ne peuvent pas denoncer les sans-papiers (secret medical). L'operation « Papyrus » a Geneve (2017-2018) a permis la regularisation d'environ 3'000 personnes remplissant des criteres stricts : sejour continu de 5 ans (10 ans pour les familles), independance financiere, integration, casier vierge. D'autres cantons etudient des modeles similaires. La denonciation de sans-papiers par des services publics est un sujet debattu (certains cantons protegeant la confidentialite).",
+      "explication": "Même sans titre de sejour, les personnes sans papiers ont des droits fondamentaux en Suisse : (1) Le contrat de travail est valable même sans permis ; le travailleur peut réclamer son salaire (art. 320 al. 2 CO, confirme par TF). (2) Les enfants ont droit a l'education (scolarisation obligatoire, art. 19 Cst.). (3) Acces aux soins d'urgence (art. 12 Cst., droit a l'aide d'urgence). (4) L'assurance maladie est obligatoire et les assureurs ne peuvent pas denoncer les sans-papiers (secret medical). L'operation « Papyrus » a Geneve (2017-2018) a permis la regularisation d'environ 3'000 personnes remplissant des criteres stricts : sejour continu de 5 ans (10 ans pour les familles), independance financiere, integration, casier vierge. D'autres cantons etudient des modeles similaires. La denonciation de sans-papiers par des services publics est un sujet debattu (certains cantons protegeant la confidentialite).",
       "articles": [
         {
           "ref": "CO 320",
@@ -862,11 +862,11 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "CO/Cst/LEI etat 2025-01-01",
-    "match_description": "La personne vit en Suisse sans statut legal et veut connaitre ses droits",
+    "sourceLoi": "CO/Cst/LEI état 2025-01-01",
+    "match_description": "La personne vit en Suisse sans statut légal et veut connaitre ses droits",
     "profane_aliases": [
       "sans papiers quels droits",
       "je vis en Suisse illegalement",
@@ -876,18 +876,18 @@
     ],
     "negative_signals": [
       "permis expire depuis peu (renouvellement possible)",
-      "touriste en sejour legal"
+      "touriste en sejour légal"
     ],
     "required_facts": [
       "durée de presence en Suisse",
       "attaches familiales",
       "activite professionnelle",
-      "etat de sante"
+      "état de sante"
     ]
   },
   {
     "id": "etranger_violence_permis",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "violence",
     "tags": [
       "violence",
@@ -940,7 +940,7 @@
       }
     ],
     "reponse": {
-      "explication": "L'art. 50 LEI protege le conjoint etranger victime de violence conjugale : même après la dissolution du mariage ou de la communaute conjugale, le droit au sejour est maintenu si (1) l'union conjugale a dure au moins 3 ans et que l'integration est reussie (art. 50 al. 1 let. a LEI), OU si (2) la poursuite du sejour s'impose pour des raisons personnelles majeures, notamment la violence conjugale (art. 50 al. 1 let. b LEI). La violence doit etre rendue vraisemblable (certificats medicaux, rapports de police, attestations de foyers), pas prouvee de maniere absolue. La violence psychologique systematique est reconnue comme raison personnelle majeure. Le conjoint victime peut se separer SANS perdre son permis. En cas d'urgence, les centres d'aide LAVI offrent un hebergement et un accompagnement confidentiel. Le permis est prolonge d'annee en annee le temps que la situation se clarifie.",
+      "explication": "L'art. 50 LEI protégé le conjoint étranger victime de violence conjugale : même après la dissolution du mariage ou de la communaute conjugale, le droit au sejour est maintenu si (1) l'union conjugale a dure au moins 3 ans et que l'integration est reussie (art. 50 al. 1 let. a LEI), OU si (2) la poursuite du sejour s'impose pour des raisons personnelles majeures, notamment la violence conjugale (art. 50 al. 1 let. b LEI). La violence doit etre rendue vraisemblable (certificats medicaux, rapports de police, attestations de foyers), pas prouvee de maniere absolue. La violence psychologique systematique est reconnue comme raison personnelle majeure. Le conjoint victime peut se separer SANS perdre son permis. En cas d'urgence, les centres d'aide LAVI offrent un hebergement et un accompagnement confidentiel. Le permis est prolonge d'annee en annee le temps que la situation se clarifie.",
       "articles": [
         {
           "ref": "LEI 50",
@@ -991,11 +991,11 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LEI etat 2025-01-01",
-    "match_description": "La personne etrangere subit des violences conjugales et craint de perdre son permis en se separant",
+    "sourceLoi": "LEI état 2025-01-01",
+    "match_description": "La personne étrangère subit des violences conjugales et craint de perdre son permis en se separant",
     "profane_aliases": [
       "violence conjugale et permis de sejour",
       "mon mari me frappe et j'ai peur de perdre mon permis",
@@ -1016,7 +1016,7 @@
   },
   {
     "id": "etranger_aide_urgence",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "aide",
     "tags": [
       "aide urgence",
@@ -1069,7 +1069,7 @@
       }
     ],
     "reponse": {
-      "explication": "L'art. 12 de la Constitution federale garantit a toute personne en situation de detresse le droit d'obtenir de l'aide. Ce droit est absolu et s'applique independamment du statut de sejour (ATF 131 I 166). L'aide d'urgence comprend : un hebergement de base, la nourriture, les vetements et les soins medicaux d'urgence. Elle est versee en nature (pas en especes) par le canton de sejour. Les requérants d'asile deboutes (NEM) y ont droit. Le montant est tres modeste (environ CHF 8-12/jour selon les cantons). L'aide d'urgence n'est pas l'aide sociale : elle couvre uniquement le minimum vital absolu. La personne doit se presenter regulierement aupres des autorites. Le refus d'accorder l'aide d'urgence peut faire l'objet d'un recours au tribunal cantonal puis au Tribunal federal. Les enfants beneficient d'une protection renforcee.",
+      "explication": "L'art. 12 de la Constitution fédérale garantit a toute personne en situation de detresse le droit d'obtenir de l'aide. Ce droit est absolu et s'applique independamment du statut de sejour (ATF 131 I 166). L'aide d'urgence comprend : un hebergement de base, la nourriture, les vetements et les soins medicaux d'urgence. Elle est versée en nature (pas en especes) par le canton de sejour. Les requérants d'asile deboutes (NEM) y ont droit. Le montant est tres modeste (environ CHF 8-12/jour selon les cantons). L'aide d'urgence n'est pas l'aide sociale : elle couvre uniquement le minimum vital absolu. La personne doit se presenter regulierement auprès des autorites. Le refus d'accorder l'aide d'urgence peut faire l'objet d'un recours au tribunal cantonal puis au Tribunal fédéral. Les enfants beneficient d'une protection renforcee.",
       "articles": [
         {
           "ref": "Cst 12",
@@ -1089,10 +1089,10 @@
         },
         {
           "ref": "ATF 135 I 119",
-          "resume": "L'aide d'urgence doit etre accordee sans condition de cooperation a l'execution du renvoi ; le droit a la dignite humaine est inconditionnel."
+          "resume": "L'aide d'urgence doit etre accordee sans condition de cooperation a l'exécution du renvoi ; le droit a la dignite humaine est inconditionnel."
         }
       ],
-      "modeleLettre": "Objet : Demande d'aide d'urgence (art. 12 Cst.)\n\nAu Service [cantonal] de l'aide sociale / de l'asile,\n\nMadame, Monsieur,\n\nJe me trouve dans une situation de detresse et sollicite l'aide d'urgence garantie par l'art. 12 de la Constitution federale.\n\nMa situation :\n- [Sans hebergement / sans nourriture / besoin de soins medicaux]\n\nConformement a la jurisprudence du Tribunal federal (ATF 131 I 166), ce droit est inconditionnel.\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature ou identification]",
+      "modeleLettre": "Objet : Demande d'aide d'urgence (art. 12 Cst.)\n\nAu Service [cantonal] de l'aide sociale / de l'asile,\n\nMadame, Monsieur,\n\nJe me trouve dans une situation de detresse et sollicite l'aide d'urgence garantie par l'art. 12 de la Constitution fédérale.\n\nMa situation :\n- [Sans hebergement / sans nourriture / besoin de soins medicaux]\n\nConformement a la jurisprudence du Tribunal fédéral (ATF 131 I 166), ce droit est inconditionnel.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature ou identification]",
       "services": [
         {
           "nom": "EVAM (Etablissement vaudois d'accueil des migrants)",
@@ -1101,7 +1101,7 @@
           "canton": "VD"
         },
         {
-          "nom": "Hospice general Geneve",
+          "nom": "Hospice général Geneve",
           "tel": "022 420 52 00",
           "url": "https://www.hospicegeneral.ch",
           "canton": "GE"
@@ -1113,13 +1113,13 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "Cst/LAsi etat 2025-01-01",
+    "sourceLoi": "Cst/LAsi état 2025-01-01",
     "match_description": "La personne en situation de detresse a droit a l'aide d'urgence constitutionnelle",
     "profane_aliases": [
-      "aide d'urgence pour etranger",
+      "aide d'urgence pour étranger",
       "je n'ai plus rien",
       "aide d'urgence NEM",
       "droit a l'aide d'urgence",
@@ -1127,7 +1127,7 @@
     ],
     "negative_signals": [
       "aide sociale ordinaire",
-      "personne avec permis B/C regulier"
+      "personne avec permis B/C régulier"
     ],
     "required_facts": [
       "statut actuel",
@@ -1138,7 +1138,7 @@
   },
   {
     "id": "etranger_recours_renvoi",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "recours",
     "tags": [
       "recours",
@@ -1179,7 +1179,7 @@
       },
       {
         "id": "q4",
-        "text": "Avez-vous de nouveaux elements ?",
+        "text": "Avez-vous de nouveaux éléments ?",
         "options": [
           "oui",
           "non"
@@ -1192,7 +1192,7 @@
       }
     ],
     "reponse": {
-      "explication": "Les decisions en matiere d'asile et de droit des etrangers peuvent faire l'objet d'un recours au Tribunal administratif federal (TAF). En matiere d'asile, le délai est de 7 jours ouvrables en procedure acceleree et 30 jours en procedure etendue (art. 108 LAsi). En droit des etrangers (permis), le recours cantonal est d'abord exerce dans les 30 jours, puis le recours au Tribunal federal dans les 30 jours (art. 100 LTF). L'assistance judiciaire gratuite (avocat commis d'office) est accordee si le recours n'est pas voue a l'echec et que le requérant est indigent (art. 65 PA). Le recours a generalement un effet suspensif (le renvoi ne peut pas etre execute pendant la procedure), sauf decision contraire du tribunal. Le memoire de recours doit etre motive en fait et en droit. Les nouveaux elements (novae) sont en principe admis devant le TAF mais exclus devant le TF.",
+      "explication": "Les decisions en matiere d'asile et de droit des étrangers peuvent faire l'objet d'un recours au Tribunal administratif fédéral (TAF). En matiere d'asile, le délai est de 7 jours ouvrables en procédure acceleree et 30 jours en procédure etendue (art. 108 LAsi). En droit des étrangers (permis), le recours cantonal est d'abord exerce dans les 30 jours, puis le recours au Tribunal fédéral dans les 30 jours (art. 100 LTF). L'assistance judiciaire gratuite (avocat commis d'office) est accordee si le recours n'est pas voue a l'échec et que le requérant est indigent (art. 65 PA). Le recours a generalement un effet suspensif (le renvoi ne peut pas etre exécuté pendant la procédure), sauf decision contraire du tribunal. Le memoire de recours doit etre motive en fait et en droit. Les nouveaux éléments (novae) sont en principe admis devant le TAF mais exclus devant le TF.",
       "articles": [
         {
           "ref": "LAsi 108",
@@ -1220,11 +1220,11 @@
           "resume": "L'assistance judiciaire doit etre accordee lorsque le recours souleve des questions juridiques serieuses, même si les chances de succes sont incertaines."
         }
       ],
-      "modeleLettre": "Objet : Recours contre la decision du [date]\n\nAu Tribunal administratif federal,\n\nMadame, Monsieur le/la Juge,\n\n1. Je forme recours contre la decision du SEM / de [autorite] du [date], ref. [numero].\n\n2. Je demande :\n   a) L'annulation de la decision attaquee\n   b) L'octroi de l'effet suspensif\n   c) L'octroi de l'assistance judiciaire gratuite (art. 65 PA)\n\n3. Motifs :\n   [Violation du droit federal / etablissement inexact des faits / inopportunite]\n\n4. Moyens de preuve : [liste]\n\nVeuillez agreer l'expression de ma haute consideration.\n\n[Signature]",
+      "modeleLettre": "Objet : Recours contre la decision du [date]\n\nAu Tribunal administratif fédéral,\n\nMadame, Monsieur le/la Juge,\n\n1. Je forme recours contre la decision du SEM / de [autorite] du [date], ref. [numero].\n\n2. Je demande :\n   a) L'annulation de la decision attaquee\n   b) L'octroi de l'effet suspensif\n   c) L'octroi de l'assistance judiciaire gratuite (art. 65 PA)\n\n3. Motifs :\n   [Violation du droit fédéral / établissement inexact des faits / inopportunite]\n\n4. Moyens de preuve : [liste]\n\nVeuillez agréer l'expression de ma haute consideration.\n\n[Signature]",
       "services": [
         {
-          "nom": "Consultation juridique pour etrangers VD",
-          "url": "https://www.csp.ch/vaud/prestations/etrangers",
+          "nom": "Consultation juridique pour étrangers VD",
+          "url": "https://www.csp.ch/vaud/prestations/étrangers",
           "canton": "VD"
         },
         {
@@ -1245,10 +1245,10 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LAsi/LTAF/PA etat 2025-01-01",
+    "sourceLoi": "LAsi/LTAF/PA état 2025-01-01",
     "match_description": "La personne veut faire recours contre une decision de renvoi",
     "profane_aliases": [
       "recours contre renvoi",
@@ -1258,7 +1258,7 @@
       "effet suspensif renvoi"
     ],
     "negative_signals": [
-      "renvoi déjà execute",
+      "renvoi déjà exécuté",
       "depart volontaire accepte"
     ],
     "required_facts": [
@@ -1270,7 +1270,7 @@
   },
   {
     "id": "etranger_permis_b_renouvellement",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "permis",
     "tags": [
       "permis B",
@@ -1292,7 +1292,7 @@
       },
       {
         "id": "q2",
-        "text": "Le permis arrive a echeance dans combien de temps ?",
+        "text": "Le permis arrive a échéance dans combien de temps ?",
         "options": [
           "<3 mois",
           "3-6 mois",
@@ -1314,7 +1314,7 @@
         "options": [
           "non",
           "infraction mineure",
-          "condamnation penale"
+          "condamnation pénale"
         ]
       },
       {
@@ -1324,7 +1324,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le permis B (autorisation de sejour) est renouvele a condition que le motif d'octroi subsiste et qu'il n'y ait pas de motif de revocation (art. 33 LEI). Pour les ressortissants UE/AELE, le renouvellement est quasi automatique s'ils exercent une activite ou disposent de moyens financiers suffisants (ALCP art. 6). Pour les ressortissants de pays tiers, les conditions sont plus strictes : emploi stable, integration, absence de dependance a l'aide sociale, respect de l'ordre public. Le permis B peut etre refuse au renouvellement en cas de condamnation penale grave (art. 62 LEI), de dependance durable a l'aide sociale (art. 62 al. 1 let. e LEI), ou de non-respect des conditions d'integration (art. 58a LEI). La demande de renouvellement doit etre déposée avant l'expiration. Un recours est possible en cas de refus (délai de 30 jours). Le sejour reste legal pendant la procedure de recours.",
+      "explication": "Le permis B (autorisation de sejour) est renouvele a condition que le motif d'octroi subsiste et qu'il n'y ait pas de motif de revocation (art. 33 LEI). Pour les ressortissants UE/AELE, le renouvellement est quasi automatique s'ils exercent une activite ou disposent de moyens financiers suffisants (ALCP art. 6). Pour les ressortissants de pays tiers, les conditions sont plus strictes : emploi stable, integration, absence de dependance a l'aide sociale, respect de l'ordre public. Le permis B peut etre refuse au renouvellement en cas de condamnation pénale grave (art. 62 LEI), de dependance durable a l'aide sociale (art. 62 al. 1 let. e LEI), ou de non-respect des conditions d'integration (art. 58a LEI). La demande de renouvellement doit etre déposée avant l'expiration. Un recours est possible en cas de refus (délai de 30 jours). Le sejour reste légal pendant la procédure de recours.",
       "articles": [
         {
           "ref": "LEI 33",
@@ -1352,11 +1352,11 @@
           "resume": "Le renouvellement du permis B ne peut etre refuse au seul motif que le titulaire est au chomage si celui-ci cherche activement un emploi."
         }
       ],
-      "modeleLettre": "Objet : Demande de renouvellement du permis de sejour (B)\n\nAu Service cantonal de la population,\n\nMadame, Monsieur,\n\nMon permis de sejour B no [numero] arrive a echeance le [date]. Je sollicite son renouvellement.\n\nSituation actuelle :\n- Employeur : [nom] depuis [date]\n- Domicile : [adresse]\n- Situation familiale : [details]\n- Integration : [cours de langue, activites]\n\nPieces jointes : attestation employeur, contrat de bail, certificat de langue.\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
+      "modeleLettre": "Objet : Demande de renouvellement du permis de sejour (B)\n\nAu Service cantonal de la population,\n\nMadame, Monsieur,\n\nMon permis de sejour B no [numero] arrive a échéance le [date]. Je sollicite son renouvellement.\n\nSituation actuelle :\n- Employeur : [nom] depuis [date]\n- Domicile : [adresse]\n- Situation familiale : [details]\n- Integration : [cours de langue, activites]\n\nPieces jointes : attestation employeur, contrat de bail, certificat de langue.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
       "services": [
         {
           "nom": "Service de la population VD (SPOP)",
-          "url": "https://www.vd.ch/themes/population/population-etrangere",
+          "url": "https://www.vd.ch/themes/population/population-étrangère",
           "canton": "VD"
         },
         {
@@ -1366,10 +1366,10 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LEI etat 2025-01-01",
+    "sourceLoi": "LEI état 2025-01-01",
     "match_description": "La personne doit renouveler son permis B et veut connaitre les conditions",
     "profane_aliases": [
       "renouveler mon permis B",
@@ -1379,23 +1379,23 @@
       "prolonger mon permis de sejour"
     ],
     "negative_signals": [
-      "premiere demande de permis B",
+      "première demande de permis B",
       "passage au permis C"
     ],
     "required_facts": [
       "date d'expiration",
       "motif du sejour (travail, famille)",
       "aide sociale percue",
-      "condamnations penales"
+      "condamnations pénales"
     ]
   },
   {
     "id": "etranger_permis_c_conditions",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "permis",
     "tags": [
       "permis C",
-      "etablissement",
+      "établissement",
       "conditions",
       "integration",
       "durée"
@@ -1444,11 +1444,11 @@
       }
     ],
     "reponse": {
-      "explication": "Le permis C (autorisation d'etablissement) est le statut le plus stable pour un etranger en Suisse. Conditions generales (art. 34 LEI) : 10 ans de sejour regulier (dont 5 dans les annees precedant la demande), integration reussie. Pour les UE/AELE, le délai est de 5 ans (art. 34 al. 4 LEI / ALCP). Integration requise (art. 58a LEI) : respect de la securite et de l'ordre publics, respect des valeurs constitutionnelles, competences linguistiques (A2 oral, A1 ecrit minimum), participation a la vie economique ou formation. L'octroi anticipe est possible en cas d'integration particulierement reussie (art. 34 al. 4 LEI) : B1 oral, A2 ecrit, bonne integration. Le permis C confere un droit quasi illimite au sejour et au travail. Il peut etre retrograde en permis B (art. 63 al. 2 LEI) en cas d'aide sociale durable ou revoque en cas de condamnation grave. La demande se fait aupres du service cantonal de la population.",
+      "explication": "Le permis C (autorisation d'établissement) est le statut le plus stable pour un étranger en Suisse. Conditions générales (art. 34 LEI) : 10 ans de sejour régulier (dont 5 dans les annees precedant la demande), integration reussie. Pour les UE/AELE, le délai est de 5 ans (art. 34 al. 4 LEI / ALCP). Integration requise (art. 58a LEI) : respect de la securite et de l'ordre publics, respect des valeurs constitutionnelles, compétences linguistiques (A2 oral, A1 écrit minimum), participation a la vie economique ou formation. L'octroi anticipe est possible en cas d'integration particulierement reussie (art. 34 al. 4 LEI) : B1 oral, A2 écrit, bonne integration. Le permis C confere un droit quasi illimite au sejour et au travail. Il peut etre retrograde en permis B (art. 63 al. 2 LEI) en cas d'aide sociale durable ou revoque en cas de condamnation grave. La demande se fait auprès du service cantonal de la population.",
       "articles": [
         {
           "ref": "LEI 34",
-          "titre": "Autorisation d'etablissement",
+          "titre": "Autorisation d'établissement",
           "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_34"
         },
         {
@@ -1476,7 +1476,7 @@
       "services": [
         {
           "nom": "Service de la population VD (SPOP)",
-          "url": "https://www.vd.ch/themes/population/population-etrangere",
+          "url": "https://www.vd.ch/themes/population/population-étrangère",
           "canton": "VD"
         },
         {
@@ -1486,10 +1486,10 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LEI etat 2025-01-01",
+    "sourceLoi": "LEI état 2025-01-01",
     "match_description": "La personne veut connaitre les conditions detaillees pour obtenir ou conserver le permis C",
     "profane_aliases": [
       "conditions du permis C",
@@ -1511,7 +1511,7 @@
   },
   {
     "id": "etranger_naturalisation_facilitee",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "naturalisation",
     "tags": [
       "naturalisation",
@@ -1557,7 +1557,7 @@
       }
     ],
     "reponse": {
-      "explication": "La naturalisation facilitee (art. 21-24 LN) est accessible principalement au conjoint etranger d'un citoyen suisse : conditions de 5 ans de residence en Suisse, 3 ans de mariage, integration reussie, pas de mise en danger de la securite (art. 21 LN). Elle est aussi accessible aux enfants de parent suisse n'ayant pas acquis la nationalite et aux etrangers de 3e generation (art. 24a LN). La procedure est federale (SEM), plus rapide que la naturalisation ordinaire (12-18 mois). Le requetant ne doit pas etre dependant de l'aide sociale, doit avoir un casier judiciaire vierge et des competences linguistiques suffisantes. Attention : le mariage ou partenariat doit etre effectif, pas seulement formel — un mariage de complaisance entraine l'annulation (art. 36 LN). Le conjoint etranger vivant a l'etranger peut aussi beneficier de la naturalisation facilitee après 6 ans de mariage et des liens etroits avec la Suisse (art. 21 al. 2 LN).",
+      "explication": "La naturalisation facilitee (art. 21-24 LN) est accessible principalement au conjoint étranger d'un citoyen suisse : conditions de 5 ans de residence en Suisse, 3 ans de mariage, integration reussie, pas de mise en danger de la securite (art. 21 LN). Elle est aussi accessible aux enfants de parent suisse n'ayant pas acquis la nationalite et aux étrangers de 3e generation (art. 24a LN). La procédure est fédérale (SEM), plus rapide que la naturalisation ordinaire (12-18 mois). Le requetant ne doit pas etre dependant de l'aide sociale, doit avoir un casier judiciaire vierge et des compétences linguistiques suffisantes. Attention : le mariage ou partenariat doit etre effectif, pas seulement formel — un mariage de complaisance entraine l'annulation (art. 36 LN). Le conjoint étranger vivant a l'étranger peut aussi beneficier de la naturalisation facilitee après 6 ans de mariage et des liens etroits avec la Suisse (art. 21 al. 2 LN).",
       "articles": [
         {
           "ref": "LN 21",
@@ -1604,10 +1604,10 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LN etat 2025-01-01",
+    "sourceLoi": "LN état 2025-01-01",
     "match_description": "La personne mariee a un Suisse ou de 3e generation veut obtenir la naturalisation facilitee",
     "profane_aliases": [
       "naturalisation par mariage",
@@ -1629,7 +1629,7 @@
   },
   {
     "id": "etranger_regroupement_familial",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "regroupement",
     "tags": [
       "regroupement",
@@ -1723,7 +1723,7 @@
       "services": [
         {
           "nom": "Service de la population VD (SPOP)",
-          "url": "https://www.vd.ch/themes/population/population-etrangere",
+          "url": "https://www.vd.ch/themes/population/population-étrangère",
           "canton": "VD"
         },
         {
@@ -1733,10 +1733,10 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LEI etat 2025-01-01",
+    "sourceLoi": "LEI état 2025-01-01",
     "match_description": "La personne veut connaitre les conditions detaillees du regroupement familial",
     "profane_aliases": [
       "conditions regroupement familial",
@@ -1758,7 +1758,7 @@
   },
   {
     "id": "etranger_renvoi_recours",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "renvoi",
     "tags": [
       "renvoi",
@@ -1792,7 +1792,7 @@
         "text": "Avez-vous des enfants en Suisse ?",
         "options": [
           "oui, suisses",
-          "oui, etrangers",
+          "oui, étrangers",
           "non"
         ]
       },
@@ -1803,7 +1803,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le renvoi est la consequence du refus, du non-renouvellement ou de la revocation d'un permis de sejour (art. 64 LEI). Le recours doit etre déposé dans un délai de 30 jours aupres de l'autorite cantonale competente (tribunal administratif cantonal) ou du TAF pour les decisions federales (art. 112 LEI). Le recours n'a pas automatiquement d'effet suspensif — il faut le demander expressement au tribunal. Pendant la procedure de recours avec effet suspensif, le renvoi ne peut pas etre execute. Arguments frequents de recours : proportionnalite, droit au respect de la vie familiale (art. 8 CEDH), integration, interet des enfants. L'expulsion penale (art. 66a CP) est distincte du renvoi administratif et peut etre prononcee par le juge penal pour certaines infractions graves. L'assistance juridique gratuite est disponible si les conditions sont remplies.",
+      "explication": "Le renvoi est la consequence du refus, du non-renouvellement ou de la revocation d'un permis de sejour (art. 64 LEI). Le recours doit etre déposé dans un délai de 30 jours auprès de l'autorite cantonale compétente (tribunal administratif cantonal) ou du TAF pour les decisions fédérales (art. 112 LEI). Le recours n'a pas automatiquement d'effet suspensif — il faut le demander expressement au tribunal. Pendant la procédure de recours avec effet suspensif, le renvoi ne peut pas etre exécuté. Arguments frequents de recours : proportionnalite, droit au respect de la vie familiale (art. 8 CEDH), integration, interet des enfants. L'expulsion pénale (art. 66a CP) est distincte du renvoi administratif et peut etre prononcee par le juge pénal pour certaines infractions graves. L'assistance juridique gratuite est disponible si les conditions sont remplies.",
       "articles": [
         {
           "ref": "LEI 64",
@@ -1828,7 +1828,7 @@
         },
         {
           "ref": "TF 2C_641/2018",
-          "resume": "Un long sejour en Suisse (>10 ans) cree un droit au respect de la vie privee au sens de l'art. 8 CEDH, même sans famille en Suisse."
+          "resume": "Un long sejour en Suisse (>10 ans) créé un droit au respect de la vie privee au sens de l'art. 8 CEDH, même sans famille en Suisse."
         }
       ],
       "modeleLettre": "",
@@ -1851,10 +1851,10 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LEI/CEDH etat 2025-01-01",
+    "sourceLoi": "LEI/CEDH état 2025-01-01",
     "match_description": "La personne fait l'objet d'un renvoi et veut contester la decision",
     "profane_aliases": [
       "contester un renvoi",
@@ -1876,7 +1876,7 @@
   },
   {
     "id": "etranger_admission_provisoire_f",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "permis",
     "tags": [
       "admission",
@@ -1892,7 +1892,7 @@
         "options": [
           "j'ai un permis F",
           "ma demande d'asile a ete rejetee",
-          "je suis en procedure"
+          "je suis en procédure"
         ]
       },
       {
@@ -1956,7 +1956,7 @@
           "canton": "VD"
         },
         {
-          "nom": "Hospice general GE (aide aux migrants)",
+          "nom": "Hospice général GE (aide aux migrants)",
           "url": "https://www.hospicegeneral.ch",
           "canton": "GE"
         },
@@ -1967,10 +1967,10 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LEI etat 2025-01-01",
+    "sourceLoi": "LEI état 2025-01-01",
     "match_description": "La personne a un permis F (admission provisoire) et veut comprendre ses droits",
     "profane_aliases": [
       "permis F c'est quoi",
@@ -1980,8 +1980,8 @@
       "passer du permis F au B"
     ],
     "negative_signals": [
-      "permis B regulier",
-      "requérant d'asile en procedure (permis N)"
+      "permis B régulier",
+      "requérant d'asile en procédure (permis N)"
     ],
     "required_facts": [
       "date d'obtention du permis F",
@@ -1992,7 +1992,7 @@
   },
   {
     "id": "etranger_cas_rigueur",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "regularisation",
     "tags": [
       "cas",
@@ -2015,7 +2015,7 @@
         "id": "q2",
         "text": "Situation actuelle ?",
         "options": [
-          "sans statut legal",
+          "sans statut légal",
           "permis F depuis longtemps",
           "permis refuse mais toujours present"
         ]
@@ -2045,7 +2045,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le cas de rigueur (art. 30 al. 1 let. b LEI et art. 31 OASA) permet l'octroi d'un permis B a une personne ne remplissant pas les conditions ordinaires si sa situation personnelle est particulierement grave. Criteres evalues : durée de sejour (en general 5+ ans), integration socioprofessionnelle, competences linguistiques, respect de l'ordre public, situation familiale (enfants scolarises), etat de sante, possibilite de reintegration dans le pays d'origine. L'operation Papyrus (GE, 2017-2018) a regularise environ 3'000 personnes selon ces criteres. Le canton transmet la demande au SEM avec un preavis. Le SEM a le pouvoir de decision finale. La procedure est longue (6-18 mois). L'assistance d'un avocat specialise ou d'une association est vivement recommandee. Le demandeur ne doit pas avoir de casier judiciaire ni etre aide social (sauf raisons de sante).",
+      "explication": "Le cas de rigueur (art. 30 al. 1 let. b LEI et art. 31 OASA) permet l'octroi d'un permis B a une personne ne remplissant pas les conditions ordinaires si sa situation personnelle est particulierement grave. Criteres evalues : durée de sejour (en général 5+ ans), integration socioprofessionnelle, compétences linguistiques, respect de l'ordre public, situation familiale (enfants scolarises), état de sante, possibilite de reintegration dans le pays d'origine. L'operation Papyrus (GE, 2017-2018) a regularise environ 3'000 personnes selon ces criteres. Le canton transmet la demande au SEM avec un preavis. Le SEM a le pouvoir de decision finale. La procédure est longue (6-18 mois). L'assistance d'un avocat specialise ou d'une association est vivement recommandee. Le demandeur ne doit pas avoir de casier judiciaire ni etre aide social (sauf raisons de sante).",
       "articles": [
         {
           "ref": "LEI 30",
@@ -2061,11 +2061,11 @@
       "jurisprudence": [
         {
           "ref": "TF 2C_780/2017",
-          "resume": "10 ans de sejour en Suisse ne suffisent pas a eux seuls ; l'ensemble des criteres d'integration doit etre evalue."
+          "resume": "10 ans de sejour en Suisse ne suffisent pas a eux seuls ; l'ensemble des criteres d'integration doit etre évalué."
         },
         {
           "ref": "TF 2C_196/2018",
-          "resume": "La scolarisation prolongee des enfants en Suisse est un element important dans l'evaluation du cas de rigueur."
+          "resume": "La scolarisation prolongee des enfants en Suisse est un élément important dans l'évaluation du cas de rigueur."
         }
       ],
       "modeleLettre": "",
@@ -2088,11 +2088,11 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LEI/OASA etat 2025-01-01",
-    "match_description": "La personne sans statut legal veut obtenir un permis pour cas de rigueur",
+    "sourceLoi": "LEI/OASA état 2025-01-01",
+    "match_description": "La personne sans statut légal veut obtenir un permis pour cas de rigueur",
     "profane_aliases": [
       "regularisation cas de rigueur",
       "operation papyrus",
@@ -2113,7 +2113,7 @@
   },
   {
     "id": "etranger_integration_criteres",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "integration",
     "tags": [
       "integration",
@@ -2130,7 +2130,7 @@
           "permis B",
           "permis F",
           "permis C",
-          "en procedure"
+          "en procédure"
         ]
       },
       {
@@ -2160,7 +2160,7 @@
       }
     ],
     "reponse": {
-      "explication": "Les criteres d'integration (art. 58a LEI, art. 77a-77g OASA) sont evalues pour le renouvellement et le changement de permis. Criteres : (1) respect de la securite et de l'ordre publics (pas de condamnations), (2) respect des valeurs constitutionnelles (egalite, tolerance, non-discrimination), (3) competences linguistiques : A1 oral pour le renouvellement du permis B, A2 oral + A1 ecrit pour le permis C, B1 oral + A2 ecrit pour la naturalisation, (4) participation a la vie economique (emploi ou formation) ou raison valable de ne pas travailler (maladie, enfants en bas age). En cas d'integration insuffisante, l'autorite peut imposer une convention d'integration (art. 58b LEI) fixant des objectifs concrets a atteindre dans un délai donne. Le non-respect de la convention peut entrainer le non-renouvellement du permis. Les cours d'integration sont finances par les cantons (programme d'integration cantonal PIC).",
+      "explication": "Les criteres d'integration (art. 58a LEI, art. 77a-77g OASA) sont evalues pour le renouvellement et le changement de permis. Criteres : (1) respect de la securite et de l'ordre publics (pas de condamnations), (2) respect des valeurs constitutionnelles (egalite, tolérance, non-discrimination), (3) compétences linguistiques : A1 oral pour le renouvellement du permis B, A2 oral + A1 écrit pour le permis C, B1 oral + A2 écrit pour la naturalisation, (4) participation a la vie economique (emploi ou formation) ou raison valable de ne pas travailler (maladie, enfants en bas age). En cas d'integration insuffisante, l'autorite peut imposer une convention d'integration (art. 58b LEI) fixant des objectifs concrets a atteindre dans un délai donne. Le non-respect de la convention peut entrainer le non-renouvellement du permis. Les cours d'integration sont finances par les cantons (programme d'integration cantonal PIC).",
       "articles": [
         {
           "ref": "LEI 58a",
@@ -2181,7 +2181,7 @@
       "jurisprudence": [
         {
           "ref": "TF 2C_631/2018",
-          "resume": "Le défaut d'integration linguistique doit etre evalue en tenant compte des efforts fournis, pas seulement du resultat."
+          "resume": "Le défaut d'integration linguistique doit etre évalué en tenant compte des efforts fournis, pas seulement du resultat."
         },
         {
           "ref": "TF 2C_50/2017",
@@ -2196,16 +2196,16 @@
           "canton": "VD"
         },
         {
-          "nom": "Bureau de l'integration des etrangers GE (BIE)",
-          "url": "https://www.ge.ch/organisation/bureau-integration-etrangers-bie",
+          "nom": "Bureau de l'integration des étrangers GE (BIE)",
+          "url": "https://www.ge.ch/organisation/bureau-integration-étrangers-bie",
           "canton": "GE"
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LEI/OASA etat 2025-01-01",
+    "sourceLoi": "LEI/OASA état 2025-01-01",
     "match_description": "La personne veut connaitre les criteres d'integration exiges pour son permis ou sa naturalisation",
     "profane_aliases": [
       "criteres d'integration Suisse",
@@ -2227,7 +2227,7 @@
   },
   {
     "id": "etranger_cours_langue_obligatoires",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "integration",
     "tags": [
       "cours",
@@ -2273,11 +2273,11 @@
       }
     ],
     "reponse": {
-      "explication": "Les cours de langue peuvent etre imposes par l'autorite migratoire dans le cadre d'une convention d'integration (art. 58b LEI). Les niveaux requis varient selon le permis vise : renouvellement permis B (A1 oral), permis C (A2 oral + A1 ecrit), naturalisation (B1 oral + A2 ecrit). Les certificats reconnus sont ceux du fide (test de langue officiel pour les migrants, www.fide-info.ch) ou des diplomes equivalents (DELF, Goethe, etc.). Les cours sont finances en partie par le Programme d'integration cantonal (PIC). Les bénéficiaires de l'aide d'urgence ou de l'asile ont acces a des cours gratuits dans la plupart des cantons. Le non-respect de l'obligation de suivre les cours peut avoir des consequences sur le renouvellement du permis. Les cantons de VD et GE offrent un large eventail de cours allant de l'alphabetisation au B2, souvent integres a des formations professionnelles.",
+      "explication": "Les cours de langue peuvent etre imposes par l'autorite migratoire dans le cadre d'une convention d'integration (art. 58b LEI). Les niveaux requis varient selon le permis vise : renouvellement permis B (A1 oral), permis C (A2 oral + A1 écrit), naturalisation (B1 oral + A2 écrit). Les certificats reconnus sont ceux du fide (test de langue officiel pour les migrants, www.fide-info.ch) ou des diplomes equivalents (DELF, Goethe, etc.). Les cours sont finances en partie par le Programme d'integration cantonal (PIC). Les bénéficiaires de l'aide d'urgence ou de l'asile ont acces a des cours gratuits dans la plupart des cantons. Le non-respect de l'obligation de suivre les cours peut avoir des consequences sur le renouvellement du permis. Les cantons de VD et GE offrent un large eventail de cours allant de l'alphabetisation au B2, souvent integres a des formations professionnelles.",
       "articles": [
         {
           "ref": "LEI 58a",
-          "titre": "Criteres d'integration — competences linguistiques",
+          "titre": "Criteres d'integration — compétences linguistiques",
           "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_58_a"
         },
         {
@@ -2300,8 +2300,8 @@
           "canton": "VD"
         },
         {
-          "nom": "Bureau de l'integration des etrangers GE (BIE)",
-          "url": "https://www.ge.ch/organisation/bureau-integration-etrangers-bie",
+          "nom": "Bureau de l'integration des étrangers GE (BIE)",
+          "url": "https://www.ge.ch/organisation/bureau-integration-étrangers-bie",
           "canton": "GE"
         },
         {
@@ -2311,17 +2311,17 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LEI etat 2025-01-01",
+    "sourceLoi": "LEI état 2025-01-01",
     "match_description": "La personne doit suivre des cours de langue obligatoires pour son integration",
     "profane_aliases": [
       "cours de francais obligatoire",
       "cours de langue pour le permis",
       "niveau de langue requis",
       "ou suivre des cours de francais",
-      "obligation de langue pour etrangers"
+      "obligation de langue pour étrangers"
     ],
     "negative_signals": [
       "cours de langue volontaires sans obligation",
@@ -2336,7 +2336,7 @@
   },
   {
     "id": "etranger_aide_sociale_permis",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "aide_sociale",
     "tags": [
       "aide",
@@ -2382,7 +2382,7 @@
       }
     ],
     "reponse": {
-      "explication": "La perception de l'aide sociale peut avoir des consequences graves sur le droit de sejour (art. 62 al. 1 let. e et art. 63 al. 1 let. c LEI). Pour le permis B, la dependance a l'aide sociale est un motif de non-renouvellement (art. 62 LEI). Pour le permis C, une dependance durable peut entrainer la retrogradation en permis B ou la revocation (art. 63 al. 2 LEI). L'autorite doit examiner la proportionnalite : causes de la dependance (maladie, chomage involontaire), efforts d'insertion, durée probable, situation familiale, durée du sejour. Pour les UE/AELE, les regles sont plus protectrices (ALCP). Les titulaires d'un permis F recoivent une aide d'urgence reduite. Le SEM a emis des directives precisant les montants-seuils. L'etranger a droit a l'aide sociale au même titre que les Suisses tant qu'il a un permis valable, mais cette perception est prise en compte lors du renouvellement.",
+      "explication": "La perception de l'aide sociale peut avoir des consequences graves sur le droit de sejour (art. 62 al. 1 let. e et art. 63 al. 1 let. c LEI). Pour le permis B, la dependance a l'aide sociale est un motif de non-renouvellement (art. 62 LEI). Pour le permis C, une dependance durable peut entrainer la retrogradation en permis B ou la revocation (art. 63 al. 2 LEI). L'autorite doit examiner la proportionnalite : causes de la dependance (maladie, chomage involontaire), efforts d'insertion, durée probable, situation familiale, durée du sejour. Pour les UE/AELE, les regles sont plus protectrices (ALCP). Les titulaires d'un permis F recoivent une aide d'urgence reduite. Le SEM a emis des directives precisant les montants-seuils. L'étranger a droit a l'aide sociale au même titre que les Suisses tant qu'il a un permis valable, mais cette perception est prise en compte lors du renouvellement.",
       "articles": [
         {
           "ref": "LEI 62",
@@ -2418,7 +2418,7 @@
           "canton": "VD"
         },
         {
-          "nom": "Hospice general GE",
+          "nom": "Hospice général GE",
           "url": "https://www.hospicegeneral.ch",
           "canton": "GE"
         },
@@ -2429,15 +2429,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LEI etat 2025-01-01",
-    "match_description": "La personne etrangere a besoin d'aide sociale mais craint des consequences sur son permis",
+    "sourceLoi": "LEI état 2025-01-01",
+    "match_description": "La personne étrangère a besoin d'aide sociale mais craint des consequences sur son permis",
     "profane_aliases": [
       "aide sociale et permis de sejour",
       "si je prends l'aide sociale je perds mon permis",
-      "aide sociale etranger risques",
+      "aide sociale étranger risques",
       "dependance aide sociale et permis",
       "revocation permis aide sociale"
     ],
@@ -2454,7 +2454,7 @@
   },
   {
     "id": "etranger_travail_asile",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "travail",
     "tags": [
       "travail",
@@ -2475,7 +2475,7 @@
       },
       {
         "id": "q2",
-        "text": "Avez-vous un employeur interesse ?",
+        "text": "Avez-vous un employeur intéressé ?",
         "options": [
           "oui",
           "non"
@@ -2483,7 +2483,7 @@
       },
       {
         "id": "q3",
-        "text": "Depuis combien de temps êtes-vous en procedure ?",
+        "text": "Depuis combien de temps êtes-vous en procédure ?",
         "options": [
           "<3 mois",
           "3-6 mois",
@@ -2497,7 +2497,7 @@
       }
     ],
     "reponse": {
-      "explication": "Les requérants d'asile (permis N) ne peuvent exercer une activite lucrative qu'après un délai d'attente de 3 mois (art. 43 LAsi). L'autorisation est accordee si les conditions salariales et de travail sont respectees et si le marche de l'emploi le permet. Le salaire est soumis a une contribution speciale de 10% maximum au titre de garantie des couts (art. 86 LAsi). Les personnes admises provisoirement (permis F) ont un acces au marche du travail sans restriction sectorielle ni geographique (art. 85a LEI). L'employeur doit simplement annoncer l'engagement au service cantonal de l'emploi. Les personnes dont la demande d'asile a ete definitivement rejetee et qui percoivent l'aide d'urgence n'ont en principe pas le droit de travailler. Des programmes d'occupation et de formation sont proposes dans les centres d'accueil. La taxe speciale est prelevee directement sur le salaire.",
+      "explication": "Les requérants d'asile (permis N) ne peuvent exercer une activite lucrative qu'après un délai d'attente de 3 mois (art. 43 LAsi). L'autorisation est accordee si les conditions salariales et de travail sont respectees et si le marche de l'emploi le permet. Le salaire est soumis a une contribution spéciale de 10% maximum au titre de garantie des couts (art. 86 LAsi). Les personnes admises provisoirement (permis F) ont un acces au marche du travail sans restriction sectorielle ni geographique (art. 85a LEI). L'employeur doit simplement annoncer l'engagement au service cantonal de l'emploi. Les personnes dont la demande d'asile a ete definitivement rejetee et qui percoivent l'aide d'urgence n'ont en principe pas le droit de travailler. Des programmes d'occupation et de formation sont proposes dans les centres d'accueil. La taxe spéciale est prélevée directement sur le salaire.",
       "articles": [
         {
           "ref": "LAsi 43",
@@ -2506,7 +2506,7 @@
         },
         {
           "ref": "LAsi 86",
-          "titre": "Contributions speciales",
+          "titre": "Contributions spéciales",
           "lien": "https://www.fedlex.admin.ch/eli/cc/1999/358/fr#art_86"
         },
         {
@@ -2529,7 +2529,7 @@
           "canton": "VD"
         },
         {
-          "nom": "Hospice general GE (aide aux migrants)",
+          "nom": "Hospice général GE (aide aux migrants)",
           "url": "https://www.hospicegeneral.ch",
           "canton": "GE"
         },
@@ -2540,10 +2540,10 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LAsi/LEI etat 2025-01-01",
+    "sourceLoi": "LAsi/LEI état 2025-01-01",
     "match_description": "Un requérant d'asile veut savoir s'il peut travailler en Suisse",
     "profane_aliases": [
       "travailler comme requérant d'asile",
@@ -2565,7 +2565,7 @@
   },
   {
     "id": "etranger_permis_frontalier_g",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "permis",
     "tags": [
       "frontalier",
@@ -2599,7 +2599,7 @@
         "options": [
           "CDI",
           "CDD",
-          "independant",
+          "indépendant",
           "detache"
         ]
       },
@@ -2610,7 +2610,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le permis G (autorisation frontaliere) est delivre aux etrangers residant dans la zone frontaliere d'un Etat voisin et travaillant en Suisse (art. 35 LEI). Pour les ressortissants UE/AELE, le permis G est accorde de droit si l'interesse a un emploi et retourne a son domicile au moins une fois par semaine (ALCP art. 7). Le permis est valable 5 ans si le contrat est d'au moins 1 an, ou pour la durée du contrat si inferieure a 1 an. Pour les ressortissants de pays tiers, le permis G est soumis aux conditions generales (marche de l'emploi, salaires). Le frontalier est impose a la source dans le canton de travail (sauf convention de double imposition specifique, ex. France/GE). Il est affilie aux assurances sociales suisses (AVS/AI/APG/AC) mais peut choisir entre LAMal suisse et assurance maladie de son pays de residence. Depuis 2023, la zone frontaliere a ete elargie pour les UE/AELE.",
+      "explication": "Le permis G (autorisation frontaliere) est delivre aux étrangers residant dans la zone frontaliere d'un Etat voisin et travaillant en Suisse (art. 35 LEI). Pour les ressortissants UE/AELE, le permis G est accorde de droit si l'intéressé a un emploi et retourne a son domicile au moins une fois par semaine (ALCP art. 7). Le permis est valable 5 ans si le contrat est d'au moins 1 an, ou pour la durée du contrat si inférieure a 1 an. Pour les ressortissants de pays tiers, le permis G est soumis aux conditions générales (marche de l'emploi, salaires). Le frontalier est impose a la source dans le canton de travail (sauf convention de double imposition spécifique, ex. France/GE). Il est affilie aux assurances sociales suisses (AVS/AI/APG/AC) mais peut choisir entre LAMal suisse et assurance maladie de son pays de residence. Depuis 2023, la zone frontaliere a ete elargie pour les UE/AELE.",
       "articles": [
         {
           "ref": "LEI 35",
@@ -2643,10 +2643,10 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LEI/ALCP etat 2025-01-01",
+    "sourceLoi": "LEI/ALCP état 2025-01-01",
     "match_description": "La personne veut travailler en Suisse comme frontalier avec un permis G",
     "profane_aliases": [
       "permis frontalier",
@@ -2668,13 +2668,13 @@
   },
   {
     "id": "etranger_detachement_travailleurs",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "travail",
     "tags": [
       "detachement",
       "travailleurs",
       "entreprise",
-      "etrangere",
+      "étrangère",
       "prestation"
     ],
     "questions": [
@@ -2712,7 +2712,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le detachement de travailleurs est regi par la Loi sur les travailleurs detaches (LDet, RS 823.20) et l'ALCP. Un employeur etranger peut detacher des travailleurs en Suisse pour une prestation temporaire. Obligations : annonce 8 jours avant le debut de la prestation aupres du service cantonal (art. 6 LDet), respect des conditions minimales suisses de travail et de salaire (CCT, salaires minimaux cantonaux, art. 2 LDet), assurance contre les accidents. Pour les sejours de plus de 90 jours par an, un permis de travail est necessaire. Les travailleurs detaches de pays tiers (non UE/AELE) sont soumis a des conditions plus strictes. Les commissions paritaires et tripartites controlent le respect des conditions. En cas d'infraction, des sanctions administratives et des amendes sont possibles (art. 9 LDet). Le travailleur detache reste affilie aux assurances sociales de son pays d'origine (formulaire A1).",
+      "explication": "Le detachement de travailleurs est regi par la Loi sur les travailleurs detaches (LDet, RS 823.20) et l'ALCP. Un employeur étranger peut detacher des travailleurs en Suisse pour une prestation temporaire. Obligations : annonce 8 jours avant le debut de la prestation auprès du service cantonal (art. 6 LDet), respect des conditions minimales suisses de travail et de salaire (CCT, salaires minimaux cantonaux, art. 2 LDet), assurance contre les accidents. Pour les sejours de plus de 90 jours par an, un permis de travail est nécessaire. Les travailleurs detaches de pays tiers (non UE/AELE) sont soumis a des conditions plus strictes. Les commissions paritaires et tripartites controlent le respect des conditions. En cas d'infraction, des sanctions administratives et des amendes sont possibles (art. 9 LDet). Le travailleur detache reste affilie aux assurances sociales de son pays d'origine (formulaire A1).",
       "articles": [
         {
           "ref": "LDet 2",
@@ -2750,11 +2750,11 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LDet etat 2025-01-01",
-    "match_description": "Une entreprise etrangere detache des travailleurs en Suisse pour une prestation",
+    "sourceLoi": "LDet état 2025-01-01",
+    "match_description": "Une entreprise étrangère detache des travailleurs en Suisse pour une prestation",
     "profane_aliases": [
       "detachement en Suisse",
       "envoyer des employes en Suisse",
@@ -2775,14 +2775,14 @@
   },
   {
     "id": "etranger_reconnaissance_diplomes",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "formation",
     "tags": [
       "reconnaissance",
       "diplomes",
       "equivalence",
       "formation",
-      "etranger"
+      "étranger"
     ],
     "questions": [
       {
@@ -2820,7 +2820,7 @@
       }
     ],
     "reponse": {
-      "explication": "La reconnaissance des diplomes etrangers en Suisse depend du type de diplome et de la profession. Pour les professions reglementees (medecin, avocat, enseignant, ingenieur dans certains domaines), une reconnaissance officielle est obligatoire. L'autorite competente varie : SEFRI pour les professions non universitaires, swissuniversities pour les diplomes universitaires, MEBEKO pour les professions medicales, CDIP pour l'enseignement. Pour les diplomes UE/AELE, la reconnaissance est facilitee par l'ALCP et les directives europeennes. Pour les pays tiers, la procedure est plus complexe et peut necessiter des formations complementaires ou des examens. La reconnaissance n'est pas automatique — elle depend du contenu de la formation, de sa durée et de sa comparabilite avec la formation suisse. Les frais varient de CHF 150 a CHF 1'000. Le SEFRI tient une liste des professions reglementees sur son site. Pour les professions non reglementees, une evaluation indicative est possible mais pas obligatoire.",
+      "explication": "La reconnaissance des diplomes étrangers en Suisse depend du type de diplome et de la profession. Pour les professions reglementees (medecin, avocat, enseignant, ingenieur dans certains domaines), une reconnaissance officielle est obligatoire. L'autorite compétente varie : SEFRI pour les professions non universitaires, swissuniversities pour les diplomes universitaires, MEBEKO pour les professions medicales, CDIP pour l'enseignement. Pour les diplomes UE/AELE, la reconnaissance est facilitee par l'ALCP et les directives europeennes. Pour les pays tiers, la procédure est plus complexe et peut necessiter des formations complementaires ou des examens. La reconnaissance n'est pas automatique — elle depend du contenu de la formation, de sa durée et de sa comparabilite avec la formation suisse. Les frais varient de CHF 150 a CHF 1'000. Le SEFRI tient une liste des professions reglementees sur son site. Pour les professions non reglementees, une évaluation indicative est possible mais pas obligatoire.",
       "articles": [
         {
           "ref": "ALCP Annexe III",
@@ -2831,14 +2831,14 @@
       "jurisprudence": [
         {
           "ref": "TF 2C_472/2017",
-          "resume": "Le refus de reconnaissance d'un diplome medical etranger doit etre proportionnel et offrir la possibilite de mesures compensatoires."
+          "resume": "Le refus de reconnaissance d'un diplome medical étranger doit etre proportionnel et offrir la possibilite de mesures compensatoires."
         }
       ],
       "modeleLettre": "",
       "services": [
         {
           "nom": "SEFRI (Secretariat d'Etat a la formation)",
-          "url": "https://www.sbfi.admin.ch/sbfi/fr/home/formation/reconnaissance-de-diplomes-etrangers.html",
+          "url": "https://www.sbfi.admin.ch/sbfi/fr/home/formation/reconnaissance-de-diplomes-étrangers.html",
           "canton": "VD"
         },
         {
@@ -2853,17 +2853,17 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "ALCP etat 2025-01-01",
-    "match_description": "La personne a un diplome etranger et veut le faire reconnaitre en Suisse",
+    "sourceLoi": "ALCP état 2025-01-01",
+    "match_description": "La personne a un diplome étranger et veut le faire reconnaitre en Suisse",
     "profane_aliases": [
       "faire reconnaitre mon diplome",
-      "equivalence diplome etranger",
+      "equivalence diplome étranger",
       "mon diplome est-il valable en Suisse",
       "reconnaissance diplome infirmier/medecin/ingenieur",
-      "travailler en Suisse avec un diplome etranger"
+      "travailler en Suisse avec un diplome étranger"
     ],
     "negative_signals": [
       "formation suivie en Suisse",
@@ -2878,7 +2878,7 @@
   },
   {
     "id": "etranger_assurances_sociales",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "assurances",
     "tags": [
       "assurances",
@@ -2886,7 +2886,7 @@
       "AVS",
       "AI",
       "chomage",
-      "etranger"
+      "étranger"
     ],
     "questions": [
       {
@@ -2905,7 +2905,7 @@
         "text": "Travaillez-vous en Suisse ?",
         "options": [
           "oui, salarie",
-          "oui, independant",
+          "oui, indépendant",
           "non"
         ]
       },
@@ -2925,7 +2925,7 @@
       }
     ],
     "reponse": {
-      "explication": "Les etrangers travaillant en Suisse sont affilies aux assurances sociales (AVS/AI/APG/AC) comme les Suisses, quel que soit leur permis (art. 1a LAVS). Specificites par permis : (1) Permis B/C : memes droits que les Suisses. (2) Permis F : droit aux prestations AI après 1 an de cotisation, pas d'export des rentes AI a l'etranger sauf convention. (3) Permis N : cotisations obligatoires mais droits limites. (4) Permis G : affiliation en Suisse, droits coordonnes avec le pays de residence (reglements UE). En quittant la Suisse : le 2e pilier (LPP) est verse en prestation de libre passage ; pour les non-UE/AELE, la part obligatoire peut etre retiree en especes ; pour les UE/AELE, seule la part surobligatoire peut etre retiree si la personne reste assujettie dans un pays UE. L'AVS peut etre exportee dans tous les pays avec convention de securite sociale. Les conventions bilaterales (avec 50+ pays) coordonnent les droits.",
+      "explication": "Les étrangers travaillant en Suisse sont affilies aux assurances sociales (AVS/AI/APG/AC) comme les Suisses, quel que soit leur permis (art. 1a LAVS). Specificites par permis : (1) Permis B/C : memes droits que les Suisses. (2) Permis F : droit aux prestations AI après 1 an de cotisation, pas d'export des rentes AI a l'étranger sauf convention. (3) Permis N : cotisations obligatoires mais droits limites. (4) Permis G : affiliation en Suisse, droits coordonnes avec le pays de residence (reglements UE). En quittant la Suisse : le 2e pilier (LPP) est versé en prestation de libre passage ; pour les non-UE/AELE, la part obligatoire peut etre retiree en especes ; pour les UE/AELE, seule la part surobligatoire peut etre retiree si la personne reste assujettie dans un pays UE. L'AVS peut etre exportee dans tous les pays avec convention de securite sociale. Les conventions bilaterales (avec 50+ pays) coordonnent les droits.",
       "articles": [
         {
           "ref": "LAVS 1a",
@@ -2963,16 +2963,16 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LAVS/LPP etat 2025-01-01",
-    "match_description": "La personne etrangere veut comprendre ses droits en matiere d'assurances sociales en Suisse",
+    "sourceLoi": "LAVS/LPP état 2025-01-01",
+    "match_description": "La personne étrangère veut comprendre ses droits en matiere d'assurances sociales en Suisse",
     "profane_aliases": [
-      "assurances sociales pour etrangers",
-      "AVS etranger",
-      "chomage pour etranger",
-      "AI pour etranger",
+      "assurances sociales pour étrangers",
+      "AVS étranger",
+      "chomage pour étranger",
+      "AI pour étranger",
       "droits sociaux avec un permis"
     ],
     "negative_signals": [
@@ -2988,7 +2988,7 @@
   },
   {
     "id": "etranger_double_nationalite",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "nationalite",
     "tags": [
       "double",
@@ -3024,7 +3024,7 @@
       }
     ],
     "reponse": {
-      "explication": "La Suisse autorise la double nationalite depuis 1992. Un Suisse qui acquiert une nationalite etrangere ne perd pas la nationalite suisse (art. 7 LN). Inversement, un etranger qui se naturalise suisse n'est pas tenu de renoncer a sa nationalite d'origine — cela depend du droit de l'autre pays. Implications pratiques : obligations militaires (le binational peut etre soumis au service militaire dans les deux pays, sauf convention), fiscalite (la Suisse impose les residants sur le revenu mondial, les USA imposent tous les citoyens), service consulaire (en cas de probleme a l'etranger, le binational ne peut pas invoquer la protection consulaire suisse dans son autre pays de nationalite). L'enfant de parents binationaux acquiert les deux nationalites a la naissance. Le binational peut voyager avec l'un ou l'autre passeport. Attention : certains pays (Chine, Japon, Inde) n'autorisent pas la double nationalite et la naturalisation suisse entraine la perte de l'autre.",
+      "explication": "La Suisse autorise la double nationalite depuis 1992. Un Suisse qui acquiert une nationalite étrangère ne perd pas la nationalite suisse (art. 7 LN). Inversement, un étranger qui se naturalise suisse n'est pas tenu de renoncer a sa nationalite d'origine — cela depend du droit de l'autre pays. Implications pratiques : obligations militaires (le binational peut etre soumis au service militaire dans les deux pays, sauf convention), fiscalite (la Suisse impose les residants sur le revenu mondial, les USA imposent tous les citoyens), service consulaire (en cas de probleme a l'étranger, le binational ne peut pas invoquer la protection consulaire suisse dans son autre pays de nationalite). L'enfant de parents binationaux acquiert les deux nationalites a la naissance. Le binational peut voyager avec l'un ou l'autre passeport. Attention : certains pays (Chine, Japon, Inde) n'autorisent pas la double nationalite et la naturalisation suisse entraine la perte de l'autre.",
       "articles": [
         {
           "ref": "LN 7",
@@ -3040,7 +3040,7 @@
       "jurisprudence": [
         {
           "ref": "TF 1C_503/2016",
-          "resume": "Le binational ne peut pas se prevaloir de sa nationalite suisse pour echapper aux obligations legales de son autre pays de nationalite."
+          "resume": "Le binational ne peut pas se prevaloir de sa nationalite suisse pour echapper aux obligations légales de son autre pays de nationalite."
         }
       ],
       "modeleLettre": "",
@@ -3057,10 +3057,10 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LN etat 2025-01-01",
+    "sourceLoi": "LN état 2025-01-01",
     "match_description": "La personne veut savoir si elle peut garder sa nationalite d'origine en devenant Suisse",
     "profane_aliases": [
       "double nationalite Suisse",
@@ -3077,12 +3077,12 @@
       "nationalite actuelle",
       "loi du pays d'origine sur la double nationalite",
       "obligations militaires",
-      "naturalisation en cours ou prevue"
+      "naturalisation en cours ou prévue"
     ]
   },
   {
     "id": "etranger_apatridie",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "nationalite",
     "tags": [
       "apatride",
@@ -3107,7 +3107,7 @@
         "options": [
           "oui",
           "non",
-          "en procedure"
+          "en procédure"
         ]
       },
       {
@@ -3117,7 +3117,7 @@
       }
     ],
     "reponse": {
-      "explication": "L'apatridie est le fait de n'etre reconnu comme ressortissant par aucun Etat. La Suisse est partie a la Convention relative au statut des apatrides de 1954 (RS 0.142.40). La reconnaissance du statut d'apatride se fait par le SEM sur demande. L'apatride reconnu reçoit un titre de voyage pour apatrides et un permis de sejour B (art. 31 OASA). Il beneficie d'un traitement au moins aussi favorable que les etrangers en general pour l'emploi, le logement, l'education et l'aide sociale (Convention de 1954, art. 17-24). La Suisse a aussi ratifie la Convention de 1961 sur la reduction des cas d'apatridie : un enfant ne en Suisse qui serait autrement apatride peut acquerir la nationalite suisse (art. 30 al. 1 let. b CC). La procedure de reconnaissance est longue (6-18 mois). L'apatride doit prouver qu'aucun Etat ne le reconnait comme ressortissant, ce qui peut etre difficile sans documents.",
+      "explication": "L'apatridie est le fait de n'etre reconnu comme ressortissant par aucun Etat. La Suisse est partie a la Convention relative au statut des apatrides de 1954 (RS 0.142.40). La reconnaissance du statut d'apatride se fait par le SEM sur demande. L'apatride reconnu reçoit un titre de voyage pour apatrides et un permis de sejour B (art. 31 OASA). Il beneficie d'un traitement au moins aussi favorable que les étrangers en général pour l'emploi, le logement, l'education et l'aide sociale (Convention de 1954, art. 17-24). La Suisse a aussi ratifie la Convention de 1961 sur la reduction des cas d'apatridie : un enfant ne en Suisse qui serait autrement apatride peut acquerir la nationalite suisse (art. 30 al. 1 let. b CC). La procédure de reconnaissance est longue (6-18 mois). L'apatride doit prouver qu'aucun Etat ne le reconnait comme ressortissant, ce qui peut etre difficile sans documents.",
       "articles": [
         {
           "ref": "Convention apatrides 1954",
@@ -3150,10 +3150,10 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "Convention 1954/CC etat 2025-01-01",
+    "sourceLoi": "Convention 1954/CC état 2025-01-01",
     "match_description": "La personne n'a aucune nationalite et veut connaitre son statut et ses droits",
     "profane_aliases": [
       "je n'ai pas de nationalite",
@@ -3175,7 +3175,7 @@
   },
   {
     "id": "etranger_mna_mineurs",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "asile",
     "tags": [
       "MNA",
@@ -3198,10 +3198,10 @@
         "id": "q2",
         "text": "Statut actuel ?",
         "options": [
-          "en procedure d'asile",
+          "en procédure d'asile",
           "asile accorde",
           "admission provisoire (F)",
-          "renvoi prevu"
+          "renvoi prévu"
         ]
       },
       {
@@ -3220,7 +3220,7 @@
       }
     ],
     "reponse": {
-      "explication": "Les mineurs non accompagnes (MNA) beneficient d'une protection renforcee en droit suisse et international. Un curateur ou representant juridique doit etre designe des l'enregistrement de la demande d'asile (art. 17 al. 3 LAsi). Le MNA est heberge dans des structures adaptees a son age (centres specifiques, familles d'accueil). La procedure d'asile est adaptee : audition en presence du curateur, prise en compte de l'age et de la maturite, interet superieur de l'enfant (art. 3 CDE). Le renvoi d'un MNA n'est possible que si un accueil adequat est garanti dans le pays d'origine (art. 69 al. 4 LEI). En pratique, la plupart des MNA obtiennent l'admission provisoire (F) ou l'asile. A la majorite (18 ans), le statut est reexamine. Les MNA ont droit a la scolarisation, a l'aide sociale et aux soins medicaux. Les cantons de VD et GE ont des dispositifs specifiques d'accueil et d'integration des MNA.",
+      "explication": "Les mineurs non accompagnes (MNA) beneficient d'une protection renforcee en droit suisse et international. Un curateur ou representant juridique doit etre designe des l'enregistrement de la demande d'asile (art. 17 al. 3 LAsi). Le MNA est heberge dans des structures adaptees a son age (centres spécifiques, familles d'accueil). La procédure d'asile est adaptee : audition en presence du curateur, prise en compte de l'age et de la maturite, interet supérieur de l'enfant (art. 3 CDE). Le renvoi d'un MNA n'est possible que si un accueil adequat est garanti dans le pays d'origine (art. 69 al. 4 LEI). En pratique, la plupart des MNA obtiennent l'admission provisoire (F) ou l'asile. A la majorite (18 ans), le statut est reexamine. Les MNA ont droit a la scolarisation, a l'aide sociale et aux soins medicaux. Les cantons de VD et GE ont des dispositifs spécifiques d'accueil et d'integration des MNA.",
       "articles": [
         {
           "ref": "LAsi 17",
@@ -3234,7 +3234,7 @@
         },
         {
           "ref": "CDE 3",
-          "titre": "Interet superieur de l'enfant",
+          "titre": "Interet supérieur de l'enfant",
           "lien": "https://www.fedlex.admin.ch/eli/cc/1998/2055_2055_2055/fr#art_3"
         }
       ],
@@ -3245,7 +3245,7 @@
         },
         {
           "ref": "TF 2C_666/2017",
-          "resume": "L'interet superieur de l'enfant doit primer dans toutes les decisions concernant les MNA."
+          "resume": "L'interet supérieur de l'enfant doit primer dans toutes les decisions concernant les MNA."
         }
       ],
       "modeleLettre": "",
@@ -3267,16 +3267,16 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LAsi/LEI/CDE etat 2025-01-01",
+    "sourceLoi": "LAsi/LEI/CDE état 2025-01-01",
     "match_description": "Un mineur non accompagne est arrive en Suisse et a besoin de protection",
     "profane_aliases": [
       "mineur non accompagne droits",
       "enfant refugie seul",
       "MNA protection",
-      "tutelle pour mineur etranger",
+      "tutelle pour mineur étranger",
       "enfant arrive seul en Suisse"
     ],
     "negative_signals": [
@@ -3292,7 +3292,7 @@
   },
   {
     "id": "etranger_dublin_transfert",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "asile",
     "tags": [
       "Dublin",
@@ -3343,7 +3343,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le Reglement Dublin III (Reglement UE 604/2013, applicable en Suisse) determine quel Etat est responsable de l'examen d'une demande d'asile. En principe, c'est le premier Etat Dublin dans lequel le requérant a ete enregistre (empreintes, demande d'asile). La Suisse peut demander le transfert du requérant vers cet Etat. Exceptions : la Suisse peut exercer sa clause de souverainete et examiner la demande elle-même (art. 17 Dublin III), obligatoirement en cas de risque de traitement inhumain dans l'Etat responsable (arrêt CEDH Tarakhel c. Suisse 2014 pour l'Italie). Les criteres de responsabilite sont (par ordre) : regroupement familial (mineur, conjoint), visa delivre, entree irreguliere, entree legale. Le recours contre le transfert doit etre déposé dans les 5 jours ouvrables aupres du TAF (art. 108 LAsi). L'effet suspensif doit etre demande expressement. Le délai de transfert est de 6 mois (18 mois si le requérant se soustrait).",
+      "explication": "Le Reglement Dublin III (Reglement UE 604/2013, applicable en Suisse) determine quel Etat est responsable de l'examen d'une demande d'asile. En principe, c'est le premier Etat Dublin dans lequel le requérant a ete enregistre (empreintes, demande d'asile). La Suisse peut demander le transfert du requérant vers cet Etat. Exceptions : la Suisse peut exercer sa clause de souverainete et examiner la demande elle-même (art. 17 Dublin III), obligatoirement en cas de risque de traitement inhumain dans l'Etat responsable (arrêt CEDH Tarakhel c. Suisse 2014 pour l'Italie). Les criteres de responsabilite sont (par ordre) : regroupement familial (mineur, conjoint), visa delivre, entree irrégulière, entree légale. Le recours contre le transfert doit etre déposé dans les 5 jours ouvrables auprès du TAF (art. 108 LAsi). L'effet suspensif doit etre demande expressement. Le délai de transfert est de 6 mois (18 mois si le requérant se soustrait).",
       "articles": [
         {
           "ref": "Dublin III art. 3",
@@ -3364,7 +3364,7 @@
       "jurisprudence": [
         {
           "ref": "CourEDH Tarakhel c. Suisse (2014)",
-          "resume": "Le transfert Dublin vers l'Italie d'une famille avec enfants necessite des garanties individuelles d'accueil adequat."
+          "resume": "Le transfert Dublin vers l'Italie d'une famille avec enfants nécessité des garanties individuelles d'accueil adequat."
         },
         {
           "ref": "TAF E-7679/2016",
@@ -3390,10 +3390,10 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "Dublin III/LAsi etat 2025-01-01",
+    "sourceLoi": "Dublin III/LAsi état 2025-01-01",
     "match_description": "La personne risque un transfert Dublin vers le premier pays europeen ou elle a ete enregistree",
     "profane_aliases": [
       "transfert Dublin",
@@ -3415,7 +3415,7 @@
   },
   {
     "id": "etranger_visa_schengen_refus",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "visa",
     "tags": [
       "visa",
@@ -3461,7 +3461,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le visa Schengen de type C (court sejour, max. 90 jours) peut etre refuse pour les motifs prevus par le Code des visas (Reglement CE 810/2009, applicable en Suisse). Motifs frequents : justification insuffisante de l'objet du sejour, doute sur la volonte de retour, moyens financiers insuffisants, assurance voyage inexistante, menace pour l'ordre public. Le refus doit etre motive et notifie par ecrit (art. 32 Code des visas). Le recours se fait aupres du Tribunal administratif federal (TAF) dans un délai de 30 jours (art. 65 LEI). Le cout du recours est de CHF 200. Une nouvelle demande peut etre déposée a tout moment avec des documents complementaires. Conseils pratiques : fournir une invitation notariee, une preuve d'hebergement, une attestation d'emploi dans le pays d'origine, une preuve de liens familiaux, une assurance voyage et une preuve de moyens financiers (CHF 100/jour environ). L'assistance d'un avocat est possible mais pas obligatoire.",
+      "explication": "Le visa Schengen de type C (court sejour, max. 90 jours) peut etre refuse pour les motifs prévus par le Code des visas (Reglement CE 810/2009, applicable en Suisse). Motifs frequents : justification insuffisante de l'objet du sejour, doute sur la volonte de retour, moyens financiers insuffisants, assurance voyage inexistante, menace pour l'ordre public. Le refus doit etre motive et notifie par écrit (art. 32 Code des visas). Le recours se fait auprès du Tribunal administratif fédéral (TAF) dans un délai de 30 jours (art. 65 LEI). Le cout du recours est de CHF 200. Une nouvelle demande peut etre déposée a tout moment avec des documents complementaires. Conseils pratiques : fournir une invitation notariee, une preuve d'hebergement, une attestation d'emploi dans le pays d'origine, une preuve de liens familiaux, une assurance voyage et une preuve de moyens financiers (CHF 100/jour environ). L'assistance d'un avocat est possible mais pas obligatoire.",
       "articles": [
         {
           "ref": "Code des visas art. 32",
@@ -3481,10 +3481,10 @@
         },
         {
           "ref": "TAF C-5765/2017",
-          "resume": "Le risque de non-retour doit etre evalue en tenant compte de l'ensemble de la situation (emploi, famille, voyages anterieurs)."
+          "resume": "Le risque de non-retour doit etre évalué en tenant compte de l'ensemble de la situation (emploi, famille, voyages anterieurs)."
         }
       ],
-      "modeleLettre": "Objet : Recours contre le refus de visa Schengen\n\nAu Tribunal administratif federal,\n\nMadame, Monsieur,\n\nJe forme recours contre la decision de l'Ambassade de Suisse a [ville] du [date] refusant ma demande de visa Schengen no [numero].\n\nMotif du refus invoque : [motif].\n\nJe conteste ce refus pour les raisons suivantes : [arguments + preuves].\n\nPieces jointes : decision de refus, documents complementaires.\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
+      "modeleLettre": "Objet : Recours contre le refus de visa Schengen\n\nAu Tribunal administratif fédéral,\n\nMadame, Monsieur,\n\nJe forme recours contre la decision de l'Ambassade de Suisse a [ville] du [date] refusant ma demande de visa Schengen no [numero].\n\nMotif du refus invoque : [motif].\n\nJe conteste ce refus pour les raisons suivantes : [arguments + preuves].\n\nPieces jointes : decision de refus, documents complementaires.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
       "services": [
         {
           "nom": "SEM (visas)",
@@ -3492,16 +3492,16 @@
           "canton": "VD"
         },
         {
-          "nom": "Tribunal administratif federal (TAF)",
+          "nom": "Tribunal administratif fédéral (TAF)",
           "url": "https://www.bvger.ch/fr",
           "canton": "VD"
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "Code des visas/LEI etat 2025-01-01",
+    "sourceLoi": "Code des visas/LEI état 2025-01-01",
     "match_description": "La personne s'est vu refuser un visa Schengen et veut contester la decision",
     "profane_aliases": [
       "visa refuse",
@@ -3523,7 +3523,7 @@
   },
   {
     "id": "etrangers_renvoi",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "renvoi",
     "tags": [
       "renvoi",
@@ -3541,7 +3541,7 @@
         "options": [
           "renvoi après refus asile",
           "renvoi après refus permis",
-          "renvoi penal",
+          "renvoi pénal",
           "menace de renvoi"
         ]
       },
@@ -3579,7 +3579,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le renvoi est ordonne lorsque l'etranger ne remplit plus les conditions de sejour ou que sa demande d'asile est rejetee. La decision est prise par le SEM (Secretariat d'Etat aux migrations) ou le service cantonal des migrations. Le recours contre une decision de renvoi doit etre déposé dans les 30 jours aupres du TAF (Tribunal administratif federal, art. 112 LEI). En matiere d'asile, le délai peut etre reduit a 5 jours ouvrables en procedure acceleree (art. 108 LAsi). Le recours n'a pas automatiquement d'effet suspensif (art. 64 PA) ; il faut le demander expressement. Le principe de non-refoulement (art. 25 Cst, art. 33 Convention de Geneve) interdit le renvoi vers un pays ou la personne risque la torture ou des traitements inhumains. L'inexigibilite du renvoi peut etre invoquee pour raisons medicales, de guerre ou de situation personnelle (art. 83 LEI). L'admission provisoire (permis F) est accordee quand le renvoi est illicite, inexigible ou impossible.",
+      "explication": "Le renvoi est ordonne lorsque l'étranger ne remplit plus les conditions de sejour ou que sa demande d'asile est rejetee. La decision est prise par le SEM (Secretariat d'Etat aux migrations) ou le service cantonal des migrations. Le recours contre une decision de renvoi doit etre déposé dans les 30 jours auprès du TAF (Tribunal administratif fédéral, art. 112 LEI). En matiere d'asile, le délai peut etre reduit a 5 jours ouvrables en procédure acceleree (art. 108 LAsi). Le recours n'a pas automatiquement d'effet suspensif (art. 64 PA) ; il faut le demander expressement. Le principe de non-refoulement (art. 25 Cst, art. 33 Convention de Geneve) interdit le renvoi vers un pays ou la personne risque la torture ou des traitements inhumains. L'inexigibilite du renvoi peut etre invoquee pour raisons medicales, de guerre ou de situation personnelle (art. 83 LEI). L'admission provisoire (permis F) est accordee quand le renvoi est illicite, inexigible ou impossible.",
       "articles": [
         {
           "ref": "LEI 64",
@@ -3593,7 +3593,7 @@
         },
         {
           "ref": "LEI 112",
-          "titre": "Recours — procedure",
+          "titre": "Recours — procédure",
           "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_112"
         },
         {
@@ -3612,7 +3612,7 @@
           "resume": "Un renvoi portant une atteinte disproportionnee a la vie privee et familiale (art. 8 CEDH) peut etre annule, notamment en cas d'enfants scolarises en Suisse."
         }
       ],
-      "modeleLettre": "Objet : Recours contre la decision de renvoi du [date]\n\nAu Tribunal administratif federal, St-Gall,\n\nJe soussigne(e) [nom, prenom], ne(e) le [date], national(e) de [pays], N° de dossier [numero],\n\nForme recours contre la decision du [SEM / service cantonal] du [date], notifiee le [date], ordonnant mon renvoi de Suisse.\n\nJe requiers :\n1. L'annulation de la decision attaquee\n2. L'octroi de l'effet suspensif au present recours\n3. La mise au benefice de l'assistance juridique gratuite\n\nMotifs : [non-refoulement / inexigibilite / art. 8 CEDH / situation medicale]\n\nPieces jointes : [decision attaquee, certificats medicaux, attestations scolaires enfants, preuves d'integration]\n\n[Signature]",
+      "modeleLettre": "Objet : Recours contre la decision de renvoi du [date]\n\nAu Tribunal administratif fédéral, St-Gall,\n\nJe soussigne(e) [nom, prenom], ne(e) le [date], national(e) de [pays], N° de dossier [numero],\n\nForme recours contre la decision du [SEM / service cantonal] du [date], notifiee le [date], ordonnant mon renvoi de Suisse.\n\nJe requiers :\n1. L'annulation de la decision attaquee\n2. L'octroi de l'effet suspensif au present recours\n3. La mise au benefice de l'assistance juridique gratuite\n\nMotifs : [non-refoulement / inexigibilite / art. 8 CEDH / situation medicale]\n\nPieces jointes : [decision attaquee, certificats medicaux, attestations scolaires enfants, preuves d'integration]\n\n[Signature]",
       "services": [
         {
           "nom": "Consultation juridique pour migrants (SOS Vaud)",
@@ -3627,7 +3627,7 @@
           "canton": "GE"
         },
         {
-          "nom": "Tribunal administratif federal (TAF)",
+          "nom": "Tribunal administratif fédéral (TAF)",
           "url": "https://www.bvger.ch/fr",
           "canton": "VD"
         },
@@ -3638,10 +3638,10 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LEI/LAsi etat 2025-01-01",
+    "sourceLoi": "LEI/LAsi état 2025-01-01",
     "match_description": "La personne est confrontee a une decision de renvoi et veut comprendre ses options",
     "profane_aliases": [
       "decision de renvoi que faire",
@@ -3655,7 +3655,7 @@
       "question sur le renouvellement de permis"
     ],
     "required_facts": [
-      "base legale du renvoi (LEI, asile)",
+      "base légale du renvoi (LEI, asile)",
       "délai pour quitter",
       "recours déposé",
       "risques en cas de retour"
@@ -3663,7 +3663,7 @@
   },
   {
     "id": "etrangers_recours",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "recours",
     "tags": [
       "recours",
@@ -3711,7 +3711,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le recours contre une decision en matiere de droit des etrangers suit un systeme a plusieurs niveaux. Contre une decision cantonale : recours au tribunal cantonal dans les 30 jours (selon la loi cantonale de procedure). Contre une decision du SEM : recours au TAF dans les 30 jours (art. 50 PA). Contre une decision du TAF : recours au Tribunal federal dans les 30 jours si le droit federal est en jeu, SAUF pour les permis pour lesquels il n'existe aucun droit (art. 83 let. c ch. 2 LTF — pas de recours au TF pour les autorisations discretionnaires). Le recours doit etre motive : il faut expliquer en quoi la decision viole le droit (art. 49 PA : violation du droit, constatation inexacte des faits, inopportunite). L'effet suspensif n'est pas automatique et doit etre demande. L'assistance juridique gratuite est accordee si les chances de succes ne sont pas nulles et que le requérant est indigent (art. 65 PA).",
+      "explication": "Le recours contre une decision en matiere de droit des étrangers suit un systeme a plusieurs niveaux. Contre une decision cantonale : recours au tribunal cantonal dans les 30 jours (selon la loi cantonale de procédure). Contre une decision du SEM : recours au TAF dans les 30 jours (art. 50 PA). Contre une decision du TAF : recours au Tribunal fédéral dans les 30 jours si le droit fédéral est en jeu, SAUF pour les permis pour lesquels il n'existe aucun droit (art. 83 let. c ch. 2 LTF — pas de recours au TF pour les autorisations discretionnaires). Le recours doit etre motive : il faut expliquer en quoi la decision viole le droit (art. 49 PA : violation du droit, constatation inexacte des faits, inopportunite). L'effet suspensif n'est pas automatique et doit etre demande. L'assistance juridique gratuite est accordee si les chances de succes ne sont pas nulles et que le requérant est indigent (art. 65 PA).",
       "articles": [
         {
           "ref": "PA 49",
@@ -3730,7 +3730,7 @@
         },
         {
           "ref": "LTF 83 let. c",
-          "titre": "Exceptions au recours en matiere de droit des etrangers",
+          "titre": "Exceptions au recours en matiere de droit des étrangers",
           "lien": "https://www.fedlex.admin.ch/eli/cc/2006/218/fr#art_83"
         }
       ],
@@ -3744,10 +3744,10 @@
           "resume": "Le TAF dispose d'un plein pouvoir d'examen en fait et en droit dans les recours contre les decisions du SEM."
         }
       ],
-      "modeleLettre": "Objet : Recours contre la decision du [autorite] du [date]\n\nAu [Tribunal cantonal / Tribunal administratif federal],\n\nJe soussigne(e) [nom, prenom], ne(e) le [date], national(e) de [pays],\n\nForme recours dans le délai legal contre la decision du [autorite] du [date], notifiee le [date], refusant [decrire l'objet : permis, renouvellement, regroupement].\n\nJe requiers :\n1. L'annulation de la decision attaquee\n2. L'octroi de [l'autorisation demandee]\n3. L'effet suspensif\n4. L'assistance juridique gratuite\n\nMotifs de recours :\n1. Violation du droit : [decrire]\n2. Constatation inexacte des faits : [decrire]\n\nPieces jointes : [decision attaquee, pieces justificatives]\n\n[Signature]",
+      "modeleLettre": "Objet : Recours contre la decision du [autorite] du [date]\n\nAu [Tribunal cantonal / Tribunal administratif federal],\n\nJe soussigne(e) [nom, prenom], ne(e) le [date], national(e) de [pays],\n\nForme recours dans le délai légal contre la decision du [autorite] du [date], notifiee le [date], refusant [decrire l'objet : permis, renouvellement, regroupement].\n\nJe requiers :\n1. L'annulation de la decision attaquee\n2. L'octroi de [l'autorisation demandee]\n3. L'effet suspensif\n4. L'assistance juridique gratuite\n\nMotifs de recours :\n1. Violation du droit : [decrire]\n2. Constatation inexacte des faits : [decrire]\n\nPieces jointes : [decision attaquee, pieces justificatives]\n\n[Signature]",
       "services": [
         {
-          "nom": "Tribunal administratif federal (TAF)",
+          "nom": "Tribunal administratif fédéral (TAF)",
           "url": "https://www.bvger.ch/fr",
           "canton": "VD"
         },
@@ -3770,11 +3770,11 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "PA/LTF/LEI etat 2025-01-01",
-    "match_description": "La personne veut contester une decision en matiere de droit des etrangers",
+    "sourceLoi": "PA/LTF/LEI état 2025-01-01",
+    "match_description": "La personne veut contester une decision en matiere de droit des étrangers",
     "profane_aliases": [
       "recours decision migration",
       "contester un refus de permis",
@@ -3784,7 +3784,7 @@
     ],
     "negative_signals": [
       "decision acceptee sans contestation",
-      "question sur le premier depot de demande"
+      "question sur le premier dépôt de demande"
     ],
     "required_facts": [
       "type de decision contestee",
@@ -3795,7 +3795,7 @@
   },
   {
     "id": "etrangers_regroupement",
-    "domaine": "etrangers",
+    "domaine": "étrangers",
     "sousDomaine": "regroupement",
     "tags": [
       "regroupement",
@@ -3853,7 +3853,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le regroupement familial permet de faire venir en Suisse son conjoint et ses enfants mineurs. Les conditions varient selon le statut : Permis C : droit au regroupement pour le conjoint et les enfants de moins de 18 ans (art. 43 LEI), demande dans les 5 ans (conjoint) ou 12 mois (enfants de plus de 12 ans). Permis B : possible si menage commun, logement adapte et pas de dependance a l'aide sociale (art. 44 LEI). Citoyen suisse : droit au regroupement pour le conjoint et les enfants (art. 42 LEI). Permis F : possible après 3 ans de sejour, avec logement adapte et autonomie financiere (art. 85 al. 7 LEI). Conditions generales : logement suffisant (pas de suroccupation), pas de dependance a l'aide sociale, respect des délais. Le regroupement familial inverse (parents) n'est possible que dans des cas exceptionnels (art. 8 CEDH). Le délai est strict : passe le délai, le regroupement devient discretionnaire.",
+      "explication": "Le regroupement familial permet de faire venir en Suisse son conjoint et ses enfants mineurs. Les conditions varient selon le statut : Permis C : droit au regroupement pour le conjoint et les enfants de moins de 18 ans (art. 43 LEI), demande dans les 5 ans (conjoint) ou 12 mois (enfants de plus de 12 ans). Permis B : possible si ménage commun, logement adapte et pas de dependance a l'aide sociale (art. 44 LEI). Citoyen suisse : droit au regroupement pour le conjoint et les enfants (art. 42 LEI). Permis F : possible après 3 ans de sejour, avec logement adapte et autonomie financiere (art. 85 al. 7 LEI). Conditions générales : logement suffisant (pas de suroccupation), pas de dependance a l'aide sociale, respect des délais. Le regroupement familial inverse (parents) n'est possible que dans des cas exceptionnels (art. 8 CEDH). Le délai est strict : passe le délai, le regroupement devient discretionnaire.",
       "articles": [
         {
           "ref": "LEI 42",
@@ -3886,7 +3886,7 @@
           "resume": "L'art. 8 CEDH impose un examen de proportionnalite individuaelise même en cas de dependance partielle a l'aide sociale."
         }
       ],
-      "modeleLettre": "Objet : Demande de regroupement familial\n\nA [Service cantonal des migrations],\n\nJe soussigne(e) [nom, prenom], titulaire du permis [type], N° [numero], domicilie(e) a [adresse],\n\nDEMANDE le regroupement familial au sens de l'art. [42/43/44] LEI pour :\n- [Nom, prenom, date de naissance, nationalite du membre de famille]\n- Lien de parente : [conjoint/enfant]\n\nJe remplis les conditions suivantes :\n- Logement adapte : [adresse, nombre de pieces]\n- Revenus : CHF [montant] par mois (pieces justificatives jointes)\n- Pas de dependance a l'aide sociale\n\nPieces jointes : [acte de mariage/naissance, passeport, bail, fiches de salaire, extrait de poursuite vierge]\n\nVeuillez agreer mes salutations distinguees.\n\n[Signature]",
+      "modeleLettre": "Objet : Demande de regroupement familial\n\nA [Service cantonal des migrations],\n\nJe soussigne(e) [nom, prenom], titulaire du permis [type], N° [numero], domicilie(e) a [adresse],\n\nDEMANDE le regroupement familial au sens de l'art. [42/43/44] LEI pour :\n- [Nom, prenom, date de naissance, nationalite du membre de famille]\n- Lien de parente : [conjoint/enfant]\n\nJe remplis les conditions suivantes :\n- Logement adapte : [adresse, nombre de pieces]\n- Revenus : CHF [montant] par mois (pieces justificatives jointes)\n- Pas de dependance a l'aide sociale\n\nPieces jointes : [acte de mariage/naissance, passeport, bail, fiches de salaire, extrait de poursuite vierge]\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
       "services": [
         {
           "nom": "Service de la population (SPOP) VD",
@@ -3913,10 +3913,10 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
     },
     "maj": "2026-04-07",
-    "sourceLoi": "LEI etat 2025-01-01",
+    "sourceLoi": "LEI état 2025-01-01",
     "match_description": "La personne veut faire venir sa famille en Suisse par regroupement familial",
     "profane_aliases": [
       "regroupement familial Suisse",

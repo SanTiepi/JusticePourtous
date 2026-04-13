@@ -44,12 +44,21 @@
       <div id="noSession">
         <div class="card premium-offer">
           <h3>Analyse juridique personnalisée</h3>
+          <p class="premium-features">Certificat de couverture, argumentation contradictoire, questions ciblées, règles normatives compilées.</p>
           <div class="premium-price-box">
             <div class="premium-price-label">Coût unique</div>
             <div class="premium-price-amount">CHF 50</div>
             <div class="premium-price-detail">Wallet de CHF 30 de crédits IA — 200 à 1100 analyses selon complexité</div>
           </div>
           <button class="btn btn-primary btn-lg w-full" onclick="acheter()">Acheter un wallet &mdash; CHF 50</button>
+
+          <div class="premium-code-section">
+            <p class="premium-code-label">Vous avez un code d'accès ?</p>
+            <div class="premium-code-row">
+              <input type="text" id="codeInput" class="input" placeholder="Entrez votre code">
+              <button class="btn btn-secondary" onclick="activerCode()">Activer</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -117,6 +126,16 @@
     });
 
     var sessionCode = localStorage.getItem('jb_session');
+    var lastQuery = '';
+
+    function activerCode() {
+      var code = document.getElementById('codeInput').value.trim();
+      if (!code) return;
+      sessionCode = code;
+      localStorage.setItem('jb_session', sessionCode);
+      showSession();
+      refreshCredits();
+    }
 
     async function acheter() {
       try {
@@ -153,26 +172,193 @@
     }
 
     async function analyserQuestion() {
-      var q = document.getElementById('question').value;
-      if (!q.trim()) return;
+      var q = document.getElementById('question').value.trim();
+      if (!q) return;
+      lastQuery = q;
+
+      var box = document.getElementById('reponseIA');
+      var txt = document.getElementById('reponseTexte');
+      txt.innerHTML = '<div class="loading">Analyse en cours...</div>';
+      box.classList.remove('hidden');
+
       try {
-        var res = await fetch('/api/premium/analyser', {
+        var res = await fetch('/api/premium/analyze-v3', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ session: sessionCode, question: q })
+          body: JSON.stringify({ texte: q, session: sessionCode })
         });
         var data = await res.json();
-        var box = document.getElementById('reponseIA');
-        var txt = document.getElementById('reponseTexte');
-        if (data.error) { txt.textContent = data.error; }
-        else { txt.textContent = data.reponse; }
-        box.classList.remove('hidden');
+        if (data.error) {
+          txt.textContent = data.error;
+          return;
+        }
+        renderV4Response(data);
         refreshCredits();
       } catch (e) {
-        document.getElementById('reponseTexte').textContent = 'Erreur lors de l\'analyse. Réessayez.';
-        document.getElementById('reponseIA').classList.remove('hidden');
+        txt.textContent = 'Erreur lors de l\'analyse. Réessayez.';
       }
     }
+
+    async function submitAnswers() {
+      var answers = {};
+      document.querySelectorAll('.q-answer.selected').forEach(function(el) {
+        answers[el.dataset.qid] = el.dataset.value;
+      });
+      if (Object.keys(answers).length === 0) return;
+
+      var txt = document.getElementById('reponseTexte');
+      txt.innerHTML = '<div class="loading">Affinage en cours...</div>';
+
+      try {
+        var res = await fetch('/api/premium/analyze-v3/refine', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ texte: lastQuery, reponses: answers })
+        });
+        var data = await res.json();
+        if (data.error) { txt.textContent = data.error; return; }
+        renderV4Response(data);
+      } catch (e) {
+        txt.textContent = 'Erreur lors de l\'affinage.';
+      }
+    }
+
+    function renderV4Response(data) {
+      var txt = document.getElementById('reponseTexte');
+      var html = '';
+
+      // Questions (si l'analyse n'est pas complète)
+      if (data.questions && data.questions.length > 0 && !data.complet) {
+        html += '<div class="v4-questions">';
+        html += '<h4>Questions pour affiner l\'analyse</h4>';
+        data.questions.forEach(function(q) {
+          html += '<div class="v4-question">';
+          html += '<p class="v4-q-text">' + esc(q.question || q.text || '') + '</p>';
+          if (q.importance === 'critique') html += '<span class="badge badge-complexe">Critique</span>';
+          if (q.choix && q.choix.length) {
+            html += '<div class="v4-q-choices">';
+            q.choix.forEach(function(c) {
+              html += '<button class="q-answer" data-qid="' + esc(q.id) + '" data-value="' + esc(c) + '" onclick="selectAnswer(this)">' + esc(c) + '</button>';
+            });
+            html += '</div>';
+          }
+          html += '</div>';
+        });
+        html += '<button class="btn btn-primary mt-lg" onclick="submitAnswers()">Affiner l\'analyse</button>';
+        html += '</div>';
+      }
+
+      // Résumé
+      if (data.resume) {
+        html += '<div class="card-highlight"><h4>Résumé</h4><p>' + esc(data.resume) + '</p></div>';
+      }
+
+      // Verification status
+      if (data.verification_status) {
+        var vsCls = data.verification_status === 'verified' ? 'badge-simple' : data.verification_status === 'degraded' ? 'badge-moyen' : 'badge-complexe';
+        html += '<p><span class="badge ' + vsCls + '">' + esc(data.verification_status) + '</span></p>';
+      }
+
+      // Claims (arguments vérifiés)
+      if (data.claims && data.claims.length) {
+        html += '<div class="card"><h4>Arguments vérifiés</h4>';
+        data.claims.forEach(function(c) {
+          html += '<div class="v4-claim"><strong>' + esc(c.claim || c.text || '') + '</strong>';
+          if (c.base_legale) html += '<br><span class="legal-ref">' + esc(c.base_legale) + '</span>';
+          if (c.certainty) html += ' <span class="confidence-badge confidence-' + esc(c.certainty) + '"><span class="confidence-dot"></span>' + esc(c.certainty) + '</span>';
+          html += '</div>';
+        });
+        html += '</div>';
+      }
+
+      // Objections
+      if (data.objections_summary && data.objections_summary.length) {
+        html += '<div class="card card-warn"><h4>Objections possibles</h4>';
+        data.objections_summary.forEach(function(o) {
+          html += '<p>' + esc(o.text || o.objection || JSON.stringify(o)) + '</p>';
+        });
+        html += '</div>';
+      }
+
+      // Délais critiques
+      if (data.critical_deadlines && data.critical_deadlines.length) {
+        html += '<div class="card"><h4>Délais critiques</h4>';
+        data.critical_deadlines.forEach(function(d) {
+          html += '<div class="delai-card"><div class="delai-value">' + esc(d.delai || d.duree || '?') + '</div>';
+          html += '<div class="delai-info"><div class="delai-procedure">' + esc(d.procedure || d.label || '') + '</div></div></div>';
+        });
+        html += '</div>';
+      }
+
+      // Erreurs fatales
+      if (data.fatal_errors && data.fatal_errors.length) {
+        html += '<div class="card card-danger"><h4>Erreurs à éviter absolument</h4>';
+        data.fatal_errors.forEach(function(e) {
+          html += '<div class="ae-card"><div class="ae-icon critique">!</div><div class="ae-content">';
+          html += '<div class="ae-title">' + esc(e.erreur || e.text || JSON.stringify(e)) + '</div>';
+          if (e.consequence) html += '<div class="ae-consequence">' + esc(e.consequence) + '</div>';
+          html += '</div></div>';
+        });
+        html += '</div>';
+      }
+
+      // Prochaines actions
+      if (data.next_actions) {
+        var na = data.next_actions;
+        if (na.etapes && na.etapes.length) {
+          html += '<div class="card"><h4>Plan d\'action</h4><ol class="steps-list">';
+          na.etapes.forEach(function(e) {
+            html += '<li><div>' + esc(typeof e === 'string' ? e : e.action || e.description || JSON.stringify(e)) + '</div></li>';
+          });
+          html += '</ol></div>';
+        }
+      }
+
+      // Certificate
+      if (data.certificate) {
+        var cert = data.certificate;
+        html += '<div class="card"><h4>Certificat de couverture</h4>';
+        html += '<p>Score : <strong>' + (cert.aggregate?.score || cert.score || '?') + '%</strong></p>';
+        if (cert.issues) {
+          cert.issues.forEach(function(iss) {
+            html += '<div class="v4-cert-issue">';
+            html += '<span class="badge ' + (iss.status === 'sufficient' ? 'badge-simple' : iss.status === 'limited' ? 'badge-moyen' : 'badge-complexe') + '">' + esc(iss.status) + '</span> ';
+            html += esc(iss.qualification || iss.issue_id || '') + ' — ' + iss.score + '%';
+            if (iss.missing && iss.missing.length) {
+              html += '<ul>';
+              iss.missing.forEach(function(m) { html += '<li>' + esc(m.label) + (m.critical ? ' <span class="badge badge-complexe">Critique</span>' : '') + '</li>'; });
+              html += '</ul>';
+            }
+            html += '</div>';
+          });
+        }
+        html += '</div>';
+      }
+
+      // Besoin avocat
+      if (data.need_lawyer) {
+        html += '<div class="avocat-cta"><div class="avocat-cta-text"><strong>Un avocat est recommandé</strong>';
+        if (data.need_lawyer_reason) html += '<p>' + esc(data.need_lawyer_reason) + '</p>';
+        html += '</div><a href="/annuaire.html" class="btn btn-red">Trouver un avocat</a></div>';
+      }
+
+      // Sources count
+      if (data.sources_count) {
+        html += '<div class="source-footer"><span>Analyse basée sur <span class="source-count">' + data.sources_count + ' sources</span></span></div>';
+      }
+
+      if (!html) html = '<p>Aucun résultat. Vérifiez votre description.</p>';
+      txt.innerHTML = html;
+    }
+
+    function selectAnswer(el) {
+      // Toggle selected within same question group
+      var qid = el.dataset.qid;
+      document.querySelectorAll('.q-answer[data-qid="' + qid + '"]').forEach(function(b) { b.classList.remove('selected'); });
+      el.classList.add('selected');
+    }
+
+    function esc(s) { return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : ''; }
 
     function showSession() {
       document.getElementById('noSession').classList.add('hidden');

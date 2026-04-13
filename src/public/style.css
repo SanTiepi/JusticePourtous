@@ -3127,6 +3127,108 @@ body.has-disclaimer {
 .w-full { width: 100%; }
 .mt-lg { margin-top: var(--space-lg); }
 
+/* Premium features list */
+.premium-features {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+/* Premium code section */
+.premium-code-section {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.premium-code-label {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+
+.premium-code-row {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.premium-code-row .input {
+  flex: 1;
+  height: 44px;
+}
+
+/* V4 Response components */
+.v4-questions {
+  background: rgba(44, 95, 124, 0.04);
+  border: 1px solid rgba(44, 95, 124, 0.15);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.v4-questions h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.v4-question {
+  margin-bottom: var(--space-lg);
+}
+
+.v4-q-text {
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.v4-q-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.q-answer {
+  padding: var(--space-sm) var(--space-md);
+  border: 1.5px solid var(--border-default);
+  border-radius: var(--radius-md);
+  background: var(--surface-elevated);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all var(--duration-fast);
+}
+
+.q-answer:hover {
+  border-color: var(--accent-secondary);
+  background: rgba(44, 95, 124, 0.04);
+}
+
+.q-answer.selected {
+  border-color: var(--accent-secondary);
+  background: rgba(44, 95, 124, 0.1);
+  color: var(--accent-secondary);
+  font-weight: 600;
+}
+
+/* V4 claim card */
+.v4-claim {
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.v4-claim:last-child { border-bottom: none; }
+
+/* V4 certificate issue */
+.v4-cert-issue {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.v4-cert-issue:last-child { border-bottom: none; }
+.v4-cert-issue ul { padding-left: var(--space-lg); margin-top: var(--space-xs); }
+.v4-cert-issue li { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: var(--space-xs); }
+
 /* Annuaire subtitle */
 .annuaire-subtitle {
   font-size: 1.125rem;

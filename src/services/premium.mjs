@@ -19,6 +19,7 @@ function generateSessionCode() {
 }
 
 function isExpired(wallet) {
+  if (wallet.isTest) return false; // test accounts never expire
   const now = Date.now();
   const expiryMs = WALLET_EXPIRY_DAYS * 24 * 60 * 60 * 1000;
   return (now - wallet.createdAt) > expiryMs;
@@ -49,6 +50,18 @@ function debit(wallet, amount, action, details = {}) {
   });
   return null; // no error
 }
+
+// --- Test account (created at startup, never expires, infinite credits) ---
+const TEST_SESSION = 'test-robin-2026';
+wallets.set(TEST_SESSION, {
+  sessionCode: TEST_SESSION,
+  solde: 999999, // effectively unlimited
+  createdAt: Date.now(),
+  isTest: true,
+  historique: [
+    { action: 'compte_test', montant: 0, date: new Date().toISOString() }
+  ]
+});
 
 export function acheterWallet() {
   const sessionCode = generateSessionCode();

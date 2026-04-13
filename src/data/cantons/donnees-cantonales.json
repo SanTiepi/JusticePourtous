@@ -856,5 +856,405 @@
       "telephone": "032 627 89 40",
       "url": "https://www.so.ch/verwaltung/volkswirtschaftsdepartement/amt-fuer-wirtschaft-und-arbeit/rav"
     }
+  },
+  {
+    "code": "BL",
+    "nom": "Bâle-Campagne",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Richtlinien Konferenz der Betreibungs- und Konkursbeamten BL"
+    },
+    "conciliationBail": {
+      "autorite": "Schlichtungsbehörde für Mietangelegenheiten",
+      "adresse": "Variable selon le district (Arlesheim, Liestal, Sissach, Waldenburg, Laufen)",
+      "cout": "Gratuit",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Betreibungsamt Arlesheim",
+      "adresse": "Kirchgasse 5, 4144 Arlesheim",
+      "telephone": "061 552 12 12"
+    },
+    "ORP": {
+      "nom": "RAV Baselland",
+      "telephone": "061 552 14 14",
+      "url": "https://www.baselland.ch/politik-und-behorden/direktionen/volkswirtschafts-und-gesundheitsdirektion/amt-fur-industrie-gewerbe-und-arbeit/rav"
+    },
+    "APEA": {
+      "nom": "KESB Baselland",
+      "adresse": "Variable selon Bezirk",
+      "telephone": "061 552 59 59",
+      "url": "https://www.baselland.ch/politik-und-behorden/direktionen/sicherheitsdirektion/kesb"
+    }
+  },
+  {
+    "code": "SH",
+    "nom": "Schaffhouse",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Richtlinien KBV SH"
+    },
+    "conciliationBail": {
+      "autorite": "Schlichtungsbehörde in Mietsachen",
+      "adresse": "Herrenacker 4, 8200 Schaffhausen",
+      "cout": "Gratuit",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Betreibungsamt Schaffhausen",
+      "adresse": "Mühlentalstrasse 105, 8200 Schaffhausen",
+      "telephone": "052 632 74 51"
+    },
+    "ORP": {
+      "nom": "RAV Schaffhausen",
+      "telephone": "052 632 74 74",
+      "url": "https://www.sh.ch/CMS/Webseite/Kanton-Schaffhausen/Beh-rde/Verwaltung/Volkswirtschaftsdepartement/Arbeitsamt-1174.html"
+    },
+    "APEA": {
+      "nom": "KESB Schaffhausen",
+      "adresse": "Mühlentalstrasse 105, 8200 Schaffhausen",
+      "telephone": "052 632 78 78"
+    }
+  },
+  {
+    "code": "AR",
+    "nom": "Appenzell Rhodes-Extérieures",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Richtlinien KBV AR"
+    },
+    "conciliationBail": {
+      "autorite": "Schlichtungsbehörde in Mietsachen",
+      "adresse": "Regierungsgebäude, 9100 Herisau",
+      "cout": "Gratuit",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Betreibungsamt Appenzell A.Rh.",
+      "adresse": "Regierungsgebäude, 9100 Herisau",
+      "telephone": "071 353 63 63"
+    },
+    "ORP": {
+      "nom": "RAV Appenzell Ausserrhoden",
+      "telephone": "071 353 67 67",
+      "url": "https://www.ar.ch/verwaltung/departement-bildung-und-kultur/amt-fuer-wirtschaft-und-arbeit/rav"
+    },
+    "APEA": {
+      "nom": "KESB Appenzell Ausserrhoden",
+      "adresse": "Regierungsgebäude, 9100 Herisau",
+      "telephone": "071 353 65 65"
+    }
+  },
+  {
+    "code": "AI",
+    "nom": "Appenzell Rhodes-Intérieures",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Richtlinien KBV AI"
+    },
+    "conciliationBail": {
+      "autorite": "Vermittleramt",
+      "adresse": "Marktgasse 2, 9050 Appenzell",
+      "cout": "Gratuit",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Betreibungsamt Appenzell I.Rh.",
+      "adresse": "Marktgasse 2, 9050 Appenzell",
+      "telephone": "071 788 93 11"
+    },
+    "ORP": {
+      "nom": "RAV Appenzell Innerrhoden",
+      "telephone": "071 788 94 47",
+      "url": "https://www.ai.ch/verwaltung/volkswirtschaftsdepartement/arbeitsamt"
+    },
+    "APEA": {
+      "nom": "KESB Appenzell Innerrhoden",
+      "adresse": "Marktgasse 2, 9050 Appenzell",
+      "telephone": "071 788 93 21"
+    }
+  },
+  {
+    "code": "GR",
+    "nom": "Grisons",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Richtlinien KBV GR"
+    },
+    "conciliationBail": {
+      "autorite": "Schlichtungsbehörde für Mietsachen / Autorità di conciliazione in materia di locazione",
+      "adresse": "Variable selon Bezirk/Region (Chur, Davos, Engadin, etc.)",
+      "cout": "Gratuit",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Betreibungsamt Chur",
+      "adresse": "Grabenstrasse 28, 7000 Chur",
+      "telephone": "081 254 36 30"
+    },
+    "ORP": {
+      "nom": "RAV Graubünden",
+      "telephone": "081 257 23 80",
+      "url": "https://www.gr.ch/DE/institutionen/verwaltung/dvs/awa/rav/Seiten/default.aspx"
+    },
+    "APEA": {
+      "nom": "KESB Graubünden",
+      "adresse": "Variable selon Region",
+      "telephone": "081 257 25 25",
+      "url": "https://www.gr.ch/DE/institutionen/verwaltung/djsg/afb/kesb"
+    }
+  },
+  {
+    "code": "TG",
+    "nom": "Thurgovie",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Richtlinien KBV TG"
+    },
+    "conciliationBail": {
+      "autorite": "Schlichtungsbehörde in Mietsachen",
+      "adresse": "Variable selon Bezirk (Frauenfeld, Kreuzlingen, Weinfelden, etc.)",
+      "cout": "Gratuit",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Betreibungsamt Frauenfeld",
+      "adresse": "Schlossmühlestrasse 15, 8500 Frauenfeld",
+      "telephone": "052 724 15 60"
+    },
+    "ORP": {
+      "nom": "RAV Thurgau",
+      "telephone": "058 345 58 80",
+      "url": "https://awa.tg.ch/rav.html/8260"
+    },
+    "APEA": {
+      "nom": "KESB Thurgau",
+      "adresse": "Variable selon Bezirk",
+      "telephone": "058 345 76 00",
+      "url": "https://kesb.tg.ch"
+    }
+  },
+  {
+    "code": "UR",
+    "nom": "Uri",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Richtlinien KBV UR"
+    },
+    "conciliationBail": {
+      "autorite": "Schlichtungsbehörde in Mietsachen",
+      "adresse": "Rathausplatz 1, 6460 Altdorf",
+      "cout": "Gratuit",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Betreibungsamt Uri",
+      "adresse": "Rathausplatz 1, 6460 Altdorf",
+      "telephone": "041 875 21 31"
+    },
+    "ORP": {
+      "nom": "RAV Uri",
+      "telephone": "041 875 24 60",
+      "url": "https://www.ur.ch/aemter/5230"
+    },
+    "APEA": {
+      "nom": "KESB Uri",
+      "adresse": "Rathausplatz 1, 6460 Altdorf",
+      "telephone": "041 875 20 42"
+    }
+  },
+  {
+    "code": "SZ",
+    "nom": "Schwyz",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Richtlinien KBV SZ"
+    },
+    "conciliationBail": {
+      "autorite": "Schlichtungsbehörde in Mietsachen",
+      "adresse": "Variable selon Bezirk (Schwyz, Einsiedeln, etc.)",
+      "cout": "Gratuit",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Betreibungsamt Schwyz",
+      "adresse": "Bahnhofstrasse 9, 6430 Schwyz",
+      "telephone": "041 819 20 50"
+    },
+    "ORP": {
+      "nom": "RAV Schwyz",
+      "telephone": "041 819 16 55",
+      "url": "https://www.sz.ch/privatpersonen/arbeit-und-stellensuche/rav.html"
+    },
+    "APEA": {
+      "nom": "KESB Schwyz",
+      "adresse": "Variable selon Bezirk",
+      "telephone": "041 819 19 19"
+    }
+  },
+  {
+    "code": "OW",
+    "nom": "Obwald",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Richtlinien KBV OW"
+    },
+    "conciliationBail": {
+      "autorite": "Schlichtungsbehörde in Mietsachen",
+      "adresse": "Rathaus, 6060 Sarnen",
+      "cout": "Gratuit",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Betreibungsamt Obwalden",
+      "adresse": "St. Antonistrasse 4, 6060 Sarnen",
+      "telephone": "041 666 62 92"
+    },
+    "ORP": {
+      "nom": "RAV Obwalden",
+      "telephone": "041 666 63 42",
+      "url": "https://www.ow.ch/verwaltung/aemter/awa"
+    },
+    "APEA": {
+      "nom": "KESB Obwalden",
+      "adresse": "St. Antonistrasse 4, 6060 Sarnen",
+      "telephone": "041 666 62 16"
+    }
+  },
+  {
+    "code": "NW",
+    "nom": "Nidwald",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Richtlinien KBV NW"
+    },
+    "conciliationBail": {
+      "autorite": "Schlichtungsbehörde in Mietsachen",
+      "adresse": "Rathausplatz 1, 6371 Stans",
+      "cout": "Gratuit",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Betreibungsamt Nidwalden",
+      "adresse": "Engelbergstrasse 34, 6371 Stans",
+      "telephone": "041 618 73 50"
+    },
+    "ORP": {
+      "nom": "RAV Nidwalden",
+      "telephone": "041 618 76 33",
+      "url": "https://www.nw.ch/verwaltung/aemter/rav"
+    },
+    "APEA": {
+      "nom": "KESB Nidwalden",
+      "adresse": "Engelbergstrasse 34, 6371 Stans",
+      "telephone": "041 618 76 10"
+    }
+  },
+  {
+    "code": "GL",
+    "nom": "Glaris",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Richtlinien KBV GL"
+    },
+    "conciliationBail": {
+      "autorite": "Schlichtungsbehörde in Mietsachen",
+      "adresse": "Spielhof 1, 8750 Glarus",
+      "cout": "Gratuit",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Betreibungsamt Glarus",
+      "adresse": "Spielhof 1, 8750 Glarus",
+      "telephone": "055 646 61 40"
+    },
+    "ORP": {
+      "nom": "RAV Glarus",
+      "telephone": "055 646 67 40",
+      "url": "https://www.gl.ch/verwaltung/volkswirtschaft-und-inneres/abteilung-wirtschaft-und-arbeit/rav"
+    },
+    "APEA": {
+      "nom": "KESB Glarus",
+      "adresse": "Spielhof 1, 8750 Glarus",
+      "telephone": "055 646 67 23"
+    }
+  },
+  {
+    "code": "ZG",
+    "nom": "Zoug",
+    "minimumVitalLP": {
+      "seul": 1200,
+      "monoparental": 1350,
+      "couple": 1700,
+      "enfantMoins10": 400,
+      "enfantPlus10": 600,
+      "source": "Richtlinien KBV ZG"
+    },
+    "conciliationBail": {
+      "autorite": "Schlichtungsbehörde in Mietsachen",
+      "adresse": "Aabachstrasse 5, 6300 Zug",
+      "cout": "Gratuit",
+      "source": "CPC art. 113"
+    },
+    "officeDesPoursuite": {
+      "nom": "Betreibungsamt Zug",
+      "adresse": "Aabachstrasse 5, 6300 Zug",
+      "telephone": "041 728 55 80"
+    },
+    "ORP": {
+      "nom": "RAV Zug",
+      "telephone": "041 728 55 20",
+      "url": "https://www.zg.ch/behoerden/volkswirtschaftsdirektion/amt-fuer-wirtschaft-und-arbeit/rav"
+    },
+    "APEA": {
+      "nom": "KESB Zug",
+      "adresse": "Aabachstrasse 5, 6300 Zug",
+      "telephone": "041 728 55 40",
+      "url": "https://www.zg.ch/behoerden/direktion-des-innern/kesb"
+    }
   }
 ]

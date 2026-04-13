@@ -66,8 +66,9 @@
 - **Freshness check** (scripts/freshness-check.mjs) — 86% fresh, 0 stale, 622 sans date
 - **Source Frontier** (source-frontier.mjs) — 23 sources cartographiées (dont 6 vulgarisation), 22% ingérées
 - **Normative compiler** (normative-compiler.mjs) — 14 règles juridiques en code exécutable (bail/travail/dettes/transversal)
-- **Barèmes nationaux** — taux hypothécaire OFL 1.75%, minimum vital 14 cantons, 5 CCT principales
-- **14 cantons** enrichis (VD/GE/VS/FR/NE/JU/ZH/BE/BS/LU/SG/AG/TI/SO)
+- **Barèmes nationaux** — taux hypothécaire OFL 1.75%, minimum vital 26 cantons, 5 CCT principales
+- **26 cantons** enrichis (couverture nationale complète)
+- **Vulgarisation** — ASLOCA Kit ingéré (30 Q&A citoyennes bail), vulgarisation-loader.mjs
 - **Deep analysis** (deep-analysis.mjs) — multi-tour adaptatif: comprendre → approfondir → conclure
 - **LLM-as-judge** (llm-judge.mjs) — évaluation qualitative par LLM
 - **LLM-first triage** — Haiku identifie la situation, keyword = fallback only

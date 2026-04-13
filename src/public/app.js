@@ -612,12 +612,83 @@ function renderEnrichedResult(data, query, container) {
     html += '</div>';
   }
 
+  // V4: Vulgarisation — citizen-friendly Q&As
+  var vulg = data.vulgarisation || null;
+  if (vulg && vulg.questions_citoyennes && vulg.questions_citoyennes.length) {
+    html += '<div class="card"' + stagger() + '>';
+    html += '<h3>Questions frequentes des citoyens</h3>';
+    vulg.questions_citoyennes.slice(0, 5).forEach(function(q, i) {
+      var qId = 'vulg-' + i;
+      html += '<div class="vulg-qa">';
+      html += '<div class="vulg-question" onclick="toggleTemplate(\'' + qId + '\')">';
+      html += '<span class="vulg-q-mark">?</span>';
+      html += '<span>' + escHtml(q.question) + '</span>';
+      html += '<span class="template-toggle" id="toggle-' + qId + '">+</span>';
+      html += '</div>';
+      html += '<div class="hidden vulg-answer" id="' + qId + '">';
+      html += '<div class="vulg-short"><strong>' + escHtml(q.reponse_courte) + '</strong></div>';
+      html += '<div class="vulg-detail">' + escHtml(q.reponse_detail) + '</div>';
+      html += '<div class="vulg-source">Source: ASLOCA Kit ' + escHtml(q.numero || '') + '</div>';
+      html += '</div>';
+      html += '</div>';
+    });
+    html += '</div>';
+  }
+
+  // V4: Vulgarisation anti-erreurs (supplement existing)
+  if (vulg && vulg.anti_erreurs && vulg.anti_erreurs.length && (!antiErreurs || antiErreurs.length === 0)) {
+    html += '<div class="card"' + stagger() + '>';
+    html += '<h3>Erreurs a eviter</h3>';
+    vulg.anti_erreurs.slice(0, 4).forEach(function(ae) {
+      html += '<div class="ae-card">';
+      html += '<div class="ae-icon elevee">!</div>';
+      html += '<div class="ae-content">';
+      html += '<div class="ae-title">' + escHtml(ae.erreur) + '</div>';
+      html += '<div class="ae-correction" style="font-size:0.8rem;color:var(--text-tertiary)">Source: ASLOCA ' + escHtml(ae.question_ref || '') + '</div>';
+      html += '</div></div>';
+    });
+    html += '</div>';
+  }
+
+  // V4: Vulgarisation deadlines (supplement existing)
+  if (vulg && vulg.delais && vulg.delais.length && (!delais || delais.length === 0)) {
+    html += '<div class="card"' + stagger() + '>';
+    html += '<h3>Delais a connaitre</h3>';
+    vulg.delais.forEach(function(d) {
+      html += '<div class="delai-card">';
+      html += '<div class="delai-value">' + escHtml(d.delai) + '</div>';
+      html += '<div class="delai-info">';
+      html += '<div class="delai-procedure">' + escHtml(d.contexte) + '</div>';
+      html += '</div></div>';
+    });
+    html += '</div>';
+  }
+
+  // V4: Normative rules — applicable legal rules
+  var normRules = data.normative_rules || [];
+  if (normRules.length) {
+    html += '<div class="card"' + stagger() + '>';
+    html += '<h3>Regles juridiques applicables</h3>';
+    normRules.slice(0, 5).forEach(function(r) {
+      html += '<div class="norm-rule">';
+      html += '<div class="norm-rule-header">';
+      html += '<span class="norm-rule-label">' + escHtml(r.label) + '</span>';
+      html += '<span class="tier-badge tier-1">' + escHtml(r.base_legale) + '</span>';
+      html += '</div>';
+      if (r.consequence_text) html += '<div class="norm-rule-text">' + escHtml(r.consequence_text) + '</div>';
+      html += '</div>';
+    });
+    html += '</div>';
+  }
+
   // Source footer — meta stats
   var meta = data._meta || {};
   html += '<div class="source-footer">';
   html += '<span>Sources : <span class="source-count">' + (meta.articlesCount || articles.length || 0) + ' articles</span>, ';
-  html += '<span class="source-count">' + (meta.jurisprudenceCount || juris.length || 0) + ' arrets</span></span>';
-  html += '</div>';
+  html += '<span class="source-count">' + (meta.jurisprudenceCount || juris.length || 0) + ' arrets</span>';
+  if (vulg) html += ', <span class="source-count">ASLOCA Kit</span>';
+  if (normRules.length) html += ', <span class="source-count">' + normRules.length + ' regles</span>';
+  html += '</span></div>';
 
   // Bottom actions
   html += renderSearchActions(query, true);

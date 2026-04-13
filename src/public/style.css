@@ -2804,6 +2804,24 @@ body.has-disclaimer {
   color: var(--text-secondary);
 }
 
+/* V4: Vulgarisation Q&A */
+.vulg-qa { margin-bottom: 0.5rem; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.vulg-question { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; cursor: pointer; background: var(--bg-secondary); transition: background 0.15s; }
+.vulg-question:hover { background: var(--bg-tertiary, #f0f0f0); }
+.vulg-q-mark { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; background: var(--accent-primary, #2563eb); color: #fff; font-weight: 700; font-size: 0.8rem; flex-shrink: 0; }
+.vulg-question .template-toggle { margin-left: auto; font-size: 1.2rem; color: var(--text-secondary); flex-shrink: 0; }
+.vulg-answer { padding: 1rem; border-top: 1px solid var(--border); }
+.vulg-short { margin-bottom: 0.5rem; }
+.vulg-detail { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
+.vulg-source { margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-tertiary); }
+
+/* V4: Normative rules */
+.norm-rule { padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+.norm-rule:last-child { border-bottom: none; }
+.norm-rule-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.25rem; flex-wrap: wrap; }
+.norm-rule-label { font-weight: 600; }
+.norm-rule-text { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; }
+
 @media (max-width: 768px) {
   .result-header { flex-direction: column; align-items: flex-start; }
   .delai-card { flex-direction: column; text-align: center; }

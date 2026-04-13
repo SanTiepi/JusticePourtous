@@ -27,6 +27,7 @@ import { analyzeIssue } from './services/argumentation-engine.mjs';
 import { analyzeFrontier, getNextIngestionPriorities, getSourceCatalog } from './services/source-frontier.mjs';
 import { compile as compileNormative, getRuleDefinitions } from './services/normative-compiler.mjs';
 import { deepAnalysis } from './services/deep-analysis.mjs';
+import { getVulgarisationForFiche, getVulgarisationStats } from './services/vulgarisation-loader.mjs';
 import {
   getAllArticles, searchArticles,
   getAllArrets, searchArrets,
@@ -375,6 +376,31 @@ const server = createServer(async (req, res) => {
       const canton = url.searchParams.get('canton');
       if (!q) return json(res, 400, { error: 'Paramètre q requis', disclaimer: DISCLAIMER });
 
+      // V4 enrichment: add vulgarisation + normative compiler data
+      function enrichV4(data) {
+        if (!data || data.error) return data;
+        const ficheId = data.fiche?.id;
+        if (ficheId) {
+          // Vulgarisation: citizen Q&As, anti-erreurs, deadlines from ASLOCA etc.
+          const vulg = getVulgarisationForFiche(ficheId);
+          if (vulg) data.vulgarisation = vulg;
+
+          // Normative compiler: applicable rules for this domain
+          const domaine = data.fiche?.domaine;
+          if (domaine) {
+            try {
+              const compiled = compileNormative({ domaine });
+              if (compiled.rules_applicable > 0) {
+                data.normative_rules = compiled.results
+                  .filter(r => r.applicable)
+                  .map(r => ({ rule_id: r.rule_id, label: r.label, base_legale: r.base_legale, consequence_text: r.consequence?.text }));
+              }
+            } catch { /* normative compiler is optional */ }
+          }
+        }
+        return data;
+      }
+
       // LLM-first: use triage engine which calls LLM navigator
       const triageResult = await triage(q, canton);
       if (triageResult.status === 200 && triageResult.data?.trouve) {
@@ -382,7 +408,7 @@ const server = createServer(async (req, res) => {
         const ficheId = triageResult.data.ficheId;
         const enriched = queryByProblem(q, canton);
         // Merge LLM intelligence with enriched data
-        return json(res, 200, {
+        return json(res, 200, enrichV4({
           ...(enriched.status === 200 ? enriched.data : {}),
           // Override with LLM-identified fiche if different
           llm_triage: {
@@ -395,14 +421,14 @@ const server = createServer(async (req, res) => {
           },
           triage_method: 'llm',
           disclaimer: DISCLAIMER,
-        });
+        }));
       }
 
       // Fallback: keyword search (degraded mode)
       const result = queryByProblem(q, canton);
       return json(res, result.status, result.error
         ? { error: result.error, disclaimer: DISCLAIMER }
-        : { ...result.data, triage_method: 'keyword_fallback', disclaimer: DISCLAIMER });
+        : enrichV4({ ...result.data, triage_method: 'keyword_fallback', disclaimer: DISCLAIMER }));
     }
 
     // Citoyen: cherche par problème

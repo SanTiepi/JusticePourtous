@@ -210,14 +210,8 @@ async function loadResultat(ficheId) {
   html += '<p>' + r.explication + '</p>';
   html += '</div>';
 
-  // Avocat CTA — toujours visible apres le resume
-  html += '<div class="avocat-cta">';
-  html += '<div class="avocat-cta-text">';
-  html += '<strong>Situation complexe ou urgente ?</strong>';
-  html += '<p>Trouvez un service juridique gratuit ou un avocat dans votre canton.</p>';
-  html += '</div>';
-  html += '<a href="/annuaire.html" class="btn btn-red">J\'ai besoin d\'un avocat</a>';
-  html += '</div>';
+  // Premium CTA
+  html += renderPremiumCTA();
 
   // Articles de loi
   if (r.articles && r.articles.length) {
@@ -286,17 +280,6 @@ async function loadResultat(ficheId) {
   html += '<p>Notre IA analyse votre situation en détail pour CHF 0.03 à 0.10 par question.</p>';
   html += '<a href="/premium.html" class="btn btn-sm">Espace Premium</a>';
   html += '</div>';
-
-  // Routage ecosysteme
-  if (r.routageEcosysteme && Object.keys(r.routageEcosysteme).length) {
-    html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Vous pourriez aussi être intéressé par</h3>';
-    Object.entries(r.routageEcosysteme).forEach(function(entry) {
-      var key = entry[0], val = entry[1];
-      html += '<p><a href="https://' + val.url + '" target="_blank" rel="noopener">' + key + '</a> &mdash; ' + val.condition + '</p>';
-    });
-    html += '</div>';
-  }
 
   document.getElementById('resultat').innerHTML = html;
 }
@@ -413,14 +396,8 @@ function renderTaxonomieResult(data, query, container) {
   if (q.domaine) html += '<p class="result-domaine-tag">' + escHtml(q.domaine) + '</p>';
   html += '</div>';
 
-  // Avocat CTA
-  html += '<div class="avocat-cta">';
-  html += '<div class="avocat-cta-text">';
-  html += '<strong>Situation complexe ou urgente ?</strong>';
-  html += '<p>Trouvez un service juridique gratuit ou un avocat dans votre canton.</p>';
-  html += '</div>';
-  html += '<a href="/annuaire.html" class="btn btn-red">J\'ai besoin d\'un avocat</a>';
-  html += '</div>';
+  // Premium CTA
+  html += renderPremiumCTA();
 
   if (q.qualification_juridique) {
     html += '<div class="card">';
@@ -489,14 +466,8 @@ function renderEnrichedResult(data, query, container) {
     html += '</div>';
   }
 
-  // Avocat CTA
-  html += '<div class="avocat-cta"' + stagger() + '>';
-  html += '<div class="avocat-cta-text">';
-  html += '<strong>Situation complexe ou urgente ?</strong>';
-  html += '<p>Trouvez un service juridique gratuit ou un avocat dans votre canton.</p>';
-  html += '</div>';
-  html += '<a href="/annuaire.html" class="btn btn-red">J\'ai besoin d\'un avocat</a>';
-  html += '</div>';
+  // Premium CTA
+  html += renderPremiumCTA();
 
   // Quick actions
   html += '<div class="result-actions"' + stagger() + '>';
@@ -748,24 +719,38 @@ function renderEnrichedResult(data, query, container) {
   // Bottom actions
   html += renderSearchActions(query, true);
 
-  // Upsell premium — show clear value
-  html += '<div class="upsell-v4">';
-  html += '<div class="upsell-v4-header">';
-  html += '<h3>Analyse approfondie disponible</h3>';
-  html += '<span class="badge badge-info">Premium</span>';
-  html += '</div>';
-  html += '<p>L\'analyse ci-dessus est un premier triage. L\'analyse premium ajoute :</p>';
-  html += '<ul class="upsell-v4-list">';
-  html += '<li><strong>Questions ciblées</strong> — on affine votre dossier avec les bonnes questions</li>';
-  html += '<li><strong>Argumentation contradictoire</strong> — arguments pour ET contre, avec sources</li>';
-  html += '<li><strong>Certificat de couverture</strong> — on vérifie que rien ne manque</li>';
-  html += '<li><strong>Génération de lettres</strong> — mise en demeure personnalisée</li>';
-  html += '<li><strong>Analyse de documents</strong> — joignez votre contrat ou courrier</li>';
-  html += '</ul>';
-  html += '<a href="/premium.html" class="btn btn-primary">Analyse approfondie — dès CHF 0.03</a>';
-  html += '</div>';
+  // Bottom CTA is already in renderPremiumCTA above
 
   container.innerHTML = html;
+}
+
+function renderPremiumCTA() {
+  return '<div class="premium-cta-result">' +
+    '<div class="premium-cta-result-header">' +
+    '<strong>Aller plus loin avec l\'analyse premium</strong>' +
+    '<span class="badge badge-info">Dès CHF 0.03</span>' +
+    '</div>' +
+    '<p>Ce premier triage vous donne les bases. L\'analyse premium va beaucoup plus loin :</p>' +
+    '<div class="premium-cta-result-grid">' +
+    '<div class="premium-cta-result-item">' +
+    '<strong>Questions personnalisées</strong>' +
+    '<span>L\'IA vous pose les questions qui changent le diagnostic — pas des questions génériques</span>' +
+    '</div>' +
+    '<div class="premium-cta-result-item">' +
+    '<strong>Argumentation contradictoire</strong>' +
+    '<span>Arguments pour ET contre votre position, avec les articles de loi et la jurisprudence</span>' +
+    '</div>' +
+    '<div class="premium-cta-result-item">' +
+    '<strong>Certificat de couverture</strong>' +
+    '<span>On vérifie que rien ne manque dans votre dossier avant d\'agir</span>' +
+    '</div>' +
+    '<div class="premium-cta-result-item">' +
+    '<strong>Lettres prêtes à envoyer</strong>' +
+    '<span>Mise en demeure, opposition, contestation — en .docx avec vos informations</span>' +
+    '</div>' +
+    '</div>' +
+    '<a href="/premium.html" class="btn btn-primary btn-lg">Lancer l\'analyse premium</a>' +
+    '</div>';
 }
 
 function renderSearchActions(query, isBottom) {

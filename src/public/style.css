@@ -2887,29 +2887,64 @@ body.has-disclaimer {
   margin-bottom: var(--space-lg);
 }
 
-/* Avocat CTA band */
-.avocat-cta {
+/* Premium CTA in results */
+.premium-cta-result {
+  padding: var(--space-xl);
+  background: var(--surface-elevated);
+  border: 2px solid var(--accent-secondary);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-xl);
+  text-align: center;
+}
+
+.premium-cta-result-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-lg);
-  padding: var(--space-lg);
-  background: var(--surface-sunken);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  margin-bottom: var(--space-lg);
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
 }
 
-.avocat-cta-text strong {
-  display: block;
-  font-size: 0.95rem;
-  margin-bottom: var(--space-xs);
+.premium-cta-result-header strong {
+  font-size: 1.1rem;
 }
 
-.avocat-cta-text p {
-  font-size: 0.85rem;
+.premium-cta-result > p {
+  font-size: 0.9rem;
   color: var(--text-secondary);
-  margin: 0;
+  margin-bottom: var(--space-lg);
+  max-width: 100%;
+}
+
+.premium-cta-result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+  text-align: left;
+}
+
+.premium-cta-result-item {
+  padding: var(--space-md);
+  background: var(--surface-sunken);
+  border-radius: var(--radius-md);
+}
+
+.premium-cta-result-item strong {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: var(--space-xs);
+  color: var(--accent-secondary);
+}
+
+.premium-cta-result-item span {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .premium-cta-result-grid { grid-template-columns: 1fr; }
 }
 
 /* Result action bar */

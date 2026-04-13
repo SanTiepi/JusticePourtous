@@ -82,7 +82,7 @@
           "resume": "Un commandement de payer notifie a une mauvaise adresse est nul et ne fait pas courir le délai d'opposition."
         }
       ],
-      "modeleLettre": "",
+      "modeleLettre": "Objet : Opposition au commandement de payer — poursuite n° [NUMÉRO DE POURSUITE]\n\nOffice des poursuites de [NOM DU DISTRICT/ARRONDISSEMENT]\n[ADRESSE DE L'OFFICE]\n\n[LIEU], le [DATE]\n\nMadame, Monsieur,\n\nPar la présente, je forme opposition totale au commandement de payer n° [NUMÉRO DE POURSUITE] qui m'a été notifié le [DATE DE NOTIFICATION], à la requête de [NOM DU CRÉANCIER], pour un montant de CHF [MONTANT].\n\nConformément à l'art. 74 LP, je fais opposition dans le délai légal de 10 jours dès la notification (art. 75 LP). Je précise que l'opposition n'a pas à être motivée.\n\nJe vous prie de bien vouloir prendre note de la présente opposition et d'en informer le créancier.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[NOM, PRÉNOM]\n[ADRESSE COMPLÈTE]\n[SIGNATURE]",
       "services": [
         {
           "nom": "Office des poursuites du district",
@@ -219,7 +219,7 @@
           "resume": "Le contrat de bail signe vaut reconnaissance de dette pour les loyers echus et justifie la mainlevee provisoire."
         }
       ],
-      "modeleLettre": "",
+      "modeleLettre": "Objet : Opposition à la mainlevée / contestation de la créance — poursuite n° [NUMÉRO DE POURSUITE]\n\nTribunal [COMPÉTENT] de [LIEU]\n[ADRESSE DU TRIBUNAL]\n\n[LIEU], le [DATE]\n\nMadame, Monsieur le/la Juge,\n\nSuite au commandement de payer n° [NUMÉRO DE POURSUITE] notifié le [DATE], j'ai formé opposition conformément à l'art. 74 LP.\n\nLe créancier [NOM DU CRÉANCIER] a requis la mainlevée de mon opposition. Je conteste cette requête pour les motifs suivants :\n\n[MOTIF 1 : ex. La dette est prescrite / Le montant est erroné / Le document produit ne constitue pas une reconnaissance de dette au sens de l'art. 82 LP / La dette a été payée le [DATE] — preuve en annexe]\n\nConformément à l'art. 82 LP, la mainlevée provisoire ne peut être accordée que si le créancier produit une reconnaissance de dette. À défaut d'un tel titre, la mainlevée doit être refusée et le créancier renvoyé à agir au fond.\n\nJe me réserve le droit d'agir en libération de dette selon l'art. 83 al. 2 LP le cas échéant.\n\nAnnexes : [LISTE DES PIÈCES JUSTIFICATIVES]\n\nVeuillez agréer, Madame, Monsieur le/la Juge, mes salutations distinguées.\n\n[NOM, PRÉNOM]\n[ADRESSE COMPLÈTE]\n[SIGNATURE]",
       "services": [
         {
           "nom": "Centre social protestant VD",
@@ -715,7 +715,7 @@
           "resume": "L'office doit prendre en compte les charges effectives du debiteur, pas des forfaits theoriques."
         }
       ],
-      "modeleLettre": "",
+      "modeleLettre": "Objet : Plainte LP contre le calcul de la saisie de salaire — poursuite n° [NUMÉRO DE POURSUITE]\n\nAutorité de surveillance des offices des poursuites\n[ADRESSE DE L'AUTORITÉ — CANTON]\n\n[LIEU], le [DATE]\n\nMadame, Monsieur,\n\nPar la présente, je dépose plainte au sens de l'art. 17 LP contre le procès-verbal de saisie établi par l'Office des poursuites de [DISTRICT] dans le cadre de la poursuite n° [NUMÉRO DE POURSUITE].\n\nL'office a fixé la quotité saisissable de mon salaire à CHF [MONTANT SAISI] par mois. Ce calcul est erroné pour les motifs suivants :\n\nConformément à l'art. 93 al. 1 LP, seul le revenu excédant le minimum vital est saisissable. Or, l'office n'a pas tenu compte des charges suivantes :\n- [CHARGE 1 : ex. Loyer effectif de CHF X]\n- [CHARGE 2 : ex. Prime d'assurance maladie de CHF X]\n- [CHARGE 3 : ex. Frais de garde d'enfants de CHF X]\n\nMa situation familiale : [SITUATION — ex. couple avec X enfants à charge].\nMon salaire net mensuel : CHF [MONTANT].\n\nJe demande à l'autorité de surveillance de rectifier le calcul de saisie en tenant compte de mes charges effectives.\n\nAnnexes : [FICHES DE SALAIRE, FACTURES DE CHARGES, ATTESTATION DE SITUATION FAMILIALE]\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[NOM, PRÉNOM]\n[ADRESSE COMPLÈTE]\n[SIGNATURE]",
       "services": [
         {
           "nom": "Centre social protestant VD",

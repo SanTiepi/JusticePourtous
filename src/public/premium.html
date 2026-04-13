@@ -93,8 +93,15 @@
           <div class="premium-response-header">
             <h3>Analyse</h3>
             <div class="premium-response-actions">
-              <button class="btn btn-sm btn-secondary" onclick="genererLettre()">Générer une lettre</button>
-              <button class="btn btn-sm btn-print" onclick="window.print()">Imprimer / PDF</button>
+              <select id="lettreType" class="select">
+                <option value="mise_en_demeure">Mise en demeure</option>
+                <option value="contestation">Contestation</option>
+                <option value="opposition">Opposition</option>
+                <option value="resiliation">Résiliation</option>
+                <option value="plainte">Plainte</option>
+              </select>
+              <button class="btn btn-sm btn-secondary" onclick="genererLettre()">Générer la lettre</button>
+              <button class="btn btn-sm btn-print" onclick="window.print()">Imprimer</button>
             </div>
           </div>
           <div id="reponseTexte"></div>
@@ -467,6 +474,7 @@
       lettreTxt.textContent = 'Génération en cours...';
 
       try {
+        var selectedType = document.getElementById('lettreType').value;
         var res = await fetch('/api/premium/generate-letter', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -474,7 +482,7 @@
             session: sessionCode,
             ficheId: lastFicheId,
             userContext: lastQuery,
-            type: 'mise_en_demeure'
+            type: selectedType
           })
         });
         var data = await res.json();
@@ -489,6 +497,7 @@
     }
 
     async function telechargerDocx() {
+      var selectedType = document.getElementById('lettreType').value;
       try {
         var res = await fetch('/api/premium/generate-docx', {
           method: 'POST',
@@ -496,7 +505,7 @@
           body: JSON.stringify({
             session: sessionCode,
             userContext: lastQuery,
-            type: 'mise_en_demeure',
+            type: selectedType,
             ficheId: lastFicheId
           })
         });
@@ -505,7 +514,7 @@
         var url = URL.createObjectURL(blob);
         var a = document.createElement('a');
         a.href = url;
-        a.download = 'lettre-mise-en-demeure.docx';
+        a.download = 'lettre-' + selectedType + '.docx';
         a.click();
         URL.revokeObjectURL(url);
       } catch (e) {

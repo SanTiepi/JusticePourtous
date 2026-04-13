@@ -241,6 +241,11 @@
           txt.textContent = data.error;
           return;
         }
+        // Extract ficheId for letter generation
+        var issues = data.issues || (data.comprehension || {}).issues || [];
+        if (issues.length > 0) {
+          lastFicheId = (issues[0].fiche_ids || [])[0] || issues[0].fiche_id || null;
+        }
         renderV4Response(data);
         refreshCredits();
       } catch (e) {
@@ -467,6 +472,7 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             session: sessionCode,
+            ficheId: lastFicheId,
             userContext: lastQuery,
             type: 'mise_en_demeure'
           })

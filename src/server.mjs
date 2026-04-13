@@ -895,6 +895,10 @@ const server = createServer(async (req, res) => {
         if (!result.analysis) verification_status = 'degraded';
         else if (!result.analysis.claims?.length) verification_status = 'insufficient';
 
+        // V4: include full pipeline outputs (certificate, argumentation, committee, normative)
+        const ficheId = result.comprehension?.ficheId || result.comprehension?.fiches_pertinentes?.[0];
+        const vulg = ficheId ? getVulgarisationForFiche(ficheId) : null;
+
         return json(res, 200, {
           mode_crise: false,
           complet: result.complet,
@@ -915,6 +919,12 @@ const server = createServer(async (req, res) => {
           need_lawyer: result.analysis?.besoin_avocat || false,
           need_lawyer_reason: result.analysis?.besoin_avocat_raison || null,
           sources_count: result.dossier_summary?.sources_count || 0,
+          // V4 pipeline outputs — previously stripped
+          certificate: result.certificate || null,
+          argumentation: result.argumentation || null,
+          committee: result.committee || null,
+          normative: result.normative || null,
+          vulgarisation: vulg,
           usage: result.usage,
           disclaimer: DISCLAIMER
         });

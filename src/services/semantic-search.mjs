@@ -26,6 +26,7 @@ const SYNONYMES = {
   'trop cher': [{ terme: 'loyer abusif', poids: 4 }, { terme: 'augmentation', poids: 2 }],
   'augmenté': [{ terme: 'augmentation', poids: 4 }, { terme: 'hausse', poids: 3 }, { terme: 'loyer abusif', poids: 3 }],
   'augmente': [{ terme: 'augmentation', poids: 5 }, { terme: 'loyer abusif', poids: 4 }, { terme: 'hausse', poids: 3 }],
+  'augmenter': [{ terme: 'augmentation', poids: 5 }, { terme: 'hausse', poids: 4 }, { terme: 'loyer abusif', poids: 3 }],
   'augmentation': [{ terme: 'augmentation', poids: 5 }, { terme: 'loyer abusif', poids: 4 }, { terme: 'hausse', poids: 3 }],
   'justification': [{ terme: 'loyer abusif', poids: 3 }, { terme: 'augmentation', poids: 2 }],
   'bruit': [{ terme: 'nuisances', poids: 3 }, { terme: 'bruit', poids: 5 }, { terme: 'voisin', poids: 2 }],
@@ -42,6 +43,10 @@ const SYNONYMES = {
   'animal': [{ terme: 'animaux', poids: 5 }],
   'chien': [{ terme: 'animaux', poids: 5 }],
   'chat': [{ terme: 'animaux', poids: 4 }],
+  'congé': [{ terme: 'résiliation', poids: 5 }, { terme: 'congé', poids: 6 }, { terme: 'conge', poids: 5 }, { terme: 'expulsion', poids: 2 }],
+  'conge': [{ terme: 'résiliation', poids: 5 }, { terme: 'congé', poids: 6 }, { terme: 'conge', poids: 5 }, { terme: 'expulsion', poids: 2 }],
+  'abusif': [{ terme: 'abusif', poids: 4 }, { terme: 'contestation', poids: 3 }],
+  'abusive': [{ terme: 'abusif', poids: 4 }, { terme: 'contestation', poids: 3 }],
   'sous-louer': [{ terme: 'sous-location', poids: 5 }],
   'coloc': [{ terme: 'colocation', poids: 5 }],
 

@@ -27,6 +27,7 @@ import { analyzeIssue } from './services/argumentation-engine.mjs';
 import { analyzeFrontier, getNextIngestionPriorities, getSourceCatalog } from './services/source-frontier.mjs';
 import { compile as compileNormative, getRuleDefinitions } from './services/normative-compiler.mjs';
 import { deepAnalysis } from './services/deep-analysis.mjs';
+import { generateDocx } from './services/docx-generator.mjs';
 import { getVulgarisationForFiche, getVulgarisationStats } from './services/vulgarisation-loader.mjs';
 import {
   getAllArticles, searchArticles,
@@ -322,6 +323,35 @@ const server = createServer(async (req, res) => {
       return json(res, result.status, result.error
         ? { error: result.error, disclaimer: DISCLAIMER }
         : { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // DOCX generation — returns binary .docx file
+    if (path === '/api/premium/generate-docx' && method === 'POST') {
+      const body = await parseBody(req);
+      const sessionCode = body.session || req.headers['x-session'];
+      try {
+        const letterResult = await genererLettreAI(sessionCode, {
+          ficheId: body.ficheId,
+          userContext: body.userContext,
+          type: body.type || 'mise_en_demeure'
+        });
+        if (letterResult.error) return json(res, letterResult.status, { error: letterResult.error });
+
+        const letterText = letterResult.data?.lettre || letterResult.lettre;
+        if (!letterText) return json(res, 500, { error: 'Pas de lettre générée' });
+
+        const docxBuffer = await generateDocx(letterText, { type: body.type, ficheId: body.ficheId });
+        res.writeHead(200, {
+          'Content-Type': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+          'Content-Disposition': `attachment; filename="lettre-${body.type || 'juridique'}.docx"`,
+          'Content-Length': docxBuffer.length,
+        });
+        res.end(docxBuffer);
+        return;
+      } catch (err) {
+        console.error('DOCX generation error:', err.message);
+        return json(res, 500, { error: 'Erreur génération DOCX' });
+      }
     }
 
     if (path === '/api/premium/estimate' && method === 'GET') {

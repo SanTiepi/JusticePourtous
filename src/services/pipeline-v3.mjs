@@ -722,6 +722,52 @@ function step_compile(dossier, analysis) {
 }
 
 // ============================================================
+// ─── Build questions: LLM-first, marginal questioner as supplement ──
+
+function buildQuestions(comprehension, dossier, certificate) {
+  const questions = [];
+  const seenIds = new Set();
+
+  // 1. LLM questions (specific to this case — highest priority)
+  const llmQuestions = comprehension.questions_critiques || [];
+  for (const q of llmQuestions) {
+    const id = q.id || ('llm_' + questions.length);
+    if (seenIds.has(id)) continue;
+    seenIds.add(id);
+    questions.push({
+      id,
+      question: q.question,
+      choix: q.choix || [],
+      importance: q.impact === 'change_strategy' ? 'critique' : 'utile',
+      pourquoi: q.pourquoi || '',
+      source: 'llm',
+    });
+  }
+
+  // 2. Marginal questioner (generic but scored by impact — fill gaps)
+  if (questions.length < 5) {
+    const marginalQs = generateDossierQuestions(comprehension, dossier, certificate, 5 - questions.length);
+    for (const mq of marginalQs) {
+      // Skip if similar question already exists from LLM
+      const isDuplicate = questions.some(q =>
+        q.question.toLowerCase().includes(mq.id) ||
+        mq.question.toLowerCase().includes(q.id)
+      );
+      if (isDuplicate) continue;
+      questions.push({
+        id: mq.id,
+        question: mq.question,
+        choix: [], // marginal questioner doesn't provide choices
+        importance: mq.score >= 6 ? 'critique' : 'utile',
+        pourquoi: mq.why || '',
+        source: 'marginal',
+      });
+    }
+  }
+
+  return questions;
+}
+
 // EXPORT — Pipeline complet
 // ============================================================
 
@@ -815,9 +861,7 @@ export async function analyserCas(texte, canton, reponsesPrec) {
     analysis,
     compiled,
     normative,
-    questions: hasQuestions
-      ? generateDossierQuestions(comprehension, dossier, certificate, 3)
-      : [],
+    questions: buildQuestions(comprehension, dossier, certificate),
     resume: comprehension.resume,
     usage: {
       step1: step1.usage,

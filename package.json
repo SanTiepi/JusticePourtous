@@ -8,6 +8,14 @@
     "start": "node src/server.mjs",
     "test": "node --test test/*.test.mjs"
   },
-  "keywords": ["justice", "droit", "suisse", "juridique"],
-  "license": "UNLICENSED"
+  "keywords": [
+    "justice",
+    "droit",
+    "suisse",
+    "juridique"
+  ],
+  "license": "UNLICENSED",
+  "dependencies": {
+    "docx": "^9.6.1"
+  }
 }

@@ -102,9 +102,16 @@
 
         <!-- Letter generation result -->
         <div id="lettreResult" class="card hidden">
-          <h3>Lettre générée</h3>
+          <div class="premium-response-header">
+            <h3>Lettre générée</h3>
+            <div class="premium-response-actions">
+              <button class="copy-btn" onclick="copyLettre()">Copier le texte</button>
+              <button id="docxDownload" class="btn btn-sm btn-primary hidden" onclick="telechargerDocx()">
+                Télécharger .docx
+              </button>
+            </div>
+          </div>
           <div class="lettre-box">
-            <button class="copy-btn" onclick="copyLettre()">Copier</button>
             <pre id="lettreTexte"></pre>
           </div>
         </div>
@@ -446,6 +453,8 @@
     }
 
     // --- Letter generation ---
+    var lastFicheId = null;
+
     async function genererLettre() {
       var lettreBox = document.getElementById('lettreResult');
       var lettreTxt = document.getElementById('lettreTexte');
@@ -465,9 +474,36 @@
         var data = await res.json();
         if (data.error) { lettreTxt.textContent = data.error; return; }
         lettreTxt.textContent = data.lettre || data.data?.lettre || 'Pas de lettre générée';
+        // Show download button
+        document.getElementById('docxDownload').classList.remove('hidden');
         refreshCredits();
       } catch (e) {
         lettreTxt.textContent = 'Erreur lors de la génération.';
+      }
+    }
+
+    async function telechargerDocx() {
+      try {
+        var res = await fetch('/api/premium/generate-docx', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            session: sessionCode,
+            userContext: lastQuery,
+            type: 'mise_en_demeure',
+            ficheId: lastFicheId
+          })
+        });
+        if (!res.ok) { alert('Erreur lors de la génération du document.'); return; }
+        var blob = await res.blob();
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'lettre-mise-en-demeure.docx';
+        a.click();
+        URL.revokeObjectURL(url);
+      } catch (e) {
+        alert('Erreur lors du téléchargement.');
       }
     }
 

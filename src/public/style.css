@@ -2798,7 +2798,60 @@ body.has-disclaimer {
   border-top: 1px solid var(--border-subtle);
 }
 
-/* Upsell premium */
+/* Upsell premium V4 */
+.upsell-v4 {
+  margin-top: var(--space-xl);
+  padding: var(--space-xl);
+  background: var(--surface-elevated);
+  border: 1px solid var(--accent-secondary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.upsell-v4-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.upsell-v4-header h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.upsell-v4 > p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.upsell-v4-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-lg);
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.upsell-v4-list li {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  padding-left: var(--space-lg);
+  position: relative;
+}
+
+.upsell-v4-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent-success);
+  font-weight: 700;
+}
+
+/* Legacy upsell (keep for compat) */
 .upsell {
   margin-top: var(--space-xl);
   padding: var(--space-lg);
@@ -3126,6 +3179,57 @@ body.has-disclaimer {
 
 .w-full { width: 100%; }
 .mt-lg { margin-top: var(--space-lg); }
+
+/* Premium upload */
+.premium-upload {
+  margin-top: var(--space-md);
+}
+
+.premium-upload-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border: 1.5px dashed var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all var(--duration-fast);
+}
+
+.premium-upload-label:hover {
+  border-color: var(--accent-secondary);
+  color: var(--accent-secondary);
+  background: rgba(44, 95, 124, 0.03);
+}
+
+.premium-file-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-md);
+  margin-top: var(--space-sm);
+  background: var(--surface-sunken);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Premium response header */
+.premium-response-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.premium-response-actions {
+  display: flex;
+  gap: var(--space-sm);
+}
 
 /* Premium features list */
 .premium-features {

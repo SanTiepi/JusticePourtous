@@ -71,13 +71,42 @@
         <div class="card">
           <h3>Analyser votre situation</h3>
           <p class="premium-cost-hint">Coût estimé : CHF 0.03 à 0.10 par analyse</p>
-          <textarea id="question" class="input" placeholder="Décrivez votre situation juridique..."></textarea>
-          <button class="btn btn-primary w-full mt-lg" onclick="analyserQuestion()">Analyser</button>
+          <textarea id="question" class="input" placeholder="Décrivez votre situation juridique en détail..."></textarea>
+
+          <!-- Document upload -->
+          <div class="premium-upload">
+            <label for="fileInput" class="premium-upload-label">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1v10M4 5l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 11v2a2 2 0 002 2h10a2 2 0 002-2v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span id="fileLabel">Joindre un document (PDF, image)</span>
+            </label>
+            <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png,.gif,.tiff" onchange="onFileSelected(this)" class="sr-only">
+            <div id="fileInfo" class="hidden premium-file-info">
+              <span id="fileName"></span>
+              <button class="btn-ghost" onclick="clearFile()">&times;</button>
+            </div>
+          </div>
+
+          <button class="btn btn-primary w-full mt-lg" onclick="analyserQuestion()">Analyser ma situation</button>
         </div>
 
         <div id="reponseIA" class="card hidden">
-          <h3>Réponse</h3>
+          <div class="premium-response-header">
+            <h3>Analyse</h3>
+            <div class="premium-response-actions">
+              <button class="btn btn-sm btn-secondary" onclick="genererLettre()">Générer une lettre</button>
+              <button class="btn btn-sm btn-print" onclick="window.print()">Imprimer / PDF</button>
+            </div>
+          </div>
           <div id="reponseTexte"></div>
+        </div>
+
+        <!-- Letter generation result -->
+        <div id="lettreResult" class="card hidden">
+          <h3>Lettre générée</h3>
+          <div class="lettre-box">
+            <button class="copy-btn" onclick="copyLettre()">Copier</button>
+            <pre id="lettreTexte"></pre>
+          </div>
         </div>
 
         <div class="card">
@@ -173,14 +202,27 @@
 
     async function analyserQuestion() {
       var q = document.getElementById('question').value.trim();
-      if (!q) return;
-      lastQuery = q;
+      if (!q && !selectedFile) return;
 
       var box = document.getElementById('reponseIA');
       var txt = document.getElementById('reponseTexte');
-      txt.innerHTML = '<div class="loading">Analyse en cours...</div>';
       box.classList.remove('hidden');
 
+      // Step 1: OCR if file attached
+      var ocrText = '';
+      if (selectedFile) {
+        txt.innerHTML = '<div class="loading">Extraction du document...</div>';
+        ocrText = await uploadAndOCR();
+        if (ocrText) {
+          q = (q ? q + '\n\n' : '') + '--- Document joint ---\n' + ocrText;
+        }
+      }
+
+      if (!q) { txt.textContent = 'Aucun texte à analyser.'; return; }
+      lastQuery = q;
+
+      // Step 2: Analyze with V4 pipeline
+      txt.innerHTML = '<div class="loading">Analyse juridique en cours...</div>';
       try {
         var res = await fetch('/api/premium/analyze-v3', {
           method: 'POST',
@@ -356,6 +398,86 @@
       var qid = el.dataset.qid;
       document.querySelectorAll('.q-answer[data-qid="' + qid + '"]').forEach(function(b) { b.classList.remove('selected'); });
       el.classList.add('selected');
+    }
+
+    // --- File upload ---
+    var selectedFile = null;
+
+    function onFileSelected(input) {
+      if (input.files && input.files[0]) {
+        selectedFile = input.files[0];
+        if (selectedFile.size > 10 * 1024 * 1024) {
+          alert('Fichier trop volumineux (max 10 MB)');
+          clearFile();
+          return;
+        }
+        document.getElementById('fileName').textContent = selectedFile.name + ' (' + (selectedFile.size / 1024).toFixed(0) + ' KB)';
+        document.getElementById('fileInfo').classList.remove('hidden');
+        document.getElementById('fileLabel').querySelector('span').textContent = 'Changer de document';
+      }
+    }
+
+    function clearFile() {
+      selectedFile = null;
+      document.getElementById('fileInput').value = '';
+      document.getElementById('fileInfo').classList.add('hidden');
+      document.getElementById('fileLabel').querySelector('span').textContent = 'Joindre un document (PDF, image)';
+    }
+
+    async function uploadAndOCR() {
+      if (!selectedFile) return null;
+      try {
+        var buffer = await selectedFile.arrayBuffer();
+        var res = await fetch('/api/premium/analyze-ocr', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/octet-stream',
+            'x-session': sessionCode,
+            'x-filename': selectedFile.name
+          },
+          body: buffer
+        });
+        var data = await res.json();
+        if (data.error) return null;
+        return data.text || '';
+      } catch (e) {
+        return null;
+      }
+    }
+
+    // --- Letter generation ---
+    async function genererLettre() {
+      var lettreBox = document.getElementById('lettreResult');
+      var lettreTxt = document.getElementById('lettreTexte');
+      lettreBox.classList.remove('hidden');
+      lettreTxt.textContent = 'Génération en cours...';
+
+      try {
+        var res = await fetch('/api/premium/generate-letter', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            session: sessionCode,
+            userContext: lastQuery,
+            type: 'mise_en_demeure'
+          })
+        });
+        var data = await res.json();
+        if (data.error) { lettreTxt.textContent = data.error; return; }
+        lettreTxt.textContent = data.lettre || data.data?.lettre || 'Pas de lettre générée';
+        refreshCredits();
+      } catch (e) {
+        lettreTxt.textContent = 'Erreur lors de la génération.';
+      }
+    }
+
+    function copyLettre() {
+      var text = document.getElementById('lettreTexte').textContent;
+      navigator.clipboard.writeText(text).then(function() {
+        var btn = document.querySelector('#lettreResult .copy-btn');
+        btn.textContent = 'Copié !';
+        setTimeout(function() { btn.textContent = 'Copier'; }, 2000);
+      });
     }
 
     function esc(s) { return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : ''; }

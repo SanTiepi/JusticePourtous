@@ -693,11 +693,21 @@ function renderEnrichedResult(data, query, container) {
   // Bottom actions
   html += renderSearchActions(query, true);
 
-  // Upsell premium
-  html += '<div class="upsell">';
-  html += '<h3>Besoin d\'une analyse personnalisée ?</h3>';
-  html += '<p>Notre IA analyse votre situation en détail pour CHF 0.03 à 0.10 par question.</p>';
-  html += '<a href="/premium.html" class="btn btn-sm">Espace Premium</a>';
+  // Upsell premium — show clear value
+  html += '<div class="upsell-v4">';
+  html += '<div class="upsell-v4-header">';
+  html += '<h3>Analyse approfondie disponible</h3>';
+  html += '<span class="badge badge-info">Premium</span>';
+  html += '</div>';
+  html += '<p>L\'analyse ci-dessus est un premier triage. L\'analyse premium ajoute :</p>';
+  html += '<ul class="upsell-v4-list">';
+  html += '<li><strong>Questions ciblées</strong> — on affine votre dossier avec les bonnes questions</li>';
+  html += '<li><strong>Argumentation contradictoire</strong> — arguments pour ET contre, avec sources</li>';
+  html += '<li><strong>Certificat de couverture</strong> — on vérifie que rien ne manque</li>';
+  html += '<li><strong>Génération de lettres</strong> — mise en demeure personnalisée</li>';
+  html += '<li><strong>Analyse de documents</strong> — joignez votre contrat ou courrier</li>';
+  html += '</ul>';
+  html += '<a href="/premium.html" class="btn btn-primary">Analyse approfondie — dès CHF 0.03</a>';
   html += '</div>';
 
   container.innerHTML = html;

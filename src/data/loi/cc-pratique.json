@@ -9,8 +9,14 @@
       "Vous réclamez un remboursement → c'est à vous de prouver que vous avez payé",
       "Vous contestez une dette → c'est au créancier de prouver qu'elle existe"
     ],
-    "domaines": ["procédure", "général"],
-    "articlesLies": ["CC 28"]
+    "domaines": [
+      "procédure",
+      "général"
+    ],
+    "articlesLies": [
+      "CC 28"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 28",
@@ -22,8 +28,15 @@
       "Un journal publie des photos privées sans consentement → action en cessation",
       "Diffamation sur les réseaux sociaux → demande de suppression et dommages-intérêts"
     ],
-    "domaines": ["personnalité", "général"],
-    "articlesLies": ["CC 8", "CC 30"]
+    "domaines": [
+      "personnalité",
+      "général"
+    ],
+    "articlesLies": [
+      "CC 8",
+      "CC 30"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 30",
@@ -35,8 +48,16 @@
       "Demande de changement de nom après un divorce pour reprendre son nom de naissance",
       "Changement de nom suite à un changement de genre"
     ],
-    "domaines": ["personnalité", "famille"],
-    "articlesLies": ["CC 28", "CC 160", "CC 270"]
+    "domaines": [
+      "personnalité",
+      "famille"
+    ],
+    "articlesLies": [
+      "CC 28",
+      "CC 160",
+      "CC 270"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 90",
@@ -47,8 +68,15 @@
     "exemplesConcrets": [
       "Mariage célébré à l'état civil, suivi d'une cérémonie religieuse facultative"
     ],
-    "domaines": ["famille", "mariage"],
-    "articlesLies": ["CC 119", "CC 160"]
+    "domaines": [
+      "famille",
+      "mariage"
+    ],
+    "articlesLies": [
+      "CC 119",
+      "CC 160"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 119",
@@ -59,8 +87,15 @@
     "exemplesConcrets": [
       "Après le divorce, Mme Dupont-Müller peut reprendre le nom Müller par simple déclaration à l'état civil"
     ],
-    "domaines": ["famille", "divorce"],
-    "articlesLies": ["CC 30", "CC 160"]
+    "domaines": [
+      "famille",
+      "divorce"
+    ],
+    "articlesLies": [
+      "CC 30",
+      "CC 160"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 124a",
@@ -71,8 +106,15 @@
     "exemplesConcrets": [
       "L'ex-mari touche déjà sa retraite LPP → le juge attribue une partie de la rente à l'ex-épouse"
     ],
-    "domaines": ["famille", "divorce", "prévoyance"],
-    "articlesLies": ["CC 125"]
+    "domaines": [
+      "famille",
+      "divorce",
+      "prévoyance"
+    ],
+    "articlesLies": [
+      "CC 125"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 125",
@@ -84,8 +126,16 @@
       "Après 20 ans de mariage, l'épouse qui a renoncé à sa carrière reçoit une pension",
       "Mariage court sans enfant → pas de pension en principe"
     ],
-    "domaines": ["famille", "divorce"],
-    "articlesLies": ["CC 124a", "CC 163", "CC 176"]
+    "domaines": [
+      "famille",
+      "divorce"
+    ],
+    "articlesLies": [
+      "CC 124a",
+      "CC 163",
+      "CC 176"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 133",
@@ -97,8 +147,17 @@
       "Les parents se mettent d'accord sur une garde alternée → le juge la valide",
       "Pas d'accord → le juge fixe la garde chez un parent et un droit de visite pour l'autre"
     ],
-    "domaines": ["famille", "divorce", "enfants"],
-    "articlesLies": ["CC 276", "CC 296", "CC 298a"]
+    "domaines": [
+      "famille",
+      "divorce",
+      "enfants"
+    ],
+    "articlesLies": [
+      "CC 276",
+      "CC 296",
+      "CC 298a"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 160",
@@ -109,8 +168,16 @@
     "exemplesConcrets": [
       "Marie Dupont et Jean Müller → chacun garde son nom, ou ils choisissent Dupont ou Müller comme nom de famille"
     ],
-    "domaines": ["famille", "mariage"],
-    "articlesLies": ["CC 30", "CC 119", "CC 270"]
+    "domaines": [
+      "famille",
+      "mariage"
+    ],
+    "articlesLies": [
+      "CC 30",
+      "CC 119",
+      "CC 270"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 163",
@@ -122,8 +189,16 @@
       "Un époux travaille à plein temps, l'autre s'occupe des enfants → les deux contributions sont équivalentes",
       "Les deux travaillent → chacun contribue financièrement selon ses revenus"
     ],
-    "domaines": ["famille", "mariage"],
-    "articlesLies": ["CC 125", "CC 173", "CC 176"]
+    "domaines": [
+      "famille",
+      "mariage"
+    ],
+    "articlesLies": [
+      "CC 125",
+      "CC 173",
+      "CC 176"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 173",
@@ -134,8 +209,16 @@
     "exemplesConcrets": [
       "Le mari ne verse plus rien pour le ménage → le juge ordonne le versement direct d'une partie du salaire"
     ],
-    "domaines": ["famille", "mariage"],
-    "articlesLies": ["CC 163", "CC 176", "CC 179"]
+    "domaines": [
+      "famille",
+      "mariage"
+    ],
+    "articlesLies": [
+      "CC 163",
+      "CC 176",
+      "CC 179"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 176",
@@ -147,8 +230,16 @@
       "Séparation de fait → le juge attribue l'appartement au parent gardien et fixe une pension",
       "Violence conjugale → le juge attribue le logement à la victime"
     ],
-    "domaines": ["famille", "séparation"],
-    "articlesLies": ["CC 163", "CC 173", "CC 179"]
+    "domaines": [
+      "famille",
+      "séparation"
+    ],
+    "articlesLies": [
+      "CC 163",
+      "CC 173",
+      "CC 179"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 179",
@@ -160,8 +251,15 @@
       "Perte d'emploi → demande de réduction de la pension alimentaire",
       "Déménagement d'un parent → modification de la garde"
     ],
-    "domaines": ["famille", "séparation"],
-    "articlesLies": ["CC 176", "CC 173"]
+    "domaines": [
+      "famille",
+      "séparation"
+    ],
+    "articlesLies": [
+      "CC 176",
+      "CC 173"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 197",
@@ -173,8 +271,15 @@
       "Le salaire épargné pendant le mariage = acquêts → partagé 50/50 au divorce",
       "Un héritage reçu pendant le mariage = bien propre, pas un acquêt"
     ],
-    "domaines": ["famille", "régime matrimonial"],
-    "articlesLies": ["CC 209", "CC 215"]
+    "domaines": [
+      "famille",
+      "régime matrimonial"
+    ],
+    "articlesLies": [
+      "CC 209",
+      "CC 215"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 209",
@@ -186,8 +291,15 @@
       "Le salaire (acquêts) a servi à rénover la maison héritée (bien propre) → récompense due",
       "L'héritage (bien propre) a servi à rembourser un crédit commun → récompense"
     ],
-    "domaines": ["famille", "régime matrimonial"],
-    "articlesLies": ["CC 197", "CC 215"]
+    "domaines": [
+      "famille",
+      "régime matrimonial"
+    ],
+    "articlesLies": [
+      "CC 197",
+      "CC 215"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 215",
@@ -198,8 +310,15 @@
     "exemplesConcrets": [
       "Acquêts du mari = 200'000 CHF, acquêts de la femme = 50'000 CHF → chacun donne la moitié à l'autre, solde = 75'000 CHF pour la femme"
     ],
-    "domaines": ["famille", "régime matrimonial"],
-    "articlesLies": ["CC 197", "CC 209"]
+    "domaines": [
+      "famille",
+      "régime matrimonial"
+    ],
+    "articlesLies": [
+      "CC 197",
+      "CC 209"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 256",
@@ -210,8 +329,15 @@
     "exemplesConcrets": [
       "L'enfant devenu majeur apprend que son père légal n'est pas son père biologique → il peut contester la paternité"
     ],
-    "domaines": ["famille", "filiation"],
-    "articlesLies": ["CC 260", "CC 261"]
+    "domaines": [
+      "famille",
+      "filiation"
+    ],
+    "articlesLies": [
+      "CC 260",
+      "CC 261"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 257e",
@@ -222,8 +348,15 @@
     "exemplesConcrets": [
       "Un homme reconnaît un enfant par erreur puis apprend via un test ADN qu'il n'est pas le père → contestation possible"
     ],
-    "domaines": ["famille", "filiation"],
-    "articlesLies": ["CC 256", "CC 260"]
+    "domaines": [
+      "famille",
+      "filiation"
+    ],
+    "articlesLies": [
+      "CC 256",
+      "CC 260"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 260",
@@ -234,8 +367,15 @@
     "exemplesConcrets": [
       "Le père célibataire se rend à l'état civil pour reconnaître son enfant né hors mariage"
     ],
-    "domaines": ["famille", "filiation"],
-    "articlesLies": ["CC 261", "CC 256"]
+    "domaines": [
+      "famille",
+      "filiation"
+    ],
+    "articlesLies": [
+      "CC 261",
+      "CC 256"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 261",
@@ -246,8 +386,16 @@
     "exemplesConcrets": [
       "Le père refuse de reconnaître l'enfant → la mère saisit le juge, un test ADN est ordonné"
     ],
-    "domaines": ["famille", "filiation"],
-    "articlesLies": ["CC 260", "CC 256", "CC 276"]
+    "domaines": [
+      "famille",
+      "filiation"
+    ],
+    "articlesLies": [
+      "CC 260",
+      "CC 256",
+      "CC 276"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 264",
@@ -259,8 +407,15 @@
       "Un couple marié depuis 5 ans accueille un enfant depuis 2 ans → demande d'adoption possible",
       "Le beau-parent veut adopter l'enfant de son conjoint après plusieurs années de vie commune"
     ],
-    "domaines": ["famille", "adoption"],
-    "articlesLies": ["CC 260", "CC 296"]
+    "domaines": [
+      "famille",
+      "adoption"
+    ],
+    "articlesLies": [
+      "CC 260",
+      "CC 296"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 270",
@@ -272,8 +427,16 @@
       "Parents mariés sous le nom Dupont → l'enfant s'appelle Dupont",
       "Parents non mariés → l'enfant porte le nom de la mère sauf si les parents font une déclaration conjointe"
     ],
-    "domaines": ["famille", "filiation"],
-    "articlesLies": ["CC 160", "CC 30", "CC 296"]
+    "domaines": [
+      "famille",
+      "filiation"
+    ],
+    "articlesLies": [
+      "CC 160",
+      "CC 30",
+      "CC 296"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 276",
@@ -285,8 +448,16 @@
       "L'enfant de 20 ans en études universitaires → les parents doivent continuer à l'entretenir",
       "Fin de l'apprentissage à 18 ans → l'obligation prend fin sauf si l'enfant poursuit une formation"
     ],
-    "domaines": ["famille", "enfants"],
-    "articlesLies": ["CC 133", "CC 296", "CC 261"]
+    "domaines": [
+      "famille",
+      "enfants"
+    ],
+    "articlesLies": [
+      "CC 133",
+      "CC 296",
+      "CC 261"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 296",
@@ -298,8 +469,16 @@
       "Parents mariés → autorité parentale conjointe automatique",
       "Parents non mariés → déclaration conjointe à l'état civil pour l'autorité parentale conjointe"
     ],
-    "domaines": ["famille", "enfants"],
-    "articlesLies": ["CC 298a", "CC 298b", "CC 133"]
+    "domaines": [
+      "famille",
+      "enfants"
+    ],
+    "articlesLies": [
+      "CC 298a",
+      "CC 298b",
+      "CC 133"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 298a",
@@ -310,8 +489,15 @@
     "exemplesConcrets": [
       "Couple non marié à la naissance → ils font une déclaration d'autorité parentale conjointe à l'état civil"
     ],
-    "domaines": ["famille", "enfants"],
-    "articlesLies": ["CC 296", "CC 298b"]
+    "domaines": [
+      "famille",
+      "enfants"
+    ],
+    "articlesLies": [
+      "CC 296",
+      "CC 298b"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 298b",
@@ -322,8 +508,15 @@
     "exemplesConcrets": [
       "Le père demande l'autorité parentale conjointe → l'APEA l'accorde sauf risque pour l'enfant"
     ],
-    "domaines": ["famille", "enfants"],
-    "articlesLies": ["CC 296", "CC 298a"]
+    "domaines": [
+      "famille",
+      "enfants"
+    ],
+    "articlesLies": [
+      "CC 296",
+      "CC 298a"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 306",
@@ -334,8 +527,16 @@
     "exemplesConcrets": [
       "L'enfant hérite d'un bien que le parent convoite aussi → un curateur est nommé pour représenter l'enfant"
     ],
-    "domaines": ["famille", "enfants"],
-    "articlesLies": ["CC 296", "CC 307", "CC 308"]
+    "domaines": [
+      "famille",
+      "enfants"
+    ],
+    "articlesLies": [
+      "CC 296",
+      "CC 307",
+      "CC 308"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 307",
@@ -347,8 +548,16 @@
       "Enfant en échec scolaire grave par négligence parentale → l'APEA ordonne un suivi éducatif",
       "Conflits parentaux nuisant à l'enfant → l'APEA impose une médiation"
     ],
-    "domaines": ["famille", "protection de l'enfant"],
-    "articlesLies": ["CC 308", "CC 310", "CC 312"]
+    "domaines": [
+      "famille",
+      "protection de l'enfant"
+    ],
+    "articlesLies": [
+      "CC 308",
+      "CC 310",
+      "CC 312"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 308",
@@ -359,8 +568,16 @@
     "exemplesConcrets": [
       "Parents dépassés par le comportement de l'adolescent → un curateur éducatif est désigné pour les soutenir"
     ],
-    "domaines": ["famille", "protection de l'enfant"],
-    "articlesLies": ["CC 307", "CC 310", "CC 312"]
+    "domaines": [
+      "famille",
+      "protection de l'enfant"
+    ],
+    "articlesLies": [
+      "CC 307",
+      "CC 310",
+      "CC 312"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 310",
@@ -372,8 +589,16 @@
       "Maltraitance avérée malgré le suivi → l'enfant est placé en famille d'accueil",
       "Toxicomanie grave empêchant tout encadrement → placement de l'enfant"
     ],
-    "domaines": ["famille", "protection de l'enfant"],
-    "articlesLies": ["CC 307", "CC 308", "CC 312"]
+    "domaines": [
+      "famille",
+      "protection de l'enfant"
+    ],
+    "articlesLies": [
+      "CC 307",
+      "CC 308",
+      "CC 312"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 312",
@@ -384,8 +609,17 @@
     "exemplesConcrets": [
       "Parent condamné pour violence grave et répétée sur l'enfant → retrait de l'autorité parentale"
     ],
-    "domaines": ["famille", "protection de l'enfant"],
-    "articlesLies": ["CC 307", "CC 308", "CC 310", "CC 315a"]
+    "domaines": [
+      "famille",
+      "protection de l'enfant"
+    ],
+    "articlesLies": [
+      "CC 307",
+      "CC 308",
+      "CC 310",
+      "CC 315a"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 315a",
@@ -396,8 +630,16 @@
     "exemplesConcrets": [
       "Divorce en cours → c'est le juge du divorce qui décide du placement éventuel de l'enfant, pas l'APEA"
     ],
-    "domaines": ["famille", "protection de l'enfant"],
-    "articlesLies": ["CC 133", "CC 307", "CC 312"]
+    "domaines": [
+      "famille",
+      "protection de l'enfant"
+    ],
+    "articlesLies": [
+      "CC 133",
+      "CC 307",
+      "CC 312"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 327a",
@@ -408,8 +650,15 @@
     "exemplesConcrets": [
       "L'enfant hérite de 100'000 CHF → les parents doivent gérer cet argent dans l'intérêt de l'enfant, pas pour leurs propres dépenses"
     ],
-    "domaines": ["famille", "enfants"],
-    "articlesLies": ["CC 306", "CC 296"]
+    "domaines": [
+      "famille",
+      "enfants"
+    ],
+    "articlesLies": [
+      "CC 306",
+      "CC 296"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 360",
@@ -421,8 +670,15 @@
       "Rédaction de directives anticipées refusant l'acharnement thérapeutique",
       "Désignation d'un représentant thérapeutique en cas de démence"
     ],
-    "domaines": ["protection de l'adulte", "santé"],
-    "articlesLies": ["CC 370", "CC 388"]
+    "domaines": [
+      "protection de l'adulte",
+      "santé"
+    ],
+    "articlesLies": [
+      "CC 370",
+      "CC 388"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 370",
@@ -434,8 +690,15 @@
       "Rédaction d'un mandat confiant la gestion financière à son fils en cas de démence",
       "Mandat désignant un ami de confiance pour les décisions médicales"
     ],
-    "domaines": ["protection de l'adulte"],
-    "articlesLies": ["CC 360", "CC 388", "CC 390"]
+    "domaines": [
+      "protection de l'adulte"
+    ],
+    "articlesLies": [
+      "CC 360",
+      "CC 388",
+      "CC 390"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 388",
@@ -446,8 +709,15 @@
     "exemplesConcrets": [
       "Personne âgée qui se fait escroquer → mesure de curatelle pour la protéger"
     ],
-    "domaines": ["protection de l'adulte"],
-    "articlesLies": ["CC 390", "CC 394", "CC 398"]
+    "domaines": [
+      "protection de l'adulte"
+    ],
+    "articlesLies": [
+      "CC 390",
+      "CC 394",
+      "CC 398"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 390",
@@ -459,8 +729,16 @@
       "Personne atteinte d'Alzheimer ne gérant plus ses factures → curatelle de gestion",
       "Jeune adulte avec un handicap mental → curatelle de représentation"
     ],
-    "domaines": ["protection de l'adulte"],
-    "articlesLies": ["CC 388", "CC 394", "CC 395", "CC 396"]
+    "domaines": [
+      "protection de l'adulte"
+    ],
+    "articlesLies": [
+      "CC 388",
+      "CC 394",
+      "CC 395",
+      "CC 396"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 394",
@@ -471,8 +749,15 @@
     "exemplesConcrets": [
       "Personne dépressive ayant besoin d'aide pour ses démarches administratives → curatelle d'accompagnement volontaire"
     ],
-    "domaines": ["protection de l'adulte"],
-    "articlesLies": ["CC 390", "CC 395", "CC 396"]
+    "domaines": [
+      "protection de l'adulte"
+    ],
+    "articlesLies": [
+      "CC 390",
+      "CC 395",
+      "CC 396"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 395",
@@ -483,8 +768,16 @@
     "exemplesConcrets": [
       "Personne hospitalisée incapable de gérer ses affaires → le curateur signe les contrats à sa place"
     ],
-    "domaines": ["protection de l'adulte"],
-    "articlesLies": ["CC 390", "CC 394", "CC 396", "CC 398"]
+    "domaines": [
+      "protection de l'adulte"
+    ],
+    "articlesLies": [
+      "CC 390",
+      "CC 394",
+      "CC 396",
+      "CC 398"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 396",
@@ -495,8 +788,16 @@
     "exemplesConcrets": [
       "Personne âgée confuse → le curateur gère ses comptes bancaires et paie ses factures"
     ],
-    "domaines": ["protection de l'adulte"],
-    "articlesLies": ["CC 390", "CC 394", "CC 395", "CC 398"]
+    "domaines": [
+      "protection de l'adulte"
+    ],
+    "articlesLies": [
+      "CC 390",
+      "CC 394",
+      "CC 395",
+      "CC 398"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 398",
@@ -508,8 +809,16 @@
       "Personne en état végétatif → curatelle de portée générale, le curateur gère tout",
       "Handicap mental sévère empêchant toute autonomie → curatelle de portée générale"
     ],
-    "domaines": ["protection de l'adulte"],
-    "articlesLies": ["CC 390", "CC 395", "CC 396", "CC 400"]
+    "domaines": [
+      "protection de l'adulte"
+    ],
+    "articlesLies": [
+      "CC 390",
+      "CC 395",
+      "CC 396",
+      "CC 400"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 400",
@@ -520,8 +829,14 @@
     "exemplesConcrets": [
       "La personne sous curatelle souhaite que son frère soit curateur → l'APEA en tient compte si c'est approprié"
     ],
-    "domaines": ["protection de l'adulte"],
-    "articlesLies": ["CC 390", "CC 398"]
+    "domaines": [
+      "protection de l'adulte"
+    ],
+    "articlesLies": [
+      "CC 390",
+      "CC 398"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 446",
@@ -532,8 +847,15 @@
     "exemplesConcrets": [
       "L'APEA ordonne une expertise psychiatrique même si aucune partie ne l'a demandée"
     ],
-    "domaines": ["protection de l'adulte", "procédure"],
-    "articlesLies": ["CC 449a", "CC 450"]
+    "domaines": [
+      "protection de l'adulte",
+      "procédure"
+    ],
+    "articlesLies": [
+      "CC 449a",
+      "CC 450"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 449a",
@@ -544,8 +866,15 @@
     "exemplesConcrets": [
       "Recours contre un placement → la mesure est suspendue jusqu'à la décision, sauf urgence"
     ],
-    "domaines": ["protection de l'adulte", "procédure"],
-    "articlesLies": ["CC 446", "CC 450"]
+    "domaines": [
+      "protection de l'adulte",
+      "procédure"
+    ],
+    "articlesLies": [
+      "CC 446",
+      "CC 450"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 450",
@@ -556,8 +885,16 @@
     "exemplesConcrets": [
       "Fils en désaccord avec la curatelle imposée à sa mère → recours au tribunal dans les 30 jours"
     ],
-    "domaines": ["protection de l'adulte", "procédure"],
-    "articlesLies": ["CC 446", "CC 449a", "CC 453"]
+    "domaines": [
+      "protection de l'adulte",
+      "procédure"
+    ],
+    "articlesLies": [
+      "CC 446",
+      "CC 449a",
+      "CC 453"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 453",
@@ -568,8 +905,16 @@
     "exemplesConcrets": [
       "Avant d'instituer une curatelle → l'APEA convoque la personne pour l'entendre"
     ],
-    "domaines": ["protection de l'adulte", "procédure"],
-    "articlesLies": ["CC 446", "CC 450", "CC 455"]
+    "domaines": [
+      "protection de l'adulte",
+      "procédure"
+    ],
+    "articlesLies": [
+      "CC 446",
+      "CC 450",
+      "CC 455"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 455",
@@ -580,8 +925,14 @@
     "exemplesConcrets": [
       "Personne placée en institution psychiatrique → l'APEA réexamine tous les 6 mois si le placement est encore justifié"
     ],
-    "domaines": ["protection de l'adulte"],
-    "articlesLies": ["CC 453", "CC 446"]
+    "domaines": [
+      "protection de l'adulte"
+    ],
+    "articlesLies": [
+      "CC 453",
+      "CC 446"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 457",
@@ -593,8 +944,15 @@
       "Le défunt laisse 2 enfants → ils héritent à parts égales",
       "Pas d'enfants → les parents du défunt héritent, ou à défaut ses frères et sœurs"
     ],
-    "domaines": ["successions"],
-    "articlesLies": ["CC 462", "CC 470", "CC 471"]
+    "domaines": [
+      "successions"
+    ],
+    "articlesLies": [
+      "CC 462",
+      "CC 470",
+      "CC 471"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 462",
@@ -606,8 +964,15 @@
       "Décès avec 2 enfants → le conjoint reçoit 1/2, les enfants se partagent l'autre 1/2",
       "Décès sans enfant, parents vivants → le conjoint reçoit 3/4, les parents 1/4"
     ],
-    "domaines": ["successions"],
-    "articlesLies": ["CC 457", "CC 470", "CC 471"]
+    "domaines": [
+      "successions"
+    ],
+    "articlesLies": [
+      "CC 457",
+      "CC 470",
+      "CC 471"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 470",
@@ -619,8 +984,15 @@
       "Le défunt a des enfants → il peut léguer librement la part qui excède les 3/4 réservés aux enfants",
       "Pas d'héritiers réservataires → le défunt peut disposer de la totalité de ses biens"
     ],
-    "domaines": ["successions"],
-    "articlesLies": ["CC 471", "CC 457", "CC 462"]
+    "domaines": [
+      "successions"
+    ],
+    "articlesLies": [
+      "CC 471",
+      "CC 457",
+      "CC 462"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 471",
@@ -632,8 +1004,15 @@
       "Le père veut tout léguer à sa nouvelle femme → les enfants peuvent réclamer 3/4 de leur part légale",
       "Testament qui déshérite le conjoint → le conjoint peut exiger au minimum 1/2 de sa part légale"
     ],
-    "domaines": ["successions"],
-    "articlesLies": ["CC 470", "CC 457", "CC 462"]
+    "domaines": [
+      "successions"
+    ],
+    "articlesLies": [
+      "CC 470",
+      "CC 457",
+      "CC 462"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 473",
@@ -644,8 +1023,15 @@
     "exemplesConcrets": [
       "Le père lègue l'usufruit de la maison familiale à la mère → les enfants sont nus-propriétaires mais la mère y vit sa vie durant"
     ],
-    "domaines": ["successions"],
-    "articlesLies": ["CC 471", "CC 462", "CC 470"]
+    "domaines": [
+      "successions"
+    ],
+    "articlesLies": [
+      "CC 471",
+      "CC 462",
+      "CC 470"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 477",
@@ -657,8 +1043,14 @@
       "Un fils a tenté de tuer son père → le père peut l'exhéréder par testament",
       "Un enfant refuse tout contact et tout soutien à un parent dans le besoin → exhérédation possible"
     ],
-    "domaines": ["successions"],
-    "articlesLies": ["CC 471", "CC 470"]
+    "domaines": [
+      "successions"
+    ],
+    "articlesLies": [
+      "CC 471",
+      "CC 470"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 494",
@@ -670,8 +1062,15 @@
       "Deux époux signent un pacte de renonciation mutuelle à leur réserve pour avantager un tiers",
       "Un parent promet par pacte successoral de léguer la maison familiale à l'enfant qui s'en occupe"
     ],
-    "domaines": ["successions"],
-    "articlesLies": ["CC 512", "CC 470", "CC 505"]
+    "domaines": [
+      "successions"
+    ],
+    "articlesLies": [
+      "CC 512",
+      "CC 470",
+      "CC 505"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 505",
@@ -683,8 +1082,14 @@
       "Testament rédigé à la main et signé → valable",
       "Testament tapé sur ordinateur et imprimé → nul, même s'il est signé"
     ],
-    "domaines": ["successions"],
-    "articlesLies": ["CC 512", "CC 494"]
+    "domaines": [
+      "successions"
+    ],
+    "articlesLies": [
+      "CC 512",
+      "CC 494"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 512",
@@ -696,8 +1101,14 @@
       "Rédaction d'un nouveau testament → l'ancien est automatiquement remplacé sur les points contradictoires",
       "Déchirer son testament devant témoins → révocation valable"
     ],
-    "domaines": ["successions"],
-    "articlesLies": ["CC 505", "CC 494"]
+    "domaines": [
+      "successions"
+    ],
+    "articlesLies": [
+      "CC 505",
+      "CC 494"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 517",
@@ -708,8 +1119,14 @@
     "exemplesConcrets": [
       "Le testateur nomme son avocat comme exécuteur testamentaire pour gérer le partage de la succession"
     ],
-    "domaines": ["successions"],
-    "articlesLies": ["CC 518", "CC 505"]
+    "domaines": [
+      "successions"
+    ],
+    "articlesLies": [
+      "CC 518",
+      "CC 505"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 518",
@@ -720,8 +1137,14 @@
     "exemplesConcrets": [
       "L'exécuteur testamentaire vend un immeuble de la succession pour payer les dettes puis distribue le solde aux héritiers"
     ],
-    "domaines": ["successions"],
-    "articlesLies": ["CC 517", "CC 603"]
+    "domaines": [
+      "successions"
+    ],
+    "articlesLies": [
+      "CC 517",
+      "CC 603"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 540",
@@ -733,8 +1156,14 @@
       "Un héritier a détruit le testament pour hériter davantage → il est exclu de la succession",
       "Un héritier a tué le défunt → il perd tout droit successoral"
     ],
-    "domaines": ["successions"],
-    "articlesLies": ["CC 477", "CC 457"]
+    "domaines": [
+      "successions"
+    ],
+    "articlesLies": [
+      "CC 477",
+      "CC 457"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 559",
@@ -745,8 +1174,14 @@
     "exemplesConcrets": [
       "Le défunt laisse plus de dettes que de biens → l'héritier répudie dans les 3 mois pour ne pas hériter des dettes"
     ],
-    "domaines": ["successions"],
-    "articlesLies": ["CC 567", "CC 580"]
+    "domaines": [
+      "successions"
+    ],
+    "articlesLies": [
+      "CC 567",
+      "CC 580"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 567",
@@ -758,8 +1193,14 @@
       "Le fils répudie → ses propres enfants (petits-enfants du défunt) sont appelés à hériter",
       "Tous les enfants répudient → les parents du défunt héritent"
     ],
-    "domaines": ["successions"],
-    "articlesLies": ["CC 559", "CC 580"]
+    "domaines": [
+      "successions"
+    ],
+    "articlesLies": [
+      "CC 559",
+      "CC 580"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 580",
@@ -770,8 +1211,14 @@
     "exemplesConcrets": [
       "Succession d'un entrepreneur → l'héritier demande l'inventaire pour savoir si les dettes dépassent les actifs avant de décider"
     ],
-    "domaines": ["successions"],
-    "articlesLies": ["CC 559", "CC 567"]
+    "domaines": [
+      "successions"
+    ],
+    "articlesLies": [
+      "CC 559",
+      "CC 567"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 603",
@@ -782,8 +1229,15 @@
     "exemplesConcrets": [
       "Trois héritiers n'arrivent pas à se mettre d'accord sur la maison familiale → le juge peut ordonner la vente aux enchères et le partage du produit"
     ],
-    "domaines": ["successions"],
-    "articlesLies": ["CC 612a", "CC 518", "CC 457"]
+    "domaines": [
+      "successions"
+    ],
+    "articlesLies": [
+      "CC 612a",
+      "CC 518",
+      "CC 457"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 612a",
@@ -794,8 +1248,15 @@
     "exemplesConcrets": [
       "Le mari décède → la veuve demande à conserver l'appartement familial en imputation sur sa part d'héritage"
     ],
-    "domaines": ["successions", "famille"],
-    "articlesLies": ["CC 462", "CC 603"]
+    "domaines": [
+      "successions",
+      "famille"
+    ],
+    "articlesLies": [
+      "CC 462",
+      "CC 603"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CC 684",
@@ -807,7 +1268,13 @@
       "Le voisin fait des travaux de nuit avec un marteau-piqueur → nuisance excessive",
       "Barbecue occasionnel en été → tolérance normale, pas d'action possible"
     ],
-    "domaines": ["voisinage", "droits réels"],
-    "articlesLies": ["CC 28"]
+    "domaines": [
+      "voisinage",
+      "droits réels"
+    ],
+    "articlesLies": [
+      "CC 28"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   }
 ]

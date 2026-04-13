@@ -5,9 +5,17 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_38",
     "texteSimple": "La poursuite s'exécute au lieu du domicile du débiteur. C'est l'office des poursuites de ce lieu qui est compétent.",
-    "exemplesConcrets": ["Débiteur habite Lausanne → poursuite à l'office de Lausanne"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 46", "LP 67"]
+    "exemplesConcrets": [
+      "Débiteur habite Lausanne → poursuite à l'office de Lausanne"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 46",
+      "LP 67"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 67",
@@ -15,9 +23,17 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_67",
     "texteSimple": "Le créancier dépose une réquisition de poursuite à l'office. Il indique le montant de la créance et sa cause. Aucune preuve n'est exigée à ce stade.",
-    "exemplesConcrets": ["Facture impayée de 5000 CHF → réquisition de poursuite (env. 50-100 CHF de frais)"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 68", "LP 69"]
+    "exemplesConcrets": [
+      "Facture impayée de 5000 CHF → réquisition de poursuite (env. 50-100 CHF de frais)"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 68",
+      "LP 69"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 68",
@@ -25,9 +41,18 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_68",
     "texteSimple": "L'office notifie un commandement de payer au débiteur, qui indique le montant réclamé, la cause de la créance et le délai pour faire opposition.",
-    "exemplesConcrets": ["Le facteur remet le commandement de payer au débiteur en mains propres"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 67", "LP 69", "LP 74"]
+    "exemplesConcrets": [
+      "Le facteur remet le commandement de payer au débiteur en mains propres"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 67",
+      "LP 69",
+      "LP 74"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 69",
@@ -35,9 +60,19 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_69",
     "texteSimple": "Le commandement de payer est notifié par l'office au débiteur. Il contient la menace de saisie ou de faillite et invite le débiteur à payer dans les 20 jours ou à faire opposition dans les 10 jours.",
-    "exemplesConcrets": ["Réception du commandement → 10 jours pour faire opposition", "Si pas d'opposition et pas de paiement → le créancier peut continuer la poursuite"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 68", "LP 74", "LP 79"]
+    "exemplesConcrets": [
+      "Réception du commandement → 10 jours pour faire opposition",
+      "Si pas d'opposition et pas de paiement → le créancier peut continuer la poursuite"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 68",
+      "LP 74",
+      "LP 79"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 74",
@@ -45,9 +80,20 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_74",
     "texteSimple": "Le débiteur peut faire opposition au commandement de payer dans les 10 jours, sans avoir à donner de motif. L'opposition bloque la poursuite.",
-    "exemplesConcrets": ["Réception du commandement → 'Je fais opposition' écrit sur le formulaire ou à l'office", "Opposition orale possible devant le facteur qui notifie"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 69", "LP 75", "LP 79", "LP 80"]
+    "exemplesConcrets": [
+      "Réception du commandement → 'Je fais opposition' écrit sur le formulaire ou à l'office",
+      "Opposition orale possible devant le facteur qui notifie"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 69",
+      "LP 75",
+      "LP 79",
+      "LP 80"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 75",
@@ -55,9 +101,18 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_75",
     "texteSimple": "Si le délai de 10 jours est dépassé, le débiteur peut demander au juge de restituer le délai d'opposition s'il a été empêché sans sa faute (maladie, absence, erreur de notification).",
-    "exemplesConcrets": ["Hospitalisation pendant le délai d'opposition → restitution possible", "Commandement déposé chez un voisin sans information → restitution"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 74", "LP 77"]
+    "exemplesConcrets": [
+      "Hospitalisation pendant le délai d'opposition → restitution possible",
+      "Commandement déposé chez un voisin sans information → restitution"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 74",
+      "LP 77"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 79",
@@ -65,9 +120,18 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_79",
     "texteSimple": "Si le créancier a un jugement ou un acte authentique, il peut obtenir la mainlevée définitive de l'opposition auprès du juge.",
-    "exemplesConcrets": ["Jugement condamnant le débiteur à payer 10'000 CHF → mainlevée définitive"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 74", "LP 80", "LP 81"]
+    "exemplesConcrets": [
+      "Jugement condamnant le débiteur à payer 10'000 CHF → mainlevée définitive"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 74",
+      "LP 80",
+      "LP 81"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 80",
@@ -75,9 +139,19 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_80",
     "texteSimple": "Si le créancier a un titre de mainlevée provisoire (reconnaissance de dette signée, contrat clair), le juge lève provisoirement l'opposition.",
-    "exemplesConcrets": ["Contrat de prêt signé avec montant clair → mainlevée provisoire", "Facture reconnue par e-mail → peut suffire"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 79", "LP 81", "LP 82"]
+    "exemplesConcrets": [
+      "Contrat de prêt signé avec montant clair → mainlevée provisoire",
+      "Facture reconnue par e-mail → peut suffire"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 79",
+      "LP 81",
+      "LP 82"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 82",
@@ -85,9 +159,17 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_82",
     "texteSimple": "Après une mainlevée provisoire, le débiteur a 20 jours pour ouvrir une action en libération de dette devant le tribunal et prouver qu'il ne doit rien.",
-    "exemplesConcrets": ["Mainlevée provisoire accordée → 20 jours pour prouver que la dette est éteinte ou n'existe pas"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 80", "LP 83"]
+    "exemplesConcrets": [
+      "Mainlevée provisoire accordée → 20 jours pour prouver que la dette est éteinte ou n'existe pas"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 80",
+      "LP 83"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 88",
@@ -95,9 +177,17 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_88",
     "texteSimple": "Si l'opposition est levée ou si le débiteur n'a pas fait opposition, le créancier peut demander la continuation de la poursuite (saisie ou faillite) dans un délai d'un an.",
-    "exemplesConcrets": ["Pas d'opposition au commandement → réquisition de continuer → saisie"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 89", "LP 91"]
+    "exemplesConcrets": [
+      "Pas d'opposition au commandement → réquisition de continuer → saisie"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 89",
+      "LP 91"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 89",
@@ -105,9 +195,21 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_89",
     "texteSimple": "Après la réquisition de continuer, l'office procède à la saisie des biens du débiteur pour couvrir la créance et les frais.",
-    "exemplesConcrets": ["Saisie du salaire", "Saisie du compte bancaire", "Saisie de biens mobiliers"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 88", "LP 91", "LP 92", "LP 93"]
+    "exemplesConcrets": [
+      "Saisie du salaire",
+      "Saisie du compte bancaire",
+      "Saisie de biens mobiliers"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 88",
+      "LP 91",
+      "LP 92",
+      "LP 93"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 92",
@@ -115,9 +217,18 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_92",
     "texteSimple": "Certains biens ne peuvent pas être saisis : objets personnels indispensables, outils de travail nécessaires, vêtements, meubles de base du ménage.",
-    "exemplesConcrets": ["Vêtements, lit, cuisinière = insaisissables", "Outils de l'artisan indépendant = insaisissables"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 93", "LP 89"]
+    "exemplesConcrets": [
+      "Vêtements, lit, cuisinière = insaisissables",
+      "Outils de l'artisan indépendant = insaisissables"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 93",
+      "LP 89"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 93",
@@ -125,9 +236,18 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_93",
     "texteSimple": "Le salaire ne peut être saisi que dans la mesure où il dépasse le minimum vital. Celui-ci couvre le loyer, la nourriture, l'assurance maladie, les transports et les charges courantes.",
-    "exemplesConcrets": ["Minimum vital personne seule ≈ 1200 CHF + loyer + assurance maladie", "Famille avec 2 enfants : minimum vital plus élevé → moins saisissable"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 92", "LP 89"]
+    "exemplesConcrets": [
+      "Minimum vital personne seule ≈ 1200 CHF + loyer + assurance maladie",
+      "Famille avec 2 enfants : minimum vital plus élevé → moins saisissable"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 92",
+      "LP 89"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 106",
@@ -135,9 +255,17 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_106",
     "texteSimple": "Si un tiers prétend que le bien saisi lui appartient, il peut le revendiquer. L'office invite alors les parties à saisir le tribunal.",
-    "exemplesConcrets": ["Objet saisi chez le débiteur appartient en réalité à son colocataire → revendication"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 107", "LP 109"]
+    "exemplesConcrets": [
+      "Objet saisi chez le débiteur appartient en réalité à son colocataire → revendication"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 107",
+      "LP 109"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 111",
@@ -145,9 +273,17 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_111",
     "texteSimple": "Si plusieurs créanciers poursuivent le même débiteur, ils sont regroupés dans une série et se partagent le produit de la saisie proportionnellement.",
-    "exemplesConcrets": ["3 créanciers → saisie commune → répartition proportionnelle"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 110", "LP 112"]
+    "exemplesConcrets": [
+      "3 créanciers → saisie commune → répartition proportionnelle"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 110",
+      "LP 112"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 115",
@@ -155,9 +291,17 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_115",
     "texteSimple": "Après réalisation des biens saisis, l'office dresse un tableau de distribution qui indique combien chaque créancier reçoit.",
-    "exemplesConcrets": ["Vente du bien saisi rapporte 20'000 CHF → répartition entre les créanciers"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 111", "LP 149"]
+    "exemplesConcrets": [
+      "Vente du bien saisi rapporte 20'000 CHF → répartition entre les créanciers"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 111",
+      "LP 149"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 123",
@@ -165,9 +309,17 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_123",
     "texteSimple": "Pour les débiteurs inscrits au registre du commerce, le créancier peut requérir la faillite (au lieu de la saisie) si le commandement de payer n'est pas contesté.",
-    "exemplesConcrets": ["Entreprise SARL ne paie pas → réquisition de faillite au tribunal"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 159", "LP 166"]
+    "exemplesConcrets": [
+      "Entreprise SARL ne paie pas → réquisition de faillite au tribunal"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 159",
+      "LP 166"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 149",
@@ -175,9 +327,17 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_149",
     "texteSimple": "Si la saisie ne couvre pas la totalité de la créance, le créancier reçoit un acte de défaut de biens pour le solde. Ce titre vaut reconnaissance de dette et se prescrit par 20 ans.",
-    "exemplesConcrets": ["Créance de 10'000 CHF, saisie rapporte 3'000 → acte de défaut de biens pour 7'000 CHF"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 149a", "LP 115"]
+    "exemplesConcrets": [
+      "Créance de 10'000 CHF, saisie rapporte 3'000 → acte de défaut de biens pour 7'000 CHF"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 149a",
+      "LP 115"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 149a",
@@ -185,9 +345,17 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_149_a",
     "texteSimple": "L'acte de défaut de biens permet de relancer une poursuite dès que le débiteur revient à meilleure fortune. La dette ne produit plus d'intérêts.",
-    "exemplesConcrets": ["Débiteur retrouve un emploi bien payé → le créancier peut relancer la poursuite"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 149", "LP 265"]
+    "exemplesConcrets": [
+      "Débiteur retrouve un emploi bien payé → le créancier peut relancer la poursuite"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 149",
+      "LP 265"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 159",
@@ -195,9 +363,17 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_159",
     "texteSimple": "Le tribunal prononce la faillite si le débiteur soumis à la poursuite par voie de faillite ne paie pas dans les 20 jours après la commination de faillite.",
-    "exemplesConcrets": ["Entreprise insolvable → tribunal prononce la faillite → nomination d'un administrateur"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 123", "LP 166"]
+    "exemplesConcrets": [
+      "Entreprise insolvable → tribunal prononce la faillite → nomination d'un administrateur"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 123",
+      "LP 166"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 166",
@@ -205,9 +381,17 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_166",
     "texteSimple": "Dès le prononcé de la faillite, le débiteur perd le droit de disposer de ses biens. Toutes les poursuites en cours sont suspendues.",
-    "exemplesConcrets": ["Prononcé de faillite → tous les biens passent sous contrôle de l'office des faillites"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 159", "LP 197"]
+    "exemplesConcrets": [
+      "Prononcé de faillite → tous les biens passent sous contrôle de l'office des faillites"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 159",
+      "LP 197"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 174",
@@ -215,9 +399,17 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_174",
     "texteSimple": "Le débiteur peut recourir contre le prononcé de faillite dans les 10 jours. La faillite peut être annulée s'il paie ou prouve sa solvabilité.",
-    "exemplesConcrets": ["Débiteur paie la totalité dans les 10 jours → annulation de la faillite"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 159", "LP 166"]
+    "exemplesConcrets": [
+      "Débiteur paie la totalité dans les 10 jours → annulation de la faillite"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 159",
+      "LP 166"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 191",
@@ -225,9 +417,17 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_191",
     "texteSimple": "Un particulier surendetté peut demander sa propre faillite au tribunal. Tous ses biens sont liquidés, mais ses dettes sont réglées en une fois.",
-    "exemplesConcrets": ["Personne avec 200'000 CHF de dettes impossibles à rembourser → demande de faillite personnelle"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 166", "LP 265"]
+    "exemplesConcrets": [
+      "Personne avec 200'000 CHF de dettes impossibles à rembourser → demande de faillite personnelle"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 166",
+      "LP 265"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 17",
@@ -235,9 +435,18 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_17",
     "texteSimple": "Si l'office des poursuites commet une erreur ou agit de manière illicite, vous pouvez déposer une plainte à l'autorité de surveillance dans les 10 jours.",
-    "exemplesConcrets": ["Saisie d'un objet insaisissable → plainte dans les 10 jours", "Erreur de calcul du minimum vital → plainte"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 92", "LP 93"]
+    "exemplesConcrets": [
+      "Saisie d'un objet insaisissable → plainte dans les 10 jours",
+      "Erreur de calcul du minimum vital → plainte"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 92",
+      "LP 93"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 265",
@@ -245,9 +454,17 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_265",
     "texteSimple": "Le débiteur qui a payé intégralement tous ses créanciers après une faillite peut demander sa réhabilitation au tribunal.",
-    "exemplesConcrets": ["Après faillite personnelle, remboursement total des dettes → effacement de la faillite au registre"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 191", "LP 149a"]
+    "exemplesConcrets": [
+      "Après faillite personnelle, remboursement total des dettes → effacement de la faillite au registre"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 191",
+      "LP 149a"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 25",
@@ -255,9 +472,16 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_25",
     "texteSimple": "Le canton est responsable des dommages causés par les actes illicites de l'office des poursuites ou de faillites.",
-    "exemplesConcrets": ["Saisie abusive cause un dommage → canton responsable"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 17"]
+    "exemplesConcrets": [
+      "Saisie abusive cause un dommage → canton responsable"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 17"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 271",
@@ -265,9 +489,17 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_271",
     "texteSimple": "Le créancier peut demander le séquestre (blocage provisoire) des biens du débiteur si celui-ci n'a pas de domicile fixe, s'il s'apprête à fuir, ou s'il dissimule ses biens.",
-    "exemplesConcrets": ["Débiteur sur le point de quitter la Suisse → séquestre de son compte bancaire"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 272", "LP 278"]
+    "exemplesConcrets": [
+      "Débiteur sur le point de quitter la Suisse → séquestre de son compte bancaire"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 272",
+      "LP 278"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LP 333",
@@ -275,8 +507,16 @@
     "rs": "RS 281.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_293",
     "texteSimple": "Le débiteur en difficulté peut demander un sursis concordataire au tribunal pour tenter de trouver un arrangement avec ses créanciers et éviter la faillite.",
-    "exemplesConcrets": ["Entreprise en difficulté → sursis de 4-6 mois → plan de remboursement partiel accepté par les créanciers"],
-    "domaines": ["poursuites"],
-    "articlesLies": ["LP 159", "LP 191"]
+    "exemplesConcrets": [
+      "Entreprise en difficulté → sursis de 4-6 mois → plan de remboursement partiel accepté par les créanciers"
+    ],
+    "domaines": [
+      "poursuites"
+    ],
+    "articlesLies": [
+      "LP 159",
+      "LP 191"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   }
 ]

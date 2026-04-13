@@ -5,9 +5,20 @@
     "rs": "RS 142.31",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1999/358/fr#art_3",
     "texteSimple": "Sont des réfugiés les personnes qui, dans leur pays d'origine, sont exposées à de sérieux préjudices en raison de leur race, religion, nationalité, appartenance à un groupe social ou opinions politiques.",
-    "exemplesConcrets": ["Persécution politique dans le pays d'origine → statut de réfugié possible", "Menaces de mort en raison de l'appartenance ethnique → motif d'asile"],
-    "domaines": ["asile", "migration"],
-    "articlesLies": ["LAsi 17", "LAsi 43", "LAsi 44"]
+    "exemplesConcrets": [
+      "Persécution politique dans le pays d'origine → statut de réfugié possible",
+      "Menaces de mort en raison de l'appartenance ethnique → motif d'asile"
+    ],
+    "domaines": [
+      "asile",
+      "migration"
+    ],
+    "articlesLies": [
+      "LAsi 17",
+      "LAsi 43",
+      "LAsi 44"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAsi 17",
@@ -15,9 +26,19 @@
     "rs": "RS 142.31",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1999/358/fr#art_17",
     "texteSimple": "Lorsque la demande d'asile ne peut pas être traitée en procédure accélérée, elle est traitée en procédure élargie. Le requérant est attribué à un canton.",
-    "exemplesConcrets": ["Dossier complexe nécessitant des investigations → procédure élargie", "Attribution à un canton pour la durée de la procédure"],
-    "domaines": ["asile", "migration"],
-    "articlesLies": ["LAsi 3", "LAsi 43"]
+    "exemplesConcrets": [
+      "Dossier complexe nécessitant des investigations → procédure élargie",
+      "Attribution à un canton pour la durée de la procédure"
+    ],
+    "domaines": [
+      "asile",
+      "migration"
+    ],
+    "articlesLies": [
+      "LAsi 3",
+      "LAsi 43"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAsi 43",
@@ -25,9 +46,19 @@
     "rs": "RS 142.31",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1999/358/fr#art_43",
     "texteSimple": "Les réfugiés reconnus ont le droit d'exercer une activité lucrative. L'autorisation est délivrée par les autorités cantonales compétentes.",
-    "exemplesConcrets": ["Réfugié reconnu peut travailler comme salarié sans restriction", "Demande d'autorisation de travail auprès du canton d'attribution"],
-    "domaines": ["asile", "travail"],
-    "articlesLies": ["LAsi 3", "LAsi 44"]
+    "exemplesConcrets": [
+      "Réfugié reconnu peut travailler comme salarié sans restriction",
+      "Demande d'autorisation de travail auprès du canton d'attribution"
+    ],
+    "domaines": [
+      "asile",
+      "travail"
+    ],
+    "articlesLies": [
+      "LAsi 3",
+      "LAsi 44"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAsi 44",
@@ -35,9 +66,19 @@
     "rs": "RS 142.31",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1999/358/fr#art_44",
     "texteSimple": "Les personnes dont la demande d'asile est rejetée mais dont le renvoi n'est pas possible, licite ou raisonnablement exigible obtiennent une admission provisoire (permis F).",
-    "exemplesConcrets": ["Renvoi impossible car le pays d'origine refuse le retour → permis F", "Situation de guerre dans le pays d'origine → admission provisoire"],
-    "domaines": ["asile", "migration"],
-    "articlesLies": ["LAsi 3", "LAsi 43"]
+    "exemplesConcrets": [
+      "Renvoi impossible car le pays d'origine refuse le retour → permis F",
+      "Situation de guerre dans le pays d'origine → admission provisoire"
+    ],
+    "domaines": [
+      "asile",
+      "migration"
+    ],
+    "articlesLies": [
+      "LAsi 3",
+      "LAsi 43"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAsi 50",
@@ -45,9 +86,20 @@
     "rs": "RS 142.31",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1999/358/fr#art_50",
     "texteSimple": "Le conjoint d'un réfugié et ses enfants mineurs sont reconnus comme réfugiés et obtiennent l'asile, pour autant qu'aucune circonstance particulière ne s'y oppose (asile familial).",
-    "exemplesConcrets": ["Conjoint et enfants d'un réfugié reconnu peuvent le rejoindre en Suisse", "Regroupement familial possible après obtention de l'asile"],
-    "domaines": ["asile", "migration", "famille"],
-    "articlesLies": ["LAsi 3", "LAsi 44"]
+    "exemplesConcrets": [
+      "Conjoint et enfants d'un réfugié reconnu peuvent le rejoindre en Suisse",
+      "Regroupement familial possible après obtention de l'asile"
+    ],
+    "domaines": [
+      "asile",
+      "migration",
+      "famille"
+    ],
+    "articlesLies": [
+      "LAsi 3",
+      "LAsi 44"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAsi 86",
@@ -55,9 +107,19 @@
     "rs": "RS 142.31",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1999/358/fr#art_86",
     "texteSimple": "Les cantons accordent l'aide sociale ou l'aide d'urgence aux personnes relevant du domaine de l'asile. Les requérants déboutés n'ont droit qu'à l'aide d'urgence (art. 12 Cst.).",
-    "exemplesConcrets": ["Requérant d'asile reçoit une aide sociale mensuelle pendant la procédure", "Après rejet définitif → uniquement aide d'urgence (nourriture, hébergement, soins)"],
-    "domaines": ["asile", "aide sociale"],
-    "articlesLies": ["LAsi 3", "Cst 12"]
+    "exemplesConcrets": [
+      "Requérant d'asile reçoit une aide sociale mensuelle pendant la procédure",
+      "Après rejet définitif → uniquement aide d'urgence (nourriture, hébergement, soins)"
+    ],
+    "domaines": [
+      "asile",
+      "aide sociale"
+    ],
+    "articlesLies": [
+      "LAsi 3",
+      "Cst 12"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAsi 108",
@@ -65,9 +127,19 @@
     "rs": "RS 142.31",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1999/358/fr#art_108",
     "texteSimple": "Le délai de recours contre les décisions du SEM est de 30 jours en procédure élargie et de 7 jours ouvrables en procédure accélérée. Le recours est adressé au Tribunal administratif fédéral.",
-    "exemplesConcrets": ["Décision négative en procédure élargie → 30 jours pour recourir au TAF", "Procédure accélérée → seulement 7 jours ouvrables pour recourir"],
-    "domaines": ["asile", "recours"],
-    "articlesLies": ["LAsi 3", "LTAF 31"]
+    "exemplesConcrets": [
+      "Décision négative en procédure élargie → 30 jours pour recourir au TAF",
+      "Procédure accélérée → seulement 7 jours ouvrables pour recourir"
+    ],
+    "domaines": [
+      "asile",
+      "recours"
+    ],
+    "articlesLies": [
+      "LAsi 3",
+      "LTAF 31"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CPC 150",
@@ -75,9 +147,18 @@
     "rs": "RS 272",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_150",
     "texteSimple": "La preuve porte sur les faits contestés et pertinents. Les faits notoires et les règles d'expérience reconnues n'ont pas besoin d'être prouvés.",
-    "exemplesConcrets": ["Fait non contesté par l'autre partie → pas besoin de preuve", "Le cours du franc suisse à une date donnée = fait notoire"],
-    "domaines": ["procédure civile"],
-    "articlesLies": ["CPC 197", "CPC 202"]
+    "exemplesConcrets": [
+      "Fait non contesté par l'autre partie → pas besoin de preuve",
+      "Le cours du franc suisse à une date donnée = fait notoire"
+    ],
+    "domaines": [
+      "procédure civile"
+    ],
+    "articlesLies": [
+      "CPC 197",
+      "CPC 202"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CPC 197",
@@ -85,9 +166,18 @@
     "rs": "RS 272",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_197",
     "texteSimple": "Toute action civile doit être précédée d'une tentative de conciliation devant une autorité de conciliation, sauf exceptions prévues par la loi.",
-    "exemplesConcrets": ["Avant de saisir le tribunal, passer par la conciliation obligatoire", "Litige de voisinage → d'abord justice de paix"],
-    "domaines": ["procédure civile"],
-    "articlesLies": ["CPC 202", "CPC 213"]
+    "exemplesConcrets": [
+      "Avant de saisir le tribunal, passer par la conciliation obligatoire",
+      "Litige de voisinage → d'abord justice de paix"
+    ],
+    "domaines": [
+      "procédure civile"
+    ],
+    "articlesLies": [
+      "CPC 202",
+      "CPC 213"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CPC 202",
@@ -95,9 +185,18 @@
     "rs": "RS 272",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_202",
     "texteSimple": "Les parties doivent comparaître personnellement à l'audience de conciliation. Si le demandeur fait défaut, la requête est considérée comme retirée. Si le défendeur fait défaut, l'autorisation de procéder est délivrée.",
-    "exemplesConcrets": ["Absence du demandeur → affaire rayée du rôle", "Absence du défendeur → le demandeur obtient l'autorisation d'aller au tribunal"],
-    "domaines": ["procédure civile"],
-    "articlesLies": ["CPC 197", "CPC 213"]
+    "exemplesConcrets": [
+      "Absence du demandeur → affaire rayée du rôle",
+      "Absence du défendeur → le demandeur obtient l'autorisation d'aller au tribunal"
+    ],
+    "domaines": [
+      "procédure civile"
+    ],
+    "articlesLies": [
+      "CPC 197",
+      "CPC 213"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CPC 213",
@@ -105,9 +204,18 @@
     "rs": "RS 272",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_213",
     "texteSimple": "L'autorité de conciliation peut soumettre une proposition de jugement si la valeur litigieuse ne dépasse pas 5000 CHF. Cette proposition vaut jugement si aucune des parties ne s'y oppose dans les 20 jours.",
-    "exemplesConcrets": ["Litige de 3000 CHF → le conciliateur peut proposer un jugement", "Opposition dans les 20 jours → procès ordinaire"],
-    "domaines": ["procédure civile"],
-    "articlesLies": ["CPC 197", "CPC 202"]
+    "exemplesConcrets": [
+      "Litige de 3000 CHF → le conciliateur peut proposer un jugement",
+      "Opposition dans les 20 jours → procès ordinaire"
+    ],
+    "domaines": [
+      "procédure civile"
+    ],
+    "articlesLies": [
+      "CPC 197",
+      "CPC 202"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CPC 291",
@@ -115,9 +223,20 @@
     "rs": "RS 272",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_291",
     "texteSimple": "Le tribunal ordonne les mesures provisionnelles nécessaires pendant la procédure de divorce : garde des enfants, contributions d'entretien, jouissance du logement conjugal, etc.",
-    "exemplesConcrets": ["Pendant le divorce, le juge fixe une pension alimentaire provisoire", "Attribution temporaire du logement familial à un des conjoints"],
-    "domaines": ["procédure civile", "famille", "divorce"],
-    "articlesLies": ["CPC 197", "CPC 213"]
+    "exemplesConcrets": [
+      "Pendant le divorce, le juge fixe une pension alimentaire provisoire",
+      "Attribution temporaire du logement familial à un des conjoints"
+    ],
+    "domaines": [
+      "procédure civile",
+      "famille",
+      "divorce"
+    ],
+    "articlesLies": [
+      "CPC 197",
+      "CPC 213"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LN 7",
@@ -125,9 +244,18 @@
     "rs": "RS 141.0",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2016/404/fr#art_7",
     "texteSimple": "La naturalisation ordinaire nécessite une autorisation fédérale. Le requérant doit avoir résidé 10 ans en Suisse dont 3 des 5 années précédant la demande.",
-    "exemplesConcrets": ["10 ans de résidence en Suisse pour demander la nationalité", "Les années entre 8 et 18 ans comptent double"],
-    "domaines": ["nationalité"],
-    "articlesLies": ["LN 12", "LN 21"]
+    "exemplesConcrets": [
+      "10 ans de résidence en Suisse pour demander la nationalité",
+      "Les années entre 8 et 18 ans comptent double"
+    ],
+    "domaines": [
+      "nationalité"
+    ],
+    "articlesLies": [
+      "LN 12",
+      "LN 21"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LN 12",
@@ -135,9 +263,18 @@
     "rs": "RS 141.0",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2016/404/fr#art_12",
     "texteSimple": "L'intégration se mesure au respect de la sécurité et de l'ordre publics, au respect des valeurs de la Constitution, aux compétences linguistiques et à la participation à la vie économique ou à l'éducation.",
-    "exemplesConcrets": ["Parler le français au niveau B1 oral et A2 écrit → condition remplie", "Avoir un emploi ou une formation → critère de participation économique"],
-    "domaines": ["nationalité"],
-    "articlesLies": ["LN 7", "LN 21"]
+    "exemplesConcrets": [
+      "Parler le français au niveau B1 oral et A2 écrit → condition remplie",
+      "Avoir un emploi ou une formation → critère de participation économique"
+    ],
+    "domaines": [
+      "nationalité"
+    ],
+    "articlesLies": [
+      "LN 7",
+      "LN 21"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LN 21",
@@ -145,9 +282,18 @@
     "rs": "RS 141.0",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2016/404/fr#art_21",
     "texteSimple": "Le citoyen suisse résidant à l'étranger qui en fait la demande peut être libéré de la nationalité suisse, à condition de posséder une autre nationalité.",
-    "exemplesConcrets": ["Suisse vivant au Canada et ayant la nationalité canadienne peut renoncer à la nationalité suisse", "Pas possible de renoncer si on deviendrait apatride"],
-    "domaines": ["nationalité"],
-    "articlesLies": ["LN 7", "LN 24a"]
+    "exemplesConcrets": [
+      "Suisse vivant au Canada et ayant la nationalité canadienne peut renoncer à la nationalité suisse",
+      "Pas possible de renoncer si on deviendrait apatride"
+    ],
+    "domaines": [
+      "nationalité"
+    ],
+    "articlesLies": [
+      "LN 7",
+      "LN 24a"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LN 24a",
@@ -155,9 +301,18 @@
     "rs": "RS 141.0",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2016/404/fr#art_24a",
     "texteSimple": "La naturalisation peut être annulée si elle a été obtenue par de fausses déclarations ou par la dissimulation de faits essentiels. L'annulation doit intervenir dans les 8 ans.",
-    "exemplesConcrets": ["Mariage simulé pour obtenir la nationalité → naturalisation annulée", "Fausses déclarations sur le casier judiciaire → annulation possible"],
-    "domaines": ["nationalité"],
-    "articlesLies": ["LN 21", "LN 33"]
+    "exemplesConcrets": [
+      "Mariage simulé pour obtenir la nationalité → naturalisation annulée",
+      "Fausses déclarations sur le casier judiciaire → annulation possible"
+    ],
+    "domaines": [
+      "nationalité"
+    ],
+    "articlesLies": [
+      "LN 21",
+      "LN 33"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LN 33",
@@ -165,9 +320,18 @@
     "rs": "RS 141.0",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2016/404/fr#art_33",
     "texteSimple": "L'ancien citoyen suisse qui a été libéré de sa nationalité peut demander sa réintégration s'il réside en Suisse depuis 3 ans et qu'il a des liens étroits avec la Suisse.",
-    "exemplesConcrets": ["Retour en Suisse après 10 ans à l'étranger → réintégration après 3 ans", "Liens étroits = famille, emploi, réseau social en Suisse"],
-    "domaines": ["nationalité"],
-    "articlesLies": ["LN 21", "LN 7"]
+    "exemplesConcrets": [
+      "Retour en Suisse après 10 ans à l'étranger → réintégration après 3 ans",
+      "Liens étroits = famille, emploi, réseau social en Suisse"
+    ],
+    "domaines": [
+      "nationalité"
+    ],
+    "articlesLies": [
+      "LN 21",
+      "LN 7"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CP 126",
@@ -175,9 +339,19 @@
     "rs": "RS 311.0",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_126",
     "texteSimple": "Celui qui se livre sur une personne à des voies de fait qui ne causent ni lésion corporelle ni atteinte à la santé est puni sur plainte. Les voies de fait répétées constituent une infraction poursuivie d'office si commises sur un conjoint ou partenaire.",
-    "exemplesConcrets": ["Gifle sans blessure → plainte pénale possible", "Voies de fait répétées sur le conjoint → poursuivies d'office"],
-    "domaines": ["pénal", "violence domestique"],
-    "articlesLies": ["CP 180", "CP 181"]
+    "exemplesConcrets": [
+      "Gifle sans blessure → plainte pénale possible",
+      "Voies de fait répétées sur le conjoint → poursuivies d'office"
+    ],
+    "domaines": [
+      "pénal",
+      "violence domestique"
+    ],
+    "articlesLies": [
+      "CP 180",
+      "CP 181"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CP 180",
@@ -185,9 +359,19 @@
     "rs": "RS 311.0",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_180",
     "texteSimple": "Celui qui, par une menace grave, alarme ou effraie une personne est puni sur plainte d'une peine privative de liberté de 3 ans au plus ou d'une peine pécuniaire. Si l'auteur est le conjoint ou partenaire, poursuite d'office.",
-    "exemplesConcrets": ["Menacer de mort son ex-conjoint → infraction pénale", "SMS menaçants répétés → poursuite d'office si conjoint/partenaire"],
-    "domaines": ["pénal", "violence domestique"],
-    "articlesLies": ["CP 181", "CP 126"]
+    "exemplesConcrets": [
+      "Menacer de mort son ex-conjoint → infraction pénale",
+      "SMS menaçants répétés → poursuite d'office si conjoint/partenaire"
+    ],
+    "domaines": [
+      "pénal",
+      "violence domestique"
+    ],
+    "articlesLies": [
+      "CP 181",
+      "CP 126"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CP 181",
@@ -195,9 +379,18 @@
     "rs": "RS 311.0",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_181",
     "texteSimple": "Celui qui, par la violence, la menace d'un dommage sérieux ou toute autre entrave à la liberté d'action, oblige quelqu'un à faire, ne pas faire ou tolérer un acte, est puni d'une peine privative de liberté de 3 ans au plus.",
-    "exemplesConcrets": ["Forcer quelqu'un à signer un document sous la menace → contrainte", "Empêcher physiquement quelqu'un de quitter une pièce → contrainte"],
-    "domaines": ["pénal"],
-    "articlesLies": ["CP 180", "CP 126"]
+    "exemplesConcrets": [
+      "Forcer quelqu'un à signer un document sous la menace → contrainte",
+      "Empêcher physiquement quelqu'un de quitter une pièce → contrainte"
+    ],
+    "domaines": [
+      "pénal"
+    ],
+    "articlesLies": [
+      "CP 180",
+      "CP 126"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CP 217",
@@ -205,9 +398,19 @@
     "rs": "RS 311.0",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_217",
     "texteSimple": "Celui qui ne fournit pas les aliments ou la contribution d'entretien qu'il doit en vertu du droit de la famille est puni sur plainte d'une peine privative de liberté de 3 ans au plus ou d'une peine pécuniaire.",
-    "exemplesConcrets": ["Non-paiement de la pension alimentaire fixée par jugement de divorce → infraction pénale", "Refus de payer l'entretien de son enfant → plainte pénale possible"],
-    "domaines": ["pénal", "famille"],
-    "articlesLies": ["CP 180", "CP 292"]
+    "exemplesConcrets": [
+      "Non-paiement de la pension alimentaire fixée par jugement de divorce → infraction pénale",
+      "Refus de payer l'entretien de son enfant → plainte pénale possible"
+    ],
+    "domaines": [
+      "pénal",
+      "famille"
+    ],
+    "articlesLies": [
+      "CP 180",
+      "CP 292"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CP 292",
@@ -215,9 +418,18 @@
     "rs": "RS 311.0",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_292",
     "texteSimple": "Celui qui ne se conforme pas à une décision qui lui a été signifiée sous la menace de la peine prévue au présent article est puni d'une amende.",
-    "exemplesConcrets": ["Non-respect d'une interdiction de contact ordonnée par le tribunal → amende", "Refus d'exécuter un jugement signifié → sanction pénale"],
-    "domaines": ["pénal"],
-    "articlesLies": ["CP 217", "CP 181"]
+    "exemplesConcrets": [
+      "Non-respect d'une interdiction de contact ordonnée par le tribunal → amende",
+      "Refus d'exécuter un jugement signifié → sanction pénale"
+    ],
+    "domaines": [
+      "pénal"
+    ],
+    "articlesLies": [
+      "CP 217",
+      "CP 181"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LTr 6",
@@ -225,9 +437,20 @@
     "rs": "RS 822.11",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/fr#art_6",
     "texteSimple": "L'employeur est tenu de prendre toutes les mesures nécessaires pour protéger la santé physique et psychique des travailleurs. Il doit notamment aménager les installations et organiser le travail de manière à préserver la santé.",
-    "exemplesConcrets": ["Obligation de fournir des équipements de protection (casque, gants)", "Prévention du burnout et du harcèlement au travail"],
-    "domaines": ["travail", "santé"],
-    "articlesLies": ["LTr 9", "LTr 10", "CO 328"]
+    "exemplesConcrets": [
+      "Obligation de fournir des équipements de protection (casque, gants)",
+      "Prévention du burnout et du harcèlement au travail"
+    ],
+    "domaines": [
+      "travail",
+      "santé"
+    ],
+    "articlesLies": [
+      "LTr 9",
+      "LTr 10",
+      "CO 328"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LTr 9",
@@ -235,9 +458,19 @@
     "rs": "RS 822.11",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/fr#art_9",
     "texteSimple": "La durée maximale de la semaine de travail est de 45 heures pour les travailleurs de l'industrie, les employés de bureau et le personnel technique, et de 50 heures pour les autres.",
-    "exemplesConcrets": ["Employé de bureau → max 45h/semaine", "Ouvrier agricole → max 50h/semaine"],
-    "domaines": ["travail"],
-    "articlesLies": ["LTr 6", "LTr 10", "LTr 13"]
+    "exemplesConcrets": [
+      "Employé de bureau → max 45h/semaine",
+      "Ouvrier agricole → max 50h/semaine"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "LTr 6",
+      "LTr 10",
+      "LTr 13"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LTr 10",
@@ -245,9 +478,18 @@
     "rs": "RS 822.11",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/fr#art_10",
     "texteSimple": "Le travail de nuit (23h-6h) est interdit sauf autorisation. Le travailleur de nuit a droit à une compensation en temps de 10% ou un supplément de salaire de 25% pour le travail de nuit temporaire.",
-    "exemplesConcrets": ["Travail régulier de nuit → 10% de temps libre compensatoire", "Travail de nuit occasionnel → supplément de 25% sur le salaire"],
-    "domaines": ["travail"],
-    "articlesLies": ["LTr 9", "LTr 13"]
+    "exemplesConcrets": [
+      "Travail régulier de nuit → 10% de temps libre compensatoire",
+      "Travail de nuit occasionnel → supplément de 25% sur le salaire"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "LTr 9",
+      "LTr 13"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LTr 13",
@@ -255,9 +497,18 @@
     "rs": "RS 822.11",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/fr#art_13",
     "texteSimple": "Le travail du dimanche est interdit sauf autorisation. Le travailleur qui travaille le dimanche a droit à un repos compensatoire. Le travail du dimanche temporaire donne droit à un supplément de salaire de 50%.",
-    "exemplesConcrets": ["Travail dominical occasionnel → +50% de salaire", "Travail régulier le dimanche → jour de repos compensatoire obligatoire"],
-    "domaines": ["travail"],
-    "articlesLies": ["LTr 9", "LTr 10"]
+    "exemplesConcrets": [
+      "Travail dominical occasionnel → +50% de salaire",
+      "Travail régulier le dimanche → jour de repos compensatoire obligatoire"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "LTr 9",
+      "LTr 10"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEg 3",
@@ -265,9 +516,19 @@
     "rs": "RS 151.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1996/1498_1498_1498/fr#art_3",
     "texteSimple": "Il est interdit de discriminer les travailleurs en raison du sexe, directement ou indirectement, notamment en se fondant sur l'état civil, la situation familiale ou la grossesse.",
-    "exemplesConcrets": ["Salaire inférieur pour une femme à poste égal → discrimination", "Non-engagement d'une femme enceinte → discrimination interdite"],
-    "domaines": ["travail", "égalité"],
-    "articlesLies": ["LEg 5", "LEg 6"]
+    "exemplesConcrets": [
+      "Salaire inférieur pour une femme à poste égal → discrimination",
+      "Non-engagement d'une femme enceinte → discrimination interdite"
+    ],
+    "domaines": [
+      "travail",
+      "égalité"
+    ],
+    "articlesLies": [
+      "LEg 5",
+      "LEg 6"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEg 5",
@@ -275,9 +536,19 @@
     "rs": "RS 151.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1996/1498_1498_1498/fr#art_5",
     "texteSimple": "En cas de discrimination, le travailleur peut demander au tribunal d'interdire ou de faire cesser la discrimination, de constater l'existence de la discrimination, d'ordonner le paiement du salaire dû et des dommages-intérêts.",
-    "exemplesConcrets": ["Demande de rattrapage salarial pour discrimination fondée sur le sexe", "Indemnité pouvant aller jusqu'à 6 mois de salaire en cas de discrimination à l'embauche"],
-    "domaines": ["travail", "égalité"],
-    "articlesLies": ["LEg 3", "LEg 6"]
+    "exemplesConcrets": [
+      "Demande de rattrapage salarial pour discrimination fondée sur le sexe",
+      "Indemnité pouvant aller jusqu'à 6 mois de salaire en cas de discrimination à l'embauche"
+    ],
+    "domaines": [
+      "travail",
+      "égalité"
+    ],
+    "articlesLies": [
+      "LEg 3",
+      "LEg 6"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEg 6",
@@ -285,9 +556,19 @@
     "rs": "RS 151.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1996/1498_1498_1498/fr#art_6",
     "texteSimple": "L'existence d'une discrimination est présumée lorsque la personne qui s'en prévaut la rend vraisemblable. L'employeur doit alors prouver que la différence de traitement repose sur des motifs objectifs.",
-    "exemplesConcrets": ["Femme gagne 20% de moins → employeur doit justifier la différence", "Statistiques salariales défavorables aux femmes → présomption de discrimination"],
-    "domaines": ["travail", "égalité"],
-    "articlesLies": ["LEg 3", "LEg 5"]
+    "exemplesConcrets": [
+      "Femme gagne 20% de moins → employeur doit justifier la différence",
+      "Statistiques salariales défavorables aux femmes → présomption de discrimination"
+    ],
+    "domaines": [
+      "travail",
+      "égalité"
+    ],
+    "articlesLies": [
+      "LEg 3",
+      "LEg 5"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LDet 1",
@@ -295,9 +576,19 @@
     "rs": "RS 823.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2003/370/fr#art_1",
     "texteSimple": "La loi sur les travailleurs détachés fixe les conditions minimales de travail et de salaire pour les travailleurs détachés en Suisse par un employeur étranger. Elle vise à empêcher le dumping salarial.",
-    "exemplesConcrets": ["Entreprise française envoyant des ouvriers sur un chantier suisse → salaire minimum suisse applicable", "Protection contre la sous-enchère salariale par des entreprises étrangères"],
-    "domaines": ["travail", "détachement"],
-    "articlesLies": ["LDet 2", "LDet 3"]
+    "exemplesConcrets": [
+      "Entreprise française envoyant des ouvriers sur un chantier suisse → salaire minimum suisse applicable",
+      "Protection contre la sous-enchère salariale par des entreprises étrangères"
+    ],
+    "domaines": [
+      "travail",
+      "détachement"
+    ],
+    "articlesLies": [
+      "LDet 2",
+      "LDet 3"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LDet 2",
@@ -305,9 +596,19 @@
     "rs": "RS 823.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2003/370/fr#art_2",
     "texteSimple": "Les employeurs qui détachent des travailleurs en Suisse doivent respecter les conditions minimales suisses : salaire minimum, durée du travail, vacances, sécurité au travail et non-discrimination.",
-    "exemplesConcrets": ["Ouvrier détaché doit recevoir le salaire minimum de la CCT applicable", "4 semaines de vacances minimum même pour un travailleur détaché"],
-    "domaines": ["travail", "détachement"],
-    "articlesLies": ["LDet 1", "LDet 3"]
+    "exemplesConcrets": [
+      "Ouvrier détaché doit recevoir le salaire minimum de la CCT applicable",
+      "4 semaines de vacances minimum même pour un travailleur détaché"
+    ],
+    "domaines": [
+      "travail",
+      "détachement"
+    ],
+    "articlesLies": [
+      "LDet 1",
+      "LDet 3"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LDet 3",
@@ -315,9 +616,19 @@
     "rs": "RS 823.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2003/370/fr#art_3",
     "texteSimple": "L'employeur étranger doit annoncer le détachement de travailleurs à l'autorité cantonale compétente au plus tard 8 jours avant le début du travail.",
-    "exemplesConcrets": ["Entreprise allemande doit déclarer ses travailleurs 8 jours avant le chantier", "Défaut d'annonce → sanctions et amendes"],
-    "domaines": ["travail", "détachement"],
-    "articlesLies": ["LDet 1", "LDet 2"]
+    "exemplesConcrets": [
+      "Entreprise allemande doit déclarer ses travailleurs 8 jours avant le chantier",
+      "Défaut d'annonce → sanctions et amendes"
+    ],
+    "domaines": [
+      "travail",
+      "détachement"
+    ],
+    "articlesLies": [
+      "LDet 1",
+      "LDet 2"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LSE 12",
@@ -325,9 +636,19 @@
     "rs": "RS 823.11",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/fr#art_12",
     "texteSimple": "L'entreprise de travail temporaire (bailleur de services) doit obtenir une autorisation pour louer les services de travailleurs. L'autorisation est subordonnée à des conditions de fiabilité et de solvabilité.",
-    "exemplesConcrets": ["Agence d'intérim doit avoir une autorisation cantonale", "Location de personnel sans autorisation → activité illégale"],
-    "domaines": ["travail", "intérim"],
-    "articlesLies": ["LSE 19", "LSE 22"]
+    "exemplesConcrets": [
+      "Agence d'intérim doit avoir une autorisation cantonale",
+      "Location de personnel sans autorisation → activité illégale"
+    ],
+    "domaines": [
+      "travail",
+      "intérim"
+    ],
+    "articlesLies": [
+      "LSE 19",
+      "LSE 22"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LSE 19",
@@ -335,9 +656,19 @@
     "rs": "RS 823.11",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/fr#art_19",
     "texteSimple": "Le contrat entre le bailleur de services et le travailleur doit être écrit. Il doit mentionner le genre de travail, le lieu, le début de la mission, les conditions de salaire, l'horaire et les frais.",
-    "exemplesConcrets": ["Contrat de mission intérimaire doit préciser le salaire et la durée", "Contrat oral de travail temporaire → le travailleur peut exiger un écrit"],
-    "domaines": ["travail", "intérim"],
-    "articlesLies": ["LSE 12", "LSE 22"]
+    "exemplesConcrets": [
+      "Contrat de mission intérimaire doit préciser le salaire et la durée",
+      "Contrat oral de travail temporaire → le travailleur peut exiger un écrit"
+    ],
+    "domaines": [
+      "travail",
+      "intérim"
+    ],
+    "articlesLies": [
+      "LSE 12",
+      "LSE 22"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LSE 22",
@@ -345,9 +676,19 @@
     "rs": "RS 823.11",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/fr#art_22",
     "texteSimple": "Le bailleur de services doit accorder au travailleur les mêmes conditions de travail et de salaire que celles qui s'appliquent aux travailleurs comparables de l'entreprise locataire, sauf si une CCT en dispose autrement.",
-    "exemplesConcrets": ["Intérimaire doit gagner le même salaire que les employés fixes au même poste", "Mêmes horaires et conditions de sécurité pour les temporaires"],
-    "domaines": ["travail", "intérim"],
-    "articlesLies": ["LSE 12", "LSE 19"]
+    "exemplesConcrets": [
+      "Intérimaire doit gagner le même salaire que les employés fixes au même poste",
+      "Mêmes horaires et conditions de sécurité pour les temporaires"
+    ],
+    "domaines": [
+      "travail",
+      "intérim"
+    ],
+    "articlesLies": [
+      "LSE 12",
+      "LSE 19"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LPart 1",
@@ -355,9 +696,18 @@
     "rs": "RS 211.231",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2005/782/fr#art_1",
     "texteSimple": "Deux personnes du même sexe peuvent faire enregistrer leur partenariat. Depuis le 1er juillet 2022, il n'est plus possible de conclure un nouveau partenariat (ouverture du mariage), mais les partenariats existants restent valables.",
-    "exemplesConcrets": ["Partenariats enregistrés avant 2022 restent valables", "Possibilité de convertir le partenariat en mariage"],
-    "domaines": ["famille", "partenariat"],
-    "articlesLies": ["LPart 18"]
+    "exemplesConcrets": [
+      "Partenariats enregistrés avant 2022 restent valables",
+      "Possibilité de convertir le partenariat en mariage"
+    ],
+    "domaines": [
+      "famille",
+      "partenariat"
+    ],
+    "articlesLies": [
+      "LPart 18"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LPart 18",
@@ -365,9 +715,18 @@
     "rs": "RS 211.231",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2005/782/fr#art_18",
     "texteSimple": "Chaque partenaire peut demander la dissolution judiciaire du partenariat enregistré. Si les deux sont d'accord, le juge prononce la dissolution sur requête commune.",
-    "exemplesConcrets": ["Dissolution d'un commun accord → procédure simplifiée", "Un partenaire refuse → l'autre peut agir en justice après 1 an de séparation"],
-    "domaines": ["famille", "partenariat"],
-    "articlesLies": ["LPart 1"]
+    "exemplesConcrets": [
+      "Dissolution d'un commun accord → procédure simplifiée",
+      "Un partenaire refuse → l'autre peut agir en justice après 1 an de séparation"
+    ],
+    "domaines": [
+      "famille",
+      "partenariat"
+    ],
+    "articlesLies": [
+      "LPart 1"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "Cst 12",
@@ -375,9 +734,18 @@
     "rs": "RS 101",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_12",
     "texteSimple": "Quiconque est dans une situation de détresse et n'est pas en mesure de subvenir à son entretien a le droit d'être aidé et assisté et de recevoir les moyens indispensables pour mener une existence conforme à la dignité humaine.",
-    "exemplesConcrets": ["Personne sans ressources a droit à un hébergement d'urgence, nourriture et soins de base", "Requérant d'asile débouté conserve le droit à l'aide d'urgence"],
-    "domaines": ["droits fondamentaux", "aide sociale"],
-    "articlesLies": ["LAsi 86"]
+    "exemplesConcrets": [
+      "Personne sans ressources a droit à un hébergement d'urgence, nourriture et soins de base",
+      "Requérant d'asile débouté conserve le droit à l'aide d'urgence"
+    ],
+    "domaines": [
+      "droits fondamentaux",
+      "aide sociale"
+    ],
+    "articlesLies": [
+      "LAsi 86"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "OBLF 19",
@@ -385,9 +753,18 @@
     "rs": "RS 221.213.11",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1990/835_835_835/fr#art_19",
     "texteSimple": "Toute hausse de loyer doit être notifiée au locataire sur formule officielle agréée par le canton. La formule doit indiquer le montant du nouveau loyer, la date d'effet et les motifs de la hausse.",
-    "exemplesConcrets": ["Hausse de loyer sans formule officielle → nulle", "Le locataire a 30 jours pour contester la hausse devant l'autorité de conciliation"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 269a", "CO 270b"]
+    "exemplesConcrets": [
+      "Hausse de loyer sans formule officielle → nulle",
+      "Le locataire a 30 jours pour contester la hausse devant l'autorité de conciliation"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 269a",
+      "CO 270b"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAMal 65a",
@@ -395,9 +772,18 @@
     "rs": "RS 832.10",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_65a",
     "texteSimple": "Les cantons accordent des réductions de primes aux assurés de condition économique modeste. Pour les enfants et les jeunes adultes en formation, les cantons réduisent les primes d'au moins 80% pour les bas revenus.",
-    "exemplesConcrets": ["Famille à faibles revenus → subsides couvrant une partie des primes LAMal", "Étudiant de condition modeste → réduction de prime de 80%"],
-    "domaines": ["assurances sociales", "santé"],
-    "articlesLies": ["LAVS 21"]
+    "exemplesConcrets": [
+      "Famille à faibles revenus → subsides couvrant une partie des primes LAMal",
+      "Étudiant de condition modeste → réduction de prime de 80%"
+    ],
+    "domaines": [
+      "assurances sociales",
+      "santé"
+    ],
+    "articlesLies": [
+      "LAVS 21"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LTAF 31",
@@ -405,9 +791,18 @@
     "rs": "RS 173.32",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2006/352/fr#art_31",
     "texteSimple": "Le Tribunal administratif fédéral connaît des recours contre les décisions des autorités fédérales (SEM, OFAS, etc.) en matière d'asile, de migration, d'assurances sociales et d'autres domaines du droit administratif.",
-    "exemplesConcrets": ["Recours contre un refus d'asile du SEM → TAF compétent", "Contestation d'une décision AI → recours au TAF"],
-    "domaines": ["procédure administrative"],
-    "articlesLies": ["PA 48", "LAsi 108"]
+    "exemplesConcrets": [
+      "Recours contre un refus d'asile du SEM → TAF compétent",
+      "Contestation d'une décision AI → recours au TAF"
+    ],
+    "domaines": [
+      "procédure administrative"
+    ],
+    "articlesLies": [
+      "PA 48",
+      "LAsi 108"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "PA 48",
@@ -415,9 +810,17 @@
     "rs": "RS 172.021",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1969/737_757_755/fr#art_48",
     "texteSimple": "A qualité pour recourir quiconque a participé à la procédure devant l'autorité inférieure, est spécialement atteint par la décision et a un intérêt digne de protection à son annulation ou sa modification.",
-    "exemplesConcrets": ["Requérant d'asile débouté → qualité pour recourir contre la décision", "Voisin directement affecté par un permis de construire → qualité pour recourir"],
-    "domaines": ["procédure administrative"],
-    "articlesLies": ["LTAF 31"]
+    "exemplesConcrets": [
+      "Requérant d'asile débouté → qualité pour recourir contre la décision",
+      "Voisin directement affecté par un permis de construire → qualité pour recourir"
+    ],
+    "domaines": [
+      "procédure administrative"
+    ],
+    "articlesLies": [
+      "LTAF 31"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CLaH 80",
@@ -425,9 +828,18 @@
     "rs": "RS 0.211.230.02",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1984/370_370_370/fr#art_80",
     "texteSimple": "La Convention vise à assurer le retour immédiat des enfants illicitement déplacés ou retenus dans un autre État contractant. L'autorité centrale doit prendre les mesures nécessaires pour localiser l'enfant et assurer son retour.",
-    "exemplesConcrets": ["Parent qui emmène l'enfant à l'étranger sans l'accord de l'autre → retour ordonné", "Demande de retour via l'autorité centrale suisse (OFJ)"],
-    "domaines": ["famille", "international"],
-    "articlesLies": ["CPC 291"]
+    "exemplesConcrets": [
+      "Parent qui emmène l'enfant à l'étranger sans l'accord de l'autre → retour ordonné",
+      "Demande de retour via l'autorité centrale suisse (OFJ)"
+    ],
+    "domaines": [
+      "famille",
+      "international"
+    ],
+    "articlesLies": [
+      "CPC 291"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LCC 28",
@@ -435,9 +847,18 @@
     "rs": "RS 221.214.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2002/593/fr#art_28",
     "texteSimple": "Le consommateur peut révoquer par écrit le contrat de crédit à la consommation dans un délai de 14 jours dès la réception du contrat. Le délai est respecté si la révocation est expédiée le dernier jour.",
-    "exemplesConcrets": ["Crédit contracté impulsivement → 14 jours pour se rétracter", "Lettre de révocation envoyée le 14e jour → valable"],
-    "domaines": ["contrats", "consommation"],
-    "articlesLies": ["CO 40a"]
+    "exemplesConcrets": [
+      "Crédit contracté impulsivement → 14 jours pour se rétracter",
+      "Lettre de révocation envoyée le 14e jour → valable"
+    ],
+    "domaines": [
+      "contrats",
+      "consommation"
+    ],
+    "articlesLies": [
+      "CO 40a"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "OASA 31",
@@ -445,9 +866,17 @@
     "rs": "RS 142.201",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/759/fr#art_31",
     "texteSimple": "Une autorisation de séjour peut être octroyée dans les cas individuels d'une extrême gravité. L'autorité tient compte de l'intégration, du respect de l'ordre juridique, de la situation familiale et personnelle.",
-    "exemplesConcrets": ["Personne sans statut depuis 10 ans, bien intégrée → permis humanitaire possible", "Famille avec enfants scolarisés depuis longtemps → cas de rigueur"],
-    "domaines": ["migration"],
-    "articlesLies": ["LAsi 44"]
+    "exemplesConcrets": [
+      "Personne sans statut depuis 10 ans, bien intégrée → permis humanitaire possible",
+      "Famille avec enfants scolarisés depuis longtemps → cas de rigueur"
+    ],
+    "domaines": [
+      "migration"
+    ],
+    "articlesLies": [
+      "LAsi 44"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "ALCP 4",
@@ -455,9 +884,18 @@
     "rs": "RS 0.142.112.681",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2002/243/fr#art_4",
     "texteSimple": "Les ressortissants UE/AELE ont le droit de séjourner et d'exercer une activité économique en Suisse conformément aux dispositions de l'accord. Ce droit est garanti sous réserve de l'ordre public.",
-    "exemplesConcrets": ["Citoyen français peut travailler en Suisse avec un permis B UE/AELE", "Frontalier allemand peut exercer une activité en Suisse avec permis G"],
-    "domaines": ["migration", "travail"],
-    "articlesLies": ["OASA 31"]
+    "exemplesConcrets": [
+      "Citoyen français peut travailler en Suisse avec un permis B UE/AELE",
+      "Frontalier allemand peut exercer une activité en Suisse avec permis G"
+    ],
+    "domaines": [
+      "migration",
+      "travail"
+    ],
+    "articlesLies": [
+      "OASA 31"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LPP 13",
@@ -465,9 +903,19 @@
     "rs": "RS 831.40",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1983/797_797_797/fr#art_13",
     "texteSimple": "L'âge de la retraite dans la prévoyance professionnelle correspond à l'âge ordinaire de la retraite AVS (65 ans). Le règlement de la caisse de pension peut prévoir une retraite anticipée ou ajournée.",
-    "exemplesConcrets": ["Retraite anticipée à 58 ans possible selon le règlement de la caisse", "Continuation du travail après 65 ans → ajournement de la rente LPP possible"],
-    "domaines": ["assurances sociales", "retraite"],
-    "articlesLies": ["LAVS 21", "CO 331"]
+    "exemplesConcrets": [
+      "Retraite anticipée à 58 ans possible selon le règlement de la caisse",
+      "Continuation du travail après 65 ans → ajournement de la rente LPP possible"
+    ],
+    "domaines": [
+      "assurances sociales",
+      "retraite"
+    ],
+    "articlesLies": [
+      "LAVS 21",
+      "CO 331"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LPD 4",
@@ -475,9 +923,17 @@
     "rs": "RS 235.1",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2022/491/fr#art_4",
     "texteSimple": "Les données personnelles doivent être traitées de manière licite, conformément aux principes de bonne foi et de proportionnalité. Leur collecte et leur finalité doivent être reconnaissables pour la personne concernée.",
-    "exemplesConcrets": ["Entreprise doit informer clairement de la collecte de données", "Pas de collecte de données sans finalité légitime"],
-    "domaines": ["protection des données"],
-    "articlesLies": ["CO 328b"]
+    "exemplesConcrets": [
+      "Entreprise doit informer clairement de la collecte de données",
+      "Pas de collecte de données sans finalité légitime"
+    ],
+    "domaines": [
+      "protection des données"
+    ],
+    "articlesLies": [
+      "CO 328b"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAA 6",
@@ -485,9 +941,18 @@
     "rs": "RS 832.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr#art_6",
     "texteSimple": "L'assurance-accidents couvre les accidents professionnels et, pour les travailleurs occupés plus de 8 heures par semaine, les accidents non professionnels. Les maladies professionnelles sont également couvertes.",
-    "exemplesConcrets": ["Chute sur le lieu de travail → couvert par la LAA", "Accident de ski le week-end → couvert si plus de 8h/semaine de travail"],
-    "domaines": ["assurances sociales", "accidents"],
-    "articlesLies": ["LTr 6"]
+    "exemplesConcrets": [
+      "Chute sur le lieu de travail → couvert par la LAA",
+      "Accident de ski le week-end → couvert si plus de 8h/semaine de travail"
+    ],
+    "domaines": [
+      "assurances sociales",
+      "accidents"
+    ],
+    "articlesLies": [
+      "LTr 6"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LF-EEA 6",
@@ -495,9 +960,19 @@
     "rs": "RS 151.3",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2003/667/fr#art_6",
     "texteSimple": "Les personnes handicapées ne doivent pas être discriminées par des particuliers offrant des prestations au public. Elles peuvent demander des mesures d'adaptation raisonnables.",
-    "exemplesConcrets": ["Restaurant refusant l'accès à une personne en chaise roulante → discrimination", "Obligation d'accessibilité pour les commerces ouverts au public"],
-    "domaines": ["égalité", "handicap"],
-    "articlesLies": ["LEg 3", "Cst 12"]
+    "exemplesConcrets": [
+      "Restaurant refusant l'accès à une personne en chaise roulante → discrimination",
+      "Obligation d'accessibilité pour les commerces ouverts au public"
+    ],
+    "domaines": [
+      "égalité",
+      "handicap"
+    ],
+    "articlesLies": [
+      "LEg 3",
+      "Cst 12"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LIFD 33",
@@ -505,9 +980,18 @@
     "rs": "RS 642.11",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1991/1184_1184_1184/fr#art_33",
     "texteSimple": "Le contribuable peut déduire de ses revenus les intérêts de dettes privées, les pensions alimentaires versées au conjoint séparé/divorcé, les cotisations AVS/AI/APG, les primes d'assurance-maladie (dans les limites légales) et le 3e pilier A.",
-    "exemplesConcrets": ["Cotisations au pilier 3a déductibles du revenu imposable", "Pension alimentaire versée = déduction fiscale pour le débiteur"],
-    "domaines": ["fiscalité"],
-    "articlesLies": ["LAVS 21", "LPP 13"]
+    "exemplesConcrets": [
+      "Cotisations au pilier 3a déductibles du revenu imposable",
+      "Pension alimentaire versée = déduction fiscale pour le débiteur"
+    ],
+    "domaines": [
+      "fiscalité"
+    ],
+    "articlesLies": [
+      "LAVS 21",
+      "LPP 13"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "Dublin 3",
@@ -515,9 +999,19 @@
     "rs": "RS 0.142.392.68",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2014/531/fr#art_3",
     "texteSimple": "La demande d'asile est examinée par un seul État membre, en principe celui par lequel le demandeur est entré dans l'espace Dublin. Si un autre État est responsable, la Suisse peut transférer le demandeur vers cet État.",
-    "exemplesConcrets": ["Requérant entré par l'Italie → l'Italie est responsable du traitement de la demande", "Transfert Dublin refusé si risque de traitement inhumain dans l'autre État"],
-    "domaines": ["asile", "migration"],
-    "articlesLies": ["LAsi 3", "LAsi 108"]
+    "exemplesConcrets": [
+      "Requérant entré par l'Italie → l'Italie est responsable du traitement de la demande",
+      "Transfert Dublin refusé si risque de traitement inhumain dans l'autre État"
+    ],
+    "domaines": [
+      "asile",
+      "migration"
+    ],
+    "articlesLies": [
+      "LAsi 3",
+      "LAsi 108"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LDIP 45",
@@ -525,9 +1019,19 @@
     "rs": "RS 291",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1988/1776_1776_1776/fr#art_45",
     "texteSimple": "Pour les divorces internationaux, les tribunaux suisses du domicile du défendeur ou du demandeur sont compétents. Le droit suisse s'applique si les deux époux sont domiciliés en Suisse.",
-    "exemplesConcrets": ["Couple mixte domicilié en Suisse → tribunal suisse compétent, droit suisse applicable", "Conjoint étranger domicilié à l'étranger → possible de divorcer en Suisse si le demandeur y est domicilié"],
-    "domaines": ["famille", "divorce", "international"],
-    "articlesLies": ["CPC 291"]
+    "exemplesConcrets": [
+      "Couple mixte domicilié en Suisse → tribunal suisse compétent, droit suisse applicable",
+      "Conjoint étranger domicilié à l'étranger → possible de divorcer en Suisse si le demandeur y est domicilié"
+    ],
+    "domaines": [
+      "famille",
+      "divorce",
+      "international"
+    ],
+    "articlesLies": [
+      "CPC 291"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CDE 3",
@@ -535,9 +1039,19 @@
     "rs": "RS 0.107",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1998/2055_2055_2055/fr#art_3",
     "texteSimple": "Dans toutes les décisions qui concernent les enfants, l'intérêt supérieur de l'enfant doit être une considération primordiale. Les États s'engagent à assurer la protection et les soins nécessaires au bien-être de l'enfant.",
-    "exemplesConcrets": ["Décision de garde → l'intérêt de l'enfant prime sur celui des parents", "Renvoi d'une famille → le tribunal doit évaluer l'impact sur les enfants"],
-    "domaines": ["famille", "droits fondamentaux"],
-    "articlesLies": ["CLaH 80", "CPC 291"]
+    "exemplesConcrets": [
+      "Décision de garde → l'intérêt de l'enfant prime sur celui des parents",
+      "Renvoi d'une famille → le tribunal doit évaluer l'impact sur les enfants"
+    ],
+    "domaines": [
+      "famille",
+      "droits fondamentaux"
+    ],
+    "articlesLies": [
+      "CLaH 80",
+      "CPC 291"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "Convention 1954",
@@ -545,8 +1059,18 @@
     "rs": "RS 0.142.40",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1972/2253_2253_2253/fr#art_1",
     "texteSimple": "Est apatride toute personne qu'aucun État ne considère comme son ressortissant. Les apatrides reconnus en Suisse obtiennent un permis de séjour et bénéficient de droits comparables à ceux des réfugiés.",
-    "exemplesConcrets": ["Personne née de parents apatrides sans nationalité → reconnaissance du statut d'apatride", "Apatride reconnu reçoit un titre de voyage et un permis de séjour"],
-    "domaines": ["migration", "droits fondamentaux"],
-    "articlesLies": ["LAsi 3", "LN 7"]
+    "exemplesConcrets": [
+      "Personne née de parents apatrides sans nationalité → reconnaissance du statut d'apatride",
+      "Apatride reconnu reçoit un titre de voyage et un permis de séjour"
+    ],
+    "domaines": [
+      "migration",
+      "droits fondamentaux"
+    ],
+    "articlesLies": [
+      "LAsi 3",
+      "LN 7"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   }
 ]

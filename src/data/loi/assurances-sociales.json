@@ -5,9 +5,18 @@
     "rs": "RS 831.10",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/63/837_843_843/fr#art_21",
     "texteSimple": "L'âge de référence pour la retraite AVS est de 65 ans pour les hommes et les femmes (harmonisation progressive depuis AVS 21). Il est possible d'anticiper dès 63 ans ou d'ajourner jusqu'à 70 ans.",
-    "exemplesConcrets": ["Retraite anticipée à 63 ans → réduction de la rente de 6.8% par an", "Ajournement jusqu'à 70 ans → augmentation de la rente"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAVS 29", "LAVS 29bis"]
+    "exemplesConcrets": [
+      "Retraite anticipée à 63 ans → réduction de la rente de 6.8% par an",
+      "Ajournement jusqu'à 70 ans → augmentation de la rente"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAVS 29",
+      "LAVS 29bis"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAVS 29",
@@ -15,9 +24,19 @@
     "rs": "RS 831.10",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/63/837_843_843/fr#art_29",
     "texteSimple": "La rente AVS dépend du revenu annuel moyen et des années de cotisation. Rente minimale : 1'225 CHF/mois. Rente maximale : 2'450 CHF/mois (2024). Couple : max 3'675 CHF/mois.",
-    "exemplesConcrets": ["Cotisations complètes (44 ans) + revenu moyen élevé → rente maximale 2'450 CHF", "Lacunes de cotisation → rente réduite proportionnellement"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAVS 21", "LAVS 29bis", "LAVS 29ter"]
+    "exemplesConcrets": [
+      "Cotisations complètes (44 ans) + revenu moyen élevé → rente maximale 2'450 CHF",
+      "Lacunes de cotisation → rente réduite proportionnellement"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAVS 21",
+      "LAVS 29bis",
+      "LAVS 29ter"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAVS 29septies",
@@ -25,9 +44,18 @@
     "rs": "RS 831.10",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/63/837_843_843/fr#art_29_septies",
     "texteSimple": "Les parents qui s'occupent d'enfants de moins de 16 ans reçoivent des bonifications AVS qui augmentent leur rente de vieillesse, même s'ils ne travaillent pas.",
-    "exemplesConcrets": ["Mère au foyer avec 2 enfants → bonifications AVS comptées pour la rente", "Bonification = 3x la rente minimale annuelle / 2"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAVS 29", "LAVS 29sexies"]
+    "exemplesConcrets": [
+      "Mère au foyer avec 2 enfants → bonifications AVS comptées pour la rente",
+      "Bonification = 3x la rente minimale annuelle / 2"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAVS 29",
+      "LAVS 29sexies"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAVS 35",
@@ -35,9 +63,18 @@
     "rs": "RS 831.10",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/63/837_843_843/fr#art_35",
     "texteSimple": "La veuve a droit à une rente si elle a des enfants ou si elle avait 45 ans et était mariée depuis 5 ans. Le veuf a droit à une rente tant que ses enfants ont moins de 18 ans.",
-    "exemplesConcrets": ["Veuve de 50 ans, mariée 10 ans → rente de veuve = 80% de la rente AVS", "Veuf avec enfant de 10 ans → rente de veuf jusqu'aux 18 ans de l'enfant"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAVS 36", "LAVS 37"]
+    "exemplesConcrets": [
+      "Veuve de 50 ans, mariée 10 ans → rente de veuve = 80% de la rente AVS",
+      "Veuf avec enfant de 10 ans → rente de veuf jusqu'aux 18 ans de l'enfant"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAVS 36",
+      "LAVS 37"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAVS 42",
@@ -45,9 +82,18 @@
     "rs": "RS 831.10",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/63/837_843_843/fr#art_42",
     "texteSimple": "Les personnes AVS qui ont besoin d'aide régulière pour les actes de la vie quotidienne (se laver, s'habiller, manger) ont droit à une allocation pour impotent.",
-    "exemplesConcrets": ["Personne âgée ne pouvant plus se laver seule → allocation pour impotence légère", "Besoin d'aide pour 4+ actes quotidiens → impotence grave"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAVS 29", "LAI 42"]
+    "exemplesConcrets": [
+      "Personne âgée ne pouvant plus se laver seule → allocation pour impotence légère",
+      "Besoin d'aide pour 4+ actes quotidiens → impotence grave"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAVS 29",
+      "LAI 42"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAI 4",
@@ -55,9 +101,18 @@
     "rs": "RS 831.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr#art_4",
     "texteSimple": "L'invalidité est une incapacité de gain durable ou de longue durée causée par une atteinte à la santé physique, mentale ou psychique.",
-    "exemplesConcrets": ["Dépression chronique empêchant de travailler → possible invalidité", "Accident ayant causé une paraplégie → invalidité"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAI 28", "LAI 28a"]
+    "exemplesConcrets": [
+      "Dépression chronique empêchant de travailler → possible invalidité",
+      "Accident ayant causé une paraplégie → invalidité"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAI 28",
+      "LAI 28a"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAI 8",
@@ -65,9 +120,19 @@
     "rs": "RS 831.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr#art_8",
     "texteSimple": "L'AI privilégie la réadaptation avant la rente : formation, reconversion professionnelle, moyens auxiliaires, placement. La devise est 'la réadaptation prime la rente'.",
-    "exemplesConcrets": ["Reconversion professionnelle financée par l'AI", "Fauteuil roulant fourni par l'AI"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAI 4", "LAI 15", "LAI 21"]
+    "exemplesConcrets": [
+      "Reconversion professionnelle financée par l'AI",
+      "Fauteuil roulant fourni par l'AI"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAI 4",
+      "LAI 15",
+      "LAI 21"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAI 15",
@@ -75,9 +140,18 @@
     "rs": "RS 831.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr#art_15",
     "texteSimple": "L'AI prend en charge les frais supplémentaires de formation professionnelle liés au handicap (surcoûts par rapport à une formation ordinaire).",
-    "exemplesConcrets": ["Jeune avec handicap → surcoûts de formation pris en charge par l'AI", "Apprentissage adapté financé par l'AI"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAI 8", "LAI 17"]
+    "exemplesConcrets": [
+      "Jeune avec handicap → surcoûts de formation pris en charge par l'AI",
+      "Apprentissage adapté financé par l'AI"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAI 8",
+      "LAI 17"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAI 17",
@@ -85,9 +159,17 @@
     "rs": "RS 831.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr#art_17",
     "texteSimple": "Si l'assuré ne peut plus exercer son ancien métier à cause de son invalidité, l'AI finance une reconversion vers une nouvelle activité adaptée.",
-    "exemplesConcrets": ["Maçon avec mal de dos → reconversion en employé de bureau financée par l'AI"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAI 8", "LAI 15"]
+    "exemplesConcrets": [
+      "Maçon avec mal de dos → reconversion en employé de bureau financée par l'AI"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAI 8",
+      "LAI 15"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAI 21",
@@ -95,9 +177,18 @@
     "rs": "RS 831.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr#art_21",
     "texteSimple": "L'AI fournit les moyens auxiliaires nécessaires : prothèses, fauteuil roulant, appareils auditifs, véhicule adapté, etc.",
-    "exemplesConcrets": ["Prothèse de jambe → prise en charge AI", "Appareil auditif → prise en charge AI"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAI 8", "LAI 4"]
+    "exemplesConcrets": [
+      "Prothèse de jambe → prise en charge AI",
+      "Appareil auditif → prise en charge AI"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAI 8",
+      "LAI 4"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAI 28",
@@ -105,9 +196,19 @@
     "rs": "RS 831.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr#art_28",
     "texteSimple": "Le droit à une rente AI dépend du taux d'invalidité : 40% = quart de rente, 50% = demi-rente, 60% = trois-quarts de rente, 70%+ = rente entière.",
-    "exemplesConcrets": ["Invalidité de 55% → demi-rente AI", "Invalidité de 75% → rente entière (max 2'450 CHF/mois)"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAI 28a", "LAI 4", "LAI 29"]
+    "exemplesConcrets": [
+      "Invalidité de 55% → demi-rente AI",
+      "Invalidité de 75% → rente entière (max 2'450 CHF/mois)"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAI 28a",
+      "LAI 4",
+      "LAI 29"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAI 28a",
@@ -115,9 +216,17 @@
     "rs": "RS 831.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr#art_28_a",
     "texteSimple": "Le taux d'invalidité est calculé en comparant le revenu que l'assuré pourrait gagner sans handicap avec le revenu qu'il peut encore réaliser malgré son handicap.",
-    "exemplesConcrets": ["Revenu sans handicap : 80'000 CHF, revenu possible avec handicap : 30'000 CHF → invalidité de 62.5%"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAI 28", "LAI 4"]
+    "exemplesConcrets": [
+      "Revenu sans handicap : 80'000 CHF, revenu possible avec handicap : 30'000 CHF → invalidité de 62.5%"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAI 28",
+      "LAI 4"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAI 42",
@@ -125,9 +234,18 @@
     "rs": "RS 831.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr#art_42",
     "texteSimple": "L'assuré AI qui a besoin d'aide régulière pour les actes de la vie quotidienne a droit à une allocation pour impotent (légère, moyenne ou grave).",
-    "exemplesConcrets": ["Besoin d'aide pour 2 actes quotidiens → impotence légère (490 CHF/mois)", "Aide permanente → impotence grave (1'960 CHF/mois)"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAI 28", "LAI 42ter"]
+    "exemplesConcrets": [
+      "Besoin d'aide pour 2 actes quotidiens → impotence légère (490 CHF/mois)",
+      "Aide permanente → impotence grave (1'960 CHF/mois)"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAI 28",
+      "LAI 42ter"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAI 42ter",
@@ -135,9 +253,16 @@
     "rs": "RS 831.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr#art_42_ter",
     "texteSimple": "L'assuré AI vivant à domicile peut recevoir une contribution d'assistance pour engager lui-même une personne qui l'aide, favorisant l'autonomie.",
-    "exemplesConcrets": ["Personne en fauteuil roulant engage un assistant personnel → AI finance les heures d'aide"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAI 42"]
+    "exemplesConcrets": [
+      "Personne en fauteuil roulant engage un assistant personnel → AI finance les heures d'aide"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAI 42"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAA 1a",
@@ -145,9 +270,19 @@
     "rs": "RS 832.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr#art_1_a",
     "texteSimple": "Tous les travailleurs salariés en Suisse sont obligatoirement assurés contre les accidents professionnels et non professionnels (si 8h+ par semaine chez le même employeur).",
-    "exemplesConcrets": ["Employé à plein temps → assuré accidents pro + non-pro", "Employé à 6h/semaine → assuré accidents pro uniquement"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAA 6", "LAA 7", "LAA 8"]
+    "exemplesConcrets": [
+      "Employé à plein temps → assuré accidents pro + non-pro",
+      "Employé à 6h/semaine → assuré accidents pro uniquement"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAA 6",
+      "LAA 7",
+      "LAA 8"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAA 6",
@@ -155,9 +290,19 @@
     "rs": "RS 832.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr#art_6",
     "texteSimple": "L'assurance-accidents couvre les accidents professionnels, les accidents non professionnels (si 8h+/semaine) et les maladies professionnelles.",
-    "exemplesConcrets": ["Chute sur le lieu de travail → accident professionnel couvert", "Accident de ski le week-end → accident non professionnel couvert si 8h+/semaine"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAA 1a", "LAA 7", "LAA 10"]
+    "exemplesConcrets": [
+      "Chute sur le lieu de travail → accident professionnel couvert",
+      "Accident de ski le week-end → accident non professionnel couvert si 8h+/semaine"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAA 1a",
+      "LAA 7",
+      "LAA 10"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAA 10",
@@ -165,9 +310,18 @@
     "rs": "RS 832.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr#art_10",
     "texteSimple": "L'assurance-accidents prend en charge tous les frais de traitement médical liés à l'accident : médecin, hôpital, médicaments, physiothérapie, sans franchise ni quote-part.",
-    "exemplesConcrets": ["Fracture au travail → hospitalisation, opération, rééducation = tout pris en charge", "Pas de franchise contrairement à la LAMal"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAA 6", "LAA 16"]
+    "exemplesConcrets": [
+      "Fracture au travail → hospitalisation, opération, rééducation = tout pris en charge",
+      "Pas de franchise contrairement à la LAMal"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAA 6",
+      "LAA 16"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAA 16",
@@ -175,9 +329,19 @@
     "rs": "RS 832.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr#art_16",
     "texteSimple": "Dès le 3ème jour après l'accident, l'assurance verse une indemnité journalière de 80% du salaire assuré tant que l'incapacité de travail dure.",
-    "exemplesConcrets": ["Accident → arrêt de travail 6 semaines → 80% du salaire versé par la LAA", "Les 2 premiers jours sont à charge de l'employeur"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAA 10", "LAA 18", "LAA 19"]
+    "exemplesConcrets": [
+      "Accident → arrêt de travail 6 semaines → 80% du salaire versé par la LAA",
+      "Les 2 premiers jours sont à charge de l'employeur"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAA 10",
+      "LAA 18",
+      "LAA 19"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAA 18",
@@ -185,9 +349,19 @@
     "rs": "RS 832.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr#art_18",
     "texteSimple": "Si l'accident cause une invalidité permanente d'au moins 10%, l'assuré a droit à une rente d'invalidité LAA. La rente est de 80% du gain assuré pour une invalidité totale.",
-    "exemplesConcrets": ["Invalidité de 50% après accident → rente de 40% du gain assuré", "Invalidité de 100% → rente de 80% du gain assuré"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAA 16", "LAA 19", "LAA 24"]
+    "exemplesConcrets": [
+      "Invalidité de 50% après accident → rente de 40% du gain assuré",
+      "Invalidité de 100% → rente de 80% du gain assuré"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAA 16",
+      "LAA 19",
+      "LAA 24"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAA 24",
@@ -195,9 +369,18 @@
     "rs": "RS 832.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr#art_24",
     "texteSimple": "Si l'accident cause une atteinte durable à l'intégrité physique ou mentale, l'assuré reçoit une indemnité unique proportionnelle à la gravité.",
-    "exemplesConcrets": ["Perte d'un doigt → IPAI selon barème (5-15% du montant max)", "Perte d'un œil → IPAI de 30% du montant max"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAA 18", "LAA 25"]
+    "exemplesConcrets": [
+      "Perte d'un doigt → IPAI selon barème (5-15% du montant max)",
+      "Perte d'un œil → IPAI de 30% du montant max"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAA 18",
+      "LAA 25"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAA 37",
@@ -205,9 +388,18 @@
     "rs": "RS 832.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr#art_37",
     "texteSimple": "Si l'assuré a provoqué l'accident intentionnellement ou par négligence grave (ex. ivresse), les prestations en espèces peuvent être réduites.",
-    "exemplesConcrets": ["Accident en état d'ivresse → indemnité journalière réduite de 50%", "Sport extrême dangereux → réduction possible"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAA 16", "LAA 18"]
+    "exemplesConcrets": [
+      "Accident en état d'ivresse → indemnité journalière réduite de 50%",
+      "Sport extrême dangereux → réduction possible"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAA 16",
+      "LAA 18"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAMal 3",
@@ -215,9 +407,18 @@
     "rs": "RS 832.10",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_3",
     "texteSimple": "Toute personne domiciliée en Suisse doit s'assurer pour les soins de santé dans les 3 mois suivant son arrivée. L'assurance de base est obligatoire.",
-    "exemplesConcrets": ["Arrivée en Suisse → 3 mois pour choisir une caisse maladie", "Nouveau-né → assuré dès la naissance (rétroactif)"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAMal 4", "LAMal 25"]
+    "exemplesConcrets": [
+      "Arrivée en Suisse → 3 mois pour choisir une caisse maladie",
+      "Nouveau-né → assuré dès la naissance (rétroactif)"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAMal 4",
+      "LAMal 25"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAMal 25",
@@ -225,9 +426,20 @@
     "rs": "RS 832.10",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_25",
     "texteSimple": "L'assurance de base couvre les soins médicaux, les médicaments (liste des spécialités), les hospitalisations en division commune, les analyses et la maternité.",
-    "exemplesConcrets": ["Consultation chez le médecin = couvert", "Médicament prescrit sur la liste = couvert", "Hospitalisation en chambre privée = PAS couvert par la base"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAMal 3", "LAMal 31", "LAMal 64"]
+    "exemplesConcrets": [
+      "Consultation chez le médecin = couvert",
+      "Médicament prescrit sur la liste = couvert",
+      "Hospitalisation en chambre privée = PAS couvert par la base"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAMal 3",
+      "LAMal 31",
+      "LAMal 64"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAMal 41",
@@ -235,9 +447,18 @@
     "rs": "RS 832.10",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_41",
     "texteSimple": "L'assuré peut choisir librement son médecin ou son hôpital parmi les fournisseurs admis, sauf s'il a choisi un modèle alternatif (médecin de famille, HMO, télémédecine).",
-    "exemplesConcrets": ["Modèle standard → libre choix du médecin", "Modèle médecin de famille → doit d'abord consulter son médecin référent"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAMal 25", "LAMal 62"]
+    "exemplesConcrets": [
+      "Modèle standard → libre choix du médecin",
+      "Modèle médecin de famille → doit d'abord consulter son médecin référent"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAMal 25",
+      "LAMal 62"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAMal 62",
@@ -245,9 +466,18 @@
     "rs": "RS 832.10",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_62",
     "texteSimple": "Les assureurs peuvent proposer des modèles alternatifs (HMO, médecin de famille, télémédecine) avec des primes réduites en échange d'une limitation du choix du médecin.",
-    "exemplesConcrets": ["Modèle télémédecine → appeler d'abord une hotline → prime réduite de 10-15%", "Modèle HMO → consulter d'abord le centre de groupe → prime réduite"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAMal 41", "LAMal 64"]
+    "exemplesConcrets": [
+      "Modèle télémédecine → appeler d'abord une hotline → prime réduite de 10-15%",
+      "Modèle HMO → consulter d'abord le centre de groupe → prime réduite"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAMal 41",
+      "LAMal 64"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAMal 64",
@@ -255,9 +485,18 @@
     "rs": "RS 832.10",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_64",
     "texteSimple": "L'assuré paie : une franchise annuelle (300-2500 CHF au choix), puis une quote-part de 10% des frais (max 700 CHF/an pour les adultes). La maternité est exemptée.",
-    "exemplesConcrets": ["Franchise 300 CHF + 10% des frais au-delà → max 1'000 CHF/an de participation", "Franchise 2500 CHF → prime mensuelle plus basse mais plus de frais en cas de maladie"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAMal 25", "LAMal 65"]
+    "exemplesConcrets": [
+      "Franchise 300 CHF + 10% des frais au-delà → max 1'000 CHF/an de participation",
+      "Franchise 2500 CHF → prime mensuelle plus basse mais plus de frais en cas de maladie"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAMal 25",
+      "LAMal 65"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LAMal 65",
@@ -265,9 +504,18 @@
     "rs": "RS 832.10",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_65",
     "texteSimple": "Les cantons accordent des réductions de primes (subsides) aux assurés de condition économique modeste. Les enfants et les jeunes en formation bénéficient de réductions plus élevées.",
-    "exemplesConcrets": ["Revenu modeste → subside cantonal couvrant une partie de la prime", "Famille avec 3 enfants → primes des enfants souvent entièrement subsidiées"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LAMal 64", "LAMal 3"]
+    "exemplesConcrets": [
+      "Revenu modeste → subside cantonal couvrant une partie de la prime",
+      "Famille avec 3 enfants → primes des enfants souvent entièrement subsidiées"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LAMal 64",
+      "LAMal 3"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LACI 8",
@@ -275,9 +523,19 @@
     "rs": "RS 837.0",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1982/2184_2184_2184/fr#art_8",
     "texteSimple": "Le chômeur a droit aux indemnités s'il a cotisé au moins 12 mois dans les 2 ans précédant le chômage, s'il est apte au placement, et s'il cherche activement du travail.",
-    "exemplesConcrets": ["18 mois de travail puis licenciement → droit aux indemnités de chômage", "Démission volontaire → suspension de 1-2 mois avant le début des indemnités"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LACI 9", "LACI 13", "LACI 22"]
+    "exemplesConcrets": [
+      "18 mois de travail puis licenciement → droit aux indemnités de chômage",
+      "Démission volontaire → suspension de 1-2 mois avant le début des indemnités"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LACI 9",
+      "LACI 13",
+      "LACI 22"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LACI 13",
@@ -285,9 +543,18 @@
     "rs": "RS 837.0",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1982/2184_2184_2184/fr#art_13",
     "texteSimple": "Il faut avoir cotisé au moins 12 mois dans les 2 ans précédant le chômage pour avoir droit aux indemnités. Certaines situations sont assimilées à des périodes de cotisation (maternité, maladie).",
-    "exemplesConcrets": ["12 mois de travail dans les 24 derniers mois → condition remplie", "Congé maternité = compté comme période de cotisation"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LACI 8", "LACI 14"]
+    "exemplesConcrets": [
+      "12 mois de travail dans les 24 derniers mois → condition remplie",
+      "Congé maternité = compté comme période de cotisation"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LACI 8",
+      "LACI 14"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LACI 22",
@@ -295,9 +562,18 @@
     "rs": "RS 837.0",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1982/2184_2184_2184/fr#art_22",
     "texteSimple": "L'indemnité est de 70% du gain assuré (80% si vous avez des enfants à charge, si vous êtes invalide, ou si le gain assuré est inférieur à 3'797 CHF).",
-    "exemplesConcrets": ["Salaire de 6'000 CHF → indemnité de 4'200 CHF (70%)", "Salaire de 5'000 CHF avec enfant → indemnité de 4'000 CHF (80%)"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LACI 8", "LACI 27"]
+    "exemplesConcrets": [
+      "Salaire de 6'000 CHF → indemnité de 4'200 CHF (70%)",
+      "Salaire de 5'000 CHF avec enfant → indemnité de 4'000 CHF (80%)"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LACI 8",
+      "LACI 27"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LACI 27",
@@ -305,9 +581,18 @@
     "rs": "RS 837.0",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1982/2184_2184_2184/fr#art_27",
     "texteSimple": "Le nombre maximum d'indemnités dépend de l'âge et des cotisations : 260 indemnités (12 mois de cotisation), 400 indemnités (22 mois ou 55 ans+), 520 pour les AI partiels.",
-    "exemplesConcrets": ["Moins de 55 ans, 12 mois de cotisation → max 260 jours (~1 an)", "Plus de 55 ans → max 400 jours (~18 mois)"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LACI 22", "LACI 8"]
+    "exemplesConcrets": [
+      "Moins de 55 ans, 12 mois de cotisation → max 260 jours (~1 an)",
+      "Plus de 55 ans → max 400 jours (~18 mois)"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LACI 22",
+      "LACI 8"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LACI 30",
@@ -315,8 +600,17 @@
     "rs": "RS 837.0",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1982/2184_2184_2184/fr#art_30",
     "texteSimple": "L'indemnité peut être suspendue si le chômeur est responsable de son chômage (démission sans motif, faute professionnelle), ne cherche pas assez activement ou refuse un emploi convenable.",
-    "exemplesConcrets": ["Démission sans motif valable → suspension 1-2 mois", "Refus d'un emploi convenable → suspension de l'indemnité"],
-    "domaines": ["assurances-sociales"],
-    "articlesLies": ["LACI 8", "LACI 16"]
+    "exemplesConcrets": [
+      "Démission sans motif valable → suspension 1-2 mois",
+      "Refus d'un emploi convenable → suspension de l'indemnité"
+    ],
+    "domaines": [
+      "assurances-sociales"
+    ],
+    "articlesLies": [
+      "LACI 8",
+      "LACI 16"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   }
 ]

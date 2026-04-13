@@ -5,9 +5,18 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_10",
     "texteSimple": "Tout étranger qui veut séjourner en Suisse sans travailler a besoin d'une autorisation, sauf pour les séjours de moins de 3 mois (tourisme).",
-    "exemplesConcrets": ["Touriste : 90 jours max sans autorisation", "Étudiant : autorisation nécessaire dès le 1er jour si études"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 11", "LEI 18"]
+    "exemplesConcrets": [
+      "Touriste : 90 jours max sans autorisation",
+      "Étudiant : autorisation nécessaire dès le 1er jour si études"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 11",
+      "LEI 18"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 11",
@@ -15,9 +24,19 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_11",
     "texteSimple": "Tout étranger qui veut travailler en Suisse doit avoir une autorisation de séjour et de travail avant de commencer.",
-    "exemplesConcrets": ["Travailler sans permis = séjour illégal", "Même pour un emploi temporaire → autorisation nécessaire"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 10", "LEI 18", "LEI 33"]
+    "exemplesConcrets": [
+      "Travailler sans permis = séjour illégal",
+      "Même pour un emploi temporaire → autorisation nécessaire"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 10",
+      "LEI 18",
+      "LEI 33"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 18",
@@ -25,9 +44,18 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_18",
     "texteSimple": "Un étranger ne peut être admis pour travailler que s'il y a un intérêt économique, si aucun travailleur en Suisse ou de l'UE n'est disponible, et si les conditions de salaire sont respectées.",
-    "exemplesConcrets": ["Entreprise ne trouve pas de candidat suisse ou UE → peut engager un ressortissant d'État tiers"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 11", "LEI 19", "LEI 20"]
+    "exemplesConcrets": [
+      "Entreprise ne trouve pas de candidat suisse ou UE → peut engager un ressortissant d'État tiers"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 11",
+      "LEI 19",
+      "LEI 20"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 32",
@@ -35,9 +63,18 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_32",
     "texteSimple": "Le permis B est délivré pour un séjour prolongé (généralement 1 an, renouvelable). Il est lié à un but précis : travail, études, regroupement familial.",
-    "exemplesConcrets": ["Employé étranger engagé pour un CDI → permis B 1 an renouvelable", "Conjoint d'un Suisse → permis B"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 33", "LEI 34"]
+    "exemplesConcrets": [
+      "Employé étranger engagé pour un CDI → permis B 1 an renouvelable",
+      "Conjoint d'un Suisse → permis B"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 33",
+      "LEI 34"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 33",
@@ -45,9 +82,19 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_33",
     "texteSimple": "Le permis B est renouvelé si les conditions d'admission sont encore remplies (emploi, pas d'aide sociale excessive, respect de l'ordre public).",
-    "exemplesConcrets": ["Perte d'emploi → le permis peut quand même être renouvelé si recherche active", "Aide sociale prolongée → risque de non-renouvellement"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 32", "LEI 34", "LEI 62"]
+    "exemplesConcrets": [
+      "Perte d'emploi → le permis peut quand même être renouvelé si recherche active",
+      "Aide sociale prolongée → risque de non-renouvellement"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 32",
+      "LEI 34",
+      "LEI 62"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 34",
@@ -55,9 +102,19 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_34",
     "texteSimple": "Le permis C donne un droit de séjour illimité en Suisse. Il est accordé après 5 ou 10 ans de séjour (selon la nationalité) si l'intégration est réussie.",
-    "exemplesConcrets": ["10 ans en Suisse avec permis B + bonne intégration → permis C", "Ressortissant UE : 5 ans suffisent souvent"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 32", "LEI 33", "LEI 63"]
+    "exemplesConcrets": [
+      "10 ans en Suisse avec permis B + bonne intégration → permis C",
+      "Ressortissant UE : 5 ans suffisent souvent"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 32",
+      "LEI 33",
+      "LEI 63"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 35",
@@ -65,9 +122,18 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_35",
     "texteSimple": "Le permis L est accordé pour un séjour temporaire de moins d'un an (travail saisonnier, stage, formation courte).",
-    "exemplesConcrets": ["Travailleur saisonnier dans l'hôtellerie → permis L de 9 mois", "Stagiaire → permis L de 6 mois"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 32", "LEI 18"]
+    "exemplesConcrets": [
+      "Travailleur saisonnier dans l'hôtellerie → permis L de 9 mois",
+      "Stagiaire → permis L de 6 mois"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 32",
+      "LEI 18"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 42",
@@ -75,9 +141,20 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_42",
     "texteSimple": "Le conjoint étranger d'un citoyen suisse a droit au regroupement familial (permis B puis C après 5 ans). Les enfants de moins de 18 ans aussi.",
-    "exemplesConcrets": ["Mariage avec un(e) Suisse → permis B automatique", "Enfant de moins de 18 ans → regroupement familial"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 43", "LEI 44", "LEI 47", "LEI 50"]
+    "exemplesConcrets": [
+      "Mariage avec un(e) Suisse → permis B automatique",
+      "Enfant de moins de 18 ans → regroupement familial"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 43",
+      "LEI 44",
+      "LEI 47",
+      "LEI 50"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 43",
@@ -85,9 +162,18 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_43",
     "texteSimple": "Le conjoint et les enfants de moins de 18 ans d'un titulaire de permis C ont droit au regroupement familial (permis B).",
-    "exemplesConcrets": ["Titulaire C fait venir son conjoint étranger → permis B", "Condition : logement suffisant"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 42", "LEI 44"]
+    "exemplesConcrets": [
+      "Titulaire C fait venir son conjoint étranger → permis B",
+      "Condition : logement suffisant"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 42",
+      "LEI 44"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 44",
@@ -95,9 +181,18 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_44",
     "texteSimple": "Le conjoint et les enfants de moins de 18 ans d'un titulaire de permis B peuvent obtenir le regroupement familial si la famille vit ensemble et dispose d'un logement adéquat.",
-    "exemplesConcrets": ["Titulaire B veut faire venir sa famille → conditions strictes : logement, pas d'aide sociale"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 42", "LEI 43", "LEI 47"]
+    "exemplesConcrets": [
+      "Titulaire B veut faire venir sa famille → conditions strictes : logement, pas d'aide sociale"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 42",
+      "LEI 43",
+      "LEI 47"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 47",
@@ -105,9 +200,18 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_47",
     "texteSimple": "La demande de regroupement familial doit être faite dans les 5 ans pour le conjoint et les enfants de plus de 12 ans, et dans les 12 mois pour les enfants de moins de 12 ans.",
-    "exemplesConcrets": ["Mariage il y a 6 ans, pas de demande → délai dépassé, regroupement refusé sauf exception"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 42", "LEI 43", "LEI 44"]
+    "exemplesConcrets": [
+      "Mariage il y a 6 ans, pas de demande → délai dépassé, regroupement refusé sauf exception"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 42",
+      "LEI 43",
+      "LEI 44"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 50",
@@ -115,9 +219,18 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_50",
     "texteSimple": "Après un divorce, le conjoint étranger peut garder son permis si le mariage a duré au moins 3 ans et que l'intégration est réussie, ou en cas de violence conjugale.",
-    "exemplesConcrets": ["Divorce après 4 ans de mariage + emploi stable → permis maintenu", "Violence conjugale prouvée → permis maintenu même si mariage court"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 42", "LEI 62"]
+    "exemplesConcrets": [
+      "Divorce après 4 ans de mariage + emploi stable → permis maintenu",
+      "Violence conjugale prouvée → permis maintenu même si mariage court"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 42",
+      "LEI 62"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 58a",
@@ -125,9 +238,18 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_58_a",
     "texteSimple": "L'intégration est évaluée sur : le respect de la sécurité et de l'ordre public, les valeurs de la Constitution, les compétences linguistiques, la participation économique.",
-    "exemplesConcrets": ["Niveau A1 oral requis pour le permis B, B1 pour le permis C", "Indépendance financière favorise l'intégration"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 33", "LEI 34"]
+    "exemplesConcrets": [
+      "Niveau A1 oral requis pour le permis B, B1 pour le permis C",
+      "Indépendance financière favorise l'intégration"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 33",
+      "LEI 34"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 62",
@@ -135,9 +257,18 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_62",
     "texteSimple": "Le permis peut être révoqué si l'étranger a été condamné pénalement, dépend durablement de l'aide sociale, a donné de fausses informations, ou ne respecte pas les conditions.",
-    "exemplesConcrets": ["Condamnation à une peine privative de liberté → risque de révocation", "Aide sociale prolongée → risque de non-renouvellement du permis B"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 63", "LEI 64"]
+    "exemplesConcrets": [
+      "Condamnation à une peine privative de liberté → risque de révocation",
+      "Aide sociale prolongée → risque de non-renouvellement du permis B"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 63",
+      "LEI 64"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 63",
@@ -145,9 +276,17 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_63",
     "texteSimple": "Le permis C peut être révoqué si l'étranger est condamné à une longue peine, représente une menace pour la sécurité, ou dépend durablement de l'aide sociale.",
-    "exemplesConcrets": ["Peine de prison de plus de 2 ans → révocation possible même du permis C"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 62", "LEI 64"]
+    "exemplesConcrets": [
+      "Peine de prison de plus de 2 ans → révocation possible même du permis C"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 62",
+      "LEI 64"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 64",
@@ -155,9 +294,19 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_64",
     "texteSimple": "L'autorité cantonale rend une décision de renvoi contre l'étranger qui n'a pas ou plus d'autorisation de séjour. Un délai de départ raisonnable est fixé.",
-    "exemplesConcrets": ["Permis B non renouvelé → décision de renvoi avec délai de 30 jours", "Possibilité de recours contre la décision"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 62", "LEI 66", "LEI 83"]
+    "exemplesConcrets": [
+      "Permis B non renouvelé → décision de renvoi avec délai de 30 jours",
+      "Possibilité de recours contre la décision"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 62",
+      "LEI 66",
+      "LEI 83"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 66a",
@@ -165,9 +314,18 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_66_a",
     "texteSimple": "Le juge pénal doit prononcer l'expulsion pour certaines infractions graves (meurtre, viol, trafic de drogue, brigandage, etc.) sauf cas de rigueur exceptionnel.",
-    "exemplesConcrets": ["Condamnation pour trafic de drogue → expulsion obligatoire sauf exception", "Viol → expulsion obligatoire"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 64", "LEI 68"]
+    "exemplesConcrets": [
+      "Condamnation pour trafic de drogue → expulsion obligatoire sauf exception",
+      "Viol → expulsion obligatoire"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 64",
+      "LEI 68"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 68",
@@ -175,9 +333,18 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_68",
     "texteSimple": "Une interdiction d'entrée peut être prononcée contre un étranger expulsé. La détention administrative est possible pour assurer l'exécution du renvoi.",
-    "exemplesConcrets": ["Renvoi non exécutable immédiatement → détention administrative max 18 mois"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 64", "LEI 66a", "LEI 76"]
+    "exemplesConcrets": [
+      "Renvoi non exécutable immédiatement → détention administrative max 18 mois"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 64",
+      "LEI 66a",
+      "LEI 76"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 76",
@@ -185,9 +352,17 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_76",
     "texteSimple": "L'étranger peut être placé en détention si le renvoi ne peut pas être exécuté immédiatement et qu'il y a un risque de fuite.",
-    "exemplesConcrets": ["Personne déboutée de l'asile qui se cache → détention pour garantir le renvoi"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 68", "LEI 83"]
+    "exemplesConcrets": [
+      "Personne déboutée de l'asile qui se cache → détention pour garantir le renvoi"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 68",
+      "LEI 83"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 83",
@@ -195,9 +370,19 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_83",
     "texteSimple": "Si le renvoi n'est pas possible, pas licite ou pas raisonnablement exigible (guerre, torture), l'étranger obtient une admission provisoire (permis F).",
-    "exemplesConcrets": ["Ressortissant syrien → renvoi pas exigible → permis F", "Maladie grave sans traitement possible au pays → permis F"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 64", "LEI 84", "LEI 85"]
+    "exemplesConcrets": [
+      "Ressortissant syrien → renvoi pas exigible → permis F",
+      "Maladie grave sans traitement possible au pays → permis F"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 64",
+      "LEI 84",
+      "LEI 85"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 85",
@@ -205,9 +390,17 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_85",
     "texteSimple": "Les titulaires d'un permis F peuvent travailler sans restriction sectorielle ni géographique. L'employeur doit annoncer le début et la fin de l'activité.",
-    "exemplesConcrets": ["Permis F → peut travailler dans tout canton et tout secteur"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 83", "LEI 84"]
+    "exemplesConcrets": [
+      "Permis F → peut travailler dans tout canton et tout secteur"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 83",
+      "LEI 84"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 115",
@@ -215,9 +408,18 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_115",
     "texteSimple": "L'entrée, le séjour ou le travail illégal en Suisse est punissable d'une peine privative de liberté d'un an au plus ou d'une amende.",
-    "exemplesConcrets": ["Rester en Suisse après expiration du visa → amende ou prison", "Travailler sans permis → sanction pénale"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 116", "LEI 117"]
+    "exemplesConcrets": [
+      "Rester en Suisse après expiration du visa → amende ou prison",
+      "Travailler sans permis → sanction pénale"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 116",
+      "LEI 117"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LEI 116",
@@ -225,9 +427,18 @@
     "rs": "RS 142.20",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_116",
     "texteSimple": "Celui qui aide un étranger à entrer ou séjourner illégalement en Suisse est punissable. La peine est aggravée en cas d'enrichissement.",
-    "exemplesConcrets": ["Passeur professionnel → jusqu'à 5 ans de prison", "Héberger un sans-papiers pour profit → punissable"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LEI 115", "LEI 117"]
+    "exemplesConcrets": [
+      "Passeur professionnel → jusqu'à 5 ans de prison",
+      "Héberger un sans-papiers pour profit → punissable"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LEI 115",
+      "LEI 117"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LN 9",
@@ -235,9 +446,18 @@
     "rs": "RS 141.0",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2016/404/fr#art_9",
     "texteSimple": "Pour la naturalisation ordinaire : 10 ans de séjour en Suisse (dont 3 des 5 dernières années), intégration réussie, respect de l'ordre juridique, pas de mise en danger de la sécurité.",
-    "exemplesConcrets": ["12 ans en Suisse, permis C, emploi stable, B1 en français → demande de naturalisation"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LN 10", "LN 11", "LN 12"]
+    "exemplesConcrets": [
+      "12 ans en Suisse, permis C, emploi stable, B1 en français → demande de naturalisation"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LN 10",
+      "LN 11",
+      "LN 12"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "LN 12",
@@ -245,8 +465,17 @@
     "rs": "RS 141.0",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2016/404/fr#art_12",
     "texteSimple": "L'intégration est évaluée sur : la participation à la vie économique, l'apprentissage de la langue (oral B1, écrit A2 minimum), le respect des valeurs constitutionnelles.",
-    "exemplesConcrets": ["Test de langue B1 oral + A2 écrit obligatoire", "Ne pas dépendre de l'aide sociale"],
-    "domaines": ["etrangers"],
-    "articlesLies": ["LN 9", "LEI 58a"]
+    "exemplesConcrets": [
+      "Test de langue B1 oral + A2 écrit obligatoire",
+      "Ne pas dépendre de l'aide sociale"
+    ],
+    "domaines": [
+      "etrangers"
+    ],
+    "articlesLies": [
+      "LN 9",
+      "LEI 58a"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   }
 ]

@@ -5,9 +5,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_1",
     "texteSimple": "Un contrat est conclu dès que deux personnes se mettent d'accord sur les points essentiels (prix, objet, etc.). Pas besoin d'écrit sauf exception.",
-    "exemplesConcrets": ["Accord oral pour acheter un meuble = contrat valable", "Poignée de main sur un prix de voiture = engagement"],
-    "domaines": ["contrats"],
-    "articlesLies": ["CO 2", "CO 11", "CO 18"]
+    "exemplesConcrets": [
+      "Accord oral pour acheter un meuble = contrat valable",
+      "Poignée de main sur un prix de voiture = engagement"
+    ],
+    "domaines": [
+      "contrats"
+    ],
+    "articlesLies": [
+      "CO 2",
+      "CO 11",
+      "CO 18"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 2",
@@ -15,9 +25,17 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_2",
     "texteSimple": "Si les parties se sont mises d'accord sur les points essentiels mais pas sur les détails, le contrat est quand même conclu. Le juge tranche les détails si nécessaire.",
-    "exemplesConcrets": ["Accord sur le prix mais pas sur la date de livraison → contrat valable, juge fixe la date"],
-    "domaines": ["contrats"],
-    "articlesLies": ["CO 1", "CO 18"]
+    "exemplesConcrets": [
+      "Accord sur le prix mais pas sur la date de livraison → contrat valable, juge fixe la date"
+    ],
+    "domaines": [
+      "contrats"
+    ],
+    "articlesLies": [
+      "CO 1",
+      "CO 18"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 11",
@@ -25,9 +43,20 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_11",
     "texteSimple": "En principe, un contrat peut être oral ou écrit. La forme écrite n'est exigée que si la loi le prévoit (ex. vente immobilière = acte notarié).",
-    "exemplesConcrets": ["Prêt d'argent oral = valable mais difficile à prouver", "Vente d'immeuble sans notaire = nul"],
-    "domaines": ["contrats"],
-    "articlesLies": ["CO 1", "CO 12", "CO 13", "CO 16"]
+    "exemplesConcrets": [
+      "Prêt d'argent oral = valable mais difficile à prouver",
+      "Vente d'immeuble sans notaire = nul"
+    ],
+    "domaines": [
+      "contrats"
+    ],
+    "articlesLies": [
+      "CO 1",
+      "CO 12",
+      "CO 13",
+      "CO 16"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 18",
@@ -35,9 +64,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_18",
     "texteSimple": "C'est la vraie intention des parties qui compte, pas les mots utilisés. Un contrat déguisé (ex. donation cachée en vente) est jugé selon sa nature réelle.",
-    "exemplesConcrets": ["Contrat de vente à 1 CHF = en réalité une donation", "Clause ambiguë → interprétée selon le sens voulu"],
-    "domaines": ["contrats"],
-    "articlesLies": ["CO 1", "CO 2", "CO 20"]
+    "exemplesConcrets": [
+      "Contrat de vente à 1 CHF = en réalité une donation",
+      "Clause ambiguë → interprétée selon le sens voulu"
+    ],
+    "domaines": [
+      "contrats"
+    ],
+    "articlesLies": [
+      "CO 1",
+      "CO 2",
+      "CO 20"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 20",
@@ -45,9 +84,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_20",
     "texteSimple": "Un contrat est nul s'il porte sur quelque chose d'impossible, d'illicite ou de contraire aux mœurs. Personne ne peut s'en prévaloir.",
-    "exemplesConcrets": ["Contrat pour vente de drogue = nul", "Clause qui renonce à tous vos droits = nulle"],
-    "domaines": ["contrats"],
-    "articlesLies": ["CO 19", "CO 21"]
+    "exemplesConcrets": [
+      "Contrat pour vente de drogue = nul",
+      "Clause qui renonce à tous vos droits = nulle"
+    ],
+    "domaines": [
+      "contrats"
+    ],
+    "articlesLies": [
+      "CO 19",
+      "CO 21"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 21",
@@ -55,9 +103,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_21",
     "texteSimple": "Si un contrat est gravement déséquilibré parce qu'une partie a exploité la détresse ou l'inexpérience de l'autre, la victime peut le faire annuler dans un délai d'un an.",
-    "exemplesConcrets": ["Vente d'un bien à 10% de sa valeur à une personne âgée isolée", "Prêt à taux usuraire à une personne en détresse"],
-    "domaines": ["contrats"],
-    "articlesLies": ["CO 20", "CO 23"]
+    "exemplesConcrets": [
+      "Vente d'un bien à 10% de sa valeur à une personne âgée isolée",
+      "Prêt à taux usuraire à une personne en détresse"
+    ],
+    "domaines": [
+      "contrats"
+    ],
+    "articlesLies": [
+      "CO 20",
+      "CO 23"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 23",
@@ -65,9 +122,20 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_23",
     "texteSimple": "Si vous vous êtes trompé sur un point essentiel du contrat (nature, objet, personne), vous pouvez l'invalider. L'erreur doit être excusable.",
-    "exemplesConcrets": ["Acheter une copie en croyant que c'est un original", "Se tromper sur l'identité du cocontractant"],
-    "domaines": ["contrats"],
-    "articlesLies": ["CO 24", "CO 25", "CO 26", "CO 28"]
+    "exemplesConcrets": [
+      "Acheter une copie en croyant que c'est un original",
+      "Se tromper sur l'identité du cocontractant"
+    ],
+    "domaines": [
+      "contrats"
+    ],
+    "articlesLies": [
+      "CO 24",
+      "CO 25",
+      "CO 26",
+      "CO 28"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 28",
@@ -75,9 +143,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_28",
     "texteSimple": "Si vous avez été trompé intentionnellement pour conclure un contrat, vous pouvez l'invalider même si l'erreur n'est pas essentielle.",
-    "exemplesConcrets": ["Vendeur cache un vice du véhicule", "Faux bilan présenté pour conclure une vente"],
-    "domaines": ["contrats"],
-    "articlesLies": ["CO 23", "CO 29", "CO 31"]
+    "exemplesConcrets": [
+      "Vendeur cache un vice du véhicule",
+      "Faux bilan présenté pour conclure une vente"
+    ],
+    "domaines": [
+      "contrats"
+    ],
+    "articlesLies": [
+      "CO 23",
+      "CO 29",
+      "CO 31"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 29",
@@ -85,9 +163,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_29",
     "texteSimple": "Si vous avez signé un contrat sous la menace (physique, financière, etc.), vous pouvez l'invalider dans un délai d'un an après la fin de la menace.",
-    "exemplesConcrets": ["Signature d'une reconnaissance de dette sous menace physique", "Signature forcée d'un contrat de travail défavorable"],
-    "domaines": ["contrats"],
-    "articlesLies": ["CO 28", "CO 30", "CO 31"]
+    "exemplesConcrets": [
+      "Signature d'une reconnaissance de dette sous menace physique",
+      "Signature forcée d'un contrat de travail défavorable"
+    ],
+    "domaines": [
+      "contrats"
+    ],
+    "articlesLies": [
+      "CO 28",
+      "CO 30",
+      "CO 31"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 31",
@@ -95,9 +183,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_31",
     "texteSimple": "Vous avez 1 an pour invalider un contrat entaché d'erreur, de tromperie ou de menace. Passé ce délai, le contrat est considéré comme ratifié.",
-    "exemplesConcrets": ["Découverte d'un vice caché → 1 an pour agir", "Menace cesse → 1 an pour contester"],
-    "domaines": ["contrats"],
-    "articlesLies": ["CO 23", "CO 28", "CO 29"]
+    "exemplesConcrets": [
+      "Découverte d'un vice caché → 1 an pour agir",
+      "Menace cesse → 1 an pour contester"
+    ],
+    "domaines": [
+      "contrats"
+    ],
+    "articlesLies": [
+      "CO 23",
+      "CO 28",
+      "CO 29"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 41",
@@ -105,9 +203,20 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_41",
     "texteSimple": "Celui qui cause un dommage à autrui de manière illicite (intentionnellement ou par négligence) doit le réparer. C'est la base de la responsabilité civile.",
-    "exemplesConcrets": ["Dommage causé par un accident de voiture par négligence", "Destruction volontaire du bien d'autrui"],
-    "domaines": ["responsabilite"],
-    "articlesLies": ["CO 42", "CO 43", "CO 44", "CO 47"]
+    "exemplesConcrets": [
+      "Dommage causé par un accident de voiture par négligence",
+      "Destruction volontaire du bien d'autrui"
+    ],
+    "domaines": [
+      "responsabilite"
+    ],
+    "articlesLies": [
+      "CO 42",
+      "CO 43",
+      "CO 44",
+      "CO 47"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 42",
@@ -115,9 +224,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_42",
     "texteSimple": "C'est à la victime de prouver son dommage. Si le montant exact ne peut pas être prouvé, le juge l'estime équitablement.",
-    "exemplesConcrets": ["Factures de réparation après un accident", "Estimation du gain manqué par le juge"],
-    "domaines": ["responsabilite"],
-    "articlesLies": ["CO 41", "CO 43", "CO 44"]
+    "exemplesConcrets": [
+      "Factures de réparation après un accident",
+      "Estimation du gain manqué par le juge"
+    ],
+    "domaines": [
+      "responsabilite"
+    ],
+    "articlesLies": [
+      "CO 41",
+      "CO 43",
+      "CO 44"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 43",
@@ -125,9 +244,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_43",
     "texteSimple": "Le juge détermine le mode et l'étendue de la réparation en tenant compte des circonstances et de la gravité de la faute.",
-    "exemplesConcrets": ["Faute grave → indemnité plus élevée", "Victime partiellement responsable → réduction"],
-    "domaines": ["responsabilite"],
-    "articlesLies": ["CO 41", "CO 42", "CO 44"]
+    "exemplesConcrets": [
+      "Faute grave → indemnité plus élevée",
+      "Victime partiellement responsable → réduction"
+    ],
+    "domaines": [
+      "responsabilite"
+    ],
+    "articlesLies": [
+      "CO 41",
+      "CO 42",
+      "CO 44"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 44",
@@ -135,9 +264,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_44",
     "texteSimple": "Si la victime a contribué à son propre dommage, l'indemnité peut être réduite voire supprimée.",
-    "exemplesConcrets": ["Piéton traverse hors passage → réduction de 30-50%", "Non-port de la ceinture → réduction"],
-    "domaines": ["responsabilite"],
-    "articlesLies": ["CO 41", "CO 43"]
+    "exemplesConcrets": [
+      "Piéton traverse hors passage → réduction de 30-50%",
+      "Non-port de la ceinture → réduction"
+    ],
+    "domaines": [
+      "responsabilite"
+    ],
+    "articlesLies": [
+      "CO 41",
+      "CO 43"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 47",
@@ -145,9 +283,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_47",
     "texteSimple": "En cas de lésions corporelles ou de mort, le juge peut accorder une indemnité pour tort moral (souffrance psychique).",
-    "exemplesConcrets": ["Décès d'un proche → 30'000-50'000 CHF de tort moral", "Blessures graves avec séquelles → 10'000-80'000 CHF"],
-    "domaines": ["responsabilite"],
-    "articlesLies": ["CO 41", "CO 49"]
+    "exemplesConcrets": [
+      "Décès d'un proche → 30'000-50'000 CHF de tort moral",
+      "Blessures graves avec séquelles → 10'000-80'000 CHF"
+    ],
+    "domaines": [
+      "responsabilite"
+    ],
+    "articlesLies": [
+      "CO 41",
+      "CO 49"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 49",
@@ -155,9 +302,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_49",
     "texteSimple": "Celui dont la personnalité est gravement atteinte peut demander une somme d'argent à titre de tort moral, à condition que la gravité le justifie.",
-    "exemplesConcrets": ["Diffamation publique grave → tort moral", "Harcèlement moral au travail avec atteinte à la santé"],
-    "domaines": ["responsabilite"],
-    "articlesLies": ["CO 41", "CO 47"]
+    "exemplesConcrets": [
+      "Diffamation publique grave → tort moral",
+      "Harcèlement moral au travail avec atteinte à la santé"
+    ],
+    "domaines": [
+      "responsabilite"
+    ],
+    "articlesLies": [
+      "CO 41",
+      "CO 47"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 55",
@@ -165,9 +321,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_55",
     "texteSimple": "L'employeur répond du dommage causé par ses employés dans l'exercice de leur travail, sauf s'il prouve qu'il a pris toutes les précautions nécessaires.",
-    "exemplesConcrets": ["Ouvrier casse la vitre du voisin → patron responsable", "Livreur cause un accident → entreprise responsable"],
-    "domaines": ["responsabilite", "travail"],
-    "articlesLies": ["CO 41", "CO 56"]
+    "exemplesConcrets": [
+      "Ouvrier casse la vitre du voisin → patron responsable",
+      "Livreur cause un accident → entreprise responsable"
+    ],
+    "domaines": [
+      "responsabilite",
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 41",
+      "CO 56"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 58",
@@ -175,9 +341,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_58",
     "texteSimple": "Le propriétaire d'un bâtiment ou ouvrage est responsable des dommages causés par un défaut de construction ou un entretien insuffisant.",
-    "exemplesConcrets": ["Tuile tombe du toit → propriétaire responsable", "Escalier mal entretenu → chute d'un visiteur"],
-    "domaines": ["responsabilite"],
-    "articlesLies": ["CO 41", "CO 59"]
+    "exemplesConcrets": [
+      "Tuile tombe du toit → propriétaire responsable",
+      "Escalier mal entretenu → chute d'un visiteur"
+    ],
+    "domaines": [
+      "responsabilite"
+    ],
+    "articlesLies": [
+      "CO 41",
+      "CO 59"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 60",
@@ -185,9 +360,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_60",
     "texteSimple": "L'action en dommages-intérêts se prescrit par 3 ans dès la connaissance du dommage et de la personne responsable, et au plus tard par 10 ans dès l'acte dommageable.",
-    "exemplesConcrets": ["Accident en 2023, découverte de séquelles en 2025 → délai de 3 ans dès 2025", "Dommage caché → max 10 ans"],
-    "domaines": ["responsabilite"],
-    "articlesLies": ["CO 41", "CO 67"]
+    "exemplesConcrets": [
+      "Accident en 2023, découverte de séquelles en 2025 → délai de 3 ans dès 2025",
+      "Dommage caché → max 10 ans"
+    ],
+    "domaines": [
+      "responsabilite"
+    ],
+    "articlesLies": [
+      "CO 41",
+      "CO 67"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 62",
@@ -195,9 +379,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_62",
     "texteSimple": "Celui qui s'est enrichi sans cause légitime aux dépens d'autrui doit restituer. Typique : paiement par erreur.",
-    "exemplesConcrets": ["Virement bancaire envoyé au mauvais destinataire → doit rendre", "Loyer payé deux fois → restitution"],
-    "domaines": ["contrats", "responsabilite"],
-    "articlesLies": ["CO 63", "CO 67"]
+    "exemplesConcrets": [
+      "Virement bancaire envoyé au mauvais destinataire → doit rendre",
+      "Loyer payé deux fois → restitution"
+    ],
+    "domaines": [
+      "contrats",
+      "responsabilite"
+    ],
+    "articlesLies": [
+      "CO 63",
+      "CO 67"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 67",
@@ -205,9 +399,17 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_67",
     "texteSimple": "L'action en restitution se prescrit par 3 ans dès la connaissance du droit et 10 ans au maximum dès la naissance du droit.",
-    "exemplesConcrets": ["Paiement indu découvert → 3 ans pour agir"],
-    "domaines": ["contrats"],
-    "articlesLies": ["CO 62", "CO 60"]
+    "exemplesConcrets": [
+      "Paiement indu découvert → 3 ans pour agir"
+    ],
+    "domaines": [
+      "contrats"
+    ],
+    "articlesLies": [
+      "CO 62",
+      "CO 60"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 97",
@@ -215,9 +417,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_97",
     "texteSimple": "Si une partie ne respecte pas son contrat, elle doit réparer le dommage causé, sauf si elle prouve qu'elle n'est pas en faute.",
-    "exemplesConcrets": ["Artisan ne finit pas les travaux → dommages-intérêts", "Fournisseur livre en retard → indemnisation du préjudice"],
-    "domaines": ["contrats"],
-    "articlesLies": ["CO 98", "CO 99", "CO 107"]
+    "exemplesConcrets": [
+      "Artisan ne finit pas les travaux → dommages-intérêts",
+      "Fournisseur livre en retard → indemnisation du préjudice"
+    ],
+    "domaines": [
+      "contrats"
+    ],
+    "articlesLies": [
+      "CO 98",
+      "CO 99",
+      "CO 107"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 107",
@@ -225,9 +437,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_107",
     "texteSimple": "Si le débiteur est en retard, le créancier peut lui fixer un délai supplémentaire. Passé ce délai, il peut renoncer au contrat et demander des dommages-intérêts.",
-    "exemplesConcrets": ["Artisan en retard → délai de 10 jours → si rien, résiliation + dommages", "Livraison non reçue → mise en demeure → annulation"],
-    "domaines": ["contrats"],
-    "articlesLies": ["CO 97", "CO 108", "CO 109"]
+    "exemplesConcrets": [
+      "Artisan en retard → délai de 10 jours → si rien, résiliation + dommages",
+      "Livraison non reçue → mise en demeure → annulation"
+    ],
+    "domaines": [
+      "contrats"
+    ],
+    "articlesLies": [
+      "CO 97",
+      "CO 108",
+      "CO 109"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 120",
@@ -235,9 +457,17 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_120",
     "texteSimple": "Si deux personnes se doivent mutuellement de l'argent, les dettes peuvent se compenser. Chacun ne paie que la différence.",
-    "exemplesConcrets": ["Vous devez 5000 CHF et on vous doit 3000 CHF → vous ne payez que 2000 CHF"],
-    "domaines": ["contrats"],
-    "articlesLies": ["CO 121", "CO 124"]
+    "exemplesConcrets": [
+      "Vous devez 5000 CHF et on vous doit 3000 CHF → vous ne payez que 2000 CHF"
+    ],
+    "domaines": [
+      "contrats"
+    ],
+    "articlesLies": [
+      "CO 121",
+      "CO 124"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 127",
@@ -245,9 +475,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_127",
     "texteSimple": "Les créances se prescrivent par 10 ans, sauf disposition contraire. C'est le délai par défaut.",
-    "exemplesConcrets": ["Prêt entre amis → 10 ans pour réclamer le remboursement"],
-    "domaines": ["contrats"],
-    "articlesLies": ["CO 128", "CO 129", "CO 130"]
+    "exemplesConcrets": [
+      "Prêt entre amis → 10 ans pour réclamer le remboursement"
+    ],
+    "domaines": [
+      "contrats"
+    ],
+    "articlesLies": [
+      "CO 128",
+      "CO 129",
+      "CO 130"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 128",
@@ -255,9 +494,20 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_128",
     "texteSimple": "Se prescrivent par 5 ans : les loyers, intérêts, salaires, pensions alimentaires et toutes prestations périodiques.",
-    "exemplesConcrets": ["Loyers impayés → 5 ans pour les réclamer", "Salaire non versé → 5 ans"],
-    "domaines": ["contrats", "bail", "travail"],
-    "articlesLies": ["CO 127", "CO 130"]
+    "exemplesConcrets": [
+      "Loyers impayés → 5 ans pour les réclamer",
+      "Salaire non versé → 5 ans"
+    ],
+    "domaines": [
+      "contrats",
+      "bail",
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 127",
+      "CO 130"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 253",
@@ -265,9 +515,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_253",
     "texteSimple": "Le bail est un contrat par lequel le bailleur met un logement ou local à disposition du locataire, moyennant un loyer.",
-    "exemplesConcrets": ["Location d'un appartement", "Location d'un bureau commercial"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 253a", "CO 256", "CO 257"]
+    "exemplesConcrets": [
+      "Location d'un appartement",
+      "Location d'un bureau commercial"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 253a",
+      "CO 256",
+      "CO 257"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 256",
@@ -275,9 +535,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_256",
     "texteSimple": "Le bailleur doit livrer le logement en bon état et l'entretenir pendant toute la durée du bail. Les réparations courantes sont à charge du locataire.",
-    "exemplesConcrets": ["Chaudière en panne → bailleur doit réparer", "Remplacement d'un joint de robinet → locataire"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 259a", "CO 259b", "CO 257"]
+    "exemplesConcrets": [
+      "Chaudière en panne → bailleur doit réparer",
+      "Remplacement d'un joint de robinet → locataire"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 259a",
+      "CO 259b",
+      "CO 257"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 257d",
@@ -285,9 +555,17 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_257_d",
     "texteSimple": "Si le locataire ne paie pas son loyer à temps, le bailleur peut lui fixer un délai de 30 jours (logement) ou 10 jours (local commercial) et menacer de résilier.",
-    "exemplesConcrets": ["Loyer impayé → mise en demeure 30 jours → si toujours impayé, résiliation"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 257e", "CO 266l"]
+    "exemplesConcrets": [
+      "Loyer impayé → mise en demeure 30 jours → si toujours impayé, résiliation"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 257e",
+      "CO 266l"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 259a",
@@ -295,9 +573,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_259_a",
     "texteSimple": "Si le logement a un défaut qui diminue son usage (moisissure, bruit, chauffage), vous pouvez exiger la réparation, réduire le loyer, ou consigner le loyer.",
-    "exemplesConcrets": ["Moisissure salle de bain → réduction 15-25%", "Chauffage en panne en hiver → réduction 30-50%"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 259b", "CO 259g", "CO 256"]
+    "exemplesConcrets": [
+      "Moisissure salle de bain → réduction 15-25%",
+      "Chauffage en panne en hiver → réduction 30-50%"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 259b",
+      "CO 259g",
+      "CO 256"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 259b",
@@ -305,9 +593,17 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_259_b",
     "texteSimple": "Le locataire doit d'abord signaler le défaut au bailleur par écrit et fixer un délai raisonnable pour la réparation avant d'exercer d'autres droits.",
-    "exemplesConcrets": ["Lettre recommandée signalant le défaut avec délai de 15 jours"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 259a", "CO 259g"]
+    "exemplesConcrets": [
+      "Lettre recommandée signalant le défaut avec délai de 15 jours"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 259a",
+      "CO 259g"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 259d",
@@ -315,9 +611,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_259_d",
     "texteSimple": "Si le défaut diminue l'usage du logement, le locataire a droit à une réduction proportionnelle du loyer dès la notification au bailleur.",
-    "exemplesConcrets": ["Ascenseur en panne 3 mois → réduction 5-10%", "Infiltrations d'eau dans chambre → réduction 20-30%"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 259a", "CO 259e"]
+    "exemplesConcrets": [
+      "Ascenseur en panne 3 mois → réduction 5-10%",
+      "Infiltrations d'eau dans chambre → réduction 20-30%"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 259a",
+      "CO 259e"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 259g",
@@ -325,9 +630,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_259_g",
     "texteSimple": "Si le bailleur ne répare pas un défaut après mise en demeure, le locataire peut consigner ses loyers auprès d'un office désigné au lieu de les payer au bailleur.",
-    "exemplesConcrets": ["Consignation du loyer auprès de l'office des consignations après 3 rappels sans réparation"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 259a", "CO 259b", "CO 259h"]
+    "exemplesConcrets": [
+      "Consignation du loyer auprès de l'office des consignations après 3 rappels sans réparation"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 259a",
+      "CO 259b",
+      "CO 259h"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 261",
@@ -335,9 +649,17 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_261",
     "texteSimple": "Si l'immeuble est vendu, le bail passe au nouveau propriétaire. Le locataire ne peut pas être expulsé juste parce que le propriétaire change.",
-    "exemplesConcrets": ["Immeuble vendu → le nouveau proprio reprend le bail existant"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 261a", "CO 261b"]
+    "exemplesConcrets": [
+      "Immeuble vendu → le nouveau proprio reprend le bail existant"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 261a",
+      "CO 261b"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 266a",
@@ -345,9 +667,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_266_a",
     "texteSimple": "Le bail peut être résilié par chaque partie moyennant un préavis de 3 mois pour un logement, pour le prochain terme contractuel.",
-    "exemplesConcrets": ["Préavis 3 mois avant la fin du bail pour un appartement"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 266b", "CO 266c", "CO 266l"]
+    "exemplesConcrets": [
+      "Préavis 3 mois avant la fin du bail pour un appartement"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 266b",
+      "CO 266c",
+      "CO 266l"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 266l",
@@ -355,9 +686,17 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_266_l",
     "texteSimple": "Le bailleur peut résilier le bail avec un préavis de 30 jours si le locataire ne paie pas le loyer après mise en demeure de 30 jours.",
-    "exemplesConcrets": ["Loyer impayé malgré mise en demeure → résiliation en 30 jours pour fin de mois"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 257d", "CO 266a"]
+    "exemplesConcrets": [
+      "Loyer impayé malgré mise en demeure → résiliation en 30 jours pour fin de mois"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 257d",
+      "CO 266a"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 269",
@@ -365,9 +704,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_269",
     "texteSimple": "Un loyer est abusif s'il permet au bailleur d'obtenir un rendement excessif ou s'il est basé sur un prix d'achat manifestement exagéré.",
-    "exemplesConcrets": ["Rendement net supérieur à 3.5% du capital investi → potentiellement abusif"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 269a", "CO 269d", "CO 270"]
+    "exemplesConcrets": [
+      "Rendement net supérieur à 3.5% du capital investi → potentiellement abusif"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 269a",
+      "CO 269d",
+      "CO 270"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 269d",
@@ -375,9 +723,17 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_269_d",
     "texteSimple": "Le bailleur doit notifier la hausse sur formule officielle, en motivant les raisons. Le locataire peut contester dans les 30 jours auprès de l'autorité de conciliation.",
-    "exemplesConcrets": ["Hausse de 50 CHF/mois → formulaire officiel + motivation → 30 jours pour contester"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 269", "CO 270"]
+    "exemplesConcrets": [
+      "Hausse de 50 CHF/mois → formulaire officiel + motivation → 30 jours pour contester"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 269",
+      "CO 270"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 270",
@@ -385,9 +741,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_270",
     "texteSimple": "Le locataire peut contester le loyer initial dans les 30 jours suivant la remise des clés s'il estime le loyer abusif, en cas de pénurie de logements.",
-    "exemplesConcrets": ["Loyer initial de 2500 CHF alors que le précédent locataire payait 1800 CHF → contestation possible"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 269", "CO 269d", "CO 270a"]
+    "exemplesConcrets": [
+      "Loyer initial de 2500 CHF alors que le précédent locataire payait 1800 CHF → contestation possible"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 269",
+      "CO 269d",
+      "CO 270a"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 270a",
@@ -395,9 +760,17 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_270_a",
     "texteSimple": "Le locataire peut contester une hausse de loyer dans les 30 jours auprès de l'autorité de conciliation s'il l'estime abusive.",
-    "exemplesConcrets": ["Hausse non justifiée par les indices de référence → contestation en 30 jours"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 269d", "CO 270"]
+    "exemplesConcrets": [
+      "Hausse non justifiée par les indices de référence → contestation en 30 jours"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 269d",
+      "CO 270"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 271",
@@ -405,9 +778,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_271",
     "texteSimple": "Un congé est annulable s'il est donné de manière contraire aux règles de la bonne foi (représailles, congé-modification, etc.).",
-    "exemplesConcrets": ["Congé donné parce que le locataire a fait valoir ses droits = congé abusif", "Congé donné pendant une procédure = suspect"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 271a", "CO 272"]
+    "exemplesConcrets": [
+      "Congé donné parce que le locataire a fait valoir ses droits = congé abusif",
+      "Congé donné pendant une procédure = suspect"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 271a",
+      "CO 272"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 271a",
@@ -415,9 +797,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_271_a",
     "texteSimple": "Le congé est annulable s'il est donné en représailles, pour imposer une modification unilatérale, pendant une procédure judiciaire, ou dans les 3 ans après une procédure.",
-    "exemplesConcrets": ["Congé donné après une demande de réparation = annulable", "Congé pendant procédure de conciliation = annulable"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 271", "CO 272"]
+    "exemplesConcrets": [
+      "Congé donné après une demande de réparation = annulable",
+      "Congé pendant procédure de conciliation = annulable"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 271",
+      "CO 272"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 272",
@@ -425,9 +816,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_272",
     "texteSimple": "Le locataire peut demander une prolongation du bail s'il ne trouve pas de logement de remplacement. La durée maximale est de 4 ans (logement) ou 6 ans (local commercial).",
-    "exemplesConcrets": ["Famille avec enfants scolarisés → prolongation de 2-4 ans possible", "Personne âgée → prolongation souvent accordée"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 271", "CO 272a", "CO 272b"]
+    "exemplesConcrets": [
+      "Famille avec enfants scolarisés → prolongation de 2-4 ans possible",
+      "Personne âgée → prolongation souvent accordée"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 271",
+      "CO 272a",
+      "CO 272b"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 274g",
@@ -435,9 +836,17 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_274_g",
     "texteSimple": "Les litiges de bail passent d'abord par une procédure de conciliation gratuite devant une autorité paritaire (représentants des locataires et des bailleurs).",
-    "exemplesConcrets": ["Contestation de congé → d'abord conciliation gratuite, puis tribunal si échec"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 271", "CO 272"]
+    "exemplesConcrets": [
+      "Contestation de congé → d'abord conciliation gratuite, puis tribunal si échec"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 271",
+      "CO 272"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 319",
@@ -445,9 +854,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_319",
     "texteSimple": "Le contrat de travail est celui par lequel le travailleur s'engage à travailler pour l'employeur, sous sa direction, moyennant un salaire.",
-    "exemplesConcrets": ["Engagement comme vendeur dans un magasin", "Engagement comme développeur dans une startup"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 320", "CO 321", "CO 322"]
+    "exemplesConcrets": [
+      "Engagement comme vendeur dans un magasin",
+      "Engagement comme développeur dans une startup"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 320",
+      "CO 321",
+      "CO 322"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 321a",
@@ -455,9 +874,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_321_a",
     "texteSimple": "Le travailleur doit exécuter son travail avec soin, sauvegarder les intérêts de l'employeur et garder le secret sur les affaires de l'entreprise.",
-    "exemplesConcrets": ["Ne pas divulguer la liste de clients", "Ne pas travailler pour un concurrent en parallèle"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 319", "CO 321e"]
+    "exemplesConcrets": [
+      "Ne pas divulguer la liste de clients",
+      "Ne pas travailler pour un concurrent en parallèle"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 319",
+      "CO 321e"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 322",
@@ -465,9 +893,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_322",
     "texteSimple": "L'employeur doit payer le salaire convenu ou usuel à la fin de chaque mois, sauf accord différent.",
-    "exemplesConcrets": ["Salaire dû au plus tard le dernier jour du mois", "Si pas de montant fixé → salaire usuel de la branche"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 322a", "CO 323", "CO 324"]
+    "exemplesConcrets": [
+      "Salaire dû au plus tard le dernier jour du mois",
+      "Si pas de montant fixé → salaire usuel de la branche"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 322a",
+      "CO 323",
+      "CO 324"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 324a",
@@ -475,9 +913,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_324_a",
     "texteSimple": "En cas de maladie, l'employeur doit payer le salaire pendant un temps limité (échelle de Berne/Zurich/Bâle : 3 semaines la 1ère année, puis progressif).",
-    "exemplesConcrets": ["1ère année de service → 3 semaines de salaire en cas de maladie", "5ème année → environ 2 mois selon l'échelle applicable"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 324b", "CO 336c"]
+    "exemplesConcrets": [
+      "1ère année de service → 3 semaines de salaire en cas de maladie",
+      "5ème année → environ 2 mois selon l'échelle applicable"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 324b",
+      "CO 336c"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 328",
@@ -485,9 +932,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_328",
     "texteSimple": "L'employeur doit protéger la santé et la personnalité du travailleur : prévenir le harcèlement, le mobbing, et assurer un environnement de travail sain.",
-    "exemplesConcrets": ["Mobbing par un collègue → employeur doit intervenir", "Heures supplémentaires excessives → employeur responsable"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 328b", "CO 336"]
+    "exemplesConcrets": [
+      "Mobbing par un collègue → employeur doit intervenir",
+      "Heures supplémentaires excessives → employeur responsable"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 328b",
+      "CO 336"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 329d",
@@ -495,9 +951,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_329_d",
     "texteSimple": "Le travailleur a droit à au moins 4 semaines de vacances par an (5 semaines jusqu'à 20 ans). L'employeur fixe la date mais doit tenir compte des souhaits.",
-    "exemplesConcrets": ["Minimum légal = 20 jours ouvrables de vacances", "Jeune travailleur de 19 ans = 25 jours"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 329a", "CO 329e"]
+    "exemplesConcrets": [
+      "Minimum légal = 20 jours ouvrables de vacances",
+      "Jeune travailleur de 19 ans = 25 jours"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 329a",
+      "CO 329e"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 335",
@@ -505,9 +970,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_335",
     "texteSimple": "Le contrat de durée indéterminée peut être résilié par chaque partie. Pendant le temps d'essai : 7 jours de préavis. Ensuite : 1 mois (1ère année), 2 mois (2-9 ans), 3 mois (dès 10 ans).",
-    "exemplesConcrets": ["Employé depuis 3 ans → préavis de 2 mois pour fin de mois", "Pendant le temps d'essai → 7 jours"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 335a", "CO 335b", "CO 335c"]
+    "exemplesConcrets": [
+      "Employé depuis 3 ans → préavis de 2 mois pour fin de mois",
+      "Pendant le temps d'essai → 7 jours"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 335a",
+      "CO 335b",
+      "CO 335c"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 335c",
@@ -515,9 +990,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_335_c",
     "texteSimple": "Délais de congé : 1 mois durant la 1ère année, 2 mois de la 2ème à la 9ème année, 3 mois dès la 10ème année de service. Toujours pour la fin d'un mois.",
-    "exemplesConcrets": ["5 ans d'ancienneté → 2 mois de préavis pour fin de mois"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 335", "CO 335a", "CO 335b"]
+    "exemplesConcrets": [
+      "5 ans d'ancienneté → 2 mois de préavis pour fin de mois"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 335",
+      "CO 335a",
+      "CO 335b"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 336",
@@ -525,9 +1009,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_336",
     "texteSimple": "Un licenciement est abusif s'il est donné pour un motif interdit : opinion politique, religion, exercice d'un droit, grossesse, service militaire, activité syndicale, etc.",
-    "exemplesConcrets": ["Licenciement parce que l'employée est enceinte = abusif", "Licenciement pour avoir dénoncé des irrégularités (whistleblowing) = abusif"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 336a", "CO 336b", "CO 336c"]
+    "exemplesConcrets": [
+      "Licenciement parce que l'employée est enceinte = abusif",
+      "Licenciement pour avoir dénoncé des irrégularités (whistleblowing) = abusif"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 336a",
+      "CO 336b",
+      "CO 336c"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 336a",
@@ -535,9 +1029,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_336_a",
     "texteSimple": "En cas de licenciement abusif, l'indemnité maximale est de 6 mois de salaire. Le travailleur doit faire opposition par écrit avant la fin du délai de congé.",
-    "exemplesConcrets": ["Licenciement abusif d'un cadre → indemnité de 3-4 mois de salaire", "Ouvrier licencié pour activité syndicale → indemnité de 2-6 mois"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 336", "CO 336b"]
+    "exemplesConcrets": [
+      "Licenciement abusif d'un cadre → indemnité de 3-4 mois de salaire",
+      "Ouvrier licencié pour activité syndicale → indemnité de 2-6 mois"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 336",
+      "CO 336b"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 336c",
@@ -545,9 +1048,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_336_c",
     "texteSimple": "Il est interdit de licencier pendant la maladie (30-180 jours selon ancienneté), la grossesse et 16 semaines après l'accouchement, le service militaire.",
-    "exemplesConcrets": ["Arrêt maladie → protection de 30 jours la 1ère année, 90 jours dès la 2ème, 180 jours dès la 6ème", "Licenciement pendant la grossesse = nul"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 336", "CO 336d", "CO 324a"]
+    "exemplesConcrets": [
+      "Arrêt maladie → protection de 30 jours la 1ère année, 90 jours dès la 2ème, 180 jours dès la 6ème",
+      "Licenciement pendant la grossesse = nul"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 336",
+      "CO 336d",
+      "CO 324a"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 337",
@@ -555,9 +1068,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_337",
     "texteSimple": "Le contrat peut être résilié avec effet immédiat si la confiance est irrémédiablement rompue (vol, violence, harcèlement grave, non-paiement répété du salaire).",
-    "exemplesConcrets": ["Vol dans la caisse → licenciement immédiat justifié", "Employeur ne paie pas le salaire 2 mois → démission immédiate justifiée"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 337a", "CO 337b", "CO 337c"]
+    "exemplesConcrets": [
+      "Vol dans la caisse → licenciement immédiat justifié",
+      "Employeur ne paie pas le salaire 2 mois → démission immédiate justifiée"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 337a",
+      "CO 337b",
+      "CO 337c"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 337c",
@@ -565,9 +1088,17 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_337_c",
     "texteSimple": "Si le licenciement immédiat est injustifié, le travailleur a droit au salaire jusqu'à la fin du délai de congé normal + une indemnité pouvant aller jusqu'à 6 mois de salaire.",
-    "exemplesConcrets": ["Licenciement immédiat injustifié → salaire dû pour 3 mois de préavis + indemnité de 2 mois"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 337", "CO 337d"]
+    "exemplesConcrets": [
+      "Licenciement immédiat injustifié → salaire dû pour 3 mois de préavis + indemnité de 2 mois"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 337",
+      "CO 337d"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 339",
@@ -575,9 +1106,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_330_a",
     "texteSimple": "Le travailleur peut exiger à tout moment un certificat de travail portant sur la nature et la durée du travail, ainsi que sur la qualité du travail et la conduite.",
-    "exemplesConcrets": ["Demande de certificat complet à la fin du contrat", "Demande d'attestation de travail (simple confirmation) en cours d'emploi"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 319", "CO 335"]
+    "exemplesConcrets": [
+      "Demande de certificat complet à la fin du contrat",
+      "Demande d'attestation de travail (simple confirmation) en cours d'emploi"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 319",
+      "CO 335"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 340",
@@ -585,9 +1125,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_340",
     "texteSimple": "Une clause de non-concurrence n'est valable que si le travailleur a eu accès à la clientèle ou aux secrets de fabrication, et si elle est limitée dans le temps, l'espace et le domaine.",
-    "exemplesConcrets": ["Clause valable : pas de travail chez un concurrent dans le canton pendant 2 ans", "Clause trop large (toute la Suisse, 5 ans) = pas valable"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 340a", "CO 340b", "CO 340c"]
+    "exemplesConcrets": [
+      "Clause valable : pas de travail chez un concurrent dans le canton pendant 2 ans",
+      "Clause trop large (toute la Suisse, 5 ans) = pas valable"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 340a",
+      "CO 340b",
+      "CO 340c"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 341",
@@ -595,9 +1145,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_341",
     "texteSimple": "Le travailleur ne peut pas renoncer pendant le contrat aux droits que la loi lui garantit impérativement (vacances, salaire minimum, délais de congé, etc.).",
-    "exemplesConcrets": ["Clause contractuelle réduisant les vacances à 3 semaines = nulle", "Renonciation au salaire pour heures supplémentaires = nulle"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 329d", "CO 335c", "CO 336"]
+    "exemplesConcrets": [
+      "Clause contractuelle réduisant les vacances à 3 semaines = nulle",
+      "Renonciation au salaire pour heures supplémentaires = nulle"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 329d",
+      "CO 335c",
+      "CO 336"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 362",
@@ -605,9 +1165,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_362",
     "texteSimple": "Liste des articles du droit du travail auxquels il ne peut pas être dérogé au détriment du travailleur, ni par contrat ni par convention collective.",
-    "exemplesConcrets": ["Protection contre le licenciement en temps inopportun = impératif", "Droit au certificat de travail = impératif"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 341", "CO 336c"]
+    "exemplesConcrets": [
+      "Protection contre le licenciement en temps inopportun = impératif",
+      "Droit au certificat de travail = impératif"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 341",
+      "CO 336c"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 394",
@@ -615,9 +1184,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_394",
     "texteSimple": "Le mandat est un contrat par lequel le mandataire s'engage à gérer une affaire ou à rendre un service pour le mandant. L'avocat, le médecin, l'architecte travaillent sous mandat.",
-    "exemplesConcrets": ["Mandat à un avocat pour un procès", "Mandat à un architecte pour la conception d'une maison"],
-    "domaines": ["mandat"],
-    "articlesLies": ["CO 396", "CO 398", "CO 404"]
+    "exemplesConcrets": [
+      "Mandat à un avocat pour un procès",
+      "Mandat à un architecte pour la conception d'une maison"
+    ],
+    "domaines": [
+      "mandat"
+    ],
+    "articlesLies": [
+      "CO 396",
+      "CO 398",
+      "CO 404"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 396",
@@ -625,9 +1204,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_396",
     "texteSimple": "Le mandataire ne peut faire que ce qui est nécessaire pour exécuter le mandat. Les actes importants nécessitent des pouvoirs spéciaux.",
-    "exemplesConcrets": ["Avocat ne peut pas transiger sans accord du client", "Gérant ne peut pas vendre un immeuble sans procuration spéciale"],
-    "domaines": ["mandat"],
-    "articlesLies": ["CO 394", "CO 397"]
+    "exemplesConcrets": [
+      "Avocat ne peut pas transiger sans accord du client",
+      "Gérant ne peut pas vendre un immeuble sans procuration spéciale"
+    ],
+    "domaines": [
+      "mandat"
+    ],
+    "articlesLies": [
+      "CO 394",
+      "CO 397"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 398",
@@ -635,9 +1223,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_398",
     "texteSimple": "Le mandataire est responsable de la bonne exécution du mandat. Il doit agir avec la diligence d'un professionnel et répond de sa négligence.",
-    "exemplesConcrets": ["Avocat rate un délai de recours → responsable du dommage", "Médecin commet une erreur de diagnostic → responsabilité contractuelle"],
-    "domaines": ["mandat"],
-    "articlesLies": ["CO 394", "CO 400"]
+    "exemplesConcrets": [
+      "Avocat rate un délai de recours → responsable du dommage",
+      "Médecin commet une erreur de diagnostic → responsabilité contractuelle"
+    ],
+    "domaines": [
+      "mandat"
+    ],
+    "articlesLies": [
+      "CO 394",
+      "CO 400"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 400",
@@ -645,9 +1242,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_400",
     "texteSimple": "Le mandataire doit rendre compte de sa gestion et restituer tout ce qu'il a reçu dans le cadre du mandat.",
-    "exemplesConcrets": ["Avocat doit rendre le dossier au client", "Gérant doit présenter les comptes"],
-    "domaines": ["mandat"],
-    "articlesLies": ["CO 394", "CO 398"]
+    "exemplesConcrets": [
+      "Avocat doit rendre le dossier au client",
+      "Gérant doit présenter les comptes"
+    ],
+    "domaines": [
+      "mandat"
+    ],
+    "articlesLies": [
+      "CO 394",
+      "CO 398"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 404",
@@ -655,9 +1261,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_404",
     "texteSimple": "Le mandat peut être révoqué ou résilié en tout temps par chacune des parties. C'est un droit impératif : même un contrat ne peut pas l'exclure.",
-    "exemplesConcrets": ["Vous pouvez changer d'avocat à tout moment", "Le mandataire peut renoncer au mandat (mais doit éviter un préjudice)"],
-    "domaines": ["mandat"],
-    "articlesLies": ["CO 394", "CO 405"]
+    "exemplesConcrets": [
+      "Vous pouvez changer d'avocat à tout moment",
+      "Le mandataire peut renoncer au mandat (mais doit éviter un préjudice)"
+    ],
+    "domaines": [
+      "mandat"
+    ],
+    "articlesLies": [
+      "CO 394",
+      "CO 405"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 115",
@@ -665,9 +1280,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_115",
     "texteSimple": "Si deux personnes se doivent réciproquement des sommes d'argent ou des prestations de même espèce, chacune peut compenser sa dette avec sa créance, pourvu que les deux soient exigibles.",
-    "exemplesConcrets": ["Votre employeur vous doit 2000 CHF de salaire et vous lui devez 500 CHF de prêt → compensation possible", "Le locataire compense un trop-perçu de charges avec le loyer suivant"],
-    "domaines": ["obligations", "contrats"],
-    "articlesLies": ["CO 120", "CO 124"]
+    "exemplesConcrets": [
+      "Votre employeur vous doit 2000 CHF de salaire et vous lui devez 500 CHF de prêt → compensation possible",
+      "Le locataire compense un trop-perçu de charges avec le loyer suivant"
+    ],
+    "domaines": [
+      "obligations",
+      "contrats"
+    ],
+    "articlesLies": [
+      "CO 120",
+      "CO 124"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 253a",
@@ -675,9 +1300,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_253a",
     "texteSimple": "Les dispositions protectrices du droit du bail s'appliquent aux baux d'habitations et de locaux commerciaux. Certaines règles ne s'appliquent pas aux logements de luxe ou de vacances.",
-    "exemplesConcrets": ["Un appartement standard bénéficie de toutes les protections", "Un chalet de vacances loué saisonnièrement peut être exclu de certaines protections"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 253", "CO 256"]
+    "exemplesConcrets": [
+      "Un appartement standard bénéficie de toutes les protections",
+      "Un chalet de vacances loué saisonnièrement peut être exclu de certaines protections"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 253",
+      "CO 256"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 257a",
@@ -685,9 +1319,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_257a",
     "texteSimple": "Le loyer est la contre-prestation due par le locataire. Sauf convention contraire, il est payable à la fin de chaque mois et au plus tard à la fin du bail.",
-    "exemplesConcrets": ["Loyer dû le 1er du mois si le contrat le prévoit", "Sans précision, le loyer est dû fin de mois"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 257", "CO 257b", "CO 257d"]
+    "exemplesConcrets": [
+      "Loyer dû le 1er du mois si le contrat le prévoit",
+      "Sans précision, le loyer est dû fin de mois"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 257",
+      "CO 257b",
+      "CO 257d"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 257b",
@@ -695,9 +1339,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_257b",
     "texteSimple": "Si le bail prévoit des sûretés (garantie), celles-ci ne peuvent pas dépasser 3 mois de loyer pour les habitations. La garantie doit être déposée sur un compte d'épargne bloqué au nom du locataire.",
-    "exemplesConcrets": ["Garantie de loyer de 3 mois maximum déposée en banque", "Le bailleur ne peut pas exiger 6 mois de garantie"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 257a", "CO 257d"]
+    "exemplesConcrets": [
+      "Garantie de loyer de 3 mois maximum déposée en banque",
+      "Le bailleur ne peut pas exiger 6 mois de garantie"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 257a",
+      "CO 257d"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 257e",
@@ -705,9 +1358,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_257e",
     "texteSimple": "Le locataire ne doit payer des frais accessoires que si cela a été convenu spécialement. Les frais accessoires sont la rémunération des prestations fournies en rapport avec l'usage de la chose (chauffage, eau chaude, etc.).",
-    "exemplesConcrets": ["Les charges d'eau et chauffage doivent être mentionnées dans le bail", "Le bailleur ne peut pas facturer des charges non prévues au contrat"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 257a", "CO 257b"]
+    "exemplesConcrets": [
+      "Les charges d'eau et chauffage doivent être mentionnées dans le bail",
+      "Le bailleur ne peut pas facturer des charges non prévues au contrat"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 257a",
+      "CO 257b"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 257f",
@@ -715,9 +1377,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_257f",
     "texteSimple": "Si le locataire ne paie pas son loyer après mise en demeure écrite avec délai de 30 jours (habitation) ou 15 jours (local commercial), le bailleur peut résilier le bail avec un préavis de 30 jours pour la fin d'un mois.",
-    "exemplesConcrets": ["Loyer impayé → mise en demeure 30 jours → résiliation si toujours pas payé", "Le bailleur doit respecter la procédure : pas de résiliation sans mise en demeure"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 257a", "CO 257d", "CO 266l"]
+    "exemplesConcrets": [
+      "Loyer impayé → mise en demeure 30 jours → résiliation si toujours pas payé",
+      "Le bailleur doit respecter la procédure : pas de résiliation sans mise en demeure"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 257a",
+      "CO 257d",
+      "CO 266l"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 259",
@@ -725,9 +1397,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_259",
     "texteSimple": "Si la chose louée a un défaut qui n'est pas imputable au locataire, celui-ci peut exiger la remise en état, une réduction de loyer, des dommages-intérêts, ou prendre en charge la réparation aux frais du bailleur.",
-    "exemplesConcrets": ["Chauffage en panne en hiver → réduction de loyer", "Moisissure due à un défaut de construction → bailleur doit réparer"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 259a", "CO 259b", "CO 259d"]
+    "exemplesConcrets": [
+      "Chauffage en panne en hiver → réduction de loyer",
+      "Moisissure due à un défaut de construction → bailleur doit réparer"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 259a",
+      "CO 259b",
+      "CO 259d"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 259c",
@@ -735,9 +1417,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_259c",
     "texteSimple": "Le locataire doit tolérer les travaux urgents nécessaires pour remédier aux défauts ou prévenir des dommages. Le bailleur doit tenir compte des intérêts du locataire.",
-    "exemplesConcrets": ["Réparation d'urgence d'une fuite d'eau → le locataire doit laisser accès", "Travaux de sécurité imposés par les autorités → tolérance obligatoire"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 259", "CO 259b", "CO 259d"]
+    "exemplesConcrets": [
+      "Réparation d'urgence d'une fuite d'eau → le locataire doit laisser accès",
+      "Travaux de sécurité imposés par les autorités → tolérance obligatoire"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 259",
+      "CO 259b",
+      "CO 259d"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 262",
@@ -745,9 +1437,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_262",
     "texteSimple": "Le locataire peut sous-louer tout ou partie de la chose avec le consentement du bailleur. Le bailleur ne peut refuser que pour un juste motif (sous-loyer abusif, inconvénients majeurs, refus de communiquer les conditions).",
-    "exemplesConcrets": ["Sous-louer une chambre via Airbnb nécessite l'accord du bailleur", "Le bailleur peut refuser si le sous-loyer est excessif par rapport au loyer principal"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 256", "CO 266c"]
+    "exemplesConcrets": [
+      "Sous-louer une chambre via Airbnb nécessite l'accord du bailleur",
+      "Le bailleur peut refuser si le sous-loyer est excessif par rapport au loyer principal"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 256",
+      "CO 266c"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 264",
@@ -755,9 +1456,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_264",
     "texteSimple": "Le locataire peut restituer la chose avant la fin du bail s'il présente un locataire de remplacement solvable et acceptable pour le bailleur. À défaut, il reste tenu de payer le loyer jusqu'à la fin du bail ou au prochain terme légal.",
-    "exemplesConcrets": ["Départ anticipé → proposer un remplaçant solvable au bailleur", "Si le bailleur refuse un remplaçant acceptable, le locataire est libéré"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 266", "CO 266a"]
+    "exemplesConcrets": [
+      "Départ anticipé → proposer un remplaçant solvable au bailleur",
+      "Si le bailleur refuse un remplaçant acceptable, le locataire est libéré"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 266",
+      "CO 266a"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 266c",
@@ -765,9 +1475,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_266c",
     "texteSimple": "En cas de faillite du locataire, le bail prend fin à la prochaine échéance légale de résiliation, si des sûretés suffisantes ne sont pas fournies pour les loyers futurs.",
-    "exemplesConcrets": ["Locataire déclaré en faillite → le bailleur peut exiger des garanties sous peine de résiliation", "Si le locataire failli fournit une caution, le bail continue"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 266a", "CO 266l"]
+    "exemplesConcrets": [
+      "Locataire déclaré en faillite → le bailleur peut exiger des garanties sous peine de résiliation",
+      "Si le locataire failli fournit une caution, le bail continue"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 266a",
+      "CO 266l"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 267",
@@ -775,9 +1494,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_267",
     "texteSimple": "À la fin du bail, le locataire doit restituer la chose dans l'état résultant d'un usage conforme au contrat. L'usure normale n'est pas à charge du locataire.",
-    "exemplesConcrets": ["Murs jaunis par le temps = usure normale, pas de frais pour le locataire", "Trou dans le mur = dégât à charge du locataire"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 267a", "CO 259"]
+    "exemplesConcrets": [
+      "Murs jaunis par le temps = usure normale, pas de frais pour le locataire",
+      "Trou dans le mur = dégât à charge du locataire"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 267a",
+      "CO 259"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 267a",
@@ -785,9 +1513,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_267a",
     "texteSimple": "Le bailleur doit vérifier l'état de la chose louée lors de la restitution et aviser immédiatement le locataire des défauts dont il le rend responsable. S'il ne le fait pas, le locataire est libéré.",
-    "exemplesConcrets": ["L'état des lieux doit être fait le jour de la remise des clés", "Défaut signalé 3 mois après → trop tard, le locataire est libéré"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 267", "CO 259"]
+    "exemplesConcrets": [
+      "L'état des lieux doit être fait le jour de la remise des clés",
+      "Défaut signalé 3 mois après → trop tard, le locataire est libéré"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 267",
+      "CO 259"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 269a",
@@ -795,9 +1532,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_269a",
     "texteSimple": "Ne sont en règle générale pas abusifs les loyers qui se situent dans les limites des loyers comparatifs du quartier, qui sont justifiés par des hausses de coûts ou des prestations supplémentaires, ou qui sont dans la fourchette des loyers usuels.",
-    "exemplesConcrets": ["Loyer conforme aux statistiques du quartier = non abusif", "Hausse après rénovation significative = justifiable"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 269", "CO 270"]
+    "exemplesConcrets": [
+      "Loyer conforme aux statistiques du quartier = non abusif",
+      "Hausse après rénovation significative = justifiable"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 269",
+      "CO 270"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 270b",
@@ -805,9 +1551,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_270b",
     "texteSimple": "Le locataire peut contester le montant du loyer et en demander la diminution pour le prochain terme de résiliation s'il a des raisons d'admettre que le bailleur obtient un rendement excessif ou que le loyer repose sur un calcul erroné.",
-    "exemplesConcrets": ["Baisse du taux hypothécaire de référence → demande de baisse de loyer", "Charges réelles inférieures aux provisions → demande de correction"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 269a", "CO 270"]
+    "exemplesConcrets": [
+      "Baisse du taux hypothécaire de référence → demande de baisse de loyer",
+      "Charges réelles inférieures aux provisions → demande de correction"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 269a",
+      "CO 270"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 273",
@@ -815,9 +1570,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_273",
     "texteSimple": "Le locataire peut demander la prolongation du bail lorsque la fin du contrat aurait pour lui des conséquences pénibles que les intérêts du bailleur ne justifient pas. La durée de prolongation est de 4 ans maximum pour les habitations.",
-    "exemplesConcrets": ["Famille avec enfants scolarisés dans le quartier → prolongation possible", "Personne âgée malade sans solution de relogement → prolongation probable"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 271", "CO 271a", "CO 272"]
+    "exemplesConcrets": [
+      "Famille avec enfants scolarisés dans le quartier → prolongation possible",
+      "Personne âgée malade sans solution de relogement → prolongation probable"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 271",
+      "CO 271a",
+      "CO 272"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 274a",
@@ -825,9 +1590,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_274a",
     "texteSimple": "Les litiges relatifs au bail sont soumis à la conciliation obligatoire devant une autorité de conciliation en matière de baux. C'est une étape obligatoire avant de saisir le tribunal.",
-    "exemplesConcrets": ["Litige sur une hausse de loyer → conciliation obligatoire avant tribunal", "Contestation d'un congé → d'abord l'autorité de conciliation"],
-    "domaines": ["bail"],
-    "articlesLies": ["CO 273", "CO 274g"]
+    "exemplesConcrets": [
+      "Litige sur une hausse de loyer → conciliation obligatoire avant tribunal",
+      "Contestation d'un congé → d'abord l'autorité de conciliation"
+    ],
+    "domaines": [
+      "bail"
+    ],
+    "articlesLies": [
+      "CO 273",
+      "CO 274g"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 320",
@@ -835,9 +1609,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_320",
     "texteSimple": "Par le contrat de travail, le travailleur s'engage à travailler au service de l'employeur, qui s'engage à payer un salaire. Le contrat peut être conclu oralement.",
-    "exemplesConcrets": ["Accord oral de travail = contrat valable", "Commence à travailler sans contrat écrit = contrat tacite"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 319", "CO 321a", "CO 322"]
+    "exemplesConcrets": [
+      "Accord oral de travail = contrat valable",
+      "Commence à travailler sans contrat écrit = contrat tacite"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 319",
+      "CO 321a",
+      "CO 322"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 321e",
@@ -845,9 +1629,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_321e",
     "texteSimple": "Le travailleur est responsable du dommage qu'il cause à l'employeur intentionnellement ou par négligence. La mesure de la diligence due se détermine selon la nature du travail, les risques et la formation du travailleur.",
-    "exemplesConcrets": ["Employé qui casse une machine par inattention → responsabilité proportionnelle", "Erreur malgré formation insuffisante → responsabilité atténuée"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 321a", "CO 322"]
+    "exemplesConcrets": [
+      "Employé qui casse une machine par inattention → responsabilité proportionnelle",
+      "Erreur malgré formation insuffisante → responsabilité atténuée"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 321a",
+      "CO 322"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 323",
@@ -855,9 +1648,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_323",
     "texteSimple": "Le salaire est payé à la fin de chaque mois, sauf usage ou convention contraire. La provision est payée pour chaque affaire ou périodiquement. Le travailleur reçoit un décompte.",
-    "exemplesConcrets": ["Salaire versé le dernier jour du mois sauf accord contraire", "Employeur en retard de paiement → le travailleur peut exiger des intérêts"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 322", "CO 324a"]
+    "exemplesConcrets": [
+      "Salaire versé le dernier jour du mois sauf accord contraire",
+      "Employeur en retard de paiement → le travailleur peut exiger des intérêts"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 322",
+      "CO 324a"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 328b",
@@ -865,9 +1667,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_328b",
     "texteSimple": "L'employeur ne peut traiter des données concernant le travailleur que dans la mesure où elles portent sur les aptitudes à remplir son emploi ou sont nécessaires à l'exécution du contrat. Protection des données personnelles au travail.",
-    "exemplesConcrets": ["L'employeur ne peut pas fouiller les réseaux sociaux privés d'un employé", "Vidéosurveillance permanente du poste de travail = illicite"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 328", "LPD 4"]
+    "exemplesConcrets": [
+      "L'employeur ne peut pas fouiller les réseaux sociaux privés d'un employé",
+      "Vidéosurveillance permanente du poste de travail = illicite"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 328",
+      "LPD 4"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 330a",
@@ -875,9 +1686,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_330a",
     "texteSimple": "Le travailleur peut demander en tout temps un certificat de travail portant sur la nature et la durée des rapports de travail, ainsi que sur la qualité de son travail et sa conduite. Il peut aussi demander une simple attestation de travail.",
-    "exemplesConcrets": ["Droit à un certificat complet à la fin du contrat", "Certificat de travail codé négativement → contestable"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 328", "CO 336"]
+    "exemplesConcrets": [
+      "Droit à un certificat complet à la fin du contrat",
+      "Certificat de travail codé négativement → contestable"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 328",
+      "CO 336"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 330b",
@@ -885,9 +1705,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_330b",
     "texteSimple": "L'employeur doit informer le travailleur sur la prévoyance professionnelle (2e pilier) au début des rapports de travail et lors de tout changement. En cas d'omission, l'employeur peut être responsable du dommage.",
-    "exemplesConcrets": ["Nouvel employé doit être informé de sa caisse de pension", "Pas d'information sur le changement de caisse → responsabilité de l'employeur"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 331", "LPP 13"]
+    "exemplesConcrets": [
+      "Nouvel employé doit être informé de sa caisse de pension",
+      "Pas d'information sur le changement de caisse → responsabilité de l'employeur"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 331",
+      "LPP 13"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 331",
@@ -895,9 +1724,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_331",
     "texteSimple": "Si l'employeur prélève des cotisations de prévoyance, il doit les transférer à une institution de prévoyance. Les prestations de prévoyance font partie du contrat de travail.",
-    "exemplesConcrets": ["L'employeur retient des cotisations LPP sur le salaire → doit les verser à la caisse", "Cotisations non versées par l'employeur → responsabilité pénale possible"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 330b", "LPP 13"]
+    "exemplesConcrets": [
+      "L'employeur retient des cotisations LPP sur le salaire → doit les verser à la caisse",
+      "Cotisations non versées par l'employeur → responsabilité pénale possible"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 330b",
+      "LPP 13"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 334",
@@ -905,9 +1743,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_334",
     "texteSimple": "Le contrat de durée déterminée prend fin sans congé à l'expiration de la durée convenue. S'il est reconduit tacitement, il devient un contrat de durée indéterminée.",
-    "exemplesConcrets": ["CDD de 6 mois → fin automatique sans lettre de résiliation", "Continuer à travailler après la fin du CDD = transformation en CDI"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 335", "CO 335c"]
+    "exemplesConcrets": [
+      "CDD de 6 mois → fin automatique sans lettre de résiliation",
+      "Continuer à travailler après la fin du CDD = transformation en CDI"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 335",
+      "CO 335c"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 339d",
@@ -915,9 +1762,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_339d",
     "texteSimple": "En cas de licenciement après 20 ans de service, le travailleur a droit à une indemnité de départ. Elle correspond à 2 mois de salaire minimum après 20 ans, davantage ensuite. La prévoyance professionnelle peut remplacer cette indemnité.",
-    "exemplesConcrets": ["Licenciement après 25 ans → indemnité de 3 mois de salaire", "Si la caisse de pension couvre l'équivalent → pas d'indemnité supplémentaire"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 339", "CO 340"]
+    "exemplesConcrets": [
+      "Licenciement après 25 ans → indemnité de 3 mois de salaire",
+      "Si la caisse de pension couvre l'équivalent → pas d'indemnité supplémentaire"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 339",
+      "CO 340"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 342",
@@ -925,9 +1781,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_342",
     "texteSimple": "Les dispositions de droit public de la Confédération et des cantons sur le travail s'appliquent. L'employeur qui viole ces dispositions est responsable envers le travailleur.",
-    "exemplesConcrets": ["Non-respect des horaires légaux → l'employeur est responsable", "Violation des normes de sécurité → responsabilité de l'employeur"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 341", "CO 343"]
+    "exemplesConcrets": [
+      "Non-respect des horaires légaux → l'employeur est responsable",
+      "Violation des normes de sécurité → responsabilité de l'employeur"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 341",
+      "CO 343"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 343",
@@ -935,9 +1800,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_343",
     "texteSimple": "Le juge du travail constate d'office les faits et apprécie librement les preuves. La procédure est gratuite pour les litiges portant sur un montant n'excédant pas 30 000 CHF.",
-    "exemplesConcrets": ["Litige salarial de 15 000 CHF → pas de frais de justice", "Le juge peut demander des preuves de sa propre initiative"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 342", "CO 341"]
+    "exemplesConcrets": [
+      "Litige salarial de 15 000 CHF → pas de frais de justice",
+      "Le juge peut demander des preuves de sa propre initiative"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 342",
+      "CO 341"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 345",
@@ -945,9 +1819,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_345",
     "texteSimple": "Par le contrat d'apprentissage, l'employeur s'engage à former l'apprenti à l'exercice d'une profession, et l'apprenti s'engage à travailler au service de l'employeur. Le contrat doit être écrit.",
-    "exemplesConcrets": ["Contrat d'apprentissage CFC doit être signé par les deux parties", "L'employeur doit assurer une formation conforme au plan"],
-    "domaines": ["travail", "apprentissage"],
-    "articlesLies": ["CO 346", "CO 349"]
+    "exemplesConcrets": [
+      "Contrat d'apprentissage CFC doit être signé par les deux parties",
+      "L'employeur doit assurer une formation conforme au plan"
+    ],
+    "domaines": [
+      "travail",
+      "apprentissage"
+    ],
+    "articlesLies": [
+      "CO 346",
+      "CO 349"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 346",
@@ -955,9 +1839,19 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_346",
     "texteSimple": "Le contrat d'apprentissage est conclu pour la durée de l'apprentissage fixée par le règlement. L'apprenti peut résilier pendant le temps d'essai avec un préavis de 7 jours.",
-    "exemplesConcrets": ["Apprentissage de 3 ans = CDD de 3 ans", "Résiliation pendant les 3 premiers mois d'essai avec 7 jours de préavis"],
-    "domaines": ["travail", "apprentissage"],
-    "articlesLies": ["CO 345", "CO 349"]
+    "exemplesConcrets": [
+      "Apprentissage de 3 ans = CDD de 3 ans",
+      "Résiliation pendant les 3 premiers mois d'essai avec 7 jours de préavis"
+    ],
+    "domaines": [
+      "travail",
+      "apprentissage"
+    ],
+    "articlesLies": [
+      "CO 345",
+      "CO 349"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 349",
@@ -965,9 +1859,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_349",
     "texteSimple": "Par le contrat de travail à domicile, le travailleur s'engage à exécuter du travail pour l'employeur, chez lui ou dans un autre local de son choix.",
-    "exemplesConcrets": ["Couturière travaillant depuis son domicile pour une entreprise", "Travailleur indépendant qui exécute des pièces chez lui"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 350", "CO 351"]
+    "exemplesConcrets": [
+      "Couturière travaillant depuis son domicile pour une entreprise",
+      "Travailleur indépendant qui exécute des pièces chez lui"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 350",
+      "CO 351"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 350",
@@ -975,9 +1878,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_350",
     "texteSimple": "L'employeur doit fournir la matière première en temps utile. Le travailleur à domicile doit en prendre soin et rendre compte de l'utilisation.",
-    "exemplesConcrets": ["L'entreprise fournit le tissu au couturier à domicile", "Le travailleur rend compte des matériaux utilisés et du stock restant"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 349", "CO 351"]
+    "exemplesConcrets": [
+      "L'entreprise fournit le tissu au couturier à domicile",
+      "Le travailleur rend compte des matériaux utilisés et du stock restant"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 349",
+      "CO 351"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 351",
@@ -985,9 +1897,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_351",
     "texteSimple": "Le salaire du travailleur à domicile est fixé à la pièce ou à l'heure. L'employeur doit remettre au travailleur un bulletin indiquant le tarif et les déductions.",
-    "exemplesConcrets": ["Paiement à la pièce pour du travail d'assemblage à domicile", "Le bulletin de salaire doit détailler le calcul"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 349", "CO 350"]
+    "exemplesConcrets": [
+      "Paiement à la pièce pour du travail d'assemblage à domicile",
+      "Le bulletin de salaire doit détailler le calcul"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 349",
+      "CO 350"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 352",
@@ -995,9 +1916,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_352",
     "texteSimple": "Le contrat de travail à domicile de durée indéterminée peut être résilié pour la fin d'une période de deux semaines au moins. Les règles de protection contre les congés abusifs s'appliquent.",
-    "exemplesConcrets": ["Résiliation avec 2 semaines de préavis minimum", "Protection contre le licenciement abusif applicable"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 349", "CO 336"]
+    "exemplesConcrets": [
+      "Résiliation avec 2 semaines de préavis minimum",
+      "Protection contre le licenciement abusif applicable"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 349",
+      "CO 336"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 355",
@@ -1005,9 +1935,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_355",
     "texteSimple": "Le voyageur de commerce est le travailleur qui négocie ou conclut des affaires au dehors pour un ou plusieurs employeurs, moyennant un salaire.",
-    "exemplesConcrets": ["Représentant commercial qui visite des clients pour vendre des produits", "Agent commercial itinérant rémunéré à la commission"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 356", "CO 322"]
+    "exemplesConcrets": [
+      "Représentant commercial qui visite des clients pour vendre des produits",
+      "Agent commercial itinérant rémunéré à la commission"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 356",
+      "CO 322"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 356",
@@ -1015,9 +1954,18 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_356",
     "texteSimple": "La convention collective est conclue entre employeurs ou associations d'employeurs et associations de travailleurs. Elle fixe les conditions de travail minimales (salaire, horaires, vacances).",
-    "exemplesConcrets": ["CCT de la construction fixe les salaires minimaux du secteur", "CCT de l'hôtellerie règle les horaires et suppléments"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 357", "CO 358"]
+    "exemplesConcrets": [
+      "CCT de la construction fixe les salaires minimaux du secteur",
+      "CCT de l'hôtellerie règle les horaires et suppléments"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 357",
+      "CO 358"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   },
   {
     "ref": "CO 360a",
@@ -1025,8 +1973,17 @@
     "rs": "RS 220",
     "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_360a",
     "texteSimple": "Lorsqu'il est constaté qu'une branche pratique des salaires abusivement bas, les autorités peuvent édicter un contrat-type de travail fixant des salaires minimaux obligatoires pour la branche.",
-    "exemplesConcrets": ["Salaires minimaux imposés dans le nettoyage par contrat-type", "Branche sans CCT avec dumping salarial → l'État intervient"],
-    "domaines": ["travail"],
-    "articlesLies": ["CO 356", "CO 360b"]
+    "exemplesConcrets": [
+      "Salaires minimaux imposés dans le nettoyage par contrat-type",
+      "Branche sans CCT avec dumping salarial → l'État intervient"
+    ],
+    "domaines": [
+      "travail"
+    ],
+    "articlesLies": [
+      "CO 356",
+      "CO 360b"
+    ],
+    "harvestDate": "2026-01-01T00:00:00.000Z"
   }
 ]

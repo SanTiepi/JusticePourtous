@@ -236,7 +236,7 @@
       lastQuery = q;
 
       // Step 2: Analyze with V4 pipeline
-      txt.innerHTML = '<div class="loading">Analyse juridique en cours...</div>';
+      startPremiumLoading(txt);
       try {
         var res = await fetch('/api/premium/analyze-v3', {
           method: 'POST',
@@ -244,6 +244,7 @@
           body: JSON.stringify({ texte: q, session: sessionCode })
         });
         var data = await res.json();
+        stopPremiumLoading();
         if (data.error) {
           txt.textContent = data.error;
           return;
@@ -256,6 +257,7 @@
         renderV4Response(data);
         refreshCredits();
       } catch (e) {
+        stopPremiumLoading();
         txt.textContent = 'Erreur lors de l\'analyse. Réessayez.';
       }
     }
@@ -417,6 +419,54 @@
       var qid = el.dataset.qid;
       document.querySelectorAll('.q-answer[data-qid="' + qid + '"]').forEach(function(b) { b.classList.remove('selected'); });
       el.classList.add('selected');
+    }
+
+    // --- Loading indicator ---
+    var PREMIUM_MESSAGES = [
+      'Compréhension de votre situation...',
+      'Identification des problèmes juridiques...',
+      'Construction du dossier contradictoire...',
+      'Recherche des articles de loi applicables...',
+      'Consultation de la jurisprudence du TF...',
+      'Analyse des arguments pour et contre...',
+      'Vérification du certificat de couverture...',
+      'Évaluation par le comité d\'experts...',
+      'Compilation des règles normatives...',
+      'Identification des délais critiques...',
+      'Recherche des erreurs fatales à éviter...',
+      'Calcul de la fourchette de montant...',
+      'Vérification des sources juridiques...',
+      'Génération des questions de suivi...',
+      'Préparation de l\'analyse complète...',
+      'Croisement avec les barèmes cantonaux...',
+      'Vérification de la recevabilité...',
+      'Analyse des preuves à réunir...',
+      'Identification des contacts compétents...',
+      'Finalisation du rapport...',
+    ];
+    var premiumLoadingInterval = null;
+
+    function startPremiumLoading(container) {
+      var idx = 0;
+      container.innerHTML = '<div class="loading-indicator">' +
+        '<div class="loading-spinner"></div>' +
+        '<div class="loading-message" id="premLoadMsg">' + PREMIUM_MESSAGES[0] + '</div>' +
+        '<div class="loading-sub">L\'analyse complète prend 10 à 30 secondes</div>' +
+        '</div>';
+      premiumLoadingInterval = setInterval(function() {
+        idx = (idx + 1) % PREMIUM_MESSAGES.length;
+        var el = document.getElementById('premLoadMsg');
+        if (el) {
+          el.style.opacity = '0';
+          setTimeout(function() {
+            if (el) { el.textContent = PREMIUM_MESSAGES[idx]; el.style.opacity = '1'; }
+          }, 200);
+        }
+      }, 2000);
+    }
+
+    function stopPremiumLoading() {
+      if (premiumLoadingInterval) { clearInterval(premiumLoadingInterval); premiumLoadingInterval = null; }
     }
 
     // --- File upload ---

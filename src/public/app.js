@@ -320,15 +320,69 @@ function copyLettre() {
   });
 }
 
+// ===== Loading indicator with rotating messages =====
+
+var LOADING_MESSAGES = [
+  'Lecture de votre situation...',
+  'Identification du domaine juridique...',
+  'Recherche des articles de loi applicables...',
+  'Consultation de la jurisprudence du Tribunal fédéral...',
+  'Vérification des délais légaux...',
+  'Analyse des conditions de recevabilité...',
+  'Extraction des faits pertinents...',
+  'Croisement avec les fiches vérifiées...',
+  'Évaluation de la complexité juridique...',
+  'Recherche des services compétents dans votre canton...',
+  'Vérification des modèles de lettres disponibles...',
+  'Analyse des erreurs fréquentes à éviter...',
+  'Consultation des barèmes et taux de référence...',
+  'Compilation des règles normatives applicables...',
+  'Construction du plan d\'action personnalisé...',
+  'Vérification des sources et références...',
+  'Recherche de jurisprudence contradictoire...',
+  'Évaluation du niveau de confiance...',
+  'Identification des lacunes d\'information...',
+  'Préparation de votre dossier...',
+];
+
+var loadingInterval = null;
+
+function startLoadingIndicator(container) {
+  var idx = 0;
+  container.innerHTML = '<div class="loading-indicator">' +
+    '<div class="loading-spinner"></div>' +
+    '<div class="loading-message" id="loadingMsg">' + LOADING_MESSAGES[0] + '</div>' +
+    '<div class="loading-sub">Cela prend généralement 5 à 15 secondes</div>' +
+    '</div>';
+  loadingInterval = setInterval(function() {
+    idx = (idx + 1) % LOADING_MESSAGES.length;
+    var el = document.getElementById('loadingMsg');
+    if (el) {
+      el.style.opacity = '0';
+      setTimeout(function() {
+        if (el) {
+          el.textContent = LOADING_MESSAGES[idx];
+          el.style.opacity = '1';
+        }
+      }, 200);
+    }
+  }, 2500);
+}
+
+function stopLoadingIndicator() {
+  if (loadingInterval) { clearInterval(loadingInterval); loadingInterval = null; }
+}
+
 // ===== Search result page =====
 
 async function loadSearchResultat(query) {
   var container = document.getElementById('resultat');
-  container.innerHTML = '<div class="loading">Analyse en cours</div>';
+  startLoadingIndicator(container);
 
   try {
     var res = await fetch('/api/search?q=' + encodeURIComponent(query));
     var data = await res.json();
+    stopLoadingIndicator();
 
     if (!res.ok || data.error) {
       container.innerHTML =
@@ -342,6 +396,7 @@ async function loadSearchResultat(query) {
       renderEnrichedResult(data, query, container);
     }
   } catch (e) {
+    stopLoadingIndicator();
     container.innerHTML = '<div class="error-box">Erreur de connexion. <a href="/">Retour à l\'accueil</a></div>';
   }
 }

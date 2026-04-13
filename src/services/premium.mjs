@@ -63,7 +63,7 @@ wallets.set(TEST_SESSION, {
   ]
 });
 
-const MARGIN_MULTIPLIER = 1.5; // 50% margin on API costs
+const MARGIN_MULTIPLIER = 2.5; // 150% margin on API costs — conservative to cover edge cases
 
 /**
  * Debit a session wallet. Cost in centimes, with margin applied.

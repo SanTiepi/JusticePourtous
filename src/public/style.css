@@ -3437,6 +3437,15 @@ body.has-disclaimer {
   color: var(--text-primary);
 }
 
+/* Premium cost note */
+.premium-cost-note {
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  font-style: italic;
+}
+
 /* Premium cost receipt */
 .premium-cost-receipt {
   margin-top: var(--space-lg);

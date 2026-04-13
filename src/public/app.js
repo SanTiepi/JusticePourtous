@@ -728,7 +728,7 @@ function renderPremiumCTA() {
   return '<div class="premium-cta-result">' +
     '<div class="premium-cta-result-header">' +
     '<strong>Aller plus loin avec l\'analyse premium</strong>' +
-    '<span class="badge badge-info">Dès CHF 0.03</span>' +
+    '<span class="badge badge-info">Dès CHF 0.15</span>' +
     '</div>' +
     '<p>Ce premier triage vous donne les bases. L\'analyse premium va beaucoup plus loin :</p>' +
     '<div class="premium-cta-result-grid">' +

@@ -43,14 +43,49 @@
 
       <div id="noSession">
         <div class="card premium-offer">
-          <h3>Analyse juridique personnalisée</h3>
-          <p class="premium-features">Certificat de couverture, argumentation contradictoire, questions ciblées, règles normatives compilées.</p>
-          <div class="premium-price-box">
-            <div class="premium-price-label">Coût unique</div>
-            <div class="premium-price-amount">CHF 50</div>
-            <div class="premium-price-detail">Wallet de CHF 30 de crédits IA — 200 à 1100 analyses selon complexité</div>
+          <h3>Analyse juridique personnalisée par IA</h3>
+          <p class="premium-features">Questions ciblées, argumentation contradictoire, certificat de couverture, lettres prêtes à envoyer en .docx.</p>
+
+          <div class="premium-pricing-grid">
+            <div class="premium-pricing-card">
+              <div class="premium-pricing-label">Essentiel</div>
+              <div class="premium-pricing-amount">CHF 5</div>
+              <div class="premium-pricing-detail">~50 analyses ou ~5 dossiers complets avec lettres</div>
+              <button class="btn btn-primary w-full" onclick="acheterMontant(500)">Charger CHF 5</button>
+            </div>
+            <div class="premium-pricing-card premium-pricing-featured">
+              <div class="premium-pricing-label">Recommandé</div>
+              <div class="premium-pricing-amount">CHF 10</div>
+              <div class="premium-pricing-detail">~100 analyses ou ~10 dossiers complets — le plus courant</div>
+              <button class="btn btn-primary w-full" onclick="acheterMontant(1000)">Charger CHF 10</button>
+            </div>
+            <div class="premium-pricing-card">
+              <div class="premium-pricing-label">Multiple dossiers</div>
+              <div class="premium-pricing-amount">CHF 20</div>
+              <div class="premium-pricing-detail">~200 analyses — plusieurs situations juridiques</div>
+              <button class="btn btn-secondary w-full" onclick="acheterMontant(2000)">Charger CHF 20</button>
+            </div>
           </div>
-          <button class="btn btn-primary btn-lg w-full" onclick="acheter()">Acheter un wallet &mdash; CHF 50</button>
+
+          <div class="premium-cost-table">
+            <h4>Coût indicatif par opération</h4>
+            <div class="premium-cost-row">
+              <span>Analyse simple (1 question)</span>
+              <span>~7 ct</span>
+            </div>
+            <div class="premium-cost-row">
+              <span>Analyse complète + lettre</span>
+              <span>~10 ct</span>
+            </div>
+            <div class="premium-cost-row">
+              <span>Dossier complexe (questions + affinage + lettre)</span>
+              <span>~15 ct</span>
+            </div>
+            <div class="premium-cost-row">
+              <span>Lettre supplémentaire (.docx)</span>
+              <span>~3 ct</span>
+            </div>
+          </div>
 
           <div class="premium-code-section">
             <p class="premium-code-label">Vous avez un code d'accès ?</p>
@@ -180,9 +215,13 @@
       refreshCredits();
     }
 
-    async function acheter() {
+    async function acheterMontant(centimes) {
       try {
-        var res = await fetch('/api/premium/acheter', { method: 'POST' });
+        var res = await fetch('/api/premium/acheter', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ montant: centimes })
+        });
         if (!res.ok) throw new Error('Erreur');
         var data = await res.json();
         sessionCode = data.sessionCode;
@@ -190,9 +229,12 @@
         showSession();
         refreshCredits();
       } catch (e) {
-        alert('Erreur lors de l\'achat. Réessayez.');
+        alert('Erreur lors du chargement. Réessayez.');
       }
     }
+
+    // Legacy compat
+    async function acheter() { acheterMontant(1000); }
 
     async function refreshCredits() {
       try {

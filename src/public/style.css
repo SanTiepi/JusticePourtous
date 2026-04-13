@@ -3340,6 +3340,107 @@ body.has-disclaimer {
   margin-bottom: var(--space-md);
 }
 
+/* Premium pricing grid */
+.premium-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.premium-pricing-card {
+  padding: var(--space-lg);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.premium-pricing-featured {
+  border-color: var(--accent-primary);
+  background: var(--surface-elevated);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.premium-pricing-featured::before {
+  content: 'Le plus courant';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.15em 0.6em;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-inverse);
+  background: var(--accent-primary);
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.premium-pricing-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-sm);
+}
+
+.premium-pricing-amount {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.premium-pricing-detail {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: var(--space-md);
+}
+
+/* Premium cost table */
+.premium-cost-table {
+  margin-bottom: var(--space-xl);
+  padding: var(--space-lg);
+  background: var(--surface-sunken);
+  border-radius: var(--radius-md);
+}
+
+.premium-cost-table h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  color: var(--text-secondary);
+}
+
+.premium-cost-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.85rem;
+}
+
+.premium-cost-row:last-child { border-bottom: none; }
+
+.premium-cost-row span:first-child { color: var(--text-secondary); }
+.premium-cost-row span:last-child {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .premium-pricing-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto var(--space-xl); }
+}
+
 .w-full { width: 100%; }
 .mt-lg { margin-top: var(--space-lg); }
 

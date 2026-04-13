@@ -63,14 +63,15 @@ wallets.set(TEST_SESSION, {
   ]
 });
 
-export function acheterWallet() {
+export function acheterWallet(montantCentimes) {
+  const solde = montantCentimes || WALLET_CREDITS_CENTIMES;
   const sessionCode = generateSessionCode();
   const wallet = {
     sessionCode,
-    solde: WALLET_CREDITS_CENTIMES,
+    solde,
     createdAt: Date.now(),
     historique: [
-      { action: 'achat', montant: WALLET_PRICE_CENTIMES, date: new Date().toISOString() }
+      { action: 'achat', montant: solde, date: new Date().toISOString() }
     ]
   };
   wallets.set(sessionCode, wallet);

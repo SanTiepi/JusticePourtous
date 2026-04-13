@@ -245,7 +245,8 @@ const server = createServer(async (req, res) => {
 
     // Legacy premium routes (kept for backward compat)
     if (path === '/api/premium/acheter' && method === 'POST') {
-      const result = acheterWallet();
+      const body = await parseBody(req);
+      const result = acheterWallet(body.montant);
       return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
     }
 

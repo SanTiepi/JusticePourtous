@@ -9,67 +9,113 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div class="container">
-    <nav class="nav">
+  <!-- Quick exit -->
+  <a href="https://www.meteosuisse.admin.ch" class="quick-exit" title="Quitter rapidement ce site — vous redirige vers MétéoSuisse" aria-label="Quitter rapidement ce site">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Quitter</span>
+    <span class="quick-exit-label">— sortie rapide</span>
+  </a>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
       <a href="/" class="nav-brand">
-        <span class="logo-mark"></span>
-        JusticePourtous
+        <span class="nav-mark" aria-hidden="true"></span>
+        <span class="nav-wordmark">JusticePourtous</span>
       </a>
-      <ul class="nav-links">
-        <li><a href="/">Accueil</a></li>
-        <li><a href="/annuaire.html">Annuaire</a></li>
-      </ul>
-    </nav>
-
-    <div class="notice-juridique" role="note">
-      <strong>Information juridique generale</strong> — JusticePourtous ne remplace pas un conseil d'avocat personalise. Les informations sont fournies a titre indicatif, sans garantie d'exhaustivite.
+      <div class="nav-links">
+        <a href="/">Accueil</a>
+        <a href="/annuaire.html">Annuaire</a>
+      </div>
     </div>
+  </nav>
 
-    <header>
-      <h1>Espace Premium</h1>
-      <p class="subtitle">Analyse juridique personnalisee par intelligence artificielle.</p>
-    </header>
+  <main class="page">
+    <div class="page-inner">
 
-    <div id="noSession">
-      <div class="card" style="text-align:center">
-        <h3>Analyse juridique personnalisee</h3>
-        <div class="cout-box">
-          <div class="cout-label">Cout unique</div>
-          <div class="cout-montant">CHF 50</div>
-          <div class="cout-detail">Wallet de CHF 30 de credits IA — 200 a 1100 analyses selon complexite</div>
+      <div class="notice-juridique" role="note">
+        <strong>Information juridique générale</strong> — JusticePourtous ne remplace pas un conseil d'avocat personnalisé. Les informations sont fournies à titre indicatif, sans garantie d'exhaustivité.
+      </div>
+
+      <p class="hero-eyebrow">Espace Premium</p>
+      <h1 class="page-title">Analyse juridique personnalisée</h1>
+      <p class="premium-subtitle">Intelligence artificielle au service de votre situation juridique.</p>
+
+      <div id="noSession">
+        <div class="card premium-offer">
+          <h3>Analyse juridique personnalisée</h3>
+          <div class="premium-price-box">
+            <div class="premium-price-label">Coût unique</div>
+            <div class="premium-price-amount">CHF 50</div>
+            <div class="premium-price-detail">Wallet de CHF 30 de crédits IA — 200 à 1100 analyses selon complexité</div>
+          </div>
+          <button class="btn btn-primary btn-lg w-full" onclick="acheter()">Acheter un wallet &mdash; CHF 50</button>
         </div>
-        <button class="btn btn-red btn-full" onclick="acheter()">Acheter un wallet &mdash; CHF 50</button>
       </div>
+
+      <div id="session" class="hidden">
+        <div class="card premium-wallet">
+          <div class="premium-wallet-label">Solde restant</div>
+          <div class="premium-wallet-amount" id="solde">CHF 0.00</div>
+        </div>
+
+        <div class="card">
+          <h3>Analyser votre situation</h3>
+          <p class="premium-cost-hint">Coût estimé : CHF 0.03 à 0.10 par analyse</p>
+          <textarea id="question" class="input" placeholder="Décrivez votre situation juridique..."></textarea>
+          <button class="btn btn-primary w-full mt-lg" onclick="analyserQuestion()">Analyser</button>
+        </div>
+
+        <div id="reponseIA" class="card hidden">
+          <h3>Réponse</h3>
+          <div id="reponseTexte"></div>
+        </div>
+
+        <div class="card">
+          <h3>Historique</h3>
+          <div id="historique"><p class="text-tertiary">Aucune action</p></div>
+        </div>
+      </div>
+
     </div>
+  </main>
 
-    <div id="session" class="hidden">
-      <div class="card wallet-display">
-        <div class="label">Solde restant</div>
-        <div class="solde" id="solde">CHF 0.00</div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="nav-mark" aria-hidden="true"></span>
+        <span>JusticePourtous</span>
       </div>
-
-      <div class="card">
-        <h3>Analyser votre situation</h3>
-        <span class="cout-estimate">Cout estime : CHF 0.03 a 0.10 par analyse</span>
-        <textarea id="question" placeholder="Decrivez votre situation juridique..."></textarea>
-        <button class="btn btn-full mt-2" onclick="analyserQuestion()">Analyser</button>
+      <div class="footer-links">
+        <a href="/methodologie.html">Méthodologie</a>
+        <a href="/annuaire.html">Annuaire</a>
       </div>
-
-      <div id="reponseIA" class="card hidden">
-        <h3>Reponse</h3>
-        <div id="reponseTexte"></div>
+      <div class="footer-legal">
+        JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur.
+        Ce service ne remplace pas un conseil d'avocat personnalisé.
       </div>
-
-      <div class="card">
-        <h3>Historique</h3>
-        <div id="historique"><p class="text-muted">Aucune action</p></div>
-      </div>
+      <div class="footer-copy">&copy; 2026 JusticePourtous</div>
     </div>
-
-    <footer>&copy; 2026 JusticePourtous</footer>
-  </div>
+  </footer>
 
   <script>
+    /* Nav shadow on scroll */
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('nav-scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    /* Quick exit: double ESC */
+    var escCount = 0;
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        escCount++;
+        if (escCount >= 2) window.location.replace('https://www.meteosuisse.admin.ch');
+        setTimeout(function() { escCount = 0; }, 500);
+      }
+    });
+
     var sessionCode = localStorage.getItem('jb_session');
 
     async function acheter() {

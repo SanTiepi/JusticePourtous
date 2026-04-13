@@ -14,8 +14,10 @@
 <body>
 
   <!-- Quick exit -->
-  <a href="https://www.meteosuisse.admin.ch" class="quick-exit" id="quickExit" title="Quitter rapidement" aria-label="Quitter rapidement ce site">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <a href="https://www.meteosuisse.admin.ch" class="quick-exit" id="quickExit" title="Quitter rapidement ce site — vous redirige vers MétéoSuisse" aria-label="Quitter rapidement ce site">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Quitter</span>
+    <span class="quick-exit-label">— sortie rapide</span>
   </a>
 
   <!-- Navigation -->
@@ -32,15 +34,16 @@
     </div>
   </nav>
 
+  <!-- Disclaimer — requis sur chaque page -->
+  <div class="notice-juridique-bar" role="note">
+    <div class="notice-juridique-inner">
+      <strong>Information juridique générale</strong> — JusticePourtous ne remplace pas un conseil d'avocat personnalisé. Les informations sont fournies à titre indicatif, sans garantie d'exhaustivité.
+    </div>
+  </div>
+
   <!-- Hero -->
   <header class="hero">
     <div class="hero-inner">
-
-      <!-- Disclaimer visible — requis sur chaque page -->
-      <div class="notice-juridique" role="note">
-        <strong>Information juridique générale</strong> — JusticePourtous ne remplace pas un conseil d'avocat personnalisé. Les informations sont fournies à titre indicatif, sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit.
-      </div>
-
       <p class="hero-eyebrow">Droit suisse pratique</p>
       <h1 class="hero-title">
         Décrivez votre problème.<br>

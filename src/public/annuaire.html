@@ -9,75 +9,121 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div class="container">
-    <nav class="nav">
+  <!-- Quick exit -->
+  <a href="https://www.meteosuisse.admin.ch" class="quick-exit" title="Quitter rapidement ce site — vous redirige vers MétéoSuisse" aria-label="Quitter rapidement ce site">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Quitter</span>
+    <span class="quick-exit-label">— sortie rapide</span>
+  </a>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
       <a href="/" class="nav-brand">
-        <span class="logo-mark"></span>
-        JusticePourtous
+        <span class="nav-mark" aria-hidden="true"></span>
+        <span class="nav-wordmark">JusticePourtous</span>
       </a>
-      <ul class="nav-links">
-        <li><a href="/">Accueil</a></li>
-        <li><a href="/premium.html">Premium</a></li>
-      </ul>
-    </nav>
-
-    <div class="notice-juridique" role="note">
-      <strong>Information juridique générale</strong> — JusticePourtous ne remplace pas un conseil d'avocat personnalisé. Les informations sont fournies à titre indicatif, sans garantie d'exhaustivité.
+      <div class="nav-links">
+        <a href="/">Accueil</a>
+        <a href="/methodologie.html">Méthodologie</a>
+      </div>
     </div>
+  </nav>
 
-    <header>
-      <h1>Annuaire des services juridiques</h1>
-      <p class="subtitle">Trouvez les services compétents dans votre canton.</p>
-    </header>
+  <main class="page">
+    <div class="page-inner">
 
-    <section class="card">
-      <h3>Canton</h3>
-      <select id="cantonSelect" onchange="loadServices()">
-        <option value="">-- Choisir un canton --</option>
-        <option value="AG">Argovie (AG)</option>
-        <option value="AI">Appenzell Rh.-Int. (AI)</option>
-        <option value="AR">Appenzell Rh.-Ext. (AR)</option>
-        <option value="BE">Berne (BE)</option>
-        <option value="BL">Bale-Campagne (BL)</option>
-        <option value="BS">Bale-Ville (BS)</option>
-        <option value="FR">Fribourg (FR)</option>
-        <option value="GE">Geneve (GE)</option>
-        <option value="GL">Glaris (GL)</option>
-        <option value="GR">Grisons (GR)</option>
-        <option value="JU">Jura (JU)</option>
-        <option value="LU">Lucerne (LU)</option>
-        <option value="NE">Neuchatel (NE)</option>
-        <option value="NW">Nidwald (NW)</option>
-        <option value="OW">Obwald (OW)</option>
-        <option value="SG">Saint-Gall (SG)</option>
-        <option value="SH">Schaffhouse (SH)</option>
-        <option value="SO">Soleure (SO)</option>
-        <option value="SZ">Schwyz (SZ)</option>
-        <option value="TG">Thurgovie (TG)</option>
-        <option value="TI">Tessin (TI)</option>
-        <option value="UR">Uri (UR)</option>
-        <option value="VD">Vaud (VD)</option>
-        <option value="VS">Valais (VS)</option>
-        <option value="ZG">Zoug (ZG)</option>
-        <option value="ZH">Zurich (ZH)</option>
-      </select>
-    </section>
+      <div class="notice-juridique" role="note">
+        <strong>Information juridique générale</strong> — JusticePourtous ne remplace pas un conseil d'avocat personnalisé. Les informations sont fournies à titre indicatif, sans garantie d'exhaustivité.
+      </div>
 
-    <div class="filter-bar hidden" id="filterBar">
-      <button class="filter-btn active" data-type="all" onclick="filterServices('all', this)">Tous</button>
-      <button class="filter-btn" data-type="asloca" onclick="filterServices('asloca', this)">ASLOCA</button>
-      <button class="filter-btn" data-type="csp" onclick="filterServices('csp', this)">CSP</button>
-      <button class="filter-btn" data-type="syndicat" onclick="filterServices('syndicat', this)">Syndicat</button>
-      <button class="filter-btn" data-type="conciliation" onclick="filterServices('conciliation', this)">Conciliation</button>
-      <button class="filter-btn" data-type="aide" onclick="filterServices('aide', this)">Aide juridictionnelle</button>
+      <p class="hero-eyebrow">Ressources</p>
+      <h1 class="page-title">Annuaire des services juridiques</h1>
+      <p class="annuaire-subtitle">Trouvez les services compétents dans votre canton.</p>
+
+      <section class="card">
+        <h3>Canton</h3>
+        <select id="cantonSelect" class="select w-full" onchange="loadServices()">
+          <option value="">-- Choisir un canton --</option>
+          <option value="AG">Argovie (AG)</option>
+          <option value="AI">Appenzell Rh.-Int. (AI)</option>
+          <option value="AR">Appenzell Rh.-Ext. (AR)</option>
+          <option value="BE">Berne (BE)</option>
+          <option value="BL">Bâle-Campagne (BL)</option>
+          <option value="BS">Bâle-Ville (BS)</option>
+          <option value="FR">Fribourg (FR)</option>
+          <option value="GE">Genève (GE)</option>
+          <option value="GL">Glaris (GL)</option>
+          <option value="GR">Grisons (GR)</option>
+          <option value="JU">Jura (JU)</option>
+          <option value="LU">Lucerne (LU)</option>
+          <option value="NE">Neuchâtel (NE)</option>
+          <option value="NW">Nidwald (NW)</option>
+          <option value="OW">Obwald (OW)</option>
+          <option value="SG">Saint-Gall (SG)</option>
+          <option value="SH">Schaffhouse (SH)</option>
+          <option value="SO">Soleure (SO)</option>
+          <option value="SZ">Schwyz (SZ)</option>
+          <option value="TG">Thurgovie (TG)</option>
+          <option value="TI">Tessin (TI)</option>
+          <option value="UR">Uri (UR)</option>
+          <option value="VD">Vaud (VD)</option>
+          <option value="VS">Valais (VS)</option>
+          <option value="ZG">Zoug (ZG)</option>
+          <option value="ZH">Zurich (ZH)</option>
+        </select>
+      </section>
+
+      <div class="directory-filters hidden" id="filterBar">
+        <button class="filter-btn active" data-type="all" onclick="filterServices('all', this)">Tous</button>
+        <button class="filter-btn" data-type="asloca" onclick="filterServices('asloca', this)">ASLOCA</button>
+        <button class="filter-btn" data-type="csp" onclick="filterServices('csp', this)">CSP</button>
+        <button class="filter-btn" data-type="syndicat" onclick="filterServices('syndicat', this)">Syndicat</button>
+        <button class="filter-btn" data-type="conciliation" onclick="filterServices('conciliation', this)">Conciliation</button>
+        <button class="filter-btn" data-type="aide" onclick="filterServices('aide', this)">Aide juridictionnelle</button>
+      </div>
+
+      <div id="services"></div>
+
     </div>
+  </main>
 
-    <div id="services"></div>
-
-    <footer>&copy; 2026 JusticePourtous</footer>
-  </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="nav-mark" aria-hidden="true"></span>
+        <span>JusticePourtous</span>
+      </div>
+      <div class="footer-links">
+        <a href="/methodologie.html">Méthodologie</a>
+        <a href="/annuaire.html">Annuaire</a>
+      </div>
+      <div class="footer-legal">
+        JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur.
+        Ce service ne remplace pas un conseil d'avocat personnalisé.
+      </div>
+      <div class="footer-copy">&copy; 2026 JusticePourtous</div>
+    </div>
+  </footer>
 
   <script>
+    /* Nav shadow on scroll */
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('nav-scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    /* Quick exit: double ESC */
+    var escCount = 0;
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        escCount++;
+        if (escCount >= 2) window.location.replace('https://www.meteosuisse.admin.ch');
+        setTimeout(function() { escCount = 0; }, 500);
+      }
+    });
+
     var allServices = [];
 
     async function loadServices() {
@@ -98,7 +144,7 @@
         var data = await res.json();
 
         if (!data.services || data.services.length === 0) {
-          container.innerHTML = '<div class="card"><p class="text-muted">Aucun service référencé pour ce canton.</p></div>';
+          container.innerHTML = '<div class="card"><p class="text-tertiary">Aucun service référencé pour ce canton.</p></div>';
           filterBar.classList.add('hidden');
           allServices = [];
           return;
@@ -134,21 +180,21 @@
     function renderServices(services) {
       var container = document.getElementById('services');
       if (services.length === 0) {
-        container.innerHTML = '<div class="card"><p class="text-muted">Aucun service de ce type dans ce canton.</p></div>';
+        container.innerHTML = '<div class="card"><p class="text-tertiary">Aucun service de ce type dans ce canton.</p></div>';
         return;
       }
 
       var html = '<div class="card"><h3>Services disponibles&nbsp;(' + services.length + ')</h3>';
       services.forEach(function(s, i) {
-        html += '<div class="service-item" style="opacity:0;animation:revealBlock 0.2s ease ' + (i * 0.1) + 's forwards">';
+        html += '<div class="service-item reveal" style="animation-delay:' + (i * 0.06) + 's">';
         html += '<div>';
         html += '<div class="nom">' + s.nom + '</div>';
         if (s.type) html += '<span class="type-tag">' + s.type + '</span>';
         if (s.adresse) html += '<div class="adresse">' + s.adresse + '</div>';
         html += '</div>';
-        html += '<div style="text-align:right">';
+        html += '<div class="service-item-right">';
         if (s.tel) html += '<a href="tel:' + s.tel + '" class="tel">' + s.tel + '</a><br>';
-        if (s.url) html += '<a href="' + s.url + '" target="_blank" rel="noopener" style="font-size:0.85rem">Site web</a>';
+        if (s.url) html += '<a href="' + s.url + '" target="_blank" rel="noopener" class="service-web-link">Site web</a>';
         html += '</div>';
         html += '</div>';
       });

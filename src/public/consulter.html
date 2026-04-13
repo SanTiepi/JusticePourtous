@@ -9,50 +9,97 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div class="container">
-    <nav class="nav">
+  <!-- Quick exit -->
+  <a href="https://www.meteosuisse.admin.ch" class="quick-exit" title="Quitter rapidement ce site — vous redirige vers MétéoSuisse" aria-label="Quitter rapidement ce site">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Quitter</span>
+    <span class="quick-exit-label">— sortie rapide</span>
+  </a>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
       <a href="/" class="nav-brand">
-        <span class="logo-mark"></span>
-        JusticePourtous
+        <span class="nav-mark" aria-hidden="true"></span>
+        <span class="nav-wordmark">JusticePourtous</span>
       </a>
-      <ul class="nav-links">
-        <li><a href="/">Accueil</a></li>
-        <li><a href="/annuaire.html">Annuaire</a></li>
-      </ul>
-    </nav>
-
-    <div class="notice-juridique" role="note">
-      <strong>Information juridique generale</strong> — JusticePourtous ne remplace pas un conseil d'avocat personalise. Les informations sont fournies a titre indicatif, sans garantie d'exhaustivite.
-    </div>
-
-    <div class="dossier-ref" id="dossierRef"></div>
-
-    <div class="progress-container">
-      <div class="progress-label">
-        <span id="progressText">Question 1</span>
-        <span id="progressCount">0%</span>
-      </div>
-      <div class="progress-bar"><div class="fill" id="progress" style="width:0%"></div></div>
-    </div>
-
-    <div class="question-card" id="questionCard">
-      <h2 id="questionText">Chargement...</h2>
-      <div class="options" id="options"></div>
-      <div class="nav-buttons">
-        <button class="btn btn-outline" id="prevBtn" onclick="prevQuestion()" disabled>Precedent</button>
-        <button class="btn" id="nextBtn" onclick="nextQuestion()" disabled>Suivant</button>
+      <div class="nav-links">
+        <a href="/">Accueil</a>
+        <a href="/annuaire.html">Annuaire</a>
       </div>
     </div>
+  </nav>
 
-    <div class="error-box hidden" id="errorBox">
-      Une erreur est survenue. <a href="/">Retour a l'accueil</a>
+  <main class="page">
+    <div class="page-inner">
+
+      <div class="notice-juridique" role="note">
+        <strong>Information juridique générale</strong> — JusticePourtous ne remplace pas un conseil d'avocat personnalisé. Les informations sont fournies à titre indicatif, sans garantie d'exhaustivité.
+      </div>
+
+      <div class="dossier-ref" id="dossierRef"></div>
+
+      <div class="consult-progress">
+        <div class="consult-progress-label">
+          <span id="progressText">Question 1</span>
+          <span id="progressCount">0%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-bar-fill" id="progress" style="width:0%"></div></div>
+      </div>
+
+      <div class="consult-card" id="questionCard">
+        <h2 id="questionText">Chargement...</h2>
+        <div class="consult-options" id="options"></div>
+        <div class="consult-nav">
+          <button class="btn btn-secondary" id="prevBtn" onclick="prevQuestion()" disabled>Précédent</button>
+          <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled>Suivant</button>
+        </div>
+      </div>
+
+      <div class="error-box hidden" id="errorBox">
+        Une erreur est survenue. <a href="/">Retour à l'accueil</a>
+      </div>
+
     </div>
+  </main>
 
-    <footer>&copy; 2026 JusticePourtous</footer>
-  </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="nav-mark" aria-hidden="true"></span>
+        <span>JusticePourtous</span>
+      </div>
+      <div class="footer-links">
+        <a href="/methodologie.html">Méthodologie</a>
+        <a href="/annuaire.html">Annuaire</a>
+      </div>
+      <div class="footer-legal">
+        JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur.
+        Ce service ne remplace pas un conseil d'avocat personnalisé.
+      </div>
+      <div class="footer-copy">&copy; 2026 JusticePourtous</div>
+    </div>
+  </footer>
 
   <script src="/app.js"></script>
   <script>
+    /* Nav shadow on scroll */
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('nav-scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    /* Quick exit: double ESC */
+    var escCount = 0;
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        escCount++;
+        if (escCount >= 2) window.location.replace('https://www.meteosuisse.admin.ch');
+        setTimeout(function() { escCount = 0; }, 500);
+      }
+    });
+
     // Generate dossier ref
     var year = new Date().getFullYear();
     var num = String(Math.floor(Math.random() * 9000) + 1000);

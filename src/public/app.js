@@ -75,7 +75,7 @@ function showQuestion() {
 
   if (q.type === 'canton') {
     var cantons = ['AG','AI','AR','BE','BL','BS','FR','GE','GL','GR','JU','LU','NE','NW','OW','SG','SH','SO','SZ','TG','TI','UR','VD','VS','ZG','ZH'];
-    var sel = '<select onchange="selectCanton(this.value)" style="font-size:1rem">';
+    var sel = '<select class="select w-full" onchange="selectCanton(this.value)">';
     sel += '<option value="">-- Canton --</option>';
     cantons.forEach(function(c) {
       sel += '<option value="' + c + '"' + (currentAnswers[currentStep] === c ? ' selected' : '') + '>' + c + '</option>';
@@ -266,16 +266,16 @@ async function loadResultat(ficheId) {
       if (s.type) html += '<span class="type-tag">' + s.type + '</span>';
       if (s.adresse) html += '<div class="adresse">' + s.adresse + '</div>';
       html += '</div>';
-      html += '<div style="text-align:right">';
+      html += '<div class="service-item-right">';
       if (s.tel) html += '<a href="tel:' + s.tel + '" class="tel">' + s.tel + '</a><br>';
-      if (s.url) html += '<a href="' + s.url + '" target="_blank" rel="noopener" style="font-size:0.85rem">Site web</a>';
+      if (s.url) html += '<a href="' + s.url + '" target="_blank" rel="noopener" class="service-web-link">Site web</a>';
       html += '</div></div>';
     });
     html += '</div>';
   }
 
   // Action buttons
-  html += '<div style="display:flex;gap:1rem;margin:1.5rem 0;flex-wrap:wrap">';
+  html += '<div class="result-actions">';
   html += '<button class="btn btn-print" onclick="window.print()">Imprimer / Sauvegarder PDF</button>';
   html += '<a href="/" class="btn btn-outline">Nouvelle consultation</a>';
   html += '</div>';
@@ -355,7 +355,7 @@ function renderTaxonomieResult(data, query, container) {
   html += '<div class="card-highlight">';
   html += '<h3>Qualification juridique</h3>';
   html += '<p>' + escHtml(data.suggestion || 'Votre probleme releve du domaine juridique suivant.') + '</p>';
-  if (q.domaine) html += '<p class="mt-2 text-muted" style="font-size:0.85rem">Domaine : ' + escHtml(q.domaine) + '</p>';
+  if (q.domaine) html += '<p class="result-domaine-tag">' + escHtml(q.domaine) + '</p>';
   html += '</div>';
 
   // Avocat CTA
@@ -416,7 +416,7 @@ function renderEnrichedResult(data, query, container) {
     html += confidenceBadge(confiance);
     html += '</div>';
     html += '<p>' + escHtml(explication) + '</p>';
-    if (fiche.domaine) html += '<p class="mt-1" style="font-size:0.8rem;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:0.05em">' + escHtml(fiche.domaine) + '</p>';
+    if (fiche.domaine) html += '<p class="result-domaine-tag">' + escHtml(fiche.domaine) + '</p>';
     html += '</div>';
   }
 
@@ -573,7 +573,7 @@ function renderEnrichedResult(data, query, container) {
       html += '<div class="ae-icon ' + escAttr(gravite) + '">' + icon + '</div>';
       html += '<div class="ae-content">';
       html += '<div class="ae-title">' + escHtml(ae.erreur || ae.titre || '') + '</div>';
-      if (ae.consequence) html += '<div class="ae-correction" style="color:var(--accent-danger);margin-bottom:0.2rem">' + escHtml(ae.consequence) + '</div>';
+      if (ae.consequence) html += '<div class="ae-consequence">' + escHtml(ae.consequence) + '</div>';
       if (ae.correction || ae.correctif || ae.conseil) html += '<div class="ae-correction">' + escHtml(ae.correction || ae.correctif || ae.conseil) + '</div>';
       html += '</div></div>';
     });
@@ -591,9 +591,9 @@ function renderEnrichedResult(data, query, container) {
       if (s.type) html += '<span class="type-tag">' + escHtml(s.type) + '</span>';
       if (s.description) html += '<div class="adresse">' + escHtml(s.description) + '</div>';
       html += '</div>';
-      html += '<div style="text-align:right;flex-shrink:0">';
+      html += '<div class="service-item-right">';
       if (s.tel) html += '<a href="tel:' + escAttr(s.tel) + '" class="tel">' + escHtml(s.tel) + '</a><br>';
-      if (s.url) html += '<a href="' + escAttr(s.url) + '" target="_blank" rel="noopener" style="font-size:0.85rem">Site web</a>';
+      if (s.url) html += '<a href="' + escAttr(s.url) + '" target="_blank" rel="noopener" class="service-web-link">Site web</a>';
       html += '</div></div>';
     });
     html += '</div>';
@@ -644,7 +644,7 @@ function renderEnrichedResult(data, query, container) {
       html += '<div class="ae-icon elevee">!</div>';
       html += '<div class="ae-content">';
       html += '<div class="ae-title">' + escHtml(ae.erreur) + '</div>';
-      html += '<div class="ae-correction" style="font-size:0.8rem;color:var(--text-tertiary)">Source: ASLOCA ' + escHtml(ae.question_ref || '') + '</div>';
+      html += '<div class="ae-source">Source: ASLOCA ' + escHtml(ae.question_ref || '') + '</div>';
       html += '</div></div>';
     });
     html += '</div>';

@@ -9,43 +9,90 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div class="container">
-    <nav class="nav">
+  <!-- Quick exit -->
+  <a href="https://www.meteosuisse.admin.ch" class="quick-exit" title="Quitter rapidement ce site — vous redirige vers MétéoSuisse" aria-label="Quitter rapidement ce site">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Quitter</span>
+    <span class="quick-exit-label">— sortie rapide</span>
+  </a>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
       <a href="/" class="nav-brand">
-        <span class="logo-mark"></span>
-        JusticePourtous
+        <span class="nav-mark" aria-hidden="true"></span>
+        <span class="nav-wordmark">JusticePourtous</span>
       </a>
-      <ul class="nav-links">
-        <li><a href="/">Nouvelle recherche</a></li>
-        <li><a href="/annuaire.html">Annuaire</a></li>
-      </ul>
-    </nav>
-
-    <div class="notice-juridique" role="note">
-      <strong>Information juridique générale</strong> — JusticePourtous ne remplace pas un conseil d'avocat personnalisé. Les informations sont fournies à titre indicatif, sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit.
+      <div class="nav-links">
+        <a href="/">Nouvelle recherche</a>
+        <a href="/annuaire.html">Annuaire</a>
+      </div>
     </div>
+  </nav>
 
-    <!-- Search bar replayed at top of results -->
-    <div class="result-search-bar" id="resultSearchBar">
-      <form onsubmit="refineSearch(event)">
-        <div class="search-box search-box-sm">
-          <input type="text" id="refineInput" class="search-input" maxlength="300" autocomplete="off" aria-label="Préciser votre recherche">
-          <button type="submit" class="search-btn search-btn-sm">Relancer</button>
-        </div>
-      </form>
+  <main class="result-page">
+    <div class="result-page-inner">
+
+      <div class="notice-juridique" role="note">
+        <strong>Information juridique générale</strong> — JusticePourtous ne remplace pas un conseil d'avocat personnalisé. Les informations sont fournies à titre indicatif, sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit.
+      </div>
+
+      <!-- Search bar replayed at top of results -->
+      <div class="result-search-bar" id="resultSearchBar">
+        <form onsubmit="refineSearch(event)">
+          <div class="search-field search-field-sm">
+            <input type="text" id="refineInput" class="search-input" maxlength="300" autocomplete="off" aria-label="Préciser votre recherche">
+            <button type="submit" class="search-submit">Relancer</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="dossier-ref" id="dossierRef"></div>
+
+      <div id="resultat">
+        <div class="loading">Analyse en cours</div>
+      </div>
+
     </div>
+  </main>
 
-    <div class="dossier-ref" id="dossierRef"></div>
-
-    <div id="resultat">
-      <div class="loading">Analyse en cours</div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="nav-mark" aria-hidden="true"></span>
+        <span>JusticePourtous</span>
+      </div>
+      <div class="footer-links">
+        <a href="/methodologie.html">Méthodologie</a>
+        <a href="/annuaire.html">Annuaire</a>
+      </div>
+      <div class="footer-legal">
+        JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur.
+        Ce service ne remplace pas un conseil d'avocat personnalisé.
+      </div>
+      <div class="footer-copy">&copy; 2026 JusticePourtous</div>
     </div>
-
-    <footer>&copy; 2026 JusticePourtous</footer>
-  </div>
+  </footer>
 
   <script src="/app.js"></script>
   <script>
+    /* Nav shadow on scroll */
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('nav-scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    /* Quick exit: double ESC */
+    var escCount = 0;
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        escCount++;
+        if (escCount >= 2) window.location.replace('https://www.meteosuisse.admin.ch');
+        setTimeout(function() { escCount = 0; }, 500);
+      }
+    });
+
     var year = new Date().getFullYear();
     var num = String(Math.floor(Math.random() * 9000) + 1000);
     document.getElementById('dossierRef').textContent = 'Ref. JB-' + year + '-' + num;

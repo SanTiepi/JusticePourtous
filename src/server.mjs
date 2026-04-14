@@ -30,6 +30,7 @@ import { deepAnalysis } from './services/deep-analysis.mjs';
 import { generateDocx } from './services/docx-generator.mjs';
 import { sendCode, verifyCode, linkWalletToEmail, getWalletsByEmail } from './services/auth.mjs';
 import { getVulgarisationForFiche, getVulgarisationStats } from './services/vulgarisation-loader.mjs';
+import { trackPageView, trackSearch, trackPremiumAnalysis, trackLanguage, getStats as getAnalyticsStats } from './services/analytics.mjs';
 import {
   getAllArticles, searchArticles,
   getAllArrets, searchArrets,
@@ -804,6 +805,8 @@ const server = createServer(async (req, res) => {
       const canton = url.searchParams.get('canton');
       if (!q) return json(res, 400, { error: 'Paramètre q requis', disclaimer: DISCLAIMER });
 
+      trackSearch();
+
       // V4 enrichment: add vulgarisation + normative compiler data
       function enrichV4(data) {
         if (!data || data.error) return data;
@@ -1242,6 +1245,7 @@ const server = createServer(async (req, res) => {
       }
 
       try {
+        trackPremiumAnalysis();
         const safeTexte = sanitizeUserInput(body.texte, 5000);
         const result = await analyserCas(safeTexte, body.canton, body.reponses);
         if (!result) {
@@ -1392,13 +1396,26 @@ const server = createServer(async (req, res) => {
       return json(res, 200, { stats, recent: feedbackStore.slice(-20), disclaimer: DISCLAIMER });
     }
 
+    if (path === '/api/admin/analytics' && method === 'GET') {
+      if (!checkAdmin(req, res)) return;
+      return json(res, 200, { ...getAnalyticsStats(), disclaimer: DISCLAIMER });
+    }
+
     // Static files
     if (path === '/' || path === '/index.html') {
+      trackPageView('/');
+      const lang = (req.headers['accept-language'] || '').slice(0, 2);
+      if (lang) trackLanguage(lang);
       return serveStatic(req, res, join(publicDir, 'index.html'));
     }
 
     const staticPath = join(publicDir, path);
     if (existsSync(staticPath) && !staticPath.includes('..')) {
+      if (path.endsWith('.html')) {
+        trackPageView(path);
+        const lang = (req.headers['accept-language'] || '').slice(0, 2);
+        if (lang) trackLanguage(lang);
+      }
       return serveStatic(req, res, staticPath);
     }
 

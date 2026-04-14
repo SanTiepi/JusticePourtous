@@ -708,6 +708,14 @@ function renderEnrichedResult(data, query, container) {
   if (normRules.length) html += ', <span class="source-count">' + t('result.source_rules').replace('{{count}}', normRules.length) + '</span>';
   html += '</span></div>';
 
+  // Feedback widget
+  var feedbackFicheId = (data.fiche || {}).id || 'unknown';
+  html += '<div class="feedback-widget" id="feedback-widget" data-fiche="' + escAttr(feedbackFicheId) + '">';
+  html += '<p>' + t('feedback.question') + '</p>';
+  html += '<button class="btn btn-sm btn-feedback-yes" onclick="sendFeedback(\'oui\')">' + t('feedback.yes') + '</button>';
+  html += '<button class="btn btn-sm btn-feedback-no" onclick="sendFeedback(\'non\')">' + t('feedback.no') + '</button>';
+  html += '</div>';
+
   // Bottom actions
   html += renderSearchActions(query, true);
 
@@ -753,6 +761,18 @@ function renderSearchActions(query, isBottom) {
   html += '<a href="/annuaire.html" class="btn btn-sm btn-secondary">' + t('nav.annuaire') + '</a>';
   html += '</div>';
   return html;
+}
+
+function sendFeedback(rating) {
+  var widget = document.getElementById('feedback-widget');
+  if (!widget) return;
+  var ficheId = widget.getAttribute('data-fiche') || 'unknown';
+  fetch('/api/feedback', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ ficheId: ficheId, rating: rating })
+  }).catch(function() {});
+  widget.innerHTML = '<p class="feedback-thanks">' + t('feedback.thanks') + '</p>';
 }
 
 function toggleTemplate(id) {

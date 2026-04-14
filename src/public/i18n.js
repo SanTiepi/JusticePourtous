@@ -185,6 +185,12 @@ var I18N = {
     'action.activer': 'Activer',
     'action.affiner': 'Affiner l\'analyse',
 
+    // -- Feedback --
+    'feedback.question': 'Cette réponse vous a été utile ?',
+    'feedback.yes': '\ud83d\udc4d Oui',
+    'feedback.no': '\ud83d\udc4e Non',
+    'feedback.thanks': 'Merci pour votre retour !',
+
     // -- Consultation --
     'consult.title': 'Consultation',
     'consult.question_n': 'Question {{n}} sur {{total}}',
@@ -524,6 +530,12 @@ var I18N = {
     'action.trouver_avocat': 'Anwalt finden',
     'action.activer': 'Aktivieren',
     'action.affiner': 'Analyse verfeinern',
+
+    // -- Feedback --
+    'feedback.question': 'War diese Antwort hilfreich?',
+    'feedback.yes': '\ud83d\udc4d Ja',
+    'feedback.no': '\ud83d\udc4e Nein',
+    'feedback.thanks': 'Vielen Dank für Ihr Feedback!',
 
     // -- Consultation --
     'consult.title': 'Konsultation',
@@ -865,6 +877,12 @@ var I18N = {
     'action.activer': 'Attivare',
     'action.affiner': 'Affinare l\'analisi',
 
+    // -- Feedback --
+    'feedback.question': 'Questa risposta ti è stata utile?',
+    'feedback.yes': '\ud83d\udc4d Sì',
+    'feedback.no': '\ud83d\udc4e No',
+    'feedback.thanks': 'Grazie per il tuo feedback!',
+
     // -- Consultation --
     'consult.title': 'Consultazione',
     'consult.question_n': 'Domanda {{n}} su {{total}}',
@@ -1205,6 +1223,12 @@ var I18N = {
     'action.activer': 'Activate',
     'action.affiner': 'Refine analysis',
 
+    // -- Feedback --
+    'feedback.question': 'Was this answer helpful?',
+    'feedback.yes': '\ud83d\udc4d Yes',
+    'feedback.no': '\ud83d\udc4e No',
+    'feedback.thanks': 'Thank you for your feedback!',
+
     // -- Consultation --
     'consult.title': 'Consultation',
     'consult.question_n': 'Question {{n}} of {{total}}',
@@ -1544,6 +1568,12 @@ var I18N = {
     'action.trouver_avocat': 'Encontrar um advogado',
     'action.activer': 'Ativar',
     'action.affiner': 'Afinar a an\u00e1lise',
+
+    // -- Feedback --
+    'feedback.question': 'Esta resposta foi útil?',
+    'feedback.yes': '\ud83d\udc4d Sim',
+    'feedback.no': '\ud83d\udc4e Não',
+    'feedback.thanks': 'Obrigado pelo seu feedback!',
 
     // -- Consultation --
     'consult.title': 'Consulta',
@@ -1887,6 +1917,12 @@ var I18N = {
     'action.trouver_avocat': '\u0625\u064a\u062c\u0627\u062f \u0645\u062d\u0627\u0645\u064d',
     'action.activer': '\u062a\u0641\u0639\u064a\u0644',
     'action.affiner': '\u062a\u062d\u0633\u064a\u0646 \u0627\u0644\u062a\u062d\u0644\u064a\u0644',
+
+    // -- Feedback --
+    'feedback.question': '\u0647\u0644 \u0643\u0627\u0646\u062a \u0647\u0630\u0647 \u0627\u0644\u0625\u062c\u0627\u0628\u0629 \u0645\u0641\u064a\u062f\u0629\u061f',
+    'feedback.yes': '\ud83d\udc4d \u0646\u0639\u0645',
+    'feedback.no': '\ud83d\udc4e \u0644\u0627',
+    'feedback.thanks': '\u0634\u0643\u0631\u0627 \u0639\u0644\u0649 \u0645\u0644\u0627\u062d\u0638\u0627\u062a\u0643!',
 
     // -- Consultation --
     'consult.title': '\u0627\u0633\u062a\u0634\u0627\u0631\u0629',
@@ -2233,6 +2269,12 @@ var I18N = {
     'action.activer': 'Etkinle\u015ftir',
     'action.affiner': 'Analizi iyile\u015ftir',
 
+    // -- Feedback --
+    'feedback.question': 'Bu cevap faydal\u0131 oldu mu?',
+    'feedback.yes': '\ud83d\udc4d Evet',
+    'feedback.no': '\ud83d\udc4e Hay\u0131r',
+    'feedback.thanks': 'Geri bildiriminiz i\u00e7in te\u015fekk\u00fcrler!',
+
     // -- Consultation --
     'consult.title': 'Dan\u0131\u015fma',
     'consult.question_n': 'Soru {{n}} / {{total}}',
@@ -2576,6 +2618,12 @@ var I18N = {
     'action.activer': 'Aktivizo',
     'action.affiner': 'P\u00ebrmir\u00ebso analizin',
 
+    // -- Feedback --
+    'feedback.question': 'A ishte e dobishme kjo p\u00ebrgjigje?',
+    'feedback.yes': '\ud83d\udc4d Po',
+    'feedback.no': '\ud83d\udc4e Jo',
+    'feedback.thanks': 'Faleminderit p\u00ebr mendimin tuaj!',
+
     // -- Consultation --
     'consult.title': 'Konsultim',
     'consult.question_n': 'Pyetja {{n}} nga {{total}}',
@@ -2918,6 +2966,12 @@ var I18N = {
     'action.trouver_avocat': 'Prona\u0111i odvjetnika',
     'action.activer': 'Aktiviraj',
     'action.affiner': 'Pobolj\u0161aj analizu',
+
+    // -- Feedback --
+    'feedback.question': 'Je li vam ovaj odgovor bio koristan?',
+    'feedback.yes': '\ud83d\udc4d Da',
+    'feedback.no': '\ud83d\udc4e Ne',
+    'feedback.thanks': 'Hvala na povratnoj informaciji!',
 
     // -- Consultation --
     'consult.title': 'Konzultacija',

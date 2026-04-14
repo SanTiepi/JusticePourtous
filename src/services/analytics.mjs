@@ -1,0 +1,83 @@
+// Analytics service — lightweight in-memory counters persisted to file
+// No external deps, flush to JSON every 5 minutes
+
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const DATA_FILE = join(__dirname, '..', 'data', 'meta', 'analytics.json');
+
+// In-memory counters
+let stats = {
+  pageViews: {},       // path → count
+  searchCount: 0,
+  premiumAnalysisCount: 0,
+  languages: {},       // lang → count
+  lastFlush: null,
+  startedAt: new Date().toISOString()
+};
+
+// Load from file on startup
+function loadFromFile() {
+  try {
+    if (existsSync(DATA_FILE)) {
+      const raw = readFileSync(DATA_FILE, 'utf-8');
+      const saved = JSON.parse(raw);
+      stats.pageViews = saved.pageViews || {};
+      stats.searchCount = saved.searchCount || 0;
+      stats.premiumAnalysisCount = saved.premiumAnalysisCount || 0;
+      stats.languages = saved.languages || {};
+      stats.lastFlush = saved.lastFlush || null;
+      stats.startedAt = saved.startedAt || stats.startedAt;
+    }
+  } catch {
+    // Corrupted file — start fresh
+  }
+}
+
+loadFromFile();
+
+// Flush to file
+function flushToFile() {
+  try {
+    stats.lastFlush = new Date().toISOString();
+    writeFileSync(DATA_FILE, JSON.stringify(stats, null, 2), 'utf-8');
+  } catch (err) {
+    console.error('Analytics flush failed:', err.message);
+  }
+}
+
+// Flush every 5 minutes
+setInterval(flushToFile, 5 * 60 * 1000);
+
+// --- Public API ---
+
+export function trackPageView(path) {
+  if (!path || typeof path !== 'string') return;
+  stats.pageViews[path] = (stats.pageViews[path] || 0) + 1;
+}
+
+export function trackSearch() {
+  stats.searchCount++;
+}
+
+export function trackPremiumAnalysis() {
+  stats.premiumAnalysisCount++;
+}
+
+export function trackLanguage(lang) {
+  if (!lang || typeof lang !== 'string') return;
+  const clean = lang.slice(0, 10).toLowerCase();
+  stats.languages[clean] = (stats.languages[clean] || 0) + 1;
+}
+
+export function getStats() {
+  return {
+    ...stats,
+    _snapshotAt: new Date().toISOString()
+  };
+}
+
+// Flush on process exit (best effort)
+process.on('beforeExit', flushToFile);

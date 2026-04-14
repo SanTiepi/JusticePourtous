@@ -4128,5 +4128,159 @@
       "loyer et primes d'assurance maladie",
       "commandement de payer reçu"
     ]
+  },
+  {
+    "id": "travail_discrimination_salariale",
+    "domaine": "travail",
+    "sousDomaine": "salaire",
+    "tags": [
+      "discrimination",
+      "égalité salariale",
+      "homme femme",
+      "LEg",
+      "salaire inégal",
+      "genre"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Sur quelle base suspectez-vous une inégalité salariale ?",
+        "options": [
+          "collègue du sexe oppose mieux payé",
+          "offre d'emploi avec salaire différent",
+          "information RH obtenue",
+          "autre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Exercez-vous un travail de valeur égale a celui de la personne de comparaison ?",
+        "options": [
+          "même poste",
+          "poste similaire",
+          "poste différent mais valeur égale",
+          "je ne sais pas"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Depuis combien de temps dure cette situation ?",
+        "options": [
+          "<1 an",
+          "1-3 ans",
+          "3-5 ans",
+          ">5 ans"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous déja abordé le sujet avec votre employeur ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La loi fédérale sur l'égalité entre femmes et hommes (LEg, art. 3) interdit toute discrimination salariale fondée sur le sexe. L'art. 8 al. 3 Cst. consacre le droit a un salaire égal pour un travail de valeur égale. L'employeur est tenu de payer le salaire convenu (art. 322 CO), et toute différence de rémunération entre un homme et une femme pour un travail identique ou de valeur égale constitue une discrimination prohibée. Pour prouver la discrimination, le travailleur bénéficie d'un allègement du fardeau de la preuve (art. 6 LEg) : il suffit de rendre vraisemblable l'existence d'une discrimination, et c'est ensuite a l'employeur de prouver que la différence repose sur des critères objectifs (ancienneté, formation, performance). La méthode de comparaison consiste a identifier une personne de l'autre sexe occupant un poste identique ou de valeur égale et a démontrer l'écart salarial. L'art. 10 LEg protège contre les represailles : le licenciement prononcé en réaction a une plainte pour discrimination est annulable. La prescription est de 5 ans pour les créances salariales (art. 128 ch. 3 CO). Depuis 2020, les entreprises de 100+ employés doivent effectuer une analyse de l'égalité salariale (art. 13a LEg).",
+      "articles": [
+        {
+          "ref": "LEg 3",
+          "titre": "Interdiction de discriminer — loi sur l'égalité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1996/1498_1498_1498/fr#art_3"
+        },
+        {
+          "ref": "Cst. 8 al. 3",
+          "titre": "Egalité — droit a un salaire égal pour un travail de valeur égale",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_8"
+        },
+        {
+          "ref": "CO 322",
+          "titre": "Salaire — obligation de l'employeur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_322"
+        },
+        {
+          "ref": "LEg 6",
+          "titre": "Allègement du fardeau de la preuve",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1996/1498_1498_1498/fr#art_6"
+        },
+        {
+          "ref": "LEg 10",
+          "titre": "Protection contre les represailles",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1996/1498_1498_1498/fr#art_10"
+        },
+        {
+          "ref": "CO 128",
+          "titre": "Prescription quinquennale",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_128"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "TF 8C_605/2016",
+          "resume": "Discrimination salariale reconnue : une employée recevait 15% de moins qu'un collègue masculin au même poste, sans justification objective. Allègement du fardeau de la preuve appliqué."
+        },
+        {
+          "ref": "TF 8C_78/2009",
+          "resume": "La méthode statistique (analyse de régression) peut servir a rendre vraisemblable une discrimination salariale dans les grandes entreprises."
+        }
+      ],
+      "modeleLettre": "Objet : Demande d'informations salariales — soupçon de discrimination au sens de la LEg\n\nMadame, Monsieur,\n\nConformement a la loi fédérale sur l'égalité entre femmes et hommes (LEg), je vous prie de bien vouloir me communiquer les informations suivantes :\n\n1. La grille salariale applicable a mon poste ([intitulé du poste]) et la classification correspondante.\n2. Le salaire médian versé pour un poste identique ou de valeur égale au sein de l'entreprise, ventilé par sexe.\n3. Les critères objectifs retenus pour déterminer le niveau de rémunération (ancienneté, formation, évaluation).\n\nCette demande s'inscrit dans le cadre de l'art. 3 LEg qui interdit toute discrimination salariale fondée sur le sexe, et de l'art. 8 al. 3 Cst. qui garantit un salaire égal pour un travail de valeur égale.\n\nJe vous rappelle que l'art. 10 LEg protège les travailleurs contre toute mesure de représailles liée a l'exercice de leurs droits.\n\nJe vous remercie de votre réponse dans un délai de 30 jours.\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguées.\n\n[Signature]",
+      "services": [
+        {
+          "nom": "Bureau fédéral de l'égalité entre femmes et hommes (BFEG)",
+          "url": "https://www.ebg.admin.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Syndicat Unia",
+          "tel": "0848 606 606",
+          "url": "https://www.unia.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Syndicat Unia Geneve",
+          "tel": "022 949 13 00",
+          "url": "https://www.unia.ch/fr/région/geneve",
+          "canton": "GE"
+        },
+        {
+          "nom": "Office cantonal de conciliation VD",
+          "url": "https://www.vd.ch/themes/economie/travail",
+          "canton": "VD"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-13",
+    "sourceLoi": "LEg état 2025-01-01, CO état 2025-01-01",
+    "dateVerification": "2026-04-13",
+    "verificationOk": true,
+    "match_description": "L'employé(e) soupçonne une inégalité salariale fondée sur le sexe et veut savoir comment agir.",
+    "profane_aliases": [
+      "payée moins que mon collègue homme",
+      "inégalité de salaire homme femme",
+      "discrimination salariale au travail",
+      "mon collègue gagne plus que moi pour le même travail",
+      "salaire inégal entre hommes et femmes"
+    ],
+    "negative_signals": [
+      "différence de salaire liée a l'ancienneté uniquement",
+      "négociation salariale individuelle",
+      "salaire a la pièce ou au rendement"
+    ],
+    "required_facts": [
+      "poste occupe et poste de comparaison",
+      "écart salarial constaté ou soupçonné",
+      "ancienneté et formation",
+      "démarches déja entreprises",
+      "canton"
+    ]
   }
 ]

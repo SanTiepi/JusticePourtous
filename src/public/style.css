@@ -2566,6 +2566,66 @@ body.has-disclaimer {
   opacity: 0.6;
 }
 
+.footer-contact {
+  margin-top: var(--space-sm);
+}
+
+.footer-contact a {
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  color: var(--accent-primary);
+}
+
+/* --- Feedback widget --- */
+
+.feedback-widget {
+  text-align: center;
+  padding: var(--space-lg) 0;
+  margin-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+}
+
+.feedback-widget p {
+  margin-bottom: var(--space-sm);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.feedback-widget button {
+  margin: 0 var(--space-xs);
+}
+
+.btn-feedback-yes,
+.btn-feedback-no {
+  font-size: 0.85rem;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.btn-feedback-yes:hover {
+  background: var(--success-bg, #e8f5e9);
+  border-color: var(--success, #4caf50);
+}
+
+.btn-feedback-no:hover {
+  background: var(--error-bg, #fce4ec);
+  border-color: var(--error, #e53935);
+}
+
+.feedback-thanks {
+  color: var(--text-tertiary);
+  font-style: italic;
+}
+
 /* --- Animations (uses @keyframes fadeInUp defined in design system above) --- */
 
 /* --- Responsive --- */

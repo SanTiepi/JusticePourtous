@@ -4056,5 +4056,128 @@
       "canton",
       "capacite a regulariser"
     ]
+  },
+  {
+    "id": "bail_restitution_anticipee",
+    "domaine": "bail",
+    "sousDomaine": "résiliation",
+    "tags": [
+      "restitution anticipee",
+      "depart anticipe",
+      "locataire remplacement",
+      "sous-locataire",
+      "résiliation anticipee",
+      "bail fin"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Avez-vous trouvé un locataire de remplacement ?",
+        "options": [
+          "oui",
+          "non",
+          "en recherche"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Le locataire proposé est-il solvable ?",
+        "options": [
+          "oui",
+          "non",
+          "je ne sais pas"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Le bailleur a-t-il refuse le locataire propose ?",
+        "options": [
+          "oui sans motif",
+          "oui avec motif",
+          "non",
+          "pas encore propose"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Quand souhaitez-vous partir ?",
+        "options": [
+          "<1 mois",
+          "1-3 mois",
+          ">3 mois"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "En droit suisse, le locataire peut restituer la chose louée de maniere anticipee s'il présente au bailleur un locataire de remplacement qui soit solvable et que le bailleur ne puisse raisonnablement refuser (art. 264 al. 1 CO). Le locataire de remplacement doit être disposé a reprendre le bail aux mêmes conditions. Si le bailleur refuse le candidat sans motif valable (par ex. insolvabilité, usage différent), le locataire est libéré de ses obligations a l'expiration d'un délai de 30 jours a compter de la réception de l'avis de restitution. Le bailleur peut exiger que le locataire lui présente un seul candidat solvable et acceptable. La charge de la preuve du caractère déraisonnable du refus incombe au bailleur. En pratique, il est recommandé de notifier la restitution par écrit (recommandé) et de fournir les coordonnées complètes du candidat avec justificatifs de solvabilité (attestation de non-poursuite, fiches de salaire).",
+      "articles": [
+        {
+          "ref": "CO 264",
+          "titre": "Restitution anticipee de la chose",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_264"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "TF 4A_198/2014",
+          "resume": "Le bailleur ne peut refuser un locataire de remplacement que pour des motifs objectivement justifies. Un refus sans motif valable libère le locataire."
+        },
+        {
+          "ref": "TF 4C.109/2003",
+          "resume": "Le locataire de remplacement doit être prêt a reprendre le bail aux mêmes conditions, y compris le loyer. Un candidat proposant un loyer inferieur ne remplit pas cette condition."
+        }
+      ],
+      "modeleLettre": "Objet : Restitution anticipee du logement — présentation d'un locataire de remplacement\n\nMadame, Monsieur,\n\nPar la présente, je vous informe de mon souhait de restituer de maniere anticipee le logement sis [adresse], actuellement loue en vertu du contrat de bail du [date].\n\nConformement a l'art. 264 al. 1 CO, je vous présente un locataire de remplacement solvable et acceptable :\n\n- Nom : [nom du candidat]\n- Coordonnees : [adresse, tel, email]\n- Situation professionnelle : [emploi, revenus]\n\nVous trouverez en annexe les justificatifs de solvabilité (attestation de l'office des poursuites, fiches de salaire).\n\nLe candidat est dispose a reprendre le bail aux mêmes conditions des le [date souhaitée].\n\nJe vous remercie de bien vouloir me confirmer votre accord dans un délai de 30 jours. A défaut de refus motivé, je considererai être libéré(e) de mes obligations contractuelles conformement a l'art. 264 CO.\n\nVeuillez agreer, Madame, Monsieur, mes salutations distinguées.\n\n[Signature]",
+      "services": [
+        {
+          "nom": "ASLOCA Vaud",
+          "tel": "021 617 11 37",
+          "url": "https://vaud.asloca.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "ASLOCA Geneve",
+          "tel": "022 716 18 00",
+          "url": "https://www.asloca.ch/asloca-geneve",
+          "canton": "GE"
+        },
+        {
+          "nom": "Commission de conciliation en matiere de baux",
+          "url": "https://www.vd.ch/themes/territoire-et-construction/baux-a-loyer",
+          "canton": "VD"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+    },
+    "maj": "2026-04-13",
+    "sourceLoi": "CO état 2025-01-01",
+    "dateVerification": "2026-04-13",
+    "verificationOk": true,
+    "match_description": "Le locataire veut partir avant la fin du bail et cherche un locataire de remplacement pour être libéré de ses obligations.",
+    "profane_aliases": [
+      "partir avant la fin du bail",
+      "quitter l'appart plus tôt",
+      "résiliation anticipée du bail",
+      "trouver un remplaçant pour mon bail",
+      "je veux déménager avant le terme"
+    ],
+    "negative_signals": [
+      "résiliation ordinaire a l'echéance",
+      "sous-location sans départ",
+      "expulsion par le bailleur"
+    ],
+    "required_facts": [
+      "date de depart souhaitée",
+      "candidat de remplacement trouvé ou non",
+      "solvabilité du candidat",
+      "réponse du bailleur",
+      "canton"
+    ]
   }
 ]

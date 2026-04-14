@@ -564,7 +564,7 @@ const server = createServer(async (req, res) => {
           if (apiKey) {
             const systemPrompt = `Tu es un traducteur juridique suisse. Traduis le texte suivant en ${LANG_MAP[body.lang]}. Garde la terminologie juridique précise. Traduis fidèlement sans ajouter ni retirer d'information. Réponds UNIQUEMENT avec la traduction, sans commentaire.`;
             const apiBody = JSON.stringify({
-              model: 'claude-haiku-4-20250514',
+              model: 'claude-haiku-4-5-20251001',
               max_tokens: 4000,
               system: systemPrompt,
               messages: [{ role: 'user', content: letterText }]
@@ -625,7 +625,7 @@ const server = createServer(async (req, res) => {
         const systemPrompt = `Tu es un traducteur juridique suisse. Traduis le texte suivant en ${targetLangName}. Garde la terminologie juridique précise. Traduis fidèlement sans ajouter ni retirer d'information.${contextHint} Réponds UNIQUEMENT avec la traduction, sans commentaire.`;
 
         const apiBody = JSON.stringify({
-          model: 'claude-haiku-4-20250514',
+          model: 'claude-haiku-4-5-20251001',
           max_tokens: 4000,
           system: systemPrompt,
           messages: [{ role: 'user', content: body.text }]

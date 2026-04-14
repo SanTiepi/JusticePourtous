@@ -347,10 +347,32 @@ const server = createServer(async (req, res) => {
 
     if (path === '/api/stripe/session-status' && method === 'GET') {
       const sessionId = url.searchParams.get('session_id');
-      const walletCode = stripeSessionMap.get(sessionId);
-      if (walletCode) {
-        return json(res, 200, { sessionCode: walletCode, ready: true });
+
+      // Check if we already created the wallet (from webhook or previous poll)
+      const existingWallet = stripeSessionMap.get(sessionId);
+      if (existingWallet) {
+        return json(res, 200, { sessionCode: existingWallet, ready: true });
       }
+
+      // Webhook hasn't arrived yet — check Stripe directly
+      if (stripe && sessionId) {
+        try {
+          const stripeSession = await stripe.checkout.sessions.retrieve(sessionId);
+          if (stripeSession.payment_status === 'paid') {
+            // Payment confirmed — create wallet now
+            const montant = parseInt(stripeSession.metadata?.montant_centimes || '1000', 10);
+            const result = acheterWallet(montant);
+            if (result.data?.sessionCode) {
+              stripeSessionMap.set(sessionId, result.data.sessionCode);
+              console.log('Wallet created via direct check:', sessionId, '→', result.data.sessionCode, 'CHF', (montant/100).toFixed(2));
+              return json(res, 200, { sessionCode: result.data.sessionCode, ready: true });
+            }
+          }
+        } catch (err) {
+          console.log('Stripe session check error:', err.message);
+        }
+      }
+
       return json(res, 200, { ready: false, pending: true });
     }
 

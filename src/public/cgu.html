@@ -28,6 +28,7 @@
         <a href="/annuaire.html">Annuaire</a>
         <a href="/methodologie.html">M&eacute;thodologie</a>
         <a href="/premium.html" class="nav-premium">Premium</a>
+        <div class="lang-switcher" id="langSwitcher"></div>
       </div>
     </div>
   </nav>
@@ -104,11 +105,17 @@
     </div>
   </footer>
 
+  <script src="/i18n.js"></script>
   <script>
     var nav = document.getElementById('nav');
     window.addEventListener('scroll', function() {
       nav.classList.toggle('nav-scrolled', window.scrollY > 10);
     }, { passive: true });
+
+    if (typeof createLangSwitcher === 'function') {
+      document.getElementById('langSwitcher').appendChild(createLangSwitcher());
+    }
+    document.documentElement.lang = getLang();
 
     var escCount = 0;
     document.addEventListener('keydown', function(e) {

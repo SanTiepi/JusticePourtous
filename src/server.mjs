@@ -68,10 +68,14 @@ const STRIPE_PUBLIC_KEY = process.env.STRIPE_PUBLISHABLE_KEY;
 const SITE_URL = process.env.SITE_URL || 'https://justicepourtous.ch';
 const stripeSessionMap = new Map(); // stripeSessionId → walletSessionCode
 
+const STRIPE_ACCOUNT = process.env.STRIPE_ACCOUNT_ID; // acct_... for org keys
+
 if (STRIPE_SECRET) {
   const Stripe = (await import('stripe')).default;
-  stripe = new Stripe(STRIPE_SECRET);
-  console.log('Stripe enabled (TWINT + Card)');
+  const stripeOpts = {};
+  if (STRIPE_ACCOUNT) stripeOpts.stripeAccount = STRIPE_ACCOUNT;
+  stripe = new Stripe(STRIPE_SECRET, stripeOpts);
+  console.log('Stripe enabled (TWINT + Card)' + (STRIPE_ACCOUNT ? ' — account: ' + STRIPE_ACCOUNT : ''));
 } else {
   console.log('Stripe not configured — using demo wallet mode');
 }

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JusticePourtous — Mentions l&eacute;gales</title>
+  <meta name="description" content="Mentions l&eacute;gales et impressum de JusticePourtous.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2696;</text></svg>">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <a href="https://www.meteosuisse.admin.ch" class="quick-exit" title="Quitter rapidement ce site — vous redirige vers M&eacute;t&eacute;oSuisse" aria-label="Quitter rapidement ce site">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Quitter</span>
+    <span class="quick-exit-label">&mdash; sortie rapide</span>
+  </a>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <span class="nav-mark" aria-hidden="true"></span>
+        <span class="nav-wordmark">JusticePourtous</span>
+      </a>
+      <div class="nav-links">
+        <a href="/annuaire.html">Annuaire</a>
+        <a href="/methodologie.html">M&eacute;thodologie</a>
+        <a href="/premium.html" class="nav-premium">Premium</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="page-inner">
+      <p class="hero-eyebrow">Impressum</p>
+      <h1 class="page-title">Mentions l&eacute;gales</h1>
+
+      <section class="method-section">
+        <h2>&Eacute;diteur</h2>
+        <p>JusticePourtous<br>
+        [Adresse &agrave; compl&eacute;ter]<br>
+        Suisse</p>
+      </section>
+
+      <section class="method-section">
+        <h2>Contact</h2>
+        <p>Courriel : <a href="mailto:contact@justicepourtous.ch">contact@justicepourtous.ch</a></p>
+      </section>
+
+      <section class="method-section">
+        <h2>H&eacute;bergement</h2>
+        <p>Le site justicepourtous.ch est h&eacute;berg&eacute; sur un serveur VPS situ&eacute; en Suisse.</p>
+      </section>
+
+      <section class="method-section">
+        <h2>Responsable de la r&eacute;daction</h2>
+        <p>[&Agrave; compl&eacute;ter]</p>
+      </section>
+
+      <section class="method-section">
+        <h2>Num&eacute;ro IDE</h2>
+        <p>[&Agrave; compl&eacute;ter]</p>
+      </section>
+
+      <section class="method-section">
+        <h2>Propri&eacute;t&eacute; intellectuelle</h2>
+        <p>L'ensemble du contenu du site justicepourtous.ch (textes, structure, design, code) est prot&eacute;g&eacute; par le droit d'auteur suisse. Toute reproduction ou utilisation non autoris&eacute;e est interdite, &agrave; l'exception des articles de loi et de la jurisprudence qui rel&egrave;vent du domaine public.</p>
+      </section>
+
+      <section class="method-section">
+        <h2>Avertissement</h2>
+        <p>JusticePourtous fournit des informations juridiques g&eacute;n&eacute;rales &agrave; titre indicatif. Ce service ne constitue pas du conseil juridique personnalis&eacute; et ne remplace pas la consultation d'un professionnel du droit. JusticePourtous d&eacute;cline toute responsabilit&eacute; quant &agrave; l'utilisation des informations fournies.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="nav-mark" aria-hidden="true"></span>
+        <span>JusticePourtous</span>
+      </div>
+      <div class="footer-links">
+        <a href="/methodologie.html">M&eacute;thodologie</a>
+        <a href="/annuaire.html">Annuaire</a>
+        <a href="/confidentialite.html">Confidentialit&eacute;</a>
+        <a href="/cgu.html">CGU</a>
+        <a href="/mentions-legales.html">Mentions l&eacute;gales</a>
+      </div>
+      <div class="footer-legal">
+        JusticePourtous fournit des informations juridiques g&eacute;n&eacute;rales bas&eacute;es sur le droit suisse en vigueur.
+        Ce service ne remplace pas un conseil d'avocat personnalis&eacute;.
+      </div>
+      <div class="footer-copy">&copy; 2026 JusticePourtous</div>
+    </div>
+  </footer>
+
+  <script>
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('nav-scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    var escCount = 0;
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        escCount++;
+        if (escCount >= 2) window.location.replace('https://www.meteosuisse.admin.ch');
+        setTimeout(function() { escCount = 0; }, 500);
+      }
+    });
+  </script>
+</body>
+</html>

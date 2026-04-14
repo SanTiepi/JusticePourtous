@@ -26,6 +26,7 @@
       <div class="nav-links">
         <a href="/">Accueil</a>
         <a href="/annuaire.html">Annuaire</a>
+        <div class="lang-switcher" id="langSwitcher"></div>
       </div>
     </div>
   </nav>
@@ -183,6 +184,9 @@
       <div class="footer-links">
         <a href="/methodologie.html">Méthodologie</a>
         <a href="/annuaire.html">Annuaire</a>
+        <a href="/confidentialite.html">Confidentialité</a>
+        <a href="/cgu.html">CGU</a>
+        <a href="/mentions-legales.html">Mentions légales</a>
       </div>
       <div class="footer-legal">
         JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur.
@@ -192,12 +196,19 @@
     </div>
   </footer>
 
+  <script src="/i18n.js"></script>
   <script>
     /* Nav shadow on scroll */
     var nav = document.getElementById('nav');
     window.addEventListener('scroll', function() {
       nav.classList.toggle('nav-scrolled', window.scrollY > 10);
     }, { passive: true });
+
+    /* i18n */
+    if (typeof createLangSwitcher === 'function') {
+      document.getElementById('langSwitcher').appendChild(createLangSwitcher());
+    }
+    document.documentElement.lang = getLang();
 
     /* Quick exit: double ESC */
     var escCount = 0;

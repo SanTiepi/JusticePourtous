@@ -1882,6 +1882,41 @@ body.has-disclaimer {
   color: var(--text-inverse);
 }
 
+/* --- Language Switcher --- */
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: var(--space-sm);
+}
+
+.lang-switcher button {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.2em 0.5em;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  line-height: 1;
+}
+
+.lang-switcher button:hover {
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+}
+
+.lang-switcher button.active {
+  background: var(--text-primary);
+  color: var(--text-inverse);
+  border-color: var(--text-primary);
+  cursor: default;
+}
+
 /* --- Quick Exit (safety feature for vulnerable users) --- */
 .quick-exit {
   position: fixed;

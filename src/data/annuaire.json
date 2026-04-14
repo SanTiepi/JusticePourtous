@@ -679,5 +679,419 @@
       "type": "csp",
       "url": "https://www.caritas-ticino.ch"
     }
+  ],
+  "AI": [
+    {
+      "nom": "Autorite de conciliation en matiere de baux AI",
+      "type": "conciliation",
+      "url": "https://www.ai.ch/verwaltung/schlichtungsbehoerde"
+    },
+    {
+      "nom": "Assistance judiciaire Appenzell Rhodes-Interieures",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.ai.ch/verwaltung/kantonsgericht/unentgeltliche-rechtspflege"
+    },
+    {
+      "nom": "Centre LAVI Appenzell Rhodes-Interieures",
+      "type": "lavi",
+      "tel": "071 227 11 00",
+      "url": "https://www.sg.ch/gesundheit-soziales/soziales/opferhilfe.html"
+    },
+    {
+      "nom": "Ordre des avocats appenzellois (Rhodes-Interieures)",
+      "type": "avocats",
+      "url": "https://www.ai.ch/verwaltung/kantonsgericht"
+    },
+    {
+      "nom": "Office de la population AI (Einwohnerdienste)",
+      "type": "administration",
+      "url": "https://www.ai.ch/verwaltung/volkswirtschaftsdepartement/amt-fuer-wirtschaft"
+    },
+    {
+      "nom": "Caritas Suisse orientale (AI)",
+      "type": "csp",
+      "url": "https://www.caritas-stgallen.ch"
+    }
+  ],
+  "AR": [
+    {
+      "nom": "Autorite de conciliation en matiere de baux AR",
+      "type": "conciliation",
+      "url": "https://www.ar.ch/verwaltung/departement-volks-und-landwirtschaft/schlichtungsbehoerde"
+    },
+    {
+      "nom": "Assistance judiciaire Appenzell Rhodes-Exterieures",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.ar.ch/verwaltung/departement-inneres-und-sicherheit/unentgeltliche-rechtspflege"
+    },
+    {
+      "nom": "Centre LAVI Appenzell Rhodes-Exterieures",
+      "type": "lavi",
+      "tel": "071 227 11 00",
+      "url": "https://www.sg.ch/gesundheit-soziales/soziales/opferhilfe.html"
+    },
+    {
+      "nom": "Ordre des avocats appenzellois (Rhodes-Exterieures)",
+      "type": "avocats",
+      "url": "https://www.ar.ch/verwaltung/departement-inneres-und-sicherheit"
+    },
+    {
+      "nom": "Office des migrations AR (Migrationsamt)",
+      "type": "administration",
+      "url": "https://www.ar.ch/verwaltung/departement-inneres-und-sicherheit/migrationsamt"
+    },
+    {
+      "nom": "Caritas Suisse orientale (AR)",
+      "type": "csp",
+      "url": "https://www.caritas-stgallen.ch"
+    },
+    {
+      "nom": "Syndicat Unia Suisse orientale (AR)",
+      "type": "syndicat",
+      "url": "https://www.unia.ch/de/region/ostschweiz-graubuenden"
+    }
+  ],
+  "BL": [
+    {
+      "nom": "Mieterverband Baselland / ASLOCA Bale-Campagne",
+      "type": "asloca",
+      "tel": "061 921 83 83",
+      "url": "https://www.mieterverband.ch/baselland"
+    },
+    {
+      "nom": "Autorite de conciliation en matiere de baux BL",
+      "type": "conciliation",
+      "url": "https://www.baselland.ch/politik-und-behorden/gerichte/schlichtungsbehoerde-mietrecht"
+    },
+    {
+      "nom": "Assistance judiciaire Bale-Campagne",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.baselland.ch/politik-und-behorden/gerichte/unentgeltliche-rechtspflege"
+    },
+    {
+      "nom": "Centre LAVI Bale-Campagne",
+      "type": "lavi",
+      "tel": "061 552 65 90",
+      "url": "https://www.baselland.ch/politik-und-behorden/direktionen/sicherheitsdirektion/opferhilfe"
+    },
+    {
+      "nom": "Ordre des avocats de Bale-Campagne",
+      "type": "avocats",
+      "url": "https://www.baselland-anwaltsverband.ch"
+    },
+    {
+      "nom": "Office des migrations BL (Migrationsamt)",
+      "type": "administration",
+      "tel": "061 552 51 51",
+      "url": "https://www.baselland.ch/politik-und-behorden/direktionen/sicherheitsdirektion/migrationsamt"
+    },
+    {
+      "nom": "Caritas beider Basel (BL)",
+      "type": "csp",
+      "url": "https://www.caritas-beider-basel.ch"
+    },
+    {
+      "nom": "Syndicat Unia Nordwestschweiz (BL)",
+      "type": "syndicat",
+      "url": "https://www.unia.ch/de/region/nordwestschweiz"
+    }
+  ],
+  "GL": [
+    {
+      "nom": "Autorite de conciliation en matiere de baux GL",
+      "type": "conciliation",
+      "url": "https://www.gl.ch/verwaltung/gerichte/schlichtungsbehoerde.html"
+    },
+    {
+      "nom": "Assistance judiciaire Glaris",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.gl.ch/verwaltung/gerichte/unentgeltliche-rechtspflege.html"
+    },
+    {
+      "nom": "Centre LAVI Glaris",
+      "type": "lavi",
+      "tel": "055 646 67 27",
+      "url": "https://www.gl.ch/verwaltung/departement-volkswirtschaft-und-inneres/opferhilfe.html"
+    },
+    {
+      "nom": "Ordre des avocats glaronnais",
+      "type": "avocats",
+      "url": "https://www.gl.ch/verwaltung/gerichte.html"
+    },
+    {
+      "nom": "Office de la population et des migrations GL",
+      "type": "administration",
+      "url": "https://www.gl.ch/verwaltung/departement-volkswirtschaft-und-inneres/migration.html"
+    },
+    {
+      "nom": "Caritas Suisse orientale (GL)",
+      "type": "csp",
+      "url": "https://www.caritas-stgallen.ch"
+    }
+  ],
+  "GR": [
+    {
+      "nom": "Mieterverband Graubunden / ASLOCA Grisons",
+      "type": "asloca",
+      "url": "https://www.mieterverband.ch/graubuenden"
+    },
+    {
+      "nom": "Autorite de conciliation en matiere de baux GR",
+      "type": "conciliation",
+      "url": "https://www.gr.ch/DE/institutionen/gerichte/schlichtungsbehoerden/Seiten/default.aspx"
+    },
+    {
+      "nom": "Assistance judiciaire Grisons",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.gr.ch/DE/institutionen/gerichte/unentgeltliche-rechtspflege/Seiten/default.aspx"
+    },
+    {
+      "nom": "Centre LAVI Grisons",
+      "type": "lavi",
+      "tel": "081 257 31 50",
+      "url": "https://www.gr.ch/DE/institutionen/verwaltung/djsg/ksta/opferhilfe/Seiten/default.aspx"
+    },
+    {
+      "nom": "Ordre des avocats grisons",
+      "type": "avocats",
+      "url": "https://www.anwaltsverband-gr.ch"
+    },
+    {
+      "nom": "Office des migrations GR (Migrationsamt)",
+      "type": "administration",
+      "tel": "081 257 25 12",
+      "url": "https://www.gr.ch/DE/institutionen/verwaltung/djsg/afm/Seiten/default.aspx"
+    },
+    {
+      "nom": "Syndicat Unia Grisons",
+      "type": "syndicat",
+      "url": "https://www.unia.ch/de/region/ostschweiz-graubuenden"
+    },
+    {
+      "nom": "Caritas Grisons",
+      "type": "csp",
+      "url": "https://www.caritas-gr.ch"
+    }
+  ],
+  "NW": [
+    {
+      "nom": "Autorite de conciliation en matiere de baux NW",
+      "type": "conciliation",
+      "url": "https://www.nw.ch/schlichtungsbehoerde"
+    },
+    {
+      "nom": "Assistance judiciaire Nidwald",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.nw.ch/kantonsgericht/unentgeltliche-rechtspflege"
+    },
+    {
+      "nom": "Centre LAVI Nidwald / Obwald",
+      "type": "lavi",
+      "tel": "041 228 74 00",
+      "url": "https://www.disg.lu.ch/themen/opferhilfe"
+    },
+    {
+      "nom": "Ordre des avocats nidwaldiens",
+      "type": "avocats",
+      "url": "https://www.nw.ch/kantonsgericht"
+    },
+    {
+      "nom": "Office des migrations NW (Migrationsamt)",
+      "type": "administration",
+      "url": "https://www.nw.ch/migrationsamt"
+    },
+    {
+      "nom": "Caritas Suisse centrale (NW)",
+      "type": "csp",
+      "url": "https://www.caritas-luzern.ch"
+    }
+  ],
+  "OW": [
+    {
+      "nom": "Autorite de conciliation en matiere de baux OW",
+      "type": "conciliation",
+      "url": "https://www.ow.ch/schlichtungsbehoerde"
+    },
+    {
+      "nom": "Assistance judiciaire Obwald",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.ow.ch/kantonsgericht/unentgeltliche-rechtspflege"
+    },
+    {
+      "nom": "Centre LAVI Obwald / Nidwald",
+      "type": "lavi",
+      "tel": "041 228 74 00",
+      "url": "https://www.disg.lu.ch/themen/opferhilfe"
+    },
+    {
+      "nom": "Ordre des avocats obwaldiens",
+      "type": "avocats",
+      "url": "https://www.ow.ch/kantonsgericht"
+    },
+    {
+      "nom": "Office des migrations OW (Migrationsamt)",
+      "type": "administration",
+      "url": "https://www.ow.ch/migrationsamt"
+    },
+    {
+      "nom": "Caritas Suisse centrale (OW)",
+      "type": "csp",
+      "url": "https://www.caritas-luzern.ch"
+    }
+  ],
+  "SH": [
+    {
+      "nom": "Mieterverband Schaffhausen / ASLOCA Schaffhouse",
+      "type": "asloca",
+      "url": "https://www.mieterverband.ch/schaffhausen"
+    },
+    {
+      "nom": "Autorite de conciliation en matiere de baux SH",
+      "type": "conciliation",
+      "url": "https://www.sh.ch/schlichtungsbehoerde"
+    },
+    {
+      "nom": "Assistance judiciaire Schaffhouse",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.sh.ch/unentgeltliche-rechtspflege"
+    },
+    {
+      "nom": "Centre LAVI Schaffhouse",
+      "type": "lavi",
+      "tel": "052 632 78 44",
+      "url": "https://www.sh.ch/opferhilfe"
+    },
+    {
+      "nom": "Ordre des avocats schaffhousois",
+      "type": "avocats",
+      "url": "https://www.sh-anwaltsverband.ch"
+    },
+    {
+      "nom": "Office des migrations SH (Migrationsamt)",
+      "type": "administration",
+      "tel": "052 632 71 52",
+      "url": "https://www.sh.ch/migrationsamt"
+    },
+    {
+      "nom": "Syndicat Unia Zurich-Schaffhouse (SH)",
+      "type": "syndicat",
+      "url": "https://www.unia.ch/de/region/zuerich-schaffhausen"
+    }
+  ],
+  "SZ": [
+    {
+      "nom": "Autorite de conciliation en matiere de baux SZ",
+      "type": "conciliation",
+      "url": "https://www.sz.ch/privatpersonen/bauen-und-wohnen/schlichtungsbehoerde.html"
+    },
+    {
+      "nom": "Assistance judiciaire Schwyz",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.sz.ch/behoerden/gerichte/kantonsgericht/unentgeltliche-rechtspflege.html"
+    },
+    {
+      "nom": "Centre LAVI Schwyz",
+      "type": "lavi",
+      "tel": "041 819 20 65",
+      "url": "https://www.sz.ch/privatpersonen/gesundheit-soziales/opferhilfe.html"
+    },
+    {
+      "nom": "Ordre des avocats schwyzois",
+      "type": "avocats",
+      "url": "https://www.sz.ch/behoerden/gerichte/kantonsgericht.html"
+    },
+    {
+      "nom": "Office des migrations SZ (Migrationsamt)",
+      "type": "administration",
+      "tel": "041 819 22 68",
+      "url": "https://www.sz.ch/behoerden/verwaltung/sicherheitsdepartement/migrationsamt.html"
+    },
+    {
+      "nom": "Caritas Suisse centrale (SZ)",
+      "type": "csp",
+      "url": "https://www.caritas-luzern.ch"
+    },
+    {
+      "nom": "Syndicat Unia Suisse centrale (SZ)",
+      "type": "syndicat",
+      "url": "https://www.unia.ch/de/region/zentralschweiz"
+    }
+  ],
+  "UR": [
+    {
+      "nom": "Autorite de conciliation en matiere de baux UR",
+      "type": "conciliation",
+      "url": "https://www.ur.ch/schlichtungsbehoerde"
+    },
+    {
+      "nom": "Assistance judiciaire Uri",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.ur.ch/obergericht/unentgeltliche-rechtspflege"
+    },
+    {
+      "nom": "Centre LAVI Uri",
+      "type": "lavi",
+      "tel": "041 228 74 00",
+      "url": "https://www.disg.lu.ch/themen/opferhilfe"
+    },
+    {
+      "nom": "Ordre des avocats uranais",
+      "type": "avocats",
+      "url": "https://www.ur.ch/obergericht"
+    },
+    {
+      "nom": "Office de la population UR (Einwohneramt)",
+      "type": "administration",
+      "url": "https://www.ur.ch/aemter/amt-fuer-migration"
+    },
+    {
+      "nom": "Caritas Suisse centrale (UR)",
+      "type": "csp",
+      "url": "https://www.caritas-luzern.ch"
+    }
+  ],
+  "ZG": [
+    {
+      "nom": "Mieterverband Zug / ASLOCA Zoug",
+      "type": "asloca",
+      "url": "https://www.mieterverband.ch/zug"
+    },
+    {
+      "nom": "Autorite de conciliation en matiere de baux ZG",
+      "type": "conciliation",
+      "url": "https://www.zg.ch/behoerden/direktion-des-innern/schlichtungsbehoerde"
+    },
+    {
+      "nom": "Assistance judiciaire Zoug",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.zg.ch/behoerden/direktion-des-innern/kantonsgericht/unentgeltliche-rechtspflege"
+    },
+    {
+      "nom": "Centre LAVI Zoug",
+      "type": "lavi",
+      "tel": "041 728 55 30",
+      "url": "https://www.zg.ch/behoerden/direktion-des-innern/opferhilfe"
+    },
+    {
+      "nom": "Ordre des avocats zougois",
+      "type": "avocats",
+      "url": "https://www.zuger-anwaltsverband.ch"
+    },
+    {
+      "nom": "Office des migrations ZG (Migrationsamt)",
+      "type": "administration",
+      "tel": "041 728 55 00",
+      "url": "https://www.zg.ch/behoerden/direktion-des-innern/migrationsamt"
+    },
+    {
+      "nom": "Caritas Zoug",
+      "type": "csp",
+      "url": "https://www.caritas-luzern.ch"
+    },
+    {
+      "nom": "Syndicat Unia Suisse centrale (ZG)",
+      "type": "syndicat",
+      "url": "https://www.unia.ch/de/region/zentralschweiz"
+    }
   ]
 }

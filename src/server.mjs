@@ -7,7 +7,7 @@ import { getAllFiches, getFicheById } from './services/fiches.mjs';
 import { consulter, getQuestionsForDomaine } from './services/consultation.mjs';
 import { getServicesByCanton } from './services/annuaire.mjs';
 import {
-  acheterWallet, getCredits, debitSession, analyser, genererLettre, ocrDocument,
+  acheterWallet, getCredits, debitSession, creditSession, analyser, genererLettre, ocrDocument,
   analyserAI, ocrDocumentAI, genererLettreAI, estimerCout, getHistorique
 } from './services/premium.mjs';
 import { getAllStatistiques, getStatistiquesByDomaine } from './services/statistiques.mjs';
@@ -1037,12 +1037,16 @@ const server = createServer(async (req, res) => {
       const walletCheck = getCredits(sessionCode);
       if (walletCheck.error) return json(res, walletCheck.status || 403, { error: walletCheck.error, disclaimer: DISCLAIMER });
 
-      // Scope V1: bail, travail, dettes uniquement
-      const SUPPORTED_V3 = ['bail', 'travail', 'dettes'];
+      // Check minimum balance before running analysis (don't debit yet)
+      const MIN_BALANCE_CENTIMES = 5;
+      if (walletCheck.data.solde < MIN_BALANCE_CENTIMES) {
+        return json(res, 402, { error: 'Solde insuffisant', solde: walletCheck.data.solde, minimum: MIN_BALANCE_CENTIMES, disclaimer: DISCLAIMER });
+      }
 
       try {
         const result = await analyserCas(body.texte, body.canton, body.reponses);
         if (!result) {
+          // No charge — analysis failed to produce a result
           return json(res, 503, { error: 'Service IA indisponible', verification_status: 'insufficient', disclaimer: DISCLAIMER });
         }
 
@@ -1056,10 +1060,6 @@ const server = createServer(async (req, res) => {
           });
         }
 
-        // Check scope
-        const domaines = result.dossier_summary?.domaines || [];
-        const outOfScope = domaines.filter(d => !SUPPORTED_V3.includes(d));
-
         // Determine verification status
         let verification_status = 'verified';
         if (!result.analysis) verification_status = 'degraded';
@@ -1069,7 +1069,7 @@ const server = createServer(async (req, res) => {
         const ficheId = result.comprehension?.ficheId || result.comprehension?.fiches_pertinentes?.[0];
         const vulg = ficheId ? getVulgarisationForFiche(ficheId) : null;
 
-        // Debit wallet based on actual token usage (with 50% margin)
+        // Debit wallet AFTER successful analysis, based on actual token usage
         const usage = result.usage || {};
         const totalTokens = (usage.total_input || 0) + (usage.total_output || 0);
         // Approximate cost: Sonnet rates ~3$/1M input + 15$/1M output ≈ avg 9$/1M → ~0.8 CHF/1M → 0.08 ct/1K
@@ -1084,7 +1084,6 @@ const server = createServer(async (req, res) => {
           mode_crise: false,
           complet: result.complet,
           verification_status,
-          scope_warning: outOfScope.length > 0 ? `Domaines hors perimetre V1: ${outOfScope.join(', ')}. Analyse partielle.` : null,
           resume: result.resume,
           questions: result.questions,
           issues: result.comprehension?.issues,
@@ -1100,7 +1099,7 @@ const server = createServer(async (req, res) => {
           need_lawyer: result.analysis?.besoin_avocat || false,
           need_lawyer_reason: result.analysis?.besoin_avocat_raison || null,
           sources_count: result.dossier_summary?.sources_count || 0,
-          // V4 pipeline outputs — previously stripped
+          // V4 pipeline outputs
           certificate: result.certificate || null,
           argumentation: result.argumentation || null,
           committee: result.committee || null,
@@ -1111,6 +1110,7 @@ const server = createServer(async (req, res) => {
           disclaimer: DISCLAIMER
         });
       } catch (err) {
+        // No charge on error — user is not debited
         console.error('V3 analysis error:', err.message);
         return json(res, 500, { error: 'Erreur analyse', verification_status: 'insufficient', disclaimer: DISCLAIMER });
       }

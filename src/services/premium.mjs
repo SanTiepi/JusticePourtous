@@ -144,6 +144,22 @@ export function debitSession(sessionCode, apiCostCentimes, action = 'analyse') {
   return { charged, solde: wallet.solde };
 }
 
+/**
+ * Credit (refund) a session wallet.
+ * @param {string} sessionCode
+ * @param {number} amount — amount in centimes to refund
+ * @param {string} reason — reason for the refund
+ * @returns {{error?: string, status?: number, solde?: number}}
+ */
+export function creditSession(sessionCode, amount, reason) {
+  const { wallet, error, status } = getWallet(sessionCode);
+  if (error) return { error, status };
+  wallet.solde += amount;
+  wallet.historique.push({ action: 'remboursement', montant: amount, date: new Date().toISOString(), raison: reason });
+  saveWallets();
+  return { solde: wallet.solde };
+}
+
 export function acheterWallet(montantCentimes) {
   const solde = montantCentimes || WALLET_CREDITS_CENTIMES;
   const sessionCode = generateSessionCode();

@@ -117,6 +117,22 @@ const MAX_UPLOAD_SIZE = 10 * 1024 * 1024; // 10MB
 const MAX_QUERY_LENGTH = 2000; // max chars for search queries
 const MAX_BODY_SIZE = 100 * 1024; // 100KB for JSON bodies
 
+// ─── Input sanitization (anti-prompt injection) ──────────────────
+function sanitizeUserInput(text, maxLength = 5000) {
+  if (!text || typeof text !== 'string') return '';
+  // Truncate
+  let clean = text.slice(0, maxLength);
+  // Remove control characters (keep newlines and tabs)
+  clean = clean.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '');
+  // Remove obvious prompt injection patterns
+  clean = clean.replace(/ignore\s+(all\s+)?previous\s+instructions?/gi, '[filtered]');
+  clean = clean.replace(/system\s*prompt/gi, '[filtered]');
+  clean = clean.replace(/you\s+are\s+now/gi, '[filtered]');
+  clean = clean.replace(/act\s+as\s+(a|an)\s/gi, '[filtered] ');
+  clean = clean.replace(/\bDAN\b/g, '[filtered]');
+  return clean.trim();
+}
+
 // ─── Rate limiter (in-memory, per IP) ────────────────────────────
 const rateLimitStore = new Map();
 const RATE_LIMIT = { windowMs: 60000, maxRequests: 60 }; // 60 req/min
@@ -279,22 +295,29 @@ const server = createServer(async (req, res) => {
         let event;
         if (STRIPE_WEBHOOK_SECRET && sig) {
           try {
-            // Try signature verification first
             event = stripe.webhooks.constructEvent(rawBody, sig, STRIPE_WEBHOOK_SECRET);
           } catch (sigErr) {
-            // If signature fails, try with raw Stripe API (org keys can have different signing)
-            console.log('Webhook signature verification failed, parsing payload directly:', sigErr.message);
+            // Signature failed — verify via Stripe API instead of accepting blindly
+            console.error('Webhook signature failed:', sigErr.type || 'unknown');
             const payload = JSON.parse(rawBody.toString());
-            // Verify it's a real Stripe event by checking structure
-            if (payload.id && payload.type && payload.data?.object) {
-              event = payload;
+            if (payload.id && payload.type) {
+              try {
+                // Verify the event exists in Stripe (prevents forgery)
+                const verified = await stripe.events.retrieve(payload.id);
+                event = verified;
+                console.log('Webhook verified via API fallback:', payload.id);
+              } catch {
+                throw new Error('Event verification failed');
+              }
             } else {
               throw new Error('Invalid webhook payload');
             }
           }
+        } else if (!STRIPE_WEBHOOK_SECRET) {
+          // No webhook secret configured — reject in production
+          throw new Error('Webhook secret not configured');
         } else {
-          // No webhook secret — parse directly (dev mode)
-          event = JSON.parse(rawBody.toString());
+          throw new Error('Missing stripe-signature header');
         }
 
         if (event.type === 'checkout.session.completed') {
@@ -579,7 +602,7 @@ const server = createServer(async (req, res) => {
               letterText = apiData.content[0].text;
               // Debit translation cost
               const totalTokens = (apiData.usage?.input_tokens || 0) + (apiData.usage?.output_tokens || 0);
-              const apiCostCentimes = Math.max(1, Math.ceil(totalTokens / 1000 * 0.007));
+              const apiCostCentimes = Math.max(10, Math.ceil(totalTokens / 1000 * 0.035)); // x5 margin, min 10ct
               debitSession(sessionCode, apiCostCentimes, 'traduction_docx');
             }
           }
@@ -604,6 +627,7 @@ const server = createServer(async (req, res) => {
       const body = await parseBody(req);
       const sessionCode = body.session || req.headers['x-session'];
       if (!body.text) return json(res, 400, { error: 'text requis', disclaimer: DISCLAIMER });
+      const safeText = sanitizeUserInput(body.text, 25000); // translations can be long
 
       const LANG_MAP = {
         de: 'Allemand', it: 'Italien', en: 'Anglais', pt: 'Portugais',
@@ -628,7 +652,7 @@ const server = createServer(async (req, res) => {
           model: 'claude-haiku-4-5-20251001',
           max_tokens: 4000,
           system: systemPrompt,
-          messages: [{ role: 'user', content: body.text }]
+          messages: [{ role: 'user', content: safeText }]
         });
 
         const apiResp = await fetch('https://api.anthropic.com/v1/messages', {
@@ -643,8 +667,8 @@ const server = createServer(async (req, res) => {
 
         // Debit based on token usage — Haiku is cheap
         const totalTokens = (apiData.usage?.input_tokens || 0) + (apiData.usage?.output_tokens || 0);
-        // Haiku rates ~0.25$/1M input + 1.25$/1M output ≈ avg 0.75$/1M → ~0.065 CHF/1M → 0.007 ct/1K
-        const apiCostCentimes = Math.max(1, Math.ceil(totalTokens / 1000 * 0.007));
+        // Translation margin: x5 on API cost + minimum 10ct per translation
+        const apiCostCentimes = Math.max(10, Math.ceil(totalTokens / 1000 * 0.035));
         const debitResult = debitSession(sessionCode, apiCostCentimes, 'traduction');
 
         return json(res, 200, {
@@ -776,7 +800,7 @@ const server = createServer(async (req, res) => {
 
     // Recherche — LLM-first, keyword fallback
     if (path === '/api/search' && method === 'GET') {
-      const q = url.searchParams.get('q');
+      const q = sanitizeUserInput(url.searchParams.get('q'), MAX_QUERY_LENGTH);
       const canton = url.searchParams.get('canton');
       if (!q) return json(res, 400, { error: 'Paramètre q requis', disclaimer: DISCLAIMER });
 
@@ -1218,7 +1242,8 @@ const server = createServer(async (req, res) => {
       }
 
       try {
-        const result = await analyserCas(body.texte, body.canton, body.reponses);
+        const safeTexte = sanitizeUserInput(body.texte, 5000);
+        const result = await analyserCas(safeTexte, body.canton, body.reponses);
         if (!result) {
           // No charge — analysis failed to produce a result
           return json(res, 503, { error: 'Service IA indisponible', verification_status: 'insufficient', disclaimer: DISCLAIMER });

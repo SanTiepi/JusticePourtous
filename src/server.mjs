@@ -602,7 +602,7 @@ const server = createServer(async (req, res) => {
               letterText = apiData.content[0].text;
               // Debit translation cost
               const totalTokens = (apiData.usage?.input_tokens || 0) + (apiData.usage?.output_tokens || 0);
-              const apiCostCentimes = Math.max(10, Math.ceil(totalTokens / 1000 * 0.035)); // x5 margin, min 10ct
+              const apiCostCentimes = Math.max(4, Math.ceil(totalTokens / 1000 * 0.007)); // raw cost, debitSession adds x2.5
               debitSession(sessionCode, apiCostCentimes, 'traduction_docx');
             }
           }
@@ -665,10 +665,10 @@ const server = createServer(async (req, res) => {
         const apiData = await apiResp.json();
         const translated = apiData.content[0].text;
 
-        // Debit based on token usage — Haiku is cheap
+        // Debit based on token usage — debitSession adds x2.5 margin
         const totalTokens = (apiData.usage?.input_tokens || 0) + (apiData.usage?.output_tokens || 0);
-        // Translation margin: x5 on API cost + minimum 10ct per translation
-        const apiCostCentimes = Math.max(10, Math.ceil(totalTokens / 1000 * 0.035));
+        // Raw API cost in centimes (Haiku: ~0.007 ct/1K tokens), min 4ct → min 10ct after margin
+        const apiCostCentimes = Math.max(4, Math.ceil(totalTokens / 1000 * 0.007));
         const debitResult = debitSession(sessionCode, apiCostCentimes, 'traduction');
 
         return json(res, 200, {

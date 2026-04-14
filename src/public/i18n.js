@@ -1,13 +1,13 @@
 /**
  * JusticePourtous — i18n (internationalization)
- * Supports: FR (default), DE (Swiss German legal terminology)
+ * Supports: FR (default), DE (Swiss German), IT (Swiss Italian), EN (English), PT (Portuguese)
  *
  * Usage:
  *   <script src="/i18n.js"></script>
  *   t('nav.annuaire')           → "Annuaire" / "Verzeichnis"
  *   t('hero.subtitle', {name})  → interpolation with {{name}}
  *   setLang('de')               → switch + reload UI
- *   getLang()                    → 'fr' | 'de'
+ *   getLang()                    → 'fr' | 'de' | 'it' | 'en' | 'pt'
  */
 
 // ---------------------------------------------------------------------------
@@ -345,6 +345,9 @@ var I18N = {
     // -- Language switcher --
     'lang.fr': 'FR',
     'lang.de': 'DE',
+    'lang.it': 'IT',
+    'lang.en': 'EN',
+    'lang.pt': 'PT',
     'lang.switch_label': 'Langue',
   },
 
@@ -678,7 +681,1018 @@ var I18N = {
     // -- Language switcher --
     'lang.fr': 'FR',
     'lang.de': 'DE',
+    'lang.it': 'IT',
+    'lang.en': 'EN',
+    'lang.pt': 'PT',
     'lang.switch_label': 'Sprache',
+  },
+
+  it: {
+    // -- Navigation --
+    'nav.annuaire': 'Elenco',
+    'nav.methodologie': 'Metodologia',
+    'nav.premium': 'Premium',
+    'nav.accueil': 'Home',
+    'nav.nouvelle_recherche': 'Nuova ricerca',
+
+    // -- Quick exit --
+    'quickexit.label': 'Uscire',
+    'quickexit.sublabel': '— uscita rapida',
+    'quickexit.title': 'Lasciare rapidamente questo sito — reindirizzamento a MeteoSvizzera',
+
+    // -- Disclaimer --
+    'disclaimer.title': 'Informazione giuridica generale',
+    'disclaimer.text': 'JusticePourtous non sostituisce una consulenza legale personalizzata. Le informazioni sono fornite a titolo indicativo, senza garanzia di completezza.',
+    'disclaimer.text_full': 'JusticePourtous non sostituisce una consulenza legale personalizzata. Le informazioni sono fornite a titolo indicativo, senza garanzia di completezza. In caso di dubbio, consultate un professionista del diritto.',
+
+    // -- Footer --
+    'footer.legal': 'JusticePourtous fornisce informazioni giuridiche generali basate sul diritto svizzero vigente. Questo servizio non sostituisce una consulenza legale personalizzata.',
+    'footer.legal_full': 'JusticePourtous fornisce informazioni giuridiche generali basate sul diritto svizzero vigente. Questo servizio non sostituisce una consulenza legale personalizzata. In caso di dubbio, consultate un professionista del diritto.',
+    'footer.copy': '\u00a9 2026 JusticePourtous',
+
+    // -- Homepage: Hero --
+    'hero.eyebrow': 'Diritto svizzero pratico',
+    'hero.title_line1': 'Il diritto svizzero,',
+    'hero.title_accent': 'accessibile a tutti.',
+    'hero.subtitle': 'JusticePourtous identifica la vostra situazione giuridica, vi indica cosa fare, entro quale termine e a chi rivolgervi \u2014 gratuitamente e in modo anonimo.',
+
+    // -- Homepage: Process --
+    'process.eyebrow': 'Come funziona',
+    'process.step1_title': 'Descrivete',
+    'process.step1_text': 'Spiegate la vostra situazione in poche parole, come fareste con un amico.',
+    'process.step2_title': 'Capite',
+    'process.step2_text': 'Identifichiamo la vostra situazione giuridica, le leggi applicabili e la giurisprudenza.',
+    'process.step3_title': 'Agite',
+    'process.step3_text': 'Termini, documenti, autorit\u00e0 competente, modello di lettera e contatti gratuiti.',
+
+    // -- Homepage: Domains --
+    'domains.eyebrow': 'Sfoglia per settore giuridico',
+
+    // -- Homepage: Search --
+    'search.eyebrow': 'Analizzare la mia situazione',
+    'search.subtitle': 'Descrivete il vostro problema e la nostra IA identifica i vostri diritti, i termini e le procedure da seguire.',
+    'search.placeholder': 'Il mio proprietario rifiuta di restituire la cauzione...',
+    'search.aria_label': 'Descrivete il vostro problema giuridico',
+    'search.submit': 'Analizzare',
+    'search.suggestion_caution': 'Cauzione non restituita',
+    'search.suggestion_licenciement': 'Licenziamento e malattia',
+    'search.suggestion_heures': 'Ore supplementari non pagate',
+    'search.suggestion_commandement': 'Precetto esecutivo',
+    'search.suggestion_pension': 'Alimenti non pagati',
+    'search.fill_caution': 'il mio proprietario rifiuta di restituire la cauzione',
+    'search.fill_licenciement': 'licenziamento durante congedo malattia',
+    'search.fill_heures': 'ore supplementari non pagate',
+    'search.fill_commandement': 'ho ricevuto un precetto esecutivo',
+    'search.fill_pension': 'il mio ex non paga gli alimenti',
+
+    // -- Homepage: Premium CTA --
+    'premiumcta.title': 'Analisi approfondita',
+    'premiumcta.text': 'La nostra IA analizza il vostro dossier in profondit\u00e0: argomentazione contraddittoria, certificato di copertura, generazione di lettere e documenti Word pronti da inviare.',
+    'premiumcta.button': 'Scoprire il Premium',
+    'premiumcta.feature1_title': 'Domande mirate',
+    'premiumcta.feature1_text': 'L\'IA pone le domande giuste per affinare il vostro dossier',
+    'premiumcta.feature2_title': 'Argomenti verificati',
+    'premiumcta.feature2_text': 'Pro e contro, con fonti giuridiche',
+    'premiumcta.feature3_title': 'Lettere .docx',
+    'premiumcta.feature3_text': 'Diffida, opposizione, contestazione pronte da firmare',
+
+    // -- Homepage: Trust band --
+    'trust.anonymous_title': 'Anonimo',
+    'trust.anonymous_text': 'Nessun dato memorizzato',
+    'trust.sources_title': 'Fonti verificate',
+    'trust.sources_text': 'Fedlex, giurisprudenza TF',
+    'trust.law_title': 'Diritto svizzero',
+    'trust.law_text': 'Federale e cantonale',
+    'trust.free_title': 'Gratuito',
+    'trust.free_text': 'Consultazione libera',
+
+    // -- Homepage: Stat --
+    'stat.text': 'degli svizzeri rinunciano a far valere i propri diritti a causa dei costi.',
+    'stat.source': 'sondaggio gfs.bern, 2023',
+
+    // -- Results page --
+    'result.title': 'Risultato della vostra consultazione',
+    'result.refine_aria': 'Precisare la ricerca',
+    'result.refine_submit': 'Rilanciare',
+    'result.your_situation': 'La vostra situazione',
+    'result.your_search': 'La vostra ricerca',
+    'result.juridical_qualification': 'Qualificazione giuridica',
+    'result.qualification': 'Qualificazione',
+    'result.articles_title': 'Articoli di legge applicabili',
+    'result.jurisprudence_title': 'Giurisprudenza del Tribunale federale',
+    'result.templates_title': 'Modelli di lettera',
+    'result.services_title': 'Servizi competenti',
+    'result.delais_title': 'Termini da conoscere',
+    'result.anti_erreurs_title': 'Errori da evitare',
+    'result.lacunes_title': 'Ci\u00f2 che non sappiamo ancora',
+    'result.lacune_type_default': 'Informazione mancante',
+    'result.alternatives_title': 'Situazioni simili',
+    'result.normative_rules_title': 'Regole giuridiche applicabili',
+    'result.vulg_title': 'Domande frequenti dei cittadini',
+    'result.baremes_title': 'Tassi di riferimento',
+    'result.baremes_label': 'Tasso ipotecario di riferimento UFAB',
+    'result.baremes_consequence': 'Base per contestare un aumento dell\'affitto (CO 269a). Pubblicato il {{date}}',
+    'result.source_footer': 'Fonti: {{articles}} articoli, {{arrets}} sentenze',
+    'result.source_rules': '{{count}} regole',
+    'result.no_result': 'Nessun risultato. Verificate la vostra descrizione.',
+    'result.error_fiche': 'Scheda non trovata.',
+    'result.error_connection': 'Errore di connessione.',
+    'result.error_no_query': 'Nessuna ricerca specificata.',
+    'result.back_home': 'Ritorno alla home',
+    'result.model_letter': 'Modello di lettera',
+
+    // -- Results: Jurisprudence roles --
+    'role.favorable': 'Favorevole',
+    'role.defavorable': 'Sfavorevole',
+    'role.neutre': 'Neutro',
+
+    // -- Results: Confidence levels --
+    'confidence.certain': 'Certo',
+    'confidence.probable': 'Probabile',
+    'confidence.variable': 'Variabile',
+    'confidence.incertain': 'Incerto',
+
+    // -- Results: Tier badges --
+    'tier.1': 'LEGGE',
+    'tier.2': 'TF',
+    'tier.3': 'PRATICA',
+
+    // -- Results: Premium CTA (in-results) --
+    'premiumcta_result.title': 'Andare oltre con l\'analisi premium',
+    'premiumcta_result.badge': 'Da CHF 0.15',
+    'premiumcta_result.intro': 'Questa prima valutazione vi fornisce le basi. L\'analisi premium va molto pi\u00f9 lontano:',
+    'premiumcta_result.q_title': 'Domande personalizzate',
+    'premiumcta_result.q_text': 'L\'IA pone le domande che cambiano la diagnosi \u2014 non domande generiche',
+    'premiumcta_result.arg_title': 'Argomentazione contraddittoria',
+    'premiumcta_result.arg_text': 'Argomenti a favore E contro la vostra posizione, con articoli di legge e giurisprudenza',
+    'premiumcta_result.cert_title': 'Certificato di copertura',
+    'premiumcta_result.cert_text': 'Verifichiamo che non manchi nulla nel vostro dossier prima di agire',
+    'premiumcta_result.letter_title': 'Lettere pronte da inviare',
+    'premiumcta_result.letter_text': 'Diffida, opposizione, contestazione \u2014 in .docx con le vostre informazioni',
+    'premiumcta_result.button': 'Avviare l\'analisi premium',
+
+    // -- Results: Upsell --
+    'upsell.title': 'Avete bisogno di un\'analisi personalizzata?',
+    'upsell.text': 'La nostra IA analizza la vostra situazione in dettaglio per CHF 0.03 a 0.10 per domanda.',
+    'upsell.button': 'Spazio Premium',
+
+    // -- Common actions --
+    'action.analyser': 'Analizzare',
+    'action.imprimer': 'Stampare / Salvare PDF',
+    'action.imprimer_short': 'Stampare / PDF',
+    'action.copier': 'Copiare',
+    'action.copier_texte': 'Copiare il testo',
+    'action.copie': 'Copiato!',
+    'action.telecharger_docx': 'Scaricare .docx',
+    'action.nouvelle_consultation': 'Nuova consultazione',
+    'action.nouvelle_recherche': 'Nuova ricerca',
+    'action.afficher': 'Mostrare',
+    'action.masquer': 'Nascondere',
+    'action.suivant': 'Seguente',
+    'action.precedent': 'Precedente',
+    'action.voir_droits': 'Vedere i miei diritti',
+    'action.site_web': 'Sito web',
+    'action.trouver_avocat': 'Trovare un avvocato',
+    'action.activer': 'Attivare',
+    'action.affiner': 'Affinare l\'analisi',
+
+    // -- Consultation --
+    'consult.title': 'Consultazione',
+    'consult.question_n': 'Domanda {{n}} su {{total}}',
+    'consult.loading': 'Caricamento...',
+    'consult.analysis_loading': 'Analisi in corso',
+    'consult.canton_select': '-- Cantone --',
+    'consult.error': 'Si \u00e8 verificato un errore.',
+
+    // -- Premium page --
+    'premium.eyebrow': 'Spazio Premium',
+    'premium.title': 'Analisi giuridica personalizzata',
+    'premium.subtitle': 'Intelligenza artificiale al servizio della vostra situazione giuridica.',
+    'premium.offer_title': 'Analisi giuridica personalizzata con IA',
+    'premium.offer_features': 'Domande mirate, argomentazione contraddittoria, certificato di copertura, lettere pronte da inviare in .docx.',
+    'premium.pricing_one_label': 'Un problema',
+    'premium.pricing_one_detail': 'Sufficiente per 1 dossier semplice con analisi + lettera',
+    'premium.pricing_one_btn': 'Caricare CHF 5',
+    'premium.pricing_rec_label': 'Raccomandato',
+    'premium.pricing_rec_detail': 'Copre da 1 a 3 dossier \u2014 la scelta pi\u00f9 comune',
+    'premium.pricing_rec_btn': 'Caricare CHF 10',
+    'premium.pricing_complex_label': 'Dossier complesso',
+    'premium.pricing_complex_detail': 'Per situazioni multi-settore o che richiedono pi\u00f9 lettere',
+    'premium.pricing_complex_btn': 'Caricare CHF 20',
+    'premium.cost_table_title': 'Costo indicativo per operazione',
+    'premium.cost_simple': 'Analisi semplice',
+    'premium.cost_simple_range': 'CHF 0.15 \u2013 0.25',
+    'premium.cost_questions': 'Analisi + domande + affinamento',
+    'premium.cost_questions_range': 'CHF 0.30 \u2013 0.50',
+    'premium.cost_dossier': 'Dossier completo con lettera',
+    'premium.cost_dossier_range': 'CHF 0.50 \u2013 1.00',
+    'premium.cost_complex': 'Dossier complesso (pi\u00f9 settori, pi\u00f9 lettere)',
+    'premium.cost_complex_range': 'CHF 1.00 \u2013 3.00',
+    'premium.cost_letter': 'Lettera supplementare (.docx)',
+    'premium.cost_letter_range': 'CHF 0.05 \u2013 0.10',
+    'premium.cost_note': 'Il costo esatto viene mostrato dopo ogni operazione. Il vostro saldo pu\u00f2 essere ricaricato in qualsiasi momento.',
+    'premium.code_label': 'Avete un codice di accesso?',
+    'premium.code_placeholder': 'Inserire il codice',
+    'premium.wallet_label': 'Saldo rimanente',
+    'premium.analyze_title': 'Analizzare la vostra situazione',
+    'premium.analyze_cost_hint': 'Costo stimato: CHF 0.03 a 0.10 per analisi',
+    'premium.analyze_placeholder': 'Descrivete la vostra situazione giuridica in dettaglio...',
+    'premium.analyze_submit': 'Analizzare la mia situazione',
+    'premium.upload_label': 'Allegare un documento (PDF, immagine)',
+    'premium.upload_change': 'Cambiare documento',
+    'premium.analysis_label': 'Analisi',
+    'premium.letter_generated': 'Lettera generata',
+    'premium.history_title': 'Cronologia',
+    'premium.history_empty': 'Nessuna azione',
+    'premium.generate_letter': 'Generare la lettera',
+    'premium.print': 'Stampare',
+
+    // -- Premium: Letter types --
+    'letter.mise_en_demeure': 'Diffida',
+    'letter.contestation': 'Contestazione',
+    'letter.opposition': 'Opposizione',
+    'letter.resiliation': 'Disdetta',
+    'letter.plainte': 'Denuncia',
+
+    // -- Premium: V4 response --
+    'v4.questions_title': 'Domande per affinare l\'analisi',
+    'v4.critique': 'Critico',
+    'v4.resume': 'Riassunto',
+    'v4.arguments_title': 'Argomenti verificati',
+    'v4.objections_title': 'Obiezioni possibili',
+    'v4.deadlines_title': 'Termini critici',
+    'v4.fatal_errors_title': 'Errori da evitare assolutamente',
+    'v4.action_plan': 'Piano d\'azione',
+    'v4.certificate_title': 'Certificato di copertura',
+    'v4.certificate_score': 'Punteggio',
+    'v4.lawyer_recommended': 'Si raccomanda un avvocato',
+    'v4.sources_count': 'Analisi basata su {{count}} fonti',
+    'v4.cost_receipt': 'Costo di questa analisi: CHF {{cost}} \u2014 Saldo rimanente: CHF {{remaining}}',
+    'v4.no_result': 'Nessun risultato. Verificate la vostra descrizione.',
+    'v4.no_text': 'Nessun testo da analizzare.',
+    'v4.refine_loading': 'Affinamento in corso...',
+
+    // -- Premium: Loading messages --
+    'loading.sub': 'L\'analisi completa richiede da 10 a 30 secondi',
+    'loading.msg_01': 'Comprensione della vostra situazione...',
+    'loading.msg_02': 'Identificazione dei problemi giuridici...',
+    'loading.msg_03': 'Costruzione del dossier contraddittorio...',
+    'loading.msg_04': 'Ricerca degli articoli di legge applicabili...',
+    'loading.msg_05': 'Consultazione della giurisprudenza del TF...',
+    'loading.msg_06': 'Analisi degli argomenti pro e contro...',
+    'loading.msg_07': 'Verifica del certificato di copertura...',
+    'loading.msg_08': 'Valutazione del comitato di esperti...',
+    'loading.msg_09': 'Compilazione delle regole normative...',
+    'loading.msg_10': 'Identificazione dei termini critici...',
+    'loading.msg_11': 'Ricerca degli errori fatali da evitare...',
+    'loading.msg_12': 'Calcolo della fascia di importo...',
+    'loading.msg_13': 'Verifica delle fonti giuridiche...',
+    'loading.msg_14': 'Generazione delle domande di approfondimento...',
+    'loading.msg_15': 'Preparazione dell\'analisi completa...',
+    'loading.msg_16': 'Incrocio con le tariffe cantonali...',
+    'loading.msg_17': 'Verifica della ricevibilit\u00e0...',
+    'loading.msg_18': 'Analisi delle prove da raccogliere...',
+    'loading.msg_19': 'Identificazione dei contatti competenti...',
+    'loading.msg_20': 'Finalizzazione del rapporto...',
+
+    // -- Search result loading messages --
+    'loading_search.sub': 'Di solito richiede da 5 a 15 secondi',
+    'loading_search.msg_01': 'Lettura della vostra situazione...',
+    'loading_search.msg_02': 'Identificazione del settore giuridico...',
+    'loading_search.msg_03': 'Ricerca degli articoli di legge applicabili...',
+    'loading_search.msg_04': 'Consultazione della giurisprudenza del Tribunale federale...',
+    'loading_search.msg_05': 'Verifica dei termini legali...',
+    'loading_search.msg_06': 'Analisi delle condizioni di ricevibilit\u00e0...',
+    'loading_search.msg_07': 'Estrazione dei fatti pertinenti...',
+    'loading_search.msg_08': 'Incrocio con le schede verificate...',
+    'loading_search.msg_09': 'Valutazione della complessit\u00e0 giuridica...',
+    'loading_search.msg_10': 'Ricerca dei servizi competenti nel vostro cantone...',
+    'loading_search.msg_11': 'Verifica dei modelli di lettera disponibili...',
+    'loading_search.msg_12': 'Analisi degli errori frequenti da evitare...',
+    'loading_search.msg_13': 'Consultazione delle tariffe e dei tassi di riferimento...',
+    'loading_search.msg_14': 'Compilazione delle regole normative applicabili...',
+    'loading_search.msg_15': 'Costruzione del piano d\'azione personalizzato...',
+    'loading_search.msg_16': 'Verifica delle fonti e dei riferimenti...',
+    'loading_search.msg_17': 'Ricerca di giurisprudenza contraddittoria...',
+    'loading_search.msg_18': 'Valutazione del livello di fiducia...',
+    'loading_search.msg_19': 'Identificazione delle lacune informative...',
+    'loading_search.msg_20': 'Preparazione del vostro dossier...',
+
+    // -- Annuaire page --
+    'annuaire.eyebrow': 'Risorse',
+    'annuaire.title': 'Elenco dei servizi giuridici',
+    'annuaire.subtitle': 'Trovate i servizi competenti nel vostro cantone.',
+    'annuaire.canton_label': 'Cantone',
+    'annuaire.canton_select': '-- Scegliere un cantone --',
+    'annuaire.filter_all': 'Tutti',
+    'annuaire.filter_asloca': 'ASI',
+    'annuaire.filter_csp': 'CSP',
+    'annuaire.filter_syndicat': 'Sindacato',
+    'annuaire.filter_conciliation': 'Conciliazione',
+    'annuaire.filter_aide': 'Assistenza giudiziaria',
+    'annuaire.services_count': 'Servizi disponibili ({{count}})',
+    'annuaire.no_services': 'Nessun servizio registrato per questo cantone.',
+    'annuaire.no_services_type': 'Nessun servizio di questo tipo in questo cantone.',
+    'annuaire.error_load': 'Impossibile caricare i servizi. Verificate che il server sia in funzione.',
+
+    // -- Methodologie page --
+    'methodo.eyebrow': 'Trasparenza',
+    'methodo.title': 'Come funziona JusticePourtous',
+
+    // -- Errors / alerts --
+    'error.payment_create': 'Impossibile creare la sessione di pagamento',
+    'error.payment_connection': 'Errore di connessione al servizio di pagamento.',
+    'error.payment_cancelled': 'Pagamento annullato. Potete riprovare.',
+    'error.payment_processing': 'Il pagamento \u00e8 in corso. Ricaricate la pagina tra qualche istante.',
+    'error.charge_failed': 'Errore durante il caricamento. Riprovate.',
+    'error.analysis_failed': 'Errore durante l\'analisi. Riprovate.',
+    'error.refine_failed': 'Errore durante l\'affinamento.',
+    'error.generation_failed': 'Errore durante la generazione.',
+    'error.docx_failed': 'Errore durante la generazione del documento.',
+    'error.download_failed': 'Errore durante il download.',
+    'error.file_too_large': 'File troppo grande (max 10 MB)',
+    'error.extraction': 'Estrazione del documento...',
+    'error.no_letter': 'Nessuna lettera generata',
+
+    // -- Language switcher --
+    'lang.fr': 'FR',
+    'lang.de': 'DE',
+    'lang.it': 'IT',
+    'lang.en': 'EN',
+    'lang.pt': 'PT',
+    'lang.switch_label': 'Lingua',
+  },
+
+  en: {
+    // -- Navigation --
+    'nav.annuaire': 'Directory',
+    'nav.methodologie': 'Methodology',
+    'nav.premium': 'Premium',
+    'nav.accueil': 'Home',
+    'nav.nouvelle_recherche': 'New search',
+
+    // -- Quick exit --
+    'quickexit.label': 'Leave',
+    'quickexit.sublabel': '— quick exit',
+    'quickexit.title': 'Quickly leave this site — redirects to MeteoSwiss',
+
+    // -- Disclaimer --
+    'disclaimer.title': 'General legal information',
+    'disclaimer.text': 'JusticePourtous does not replace personalised legal advice from a lawyer. The information is provided for general guidance only, without any guarantee of completeness.',
+    'disclaimer.text_full': 'JusticePourtous does not replace personalised legal advice from a lawyer. The information is provided for general guidance only, without any guarantee of completeness. If in doubt, consult a legal professional.',
+
+    // -- Footer --
+    'footer.legal': 'JusticePourtous provides general legal information based on Swiss law in force. This service does not replace personalised legal advice.',
+    'footer.legal_full': 'JusticePourtous provides general legal information based on Swiss law in force. This service does not replace personalised legal advice. If in doubt, consult a legal professional.',
+    'footer.copy': '\u00a9 2026 JusticePourtous',
+
+    // -- Homepage: Hero --
+    'hero.eyebrow': 'Practical Swiss law',
+    'hero.title_line1': 'Swiss law,',
+    'hero.title_accent': 'accessible to all.',
+    'hero.subtitle': 'JusticePourtous identifies your legal situation, tells you what to do, by when, and who to contact \u2014 free and anonymous.',
+
+    // -- Homepage: Process --
+    'process.eyebrow': 'How it works',
+    'process.step1_title': 'Describe',
+    'process.step1_text': 'Explain your situation in a few words, as you would to a friend.',
+    'process.step2_title': 'Understand',
+    'process.step2_text': 'We identify your legal situation, the applicable laws and case law.',
+    'process.step3_title': 'Act',
+    'process.step3_text': 'Deadlines, documents, competent authority, letter template and free contacts.',
+
+    // -- Homepage: Domains --
+    'domains.eyebrow': 'Browse by legal area',
+
+    // -- Homepage: Search --
+    'search.eyebrow': 'Analyse my situation',
+    'search.subtitle': 'Describe your problem and our AI identifies your rights, deadlines and the steps to follow.',
+    'search.placeholder': 'My landlord refuses to return my rental deposit...',
+    'search.aria_label': 'Describe your legal problem',
+    'search.submit': 'Analyse',
+    'search.suggestion_caution': 'Deposit not returned',
+    'search.suggestion_licenciement': 'Dismissal & illness',
+    'search.suggestion_heures': 'Unpaid overtime',
+    'search.suggestion_commandement': 'Payment order',
+    'search.suggestion_pension': 'Unpaid maintenance',
+    'search.fill_caution': 'my landlord refuses to return my rental deposit',
+    'search.fill_licenciement': 'dismissal during sick leave',
+    'search.fill_heures': 'unpaid overtime',
+    'search.fill_commandement': 'I received a payment order (debt enforcement)',
+    'search.fill_pension': 'my ex does not pay maintenance',
+
+    // -- Homepage: Premium CTA --
+    'premiumcta.title': 'In-depth analysis',
+    'premiumcta.text': 'Our AI analyses your case in depth: adversarial argumentation, coverage certificate, letter generation and Word documents ready to send.',
+    'premiumcta.button': 'Discover Premium',
+    'premiumcta.feature1_title': 'Targeted questions',
+    'premiumcta.feature1_text': 'The AI asks the right questions to refine your case',
+    'premiumcta.feature2_title': 'Verified arguments',
+    'premiumcta.feature2_text': 'For and against, with legal sources',
+    'premiumcta.feature3_title': 'Letters as .docx',
+    'premiumcta.feature3_text': 'Formal notice, objection, contestation ready to sign',
+
+    // -- Homepage: Trust band --
+    'trust.anonymous_title': 'Anonymous',
+    'trust.anonymous_text': 'No data stored',
+    'trust.sources_title': 'Verified sources',
+    'trust.sources_text': 'Fedlex, Federal Supreme Court case law',
+    'trust.law_title': 'Swiss law',
+    'trust.law_text': 'Federal and cantonal',
+    'trust.free_title': 'Free',
+    'trust.free_text': 'Open consultation',
+
+    // -- Homepage: Stat --
+    'stat.text': 'of Swiss residents give up asserting their rights due to cost.',
+    'stat.source': 'gfs.bern survey, 2023',
+
+    // -- Results page --
+    'result.title': 'Result of your consultation',
+    'result.refine_aria': 'Refine your search',
+    'result.refine_submit': 'Search again',
+    'result.your_situation': 'Your situation',
+    'result.your_search': 'Your search',
+    'result.juridical_qualification': 'Legal qualification',
+    'result.qualification': 'Qualification',
+    'result.articles_title': 'Applicable legal articles',
+    'result.jurisprudence_title': 'Federal Supreme Court case law',
+    'result.templates_title': 'Letter templates',
+    'result.services_title': 'Competent services',
+    'result.delais_title': 'Key deadlines',
+    'result.anti_erreurs_title': 'Mistakes to avoid',
+    'result.lacunes_title': 'What we do not know yet',
+    'result.lacune_type_default': 'Missing information',
+    'result.alternatives_title': 'Similar situations',
+    'result.normative_rules_title': 'Applicable legal rules',
+    'result.vulg_title': 'Frequently asked questions',
+    'result.baremes_title': 'Reference rates',
+    'result.baremes_label': 'SFHO mortgage reference rate',
+    'result.baremes_consequence': 'Basis for contesting a rent increase (CO 269a). Published on {{date}}',
+    'result.source_footer': 'Sources: {{articles}} articles, {{arrets}} rulings',
+    'result.source_rules': '{{count}} rules',
+    'result.no_result': 'No results. Please check your description.',
+    'result.error_fiche': 'Fact sheet not found.',
+    'result.error_connection': 'Connection error.',
+    'result.error_no_query': 'No search specified.',
+    'result.back_home': 'Back to home',
+    'result.model_letter': 'Letter template',
+
+    // -- Results: Jurisprudence roles --
+    'role.favorable': 'Favourable',
+    'role.defavorable': 'Unfavourable',
+    'role.neutre': 'Neutral',
+
+    // -- Results: Confidence levels --
+    'confidence.certain': 'Certain',
+    'confidence.probable': 'Probable',
+    'confidence.variable': 'Variable',
+    'confidence.incertain': 'Uncertain',
+
+    // -- Results: Tier badges --
+    'tier.1': 'LAW',
+    'tier.2': 'FSC',
+    'tier.3': 'PRACTICE',
+
+    // -- Results: Premium CTA (in-results) --
+    'premiumcta_result.title': 'Go further with premium analysis',
+    'premiumcta_result.badge': 'From CHF 0.15',
+    'premiumcta_result.intro': 'This initial assessment gives you the basics. The premium analysis goes much further:',
+    'premiumcta_result.q_title': 'Personalised questions',
+    'premiumcta_result.q_text': 'The AI asks the questions that change the diagnosis \u2014 not generic questions',
+    'premiumcta_result.arg_title': 'Adversarial argumentation',
+    'premiumcta_result.arg_text': 'Arguments for AND against your position, with legal articles and case law',
+    'premiumcta_result.cert_title': 'Coverage certificate',
+    'premiumcta_result.cert_text': 'We check that nothing is missing in your case before you act',
+    'premiumcta_result.letter_title': 'Ready-to-send letters',
+    'premiumcta_result.letter_text': 'Formal notice, objection, contestation \u2014 as .docx with your information',
+    'premiumcta_result.button': 'Start premium analysis',
+
+    // -- Results: Upsell --
+    'upsell.title': 'Need a personalised analysis?',
+    'upsell.text': 'Our AI analyses your situation in detail for CHF 0.03 to 0.10 per question.',
+    'upsell.button': 'Premium area',
+
+    // -- Common actions --
+    'action.analyser': 'Analyse',
+    'action.imprimer': 'Print / Save as PDF',
+    'action.imprimer_short': 'Print / PDF',
+    'action.copier': 'Copy',
+    'action.copier_texte': 'Copy text',
+    'action.copie': 'Copied!',
+    'action.telecharger_docx': 'Download .docx',
+    'action.nouvelle_consultation': 'New consultation',
+    'action.nouvelle_recherche': 'New search',
+    'action.afficher': 'Show',
+    'action.masquer': 'Hide',
+    'action.suivant': 'Next',
+    'action.precedent': 'Previous',
+    'action.voir_droits': 'See my rights',
+    'action.site_web': 'Website',
+    'action.trouver_avocat': 'Find a lawyer',
+    'action.activer': 'Activate',
+    'action.affiner': 'Refine analysis',
+
+    // -- Consultation --
+    'consult.title': 'Consultation',
+    'consult.question_n': 'Question {{n}} of {{total}}',
+    'consult.loading': 'Loading...',
+    'consult.analysis_loading': 'Analysis in progress',
+    'consult.canton_select': '-- Canton --',
+    'consult.error': 'An error has occurred.',
+
+    // -- Premium page --
+    'premium.eyebrow': 'Premium area',
+    'premium.title': 'Personalised legal analysis',
+    'premium.subtitle': 'Artificial intelligence at the service of your legal situation.',
+    'premium.offer_title': 'Personalised legal analysis by AI',
+    'premium.offer_features': 'Targeted questions, adversarial argumentation, coverage certificate, ready-to-send letters as .docx.',
+    'premium.pricing_one_label': 'One issue',
+    'premium.pricing_one_detail': 'Sufficient for 1 simple case with analysis + letter',
+    'premium.pricing_one_btn': 'Load CHF 5',
+    'premium.pricing_rec_label': 'Recommended',
+    'premium.pricing_rec_detail': 'Covers 1 to 3 cases \u2014 the most common choice',
+    'premium.pricing_rec_btn': 'Load CHF 10',
+    'premium.pricing_complex_label': 'Complex case',
+    'premium.pricing_complex_detail': 'For multi-area situations or those requiring several letters',
+    'premium.pricing_complex_btn': 'Load CHF 20',
+    'premium.cost_table_title': 'Indicative cost per operation',
+    'premium.cost_simple': 'Simple analysis',
+    'premium.cost_simple_range': 'CHF 0.15 \u2013 0.25',
+    'premium.cost_questions': 'Analysis + questions + refinement',
+    'premium.cost_questions_range': 'CHF 0.30 \u2013 0.50',
+    'premium.cost_dossier': 'Complete case with letter',
+    'premium.cost_dossier_range': 'CHF 0.50 \u2013 1.00',
+    'premium.cost_complex': 'Complex case (multiple areas, several letters)',
+    'premium.cost_complex_range': 'CHF 1.00 \u2013 3.00',
+    'premium.cost_letter': 'Additional letter (.docx)',
+    'premium.cost_letter_range': 'CHF 0.05 \u2013 0.10',
+    'premium.cost_note': 'The exact cost is shown after each operation. Your balance can be topped up at any time.',
+    'premium.code_label': 'Do you have an access code?',
+    'premium.code_placeholder': 'Enter your code',
+    'premium.wallet_label': 'Remaining balance',
+    'premium.analyze_title': 'Analyse your situation',
+    'premium.analyze_cost_hint': 'Estimated cost: CHF 0.03 to 0.10 per analysis',
+    'premium.analyze_placeholder': 'Describe your legal situation in detail...',
+    'premium.analyze_submit': 'Analyse my situation',
+    'premium.upload_label': 'Attach a document (PDF, image)',
+    'premium.upload_change': 'Change document',
+    'premium.analysis_label': 'Analysis',
+    'premium.letter_generated': 'Generated letter',
+    'premium.history_title': 'History',
+    'premium.history_empty': 'No actions',
+    'premium.generate_letter': 'Generate letter',
+    'premium.print': 'Print',
+
+    // -- Premium: Letter types --
+    'letter.mise_en_demeure': 'Formal notice',
+    'letter.contestation': 'Contestation',
+    'letter.opposition': 'Objection',
+    'letter.resiliation': 'Termination',
+    'letter.plainte': 'Criminal complaint',
+
+    // -- Premium: V4 response --
+    'v4.questions_title': 'Questions to refine the analysis',
+    'v4.critique': 'Critical',
+    'v4.resume': 'Summary',
+    'v4.arguments_title': 'Verified arguments',
+    'v4.objections_title': 'Possible objections',
+    'v4.deadlines_title': 'Critical deadlines',
+    'v4.fatal_errors_title': 'Mistakes to absolutely avoid',
+    'v4.action_plan': 'Action plan',
+    'v4.certificate_title': 'Coverage certificate',
+    'v4.certificate_score': 'Score',
+    'v4.lawyer_recommended': 'A lawyer is recommended',
+    'v4.sources_count': 'Analysis based on {{count}} sources',
+    'v4.cost_receipt': 'Cost of this analysis: CHF {{cost}} \u2014 Remaining balance: CHF {{remaining}}',
+    'v4.no_result': 'No results. Please check your description.',
+    'v4.no_text': 'No text to analyse.',
+    'v4.refine_loading': 'Refinement in progress...',
+
+    // -- Premium: Loading messages --
+    'loading.sub': 'The full analysis takes 10 to 30 seconds',
+    'loading.msg_01': 'Understanding your situation...',
+    'loading.msg_02': 'Identifying the legal issues...',
+    'loading.msg_03': 'Building the adversarial case file...',
+    'loading.msg_04': 'Searching for applicable legal articles...',
+    'loading.msg_05': 'Consulting Federal Supreme Court case law...',
+    'loading.msg_06': 'Analysing arguments for and against...',
+    'loading.msg_07': 'Checking the coverage certificate...',
+    'loading.msg_08': 'Expert committee evaluation...',
+    'loading.msg_09': 'Compiling normative rules...',
+    'loading.msg_10': 'Identifying critical deadlines...',
+    'loading.msg_11': 'Searching for fatal errors to avoid...',
+    'loading.msg_12': 'Calculating the amount range...',
+    'loading.msg_13': 'Verifying legal sources...',
+    'loading.msg_14': 'Generating follow-up questions...',
+    'loading.msg_15': 'Preparing the complete analysis...',
+    'loading.msg_16': 'Cross-referencing cantonal benchmarks...',
+    'loading.msg_17': 'Checking admissibility...',
+    'loading.msg_18': 'Analysing evidence to gather...',
+    'loading.msg_19': 'Identifying competent contacts...',
+    'loading.msg_20': 'Finalising the report...',
+
+    // -- Search result loading messages --
+    'loading_search.sub': 'This usually takes 5 to 15 seconds',
+    'loading_search.msg_01': 'Reading your situation...',
+    'loading_search.msg_02': 'Identifying the legal area...',
+    'loading_search.msg_03': 'Searching for applicable legal articles...',
+    'loading_search.msg_04': 'Consulting Federal Supreme Court case law...',
+    'loading_search.msg_05': 'Checking statutory deadlines...',
+    'loading_search.msg_06': 'Analysing admissibility conditions...',
+    'loading_search.msg_07': 'Extracting relevant facts...',
+    'loading_search.msg_08': 'Cross-referencing with verified fact sheets...',
+    'loading_search.msg_09': 'Assessing legal complexity...',
+    'loading_search.msg_10': 'Searching for competent services in your canton...',
+    'loading_search.msg_11': 'Checking available letter templates...',
+    'loading_search.msg_12': 'Analysing common mistakes to avoid...',
+    'loading_search.msg_13': 'Consulting benchmarks and reference rates...',
+    'loading_search.msg_14': 'Compiling applicable legal rules...',
+    'loading_search.msg_15': 'Building your personalised action plan...',
+    'loading_search.msg_16': 'Verifying sources and references...',
+    'loading_search.msg_17': 'Searching for contrary case law...',
+    'loading_search.msg_18': 'Assessing the confidence level...',
+    'loading_search.msg_19': 'Identifying information gaps...',
+    'loading_search.msg_20': 'Preparing your case file...',
+
+    // -- Annuaire page --
+    'annuaire.eyebrow': 'Resources',
+    'annuaire.title': 'Legal services directory',
+    'annuaire.subtitle': 'Find the competent services in your canton.',
+    'annuaire.canton_label': 'Canton',
+    'annuaire.canton_select': '-- Choose a canton --',
+    'annuaire.filter_all': 'All',
+    'annuaire.filter_asloca': 'Tenants\' association',
+    'annuaire.filter_csp': 'CSP',
+    'annuaire.filter_syndicat': 'Trade union',
+    'annuaire.filter_conciliation': 'Conciliation',
+    'annuaire.filter_aide': 'Legal aid',
+    'annuaire.services_count': 'Available services ({{count}})',
+    'annuaire.no_services': 'No services listed for this canton.',
+    'annuaire.no_services_type': 'No services of this type in this canton.',
+    'annuaire.error_load': 'Unable to load services. Check that the server is running.',
+
+    // -- Methodologie page --
+    'methodo.eyebrow': 'Transparency',
+    'methodo.title': 'How JusticePourtous works',
+
+    // -- Errors / alerts --
+    'error.payment_create': 'Unable to create payment session',
+    'error.payment_connection': 'Connection error with the payment service.',
+    'error.payment_cancelled': 'Payment cancelled. You can try again.',
+    'error.payment_processing': 'Payment is being processed. Reload the page in a few moments.',
+    'error.charge_failed': 'Error during loading. Try again.',
+    'error.analysis_failed': 'Error during analysis. Try again.',
+    'error.refine_failed': 'Error during refinement.',
+    'error.generation_failed': 'Error during generation.',
+    'error.docx_failed': 'Error during document generation.',
+    'error.download_failed': 'Error during download.',
+    'error.file_too_large': 'File too large (max 10 MB)',
+    'error.extraction': 'Extracting document...',
+    'error.no_letter': 'No letter generated',
+
+    // -- Language switcher --
+    'lang.fr': 'FR',
+    'lang.de': 'DE',
+    'lang.it': 'IT',
+    'lang.en': 'EN',
+    'lang.pt': 'PT',
+    'lang.switch_label': 'Language',
+  },
+
+  pt: {
+    // -- Navigation --
+    'nav.annuaire': 'Diret\u00f3rio',
+    'nav.methodologie': 'Metodologia',
+    'nav.premium': 'Premium',
+    'nav.accueil': 'In\u00edcio',
+    'nav.nouvelle_recherche': 'Nova pesquisa',
+
+    // -- Quick exit --
+    'quickexit.label': 'Sair',
+    'quickexit.sublabel': '— sa\u00edda r\u00e1pida',
+    'quickexit.title': 'Sair rapidamente deste site — redireciona para MeteoSu\u00ed\u00e7a',
+
+    // -- Disclaimer --
+    'disclaimer.title': 'Informa\u00e7\u00e3o jur\u00eddica geral',
+    'disclaimer.text': 'JusticePourtous n\u00e3o substitui o aconselhamento jur\u00eddico personalizado de um advogado. As informa\u00e7\u00f5es s\u00e3o fornecidas a t\u00edtulo indicativo, sem garantia de exaustividade.',
+    'disclaimer.text_full': 'JusticePourtous n\u00e3o substitui o aconselhamento jur\u00eddico personalizado de um advogado. As informa\u00e7\u00f5es s\u00e3o fornecidas a t\u00edtulo indicativo, sem garantia de exaustividade. Em caso de d\u00favida, consulte um profissional do direito.',
+
+    // -- Footer --
+    'footer.legal': 'JusticePourtous fornece informa\u00e7\u00f5es jur\u00eddicas gerais baseadas no direito su\u00ed\u00e7o em vigor. Este servi\u00e7o n\u00e3o substitui o aconselhamento jur\u00eddico personalizado.',
+    'footer.legal_full': 'JusticePourtous fornece informa\u00e7\u00f5es jur\u00eddicas gerais baseadas no direito su\u00ed\u00e7o em vigor. Este servi\u00e7o n\u00e3o substitui o aconselhamento jur\u00eddico personalizado. Em caso de d\u00favida, consulte um profissional do direito.',
+    'footer.copy': '\u00a9 2026 JusticePourtous',
+
+    // -- Homepage: Hero --
+    'hero.eyebrow': 'Direito su\u00ed\u00e7o pr\u00e1tico',
+    'hero.title_line1': 'O direito su\u00ed\u00e7o,',
+    'hero.title_accent': 'acess\u00edvel a todos.',
+    'hero.subtitle': 'JusticePourtous identifica a sua situa\u00e7\u00e3o jur\u00eddica, indica-lhe o que fazer, em que prazo e a quem recorrer \u2014 gratuitamente e de forma an\u00f3nima.',
+
+    // -- Homepage: Process --
+    'process.eyebrow': 'Como funciona',
+    'process.step1_title': 'Descreva',
+    'process.step1_text': 'Explique a sua situa\u00e7\u00e3o em poucas palavras, como faria a um amigo.',
+    'process.step2_title': 'Compreenda',
+    'process.step2_text': 'Identificamos a sua situa\u00e7\u00e3o jur\u00eddica, as leis aplic\u00e1veis e a jurisprud\u00eancia.',
+    'process.step3_title': 'Aja',
+    'process.step3_text': 'Prazos, documentos, autoridade competente, modelo de carta e contactos gratuitos.',
+
+    // -- Homepage: Domains --
+    'domains.eyebrow': 'Pesquisar por \u00e1rea jur\u00eddica',
+
+    // -- Homepage: Search --
+    'search.eyebrow': 'Analisar a minha situa\u00e7\u00e3o',
+    'search.subtitle': 'Descreva o seu problema e a nossa IA identifica os seus direitos, prazos e os passos a seguir.',
+    'search.placeholder': 'O meu senhorio recusa-se a devolver a cau\u00e7\u00e3o...',
+    'search.aria_label': 'Descreva o seu problema jur\u00eddico',
+    'search.submit': 'Analisar',
+    'search.suggestion_caution': 'Cau\u00e7\u00e3o n\u00e3o devolvida',
+    'search.suggestion_licenciement': 'Despedimento e doen\u00e7a',
+    'search.suggestion_heures': 'Horas extras n\u00e3o pagas',
+    'search.suggestion_commandement': 'Mandado de pagamento',
+    'search.suggestion_pension': 'Pens\u00e3o n\u00e3o paga',
+    'search.fill_caution': 'o meu senhorio recusa-se a devolver a cau\u00e7\u00e3o',
+    'search.fill_licenciement': 'despedimento durante baixa m\u00e9dica',
+    'search.fill_heures': 'horas extras n\u00e3o pagas',
+    'search.fill_commandement': 'recebi um mandado de pagamento',
+    'search.fill_pension': 'o meu ex n\u00e3o paga a pens\u00e3o',
+
+    // -- Homepage: Premium CTA --
+    'premiumcta.title': 'An\u00e1lise aprofundada',
+    'premiumcta.text': 'A nossa IA analisa o seu dossier em profundidade: argumenta\u00e7\u00e3o contradit\u00f3ria, certificado de cobertura, gera\u00e7\u00e3o de cartas e documentos Word prontos a enviar.',
+    'premiumcta.button': 'Descobrir o Premium',
+    'premiumcta.feature1_title': 'Perguntas direcionadas',
+    'premiumcta.feature1_text': 'A IA faz as perguntas certas para afinar o seu dossier',
+    'premiumcta.feature2_title': 'Argumentos verificados',
+    'premiumcta.feature2_text': 'A favor e contra, com fontes jur\u00eddicas',
+    'premiumcta.feature3_title': 'Cartas .docx',
+    'premiumcta.feature3_text': 'Interpela\u00e7\u00e3o, oposi\u00e7\u00e3o, contesta\u00e7\u00e3o prontas a assinar',
+
+    // -- Homepage: Trust band --
+    'trust.anonymous_title': 'An\u00f3nimo',
+    'trust.anonymous_text': 'Nenhum dado armazenado',
+    'trust.sources_title': 'Fontes verificadas',
+    'trust.sources_text': 'Fedlex, jurisprud\u00eancia do TF',
+    'trust.law_title': 'Direito su\u00ed\u00e7o',
+    'trust.law_text': 'Federal e cantonal',
+    'trust.free_title': 'Gratuito',
+    'trust.free_text': 'Consulta livre',
+
+    // -- Homepage: Stat --
+    'stat.text': 'dos su\u00ed\u00e7os renunciam a fazer valer os seus direitos por causa do custo.',
+    'stat.source': 'sondagem gfs.bern, 2023',
+
+    // -- Results page --
+    'result.title': 'Resultado da sua consulta',
+    'result.refine_aria': 'Precisar a pesquisa',
+    'result.refine_submit': 'Pesquisar novamente',
+    'result.your_situation': 'A sua situa\u00e7\u00e3o',
+    'result.your_search': 'A sua pesquisa',
+    'result.juridical_qualification': 'Qualifica\u00e7\u00e3o jur\u00eddica',
+    'result.qualification': 'Qualifica\u00e7\u00e3o',
+    'result.articles_title': 'Artigos de lei aplic\u00e1veis',
+    'result.jurisprudence_title': 'Jurisprud\u00eancia do Tribunal Federal',
+    'result.templates_title': 'Modelos de carta',
+    'result.services_title': 'Servi\u00e7os competentes',
+    'result.delais_title': 'Prazos a conhecer',
+    'result.anti_erreurs_title': 'Erros a evitar',
+    'result.lacunes_title': 'O que ainda n\u00e3o sabemos',
+    'result.lacune_type_default': 'Informa\u00e7\u00e3o em falta',
+    'result.alternatives_title': 'Situa\u00e7\u00f5es semelhantes',
+    'result.normative_rules_title': 'Regras jur\u00eddicas aplic\u00e1veis',
+    'result.vulg_title': 'Perguntas frequentes dos cidad\u00e3os',
+    'result.baremes_title': 'Taxas de refer\u00eancia',
+    'result.baremes_label': 'Taxa hipotec\u00e1ria de refer\u00eancia OFL',
+    'result.baremes_consequence': 'Base para contestar um aumento de renda (CO 269a). Publicado em {{date}}',
+    'result.source_footer': 'Fontes: {{articles}} artigos, {{arrets}} ac\u00f3rd\u00e3os',
+    'result.source_rules': '{{count}} regras',
+    'result.no_result': 'Nenhum resultado. Verifique a sua descri\u00e7\u00e3o.',
+    'result.error_fiche': 'Ficha n\u00e3o encontrada.',
+    'result.error_connection': 'Erro de conex\u00e3o.',
+    'result.error_no_query': 'Nenhuma pesquisa especificada.',
+    'result.back_home': 'Voltar ao in\u00edcio',
+    'result.model_letter': 'Modelo de carta',
+
+    // -- Results: Jurisprudence roles --
+    'role.favorable': 'Favor\u00e1vel',
+    'role.defavorable': 'Desfavor\u00e1vel',
+    'role.neutre': 'Neutro',
+
+    // -- Results: Confidence levels --
+    'confidence.certain': 'Certo',
+    'confidence.probable': 'Prov\u00e1vel',
+    'confidence.variable': 'Vari\u00e1vel',
+    'confidence.incertain': 'Incerto',
+
+    // -- Results: Tier badges --
+    'tier.1': 'LEI',
+    'tier.2': 'TF',
+    'tier.3': 'PR\u00c1TICA',
+
+    // -- Results: Premium CTA (in-results) --
+    'premiumcta_result.title': 'Ir mais longe com a an\u00e1lise premium',
+    'premiumcta_result.badge': 'A partir de CHF 0.15',
+    'premiumcta_result.intro': 'Esta primeira avalia\u00e7\u00e3o d\u00e1-lhe as bases. A an\u00e1lise premium vai muito mais longe:',
+    'premiumcta_result.q_title': 'Perguntas personalizadas',
+    'premiumcta_result.q_text': 'A IA faz as perguntas que mudam o diagn\u00f3stico \u2014 n\u00e3o perguntas gen\u00e9ricas',
+    'premiumcta_result.arg_title': 'Argumenta\u00e7\u00e3o contradit\u00f3ria',
+    'premiumcta_result.arg_text': 'Argumentos a favor E contra a sua posi\u00e7\u00e3o, com artigos de lei e jurisprud\u00eancia',
+    'premiumcta_result.cert_title': 'Certificado de cobertura',
+    'premiumcta_result.cert_text': 'Verificamos que n\u00e3o falta nada no seu dossier antes de agir',
+    'premiumcta_result.letter_title': 'Cartas prontas a enviar',
+    'premiumcta_result.letter_text': 'Interpela\u00e7\u00e3o, oposi\u00e7\u00e3o, contesta\u00e7\u00e3o \u2014 em .docx com as suas informa\u00e7\u00f5es',
+    'premiumcta_result.button': 'Iniciar a an\u00e1lise premium',
+
+    // -- Results: Upsell --
+    'upsell.title': 'Precisa de uma an\u00e1lise personalizada?',
+    'upsell.text': 'A nossa IA analisa a sua situa\u00e7\u00e3o em detalhe por CHF 0.03 a 0.10 por pergunta.',
+    'upsell.button': 'Espa\u00e7o Premium',
+
+    // -- Common actions --
+    'action.analyser': 'Analisar',
+    'action.imprimer': 'Imprimir / Guardar PDF',
+    'action.imprimer_short': 'Imprimir / PDF',
+    'action.copier': 'Copiar',
+    'action.copier_texte': 'Copiar o texto',
+    'action.copie': 'Copiado!',
+    'action.telecharger_docx': 'Descarregar .docx',
+    'action.nouvelle_consultation': 'Nova consulta',
+    'action.nouvelle_recherche': 'Nova pesquisa',
+    'action.afficher': 'Mostrar',
+    'action.masquer': 'Ocultar',
+    'action.suivant': 'Seguinte',
+    'action.precedent': 'Anterior',
+    'action.voir_droits': 'Ver os meus direitos',
+    'action.site_web': 'Website',
+    'action.trouver_avocat': 'Encontrar um advogado',
+    'action.activer': 'Ativar',
+    'action.affiner': 'Afinar a an\u00e1lise',
+
+    // -- Consultation --
+    'consult.title': 'Consulta',
+    'consult.question_n': 'Pergunta {{n}} de {{total}}',
+    'consult.loading': 'A carregar...',
+    'consult.analysis_loading': 'An\u00e1lise em curso',
+    'consult.canton_select': '-- Cant\u00e3o --',
+    'consult.error': 'Ocorreu um erro.',
+
+    // -- Premium page --
+    'premium.eyebrow': 'Espa\u00e7o Premium',
+    'premium.title': 'An\u00e1lise jur\u00eddica personalizada',
+    'premium.subtitle': 'Intelig\u00eancia artificial ao servi\u00e7o da sua situa\u00e7\u00e3o jur\u00eddica.',
+    'premium.offer_title': 'An\u00e1lise jur\u00eddica personalizada por IA',
+    'premium.offer_features': 'Perguntas direcionadas, argumenta\u00e7\u00e3o contradit\u00f3ria, certificado de cobertura, cartas prontas a enviar em .docx.',
+    'premium.pricing_one_label': 'Um problema',
+    'premium.pricing_one_detail': 'Suficiente para 1 dossier simples com an\u00e1lise + carta',
+    'premium.pricing_one_btn': 'Carregar CHF 5',
+    'premium.pricing_rec_label': 'Recomendado',
+    'premium.pricing_rec_detail': 'Cobre 1 a 3 dossiers \u2014 a escolha mais comum',
+    'premium.pricing_rec_btn': 'Carregar CHF 10',
+    'premium.pricing_complex_label': 'Dossier complexo',
+    'premium.pricing_complex_detail': 'Para situa\u00e7\u00f5es multi-\u00e1rea ou que exijam v\u00e1rias cartas',
+    'premium.pricing_complex_btn': 'Carregar CHF 20',
+    'premium.cost_table_title': 'Custo indicativo por opera\u00e7\u00e3o',
+    'premium.cost_simple': 'An\u00e1lise simples',
+    'premium.cost_simple_range': 'CHF 0.15 \u2013 0.25',
+    'premium.cost_questions': 'An\u00e1lise + perguntas + afinamento',
+    'premium.cost_questions_range': 'CHF 0.30 \u2013 0.50',
+    'premium.cost_dossier': 'Dossier completo com carta',
+    'premium.cost_dossier_range': 'CHF 0.50 \u2013 1.00',
+    'premium.cost_complex': 'Dossier complexo (v\u00e1rias \u00e1reas, v\u00e1rias cartas)',
+    'premium.cost_complex_range': 'CHF 1.00 \u2013 3.00',
+    'premium.cost_letter': 'Carta suplementar (.docx)',
+    'premium.cost_letter_range': 'CHF 0.05 \u2013 0.10',
+    'premium.cost_note': 'O custo exato \u00e9 apresentado ap\u00f3s cada opera\u00e7\u00e3o. O seu saldo pode ser recarregado a qualquer momento.',
+    'premium.code_label': 'Tem um c\u00f3digo de acesso?',
+    'premium.code_placeholder': 'Introduza o c\u00f3digo',
+    'premium.wallet_label': 'Saldo restante',
+    'premium.analyze_title': 'Analisar a sua situa\u00e7\u00e3o',
+    'premium.analyze_cost_hint': 'Custo estimado: CHF 0.03 a 0.10 por an\u00e1lise',
+    'premium.analyze_placeholder': 'Descreva a sua situa\u00e7\u00e3o jur\u00eddica em detalhe...',
+    'premium.analyze_submit': 'Analisar a minha situa\u00e7\u00e3o',
+    'premium.upload_label': 'Anexar um documento (PDF, imagem)',
+    'premium.upload_change': 'Alterar documento',
+    'premium.analysis_label': 'An\u00e1lise',
+    'premium.letter_generated': 'Carta gerada',
+    'premium.history_title': 'Hist\u00f3rico',
+    'premium.history_empty': 'Nenhuma a\u00e7\u00e3o',
+    'premium.generate_letter': 'Gerar a carta',
+    'premium.print': 'Imprimir',
+
+    // -- Premium: Letter types --
+    'letter.mise_en_demeure': 'Interpela\u00e7\u00e3o',
+    'letter.contestation': 'Contesta\u00e7\u00e3o',
+    'letter.opposition': 'Oposi\u00e7\u00e3o',
+    'letter.resiliation': 'Rescis\u00e3o',
+    'letter.plainte': 'Queixa-crime',
+
+    // -- Premium: V4 response --
+    'v4.questions_title': 'Perguntas para afinar a an\u00e1lise',
+    'v4.critique': 'Cr\u00edtico',
+    'v4.resume': 'Resumo',
+    'v4.arguments_title': 'Argumentos verificados',
+    'v4.objections_title': 'Obje\u00e7\u00f5es poss\u00edveis',
+    'v4.deadlines_title': 'Prazos cr\u00edticos',
+    'v4.fatal_errors_title': 'Erros a evitar absolutamente',
+    'v4.action_plan': 'Plano de a\u00e7\u00e3o',
+    'v4.certificate_title': 'Certificado de cobertura',
+    'v4.certificate_score': 'Pontua\u00e7\u00e3o',
+    'v4.lawyer_recommended': 'Recomenda-se um advogado',
+    'v4.sources_count': 'An\u00e1lise baseada em {{count}} fontes',
+    'v4.cost_receipt': 'Custo desta an\u00e1lise: CHF {{cost}} \u2014 Saldo restante: CHF {{remaining}}',
+    'v4.no_result': 'Nenhum resultado. Verifique a sua descri\u00e7\u00e3o.',
+    'v4.no_text': 'Nenhum texto para analisar.',
+    'v4.refine_loading': 'Afinamento em curso...',
+
+    // -- Premium: Loading messages --
+    'loading.sub': 'A an\u00e1lise completa demora 10 a 30 segundos',
+    'loading.msg_01': 'Compreens\u00e3o da sua situa\u00e7\u00e3o...',
+    'loading.msg_02': 'Identifica\u00e7\u00e3o dos problemas jur\u00eddicos...',
+    'loading.msg_03': 'Constru\u00e7\u00e3o do dossier contradit\u00f3rio...',
+    'loading.msg_04': 'Pesquisa dos artigos de lei aplic\u00e1veis...',
+    'loading.msg_05': 'Consulta da jurisprud\u00eancia do TF...',
+    'loading.msg_06': 'An\u00e1lise dos argumentos a favor e contra...',
+    'loading.msg_07': 'Verifica\u00e7\u00e3o do certificado de cobertura...',
+    'loading.msg_08': 'Avalia\u00e7\u00e3o pelo comit\u00e9 de especialistas...',
+    'loading.msg_09': 'Compila\u00e7\u00e3o das regras normativas...',
+    'loading.msg_10': 'Identifica\u00e7\u00e3o dos prazos cr\u00edticos...',
+    'loading.msg_11': 'Pesquisa dos erros fatais a evitar...',
+    'loading.msg_12': 'C\u00e1lculo da faixa de valor...',
+    'loading.msg_13': 'Verifica\u00e7\u00e3o das fontes jur\u00eddicas...',
+    'loading.msg_14': 'Gera\u00e7\u00e3o das perguntas de acompanhamento...',
+    'loading.msg_15': 'Prepara\u00e7\u00e3o da an\u00e1lise completa...',
+    'loading.msg_16': 'Cruzamento com as tarifas cantonais...',
+    'loading.msg_17': 'Verifica\u00e7\u00e3o da admissibilidade...',
+    'loading.msg_18': 'An\u00e1lise das provas a reunir...',
+    'loading.msg_19': 'Identifica\u00e7\u00e3o dos contactos competentes...',
+    'loading.msg_20': 'Finaliza\u00e7\u00e3o do relat\u00f3rio...',
+
+    // -- Search result loading messages --
+    'loading_search.sub': 'Geralmente demora 5 a 15 segundos',
+    'loading_search.msg_01': 'Leitura da sua situa\u00e7\u00e3o...',
+    'loading_search.msg_02': 'Identifica\u00e7\u00e3o da \u00e1rea jur\u00eddica...',
+    'loading_search.msg_03': 'Pesquisa dos artigos de lei aplic\u00e1veis...',
+    'loading_search.msg_04': 'Consulta da jurisprud\u00eancia do Tribunal Federal...',
+    'loading_search.msg_05': 'Verifica\u00e7\u00e3o dos prazos legais...',
+    'loading_search.msg_06': 'An\u00e1lise das condi\u00e7\u00f5es de admissibilidade...',
+    'loading_search.msg_07': 'Extra\u00e7\u00e3o dos factos pertinentes...',
+    'loading_search.msg_08': 'Cruzamento com as fichas verificadas...',
+    'loading_search.msg_09': 'Avalia\u00e7\u00e3o da complexidade jur\u00eddica...',
+    'loading_search.msg_10': 'Pesquisa dos servi\u00e7os competentes no seu cant\u00e3o...',
+    'loading_search.msg_11': 'Verifica\u00e7\u00e3o dos modelos de carta dispon\u00edveis...',
+    'loading_search.msg_12': 'An\u00e1lise dos erros frequentes a evitar...',
+    'loading_search.msg_13': 'Consulta das tarifas e taxas de refer\u00eancia...',
+    'loading_search.msg_14': 'Compila\u00e7\u00e3o das regras normativas aplic\u00e1veis...',
+    'loading_search.msg_15': 'Constru\u00e7\u00e3o do plano de a\u00e7\u00e3o personalizado...',
+    'loading_search.msg_16': 'Verifica\u00e7\u00e3o das fontes e refer\u00eancias...',
+    'loading_search.msg_17': 'Pesquisa de jurisprud\u00eancia contradit\u00f3ria...',
+    'loading_search.msg_18': 'Avalia\u00e7\u00e3o do n\u00edvel de confian\u00e7a...',
+    'loading_search.msg_19': 'Identifica\u00e7\u00e3o das lacunas informativas...',
+    'loading_search.msg_20': 'Prepara\u00e7\u00e3o do seu dossier...',
+
+    // -- Annuaire page --
+    'annuaire.eyebrow': 'Recursos',
+    'annuaire.title': 'Diret\u00f3rio de servi\u00e7os jur\u00eddicos',
+    'annuaire.subtitle': 'Encontre os servi\u00e7os competentes no seu cant\u00e3o.',
+    'annuaire.canton_label': 'Cant\u00e3o',
+    'annuaire.canton_select': '-- Escolher um cant\u00e3o --',
+    'annuaire.filter_all': 'Todos',
+    'annuaire.filter_asloca': 'ASLOCA',
+    'annuaire.filter_csp': 'CSP',
+    'annuaire.filter_syndicat': 'Sindicato',
+    'annuaire.filter_conciliation': 'Concilia\u00e7\u00e3o',
+    'annuaire.filter_aide': 'Assist\u00eancia judici\u00e1ria',
+    'annuaire.services_count': 'Servi\u00e7os dispon\u00edveis ({{count}})',
+    'annuaire.no_services': 'Nenhum servi\u00e7o registado para este cant\u00e3o.',
+    'annuaire.no_services_type': 'Nenhum servi\u00e7o deste tipo neste cant\u00e3o.',
+    'annuaire.error_load': 'Imposs\u00edvel carregar os servi\u00e7os. Verifique se o servidor est\u00e1 em funcionamento.',
+
+    // -- Methodologie page --
+    'methodo.eyebrow': 'Transpar\u00eancia',
+    'methodo.title': 'Como funciona o JusticePourtous',
+
+    // -- Errors / alerts --
+    'error.payment_create': 'Imposs\u00edvel criar a sess\u00e3o de pagamento',
+    'error.payment_connection': 'Erro de conex\u00e3o com o servi\u00e7o de pagamento.',
+    'error.payment_cancelled': 'Pagamento cancelado. Pode tentar novamente.',
+    'error.payment_processing': 'O pagamento est\u00e1 a ser processado. Recarregue a p\u00e1gina dentro de alguns instantes.',
+    'error.charge_failed': 'Erro durante o carregamento. Tente novamente.',
+    'error.analysis_failed': 'Erro durante a an\u00e1lise. Tente novamente.',
+    'error.refine_failed': 'Erro durante o afinamento.',
+    'error.generation_failed': 'Erro durante a gera\u00e7\u00e3o.',
+    'error.docx_failed': 'Erro durante a gera\u00e7\u00e3o do documento.',
+    'error.download_failed': 'Erro durante o download.',
+    'error.file_too_large': 'Ficheiro demasiado grande (m\u00e1x. 10 MB)',
+    'error.extraction': 'Extra\u00e7\u00e3o do documento...',
+    'error.no_letter': 'Nenhuma carta gerada',
+
+    // -- Language switcher --
+    'lang.fr': 'FR',
+    'lang.de': 'DE',
+    'lang.it': 'IT',
+    'lang.en': 'EN',
+    'lang.pt': 'PT',
+    'lang.switch_label': 'Idioma',
   }
 };
 
@@ -706,7 +1720,7 @@ function getLang() {
 
 /**
  * Set the language and persist to localStorage.
- * @param {string} lang - 'fr' or 'de'
+ * @param {string} lang - 'fr', 'de', 'it', 'en' or 'pt'
  */
 function setLang(lang) {
   if (!I18N[lang]) return;
@@ -766,7 +1780,7 @@ function tLoadingMessages(prefix) {
 
 /**
  * Create a language switcher DOM element.
- * Returns a <div> with FR | DE buttons. Append it wherever needed (e.g. nav).
+ * Returns a <div> with FR | DE | IT | EN | PT buttons. Append it wherever needed (e.g. nav).
  * Active language gets the 'active' class.
  *
  * @returns {HTMLElement}
@@ -777,7 +1791,7 @@ function createLangSwitcher() {
   container.setAttribute('role', 'radiogroup');
   container.setAttribute('aria-label', t('lang.switch_label'));
 
-  var langs = ['fr', 'de'];
+  var langs = ['fr', 'de', 'it', 'en', 'pt'];
   var current = getLang();
 
   langs.forEach(function(lang, i) {

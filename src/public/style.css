@@ -339,6 +339,9 @@ code {
   justify-content: center;
   gap: 5px;
   cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
 }
 
 .nav-toggle span {
@@ -1564,15 +1567,27 @@ body.has-disclaimer {
    Print Styles
    ---------------------------------------------------------------------------- */
 @media print {
+  /* Hide non-content elements */
   .nav,
   .footer,
   .disclaimer,
   .disclaimer-inline,
-  .btn,
+  .notice-juridique-bar,
+  .btn:not(.btn-print),
   .hero-search,
   .search-hints,
+  .search-suggestions,
   .trust-band,
-  .nav-toggle {
+  .nav-toggle,
+  .quick-exit,
+  .lang-switcher,
+  .premium-pricing-grid,
+  .premium-cost-table,
+  .premium-code-section,
+  .premium-cta,
+  .loading,
+  .loading-indicator,
+  .loading-spinner {
     display: none !important;
   }
 
@@ -1591,12 +1606,40 @@ body.has-disclaimer {
     page-break-after: avoid;
   }
 
+  h2 {
+    page-break-before: always;
+  }
+
   .card,
   .triage-card,
-  .contact-card {
-    box-shadow: none;
+  .contact-card,
+  .v4-claim,
+  .delai-card,
+  .ae-card {
+    box-shadow: none !important;
     border: 1px solid #ccc;
     break-inside: avoid;
+    background: none !important;
+  }
+
+  /* Show result and letter content */
+  #reponseIA,
+  #lettreResult,
+  .lettre-box,
+  .v4-cert-issue {
+    display: block !important;
+  }
+
+  /* Remove all decorative styles */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  .badge,
+  .confidence-badge {
+    border: 1px solid #999;
+    background: none !important;
   }
 
   .result-layout {
@@ -1680,13 +1723,49 @@ body.has-disclaimer {
     padding: var(--space-xl) 0;
   }
 
-  /* Navigation — keep links visible, reduce size */
+  /* Navigation — hamburger on mobile */
+  .nav-toggle {
+    display: flex;
+  }
+
   .nav-links {
-    gap: var(--space-md);
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--surface-elevated);
+    border-top: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-md);
+    padding: var(--space-md);
+    gap: 0;
+    z-index: 100;
+  }
+
+  .nav-links.open {
+    display: flex;
   }
 
   .nav-links a {
-    font-size: 0.65rem;
+    font-size: 0.85rem;
+    padding: var(--space-sm) var(--space-md);
+    width: 100%;
+  }
+
+  .nav-links a.nav-premium {
+    margin-top: var(--space-xs);
+    text-align: center;
+  }
+
+  .nav-links .lang-switcher {
+    margin-left: 0;
+    margin-top: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .nav-inner {
+    position: relative;
   }
 
   /* Trust band */

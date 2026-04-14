@@ -224,7 +224,14 @@ function serveStatic(req, res, filePath) {
   const ext = extname(filePath);
   const mime = MIME_TYPES[ext] || 'application/octet-stream';
   setSecurityHeaders(res);
-  res.writeHead(200, { 'Content-Type': mime });
+  // Cache-Control by file type
+  let cacheControl = 'no-cache';
+  if (ext === '.css' || ext === '.js') {
+    cacheControl = 'public, max-age=3600';
+  } else if (ext === '.png' || ext === '.svg' || ext === '.ico' || ext === '.jpg' || ext === '.jpeg' || ext === '.gif' || ext === '.webp') {
+    cacheControl = 'public, max-age=86400';
+  }
+  res.writeHead(200, { 'Content-Type': mime, 'Cache-Control': cacheControl });
   res.end(readFileSync(filePath));
 }
 
@@ -232,6 +239,18 @@ const server = createServer(async (req, res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
   const path = url.pathname;
   const method = req.method;
+
+  // Request logging for API routes
+  const reqStart = Date.now();
+  if (path.startsWith('/api/')) {
+    const origEnd = res.end.bind(res);
+    res.end = function(...args) {
+      const duration = Date.now() - reqStart;
+      const search = url.search || '';
+      console.log(`[${new Date().toISOString()}] ${method} ${path}${search} ${res.statusCode} ${duration}ms`);
+      return origEnd(...args);
+    };
+  }
 
   try {
     // Rate limiting

@@ -23,6 +23,9 @@
         <span class="nav-mark" aria-hidden="true"></span>
         <span class="nav-wordmark">JusticePourtous</span>
       </a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
       <div class="nav-links">
         <a href="/">Accueil</a>
         <a href="/annuaire.html">Annuaire</a>
@@ -334,6 +337,9 @@
       var q = document.getElementById('question').value.trim();
       if (!q && !selectedFile) return;
 
+      var analyseBtn = document.querySelector('[onclick="analyserQuestion()"]');
+      if (analyseBtn) { analyseBtn.disabled = true; analyseBtn.textContent = 'Analyse en cours...'; }
+
       var box = document.getElementById('reponseIA');
       var txt = document.getElementById('reponseTexte');
       box.classList.remove('hidden');
@@ -375,6 +381,8 @@
       } catch (e) {
         stopPremiumLoading();
         txt.textContent = 'Erreur lors de l\'analyse. Réessayez.';
+      } finally {
+        if (analyseBtn) { analyseBtn.disabled = false; analyseBtn.textContent = 'Analyser ma situation'; }
       }
     }
 
@@ -642,6 +650,9 @@
     var lastFicheId = null;
 
     async function genererLettre() {
+      var lettreBtn = document.querySelector('[onclick="genererLettre()"]');
+      if (lettreBtn) { lettreBtn.disabled = true; lettreBtn.textContent = 'Génération...'; }
+
       var lettreBox = document.getElementById('lettreResult');
       var lettreTxt = document.getElementById('lettreTexte');
       lettreBox.classList.remove('hidden');
@@ -667,10 +678,15 @@
         refreshCredits();
       } catch (e) {
         lettreTxt.textContent = 'Erreur lors de la génération.';
+      } finally {
+        if (lettreBtn) { lettreBtn.disabled = false; lettreBtn.textContent = 'Générer la lettre'; }
       }
     }
 
     async function telechargerDocx() {
+      var docxBtn = document.getElementById('docxDownload');
+      if (docxBtn) { docxBtn.disabled = true; docxBtn.textContent = 'Téléchargement...'; }
+
       var selectedType = document.getElementById('lettreType').value;
       try {
         var res = await fetch('/api/premium/generate-docx', {
@@ -693,6 +709,8 @@
         URL.revokeObjectURL(url);
       } catch (e) {
         alert('Erreur lors du téléchargement.');
+      } finally {
+        if (docxBtn) { docxBtn.disabled = false; docxBtn.textContent = 'Télécharger .docx'; }
       }
     }
 

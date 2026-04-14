@@ -551,13 +551,44 @@ const server = createServer(async (req, res) => {
         });
         if (letterResult.error) return json(res, letterResult.status, { error: letterResult.error });
 
-        const letterText = letterResult.data?.lettre || letterResult.lettre;
+        let letterText = letterResult.data?.lettre || letterResult.lettre;
         if (!letterText) return json(res, 500, { error: 'Pas de lettre générée' });
+
+        // Optional translation for DOCX
+        const LANG_MAP = {
+          de: 'Allemand', it: 'Italien', en: 'Anglais', pt: 'Portugais',
+          ar: 'Arabe', tr: 'Turc', sq: 'Albanais', hr: 'Serbo-croate'
+        };
+        if (body.lang && body.lang !== 'fr' && LANG_MAP[body.lang]) {
+          const apiKey = process.env.ANTHROPIC_API_KEY;
+          if (apiKey) {
+            const systemPrompt = `Tu es un traducteur juridique suisse. Traduis le texte suivant en ${LANG_MAP[body.lang]}. Garde la terminologie juridique précise. Traduis fidèlement sans ajouter ni retirer d'information. Réponds UNIQUEMENT avec la traduction, sans commentaire.`;
+            const apiBody = JSON.stringify({
+              model: 'claude-haiku-4-20250514',
+              max_tokens: 4000,
+              system: systemPrompt,
+              messages: [{ role: 'user', content: letterText }]
+            });
+            const apiResp = await fetch('https://api.anthropic.com/v1/messages', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01' },
+              body: apiBody
+            });
+            if (apiResp.ok) {
+              const apiData = await apiResp.json();
+              letterText = apiData.content[0].text;
+              // Debit translation cost
+              const totalTokens = (apiData.usage?.input_tokens || 0) + (apiData.usage?.output_tokens || 0);
+              const apiCostCentimes = Math.max(1, Math.ceil(totalTokens / 1000 * 0.007));
+              debitSession(sessionCode, apiCostCentimes, 'traduction_docx');
+            }
+          }
+        }
 
         const docxBuffer = await generateDocx(letterText, { type: body.type, ficheId: body.ficheId });
         res.writeHead(200, {
           'Content-Type': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-          'Content-Disposition': `attachment; filename="lettre-${body.type || 'juridique'}.docx"`,
+          'Content-Disposition': `attachment; filename="lettre-${body.type || 'juridique'}${body.lang && body.lang !== 'fr' ? '-' + body.lang : ''}.docx"`,
           'Content-Length': docxBuffer.length,
         });
         res.end(docxBuffer);
@@ -565,6 +596,69 @@ const server = createServer(async (req, res) => {
       } catch (err) {
         console.error('DOCX generation error:', err.message);
         return json(res, 500, { error: 'Erreur génération DOCX' });
+      }
+    }
+
+    // ─── Translation endpoint (premium) ───────────────────────────
+    if (path === '/api/premium/translate' && method === 'POST') {
+      const body = await parseBody(req);
+      const sessionCode = body.session || req.headers['x-session'];
+      if (!body.text) return json(res, 400, { error: 'text requis', disclaimer: DISCLAIMER });
+
+      const LANG_MAP = {
+        de: 'Allemand', it: 'Italien', en: 'Anglais', pt: 'Portugais',
+        ar: 'Arabe', tr: 'Turc', sq: 'Albanais', hr: 'Serbo-croate'
+      };
+      const targetLangName = LANG_MAP[body.targetLang];
+      if (!targetLangName) return json(res, 400, { error: 'Langue non supportée. Langues: ' + Object.keys(LANG_MAP).join(', '), disclaimer: DISCLAIMER });
+
+      // Session check
+      const walletCheck = getCredits(sessionCode);
+      if (walletCheck.error) return json(res, walletCheck.status || 403, { error: walletCheck.error, disclaimer: DISCLAIMER });
+      if (walletCheck.data.solde < 3) return json(res, 402, { error: 'Solde insuffisant', solde: walletCheck.data.solde, disclaimer: DISCLAIMER });
+
+      const apiKey = process.env.ANTHROPIC_API_KEY;
+      if (!apiKey) return json(res, 503, { error: 'Service de traduction indisponible', disclaimer: DISCLAIMER });
+
+      try {
+        const contextHint = body.context === 'legal' ? ' Le texte est de nature juridique suisse.' : '';
+        const systemPrompt = `Tu es un traducteur juridique suisse. Traduis le texte suivant en ${targetLangName}. Garde la terminologie juridique précise. Traduis fidèlement sans ajouter ni retirer d'information.${contextHint} Réponds UNIQUEMENT avec la traduction, sans commentaire.`;
+
+        const apiBody = JSON.stringify({
+          model: 'claude-haiku-4-20250514',
+          max_tokens: 4000,
+          system: systemPrompt,
+          messages: [{ role: 'user', content: body.text }]
+        });
+
+        const apiResp = await fetch('https://api.anthropic.com/v1/messages', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01' },
+          body: apiBody
+        });
+
+        if (!apiResp.ok) throw new Error(`Claude API error ${apiResp.status}`);
+        const apiData = await apiResp.json();
+        const translated = apiData.content[0].text;
+
+        // Debit based on token usage — Haiku is cheap
+        const totalTokens = (apiData.usage?.input_tokens || 0) + (apiData.usage?.output_tokens || 0);
+        // Haiku rates ~0.25$/1M input + 1.25$/1M output ≈ avg 0.75$/1M → ~0.065 CHF/1M → 0.007 ct/1K
+        const apiCostCentimes = Math.max(1, Math.ceil(totalTokens / 1000 * 0.007));
+        const debitResult = debitSession(sessionCode, apiCostCentimes, 'traduction');
+
+        return json(res, 200, {
+          translated,
+          lang: body.targetLang,
+          cost: {
+            charged_centimes: debitResult.charged || apiCostCentimes,
+            solde_restant: debitResult.solde ?? walletCheck.data.solde - apiCostCentimes
+          },
+          disclaimer: DISCLAIMER
+        });
+      } catch (err) {
+        console.error('Translation error:', err.message);
+        return json(res, 500, { error: 'Erreur de traduction', disclaimer: DISCLAIMER });
       }
     }
 

@@ -97,6 +97,10 @@
               <span>Lettre supplémentaire (.docx)</span>
               <span>CHF 0.05 – 0.10</span>
             </div>
+            <div class="premium-cost-row">
+              <span>Traduction (8 langues)</span>
+              <span>CHF 0.03 – 0.05</span>
+            </div>
           </div>
 
           <p class="premium-cost-note">Le coût exact est affiché après chaque opération. Votre solde est rechargeable à tout moment.</p>
@@ -174,6 +178,17 @@
             <h3>Lettre générée</h3>
             <div class="premium-response-actions">
               <button class="copy-btn" onclick="copyLettre()">Copier le texte</button>
+              <select id="docxLang" class="select" style="max-width:150px;font-size:0.85rem">
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="it">Italiano</option>
+                <option value="en">English</option>
+                <option value="pt">Português</option>
+                <option value="ar">العربية</option>
+                <option value="tr">Türkçe</option>
+                <option value="sq">Shqip</option>
+                <option value="hr">Hrvatski</option>
+              </select>
               <button id="docxDownload" class="btn btn-sm btn-primary hidden" onclick="telechargerDocx()">
                 Télécharger .docx
               </button>
@@ -652,8 +667,66 @@
         html += '</div>';
       }
 
+      // Translate bar
+      html += '<div class="translate-bar" style="margin-top:1rem;display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap">';
+      html += '<select id="translateLang" class="select" style="max-width:180px">';
+      html += '<option value="">Traduire en...</option>';
+      html += '<option value="de">Deutsch</option>';
+      html += '<option value="it">Italiano</option>';
+      html += '<option value="en">English</option>';
+      html += '<option value="pt">Portugu\u00eas</option>';
+      html += '<option value="ar">\u0627\u0644\u0639\u0631\u0628\u064a\u0629</option>';
+      html += '<option value="tr">T\u00fcrk\u00e7e</option>';
+      html += '<option value="sq">Shqip</option>';
+      html += '<option value="hr">Hrvatski</option>';
+      html += '</select>';
+      html += '<button class="btn btn-sm btn-secondary" onclick="translateResponse()">Traduire (~CHF 0.05)</button>';
+      html += '<span id="translateStatus" style="font-size:0.85rem;color:var(--text-secondary)"></span>';
+      html += '</div>';
+
       if (!html) html = '<p>Aucun résultat. Vérifiez votre description.</p>';
       txt.innerHTML = html;
+    }
+
+    async function translateResponse() {
+      var lang = document.getElementById('translateLang');
+      if (!lang || !lang.value) { alert('Choisissez une langue.'); return; }
+      var targetLang = lang.value;
+      var status = document.getElementById('translateStatus');
+
+      // Get the response text — strip the translate bar itself and HTML tags
+      var txt = document.getElementById('reponseTexte');
+      var clone = txt.cloneNode(true);
+      var bar = clone.querySelector('.translate-bar');
+      if (bar) bar.remove();
+      var plainText = clone.textContent || clone.innerText || '';
+      plainText = plainText.trim();
+      if (!plainText) { alert('Aucun texte a traduire.'); return; }
+
+      if (status) status.textContent = 'Traduction en cours...';
+
+      try {
+        var res = await fetch('/api/premium/translate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ session: sessionCode, text: plainText, targetLang: targetLang, context: 'legal' })
+        });
+        var data = await res.json();
+        if (data.error) { if (status) status.textContent = data.error; return; }
+
+        // Replace response content with translated text, keep translate bar
+        var existingBar = txt.querySelector('.translate-bar');
+        var barHtml = existingBar ? existingBar.outerHTML : '';
+        txt.innerHTML = '<div class="card-highlight"><h4>Traduction</h4><p style="white-space:pre-wrap">' + esc(data.translated) + '</p></div>';
+        if (data.cost) {
+          txt.innerHTML += '<div class="premium-cost-receipt">Coût traduction : <strong>CHF ' + (data.cost.charged_centimes / 100).toFixed(2) + '</strong> — Solde : CHF ' + (data.cost.solde_restant / 100).toFixed(2) + '</div>';
+        }
+        txt.innerHTML += barHtml;
+        if (status) status.textContent = '';
+        refreshCredits();
+      } catch (e) {
+        if (status) status.textContent = 'Erreur de traduction.';
+      }
     }
 
     function selectAnswer(el) {
@@ -798,25 +871,30 @@
       if (docxBtn) { docxBtn.disabled = true; docxBtn.textContent = 'Téléchargement...'; }
 
       var selectedType = document.getElementById('lettreType').value;
+      var selectedLang = document.getElementById('docxLang').value;
       try {
+        var payload = {
+          session: sessionCode,
+          userContext: lastQuery,
+          type: selectedType,
+          ficheId: lastFicheId
+        };
+        if (selectedLang && selectedLang !== 'fr') payload.lang = selectedLang;
+
         var res = await fetch('/api/premium/generate-docx', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            session: sessionCode,
-            userContext: lastQuery,
-            type: selectedType,
-            ficheId: lastFicheId
-          })
+          body: JSON.stringify(payload)
         });
         if (!res.ok) { alert('Erreur lors de la génération du document.'); return; }
         var blob = await res.blob();
         var url = URL.createObjectURL(blob);
         var a = document.createElement('a');
         a.href = url;
-        a.download = 'lettre-' + selectedType + '.docx';
+        a.download = 'lettre-' + selectedType + (selectedLang && selectedLang !== 'fr' ? '-' + selectedLang : '') + '.docx';
         a.click();
         URL.revokeObjectURL(url);
+        refreshCredits();
       } catch (e) {
         alert('Erreur lors du téléchargement.');
       } finally {

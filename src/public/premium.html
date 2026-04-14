@@ -42,12 +42,12 @@
     <div class="page-inner">
 
       <div class="notice-juridique" role="note">
-        <strong>Information juridique générale</strong> — JusticePourtous ne remplace pas un conseil d'avocat personnalisé. Les informations sont fournies à titre indicatif, sans garantie d'exhaustivité.
+        <strong data-i18n="disclaimer.title">Information juridique générale</strong> — <span data-i18n="disclaimer.text">JusticePourtous ne remplace pas un conseil d'avocat personnalisé. Les informations sont fournies à titre indicatif, sans garantie d'exhaustivité.</span>
       </div>
 
-      <p class="hero-eyebrow">Espace Premium</p>
-      <h1 class="page-title">Analyse juridique personnalisée</h1>
-      <p class="premium-subtitle">Intelligence artificielle au service de votre situation juridique.</p>
+      <p class="hero-eyebrow" data-i18n="premium.eyebrow">Espace Premium</p>
+      <h1 class="page-title" data-i18n="premium.title">Analyse juridique personnalisée</h1>
+      <p class="premium-subtitle" data-i18n="premium.subtitle">Intelligence artificielle au service de votre situation juridique.</p>
 
       <div id="noSession">
         <div class="card premium-offer">
@@ -56,19 +56,19 @@
 
           <div class="premium-pricing-grid">
             <div class="premium-pricing-card">
-              <div class="premium-pricing-label">Un problème</div>
+              <div class="premium-pricing-label" data-i18n="premium.pricing_one_label">Un problème</div>
               <div class="premium-pricing-amount">CHF 5</div>
               <div class="premium-pricing-detail">Suffisant pour 1 dossier simple avec analyse + lettre</div>
               <button class="btn btn-primary w-full" onclick="acheterMontant(500)">Charger CHF 5</button>
             </div>
             <div class="premium-pricing-card premium-pricing-featured">
-              <div class="premium-pricing-label">Recommandé</div>
+              <div class="premium-pricing-label" data-i18n="premium.pricing_rec_label">Recommandé</div>
               <div class="premium-pricing-amount">CHF 10</div>
               <div class="premium-pricing-detail">Couvre 1 à 3 dossiers — le choix le plus courant</div>
               <button class="btn btn-primary w-full" onclick="acheterMontant(1000)">Charger CHF 10</button>
             </div>
             <div class="premium-pricing-card">
-              <div class="premium-pricing-label">Dossier complexe</div>
+              <div class="premium-pricing-label" data-i18n="premium.pricing_complex_label">Dossier complexe</div>
               <div class="premium-pricing-amount">CHF 20</div>
               <div class="premium-pricing-detail">Pour les situations multi-domaines ou nécessitant plusieurs lettres</div>
               <button class="btn btn-secondary w-full" onclick="acheterMontant(2000)">Charger CHF 20</button>
@@ -76,7 +76,7 @@
           </div>
 
           <div class="premium-cost-table">
-            <h4>Coût indicatif par opération</h4>
+            <h4 data-i18n="premium.cost_table_title">Coût indicatif par opération</h4>
             <div class="premium-cost-row">
               <span>Analyse simple</span>
               <span>CHF 0.15 – 0.25</span>
@@ -125,7 +125,7 @@
 
       <div id="session" class="hidden">
         <div class="card premium-wallet">
-          <div class="premium-wallet-label">Solde restant</div>
+          <div class="premium-wallet-label" data-i18n="premium.wallet_label">Solde restant</div>
           <div class="premium-wallet-amount" id="solde">CHF 0.00</div>
         </div>
 
@@ -217,10 +217,18 @@
 
   <script src="/i18n.js"></script>
   <script>
-    /* Nav shadow on scroll */
+    /* Nav shadow on scroll + auto-hide on mobile */
     var nav = document.getElementById('nav');
+    var lastScrollY = 0;
     window.addEventListener('scroll', function() {
-      nav.classList.toggle('nav-scrolled', window.scrollY > 10);
+      var currentY = window.scrollY;
+      nav.classList.toggle('nav-scrolled', currentY > 10);
+      if (currentY > 100) {
+        nav.classList.toggle('nav-hidden', currentY > lastScrollY);
+      } else {
+        nav.classList.remove('nav-hidden');
+      }
+      lastScrollY = currentY;
     }, { passive: true });
 
     /* i18n */
@@ -228,6 +236,14 @@
       document.getElementById('langSwitcher').appendChild(createLangSwitcher());
     }
     document.documentElement.lang = getLang();
+
+    if (getLang() !== 'fr') {
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        var translated = t(key);
+        if (translated !== key) el.textContent = translated;
+      });
+    }
 
     /* Quick exit: double ESC */
     var escCount = 0;

@@ -43,7 +43,7 @@
     <div class="result-page-inner">
 
       <div class="notice-juridique" role="note">
-        <strong>Information juridique générale</strong> — JusticePourtous ne remplace pas un conseil d'avocat personnalisé. Les informations sont fournies à titre indicatif, sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit.
+        <strong data-i18n="disclaimer.title">Information juridique générale</strong> — <span data-i18n="disclaimer.text_full">JusticePourtous ne remplace pas un conseil d'avocat personnalisé. Les informations sont fournies à titre indicatif, sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit.</span>
       </div>
 
       <!-- Search bar replayed at top of results -->
@@ -90,10 +90,18 @@
   <script src="/i18n.js"></script>
   <script src="/app.js"></script>
   <script>
-    /* Nav shadow on scroll */
+    /* Nav shadow on scroll + auto-hide on mobile */
     var nav = document.getElementById('nav');
+    var lastScrollY = 0;
     window.addEventListener('scroll', function() {
-      nav.classList.toggle('nav-scrolled', window.scrollY > 10);
+      var currentY = window.scrollY;
+      nav.classList.toggle('nav-scrolled', currentY > 10);
+      if (currentY > 100) {
+        nav.classList.toggle('nav-hidden', currentY > lastScrollY);
+      } else {
+        nav.classList.remove('nav-hidden');
+      }
+      lastScrollY = currentY;
     }, { passive: true });
 
     /* i18n */
@@ -101,6 +109,14 @@
       document.getElementById('langSwitcher').appendChild(createLangSwitcher());
     }
     document.documentElement.lang = getLang();
+
+    if (getLang() !== 'fr') {
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        var translated = t(key);
+        if (translated !== key) el.textContent = translated;
+      });
+    }
 
     // Show wallet balance if logged in
     var jbSession = localStorage.getItem('jb_session');

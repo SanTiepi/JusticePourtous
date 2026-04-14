@@ -39,8 +39,8 @@
 
   <main class="page">
     <div class="page-inner">
-      <p class="hero-eyebrow">Transparence</p>
-      <h1 class="page-title">Comment fonctionne JusticePourtous</h1>
+      <p class="hero-eyebrow" data-i18n="methodo.eyebrow">Transparence</p>
+      <h1 class="page-title" data-i18n="methodo.title">Comment fonctionne JusticePourtous</h1>
 
       <section class="method-section">
         <h2>Sources</h2>
@@ -156,8 +156,16 @@
   <script src="/i18n.js"></script>
   <script>
     var nav = document.getElementById('nav');
+    var lastScrollY = 0;
     window.addEventListener('scroll', function() {
-      nav.classList.toggle('nav-scrolled', window.scrollY > 10);
+      var currentY = window.scrollY;
+      nav.classList.toggle('nav-scrolled', currentY > 10);
+      if (currentY > 100) {
+        nav.classList.toggle('nav-hidden', currentY > lastScrollY);
+      } else {
+        nav.classList.remove('nav-hidden');
+      }
+      lastScrollY = currentY;
     }, { passive: true });
 
     /* i18n */
@@ -165,6 +173,14 @@
       document.getElementById('langSwitcher').appendChild(createLangSwitcher());
     }
     document.documentElement.lang = getLang();
+
+    if (getLang() !== 'fr') {
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        var translated = t(key);
+        if (translated !== key) el.textContent = translated;
+      });
+    }
 
     var escCount = 0;
     document.addEventListener('keydown', function(e) {

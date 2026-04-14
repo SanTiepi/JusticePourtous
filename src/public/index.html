@@ -43,19 +43,19 @@
   <!-- Disclaimer — requis sur chaque page -->
   <div class="notice-juridique-bar" role="note">
     <div class="notice-juridique-inner">
-      <strong>Information juridique générale</strong> — JusticePourtous ne remplace pas un conseil d'avocat personnalisé. Les informations sont fournies à titre indicatif, sans garantie d'exhaustivité.
+      <strong data-i18n="disclaimer.title">Information juridique générale</strong> — <span data-i18n="disclaimer.text">JusticePourtous ne remplace pas un conseil d'avocat personnalisé. Les informations sont fournies à titre indicatif, sans garantie d'exhaustivité.</span>
     </div>
   </div>
 
   <!-- Hero -->
   <header class="hero">
     <div class="hero-inner">
-      <p class="hero-eyebrow">Droit suisse pratique</p>
+      <p class="hero-eyebrow" data-i18n="hero.eyebrow">Droit suisse pratique</p>
       <h1 class="hero-title">
         Le droit suisse,<br>
-        <span class="hero-accent">accessible à tous.</span>
+        <span class="hero-accent" data-i18n="hero.title_accent">accessible à tous.</span>
       </h1>
-      <p class="hero-subtitle">
+      <p class="hero-subtitle" data-i18n="hero.subtitle">
         JusticePourtous identifie votre situation juridique, vous dit quoi faire,
         dans quel délai, et vers qui vous tourner &mdash; gratuitement et anonymement.
       </p>
@@ -65,27 +65,27 @@
   <!-- How it works -->
   <section class="process">
     <div class="process-inner">
-      <h2 class="section-eyebrow">Comment ça marche</h2>
+      <h2 class="section-eyebrow" data-i18n="process.eyebrow">Comment ça marche</h2>
       <div class="process-steps">
         <div class="process-step reveal">
           <span class="process-number">01</span>
           <div>
-            <h3>Décrivez</h3>
-            <p>Expliquez votre situation en quelques mots, comme vous le feriez à un ami.</p>
+            <h3 data-i18n="process.step1_title">Décrivez</h3>
+            <p data-i18n="process.step1_text">Expliquez votre situation en quelques mots, comme vous le feriez à un ami.</p>
           </div>
         </div>
         <div class="process-step reveal" style="animation-delay:.06s">
           <span class="process-number">02</span>
           <div>
-            <h3>Comprenez</h3>
-            <p>On identifie votre situation juridique, les lois applicables et la jurisprudence.</p>
+            <h3 data-i18n="process.step2_title">Comprenez</h3>
+            <p data-i18n="process.step2_text">On identifie votre situation juridique, les lois applicables et la jurisprudence.</p>
           </div>
         </div>
         <div class="process-step reveal" style="animation-delay:.12s">
           <span class="process-number">03</span>
           <div>
-            <h3>Agissez</h3>
-            <p>Délais, documents, autorité compétente, modèle de lettre et contacts gratuits.</p>
+            <h3 data-i18n="process.step3_title">Agissez</h3>
+            <p data-i18n="process.step3_text">Délais, documents, autorité compétente, modèle de lettre et contacts gratuits.</p>
           </div>
         </div>
       </div>
@@ -95,7 +95,7 @@
   <!-- Domains -->
   <section class="domains">
     <div class="domains-inner">
-      <h2 class="section-eyebrow">Parcourir par domaine</h2>
+      <h2 class="section-eyebrow" data-i18n="domains.eyebrow">Parcourir par domaine</h2>
       <div class="domains-grid" id="domaines"></div>
     </div>
   </section>
@@ -103,8 +103,8 @@
   <!-- Search / Analyze -->
   <section class="search-section">
     <div class="search-section-inner">
-      <h2 class="section-eyebrow">Analyser ma situation</h2>
-      <p class="search-section-subtitle">Décrivez votre problème et notre IA identifie vos droits, vos délais et les démarches à suivre.</p>
+      <h2 class="section-eyebrow" data-i18n="search.eyebrow">Analyser ma situation</h2>
+      <p class="search-section-subtitle" data-i18n="search.subtitle">Décrivez votre problème et notre IA identifie vos droits, vos délais et les démarches à suivre.</p>
       <form class="search" id="searchForm" onsubmit="handleSearch(event)">
         <div class="search-field">
           <input
@@ -137,7 +137,7 @@
   <section class="premium-cta-section">
     <div class="premium-cta-inner">
       <div class="premium-cta-content">
-        <h2>Analyse approfondie</h2>
+        <h2 data-i18n="premiumcta.title">Analyse approfondie</h2>
         <p>Notre IA analyse votre dossier en profondeur : argumentation contradictoire, certificat de couverture, génération de lettres et documents Word prêts à envoyer.</p>
         <a href="/premium.html" class="btn btn-primary">Découvrir le Premium</a>
       </div>
@@ -163,19 +163,19 @@
     <div class="trust-inner">
       <div class="trust-item">
         <svg class="trust-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 1L3 5V9.5C3 14 6 17.5 10 19C14 17.5 17 14 17 9.5V5L10 1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-        <div><strong>Anonyme</strong><span>Aucune donnée stockée</span></div>
+        <div><strong data-i18n="trust.anonymous_title">Anonyme</strong><span data-i18n="trust.anonymous_text">Aucune donnée stockée</span></div>
       </div>
       <div class="trust-item">
         <svg class="trust-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M7 10L9.5 12.5L13.5 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <div><strong>Sources vérifiées</strong><span>Fedlex, jurisprudence TF</span></div>
+        <div><strong data-i18n="trust.sources_title">Sources vérifiées</strong><span data-i18n="trust.sources_text">Fedlex, jurisprudence TF</span></div>
       </div>
       <div class="trust-item">
         <svg class="trust-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 8H17M8 8V17" stroke="currentColor" stroke-width="1.5"/></svg>
-        <div><strong>Droit suisse</strong><span>Fédéral et cantonal</span></div>
+        <div><strong data-i18n="trust.law_title">Droit suisse</strong><span data-i18n="trust.law_text">Fédéral et cantonal</span></div>
       </div>
       <div class="trust-item">
         <svg class="trust-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2V18M2 10H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        <div><strong>Gratuit</strong><span>Consultation libre</span></div>
+        <div><strong data-i18n="trust.free_title">Gratuit</strong><span data-i18n="trust.free_text">Consultation libre</span></div>
       </div>
     </div>
   </section>
@@ -239,10 +239,18 @@
       }
     });
 
-    /* Nav shadow on scroll */
+    /* Nav shadow on scroll + auto-hide on mobile */
     var nav = document.getElementById('nav');
+    var lastScrollY = 0;
     window.addEventListener('scroll', function() {
-      nav.classList.toggle('nav-scrolled', window.scrollY > 10);
+      var currentY = window.scrollY;
+      nav.classList.toggle('nav-scrolled', currentY > 10);
+      if (currentY > 100) {
+        nav.classList.toggle('nav-hidden', currentY > lastScrollY);
+      } else {
+        nav.classList.remove('nav-hidden');
+      }
+      lastScrollY = currentY;
     }, { passive: true });
 
     /* i18n */
@@ -250,6 +258,14 @@
       document.getElementById('langSwitcher').appendChild(createLangSwitcher());
     }
     document.documentElement.lang = getLang();
+
+    if (getLang() !== 'fr') {
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        var translated = t(key);
+        if (translated !== key) el.textContent = translated;
+      });
+    }
 
     // Show wallet balance if logged in
     var jbSession = localStorage.getItem('jb_session');

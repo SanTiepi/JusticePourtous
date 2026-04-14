@@ -1893,11 +1893,29 @@ body.has-disclaimer {
   z-index: 100;
   background: var(--surface-primary);
   border-bottom: 1px solid var(--border-subtle);
-  transition: box-shadow var(--duration-normal) var(--ease-out);
+  transition: box-shadow var(--duration-normal) var(--ease-out),
+              transform var(--duration-normal) var(--ease-out);
 }
 
 .nav-scrolled {
   box-shadow: var(--shadow-md);
+}
+
+.nav-hidden {
+  transform: translateY(-100%);
+}
+
+@media (max-width: 640px) {
+  .nav-inner {
+    height: 48px;
+  }
+  .nav-mark {
+    width: 16px;
+    height: 16px;
+  }
+  .nav-wordmark {
+    font-size: 0.82rem;
+  }
 }
 
 .nav-inner {

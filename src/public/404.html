@@ -59,5 +59,20 @@
       <div class="footer-copy">&copy; 2026 JusticePourtous</div>
     </div>
   </footer>
+
+  <script>
+    var nav = document.getElementById('nav');
+    var lastScrollY = 0;
+    window.addEventListener('scroll', function() {
+      var currentY = window.scrollY;
+      nav.classList.toggle('nav-scrolled', currentY > 10);
+      if (currentY > 100) {
+        nav.classList.toggle('nav-hidden', currentY > lastScrollY);
+      } else {
+        nav.classList.remove('nav-hidden');
+      }
+      lastScrollY = currentY;
+    }, { passive: true });
+  </script>
 </body>
 </html>

@@ -101,12 +101,24 @@
 
           <p class="premium-cost-note">Le coût exact est affiché après chaque opération. Votre solde est rechargeable à tout moment.</p>
 
-          <div class="premium-code-section">
-            <p class="premium-code-label">Vous avez un code d'accès ?</p>
-            <div class="premium-code-row">
-              <input type="text" id="codeInput" class="input" placeholder="Entrez votre code">
-              <button class="btn btn-secondary" onclick="activerCode()">Activer</button>
+          <div class="premium-login-section">
+            <h4>Déjà client ?</h4>
+            <p class="premium-code-label">Connectez-vous avec votre email pour retrouver votre solde.</p>
+            <div id="loginStep1">
+              <div class="premium-code-row">
+                <input type="email" id="loginEmail" class="input" placeholder="Votre email">
+                <button class="btn btn-secondary" onclick="sendLoginCode()">Recevoir un code</button>
+              </div>
             </div>
+            <div id="loginStep2" class="hidden">
+              <p class="premium-code-label" id="loginEmailSent"></p>
+              <div class="premium-code-row">
+                <input type="text" id="loginCode" class="input" placeholder="Code à 6 chiffres" maxlength="6" pattern="[0-9]{6}">
+                <button class="btn btn-primary" onclick="verifyLoginCode()">Vérifier</button>
+              </div>
+              <p class="premium-code-label" style="margin-top:0.5rem"><a href="#" onclick="document.getElementById('loginStep1').classList.remove('hidden');document.getElementById('loginStep2').classList.add('hidden');return false">Renvoyer un code</a></p>
+            </div>
+            <div id="loginError" class="hidden" style="color:var(--accent-danger);font-size:0.85rem;margin-top:0.5rem"></div>
           </div>
         </div>
       </div>
@@ -230,13 +242,69 @@
     var sessionCode = localStorage.getItem('jb_session');
     var lastQuery = '';
 
-    function activerCode() {
-      var code = document.getElementById('codeInput').value.trim();
-      if (!code) return;
-      sessionCode = code;
-      localStorage.setItem('jb_session', sessionCode);
-      showSession();
-      refreshCredits();
+    var loginEmailValue = '';
+
+    async function sendLoginCode() {
+      var email = document.getElementById('loginEmail').value.trim();
+      if (!email || !email.includes('@')) { showLoginError('Entrez un email valide'); return; }
+      loginEmailValue = email;
+      hideLoginError();
+
+      try {
+        var res = await fetch('/api/auth/send-code', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email })
+        });
+        var data = await res.json();
+        if (data.error) { showLoginError(data.error); return; }
+        document.getElementById('loginStep1').classList.add('hidden');
+        document.getElementById('loginStep2').classList.remove('hidden');
+        document.getElementById('loginEmailSent').textContent = 'Code envoyé à ' + email;
+      } catch (e) {
+        showLoginError('Erreur de connexion. Réessayez.');
+      }
+    }
+
+    async function verifyLoginCode() {
+      var code = document.getElementById('loginCode').value.trim();
+      if (!code || code.length !== 6) { showLoginError('Entrez le code à 6 chiffres'); return; }
+      hideLoginError();
+
+      try {
+        var res = await fetch('/api/auth/verify-code', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: loginEmailValue, code: code })
+        });
+        var data = await res.json();
+        if (data.error) { showLoginError(data.error); return; }
+
+        // Authenticated — get wallets
+        if (data.walletSessions && data.walletSessions.length > 0) {
+          // Use the most recent wallet
+          sessionCode = data.walletSessions[data.walletSessions.length - 1];
+          localStorage.setItem('jb_session', sessionCode);
+          localStorage.setItem('jb_email', loginEmailValue);
+          showSession();
+          refreshCredits();
+        } else {
+          showLoginError('Aucun wallet trouvé pour cet email. Chargez des crédits pour commencer.');
+          document.getElementById('loginStep1').classList.remove('hidden');
+          document.getElementById('loginStep2').classList.add('hidden');
+        }
+      } catch (e) {
+        showLoginError('Erreur de vérification. Réessayez.');
+      }
+    }
+
+    function showLoginError(msg) {
+      var el = document.getElementById('loginError');
+      el.textContent = msg;
+      el.classList.remove('hidden');
+    }
+    function hideLoginError() {
+      document.getElementById('loginError').classList.add('hidden');
     }
 
     var stripeEnabled = false;

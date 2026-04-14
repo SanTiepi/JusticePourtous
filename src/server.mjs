@@ -28,6 +28,7 @@ import { analyzeFrontier, getNextIngestionPriorities, getSourceCatalog } from '.
 import { compile as compileNormative, getRuleDefinitions } from './services/normative-compiler.mjs';
 import { deepAnalysis } from './services/deep-analysis.mjs';
 import { generateDocx } from './services/docx-generator.mjs';
+import { sendCode, verifyCode, linkWalletToEmail, getWalletsByEmail } from './services/auth.mjs';
 import { getVulgarisationForFiche, getVulgarisationStats } from './services/vulgarisation-loader.mjs';
 import {
   getAllArticles, searchArticles,
@@ -302,7 +303,9 @@ const server = createServer(async (req, res) => {
           const result = acheterWallet(montant);
           if (result.data?.sessionCode) {
             stripeSessionMap.set(session.id, result.data.sessionCode);
-            console.log('Wallet created via Stripe webhook:', session.id, '→', result.data.sessionCode, 'CHF', (montant/100).toFixed(2));
+            const customerEmail = session.customer_details?.email || session.customer_email;
+            if (customerEmail) linkWalletToEmail(customerEmail, result.data.sessionCode);
+            console.log('Wallet created via webhook:', session.id, '→', result.data.sessionCode, customerEmail || '');
           }
         }
         return json(res, 200, { received: true });
@@ -364,7 +367,12 @@ const server = createServer(async (req, res) => {
             const result = acheterWallet(montant);
             if (result.data?.sessionCode) {
               stripeSessionMap.set(sessionId, result.data.sessionCode);
-              console.log('Wallet created via direct check:', sessionId, '→', result.data.sessionCode, 'CHF', (montant/100).toFixed(2));
+              // Link email to wallet if available
+              const customerEmail = stripeSession.customer_details?.email || stripeSession.customer_email;
+              if (customerEmail) {
+                linkWalletToEmail(customerEmail, result.data.sessionCode);
+              }
+              console.log('Wallet created via direct check:', sessionId, '→', result.data.sessionCode, 'CHF', (montant/100).toFixed(2), customerEmail ? 'email:' + customerEmail : '');
               return json(res, 200, { sessionCode: result.data.sessionCode, ready: true });
             }
           }
@@ -374,6 +382,31 @@ const server = createServer(async (req, res) => {
       }
 
       return json(res, 200, { ready: false, pending: true });
+    }
+
+    // ─── Auth routes ─────────────────────────────────────────────
+    if (path === '/api/auth/send-code' && method === 'POST') {
+      const body = await parseBody(req);
+      const result = await sendCode(body.email);
+      return json(res, result.status, result.error ? { error: result.error } : result.data);
+    }
+
+    if (path === '/api/auth/verify-code' && method === 'POST') {
+      const body = await parseBody(req);
+      const result = verifyCode(body.email, body.code);
+      return json(res, result.status, result.error ? { error: result.error } : result.data);
+    }
+
+    if (path === '/api/auth/wallets' && method === 'POST') {
+      const body = await parseBody(req);
+      if (!body.email) return json(res, 400, { error: 'Email requis' });
+      const sessions = getWalletsByEmail(body.email);
+      // Get balance for each
+      const wallets = sessions.map(code => {
+        const credits = getCredits(code);
+        return credits.error ? null : { sessionCode: code, solde: credits.data?.solde };
+      }).filter(Boolean);
+      return json(res, 200, { wallets });
     }
 
     if (path === '/api/stripe/config' && method === 'GET') {

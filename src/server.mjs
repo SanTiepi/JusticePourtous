@@ -60,6 +60,22 @@ const cascadesData = JSON.parse(readFileSync(join(__dirname, 'data', 'cascades',
 
 const DISCLAIMER = "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes.";
 
+// ─── Stripe (optional — graceful if no keys) ───────────────────
+let stripe = null;
+const STRIPE_SECRET = process.env.STRIPE_SECRET_KEY;
+const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
+const STRIPE_PUBLIC_KEY = process.env.STRIPE_PUBLISHABLE_KEY;
+const SITE_URL = process.env.SITE_URL || 'https://justicepourtous.ch';
+const stripeSessionMap = new Map(); // stripeSessionId → walletSessionCode
+
+if (STRIPE_SECRET) {
+  const Stripe = (await import('stripe')).default;
+  stripe = new Stripe(STRIPE_SECRET);
+  console.log('Stripe enabled (TWINT + Card)');
+} else {
+  console.log('Stripe not configured — using demo wallet mode');
+}
+
 // In-memory feedback store
 const feedbackStore = [];
 
@@ -202,6 +218,77 @@ const server = createServer(async (req, res) => {
     const q = url.searchParams.get('q');
     if (q && q.length > MAX_QUERY_LENGTH) {
       return json(res, 400, { error: `Requête trop longue (max ${MAX_QUERY_LENGTH} caractères)`, disclaimer: DISCLAIMER });
+    }
+
+    // ─── Stripe routes (must be before parseBody for webhook) ───
+    if (path === '/api/stripe/webhook' && method === 'POST' && stripe) {
+      try {
+        const rawBody = await parseRawBody(req, MAX_BODY_SIZE);
+        const sig = req.headers['stripe-signature'];
+        const event = stripe.webhooks.constructEvent(rawBody, sig, STRIPE_WEBHOOK_SECRET);
+
+        if (event.type === 'checkout.session.completed') {
+          const session = event.data.object;
+          const montant = parseInt(session.metadata?.montant_centimes || '1000', 10);
+          const result = acheterWallet(montant);
+          if (result.data?.sessionCode) {
+            stripeSessionMap.set(session.id, result.data.sessionCode);
+          }
+        }
+        return json(res, 200, { received: true });
+      } catch (err) {
+        console.error('Stripe webhook error:', err.message);
+        return json(res, 400, { error: 'Webhook error' });
+      }
+    }
+
+    if (path === '/api/stripe/create-checkout-session' && method === 'POST' && stripe) {
+      const body = await parseBody(req);
+      const montant = body.montant;
+      const ALLOWED = [500, 1000, 2000];
+      if (!ALLOWED.includes(montant)) return json(res, 400, { error: 'Montant invalide' });
+
+      try {
+        const session = await stripe.checkout.sessions.create({
+          mode: 'payment',
+          currency: 'chf',
+          payment_method_types: ['card', 'twint'],
+          line_items: [{
+            price_data: {
+              currency: 'chf',
+              unit_amount: montant,
+              product_data: {
+                name: `JusticePourtous — Crédits CHF ${(montant / 100).toFixed(0)}`,
+                description: 'Crédits pour analyses juridiques premium',
+              },
+            },
+            quantity: 1,
+          }],
+          metadata: { montant_centimes: String(montant) },
+          success_url: `${SITE_URL}/premium.html?payment=success&session_id={CHECKOUT_SESSION_ID}`,
+          cancel_url: `${SITE_URL}/premium.html?payment=cancelled`,
+        });
+        return json(res, 200, { url: session.url });
+      } catch (err) {
+        console.error('Stripe session error:', err.message);
+        return json(res, 500, { error: 'Erreur paiement' });
+      }
+    }
+
+    if (path === '/api/stripe/session-status' && method === 'GET') {
+      const sessionId = url.searchParams.get('session_id');
+      const walletCode = stripeSessionMap.get(sessionId);
+      if (walletCode) {
+        return json(res, 200, { sessionCode: walletCode, ready: true });
+      }
+      return json(res, 200, { ready: false, pending: true });
+    }
+
+    if (path === '/api/stripe/config' && method === 'GET') {
+      return json(res, 200, {
+        enabled: !!stripe,
+        publishableKey: STRIPE_PUBLIC_KEY || null,
+      });
     }
 
     // API routes

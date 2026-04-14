@@ -221,22 +221,79 @@
       refreshCredits();
     }
 
+    var stripeEnabled = false;
+
+    // Check Stripe availability on load
+    fetch('/api/stripe/config').then(function(r) { return r.json(); }).then(function(d) {
+      stripeEnabled = d.enabled;
+    }).catch(function() {});
+
     async function acheterMontant(centimes) {
-      try {
-        var res = await fetch('/api/premium/acheter', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ montant: centimes })
-        });
-        if (!res.ok) throw new Error('Erreur');
-        var data = await res.json();
-        sessionCode = data.sessionCode;
-        localStorage.setItem('jb_session', sessionCode);
-        showSession();
-        refreshCredits();
-      } catch (e) {
-        alert('Erreur lors du chargement. Réessayez.');
+      if (stripeEnabled) {
+        // Real payment via Stripe
+        try {
+          var res = await fetch('/api/stripe/create-checkout-session', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ montant: centimes })
+          });
+          var data = await res.json();
+          if (data.url) {
+            window.location.href = data.url;
+          } else {
+            alert('Erreur : ' + (data.error || 'Impossible de créer la session de paiement'));
+          }
+        } catch (e) {
+          alert('Erreur de connexion au service de paiement.');
+        }
+      } else {
+        // Demo mode — instant wallet (no real payment)
+        try {
+          var res = await fetch('/api/premium/acheter', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ montant: centimes })
+          });
+          if (!res.ok) throw new Error('Erreur');
+          var data = await res.json();
+          sessionCode = data.sessionCode;
+          localStorage.setItem('jb_session', sessionCode);
+          showSession();
+          refreshCredits();
+        } catch (e) {
+          alert('Erreur lors du chargement. Réessayez.');
+        }
       }
+    }
+
+    // Handle Stripe return URL
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('payment') === 'success' && urlParams.get('session_id')) {
+      pollStripeSession(urlParams.get('session_id'), 0);
+    }
+    if (urlParams.get('payment') === 'cancelled') {
+      alert('Paiement annulé. Vous pouvez réessayer.');
+      history.replaceState({}, '', '/premium.html');
+    }
+
+    function pollStripeSession(stripeSessionId, attempt) {
+      if (attempt > 10) { alert('Le paiement est en cours de traitement. Rechargez la page dans quelques instants.'); return; }
+      fetch('/api/stripe/session-status?session_id=' + stripeSessionId)
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          if (data.ready && data.sessionCode) {
+            sessionCode = data.sessionCode;
+            localStorage.setItem('jb_session', sessionCode);
+            history.replaceState({}, '', '/premium.html');
+            showSession();
+            refreshCredits();
+          } else {
+            setTimeout(function() { pollStripeSession(stripeSessionId, attempt + 1); }, 2000);
+          }
+        })
+        .catch(function() {
+          setTimeout(function() { pollStripeSession(stripeSessionId, attempt + 1); }, 2000);
+        });
     }
 
     // Legacy compat

@@ -313,9 +313,37 @@
       "url": "https://www.caritas-bern.ch"
     },
     {
-      "nom": "Syndicat Unia Bern",
+      "nom": "Syndicat Unia Berne",
       "type": "syndicat",
-      "url": "https://www.unia.ch/de/région/bern"
+      "tel": "031 350 22 22",
+      "url": "https://www.unia.ch/de/region/bern"
+    },
+    {
+      "nom": "Autorite de conciliation en matiere de baux BE",
+      "type": "conciliation",
+      "url": "https://www.justice.be.ch/fr/start/themen/schlichtungsbehoerden.html"
+    },
+    {
+      "nom": "Assistance judiciaire Berne",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.justice.be.ch/fr/start/themen/unentgeltliche-rechtspflege.html"
+    },
+    {
+      "nom": "Ordre des avocats bernois",
+      "type": "avocats",
+      "url": "https://www.bav-oak.ch"
+    },
+    {
+      "nom": "Centre LAVI Berne",
+      "type": "lavi",
+      "tel": "031 636 14 15",
+      "url": "https://www.pom.be.ch/fr/start/themen/opferhilfe.html"
+    },
+    {
+      "nom": "Office de la population et des migrations BE (OMi)",
+      "type": "administration",
+      "tel": "031 636 41 11",
+      "url": "https://www.pom.be.ch/fr/start/themen/auslaendische-staatsangehoerige.html"
     }
   ],
   "ZH": [
@@ -333,7 +361,311 @@
     {
       "nom": "Syndicat Unia Zurich",
       "type": "syndicat",
-      "url": "https://www.unia.ch/de/région/zuerich-schaffhausen"
+      "tel": "044 295 15 15",
+      "url": "https://www.unia.ch/de/region/zuerich-schaffhausen"
+    },
+    {
+      "nom": "Autorite de conciliation en matiere de baux ZH",
+      "type": "conciliation",
+      "url": "https://www.zh.ch/de/sicherheit-justiz/schlichtungsbehoerden-mietrecht.html"
+    },
+    {
+      "nom": "Assistance judiciaire Zurich",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.zh.ch/de/sicherheit-justiz/unentgeltliche-rechtspflege.html"
+    },
+    {
+      "nom": "Ordre des avocats zurichois",
+      "type": "avocats",
+      "url": "https://www.zav.ch"
+    },
+    {
+      "nom": "Centre LAVI Zurich",
+      "type": "lavi",
+      "tel": "044 299 40 50",
+      "url": "https://www.opferhilfe-zh.ch"
+    },
+    {
+      "nom": "Office des migrations ZH (Migrationsamt)",
+      "type": "administration",
+      "tel": "044 259 88 00",
+      "url": "https://www.zh.ch/de/sicherheitsdirektion/migrationsamt.html"
+    }
+  ],
+  "LU": [
+    {
+      "nom": "Mieterverband Luzern / ASLOCA Lucerne",
+      "type": "asloca",
+      "tel": "041 210 38 88",
+      "url": "https://www.mieterverband.ch/luzern"
+    },
+    {
+      "nom": "Caritas Lucerne",
+      "type": "csp",
+      "url": "https://www.caritas-luzern.ch"
+    },
+    {
+      "nom": "Syndicat Unia Lucerne",
+      "type": "syndicat",
+      "tel": "041 249 09 09",
+      "url": "https://www.unia.ch/de/region/zentralschweiz"
+    },
+    {
+      "nom": "Autorite de conciliation en matiere de baux LU",
+      "type": "conciliation",
+      "url": "https://www.lu.ch/verwaltung/JSD/gerichte/schlichtungsbehoerde"
+    },
+    {
+      "nom": "Assistance judiciaire Lucerne",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.lu.ch/verwaltung/JSD/unentgeltliche_rechtspflege"
+    },
+    {
+      "nom": "Ordre des avocats lucernois",
+      "type": "avocats",
+      "url": "https://www.luzerner-anwaltsverband.ch"
+    },
+    {
+      "nom": "Centre LAVI Lucerne",
+      "type": "lavi",
+      "tel": "041 228 74 00",
+      "url": "https://www.disg.lu.ch/themen/opferhilfe"
+    },
+    {
+      "nom": "Office des migrations LU (Migrationsamt)",
+      "type": "administration",
+      "tel": "041 228 61 78",
+      "url": "https://www.disg.lu.ch/themen/migration"
+    }
+  ],
+  "AG": [
+    {
+      "nom": "Mieterverband Aargau / ASLOCA Argovie",
+      "type": "asloca",
+      "tel": "062 823 57 28",
+      "url": "https://www.mieterverband.ch/aargau"
+    },
+    {
+      "nom": "Caritas Argovie",
+      "type": "csp",
+      "url": "https://www.caritas-aargau.ch"
+    },
+    {
+      "nom": "Syndicat Unia Argovie",
+      "type": "syndicat",
+      "tel": "062 837 62 62",
+      "url": "https://www.unia.ch/de/region/aargau-solothurn"
+    },
+    {
+      "nom": "Autorite de conciliation en matiere de baux AG",
+      "type": "conciliation",
+      "url": "https://www.ag.ch/de/verwaltung/dvi/bevoelkerungsamt/schlichtungsbehoerde"
+    },
+    {
+      "nom": "Assistance judiciaire Argovie",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.ag.ch/de/verwaltung/dvi/unentgeltliche-rechtspflege"
+    },
+    {
+      "nom": "Ordre des avocats argoviens",
+      "type": "avocats",
+      "url": "https://www.aargaueranwaltsverband.ch"
+    },
+    {
+      "nom": "Centre LAVI Argovie",
+      "type": "lavi",
+      "tel": "062 835 47 90",
+      "url": "https://www.ag.ch/de/verwaltung/dgs/opferhilfe"
+    },
+    {
+      "nom": "Office des migrations AG (MIKA)",
+      "type": "administration",
+      "tel": "062 835 18 60",
+      "url": "https://www.ag.ch/de/verwaltung/dvi/amt-fuer-migration-und-integration"
+    }
+  ],
+  "SG": [
+    {
+      "nom": "Mieterverband Ostschweiz / ASLOCA Saint-Gall",
+      "type": "asloca",
+      "tel": "071 222 19 09",
+      "url": "https://www.mieterverband.ch/ostschweiz"
+    },
+    {
+      "nom": "Caritas Saint-Gall",
+      "type": "csp",
+      "url": "https://www.caritas-stgallen.ch"
+    },
+    {
+      "nom": "Syndicat Unia Saint-Gall",
+      "type": "syndicat",
+      "tel": "071 272 72 00",
+      "url": "https://www.unia.ch/de/region/ostschweiz-graubuenden"
+    },
+    {
+      "nom": "Autorite de conciliation en matiere de baux SG",
+      "type": "conciliation",
+      "url": "https://www.sg.ch/recht/schlichtungsbehoerden.html"
+    },
+    {
+      "nom": "Assistance judiciaire Saint-Gall",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.sg.ch/recht/unentgeltliche-rechtspflege.html"
+    },
+    {
+      "nom": "Ordre des avocats saint-gallois",
+      "type": "avocats",
+      "url": "https://www.sgav.ch"
+    },
+    {
+      "nom": "Centre LAVI Saint-Gall",
+      "type": "lavi",
+      "tel": "071 227 11 00",
+      "url": "https://www.sg.ch/gesundheit-soziales/soziales/opferhilfe.html"
+    },
+    {
+      "nom": "Office des migrations SG (Migrationsamt)",
+      "type": "administration",
+      "tel": "058 229 31 70",
+      "url": "https://www.sg.ch/sicherheit/migrationsamt.html"
+    }
+  ],
+  "BS": [
+    {
+      "nom": "Mieterverband Basel / ASLOCA Bale-Ville",
+      "type": "asloca",
+      "tel": "061 666 69 69",
+      "url": "https://www.mieterverband.ch/basel"
+    },
+    {
+      "nom": "Caritas Bale",
+      "type": "csp",
+      "url": "https://www.caritas-beider-basel.ch"
+    },
+    {
+      "nom": "Syndicat Unia Bale",
+      "type": "syndicat",
+      "tel": "061 564 55 55",
+      "url": "https://www.unia.ch/de/region/nordwestschweiz"
+    },
+    {
+      "nom": "Autorite de conciliation en matiere de baux BS",
+      "type": "conciliation",
+      "url": "https://www.gerichte.bs.ch/schlichtungsbehoerde-miet-pacht.html"
+    },
+    {
+      "nom": "Assistance judiciaire Bale-Ville",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.gerichte.bs.ch/unentgeltliche-rechtspflege.html"
+    },
+    {
+      "nom": "Ordre des avocats balois",
+      "type": "avocats",
+      "url": "https://www.advokatur.ch"
+    },
+    {
+      "nom": "Centre LAVI Bale-Ville",
+      "type": "lavi",
+      "tel": "061 205 09 10",
+      "url": "https://www.jsd.bs.ch/opferhilfe.html"
+    },
+    {
+      "nom": "Office des migrations BS (Migrationsamt)",
+      "type": "administration",
+      "tel": "061 267 83 83",
+      "url": "https://www.jsd.bs.ch/migrationsamt.html"
+    }
+  ],
+  "SO": [
+    {
+      "nom": "Mieterverband Solothurn / ASLOCA Soleure",
+      "type": "asloca",
+      "tel": "032 622 55 39",
+      "url": "https://www.mieterverband.ch/solothurn"
+    },
+    {
+      "nom": "Caritas Soleure",
+      "type": "csp",
+      "url": "https://www.caritas-solothurn.ch"
+    },
+    {
+      "nom": "Syndicat Unia Soleure",
+      "type": "syndicat",
+      "tel": "032 625 27 27",
+      "url": "https://www.unia.ch/de/region/aargau-solothurn"
+    },
+    {
+      "nom": "Autorite de conciliation en matiere de baux SO",
+      "type": "conciliation",
+      "url": "https://www.so.ch/verwaltung/departement-des-innern/schlichtungsbehoerde"
+    },
+    {
+      "nom": "Assistance judiciaire Soleure",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.so.ch/verwaltung/departement-des-innern/unentgeltliche-rechtspflege"
+    },
+    {
+      "nom": "Ordre des avocats soleurois",
+      "type": "avocats",
+      "url": "https://www.solothurner-anwaltsverband.ch"
+    },
+    {
+      "nom": "Centre LAVI Soleure",
+      "type": "lavi",
+      "tel": "032 627 21 20",
+      "url": "https://www.so.ch/verwaltung/departement-des-innern/opferhilfe"
+    },
+    {
+      "nom": "Office des migrations SO (Migrationsamt)",
+      "type": "administration",
+      "tel": "032 627 27 54",
+      "url": "https://www.so.ch/verwaltung/departement-des-innern/migrationsamt"
+    }
+  ],
+  "TG": [
+    {
+      "nom": "Mieterverband Thurgau / ASLOCA Thurgovie",
+      "type": "asloca",
+      "tel": "052 721 48 48",
+      "url": "https://www.mieterverband.ch/ostschweiz"
+    },
+    {
+      "nom": "Caritas Thurgovie",
+      "type": "csp",
+      "url": "https://www.caritas-thurgau.ch"
+    },
+    {
+      "nom": "Syndicat Unia Thurgovie",
+      "type": "syndicat",
+      "tel": "052 260 13 13",
+      "url": "https://www.unia.ch/de/region/ostschweiz-graubuenden"
+    },
+    {
+      "nom": "Autorite de conciliation en matiere de baux TG",
+      "type": "conciliation",
+      "url": "https://www.tg.ch/schlichtungsbehoerde.html"
+    },
+    {
+      "nom": "Assistance judiciaire Thurgovie",
+      "type": "aide_juridictionnelle",
+      "url": "https://www.tg.ch/unentgeltliche-rechtspflege.html"
+    },
+    {
+      "nom": "Ordre des avocats thurgoviens",
+      "type": "avocats",
+      "url": "https://www.thurgauer-anwaltsverband.ch"
+    },
+    {
+      "nom": "Centre LAVI Thurgovie",
+      "type": "lavi",
+      "tel": "052 723 48 80",
+      "url": "https://www.tg.ch/opferhilfe.html"
+    },
+    {
+      "nom": "Office des migrations TG (Migrationsamt)",
+      "type": "administration",
+      "tel": "052 724 27 51",
+      "url": "https://www.tg.ch/migrationsamt.html"
     }
   ],
   "TI": [

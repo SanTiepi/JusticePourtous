@@ -25,10 +25,10 @@ async function initConsultation(domaine) {
     if (card) card.classList.add('hidden');
     var errBox = document.getElementById('errorBox');
     if (errBox) {
-      errBox.textContent = 'Impossible de charger les questions. ';
+      errBox.textContent = t('error.charge_failed') + ' ';
       var link = document.createElement('a');
       link.href = '/';
-      link.textContent = "Retour à l'accueil";
+      link.textContent = t('result.back_home');
       errBox.appendChild(link);
       errBox.classList.remove('hidden');
     }
@@ -51,7 +51,7 @@ function showQuestion() {
 
   // Update progress labels
   var progressText = document.getElementById('progressText');
-  if (progressText) progressText.textContent = 'Question ' + (currentStep + 1) + ' sur ' + total;
+  if (progressText) progressText.textContent = t('consult.question_n').replace('{{n}}', currentStep + 1).replace('{{total}}', total);
 
   var progressCount = document.getElementById('progressCount');
   if (progressCount) progressCount.textContent = Math.round(progress) + '%';
@@ -67,7 +67,7 @@ function showQuestion() {
   if (nextBtn) {
     nextBtn.disabled = !currentAnswers[currentStep];
     // Change text on last question
-    nextBtn.textContent = (currentStep === total - 1) ? 'Voir mes droits' : 'Suivant';
+    nextBtn.textContent = (currentStep === total - 1) ? t('action.voir_droits') : t('action.suivant');
   }
 
   // Render options
@@ -76,7 +76,7 @@ function showQuestion() {
   if (q.type === 'canton') {
     var cantons = ['AG','AI','AR','BE','BL','BS','FR','GE','GL','GR','JU','LU','NE','NW','OW','SG','SH','SO','SZ','TG','TI','UR','VD','VS','ZG','ZH'];
     var sel = '<select class="select w-full" onchange="selectCanton(this.value)">';
-    sel += '<option value="">-- Canton --</option>';
+    sel += '<option value="">' + t('consult.canton_select') + '</option>';
     cantons.forEach(function(c) {
       sel += '<option value="' + c + '"' + (currentAnswers[currentStep] === c ? ' selected' : '') + '>' + c + '</option>';
     });
@@ -137,7 +137,7 @@ async function submitConsultation() {
 
   // Show loading state
   var card = document.getElementById('questionCard');
-  if (card) card.innerHTML = '<div class="loading">Analyse en cours</div>';
+  if (card) card.innerHTML = '<div class="loading">' + t('consult.analysis_loading') + '</div>';
 
   try {
     var res = await fetch('/api/consulter', {
@@ -161,7 +161,7 @@ async function submitConsultation() {
     }
   } catch (e) {
     if (card) {
-      card.innerHTML = '<div class="error-box">Erreur lors de l\'analyse. <a href="/">Retour à l\'accueil</a></div>';
+      card.innerHTML = '<div class="error-box">' + t('error.analysis_failed') + ' <a href="/">' + t('result.back_home') + '</a></div>';
     }
   }
 }
@@ -184,14 +184,14 @@ async function loadResultat(ficheId) {
       if (!res.ok) throw new Error('Fiche non trouvée');
       data = await res.json();
     } catch (e) {
-      document.getElementById('resultat').innerHTML = '<div class="error-box">Fiche non trouvée. <a href="/">Retour à l\'accueil</a></div>';
+      document.getElementById('resultat').innerHTML = '<div class="error-box">' + t('result.error_fiche') + ' <a href="/">' + t('result.back_home') + '</a></div>';
       return;
     }
   }
 
   var fiche = data.fiche;
   if (!fiche) {
-    document.getElementById('resultat').innerHTML = '<div class="error-box">Fiche non trouvée. <a href="/">Retour à l\'accueil</a></div>';
+    document.getElementById('resultat').innerHTML = '<div class="error-box">' + t('result.error_fiche') + ' <a href="/">' + t('result.back_home') + '</a></div>';
     return;
   }
 
@@ -206,7 +206,7 @@ async function loadResultat(ficheId) {
 
   // Summary card
   html += '<div class="card-highlight">';
-  html += '<h3>Votre situation</h3>';
+  html += '<h3>' + t('result.your_situation') + '</h3>';
   html += '<p>' + r.explication + '</p>';
   html += '</div>';
 
@@ -216,7 +216,7 @@ async function loadResultat(ficheId) {
   // Articles de loi
   if (r.articles && r.articles.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Articles de loi applicables</h3>';
+    html += '<h3>' + t('result.articles_title') + '</h3>';
     r.articles.forEach(function(a) {
       html += '<a href="' + a.lien + '" target="_blank" rel="noopener" class="article-link">';
       html += '<span class="ref">' + a.ref + '</span> ';
@@ -229,7 +229,7 @@ async function loadResultat(ficheId) {
   // Jurisprudence
   if (r.jurisprudence && r.jurisprudence.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Jurisprudence du Tribunal fédéral</h3>';
+    html += '<h3>' + t('result.jurisprudence_title') + '</h3>';
     r.jurisprudence.forEach(function(j) {
       html += '<div class="jurisprudence">';
       html += '<div class="ref">' + j.ref + '</div>';
@@ -242,9 +242,9 @@ async function loadResultat(ficheId) {
   // Modele lettre
   if (r.modeleLettre) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Modèle de lettre</h3>';
+    html += '<h3>' + t('result.model_letter') + '</h3>';
     html += '<div class="lettre-box">';
-    html += '<button class="copy-btn" onclick="copyLettre()">Copier</button>';
+    html += '<button class="copy-btn" onclick="copyLettre()">' + t('action.copier') + '</button>';
     html += '<pre id="lettreText">' + r.modeleLettre + '</pre>';
     html += '</div>';
     html += '</div>';
@@ -253,7 +253,7 @@ async function loadResultat(ficheId) {
   // Services
   if (r.services && r.services.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Services compétents</h3>';
+    html += '<h3>' + t('result.services_title') + '</h3>';
     r.services.forEach(function(s) {
       html += '<div class="service-item">';
       html += '<div><div class="nom">' + s.nom + '</div>';
@@ -262,7 +262,7 @@ async function loadResultat(ficheId) {
       html += '</div>';
       html += '<div class="service-item-right">';
       if (s.tel) html += '<a href="tel:' + s.tel + '" class="tel">' + s.tel + '</a><br>';
-      if (s.url) html += '<a href="' + s.url + '" target="_blank" rel="noopener" class="service-web-link">Site web</a>';
+      if (s.url) html += '<a href="' + s.url + '" target="_blank" rel="noopener" class="service-web-link">' + t('action.site_web') + '</a>';
       html += '</div></div>';
     });
     html += '</div>';
@@ -270,15 +270,15 @@ async function loadResultat(ficheId) {
 
   // Action buttons
   html += '<div class="result-actions">';
-  html += '<button class="btn btn-print" onclick="window.print()">Imprimer / Sauvegarder PDF</button>';
-  html += '<a href="/" class="btn btn-outline">Nouvelle consultation</a>';
+  html += '<button class="btn btn-print" onclick="window.print()">' + t('action.imprimer') + '</button>';
+  html += '<a href="/" class="btn btn-outline">' + t('action.nouvelle_consultation') + '</a>';
   html += '</div>';
 
   // Upsell premium (discret)
   html += '<div class="upsell">';
-  html += '<h3>Besoin d\'une analyse personnalisée ?</h3>';
-  html += '<p>Notre IA analyse votre situation en détail pour CHF 0.03 à 0.10 par question.</p>';
-  html += '<a href="/premium.html" class="btn btn-sm">Espace Premium</a>';
+  html += '<h3>' + t('upsell.title') + '</h3>';
+  html += '<p>' + t('upsell.text') + '</p>';
+  html += '<a href="/premium.html" class="btn btn-sm">' + t('upsell.button') + '</a>';
   html += '</div>';
 
   document.getElementById('resultat').innerHTML = html;
@@ -288,10 +288,10 @@ function copyLettre() {
   var text = document.getElementById('lettreText').textContent;
   navigator.clipboard.writeText(text).then(function() {
     var btn = document.querySelector('.copy-btn');
-    btn.textContent = 'Copie !';
+    btn.textContent = t('action.copie');
     btn.classList.add('copied');
     setTimeout(function() {
-      btn.textContent = 'Copier';
+      btn.textContent = t('action.copier');
       btn.classList.remove('copied');
     }, 2000);
   }).catch(function() {
@@ -305,46 +305,37 @@ function copyLettre() {
 
 // ===== Loading indicator with rotating messages =====
 
-var LOADING_MESSAGES = [
-  'Lecture de votre situation...',
-  'Identification du domaine juridique...',
-  'Recherche des articles de loi applicables...',
-  'Consultation de la jurisprudence du Tribunal fédéral...',
-  'Vérification des délais légaux...',
-  'Analyse des conditions de recevabilité...',
-  'Extraction des faits pertinents...',
-  'Croisement avec les fiches vérifiées...',
-  'Évaluation de la complexité juridique...',
-  'Recherche des services compétents dans votre canton...',
-  'Vérification des modèles de lettres disponibles...',
-  'Analyse des erreurs fréquentes à éviter...',
-  'Consultation des barèmes et taux de référence...',
-  'Compilation des règles normatives applicables...',
-  'Construction du plan d\'action personnalisé...',
-  'Vérification des sources et références...',
-  'Recherche de jurisprudence contradictoire...',
-  'Évaluation du niveau de confiance...',
-  'Identification des lacunes d\'information...',
-  'Préparation de votre dossier...',
-];
+function getLoadingMessages() {
+  if (typeof tLoadingMessages === 'function') return tLoadingMessages('loading_search');
+  return [
+    t('loading_search.msg_01'), t('loading_search.msg_02'), t('loading_search.msg_03'),
+    t('loading_search.msg_04'), t('loading_search.msg_05'), t('loading_search.msg_06'),
+    t('loading_search.msg_07'), t('loading_search.msg_08'), t('loading_search.msg_09'),
+    t('loading_search.msg_10'), t('loading_search.msg_11'), t('loading_search.msg_12'),
+    t('loading_search.msg_13'), t('loading_search.msg_14'), t('loading_search.msg_15'),
+    t('loading_search.msg_16'), t('loading_search.msg_17'), t('loading_search.msg_18'),
+    t('loading_search.msg_19'), t('loading_search.msg_20')
+  ];
+}
 
 var loadingInterval = null;
 
 function startLoadingIndicator(container) {
+  var msgs = getLoadingMessages();
   var idx = 0;
   container.innerHTML = '<div class="loading-indicator">' +
     '<div class="loading-spinner"></div>' +
-    '<div class="loading-message" id="loadingMsg">' + LOADING_MESSAGES[0] + '</div>' +
-    '<div class="loading-sub">Cela prend généralement 5 à 15 secondes</div>' +
+    '<div class="loading-message" id="loadingMsg">' + msgs[0] + '</div>' +
+    '<div class="loading-sub">' + t('loading_search.sub') + '</div>' +
     '</div>';
   loadingInterval = setInterval(function() {
-    idx = (idx + 1) % LOADING_MESSAGES.length;
+    idx = (idx + 1) % msgs.length;
     var el = document.getElementById('loadingMsg');
     if (el) {
       el.style.opacity = '0';
       setTimeout(function() {
         if (el) {
-          el.textContent = LOADING_MESSAGES[idx];
+          el.textContent = msgs[idx];
           el.style.opacity = '1';
         }
       }, 200);
@@ -369,7 +360,7 @@ async function loadSearchResultat(query) {
 
     if (!res.ok || data.error) {
       container.innerHTML =
-        '<div class="error-box">' + (data.error || 'Aucun résultat') + '<br><a href="/">Retour à l\'accueil</a></div>';
+        '<div class="error-box">' + (data.error || t('result.no_result')) + '<br><a href="/">' + t('result.back_home') + '</a></div>';
       return;
     }
 
@@ -380,7 +371,7 @@ async function loadSearchResultat(query) {
     }
   } catch (e) {
     stopLoadingIndicator();
-    container.innerHTML = '<div class="error-box">Erreur de connexion. <a href="/">Retour à l\'accueil</a></div>';
+    container.innerHTML = '<div class="error-box">' + t('result.error_connection') + ' <a href="/">' + t('result.back_home') + '</a></div>';
   }
 }
 
@@ -388,11 +379,11 @@ function renderTaxonomieResult(data, query, container) {
   var q = data.qualification || {};
   var html = '';
 
-  html += '<div class="result-query-echo"><span class="result-query-label">Votre recherche</span> ' + escHtml(query) + '</div>';
+  html += '<div class="result-query-echo"><span class="result-query-label">' + t('result.your_search') + '</span> ' + escHtml(query) + '</div>';
 
   html += '<div class="card-highlight">';
-  html += '<h3>Qualification juridique</h3>';
-  html += '<p>' + escHtml(data.suggestion || 'Votre problème relève du domaine juridique suivant.') + '</p>';
+  html += '<h3>' + t('result.juridical_qualification') + '</h3>';
+  html += '<p>' + escHtml(data.suggestion || t('result.juridical_qualification')) + '</p>';
   if (q.domaine) html += '<p class="result-domaine-tag">' + escHtml(q.domaine) + '</p>';
   html += '</div>';
 
@@ -401,7 +392,7 @@ function renderTaxonomieResult(data, query, container) {
 
   if (q.qualification_juridique) {
     html += '<div class="card">';
-    html += '<h3>Qualification</h3>';
+    html += '<h3>' + t('result.qualification') + '</h3>';
     html += '<p>' + escHtml(q.qualification_juridique) + '</p>';
     html += '</div>';
   }
@@ -421,8 +412,7 @@ function renderEnrichedResult(data, query, container) {
 
   // Confidence badge helper
   function confidenceBadge(level) {
-    var labels = { certain: 'Certain', probable: 'Probable', variable: 'Variable', incertain: 'Incertain' };
-    var label = labels[level] || level || 'Inconnu';
+    var label = t('confidence.' + (level || 'incertain')) || level || t('confidence.incertain');
     var cls = 'confidence-' + (level || 'incertain');
     return '<span class="confidence-badge ' + cls + '"><span class="confidence-dot"></span>' + label + '</span>';
   }
@@ -430,12 +420,12 @@ function renderEnrichedResult(data, query, container) {
   // Tier badge helper
   function tierBadge(tier) {
     if (!tier) return '';
-    var labels = { 1: 'LOI', 2: 'TF', 3: 'PRATIQUE' };
-    return '<span class="tier-badge tier-' + tier + '">' + (labels[tier] || 'T' + tier) + '</span>';
+    var label = t('tier.' + tier) || ('T' + tier);
+    return '<span class="tier-badge tier-' + tier + '">' + label + '</span>';
   }
 
   // Query echo
-  html += '<div class="result-query-echo"><span class="result-query-label">Votre recherche</span> ' + escHtml(query) + '</div>';
+  html += '<div class="result-query-echo"><span class="result-query-label">' + t('result.your_search') + '</span> ' + escHtml(query) + '</div>';
 
   // Main fiche summary + confidence
   var fiche = data.fiche || {};
@@ -444,7 +434,7 @@ function renderEnrichedResult(data, query, container) {
   if (explication) {
     html += '<div class="card-highlight"' + stagger() + '>';
     html += '<div class="result-header">';
-    html += '<h3>Votre situation</h3>';
+    html += '<h3>' + t('result.your_situation') + '</h3>';
     html += confidenceBadge(confiance);
     html += '</div>';
     html += '<p>' + escHtml(explication) + '</p>';
@@ -456,10 +446,10 @@ function renderEnrichedResult(data, query, container) {
   var lacunes = data.lacunes || [];
   if (lacunes.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Ce que nous ne savons pas encore</h3>';
+    html += '<h3>' + t('result.lacunes_title') + '</h3>';
     lacunes.forEach(function(l) {
       html += '<div class="lacune-box">';
-      html += '<div class="lacune-type">' + escHtml(l.type || 'Information manquante') + '</div>';
+      html += '<div class="lacune-type">' + escHtml(l.type || t('result.lacune_type_default')) + '</div>';
       html += '<p>' + escHtml(l.message || '') + '</p>';
       html += '</div>';
     });
@@ -471,16 +461,16 @@ function renderEnrichedResult(data, query, container) {
 
   // Quick actions
   html += '<div class="result-actions"' + stagger() + '>';
-  html += '<button class="btn btn-sm btn-print" onclick="window.print()">Imprimer / PDF</button>';
-  html += '<a href="/" class="btn btn-sm btn-outline">Nouvelle recherche</a>';
-  html += '<a href="/annuaire.html" class="btn btn-sm btn-secondary">Annuaire</a>';
+  html += '<button class="btn btn-sm btn-print" onclick="window.print()">' + t('action.imprimer_short') + '</button>';
+  html += '<a href="/" class="btn btn-sm btn-outline">' + t('action.nouvelle_recherche') + '</a>';
+  html += '<a href="/annuaire.html" class="btn btn-sm btn-secondary">' + t('nav.annuaire') + '</a>';
   html += '</div>';
 
   // Delais — V3 card design (show ALL, not just urgent)
   var delais = data.delais || [];
   if (delais.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Délais à connaître</h3>';
+    html += '<h3>' + t('result.delais_title') + '</h3>';
     delais.slice(0, 5).forEach(function(d) {
       html += '<div class="delai-card">';
       html += '<div class="delai-value">' + escHtml(d.duree || d.delai || '?') + '</div>';
@@ -496,7 +486,7 @@ function renderEnrichedResult(data, query, container) {
   var articles = data.articles || [];
   if (articles.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Articles de loi applicables</h3>';
+    html += '<h3>' + t('result.articles_title') + '</h3>';
     articles.forEach(function(a) {
       var lien = a.lienFedlex || a.lien || ('https://www.fedlex.admin.ch/search?q=' + encodeURIComponent(a.ref || ''));
       html += '<a href="' + escAttr(lien) + '" target="_blank" rel="noopener" class="article-link">';
@@ -512,7 +502,7 @@ function renderEnrichedResult(data, query, container) {
   var ficheDomaine = (data.fiche || {}).domaine;
   if (ficheDomaine === 'bail') {
     html += '<div class="card" id="baremes-card" style="display:none"' + stagger() + '>';
-    html += '<h3>Taux de référence</h3>';
+    html += '<h3>' + t('result.baremes_title') + '</h3>';
     html += '<div id="baremes-content"></div>';
     html += '</div>';
     // Async load
@@ -525,8 +515,8 @@ function renderEnrichedResult(data, query, container) {
           el.innerHTML = '<div class="delai-card">' +
             '<div class="delai-value">' + b.valeur_actuelle.taux + '%</div>' +
             '<div class="delai-info">' +
-            '<div class="delai-procedure">Taux hypothécaire de référence OFL</div>' +
-            '<div class="delai-consequence">Base pour contester une augmentation de loyer (CO 269a). Publié le ' + (b.valeur_actuelle.date_publication || '') + '</div>' +
+            '<div class="delai-procedure">' + t('result.baremes_label') + '</div>' +
+            '<div class="delai-consequence">' + t('result.baremes_consequence').replace('{{date}}', b.valeur_actuelle.date_publication || '') + '</div>' +
             '</div></div>';
         }
       }
@@ -537,7 +527,7 @@ function renderEnrichedResult(data, query, container) {
   var juris = data.jurisprudence || data.jurisprudenceElargie || [];
   if (juris.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Jurisprudence du Tribunal fédéral</h3>';
+    html += '<h3>' + t('result.jurisprudence_title') + '</h3>';
     // Show up to 3 favorable + 2 défavorable for contradictoire
     var favJuris = juris.filter(function(j) { return j.role === 'favorable'; }).slice(0, 3);
     var contraJuris = juris.filter(function(j) { return j.role === 'defavorable'; }).slice(0, 2);
@@ -546,7 +536,7 @@ function renderEnrichedResult(data, query, container) {
 
     displayJuris.forEach(function(j) {
       var roleCls = j.role || 'neutre';
-      var roleLabel = roleCls === 'favorable' ? 'Favorable' : roleCls === 'defavorable' ? 'Défavorable' : 'Neutre';
+      var roleLabel = t('role.' + roleCls);
 
       html += '<div class="juris-card">';
       html += '<div class="juris-header">';
@@ -570,17 +560,17 @@ function renderEnrichedResult(data, query, container) {
   var templates = data.templates || [];
   if (templates.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Modèles de lettres</h3>';
-    templates.forEach(function(t, i) {
+    html += '<h3>' + t('result.templates_title') + '</h3>';
+    templates.forEach(function(tpl, i) {
       var tplId = 'tpl-' + i;
       html += '<div class="template-item">';
       html += '<div class="template-header" onclick="toggleTemplate(\'' + tplId + '\')">';
-      html += '<span class="template-title">' + escHtml(t.nom || t.titre || t.type || 'Modèle') + '</span>';
-      html += '<span class="template-toggle" id="toggle-' + tplId + '">Afficher</span>';
+      html += '<span class="template-title">' + escHtml(tpl.nom || tpl.titre || tpl.type || t('result.model_letter')) + '</span>';
+      html += '<span class="template-toggle" id="toggle-' + tplId + '">' + t('action.afficher') + '</span>';
       html += '</div>';
       html += '<div class="lettre-box hidden" id="' + tplId + '">';
-      html += '<button class="copy-btn" onclick="copyTemplate(\'' + tplId + '\')">Copier</button>';
-      html += '<pre id="text-' + tplId + '">' + escHtml(t.contenu || t.template || t.texte || '') + '</pre>';
+      html += '<button class="copy-btn" onclick="copyTemplate(\'' + tplId + '\')">' + t('action.copier') + '</button>';
+      html += '<pre id="text-' + tplId + '">' + escHtml(tpl.contenu || tpl.template || tpl.texte || '') + '</pre>';
       html += '</div>';
       html += '</div>';
     });
@@ -591,7 +581,7 @@ function renderEnrichedResult(data, query, container) {
   var antiErreurs = data.antiErreurs || [];
   if (antiErreurs.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Erreurs à éviter</h3>';
+    html += '<h3>' + t('result.anti_erreurs_title') + '</h3>';
     antiErreurs.slice(0, 4).forEach(function(ae) {
       var gravite = (ae.gravite || 'moyenne').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
       var icon = gravite === 'critique' ? '!' : gravite === 'elevee' ? '!' : '!';
@@ -610,7 +600,7 @@ function renderEnrichedResult(data, query, container) {
   var escalade = data.escalade || [];
   if (escalade.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Services compétents</h3>';
+    html += '<h3>' + t('result.services_title') + '</h3>';
     escalade.slice(0, 5).forEach(function(s) {
       html += '<div class="service-item">';
       html += '<div><div class="nom">' + escHtml(s.nom || s.service || '') + '</div>';
@@ -619,7 +609,7 @@ function renderEnrichedResult(data, query, container) {
       html += '</div>';
       html += '<div class="service-item-right">';
       if (s.tel) html += '<a href="tel:' + escAttr(s.tel) + '" class="tel">' + escHtml(s.tel) + '</a><br>';
-      if (s.url) html += '<a href="' + escAttr(s.url) + '" target="_blank" rel="noopener" class="service-web-link">Site web</a>';
+      if (s.url) html += '<a href="' + escAttr(s.url) + '" target="_blank" rel="noopener" class="service-web-link">' + t('action.site_web') + '</a>';
       html += '</div></div>';
     });
     html += '</div>';
@@ -629,7 +619,7 @@ function renderEnrichedResult(data, query, container) {
   var alts = data.alternatives || [];
   if (alts.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Situations similaires</h3>';
+    html += '<h3>' + t('result.alternatives_title') + '</h3>';
     alts.forEach(function(a) {
       html += '<a href="/resultat.html?fiche=' + escAttr(a.id) + '" class="alt-link">';
       html += escHtml(a.id.replace(/_/g, ' '));
@@ -642,7 +632,7 @@ function renderEnrichedResult(data, query, container) {
   var vulg = data.vulgarisation || null;
   if (vulg && vulg.questions_citoyennes && vulg.questions_citoyennes.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Questions fréquentes des citoyens</h3>';
+    html += '<h3>' + t('result.vulg_title') + '</h3>';
     vulg.questions_citoyennes.slice(0, 5).forEach(function(q, i) {
       var qId = 'vulg-' + i;
       html += '<div class="vulg-qa">';
@@ -664,7 +654,7 @@ function renderEnrichedResult(data, query, container) {
   // V4: Vulgarisation anti-erreurs (supplement existing)
   if (vulg && vulg.anti_erreurs && vulg.anti_erreurs.length && (!antiErreurs || antiErreurs.length === 0)) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Erreurs à éviter</h3>';
+    html += '<h3>' + t('result.anti_erreurs_title') + '</h3>';
     vulg.anti_erreurs.slice(0, 4).forEach(function(ae) {
       html += '<div class="ae-card">';
       html += '<div class="ae-icon elevee">!</div>';
@@ -679,7 +669,7 @@ function renderEnrichedResult(data, query, container) {
   // V4: Vulgarisation deadlines (supplement existing)
   if (vulg && vulg.delais && vulg.delais.length && (!delais || delais.length === 0)) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Délais à connaître</h3>';
+    html += '<h3>' + t('result.delais_title') + '</h3>';
     vulg.delais.forEach(function(d) {
       html += '<div class="delai-card">';
       html += '<div class="delai-value">' + escHtml(d.delai) + '</div>';
@@ -694,7 +684,7 @@ function renderEnrichedResult(data, query, container) {
   var normRules = data.normative_rules || [];
   if (normRules.length) {
     html += '<div class="card"' + stagger() + '>';
-    html += '<h3>Règles juridiques applicables</h3>';
+    html += '<h3>' + t('result.normative_rules_title') + '</h3>';
     normRules.slice(0, 5).forEach(function(r) {
       html += '<div class="norm-rule">';
       html += '<div class="norm-rule-header">';
@@ -710,10 +700,12 @@ function renderEnrichedResult(data, query, container) {
   // Source footer — meta stats
   var meta = data._meta || {};
   html += '<div class="source-footer">';
-  html += '<span>Sources : <span class="source-count">' + (meta.articlesCount || articles.length || 0) + ' articles</span>, ';
-  html += '<span class="source-count">' + (meta.jurisprudenceCount || juris.length || 0) + ' arrêts</span>';
+  var footerText = t('result.source_footer')
+    .replace('{{articles}}', meta.articlesCount || articles.length || 0)
+    .replace('{{arrets}}', meta.jurisprudenceCount || juris.length || 0);
+  html += '<span>' + footerText;
   if (vulg) html += ', <span class="source-count">ASLOCA Kit</span>';
-  if (normRules.length) html += ', <span class="source-count">' + normRules.length + ' règles</span>';
+  if (normRules.length) html += ', <span class="source-count">' + t('result.source_rules').replace('{{count}}', normRules.length) + '</span>';
   html += '</span></div>';
 
   // Bottom actions
@@ -727,38 +719,38 @@ function renderEnrichedResult(data, query, container) {
 function renderPremiumCTA() {
   return '<div class="premium-cta-result">' +
     '<div class="premium-cta-result-header">' +
-    '<strong>Aller plus loin avec l\'analyse premium</strong>' +
-    '<span class="badge badge-info">Dès CHF 0.15</span>' +
+    '<strong>' + t('premiumcta_result.title') + '</strong>' +
+    '<span class="badge badge-info">' + t('premiumcta_result.badge') + '</span>' +
     '</div>' +
-    '<p>Ce premier triage vous donne les bases. L\'analyse premium va beaucoup plus loin :</p>' +
+    '<p>' + t('premiumcta_result.intro') + '</p>' +
     '<div class="premium-cta-result-grid">' +
     '<div class="premium-cta-result-item">' +
-    '<strong>Questions personnalisées</strong>' +
-    '<span>L\'IA vous pose les questions qui changent le diagnostic — pas des questions génériques</span>' +
+    '<strong>' + t('premiumcta_result.q_title') + '</strong>' +
+    '<span>' + t('premiumcta_result.q_text') + '</span>' +
     '</div>' +
     '<div class="premium-cta-result-item">' +
-    '<strong>Argumentation contradictoire</strong>' +
-    '<span>Arguments pour ET contre votre position, avec les articles de loi et la jurisprudence</span>' +
+    '<strong>' + t('premiumcta_result.arg_title') + '</strong>' +
+    '<span>' + t('premiumcta_result.arg_text') + '</span>' +
     '</div>' +
     '<div class="premium-cta-result-item">' +
-    '<strong>Certificat de couverture</strong>' +
-    '<span>On vérifie que rien ne manque dans votre dossier avant d\'agir</span>' +
+    '<strong>' + t('premiumcta_result.cert_title') + '</strong>' +
+    '<span>' + t('premiumcta_result.cert_text') + '</span>' +
     '</div>' +
     '<div class="premium-cta-result-item">' +
-    '<strong>Lettres prêtes à envoyer</strong>' +
-    '<span>Mise en demeure, opposition, contestation — en .docx avec vos informations</span>' +
+    '<strong>' + t('premiumcta_result.letter_title') + '</strong>' +
+    '<span>' + t('premiumcta_result.letter_text') + '</span>' +
     '</div>' +
     '</div>' +
-    '<a href="/premium.html" class="btn btn-primary btn-lg">Lancer l\'analyse premium</a>' +
+    '<a href="/premium.html" class="btn btn-primary btn-lg">' + t('premiumcta_result.button') + '</a>' +
     '</div>';
 }
 
 function renderSearchActions(query, isBottom) {
   var cls = isBottom ? 'result-actions result-actions-bottom' : 'result-actions';
   var html = '<div class="' + cls + '">';
-  html += '<button class="btn btn-sm btn-print" onclick="window.print()">Imprimer / PDF</button>';
-  html += '<a href="/" class="btn btn-sm btn-outline">Nouvelle recherche</a>';
-  html += '<a href="/annuaire.html" class="btn btn-sm btn-secondary">Annuaire</a>';
+  html += '<button class="btn btn-sm btn-print" onclick="window.print()">' + t('action.imprimer_short') + '</button>';
+  html += '<a href="/" class="btn btn-sm btn-outline">' + t('action.nouvelle_recherche') + '</a>';
+  html += '<a href="/annuaire.html" class="btn btn-sm btn-secondary">' + t('nav.annuaire') + '</a>';
   html += '</div>';
   return html;
 }
@@ -769,10 +761,10 @@ function toggleTemplate(id) {
   if (!box) return;
   if (box.classList.contains('hidden')) {
     box.classList.remove('hidden');
-    if (toggle) toggle.textContent = 'Masquer';
+    if (toggle) toggle.textContent = t('action.masquer');
   } else {
     box.classList.add('hidden');
-    if (toggle) toggle.textContent = 'Afficher';
+    if (toggle) toggle.textContent = t('action.afficher');
   }
 }
 
@@ -783,9 +775,9 @@ function copyTemplate(id) {
   navigator.clipboard.writeText(text).then(function() {
     var btn = document.querySelector('#' + id + ' .copy-btn');
     if (btn) {
-      btn.textContent = 'Copie !';
+      btn.textContent = t('action.copie');
       btn.classList.add('copied');
-      setTimeout(function() { btn.textContent = 'Copier'; btn.classList.remove('copied'); }, 2000);
+      setTimeout(function() { btn.textContent = t('action.copier'); btn.classList.remove('copied'); }, 2000);
     }
   }).catch(function() {
     var range = document.createRange();

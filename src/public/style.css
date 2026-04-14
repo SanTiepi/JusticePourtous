@@ -1961,6 +1961,25 @@ body.has-disclaimer {
   color: var(--text-inverse);
 }
 
+.nav-wallet-badge {
+  display: inline-block;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-success);
+  background: color-mix(in srgb, var(--accent-success) 10%, transparent);
+  border: 1.5px solid var(--accent-success);
+  border-radius: 100px;
+  padding: 0.25em 0.7em;
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+.nav-wallet-badge:hover {
+  background: var(--accent-success);
+  color: var(--text-inverse);
+}
+
 /* --- Language Switcher --- */
 .lang-switcher {
   display: inline-flex;

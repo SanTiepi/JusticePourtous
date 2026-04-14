@@ -8,6 +8,7 @@
   <meta property="og:title" content="JusticePourtous — Résultat de votre consultation">
   <meta property="og:description" content="Résultat de votre consultation juridique gratuite. Articles de loi, jurisprudence et services compétents.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://justicepourtous.ch/og-image.svg">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2696;</text></svg>">
   <link rel="stylesheet" href="/style.css">
 </head>
@@ -100,6 +101,23 @@
       document.getElementById('langSwitcher').appendChild(createLangSwitcher());
     }
     document.documentElement.lang = getLang();
+
+    // Show wallet balance if logged in
+    var jbSession = localStorage.getItem('jb_session');
+    if (jbSession) {
+      fetch('/api/premium/credits?session=' + jbSession)
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          if (d.solde !== undefined) {
+            var badge = document.createElement('a');
+            badge.href = '/premium.html';
+            badge.className = 'nav-wallet-badge';
+            badge.textContent = 'CHF ' + (d.solde / 100).toFixed(2);
+            document.querySelector('.nav-links').insertBefore(badge, document.querySelector('.nav-premium'));
+          }
+        })
+        .catch(function() {});
+    }
 
     /* Quick exit: double ESC */
     var escCount = 0;

@@ -13,7 +13,7 @@
 /* ----------------------------------------------------------------------------
    Google Fonts
    ---------------------------------------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap');
 
 /* ----------------------------------------------------------------------------
    Design Tokens
@@ -94,7 +94,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Inter', 'Noto Sans Arabic', 'Helvetica Neue', Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   color: var(--text-primary);
@@ -103,6 +103,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   min-height: 100vh;
+}
+
+/* RTL support for Arabic */
+html[lang="ar"] {
+  direction: rtl;
+}
+
+html[lang="ar"] body {
+  font-family: 'Noto Sans Arabic', 'Inter', Arial, sans-serif;
+}
+
+html[lang="ar"] .nav-inner,
+html[lang="ar"] .search-field,
+html[lang="ar"] .footer-inner {
+  direction: rtl;
+}
+
+html[lang="ar"] .nav-links {
+  flex-direction: row-reverse;
+}
+
+html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 {
+  font-family: 'Noto Sans Arabic', 'Inter', Arial, sans-serif;
 }
 
 img, svg {

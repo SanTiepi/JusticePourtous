@@ -430,7 +430,7 @@ function renderEnrichedResult(data, query, container) {
   // Main fiche summary + confidence
   var fiche = data.fiche || {};
   var confiance = data.confiance || 'incertain';
-  var explication = fiche.explication || fiche.description || (data.fiche && data.fiche.tags ? data.fiche.tags.join(', ') : '');
+  var explication = fiche.explication || (fiche.reponse && fiche.reponse.explication) || fiche.description || (data.llm_triage && data.llm_triage.resume) || (data.fiche && data.fiche.tags ? data.fiche.tags.join(', ') : '');
   if (explication) {
     html += '<div class="card-highlight"' + stagger() + '>';
     html += '<div class="result-header">';

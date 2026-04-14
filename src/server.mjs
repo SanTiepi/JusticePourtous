@@ -58,7 +58,7 @@ const domainesData = JSON.parse(readFileSync(join(__dirname, 'data', 'domaines.j
 const workflowsData = JSON.parse(readFileSync(join(__dirname, 'data', 'workflows', 'moments-de-vie.json'), 'utf-8'));
 const cascadesData = JSON.parse(readFileSync(join(__dirname, 'data', 'cascades', 'cascades.json'), 'utf-8'));
 
-const DISCLAIMER = "JusticePourtous fournit des informations juridiques generales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalise. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes.";
+const DISCLAIMER = "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.";
 
 // ─── Stripe (optional — graceful if no keys) ───────────────────
 let stripe = null;
@@ -76,6 +76,23 @@ if (STRIPE_SECRET) {
   console.log('Stripe not configured — using demo wallet mode');
 }
 
+// ─── Admin token protection ─────────────────────────────────────
+const ADMIN_TOKEN = process.env.ADMIN_TOKEN;
+
+function checkAdmin(req, res) {
+  if (!ADMIN_TOKEN) {
+    json(res, 403, { error: 'Admin access not configured' });
+    return false;
+  }
+  const auth = req.headers.authorization || '';
+  const token = auth.startsWith('Bearer ') ? auth.slice(7) : '';
+  if (token !== ADMIN_TOKEN) {
+    json(res, 403, { error: 'Forbidden' });
+    return false;
+  }
+  return true;
+}
+
 // In-memory feedback store
 const feedbackStore = [];
 
@@ -86,7 +103,9 @@ const MIME_TYPES = {
   '.json': 'application/json; charset=utf-8',
   '.png': 'image/png',
   '.svg': 'image/svg+xml',
-  '.ico': 'image/x-icon'
+  '.ico': 'image/x-icon',
+  '.xml': 'application/xml; charset=utf-8',
+  '.txt': 'text/plain; charset=utf-8'
 };
 
 const MAX_UPLOAD_SIZE = 10 * 1024 * 1024; // 10MB
@@ -192,7 +211,14 @@ function parseRawBody(req, maxSize) {
 
 function serveStatic(req, res, filePath) {
   if (!existsSync(filePath)) {
-    json(res, 404, { error: 'Not found' });
+    const notFoundPage = join(publicDir, '404.html');
+    if (existsSync(notFoundPage)) {
+      setSecurityHeaders(res);
+      res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
+      res.end(readFileSync(notFoundPage));
+    } else {
+      json(res, 404, { error: 'Not found' });
+    }
     return;
   }
   const ext = extname(filePath);
@@ -298,6 +324,7 @@ const server = createServer(async (req, res) => {
 
     // Triage audit log endpoint
     if (path === '/api/admin/triage-log' && method === 'GET') {
+      if (!checkAdmin(req, res)) return;
       return json(res, 200, { entries: triageLog.slice(-50), total: triageLog.length });
     }
 
@@ -700,6 +727,7 @@ const server = createServer(async (req, res) => {
 
     // Dashboard complétude (admin)
     if (path === '/api/admin/completeness' && method === 'GET') {
+      if (!checkAdmin(req, res)) return;
       const result = getCompleteness();
       return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
     }
@@ -1140,6 +1168,7 @@ const server = createServer(async (req, res) => {
     }
 
     if (path === '/api/admin/feedback' && method === 'GET') {
+      if (!checkAdmin(req, res)) return;
       const stats = { oui: 0, non: 0, partiel: 0, total: feedbackStore.length };
       for (const f of feedbackStore) stats[f.rating]++;
       return json(res, 200, { stats, recent: feedbackStore.slice(-20), disclaimer: DISCLAIMER });
@@ -1156,7 +1185,13 @@ const server = createServer(async (req, res) => {
     }
 
     // 404
-    json(res, 404, { error: 'Route non trouvee', disclaimer: DISCLAIMER });
+    const notFoundPage = join(publicDir, '404.html');
+    if (existsSync(notFoundPage) && !path.startsWith('/api/')) {
+      setSecurityHeaders(res);
+      res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
+      return res.end(readFileSync(notFoundPage));
+    }
+    json(res, 404, { error: 'Route non trouvée', disclaimer: DISCLAIMER });
   } catch (err) {
     json(res, 500, { error: 'Erreur interne', disclaimer: DISCLAIMER });
   }
@@ -1168,6 +1203,23 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   server.listen(PORT, () => {
     console.log(`JusticePourtous running on http://localhost:${PORT}`);
   });
+
+  // Graceful shutdown
+  function gracefulShutdown(signal) {
+    console.log(`\n${signal} received — shutting down gracefully...`);
+    server.close(() => {
+      console.log('All connections closed. Exiting.');
+      process.exit(0);
+    });
+    // Force exit after 10s if connections don't close
+    setTimeout(() => {
+      console.warn('Forcing exit after 10s timeout.');
+      process.exit(1);
+    }, 10000).unref();
+  }
+
+  process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
+  process.on('SIGINT', () => gracefulShutdown('SIGINT'));
 }
 
 export { server };

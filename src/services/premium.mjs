@@ -1,11 +1,67 @@
 import { randomBytes } from 'node:crypto';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { analyzeCase, estimateAnalysisCost } from './ai-analysis.mjs';
 import { processDocument } from './ocr.mjs';
 import { generateLetter } from './letter-generator.mjs';
 
-// In-memory wallets (simulated)
+// --- Persistence layer ---
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const WALLETS_PATH = join(__dirname, '..', 'data', 'meta', 'wallets.json');
+
 const wallets = new Map();
 
+/** Load wallets from disk. Silent no-op if file missing (first run). */
+function loadWallets() {
+  try {
+    if (!existsSync(WALLETS_PATH)) return;
+    const raw = readFileSync(WALLETS_PATH, 'utf-8');
+    const entries = JSON.parse(raw);
+    if (!Array.isArray(entries)) return;
+    wallets.clear();
+    for (const [key, value] of entries) {
+      wallets.set(key, value);
+    }
+  } catch {
+    // Corrupted file or first run — start fresh
+  }
+}
+
+let _saveTimer = null;
+/** Debounced save — max 1 write per second. */
+function saveWallets() {
+  if (_saveTimer) return; // already scheduled
+  _saveTimer = setTimeout(() => {
+    _saveTimer = null;
+    try {
+      const dir = dirname(WALLETS_PATH);
+      if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
+      const entries = [...wallets.entries()];
+      writeFileSync(WALLETS_PATH, JSON.stringify(entries, null, 2), 'utf-8');
+    } catch {
+      // Disk write failed — log in production, silent in dev
+    }
+  }, 1000);
+}
+
+/** Force an immediate flush (useful for graceful shutdown). */
+export function _flushWallets() {
+  if (_saveTimer) {
+    clearTimeout(_saveTimer);
+    _saveTimer = null;
+  }
+  try {
+    const dir = dirname(WALLETS_PATH);
+    if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
+    const entries = [...wallets.entries()];
+    writeFileSync(WALLETS_PATH, JSON.stringify(entries, null, 2), 'utf-8');
+  } catch {
+    // silent
+  }
+}
+
+// --- Constants ---
 const WALLET_PRICE_CENTIMES = 5000; // CHF 50
 const WALLET_CREDITS_CENTIMES = 3000; // CHF 30
 const ANALYSE_COST_MIN = 3; // CHF 0.03
@@ -48,20 +104,26 @@ function debit(wallet, amount, action, details = {}) {
     date: new Date().toISOString(),
     ...details
   });
+  saveWallets();
   return null; // no error
 }
 
-// --- Test account (created at startup, never expires, infinite credits) ---
-const TEST_SESSION = 'test-robin-2026';
-wallets.set(TEST_SESSION, {
-  sessionCode: TEST_SESSION,
-  solde: 999999, // effectively unlimited
-  createdAt: Date.now(),
-  isTest: true,
-  historique: [
-    { action: 'compte_test', montant: 0, date: new Date().toISOString() }
-  ]
-});
+// --- Initialization: load persisted wallets, then ensure test account exists ---
+loadWallets();
+
+const TEST_SESSION = process.env.ADMIN_TEST_SESSION || 'dev-test-fallback-' + randomBytes(8).toString('hex');
+if (!wallets.has(TEST_SESSION)) {
+  wallets.set(TEST_SESSION, {
+    sessionCode: TEST_SESSION,
+    solde: 999999, // effectively unlimited
+    createdAt: Date.now(),
+    isTest: true,
+    historique: [
+      { action: 'compte_test', montant: 0, date: new Date().toISOString() }
+    ]
+  });
+  saveWallets();
+}
 
 const MARGIN_MULTIPLIER = 2.5; // 150% margin on API costs — conservative to cover edge cases
 
@@ -94,6 +156,7 @@ export function acheterWallet(montantCentimes) {
     ]
   };
   wallets.set(sessionCode, wallet);
+  saveWallets();
   return {
     status: 200,
     data: {
@@ -144,6 +207,7 @@ export function analyser(sessionCode, question) {
     date: new Date().toISOString(),
     question: question ? question.substring(0, 100) : ''
   });
+  saveWallets();
 
   return {
     status: 200,
@@ -172,6 +236,7 @@ export function genererLettre(sessionCode, params) {
     montant: -LETTRE_COST,
     date: new Date().toISOString()
   });
+  saveWallets();
 
   return {
     status: 200,
@@ -199,6 +264,7 @@ export function ocrDocument(sessionCode) {
     montant: -OCR_COST,
     date: new Date().toISOString()
   });
+  saveWallets();
 
   return {
     status: 200,
@@ -399,6 +465,7 @@ export function _createExpiredWallet() {
     historique: []
   };
   wallets.set(sessionCode, wallet);
+  saveWallets();
   return sessionCode;
 }
 
@@ -412,5 +479,6 @@ export function _createWalletWithBalance(balance) {
     historique: []
   };
   wallets.set(sessionCode, wallet);
+  saveWallets();
   return sessionCode;
 }

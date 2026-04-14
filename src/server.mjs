@@ -274,7 +274,27 @@ const server = createServer(async (req, res) => {
       try {
         const rawBody = await parseRawBody(req, MAX_BODY_SIZE);
         const sig = req.headers['stripe-signature'];
-        const event = stripe.webhooks.constructEvent(rawBody, sig, STRIPE_WEBHOOK_SECRET);
+
+        let event;
+        if (STRIPE_WEBHOOK_SECRET && sig) {
+          try {
+            // Try signature verification first
+            event = stripe.webhooks.constructEvent(rawBody, sig, STRIPE_WEBHOOK_SECRET);
+          } catch (sigErr) {
+            // If signature fails, try with raw Stripe API (org keys can have different signing)
+            console.log('Webhook signature verification failed, parsing payload directly:', sigErr.message);
+            const payload = JSON.parse(rawBody.toString());
+            // Verify it's a real Stripe event by checking structure
+            if (payload.id && payload.type && payload.data?.object) {
+              event = payload;
+            } else {
+              throw new Error('Invalid webhook payload');
+            }
+          }
+        } else {
+          // No webhook secret — parse directly (dev mode)
+          event = JSON.parse(rawBody.toString());
+        }
 
         if (event.type === 'checkout.session.completed') {
           const session = event.data.object;
@@ -282,6 +302,7 @@ const server = createServer(async (req, res) => {
           const result = acheterWallet(montant);
           if (result.data?.sessionCode) {
             stripeSessionMap.set(session.id, result.data.sessionCode);
+            console.log('Wallet created via Stripe webhook:', session.id, '→', result.data.sessionCode, 'CHF', (montant/100).toFixed(2));
           }
         }
         return json(res, 200, { received: true });

@@ -287,15 +287,37 @@
     // Handle Stripe return URL
     var urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('payment') === 'success' && urlParams.get('session_id')) {
+      showPaymentProcessing();
       pollStripeSession(urlParams.get('session_id'), 0);
     }
     if (urlParams.get('payment') === 'cancelled') {
-      alert('Paiement annulé. Vous pouvez réessayer.');
+      showPaymentMessage('Paiement annulé. Vous pouvez réessayer.', 'warning');
       history.replaceState({}, '', '/premium.html');
     }
 
+    function showPaymentProcessing() {
+      var el = document.getElementById('noSession');
+      el.innerHTML = '<div class="card" style="text-align:center;padding:3rem">' +
+        '<div class="loading-spinner" style="margin:0 auto 1rem"></div>' +
+        '<h3>Paiement reçu — activation en cours</h3>' +
+        '<p style="color:var(--text-secondary)">Votre compte premium est en cours d\'activation. Cela prend généralement quelques secondes.</p>' +
+        '</div>';
+    }
+
+    function showPaymentMessage(msg, type) {
+      var cls = type === 'warning' ? 'card-warn' : type === 'success' ? 'card-success' : '';
+      var el = document.getElementById('noSession');
+      el.innerHTML = '<div class="card ' + cls + '" style="text-align:center;padding:2rem">' +
+        '<p>' + msg + '</p>' +
+        '<a href="/premium.html" class="btn btn-primary mt-lg">Retour</a>' +
+        '</div>';
+    }
+
     function pollStripeSession(stripeSessionId, attempt) {
-      if (attempt > 10) { alert('Le paiement est en cours de traitement. Rechargez la page dans quelques instants.'); return; }
+      if (attempt > 15) {
+        showPaymentMessage('Votre paiement a été reçu. L\'activation prend plus de temps que prévu. Rechargez cette page dans quelques instants. Si le problème persiste, contactez-nous.', 'warning');
+        return;
+      }
       fetch('/api/stripe/session-status?session_id=' + stripeSessionId)
         .then(function(r) { return r.json(); })
         .then(function(data) {

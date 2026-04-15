@@ -7,12 +7,16 @@
     "type": "bareme_officiel",
     "description": "Taux hypothécaire de référence pour le calcul des loyers. Publié trimestriellement par l'OFL. Base pour contester une augmentation ou demander une baisse de loyer.",
     "valeur_actuelle": {
-      "taux": 1.75,
-      "date_publication": "2025-12-02",
-      "applicable_des": "2025-12-02",
+      "taux": 1.25,
+      "date_publication": "2026-03-03",
+      "applicable_des": "2026-03-03",
       "unite": "%"
     },
     "historique": [
+      {
+        "date": "2026-03-03",
+        "taux": 1.25
+      },
       {
         "date": "2025-12-02",
         "taux": 1.75
@@ -63,7 +67,7 @@
       }
     ],
     "usage_juridique": {
-      "contestation_augmentation": "Si le taux de référence a baissé depuis la dernière fixation du loyer, le locataire peut demander une baisse. Si le bailleur augmente le loyer en raison d'une hausse du taux, l'augmentation maximale est de ~3% par quart de point.",
+      "contestation_augmentation": "Si le taux de référence a baissé depuis la dernière fixation du loyer, le locataire peut demander une baisse (~2.91% par quart de point de baisse). Si le bailleur augmente le loyer en raison d'une hausse du taux, l'augmentation maximale est de ~3% par quart de point de hausse.",
       "calcul_rendement": "Le taux de référence sert de base au calcul du rendement admissible selon CO 269.",
       "base_legale": "CO 269a lit. b, OBLF art. 12a, 13"
     }

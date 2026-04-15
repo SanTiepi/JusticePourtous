@@ -5,8 +5,8 @@
 
 const DISCLAIMER = "Résultat indicatif basé sur le droit suisse en vigueur. Ne remplace pas un conseil juridique personnalisé.";
 
-// Taux de référence hypothécaire (OFAS, mis à jour périodiquement)
-const TAUX_REFERENCE_HYPOTHECAIRE = 1.75;
+// Taux de référence hypothécaire (OFL/BWO, mis à jour périodiquement)
+const TAUX_REFERENCE_HYPOTHECAIRE = 1.25;
 
 // ─── 1. Loyer abusif (rendement admissible) ───
 

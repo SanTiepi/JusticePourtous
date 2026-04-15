@@ -39,7 +39,7 @@ RÈGLES DÉTERMINISTES (le code calcule, pas toi) :
 BAIL:
 - Caution max = 3 mois loyer net (CO 257e). Commercial = pas de limite.
 - Contestation congé = 30 jours dès réception (CO 273). Formule officielle obligatoire (CO 266l).
-- Contestation augmentation = 30 jours (CO 270b). Taux hypo référence OFL = 1.75% (2025).
+- Contestation augmentation = 30 jours (CO 270b). Taux hypo référence OFL = 1.25% (2026).
 - Réduction défaut: léger 5-15%, moyen 15-30%, grave 30-100% (CO 259d). Sauf faute locataire.
 - Restitution caution = 1 an après fin bail (CO 257e al. 3).
 TRAVAIL:

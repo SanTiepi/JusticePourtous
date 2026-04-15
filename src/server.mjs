@@ -1,5 +1,5 @@
 import { createServer } from 'node:http';
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, extname } from 'node:path';
 
@@ -68,7 +68,34 @@ const STRIPE_SECRET = process.env.STRIPE_SECRET_KEY;
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
 const STRIPE_PUBLIC_KEY = process.env.STRIPE_PUBLISHABLE_KEY;
 const SITE_URL = process.env.SITE_URL || 'https://justicepourtous.ch';
+
+// ─── Stripe session map (persisted to avoid double wallet creation on restart) ──
+const STRIPE_MAP_FILE = join(__dirname, 'data', 'meta', 'stripe-sessions.json');
 const stripeSessionMap = new Map(); // stripeSessionId → walletSessionCode
+
+// Load persisted stripe sessions
+try {
+  if (existsSync(STRIPE_MAP_FILE)) {
+    const data = JSON.parse(readFileSync(STRIPE_MAP_FILE, 'utf-8'));
+    for (const [k, v] of data) stripeSessionMap.set(k, v);
+  }
+} catch { /* first run */ }
+
+let stripeMapSaveTimer = null;
+function persistStripeSessionMap() {
+  if (stripeMapSaveTimer) return;
+  stripeMapSaveTimer = setTimeout(() => {
+    stripeMapSaveTimer = null;
+    try {
+      // Keep only last 1000 entries to avoid unbounded growth
+      const entries = [...stripeSessionMap];
+      const trimmed = entries.slice(-1000);
+      writeFileSync(STRIPE_MAP_FILE, JSON.stringify(trimmed, null, 2));
+    } catch (err) {
+      console.error('Failed to persist stripe sessions:', err.message);
+    }
+  }, 2000);
+}
 
 const STRIPE_ACCOUNT = process.env.STRIPE_ACCOUNT_ID; // acct_... for org keys
 
@@ -77,7 +104,7 @@ if (STRIPE_SECRET) {
   const stripeOpts = {};
   if (STRIPE_ACCOUNT) stripeOpts.stripeAccount = STRIPE_ACCOUNT;
   stripe = new Stripe(STRIPE_SECRET, stripeOpts);
-  console.log('Stripe enabled (TWINT + Card)' + (STRIPE_ACCOUNT ? ' — account: ' + STRIPE_ACCOUNT : ''));
+  console.log('Stripe enabled (Card)' + (STRIPE_ACCOUNT ? ' — account: ' + STRIPE_ACCOUNT : ''));
 } else {
   console.log('Stripe not configured — using demo wallet mode');
 }
@@ -323,13 +350,19 @@ const server = createServer(async (req, res) => {
 
         if (event.type === 'checkout.session.completed') {
           const session = event.data.object;
-          const montant = parseInt(session.metadata?.montant_centimes || '1000', 10);
-          const result = acheterWallet(montant);
-          if (result.data?.sessionCode) {
-            stripeSessionMap.set(session.id, result.data.sessionCode);
-            const customerEmail = session.customer_details?.email || session.customer_email;
-            if (customerEmail) linkWalletToEmail(customerEmail, result.data.sessionCode);
-            console.log('Wallet created via webhook:', session.id, '→', result.data.sessionCode, customerEmail || '');
+          // Idempotence: check if wallet was already created (by polling or previous webhook)
+          if (stripeSessionMap.has(session.id)) {
+            console.log('Wallet already exists for Stripe session (webhook skipped):', session.id);
+          } else {
+            const montant = parseInt(session.metadata?.montant_centimes || '1000', 10);
+            const result = acheterWallet(montant);
+            if (result.data?.sessionCode) {
+              stripeSessionMap.set(session.id, result.data.sessionCode);
+              persistStripeSessionMap();
+              const customerEmail = session.customer_details?.email || session.customer_email;
+              if (customerEmail) linkWalletToEmail(customerEmail, result.data.sessionCode);
+              console.log('Wallet created via webhook:', session.id, '→', result.data.sessionCode, customerEmail || '');
+            }
           }
         }
         return json(res, 200, { received: true });
@@ -391,6 +424,7 @@ const server = createServer(async (req, res) => {
             const result = acheterWallet(montant);
             if (result.data?.sessionCode) {
               stripeSessionMap.set(sessionId, result.data.sessionCode);
+              persistStripeSessionMap();
               // Link email to wallet if available
               const customerEmail = stripeSession.customer_details?.email || stripeSession.customer_email;
               if (customerEmail) {
@@ -421,16 +455,10 @@ const server = createServer(async (req, res) => {
       return json(res, result.status, result.error ? { error: result.error } : result.data);
     }
 
+    // REMOVED: /api/auth/wallets — was leaking sessionCodes to anyone who knows an email.
+    // Wallets are now returned ONLY via /api/auth/verify-code after successful code verification.
     if (path === '/api/auth/wallets' && method === 'POST') {
-      const body = await parseBody(req);
-      if (!body.email) return json(res, 400, { error: 'Email requis' });
-      const sessions = getWalletsByEmail(body.email);
-      // Get balance for each
-      const wallets = sessions.map(code => {
-        const credits = getCredits(code);
-        return credits.error ? null : { sessionCode: code, solde: credits.data?.solde };
-      }).filter(Boolean);
-      return json(res, 200, { wallets });
+      return json(res, 410, { error: 'Endpoint supprimé. Utilisez /api/auth/verify-code pour récupérer vos wallets.' });
     }
 
     if (path === '/api/stripe/config' && method === 'GET') {
@@ -1337,13 +1365,34 @@ const server = createServer(async (req, res) => {
       if (!body.texte || !body.reponses) {
         return json(res, 400, { error: 'texte et reponses requis', disclaimer: DISCLAIMER });
       }
+
+      // Session check — require valid wallet (same as main analyze-v3)
+      const sessionCode = body.session || req.headers['x-session'];
+      const walletCheck = getCredits(sessionCode);
+      if (walletCheck.error) return json(res, walletCheck.status || 403, { error: walletCheck.error, disclaimer: DISCLAIMER });
+
+      const MIN_BALANCE_CENTIMES = 5;
+      if (walletCheck.data.solde < MIN_BALANCE_CENTIMES) {
+        return json(res, 402, { error: 'Solde insuffisant', solde: walletCheck.data.solde, minimum: MIN_BALANCE_CENTIMES, disclaimer: DISCLAIMER });
+      }
+
       // Re-run with answers
       try {
-        const result = await analyserCas(body.texte, body.canton, body.reponses);
+        const safeTexte = sanitizeUserInput(body.texte, 5000);
+        const result = await analyserCas(safeTexte, body.canton, body.reponses);
         if (!result) return json(res, 503, { error: 'Service IA indisponible', disclaimer: DISCLAIMER });
 
         let verification_status = 'verified';
         if (!result.analysis) verification_status = 'degraded';
+
+        // Debit wallet AFTER successful analysis
+        const usage = result.usage || {};
+        const totalTokens = (usage.total_input || 0) + (usage.total_output || 0);
+        const apiCostCentimes = Math.max(3, Math.ceil(totalTokens / 1000 * 0.08));
+        const debitResult = debitSession(sessionCode, apiCostCentimes, 'analyse_v3_refine');
+        if (debitResult.error && !debitResult.error.includes('test')) {
+          console.log('Debit warning (refine):', debitResult.error, 'session:', sessionCode);
+        }
 
         return json(res, 200, {
           complet: true,
@@ -1359,9 +1408,11 @@ const server = createServer(async (req, res) => {
           unknowns: result.analysis?.ce_quon_ne_sait_pas || [],
           need_lawyer: result.analysis?.besoin_avocat || false,
           usage: result.usage,
+          cost: debitResult.charged ? { charged_centimes: debitResult.charged, solde_restant: debitResult.solde } : null,
           disclaimer: DISCLAIMER
         });
       } catch (err) {
+        // No charge on error
         return json(res, 500, { error: 'Erreur analyse', verification_status: 'insufficient', disclaimer: DISCLAIMER });
       }
     }

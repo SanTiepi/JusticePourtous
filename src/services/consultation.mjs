@@ -1,6 +1,6 @@
 import { searchFiches, getFichesByDomaine } from './fiches.mjs';
 
-const VALID_DOMAINES = ['bail', 'travail', 'famille', 'dettes', 'etrangers'];
+const VALID_DOMAINES = ['bail', 'travail', 'famille', 'dettes', 'etrangers', 'assurances', 'social', 'violence', 'accident', 'entreprise'];
 const VALID_CANTONS = [
   'AG', 'AI', 'AR', 'BE', 'BL', 'BS', 'FR', 'GE', 'GL', 'GR',
   'JU', 'LU', 'NE', 'NW', 'OW', 'SG', 'SH', 'SO', 'SZ', 'TG',

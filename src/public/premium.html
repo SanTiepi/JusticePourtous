@@ -135,7 +135,7 @@
 
         <div class="card">
           <h3>Analyser votre situation</h3>
-          <p class="premium-cost-hint">Coût estimé : CHF 0.03 à 0.10 par analyse</p>
+          <p class="premium-cost-hint">Coût estimé : CHF 0.08 à 0.25 par analyse</p>
           <textarea id="question" class="input" placeholder="Décrivez votre situation juridique en détail..."></textarea>
 
           <!-- Document upload -->
@@ -316,8 +316,15 @@
 
         // Authenticated — get wallets
         if (data.walletSessions && data.walletSessions.length > 0) {
-          // Use the most recent wallet
-          sessionCode = data.walletSessions[data.walletSessions.length - 1];
+          if (data.walletSessions.length === 1) {
+            // Single wallet — use it directly
+            sessionCode = data.walletSessions[0];
+          } else {
+            // Multiple wallets — let user pick or merge (use most recent by default)
+            sessionCode = data.walletSessions[data.walletSessions.length - 1];
+            // TODO: show wallet selector UI when multiple wallets exist
+            console.log('Multiple wallets found:', data.walletSessions.length, '— using most recent');
+          }
           localStorage.setItem('jb_session', sessionCode);
           localStorage.setItem('jb_email', loginEmailValue);
           showSession();

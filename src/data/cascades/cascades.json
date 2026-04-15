@@ -312,14 +312,14 @@
         "probleme": "Décision de renvoi",
         "delai": "Immédiat",
         "fichesConcernees": [
-          "étrangers_renvoi"
+          "etranger_renvoi"
         ]
       },
       {
         "probleme": "Recours contre la décision",
         "delai": "30 jours",
         "fichesConcernees": [
-          "étrangers_recours"
+          "etranger_recours"
         ],
         "calculateur": "calculCoutProcedure"
       },
@@ -334,7 +334,7 @@
         "probleme": "Scolarisation des enfants menacée",
         "delai": "Variable",
         "fichesConcernees": [
-          "étrangers_regroupement"
+          "etranger_regroupement"
         ]
       },
       {

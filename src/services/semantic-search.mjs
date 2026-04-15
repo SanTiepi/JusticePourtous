@@ -272,11 +272,17 @@ const DOMAIN_AFFINITY_WORDS = {
   famille: new Set(['conjoint', 'ex', 'epoux', 'epouse', 'mari', 'femme', 'divorce', 'separation', 'separe', 'garde', 'pension', 'enfant', 'enfants', 'adoption', 'violent', 'violente', 'violence', 'violences', 'menace', 'heritage', 'succession', 'testament', 'parentale', 'enlevement']),
   dettes: new Set(['dette', 'dettes', 'commandement', 'huissier', 'saisie', 'faillite', 'poursuite', 'surendette', 'surendettement', 'impaye', 'poursuites', 'mainlevee', 'concordat', 'sequestre']),
   bail: new Set(['loyer', 'proprietaire', 'proprio', 'regie', 'locataire', 'bail', 'appartement', 'appart', 'logement', 'bailleur', 'moisissure', 'charges', 'resiliation', 'coloc', 'voisin', 'locaux']),
-  etrangers: new Set(['permis', 'sejour', 'asile', 'naturalisation', 'refugie', 'sans-papiers', 'renvoye', 'renvoi', 'visa', 'nationalite', 'papiers', 'immigration', 'frontalier', 'expulsion'])
+  etrangers: new Set(['permis', 'sejour', 'asile', 'naturalisation', 'refugie', 'sans-papiers', 'renvoye', 'renvoi', 'visa', 'nationalite', 'papiers', 'immigration', 'frontalier', 'expulsion']),
+  assurances: new Set(['ai', 'avs', 'indemnites', 'rente', 'invalidite', 'caisse', 'lamal', 'assurance', 'assurances', 'lpp', 'prevoyance', 'prestations', 'complementaires', 'maladie', 'primes']),
+  social: new Set(['aide', 'sociale', 'hebergement', 'sans-abri', 'ri', 'insertion', 'revenu', 'precarite', 'curatelle', 'apea', 'tutelle', 'protection', 'adulte']),
+  violence: new Set(['violence', 'menace', 'agression', 'harcelement', 'lavi', 'foyer', 'victime', 'plainte', 'domestique', 'conjugale', 'eloignement', 'stalking', 'viol']),
+  accident: new Set(['accident', 'blessure', 'collision', 'responsabilite', 'civile', 'laa', 'suva', 'corporel', 'sinistre', 'indemnite', 'dommage', 'tort', 'moral']),
+  entreprise: new Set(['faillite', 'pme', 'surendettement', 'concordat', 'cessation', 'paiement', 'sarl', 'societe', 'independant', 'raison', 'individuelle', 'registre', 'commerce', 'tva', 'liquidation'])
 };
 
 function detectDomainBoost(originalWords) {
-  const scores = { travail: 0, famille: 0, dettes: 0, bail: 0, etrangers: 0 };
+  const scores = {};
+  for (const domain of Object.keys(DOMAIN_AFFINITY_WORDS)) scores[domain] = 0;
   for (const word of originalWords) {
     for (const [domain, wordSet] of Object.entries(DOMAIN_AFFINITY_WORDS)) {
       if (wordSet.has(word)) scores[domain]++;

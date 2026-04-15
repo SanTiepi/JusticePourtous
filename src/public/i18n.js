@@ -86,8 +86,8 @@ var I18N = {
     'premiumcta.feature3_text': 'Mise en demeure, opposition, contestation prêtes à signer',
 
     // -- Homepage: Trust band --
-    'trust.anonymous_title': 'Anonyme',
-    'trust.anonymous_text': 'Aucune donnée stockée',
+    'trust.anonymous_title': 'Données minimales',
+    'trust.anonymous_text': 'Pas de tracking ni profilage',
     'trust.sources_title': 'Sources vérifiées',
     'trust.sources_text': 'Fedlex, jurisprudence TF',
     'trust.law_title': 'Droit suisse',
@@ -162,7 +162,7 @@ var I18N = {
 
     // -- Results: Upsell --
     'upsell.title': 'Besoin d\'une analyse personnalisée ?',
-    'upsell.text': 'Notre IA analyse votre situation en détail pour CHF 0.03 à 0.10 par question.',
+    'upsell.text': 'Notre IA analyse votre situation en détail pour CHF 0.08 à 0.10 par question.',
     'upsell.button': 'Espace Premium',
 
     // -- Common actions --
@@ -230,7 +230,7 @@ var I18N = {
     'premium.code_placeholder': 'Entrez votre code',
     'premium.wallet_label': 'Solde restant',
     'premium.analyze_title': 'Analyser votre situation',
-    'premium.analyze_cost_hint': 'Coût estimé : CHF 0.03 à 0.10 par analyse',
+    'premium.analyze_cost_hint': 'Coût estimé : CHF 0.08 à 0.10 par analyse',
     'premium.analyze_placeholder': 'Décrivez votre situation juridique en détail...',
     'premium.analyze_submit': 'Analyser ma situation',
     'premium.upload_label': 'Joindre un document (PDF, image)',
@@ -432,8 +432,8 @@ var I18N = {
     'premiumcta.feature3_text': 'Mahnung, Einsprache, Anfechtung unterschriftsbereit',
 
     // -- Homepage: Trust band --
-    'trust.anonymous_title': 'Anonym',
-    'trust.anonymous_text': 'Keine Daten gespeichert',
+    'trust.anonymous_title': 'Minimale Daten',
+    'trust.anonymous_text': 'Kein Tracking, kein Profiling',
     'trust.sources_title': 'Geprüfte Quellen',
     'trust.sources_text': 'Fedlex, Bundesgerichtspraxis',
     'trust.law_title': 'Schweizer Recht',
@@ -508,7 +508,7 @@ var I18N = {
 
     // -- Results: Upsell --
     'upsell.title': 'Brauchen Sie eine persönliche Analyse?',
-    'upsell.text': 'Unsere KI analysiert Ihre Situation detailliert für CHF 0.03 bis 0.10 pro Frage.',
+    'upsell.text': 'Unsere KI analysiert Ihre Situation detailliert für CHF 0.08 bis 0.10 pro Frage.',
     'upsell.button': 'Premium-Bereich',
 
     // -- Common actions --
@@ -576,7 +576,7 @@ var I18N = {
     'premium.code_placeholder': 'Code eingeben',
     'premium.wallet_label': 'Restguthaben',
     'premium.analyze_title': 'Ihre Situation analysieren',
-    'premium.analyze_cost_hint': 'Geschätzte Kosten: CHF 0.03 bis 0.10 pro Analyse',
+    'premium.analyze_cost_hint': 'Geschätzte Kosten: CHF 0.08 bis 0.10 pro Analyse',
     'premium.analyze_placeholder': 'Beschreiben Sie Ihre rechtliche Situation im Detail...',
     'premium.analyze_submit': 'Meine Situation analysieren',
     'premium.upload_label': 'Dokument anhängen (PDF, Bild)',
@@ -778,8 +778,8 @@ var I18N = {
     'premiumcta.feature3_text': 'Diffida, opposizione, contestazione pronte da firmare',
 
     // -- Homepage: Trust band --
-    'trust.anonymous_title': 'Anonimo',
-    'trust.anonymous_text': 'Nessun dato memorizzato',
+    'trust.anonymous_title': 'Dati minimi',
+    'trust.anonymous_text': 'Nessun tracking né profilazione',
     'trust.sources_title': 'Fonti verificate',
     'trust.sources_text': 'Fedlex, giurisprudenza TF',
     'trust.law_title': 'Diritto svizzero',
@@ -854,7 +854,7 @@ var I18N = {
 
     // -- Results: Upsell --
     'upsell.title': 'Avete bisogno di un\'analisi personalizzata?',
-    'upsell.text': 'La nostra IA analizza la vostra situazione in dettaglio per CHF 0.03 a 0.10 per domanda.',
+    'upsell.text': 'La nostra IA analizza la vostra situazione in dettaglio per CHF 0.08 a 0.10 per domanda.',
     'upsell.button': 'Spazio Premium',
 
     // -- Common actions --
@@ -922,7 +922,7 @@ var I18N = {
     'premium.code_placeholder': 'Inserire il codice',
     'premium.wallet_label': 'Saldo rimanente',
     'premium.analyze_title': 'Analizzare la vostra situazione',
-    'premium.analyze_cost_hint': 'Costo stimato: CHF 0.03 a 0.10 per analisi',
+    'premium.analyze_cost_hint': 'Costo stimato: CHF 0.08 a 0.10 per analisi',
     'premium.analyze_placeholder': 'Descrivete la vostra situazione giuridica in dettaglio...',
     'premium.analyze_submit': 'Analizzare la mia situazione',
     'premium.upload_label': 'Allegare un documento (PDF, immagine)',
@@ -1124,8 +1124,8 @@ var I18N = {
     'premiumcta.feature3_text': 'Formal notice, objection, contestation ready to sign',
 
     // -- Homepage: Trust band --
-    'trust.anonymous_title': 'Anonymous',
-    'trust.anonymous_text': 'No data stored',
+    'trust.anonymous_title': 'Minimal data',
+    'trust.anonymous_text': 'No tracking or profiling',
     'trust.sources_title': 'Verified sources',
     'trust.sources_text': 'Fedlex, Federal Supreme Court case law',
     'trust.law_title': 'Swiss law',
@@ -1200,7 +1200,7 @@ var I18N = {
 
     // -- Results: Upsell --
     'upsell.title': 'Need a personalised analysis?',
-    'upsell.text': 'Our AI analyses your situation in detail for CHF 0.03 to 0.10 per question.',
+    'upsell.text': 'Our AI analyses your situation in detail for CHF 0.08 to 0.10 per question.',
     'upsell.button': 'Premium area',
 
     // -- Common actions --
@@ -1268,7 +1268,7 @@ var I18N = {
     'premium.code_placeholder': 'Enter your code',
     'premium.wallet_label': 'Remaining balance',
     'premium.analyze_title': 'Analyse your situation',
-    'premium.analyze_cost_hint': 'Estimated cost: CHF 0.03 to 0.10 per analysis',
+    'premium.analyze_cost_hint': 'Estimated cost: CHF 0.08 to 0.10 per analysis',
     'premium.analyze_placeholder': 'Describe your legal situation in detail...',
     'premium.analyze_submit': 'Analyse my situation',
     'premium.upload_label': 'Attach a document (PDF, image)',
@@ -1470,8 +1470,8 @@ var I18N = {
     'premiumcta.feature3_text': 'Interpela\u00e7\u00e3o, oposi\u00e7\u00e3o, contesta\u00e7\u00e3o prontas a assinar',
 
     // -- Homepage: Trust band --
-    'trust.anonymous_title': 'An\u00f3nimo',
-    'trust.anonymous_text': 'Nenhum dado armazenado',
+    'trust.anonymous_title': 'Dados m\u00ednimos',
+    'trust.anonymous_text': 'Sem tracking nem perfila\u00e7\u00e3o',
     'trust.sources_title': 'Fontes verificadas',
     'trust.sources_text': 'Fedlex, jurisprud\u00eancia do TF',
     'trust.law_title': 'Direito su\u00ed\u00e7o',
@@ -1546,7 +1546,7 @@ var I18N = {
 
     // -- Results: Upsell --
     'upsell.title': 'Precisa de uma an\u00e1lise personalizada?',
-    'upsell.text': 'A nossa IA analisa a sua situa\u00e7\u00e3o em detalhe por CHF 0.03 a 0.10 por pergunta.',
+    'upsell.text': 'A nossa IA analisa a sua situa\u00e7\u00e3o em detalhe por CHF 0.08 a 0.10 por pergunta.',
     'upsell.button': 'Espa\u00e7o Premium',
 
     // -- Common actions --
@@ -1614,7 +1614,7 @@ var I18N = {
     'premium.code_placeholder': 'Introduza o c\u00f3digo',
     'premium.wallet_label': 'Saldo restante',
     'premium.analyze_title': 'Analisar a sua situa\u00e7\u00e3o',
-    'premium.analyze_cost_hint': 'Custo estimado: CHF 0.03 a 0.10 por an\u00e1lise',
+    'premium.analyze_cost_hint': 'Custo estimado: CHF 0.08 a 0.10 por an\u00e1lise',
     'premium.analyze_placeholder': 'Descreva a sua situa\u00e7\u00e3o jur\u00eddica em detalhe...',
     'premium.analyze_submit': 'Analisar a minha situa\u00e7\u00e3o',
     'premium.upload_label': 'Anexar um documento (PDF, imagem)',
@@ -1819,8 +1819,8 @@ var I18N = {
     'premiumcta.feature3_text': '\u0625\u0646\u0630\u0627\u0631\u060c \u0627\u0639\u062a\u0631\u0627\u0636\u060c \u0637\u0639\u0646 \u062c\u0627\u0647\u0632\u0629 \u0644\u0644\u062a\u0648\u0642\u064a\u0639',
 
     // -- Homepage: Trust band --
-    'trust.anonymous_title': '\u0645\u062c\u0647\u0648\u0644',
-    'trust.anonymous_text': '\u0644\u0627 \u064a\u062a\u0645 \u062a\u062e\u0632\u064a\u0646 \u0623\u064a \u0628\u064a\u0627\u0646\u0627\u062a',
+    'trust.anonymous_title': '\u0628\u064a\u0627\u0646\u0627\u062a \u0645\u062d\u062f\u0648\u062f\u0629',
+    'trust.anonymous_text': '\u0628\u062f\u0648\u0646 \u062a\u062a\u0628\u0639 \u0623\u0648 \u062a\u0648\u0635\u064a\u0641',
     'trust.sources_title': '\u0645\u0635\u0627\u062f\u0631 \u0645\u0648\u062b\u0642\u0629',
     'trust.sources_text': 'Fedlex\u060c \u0627\u062c\u062a\u0647\u0627\u062f\u0627\u062a \u0627\u0644\u0645\u062d\u0643\u0645\u0629 \u0627\u0644\u0641\u062f\u0631\u0627\u0644\u064a\u0629',
     'trust.law_title': '\u0627\u0644\u0642\u0627\u0646\u0648\u0646 \u0627\u0644\u0633\u0648\u064a\u0633\u0631\u064a',
@@ -1895,7 +1895,7 @@ var I18N = {
 
     // -- Results: Upsell --
     'upsell.title': '\u0647\u0644 \u062a\u062d\u062a\u0627\u062c \u062a\u062d\u0644\u064a\u0644\u0627\u064b \u0645\u062e\u0635\u0635\u0627\u064b\u061f',
-    'upsell.text': '\u0630\u0643\u0627\u0624\u0646\u0627 \u0627\u0644\u0627\u0635\u0637\u0646\u0627\u0639\u064a \u064a\u062d\u0644\u0644 \u0648\u0636\u0639\u0643 \u0628\u0627\u0644\u062a\u0641\u0635\u064a\u0644 \u0645\u0642\u0627\u0628\u0644 CHF 0.03 \u0625\u0644\u0649 0.10 \u0644\u0643\u0644 \u0633\u0624\u0627\u0644.',
+    'upsell.text': '\u0630\u0643\u0627\u0624\u0646\u0627 \u0627\u0644\u0627\u0635\u0637\u0646\u0627\u0639\u064a \u064a\u062d\u0644\u0644 \u0648\u0636\u0639\u0643 \u0628\u0627\u0644\u062a\u0641\u0635\u064a\u0644 \u0645\u0642\u0627\u0628\u0644 CHF 0.08 \u0625\u0644\u0649 0.10 \u0644\u0643\u0644 \u0633\u0624\u0627\u0644.',
     'upsell.button': '\u0627\u0644\u0645\u0633\u0627\u062d\u0629 \u0627\u0644\u0645\u0645\u064a\u0632\u0629',
 
     // -- Common actions --
@@ -1963,7 +1963,7 @@ var I18N = {
     'premium.code_placeholder': '\u0623\u062f\u062e\u0644 \u0627\u0644\u0631\u0645\u0632',
     'premium.wallet_label': '\u0627\u0644\u0631\u0635\u064a\u062f \u0627\u0644\u0645\u062a\u0628\u0642\u064a',
     'premium.analyze_title': '\u062a\u062d\u0644\u064a\u0644 \u0648\u0636\u0639\u0643',
-    'premium.analyze_cost_hint': '\u0627\u0644\u062a\u0643\u0644\u0641\u0629 \u0627\u0644\u062a\u0642\u062f\u064a\u0631\u064a\u0629: CHF 0.03 \u0625\u0644\u0649 0.10 \u0644\u0643\u0644 \u062a\u062d\u0644\u064a\u0644',
+    'premium.analyze_cost_hint': '\u0627\u0644\u062a\u0643\u0644\u0641\u0629 \u0627\u0644\u062a\u0642\u062f\u064a\u0631\u064a\u0629: CHF 0.08 \u0625\u0644\u0649 0.10 \u0644\u0643\u0644 \u062a\u062d\u0644\u064a\u0644',
     'premium.analyze_placeholder': '\u0635\u0650\u0641 \u0648\u0636\u0639\u0643 \u0627\u0644\u0642\u0627\u0646\u0648\u0646\u064a \u0628\u0627\u0644\u062a\u0641\u0635\u064a\u0644...',
     'premium.analyze_submit': '\u062a\u062d\u0644\u064a\u0644 \u0648\u0636\u0639\u064a',
     'premium.upload_label': '\u0625\u0631\u0641\u0627\u0642 \u0645\u0633\u062a\u0646\u062f (PDF\u060c \u0635\u0648\u0631\u0629)',
@@ -2169,8 +2169,8 @@ var I18N = {
     'premiumcta.feature3_text': '\u0130htar, itiraz, itirazname imzaya haz\u0131r',
 
     // -- Homepage: Trust band --
-    'trust.anonymous_title': 'Anonim',
-    'trust.anonymous_text': 'Hi\u00e7bir veri saklanmaz',
+    'trust.anonymous_title': 'Minimum veri',
+    'trust.anonymous_text': 'Takip veya profilleme yok',
     'trust.sources_title': 'Do\u011frulanm\u0131\u015f kaynaklar',
     'trust.sources_text': 'Fedlex, Federal Mahkeme i\u00e7tihatlar\u0131',
     'trust.law_title': '\u0130svi\u00e7re hukuku',
@@ -2245,7 +2245,7 @@ var I18N = {
 
     // -- Results: Upsell --
     'upsell.title': 'Ki\u015fisel bir analize ihtiyac\u0131n\u0131z var m\u0131?',
-    'upsell.text': 'Yapay zek\u00e2m\u0131z durumunuzu soru ba\u015f\u0131na CHF 0.03 ile 0.10 aras\u0131nda ayr\u0131nt\u0131l\u0131 analiz eder.',
+    'upsell.text': 'Yapay zek\u00e2m\u0131z durumunuzu soru ba\u015f\u0131na CHF 0.08 ile 0.10 aras\u0131nda ayr\u0131nt\u0131l\u0131 analiz eder.',
     'upsell.button': 'Premium alan',
 
     // -- Common actions --
@@ -2313,7 +2313,7 @@ var I18N = {
     'premium.code_placeholder': 'Kodunuzu girin',
     'premium.wallet_label': 'Kalan bakiye',
     'premium.analyze_title': 'Durumunuzu analiz edin',
-    'premium.analyze_cost_hint': 'Tahmini maliyet: Analiz ba\u015f\u0131na CHF 0.03 ile 0.10',
+    'premium.analyze_cost_hint': 'Tahmini maliyet: Analiz ba\u015f\u0131na CHF 0.08 ile 0.10',
     'premium.analyze_placeholder': 'Hukuki durumunuzu ayr\u0131nt\u0131l\u0131 olarak tan\u0131mlay\u0131n...',
     'premium.analyze_submit': 'Durumumu analiz et',
     'premium.upload_label': 'Belge ekleyin (PDF, g\u00f6rsel)',
@@ -2518,8 +2518,8 @@ var I18N = {
     'premiumcta.feature3_text': 'Paralajm\u00ebrim, kund\u00ebrshtim, ankim gati p\u00ebr n\u00ebnshkrim',
 
     // -- Homepage: Trust band --
-    'trust.anonymous_title': 'Anonim',
-    'trust.anonymous_text': 'Asnj\u00eb e dh\u00ebn\u00eb nuk ruhet',
+    'trust.anonymous_title': 'T\u00eb dh\u00ebna minimale',
+    'trust.anonymous_text': 'Pa gjurmim dhe pa profilizim',
     'trust.sources_title': 'Burime t\u00eb verifikuara',
     'trust.sources_text': 'Fedlex, jurisprudenc\u00eb e Gjykat\u00ebs Federale',
     'trust.law_title': 'E drejta zvicerane',
@@ -2594,7 +2594,7 @@ var I18N = {
 
     // -- Results: Upsell --
     'upsell.title': 'Keni nevoj\u00eb p\u00ebr nj\u00eb analiz\u00eb t\u00eb personalizuar?',
-    'upsell.text': 'IA jon\u00eb analizon situtat\u00ebn tuaj n\u00eb detaje p\u00ebr CHF 0.03 deri n\u00eb 0.10 p\u00ebr pyetje.',
+    'upsell.text': 'IA jon\u00eb analizon situtat\u00ebn tuaj n\u00eb detaje p\u00ebr CHF 0.08 deri n\u00eb 0.10 p\u00ebr pyetje.',
     'upsell.button': 'Zona Premium',
 
     // -- Common actions --
@@ -2662,7 +2662,7 @@ var I18N = {
     'premium.code_placeholder': 'Fusni kodin',
     'premium.wallet_label': 'Balanca e mbetur',
     'premium.analyze_title': 'Analizoni situtat\u00ebn tuaj',
-    'premium.analyze_cost_hint': 'Kosto e vler\u00ebsuar: CHF 0.03 deri n\u00eb 0.10 p\u00ebr analiz\u00eb',
+    'premium.analyze_cost_hint': 'Kosto e vler\u00ebsuar: CHF 0.08 deri n\u00eb 0.10 p\u00ebr analiz\u00eb',
     'premium.analyze_placeholder': 'P\u00ebrshkruani situtat\u00ebn tuaj juridike n\u00eb detaje...',
     'premium.analyze_submit': 'Analizo situtat\u00ebn time',
     'premium.upload_label': 'Bashk\u00ebngjitni nj\u00eb dokument (PDF, imazh)',
@@ -2867,8 +2867,8 @@ var I18N = {
     'premiumcta.feature3_text': 'Opomena, prigovor, \u017ealba spremni za potpis',
 
     // -- Homepage: Trust band --
-    'trust.anonymous_title': 'Anonimno',
-    'trust.anonymous_text': 'Nikakvi podaci se ne pohranjuju',
+    'trust.anonymous_title': 'Minimalni podaci',
+    'trust.anonymous_text': 'Bez pra\u0107enja i profiliranja',
     'trust.sources_title': 'Verificirani izvori',
     'trust.sources_text': 'Fedlex, sudska praksa Saveznog suda',
     'trust.law_title': '\u0160vicarsko pravo',
@@ -2943,7 +2943,7 @@ var I18N = {
 
     // -- Results: Upsell --
     'upsell.title': 'Trebate personaliziranu analizu?',
-    'upsell.text': 'Na\u0161a AI analizira va\u0161u situaciju detaljno za CHF 0.03 do 0.10 po pitanju.',
+    'upsell.text': 'Na\u0161a AI analizira va\u0161u situaciju detaljno za CHF 0.08 do 0.10 po pitanju.',
     'upsell.button': 'Premium zona',
 
     // -- Common actions --
@@ -3011,7 +3011,7 @@ var I18N = {
     'premium.code_placeholder': 'Unesite kod',
     'premium.wallet_label': 'Preostali saldo',
     'premium.analyze_title': 'Analizirajte svoju situaciju',
-    'premium.analyze_cost_hint': 'Procijenjena cijena: CHF 0.03 do 0.10 po analizi',
+    'premium.analyze_cost_hint': 'Procijenjena cijena: CHF 0.08 do 0.10 po analizi',
     'premium.analyze_placeholder': 'Detaljno opi\u0161ite svoju pravnu situaciju...',
     'premium.analyze_submit': 'Analiziraj moju situaciju',
     'premium.upload_label': 'Prilo\u017eite dokument (PDF, sliku)',
@@ -3174,6 +3174,8 @@ function setLang(lang) {
   if (!I18N[lang]) return;
   _currentLang = lang;
   try { localStorage.setItem('jb_lang', lang); } catch (e) { /* silent */ }
+  // Update html[lang] attribute for CSS selectors (e.g. RTL for Arabic)
+  document.documentElement.lang = lang;
   // Dispatch event so components can react
   if (typeof CustomEvent !== 'undefined') {
     document.dispatchEvent(new CustomEvent('jb:langchange', { detail: { lang: lang } }));

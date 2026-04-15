@@ -11,24 +11,13 @@
  * - Cascade : "voici votre problème ET ce qui va suivre"
  */
 
-import { readFileSync, existsSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
 import { buildGraph, loadAllData } from './graph-builder.mjs';
 import { semanticSearch, expandQuery } from './semantic-search.mjs';
 import { getSourceByRef, getSourceBySignature } from './source-registry.mjs';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const dataDir = join(__dirname, '..', 'data');
-const graphFile = join(dataDir, 'index', 'graph.json');
-
-// Load or build graph
-let graph;
-if (existsSync(graphFile)) {
-  graph = JSON.parse(readFileSync(graphFile, 'utf-8'));
-} else {
-  graph = buildGraph();
-}
+// Always build graph fresh from data files at startup (takes ~60ms)
+// This ensures the graph is never stale relative to the data files.
+const graph = buildGraph();
 
 // Load all raw data for enrichment
 const allData = loadAllData();

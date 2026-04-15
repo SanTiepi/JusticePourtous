@@ -71,7 +71,11 @@ if (RESEND_KEY) {
   resend = new Resend(RESEND_KEY);
   console.log('Email service enabled (Resend)');
 } else {
-  console.log('Email service not configured — codes logged to console');
+  if (process.env.NODE_ENV === 'production') {
+    console.warn('WARNING: Email service not configured in production — codes will NOT be logged');
+  } else {
+    console.log('Email service not configured — codes logged to console (dev mode)');
+  }
 }
 
 async function sendEmail(to, subject, html) {
@@ -84,9 +88,13 @@ async function sendEmail(to, subject, html) {
     });
     if (error) throw new Error(error.message);
   } else {
-    // Dev mode — log to console
-    console.log(`[DEV EMAIL] To: ${to} | Subject: ${subject}`);
-    console.log(html.replace(/<[^>]+>/g, ''));
+    if (process.env.NODE_ENV === 'production') {
+      throw new Error('Service email non configuré. Contactez l\'administrateur.');
+    } else {
+      // Dev mode — log to console
+      console.log(`[DEV EMAIL] To: ${to} | Subject: ${subject}`);
+      console.log(html.replace(/<[^>]+>/g, ''));
+    }
   }
 }
 

@@ -557,14 +557,8 @@ const server = createServer(async (req, res) => {
       }
     }
 
-    if (path === '/api/premium/estimate' && method === 'GET') {
-      const action = url.searchParams.get('action');
-      const ficheId = url.searchParams.get('ficheId');
-      const result = estimerCout(action, { ficheId });
-      return json(res, result.status, result.error
-        ? { error: result.error, disclaimer: DISCLAIMER }
-        : { ...result.data, disclaimer: DISCLAIMER });
-    }
+    // NOTE: first /api/premium/estimate handler removed (duplicate — caught all requests).
+    // The complete handler is below, after analyze-v3/refine.
 
     if (path === '/api/premium/history' && method === 'GET') {
       const sessionCode = url.searchParams.get('session') || req.headers['x-session'];
@@ -1334,7 +1328,11 @@ const server = createServer(async (req, res) => {
     }
     json(res, 404, { error: 'Route non trouvée', disclaimer: DISCLAIMER });
   } catch (err) {
-    json(res, 500, { error: 'Erreur interne', disclaimer: DISCLAIMER });
+    if (err.message === 'Invalid JSON' || err.message === 'Body too large') {
+      json(res, 400, { error: err.message, disclaimer: DISCLAIMER });
+    } else {
+      json(res, 500, { error: 'Erreur interne', disclaimer: DISCLAIMER });
+    }
   }
 });
 

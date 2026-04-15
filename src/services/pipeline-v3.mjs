@@ -124,6 +124,8 @@ RÉPONDS EN JSON:
 }`;
 
 // CLI fallback — uses Claude CLI (subscription) instead of API (paid credits)
+// WARNING: execSync blocks the event loop for up to 120s. Acceptable for CLI fallback
+// but should be replaced with execFile/spawn if this path becomes frequent in production.
 function callClaudeCLI(systemPrompt, userPrompt) {
   const fullPrompt = `${systemPrompt}\n\n---\n\n${userPrompt}`;
   // Always use stdin — command line args have length limits
@@ -169,6 +171,8 @@ async function step1_comprendre(texte, canton, reponsesPrec) {
         messages: [{ role: 'user', content: userPrompt }]
       });
 
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 30000);
       const resp = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
         headers: {
@@ -176,8 +180,10 @@ async function step1_comprendre(texte, canton, reponsesPrec) {
           'x-api-key': apiKey,
           'anthropic-version': '2023-06-01'
         },
-        body
+        body,
+        signal: controller.signal
       });
+      clearTimeout(timeout);
 
       if (resp.ok) {
         const data = await resp.json();
@@ -620,11 +626,15 @@ async function callClaude(system, user, apiKey) {
     messages: [{ role: 'user', content: user }]
   });
 
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 30000);
   const resp = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01' },
-    body
+    body,
+    signal: controller.signal
   });
+  clearTimeout(timeout);
 
   if (!resp.ok) throw new Error(`Claude error ${resp.status}`);
   const data = await resp.json();
@@ -648,11 +658,15 @@ async function callOpenAI(system, user, apiKey) {
     response_format: { type: 'json_object' }
   });
 
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 30000);
   const resp = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` },
-    body
+    body,
+    signal: controller.signal
   });
+  clearTimeout(timeout);
 
   if (!resp.ok) throw new Error(`OpenAI error ${resp.status}`);
   const data = await resp.json();

@@ -112,7 +112,8 @@ function debit(wallet, amount, action, details = {}) {
 loadWallets();
 
 const TEST_SESSION = process.env.ADMIN_TEST_SESSION || 'dev-test-fallback-' + randomBytes(8).toString('hex');
-if (!wallets.has(TEST_SESSION)) {
+// Only create test wallet outside production — in production, ADMIN_TEST_SESSION should not auto-create unlimited credits
+if (process.env.NODE_ENV !== 'production' && !wallets.has(TEST_SESSION)) {
   wallets.set(TEST_SESSION, {
     sessionCode: TEST_SESSION,
     solde: 999999, // effectively unlimited

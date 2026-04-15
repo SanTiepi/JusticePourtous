@@ -528,7 +528,7 @@
         var res = await fetch('/api/premium/analyze-v3/refine', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ texte: lastQuery, reponses: answers })
+          body: JSON.stringify({ texte: lastQuery, reponses: answers, session: sessionCode })
         });
         var data = await res.json();
         if (data.error) { txt.textContent = data.error; return; }

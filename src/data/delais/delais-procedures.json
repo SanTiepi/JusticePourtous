@@ -210,7 +210,7 @@
   },
   {
     "procedure": "Recours contre une décision de renvoi (asile)",
-    "domaine": "étrangers",
+    "domaine": "etrangers",
     "delai": "30 jours",
     "computation": "Dès la notification de la décision du SEM",
     "feries": "Report si échéance un samedi/dimanche/jour férié",
@@ -221,7 +221,7 @@
   },
   {
     "procedure": "Recours contre un refus de permis de séjour",
-    "domaine": "étrangers",
+    "domaine": "etrangers",
     "delai": "30 jours",
     "computation": "Dès la notification de la décision cantonale",
     "feries": "Report si échéance un samedi/dimanche/jour férié",
@@ -232,7 +232,7 @@
   },
   {
     "procedure": "Demande de regroupement familial",
-    "domaine": "étrangers",
+    "domaine": "etrangers",
     "delai": "5 ans (conjoint/enfant > 12 ans) / 1 an (titulaire d'un permis C pour famille à l'étranger)",
     "computation": "Dès l'octroi du permis ou la naissance du lien familial invoqué",
     "feries": "N/A (délai administratif, pas procédural)",
@@ -243,7 +243,7 @@
   },
   {
     "procedure": "Recours contre la révocation du permis d'établissement",
-    "domaine": "étrangers",
+    "domaine": "etrangers",
     "delai": "30 jours",
     "computation": "Dès la notification de la décision de révocation",
     "feries": "Standard",
@@ -254,7 +254,7 @@
   },
   {
     "procedure": "Demande de naturalisation facilitée",
-    "domaine": "étrangers",
+    "domaine": "etrangers",
     "delai": "Après 3 ans de mariage avec un-e Suisse-sse (et 5 ans de résidence)",
     "computation": "Conditions cumulatives à remplir au moment de la demande ET de la décision",
     "feries": "N/A",

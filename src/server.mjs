@@ -3,6 +3,15 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, extname } from 'node:path';
 
+// ─── HTTP helpers (extracted to reduce server.mjs size) ─────────
+import {
+  json, parseBody, parseRawBody, serveStatic as serveStaticFile,
+  setSecurityHeaders, sanitizeUserInput, rateLimit, logTriage, getTriageLog,
+  checkAdmin, getFeedbackStore,
+  MAX_UPLOAD_SIZE, MAX_QUERY_LENGTH, MAX_BODY_SIZE
+} from './lib/http-helpers.mjs';
+
+// ─── Service imports ────────────────────────────────────────────
 import { getAllFiches, getFicheById } from './services/fiches.mjs';
 import { consulter, getQuestionsForDomaine } from './services/consultation.mjs';
 import { getServicesByCanton } from './services/annuaire.mjs';
@@ -62,6 +71,14 @@ const cascadesData = JSON.parse(readFileSync(join(__dirname, 'data', 'cascades',
 
 const DISCLAIMER = "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.";
 
+// Aliases: feedbackStore and triageLog now live in http-helpers.mjs
+const feedbackStore = getFeedbackStore();
+
+// Local wrapper: serveStatic needs publicDir
+function serveStatic(req, res, filePath) {
+  serveStaticFile(req, res, filePath, publicDir);
+}
+
 // ─── Stripe (optional — graceful if no keys) ───────────────────
 let stripe = null;
 const STRIPE_SECRET = process.env.STRIPE_SECRET_KEY;
@@ -87,7 +104,6 @@ function persistStripeSessionMap() {
   stripeMapSaveTimer = setTimeout(() => {
     stripeMapSaveTimer = null;
     try {
-      // Keep only last 1000 entries to avoid unbounded growth
       const entries = [...stripeSessionMap];
       const trimmed = entries.slice(-1000);
       writeFileSync(STRIPE_MAP_FILE, JSON.stringify(trimmed, null, 2));
@@ -97,7 +113,7 @@ function persistStripeSessionMap() {
   }, 2000);
 }
 
-const STRIPE_ACCOUNT = process.env.STRIPE_ACCOUNT_ID; // acct_... for org keys
+const STRIPE_ACCOUNT = process.env.STRIPE_ACCOUNT_ID;
 
 if (STRIPE_SECRET) {
   const Stripe = (await import('stripe')).default;
@@ -107,181 +123,6 @@ if (STRIPE_SECRET) {
   console.log('Stripe enabled (Card)' + (STRIPE_ACCOUNT ? ' — account: ' + STRIPE_ACCOUNT : ''));
 } else {
   console.log('Stripe not configured — using demo wallet mode');
-}
-
-// ─── Admin token protection ─────────────────────────────────────
-const ADMIN_TOKEN = process.env.ADMIN_TOKEN;
-
-function checkAdmin(req, res) {
-  if (!ADMIN_TOKEN) {
-    json(res, 403, { error: 'Admin access not configured' });
-    return false;
-  }
-  const auth = req.headers.authorization || '';
-  const token = auth.startsWith('Bearer ') ? auth.slice(7) : '';
-  if (token !== ADMIN_TOKEN) {
-    json(res, 403, { error: 'Forbidden' });
-    return false;
-  }
-  return true;
-}
-
-// In-memory feedback store
-const feedbackStore = [];
-
-const MIME_TYPES = {
-  '.html': 'text/html; charset=utf-8',
-  '.css': 'text/css; charset=utf-8',
-  '.js': 'application/javascript; charset=utf-8',
-  '.json': 'application/json; charset=utf-8',
-  '.png': 'image/png',
-  '.svg': 'image/svg+xml',
-  '.ico': 'image/x-icon',
-  '.xml': 'application/xml; charset=utf-8',
-  '.txt': 'text/plain; charset=utf-8'
-};
-
-const MAX_UPLOAD_SIZE = 10 * 1024 * 1024; // 10MB
-const MAX_QUERY_LENGTH = 2000; // max chars for search queries
-const MAX_BODY_SIZE = 100 * 1024; // 100KB for JSON bodies
-
-// ─── Input sanitization (anti-prompt injection) ──────────────────
-function sanitizeUserInput(text, maxLength = 5000) {
-  if (!text || typeof text !== 'string') return '';
-  // Truncate
-  let clean = text.slice(0, maxLength);
-  // Remove control characters (keep newlines and tabs)
-  clean = clean.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '');
-  // Remove obvious prompt injection patterns
-  clean = clean.replace(/ignore\s+(all\s+)?previous\s+instructions?/gi, '[filtered]');
-  clean = clean.replace(/system\s*prompt/gi, '[filtered]');
-  clean = clean.replace(/you\s+are\s+now/gi, '[filtered]');
-  clean = clean.replace(/act\s+as\s+(a|an)\s/gi, '[filtered] ');
-  clean = clean.replace(/\bDAN\b/g, '[filtered]');
-  return clean.trim();
-}
-
-// ─── Rate limiter (in-memory, per IP) ────────────────────────────
-const rateLimitStore = new Map();
-const RATE_LIMIT = { windowMs: 60000, maxRequests: 60 }; // 60 req/min
-
-function rateLimit(ip) {
-  const now = Date.now();
-  let entry = rateLimitStore.get(ip);
-  if (!entry || now - entry.windowStart > RATE_LIMIT.windowMs) {
-    entry = { windowStart: now, count: 0 };
-    rateLimitStore.set(ip, entry);
-  }
-  entry.count++;
-  if (entry.count > RATE_LIMIT.maxRequests) return false;
-  return true;
-}
-
-// Cleanup rate limit store every 5 min
-setInterval(() => {
-  const cutoff = Date.now() - RATE_LIMIT.windowMs * 2;
-  for (const [ip, entry] of rateLimitStore) {
-    if (entry.windowStart < cutoff) rateLimitStore.delete(ip);
-  }
-}, 300000);
-
-// ─── Triage audit log (in-memory, last 1000) ─────────────────────
-const triageLog = [];
-const MAX_TRIAGE_LOG = 1000;
-
-function logTriage(input, output, method, durationMs) {
-  const entry = {
-    timestamp: new Date().toISOString(),
-    input: typeof input === 'string' ? input.slice(0, 200) : '(structured)',
-    method,
-    ficheId: output?.ficheId || output?.fiche?.id || null,
-    domaine: output?.domaine || output?.fiche?.domaine || null,
-    confiance: output?.confiance || null,
-    durationMs: Math.round(durationMs),
-  };
-  triageLog.push(entry);
-  if (triageLog.length > MAX_TRIAGE_LOG) triageLog.shift();
-}
-
-function setSecurityHeaders(res) {
-  res.setHeader('X-Content-Type-Options', 'nosniff');
-  res.setHeader('X-Frame-Options', 'DENY');
-  res.setHeader('Content-Security-Policy', "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:");
-  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
-}
-
-function json(res, statusCode, data) {
-  setSecurityHeaders(res);
-  res.writeHead(statusCode, { 'Content-Type': 'application/json; charset=utf-8' });
-  res.end(JSON.stringify(data));
-}
-
-function parseBody(req) {
-  return new Promise((resolve, reject) => {
-    let body = '';
-    let size = 0;
-    req.on('data', chunk => {
-      size += chunk.length;
-      if (size > MAX_BODY_SIZE) { req.destroy(); reject(new Error('Body too large')); return; }
-      body += chunk;
-    });
-    req.on('end', () => {
-      try {
-        resolve(body ? JSON.parse(body) : {});
-      } catch {
-        reject(new Error('Invalid JSON'));
-      }
-    });
-    req.on('error', reject);
-  });
-}
-
-function parseRawBody(req, maxSize) {
-  return new Promise((resolve, reject) => {
-    const chunks = [];
-    let size = 0;
-    let tooLarge = false;
-    req.on('data', chunk => {
-      size += chunk.length;
-      if (size > maxSize) {
-        tooLarge = true;
-        // Stop collecting but don't destroy — let the request drain
-        chunks.length = 0;
-      }
-      if (!tooLarge) chunks.push(chunk);
-    });
-    req.on('end', () => {
-      if (tooLarge) return reject(new Error('BODY_TOO_LARGE'));
-      resolve(Buffer.concat(chunks));
-    });
-    req.on('error', reject);
-  });
-}
-
-function serveStatic(req, res, filePath) {
-  if (!existsSync(filePath)) {
-    const notFoundPage = join(publicDir, '404.html');
-    if (existsSync(notFoundPage)) {
-      setSecurityHeaders(res);
-      res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
-      res.end(readFileSync(notFoundPage));
-    } else {
-      json(res, 404, { error: 'Not found' });
-    }
-    return;
-  }
-  const ext = extname(filePath);
-  const mime = MIME_TYPES[ext] || 'application/octet-stream';
-  setSecurityHeaders(res);
-  // Cache-Control by file type
-  let cacheControl = 'no-cache';
-  if (ext === '.css' || ext === '.js') {
-    cacheControl = 'public, max-age=3600';
-  } else if (ext === '.png' || ext === '.svg' || ext === '.ico' || ext === '.jpg' || ext === '.jpeg' || ext === '.gif' || ext === '.webp') {
-    cacheControl = 'public, max-age=86400';
-  }
-  res.writeHead(200, { 'Content-Type': mime, 'Cache-Control': cacheControl });
-  res.end(readFileSync(filePath));
 }
 
 const server = createServer(async (req, res) => {
@@ -476,6 +317,7 @@ const server = createServer(async (req, res) => {
     // Triage audit log endpoint
     if (path === '/api/admin/triage-log' && method === 'GET') {
       if (!checkAdmin(req, res)) return;
+      const triageLog = getTriageLog();
       return json(res, 200, { entries: triageLog.slice(-50), total: triageLog.length });
     }
 

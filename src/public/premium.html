@@ -443,7 +443,7 @@
 
     async function refreshCredits() {
       try {
-        var res = await fetch('/api/premium/credits?session=' + sessionCode);
+        var res = await fetch('/api/premium/credits', { headers: { 'x-session': sessionCode } });
         var data = await res.json();
         if (data.error) {
           localStorage.removeItem('jb_session');

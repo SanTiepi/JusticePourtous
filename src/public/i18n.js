@@ -1747,7 +1747,7 @@ var I18N = {
   },
 
   // ---------------------------------------------------------------------------
-  // Arabic (RTL) — NOTE: RTL layout not yet implemented, only translations
+  // Arabic (RTL) — RTL partially implemented via CSS (html[lang="ar"] { direction: rtl })
   // ---------------------------------------------------------------------------
   ar: {
     // -- Navigation --
@@ -2093,8 +2093,7 @@ var I18N = {
     'lang.sq': 'SQ',
     'lang.hr': 'HR',
     'lang.switch_label': '\u0627\u0644\u0644\u063a\u0629',
-    // NOTE: Arabic is RTL. Set dir="rtl" on <html> when this language is active.
-    // RTL layout implementation is pending.
+    // NOTE: Arabic is RTL. RTL partially implemented via CSS (html[lang="ar"] { direction: rtl }).
   },
 
   // ---------------------------------------------------------------------------
@@ -3229,7 +3228,7 @@ function tLoadingMessages(prefix) {
 
 /**
  * Language metadata. Names shown in the dropdown in their own language.
- * AR is marked as RTL for future layout support.
+ * AR is marked as RTL. RTL partially implemented via CSS (html[lang="ar"] { direction: rtl }).
  */
 var LANG_META = {
   fr: { label: 'FR', name: 'Fran\u00e7ais' },

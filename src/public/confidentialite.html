@@ -41,7 +41,7 @@
     <div class="page-inner">
       <p class="hero-eyebrow">Protection des donn&eacute;es</p>
       <h1 class="page-title">Politique de confidentialit&eacute;</h1>
-      <p>Derni&egrave;re mise &agrave; jour : 13 avril 2026</p>
+      <p>Derni&egrave;re mise &agrave; jour : 15 avril 2026</p>
 
       <section class="method-section">
         <h2>Responsable du traitement</h2>
@@ -54,8 +54,17 @@
 
       <section class="method-section">
         <h2>Donn&eacute;es collect&eacute;es</h2>
-        <p>JusticePourtous a &eacute;t&eacute; con&ccedil;u dans un esprit de minimisation des donn&eacute;es. Aucune donn&eacute;e personnelle n'est stock&eacute;e en base de donn&eacute;es. Les requ&ecirc;tes juridiques que vous soumettez sont trait&eacute;es exclusivement en m&eacute;moire vive et ne sont pas conserv&eacute;es apr&egrave;s le traitement de votre demande.</p>
-        <p>Les wallets premium fonctionnent avec un code de session anonyme, sans lien avec votre identit&eacute;. Votre adresse IP est utilis&eacute;e uniquement pour le rate limiting (limitation du nombre de requ&ecirc;tes) et n'est pas stock&eacute;e de mani&egrave;re persistante.</p>
+        <p>JusticePourtous a &eacute;t&eacute; con&ccedil;u dans un esprit de minimisation des donn&eacute;es. Voici en toute transparence ce que le syst&egrave;me stocke :</p>
+
+        <p><strong>Codes de session (wallets)</strong> &mdash; Chaque wallet est identifi&eacute; par un code de session al&eacute;atoire. Ce code est anonyme et ne contient aucune donn&eacute;e personnelle en lui-m&ecirc;me. Les soldes, montants et dates des transactions sont conserv&eacute;s sur le serveur (fichier wallets.json). Le contenu de vos requ&ecirc;tes juridiques n'est PAS enregistr&eacute; dans l'historique du wallet.</p>
+
+        <p><strong>Adresse email</strong> &mdash; Si vous choisissez de vous authentifier en tant qu'utilisateur premium, votre adresse email est stock&eacute;e sur le serveur (fichier users.json) et associ&eacute;e &agrave; vos wallets. Cette adresse sert uniquement &agrave; retrouver vos wallets lors d'une reconnexion. Les utilisateurs non authentifi&eacute;s n'ont aucune donn&eacute;e nominative stock&eacute;e.</p>
+
+        <p><strong>Statistiques anonymes</strong> &mdash; Des compteurs agr&eacute;g&eacute;s sont conserv&eacute;s (nombre de pages vues, nombre de recherches effectu&eacute;es). Ces statistiques ne contiennent ni le contenu des recherches, ni aucun identifiant personnel.</p>
+
+        <p><strong>Requ&ecirc;tes juridiques</strong> &mdash; Vos requ&ecirc;tes sont trait&eacute;es en m&eacute;moire vive uniquement. Un journal en m&eacute;moire conserve les 1000 derni&egrave;res requ&ecirc;tes pour le monitoring technique, mais ces donn&eacute;es sont perdues &agrave; chaque red&eacute;marrage du serveur et ne sont jamais &eacute;crites sur le disque.</p>
+
+        <p><strong>Votre adresse IP</strong> est utilis&eacute;e uniquement pour le rate limiting (limitation du nombre de requ&ecirc;tes) et n'est pas stock&eacute;e de mani&egrave;re persistante.</p>
       </section>
 
       <section class="method-section">
@@ -63,7 +72,7 @@
         <p>JusticePourtous utilise uniquement deux &eacute;l&eacute;ments de stockage local (localStorage) dans votre navigateur :</p>
         <p><strong>jb_session</strong> &mdash; Stocke votre code de session premium. Ce code est anonyme et ne contient aucune donn&eacute;e personnelle. Il permet uniquement d'acc&eacute;der &agrave; votre solde de cr&eacute;dits.</p>
         <p><strong>jb_lang</strong> &mdash; Stocke votre pr&eacute;f&eacute;rence de langue pour l'affichage du site.</p>
-        <p>Aucun cookie tiers, cookie de tra&ccedil;age ou outil d'analyse (analytics) n'est utilis&eacute;.</p>
+        <p>Aucun cookie n'est utilis&eacute; (ni cookie tiers, ni cookie de tra&ccedil;age). Le stockage s'effectue exclusivement via localStorage dans votre navigateur.</p>
       </section>
 
       <section class="method-section">
@@ -76,12 +85,14 @@
       <section class="method-section">
         <h2>Dur&eacute;e de conservation</h2>
         <p>Les wallets premium sont conserv&eacute;s pendant 90 jours &agrave; compter de la derni&egrave;re utilisation. Pass&eacute; ce d&eacute;lai, le wallet et le solde associ&eacute; sont automatiquement supprim&eacute;s.</p>
-        <p>Aucun journal (log) des requ&ecirc;tes juridiques n'est conserv&eacute; de mani&egrave;re persistante. Les donn&eacute;es de traitement sont supprim&eacute;es de la m&eacute;moire vive d&egrave;s que la r&eacute;ponse vous a &eacute;t&eacute; transmise.</p>
+        <p>Les comptes utilisateurs (email + liens wallets) sont conserv&eacute;s tant que les wallets associ&eacute;s existent.</p>
+        <p>Les statistiques anonymes (compteurs agr&eacute;g&eacute;s) sont conserv&eacute;es sans limite de dur&eacute;e, mais ne contiennent aucune donn&eacute;e personnelle.</p>
+        <p>Les requ&ecirc;tes juridiques ne sont conserv&eacute;es qu'en m&eacute;moire vive (maximum 1000 entr&eacute;es) et sont perdues &agrave; chaque red&eacute;marrage du serveur. Aucun journal persistant des requ&ecirc;tes n'est conserv&eacute;.</p>
       </section>
 
       <section class="method-section">
         <h2>Droits des personnes concern&eacute;es</h2>
-        <p>Conform&eacute;ment &agrave; la loi f&eacute;d&eacute;rale sur la protection des donn&eacute;es (nLPD), vous disposez d'un droit d'acc&egrave;s, de rectification et de suppression de vos donn&eacute;es personnelles. &Eacute;tant donn&eacute; que JusticePourtous ne stocke aucune donn&eacute;e personnelle identifiable, ces droits s'exercent principalement sur les donn&eacute;es li&eacute;es &agrave; votre wallet premium, le cas &eacute;ch&eacute;ant.</p>
+        <p>Conform&eacute;ment &agrave; la loi f&eacute;d&eacute;rale sur la protection des donn&eacute;es (nLPD), vous disposez d'un droit d'acc&egrave;s, de rectification et de suppression de vos donn&eacute;es personnelles. Ces droits s'exercent sur les donn&eacute;es li&eacute;es &agrave; votre wallet premium et, le cas &eacute;ch&eacute;ant, sur votre adresse email si vous vous &ecirc;tes authentifi&eacute;(e).</p>
         <p>Pour exercer vos droits, contactez-nous par courriel &agrave; l'adresse <a href="mailto:contact@justicepourtous.ch">contact@justicepourtous.ch</a>. Nous nous engageons &agrave; r&eacute;pondre dans un d&eacute;lai de 30 jours.</p>
       </section>
 

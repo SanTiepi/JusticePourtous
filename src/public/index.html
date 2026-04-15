@@ -273,7 +273,7 @@
     // Show wallet balance if logged in
     var jbSession = localStorage.getItem('jb_session');
     if (jbSession) {
-      fetch('/api/premium/credits?session=' + jbSession)
+      fetch('/api/premium/credits', { headers: { 'x-session': jbSession } })
         .then(function(r) { return r.json(); })
         .then(function(d) {
           if (d.solde !== undefined) {

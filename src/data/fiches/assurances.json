@@ -5,7 +5,7 @@
     "sousDomaine": "ijm",
     "tags": [
       "IJM",
-      "indemnites journalieres",
+      "indemnités journalieres",
       "maladie",
       "incapacité",
       "LCA",
@@ -34,7 +34,7 @@
       },
       {
         "id": "q3",
-        "text": "L'assurance versé-t-elle les indemnites ?",
+        "text": "L'assurance versé-t-elle les indemnités ?",
         "options": [
           "oui",
           "partiellement",
@@ -44,7 +44,7 @@
       },
       {
         "id": "q4",
-        "text": "Avez-vous ete examine par un medecin-conseil de l'assurance ?",
+        "text": "Avez-vous été examine par un médecin-conseil de l'assurance ?",
         "options": [
           "oui",
           "non"
@@ -57,11 +57,11 @@
       }
     ],
     "reponse": {
-      "explication": "Les indemnites journalieres maladie (IJM) peuvent être régies par la LCA (assurance privee collective ou individuelle) ou, plus rarement, par la LAMal (assurance volontaire). En général, l'employeur souscrit une assurance collective LCA qui versé 80% du salaire pendant 720 jours sur une periode de 900 jours consecutifs. Le délai d'attente est généralement de 30 a 90 jours. L'assurance peut mandater un medecin-conseil pour évaluer l'incapacité de travail. Si l'assurance refuse ou stoppe les prestations, l'assuré peut contester la decision. Pour une assurance LCA, le litige rélevé du droit prive (tribunal civil, art. 46 LCA pour le for). Le délai de prescription est de 5 ans (art. 46 LCA). Pour une IJM LAMal, le recours va au tribunal cantonal des assurances. Il est important de continuer a transmettre les certificats médicaux régulièrement et de ne pas reprendre le travail sans accord du medecin traitant.",
+      "explication": "Les indemnités journalieres maladie (IJM) peuvent être régies par la LCA (assurance privee collective ou individuelle) ou, plus rarement, par la LAMal (assurance volontaire). En général, l'employeur souscrit une assurance collective LCA qui versé 80% du salaire pendant 720 jours sur une période de 900 jours consecutifs. Le délai d'attente est généralement de 30 a 90 jours. L'assurance peut mandater un médecin-conseil pour évaluer l'incapacité de travail. Si l'assurance refuse ou stoppe les prestations, l'assuré peut contester la décision. Pour une assurance LCA, le litige rélevé du droit prive (tribunal civil, art. 46 LCA pour le for). Le délai de prescription est de 5 ans (art. 46 LCA). Pour une IJM LAMal, le recours va au tribunal cantonal des assurances. Il est important de continuer a transmettre les certificats médicaux régulièrement et de ne pas reprendre le travail sans accord du médecin traitant.",
       "articles": [
         {
           "ref": "LCA 67",
-          "titre": "Assurance d'indemnites journalieres — dispositions générales",
+          "titre": "Assurance d'indemnités journalieres — dispositions générales",
           "lien": "https://www.fedlex.admin.ch/eli/cc/24/719_735_717/fr#art_67"
         },
         {
@@ -71,7 +71,7 @@
         },
         {
           "ref": "LAMal 67-77",
-          "titre": "Assurance facultative d'indemnites journalieres",
+          "titre": "Assurance facultative d'indemnités journalieres",
           "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_67"
         },
         {
@@ -83,14 +83,14 @@
       "jurisprudence": [
         {
           "ref": "ATF 133 III 185",
-          "resume": "L'assurance IJM selon la LCA peut mettre fin aux prestations si le medecin-conseil atteste une capacite de travail, mais l'assuré peut contester par expertise judiciaire."
+          "resume": "L'assurance IJM selon la LCA peut mettre fin aux prestations si le médecin-conseil attesté une capacite de travail, mais l'assuré peut contester par expertise judiciaire."
         },
         {
           "ref": "TF 4A_247/2019",
-          "resume": "Le fardeau de la preuve de la capacite de travail incombe a l'assureur qui veut cesser les prestations."
+          "resume": "Le fardeau de la preuve de la capacite de travail incombe à l'assureur qui veut cesser les prestations."
         }
       ],
-      "modeleLettre": "Objet : Contestation de l'arrêt des indemnites journalieres maladie\n\nA [nom de l'assurance],\n\nJe soussigné(e) [nom], assuré(e) sous le contrat/police n° [numero],\n\nConteste votre decision du [date] de cesser le versément des indemnites journalieres maladie.\n\nMon medecin traitant, Dr [nom], atteste d'une incapacité de travail persistante (certificat joint). L'avis de votre medecin-conseil ne saurait primer sans expertise contradictoire.\n\nJe vous demande de :\n1. Reprendre le versément des indemnites avec effet rétroactif\n2. A défaut, motiver votre refus par écrit et de manière detaillee\n\nA défaut de réponse satisfaisante dans les 30 jours, je saisirai le tribunal compétent.\n\nPieces jointes : certificat médical, rapports médicaux.\n\n[Signature]",
+      "modeleLettre": "Objet : Contestation de l'arrêt des indemnités journalieres maladie\n\nA [NOM DE L'ASSURANCE],\n\nJe soussigné(e) [NOM], assuré(e) sous le contrat/police n° [NUMERO],\n\nConteste votre décision du [DATE] de cesser le versément des indemnités journalieres maladie.\n\nMon médecin traitant, Dr [NOM], attesté d'une incapacité de travail persistante (certificat joint). L'avis de votre médecin-conseil ne saurait primer sans expertise contradictoire.\n\nJe vous demande de :\n1. Reprendre le versément des indemnités avec effet rétroactif\n2. A défaut, motiver votre refus par écrit et de manière détaillée\n\nA défaut de réponse satisfaisante dans les 30 jours, je saisirai le tribunal compétent.\n\nPieces jointes : certificat médical, rapports médicaux.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Ombudsman de l'assurance-maladie",
@@ -114,17 +114,17 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "LCA/LAMal état 2025-01-01",
-    "match_description": "L'assuré en arrêt maladie ne reçoit plus ses indemnites journalieres ou l'assurance refuse de payer",
+    "match_description": "L'assuré en arrêt maladie ne reçoit plus ses indemnités journalieres ou l'assurance refuse de payer",
     "profane_aliases": [
       "mon assurance ne me paie plus pendant mon arrêt",
       "IJM coupees sans raison",
       "en arrêt maladie et plus de salaire",
       "l'assurance dit que je peux travailler",
-      "medecin-conseil m'a declare apte mais je suis malade"
+      "médecin-conseil m'a déclaré apte mais je suis malade"
     ],
     "negative_signals": [
       "probleme de salaire avec l'employeur sans lien avec l'assurance",
@@ -198,11 +198,11 @@
       }
     ],
     "reponse": {
-      "explication": "La rente AI est accordee après un délai de carence d'un an d'incapacité de travail continue d'au moins 40% (art. 28 al. 1 let. b LAI). La réinsertion prime la rente : l'office AI propose d'abord des mesures professionnelles (art. 8 LAI). Le taux d'invalidité determine le droit à la rente : 40% = quart de rente, 50% = demi-rente, 60% = trois-quarts de rente, 70% = rente entière (art. 28 al. 2 LAI). Le taux est calcule par comparaison entre le revenu sans invalidité et le revenu avec invalidité (methode de comparaison des revenus, art. 16 LPGA). La demande se fait auprès de l'office AI du canton de domicile. La procédure dure en moyenne 6 a 18 mois. En cas de refus, l'assuré peut faire opposition dans les 30 jours (art. 52 LPGA) puis recours au tribunal cantonal des assurances. Les prestations complémentaires (PC) peuvent completer la rente si elle est insuffisante.",
+      "explication": "La rente AI est accordee après un délai de carence d'un an d'incapacité de travail continue d'au moins 40% (art. 28 al. 1 let. b LAI). La réinsertion prime la rente : l'office AI propose d'abord des mesures professionnelles (art. 8 LAI). Le taux d'invalidité déterminé le droit à la rente : 40% = quart de rente, 50% = demi-rente, 60% = trois-quarts de rente, 70% = rente entière (art. 28 al. 2 LAI). Le taux est calcule par comparaison entre le revenu sans invalidité et le revenu avec invalidité (methode de comparaison des revenus, art. 16 LPGA). La demande se fait auprès de l'office AI du canton de domicile. La procédure dure en moyenne 6 a 18 mois. En cas de refus, l'assuré peut faire opposition dans les 30 jours (art. 52 LPGA) puis recours au tribunal cantonal des assurances. Les prestations complémentaires (PC) peuvent completer la rente si elle est insuffisante.",
       "articles": [
         {
           "ref": "LAI 28",
-          "titre": "Droit a la rente et taux",
+          "titre": "Droit à la rente et taux",
           "lien": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr#art_28"
         },
         {
@@ -228,10 +228,10 @@
         },
         {
           "ref": "ATF 145 V 2",
-          "resume": "Les tables ESS (Enquete suisse sur la structure des salaires) servent de reference pour le calcul du revenu d'invalide."
+          "resume": "Les tables ESS (Enquete suisse sur la structure des salaires) servent de référencée pour le calcul du revenu d'invalide."
         }
       ],
-      "modeleLettre": "Objet : Demande de prestations de l'assurance-invalidité\n\nA l'Office AI de [canton],\n\nJe soussigné(e) [nom, prenom], ne(e) le [date], N° AVS [numero], domicilié(e) a [adresse],\n\nDepose une demande de prestations de l'assurance-invalidité.\n\nJe suis en incapacité de travail depuis le [date] en raison de [pathologie, sans details intimes].\n\nMon medecin traitant est Dr [nom, adresse].\n\nJe joins le formulaire officiel de demande de prestations AI dument rempli.\n\nPieces jointes : formulaire de demande, certificats médicaux, curriculum vitae professionnel.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Demande de prestations de l'assurance-invalidité\n\nA l'Office AI de [CANTON],\n\nJe soussigné(e) [NOM, PRENOM], né(e) le [DATE], N° AVS [NUMERO], domicilié(e) a [ADRESSE],\n\nDepose une demande de prestations de l'assurance-invalidité.\n\nJe suis en incapacité de travail depuis le [DATE] en raison de [PATHOLOGIE, SANS DETAILS INTIMES].\n\nMon médecin traitant est Dr [NOM, ADRESSE].\n\nJe joins le formulaire officiel de demande de prestations AI dument rempli.\n\nPieces jointes : formulaire de demande, certificats médicaux, curriculum vitae professionnel.\n\nVeuillez agréer mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Office AI Vaud",
@@ -259,7 +259,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "LAI/LPGA état 2025-01-01",
@@ -273,13 +273,13 @@
     ],
     "negative_signals": [
       "arrêt maladie temporaire de quelques semaines",
-      "probleme de chomage sans atteinte a la sante",
+      "probleme de chomage sans atteinte à la sante",
       "demande de prestations complémentaires uniquement"
     ],
     "required_facts": [
       "durée de l'incapacité de travail",
       "état de la demande AI (déposée ou non)",
-      "pathologie ou atteinte a la sante",
+      "pathologie ou atteinte à la sante",
       "canton"
     ]
   },
@@ -341,7 +341,7 @@
       }
     ],
     "reponse": {
-      "explication": "Les prestations complémentaires (PC) sont un droit et non une aide sociale. Elles complètent les rentes AVS/AI lorsque celles-ci ne couvrent pas les besoins vitaux (art. 2 LPC). Conditions : domicile en Suisse, droit à une rente AVS/AI (ou allocation pour impotent, ou indemnite AI pendant 6 mois minimum), fortune nette inférieure au seuil (CHF 100'000 personne seule, CHF 200'000 couple, depuis la reforme 2021). Le calcul compare les dépenses reconnues (besoins vitaux forfaitaires + loyer effectif plafonné + prime LAMal) aux revenus déterminants (rentes + fortune + revenus hypothetiques). La PC annuelle correspond a la difference si les dépenses dépassent les revenus. La demande se fait auprès de la caisse de compensation cantonale. Les PC couvrent aussi les frais de maladie non rembourses (franchise, quote-part, soins dentaires sous conditions). Le droit est rétroactif de 6 mois si les conditions etaient remplies avant la demande.",
+      "explication": "Les prestations complémentaires (PC) sont un droit et non une aide sociale. Elles complètent les rentes AVS/AI lorsque celles-ci ne couvrent pas les besoins vitaux (art. 2 LPC). Conditions : domicile en Suisse, droit à une rente AVS/AI (ou allocation pour impotent, ou indemnité AI pendant 6 mois minimum), fortune nette inférieure au seuil (CHF 100'000 personne seule, CHF 200'000 couple, depuis la reforme 2021). Le calcul compare les dépenses reconnues (besoins vitaux forfaitaires + loyer effectif plafonné + prime LAMal) aux revenus déterminants (rentes + fortune + revenus hypothetiques). La PC annuelle correspond à la difference si les dépenses dépassent les revenus. La demande se fait auprès de la caisse de compensation cantonale. Les PC couvrent aussi les frais de maladie non rembourses (franchise, quote-part, soins dentaires sous conditions). Le droit est rétroactif de 6 mois si les conditions etaient remplies avant la demande.",
       "articles": [
         {
           "ref": "LPC 2",
@@ -374,7 +374,7 @@
           "resume": "Le revenu hypothetique ne peut être impute que si la personne est effectivement en mesure de l'obtenir compte tenu de sa sante et du marche du travail."
         }
       ],
-      "modeleLettre": "Objet : Demande de prestations complémentaires AVS/AI\n\nA la Caisse cantonale de compensation de [canton],\n\nJe soussigné(e) [nom, prenom], ne(e) le [date], N° AVS [numero], domicilié(e) a [adresse],\n\nBeneficiaire d'une rente [AVS/AI] de CHF [montant] par mois,\n\nDemande l'octroi de prestations complémentaires au sens de la LPC.\n\nMa situation financiere ne me permet pas de couvrir mes besoins vitaux avec ma rente actuelle.\n\nJe joins le formulaire de demande officiel et les pieces justificatives (revenus, fortune, loyer, assurance-maladie).\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Demande de prestations complémentaires AVS/AI\n\nA la Caisse cantonale de compensation de [CANTON],\n\nJe soussigné(e) [NOM, PRENOM], né(e) le [DATE], N° AVS [NUMERO], domicilié(e) a [ADRESSE],\n\nBeneficiaire d'une rente [AVS/AI] de CHF [MONTANT] par mois,\n\nDemande l'octroi de prestations complémentaires au sens de la LPC.\n\nMa situation financiere ne me permet pas de couvrir mes besoins vitaux avec ma rente actuelle.\n\nJe joins le formulaire de demande officiel et les pieces justificatives (revenus, fortune, loyer, assurance-maladie).\n\nVeuillez agréer mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Caisse cantonale vaudoise de compensation AVS",
@@ -400,7 +400,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "LPC état 2025-01-01",
@@ -410,7 +410,7 @@
       "comment toucher les PC",
       "je n'arrive plus a payer mon loyer avec ma rente",
       "aide financiere pour retraites pauvres",
-      "complement a la rente AI"
+      "complement à la rente AI"
     ],
     "negative_signals": [
       "pas de rente AVS ou AI en cours",
@@ -457,7 +457,7 @@
       },
       {
         "id": "q3",
-        "text": "L'accident a-t-il ete declare a l'assurance ?",
+        "text": "L'accident a-t-il été déclaré a l'assurance ?",
         "options": [
           "oui",
           "non",
@@ -481,7 +481,7 @@
       }
     ],
     "reponse": {
-      "explication": "La LAA (loi sur l'assurance-accidents) couvre obligatoirement tous les travailleurs salariés (art. 1a LAA). L'assurance couvre les accidents professionnels et les maladies professionnelles pour tous, et les accidents non professionnels pour ceux travaillant au moins 8h/semaine chez le même employeur (art. 7 LAA). Prestations : indemnites journalieres de 80% du gain assuré des le 3e jour (art. 16-17 LAA), frais de traitement (art. 10 LAA), rente d'invalidité si le taux est d'au moins 10% (art. 18 LAA), indemnite pour atteinte a l'integrite (IPAI, art. 24-25 LAA). L'accident doit être annonce dans les jours suivant l'événement. La SUVA est l'assureur légal pour les secteurs a risque ; les autres employeurs s'assurent auprès d'un assureur prive ou d'une caisse-maladie agreee. Le gain assuré maximal est de CHF 148'200/an. Les rechutes et sequelles tardives sont egalement couvertes.",
+      "explication": "La LAA (loi sur l'assurance-accidents) couvre obligatoirement tous les travailleurs salariés (art. 1a LAA). L'assurance couvre les accidents professionnels et les maladies professionnelles pour tous, et les accidents non professionnels pour ceux travaillant au moins 8h/semaine chez le même employeur (art. 7 LAA). Prestations : indemnités journalieres de 80% du gain assuré des le 3e jour (art. 16-17 LAA), frais de traitement (art. 10 LAA), rente d'invalidité si le taux est d'au moins 10% (art. 18 LAA), indemnité pour atteinte à l'intégrité (IPAI, art. 24-25 LAA). L'accident doit être annoncé dans les jours suivant l'événement. La SUVA est l'assureur légal pour les secteurs a risque ; les autres employeurs s'assurent auprès d'un assureur prive ou d'une caisse-maladie agreee. Le gain assuré maximal est de CHF 148'200/an. Les rechutes et sequelles tardives sont egalement couvertes.",
       "articles": [
         {
           "ref": "LAA 6",
@@ -500,21 +500,21 @@
         },
         {
           "ref": "LAA 24",
-          "titre": "Indemnite pour atteinte a l'integrite (IPAI)",
+          "titre": "Indemnite pour atteinte à l'intégrité (IPAI)",
           "lien": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr#art_24"
         }
       ],
       "jurisprudence": [
         {
           "ref": "ATF 134 V 72",
-          "resume": "Le lien de causalité entre l'accident et l'atteinte a la sante doit être établi au degre de la vraisemblance preponderante."
+          "resume": "Le lien de causalité entre l'accident et l'atteinte à la sante doit être établi au degre de la vraisemblance preponderante."
         },
         {
           "ref": "ATF 142 V 435",
           "resume": "Pour les troubles sans substrat organique objectivable (whiplash), les criteres de Vultee/Zbinden determinent le lien de causalité adequate."
         }
       ],
-      "modeleLettre": "Objet : Declaration d'accident / demande de prestations LAA\n\nA [assureur LAA / SUVA],\n\nJe soussigné(e) [nom], employe(e) de [employeur], declare l'accident suivant :\n\n- Date : [date]\n- Lieu : [lieu]\n- Circonstances : [description]\n- Lesions : [description]\n- Medecin consulte : Dr [nom]\n\nJe demande la prise en charge des frais de traitement et le versément d'indemnites journalieres conformement a la LAA.\n\nPieces jointes : formulaire de declaration d'accident, certificat médical.\n\n[Signature]",
+      "modeleLettre": "Objet : Declaration d'accident / demande de prestations LAA\n\nA [ASSUREUR LAA / SUVA],\n\nJe soussigné(e) [NOM], employé(e) de [EMPLOYEUR], déclaré l'accident suivant :\n\n- Date : [DATE]\n- Lieu : [LIEU]\n- Circonstances : [DESCRIPTION]\n- Lesions : [DESCRIPTION]\n- Medecin consulté : Dr [NOM]\n\nJe demande la prise en charge des frais de traitement et le versément d'indemnités journalieres conformement à la LAA.\n\nPieces jointes : formulaire de declaration d'accident, certificat médical.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "SUVA Lausanne",
@@ -540,7 +540,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "LAA état 2025-01-01",
@@ -550,12 +550,12 @@
       "je me suis blesse au boulot",
       "la SUVA doit payer quoi",
       "accident sur le trajet du travail",
-      "mon patron n'a pas declare mon accident"
+      "mon patron n'a pas déclaré mon accident"
     ],
     "negative_signals": [
       "maladie sans événement accidentel",
       "accident d'un indépendant sans couverture LAA",
-      "contestation d'une decision LAA déjà rendue"
+      "contestation d'une décision LAA déjà rendue"
     ],
     "required_facts": [
       "type d'accident (professionnel ou non professionnel)",
@@ -580,7 +580,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Quelle decision contestez-vous ?",
+        "text": "Quelle décision contestez-vous ?",
         "options": [
           "refus de prise en charge",
           "arrêt des prestations",
@@ -600,7 +600,7 @@
       },
       {
         "id": "q3",
-        "text": "Quand avez-vous reçu la decision ?",
+        "text": "Quand avez-vous reçu la décision ?",
         "options": [
           "<30 jours",
           "30-90 jours",
@@ -614,7 +614,7 @@
       }
     ],
     "reponse": {
-      "explication": "La contestation d'une decision LAA se fait en deux etapes. D'abord, une opposition auprès de l'assureur dans les 30 jours (art. 52 LPGA). Si l'opposition est rejetee, un recours au tribunal cantonal des assurances dans les 30 jours (art. 56 LPGA). La procédure devant le tribunal cantonal est gratuite (art. 61 let. fbis LPGA). Le tribunal dispose d'un plein pouvoir d'examen et peut ordonner une expertise judiciaire. Les motifs frequents de contestation sont : la negation du lien de causalité, la fixation du taux d'invalidité trop bas, l'arrêt premature des indemnites journalieres, ou le montant de l'IPAI. En cas de desaccord sur l'évaluation médicale, l'assuré peut demander une contre-expertise. L'assistance juridique gratuite est accordee si le recours n'est pas manifestement voue a l'échec et que l'assuré est indigent. Le recours au TF est possible contre le jugement cantonal dans les 30 jours.",
+      "explication": "La contestation d'une décision LAA se fait en deux etapes. D'abord, une opposition auprès de l'assureur dans les 30 jours (art. 52 LPGA). Si l'opposition est rejetee, un recours au tribunal cantonal des assurances dans les 30 jours (art. 56 LPGA). La procédure devant le tribunal cantonal est gratuite (art. 61 let. fbis LPGA). Le tribunal dispose d'un plein pouvoir d'examen et peut ordonner une expertise judiciaire. Les motifs frequents de contestation sont : la negation du lien de causalité, la fixation du taux d'invalidité trop bas, l'arrêt premature des indemnités journalieres, ou le montant de l'IPAI. En cas de désaccord sur l'évaluation médicale, l'assuré peut demander une contre-expertise. L'assistance juridique gratuite est accordee si le recours n'est pas manifestement voue à l'échec et que l'assuré est indigent. Le recours au TF est possible contre le jugement cantonal dans les 30 jours.",
       "articles": [
         {
           "ref": "LPGA 52",
@@ -644,10 +644,10 @@
         },
         {
           "ref": "ATF 143 V 124",
-          "resume": "L'assureur ne peut pas se fonder uniquement sur l'avis de son medecin-conseil pour nier le lien de causalité ; une expertise indépendante peut être nécessaire."
+          "resume": "L'assureur ne peut pas se fonder uniquement sur l'avis de son médecin-conseil pour nier le lien de causalité ; une expertise indépendante peut être nécessaire."
         }
       ],
-      "modeleLettre": "Objet : Opposition contre la decision du [date] (art. 52 LPGA)\n\nA [assureur LAA / SUVA],\n\nJe soussigné(e) [nom], dossier n° [numero],\n\nForme opposition dans le délai légal contre votre decision du [date], notifiee le [date], par laquelle vous [decrivez la decision : refusez la prise en charge / fixez le taux d'invalidité a X% / mettez fin aux prestations].\n\nMotifs d'opposition :\n1. [Décrire les erreurs dans l'évaluation médicale]\n2. [Décrire les éléments non pris en compte]\n3. [Referencier les rapports médicaux contraires]\n\nJe requiers une nouvelle évaluation et le maintien/rétablissement des prestations.\n\nPieces jointes : decision attaquee, rapports médicaux, avis du medecin traitant.\n\n[Signature]",
+      "modeleLettre": "Objet : Opposition contre la décision du [DATE] (art. 52 LPGA)\n\nA [ASSUREUR LAA / SUVA],\n\nJe soussigné(e) [NOM], dossier n° [NUMERO],\n\nForme opposition dans le délai légal contre votre décision du [DATE], notifiée le [DATE], par laquelle vous [DECRIVEZ LA DÉCISION : REFUSEZ LA PRISE EN CHARGE / FIXEZ LE TAUX D'INVALIDITÉ A X% / METTEZ FIN AUX PRESTATIONS].\n\nMotifs d'opposition :\n1. [DÉCRIRE LES ERREURS DANS L'ÉVALUATION MÉDICALE]\n2. [DÉCRIRE LES ÉLÉMENTS NON PRIS EN COMPTE]\n3. [REFERENCIER LES RAPPORTS MÉDICAUX CONTRAIRES]\n\nJe requiers une nouvelle évaluation et le maintien/rétablissement des prestations.\n\nPieces jointes : décision attaquee, rapports médicaux, avis du médecin traitant.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Tribunal cantonal des assurances VD",
@@ -671,26 +671,26 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "LAA/LPGA état 2025-01-01",
-    "match_description": "L'assuré conteste une decision de l'assurance-accidents (refus, arrêt des prestations ou taux d'invalidité trop bas)",
+    "match_description": "L'assuré contesté une décision de l'assurance-accidents (refus, arrêt des prestations ou taux d'invalidité trop bas)",
     "profane_aliases": [
       "la SUVA refuse de me payer",
-      "on m'a coupe mes indemnites accident",
+      "on m'a coupe mes indemnités accident",
       "je ne suis pas d'accord avec le taux d'invalidité",
       "comment faire opposition contre la SUVA",
       "l'assurance accident dit que c'est fini mais j'ai encore mal"
     ],
     "negative_signals": [
-      "accident pas encore declare (fiche declaration)",
-      "litige avec l'employeur sans decision de l'assureur",
-      "contestation d'une decision AI (pas LAA)"
+      "accident pas encore déclaré (fiche declaration)",
+      "litige avec l'employeur sans décision de l'assureur",
+      "contestation d'une décision AI (pas LAA)"
     ],
     "required_facts": [
-      "nature de la decision contestee",
-      "date de reception de la decision",
+      "nature de la décision contestee",
+      "date de reception de la décision",
       "opposition déjà faite ou non",
       "canton"
     ]

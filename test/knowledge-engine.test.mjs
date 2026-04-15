@@ -89,9 +89,12 @@ describe('Knowledge Engine API', () => {
       }
     });
 
-    it('404 si aucun résultat', async () => {
+    it('unclear si aucun résultat confiant', async () => {
       const res = await httpGet('/api/query/problem?q=xyznonexistent123');
-      assert.equal(res.status, 404);
+      assert.equal(res.status, 200);
+      assert.equal(res.data.type, 'unclear');
+      assert.ok(res.data.message);
+      assert.ok(Array.isArray(res.data.suggestions));
     });
 
     it('400 sans paramètre', async () => {

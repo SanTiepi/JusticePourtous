@@ -17,8 +17,8 @@
         "id": "q1",
         "text": "Quelle est votre situation ?",
         "options": [
-          "je suis a la rue",
-          "je vais être a la rue",
+          "je suis à la rue",
+          "je vais être à la rue",
           "je cherche pour quelqu'un d'autre"
         ]
       },
@@ -38,7 +38,7 @@
         "options": [
           "citoyen suisse",
           "oui permis valable",
-          "permis expire",
+          "permis expiré",
           "sans papiers"
         ]
       },
@@ -105,16 +105,16 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "Cst état 2025-01-01",
-    "match_description": "La personne est a la rue ou sur le point de perdre son logement et cherche un hébergement d'urgence pour la nuit",
+    "match_description": "La personne est à la rue ou sur le point de perdre son logement et cherche un hébergement d'urgence pour la nuit",
     "profane_aliases": [
       "je suis SDF ou trouver dormir",
       "je n'ai nulle part ou aller ce soir",
       "foyer d'urgence pour sans-abri",
-      "on m'a mis a la porte je dors dehors",
+      "on m'a mis à la porte je dors dehors",
       "hébergement gratuit pour la nuit"
     ],
     "negative_signals": [
@@ -186,7 +186,7 @@
       }
     ],
     "reponse": {
-      "explication": "L'aide sociale (revenu d'insertion/RI en VD, aide sociale de l'Hospice général en GE) est le dernier filet social en Suisse. Elle est subsidiaire a toutes les autres prestations (chomage, AI, PC, pensions). Les normes CSIAS (Conference suisse des institutions d'action sociale) fixent les standards : forfait d'entretien d'environ CHF 997/mois pour une personne seule (2024), plus loyer effectif plafonne et prime LAMal. L'aide sociale est un droit mais implique des devoirs : recherche active d'emploi, participation aux mesures d'insertion, annonce de tout changement de situation. A Vaud, la demande se fait auprès du CSR (Centre social régional). A Genève, auprès de l'Hospice général. L'aide sociale peut être remboursable si la situation financiere s'ameliore significativement (art. 40 LASV en VD). Les étrangers bénéficiaires risquent un non-renouvellement de permis (art. 62 al. 1 let. e LEI pour le permis B). Les decisions peuvent être contestees par recours.",
+      "explication": "L'aide sociale (revenu d'insertion/RI en VD, aide sociale de l'Hospice général en GE) est le dernier filet social en Suisse. Elle est subsidiaire a toutes les autres prestations (chomage, AI, PC, pensions). Les normes CSIAS (Conference suisse des institutions d'action sociale) fixent les standards : forfait d'entretien d'environ CHF 997/mois pour une personne seule (2024), plus loyer effectif plafonne et prime LAMal. L'aide sociale est un droit mais implique des devoirs : recherche active d'emploi, participation aux mesures d'insertion, annoncé de tout changement de situation. A Vaud, la demande se fait auprès du CSR (Centre social régional). A Genève, auprès de l'Hospice général. L'aide sociale peut être remboursable si la situation financiere s'ameliore significativement (art. 40 LASV en VD). Les étrangers bénéficiaires risquent un non-renouvellement de permis (art. 62 al. 1 let. e LEI pour le permis B). Les décisions peuvent être contestees par recours.",
       "articles": [
         {
           "ref": "Cst 12",
@@ -207,14 +207,14 @@
       "jurisprudence": [
         {
           "ref": "ATF 146 I 1",
-          "resume": "Les normes CSIAS n'ont pas force de loi mais servent de reference pour le calcul des prestations. Les cantons peuvent s'en ecarter a la hausse ou a la baisse."
+          "resume": "Les normes CSIAS n'ont pas force de loi mais servent de référencée pour le calcul des prestations. Les cantons peuvent s'en ecarter à la hausse ou à la baisse."
         },
         {
           "ref": "TF 8C_251/2019",
           "resume": "La reduction des prestations d'aide sociale n'est admissible qu'en cas de manquement fautif aux obligations et doit respecter le minimum vital garanti par l'art. 12 Cst."
         }
       ],
-      "modeleLettre": "Objet : Demande d'aide sociale / revenu d'insertion\n\nA [CSR de district / Hospice général],\n\nJe soussigné(e) [nom, prenom], ne(e) le [date], domicilié(e) a [adresse],\n\nMe trouve dans une situation financiere difficile et sollicite l'octroi de prestations d'aide sociale.\n\nMa situation : [décrire brievement : sans emploi depuis, fin de droit au chomage, en attente de decision AI, etc.]\n\nRevenus actuels : CHF [montant] par mois\nCharges mensuelles : loyer CHF [montant], assurance-maladie CHF [montant]\nFortune : [décrire]\n\nJe joins les pieces justificatives nécessaires.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Demande d'aide sociale / revenu d'insertion\n\nA [CSR DE DISTRICT / HOSPICE GÉNÉRAL],\n\nJe soussigné(e) [NOM, PRENOM], né(e) le [DATE], domicilié(e) a [ADRESSE],\n\nMe trouve dans une situation financiere difficile et sollicite l'octroi de prestations d'aide sociale.\n\nMa situation : [DÉCRIRE BRIEVEMENT : SANS EMPLOI DEPUIS, FIN DE DROIT AU CHOMAGE, EN ATTENTE DE DÉCISION AI, ETC.]\n\nRevenus actuels : CHF [MONTANT] par mois\nCharges mensuelles : loyer CHF [MONTANT], assurance-maladie CHF [MONTANT]\nFortune : [DÉCRIRE]\n\nJe joins les pieces justificatives nécessaires.\n\nVeuillez agréer mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Centre social régional (CSR) VD",
@@ -241,11 +241,11 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "Cst/LASoc état 2025-01-01",
-    "match_description": "La personne sans ressources suffisantes veut demander l'aide sociale ou conteste une decision de l'aide sociale",
+    "match_description": "La personne sans ressources suffisantes veut demander l'aide sociale ou contesté une décision de l'aide sociale",
     "profane_aliases": [
       "je n'ai plus d'argent pour vivre",
       "comment demander le RI",
@@ -284,9 +284,9 @@
         "text": "Quelle est votre situation administrative ?",
         "options": [
           "deboute de l'asile (NEM)",
-          "permis expire",
+          "permis expiré",
           "sans statut légal",
-          "en attente de decision"
+          "en attente de décision"
         ]
       },
       {
@@ -313,7 +313,7 @@
       }
     ],
     "reponse": {
-      "explication": "Toute personne en Suisse, quel que soit son statut de sejour, a droit à des conditions minimales d'existence au sens de l'art. 12 Cst. Ce droit fondamental, confirme par le TF (ATF 131 I 166), garantit un minimum vital comprenant : nourriture, vetements, hébergement et soins médicaux de base. Pour les personnes dont la demande d'asile a fait l'objet d'une decision de non-entree en matiere (NEM) ou d'un renvoi, l'aide d'urgence remplace l'aide sociale ordinaire (art. 82 LAsi). Les prestations sont volontairement inférieures a l'aide sociale et sont généralement versées en nature (bon alimentaire, hébergement collectif). Le montant en especes est d'environ CHF 8-12/jour selon les cantons. L'aide d'urgence doit être demandee auprès du service cantonal designe (EVAM en VD, Hospice général en GE). Les refus peuvent être contestes judiciairement.",
+      "explication": "Toute personne en Suisse, quel que soit son statut de sejour, a droit à des conditions minimales d'existence au sens de l'art. 12 Cst. Ce droit fondamental, confirmé par le TF (ATF 131 I 166), garantit un minimum vital comprenant : nourriture, vetements, hébergement et soins médicaux de base. Pour les personnes dont la demande d'asile a fait l'objet d'une décision de non-entree en matiere (NEM) ou d'un renvoi, l'aide d'urgence remplace l'aide sociale ordinaire (art. 82 LAsi). Les prestations sont volontairement inférieures à l'aide sociale et sont généralement versées en nature (bon alimentaire, hébergement collectif). Le montant en especes est d'environ CHF 8-12/jour selon les cantons. L'aide d'urgence doit être demandee auprès du service cantonal désigné (EVAM en VD, Hospice général en GE). Les refus peuvent être contestes judiciairement.",
       "articles": [
         {
           "ref": "Cst 12",
@@ -327,7 +327,7 @@
         },
         {
           "ref": "Cst 10 al. 2",
-          "titre": "Droit a l'integrite physique",
+          "titre": "Droit à l'intégrité physique",
           "lien": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_10"
         }
       ],
@@ -341,7 +341,7 @@
           "resume": "L'aide d'urgence doit couvrir les besoins élémentaires. Les cantons ne peuvent pas refuser totalement l'aide au motif que la personne n'a pas quitte la Suisse."
         }
       ],
-      "modeleLettre": "Objet : Demande d'aide d'urgence (art. 12 Cst)\n\nA [EVAM / Hospice général / service cantonal],\n\nJe soussigné(e) [nom, prenom], ne(e) le [date], national(e) de [pays],\n\nMe trouve actuellement en situation de detresse et sans moyens de subsistance.\n\nMa situation administrative : [décrire : NEM, permis expire, sans statut]\n\nJe sollicite l'octroi de l'aide d'urgence au sens de l'art. 12 de la Constitution fédérale, comprenant hébergement, nourriture et soins médicaux de base.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature ou empreinte]",
+      "modeleLettre": "Objet : Demande d'aide d'urgence (art. 12 Cst)\n\nA [EVAM / HOSPICE GÉNÉRAL / SERVICE CANTONAL],\n\nJe soussigné(e) [NOM, PRENOM], né(e) le [DATE], national(e) de [PAYS],\n\nMe trouve actuellement en situation de detresse et sans moyens de subsistance.\n\nMa situation administrative : [DÉCRIRE : NEM, PERMIS EXPIRÉ, SANS STATUT]\n\nJe sollicite l'octroi de l'aide d'urgence au sens de l'art. 12 de la Constitution fédérale, comprenant hébergement, nourriture et soins médicaux de base.\n\nVeuillez agréer mes salutations distinguées.\n\n[SIGNATURE OU EMPREINTE]",
       "services": [
         {
           "nom": "EVAM (Etablissement vaudois d'accueil des migrants)",
@@ -368,7 +368,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "Cst/LAsi état 2025-01-01",
@@ -386,7 +386,7 @@
       "citoyen suisse en difficulte (aide sociale ordinaire)"
     ],
     "required_facts": [
-      "situation administrative (NEM, permis expire, sans statut)",
+      "situation administrative (NEM, permis expiré, sans statut)",
       "aide actuellement percue ou non",
       "besoins médicaux urgents",
       "canton"

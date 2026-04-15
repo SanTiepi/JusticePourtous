@@ -8,7 +8,7 @@
       "travail",
       "professionnel",
       "LAA",
-      "annonce",
+      "annoncé",
       "prestations",
       "SUVA"
     ],
@@ -25,7 +25,7 @@
       },
       {
         "id": "q2",
-        "text": "L'accident a-t-il ete annonce a l'employeur ?",
+        "text": "L'accident a-t-il été annoncé a l'employeur ?",
         "options": [
           "oui",
           "non"
@@ -33,10 +33,10 @@
       },
       {
         "id": "q3",
-        "text": "Avez-vous consulte un medecin ?",
+        "text": "Avez-vous consulté un médecin ?",
         "options": [
           "oui, urgences",
-          "oui, medecin traitant",
+          "oui, médecin traitant",
           "non"
         ]
       },
@@ -58,7 +58,7 @@
       }
     ],
     "reponse": {
-      "explication": "L'accident de travail (accident professionnel) est couvert obligatoirement par la LAA (art. 6 LAA). L'employeur doit annoncer l'accident a l'assureur (SUVA ou assureur prive) dans les jours suivant l'événement. L'employe doit informer son employeur immédiatement. Les prestations comprennent : prise en charge integrale des frais médicaux (art. 10 LAA), indemnites journalieres de 80% du salaire des le 3e jour d'arret (art. 16 LAA), rente d'invalidité si taux >= 10% (art. 18 LAA), indemnite pour atteinte a l'integrite (art. 24 LAA). L'accident est defini comme toute atteinte dommageable, soudaine et involontaire, portee au corps humain par une cause exterieure extraordinaire (art. 4 LPGA). Les accidents sur le trajet domicile-travail sont consideres comme des accidents non professionnels mais restent couverts si l'employe travaille plus de 8h/semaine. En cas de faute grave de l'employe, les indemnites journalieres peuvent être reduites de 50% maximum (art. 37 al. 2 LAA) mais les frais médicaux restent couverts integralement.",
+      "explication": "L'accident de travail (accident professionnel) est couvert obligatoirement par la LAA (art. 6 LAA). L'employeur doit annoncer l'accident à l'assureur (SUVA ou assureur prive) dans les jours suivant l'événement. L'employé doit informer son employeur immédiatement. Les prestations comprennent : prise en charge intégrale des frais médicaux (art. 10 LAA), indemnités journalieres de 80% du salaire des le 3e jour d'arret (art. 16 LAA), rente d'invalidité si taux >= 10% (art. 18 LAA), indemnité pour atteinte à l'intégrité (art. 24 LAA). L'accident est défini comme toute atteinte dommageable, soudaine et involontaire, portee au corps humain par une cause extérieure extraordinaire (art. 4 LPGA). Les accidents sur le trajet domicile-travail sont consideres comme des accidents non professionnels mais restent couverts si l'employé travaille plus de 8h/semaine. En cas de faute grave de l'employé, les indemnités journalieres peuvent être réduites de 50% maximum (art. 37 al. 2 LAA) mais les frais médicaux restent couverts integralement.",
       "articles": [
         {
           "ref": "LAA 6",
@@ -84,14 +84,14 @@
       "jurisprudence": [
         {
           "ref": "ATF 134 V 72",
-          "resume": "L'accident suppose un événement soudain. Un effort habituel causant une blessure n'est pas un accident sauf si un facteur exterieur extraordinaire intervient."
+          "resume": "L'accident suppose un événement soudain. Un effort habituel causant une blessure n'est pas un accident sauf si un facteur extérieur extraordinaire intervient."
         },
         {
           "ref": "TF 8C_235/2019",
-          "resume": "L'accident de trajet est couvert comme accident non professionnel ; le detour significatif pour raisons personnelles peut exclure la couverture."
+          "resume": "L'accident de trajet est couvert comme accident non professionnel ; le détour significatif pour raisons personnelles peut exclure la couverture."
         }
       ],
-      "modeleLettre": "Objet : Declaration d'accident professionnel\n\nA [employeur / assureur LAA],\n\nJe soussigné(e) [nom], employe(e) au sein de [entreprise], poste de [fonction],\n\nDeclare avoir ete victime d'un accident professionnel survenu le [date] a [heure] sur le lieu de travail [adresse / lieu precis].\n\nCirconstances : [description detaillee et factuelle de l'accident]\n\nBlessures : [nature des blessures]\n\nMedecin consulte : Dr [nom], le [date]\n\nTemoins : [noms et coordonnees si disponibles]\n\nJe vous prie de procéder a la declaration d'accident auprès de l'assureur LAA.\n\nPieces jointes : certificat médical, rapport d'urgence.\n\n[Signature]",
+      "modeleLettre": "Objet : Déclaration d'accident professionnel et demande de prestations LAA\n\nRecommandé\n\n[NOM DE L'EMPLOYEUR OU ASSUREUR LAA]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe soussigné(e) [PRÉNOM NOM], employé(e) au sein de [NOM DE L'ENTREPRISE], en qualité de [FONCTION], numéro AVS [NUMÉRO AVS],\n\nDéclare avoir été victime d'un accident professionnel au sens de l'art. 6 LAA, survenu le [DATE DE L'ACCIDENT] à [HEURE] sur le lieu de travail sis [ADRESSE / LIEU PRÉCIS DE L'ACCIDENT].\n\nCirconstances de l'accident :\n[DESCRIPTION DÉTAILLÉE ET FACTUELLE DE L'ACCIDENT]\n\nBlessures subies :\n[DESCRIPTION DES BLESSURES : NATURE, LOCALISATION, GRAVITÉ]\n\nL'accident constitue une atteinte dommageable, soudaine et involontaire, portée au corps humain par une cause extérieure extraordinaire au sens de l'art. 4 LPGA.\n\nTraitement médical reçu :\n- Médecin / hôpital consulté : Dr [NOM DU MÉDECIN] / [NOM DE L'HÔPITAL], le [DATE DE CONSULTATION]\n- Diagnostic : [DIAGNOSTIC MÉDICAL]\n- Arrêt de travail prescrit du [DATE DÉBUT] au [DATE FIN]\n\nConformément à la LAA, je demande :\n1. La prise en charge intégrale des frais de traitement médical (art. 10 LAA)\n2. Le versement d'indemnités journalières de 80% du salaire assuré dès le 3e jour d'incapacité (art. 16 LAA)\n3. Le cas échéant, l'examen de mon droit à une rente d'invalidité (art. 18 LAA) et/ou à une indemnité pour atteinte à l'intégrité (art. 24 LAA)\n\nTémoins de l'accident : [NOMS ET COORDONNÉES DES TÉMOINS]\n\nPièces jointes : certificat médical, rapport d'urgence, attestation de l'employeur.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "SUVA Lausanne",
@@ -117,7 +117,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "LAA/LPGA état 2025-01-01",
@@ -126,7 +126,7 @@
       "je me suis fait mal au travail",
       "accident sur le chantier que faire",
       "mon employeur refuse de declarer mon accident",
-      "indemnites apres un accident professionnel",
+      "indemnités apres un accident professionnel",
       "blesse au boulot qui paie"
     ],
     "negative_signals": [
@@ -136,7 +136,7 @@
     ],
     "required_facts": [
       "date et circonstances de l'accident",
-      "declaration faite a l'employeur ou non",
+      "declaration faite à l'employeur ou non",
       "nature des blessures",
       "canton"
     ]
@@ -173,12 +173,12 @@
           "oui, moi",
           "oui, l'autre partie",
           "oui, les deux",
-          "non, que des dégâts materiels"
+          "non, que des dégâts matériels"
         ]
       },
       {
         "id": "q3",
-        "text": "La police a-t-elle ete appelée ?",
+        "text": "La police a-t-elle été appelée ?",
         "options": [
           "oui",
           "non"
@@ -186,7 +186,7 @@
       },
       {
         "id": "q4",
-        "text": "Un constat a-t-il ete rempli ?",
+        "text": "Un constat a-t-il été rempli ?",
         "options": [
           "oui",
           "non"
@@ -199,7 +199,7 @@
       }
     ],
     "reponse": {
-      "explication": "L'accident de la circulation est régi par la LCR (loi sur la circulation routière) et le CO (responsabilité civile). Le détenteur du vehicule repond de tout dommage cause par son vehicule (responsabilité causale, art. 58 LCR). L'assurance RC auto est obligatoire (art. 63 LCR) et couvre les dommages causes aux tiers. En cas d'accident avec blesses, la police doit être appelée (art. 51 LCR). Le constat amiable doit être rempli sur place. Delai pour annoncer a son assurance : en général 5 jours. Pour les dommages corporels, la victime peut exiger : frais médicaux, perte de gain, tort moral (art. 47 CO), frais d'assistance. Le delai de prescription est de 3 ans des la connaissance du dommage (art. 83 LCR). En cas de fuite de l'auteur ou de vehicule non assure, le Fonds national de garantie intervient (art. 76 LCR). Le pieton blesse bénéficie d'une protection renforcee : le conducteur repond meme sans faute prouvee (responsabilité causale aggravee).",
+      "explication": "L'accident de la circulation est régi par la LCR (loi sur la circulation routière) et le CO (responsabilité civile). Le détenteur du véhicule répond de tout dommage cause par son véhicule (responsabilité causale, art. 58 LCR). L'assurance RC auto est obligatoire (art. 63 LCR) et couvre les dommages causes aux tiers. En cas d'accident avec blesses, la police doit être appelée (art. 51 LCR). Le constat amiable doit être rempli sur place. Delai pour annoncer a son assurance : en général 5 jours. Pour les dommages corporels, la victime peut exiger : frais médicaux, perte de gain, tort moral (art. 47 CO), frais d'assistance. Le délai de prescription est de 3 ans des la connaissance du dommage (art. 83 LCR). En cas de fuite de l'auteur ou de véhicule non assure, le Fonds national de garantie intervient (art. 76 LCR). Le pieton blesse bénéficie d'une protection renforcee : le conducteur répond meme sans faute prouvee (responsabilité causale aggravee).",
       "articles": [
         {
           "ref": "LCR 58",
@@ -229,10 +229,10 @@
         },
         {
           "ref": "ATF 138 III 276",
-          "resume": "La responsabilité causale du détenteur ne cede que si l'accident est du exclusivement a la force majeure ou a la faute grave de la victime."
+          "resume": "La responsabilité causale du détenteur ne cede que si l'accident est du exclusivement à la force majeure ou à la faute grave de la victime."
         }
       ],
-      "modeleLettre": "Objet : Declaration de sinistre — accident de circulation\n\nA [assurance RC vehicule],\n\nJe soussigné(e) [nom], titulaire de la police n° [numero],\n\nDeclare l'accident de la circulation survenu le [date] a [heure] a [lieu].\n\nCirconstances : [description factuelle]\n\nVehicules impliques : [marque, plaque]\n\nBlesses : [oui/non, gravite]\n\nIntervention de la police : [oui/non, n° de rapport]\n\nDommages : [materiels et/ou corporels]\n\nJe joins le constat amiable rempli et signe.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Declaration de sinistre — accident de circulation\n\nA [ASSURANCE RC VÉHICULE],\n\nJe soussigné(e) [NOM], titulaire de la police n° [NUMERO],\n\nDéclare l'accident de la circulation survenu le [DATE] a [HEURE] a [LIEU].\n\nCirconstances : [DESCRIPTION FACTUELLE]\n\nVehicules impliques : [MARQUE, PLAQUE]\n\nBlesses : [OUI/NON, GRAVITE]\n\nIntervention de la police : [OUI/NON, N° DE RAPPORT]\n\nDommages : [MATÉRIELS ET/OU CORPORELS]\n\nJe joins le constat amiable rempli et signé.\n\nVeuillez agréer mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "TCS Vaud (assistance juridique)",
@@ -258,11 +258,11 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "LCR/CO état 2025-01-01",
-    "match_description": "La personne a ete impliquee dans un accident de la route et veut connaitre ses droits ou faire valoir ses dommages",
+    "match_description": "La personne a été impliquee dans un accident de la route et veut connaitre ses droits ou faire valoir ses dommages",
     "profane_aliases": [
       "accident de voiture que faire",
       "on m'a rentre dedans avec la voiture",
@@ -290,8 +290,8 @@
       "responsabilité",
       "civile",
       "dommages",
-      "interets",
-      "delai",
+      "intérêts",
+      "délai",
       "preuve",
       "CO",
       "réparation"
@@ -302,7 +302,7 @@
         "text": "Quel type de dommage avez-vous subi ?",
         "options": [
           "corporel (blessure)",
-          "materiel (bien endommage)",
+          "matériel (bien endommage)",
           "les deux"
         ]
       },
@@ -341,7 +341,7 @@
       }
     ],
     "reponse": {
-      "explication": "La responsabilité civile en droit suisse oblige celui qui cause un dommage a le réparer (art. 41 CO). Les conditions sont : un acte illicite (ou une omission), un dommage, un lien de causalité, et une faute (sauf responsabilité objective). Le dommage reparable comprend : le dommage materiel (réparation, remplacement), la perte de gain (art. 46 CO), le tort moral en cas de lésion corporelle ou décès (art. 47 CO), et les frais (médicaux, juridiques). Le fardeau de la preuve incombe au lesé (art. 8 CC). Le delai de prescription est de 3 ans des la connaissance du dommage et du responsable, et au plus tard 10 ans des le fait dommageable (art. 60 CO, revision 2020). Il est recommandé d'écrire immédiatement au responsable (ou a son assurance RC) pour faire valoir ses prétentions et interrompre la prescription. La médiation ou la tentative de conciliation sont obligatoires avant le procès pour les litiges inférieurs a CHF 100'000.",
+      "explication": "La responsabilité civile en droit suisse oblige celui qui cause un dommage au réparer (art. 41 CO). Les conditions sont : un acte illicite (ou une omission), un dommage, un lien de causalité, et une faute (sauf responsabilité objective). Le dommage reparable comprend : le dommage matériel (réparation, remplacement), la perte de gain (art. 46 CO), le tort moral en cas de lésion corporelle ou décès (art. 47 CO), et les frais (médicaux, juridiques). Le fardeau de la preuve incombe au lesé (art. 8 CC). Le délai de prescription est de 3 ans des la connaissance du dommage et du responsable, et au plus tard 10 ans des le fait dommageable (art. 60 CO, revision 2020). Il est recommandé d'écrire immédiatement au responsable (ou a son assurance RC) pour faire valoir ses prétentions et interrompre la prescription. La médiation ou la tentative de conciliation sont obligatoires avant le procès pour les litiges inférieurs a CHF 100'000.",
       "articles": [
         {
           "ref": "CO 41",
@@ -350,7 +350,7 @@
         },
         {
           "ref": "CO 46",
-          "titre": "Dommages-interets en cas de lésion corporelle",
+          "titre": "Dommages-intérêts en cas de lésion corporelle",
           "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_46"
         },
         {
@@ -374,7 +374,7 @@
           "resume": "Le nouveau droit de la prescription (2020) s'applique aux prétentions non encore prescrites au 1er janvier 2020 (dispositions transitoires)."
         }
       ],
-      "modeleLettre": "Objet : Mise en demeure — responsabilité civile et réparation du dommage\n\nA [nom du responsable / assurance RC],\n\nJe soussigné(e) [nom, prenom], domicilié(e) a [adresse],\n\nPar la présente, je vous tiens responsable du dommage que j'ai subi le [date] a [lieu], dans les circonstances suivantes : [description factuelle].\n\nLe dommage se compose de :\n- Degats materiels : CHF [montant]\n- Frais médicaux : CHF [montant]\n- Perte de gain : CHF [montant]\n- Tort moral : reserve\n\nConformément aux art. 41 ss CO, je vous mets en demeure de réparer l'intégralité du dommage dans un delai de 30 jours.\n\nPieces jointes : devis/factures, certificats médicaux, attestation employeur.\n\n[Signature]",
+      "modeleLettre": "Objet : Mise en demeure — responsabilité civile et réparation du dommage\n\nA [NOM DU RESPONSABLE / ASSURANCE RC],\n\nJe soussigné(e) [NOM, PRENOM], domicilié(e) a [ADRESSE],\n\nPar la présente, je vous tiens responsable du dommage que j'ai subi le [DATE] a [LIEU], dans les circonstances suivantes : [DESCRIPTION FACTUELLE].\n\nLe dommage se compose de :\n- Degats matériels : CHF [MONTANT]\n- Frais médicaux : CHF [MONTANT]\n- Perte de gain : CHF [MONTANT]\n- Tort moral : réserve\n\nConformément aux art. 41 ss CO, je vous mets en demeure de réparer l'intégralité du dommage dans un délai de 30 jours.\n\nPieces jointes : devis/factures, certificats médicaux, attestation employeur.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Permanence juridique du barreau VD",
@@ -398,25 +398,25 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
-    "match_description": "La personne a subi un dommage cause par un tiers et veut obtenir réparation (dommages-interets, tort moral)",
+    "match_description": "La personne a subi un dommage cause par un tiers et veut obtenir réparation (dommages-intérêts, tort moral)",
     "profane_aliases": [
       "quelqu'un m'a cause un dommage qui paie",
-      "je veux des dommages et interets",
+      "je veux des dommages et intérêts",
       "mon voisin a casse ma clôturé",
       "comment demander réparation apres une blessure",
       "responsabilité civile de quelqu'un qui m'a blesse"
     ],
     "negative_signals": [
       "accident de voiture (fiche circulation spécifique)",
-      "defaut d'un produit achete (droit de la consommation)",
-      "litige contractuel sans dommage physique ou materiel"
+      "défaut d'un produit achete (droit de la consommation)",
+      "litige contractuel sans dommage physique ou matériel"
     ],
     "required_facts": [
-      "type de dommage (corporel, materiel ou les deux)",
+      "type de dommage (corporel, matériel ou les deux)",
       "identite du responsable",
       "date du dommage",
       "canton"

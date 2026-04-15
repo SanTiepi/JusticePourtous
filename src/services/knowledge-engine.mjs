@@ -201,7 +201,10 @@ export function queryByProblem(text, canton) {
   const { terms } = expandQuery(text);
   const termKeys = [...terms.keys()].map(t => t.toLowerCase());
 
-  if (topResults.length === 0) {
+  // Minimum score threshold — below this, the match is not confident enough
+  const MIN_SCORE_THRESHOLD = 5;
+
+  if (topResults.length === 0 || topResults[0].score < MIN_SCORE_THRESHOLD) {
     // Taxonomie fallback
     const taxMatch = allData.taxonomie.find(t =>
       termKeys.some(w => t.probleme_profane?.toLowerCase().includes(w)) ||
@@ -218,7 +221,19 @@ export function queryByProblem(text, canton) {
         }
       };
     }
-    return { status: 404, error: 'Aucune fiche trouvée pour cette recherche' };
+    return {
+      status: 200,
+      data: {
+        type: 'unclear',
+        message: 'Nous n\'avons pas pu identifier votre situation juridique. Essayez de décrire votre problème plus en détail.',
+        suggestions: [
+          'Précisez le domaine (bail, travail, famille, dettes...)',
+          'Décrivez ce qui s\'est passé et quand',
+          'Indiquez votre canton'
+        ],
+        bestScore: topResults.length > 0 ? topResults[0].score : 0
+      }
+    };
   }
 
   // Enrich the best match

@@ -8,7 +8,7 @@
       "maladie",
       "protection",
       "incapacité",
-      "periode"
+      "période"
     ],
     "questions": [
       {
@@ -31,7 +31,7 @@
       },
       {
         "id": "q3",
-        "text": "Le licenciement a ete notifie quand ?",
+        "text": "Le licenciement a été notifié quand ?",
         "options": [
           "pendant l'arrêt",
           "avant l'arrêt",
@@ -53,7 +53,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le droit suisse prevoit une protection contre le licenciement pendant l'incapacité de travail pour cause de maladie (art. 336c al. 1 let. b CO). Un conge notifie pendant cette periode est nul (et non pas simplement annulable). La durée de protection varie selon l'ancienneté : 30 jours durant la 1ere année de service, 90 jours de la 2e a la 5e année, 180 jours des la 6e année. Si le licenciement a ete notifie avant la maladie, le délai de conge est suspendu pendant l'incapacité et reprend a la guerison (art. 336c al. 2 CO). L'employeur a l'obligation de continuer a payer le salaire pendant une durée limitee selon l'echelle applicable (Berne, Zurich ou Bale), sauf si une assurance perte de gain (APG maladie) couvre ce risque. L'assurance perte de gain couvre généralement 80% du salaire pendant 720 jours.",
+      "explication": "Le droit suisse prevoit une protection contre le licenciement pendant l'incapacité de travail pour cause de maladie (art. 336c al. 1 let. b CO). Un conge notifié pendant cette période est nul (et non pas simplement annulable). La durée de protection varie selon l'ancienneté : 30 jours durant la 1ere année de service, 90 jours de la 2e à la 5e année, 180 jours des la 6e année. Si le licenciement a été notifié avant la maladie, le délai de conge est suspendu pendant l'incapacité et reprend à la guerison (art. 336c al. 2 CO). L'employeur à l'obligation de continuer a payer le salaire pendant une durée limitee selon l'echelle applicable (Berne, Zurich ou Bale), sauf si une assurance perte de gain (APG maladie) couvre ce risque. L'assurance perte de gain couvre généralement 80% du salaire pendant 720 jours.",
       "articles": [
         {
           "ref": "CO 336c",
@@ -69,14 +69,14 @@
       "jurisprudence": [
         {
           "ref": "TF 4A_98/2014",
-          "resume": "Conge nul notifie pendant un arrêt maladie, même si l'employeur ignorait l'incapacité. La protection est absolue."
+          "resume": "Conge nul notifié pendant un arrêt maladie, même si l'employeur ignorait l'incapacité. La protection est absolue."
         },
         {
           "ref": "TF 4A_571/2008",
           "resume": "Après 6 ans de service, la protection de 180 jours s'applique même en cas d'incapacités successives non liees."
         }
       ],
-      "modeleLettre": "Objet : Contestation du licenciement — periode de protection maladie\n\nMadame, Monsieur,\n\nJe conteste le licenciement qui m'a ete notifie le [date]. A cette date, j'etais en incapacité de travail pour cause de maladie, comme l'atteste le certificat médical joint.\n\nConformément a l'art. 336c al. 1 let. b CO, un conge notifie pendant une periode de protection est nul. Avec [X] années de service, je bénéficie d'une periode de protection de [30/90/180] jours.\n\nJe vous invite a considerer ce licenciement comme nul et non avenu.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Contestation du licenciement — période de protection maladie\n\nMadame, Monsieur,\n\nJe contesté le licenciement qui m'a été notifié le [DATE]. A cette date, j'etais en incapacité de travail pour cause de maladie, comme l'attesté le certificat médical joint.\n\nConformément à l'art. 336c al. 1 let. b CO, un conge notifié pendant une période de protection est nul. Avec [X] années de service, je bénéficie d'une période de protection de [30/90/180] jours.\n\nJe vous invite a considerer ce licenciement comme nul et non avenu.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Syndicat Unia",
@@ -97,23 +97,23 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
     "dateVerification": "2026-04-08",
     "verificationOk": true,
-    "match_description": "L'employe a ete licencie pendant un arrêt maladie et veut savoir si c'est légal.",
+    "match_description": "L'employé a été licencié pendant un arrêt maladie et veut savoir si c'est légal.",
     "profane_aliases": [
       "vire pendant maladie",
-      "licencie en arrêt",
+      "licencié en arrêt",
       "mon patron m'a foutu dehors j'etais malade",
       "licenciement pendant certificat médical",
       "renvoye alors que je suis malade"
     ],
     "negative_signals": [
       "demission volontaire",
-      "fin de contrat a durée determinee",
+      "fin de contrat a durée déterminée",
       "licenciement sans lien avec la maladie"
     ],
     "required_facts": [
@@ -179,7 +179,7 @@
       }
     ],
     "reponse": {
-      "explication": "L'employeur est tenu de payer le salaire a la fin de chaque mois, sauf convention contraire (art. 323 al. 1 CO). En cas de retard de paiement, le salaire est exigible et porte interet moratoire a 5% des l'échéance (art. 104 CO). Le travailleur peut, après mise en demeure infructueuse, refuser de travailler (exception d'inexécution, art. 82 CO) ou résilier le contrat avec effet immédiat si le retard se prolonge (art. 337 CO). La résiliation immédiate pour justes motifs donne droit au salaire jusqu'a la fin du délai de conge ordinaire, plus une indemnite pouvant aller jusqu'a 6 mois de salaire (art. 337c CO). Pour les litiges jusqu'a CHF 30'000, la procédure est gratuite (art. 114 CPC). L'action en paiement de salaire se prescrit par 5 ans (art. 128 ch. 3 CO).",
+      "explication": "L'employeur est tenu de payer le salaire à la fin de chaque mois, sauf convention contraire (art. 323 al. 1 CO). En cas de retard de paiement, le salaire est exigible et porte interet moratoire a 5% des l'échéance (art. 104 CO). Le travailleur peut, après mise en demeure infructueuse, refuser de travailler (exception d'inexécution, art. 82 CO) ou résilier le contrat avec effet immédiat si le retard se prolonge (art. 337 CO). La résiliation immédiate pour justes motifs donne droit au salaire jusqu'a la fin du délai de conge ordinaire, plus une indemnité pouvant aller jusqu'a 6 mois de salaire (art. 337c CO). Pour les litiges jusqu'a CHF 30'000, la procédure est gratuite (art. 114 CPC). L'action en paiement de salaire se prescrit par 5 ans (art. 128 ch. 3 CO).",
       "articles": [
         {
           "ref": "CO 322",
@@ -207,7 +207,7 @@
           "resume": "L'absence de contrat écrit ne prive pas le travailleur de son droit au salaire convenu oralement."
         }
       ],
-      "modeleLettre": "Objet : Mise en demeure — salaire impayé\n\nRecommandé avec accuse de reception\n\nMadame, Monsieur,\n\nA ce jour, le salaire du mois de [mois] d'un montant de CHF [montant] brut ne m'a pas ete versé.\n\nConformément aux art. 322-323 CO, je vous mets en demeure de procéder au paiement dans un délai de 5 jours ouvrables.\n\nA défaut de paiement dans ce délai, je me reserve le droit de résilier le contrat avec effet immédiat pour justes motifs (art. 337 CO) et de réclamer l'indemnite prévue a l'art. 337c CO.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Mise en demeure — salaire impayé\n\nRecommandé avec accuse de reception\n\nMadame, Monsieur,\n\nA ce jour, le salaire du mois de [MOIS] d'un montant de CHF [MONTANT] brut ne m'a pas été versé.\n\nConformément aux art. 322-323 CO, je vous mets en demeure de procéder au paiement dans un délai de 5 jours ouvrables.\n\nA défaut de paiement dans ce délai, je me réserve le droit de résilier le contrat avec effet immédiat pour justes motifs (art. 337 CO) et de réclamer l'indemnité prévue à l'art. 337c CO.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Syndicat Unia",
@@ -228,13 +228,13 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
     "dateVerification": "2026-04-08",
     "verificationOk": true,
-    "match_description": "L'employeur ne paie pas le salaire ou le paie en retard et l'employe veut recuperer son du.",
+    "match_description": "L'employeur ne paie pas le salaire ou le paie en retard et l'employé veut recuperer son du.",
     "profane_aliases": [
       "pas payé",
       "salaire en retard",
@@ -244,7 +244,7 @@
     ],
     "negative_signals": [
       "litige sur le montant du bonus",
-      "desaccord sur le taux horaire negocie",
+      "désaccord sur le taux horaire negocie",
       "retenue légale sur salaire"
     ],
     "required_facts": [
@@ -298,7 +298,7 @@
         "id": "q4",
         "text": "Categorie professionnelle ?",
         "options": [
-          "employe soumis LTr",
+          "employé soumis LTr",
           "cadre supérieur",
           "je ne sais pas"
         ]
@@ -310,7 +310,7 @@
       }
     ],
     "reponse": {
-      "explication": "Il faut distinguer les heures supplémentaires (CO) du travail supplémentaire (LTr). Les heures supplémentaires sont celles effectuées au-dela de l'horaire contractuel mais en dessous du maximum légal. Elles sont compensees par un conge de même durée ou payees avec un supplement de 25% (art. 321c al. 3 CO), sauf accord écrit contraire. Le travail supplémentaire au sens de la LTr dépassé les 45h/semaine (industrie, personnel de bureau, employes techniques) ou 50h (autres) et doit être compense obligatoirement avec un supplement de 25% ou en temps (art. 13 LTr). Le maximum annuel de travail supplémentaire est de 170h (45h/sem) ou 140h (50h/sem). Le fardeau de la preuve des heures supplémentaires incombe au travailleur. Les cadres supérieurs ne sont pas soumis a la LTr mais restent soumis au CO.",
+      "explication": "Il faut distinguer les heures supplémentaires (CO) du travail supplémentaire (LTr). Les heures supplémentaires sont celles effectuées au-dela de l'horaire contractuel mais en dessous du maximum légal. Elles sont compensees par un conge de même durée ou payees avec un supplement de 25% (art. 321c al. 3 CO), sauf accord écrit contraire. Le travail supplémentaire au sens de la LTr dépassé les 45h/semaine (industrie, personnel de bureau, employés techniques) ou 50h (autres) et doit être compense obligatoirement avec un supplement de 25% ou en temps (art. 13 LTr). Le maximum annuel de travail supplémentaire est de 170h (45h/sem) ou 140h (50h/sem). Le fardeau de la preuve des heures supplémentaires incombe au travailleur. Les cadres supérieurs ne sont pas soumis à la LTr mais restent soumis au CO.",
       "articles": [
         {
           "ref": "CO 321c",
@@ -338,7 +338,7 @@
           "resume": "Une clause forfaitaire incluant les heures sup dans le salaire n'est valable que si elle couvre un nombre raisonnable d'heures et que le salaire reste au-dessus du minimum."
         }
       ],
-      "modeleLettre": "Objet : Reclamation d'heures supplémentaires\n\nMadame, Monsieur,\n\nJ'ai effectué [nombre] heures supplémentaires durant la periode du [date] au [date], comme l'attestent [rélevés de pointeuse / mes notes / emails].\n\nConformément a l'art. 321c al. 3 CO, ces heures doivent être compensees par un conge equivalent ou rémunérées avec un supplement de 25%.\n\nJe vous prie de procéder a la compensation dans le prochain decompte de salaire.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Reclamation d'heures supplémentaires\n\nMadame, Monsieur,\n\nJ'ai effectué [NOMBRE] heures supplémentaires durant la période du [DATE] au [DATE], comme l'attestent [RÉLEVÉS DE POINTEUSE / MES NOTES / EMAILS].\n\nConformément à l'art. 321c al. 3 CO, ces heures doivent être compensees par un conge equivalent ou rémunérées avec un supplement de 25%.\n\nJe vous prie de procéder à la compensation dans le prochain decompte de salaire.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Syndicat Unia",
@@ -358,13 +358,13 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO/LTr état 2025-01-01",
     "dateVerification": "2026-04-08",
     "verificationOk": true,
-    "match_description": "L'employe fait des heures en plus et veut savoir s'il a droit à une compensation ou un supplement.",
+    "match_description": "L'employé fait des heures en plus et veut savoir s'il a droit à une compensation ou un supplement.",
     "profane_aliases": [
       "heures sup pas payees",
       "je travaille plus que prévu",
@@ -373,7 +373,7 @@
       "surplus d'heures"
     ],
     "negative_signals": [
-      "horaire flexible choisi par l'employe",
+      "horaire flexible choisi par l'employé",
       "cadre dirigeant avec salaire global",
       "discussion sur l'aménagement du temps de travail"
     ],
@@ -429,7 +429,7 @@
         "text": "Avez-vous des preuves ?",
         "options": [
           "emails/messages",
-          "temoins",
+          "témoins",
           "notes personnelles",
           "aucune"
         ]
@@ -441,7 +441,7 @@
       }
     ],
     "reponse": {
-      "explication": "L'employeur a une obligation légale de protéger la personnalite de ses travailleurs (art. 328 CO) et de prevenir le harcélément. Le mobbing se definit comme des agissements hostiles répétés sur une longue durée visant a isoler, marginaliser ou exclure une personne. Le harcélément sexuel est interdit par la Loi sur l'egalite (art. 4 LEg) et comprend tout comportement a connotation sexuelle non desire. L'employeur qui ne protégé pas ses employes peut être condamne a des dommages-interets (art. 49 CO pour tort moral) et l'employe peut résilier avec effet immédiat (art. 337 CO). En cas de harcélément sexuel, le travailleur peut demander une indemnite allant jusqu'a 6 mois de salaire (art. 5 al. 3 LEg). Le travailleur doit documenter les faits de manière precise (dates, faits, temoins).",
+      "explication": "L'employeur à une obligation légale de protéger la personnalite de ses travailleurs (art. 328 CO) et de prevenir le harcélément. Le mobbing se definit comme des agissements hostiles répétés sur une longue durée visant a isoler, marginaliser ou exclure une personne. Le harcélément sexuel est interdit par la Loi sur l'égalité (art. 4 LEg) et comprend tout comportement a connotation sexuelle non desire. L'employeur qui ne protégé pas ses employés peut être condamne à des dommages-intérêts (art. 49 CO pour tort moral) et l'employé peut résilier avec effet immédiat (art. 337 CO). En cas de harcélément sexuel, le travailleur peut demander une indemnité allant jusqu'a 6 mois de salaire (art. 5 al. 3 LEg). Le travailleur doit documenter les faits de manière précis (dates, faits, témoins).",
       "articles": [
         {
           "ref": "CO 328",
@@ -455,7 +455,7 @@
         },
         {
           "ref": "LEg 5",
-          "titre": "Droits des travailleurs — indemnite",
+          "titre": "Droits des travailleurs — indemnité",
           "lien": "https://www.fedlex.admin.ch/eli/cc/1996/1498_1498_1498/fr#art_5"
         }
       ],
@@ -469,7 +469,7 @@
           "resume": "L'employeur qui ne prend aucune mesure après signalement de harcélément sexuel viole son obligation de protection (art. 328 CO)."
         }
       ],
-      "modeleLettre": "Objet : Signalement de harcélément — demande de mesures\n\nConfidentiel\n\nA la Direction / aux Ressources humaines,\n\nMadame, Monsieur,\n\nJe me permets de vous signaler que je fais l'objet de [harcélément psychologique / harcélément sexuel] de la part de [identite] depuis le [date].\n\nFaits constates :\n- [Date] : [description precise]\n- [Date] : [description precise]\n\nConformément a l'art. 328 CO, vous avez l'obligation de protéger ma personnalite. Je vous demande de prendre les mesures nécessaires pour faire cesser ces agissements.\n\nJe me reserve le droit de saisir les autorites compétentes en l'absence de mesures dans un délai de 15 jours.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Signalement de harcélément — demande de mesures\n\nConfidentiel\n\nA la Direction / aux Ressources humaines,\n\nMadame, Monsieur,\n\nJe me permets de vous signaler que je fais l'objet de [HARCÉLÉMENT PSYCHOLOGIQUE / HARCÉLÉMENT SEXUEL] de la part de [IDENTITE] depuis le [DATE].\n\nFaits constates :\n- [DATE] : [DESCRIPTION PRÉCIS]\n- [DATE] : [DESCRIPTION PRÉCIS]\n\nConformément à l'art. 328 CO, vous avez l'obligation de protéger ma personnalite. Je vous demande de prendre les mesures nécessaires pour faire cesser ces agissements.\n\nJe me réserve le droit de saisir les autorites compétentes en l'absence de mesures dans un délai de 15 jours.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Syndicat Unia",
@@ -478,13 +478,13 @@
           "canton": "VD"
         },
         {
-          "nom": "Bureau de l'egalite VD",
-          "url": "https://www.vd.ch/themes/etat-droit-finances/egalite",
+          "nom": "Bureau de l'égalité VD",
+          "url": "https://www.vd.ch/themes/etat-droit-finances/égalité",
           "canton": "VD"
         },
         {
-          "nom": "Bureau de l'egalite GE",
-          "url": "https://www.ge.ch/organisation/service-egalite",
+          "nom": "Bureau de l'égalité GE",
+          "url": "https://www.ge.ch/organisation/service-égalité",
           "canton": "GE"
         },
         {
@@ -495,13 +495,13 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO/LEg état 2025-01-01",
     "dateVerification": "2026-04-08",
     "verificationOk": true,
-    "match_description": "L'employe subit du harcélément moral ou sexuel au travail et cherche comment se protéger.",
+    "match_description": "L'employé subit du harcélément moral ou sexuel au travail et cherche comment se protéger.",
     "profane_aliases": [
       "mobbing au travail",
       "harcélément par mon chef",
@@ -512,13 +512,13 @@
     "negative_signals": [
       "simple conflit ponctuel entre collegues",
       "critique justifiee du travail par le supérieur",
-      "stress lie a la charge de travail normale"
+      "stress lie à la charge de travail normale"
     ],
     "required_facts": [
       "type de harcélément (moral ou sexuel)",
       "durée et frequence",
-      "preuves (emails, temoins, journal)",
-      "demarches déjà entreprises (RH, medecin)"
+      "preuves (emails, témoins, journal)",
+      "demarches déjà entreprises (RH, médecin)"
     ]
   },
   {
@@ -528,7 +528,7 @@
     "tags": [
       "licenciement",
       "abusif",
-      "indemnite",
+      "indemnité",
       "contestation",
       "motif"
     ],
@@ -556,7 +556,7 @@
       },
       {
         "id": "q3",
-        "text": "Avez-vous conteste dans les délais ?",
+        "text": "Avez-vous contesté dans les délais ?",
         "options": [
           "oui",
           "non",
@@ -578,7 +578,7 @@
       }
     ],
     "reponse": {
-      "explication": "En droit suisse, le licenciement est en principe libre (liberte de résiliation). Cependant, le conge est abusif dans les cas enumeres a l'art. 336 CO, notamment : conge pour une raison inherente a la personnalite (race, sexe, religion), en represailles après l'exercice d'un droit, pour empecher la naissance de prétentions (bonus, ancienneté), ou en raison de l'activité syndicale. L'indemnite pour licenciement abusif peut aller jusqu'a 6 mois de salaire (art. 336a al. 2 CO). Le travailleur doit faire opposition par écrit au licenciement avant la fin du délai de conge (art. 336b al. 1 CO), puis agir en justice dans les 180 jours suivant la fin des rapports de travail (art. 336b al. 2 CO). La procédure est gratuite jusqu'a CHF 30'000 (art. 114 CPC).",
+      "explication": "En droit suisse, le licenciement est en principe libre (liberte de résiliation). Cependant, le conge est abusif dans les cas enumeres à l'art. 336 CO, notamment : conge pour une raison inherente à la personnalite (race, sexe, religion), en represailles après l'exercice d'un droit, pour empecher la naissance de prétentions (bonus, ancienneté), ou en raison de l'activité syndicale. L'indemnité pour licenciement abusif peut aller jusqu'a 6 mois de salaire (art. 336a al. 2 CO). Le travailleur doit faire opposition par écrit au licenciement avant la fin du délai de conge (art. 336b al. 1 CO), puis agir en justice dans les 180 jours suivant la fin des rapports de travail (art. 336b al. 2 CO). La procédure est gratuite jusqu'a CHF 30'000 (art. 114 CPC).",
       "articles": [
         {
           "ref": "CO 336",
@@ -587,7 +587,7 @@
         },
         {
           "ref": "CO 336a",
-          "titre": "Resiliation abusive — indemnite",
+          "titre": "Resiliation abusive — indemnité",
           "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_336_a"
         },
         {
@@ -603,10 +603,10 @@
         },
         {
           "ref": "TF 4A_293/2019",
-          "resume": "Le conge donne juste avant la naissance de prétentions liees a l'ancienneté (bonus 5 ans) est presume abusif."
+          "resume": "Le conge donne juste avant la naissance de prétentions liees à l'ancienneté (bonus 5 ans) est presume abusif."
         }
       ],
-      "modeleLettre": "Objet : Opposition au licenciement\n\nRecommandé avec accuse de reception\n\nMadame, Monsieur,\n\nPar courrier du [date], vous m'avez notifie la résiliation de mon contrat de travail pour le [date].\n\nJe fais opposition a ce licenciement que je considere abusif au sens de l'art. 336 CO pour les motifs suivants :\n- [Description des motifs]\n\nJe vous demande de reconsiderer votre decision. A défaut, je me reserve le droit d'agir en justice conformement a l'art. 336b CO.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Opposition au licenciement\n\nRecommandé avec accuse de reception\n\nMadame, Monsieur,\n\nPar courrier du [DATE], vous m'avez notifié la résiliation de mon contrat de travail pour le [DATE].\n\nJe fais opposition à ce licenciement que je considere abusif au sens de l'art. 336 CO pour les motifs suivants :\n- [DESCRIPTION DES MOTIFS]\n\nJe vous demande de reconsiderer votre décision. A défaut, je me réserve le droit d'agir en justice conformement à l'art. 336b CO.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Syndicat Unia",
@@ -626,23 +626,23 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
     "dateVerification": "2026-04-08",
     "verificationOk": true,
-    "match_description": "L'employe pense avoir ete licencie pour un motif injuste et veut contester ou obtenir une indemnite.",
+    "match_description": "L'employé pense avoir été licencié pour un motif injuste et veut contester ou obtenir une indemnité.",
     "profane_aliases": [
       "vire sans raison",
       "licenciement injuste",
       "mon patron m'a vire par vengeance",
-      "licencie parce que j'ai réclamé mes droits",
+      "licencié parce que j'ai réclamé mes droits",
       "renvoye pour rien"
     ],
     "negative_signals": [
-      "licenciement pendant la periode d'essai sans motif discriminatoire",
-      "fin de contrat a durée determinee",
+      "licenciement pendant la période d'essai sans motif discriminatoire",
+      "fin de contrat a durée déterminée",
       "résiliation d'un commun accord"
     ],
     "required_facts": [
@@ -726,7 +726,7 @@
           "resume": "L'employeur doit delivrer le certificat dans un délai raisonnable (2-4 semaines). Le retard injustifie fonde une action en exécution."
         }
       ],
-      "modeleLettre": "Objet : Demande de certificat de travail\n\nMadame, Monsieur,\n\nConformément a l'art. 330a CO, je vous prie de bien vouloir me delivrer un certificat de travail complet portant sur la nature et la durée de mes rapports de travail, la qualite de mon travail et ma conduite.\n\nJe vous remercie de me transmettre ce document dans un délai de 15 jours.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Demande de certificat de travail\n\nMadame, Monsieur,\n\nConformément à l'art. 330a CO, je vous prie de bien vouloir me delivrer un certificat de travail complet portant sur la nature et la durée de mes rapports de travail, la qualite de mon travail et ma conduite.\n\nJe vous remercie de me transmettre ce document dans un délai de 15 jours.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Syndicat Unia",
@@ -742,13 +742,13 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
     "dateVerification": "2026-04-08",
     "verificationOk": true,
-    "match_description": "L'employe veut obtenir ou contester un certificat de travail incomplet, negatif ou inexact.",
+    "match_description": "L'employé veut obtenir ou contester un certificat de travail incomplet, negatif ou inexact.",
     "profane_aliases": [
       "certificat de travail negatif",
       "pas reçu mon certificat",
@@ -758,12 +758,12 @@
     ],
     "negative_signals": [
       "demande de lettre de recommandation personnelle",
-      "reference telephonique informelle",
+      "référencée telephonique informelle",
       "question sur le CV"
     ],
     "required_facts": [
       "certificat reçu ou non",
-      "contenu conteste (formulation precise)",
+      "contenu contesté (formulation précis)",
       "durée du rapport de travail",
       "demandes écrites déjà faites"
     ]
@@ -823,7 +823,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le droit aux vacances est de 4 semaines minimum par an (5 semaines pour les jeunes jusqu'a 20 ans revolus, art. 329a CO). Les vacances doivent être prises en nature — leur compensation financiere n'est admise qu'a la fin des rapports de travail (art. 329d al. 2 CO). L'employeur fixe la date des vacances en tenant compte des desirs du travailleur dans la mesure compatible avec les interets de l'entreprise (art. 329c al. 2 CO). Au moins 2 semaines consecutives doivent être accordees par an (art. 329c al. 1 CO). Les vacances ne peuvent pas être reduites en raison d'une absence pour maladie durant le premier mois d'incapacité. Au-dela, une reduction proportionnelle est possible (art. 329b CO). En cas de licenciement, les vacances doivent en principe être prises pendant le délai de conge, sauf si cela est deraisonnable (recherche d'emploi).",
+      "explication": "Le droit aux vacances est de 4 semaines minimum par an (5 semaines pour les jeunes jusqu'a 20 ans revolus, art. 329a CO). Les vacances doivent être prises en nature — leur compensation financiere n'est admise qu'a la fin des rapports de travail (art. 329d al. 2 CO). L'employeur fixe la date des vacances en tenant compte des desirs du travailleur dans la mesure compatible avec les intérêts de l'entreprise (art. 329c al. 2 CO). Au moins 2 semaines consecutives doivent être accordees par an (art. 329c al. 1 CO). Les vacances ne peuvent pas être réduites en raison d'une absence pour maladie durant le premier mois d'incapacité. Au-dela, une reduction proportionnelle est possible (art. 329b CO). En cas de licenciement, les vacances doivent en principe être prises pendant le délai de conge, sauf si cela est deraisonnable (recherche d'emploi).",
       "articles": [
         {
           "ref": "CO 329a",
@@ -851,7 +851,7 @@
           "resume": "L'employeur ne peut pas imposer la totalite des vacances pendant le délai de conge si le travailleur a besoin de temps pour chercher un emploi."
         }
       ],
-      "modeleLettre": "Objet : Demande de solde de vacances\n\nMadame, Monsieur,\n\nA la fin de mes rapports de travail le [date], il me reste [nombre] jours de vacances non pris.\n\nConformément a l'art. 329d al. 2 CO, je vous demande de m'indemniser ce solde dans le decompte final de salaire.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Demande de solde de vacances\n\nMadame, Monsieur,\n\nA la fin de mes rapports de travail le [DATE], il me reste [NOMBRE] jours de vacances non pris.\n\nConformément à l'art. 329d al. 2 CO, je vous demande de m'indemniser ce solde dans le decompte final de salaire.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Syndicat Unia",
@@ -867,18 +867,18 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
     "dateVerification": "2026-04-08",
     "verificationOk": true,
-    "match_description": "L'employe a un probleme avec ses jours de vacances: refus, report, compensation ou solde non payé.",
+    "match_description": "L'employé à un probleme avec ses jours de vacances: refus, report, compensation ou solde non payé.",
     "profane_aliases": [
       "vacances refusees",
       "jours de conge pas payés",
       "mon patron refuse mes vacances",
-      "solde de vacances a la fin du contrat",
+      "solde de vacances à la fin du contrat",
       "vacances imposees par l'employeur"
     ],
     "negative_signals": [
@@ -900,7 +900,7 @@
     "sousDomaine": "protection",
     "tags": [
       "grossesse",
-      "maternite",
+      "maternité",
       "protection",
       "conge",
       "allaitement"
@@ -911,7 +911,7 @@
         "text": "Situation ?",
         "options": [
           "licenciement pendant grossesse",
-          "refus conge maternite",
+          "refus conge maternité",
           "discrimination",
           "aménagement poste"
         ]
@@ -921,13 +921,13 @@
         "text": "Stade ?",
         "options": [
           "enceinte",
-          "conge maternite",
+          "conge maternité",
           "retour après conge"
         ]
       },
       {
         "id": "q3",
-        "text": "L'employeur est-il informe ?",
+        "text": "L'employeur est-il informé ?",
         "options": [
           "oui",
           "non"
@@ -937,7 +937,7 @@
         "id": "q4",
         "text": "Taille de l'entreprise ?",
         "options": [
-          "<10 employes",
+          "<10 employés",
           "10-50",
           ">50"
         ]
@@ -949,7 +949,7 @@
       }
     ],
     "reponse": {
-      "explication": "La travailleuse enceinte bénéficie d'une protection absolue contre le licenciement pendant toute la grossesse et les 16 semaines suivant l'accouchement (art. 336c al. 1 let. c CO). Un conge notifie pendant cette periode est nul. Le conge maternite est de 14 semaines minimum avec 80% du salaire (allocations APG, art. 16b-16d LAPG). Il est interdit d'employer une femme pendant les 8 semaines suivant l'accouchement (art. 35a al. 3 LTr). Les meres qui allaitent ont droit à des pauses payees (art. 60 OLT 1). La LEg interdit toute discrimination fondee sur la grossesse, notamment lors de l'embauche (art. 3 LEg). L'employeur doit aménager les conditions de travail pour protéger la sante de la femme enceinte (art. 35 LTr) : pas de travaux penibles ou dangereux, pas de travail de nuit après la 8e semaine de grossesse.",
+      "explication": "La travailleuse enceinte bénéficie d'une protection absolue contre le licenciement pendant toute la grossesse et les 16 semaines suivant l'accouchement (art. 336c al. 1 let. c CO). Un conge notifié pendant cette période est nul. Le conge maternité est de 14 semaines minimum avec 80% du salaire (allocations APG, art. 16b-16d LAPG). Il est interdit d'employer une femme pendant les 8 semaines suivant l'accouchement (art. 35a al. 3 LTr). Les meres qui allaitent ont droit à des pauses payees (art. 60 OLT 1). La LEg interdit toute discrimination fondee sur la grossesse, notamment lors de l'embauche (art. 3 LEg). L'employeur doit aménager les conditions de travail pour protéger la sante de la femme enceinte (art. 35 LTr) : pas de travaux penibles ou dangereux, pas de travail de nuit après la 8e semaine de grossesse.",
       "articles": [
         {
           "ref": "CO 336c",
@@ -963,30 +963,30 @@
         },
         {
           "ref": "LTr 35a",
-          "titre": "Protection de la maternite",
+          "titre": "Protection de la maternité",
           "lien": "https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/fr#art_35_a"
         }
       ],
       "jurisprudence": [
         {
           "ref": "TF 4A_400/2019",
-          "resume": "Conge nul notifie pendant la grossesse même si l'employeur ignorait l'etat de grossesse au moment du licenciement."
+          "resume": "Conge nul notifié pendant la grossesse même si l'employeur ignorait l'etat de grossesse au moment du licenciement."
         },
         {
           "ref": "TF 4A_59/2019",
-          "resume": "Discrimination a l'embauche : l'employeur ne peut pas poser de questions sur un projet de grossesse lors de l'entretien d'embauche."
+          "resume": "Discrimination à l'embauche : l'employeur ne peut pas poser de questions sur un projet de grossesse lors de l'entretien d'embauche."
         }
       ],
-      "modeleLettre": "Objet : Contestation du licenciement — protection maternite\n\nRecommandé\n\nMadame, Monsieur,\n\nVous m'avez notifie un licenciement le [date]. Or, a cette date, j'etais enceinte, comme l'atteste le certificat médical joint.\n\nConformément a l'art. 336c al. 1 let. c CO, ce licenciement est nul car notifie pendant la grossesse.\n\nJe vous demande de confirmer la nullite de ce conge et la poursuite de mes rapports de travail.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Contestation du licenciement — protection de la maternité (art. 336c al. 1 let. c CO)\n\nRecommandé\n\n[NOM DE L'EMPLOYEUR]\n[ADRESSE DE L'EMPLOYEUR]\n\nMadame, Monsieur,\n\nJe soussigné(e) [PRÉNOM NOM], employée au sein de votre entreprise depuis le [DATE DE DÉBUT DU CONTRAT], en qualité de [FONCTION],\n\nPar la présente, je contesté formellement le licenciement qui m'a été notifié le [DATE DU LICENCIEMENT].\n\nEn effet, j'ai annoncé ma grossesse à mon employeur le [DATE D'ANNONCE DE LA GROSSESSE], comme l'attesté [MOYEN DE PREUVE : CERTIFICAT MÉDICAL / COURRIEL / TÉMOIN]. À la date de notification du congé, j'étais enceinte de [NOMBRE] semaines.\n\nOr, conformément à l'art. 336c al. 1 let. c CO, le licenciement est nul lorsqu'il est notifié pendant la grossesse et les 16 semaines suivant l'accouchement. Cette protection s'applique indépendamment du fait que l'employeur ait eu connaissance ou non de la grossesse au moment du licenciement (TF 4A_400/2019).\n\nLa durée de mes rapports de travail étant de [DURÉE D'EMPLOI], le délai de congé applicable est de [DÉLAI DE CONGÉ] pour la fin d'un mois.\n\nEn conséquence, je vous demande de :\n1. Confirmer par écrit la nullité de ce licenciement\n2. Poursuivre l'exécution de mon contrat de travail aux conditions inchangées\n3. Verser l'intégralité de mon salaire pour la période écoulée depuis la notification du congé\n\nÀ défaut de réponse dans un délai de 10 jours, je me réserve le droit de saisir l'autorité de conciliation compétente.\n\nPièces jointes : certificat médical confirmant la grossesse et la date présumée d'accouchement, copie de la lettre de licenciement.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n\n[SIGNATURE]",
       "services": [
         {
-          "nom": "Bureau de l'egalite VD",
-          "url": "https://www.vd.ch/themes/etat-droit-finances/egalite",
+          "nom": "Bureau de l'égalité VD",
+          "url": "https://www.vd.ch/themes/etat-droit-finances/égalité",
           "canton": "VD"
         },
         {
-          "nom": "Bureau de l'egalite GE",
-          "url": "https://www.ge.ch/organisation/service-egalite",
+          "nom": "Bureau de l'égalité GE",
+          "url": "https://www.ge.ch/organisation/service-égalité",
           "canton": "GE"
         },
         {
@@ -997,30 +997,30 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO/LEg/LTr état 2025-01-01",
     "dateVerification": "2026-04-08",
     "verificationOk": true,
-    "match_description": "La travailleuse enceinte ou en conge maternite veut connaitre ses droits face à un licenciement ou des conditions de travail.",
+    "match_description": "La travailleuse enceinte ou en conge maternité veut connaitre ses droits face à un licenciement ou des conditions de travail.",
     "profane_aliases": [
       "viree parce que enceinte",
       "licenciement pendant grossesse",
-      "droits pendant la maternite",
-      "conge maternite refuse",
+      "droits pendant la maternité",
+      "conge maternité refuse",
       "mon patron veut me licencier je suis enceinte"
     ],
     "negative_signals": [
-      "demande de conge paternite",
-      "question sur l'allocation de maternite APG uniquement",
-      "fin de contrat a durée determinee arrivant a terme"
+      "demande de conge paternité",
+      "question sur l'allocation de maternité APG uniquement",
+      "fin de contrat a durée déterminée arrivant a terme"
     ],
     "required_facts": [
       "stade de la grossesse ou date d'accouchement",
       "date du licenciement",
       "type de contrat",
-      "employeur informe ou non de la grossesse"
+      "employeur informé ou non de la grossesse"
     ]
   },
   {
@@ -1032,7 +1032,7 @@
       "travail",
       "LAA",
       "declaration",
-      "indemnite"
+      "indemnité"
     ],
     "questions": [
       {
@@ -1046,7 +1046,7 @@
       },
       {
         "id": "q2",
-        "text": "L'employeur a-t-il declare l'accident ?",
+        "text": "L'employeur a-t-il déclaré l'accident ?",
         "options": [
           "oui",
           "non",
@@ -1077,7 +1077,7 @@
       }
     ],
     "reponse": {
-      "explication": "Tout travailleur salarié est obligatoirement assuré contre les accidents professionnels et, s'il travaille au moins 8 heures par semaine, contre les accidents non professionnels (art. 6 LAA). L'employeur doit declarer l'accident a l'assureur LAA dans les plus brefs délais (art. 45 LAA). Les prestations comprennent : la prise en charge des frais médicaux a 100%, une indemnite journaliere de 80% du salaire des le 3e jour d'incapacité (art. 16-17 LAA), une rente d'invalidité si l'incapacité est durable (art. 18 LAA), et une indemnite pour atteinte a l'integrite (IPAI) en cas de sequelles permanentes (art. 24-25 LAA). Les 2 premiers jours sont a la charge de l'employeur. L'accident de trajet est couvert s'il survient sur le chemin le plus direct entre le domicile et le lieu de travail.",
+      "explication": "Tout travailleur salarié est obligatoirement assuré contre les accidents professionnels et, s'il travaille au moins 8 heures par semaine, contre les accidents non professionnels (art. 6 LAA). L'employeur doit declarer l'accident à l'assureur LAA dans les plus brefs délais (art. 45 LAA). Les prestations comprennent : la prise en charge des frais médicaux a 100%, une indemnité journaliere de 80% du salaire des le 3e jour d'incapacité (art. 16-17 LAA), une rente d'invalidité si l'incapacité est durable (art. 18 LAA), et une indemnité pour atteinte à l'intégrité (IPAI) en cas de sequelles permanentes (art. 24-25 LAA). Les 2 premiers jours sont à la charge de l'employeur. L'accident de trajet est couvert s'il survient sur le chemin le plus direct entre le domicile et le lieu de travail.",
       "articles": [
         {
           "ref": "LAA 6",
@@ -1098,14 +1098,14 @@
       "jurisprudence": [
         {
           "ref": "TF 8C_816/2009",
-          "resume": "Un accident survenu lors d'un detour raisonnable sur le chemin du travail (arrêt courses rapides) reste couvert comme accident de trajet."
+          "resume": "Un accident survenu lors d'un détour raisonnable sur le chemin du travail (arrêt courses rapides) reste couvert comme accident de trajet."
         },
         {
           "ref": "TF 8C_62/2019",
-          "resume": "Le refus de l'assureur de reconnaitre un accident doit être conteste par opposition dans les 30 jours."
+          "resume": "Le refus de l'assureur de reconnaitre un accident doit être contesté par opposition dans les 30 jours."
         }
       ],
-      "modeleLettre": "Objet : Declaration d'accident de travail\n\nMadame, Monsieur,\n\nJe vous informe avoir subi un accident [professionnel / de trajet] le [date] a [lieu].\n\nCirconstances : [description]\n\nJe vous prie de procéder a la declaration auprès de l'assurance LAA conformement a l'art. 45 LAA.\n\nPieces jointes : certificat médical.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Declaration d'accident de travail\n\nMadame, Monsieur,\n\nJe vous informé avoir subi un accident [PROFESSIONNEL / DE TRAJET] le [DATE] a [LIEU].\n\nCirconstances : [DESCRIPTION]\n\nJe vous prie de procéder à la declaration auprès de l'assurance LAA conformement à l'art. 45 LAA.\n\nPieces jointes : certificat médical.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "SUVA (Caisse nationale d'assurance)",
@@ -1125,19 +1125,19 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "LAA état 2025-01-01",
     "dateVerification": "2026-04-08",
     "verificationOk": true,
-    "match_description": "L'employe a eu un accident au travail ou sur le trajet et veut savoir quels sont ses droits.",
+    "match_description": "L'employé a eu un accident au travail ou sur le trajet et veut savoir quels sont ses droits.",
     "profane_aliases": [
       "accident au boulot",
       "blesse au travail",
       "accident sur le chemin du travail",
-      "mon employeur ne declare pas mon accident",
-      "indemnite après accident professionnel"
+      "mon employeur ne déclaré pas mon accident",
+      "indemnité après accident professionnel"
     ],
     "negative_signals": [
       "accident de loisir sans lien avec le travail",
@@ -1207,7 +1207,7 @@
       }
     ],
     "reponse": {
-      "explication": "En droit suisse, le contrat de travail n'exige aucune forme particulière et peut être conclu oralement (art. 320 al. 1 CO). Même le contrat de travail conclu tacitement (par comportement) est valable : le fait de travailler pour quelqu'un qui l'accepte suffit a créer un contrat de travail avec toutes les obligations légales (art. 320 al. 2 CO). L'employeur qui ne declare pas ses employes (travail au noir) s'expose a des sanctions administratives et pénales (LTN), mais le travailleur conserve tous ses droits (salaire, assurances, protection). En cas de litige, le travailleur peut prouver l'existence du contrat par tous moyens : temoignages, messages, virements, photos. Si aucun salaire n'a ete convenu, le salaire usuel de la branche s'applique (art. 322 al. 1 CO).",
+      "explication": "En droit suisse, le contrat de travail n'exige aucune forme particulière et peut être conclu oralement (art. 320 al. 1 CO). Même le contrat de travail conclu tacitement (par comportement) est valable : le fait de travailler pour quelqu'un qui l'accepte suffit a créer un contrat de travail avec toutes les obligations légales (art. 320 al. 2 CO). L'employeur qui ne déclaré pas ses employés (travail au noir) s'expose à des sanctions administratives et pénales (LTN), mais le travailleur conserve tous ses droits (salaire, assurances, protection). En cas de litige, le travailleur peut prouver l'existence du contrat par tous moyens : temoignages, messages, virements, photos. Si aucun salaire n'a été convenu, le salaire usuel de la branche s'applique (art. 322 al. 1 CO).",
       "articles": [
         {
           "ref": "CO 320",
@@ -1230,7 +1230,7 @@
           "resume": "En l'absence de contrat écrit, la preuve peut être apportee par SMS, temoignages et tout autre moyen."
         }
       ],
-      "modeleLettre": "Objet : Reclamation de salaire — contrat de travail\n\nRecommandé\n\nMadame, Monsieur,\n\nJ'ai travaille pour votre compte du [date] au [date] en qualite de [fonction]. Bien qu'aucun contrat écrit n'ait ete signe, un contrat de travail existe au sens de l'art. 320 CO.\n\nLe salaire convenu de CHF [montant] par [heure/mois] ne m'a pas ete versé pour la periode [mois].\n\nJe vous mets en demeure de procéder au paiement dans un délai de 10 jours.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Reclamation de salaire — contrat de travail\n\nRecommandé\n\nMadame, Monsieur,\n\nJ'ai travaille pour votre compte du [DATE] au [DATE] en qualite de [FONCTION]. Bien qu'aucun contrat écrit n'ait été signé, un contrat de travail existe au sens de l'art. 320 CO.\n\nLe salaire convenu de CHF [MONTANT] par [HEURE/MOIS] ne m'a pas été versé pour la période [MOIS].\n\nJe vous mets en demeure de procéder au paiement dans un délai de 10 jours.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Syndicat Unia",
@@ -1251,13 +1251,13 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
     "dateVerification": "2026-04-08",
     "verificationOk": true,
-    "match_description": "L'employe travaille sans contrat écrit et veut savoir s'il a quand même des droits.",
+    "match_description": "L'employé travaille sans contrat écrit et veut savoir s'il a quand même des droits.",
     "profane_aliases": [
       "pas de contrat écrit",
       "travail au noir",
@@ -1266,14 +1266,14 @@
       "je travaille sans contrat"
     ],
     "negative_signals": [
-      "contrat écrit existant mais conteste",
+      "contrat écrit existant mais contesté",
       "travail benevole volontaire",
       "mandat indépendant"
     ],
     "required_facts": [
       "nature du travail effectué",
       "durée de la relation de travail",
-      "preuves existantes (SMS, virements, temoins)",
+      "preuves existantes (SMS, virements, témoins)",
       "rémunération convenue"
     ]
   },
@@ -1282,7 +1282,7 @@
     "domaine": "travail",
     "sousDomaine": "contrat",
     "tags": [
-      "periode d essai",
+      "période d essai",
       "résiliation",
       "délai",
       "debut"
@@ -1290,7 +1290,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Durée de la periode d essai prévue ?",
+        "text": "Durée de la période d essai prévue ?",
         "options": [
           "1 mois (légal)",
           "2 mois",
@@ -1303,7 +1303,7 @@
         "text": "Qui a résilié ?",
         "options": [
           "employeur",
-          "employe"
+          "employé"
         ]
       },
       {
@@ -1330,7 +1330,7 @@
       }
     ],
     "reponse": {
-      "explication": "La periode d essai est de 1 mois sauf accord écrit different (art. 335b al. 1 CO). Elle peut être etendue jusqu a 3 mois maximum par accord écrit. Pendant cette periode, chaque partie peut résilier avec un délai de 7 jours pour n importe quel jour (art. 335b al. 1 CO). Si l employe est malade, accidente ou en service militaire pendant l essai, la periode d essai est prolongee d autant (art. 335b al. 3 CO). La protection contre le licenciement en temps inopportun (art. 336c CO) ne s applique PAS pendant la periode d essai. L employeur n est pas tenu de motiver le licenciement pendant l essai, sauf si le motif est discriminatoire.",
+      "explication": "La période d essai est de 1 mois sauf accord écrit different (art. 335b al. 1 CO). Elle peut être etendue jusqu a 3 mois maximum par accord écrit. Pendant cette période, chaque partie peut résilier avec un délai de 7 jours pour n importe quel jour (art. 335b al. 1 CO). Si l employé est malade, accidente ou en service militaire pendant l essai, la période d essai est prolongee d autant (art. 335b al. 3 CO). La protection contre le licenciement en temps inopportun (art. 336c CO) ne s applique PAS pendant la période d essai. L employeur n est pas tenu de motiver le licenciement pendant l essai, sauf si le motif est discriminatoire.",
       "articles": [
         {
           "ref": "CO 335b",
@@ -1346,11 +1346,11 @@
       "jurisprudence": [
         {
           "ref": "TF 4A_64/2011",
-          "resume": "La protection de l art. 336c CO ne s applique pas pendant la periode d essai."
+          "resume": "La protection de l art. 336c CO ne s applique pas pendant la période d essai."
         },
         {
           "ref": "TF 4A_385/2014",
-          "resume": "Une periode d essai de 3 mois est admissible uniquement si prévue par écrit dans le contrat."
+          "resume": "Une période d essai de 3 mois est admissible uniquement si prévue par écrit dans le contrat."
         }
       ],
       "modeleLettre": "",
@@ -1369,27 +1369,27 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
     "dateVerification": "2026-04-08",
     "verificationOk": true,
-    "match_description": "L'employe est licencie pendant la periode d'essai et se demande si c'est légal ou quels sont les délais.",
+    "match_description": "L'employé est licencié pendant la période d'essai et se demande si c'est légal ou quels sont les délais.",
     "profane_aliases": [
       "vire pendant l'essai",
-      "periode d'essai licenciement",
+      "période d'essai licenciement",
       "renvoye après 2 semaines",
-      "droits pendant la periode d'essai",
-      "preavis en periode d'essai"
+      "droits pendant la période d'essai",
+      "préavis en période d'essai"
     ],
     "negative_signals": [
-      "licenciement après la fin de la periode d'essai",
+      "licenciement après la fin de la période d'essai",
       "demission volontaire pendant l'essai",
       "pas encore commence a travailler"
     ],
     "required_facts": [
-      "durée de la periode d'essai prévue au contrat",
+      "durée de la période d'essai prévue au contrat",
       "date de debut du travail",
       "date de la résiliation",
       "motif invoque"
@@ -1408,7 +1408,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Clause de non-concurrence signee ?",
+        "text": "Clause de non-concurrence signée ?",
         "options": [
           "oui",
           "non",
@@ -1427,7 +1427,7 @@
       },
       {
         "id": "q3",
-        "text": "Perimetre geographique defini ?",
+        "text": "Perimetre geographique défini ?",
         "options": [
           "oui",
           "non"
@@ -1438,7 +1438,7 @@
         "text": "Qui a résilié le contrat ?",
         "options": [
           "employeur sans juste motif",
-          "employe",
+          "employé",
           "accord mutuel"
         ]
       },
@@ -1449,7 +1449,7 @@
       }
     ],
     "reponse": {
-      "explication": "La clause de non-concurrence doit être écrite, limitee dans le temps, l espace et le genre d affaires (art. 340 CO). Elle ne peut exceder 3 ans (art. 340a al. 1 CO). Elle n est valable que si le travailleur a eu acces a la clientele ou aux secrets d affaires et que l utilisation de ces connaissances peut causer un prejudice sensible a l employeur. La clause tombe si l employeur résilié le contrat sans que le travailleur lui ait donne un motif justifie (art. 340c al. 2 CO). Le juge peut reduire une clause excessive (art. 340a al. 2 CO). La peine conventionnelle libéré le travailleur de l interdiction sauf clause contraire.",
+      "explication": "La clause de non-concurrence doit être écrite, limitee dans le temps, l espace et le genre d affaires (art. 340 CO). Elle ne peut exceder 3 ans (art. 340a al. 1 CO). Elle n est valable que si le travailleur a eu acces à la clientele ou aux secrets d affaires et que l utilisation de ces connaissances peut causer un préjudice sensible a l employeur. La clause tombe si l employeur résilié le contrat sans que le travailleur lui ait donne un motif justifie (art. 340c al. 2 CO). Le juge peut reduire une clause excessive (art. 340a al. 2 CO). La peine conventionnelle libéré le travailleur de l interdiction sauf clause contraire.",
       "articles": [
         {
           "ref": "CO 340",
@@ -1470,14 +1470,14 @@
       "jurisprudence": [
         {
           "ref": "TF 4A_209/2008",
-          "resume": "Clause de non-concurrence annulee car le travailleur n avait pas eu acces a des secrets d affaires."
+          "resume": "Clause de non-concurrence annulee car le travailleur n avait pas eu acces à des secrets d affaires."
         },
         {
           "ref": "TF 4A_28/2018",
           "resume": "La clause tombe lorsque l employeur résilié sans motif justifie imputable au travailleur."
         }
       ],
-      "modeleLettre": "Objet : Contestation de la clause de non-concurrence (art. 340 ss CO)\n\nA [NOM_ANCIEN_EMPLOYEUR],\n\nJe soussigné(e) [NOM], ancien(ne) employe(e) au poste de [FONCTION] jusqu au [DATE_FIN_CONTRAT],\n\nConteste la validite de la clause de non-concurrence figurant a l art. [NUMERO] de mon contrat de travail pour les motifs suivants :\n\n[CHOISIR LE MOTIF APPLICABLE :]\n\n1. La clause est excessive dans sa portee (art. 340a al. 1 CO) : elle couvre [TERRITOIRE_TROP_LARGE / DUREE_EXCESSIVE / ACTIVITES_TROP_LARGES]\n2. Je n ai pas eu acces a la clientele ni aux secrets d affaires durant mon emploi (art. 340 al. 2 CO), ce qui rend la clause nulle\n3. Les rapports de travail ont ete résiliés par l employeur sans que je lui aie donne un motif justifie (art. 340c al. 2 CO), ce qui eteint la clause\n\nEn consequence, je considere cette clause comme non contraignante et entends exercer librement mon activité professionnelle.\n\nJe vous invite a confirmer la levee de cette clause dans un delai de 10 jours. À défaut, je saisirai le tribunal compétent.\n\nVeuillez agréer mes salutations distinguées.\n\n[LIEU], le [DATE]\n\n[SIGNATURE]",
+      "modeleLettre": "Objet : Contestation de la clause de non-concurrence (art. 340 ss CO)\n\nA [NOM_ANCIEN_EMPLOYEUR],\n\nJe soussigné(e) [NOM], ancien(ne) employé(e) au poste de [FONCTION] jusqu au [DATE_FIN_CONTRAT],\n\nConteste la validité de la clause de non-concurrence figurant a l art. [NUMERO] de mon contrat de travail pour les motifs suivants :\n\n[CHOISIR LE MOTIF APPLICABLE :]\n\n1. La clause est excessive dans sa portee (art. 340a al. 1 CO) : elle couvre [TERRITOIRE_TROP_LARGE / DUREE_EXCESSIVE / ACTIVITES_TROP_LARGES]\n2. Je n ai pas eu acces à la clientele ni aux secrets d affaires durant mon emploi (art. 340 al. 2 CO), ce qui rend la clause nulle\n3. Les rapports de travail ont été résiliés par l employeur sans que je lui aie donne un motif justifie (art. 340c al. 2 CO), ce qui eteint la clause\n\nEn consequence, je considere cette clause comme non contraignante et entends exercer librement mon activité professionnelle.\n\nJe vous invite a confirmer la levee de cette clause dans un délai de 10 jours. À défaut, je saisirai le tribunal compétent.\n\nVeuillez agréer mes salutations distinguées.\n\n[LIEU], le [DATE]\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Syndicat Unia Vaud",
@@ -1493,13 +1493,13 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
     "dateVerification": "2026-04-08",
     "verificationOk": true,
-    "match_description": "L'employe a une clause de non-concurrence et veut savoir si elle est valable ou comment s'en libérer.",
+    "match_description": "L'employé à une clause de non-concurrence et veut savoir si elle est valable ou comment s'en libérer.",
     "profane_aliases": [
       "clause de non-concurrence",
       "interdit de travailler chez un concurrent",
@@ -1516,7 +1516,7 @@
       "texte exact de la clause",
       "qui a résilié le contrat",
       "durée et perimetre de la clause",
-      "acces a la clientele ou secrets d'affaires"
+      "acces à la clientele ou secrets d'affaires"
     ]
   },
   {
@@ -1527,7 +1527,7 @@
       "secret",
       "professionnel",
       "confidentialite",
-      "donnees",
+      "données",
       "devoir"
     ],
     "questions": [
@@ -1536,14 +1536,14 @@
         "text": "Type de secret ?",
         "options": [
           "secret de fabrication",
-          "donnees clients",
+          "données clients",
           "informations financieres",
           "autre"
         ]
       },
       {
         "id": "q2",
-        "text": "Clause de confidentialite signee ?",
+        "text": "Clause de confidentialite signée ?",
         "options": [
           "oui",
           "non"
@@ -1551,7 +1551,7 @@
       },
       {
         "id": "q3",
-        "text": "L information a-t-elle ete divulguee ?",
+        "text": "L information a-t-elle été divulguee ?",
         "options": [
           "oui",
           "non mais risque"
@@ -1573,7 +1573,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le travailleur a un devoir légal de fidelite et de discretion (art. 321a CO). Il ne doit pas reveler les secrets de fabrication ou d affaires dont il a connaissance pendant la durée du contrat. Ce devoir subsiste même après la fin du contrat pour les secrets de fabrication (art. 321a al. 4 CO). La violation du secret peut entrainer un licenciement avec effet immédiat (art. 337 CO), des dommages-interets (art. 321e CO) et des sanctions pénales (art. 162 CP pour violation du secret de fabrication). L employeur peut aussi demander des mesures provisionnelles pour empecher une divulgation imminente.",
+      "explication": "Le travailleur à un devoir légal de fidelite et de discretion (art. 321a CO). Il ne doit pas reveler les secrets de fabrication ou d affaires dont il a connaissance pendant la durée du contrat. Ce devoir subsiste même après la fin du contrat pour les secrets de fabrication (art. 321a al. 4 CO). La violation du secret peut entrainer un licenciement avec effet immédiat (art. 337 CO), des dommages-intérêts (art. 321e CO) et des sanctions pénales (art. 162 CP pour violation du secret de fabrication). L employeur peut aussi demander des mesures provisionnelles pour empecher une divulgation imminente.",
       "articles": [
         {
           "ref": "CO 321a",
@@ -1594,7 +1594,7 @@
       "jurisprudence": [
         {
           "ref": "TF 4A_226/2014",
-          "resume": "Licenciement immédiat justifie pour transmission de donnees clients a un concurrent."
+          "resume": "Licenciement immédiat justifie pour transmission de données clients à un concurrent."
         }
       ],
       "modeleLettre": "",
@@ -1613,23 +1613,23 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO/CP état 2025-01-01",
     "dateVerification": "2026-04-08",
     "verificationOk": true,
-    "match_description": "L'employe se demande ce qu'il a le droit de dire ou non sur son ancien ou actuel employeur.",
+    "match_description": "L'employé se demande ce qu'il au droit de dire ou non sur son ancien ou actuel employeur.",
     "profane_aliases": [
       "secret professionnel au travail",
       "droit de parler de mon entreprise",
-      "devoir de discretion employe",
+      "devoir de discretion employé",
       "j'ai revele des infos de mon employeur",
       "whistleblowing au travail"
     ],
     "negative_signals": [
       "secret médical ou d'avocat",
-      "question de protection des donnees personnelles",
+      "question de protection des données personnelles",
       "publication sur les reseaux sociaux sans lien avec des secrets"
     ],
     "required_facts": [
@@ -1646,7 +1646,7 @@
     "tags": [
       "temps partiel",
       "droits",
-      "egalite",
+      "égalité",
       "travail sur appel"
     ],
     "questions": [
@@ -1696,7 +1696,7 @@
       }
     ],
     "reponse": {
-      "explication": "Les travailleurs a temps partiel ont les memes droits que les travailleurs a plein temps, proportionnellement a leur taux d activité. Ils ont droit aux vacances (art. 329a CO), a la protection contre le licenciement, au certificat de travail. Le 13e salaire, s il est prévu par le contrat ou la CCT, s applique aussi au temps partiel. Le travail sur appel est licite mais si un volume de travail régulier s établit, le travailleur peut pretendre a ce volume minimum. L assurance LPP (2e pilier) est obligatoire des CHF 22'050/an (seuil 2025). Les travailleurs a temps partiel ne doivent pas être discrimines par rapport aux temps plein pour des prestations equivalentes.",
+      "explication": "Les travailleurs a temps partiel ont les memes droits que les travailleurs a plein temps, proportionnellement a leur taux d activité. Ils ont droit aux vacances (art. 329a CO), à la protection contre le licenciement, au certificat de travail. Le 13e salaire, s il est prévu par le contrat ou la CCT, s applique aussi au temps partiel. Le travail sur appel est licite mais si un volume de travail régulier s établit, le travailleur peut pretendre à ce volume minimum. L assurance LPP (2e pilier) est obligatoire des CHF 22'050/an (seuil 2025). Les travailleurs a temps partiel ne doivent pas être discrimines par rapport aux temps plein pour des prestations equivalentes.",
       "articles": [
         {
           "ref": "CO 329a",
@@ -1705,14 +1705,14 @@
         },
         {
           "ref": "CO 319",
-          "titre": "Contrat de travail — definition",
+          "titre": "Contrat de travail — définition",
           "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_319"
         }
       ],
       "jurisprudence": [
         {
           "ref": "TF 4A_509/2009",
-          "resume": "Le travailleur sur appel régulier peut pretendre au volume moyen de travail des 12 derniers mois si l employeur reduit brusquement les heures."
+          "resume": "Le travailleur sur appel régulier peut pretendre au volume moyen de travail des 12 derniers mois si l employeur réduit brusquement les heures."
         }
       ],
       "modeleLettre": "",
@@ -1731,13 +1731,13 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
     "dateVerification": "2026-04-08",
     "verificationOk": true,
-    "match_description": "L'employe a temps partiel veut savoir s'il a les memes droits que ses collegues a plein temps.",
+    "match_description": "L'employé a temps partiel veut savoir s'il a les memes droits que ses collegues a plein temps.",
     "profane_aliases": [
       "droits en temps partiel",
       "discrimination temps partiel",
@@ -1753,7 +1753,7 @@
     "required_facts": [
       "taux d'activité contractuel",
       "type de contrat (fixe ou sur appel)",
-      "probleme precis (salaire, vacances, assurances)",
+      "probleme précis (salaire, vacances, assurances)",
       "comparaison avec collegues a plein temps"
     ]
   },
@@ -1837,7 +1837,7 @@
           "resume": "L employeur qui impose le teletravail doit rembourser une part des frais de loyer et d electricite du domicile."
         }
       ],
-      "modeleLettre": "Objet : Demande de remboursement des frais de teletravail\n\nMadame, Monsieur,\n\nTravaillant depuis mon domicile [X] jours par semaine [selon accord / sur votre instruction], je vous demande le remboursement des frais engages conformement a l art. 327a CO : [equipement, internet, electricite, part de loyer].\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Demande de remboursement des frais de teletravail\n\nMadame, Monsieur,\n\nTravaillant depuis mon domicile [X] jours par semaine [SELON ACCORD / SUR VOTRE INSTRUCTION], je vous demande le remboursement des frais engages conformement a l art. 327a CO : [EQUIPEMENT, INTERNET, ELECTRICITE, PART DE LOYER].\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Syndicat Unia Vaud",
@@ -1853,13 +1853,13 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
     "dateVerification": "2026-04-08",
     "verificationOk": true,
-    "match_description": "L'employe veut savoir ses droits en teletravail: frais, equipement, obligation ou refus.",
+    "match_description": "L'employé veut savoir ses droits en teletravail: frais, equipement, obligation ou refus.",
     "profane_aliases": [
       "teletravail droits",
       "homeoffice impose",
@@ -1869,13 +1869,13 @@
     ],
     "negative_signals": [
       "question sur le coworking",
-      "travail a l'étranger (droit international)",
+      "travail à l'étranger (droit international)",
       "freelance travaillant depuis chez lui"
     ],
     "required_facts": [
       "accord écrit sur le teletravail ou non",
       "qui a initie le teletravail",
-      "frais engages (internet, materiel)",
+      "frais engages (internet, matériel)",
       "ce que dit le contrat ou le reglement"
     ]
   },
@@ -1934,7 +1934,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le burn-out est traite comme une maladie en droit suisse et non comme un accident professionnel (sauf cas extremes). L employe en incapacité a droit au maintien du salaire (art. 324a CO) selon l echelle applicable (Berne, Zurich ou Bale) ou via l assurance perte de gain (80% pendant 720 jours). L employeur a une obligation de protéger la sante de ses employes (art. 328 CO, art. 6 LTr). S il a négligé cette obligation (surcharge chronique, heures excessives), le travailleur peut demander des dommages-interets (art. 97 CO) et une indemnite pour tort moral (art. 49 CO). L AI peut intervenir avec des mesures de réinsertion precoce. La protection contre le licenciement s applique pendant l incapacité (art. 336c CO).",
+      "explication": "Le burn-out est traite comme une maladie en droit suisse et non comme un accident professionnel (sauf cas extremes). L employé en incapacité a droit au maintien du salaire (art. 324a CO) selon l echelle applicable (Berne, Zurich ou Bale) ou via l assurance perte de gain (80% pendant 720 jours). L employeur à une obligation de protéger la sante de ses employés (art. 328 CO, art. 6 LTr). S il a négligé cette obligation (surcharge chronique, heures excessives), le travailleur peut demander des dommages-intérêts (art. 97 CO) et une indemnité pour tort moral (art. 49 CO). L AI peut intervenir avec des mesures de réinsertion precoce. La protection contre le licenciement s applique pendant l incapacité (art. 336c CO).",
       "articles": [
         {
           "ref": "CO 328",
@@ -1964,10 +1964,10 @@
         },
         {
           "ref": "TF 4A_245/2009",
-          "resume": "Indemnite pour tort moral en cas d atteinte a la personnalite par surcharge de travail systematique."
+          "resume": "Indemnite pour tort moral en cas d atteinte à la personnalite par surcharge de travail systematique."
         }
       ],
-      "modeleLettre": "Objet : Signalement d atteinte a la sante et mise en demeure (art. 328 CO / art. 6 LTr)\n\nA [NOM_EMPLOYEUR],\n\nJe soussigné(e) [NOM], employe(e) au poste de [FONCTION] depuis le [DATE],\n\nVous informe que mon etat de sante s est significativement degrade en raison des conditions de travail suivantes :\n\n- [SURCHARGE : heures supplémentaires non compensees, objectifs irrealistes]\n- [PRESSION : harcélément, manque de soutien, reorganisation]\n- [DUREE : depuis [NOMBRE] mois]\n\nUn certificat médical attestant de mon incapacité de travail vous a ete remis le [DATE]. Mon medecin attribue cet etat a des facteurs professionnels.\n\nConformément a l art. 328 CO et a l art. 6 LTr, l employeur est tenu de protéger la sante de ses travailleurs et de prendre les mesures nécessaires. Je vous mets en demeure de :\n\n1. Prendre des mesures concretes pour adapter ma charge de travail\n2. Me proposer un entretien de reprise avec des aménagements\n\nA defaut, je me reserve le droit de faire valoir mes prétentions en dommages-interets (art. 328 al. 2 CO) et de contester tout éventuel licenciement comme abusif (art. 336c CO — protection durant l incapacité).\n\nVeuillez agréer mes salutations distinguées.\n\n[LIEU], le [DATE]\n\n[SIGNATURE]",
+      "modeleLettre": "Objet : Signalement d atteinte à la sante et mise en demeure (art. 328 CO / art. 6 LTr)\n\nA [NOM_EMPLOYEUR],\n\nJe soussigné(e) [NOM], employé(e) au poste de [FONCTION] depuis le [DATE],\n\nVous informé que mon etat de sante s est significativement degrade en raison des conditions de travail suivantes :\n\n- [SURCHARGE : HEURES SUPPLÉMENTAIRES NON COMPENSEES, OBJECTIFS IRREALISTES]\n- [PRESSION : HARCÉLÉMENT, MANQUE DE SOUTIEN, REORGANISATION]\n- [DUREE : DEPUIS [NOMBRE] mois]\n\nUn certificat médical attestant de mon incapacité de travail vous a été remis le [DATE]. Mon médecin attribue cet etat à des facteurs professionnels.\n\nConformément a l art. 328 CO et a l art. 6 LTr, l employeur est tenu de protéger la sante de ses travailleurs et de prendre les mesures nécessaires. Je vous mets en demeure de :\n\n1. Prendre des mesures concretes pour adapter ma charge de travail\n2. Me proposer un entretien de reprise avec des aménagements\n\nA défaut, je me réserve le droit de faire valoir mes prétentions en dommages-intérêts (art. 328 al. 2 CO) et de contester tout éventuel licenciement comme abusif (art. 336c CO — protection durant l incapacité).\n\nVeuillez agréer mes salutations distinguées.\n\n[LIEU], le [DATE]\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Syndicat Unia Vaud",
@@ -1989,13 +1989,13 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO/LTr état 2025-01-01",
     "dateVerification": "2026-04-08",
     "verificationOk": true,
-    "match_description": "L'employe est en epuisement professionnel et veut connaitre ses droits en matiere de protection et d'arrêt.",
+    "match_description": "L'employé est en epuisement professionnel et veut connaitre ses droits en matiere de protection et d'arrêt.",
     "profane_aliases": [
       "burnout au travail",
       "epuisement professionnel",
@@ -2023,7 +2023,7 @@
     "tags": [
       "chomage",
       "assurance",
-      "indemnite",
+      "indemnité",
       "LACI",
       "conditions"
     ],
@@ -2072,7 +2072,7 @@
       }
     ],
     "reponse": {
-      "explication": "Pour avoir droit aux indemnites de chomage, il faut avoir cotise au moins 12 mois pendant les 2 ans precedant l inscription (art. 13 LACI). L indemnite est de 70% du gain assuré (80% avec enfants ou salaire < CHF 3797). La durée varie : 260 indemnites journalieres pour les cotisants de 12-18 mois, 400 pour 18-22 mois, 520 pour les plus de 55 ans ou les invalides (art. 27 LACI). En cas de demission sans juste motif ou de licenciement pour faute, suspension de 1 a 60 jours (art. 44 LACI). L assuré doit rechercher activement un emploi et accepter tout travail convenable. L inscription a l ORP doit se faire le 1er jour de chomage.",
+      "explication": "Pour avoir droit aux indemnités de chomage, il faut avoir cotise au moins 12 mois pendant les 2 ans precedant l inscription (art. 13 LACI). L indemnité est de 70% du gain assuré (80% avec enfants ou salaire < CHF 3797). La durée varie : 260 indemnités journalieres pour les cotisants de 12-18 mois, 400 pour 18-22 mois, 520 pour les plus de 55 ans ou les invalides (art. 27 LACI). En cas de demission sans juste motif ou de licenciement pour faute, suspension de 1 a 60 jours (art. 44 LACI). L assuré doit rechercher activement un emploi et accepter tout travail convenable. L inscription a l ORP doit se faire le 1er jour de chomage.",
       "articles": [
         {
           "ref": "LACI 13",
@@ -2081,12 +2081,12 @@
         },
         {
           "ref": "LACI 22",
-          "titre": "Montant de l indemnite",
+          "titre": "Montant de l indemnité",
           "lien": "https://www.fedlex.admin.ch/eli/cc/1982/2184_2184_2184/fr#art_22"
         },
         {
           "ref": "LACI 27",
-          "titre": "Nombre maximum d indemnites",
+          "titre": "Nombre maximum d indemnités",
           "lien": "https://www.fedlex.admin.ch/eli/cc/1982/2184_2184_2184/fr#art_27"
         },
         {
@@ -2101,7 +2101,7 @@
           "resume": "La demission pour cause de harcélément n entraine pas de suspension si le harcélément est prouve."
         }
       ],
-      "modeleLettre": "Objet : Inscription au chômage et demande d'indemnités — art. 13 ss LACI\n\nOffice régional de placement (ORP)\n[ADRESSE DE L'ORP — CANTON]\n\n[LIEU], le [DATE]\n\nMadame, Monsieur,\n\nPar la présente, je sollicite mon inscription au chômage et le versément des indemnités journalières conformément à la LACI.\n\nMa situation :\n- Dernier employeur : [NOM DE L'EMPLOYEUR]\n- Fonction occupée : [POSTE]\n- Date de fin du contrat : [DATE]\n- Motif de la fin des rapports de travail : [LICENCIEMENT / FIN CDD / AUTRE]\n- Période de cotisation : [NOMBRE DE MOIS] mois au cours des 2 dernières années (art. 13 LACI)\n- Dernier salaire brut mensuel : CHF [MONTANT]\n\nJe confirme être apte au placement, disposé(e) à accepter un travail convenable et à effectuér les recherches d'emploi requises.\n\nJe joins les documents nécessaires à l'examen de mon droit aux indemnités (art. 22 et 27 LACI).\n\nAnnexes : [ATTESTATION DE L'EMPLOYEUR, CERTIFICAT DE TRAVAIL, FICHES DE SALAIRE DES 6 DERNIERS MOIS, CONTRAT DE TRAVAIL, LETTRE DE LICENCIEMENT, PIÈCE D'IDENTITÉ]\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[NOM, PRÉNOM]\n[ADRESSE COMPLÈTE]\n[TÉLÉPHONE / EMAIL]\n[SIGNATURE]",
+      "modeleLettre": "Objet : Inscription au chômage et demande d'indemnités — art. 13 ss LACI\n\nOffice régional de placement (ORP)\n[ADRESSE DE L'ORP — CANTON]\n\n[LIEU], le [DATE]\n\nMadame, Monsieur,\n\nPar la présente, je sollicite mon inscription au chômage et le versément des indemnités journalières conformément à la LACI.\n\nMa situation :\n- Dernier employeur : [NOM DE L'EMPLOYEUR]\n- Fonction occupée : [POSTE]\n- Date de fin du contrat : [DATE]\n- Motif de la fin des rapports de travail : [LICENCIEMENT / FIN CDD / AUTRE]\n- Période de cotisation : [NOMBRE DE MOIS] mois au cours des 2 dernières années (art. 13 LACI)\n- Dernier salaire brut mensuel : CHF [MONTANT]\n\nJe confirmé être apte au placement, disposé(e) à accepter un travail convenable et à effectuér les recherches d'emploi requises.\n\nJe joins les documents nécessaires à l'examen de mon droit aux indemnités (art. 22 et 27 LACI).\n\nAnnexes : [ATTESTATION DE L'EMPLOYEUR, CERTIFICAT DE TRAVAIL, FICHES DE SALAIRE DES 6 DERNIERS MOIS, CONTRAT DE TRAVAIL, LETTRE DE LICENCIEMENT, PIÈCE D'IDENTITÉ]\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[NOM, PRÉNOM]\n[ADRESSE COMPLÈTE]\n[TÉLÉPHONE / EMAIL]\n[SIGNATURE]",
       "services": [
         {
           "nom": "Syndicat Unia Vaud",
@@ -2127,7 +2127,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "LACI état 2025-01-01",
@@ -2137,7 +2137,7 @@
     "profane_aliases": [
       "droit au chomage",
       "combien je touche au chomage",
-      "indemnites chomage après licenciement",
+      "indemnités chomage après licenciement",
       "conditions pour le chomage",
       "ai-je droit au chomage"
     ],
@@ -2209,7 +2209,7 @@
       }
     ],
     "reponse": {
-      "explication": "L inscription a l ORP (Office régional de placement) doit se faire le premier jour de chomage au plus tard. Il est recommandé de s inscrire des la reception du licenciement. L assuré doit effectuér au minimum 10-12 recherches d emploi par mois (selon le canton). Il doit se présenter aux entretiens de conseil, accepter le travail convenable propose et participer aux mesures du marche du travail (cours, stages). Le non-respect de ces obligations entraine des suspensions de l indemnite. L assuré doit apporter les documents : contrat de travail, lettre de licenciement, certificats, fiches de salaire, piece d identite, permis de travail.",
+      "explication": "L inscription a l ORP (Office régional de placement) doit se faire le premier jour de chomage au plus tard. Il est recommandé de s inscrire des la reception du licenciement. L assuré doit effectuér au minimum 10-12 recherches d emploi par mois (selon le canton). Il doit se présenter aux entretiens de conseil, accepter le travail convenable propose et participer aux mesures du marche du travail (cours, stages). Le non-respect de ces obligations entraine des suspensions de l indemnité. L assuré doit apporter les documents : contrat de travail, lettre de licenciement, certificats, fiches de salaire, piece d identite, permis de travail.",
       "articles": [
         {
           "ref": "LACI 17",
@@ -2225,7 +2225,7 @@
       "jurisprudence": [
         {
           "ref": "TF 8C_192/2013",
-          "resume": "L inscription tardive a l ORP entraine la perte des indemnites pour les jours antérieurs a l inscription."
+          "resume": "L inscription tardive a l ORP entraine la perte des indemnités pour les jours antérieurs a l inscription."
         }
       ],
       "modeleLettre": "",
@@ -2242,13 +2242,13 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "LACI état 2025-01-01",
     "dateVerification": "2026-04-08",
     "verificationOk": true,
-    "match_description": "La personne doit s'inscrire a l'ORP et veut savoir comment faire et quelles sont ses obligations.",
+    "match_description": "La personne doit s'inscrire à l'ORP et veut savoir comment faire et quelles sont ses obligations.",
     "profane_aliases": [
       "inscription ORP",
       "comment s'inscrire au chomage",
@@ -2257,9 +2257,9 @@
       "rendez-vous ORP"
     ],
     "negative_signals": [
-      "question sur le montant des indemnites uniquement",
+      "question sur le montant des indemnités uniquement",
       "recherche d'emploi sans être au chomage",
-      "inscription a l'aide sociale"
+      "inscription à l'aide sociale"
     ],
     "required_facts": [
       "date de fin du contrat",
@@ -2276,7 +2276,7 @@
       "délai",
       "conge",
       "résiliation",
-      "preavis",
+      "préavis",
       "fin contrat"
     ],
     "questions": [
@@ -2284,7 +2284,7 @@
         "id": "q1",
         "text": "Anciennete ?",
         "options": [
-          "periode d essai",
+          "période d essai",
           "<1 an",
           "1-9 ans",
           ">9 ans"
@@ -2339,10 +2339,10 @@
       "jurisprudence": [
         {
           "ref": "TF 4A_56/2013",
-          "resume": "Le conge doit parvenir a l employe avant le debut du délai de preavis ; un envoi tardif reporte au terme suivant."
+          "resume": "Le conge doit parvenir a l employé avant le debut du délai de préavis ; un envoi tardif reporte au terme suivant."
         }
       ],
-      "modeleLettre": "Objet : Resiliation du contrat de travail\n\nMadame, Monsieur,\n\nPar la présente, je vous notifie la résiliation de mon contrat de travail avec effet au [date], en respectant le délai de [1/2/3] mois prévu par [le contrat / l art. 335c CO].\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Resiliation du contrat de travail\n\nMadame, Monsieur,\n\nPar la présente, je vous notifié la résiliation de mon contrat de travail avec effet au [DATE], en respectant le délai de [1/2/3] mois prévu par [LE CONTRAT / L ART. 335C CO].\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Syndicat Unia Vaud",
@@ -2358,28 +2358,28 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
-    "match_description": "L'employe ou l'employeur veut connaitre le délai de preavis applicable pour mettre fin au contrat.",
+    "match_description": "L'employé ou l'employeur veut connaitre le délai de préavis applicable pour mettre fin au contrat.",
     "profane_aliases": [
-      "délai de preavis",
+      "délai de préavis",
       "combien de temps avant de partir",
-      "preavis de licenciement",
+      "préavis de licenciement",
       "quand est-ce que mon contrat se termine",
       "délai pour demissionner"
     ],
     "negative_signals": [
       "résiliation immédiate pour justes motifs",
-      "fin de contrat a durée determinee",
+      "fin de contrat a durée déterminée",
       "accord mutuel de résiliation"
     ],
     "required_facts": [
       "ancienneté",
-      "ce que dit le contrat sur le preavis",
+      "ce que dit le contrat sur le préavis",
       "CCT applicable ou non",
-      "periode d'essai en cours ou non"
+      "période d'essai en cours ou non"
     ]
   },
   {
@@ -2387,7 +2387,7 @@
     "domaine": "travail",
     "sousDomaine": "résiliation",
     "tags": [
-      "indemnite",
+      "indemnité",
       "depart",
       "ancienneté",
       "licenciement",
@@ -2427,7 +2427,7 @@
         "text": "Qui a résilié ?",
         "options": [
           "employeur",
-          "employe"
+          "employé"
         ]
       },
       {
@@ -2437,7 +2437,7 @@
       }
     ],
     "reponse": {
-      "explication": "L indemnite de depart (art. 339b CO) est due aux travailleurs de plus de 50 ans avec 20 ans de service minimum. Le montant est de 2 mois de salaire pour 20 ans, augmentant jusqu a 8 mois pour des rapports de tres longue durée (art. 339c CO). Les prestations de la caisse de pension (LPP) sont deduites de l indemnite dans la mesure ou elles ont ete financees par l employeur (art. 339d CO). En pratique, avec la généralisation du 2e pilier, l indemnite est souvent reduite a zero. Le contrat ou la CCT peut prevoir des indemnites plus favorables. L indemnite n est pas due si le travailleur demissionne ou est licencie pour faute grave.",
+      "explication": "L indemnité de depart (art. 339b CO) est due aux travailleurs de plus de 50 ans avec 20 ans de service minimum. Le montant est de 2 mois de salaire pour 20 ans, augmentant jusqu a 8 mois pour des rapports de tres longue durée (art. 339c CO). Les prestations de la caisse de pension (LPP) sont deduites de l indemnité dans la mesure ou elles ont été financees par l employeur (art. 339d CO). En pratique, avec la généralisation du 2e pilier, l indemnité est souvent réduite a zero. Le contrat ou la CCT peut prevoir des indemnités plus favorables. L indemnité n est pas due si le travailleur demissionne ou est licencié pour faute grave.",
       "articles": [
         {
           "ref": "CO 339b",
@@ -2446,7 +2446,7 @@
         },
         {
           "ref": "CO 339c",
-          "titre": "Montant de l indemnite",
+          "titre": "Montant de l indemnité",
           "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_339_c"
         },
         {
@@ -2458,7 +2458,7 @@
       "jurisprudence": [
         {
           "ref": "TF 4A_194/2011",
-          "resume": "Les prestations LPP financees par l employeur sont deduites de l indemnite de depart."
+          "resume": "Les prestations LPP financees par l employeur sont deduites de l indemnité de depart."
         }
       ],
       "modeleLettre": "",
@@ -2477,25 +2477,25 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
-    "match_description": "L'employe de longue date veut savoir s'il a droit à une indemnite de depart après son licenciement.",
+    "match_description": "L'employé de longue date veut savoir s'il a droit à une indemnité de depart après son licenciement.",
     "profane_aliases": [
-      "indemnite de depart",
+      "indemnité de depart",
       "prime de licenciement",
       "compensation après 20 ans",
-      "indemnite ancienneté",
+      "indemnité ancienneté",
       "mon patron me doit quelque chose après tant d'annees"
     ],
     "negative_signals": [
-      "indemnite pour licenciement abusif (autre fiche)",
+      "indemnité pour licenciement abusif (autre fiche)",
       "solde de vacances",
-      "demission volontaire d'un jeune employe"
+      "demission volontaire d'un jeune employé"
     ],
     "required_facts": [
-      "age de l'employe",
+      "age de l'employé",
       "nombre d'annees de service",
       "prevoyance professionnelle (LPP) existante",
       "motif de fin de contrat"
@@ -2545,7 +2545,7 @@
       },
       {
         "id": "q4",
-        "text": "Employeur affilie a une association patronale ?",
+        "text": "Employeur affilie à une association patronale ?",
         "options": [
           "oui",
           "non",
@@ -2563,7 +2563,7 @@
       "articles": [
         {
           "ref": "CO 356",
-          "titre": "Convention collective — definition",
+          "titre": "Convention collective — définition",
           "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_356"
         },
         {
@@ -2599,11 +2599,11 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
-    "match_description": "L'employe veut savoir si une convention collective s'applique a son cas et quels droits supplémentaires elle donne.",
+    "match_description": "L'employé veut savoir si une convention collective s'applique a son cas et quels droits supplémentaires elle donne.",
     "profane_aliases": [
       "convention collective",
       "CCT applicable",
@@ -2613,14 +2613,14 @@
     ],
     "negative_signals": [
       "question uniquement sur le CO sans CCT",
-      "employe du secteur public (droit public)",
-      "indépendant sans employes"
+      "employé du secteur public (droit public)",
+      "indépendant sans employés"
     ],
     "required_facts": [
       "branche d'activité",
       "canton",
       "employeur membre d'une association patronale ou non",
-      "probleme precis (salaire, vacances, etc.)"
+      "probleme précis (salaire, vacances, etc.)"
     ]
   },
   {
@@ -2680,7 +2680,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le travail temporaire (location de services) est régi par la LSE (art. 12 ss). L agence (bailleur) est l employeur juridique du travailleur. Elle doit detenir une autorisation cantonale. Le contrat de mission doit être écrit (art. 19 LSE). Le travailleur temporaire a droit aux memes conditions de salaire et de travail que les employes fixes de l entreprise utilisatrice pour un travail equivalent (CCT applicable). L agence doit versér les cotisations sociales (AVS/AI/APG/AC) et l assurance-accidents. Après 3 mois de mission continue chez le même utilisateur, la protection contre le licenciement en temps inopportun s applique. La CCT Location de services fixe des minima salariaux par branche.",
+      "explication": "Le travail temporaire (location de services) est régi par la LSE (art. 12 ss). L agence (bailleur) est l employeur juridique du travailleur. Elle doit detenir une autorisation cantonale. Le contrat de mission doit être écrit (art. 19 LSE). Le travailleur temporaire a droit aux memes conditions de salaire et de travail que les employés fixes de l entreprise utilisatrice pour un travail equivalent (CCT applicable). L agence doit versér les cotisations sociales (AVS/AI/APG/AC) et l assurance-accidents. Après 3 mois de mission continue chez le même utilisateur, la protection contre le licenciement en temps inopportun s applique. La CCT Location de services fixe des minima salariaux par branche.",
       "articles": [
         {
           "ref": "LSE 12",
@@ -2701,7 +2701,7 @@
       "jurisprudence": [
         {
           "ref": "TF 4A_428/2010",
-          "resume": "Le travailleur temporaire a droit au même salaire que les employes permanents de l entreprise utilisatrice pour un poste equivalent."
+          "resume": "Le travailleur temporaire a droit au même salaire que les employés permanents de l entreprise utilisatrice pour un poste equivalent."
         }
       ],
       "modeleLettre": "",
@@ -2725,7 +2725,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "LSE état 2025-01-01",
@@ -2735,7 +2735,7 @@
       "travail temporaire droits",
       "agence de placement probleme",
       "mission temporaire",
-      "employe d'une agence"
+      "employé d'une agence"
     ],
     "negative_signals": [
       "CDD classique directement avec l'employeur",
@@ -2745,8 +2745,8 @@
     "required_facts": [
       "nom de l'agence",
       "durée de la mission",
-      "contrat signe avec l'agence ou non",
-      "probleme precis (salaire, fin de mission, accident)"
+      "contrat signé avec l'agence ou non",
+      "probleme précis (salaire, fin de mission, accident)"
     ]
   },
   {
@@ -2768,7 +2768,7 @@
           "obligatoire (formation)",
           "post-formation",
           "reconversion",
-          "non defini"
+          "non défini"
         ]
       },
       {
@@ -2805,11 +2805,11 @@
       }
     ],
     "reponse": {
-      "explication": "Le stagiaire est un travailleur au sens du CO si un lien de subordination existe (art. 319 CO). Il a droit aux memes protections : salaire, vacances, protection contre le licenciement. Un stage gratuit n est admis que si la formation est l élément preponderant. Si le stagiaire effectué un travail productif, il doit être rémunéré. Les stages de plus de 3 mois doivent être declares aux assurances sociales (AVS/AI/APG). La LTr (protection de la sante, temps de travail) s applique aux stagiaires. Un stage qui se prolonge sans objectif de formation defini risque d être requalifie en contrat de travail ordinaire.",
+      "explication": "Le stagiaire est un travailleur au sens du CO si un lien de subordination existe (art. 319 CO). Il a droit aux memes protections : salaire, vacances, protection contre le licenciement. Un stage gratuit n est admis que si la formation est l élément preponderant. Si le stagiaire effectué un travail productif, il doit être rémunéré. Les stages de plus de 3 mois doivent être declares aux assurances sociales (AVS/AI/APG). La LTr (protection de la sante, temps de travail) s applique aux stagiaires. Un stage qui se prolonge sans objectif de formation défini risque d être requalifie en contrat de travail ordinaire.",
       "articles": [
         {
           "ref": "CO 319",
-          "titre": "Contrat de travail — definition",
+          "titre": "Contrat de travail — définition",
           "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_319"
         },
         {
@@ -2840,16 +2840,16 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
-    "match_description": "Le stagiaire veut savoir s'il a droit à un salaire et aux memes protections qu'un employe.",
+    "match_description": "Le stagiaire veut savoir s'il a droit à un salaire et aux memes protections qu'un employé.",
     "profane_aliases": [
       "droits du stagiaire",
       "stage non payé",
       "stage exploite",
-      "stagiaire ou employe deguise",
+      "stagiaire ou employé deguise",
       "mon stage n'est pas un vrai stage"
     ],
     "negative_signals": [
@@ -2861,7 +2861,7 @@
       "durée du stage",
       "rémunération ou non",
       "contenu reel du travail effectué",
-      "convention de stage signee ou non",
+      "convention de stage signée ou non",
       "lien avec une formation"
     ]
   },
@@ -2900,7 +2900,7 @@
       },
       {
         "id": "q3",
-        "text": "Formateur en entreprise designe ?",
+        "text": "Formateur en entreprise désigné ?",
         "options": [
           "oui",
           "non"
@@ -2921,11 +2921,11 @@
       }
     ],
     "reponse": {
-      "explication": "Le contrat d apprentissage (art. 344-346a CO) est un contrat de travail spécial. La periode d essai est de 1 a 3 mois (art. 344a al. 5 CO). Après l essai, la résiliation n est possible que pour justes motifs (art. 346 CO) ou par accord des parties avec l approbation de l autorite cantonale. L employeur doit former l apprenti conformement au plan de formation et ne peut pas l utiliser principalement pour un travail productif. L apprenti a droit aux vacances (5 semaines jusqu a 20 ans, art. 345a al. 3 CO), aux jours de cours (art. 345a al. 2 CO), et a un salaire. En cas de conflit, l office cantonal de la formation professionnelle peut intervenir comme mediateur.",
+      "explication": "Le contrat d apprentissage (art. 344-346a CO) est un contrat de travail spécial. La période d essai est de 1 a 3 mois (art. 344a al. 5 CO). Après l essai, la résiliation n est possible que pour justes motifs (art. 346 CO) ou par accord des parties avec l approbation de l autorite cantonale. L employeur doit former l apprenti conformement au plan de formation et ne peut pas l utiliser principalement pour un travail productif. L apprenti a droit aux vacances (5 semaines jusqu a 20 ans, art. 345a al. 3 CO), aux jours de cours (art. 345a al. 2 CO), et à un salaire. En cas de conflit, l office cantonal de la formation professionnelle peut intervenir comme mediateur.",
       "articles": [
         {
           "ref": "CO 344",
-          "titre": "Contrat d apprentissage — definition",
+          "titre": "Contrat d apprentissage — définition",
           "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_344"
         },
         {
@@ -2976,7 +2976,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -2990,13 +2990,13 @@
     ],
     "negative_signals": [
       "stagiaire (autre fiche)",
-      "etudiant en job d'ete",
+      "etudiant en job d'été",
       "formation continue d'un adulte"
     ],
     "required_facts": [
       "annee d'apprentissage",
       "type de formation (CFC, AFP)",
-      "probleme precis",
+      "probleme précis",
       "commissaire professionnel contacte ou non"
     ]
   },
@@ -3027,7 +3027,7 @@
         "options": [
           "pas versé",
           "montant incorrect",
-          "pro rata conteste",
+          "pro rata contesté",
           "supprime"
         ]
       },
@@ -3041,7 +3041,7 @@
       },
       {
         "id": "q4",
-        "text": "En periode d essai ?",
+        "text": "En période d essai ?",
         "options": [
           "oui",
           "non"
@@ -3054,7 +3054,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le 13e salaire n est pas prévu par la loi mais par le contrat, la CCT ou l usage. S il est contractuellement prévu, il est un élément du salaire et ne peut pas être supprime unilateralement. En cas de depart en cours d année, le 13e est du pro rata temporis sauf clause contraire valable. La distinction entre 13e salaire (du dans tous les cas) et gratification (a discretion de l employeur) est importante : le 13e est un droit, la gratification est en principe facultative. Si une gratification est versée régulièrement pendant 3 ans consecutifs sans reserve, elle peut devenir un droit acquis.",
+      "explication": "Le 13e salaire n est pas prévu par la loi mais par le contrat, la CCT ou l usage. S il est contractuellement prévu, il est un élément du salaire et ne peut pas être supprime unilateralement. En cas de depart en cours d année, le 13e est du pro rata temporis sauf clause contraire valable. La distinction entre 13e salaire (du dans tous les cas) et gratification (a discretion de l employeur) est importante : le 13e est un droit, la gratification est en principe facultative. Si une gratification est versée régulièrement pendant 3 ans consecutifs sans réserve, elle peut devenir un droit acquis.",
       "articles": [
         {
           "ref": "CO 322",
@@ -3074,10 +3074,10 @@
         },
         {
           "ref": "TF 4A_172/2012",
-          "resume": "Une gratification versée sans reserve pendant 3 ans consecutifs devient un droit acquis."
+          "resume": "Une gratification versée sans réserve pendant 3 ans consecutifs devient un droit acquis."
         }
       ],
-      "modeleLettre": "Objet : Reclamation du 13e salaire\n\nMadame, Monsieur,\n\nConformément a [mon contrat / la CCT applicable], je n ai pas reçu le 13e salaire pour l année [annee] / le pro rata pour la periode du [date] au [date].\n\nJe vous prie de procéder au versément dans un délai de 10 jours.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Reclamation du 13e salaire\n\nMadame, Monsieur,\n\nConformément à [MON CONTRAT / LA CCT APPLICABLE], je n ai pas reçu le 13e salaire pour l année [ANNEE] / le pro rata pour la période du [DATE] au [DATE].\n\nJe vous prie de procéder au versément dans un délai de 10 jours.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Syndicat Unia Vaud",
@@ -3093,11 +3093,11 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
-    "match_description": "L'employe veut savoir s'il a droit au 13e salaire et si son patron doit le payer.",
+    "match_description": "L'employé veut savoir s'il a droit au 13e salaire et si son patron doit le payer.",
     "profane_aliases": [
       "13e salaire",
       "treizieme pas payé",
@@ -3150,7 +3150,7 @@
       },
       {
         "id": "q3",
-        "text": "Clause de reserve écrite ?",
+        "text": "Clause de réserve écrite ?",
         "options": [
           "oui",
           "non",
@@ -3174,7 +3174,7 @@
       }
     ],
     "reponse": {
-      "explication": "La gratification (bonus) est en principe facultative et a la discretion de l employeur (art. 322d CO). Toutefois, elle devient obligatoire si : (1) elle est fixee dans le contrat, (2) elle est versée régulièrement pendant au moins 3 ans sans reserve de caractere facultatif. Si le montant est determine ou determinable, elle est assimilee a du salaire. Pour les tres hauts salaires (>5x le salaire median suisse), le TF considere que le bonus reste discretionnaire même en cas de verséments répétés. L employeur qui supprime un bonus devenu obligatoire doit respecter un conge-modification.",
+      "explication": "La gratification (bonus) est en principe facultative et à la discretion de l employeur (art. 322d CO). Toutefois, elle devient obligatoire si : (1) elle est fixee dans le contrat, (2) elle est versée régulièrement pendant au moins 3 ans sans réserve de caractere facultatif. Si le montant est déterminé ou determinable, elle est assimilee a du salaire. Pour les tres hauts salaires (>5x le salaire median suisse), le TF considere que le bonus reste discretionnaire même en cas de verséments répétés. L employeur qui supprime un bonus devenu obligatoire doit respecter un conge-modification.",
       "articles": [
         {
           "ref": "CO 322d",
@@ -3190,7 +3190,7 @@
       "jurisprudence": [
         {
           "ref": "TF 4A_172/2012",
-          "resume": "Gratification versée 3 ans sans reserve : droit acquis, l employeur ne peut plus la supprimer."
+          "resume": "Gratification versée 3 ans sans réserve : droit acquis, l employeur ne peut plus la supprimer."
         },
         {
           "ref": "TF 4A_513/2017",
@@ -3213,16 +3213,16 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
-    "match_description": "L'employe veut savoir si son bonus ou sa prime est obligatoire ou si l'employeur peut la supprimer.",
+    "match_description": "L'employé veut savoir si son bonus ou sa prime est obligatoire ou si l'employeur peut la supprimer.",
     "profane_aliases": [
       "bonus supprime",
       "prime pas versée",
       "gratification obligatoire ou pas",
-      "mon bonus a ete coupe",
+      "mon bonus a été coupe",
       "droit au bonus annuel"
     ],
     "negative_signals": [
@@ -3313,7 +3313,7 @@
           "resume": "L obligation de rembourser les frais professionnels est imperative ; un forfait insuffisant doit être complete."
         }
       ],
-      "modeleLettre": "Objet : Demande de remboursement de frais professionnels\n\nMadame, Monsieur,\n\nConformément a l art. 327a CO, je vous demande le remboursement des frais professionnels suivants engages dans le cadre de mon travail :\n- [Type de frais] : CHF [montant] (justificatif joint)\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Demande de remboursement de frais professionnels\n\nMadame, Monsieur,\n\nConformément a l art. 327a CO, je vous demande le remboursement des frais professionnels suivants engages dans le cadre de mon travail :\n- [TYPE DE FRAIS] : CHF [MONTANT] (justificatif joint)\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Syndicat Unia Vaud",
@@ -3329,11 +3329,11 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
-    "match_description": "L'employe a des frais lies a son travail et veut savoir si l'employeur doit les rembourser.",
+    "match_description": "L'employé à des frais lies a son travail et veut savoir si l'employeur doit les rembourser.",
     "profane_aliases": [
       "frais pas rembourses",
       "frais de deplacement",
@@ -3347,7 +3347,7 @@
       "frais de formation volontaire"
     ],
     "required_facts": [
-      "type de frais (deplacement, repas, materiel)",
+      "type de frais (deplacement, repas, matériel)",
       "accord écrit ou reglement interne",
       "montants engages",
       "forfait frais existant ou non"
@@ -3358,9 +3358,9 @@
     "domaine": "travail",
     "sousDomaine": "protection",
     "tags": [
-      "donnees",
+      "données",
       "protection",
-      "employe",
+      "employé",
       "personnel",
       "vie privee"
     ],
@@ -3370,7 +3370,7 @@
         "text": "Probleme ?",
         "options": [
           "acces au dossier personnel refuse",
-          "donnees transmises a des tiers",
+          "données transmises à des tiers",
           "collecte excessive",
           "cameras/surveillance"
         ]
@@ -3386,7 +3386,7 @@
       },
       {
         "id": "q3",
-        "text": "L employeur a-t-il un reglement de protection des donnees ?",
+        "text": "L employeur a-t-il un reglement de protection des données ?",
         "options": [
           "oui",
           "non",
@@ -3411,11 +3411,11 @@
       }
     ],
     "reponse": {
-      "explication": "L employeur ne peut traiter les donnees de l employe que dans la mesure ou elles sont nécessaires au rapport de travail (art. 328b CO). La nouvelle LPD (2023) renforce les droits : droit d acces (art. 25 LPD), droit de rectification, droit à l effacement. L employeur ne peut pas collecter de donnees sur la sante au-dela de ce qui est nécessaire pour le poste. La transmission de donnees a des tiers (nouveau employeur, assureur) nécessité le consentement sauf obligation légale. Le dossier personnel doit être accessible a l employe sur demande. Les references professionnelles ne peuvent être donnees qu avec l accord de l employe.",
+      "explication": "L employeur ne peut traiter les données de l employé que dans la mesure ou elles sont nécessaires au rapport de travail (art. 328b CO). La nouvelle LPD (2023) renforce les droits : droit d acces (art. 25 LPD), droit de rectification, droit à l effacement. L employeur ne peut pas collecter de données sur la sante au-dela de ce qui est nécessaire pour le poste. La transmission de données à des tiers (nouveau employeur, assureur) nécessité le consentement sauf obligation légale. Le dossier personnel doit être accessible a l employé sur demande. Les références professionnelles ne peuvent être données qu avec l accord de l employé.",
       "articles": [
         {
           "ref": "CO 328b",
-          "titre": "Protection des donnees personnelles",
+          "titre": "Protection des données personnelles",
           "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_328_b"
         },
         {
@@ -3430,7 +3430,7 @@
           "resume": "L employeur qui refuse l acces au dossier personnel viole l art. 328b CO et la LPD."
         }
       ],
-      "modeleLettre": "Objet : Demande d acces a mes donnees personnelles\n\nMadame, Monsieur,\n\nConformément a l art. 25 LPD et a l art. 328b CO, je demande l acces a l intégralité des donnees me concernant detenues par l entreprise, y compris mon dossier personnel.\n\nJe vous prie de me transmettre ces informations dans un délai de 30 jours.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Demande d acces à mes données personnelles\n\nMadame, Monsieur,\n\nConformément a l art. 25 LPD et a l art. 328b CO, je demande l acces a l intégralité des données me concernant detenues par l entreprise, y compris mon dossier personnel.\n\nJe vous prie de me transmettre ces informations dans un délai de 30 jours.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Syndicat Unia Vaud",
@@ -3445,31 +3445,31 @@
           "canton": "GE"
         },
         {
-          "nom": "Preopose fédéral a la protection des donnees (PFPDT)",
+          "nom": "Preopose fédéral à la protection des données (PFPDT)",
           "url": "https://www.edoeb.admin.ch",
           "canton": "VD"
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO/LPD état 2025-01-01",
-    "match_description": "L'employe veut savoir ce que son employeur a le droit de faire avec ses donnees personnelles.",
+    "match_description": "L'employé veut savoir ce que son employeur au droit de faire avec ses données personnelles.",
     "profane_aliases": [
-      "donnees personnelles au travail",
-      "mon patron fouille mes donnees",
+      "données personnelles au travail",
+      "mon patron fouille mes données",
       "vie privee au bureau",
-      "employeur qui consulte mon dossier",
-      "protection donnees employe"
+      "employeur qui consulté mon dossier",
+      "protection données employé"
     ],
     "negative_signals": [
       "surveillance video (autre fiche)",
       "question sur la LPD sans lien avec l'emploi",
-      "protection des donnees clients"
+      "protection des données clients"
     ],
     "required_facts": [
-      "type de donnees concernees",
+      "type de données concernees",
       "ce que l'employeur fait ou veut faire",
       "consentement donne ou non",
       "reglement interne existant"
@@ -3492,7 +3492,7 @@
         "text": "Type de surveillance ?",
         "options": [
           "cameras",
-          "GPS vehicule",
+          "GPS véhicule",
           "logiciel sur PC",
           "emails lus",
           "telephone ecoute"
@@ -3500,7 +3500,7 @@
       },
       {
         "id": "q2",
-        "text": "En avez-vous ete informe ?",
+        "text": "En avez-vous été informé ?",
         "options": [
           "oui",
           "non"
@@ -3508,7 +3508,7 @@
       },
       {
         "id": "q3",
-        "text": "Reglement d utilisation signe ?",
+        "text": "Reglement d utilisation signé ?",
         "options": [
           "oui",
           "non",
@@ -3530,7 +3530,7 @@
       }
     ],
     "reponse": {
-      "explication": "La surveillance des employes est encadree par l art. 26 OLT 3 (interdiction des systemes de surveillance du comportement) et l art. 328 CO (protection de la personnalite). Les cameras dans les espaces de travail a des fins de controle du comportement sont interdites. La surveillance electronique (emails, internet) n est admise qu après avertissement prealable et pour des motifs objectifs (securite, productivite). Le GPS sur un vehicule professionnel est admis pour des raisons logistiques, pas pour surveiller le comportement. La lecture des emails prives est interdite. En cas de soupcon d infraction, l employeur peut procéder a un controle cible mais doit d abord avertir l employe.",
+      "explication": "La surveillance des employés est encadree par l art. 26 OLT 3 (interdiction des systemes de surveillance du comportement) et l art. 328 CO (protection de la personnalite). Les cameras dans les espaces de travail à des fins de controle du comportement sont interdites. La surveillance electronique (emails, internet) n est admise qu après avertissement prealable et pour des motifs objectifs (sécurité, productivite). Le GPS sur un véhicule professionnel est admis pour des raisons logistiques, pas pour surveiller le comportement. La lecture des emails prives est interdite. En cas de soupcon d infraction, l employeur peut procéder à un controle cible mais doit d abord avertir l employé.",
       "articles": [
         {
           "ref": "CO 328",
@@ -3539,18 +3539,18 @@
         },
         {
           "ref": "CO 328b",
-          "titre": "Protection des donnees",
+          "titre": "Protection des données",
           "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_328_b"
         }
       ],
       "jurisprudence": [
         {
           "ref": "TF 1C_582/2012",
-          "resume": "Le GPS sur le vehicule professionnel est admissible a des fins logistiques mais pas pour surveiller le comportement de l employe."
+          "resume": "Le GPS sur le véhicule professionnel est admissible à des fins logistiques mais pas pour surveiller le comportement de l employé."
         },
         {
           "ref": "TF 6B_536/2009",
-          "resume": "La lecture des emails prives de l employe sans avertissement prealable viole la personnalite."
+          "resume": "La lecture des emails prives de l employé sans avertissement prealable viole la personnalite."
         }
       ],
       "modeleLettre": "",
@@ -3574,27 +3574,27 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO/OLT 3 état 2025-01-01",
-    "match_description": "L'employe est surveille par son employeur (cameras, GPS, emails) et veut savoir si c'est légal.",
+    "match_description": "L'employé est surveille par son employeur (cameras, GPS, emails) et veut savoir si c'est légal.",
     "profane_aliases": [
       "cameras au travail",
       "patron qui lit mes emails",
-      "GPS sur le vehicule de fonction",
+      "GPS sur le véhicule de fonction",
       "surveillance au bureau",
       "employeur qui espionne"
     ],
     "negative_signals": [
-      "surveillance justifiee pour la securite (banque, bijouterie)",
-      "controle de qualite transparent et annonce",
-      "video de securite dans un lieu public"
+      "surveillance justifiee pour la sécurité (banque, bijouterie)",
+      "controle de qualite transparent et annoncé",
+      "video de sécurité dans un lieu public"
     ],
     "required_facts": [
       "type de surveillance (camera, GPS, email, logiciel)",
-      "employes informes ou non",
-      "but declare de la surveillance",
+      "employés informes ou non",
+      "but déclaré de la surveillance",
       "reglement interne ou accord"
     ]
   },
@@ -3614,10 +3614,10 @@
         "id": "q1",
         "text": "De quoi s agit-il ?",
         "options": [
-          "reference telephonique negative",
+          "référencée telephonique negative",
           "certificat de travail negatif",
           "diffamation",
-          "refus de donner des references"
+          "refus de donner des références"
         ]
       },
       {
@@ -3639,7 +3639,7 @@
       },
       {
         "id": "q4",
-        "text": "L ancien employeur a-t-il ete contacte ?",
+        "text": "L ancien employeur a-t-il été contacte ?",
         "options": [
           "oui par un recruteur",
           "oui par moi",
@@ -3653,7 +3653,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le certificat de travail doit être veridique et bienveillant (art. 330a CO). L ancien employeur qui donne des references fausses ou exagerement negatives engage sa responsabilité (art. 328 CO, art. 41 CO). Les references doivent être objectives et factuelles. L employe peut demander la modification d un certificat de travail inexact ou excessivement negatif. L ancien employeur ne peut pas communiquer des informations sans rapport avec le travail (vie privee, sante, opinions politiques). Le travailleur peut interdire la prise de references. Si l employe perd un emploi a cause d une reference injustifiee, il peut réclamer des dommages-interets.",
+      "explication": "Le certificat de travail doit être veridique et bienveillant (art. 330a CO). L ancien employeur qui donne des références fausses ou exagerement negatives engage sa responsabilité (art. 328 CO, art. 41 CO). Les références doivent être objectives et factuelles. L employé peut demander la modification d un certificat de travail inexact ou excessivement negatif. L ancien employeur ne peut pas communiquer des informations sans rapport avec le travail (vie privee, sante, opinions politiques). Le travailleur peut interdire la prise de références. Si l employé perd un emploi a cause d une référencée injustifiee, il peut réclamer des dommages-intérêts.",
       "articles": [
         {
           "ref": "CO 330a",
@@ -3669,14 +3669,14 @@
       "jurisprudence": [
         {
           "ref": "TF 4A_117/2007",
-          "resume": "L ancien employeur qui donne des references fausses et cause un prejudice au travailleur doit réparer le dommage."
+          "resume": "L ancien employeur qui donne des références fausses et cause un préjudice au travailleur doit réparer le dommage."
         },
         {
           "ref": "TF 4A_137/2014",
-          "resume": "Le certificat de travail doit être a la fois veridique et bienveillant ; en cas de conflit, la verite prime."
+          "resume": "Le certificat de travail doit être à la fois veridique et bienveillant ; en cas de conflit, la verite prime."
         }
       ],
-      "modeleLettre": "Objet : Demande de modification du certificat de travail\n\nMadame, Monsieur,\n\nLe certificat de travail du [date] contient les éléments suivants que je conteste : [description].\n\nConformément a l art. 330a CO, je vous demande de modifier le certificat pour qu il soit objectif et bienveillant.\n\nA défaut de réponse dans 15 jours, je saisirai le tribunal compétent.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Demande de modification du certificat de travail\n\nMadame, Monsieur,\n\nLe certificat de travail du [DATE] contient les éléments suivants que je contesté : [DESCRIPTION].\n\nConformément a l art. 330a CO, je vous demande de modifier le certificat pour qu il soit objectif et bienveillant.\n\nA défaut de réponse dans 15 jours, je saisirai le tribunal compétent.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Syndicat Unia Vaud",
@@ -3692,26 +3692,26 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
-    "match_description": "L'ancien employeur donne de mauvaises references et cela empeche l'employe de retrouver du travail.",
+    "match_description": "L'ancien employeur donne de mauvaises références et cela empeche l'employé de retrouver du travail.",
     "profane_aliases": [
-      "mauvaise reference",
+      "mauvaise référencée",
       "ancien patron qui dit du mal",
-      "reference negative qui empeche de trouver un job",
+      "référencée negative qui empeche de trouver un job",
       "ancien employeur qui sabote",
-      "reference telephonique negative"
+      "référencée telephonique negative"
     ],
     "negative_signals": [
       "certificat de travail écrit (autre fiche)",
-      "reference honnete sur un point faible reel",
+      "référencée honnete sur un point faible reel",
       "question sur le CV"
     ],
     "required_facts": [
-      "contenu de la reference negative",
-      "comment l'employe l'a appris",
+      "contenu de la référencée negative",
+      "comment l'employé l'a appris",
       "preuves (temoignage du nouvel employeur)",
       "certificat de travail écrit déjà en possession"
     ]
@@ -3724,7 +3724,7 @@
       "chomage",
       "ORP",
       "LACI",
-      "indemnites",
+      "indemnités",
       "inscription",
       "délai-cadre",
       "cotisation"
@@ -3734,7 +3734,7 @@
         "id": "q1",
         "text": "Quelle est votre situation ?",
         "options": [
-          "licencie",
+          "licencié",
           "fin CDD",
           "demission",
           "indépendant",
@@ -3762,7 +3762,7 @@
       },
       {
         "id": "q4",
-        "text": "Êtes-vous déjà inscrit a l'ORP ?",
+        "text": "Êtes-vous déjà inscrit à l'ORP ?",
         "options": [
           "oui",
           "non"
@@ -3775,11 +3775,11 @@
       }
     ],
     "reponse": {
-      "explication": "Le droit aux indemnites de chomage est régi par la LACI (loi sur l'assurance-chomage). Pour en bénéficier, il faut avoir cotise au moins 12 mois au cours des 2 années precedant l'inscription (délai-cadre de cotisation, art. 13 LACI). L'inscription auprès de l'ORP (Office régional de placement) doit se faire des le premier jour de chomage ou au plus tard le jour suivant la fin du contrat (art. 10 LACI). Un retard entraine des jours de suspension. L'indemnite s'élevé a 70% du gain assuré (80% avec enfants a charge ou si le salaire est inférieur a CHF 3'797, art. 22 LACI). La durée maximale est de 400 indemnites journalieres (520 pour les 55 ans et plus ayant cotise 22 mois). En cas de demission sans justes motifs, une suspension de 31 a 60 jours s'applique (art. 30 al. 1 let. a LACI). Le demandeur d'emploi a l'obligation de rechercher activement un emploi (min. 8-12 postulations/mois selon le canton).",
+      "explication": "Le droit aux indemnités de chomage est régi par la LACI (loi sur l'assurance-chomage). Pour en bénéficier, il faut avoir cotise au moins 12 mois au cours des 2 années precedant l'inscription (délai-cadre de cotisation, art. 13 LACI). L'inscription auprès de l'ORP (Office régional de placement) doit se faire des le premier jour de chomage ou au plus tard le jour suivant la fin du contrat (art. 10 LACI). Un retard entraine des jours de suspension. L'indemnité s'élevé a 70% du gain assuré (80% avec enfants a charge ou si le salaire est inférieur a CHF 3'797, art. 22 LACI). La durée maximale est de 400 indemnités journalieres (520 pour les 55 ans et plus ayant cotise 22 mois). En cas de demission sans justes motifs, une suspension de 31 a 60 jours s'applique (art. 30 al. 1 let. a LACI). Le demandeur d'emploi à l'obligation de rechercher activement un emploi (min. 8-12 postulations/mois selon le canton).",
       "articles": [
         {
           "ref": "LACI 8",
-          "titre": "Droit a l'indemnite",
+          "titre": "Droit à l'indemnité",
           "lien": "https://www.fedlex.admin.ch/eli/cc/1982/2184_2184_2184/fr#art_8"
         },
         {
@@ -3789,12 +3789,12 @@
         },
         {
           "ref": "LACI 22",
-          "titre": "Montant de l'indemnite journaliere",
+          "titre": "Montant de l'indemnité journaliere",
           "lien": "https://www.fedlex.admin.ch/eli/cc/1982/2184_2184_2184/fr#art_22"
         },
         {
           "ref": "LACI 30",
-          "titre": "Suspension du droit à l'indemnite",
+          "titre": "Suspension du droit à l'indemnité",
           "lien": "https://www.fedlex.admin.ch/eli/cc/1982/2184_2184_2184/fr#art_30"
         }
       ],
@@ -3805,10 +3805,10 @@
         },
         {
           "ref": "TF 8C_82/2019",
-          "resume": "L'inscription tardive a l'ORP ne fait pas perdre le droit aux indemnites mais entraine une suspension proportionnelle au retard."
+          "resume": "L'inscription tardive à l'ORP ne fait pas perdre le droit aux indemnités mais entraine une suspension proportionnelle au retard."
         }
       ],
-      "modeleLettre": "Objet : Inscription au chomage\n\nMadame, Monsieur,\n\nJe soussigné(e) [nom, prenom], ne(e) le [date], domicilié(e) a [adresse], me permets de vous informer que mon contrat de travail auprès de [employeur] a pris fin le [date] pour cause de [licenciement/fin CDD].\n\nJe souhaite m'inscrire comme demandeur d'emploi auprès de votre office des le [date du premier jour de chomage].\n\nVeuillez trouver ci-joint les documents suivants :\n- Lettre de licenciement / attestation de fin de contrat\n- Certificat de travail\n- Formulaire d'inscription dument rempli\n- Pieces d'identite\n\nJe reste a votre disposition pour tout complement.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Inscription au chomage\n\nMadame, Monsieur,\n\nJe soussigné(e) [NOM, PRENOM], né(e) le [DATE], domicilié(e) a [ADRESSE], me permets de vous informer que mon contrat de travail auprès de [EMPLOYEUR] a pris fin le [DATE] pour cause de [LICENCIEMENT/FIN CDD].\n\nJe souhaite m'inscrire comme demandeur d'emploi auprès de votre office des le [DATE DU PREMIER JOUR DE CHOMAGE].\n\nVeuillez trouver ci-joint les documents suivants :\n- Lettre de licenciement / attestation de fin de contrat\n- Certificat de travail\n- Formulaire d'inscription dument rempli\n- Pieces d'identite\n\nJe reste à votre disposition pour tout complement.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "ORP Lausanne",
@@ -3834,15 +3834,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "LACI état 2025-01-01",
-    "match_description": "La personne est au chomage ou va l'etre et veut comprendre ses droits aux indemnites et ses obligations.",
+    "match_description": "La personne est au chomage ou va l'etre et veut comprendre ses droits aux indemnités et ses obligations.",
     "profane_aliases": [
       "droits au chomage",
       "comment fonctionne le chomage",
-      "indemnites chomage suisse",
+      "indemnités chomage suisse",
       "combien de temps dure le chomage",
       "chomage après licenciement"
     ],
@@ -3915,7 +3915,7 @@
       }
     ],
     "reponse": {
-      "explication": "En droit suisse, le travailleur en incapacité de travail pour cause de maladie bénéficie d'une protection contre le licenciement (art. 336c al. 1 let. b CO) : 30 jours la 1ere année de service, 90 jours de la 2e a la 5e année, 180 jours des la 6e année. Tout licenciement notifie pendant cette periode est nul. L'employeur doit continuer a payer le salaire selon l'echelle bernoise, zurichoise ou baloise (3 semaines la 1ere année, progressif ensuite). Si l'employeur a conclu une assurance IJM (indemnites journalieres maladie), celle-ci versé généralement 80% du salaire pendant 720 jours sur une periode de 900 jours consecutifs. Le certificat médical est requis des le 3e jour d'absence (sauf convention contraire). L'employeur peut exiger un examen par un medecin-conseil. Après epuisement des indemnites, une demande AI peut être envisagee si l'incapacité persiste.",
+      "explication": "En droit suisse, le travailleur en incapacité de travail pour cause de maladie bénéficie d'une protection contre le licenciement (art. 336c al. 1 let. b CO) : 30 jours la 1ere année de service, 90 jours de la 2e à la 5e année, 180 jours des la 6e année. Tout licenciement notifié pendant cette période est nul. L'employeur doit continuer a payer le salaire selon l'echelle bernoise, zurichoise ou baloise (3 semaines la 1ere année, progressif ensuite). Si l'employeur a conclu une assurance IJM (indemnités journalieres maladie), celle-ci versé généralement 80% du salaire pendant 720 jours sur une période de 900 jours consecutifs. Le certificat médical est requis des le 3e jour d'absence (sauf convention contraire). L'employeur peut exiger un examen par un médecin-conseil. Après epuisement des indemnités, une demande AI peut être envisagee si l'incapacité persiste.",
       "articles": [
         {
           "ref": "CO 336c",
@@ -3929,21 +3929,21 @@
         },
         {
           "ref": "LCA 67-72",
-          "titre": "Assurance indemnites journalieres",
+          "titre": "Assurance indemnités journalieres",
           "lien": "https://www.fedlex.admin.ch/eli/cc/24/719_735_717/fr#art_67"
         }
       ],
       "jurisprudence": [
         {
           "ref": "ATF 128 III 212",
-          "resume": "La protection de l'art. 336c CO s'applique des que l'incapacité de travail est attestee par certificat médical, même si le conge a ete annonce oralement avant."
+          "resume": "La protection de l'art. 336c CO s'applique des que l'incapacité de travail est attestee par certificat médical, même si le conge a été annoncé oralement avant."
         },
         {
           "ref": "TF 4A_571/2018",
           "resume": "L'assurance IJM selon la LCA remplace valablement l'obligation salariale de l'art. 324a CO si les prestations sont au moins equivalentes."
         }
       ],
-      "modeleLettre": "Objet : Transmission du certificat médical — arrêt de travail\n\nMadame, Monsieur,\n\nJe vous informe que je suis en incapacité de travail depuis le [date], pour une durée estimee a [durée], conformement au certificat médical ci-joint.\n\nJe vous rappelle que je bénéficie de la protection contre le licenciement prévue a l'art. 336c al. 1 let. b CO.\n\nJe vous tiendrai informe(e) de l'evolution de ma situation et vous transmettrai tout nouveau certificat médical en temps utile.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[Signature]\n\nAnnexe : certificat médical",
+      "modeleLettre": "Objet : Transmission du certificat médical — arrêt de travail\n\nMadame, Monsieur,\n\nJe vous informé que je suis en incapacité de travail depuis le [DATE], pour une durée estimee à [DURÉE], conformement au certificat médical ci-joint.\n\nJe vous rappelle que je bénéficie de la protection contre le licenciement prévue à l'art. 336c al. 1 let. b CO.\n\nJe vous tiendrai informé(e) de l'evolution de ma situation et vous transmettrai tout nouveau certificat médical en temps utile.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]\n\nAnnexe : certificat médical",
       "services": [
         {
           "nom": "Syndicat Unia Vaud",
@@ -3969,11 +3969,11 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO/LCA état 2025-01-01",
-    "match_description": "L'employe est malade et veut savoir combien de temps il est protégé et s'il sera payé.",
+    "match_description": "L'employé est malade et veut savoir combien de temps il est protégé et s'il sera payé.",
     "profane_aliases": [
       "arrêt maladie droits",
       "combien de temps payé en maladie",
@@ -4036,7 +4036,7 @@
       },
       {
         "id": "q4",
-        "text": "Votre employeur a-t-il ete informe ?",
+        "text": "Votre employeur a-t-il été informé ?",
         "options": [
           "oui",
           "non"
@@ -4049,7 +4049,7 @@
       }
     ],
     "reponse": {
-      "explication": "La saisie de salaire est régie par l'art. 93 LP. L'office des poursuites determine la quotite saisissable en tenant compte du minimum vital du debiteur et de sa famille. Le minimum vital comprend : loyer effectif, prime d'assurance-maladie (base), nourriture, vetements, transport et autres besoins essentiels. Les montants de base sont fixes par les Lignes directrices de la Conference des preposes aux poursuites (environ CHF 1'200/mois pour une personne seule, CHF 1'700 pour un couple, + CHF 400-600 par enfant selon l'age). Seul le montant depassant ce minimum peut être saisi. L'employeur est tenu de versér la part saisie directement a l'office (art. 99 LP). Le debiteur peut contester le calcul du minimum vital par plainte a l'autorite de surveillance (art. 17 LP) dans les 10 jours. Il est essentiel de communiquer tout changement de situation (naissance, deménagement, hausse de loyer) a l'office des poursuites pour adapter le calcul.",
+      "explication": "La saisie de salaire est régie par l'art. 93 LP. L'office des poursuites déterminé la quotite saisissable en tenant compte du minimum vital du debiteur et de sa famille. Le minimum vital comprend : loyer effectif, prime d'assurance-maladie (base), nourriture, vetements, transport et autres besoins essentiels. Les montants de base sont fixes par les Lignes directrices de la Conference des preposes aux poursuites (environ CHF 1'200/mois pour une personne seule, CHF 1'700 pour un couple, + CHF 400-600 par enfant selon l'age). Seul le montant depassant ce minimum peut être saisi. L'employeur est tenu de versér la part saisie directement à l'office (art. 99 LP). Le debiteur peut contester le calcul du minimum vital par plainte à l'autorite de surveillance (art. 17 LP) dans les 10 jours. Il est essentiel de communiquer tout changement de situation (naissance, deménagement, hausse de loyer) a l'office des poursuites pour adapter le calcul.",
       "articles": [
         {
           "ref": "LP 93",
@@ -4058,12 +4058,12 @@
         },
         {
           "ref": "LP 99",
-          "titre": "Saisie de creances — employeur tiers",
+          "titre": "Saisie de créances — employeur tiers",
           "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_99"
         },
         {
           "ref": "LP 17",
-          "titre": "Plainte a l'autorite de surveillance",
+          "titre": "Plainte à l'autorite de surveillance",
           "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_17"
         }
       ],
@@ -4077,7 +4077,7 @@
           "resume": "Les frais de transport pour se rendre au travail font partie du minimum vital insaisissable."
         }
       ],
-      "modeleLettre": "Objet : Plainte contre le calcul de la saisie de salaire\n\nA l'Autorite de surveillance des offices des poursuites de [canton],\n\nJe soussigné(e) [nom, prenom], debiteur/debitrice dans la poursuite n° [numero], conteste le calcul de la quotite saisissable établi par l'Office des poursuites de [lieu] en date du [date].\n\nLe calcul ne tient pas compte de [charges omises : loyer reel, prime d'assurance, frais de transport, charges familiales].\n\nJe joins les pieces justificatives suivantes : [liste des documents].\n\nJe requiers une nouvelle fixation de la quotite saisissable tenant compte de ma situation reelle.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Plainte contre le calcul de la saisie de salaire\n\nA l'Autorite de surveillance des offices des poursuites de [CANTON],\n\nJe soussigné(e) [NOM, PRENOM], debiteur/debitrice dans la poursuite n° [NUMERO], contesté le calcul de la quotite saisissable établi par l'Office des poursuites de [LIEU] en date du [DATE].\n\nLe calcul ne tient pas compte de [CHARGES OMISES : LOYER REEL, PRIME D'ASSURANCE, FRAIS DE TRANSPORT, CHARGES FAMILIALES].\n\nJe joins les pieces justificatives suivantes : [LISTE DES DOCUMENTS].\n\nJe requiers une nouvelle fixation de la quotite saisissable tenant compte de ma situation reelle.\n\nVeuillez agréer mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Office des poursuites du district de Lausanne",
@@ -4104,11 +4104,11 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
-    "match_description": "L'employe se fait saisir une partie de son salaire par l'office des poursuites et veut connaitre ses droits.",
+    "match_description": "L'employé se fait saisir une partie de son salaire par l'office des poursuites et veut connaitre ses droits.",
     "profane_aliases": [
       "saisie sur salaire",
       "poursuite sur mon salaire",
@@ -4119,12 +4119,12 @@
     "negative_signals": [
       "retenue volontaire sur salaire (avance)",
       "compensation avec une dette envers l'employeur",
-      "impot a la source"
+      "impot à la source"
     ],
     "required_facts": [
       "montant du salaire net",
       "charges de famille (conjoint, enfants)",
-      "montant de la saisie notifiee",
+      "montant de la saisie notifiée",
       "loyer et primes d'assurance maladie",
       "commandement de payer reçu"
     ]
@@ -4187,7 +4187,7 @@
       }
     ],
     "reponse": {
-      "explication": "La loi fédérale sur l'égalité entre femmes et hommes (LEg, art. 3) interdit toute discrimination salariale fondée sur le sexe. L'art. 8 al. 3 Cst. consacre le droit a un salaire égal pour un travail de valeur égale. L'employeur est tenu de payer le salaire convenu (art. 322 CO), et toute différence de rémunération entre un homme et une femme pour un travail identique ou de valeur égale constitue une discrimination prohibée. Pour prouver la discrimination, le travailleur bénéficie d'un allègement du fardeau de la preuve (art. 6 LEg) : il suffit de rendre vraisemblable l'existence d'une discrimination, et c'est ensuite a l'employeur de prouver que la différence repose sur des critères objectifs (ancienneté, formation, performance). La méthode de comparaison consiste a identifier une personne de l'autre sexe occupant un poste identique ou de valeur égale et a démontrer l'écart salarial. L'art. 10 LEg protège contre les represailles : le licenciement prononcé en réaction a une plainte pour discrimination est annulable. La prescription est de 5 ans pour les créances salariales (art. 128 ch. 3 CO). Depuis 2020, les entreprises de 100+ employés doivent effectuér une analyse de l'égalité salariale (art. 13a LEg).",
+      "explication": "La loi fédérale sur l'égalité entre femmes et hommes (LEg, art. 3) interdit toute discrimination salariale fondée sur le sexe. L'art. 8 al. 3 Cst. consacre le droit à un salaire égal pour un travail de valeur égale. L'employeur est tenu de payer le salaire convenu (art. 322 CO), et toute différence de rémunération entre un homme et une femme pour un travail identique ou de valeur égale constitue une discrimination prohibée. Pour prouver la discrimination, le travailleur bénéficie d'un allègement du fardeau de la preuve (art. 6 LEg) : il suffit de rendre vraisemblable l'existence d'une discrimination, et c'est ensuite à l'employeur de prouver que la différence repose sur des critères objectifs (ancienneté, formation, performance). La méthode de comparaison consiste a identifier une personne de l'autre sexe occupant un poste identique ou de valeur égale et a démontrer l'écart salarial. L'art. 10 LEg protège contre les represailles : le licenciement prononcé en réaction à une plainte pour discrimination est annulable. La prescription est de 5 ans pour les créances salariales (art. 128 ch. 3 CO). Depuis 2020, les entreprises de 100+ employés doivent effectuér une analyse de l'égalité salariale (art. 13a LEg).",
       "articles": [
         {
           "ref": "LEg 3",
@@ -4196,7 +4196,7 @@
         },
         {
           "ref": "Cst. 8 al. 3",
-          "titre": "Egalité — droit a un salaire égal pour un travail de valeur égale",
+          "titre": "Egalité — droit à un salaire égal pour un travail de valeur égale",
           "lien": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_8"
         },
         {
@@ -4230,7 +4230,7 @@
           "resume": "La méthode statistique (analyse de régression) peut servir a rendre vraisemblable une discrimination salariale dans les grandes entreprises."
         }
       ],
-      "modeleLettre": "Objet : Demande d'informations salariales — soupçon de discrimination au sens de la LEg\n\nMadame, Monsieur,\n\nConformément a la loi fédérale sur l'égalité entre femmes et hommes (LEg), je vous prie de bien vouloir me communiquer les informations suivantes :\n\n1. La grille salariale applicable a mon poste ([intitulé du poste]) et la classification correspondante.\n2. Le salaire médian versé pour un poste identique ou de valeur égale au sein de l'entreprise, ventilé par sexe.\n3. Les critères objectifs retenus pour déterminer le niveau de rémunération (ancienneté, formation, évaluation).\n\nCette demande s'inscrit dans le cadre de l'art. 3 LEg qui interdit toute discrimination salariale fondée sur le sexe, et de l'art. 8 al. 3 Cst. qui garantit un salaire égal pour un travail de valeur égale.\n\nJe vous rappelle que l'art. 10 LEg protège les travailleurs contre toute mesure de représailles liée a l'exercice de leurs droits.\n\nJe vous remercie de votre réponse dans un délai de 30 jours.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[Signature]",
+      "modeleLettre": "Objet : Demande d'informations salariales — soupçon de discrimination au sens de la LEg\n\nMadame, Monsieur,\n\nConformément à la loi fédérale sur l'égalité entre femmes et hommes (LEg), je vous prie de bien vouloir me communiquer les informations suivantes :\n\n1. La grille salariale applicable à mon poste ([INTITULÉ DU POSTE]) et la classification correspondante.\n2. Le salaire médian versé pour un poste identique ou de valeur égale au sein de l'entreprise, ventilé par sexe.\n3. Les critères objectifs retenus pour déterminer le niveau de rémunération (ancienneté, formation, évaluation).\n\nCette demande s'inscrit dans le cadre de l'art. 3 LEg qui interdit toute discrimination salariale fondée sur le sexe, et de l'art. 8 al. 3 Cst. qui garantit un salaire égal pour un travail de valeur égale.\n\nJe vous rappelle que l'art. 10 LEg protège les travailleurs contre toute mesure de représailles liée à l'exercice de leurs droits.\n\nJe vous remercie de votre réponse dans un délai de 30 jours.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Bureau fédéral de l'égalité entre femmes et hommes (BFEG)",
@@ -4256,7 +4256,7 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basees sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont donnees a titre indicatif et sans garantie d'exhaustivite. En cas de doute, consultez un professionnel du droit ou contactez les services listes."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
     },
     "maj": "2026-04-13",
     "sourceLoi": "LEg état 2025-01-01, CO état 2025-01-01",
@@ -4271,9 +4271,9 @@
       "salaire inégal entre hommes et femmes"
     ],
     "negative_signals": [
-      "différence de salaire liée a l'ancienneté uniquement",
+      "différence de salaire liée à l'ancienneté uniquement",
       "négociation salariale individuelle",
-      "salaire a la pièce ou au rendement"
+      "salaire à la pièce ou au rendement"
     ],
     "required_facts": [
       "poste occupe et poste de comparaison",

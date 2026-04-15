@@ -855,6 +855,7 @@ const server = createServer(async (req, res) => {
             questions: triageResult.data.questionsManquantes,
             complet: triageResult.data.complet,
           },
+          alternatives: (triageResult.data.fichesSecondaires || []).slice(0, 3),
           triage_method: 'llm',
           disclaimer: DISCLAIMER,
         });
@@ -865,6 +866,13 @@ const server = createServer(async (req, res) => {
       // Fallback: keyword search (degraded mode)
       const result = queryByProblem(q, canton);
       if (result.error) return json(res, result.status, { error: result.error, disclaimer: DISCLAIMER });
+
+      // If semantic search returned "unclear" (no confident match), return helpful guidance
+      if (result.data?.type === 'unclear') {
+        logTriage(q, result.data, 'keyword_fallback_unclear', Date.now() - triageStart);
+        return json(res, 200, { ...result.data, triage_method: 'keyword_fallback', disclaimer: DISCLAIMER });
+      }
+
       const fallbackData = enrichV4({ ...result.data, triage_method: 'keyword_fallback', disclaimer: DISCLAIMER });
       logTriage(q, result.data, 'keyword_fallback', Date.now() - triageStart);
       return json(res, result.status, fallbackData);

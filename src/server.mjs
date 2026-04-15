@@ -836,9 +836,14 @@ const server = createServer(async (req, res) => {
       const triageStart = Date.now();
       const triageResult = await triage(q, canton);
       if (triageResult.status === 200 && triageResult.data?.trouve) {
-        // LLM understood the query — enrich the primary fiche
+        // LLM understood the query — use LLM's ficheId, NOT keyword search
         const ficheId = triageResult.data.ficheId;
-        const enriched = queryByProblem(q, canton);
+        // First try: load the fiche the LLM identified
+        let enriched = queryComplete(ficheId);
+        if (!enriched || enriched.status !== 200) {
+          // Fallback: keyword search (but LLM fiche should exist)
+          enriched = queryByProblem(q, canton);
+        }
         // Merge LLM intelligence with enriched data
         const responseData = enrichV4({
           ...(enriched.status === 200 ? enriched.data : {}),

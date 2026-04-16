@@ -1,0 +1,94 @@
+[
+  {
+    "signature": "ATF 131 I 166",
+    "tribunal": "TF",
+    "date": "2005-03-18",
+    "theme": "Droit a des conditions minimales d'existence (art. 12 Cst)",
+    "tags": ["art 12 Cst", "minimum vital", "sans papiers", "hebergement", "aide urgence"],
+    "resume": "L'art. 12 Cst garantit un minimum vital a toute personne en Suisse, independamment de son statut migratoire.",
+    "montant": null,
+    "resultat": "favorable_locataire",
+    "articlesAppliques": ["Cst 12"],
+    "principeCle": "Toute personne en Suisse a un droit fondamental a un minimum vital (nourriture, logement, soins) quel que soit son statut.",
+    "facteursCles": ["droit fondamental", "independant du statut", "minimum vital"],
+    "fourchetteMontant": null
+  },
+  {
+    "signature": "ATF 139 I 272",
+    "tribunal": "TF",
+    "date": "2013-07-02",
+    "theme": "Contenu de l'aide d'urgence — besoins elementaires",
+    "tags": ["aide urgence", "besoins elementaires", "nourriture", "vetements", "soins"],
+    "resume": "L'aide d'urgence doit couvrir les besoins elementaires : nourriture, vetements, hebergement et soins medicaux de base.",
+    "montant": "CHF 8-12/jour",
+    "resultat": "favorable_locataire",
+    "articlesAppliques": ["Cst 12", "LAsi 82"],
+    "principeCle": "L'aide d'urgence ne peut pas etre supprimee totalement meme pour les personnes en situation irreguliere.",
+    "facteursCles": ["nourriture", "hebergement", "soins de base", "minimum incompressible"],
+    "fourchetteMontant": {
+      "min": "8",
+      "max": "12",
+      "median": "10"
+    }
+  },
+  {
+    "signature": "ATF 135 I 119",
+    "tribunal": "TF",
+    "date": "2009-02-03",
+    "theme": "Aide d'urgence — impossibilite de refus total",
+    "tags": ["aide urgence", "refus", "NEM", "renvoi", "art 12 Cst"],
+    "resume": "L'aide d'urgence doit couvrir les besoins elementaires. Les cantons ne peuvent pas refuser totalement l'aide au motif que la personne n'a pas quitte la Suisse.",
+    "montant": null,
+    "resultat": "favorable_locataire",
+    "articlesAppliques": ["Cst 12", "LAsi 82"],
+    "principeCle": "Le non-depart de Suisse ne justifie pas un refus total d'aide d'urgence. Le minimum vital constitutionnel est inconditionnel.",
+    "facteursCles": ["aide inconditionnelle", "non-depart", "minimum constitutionnel"],
+    "fourchetteMontant": null
+  },
+  {
+    "signature": "ATF 146 I 1",
+    "tribunal": "TF",
+    "date": "2020-01-07",
+    "theme": "Normes CSIAS — valeur indicative pour l'aide sociale",
+    "tags": ["CSIAS", "aide sociale", "normes", "forfait", "entretien", "cantons"],
+    "resume": "Les normes CSIAS n'ont pas force de loi mais servent de reference pour le calcul des prestations. Les cantons peuvent s'en ecarter a la hausse ou a la baisse.",
+    "montant": "CHF 997/mois (personne seule, 2024)",
+    "resultat": "neutre",
+    "articlesAppliques": ["Cst 12", "Cst 115"],
+    "principeCle": "Les normes CSIAS sont indicatives mais constituent la reference pour le minimum vital social en Suisse.",
+    "facteursCles": ["normes indicatives", "marge cantonale", "minimum vital social"],
+    "fourchetteMontant": {
+      "min": "920",
+      "max": "1100",
+      "median": "997"
+    }
+  },
+  {
+    "signature": "8C_251/2019",
+    "tribunal": "TF",
+    "date": "2019-12-10",
+    "theme": "Reduction de l'aide sociale — manquement fautif",
+    "tags": ["aide sociale", "reduction", "sanctions", "manquement", "minimum vital", "art 12 Cst"],
+    "resume": "La reduction des prestations d'aide sociale n'est admissible qu'en cas de manquement fautif aux obligations et doit respecter le minimum vital garanti par l'art. 12 Cst.",
+    "montant": null,
+    "resultat": "favorable_locataire",
+    "articlesAppliques": ["Cst 12"],
+    "principeCle": "Les sanctions de l'aide sociale (reduction) ne peuvent jamais descendre en dessous du minimum vital constitutionnel.",
+    "facteursCles": ["manquement fautif", "proportionnalite", "minimum vital garanti"],
+    "fourchetteMontant": null
+  },
+  {
+    "signature": "ATF 142 I 1",
+    "tribunal": "TF",
+    "date": "2016-01-19",
+    "theme": "Obligation communale d'hebergement d'urgence",
+    "tags": ["hebergement", "urgence", "commune", "obligation", "familles"],
+    "resume": "Les communes ont une obligation d'hebergement d'urgence pour les personnes en detresse, en particulier les familles avec enfants.",
+    "montant": null,
+    "resultat": "favorable_locataire",
+    "articlesAppliques": ["Cst 12", "Cst 11"],
+    "principeCle": "Les familles avec enfants ont un droit renforce a l'hebergement d'urgence au titre de la protection de l'enfant.",
+    "facteursCles": ["familles avec enfants", "obligation communale", "droit renforce"],
+    "fourchetteMontant": null
+  }
+]

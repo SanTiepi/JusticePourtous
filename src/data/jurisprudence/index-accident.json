@@ -1,0 +1,108 @@
+[
+  {
+    "signature": "ATF 134 V 72",
+    "tribunal": "TF",
+    "date": "2008-01-28",
+    "theme": "Definition de l'accident — evenement soudain",
+    "tags": ["accident", "definition", "soudain", "facteur exterieur", "LAA"],
+    "resume": "L'accident suppose un evenement soudain. Un effort habituel causant une blessure n'est pas un accident sauf si un facteur exterieur extraordinaire intervient.",
+    "montant": null,
+    "resultat": "rejet",
+    "articlesAppliques": ["LAA 6", "LPGA 4"],
+    "principeCle": "La notion d'accident exige un facteur exterieur extraordinaire, soudain et involontaire. L'effort habituel ne suffit pas.",
+    "facteursCles": ["caractere soudain", "facteur exterieur extraordinaire", "involontaire"],
+    "fourchetteMontant": null
+  },
+  {
+    "signature": "8C_235/2019",
+    "tribunal": "TF",
+    "date": "2019-11-12",
+    "theme": "Accident de trajet domicile-travail",
+    "tags": ["trajet", "accident", "non professionnel", "detour", "couverture"],
+    "resume": "L'accident de trajet est couvert comme accident non professionnel ; le detour significatif pour raisons personnelles peut exclure la couverture.",
+    "montant": null,
+    "resultat": "favorable_employe",
+    "articlesAppliques": ["LAA 6", "LAA 7"],
+    "principeCle": "Le trajet direct domicile-travail est couvert. Un detour important pour raisons privees peut rompre le lien avec le travail.",
+    "facteursCles": ["trajet direct", "detour", "lien avec le travail"],
+    "fourchetteMontant": null
+  },
+  {
+    "signature": "ATF 132 III 249",
+    "tribunal": "TF",
+    "date": "2006-02-14",
+    "theme": "Tort moral en cas de lesion corporelle",
+    "tags": ["tort moral", "lesion corporelle", "indemnite", "gravite", "CO 47"],
+    "resume": "Le tort moral est fixe en fonction de la gravite objective de l'atteinte et de ses consequences sur la vie quotidienne de la victime.",
+    "montant": "variable",
+    "resultat": "favorable_employe",
+    "articlesAppliques": ["CO 47", "CO 49"],
+    "principeCle": "L'indemnite pour tort moral depend de la gravite objective de l'atteinte, de la souffrance endured et de l'impact sur la qualite de vie.",
+    "facteursCles": ["gravite de l'atteinte", "consequences quotidiennes", "age de la victime"],
+    "fourchetteMontant": {
+      "min": "5000",
+      "max": "150000",
+      "median": "30000"
+    }
+  },
+  {
+    "signature": "ATF 138 III 276",
+    "tribunal": "TF",
+    "date": "2012-04-19",
+    "theme": "Responsabilite causale du detenteur de vehicule",
+    "tags": ["LCR", "responsabilite causale", "detenteur", "force majeure", "faute victime"],
+    "resume": "La responsabilite causale du detenteur ne cede que si l'accident est du exclusivement a la force majeure ou a la faute grave de la victime.",
+    "montant": null,
+    "resultat": "favorable_locataire",
+    "articlesAppliques": ["LCR 58", "LCR 59"],
+    "principeCle": "Le detenteur d'un vehicule repond objectivement des dommages. Seule la force majeure ou la faute exclusive de la victime l'exonere.",
+    "facteursCles": ["responsabilite objective", "force majeure", "faute de la victime"],
+    "fourchetteMontant": null
+  },
+  {
+    "signature": "ATF 143 III 242",
+    "tribunal": "TF",
+    "date": "2017-06-20",
+    "theme": "Evaluation du tort moral pour lesion corporelle",
+    "tags": ["tort moral", "lesion corporelle", "evaluation", "qualite de vie"],
+    "resume": "Le tort moral pour lesion corporelle est fixe en fonction de la gravite objective de l'atteinte et de ses consequences concretes sur la qualite de vie.",
+    "montant": "variable",
+    "resultat": "favorable_employe",
+    "articlesAppliques": ["CO 47", "CO 46"],
+    "principeCle": "L'evaluation du tort moral doit prendre en compte l'ensemble des circonstances concretes, pas seulement le diagnostic medical.",
+    "facteursCles": ["gravite objective", "impact qualite de vie", "circonstances concretes"],
+    "fourchetteMontant": {
+      "min": "10000",
+      "max": "200000",
+      "median": "40000"
+    }
+  },
+  {
+    "signature": "ATF 146 III 387",
+    "tribunal": "TF",
+    "date": "2020-09-15",
+    "theme": "Nouveau droit de la prescription (revision 2020)",
+    "tags": ["prescription", "revision", "2020", "dispositions transitoires", "CO 60"],
+    "resume": "Le nouveau droit de la prescription (2020) s'applique aux pretentions non encore prescrites au 1er janvier 2020 (dispositions transitoires).",
+    "montant": null,
+    "resultat": "neutre",
+    "articlesAppliques": ["CO 60", "CO 67"],
+    "principeCle": "Le delai de prescription absolu de 10 ans (art. 60 nCO) s'applique retroactivement aux pretentions non encore prescrites.",
+    "facteursCles": ["delai relatif 3 ans", "delai absolu 10 ans", "connaissance du dommage"],
+    "fourchetteMontant": null
+  },
+  {
+    "signature": "ATF 130 III 182",
+    "tribunal": "TF",
+    "date": "2004-02-10",
+    "theme": "Perte de gain future apres accident",
+    "tags": ["perte de gain", "accident", "calcul", "capitalisation", "CO 46"],
+    "resume": "La perte de gain future se calcule par capitalisation du revenu perdu, tenant compte de l'esperance de vie, de l'evolution probable de carriere et du taux de capitalisation.",
+    "montant": "variable",
+    "resultat": "favorable_employe",
+    "articlesAppliques": ["CO 46", "CO 42"],
+    "principeCle": "Le juge doit estimer equitablement la perte de gain future en tenant compte de la carriere probable et de l'esperance de vie.",
+    "facteursCles": ["revenu avant accident", "capacite residuelle", "esperance de vie", "taux de capitalisation"],
+    "fourchetteMontant": null
+  }
+]

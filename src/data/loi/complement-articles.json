@@ -5994,5 +5994,159 @@
       "LEI 58b"
     ],
     "harvestDate": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "ref": "LAA 7",
+    "titre": "Accidents non professionnels",
+    "rs": "RS 832.20",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr#art_7",
+    "texteSimple": "Les travailleurs occupes au moins 8 heures par semaine chez le meme employeur sont assures contre les accidents non professionnels. Les accidents de trajet domicile-travail sont consideres comme non professionnels.",
+    "exemplesConcrets": [
+      "Accident de ski le week-end → couvert si employe travaille >=8h/semaine",
+      "Accident sur le trajet domicile-travail → accident non professionnel couvert"
+    ],
+    "domaines": ["accident", "assurances"],
+    "articlesLies": ["LAA 6", "LAA 8"],
+    "harvestDate": "2026-04-16T00:00:00.000Z"
+  },
+  {
+    "ref": "LAA 17",
+    "titre": "Montant de l'indemnite journaliere",
+    "rs": "RS 832.20",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr#art_17",
+    "texteSimple": "L'indemnite journaliere correspond a 80% du gain assure. Elle est versee des le 3e jour suivant l'accident. Le gain assure maximum est de CHF 148'200 par an.",
+    "exemplesConcrets": [
+      "Salaire annuel de 80'000 CHF → indemnite journaliere de 175 CHF/jour (80% × 80'000/365)",
+      "Gain assure plafonne a 148'200 CHF meme si le salaire est superieur"
+    ],
+    "domaines": ["accident", "assurances"],
+    "articlesLies": ["LAA 16", "LAA 15"],
+    "harvestDate": "2026-04-16T00:00:00.000Z"
+  },
+  {
+    "ref": "LAA 25",
+    "titre": "Indemnite pour atteinte a l'integrite — montant",
+    "rs": "RS 832.20",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr#art_25",
+    "texteSimple": "L'IPAI est un montant unique verse en cas d'atteinte durable a l'integrite physique ou mentale. Elle est calculee en pourcentage du gain assure maximum et est independante de la rente d'invalidite.",
+    "exemplesConcrets": [
+      "Perte d'un doigt → IPAI de 5-15% selon le doigt",
+      "Paraplegie → IPAI de 90-100%"
+    ],
+    "domaines": ["accident", "assurances"],
+    "articlesLies": ["LAA 24", "LAA 18"],
+    "harvestDate": "2026-04-16T00:00:00.000Z"
+  },
+  {
+    "ref": "LCR 51",
+    "titre": "Devoirs en cas d'accident",
+    "rs": "RS 741.01",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_51",
+    "texteSimple": "En cas d'accident avec dommages corporels, les impliques doivent appeler la police et les secours. Tout implique doit rester sur place, sauf pour aller chercher du secours. Le delit de fuite est punissable penalement.",
+    "exemplesConcrets": [
+      "Accident avec blesses → obligation d'appeler le 117 et le 144",
+      "Quitter les lieux sans s'identifier → delit de fuite (art. 92 LCR)"
+    ],
+    "domaines": ["accident", "circulation"],
+    "articlesLies": ["LCR 58", "LCR 92"],
+    "harvestDate": "2026-04-16T00:00:00.000Z"
+  },
+  {
+    "ref": "LCR 76",
+    "titre": "Fonds national de garantie",
+    "rs": "RS 741.01",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_76",
+    "texteSimple": "En cas de fuite de l'auteur ou de vehicule non assure, le Fonds national de garantie indemnise la victime pour les dommages corporels et, sous conditions, materiels.",
+    "exemplesConcrets": [
+      "Delit de fuite apres accident → la victime peut s'adresser au Fonds de garantie",
+      "Vehicule etranger non assure → le Fonds couvre les dommages"
+    ],
+    "domaines": ["accident", "circulation"],
+    "articlesLies": ["LCR 58", "LCR 63"],
+    "harvestDate": "2026-04-16T00:00:00.000Z"
+  },
+  {
+    "ref": "LAVI 19",
+    "titre": "Indemnisation de la victime",
+    "rs": "RS 312.5",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2008/232/fr#art_19",
+    "texteSimple": "La victime d'une infraction peut obtenir une indemnite de l'Etat pour le dommage subi si l'auteur ne peut pas payer. L'indemnite couvre les frais medicaux, la perte de gain et le tort moral (max CHF 70'000 pour le tort moral).",
+    "exemplesConcrets": [
+      "Auteur insolvable → la victime demande une indemnite LAVI au canton",
+      "Tort moral LAVI plafonne a 70'000 CHF"
+    ],
+    "domaines": ["violence", "penal"],
+    "articlesLies": ["LAVI 1-2", "LAVI 20"],
+    "harvestDate": "2026-04-16T00:00:00.000Z"
+  },
+  {
+    "ref": "LAVI 20",
+    "titre": "Reparation morale",
+    "rs": "RS 312.5",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/2008/232/fr#art_20",
+    "texteSimple": "La victime peut obtenir une reparation morale sous forme de somme d'argent. Le montant est fixe en equite, avec un maximum de CHF 70'000 pour les atteintes graves et CHF 35'000 pour les proches.",
+    "exemplesConcrets": [
+      "Violence conjugale grave → reparation morale LAVI possible",
+      "Deces de la victime → les proches peuvent demander une reparation morale"
+    ],
+    "domaines": ["violence", "penal"],
+    "articlesLies": ["LAVI 19", "LAVI 1-2"],
+    "harvestDate": "2026-04-16T00:00:00.000Z"
+  },
+  {
+    "ref": "CP 122",
+    "titre": "Lesions corporelles graves",
+    "rs": "RS 311.0",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_122",
+    "texteSimple": "Quiconque blesse une personne de facon a mettre sa vie en danger, cause une mutilation, la rend impotente ou lui inflige une incapacite de travail permanente est puni d'une peine privative de liberte de 6 mois a 10 ans. Poursuite d'office.",
+    "exemplesConcrets": [
+      "Fracture du crane lors de violences → lesion grave poursuivie d'office",
+      "Perte de l'usage d'un membre → lesion grave"
+    ],
+    "domaines": ["violence", "penal"],
+    "articlesLies": ["CP 123", "CP 126"],
+    "harvestDate": "2026-04-16T00:00:00.000Z"
+  },
+  {
+    "ref": "Cst 11",
+    "titre": "Protection des enfants et des jeunes",
+    "rs": "RS 101",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_11",
+    "texteSimple": "Les enfants et les jeunes ont droit a une protection particuliere de leur integrite et a l'encouragement de leur developpement. Ils exercent eux-memes leurs droits dans la mesure ou ils sont capables de discernement.",
+    "exemplesConcrets": [
+      "Enfant en situation de danger → droit constitutionnel a la protection",
+      "Autorite de protection de l'enfant (APEA) intervient d'office"
+    ],
+    "domaines": ["social", "famille"],
+    "articlesLies": ["Cst 12", "CC 307"],
+    "harvestDate": "2026-04-16T00:00:00.000Z"
+  },
+  {
+    "ref": "CO 754",
+    "titre": "Responsabilite des organes de la societe",
+    "rs": "RS 220",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_754",
+    "texteSimple": "Les membres du conseil d'administration et toutes les personnes qui s'occupent de la gestion repondent du dommage qu'ils causent a la societe, aux actionnaires ou aux creanciers par la violation intentionnelle ou negligente de leurs devoirs.",
+    "exemplesConcrets": [
+      "Administrateur qui ne declare pas le surendettement → responsable du dommage supplementaire",
+      "Gerant de Sarl qui detourne des fonds → action en responsabilite"
+    ],
+    "domaines": ["entreprise"],
+    "articlesLies": ["CO 725", "CO 725b", "CO 759"],
+    "harvestDate": "2026-04-16T00:00:00.000Z"
+  },
+  {
+    "ref": "LP 314",
+    "titre": "Concordat ordinaire — homologation",
+    "rs": "RS 281.1",
+    "lienFedlex": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_314",
+    "texteSimple": "Le concordat ordinaire est homologue par le juge s'il est accepte par la majorite des creanciers representant au moins les deux tiers des creances admises. Le dividende minimum est de 15% pour les creanciers chirographaires (5% si concordat-dividende avec abandon partiel).",
+    "exemplesConcrets": [
+      "10 creanciers dont 6 votent oui et representent 70% des creances → concordat accepte",
+      "Dividende propose de 20% → le juge verifie que c'est mieux que la faillite"
+    ],
+    "domaines": ["entreprise", "dettes"],
+    "articlesLies": ["LP 293", "LP 305", "LP 317"],
+    "harvestDate": "2026-04-16T00:00:00.000Z"
   }
 ]

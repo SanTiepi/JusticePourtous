@@ -19,6 +19,7 @@ import { analyzeDossier } from './argumentation-engine.mjs';
 import { generateDossierQuestions } from './marginal-questioner.mjs';
 import { analyzeWithCommittee } from './committee-engine.mjs';
 import { compile as compileNormative } from './normative-compiler.mjs';
+import { judgeResult } from './llm-judge.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const dataDir = join(__dirname, '..', 'data');
@@ -849,6 +850,27 @@ export async function analyserCas(texte, canton, reponsesPrec) {
     }
   }
 
+  // Step 4: LLM-as-judge verification (quality gate)
+  let judgeVerdict = null;
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (apiKey) {
+    try {
+      // Build a result object compatible with judgeResult's expected shape
+      const judgeInput = {
+        fiche: dossier.issues?.[0]?.fiche,
+        llm_triage: { domaine: dossier.issues?.[0]?.domaine, ficheId: dossier.issues?.[0]?.fiche?.id, questions: comprehension.questions_critiques },
+        articles: dossier.issues?.flatMap(i => i.articles) || [],
+        jurisprudence: dossier.issues?.flatMap(i => i.arrets) || [],
+        delais: dossier.issues?.flatMap(i => i.delais) || [],
+        confiance: certificate?.status,
+        lacunes: certificate?.issues?.flatMap(i => i.missing?.filter(m => m.critical)?.map(m => m.label)) || [],
+        escalade: dossier.issues?.flatMap(i => i.contacts) || [],
+        triage_method: 'pipeline-v3',
+      };
+      judgeVerdict = await judgeResult(texte, judgeInput);
+    } catch { /* judge is optional — don't block on failure */ }
+  }
+
   // Compilateur déterministe (legacy)
   const compiled = step_compile(dossier, analysis);
 
@@ -859,6 +881,11 @@ export async function analyserCas(texte, canton, reponsesPrec) {
     ...(comprehension.extractions || {}),
   };
   const normative = compileNormative(normativeFacts);
+
+  // Build judge warning if verdict is insuffisant
+  const judgeWarning = (judgeVerdict && judgeVerdict.verdict === 'insuffisant' && judgeVerdict.total < 7)
+    ? `Attention: la qualité de cette réponse est jugée insuffisante (${judgeVerdict.total}/14). ${judgeVerdict.critique || ''}`
+    : null;
 
   return {
     mode_crise: false,
@@ -875,6 +902,8 @@ export async function analyserCas(texte, canton, reponsesPrec) {
     analysis,
     compiled,
     normative,
+    judge: judgeVerdict, // { scores, total, verdict, critique }
+    judge_warning: judgeWarning,
     questions: buildQuestions(comprehension, dossier, certificate),
     resume: comprehension.resume,
     usage: {

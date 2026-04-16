@@ -1131,15 +1131,7 @@ const server = createServer(async (req, res) => {
           return json(res, 503, { error: 'Service IA indisponible', verification_status: 'insufficient', disclaimer: DISCLAIMER });
         }
 
-        // Mode crise
-        if (result.mode_crise) {
-          return json(res, 200, {
-            mode_crise: true,
-            resume: result.resume,
-            verification_status: 'not_applicable',
-            disclaimer: DISCLAIMER
-          });
-        }
+        // Mode crise — no longer short-circuits. Analysis continues with urgency info added.
 
         // Determine verification status
         let verification_status = 'verified';
@@ -1162,7 +1154,8 @@ const server = createServer(async (req, res) => {
         }
 
         return json(res, 200, {
-          mode_crise: false,
+          mode_crise: result.mode_crise || false,
+          urgence_contacts: result.urgence_contacts || null,
           complet: result.complet,
           verification_status,
           resume: result.resume,

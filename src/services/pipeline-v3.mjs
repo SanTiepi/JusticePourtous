@@ -94,7 +94,7 @@ INSTRUCTIONS:
 2. Identifie 1-3 problèmes juridiques (issues) avec leur qualification
 3. Pour chaque issue, indique les conditions REMPLIES et MANQUANTES
 4. Pose les questions dont la réponse CHANGE le diagnostic (max 4)
-5. Si le citoyen mentionne violence, danger, urgence vitale → flag mode_crise=true
+5. mode_crise=true UNIQUEMENT si danger IMMÉDIAT pour la vie (suicide, menace de mort en cours, violence en train de se produire). La violence passée ou chronique n'est PAS un mode crise — elle nécessite une analyse juridique complète.
 
 RÉPONDS EN JSON:
 {
@@ -793,14 +793,17 @@ export async function analyserCas(texte, canton, reponsesPrec) {
 
   const comprehension = step1.comprehension;
 
-  // Mode crise — court-circuit
-  if (comprehension.mode_crise) {
-    return {
-      mode_crise: true,
-      resume: comprehension.resume,
-      canton: comprehension.canton || canton
-    };
-  }
+  // Mode crise — add urgency info but DON'T skip the analysis
+  // A person describing violence needs FULL legal analysis + emergency contacts
+  const criseInfo = comprehension.mode_crise ? {
+    mode_crise: true,
+    urgence_contacts: [
+      { nom: 'Police', tel: '117', description: 'En cas de danger immédiat' },
+      { nom: 'Aide aux victimes (LAVI)', tel: '0800 014 714', description: 'Gratuit, confidentiel, 24h/24' },
+      { nom: 'Main Tendue', tel: '143', description: 'Écoute et soutien, 24h/24' },
+      { nom: 'Protection de l\'enfant', tel: '147', description: 'Pro Juventute, pour les enfants' },
+    ]
+  } : null;
 
   // Questions critiques — retourner si besoin d'infos
   const hasQuestions = (comprehension.questions_critiques || []).length > 0 && !reponsesPrec;
@@ -888,7 +891,8 @@ export async function analyserCas(texte, canton, reponsesPrec) {
     : null;
 
   return {
-    mode_crise: false,
+    mode_crise: !!criseInfo,
+    ...(criseInfo || {}),
     complet: !hasQuestions,
     comprehension,
     dossier_summary: {

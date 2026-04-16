@@ -162,7 +162,7 @@ var I18N = {
 
     // -- Results: Upsell --
     'upsell.title': 'Besoin d\'une analyse personnalisée ?',
-    'upsell.text': 'Notre IA analyse votre situation en détail pour CHF 0.08 à 0.10 par question.',
+    'upsell.text': 'Notre IA analyse votre situation en détail pour CHF 0.08 à 0.25 par question.',
     'upsell.button': 'Espace Premium',
 
     // -- Common actions --
@@ -230,7 +230,7 @@ var I18N = {
     'premium.code_placeholder': 'Entrez votre code',
     'premium.wallet_label': 'Solde restant',
     'premium.analyze_title': 'Analyser votre situation',
-    'premium.analyze_cost_hint': 'Coût estimé : CHF 0.08 à 0.10 par analyse',
+    'premium.analyze_cost_hint': 'Coût estimé : CHF 0.08 à 0.25 par analyse',
     'premium.analyze_placeholder': 'Décrivez votre situation juridique en détail...',
     'premium.analyze_submit': 'Analyser ma situation',
     'premium.upload_label': 'Joindre un document (PDF, image)',
@@ -508,7 +508,7 @@ var I18N = {
 
     // -- Results: Upsell --
     'upsell.title': 'Brauchen Sie eine persönliche Analyse?',
-    'upsell.text': 'Unsere KI analysiert Ihre Situation detailliert für CHF 0.08 bis 0.10 pro Frage.',
+    'upsell.text': 'Unsere KI analysiert Ihre Situation detailliert für CHF 0.08 bis 0.25 pro Frage.',
     'upsell.button': 'Premium-Bereich',
 
     // -- Common actions --
@@ -576,7 +576,7 @@ var I18N = {
     'premium.code_placeholder': 'Code eingeben',
     'premium.wallet_label': 'Restguthaben',
     'premium.analyze_title': 'Ihre Situation analysieren',
-    'premium.analyze_cost_hint': 'Geschätzte Kosten: CHF 0.08 bis 0.10 pro Analyse',
+    'premium.analyze_cost_hint': 'Geschätzte Kosten: CHF 0.08 bis 0.25 pro Analyse',
     'premium.analyze_placeholder': 'Beschreiben Sie Ihre rechtliche Situation im Detail...',
     'premium.analyze_submit': 'Meine Situation analysieren',
     'premium.upload_label': 'Dokument anhängen (PDF, Bild)',
@@ -854,7 +854,7 @@ var I18N = {
 
     // -- Results: Upsell --
     'upsell.title': 'Avete bisogno di un\'analisi personalizzata?',
-    'upsell.text': 'La nostra IA analizza la vostra situazione in dettaglio per CHF 0.08 a 0.10 per domanda.',
+    'upsell.text': 'La nostra IA analizza la vostra situazione in dettaglio per CHF 0.08 a 0.25 per domanda.',
     'upsell.button': 'Spazio Premium',
 
     // -- Common actions --
@@ -922,7 +922,7 @@ var I18N = {
     'premium.code_placeholder': 'Inserire il codice',
     'premium.wallet_label': 'Saldo rimanente',
     'premium.analyze_title': 'Analizzare la vostra situazione',
-    'premium.analyze_cost_hint': 'Costo stimato: CHF 0.08 a 0.10 per analisi',
+    'premium.analyze_cost_hint': 'Costo stimato: CHF 0.08 a 0.25 per analisi',
     'premium.analyze_placeholder': 'Descrivete la vostra situazione giuridica in dettaglio...',
     'premium.analyze_submit': 'Analizzare la mia situazione',
     'premium.upload_label': 'Allegare un documento (PDF, immagine)',
@@ -1200,7 +1200,7 @@ var I18N = {
 
     // -- Results: Upsell --
     'upsell.title': 'Need a personalised analysis?',
-    'upsell.text': 'Our AI analyses your situation in detail for CHF 0.08 to 0.10 per question.',
+    'upsell.text': 'Our AI analyses your situation in detail for CHF 0.08 to 0.25 per question.',
     'upsell.button': 'Premium area',
 
     // -- Common actions --
@@ -1268,7 +1268,7 @@ var I18N = {
     'premium.code_placeholder': 'Enter your code',
     'premium.wallet_label': 'Remaining balance',
     'premium.analyze_title': 'Analyse your situation',
-    'premium.analyze_cost_hint': 'Estimated cost: CHF 0.08 to 0.10 per analysis',
+    'premium.analyze_cost_hint': 'Estimated cost: CHF 0.08 to 0.25 per analysis',
     'premium.analyze_placeholder': 'Describe your legal situation in detail...',
     'premium.analyze_submit': 'Analyse my situation',
     'premium.upload_label': 'Attach a document (PDF, image)',
@@ -1546,7 +1546,7 @@ var I18N = {
 
     // -- Results: Upsell --
     'upsell.title': 'Precisa de uma an\u00e1lise personalizada?',
-    'upsell.text': 'A nossa IA analisa a sua situa\u00e7\u00e3o em detalhe por CHF 0.08 a 0.10 por pergunta.',
+    'upsell.text': 'A nossa IA analisa a sua situa\u00e7\u00e3o em detalhe por CHF 0.08 a 0.25 por pergunta.',
     'upsell.button': 'Espa\u00e7o Premium',
 
     // -- Common actions --
@@ -1614,7 +1614,7 @@ var I18N = {
     'premium.code_placeholder': 'Introduza o c\u00f3digo',
     'premium.wallet_label': 'Saldo restante',
     'premium.analyze_title': 'Analisar a sua situa\u00e7\u00e3o',
-    'premium.analyze_cost_hint': 'Custo estimado: CHF 0.08 a 0.10 por an\u00e1lise',
+    'premium.analyze_cost_hint': 'Custo estimado: CHF 0.08 a 0.25 por an\u00e1lise',
     'premium.analyze_placeholder': 'Descreva a sua situa\u00e7\u00e3o jur\u00eddica em detalhe...',
     'premium.analyze_submit': 'Analisar a minha situa\u00e7\u00e3o',
     'premium.upload_label': 'Anexar um documento (PDF, imagem)',
@@ -2245,7 +2245,7 @@ var I18N = {
 
     // -- Results: Upsell --
     'upsell.title': 'Ki\u015fisel bir analize ihtiyac\u0131n\u0131z var m\u0131?',
-    'upsell.text': 'Yapay zek\u00e2m\u0131z durumunuzu soru ba\u015f\u0131na CHF 0.08 ile 0.10 aras\u0131nda ayr\u0131nt\u0131l\u0131 analiz eder.',
+    'upsell.text': 'Yapay zek\u00e2m\u0131z durumunuzu soru ba\u015f\u0131na CHF 0.08 ile 0.25 aras\u0131nda ayr\u0131nt\u0131l\u0131 analiz eder.',
     'upsell.button': 'Premium alan',
 
     // -- Common actions --
@@ -2313,7 +2313,7 @@ var I18N = {
     'premium.code_placeholder': 'Kodunuzu girin',
     'premium.wallet_label': 'Kalan bakiye',
     'premium.analyze_title': 'Durumunuzu analiz edin',
-    'premium.analyze_cost_hint': 'Tahmini maliyet: Analiz ba\u015f\u0131na CHF 0.08 ile 0.10',
+    'premium.analyze_cost_hint': 'Tahmini maliyet: Analiz ba\u015f\u0131na CHF 0.08 ile 0.25',
     'premium.analyze_placeholder': 'Hukuki durumunuzu ayr\u0131nt\u0131l\u0131 olarak tan\u0131mlay\u0131n...',
     'premium.analyze_submit': 'Durumumu analiz et',
     'premium.upload_label': 'Belge ekleyin (PDF, g\u00f6rsel)',
@@ -2943,7 +2943,7 @@ var I18N = {
 
     // -- Results: Upsell --
     'upsell.title': 'Trebate personaliziranu analizu?',
-    'upsell.text': 'Na\u0161a AI analizira va\u0161u situaciju detaljno za CHF 0.08 do 0.10 po pitanju.',
+    'upsell.text': 'Na\u0161a AI analizira va\u0161u situaciju detaljno za CHF CHF 0.08 do 0.25 po pitanju.',
     'upsell.button': 'Premium zona',
 
     // -- Common actions --
@@ -3011,7 +3011,7 @@ var I18N = {
     'premium.code_placeholder': 'Unesite kod',
     'premium.wallet_label': 'Preostali saldo',
     'premium.analyze_title': 'Analizirajte svoju situaciju',
-    'premium.analyze_cost_hint': 'Procijenjena cijena: CHF 0.08 do 0.10 po analizi',
+    'premium.analyze_cost_hint': 'Procijenjena cijena: CHF CHF 0.08 do 0.25 po analizi',
     'premium.analyze_placeholder': 'Detaljno opi\u0161ite svoju pravnu situaciju...',
     'premium.analyze_submit': 'Analiziraj moju situaciju',
     'premium.upload_label': 'Prilo\u017eite dokument (PDF, sliku)',

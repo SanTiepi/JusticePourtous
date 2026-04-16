@@ -142,13 +142,13 @@ export function rateLimit(ip) {
   return true;
 }
 
-// Cleanup rate limit store every 5 min
-setInterval(() => {
+// Cleanup rate limit store every 5 min (unref so tests can exit)
+const _rlCleanup = setInterval(() => {
   const cutoff = Date.now() - RATE_LIMIT.windowMs * 2;
   for (const [ip, entry] of rateLimitStore) {
     if (entry.windowStart < cutoff) rateLimitStore.delete(ip);
   }
-}, 300000);
+}, 300000).unref();
 
 // ─── Triage audit log (in-memory, last 1000) ────────────────────
 

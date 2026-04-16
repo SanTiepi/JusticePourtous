@@ -43,8 +43,8 @@ function flushToFile() {
   }
 }
 
-// Flush every 5 minutes
-setInterval(flushToFile, 5 * 60 * 1000);
+// Flush every 5 minutes (unref so tests can exit)
+setInterval(flushToFile, 5 * 60 * 1000).unref();
 
 // --- Public API ---
 

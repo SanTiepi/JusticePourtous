@@ -314,17 +314,17 @@
         var data = await res.json();
         if (data.error) { showLoginError(data.error); return; }
 
-        // Authenticated — get wallets
-        if (data.walletSessions && data.walletSessions.length > 0) {
-          if (data.walletSessions.length === 1) {
-            // Single wallet — use it directly
-            sessionCode = data.walletSessions[0];
-          } else {
-            // Multiple wallets — let user pick or merge (use most recent by default)
-            sessionCode = data.walletSessions[data.walletSessions.length - 1];
-            // TODO: show wallet selector UI when multiple wallets exist
-            console.log('Multiple wallets found:', data.walletSessions.length, '— using most recent');
-          }
+        // Authenticated — use activeSession from auth token response
+        if (data.activeSession) {
+          sessionCode = data.activeSession;
+          localStorage.setItem('jb_session', sessionCode);
+          localStorage.setItem('jb_email', loginEmailValue);
+          if (data.authToken) localStorage.setItem('jb_auth', data.authToken);
+          showSession();
+          refreshCredits();
+        } else if (data.walletSessions && data.walletSessions.length > 0) {
+          // Legacy fallback
+          sessionCode = data.walletSessions[data.walletSessions.length - 1];
           localStorage.setItem('jb_session', sessionCode);
           localStorage.setItem('jb_email', loginEmailValue);
           showSession();

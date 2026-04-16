@@ -54,26 +54,21 @@
           <h3>Analyse juridique personnalisée par IA</h3>
           <p class="premium-features">Questions ciblées, argumentation contradictoire, certificat de couverture, lettres prêtes à envoyer en .docx.</p>
 
-          <div class="premium-pricing-grid">
+          <div class="premium-pricing-grid" style="grid-template-columns: 1fr 1fr">
             <div class="premium-pricing-card">
               <div class="premium-pricing-label" data-i18n="premium.pricing_one_label">Un problème</div>
               <div class="premium-pricing-amount">CHF 5</div>
-              <div class="premium-pricing-detail">Suffisant pour 1 dossier simple avec analyse + lettre</div>
+              <div class="premium-pricing-detail">1 dossier simple avec analyse, questions ciblées et lettre</div>
               <button class="btn btn-primary w-full" onclick="acheterMontant(500)">Charger CHF 5</button>
             </div>
             <div class="premium-pricing-card premium-pricing-featured">
               <div class="premium-pricing-label" data-i18n="premium.pricing_rec_label">Recommandé</div>
               <div class="premium-pricing-amount">CHF 10</div>
-              <div class="premium-pricing-detail">Couvre 1 à 3 dossiers — le choix le plus courant</div>
+              <div class="premium-pricing-detail">1 à 3 dossiers complets — le choix le plus courant</div>
               <button class="btn btn-primary w-full" onclick="acheterMontant(1000)">Charger CHF 10</button>
             </div>
-            <div class="premium-pricing-card">
-              <div class="premium-pricing-label" data-i18n="premium.pricing_complex_label">Dossier complexe</div>
-              <div class="premium-pricing-amount">CHF 20</div>
-              <div class="premium-pricing-detail">Pour les situations multi-domaines ou nécessitant plusieurs lettres</div>
-              <button class="btn btn-secondary w-full" onclick="acheterMontant(2000)">Charger CHF 20</button>
-            </div>
           </div>
+          <p class="premium-cost-note" style="margin-top:var(--space-sm)">Besoin de plus ? <a href="#" onclick="acheterMontant(2000);return false" style="color:var(--accent-primary);font-weight:600">Charger CHF 20</a> pour les dossiers complexes multi-domaines.</p>
 
           <div class="premium-cost-table">
             <h4 data-i18n="premium.cost_table_title">Coût indicatif par opération</h4>

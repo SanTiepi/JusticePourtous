@@ -1,5 +1,6 @@
 import { createServer } from 'node:http';
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
+import { atomicWriteSync, safeLoadJSON } from './services/atomic-write.mjs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, extname } from 'node:path';
 
@@ -91,12 +92,12 @@ const STRIPE_MAP_FILE = join(__dirname, 'data', 'meta', 'stripe-sessions.json');
 const stripeSessionMap = new Map(); // stripeSessionId → walletSessionCode
 
 // Load persisted stripe sessions
-try {
-  if (existsSync(STRIPE_MAP_FILE)) {
-    const data = JSON.parse(readFileSync(STRIPE_MAP_FILE, 'utf-8'));
+{
+  const data = safeLoadJSON(STRIPE_MAP_FILE);
+  if (Array.isArray(data)) {
     for (const [k, v] of data) stripeSessionMap.set(k, v);
   }
-} catch { /* first run */ }
+}
 
 let stripeMapSaveTimer = null;
 function persistStripeSessionMap() {
@@ -106,7 +107,7 @@ function persistStripeSessionMap() {
     try {
       const entries = [...stripeSessionMap];
       const trimmed = entries.slice(-1000);
-      writeFileSync(STRIPE_MAP_FILE, JSON.stringify(trimmed, null, 2));
+      atomicWriteSync(STRIPE_MAP_FILE, JSON.stringify(trimmed, null, 2));
     } catch (err) {
       console.error('Failed to persist stripe sessions:', err.message);
     }
@@ -1267,7 +1268,15 @@ const server = createServer(async (req, res) => {
           disclaimer: DISCLAIMER
         });
       }
-      // Fall through to existing estimate handler
+      // Generic estimate handler for analyse/lettre/ocr
+      const result = estimerCout(action, {
+        ficheId: url.searchParams.get('ficheId'),
+        userContext: url.searchParams.get('userContext'),
+        question: url.searchParams.get('question'),
+      });
+      return json(res, result.status, result.error
+        ? { error: result.error, disclaimer: DISCLAIMER }
+        : { ...result.data, disclaimer: DISCLAIMER });
     }
 
     // --- Feedback ---

@@ -1,9 +1,9 @@
 // Analytics service — lightweight in-memory counters persisted to file
 // No external deps, flush to JSON every 5 minutes
 
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { atomicWriteSync, safeLoadJSON } from './atomic-write.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_FILE = join(__dirname, '..', 'data', 'meta', 'analytics.json');
@@ -20,19 +20,14 @@ let stats = {
 
 // Load from file on startup
 function loadFromFile() {
-  try {
-    if (existsSync(DATA_FILE)) {
-      const raw = readFileSync(DATA_FILE, 'utf-8');
-      const saved = JSON.parse(raw);
-      stats.pageViews = saved.pageViews || {};
-      stats.searchCount = saved.searchCount || 0;
-      stats.premiumAnalysisCount = saved.premiumAnalysisCount || 0;
-      stats.languages = saved.languages || {};
-      stats.lastFlush = saved.lastFlush || null;
-      stats.startedAt = saved.startedAt || stats.startedAt;
-    }
-  } catch {
-    // Corrupted file — start fresh
+  const saved = safeLoadJSON(DATA_FILE);
+  if (saved && typeof saved === 'object') {
+    stats.pageViews = saved.pageViews || {};
+    stats.searchCount = saved.searchCount || 0;
+    stats.premiumAnalysisCount = saved.premiumAnalysisCount || 0;
+    stats.languages = saved.languages || {};
+    stats.lastFlush = saved.lastFlush || null;
+    stats.startedAt = saved.startedAt || stats.startedAt;
   }
 }
 
@@ -42,7 +37,7 @@ loadFromFile();
 function flushToFile() {
   try {
     stats.lastFlush = new Date().toISOString();
-    writeFileSync(DATA_FILE, JSON.stringify(stats, null, 2), 'utf-8');
+    atomicWriteSync(DATA_FILE, JSON.stringify(stats, null, 2));
   } catch (err) {
     console.error('Analytics flush failed:', err.message);
   }

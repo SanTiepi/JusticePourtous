@@ -68,7 +68,7 @@
     "fichesLiees": [
       "bail_depot_garantie",
       "bail_etat_des_lieux",
-      "bail_résiliation_conteste"
+      "bail_resiliation_conteste"
     ],
     "calculateurs": [
       "calculAmortissementGarantie"
@@ -344,8 +344,8 @@
     ],
     "fichesLiees": [
       "travail_grossesse",
-      "famille_reconnaissance",
-      "famille_allocations"
+      "famille_reconnaissance_paternite",
+      "famille_pension"
     ],
     "calculateurs": [
       "calculProtectionMaladie"
@@ -411,7 +411,7 @@
     "fichesLiees": [
       "succession_reserves",
       "succession_repudiation",
-      "succession_partage"
+      "famille_succession_ab_intestat"
     ],
     "calculateurs": [
       "calculCoutProcedure"
@@ -475,9 +475,9 @@
       }
     ],
     "fichesLiees": [
-      "entreprise_creation",
-      "entreprise_tva",
-      "entreprise_assurances_sociales"
+      "entreprise_difficultes_paiement",
+      "entreprise_surendettement",
+      "entreprise_difficultes_paiement"
     ],
     "calculateurs": [
       "calculCoutProcedure"
@@ -541,9 +541,9 @@
       }
     ],
     "fichesLiees": [
-      "travail_harcélément_moral",
-      "travail_harcélément_sexuel",
-      "travail_protection_personnalite"
+      "travail_harcelement",
+      "travail_harcelement",
+      "travail_protection_donnees"
     ],
     "calculateurs": [
       "calculCoutProcedure",
@@ -678,7 +678,7 @@
     ],
     "fichesLiees": [
       "etranger_naturalisation",
-      "etranger_permis_c",
+      "etranger_permis_c_conditions",
       "etranger_regroupement"
     ],
     "calculateurs": [
@@ -809,8 +809,8 @@
       }
     ],
     "fichesLiees": [
-      "bail_loyers_impayés",
-      "bail_résiliation_extraordinaire",
+      "bail_loyers_impayes",
+      "bail_expulsion",
       "dettes_commandement_payer"
     ],
     "calculateurs": [
@@ -876,8 +876,8 @@
     ],
     "fichesLiees": [
       "bail_loyer_abusif",
-      "bail_augmentation",
-      "bail_baisse_loyer"
+      "bail_augmentation_loyer",
+      "bail_loyer_abusif"
     ],
     "calculateurs": [
       "calculRendementAdmissible",
@@ -943,8 +943,8 @@
     ],
     "fichesLiees": [
       "assurance_ai_rente",
-      "assurance_ai_readaptation",
-      "assurance_ai_recours"
+      "assurance_ai_rente",
+      "assurance_ai_rente"
     ],
     "calculateurs": [
       "calculCoutProcedure",
@@ -1010,8 +1010,8 @@
     ],
     "fichesLiees": [
       "famille_curatelle",
-      "famille_mandat_inaptitude",
-      "assurance_allocation_impotent"
+      "famille_curatelle",
+      "assurance_ai_rente"
     ],
     "calculateurs": [
       "calculEligibiliteAJ"

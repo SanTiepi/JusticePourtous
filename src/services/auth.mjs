@@ -11,9 +11,10 @@
  */
 
 import { randomInt, randomBytes } from 'node:crypto';
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { atomicWriteSync, safeLoadJSON } from './atomic-write.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const USERS_FILE = join(__dirname, '..', 'data', 'meta', 'users.json');
@@ -21,7 +22,9 @@ const USERS_FILE = join(__dirname, '..', 'data', 'meta', 'users.json');
 // ─── In-memory stores ───────────────────────────────────────────
 
 const pendingCodes = new Map(); // email → { code, expiresAt, attempts }
+const authTokens = new Map();   // token → { email, activeSession, createdAt, expiresAt }
 const CODE_EXPIRY_MS = 10 * 60 * 1000; // 10 minutes
+const AUTH_TOKEN_EXPIRY_MS = 60 * 60 * 1000; // 1 hour
 const MAX_ATTEMPTS = 5;
 const CODE_COOLDOWN_MS = 60 * 1000; // 1 min between sends
 
@@ -30,12 +33,10 @@ const CODE_COOLDOWN_MS = 60 * 1000; // 1 min between sends
 let users = new Map(); // email → { email, walletSessions: [], createdAt, lastLogin }
 
 function loadUsers() {
-  try {
-    if (existsSync(USERS_FILE)) {
-      const data = JSON.parse(readFileSync(USERS_FILE, 'utf-8'));
-      users = new Map(data);
-    }
-  } catch { /* first run */ }
+  const data = safeLoadJSON(USERS_FILE);
+  if (Array.isArray(data)) {
+    users = new Map(data);
+  }
 }
 
 let saveTimer = null;
@@ -44,7 +45,7 @@ function saveUsers() {
   saveTimer = setTimeout(() => {
     saveTimer = null;
     try {
-      writeFileSync(USERS_FILE, JSON.stringify([...users], null, 2));
+      atomicWriteSync(USERS_FILE, JSON.stringify([...users], null, 2));
     } catch (err) {
       console.error('Failed to save users:', err.message);
     }
@@ -54,7 +55,7 @@ function saveUsers() {
 export function _flushUsers() {
   if (saveTimer) { clearTimeout(saveTimer); saveTimer = null; }
   try {
-    writeFileSync(USERS_FILE, JSON.stringify([...users], null, 2));
+    atomicWriteSync(USERS_FILE, JSON.stringify([...users], null, 2));
   } catch {}
 }
 
@@ -189,13 +190,30 @@ export function verifyCode(email, code) {
     users.set(normalized, user);
   }
   user.lastLogin = new Date().toISOString();
+
+  // Return only the most recent valid wallet session, not all raw codes
+  const activeSession = user.walletSessions.length > 0
+    ? user.walletSessions[user.walletSessions.length - 1]
+    : null;
+
+  // Generate a short-lived auth token instead of exposing wallet codes
+  const authToken = randomBytes(32).toString('hex');
+  authTokens.set(authToken, {
+    email: normalized,
+    activeSession,
+    createdAt: Date.now(),
+    expiresAt: Date.now() + AUTH_TOKEN_EXPIRY_MS,
+  });
+
   saveUsers();
 
   return {
     status: 200,
     data: {
       email: normalized,
-      walletSessions: user.walletSessions,
+      authToken,
+      activeSession,
+      walletCount: user.walletSessions.length,
       authenticated: true,
     }
   };
@@ -238,4 +256,19 @@ export function getEmailByWallet(sessionCode) {
     if (user.walletSessions.includes(sessionCode)) return email;
   }
   return null;
+}
+
+/**
+ * Resolve an auth token to the associated wallet session.
+ * Returns { email, activeSession } or null if invalid/expired.
+ */
+export function resolveAuthToken(token) {
+  if (!token) return null;
+  const entry = authTokens.get(token);
+  if (!entry) return null;
+  if (Date.now() > entry.expiresAt) {
+    authTokens.delete(token);
+    return null;
+  }
+  return { email: entry.email, activeSession: entry.activeSession };
 }

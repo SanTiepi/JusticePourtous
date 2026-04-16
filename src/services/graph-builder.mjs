@@ -363,8 +363,11 @@ export function buildGraph() {
     .filter(a => !graph.articleToFiches[normalizeRef(a.ref)])
     .map(a => a.ref);
 
-  // Domains without jurisprudence
-  const allDomaines = ['bail', 'travail', 'famille', 'dettes', 'etrangers'];
+  // Domains without jurisprudence — dynamically from domaines.json or fiche domaines
+  const domainesJson = loadJSON(join(dataDir, 'domaines.json'));
+  const allDomaines = domainesJson
+    ? (Array.isArray(domainesJson) ? domainesJson.map(d => d.id || d.nom || d) : Object.keys(domainesJson))
+    : [...new Set(data.fiches.map(f => f.domaine).filter(Boolean))];
   graph.orphans.domainesWithoutJurisprudence = allDomaines
     .filter(d => !domainesWithJuris.has(d));
 

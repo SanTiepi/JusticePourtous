@@ -1,10 +1,11 @@
 import { randomBytes } from 'node:crypto';
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { readFileSync, mkdirSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { analyzeCase, estimateAnalysisCost } from './ai-analysis.mjs';
 import { processDocument } from './ocr.mjs';
 import { generateLetter } from './letter-generator.mjs';
+import { atomicWriteSync, safeLoadJSON } from './atomic-write.mjs';
 
 // --- Persistence layer ---
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -14,17 +15,11 @@ const wallets = new Map();
 
 /** Load wallets from disk. Silent no-op if file missing (first run). */
 function loadWallets() {
-  try {
-    if (!existsSync(WALLETS_PATH)) return;
-    const raw = readFileSync(WALLETS_PATH, 'utf-8');
-    const entries = JSON.parse(raw);
-    if (!Array.isArray(entries)) return;
-    wallets.clear();
-    for (const [key, value] of entries) {
-      wallets.set(key, value);
-    }
-  } catch {
-    // Corrupted file or first run — start fresh
+  const entries = safeLoadJSON(WALLETS_PATH);
+  if (!Array.isArray(entries)) return;
+  wallets.clear();
+  for (const [key, value] of entries) {
+    wallets.set(key, value);
   }
 }
 
@@ -38,7 +33,7 @@ function saveWallets() {
       const dir = dirname(WALLETS_PATH);
       if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
       const entries = [...wallets.entries()];
-      writeFileSync(WALLETS_PATH, JSON.stringify(entries, null, 2), 'utf-8');
+      atomicWriteSync(WALLETS_PATH, JSON.stringify(entries, null, 2));
     } catch {
       // Disk write failed — log in production, silent in dev
     }
@@ -55,7 +50,7 @@ export function _flushWallets() {
     const dir = dirname(WALLETS_PATH);
     if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
     const entries = [...wallets.entries()];
-    writeFileSync(WALLETS_PATH, JSON.stringify(entries, null, 2), 'utf-8');
+    atomicWriteSync(WALLETS_PATH, JSON.stringify(entries, null, 2));
   } catch {
     // silent
   }

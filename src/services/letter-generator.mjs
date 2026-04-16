@@ -1,6 +1,46 @@
 import { getFicheById } from './fiches.mjs';
+import { getTemplates } from './donnees-juridiques.mjs';
 
 const VALID_TYPES = ['mise_en_demeure', 'contestation', 'opposition', 'resiliation', 'plainte'];
+
+/**
+ * Find a matching template from the centralized store (lettres.json) for a given ficheId.
+ * Template IDs don't match fiche IDs exactly, so we match by domaine + keyword overlap.
+ */
+function getTemplateByFicheId(ficheId) {
+  const { data } = getTemplates();
+  if (!data?.templates?.length) return null;
+
+  // Direct match first (template id === ficheId)
+  const direct = data.templates.find(t => t.id === ficheId);
+  if (direct) return direct;
+
+  // Extract domaine and keywords from ficheId (e.g., "dettes_faillite_personnelle" -> domaine:"dettes", keywords:["faillite","personnelle"])
+  const parts = ficheId.split('_');
+  const domaine = parts[0];
+  // Normalize domaine (fiche uses "etranger", templates use "etrangers")
+  const domaineVariants = [domaine, domaine + 's', domaine.replace(/s$/, '')];
+  const keywords = parts.slice(1);
+
+  // Find templates in same domaine with best keyword overlap
+  const candidates = data.templates.filter(t =>
+    domaineVariants.includes(t.domaine)
+  );
+
+  let best = null;
+  let bestScore = 0;
+  for (const tpl of candidates) {
+    const tplParts = tpl.id.split('_').slice(1); // skip domaine prefix
+    const score = keywords.filter(k => tplParts.includes(k)).length;
+    if (score > bestScore) {
+      bestScore = score;
+      best = tpl;
+    }
+  }
+
+  // Require at least 1 keyword match
+  return bestScore >= 1 ? best : null;
+}
 
 const DISCLAIMER = "AVERTISSEMENT : Cette lettre est générée automatiquement à titre de modèle. Elle ne constitue PAS un document juridique définitif. Faites-la relire par un professionnel du droit avant envoi. JusticePourtous décline toute responsabilité.";
 
@@ -62,8 +102,14 @@ ${DISCLAIMER}`;
 }
 
 function generateTemplateFromFiche(fiche, userContext, type) {
-  const modele = fiche.reponse.modeleLettre || '';
+  let modele = fiche.reponse.modeleLettre || '';
   const articles = fiche.reponse.articles || [];
+
+  // If fiche has no template, try the centralized templates store
+  if (!modele) {
+    const templateStore = getTemplateByFicheId(fiche.id);
+    if (templateStore?.contenu) modele = templateStore.contenu;
+  }
 
   if (modele) {
     // Use existing template, fill placeholders
@@ -117,7 +163,7 @@ Explication: ${fiche.reponse.explication}
 Articles: ${fiche.reponse.articles.map(a => `${a.ref}: ${a.titre}`).join(', ')}
 
 MODÈLE DE BASE :
-${fiche.reponse.modeleLettre || 'Aucun modèle disponible'}
+${fiche.reponse.modeleLettre || getTemplateByFicheId(fiche.id)?.contenu || 'Aucun modèle disponible'}
 
 RÈGLES :
 - Format lettre suisse (expéditeur, destinataire, lieu/date, objet, corps, salutations)

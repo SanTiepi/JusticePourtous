@@ -484,6 +484,124 @@ function classifyArretRole(resultat) {
   return 'neutre';
 }
 
+// --- Suggested follow-up questions (dynamic, per fiche) ---
+
+// Common follow-up patterns per domaine
+const DOMAINE_FOLLOWUPS = {
+  bail: [
+    { text: 'Comment mettre mon propriétaire en demeure ?', query: 'mise en demeure propriétaire bail' },
+    { text: 'Puis-je résilier mon bail de manière anticipée ?', query: 'résiliation anticipée bail locataire' },
+    { text: 'Puis-je consigner mon loyer ?', query: 'consignation loyer défaut logement' },
+    { text: 'Comment contester une augmentation de loyer ?', query: 'contestation augmentation loyer' },
+    { text: 'Quels sont mes droits en cas de résiliation abusive ?', query: 'résiliation abusive bail protection locataire' },
+  ],
+  travail: [
+    { text: 'Comment contester un licenciement abusif ?', query: 'licenciement abusif contestation indemnités' },
+    { text: 'Ai-je droit à un certificat de travail ?', query: 'certificat de travail obligation employeur' },
+    { text: 'Comment réclamer des heures supplémentaires impayées ?', query: 'heures supplémentaires salaire impayé' },
+    { text: 'Quels sont mes droits pendant le délai de congé ?', query: 'délai de congé droits employé' },
+    { text: 'Puis-je toucher le chômage après un licenciement ?', query: 'inscription chômage après licenciement' },
+  ],
+  famille: [
+    { text: 'Comment calculer la pension alimentaire ?', query: 'calcul pension alimentaire enfant' },
+    { text: 'Quels sont mes droits de visite ?', query: 'droit de visite parent non gardien' },
+    { text: 'Comment demander le divorce ?', query: 'procédure divorce suisse étapes' },
+    { text: 'Comment protéger les enfants en cas de conflit ?', query: 'mesures protection enfant divorce' },
+  ],
+  dettes: [
+    { text: 'Comment calculer mon minimum vital ?', query: 'calcul minimum vital saisie poursuite' },
+    { text: 'Puis-je faire opposition à une poursuite ?', query: 'opposition poursuite commandement de payer' },
+    { text: 'Comment demander un arrangement de paiement ?', query: 'arrangement paiement dette échelonnement' },
+    { text: 'Quelles sont les conséquences d\'un acte de défaut de biens ?', query: 'acte défaut de biens conséquences' },
+  ],
+  etrangers: [
+    { text: 'Comment renouveler mon permis de séjour ?', query: 'renouvellement permis séjour procédure' },
+    { text: 'Puis-je faire un recours contre un refus de permis ?', query: 'recours refus permis séjour' },
+    { text: 'Quelles sont les conditions de naturalisation ?', query: 'naturalisation suisse conditions procédure' },
+  ],
+  assurances: [
+    { text: 'Comment contester une décision AI ?', query: 'recours décision assurance invalidité' },
+    { text: 'Ai-je droit à des prestations complémentaires ?', query: 'prestations complémentaires conditions calcul' },
+    { text: 'Comment déclarer un accident de travail ?', query: 'déclaration accident travail LAA procédure' },
+  ],
+  violence: [
+    { text: 'Comment obtenir une mesure d\'éloignement ?', query: 'mesure éloignement violence domestique' },
+    { text: 'Où trouver un hébergement d\'urgence ?', query: 'foyer accueil hébergement urgence violence' },
+    { text: 'Comment déposer une plainte pénale ?', query: 'plainte pénale violence procédure' },
+  ],
+};
+
+/**
+ * Generate context-specific follow-up questions based on fiche, triage, and data.
+ * Does NOT hardcode per fiche — derives dynamically from:
+ *   1. Related fiches (alternatives)
+ *   2. Article references (legal concepts)
+ *   3. Domain follow-up patterns
+ *   4. Missing questions from LLM triage
+ */
+export function generateSuggestedQuestions(ficheId, enrichedData, triageData) {
+  const suggestions = [];
+  const seen = new Set();
+
+  function add(text, query) {
+    const key = query.toLowerCase().trim();
+    if (seen.has(key)) return;
+    seen.add(key);
+    suggestions.push({ text, query });
+  }
+
+  const fiche = enrichedData?.fiche || ficheMap.get(ficheId);
+  if (!fiche) return [];
+
+  const domaine = fiche.domaine;
+  const sousDomaine = fiche.sousDomaine;
+
+  // 1. Missing questions from LLM triage — rephrase as user-friendly suggestions
+  const questionsManquantes = triageData?.questions || triageData?.questionsManquantes || [];
+  for (const q of questionsManquantes.slice(0, 2)) {
+    const qText = typeof q === 'string' ? q : q.text || q.question || '';
+    if (qText.length > 10) {
+      add(qText, qText);
+    }
+  }
+
+  // 2. Related fiches — suggest exploring alternatives
+  const relatedIds = graph.ficheToFiches[ficheId] || [];
+  for (const relId of relatedIds.slice(0, 2)) {
+    const rel = ficheMap.get(relId);
+    if (!rel) continue;
+    const label = rel.reponse?.explication?.slice(0, 80) || rel.tags?.join(', ') || relId.replace(/_/g, ' ');
+    const query = rel.tags?.slice(0, 3).join(' ') || relId.replace(/_/g, ' ');
+    add(label.endsWith('...') ? label : label + '...', query);
+  }
+
+  // 3. Article-derived suggestions — extract key legal concepts from referenced articles
+  const articleRefs = graph.ficheToArticles[ficheId] || [];
+  for (const ref of articleRefs.slice(0, 3)) {
+    const art = articleMap.get(ref);
+    if (!art || !art.titre) continue;
+    // Create a question from the article title
+    const titre = art.titre.replace(/\.$/, '');
+    if (titre.length > 15 && titre.length < 100) {
+      add(`Que dit la loi sur : ${titre} ?`, `${ref} ${titre}`);
+    }
+  }
+
+  // 4. Domain follow-up patterns — filtered to exclude current fiche's topic
+  const domainFollowups = DOMAINE_FOLLOWUPS[domaine] || [];
+  const ficheTagsLower = (fiche.tags || []).map(t => t.toLowerCase());
+  for (const fp of domainFollowups) {
+    // Skip if the follow-up is too similar to the current fiche
+    const queryWords = fp.query.toLowerCase().split(/\s+/);
+    const overlap = queryWords.filter(w => ficheTagsLower.includes(w)).length;
+    if (overlap >= 2) continue; // too similar to current result
+    add(fp.text, fp.query);
+  }
+
+  // Return max 5
+  return suggestions.slice(0, 5);
+}
+
 function detectLacunes(fiche, articles, jurisprudence, delais) {
   const lacunes = [];
 

@@ -24,7 +24,8 @@ import { getAllStatistiques, getStatistiquesByDomaine } from './services/statist
 import { CALCULATEURS } from './services/calculateurs.mjs';
 import {
   queryByProblem, queryByArticle, queryByDecision,
-  queryByDomain, queryComplete, getTableDesMatieres, getCompleteness
+  queryByDomain, queryComplete, getTableDesMatieres, getCompleteness,
+  generateSuggestedQuestions
 } from './services/knowledge-engine.mjs';
 import { generateActionPlan } from './services/action-planner.mjs';
 import { triage, estimateCost } from './services/triage-engine.mjs';
@@ -724,6 +725,13 @@ const server = createServer(async (req, res) => {
           triage_method: 'llm',
           disclaimer: DISCLAIMER,
         });
+        // Generate suggested follow-up questions
+        responseData.suggested_questions = generateSuggestedQuestions(
+          ficheId,
+          enriched.status === 200 ? enriched.data : null,
+          triageResult.data
+        );
+
         logTriage(q, triageResult.data, 'llm', Date.now() - triageStart);
         return json(res, 200, responseData);
       }
@@ -739,6 +747,10 @@ const server = createServer(async (req, res) => {
       }
 
       const fallbackData = enrichV4({ ...result.data, triage_method: 'keyword_fallback', disclaimer: DISCLAIMER });
+      // Add suggested questions for keyword fallback too
+      if (fallbackData.fiche?.id) {
+        fallbackData.suggested_questions = generateSuggestedQuestions(fallbackData.fiche.id, fallbackData, null);
+      }
       logTriage(q, result.data, 'keyword_fallback', Date.now() - triageStart);
       return json(res, result.status, fallbackData);
     }
@@ -1153,6 +1165,43 @@ const server = createServer(async (req, res) => {
           console.log('Debit warning:', debitResult.error, 'session:', sessionCode);
         }
 
+        // Generate premium suggested next steps
+        const suggestedNextSteps = [];
+        const claims = result.analysis?.claims || [];
+        const cert = result.certificate || {};
+        // Claim-based suggestions
+        for (const claim of claims.slice(0, 2)) {
+          if (claim.text && claim.confiance !== 'faible') {
+            suggestedNextSteps.push({
+              text: `Approfondir : ${(claim.text || '').slice(0, 80)}`,
+              query: (claim.text || '').slice(0, 60),
+              type: 'claim'
+            });
+          }
+        }
+        // Certificate gaps
+        if (cert.checks) {
+          const failed = (Array.isArray(cert.checks) ? cert.checks : []).filter(c => !c.passed);
+          for (const f of failed.slice(0, 1)) {
+            suggestedNextSteps.push({
+              text: `Information manquante : ${f.label || f.id || ''}`,
+              query: f.label || '',
+              type: 'gap'
+            });
+          }
+        }
+        // Letter generation suggestion
+        if (ficheId) {
+          suggestedNextSteps.push({
+            text: 'Générer une lettre de mise en demeure',
+            action: 'generate_letter',
+            ficheId,
+            type: 'letter'
+          });
+        }
+        // Fiche-level suggested questions
+        const ficheQuestions = generateSuggestedQuestions(ficheId, null, { questions: result.questions });
+
         return json(res, 200, {
           mode_crise: result.mode_crise || false,
           urgence_contacts: result.urgence_contacts || null,
@@ -1179,6 +1228,9 @@ const server = createServer(async (req, res) => {
           committee: result.committee || null,
           normative: result.normative || null,
           vulgarisation: vulg,
+          // V5: suggested next steps
+          suggested_next_steps: suggestedNextSteps,
+          suggested_questions: ficheQuestions,
           usage: result.usage,
           cost: debitResult.charged ? { charged_centimes: debitResult.charged, solde_restant: debitResult.solde } : null,
           disclaimer: DISCLAIMER

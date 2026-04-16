@@ -708,6 +708,24 @@ function renderEnrichedResult(data, query, container) {
   if (normRules.length) html += ', <span class="source-count">' + t('result.source_rules').replace('{{count}}', normRules.length) + '</span>';
   html += '</span></div>';
 
+  // Suggested follow-up questions
+  var suggestions = data.suggested_questions || [];
+  if (suggestions.length) {
+    html += '<div class="suggested-questions"' + stagger() + '>';
+    html += '<h3>' + t('suggested.title') + '</h3>';
+    html += '<p class="suggested-intro">' + t('suggested.intro') + '</p>';
+    html += '<div class="suggestion-list">';
+    suggestions.forEach(function(s) {
+      var encodedQuery = encodeURIComponent(s.query || s.text);
+      html += '<a href="/resultat.html?q=' + encodedQuery + '" class="suggestion-card">';
+      html += '<span class="suggestion-text">' + escHtml(s.text) + '</span>';
+      html += '<span class="suggestion-arrow">&rarr;</span>';
+      html += '</a>';
+    });
+    html += '</div>';
+    html += '</div>';
+  }
+
   // Feedback widget
   var feedbackFicheId = (data.fiche || {}).id || 'unknown';
   html += '<div class="feedback-widget" id="feedback-widget" data-fiche="' + escAttr(feedbackFicheId) + '">';

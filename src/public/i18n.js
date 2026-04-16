@@ -2943,7 +2943,7 @@ var I18N = {
 
     // -- Results: Upsell --
     'upsell.title': 'Trebate personaliziranu analizu?',
-    'upsell.text': 'Na\u0161a AI analizira va\u0161u situaciju detaljno za CHF CHF 0.08 do 0.25 po pitanju.',
+    'upsell.text': 'Na\u0161a AI analizira va\u0161u situaciju detaljno za CHF 0.08 do 0.25 po pitanju.',
     'upsell.button': 'Premium zona',
 
     // -- Common actions --
@@ -3011,7 +3011,7 @@ var I18N = {
     'premium.code_placeholder': 'Unesite kod',
     'premium.wallet_label': 'Preostali saldo',
     'premium.analyze_title': 'Analizirajte svoju situaciju',
-    'premium.analyze_cost_hint': 'Procijenjena cijena: CHF CHF 0.08 do 0.25 po analizi',
+    'premium.analyze_cost_hint': 'Procijenjena cijena: CHF 0.08 do 0.25 po analizi',
     'premium.analyze_placeholder': 'Detaljno opi\u0161ite svoju pravnu situaciju...',
     'premium.analyze_submit': 'Analiziraj moju situaciju',
     'premium.upload_label': 'Prilo\u017eite dokument (PDF, sliku)',

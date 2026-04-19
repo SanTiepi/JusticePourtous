@@ -51,7 +51,7 @@
 - **284 fiches** dont **100% `reviewed_by_claude`** (checklist structurelle stricte) + 29 `information_only`
 - **145/284 avec cascades structurées** (actionabilité)
 - **34 règles normatives exécutables** sur **13 domaines** (bail/travail/dettes/transversal/consommation/assurances/voisinage + famille/etrangers/social/violence/accident/entreprise — +12 règles ajoutées 2026-04-19 via phase5-domain-extension fix)
-- **274 invariants régression juridique** (hash-lock sur délais/articles)
+- **282 invariants régression juridique** (hash-lock sur délais/articles, recalculés 2026-04-19 avec les +12 règles)
 - **376 intents catalogués**, pages SEO guides = 253
 - **Source-registry 100% résolution** (fallback RS Fedlex — CC/CO/LP/LAA/LAI/LAMal/LCR/LAO/...)
 - **Corpus jurisprudence cantonale** en ingestion via `scripts/ingest-entscheidsuche.mjs` (lacune démocratique comblée)
@@ -61,19 +61,30 @@
 - **Benchmark** vs LLM brut structurel : ×5.4 (avantage moyen 43.6 points / 100)
 - 101+/101 tests critiques verts sur suite ciblée
 
-### Fondations qualité (2026-04-19 — 11 chantiers clos + 3 bugs fixés)
-- **Health check `/api/health/deep`** (`services/health-check.mjs`) — 12 checks parallèles, global `ok|degraded|failing`, HTTP 503 si failing
-- **Cache read-through `enrichFiche`** (`services/knowledge-engine.mjs`) — Map par ficheId, shallow clone sur return pour isoler mutations (bug fixé : filtrage canton mutait le cache partagé). Stats `_enrichCacheStats()` exposées dans health check
-- **Logger centralisé** (`services/logger.mjs`) — JSON en prod, pretty en dev, silent en test, colored par niveau. `server.mjs` 100% migré (zéro `console.*`). Hook auto vers `metrics.recordError` pour error/warn
-- **Case-store compaction** (`services/case-store.mjs`) — `startCompactionLoop()` boucle 10min, stats dans health check, `unref()` pour ne pas bloquer exit. Graceful shutdown flush pour éviter perte de données
-- **Env-check fail-fast** (`services/env-check.mjs`) — `validateEnv()` au boot ; en prod, throw si env vars required manquent. `GET /api/admin/env` expose le statut
-- **Metrics counters** (`services/metrics.mjs`) — compteurs HTTP (par class 2xx/3xx/4xx/5xx, avg duration, top 20 paths normalisés) + errors auto-incrémentés. Exposés via `GET /api/admin/metrics` + rate-limit stats par bucket
-- **Request ID correlation** — header `X-Request-Id` honoré en entrée ou généré, propagé dans `req.reqId` et log output + response header
-- **Bugs pre-existing corrigés** :
-  - `queryByProblem` n'appelait JAMAIS `enrichEscaladeWithMatrix` (test canton VD cassé depuis toujours)
-  - `queryComplete` n'injectait pas `fiche.freshness` (test phase-cortex-freshness cassé)
-  - `checkAdmin` 403 en tests (test ne passait pas `Bearer ADMIN_TOKEN`)
-- **Test subset sain** : 101/101 knowledge-engine + case-store + coverage-cert + normative-compiler. 91/91 freshness + cantons. Les 8 fails restants (rules-100, vulgarisation data, phase5, phase-cortex-intents) sont pre-existing et ont été confirmés via `git stash && test && stash pop`
+### Fondations qualité (2026-04-19 — 13 chantiers + bugs + tests + logger migration tous clos)
+
+**Infrastructure prod-ready** :
+- **Health check `/api/health/deep`** (`services/health-check.mjs`) — 12 checks, 12/12 ok en prod
+- **Cache read-through `enrichFiche`** avec shallow clone sur return (bug mutation fixé)
+- **Logger centralisé** (`services/logger.mjs`) — JSON prod, pretty dev, silent test, hook auto vers metrics. **100% migré** : `server.mjs` + 12 services, 82 console.* éradiqués
+- **Case-store compaction** toutes 10min + flush graceful shutdown
+- **Env-check fail-fast** au boot (`services/env-check.mjs`) + `GET /api/admin/env`
+- **Metrics** (`services/metrics.mjs`) — HTTP counters, errors, rate-limit buckets, exposés via `GET /api/admin/metrics`
+- **Request ID correlation** via `X-Request-Id` (entrée ou généré)
+- **Docker entrypoint seed** : le volume runtime n'écrase plus les fichiers meta statiques (intents-catalog.json, cantons-matrix.json, reports). Entrypoint tourne en root → seed + chown → drop vers node via su-exec
+
+**Bugs corrigés (tous pre-existing)** :
+- `queryByProblem` n'appelait jamais `enrichEscaladeWithMatrix`
+- `queryComplete` n'injectait pas `fiche.freshness`
+- Cache enrichFiche leak (mes propres commits, fixé)
+- `checkAdmin` 403 en tests (tests ne passaient pas Bearer)
+- Language router pollait FR avec source_language, DE/IT manquaient degraded_mode
+- Semantic routing "récupérer la garde" → violence au lieu de famille (DOMAIN_REQUIRED_TRIGGERS pour violence)
+- Phase4 scope test assertait draft_automated alors que fiches legitimes en reviewed_by_claude
+
+**Normative compiler** : 22 → 34 règles (+12 FAMILLE/ETRANGERS/SOCIAL/VIOLENCE/ACCIDENT/ENTREPRISE). **282 invariants** régression juridique (recalculés).
+
+**Deploy live** : 12/12 ok sur https://justicepourtous.ch. Secrets CITIZEN_EMAIL_SALT + OUTCOMES_HASH_SALT générés + vault. Image repo nettoyée (cases.json 200MB retiré de l'historique via filter-branch).
 
 ### Archive historique
 - 368 tests verts, 4448 articles, 2487 arrêts TF, 182 fiches enrichies, 14 cantons

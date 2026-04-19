@@ -55,6 +55,13 @@ export function _clearEnrichCache() {
   enrichStats.misses = 0;
 }
 
+export function _getGraphStats() {
+  return {
+    fiches_indexed: Object.keys(graph.ficheToArticles || {}).length,
+    articles_indexed: Object.keys(graph.articleToFiches || {}).length,
+  };
+}
+
 function enrichFiche(ficheId) {
   const cached = enrichCache.get(ficheId);
   if (cached) {

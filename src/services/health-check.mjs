@@ -141,8 +141,20 @@ async function checkCaselaw() {
 }
 
 async function checkGraph() {
+  // Le graph est construit en mémoire au boot (knowledge-engine.mjs),
+  // graph.json sur disque est optionnel (cache). On vérifie l'in-memory.
+  const { _getGraphStats } = await import('./knowledge-engine.mjs').catch(() => ({}));
+  if (typeof _getGraphStats === 'function') {
+    const stat = _getGraphStats();
+    return {
+      fiches_indexed: stat.fiches_indexed,
+      articles_indexed: stat.articles_indexed,
+      status: 'ok'
+    };
+  }
+  // Fallback fichier si helper absent
   const path = join(ROOT, 'src/data/index/graph.json');
-  if (!existsSync(path)) return { status: 'warn', note: 'graph.json absent' };
+  if (!existsSync(path)) return { status: 'warn', note: 'graph.json absent (and no _getGraphStats helper)' };
   const stat = JSON.parse(readFileSync(path, 'utf8'));
   return {
     fiches_indexed: Object.keys(stat.ficheToArticles || {}).length,

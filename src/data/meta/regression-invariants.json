@@ -43,6 +43,92 @@
     ]
   },
   {
+    "intent_id": "bail_charges_contestees",
+    "fiche_id": "bail_charges_contestees",
+    "domaine": "bail",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "CO 257a"
+      },
+      {
+        "type": "article_present",
+        "value": "CO 257b"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "CO 257a"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "escalade_type_present",
+        "value": "asloca"
+      },
+      {
+        "type": "delai_exists",
+        "match": "30|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "charges"
+      }
+    ]
+  },
+  {
+    "intent_id": "bail_defaut_bruit",
+    "fiche_id": "bail_defaut_bruit",
+    "domaine": "bail",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "CO 259a"
+      },
+      {
+        "type": "article_present",
+        "value": "CC 684"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "CO 259a"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "escalade_type_present",
+        "value": "asloca"
+      },
+      {
+        "type": "delai_exists",
+        "match": "7|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "bruit"
+      }
+    ]
+  },
+  {
     "intent_id": "bail_defaut_moisissure",
     "fiche_id": "bail_defaut_moisissure",
     "domaine": "bail",
@@ -86,6 +172,143 @@
       {
         "type": "tag_present",
         "value": "moisissure"
+      }
+    ]
+  },
+  {
+    "intent_id": "bail_etat_des_lieux",
+    "fiche_id": "bail_etat_des_lieux",
+    "domaine": "bail",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "CO 267"
+      },
+      {
+        "type": "article_present",
+        "value": "CO 267a"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "CO 267"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "escalade_type_present",
+        "value": "asloca"
+      },
+      {
+        "type": "delai_exists",
+        "match": "30|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "état des lieux"
+      }
+    ]
+  },
+  {
+    "intent_id": "bail_loyer_abusif",
+    "fiche_id": "bail_loyer_abusif",
+    "domaine": "bail",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "CO 269"
+      },
+      {
+        "type": "article_present",
+        "value": "CO 269a"
+      },
+      {
+        "type": "article_present",
+        "value": "CO 270"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "CO 269"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "escalade_type_present",
+        "value": "asloca"
+      },
+      {
+        "type": "delai_exists",
+        "match": "30|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "loyer"
+      }
+    ]
+  },
+  {
+    "intent_id": "bail_loyers_impayes",
+    "fiche_id": "bail_loyers_impayes",
+    "domaine": "bail",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "CO 257d"
+      },
+      {
+        "type": "article_present",
+        "value": "CO 266l"
+      },
+      {
+        "type": "article_present",
+        "value": "CO 272"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "CO 257d"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "escalade_type_present",
+        "value": "asloca"
+      },
+      {
+        "type": "delai_exists",
+        "match": "7|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "loyer"
       }
     ]
   },
@@ -184,6 +407,276 @@
     ]
   },
   {
+    "intent_id": "dettes_faillite_personnelle",
+    "fiche_id": "dettes_faillite_personnelle",
+    "domaine": "dettes",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "LP 191"
+      },
+      {
+        "type": "article_present",
+        "value": "LP 39"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "LP 191"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "escalade_type_present",
+        "value": "csp"
+      },
+      {
+        "type": "delai_exists",
+        "match": "immédiat"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "faillite"
+      }
+    ]
+  },
+  {
+    "intent_id": "dettes_impots_arrieres",
+    "fiche_id": "dettes_impots_arrieres",
+    "domaine": "dettes",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "LIFD 167"
+      },
+      {
+        "type": "article_present",
+        "value": "LIFD 168"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "LIFD 167"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "escalade_type_present",
+        "value": "csp"
+      },
+      {
+        "type": "delai_exists",
+        "match": "30|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "impots"
+      }
+    ]
+  },
+  {
+    "intent_id": "dettes_mainlevee_provisoire",
+    "fiche_id": "dettes_mainlevee_provisoire",
+    "domaine": "dettes",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "LP 82"
+      },
+      {
+        "type": "article_present",
+        "value": "LP 83"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "LP 82"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "escalade_type_present",
+        "value": "tribunal"
+      },
+      {
+        "type": "delai_exists",
+        "match": "10|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "mainlevee"
+      }
+    ]
+  },
+  {
+    "intent_id": "dettes_minimum_vital",
+    "fiche_id": "dettes_minimum_vital",
+    "domaine": "dettes",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "LP 93"
+      },
+      {
+        "type": "article_present",
+        "value": "LP 92"
+      },
+      {
+        "type": "article_present",
+        "value": "LP 17"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "LP 93"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "escalade_type_present",
+        "value": "csp"
+      },
+      {
+        "type": "delai_exists",
+        "match": "10|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "minimum vital"
+      }
+    ]
+  },
+  {
+    "intent_id": "dettes_opposition",
+    "fiche_id": "dettes_opposition",
+    "domaine": "dettes",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "LP 74"
+      },
+      {
+        "type": "article_present",
+        "value": "LP 80"
+      },
+      {
+        "type": "article_present",
+        "value": "LP 82"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "LP 74"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "escalade_type_present",
+        "value": "csp"
+      },
+      {
+        "type": "delai_exists",
+        "match": "10|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "opposition"
+      }
+    ]
+  },
+  {
+    "intent_id": "dettes_prescription",
+    "fiche_id": "dettes_prescription",
+    "domaine": "dettes",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "CO 127"
+      },
+      {
+        "type": "article_present",
+        "value": "CO 128"
+      },
+      {
+        "type": "article_present",
+        "value": "CO 135"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "CO 127"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "escalade_type_present",
+        "value": "csp"
+      },
+      {
+        "type": "delai_exists",
+        "match": "14|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "prescription"
+      }
+    ]
+  },
+  {
     "intent_id": "dettes_saisie_salaire",
     "fiche_id": "dettes_saisie_salaire",
     "domaine": "dettes",
@@ -223,6 +716,88 @@
       {
         "type": "tag_present",
         "value": "saisie"
+      }
+    ]
+  },
+  {
+    "intent_id": "etranger_aide_urgence",
+    "fiche_id": "etranger_aide_urgence",
+    "domaine": "etrangers",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "Cst 12"
+      },
+      {
+        "type": "article_present",
+        "value": "LAsi 82"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "Cst 12"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "delai_exists",
+        "match": "7|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "aide urgence"
+      }
+    ]
+  },
+  {
+    "intent_id": "etranger_naturalisation",
+    "fiche_id": "etranger_naturalisation",
+    "domaine": "etrangers",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "LN 9"
+      },
+      {
+        "type": "article_present",
+        "value": "LN 11"
+      },
+      {
+        "type": "article_present",
+        "value": "LN 12"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "LN 9"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "delai_exists",
+        "match": "24|mois"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "naturalisation"
       }
     ]
   },
@@ -270,6 +845,315 @@
     ]
   },
   {
+    "intent_id": "etranger_regroupement_familial",
+    "fiche_id": "etranger_regroupement_familial",
+    "domaine": "etrangers",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "LEI 42"
+      },
+      {
+        "type": "article_present",
+        "value": "LEI 43"
+      },
+      {
+        "type": "article_present",
+        "value": "LEI 44"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "LEI 42"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "delai_exists",
+        "match": "5|an"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "regroupement"
+      }
+    ]
+  },
+  {
+    "intent_id": "etranger_renvoi_recours",
+    "fiche_id": "etranger_renvoi_recours",
+    "domaine": "etrangers",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "LEI 64"
+      },
+      {
+        "type": "article_present",
+        "value": "LEI 112"
+      },
+      {
+        "type": "article_present",
+        "value": "CEDH 8"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "LEI 64"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "delai_exists",
+        "match": "7|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "renvoi"
+      }
+    ]
+  },
+  {
+    "intent_id": "etranger_violence_permis",
+    "fiche_id": "etranger_violence_permis",
+    "domaine": "etrangers",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "LEI 50"
+      },
+      {
+        "type": "article_present",
+        "value": "LEI 77"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "LEI 50"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "escalade_type_present",
+        "value": "lavi"
+      },
+      {
+        "type": "delai_exists",
+        "match": "30|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "violence"
+      }
+    ]
+  },
+  {
+    "intent_id": "etranger_visa_schengen_refus",
+    "fiche_id": "etranger_visa_schengen_refus",
+    "domaine": "etrangers",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "Code des visas art. 32"
+      },
+      {
+        "type": "article_present",
+        "value": "LEI 65"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "Code des visas art\\. 32"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "escalade_type_present",
+        "value": "tribunal"
+      },
+      {
+        "type": "delai_exists",
+        "match": "14|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "Schengen"
+      }
+    ]
+  },
+  {
+    "intent_id": "famille_divorce_procedure",
+    "fiche_id": "famille_divorce_procedure",
+    "domaine": "famille",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "CC 111"
+      },
+      {
+        "type": "article_present",
+        "value": "CC 114"
+      },
+      {
+        "type": "article_present",
+        "value": "CPC 274"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "CC 111"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "escalade_type_present",
+        "value": "avocat"
+      },
+      {
+        "type": "delai_exists",
+        "match": "60|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "divorce"
+      }
+    ]
+  },
+  {
+    "intent_id": "famille_garde_modification",
+    "fiche_id": "famille_garde_modification",
+    "domaine": "famille",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "CC 134"
+      },
+      {
+        "type": "article_present",
+        "value": "CC 296"
+      },
+      {
+        "type": "article_present",
+        "value": "CC 301a"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "CC 134"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "delai_exists",
+        "match": "60|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "garde"
+      }
+    ]
+  },
+  {
+    "intent_id": "famille_mesures_provisionnelles",
+    "fiche_id": "famille_mesures_provisionnelles",
+    "domaine": "famille",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "CPC 261"
+      },
+      {
+        "type": "article_present",
+        "value": "CPC 265"
+      },
+      {
+        "type": "article_present",
+        "value": "CC 172"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "CPC 261"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "escalade_type_present",
+        "value": "avocat"
+      },
+      {
+        "type": "delai_exists",
+        "match": "7|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "mesures provisionnelles"
+      }
+    ]
+  },
+  {
     "intent_id": "famille_pension_impayee",
     "fiche_id": "famille_pension_impayee",
     "domaine": "famille",
@@ -313,26 +1197,26 @@
     ]
   },
   {
-    "intent_id": "travail_harcelement",
-    "fiche_id": "travail_harcelement",
-    "domaine": "travail",
+    "intent_id": "famille_pension_montant",
+    "fiche_id": "famille_pension_montant",
+    "domaine": "famille",
     "priority": "high",
     "invariants": [
       {
         "type": "article_present",
-        "value": "CO 328"
+        "value": "CC 285"
       },
       {
         "type": "article_present",
-        "value": "LEg 4"
+        "value": "CC 125"
       },
       {
         "type": "article_present",
-        "value": "LEg 5"
+        "value": "CC 276"
       },
       {
         "type": "article_with_source_id",
-        "ref_regex": "CO 328"
+        "ref_regex": "CC 285"
       },
       {
         "type": "jurisprudence_min_count",
@@ -340,144 +1224,7 @@
       },
       {
         "type": "escalade_type_present",
-        "value": "syndicat"
-      },
-      {
-        "type": "delai_exists",
-        "match": "3|mois"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "harcélément"
-      }
-    ]
-  },
-  {
-    "intent_id": "travail_licenciement_abusif",
-    "fiche_id": "travail_licenciement_abusif",
-    "domaine": "travail",
-    "priority": "high",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "CO 336"
-      },
-      {
-        "type": "article_present",
-        "value": "CO 336a"
-      },
-      {
-        "type": "article_present",
-        "value": "CO 336b"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "CO 336"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "syndicat"
-      },
-      {
-        "type": "delai_exists",
-        "match": "180|jour"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "licenciement"
-      }
-    ]
-  },
-  {
-    "intent_id": "travail_licenciement_maladie",
-    "fiche_id": "travail_licenciement_maladie",
-    "domaine": "travail",
-    "priority": "high",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "CO 336c"
-      },
-      {
-        "type": "article_present",
-        "value": "CO 324a"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "CO 336c"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "syndicat"
-      },
-      {
-        "type": "delai_exists",
-        "match": "immédiat"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "licenciement"
-      }
-    ]
-  },
-  {
-    "intent_id": "travail_salaire_impaye",
-    "fiche_id": "travail_salaire_impaye",
-    "domaine": "travail",
-    "priority": "high",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "CO 322"
-      },
-      {
-        "type": "article_present",
-        "value": "CO 323"
-      },
-      {
-        "type": "article_present",
-        "value": "CO 337"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "CO 322"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "syndicat"
+        "value": "avocat"
       },
       {
         "type": "delai_exists",
@@ -492,31 +1239,31 @@
       },
       {
         "type": "tag_present",
-        "value": "salaire"
+        "value": "pension"
       }
     ]
   },
   {
-    "intent_id": "travail_discrimination_salariale",
-    "fiche_id": "travail_discrimination_salariale",
-    "domaine": "travail",
-    "priority": "medium",
+    "intent_id": "famille_succession_reserve",
+    "fiche_id": "famille_succession_reserve",
+    "domaine": "famille",
+    "priority": "high",
     "invariants": [
       {
         "type": "article_present",
-        "value": "LEg 3"
+        "value": "CC 470"
       },
       {
         "type": "article_present",
-        "value": "Cst. 8 al. 3"
+        "value": "CC 471"
       },
       {
         "type": "article_present",
-        "value": "CO 322"
+        "value": "CC 533"
       },
       {
         "type": "article_with_source_id",
-        "ref_regex": "LEg 3"
+        "ref_regex": "CC 470"
       },
       {
         "type": "jurisprudence_min_count",
@@ -524,7 +1271,11 @@
       },
       {
         "type": "escalade_type_present",
-        "value": "syndicat"
+        "value": "avocat"
+      },
+      {
+        "type": "delai_exists",
+        "match": "6|mois"
       },
       {
         "type": "confiance_at_least",
@@ -535,31 +1286,31 @@
       },
       {
         "type": "tag_present",
-        "value": "discrimination"
+        "value": "succession"
       }
     ]
   },
   {
-    "intent_id": "bail_logement_insalubre",
-    "fiche_id": "bail_logement_insalubre",
-    "domaine": "bail",
-    "priority": "medium",
+    "intent_id": "famille_violence_conjugale",
+    "fiche_id": "famille_violence_conjugale",
+    "domaine": "famille",
+    "priority": "high",
     "invariants": [
       {
         "type": "article_present",
-        "value": "CO 258"
+        "value": "CC 28b"
       },
       {
         "type": "article_present",
-        "value": "CO 259a"
+        "value": "CP 126"
       },
       {
         "type": "article_present",
-        "value": "CO 259b"
+        "value": "CP 180"
       },
       {
         "type": "article_with_source_id",
-        "ref_regex": "CO 258"
+        "ref_regex": "CC 28b"
       },
       {
         "type": "jurisprudence_min_count",
@@ -567,50 +1318,11 @@
       },
       {
         "type": "escalade_type_present",
-        "value": "asloca"
+        "value": "lavi"
       },
       {
-        "type": "confiance_at_least",
-        "value": "variable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "insalubre"
-      }
-    ]
-  },
-  {
-    "intent_id": "dettes_faillite",
-    "fiche_id": "dettes_faillite",
-    "domaine": "dettes",
-    "priority": "medium",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "LP 191"
-      },
-      {
-        "type": "article_present",
-        "value": "LP 265"
-      },
-      {
-        "type": "article_present",
-        "value": "LP 149a"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "LP 191"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "csp"
+        "type": "delai_exists",
+        "match": "3|mois"
       },
       {
         "type": "confiance_at_least",
@@ -621,688 +1333,7 @@
       },
       {
         "type": "tag_present",
-        "value": "faillite"
-      }
-    ]
-  },
-  {
-    "intent_id": "travail_chomage",
-    "fiche_id": "travail_chomage",
-    "domaine": "travail",
-    "priority": "medium",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "LACI 8"
-      },
-      {
-        "type": "article_present",
-        "value": "LACI 13"
-      },
-      {
-        "type": "article_present",
-        "value": "LACI 22"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "LACI 8"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "chomage"
-      }
-    ]
-  },
-  {
-    "intent_id": "bail_loyers_impayes",
-    "fiche_id": "bail_loyers_impayes",
-    "domaine": "bail",
-    "priority": "medium",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "CO 257d"
-      },
-      {
-        "type": "article_present",
-        "value": "CO 266l"
-      },
-      {
-        "type": "article_present",
-        "value": "CO 272"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "CO 257d"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "asloca"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "loyer"
-      }
-    ]
-  },
-  {
-    "intent_id": "travail_burnout",
-    "fiche_id": "travail_burnout",
-    "domaine": "travail",
-    "priority": "medium",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "CO 328"
-      },
-      {
-        "type": "article_present",
-        "value": "CO 324a"
-      },
-      {
-        "type": "article_present",
-        "value": "LTr 6"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "CO 328"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "syndicat"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "burnout"
-      }
-    ]
-  },
-  {
-    "intent_id": "bail_recherche_logement",
-    "fiche_id": "bail_recherche_logement",
-    "domaine": "bail",
-    "priority": "medium",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "CC 176"
-      },
-      {
-        "type": "article_present",
-        "value": "CPC 343"
-      },
-      {
-        "type": "article_present",
-        "value": "Cst 41 al. 1 let. e"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "CC 176"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 1
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "csp"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "recherche"
-      }
-    ]
-  },
-  {
-    "intent_id": "dettes_opposition",
-    "fiche_id": "dettes_opposition",
-    "domaine": "dettes",
-    "priority": "medium",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "LP 74"
-      },
-      {
-        "type": "article_present",
-        "value": "LP 80"
-      },
-      {
-        "type": "article_present",
-        "value": "LP 82"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "LP 74"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "csp"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "opposition"
-      }
-    ]
-  },
-  {
-    "intent_id": "travail_apprenti",
-    "fiche_id": "travail_apprenti",
-    "domaine": "travail",
-    "priority": "medium",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "CO 344"
-      },
-      {
-        "type": "article_present",
-        "value": "CO 344a"
-      },
-      {
-        "type": "article_present",
-        "value": "CO 345a"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "CO 344"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 1
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "syndicat"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "tag_present",
-        "value": "apprenti"
-      }
-    ]
-  },
-  {
-    "intent_id": "travail_assurance_chomage",
-    "fiche_id": "travail_assurance_chomage",
-    "domaine": "travail",
-    "priority": "medium",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "LACI 13"
-      },
-      {
-        "type": "article_present",
-        "value": "LACI 22"
-      },
-      {
-        "type": "article_present",
-        "value": "LACI 27"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "LACI 13"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 1
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "syndicat"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "chomage"
-      }
-    ]
-  },
-  {
-    "intent_id": "travail_maladie",
-    "fiche_id": "travail_maladie",
-    "domaine": "travail",
-    "priority": "medium",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "CO 336c"
-      },
-      {
-        "type": "article_present",
-        "value": "CO 324a"
-      },
-      {
-        "type": "article_present",
-        "value": "LCA 67-72"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "CO 336c"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "syndicat"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "maladie"
-      }
-    ]
-  },
-  {
-    "intent_id": "travail_saisie_salaire",
-    "fiche_id": "travail_saisie_salaire",
-    "domaine": "travail",
-    "priority": "medium",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "LP 93"
-      },
-      {
-        "type": "article_present",
-        "value": "LP 99"
-      },
-      {
-        "type": "article_present",
-        "value": "LP 17"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "LP 93"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "office_poursuites"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "saisie"
-      }
-    ]
-  },
-  {
-    "intent_id": "bail_loyer_abusif",
-    "fiche_id": "bail_loyer_abusif",
-    "domaine": "bail",
-    "priority": "medium",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "CO 269"
-      },
-      {
-        "type": "article_present",
-        "value": "CO 269a"
-      },
-      {
-        "type": "article_present",
-        "value": "CO 270"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "CO 269"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "asloca"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "loyer"
-      }
-    ]
-  },
-  {
-    "intent_id": "bail_nuisances_voisins",
-    "fiche_id": "bail_nuisances_voisins",
-    "domaine": "bail",
-    "priority": "medium",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "CO 257f"
-      },
-      {
-        "type": "article_present",
-        "value": "CO 259a"
-      },
-      {
-        "type": "article_present",
-        "value": "CC 684"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "CO 257f"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "asloca"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "variable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "nuisances"
-      }
-    ]
-  },
-  {
-    "intent_id": "bail_prolongation",
-    "fiche_id": "bail_prolongation",
-    "domaine": "bail",
-    "priority": "medium",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "CO 272"
-      },
-      {
-        "type": "article_present",
-        "value": "CO 272b"
-      },
-      {
-        "type": "article_present",
-        "value": "CO 273"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "CO 272"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "asloca"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "variable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "prolongation"
-      }
-    ]
-  },
-  {
-    "intent_id": "dettes_creancier_abusif",
-    "fiche_id": "dettes_creancier_abusif",
-    "domaine": "dettes",
-    "priority": "medium",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "LP 20a"
-      },
-      {
-        "type": "article_present",
-        "value": "LP 8a"
-      },
-      {
-        "type": "article_present",
-        "value": "CC 28"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "LP 20a"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "conciliation"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "créancier"
-      }
-    ]
-  },
-  {
-    "intent_id": "dettes_faillite_personnelle_procedure",
-    "fiche_id": "dettes_faillite_personnelle_procedure",
-    "domaine": "dettes",
-    "priority": "medium",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "LP 191"
-      },
-      {
-        "type": "article_present",
-        "value": "LP 39"
-      },
-      {
-        "type": "article_present",
-        "value": "LP 265"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "LP 191"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "office_poursuites"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "faillite"
-      }
-    ]
-  },
-  {
-    "intent_id": "dettes_minimum_vital",
-    "fiche_id": "dettes_minimum_vital",
-    "domaine": "dettes",
-    "priority": "medium",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "LP 93"
-      },
-      {
-        "type": "article_present",
-        "value": "LP 92"
-      },
-      {
-        "type": "article_present",
-        "value": "LP 17"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "LP 93"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "csp"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "minimum vital"
-      }
-    ]
-  },
-  {
-    "intent_id": "dettes_primes_maladie",
-    "fiche_id": "dettes_primes_maladie",
-    "domaine": "dettes",
-    "priority": "medium",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "LAMal 3"
-      },
-      {
-        "type": "article_present",
-        "value": "LAMal 65"
-      },
-      {
-        "type": "article_present",
-        "value": "LAMal 64a"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "LAMal 3"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "csp"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "primes"
+        "value": "violence"
       }
     ]
   }

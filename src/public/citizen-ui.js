@@ -156,6 +156,7 @@
     node.innerHTML = html;
     if (typeof bindFn === 'function') bindFn();
     if (!shouldTranslateUi()) return;
+    node.style.visibility = 'hidden';
     translateHtmlFragment(html, {
       lang: currentLang(),
       content_type: 'chrome/ui',
@@ -164,7 +165,10 @@
       if (!payload || !payload.html) return;
       node.innerHTML = payload.html;
       if (typeof bindFn === 'function') bindFn();
-    }).catch(function () { /* noop */ });
+    }).catch(function () { /* noop */ })
+      .finally(function () {
+        node.style.visibility = '';
+      });
   }
 
   function setUiMessage(node, text, pagePath) {

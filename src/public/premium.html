@@ -96,7 +96,7 @@
               <span data-i18n="premium.cost_letter_range">CHF 0.05 – 0.10</span>
             </div>
             <div class="premium-cost-row">
-              <span>Traduction (8 langues)</span>
+              <span data-i18n="premium.cost_translation">Traduction (8 langues)</span>
               <span>CHF 0.10 – 0.20</span>
             </div>
           </div>
@@ -104,21 +104,21 @@
           <p class="premium-cost-note" data-i18n="premium.cost_note">Le coût exact est affiché après chaque opération. Votre solde est rechargeable à tout moment.</p>
 
           <div class="premium-login-section">
-            <h4>Déjà client ?</h4>
-            <p class="premium-code-label">Connectez-vous avec votre email pour retrouver votre solde.</p>
+            <h4 data-i18n="premium.login_title">Déjà client ?</h4>
+            <p class="premium-code-label" data-i18n="premium.login_intro">Connectez-vous avec votre email pour retrouver votre solde.</p>
             <div id="loginStep1">
               <div class="premium-code-row">
-                <input type="email" id="loginEmail" class="input" placeholder="Votre email">
-                <button class="btn btn-secondary" onclick="sendLoginCode()">Recevoir un code</button>
+                <input type="email" id="loginEmail" class="input" data-i18n-placeholder="premium.login_email_placeholder" placeholder="Votre email">
+                <button class="btn btn-secondary" onclick="sendLoginCode()" data-i18n="premium.login_send_code">Recevoir un code</button>
               </div>
             </div>
             <div id="loginStep2" class="hidden">
               <p class="premium-code-label" id="loginEmailSent"></p>
               <div class="premium-code-row">
-                <input type="text" id="loginCode" class="input" placeholder="Code à 6 chiffres" maxlength="6" pattern="[0-9]{6}">
-                <button class="btn btn-primary" onclick="verifyLoginCode()">Vérifier</button>
+                <input type="text" id="loginCode" class="input" data-i18n-placeholder="premium.login_code_placeholder" placeholder="Code à 6 chiffres" maxlength="6" pattern="[0-9]{6}">
+                <button class="btn btn-primary" onclick="verifyLoginCode()" data-i18n="premium.login_verify">Vérifier</button>
               </div>
-              <p class="premium-code-label" style="margin-top:0.5rem"><a href="#" onclick="document.getElementById('loginStep1').classList.remove('hidden');document.getElementById('loginStep2').classList.add('hidden');return false">Renvoyer un code</a></p>
+              <p class="premium-code-label" style="margin-top:0.5rem"><a href="#" data-i18n="premium.login_resend_code" onclick="document.getElementById('loginStep1').classList.remove('hidden');document.getElementById('loginStep2').classList.add('hidden');return false">Renvoyer un code</a></p>
             </div>
             <div id="loginError" class="hidden" style="color:var(--accent-danger);font-size:0.85rem;margin-top:0.5rem"></div>
           </div>
@@ -157,11 +157,11 @@
             <h3 data-i18n="premium.analysis_label">Analyse</h3>
             <div class="premium-response-actions">
               <select id="lettreType" class="select">
-                <option value="mise_en_demeure">Mise en demeure</option>
-                <option value="contestation">Contestation</option>
-                <option value="opposition">Opposition</option>
-                <option value="resiliation">Résiliation</option>
-                <option value="plainte">Plainte</option>
+                <option value="mise_en_demeure" data-i18n="letter.mise_en_demeure">Mise en demeure</option>
+                <option value="contestation" data-i18n="letter.contestation">Contestation</option>
+                <option value="opposition" data-i18n="letter.opposition">Opposition</option>
+                <option value="resiliation" data-i18n="letter.resiliation">Résiliation</option>
+                <option value="plainte" data-i18n="letter.plainte">Plainte</option>
               </select>
               <button class="btn btn-sm btn-secondary" onclick="genererLettre()" data-i18n="premium.generate_letter">Générer la lettre</button>
               <button class="btn btn-sm btn-print" onclick="window.print()" data-i18n="premium.print">Imprimer</button>
@@ -253,12 +253,39 @@
     }
     document.documentElement.lang = getLang();
 
+    function translatePremiumFragment(selector, pagePath) {
+      if (getLang() === 'fr' || typeof translateFragmentInPlace !== 'function') return Promise.resolve(false);
+      return translateFragmentInPlace(selector, { content_type: 'chrome/ui', page_path: pagePath || '/premium.html' });
+    }
+
+    function setPremiumText(node, text, pagePath) {
+      if (!node) return;
+      node.textContent = text;
+      if (getLang() === 'fr' || typeof translatePlainText !== 'function') return;
+      translatePlainText(text, { lang: getLang(), content_type: 'chrome/ui', page_path: pagePath || '/premium.html' })
+        .then(function(translated) {
+          node.textContent = translated;
+        })
+        .catch(function() {});
+    }
+
+    async function premiumAlert(text, pagePath) {
+      if (getLang() !== 'fr' && typeof translatePlainText === 'function') {
+        try {
+          text = await translatePlainText(text, { lang: getLang(), content_type: 'chrome/ui', page_path: pagePath || '/premium.html' });
+        } catch (e) {}
+      }
+      alert(text);
+    }
+
     if (getLang() !== 'fr') {
       document.querySelectorAll('[data-i18n]').forEach(function(el) {
         var key = el.getAttribute('data-i18n');
         var translated = t(key);
         if (translated !== key) el.textContent = translated;
       });
+      translatePremiumFragment('#noSession', '/premium/no-session');
+      translatePremiumFragment('#session', '/premium/session');
     }
 
     /* Quick exit: double ESC */
@@ -292,7 +319,8 @@
         if (data.error) { showLoginError(data.error); return; }
         document.getElementById('loginStep1').classList.add('hidden');
         document.getElementById('loginStep2').classList.remove('hidden');
-        document.getElementById('loginEmailSent').textContent = 'Code envoyé à ' + email;
+        setPremiumText(document.getElementById('loginEmailSent'), t('premium.login_email_sent', { email: email }), '/premium/login');
+        translatePremiumFragment('.premium-login-section', '/premium/login');
       } catch (e) {
         showLoginError('Erreur de connexion. Réessayez.');
       }
@@ -339,7 +367,7 @@
 
     function showLoginError(msg) {
       var el = document.getElementById('loginError');
-      el.textContent = msg;
+      setPremiumText(el, msg, '/premium/login');
       el.classList.remove('hidden');
     }
     function hideLoginError() {
@@ -366,10 +394,10 @@
           if (data.url) {
             window.location.href = data.url;
           } else {
-            alert('Erreur : ' + (data.error || 'Impossible de créer la session de paiement'));
+            premiumAlert('Erreur : ' + (data.error || t('error.payment_create')), '/premium/payment');
           }
         } catch (e) {
-          alert('Erreur de connexion au service de paiement.');
+          premiumAlert(t('error.payment_connection'), '/premium/payment');
         }
       } else {
         // Demo mode — instant wallet (no real payment)
@@ -386,7 +414,7 @@
           showSession();
           refreshCredits();
         } catch (e) {
-          alert('Erreur lors du chargement. Réessayez.');
+          premiumAlert(t('error.charge_failed'), '/premium/payment');
         }
       }
     }
@@ -398,7 +426,7 @@
       pollStripeSession(urlParams.get('session_id'), 0);
     }
     if (urlParams.get('payment') === 'cancelled') {
-      showPaymentMessage('Paiement annulé. Vous pouvez réessayer.', 'warning');
+      showPaymentMessage(t('error.payment_cancelled'), 'warning');
       history.replaceState({}, '', '/premium.html');
     }
 
@@ -409,6 +437,7 @@
         '<h3>Paiement reçu — activation en cours</h3>' +
         '<p style="color:var(--text-secondary)">Votre compte premium est en cours d\'activation. Cela prend généralement quelques secondes.</p>' +
         '</div>';
+      translatePremiumFragment('#noSession', '/premium/payment-processing');
     }
 
     function showPaymentMessage(msg, type) {
@@ -418,6 +447,7 @@
         '<p>' + msg + '</p>' +
         '<a href="/premium.html" class="btn btn-primary mt-lg">Retour</a>' +
         '</div>';
+      translatePremiumFragment('#noSession', '/premium/payment-message');
     }
 
     function pollStripeSession(stripeSessionId, attempt) {
@@ -462,6 +492,7 @@
           hist.innerHTML = data.historique.map(function(h) {
             return '<div class="service-item"><span class="nom">' + h.action + '</span><span>' + (h.montant > 0 ? '+' : '') + 'CHF ' + (h.montant / 100).toFixed(2) + '</span></div>';
           }).join('');
+          translatePremiumFragment('#historique', '/premium/history');
         }
       } catch (e) { /* silent fail */ }
     }
@@ -471,7 +502,7 @@
       if (!q && !selectedFile) return;
 
       var analyseBtn = document.querySelector('[onclick="analyserQuestion()"]');
-      if (analyseBtn) { analyseBtn.disabled = true; analyseBtn.textContent = 'Analyse en cours...'; }
+      if (analyseBtn) { analyseBtn.disabled = true; analyseBtn.textContent = t('consult.analysis_loading') + '...'; }
 
       var box = document.getElementById('reponseIA');
       var txt = document.getElementById('reponseTexte');
@@ -480,14 +511,14 @@
       // Step 1: OCR if file attached
       var ocrText = '';
       if (selectedFile) {
-        txt.innerHTML = '<div class="loading">Extraction du document...</div>';
+        txt.innerHTML = '<div class="loading">' + t('error.extraction') + '</div>';
         ocrText = await uploadAndOCR();
         if (ocrText) {
           q = (q ? q + '\n\n' : '') + '--- Document joint ---\n' + ocrText;
         }
       }
 
-      if (!q) { txt.textContent = 'Aucun texte à analyser.'; return; }
+      if (!q) { txt.textContent = t('v4.no_text'); return; }
       lastQuery = q;
 
       // Step 2: Analyze with V4 pipeline
@@ -696,14 +727,12 @@
 
       if (!html) html = '<p>' + t('v4.no_result') + '</p>';
       txt.innerHTML = html;
-      if (getLang() !== 'fr' && typeof translateFragmentInPlace === 'function') {
-        translateFragmentInPlace('#reponseTexte', { content_type: 'chrome/ui', page_path: '/premium.html' });
-      }
+      translatePremiumFragment('#reponseTexte', '/premium/response');
     }
 
     async function translateResponse() {
       var lang = document.getElementById('translateLang');
-      if (!lang || !lang.value) { alert('Choisissez une langue.'); return; }
+      if (!lang || !lang.value) { premiumAlert('Choisissez une langue.', '/premium/translate'); return; }
       var targetLang = lang.value;
       var status = document.getElementById('translateStatus');
 
@@ -735,6 +764,7 @@
           txt.innerHTML += '<div class="premium-cost-receipt">Coût traduction : <strong>CHF ' + (data.cost.charged_centimes / 100).toFixed(2) + '</strong> — Solde : CHF ' + (data.cost.solde_restant / 100).toFixed(2) + '</div>';
         }
         txt.innerHTML += barHtml;
+        translatePremiumFragment('#reponseTexte', '/premium/translated-response');
         if (status) status.textContent = '';
         refreshCredits();
       } catch (e) {
@@ -750,7 +780,7 @@
     }
 
     // --- Loading indicator ---
-    var PREMIUM_MESSAGES = typeof tLoadingMessages === 'function' ? tLoadingMessages('loading_search') : [
+    var PREMIUM_MESSAGES = typeof tLoadingMessages === 'function' ? tLoadingMessages('loading') : [
       'Compréhension de votre situation...',
       'Identification des problèmes juridiques...',
       'Construction du dossier contradictoire...',
@@ -763,7 +793,7 @@
       container.innerHTML = '<div class="loading-indicator">' +
         '<div class="loading-spinner"></div>' +
         '<div class="loading-message" id="premLoadMsg">' + PREMIUM_MESSAGES[0] + '</div>' +
-        '<div class="loading-sub">L\'analyse complète prend 10 à 30 secondes</div>' +
+        '<div class="loading-sub">' + t('loading.sub') + '</div>' +
         '</div>';
       premiumLoadingInterval = setInterval(function() {
         idx = (idx + 1) % PREMIUM_MESSAGES.length;
@@ -788,13 +818,13 @@
       if (input.files && input.files[0]) {
         selectedFile = input.files[0];
         if (selectedFile.size > 10 * 1024 * 1024) {
-          alert('Fichier trop volumineux (max 10 MB)');
+          premiumAlert(t('error.file_too_large'), '/premium/upload');
           clearFile();
           return;
         }
         document.getElementById('fileName').textContent = selectedFile.name + ' (' + (selectedFile.size / 1024).toFixed(0) + ' KB)';
         document.getElementById('fileInfo').classList.remove('hidden');
-        document.getElementById('fileLabel').querySelector('span').textContent = 'Changer de document';
+        document.getElementById('fileLabel').querySelector('span').textContent = t('premium.upload_change');
       }
     }
 
@@ -802,7 +832,7 @@
       selectedFile = null;
       document.getElementById('fileInput').value = '';
       document.getElementById('fileInfo').classList.add('hidden');
-      document.getElementById('fileLabel').querySelector('span').textContent = 'Joindre un document (PDF, image)';
+      document.getElementById('fileLabel').querySelector('span').textContent = t('premium.upload_label');
     }
 
     async function uploadAndOCR() {
@@ -831,12 +861,12 @@
 
     async function genererLettre() {
       var lettreBtn = document.querySelector('[onclick="genererLettre()"]');
-      if (lettreBtn) { lettreBtn.disabled = true; lettreBtn.textContent = 'Génération...'; }
+      if (lettreBtn) { lettreBtn.disabled = true; lettreBtn.textContent = t('premium.generate_letter') + '...'; }
 
       var lettreBox = document.getElementById('lettreResult');
       var lettreTxt = document.getElementById('lettreTexte');
       lettreBox.classList.remove('hidden');
-      lettreTxt.textContent = 'Génération en cours...';
+      lettreTxt.textContent = t('premium.generate_letter') + '...';
 
       try {
         var selectedType = document.getElementById('lettreType').value;
@@ -852,20 +882,20 @@
         });
         var data = await res.json();
         if (data.error) { lettreTxt.textContent = data.error; return; }
-        lettreTxt.textContent = data.lettre || data.data?.lettre || 'Pas de lettre générée';
+        lettreTxt.textContent = data.lettre || data.data?.lettre || t('error.no_letter');
         // Show download button
         document.getElementById('docxDownload').classList.remove('hidden');
         refreshCredits();
       } catch (e) {
-        lettreTxt.textContent = 'Erreur lors de la génération.';
+        lettreTxt.textContent = t('error.generation_failed');
       } finally {
-        if (lettreBtn) { lettreBtn.disabled = false; lettreBtn.textContent = 'Générer la lettre'; }
+        if (lettreBtn) { lettreBtn.disabled = false; lettreBtn.textContent = t('premium.generate_letter'); }
       }
     }
 
     async function telechargerDocx() {
       var docxBtn = document.getElementById('docxDownload');
-      if (docxBtn) { docxBtn.disabled = true; docxBtn.textContent = 'Téléchargement...'; }
+      if (docxBtn) { docxBtn.disabled = true; docxBtn.textContent = t('action.telecharger_docx') + '...'; }
 
       var selectedType = document.getElementById('lettreType').value;
       var selectedLang = document.getElementById('docxLang').value;
@@ -883,7 +913,7 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         });
-        if (!res.ok) { alert('Erreur lors de la génération du document.'); return; }
+        if (!res.ok) { premiumAlert(t('error.docx_failed'), '/premium/docx'); return; }
         var blob = await res.blob();
         var url = URL.createObjectURL(blob);
         var a = document.createElement('a');
@@ -893,9 +923,9 @@
         URL.revokeObjectURL(url);
         refreshCredits();
       } catch (e) {
-        alert('Erreur lors du téléchargement.');
+        premiumAlert(t('error.download_failed'), '/premium/docx');
       } finally {
-        if (docxBtn) { docxBtn.disabled = false; docxBtn.textContent = 'Télécharger .docx'; }
+        if (docxBtn) { docxBtn.disabled = false; docxBtn.textContent = t('action.telecharger_docx'); }
       }
     }
 
@@ -903,8 +933,8 @@
       var text = document.getElementById('lettreTexte').textContent;
       navigator.clipboard.writeText(text).then(function() {
         var btn = document.querySelector('#lettreResult .copy-btn');
-        btn.textContent = 'Copié !';
-        setTimeout(function() { btn.textContent = 'Copier'; }, 2000);
+        btn.textContent = t('action.copie');
+        setTimeout(function() { btn.textContent = t('action.copier_texte'); }, 2000);
       });
     }
 
@@ -913,11 +943,13 @@
     function showSession() {
       document.getElementById('noSession').classList.add('hidden');
       document.getElementById('session').classList.remove('hidden');
+      translatePremiumFragment('#session', '/premium/session');
     }
 
     function showNoSession() {
       document.getElementById('noSession').classList.remove('hidden');
       document.getElementById('session').classList.add('hidden');
+      translatePremiumFragment('#noSession', '/premium/no-session');
     }
 
     if (sessionCode) { showSession(); refreshCredits(); }

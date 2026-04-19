@@ -157,7 +157,7 @@ async function submitConsultation() {
       sessionStorage.setItem('jb_result', JSON.stringify(data));
       window.location.href = '/resultat.html?fiche=' + data.fiche.id;
     } else {
-      throw new Error('Aucune fiche trouvée');
+      throw new Error(t('result.no_result'));
     }
   } catch (e) {
     if (card) {
@@ -181,7 +181,7 @@ async function loadResultat(ficheId) {
   if (!data) {
     try {
       var res = await fetch('/api/fiches/' + ficheId);
-      if (!res.ok) throw new Error('Fiche non trouvée');
+      if (!res.ok) throw new Error(t('result.error_fiche'));
       data = await res.json();
     } catch (e) {
       document.getElementById('resultat').innerHTML = '<div class="error-box">' + t('result.error_fiche') + ' <a href="/">' + t('result.back_home') + '</a></div>';

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T12:56:30.963Z",
+  "generated_at": "2026-04-19T22:55:50.581Z",
   "note": "Benchmark structurel JPT vs LLM brut. Mesure les métadonnées vérifiables. Pas un benchmark contre avocat humain.",
   "golden_cases": [
     {
@@ -8,7 +8,7 @@
       "articles_sourced": 3,
       "articles_sourced_pct": 100,
       "jurisprudence_count": 2,
-      "delais_count": 0,
+      "delais_count": 4,
       "cascades_steps": 4,
       "anti_erreurs_count": 0,
       "contacts_count": 4,
@@ -16,18 +16,18 @@
       "confiance": "probable",
       "last_verified_at": "2026-04-07",
       "readiness": "production",
-      "review_scope": "draft_automated",
-      "jpt_score": 58,
+      "review_scope": "reviewed_by_claude",
+      "jpt_score": 68,
       "llm_brut_score": 10,
-      "advantage_delta": 48
+      "advantage_delta": 58
     },
     {
       "id": "bail_caution_ge",
-      "articles_count": 1,
-      "articles_sourced": 1,
+      "articles_count": 2,
+      "articles_sourced": 2,
       "articles_sourced_pct": 100,
       "jurisprudence_count": 2,
-      "delais_count": 0,
+      "delais_count": 5,
       "cascades_steps": 4,
       "anti_erreurs_count": 0,
       "contacts_count": 2,
@@ -35,10 +35,10 @@
       "confiance": "probable",
       "last_verified_at": "2026-04-07",
       "readiness": "production",
-      "review_scope": "draft_automated",
-      "jpt_score": 42,
+      "review_scope": "reviewed_by_claude",
+      "jpt_score": 58,
       "llm_brut_score": 10,
-      "advantage_delta": 32
+      "advantage_delta": 48
     },
     {
       "id": "bail_resiliation",
@@ -46,7 +46,7 @@
       "articles_sourced": 4,
       "articles_sourced_pct": 100,
       "jurisprudence_count": 2,
-      "delais_count": 0,
+      "delais_count": 5,
       "cascades_steps": 4,
       "anti_erreurs_count": 0,
       "contacts_count": 4,
@@ -54,10 +54,10 @@
       "confiance": "probable",
       "last_verified_at": "2026-04-07",
       "readiness": "production",
-      "review_scope": "draft_automated",
-      "jpt_score": 64,
+      "review_scope": "reviewed_by_claude",
+      "jpt_score": 74,
       "llm_brut_score": 10,
-      "advantage_delta": 54
+      "advantage_delta": 64
     },
     {
       "id": "travail_licenciement_maladie",
@@ -65,7 +65,7 @@
       "articles_sourced": 2,
       "articles_sourced_pct": 100,
       "jurisprudence_count": 2,
-      "delais_count": 0,
+      "delais_count": 5,
       "cascades_steps": 4,
       "anti_erreurs_count": 0,
       "contacts_count": 3,
@@ -73,10 +73,10 @@
       "confiance": "probable",
       "last_verified_at": "2026-04-07",
       "readiness": "production",
-      "review_scope": "draft_automated",
-      "jpt_score": 50,
+      "review_scope": "reviewed_by_claude",
+      "jpt_score": 60,
       "llm_brut_score": 10,
-      "advantage_delta": 40
+      "advantage_delta": 50
     },
     {
       "id": "travail_salaire_impaye",
@@ -84,7 +84,7 @@
       "articles_sourced": 3,
       "articles_sourced_pct": 100,
       "jurisprudence_count": 2,
-      "delais_count": 0,
+      "delais_count": 5,
       "cascades_steps": 4,
       "anti_erreurs_count": 0,
       "contacts_count": 3,
@@ -92,10 +92,10 @@
       "confiance": "probable",
       "last_verified_at": "2026-04-07",
       "readiness": "production",
-      "review_scope": "draft_automated",
-      "jpt_score": 56,
+      "review_scope": "reviewed_by_claude",
+      "jpt_score": 66,
       "llm_brut_score": 10,
-      "advantage_delta": 46
+      "advantage_delta": 56
     },
     {
       "id": "travail_harcelement",
@@ -103,7 +103,7 @@
       "articles_sourced": 3,
       "articles_sourced_pct": 100,
       "jurisprudence_count": 2,
-      "delais_count": 0,
+      "delais_count": 5,
       "cascades_steps": 4,
       "anti_erreurs_count": 0,
       "contacts_count": 4,
@@ -111,10 +111,10 @@
       "confiance": "probable",
       "last_verified_at": "2026-04-07",
       "readiness": "production",
-      "review_scope": "draft_automated",
-      "jpt_score": 58,
+      "review_scope": "reviewed_by_claude",
+      "jpt_score": 68,
       "llm_brut_score": 10,
-      "advantage_delta": 48
+      "advantage_delta": 58
     },
     {
       "id": "dettes_commandement_payer",
@@ -122,7 +122,7 @@
       "articles_sourced": 3,
       "articles_sourced_pct": 100,
       "jurisprudence_count": 2,
-      "delais_count": 0,
+      "delais_count": 5,
       "cascades_steps": 4,
       "anti_erreurs_count": 0,
       "contacts_count": 3,
@@ -130,10 +130,10 @@
       "confiance": "probable",
       "last_verified_at": "2026-04-07",
       "readiness": "production",
-      "review_scope": "draft_automated",
-      "jpt_score": 56,
+      "review_scope": "reviewed_by_claude",
+      "jpt_score": 66,
       "llm_brut_score": 10,
-      "advantage_delta": 46
+      "advantage_delta": 56
     },
     {
       "id": "dettes_saisie_salaire",
@@ -141,7 +141,7 @@
       "articles_sourced": 2,
       "articles_sourced_pct": 100,
       "jurisprudence_count": 2,
-      "delais_count": 0,
+      "delais_count": 5,
       "cascades_steps": 4,
       "anti_erreurs_count": 0,
       "contacts_count": 2,
@@ -149,10 +149,10 @@
       "confiance": "probable",
       "last_verified_at": "2026-04-07",
       "readiness": "production",
-      "review_scope": "draft_automated",
-      "jpt_score": 48,
+      "review_scope": "reviewed_by_claude",
+      "jpt_score": 58,
       "llm_brut_score": 10,
-      "advantage_delta": 38
+      "advantage_delta": 48
     },
     {
       "id": "famille_pension_impayee",
@@ -160,7 +160,7 @@
       "articles_sourced": 2,
       "articles_sourced_pct": 100,
       "jurisprudence_count": 2,
-      "delais_count": 0,
+      "delais_count": 5,
       "cascades_steps": 4,
       "anti_erreurs_count": 0,
       "contacts_count": 3,
@@ -168,10 +168,10 @@
       "confiance": "probable",
       "last_verified_at": "2026-04-07",
       "readiness": "production",
-      "review_scope": "draft_automated",
-      "jpt_score": 50,
+      "review_scope": "reviewed_by_claude",
+      "jpt_score": 60,
       "llm_brut_score": 10,
-      "advantage_delta": 40
+      "advantage_delta": 50
     },
     {
       "id": "etrangers_renouvellement",
@@ -179,7 +179,7 @@
       "articles_sourced": 3,
       "articles_sourced_pct": 100,
       "jurisprudence_count": 2,
-      "delais_count": 0,
+      "delais_count": 5,
       "cascades_steps": 4,
       "anti_erreurs_count": 0,
       "contacts_count": 2,
@@ -187,19 +187,19 @@
       "confiance": "probable",
       "last_verified_at": "2026-04-07",
       "readiness": "production",
-      "review_scope": "draft_automated",
-      "jpt_score": 54,
+      "review_scope": "reviewed_by_claude",
+      "jpt_score": 64,
       "llm_brut_score": 10,
-      "advantage_delta": 44
+      "advantage_delta": 54
     }
   ],
   "summary": {
     "total_cases": 10,
     "valid_cases": 10,
     "errors": 0,
-    "jpt_avg_score": 53.6,
+    "jpt_avg_score": 64.2,
     "llm_brut_reference": 10,
-    "avantage_moyen_delta": 43.6,
-    "advantage_ratio": 5.4
+    "avantage_moyen_delta": 54.2,
+    "advantage_ratio": 6.4
   }
 }

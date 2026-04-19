@@ -58,7 +58,7 @@
 - **Compte citoyen longitudinal 12 mois** (magic link, k-anonymization)
 - **Outcomes tracker** (consent strict, PII stripping, k=5)
 - **Dashboard live** avec gates : `structurally_validated_passed: true` (100%), `gate_phase2_passed: false` (attend humain)
-- **Benchmark** vs LLM brut structurel : ×5.4 (avantage moyen 43.6 points / 100)
+- **Benchmark** vs LLM brut structurel : **×6.4** (avantage +54.2 points / 100, score 64.2 — recalculé 2026-04-20 avec les 34 règles + fondations)
 - 101+/101 tests critiques verts sur suite ciblée
 
 ### Fondations qualité (2026-04-19 — 13 chantiers + bugs + tests + logger migration tous clos)

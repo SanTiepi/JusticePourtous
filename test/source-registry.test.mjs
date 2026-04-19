@@ -9,8 +9,9 @@ import {
 } from '../src/services/source-registry.mjs';
 import { server } from '../src/server.mjs';
 
-const PORT = 9881;
-const BASE = `http://localhost:${PORT}`;
+// Port 0 = OS-assigned, évite les collisions EADDRINUSE quand plusieurs
+// fichiers de test démarrent le même `server` en parallèle.
+let BASE = '';
 
 async function httpGet(path) {
   const http = await import('node:http');
@@ -211,7 +212,12 @@ describe('Source Registry', () => {
   // --- API tests (server needed) ---
 
   describe('API endpoints', () => {
-    before(() => new Promise(resolve => server.listen(PORT, resolve)));
+    before(() => new Promise(resolve => {
+      server.listen(0, () => {
+        BASE = `http://localhost:${server.address().port}`;
+        resolve();
+      });
+    }));
     after(() => new Promise(resolve => server.close(resolve)));
 
     it('GET /api/sources/stats returns registry stats', async () => {

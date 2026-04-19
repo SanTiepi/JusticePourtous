@@ -101,6 +101,10 @@ const SYNONYMES = {
   'menace': [{ terme: 'menace', poids: 5 }, { terme: 'violence', poids: 2 }],
   // Ex-partner — signals famille via séparation/divorce (not garde, to avoid colliding with pension queries)
   'ex': [{ terme: 'séparation', poids: 4 }, { terme: 'divorce', poids: 3 }],
+  // Pension non-payment — bigrams must outweigh "ex"→divorce so pension fiches win
+  'paie pas': [{ terme: 'pension alimentaire', poids: 6 }, { terme: 'impayé', poids: 5 }, { terme: 'pension', poids: 4 }],
+  'pas la pension': [{ terme: 'pension alimentaire', poids: 8 }, { terme: 'impayé', poids: 5 }],
+  'pas pension': [{ terme: 'pension alimentaire', poids: 8 }, { terme: 'impayé', poids: 5 }],
 
   // --- DETTES ---
   'dette': [{ terme: 'dette', poids: 5 }, { terme: 'poursuite', poids: 3 }],

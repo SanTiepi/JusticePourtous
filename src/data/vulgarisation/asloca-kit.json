@@ -30,7 +30,7 @@
     "reponse_detail": "La loi présume que les contrats de bail à loyer ont une durée indéterminée. Le TF reconnaît qu’il est interdit de conclure des baux de durée déterminée sans que les circonstances ne le justifient, car cela constitue une fraude à la loi. Le locataire peut contester la durée du contrat 60 jours au plus tard avant la fin du contrat. Si le bail de durée déterminée ne se justifie pas, elle requalifiera le contrat en un bail de durée indéterminée.",
     "fiches_liees": [
       "bail_prolongation",
-      "bail_résiliation_conteste"
+      "bail_resiliation_conteste"
     ],
     "articles_cles": [
       "CO 255"
@@ -140,7 +140,7 @@
     "reponse_courte": "En règle générale, le loyer est dû par le locataire avant la fin du mois pour le mois suivant.",
     "reponse_detail": "Il est important que le locataire suive cette règle à la lettre, car celui qui s’acquitte de son loyer de manière tardive, même de quelques jours, s’expose à la résiliation de son contrat de bail. Toutefois, les parties sont libres de déterminer contractuellement une échéance de paiement plus favorable au locataire.",
     "fiches_liees": [
-      "bail_loyers_impayés"
+      "bail_loyers_impayes"
     ],
     "articles_cles": [
       "CO 257c"
@@ -291,7 +291,7 @@
     "reponse_courte": "Le locataire doit assumer à ses frais les menus travaux d’entretien et de réparation.",
     "reponse_detail": "Les simples travaux de nettoyage ainsi que l’entretien et la réparation des installations que le locataire est capable d’effectuér sans compétences techniques font partie des menus travaux : changer les ampoules, le filtre de la hotte, remplacer le flexible de douche, graisser les serrures. Tous travaux nécessitant l’intervention d’un professionnel ne sont pas à charge du locataire. Toute clause contraire du bail est nulle.",
     "fiches_liees": [
-      "bail_réparations_locataire"
+      "bail_reparations_locataire"
     ],
     "articles_cles": [
       "CO 259"
@@ -450,7 +450,7 @@
     "reponse_courte": "Chaque partie peut résilier le contrat pour la prochaine échéance contractuelle, en respectant le délai imparti.",
     "reponse_detail": "Le délai de préavis est en temps minimum qu’il faut respecter pour annoncer la résiliation. L’échéance est la date pour laquelle on le fait. Par exemple, si le contrat prévoit un préavis de 3 mois (délai) pour le 30 septembre (terme ou échéance), elle devra être reçue par l’autre partie au plus tard le 30 juin. Une résiliation doit obligatoirement respecter la forme écrite et être signée par tous les locataires figurant sur le contrat de bail. Le bailleur doit notifier le congé à tous les locataires au moyen d’une formule officielle.",
     "fiches_liees": [
-      "bail_résiliation_conteste"
+      "bail_resiliation_conteste"
     ],
     "articles_cles": [
       "CO 266a",
@@ -472,7 +472,7 @@
     "reponse_courte": "Le locataire qui reçoit la résiliation de son contrat de bail peut en demander l’annulation ou une prolongation.",
     "reponse_detail": "La loi offre aux locataires une protection en cas de résiliation. Le congé doit être contesté dans les 30 jours auprès de l’autorité de conciliation. Un congé sera annulé s’il est contraire aux règles de la bonne foi (congé par vengeance, en excès de mauvaise humeur, lié à une procédure judiciaire dans les 3 ans). Si le congé est valable, le locataire peut demander un délai supplémentaire (prolongation) — ne peut dépasser 4 ans pour les locaux d’habitation. La prolongation est déterminée en fonction du marché, de la situation personnelle, familiale et financière.",
     "fiches_liees": [
-      "bail_résiliation_conteste",
+      "bail_resiliation_conteste",
       "bail_prolongation"
     ],
     "articles_cles": [
@@ -519,9 +519,9 @@
     "reponse_courte": "En principe, le bailleur n’a pas la possibilité de résilier le contrat avant l’échéance contractuelle, sauf dans certains cas particuliers.",
     "reponse_detail": "Les cas de résiliation extraordinaire sont principalement : non-paiement du loyer (préavis de 30 jours après un ultime délai de paiement de 30 jours), violation du devoir de diligence (comportement insupportable pour les autres personnes habitant l’immeuble), faillite du locataire. Lorsque le locataire reçoit ce type de congé, il dispose d’un délai de 30 jours pour le contester. Si le congé extraordinaire est reconnu valide, le locataire n’aura droit à aucune prolongation.",
     "fiches_liees": [
-      "bail_résiliation_conteste",
+      "bail_resiliation_conteste",
       "bail_expulsion",
-      "bail_loyers_impayés"
+      "bail_loyers_impayes"
     ],
     "articles_cles": [
       "CO 257d",
@@ -592,7 +592,7 @@
     "reponse_courte": "Non, le bailleur ne peut pas imposer au locataire des frais administratifs en raison de la résiliation du contrat, même si ce dernier le prévoit.",
     "reponse_detail": "Il est fréquent que le bailleur, par le biais d’une gérance, stipule dans le contrat de bail que le locataire est tenu de payer des frais, généralement autour d’une centaine de francs, s’il procède à la restitution anticipée de la chose louée. Le Tribunal fédéral s’est penché sur la question et a statué que le bailleur ne peut pas légalement imposer le paiement de ces frais au locataire désirant remettre son logement.",
     "fiches_liees": [
-      "bail_résiliation_conteste"
+      "bail_resiliation_conteste"
     ],
     "articles_cles": [
       "CO 264"
@@ -657,7 +657,7 @@
     "reponse_courte": "Si le bailleur envoie un commandement de payer au locataire, ce dernier doit formuler une opposition totale dans le but de sauvegarder ses droits.",
     "reponse_detail": "À la fin du contrat de bail, le bailleur qui désire mettre à charge du locataire le paiement de certains frais peut décider de notifier un commandement de payer. Un commandement de payer signifie que le bailleur exige du locataire le paiement d’une somme, peu importe si cette dernière est justifiée ou non. En faisant opposition totale, le locataire oblige alors le bailleur à saisir l’autorité compétente en matière de bail à loyer afin de prouver que la somme demandée est effectivement due.",
     "fiches_liees": [
-      "bail_loyers_impayés",
+      "bail_loyers_impayes",
       "bail_expulsion"
     ],
     "articles_cles": [

@@ -23,8 +23,9 @@ import { server } from '../src/server.mjs';
 import { compile } from '../src/services/normative-compiler.mjs';
 import { getVulgarisationForFiche } from '../src/services/vulgarisation-loader.mjs';
 
-const PORT = 9891;
-const BASE = `http://localhost:${PORT}`;
+// Port 0 = OS-assigned, évite EADDRINUSE quand plusieurs fichiers de tests
+// instancient un serveur sur le même port. BASE est résolu après server.listen().
+let BASE = 'http://localhost:0';
 
 async function search(query, canton) {
   const http = await import('node:http');
@@ -42,7 +43,11 @@ async function search(query, canton) {
 }
 
 describe('Dossiers complexes — qualité pipeline', () => {
-  before(() => new Promise(resolve => server.listen(PORT, resolve)));
+  before(() => new Promise(resolve => server.listen(0, () => {
+    const addr = server.address();
+    BASE = `http://localhost:${addr.port}`;
+    resolve();
+  })));
   after(() => new Promise(resolve => server.close(resolve)));
 
   // ══════════════════════════════════════════════════════════════

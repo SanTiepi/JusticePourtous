@@ -536,3 +536,144 @@ function typeToKey(type) {
   };
   return map[type] || null;
 }
+
+// ─── Decision-holding enrichment helpers ────────────────────────────
+// Phase Quality — exposés ici (et non dans caselaw/decision-normalizer.mjs)
+// pour que les fiches & le pipeline V3 puissent enrichir un arret minimal
+// (signature/tribunal/date) en un objet riche avec tier, age, strength_badge.
+
+/**
+ * Tier d'un arret :
+ *   1 = TF publié (ATF) — décisif
+ *   2 = TF non publié (4A_/5A_/6B_/9C_…)
+ *   3 = Cantonal / inférieur / inconnu
+ * @param {string} signature
+ * @param {string} tribunal
+ * @param {boolean} [publie] - flag explicite si TF publié sans préfixe ATF
+ */
+export function deriveTier(signature, tribunal, publie = false) {
+  const sig = String(signature || '').trim();
+  if (/^ATF/i.test(sig)) return 1;
+  if (tribunal === 'TF' && publie === true) return 1;
+  if (/^\d[A-Z]_\d+\/\d{4}/.test(sig)) return 2;
+  if (tribunal === 'TF') return 2;
+  return 3;
+}
+
+const TIER_LABELS = {
+  1: '1 - Tribunal Fédéral publié (ATF)',
+  2: '2 - Tribunal Fédéral arrêt',
+  3: '3 - Cantonal ou inférieur',
+};
+
+export function deriveTierLabel(tier) {
+  return TIER_LABELS[tier] || '3 - Cantonal ou inférieur';
+}
+
+/**
+ * Normalise une date vers ISO YYYY-MM-DD.
+ * Accepte ISO ('2020-06-15') ou DD.MM.YYYY ('15.06.2020').
+ * Retourne null si invalide ou null/empty.
+ */
+export function normalizeDate(input) {
+  if (input === null || input === undefined || input === '') return null;
+  const s = String(input).trim();
+  // ISO YYYY-MM-DD
+  let m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (m) {
+    const [, y, mo, d] = m;
+    const dt = new Date(`${y}-${mo}-${d}T00:00:00Z`);
+    if (Number.isNaN(dt.getTime())) return null;
+    return `${y}-${mo}-${d}`;
+  }
+  // DD.MM.YYYY
+  m = s.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+  if (m) {
+    const [, d, mo, y] = m;
+    const dt = new Date(`${y}-${mo}-${d}T00:00:00Z`);
+    if (Number.isNaN(dt.getTime())) return null;
+    return `${y}-${mo}-${d}`;
+  }
+  return null;
+}
+
+/**
+ * Calcule l'age (en années entières) d'une date par rapport à `now`.
+ * Retourne null si date invalide.
+ */
+export function yearsAgo(input, now = new Date()) {
+  const iso = normalizeDate(input);
+  if (!iso) return null;
+  const dt = new Date(`${iso}T00:00:00Z`);
+  const ref = now instanceof Date ? now : new Date(now);
+  let age = ref.getUTCFullYear() - dt.getUTCFullYear();
+  const m = ref.getUTCMonth() - dt.getUTCMonth();
+  if (m < 0 || (m === 0 && ref.getUTCDate() < dt.getUTCDate())) age -= 1;
+  return age;
+}
+
+/**
+ * Construit un libellé "YYYY-MM-DD (il y a X ans)".
+ * Retourne null si la date n'est pas normalisable.
+ */
+export function buildDateDisplay(input, now = new Date()) {
+  const iso = normalizeDate(input);
+  if (!iso) return null;
+  const age = yearsAgo(iso, now);
+  if (age === null) return iso;
+  if (age <= 0) return `${iso} (cette année)`;
+  const plural = age > 1 ? 'ans' : 'an';
+  return `${iso} (il y a ${age} ${plural})`;
+}
+
+/** Alias accepting non-ISO formats — same behaviour as buildDateDisplay. */
+export function formatDateDisplay(input, now = new Date()) {
+  return buildDateDisplay(input, now);
+}
+
+/**
+ * Force la note de robustesse d'un arret (tier × age) :
+ *   - age >= 20 → 'weak' (toujours)
+ *   - tier 1 & age < 10 → 'strong'
+ *   - tier 1 & age >= 10 → 'moderate'
+ *   - tier 2 & age < 10 → 'strong' (proche TF)
+ *   - tier 2 & age >= 10 → 'moderate'
+ *   - tier 3 & age <= 10 → 'moderate'
+ *   - tier 3 & age > 10 → 'weak'
+ */
+export function computeStrength(tier, age) {
+  const a = Number.isFinite(age) ? age : 0;
+  if (a >= 20) return 'weak';
+  if (tier === 1) return a < 10 ? 'strong' : 'moderate';
+  if (tier === 2) return a < 10 ? 'strong' : 'moderate';
+  // tier 3
+  return a <= 10 ? 'moderate' : 'weak';
+}
+
+/**
+ * Enrichit un arret minimal en objet décisionnel complet.
+ * Input : { signature, tribunal, date?, publie?, canton? }
+ * Output : { tier, tier_label, date_iso, age_years, date_display, strength_badge, scope_territorial }
+ */
+export function enrichDecisionHolding(raw, now = new Date()) {
+  const tier = deriveTier(raw?.signature, raw?.tribunal, raw?.publie === true);
+  const tier_label = deriveTierLabel(tier);
+  const date_iso = normalizeDate(raw?.date);
+  const age_years = date_iso ? yearsAgo(date_iso, now) : null;
+  const date_display = date_iso ? buildDateDisplay(date_iso, now) : null;
+  const strength_badge = computeStrength(tier, age_years);
+  // scope territorial : TF couvre toute la CH ; cantonal limité au canton (ou null)
+  const scope_territorial = raw?.tribunal === 'TF'
+    ? 'CH'
+    : (raw?.canton || null);
+  return {
+    ...raw,
+    tier,
+    tier_label,
+    date_iso,
+    age_years,
+    date_display,
+    strength_badge,
+    scope_territorial,
+  };
+}

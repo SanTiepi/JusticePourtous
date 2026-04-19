@@ -29,7 +29,7 @@ import {
 } from './case-store.mjs';
 import { classifySafety, buildSafetyResponse } from './safety-classifier.mjs';
 import { analyzeScope } from './scope-refuser.mjs';
-import { detectLanguage, shouldRouteToRhetoroman } from './language-router.mjs';
+import { detectLanguage, shouldRouteToRhetoroman, translationDisclaimer } from './language-router.mjs';
 import { detectRoundContradictions, shouldBlockForContradiction, buildContradictionQuestion } from './round-contradiction-detector.mjs';
 import { detectPivot } from './pivot-detector.mjs';
 import { debitSession } from './premium.mjs';
@@ -116,10 +116,16 @@ export async function handleTriageStart({ texte, canton } = {}) {
   if (result.error) return errorPayload(result.error, result.status || 500);
 
   const payload = finalizePayload(result.data);
-  if (langDetection.lang && langDetection.lang !== 'unknown') {
+  // Langue source : FR = flux normal (pas de marquage spécifique — c'est la langue pivot).
+  // DE/IT = mode dégradé — on expose source_language + degraded_mode + translation_disclaimer
+  // pour que le frontend affiche le bandeau "analyse en français".
+  if (langDetection.lang === 'de' || langDetection.lang === 'it') {
     payload.source_language = langDetection.lang;
+    payload.degraded_mode = true;
+    payload.translation_disclaimer = translationDisclaimer(langDetection.lang);
     payload.language_detection = langDetection;
   }
+  // Note : FR et 'unknown' ne reçoivent AUCUN champ langue (évite de polluer le payload FR).
   return payload;
 }
 

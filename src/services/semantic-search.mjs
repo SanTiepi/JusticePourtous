@@ -273,7 +273,7 @@ export function scoreFiche(fiche, terms) {
 // Used for tie-breaking when synonym scores are ambiguous across domains.
 const DOMAIN_AFFINITY_WORDS = {
   travail: new Set(['employeur', 'patron', 'boss', 'salaire', 'travail', 'licencie', 'licencier', 'mobbing', 'harcelement', 'harcel', 'chomage', 'enceinte', 'stage', 'apprenti', 'burn-out', 'burnout', 'heures', 'certificat', 'conge', 'arret', 'maladie', 'conges', 'licenciement', 'convention']),
-  famille: new Set(['conjoint', 'ex', 'epoux', 'epouse', 'mari', 'femme', 'divorce', 'separation', 'separe', 'garde', 'pension', 'enfant', 'enfants', 'adoption', 'violent', 'violente', 'violence', 'violences', 'menace', 'heritage', 'succession', 'testament', 'parentale', 'enlevement']),
+  famille: new Set(['conjoint', 'ex', 'epoux', 'epouse', 'mari', 'femme', 'divorce', 'separation', 'separe', 'garde', 'recuperer', 'recup', 'pension', 'enfant', 'enfants', 'adoption', 'violent', 'violente', 'violence', 'violences', 'menace', 'heritage', 'succession', 'testament', 'parentale', 'enlevement']),
   dettes: new Set(['dette', 'dettes', 'commandement', 'huissier', 'saisie', 'faillite', 'poursuite', 'surendette', 'surendettement', 'impaye', 'poursuites', 'mainlevee', 'concordat', 'sequestre']),
   bail: new Set(['loyer', 'proprietaire', 'proprio', 'regie', 'locataire', 'bail', 'appartement', 'appart', 'logement', 'bailleur', 'moisissure', 'charges', 'resiliation', 'coloc', 'voisin', 'locaux']),
   etrangers: new Set(['permis', 'sejour', 'asile', 'naturalisation', 'refugie', 'sans-papiers', 'renvoye', 'renvoi', 'visa', 'nationalite', 'papiers', 'immigration', 'frontalier', 'expulsion']),
@@ -299,6 +299,19 @@ function detectDomainBoost(originalWords) {
   return topDomains.length === 1 ? topDomains[0][0] : null;
 }
 
+// Domains that need an explicit trigger word — if the query mentions none of these,
+// fiches in that domain should be down-weighted to avoid false positives
+// (e.g. "récupérer la garde" should not match violence_garde_enfants without violence signal).
+const DOMAIN_REQUIRED_TRIGGERS = {
+  violence: new Set(['violence', 'violent', 'violente', 'violences', 'menace', 'menaces', 'agression', 'agresse', 'battu', 'frappe', 'frappé', 'harcelement', 'harcèlement', 'harcel', 'stalking', 'eloignement', 'lavi', 'foyer', 'victime', 'plainte', 'domestique', 'conjugale', 'viol', 'abus', 'abusif', 'abusive', 'coups'])
+};
+
+function hasDomainTrigger(domain, originalWords) {
+  const triggers = DOMAIN_REQUIRED_TRIGGERS[domain];
+  if (!triggers) return true; // no required trigger = always OK
+  return originalWords.some(w => triggers.has(w));
+}
+
 /**
  * Smart search: profane text → ranked fiches
  */
@@ -309,6 +322,10 @@ export function semanticSearch(text, fiches, limit = 5) {
   const scored = fiches.map(fiche => {
     let score = scoreFiche(fiche, terms);
     if (boostedDomain && fiche.domaine === boostedDomain) score *= 1.5;
+    // Penalize fiches in domains that require an explicit trigger (e.g. violence) when no such trigger was present.
+    if (DOMAIN_REQUIRED_TRIGGERS[fiche.domaine] && !hasDomainTrigger(fiche.domaine, originalWords)) {
+      score *= 0.5;
+    }
     return { fiche, score };
   });
 

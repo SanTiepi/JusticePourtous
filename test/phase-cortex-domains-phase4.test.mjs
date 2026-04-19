@@ -155,7 +155,12 @@ describe('Phase Cortex — Phase 4 finale (successions + sante)', () => {
           `Fiche ${f.id} a une confiance invalide: ${f.confiance}`
         );
         assert.equal(f.last_verified_at, '2026-04-19', `Fiche ${f.id} last_verified_at attendu 2026-04-19`);
-        assert.equal(f.review_scope, 'draft_automated', `Fiche ${f.id} review_scope attendu draft_automated`);
+        // review_scope accepts both the initial draft state and the post-review upgrade.
+        // draft_automated → reviewed_by_claude is a strict quality upgrade (Claude reviewed the fiche).
+        assert.ok(
+          ['draft_automated', 'reviewed_by_claude'].includes(f.review_scope),
+          `Fiche ${f.id} review_scope invalide: ${f.review_scope} (attendu draft_automated ou reviewed_by_claude)`
+        );
         assert.equal(f.review_expiry, '2027-04-19', `Fiche ${f.id} review_expiry attendu 2027-04-19`);
       }
     }

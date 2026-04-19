@@ -5,10 +5,10 @@ import { server } from '../src/server.mjs';
 const PORT = 9878;
 const BASE = `http://localhost:${PORT}`;
 
-async function httpGet(path) {
+async function httpGet(path, { headers = {} } = {}) {
   const http = await import('node:http');
   return new Promise((resolve, reject) => {
-    http.default.get(`${BASE}${path}`, res => {
+    const req = http.default.get(`${BASE}${path}`, { headers }, res => {
       let body = '';
       res.on('data', c => body += c);
       res.on('end', () => {
@@ -18,12 +18,17 @@ async function httpGet(path) {
           resolve({ status: res.statusCode, data: body });
         }
       });
-    }).on('error', reject);
+    });
+    req.on('error', reject);
   });
 }
 
 describe('Knowledge Engine API', () => {
-  before(() => new Promise(resolve => server.listen(PORT, resolve)));
+  before(() => {
+    // /api/admin/* requires ADMIN_TOKEN. Set a deterministic value for tests.
+    if (!process.env.ADMIN_TOKEN) process.env.ADMIN_TOKEN = 'test-admin-token';
+    return new Promise(resolve => server.listen(PORT, resolve));
+  });
   after(() => new Promise(resolve => server.close(resolve)));
 
   // --- Query by problem (citizen) ---
@@ -207,7 +212,9 @@ describe('Knowledge Engine API', () => {
   // --- Completeness dashboard ---
   describe('GET /api/admin/completeness', () => {
     it('retourne les métriques de complétude', async () => {
-      const res = await httpGet('/api/admin/completeness');
+      const res = await httpGet('/api/admin/completeness', {
+        headers: { authorization: `Bearer ${process.env.ADMIN_TOKEN}` }
+      });
       assert.equal(res.status, 200);
       assert.ok(res.data.stats);
       assert.ok(res.data.orphans);

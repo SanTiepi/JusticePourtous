@@ -14,6 +14,10 @@
 import { buildGraph, loadAllData } from './graph-builder.mjs';
 import { semanticSearch, expandQuery } from './semantic-search.mjs';
 import { getSourceByRef, getSourceBySignature } from './source-registry.mjs';
+// Matching jurisprudence cantonale (entscheidsuche) — gap démocratique comblé
+import { findCantonalMatches } from './cantonal-juris-matcher.mjs';
+import { enrichEscaladeWithMatrix } from './cantons-matrix.mjs';
+import { computeFreshness } from './freshness-badge.mjs';
 
 // Always build graph fresh from data files at startup (takes ~60ms)
 // This ensures the graph is never stale relative to the data files.
@@ -29,10 +33,47 @@ const arretMap = new Map(allData.arrets.map(a => [a.signature, a]));
 const templateMap = new Map(allData.templates.map(t => [t.id, t]));
 
 // --- Enrichment: given a fiche ID, get EVERYTHING related ---
+// Read-through cache. `allData` + `graph` sont figés au boot → résultat pur par ficheId.
+// Invalidation via `_clearEnrichCache()` pour les tests qui mutent.
+const enrichCache = new Map();
+const enrichStats = { hits: 0, misses: 0 };
+
+export function _enrichCacheStats() {
+  return {
+    size: enrichCache.size,
+    hits: enrichStats.hits,
+    misses: enrichStats.misses,
+    hit_rate: enrichStats.hits + enrichStats.misses === 0
+      ? 0
+      : enrichStats.hits / (enrichStats.hits + enrichStats.misses),
+  };
+}
+
+export function _clearEnrichCache() {
+  enrichCache.clear();
+  enrichStats.hits = 0;
+  enrichStats.misses = 0;
+}
 
 function enrichFiche(ficheId) {
-  const fiche = ficheMap.get(ficheId);
-  if (!fiche) return null;
+  const cached = enrichCache.get(ficheId);
+  if (cached) {
+    enrichStats.hits++;
+    // Shallow clone pour isoler les callers qui font `result.X = ...` (ex. filtrage
+    // canton, ajout caselaw_canon). Sans ça, un caller mute le cache partagé.
+    return { ...cached };
+  }
+  enrichStats.misses++;
+  const built = _buildEnrichedFiche(ficheId);
+  if (built) enrichCache.set(ficheId, built);
+  return built ? { ...built } : null;
+}
+
+function _buildEnrichedFiche(ficheId) {
+  const rawFiche = ficheMap.get(ficheId);
+  if (!rawFiche) return null;
+  // Injecte le badge fraîcheur sur la fiche. Copie pour ne pas polluer ficheMap.
+  const fiche = { ...rawFiche, freshness: computeFreshness(rawFiche) };
 
   // Articles complets (pas juste les refs) — enrichis avec source_id
   const articleRefs = graph.ficheToArticles[ficheId] || [];
@@ -152,10 +193,20 @@ function enrichFiche(ficheId) {
   // Ce qu'on ne sait pas
   const lacunes = detectLacunes(fiche, articles, jurisprudenceElargie, delais);
 
+  // Jurisprudence cantonale (entscheidsuche matcher hérité) — compat backward.
+  // Le nouveau pipeline est `caselaw/index.buildCanonForFiche` qui produit
+  // leading_cases + nuances + cantonal_practice. Le matcher simple reste
+  // exposé pour compat mais le front doit migrer vers le canon.
+  let jurisprudence_cantonale = [];
+  try {
+    jurisprudence_cantonale = findCantonalMatches(fiche, { limit: 5, minScore: 3 });
+  } catch (_) { /* silent */ }
+
   return {
     fiche,
     articles,
     jurisprudence: jurisprudenceElargie,
+    jurisprudence_cantonale,
     templates,
     delais,
     antiErreurs,
@@ -228,11 +279,17 @@ export function queryByProblem(text, canton) {
   // Enrich the best match
   const best = enrichFiche(topResults[0].fiche.id);
 
-  // Filter by canton if specified
-  if (canton && best) {
-    best.escalade = best.escalade.filter(e =>
-      e.cantons?.includes(canton.toUpperCase()) || !e.cantons
-    );
+  if (best) {
+    // Enrichissement cantons-matrix : ajoute autorités cantonales + fallback fédéral.
+    // Fait AVANT le filtre canton pour que l'enrichissement matrix coexiste avec
+    // l'escalade de base, puis on filtre par canton (en gardant les entrées sans
+    // champ cantons, supposées fédérales/universelles).
+    best.escalade = enrichEscaladeWithMatrix(best.escalade, canton, best.fiche?.domaine);
+    if (canton) {
+      best.escalade = best.escalade.filter(e =>
+        !e.cantons || e.cantons.includes(canton.toUpperCase())
+      );
+    }
   }
 
   return {
@@ -414,6 +471,27 @@ export function queryByDomain(domain, filters = {}) {
 export function queryComplete(ficheId) {
   const result = enrichFiche(ficheId);
   if (!result) return { status: 404, error: `Fiche '${ficheId}' non trouvée` };
+  return { status: 200, data: result };
+}
+
+/**
+ * Variante async qui enrichit avec le canon caselaw 2.0 :
+ *   - leading_cases
+ *   - nuances
+ *   - cantonal_practice
+ *   - similar_cases (panneau secondaire)
+ * À utiliser dans triage-engine pour les réponses publiques.
+ */
+export async function queryCompleteWithCanon(ficheId, { citizenCanton = null } = {}) {
+  const result = enrichFiche(ficheId);
+  if (!result) return { status: 404, error: `Fiche '${ficheId}' non trouvée` };
+  try {
+    const { buildCanonForFiche } = await import('./caselaw/index.mjs');
+    const canon = await buildCanonForFiche(result.fiche, { citizenCanton });
+    result.caselaw_canon = canon;
+  } catch (err) {
+    result.caselaw_canon = { error: err.message, leading_cases: [], nuances: [], cantonal_practice: [], similar_cases: [] };
+  }
   return { status: 200, data: result };
 }
 

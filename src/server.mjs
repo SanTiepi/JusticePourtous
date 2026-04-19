@@ -4,10 +4,15 @@ import { atomicWriteSync, safeLoadJSON } from './services/atomic-write.mjs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, extname } from 'node:path';
 
+import { createLogger } from './services/logger.mjs';
+import { validateEnv } from './services/env-check.mjs';
+import { recordHttp, snapshot as metricsSnapshot } from './services/metrics.mjs';
+const log = createLogger('server');
+
 // ─── HTTP helpers (extracted to reduce server.mjs size) ─────────
 import {
   json, parseBody, parseRawBody, serveStatic as serveStaticFile,
-  setSecurityHeaders, sanitizeUserInput, rateLimit, logTriage, getTriageLog,
+  setSecurityHeaders, sanitizeUserInput, rateLimit, rateLimitFor, logTriage, getTriageLog,
   checkAdmin, getFeedbackStore,
   MAX_UPLOAD_SIZE, MAX_QUERY_LENGTH, MAX_BODY_SIZE
 } from './lib/http-helpers.mjs';
@@ -29,6 +34,17 @@ import {
 } from './services/knowledge-engine.mjs';
 import { generateActionPlan } from './services/action-planner.mjs';
 import { triage, estimateCost } from './services/triage-engine.mjs';
+import { handleTriageStart, handleTriageNext } from './services/triage-orchestration.mjs';
+import { buildEscalationPack } from './services/escalation-pack.mjs';
+import { getCase, startCompactionLoop, stopCompactionLoop, _flushCases } from './services/case-store.mjs';
+import {
+  createAccount, verifyMagicToken, getAccount, linkCaseToAccount,
+  getUpcomingDeadlines, closeAccount
+} from './services/citizen-account.mjs';
+import { generateLetterPDF } from './services/letter-pdf-generator.mjs';
+import { recordOutcome } from './services/outcomes-tracker.mjs';
+import { extractDeadlinesFromCase, scheduleReminders, listRemindersForCase } from './services/deadline-reminders.mjs';
+import { computeDashboardMetrics } from './services/dashboard-metrics.mjs';
 import { analyserCas } from './services/pipeline-v3.mjs';
 import { getRegistryStats, getSourceById, getSourcesByDomain, getSourcesByTier, validateClaimSources } from './services/source-registry.mjs';
 import { getObjectStats, getObjectsByType, getObjectById, getObjectsByDomain, getDossierObjects, VERIFIED_CLAIM_SCHEMA } from './services/object-registry.mjs';
@@ -42,6 +58,10 @@ import { generateDocx } from './services/docx-generator.mjs';
 import { sendCode, verifyCode, linkWalletToEmail, getWalletsByEmail } from './services/auth.mjs';
 import { getVulgarisationForFiche, getVulgarisationStats } from './services/vulgarisation-loader.mjs';
 import { trackPageView, trackSearch, trackPremiumAnalysis, trackLanguage, getStats as getAnalyticsStats } from './services/analytics.mjs';
+import { translateStructuredContent, translateTextContent, TRANSLATION_PIPELINE_VERSION } from './services/i18n/translation-orchestrator.mjs';
+import { resolveRequestLocale } from './services/i18n/http-locale.mjs';
+import { normalizeLocale, DEFAULT_LOCALE, isOfferedLocale } from './services/i18n/locale-registry.mjs';
+import { renderGuideForLocale } from './services/guide-renderer.mjs';
 import {
   getAllArticles, searchArticles,
   getAllArrets, searchArrets,
@@ -81,6 +101,44 @@ function serveStatic(req, res, filePath) {
   serveStaticFile(req, res, filePath, publicDir);
 }
 
+function pickDomainHint(payload) {
+  return payload?.domaine
+    || payload?.fiche?.domaine
+    || payload?.workflow?.depart
+    || payload?.analysis?.domaine
+    || null;
+}
+
+function pickLastVerifiedHint(payload) {
+  return payload?.last_verified_at
+    || payload?.fiche?.last_verified_at
+    || payload?.resume_expires_at_iso
+    || null;
+}
+
+async function maybeTranslatePayload(req, url, body, payload, options = {}) {
+  const lang = normalizeLocale(resolveRequestLocale(req, url, body));
+  const translated = await translateStructuredContent(payload, {
+    targetLang: lang,
+    sourceLang: DEFAULT_LOCALE,
+    contentType: options.contentType || 'structured_legal_content',
+    domain: options.domain || pickDomainHint(payload),
+    sourceLastVerified: options.sourceLastVerified || pickLastVerifiedHint(payload)
+  });
+  return translated;
+}
+
+async function maybeTranslateText(req, url, body, text, options = {}) {
+  const lang = normalizeLocale(resolveRequestLocale(req, url, body));
+  return await translateTextContent(text, {
+    targetLang: lang,
+    sourceLang: DEFAULT_LOCALE,
+    contentType: options.contentType || 'text',
+    domain: options.domain || null,
+    sourceLastVerified: options.sourceLastVerified || null
+  });
+}
+
 // ─── Stripe (optional — graceful if no keys) ───────────────────
 let stripe = null;
 const STRIPE_SECRET = process.env.STRIPE_SECRET_KEY;
@@ -110,7 +168,7 @@ function persistStripeSessionMap() {
       const trimmed = entries.slice(-1000);
       atomicWriteSync(STRIPE_MAP_FILE, JSON.stringify(trimmed, null, 2));
     } catch (err) {
-      console.error('Failed to persist stripe sessions:', err.message);
+      log.error('stripe_persist_failed', { err: err.message });
     }
   }, 2000);
 }
@@ -122,15 +180,22 @@ if (STRIPE_SECRET) {
   const stripeOpts = {};
   if (STRIPE_ACCOUNT) stripeOpts.stripeAccount = STRIPE_ACCOUNT;
   stripe = new Stripe(STRIPE_SECRET, stripeOpts);
-  console.log('Stripe enabled (Card)' + (STRIPE_ACCOUNT ? ' — account: ' + STRIPE_ACCOUNT : ''));
+  log.info('stripe_enabled', { mode: 'card', account: STRIPE_ACCOUNT || null });
 } else {
-  console.log('Stripe not configured — using demo wallet mode');
+  log.info('stripe_demo_mode');
 }
 
 const server = createServer(async (req, res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
   const path = url.pathname;
   const method = req.method;
+
+  // Request ID for correlation — honor upstream X-Request-Id, else generate.
+  const reqId = req.headers['x-request-id']
+    ? String(req.headers['x-request-id']).slice(0, 64)
+    : Math.random().toString(36).slice(2, 10);
+  req.reqId = reqId;
+  res.setHeader('X-Request-Id', reqId);
 
   // Request logging for API routes
   const reqStart = Date.now();
@@ -139,7 +204,8 @@ const server = createServer(async (req, res) => {
     res.end = function(...args) {
       const duration = Date.now() - reqStart;
       const search = url.search || '';
-      console.log(`[${new Date().toISOString()}] ${method} ${path}${search} ${res.statusCode} ${duration}ms`);
+      log.info('http_request', { req_id: reqId, method, path: path + search, status: res.statusCode, duration_ms: duration });
+      recordHttp({ path, status: res.statusCode, duration_ms: duration });
       return origEnd(...args);
     };
   }
@@ -147,8 +213,20 @@ const server = createServer(async (req, res) => {
   try {
     // Rate limiting
     const clientIp = req.headers['x-forwarded-for']?.split(',')[0]?.trim() || req.socket.remoteAddress || 'unknown';
-    if (path.startsWith('/api/') && !rateLimit(clientIp)) {
-      return json(res, 429, { error: 'Trop de requêtes. Réessayez dans une minute.', disclaimer: DISCLAIMER });
+
+    // Differentiated rate-limit per bucket (premium_llm, letter_generation,
+    // validation_heavy). Le bucket 'default' reprend la limite historique 60/min.
+    if (path.startsWith('/api/')) {
+      const rl = rateLimitFor(path, clientIp);
+      if (!rl.allowed) {
+        res.setHeader('Retry-After', String(rl.retry_after_seconds || 60));
+        return json(res, 429, {
+          error: 'Trop de requêtes. Réessayez dans une minute.',
+          bucket: rl.bucket,
+          retry_after_seconds: rl.retry_after_seconds || 60,
+          disclaimer: DISCLAIMER
+        });
+      }
     }
 
     // Input length validation for query params
@@ -169,14 +247,14 @@ const server = createServer(async (req, res) => {
             event = stripe.webhooks.constructEvent(rawBody, sig, STRIPE_WEBHOOK_SECRET);
           } catch (sigErr) {
             // Signature failed — verify via Stripe API instead of accepting blindly
-            console.error('Webhook signature failed:', sigErr.type || 'unknown');
+            log.warn('stripe_webhook_sig_failed', { sig_err_type: sigErr.type || 'unknown' });
             const payload = JSON.parse(rawBody.toString());
             if (payload.id && payload.type) {
               try {
                 // Verify the event exists in Stripe (prevents forgery)
                 const verified = await stripe.events.retrieve(payload.id);
                 event = verified;
-                console.log('Webhook verified via API fallback:', payload.id);
+                log.info('stripe_webhook_api_fallback_ok', { event_id: payload.id });
               } catch {
                 throw new Error('Event verification failed');
               }
@@ -195,7 +273,7 @@ const server = createServer(async (req, res) => {
           const session = event.data.object;
           // Idempotence: check if wallet was already created (by polling or previous webhook)
           if (stripeSessionMap.has(session.id)) {
-            console.log('Wallet already exists for Stripe session (webhook skipped):', session.id);
+            log.debug('stripe_webhook_skipped', { session_id: session.id, reason: 'wallet_exists' });
           } else {
             const montant = parseInt(session.metadata?.montant_centimes || '1000', 10);
             const result = acheterWallet(montant);
@@ -204,13 +282,13 @@ const server = createServer(async (req, res) => {
               persistStripeSessionMap();
               const customerEmail = session.customer_details?.email || session.customer_email;
               if (customerEmail) linkWalletToEmail(customerEmail, result.data.sessionCode);
-              console.log('Wallet created via webhook:', session.id, '→', result.data.sessionCode, customerEmail || '');
+              log.info('wallet_created', { source: 'webhook', session_id: session.id, has_email: !!customerEmail });
             }
           }
         }
         return json(res, 200, { received: true });
       } catch (err) {
-        console.error('Stripe webhook error:', err.message);
+        log.error('stripe_webhook_error', { err: err.message });
         return json(res, 400, { error: 'Webhook error' });
       }
     }
@@ -243,7 +321,7 @@ const server = createServer(async (req, res) => {
         });
         return json(res, 200, { url: session.url });
       } catch (err) {
-        console.error('Stripe session error:', err.message);
+        log.error('stripe_session_error', { err: err.message });
         return json(res, 500, { error: 'Erreur paiement' });
       }
     }
@@ -273,12 +351,12 @@ const server = createServer(async (req, res) => {
               if (customerEmail) {
                 linkWalletToEmail(customerEmail, result.data.sessionCode);
               }
-              console.log('Wallet created via direct check:', sessionId, '→', result.data.sessionCode, 'CHF', (montant/100).toFixed(2), customerEmail ? 'email:' + customerEmail : '');
+              log.info('wallet_created', { source: 'direct_check', session_id: sessionId, amount_chf: montant / 100, has_email: !!customerEmail });
               return json(res, 200, { sessionCode: result.data.sessionCode, ready: true });
             }
           }
         } catch (err) {
-          console.log('Stripe session check error:', err.message);
+          log.warn('stripe_session_check_error', { err: err.message });
         }
       }
 
@@ -316,6 +394,19 @@ const server = createServer(async (req, res) => {
       return json(res, 200, { status: 'ok', timestamp: new Date().toISOString(), disclaimer: DISCLAIMER });
     }
 
+    // Health check approfondi (10 modules critiques)
+    // Retourne 200 si `ok`, 200 si `degraded`, 503 si `failing`.
+    if (path === '/api/health/deep' && method === 'GET') {
+      try {
+        const { runHealthChecks } = await import('./services/health-check.mjs');
+        const report = await runHealthChecks();
+        const httpStatus = report.global_status === 'failing' ? 503 : 200;
+        return json(res, httpStatus, { ...report, disclaimer: DISCLAIMER });
+      } catch (err) {
+        return json(res, 503, { global_status: 'failing', error: err.message, disclaimer: DISCLAIMER });
+      }
+    }
+
     // Triage audit log endpoint
     if (path === '/api/admin/triage-log' && method === 'GET') {
       if (!checkAdmin(req, res)) return;
@@ -324,32 +415,43 @@ const server = createServer(async (req, res) => {
     }
 
     if (path === '/api/domaines' && method === 'GET') {
-      return json(res, 200, { domaines: domainesData, disclaimer: DISCLAIMER });
+      const payload = await maybeTranslatePayload(req, url, null, { domaines: domainesData, disclaimer: DISCLAIMER }, { contentType: 'chrome/ui' });
+      return json(res, 200, payload);
     }
 
     if (path.match(/^\/api\/domaines\/([^/]+)\/questions$/) && method === 'GET') {
       const domaineId = path.match(/^\/api\/domaines\/([^/]+)\/questions$/)[1];
       const result = getQuestionsForDomaine(domaineId);
-      return json(res, result.status, result.error ? { error: result.error, disclaimer: DISCLAIMER } : { ...result.data, disclaimer: DISCLAIMER });
+      const payload = result.error ? { error: result.error, disclaimer: DISCLAIMER } : { ...result.data, disclaimer: DISCLAIMER };
+      return json(res, result.status, await maybeTranslatePayload(req, url, null, payload, { contentType: 'structured_legal_content', domain: domaineId }));
     }
 
     if (path === '/api/consulter' && method === 'POST') {
       const body = await parseBody(req);
       const result = consulter(body);
-      return json(res, result.status, result.error ? { error: result.error, disclaimer: DISCLAIMER } : { ...result.data, disclaimer: DISCLAIMER });
+      const payload = result.error ? { error: result.error, disclaimer: DISCLAIMER } : { ...result.data, disclaimer: DISCLAIMER };
+      return json(res, result.status, await maybeTranslatePayload(req, url, body, payload, { contentType: 'structured_legal_content', domain: body?.domaine }));
     }
 
     if (path.match(/^\/api\/fiches\/([^/]+)$/) && method === 'GET') {
       const ficheId = path.match(/^\/api\/fiches\/([^/]+)$/)[1];
       const fiche = getFicheById(ficheId);
       if (!fiche) return json(res, 404, { error: 'Fiche non trouvee', disclaimer: DISCLAIMER });
-      return json(res, 200, { fiche, disclaimer: DISCLAIMER });
+      return json(res, 200, await maybeTranslatePayload(req, url, null, { fiche, disclaimer: DISCLAIMER }, {
+        contentType: 'structured_legal_content',
+        domain: fiche?.domaine,
+        sourceLastVerified: fiche?.last_verified_at
+      }));
     }
 
     if (path.match(/^\/api\/services\/([^/]+)$/) && method === 'GET') {
       const canton = path.match(/^\/api\/services\/([^/]+)$/)[1];
       const services = getServicesByCanton(canton);
-      return json(res, 200, { services, canton: canton.toUpperCase(), disclaimer: DISCLAIMER });
+      return json(res, 200, await maybeTranslatePayload(req, url, null, {
+        services,
+        canton: canton.toUpperCase(),
+        disclaimer: DISCLAIMER
+      }, { contentType: 'structured_legal_content' }));
     }
 
     // Legacy premium routes (kept for backward compat)
@@ -450,34 +552,24 @@ const server = createServer(async (req, res) => {
         let letterText = letterResult.data?.lettre || letterResult.lettre;
         if (!letterText) return json(res, 500, { error: 'Pas de lettre générée' });
 
-        // Optional translation for DOCX
-        const LANG_MAP = {
-          de: 'Allemand', it: 'Italien', en: 'Anglais', pt: 'Portugais',
-          ar: 'Arabe', tr: 'Turc', sq: 'Albanais', hr: 'Serbo-croate'
-        };
-        if (body.lang && body.lang !== 'fr' && LANG_MAP[body.lang]) {
-          const apiKey = process.env.ANTHROPIC_API_KEY;
-          if (apiKey) {
-            const systemPrompt = `Tu es un traducteur juridique suisse. Traduis le texte suivant en ${LANG_MAP[body.lang]}. Garde la terminologie juridique précise. Traduis fidèlement sans ajouter ni retirer d'information. Réponds UNIQUEMENT avec la traduction, sans commentaire.`;
-            const apiBody = JSON.stringify({
-              model: 'claude-haiku-4-5-20251001',
-              max_tokens: 4000,
-              system: systemPrompt,
-              messages: [{ role: 'user', content: letterText }]
+        const docxLang = normalizeLocale(body.lang || resolveRequestLocale(req, url, body));
+        if (docxLang !== 'fr') {
+          const translated = await maybeTranslateText(req, url, body, letterText, {
+            contentType: 'structured_legal_content',
+            domain: body?.domaine || null
+          });
+          if (translated.translation_status === 'failed') {
+            return json(res, 503, {
+              error: 'Traduction indisponible pour la langue demandée',
+              display_lang: docxLang,
+              source_lang: 'fr',
+              translation_status: 'failed',
+              translation_pipeline_version: TRANSLATION_PIPELINE_VERSION
             });
-            const apiResp = await fetch('https://api.anthropic.com/v1/messages', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01' },
-              body: apiBody
-            });
-            if (apiResp.ok) {
-              const apiData = await apiResp.json();
-              letterText = apiData.content[0].text;
-              // Debit translation cost
-              const totalTokens = (apiData.usage?.input_tokens || 0) + (apiData.usage?.output_tokens || 0);
-              const apiCostCentimes = Math.max(4, Math.ceil(totalTokens / 1000 * 0.007)); // raw cost, debitSession adds x2.5
-              debitSession(sessionCode, apiCostCentimes, 'traduction_docx');
-            }
+          }
+          letterText = translated.translated;
+          if (translated.translation_status === 'fresh') {
+            debitSession(sessionCode, 4, 'traduction_docx');
           }
         }
 
@@ -490,7 +582,7 @@ const server = createServer(async (req, res) => {
         res.end(docxBuffer);
         return;
       } catch (err) {
-        console.error('DOCX generation error:', err.message);
+        log.error('docx_generation_error', { err: err.message });
         return json(res, 500, { error: 'Erreur génération DOCX' });
       }
     }
@@ -502,60 +594,98 @@ const server = createServer(async (req, res) => {
       if (!body.text) return json(res, 400, { error: 'text requis', disclaimer: DISCLAIMER });
       const safeText = sanitizeUserInput(body.text, 25000); // translations can be long
 
-      const LANG_MAP = {
-        de: 'Allemand', it: 'Italien', en: 'Anglais', pt: 'Portugais',
-        ar: 'Arabe', tr: 'Turc', sq: 'Albanais', hr: 'Serbo-croate'
-      };
-      const targetLangName = LANG_MAP[body.targetLang];
-      if (!targetLangName) return json(res, 400, { error: 'Langue non supportée. Langues: ' + Object.keys(LANG_MAP).join(', '), disclaimer: DISCLAIMER });
+      if (!body.targetLang || !isOfferedLocale(body.targetLang)) {
+        return json(res, 400, { error: 'Langue non supportée', disclaimer: DISCLAIMER });
+      }
+      const targetLang = normalizeLocale(body.targetLang);
+      if (targetLang === 'fr') {
+        return json(res, 200, {
+          translated: safeText,
+          display_lang: 'fr',
+          source_lang: 'fr',
+          translation_status: 'fresh',
+          translation_pipeline_version: TRANSLATION_PIPELINE_VERSION,
+          translated_at: new Date().toISOString(),
+          disclaimer: DISCLAIMER
+        });
+      }
 
       // Session check
       const walletCheck = getCredits(sessionCode);
       if (walletCheck.error) return json(res, walletCheck.status || 403, { error: walletCheck.error, disclaimer: DISCLAIMER });
       if (walletCheck.data.solde < 3) return json(res, 402, { error: 'Solde insuffisant', solde: walletCheck.data.solde, disclaimer: DISCLAIMER });
 
-      const apiKey = process.env.ANTHROPIC_API_KEY;
-      if (!apiKey) return json(res, 503, { error: 'Service de traduction indisponible', disclaimer: DISCLAIMER });
-
       try {
-        const contextHint = body.context === 'legal' ? ' Le texte est de nature juridique suisse.' : '';
-        const systemPrompt = `Tu es un traducteur juridique suisse. Traduis le texte suivant en ${targetLangName}. Garde la terminologie juridique précise. Traduis fidèlement sans ajouter ni retirer d'information.${contextHint} Réponds UNIQUEMENT avec la traduction, sans commentaire.`;
-
-        const apiBody = JSON.stringify({
-          model: 'claude-haiku-4-5-20251001',
-          max_tokens: 4000,
-          system: systemPrompt,
-          messages: [{ role: 'user', content: safeText }]
+        const translated = await translateTextContent(safeText, {
+          targetLang,
+          sourceLang: 'fr',
+          contentType: body.context === 'legal' ? 'structured_legal_content' : 'text'
         });
-
-        const apiResp = await fetch('https://api.anthropic.com/v1/messages', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01' },
-          body: apiBody
-        });
-
-        if (!apiResp.ok) throw new Error(`Claude API error ${apiResp.status}`);
-        const apiData = await apiResp.json();
-        const translated = apiData.content[0].text;
-
-        // Debit based on token usage — debitSession adds x2.5 margin
-        const totalTokens = (apiData.usage?.input_tokens || 0) + (apiData.usage?.output_tokens || 0);
-        // Raw API cost in centimes (Haiku: ~0.007 ct/1K tokens), min 4ct → min 10ct after margin
-        const apiCostCentimes = Math.max(4, Math.ceil(totalTokens / 1000 * 0.007));
-        const debitResult = debitSession(sessionCode, apiCostCentimes, 'traduction');
+        if (translated.translation_status === 'failed') {
+          return json(res, 503, {
+            error: 'Service de traduction indisponible',
+            display_lang: targetLang,
+            source_lang: 'fr',
+            translation_status: 'failed',
+            translation_pipeline_version: TRANSLATION_PIPELINE_VERSION,
+            disclaimer: DISCLAIMER
+          });
+        }
+        const charged = translated.translation_status === 'fresh' ? debitSession(sessionCode, 4, 'traduction') : { charged: 0, solde: walletCheck.data.solde };
 
         return json(res, 200, {
-          translated,
-          lang: body.targetLang,
+          translated: translated.translated,
+          lang: targetLang,
+          display_lang: translated.display_lang,
+          source_lang: translated.source_lang,
+          translation_status: translated.translation_status,
+          translation_pipeline_version: translated.translation_pipeline_version,
+          translated_at: translated.translated_at,
           cost: {
-            charged_centimes: debitResult.charged || apiCostCentimes,
-            solde_restant: debitResult.solde ?? walletCheck.data.solde - apiCostCentimes
+            charged_centimes: charged.charged || 0,
+            solde_restant: charged.solde ?? walletCheck.data.solde
           },
           disclaimer: DISCLAIMER
         });
       } catch (err) {
-        console.error('Translation error:', err.message);
+        log.error('translation_error', { err: err.message });
         return json(res, 500, { error: 'Erreur de traduction', disclaimer: DISCLAIMER });
+      }
+    }
+
+    if (path === '/api/i18n/html' && method === 'POST') {
+      const body = await parseBody(req);
+      if (!body.html || typeof body.html !== 'string') {
+        return json(res, 400, { error: 'html requis', disclaimer: DISCLAIMER });
+      }
+      if (body.html.length > 50000) {
+        return json(res, 413, { error: 'Fragment trop volumineux', disclaimer: DISCLAIMER });
+      }
+      try {
+        const translated = await maybeTranslateText(req, url, body, body.html, {
+          contentType: 'html'
+        });
+        if (translated.translation_status === 'failed') {
+          return json(res, 503, {
+            error: 'Traduction indisponible pour la langue demandée',
+            display_lang: translated.display_lang,
+            source_lang: translated.source_lang,
+            translation_status: translated.translation_status,
+            translation_pipeline_version: translated.translation_pipeline_version,
+            disclaimer: DISCLAIMER
+          });
+        }
+        return json(res, 200, {
+          html: translated.translated,
+          display_lang: translated.display_lang,
+          source_lang: translated.source_lang,
+          translation_status: translated.translation_status,
+          translation_pipeline_version: translated.translation_pipeline_version,
+          translated_at: translated.translated_at,
+          disclaimer: DISCLAIMER
+        });
+      } catch (err) {
+        return json(res, 503, { error: err.message, disclaimer: DISCLAIMER });
       }
     }
 
@@ -634,27 +764,48 @@ const server = createServer(async (req, res) => {
 
     if (path === '/api/triage' && method === 'POST') {
       const body = await parseBody(req);
-      const result = await triage(body.texte, body.canton, body.sessionId, body.reponses);
-      return json(res, result.status, result.error
-        ? { error: result.error, disclaimer: DISCLAIMER }
-        : { ...result.data });
+      const result = await handleTriageStart({ texte: body.texte, canton: body.canton });
+      const httpStatus = result.http_status
+        || (result.status === 'error' ? 500
+          : result.status === 'safety_stop' ? 200
+          : result.status === 'human_tier' ? 200
+          : result.status === 'out_of_scope' ? 200
+          : 200);
+      // Inclure `status` dans le payload d'erreur pour que le front puisse
+      // distinguer error/safety_stop/payment_required sans parser le code HTTP.
+      const payload = result.error
+        ? { status: result.status || 'error', error: result.error, disclaimer: DISCLAIMER }
+        : { ...result, disclaimer: DISCLAIMER };
+      return json(res, httpStatus, await maybeTranslatePayload(req, url, body, payload, { contentType: 'structured_legal_content' }));
     }
 
     if (path === '/api/triage' && method === 'GET') {
       const q = url.searchParams.get('q');
       const canton = url.searchParams.get('canton');
-      const result = await triage(q, canton);
-      return json(res, result.status, result.error
-        ? { error: result.error, disclaimer: DISCLAIMER }
-        : { ...result.data });
+      const result = await handleTriageStart({ texte: q, canton });
+      const httpStatus = result.http_status
+        || (result.status === 'error' ? 500 : 200);
+      const payload = result.error
+        ? { status: result.status || 'error', error: result.error, disclaimer: DISCLAIMER }
+        : { ...result, disclaimer: DISCLAIMER };
+      return json(res, httpStatus, await maybeTranslatePayload(req, url, null, payload, { contentType: 'structured_legal_content' }));
     }
 
     if (path === '/api/triage/refine' && method === 'POST') {
       const body = await parseBody(req);
-      const result = await triage(null, null, body.sessionId, body.reponses);
-      return json(res, result.status, result.error
-        ? { error: result.error, disclaimer: DISCLAIMER }
-        : { ...result.data });
+      const result = await handleTriageNext({
+        case_id: body.sessionId,
+        action: 'answer',
+        answers: body.reponses,
+        wallet_session: body.wallet_session
+      });
+      const httpStatus = result.http_status
+        || (result.status === 'payment_required' ? 402
+          : result.status === 'error' ? 500
+          : 200);
+      return json(res, httpStatus, await maybeTranslatePayload(req, url, body, { ...result, disclaimer: DISCLAIMER }, {
+        contentType: 'structured_legal_content'
+      }));
     }
 
     if (path === '/api/triage/cost' && method === 'GET') {
@@ -663,6 +814,248 @@ const server = createServer(async (req, res) => {
       return json(res, cost ? 200 : 404, cost
         ? { ...cost, disclaimer: DISCLAIMER }
         : { error: 'Type inconnu', disclaimer: DISCLAIMER });
+    }
+
+    // ─── Triage orchestration (Phase 6 / Cortex) ───────────────────
+
+    if (path === '/api/triage/next' && method === 'POST') {
+      const body = await parseBody(req);
+      const result = await handleTriageNext({
+        case_id: body.case_id,
+        action: body.action,
+        answers: body.answers,
+        wallet_session: body.wallet_session
+      });
+      const httpStatus = result.http_status
+        || (result.status === 'error' ? 400
+          : 200);
+      return json(res, httpStatus, await maybeTranslatePayload(req, url, body, { ...result, disclaimer: DISCLAIMER }, {
+        contentType: 'structured_legal_content'
+      }));
+    }
+
+    // ─── Escalation pack — "ce cas me dépasse" ────────────────────
+
+    if (path === '/api/triage/escalation' && method === 'POST') {
+      const body = await parseBody(req);
+      if (!body.case_id) {
+        return json(res, 400, { error: 'case_id requis', disclaimer: DISCLAIMER });
+      }
+      const caseRec = getCase(body.case_id);
+      if (!caseRec) {
+        return json(res, 404, { error: 'Case introuvable ou expiré', disclaimer: DISCLAIMER });
+      }
+      const pack = buildEscalationPack(caseRec);
+      if (!pack) {
+        return json(res, 500, { error: 'Impossible de construire le pack d\'escalade', disclaimer: DISCLAIMER });
+      }
+      return json(res, 200, {
+        escalation_pack: pack,
+        download_url: `/api/triage/escalation/${body.case_id}/download.json`,
+        disclaimer: DISCLAIMER
+      });
+    }
+
+    {
+      const downloadMatch = path.match(/^\/api\/triage\/escalation\/([^/]+)\/download\.json$/);
+      if (downloadMatch && method === 'GET') {
+        const caseId = decodeURIComponent(downloadMatch[1]);
+        const caseRec = getCase(caseId);
+        if (!caseRec) {
+          return json(res, 404, { error: 'Case introuvable ou expiré', disclaimer: DISCLAIMER });
+        }
+        const pack = buildEscalationPack(caseRec);
+        if (!pack) {
+          return json(res, 500, { error: 'Impossible de construire le pack d\'escalade', disclaimer: DISCLAIMER });
+        }
+        setSecurityHeaders(res);
+        res.writeHead(200, {
+          'Content-Type': 'application/json; charset=utf-8',
+          'Content-Disposition': `attachment; filename="escalation-${caseId}.json"`
+        });
+        return res.end(JSON.stringify(pack, null, 2));
+      }
+    }
+
+    // ─── Citizen account (90j session, 12mo account) ──────────────
+
+    if (path === '/api/citizen/register' && method === 'POST') {
+      const body = await parseBody(req);
+      const result = createAccount({ email: body.email, canton: body.canton });
+      if (result.error) return json(res, 400, { error: result.error, disclaimer: DISCLAIMER });
+      // Expose magic_token_dev en non-prod (front l'utilise directement, sinon email)
+      const isDev = process.env.NODE_ENV !== 'production';
+      const payload = { ...result, disclaimer: DISCLAIMER };
+      if (isDev && result.magic_token) payload.magic_token_dev = result.magic_token;
+      return json(res, 200, payload);
+    }
+
+    if (path === '/api/citizen/verify' && method === 'POST') {
+      const body = await parseBody(req);
+      const result = verifyMagicToken(body.token);
+      if (result.error) return json(res, 400, { error: result.error, disclaimer: DISCLAIMER });
+      return json(res, 200, { ...result, disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/citizen/me' && method === 'GET') {
+      const session = req.headers['x-citizen-session'];
+      if (!session) return json(res, 401, { error: 'Session requise', disclaimer: DISCLAIMER });
+      const account = getAccount(session);
+      if (!account) return json(res, 401, { error: 'Session invalide ou expirée', disclaimer: DISCLAIMER });
+      return json(res, 200, {
+        account,
+        cases: account.cases || [],
+        alerts: account.alerts || [],
+        disclaimer: DISCLAIMER
+      });
+    }
+
+    if (path === '/api/citizen/cases/link' && method === 'POST') {
+      const session = req.headers['x-citizen-session'];
+      if (!session) return json(res, 401, { error: 'Session requise', disclaimer: DISCLAIMER });
+      const body = await parseBody(req);
+      if (!body.case_id) return json(res, 400, { error: 'case_id requis', disclaimer: DISCLAIMER });
+      const result = linkCaseToAccount(session, body.case_id);
+      if (result.error) return json(res, result.status || 400, { error: result.error, disclaimer: DISCLAIMER });
+      return json(res, 200, { ...result, disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/citizen/upcoming' && method === 'GET') {
+      const session = req.headers['x-citizen-session'];
+      if (!session) return json(res, 401, { error: 'Session requise', disclaimer: DISCLAIMER });
+      const account = getAccount(session);
+      if (!account) return json(res, 401, { error: 'Session invalide', disclaimer: DISCLAIMER });
+      const upcoming = getUpcomingDeadlines(account.account_id, 30);
+      return json(res, 200, { upcoming, disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/citizen/me' && method === 'DELETE') {
+      const session = req.headers['x-citizen-session'];
+      if (!session) return json(res, 401, { error: 'Session requise', disclaimer: DISCLAIMER });
+      const result = closeAccount(session);
+      return json(res, result.error ? 400 : 200,
+        result.error ? { error: result.error, disclaimer: DISCLAIMER }
+                     : { ...result, disclaimer: DISCLAIMER });
+    }
+
+    // ─── Outcomes feedback ────────────────────────────────────────
+
+    if (path === '/api/outcomes/record' && method === 'POST') {
+      const body = await parseBody(req);
+      const result = recordOutcome(body || {});
+      const ok = result.status === 'recorded' || result.status === 'updated';
+      // Normalise status pour le front (back émet 'recorded', le front attend 'stored')
+      const normalized = ok
+        ? { ...result, status: result.status === 'updated' ? 'updated' : 'stored' }
+        : result;
+      return json(res, ok ? 200 : 400, { ...normalized, disclaimer: DISCLAIMER });
+    }
+
+    // ─── Case lettre (PDF generation) ─────────────────────────────
+
+    {
+      const letterMatch = path.match(/^\/api\/case\/([^/]+)\/letter$/);
+      if (letterMatch && method === 'POST') {
+        const caseId = decodeURIComponent(letterMatch[1]);
+        const caseRec = getCase(caseId);
+        if (!caseRec) {
+          return json(res, 404, { error: 'Case introuvable ou expiré', disclaimer: DISCLAIMER });
+        }
+        const body = await parseBody(req);
+        // Validation : type requis (mise_en_demeure | contestation | opposition | etc.)
+        if (!body.type) {
+          return json(res, 400, { error: 'type requis (mise_en_demeure, contestation, opposition, resiliation, plainte)', disclaimer: DISCLAIMER });
+        }
+        if (!body.ficheId) {
+          return json(res, 400, { error: 'ficheId requis', disclaimer: DISCLAIMER });
+        }
+        try {
+          const result = await generateLetterPDF({
+            ficheId: body.ficheId,
+            userContext: body.userContext || caseRec.state || {},
+            type: body.type,
+            lang: body.lang || 'fr',
+            format: body.format || 'auto'
+          });
+          if (result?.error) {
+            return json(res, 400, { error: result.error, disclaimer: DISCLAIMER });
+          }
+          return json(res, 200, {
+            ...result,
+            download_url: `/api/case/${caseId}/letter/${result.letter_id}/download`,
+            disclaimer: DISCLAIMER
+          });
+        } catch (err) {
+          return json(res, 500, { error: err.message, disclaimer: DISCLAIMER });
+        }
+      }
+    }
+
+    {
+      const letterDlMatch = path.match(/^\/api\/case\/([^/]+)\/letter\/([^/]+)\/download$/);
+      if (letterDlMatch && method === 'GET') {
+        const caseId = decodeURIComponent(letterDlMatch[1]);
+        const letterId = decodeURIComponent(letterDlMatch[2]);
+        try {
+          const { _getOutputDir } = await import('./services/letter-pdf-generator.mjs');
+          const dir = _getOutputDir();
+          const filePath = join(dir, `${letterId}.pdf`);
+          if (!existsSync(filePath)) {
+            return json(res, 404, { error: 'Lettre introuvable', disclaimer: DISCLAIMER });
+          }
+          setSecurityHeaders(res);
+          res.writeHead(200, {
+            'Content-Type': 'application/pdf',
+            'Content-Disposition': `attachment; filename="letter-${letterId}.pdf"`
+          });
+          return res.end(readFileSync(filePath));
+        } catch (err) {
+          return json(res, 500, { error: err.message, disclaimer: DISCLAIMER });
+        }
+      }
+    }
+
+    // ─── Case reminders (extraction + scheduling) ─────────────────
+
+    {
+      const remindersMatch = path.match(/^\/api\/case\/([^/]+)\/reminders$/);
+      if (remindersMatch && method === 'GET') {
+        const caseId = decodeURIComponent(remindersMatch[1]);
+        const caseRec = getCase(caseId);
+        if (!caseRec) {
+          return json(res, 404, { error: 'Case introuvable ou expiré', disclaimer: DISCLAIMER });
+        }
+        const deadlines = extractDeadlinesFromCase(caseRec);
+        const scheduled_reminders = listRemindersForCase(caseId);
+        return json(res, 200, {
+          case_id: caseId,
+          deadlines,
+          scheduled_reminders,
+          disclaimer: DISCLAIMER
+        });
+      }
+
+      const scheduleMatch = path.match(/^\/api\/case\/([^/]+)\/reminders\/schedule$/);
+      if (scheduleMatch && method === 'POST') {
+        const caseId = decodeURIComponent(scheduleMatch[1]);
+        const caseRec = getCase(caseId);
+        if (!caseRec) {
+          return json(res, 404, { error: 'Case introuvable ou expiré', disclaimer: DISCLAIMER });
+        }
+        const body = await parseBody(req);
+        const result = scheduleReminders(caseRec, body.contact_email || body.contact || null);
+        return json(res, 200, { ...result, disclaimer: DISCLAIMER });
+      }
+    }
+
+    // ─── Dashboard metrics (admin) ────────────────────────────────
+
+    if (path === '/api/dashboard/metrics' && method === 'GET') {
+      if (process.env.NODE_ENV === 'production') {
+        if (!checkAdmin(req, res)) return;
+      }
+      const metrics = computeDashboardMetrics();
+      return json(res, 200, { ...metrics, disclaimer: DISCLAIMER });
     }
 
     // Recherche — LLM-first, keyword fallback
@@ -733,7 +1126,10 @@ const server = createServer(async (req, res) => {
         );
 
         logTriage(q, triageResult.data, 'llm', Date.now() - triageStart);
-        return json(res, 200, responseData);
+        return json(res, 200, await maybeTranslatePayload(req, url, null, responseData, {
+          contentType: 'structured_legal_content',
+          domain: responseData?.fiche?.domaine || triageResult.data?.domaine
+        }));
       }
 
       // Fallback: keyword search (degraded mode)
@@ -743,7 +1139,11 @@ const server = createServer(async (req, res) => {
       // If semantic search returned "unclear" (no confident match), return helpful guidance
       if (result.data?.type === 'unclear') {
         logTriage(q, result.data, 'keyword_fallback_unclear', Date.now() - triageStart);
-        return json(res, 200, { ...result.data, triage_method: 'keyword_fallback', disclaimer: DISCLAIMER });
+        return json(res, 200, await maybeTranslatePayload(req, url, null, {
+          ...result.data,
+          triage_method: 'keyword_fallback',
+          disclaimer: DISCLAIMER
+        }, { contentType: 'structured_legal_content' }));
       }
 
       const fallbackData = enrichV4({ ...result.data, triage_method: 'keyword_fallback', disclaimer: DISCLAIMER });
@@ -752,7 +1152,10 @@ const server = createServer(async (req, res) => {
         fallbackData.suggested_questions = generateSuggestedQuestions(fallbackData.fiche.id, fallbackData, null);
       }
       logTriage(q, result.data, 'keyword_fallback', Date.now() - triageStart);
-      return json(res, result.status, fallbackData);
+      return json(res, result.status, await maybeTranslatePayload(req, url, null, fallbackData, {
+        contentType: 'structured_legal_content',
+        domain: fallbackData?.fiche?.domaine
+      }));
     }
 
     // Citoyen: cherche par problème
@@ -840,6 +1243,35 @@ const server = createServer(async (req, res) => {
       if (!checkAdmin(req, res)) return;
       const result = getCompleteness();
       return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
+    }
+
+    // Metrics snapshot (admin)
+    if (path === '/api/admin/metrics' && method === 'GET') {
+      if (!checkAdmin(req, res)) return;
+      const { getRateLimitStats } = await import('./lib/http-helpers.mjs');
+      return json(res, 200, {
+        ...metricsSnapshot(),
+        rate_limit: getRateLimitStats(),
+        disclaimer: DISCLAIMER
+      });
+    }
+
+    // Audit env vars (admin)
+    if (path === '/api/admin/env' && method === 'GET') {
+      if (!checkAdmin(req, res)) return;
+      const { getEnvSpecs } = await import('./services/env-check.mjs');
+      const specs = getEnvSpecs();
+      return json(res, 200, {
+        env: process.env.NODE_ENV || 'development',
+        specs: specs.map(s => ({
+          name: s.name,
+          category: s.category,
+          required_in_prod: s.required_in_prod,
+          present: s.present,
+          hint: s.hint,
+        })),
+        disclaimer: DISCLAIMER
+      });
     }
 
     // --- Loi (articles) ---
@@ -993,9 +1425,18 @@ const server = createServer(async (req, res) => {
     }
 
     if (path === '/api/sources/validate' && method === 'POST') {
+      const MAX_SOURCE_IDS = 200;
       const body = await parseBody(req);
       if (!body.source_ids || !Array.isArray(body.source_ids)) {
         return json(res, 400, { error: 'source_ids (array) requis', disclaimer: DISCLAIMER });
+      }
+      if (body.source_ids.length > MAX_SOURCE_IDS) {
+        return json(res, 413, {
+          error: `Trop de source_ids (max ${MAX_SOURCE_IDS})`,
+          received: body.source_ids.length,
+          max: MAX_SOURCE_IDS,
+          disclaimer: DISCLAIMER
+        });
       }
       const result = validateClaimSources(body.source_ids);
       return json(res, 200, { ...result, disclaimer: DISCLAIMER });
@@ -1162,7 +1603,7 @@ const server = createServer(async (req, res) => {
         const debitResult = debitSession(sessionCode, apiCostCentimes, 'analyse_v3');
         // Don't block on insufficient funds for test accounts — just log
         if (debitResult.error && !debitResult.error.includes('test')) {
-          console.log('Debit warning:', debitResult.error, 'session:', sessionCode);
+          log.warn('debit_warning', { err: debitResult.error, session: sessionCode });
         }
 
         // Generate premium suggested next steps
@@ -1202,7 +1643,7 @@ const server = createServer(async (req, res) => {
         // Fiche-level suggested questions
         const ficheQuestions = generateSuggestedQuestions(ficheId, null, { questions: result.questions });
 
-        return json(res, 200, {
+        const payload = {
           mode_crise: result.mode_crise || false,
           urgence_contacts: result.urgence_contacts || null,
           complet: result.complet,
@@ -1234,10 +1675,14 @@ const server = createServer(async (req, res) => {
           usage: result.usage,
           cost: debitResult.charged ? { charged_centimes: debitResult.charged, solde_restant: debitResult.solde } : null,
           disclaimer: DISCLAIMER
-        });
+        };
+        return json(res, 200, await maybeTranslatePayload(req, url, body, payload, {
+          contentType: 'structured_legal_content',
+          domain: ficheId ? (result.comprehension?.domaine || null) : null
+        }));
       } catch (err) {
         // No charge on error — user is not debited
-        console.error('V3 analysis error:', err.message);
+        log.error('v3_analysis_error', { err: err.message });
         return json(res, 500, { error: 'Erreur analyse', verification_status: 'insufficient', disclaimer: DISCLAIMER });
       }
     }
@@ -1273,10 +1718,10 @@ const server = createServer(async (req, res) => {
         const apiCostCentimes = Math.max(3, Math.ceil(totalTokens / 1000 * 0.08));
         const debitResult = debitSession(sessionCode, apiCostCentimes, 'analyse_v3_refine');
         if (debitResult.error && !debitResult.error.includes('test')) {
-          console.log('Debit warning (refine):', debitResult.error, 'session:', sessionCode);
+          log.warn('debit_warning_refine', { err: debitResult.error, session: sessionCode });
         }
 
-        return json(res, 200, {
+        const payload = {
           complet: true,
           verification_status,
           resume: result.resume,
@@ -1292,7 +1737,10 @@ const server = createServer(async (req, res) => {
           usage: result.usage,
           cost: debitResult.charged ? { charged_centimes: debitResult.charged, solde_restant: debitResult.solde } : null,
           disclaimer: DISCLAIMER
-        });
+        };
+        return json(res, 200, await maybeTranslatePayload(req, url, body, payload, {
+          contentType: 'structured_legal_content'
+        }));
       } catch (err) {
         // No charge on error
         return json(res, 500, { error: 'Erreur analyse', verification_status: 'insufficient', disclaimer: DISCLAIMER });
@@ -1358,16 +1806,63 @@ const server = createServer(async (req, res) => {
     // Static files
     if (path === '/' || path === '/index.html') {
       trackPageView('/');
-      const lang = (req.headers['accept-language'] || '').slice(0, 2);
+      const lang = resolveRequestLocale(req, url);
       if (lang) trackLanguage(lang);
       return serveStatic(req, res, join(publicDir, 'index.html'));
+    }
+
+    if (method === 'GET' && /^\/guides\/(fr|de|it|en|pt|ar|tr|sq|hr)\/[a-z0-9_]+\.html$/.test(path)) {
+      const match = path.match(/^\/guides\/(fr|de|it|en|pt|ar|tr|sq|hr)\/([a-z0-9_]+)\.html$/);
+      const locale = match[1];
+      const slug = match[2];
+      const localizedStaticPath = join(publicDir, 'guides', locale, `${slug}.html`);
+      if (existsSync(localizedStaticPath)) {
+        trackPageView(path);
+        trackLanguage(locale);
+        return serveStatic(req, res, localizedStaticPath);
+      }
+      const rendered = await renderGuideForLocale(slug, locale);
+      if (!rendered) {
+        return json(res, 404, { error: 'Guide introuvable', disclaimer: DISCLAIMER });
+      }
+      if (!rendered.html) {
+        return json(res, 503, {
+          error: 'Guide indisponible dans la langue demandée',
+          display_lang: locale,
+          source_lang: 'fr',
+          translation_status: rendered.translation_status || 'failed',
+          translation_pipeline_version: TRANSLATION_PIPELINE_VERSION,
+          disclaimer: DISCLAIMER
+        });
+      }
+      setSecurityHeaders(res);
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      return res.end(rendered.html);
+    }
+
+    // SEO guides (Phase Cortex §8) — pages statiques par intent.
+    // Si le fichier existe → serve. Sinon → redirige vers /resultat.html
+    // avec un slug humanisé (underscores → espaces).
+    if (method === 'GET' && /^\/guides\/[a-z0-9_]+\.html$/.test(path)) {
+      const slug = path.slice('/guides/'.length, -'.html'.length);
+      const guidePath = join(publicDir, 'guides', `${slug}.html`);
+      if (existsSync(guidePath)) {
+        trackPageView(path);
+        const lang = resolveRequestLocale(req, url);
+        if (lang) trackLanguage(lang);
+        return serveStatic(req, res, guidePath);
+      }
+      const q = slug.replace(/_/g, ' ');
+      setSecurityHeaders(res);
+      res.writeHead(302, { Location: `/resultat.html?q=${encodeURIComponent(q)}` });
+      return res.end();
     }
 
     const staticPath = join(publicDir, path);
     if (existsSync(staticPath) && !staticPath.includes('..')) {
       if (path.endsWith('.html')) {
         trackPageView(path);
-        const lang = (req.headers['accept-language'] || '').slice(0, 2);
+        const lang = resolveRequestLocale(req, url);
         if (lang) trackLanguage(lang);
       }
       return serveStatic(req, res, staticPath);
@@ -1393,20 +1888,28 @@ const server = createServer(async (req, res) => {
 const PORT = process.env.PORT || 3000;
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  // Fail-fast en prod si des env vars critiques manquent.
+  validateEnv();
+
   server.listen(PORT, () => {
-    console.log(`JusticePourtous running on http://localhost:${PORT}`);
+    log.info('server_boot', { port: PORT });
+    startCompactionLoop();
   });
 
   // Graceful shutdown
   function gracefulShutdown(signal) {
-    console.log(`\n${signal} received — shutting down gracefully...`);
+    log.info('shutdown_start', { signal });
+    stopCompactionLoop();
+    // Flush la debounce 1s du case-store pour éviter la perte de cases
+    // modifiés juste avant SIGTERM.
+    try { _flushCases(); } catch (err) { log.error('shutdown_flush_failed', { err: err.message }); }
     server.close(() => {
-      console.log('All connections closed. Exiting.');
+      log.info('shutdown_complete');
       process.exit(0);
     });
     // Force exit after 10s if connections don't close
     setTimeout(() => {
-      console.warn('Forcing exit after 10s timeout.');
+      log.warn('shutdown_force_exit', { timeout_ms: 10000 });
       process.exit(1);
     }, 10000).unref();
   }

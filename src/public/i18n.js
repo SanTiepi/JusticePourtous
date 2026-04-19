@@ -106,7 +106,7 @@ var I18N = {
     'result.your_situation': 'Votre situation',
     'result.your_search': 'Votre recherche',
     'result.juridical_qualification': 'Qualification juridique',
-    'result.qualification': 'Qualification',
+    'result.qualification': 'Classification',
     'result.articles_title': 'Articles de loi applicables',
     'result.jurisprudence_title': 'Jurisprudence du Tribunal fédéral',
     'result.templates_title': 'Modèles de lettres',
@@ -246,7 +246,7 @@ var I18N = {
 
     // -- Premium: Letter types --
     'letter.mise_en_demeure': 'Mise en demeure',
-    'letter.contestation': 'Contestation',
+    'letter.contestation': 'Challenge',
     'letter.opposition': 'Opposition',
     'letter.resiliation': 'Résiliation',
     'letter.plainte': 'Plainte',
@@ -325,7 +325,7 @@ var I18N = {
     'annuaire.filter_asloca': 'ASLOCA',
     'annuaire.filter_csp': 'CSP',
     'annuaire.filter_syndicat': 'Syndicat',
-    'annuaire.filter_conciliation': 'Conciliation',
+    'annuaire.filter_conciliation': 'Conciliation board',
     'annuaire.filter_aide': 'Aide juridictionnelle',
     'annuaire.services_count': 'Services disponibles ({{count}})',
     'annuaire.no_services': 'Aucun service référencé pour ce canton.',
@@ -1127,7 +1127,7 @@ var I18N = {
     'premiumcta.feature2_title': 'Verified arguments',
     'premiumcta.feature2_text': 'For and against, with legal sources',
     'premiumcta.feature3_title': 'Letters as .docx',
-    'premiumcta.feature3_text': 'Formal notice, objection, contestation ready to sign',
+    'premiumcta.feature3_text': 'Formal notice, objection, challenge letter ready to sign',
 
     // -- Homepage: Trust band --
     'trust.anonymous_title': 'Minimal data',
@@ -1203,7 +1203,7 @@ var I18N = {
     'premiumcta_result.cert_title': 'Coverage certificate',
     'premiumcta_result.cert_text': 'We check that nothing is missing in your case before you act',
     'premiumcta_result.letter_title': 'Ready-to-send letters',
-    'premiumcta_result.letter_text': 'Formal notice, objection, contestation \u2014 as .docx with your information',
+    'premiumcta_result.letter_text': 'Formal notice, objection, challenge letter \u2014 as .docx with your information',
     'premiumcta_result.button': 'Start premium analysis',
 
     // -- Results: Upsell --
@@ -1290,7 +1290,7 @@ var I18N = {
 
     // -- Premium: Letter types --
     'letter.mise_en_demeure': 'Formal notice',
-    'letter.contestation': 'Contestation',
+    'letter.contestation': 'Challenge',
     'letter.opposition': 'Objection',
     'letter.resiliation': 'Termination',
     'letter.plainte': 'Criminal complaint',
@@ -2489,14 +2489,14 @@ var I18N = {
     'hero.eyebrow': 'E drejta zvicerane praktike',
     'hero.title_line1': 'E drejta zvicerane,',
     'hero.title_accent': 'e arritshme p\u00ebr t\u00eb gjith\u00eb.',
-    'hero.subtitle': 'JusticePourtous identifikon situtat\u00ebn tuaj juridike, ju tregon \u00e7far\u00eb t\u00eb b\u00ebni, brenda cilit afat dhe kujt t\'i drejtoheni \u2014 falas dhe n\u00eb m\u00ebnyr\u00eb anonime.',
+    'hero.subtitle': 'JusticePourtous identifikon situat\u00ebn tuaj juridike, ju tregon \u00e7far\u00eb t\u00eb b\u00ebni, brenda cilit afat dhe kujt t\'i drejtoheni \u2014 falas dhe n\u00eb m\u00ebnyr\u00eb anonime.',
 
     // -- Homepage: Process --
     'process.eyebrow': 'Si funksionon',
     'process.step1_title': 'P\u00ebrshkruani',
-    'process.step1_text': 'Shpjegoni situtat\u00ebn tuaj me pak fjal\u00eb, si t\'ia tregonit nj\u00eb shoku.',
+    'process.step1_text': 'Shpjegoni situat\u00ebn tuaj me pak fjal\u00eb, si t\'ia tregonit nj\u00eb shoku.',
     'process.step2_title': 'Kuptoni',
-    'process.step2_text': 'Identifikojm\u00eb situtat\u00ebn tuaj juridike, ligjet e zbatueshme dhe jurisprudenc\u00ebn.',
+    'process.step2_text': 'Identifikojm\u00eb situat\u00ebn tuaj juridike, ligjet e zbatueshme dhe jurisprudenc\u00ebn.',
     'process.step3_title': 'Veproni',
     'process.step3_text': 'Afatet, dokumentet, autoriteti kompetent, modeli i letr\u00ebs dhe kontaktet falas.',
 
@@ -2504,7 +2504,7 @@ var I18N = {
     'domains.eyebrow': 'Shfletoni sipas fush\u00ebs juridike',
 
     // -- Homepage: Search --
-    'search.eyebrow': 'Analizo situtat\u00ebn time',
+    'search.eyebrow': 'Analizo situat\u00ebn time',
     'search.subtitle': 'P\u00ebrshkruani problemin tuaj dhe IA jon\u00eb identifikon t\u00eb drejtat tuaja, afatet dhe hapat q\u00eb duhet ndjekur.',
     'search.placeholder': 'Pronari im refuzon t\u00eb kthej\u00eb kaucionin...',
     'search.aria_label': 'P\u00ebrshkruani problemin tuaj juridik',
@@ -2570,7 +2570,7 @@ var I18N = {
     'result.source_footer': 'Burimet: {{articles}} nene, {{arrets}} vendime',
     'result.source_rules': '{{count}} rregulla',
     'suggested.title': 'P\u00ebr t\u00eb shkuar m\u00eb thell\u00eb',
-    'suggested.intro': 'K\u00ebto pyetje mund t\u2019ju ndihmojn\u00eb t\u00eb thelloni situtat\u00ebn tuaj:',
+    'suggested.intro': 'K\u00ebto pyetje mund t\u2019ju ndihmojn\u00eb t\u00eb thelloni situat\u00ebn tuaj:',
     'result.no_result': 'Asnj\u00eb rezultat. Kontrolloni p\u00ebrshkrimin tuaj.',
     'result.error_fiche': 'Flet\u00eb informacioni nuk u gjet.',
     'result.error_connection': 'Gabim lidhjeje.',
@@ -2595,7 +2595,7 @@ var I18N = {
     'tier.3': 'PRAKTIK\u00cb',
 
     // -- Results: Premium CTA (in-results) --
-    'premiumcta_result.title': 'Shkoni m\u00eb larg me analizin premium',
+    'premiumcta_result.title': 'Shkoni m\u00eb larg me analiz\u00ebn premium',
     'premiumcta_result.badge': 'Nga CHF 0.15',
     'premiumcta_result.intro': 'Ky vler\u00ebsim fillestar ju jep bazat. Analiza premium shkon shum\u00eb m\u00eb larg:',
     'premiumcta_result.q_title': 'Pyetje t\u00eb personalizuara',
@@ -2606,11 +2606,11 @@ var I18N = {
     'premiumcta_result.cert_text': 'Kontrollojm\u00eb q\u00eb asgj\u00eb nuk mungon n\u00eb dosjen tuaj para se t\u00eb veproni',
     'premiumcta_result.letter_title': 'Letra gati p\u00ebr d\u00ebrg\u00ebs',
     'premiumcta_result.letter_text': 'Paralajm\u00ebrim, kund\u00ebrshtim, ankim \u2014 n\u00eb .docx me informacionet tuaja',
-    'premiumcta_result.button': 'Nis analizin premium',
+    'premiumcta_result.button': 'Nis analiz\u00ebn premium',
 
     // -- Results: Upsell --
     'upsell.title': 'Keni nevoj\u00eb p\u00ebr nj\u00eb analiz\u00eb t\u00eb personalizuar?',
-    'upsell.text': 'IA jon\u00eb analizon situtat\u00ebn tuaj n\u00eb detaje p\u00ebr CHF 0.08 deri n\u00eb 0.10 p\u00ebr pyetje.',
+    'upsell.text': 'IA jon\u00eb analizon situat\u00ebn tuaj n\u00eb detaje p\u00ebr CHF 0.08 deri n\u00eb 0.25 p\u00ebr pyetje.',
     'upsell.button': 'Zona Premium',
 
     // -- Common actions --
@@ -2631,7 +2631,7 @@ var I18N = {
     'action.site_web': 'Faqja e internetit',
     'action.trouver_avocat': 'Gjej nj\u00eb avokat',
     'action.activer': 'Aktivizo',
-    'action.affiner': 'P\u00ebrmir\u00ebso analizin',
+    'action.affiner': 'P\u00ebrmir\u00ebso analiz\u00ebn',
 
     // -- Feedback --
     'feedback.question': 'A ishte e dobishme kjo p\u00ebrgjigje?',
@@ -2650,7 +2650,7 @@ var I18N = {
     // -- Premium page --
     'premium.eyebrow': 'Zona Premium',
     'premium.title': 'Analiz\u00eb juridike e personalizuar',
-    'premium.subtitle': 'Inteligjenca artificiale n\u00eb sh\u00ebrbim t\u00eb situtat\u00ebs suaj juridike.',
+    'premium.subtitle': 'Inteligjenca artificiale n\u00eb sh\u00ebrbim t\u00eb situat\u00ebs suaj juridike.',
     'premium.offer_title': 'Analiz\u00eb juridike e personalizuar me IA',
     'premium.offer_features': 'Pyetje t\u00eb synuara, argumentim kontradiktor, certifikat\u00eb mbulimi, letra gati p\u00ebr d\u00ebrg\u00ebs n\u00eb .docx.',
     'premium.pricing_one_label': 'Nj\u00eb problem',
@@ -2673,21 +2673,21 @@ var I18N = {
     'premium.cost_complex_range': 'CHF 1.00 \u2013 3.00',
     'premium.cost_letter': 'Let\u00ebr shtes\u00eb (.docx)',
     'premium.cost_letter_range': 'CHF 0.05 \u2013 0.10',
-    'premium.cost_note': 'Kostoja e sakt\u00eb tregohet pas \u00e7do operacioni. Balanca juaj mund t\u00eb ringarkkohet n\u00eb \u00e7do koh\u00eb.',
+    'premium.cost_note': 'Kostoja e sakt\u00eb tregohet pas \u00e7do operacioni. Balanca juaj mund t\u00eb ringarkohet n\u00eb \u00e7do koh\u00eb.',
     'premium.code_label': 'Keni nj\u00eb kod aksesi?',
     'premium.code_placeholder': 'Fusni kodin',
     'premium.wallet_label': 'Balanca e mbetur',
-    'premium.analyze_title': 'Analizoni situtat\u00ebn tuaj',
-    'premium.analyze_cost_hint': 'Kosto e vler\u00ebsuar: CHF 0.08 deri n\u00eb 0.10 p\u00ebr analiz\u00eb',
-    'premium.analyze_placeholder': 'P\u00ebrshkruani situtat\u00ebn tuaj juridike n\u00eb detaje...',
-    'premium.analyze_submit': 'Analizo situtat\u00ebn time',
+    'premium.analyze_title': 'Analizoni situat\u00ebn tuaj',
+    'premium.analyze_cost_hint': 'Kosto e vler\u00ebsuar: CHF 0.08 deri n\u00eb 0.25 p\u00ebr analiz\u00eb',
+    'premium.analyze_placeholder': 'P\u00ebrshkruani situat\u00ebn tuaj juridike n\u00eb detaje...',
+    'premium.analyze_submit': 'Analizo situat\u00ebn time',
     'premium.upload_label': 'Bashk\u00ebngjitni nj\u00eb dokument (PDF, imazh)',
     'premium.upload_change': 'Ndrysho dokumentin',
     'premium.analysis_label': 'Analiza',
     'premium.letter_generated': 'Letra e gjeneruar',
     'premium.history_title': 'Historiku',
     'premium.history_empty': 'Asnj\u00eb veprim',
-    'premium.generate_letter': 'Gjeneraani letr\u00ebn',
+    'premium.generate_letter': 'Gjenero letr\u00ebn',
     'premium.print': 'Printo',
 
     // -- Premium: Letter types --
@@ -2698,7 +2698,7 @@ var I18N = {
     'letter.plainte': 'Padi penale',
 
     // -- Premium: V4 response --
-    'v4.questions_title': 'Pyetje p\u00ebr t\u00eb p\u00ebrmir\u00ebsuar analizin',
+    'v4.questions_title': 'Pyetje p\u00ebr t\u00eb p\u00ebrmir\u00ebsuar analiz\u00ebn',
     'v4.critique': 'Kritike',
     'v4.resume': 'P\u00ebrmbledhje',
     'v4.arguments_title': 'Argumente t\u00eb verifikuara',
@@ -2717,7 +2717,7 @@ var I18N = {
 
     // -- Premium: Loading messages --
     'loading.sub': 'Analiza e plot\u00eb merr 10 deri n\u00eb 30 sekonda',
-    'loading.msg_01': 'Kuptimi i situtat\u00ebs suaj...',
+    'loading.msg_01': 'Kuptimi i situat\u00ebs suaj...',
     'loading.msg_02': 'Identifikimi i \u00e7\u00ebshtjeve juridike...',
     'loading.msg_03': 'Nd\u00ebrtimi i dosjes kontradiktore...',
     'loading.msg_04': 'K\u00ebrkimi i neneve t\u00eb zbatueshme t\u00eb ligjit...',
@@ -2733,19 +2733,19 @@ var I18N = {
     'loading.msg_14': 'Gjenerimi i pyetjeve t\u00eb m\u00ebtejshme...',
     'loading.msg_15': 'P\u00ebrgatitja e analiz\u00ebs s\u00eb plot\u00eb...',
     'loading.msg_16': 'Kryq\u00ebzimi me standardet kantonale...',
-    'loading.msg_17': 'Kontrolli i pranueshmris\u00eb...',
+    'loading.msg_17': 'Kontrolli i pranueshm\u00ebris\u00eb...',
     'loading.msg_18': 'Analiza e provave p\u00ebr t\'u mbledhur...',
     'loading.msg_19': 'Identifikimi i kontakteve kompetente...',
     'loading.msg_20': 'Finalizimi i raportit...',
 
     // -- Search result loading messages --
     'loading_search.sub': 'Zakonisht merr 5 deri n\u00eb 15 sekonda',
-    'loading_search.msg_01': 'Leximi i situtat\u00ebs suaj...',
+    'loading_search.msg_01': 'Leximi i situat\u00ebs suaj...',
     'loading_search.msg_02': 'Identifikimi i fush\u00ebs juridike...',
     'loading_search.msg_03': 'K\u00ebrkimi i neneve t\u00eb zbatueshme t\u00eb ligjit...',
     'loading_search.msg_04': 'Konsultimi i jurisprudenc\u00ebs s\u00eb Gjykat\u00ebs Federale...',
     'loading_search.msg_05': 'Kontrolli i afateve ligjore...',
-    'loading_search.msg_06': 'Analiza e kushteve t\u00eb pranueshmris\u00eb...',
+    'loading_search.msg_06': 'Analiza e kushteve t\u00eb pranueshm\u00ebris\u00eb...',
     'loading_search.msg_07': 'Nxjerrja e fakteve relevante...',
     'loading_search.msg_08': 'Kryq\u00ebzimi me flet\u00ebt e verifikuara...',
     'loading_search.msg_09': 'Vler\u00ebsimi i kompleksitetit juridik...',
@@ -2755,7 +2755,7 @@ var I18N = {
     'loading_search.msg_13': 'Konsultimi i standardeve dhe normave t\u00eb referenc\u00ebs...',
     'loading_search.msg_14': 'P\u00ebrpilimi i rregullave juridike t\u00eb zbatueshme...',
     'loading_search.msg_15': 'Nd\u00ebrtimi i planit tuaj t\u00eb veprimit...',
-    'loading_search.msg_16': 'Verifikimi i burimeve dhe referancave...',
+    'loading_search.msg_16': 'Verifikimi i burimeve dhe referencave...',
     'loading_search.msg_17': 'K\u00ebrkimi i jurisprudenc\u00ebs kund\u00ebrshtuese...',
     'loading_search.msg_18': 'Vler\u00ebsimi i nivelit t\u00eb besueshmris\u00eb...',
     'loading_search.msg_19': 'Identifikimi i boshll\u00ebqeve t\u00eb informacionit...',

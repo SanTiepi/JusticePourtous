@@ -743,7 +743,7 @@
       if (bar) bar.remove();
       var plainText = clone.textContent || clone.innerText || '';
       plainText = plainText.trim();
-      if (!plainText) { alert(t('v4.no_text')); return; }
+      if (!plainText) { premiumAlert(t('v4.no_text'), '/premium/translate'); return; }
 
       if (status) status.textContent = t('loading_search.msg_16');
 

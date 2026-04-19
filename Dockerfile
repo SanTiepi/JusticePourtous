@@ -1,5 +1,8 @@
 FROM node:22-alpine
 
+# su-exec permet à l'entrypoint de dropper root → node après seed du volume
+RUN apk add --no-cache su-exec
+
 WORKDIR /app
 
 COPY package.json package-lock.json ./
@@ -23,7 +26,7 @@ ENV PORT=3000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
   CMD wget -qO- http://localhost:3000/api/health || exit 1
 
-USER node
-
+# Entrypoint tourne en root pour pouvoir écrire dans le volume, puis drop
+# vers node:node via su-exec avant d'exécuter le CMD.
 ENTRYPOINT ["/app/docker-entrypoint.sh"]
 CMD ["node", "src/server.mjs"]

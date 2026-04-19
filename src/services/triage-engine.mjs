@@ -23,6 +23,9 @@ import {
 import { enrichTriageResult } from './triage-enrichment.mjs';
 import * as _objectRegistry from './object-registry.mjs';
 import { buildCanonForFiche } from './caselaw/index.mjs';
+import { createLogger } from './logger.mjs';
+
+const log = createLogger('triage');
 
 // enrichDecisionHolding est optionnel (pas encore exposé par object-registry).
 // Import défensif : si absent, on renvoie l'arrêt tel quel.
@@ -241,7 +244,7 @@ async function triageLLM(texte, canton) {
     };
   } catch (err) {
     // If LLM fails, fall back to semantic search
-    console.error('LLM navigator error, falling back:', err.message);
+    log.error('llm_navigator_failed_fallback', { err: err.message });
     return triageFallback(texte, canton);
   }
 }
@@ -352,7 +355,7 @@ async function refineTriage(sessionId, reponses) {
       }
     };
   } catch (err) {
-    console.error('Refine error:', err.message);
+    log.error('refine_failed', { err: err.message });
     // Return what we had
     const primary = prevPrimary;
     if (primary) {

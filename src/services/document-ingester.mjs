@@ -17,6 +17,9 @@ import { readFileSync, readdirSync, existsSync, writeFileSync } from 'node:fs';
 import { execSync } from 'node:child_process';
 import { join, basename, extname } from 'node:path';
 import { randomUUID } from 'node:crypto';
+import { createLogger } from './logger.mjs';
+
+const log = createLogger('document-ingester');
 
 // ============================================================
 // PDF TEXT EXTRACTION (zero deps — binary regex)
@@ -328,7 +331,7 @@ export function enrichWithLLM(dossier, options = {}) {
 
   let enriched = 0;
   for (const doc of toEnrich) {
-    console.log(`  Enriching: ${doc.filename} (${doc.type})...`);
+    log.info('enriching_doc', { filename: doc.filename, type: doc.type });
     const facts = extractFactsWithLLM(doc.text_full, doc.filename);
     if (facts) {
       doc.llm_extraction = facts;

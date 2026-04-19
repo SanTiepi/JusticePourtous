@@ -20,7 +20,9 @@ import { generateDossierQuestions } from './marginal-questioner.mjs';
 import { analyzeWithCommittee } from './committee-engine.mjs';
 import { compile as compileNormative } from './normative-compiler.mjs';
 import { judgeResult } from './llm-judge.mjs';
+import { createLogger } from './logger.mjs';
 
+const log = createLogger('pipeline-v3');
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const dataDir = join(__dirname, '..', 'data');
 
@@ -191,12 +193,12 @@ async function step1_comprendre(texte, canton, reponsesPrec) {
         text = data.content[0].text;
         usage = { input: data.usage?.input_tokens || 0, output: data.usage?.output_tokens || 0 };
       } else {
-        console.log(`API error ${resp.status}, falling back to CLI...`);
+        log.warn('api_error_fallback_cli', { status: resp.status });
         text = callClaudeCLI(STEP1_SYSTEM, userPrompt);
         usage = { input: 0, output: 0, mode: 'cli' };
       }
     } catch (e) {
-      console.log(`API exception, falling back to CLI: ${e.message}`);
+      log.warn('api_exception_fallback_cli', { err: e.message });
       text = callClaudeCLI(STEP1_SYSTEM, userPrompt);
       usage = { input: 0, output: 0, mode: 'cli' };
     }
@@ -595,7 +597,7 @@ async function step3_raisonner(dossier) {
     try {
       return await callOpenAI(STEP3_SYSTEM, userMsg, openaiKey);
     } catch (e) {
-      console.log(`OpenAI error, trying Claude API: ${e.message}`);
+      log.warn('openai_failed_try_claude', { err: e.message });
     }
   }
 
@@ -604,7 +606,7 @@ async function step3_raisonner(dossier) {
     try {
       return await callClaude(STEP3_SYSTEM, userMsg, anthropicKey);
     } catch (e) {
-      console.log(`Claude API error, falling back to CLI: ${e.message}`);
+      log.warn('claude_api_failed_fallback_cli', { err: e.message });
     }
   }
 
@@ -614,7 +616,7 @@ async function step3_raisonner(dossier) {
     const parsed = parseJSONResponse(text);
     return { analysis: parsed, usage: { input: 0, output: 0, mode: 'cli' }, model: 'claude-cli' };
   } catch (e) {
-    console.error(`CLI fallback also failed: ${e.message}`);
+    log.error('cli_fallback_failed', { err: e.message });
     return null;
   }
 }
@@ -848,7 +850,7 @@ export async function analyserCas(texte, canton, reponsesPrec) {
         step3Usage = step3.usage;
       }
     } catch (err) {
-      console.error('Step 3 error:', err.message);
+      log.error('step3_failed', { err: err.message });
       // Continue without verification — degraded mode
     }
   }

@@ -17,7 +17,9 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { createLogger } from './logger.mjs';
 
+const log = createLogger('graph-builder');
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const dataDir = join(__dirname, '..', 'data');
 const indexDir = join(dataDir, 'index');
@@ -435,42 +437,35 @@ function getCodeRS(code) {
 
 // --- CLI: Generate and save ---
 if (process.argv[1]?.includes('graph-builder')) {
-  console.log('Building knowledge graph...');
+  log.info('build_start', {});
   const graph = buildGraph();
 
   if (!existsSync(indexDir)) mkdirSync(indexDir, { recursive: true });
   const outFile = join(indexDir, 'graph.json');
   writeFileSync(outFile, JSON.stringify(graph, null, 2), 'utf-8');
 
-  console.log(`\n${'='.repeat(60)}`);
-  console.log('  KNOWLEDGE GRAPH — JusticePourtous');
-  console.log(`${'='.repeat(60)}\n`);
-  console.log('  Stats:');
-  for (const [k, v] of Object.entries(graph.stats)) {
-    console.log(`    ${k}: ${v}`);
-  }
+  log.info('build_stats', { stats: graph.stats });
 
-  console.log('\n  Tables des matières:');
-  for (const [code, tdm] of Object.entries(graph.tableDesMatieres)) {
-    console.log(`    ${code} (${tdm.nom}): ${tdm.total} articles`);
-  }
+  const tdmSummary = Object.fromEntries(
+    Object.entries(graph.tableDesMatieres).map(([code, tdm]) => [code, { nom: tdm.nom, total: tdm.total }])
+  );
+  log.info('tables_des_matieres', { tdm: tdmSummary });
 
-  console.log('\n  Fiche-to-fiche links:');
   const topLinked = Object.entries(graph.ficheToFiches)
     .sort((a, b) => b[1].length - a[1].length)
-    .slice(0, 5);
-  for (const [fiche, related] of topLinked) {
-    console.log(`    ${fiche} → ${related.length} fiches liées`);
-  }
+    .slice(0, 5)
+    .map(([fiche, related]) => ({ fiche, linked: related.length }));
+  log.info('top_linked_fiches', { topLinked });
 
-  console.log('\n  Orphelins:');
-  console.log(`    Articles manquants: ${graph.orphans.articlesReferencedButMissing.length}`);
-  console.log(`    Fiches fantômes (cascades): ${graph.orphans.cascadePhantoms.length}`);
-  console.log(`    Fiches sans article: ${graph.orphans.fichesWithoutArticle.length}`);
-  console.log(`    Articles sans fiche: ${graph.orphans.articlesWithoutFiche.length}`);
-  console.log(`    Domaines sans jurisprudence: ${graph.orphans.domainesWithoutJurisprudence.join(', ') || 'aucun'}`);
+  log.info('orphans', {
+    articles_manquants: graph.orphans.articlesReferencedButMissing.length,
+    fiches_fantomes: graph.orphans.cascadePhantoms.length,
+    fiches_sans_article: graph.orphans.fichesWithoutArticle.length,
+    articles_sans_fiche: graph.orphans.articlesWithoutFiche.length,
+    domaines_sans_jurisprudence: graph.orphans.domainesWithoutJurisprudence,
+  });
 
-  console.log(`\n  → ${outFile}`);
+  log.info('build_complete', { outFile });
 }
 
 export { loadAllData };

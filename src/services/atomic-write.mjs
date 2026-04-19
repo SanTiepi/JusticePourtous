@@ -6,6 +6,9 @@
  */
 
 import { writeFileSync, renameSync, existsSync, readFileSync, copyFileSync } from 'node:fs';
+import { createLogger } from './logger.mjs';
+
+const log = createLogger('atomic-write');
 
 /**
  * Write data atomically: write to tmpPath, then rename over target.
@@ -33,11 +36,11 @@ export function safeLoadJSON(filePath) {
     const raw = readFileSync(filePath, 'utf-8');
     return JSON.parse(raw);
   } catch (err) {
-    console.warn(`[WARN] Corrupted JSON at ${filePath}: ${err.message}`);
+    log.warn('corrupted_json', { filePath, err: err.message });
     try {
       const backupPath = filePath + '.corrupted';
       copyFileSync(filePath, backupPath);
-      console.warn(`[WARN] Backed up corrupted file to ${backupPath}`);
+      log.warn('corrupted_backed_up', { backupPath });
     } catch { /* best effort */ }
     return null;
   }

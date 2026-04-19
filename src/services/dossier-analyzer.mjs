@@ -20,6 +20,9 @@ import { analyzeDossier as analyzeArguments } from './argumentation-engine.mjs';
 import { execSync } from 'node:child_process';
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { createLogger } from './logger.mjs';
+
+const log = createLogger('dossier-analyzer');
 
 // ============================================================
 // MAIN PIPELINE
@@ -40,81 +43,76 @@ export async function analyzeDossier(dirPath, options = {}) {
     generateReport = true,
   } = options;
 
-  console.log('═══════════════════════════════════════════════');
-  console.log('  DOSSIER ANALYZER — JusticePourtous');
-  console.log('═══════════════════════════════════════════════\n');
+  log.info('analyze_start', { dirPath });
 
   // ── ÉTAPE 1: INGÉRER ──────────────────────────────────────
-  console.log('ÉTAPE 1/5 — Ingestion des documents...');
   const dossier = ingestDossier(dirPath);
-  console.log(`  → ${dossier.total_files} fichiers trouvés`);
-  console.log(`  → ${dossier.extracted} textes extraits`);
-  console.log(`  → ${dossier.empty} fichiers vides (scans?)`);
-  console.log(`  → ${dossier.skipped} fichiers ignorés\n`);
+  log.info('step1_ingest', {
+    total_files: dossier.total_files,
+    extracted: dossier.extracted,
+    empty: dossier.empty,
+    skipped: dossier.skipped,
+  });
 
   // Types de documents détectés
   const typeCounts = {};
   for (const doc of dossier.documents.filter(d => d.status === 'extracted')) {
     typeCounts[doc.type] = (typeCounts[doc.type] || 0) + 1;
   }
-  console.log('  Types détectés:');
-  for (const [type, count] of Object.entries(typeCounts).sort((a, b) => b[1] - a[1])) {
-    console.log(`    ${type}: ${count}`);
-  }
-  console.log();
+  log.info('step1_types', { typeCounts });
 
   // ── ÉTAPE 2: ENRICHIR (LLM) ───────────────────────────────
   if (enrich) {
-    console.log(`ÉTAPE 2/5 — Extraction LLM (${maxDocs} docs max)...`);
+    log.info('step2_enrich_start', { maxDocs });
     enrichWithLLM(dossier, { maxDocs });
-    console.log(`  → ${dossier.enriched} documents enrichis\n`);
+    log.info('step2_enrich_done', { enriched: dossier.enriched });
   } else {
-    console.log('ÉTAPE 2/5 — Enrichissement LLM désactivé (mode rapide)\n');
+    log.info('step2_enrich_skipped', {});
   }
 
   // ── ÉTAPE 3: CROISER ──────────────────────────────────────
-  console.log('ÉTAPE 3/5 — Détection des contradictions...');
   const enrichedDocs = dossier.documents.filter(d => d.llm_extraction);
   const crossAnalysis = detectContradictions(enrichedDocs);
   const gaps = detectGaps(enrichedDocs);
   const actorGraph = buildActorGraph(enrichedDocs);
 
-  console.log(`  → ${crossAnalysis.contradictions.length} contradictions détectées`);
-  console.log(`  → ${crossAnalysis.unresolved_questions.length} questions sans réponse`);
-  console.log(`  → ${crossAnalysis.timeline.length} événements dans la timeline`);
-  console.log(`  → ${gaps.total_refused} mesures refusées sur ${gaps.total_requested} demandées`);
-  console.log(`  → ${Object.keys(actorGraph).length} acteurs identifiés\n`);
+  log.info('step3_cross_analysis', {
+    contradictions: crossAnalysis.contradictions.length,
+    unresolved_questions: crossAnalysis.unresolved_questions.length,
+    timeline_events: crossAnalysis.timeline.length,
+    gaps_refused: gaps.total_refused,
+    gaps_requested: gaps.total_requested,
+    actors: Object.keys(actorGraph).length,
+  });
 
   // ── ÉTAPE 4: CHECKLIST ────────────────────────────────────
-  console.log('ÉTAPE 4/5 — Vérification procédurale...');
   const investigationFacts = extractInvestigationFacts(dossier);
   const checklist = checkInvestigation(investigationFacts);
 
-  console.log(`  → Score: ${checklist.score}% (${checklist.status})`);
-  console.log(`  → ${checklist.passed}/${checklist.total_checks} obligations remplies`);
-  console.log(`  → ${checklist.critical_failures} manquements critiques`);
-  console.log(`  → ${checklist.high_failures} manquements élevés\n`);
+  log.info('step4_checklist', {
+    score: checklist.score,
+    status: checklist.status,
+    passed: checklist.passed,
+    total_checks: checklist.total_checks,
+    critical_failures: checklist.critical_failures,
+    high_failures: checklist.high_failures,
+  });
 
   if (checklist.summary.critique.length > 0) {
-    console.log('  MANQUEMENTS CRITIQUES:');
-    for (const f of checklist.summary.critique) {
-      console.log(`    ✗ ${f.label} — ${f.detail}`);
-    }
-    console.log();
+    log.warn('step4_critical_failures', {
+      failures: checklist.summary.critique.map(f => ({ label: f.label, detail: f.detail })),
+    });
   }
 
   // ── ÉTAPE 5: RAPPORT ──────────────────────────────────────
   let report = null;
   if (generateReport) {
-    console.log('ÉTAPE 5/5 — Génération du rapport...');
     report = generateAnalysisReport(dossier, crossAnalysis, gaps, checklist, actorGraph);
-    console.log(`  → Rapport généré (${report.length} caractères)\n`);
+    log.info('step5_report_generated', { length: report.length });
   }
 
   const duration = ((Date.now() - startTime) / 1000).toFixed(1);
-  console.log(`═══════════════════════════════════════════════`);
-  console.log(`  Analyse terminée en ${duration}s`);
-  console.log(`═══════════════════════════════════════════════\n`);
+  log.info('analyze_complete', { duration_s: +duration });
 
   const result = {
     dossier_id: dossier.dossier_id,
@@ -139,12 +137,12 @@ export async function analyzeDossier(dirPath, options = {}) {
   if (outputDir) {
     const outPath = join(outputDir, `analyse_${dossier.dossier_id.slice(0, 8)}.json`);
     writeFileSync(outPath, JSON.stringify(result, null, 2));
-    console.log(`Résultats sauvegardés: ${outPath}`);
+    log.info('results_saved', { outPath });
 
     if (report) {
       const reportPath = join(outputDir, `rapport_${dossier.dossier_id.slice(0, 8)}.md`);
       writeFileSync(reportPath, report);
-      console.log(`Rapport sauvegardé: ${reportPath}`);
+      log.info('report_saved', { reportPath });
     }
   }
 
@@ -281,12 +279,13 @@ if (args.length > 0) {
     outputDir,
     generateReport: true,
   }).then(result => {
-    console.log('\nRésumé:');
-    console.log(`  Score enquête: ${result.investigation_checklist.score}%`);
-    console.log(`  Contradictions: ${result.contradictions.length}`);
-    console.log(`  Questions ouvertes: ${result.unresolved_questions.length}`);
+    log.info('cli_summary', {
+      score: result.investigation_checklist.score,
+      contradictions: result.contradictions.length,
+      unresolved_questions: result.unresolved_questions.length,
+    });
   }).catch(err => {
-    console.error('Erreur:', err.message);
+    log.error('cli_failed', { err: err.message });
     process.exit(1);
   });
 }

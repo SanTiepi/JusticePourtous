@@ -4,7 +4,9 @@
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { atomicWriteSync, safeLoadJSON } from './atomic-write.mjs';
+import { createLogger } from './logger.mjs';
 
+const log = createLogger('analytics');
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_FILE = join(__dirname, '..', 'data', 'meta', 'analytics.json');
 
@@ -39,7 +41,7 @@ function flushToFile() {
     stats.lastFlush = new Date().toISOString();
     atomicWriteSync(DATA_FILE, JSON.stringify(stats, null, 2));
   } catch (err) {
-    console.error('Analytics flush failed:', err.message);
+    log.error('flush_failed', { err: err.message });
   }
 }
 

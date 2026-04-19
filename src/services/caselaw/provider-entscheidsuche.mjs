@@ -8,6 +8,9 @@
  */
 
 import { CaseLawProvider, PROVIDER_IDS } from './provider-base.mjs';
+import { createLogger } from '../logger.mjs';
+
+const log = createLogger('caselaw.entscheidsuche');
 
 const DEFAULT_ENDPOINT = process.env.ENTSCHEIDSUCHE_URL || 'https://entscheidsuche.ch/_search';
 const DEFAULT_MODE = process.env.ENTSCHEIDSUCHE_MODE || 'mock';
@@ -46,7 +49,7 @@ export class EntscheidsucheProvider extends CaseLawProvider {
         return decisions;
       } catch (err) {
         this._errorCount += 1;
-        console.warn(`[entscheidsuche] live search failed: ${err.message} — fallback mock`);
+        log.warn('live_search_failed_fallback_mock', { err: err.message });
         return this._searchMock(query);
       }
     }

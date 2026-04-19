@@ -9,7 +9,9 @@
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createLogger } from './logger.mjs';
 
+const log = createLogger('vulgarisation');
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const vulgarisationDir = join(__dirname, '..', 'data', 'vulgarisation');
 
@@ -33,7 +35,7 @@ export function loadVulgarisation() {
       const items = Array.isArray(data) ? data : [data];
       entries.push(...items);
     } catch (e) {
-      console.error(`vulgarisation: failed to load ${file}: ${e.message}`);
+      log.error('load_failed', { file, err: e.message });
     }
   }
 

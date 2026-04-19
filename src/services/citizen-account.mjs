@@ -31,7 +31,9 @@ import {
   exportCase
 } from './case-store.mjs';
 import { extractDeadlinesFromCase } from './deadline-reminders.mjs';
+import { createLogger } from './logger.mjs';
 
+const log = createLogger('citizen-account');
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DEFAULT_PATH = join(__dirname, '..', 'data', 'meta', 'citizen-accounts.json');
 
@@ -78,7 +80,7 @@ function encryptEmail(email) {
     const tag = cipher.getAuthTag();
     return 'gcm:' + iv.toString('hex') + ':' + tag.toString('hex') + ':' + enc.toString('hex');
   } catch (err) {
-    console.warn('[citizen-account] encryption failed, falling back to plain:', err.message);
+    log.warn('encryption_failed_fallback_plain', { err: err.message });
     return 'plain:' + normalized;
   }
 }

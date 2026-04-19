@@ -14,6 +14,9 @@
  */
 
 import { CaseLawProvider, PROVIDER_IDS } from './provider-base.mjs';
+import { createLogger } from '../logger.mjs';
+
+const log = createLogger('caselaw.opencaselaw');
 
 const DEFAULT_ENDPOINT = process.env.OPENCASELAW_URL || 'https://api.opencaselaw.ch';
 const DEFAULT_MODE = process.env.OPENCASELAW_MODE || 'mock';
@@ -54,7 +57,7 @@ export class OpenCaseLawProvider extends CaseLawProvider {
         return decisions;
       } catch (err) {
         this._errorCount += 1;
-        console.warn(`[opencaselaw] live search failed: ${err.message} — fallback mock`);
+        log.warn('live_search_failed_fallback_mock', { err: err.message });
         return this._searchMock(query);
       }
     }

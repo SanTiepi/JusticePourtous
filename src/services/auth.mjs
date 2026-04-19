@@ -15,7 +15,9 @@ import { readFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { atomicWriteSync, safeLoadJSON } from './atomic-write.mjs';
+import { createLogger } from './logger.mjs';
 
+const log = createLogger('auth');
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const USERS_FILE = join(__dirname, '..', 'data', 'meta', 'users.json');
 
@@ -47,7 +49,7 @@ function saveUsers() {
     try {
       atomicWriteSync(USERS_FILE, JSON.stringify([...users], null, 2));
     } catch (err) {
-      console.error('Failed to save users:', err.message);
+      log.error('save_users_failed', { err: err.message });
     }
   }, 1000);
 }
@@ -70,12 +72,12 @@ const FROM_EMAIL = process.env.FROM_EMAIL || 'JusticePourtous <noreply@justicepo
 if (RESEND_KEY) {
   const { Resend } = await import('resend');
   resend = new Resend(RESEND_KEY);
-  console.log('Email service enabled (Resend)');
+  log.info('email_service_enabled', { provider: 'resend' });
 } else {
   if (process.env.NODE_ENV === 'production') {
-    console.warn('WARNING: Email service not configured in production — codes will NOT be logged');
+    log.warn('email_service_not_configured_prod', {});
   } else {
-    console.log('Email service not configured — codes logged to console (dev mode)');
+    log.info('email_service_dev_mode', {});
   }
 }
 
@@ -93,8 +95,7 @@ async function sendEmail(to, subject, html) {
       throw new Error('Service email non configuré. Contactez l\'administrateur.');
     } else {
       // Dev mode — log to console
-      console.log(`[DEV EMAIL] To: ${to} | Subject: ${subject}`);
-      console.log(html.replace(/<[^>]+>/g, ''));
+      log.info('dev_email', { subject, body: html.replace(/<[^>]+>/g, '') });
     }
   }
 }
@@ -143,7 +144,7 @@ export async function sendCode(email) {
       </div>
     `);
   } catch (err) {
-    console.error('Email send error:', err.message);
+    log.error('email_send_failed', { err: err.message });
     return { error: 'Impossible d\'envoyer le code. Réessayez.', status: 500 };
   }
 

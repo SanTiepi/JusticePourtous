@@ -144,6 +144,55 @@
       .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
 
+  function currentLang() {
+    try { return (typeof getLang === 'function' ? getLang() : 'fr') || 'fr'; } catch (e) { return 'fr'; }
+  }
+
+  function shouldTranslateUi() {
+    return currentLang() !== 'fr' && typeof translateHtmlFragment === 'function';
+  }
+
+  function applyDynamicHtml(node, html, pagePath, bindFn) {
+    node.innerHTML = html;
+    if (typeof bindFn === 'function') bindFn();
+    if (!shouldTranslateUi()) return;
+    translateHtmlFragment(html, {
+      lang: currentLang(),
+      content_type: 'chrome/ui',
+      page_path: pagePath || '/citizen-ui'
+    }).then(function (payload) {
+      if (!payload || !payload.html) return;
+      node.innerHTML = payload.html;
+      if (typeof bindFn === 'function') bindFn();
+    }).catch(function () { /* noop */ });
+  }
+
+  function setUiMessage(node, text, pagePath) {
+    if (!node) return;
+    node.textContent = text;
+    if (currentLang() === 'fr' || typeof translatePlainText !== 'function') return;
+    translatePlainText(text, {
+      lang: currentLang(),
+      content_type: 'chrome/ui',
+      page_path: pagePath || '/citizen-ui'
+    }).then(function (translated) {
+      node.textContent = translated;
+    }).catch(function () { /* noop */ });
+  }
+
+  async function uiAlert(text, pagePath) {
+    if (currentLang() !== 'fr' && typeof translatePlainText === 'function') {
+      try {
+        text = await translatePlainText(text, {
+          lang: currentLang(),
+          content_type: 'chrome/ui',
+          page_path: pagePath || '/citizen-ui'
+        });
+      } catch (e) { /* noop */ }
+    }
+    alert(text);
+  }
+
   function closeModal() {
     var existing = document.getElementById('citizenModal');
     if (existing) existing.remove();
@@ -188,7 +237,7 @@
 
   function renderRegisterForm() {
     var content = el('div');
-    content.innerHTML =
+    var html =
       '<h3 style="margin:0 0 8px;font-size:20px">Mon compte JusticePourtous</h3>' +
       '<p style="margin:0 0 16px;color:#555;font-size:14px">Créez un compte gratuit pour suivre vos dossiers et recevoir vos échéances. Aucun mot de passe — un lien magique par email.</p>' +
       '<form id="citizenRegisterForm" style="display:flex;flex-direction:column;gap:12px">' +
@@ -215,43 +264,45 @@
       '  </div>' +
       '</form>';
 
-    var form = content.querySelector('#citizenRegisterForm');
-    var msg = content.querySelector('#citizenRegisterMsg');
-    var tokenStep = content.querySelector('#citizenTokenStep');
-    var tokenInput = content.querySelector('#citizenTokenInput');
-    var verifyBtn = content.querySelector('#citizenVerifyBtn');
+    function bindRegisterHandlers() {
+      var form = content.querySelector('#citizenRegisterForm');
+      var msg = content.querySelector('#citizenRegisterMsg');
+      var tokenStep = content.querySelector('#citizenTokenStep');
+      var tokenInput = content.querySelector('#citizenTokenInput');
+      var verifyBtn = content.querySelector('#citizenVerifyBtn');
+      if (!form || form.dataset.bound === '1') return;
+      form.dataset.bound = '1';
 
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
-      var email = form.email.value.trim();
-      var canton = form.canton.value || null;
-      msg.textContent = 'Création du compte…';
-      var r = await Citizen.register(email, canton);
-      if (!r.ok) {
-        msg.textContent = (r.data && r.data.error) || 'Erreur création compte';
-        return;
-      }
-      msg.textContent = 'Compte créé. Vérifiez votre email (ou collez le code dev ci-dessous).';
-      tokenStep.style.display = 'block';
-      // En dev le token est exposé : pré-rempli pour faciliter
-      if (r.data && r.data.magic_token_dev) {
-        tokenInput.value = r.data.magic_token_dev;
-      }
-    });
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        var email = form.email.value.trim();
+        var canton = form.canton.value || null;
+        setUiMessage(msg, 'Création du compte…', '/citizen/register');
+        var r = await Citizen.register(email, canton);
+        if (!r.ok) {
+          setUiMessage(msg, (r.data && r.data.error) || 'Erreur création compte', '/citizen/register');
+          return;
+        }
+        setUiMessage(msg, 'Compte créé. Vérifiez votre email (ou collez le code dev ci-dessous).', '/citizen/register');
+        tokenStep.style.display = 'block';
+        if (r.data && r.data.magic_token_dev) tokenInput.value = r.data.magic_token_dev;
+      });
 
-    verifyBtn.addEventListener('click', async function () {
-      var t = tokenInput.value.trim();
-      if (!t) { msg.textContent = 'Code requis'; return; }
-      msg.textContent = 'Vérification…';
-      var r = await Citizen.verify(t);
-      if (!r.ok) {
-        msg.textContent = (r.data && r.data.error) || 'Code invalide ou expiré';
-        return;
-      }
-      msg.textContent = 'Connexion réussie';
-      // Recharge la modal en mode "connecté"
-      setTimeout(function () { openAccountModal(); }, 400);
-    });
+      verifyBtn.addEventListener('click', async function () {
+        var t = tokenInput.value.trim();
+        if (!t) { setUiMessage(msg, 'Code requis', '/citizen/verify'); return; }
+        setUiMessage(msg, 'Vérification…', '/citizen/verify');
+        var r = await Citizen.verify(t);
+        if (!r.ok) {
+          setUiMessage(msg, (r.data && r.data.error) || 'Code invalide ou expiré', '/citizen/verify');
+          return;
+        }
+        setUiMessage(msg, 'Connexion réussie', '/citizen/verify');
+        setTimeout(function () { openAccountModal(); }, 400);
+      });
+    }
+
+    applyDynamicHtml(content, html, '/citizen/register', bindRegisterHandlers);
 
     return content;
   }
@@ -298,24 +349,36 @@
     html += '</div>';
     html += '<div id="citizenAccMsg" style="font-size:12px;color:#666;margin-top:10px;min-height:16px"></div>';
 
-    content.innerHTML = html;
-    content.querySelector('#citizenLogoutBtn').addEventListener('click', function () {
-      Citizen.logout();
-      closeModal();
-      refreshNavTrigger();
-    });
-    content.querySelector('#citizenCloseBtn').addEventListener('click', async function () {
-      if (!confirm('Fermer définitivement votre compte ? Cette action est irréversible.')) return;
+    function bindLoggedInHandlers() {
+      var logoutBtn = content.querySelector('#citizenLogoutBtn');
+      var closeBtn = content.querySelector('#citizenCloseBtn');
       var msgEl = content.querySelector('#citizenAccMsg');
-      msgEl.textContent = 'Fermeture en cours…';
-      var r = await Citizen.close();
-      if (r.ok) {
-        msgEl.textContent = 'Compte fermé.';
-        setTimeout(function () { closeModal(); refreshNavTrigger(); }, 600);
-      } else {
-        msgEl.textContent = (r.data && r.data.error) || 'Erreur fermeture compte';
-      }
-    });
+      if (!logoutBtn || logoutBtn.dataset.bound === '1') return;
+      logoutBtn.dataset.bound = '1';
+      logoutBtn.addEventListener('click', function () {
+        Citizen.logout();
+        closeModal();
+        refreshNavTrigger();
+      });
+      closeBtn.addEventListener('click', async function () {
+        var confirmText = 'Fermer définitivement votre compte ? Cette action est irréversible.';
+        if (currentLang() !== 'fr' && typeof translatePlainText === 'function') {
+          try {
+            confirmText = await translatePlainText(confirmText, { lang: currentLang(), content_type: 'chrome/ui', page_path: '/citizen/account' });
+          } catch (e) { /* noop */ }
+        }
+        if (!confirm(confirmText)) return;
+        setUiMessage(msgEl, 'Fermeture en cours…', '/citizen/account');
+        var r = await Citizen.close();
+        if (r.ok) {
+          setUiMessage(msgEl, 'Compte fermé.', '/citizen/account');
+          setTimeout(function () { closeModal(); refreshNavTrigger(); }, 600);
+        } else {
+          setUiMessage(msgEl, (r.data && r.data.error) || 'Erreur fermeture compte', '/citizen/account');
+        }
+      });
+    }
+    applyDynamicHtml(content, html, '/citizen/account', bindLoggedInHandlers);
     return content;
   }
 
@@ -345,7 +408,7 @@
   function refreshNavTrigger() {
     var trigger = document.querySelector('[data-citizen-trigger]');
     if (!trigger) return;
-    trigger.textContent = Citizen.isLoggedIn() ? 'Mon compte' : 'Mon compte';
+    setUiMessage(trigger, 'Mon compte', '/citizen/nav');
     trigger.classList.toggle('citizen-logged-in', Citizen.isLoggedIn());
   }
 
@@ -447,6 +510,9 @@
         '</form>' +
       '</div>';
     host.appendChild(banner);
+    if (shouldTranslateUi()) {
+      translateFragmentInPlace('.outcomes-banner', { content_type: 'chrome/ui', page_path: '/citizen/outcomes' });
+    }
     banner.querySelector('#outcomeLaterBtn').onclick = function () { banner.remove(); };
     banner.querySelector('#outcomeForm').onsubmit = async function (e) {
       e.preventDefault();
@@ -467,9 +533,12 @@
       if (r.status === 200) {
         banner.innerHTML = '<div class="outcomes-banner-inner"><strong>Merci.</strong> Votre retour aide les futurs citoyens.</div>';
         markOutcomeSubmitted(case_id);
+        if (shouldTranslateUi()) {
+          translateFragmentInPlace('.outcomes-banner', { content_type: 'chrome/ui', page_path: '/citizen/outcomes' });
+        }
         setTimeout(function () { banner.remove(); }, 4000);
       } else {
-        alert('Erreur : ' + (r.data.error || r.status));
+        uiAlert('Erreur : ' + (r.data.error || r.status), '/citizen/outcomes');
       }
     };
   }
@@ -537,6 +606,9 @@
         '<div id="letterResult"></div>' +
       '</div>';
     document.body.appendChild(modal);
+    if (shouldTranslateUi()) {
+      translateFragmentInPlace('.letter-modal .citizen-modal-content', { content_type: 'chrome/ui', page_path: '/citizen/letter' });
+    }
     modal.querySelector('.citizen-modal-close').onclick = function () { modal.remove(); };
     modal.addEventListener('click', function (e) { if (e.target === modal) modal.remove(); });
     modal.querySelector('#letterForm').onsubmit = async function (e) {
@@ -558,6 +630,9 @@
       } else {
         modal.querySelector('#letterResult').innerHTML =
           '<p style="color:#b00">Erreur : ' + (r.data.error || r.status) + '</p>';
+        if (shouldTranslateUi()) {
+          translateFragmentInPlace('.letter-modal #letterResult', { content_type: 'chrome/ui', page_path: '/citizen/letter' });
+        }
       }
     };
   }

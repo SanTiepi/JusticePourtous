@@ -100,13 +100,72 @@ Chaque issue dans le dossier DOIT vérifier :
 
 ## Métriques de validation (avant tout enrichissement)
 
-| Métrique | Seuil V1 |
-|----------|----------|
+| Métrique | Seuil |
+|----------|-------|
 | `claim_grounding_rate` | > 90% |
 | `valid_citation_rate` | > 95% |
 | `unsupported_assertion_rate` | < 5% |
 | `contradiction_hit_rate` | > 80% (contradictions détectées) |
-| `deterministic_deadline_rate` | 100% sur bail/travail/dettes |
+| `deterministic_deadline_rate` | 100% sur tout domaine V3 complet |
+
+## Positionnement produit — formulation verrouillée
+
+**Formulation autorisée** : "JusticePourtous réduit le besoin de consulter un avocat payant sur les cas citoyens standardisés."
+
+**Formulation INTERDITE** : "Nous sommes meilleurs qu'un avocat" (globalement). Le produit est supérieur sur 5 tâches bornées seulement (triage, exhaustivité contradictoire, traçabilité, coût, suivi opérationnel). Il reste inférieur sur représentation, stratégie fine, négociation complexe, plaidoirie.
+
+## Scorecard hebdomadaire (roadmap durcie)
+
+Piloter les 5 axes suivants chaque semaine. Aucun chantier nouveau tant que les seuils du domaine ne sont pas atteints.
+
+### Coverage
+- `% top intents couverts par domaine` (mesuré via `intents-catalog.json` `etat_couverture`)
+- `% fiches avec cascade structurée`
+- `% domaines × cantons prioritaires avec autorités + formulaires`
+
+### Correctness
+- `claim_grounding_rate > 95%` (cible durcie)
+- `unsupported_assertion_rate < 2%`
+- `deadline_accuracy = 100%` sur golden cases + invariants régression
+- `contradiction_hit_rate > 85%`
+- `% réponses downgradées correctement` en `limited/conflicted/insufficient`
+
+### Freshness
+- `Tier 1 freshness SLA < 7 jours` (via fedlex-diff cron)
+- `% fiches avec last_verified_at affiché`
+- `% fiches impactées revues < 72h après diff Fedlex`
+
+### Operability
+- `temps vers première action < 60s`
+- `% cas avec next step exécutable` (cascade OR template)
+- `% escalades humaines pertinentes`
+
+### Trust
+- `% réponses avec audit trail téléchargeable`
+- `safety recall` sur signaux critiques (detresse/violence/menace)
+- `% sorties avec disclaimer + limites visibles`
+
+## Gates de sortie (gate-based, non calendrier)
+
+### Gate Domaine (avant toute annonce publique du domaine)
+- [ ] Top intents du domaine couverts (état ≥ partial sur tous les `must_have`)
+- [ ] 0 erreur critique sur délais/montants du golden set
+- [ ] Review humaine juridique terminée sur flows principaux
+- [ ] Badge freshness actif
+
+### Gate Canton
+- [ ] Autorités + formulaires + délais + liens officiels complets
+
+### Gate Action (workflow sortant)
+- [ ] `coverage certificate` sans fail critique
+- [ ] Audit trail exportable
+- [ ] Fallback avocat/permanence visible
+
+### Gate Go-Live
+- [ ] LLM-judge sur 100% des sorties publiques
+- [ ] Monitoring continu + rollback possible
+
+**Règle d'or** : aucun nouveau domaine, canton ou workflow sortant n'est annoncé tant que les gates ci-dessus ne sont pas explicitement validés par un commit de constat.
 
 ## Références architecturales
 

@@ -1,8 +1,10 @@
 node_modules/
 .env
 *.log
+.cache/
 src/data/meta/wallets.json
 src/data/meta/users.json
 src/data/index/graph.json
 src/data/meta/*.corrupted
 src/data/meta/stripe-sessions.json
+.claude/scheduled_tasks.lock

@@ -300,7 +300,91 @@ export function getSourceById(sourceId) {
 
 export function getSourceByRef(ref) {
   if (!_registry) buildSourceRegistry();
-  return _lookupByRef.get(ref) || null;
+  const direct = _lookupByRef.get(ref);
+  if (direct) return direct;
+  // Fallback RS Fedlex : si la ref matche un préfixe connu (CO, CC, LP, LAA, …),
+  // construire dynamiquement un source_id au format fedlex:rsXXX:xxx
+  return resolveByPrefix(ref);
+}
+
+/**
+ * Table des recueils systématiques Fedlex (code → {rs, titre, tier, scope}).
+ * Étendue progressivement selon les refs rencontrées dans les fiches.
+ */
+export const RS_BY_PREFIX = Object.freeze({
+  // Codes civils et obligations
+  CC: { rs: '210', titre: 'Code civil suisse', tier: 1, scope: 'CH' },
+  CO: { rs: '220', titre: 'Code des obligations', tier: 1, scope: 'CH' },
+  CP: { rs: '311.0', titre: 'Code pénal suisse', tier: 1, scope: 'CH' },
+  CPP: { rs: '312.0', titre: 'Code de procédure pénale', tier: 1, scope: 'CH' },
+  CPC: { rs: '272', titre: 'Code de procédure civile', tier: 1, scope: 'CH' },
+  CST: { rs: '101', titre: 'Constitution fédérale', tier: 1, scope: 'CH' },
+  // Poursuites et faillites
+  LP: { rs: '281.1', titre: 'Loi fédérale sur la poursuite pour dettes et la faillite', tier: 1, scope: 'CH' },
+  // Assurances sociales
+  LPGA: { rs: '830.1', titre: 'Loi fédérale partie générale assurances sociales', tier: 1, scope: 'CH' },
+  LAA: { rs: '832.20', titre: 'Loi fédérale sur l\'assurance-accidents', tier: 1, scope: 'CH' },
+  OLAA: { rs: '832.202', titre: 'Ordonnance sur l\'assurance-accidents', tier: 1, scope: 'CH' },
+  LAI: { rs: '831.20', titre: 'Loi fédérale sur l\'assurance-invalidité', tier: 1, scope: 'CH' },
+  RAI: { rs: '831.201', titre: 'Règlement sur l\'assurance-invalidité', tier: 1, scope: 'CH' },
+  LAMal: { rs: '832.10', titre: 'Loi fédérale sur l\'assurance-maladie', tier: 1, scope: 'CH' },
+  LAVS: { rs: '831.10', titre: 'Loi fédérale sur l\'assurance-vieillesse et survivants', tier: 1, scope: 'CH' },
+  LPC: { rs: '831.30', titre: 'Loi fédérale sur les prestations complémentaires', tier: 1, scope: 'CH' },
+  LAPG: { rs: '834.1', titre: 'Loi fédérale sur les allocations pour perte de gain', tier: 1, scope: 'CH' },
+  LAFam: { rs: '836.2', titre: 'Loi fédérale sur les allocations familiales', tier: 1, scope: 'CH' },
+  LACI: { rs: '837.0', titre: 'Loi fédérale sur l\'assurance-chômage', tier: 1, scope: 'CH' },
+  LPP: { rs: '831.40', titre: 'Loi fédérale sur la prévoyance professionnelle', tier: 1, scope: 'CH' },
+  // Étrangers & asile
+  LAsi: { rs: '142.31', titre: 'Loi sur l\'asile', tier: 1, scope: 'CH' },
+  LEI: { rs: '142.20', titre: 'Loi fédérale sur les étrangers et l\'intégration', tier: 1, scope: 'CH' },
+  LN: { rs: '141.0', titre: 'Loi sur la nationalité suisse', tier: 1, scope: 'CH' },
+  // Aide aux victimes
+  LAVI: { rs: '312.5', titre: 'Loi fédérale sur l\'aide aux victimes d\'infractions', tier: 1, scope: 'CH' },
+  // Circulation & contrats
+  LCR: { rs: '741.01', titre: 'Loi sur la circulation routière', tier: 1, scope: 'CH' },
+  OCR: { rs: '741.11', titre: 'Ordonnance sur les règles de la circulation routière', tier: 1, scope: 'CH' },
+  LAO: { rs: '741.03', titre: 'Loi fédérale sur les amendes d\'ordre', tier: 1, scope: 'CH' },
+  OAO: { rs: '741.031', titre: 'Ordonnance sur les amendes d\'ordre', tier: 1, scope: 'CH' },
+  OETV: { rs: '741.41', titre: 'Ordonnance concernant les exigences techniques requises pour les véhicules', tier: 1, scope: 'CH' },
+  LCA: { rs: '221.229.1', titre: 'Loi fédérale sur le contrat d\'assurance', tier: 1, scope: 'CH' },
+  LTr: { rs: '822.11', titre: 'Loi fédérale sur le travail', tier: 1, scope: 'CH' },
+  LEg: { rs: '151.1', titre: 'Loi fédérale sur l\'égalité', tier: 1, scope: 'CH' },
+  LPD: { rs: '235.1', titre: 'Loi fédérale sur la protection des données', tier: 1, scope: 'CH' },
+  LCD: { rs: '241', titre: 'Loi fédérale contre la concurrence déloyale', tier: 1, scope: 'CH' },
+  LDIP: { rs: '291', titre: 'Loi fédérale sur le droit international privé', tier: 1, scope: 'CH' },
+  // Cantonal / pratique (pas un RS Fedlex, mais on reconnaît)
+  LASV: { rs: 'vd.lasv', titre: 'Loi vaudoise sur l\'action sociale', tier: 1, scope: 'VD' },
+  LIASI: { rs: 'ge.liasi', titre: 'Loi genevoise sur l\'insertion et l\'aide sociale individuelle', tier: 1, scope: 'GE' },
+  LVLAMal: { rs: 'vd.lvlamal', titre: 'Loi vaudoise d\'application LAMal', tier: 1, scope: 'VD' },
+  CSIAS: { rs: 'csias', titre: 'Normes CSIAS (Conférence suisse des institutions d\'action sociale)', tier: 3, scope: 'CH' }
+});
+
+/** Extrait le préfixe d'une ref type "CO 259a" → "CO". */
+export function extractPrefix(ref) {
+  if (!ref || typeof ref !== 'string') return null;
+  const m = ref.trim().match(/^([A-Z][A-Za-z]*)\s/);
+  return m ? m[1] : null;
+}
+
+/**
+ * Résout dynamiquement une ref via le préfixe RS. Retourne null si préfixe
+ * inconnu. Le source_id généré est stable : fedlex:rs{RS}:{slug-ref}.
+ */
+export function resolveByPrefix(ref) {
+  const prefix = extractPrefix(ref);
+  if (!prefix) return null;
+  const entry = RS_BY_PREFIX[prefix];
+  if (!entry) return null;
+  // Slug : "CO 259a" → "co-259a"
+  const slug = ref.trim().toLowerCase().replace(/\s+/g, '-').replace(/[^\w.\-:]/g, '');
+  return {
+    source_id: `fedlex:rs${entry.rs}:${slug}`,
+    ref,
+    titre: entry.titre,
+    tier: entry.tier,
+    scope: entry.scope,
+    resolvedBy: 'prefix_fallback'
+  };
 }
 
 export function getSourceBySignature(sig) {

@@ -50,8 +50,8 @@
       <div class="result-search-bar" id="resultSearchBar">
         <form onsubmit="refineSearch(event)">
           <div class="search-field search-field-sm">
-            <input type="text" id="refineInput" class="search-input" maxlength="300" autocomplete="off" aria-label="Préciser votre recherche">
-            <button type="submit" class="search-submit">Relancer</button>
+            <input type="text" id="refineInput" class="search-input" maxlength="300" autocomplete="off" data-i18n-aria-label="result.refine_aria" aria-label="Préciser votre recherche">
+            <button type="submit" class="search-submit" data-i18n="result.refine_submit">Relancer</button>
           </div>
         </form>
       </div>
@@ -59,7 +59,7 @@
       <div class="dossier-ref" id="dossierRef"></div>
 
       <div id="resultat">
-        <div class="loading">Analyse en cours</div>
+        <div class="loading" data-i18n="consult.analysis_loading">Analyse en cours</div>
       </div>
 
     </div>
@@ -91,6 +91,7 @@
   </footer>
 
   <script src="/i18n.js"></script>
+  <script src="/citizen-ui.js"></script>
   <script src="/app.js"></script>
   <script>
     /* Nav shadow on scroll + auto-hide on mobile */
@@ -150,7 +151,7 @@
 
     var year = new Date().getFullYear();
     var num = String(Math.floor(Math.random() * 9000) + 1000);
-    document.getElementById('dossierRef').textContent = 'Ref. JB-' + year + '-' + num;
+      document.getElementById('dossierRef').textContent = 'Ref. JB-' + year + '-' + num;
 
     var params = new URLSearchParams(window.location.search);
     var ficheId = params.get('fiche');
@@ -162,7 +163,7 @@
     } else if (ficheId) {
       loadResultat(ficheId);
     } else {
-      document.getElementById('resultat').innerHTML = '<div class="error-box">Aucune recherche spécifiée. <a href="/">Retour à l\'accueil</a></div>';
+      document.getElementById('resultat').innerHTML = '<div class="error-box">' + t('result.error_no_query') + ' <a href="/">' + t('result.back_home') + '</a></div>';
     }
 
     function refineSearch(e) {

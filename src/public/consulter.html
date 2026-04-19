@@ -50,23 +50,23 @@
 
       <div class="consult-progress">
         <div class="consult-progress-label">
-          <span id="progressText">Question 1</span>
+          <span id="progressText" data-i18n="consult.loading">Chargement...</span>
           <span id="progressCount">0%</span>
         </div>
         <div class="progress-bar"><div class="progress-bar-fill" id="progress" style="width:0%"></div></div>
       </div>
 
       <div class="consult-card" id="questionCard">
-        <h2 id="questionText">Chargement...</h2>
+        <h2 id="questionText" data-i18n="consult.loading">Chargement...</h2>
         <div class="consult-options" id="options"></div>
         <div class="consult-nav">
-          <button class="btn btn-secondary" id="prevBtn" onclick="prevQuestion()" disabled>Précédent</button>
-          <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled>Suivant</button>
+          <button class="btn btn-secondary" id="prevBtn" onclick="prevQuestion()" disabled data-i18n="action.precedent">Précédent</button>
+          <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled data-i18n="action.suivant">Suivant</button>
         </div>
       </div>
 
       <div class="error-box hidden" id="errorBox">
-        Une erreur est survenue. <a href="/">Retour à l'accueil</a>
+        <span data-i18n="consult.error">Une erreur est survenue.</span> <a href="/" data-i18n="result.back_home">Retour à l'accueil</a>
       </div>
 
     </div>

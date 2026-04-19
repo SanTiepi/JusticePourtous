@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard JusticePourtous</title>
+  <meta name="description" content="Dashboard interne — santé du produit JusticePourtous (coverage, quality, freshness, actionability).">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F4CA;</text></svg>">
+  <style>
+    :root {
+      --bg: #0f1419;
+      --panel: #1a2029;
+      --panel-hover: #222a35;
+      --border: #2a3340;
+      --text: #e8eef5;
+      --text-dim: #8a97a8;
+      --text-muted: #5c6977;
+      --green: #2ecc71;
+      --green-bg: rgba(46, 204, 113, 0.12);
+      --orange: #f39c12;
+      --orange-bg: rgba(243, 156, 18, 0.12);
+      --red: #e74c3c;
+      --red-bg: rgba(231, 76, 60, 0.12);
+      --blue: #3498db;
+      --blue-bg: rgba(52, 152, 219, 0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+    }
+    header.dashboard-header {
+      background: linear-gradient(180deg, #151b23 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 32px 20px;
+    }
+    header h1 {
+      margin: 0 0 4px;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+    }
+    header .subtitle {
+      color: var(--text-dim);
+      font-size: 13px;
+    }
+    header .meta {
+      margin-top: 10px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    header .meta .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      display: inline-block;
+      margin-right: 6px;
+      box-shadow: 0 0 8px var(--green);
+    }
+    header .meta .dot.loading { background: var(--orange); box-shadow: 0 0 8px var(--orange); }
+    header .meta .dot.error { background: var(--red); box-shadow: 0 0 8px var(--red); }
+    main { padding: 28px 32px 48px; max-width: 1400px; margin: 0 auto; }
+    section { margin-bottom: 36px; }
+    section h2 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin: 0 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      position: relative;
+      transition: background 0.15s;
+    }
+    .card:hover { background: var(--panel-hover); }
+    .card .label {
+      font-size: 11px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 0 0 6px;
+    }
+    .card .value {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1;
+    }
+    .card .unit {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-dim);
+      margin-left: 3px;
+    }
+    .card .sub {
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .card.status-green { border-left: 3px solid var(--green); }
+    .card.status-green .value { color: var(--green); }
+    .card.status-orange { border-left: 3px solid var(--orange); }
+    .card.status-orange .value { color: var(--orange); }
+    .card.status-red { border-left: 3px solid var(--red); }
+    .card.status-red .value { color: var(--red); }
+    .card.status-blue { border-left: 3px solid var(--blue); }
+    .card.status-blue .value { color: var(--blue); }
+    table.domain-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      font-size: 13px;
+    }
+    table.domain-table th, table.domain-table td {
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    table.domain-table th {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      letter-spacing: 0.5px;
+      background: #141a22;
+      font-weight: 600;
+    }
+    table.domain-table tbody tr:last-child td { border-bottom: none; }
+    table.domain-table tbody tr:hover { background: var(--panel-hover); }
+    table.domain-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    table.domain-table .pct-cell {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+    }
+    .pct-green { background: var(--green-bg); color: var(--green); }
+    .pct-orange { background: var(--orange-bg); color: var(--orange); }
+    .pct-red { background: var(--red-bg); color: var(--red); }
+    .gaps-list {
+      list-style: none;
+      margin: 0; padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 10px;
+    }
+    .gaps-list li {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--orange);
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+    .gaps-list li strong { color: var(--text); text-transform: capitalize; }
+    .gaps-list li span.num { color: var(--orange); font-weight: 600; font-variant-numeric: tabular-nums; }
+    .error-banner {
+      background: var(--red-bg);
+      border: 1px solid var(--red);
+      color: var(--red);
+      padding: 12px 18px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+    .loading-state {
+      color: var(--text-muted);
+      font-size: 13px;
+      padding: 20px;
+      text-align: center;
+    }
+    @media (max-width: 640px) {
+      header.dashboard-header, main { padding-left: 16px; padding-right: 16px; }
+      .cards { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="dashboard-header">
+    <h1>Dashboard JusticePourtous</h1>
+    <div class="subtitle">Santé produit — coverage, quality, freshness, actionability</div>
+    <div class="meta">
+      <div><span class="dot" id="status-dot"></span><span id="status-text">Chargement…</span></div>
+      <div id="last-update">—</div>
+      <div>Rafraîchissement auto : 60s</div>
+    </div>
+  </header>
+
+  <main>
+    <div id="error-banner" class="error-banner" style="display:none"></div>
+
+    <section>
+      <h2>Coverage</h2>
+      <div class="cards" id="coverage-cards">
+        <div class="loading-state">Chargement…</div>
+      </div>
+      <div style="margin-top: 16px">
+        <table class="domain-table" id="domain-table">
+          <thead>
+            <tr>
+              <th>Domaine</th>
+              <th class="num">Total</th>
+              <th class="num">Complete</th>
+              <th class="num">Partial</th>
+              <th class="num">Stub</th>
+              <th class="num">Missing</th>
+              <th class="num">Quality %</th>
+            </tr>
+          </thead>
+          <tbody id="domain-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Quality</h2>
+      <div class="cards" id="quality-cards">
+        <div class="loading-state">Chargement…</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Freshness</h2>
+      <div class="cards" id="freshness-cards">
+        <div class="loading-state">Chargement…</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Actionability</h2>
+      <div class="cards" id="actionability-cards">
+        <div class="loading-state">Chargement…</div>
+      </div>
+      <div style="margin-top: 16px">
+        <div style="font-size: 12px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px">Top 5 gaps par domaine</div>
+        <ul class="gaps-list" id="gaps-list"></ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Safety (7 jours)</h2>
+      <div class="cards" id="safety-cards">
+        <div class="loading-state">Chargement…</div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Seuils de couleurs (voir spec)
+    const THRESHOLDS = {
+      coverage_quality:   { green: 60, orange: 30 },
+      source_id:          { green: 90, orange: 70 },
+      cascades:           { green: 50, orange: 30 },
+      freshness:          { green: 80, orange: 50 },
+      template:           { green: 60, orange: 30 },
+      jurisprudence:      { green: 80, orange: 50 },
+      actionable:         { green: 80, orange: 50 }
+    };
+
+    function statusFor(key, value) {
+      const t = THRESHOLDS[key];
+      if (!t) return 'blue';
+      if (value >= t.green) return 'green';
+      if (value >= t.orange) return 'orange';
+      return 'red';
+    }
+
+    function statusInvert(key, value, thresholds) {
+      // Pour "missing" : plus c'est bas, mieux c'est
+      if (value === 0) return 'green';
+      if (value <= thresholds.orange) return 'orange';
+      return 'red';
+    }
+
+    function card(label, value, unit = '', status = 'blue', sub = '') {
+      const v = (typeof value === 'number') ? value.toLocaleString('fr-CH') : (value ?? '—');
+      return `
+        <div class="card status-${status}">
+          <div class="label">${label}</div>
+          <div class="value">${v}${unit ? `<span class="unit">${unit}</span>` : ''}</div>
+          ${sub ? `<div class="sub">${sub}</div>` : ''}
+        </div>`;
+    }
+
+    function pctClass(value, key) {
+      const t = THRESHOLDS[key];
+      if (!t) return 'pct-green';
+      if (value >= t.green) return 'pct-green';
+      if (value >= t.orange) return 'pct-orange';
+      return 'pct-red';
+    }
+
+    function render(data) {
+      // Coverage
+      const c = data.coverage || {};
+      document.getElementById('coverage-cards').innerHTML = [
+        card('Intents totaux', c.total_intents, '', 'blue'),
+        card('Quality', c.quality_percent, '%', statusFor('coverage_quality', c.quality_percent), 'Pondération complete×1, partial×0.5, stub×0.2'),
+        card('Complete', c.complete_intents, '', 'green'),
+        card('Partial', c.partial_intents, '', 'orange'),
+        card('Stub', c.stub_intents, '', 'orange'),
+        card('Missing', c.missing_intents, '', c.missing_intents === 0 ? 'green' : 'red')
+      ].join('');
+
+      // Domain table
+      const tbody = document.getElementById('domain-tbody');
+      const domains = Object.entries(c.by_domain || {}).sort((a, b) => b[1].total - a[1].total);
+      tbody.innerHTML = domains.map(([name, d]) => `
+        <tr>
+          <td><strong>${name}</strong></td>
+          <td class="num">${d.total}</td>
+          <td class="num">${d.complete}</td>
+          <td class="num">${d.partial}</td>
+          <td class="num">${d.stub}</td>
+          <td class="num">${d.missing}</td>
+          <td class="num"><span class="pct-cell ${pctClass(d.quality_percent, 'coverage_quality')}">${d.quality_percent}%</span></td>
+        </tr>`).join('');
+
+      // Quality
+      const q = data.quality || {};
+      document.getElementById('quality-cards').innerHTML = [
+        card('Fiches', q.total_fiches, '', 'blue'),
+        card('Articles', q.total_articles, '', 'blue'),
+        card('Règles normatives', q.total_rules, '', 'blue'),
+        card('Tests', q.total_tests, '', 'blue'),
+        card('Source_id', q.source_id_coverage_pct, '%', statusFor('source_id', q.source_id_coverage_pct), `${q.articles_with_source_id}/${q.total_articles} résolus`),
+        card('Fiches avec cascade', q.cascades_pct, '%', statusFor('cascades', q.cascades_pct), `${q.fiches_with_cascades}/${q.total_fiches}`),
+        card('Fiches avec template', q.template_pct, '%', statusFor('template', q.template_pct), `${q.fiches_with_template}/${q.total_fiches}`),
+        card('Fiches avec jurisprudence', q.jurisprudence_pct, '%', statusFor('jurisprudence', q.jurisprudence_pct), `${q.fiches_with_jurisprudence}/${q.total_fiches}`)
+      ].join('');
+
+      // Freshness
+      const fr = data.freshness || {};
+      document.getElementById('freshness-cards').innerHTML = [
+        card('Fraîcheur %', fr.fresh_pct, '%', statusFor('freshness', fr.fresh_pct)),
+        card('Fresh', fr.fiches_fresh, '', 'green'),
+        card('Aging', fr.fiches_aging, '', fr.fiches_aging === 0 ? 'green' : 'orange'),
+        card('Stale', fr.fiches_stale, '', fr.fiches_stale === 0 ? 'green' : 'orange'),
+        card('Expired', fr.fiches_expired, '', fr.fiches_expired === 0 ? 'green' : 'red'),
+        card('Dernière vérif.', fr.newest_verified_at || '—', '', 'blue', `Plus ancienne : ${fr.oldest_verified_at || '—'}`)
+      ].join('');
+
+      // Actionability
+      const a = data.actionability || {};
+      document.getElementById('actionability-cards').innerHTML = [
+        card('Fiches actionables %', a.intents_actionable_percent, '%', statusFor('actionable', a.intents_actionable_percent)),
+        card('Avec template', a.fiches_with_template, '', 'blue'),
+        card('Avec cascade', a.fiches_with_cascade, '', 'blue')
+      ].join('');
+
+      document.getElementById('gaps-list').innerHTML = (a.top_5_gaps || []).map(g => `
+        <li>
+          <span><strong>${g.domain}</strong> — ${g.missing}/${g.total} manquants</span>
+          <span class="num">${g.missing_pct}%</span>
+        </li>`).join('') || '<li style="border-left-color: var(--green); color: var(--text-dim)">Aucun gap critique</li>';
+
+      // Safety
+      const s = data.safety || {};
+      document.getElementById('safety-cards').innerHTML = [
+        card('Safety signals (7j)', s.safety_signals_last_7d, '', s.safety_signals_last_7d === 0 ? 'green' : 'red'),
+        card('Certificats insufficient (7j)', s.insufficient_certificates_last_7d, '', s.insufficient_certificates_last_7d === 0 ? 'green' : 'orange')
+      ].join('');
+
+      // Meta
+      document.getElementById('status-dot').className = 'dot';
+      document.getElementById('status-text').textContent = 'OK';
+      const d = new Date(data.generated_at);
+      document.getElementById('last-update').textContent = `Mis à jour : ${d.toLocaleString('fr-CH')}`;
+    }
+
+    function setError(msg) {
+      document.getElementById('status-dot').className = 'dot error';
+      document.getElementById('status-text').textContent = 'Erreur';
+      const banner = document.getElementById('error-banner');
+      banner.style.display = 'block';
+      banner.textContent = msg;
+    }
+
+    async function fetchMetrics() {
+      document.getElementById('status-dot').className = 'dot loading';
+      document.getElementById('status-text').textContent = 'Chargement…';
+
+      // Admin token pour prod — stocké en localStorage
+      const headers = { 'Accept': 'application/json' };
+      const adminToken = localStorage.getItem('jb_admin_session');
+      if (adminToken) headers['Authorization'] = `Bearer ${adminToken}`;
+
+      try {
+        const res = await fetch('/api/dashboard/metrics', { headers });
+        if (res.status === 403) {
+          const token = window.prompt('Accès admin requis — entrez le token');
+          if (token) {
+            localStorage.setItem('jb_admin_session', token);
+            return fetchMetrics();
+          }
+          setError('Accès refusé — token admin requis.');
+          return;
+        }
+        if (!res.ok) {
+          setError(`Erreur HTTP ${res.status}`);
+          return;
+        }
+        const data = await res.json();
+        document.getElementById('error-banner').style.display = 'none';
+        render(data);
+      } catch (err) {
+        setError(`Impossible de charger les métriques : ${err.message}`);
+      }
+    }
+
+    fetchMetrics();
+    setInterval(fetchMetrics, 60 * 1000);
+  </script>
+</body>
+</html>

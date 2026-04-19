@@ -523,7 +523,42 @@ function renderEnrichedResult(data, query, container) {
     }).catch(function() {});
   }
 
-  // Jurisprudence — V3 card design with role badges
+  // Caselaw canon 2.0 — priorité au rendu hiérarchique si disponible
+  var canon = data.caselaw_canon;
+  if (canon && (canon.leading_cases?.length || canon.nuances?.length || canon.cantonal_practice?.length)) {
+    html += '<div class="card caselaw-canon"' + stagger() + '>';
+    html += '<h3>Jurisprudence canonique</h3>';
+
+    if (canon.leading_cases && canon.leading_cases.length) {
+      html += '<h4 class="canon-section">📌 Leading cases (décisions déterminantes)</h4>';
+      canon.leading_cases.slice(0, 3).forEach(function(lc) {
+        html += renderCanonCase(lc, 'leading');
+      });
+    }
+    if (canon.nuances && canon.nuances.length) {
+      html += '<h4 class="canon-section">⚖️ Nuances et contre-cas</h4>';
+      canon.nuances.slice(0, 2).forEach(function(nc) {
+        html += renderCanonCase(nc, 'nuance');
+      });
+    }
+    if (canon.cantonal_practice && canon.cantonal_practice.length) {
+      html += '<h4 class="canon-section">🏛️ Pratique cantonale</h4>';
+      canon.cantonal_practice.slice(0, 3).forEach(function(cp) {
+        html += renderCanonCase(cp, 'cantonal');
+      });
+    }
+    if (canon.similar_cases && canon.similar_cases.length) {
+      html += '<details class="canon-similar">';
+      html += '<summary>' + canon.similar_cases.length + ' cas similaires (exploration)</summary>';
+      canon.similar_cases.slice(0, 10).forEach(function(sc) {
+        html += renderCanonCase(sc, 'similar');
+      });
+      html += '</details>';
+    }
+    html += '</div>';
+  }
+
+  // Jurisprudence — V3 card design with role badges (legacy / compat)
   var juris = data.jurisprudence || data.jurisprudenceElargie || [];
   if (juris.length) {
     html += '<div class="card"' + stagger() + '>';
@@ -740,6 +775,51 @@ function renderEnrichedResult(data, query, container) {
   // Bottom CTA is already in renderPremiumCTA above
 
   container.innerHTML = html;
+
+  // Hook citizen-ui.js : bouton "Générer une lettre" + outcomes prompt
+  // Non-intrusif : no-op si citizen-ui.js pas chargé ou données manquantes.
+  try {
+    var caseId = data.case_id || data.sessionId;
+    var ficheIdForLetter = (data.fiche && data.fiche.id) || data.ficheId;
+    if (caseId && ficheIdForLetter && typeof window.renderLetterButton === 'function') {
+      window.renderLetterButton({
+        case_id: caseId,
+        ficheId: ficheIdForLetter,
+        parentSelector: '.result-page-inner'
+      });
+    }
+    // Outcomes prompt : seulement sur triage final complet (pas lors d'un refine intermédiaire)
+    if (caseId && data.complet !== false && typeof window.renderOutcomesPrompt === 'function') {
+      window.renderOutcomesPrompt(caseId, ficheIdForLetter, data.domaine, {
+        container: '.result-page-inner'
+      });
+    }
+  } catch (_) { /* silent */ }
+}
+
+// Rendu d'un cas canon (leading / nuance / cantonal / similar)
+function renderCanonCase(c, kind) {
+  var roleCls = c.role_citizen || 'neutre';
+  var tierLabel = c.tier_label || ('Tier ' + (c.tier || '?'));
+  var html = '<div class="canon-card canon-' + kind + '">';
+  html += '<div class="canon-header">';
+  if (c.signature) html += '<span class="canon-sig">' + escHtml(c.signature) + '</span>';
+  html += '<span class="canon-tier tier-' + (c.tier || 4) + '">' + escHtml(tierLabel) + '</span>';
+  if (c.canton) html += '<span class="canon-canton">' + escHtml(c.canton) + '</span>';
+  if (c.date) html += '<span class="canon-date">' + escHtml(c.date) + '</span>';
+  html += '<span class="canon-role role-' + roleCls + '">' + escHtml(roleCls) + '</span>';
+  html += '</div>';
+  if (c.citizen_summary) {
+    html += '<div class="canon-summary">' + escHtml(c.citizen_summary) + '</div>';
+  }
+  if (c.court) html += '<div class="canon-court">' + escHtml(c.court) + '</div>';
+  if (c.article_refs_resolved && c.article_refs_resolved.length) {
+    var refs = c.article_refs_resolved.filter(function(r) { return r.resolved; }).slice(0, 3).map(function(r) { return r.ref; });
+    if (refs.length) html += '<div class="canon-refs">Articles : ' + escHtml(refs.join(', ')) + '</div>';
+  }
+  if (c.url) html += '<a href="' + escHtml(c.url) + '" target="_blank" rel="noopener" class="canon-source">Source</a>';
+  html += '</div>';
+  return html;
 }
 
 function renderPremiumCTA() {

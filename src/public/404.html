@@ -22,8 +22,9 @@
       </button>
       <div class="nav-links">
         <a href="/annuaire.html">Annuaire</a>
-        <a href="/methodologie.html">Methodologie</a>
+        <a href="/methodologie.html">Méthodologie</a>
         <a href="/premium.html" class="nav-premium">Premium</a>
+        <div class="lang-switcher" id="langSwitcher"></div>
       </div>
     </div>
   </nav>
@@ -31,10 +32,10 @@
   <main class="page">
     <div class="page-inner" style="text-align:center; padding: 6rem 1rem;">
       <h1 class="page-title" style="font-size: 4rem; margin-bottom: 0.5rem;">404</h1>
-      <p style="font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 2rem;">
+      <p id="page404Text" style="font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 2rem;">
         Cette page n'existe pas ou a été déplacée.
       </p>
-      <a href="/" class="btn btn-primary">Retour à l'accueil</a>
+      <a href="/" class="btn btn-primary" data-i18n="result.back_home">Retour à l'accueil</a>
     </div>
   </main>
 
@@ -63,6 +64,7 @@
     </div>
   </footer>
 
+  <script src="/i18n.js"></script>
   <script>
     var nav = document.getElementById('nav');
     var lastScrollY = 0;
@@ -76,6 +78,14 @@
       }
       lastScrollY = currentY;
     }, { passive: true });
+
+    if (typeof createLangSwitcher === 'function') {
+      document.getElementById('langSwitcher').appendChild(createLangSwitcher());
+    }
+    document.documentElement.lang = getLang();
+    if (getLang() !== 'fr' && typeof translateFragmentInPlace === 'function') {
+      translateFragmentInPlace('main', { content_type: 'chrome/ui', page_path: '/404.html' });
+    }
   </script>
 </body>
 </html>

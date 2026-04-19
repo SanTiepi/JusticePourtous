@@ -119,15 +119,15 @@
             aria-label="Décrivez votre problème juridique"
           >
           <button type="submit" class="search-submit">
-            Analyser
+            <span data-i18n="action.analyser">Analyser</span>
           </button>
         </div>
         <div class="search-suggestions">
-          <button type="button" class="suggestion" onclick="fillSearch('mon propriétaire refuse de rembourser ma caution')">Caution non remboursée</button>
-          <button type="button" class="suggestion" onclick="fillSearch('licenciement pendant arrêt maladie')">Licenciement &amp; maladie</button>
-          <button type="button" class="suggestion" onclick="fillSearch('heures supplémentaires non payées')">Heures sup impayées</button>
-          <button type="button" class="suggestion" onclick="fillSearch('j\'ai reçu un commandement de payer')">Commandement de payer</button>
-          <button type="button" class="suggestion" onclick="fillSearch('mon ex ne paie pas la pension')">Pension impayée</button>
+          <button type="button" class="suggestion" onclick="fillSearch('mon propriétaire refuse de rembourser ma caution')" data-i18n="search.suggestion_caution">Caution non remboursée</button>
+          <button type="button" class="suggestion" onclick="fillSearch('licenciement pendant arrêt maladie')" data-i18n="search.suggestion_licenciement">Licenciement &amp; maladie</button>
+          <button type="button" class="suggestion" onclick="fillSearch('heures supplémentaires non payées')" data-i18n="search.suggestion_heures">Heures sup impayées</button>
+          <button type="button" class="suggestion" onclick="fillSearch('j\'ai reçu un commandement de payer')" data-i18n="search.suggestion_commandement">Commandement de payer</button>
+          <button type="button" class="suggestion" onclick="fillSearch('mon ex ne paie pas la pension')" data-i18n="search.suggestion_pension">Pension impayée</button>
         </div>
       </form>
     </div>
@@ -138,21 +138,21 @@
     <div class="premium-cta-inner">
       <div class="premium-cta-content">
         <h2 data-i18n="premiumcta.title">Analyse approfondie</h2>
-        <p>Notre IA analyse votre dossier en profondeur : argumentation contradictoire, certificat de couverture, génération de lettres et documents Word prêts à envoyer.</p>
-        <a href="/premium.html" class="btn btn-primary">Découvrir le Premium</a>
+        <p data-i18n="premiumcta.text">Notre IA analyse votre dossier en profondeur : argumentation contradictoire, certificat de couverture, génération de lettres et documents Word prêts à envoyer.</p>
+        <a href="/premium.html" class="btn btn-primary" data-i18n="premiumcta.button">Découvrir le Premium</a>
       </div>
       <div class="premium-cta-features">
         <div class="premium-cta-feature">
-          <strong>Questions ciblées</strong>
-          <span>L'IA pose les bonnes questions pour affiner votre dossier</span>
+          <strong data-i18n="premiumcta.feature1_title">Questions ciblées</strong>
+          <span data-i18n="premiumcta.feature1_text">L'IA pose les bonnes questions pour affiner votre dossier</span>
         </div>
         <div class="premium-cta-feature">
-          <strong>Arguments vérifiés</strong>
-          <span>Pour et contre, avec sources juridiques</span>
+          <strong data-i18n="premiumcta.feature2_title">Arguments vérifiés</strong>
+          <span data-i18n="premiumcta.feature2_text">Pour et contre, avec sources juridiques</span>
         </div>
         <div class="premium-cta-feature">
-          <strong>Lettres .docx</strong>
-          <span>Mise en demeure, opposition, contestation prêtes à signer</span>
+          <strong data-i18n="premiumcta.feature3_title">Lettres .docx</strong>
+          <span data-i18n="premiumcta.feature3_text">Mise en demeure, opposition, contestation prêtes à signer</span>
         </div>
       </div>
     </div>
@@ -218,6 +218,7 @@
   </footer>
 
   <script src="/i18n.js"></script>
+  <script src="/citizen-ui.js"></script>
   <script>
     function handleSearch(e) {
       e.preventDefault();

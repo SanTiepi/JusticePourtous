@@ -51,46 +51,49 @@
 
       <div id="noSession">
         <div class="card premium-offer">
-          <h3>Analyse juridique personnalisée par IA</h3>
-          <p class="premium-features">Questions ciblées, argumentation contradictoire, certificat de couverture, lettres prêtes à envoyer en .docx.</p>
+          <h3 data-i18n="premium.offer_title">Analyse juridique personnalisée par IA</h3>
+          <p class="premium-features" data-i18n="premium.offer_features">Questions ciblées, argumentation contradictoire, certificat de couverture, lettres prêtes à envoyer en .docx.</p>
 
           <div class="premium-pricing-grid" style="grid-template-columns: 1fr 1fr">
             <div class="premium-pricing-card">
               <div class="premium-pricing-label" data-i18n="premium.pricing_one_label">Un problème</div>
               <div class="premium-pricing-amount">CHF 5</div>
-              <div class="premium-pricing-detail">1 dossier simple avec analyse, questions ciblées et lettre</div>
-              <button class="btn btn-primary w-full" onclick="acheterMontant(500)">Charger CHF 5</button>
+              <div class="premium-pricing-detail" data-i18n="premium.pricing_one_detail">Suffisant pour 1 dossier simple avec analyse + lettre</div>
+              <button class="btn btn-primary w-full" onclick="acheterMontant(500)" data-i18n="premium.pricing_one_btn">Charger CHF 5</button>
             </div>
             <div class="premium-pricing-card premium-pricing-featured">
               <div class="premium-pricing-label" data-i18n="premium.pricing_rec_label">Recommandé</div>
               <div class="premium-pricing-amount">CHF 10</div>
-              <div class="premium-pricing-detail">1 à 3 dossiers complets — le choix le plus courant</div>
-              <button class="btn btn-primary w-full" onclick="acheterMontant(1000)">Charger CHF 10</button>
+              <div class="premium-pricing-detail" data-i18n="premium.pricing_rec_detail">Couvre 1 à 3 dossiers — le choix le plus courant</div>
+              <button class="btn btn-primary w-full" onclick="acheterMontant(1000)" data-i18n="premium.pricing_rec_btn">Charger CHF 10</button>
             </div>
           </div>
-          <p class="premium-cost-note" style="margin-top:var(--space-sm)">Besoin de plus ? <a href="#" onclick="acheterMontant(2000);return false" style="color:var(--accent-primary);font-weight:600">Charger CHF 20</a> pour les dossiers complexes multi-domaines.</p>
+          <p class="premium-cost-note" style="margin-top:var(--space-sm)">
+            <span data-i18n="premium.pricing_complex_detail">Pour les situations multi-domaines ou nécessitant plusieurs lettres</span>
+            <a href="#" onclick="acheterMontant(2000);return false" style="color:var(--accent-primary);font-weight:600" data-i18n="premium.pricing_complex_btn">Charger CHF 20</a>
+          </p>
 
           <div class="premium-cost-table">
             <h4 data-i18n="premium.cost_table_title">Coût indicatif par opération</h4>
             <div class="premium-cost-row">
-              <span>Analyse simple</span>
-              <span>CHF 0.15 – 0.25</span>
+              <span data-i18n="premium.cost_simple">Analyse simple</span>
+              <span data-i18n="premium.cost_simple_range">CHF 0.15 – 0.25</span>
             </div>
             <div class="premium-cost-row">
-              <span>Analyse + questions + affinage</span>
-              <span>CHF 0.30 – 0.50</span>
+              <span data-i18n="premium.cost_questions">Analyse + questions + affinage</span>
+              <span data-i18n="premium.cost_questions_range">CHF 0.30 – 0.50</span>
             </div>
             <div class="premium-cost-row">
-              <span>Dossier complet avec lettre</span>
-              <span>CHF 0.50 – 1.00</span>
+              <span data-i18n="premium.cost_dossier">Dossier complet avec lettre</span>
+              <span data-i18n="premium.cost_dossier_range">CHF 0.50 – 1.00</span>
             </div>
             <div class="premium-cost-row">
-              <span>Dossier complexe (multi-domaines, plusieurs lettres)</span>
-              <span>CHF 1.00 – 3.00</span>
+              <span data-i18n="premium.cost_complex">Dossier complexe (multi-domaines, plusieurs lettres)</span>
+              <span data-i18n="premium.cost_complex_range">CHF 1.00 – 3.00</span>
             </div>
             <div class="premium-cost-row">
-              <span>Lettre supplémentaire (.docx)</span>
-              <span>CHF 0.05 – 0.10</span>
+              <span data-i18n="premium.cost_letter">Lettre supplémentaire (.docx)</span>
+              <span data-i18n="premium.cost_letter_range">CHF 0.05 – 0.10</span>
             </div>
             <div class="premium-cost-row">
               <span>Traduction (8 langues)</span>
@@ -98,7 +101,7 @@
             </div>
           </div>
 
-          <p class="premium-cost-note">Le coût exact est affiché après chaque opération. Votre solde est rechargeable à tout moment.</p>
+          <p class="premium-cost-note" data-i18n="premium.cost_note">Le coût exact est affiché après chaque opération. Votre solde est rechargeable à tout moment.</p>
 
           <div class="premium-login-section">
             <h4>Déjà client ?</h4>
@@ -129,15 +132,15 @@
         </div>
 
         <div class="card">
-          <h3>Analyser votre situation</h3>
-          <p class="premium-cost-hint">Coût estimé : CHF 0.08 à 0.25 par analyse</p>
-          <textarea id="question" class="input" placeholder="Décrivez votre situation juridique en détail..."></textarea>
+          <h3 data-i18n="premium.analyze_title">Analyser votre situation</h3>
+          <p class="premium-cost-hint" data-i18n="premium.analyze_cost_hint">Coût estimé : CHF 0.08 à 0.25 par analyse</p>
+          <textarea id="question" class="input" data-i18n-placeholder="premium.analyze_placeholder" placeholder="Décrivez votre situation juridique en détail..."></textarea>
 
           <!-- Document upload -->
           <div class="premium-upload">
             <label for="fileInput" class="premium-upload-label">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1v10M4 5l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 11v2a2 2 0 002 2h10a2 2 0 002-2v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-              <span id="fileLabel">Joindre un document (PDF, image)</span>
+              <span id="fileLabel" data-i18n="premium.upload_label">Joindre un document (PDF, image)</span>
             </label>
             <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png,.gif,.tiff" onchange="onFileSelected(this)" class="sr-only">
             <div id="fileInfo" class="hidden premium-file-info">
@@ -146,12 +149,12 @@
             </div>
           </div>
 
-          <button class="btn btn-primary w-full mt-lg" onclick="analyserQuestion()">Analyser ma situation</button>
+          <button class="btn btn-primary w-full mt-lg" onclick="analyserQuestion()" data-i18n="premium.analyze_submit">Analyser ma situation</button>
         </div>
 
         <div id="reponseIA" class="card hidden">
           <div class="premium-response-header">
-            <h3>Analyse</h3>
+            <h3 data-i18n="premium.analysis_label">Analyse</h3>
             <div class="premium-response-actions">
               <select id="lettreType" class="select">
                 <option value="mise_en_demeure">Mise en demeure</option>
@@ -160,8 +163,8 @@
                 <option value="resiliation">Résiliation</option>
                 <option value="plainte">Plainte</option>
               </select>
-              <button class="btn btn-sm btn-secondary" onclick="genererLettre()">Générer la lettre</button>
-              <button class="btn btn-sm btn-print" onclick="window.print()">Imprimer</button>
+              <button class="btn btn-sm btn-secondary" onclick="genererLettre()" data-i18n="premium.generate_letter">Générer la lettre</button>
+              <button class="btn btn-sm btn-print" onclick="window.print()" data-i18n="premium.print">Imprimer</button>
             </div>
           </div>
           <div id="reponseTexte"></div>
@@ -170,9 +173,9 @@
         <!-- Letter generation result -->
         <div id="lettreResult" class="card hidden">
           <div class="premium-response-header">
-            <h3>Lettre générée</h3>
+            <h3 data-i18n="premium.letter_generated">Lettre générée</h3>
             <div class="premium-response-actions">
-              <button class="copy-btn" onclick="copyLettre()">Copier le texte</button>
+              <button class="copy-btn" onclick="copyLettre()" data-i18n="action.copier_texte">Copier le texte</button>
               <select id="docxLang" class="select" style="max-width:150px;font-size:0.85rem">
                 <option value="fr">Français</option>
                 <option value="de">Deutsch</option>
@@ -185,7 +188,7 @@
                 <option value="hr">Hrvatski</option>
               </select>
               <button id="docxDownload" class="btn btn-sm btn-primary hidden" onclick="telechargerDocx()">
-                Télécharger .docx
+                <span data-i18n="action.telecharger_docx">Télécharger .docx</span>
               </button>
             </div>
           </div>
@@ -195,8 +198,8 @@
         </div>
 
         <div class="card">
-          <h3>Historique</h3>
-          <div id="historique"><p class="text-tertiary">Aucune action</p></div>
+          <h3 data-i18n="premium.history_title">Historique</h3>
+          <div id="historique"><p class="text-tertiary" data-i18n="premium.history_empty">Aucune action</p></div>
         </div>
       </div>
 
@@ -510,9 +513,9 @@
         refreshCredits();
       } catch (e) {
         stopPremiumLoading();
-        txt.textContent = 'Erreur lors de l\'analyse. Réessayez.';
+        txt.textContent = t('error.analysis_failed');
       } finally {
-        if (analyseBtn) { analyseBtn.disabled = false; analyseBtn.textContent = 'Analyser ma situation'; }
+        if (analyseBtn) { analyseBtn.disabled = false; analyseBtn.textContent = t('premium.analyze_submit'); }
       }
     }
 
@@ -524,7 +527,7 @@
       if (Object.keys(answers).length === 0) return;
 
       var txt = document.getElementById('reponseTexte');
-      txt.innerHTML = '<div class="loading">Affinage en cours...</div>';
+      txt.innerHTML = '<div class="loading">' + t('v4.refine_loading') + '</div>';
 
       try {
         var res = await fetch('/api/premium/analyze-v3/refine', {
@@ -536,7 +539,7 @@
         if (data.error) { txt.textContent = data.error; return; }
         renderV4Response(data);
       } catch (e) {
-        txt.textContent = 'Erreur lors de l\'affinage.';
+        txt.textContent = t('error.refine_failed');
       }
     }
 
@@ -547,11 +550,11 @@
       // Questions (si l'analyse n'est pas complète)
       if (data.questions && data.questions.length > 0 && !data.complet) {
         html += '<div class="v4-questions">';
-        html += '<h4>Questions pour affiner l\'analyse</h4>';
+        html += '<h4>' + t('v4.questions_title') + '</h4>';
         data.questions.forEach(function(q) {
           html += '<div class="v4-question">';
           html += '<p class="v4-q-text">' + esc(q.question || q.text || '') + '</p>';
-          if (q.importance === 'critique') html += '<span class="badge badge-complexe">Critique</span>';
+          if (q.importance === 'critique') html += '<span class="badge badge-complexe">' + t('v4.critique') + '</span>';
           if (q.choix && q.choix.length) {
             html += '<div class="v4-q-choices">';
             q.choix.forEach(function(c) {
@@ -561,13 +564,13 @@
           }
           html += '</div>';
         });
-        html += '<button class="btn btn-primary mt-lg" onclick="submitAnswers()">Affiner l\'analyse</button>';
+        html += '<button class="btn btn-primary mt-lg" onclick="submitAnswers()">' + t('action.affiner') + '</button>';
         html += '</div>';
       }
 
       // Résumé
       if (data.resume) {
-        html += '<div class="card-highlight"><h4>Résumé</h4><p>' + esc(data.resume) + '</p></div>';
+        html += '<div class="card-highlight"><h4>' + t('v4.resume') + '</h4><p>' + esc(data.resume) + '</p></div>';
       }
 
       // Verification status
@@ -578,7 +581,7 @@
 
       // Claims (arguments vérifiés)
       if (data.claims && data.claims.length) {
-        html += '<div class="card"><h4>Arguments vérifiés</h4>';
+        html += '<div class="card"><h4>' + t('v4.arguments_title') + '</h4>';
         data.claims.forEach(function(c) {
           html += '<div class="v4-claim"><strong>' + esc(c.claim || c.text || '') + '</strong>';
           if (c.base_legale) html += '<br><span class="legal-ref">' + esc(c.base_legale) + '</span>';
@@ -590,7 +593,7 @@
 
       // Objections
       if (data.objections_summary && data.objections_summary.length) {
-        html += '<div class="card card-warn"><h4>Objections possibles</h4>';
+        html += '<div class="card card-warn"><h4>' + t('v4.objections_title') + '</h4>';
         data.objections_summary.forEach(function(o) {
           html += '<p>' + esc(o.text || o.objection || JSON.stringify(o)) + '</p>';
         });
@@ -599,7 +602,7 @@
 
       // Délais critiques
       if (data.critical_deadlines && data.critical_deadlines.length) {
-        html += '<div class="card"><h4>Délais critiques</h4>';
+        html += '<div class="card"><h4>' + t('v4.deadlines_title') + '</h4>';
         data.critical_deadlines.forEach(function(d) {
           html += '<div class="delai-card"><div class="delai-value">' + esc(d.delai || d.duree || '?') + '</div>';
           html += '<div class="delai-info"><div class="delai-procedure">' + esc(d.procedure || d.label || '') + '</div></div></div>';
@@ -609,7 +612,7 @@
 
       // Erreurs fatales
       if (data.fatal_errors && data.fatal_errors.length) {
-        html += '<div class="card card-danger"><h4>Erreurs à éviter absolument</h4>';
+        html += '<div class="card card-danger"><h4>' + t('v4.fatal_errors_title') + '</h4>';
         data.fatal_errors.forEach(function(e) {
           html += '<div class="ae-card"><div class="ae-icon critique">!</div><div class="ae-content">';
           html += '<div class="ae-title">' + esc(e.erreur || e.text || JSON.stringify(e)) + '</div>';
@@ -623,7 +626,7 @@
       if (data.next_actions) {
         var na = data.next_actions;
         if (na.etapes && na.etapes.length) {
-          html += '<div class="card"><h4>Plan d\'action</h4><ol class="steps-list">';
+          html += '<div class="card"><h4>' + t('v4.action_plan') + '</h4><ol class="steps-list">';
           na.etapes.forEach(function(e) {
             html += '<li><div>' + esc(typeof e === 'string' ? e : e.action || e.description || JSON.stringify(e)) + '</div></li>';
           });
@@ -634,8 +637,8 @@
       // Certificate
       if (data.certificate) {
         var cert = data.certificate;
-        html += '<div class="card"><h4>Certificat de couverture</h4>';
-        html += '<p>Score : <strong>' + (cert.aggregate?.score || cert.score || '?') + '%</strong></p>';
+        html += '<div class="card"><h4>' + t('v4.certificate_title') + '</h4>';
+        html += '<p>' + t('v4.certificate_score') + ' : <strong>' + (cert.aggregate?.score || cert.score || '?') + '%</strong></p>';
         if (cert.issues) {
           cert.issues.forEach(function(iss) {
             html += '<div class="v4-cert-issue">';
@@ -643,7 +646,7 @@
             html += esc(iss.qualification || iss.issue_id || '') + ' — ' + iss.score + '%';
             if (iss.missing && iss.missing.length) {
               html += '<ul>';
-              iss.missing.forEach(function(m) { html += '<li>' + esc(m.label) + (m.critical ? ' <span class="badge badge-complexe">Critique</span>' : '') + '</li>'; });
+              iss.missing.forEach(function(m) { html += '<li>' + esc(m.label) + (m.critical ? ' <span class="badge badge-complexe">' + t('v4.critique') + '</span>' : '') + '</li>'; });
               html += '</ul>';
             }
             html += '</div>';
@@ -654,21 +657,23 @@
 
       // Besoin avocat
       if (data.need_lawyer) {
-        html += '<div class="avocat-cta"><div class="avocat-cta-text"><strong>Un avocat est recommandé</strong>';
+        html += '<div class="avocat-cta"><div class="avocat-cta-text"><strong>' + t('v4.lawyer_recommended') + '</strong>';
         if (data.need_lawyer_reason) html += '<p>' + esc(data.need_lawyer_reason) + '</p>';
-        html += '</div><a href="/annuaire.html" class="btn btn-red">Trouver un avocat</a></div>';
+        html += '</div><a href="/annuaire.html" class="btn btn-red">' + t('action.trouver_avocat') + '</a></div>';
       }
 
       // Sources count
       if (data.sources_count) {
-        html += '<div class="source-footer"><span>Analyse basée sur <span class="source-count">' + data.sources_count + ' sources</span></span></div>';
+        html += '<div class="source-footer"><span>' + t('v4.sources_count', { count: data.sources_count }) + '</span></div>';
       }
 
       // Cost info
       if (data.cost && data.cost.charged_centimes) {
         html += '<div class="premium-cost-receipt">';
-        html += 'Coût de cette analyse : <strong>CHF ' + (data.cost.charged_centimes / 100).toFixed(2) + '</strong>';
-        html += ' — Solde restant : CHF ' + (data.cost.solde_restant / 100).toFixed(2);
+        html += t('v4.cost_receipt', {
+          cost: (data.cost.charged_centimes / 100).toFixed(2),
+          remaining: (data.cost.solde_restant / 100).toFixed(2)
+        });
         html += '</div>';
       }
 
@@ -689,8 +694,11 @@
       html += '<span id="translateStatus" style="font-size:0.85rem;color:var(--text-secondary)"></span>';
       html += '</div>';
 
-      if (!html) html = '<p>Aucun résultat. Vérifiez votre description.</p>';
+      if (!html) html = '<p>' + t('v4.no_result') + '</p>';
       txt.innerHTML = html;
+      if (getLang() !== 'fr' && typeof translateFragmentInPlace === 'function') {
+        translateFragmentInPlace('#reponseTexte', { content_type: 'chrome/ui', page_path: '/premium.html' });
+      }
     }
 
     async function translateResponse() {
@@ -706,9 +714,9 @@
       if (bar) bar.remove();
       var plainText = clone.textContent || clone.innerText || '';
       plainText = plainText.trim();
-      if (!plainText) { alert('Aucun texte a traduire.'); return; }
+      if (!plainText) { alert(t('v4.no_text')); return; }
 
-      if (status) status.textContent = 'Traduction en cours...';
+      if (status) status.textContent = t('loading_search.msg_16');
 
       try {
         var res = await fetch('/api/premium/translate', {
@@ -730,7 +738,7 @@
         if (status) status.textContent = '';
         refreshCredits();
       } catch (e) {
-        if (status) status.textContent = 'Erreur de traduction.';
+        if (status) status.textContent = t('error.analysis_failed');
       }
     }
 
@@ -742,27 +750,11 @@
     }
 
     // --- Loading indicator ---
-    var PREMIUM_MESSAGES = [
+    var PREMIUM_MESSAGES = typeof tLoadingMessages === 'function' ? tLoadingMessages('loading_search') : [
       'Compréhension de votre situation...',
       'Identification des problèmes juridiques...',
       'Construction du dossier contradictoire...',
-      'Recherche des articles de loi applicables...',
-      'Consultation de la jurisprudence du TF...',
-      'Analyse des arguments pour et contre...',
-      'Vérification du certificat de couverture...',
-      'Évaluation par le comité d\'experts...',
-      'Compilation des règles normatives...',
-      'Identification des délais critiques...',
-      'Recherche des erreurs fatales à éviter...',
-      'Calcul de la fourchette de montant...',
-      'Vérification des sources juridiques...',
-      'Génération des questions de suivi...',
-      'Préparation de l\'analyse complète...',
-      'Croisement avec les barèmes cantonaux...',
-      'Vérification de la recevabilité...',
-      'Analyse des preuves à réunir...',
-      'Identification des contacts compétents...',
-      'Finalisation du rapport...',
+      'Recherche des articles de loi applicables...'
     ];
     var premiumLoadingInterval = null;
 

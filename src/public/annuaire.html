@@ -53,7 +53,7 @@
       <section class="card">
         <h3 data-i18n="annuaire.canton_label">Canton</h3>
         <select id="cantonSelect" class="select w-full" onchange="loadServices()">
-          <option value="">-- Choisir un canton --</option>
+          <option value="" data-i18n="annuaire.canton_select">-- Choisir un canton --</option>
           <option value="AG">Argovie (AG)</option>
           <option value="AI">Appenzell Rh.-Int. (AI)</option>
           <option value="AR">Appenzell Rh.-Ext. (AR)</option>
@@ -84,12 +84,12 @@
       </section>
 
       <div class="directory-filters hidden" id="filterBar">
-        <button class="filter-btn active" data-type="all" onclick="filterServices('all', this)">Tous</button>
+        <button class="filter-btn active" data-type="all" onclick="filterServices('all', this)" data-i18n="annuaire.filter_all">Tous</button>
         <button class="filter-btn" data-type="asloca" onclick="filterServices('asloca', this)">ASLOCA</button>
-        <button class="filter-btn" data-type="csp" onclick="filterServices('csp', this)">CSP</button>
-        <button class="filter-btn" data-type="syndicat" onclick="filterServices('syndicat', this)">Syndicat</button>
-        <button class="filter-btn" data-type="conciliation" onclick="filterServices('conciliation', this)">Conciliation</button>
-        <button class="filter-btn" data-type="aide" onclick="filterServices('aide', this)">Aide juridictionnelle</button>
+        <button class="filter-btn" data-type="csp" onclick="filterServices('csp', this)" data-i18n="annuaire.filter_csp">CSP</button>
+        <button class="filter-btn" data-type="syndicat" onclick="filterServices('syndicat', this)" data-i18n="annuaire.filter_syndicat">Syndicat</button>
+        <button class="filter-btn" data-type="conciliation" onclick="filterServices('conciliation', this)" data-i18n="annuaire.filter_conciliation">Conciliation</button>
+        <button class="filter-btn" data-type="aide" onclick="filterServices('aide', this)" data-i18n="annuaire.filter_aide">Aide juridictionnelle</button>
       </div>
 
       <div id="services"></div>
@@ -182,7 +182,7 @@
         var data = await res.json();
 
         if (!data.services || data.services.length === 0) {
-          container.innerHTML = '<div class="card"><p class="text-tertiary">Aucun service référencé pour ce canton.</p></div>';
+          container.innerHTML = '<div class="card"><p class="text-tertiary">' + t('annuaire.no_services') + '</p></div>';
           filterBar.classList.add('hidden');
           allServices = [];
           return;
@@ -195,7 +195,7 @@
         document.querySelector('[data-type="all"]').classList.add('active');
         renderServices(allServices);
       } catch (e) {
-        container.innerHTML = '<div class="error-box">Impossible de charger les services. Vérifiez que le serveur est en marche.</div>';
+        container.innerHTML = '<div class="error-box">' + t('annuaire.error_load') + '</div>';
         filterBar.classList.add('hidden');
       }
     }
@@ -218,11 +218,11 @@
     function renderServices(services) {
       var container = document.getElementById('services');
       if (services.length === 0) {
-        container.innerHTML = '<div class="card"><p class="text-tertiary">Aucun service de ce type dans ce canton.</p></div>';
+        container.innerHTML = '<div class="card"><p class="text-tertiary">' + t('annuaire.no_services_type') + '</p></div>';
         return;
       }
 
-      var html = '<div class="card"><h3>Services disponibles&nbsp;(' + services.length + ')</h3>';
+      var html = '<div class="card"><h3>' + t('annuaire.services_count', { count: services.length }) + '</h3>';
       services.forEach(function(s, i) {
         html += '<div class="service-item reveal" style="animation-delay:' + (i * 0.06) + 's">';
         html += '<div>';
@@ -232,12 +232,15 @@
         html += '</div>';
         html += '<div class="service-item-right">';
         if (s.tel) html += '<a href="tel:' + s.tel + '" class="tel">' + s.tel + '</a><br>';
-        if (s.url) html += '<a href="' + s.url + '" target="_blank" rel="noopener" class="service-web-link">Site web</a>';
+        if (s.url) html += '<a href="' + s.url + '" target="_blank" rel="noopener" class="service-web-link">' + t('action.site_web') + '</a>';
         html += '</div>';
         html += '</div>';
       });
       html += '</div>';
       container.innerHTML = html;
+      if (getLang() !== 'fr' && typeof translateFragmentInPlace === 'function') {
+        translateFragmentInPlace('#services', { content_type: 'chrome/ui', page_path: '/annuaire.html' });
+      }
     }
   </script>
 </body>

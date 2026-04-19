@@ -22,8 +22,8 @@ const ENV_SPECS = [
     hint: 'Stripe secret key (sk_live_... en prod). Sans ça : mode démo uniquement.' },
   { name: 'STRIPE_WEBHOOK_SECRET', category: 'payment', required_in_prod: true,
     hint: 'Stripe webhook signing secret (whsec_...). Sans ça : webhooks rejetés.' },
-  { name: 'STRIPE_PUBLISHABLE_KEY', category: 'payment', required_in_prod: true,
-    hint: 'Stripe publishable key (pk_live_...). Envoyée au front.' },
+  { name: 'STRIPE_PUBLISHABLE_KEY', category: 'payment', required_in_prod: false,
+    hint: 'Stripe publishable key (pk_live_...). Côté front seulement, serveur démarre sans.' },
 
   // ─── LLM ───────────────────────────────────────────────────
   { name: 'ANTHROPIC_API_KEY', category: 'llm', required_in_prod: true,

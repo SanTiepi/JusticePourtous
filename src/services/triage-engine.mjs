@@ -16,11 +16,30 @@ import { queryByProblem, queryComplete } from './knowledge-engine.mjs';
 import { generateActionPlan } from './action-planner.mjs';
 import { semanticSearch } from './semantic-search.mjs';
 import { getAllFiches } from './fiches.mjs';
-import { randomBytes } from 'node:crypto';
+import {
+  createCase, getCase, touchCase, updateCaseState, recordRound,
+  advancePaymentGate, exportCase
+} from './case-store.mjs';
+import { enrichTriageResult } from './triage-enrichment.mjs';
+import * as _objectRegistry from './object-registry.mjs';
+import { buildCanonForFiche } from './caselaw/index.mjs';
 
-// In-memory session store for multi-turn triage
-const sessions = new Map();
-const SESSION_TTL_MS = 30 * 60 * 1000; // 30 minutes
+// enrichDecisionHolding est optionnel (pas encore exposé par object-registry).
+// Import défensif : si absent, on renvoie l'arrêt tel quel.
+const enrichDecisionHolding = typeof _objectRegistry.enrichDecisionHolding === 'function'
+  ? _objectRegistry.enrichDecisionHolding
+  : (d) => d;
+
+/**
+ * Construit le canon caselaw pour la réponse publique. Best-effort :
+ * tout échec est silent — le triage renvoie la réponse sans canon.
+ */
+async function buildCanonSafe(fiche, citizenCanton) {
+  if (!fiche) return null;
+  try {
+    return await buildCanonForFiche(fiche, { citizenCanton });
+  } catch { return null; }
+}
 
 /**
  * Triage — point d'entrée principal
@@ -35,7 +54,7 @@ export async function triage(texte, canton, sessionId, reponses) {
     return { status: 400, error: 'Décrivez votre problème en quelques mots' };
   }
 
-  // Resume existing session if refining
+  // Resume existing session if refining (sessionId = case_id in the new store)
   if (sessionId && reponses) {
     return await refineTriage(sessionId, reponses);
   }
@@ -112,32 +131,49 @@ async function triageLLM(texte, canton) {
     const questionsManquantes = nav.questions_manquantes || [];
     const hasUnansweredCritical = questionsManquantes.some(q => q.importance === 'critique');
 
-    // 8. Create session for follow-up
-    let newSessionId = null;
-    if (questionsManquantes.length > 0) {
-      newSessionId = randomBytes(16).toString('hex');
-      sessions.set(newSessionId, {
-        texte,
-        canton: effectiveCanton,
-        navigation: nav,
-        enrichedPrimary: primary,
-        enrichedAll: enrichedFiches,
-        createdAt: Date.now()
-      });
-      // Cleanup old sessions
-      cleanupSessions();
-    }
+    // 8. Create case (case-store) for follow-up — every triage gets a case_id
+    //    Si questions manquantes : on snapshot la navigation + fiches
+    //    pour permettre refine ultérieur. Si pas de questions : case sert
+    //    à tracer le flux (payment gate, audit, escalation).
+    let caseInfo = null;
+    caseInfo = createCase({
+      texte,
+      canton: effectiveCanton,
+      navigation: nav,
+      enrichedPrimary: primary,
+      enrichedAll: enrichedFiches
+    });
+    recordRound(caseInfo.case_id, { questions: questionsManquantes, answers: {} });
+    const gateAdvance = advancePaymentGate(caseInfo.case_id, 'complete_bootstrap_round');
+    if (gateAdvance?.payment_gate) caseInfo.payment_gate = gateAdvance.payment_gate;
 
     // 9. Generate action plan (even partial)
     const planAction = generateActionPlan(primary, effectiveCanton);
 
-    // 10. Build result
+    // 10. Enrichment Phase 3 (complexity router, domain recommender, urgency)
+    const enriched = enrichTriageResult({
+      navigation: nav,
+      enrichedPrimary: primary,
+      enrichedAll: enrichedFiches
+    });
+    if (caseInfo?.case_id) {
+      updateCaseState(caseInfo.case_id, { last_eval: enriched._eval_snapshot });
+    }
+    const { _eval_snapshot, ...enrichedPublic } = enriched;
+
+    // 10b. Canon caselaw 2.0 — leading / nuances / cantonal_practice
+    const caselawCanon = await buildCanonSafe(primary.fiche, effectiveCanton);
+
+    // 11. Build result
     return {
       status: 200,
       data: {
         trouve: true,
         complet: !hasUnansweredCritical,
-        sessionId: newSessionId,
+        sessionId: caseInfo?.case_id || null,
+        case_id: caseInfo?.case_id || null,
+        resume_expires_at_iso: caseInfo?.resume_expires_at_iso || null,
+        payment_gate: caseInfo?.payment_gate || null,
 
         // Identification (from LLM)
         domaine: primary.fiche.domaine,
@@ -183,9 +219,18 @@ async function triageLLM(texte, canton) {
           .slice(0, 3)
           .map(d => ({ procedure: d.procedure, delai: d.delai, consequence: d.consequence })),
 
+        // Jurisprudence enrichie (tier/age/role) — Phase 3 (legacy)
+        jurisprudence_enriched: (primary.jurisprudence || []).map(enrichDecisionHolding),
+
+        // Caselaw 2.0 — hiérarchie citoyenne (leading → nuances → cantonal_practice → similar)
+        caselaw_canon: caselawCanon,
+
         // Transparency
         confiance: primary.confiance || 'variable',
         lacunes: (primary.lacunes || []).map(l => l.message || l),
+
+        // Enrichment Phase 3 (non-breaking)
+        ...enrichedPublic,
 
         // Cost
         usage: result.usage,
@@ -206,14 +251,21 @@ async function triageLLM(texte, canton) {
 // ============================================================
 
 async function refineTriage(sessionId, reponses) {
-  const session = sessions.get(sessionId);
-  if (!session) {
+  // sessionId est désormais un case_id (case-store)
+  const caseRec = getCase(sessionId);
+  if (!caseRec) {
     return { status: 404, error: 'Session expirée ou introuvable. Recommencez l\'analyse.' };
   }
 
+  const prevTexte = caseRec.state.texte_initial || '';
+  const prevCanton = caseRec.state.canton;
+  const prevNav = caseRec.state.navigation;
+  const prevPrimary = caseRec.state.enriched_primary;
+  const prevAll = caseRec.state.enriched_all || [];
+
   try {
     // Build context with previous answers
-    const fullText = session.texte + '\n\nInformations complémentaires : ' +
+    const fullText = prevTexte + '\n\nInformations complémentaires : ' +
       Object.entries(reponses).map(([q, a]) => `${q}: ${a}`).join(', ');
 
     // Re-navigate with more info
@@ -228,22 +280,47 @@ async function refineTriage(sessionId, reponses) {
       if (complete.status === 200) enrichedFiches.push(complete.data);
     }
 
-    const primary = enrichedFiches[0] || session.enrichedPrimary;
-    const effectiveCanton = session.canton || nav.infos_extraites?.canton;
-    const scoring = scoreComplexity(primary, enrichedFiches);
+    const primary = enrichedFiches[0] || prevPrimary;
+    const effectiveCanton = prevCanton || nav.infos_extraites?.canton;
+    const scoring = scoreComplexity(primary, enrichedFiches.length ? enrichedFiches : prevAll);
     const urgence = deriveUrgency(primary);
     const besoinAvocat = needsLawyer(scoring, urgence, primary);
     const planAction = generateActionPlan(primary, effectiveCanton);
 
-    // Clean up session
-    sessions.delete(sessionId);
+    // Record round + update state (no delete — case stays 72h)
+    recordRound(sessionId, { questions: nav.questions_manquantes || [], answers: reponses });
+    updateCaseState(sessionId, {
+      navigation: nav,
+      enriched_primary: primary,
+      enriched_all: enrichedFiches.length ? enrichedFiches : prevAll,
+      canton: effectiveCanton,
+      last_answers: reponses
+    });
+    touchCase(sessionId);
+
+    // Enrichment Phase 3
+    const enriched = enrichTriageResult({
+      navigation: nav,
+      enrichedPrimary: primary,
+      enrichedAll: enrichedFiches.length ? enrichedFiches : prevAll
+    });
+    updateCaseState(sessionId, { last_eval: enriched._eval_snapshot });
+    const { _eval_snapshot, ...enrichedPublic } = enriched;
+
+    const exportSnap = exportCase(sessionId);
+
+    // Canon caselaw pour le refine aussi
+    const caselawCanonRefine = await buildCanonSafe(primary.fiche, effectiveCanton);
 
     return {
       status: 200,
       data: {
         trouve: true,
         complet: true,
-        sessionId: null,
+        sessionId,
+        case_id: sessionId,
+        resume_expires_at_iso: exportSnap?.resume_expires_at_iso || null,
+        payment_gate: exportSnap?.payment_gate || null,
         domaine: primary.fiche.domaine,
         ficheId: primary.fiche.id,
         resumeSituation: nav.resume_situation,
@@ -265,8 +342,11 @@ async function refineTriage(sessionId, reponses) {
         delaisCritiques: (primary.delais || [])
           .filter(d => d.domaine === primary.fiche.domaine).slice(0, 3)
           .map(d => ({ procedure: d.procedure, delai: d.delai, consequence: d.consequence })),
+        jurisprudence_enriched: (primary.jurisprudence || []).map(enrichDecisionHolding),
+        caselaw_canon: caselawCanonRefine,
         confiance: primary.confiance || 'variable',
         lacunes: (primary.lacunes || []).map(l => l.message || l),
+        ...enrichedPublic,
         usage: result.usage,
         disclaimer: buildDisclaimer()
       }
@@ -274,16 +354,17 @@ async function refineTriage(sessionId, reponses) {
   } catch (err) {
     console.error('Refine error:', err.message);
     // Return what we had
-    const primary = session.enrichedPrimary;
+    const primary = prevPrimary;
     if (primary) {
-      const scoring = scoreComplexity(primary, session.enrichedAll || [primary]);
+      const scoring = scoreComplexity(primary, prevAll.length ? prevAll : [primary]);
       return {
         status: 200,
         data: {
           trouve: true, complet: false,
+          case_id: sessionId,
           diagnostic: 'Erreur lors de l\'affinage. Voici notre meilleure analyse avec les informations disponibles.',
-          domaine: primary.fiche.domaine,
-          ficheId: primary.fiche.id,
+          domaine: primary.fiche?.domaine,
+          ficheId: primary.fiche?.id,
           complexite: scoring.level,
           disclaimer: buildDisclaimer()
         }
@@ -518,15 +599,18 @@ function buildNoMatchResult(nav, canton) {
   };
 }
 
-function buildDisclaimer() {
-  return 'JusticePourtous fournit des informations juridiques générales basées sur le droit suisse. ' +
-    'Le contenu provient de sources vérifiées (Fedlex, jurisprudence TF) mais ne constitue pas un avis juridique personnalisé. ' +
-    'Consultez un professionnel du droit pour toute décision importante.';
+/**
+ * Disclaimer LLCA — export nommé requis par escalation-pack et server.mjs.
+ * Retourne un objet { short, full, llca_note } selon freeze disclaimer UI.
+ */
+export function buildDisclaimer() {
+  const short = 'JusticePourtous n\'est pas un avocat. Ces informations sont générales, pas un conseil juridique personnalisé.';
+  const full = 'JusticePourtous réduit le besoin de consulter un avocat payant sur les cas citoyens standardisés. ' +
+    'Le contenu provient de sources vérifiées (Fedlex, jurisprudence TF) et ne constitue pas un avis juridique personnalisé. ' +
+    'Pour une représentation en justice, une stratégie complexe, ou une négociation fine, consultez un avocat.';
+  const llca_note = 'Conforme LLCA art. 12 — ceci est de l\'information juridique générale, pas un conseil personnalisé.';
+  const scope_superior = 'Supérieur à l\'avocat uniquement sur : intake standardisé, exhaustivité des sources contradictoires, auditabilité, vitesse, suivi opérationnel.';
+  const scope_inferior = 'Inférieur à l\'avocat sur : représentation, stratégie fine, négociation complexe, plaidoirie.';
+  return { short, full, llca_note, scope_superior, scope_inferior };
 }
 
-function cleanupSessions() {
-  const now = Date.now();
-  for (const [id, session] of sessions) {
-    if (now - session.createdAt > SESSION_TTL_MS) sessions.delete(id);
-  }
-}

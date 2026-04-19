@@ -9,3 +9,8 @@ src/data/meta/*.corrupted
 src/data/meta/stripe-sessions.json
 .claude/scheduled_tasks.lock
 src/data/meta/cases.json
+
+# Runtime logs (drift à chaque run, non-déterministes)
+src/data/meta/analytics.json
+src/data/meta/harvest-log.json
+src/data/meta/entscheidsuche-ingestion-log.json

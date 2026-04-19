@@ -1,0 +1,1548 @@
+[
+  {
+    "id": "successions_heritier_reserve",
+    "domaine": "successions",
+    "sousDomaine": "réserve_héréditaire",
+    "tags": [
+      "réserve",
+      "héritier",
+      "lésé",
+      "réduction",
+      "quotité disponible",
+      "action en réduction"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est votre lien avec le défunt ?",
+        "options": [
+          "enfant / descendant",
+          "conjoint / partenaire enregistré",
+          "parent",
+          "autre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "La succession est-elle déjà ouverte (décès) ?",
+        "options": [
+          "oui, < 1 an",
+          "oui, 1-10 ans",
+          "non, anticipation"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous reçu votre part de réserve ?",
+        "options": [
+          "non, rien reçu",
+          "oui, mais inférieure à la réserve",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Y a-t-il un testament ou des donations importantes ?",
+        "options": [
+          "testament",
+          "donations entre vifs",
+          "les deux",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Depuis la révision du droit successoral entrée en vigueur le 1er janvier 2023, le Code civil suisse protège certains héritiers par une part minimale appelée réserve héréditaire (art. 470-471 CC). Pour les descendants (enfants), la réserve est de 1/2 de leur part légale. Le conjoint survivant ou partenaire enregistré conserve une réserve de 1/2 de sa part légale. Les parents n'ont plus de réserve depuis la réforme 2023. Le défunt peut disposer librement de la quotité disponible (art. 470 al. 2 CC) — soit la portion non réservée. Si un héritier réservataire reçoit moins que sa réserve par testament, donations ou legs, il dispose de l'action en réduction (art. 522-533 CC) à introduire dans le délai d'un an dès la connaissance de la lésion (art. 533 al. 1 CC). L'action vise à réduire les libéralités excessives — d'abord les dispositions à cause de mort, puis les donations entre vifs en remontant chronologiquement (art. 532 CC).",
+      "articles": [
+        {
+          "ref": "CC 470",
+          "titre": "Réserve héréditaire — quotité disponible",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_470"
+        },
+        {
+          "ref": "CC 471",
+          "titre": "Réserve des descendants et du conjoint survivant",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_471"
+        },
+        {
+          "ref": "CC 522",
+          "titre": "Action en réduction des héritiers réservataires",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_522"
+        },
+        {
+          "ref": "CC 533",
+          "titre": "Prescription de l'action en réduction (1 an)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_533"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 138 III 354",
+          "resume": "Le délai d'un an de l'art. 533 CC court dès la connaissance effective de la lésion (montant de la succession + libéralités), pas dès le décès. Le fardeau de la preuve incombe au défendeur."
+        },
+        {
+          "ref": "ATF 145 III 1",
+          "resume": "L'action en réduction est de nature personnelle et ne peut être dirigée que contre les bénéficiaires de libéralités excessives, dans l'ordre fixé par l'art. 532 CC."
+        }
+      ],
+      "modeleLettre": "Objet : Action en réduction — atteinte à ma réserve héréditaire (art. 522 ss CC)\n\nRecommandé\n\n[NOTAIRE / EXÉCUTEUR / COHÉRITIER]\n[ADRESSE]\n\nMadame, Monsieur,\n\nÀ la suite du décès de [NOM DU DÉFUNT] survenu le [DATE], j'ai pris connaissance le [DATE] des dispositions à cause de mort et/ou des donations entre vifs effectuées par le défunt.\n\nIl résulte de l'inventaire successoral que ma part successorale est inférieure à la réserve qui m'est garantie par les art. 470-471 CC, étant héritier réservataire en qualité de [QUALITÉ : descendant / conjoint].\n\nEn application des art. 522 et 533 CC, j'introduis par la présente l'action en réduction des libéralités excessives, à savoir :\n[ ] testament du [DATE] : disposition en faveur de [BÉNÉFICIAIRE] portant sur [OBJET / MONTANT]\n[ ] donation entre vifs du [DATE] en faveur de [BÉNÉFICIAIRE] portant sur [OBJET / MONTANT]\n\nJe vous demande de procéder à la réduction nécessaire pour me restituer la portion correspondant à ma réserve, soit [MONTANT] CHF, dans un délai de 30 jours.\n\nÀ défaut, je saisirai l'autorité de conciliation civile compétente du dernier domicile du défunt (art. 28 CPC).\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération Suisse des Notaires (FSN)",
+          "url": "https://www.notaires-suisses.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Chambre des notaires de Genève",
+          "tel": "022 781 89 70",
+          "url": "https://www.geneve-notaires.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Justice de paix Vaud (autorité successorale)",
+          "url": "https://www.vd.ch/themes/justice/justices-de-paix",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats vaudois",
+          "url": "https://www.oav.ch",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "avocat",
+          "indication": "Indispensable dès que le délai d'un an approche ou que les actifs sont importants (>100k CHF)"
+        },
+        {
+          "type": "notaire",
+          "indication": "Pour évaluer l'inventaire successoral et reconstituer les libéralités"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un héritier réservataire estime que sa part minimale légale n'a pas été respectée par testament ou donations",
+    "profane_aliases": [
+      "déshérité",
+      "lésé dans héritage",
+      "testament injuste",
+      "papa a tout donné à mon frère",
+      "ma part est trop petite"
+    ],
+    "negative_signals": [
+      "le défunt n'avait pas de patrimoine",
+      "héritier non réservataire (frère, neveu)",
+      "consentement écrit antérieur à la lésion"
+    ],
+    "required_facts": [
+      "qualité d'héritier réservataire",
+      "date du décès",
+      "connaissance de la lésion",
+      "existence d'un testament ou de donations"
+    ],
+    "last_verified_at": "2026-04-19",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-19",
+    "readiness": "beta",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "successions_testament_contestation",
+    "domaine": "successions",
+    "sousDomaine": "vices_du_testament",
+    "tags": [
+      "testament",
+      "contestation",
+      "nullité",
+      "annulation",
+      "vice de forme",
+      "incapacité"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel type de testament contestez-vous ?",
+        "options": [
+          "olographe (manuscrit)",
+          "public (devant notaire)",
+          "oral (urgence)"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quel est le motif principal de contestation ?",
+        "options": [
+          "vice de forme",
+          "incapacité du testateur",
+          "captation / pression",
+          "erreur ou dol"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Quand avez-vous découvert le motif ?",
+        "options": [
+          "< 1 an",
+          "1-10 ans",
+          ">10 ans"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Êtes-vous héritier légal ou réservataire ?",
+        "options": [
+          "réservataire",
+          "héritier légal non réservataire",
+          "non héritier"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Un testament peut être annulé pour différents motifs prévus aux art. 519-521 CC. L'art. 519 CC énumère trois causes : (1) incapacité de disposer du testateur (atteinte à la capacité civile, démence, art. 467-468 CC) ; (2) défaut de liberté (dol, captation, menace, erreur essentielle) ; (3) contenu illicite ou immoral. L'art. 520 CC ajoute la nullité pour vice de forme — par exemple, un testament olographe non entièrement écrit, daté et signé de la main du testateur (art. 505 CC) ou un testament public ne respectant pas les exigences des art. 499-504 CC. L'action en annulation est ouverte à toute personne ayant un intérêt comme héritier ou légataire (art. 519 al. 2 CC). Elle se prescrit par un an dès la connaissance du motif de nullité et au plus tard par dix ans dès l'ouverture de la succession (art. 521 al. 1 CC). Pour les bénéficiaires de mauvaise foi, le délai est porté à 30 ans (art. 521 al. 3 CC). L'action est introduite contre tous les bénéficiaires du testament au for du dernier domicile du défunt (art. 28 CPC).",
+      "articles": [
+        {
+          "ref": "CC 519",
+          "titre": "Action en nullité du testament — motifs",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_519"
+        },
+        {
+          "ref": "CC 520",
+          "titre": "Vices de forme",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_520"
+        },
+        {
+          "ref": "CC 521",
+          "titre": "Prescription de l'action en nullité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_521"
+        },
+        {
+          "ref": "CC 505",
+          "titre": "Forme du testament olographe",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_505"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 124 III 5",
+          "resume": "Le testament olographe doit être entièrement manuscrit. La date imprimée ou ajoutée par un tiers entraîne la nullité du testament selon l'art. 520 CC."
+        },
+        {
+          "ref": "ATF 117 II 231",
+          "resume": "L'incapacité de discernement du testateur doit être prouvée par celui qui l'invoque. Un diagnostic d'Alzheimer postérieur ne suffit pas — il faut démontrer l'absence de discernement au moment précis de la rédaction."
+        }
+      ],
+      "modeleLettre": "Objet : Notification d'action en nullité de testament (art. 519-521 CC)\n\nRecommandé\n\n[BÉNÉFICIAIRES DU TESTAMENT]\n[ADRESSE]\n\nMadame, Monsieur,\n\nÀ la suite du décès de [NOM DU DÉFUNT] survenu le [DATE] et de l'ouverture de la succession, j'ai pris connaissance du testament daté du [DATE TESTAMENT] vous instituant héritier ou légataire.\n\nJ'ai constaté le [DATE DÉCOUVERTE] que ce testament est entaché du/des vice(s) suivant(s) :\n[ ] vice de forme (art. 520 CC) : [DÉCRIRE — date manquante, signature manuscrite manquante, etc.]\n[ ] incapacité du testateur (art. 519 al. 1 ch. 1 CC) : [DÉCRIRE — démence attestée le DATE, certificat médical du DR. NOM]\n[ ] captation / pression / dol (art. 519 al. 1 ch. 2 CC) : [DÉCRIRE LES FAITS]\n[ ] disposition illicite ou immorale (art. 519 al. 1 ch. 3 CC) : [DÉCRIRE]\n\nEn ma qualité d'héritier [RÉSERVATAIRE / LÉGAL] ayant intérêt à l'annulation, je vous notifie mon intention d'introduire l'action en nullité prévue par les art. 519-520 CC dans le délai d'un an de l'art. 521 CC.\n\nJe vous invite à prendre position dans un délai de 30 jours. À défaut d'accord amiable, je saisirai l'autorité de conciliation puis le tribunal civil du dernier domicile du défunt.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Justice de paix Vaud",
+          "url": "https://www.vd.ch/themes/justice/justices-de-paix",
+          "canton": "VD"
+        },
+        {
+          "nom": "Justice de paix Genève",
+          "url": "https://justice.ge.ch/fr/institution/justice-de-paix",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats genevois (ODA)",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Service cantonal de conciliation civile (VD)",
+          "url": "https://www.vd.ch/themes/justice",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "avocat",
+          "indication": "Action complexe — assistance juridique fortement recommandée"
+        },
+        {
+          "type": "expertise médicale",
+          "indication": "Pour démontrer l'incapacité de discernement du testateur"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "30 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Un héritier conteste la validité d'un testament pour vice de forme, incapacité ou captation",
+    "profane_aliases": [
+      "annuler testament",
+      "testament faux",
+      "papa n'avait plus toute sa tête",
+      "captation héritage",
+      "testament non valable"
+    ],
+    "negative_signals": [
+      "testateur lucide et libre",
+      "respect parfait des formes",
+      "délai de 10 ans dépassé"
+    ],
+    "required_facts": [
+      "date du testament",
+      "type de testament",
+      "motif de nullité invoqué",
+      "date de découverte du vice"
+    ],
+    "last_verified_at": "2026-04-19",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-19",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "successions_renonciation",
+    "domaine": "successions",
+    "sousDomaine": "répudiation",
+    "tags": [
+      "renonciation",
+      "répudiation",
+      "succession",
+      "dette",
+      "héritier",
+      "délai 3 mois"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pourquoi voulez-vous renoncer ?",
+        "options": [
+          "succession surendettée",
+          "incertitude sur l'actif/passif",
+          "raison personnelle"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Depuis quand connaissez-vous le décès ?",
+        "options": [
+          "< 1 mois",
+          "1-3 mois",
+          "> 3 mois"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous déjà accompli des actes d'héritier (vidange, vente d'objets, paiement de dettes) ?",
+        "options": [
+          "non",
+          "oui mais administration conservatoire",
+          "oui actes de disposition"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous des descendants mineurs ?",
+        "options": [
+          "non",
+          "oui",
+          "oui mais déjà adultes"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'héritier peut répudier la succession dans un délai de trois mois (art. 567 al. 1 CC) à compter du jour où il a eu connaissance de l'ouverture de la succession (pour les héritiers légaux) ou de la disposition à cause de mort le concernant (pour les héritiers institués). La répudiation se fait par déclaration écrite ou orale auprès de l'autorité compétente du dernier domicile du défunt — généralement la justice de paix (art. 570 CC). Elle est inconditionnelle et indivisible (art. 570 al. 2 CC). L'héritier qui a accompli des actes d'immixtion dans la succession (vente, paiement de dettes au-delà du conservatoire, occupation des biens à titre personnel) perd le droit de répudier (art. 571 al. 2 CC). Si tous les héritiers les plus proches répudient, la succession est liquidée par l'office des faillites selon les art. 573 ss CC. Pour les enfants mineurs, c'est l'autorité de protection (APEA) qui doit autoriser la répudiation. Si la succession est manifestement insolvable, la répudiation est présumée (art. 566 al. 2 CC).",
+      "articles": [
+        {
+          "ref": "CC 566",
+          "titre": "Faculté de répudier — présomption d'insolvabilité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_566"
+        },
+        {
+          "ref": "CC 567",
+          "titre": "Délai pour répudier (3 mois)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_567"
+        },
+        {
+          "ref": "CC 568",
+          "titre": "Délai en cas d'inventaire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_568"
+        },
+        {
+          "ref": "CC 570",
+          "titre": "Forme de la déclaration de répudiation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_570"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 138 III 587",
+          "resume": "Le délai de répudiation court dès la connaissance effective du décès et de la qualité d'héritier. Pour les héritiers institués, dès la communication officielle du testament."
+        },
+        {
+          "ref": "ATF 104 II 249",
+          "resume": "L'immixtion dans la succession (art. 571 al. 2 CC) suppose des actes incompatibles avec la volonté de répudier. Le simple inventaire et la conservation des biens ne valent pas immixtion."
+        }
+      ],
+      "modeleLettre": "Objet : Déclaration de répudiation de succession (art. 566-570 CC)\n\nRecommandé\n\nJustice de paix de [DERNIER DOMICILE DU DÉFUNT]\n[ADRESSE]\n\nMadame, Monsieur le Juge,\n\nJe soussigné(e) [NOM, PRÉNOM, DATE DE NAISSANCE, ADRESSE], en ma qualité d'héritier [LÉGAL / INSTITUÉ] de feu [NOM DU DÉFUNT], décédé le [DATE] à [LIEU], dernier domicile à [ADRESSE], déclare par la présente :\n\nRÉPUDIER PUREMENT ET SIMPLEMENT la succession de feu [NOM], conformément aux art. 566 ss CC.\n\nJ'ai eu connaissance de l'ouverture de cette succession le [DATE], soit dans le délai de trois mois prévu par l'art. 567 CC.\n\nJe certifie ne pas m'être immiscé dans les affaires de la succession au sens de l'art. 571 al. 2 CC.\n\nJoint en annexe :\n- copie de l'acte de décès\n- pièce d'identité\n[ - certificat d'héritier ]\n\nJe vous prie de bien vouloir prendre acte de cette répudiation et m'en délivrer attestation.\n\nVeuillez agréer, Madame, Monsieur le Juge, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Justice de paix Vaud",
+          "url": "https://www.vd.ch/themes/justice/justices-de-paix",
+          "canton": "VD"
+        },
+        {
+          "nom": "Justice de paix Genève",
+          "url": "https://justice.ge.ch/fr/institution/justice-de-paix",
+          "canton": "GE"
+        },
+        {
+          "nom": "Caritas Suisse — conseil dettes successorales",
+          "url": "https://www.caritas.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "APEA Vaud (mineurs)",
+          "url": "https://www.vd.ch/themes/sante-soins-et-handicap/jeunes/protection-de-lenfant",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "avocat",
+          "indication": "Si la succession comporte des biens à l'étranger ou des structures complexes"
+        },
+        {
+          "type": "APEA",
+          "indication": "Obligatoire pour la répudiation au nom d'un mineur"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "L'héritier veut répudier une succession (souvent surendettée) dans le délai légal de 3 mois",
+    "profane_aliases": [
+      "renoncer héritage",
+      "ne pas accepter succession",
+      "héritage de dettes",
+      "refuser succession parents",
+      "repudier"
+    ],
+    "negative_signals": [
+      "héritier déjà immiscé dans la succession",
+      "délai de 3 mois dépassé sans inventaire",
+      "héritier ayant accepté expressément"
+    ],
+    "required_facts": [
+      "date du décès",
+      "date de connaissance",
+      "absence d'actes d'immixtion",
+      "dernier domicile du défunt"
+    ],
+    "last_verified_at": "2026-04-19",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-19",
+    "readiness": "beta",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "successions_liquidation_partage",
+    "domaine": "successions",
+    "sousDomaine": "partage",
+    "tags": [
+      "partage",
+      "liquidation",
+      "communauté héréditaire",
+      "actions",
+      "indivision",
+      "lots"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Combien d'héritiers ?",
+        "options": [
+          "2",
+          "3-5",
+          ">5"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Y a-t-il un immeuble dans la succession ?",
+        "options": [
+          "oui",
+          "non",
+          "plusieurs"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Les héritiers sont-ils d'accord sur le partage ?",
+        "options": [
+          "oui complètement",
+          "partiellement",
+          "désaccord total"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Y a-t-il un exécuteur testamentaire ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Du décès jusqu'au partage, les héritiers forment une communauté héréditaire et sont propriétaires en main commune de l'ensemble des biens (art. 602 CC). Tout héritier peut, en tout temps, demander le partage de la succession (art. 604 CC), sauf disposition contraire du testateur ou convention entre héritiers (sursis). Le partage s'effectue idéalement à l'amiable (art. 607 CC) — chaque héritier reçoit une part en nature ou en valeur correspondant à sa quote-part successorale. À défaut d'accord, l'autorité compétente forme des lots (art. 611 CC) — un lot par héritier, qui sont attribués par accord ou par tirage au sort. Les biens qui ne se laissent pas partager sans diminution de leur valeur (par ex. immeuble) sont attribués à un seul héritier moyennant soulte (art. 612 CC). Les rapports entre vifs (donations) doivent être réunis à la succession (art. 626 ss CC) sauf dispense expresse. L'action en partage est imprescriptible. La compétence judiciaire revient au tribunal du dernier domicile du défunt.",
+      "articles": [
+        {
+          "ref": "CC 602",
+          "titre": "Communauté héréditaire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_602"
+        },
+        {
+          "ref": "CC 604",
+          "titre": "Action en partage",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_604"
+        },
+        {
+          "ref": "CC 607",
+          "titre": "Liberté du partage entre héritiers",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_607"
+        },
+        {
+          "ref": "CC 611",
+          "titre": "Composition des lots",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_611"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 137 III 8",
+          "resume": "L'action en partage de l'art. 604 CC peut être introduite par tout héritier, à tout moment. Elle est imprescriptible et ne peut être refusée que pour motifs sérieux (sursis judiciaire art. 604 al. 2 CC)."
+        },
+        {
+          "ref": "ATF 143 III 113",
+          "resume": "L'attribution d'un immeuble à un seul héritier (art. 612 CC) suppose qu'il offre une soulte et que les autres ne le revendiquent pas — à défaut, vente publique."
+        }
+      ],
+      "modeleLettre": "Objet : Demande d'action en partage (art. 604 CC)\n\nRecommandé\n\n[COHÉRITIERS]\n[ADRESSE]\n\nMadame, Monsieur,\n\nÀ la suite du décès de [NOM DU DÉFUNT] survenu le [DATE], nous formons depuis lors la communauté héréditaire visée à l'art. 602 CC.\n\nMalgré [DURÉE / NB DE TENTATIVES] de discussions, nous ne sommes pas parvenus à un accord amiable sur le partage de la succession composée principalement de :\n- [BIEN 1 : description, valeur estimée]\n- [BIEN 2 : description, valeur estimée]\n- [LIQUIDITÉS : montant]\n\nEn application de l'art. 604 CC, je vous notifie ma volonté de procéder au partage de la succession.\n\nJe vous propose, dans un premier temps :\n[ ] de désigner un notaire commun chargé de proposer un projet de partage\n[ ] de procéder à l'évaluation des biens par un expert agréé\n[ ] de signer la convention de partage ci-jointe sous 60 jours\n\nÀ défaut de réponse ou d'accord dans un délai de [DÉLAI], j'introduirai une action en partage devant le tribunal civil du dernier domicile du défunt à [LIEU] (art. 28 CPC).\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Chambre des notaires de Genève",
+          "tel": "022 781 89 70",
+          "url": "https://www.geneve-notaires.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Notaires vaudois",
+          "url": "https://www.notaires-vd.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Tribunal civil de l'arrondissement (VD)",
+          "url": "https://www.vd.ch/themes/justice/tribunaux",
+          "canton": "VD"
+        },
+        {
+          "nom": "Justice de paix Genève (autorité successorale)",
+          "url": "https://justice.ge.ch/fr/institution/justice-de-paix",
+          "canton": "GE"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "avocat",
+          "indication": "Désaccord persistant ou succession transfrontalière"
+        },
+        {
+          "type": "notaire",
+          "indication": "Coordination du partage et rédaction de la convention"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Action en partage",
+          "delai": "Pas de délai formel (action imprescriptible tant qu'indivision)",
+          "base_legale": "CC 604",
+          "consequence": "Tout héritier peut l'exiger à tout moment"
+        }
+      ]
+    },
+    "match_description": "Les héritiers veulent procéder au partage de la succession (à l'amiable ou en justice)",
+    "profane_aliases": [
+      "partage héritage",
+      "diviser succession",
+      "indivision héritiers",
+      "désaccord cohéritiers",
+      "vendre la maison familiale"
+    ],
+    "negative_signals": [
+      "succession non encore acceptée",
+      "héritier unique",
+      "bien grevé d'usufruit"
+    ],
+    "required_facts": [
+      "composition de la succession",
+      "nombre d'héritiers",
+      "tentatives amiables",
+      "présence d'immeuble"
+    ],
+    "last_verified_at": "2026-04-19",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-19",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "successions_benefice_inventaire",
+    "domaine": "successions",
+    "sousDomaine": "inventaire",
+    "tags": [
+      "bénéfice d'inventaire",
+      "inventaire",
+      "succession",
+      "responsabilité limitée",
+      "1 mois",
+      "publication"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pourquoi voulez-vous le bénéfice d'inventaire ?",
+        "options": [
+          "incertitude sur passif",
+          "soupçon de dettes cachées",
+          "succession à structure complexe"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Depuis quand connaissez-vous le décès ?",
+        "options": [
+          "< 1 mois",
+          "1-3 mois",
+          "> 3 mois"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Êtes-vous unique héritier ou plusieurs ?",
+        "options": [
+          "unique",
+          "plusieurs"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Y a-t-il déjà une procédure successorale ouverte ?",
+        "options": [
+          "oui",
+          "non",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le bénéfice d'inventaire (art. 580-592 CC) est une option intermédiaire entre l'acceptation pure et simple et la répudiation. L'héritier qui le sollicite obtient un inventaire officiel des actifs et passifs de la succession, dressé par l'autorité (art. 581 CC). Il n'engage sa responsabilité personnelle que pour les dettes inscrites à l'inventaire (art. 589 CC) — protection majeure contre les dettes cachées. La requête doit être déposée auprès de l'autorité compétente (justice de paix selon le canton) dans le délai d'un mois dès la connaissance du décès et de la qualité d'héritier (art. 580 al. 1 CC). L'inventaire fait l'objet de publications officielles invitant les créanciers à produire leurs créances (art. 582 CC) — généralement dans la Feuille officielle suisse du commerce (FOSC) et la feuille cantonale. Pendant la procédure d'inventaire, l'héritier dispose à nouveau d'un mois (à compter de la clôture) pour décider : accepter sous bénéfice d'inventaire, accepter purement et simplement, ou répudier (art. 587-588 CC). Les frais d'inventaire sont à la charge de la succession (art. 583 al. 2 CC).",
+      "articles": [
+        {
+          "ref": "CC 580",
+          "titre": "Bénéfice d'inventaire — délai d'un mois",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_580"
+        },
+        {
+          "ref": "CC 581",
+          "titre": "Procédure d'inventaire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_581"
+        },
+        {
+          "ref": "CC 582",
+          "titre": "Sommations publiques aux créanciers",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_582"
+        },
+        {
+          "ref": "CC 589",
+          "titre": "Effets de l'acceptation sous bénéfice d'inventaire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_589"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 130 III 652",
+          "resume": "Le délai d'un mois de l'art. 580 CC est péremptoire : son non-respect entraîne la perte du droit au bénéfice d'inventaire, même en cas d'ignorance non fautive de la dette."
+        },
+        {
+          "ref": "ATF 121 III 58",
+          "resume": "L'héritier qui accepte sous bénéfice d'inventaire ne répond des dettes inscrites qu'à concurrence de l'actif successoral. Les dettes non produites dans la sommation sont éteintes (art. 590 CC)."
+        }
+      ],
+      "modeleLettre": "Objet : Requête en bénéfice d'inventaire (art. 580 CC)\n\nRecommandé\n\nJustice de paix de [DERNIER DOMICILE DU DÉFUNT]\n[ADRESSE]\n\nMadame, Monsieur le Juge,\n\nJe soussigné(e) [NOM, PRÉNOM, ADRESSE], héritier de feu [NOM DU DÉFUNT], décédé le [DATE] à [LIEU], dernier domicile à [ADRESSE], sollicite par la présente :\n\nL'OUVERTURE D'UN INVENTAIRE OFFICIEL DE LA SUCCESSION (BÉNÉFICE D'INVENTAIRE)\n\nconformément à l'art. 580 CC.\n\nMotifs : Compte tenu de [INCERTITUDES SUR LE PASSIF / SOUPÇONS DE DETTES / COMPLEXITÉ DU PATRIMOINE], je souhaite déterminer précisément l'actif et le passif successoraux avant de me prononcer sur l'acceptation pure et simple, l'acceptation sous bénéfice d'inventaire ou la répudiation.\n\nJ'ai eu connaissance de l'ouverture de la succession le [DATE], soit dans le délai d'un mois prévu par l'art. 580 al. 1 CC.\n\nJoint :\n- copie de l'acte de décès\n- pièce d'identité\n- justificatif de qualité d'héritier (testament, certificat d'héritier ou lien de parenté)\n\nJe m'engage à fournir tous les renseignements nécessaires à l'établissement de l'inventaire (art. 581 al. 2 CC).\n\nVeuillez agréer, Madame, Monsieur le Juge, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Justice de paix Vaud",
+          "url": "https://www.vd.ch/themes/justice/justices-de-paix",
+          "canton": "VD"
+        },
+        {
+          "nom": "Justice de paix Genève",
+          "url": "https://justice.ge.ch/fr/institution/justice-de-paix",
+          "canton": "GE"
+        },
+        {
+          "nom": "Caritas — désendettement",
+          "url": "https://www.caritas.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Notaires vaudois",
+          "url": "https://www.notaires-vd.ch",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "avocat",
+          "indication": "Recommandé en cas de patrimoine international ou structure d'entreprise"
+        },
+        {
+          "type": "notaire",
+          "indication": "Pour assister à l'inventaire et conseiller sur l'opportunité"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "L'héritier sollicite un inventaire officiel pour limiter sa responsabilité aux dettes connues",
+    "profane_aliases": [
+      "inventaire succession",
+      "limiter responsabilité dettes héritage",
+      "ne pas payer les dettes cachées",
+      "vérifier patrimoine défunt",
+      "protection contre dettes du défunt"
+    ],
+    "negative_signals": [
+      "délai d'un mois dépassé",
+      "héritier ayant déjà accepté expressément",
+      "succession manifestement positive et simple"
+    ],
+    "required_facts": [
+      "date du décès",
+      "date de connaissance",
+      "qualité d'héritier établie",
+      "motif d'incertitude"
+    ],
+    "last_verified_at": "2026-04-19",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-19",
+    "readiness": "beta",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "successions_pacte_successoral",
+    "domaine": "successions",
+    "sousDomaine": "pacte_successoral",
+    "tags": [
+      "pacte successoral",
+      "renonciation anticipée",
+      "institution d'héritier",
+      "notaire",
+      "forme authentique",
+      "soulte"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel type de pacte envisagez-vous ?",
+        "options": [
+          "pacte d'attribution (institution d'héritier)",
+          "pacte de renonciation",
+          "pacte de partage anticipé"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Êtes-vous le futur de cujus ou le futur héritier ?",
+        "options": [
+          "futur de cujus",
+          "futur héritier",
+          "tiers bénéficiaire"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Y a-t-il une contrepartie financière ?",
+        "options": [
+          "oui",
+          "non",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Toutes les parties sont-elles capables de discernement ?",
+        "options": [
+          "oui",
+          "doute",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le pacte successoral (art. 494-497 CC) est un contrat conclu entre le futur défunt (de cujus) et un ou plusieurs partenaires (héritiers ou tiers) qui règle de son vivant la dévolution de la succession ou de certains biens. Contrairement au testament (révocable unilatéralement), le pacte successoral lie ses parties — il ne peut être résilié que par accord ou pour les motifs prévus par la loi (art. 513-514 CC). Deux grandes catégories : (1) le pacte d'attribution (positif) institue un héritier ou attribue un legs ; (2) le pacte de renonciation (négatif, art. 495 CC) prévoit qu'un héritier réservataire renonce à tout ou partie de ses droits — souvent contre une contrepartie financière (renonciation onéreuse) ou sans (gratuite). Le pacte successoral exige la forme authentique (acte notarié) avec deux témoins (art. 512 CC) — à défaut, nullité absolue. Les pactes peuvent être attaqués pour incapacité du de cujus, vices du consentement ou contenu illicite/immoral (art. 519 al. 2 CC par renvoi). Une fois le décès survenu, l'héritier ayant renoncé n'a plus aucune prétention successorale (sauf clause de retour).",
+      "articles": [
+        {
+          "ref": "CC 494",
+          "titre": "Pacte successoral — institution d'héritier ou legs",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_494"
+        },
+        {
+          "ref": "CC 495",
+          "titre": "Pacte de renonciation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_495"
+        },
+        {
+          "ref": "CC 497",
+          "titre": "Renonciation des créanciers du renonçant",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_497"
+        },
+        {
+          "ref": "CC 512",
+          "titre": "Forme du pacte successoral",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_512"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 133 III 406",
+          "resume": "Le pacte successoral exige le respect strict de la forme authentique de l'art. 512 CC — la signature simultanée des deux témoins est essentielle. À défaut, nullité absolue."
+        },
+        {
+          "ref": "ATF 140 III 193",
+          "resume": "Une renonciation à succession contre soulte (renonciation onéreuse) doit chiffrer clairement la contrepartie pour être valable. Une simple mention 'pour solde de tout compte' est insuffisante."
+        }
+      ],
+      "modeleLettre": "Objet : Demande de rendez-vous pour pacte successoral (art. 494-497 CC)\n\n[NOTAIRE]\n[ADRESSE]\n\nMaître,\n\nJe soussigné(e) [NOM, PRÉNOM, ADRESSE, DATE DE NAISSANCE] souhaite conclure un pacte successoral conforme aux art. 494 ss CC avec [NOM DES PARTIES — futur héritier, conjoint, etc.].\n\nObjet envisagé :\n[ ] institution de [NOM] comme héritier pour [PART / BIEN]\n[ ] renonciation de [NOM] à sa réserve héréditaire\n[ ] partage anticipé portant sur [BIEN]\n\nContrepartie éventuelle : [MONTANT ou DÉSCRIPTION OU AUCUNE]\n\nLes parties confirment être capables de discernement et signer librement.\n\nJe vous prie de bien vouloir :\n1. Convenir d'un rendez-vous pour rédaction de l'acte authentique\n2. Indiquer les pièces à fournir (extraits d'état civil, etc.)\n3. Communiquer une estimation des frais notariaux et émoluments\n\nJe joins une description provisoire de mon patrimoine pour préparer le rendez-vous.\n\nVeuillez agréer, Maître, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération Suisse des Notaires",
+          "url": "https://www.notaires-suisses.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Chambre des notaires de Genève",
+          "tel": "022 781 89 70",
+          "url": "https://www.geneve-notaires.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Notaires vaudois",
+          "url": "https://www.notaires-vd.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats vaudois",
+          "url": "https://www.oav.ch",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "notaire",
+          "indication": "Indispensable — la forme authentique est requise sous peine de nullité"
+        },
+        {
+          "type": "avocat",
+          "indication": "Pour structurer la renonciation onéreuse et chiffrer la soulte"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Le futur défunt et un héritier veulent organiser à l'avance leur succession par contrat",
+    "profane_aliases": [
+      "renoncer héritage à l'avance",
+      "contrat successoral",
+      "donner sa part contre paiement",
+      "régler succession de son vivant",
+      "soulte renonciation"
+    ],
+    "negative_signals": [
+      "simple testament unilatéral",
+      "absence de notaire",
+      "incapacité d'une partie"
+    ],
+    "required_facts": [
+      "identité des parties",
+      "objet du pacte",
+      "contrepartie éventuelle",
+      "capacité de discernement"
+    ],
+    "last_verified_at": "2026-04-19",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-19",
+    "readiness": "beta",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "successions_legs_refus",
+    "domaine": "successions",
+    "sousDomaine": "legs",
+    "tags": [
+      "legs",
+      "légataire",
+      "refus",
+      "exécution",
+      "délivrance",
+      "particulier"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Vous êtes ?",
+        "options": [
+          "légataire",
+          "héritier devant délivrer le legs",
+          "exécuteur testamentaire"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Le legs porte sur :",
+        "options": [
+          "somme d'argent",
+          "bien meuble",
+          "immeuble",
+          "droit (usufruit, rente)"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "L'héritier refuse-t-il d'exécuter le legs ?",
+        "options": [
+          "oui clairement",
+          "tarde sans raison",
+          "exécution partielle"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Combien de temps depuis le décès ?",
+        "options": [
+          "< 6 mois",
+          "6-12 mois",
+          "> 1 an"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le legs (art. 481 CC) est une libéralité par laquelle le testateur attribue à un bénéficiaire (légataire) un bien déterminé ou un droit, sans en faire un héritier (qui succède universellement). Le légataire n'est PAS tenu des dettes successorales et n'a aucune part dans la communauté héréditaire — il dispose seulement d'une créance personnelle contre les héritiers ou contre l'héritier grevé désigné par le testament (art. 562 CC). Le légataire peut accepter ou refuser le legs (art. 577 CC) — le refus n'a pas de forme particulière mais doit être clair. L'action en délivrance du legs (art. 562 CC) se prescrit par 10 ans dès l'ouverture de la succession (art. 601 CC). Si l'héritier grevé refuse de délivrer ou tarde indûment, le légataire peut introduire l'action devant le tribunal du dernier domicile du défunt après mise en demeure. En cas d'insuffisance de la succession pour exécuter tous les legs, ils sont réduits proportionnellement (art. 486 al. 2 CC). Les charges grevant le legs (frais de transfert, droits de mutation) incombent au légataire sauf disposition contraire (art. 485 CC).",
+      "articles": [
+        {
+          "ref": "CC 481",
+          "titre": "Disposition pour cause de mort — legs",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_481"
+        },
+        {
+          "ref": "CC 484",
+          "titre": "Forme et objet du legs",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_484"
+        },
+        {
+          "ref": "CC 562",
+          "titre": "Action du légataire — délivrance",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_562"
+        },
+        {
+          "ref": "CC 577",
+          "titre": "Acceptation et refus du legs",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_577"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 129 III 305",
+          "resume": "L'action en délivrance du legs de l'art. 562 CC se prescrit par 10 ans dès l'ouverture de la succession, indépendamment de la connaissance par le légataire."
+        },
+        {
+          "ref": "ATF 116 II 243",
+          "resume": "Le légataire d'un bien déterminé devient propriétaire au décès (effet réel pour les meubles), mais doit obtenir la possession via l'héritier grevé. Pour les immeubles, l'inscription au Registre foncier est constitutive."
+        }
+      ],
+      "modeleLettre": "Objet : Mise en demeure de délivrance d'un legs (art. 562 CC)\n\nRecommandé\n\n[HÉRITIER GREVÉ / EXÉCUTEUR TESTAMENTAIRE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nFeu [NOM DU DÉFUNT], décédé le [DATE], a institué par testament daté du [DATE TESTAMENT] un legs en ma faveur portant sur :\n\n[DESCRIPTION DU LEGS — bien, montant, droit]\n\nMalgré [DURÉE / NB DE DEMANDES] de relances depuis le [DATE PREMIÈRE DEMANDE], la délivrance du legs n'est toujours pas intervenue.\n\nEn application de l'art. 562 CC, je vous mets en demeure de procéder à la délivrance du legs susmentionné dans un délai de 30 jours dès réception de la présente.\n\n[Pour un legs en argent :] Je vous prie de verser la somme de [MONTANT] CHF sur mon compte IBAN [IBAN].\n[Pour un bien meuble :] Je vous prie de me remettre le bien à l'adresse [ADRESSE] sur rendez-vous.\n[Pour un immeuble :] Je vous prie de signer la réquisition d'inscription au Registre foncier.\n\nÀ défaut, j'introduirai sans autre avis l'action en délivrance du legs devant le tribunal civil du dernier domicile du défunt, avec demande de dommages-intérêts pour retard (art. 562 al. 2 CC).\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Tribunal civil de l'arrondissement (VD)",
+          "url": "https://www.vd.ch/themes/justice/tribunaux",
+          "canton": "VD"
+        },
+        {
+          "nom": "Tribunal de première instance Genève",
+          "url": "https://justice.ge.ch/fr/institution/tribunal-de-premiere-instance",
+          "canton": "GE"
+        },
+        {
+          "nom": "Notaires vaudois",
+          "url": "https://www.notaires-vd.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Chambre des notaires Genève",
+          "tel": "022 781 89 70",
+          "url": "https://www.geneve-notaires.ch",
+          "canton": "GE"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "avocat",
+          "indication": "En cas de blocage par les héritiers ou de legs immobilier"
+        },
+        {
+          "type": "notaire",
+          "indication": "Pour assurer la délivrance et l'inscription des legs immobiliers"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "10 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Le légataire n'obtient pas la délivrance du bien légué ou veut refuser un legs",
+    "profane_aliases": [
+      "legs non payé",
+      "héritiers ne donnent pas le bien légué",
+      "refuser un legs",
+      "exécution testament",
+      "ma part de testament"
+    ],
+    "negative_signals": [
+      "bénéficiaire institué héritier (pas légataire)",
+      "succession épuisée",
+      "prescription de 10 ans dépassée"
+    ],
+    "required_facts": [
+      "objet du legs",
+      "date du décès",
+      "identité de l'héritier grevé",
+      "tentatives de délivrance"
+    ],
+    "last_verified_at": "2026-04-19",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-19",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "successions_indignite",
+    "domaine": "successions",
+    "sousDomaine": "indignité",
+    "tags": [
+      "indignité",
+      "héritier indigne",
+      "exclusion",
+      "atteinte",
+      "homicide",
+      "captation"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel motif invoquez-vous ?",
+        "options": [
+          "atteinte volontaire à la vie du défunt",
+          "atteinte grave à l'honneur",
+          "manipulation du testament",
+          "abandon / maltraitance"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Le défunt a-t-il pardonné après les faits ?",
+        "options": [
+          "non",
+          "oui expressément",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Les faits ont-ils donné lieu à une condamnation pénale ?",
+        "options": [
+          "oui",
+          "non",
+          "procédure en cours"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est votre qualité ?",
+        "options": [
+          "héritier potentiel à la place",
+          "exécuteur",
+          "simple intéressé"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'indignité (art. 540 CC) prive de plein droit un héritier ou légataire de tous ses droits dans la succession. Quatre motifs d'indignité sont prévus : (1) avoir, intentionnellement et sans droit, donné ou tenté de donner la mort au défunt ; (2) avoir, intentionnellement et sans droit, mis le défunt dans un état d'incapacité permanente de tester ; (3) avoir, par dol, menace ou violence, déterminé le défunt à faire ou à révoquer une disposition pour cause de mort, ou l'en avoir empêché ; (4) avoir dissimulé ou détruit une disposition pour cause de mort. L'indignité opère ipso jure mais doit être constatée judiciairement en cas de contestation. Le pardon du défunt fait disparaître l'indignité (art. 540 al. 2 CC). L'indigne est traité comme s'il était prédécédé : ses descendants succèdent par représentation (art. 541 CC). L'action en constatation se prescrit par 10 ans dès l'ouverture de la succession (art. 601 CC analogiquement). La compétence revient au tribunal du dernier domicile du défunt. Une condamnation pénale n'est pas nécessaire mais constitue une preuve forte.",
+      "articles": [
+        {
+          "ref": "CC 540",
+          "titre": "Indignité — causes",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_540"
+        },
+        {
+          "ref": "CC 541",
+          "titre": "Effets — représentation des indignes",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_541"
+        },
+        {
+          "ref": "CC 542",
+          "titre": "Capacité du successeur — moment décisif",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_542"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 132 III 305",
+          "resume": "L'indignité de l'art. 540 CC suppose une intention délictueuse établie. La négligence, même grave, ne suffit pas. La preuve incombe à celui qui invoque l'indignité."
+        },
+        {
+          "ref": "ATF 117 II 432",
+          "resume": "Le pardon du défunt (art. 540 al. 2 CC) doit être exprès — il ne se présume pas. Un simple maintien dans le testament après les faits ne vaut pas nécessairement pardon."
+        }
+      ],
+      "modeleLettre": "Objet : Action en constatation d'indignité successorale (art. 540 CC)\n\nRecommandé\n\n[HÉRITIER POTENTIELLEMENT INDIGNE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nÀ la suite du décès de [NOM DU DÉFUNT] survenu le [DATE], j'ai pris connaissance des faits suivants vous concernant :\n\n[DESCRIPTION PRÉCISE DES FAITS — date, lieu, nature]\n\nCes faits constituent à mon sens une cause d'indignité au sens de l'art. 540 al. 1 ch. [1/2/3/4] CC :\n[ ] atteinte à la vie du défunt\n[ ] mise en incapacité de tester\n[ ] dol, menace ou violence sur les dispositions à cause de mort\n[ ] dissimulation ou destruction d'un testament\n\nÉléments de preuve :\n- [pièce 1 : jugement pénal / procès-verbal / témoignage / etc.]\n- [pièce 2]\n\nEn ma qualité d'[QUALITÉ — héritier potentiel à votre place / exécuteur testamentaire], je vous notifie mon intention d'introduire une action en constatation d'indignité devant le tribunal civil du dernier domicile du défunt si vous ne renoncez pas spontanément à vos prétentions successorales.\n\nJe vous accorde un délai de 30 jours pour prendre position et, le cas échéant, renoncer formellement à votre part par déclaration auprès de la justice de paix.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Tribunal civil de l'arrondissement (VD)",
+          "url": "https://www.vd.ch/themes/justice/tribunaux",
+          "canton": "VD"
+        },
+        {
+          "nom": "Tribunal de première instance Genève",
+          "url": "https://justice.ge.ch/fr/institution/tribunal-de-premiere-instance",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats vaudois",
+          "url": "https://www.oav.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Justice de paix Vaud",
+          "url": "https://www.vd.ch/themes/justice/justices-de-paix",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "avocat",
+          "indication": "Indispensable — l'action en indignité est complexe et la preuve exigeante"
+        },
+        {
+          "type": "ministère public",
+          "indication": "Si les faits constituent une infraction pénale (homicide, contrainte)"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "10 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Faire constater l'indignité d'un héritier ayant gravement attenté au défunt ou à sa volonté",
+    "profane_aliases": [
+      "déshériter assassin",
+      "exclure héritier",
+      "héritier ne mérite pas",
+      "frère a tué papa",
+      "captation testament"
+    ],
+    "negative_signals": [
+      "simple mésentente familiale",
+      "négligence non intentionnelle",
+      "pardon exprès du défunt"
+    ],
+    "required_facts": [
+      "nature précise des faits",
+      "intention prouvée",
+      "absence de pardon",
+      "qualité d'héritier ou intéressé"
+    ],
+    "last_verified_at": "2026-04-19",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-19",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "successions_action_petition_heredite",
+    "domaine": "successions",
+    "sousDomaine": "pétition_d_hérédité",
+    "tags": [
+      "pétition d'hérédité",
+      "possession",
+      "biens successoraux",
+      "restitution",
+      "tiers possesseur",
+      "imprescriptible"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qui détient les biens contestés ?",
+        "options": [
+          "cohéritier",
+          "tiers de bonne foi",
+          "tiers de mauvaise foi",
+          "héritier apparent"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quels biens revendiquez-vous ?",
+        "options": [
+          "totalité de la succession",
+          "biens déterminés",
+          "fraction"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Depuis combien de temps détenez-vous le titre d'héritier ?",
+        "options": [
+          "récemment découvert",
+          "1-10 ans",
+          "> 10 ans"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Disposez-vous d'un certificat d'héritier ?",
+        "options": [
+          "oui",
+          "non, en cours",
+          "contesté"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'action en pétition d'hérédité (art. 598 CC) permet à celui qui se prétend héritier de réclamer contre tout détenteur la restitution des biens de la succession qu'il possède en vertu d'un titre successoral apparent ou sans titre. Elle se distingue de la revendication ordinaire (art. 641 al. 2 CC) en ce qu'elle se fonde sur la qualité d'héritier, non sur la propriété d'un bien isolé. L'action est ouverte contre tout tiers (héritier apparent, légataire, possesseur), même de bonne foi (art. 599 CC). Le demandeur doit prouver sa qualité d'héritier et l'inclusion des biens dans la succession. La restitution s'effectue selon les règles de la possession (art. 938-940 CC) : possesseur de bonne foi peut conserver les fruits ; possesseur de mauvaise foi doit tout restituer avec dommages-intérêts. La pétition d'hérédité est imprescriptible mais peut se heurter à la prescription acquisitive (10/30 ans selon les biens). La compétence revient au tribunal du dernier domicile du défunt (art. 28 CPC).",
+      "articles": [
+        {
+          "ref": "CC 598",
+          "titre": "Action en pétition d'hérédité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_598"
+        },
+        {
+          "ref": "CC 599",
+          "titre": "Effets de la pétition d'hérédité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_599"
+        },
+        {
+          "ref": "CC 600",
+          "titre": "Prescription de l'action",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_600"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 91 II 327",
+          "resume": "L'action en pétition d'hérédité de l'art. 598 CC est ouverte à tout héritier contre quiconque possède des biens successoraux, indépendamment de la nature du titre invoqué."
+        },
+        {
+          "ref": "ATF 132 III 677",
+          "resume": "La pétition d'hérédité diffère de la revendication ordinaire par son fondement (qualité d'héritier) et son objet (universalité ou fraction de succession). Les deux peuvent toutefois être cumulées."
+        }
+      ],
+      "modeleLettre": "Objet : Mise en demeure préalable à action en pétition d'hérédité (art. 598 CC)\n\nRecommandé\n\n[POSSESSEUR DES BIENS]\n[ADRESSE]\n\nMadame, Monsieur,\n\nÀ la suite du décès de [NOM DU DÉFUNT] survenu le [DATE], et conformément au certificat d'héritier délivré le [DATE] par [AUTORITÉ], il est établi que je suis héritier de feu [NOM] pour [QUOTITÉ : 1/2, 1/3, etc.].\n\nJe constate que vous détenez actuellement les biens suivants, qui appartiennent à la succession :\n- [BIEN 1 : description, localisation, valeur]\n- [BIEN 2 : description, localisation, valeur]\n\nVotre détention résulte de [TITRE INVOQUÉ : héritier apparent / légataire / acquisition à titre onéreux / sans titre].\n\nEn application de l'art. 598 CC, je vous mets en demeure de me restituer ces biens dans un délai de 30 jours dès réception de la présente, ainsi que tous les fruits perçus depuis [DATE] le cas échéant.\n\nÀ défaut, j'introduirai l'action en pétition d'hérédité devant le tribunal civil du dernier domicile du défunt à [LIEU] (art. 28 CPC), avec demande de dommages-intérêts.\n\nJe vous invite à m'indiquer dans le même délai votre disposition à un règlement amiable.\n\nJoint : copie du certificat d'héritier.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Tribunal civil de l'arrondissement (VD)",
+          "url": "https://www.vd.ch/themes/justice/tribunaux",
+          "canton": "VD"
+        },
+        {
+          "nom": "Tribunal de première instance Genève",
+          "url": "https://justice.ge.ch/fr/institution/tribunal-de-premiere-instance",
+          "canton": "GE"
+        },
+        {
+          "nom": "Justice de paix Vaud",
+          "url": "https://www.vd.ch/themes/justice/justices-de-paix",
+          "canton": "VD"
+        },
+        {
+          "nom": "Notaires vaudois",
+          "url": "https://www.notaires-vd.ch",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "avocat",
+          "indication": "Quasi-indispensable, action complexe avec questions de propriété et possession"
+        },
+        {
+          "type": "huissier judiciaire",
+          "indication": "Pour constater la possession et inventorier les biens"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Prescription",
+          "delai": "30 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Un héritier réclame des biens successoraux détenus par un tiers ou un héritier apparent",
+    "profane_aliases": [
+      "récupérer biens héritage",
+      "tiers a pris la maison",
+      "fausse héritière",
+      "héritier apparent",
+      "ma part détenue par un autre"
+    ],
+    "negative_signals": [
+      "simple revendication d'un bien isolé non lié à la succession",
+      "qualité d'héritier non établie",
+      "possesseur ayant acquis depuis > 30 ans"
+    ],
+    "required_facts": [
+      "qualité d'héritier prouvée",
+      "biens revendiqués",
+      "identité du possesseur",
+      "titre invoqué par le possesseur"
+    ],
+    "last_verified_at": "2026-04-19",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-19",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "successions_conjoint_survivant",
+    "domaine": "successions",
+    "sousDomaine": "part_du_conjoint",
+    "tags": [
+      "conjoint survivant",
+      "partenaire enregistré",
+      "veuf",
+      "veuve",
+      "part légale",
+      "usufruit"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est votre statut matrimonial ?",
+        "options": [
+          "conjoint marié",
+          "partenaire enregistré",
+          "concubin / non marié"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Y a-t-il des enfants du défunt ?",
+        "options": [
+          "oui, communs",
+          "oui, d'une union antérieure",
+          "non"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Existe-t-il un testament ou contrat de mariage ?",
+        "options": [
+          "testament",
+          "contrat de mariage",
+          "les deux",
+          "rien"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Quel est le régime matrimonial ?",
+        "options": [
+          "participation aux acquêts (légal)",
+          "communauté",
+          "séparation",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le conjoint survivant ou partenaire enregistré bénéficie d'une part successorale légale fixée à l'art. 462 CC. En présence de descendants : 1/2 de la succession au conjoint, 1/2 aux descendants. En présence d'héritiers de la branche paternelle ou maternelle (mais pas de descendants) : 3/4 au conjoint, 1/4 aux parents. En l'absence d'héritiers réservataires des branches paternelle/maternelle : la totalité au conjoint. Important : avant le partage successoral, il faut d'abord liquider le régime matrimonial (art. 204 ss CC pour la participation aux acquêts) — le conjoint survivant reçoit la moitié des acquêts du défunt qui s'ajoute à sa propre fortune. Seuls les biens propres du défunt + sa moitié des acquêts entrent dans la succession à proprement parler. Depuis la réforme 2023, le conjoint survivant a une réserve égale à 1/2 de sa part légale (art. 471 CC). Le testateur peut encore avantager le conjoint via la quotité disponible étendue, ou lui attribuer un usufruit sur la part successorale revenant aux enfants communs (art. 473 CC) — option fréquente pour préserver le logement familial. Les concubins n'héritent PAS légalement.",
+      "articles": [
+        {
+          "ref": "CC 462",
+          "titre": "Part légale du conjoint survivant ou partenaire enregistré",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_462"
+        },
+        {
+          "ref": "CC 471",
+          "titre": "Réserve du conjoint (1/2 de la part légale)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_471"
+        },
+        {
+          "ref": "CC 473",
+          "titre": "Usufruit du conjoint sur la part des enfants communs",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_473"
+        },
+        {
+          "ref": "CC 204",
+          "titre": "Liquidation du régime matrimonial — participation aux acquêts",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_204"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 137 III 113",
+          "resume": "La liquidation du régime matrimonial (art. 204 ss CC) précède la dévolution successorale. Les créances entre époux ne se confondent pas avec les droits successoraux du conjoint survivant."
+        },
+        {
+          "ref": "ATF 138 III 689",
+          "resume": "L'usufruit de l'art. 473 CC (en cas d'enfants communs) ne peut grever que la part revenant à ces enfants, pas celle d'enfants d'un autre lit. L'option doit être exercée par testament."
+        }
+      ],
+      "modeleLettre": "Objet : Demande d'inventaire et de calcul des parts successorales (conjoint survivant)\n\n[NOTAIRE / JUSTICE DE PAIX]\n[ADRESSE]\n\nMadame, Monsieur,\n\nÀ la suite du décès de mon époux/épouse [NOM DU DÉFUNT] survenu le [DATE], dernier domicile à [ADRESSE], je sollicite votre intervention pour :\n\n1. PROCÉDER À LA LIQUIDATION DU RÉGIME MATRIMONIAL en vigueur ([PARTICIPATION AUX ACQUÊTS / COMMUNAUTÉ / SÉPARATION]) selon les art. 204 ss CC, afin de séparer les biens propres et les acquêts respectifs.\n\n2. DÉTERMINER LA MASSE SUCCESSORALE résultant des biens propres du défunt et de sa part d'acquêts.\n\n3. CALCULER MES DROITS SUCCESSORAUX en application de l'art. 462 CC :\n[ ] en présence d'enfants communs : 1/2 de la succession\n[ ] en présence d'enfants d'une autre union : 1/2 (mais réserve à recalculer)\n[ ] en présence d'héritiers parents/branche paternelle : 3/4\n[ ] en l'absence d'autres réservataires : totalité\n\n4. ÉVALUER L'OPPORTUNITÉ DE L'USUFRUIT de l'art. 473 CC le cas échéant.\n\nÉtat civil : marié(e) le [DATE] à [LIEU]. Régime : [RÉGIME].\nEnfants : [LISTER avec qualité — communs / non communs].\nTestament éventuel : [oui/non, daté du JJ.MM.AAAA].\n\nJoint : acte de décès, livret de famille, contrat de mariage le cas échéant.\n\nDans l'attente de votre rendez-vous, je vous prie d'agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Notaires vaudois",
+          "url": "https://www.notaires-vd.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Chambre des notaires Genève",
+          "tel": "022 781 89 70",
+          "url": "https://www.geneve-notaires.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Justice de paix Vaud",
+          "url": "https://www.vd.ch/themes/justice/justices-de-paix",
+          "canton": "VD"
+        },
+        {
+          "nom": "Pro Senectute Vaud — conseils juridiques",
+          "url": "https://vd.prosenectute.ch",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "notaire",
+          "indication": "Indispensable pour liquider le régime matrimonial et délivrer le certificat d'héritier"
+        },
+        {
+          "type": "avocat",
+          "indication": "En cas de conflit avec d'autres héritiers ou de patrimoine international"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Le conjoint survivant ou partenaire enregistré veut connaître ses droits successoraux légaux",
+    "profane_aliases": [
+      "veuf hériter",
+      "veuve combien hérite",
+      "part conjoint succession",
+      "moitié de l'héritage",
+      "garder la maison après décès"
+    ],
+    "negative_signals": [
+      "concubin sans testament",
+      "divorce intervenu avant le décès",
+      "régime matrimonial déjà liquidé"
+    ],
+    "required_facts": [
+      "lien matrimonial valide",
+      "régime matrimonial",
+      "présence d'enfants",
+      "existence d'un testament"
+    ],
+    "last_verified_at": "2026-04-19",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-19",
+    "readiness": "beta",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
+  }
+]

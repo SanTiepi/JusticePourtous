@@ -10,6 +10,7 @@
       "entretien",
       "recouvrement"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -99,7 +100,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Mise en demeure du débiteur",
+          "delai": "dès 1er impayé",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Saisine du BRAPA (bureau de recouvrement cantonal)",
+          "delai": "dès 1-3 mois d'impayé selon canton",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Poursuite pour dettes",
+          "delai": "dès exigibilité",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Plainte pénale pour violation d'une obligation d'entretien",
+          "delai": "3 mois dès connaissance",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC/CP état 2025-01-01",
@@ -120,7 +153,60 @@
       "nombre de mois impayés",
       "montant mensuel du",
       "canton de domicile"
-    ]
+    ],
+    "cascades": [
+      {
+        "titre": "Recouvrement d'une pension alimentaire impayée",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Mise en demeure du débiteur",
+            "description": "Courrier recommandé réclamant les arriérés avec décompte précis et délai de paiement (typiquement 10 jours).",
+            "delai": "dès 1er impayé",
+            "base_legale": "CC 289",
+            "preuve_generee": "Copie + accusé de réception"
+          },
+          {
+            "numero": 2,
+            "action": "Saisine du BRAPA (bureau de recouvrement cantonal)",
+            "description": "Demander l'avance et/ou le recouvrement de la pension auprès du service cantonal compétent. Conditions variables selon canton.",
+            "delai": "dès 1-3 mois d'impayé selon canton",
+            "base_legale": "OAiR / LAVI cantonale",
+            "cout": "Gratuit"
+          },
+          {
+            "numero": 3,
+            "action": "Poursuite pour dettes",
+            "description": "Réquisition de poursuite à l'Office des poursuites du domicile du débiteur (la pension bénéficie d'un rang privilégié en cas de faillite).",
+            "delai": "dès exigibilité",
+            "base_legale": "LP 38 / LP 219",
+            "preuve_generee": "Commandement de payer"
+          },
+          {
+            "numero": 4,
+            "action": "Plainte pénale pour violation d'une obligation d'entretien",
+            "description": "Si le débiteur a les moyens et refuse : plainte pénale dans les 3 mois dès connaissance de l'acte et de l'auteur.",
+            "delai": "3 mois dès connaissance",
+            "base_legale": "CP 217",
+            "branches": [
+              {
+                "si": "débiteur solvable mais de mauvaise foi",
+                "alors": "condamnation pénale possible"
+              },
+              {
+                "si": "débiteur insolvable",
+                "alors": "avances cantonales uniquement"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_divorce_procedure",
@@ -133,6 +219,7 @@
       "commun accord",
       "tribunal"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -228,7 +315,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Choix du type de procédure",
+          "delai": "préparation",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Préparation convention sur effets accessoires",
+          "delai": "sous 60 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt requête au tribunal",
+          "delai": "quand prêt",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Audience(s) au tribunal",
+          "delai": "3-12 mois selon canton",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Jugement et inscription",
+          "delai": "30 jours délai appel",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC/CPC état 2025-01-01",
@@ -249,7 +368,67 @@
       "enfants mineurs ou non",
       "durée du mariage",
       "accord sur les biens"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Procédure de divorce (consentement mutuel ou contentieux)",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Choix du type de procédure",
+            "description": "Consentement mutuel (requête commune CC 111) ou unilatéral après 2 ans séparation (CC 114) ou rupture du lien conjugal (CC 115).",
+            "delai": "préparation",
+            "base_legale": "CC 111 / CC 114 / CC 115",
+            "preuve_generee": "Analyse de la voie appropriée"
+          },
+          {
+            "numero": 2,
+            "action": "Préparation convention sur effets accessoires",
+            "description": "Convention écrite : autorité parentale, garde, relations personnelles, pensions enfants (tables Zurich/Bern), pension époux, liquidation régime, prévoyance 2e pilier.",
+            "delai": "sous 60 jours",
+            "base_legale": "CC 111 / CC 140 / CC 285 / CC 122",
+            "preuve_generee": "Convention signée"
+          },
+          {
+            "numero": 3,
+            "action": "Dépôt requête au tribunal",
+            "description": "Dépôt requête commune (si consensus) ou demande (si contentieux) au tribunal civil du canton de domicile. Joindre extrait mariage, convention, situations financières.",
+            "delai": "quand prêt",
+            "base_legale": "CPC 285 / CPC 290",
+            "cout": "Émoluments variables 1'000-5'000 CHF",
+            "preuve_generee": "Accusé de dépôt"
+          },
+          {
+            "numero": 4,
+            "action": "Audience(s) au tribunal",
+            "description": "Audition des époux (convention ratifiée ou contestée). En contentieux : mesures provisionnelles possibles (CC 276 CPC), échange d'écritures.",
+            "delai": "3-12 mois selon canton",
+            "branches": [
+              {
+                "si": "convention ratifiée",
+                "alors": "etape 5"
+              },
+              {
+                "si": "contestation",
+                "alors": "procédure probatoire prolongée"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "action": "Jugement et inscription",
+            "description": "Jugement de divorce rendu, force de chose jugée après 30 jours (délai d'appel). Transmission d'office à l'office d'état civil.",
+            "delai": "30 jours délai appel",
+            "base_legale": "CC 119 / CC 122"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_garde_modification",
@@ -262,6 +441,7 @@
       "droit de visite",
       "changement"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -354,7 +534,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Évaluation de la situation de l'enfant",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Tentative de conciliation parentale",
+          "delai": "sous 60 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Saisine autorité (APEA ou tribunal)",
+          "delai": "dès échec médiation",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Audition de l'enfant (≥6 ans)",
+          "delai": "pendant instruction",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision et exécution",
+          "delai": "selon procédure",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -375,7 +587,58 @@
       "motif du changement",
       "age de l'enfant",
       "accord ou opposition de l'autre parent"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Modification de la garde ou de l'autorité parentale",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Évaluation de la situation de l'enfant",
+            "description": "Documenter le changement justifiant une modification : nouveau domicile, difficultés scolaires, conflit grave, mise en danger, évolution des besoins de l'enfant.",
+            "delai": "immédiat",
+            "base_legale": "CC 301a / CC 134",
+            "preuve_generee": "Dossier contextualisé"
+          },
+          {
+            "numero": 2,
+            "action": "Tentative de conciliation parentale",
+            "description": "Médiation familiale ou discussion structurée entre parents. Un accord écrit signé puis ratifié simplifie grandement la suite.",
+            "delai": "sous 60 jours",
+            "cout": "Médiation 100-200 CHF/h (souvent subventionnée)",
+            "preuve_generee": "PV médiation ou convention"
+          },
+          {
+            "numero": 3,
+            "action": "Saisine autorité (APEA ou tribunal)",
+            "description": "Hors divorce : APEA cantonale. En cours/après divorce : tribunal civil. Requête écrite motivée documentant le changement significatif.",
+            "delai": "dès échec médiation",
+            "base_legale": "CC 134 / CC 314 / CC 275a",
+            "preuve_generee": "Requête déposée"
+          },
+          {
+            "numero": 4,
+            "action": "Audition de l'enfant (≥6 ans)",
+            "description": "Droit de l'enfant d'être entendu (art. 298 CPC, ATF 131 III 553). L'avis de l'enfant est pris en compte selon son âge et sa maturité.",
+            "delai": "pendant instruction",
+            "base_legale": "CPC 298 / CC 314a",
+            "preuve_generee": "PV d'audition"
+          },
+          {
+            "numero": 5,
+            "action": "Décision et exécution",
+            "description": "Décision APEA/tribunal. Appel dans 30 jours. Décision exécutoire incluant modalités pratiques (prise en charge, transport).",
+            "delai": "selon procédure",
+            "base_legale": "CC 450 / CPC 311"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_pension_montant",
@@ -389,6 +652,7 @@
       "enfant",
       "conjoint"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -487,7 +751,39 @@
           "url": "boussole.app"
         }
       },
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Collecte des situations financières",
+          "delai": "sous 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Calcul selon méthode applicable",
+          "delai": "sous 14 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Proposition écrite et négociation",
+          "delai": "sous 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Ratification judiciaire ou requête",
+          "delai": "selon procédure",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Révision si changement notable",
+          "delai": "dès changement",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -508,7 +804,58 @@
       "changement de situation",
       "nombre d'enfants",
       "revenus des deux parents"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Calcul ou révision d'une pension alimentaire",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Collecte des situations financières",
+            "description": "Revenus nets des deux parents (salaires, bonus, revenus locatifs), charges (loyer, primes LAMal, impôts), dettes. Budget détaillé obligatoire.",
+            "delai": "sous 30 jours",
+            "base_legale": "CC 285 / CC 125",
+            "preuve_generee": "Budgets annotés"
+          },
+          {
+            "numero": 2,
+            "action": "Calcul selon méthode applicable",
+            "description": "Méthode en 2 étapes (nouveau droit depuis 2017) : minimum vital LP + répartition excédent. Pour enfants : table zurichoise/bernoise indicative.",
+            "delai": "sous 14 jours",
+            "base_legale": "CC 276 / CC 285 / ATF 147 III 265",
+            "preuve_generee": "Calcul détaillé écrit"
+          },
+          {
+            "numero": 3,
+            "action": "Proposition écrite et négociation",
+            "description": "Proposition chiffrée à l'autre parent (idéalement via médiation familiale ou conseils juridiques respectifs).",
+            "delai": "sous 30 jours",
+            "cout": "Médiation variable",
+            "preuve_generee": "Proposition datée"
+          },
+          {
+            "numero": 4,
+            "action": "Ratification judiciaire ou requête",
+            "description": "Si accord : convention ratifiée par le juge (divorce, mesures protectrices). Si contentieux : requête en fixation/modification de pension.",
+            "delai": "selon procédure",
+            "base_legale": "CC 176 / CC 179 / CC 286",
+            "preuve_generee": "Jugement ou convention ratifiée"
+          },
+          {
+            "numero": 5,
+            "action": "Révision si changement notable",
+            "description": "En cas de changement significatif (perte emploi, nouvelle naissance, revenus augmentés de +20%) : action en modification de la contribution d'entretien.",
+            "delai": "dès changement",
+            "base_legale": "CC 286 / CC 129"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_violence_conjugale",
@@ -521,6 +868,7 @@
       "mesures",
       "urgence"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -625,7 +973,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Mise en sécurité immédiate",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Expulsion de l'auteur du logement",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt de plainte pénale",
+          "delai": "dans les 3 mois dès connaissance",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Mesures civiles de protection",
+          "delai": "urgence",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Accompagnement LAVI et suivi",
+          "delai": "à tout moment",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC/CP état 2025-01-01",
@@ -646,7 +1026,60 @@
       "urgence immédiate",
       "enfants dans le foyer",
       "plainte déposée ou non"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Protection face à la violence conjugale",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Mise en sécurité immédiate",
+            "description": "Contacter 117 (police), 143 (aide), 147 (enfants). Centre LAVI cantonal / maison d'accueil. Certificat médical pour toute blessure — essentiel pour la suite.",
+            "delai": "immédiat",
+            "base_legale": "CP 180 / LAVI 1",
+            "preuve_generee": "Rapport police + certificat médical"
+          },
+          {
+            "numero": 2,
+            "action": "Expulsion de l'auteur du logement",
+            "description": "Sur plainte ou d'office, la police peut expulser l'auteur pour 10-14 jours (mesures cantonales de protection). Prolongation par le tribunal possible.",
+            "delai": "immédiat",
+            "base_legale": "lois cantonales protection / CC 28b",
+            "preuve_generee": "Décision d'expulsion"
+          },
+          {
+            "numero": 3,
+            "action": "Dépôt de plainte pénale",
+            "description": "Plainte formelle pour lésions corporelles (CP 123), menaces (CP 180), contrainte (CP 181), violence conjugale (CP 55a). Certains délits poursuivis d'office.",
+            "delai": "dans les 3 mois dès connaissance",
+            "base_legale": "CPP 301 / CP 123 / CP 55a",
+            "preuve_generee": "PV de plainte"
+          },
+          {
+            "numero": 4,
+            "action": "Mesures civiles de protection",
+            "description": "Requête au tribunal civil : interdiction d'approche, interdiction de contact, attribution exclusive du logement. Procédure sommaire rapide.",
+            "delai": "urgence",
+            "base_legale": "CC 28b",
+            "cout": "Frais réduits (aide judiciaire possible)",
+            "preuve_generee": "Décision de protection"
+          },
+          {
+            "numero": 5,
+            "action": "Accompagnement LAVI et suivi",
+            "description": "Aide immédiate LAVI (psychologique, juridique, financière). Consultation gratuite, indemnisations possibles pour préjudice. Suivi long terme assuré.",
+            "delai": "à tout moment",
+            "base_legale": "LAVI",
+            "cout": "Gratuit"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_succession_reserve",
@@ -659,6 +1092,7 @@
       "testament",
       "quotite disponible"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -752,7 +1186,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Identification des héritiers réservataires",
+          "delai": "dès ouverture succession",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande du certificat d'héritier et inventaire",
+          "delai": "dans les 6 mois",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Analyse des libéralités de son vivant",
+          "delai": "sous 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action en réduction",
+          "delai": "1 an dès connaissance",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action en rapport entre cohéritiers",
+          "delai": "jusqu'au partage",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2023-01-01",
@@ -773,7 +1239,59 @@
       "existence d'un testament",
       "nombre d'héritiers",
       "valeur estimee de la succession"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Protection de la réserve héréditaire",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Identification des héritiers réservataires",
+            "description": "Depuis 2023 : descendants (1/2 de leur part), conjoint/partenaire (1/2). Parents ne sont plus réservataires.",
+            "delai": "dès ouverture succession",
+            "base_legale": "CC 471 / CC 470",
+            "preuve_generee": "Dossier d'hoirie"
+          },
+          {
+            "numero": 2,
+            "action": "Demande du certificat d'héritier et inventaire",
+            "description": "Certificat d'héritier auprès de la justice de paix/notaire. Inventaire des biens successoraux (comptes, immobilier, dettes) pour établir la masse.",
+            "delai": "dans les 6 mois",
+            "base_legale": "CC 551 / CC 581",
+            "cout": "Émoluments variables",
+            "preuve_generee": "Certificat + inventaire"
+          },
+          {
+            "numero": 3,
+            "action": "Analyse des libéralités de son vivant",
+            "description": "Relever donations et libéralités (contrat d'assurance-vie, donations immobilières, avantages déguisés) susceptibles d'être rapportées à la masse.",
+            "delai": "sous 30 jours",
+            "base_legale": "CC 475 / CC 626-633",
+            "preuve_generee": "Liste des libéralités"
+          },
+          {
+            "numero": 4,
+            "action": "Action en réduction",
+            "description": "Action en réduction contre bénéficiaires et légataires pour récupérer la part réservataire violée. Délai : 1 an dès connaissance de la violation, maximum 10 ans.",
+            "delai": "1 an dès connaissance",
+            "base_legale": "CC 522 / CC 533",
+            "preuve_generee": "Action déposée au tribunal"
+          },
+          {
+            "numero": 5,
+            "action": "Action en rapport entre cohéritiers",
+            "description": "Si libéralités avantagent un héritier : action en rapport pour rétablir l'égalité entre héritiers (sauf dispense expresse).",
+            "delai": "jusqu'au partage",
+            "base_legale": "CC 626 / CC 634"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_reconnaissance_paternite",
@@ -786,6 +1304,7 @@
       "ADN",
       "contestation"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -874,7 +1393,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Vérification de la situation",
+          "delai": "avant ou après naissance",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Déclaration à l'office d'état civil",
+          "delai": "à tout moment",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Convention d'autorité parentale conjointe (optionnel)",
+          "delai": "à tout moment",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Fixation contribution d'entretien",
+          "delai": "dès reconnaissance",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Contestation si vices",
+          "delai": "5 ans",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -895,7 +1446,59 @@
       "reconnaissance déjà faite ou non",
       "accord ou opposition des parties",
       "age de l'enfant"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Reconnaissance de paternité (acte volontaire)",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérification de la situation",
+            "description": "Reconnaissance possible par le père biologique non marié avec la mère, avant ou après la naissance. Mineur dès 16 ans avec consentement représentant légal.",
+            "delai": "avant ou après naissance",
+            "base_legale": "CC 260 / CC 260a",
+            "preuve_generee": "Données personnelles mère + père + enfant"
+          },
+          {
+            "numero": 2,
+            "action": "Déclaration à l'office d'état civil",
+            "description": "Se présenter à l'office d'état civil (lieu naissance ou domicile) avec pièces d'identité. Déclaration personnelle du père, inscription immédiate dans les registres.",
+            "delai": "à tout moment",
+            "base_legale": "CC 260 / OEC 11",
+            "cout": "~70 CHF",
+            "preuve_generee": "Acte de reconnaissance"
+          },
+          {
+            "numero": 3,
+            "action": "Convention d'autorité parentale conjointe (optionnel)",
+            "description": "Parents non mariés : autorité parentale conjointe nécessite déclaration commune à l'APEA ou à l'état civil. Sans déclaration : autorité à la mère.",
+            "delai": "à tout moment",
+            "base_legale": "CC 298a / OEC 11a",
+            "preuve_generee": "Convention signée"
+          },
+          {
+            "numero": 4,
+            "action": "Fixation contribution d'entretien",
+            "description": "Obligation d'entretien du père automatique dès reconnaissance. Convention amiable ratifiée par APEA ou jugement si désaccord.",
+            "delai": "dès reconnaissance",
+            "base_legale": "CC 276 / CC 285 / CC 287",
+            "preuve_generee": "Convention ratifiée ou jugement"
+          },
+          {
+            "numero": 5,
+            "action": "Contestation si vices",
+            "description": "Reconnaissance peut être contestée par l'enfant, la mère ou le père en cas de vice de consentement (dans les 5 ans, ou 1 an dès connaissance).",
+            "delai": "5 ans",
+            "base_legale": "CC 260a / CC 260b / CC 260c"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_mesures_provisionnelles",
@@ -907,6 +1510,7 @@
       "protection",
       "superprovisionnelles"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -997,7 +1601,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Identification du besoin urgent",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Choix de la procédure",
+          "delai": "sous 7 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt requête au tribunal civil",
+          "delai": "quand prêt",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Audience sommaire",
+          "delai": "4-8 semaines selon canton",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Appel si nécessaire",
+          "delai": "10 jours",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CPC/CC état 2025-01-01",
@@ -1018,7 +1654,68 @@
       "urgence (danger, dissipation de biens)",
       "mesures demandees",
       "canton compétent"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Requête en mesures protectrices / provisionnelles",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Identification du besoin urgent",
+            "description": "Situation justifiant urgence : séparation, conflit sur garde, besoin d'attribution logement, pension urgente, protection contre violence.",
+            "delai": "immédiat",
+            "base_legale": "CC 172 / CC 176 / CPC 261",
+            "preuve_generee": "Analyse de l'urgence"
+          },
+          {
+            "numero": 2,
+            "action": "Choix de la procédure",
+            "description": "Couple marié non divorcé : mesures protectrices de l'union conjugale (CC 172). En instance de divorce : mesures provisionnelles (CC 276 CPC). Partenariat enregistré : équivalent.",
+            "delai": "sous 7 jours",
+            "base_legale": "CC 172-176 / CPC 276",
+            "preuve_generee": "Choix motivé"
+          },
+          {
+            "numero": 3,
+            "action": "Dépôt requête au tribunal civil",
+            "description": "Requête écrite avec conclusions chiffrées (pension, garde, logement), faits, preuves. Procédure sommaire.",
+            "delai": "quand prêt",
+            "base_legale": "CPC 271-276",
+            "cout": "Émoluments modestes (aide judiciaire possible)",
+            "preuve_generee": "Accusé de dépôt"
+          },
+          {
+            "numero": 4,
+            "action": "Audience sommaire",
+            "description": "Audience de conciliation puis jugement. Décision exécutoire immédiatement (sauf effet suspensif).",
+            "delai": "4-8 semaines selon canton",
+            "base_legale": "CPC 273",
+            "branches": [
+              {
+                "si": "accord trouvé",
+                "alors": "convention ratifiée"
+              },
+              {
+                "si": "contestation",
+                "alors": "décision au fond"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "action": "Appel si nécessaire",
+            "description": "Appel dans les 10 jours (procédure sommaire). Effet suspensif à demander expressément. Décision d'appel rapide.",
+            "delai": "10 jours",
+            "base_legale": "CPC 314"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_droit_visite",
@@ -1031,6 +1728,7 @@
       "vacances",
       "refus"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1118,7 +1816,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Action en modification du droit de visite",
+          "delai": "À tout moment en cas de changement notable",
+          "base_legale": "CC 274a",
+          "consequence": "Décision judiciaire ou APEA"
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -1139,7 +1845,11 @@
       "ce qui ne fonctionne pas",
       "age de l'enfant",
       "jugement ou convention existante"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_curatelle",
@@ -1152,6 +1862,7 @@
       "adulte",
       "incapacité"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1273,7 +1984,12 @@
       "raison de la demande",
       "degre d'incapacité",
       "mesures déjà prises"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_mariage_etranger",
@@ -1286,6 +2002,7 @@
       "transcription",
       "validité"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1366,7 +2083,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Constitution du dossier",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt à l'office de l'état civil",
+          "delai": "dans les 30 jours suivant la constitution du dossier",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai d'instruction cantonal",
+          "delai": "4 à 12 semaines",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours auprès de l'autorité cantonale de surveillance",
+          "delai": "30 jours dès notification du refus",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC/LDIP état 2025-01-01",
@@ -1387,7 +2130,56 @@
       "date du mariage",
       "nationalite des époux",
       "documents disponibles"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Reconnaissance d'un mariage célébré à l'étranger",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Constitution du dossier",
+            "description": "Rassembler l'acte de mariage étranger (apostille ou légalisé), traduction par traducteur juré, pièces d'identité des époux, justificatif de domicile suisse.",
+            "delai": "immédiat",
+            "preuve_generee": "Dossier complet horodaté"
+          },
+          {
+            "numero": 2,
+            "action": "Dépôt à l'office de l'état civil",
+            "description": "Déposer la demande de transcription auprès de l'office de l'état civil du domicile suisse (art. 45 LDIP).",
+            "delai": "dans les 30 jours suivant la constitution du dossier",
+            "base_legale": "LDIP 45",
+            "preuve_generee": "Quittance de dépôt"
+          },
+          {
+            "numero": 3,
+            "action": "Délai d'instruction cantonal",
+            "delai": "4 à 12 semaines",
+            "branches": [
+              {
+                "si": "transcription acceptée",
+                "alors": "fin du processus (mariage reconnu)"
+              },
+              {
+                "si": "refus pour motif d'ordre public (CC 105)",
+                "alors": "etape 4 (recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours auprès de l'autorité cantonale de surveillance",
+            "description": "Déposer un recours motivé dans le délai indiqué dans la décision (généralement 30 jours).",
+            "delai": "30 jours dès notification du refus",
+            "base_legale": "CC 90 al. 3 / droit cantonal de procédure"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_partenariat_enregistre",
@@ -1400,6 +2192,7 @@
       "même sexe",
       "LPart"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1473,7 +2266,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Préparation des documents",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt de la requête à l'office de l'état civil",
+          "delai": "dans les 14 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai d'examen et célébration",
+          "delai": "selon disponibilités cantonales (généralement 1 à 3 mois)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours administratif",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "1 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LPart/CC état 2025-01-01",
@@ -1494,7 +2319,56 @@
       "dissolution souhaitee ou non",
       "enfants communs",
       "canton de domicile"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Enregistrement d'un partenariat",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Préparation des documents",
+            "description": "Réunir pièces d'identité, attestations de domicile, certificats individuels d'état civil, déclarations de capacité à conclure un partenariat.",
+            "delai": "immédiat",
+            "preuve_generee": "Dossier complet"
+          },
+          {
+            "numero": 2,
+            "action": "Dépôt de la requête à l'office de l'état civil",
+            "description": "Soumettre la requête commune des deux partenaires (LPart 5).",
+            "delai": "dans les 14 jours",
+            "base_legale": "LPart 5",
+            "preuve_generee": "Accusé de réception de l'office"
+          },
+          {
+            "numero": 3,
+            "action": "Délai d'examen et célébration",
+            "delai": "selon disponibilités cantonales (généralement 1 à 3 mois)",
+            "branches": [
+              {
+                "si": "conditions remplies",
+                "alors": "célébration et enregistrement"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 4 (recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours administratif",
+            "description": "Recours auprès de l'autorité cantonale de surveillance de l'état civil.",
+            "delai": "30 jours dès notification",
+            "base_legale": "LPart / droit cantonal"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_adoption",
@@ -1507,6 +2381,7 @@
       "conditions",
       "consentement"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1598,7 +2473,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "28 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "16 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "1 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -1619,7 +2520,11 @@
       "age de l'adoptant",
       "situation familiale",
       "nationalite de l'enfant"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_autorite_parentale_conjointe",
@@ -1632,6 +2537,7 @@
       "declaration",
       "APEA"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1719,7 +2625,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Recours contre décision APEA",
+          "delai": "30 jours dès notification",
+          "base_legale": "CC 450b / procédure cantonale",
+          "consequence": "Décision devient définitive"
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -1740,7 +2654,11 @@
       "accord des deux parents",
       "age de l'enfant",
       "declaration déjà faite ou non"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_enlevement_international",
@@ -1753,6 +2671,7 @@
       "La Haye",
       "retour"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1845,7 +2764,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Constat de l'enlèvement",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt de la demande à l'autorité centrale (OFJ)",
+          "delai": "le plus tôt possible — délai d'1 an pour bénéficier du retour automatique (art. 12 CLaH80)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure devant le tribunal cantonal compétent",
+          "delai": "6 semaines (objectif CLaH80)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours au Tribunal fédéral",
+          "delai": "10 jours dès notification (matière urgente)",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CLaH 80/LF-EEA état 2025-01-01",
@@ -1866,7 +2811,56 @@
       "date du deplacement",
       "décision de garde existante",
       "autorite parentale de chaque parent"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Demande de retour d'enfant enlevé internationalement",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Constat de l'enlèvement",
+            "description": "Documenter le déplacement illicite : copies du passeport de l'enfant, jugements relatifs à la garde, communications avec l'autre parent, billets de transport.",
+            "delai": "immédiat",
+            "preuve_generee": "Dossier de preuves daté"
+          },
+          {
+            "numero": 2,
+            "action": "Dépôt de la demande à l'autorité centrale (OFJ)",
+            "description": "Saisir l'Office fédéral de la justice (Autorité centrale Convention de La Haye 1980) pour demander le retour de l'enfant.",
+            "delai": "le plus tôt possible — délai d'1 an pour bénéficier du retour automatique (art. 12 CLaH80)",
+            "base_legale": "CLaH80 art. 3 et 12 / LF-EEA 5",
+            "preuve_generee": "Accusé de réception OFJ"
+          },
+          {
+            "numero": 3,
+            "action": "Procédure devant le tribunal cantonal compétent",
+            "delai": "6 semaines (objectif CLaH80)",
+            "branches": [
+              {
+                "si": "retour ordonné",
+                "alors": "exécution du retour"
+              },
+              {
+                "si": "refus (intégration, risque grave)",
+                "alors": "etape 4 (recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours au Tribunal fédéral",
+            "description": "Recours en matière civile contre la décision cantonale.",
+            "delai": "10 jours dès notification (matière urgente)",
+            "base_legale": "LTF 100 al. 2 let. c"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_reconnaissance_paternite_procedure",
@@ -1879,6 +2873,7 @@
       "filiation",
       "état civil"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1959,7 +2954,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Préparation du dossier filiation",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Reconnaissance volontaire à l'état civil",
+          "delai": "à tout moment dès la conception",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Si reconnaissance refusée ou contestée",
+          "delai": "1 an dès la naissance pour la mère, 1 an dès découverte des faits pour l'enfant",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action en paternité au tribunal",
+          "delai": "imprescriptible pour l'enfant; 1 an pour la mère dès la naissance",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "1 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -1980,7 +3007,56 @@
       "accord de la mere",
       "nationalite du pere",
       "lieu de naissance de l'enfant"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Reconnaissance ou action en paternité",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Préparation du dossier filiation",
+            "description": "Rassembler acte de naissance de l'enfant, déclaration éventuelle d'accord de la mère, pièces d'identité.",
+            "delai": "immédiat",
+            "preuve_generee": "Dossier filiation"
+          },
+          {
+            "numero": 2,
+            "action": "Reconnaissance volontaire à l'état civil",
+            "description": "Le père déclare sa paternité auprès de l'office de l'état civil (CC 260).",
+            "delai": "à tout moment dès la conception",
+            "base_legale": "CC 260",
+            "preuve_generee": "Acte de reconnaissance"
+          },
+          {
+            "numero": 3,
+            "action": "Si reconnaissance refusée ou contestée",
+            "delai": "1 an dès la naissance pour la mère, 1 an dès découverte des faits pour l'enfant",
+            "branches": [
+              {
+                "si": "accord trouvé",
+                "alors": "fin (reconnaissance enregistrée)"
+              },
+              {
+                "si": "désaccord persistant",
+                "alors": "etape 4 (action judiciaire)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Action en paternité au tribunal",
+            "description": "Saisir le tribunal civil du domicile de l'enfant, demander une expertise ADN.",
+            "delai": "imprescriptible pour l'enfant; 1 an pour la mère dès la naissance",
+            "base_legale": "CC 261 / CC 263"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_contestation_paternite",
@@ -1993,6 +3069,7 @@
       "filiation",
       "ADN"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2070,7 +3147,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -2091,7 +3176,11 @@
       "délai depuis la naissance",
       "preuves ou indices",
       "enfant ne dans le mariage ou non"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_nom_famille",
@@ -2104,6 +3193,7 @@
       "mariage",
       "enfant"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2173,7 +3263,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Identification du motif",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande à l'autorité cantonale de surveillance de l'état civil",
+          "delai": "dans le mois suivant la constitution du dossier",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision cantonale",
+          "delai": "2 à 6 mois selon canton",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours cantonal puis fédéral",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -2194,7 +3310,56 @@
       "contexte (divorce, mariage, autre)",
       "nom actuel et nom souhaite",
       "enfants concernes"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Changement de nom de famille",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Identification du motif",
+            "description": "Préciser le motif (mariage, divorce, motifs sérieux). Réunir pièces d'identité, état civil, justificatifs.",
+            "delai": "immédiat",
+            "preuve_generee": "Dossier motivé"
+          },
+          {
+            "numero": 2,
+            "action": "Demande à l'autorité cantonale de surveillance de l'état civil",
+            "description": "Déposer une requête écrite et motivée (CC 30).",
+            "delai": "dans le mois suivant la constitution du dossier",
+            "base_legale": "CC 30 / CC 270 / CC 160",
+            "preuve_generee": "Accusé de réception"
+          },
+          {
+            "numero": 3,
+            "action": "Décision cantonale",
+            "delai": "2 à 6 mois selon canton",
+            "branches": [
+              {
+                "si": "changement accordé",
+                "alors": "inscription à l'état civil (fin)"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 4 (recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours cantonal puis fédéral",
+            "description": "Recours à l'autorité cantonale supérieure puis, si nécessaire, au TF.",
+            "delai": "30 jours dès notification",
+            "base_legale": "LTF 72 ss"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_regime_matrimonial",
@@ -2208,6 +3373,7 @@
       "communaute",
       "séparation"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2291,7 +3457,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Inventaire patrimonial",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Rédaction du contrat de mariage",
+          "delai": "à convenir avec le notaire",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Exécution du contrat",
+          "delai": "dès signature notariée",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action en modification ou liquidation devant le tribunal",
+          "delai": "selon procédure cantonale",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -2312,7 +3504,56 @@
       "biens propres importants",
       "activité indépendante ou non",
       "contrat de mariage existant"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Choix ou modification du régime matrimonial",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Inventaire patrimonial",
+            "description": "Lister biens propres, biens communs, dettes, donations, héritages reçus avant et pendant le mariage.",
+            "delai": "immédiat",
+            "preuve_generee": "Inventaire patrimonial daté"
+          },
+          {
+            "numero": 2,
+            "action": "Rédaction du contrat de mariage",
+            "description": "Faire rédiger un contrat de mariage par un notaire (séparation de biens, communauté de biens, ou modification).",
+            "delai": "à convenir avec le notaire",
+            "base_legale": "CC 182 / CC 184",
+            "preuve_generee": "Contrat de mariage notarié"
+          },
+          {
+            "numero": 3,
+            "action": "Exécution du contrat",
+            "delai": "dès signature notariée",
+            "branches": [
+              {
+                "si": "régime accepté par les deux époux",
+                "alors": "régime opposable aux tiers"
+              },
+              {
+                "si": "désaccord ou contestation",
+                "alors": "etape 4 (action judiciaire)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Action en modification ou liquidation devant le tribunal",
+            "description": "Saisir le tribunal civil compétent (juge de paix puis tribunal cantonal).",
+            "delai": "selon procédure cantonale",
+            "base_legale": "CC 185 / CC 196 ss"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_liquidation_regime",
@@ -2325,6 +3566,7 @@
       "acquets",
       "divorce"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2416,7 +3658,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Inventaire des biens à liquider",
+          "delai": "immédiat après dissolution (divorce, décès, contrat)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Évaluation et partage amiable",
+          "delai": "30 à 90 jours selon complexité",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Phase de négociation",
+          "delai": "60 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action en liquidation devant le juge",
+          "delai": "imprescriptible mais à formuler dans le cadre du divorce ou succession",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -2437,7 +3705,56 @@
       "biens a partager",
       "dettes communes",
       "accord ou désaccord sur le partage"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Liquidation du régime matrimonial",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Inventaire des biens à liquider",
+            "description": "Établir liste exhaustive des biens propres, acquêts, dettes, à la date de dissolution.",
+            "delai": "immédiat après dissolution (divorce, décès, contrat)",
+            "preuve_generee": "Inventaire signé des deux époux"
+          },
+          {
+            "numero": 2,
+            "action": "Évaluation et partage amiable",
+            "description": "Estimer les valeurs (biens immobiliers, comptes, véhicules) et proposer un partage écrit (CC 197 ss).",
+            "delai": "30 à 90 jours selon complexité",
+            "base_legale": "CC 197 / CC 209 / CC 215",
+            "preuve_generee": "Convention de liquidation signée"
+          },
+          {
+            "numero": 3,
+            "action": "Phase de négociation",
+            "delai": "60 jours",
+            "branches": [
+              {
+                "si": "accord trouvé",
+                "alors": "ratification éventuelle par le tribunal (fin)"
+              },
+              {
+                "si": "désaccord persistant",
+                "alors": "etape 4 (action judiciaire)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Action en liquidation devant le juge",
+            "description": "Saisir le tribunal civil pour qu'il prononce la liquidation.",
+            "delai": "imprescriptible mais à formuler dans le cadre du divorce ou succession",
+            "base_legale": "CC 204 / CPC 198 let. c"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_succession_ab_intestat",
@@ -2450,6 +3767,7 @@
       "légal",
       "partage"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2542,7 +3860,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Constat du décès et inventaire",
+          "delai": "dans les 30 jours suivant le décès",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande de certificat d'héritier",
+          "delai": "dans les 90 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai pour répudier",
+          "delai": "3 mois dès connaissance du décès (CC 567)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Partage et clôture",
+          "delai": "selon complexité",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -2563,7 +3907,56 @@
       "situation familiale du defunt",
       "existence d'un conjoint survivant",
       "valeur approximative de la succession"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Règlement d'une succession sans testament (ab intestat)",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Constat du décès et inventaire",
+            "description": "Obtenir l'acte de décès, identifier les héritiers légaux (CC 457 ss), inventorier biens et dettes.",
+            "delai": "dans les 30 jours suivant le décès",
+            "preuve_generee": "Acte de décès + inventaire provisoire"
+          },
+          {
+            "numero": 2,
+            "action": "Demande de certificat d'héritier",
+            "description": "Solliciter le certificat d'héritier auprès de la justice de paix ou autorité cantonale compétente.",
+            "delai": "dans les 90 jours",
+            "base_legale": "CC 559 / droit cantonal",
+            "preuve_generee": "Certificat d'héritier officiel"
+          },
+          {
+            "numero": 3,
+            "action": "Délai pour répudier",
+            "delai": "3 mois dès connaissance du décès (CC 567)",
+            "branches": [
+              {
+                "si": "succession acceptée",
+                "alors": "partage entre héritiers (etape 4)"
+              },
+              {
+                "si": "succession répudiée",
+                "alors": "fin (succession dévolue à l'autorité)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Partage et clôture",
+            "description": "Procéder au partage amiable ou requérir un partage judiciaire si désaccord.",
+            "delai": "selon complexité",
+            "base_legale": "CC 602 ss / CC 604"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_testament_olographe",
@@ -2576,6 +3969,7 @@
       "validité",
       "forme"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2680,7 +4074,12 @@
       "biens a leguer",
       "héritiers réserves",
       "souhaits particuliers"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_pacte_successoral",
@@ -2693,6 +4092,7 @@
       "succession",
       "notaire"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2769,7 +4169,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Définition du contenu",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Rédaction et signature notariée",
+          "delai": "à fixer avec le notaire",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Conservation et information",
+          "delai": "à vie",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Modification, résiliation ou contestation judiciaire",
+          "delai": "1 an dès découverte du vice (CC 521)",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -2790,7 +4216,56 @@
       "objet de l'accord",
       "héritiers réserves concernes",
       "notaire déjà consulté"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Conclusion d'un pacte successoral",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Définition du contenu",
+            "description": "Identifier les parties, biens, libéralités, renonciations envisagées; vérifier compatibilité avec réserves héréditaires.",
+            "delai": "immédiat",
+            "preuve_generee": "Projet de pacte écrit"
+          },
+          {
+            "numero": 2,
+            "action": "Rédaction et signature notariée",
+            "description": "Le pacte doit être en la forme authentique devant notaire avec deux témoins (CC 512).",
+            "delai": "à fixer avec le notaire",
+            "base_legale": "CC 494 / CC 512",
+            "preuve_generee": "Pacte notarié original"
+          },
+          {
+            "numero": 3,
+            "action": "Conservation et information",
+            "delai": "à vie",
+            "branches": [
+              {
+                "si": "pacte exécuté à l'ouverture de la succession",
+                "alors": "respect des dispositions"
+              },
+              {
+                "si": "demande de modification ou résiliation",
+                "alors": "etape 4 (avenant ou action)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Modification, résiliation ou contestation judiciaire",
+            "description": "Modification : nouvel acte authentique. Contestation : action en nullité au tribunal civil.",
+            "delai": "1 an dès découverte du vice (CC 521)",
+            "base_legale": "CC 513 / CC 521"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_reserve_hereditaire",
@@ -2803,6 +4278,7 @@
       "disponible",
       "desheriter"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2887,7 +4363,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Calcul de la réserve",
+          "delai": "immédiat dès ouverture de la succession",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Mise en demeure des bénéficiaires",
+          "delai": "dans les 6 mois suivant la connaissance de l'atteinte",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai de réponse",
+          "delai": "30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action en réduction devant le tribunal",
+          "delai": "1 an dès connaissance de l'atteinte, 10 ans au plus dès l'ouverture (CC 533)",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -2908,7 +4410,56 @@
       "nombre d'héritiers réserves",
       "existence d'un testament",
       "donations faites de son vivant"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Action en réduction pour atteinte à la réserve héréditaire",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Calcul de la réserve",
+            "description": "Identifier les héritiers réservataires (descendants, conjoint), calculer la masse successorale et la réserve due (CC 471).",
+            "delai": "immédiat dès ouverture de la succession",
+            "preuve_generee": "Calcul détaillé daté"
+          },
+          {
+            "numero": 2,
+            "action": "Mise en demeure des bénéficiaires",
+            "description": "Notifier par écrit aux héritiers ou légataires gratifiés au-delà de la quotité disponible la demande de réduction.",
+            "delai": "dans les 6 mois suivant la connaissance de l'atteinte",
+            "base_legale": "CC 522 ss",
+            "preuve_generee": "Lettre recommandée + AR"
+          },
+          {
+            "numero": 3,
+            "action": "Délai de réponse",
+            "delai": "30 jours",
+            "branches": [
+              {
+                "si": "accord amiable de réduction",
+                "alors": "rééquilibrage (fin)"
+              },
+              {
+                "si": "refus ou silence",
+                "alors": "etape 4 (action judiciaire)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Action en réduction devant le tribunal",
+            "description": "Ouvrir action devant le tribunal civil du dernier domicile du défunt.",
+            "delai": "1 an dès connaissance de l'atteinte, 10 ans au plus dès l'ouverture (CC 533)",
+            "base_legale": "CC 522 / CC 533"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_indignite_successorale",
@@ -2921,6 +4472,7 @@
       "héritier",
       "infraction"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2985,7 +4537,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Documentation des faits",
+          "delai": "immédiat dès découverte des faits",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Notification aux cohéritiers",
+          "delai": "dans les 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai pour résolution amiable",
+          "delai": "60 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action judiciaire en constatation d'indignité",
+          "delai": "1 an dès connaissance du motif (CC 541)",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -3006,7 +4584,56 @@
       "lien avec le defunt",
       "condamnation pénale ou non",
       "autres héritiers concernes"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Action en constatation d'indignité successorale",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Documentation des faits",
+            "description": "Rassembler preuves (jugement pénal, témoignages) établissant l'un des motifs d'indignité (CC 540).",
+            "delai": "immédiat dès découverte des faits",
+            "preuve_generee": "Dossier de preuves daté"
+          },
+          {
+            "numero": 2,
+            "action": "Notification aux cohéritiers",
+            "description": "Informer les autres héritiers et l'autorité de protection ou notaire chargé de la succession.",
+            "delai": "dans les 30 jours",
+            "base_legale": "CC 540",
+            "preuve_generee": "Courriers recommandés + AR"
+          },
+          {
+            "numero": 3,
+            "action": "Délai pour résolution amiable",
+            "delai": "60 jours",
+            "branches": [
+              {
+                "si": "indignité reconnue par tous",
+                "alors": "exclusion automatique (fin)"
+              },
+              {
+                "si": "contestation",
+                "alors": "etape 4 (action judiciaire)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Action judiciaire en constatation d'indignité",
+            "description": "Ouvrir action devant le tribunal civil du dernier domicile du défunt.",
+            "delai": "1 an dès connaissance du motif (CC 541)",
+            "base_legale": "CC 540 / CC 541"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_executeur_testamentaire",
@@ -3019,6 +4646,7 @@
       "succession",
       "mandat"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3088,7 +4716,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Acceptation du mandat",
+          "delai": "14 jours dès notification de la désignation",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Inventaire et notification aux héritiers",
+          "delai": "dans les 60 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Administration et liquidation",
+          "delai": "selon complexité (généralement 6 à 24 mois)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours à l'autorité de surveillance",
+          "delai": "à tout moment du mandat",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -3109,7 +4763,57 @@
       "complexite de la succession",
       "confiance dans la personne désignée",
       "biens a gerer"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Désignation et exécution par un exécuteur testamentaire",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Acceptation du mandat",
+            "description": "L'exécuteur désigné accepte ou refuse formellement la mission auprès de l'autorité (CC 517).",
+            "delai": "14 jours dès notification de la désignation",
+            "base_legale": "CC 517",
+            "preuve_generee": "Déclaration d'acceptation écrite"
+          },
+          {
+            "numero": 2,
+            "action": "Inventaire et notification aux héritiers",
+            "description": "Établir l'inventaire de la succession et notifier aux héritiers son mandat.",
+            "delai": "dans les 60 jours",
+            "base_legale": "CC 518",
+            "preuve_generee": "Inventaire signé + courriers AR"
+          },
+          {
+            "numero": 3,
+            "action": "Administration et liquidation",
+            "delai": "selon complexité (généralement 6 à 24 mois)",
+            "branches": [
+              {
+                "si": "exécution conforme acceptée par les héritiers",
+                "alors": "clôture et reddition de comptes (fin)"
+              },
+              {
+                "si": "contestation par un héritier",
+                "alors": "etape 4 (action en destitution ou en reddition)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours à l'autorité de surveillance",
+            "description": "Plainte à l'autorité cantonale de surveillance des successions ou action devant le juge.",
+            "delai": "à tout moment du mandat",
+            "base_legale": "CC 518 / CC 595"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_certificat_heritier",
@@ -3122,6 +4826,7 @@
       "banque",
       "régistre foncier"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3216,7 +4921,12 @@
       "nombre d'héritiers connus",
       "canton du dernier domicile du defunt",
       "biens a debloquér"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_dette_successorale",
@@ -3229,6 +4939,7 @@
       "benefice inventaire",
       "responsabilité"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3306,7 +5017,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Délai procédural",
+          "delai": "3 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -3327,7 +5046,11 @@
       "valeur des actifs",
       "délai depuis le décès",
       "repudiation déjà faite ou non"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_usufruit_conjoint",
@@ -3340,6 +5063,7 @@
       "logement",
       "jouissance"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3423,7 +5147,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Identification de l'option",
+          "delai": "immédiat dès ouverture de la succession",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Déclaration d'option",
+          "delai": "dans les 3 mois dès l'ouverture",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Mise en place de l'usufruit",
+          "delai": "60 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action en partage ou en commutation",
+          "delai": "selon procédure cantonale",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -3444,7 +5194,56 @@
       "régime matrimonial",
       "testament existant",
       "accord ou conflit avec les autres héritiers"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Constitution et exercice de l'usufruit du conjoint survivant",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Identification de l'option",
+            "description": "Vérifier les conditions (présence d'enfants communs, choix entre quote-part en propriété ou usufruit) selon CC 473.",
+            "delai": "immédiat dès ouverture de la succession",
+            "preuve_generee": "Note d'option signée du conjoint"
+          },
+          {
+            "numero": 2,
+            "action": "Déclaration d'option",
+            "description": "Le conjoint survivant communique son choix par écrit aux autres héritiers et au notaire chargé de la succession.",
+            "delai": "dans les 3 mois dès l'ouverture",
+            "base_legale": "CC 473",
+            "preuve_generee": "Déclaration AR"
+          },
+          {
+            "numero": 3,
+            "action": "Mise en place de l'usufruit",
+            "delai": "60 jours",
+            "branches": [
+              {
+                "si": "accord des cohéritiers et inscription au registre foncier (si immeuble)",
+                "alors": "usufruit constitué (fin)"
+              },
+              {
+                "si": "désaccord (remariage, contestation)",
+                "alors": "etape 4 (action judiciaire)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Action en partage ou en commutation",
+            "description": "Saisir le tribunal civil pour faire trancher la portée de l'usufruit ou demander sa commutation en rente.",
+            "delai": "selon procédure cantonale",
+            "base_legale": "CC 473 al. 3 / CC 612a"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_droit_retour",
@@ -3457,6 +5256,7 @@
       "succession",
       "restitution"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3530,7 +5330,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Documentation de la donation",
+          "delai": "immédiat dès ouverture de la succession ou prédécès du donataire",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Notification aux héritiers du donataire",
+          "delai": "dans les 90 jours dès connaissance des faits",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai de réponse amiable",
+          "delai": "30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action en restitution devant le tribunal",
+          "delai": "1 an dès connaissance des faits (analogie CO 67)",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC/CO état 2025-01-01",
@@ -3551,7 +5377,56 @@
       "acte de donation existant",
       "clause de retour prévue ou non",
       "décès du bénéficiaire"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Exercice du droit de retour sur biens donnés",
+        "domaine": "famille",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Documentation de la donation",
+            "description": "Réunir l'acte de donation, identifier la clause de retour expresse ou légale (CC 626 / CO 249).",
+            "delai": "immédiat dès ouverture de la succession ou prédécès du donataire",
+            "preuve_generee": "Dossier donation daté"
+          },
+          {
+            "numero": 2,
+            "action": "Notification aux héritiers du donataire",
+            "description": "Faire valoir par écrit le droit de retour auprès des héritiers (lettre recommandée).",
+            "delai": "dans les 90 jours dès connaissance des faits",
+            "base_legale": "CO 249 / CC 626 / CC 636",
+            "preuve_generee": "Lettre AR"
+          },
+          {
+            "numero": 3,
+            "action": "Délai de réponse amiable",
+            "delai": "30 jours",
+            "branches": [
+              {
+                "si": "restitution acceptée",
+                "alors": "transfert de propriété (fin)"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 4 (action judiciaire)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Action en restitution devant le tribunal",
+            "description": "Saisir le tribunal civil compétent pour ordonner la restitution du bien.",
+            "delai": "1 an dès connaissance des faits (analogie CO 67)",
+            "base_legale": "CO 249 / CC 626"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_pension",
@@ -3566,6 +5441,7 @@
       "entretien",
       "enfant"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3692,7 +5568,12 @@
       "enfants concernes",
       "revenus des deux parents",
       "jugement ou convention existante"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_garde",
@@ -3706,6 +5587,7 @@
       "alternee",
       "conjointe"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3810,7 +5692,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "12 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -3831,7 +5721,11 @@
       "age des enfants",
       "accord ou désaccord entre parents",
       "organisation actuelle"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_divorce",
@@ -3845,6 +5739,7 @@
       "séparation",
       "convention"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3944,7 +5839,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "2 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC/CPC état 2025-01-01",
@@ -3965,7 +5868,11 @@
       "durée de séparation",
       "enfants mineurs",
       "patrimoine a partager"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_mesures_protection",
@@ -3979,6 +5886,7 @@
       "jouissance",
       "logement"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -4101,7 +6009,12 @@
       "urgence",
       "enfants mineurs",
       "logement familial (propriete ou location)"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "famille_protection_enfant",
@@ -4116,6 +6029,7 @@
       "signalement",
       "danger"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -4213,7 +6127,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Recours",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -4234,7 +6156,11 @@
       "age de l'enfant",
       "signalement déjà fait ou non",
       "lien avec l'enfant"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "succession_reserves",
@@ -4249,6 +6175,7 @@
       "testament",
       "legs"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -4342,7 +6269,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "10 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -4363,7 +6298,11 @@
       "existence d'un testament",
       "souhaits de repartition",
       "donations déjà faites"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "succession_repudiation",
@@ -4377,6 +6316,7 @@
       "dettes",
       "inventaire"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -4471,7 +6411,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Délai procédural",
+          "delai": "3 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC état 2025-01-01",
@@ -4492,6 +6440,10 @@
       "actes déjà faits sur la succession",
       "montant estime des dettes vs actifs",
       "autres héritiers concernes"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   }
 ]

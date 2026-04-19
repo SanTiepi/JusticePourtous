@@ -10,6 +10,7 @@
       "requisition",
       "office"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -107,7 +108,39 @@
           "url": "boussole.app"
         }
       },
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Lecture immédiate et vérification du titre",
+          "delai": "immédiat à notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Former opposition totale",
+          "delai": "10 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Attente de la réaction du créancier",
+          "delai": "jusqu'à 1 an",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Audience de mainlevée ou procès au fond",
+          "delai": "selon citation",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition au commandement de payer",
+          "delai": "10 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -128,7 +161,61 @@
       "montant réclamé",
       "créancier identifie",
       "dette reconnue ou contestee"
-    ]
+    ],
+    "cascades": [
+      {
+        "titre": "Réponse à un commandement de payer",
+        "domaine": "dettes",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Lecture immédiate et vérification du titre",
+            "description": "Contrôler créancier, montant, cause de l'obligation, date de notification. Conserver l'enveloppe et l'acte original.",
+            "delai": "immédiat à notification",
+            "base_legale": "LP 69",
+            "preuve_generee": "Copie du commandement + enveloppe"
+          },
+          {
+            "numero": 2,
+            "action": "Former opposition totale",
+            "description": "Au guichet de l'Office des poursuites ou par écrit recommandé à celui-ci. Aucune motivation n'est requise, c'est gratuit.",
+            "delai": "10 jours dès notification",
+            "base_legale": "LP 74",
+            "preuve_generee": "Récépissé d'opposition",
+            "cout": "Gratuit"
+          },
+          {
+            "numero": 3,
+            "action": "Attente de la réaction du créancier",
+            "description": "Le créancier a 1 an pour demander la mainlevée (provisoire/définitive) ou ouvrir action au fond, sinon la poursuite tombe.",
+            "delai": "jusqu'à 1 an",
+            "base_legale": "LP 88",
+            "branches": [
+              {
+                "si": "créancier inactif",
+                "alors": "poursuite périmée"
+              },
+              {
+                "si": "requête en mainlevée",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Audience de mainlevée ou procès au fond",
+            "description": "Se défendre devant le juge : contester le titre, invoquer prescription, paiement, compensation. Si mainlevée, possibilité d'action en libération de dette (LP 83).",
+            "delai": "selon citation",
+            "base_legale": "LP 80 ss / LP 83",
+            "cout": "Frais de justice selon canton"
+          }
+        ]
+      }
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_opposition",
@@ -141,6 +228,7 @@
       "exécutoire",
       "reconnaissance"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -235,7 +323,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Analyse du commandement reçu",
+          "delai": "immédiat dès réception",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Former opposition totale ou partielle",
+          "delai": "dans les 10 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Conservation de toutes les preuves",
+          "delai": "immédiat après opposition",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Anticipation de la mainlevée",
+          "delai": "selon action créancier",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "20 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -256,7 +376,51 @@
       "titre du créancier (jugement, contrat)",
       "dette contestee ou non",
       "montant en jeu"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Former opposition à un commandement de payer",
+        "domaine": "dettes",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Analyse du commandement reçu",
+            "description": "Vérifier le créancier, le montant, le motif, la date de notification. Noter le délai de 10 jours dès notification.",
+            "delai": "immédiat dès réception",
+            "base_legale": "LP 69 / LP 74",
+            "preuve_generee": "Copie annotée du commandement"
+          },
+          {
+            "numero": 2,
+            "action": "Former opposition totale ou partielle",
+            "description": "Au choix : (a) oralement lors de la notification auprès de l'huissier, (b) par écrit à l'office des poursuites du canton. Opposition gratuite, sans motif requis.",
+            "delai": "dans les 10 jours dès notification",
+            "base_legale": "LP 74 / LP 75",
+            "cout": "Gratuit",
+            "preuve_generee": "Accusé de réception de l'opposition"
+          },
+          {
+            "numero": 3,
+            "action": "Conservation de toutes les preuves",
+            "description": "Garder copie du commandement, de l'opposition, du récépissé. Suspension automatique de la poursuite.",
+            "delai": "immédiat après opposition",
+            "preuve_generee": "Dossier complet horodaté"
+          },
+          {
+            "numero": 4,
+            "action": "Anticipation de la mainlevée",
+            "description": "Le créancier peut demander la mainlevée (provisoire si titre, définitive si jugement). Préparer les preuves de l'inexistence/paiement de la dette.",
+            "delai": "selon action créancier",
+            "base_legale": "LP 80 / LP 82 / LP 83",
+            "preuve_generee": "Dossier de défense"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_minimum_vital",
@@ -269,6 +433,7 @@
       "calcul",
       "subsistance"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -368,7 +533,39 @@
           "url": "boussole.app"
         }
       },
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Calcul du minimum vital LP",
+          "delai": "dès annonce de saisie",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Production des justificatifs",
+          "delai": "sous 10 jours dès demande office",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande de révision",
+          "delai": "immédiat en cas de changement",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Plainte LP contre calcul erroné",
+          "delai": "10 jours dès décision",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "10 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -389,7 +586,52 @@
       "revenu mensuel net",
       "charges fixes (loyer, assurance)",
       "saisie en cours ou annoncee"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Vérification et contestation de la quotité saisissable",
+        "domaine": "dettes",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Calcul du minimum vital LP",
+            "description": "Base mensuelle (personne seule ~1'200 CHF, couple ~1'700 CHF, +400/600 par enfant) + loyer effectif + primes LAMal + frais professionnels + pensions dues.",
+            "delai": "dès annonce de saisie",
+            "base_legale": "LP 93 / Directives SCDP",
+            "preuve_generee": "Calcul écrit détaillé"
+          },
+          {
+            "numero": 2,
+            "action": "Production des justificatifs",
+            "description": "Envoyer à l'office des poursuites : contrat de bail, décomptes LAMal, justificatifs enfants, frais médicaux, pensions versées, frais transport travail.",
+            "delai": "sous 10 jours dès demande office",
+            "base_legale": "LP 91",
+            "preuve_generee": "Dossier complet daté"
+          },
+          {
+            "numero": 3,
+            "action": "Demande de révision",
+            "description": "Si situation change (nouveau loyer, enfant, perte travail) : courrier à l'office demandant recalcul immédiat.",
+            "delai": "immédiat en cas de changement",
+            "base_legale": "LP 93 al. 3",
+            "preuve_generee": "Accusé de réception"
+          },
+          {
+            "numero": 4,
+            "action": "Plainte LP contre calcul erroné",
+            "description": "Plainte écrite à l'autorité cantonale de surveillance LP dans les 10 jours dès notification du calcul.",
+            "delai": "10 jours dès décision",
+            "base_legale": "LP 17",
+            "cout": "Gratuit",
+            "preuve_generee": "Plainte motivée horodatée"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_acte_defaut_biens",
@@ -401,6 +643,7 @@
       "poursuite",
       "insolvabilite"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -489,7 +732,21 @@
           "url": "boussole.app"
         }
       },
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "20 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -510,7 +767,11 @@
       "montant de la créance",
       "situation financiere actuelle",
       "relance du créancier ou non"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_faillite_personnelle",
@@ -523,6 +784,7 @@
       "declaration",
       "liquidation"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -615,7 +877,39 @@
           "url": "boussole.app"
         }
       },
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Évaluation de l'insolvabilité",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Exploration préalable des alternatives",
+          "delai": "avant dépôt demande",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Déclaration d'insolvabilité au juge",
+          "delai": "quand décision prise",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure de faillite",
+          "delai": "quelques mois",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Nouveau départ avec précautions",
+          "delai": "après clôture",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -636,7 +930,58 @@
       "revenus et patrimoine",
       "poursuites en cours",
       "statut (salarié ou indépendant)"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Procédure de faillite personnelle volontaire",
+        "domaine": "dettes",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Évaluation de l'insolvabilité",
+            "description": "État des dettes total / revenus / actifs. La faillite personnelle est possible en cas d'insolvabilité manifeste et durable.",
+            "delai": "immédiat",
+            "base_legale": "LP 191",
+            "preuve_generee": "Dossier financier complet"
+          },
+          {
+            "numero": 2,
+            "action": "Exploration préalable des alternatives",
+            "description": "Consulter un service de désendettement (Caritas, CSP) pour évaluer si arrangement amiable ou assainissement financier est possible (faillite = dernier recours).",
+            "delai": "avant dépôt demande",
+            "cout": "Gratuit",
+            "preuve_generee": "Attestation de consultation"
+          },
+          {
+            "numero": 3,
+            "action": "Déclaration d'insolvabilité au juge",
+            "description": "Requête écrite au juge de la faillite (tribunal cantonal) déclarant l'insolvabilité. Joindre inventaire des biens, liste des créanciers, revenus.",
+            "delai": "quand décision prise",
+            "base_legale": "LP 191",
+            "preuve_generee": "Acte de dépôt horodaté"
+          },
+          {
+            "numero": 4,
+            "action": "Procédure de faillite",
+            "description": "L'office des faillites réalise les biens, distribue le produit. Résultat : acte de défaut de biens pour chaque créancier non payé.",
+            "delai": "quelques mois",
+            "base_legale": "LP 197-270",
+            "preuve_generee": "Actes de défaut de biens"
+          },
+          {
+            "numero": 5,
+            "action": "Nouveau départ avec précautions",
+            "description": "Dettes non couvertes restent dues (prescrites 20 ans après ADB, LP 149a) mais non exécutables sauf nouveaux biens. Restriction d'inscription registre + risques éthiques.",
+            "delai": "après clôture",
+            "base_legale": "LP 149a / LP 265a"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_saisie_salaire",
@@ -649,6 +994,7 @@
       "employeur",
       "calcul"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -736,7 +1082,39 @@
           "url": "boussole.app"
         }
       },
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Réunir les justificatifs de charges",
+          "delai": "dès convocation par l'OP",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Audition devant l'Office des poursuites",
+          "delai": "à la date fixée par l'OP",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Plainte contre le procès-verbal de saisie",
+          "delai": "10 jours dès communication",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande de révision",
+          "delai": "en tout temps pendant la saisie",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Plainte pénale",
+          "delai": "10 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -757,7 +1135,60 @@
       "montant retenu",
       "situation familiale",
       "charges fixes mensuelles"
-    ]
+    ],
+    "cascades": [
+      {
+        "titre": "Contestation du minimum vital dans une saisie de salaire",
+        "domaine": "dettes",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Réunir les justificatifs de charges",
+            "description": "Rassembler loyer, assurance-maladie, frais de transport, pension alimentaire, frais médicaux, garde d'enfants, frais professionnels.",
+            "delai": "dès convocation par l'OP",
+            "base_legale": "LP 93",
+            "preuve_generee": "Pièces justificatives classées"
+          },
+          {
+            "numero": 2,
+            "action": "Audition devant l'Office des poursuites",
+            "description": "Se présenter avec tous justificatifs, demander le calcul détaillé du minimum vital selon les normes cantonales en vigueur.",
+            "delai": "à la date fixée par l'OP",
+            "base_legale": "LP 91 / LP 93",
+            "preuve_generee": "Procès-verbal de saisie"
+          },
+          {
+            "numero": 3,
+            "action": "Plainte contre le procès-verbal de saisie",
+            "description": "Si le minimum vital est sous-évalué : plainte à l'autorité de surveillance des poursuites.",
+            "delai": "10 jours dès communication",
+            "base_legale": "LP 17",
+            "cout": "Gratuit"
+          },
+          {
+            "numero": 4,
+            "action": "Demande de révision",
+            "description": "Si la situation change (perte d'emploi, maladie, nouvelle charge), demander à l'OP de recalculer la saisie.",
+            "delai": "en tout temps pendant la saisie",
+            "base_legale": "LP 93 al. 3",
+            "branches": [
+              {
+                "si": "charges nouvelles reconnues",
+                "alors": "quotité saisissable réduite"
+              },
+              {
+                "si": "refus",
+                "alors": "nouvelle plainte LP 17"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_arrangement_amiable",
@@ -770,6 +1201,7 @@
       "plan",
       "paiement"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -819,12 +1251,27 @@
           "ref": "LP 293",
           "titre": "Concordat — sursis concordataire",
           "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_293"
+        },
+        {
+          "ref": "LP 85a",
+          "titre": "Action révocatoire — conditions",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_85_a"
         }
       ],
       "jurisprudence": [
         {
           "ref": "TF 5A_53/2017",
           "resume": "L'arrangement amiable n'a pas force exécutoire, mais un créancier qui l'accepte par écrit est lie par cet accord (droit des contrats)."
+        },
+        {
+          "signature": "5A_445/2020",
+          "tribunal": "TF",
+          "date": "2020-08-11",
+          "resume": "Failli obtient la révocation de sa faillite après paiement intégral de tous les créanciers. Le TF confirme la révocation et la radiation de la mention au RC.",
+          "role": "favorable",
+          "resultat": "favorable_debiteur",
+          "from_corpus": true,
+          "match_score": 3
         }
       ],
       "modeleLettre": "Objet : Proposition d'arrangement amiable\n\nMadame, Monsieur,\n\nJe suis votre debiteur pour un montant de CHF [MONTANT] (poursuite n° [NUMERO] / facture n° [NUMERO]).\n\nMa situation financiere ne me permet pas de regler cette dette en une fois. Je vous propose l'arrangement suivant :\n\n- Versement mensuel de CHF [MONTANT] pendant [NOMBRE] mois\n- Premier versément le [DATE]\n\nEn contrepartie, je vous demande de :\n- Suspendre toute procédure de poursuite\n- Renoncer aux intérêts moratoires\n\nJe vous prie de m'indiquer votre accord ou une contre-proposition.\n\nVeuillez agréer mes salutations distinguées.\n\n[SIGNATURE]",
@@ -858,7 +1305,39 @@
           "url": "boussole.app"
         }
       },
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Inventaire complet des dettes",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Budget mensuel réaliste",
+          "delai": "sous 7 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Proposition écrite aux créanciers",
+          "delai": "sous 14 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Formalisation des accords",
+          "delai": "dès accord",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Escalade vers médiation de dettes",
+          "delai": "après échec négociation",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -879,7 +1358,55 @@
       "montant total des dettes",
       "capacite de paiement mensuelle",
       "poursuites en cours"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Négociation d'un arrangement amiable",
+        "domaine": "dettes",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Inventaire complet des dettes",
+            "description": "Lister tous créanciers, montants, intérêts, frais de poursuite. Classer par priorité (urgentes = loyer, primes maladie, pensions).",
+            "delai": "immédiat",
+            "preuve_generee": "Tableau récapitulatif"
+          },
+          {
+            "numero": 2,
+            "action": "Budget mensuel réaliste",
+            "description": "Calcul du minimum vital LP + charges courantes + capacité de remboursement mensuelle.",
+            "delai": "sous 7 jours",
+            "base_legale": "Directives SCDP / LP 93",
+            "preuve_generee": "Budget détaillé"
+          },
+          {
+            "numero": 3,
+            "action": "Proposition écrite aux créanciers",
+            "description": "Courrier individuel à chaque créancier proposant un plan (paiement échelonné ou remise partielle). Conserver preuve d'envoi.",
+            "delai": "sous 14 jours",
+            "preuve_generee": "Courriers recommandés + accusés"
+          },
+          {
+            "numero": 4,
+            "action": "Formalisation des accords",
+            "description": "Dès acceptation, obtenir confirmation écrite signée (suspension poursuites, délais, montants, conséquences en cas de défaut).",
+            "delai": "dès accord",
+            "preuve_generee": "Conventions signées"
+          },
+          {
+            "numero": 5,
+            "action": "Escalade vers médiation de dettes",
+            "description": "Si créanciers refusent : saisir une structure de médiation cantonale (Caritas, Centre social protestant) gratuite.",
+            "delai": "après échec négociation",
+            "cout": "Gratuit"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_primes_maladie",
@@ -893,6 +1420,7 @@
       "subsides",
       "impayé"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -988,7 +1516,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "18 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LAMal état 2025-01-01",
@@ -1009,7 +1545,11 @@
       "subsides déjà demandes ou non",
       "revenu du ménage",
       "canton de domicile"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_impots_arrieres",
@@ -1022,6 +1562,7 @@
       "echelonnement",
       "fiscal"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1110,7 +1651,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Demande de relevé complet",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Vérification du bien-fondé",
+          "delai": "sous 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande de plan de paiement",
+          "delai": "avant exigibilité / avant poursuite",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande de remise (situation de détresse)",
+          "delai": "avant prescription",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition si poursuite",
+          "delai": "10 jours dès commandement",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LIFD état 2025-01-01",
@@ -1131,7 +1704,56 @@
       "annees concernees",
       "poursuites engagees ou non",
       "situation financiere actuelle"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Régularisation d'impôts arriérés",
+        "domaine": "dettes",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Demande de relevé complet",
+            "description": "Contacter l'administration fiscale cantonale pour obtenir le détail des périodes impayées, montants, intérêts, amendes.",
+            "delai": "immédiat",
+            "preuve_generee": "Relevé officiel"
+          },
+          {
+            "numero": 2,
+            "action": "Vérification du bien-fondé",
+            "description": "Contrôler les taxations (erreurs, revenus effectifs, déductions oubliées). Demander rectification si erreur matérielle.",
+            "delai": "sous 30 jours",
+            "base_legale": "LIFD 147 / LHID 51",
+            "preuve_generee": "Analyse écrite"
+          },
+          {
+            "numero": 3,
+            "action": "Demande de plan de paiement",
+            "description": "Courrier formel à l'administration fiscale demandant échelonnement (jusqu'à 24 mois possibles). Joindre budget.",
+            "delai": "avant exigibilité / avant poursuite",
+            "preuve_generee": "Décision d'échelonnement"
+          },
+          {
+            "numero": 4,
+            "action": "Demande de remise (situation de détresse)",
+            "description": "Si impossible à payer : requête formelle en remise d'impôt (critères : détresse prouvée, bonne foi, absence de négligence grave).",
+            "delai": "avant prescription",
+            "base_legale": "LIFD 167 / LHID 39a",
+            "preuve_generee": "Décision de remise"
+          },
+          {
+            "numero": 5,
+            "action": "Opposition si poursuite",
+            "description": "Si commandement de payer fiscal reçu : opposition possible seulement sur la quotité saisissable, pas sur la dette elle-même (titre exécutoire).",
+            "delai": "10 jours dès commandement",
+            "base_legale": "LP 74 / LP 80"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_creancier_abusif",
@@ -1144,6 +1766,7 @@
       "plainte",
       "office"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1238,7 +1861,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Action révocatoire (paulienne)",
+          "delai": "5 ans dès l'acte contesté",
+          "base_legale": "LP 292",
+          "consequence": "Délai de péremption"
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -1259,7 +1890,11 @@
       "créancier identifie",
       "dette reconnue ou contestee",
       "preuves (messages, appels)"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_commandement_contestation",
@@ -1272,6 +1907,7 @@
       "opposition",
       "tardive"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1351,7 +1987,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Opposition au commandement de payer",
+          "delai": "10 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -1372,7 +2016,11 @@
       "délai d'opposition respecte ou non",
       "preuves de non-dette",
       "montant contesté"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_mainlevee_provisoire",
@@ -1385,6 +2033,7 @@
       "dette",
       "titre"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1459,7 +2108,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Analyse du titre invoqué",
+          "delai": "dès convocation tribunal",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Identification des moyens libératoires",
+          "delai": "sous 10 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt de la réponse écrite",
+          "delai": "dans le délai du tribunal",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Audience et décision",
+          "delai": "selon tribunal",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action en libération de dette",
+          "delai": "20 jours dès décision mainlevée",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -1480,7 +2161,66 @@
       "dette contestee ou non",
       "montant",
       "moyens de libération (paiement, prescription)"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Défense en procédure de mainlevée provisoire",
+        "domaine": "dettes",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Analyse du titre invoqué",
+            "description": "Vérifier si le créancier présente un titre à la mainlevée provisoire (reconnaissance de dette signée, contrat avec reconnaissance, acte authentique).",
+            "delai": "dès convocation tribunal",
+            "base_legale": "LP 82",
+            "preuve_generee": "Analyse écrite du titre"
+          },
+          {
+            "numero": 2,
+            "action": "Identification des moyens libératoires",
+            "description": "Rassembler toute preuve rendant vraisemblable la libération : paiement, compensation, remise, prescription, vice du consentement.",
+            "delai": "sous 10 jours",
+            "base_legale": "LP 82 al. 2",
+            "preuve_generee": "Dossier de moyens libératoires"
+          },
+          {
+            "numero": 3,
+            "action": "Dépôt de la réponse écrite",
+            "description": "Déposer la réponse au tribunal dans le délai imparti (généralement 10-20 jours) avec toutes preuves. Procédure sommaire.",
+            "delai": "dans le délai du tribunal",
+            "base_legale": "CPC 251 / LP 84",
+            "preuve_generee": "Copie horodatée de la réponse"
+          },
+          {
+            "numero": 4,
+            "action": "Audience et décision",
+            "description": "Audience sommaire. Le juge statue sur la mainlevée uniquement. Décision notifiée par écrit.",
+            "delai": "selon tribunal",
+            "branches": [
+              {
+                "si": "mainlevée prononcée",
+                "alors": "etape 5 — action en libération"
+              },
+              {
+                "si": "mainlevée refusée",
+                "alors": "fin / poursuite arrêtée"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "action": "Action en libération de dette",
+            "description": "Si mainlevée accordée : action en libération de dette dans les 20 jours (procédure ordinaire au fond).",
+            "delai": "20 jours dès décision mainlevée",
+            "base_legale": "LP 83 al. 2"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_mainlevee_definitive",
@@ -1493,6 +2233,7 @@
       "exécutoire",
       "titre"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1587,7 +2328,12 @@
       "montant",
       "recours encore possible",
       "exécution déjà lancee"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_saisie_salaire_quotite",
@@ -1600,6 +2346,7 @@
       "saisissable",
       "employeur"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1685,7 +2432,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Modification de la quotité saisissable",
+          "delai": "À tout moment sur demande motivée",
+          "base_legale": "LP 93 al. 3",
+          "consequence": "L'office révise si revenu/charges changent"
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -1706,7 +2461,11 @@
       "situation familiale",
       "charges fixes",
       "montant de la saisie annoncee"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_minimum_vital_lp",
@@ -1720,6 +2479,7 @@
       "normes",
       "insaisissable"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1799,7 +2559,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Plainte pénale",
+          "delai": "10 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -1820,7 +2588,11 @@
       "canton de domicile",
       "charges effectives",
       "revenus"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_acte_defaut_biens_effets",
@@ -1833,6 +2605,7 @@
       "insolvabilite",
       "prescription"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1914,7 +2687,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Réception et lecture de l'acte",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Information du débiteur et négociation éventuelle",
+          "delai": "dans les 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Suivi de la prescription et du retour à meilleure fortune",
+          "delai": "20 ans (prescription) / vérification au cas par cas",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition et exception de non-retour à meilleure fortune",
+          "delai": "10 jours pour l'opposition",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "20 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -1935,7 +2740,56 @@
       "montant",
       "amelioration de la situation financiere",
       "nouvelle poursuite reçue ou non"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Effets et gestion d'un acte de défaut de biens",
+        "domaine": "dettes",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Réception et lecture de l'acte",
+            "description": "Examiner l'acte (montant, créancier, date, type définitif/après saisie) et conserver l'original.",
+            "delai": "immédiat",
+            "preuve_generee": "Copie annotée de l'ADB"
+          },
+          {
+            "numero": 2,
+            "action": "Information du débiteur et négociation éventuelle",
+            "description": "Le débiteur peut entrer en pourparlers avec le créancier pour proposer un plan de remboursement (LP 149a).",
+            "delai": "dans les 30 jours",
+            "base_legale": "LP 149 / LP 149a",
+            "preuve_generee": "Lettre AR ou accord écrit"
+          },
+          {
+            "numero": 3,
+            "action": "Suivi de la prescription et du retour à meilleure fortune",
+            "delai": "20 ans (prescription) / vérification au cas par cas",
+            "branches": [
+              {
+                "si": "remboursement intégral ou prescription atteinte",
+                "alors": "extinction (fin)"
+              },
+              {
+                "si": "nouvelle poursuite par le créancier",
+                "alors": "etape 4 (opposition selon situation)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Opposition et exception de non-retour à meilleure fortune",
+            "description": "En cas de nouvelle poursuite, faire opposition et invoquer l'exception devant le juge.",
+            "delai": "10 jours pour l'opposition",
+            "base_legale": "LP 149a / LP 265a"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_faillite_personnelle_procedure",
@@ -1948,6 +2802,7 @@
       "declaration",
       "liquidation"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2030,7 +2885,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "20 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -2051,7 +2914,11 @@
       "montant total des dettes",
       "biens possedes",
       "procédure de poursuite en cours"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_concordat",
@@ -2064,6 +2931,7 @@
       "remise",
       "echelonnement"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2142,7 +3010,21 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "4 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "24 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -2163,7 +3045,11 @@
       "nombre de créanciers",
       "capacite de paiement",
       "type de concordat envisage"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_sursis_concordataire",
@@ -2176,6 +3062,7 @@
       "poursuites",
       "commissaire"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2253,7 +3140,21 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "4 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "24 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -2274,7 +3175,11 @@
       "poursuites en cours",
       "perspective d'assainissement",
       "accompagnement professionnel"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_sequestre",
@@ -2287,6 +3192,7 @@
       "biens",
       "blocage"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2365,7 +3271,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "10 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -2386,7 +3300,11 @@
       "biens a sequestrer",
       "créance et son fondement",
       "canton des biens"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_poursuite_effets_change",
@@ -2400,6 +3318,7 @@
       "ordre",
       "poursuite"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2444,6 +3363,16 @@
         {
           "ref": "TF 5A_96/2012",
           "resume": "Un billet a ordre irrégulier (mention manquante) ne peut pas fonder une poursuite pour effets de change, mais peut servir de reconnaissance de dette pour une mainlevee provisoire."
+        },
+        {
+          "signature": "5A_301/2018",
+          "tribunal": "TF",
+          "date": "2018-06-26",
+          "resume": "Société de recouvrement poursuit en qualité de cessionnaire. Le TF exige la preuve de la chaîne de cession complète pour admettre la légitimation active.",
+          "role": "favorable",
+          "resultat": "favorable_debiteur",
+          "from_corpus": true,
+          "match_score": 5
         }
       ],
       "modeleLettre": "",
@@ -2460,7 +3389,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Vérification de la créance cambiaire",
+          "delai": "immédiat dès l'échéance",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Réquisition de poursuite par voie de change",
+          "delai": "dans le délai de prescription cambiaire (généralement 3 ans)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai d'opposition raccourci (5 jours)",
+          "delai": "5 jours dès notification du commandement",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure de mainlevée provisoire devant le juge",
+          "delai": "selon procédure cantonale (souvent quelques semaines)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition au commandement de payer",
+          "delai": "5 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -2481,7 +3442,56 @@
       "montant",
       "protest effectué ou non",
       "délai"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Procédure de poursuite par voie de change",
+        "domaine": "dettes",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérification de la créance cambiaire",
+            "description": "Examiner la lettre de change ou le billet à ordre (forme, signature, échéance) et préparer la requête.",
+            "delai": "immédiat dès l'échéance",
+            "preuve_generee": "Original ou copie certifiée du titre"
+          },
+          {
+            "numero": 2,
+            "action": "Réquisition de poursuite par voie de change",
+            "description": "Déposer la réquisition à l'office des poursuites compétent et obtenir un commandement de payer spécifique (LP 177).",
+            "delai": "dans le délai de prescription cambiaire (généralement 3 ans)",
+            "base_legale": "LP 177 / LP 182",
+            "preuve_generee": "Copie de la réquisition + commandement"
+          },
+          {
+            "numero": 3,
+            "action": "Délai d'opposition raccourci (5 jours)",
+            "delai": "5 jours dès notification du commandement",
+            "branches": [
+              {
+                "si": "opposition formée",
+                "alors": "etape 4 (procédure de mainlevée)"
+              },
+              {
+                "si": "absence d'opposition",
+                "alors": "saisie immédiate (fin)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Procédure de mainlevée provisoire devant le juge",
+            "description": "Le créancier requiert mainlevée provisoire au juge avec le titre cambiaire.",
+            "delai": "selon procédure cantonale (souvent quelques semaines)",
+            "base_legale": "LP 182 / LP 84"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_revendication",
@@ -2494,6 +3504,7 @@
       "propriete",
       "action"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2572,7 +3583,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Délai procédural",
+          "delai": "10 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -2593,7 +3612,11 @@
       "preuves de propriete",
       "procédure de saisie en cours",
       "délai pour revendiquer"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_plainte_lp",
@@ -2607,6 +3630,7 @@
       "poursuites",
       "irregularite"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2672,7 +3696,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Plainte pénale",
+          "delai": "10 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -2693,7 +3725,11 @@
       "irregularite invoquee",
       "délai (10 jours)",
       "autorite de surveillance"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_for_poursuite",
@@ -2706,6 +3742,7 @@
       "domicile",
       "lieu"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2782,7 +3819,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Identification du for applicable",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Réquisition de poursuite à l'office compétent",
+          "delai": "dans les 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Commandement de payer",
+          "delai": "10 jours pour faire opposition",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Plainte à l'autorité de surveillance LP",
+          "delai": "10 jours dès la notification de la mesure contestée",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -2803,7 +3866,56 @@
       "nature de la créance",
       "debiteur en Suisse ou à l'étranger",
       "siege social si entreprise"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Détermination du for de la poursuite",
+        "domaine": "dettes",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Identification du for applicable",
+            "description": "Vérifier le domicile du débiteur (LP 46), siège pour personne morale, exceptions (immeuble LP 51, séquestre LP 52).",
+            "delai": "immédiat",
+            "preuve_generee": "Note d'identification du for"
+          },
+          {
+            "numero": 2,
+            "action": "Réquisition de poursuite à l'office compétent",
+            "description": "Adresser la réquisition à l'office des poursuites du domicile/siège correct.",
+            "delai": "dans les 30 jours",
+            "base_legale": "LP 46 / LP 48 / LP 51",
+            "preuve_generee": "Quittance de l'office"
+          },
+          {
+            "numero": 3,
+            "action": "Commandement de payer",
+            "delai": "10 jours pour faire opposition",
+            "branches": [
+              {
+                "si": "opposition",
+                "alors": "procédure de mainlevée"
+              },
+              {
+                "si": "for contesté par le débiteur",
+                "alors": "etape 4 (plainte LP 17)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Plainte à l'autorité de surveillance LP",
+            "description": "Plainte écrite à l'autorité cantonale de surveillance pour incompétence territoriale.",
+            "delai": "10 jours dès la notification de la mesure contestée",
+            "base_legale": "LP 17"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_prescription",
@@ -2816,6 +3928,7 @@
       "interruption",
       "libération"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2899,7 +4012,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Identification du type de créance",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Vérification des actes interruptifs",
+          "delai": "sous 14 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Invocation écrite de la prescription",
+          "delai": "dès que le délai est échu",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Défense en mainlevée ou au fond",
+          "delai": "selon procédure en cours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "10 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO/LP état 2025-01-01",
@@ -2920,7 +4065,50 @@
       "date de la dernière reconnaissance ou poursuite",
       "interruptions éventuelles",
       "montant"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Invocation de la prescription d'une dette",
+        "domaine": "dettes",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Identification du type de créance",
+            "description": "Délais standards : 10 ans (créances ordinaires, CO 127), 5 ans (loyers, salaires, intérêts, pensions, CO 128), 2 ans (certaines créances, vente consommateur LDIP).",
+            "delai": "immédiat",
+            "base_legale": "CO 127 / CO 128 / CO 129",
+            "preuve_generee": "Analyse du délai applicable"
+          },
+          {
+            "numero": 2,
+            "action": "Vérification des actes interruptifs",
+            "description": "Contrôler si la prescription a été interrompue par poursuite, reconnaissance de dette, action en justice. Chaque interruption fait courir un nouveau délai.",
+            "delai": "sous 14 jours",
+            "base_legale": "CO 135 / CO 137",
+            "preuve_generee": "Chronologie des actes"
+          },
+          {
+            "numero": 3,
+            "action": "Invocation écrite de la prescription",
+            "description": "La prescription doit être invoquée (pas automatique). Courrier recommandé au créancier ou opposition au commandement de payer mentionnant explicitement la prescription.",
+            "delai": "dès que le délai est échu",
+            "base_legale": "CO 142",
+            "preuve_generee": "Courrier recommandé"
+          },
+          {
+            "numero": 4,
+            "action": "Défense en mainlevée ou au fond",
+            "description": "Si le créancier agit : opposer la prescription en mainlevée (titre insuffisant) ou en action au fond (moyen libératoire).",
+            "delai": "selon procédure en cours",
+            "base_legale": "LP 82 / LP 83 / CO 142"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_remise_dette",
@@ -2933,6 +4121,7 @@
       "créancier",
       "accord"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3031,7 +4220,12 @@
       "montant remis",
       "dette partielle ou totale",
       "consequences fiscales"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_arrangement_amiable_negociation",
@@ -3045,6 +4239,7 @@
       "plan",
       "paiement"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3097,6 +4292,16 @@
         {
           "ref": "TF 4A_103/2015",
           "resume": "Un plan de paiement convenu entre les parties est un contrat qui lie les deux parties ; le créancier ne peut pas poursuivre tant que le debiteur respecte le plan."
+        },
+        {
+          "signature": "5A_445/2020",
+          "tribunal": "TF",
+          "date": "2020-08-11",
+          "resume": "Failli obtient la révocation de sa faillite après paiement intégral de tous les créanciers. Le TF confirme la révocation et la radiation de la mention au RC.",
+          "role": "favorable",
+          "resultat": "favorable_debiteur",
+          "from_corpus": true,
+          "match_score": 3
         }
       ],
       "modeleLettre": "Objet : Proposition d'arrangement amiable\n\nRecommandé\n\nMadame, Monsieur,\n\nConcernant la créance de CHF [MONTANT] que vous detenez à mon encontre, je vous propose l'arrangement suivant :\n\n- Paiement en [NOMBRE] mensualites de CHF [MONTANT MENSUEL]\n- Premier versément le [DATE]\n- Dernier versément le [DATE]\n\nEn contrepartie, je vous demande de suspendre toute poursuite pendant la durée du plan.\n\nJe m'engage a respecter ce plan de paiement. En cas de défaut de paiement de plus de 30 jours, vous pourrez reprendre les demarches de recouvrement.\n\nVeuillez agréer mes salutations distinguées.\n\n[SIGNATURE]",
@@ -3141,7 +4346,12 @@
       "montants dus",
       "capacite mensuelle de remboursement",
       "poursuites en cours"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_mediation_dettes",
@@ -3154,6 +4364,7 @@
       "neutre",
       "conseil"
     ],
+    "confiance": "variable",
     "questions": [
       {
         "id": "q1",
@@ -3197,6 +4408,11 @@
           "ref": "CPC 213",
           "titre": "Mediation — principes",
           "lien": "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_213"
+        },
+        {
+          "ref": "LP 190",
+          "titre": "Faillite sans poursuite préalable",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_190"
         }
       ],
       "jurisprudence": [],
@@ -3242,7 +4458,12 @@
       "montant total",
       "revenus et charges",
       "demarches déjà entreprises"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_budget_conseil",
@@ -3255,6 +4476,7 @@
       "gestion",
       "finances"
     ],
+    "confiance": "variable",
     "questions": [
       {
         "id": "q1",
@@ -3305,7 +4527,18 @@
           "lien": "https://www.fedlex.admin.ch/eli/cc/2002/593/fr#art_3"
         }
       ],
-      "jurisprudence": [],
+      "jurisprudence": [
+        {
+          "signature": "5A_558/2021",
+          "tribunal": "TF",
+          "date": "2021-11-16",
+          "resume": "Débiteur surendetté avec 12 poursuites demande l'accès à un programme cantonal de désendettement. Le TF rappelle que ces programmes relèvent du droit cantonal.",
+          "role": "neutre",
+          "resultat": "renvoi_autorite_cantonale",
+          "from_corpus": true,
+          "match_score": 3
+        }
+      ],
       "modeleLettre": "",
       "services": [
         {
@@ -3332,7 +4565,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Auto-bilan financier",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Prise de contact avec un service spécialisé",
+          "delai": "dans les 14 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Élaboration du plan de désendettement",
+          "delai": "1 à 3 mois",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure de concordat extrajudiciaire ou faillite personnelle",
+          "delai": "selon procédure",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LCC état 2025-01-01",
@@ -3353,7 +4612,57 @@
       "charges fixes",
       "dettes existantes",
       "composition du ménage"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Recours à un conseil en désendettement",
+        "domaine": "dettes",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Auto-bilan financier",
+            "description": "Lister revenus, dépenses fixes, dettes, poursuites en cours; rassembler relevés bancaires des 6 derniers mois.",
+            "delai": "immédiat",
+            "preuve_generee": "Bilan personnel"
+          },
+          {
+            "numero": 2,
+            "action": "Prise de contact avec un service spécialisé",
+            "description": "Contacter Caritas, Centre social protestant, Dettes Conseils Suisse — service souvent gratuit.",
+            "delai": "dans les 14 jours",
+            "base_legale": "LCC 28 / LCC 3",
+            "preuve_generee": "Confirmation de rendez-vous"
+          },
+          {
+            "numero": 3,
+            "action": "Élaboration du plan de désendettement",
+            "delai": "1 à 3 mois",
+            "branches": [
+              {
+                "si": "plan accepté par les créanciers",
+                "alors": "exécution (fin)"
+              },
+              {
+                "si": "refus de certains créanciers",
+                "alors": "etape 4 (saisine de l'autorité ou procédure formelle)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Procédure de concordat extrajudiciaire ou faillite personnelle",
+            "description": "Selon situation : assainissement personnel via art. 333 ss LP ou ouverture d'une faillite à demande du débiteur.",
+            "delai": "selon procédure",
+            "base_legale": "LP 333 ss / LP 191"
+          }
+        ]
+      }
+    ],
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_assainissement_financier",
@@ -3366,6 +4675,7 @@
       "plan",
       "global"
     ],
+    "confiance": "variable",
     "questions": [
       {
         "id": "q1",
@@ -3424,7 +4734,28 @@
           "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_149_a"
         }
       ],
-      "jurisprudence": [],
+      "jurisprudence": [
+        {
+          "signature": "5A_672/2017",
+          "tribunal": "TF",
+          "date": "2017-10-31",
+          "resume": "L'office des poursuites fixe le minimum vital à CHF 3'400/mois pour un débiteur avec famille. Le TF corrige en ajoutant les frais de transport et l'assurance maladie effective.",
+          "role": "favorable",
+          "resultat": "favorable_debiteur",
+          "from_corpus": true,
+          "match_score": 5
+        },
+        {
+          "signature": "5A_415/2019",
+          "tribunal": "TF",
+          "date": "2019-09-17",
+          "resume": "Office saisit 30% du salaire net pour une dette de CHF 45'000. Le TF confirme la saisie après vérification que le minimum vital est respecté.",
+          "role": "favorable",
+          "resultat": "favorable_creancier",
+          "from_corpus": true,
+          "match_score": 5
+        }
+      ],
       "modeleLettre": "",
       "services": [
         {
@@ -3451,7 +4782,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Bilan exhaustif et minimum vital",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Négociation avec les créanciers",
+          "delai": "dans les 60 jours suivant le bilan",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai de réponse des créanciers",
+          "delai": "60 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Concordat extrajudiciaire ou autre procédure formelle",
+          "delai": "selon situation",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -3472,7 +4835,57 @@
       "revenus et charges",
       "biens possedes",
       "accompagnement professionnel en cours"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Assainissement financier personnel",
+        "domaine": "dettes",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Bilan exhaustif et minimum vital",
+            "description": "Établir bilan complet et calculer le minimum vital (LP 93) en respectant les normes cantonales.",
+            "delai": "immédiat",
+            "preuve_generee": "Bilan + calcul du minimum vital"
+          },
+          {
+            "numero": 2,
+            "action": "Négociation avec les créanciers",
+            "description": "Adresser à chaque créancier une proposition de plan d'assainissement (rééchelonnement, remise partielle).",
+            "delai": "dans les 60 jours suivant le bilan",
+            "base_legale": "LP 93 / LP 149a",
+            "preuve_generee": "Plan écrit + lettres AR"
+          },
+          {
+            "numero": 3,
+            "action": "Délai de réponse des créanciers",
+            "delai": "60 jours",
+            "branches": [
+              {
+                "si": "majorité des créanciers acceptent",
+                "alors": "exécution du plan (fin)"
+              },
+              {
+                "si": "blocage",
+                "alors": "etape 4 (concordat extrajudiciaire)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Concordat extrajudiciaire ou autre procédure formelle",
+            "description": "Saisir le juge d'un concordat (LP 333 ss) ou d'une faillite à la demande du débiteur (LP 191).",
+            "delai": "selon situation",
+            "base_legale": "LP 333 ss / LP 191"
+          }
+        ]
+      }
+    ],
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "dettes_faillite",
@@ -3487,6 +4900,7 @@
       "concordat",
       "acte défaut biens"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3589,7 +5003,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "20 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -3610,6 +5032,10 @@
       "biens a realiser",
       "statut professionnel",
       "famille a charge"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   }
 ]

@@ -12,6 +12,7 @@
       "foyer",
       "abri PC"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -105,7 +106,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Demande aide d'urgence",
+          "delai": "Immédiat (droit au minimum existentiel)",
+          "base_legale": "Cst 12",
+          "consequence": "Refus = recours immédiat possible"
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "Cst état 2025-01-01",
@@ -127,7 +136,11 @@
       "seul ou en famille",
       "statut de sejour",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "social_aide_sociale",
@@ -143,6 +156,7 @@
       "devoirs",
       "remboursement"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -241,7 +255,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Recours contre refus d'aide sociale",
+          "delai": "30 jours (délai cantonal typique)",
+          "base_legale": "Lois cantonales LAS / LPGA",
+          "consequence": "Décision devient définitive"
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "Cst/LASoc état 2025-01-01",
@@ -263,7 +285,11 @@
       "autres prestations percues (chomage, AI, etc.)",
       "composition du ménage",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "social_aide_urgence",
@@ -278,6 +304,7 @@
       "debouté",
       "requérant"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -390,6 +417,2234 @@
       "aide actuellement percue ou non",
       "besoins médicaux urgents",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "social_hebergement_urgence_procedure",
+    "domaine": "social",
+    "sousDomaine": "hebergement",
+    "tags": [
+      "hébergement",
+      "urgence",
+      "sans-abri",
+      "SDF",
+      "foyer",
+      "nuit"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Situation actuelle ?",
+        "options": [
+          "à la rue",
+          "expulsé ce jour",
+          "rupture hébergement"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Famille avec enfants ?",
+        "options": [
+          "seul",
+          "couple",
+          "enfants mineurs"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous un statut légal en Suisse ?",
+        "options": [
+          "oui permis",
+          "procédure asile",
+          "sans statut"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Besoins médicaux urgents ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Toute personne en situation de détresse en Suisse a droit au minimum vital garanti par la Constitution (art. 12 Cst), ce qui inclut un hébergement d'urgence. Les cantons organisent ce dispositif par la Loi sur l'aide sociale (LASV dans VD, LIASI à GE). À Lausanne, le Sleep-In et La Marmotte offrent un toit pour la nuit. À Genève, l'Armée du Salut et le Cœur des Grottes accueillent les sans-abri. Les familles avec enfants passent par le service social cantonal (CSR VD, Hospice général GE) qui dispose de solutions spécifiques. Le refus d'hébergement d'urgence peut être contesté par recours cantonal. En cas d'expulsion immédiate sans solution, contacter le 117 et/ou les services d'urgence sociale.",
+      "articles": [
+        {
+          "ref": "Cst 12",
+          "titre": "Droit à des conditions minimales d existence",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr"
+        },
+        {
+          "ref": "LASV (VD)",
+          "titre": "Loi sur l action sociale vaudoise",
+          "lien": "https://www.lexfind.ch/fe/fr/tol/23544/fr"
+        },
+        {
+          "ref": "LIASI (GE)",
+          "titre": "Loi sur l insertion et l aide sociale GE",
+          "lien": "https://www.lexfind.ch/fe/fr/tol/26395/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 131 I 166",
+          "resume": "Le droit au minimum vital (art. 12 Cst) inclut un abri et de la nourriture, même pour personnes sans statut."
+        },
+        {
+          "ref": "TF 8C_927/2018",
+          "resume": "Les cantons doivent organiser une aide d urgence accessible 24h/24 pour personnes en détresse."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Hospice général Genève",
+          "tel": "022 420 52 00",
+          "url": "https://www.hospicegeneral.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "CSR Vaud (centres régionaux)",
+          "url": "https://www.vd.ch/themes/aides-financieres-et-soutien-social",
+          "canton": "VD"
+        },
+        {
+          "nom": "Armée du Salut Lausanne - Sleep In",
+          "tel": "021 621 85 85",
+          "url": "https://www.armeedusalut.ch/lausanne",
+          "canton": "VD"
+        },
+        {
+          "nom": "Armée du Salut Genève",
+          "tel": "022 338 20 20",
+          "url": "https://www.armeedusalut.ch/geneve",
+          "canton": "GE"
+        },
+        {
+          "nom": "Caritas Vaud",
+          "tel": "021 317 59 80",
+          "url": "https://www.caritas-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caritas Genève",
+          "tel": "022 708 04 44",
+          "url": "https://www.caritas-geneve.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Évaluation de la situation",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande écrite ou orale d'hébergement",
+          "delai": "immédiat (urgence)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision et placement",
+          "delai": "24 à 72 heures",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours et urgence absolue",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "Cst/LAS/lois cantonales état 2025",
+    "match_description": "Personne sans hébergement cherchant solution d'urgence",
+    "profane_aliases": [
+      "à la rue ce soir",
+      "sans logement d urgence",
+      "où dormir cette nuit"
+    ],
+    "negative_signals": [
+      "recherche logement long terme (voir bail)",
+      "expulsion procédure (voir bail expulsion)"
+    ],
+    "required_facts": [
+      "canton",
+      "composition du ménage",
+      "statut légal"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Hébergement d'urgence — procédure d'accès",
+        "domaine": "social",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Évaluation de la situation",
+            "description": "Documenter la situation (sans-abri, expulsion imminente, violence domestique, rupture familiale) et identifier le service social communal/cantonal compétent.",
+            "delai": "immédiat",
+            "preuve_generee": "Note de situation + pièces d'identité"
+          },
+          {
+            "numero": 2,
+            "action": "Demande écrite ou orale d'hébergement",
+            "description": "S'adresser au service social (Hospice général GE, EVAM/CSR VD, Sozialhilfe BE/ZH, Caritas ou Armée du Salut) avec pièce d'identité et bref exposé.",
+            "delai": "immédiat (urgence)",
+            "base_legale": "Cst 12 (droit à l'aide d'urgence)",
+            "preuve_generee": "Accusé de dépôt de la demande"
+          },
+          {
+            "numero": 3,
+            "action": "Décision et placement",
+            "description": "Le service évalue l'urgence et propose un placement (foyer, hôtel social, abri PC).",
+            "delai": "24 à 72 heures",
+            "branches": [
+              {
+                "si": "placement proposé",
+                "alors": "entrée au foyer"
+              },
+              {
+                "si": "refus ou absence de place",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours et urgence absolue",
+            "description": "Recours pour violation du droit à l'aide d'urgence (Cst 12) ou saisine d'une association (Caritas, CSP) pour solution immédiate.",
+            "delai": "immédiat",
+            "base_legale": "Cst 12 / lois cantonales",
+            "cout": "recours gratuit"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "social_refus_aide_recours",
+    "domaine": "social",
+    "sousDomaine": "recours",
+    "tags": [
+      "aide sociale",
+      "refus",
+      "recours",
+      "opposition",
+      "décision",
+      "LASV",
+      "LIASI"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Avez-vous reçu une décision écrite ?",
+        "options": [
+          "oui",
+          "non",
+          "lettre informelle"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Date de notification ?",
+        "options": [
+          "<30 jours",
+          "30-90 jours",
+          ">90 jours"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Motif invoqué du refus ?",
+        "options": [
+          "revenu/fortune",
+          "pièces manquantes",
+          "domicile",
+          "fraude"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Nouveaux éléments à faire valoir ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Toute décision négative d'un service social (CSR VD ou CAS/Hospice GE) doit être motivée par écrit et indiquer voie et délai de recours. À Vaud, opposition dans les 30 jours auprès du CSR puis recours au Département cantonal, puis à la Cour de droit administratif et public (art. 17 LASV). À Genève, opposition à l'Hospice général dans les 30 jours, puis recours à la Chambre administrative de la Cour de justice (art. 48 LIASI). Le délai est péremptoire. Les chances augmentent si l'intéressé produit des pièces nouvelles (état de santé, baisse revenus). L'aide peut être accordée avec effet rétroactif à la date de la demande initiale. Une assistance juridique gratuite est disponible pour les procédures administratives.",
+      "articles": [
+        {
+          "ref": "LASV (VD)",
+          "titre": "Loi sur l action sociale vaudoise",
+          "lien": "https://www.lexfind.ch/fe/fr/tol/23544/fr"
+        },
+        {
+          "ref": "LIASI (GE)",
+          "titre": "Loi sur l insertion et l aide sociale GE",
+          "lien": "https://www.lexfind.ch/fe/fr/tol/26395/fr"
+        },
+        {
+          "ref": "LPGA 52",
+          "titre": "Opposition",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2002/510/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 141 I 153",
+          "resume": "Droit à la motivation et à l examen individuel de la demande d aide sociale."
+        },
+        {
+          "ref": "TF 8C_56/2019",
+          "resume": "Le délai d opposition est péremptoire mais la restitution est possible en cas d empêchement non fautif."
+        }
+      ],
+      "modeleLettre": "Objet : Opposition à la décision du [DATE]\n\nMadame, Monsieur,\n\nJe fais opposition à votre décision du [DATE] me [refusant/réduisant] l'aide sociale.\n\nMotifs : [nouveaux éléments, pièces complémentaires, situation détaillée].\n\nJe joins : fiches de salaire, certificats médicaux, factures.\n\nJe demande le réexamen complet de mon dossier et l'octroi de l'aide à compter de ma demande initiale.\n\n[Signature]",
+      "services": [
+        {
+          "nom": "Centre social protestant Vaud",
+          "tel": "021 560 60 60",
+          "url": "https://csp.ch/vaud",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre social protestant Genève",
+          "tel": "022 807 07 00",
+          "url": "https://csp.ch/ge",
+          "canton": "GE"
+        },
+        {
+          "nom": "Caritas Vaud",
+          "tel": "021 317 59 80",
+          "url": "https://www.caritas-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caritas Genève",
+          "tel": "022 708 04 44",
+          "url": "https://www.caritas-geneve.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Analyse de la décision et du barème",
+          "delai": "immédiat dès réception",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition ou recours interne",
+          "delai": "30 jours dès notification (variable selon canton)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision sur opposition / recours interne",
+          "delai": "variable (30 à 120 jours)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours au tribunal cantonal administratif",
+          "delai": "30 jours dès décision sur opposition",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition au commandement de payer",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LASV/LIASI état 2025",
+    "match_description": "Contestation d'un refus ou d'une réduction d'aide sociale",
+    "profane_aliases": [
+      "CSR a refusé mon aide",
+      "Hospice général refus",
+      "recours aide sociale"
+    ],
+    "negative_signals": [
+      "demande initiale pas encore faite",
+      "dette sociale (voir remboursement)"
+    ],
+    "required_facts": [
+      "canton",
+      "date décision",
+      "motif invoqué",
+      "délai restant"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Recours contre un refus d'aide sociale",
+        "domaine": "social",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Analyse de la décision et du barème",
+            "description": "Lire la décision motivée du Service social, vérifier le calcul du budget (forfait CSIAS, loyer maximal cantonal, charges reconnues).",
+            "delai": "immédiat dès réception",
+            "preuve_generee": "Décision + budget détaillé + barème cantonal"
+          },
+          {
+            "numero": 2,
+            "action": "Opposition ou recours interne",
+            "description": "Selon le canton, opposition au Service social ou recours hiérarchique (lettre motivée + pièces justificatives).",
+            "delai": "30 jours dès notification (variable selon canton)",
+            "base_legale": "lois cantonales d'aide sociale + LPGA par analogie",
+            "preuve_generee": "Recours recommandé + accusé de réception"
+          },
+          {
+            "numero": 3,
+            "action": "Décision sur opposition / recours interne",
+            "description": "Autorité supérieure cantonale réexamine et rend une nouvelle décision motivée.",
+            "delai": "variable (30 à 120 jours)",
+            "branches": [
+              {
+                "si": "aide accordée",
+                "alors": "fin du processus"
+              },
+              {
+                "si": "maintien du refus",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours au tribunal cantonal administratif",
+            "description": "Recours écrit motivé devant le tribunal administratif cantonal dans les 30 jours. Demande d'assistance judiciaire possible.",
+            "delai": "30 jours dès décision sur opposition",
+            "base_legale": "Cst 12 / Cst 29 / lois cantonales",
+            "cout": "assistance judiciaire gratuite si conditions remplies"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "social_remboursement_aide",
+    "domaine": "social",
+    "sousDomaine": "remboursement",
+    "tags": [
+      "aide sociale",
+      "remboursement",
+      "dette",
+      "héritage",
+      "CC328",
+      "CC329"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pourquoi vous demande-t-on remboursement ?",
+        "options": [
+          "héritage reçu",
+          "revenus augmentés",
+          "aide indue",
+          "autre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Durée de l aide reçue ?",
+        "options": [
+          "<1 an",
+          "1-3 ans",
+          ">3 ans"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Aviez-vous de la fortune cachée ?",
+        "options": [
+          "non",
+          "oui involontaire",
+          "oui volontaire"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous reçu une décision de remboursement ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'aide sociale peut faire l'objet de remboursement dans trois hypothèses principales : (1) perception indue (fausses déclarations, fortune non annoncée) — remboursement total avec intérêts ; (2) retour à meilleure fortune (art. 329 CC et lois cantonales) : l'ancien bénéficiaire devenu solvable peut être tenu au remboursement, généralement limité à 5 ans d'aide à GE et 10 ans à VD, selon barème cantonal ; (3) succession : l'aide est récupérée sur la part de l'héritier (avec abattement pour conjoint). Les enfants majeurs ne sont PLUS tenus à l'obligation d'entretien envers parents à l'aide sociale (suppression art. 328-329 CC pour aide sociale dans plusieurs cantons). Le non-remboursement volontaire est une infraction (art. 148a CP depuis 2017).",
+      "articles": [
+        {
+          "ref": "CC 328",
+          "titre": "Obligation d entretien entre parents",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr"
+        },
+        {
+          "ref": "CC 329",
+          "titre": "Action en aliments",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr"
+        },
+        {
+          "ref": "LASV (VD)",
+          "titre": "Loi sur l action sociale vaudoise",
+          "lien": "https://www.lexfind.ch/fe/fr/tol/23544/fr"
+        },
+        {
+          "ref": "LIASI (GE)",
+          "titre": "Loi sur l insertion et l aide sociale GE",
+          "lien": "https://www.lexfind.ch/fe/fr/tol/26395/fr"
+        },
+        {
+          "ref": "CP 148a",
+          "titre": "Obtention illicite de prestations sociales",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 144 V 388",
+          "resume": "Le retour à meilleure fortune doit être établi ; seuil de fortune et revenu à définir par le canton."
+        },
+        {
+          "ref": "TF 8C_629/2019",
+          "resume": "La bonne foi au moment de la perception peut exclure le remboursement (remise art. 25 LPGA applicable par analogie)."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Centre social protestant Vaud",
+          "tel": "021 560 60 60",
+          "url": "https://csp.ch/vaud",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre social protestant Genève",
+          "tel": "022 807 07 00",
+          "url": "https://csp.ch/ge",
+          "canton": "GE"
+        },
+        {
+          "nom": "CSP SOS Dettes VD",
+          "tel": "0840 43 21 00",
+          "url": "https://csp.ch/vaud/dettes",
+          "canton": "VD"
+        }
+      ],
+      "routageEcosysteme": {
+        "dettes": {
+          "condition": "remboursement_social",
+          "url": "dettes"
+        }
+      },
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Examen détaillé de la décision",
+          "delai": "immédiat dès réception",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition écrite au service social",
+          "delai": "30 jours dès notification (délai cantonal)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision sur opposition",
+          "delai": "60 à 90 jours selon canton",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours au tribunal cantonal des assurances ou administratif",
+          "delai": "30 jours dès notification de la décision sur opposition",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LASV/LIASI/CC état 2025",
+    "match_description": "Le service social demande le remboursement d'une aide déjà versée",
+    "profane_aliases": [
+      "remboursement CSR",
+      "Hospice demande rembourser",
+      "dette sociale aide"
+    ],
+    "negative_signals": [
+      "aide en cours (voir opposition)",
+      "aide aux parents (entretien civil)"
+    ],
+    "required_facts": [
+      "motif du remboursement",
+      "montant",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Contestation d'une décision de remboursement de l'aide sociale",
+        "domaine": "social",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Examen détaillé de la décision",
+            "description": "Lire la décision, identifier le motif de remboursement (revenus dissimulés, héritage, retour à meilleure fortune), rassembler tous les justificatifs.",
+            "delai": "immédiat dès réception",
+            "preuve_generee": "Dossier annoté de la décision"
+          },
+          {
+            "numero": 2,
+            "action": "Opposition écrite au service social",
+            "description": "Déposer une opposition motivée auprès du service social (LASV/LIASI cantonale), avec pièces justificatives.",
+            "delai": "30 jours dès notification (délai cantonal)",
+            "base_legale": "LASV (VD) / LIASI (GE) / CC 328",
+            "preuve_generee": "Lettre d'opposition AR"
+          },
+          {
+            "numero": 3,
+            "action": "Décision sur opposition",
+            "delai": "60 à 90 jours selon canton",
+            "branches": [
+              {
+                "si": "opposition admise",
+                "alors": "annulation ou réduction (fin)"
+              },
+              {
+                "si": "opposition rejetée",
+                "alors": "etape 4 (recours juridictionnel)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours au tribunal cantonal des assurances ou administratif",
+            "description": "Saisir l'autorité de recours cantonale dans les 30 jours dès notification.",
+            "delai": "30 jours dès notification de la décision sur opposition",
+            "base_legale": "loi cantonale de procédure administrative"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "social_sanspapiers_aide_urgence",
+    "domaine": "social",
+    "sousDomaine": "sans-papiers",
+    "tags": [
+      "sans-papiers",
+      "aide urgence",
+      "Cst 12",
+      "NEM",
+      "clandestin",
+      "minimum vital"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Situation administrative ?",
+        "options": [
+          "NEM",
+          "permis expiré",
+          "jamais eu de statut",
+          "procédure pendante"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Durée de séjour en Suisse ?",
+        "options": [
+          "<1 an",
+          "1-5 ans",
+          "5-10 ans",
+          ">10 ans"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Enfants scolarisés en Suisse ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous déjà sollicité l aide d urgence ?",
+        "options": [
+          "oui refusée",
+          "oui accordée",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La Constitution garantit à toute personne en détresse un droit au minimum vital (art. 12 Cst), indépendamment de son statut. Les personnes sans statut (NEM, permis expiré, clandestins) ont droit à une aide d'urgence minimale : hébergement collectif, nourriture, soins médicaux urgents, vêtements. Cette aide est typiquement minimale (environ CHF 10/jour en nature et hébergement collectif) et organisée par les cantons via des structures spécialisées (EVAM à VD, Hospice général à GE). Toute consultation médicale urgente reste accessible indépendamment du statut. Pour les familles avec enfants, des solutions spécifiques existent. Une régularisation (cas de rigueur) peut être envisagée après plusieurs années de séjour ininterrompu (art. 30 LEI, Opération Papyrus à GE historique).",
+      "articles": [
+        {
+          "ref": "Cst 12",
+          "titre": "Droit à des conditions minimales d existence",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr"
+        },
+        {
+          "ref": "LEI 30",
+          "titre": "Cas de rigueur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr"
+        },
+        {
+          "ref": "LASV (VD)",
+          "titre": "Loi sur l action sociale vaudoise",
+          "lien": "https://www.lexfind.ch/fe/fr/tol/23544/fr"
+        },
+        {
+          "ref": "LIASI (GE)",
+          "titre": "Loi sur l insertion et l aide sociale GE",
+          "lien": "https://www.lexfind.ch/fe/fr/tol/26395/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 131 I 166",
+          "resume": "Toute personne, y compris sans statut légal, a droit au minimum vital fondé sur l art. 12 Cst."
+        },
+        {
+          "ref": "TF 8C_102/2019",
+          "resume": "L aide d urgence peut être versée en nature (hébergement collectif) et minimaliste mais jamais inférieure à la dignité humaine."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "EVAM Vaud",
+          "tel": "021 557 05 00",
+          "url": "https://www.evam.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Hospice général Genève",
+          "tel": "022 420 52 00",
+          "url": "https://www.hospicegeneral.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Centre Contact Suisses-Immigrés",
+          "tel": "022 304 48 60",
+          "url": "https://www.ccsi.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Caritas Vaud",
+          "tel": "021 317 59 80",
+          "url": "https://www.caritas-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caritas Genève",
+          "tel": "022 708 04 44",
+          "url": "https://www.caritas-geneve.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {
+        "etrangers": {
+          "condition": "sans_statut",
+          "url": "etrangers"
+        }
+      },
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Constitution du dossier minimal",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande à l'autorité cantonale d'aide d'urgence",
+          "delai": "dans les 24 à 72 heures",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Évaluation et décision",
+          "delai": "généralement quelques jours à 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours administratif et appui d'une œuvre d'entraide",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "Cst/LEI/lois cantonales état 2025",
+    "match_description": "Aide d'urgence pour personne sans statut ou permis expiré",
+    "profane_aliases": [
+      "sans-papiers aide",
+      "NEM aide urgence",
+      "clandestin droits",
+      "pas de permis"
+    ],
+    "negative_signals": [
+      "statut régulier (voir aide sociale normale)",
+      "asile procédure (LAsi)"
+    ],
+    "required_facts": [
+      "statut administratif",
+      "durée en Suisse",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Demande d'aide d'urgence pour sans-papiers",
+        "domaine": "social",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Constitution du dossier minimal",
+            "description": "Réunir pièces d'identité (même périmées), preuve de présence en Suisse, témoignages, état de santé/besoin urgent.",
+            "delai": "immédiat",
+            "preuve_generee": "Dossier minimal d'urgence"
+          },
+          {
+            "numero": 2,
+            "action": "Demande à l'autorité cantonale d'aide d'urgence",
+            "description": "Solliciter l'aide d'urgence prévue par Cst 12 auprès du service social cantonal ou bureau d'aide d'urgence.",
+            "delai": "dans les 24 à 72 heures",
+            "base_legale": "Cst 12 / LASV (VD) / LIASI (GE)",
+            "preuve_generee": "Accusé de réception"
+          },
+          {
+            "numero": 3,
+            "action": "Évaluation et décision",
+            "delai": "généralement quelques jours à 30 jours",
+            "branches": [
+              {
+                "si": "aide d'urgence accordée (hébergement, nourriture, soins)",
+                "alors": "suivi (fin)"
+              },
+              {
+                "si": "refus ou aide insuffisante",
+                "alors": "etape 4 (recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours administratif et appui d'une œuvre d'entraide",
+            "description": "Recours dans les 30 jours auprès de l'autorité cantonale de recours; accompagnement par Caritas, Centre social protestant, etc.",
+            "delai": "30 jours dès notification",
+            "base_legale": "Cst 12 / loi cantonale de procédure"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "social_sanction_reduction",
+    "domaine": "social",
+    "sousDomaine": "sanction",
+    "tags": [
+      "sanction",
+      "réduction",
+      "suppression",
+      "aide sociale",
+      "faute",
+      "manquement"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel manquement vous est reproché ?",
+        "options": [
+          "refus de travail",
+          "absence rdv",
+          "fausse déclaration",
+          "autre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Gravité de la sanction ?",
+        "options": [
+          "réduction forfait",
+          "suspension partielle",
+          "suppression totale"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous été entendu avant la sanction ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Motif médical ou familial ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Les lois cantonales d'aide sociale prévoient des sanctions en cas de manquements : refus d'une mesure de réinsertion, absence à un rendez-vous, fausses déclarations. La sanction doit respecter le principe de proportionnalité et ne jamais porter atteinte au minimum vital d'urgence (art. 12 Cst). À Vaud (art. 45 LASV), la réduction peut aller jusqu'à 15-25% du forfait. À Genève (art. 35 LIASI), jusqu'à 25%. La suppression totale est réservée aux cas de fraude caractérisée. L'intéressé doit être entendu préalablement (droit d'être entendu, art. 29 Cst). La décision doit être motivée et contestable par opposition 30 jours. Un motif médical ou familial avéré annule en principe la sanction.",
+      "articles": [
+        {
+          "ref": "Cst 12",
+          "titre": "Droit à des conditions minimales d existence",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr"
+        },
+        {
+          "ref": "LASV (VD)",
+          "titre": "Loi sur l action sociale vaudoise",
+          "lien": "https://www.lexfind.ch/fe/fr/tol/23544/fr"
+        },
+        {
+          "ref": "LIASI (GE)",
+          "titre": "Loi sur l insertion et l aide sociale GE",
+          "lien": "https://www.lexfind.ch/fe/fr/tol/26395/fr"
+        },
+        {
+          "ref": "Cst 29",
+          "titre": "Garanties générales de procédure",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 142 I 1",
+          "resume": "La sanction en matière d aide sociale ne peut jamais descendre sous le minimum vital d urgence constitutionnel."
+        },
+        {
+          "ref": "TF 8C_239/2018",
+          "resume": "Droit d être entendu avant sanction ; violation entraîne annulation de la décision."
+        }
+      ],
+      "modeleLettre": "Objet : Opposition sanction du [DATE]\n\nMadame, Monsieur,\n\nJe forme opposition contre la réduction/suppression de mon aide décidée le [DATE].\n\nMotifs : [expliquer contexte, motif médical/familial, absence de faute].\n\nJe demande le retrait de la sanction et le versement intégral de l'aide à compter de [DATE].\n\n[Signature]",
+      "services": [
+        {
+          "nom": "Centre social protestant Vaud",
+          "tel": "021 560 60 60",
+          "url": "https://csp.ch/vaud",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre social protestant Genève",
+          "tel": "022 807 07 00",
+          "url": "https://csp.ch/ge",
+          "canton": "GE"
+        },
+        {
+          "nom": "Caritas Vaud",
+          "tel": "021 317 59 80",
+          "url": "https://www.caritas-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caritas Genève",
+          "tel": "022 708 04 44",
+          "url": "https://www.caritas-geneve.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Analyse des motifs de sanction",
+          "delai": "immédiat dès réception",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Droit d'être entendu et opposition",
+          "delai": "droit d'être entendu immédiat ; opposition 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision sur opposition",
+          "delai": "30 à 90 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours au tribunal administratif cantonal",
+          "delai": "30 jours dès décision sur opposition",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition au commandement de payer",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LASV/LIASI/Cst état 2025",
+    "match_description": "Sanction, réduction ou suppression de l'aide sociale contestée",
+    "profane_aliases": [
+      "CSR réduit mon aide",
+      "sanction aide sociale",
+      "suppression aide sociale"
+    ],
+    "negative_signals": [
+      "refus initial d aide",
+      "remboursement d aide"
+    ],
+    "required_facts": [
+      "motif de la sanction",
+      "montant de la réduction",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Contestation d'une sanction / réduction de prestations",
+        "domaine": "social",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Analyse des motifs de sanction",
+            "description": "Lire la décision de sanction (non-respect d'une obligation : recherche d'emploi, rendez-vous manqué, dissimulation), vérifier les motifs et proportionnalité.",
+            "delai": "immédiat dès réception",
+            "preuve_generee": "Décision + historique des échanges avec le service"
+          },
+          {
+            "numero": 2,
+            "action": "Droit d'être entendu et opposition",
+            "description": "Exercer le droit d'être entendu, puis déposer une opposition écrite motivée au Service social (expliquer le contexte, fournir preuves : certificats médicaux, justificatifs).",
+            "delai": "droit d'être entendu immédiat ; opposition 30 jours",
+            "base_legale": "Cst 29 / lois cantonales d'aide sociale",
+            "preuve_generee": "Opposition recommandée + pièces"
+          },
+          {
+            "numero": 3,
+            "action": "Décision sur opposition",
+            "description": "Le Service social réexamine la sanction (levée totale, partielle ou maintien).",
+            "delai": "30 à 90 jours",
+            "branches": [
+              {
+                "si": "sanction levée ou réduite",
+                "alors": "fin du processus"
+              },
+              {
+                "si": "maintien",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours au tribunal administratif cantonal",
+            "description": "Recours écrit motivé dans les 30 jours, avec demande d'effet suspensif pour éviter la réduction pendant la procédure.",
+            "delai": "30 jours dès décision sur opposition",
+            "base_legale": "Cst 12 / Cst 29 / lois cantonales",
+            "cout": "assistance judiciaire possible"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "social_csias_forfait",
+    "domaine": "social",
+    "sousDomaine": "bareme",
+    "tags": [
+      "CSIAS",
+      "forfait",
+      "ménage",
+      "bareme",
+      "entretien",
+      "aide sociale"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Composition du ménage ?",
+        "options": [
+          "1 personne",
+          "2 personnes",
+          "3 personnes",
+          "4+ personnes"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Êtes-vous déjà au bénéfice d aide ?",
+        "options": [
+          "oui",
+          "non",
+          "demande en cours"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Recevez-vous l intégralité du forfait CSIAS ?",
+        "options": [
+          "oui",
+          "non",
+          "je ne sais pas"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Autres revenus dans le ménage ?",
+        "options": [
+          "aucun",
+          "petit job",
+          "AI/AVS",
+          "allocations"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le forfait entretien CSIAS (normes de la Conférence suisse des institutions d'action sociale) fixe les montants minimaux reconnus pour couvrir les besoins de base (alimentation, habillement, énergie, communications, transports). Barème 2024 : 1 personne CHF 1031/mois ; 2 personnes CHF 1577 ; 3 personnes CHF 1919 ; 4 personnes CHF 2209 ; 5 personnes CHF 2498. S'ajoutent le loyer (plafonné selon canton), primes LAMal (au tarif subside moyen), et des suppléments d'intégration (SIPA, frais professionnels). Les cantons appliquent librement les normes CSIAS (recommandations) mais ne peuvent descendre sous le minimum vital constitutionnel. Le bénéficiaire peut demander un décompte détaillé et contester tout écart par opposition 30 jours.",
+      "articles": [
+        {
+          "ref": "LASV (VD)",
+          "titre": "Loi sur l action sociale vaudoise",
+          "lien": "https://www.lexfind.ch/fe/fr/tol/23544/fr"
+        },
+        {
+          "ref": "LIASI (GE)",
+          "titre": "Loi sur l insertion et l aide sociale GE",
+          "lien": "https://www.lexfind.ch/fe/fr/tol/26395/fr"
+        },
+        {
+          "ref": "Cst 12",
+          "titre": "Droit à des conditions minimales d existence",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr"
+        },
+        {
+          "ref": "CSIAS C.1",
+          "titre": "Normes CSIAS forfait entretien",
+          "lien": "https://www.lexfind.ch/fe/fr/tol/23544/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 138 V 292",
+          "resume": "Les normes CSIAS constituent des recommandations mais reflètent le minimum social admis."
+        },
+        {
+          "ref": "TF 8C_31/2013",
+          "resume": "Le forfait CSIAS ne peut être réduit au-delà du minimum vital constitutionnel."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Centre social protestant Vaud",
+          "tel": "021 560 60 60",
+          "url": "https://csp.ch/vaud",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre social protestant Genève",
+          "tel": "022 807 07 00",
+          "url": "https://csp.ch/ge",
+          "canton": "GE"
+        },
+        {
+          "nom": "CSR Vaud (centres régionaux)",
+          "url": "https://www.vd.ch/themes/aides-financieres-et-soutien-social",
+          "canton": "VD"
+        },
+        {
+          "nom": "Hospice général Genève",
+          "tel": "022 420 52 00",
+          "url": "https://www.hospicegeneral.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Vérification du calcul",
+          "delai": "immédiat dès réception de la décision",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition au service social",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision sur opposition",
+          "delai": "60 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours juridictionnel cantonal",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition au commandement de payer",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "CSIAS/LASV/LIASI état 2024",
+    "match_description": "Calcul du forfait d'entretien CSIAS selon composition du ménage",
+    "profane_aliases": [
+      "montant aide sociale",
+      "combien aide forfait",
+      "bareme CSIAS"
+    ],
+    "negative_signals": [
+      "autres prestations spécifiques (PC, subsides)",
+      "aide privée (Caritas)"
+    ],
+    "required_facts": [
+      "composition du ménage",
+      "canton",
+      "autres revenus"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Contestation du calcul du forfait CSIAS",
+        "domaine": "social",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérification du calcul",
+            "description": "Comparer la décision avec les normes CSIAS C.1 actuelles (forfait entretien) et la composition du ménage déclarée.",
+            "delai": "immédiat dès réception de la décision",
+            "preuve_generee": "Tableau comparatif annoté"
+          },
+          {
+            "numero": 2,
+            "action": "Opposition au service social",
+            "description": "Déposer opposition écrite motivée auprès du service social cantonal (LASV/LIASI).",
+            "delai": "30 jours dès notification",
+            "base_legale": "LASV (VD) / LIASI (GE) / CSIAS C.1",
+            "preuve_generee": "Lettre AR + tableau de calcul"
+          },
+          {
+            "numero": 3,
+            "action": "Décision sur opposition",
+            "delai": "60 jours",
+            "branches": [
+              {
+                "si": "rectification accordée",
+                "alors": "ajustement du forfait (fin)"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 4 (recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours juridictionnel cantonal",
+            "description": "Recours auprès du tribunal cantonal des assurances ou administratif.",
+            "delai": "30 jours dès notification",
+            "base_legale": "loi cantonale de procédure administrative"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "social_personne_agee_prestations",
+    "domaine": "social",
+    "sousDomaine": "seniors",
+    "tags": [
+      "personne âgée",
+      "seniors",
+      "AVS",
+      "PC",
+      "EMS",
+      "maintien domicile"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Âge concerné ?",
+        "options": [
+          "65-75",
+          "75-85",
+          ">85"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Situation de logement ?",
+        "options": [
+          "domicile",
+          "EMS",
+          "CAT",
+          "enfant"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Autonomie ?",
+        "options": [
+          "autonome",
+          "partielle",
+          "dépendante"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Revenu principal ?",
+        "options": [
+          "AVS seule",
+          "AVS+PC",
+          "AVS+LPP",
+          "fortune"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Les seniors disposent de plusieurs prestations cumulables. Rente AVS ordinaire (art. 21 LAVS, max CHF 2450/mois en 2024), prestations complémentaires PC si revenus insuffisants (art. 4 LPC), allocation pour impotent AVS (CHF 245 à 980/mois selon degré, art. 43bis LAVS) en cas de dépendance. L'aide et soins à domicile (AVASAD VD, IMAD GE) sont partiellement pris en charge par LAMal. En EMS, le financement repose sur la participation de la personne (AVS+PC+LPP) ; les frais médicaux de soins sont couverts par la LAMal et subventionnés par le canton. En cas d'insuffisance financière pour un EMS, les PC prennent le relais (art. 10 LPC). Pro Senectute offre un accompagnement gratuit aux seniors.",
+      "articles": [
+        {
+          "ref": "LAVS 21",
+          "titre": "Âge donnant droit à la rente",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/63/837_843_843/fr"
+        },
+        {
+          "ref": "LAVS 43bis",
+          "titre": "Allocation pour impotent",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/63/837_843_843/fr"
+        },
+        {
+          "ref": "LPC 4",
+          "titre": "Conditions du droit aux PC",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2007/804/fr"
+        },
+        {
+          "ref": "LPC 10",
+          "titre": "Prestations en EMS",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2007/804/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 133 V 569",
+          "resume": "L allocation pour impotent suppose un besoin durable d aide dans les actes ordinaires de la vie."
+        },
+        {
+          "ref": "TF 9C_380/2017",
+          "resume": "Frais EMS pris en compte au titre des PC selon tarif cantonal applicable."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Pro Senectute Vaud",
+          "tel": "021 646 17 21",
+          "url": "https://vd.prosenectute.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Pro Senectute Genève",
+          "tel": "022 807 05 65",
+          "url": "https://ge.prosenectute.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "AVASAD soins à domicile VD",
+          "tel": "021 623 36 36",
+          "url": "https://www.avasad.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "IMAD Genève",
+          "tel": "022 420 20 00",
+          "url": "https://www.imad-ge.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Bilan ressources/dépenses",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt de la demande à la caisse cantonale de compensation",
+          "delai": "dans les 30 jours suivant le bilan",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision de la caisse",
+          "delai": "60 à 120 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition puis recours au tribunal cantonal des assurances",
+          "delai": "30 jours dès notification de la décision",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LAVS/LPC/LAMal état 2025",
+    "match_description": "Prestations sociales pour personnes âgées (AVS, PC, EMS, domicile)",
+    "profane_aliases": [
+      "aide senior",
+      "rente trop faible retraite",
+      "PC pour EMS",
+      "impotent AVS"
+    ],
+    "negative_signals": [
+      "personnes AI <65 (voir AI)",
+      "jeunes retraités actifs"
+    ],
+    "required_facts": [
+      "âge",
+      "situation logement",
+      "revenus actuels",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Demande de prestations complémentaires AVS pour personne âgée",
+        "domaine": "social",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Bilan ressources/dépenses",
+            "description": "Calculer revenus AVS + autres + fortune et confronter aux besoins reconnus selon LPC 10.",
+            "delai": "immédiat",
+            "preuve_generee": "Bilan financier daté"
+          },
+          {
+            "numero": 2,
+            "action": "Dépôt de la demande à la caisse cantonale de compensation",
+            "description": "Remplir le formulaire de demande PC et joindre justificatifs (impôts, baux, factures de soins).",
+            "delai": "dans les 30 jours suivant le bilan",
+            "base_legale": "LPC 4 / LPC 10 / LAVS 21",
+            "preuve_generee": "Accusé de réception caisse"
+          },
+          {
+            "numero": 3,
+            "action": "Décision de la caisse",
+            "delai": "60 à 120 jours",
+            "branches": [
+              {
+                "si": "PC accordées",
+                "alors": "versement mensuel (fin)"
+              },
+              {
+                "si": "refus ou montant insuffisant",
+                "alors": "etape 4 (opposition/recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Opposition puis recours au tribunal cantonal des assurances",
+            "description": "Opposition dans les 30 jours puis recours au tribunal des assurances en cas de rejet.",
+            "delai": "30 jours dès notification de la décision",
+            "base_legale": "LPGA 52 / LPGA 56"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "social_dettes_coexistence",
+    "domaine": "social",
+    "sousDomaine": "dettes",
+    "tags": [
+      "aide sociale",
+      "dettes",
+      "poursuites",
+      "saisie",
+      "minimum vital"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Recevez-vous l aide sociale ?",
+        "options": [
+          "oui",
+          "non",
+          "demande en cours"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Types de dettes ?",
+        "options": [
+          "impôts",
+          "privées",
+          "LAMal",
+          "multiples"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous des actes de défaut de biens ?",
+        "options": [
+          "oui",
+          "non",
+          "je ne sais pas"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Poursuites en cours ?",
+        "options": [
+          "oui",
+          "non",
+          "menacées"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'aide sociale et les poursuites coexistent mais l'aide est insaisissable (art. 92 ch. 8 LP). Les prestations reçues constituent le minimum vital et ne peuvent faire l'objet d'une saisie. En revanche, les dettes antérieures à l'aide restent exigibles et peuvent donner lieu à actes de défaut de biens. Les services sociaux n'ont pas vocation à rembourser les dettes privées du bénéficiaire ; seules les dettes vitales (loyer arriéré menant à expulsion, primes LAMal pour maintien assurance) peuvent être exceptionnellement assainies. Un désendettement structuré via Caritas, CSP ou syndicat (SOS Dettes) est recommandé. L'assainissement prend en général 3-10 ans. La nouvelle procédure de désendettement de la LP (art. 333a LP dès 2025) facilite le nouveau départ.",
+      "articles": [
+        {
+          "ref": "LP 92",
+          "titre": "Biens insaisissables",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr"
+        },
+        {
+          "ref": "LP 333a",
+          "titre": "Procédure de nouveau départ",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr"
+        },
+        {
+          "ref": "LASV (VD)",
+          "titre": "Loi sur l action sociale vaudoise",
+          "lien": "https://www.lexfind.ch/fe/fr/tol/23544/fr"
+        },
+        {
+          "ref": "LIASI (GE)",
+          "titre": "Loi sur l insertion et l aide sociale GE",
+          "lien": "https://www.lexfind.ch/fe/fr/tol/26395/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 121 III 20",
+          "resume": "Les prestations d aide sociale sont absolument insaisissables car destinées au minimum vital."
+        },
+        {
+          "ref": "TF 5A_334/2019",
+          "resume": "Un bénéficiaire de l aide sociale reste débiteur de ses anciennes dettes, qui deviennent recouvrables dès retour à meilleure fortune."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "CSP SOS Dettes VD",
+          "tel": "0840 43 21 00",
+          "url": "https://csp.ch/vaud/dettes",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caritas Dettes Conseils GE",
+          "tel": "022 708 04 48",
+          "url": "https://www.caritas-geneve.ch/desendettement",
+          "canton": "GE"
+        },
+        {
+          "nom": "Centre social protestant Vaud",
+          "tel": "021 560 60 60",
+          "url": "https://csp.ch/vaud",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre social protestant Genève",
+          "tel": "022 807 07 00",
+          "url": "https://csp.ch/ge",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {
+        "dettes": {
+          "condition": "endettement_social",
+          "url": "dettes"
+        }
+      },
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Inventaire des dettes et de l'aide reçue",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Information du service social et de l'office des poursuites",
+          "delai": "dans les 14 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Réévaluation de la saisie",
+          "delai": "30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Plainte à l'autorité de surveillance LP",
+          "delai": "10 jours dès la mesure contestée",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "10 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LP/LASV/LIASI état 2025",
+    "match_description": "Aide sociale et dettes : coexistence et désendettement",
+    "profane_aliases": [
+      "dettes et aide sociale",
+      "poursuites pendant aide",
+      "peut-on saisir aide"
+    ],
+    "negative_signals": [
+      "désendettement pur (voir domaine dettes)",
+      "faillite personnelle"
+    ],
+    "required_facts": [
+      "types de dettes",
+      "aide reçue ou non",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Coexistence aide sociale et procédure de poursuites",
+        "domaine": "social",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Inventaire des dettes et de l'aide reçue",
+            "description": "Lister actes de défaut de biens, commandements de payer en cours, et établir la part insaisissable conformément à LP 92/93.",
+            "delai": "immédiat",
+            "preuve_generee": "Tableau dettes/aide social daté"
+          },
+          {
+            "numero": 2,
+            "action": "Information du service social et de l'office des poursuites",
+            "description": "Notifier par écrit la situation à l'office des poursuites (minimum vital LP 93) et au service social (LASV/LIASI).",
+            "delai": "dans les 14 jours",
+            "base_legale": "LP 92 / LP 333a / LASV (VD) / LIASI (GE)",
+            "preuve_generee": "Courriers AR aux deux autorités"
+          },
+          {
+            "numero": 3,
+            "action": "Réévaluation de la saisie",
+            "delai": "30 jours",
+            "branches": [
+              {
+                "si": "minimum vital respecté",
+                "alors": "stabilisation (fin)"
+              },
+              {
+                "si": "saisie excessive maintenue",
+                "alors": "etape 4 (plainte LP 17)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Plainte à l'autorité de surveillance LP",
+            "description": "Plainte écrite à l'autorité cantonale de surveillance des offices de poursuite (art. 17 LP).",
+            "delai": "10 jours dès la mesure contestée",
+            "base_legale": "LP 17"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "social_dignite_minimale",
+    "domaine": "social",
+    "sousDomaine": "cst12",
+    "tags": [
+      "dignité",
+      "minimum vital",
+      "Cst 12",
+      "urgence",
+      "détresse"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Actuellement sans ressource ?",
+        "options": [
+          "oui total",
+          "partiel",
+          "non"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Type de besoin vital non couvert ?",
+        "options": [
+          "nourriture",
+          "logement",
+          "soins",
+          "cumul"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous sollicité une aide ?",
+        "options": [
+          "oui refusée",
+          "oui silence",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Situation légale ?",
+        "options": [
+          "suisse",
+          "permis",
+          "procédure asile",
+          "sans statut"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'article 12 de la Constitution fédérale garantit à toute personne en détresse, sans distinction de nationalité ou de statut, le droit d'être aidée et assistée et de recevoir les moyens indispensables pour mener une existence conforme à la dignité humaine. Ce droit inclut nourriture, hébergement, vêtements et soins médicaux de base. Il est invocable directement devant les tribunaux (justiciable). Les cantons doivent organiser une aide d'urgence accessible immédiatement. Tout refus, même pour motif de comportement, ne peut amener à priver totalement la personne de son minimum vital. Le Tribunal fédéral a développé une jurisprudence protectrice : même les requérants d'asile déboutés et les personnes faisant l'objet d'une décision de renvoi conservent ce droit fondamental.",
+      "articles": [
+        {
+          "ref": "Cst 12",
+          "titre": "Droit à des conditions minimales d existence",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr"
+        },
+        {
+          "ref": "Cst 7",
+          "titre": "Dignité humaine",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr"
+        },
+        {
+          "ref": "LASV (VD)",
+          "titre": "Loi sur l action sociale vaudoise",
+          "lien": "https://www.lexfind.ch/fe/fr/tol/23544/fr"
+        },
+        {
+          "ref": "LIASI (GE)",
+          "titre": "Loi sur l insertion et l aide sociale GE",
+          "lien": "https://www.lexfind.ch/fe/fr/tol/26395/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 131 I 166",
+          "resume": "L art. 12 Cst garantit à tout humain en détresse le minimum vital, indépendamment de son statut."
+        },
+        {
+          "ref": "ATF 135 I 119",
+          "resume": "L aide d urgence ne peut être modulée au-delà du minimum absolu, même pour sanction."
+        },
+        {
+          "ref": "ATF 142 I 1",
+          "resume": "Les réfugiés déboutés ont droit à l aide d urgence jusqu à leur départ effectif."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Centre social protestant Vaud",
+          "tel": "021 560 60 60",
+          "url": "https://csp.ch/vaud",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre social protestant Genève",
+          "tel": "022 807 07 00",
+          "url": "https://csp.ch/ge",
+          "canton": "GE"
+        },
+        {
+          "nom": "Caritas Vaud",
+          "tel": "021 317 59 80",
+          "url": "https://www.caritas-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caritas Genève",
+          "tel": "022 708 04 44",
+          "url": "https://www.caritas-geneve.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Hospice général Genève",
+          "tel": "022 420 52 00",
+          "url": "https://www.hospicegeneral.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Évaluation de la situation de détresse",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande d'aide d'urgence Cst 12",
+          "delai": "immédiat (urgence)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision et octroi",
+          "delai": "généralement quelques jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours et action en justice",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "Cst état 2025",
+    "match_description": "Invocation du droit à la dignité minimale et au minimum vital",
+    "profane_aliases": [
+      "droit minimum vital",
+      "rien pour vivre",
+      "dignité humaine aide"
+    ],
+    "negative_signals": [
+      "aide sociale ordinaire (voir LASV/LIASI)",
+      "demande non encore déposée"
+    ],
+    "required_facts": [
+      "type de besoin non couvert",
+      "démarches déjà faites",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Action pour garantie du minimum vital (Cst 12)",
+        "domaine": "social",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Évaluation de la situation de détresse",
+            "description": "Documenter l'absence de moyens (compte bancaire, hébergement, nourriture) et l'incapacité à subvenir.",
+            "delai": "immédiat",
+            "preuve_generee": "Bilan de situation daté"
+          },
+          {
+            "numero": 2,
+            "action": "Demande d'aide d'urgence Cst 12",
+            "description": "Soumettre une demande écrite au service social cantonal compétent en invoquant Cst 12 (droit fondamental).",
+            "delai": "immédiat (urgence)",
+            "base_legale": "Cst 12 / Cst 7 / LASV (VD) / LIASI (GE)",
+            "preuve_generee": "Accusé de réception"
+          },
+          {
+            "numero": 3,
+            "action": "Décision et octroi",
+            "delai": "généralement quelques jours",
+            "branches": [
+              {
+                "si": "aide d'urgence accordée",
+                "alors": "suivi régulier (fin)"
+              },
+              {
+                "si": "refus ou aide insuffisante",
+                "alors": "etape 4 (recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours et action en justice",
+            "description": "Recours administratif cantonal puis, le cas échéant, action en constatation du droit fondamental.",
+            "delai": "30 jours dès notification",
+            "base_legale": "Cst 12 / loi cantonale de procédure / LTF 113"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "social_reinsertion_professionnelle",
+    "domaine": "social",
+    "sousDomaine": "reinsertion",
+    "tags": [
+      "réinsertion",
+      "PPI",
+      "MMT",
+      "mesures",
+      "emploi",
+      "formation"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Situation actuelle ?",
+        "options": [
+          "chomage fin de droit",
+          "aide sociale",
+          "AI partielle",
+          "jeune"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Souhait de formation ?",
+        "options": [
+          "oui CFC",
+          "oui cours courts",
+          "oui stage",
+          "non"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Obstacles principaux ?",
+        "options": [
+          "langue",
+          "diplôme",
+          "santé",
+          "garde enfants"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous refusé une mesure ?",
+        "options": [
+          "oui",
+          "non",
+          "jamais proposé"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Les programmes d'insertion et de réinsertion professionnelle relèvent de plusieurs régimes : (1) pour les chômeurs, mesures MMT de la LACI (cours, stages, allocations d'initiation ; art. 59 ss LACI) ; (2) pour les bénéficiaires de l'aide sociale, programmes d'intégration cantonaux (PPI à GE, FORJAD et autres à VD) ; (3) pour les assurés AI, mesures de réadaptation professionnelle (art. 15 ss LAI) y compris orientation, reclassement, placement, formation initiale. Le refus injustifié d'une mesure entraîne réduction ou suppression de la prestation (art. 30 LACI, art. 7 LPGA, art. 21 LPGA). Les obstacles (garde enfants, santé) doivent être pris en considération dans l'évaluation du refus. Le cumul formation CFC + aide sociale est possible à certaines conditions.",
+      "articles": [
+        {
+          "ref": "LACI 59",
+          "titre": "Mesures de réinsertion",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1982/2184_2184_2184/fr"
+        },
+        {
+          "ref": "LAI 15",
+          "titre": "Orientation professionnelle",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr"
+        },
+        {
+          "ref": "LAI 17",
+          "titre": "Reclassement",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr"
+        },
+        {
+          "ref": "LASV (VD)",
+          "titre": "Loi sur l action sociale vaudoise",
+          "lien": "https://www.lexfind.ch/fe/fr/tol/23544/fr"
+        },
+        {
+          "ref": "LIASI (GE)",
+          "titre": "Loi sur l insertion et l aide sociale GE",
+          "lien": "https://www.lexfind.ch/fe/fr/tol/26395/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 139 V 524",
+          "resume": "La priorité à la réadaptation AI sur la rente s applique aussi aux cas partiellement aptes."
+        },
+        {
+          "ref": "TF 8C_330/2018",
+          "resume": "Le refus injustifié de MMT LACI peut entraîner suspension de 31-60 jours d indemnités."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Hospice général Genève",
+          "tel": "022 420 52 00",
+          "url": "https://www.hospicegeneral.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "CSR Vaud (centres régionaux)",
+          "url": "https://www.vd.ch/themes/aides-financieres-et-soutien-social",
+          "canton": "VD"
+        },
+        {
+          "nom": "ORP Vaud",
+          "url": "https://www.vd.ch/themes/travail/chomage",
+          "canton": "VD"
+        },
+        {
+          "nom": "ORP Genève",
+          "url": "https://www.ge.ch/rechercher-emploi",
+          "canton": "GE"
+        },
+        {
+          "nom": "Pro Infirmis Vaud",
+          "tel": "021 321 34 34",
+          "url": "https://www.proinfirmis.ch/vaud",
+          "canton": "VD"
+        },
+        {
+          "nom": "Pro Infirmis Genève",
+          "tel": "022 807 33 33",
+          "url": "https://www.proinfirmis.ch/geneve",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Bilan de compétences et besoins",
+          "delai": "dans les 30 jours suivant la première convocation",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande de mesure",
+          "delai": "dans les 14 jours suivant le bilan",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision sur la mesure",
+          "delai": "30 à 90 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition puis recours juridictionnel",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LACI/LAI/LASV/LIASI état 2025",
+    "match_description": "Mesures de réinsertion professionnelle (LACI, aide sociale, AI)",
+    "profane_aliases": [
+      "formation retour à l emploi",
+      "PPI genève",
+      "MMT ORP",
+      "reclassement AI"
+    ],
+    "negative_signals": [
+      "emploi stable existant",
+      "retraités AVS"
+    ],
+    "required_facts": [
+      "régime actuel (chomage/aide/AI)",
+      "formation souhaitée",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Mise en place d'une mesure de réinsertion professionnelle",
+        "domaine": "social",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Bilan de compétences et besoins",
+            "description": "Établir avec le conseiller social ou ORP un bilan : formation, expériences, freins à l'emploi.",
+            "delai": "dans les 30 jours suivant la première convocation",
+            "preuve_generee": "Bilan signé"
+          },
+          {
+            "numero": 2,
+            "action": "Demande de mesure",
+            "description": "Demander officiellement la mesure (formation LACI 59, mesure de réadaptation LAI 17, programme cantonal LASV/LIASI).",
+            "delai": "dans les 14 jours suivant le bilan",
+            "base_legale": "LACI 59 / LAI 15 / LAI 17 / LASV (VD) / LIASI (GE)",
+            "preuve_generee": "Demande écrite + accusé de réception"
+          },
+          {
+            "numero": 3,
+            "action": "Décision sur la mesure",
+            "delai": "30 à 90 jours",
+            "branches": [
+              {
+                "si": "mesure accordée",
+                "alors": "engagement et participation (fin)"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 4 (opposition / recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Opposition puis recours juridictionnel",
+            "description": "Opposition à l'autorité, puis recours au tribunal cantonal des assurances.",
+            "delai": "30 jours dès notification",
+            "base_legale": "LPGA 52 / LPGA 56"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   }
 ]

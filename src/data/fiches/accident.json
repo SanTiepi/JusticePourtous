@@ -12,6 +12,7 @@
       "prestations",
       "SUVA"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -117,7 +118,16 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "immédiatement",
+          "consequence": null,
+          "extracted_from_text": true,
+          "qualitatif": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LAA/LPGA état 2025-01-01",
@@ -139,7 +149,11 @@
       "declaration faite à l'employeur ou non",
       "nature des blessures",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "accident_circulation",
@@ -155,6 +169,7 @@
       "dommages",
       "LCR"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -258,7 +273,21 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "5 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Prescription",
+          "delai": "3 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LCR/CO état 2025-01-01",
@@ -280,7 +309,11 @@
       "presence de blesses",
       "intervention de la police",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "accident_responsabilite_civile",
@@ -296,6 +329,7 @@
       "CO",
       "réparation"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -398,7 +432,21 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Prescription",
+          "delai": "3 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "10 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -420,6 +468,2012 @@
       "identite du responsable",
       "date du dommage",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "accident_circulation_roles_assurances",
+    "domaine": "accident",
+    "sousDomaine": "circulation",
+    "tags": [
+      "accident",
+      "circulation",
+      "LCR",
+      "RC",
+      "assurances",
+      "rôles"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Êtes-vous conducteur, passager ou piéton ?",
+        "options": [
+          "conducteur",
+          "passager",
+          "piéton",
+          "cycliste"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Qui est responsable ?",
+        "options": [
+          "autre usager",
+          "moi",
+          "partagée",
+          "non déterminée"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Dommages ?",
+        "options": [
+          "matériels",
+          "corporels",
+          "cumul"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Détenteur connu ?",
+        "options": [
+          "oui",
+          "non (délit de fuite)",
+          "inconnu"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "En matière d'accident de circulation, plusieurs assurances interviennent selon le rôle de chacun. La RC du détenteur du véhicule responsable couvre les dommages corporels et matériels causés aux tiers (art. 58 LCR) ; l'action directe contre son assurance est possible (art. 65 LCR). La LAA couvre le salarié pour les accidents professionnels et non professionnels (trajet compris), avec prestations en nature et en espèces. La LAMal couvre à défaut les frais médicaux. L'AI intervient pour l'invalidité à long terme. La casco indemnise les dommages au propre véhicule (selon couverture choisie). En cas de délit de fuite ou d'auteur non identifié, le Fonds national de garantie (art. 76 LCR) intervient pour les dommages corporels.",
+      "articles": [
+        {
+          "ref": "LCR 58",
+          "titre": "Responsabilité du détenteur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr"
+        },
+        {
+          "ref": "LCR 65",
+          "titre": "Action directe contre assureur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr"
+        },
+        {
+          "ref": "LCR 76",
+          "titre": "Fonds national de garantie",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr"
+        },
+        {
+          "ref": "LAA 6",
+          "titre": "Événements assurés",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 124 III 182",
+          "resume": "La responsabilité du détenteur (LCR 58) est causale : il répond sans faute pour les risques inhérents au véhicule."
+        },
+        {
+          "ref": "TF 4A_327/2018",
+          "resume": "L action directe contre l assureur RC (LCR 65) est autonome et non subordonnée à action contre le détenteur."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "TCS Touring Club Suisse",
+          "tel": "0844 888 111",
+          "url": "https://www.tcs.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Automobile Club Suisse",
+          "tel": "031 328 31 11",
+          "url": "https://www.acs.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "SUVA",
+          "tel": "0848 830 830",
+          "url": "https://www.suva.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Fonds national de garantie",
+          "url": "https://www.nbi-fng.ch/fr",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ombudsman de l'assurance privée",
+          "tel": "044 211 30 90",
+          "url": "https://www.versicherungsombudsman.ch/fr",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Identification des assurances concernées",
+          "delai": "immédiat après accident",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Déclaration à chaque assureur concerné",
+          "delai": "dans les 14 jours selon polices",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Coordination et avances",
+          "delai": "30 à 90 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Saisine du tribunal ou intervention d'un juriste",
+          "delai": "avant prescription",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LCR/LAA/LAMal état 2025",
+    "match_description": "Rôles et intervention des assurances après accident de circulation",
+    "profane_aliases": [
+      "accident voiture qui paie",
+      "assurances après collision",
+      "qui indemnise accident"
+    ],
+    "negative_signals": [
+      "accident sans véhicule (voir accident domestique)",
+      "maladie professionnelle"
+    ],
+    "required_facts": [
+      "rôle (conducteur/passager/piéton)",
+      "dommages",
+      "responsabilité",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Clarification des rôles des assurances après accident",
+        "domaine": "accident",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Identification des assurances concernées",
+            "description": "Lister les assurances en jeu : RC auto du responsable, casco propre, LAA (si accident du travail / trajet), LAMal (si aucune autre), AI (cas graves).",
+            "delai": "immédiat après accident",
+            "preuve_generee": "Tableau récapitulatif assurances + police RC du responsable"
+          },
+          {
+            "numero": 2,
+            "action": "Déclaration à chaque assureur concerné",
+            "description": "Déclarations parallèles : RC au assureur responsable, LAA via employeur si trajet, casco propre pour réparations immédiates.",
+            "delai": "dans les 14 jours selon polices",
+            "base_legale": "LCA 38 / LAA 45 / LCR 65",
+            "preuve_generee": "Accusés de réception de chaque assureur"
+          },
+          {
+            "numero": 3,
+            "action": "Coordination et avances",
+            "description": "Vérifier les avances (p. ex. LAA avance pour frais médicaux) et les recours entre assureurs (subrogation).",
+            "delai": "30 à 90 jours",
+            "branches": [
+              {
+                "si": "prise en charge coordonnée OK",
+                "alors": "indemnisation complète"
+              },
+              {
+                "si": "conflit entre assureurs ou refus",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Saisine du tribunal ou intervention d'un juriste",
+            "description": "Si un assureur refuse sa part, action devant le tribunal des assurances (LAA/AI) ou civil (RC). Prescription 3 ans (RC) / LPGA.",
+            "delai": "avant prescription",
+            "base_legale": "LPGA 56 / CO 60 / LCR 83",
+            "cout": "gratuit assurances sociales / tarif cantonal RC"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "accident_constat_amiable",
+    "domaine": "accident",
+    "sousDomaine": "procedure",
+    "tags": [
+      "constat",
+      "amiable",
+      "circulation",
+      "déclaration",
+      "LCR 51"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Blessés ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Les parties sont-elles d accord sur les faits ?",
+        "options": [
+          "oui",
+          "non partiel",
+          "non total"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous rempli un constat ?",
+        "options": [
+          "oui",
+          "non",
+          "à faire"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Police appelée ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Après tout accident de la circulation, les conducteurs doivent immédiatement s'arrêter et prendre les mesures nécessaires pour sécuriser les lieux (art. 51 LCR). En cas de blessés ou de dommages importants, la police doit être appelée (117). En cas de simples dégâts matériels sans contestation, un constat amiable européen rempli et signé par les deux parties suffit généralement. Il comporte plan d'accident, circonstances, coordonnées, assurances. Le refus de donner ses coordonnées constitue un délit de fuite (art. 92 LCR). Le constat doit être transmis à l'assurance dans les meilleurs délais. Sans accord, la police dresse un rapport. Les photos du lieu et des dommages sont essentielles comme preuves.",
+      "articles": [
+        {
+          "ref": "LCR 51",
+          "titre": "Obligations en cas d accident",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr"
+        },
+        {
+          "ref": "LCR 92",
+          "titre": "Délit de fuite",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr"
+        },
+        {
+          "ref": "LCR 58",
+          "titre": "Responsabilité du détenteur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "TF 6B_165/2015",
+          "resume": "Le refus de donner ses coordonnées après accident constitue un délit de fuite pénalement sanctionné."
+        },
+        {
+          "ref": "ATF 131 IV 36",
+          "resume": "Le constat amiable ne lie pas les assurances sur la question juridique de la responsabilité."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "TCS Touring Club Suisse",
+          "tel": "0844 888 111",
+          "url": "https://www.tcs.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Automobile Club Suisse",
+          "tel": "031 328 31 11",
+          "url": "https://www.acs.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Police circulation 117",
+          "tel": "117",
+          "url": "",
+          "canton": "VD"
+        },
+        {
+          "nom": "Police circulation GE",
+          "tel": "117",
+          "url": "",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Sécuriser les lieux et témoins",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Remplissage commun du constat",
+          "delai": "sur place",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Transmission aux assureurs",
+          "delai": "dans les 14 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Complément avec police ou expertise",
+          "delai": "avant prescription (3 ans RC)",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LCR état 2025",
+    "match_description": "Que faire immédiatement après un accident (constat, police)",
+    "profane_aliases": [
+      "remplir constat amiable",
+      "que faire après accrochage",
+      "appeler police accident"
+    ],
+    "negative_signals": [
+      "litige assurance (voir RC)",
+      "accident avec blessures graves (LAVI possible)"
+    ],
+    "required_facts": [
+      "présence de blessés",
+      "accord sur faits",
+      "police appelée",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Remplissage du constat amiable après accident",
+        "domaine": "accident",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Sécuriser les lieux et témoins",
+            "description": "Couper moteurs, sortir triangle et gilet, relever coordonnées des témoins, appeler police si blessés ou désaccord.",
+            "delai": "immédiat",
+            "preuve_generee": "Coordonnées témoins + photos des lieux"
+          },
+          {
+            "numero": 2,
+            "action": "Remplissage commun du constat",
+            "description": "Remplir constat amiable européen à deux : identités, assurances, croquis, circonstances cochées, signatures des deux conducteurs.",
+            "delai": "sur place",
+            "base_legale": "LCR 51 / LCR 92",
+            "preuve_generee": "Constat amiable signé + photos dégâts"
+          },
+          {
+            "numero": 3,
+            "action": "Transmission aux assureurs",
+            "description": "Envoyer le constat à son propre assureur RC/casco dans les 14 jours (selon police) avec photos et rapport personnel.",
+            "delai": "dans les 14 jours",
+            "base_legale": "LCA 38",
+            "branches": [
+              {
+                "si": "accord entre assureurs",
+                "alors": "indemnisation selon responsabilités établies"
+              },
+              {
+                "si": "contestation",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Complément avec police ou expertise",
+            "description": "Si désaccord ou constat contesté, demander rapport de police, expertise indépendante, puis éventuelle action civile.",
+            "delai": "avant prescription (3 ans RC)",
+            "base_legale": "LCR 58 / CO 60",
+            "cout": "expertise : selon mandat"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "accident_rc_vehicules_indemnisation",
+    "domaine": "accident",
+    "sousDomaine": "rc",
+    "tags": [
+      "RC",
+      "véhicules",
+      "indemnisation",
+      "LCR 58",
+      "LCA",
+      "dommages"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Type de dommage ?",
+        "options": [
+          "matériel seul",
+          "corporel",
+          "mixte"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Assurance adverse coopère ?",
+        "options": [
+          "oui",
+          "lenteur",
+          "refuse",
+          "conteste faute"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Expertise véhicule faite ?",
+        "options": [
+          "oui",
+          "non",
+          "en cours"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Perte de gain à faire valoir ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'assurance RC du détenteur responsable indemnise tous les dommages causés à des tiers par l'utilisation de son véhicule (art. 58 LCR). La victime peut agir directement contre cette assurance (art. 65 LCR). Les postes de dommages classiques : frais médicaux (couverts d'abord par LAA/LAMal, puis recours sur RC), perte de gain passée et future, atteinte à l'avenir économique, tort moral, frais divers (taxi, adaptation véhicule/logement). Pour le véhicule : valeur de remplacement ou réparation jusqu'à la valeur vénale. Le calcul du dommage suit les règles du CO 45-46. En cas de désaccord, la procédure civile peut être introduite dans un délai de 3 ans dès connaissance du dommage et de l'auteur (art. 60 CO ; 10 ans max). Une expertise médicale et technique peut être nécessaire.",
+      "articles": [
+        {
+          "ref": "LCR 58",
+          "titre": "Responsabilité du détenteur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr"
+        },
+        {
+          "ref": "LCR 65",
+          "titre": "Action directe contre assureur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr"
+        },
+        {
+          "ref": "CO 45",
+          "titre": "Dommages en cas de mort",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 46",
+          "titre": "Dommages en cas de lésions",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 60",
+          "titre": "Prescription action RC",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 139 V 28",
+          "resume": "La perte de gain future se calcule selon salaire probable sans l accident moins salaire après (capacité résiduelle)."
+        },
+        {
+          "ref": "TF 4A_171/2013",
+          "resume": "Le tort moral LCR s apprécie selon gravité et durée des atteintes, avec barèmes indicatifs."
+        }
+      ],
+      "modeleLettre": "Objet : Demande d'indemnisation suite à accident de la circulation\n\nA [ASSURANCE RC responsable],\n\nJe soussigné(e) [NOM], victime de l'accident du [DATE] (ref. sinistre [N°]), vous sollicite au titre de vos obligations selon art. 58 et 65 LCR.\n\nDommages à indemniser :\n- Frais médicaux non couverts : CHF [X]\n- Perte de gain : CHF [Y] (certif. employeur joint)\n- Tort moral : CHF [Z]\n- Frais divers : CHF [W]\n\nPièces : rapport police, certificats médicaux, décompte LAA, fiches salaire.\n\n[Signature]",
+      "services": [
+        {
+          "nom": "TCS Touring Club Suisse",
+          "tel": "0844 888 111",
+          "url": "https://www.tcs.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Automobile Club Suisse",
+          "tel": "031 328 31 11",
+          "url": "https://www.acs.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ombudsman de l'assurance privée",
+          "tel": "044 211 30 90",
+          "url": "https://www.versicherungsombudsman.ch/fr",
+          "canton": "VD"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Délai procédural",
+          "delai": "3 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "10 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LCR/CO état 2025",
+    "match_description": "Calcul et réclamation d'indemnités RC après accident de circulation",
+    "profane_aliases": [
+      "indemnisation accident voiture",
+      "RC ne paie pas",
+      "dommages après collision"
+    ],
+    "negative_signals": [
+      "casco pur (voir casco)",
+      "accident sans tiers"
+    ],
+    "required_facts": [
+      "type de dommage",
+      "responsabilité établie",
+      "postes réclamés",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "accident_expert_conteste",
+    "domaine": "accident",
+    "sousDomaine": "expertise",
+    "tags": [
+      "expertise",
+      "expert",
+      "contester",
+      "médecin-conseil",
+      "LPGA 43",
+      "LPGA 44"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Type d expertise contestée ?",
+        "options": [
+          "médicale",
+          "technique véhicule",
+          "psychiatrique"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Motif de contestation ?",
+        "options": [
+          "partialité",
+          "erreur technique",
+          "pas de contradictoire",
+          "conclusions"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous été entendu par l expert ?",
+        "options": [
+          "oui",
+          "non",
+          "expertise sur dossier"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Décision déjà rendue ?",
+        "options": [
+          "oui",
+          "non",
+          "projet"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'assuré peut contester un rapport d'expertise lorsqu'un motif de récusation ou un vice de procédure existe (art. 44 LPGA). Motifs classiques : partialité (expert ayant déjà travaillé pour l'assureur, liens d'intérêt), vice du contradictoire (absence d'audition, questions non soumises), erreurs techniques ou scientifiques manifestes. Dans une procédure d'assurance sociale, l'assuré doit être informé à l'avance de la personne de l'expert et peut demander sa récusation (art. 44 LPGA). Un rapport biaisé peut être combattu par expertise judiciaire. Si la contestation est rejetée, la contestation peut faire l'objet de l'opposition puis du recours au tribunal cantonal des assurances. Le tribunal peut ordonner une expertise judiciaire contradictoire.",
+      "articles": [
+        {
+          "ref": "LPGA 43",
+          "titre": "Expertise",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2002/510/fr"
+        },
+        {
+          "ref": "LPGA 44",
+          "titre": "Expertise : récusation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2002/510/fr"
+        },
+        {
+          "ref": "LPGA 52",
+          "titre": "Opposition",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2002/510/fr"
+        },
+        {
+          "ref": "LPGA 55",
+          "titre": "Application subsidiaire de la PA",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2002/510/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 139 V 349",
+          "resume": "La désignation de l expert doit être transparente et l assuré doit pouvoir soumettre des questions."
+        },
+        {
+          "ref": "TF 8C_580/2018",
+          "resume": "Les expertises répétées pour le même assureur peuvent faire apparaître un doute objectif de partialité."
+        }
+      ],
+      "modeleLettre": "Objet : Contestation du rapport d'expertise du [DATE]\n\nMadame, Monsieur,\n\nJe conteste le rapport d'expertise rendu le [DATE] par [NOM expert], pour les motifs suivants :\n- [Motif de récusation : liens, nombre d expertises pour assureur]\n- [Vices de forme : pas d audition, questions non soumises]\n- [Erreurs techniques : détailler]\n\nJe sollicite une nouvelle expertise neutre et contradictoire (art. 44 LPGA) et m'oppose à toute décision fondée sur l'expertise litigieuse.\n\n[Signature]",
+      "services": [
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Fédération suisse des patients",
+          "url": "https://www.federationdespatients.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ombudsman de l'assurance privée",
+          "tel": "044 211 30 90",
+          "url": "https://www.versicherungsombudsman.ch/fr",
+          "canton": "VD"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Récusation de l'expert",
+          "delai": "Sans délai dès connaissance du motif",
+          "base_legale": "CPP 58 / LPGA 10",
+          "consequence": "Délai strict pour soulever la récusation"
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LPGA/PA état 2025",
+    "match_description": "Contestation d'une expertise médicale ou technique en assurance",
+    "profane_aliases": [
+      "expertise biaisée",
+      "médecin-conseil pas neutre",
+      "contester expertise AI/LAA"
+    ],
+    "negative_signals": [
+      "premier rapport en cours d élaboration",
+      "décision non encore rendue"
+    ],
+    "required_facts": [
+      "type d expertise",
+      "motif de contestation",
+      "statut de la décision",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "accident_invalidite_suite",
+    "domaine": "accident",
+    "sousDomaine": "invalidite",
+    "tags": [
+      "invalidité",
+      "accident",
+      "rente",
+      "LAA 18",
+      "LAI 28",
+      "cumul"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Origine de l invalidité ?",
+        "options": [
+          "accident pur",
+          "mixte accident+maladie",
+          "maladie prédominante"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Statut lors de l accident ?",
+        "options": [
+          "salarié",
+          "indépendant",
+          "sans emploi",
+          "étudiant"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Degré d invalidité estimé ?",
+        "options": [
+          "<40%",
+          "40-70%",
+          ">70%"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Demandes déjà déposées ?",
+        "options": [
+          "LAA oui",
+          "AI oui",
+          "les deux",
+          "aucune"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Suite à un accident entraînant une invalidité durable, deux régimes peuvent intervenir cumulativement. La LAA verse une rente d'invalidité (art. 18 LAA) dès 10% d'incapacité de gain, calculée à 80% du gain assuré pour 100% d'invalidité. L'AI verse une rente dès 40% d'invalidité (art. 28 LAI), selon le système des paliers (40% = ¼ rente, 50% = ½, 60% = ¾, 70%+ = rente entière). Le cumul LAA+AI est plafonné à 90% du gain présumé perdu (art. 20 LAA). Les procédures sont distinctes : annonce LAA via employeur/SUVA, demande AI séparée à l'Office AI. L'évaluation du taux d'invalidité diffère selon assurances mais la jurisprudence impose une certaine coordination. La détection précoce AI doit intervenir dès incapacité prolongée.",
+      "articles": [
+        {
+          "ref": "LAA 18",
+          "titre": "Rente d invalidité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr"
+        },
+        {
+          "ref": "LAI 28",
+          "titre": "Droit à la rente AI",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr"
+        },
+        {
+          "ref": "LAA 20",
+          "titre": "Surindemnisation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr"
+        },
+        {
+          "ref": "LAA 16",
+          "titre": "Indemnité journalière",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 132 V 215",
+          "resume": "Coordination LAA/AI : l évaluation de l invalidité doit être cohérente mais chaque assureur garde son autonomie."
+        },
+        {
+          "ref": "TF 8C_253/2019",
+          "resume": "La rente LAA s éteint par décès et peut être convertie en rente de complément à l AI."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "SUVA",
+          "tel": "0848 830 830",
+          "url": "https://www.suva.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office AI Vaud",
+          "url": "https://www.aivd.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office AI Genève",
+          "url": "https://www.oaige.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Pro Infirmis Vaud",
+          "tel": "021 321 34 34",
+          "url": "https://www.proinfirmis.ch/vaud",
+          "canton": "VD"
+        },
+        {
+          "nom": "Pro Infirmis Genève",
+          "tel": "022 807 33 33",
+          "url": "https://www.proinfirmis.ch/geneve",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Annonce et constitution du dossier",
+          "delai": "immédiat dès stabilisation",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande à la SUVA/assurance-accidents et à l'AI",
+          "delai": "dès stabilisation, au plus tard 5 ans après l'accident",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Évaluation médicale et économique",
+          "delai": "généralement 6 à 18 mois",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition puis recours au tribunal cantonal des assurances",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LAA/LAI état 2025",
+    "match_description": "Invalidité suite à accident : rentes LAA et AI",
+    "profane_aliases": [
+      "rente invalidité après accident",
+      "cumul LAA AI",
+      "incapable de travailler après accident"
+    ],
+    "negative_signals": [
+      "invalidité maladie pure (voir AI)",
+      "accident sans séquelles durables"
+    ],
+    "required_facts": [
+      "origine accident pur ou mixte",
+      "degré estimé",
+      "demandes déjà déposées",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Demande de rente d'invalidité suite à un accident",
+        "domaine": "accident",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Annonce et constitution du dossier",
+            "description": "Rassembler certificats médicaux, rapport d'accident, fiches de salaire, expertises éventuelles.",
+            "delai": "immédiat dès stabilisation",
+            "preuve_generee": "Dossier médical et professionnel"
+          },
+          {
+            "numero": 2,
+            "action": "Demande à la SUVA/assurance-accidents et à l'AI",
+            "description": "Déposer la demande de rente LAA auprès de l'assureur-accidents et la demande AI auprès de l'office cantonal AI.",
+            "delai": "dès stabilisation, au plus tard 5 ans après l'accident",
+            "base_legale": "LAA 18 / LAA 20 / LAI 28",
+            "preuve_generee": "Accusés de réception des deux assureurs"
+          },
+          {
+            "numero": 3,
+            "action": "Évaluation médicale et économique",
+            "delai": "généralement 6 à 18 mois",
+            "branches": [
+              {
+                "si": "rente accordée (LAA et/ou AI)",
+                "alors": "versements (fin courante)"
+              },
+              {
+                "si": "refus ou rente jugée insuffisante",
+                "alors": "etape 4 (opposition/recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Opposition puis recours au tribunal cantonal des assurances",
+            "description": "Opposition dans 30 jours puis recours juridictionnel.",
+            "delai": "30 jours dès notification",
+            "base_legale": "LPGA 52 / LPGA 56"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "accident_faute_concomitante",
+    "domaine": "accident",
+    "sousDomaine": "rc",
+    "tags": [
+      "faute concomitante",
+      "CO 44",
+      "réduction",
+      "responsabilité partagée",
+      "indemnisation"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Votre comportement a-t-il contribué à l accident ?",
+        "options": [
+          "non",
+          "peu",
+          "nettement"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Exemple ?",
+        "options": [
+          "ceinture non attachée",
+          "alcool/drogue",
+          "téléphone",
+          "aucun"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Quelle réduction propose l assurance ?",
+        "options": [
+          "<10%",
+          "10-30%",
+          "30-50%",
+          ">50%"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Acceptez-vous la réduction ?",
+        "options": [
+          "oui",
+          "non",
+          "partielle"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'art. 44 CO permet au juge de réduire ou supprimer l'indemnité due par le responsable lorsque la victime a elle-même contribué au dommage (faute concomitante). En matière de LCR, l'art. 59 al. 2 permet la réduction lorsque la victime a commis une faute. Exemples typiques : absence de ceinture (réduction 5-20%), conduite sous influence de la victime, utilisation du téléphone, imprudence manifeste, refus de traitement médical prolongeant l'incapacité. La faute de la victime doit être causale (sine qua non) et adéquate. En cas de pluralité de fauteurs, le partage se fait selon la gravité relative. La jurisprudence considère qu'une faute légère (<20%) n'entraîne pas de réduction. Une faute grave exclusive supprime le droit à indemnité.",
+      "articles": [
+        {
+          "ref": "CO 44",
+          "titre": "Réduction pour faute concomitante",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "LCR 59",
+          "titre": "Exonération et réduction",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr"
+        },
+        {
+          "ref": "CO 43",
+          "titre": "Fixation de l indemnité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 132 III 249",
+          "resume": "L absence de ceinture justifie une réduction de 10-20% selon la gravité des blessures évitables."
+        },
+        {
+          "ref": "TF 4A_232/2016",
+          "resume": "La conduite sous influence de la victime peut conduire à une réduction substantielle (30-50%) selon les circonstances."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "TCS Touring Club Suisse",
+          "tel": "0844 888 111",
+          "url": "https://www.tcs.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ombudsman de l'assurance privée",
+          "tel": "044 211 30 90",
+          "url": "https://www.versicherungsombudsman.ch/fr",
+          "canton": "VD"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Documentation des circonstances",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Échange contradictoire avec l'assureur RC",
+          "delai": "dans les 60 jours suivant la proposition de l'assureur",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai de négociation",
+          "delai": "60 à 90 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action en responsabilité civile au tribunal",
+          "delai": "3 ans dès connaissance du dommage et de l'auteur (CO 60)",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "CO/LCR état 2025",
+    "match_description": "Réduction de l'indemnité pour faute concomitante de la victime",
+    "profane_aliases": [
+      "pas de ceinture réduction",
+      "faute partagée accident",
+      "réduction indemnité"
+    ],
+    "negative_signals": [
+      "responsabilité totale d autrui sans faute victime",
+      "accident sans tiers"
+    ],
+    "required_facts": [
+      "comportement de la victime",
+      "pourcentage proposé",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Réduction d'indemnité pour faute concomitante",
+        "domaine": "accident",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Documentation des circonstances",
+            "description": "Rassembler rapport de police, photos, témoignages, expertises (vitesse, alcool, ceinture, comportement victime).",
+            "delai": "immédiat",
+            "preuve_generee": "Dossier circonstanciel"
+          },
+          {
+            "numero": 2,
+            "action": "Échange contradictoire avec l'assureur RC",
+            "description": "Discuter par écrit la quote-part de réduction proposée (CO 44, LCR 59) et fournir les éléments à décharge.",
+            "delai": "dans les 60 jours suivant la proposition de l'assureur",
+            "base_legale": "CO 43 / CO 44 / LCR 59",
+            "preuve_generee": "Lettre AR + dossier complet"
+          },
+          {
+            "numero": 3,
+            "action": "Délai de négociation",
+            "delai": "60 à 90 jours",
+            "branches": [
+              {
+                "si": "accord transactionnel",
+                "alors": "indemnisation (fin)"
+              },
+              {
+                "si": "désaccord",
+                "alors": "etape 4 (action judiciaire)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Action en responsabilité civile au tribunal",
+            "description": "Saisir le tribunal civil pour faire trancher la quote-part de faute et le dommage indemnisable.",
+            "delai": "3 ans dès connaissance du dommage et de l'auteur (CO 60)",
+            "base_legale": "CO 41 / CO 60 / LCR 65"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "accident_prescription_rc",
+    "domaine": "accident",
+    "sousDomaine": "prescription",
+    "tags": [
+      "prescription",
+      "CO 60",
+      "RC",
+      "délai",
+      "action civile"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Date de l accident ?",
+        "options": [
+          "<1 an",
+          "1-3 ans",
+          "3-10 ans",
+          ">10 ans"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Avez-vous reconnu tous vos dommages ?",
+        "options": [
+          "oui",
+          "suite en cours",
+          "aggravation récente"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Procédure pénale en cours ?",
+        "options": [
+          "oui",
+          "non",
+          "terminée"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Poursuite ou citation déjà faite ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'action civile en responsabilité délictuelle se prescrit par 3 ans dès le jour où le lésé a connaissance du dommage et de l'auteur, et dans tous les cas par 10 ans dès le fait dommageable (art. 60 al. 1 CO, version révisée 2020). Pour les dommages corporels, le délai absolu est porté à 20 ans (CO 60 al. 1bis). Lorsque l'acte illicite est simultanément une infraction pénale avec une prescription plus longue, c'est cette dernière qui s'applique (art. 60 al. 2 CO). Pour les prétentions LCR contre l'assurance, le délai est également de 3/20 ans (art. 83 LCR). La prescription peut être interrompue par poursuite, citation en conciliation, action en justice ou reconnaissance de dette. Un sauvegarde préventif de la prescription est conseillé en cas de dommages évolutifs.",
+      "articles": [
+        {
+          "ref": "CO 60",
+          "titre": "Prescription action RC",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "LCR 83",
+          "titre": "Prescription LCR",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr"
+        },
+        {
+          "ref": "CO 135",
+          "titre": "Interruption de la prescription",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 136 II 187",
+          "resume": "La connaissance du dommage suppose la connaissance de son ampleur et de ses conséquences durables."
+        },
+        {
+          "ref": "TF 4A_125/2020",
+          "resume": "La révision 2020 du CO 60 a étendu à 20 ans la prescription pour dommages corporels."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "TCS Touring Club Suisse",
+          "tel": "0844 888 111",
+          "url": "https://www.tcs.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Automobile Club Suisse",
+          "tel": "031 328 31 11",
+          "url": "https://www.acs.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Identification du délai applicable",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Mise en demeure et acte interruptif",
+          "delai": "avant l'échéance du délai",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai de négociation post-interruption",
+          "delai": "nouveau délai (3 ans dès interruption)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action civile devant le tribunal",
+          "delai": "avant nouvelle prescription",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "CO/LCR état 2025 (révision 2020)",
+    "match_description": "Délai de prescription pour action civile après accident",
+    "profane_aliases": [
+      "délai pour réclamer",
+      "prescription accident",
+      "encore le temps de demander"
+    ],
+    "negative_signals": [
+      "assurances sociales LAA/AI (autres délais)",
+      "droit pénal (délai pénal)"
+    ],
+    "required_facts": [
+      "date accident",
+      "date connaissance dommage",
+      "interruptions éventuelles",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Sauvegarde des droits avant prescription RC",
+        "domaine": "accident",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Identification du délai applicable",
+            "description": "Calculer le délai relatif (3 ans dès connaissance) et absolu (10 ans depuis le fait, exceptions LCR/LAA).",
+            "delai": "immédiat",
+            "preuve_generee": "Note de calcul"
+          },
+          {
+            "numero": 2,
+            "action": "Mise en demeure et acte interruptif",
+            "description": "Lettre recommandée à l'auteur/assureur RC, ou réquisition de poursuite à l'office des poursuites pour interrompre la prescription.",
+            "delai": "avant l'échéance du délai",
+            "base_legale": "CO 60 / CO 135 / LCR 83",
+            "preuve_generee": "AR ou réquisition de poursuite"
+          },
+          {
+            "numero": 3,
+            "action": "Délai de négociation post-interruption",
+            "delai": "nouveau délai (3 ans dès interruption)",
+            "branches": [
+              {
+                "si": "accord amiable",
+                "alors": "indemnisation (fin)"
+              },
+              {
+                "si": "blocage",
+                "alors": "etape 4 (procédure judiciaire)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Action civile devant le tribunal",
+            "description": "Conciliation puis action devant le tribunal civil compétent.",
+            "delai": "avant nouvelle prescription",
+            "base_legale": "CO 60 / CPC 197"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "accident_casco_refus",
+    "domaine": "accident",
+    "sousDomaine": "casco",
+    "tags": [
+      "casco",
+      "refus",
+      "LCA",
+      "faute grave",
+      "prétention frauduleuse"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Motif invoqué par l assureur ?",
+        "options": [
+          "faute grave",
+          "prétention frauduleuse",
+          "exclusion contractuelle",
+          "conditions non remplies"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Type de casco ?",
+        "options": [
+          "collision",
+          "partielle",
+          "complète"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Circonstances accident ?",
+        "options": [
+          "négligence",
+          "alcool",
+          "vitesse",
+          "normal"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Police de police/pénal ?",
+        "options": [
+          "amende",
+          "retrait permis",
+          "pénal",
+          "aucune"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La casco relève de la LCA (loi sur le contrat d'assurance). L'assureur peut réduire ou refuser les prestations en cas de faute grave du preneur (art. 14 al. 2 LCA) : conduite sous influence marquée, excès de vitesse considérable, utilisation du téléphone. La réduction doit être proportionnée à la gravité et n'est pas automatique ; nouveauté art. 14 révisé 2022 : suppression possible seulement pour faute grave, pas pour simple faute. La prétention frauduleuse (fausses déclarations, exagération du sinistre) conduit à refus total (art. 40 LCA). Les exclusions contractuelles (usage commercial, prêt à non autorisé) doivent figurer clairement dans les CGA. Le refus peut être contesté en justice civile dans un délai de prescription de 5 ans (art. 46 LCA). Un recours auprès de l'ombudsman de l'assurance privée est possible.",
+      "articles": [
+        {
+          "ref": "LCA 14",
+          "titre": "Faute grave",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/719_735_717/fr"
+        },
+        {
+          "ref": "LCA 40",
+          "titre": "Prétentions frauduleuses",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/719_735_717/fr"
+        },
+        {
+          "ref": "LCA 46",
+          "titre": "Prescription LCA",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/719_735_717/fr"
+        },
+        {
+          "ref": "LCA 32",
+          "titre": "Inobservation des prescriptions",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/719_735_717/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 133 III 527",
+          "resume": "La faute grave LCA suppose une négligence d une intensité particulière ou une intention."
+        },
+        {
+          "ref": "TF 4A_20/2018",
+          "resume": "L exagération volontaire du dommage même partielle fait tomber la totalité du droit (art. 40 LCA)."
+        }
+      ],
+      "modeleLettre": "Objet : Contestation refus casco sinistre [N°]\n\nMadame, Monsieur,\n\nJe conteste votre refus de prise en charge du sinistre survenu le [DATE].\n\nMotifs : [détailler pourquoi la faute grave n'est pas établie ou proportionnalité non respectée].\n\nPièces : rapport police, décision administrative, photos.\n\nJe vous prie de reconsidérer votre position sous 30 jours, à défaut je saisirai la justice civile et l'ombudsman.\n\n[Signature]",
+      "services": [
+        {
+          "nom": "Ombudsman de l'assurance privée",
+          "tel": "044 211 30 90",
+          "url": "https://www.versicherungsombudsman.ch/fr",
+          "canton": "VD"
+        },
+        {
+          "nom": "TCS Touring Club Suisse",
+          "tel": "0844 888 111",
+          "url": "https://www.tcs.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Recours",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LCA état 2025 (révision 2022)",
+    "match_description": "Refus de prise en charge par l'assurance casco",
+    "profane_aliases": [
+      "casco refuse payer",
+      "assurance véhicule refus",
+      "faute grave voiture"
+    ],
+    "negative_signals": [
+      "RC tiers (voir RC)",
+      "contestation contrat cadre"
+    ],
+    "required_facts": [
+      "motif du refus",
+      "type de casco",
+      "faits détaillés",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "accident_domestique_responsabilite",
+    "domaine": "accident",
+    "sousDomaine": "domestique",
+    "tags": [
+      "accident",
+      "domestique",
+      "CO 41",
+      "responsabilité",
+      "loisirs",
+      "propriétaire"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Lieu de l accident ?",
+        "options": [
+          "domicile privé",
+          "chez tiers",
+          "piscine commune",
+          "lieu public"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Cause ?",
+        "options": [
+          "chute",
+          "objet défectueux",
+          "animal",
+          "négligence tiers"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Statut (travail) ?",
+        "options": [
+          "salarié (LAA)",
+          "sans activité",
+          "retraité",
+          "indépendant sans AA"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Blessures ?",
+        "options": [
+          "légères",
+          "moyennes",
+          "graves",
+          "longue durée"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Un accident hors cadre professionnel engage plusieurs régimes. Pour les salariés, la LAA couvre aussi les accidents non professionnels (art. 8 LAA) si taux d'occupation ≥ 8h/semaine. Pour les autres (retraités, sans emploi), la LAMal prend en charge les frais médicaux (avec franchise). Si un tiers est responsable (propriétaire d'un objet défectueux art. 58 CO, détenteur d'animal art. 56 CO, employeur d'un auxiliaire art. 55 CO, faute personnelle art. 41 CO), il répond civilement. La RC privée (ménage) du responsable indemnise. Délai de prescription 3 ans (connaissance) / 20 ans (dommages corporels, art. 60 CO révisé). Documenter : photos, témoins, certificats médicaux immédiats. Un accident sur lieu public peut engager la responsabilité de la collectivité (loi sur la responsabilité des collectivités).",
+      "articles": [
+        {
+          "ref": "CO 41",
+          "titre": "Acte illicite",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 58",
+          "titre": "Responsabilité du propriétaire d ouvrage",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 56",
+          "titre": "Détenteur d animal",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 60",
+          "titre": "Prescription action RC",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 130 III 193",
+          "resume": "Le propriétaire d un ouvrage défectueux répond de manière causale (CO 58), sans faute nécessaire."
+        },
+        {
+          "ref": "TF 4A_28/2020",
+          "resume": "La chute sur escalier glissant peut engager la responsabilité du propriétaire/exploitant."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "SUVA",
+          "tel": "0848 830 830",
+          "url": "https://www.suva.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Fédération suisse des patients",
+          "url": "https://www.federationdespatients.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Constat et conservation des preuves",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Notification à l'assureur RC privé du responsable",
+          "delai": "dans les 14 jours suivant l'accident",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Évaluation et négociation",
+          "delai": "60 à 180 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action en responsabilité au tribunal civil",
+          "delai": "3 ans dès connaissance du dommage et de l'auteur (CO 60)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Prescription",
+          "delai": "3 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "CO/LAA/LAMal état 2025",
+    "match_description": "Accident en dehors du travail ou de la circulation",
+    "profane_aliases": [
+      "chute à la maison",
+      "accident loisirs",
+      "glissé chez voisin"
+    ],
+    "negative_signals": [
+      "accident de la route (voir circulation)",
+      "accident de travail pur (voir LAA)"
+    ],
+    "required_facts": [
+      "lieu et cause",
+      "statut (salarié ou non)",
+      "gravité",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Responsabilité civile pour accident domestique",
+        "domaine": "accident",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Constat et conservation des preuves",
+            "description": "Photographier les lieux, conserver l'objet en cause, recueillir témoignages, certificat médical.",
+            "delai": "immédiat",
+            "preuve_generee": "Dossier de preuves"
+          },
+          {
+            "numero": 2,
+            "action": "Notification à l'assureur RC privé du responsable",
+            "description": "Annoncer le sinistre à l'assurance RC privée du responsable (ou du propriétaire si défaut d'ouvrage CO 58).",
+            "delai": "dans les 14 jours suivant l'accident",
+            "base_legale": "CO 41 / CO 56 / CO 58",
+            "preuve_generee": "Déclaration de sinistre + AR"
+          },
+          {
+            "numero": 3,
+            "action": "Évaluation et négociation",
+            "delai": "60 à 180 jours",
+            "branches": [
+              {
+                "si": "indemnisation acceptée",
+                "alors": "versement (fin)"
+              },
+              {
+                "si": "refus ou montant insuffisant",
+                "alors": "etape 4 (action civile)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Action en responsabilité au tribunal civil",
+            "description": "Conciliation puis action devant le tribunal civil compétent.",
+            "delai": "3 ans dès connaissance du dommage et de l'auteur (CO 60)",
+            "base_legale": "CO 41 / CO 56 / CO 58 / CO 60"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "accident_travail_prestations_laa",
+    "domaine": "accident",
+    "sousDomaine": "laa",
+    "tags": [
+      "LAA",
+      "accident travail",
+      "prestations",
+      "rente",
+      "IJ",
+      "indemnité"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Type d accident ?",
+        "options": [
+          "professionnel",
+          "trajet",
+          "non professionnel"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Durée d incapacité ?",
+        "options": [
+          "<3 jours",
+          "3 jours-3 mois",
+          "3-12 mois",
+          ">12 mois"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Prestations reçues ?",
+        "options": [
+          "IJ ok",
+          "IJ coupée",
+          "refus total",
+          "en attente"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Séquelles permanentes ?",
+        "options": [
+          "oui",
+          "non",
+          "à évaluer"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La LAA offre des prestations complètes en cas d'accident professionnel ou non professionnel (art. 6 LAA) : (1) traitement médical gratuit sans franchise (art. 10 LAA) ; (2) indemnité journalière de 80% du gain assuré dès le 3e jour (art. 16-17 LAA) et jusqu'à guérison ou stabilisation ; (3) rente d'invalidité dès 10% d'atteinte durable (art. 18 LAA) ; (4) indemnité pour atteinte à l'intégrité (art. 24-25 LAA, max 148 200 CHF en 2025) ; (5) prestations aux survivants (rentes, allocation pour impotent). Le gain assuré max est de 148 200 CHF/an (2025). Les frais de transport, moyens auxiliaires, mesures de réadaptation sont également couverts. Toute décision LAA (SUVA ou assureur privé) peut être contestée par opposition 30 jours (art. 52 LPGA) puis recours au tribunal cantonal des assurances (art. 56 et 60 LPGA).",
+      "articles": [
+        {
+          "ref": "LAA 6",
+          "titre": "Événements assurés",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr"
+        },
+        {
+          "ref": "LAA 10",
+          "titre": "Traitement médical",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr"
+        },
+        {
+          "ref": "LAA 16",
+          "titre": "Indemnité journalière",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr"
+        },
+        {
+          "ref": "LAA 18",
+          "titre": "Rente d invalidité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr"
+        },
+        {
+          "ref": "LAA 24",
+          "titre": "Indemnité pour atteinte à l intégrité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 134 V 72",
+          "resume": "La stabilisation de l état de santé met fin à l indemnité journalière et déclenche l examen de la rente."
+        },
+        {
+          "ref": "TF 8C_604/2019",
+          "resume": "L IAI (atteinte à l intégrité) s évalue selon table indicative et expertise médicale."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "SUVA",
+          "tel": "0848 830 830",
+          "url": "https://www.suva.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Pro Infirmis Vaud",
+          "tel": "021 321 34 34",
+          "url": "https://www.proinfirmis.ch/vaud",
+          "canton": "VD"
+        },
+        {
+          "nom": "Pro Infirmis Genève",
+          "tel": "022 807 33 33",
+          "url": "https://www.proinfirmis.ch/geneve",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Déclaration à l'employeur",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Prise en charge médicale et certificats",
+          "delai": "dès que possible",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision de l'assureur LAA",
+          "delai": "30 à 180 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition puis recours",
+          "delai": "30 jours dès décision",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition au commandement de payer",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LAA état 2025-01-01",
+    "match_description": "Prestations LAA après accident de travail",
+    "profane_aliases": [
+      "SUVA prestations",
+      "IJ accident travail",
+      "rente LAA"
+    ],
+    "negative_signals": [
+      "litige RC auteur tiers pur (voir RC)",
+      "maladie professionnelle complexe"
+    ],
+    "required_facts": [
+      "type d accident",
+      "durée incapacité",
+      "séquelles",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Prestations LAA après accident du travail",
+        "domaine": "accident",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Déclaration à l'employeur",
+            "description": "Informer immédiatement l'employeur de l'accident (date, lieu, circonstances, blessures) pour qu'il remplisse la déclaration à la SUVA/assureur LAA.",
+            "delai": "immédiat",
+            "base_legale": "LAA 45 / OLAA 53",
+            "preuve_generee": "Déclaration d'accident signée par employeur"
+          },
+          {
+            "numero": 2,
+            "action": "Prise en charge médicale et certificats",
+            "description": "Consultation médicale, conservation de tous les certificats d'incapacité de travail et factures médicales.",
+            "delai": "dès que possible",
+            "base_legale": "LAA 10 / LAA 16",
+            "preuve_generee": "Certificats médicaux + factures"
+          },
+          {
+            "numero": 3,
+            "action": "Décision de l'assureur LAA",
+            "description": "L'assureur évalue causalité, incapacité, indemnités journalières (80% du salaire dès le 3e jour), rente invalidité éventuelle.",
+            "delai": "30 à 180 jours",
+            "branches": [
+              {
+                "si": "prestations accordées",
+                "alors": "versement régulier"
+              },
+              {
+                "si": "refus ou réduction",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Opposition puis recours",
+            "description": "Opposition dans les 30 jours à l'assureur LAA, puis recours au tribunal cantonal des assurances si rejet.",
+            "delai": "30 jours dès décision",
+            "base_legale": "LPGA 52 / LPGA 56",
+            "cout": "gratuit en 1re instance"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   }
 ]

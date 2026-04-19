@@ -12,6 +12,7 @@
       "LAMal",
       "assurance"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -114,7 +115,27 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "720 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "90 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Recours",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LCA/LAMal état 2025-01-01",
@@ -136,7 +157,11 @@
       "durée de l'arrêt de travail",
       "motif du refus ou de l'arrêt des prestations",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "assurance_ai_rente",
@@ -152,6 +177,7 @@
       "délai carence",
       "mesures réinsertion"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -259,7 +285,21 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Opposition au commandement de payer",
+          "delai": "18 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Opposition au commandement de payer",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LAI/LPGA état 2025-01-01",
@@ -281,7 +321,11 @@
       "état de la demande AI (déposée ou non)",
       "pathologie ou atteinte à la sante",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "assurance_prestations_complementaires",
@@ -296,6 +340,7 @@
       "calcul",
       "LPC"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -400,7 +445,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "6 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LPC état 2025-01-01",
@@ -422,7 +475,11 @@
       "situation de fortune",
       "composition du ménage",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "assurance_laa",
@@ -437,6 +494,7 @@
       "SUVA",
       "couverture"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -562,7 +620,12 @@
       "nombre d'heures travaillees par semaine",
       "declaration faite ou non",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "assurance_laa_contestation",
@@ -577,6 +640,7 @@
       "causalité",
       "expertise"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -671,7 +735,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Opposition au commandement de payer",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LAA/LPGA état 2025-01-01",
@@ -693,6 +765,1944 @@
       "date de reception de la décision",
       "opposition déjà faite ou non",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "assurance_ai_opposition",
+    "domaine": "assurances",
+    "sousDomaine": "ai",
+    "tags": [
+      "AI",
+      "opposition",
+      "décision",
+      "LPGA",
+      "recours",
+      "rente",
+      "invalidité"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Avez-vous reçu une décision AI écrite ?",
+        "options": [
+          "oui décision",
+          "oui projet",
+          "préavis"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Date de notification ?",
+        "options": [
+          "<30 jours",
+          "30-60 jours",
+          ">60 jours"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Type de décision ?",
+        "options": [
+          "refus rente",
+          "réduction rente",
+          "refus mesures",
+          "autre"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous des pièces médicales récentes ?",
+        "options": [
+          "oui",
+          "non",
+          "en cours"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Toute décision de l'Office AI peut être attaquée par opposition dans un délai de 30 jours dès sa notification (art. 52 LPGA). L'opposition s'adresse par écrit à l'Office AI qui a rendu la décision. Elle doit être motivée et contenir des conclusions. Avant la décision formelle, l'Office AI envoie un préavis (projet de décision) sur lequel l'assuré peut se déterminer dans les 30 jours (art. 57a LAI). Après décision sur opposition, un recours au tribunal cantonal des assurances est ouvert dans les 30 jours (art. 56 et 60 LPGA). Ces délais sont péremptoires : passé ce terme, la décision devient définitive. Il est recommandé de joindre tous les nouveaux rapports médicaux et de motiver précisément chaque contestation.",
+      "articles": [
+        {
+          "ref": "LPGA 52",
+          "titre": "Opposition",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2002/510/fr"
+        },
+        {
+          "ref": "LPGA 60",
+          "titre": "Délai de recours",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2002/510/fr"
+        },
+        {
+          "ref": "LAI 54",
+          "titre": "Offices AI cantonaux",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr"
+        },
+        {
+          "ref": "LAI 57a",
+          "titre": "Préavis",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 134 V 97",
+          "resume": "L opposition doit être motivée mais un degré minimal de motivation suffit ; l Office AI doit instruire d office."
+        },
+        {
+          "ref": "TF 9C_195/2015",
+          "resume": "Le délai de 30 jours LPGA 52 est péremptoire et non prolongeable ; seule la restitution du délai est possible en cas d empêchement non fautif."
+        }
+      ],
+      "modeleLettre": "Objet : Opposition à la décision du [DATE] réf. [N°]\n\nMadame, Monsieur,\n\nPar la présente et conformément à l'art. 52 LPGA, je forme opposition contre votre décision du [DATE] me [refusant/réduisant] [prestation].\n\nMotifs : [exposer les faits médicaux et juridiques pertinents].\n\nConclusions : annuler la décision attaquée et m'octroyer [prestation demandée].\n\nJe joins : [rapports médicaux, expertises].\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
+      "services": [
+        {
+          "nom": "Pro Infirmis Vaud",
+          "tel": "021 321 34 34",
+          "url": "https://www.proinfirmis.ch/vaud",
+          "canton": "VD"
+        },
+        {
+          "nom": "Pro Infirmis Genève",
+          "tel": "022 807 33 33",
+          "url": "https://www.proinfirmis.ch/geneve",
+          "canton": "GE"
+        },
+        {
+          "nom": "Office AI Vaud",
+          "url": "https://www.aivd.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office AI Genève",
+          "url": "https://www.oaige.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Analyse de la décision et des pièces",
+          "delai": "immédiat dès réception",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt de l'opposition écrite",
+          "delai": "30 jours dès notification de la décision",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Instruction et décision sur opposition",
+          "delai": "généralement 3 à 12 mois",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours au tribunal cantonal des assurances",
+          "delai": "30 jours dès décision sur opposition",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition au commandement de payer",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LAI/LPGA état 2025-01-01",
+    "match_description": "L'assuré conteste une décision de l'Office AI (refus, réduction, mesures)",
+    "profane_aliases": [
+      "l AI m a refusé la rente",
+      "opposition AI",
+      "AI veut réduire ma rente",
+      "contester décision AI"
+    ],
+    "negative_signals": [
+      "recours déjà déposé au tribunal",
+      "accident LAA sans volet AI"
+    ],
+    "required_facts": [
+      "date de la décision",
+      "type de décision",
+      "délai encore ouvert",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Opposition à une décision AI",
+        "domaine": "assurances",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Analyse de la décision et des pièces",
+            "description": "Lire la décision AI, les rapports médicaux et les expertises. Identifier les points contestables (degré d'invalidité, capacité de gain, expertise insuffisante).",
+            "delai": "immédiat dès réception",
+            "preuve_generee": "Dossier complet AI + rapports médicaux"
+          },
+          {
+            "numero": 2,
+            "action": "Dépôt de l'opposition écrite",
+            "description": "Opposition écrite et motivée à l'office AI cantonal, accompagnée des pièces nouvelles (rapports médicaux supplémentaires, attestations).",
+            "delai": "30 jours dès notification de la décision",
+            "base_legale": "LPGA 52 / LAI 69",
+            "preuve_generee": "Opposition recommandée + accusé de réception"
+          },
+          {
+            "numero": 3,
+            "action": "Instruction et décision sur opposition",
+            "description": "L'office AI instruit (éventuelle nouvelle expertise) et rend une décision sur opposition.",
+            "delai": "généralement 3 à 12 mois",
+            "branches": [
+              {
+                "si": "décision favorable",
+                "alors": "fin du processus"
+              },
+              {
+                "si": "maintien ou rejet",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours au tribunal cantonal des assurances",
+            "description": "Recours écrit motivé devant le tribunal cantonal des assurances dans les 30 jours, puis TF si nécessaire.",
+            "delai": "30 jours dès décision sur opposition",
+            "base_legale": "LPGA 56 / LTF 82",
+            "cout": "procédure gratuite en 1re instance (LPGA 61)"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "assurance_ai_demande_procedure",
+    "domaine": "assurances",
+    "sousDomaine": "ai",
+    "tags": [
+      "AI",
+      "demande",
+      "procédure",
+      "détection précoce",
+      "réadaptation",
+      "LAI"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Durée de votre incapacité de travail ?",
+        "options": [
+          "<3 mois",
+          "3-6 mois",
+          "6-12 mois",
+          ">12 mois"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Avez-vous déjà déposé une demande AI ?",
+        "options": [
+          "oui",
+          "non",
+          "en préparation"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Votre atteinte est-elle ?",
+        "options": [
+          "physique",
+          "psychique",
+          "mixte"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Recevez-vous encore un salaire ou IJM ?",
+        "options": [
+          "salaire",
+          "IJM",
+          "aide sociale",
+          "rien"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La demande AI se dépose auprès de l'Office AI du canton de domicile (art. 54 et 57 LAI). La procédure débute idéalement par une détection précoce dès 30 jours d'incapacité (art. 3a LAI) permettant des mesures de réadaptation sans attendre. Le droit à la rente naît au plus tôt six mois après le dépôt de la demande (art. 29 al. 1 LAI) et seulement si l'incapacité de travail a duré au moins un an en moyenne à 40% (art. 28 LAI). La priorité est toujours : réadaptation avant rente (art. 7 LAI). L'instruction comporte examens médicaux, enquêtes socioprofessionnelles et, si nécessaire, expertise pluridisciplinaire (COMAI). Les délais d'instruction sont souvent longs (12-24 mois).",
+      "articles": [
+        {
+          "ref": "LAI 29",
+          "titre": "Naissance du droit à la rente",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr"
+        },
+        {
+          "ref": "LAI 54",
+          "titre": "Offices AI cantonaux",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr"
+        },
+        {
+          "ref": "LAI 28",
+          "titre": "Droit à la rente",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr"
+        },
+        {
+          "ref": "LAI 3a",
+          "titre": "Détection précoce",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 141 V 281",
+          "resume": "Nouvelle procédure d évaluation des troubles somatoformes et syndromes analogues (grille d indicateurs)."
+        },
+        {
+          "ref": "TF 8C_590/2015",
+          "resume": "La détection précoce ne fait pas naître un droit aux prestations AI mais déclenche l examen de mesures de réadaptation."
+        }
+      ],
+      "modeleLettre": "Objet : Dépôt d'une demande AI\n\nMadame, Monsieur,\n\nPar la présente, je dépose une demande de prestations AI auprès de votre Office.\n\nJe souffre depuis le [DATE] de [atteinte] attestée par mon médecin traitant, le Dr [NOM].\n\nJe joins le formulaire AI officiel dûment rempli ainsi que les rapports médicaux pertinents.\n\nJe reste à disposition pour toute information complémentaire.\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
+      "services": [
+        {
+          "nom": "Office AI Vaud",
+          "url": "https://www.aivd.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office AI Genève",
+          "url": "https://www.oaige.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Pro Infirmis Vaud",
+          "tel": "021 321 34 34",
+          "url": "https://www.proinfirmis.ch/vaud",
+          "canton": "VD"
+        },
+        {
+          "nom": "Pro Infirmis Genève",
+          "tel": "022 807 33 33",
+          "url": "https://www.proinfirmis.ch/geneve",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "24 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LAI/LPGA état 2025-01-01",
+    "match_description": "L'assuré veut déposer une demande AI ou comprendre la procédure",
+    "profane_aliases": [
+      "comment demander l AI",
+      "première demande AI",
+      "déposer dossier invalidité"
+    ],
+    "negative_signals": [
+      "décision déjà rendue (voir opposition)",
+      "accident LAA pur"
+    ],
+    "required_facts": [
+      "durée de l incapacité",
+      "nature de l atteinte",
+      "canton de domicile",
+      "démarches déjà effectuées"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "assurance_lamal_subsides_refus",
+    "domaine": "assurances",
+    "sousDomaine": "lamal",
+    "tags": [
+      "LAMal",
+      "subsides",
+      "primes",
+      "refus",
+      "réduction",
+      "canton"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Avez-vous reçu une décision écrite du canton ?",
+        "options": [
+          "oui",
+          "non",
+          "silence"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Motif du refus ?",
+        "options": [
+          "revenu trop élevé",
+          "fortune",
+          "pièces manquantes",
+          "autre"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Date de la décision ?",
+        "options": [
+          "<30 jours",
+          "30-60 jours",
+          ">60 jours"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre situation a-t-elle changé ?",
+        "options": [
+          "perte emploi",
+          "baisse revenu",
+          "naissance",
+          "aucun"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La réduction individuelle de primes (subsides) relève de la LAMal (art. 65) mais son octroi est réglé par chaque canton (revenu déterminant, fortune, barème). Le refus ou la réduction peut être contesté par réclamation/opposition dans les 30 jours auprès de l'autorité cantonale (SAM, OCAM selon canton), puis recours au tribunal cantonal des assurances (art. 56 et 60 LPGA). Un changement de situation (perte d'emploi, baisse de revenu, naissance) permet de demander un réexamen en cours d'année. Les critères varient fortement : à Vaud et Genève, le droit s'ouvre selon le revenu déterminant unifié (RDU). Consultez la loi cantonale (LVLAMal VD, LaLAMal GE) pour les seuils exacts.",
+      "articles": [
+        {
+          "ref": "LAMal 65",
+          "titre": "Réduction des primes",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr"
+        },
+        {
+          "ref": "LPGA 52",
+          "titre": "Opposition",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2002/510/fr"
+        },
+        {
+          "ref": "LPGA 60",
+          "titre": "Délai de recours",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2002/510/fr"
+        },
+        {
+          "ref": "LVLAMal VD",
+          "titre": "Loi vaudoise d application LAMal",
+          "lien": "https://www.lexfind.ch/fe/fr/tol/27158/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 131 V 202",
+          "resume": "Les subsides LAMal sont une matière de droit fédéral bien que la mise en oeuvre soit cantonale ; recours au tribunal cantonal des assurances ouvert."
+        },
+        {
+          "ref": "TF 9C_235/2020",
+          "resume": "Le réexamen en cours d année est admis en cas de modification notable et durable de la situation économique."
+        }
+      ],
+      "modeleLettre": "Objet : Opposition refus de subsides LAMal du [DATE]\n\nMadame, Monsieur,\n\nJe forme opposition contre votre décision me refusant les subsides pour l'année [ANNEE].\n\nMa situation actuelle est la suivante : revenu mensuel net CHF [montant], charges [détail]. Un événement [perte d'emploi, naissance] est intervenu le [DATE] et justifie un réexamen.\n\nJe joins : fiche de salaire, décision taxation, justificatifs.\n\nVeuillez réexaminer mon droit aux subsides.\n\n[Signature]",
+      "services": [
+        {
+          "nom": "OVAM / Office vaudois assurance-maladie",
+          "url": "https://www.vd.ch/themes/sante-soins-et-handicap/assurance-maladie",
+          "canton": "VD"
+        },
+        {
+          "nom": "SAM Genève",
+          "url": "https://www.ge.ch/demander-subside-assurance-maladie",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ombudsman de l'assurance-maladie",
+          "url": "https://www.om-kv.ch/fr",
+          "canton": "VD"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Analyse de la décision et du calcul",
+          "delai": "immédiat dès réception",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande de reconsidération ou opposition",
+          "delai": "30 jours dès notification (délai d'opposition cantonal)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision sur opposition",
+          "delai": "variable (30 à 90 jours)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours au tribunal cantonal des assurances",
+          "delai": "30 jours dès décision sur opposition",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition au commandement de payer",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LAMal/lois cantonales état 2025",
+    "match_description": "Refus ou réduction des subsides cantonaux d'assurance-maladie",
+    "profane_aliases": [
+      "subsides refusés",
+      "réduction prime refusée",
+      "OCAM ne paie plus",
+      "pas droit aux subsides"
+    ],
+    "negative_signals": [
+      "litige sur prime LAMal elle-même avec l assureur",
+      "aide sociale (voir domaine social)"
+    ],
+    "required_facts": [
+      "canton",
+      "motif du refus",
+      "date décision",
+      "revenu actuel"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Refus de subside LAMal — contestation",
+        "domaine": "assurances",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Analyse de la décision et du calcul",
+            "description": "Vérifier le calcul du revenu déterminant (RDU / revenu fiscal), les membres du ménage pris en compte, le barème cantonal applicable.",
+            "delai": "immédiat dès réception",
+            "preuve_generee": "Décision + taxation fiscale + pièces de ménage"
+          },
+          {
+            "numero": 2,
+            "action": "Demande de reconsidération ou opposition",
+            "description": "Lettre motivée à l'autorité cantonale (Service des subsides / caisse cantonale) avec pièces justificatives (changement de situation, erreur de calcul).",
+            "delai": "30 jours dès notification (délai d'opposition cantonal)",
+            "base_legale": "LAMal 65 / LPGA 52 / lois cantonales",
+            "preuve_generee": "Opposition recommandée + accusé de réception"
+          },
+          {
+            "numero": 3,
+            "action": "Décision sur opposition",
+            "description": "L'autorité cantonale réexamine et rend une nouvelle décision motivée.",
+            "delai": "variable (30 à 90 jours)",
+            "branches": [
+              {
+                "si": "subside accordé",
+                "alors": "fin du processus"
+              },
+              {
+                "si": "maintien du refus",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours au tribunal cantonal des assurances",
+            "description": "Recours écrit motivé dans les 30 jours, gratuit en 1re instance.",
+            "delai": "30 jours dès décision sur opposition",
+            "base_legale": "LPGA 56 / LAMal 91",
+            "cout": "gratuit en 1re instance"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "assurance_pc_avs_ai",
+    "domaine": "assurances",
+    "sousDomaine": "pc",
+    "tags": [
+      "PC",
+      "prestations complémentaires",
+      "AVS",
+      "AI",
+      "LPC",
+      "minimum vital"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Vous touchez actuellement ?",
+        "options": [
+          "rente AVS",
+          "rente AI",
+          "rente survivant",
+          "aucune"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Votre revenu couvre-t-il vos dépenses reconnues ?",
+        "options": [
+          "oui",
+          "à peine",
+          "non"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Fortune supérieure à CHF 100 000 ?",
+        "options": [
+          "oui",
+          "non",
+          "je ne sais pas"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous des enfants à charge ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Les prestations complémentaires (PC) à l'AVS/AI sont destinées aux personnes dont la rente et les autres revenus ne couvrent pas le minimum vital (art. 2 LPC). Conditions (art. 4 LPC) : percevoir une rente AVS ou AI (ou avoir droit à une rente), être domicilié et résider en Suisse, et que les dépenses reconnues (loyer plafonné, forfait entretien, primes LAMal moyennes) dépassent les revenus déterminants (art. 9-11 LPC). Depuis la réforme PC 2021, un seuil de fortune s'applique : CHF 100 000 pour personne seule, CHF 200 000 pour couple. La demande se dépose à la caisse de compensation cantonale. Décision contestable par opposition 30 jours (art. 52 LPGA), puis recours au tribunal cantonal des assurances.",
+      "articles": [
+        {
+          "ref": "LPC 4",
+          "titre": "Conditions générales du droit aux PC",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2007/804/fr"
+        },
+        {
+          "ref": "LPC 9",
+          "titre": "Calcul et montant de la prestation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2007/804/fr"
+        },
+        {
+          "ref": "LPC 11",
+          "titre": "Revenus déterminants",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2007/804/fr"
+        },
+        {
+          "ref": "LPGA 52",
+          "titre": "Opposition",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2002/510/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 142 V 12",
+          "resume": "La prise en compte des dépenses reconnues doit respecter le minimum vital constitutionnel (art. 12 Cst)."
+        },
+        {
+          "ref": "TF 9C_306/2019",
+          "resume": "Fortune : renonciation à fortune (dessaisissement) prise en compte rétroactivement jusqu à 10 ans."
+        }
+      ],
+      "modeleLettre": "Objet : Demande de prestations complémentaires\n\nMadame, Monsieur,\n\nJe soussigné(e) [NOM], bénéficiaire d'une rente [AVS/AI] depuis le [DATE], sollicite l'octroi de prestations complémentaires.\n\nMa situation : rente mensuelle CHF [X], loyer CHF [Y], primes LAMal CHF [Z].\n\nJe joins : décision de rente, bail, décompte LAMal, relevés bancaires.\n\nVeuillez instruire ma demande.\n\n[Signature]",
+      "services": [
+        {
+          "nom": "Caisse cantonale AVS Vaud",
+          "url": "https://www.caisseavsvaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "OCAS Genève",
+          "url": "https://www.ocas.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Pro Infirmis Vaud",
+          "tel": "021 321 34 34",
+          "url": "https://www.proinfirmis.ch/vaud",
+          "canton": "VD"
+        },
+        {
+          "nom": "Pro Infirmis Genève",
+          "tel": "022 807 33 33",
+          "url": "https://www.proinfirmis.ch/geneve",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Opposition au commandement de payer",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LPC état 2025-01-01",
+    "match_description": "Demande ou refus de prestations complémentaires AVS/AI",
+    "profane_aliases": [
+      "PC refusées",
+      "rente trop basse",
+      "complément à ma rente",
+      "PC pour vivre"
+    ],
+    "negative_signals": [
+      "aide sociale pure (sans rente)",
+      "chomage (voir LACI)"
+    ],
+    "required_facts": [
+      "type de rente",
+      "revenus et loyer",
+      "fortune",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "assurance_chomage_inscription",
+    "domaine": "assurances",
+    "sousDomaine": "chomage",
+    "tags": [
+      "chomage",
+      "ORP",
+      "inscription",
+      "LACI",
+      "caisse"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Date de fin du contrat de travail ?",
+        "options": [
+          "à venir",
+          "passée <7j",
+          "passée >7j"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Êtes-vous déjà inscrit à l ORP ?",
+        "options": [
+          "oui",
+          "non",
+          "rdv pris"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous choisi une caisse de chômage ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Recherches d emploi effectuées pendant le préavis ?",
+        "options": [
+          "oui documentées",
+          "oui non documentées",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Pour bénéficier des indemnités chômage, l'assuré doit s'inscrire à l'Office régional de placement (ORP) de son domicile dès le premier jour de chômage (art. 17 LACI). L'inscription peut être anticipée pendant le préavis. L'assuré choisit ensuite librement sa caisse de chômage (syndicale ou publique). Il doit apporter preuve des recherches d'emploi effectuées pendant le préavis (sous peine de jours de suspension). Les rendez-vous ORP mensuels sont obligatoires. L'omission de s'inscrire à temps entraîne la perte du droit aux indemnités pour les jours écoulés (art. 18 LACI). En cas de licenciement immédiat ou faute, des jours de pénalité peuvent être prononcés (art. 30 LACI).",
+      "articles": [
+        {
+          "ref": "LACI 8",
+          "titre": "Droit à l indemnité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1982/2184_2184_2184/fr"
+        },
+        {
+          "ref": "LACI 17",
+          "titre": "Obligations de l assuré",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1982/2184_2184_2184/fr"
+        },
+        {
+          "ref": "LACI 30",
+          "titre": "Suspension du droit à l indemnité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1982/2184_2184_2184/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 124 V 225",
+          "resume": "Les recherches d emploi pendant le préavis doivent être qualitatives et quantitatives (en moyenne 10-12 par mois)."
+        },
+        {
+          "ref": "TF 8C_446/2018",
+          "resume": "Inscription tardive à l ORP : pas de prestations rétroactives même en cas d ignorance."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "ORP Vaud",
+          "url": "https://www.vd.ch/themes/travail/chomage",
+          "canton": "VD"
+        },
+        {
+          "nom": "ORP Genève",
+          "url": "https://www.ge.ch/rechercher-emploi",
+          "canton": "GE"
+        },
+        {
+          "nom": "Caisse de chômage Unia Vaud",
+          "url": "https://www.unia.ch/fr/travail/chomage",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caisse de chômage GE",
+          "url": "https://www.ge.ch/faire-demande-indemnite-chomage",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Inscription à l'ORP et annonce à la caisse",
+          "delai": "dès le 1er jour (inscription conseillée avant fin du contrat)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Remise des documents à la caisse",
+          "delai": "dans les 3 mois suivant le 1er jour de contrôle",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision de la caisse sur le droit aux indemnités",
+          "delai": "variable (généralement 1 à 3 mois)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition puis recours",
+          "delai": "30 jours dès décision",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LACI état 2025-01-01",
+    "match_description": "Inscription au chômage et démarches initiales",
+    "profane_aliases": [
+      "comment m inscrire au chomage",
+      "ORP premier rendez-vous",
+      "je vais être licencié"
+    ],
+    "negative_signals": [
+      "indemnités déjà refusées (voir contestation)",
+      "incapacité de travail (IJM/AI)"
+    ],
+    "required_facts": [
+      "date fin de contrat",
+      "canton",
+      "inscription ORP faite ou non"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Inscription au chômage et demande d'indemnités",
+        "domaine": "assurances",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Inscription à l'ORP et annonce à la caisse",
+            "description": "S'inscrire à l'Office régional de placement (ORP) dès le 1er jour de chômage et s'annoncer auprès d'une caisse de chômage (publique ou syndicale).",
+            "delai": "dès le 1er jour (inscription conseillée avant fin du contrat)",
+            "base_legale": "LACI 8 / LACI 10",
+            "preuve_generee": "Confirmation d'inscription ORP + formulaire d'annonce caisse"
+          },
+          {
+            "numero": 2,
+            "action": "Remise des documents à la caisse",
+            "description": "Transmettre contrat de travail, lettre de résiliation, attestations de l'employeur, preuves de recherches d'emploi, pièces d'identité.",
+            "delai": "dans les 3 mois suivant le 1er jour de contrôle",
+            "base_legale": "LACI 20",
+            "preuve_generee": "Dossier complet avec accusé de réception"
+          },
+          {
+            "numero": 3,
+            "action": "Décision de la caisse sur le droit aux indemnités",
+            "description": "La caisse vérifie la période de cotisation (12 mois sur 2 ans), l'aptitude au placement, et rend une décision.",
+            "delai": "variable (généralement 1 à 3 mois)",
+            "branches": [
+              {
+                "si": "droit accepté",
+                "alors": "versement des indemnités"
+              },
+              {
+                "si": "rejet ou réduction",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Opposition puis recours",
+            "description": "Opposition écrite motivée dans les 30 jours à la caisse, puis recours au tribunal cantonal des assurances si rejet.",
+            "delai": "30 jours dès décision",
+            "base_legale": "LPGA 52 / LPGA 56",
+            "cout": "gratuit en 1re instance"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "assurance_chomage_indemnites_conditions",
+    "domaine": "assurances",
+    "sousDomaine": "chomage",
+    "tags": [
+      "chomage",
+      "indemnités",
+      "conditions",
+      "LACI",
+      "cotisations",
+      "aptitude"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Cotisations AVS des 24 derniers mois ?",
+        "options": [
+          ">=12 mois",
+          "6-12 mois",
+          "<6 mois",
+          "je ne sais pas"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Êtes-vous apte au placement ?",
+        "options": [
+          "oui plein temps",
+          "oui partiel",
+          "non (maladie)"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Motif de la fin de contrat ?",
+        "options": [
+          "licenciement employeur",
+          "démission",
+          "fin CDD",
+          "accord amiable"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Âge au moment de l inscription ?",
+        "options": [
+          "<25",
+          "25-55",
+          "55-63",
+          ">63"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le droit aux indemnités chômage suppose (art. 8 LACI) : être sans emploi (total ou partiel), avoir subi une perte de travail à prendre en considération, être domicilié en Suisse, avoir achevé la scolarité obligatoire, être apte au placement et avoir cotisé au moins 12 mois durant la période de référence de 24 mois (art. 13 LACI). L'indemnité journalière vaut 70% du gain assuré (80% avec enfants à charge ou bas revenu). Le nombre d'indemnités varie : 200 à 640 jours selon âge et période de cotisation (art. 27 LACI). Une démission volontaire entraîne 31-60 jours de suspension (art. 30 LACI). Un licenciement pour faute ou un comportement fautif donne aussi lieu à suspension.",
+      "articles": [
+        {
+          "ref": "LACI 8",
+          "titre": "Droit à l indemnité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1982/2184_2184_2184/fr"
+        },
+        {
+          "ref": "LACI 13",
+          "titre": "Période de cotisation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1982/2184_2184_2184/fr"
+        },
+        {
+          "ref": "LACI 27",
+          "titre": "Nombre d indemnités",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1982/2184_2184_2184/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 126 V 125",
+          "resume": "L aptitude au placement exige disponibilité temporelle et géographique suffisante."
+        },
+        {
+          "ref": "TF 8C_865/2019",
+          "resume": "Démission sans motif valable : suspension maximale de 60 jours possible."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "ORP Vaud",
+          "url": "https://www.vd.ch/themes/travail/chomage",
+          "canton": "VD"
+        },
+        {
+          "nom": "ORP Genève",
+          "url": "https://www.ge.ch/rechercher-emploi",
+          "canton": "GE"
+        },
+        {
+          "nom": "Caisse de chômage Unia Vaud",
+          "url": "https://www.unia.ch/fr/travail/chomage",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caisse de chômage GE",
+          "url": "https://www.ge.ch/faire-demande-indemnite-chomage",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Examen des conditions LACI 8",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Inscription à l'ORP et dépôt à la caisse de chômage",
+          "delai": "1er jour de chômage",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision sur le droit",
+          "delai": "30 à 60 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition puis recours au tribunal cantonal des assurances",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "12 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LACI état 2025-01-01",
+    "match_description": "Conditions du droit aux indemnités chômage",
+    "profane_aliases": [
+      "combien de mois de chomage",
+      "conditions pour toucher chomage",
+      "démission et chomage"
+    ],
+    "negative_signals": [
+      "inscription pas encore faite (voir inscription)",
+      "contestation décision (voir opposition)"
+    ],
+    "required_facts": [
+      "période de cotisation",
+      "motif de fin de contrat",
+      "âge",
+      "aptitude au placement"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Vérification des conditions du droit aux indemnités chômage",
+        "domaine": "assurance",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Examen des conditions LACI 8",
+            "description": "Vérifier période de cotisation (12 mois sur 2 ans), aptitude au placement, perte de travail à prendre en compte.",
+            "delai": "immédiat",
+            "preuve_generee": "Auto-évaluation détaillée"
+          },
+          {
+            "numero": 2,
+            "action": "Inscription à l'ORP et dépôt à la caisse de chômage",
+            "description": "S'inscrire à l'ORP au 1er jour de chômage, déposer la demande à la caisse choisie avec attestation employeur.",
+            "delai": "1er jour de chômage",
+            "base_legale": "LACI 8 / LACI 13 / LACI 17",
+            "preuve_generee": "Confirmation d'inscription + accusé de réception caisse"
+          },
+          {
+            "numero": 3,
+            "action": "Décision sur le droit",
+            "delai": "30 à 60 jours",
+            "branches": [
+              {
+                "si": "droit reconnu",
+                "alors": "versements mensuels (fin courante)"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 4 (opposition/recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Opposition puis recours au tribunal cantonal des assurances",
+            "description": "Opposition dans 30 jours puis recours juridictionnel.",
+            "delai": "30 jours dès notification",
+            "base_legale": "LPGA 52 / LPGA 56"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "assurance_allocations_familiales",
+    "domaine": "assurances",
+    "sousDomaine": "afam",
+    "tags": [
+      "allocations",
+      "familiales",
+      "enfants",
+      "formation",
+      "LAFam"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Statut professionnel ?",
+        "options": [
+          "salarié",
+          "indépendant",
+          "sans activité"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Âge des enfants ?",
+        "options": [
+          "<16",
+          "16-25 en formation",
+          ">25"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Enfants à charge ?",
+        "options": [
+          "oui",
+          "non",
+          "partagés"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Autre parent touche-t-il déjà ?",
+        "options": [
+          "oui",
+          "non",
+          "je ne sais pas"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Les allocations familiales sont régies par la LAFam et les lois cantonales d'application. Tout salarié a droit à CHF 200/mois par enfant jusqu'à 16 ans, CHF 250/mois pour enfants en formation 16-25 ans (art. 3 et 5 LAFam ; montants minimaux fédéraux, les cantons peuvent être plus généreux). Les indépendants y ont également droit depuis 2013. Les personnes sans activité lucrative peuvent y prétendre sous conditions de revenu cantonales (art. 19 LAFam). En cas de concours (deux parents actifs), priorité au parent qui travaille dans le canton de domicile de l'enfant (art. 7 LAFam). La demande se dépose auprès de la caisse d'allocations de l'employeur. Le droit est rétroactif 5 ans.",
+      "articles": [
+        {
+          "ref": "LAFam 3",
+          "titre": "Genres et montants des allocations",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2008/338/fr"
+        },
+        {
+          "ref": "LAFam 13",
+          "titre": "Droit aux allocations",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2008/338/fr"
+        },
+        {
+          "ref": "LAFam 7",
+          "titre": "Concours de droits",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2008/338/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "TF 8C_711/2019",
+          "resume": "En cas de parents séparés, le parent qui vit avec l enfant est prioritaire pour les allocations."
+        },
+        {
+          "ref": "ATF 139 V 429",
+          "resume": "La formation au sens de LAFam inclut études, apprentissage et stages formateurs."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Caisse allocations familiales VD",
+          "url": "https://www.caisseavsvaud.ch/allocations-familiales",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caisse allocations familiales GE",
+          "url": "https://www.ocas.ch/allocations-familiales",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Identification de la caisse compétente",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt de la demande",
+          "delai": "dans les 30 jours suivant la naissance ou la prise d'emploi",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision de la caisse",
+          "delai": "30 à 90 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition puis recours au tribunal cantonal des assurances",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "16 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LAFam état 2025-01-01",
+    "match_description": "Droit aux allocations familiales et demande",
+    "profane_aliases": [
+      "droit aux allocations",
+      "allocations pour mon enfant",
+      "allocations formation"
+    ],
+    "negative_signals": [
+      "allocation de maternité (voir LAPG)",
+      "aide sociale"
+    ],
+    "required_facts": [
+      "statut d activité",
+      "âge enfants",
+      "canton de l employeur"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Demande d'allocations familiales",
+        "domaine": "assurance",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Identification de la caisse compétente",
+            "description": "Identifier la caisse d'allocations familiales liée à l'employeur ou à l'activité indépendante du parent demandeur.",
+            "delai": "immédiat",
+            "preuve_generee": "Note d'identification"
+          },
+          {
+            "numero": 2,
+            "action": "Dépôt de la demande",
+            "description": "Compléter le formulaire LAFam et fournir actes de naissance, attestations de scolarité ou de formation des enfants.",
+            "delai": "dans les 30 jours suivant la naissance ou la prise d'emploi",
+            "base_legale": "LAFam 3 / LAFam 7 / LAFam 13",
+            "preuve_generee": "Accusé de réception caisse"
+          },
+          {
+            "numero": 3,
+            "action": "Décision de la caisse",
+            "delai": "30 à 90 jours",
+            "branches": [
+              {
+                "si": "allocations accordées rétroactivement (max 5 ans)",
+                "alors": "versements mensuels (fin)"
+              },
+              {
+                "si": "refus ou montant contesté",
+                "alors": "etape 4 (opposition/recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Opposition puis recours au tribunal cantonal des assurances",
+            "description": "Opposition dans 30 jours puis recours juridictionnel.",
+            "delai": "30 jours dès notification",
+            "base_legale": "LPGA 52 / LPGA 56"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "assurance_maternite_apg",
+    "domaine": "assurances",
+    "sousDomaine": "apg",
+    "tags": [
+      "maternité",
+      "APG",
+      "allocation",
+      "congé",
+      "salaire",
+      "naissance"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Date prévue de l accouchement ?",
+        "options": [
+          "avenir",
+          "passé <14 sem",
+          "passé >14 sem"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Statut ?",
+        "options": [
+          "salariée",
+          "indépendante",
+          "chômage"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Cotisations AVS 9 derniers mois ?",
+        "options": [
+          "oui",
+          "non",
+          "je ne sais pas"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous travaillé 5 mois pendant la grossesse ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'allocation de maternité (art. 16b LAPG) est versée pendant 14 semaines (98 jours) à 80% du revenu moyen, plafonné à CHF 220/jour (CHF 196/jour en 2024). Conditions : être assurée AVS durant les 9 mois précédant l'accouchement, avoir exercé une activité lucrative au moins 5 mois pendant la grossesse et être salariée/indépendante/chômeuse au moment de la naissance (art. 16b al. 1 LAPG). L'allocation s'éteint si la mère reprend son activité avant le terme des 14 semaines. La demande se dépose à la caisse de compensation de l'employeur ou de la mère. Certains cantons (GE) offrent en plus un congé maternité cantonal étendu. Le licenciement est nul pendant la grossesse et les 16 semaines après l'accouchement (art. 336c CO).",
+      "articles": [
+        {
+          "ref": "LAPG 16b",
+          "titre": "Allocation de maternité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1952/1021_1046_1050/fr"
+        },
+        {
+          "ref": "LAPG 16e",
+          "titre": "Montant allocation maternité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1952/1021_1046_1050/fr"
+        },
+        {
+          "ref": "CO 336c",
+          "titre": "Licenciement en temps inopportun",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 139 V 250",
+          "resume": "Durée de 5 mois d activité doit être continue ou répartie sur la grossesse."
+        },
+        {
+          "ref": "TF 9C_631/2014",
+          "resume": "La reprise anticipée du travail met fin au droit à l allocation."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Caisse cantonale AVS Vaud",
+          "url": "https://www.caisseavsvaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "OCAS Genève",
+          "url": "https://www.ocas.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Vérification des conditions",
+          "delai": "avant ou immédiatement après l'accouchement",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt de la demande à la caisse de compensation",
+          "delai": "dans les 5 ans dès l'accouchement (prescription)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision et versement",
+          "delai": "30 à 60 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition puis recours au tribunal cantonal des assurances",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "14 semaine",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LAPG état 2025-01-01",
+    "match_description": "Allocation maternité APG : droit, montant, demande",
+    "profane_aliases": [
+      "congé maternité payé",
+      "allocation grossesse",
+      "APG maternité"
+    ],
+    "negative_signals": [
+      "congé paternité (autre allocation)",
+      "allocation adoption"
+    ],
+    "required_facts": [
+      "date accouchement",
+      "statut d activité",
+      "cotisations AVS",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Demande d'allocation de maternité (APG)",
+        "domaine": "assurance",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérification des conditions",
+            "description": "Confirmer 9 mois d'AVS avant accouchement et 5 mois d'activité lucrative durant cette période (LAPG 16b).",
+            "delai": "avant ou immédiatement après l'accouchement",
+            "preuve_generee": "Auto-évaluation et attestation employeur"
+          },
+          {
+            "numero": 2,
+            "action": "Dépôt de la demande à la caisse de compensation",
+            "description": "Soumettre formulaire APG et acte de naissance auprès de la caisse de compensation de l'employeur (ou indépendante).",
+            "delai": "dans les 5 ans dès l'accouchement (prescription)",
+            "base_legale": "LAPG 16b / LAPG 16e",
+            "preuve_generee": "Accusé de réception"
+          },
+          {
+            "numero": 3,
+            "action": "Décision et versement",
+            "delai": "30 à 60 jours",
+            "branches": [
+              {
+                "si": "allocation accordée (98 jours, 80% du gain)",
+                "alors": "versement (fin)"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 4 (opposition/recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Opposition puis recours au tribunal cantonal des assurances",
+            "description": "Opposition dans 30 jours puis recours juridictionnel.",
+            "delai": "30 jours dès notification",
+            "base_legale": "LPGA 52 / LPGA 56"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "assurance_avs_rente_vieillesse",
+    "domaine": "assurances",
+    "sousDomaine": "avs",
+    "tags": [
+      "AVS",
+      "rente",
+      "vieillesse",
+      "retraite",
+      "LAVS",
+      "anticipation",
+      "ajournement"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Âge actuel ?",
+        "options": [
+          "<63",
+          "63-65",
+          "65",
+          ">65"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Années de cotisation AVS ?",
+        "options": [
+          "<20",
+          "20-40",
+          "44 ans complètes"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Souhaitez-vous anticiper ou ajourner ?",
+        "options": [
+          "anticiper 1-2 ans",
+          "ajourner 1-5 ans",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous des lacunes de cotisation ?",
+        "options": [
+          "oui",
+          "non",
+          "je ne sais pas"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'âge ordinaire de la retraite AVS est de 65 ans (loi AVS 21 en vigueur). La rente complète requiert une durée de cotisation ininterrompue dès 21 ans (jusqu'à 44 ans pour les hommes, harmonisée à 65 pour les femmes via AVS21 en 2024). Anticipation possible 1 ou 2 ans avec réduction actuarielle d'environ 6,8%/an (art. 40 LAVS). Ajournement possible jusqu'à 5 ans avec supplément (jusqu'à +31,5%). Une lacune de cotisation (période sans AVS) réduit la rente de 1/44 par année manquante. Le demande se dépose auprès de la caisse de compensation 3-4 mois avant l'âge voulu. Les rentes pour couples sont plafonnées à 150% de la rente maximale simple (art. 35 LAVS).",
+      "articles": [
+        {
+          "ref": "LAVS 21",
+          "titre": "Âge donnant droit à la rente",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/63/837_843_843/fr"
+        },
+        {
+          "ref": "LAVS 29",
+          "titre": "Rente ordinaire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/63/837_843_843/fr"
+        },
+        {
+          "ref": "LAVS 40",
+          "titre": "Anticipation et ajournement",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/63/837_843_843/fr"
+        },
+        {
+          "ref": "LAVS 35",
+          "titre": "Rente pour couple",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/63/837_843_843/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 138 V 197",
+          "resume": "Le calcul de la rente tient compte des années de jeunesse et des bonifications pour tâches éducatives."
+        },
+        {
+          "ref": "TF 9C_384/2017",
+          "resume": "Les lacunes de cotisation peuvent être comblées rétroactivement dans les 5 ans par rachat."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Caisse cantonale AVS Vaud",
+          "url": "https://www.caisseavsvaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "OCAS Genève",
+          "url": "https://www.ocas.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Anticipation du dossier",
+          "delai": "6 mois avant l'âge légal de la retraite",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt de la demande à la caisse de compensation",
+          "delai": "3 à 4 mois avant le 1er versement souhaité",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision de rente",
+          "delai": "60 à 120 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition puis recours au tribunal cantonal des assurances",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "65 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LAVS état 2025-01-01 (AVS21 en vigueur)",
+    "match_description": "Demande, calcul ou contestation de rente AVS vieillesse",
+    "profane_aliases": [
+      "rente retraite",
+      "AVS vieillesse",
+      "retraite anticipée",
+      "combien je vais toucher"
+    ],
+    "negative_signals": [
+      "rente AI (voir AI)",
+      "prestations complémentaires (voir PC)"
+    ],
+    "required_facts": [
+      "âge",
+      "années de cotisation",
+      "canton",
+      "souhait anticipation/ajournement"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Demande de rente de vieillesse AVS",
+        "domaine": "assurance",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Anticipation du dossier",
+            "description": "Demander un extrait du compte individuel AVS, vérifier les années de cotisation, identifier d'éventuelles lacunes.",
+            "delai": "6 mois avant l'âge légal de la retraite",
+            "preuve_generee": "Extrait CI + projection de rente"
+          },
+          {
+            "numero": 2,
+            "action": "Dépôt de la demande à la caisse de compensation",
+            "description": "Adresser le formulaire de demande de rente à la dernière caisse de compensation, joindre justificatifs.",
+            "delai": "3 à 4 mois avant le 1er versement souhaité",
+            "base_legale": "LAVS 21 / LAVS 29 / LAVS 40",
+            "preuve_generee": "Accusé de réception"
+          },
+          {
+            "numero": 3,
+            "action": "Décision de rente",
+            "delai": "60 à 120 jours",
+            "branches": [
+              {
+                "si": "rente accordée au montant attendu",
+                "alors": "versement mensuel (fin courante)"
+              },
+              {
+                "si": "rente inférieure ou refus",
+                "alors": "etape 4 (opposition/recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Opposition puis recours au tribunal cantonal des assurances",
+            "description": "Opposition dans 30 jours puis recours juridictionnel.",
+            "delai": "30 jours dès notification",
+            "base_legale": "LPGA 52 / LPGA 56 / LAVS 35"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "assurance_laa_employeur_declaration",
+    "domaine": "assurances",
+    "sousDomaine": "laa",
+    "tags": [
+      "LAA",
+      "accident",
+      "travail",
+      "employeur",
+      "déclaration",
+      "SUVA"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Type d accident ?",
+        "options": [
+          "professionnel",
+          "non-professionnel",
+          "trajet"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "L employeur a-t-il déclaré l accident ?",
+        "options": [
+          "oui",
+          "non",
+          "refuse"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Êtes-vous en arrêt de travail ?",
+        "options": [
+          "oui",
+          "non",
+          "partiel"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Frais médicaux payés par qui ?",
+        "options": [
+          "LAA",
+          "LAMal",
+          "vous-même"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Tout employeur est tenu d'assurer ses salariés contre les accidents professionnels et non-professionnels (art. 1a LAA). L'assureur est la SUVA pour les secteurs soumis (industrie, construction) ou un assureur privé agréé. Dès connaissance d'un accident, l'employeur doit le déclarer sans délai à l'assurance (art. 45 LAA et 53 OLAA). Les prestations couvrent soins médicaux (art. 10 LAA), indemnités journalières dès le 3e jour (80% du gain assuré, art. 16-17 LAA), rentes d'invalidité et survivants. Si l'employeur refuse ou tarde, le salarié peut annoncer lui-même l'accident à l'assureur. L'absence d'assurance engage la responsabilité directe de l'employeur (art. 82 LAA).",
+      "articles": [
+        {
+          "ref": "LAA 45",
+          "titre": "Déclaration de l accident",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr"
+        },
+        {
+          "ref": "LAA 6",
+          "titre": "Événements assurés",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr"
+        },
+        {
+          "ref": "LAA 10",
+          "titre": "Traitement médical",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr"
+        },
+        {
+          "ref": "LAA 1a",
+          "titre": "Personnes assurées",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 129 V 466",
+          "resume": "La notion d accident LAA : caractère extraordinaire, soudain, involontaire, facteur extérieur."
+        },
+        {
+          "ref": "TF 8C_589/2017",
+          "resume": "L omission de déclarer l accident ne prive pas l assuré de ses droits mais peut retarder les prestations."
+        }
+      ],
+      "modeleLettre": "Objet : Annonce d'accident à l'assurance LAA\n\nMadame, Monsieur,\n\nPar la présente, j'annonce l'accident survenu le [DATE] dans les circonstances suivantes : [description].\n\nMon employeur, [NOM], n'ayant pas effectué la déclaration, je vous prie d'instruire directement mon dossier.\n\nJ'ai consulté le Dr [NOM] le [DATE] (certificat joint).\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
+      "services": [
+        {
+          "nom": "SUVA",
+          "tel": "0848 830 830",
+          "url": "https://www.suva.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office AI Vaud",
+          "url": "https://www.aivd.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office AI Genève",
+          "url": "https://www.oaige.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "Dès connaissance",
+          "consequence": null,
+          "extracted_from_text": true,
+          "qualitatif": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "sans délai",
+          "consequence": null,
+          "extracted_from_text": true,
+          "qualitatif": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LAA état 2025-01-01",
+    "match_description": "Accident de travail, rôle de l'employeur et déclaration LAA",
+    "profane_aliases": [
+      "accident au travail",
+      "mon patron refuse de déclarer",
+      "SUVA employeur"
+    ],
+    "negative_signals": [
+      "accident privé sans lien travail",
+      "maladie professionnelle spécifique"
+    ],
+    "required_facts": [
+      "type d accident",
+      "employeur et assureur",
+      "déclaration faite ou non",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   }
 ]

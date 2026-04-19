@@ -1,0 +1,1554 @@
+[
+  {
+    "id": "voisinage_bruit_nuisances",
+    "domaine": "voisinage",
+    "sousDomaine": "immissions",
+    "tags": [
+      "bruit",
+      "nuisances",
+      "immissions",
+      "voisin",
+      "nuit",
+      "tranquillité"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel type de bruit subissez-vous ?",
+        "options": [
+          "musique forte",
+          "fêtes répétées",
+          "appareils ménagers nuit",
+          "travaux",
+          "animaux",
+          "autre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "À quelle fréquence ?",
+        "options": [
+          "occasionnel",
+          "hebdomadaire",
+          "quotidien"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous parlé au voisin ?",
+        "options": [
+          "oui calmement",
+          "oui avec conflit",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Qui est le voisin ?",
+        "options": [
+          "locataire même immeuble",
+          "propriétaire à côté",
+          "commerce / restaurant",
+          "autre"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'art. 684 CC interdit tout excès dans l'exercice du droit de propriété susceptible de nuire au voisinage : sont prohibées les immissions excessives en termes de bruit, fumée, suie, odeurs, vibrations, etc. Le caractère excessif s'apprécie selon l'usage local, la situation et la nature du fonds (al. 2). En pratique, sont notamment excessifs : la musique forte la nuit (22h-7h selon règlements communaux), les fêtes répétées plusieurs fois par semaine, les aboiements continus. Le voisin lésé dispose d'actions civiles (art. 679 CC) : action en cessation, action en suppression de l'état illicite, action en dommages-intérêts. Si le voisin est locataire, le bailleur a aussi une obligation de garantir l'usage paisible (art. 256 CO) et peut être actionné. La police peut être appelée pour les troubles à la tranquillité publique (24h/24 selon les cantons) — le tapage nocturne est une contravention. Pour les immissions chroniques, la procédure civile passe par l'autorité de conciliation (art. 197 ss CPC). En matière de bruit professionnel, l'OPB (Ordonnance sur la protection contre le bruit) fixe des valeurs limites mesurables.",
+      "articles": [
+        {
+          "ref": "CC 684",
+          "titre": "Restrictions au droit de propriété — immissions excessives",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_684"
+        },
+        {
+          "ref": "CC 679",
+          "titre": "Actions du voisin lésé — responsabilité du propriétaire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_679"
+        },
+        {
+          "ref": "CO 256",
+          "titre": "Obligation du bailleur de garantir l'usage paisible",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_256"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 138 III 49",
+          "resume": "Les immissions sont excessives lorsqu'elles dépassent ce que peut tolérer un voisin moyen selon l'usage local. Le caractère répété et durable du bruit constitue un facteur déterminant."
+        },
+        {
+          "ref": "TF 5A_47/2016",
+          "resume": "Les troubles sonores nocturnes répétés émanant d'un voisin justifient une action en cessation au sens de l'art. 679 CC, indépendamment d'un dommage chiffré."
+        }
+      ],
+      "modeleLettre": "Objet : Mise en demeure — cessation des nuisances sonores (art. 684 / 679 CC)\n\nRecommandé\n\n[NOM DU VOISIN]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe suis votre voisin depuis le [DATE] à l'adresse [ADRESSE].\n\nDepuis [DATE / PÉRIODE], je subis les nuisances sonores suivantes en provenance de chez vous :\n[DESCRIPTION DÉTAILLÉE — type de bruit, fréquence, plages horaires, intensité]\n\nMalgré mes démarches amiables du [DATE], la situation perdure.\n\nCes nuisances dépassent les inconvénients tolérables au sens de l'art. 684 CC et constituent une atteinte à mon droit d'usage paisible.\n\nJe vous mets en demeure de cesser immédiatement ces nuisances, faute de quoi je saisirai :\n— l'autorité de conciliation civile compétente (action en cessation art. 679 CC) ;\n— le cas échéant, votre bailleur (art. 256 CO) ;\n— la police pour tapage nocturne en cas de récidive.\n\nJe reste ouvert à un dialogue constructif.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "ASLOCA Vaud (locataires)",
+          "tel": "021 617 11 37",
+          "url": "https://vaud.asloca.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "ASLOCA Genève",
+          "tel": "022 716 18 00",
+          "url": "https://www.asloca.ch/asloca-geneve",
+          "canton": "GE"
+        },
+        {
+          "nom": "Police cantonale vaudoise — tapage",
+          "url": "https://www.police.vd.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Justice de paix (canton de Vaud)",
+          "url": "https://www.vd.ch/themes/justice",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Documentation des nuisances",
+          "delai": "immédiat et continu",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Contact direct puis notification écrite",
+          "delai": "dans les 14 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai d'observation",
+          "delai": "14 à 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Plainte police et/ou action civile",
+          "delai": "à tout moment après constat répété",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "match_description": "Le voisin subit des nuisances sonores excessives provenant d'un voisin",
+    "profane_aliases": [
+      "voisin trop bruyant",
+      "musique nuit voisin",
+      "tapage nocturne",
+      "fête voisin chaque week-end",
+      "chien aboie tout le temps"
+    ],
+    "negative_signals": [
+      "bruit ponctuel exceptionnel (1 fête)",
+      "bruit normal d'usage (pas / lave-linge en journée)"
+    ],
+    "required_facts": [
+      "type et fréquence du bruit",
+      "tentative amiable",
+      "preuves (témoins, mesures)",
+      "qualité du voisin"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "cascades": [
+      {
+        "titre": "Gestion des nuisances sonores du voisinage",
+        "domaine": "voisinage",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Documentation des nuisances",
+            "description": "Journal daté (heure, durée, type de bruit), enregistrements audio horodatés, témoignages d'autres voisins.",
+            "delai": "immédiat et continu",
+            "preuve_generee": "Journal + témoignages"
+          },
+          {
+            "numero": 2,
+            "action": "Contact direct puis notification écrite",
+            "description": "D'abord tentative de dialogue amiable. Si échec, lettre recommandée au voisin (et bailleur si locataire) exigeant la cessation des nuisances.",
+            "delai": "dans les 14 jours",
+            "base_legale": "CC 684 (immissions excessives)",
+            "preuve_generee": "Accusé de réception postal"
+          },
+          {
+            "numero": 3,
+            "action": "Délai d'observation",
+            "description": "Laisser au voisin le temps de modifier son comportement et continuer à documenter.",
+            "delai": "14 à 30 jours",
+            "branches": [
+              {
+                "si": "nuisances cessent",
+                "alors": "fin du processus"
+              },
+              {
+                "si": "persistance",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Plainte police et/ou action civile",
+            "description": "Plainte à la police pour tapage (règlements cantonaux) ET/OU action en cessation de l'immission devant le juge civil.",
+            "delai": "à tout moment après constat répété",
+            "base_legale": "CC 679 / CC 684",
+            "cout": "plainte police gratuite"
+          }
+        ]
+      }
+    ],
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "voisinage_arbres_limites",
+    "domaine": "voisinage",
+    "sousDomaine": "plantations",
+    "tags": [
+      "arbres",
+      "limites",
+      "plantation",
+      "haie",
+      "branches",
+      "racines"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le problème ?",
+        "options": [
+          "branches dépassent",
+          "racines envahissent",
+          "arbre trop proche limite",
+          "haie trop haute",
+          "ombre excessive"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Avez-vous demandé au voisin d'élaguer ?",
+        "options": [
+          "oui par écrit",
+          "oui oralement",
+          "non"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Quel type de propriété ?",
+        "options": [
+          "maison individuelle",
+          "PPE",
+          "agricole",
+          "autre"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est la distance approximative ?",
+        "options": [
+          "<50 cm",
+          "50 cm - 2 m",
+          ">2 m"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'art. 687 CC accorde au propriétaire le droit de couper et de garder les branches et racines d'un arbre voisin qui empiètent sur son fonds, lorsqu'elles lui causent un dommage et après réclamation infructueuse. C'est le droit de coupe (Anriss-recht). Les distances minimales entre plantations et limites sont régies par le DROIT CANTONAL d'application de l'art. 688 CC : par exemple, dans le canton de Vaud, la Loi cantonale sur le rural et le foncier rural (LRF VD) impose en règle générale 0,5 m pour les buissons et 4 à 6 m pour les arbres de haute tige selon la zone. Genève prévoit des distances similaires dans la Loi sur les routes. Pour les haies trop hautes, la plupart des cantons fixent 2 m maximum sur la limite, sauf accord. En cas de plantations non conformes, le voisin peut exiger leur abattage ou leur déplacement (action en cessation art. 679 CC), sauf prescription acquisitive. Pour les fruits tombés sur le fonds voisin, ils appartiennent au propriétaire de l'arbre (art. 687 al. 2 CC). En PPE, le règlement et l'AG peuvent restreindre les plantations en parties communes.",
+      "articles": [
+        {
+          "ref": "CC 687",
+          "titre": "Branches et racines — droit de coupe",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_687"
+        },
+        {
+          "ref": "CC 688",
+          "titre": "Plantations — droit cantonal",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_688"
+        },
+        {
+          "ref": "CC 679",
+          "titre": "Actions du voisin lésé",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_679"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 132 III 689",
+          "resume": "Le droit de coupe de l'art. 687 CC suppose une réclamation infructueuse préalable et un dommage actuel ou imminent. La coupe doit être proportionnée."
+        },
+        {
+          "ref": "TF 5A_415/2008",
+          "resume": "L'action en abattement d'un arbre planté à distance non réglementaire reste possible tant que la prescription acquisitive cantonale n'est pas écoulée."
+        }
+      ],
+      "modeleLettre": "Objet : Mise en demeure — élagage / déplacement des plantations (art. 687 CC)\n\nRecommandé\n\n[NOM DU VOISIN]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe suis votre voisin à l'adresse [ADRESSE], parcelle n° [N°].\n\nLes plantations suivantes situées sur votre propriété me causent un dommage / non-conformité :\n[DESCRIPTION : ESSENCE, EMPLACEMENT, MESURES, BRANCHES / RACINES, DISTANCE]\n\nLa législation cantonale [CITER LA LOI CANTONALE PERTINENTE] impose une distance minimale de [X] mètres pour ce type de plantation. Les art. 687 et 688 CC en règlent les conséquences.\n\nJe vous mets en demeure, dans un délai de 30 jours, de :\n[ ] procéder à l'élagage des branches et racines empiétant sur ma propriété ;\n[ ] déplacer / abattre la plantation non conforme à la distance légale.\n\nÀ défaut, j'exercerai mon droit de coupe (art. 687 al. 1 CC) après une dernière réclamation, et/ou saisirai l'autorité de conciliation civile pour action en cessation (art. 679 CC).\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Justice de paix (Vaud)",
+          "url": "https://www.vd.ch/themes/justice",
+          "canton": "VD"
+        },
+        {
+          "nom": "Tribunal civil de Genève",
+          "url": "https://justice.ge.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Notaire / géomètre cantonal",
+          "url": "https://www.notaires-vd.ch",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Mesure des distances et dommages",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Notification écrite au voisin",
+          "delai": "dans les 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai d'exécution du voisin",
+          "delai": "30 à 90 jours selon saison",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Droit d'élagage propre ou action judiciaire",
+          "delai": "immédiat après échec du délai",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "match_description": "Le propriétaire a un litige avec un voisin concernant des plantations, des branches ou des racines envahissantes",
+    "profane_aliases": [
+      "branches voisin chez moi",
+      "haie trop haute voisin",
+      "racines abîment mur",
+      "arbre trop près limite"
+    ],
+    "negative_signals": [
+      "plantations conformes au droit cantonal et tolérées de longue date",
+      "litige sur arbre en zone forestière (autre régime)"
+    ],
+    "required_facts": [
+      "essence et taille",
+      "distance à la limite",
+      "réclamation préalable",
+      "droit cantonal applicable"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "cascades": [
+      {
+        "titre": "Arbres en limite de propriété",
+        "domaine": "voisinage",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Mesure des distances et dommages",
+            "description": "Mesurer la distance de l'arbre par rapport à la limite, photographier les branches ou racines qui empiètent, documenter les dommages.",
+            "delai": "immédiat",
+            "preuve_generee": "Photos + relevé cadastral"
+          },
+          {
+            "numero": 2,
+            "action": "Notification écrite au voisin",
+            "description": "Courrier recommandé demandant l'élagage ou l'enlèvement selon les distances cantonales et le droit cantonal de voisinage.",
+            "delai": "dans les 30 jours",
+            "base_legale": "CC 687 / droit cantonal (ex. LaCC)",
+            "preuve_generee": "Accusé de réception postal"
+          },
+          {
+            "numero": 3,
+            "action": "Délai d'exécution du voisin",
+            "description": "Délai raisonnable pour couper, élaguer ou replanter conformément aux distances légales.",
+            "delai": "30 à 90 jours selon saison",
+            "branches": [
+              {
+                "si": "travaux effectués",
+                "alors": "fin du processus"
+              },
+              {
+                "si": "refus ou silence",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Droit d'élagage propre ou action judiciaire",
+            "description": "Droit de couper soi-même branches/racines empiétantes (CC 687) OU action judiciaire devant le juge civil pour exiger le respect des distances.",
+            "delai": "immédiat après échec du délai",
+            "base_legale": "CC 687 / CC 688",
+            "cout": "action civile : selon tarif cantonal"
+          }
+        ]
+      }
+    ],
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "voisinage_fumee_odeurs",
+    "domaine": "voisinage",
+    "sousDomaine": "immissions",
+    "tags": [
+      "fumée",
+      "odeurs",
+      "immissions",
+      "barbecue",
+      "cheminée",
+      "tabac"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la nature de la nuisance ?",
+        "options": [
+          "fumée cheminée",
+          "barbecue répété",
+          "fumée tabac balcon",
+          "odeurs cuisine",
+          "autre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "À quelle fréquence ?",
+        "options": [
+          "occasionnelle",
+          "hebdomadaire",
+          "quotidienne"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Subissez-vous un préjudice de santé ?",
+        "options": [
+          "oui certifié médical",
+          "non gêne uniquement"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous parlé au voisin ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Les immissions de fumée, suie et odeurs entrent dans le champ de l'art. 684 CC, qui interdit tout excès dans l'exercice du droit de propriété nuisant au voisinage. Le seuil de l'excessif s'apprécie selon l'usage local, la situation des fonds et le degré de tolérance d'un voisin moyen (art. 684 al. 2 CC). En pratique : les barbecues occasionnels en saison sont tolérés ; ceux quasi-quotidiens entraînant un envahissement systématique des balcons voisins peuvent être qualifiés d'excessifs. Les feux de cheminée doivent respecter les normes de l'OPair (Ordonnance sur la protection de l'air) et les règlements communaux. La fumée de tabac sur balcon a fait l'objet d'arrêts récents : elle peut constituer une immission excessive si elle atteint régulièrement et de façon importante l'appartement voisin. Le voisin lésé dispose : (1) action en cessation (art. 679 CC), (2) action contre le bailleur si le voisin est locataire (art. 256 CO), (3) signalement aux autorités cantonales pour la qualité de l'air (OPair) ou au service du feu pour les cheminées. La preuve (témoignages, photos, certificats médicaux) est centrale.",
+      "articles": [
+        {
+          "ref": "CC 684",
+          "titre": "Restrictions — immissions excessives (fumée, odeurs)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_684"
+        },
+        {
+          "ref": "CC 679",
+          "titre": "Actions du voisin lésé",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_679"
+        },
+        {
+          "ref": "CO 256",
+          "titre": "Obligation du bailleur de garantir l'usage paisible",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_256"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 138 III 49",
+          "resume": "Le caractère excessif des immissions s'apprécie objectivement, en fonction de l'usage local et de la nature du quartier. La fréquence et la durée sont des critères majeurs."
+        },
+        {
+          "ref": "TF 5A_47/2016",
+          "resume": "Des barbecues quasi-quotidiens dégageant fumée et odeurs envahissant les fonds voisins peuvent dépasser le seuil de tolérance et justifier une action en cessation."
+        }
+      ],
+      "modeleLettre": "Objet : Mise en demeure — cessation des nuisances de fumée / odeurs (art. 684 CC)\n\nRecommandé\n\n[NOM DU VOISIN]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe suis votre voisin à l'adresse [ADRESSE].\n\nDepuis [PÉRIODE], je subis des nuisances importantes de [NATURE : fumée de cheminée / barbecue / tabac / odeurs] en provenance de votre propriété :\n[DESCRIPTION DÉTAILLÉE]\n\nFréquence : [PRÉCISER]\nConséquences : [GÊNE, IMPOSSIBILITÉ D'OUVRIR LES FENÊTRES, ATTEINTE SANTÉ]\n\nCes nuisances dépassent ce qu'un voisin doit tolérer (art. 684 CC).\n\nJe vous mets en demeure, dans un délai de 30 jours, de prendre les mesures suivantes pour cesser ces immissions : [PROPOSITIONS — limiter la fréquence, déplacer le barbecue, ramoner la cheminée, etc.].\n\nÀ défaut, je saisirai l'autorité de conciliation civile (action en cessation art. 679 CC) et signalerai la situation au service cantonal de l'air ainsi qu'à votre bailleur (le cas échéant).\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Service de l'environnement (Vaud)",
+          "url": "https://www.vd.ch/themes/environnement",
+          "canton": "VD"
+        },
+        {
+          "nom": "Service de l'air, du bruit et des rayonnements non ionisants (Genève)",
+          "url": "https://www.ge.ch/dossier/qualite-air",
+          "canton": "GE"
+        },
+        {
+          "nom": "Justice de paix (Vaud)",
+          "url": "https://www.vd.ch/themes/justice",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Constat et documentation",
+          "delai": "immédiat et répété",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Notification écrite au voisin",
+          "delai": "dans les 14 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai d'amélioration",
+          "delai": "30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Signalement autorité communale ou action civile",
+          "delai": "immédiat après échec du délai",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "match_description": "Le voisin subit des nuisances de fumée, de suie ou d'odeurs en provenance d'un voisin",
+    "profane_aliases": [
+      "fumée cheminée voisin",
+      "barbecue voisin tous les jours",
+      "tabac sur balcon voisin",
+      "odeurs cuisine voisin"
+    ],
+    "negative_signals": [
+      "barbecue ponctuel d'été",
+      "feu de cheminée ponctuel"
+    ],
+    "required_facts": [
+      "nature et fréquence",
+      "tentative amiable",
+      "preuves",
+      "préjudice subi"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "cascades": [
+      {
+        "titre": "Fumées et odeurs excessives du voisinage",
+        "domaine": "voisinage",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Constat et documentation",
+            "description": "Dater les épisodes (heure, vent, intensité), photographier/filmer, tenir un journal et recueillir témoignages.",
+            "delai": "immédiat et répété",
+            "preuve_generee": "Journal daté + photos/vidéos"
+          },
+          {
+            "numero": 2,
+            "action": "Notification écrite au voisin",
+            "description": "Lettre recommandée exigeant la cessation des immissions excessives (fumée barbecue, cheminée, odeurs agricoles, etc.).",
+            "delai": "dans les 14 jours",
+            "base_legale": "CC 684 (immissions excessives)",
+            "preuve_generee": "Accusé de réception postal"
+          },
+          {
+            "numero": 3,
+            "action": "Délai d'amélioration",
+            "description": "Laisser au voisin un délai raisonnable pour modifier ses installations ou pratiques.",
+            "delai": "30 jours",
+            "branches": [
+              {
+                "si": "immissions réduites à niveau tolérable",
+                "alors": "fin du processus"
+              },
+              {
+                "si": "persistance",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Signalement autorité communale ou action civile",
+            "description": "Signalement à la police/police des constructions de la commune (règlements OPB / OPair) ou action en cessation devant juge civil.",
+            "delai": "immédiat après échec du délai",
+            "base_legale": "CC 679 / CC 684 / OPair / OPB",
+            "cout": "signalement communal gratuit"
+          }
+        ]
+      }
+    ],
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "voisinage_vibrations_travaux",
+    "domaine": "voisinage",
+    "sousDomaine": "travaux",
+    "tags": [
+      "vibrations",
+      "travaux",
+      "chantier",
+      "bruit",
+      "perçage"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel type de travaux ?",
+        "options": [
+          "rénovation appartement",
+          "chantier construction",
+          "démolition",
+          "petits travaux DIY"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Depuis combien de temps ?",
+        "options": [
+          "<1 semaine",
+          "1-4 semaines",
+          ">1 mois"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Les horaires sont-ils respectés ?",
+        "options": [
+          "oui",
+          "non — soir / week-end",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous subi un dommage matériel ?",
+        "options": [
+          "oui fissures / dégâts",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Les vibrations et bruits liés à des travaux relèvent de l'art. 684 CC (immissions excessives). Tout chantier doit respecter les horaires fixés par le règlement communal ou cantonal — généralement 7h-12h et 13h-19h en semaine, repos le dimanche et jours fériés ; bruit limité ou interdit en soirée. Les travaux de courte durée (rénovation appartement) sont en principe tolérés s'ils respectent les horaires, même s'ils causent des nuisances temporaires importantes. Pour les chantiers de construction lourds, les autorisations communales fixent souvent des conditions spécifiques. Si les travaux causent des DOMMAGES au bien voisin (fissures, infiltrations), l'art. 679 CC institue une responsabilité OBJECTIVE du propriétaire du fonds d'où provient le dommage — sans faute. Le voisin lésé peut exiger réparation et constatation par expertise. Pour les vibrations excessives ou répétées, l'OPair et l'Ordonnance sur la protection contre le bruit (OPB) fournissent des valeurs limites. Un constat préalable de l'état du bien (par huissier ou notaire) avant le démarrage de gros travaux voisins est fortement recommandé pour préserver les preuves.",
+      "articles": [
+        {
+          "ref": "CC 684",
+          "titre": "Restrictions — immissions excessives (vibrations)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_684"
+        },
+        {
+          "ref": "CC 679",
+          "titre": "Responsabilité objective du propriétaire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_679"
+        },
+        {
+          "ref": "CO 41",
+          "titre": "Acte illicite — responsabilité civile",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_41"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 132 III 689",
+          "resume": "L'art. 679 CC consacre une responsabilité objective : le propriétaire du fonds d'où provient le dommage répond sans faute, dès lors que l'usage de son fonds excède les bornes du tolérable."
+        },
+        {
+          "ref": "TF 5A_415/2018",
+          "resume": "Les fissures apparues après des travaux voisins peuvent être imputées au propriétaire mandant si l'expertise établit la causalité ; la charge de la preuve incombe au lésé."
+        }
+      ],
+      "modeleLettre": "Objet : Plainte — nuisances et dommages liés aux travaux (art. 684 / 679 CC)\n\nRecommandé\n\n[NOM DU VOISIN / MAÎTRE D'OUVRAGE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nDepuis le [DATE], des travaux sont effectués sur votre propriété sise [ADRESSE].\n\nJe constate les nuisances et dommages suivants :\n[DÉTAIL : vibrations excessives, horaires non respectés, fissures apparues, etc.]\n\nÀ titre conservatoire, j'ai fait constater l'état actuel de mon bien le [DATE] (constat joint).\n\nConformément aux art. 684 et 679 CC, je vous demande, dans un délai de 14 jours :\n— de respecter strictement les horaires de chantier ;\n— de cesser toute nuisance excédant le seuil tolérable ;\n— le cas échéant, de prendre en charge les dommages constatés (à chiffrer après expertise).\n\nÀ défaut, j'engagerai une action en cessation et en dommages-intérêts.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Service du logement et des gérances (Vaud)",
+          "url": "https://www.vd.ch/themes/territoire-et-construction",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office cantonal de l'inspection et des relations du travail (Genève)",
+          "url": "https://www.ge.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Justice de paix (Vaud)",
+          "url": "https://www.vd.ch/themes/justice",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Le voisin subit des vibrations, du bruit ou des dommages liés à des travaux ou un chantier voisin",
+    "profane_aliases": [
+      "chantier voisin trop bruyant",
+      "fissures murs après travaux voisin",
+      "rénovation voisin nuit week-end"
+    ],
+    "negative_signals": [
+      "travaux réguliers respectant les horaires sans dommage",
+      "chantier public autorisé"
+    ],
+    "required_facts": [
+      "nature des travaux",
+      "horaires constatés",
+      "dommages éventuels",
+      "constat préalable"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "readiness": "beta",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "voisinage_dommages_propriete",
+    "domaine": "voisinage",
+    "sousDomaine": "dommages",
+    "tags": [
+      "dommages",
+      "propriété",
+      "responsabilité",
+      "réparation",
+      "voisin"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le type de dommage ?",
+        "options": [
+          "infiltration eau",
+          "fissures",
+          "dégât véhicule",
+          "atteinte plantation",
+          "autre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Le responsable est-il identifié ?",
+        "options": [
+          "oui voisin précis",
+          "présomption forte",
+          "non"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous évalué le montant des dégâts ?",
+        "options": [
+          "oui devis",
+          "estimation",
+          "pas encore"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Le voisin a-t-il une assurance RC connue ?",
+        "options": [
+          "oui",
+          "non",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le voisin victime d'un dommage matériel causé par un autre voisin dispose de plusieurs bases légales : (1) l'art. 41 CO (responsabilité aquilienne) en cas d'acte illicite fautif, qui exige preuve d'un acte, d'un dommage, d'un lien de causalité et d'une faute ; (2) l'art. 679 CC (responsabilité objective du propriétaire) lorsque le dommage provient d'un excès dans l'usage du fonds voisin — sans nécessité de prouver la faute, ce qui est très favorable au lésé ; (3) l'art. 56 CO en cas de dommage causé par un animal détenu par le voisin (présomption de responsabilité du détenteur) ; (4) l'art. 58 CO pour les dommages causés par un défaut de construction ou d'entretien d'un ouvrage (responsabilité objective du propriétaire). En pratique, l'assurance RC du voisin couvre généralement ces dommages. Il faut : (a) constater rapidement le dommage (photos, devis), (b) notifier par écrit le voisin et son assurance RC, (c) chiffrer le préjudice (devis, factures), (d) en cas de refus, saisir l'autorité de conciliation civile. La prescription est de 3 ans dès la connaissance du dommage et du responsable (art. 60 CO).",
+      "articles": [
+        {
+          "ref": "CO 41",
+          "titre": "Acte illicite — responsabilité civile",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_41"
+        },
+        {
+          "ref": "CC 679",
+          "titre": "Responsabilité objective du propriétaire foncier",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_679"
+        },
+        {
+          "ref": "CO 58",
+          "titre": "Responsabilité du propriétaire d'ouvrage",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_58"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 132 III 689",
+          "resume": "L'art. 679 CC institue une responsabilité objective qui dispense le voisin lésé de prouver la faute ; il suffit de prouver l'excès et le dommage."
+        },
+        {
+          "ref": "TF 5A_47/2014",
+          "resume": "L'infiltration d'eau provenant d'un fonds voisin engage la responsabilité de son propriétaire au sens de l'art. 679 CC, indépendamment de toute faute."
+        }
+      ],
+      "modeleLettre": "Objet : Réclamation pour dommages — art. 41 CO / 679 CC\n\nRecommandé\n\n[NOM DU VOISIN]\n[ADRESSE]\n\nMadame, Monsieur,\n\nLe [DATE], j'ai constaté les dommages suivants à ma propriété :\n[DESCRIPTION + PHOTOS]\n\nCes dommages proviennent de [DÉCRIRE LA CAUSE : infiltration depuis votre toiture, branche tombée, etc.] et engagent votre responsabilité au titre de l'art. 679 CC (responsabilité objective du propriétaire) et/ou de l'art. 41 CO.\n\nJ'ai fait établir un devis de réparation par [ENTREPRISE] s'élevant à [MONTANT] CHF (joint).\n\nJe vous prie, dans un délai de 30 jours :\n— d'annoncer le sinistre à votre assurance responsabilité civile ;\n— de transmettre la prise en charge à votre assureur ;\n— ou, à défaut, de me régler directement le montant des dommages.\n\nÀ défaut, je saisirai l'autorité de conciliation civile compétente.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Justice de paix (Vaud)",
+          "url": "https://www.vd.ch/themes/justice",
+          "canton": "VD"
+        },
+        {
+          "nom": "Tribunal de première instance (Genève)",
+          "url": "https://justice.ge.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ombudsman des assurances privées",
+          "url": "https://www.ombudsman-assurance.ch",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Prescription",
+          "delai": "3 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Le propriétaire constate un dommage matériel causé par un voisin et veut obtenir réparation",
+    "profane_aliases": [
+      "voisin a abîmé ma propriété",
+      "infiltration depuis voisin",
+      "branche tombée sur ma voiture",
+      "dégâts toiture voisin"
+    ],
+    "negative_signals": [
+      "dommage causé par cas fortuit (tempête majeure)",
+      "vétusté propre du bien"
+    ],
+    "required_facts": [
+      "preuves photographiques",
+      "devis ou facture",
+      "lien de causalité",
+      "identité du voisin"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "voisinage_eau_ruissellement",
+    "domaine": "voisinage",
+    "sousDomaine": "eau",
+    "tags": [
+      "eau",
+      "ruissellement",
+      "écoulement",
+      "drainage",
+      "fonds inférieur"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "D'où vient l'eau ?",
+        "options": [
+          "fonds voisin en hauteur",
+          "toiture voisine",
+          "tuyauterie voisine",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Type d'eau ?",
+        "options": [
+          "ruissellement naturel",
+          "déviation artificielle",
+          "rejet d'eaux usées"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Y a-t-il un dommage déjà constaté ?",
+        "options": [
+          "oui infiltration",
+          "oui érosion",
+          "pas encore"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Le voisin a-t-il modifié son terrain récemment ?",
+        "options": [
+          "oui (terrasse, dallage, drainage)",
+          "non",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'art. 689 CC pose le principe que le propriétaire est tenu de RECEVOIR les eaux qui s'écoulent NATURELLEMENT du fonds supérieur, notamment celles de pluie, de neige fondante et de sources non captées. En revanche, le propriétaire du fonds supérieur ne peut PAS aggraver la servitude légale d'écoulement par des modifications artificielles : aucune déviation, accumulation ou changement de cours ne peut être imposé au fonds inférieur (art. 689 al. 2 CC). Toute aggravation est interdite et donne lieu à action en remise en état (art. 679 CC). Pour les eaux usées et les déversements polluants, des règles cantonales et fédérales (LEaux) ajoutent des sanctions administratives. Lorsque le fonds inférieur est endommagé par une infiltration causée par une modification voisine (terrasse, dallage, drainage mal conçu), la responsabilité objective du propriétaire est engagée (art. 679 CC). En cas de différend, l'expertise hydrologique est souvent décisive. Procédure : conciliation civile, puis action devant le tribunal civil pour injonction et dommages-intérêts. Délai de prescription : 3 ans dès la connaissance du dommage et du responsable (art. 60 CO).",
+      "articles": [
+        {
+          "ref": "CC 689",
+          "titre": "Écoulement des eaux — fonds inférieur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_689"
+        },
+        {
+          "ref": "CC 679",
+          "titre": "Responsabilité objective du propriétaire foncier",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_679"
+        },
+        {
+          "ref": "CC 684",
+          "titre": "Restrictions au droit de propriété — immissions",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_684"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 134 III 248",
+          "resume": "Le fonds inférieur doit recevoir les eaux s'écoulant naturellement. Toute aggravation artificielle (drainage concentré, déviation) constitue une atteinte donnant droit à l'action en cessation et à dommages-intérêts."
+        },
+        {
+          "ref": "TF 5A_122/2017",
+          "resume": "Une terrasse imperméabilisée provoquant un ruissellement concentré sur le fonds voisin engage la responsabilité de son propriétaire au sens des art. 689 et 679 CC."
+        }
+      ],
+      "modeleLettre": "Objet : Mise en demeure — écoulement des eaux et remise en état (art. 689 / 679 CC)\n\nRecommandé\n\n[NOM DU VOISIN]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe constate depuis [DATE / TRAVAUX] un écoulement anormal d'eau provenant de votre fonds vers ma propriété :\n[DESCRIPTION : type d'eau, débit, dommages causés]\n\nLes modifications apportées à votre terrain (terrasse imperméabilisée / drainage / autre) aggravent la servitude légale d'écoulement et causent les dommages suivants : [DÉCRIRE].\n\nConformément à l'art. 689 al. 2 CC, vous ne pouvez pas aggraver l'écoulement naturel au détriment du fonds inférieur.\n\nJe vous mets en demeure, dans un délai de 30 jours :\n— de remettre les lieux en état initial / d'installer un drainage approprié évacuant les eaux ailleurs ;\n— d'indemniser les dommages déjà constatés (devis joint : [MONTANT] CHF).\n\nÀ défaut, je saisirai l'autorité de conciliation civile pour action en cessation et en dommages-intérêts (art. 679 CC).\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Direction générale de l'environnement (Vaud)",
+          "url": "https://www.vd.ch/themes/environnement",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office cantonal de l'eau (Genève)",
+          "url": "https://www.ge.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Justice de paix (Vaud)",
+          "url": "https://www.vd.ch/themes/justice",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Prescription",
+          "delai": "3 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Le propriétaire d'un fonds inférieur subit un écoulement d'eau anormal provoqué par le voisin",
+    "profane_aliases": [
+      "eau ruissèle depuis voisin",
+      "infiltration jardin voisin",
+      "drainage voisin inonde",
+      "terrasse voisin écoulement"
+    ],
+    "negative_signals": [
+      "écoulement naturel sans aggravation",
+      "inondation due à intempérie exceptionnelle"
+    ],
+    "required_facts": [
+      "origine de l'eau",
+      "modifications voisines",
+      "preuves de dommage",
+      "expertise éventuelle"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "voisinage_murs_mitoyens",
+    "domaine": "voisinage",
+    "sousDomaine": "mitoyenneté",
+    "tags": [
+      "mur mitoyen",
+      "clôture",
+      "limite",
+      "propriété commune",
+      "entretien"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est l'élément concerné ?",
+        "options": [
+          "mur mitoyen",
+          "haie mitoyenne",
+          "clôture",
+          "fossé",
+          "autre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quel est le problème ?",
+        "options": [
+          "frais entretien refusés",
+          "modification unilatérale",
+          "destruction",
+          "appropriation"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "L'élément est-il enregistré au registre foncier ?",
+        "options": [
+          "oui",
+          "non",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous tenté un accord ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'art. 670 CC institue une présomption de copropriété (mitoyenneté) pour les murs, haies, palissades, fossés et autres ouvrages servant de séparation entre deux fonds, sauf preuve contraire (titre, marques visibles indiquant le contraire). En matière d'entretien, les copropriétaires d'un mur mitoyen contribuent aux frais nécessaires à parts égales (art. 712h CC par analogie et droit cantonal). Aucun copropriétaire ne peut entreprendre seul des modifications substantielles (surélévation, percement, démolition) sans l'accord de l'autre. Les modifications unilatérales engagent la responsabilité de leur auteur et peuvent donner lieu à action en remise en état. Les distances et hauteurs des murs séparatifs sont également régies par le droit cantonal d'application (art. 686 et 688 CC). En cas de litige, le registre foncier et les actes notariés permettent de qualifier juridiquement l'ouvrage. La procédure passe par la conciliation civile puis le tribunal civil. La servitude foncière (art. 730 ss CC) peut s'appliquer si un acte la constitue. Pour les éléments très anciens, la prescription acquisitive (art. 661 ss CC) peut jouer.",
+      "articles": [
+        {
+          "ref": "CC 670",
+          "titre": "Présomption de propriété commune — mitoyenneté",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_670"
+        },
+        {
+          "ref": "CC 686",
+          "titre": "Distances et hauteurs — droit cantonal",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_686"
+        },
+        {
+          "ref": "CC 688",
+          "titre": "Plantations — distance",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_688"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 117 II 32",
+          "resume": "La présomption de mitoyenneté de l'art. 670 CC ne peut être renversée que par la preuve de marques claires d'appartenance exclusive ou par titre."
+        },
+        {
+          "ref": "TF 5A_92/2014",
+          "resume": "Un copropriétaire ne peut surélever un mur mitoyen sans le consentement de l'autre, à peine de devoir le remettre en état."
+        }
+      ],
+      "modeleLettre": "Objet : Mur mitoyen — frais d'entretien et remise en état (art. 670 CC)\n\nRecommandé\n\n[NOM DU VOISIN]\n[ADRESSE]\n\nMadame, Monsieur,\n\nLe mur séparant nos parcelles n° [N°] et [N°] sis [ADRESSE] constitue un mur mitoyen au sens de l'art. 670 CC.\n\nIl nécessite les travaux suivants : [DESCRIPTION] pour un coût total estimé à [MONTANT] CHF (devis joint).\n\nConformément aux principes de la mitoyenneté, je vous demande de prendre en charge la moitié des frais, soit [MONTANT/2] CHF, et de me confirmer votre accord sur le devis dans un délai de 30 jours.\n\nÀ défaut d'accord, je saisirai l'autorité de conciliation civile pour faire fixer la contribution due et autoriser les travaux nécessaires.\n\nJe reste à votre disposition pour en discuter.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Notaire (Vaud)",
+          "url": "https://www.notaires-vd.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Justice de paix (Vaud)",
+          "url": "https://www.vd.ch/themes/justice",
+          "canton": "VD"
+        },
+        {
+          "nom": "Registre foncier (Genève)",
+          "url": "https://www.ge.ch",
+          "canton": "GE"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Litige entre voisins concernant un mur mitoyen, une haie ou une clôture séparative",
+    "profane_aliases": [
+      "mur mitoyen voisin",
+      "frais clôture entretien",
+      "qui paye haie séparative",
+      "voisin a abîmé mur"
+    ],
+    "negative_signals": [
+      "mur appartenant à un seul des voisins (titre clair)",
+      "élément en domaine public"
+    ],
+    "required_facts": [
+      "preuve mitoyenneté",
+      "nature des travaux",
+      "tentative d'accord",
+      "registre foncier"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "readiness": "beta",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "voisinage_servitudes_passage",
+    "domaine": "voisinage",
+    "sousDomaine": "servitudes",
+    "tags": [
+      "servitude",
+      "passage",
+      "enclave",
+      "accès",
+      "propriété"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est votre besoin ?",
+        "options": [
+          "passage à pied",
+          "passage véhicule",
+          "passage canalisation",
+          "vue / jour"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Existe-t-il une servitude inscrite au RF ?",
+        "options": [
+          "oui",
+          "non",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Votre fonds est-il enclavé ?",
+        "options": [
+          "oui — pas d'accès route",
+          "non",
+          "accès difficile"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous discuté avec le voisin ?",
+        "options": [
+          "oui accord",
+          "oui refus",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'art. 694 CC consacre le droit au passage nécessaire (Notwegrecht) : le propriétaire d'un fonds enclavé peut exiger de ses voisins l'octroi d'un passage moyennant pleine indemnité. L'enclave est une absence d'accès suffisant à la voie publique. Le passage nécessaire est attribué en principe contre le voisin pour qui il représente le moins d'inconvénient et selon le tracé le plus court. Une indemnité préalable est due (art. 694 al. 2 CC). Pour un accès simplement inconfortable mais existant, le droit au passage nécessaire ne s'applique pas — il faut négocier une servitude conventionnelle (art. 730 ss CC) et l'inscrire au registre foncier (art. 731 CC). Les servitudes existantes sont opposables aux acquéreurs ultérieurs grâce à l'inscription. Pour les conduites (eau, électricité, fibre), l'art. 691 CC permet d'imposer leur passage moyennant indemnité. Toute modification ou suppression d'une servitude inscrite suppose en principe un acte authentique et l'accord des deux parties (art. 736 CC). En cas de litige sur l'étendue d'une servitude, l'interprétation tient compte de l'inscription et de la pratique passée (art. 738 CC).",
+      "articles": [
+        {
+          "ref": "CC 694",
+          "titre": "Passage nécessaire — fonds enclavé",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_694"
+        },
+        {
+          "ref": "CC 730",
+          "titre": "Constitution des servitudes foncières",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_730"
+        },
+        {
+          "ref": "CC 691",
+          "titre": "Conduites traversant des fonds voisins",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_691"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 136 III 130",
+          "resume": "Le passage nécessaire de l'art. 694 CC suppose une enclave véritable : un accès difficile mais existant ne suffit pas à fonder la prétention."
+        },
+        {
+          "ref": "TF 5A_682/2014",
+          "resume": "L'indemnité due au voisin grevé d'un passage nécessaire correspond à la pleine valeur de l'atteinte subie (perte de jouissance, dépréciation)."
+        }
+      ],
+      "modeleLettre": "Objet : Demande de servitude de passage / passage nécessaire (art. 694 CC)\n\nRecommandé\n\n[NOM DU VOISIN]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe suis propriétaire de la parcelle n° [N°] sise [ADRESSE], qui ne dispose pas d'un accès suffisant à la voie publique [DÉCRIRE LA SITUATION D'ENCLAVE OU LE BESOIN].\n\nConformément à l'art. 694 CC (passage nécessaire) / art. 730 CC (servitude conventionnelle), je sollicite la constitution d'une servitude de passage à pied / véhicule / canalisation sur votre parcelle, selon le tracé le moins dommageable suivant : [DESCRIPTION].\n\nJe vous propose une indemnité de [MONTANT] CHF en compensation, ainsi que la prise en charge des frais notariés et d'inscription au registre foncier.\n\nJe vous prie de me faire connaître votre position dans un délai de 60 jours. À défaut d'accord, je saisirai le tribunal civil compétent.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Notaire (Vaud)",
+          "url": "https://www.notaires-vd.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office du registre foncier (Vaud)",
+          "url": "https://www.vd.ch/themes/territoire-et-construction",
+          "canton": "VD"
+        },
+        {
+          "nom": "Tribunal civil de Genève",
+          "url": "https://justice.ge.ch",
+          "canton": "GE"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Le propriétaire souhaite obtenir un passage ou faire valoir/contester une servitude avec le voisin",
+    "profane_aliases": [
+      "droit de passage voisin",
+      "fonds enclavé",
+      "servitude de chemin",
+      "voisin bloque accès"
+    ],
+    "negative_signals": [
+      "accès suffisant existant",
+      "litige sur usage tolérance non inscrite"
+    ],
+    "required_facts": [
+      "situation d'enclave",
+      "extrait registre foncier",
+      "tracé proposé",
+      "indemnité"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "readiness": "beta",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "voisinage_animaux_errants",
+    "domaine": "voisinage",
+    "sousDomaine": "animaux",
+    "tags": [
+      "animaux",
+      "chien",
+      "chat",
+      "errants",
+      "détenteur",
+      "responsabilité"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel animal est en cause ?",
+        "options": [
+          "chien",
+          "chat",
+          "volaille",
+          "bétail",
+          "autre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quel est le problème ?",
+        "options": [
+          "intrusion régulière",
+          "dégâts (jardin, voiture)",
+          "morsure / blessure",
+          "abandon / errance"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Le détenteur est-il identifié ?",
+        "options": [
+          "oui voisin",
+          "présomption",
+          "non / animal errant"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Y a-t-il un dommage chiffrable ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'art. 56 CO impose au détenteur d'un animal une responsabilité présumée pour le dommage causé par celui-ci, sauf preuve d'avoir pris tous les soins commandés par les circonstances ou que le dommage serait survenu malgré ces soins. La présomption de faute renverse le fardeau de la preuve en faveur du lésé. L'art. 720 CC règle la perte d'animaux : l'animal trouvé doit être annoncé à son détenteur ou aux autorités ; si l'animal a été perdu, le détenteur conserve la propriété pendant 2 mois (animaux apprivoisés) ou en règle générale 5 ans avec annonce officielle. Pour les morsures de chien : obligation d'annoncer aux autorités cantonales (vétérinaire cantonal), sanctions administratives possibles (formation obligatoire, port de laisse, muselière), et responsabilité civile du détenteur (assurance RC en général incluse dans la RC ménage). Les chats divagateurs entrant régulièrement sur la propriété voisine : la jurisprudence est nuancée — un certain niveau de tolérance prévaut, mais des dégâts répétés justifient action en cessation (art. 679 CC) et indemnisation. Pour le bétail, des règles spécifiques cantonales sur les pâtures et la garde s'appliquent.",
+      "articles": [
+        {
+          "ref": "CO 56",
+          "titre": "Responsabilité du détenteur d'animal",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_56"
+        },
+        {
+          "ref": "CC 720",
+          "titre": "Animaux trouvés et perdus",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_720"
+        },
+        {
+          "ref": "CC 679",
+          "titre": "Actions du voisin lésé — responsabilité objective",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_679"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 131 III 115",
+          "resume": "Le détenteur d'un animal au sens de l'art. 56 CO est celui qui en assume la garde durable et tire profit de sa détention. La libération suppose la preuve de tous les soins requis."
+        },
+        {
+          "ref": "TF 4A_120/2015",
+          "resume": "La morsure de chien à un piéton engage de plein droit la responsabilité du détenteur, sauf preuve par lui d'avoir pris toutes les précautions adéquates (laisse, muselière, contrôle)."
+        }
+      ],
+      "modeleLettre": "Objet : Réclamation — dommages causés par votre animal (art. 56 CO)\n\nRecommandé\n\n[NOM DU DÉTENTEUR]\n[ADRESSE]\n\nMadame, Monsieur,\n\nLe [DATE], votre [ESPÈCE — chien / chat / autre], [DESCRIPTION], a causé les dommages suivants :\n[DESCRIPTION : intrusion répétée, dégâts au jardin, morsure, etc.]\n\nPhotos / certificat médical / témoignages joints.\n\nConformément à l'art. 56 CO, vous êtes responsable des dommages causés par votre animal, sauf à prouver avoir pris toutes les précautions requises.\n\nJ'évalue mon préjudice à [MONTANT] CHF (devis / facture).\n\nJe vous prie, dans un délai de 30 jours :\n— d'annoncer le sinistre à votre assurance responsabilité civile ;\n— de prendre les mesures nécessaires pour empêcher la répétition (clôture, surveillance, laisse) ;\n— de me régler / faire régler par votre assureur le préjudice subi.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Vétérinaire cantonal (Vaud)",
+          "url": "https://www.vd.ch/themes/environnement/animaux",
+          "canton": "VD"
+        },
+        {
+          "nom": "Service de la consommation et des affaires vétérinaires (Genève)",
+          "url": "https://www.ge.ch/dossier/animaux",
+          "canton": "GE"
+        },
+        {
+          "nom": "Justice de paix (Vaud)",
+          "url": "https://www.vd.ch/themes/justice",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "2 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Le voisin est confronté à un animal du voisinage (chien, chat, bétail) causant nuisances ou dommages",
+    "profane_aliases": [
+      "chien voisin mord",
+      "chat voisin saccage jardin",
+      "morsure chien voisin",
+      "animal errant voisin"
+    ],
+    "negative_signals": [
+      "intrusion ponctuelle sans dommage",
+      "animal sauvage non détenu"
+    ],
+    "required_facts": [
+      "espèce et identification",
+      "détenteur",
+      "preuve de dommage",
+      "tentative amiable"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "voisinage_distances_plantations",
+    "domaine": "voisinage",
+    "sousDomaine": "plantations",
+    "tags": [
+      "plantation",
+      "distance",
+      "haie",
+      "arbre",
+      "limite",
+      "droit cantonal"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel type de plantation ?",
+        "options": [
+          "haie",
+          "arbre fruitier",
+          "arbre de haute tige",
+          "arbuste"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "À quelle distance de la limite ?",
+        "options": [
+          "<50 cm",
+          "50 cm - 2 m",
+          ">2 m"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Depuis combien de temps est-elle plantée ?",
+        "options": [
+          "<5 ans",
+          "5-10 ans",
+          ">10 ans"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous demandé la conformité ?",
+        "options": [
+          "oui par écrit",
+          "oui oralement",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'art. 688 CC renvoie au DROIT CANTONAL pour fixer les distances que les arbres et arbustes doivent observer par rapport aux limites des fonds voisins. Les distances varient sensiblement d'un canton à l'autre. Vaud (Loi sur le rural et le foncier rural — LRF, et Code rural) prévoit en règle 0,5 m pour les buissons, 3 m pour les arbres de haute tige et 6 m en zone agricole. Genève (Loi sur les routes et droit des constructions) impose 50 cm pour les haies et 2 m pour les arbres. Fribourg, Valais et Neuchâtel ont des règles distinctes. La hauteur des haies est souvent limitée à 2 m sur la limite (sauf accord). La PRESCRIPTION ACQUISITIVE cantonale (généralement 30 ans) peut faire perdre le droit d'exiger l'arrachage si la plantation est restée en place sans réclamation : il faut donc agir promptement dès le constat de non-conformité. L'action en cessation (art. 679 CC) permet d'exiger l'arrachage ou la mise en conformité. Pour les arbres fruitiers, les fruits tombés sur le fonds voisin appartiennent au propriétaire de l'arbre (art. 687 al. 2 CC). En PPE, le règlement de l'AG peut imposer des règles plus strictes. Un échange amiable est toujours préférable.",
+      "articles": [
+        {
+          "ref": "CC 688",
+          "titre": "Plantations — distance et hauteur (droit cantonal)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_688"
+        },
+        {
+          "ref": "CC 687",
+          "titre": "Branches et racines — droit de coupe",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_687"
+        },
+        {
+          "ref": "CC 679",
+          "titre": "Actions du voisin lésé",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_679"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 131 III 505",
+          "resume": "Les distances fixées par le droit cantonal en application de l'art. 688 CC sont impératives ; le voisin lésé peut exiger l'arrachage ou la taille des plantations non conformes."
+        },
+        {
+          "ref": "TF 5A_415/2008",
+          "resume": "L'inaction prolongée d'un voisin face à une plantation non conforme peut conduire à la prescription acquisitive cantonale et faire perdre le droit d'exiger la mise en conformité."
+        }
+      ],
+      "modeleLettre": "Objet : Mise en demeure — plantations non conformes (art. 688 CC + droit cantonal)\n\nRecommandé\n\n[NOM DU VOISIN]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe constate que les plantations suivantes situées sur votre propriété ne respectent pas la distance légale prévue par le droit cantonal applicable (canton de [CANTON], [LOI CITÉE]) :\n[DESCRIPTION : essence, distance mesurée, distance légale, hauteur]\n\nConformément à l'art. 688 CC et à la législation cantonale, je vous demande, dans un délai de 60 jours :\n[ ] de procéder à l'élagage / écimage à la hauteur réglementaire ;\n[ ] de déplacer / arracher la plantation non conforme à la distance légale.\n\nÀ défaut, je saisirai l'autorité de conciliation civile pour action en cessation (art. 679 CC).\n\nJe reste ouvert à un règlement amiable.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Justice de paix (Vaud)",
+          "url": "https://www.vd.ch/themes/justice",
+          "canton": "VD"
+        },
+        {
+          "nom": "Tribunal de première instance (Genève)",
+          "url": "https://justice.ge.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Conservateur du registre foncier (Vaud)",
+          "url": "https://www.vd.ch/themes/territoire-et-construction",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Prescription",
+          "delai": "30 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Le voisin constate que les plantations du voisin ne respectent pas les distances réglementaires cantonales",
+    "profane_aliases": [
+      "haie voisin trop près",
+      "arbre voisin distance limite",
+      "buissons voisin envahissent",
+      "haie 2 mètres limite"
+    ],
+    "negative_signals": [
+      "plantations conformes au droit cantonal",
+      "tolérance ancienne dépassant la prescription acquisitive"
+    ],
+    "required_facts": [
+      "essence et taille",
+      "distance mesurée",
+      "loi cantonale",
+      "ancienneté de la plantation"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  }
+]

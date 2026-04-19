@@ -1,0 +1,1633 @@
+[
+  {
+    "id": "circulation_amende_ordre",
+    "domaine": "circulation",
+    "sousDomaine": "amendes",
+    "tags": [
+      "amende",
+      "ordre",
+      "stationnement",
+      "infraction légère",
+      "LCR"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel type d'amende ?",
+        "options": [
+          "stationnement",
+          "vitesse modérée",
+          "feu rouge",
+          "ceinture / casque",
+          "autre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Avez-vous reçu une amende d'ordre (OA) ou une dénonciation ?",
+        "options": [
+          "amende d'ordre (papillon)",
+          "dénonciation officielle",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "L'avez-vous payée ?",
+        "options": [
+          "oui",
+          "non",
+          "partiellement"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Contestez-vous les faits ?",
+        "options": [
+          "oui",
+          "non — circonstances à signaler",
+          "non — faits exacts"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La Loi sur les amendes d'ordre (LAO) institue une procédure simplifiée pour les contraventions légères à la LCR (vitesse modérée, stationnement, signaux). L'amende d'ordre est forfaitaire (jusqu'à 300 CHF en règle générale, exceptionnellement plus pour certains cas), ne donne pas lieu à inscription au casier judiciaire et n'engendre pas de frais administratifs si elle est payée dans les 30 jours. L'art. 6 LCR pose le principe que tout usager doit se comporter de manière à ne pas gêner ni mettre en danger la circulation. Le conducteur a le choix : (1) payer l'amende et clore l'affaire, (2) ne pas payer dans les 30 jours, ce qui déclenche la procédure ordinaire avec dénonciation, audition possible, et amende plus lourde + frais (la note finale est souvent 2-4 fois supérieure à l'amende d'ordre initiale). Pour CONTESTER, il faut écrire à l'autorité émettrice dans le délai imparti et exposer les motifs (erreur, identité, justification). En cas de contestation rejetée, la voie de recours pénale (opposition à l'ordonnance pénale) s'applique avec l'aide éventuelle d'un avocat. Pour les infractions à signalisation contestables (signaux mal placés, circonstances exceptionnelles), il est possible de demander l'annulation à l'autorité administrative cantonale.",
+      "articles": [
+        {
+          "ref": "LCR 6",
+          "titre": "Comportement général dans la circulation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_6"
+        },
+        {
+          "ref": "LAO 1",
+          "titre": "Amendes d'ordre — champ d'application",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1972/734_734_734/fr#art_1"
+        },
+        {
+          "ref": "LCR 90",
+          "titre": "Violations des règles de la circulation — sanctions",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_90"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 138 IV 13",
+          "resume": "Le paiement de l'amende d'ordre vaut acceptation de l'infraction et clôt la procédure. Toute contestation doit intervenir avant paiement et dans les délais."
+        },
+        {
+          "ref": "TF 6B_1140/2014",
+          "resume": "L'opposition à une ordonnance pénale après refus d'amende d'ordre doit être motivée ; l'absence de motivation peut entraîner l'irrecevabilité."
+        }
+      ],
+      "modeleLettre": "Objet : Contestation d'amende d'ordre n° [N°] du [DATE]\n\nRecommandé\n\n[NOM DE L'AUTORITÉ ÉMETTRICE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJ'ai reçu le [DATE] l'amende d'ordre n° [N°] portant sur les faits suivants : [DESCRIPTION].\n\nJe conteste cette amende pour les motifs suivants :\n[EXPLIQUER : erreur de fait, signalisation manquante, urgence justifiée, identité du conducteur, etc.]\n\nPièces jointes : [PHOTOS, CERTIFICAT, ATTESTATION]\n\nJe vous prie de :\n— annuler l'amende, ou\n— transmettre le dossier à l'autorité de poursuite pour examen approfondi.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Service des automobiles et de la navigation (Vaud)",
+          "tel": "021 316 82 10",
+          "url": "https://www.vd.ch/themes/mobilite/permis-vehicules",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office cantonal des véhicules (Genève)",
+          "url": "https://www.ge.ch/dossier/vehicules",
+          "canton": "GE"
+        },
+        {
+          "nom": "TCS — section juridique",
+          "tel": "0800 140 140",
+          "url": "https://www.tcs.ch",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Vérification du bordereau",
+          "delai": "immédiat dès réception",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Refus de paiement et opposition",
+          "delai": "délai de paiement 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure pénale ordinaire déclenchée",
+          "delai": "sous 30 jours dès réception",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition à l'ordonnance pénale",
+          "delai": "10 jours dès notification de l'ordonnance",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Le conducteur a reçu une amende d'ordre (papillon) ou une amende légère pour infraction routière",
+    "profane_aliases": [
+      "amende stationnement",
+      "papillon pare-brise",
+      "amende vitesse",
+      "PV stationnement contester"
+    ],
+    "negative_signals": [
+      "infraction grave avec retrait de permis",
+      "infraction TGV / transports publics"
+    ],
+    "required_facts": [
+      "type d'amende",
+      "date et lieu",
+      "circonstances",
+      "preuves"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "cascades": [
+      {
+        "titre": "Contestation d'une amende d'ordre",
+        "domaine": "circulation",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérification du bordereau",
+            "description": "Contrôler les détails de l'amende (lieu, date, infraction, identification du véhicule), conserver l'avis reçu.",
+            "delai": "immédiat dès réception",
+            "preuve_generee": "Avis d'amende + photos/preuves éventuelles"
+          },
+          {
+            "numero": 2,
+            "action": "Refus de paiement et opposition",
+            "description": "Ne pas payer dans le délai de 30 jours si contestation : faute de paiement, la cause est transmise à la procédure pénale ordinaire.",
+            "delai": "délai de paiement 30 jours",
+            "base_legale": "LAO 6 / LAO 10",
+            "preuve_generee": "Preuve de non-paiement volontaire et motivé"
+          },
+          {
+            "numero": 3,
+            "action": "Procédure pénale ordinaire déclenchée",
+            "description": "Réception d'une ordonnance pénale ou d'un mandat de répression : vérifier les charges et le montant éventuel majoré.",
+            "delai": "sous 30 jours dès réception",
+            "branches": [
+              {
+                "si": "décision acceptée",
+                "alors": "paiement ou amende définitive"
+              },
+              {
+                "si": "contestation maintenue",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Opposition à l'ordonnance pénale",
+            "description": "Opposition écrite dans les 10 jours au ministère public, motifs détaillés, éventuellement avec preuves (photos, témoins).",
+            "delai": "10 jours dès notification de l'ordonnance",
+            "base_legale": "CPP 354",
+            "cout": "gratuit (risque de frais si échec)"
+          }
+        ]
+      }
+    ],
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "circulation_retrait_permis_exces_vitesse",
+    "domaine": "circulation",
+    "sousDomaine": "retrait_permis",
+    "tags": [
+      "retrait permis",
+      "excès vitesse",
+      "vitesse",
+      "infraction grave",
+      "LCR"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "De combien avez-vous dépassé la vitesse autorisée (après déduction tolérance) ?",
+        "options": [
+          "<15 km/h",
+          "15-25 km/h",
+          "25-35 km/h",
+          ">35 km/h"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Sur quel type de route ?",
+        "options": [
+          "localité (50)",
+          "hors localité (80)",
+          "semi-autoroute (100)",
+          "autoroute (120)"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous des antécédents de retrait dans les 5 dernières années ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est votre situation ?",
+        "options": [
+          "permis depuis >3 ans",
+          "permis à l'essai",
+          "professionnel chauffeur"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Les retraits de permis pour excès de vitesse sont régis par les art. 16 ss LCR. La gravité de la faute détermine la durée du retrait : faute légère (art. 16a LCR — avertissement ou 1 mois minimum), faute moyennement grave (art. 16b LCR — 1 mois minimum), faute grave (art. 16c LCR — 3 mois minimum). Les SEUILS DE VITESSE indicatifs (jurisprudence TF) après déduction de la tolérance technique (-3 à -7 km/h selon vitesse) sont : excès en localité dès 25 km/h = grave ; hors localité dès 30 km/h = grave ; autoroute dès 35 km/h = grave. À partir de 40 km/h en localité, 50 km/h hors localité et 60 km/h sur autoroute, on entre dans la catégorie « délit de chauffard » (art. 90 al. 3-4 LCR) avec retrait minimum de 24 mois et risque de peine privative de liberté (1-4 ans). Les antécédents augmentent la durée selon la « cascade des sanctions » (art. 16c al. 2 LCR : 6 mois si retrait grave dans les 5 ans, 12 mois après deux, etc.). Le permis à l'essai (art. 15a LCR) entraîne l'annulation et un cours de sensibilisation après une infraction. Procédure : décision de l'office cantonal des automobiles, recours dans les 30 jours.",
+      "articles": [
+        {
+          "ref": "LCR 16c",
+          "titre": "Retrait du permis de conduire pour faute grave",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_16_c"
+        },
+        {
+          "ref": "LCR 16b",
+          "titre": "Retrait pour faute moyennement grave",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_16_b"
+        },
+        {
+          "ref": "LCR 90",
+          "titre": "Violations graves des règles de la circulation — chauffard",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_90"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 132 II 234",
+          "resume": "Les seuils de vitesse fixant la gravité de l'infraction sont des règles fixes posées par la jurisprudence du Tribunal fédéral, qui s'imposent aux autorités cantonales."
+        },
+        {
+          "ref": "TF 1C_409/2020",
+          "resume": "L'argument de la perte d'emploi liée au retrait n'est pas un motif suffisant pour réduire la durée minimale légale fixée à l'art. 16c LCR."
+        }
+      ],
+      "modeleLettre": "Objet : Recours contre la décision de retrait de permis du [DATE], dossier n° [N°]\n\nRecommandé\n\n[OFFICE CANTONAL DES AUTOMOBILES / TRIBUNAL ADMINISTRATIF]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe forme par la présente RECOURS dans le délai de 30 jours contre la décision rendue le [DATE] m'imposant un retrait de permis de [DURÉE] mois.\n\nFaits :\n[RÉSUMER LES CIRCONSTANCES]\n\nMotifs :\n[INVOQUER : qualification de la faute trop sévère, mesure de l'instrument contestée, circonstances atténuantes, atteinte disproportionnée à la situation professionnelle, etc.]\n\nConclusions :\n— Annuler la décision attaquée ;\n— Subsidiairement, réduire la durée du retrait à [X] mois ;\n— Le tout avec effet suspensif si possible.\n\nMoyens de preuve : [LISTE]\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Service des automobiles et de la navigation (Vaud)",
+          "tel": "021 316 82 10",
+          "url": "https://www.vd.ch/themes/mobilite/permis-vehicules",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office cantonal des véhicules (Genève)",
+          "url": "https://www.ge.ch/dossier/vehicules",
+          "canton": "GE"
+        },
+        {
+          "nom": "TCS — assistance juridique",
+          "tel": "0800 140 140",
+          "url": "https://www.tcs.ch",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Vérification de la mesure et du relevé",
+          "delai": "immédiat dès réception de la décision",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Droit d'être entendu avant décision finale",
+          "delai": "selon notification (typiquement 10-20 jours)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision finale de retrait",
+          "delai": "variable selon canton",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours au tribunal administratif cantonal",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "1 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Le conducteur risque ou subit un retrait de permis suite à un excès de vitesse",
+    "profane_aliases": [
+      "retrait permis vitesse",
+      "flashé excès vitesse",
+      "perdre permis radar",
+      "chauffard art 90"
+    ],
+    "negative_signals": [
+      "amende d'ordre simple sans retrait",
+      "infraction sans excès de vitesse"
+    ],
+    "required_facts": [
+      "vitesse mesurée et tolérance",
+      "type de route",
+      "antécédents",
+      "type de permis"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "cascades": [
+      {
+        "titre": "Contestation d'un retrait de permis pour excès de vitesse",
+        "domaine": "circulation",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérification de la mesure et du relevé",
+            "description": "Demander copie du rapport de police et du protocole de mesure (radar, homologation, marge de tolérance). Vérifier identité du conducteur.",
+            "delai": "immédiat dès réception de la décision",
+            "preuve_generee": "Dossier de mesure + rapport police"
+          },
+          {
+            "numero": 2,
+            "action": "Droit d'être entendu avant décision finale",
+            "description": "Exercer le droit d'être entendu auprès du Service des automobiles (SAN) : lettre motivée avec preuves (usage professionnel du permis, besoins familiaux, premier retrait, etc.).",
+            "delai": "selon notification (typiquement 10-20 jours)",
+            "base_legale": "LCR 16 / LCR 17 / Cst 29",
+            "preuve_generee": "Lettre motivée + pièces justificatives"
+          },
+          {
+            "numero": 3,
+            "action": "Décision finale de retrait",
+            "description": "Réception de la décision finale du SAN (durée du retrait, date d'effet).",
+            "delai": "variable selon canton",
+            "branches": [
+              {
+                "si": "retrait accepté",
+                "alors": "exécution du retrait"
+              },
+              {
+                "si": "contestation",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours au tribunal administratif cantonal",
+            "description": "Recours écrit motivé dans les 30 jours devant le tribunal administratif cantonal, puis éventuellement recours en matière de droit public au TF.",
+            "delai": "30 jours dès notification",
+            "base_legale": "LCR 24 / LTF 82",
+            "cout": "avance de frais selon tarif cantonal"
+          }
+        ]
+      }
+    ],
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "circulation_alcool_retrait_permis",
+    "domaine": "circulation",
+    "sousDomaine": "alcool",
+    "tags": [
+      "alcool",
+      "ivresse",
+      "taux alcoolémie",
+      "retrait permis",
+      "LCR"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel taux d'alcoolémie a été mesuré ?",
+        "options": [
+          "0.10-0.49 mg/l",
+          "0.50-0.79 mg/l",
+          "0.80 mg/l ou plus",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Y a-t-il eu un accident ?",
+        "options": [
+          "oui avec dommages",
+          "oui sans dommage",
+          "non"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Quel est votre type de permis ?",
+        "options": [
+          "définitif >3 ans",
+          "permis à l'essai",
+          "professionnel"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous des antécédents ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le taux limite d'alcoolémie en Suisse est de 0,5 ‰ dans le sang (= 0,25 mg/l dans l'air expiré) pour les conducteurs ordinaires (art. 31 LCR et OAC). Pour les conducteurs en permis à l'essai, les chauffeurs professionnels (autocar, taxi, transports professionnels), les moniteurs et les nouveaux conducteurs, le taux maximum est de 0,1 ‰ (= 0,05 mg/l) — politique de tolérance zéro. Les seuils de qualification : (1) entre 0,25 et 0,4 mg/l = ivresse simple → faute moyennement grave, retrait minimum 1 mois (art. 16b LCR) ; (2) à partir de 0,4 mg/l (= 0,8 ‰) = ivresse qualifiée → faute grave, retrait minimum 3 mois (art. 16c LCR), peine privative de liberté possible jusqu'à 3 ans ou peine pécuniaire (art. 91 LCR). Les antécédents et l'accident aggravent. La détection se fait par éthylotest (présomption) puis prise de sang ou éthylomètre de précision. Le refus de prise de sang ou de souffler dans l'éthylomètre est sanctionné comme une ivresse qualifiée (art. 91a LCR), même si on n'avait pas bu. Procédure : retrait administratif de l'office cantonal (recours 30 jours), procédure pénale parallèle au tribunal.",
+      "articles": [
+        {
+          "ref": "LCR 16c",
+          "titre": "Retrait pour faute grave (ivresse qualifiée)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_16_c"
+        },
+        {
+          "ref": "LCR 31",
+          "titre": "Maîtrise du véhicule — état du conducteur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_31"
+        },
+        {
+          "ref": "LCR 91",
+          "titre": "Conduite en état d'ébriété — sanctions pénales",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_91"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 124 II 559",
+          "resume": "Le seuil de 0,8 ‰ (0,4 mg/l) qualifie automatiquement la faute de grave au sens de l'art. 16c LCR, sans appréciation casuistique."
+        },
+        {
+          "ref": "TF 6B_1175/2014",
+          "resume": "La conduite en état d'ébriété qualifiée est sanctionnée d'une peine privative de liberté jusqu'à 3 ans ; les premiers délinquants restent en règle générale dans la peine pécuniaire avec sursis."
+        }
+      ],
+      "modeleLettre": "Objet : Recours contre la décision de retrait de permis (alcool) — dossier n° [N°]\n\nRecommandé\n\n[OFFICE CANTONAL DES AUTOMOBILES / TRIBUNAL ADMINISTRATIF]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe forme par la présente RECOURS dans les 30 jours contre la décision du [DATE] m'imposant un retrait de permis de [DURÉE].\n\nFaits :\n[CIRCONSTANCES — date, lieu, taux mesuré, mode de mesure]\n\nMotifs :\n[INVOQUER : irrégularités procédurales (chaîne de garde, délai entre faits et prélèvement), erreur de mesure, motifs personnels exceptionnels, etc.]\n\nConclusions :\n— Annuler ou réduire la décision de retrait ;\n— Subsidiairement, fixer le retrait à la durée minimale légale.\n\nMoyens de preuve : [LISTE]\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Service des automobiles et de la navigation (Vaud)",
+          "tel": "021 316 82 10",
+          "url": "https://www.vd.ch/themes/mobilite/permis-vehicules",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office cantonal des véhicules (Genève)",
+          "url": "https://www.ge.ch/dossier/vehicules",
+          "canton": "GE"
+        },
+        {
+          "nom": "TCS — assistance juridique",
+          "tel": "0800 140 140",
+          "url": "https://www.tcs.ch",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "1 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Recours",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Le conducteur fait face à un retrait de permis pour conduite sous influence d'alcool",
+    "profane_aliases": [
+      "alcool au volant",
+      "ivresse au volant",
+      "conduite alcoolisée",
+      "perdre permis alcool"
+    ],
+    "negative_signals": [
+      "alcool sans conduite (passager)",
+      "tests négatifs"
+    ],
+    "required_facts": [
+      "taux d'alcoolémie",
+      "mode de mesure",
+      "type de permis",
+      "antécédents"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "circulation_accident_responsabilite_civile",
+    "domaine": "circulation",
+    "sousDomaine": "accident",
+    "tags": [
+      "accident",
+      "responsabilité",
+      "RC",
+      "détenteur",
+      "véhicule",
+      "indemnisation"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Avez-vous été impliqué comme conducteur, passager ou tiers ?",
+        "options": [
+          "conducteur du véhicule responsable",
+          "conducteur du véhicule victime",
+          "passager",
+          "piéton / cycliste"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quels sont les dommages ?",
+        "options": [
+          "matériels uniquement",
+          "corporels légers",
+          "corporels graves"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous établi un constat amiable ?",
+        "options": [
+          "oui",
+          "non — police présente",
+          "non — fuite"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous déclaré le sinistre à votre assurance ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'art. 58 LCR institue une responsabilité OBJECTIVE (sans faute) du DÉTENTEUR du véhicule pour tout dommage corporel ou matériel causé par l'emploi du véhicule. La responsabilité est presque automatique : le détenteur ne peut s'exonérer que par la preuve d'une force majeure ou d'une faute grave de la victime (art. 59 LCR). L'assurance responsabilité civile (RC) est obligatoire pour tout véhicule (art. 63 LCR), avec couverture minimale de 5 millions par sinistre pour les dommages corporels et matériels. La VICTIME dispose d'un droit DIRECT contre l'assureur (action directe — art. 65 LCR) sans devoir poursuivre d'abord le détenteur. En cas de fuite ou d'absence d'assurance, le Bureau national d'assurance (BNA) ou le Fonds national de garantie (FNG) prend en charge. La PRESCRIPTION est de 3 ans dès la connaissance du dommage et du responsable, avec un maximum absolu de 20 ans dès l'événement (art. 83 LCR). Les indemnisations couvrent : frais médicaux, perte de gain (actuelle et future), tort moral (art. 47 CO), dommages matériels, frais d'avocat raisonnables. Pour les dommages corporels graves, l'expertise médicale est centrale.",
+      "articles": [
+        {
+          "ref": "LCR 58",
+          "titre": "Responsabilité du détenteur du véhicule",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_58"
+        },
+        {
+          "ref": "LCR 65",
+          "titre": "Action directe contre l'assureur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_65"
+        },
+        {
+          "ref": "LCR 83",
+          "titre": "Prescription des actions en responsabilité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_83"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 132 III 249",
+          "resume": "La responsabilité du détenteur au sens de l'art. 58 LCR est objective. L'exonération par faute grave de la victime suppose un comportement aberrant qui rompt le lien de causalité."
+        },
+        {
+          "ref": "TF 4A_695/2017",
+          "resume": "L'action directe contre l'assureur RC du détenteur peut être exercée parallèlement à l'action contre le détenteur lui-même. Le délai de prescription est de 3 ans dès connaissance complète du dommage."
+        }
+      ],
+      "modeleLettre": "Objet : Demande d'indemnisation suite à accident du [DATE] — sinistre n° [N°]\n\nRecommandé\n\n[ASSUREUR RC DU DÉTENTEUR RESPONSABLE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nLe [DATE] à [LIEU], j'ai été victime d'un accident de circulation impliquant le véhicule de votre assuré, [PLAQUE / NOM].\n\nResponsabilité : [RAPPELER LES FAITS — feu rouge grillé, refus de priorité, etc.]\nDommages :\n— Corporels : [DESCRIPTION + CERTIFICATS MÉDICAUX]\n— Matériels : [DEVIS / FACTURES]\n— Perte de gain : [ATTESTATION EMPLOYEUR / CHIFFRES]\n— Tort moral : [JUSTIFICATION]\n\nConformément à l'art. 58 LCR (responsabilité objective du détenteur) et l'art. 65 LCR (action directe), je vous prie de me confirmer la prise en charge intégrale dans un délai de 30 jours et de me verser une avance sur indemnité de [MONTANT] CHF.\n\nÀ défaut, j'engagerai action devant le tribunal civil compétent.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "TCS — assistance juridique accidents",
+          "tel": "0800 140 140",
+          "url": "https://www.tcs.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Bureau national d'assurance (BNA)",
+          "url": "https://www.nbi-ngf.ch",
+          "canton": "ZH"
+        },
+        {
+          "nom": "Ombudsman des assurances privées",
+          "url": "https://www.ombudsman-assurance.ch",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Sécurisation et constat",
+          "delai": "immédiat sur les lieux",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Annonce à l'assurance RC du détenteur responsable",
+          "delai": "dans les meilleurs délais (généralement 14 jours)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Expertise et proposition d'indemnisation",
+          "delai": "30 à 90 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Contestation : contre-expertise ou action civile",
+          "delai": "avant prescription (3 ans)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Prescription",
+          "delai": "3 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "L'usager est victime ou auteur d'un accident de circulation et veut clarifier la responsabilité civile et l'indemnisation",
+    "profane_aliases": [
+      "accident voiture qui paye",
+      "responsable accident circulation",
+      "indemnisation accident route",
+      "RC obligatoire accident"
+    ],
+    "negative_signals": [
+      "accident sans véhicule (chute simple)",
+      "responsabilité totalement de la victime"
+    ],
+    "required_facts": [
+      "circonstances",
+      "constat amiable / police",
+      "dommages",
+      "assurance du responsable"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "cascades": [
+      {
+        "titre": "Responsabilité civile après accident de circulation",
+        "domaine": "circulation",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Sécurisation et constat",
+            "description": "Sécuriser les lieux, appeler police si blessés ou désaccord, remplir le constat amiable européen avec toutes les coordonnées et le croquis.",
+            "delai": "immédiat sur les lieux",
+            "base_legale": "LCR 51",
+            "preuve_generee": "Constat amiable + photos + coordonnées témoins"
+          },
+          {
+            "numero": 2,
+            "action": "Annonce à l'assurance RC du détenteur responsable",
+            "description": "Déclaration écrite à l'assurance RC (la sienne ou celle de l'autre conducteur) avec constat, photos et éventuels témoignages.",
+            "delai": "dans les meilleurs délais (généralement 14 jours)",
+            "base_legale": "LCR 58 / LCR 65",
+            "preuve_generee": "Accusé de réception assureur"
+          },
+          {
+            "numero": 3,
+            "action": "Expertise et proposition d'indemnisation",
+            "description": "L'assureur mandate un expert pour évaluer les dégâts, puis propose une indemnisation (frais de réparation, perte d'usage, dommages corporels).",
+            "delai": "30 à 90 jours",
+            "branches": [
+              {
+                "si": "proposition acceptée",
+                "alors": "fin du processus après paiement"
+              },
+              {
+                "si": "désaccord",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Contestation : contre-expertise ou action civile",
+            "description": "Demande de contre-expertise puis, si échec, action civile devant le tribunal (prescription 3 ans dès connaissance du dommage).",
+            "delai": "avant prescription (3 ans)",
+            "base_legale": "LCR 83 / CO 60",
+            "cout": "tarif cantonal"
+          }
+        ]
+      }
+    ],
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "circulation_constat_amiable_europeen",
+    "domaine": "circulation",
+    "sousDomaine": "accident",
+    "tags": [
+      "constat amiable",
+      "constat européen",
+      "accident",
+      "déclaration",
+      "preuves"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Le constat est-il signé des deux parties ?",
+        "options": [
+          "oui",
+          "non — refus",
+          "non — pas rempli"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Y a-t-il eu intervention de la police ?",
+        "options": [
+          "oui",
+          "non",
+          "appelée mais non venue"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Y a-t-il des blessés ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "L'autre conducteur reconnaît-il sa responsabilité ?",
+        "options": [
+          "oui",
+          "partiellement",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le constat amiable européen d'accident est un formulaire standardisé reconnu dans tous les pays européens, dont la Suisse. Il sert à établir contradictoirement les circonstances et accélère l'indemnisation. Le constat n'est PAS obligatoire en droit suisse, mais en l'absence de constat, le règlement du sinistre prend généralement plus de temps et peut donner lieu à contestations. Lorsque l'accident cause des LÉSIONS CORPORELLES, l'art. 51 LCR impose d'avertir IMMÉDIATEMENT la police. Pour les seuls dommages matériels, l'art. 51 al. 3 LCR n'oblige à appeler la police qu'en cas de désaccord ou si l'autre partie refuse de s'identifier. Il est conseillé de remplir le constat précisément, de prendre des photos (positions des véhicules, dégâts, vue d'ensemble), de noter les coordonnées des témoins, et de cocher les cases du constat sans tenter de modifier ce que l'autre a coché. Une fois signé par les deux parties, le constat fait foi des faits constatés ; une partie peut toutefois ajouter des observations dans le cadre prévu. En cas de refus de signer, il faut tout de même remplir sa partie, prendre photos et témoignages, et signaler à son assurance. Délai d'annonce du sinistre à l'assurance : généralement 14 jours (vérifier les CGV).",
+      "articles": [
+        {
+          "ref": "LCR 51",
+          "titre": "Devoirs en cas d'accident — annonce, constat, police",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_51"
+        },
+        {
+          "ref": "LCR 92",
+          "titre": "Sanctions du refus de prêter assistance ou de s'identifier",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_92"
+        },
+        {
+          "ref": "LCR 65",
+          "titre": "Action directe contre l'assureur RC",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_65"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 124 II 285",
+          "resume": "Le constat amiable signé contradictoirement par les deux parties fait foi quant aux faits qu'il décrit ; il peut toutefois être contredit par d'autres preuves (photos, expertise, témoignages)."
+        },
+        {
+          "ref": "TF 6B_1140/2017",
+          "resume": "Le délit de fuite (art. 92 LCR) est constitué dès que le conducteur quitte les lieux sans s'identifier, même si le dommage est minime ; les sanctions pénales sont sévères."
+        }
+      ],
+      "modeleLettre": "Objet : Déclaration de sinistre — accident du [DATE] — référence police n° [N°]\n\nRecommandé\n\n[ASSUREUR RC]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe vous déclare le sinistre suivant survenu le [DATE] à [LIEU] :\n\nVéhicule(s) impliqué(s) :\n— Mon véhicule : [PLAQUE, MARQUE]\n— Autre véhicule : [PLAQUE, MARQUE, NOM ET ASSURANCE DU CONDUCTEUR]\n\nCirconstances : [DESCRIPTION FACTUELLE]\nDommages : [LISTE]\nBlessures : [DÉTAIL OU « AUCUNE »]\nIntervention police : [OUI / NON, RAPPORT JOINT]\n\nPièces jointes : constat amiable européen signé / non signé, photos, devis garage, certificats médicaux, attestation salaire pour perte de gain.\n\nJe vous prie de m'accuser réception, de confirmer la prise en charge et de m'indiquer la procédure pour la réparation et l'indemnisation.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "TCS — assistance accidents",
+          "tel": "0800 140 140",
+          "url": "https://www.tcs.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Police cantonale vaudoise",
+          "tel": "117",
+          "url": "https://www.police.vd.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Police cantonale genevoise",
+          "url": "https://www.ge.ch/dossier/police",
+          "canton": "GE"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "14 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "L'usager doit gérer un constat amiable et déclarer un accident à son assurance",
+    "profane_aliases": [
+      "constat amiable accident",
+      "remplir constat européen",
+      "accident sans police",
+      "déclaration sinistre voiture"
+    ],
+    "negative_signals": [
+      "incident sans véhicule",
+      "dommage matériel hors circulation"
+    ],
+    "required_facts": [
+      "constat signé ou non",
+      "présence police",
+      "blessés",
+      "preuves"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "circulation_assurance_rc_obligatoire",
+    "domaine": "circulation",
+    "sousDomaine": "assurance",
+    "tags": [
+      "assurance",
+      "rc",
+      "obligatoire",
+      "véhicule",
+      "détenteur"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est votre véhicule ?",
+        "options": [
+          "voiture",
+          "moto / scooter",
+          "vélo électrique rapide",
+          "remorque",
+          "autre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est votre situation ?",
+        "options": [
+          "nouveau détenteur",
+          "résiliation par assureur",
+          "augmentation prime",
+          "recours assureur"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous déjà eu un sinistre ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous l'attestation d'assurance ?",
+        "options": [
+          "oui",
+          "non",
+          "en attente"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Tout véhicule à moteur en circulation en Suisse doit être couvert par une assurance responsabilité civile (RC) obligatoire (art. 63 LCR). Sans attestation d'assurance valable, le permis de circulation et les plaques sont retirés. La RC obligatoire couvre les dommages causés à des tiers — corporels et matériels — jusqu'à un minimum de 5 millions CHF par sinistre. Le contrat est conclu directement entre détenteur et assureur, qui délivre l'attestation au service cantonal des automobiles. La résiliation par l'assureur est possible : (1) à l'échéance avec préavis (généralement 3 mois), (2) après chaque sinistre dans les 14 jours suivant le règlement (art. 42 LCA), avec préavis de 14 jours. Le détenteur peut résilier dans les mêmes cas. En cas de RECOURS de l'assureur (Régressrecht — art. 65 al. 3 LCR), si le sinistre résulte d'une violation grave des obligations contractuelles (alcool, drogue, défaut de permis, conduite illicite), l'assureur règle d'abord le tiers victime puis se retourne contre le détenteur fautif pour récupérer tout ou partie. Pour les vélos électriques rapides (>25 km/h), une RC obligatoire avec vignette annuelle s'applique. Pour les remorques et caravanes, la couverture du véhicule tracteur s'étend en règle générale.",
+      "articles": [
+        {
+          "ref": "LCR 63",
+          "titre": "Assurance responsabilité civile obligatoire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_63"
+        },
+        {
+          "ref": "LCR 65",
+          "titre": "Action directe et recours",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_65"
+        },
+        {
+          "ref": "LCA 42",
+          "titre": "Résiliation après sinistre",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/719_735_717/fr#art_42"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 137 III 322",
+          "resume": "L'assureur RC peut exercer un recours intégral contre le détenteur fautif d'une conduite en état d'ébriété qualifiée. La proportionnalité doit toutefois être respectée selon les circonstances."
+        },
+        {
+          "ref": "TF 4A_220/2016",
+          "resume": "La résiliation par l'assureur après sinistre suppose le respect strict du délai de 14 jours fixé par l'art. 42 LCA ; à défaut, elle est inefficace."
+        }
+      ],
+      "modeleLettre": "Objet : [SOUSCRIPTION / RÉSILIATION / CONTESTATION RECOURS] assurance RC véhicule [PLAQUE]\n\nRecommandé\n\n[ASSUREUR]\n[ADRESSE]\n\nMadame, Monsieur,\n\nVéhicule concerné : [MARQUE, PLAQUE, NUMÉRO DE POLICE]\n\nObjet de la demande :\n[ ] Souscription / changement d'assureur — date d'effet : [DATE]\n[ ] Résiliation au [DATE] (motif : sinistre, échéance, etc.)\n[ ] Contestation du recours [N°] notifié le [DATE] — motifs : [DÉVELOPPER]\n\nPièces jointes : [ATTESTATION, RAPPORT, FACTURE]\n\nJe vous prie de m'accuser réception et de me confirmer le suivi dans un délai de 14 jours.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Service des automobiles et de la navigation (Vaud)",
+          "tel": "021 316 82 10",
+          "url": "https://www.vd.ch/themes/mobilite/permis-vehicules",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office cantonal des véhicules (Genève)",
+          "url": "https://www.ge.ch/dossier/vehicules",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ombudsman des assurances privées",
+          "url": "https://www.ombudsman-assurance.ch",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "14 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Le détenteur a une question sur l'assurance RC obligatoire de son véhicule (souscription, résiliation, recours)",
+    "profane_aliases": [
+      "assurance voiture obligatoire",
+      "résiliation RC après sinistre",
+      "recours assurance auto",
+      "vignette vélo électrique"
+    ],
+    "negative_signals": [
+      "véhicules non immatriculés",
+      "RC ménage privée"
+    ],
+    "required_facts": [
+      "type de véhicule",
+      "objet de la demande",
+      "police d'assurance",
+      "événement déclenchant"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "circulation_pieton_priorite",
+    "domaine": "circulation",
+    "sousDomaine": "piéton",
+    "tags": [
+      "piéton",
+      "priorité",
+      "passage piéton",
+      "sécurité",
+      "LCR"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Où l'événement s'est-il produit ?",
+        "options": [
+          "passage piéton",
+          "trottoir",
+          "rue piétonne",
+          "zone 30 / rencontre",
+          "hors voie aménagée"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Vous êtes ?",
+        "options": [
+          "piéton victime",
+          "conducteur impliqué",
+          "témoin"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Y a-t-il eu des blessures ?",
+        "options": [
+          "non",
+          "légères",
+          "graves"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Le conducteur a-t-il respecté la priorité ?",
+        "options": [
+          "oui",
+          "non — sans s'arrêter",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'art. 33 LCR consacre la priorité absolue du piéton sur les passages pour piétons NON RÉGLÉS PAR DES SIGNAUX (sans feux ou agent). Le conducteur doit accorder la priorité aux piétons engagés sur le passage ou qui manifestent clairement leur intention de l'emprunter. À l'approche d'un passage piéton, la vitesse doit être adaptée pour pouvoir s'arrêter. Sur les passages réglés par feux, c'est la signalisation qui prévaut. En zone 30, les piétons traversent où ils veulent mais n'ont pas la priorité absolue (art. 22b OCR). En zone de rencontre, la priorité est aux piétons qui peuvent traverser librement et même utiliser la chaussée pour jouer (art. 22c OCR). En cas de violation par le conducteur, sanctions : amende d'ordre légère pour défaut d'égards ; faute moyennement grave (retrait 1 mois min) si mise en danger ; faute grave (retrait 3 mois min) si accident corporel. Pour le piéton victime, action en responsabilité contre le détenteur (art. 58 LCR — responsabilité objective). La faute concomitante du piéton (traversée hors passage, courir, regarder son téléphone) peut réduire l'indemnité sans la supprimer entièrement, sauf comportement aberrant.",
+      "articles": [
+        {
+          "ref": "LCR 33",
+          "titre": "Tâches à l'égard des piétons — priorité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_33"
+        },
+        {
+          "ref": "OCR 47",
+          "titre": "Comportement envers les piétons",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1962/1364_1409_1420/fr#art_47"
+        },
+        {
+          "ref": "LCR 58",
+          "titre": "Responsabilité du détenteur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_58"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 129 IV 282",
+          "resume": "Le conducteur doit anticiper la traversée d'un piéton dès que celui-ci s'approche du passage avec une intention reconnaissable. L'omission constitue une faute grave si elle cause un accident corporel."
+        },
+        {
+          "ref": "TF 6B_1131/2014",
+          "resume": "La faute concomitante du piéton (traversée hors passage) réduit l'indemnité mais ne libère pas le détenteur de la responsabilité objective de l'art. 58 LCR, sauf rupture de causalité par comportement extraordinaire."
+        }
+      ],
+      "modeleLettre": "Objet : Plainte / déclaration suite à incident piéton du [DATE] à [LIEU]\n\nRecommandé\n\n[ASSUREUR RC DU CONDUCTEUR / POLICE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nLe [DATE] à [HEURE] à [LIEU PRÉCIS], j'ai été [VICTIME / TÉMOIN / IMPLIQUÉ] de l'incident suivant :\n[DESCRIPTION FACTUELLE — déplacement, comportement du conducteur, signalisation]\n\nVéhicule(s) impliqué(s) : [PLAQUES]\nBlessures / dommages : [DÉTAIL]\nTémoins : [NOMS / COORDONNÉES]\n\nConformément aux art. 33 LCR et 58 LCR, je demande :\n— le constat des faits ;\n— la prise en charge intégrale de mes dommages corporels et matériels ;\n— une avance sur indemnité de [MONTANT] CHF.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "TCS — assistance juridique",
+          "tel": "0800 140 140",
+          "url": "https://www.tcs.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Bureau de prévention des accidents (BPA)",
+          "url": "https://www.bfu.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Police cantonale vaudoise",
+          "tel": "117",
+          "url": "https://www.police.vd.ch",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "1 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Question sur la priorité du piéton, accident impliquant un piéton ou un conducteur sur passage",
+    "profane_aliases": [
+      "voiture pas arrêté passage piéton",
+      "piéton renversé",
+      "qui a la priorité piéton",
+      "zone 30 piéton priorité"
+    ],
+    "negative_signals": [
+      "incident sans piéton",
+      "comportement aberrant du piéton seul"
+    ],
+    "required_facts": [
+      "lieu (passage / zone)",
+      "comportement des parties",
+      "blessures",
+      "signalisation"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "circulation_cycliste_droits",
+    "domaine": "circulation",
+    "sousDomaine": "cyclisme",
+    "tags": [
+      "cycliste",
+      "vélo",
+      "VAE",
+      "droits",
+      "OCR",
+      "piste cyclable"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel type de vélo ?",
+        "options": [
+          "vélo classique",
+          "VAE 25 km/h",
+          "VAE rapide 45 km/h",
+          "remorque enfant"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la situation ?",
+        "options": [
+          "accident avec voiture",
+          "amende cycliste",
+          "infrastructure dangereuse",
+          "litige assurance"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Aviez-vous casque / éclairage ?",
+        "options": [
+          "oui",
+          "non",
+          "partiellement"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Y a-t-il des blessures ?",
+        "options": [
+          "non",
+          "légères",
+          "graves"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Les cyclistes sont des usagers de la route à part entière, soumis aux règles générales de la LCR et aux dispositions spécifiques de l'OCR (art. 42 ss). Sur les pistes cyclables marquées (bandes ou pistes séparées), les cyclistes doivent rouler en file (art. 46 al. 2 OCR) ; leur usage est obligatoire sauf cas de dépassement ou changement de direction. L'éclairage avant blanc et arrière rouge est obligatoire de nuit ou par faible visibilité (art. 41 LCR). Les vélos doivent disposer de freins, sonnette, catadioptres. Pour les vélos électriques (VAE) jusqu'à 25 km/h, pas d'obligation de plaque, pas d'âge minimum. Pour les VAE rapides (jusqu'à 45 km/h), plaque jaune obligatoire avec vignette annuelle d'assurance, casque obligatoire (art. 3b OCR), permis catégorie M dès 14 ans. En cas d'accident avec un véhicule à moteur, le cycliste victime bénéficie de la responsabilité objective du détenteur (art. 58 LCR). Le port du casque est recommandé mais pas obligatoire pour les vélos classiques et VAE 25 ; son absence ne peut pas justifier une réduction d'indemnité au titre de la faute concomitante (jurisprudence TF). Les cyclistes peuvent emprunter les contre-sens cyclables marqués et tourner à droite au feu rouge si signalisation l'autorise.",
+      "articles": [
+        {
+          "ref": "OCR 46",
+          "titre": "Conducteurs de cycles — règles particulières",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1962/1364_1409_1420/fr#art_46"
+        },
+        {
+          "ref": "LCR 41",
+          "titre": "Éclairage des véhicules",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_41"
+        },
+        {
+          "ref": "LCR 58",
+          "titre": "Responsabilité du détenteur — cycliste victime",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_58"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 138 IV 124",
+          "resume": "Le cycliste victime d'un accident avec un véhicule à moteur bénéficie de la pleine responsabilité objective du détenteur ; l'absence de casque ne peut être invoquée comme faute concomitante pour les vélos classiques."
+        },
+        {
+          "ref": "TF 6B_352/2017",
+          "resume": "La conduite d'un VAE rapide sans plaque ni assurance constitue une infraction grave équivalente à la conduite d'un véhicule à moteur sans permis ni assurance (art. 95 / 96 LCR)."
+        }
+      ],
+      "modeleLettre": "Objet : [DÉCLARATION ACCIDENT / CONTESTATION AMENDE] cycliste — incident du [DATE]\n\nRecommandé\n\n[DESTINATAIRE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nLe [DATE] à [LIEU], en qualité de cycliste [TYPE DE VÉLO], j'ai été impliqué dans l'incident suivant :\n[DESCRIPTION DÉTAILLÉE — circonstances, vitesse, signalisation, comportement de l'autre usager]\n\nÉquipement :\n[ ] casque [ ] éclairage [ ] vêtements visibles\n\nDemande :\n[ ] Indemnisation des dommages corporels / matériels (art. 58 LCR)\n[ ] Annulation de l'amende n° [N°] (motifs : [DÉVELOPPER])\n\nPièces jointes : photos, certificats médicaux, témoins, devis.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Pro Velo Suisse",
+          "url": "https://www.pro-velo.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "TCS Vélo",
+          "tel": "0800 140 140",
+          "url": "https://www.tcs.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Service des automobiles et de la navigation (Vaud)",
+          "url": "https://www.vd.ch/themes/mobilite",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "14 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Question sur les droits et obligations des cyclistes (vélo, VAE) ou litige spécifique au cyclisme",
+    "profane_aliases": [
+      "accident vélo voiture",
+      "amende cycliste",
+      "VAE rapide obligation",
+      "casque vélo obligatoire"
+    ],
+    "negative_signals": [
+      "véhicule motorisé non vélo",
+      "litige assurance vie privée"
+    ],
+    "required_facts": [
+      "type de vélo",
+      "circonstances",
+      "équipement",
+      "signalisation"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "circulation_conducteur_sans_permis",
+    "domaine": "circulation",
+    "sousDomaine": "infraction_grave",
+    "tags": [
+      "sans permis",
+      "permis",
+      "infraction grave",
+      "LCR 95",
+      "pénal"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est votre situation ?",
+        "options": [
+          "jamais eu de permis",
+          "permis retiré et conduit",
+          "permis échu",
+          "catégorie inadaptée"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Y a-t-il eu accident ?",
+        "options": [
+          "oui avec dommages",
+          "non — contrôle uniquement"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Votre véhicule est-il assuré ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous des antécédents ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'art. 95 LCR sanctionne la conduite sans permis ou avec un permis inadapté. Selon la situation, les peines varient : (1) jamais détenu de permis ou conduit malgré retrait : peine privative de liberté jusqu'à 3 ans ou peine pécuniaire ; (2) catégorie inadaptée : amende. Un nouveau délai d'attente avant l'octroi du permis peut être imposé (art. 16 ss LCR). L'autorité administrative cantonale peut retirer la possibilité de présenter à l'examen pour une période. En cas d'ACCIDENT alors que l'on conduit sans permis, conséquences cumulées : (a) sanctions pénales (art. 95 LCR) ; (b) recours intégral de l'assurance RC contre le conducteur fautif (art. 65 al. 3 LCR) — l'assureur paie d'abord la victime puis exige le remboursement intégral du conducteur, qui peut atteindre des centaines de milliers voire millions de CHF ; (c) éventuelles charges pénales additionnelles si négligence prouvée. Le permis ÉCHU (renouvellement non fait) est généralement une amende administrative et un nouveau document doit être commandé. Conduire avec un permis étranger en Suisse est autorisé pendant 12 mois pour les nouveaux résidents ; après ce délai, l'échange est obligatoire. Conduire pour un PROCHE alors qu'on est sans permis l'expose lui aussi : prêter le véhicule à un conducteur sans permis est sanctionné (art. 96 LCR).",
+      "articles": [
+        {
+          "ref": "LCR 95",
+          "titre": "Conduite sans permis ou avec permis inadapté",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_95"
+        },
+        {
+          "ref": "LCR 96",
+          "titre": "Permettre l'usage d'un véhicule sans permis",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_96"
+        },
+        {
+          "ref": "LCR 65",
+          "titre": "Recours de l'assureur contre le conducteur fautif",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_65"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 137 III 322",
+          "resume": "L'assureur RC est en droit d'exiger le remboursement intégral des prestations versées au tiers victime lorsque le conducteur a circulé sans permis ; le quantum doit être proportionné à la gravité."
+        },
+        {
+          "ref": "TF 6B_352/2017",
+          "resume": "La conduite sans permis combinée à un accident corporel justifie une peine privative de liberté ferme dans les cas graves, particulièrement en présence d'antécédents."
+        }
+      ],
+      "modeleLettre": "Objet : Recours / dénonciation art. 95 LCR — dossier n° [N°]\n\nRecommandé\n\n[OFFICE CANTONAL DES AUTOMOBILES / TRIBUNAL]\n[ADRESSE]\n\nMadame, Monsieur,\n\nFaits : [DESCRIPTION DE LA SITUATION — date, lieu, circonstances]\n\nMa situation :\n[DÉTAIL : permis échu / permis étranger / cause urgente, etc.]\n\nMotifs invoqués :\n[CIRCONSTANCES ATTÉNUANTES, ERREUR D'INTERPRÉTATION DES RÈGLES, ETC.]\n\nConclusions :\n— Réduire / suspendre les sanctions ;\n— Permettre la régularisation de la situation administrative ;\n— Contester subsidiairement le délai d'attente fixé.\n\nMoyens de preuve : [LISTE]\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Service des automobiles et de la navigation (Vaud)",
+          "tel": "021 316 82 10",
+          "url": "https://www.vd.ch/themes/mobilite/permis-vehicules",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office cantonal des véhicules (Genève)",
+          "url": "https://www.ge.ch/dossier/vehicules",
+          "canton": "GE"
+        },
+        {
+          "nom": "TCS — assistance juridique",
+          "tel": "0800 140 140",
+          "url": "https://www.tcs.ch",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "12 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Le conducteur fait face à des sanctions pour avoir conduit sans permis valide ou inadapté",
+    "profane_aliases": [
+      "conduire sans permis",
+      "permis retiré conduit",
+      "permis échu",
+      "catégorie permis erreur"
+    ],
+    "negative_signals": [
+      "permis valable et adapté",
+      "détention sans conduite"
+    ],
+    "required_facts": [
+      "type de défaut de permis",
+      "accident éventuel",
+      "antécédents",
+      "assurance"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "circulation_refus_test_alcool",
+    "domaine": "circulation",
+    "sousDomaine": "alcool",
+    "tags": [
+      "refus test",
+      "éthylotest",
+      "prise de sang",
+      "alcool",
+      "LCR 91a"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel test avez-vous refusé ?",
+        "options": [
+          "éthylotest préliminaire",
+          "éthylomètre de précision",
+          "prise de sang",
+          "tests stupéfiants"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Pour quel motif ?",
+        "options": [
+          "santé",
+          "principe",
+          "ne savait pas obligation",
+          "autre"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Y a-t-il eu accident ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous des antécédents ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'art. 91a LCR sanctionne celui qui s'oppose ou se dérobe intentionnellement à une PRISE DE SANG, à un éthylomètre de précision ordonné, ou à un examen médical. Le refus est considéré comme une INFRACTION ÉQUIVALENTE à la conduite en état d'ébriété qualifiée — peine privative de liberté jusqu'à 3 ans ou peine pécuniaire (art. 91a LCR). Sur le plan administratif, retrait du permis pour faute grave (minimum 3 mois — art. 16c al. 1 let. d LCR), avec cascade des sanctions en cas d'antécédents. La logique : la loi ne veut pas que le refus puisse permettre d'échapper aux sanctions de l'art. 91 LCR. À NOTER : l'éthylotest PRÉLIMINAIRE (souffler dans le ballon) est une mesure de routine ; son refus n'est pas en soi pénalisé mais déclenche automatiquement la procédure de l'art. 55 LCR et la prise de sang ordonnée. La prise de sang ordonnée est obligatoire et son refus tombe sous l'art. 91a. Le médecin réalisant la prise est protégé par l'art. 55a LCR. La défense possible : motif médical OBJECTIF documenté (phobie aiguë des aiguilles, hémophilie, etc.) — mais l'éthylomètre reste alors imposable. Le simple refus de principe est sanctionné comme une ivresse qualifiée présumée.",
+      "articles": [
+        {
+          "ref": "LCR 91a",
+          "titre": "Opposition aux mesures de constatation de l'incapacité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_91_a"
+        },
+        {
+          "ref": "LCR 55",
+          "titre": "Constatation de l'incapacité de conduire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_55"
+        },
+        {
+          "ref": "LCR 16c",
+          "titre": "Retrait pour faute grave",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_16_c"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 142 IV 23",
+          "resume": "Le refus intentionnel de prise de sang est puni comme l'ivresse qualifiée. La preuve d'une absence d'alcoolémie a posteriori ne supprime pas l'infraction de refus."
+        },
+        {
+          "ref": "TF 6B_136/2016",
+          "resume": "La phobie médicalement documentée des aiguilles peut justifier le refus de prise de sang, mais l'éthylomètre de précision doit alors être accepté ; le refus de tout moyen de constatation reste sanctionné."
+        }
+      ],
+      "modeleLettre": "Objet : Recours art. 91a LCR / 16c LCR — dossier n° [N°]\n\nRecommandé\n\n[OFFICE CANTONAL DES AUTOMOBILES / TRIBUNAL]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe forme RECOURS dans le délai légal de 30 jours contre la décision du [DATE] m'imposant un retrait de [DURÉE] et/ou la sanction pénale art. 91a LCR.\n\nFaits :\n[CIRCONSTANCES — date, lieu, type de mesure refusée, motif]\n\nMotifs invoqués :\n[INVOQUER : motif médical objectif documenté, irrégularités procédurales (information préalable, droit aux explications, présence d'un médecin), proportionnalité, etc.]\n\nConclusions :\n— Annuler la décision attaquée ;\n— Subsidiairement, fixer la sanction au minimum légal.\n\nMoyens de preuve : certificats médicaux, rapports.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Service des automobiles et de la navigation (Vaud)",
+          "tel": "021 316 82 10",
+          "url": "https://www.vd.ch/themes/mobilite/permis-vehicules",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office cantonal des véhicules (Genève)",
+          "url": "https://www.ge.ch/dossier/vehicules",
+          "canton": "GE"
+        },
+        {
+          "nom": "TCS — assistance juridique",
+          "tel": "0800 140 140",
+          "url": "https://www.tcs.ch",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Le conducteur a refusé un test d'alcoolémie, une prise de sang ou un test de stupéfiants",
+    "profane_aliases": [
+      "refus prise sang alcool",
+      "refus éthylotest police",
+      "ne pas souffler ballon",
+      "art 91a LCR refus"
+    ],
+    "negative_signals": [
+      "test accepté",
+      "événement sans contrôle"
+    ],
+    "required_facts": [
+      "type de test refusé",
+      "motif du refus",
+      "antécédents",
+      "documentation médicale"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  }
+]

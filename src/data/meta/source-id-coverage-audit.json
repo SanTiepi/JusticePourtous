@@ -1,0 +1,229 @@
+{
+  "generatedAt": "2026-04-19T17:56:02.657Z",
+  "totals": {
+    "fiches": 284,
+    "totalRefOccurrences": 878,
+    "uniqueRefs": 533,
+    "resolvedUnique": 531,
+    "unresolvedUnique": 2,
+    "resolvedOccurrences": 876,
+    "unresolvedOccurrences": 2
+  },
+  "coverage": {
+    "uniquePercent": 99.62,
+    "occurrencesPercent": 99.77
+  },
+  "unresolvedByPrefix": [
+    {
+      "prefix": "CST",
+      "count": 2,
+      "occurrences": 2,
+      "refs": [
+        {
+          "ref": "Cst 29",
+          "occurrences": 1,
+          "ficheId": "social_sanction_reduction",
+          "domaine": "social"
+        },
+        {
+          "ref": "Cst 7",
+          "occurrences": 1,
+          "ficheId": "social_dignite_minimale",
+          "domaine": "social"
+        }
+      ]
+    }
+  ],
+  "top20Unresolved": [
+    {
+      "ref": "Cst 29",
+      "occurrences": 1
+    },
+    {
+      "ref": "Cst 7",
+      "occurrences": 1
+    }
+  ],
+  "resolvedSample": [
+    {
+      "ref": "LAA 6",
+      "occurrences": 6,
+      "source_id": "fedlex:rs832.20:laa-6",
+      "tier": 1
+    },
+    {
+      "ref": "LAA 10",
+      "occurrences": 3,
+      "source_id": "fedlex:rs832.20:laa-10",
+      "tier": 1
+    },
+    {
+      "ref": "LAA 16",
+      "occurrences": 5,
+      "source_id": "fedlex:rs832.20:laa-16",
+      "tier": 1
+    },
+    {
+      "ref": "LPGA 4",
+      "occurrences": 1,
+      "source_id": "fedlex:rs830.1:lpga-4",
+      "tier": 1
+    },
+    {
+      "ref": "LCR 58",
+      "occurrences": 7,
+      "source_id": "fedlex:rs741.01:lcr-58",
+      "tier": 1
+    },
+    {
+      "ref": "LCR 63",
+      "occurrences": 2,
+      "source_id": "fedlex:rs741.01:lcr-63",
+      "tier": 1
+    },
+    {
+      "ref": "LCR 83",
+      "occurrences": 3,
+      "source_id": "fedlex:rs741.01:lcr-83",
+      "tier": 1
+    },
+    {
+      "ref": "CO 47",
+      "occurrences": 2,
+      "source_id": "fedlex:rs220:co-47",
+      "tier": 1
+    },
+    {
+      "ref": "CO 41",
+      "occurrences": 5,
+      "source_id": "fedlex:rs220:co-41",
+      "tier": 1
+    },
+    {
+      "ref": "CO 46",
+      "occurrences": 2,
+      "source_id": "fedlex:rs220:co-46",
+      "tier": 1
+    },
+    {
+      "ref": "CO 60",
+      "occurrences": 4,
+      "source_id": "fedlex:rs220:co-60",
+      "tier": 1
+    },
+    {
+      "ref": "LCR 65",
+      "occurrences": 6,
+      "source_id": "fedlex:rs741.01:lcr-65",
+      "tier": 1
+    },
+    {
+      "ref": "LCR 76",
+      "occurrences": 1,
+      "source_id": "fedlex:rs741.01:lcr-76",
+      "tier": 1
+    },
+    {
+      "ref": "LCR 51",
+      "occurrences": 2,
+      "source_id": "fedlex:rs741.01:lcr-51",
+      "tier": 1
+    },
+    {
+      "ref": "LCR 92",
+      "occurrences": 2,
+      "source_id": "fedlex:rs741.01:lcr-92",
+      "tier": 1
+    },
+    {
+      "ref": "CO 45",
+      "occurrences": 1,
+      "source_id": "fedlex:rs220:co-45",
+      "tier": 1
+    },
+    {
+      "ref": "LPGA 43",
+      "occurrences": 1,
+      "source_id": "fedlex:rs830.1:lpga-43",
+      "tier": 1
+    },
+    {
+      "ref": "LPGA 44",
+      "occurrences": 1,
+      "source_id": "fedlex:rs830.1:lpga-44",
+      "tier": 1
+    },
+    {
+      "ref": "LPGA 52",
+      "occurrences": 8,
+      "source_id": "fedlex:rs830.1:lpga-52",
+      "tier": 1
+    },
+    {
+      "ref": "LPGA 55",
+      "occurrences": 1,
+      "source_id": "fedlex:rs830.1:lpga-55",
+      "tier": 1
+    },
+    {
+      "ref": "LAA 18",
+      "occurrences": 4,
+      "source_id": "fedlex:rs832.20:laa-18",
+      "tier": 1
+    },
+    {
+      "ref": "LAI 28",
+      "occurrences": 3,
+      "source_id": "fedlex:rs831.20:lai-28",
+      "tier": 1
+    },
+    {
+      "ref": "LAA 20",
+      "occurrences": 1,
+      "source_id": "fedlex:rs832.20:laa-20",
+      "tier": 1
+    },
+    {
+      "ref": "CO 44",
+      "occurrences": 1,
+      "source_id": "fedlex:rs220:co-44",
+      "tier": 1
+    },
+    {
+      "ref": "LCR 59",
+      "occurrences": 1,
+      "source_id": "fedlex:rs741.01:lcr-59",
+      "tier": 1
+    },
+    {
+      "ref": "CO 43",
+      "occurrences": 1,
+      "source_id": "fedlex:rs220:co-43",
+      "tier": 1
+    },
+    {
+      "ref": "CO 135",
+      "occurrences": 2,
+      "source_id": "fedlex:rs220:co-135",
+      "tier": 1
+    },
+    {
+      "ref": "LCA 14",
+      "occurrences": 1,
+      "source_id": "fedlex:rs221.229.1:lca-14",
+      "tier": 1
+    },
+    {
+      "ref": "LCA 40",
+      "occurrences": 1,
+      "source_id": "fedlex:rs221.229.1:lca-40",
+      "tier": 1
+    },
+    {
+      "ref": "LCA 46",
+      "occurrences": 3,
+      "source_id": "fedlex:rs221.229.1:lca-46",
+      "tier": 1
+    }
+  ]
+}

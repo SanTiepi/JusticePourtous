@@ -68,5 +68,40 @@
     "description": "Difficultés de paiement, surendettement, faillite PME",
     "icone": "building",
     "couleur": "#34495e"
+  },
+  {
+    "id": "consommation",
+    "nom": "Consommation",
+    "description": "Garantie, défauts produits, pratiques déloyales, contrats",
+    "icone": "shopping-cart",
+    "couleur": "#16a085"
+  },
+  {
+    "id": "voisinage",
+    "nom": "Voisinage",
+    "description": "Bruit, immissions, arbres, limites de propriété",
+    "icone": "trees",
+    "couleur": "#27ae60"
+  },
+  {
+    "id": "circulation",
+    "nom": "Circulation",
+    "description": "Amendes, accidents, retrait de permis, constat",
+    "icone": "car",
+    "couleur": "#2980b9"
+  },
+  {
+    "id": "successions",
+    "nom": "Successions",
+    "description": "Héritage, testament, renonciation, partage",
+    "icone": "gift",
+    "couleur": "#795548"
+  },
+  {
+    "id": "sante",
+    "nom": "Santé / patients",
+    "description": "Droits patients, consentement, assurances santé, dossier médical",
+    "icone": "heart-pulse",
+    "couleur": "#e91e63"
   }
 ]

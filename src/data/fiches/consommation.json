@@ -1,0 +1,1600 @@
+[
+  {
+    "id": "consommation_defaut_produit_garantie",
+    "domaine": "consommation",
+    "sousDomaine": "garantie",
+    "tags": [
+      "défaut",
+      "garantie",
+      "produit",
+      "vice",
+      "vente",
+      "remplacement"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel type de défaut constatez-vous ?",
+        "options": [
+          "fonctionnel (ne marche pas)",
+          "esthétique",
+          "sécurité",
+          "autre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quand avez-vous acheté le produit ?",
+        "options": [
+          "<30 jours",
+          "1-12 mois",
+          "1-2 ans",
+          ">2 ans"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous déjà avisé le vendeur ?",
+        "options": [
+          "oui par écrit",
+          "oui oralement",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous la facture ou preuve d'achat ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "En droit suisse de la vente, le vendeur est garant des défauts qui enlèvent à la chose sa valeur ou son aptitude à l'usage prévu (art. 197 al. 1 CO). L'acheteur doit vérifier la chose aussitôt que possible et signaler immédiatement les défauts au vendeur (art. 201 CO), sous peine de déchéance. À défaut d'avis immédiat, l'acheteur perd ses droits de garantie pour les défauts apparents. Pour les défauts cachés, l'avis doit intervenir dès leur découverte. La loi accorde à l'acheteur trois options (art. 205 CO) : (1) la résolution de la vente (action rédhibitoire), (2) la réduction du prix (action minutoire), (3) le remplacement par une chose pareille si la vente porte sur des choses de genre (art. 206 CO). La prescription est de 2 ans dès la livraison (art. 210 al. 1 CO), portée à 5 ans pour les biens intégrés à un ouvrage immobilier. Le vendeur professionnel ne peut pas exclure la garantie pour dol ou faute grave (art. 199 CO).",
+      "articles": [
+        {
+          "ref": "CO 197",
+          "titre": "Garantie en raison des défauts de la chose — étendue",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_197"
+        },
+        {
+          "ref": "CO 201",
+          "titre": "Avis des défauts",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_201"
+        },
+        {
+          "ref": "CO 205",
+          "titre": "Action rédhibitoire ou en réduction du prix",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_205"
+        },
+        {
+          "ref": "CO 210",
+          "titre": "Prescription de l'action en garantie",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_210"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 131 III 145",
+          "resume": "L'avis des défauts au sens de l'art. 201 CO doit être donné immédiatement après leur découverte. Un délai de 2-7 jours est généralement considéré comme conforme. Au-delà, la garantie est en principe perdue."
+        },
+        {
+          "ref": "ATF 118 II 142",
+          "resume": "L'acheteur peut exiger la réfection (réparation) à la place de la résolution lorsque le défaut peut être réparé sans préjudice excessif pour le vendeur."
+        }
+      ],
+      "modeleLettre": "Objet : Avis des défauts et exercice de la garantie — art. 197 ss CO\n\nRecommandé\n\n[NOM DU VENDEUR / RAISON SOCIALE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nLe [DATE D'ACHAT], j'ai acheté chez vous l'article suivant : [DESCRIPTION + RÉFÉRENCE / N° DE FACTURE].\n\nJ'ai constaté le [DATE DE DÉCOUVERTE] le défaut suivant : [DESCRIPTION PRÉCISE DU DÉFAUT].\n\nConformément aux art. 197 et 201 CO, je vous avise immédiatement de ce défaut qui affecte la valeur ou l'aptitude à l'usage convenu de la chose vendue.\n\nEn application de l'art. 205 CO, je vous demande, dans un délai de 30 jours :\n[ ] le remplacement par un produit identique exempt de défaut, ou\n[ ] la réparation à vos frais, ou\n[ ] la réduction du prix de [MONTANT] CHF, ou\n[ ] la résolution de la vente avec restitution du prix de [MONTANT] CHF contre restitution du produit.\n\nÀ défaut de réponse satisfaisante dans ce délai, je saisirai l'autorité de conciliation civile compétente.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération romande des consommateurs (FRC)",
+          "tel": "0848 575 105",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "FRC Genève — antenne",
+          "url": "https://www.frc.ch/contact/",
+          "canton": "GE"
+        },
+        {
+          "nom": "Konsumentenforum kf",
+          "url": "https://www.konsum.ch",
+          "canton": "ZH"
+        },
+        {
+          "nom": "Bureau cantonal de conciliation civile (VD)",
+          "url": "https://www.vd.ch/themes/justice",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Constat du défaut et preuve d'achat",
+          "delai": "immédiat dès découverte",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Avis des défauts au vendeur",
+          "delai": "immédiatement après découverte",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai de réponse du vendeur",
+          "delai": "14 à 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Saisine du juge civil ou conciliateur",
+          "delai": "avant prescription (2 ans)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Prescription",
+          "delai": "2 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "L'acheteur a constaté un défaut sur un produit acheté et veut faire valoir la garantie légale du vendeur",
+    "profane_aliases": [
+      "produit cassé",
+      "appareil défectueux",
+      "ne fonctionne pas",
+      "garantie refusée",
+      "vendeur ne veut pas reprendre"
+    ],
+    "negative_signals": [
+      "défaut causé par mauvaise utilisation",
+      "produit acheté entre particuliers sans garantie"
+    ],
+    "required_facts": [
+      "date d'achat",
+      "nature du défaut",
+      "preuve d'achat",
+      "avis donné au vendeur"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "cascades": [
+      {
+        "titre": "Mise en œuvre de la garantie pour défaut",
+        "domaine": "consommation",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Constat du défaut et preuve d'achat",
+            "description": "Photographier le défaut, conserver l'emballage d'origine et retrouver la facture ou ticket de caisse.",
+            "delai": "immédiat dès découverte",
+            "preuve_generee": "Photos datées + facture"
+          },
+          {
+            "numero": 2,
+            "action": "Avis des défauts au vendeur",
+            "description": "Lettre recommandée au vendeur détaillant le défaut et indiquant l'option choisie (réparation, remplacement, réduction de prix ou résolution).",
+            "delai": "immédiatement après découverte",
+            "base_legale": "CO 201 / CO 205",
+            "preuve_generee": "Accusé de réception postal"
+          },
+          {
+            "numero": 3,
+            "action": "Délai de réponse du vendeur",
+            "description": "Le vendeur doit prendre position sur la garantie (réparation, remplacement ou refus motivé).",
+            "delai": "14 à 30 jours",
+            "branches": [
+              {
+                "si": "réparation ou remplacement accepté",
+                "alors": "fin du processus"
+              },
+              {
+                "si": "refus ou silence",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Saisine du juge civil ou conciliateur",
+            "description": "Requête en conciliation puis action au tribunal pour exiger l'exécution de la garantie (prescription 2 ans dès livraison).",
+            "delai": "avant prescription (2 ans)",
+            "base_legale": "CO 210 / CPC 197",
+            "cout": "conciliation gratuite"
+          }
+        ]
+      }
+    ],
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "consommation_annulation_commande_en_ligne",
+    "domaine": "consommation",
+    "sousDomaine": "vente_distance",
+    "tags": [
+      "annulation",
+      "commande",
+      "en ligne",
+      "révocation",
+      "internet",
+      "rétractation"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment avez-vous passé la commande ?",
+        "options": [
+          "site internet",
+          "téléphone",
+          "porte-à-porte",
+          "magasin physique"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quand avez-vous passé la commande ?",
+        "options": [
+          "<14 jours",
+          "14-30 jours",
+          ">30 jours"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Le produit a-t-il été livré ?",
+        "options": [
+          "oui",
+          "non",
+          "partiellement"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Le vendeur est-il en Suisse ?",
+        "options": [
+          "oui",
+          "non — UE",
+          "non — hors UE",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Contrairement au droit européen, la Suisse ne connaît PAS de droit général de rétractation pour les achats en ligne. Le seul droit légal de révocation (7 jours) prévu par l'art. 40a ss CO concerne la vente par démarchage à domicile ou démarchages similaires (rues publiques, manifestations publicitaires sur le lieu de travail, ou téléphone à condition que l'acheteur n'ait pas demandé la conversation). Le commerce en ligne n'entre PAS dans le champ d'application de l'art. 40a CO. Toutefois : (1) de nombreux commerçants (Galaxus, Digitec, Zalando, etc.) accordent contractuellement un droit de retour de 14 à 30 jours — il faut vérifier les CGV ; (2) la Loi contre la concurrence déloyale (LCD) sanctionne les pratiques trompeuses, notamment l'absence d'information claire sur les conditions de retour (art. 3 al. 1 let. s LCD pour le commerce électronique) ; (3) si le bien commandé est défectueux, les règles de la garantie (art. 197 ss CO) s'appliquent ; (4) en cas de non-livraison, mise en demeure puis résolution selon art. 107-109 CO.",
+      "articles": [
+        {
+          "ref": "CO 40a",
+          "titre": "Démarchage à domicile et contrats semblables — champ d'application",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_40_a"
+        },
+        {
+          "ref": "CO 40e",
+          "titre": "Délai et exercice du droit de révocation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_40_e"
+        },
+        {
+          "ref": "LCD 3",
+          "titre": "Méthodes déloyales de publicité et de vente — devoir d'information dans le commerce électronique",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1988/223_223_223/fr#art_3"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 137 III 243",
+          "resume": "Le droit de révocation de l'art. 40a CO est strictement limité aux cas énumérés par la loi. Le commerce électronique n'est pas couvert. Toute extension contractuelle relève des CGV librement consenties."
+        }
+      ],
+      "modeleLettre": "Objet : Demande d'annulation de commande n° [N°] — droit de retour CGV\n\nRecommandé\n\n[NOM DU VENDEUR]\n[ADRESSE]\n\nMadame, Monsieur,\n\nLe [DATE], j'ai passé la commande n° [NUMÉRO] sur votre site [URL] pour un montant de [MONTANT] CHF.\n\nConformément à l'art. [N° ARTICLE] de vos Conditions Générales de Vente prévoyant un droit de retour de [X] jours, je souhaite annuler cette commande et obtenir le remboursement intégral.\n\nJe retournerai le produit dans son emballage d'origine sous [X] jours dès réception de vos instructions de retour.\n\nMerci de bien vouloir confirmer la procédure et l'adresse de retour, ainsi que la prise en charge des frais d'expédition conformément à vos CGV.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération romande des consommateurs (FRC)",
+          "tel": "0848 575 105",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre européen des consommateurs Suisse",
+          "url": "https://www.cec-zev.eu/fr/",
+          "canton": "VD"
+        },
+        {
+          "nom": "FRC Genève — antenne",
+          "url": "https://www.frc.ch/contact/",
+          "canton": "GE"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Vérification du droit d'annulation",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Notification écrite d'annulation",
+          "delai": "dans les 14 jours si démarchage (CO 40e), sinon selon CGV",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Attente de la réponse du vendeur",
+          "delai": "14 à 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Signalement et action civile",
+          "delai": "dans les meilleurs délais",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "7 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Le consommateur veut annuler une commande passée à distance (en ligne, par téléphone) ou par démarchage",
+    "profane_aliases": [
+      "annuler ma commande internet",
+      "rétracter achat en ligne",
+      "renvoyer produit Zalando",
+      "droit de retour 14 jours"
+    ],
+    "negative_signals": [
+      "produit déjà utilisé / dégradé",
+      "achat en magasin physique sans CGV de retour"
+    ],
+    "required_facts": [
+      "canal de commande",
+      "date de commande",
+      "CGV du vendeur",
+      "état du produit"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "cascades": [
+      {
+        "titre": "Annulation d'une commande en ligne",
+        "domaine": "consommation",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérification du droit d'annulation",
+            "description": "Relire les CGV du site : en Suisse, pas de droit de rétractation légal général, sauf démarchage à domicile ou par téléphone (CO 40a).",
+            "delai": "immédiat",
+            "preuve_generee": "Capture d'écran des CGV + confirmation de commande"
+          },
+          {
+            "numero": 2,
+            "action": "Notification écrite d'annulation",
+            "description": "E-mail ou courrier recommandé au vendeur demandant l'annulation et le remboursement (préciser motifs et délai si applicable).",
+            "delai": "dans les 14 jours si démarchage (CO 40e), sinon selon CGV",
+            "base_legale": "CO 40a ss",
+            "preuve_generee": "Preuve d'envoi + accusé de lecture"
+          },
+          {
+            "numero": 3,
+            "action": "Attente de la réponse du vendeur",
+            "description": "Le vendeur doit confirmer l'annulation et rembourser selon les CGV ou la loi.",
+            "delai": "14 à 30 jours",
+            "branches": [
+              {
+                "si": "remboursement reçu",
+                "alors": "fin du processus"
+              },
+              {
+                "si": "refus ou silence",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Signalement et action civile",
+            "description": "Signalement à la Fédération romande des consommateurs (FRC) et/ou SECO, puis requête de conciliation devant l'autorité cantonale.",
+            "delai": "dans les meilleurs délais",
+            "base_legale": "CPC 197 / LCD 2",
+            "cout": "signalement gratuit"
+          }
+        ]
+      }
+    ],
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "consommation_cgv_clauses_abusives",
+    "domaine": "consommation",
+    "sousDomaine": "cgv",
+    "tags": [
+      "cgv",
+      "clause",
+      "abusive",
+      "contrat",
+      "déséquilibre",
+      "lcd"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel type de clause vous pose problème ?",
+        "options": [
+          "limitation de responsabilité",
+          "frais de résiliation",
+          "renouvellement automatique",
+          "clause attributive de juridiction",
+          "autre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "La clause vous a-t-elle été présentée clairement avant signature ?",
+        "options": [
+          "oui clairement",
+          "lien dans email",
+          "non / pas vu"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Le contrat est-il avec un commerçant suisse ?",
+        "options": [
+          "oui",
+          "non",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous déjà subi un préjudice à cause de cette clause ?",
+        "options": [
+          "oui financier",
+          "oui autre",
+          "pas encore"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le contrôle des clauses abusives en Suisse repose sur l'art. 8 LCD, modifié en 2012 : est déloyal le fait d'utiliser des conditions générales prévoyant, en contradiction avec les règles de la bonne foi, une disproportion notable et injustifiée entre les droits et obligations des parties au détriment du consommateur. Pour qu'une clause CGV soit opposable, elle doit (1) avoir été portée à la connaissance du consommateur avant ou lors de la conclusion (règle de l'inclusion globale), (2) ne pas être insolite — la jurisprudence exclut les clauses inhabituelles que le consommateur moyen ne pouvait raisonnablement attendre. La règle in dubio contra stipulatorem fait que toute ambiguïté s'interprète contre le rédacteur. Les clauses contraires à des dispositions impératives (par exemple exclure totalement la garantie aux art. 197 ss CO en présence de dol) sont nulles (art. 199 CO et 20 CO). Les sanctions de l'art. 8 LCD sont l'inopposabilité de la clause et, sur action de la FRC, du Konsumentenforum ou du SECO, la cessation de la pratique.",
+      "articles": [
+        {
+          "ref": "LCD 8",
+          "titre": "Utilisation de conditions commerciales abusives",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1988/223_223_223/fr#art_8"
+        },
+        {
+          "ref": "CO 19",
+          "titre": "Liberté contractuelle et limites",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_19"
+        },
+        {
+          "ref": "CO 20",
+          "titre": "Nullité des contrats illicites ou contraires aux mœurs",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_20"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 138 III 411",
+          "resume": "L'art. 8 LCD permet un contrôle de contenu des CGV au-delà du seul contrôle d'inclusion. Une clause prévoyant une disproportion notable au détriment du consommateur est inopposable, indépendamment de sa visibilité formelle."
+        },
+        {
+          "ref": "TF 4A_404/2018",
+          "resume": "Une clause de prorogation de juridiction imposant au consommateur de plaider à l'étranger peut être qualifiée de clause insolite et inopposable."
+        }
+      ],
+      "modeleLettre": "Objet : Contestation de la clause [N° / DESCRIPTION] de vos CGV — art. 8 LCD\n\nRecommandé\n\n[NOM DE L'ENTREPRISE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe suis client/cliente de votre entreprise (référence contrat : [N°]) depuis le [DATE].\n\nJ'ai pris connaissance de la clause suivante de vos CGV : « [REPRODUIRE LA CLAUSE LITIGIEUSE] ».\n\nJ'estime que cette clause crée, en contradiction avec les règles de la bonne foi, une disproportion notable et injustifiée à mon détriment, en violation de l'art. 8 LCD. En particulier : [EXPLIQUER LE DÉSÉQUILIBRE].\n\nJe vous demande, dans un délai de 30 jours, de :\n1. Renoncer à appliquer cette clause à mon contrat.\n2. La supprimer de vos CGV.\n3. Le cas échéant, me rembourser les sommes prélevées sur la base de cette clause, soit [MONTANT] CHF.\n\nÀ défaut, je saisirai la FRC et envisagerai une action judiciaire en constatation de l'inopposabilité de la clause.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération romande des consommateurs (FRC)",
+          "tel": "0848 575 105",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "FRC permanence juridique Genève",
+          "url": "https://www.frc.ch/contact/",
+          "canton": "GE"
+        },
+        {
+          "nom": "Konsumentenforum kf",
+          "url": "https://www.konsum.ch",
+          "canton": "ZH"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Le consommateur estime qu'une clause des CGV d'un contrat est abusive ou déséquilibrée",
+    "profane_aliases": [
+      "clause injuste contrat",
+      "petits caractères contrat",
+      "frais cachés résiliation",
+      "renouvellement automatique abus"
+    ],
+    "negative_signals": [
+      "contrat B2B entre commerçants",
+      "clause négociée individuellement"
+    ],
+    "required_facts": [
+      "texte exact de la clause",
+      "qualité de consommateur",
+      "préjudice subi"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "readiness": "beta",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "consommation_livraison_retard",
+    "domaine": "consommation",
+    "sousDomaine": "livraison",
+    "tags": [
+      "livraison",
+      "retard",
+      "demeure",
+      "résolution",
+      "commande"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la nature du retard ?",
+        "options": [
+          "<7 jours",
+          "1-4 semaines",
+          ">1 mois"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Une date de livraison était-elle convenue ?",
+        "options": [
+          "oui ferme",
+          "approximative",
+          "non"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous déjà mis en demeure le vendeur ?",
+        "options": [
+          "oui par écrit",
+          "oui oralement",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous déjà payé ?",
+        "options": [
+          "oui intégralement",
+          "oui acompte",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le retard de livraison relève de la demeure du débiteur (art. 102 ss CO). Lorsqu'un terme est convenu (date ferme), le vendeur est en demeure de plein droit dès l'échéance (art. 102 al. 2 CO). Lorsqu'aucun terme n'est convenu, le créancier doit interpeller (mise en demeure formelle) pour que la demeure existe (art. 102 al. 1 CO). En cas de demeure, l'acheteur d'un contrat synallagmatique dispose des options de l'art. 107 CO : (1) fixer un délai supplémentaire (Nachfrist) pour exécution, et à défaut (2) maintenir l'exécution avec dommages-intérêts pour le retard, ou (3) renoncer à l'exécution et réclamer des dommages-intérêts pour cause d'inexécution, ou (4) résoudre le contrat (art. 109 CO) avec restitution des prestations déjà fournies (typiquement remboursement du prix). En commerce électronique, certains vendeurs prévoient des délais conventionnels — vérifier les CGV. Si un acompte a été versé et que la commande est résolue, le remboursement est dû avec intérêts à 5 % dès la mise en demeure (art. 104 CO).",
+      "articles": [
+        {
+          "ref": "CO 102",
+          "titre": "Demeure du débiteur — conditions",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_102"
+        },
+        {
+          "ref": "CO 107",
+          "titre": "Effets de la demeure dans les contrats bilatéraux — délai supplémentaire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_107"
+        },
+        {
+          "ref": "CO 109",
+          "titre": "Effets de la résolution",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_109"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 123 III 16",
+          "resume": "La fixation d'un délai supplémentaire (art. 107 al. 1 CO) doit être suffisamment claire et accorder au débiteur un temps raisonnable pour exécuter. Un délai trop court est inefficace."
+        },
+        {
+          "ref": "TF 4A_491/2017",
+          "resume": "En cas de résolution pour demeure, l'acheteur ayant déjà payé peut exiger le remboursement intégral et, le cas échéant, la réparation du dommage de remplacement."
+        }
+      ],
+      "modeleLettre": "Objet : Mise en demeure et fixation d'un délai supplémentaire — art. 107 CO\n\nRecommandé\n\n[NOM DU VENDEUR]\n[ADRESSE]\n\nMadame, Monsieur,\n\nLe [DATE DE COMMANDE], j'ai commandé chez vous (commande n° [N°]) le bien suivant : [DESCRIPTION], pour un montant de [MONTANT] CHF, payé le [DATE DE PAIEMENT].\n\nLa livraison était prévue pour le [DATE PRÉVUE]. À ce jour, soit [N] jours après cette date, je n'ai toujours pas reçu le bien.\n\nConformément à l'art. 107 al. 1 CO, je vous mets en demeure de procéder à la livraison dans un délai supplémentaire de 14 jours dès réception de la présente.\n\nÀ défaut d'exécution dans ce délai, je résoudrai le contrat (art. 107 al. 2 CO et 109 CO) et exigerai le remboursement intégral du prix versé, ainsi que la réparation du dommage subi.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération romande des consommateurs (FRC)",
+          "tel": "0848 575 105",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "FRC Genève — antenne",
+          "url": "https://www.frc.ch/contact/",
+          "canton": "GE"
+        },
+        {
+          "nom": "Centre européen des consommateurs Suisse",
+          "url": "https://www.cec-zev.eu/fr/",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Constat du retard",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Mise en demeure écrite",
+          "delai": "dès le retard constaté",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai supplémentaire accordé",
+          "delai": "7 à 30 jours selon nature du bien",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Résolution du contrat et remboursement",
+          "delai": "immédiat après échec du délai",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "match_description": "Le consommateur subit un retard de livraison sur une commande payée ou en cours",
+    "profane_aliases": [
+      "commande pas livrée",
+      "vendeur ne livre pas",
+      "retard livraison internet",
+      "remboursement commande"
+    ],
+    "negative_signals": [
+      "livraison reportée d'accord avec l'acheteur",
+      "transporteur défaillant — réclamation au transporteur"
+    ],
+    "required_facts": [
+      "date de commande",
+      "date de livraison convenue",
+      "preuve de paiement",
+      "mise en demeure éventuelle"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "cascades": [
+      {
+        "titre": "Livraison en retard — mise en demeure",
+        "domaine": "consommation",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Constat du retard",
+            "description": "Vérifier la date de livraison convenue (CGV, bon de commande, e-mail de confirmation) et documenter l'absence de livraison.",
+            "delai": "immédiat",
+            "preuve_generee": "Confirmation de commande + absence de livraison"
+          },
+          {
+            "numero": 2,
+            "action": "Mise en demeure écrite",
+            "description": "Lettre recommandée au vendeur fixant un dernier délai raisonnable pour livrer (sommation de s'exécuter).",
+            "delai": "dès le retard constaté",
+            "base_legale": "CO 102 / CO 107",
+            "preuve_generee": "Accusé de réception postal"
+          },
+          {
+            "numero": 3,
+            "action": "Délai supplémentaire accordé",
+            "description": "Attendre l'expiration du délai accordé dans la mise en demeure.",
+            "delai": "7 à 30 jours selon nature du bien",
+            "branches": [
+              {
+                "si": "livraison effectuée",
+                "alors": "fin du processus"
+              },
+              {
+                "si": "nouveau défaut de livraison",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Résolution du contrat et remboursement",
+            "description": "Déclaration écrite de résolution du contrat (CO 107 al. 2), exigence du remboursement intégral et éventuels dommages-intérêts.",
+            "delai": "immédiat après échec du délai",
+            "base_legale": "CO 107 / CO 109",
+            "cout": "gratuit"
+          }
+        ]
+      }
+    ],
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "consommation_reparation_sous_garantie",
+    "domaine": "consommation",
+    "sousDomaine": "garantie",
+    "tags": [
+      "réparation",
+      "garantie",
+      "défaut",
+      "remplacement",
+      "vice"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est l'âge du produit ?",
+        "options": [
+          "<6 mois",
+          "6-24 mois",
+          ">24 mois"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quel type de garantie a été promis ?",
+        "options": [
+          "garantie légale uniquement",
+          "garantie commerciale étendue",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Le vendeur propose quoi ?",
+        "options": [
+          "réparation gratuite",
+          "réparation payante",
+          "refus pur",
+          "remplacement"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous la facture / bon de garantie ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La législation suisse ne prévoit PAS de droit légal à la réparation. L'art. 205 CO offre à l'acheteur le choix entre la résolution du contrat (action rédhibitoire) et la réduction du prix (action minutoire). L'art. 206 CO ajoute le droit au remplacement pour les choses de genre. La réparation est donc en principe une option commerciale ou contractuelle, sauf si elle a été expressément convenue ou si le juge la substitue à la résolution lorsque celle-ci serait disproportionnée (art. 205 al. 2 CO — interprétation jurisprudentielle). La plupart des fabricants offrent une garantie commerciale étendue (1 à 5 ans) qui inclut la réparation gratuite : ses conditions figurent sur le bon de garantie. Cette garantie commerciale s'ajoute à la garantie légale (art. 197 ss CO) et ne peut pas la limiter pour les défauts existants à la livraison. Si le vendeur refuse d'intervenir alors que le défaut est antérieur à la livraison, l'acheteur peut faire effectuer la réparation par un tiers et réclamer le coût au vendeur (théorie de la réfection au sens des règles sur la demeure et les dommages-intérêts).",
+      "articles": [
+        {
+          "ref": "CO 197",
+          "titre": "Garantie en raison des défauts — étendue",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_197"
+        },
+        {
+          "ref": "CO 205",
+          "titre": "Action rédhibitoire ou en réduction du prix",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_205"
+        },
+        {
+          "ref": "CO 208",
+          "titre": "Effets de la résolution — restitution",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_208"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 118 II 142",
+          "resume": "Le juge peut, en équité, substituer la réparation à la résolution lorsqu'elle est possible, raisonnable et conforme à la bonne foi. La réfection est ainsi reconnue comme une option valable de la garantie."
+        },
+        {
+          "ref": "TF 4A_252/2010",
+          "resume": "La garantie commerciale étendue offerte par le fabricant est cumulative avec la garantie légale du vendeur ; les conditions plus favorables au consommateur prévalent."
+        }
+      ],
+      "modeleLettre": "Objet : Demande de réparation sous garantie — art. 205 CO\n\nRecommandé\n\n[NOM DU VENDEUR]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJ'ai acheté chez vous le [DATE] le produit suivant : [DESCRIPTION + RÉFÉRENCE]. Facture jointe.\n\nLe [DATE], j'ai constaté le défaut suivant : [DESCRIPTION DU DÉFAUT]. Je vous l'ai signalé le [DATE DE NOTIFICATION].\n\nConformément à la garantie commerciale [N° / DURÉE] et aux art. 197 et 205 CO, je vous demande de procéder à la réparation gratuite du produit dans un délai de 30 jours.\n\nÀ défaut, je me réserve le droit de :\n— faire effectuer la réparation à vos frais par un tiers et vous en réclamer le coût ;\n— exiger la réduction du prix ou la résolution de la vente conformément à l'art. 205 CO.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération romande des consommateurs (FRC)",
+          "tel": "0848 575 105",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "FRC permanence juridique Genève",
+          "url": "https://www.frc.ch/contact/",
+          "canton": "GE"
+        },
+        {
+          "nom": "Konsumentenforum kf",
+          "url": "https://www.konsum.ch",
+          "canton": "ZH"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Le consommateur cherche à faire réparer un produit défectueux sous garantie",
+    "profane_aliases": [
+      "réparation gratuite refusée",
+      "garantie SAV refus",
+      "appareil en panne",
+      "remplacement produit"
+    ],
+    "negative_signals": [
+      "produit hors garantie commerciale ET >2 ans",
+      "défaut imputable à l'acheteur"
+    ],
+    "required_facts": [
+      "facture",
+      "âge du produit",
+      "type de garantie",
+      "nature du défaut"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "consommation_achat_occasion_caches",
+    "domaine": "consommation",
+    "sousDomaine": "occasion",
+    "tags": [
+      "occasion",
+      "défaut caché",
+      "vice caché",
+      "vente",
+      "particulier"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Avez-vous acheté à un particulier ou à un professionnel ?",
+        "options": [
+          "particulier",
+          "professionnel",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Le défaut était-il visible avant la vente ?",
+        "options": [
+          "non caché",
+          "caché",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Le contrat exclut-il la garantie ?",
+        "options": [
+          "oui « vendu en l'état »",
+          "non",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Quand avez-vous découvert le défaut ?",
+        "options": [
+          "<1 semaine",
+          "1-4 semaines",
+          ">1 mois"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Pour un achat d'occasion, la garantie de l'art. 197 ss CO s'applique en principe — y compris entre particuliers — sauf clause d'exclusion expresse. L'art. 199 CO précise toutefois que toute clause supprimant ou restreignant la garantie est NULLE si le vendeur a frauduleusement dissimulé les défauts. Une mention type « vendu en l'état » ou « sans garantie » est en règle générale valable entre particuliers, mais elle ne protège pas le vendeur ayant menti ou caché un vice grave (dol au sens de l'art. 28 CO ou erreur essentielle, art. 24 CO). L'acheteur doit signaler le défaut immédiatement après sa découverte (art. 201 CO), faute de quoi il est déchu de ses droits. Pour les véhicules d'occasion vendus par un garage professionnel, les garanties usuelles d'un mois à 12 mois s'appliquent ; les concessionnaires de marque offrent souvent des garanties contractuelles plus larges. La prescription est de 2 ans dès la livraison (art. 210 CO). En cas de dol, l'acheteur peut aussi invalider le contrat dans l'année dès la découverte (art. 31 CO).",
+      "articles": [
+        {
+          "ref": "CO 199",
+          "titre": "Garantie — convention écartant la responsabilité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_199"
+        },
+        {
+          "ref": "CO 201",
+          "titre": "Avis des défauts",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_201"
+        },
+        {
+          "ref": "CO 28",
+          "titre": "Dol",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_28"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 130 III 686",
+          "resume": "L'exclusion de garantie « vendu en l'état » entre particuliers est valable mais ne couvre pas les vices que le vendeur connaissait et a dissimulés. La preuve du dol incombe à l'acheteur."
+        },
+        {
+          "ref": "TF 4A_417/2017",
+          "resume": "Pour un véhicule d'occasion, le compteur kilométrique manipulé par le vendeur constitue un dol justifiant l'annulation du contrat ou des dommages-intérêts."
+        }
+      ],
+      "modeleLettre": "Objet : Avis des défauts cachés — invalidation pour dol (art. 28 / 199 CO)\n\nRecommandé\n\n[NOM DU VENDEUR]\n[ADRESSE]\n\nMadame, Monsieur,\n\nLe [DATE], je vous ai acheté [DESCRIPTION DU BIEN], pour un montant de [MONTANT] CHF.\n\nLe [DATE DE DÉCOUVERTE], j'ai constaté le défaut suivant : [DESCRIPTION].\n\nCe défaut, qui ne m'a pas été révélé lors de la vente, présente toutes les caractéristiques d'un défaut caché. Il diminue substantiellement la valeur ou l'aptitude du bien à l'usage prévu (art. 197 CO).\n\nLa clause d'exclusion de garantie figurant au contrat est inopposable, le vendeur ayant connaissance du défaut sans le révéler (art. 199 CO).\n\nJe vous mets en demeure, dans un délai de 14 jours :\n[ ] de reprendre le bien et de me rembourser intégralement le prix de [MONTANT] CHF, ou\n[ ] de me verser une réduction de prix de [MONTANT] CHF.\n\nÀ défaut, je saisirai l'autorité de conciliation civile compétente.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération romande des consommateurs (FRC)",
+          "tel": "0848 575 105",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "TCS — section juridique automobile",
+          "url": "https://www.tcs.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Bureau cantonal de conciliation civile (GE)",
+          "url": "https://justice.ge.ch",
+          "canton": "GE"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "12 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Prescription",
+          "delai": "2 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "L'acheteur d'un bien d'occasion (notamment véhicule) découvre un défaut caché et veut se retourner contre le vendeur",
+    "profane_aliases": [
+      "voiture occasion défaut",
+      "vendu en l'état arnaque",
+      "vice caché véhicule",
+      "vendeur particulier menti"
+    ],
+    "negative_signals": [
+      "défaut connu et accepté avant achat",
+      "dépréciation normale d'un bien d'occasion"
+    ],
+    "required_facts": [
+      "qualité du vendeur (particulier / pro)",
+      "clause de garantie",
+      "date découverte du défaut",
+      "preuve de connaissance du défaut par le vendeur"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "consommation_vente_forcee_porte_a_porte",
+    "domaine": "consommation",
+    "sousDomaine": "demarchage",
+    "tags": [
+      "porte-à-porte",
+      "démarchage",
+      "révocation",
+      "rétractation",
+      "vente forcée"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Où le contrat a-t-il été conclu ?",
+        "options": [
+          "à votre domicile",
+          "sur votre lieu de travail",
+          "lors d'un événement / foire",
+          "dans la rue",
+          "en magasin"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quel est le montant du contrat ?",
+        "options": [
+          "<100 CHF",
+          "100-1000 CHF",
+          ">1000 CHF"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Quand le contrat a-t-il été signé ?",
+        "options": [
+          "<14 jours",
+          "14-30 jours",
+          ">30 jours"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous reçu une information sur le droit de révocation ?",
+        "options": [
+          "oui par écrit",
+          "oui oralement",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'art. 40a CO instaure un droit de révocation de 14 jours pour les contrats conclus par démarchage à domicile, sur le lieu de travail, dans des manifestations publicitaires ou par téléphone non sollicité, lorsque la prestation excède 100 CHF. La loi protège le consommateur contre l'effet de surprise et la pression du vendeur. Le délai de 14 jours commence à courir dès que l'acheteur a reçu, sous forme écrite ou texte sur support durable, l'information sur son droit de révocation, l'identité du fournisseur et les modalités d'exercice (art. 40d CO). Si l'information n'est pas donnée, le délai ne commence pas à courir. La révocation se fait par écrit (recommandé conseillé), sans devoir motiver. Conséquence : restitution réciproque des prestations (art. 40f CO). La protection ne s'applique PAS si l'acheteur a expressément demandé la visite ou la conversation téléphonique en vue de la conclusion. Le commerce électronique n'est PAS couvert par cette disposition. Les démarches déloyales (pression, mensonges) sont en outre réprimées par la LCD.",
+      "articles": [
+        {
+          "ref": "CO 40a",
+          "titre": "Démarchage à domicile et contrats semblables — champ d'application",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_40_a"
+        },
+        {
+          "ref": "CO 40e",
+          "titre": "Délai et exercice du droit de révocation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_40_e"
+        },
+        {
+          "ref": "CO 40f",
+          "titre": "Conséquences de la révocation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_40_f"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 142 III 671",
+          "resume": "L'absence d'information écrite sur le droit de révocation empêche le délai de 14 jours de courir. Le consommateur peut révoquer même bien après la conclusion."
+        },
+        {
+          "ref": "TF 4A_29/2014",
+          "resume": "Le démarchage par téléphone non sollicité tombe sous le coup de l'art. 40a CO ; la révocation est valable même si l'acheteur a renvoyé un bon de commande signé."
+        }
+      ],
+      "modeleLettre": "Objet : Révocation du contrat conclu le [DATE] — art. 40a ss CO\n\nRecommandé\n\n[NOM DU VENDEUR]\n[ADRESSE]\n\nMadame, Monsieur,\n\nLe [DATE], j'ai signé à [LIEU — domicile / lieu de travail / foire / téléphone] un contrat portant sur [DESCRIPTION], pour un montant de [MONTANT] CHF.\n\nConformément à l'art. 40a ss CO, j'ai le droit de révoquer ce contrat dans un délai de 14 jours.\n\nPar la présente, je révoque ce contrat avec effet immédiat.\n\nJe vous prie en conséquence, dans un délai de 30 jours :\n— de cesser toute exécution ;\n— de me rembourser intégralement les montants versés, soit [MONTANT] CHF ;\n— de venir reprendre à vos frais les biens éventuellement livrés.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération romande des consommateurs (FRC)",
+          "tel": "0848 575 105",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "FRC Genève — antenne",
+          "url": "https://www.frc.ch/contact/",
+          "canton": "GE"
+        },
+        {
+          "nom": "SECO — protection des consommateurs",
+          "url": "https://www.seco.admin.ch",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "14 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Le consommateur a signé un contrat sous pression à domicile, dans une foire ou par téléphone et veut s'en libérer",
+    "profane_aliases": [
+      "vendeur porte à porte arnaque",
+      "annuler abonnement signé chez moi",
+      "rétractation 14 jours porte-à-porte",
+      "foire contrat regretté"
+    ],
+    "negative_signals": [
+      "achat conclu en magasin physique",
+      "client ayant explicitement demandé la visite"
+    ],
+    "required_facts": [
+      "lieu de conclusion",
+      "date de signature",
+      "montant",
+      "information de révocation reçue"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "consommation_pratiques_deloyales",
+    "domaine": "consommation",
+    "sousDomaine": "lcd",
+    "tags": [
+      "pratique déloyale",
+      "tromperie",
+      "publicité mensongère",
+      "lcd",
+      "concurrence"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle pratique constatez-vous ?",
+        "options": [
+          "publicité mensongère",
+          "prix trompeur",
+          "comparatif faux",
+          "démarchage agressif",
+          "autre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "L'auteur est-il identifié ?",
+        "options": [
+          "oui entreprise précise",
+          "oui personne",
+          "non"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous subi un préjudice ?",
+        "options": [
+          "oui financier",
+          "oui autre",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous des preuves (captures, contrats) ?",
+        "options": [
+          "oui multiples",
+          "oui une",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La Loi fédérale contre la concurrence déloyale (LCD, RS 241) sanctionne tout comportement ou pratique commerciale qui, par sa nature même, est trompeur ou contraire à la bonne foi (art. 2 LCD). L'art. 3 LCD énumère des pratiques typiquement déloyales : informations fausses ou trompeuses sur ses propres prestations (let. b), publicité comparative dénigrante ou trompeuse (let. e), offres particulièrement avantageuses dans des publications sans information sur la durée et la quantité (let. f), méthodes de vente agressives perturbant la liberté de décision du client (let. h). Le consommateur lésé dispose d'actions civiles (art. 9 LCD) : action en cessation, action en suppression de l'état illicite, action en constatation, action en dommages-intérêts. La FRC, le Konsumentenforum et le SECO peuvent agir en cessation au nom de l'intérêt général (art. 10 LCD). Les violations intentionnelles peuvent être pénalement sanctionnées (art. 23 LCD). Les amendes peuvent atteindre 100 000 CHF.",
+      "articles": [
+        {
+          "ref": "LCD 2",
+          "titre": "Principe — comportement déloyal",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1988/223_223_223/fr#art_2"
+        },
+        {
+          "ref": "LCD 3",
+          "titre": "Méthodes déloyales de publicité et de vente",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1988/223_223_223/fr#art_3"
+        },
+        {
+          "ref": "LCD 9",
+          "titre": "Actions civiles — qualité pour agir et conclusions",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1988/223_223_223/fr#art_9"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 135 III 295",
+          "resume": "Une publicité comparant les prix avec un concurrent doit reposer sur des données vérifiables et actuelles. À défaut, elle est trompeuse au sens de l'art. 3 al. 1 let. e LCD."
+        },
+        {
+          "ref": "TF 4A_555/2017",
+          "resume": "Le consommateur final dispose de la qualité pour agir en cessation au sens de l'art. 9 al. 1 LCD lorsqu'il est personnellement et directement lésé par la pratique déloyale."
+        }
+      ],
+      "modeleLettre": "Objet : Dénonciation d'une pratique commerciale déloyale (LCD)\n\n[NOM DE L'ENTITÉ DESTINATAIRE — entreprise / SECO / FRC]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe vous signale la pratique commerciale suivante mise en œuvre par [NOM DE L'ENTREPRISE / RESPONSABLE] :\n\nDescription : [EXPLIQUER PRÉCISÉMENT LA PRATIQUE]\nDate(s) constatée(s) : [DATES]\nSupport : [SITE WEB, AFFICHAGE, FLYER, EMAIL — JOINDRE COPIES]\nPréjudice subi : [DÉCRIRE]\n\nJ'estime que cette pratique tombe sous le coup de l'art. 3 al. 1 let. [LETTRE PERTINENTE] LCD pour les motifs suivants : [DÉVELOPPER].\n\nJe vous demande :\n— d'examiner la situation ;\n— le cas échéant, d'engager les démarches utiles en cessation (art. 9 LCD) ;\n— de me tenir informé des suites données.\n\nPièces jointes : [LISTE DES PREUVES]\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération romande des consommateurs (FRC)",
+          "tel": "0848 575 105",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "FRC Genève — antenne",
+          "url": "https://www.frc.ch/contact/",
+          "canton": "GE"
+        },
+        {
+          "nom": "SECO — Loyauté commerciale",
+          "url": "https://www.seco.admin.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Loterie suisse de Lausanne — guichet de plaintes",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Le consommateur signale ou dénonce une pratique commerciale qu'il estime déloyale au sens de la LCD",
+    "profane_aliases": [
+      "publicité mensongère",
+      "prix barré arnaque",
+      "vendeur agressif",
+      "tromperie commerciale"
+    ],
+    "negative_signals": [
+      "simple insatisfaction sans tromperie",
+      "litige contractuel personnel sans dimension déloyale"
+    ],
+    "required_facts": [
+      "description précise de la pratique",
+      "preuves",
+      "auteur identifié"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "readiness": "beta",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "consommation_remboursement_refuse",
+    "domaine": "consommation",
+    "sousDomaine": "remboursement",
+    "tags": [
+      "remboursement",
+      "refus",
+      "rédhibition",
+      "résolution",
+      "vente"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Sur quel motif demandez-vous le remboursement ?",
+        "options": [
+          "défaut du produit",
+          "non-conformité",
+          "rétractation (démarchage)",
+          "annulation contractuelle (CGV)",
+          "autre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Avez-vous formulé une demande écrite ?",
+        "options": [
+          "oui recommandé",
+          "oui email",
+          "non"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Quelle réponse a donné le vendeur ?",
+        "options": [
+          "refus motivé",
+          "refus sans motif",
+          "silence",
+          "avoir proposé"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Quel est le montant en jeu ?",
+        "options": [
+          "<300 CHF",
+          "300-2000 CHF",
+          ">2000 CHF"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le droit suisse n'oblige pas le vendeur à accepter un retour pour simple changement d'avis. Un remboursement est dû uniquement lorsque (1) le produit est défectueux et que l'acheteur exerce l'action rédhibitoire (art. 205 CO), (2) il y a non-conformité substantielle (art. 197 CO), (3) le contrat a été révoqué dans le délai légal de 14 jours pour démarchage à domicile (art. 40e CO), ou (4) les CGV du vendeur prévoient un droit de retour. En cas de résolution, l'art. 208 CO impose la restitution réciproque des prestations : l'acheteur restitue le bien, le vendeur restitue le prix avec intérêts à 5 % dès le paiement. Un avoir n'est pas équivalent à un remboursement en argent : sauf accord, l'acheteur peut exiger le paiement en espèces. En cas de refus persistant, il faut mettre en demeure le vendeur (art. 102 CO), puis saisir l'autorité paritaire de conciliation civile (CPC art. 197 ss). Pour les litiges de faible valeur (≤30 000 CHF), la procédure simplifiée s'applique. Le délai de prescription de l'action en garantie est de 2 ans (art. 210 CO).",
+      "articles": [
+        {
+          "ref": "CO 205",
+          "titre": "Action rédhibitoire ou en réduction du prix",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_205"
+        },
+        {
+          "ref": "CO 208",
+          "titre": "Effets de la résolution — restitution réciproque",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_208"
+        },
+        {
+          "ref": "CO 102",
+          "titre": "Demeure du débiteur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_102"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 109 II 26",
+          "resume": "L'acheteur exerçant la résolution peut exiger le remboursement intégral en argent ; le vendeur ne peut pas imposer un avoir ou un bon d'achat sans accord exprès."
+        },
+        {
+          "ref": "TF 4A_84/2018",
+          "resume": "Le silence du vendeur après mise en demeure équivaut à un refus implicite et permet à l'acheteur d'engager la procédure de conciliation civile."
+        }
+      ],
+      "modeleLettre": "Objet : Mise en demeure de remboursement — art. 205 / 208 CO\n\nRecommandé\n\n[NOM DU VENDEUR]\n[ADRESSE]\n\nMadame, Monsieur,\n\nLe [DATE], j'ai acheté chez vous [DESCRIPTION] pour un montant de [MONTANT] CHF.\n\nLe [DATE], j'ai exercé mon droit à la résolution / à la révocation pour les motifs suivants : [MOTIFS].\n\nMalgré mon courrier du [DATE PREMIÈRE DEMANDE], je n'ai à ce jour pas reçu le remboursement intégral du prix.\n\nJe vous mets en demeure, dans un délai de 14 jours dès réception de la présente, de :\n1. Procéder au remboursement de [MONTANT] CHF en argent (et non en avoir) sur le compte IBAN [IBAN] ;\n2. Verser les intérêts à 5 % dès le [DATE DE PAIEMENT INITIAL].\n\nÀ défaut, je saisirai l'autorité de conciliation civile compétente et toute action utile.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération romande des consommateurs (FRC)",
+          "tel": "0848 575 105",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "FRC Genève — antenne",
+          "url": "https://www.frc.ch/contact/",
+          "canton": "GE"
+        },
+        {
+          "nom": "Tribunal civil de l'arrondissement de Lausanne",
+          "url": "https://www.vd.ch/themes/justice",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "14 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Prescription",
+          "delai": "2 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Le consommateur a demandé un remboursement et le vendeur le refuse ou propose seulement un avoir",
+    "profane_aliases": [
+      "vendeur refuse remboursement",
+      "avoir au lieu de remboursement",
+      "magasin garde mon argent",
+      "refus rétractation"
+    ],
+    "negative_signals": [
+      "simple insatisfaction sans cause de résolution",
+      "produit utilisé hors délai de retour CGV"
+    ],
+    "required_facts": [
+      "motif de la demande",
+      "montant",
+      "date de la demande écrite",
+      "réponse du vendeur"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "consommation_service_apres_vente",
+    "domaine": "consommation",
+    "sousDomaine": "sav",
+    "tags": [
+      "sav",
+      "service après-vente",
+      "réparation",
+      "ouvrage",
+      "prestation"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel type de prestation pose problème ?",
+        "options": [
+          "réparation",
+          "installation",
+          "entretien",
+          "support technique",
+          "autre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Le travail a-t-il été terminé ?",
+        "options": [
+          "oui mais défectueux",
+          "non — abandon",
+          "partiellement"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous payé ?",
+        "options": [
+          "oui intégralement",
+          "oui acompte",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous signalé le problème par écrit ?",
+        "options": [
+          "oui recommandé",
+          "oui email",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Une prestation de service après-vente, de réparation ou d'installation relève en règle générale du contrat d'entreprise (art. 363 ss CO) ou du contrat de mandat (art. 394 ss CO) selon que le prestataire promet un résultat (réparation effective) ou seulement la diligence. En contrat d'entreprise, l'art. 368 CO accorde au maître (client) trois options en cas de défaut de l'ouvrage : (1) refuser l'ouvrage et exiger restitution si le défaut le rend inutilisable, (2) accepter l'ouvrage avec réduction du prix proportionnelle au défaut, (3) exiger la réparation gratuite si elle n'occasionne pas de dépenses excessives à l'entrepreneur. L'avis des défauts doit être donné aussitôt que possible (art. 367 CO). La prescription est de 2 ans pour les biens meubles, 5 ans pour les ouvrages immobiliers (art. 371 CO). En contrat de mandat, le mandataire répond de l'exécution diligente (art. 398 al. 2 CO) et doit restituer ce qu'il a reçu de trop (art. 400 CO). Pour les abandons en cours d'ouvrage, mise en demeure (art. 102 CO) et résolution avec dommages-intérêts (art. 107 ss CO).",
+      "articles": [
+        {
+          "ref": "CO 367",
+          "titre": "Vérification de l'ouvrage et avis des défauts",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_367"
+        },
+        {
+          "ref": "CO 368",
+          "titre": "Droits du maître en cas de défaut",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_368"
+        },
+        {
+          "ref": "CO 371",
+          "titre": "Prescription des actions du maître",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_371"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 117 II 425",
+          "resume": "Le maître peut faire effectuer la réparation par un tiers aux frais de l'entrepreneur défaillant (réfection de remplacement) après mise en demeure restée sans suite."
+        },
+        {
+          "ref": "TF 4A_252/2010",
+          "resume": "L'art. 368 CO laisse en principe le choix au maître entre les trois options ; le juge peut substituer la réparation à la résolution si elle reste possible et économiquement raisonnable."
+        }
+      ],
+      "modeleLettre": "Objet : Avis des défauts de l'ouvrage et fixation d'un délai de réfection — art. 367-368 CO\n\nRecommandé\n\n[NOM DE L'ENTREPRISE / SAV]\n[ADRESSE]\n\nMadame, Monsieur,\n\nLe [DATE], j'ai mandaté votre entreprise pour [DESCRIPTION DE LA PRESTATION], pour un montant de [MONTANT] CHF (facture n° [N°]).\n\nLe [DATE DE LIVRAISON / RÉCEPTION], j'ai constaté les défauts suivants : [DESCRIPTION DÉTAILLÉE].\n\nConformément à l'art. 367 CO, je vous donne avis immédiat de ces défauts.\n\nEn application de l'art. 368 CO, je vous demande, dans un délai de 30 jours :\n[ ] de procéder à la réparation gratuite de l'ouvrage, ou\n[ ] de me consentir une réduction de prix de [MONTANT] CHF, ou\n[ ] de reprendre l'ouvrage et de me rembourser le prix.\n\nÀ défaut d'exécution dans ce délai, je ferai effectuer la réparation par un tiers à vos frais et vous réclamerai les coûts ainsi que tout dommage subi.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération romande des consommateurs (FRC)",
+          "tel": "0848 575 105",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "FRC Genève — antenne",
+          "url": "https://www.frc.ch/contact/",
+          "canton": "GE"
+        },
+        {
+          "nom": "Tribunal civil de l'arrondissement de Lausanne",
+          "url": "https://www.vd.ch/themes/justice",
+          "canton": "VD"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Prescription",
+          "delai": "2 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Prescription",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Le consommateur conteste la qualité ou l'exécution d'une prestation de service après-vente, réparation ou installation",
+    "profane_aliases": [
+      "réparation mal faite",
+      "installateur a abandonné",
+      "facture SAV trop chère",
+      "travaux ratés"
+    ],
+    "negative_signals": [
+      "simple désaccord sur le prix sans défaut",
+      "défaut imputable à l'utilisation"
+    ],
+    "required_facts": [
+      "type de contrat",
+      "preuve de paiement",
+      "nature des défauts",
+      "avis donné par écrit"
+    ],
+    "last_verified_at": "2026-04-18",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-18",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  }
+]

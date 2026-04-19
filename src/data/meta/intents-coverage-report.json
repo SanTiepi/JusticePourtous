@@ -1,0 +1,245 @@
+{
+  "generated_at": "2026-04-18T23:13:52.300Z",
+  "totals": {
+    "total": 326,
+    "complete": 11,
+    "partial": 212,
+    "stub": 11,
+    "missing": 92,
+    "quality_pct": 37
+  },
+  "by_domain": [
+    {
+      "domain": "travail",
+      "total": 45,
+      "complete": 4,
+      "partial": 29,
+      "stub": 1,
+      "missing": 11,
+      "quality_pct": 42
+    },
+    {
+      "domain": "bail",
+      "total": 43,
+      "complete": 3,
+      "partial": 23,
+      "stub": 7,
+      "missing": 10,
+      "quality_pct": 37
+    },
+    {
+      "domain": "famille",
+      "total": 42,
+      "complete": 1,
+      "partial": 36,
+      "stub": 0,
+      "missing": 5,
+      "quality_pct": 45
+    },
+    {
+      "domain": "etrangers",
+      "total": 38,
+      "complete": 1,
+      "partial": 31,
+      "stub": 1,
+      "missing": 5,
+      "quality_pct": 44
+    },
+    {
+      "domain": "dettes",
+      "total": 36,
+      "complete": 2,
+      "partial": 27,
+      "stub": 2,
+      "missing": 5,
+      "quality_pct": 44
+    },
+    {
+      "domain": "assurances",
+      "total": 30,
+      "complete": 0,
+      "partial": 15,
+      "stub": 0,
+      "missing": 15,
+      "quality_pct": 25
+    },
+    {
+      "domain": "social",
+      "total": 25,
+      "complete": 0,
+      "partial": 13,
+      "stub": 0,
+      "missing": 12,
+      "quality_pct": 26
+    },
+    {
+      "domain": "violence",
+      "total": 25,
+      "complete": 0,
+      "partial": 13,
+      "stub": 0,
+      "missing": 12,
+      "quality_pct": 26
+    },
+    {
+      "domain": "accident",
+      "total": 22,
+      "complete": 0,
+      "partial": 13,
+      "stub": 0,
+      "missing": 9,
+      "quality_pct": 30
+    },
+    {
+      "domain": "entreprise",
+      "total": 20,
+      "complete": 0,
+      "partial": 12,
+      "stub": 0,
+      "missing": 8,
+      "quality_pct": 30
+    }
+  ],
+  "top_20_priority": [
+    {
+      "id": "assurance_accident_ijp",
+      "domaine": "assurances",
+      "label_citoyen": "J'ai un litige sur les indemnités journalières accident",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "assurance_ai_contestation",
+      "domaine": "assurances",
+      "label_citoyen": "Je conteste une décision AI",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "assurance_avs_calcul",
+      "domaine": "assurances",
+      "label_citoyen": "Je conteste le calcul de ma rente AVS",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "assurance_chomage_contestation",
+      "domaine": "assurances",
+      "label_citoyen": "Je conteste une décision de la caisse chômage",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "social_aide_sociale_contestation",
+      "domaine": "social",
+      "label_citoyen": "Je conteste une décision d'aide sociale",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "social_aide_sociale_remboursement",
+      "domaine": "social",
+      "label_citoyen": "L'aide sociale me demande un remboursement",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "social_aide_victime_lavi",
+      "domaine": "social",
+      "label_citoyen": "Je suis victime et je cherche un soutien LAVI",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "social_allocations_familiales",
+      "domaine": "social",
+      "label_citoyen": "Je demande des allocations familiales",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "violence_constitution_partie_civile",
+      "domaine": "violence",
+      "label_citoyen": "Je veux me constituer partie civile",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "violence_cyberharcelement",
+      "domaine": "violence",
+      "label_citoyen": "Je subis du cyberharcèlement",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "violence_enfant_maltraitance",
+      "domaine": "violence",
+      "label_citoyen": "Je soupçonne la maltraitance d'un enfant",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "violence_harcelement_rue",
+      "domaine": "violence",
+      "label_citoyen": "Je subis du harcèlement de rue",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "accident_domicile_assurance",
+      "domaine": "accident",
+      "label_citoyen": "Un accident est arrivé chez moi, qui est responsable ?",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "accident_expertise_medicale",
+      "domaine": "accident",
+      "label_citoyen": "On me convoque à une expertise médicale",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "accident_lca_defaut",
+      "domaine": "accident",
+      "label_citoyen": "Mon assurance refuse un accident pour faute",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "accident_medical",
+      "domaine": "accident",
+      "label_citoyen": "J'ai eu un accident médical (erreur médicale)",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "entreprise_administrateur_responsabilite",
+      "domaine": "entreprise",
+      "label_citoyen": "Je suis administrateur et on me recherche",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "entreprise_cessation_activite",
+      "domaine": "entreprise",
+      "label_citoyen": "Je veux cesser mon activité indépendante",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "entreprise_creation_statuts",
+      "domaine": "entreprise",
+      "label_citoyen": "Je veux créer une entreprise",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "entreprise_faillite",
+      "domaine": "entreprise",
+      "label_citoyen": "Mon entreprise va faire faillite",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    }
+  ]
+}

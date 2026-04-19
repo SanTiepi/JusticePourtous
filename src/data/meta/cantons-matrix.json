@@ -1,0 +1,1721 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-04-19T00:00:00.000Z",
+  "description": "Matrice cantonale des autorités compétentes et formulaires officiels par canton et domaine. Phase Cortex 1 — sortie actionnable.",
+  "domaines_couverts": [
+    "bail",
+    "travail",
+    "dettes",
+    "etrangers",
+    "famille",
+    "social",
+    "violence",
+    "accident",
+    "assurances",
+    "entreprise"
+  ],
+  "fallback_federal": {
+    "bail": {
+      "ofl": {
+        "nom": "Office fédéral du logement (OFL)",
+        "site": "https://www.bwo.admin.ch",
+        "tel": "058 480 91 11",
+        "role": "Taux hypothécaire de référence + droit du bail fédéral",
+        "cout": "Gratuit (information)"
+      },
+      "tribunal_federal": {
+        "nom": "Tribunal fédéral — Ire Cour de droit civil",
+        "site": "https://www.bger.ch",
+        "role": "Recours en matière civile (bail) après instances cantonales",
+        "delai_recours": "30 jours"
+      }
+    },
+    "travail": {
+      "seco": {
+        "nom": "SECO — Secrétariat d'État à l'économie",
+        "site": "https://www.seco.admin.ch",
+        "tel": "058 462 56 56",
+        "role": "Conditions de travail, LTr, surveillance LSE/AVS",
+        "cout": "Gratuit"
+      },
+      "tribunal_federal": {
+        "nom": "Tribunal fédéral — Ire Cour de droit social",
+        "site": "https://www.bger.ch",
+        "role": "Recours après instance cantonale de prud'hommes",
+        "delai_recours": "30 jours"
+      }
+    },
+    "dettes": {
+      "ofj": {
+        "nom": "Office fédéral de la justice — Surveillance LP",
+        "site": "https://www.bj.admin.ch",
+        "role": "Haute surveillance des offices des poursuites",
+        "cout": "Gratuit"
+      }
+    },
+    "etrangers": {
+      "sem": {
+        "nom": "SEM — Secrétariat d'État aux migrations",
+        "site": "https://www.sem.admin.ch",
+        "tel": "058 465 11 11",
+        "role": "Asile, naturalisation fédérale, droit des étrangers",
+        "cout": "Gratuit (information)"
+      },
+      "tribunal_administratif_federal": {
+        "nom": "Tribunal administratif fédéral (TAF)",
+        "site": "https://www.bvger.ch",
+        "role": "Recours contre décisions SEM",
+        "delai_recours": "30 jours (5 jours en procédure d'asile accélérée)"
+      }
+    },
+    "famille": {
+      "tribunal_federal": {
+        "nom": "Tribunal fédéral — IIe Cour de droit civil",
+        "site": "https://www.bger.ch",
+        "role": "Recours en matière de droit de la famille",
+        "delai_recours": "30 jours"
+      }
+    },
+    "social": {
+      "ofas": {
+        "nom": "OFAS — Office fédéral des assurances sociales",
+        "site": "https://www.bsv.admin.ch",
+        "tel": "058 462 90 11",
+        "role": "AVS, AI, PC, allocations familiales — surveillance fédérale",
+        "cout": "Gratuit"
+      }
+    },
+    "violence": {
+      "ofas_lavi": {
+        "nom": "OFJ — Aide aux victimes (LAVI)",
+        "site": "https://www.bj.admin.ch/bj/fr/home/gesellschaft/opferhilfe.html",
+        "role": "Coordination LAVI nationale",
+        "cout": "Gratuit"
+      }
+    },
+    "accident": {
+      "suva": {
+        "nom": "SUVA — Caisse nationale d'assurance accidents",
+        "site": "https://www.suva.ch",
+        "tel": "0848 820 820",
+        "role": "Assurance accidents LAA",
+        "cout": "Couvert par l'assurance"
+      }
+    },
+    "assurances": {
+      "ofsp": {
+        "nom": "OFSP — Office fédéral de la santé publique",
+        "site": "https://www.bag.admin.ch",
+        "tel": "058 462 21 11",
+        "role": "Surveillance LAMal",
+        "cout": "Gratuit"
+      },
+      "ombudsman_assurances": {
+        "nom": "Ombudsman de l'assurance maladie",
+        "site": "https://www.om-kv.ch",
+        "tel": "041 226 10 11",
+        "role": "Médiation gratuite assureurs LAMal",
+        "cout": "Gratuit"
+      }
+    },
+    "entreprise": {
+      "ifd": {
+        "nom": "Registre du commerce — coordination fédérale (REE)",
+        "site": "https://www.zefix.ch",
+        "role": "Index central des raisons sociales",
+        "cout": "Gratuit (consultation)"
+      }
+    }
+  },
+  "cantons": {
+    "VD": {
+      "nom": "Vaud",
+      "langue": "fr",
+      "population_citoyenne": 815000,
+      "site_officiel": "https://www.vd.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Commissions préfectorales de conciliation en matière de baux à loyer",
+            "adresse": "Variable selon le district (Lausanne, Nyon, Yverdon, Aigle, Morges, etc.)",
+            "site": "https://www.vd.ch/etat-droit-finances/districts-/-prefectures/prefectures/prestations-des-prefectures/commissions-prefectorales-de-conciliation",
+            "procedure": "Requête écrite gratuite par courrier à la commission de conciliation du district + copie du bail + pièces justificatives",
+            "delai_reaction": "30 jours à compter de la notification du congé (CO 273)",
+            "cout": "Gratuit (CPC art. 113)"
+          },
+          "tribunal": {
+            "nom": "Tribunal des baux du canton de Vaud",
+            "adresse": "Palais de Justice de Montbenon, Allée Ernest-Ansermet 2, 1003 Lausanne",
+            "site": "https://www.vd.ch/ojv/tribunal-cantonal/tribunal-des-baux",
+            "procedure": "Saisine après échec de la conciliation (autorisation de procéder)",
+            "delai_reaction": "30 jours dès délivrance de l'autorisation",
+            "cout": "Gratuit jusqu'à CHF 30'000 en bail (CPC art. 113)"
+          },
+          "asloca": {
+            "nom": "ASLOCA Vaud",
+            "adresse": "Rue Jean-Jacques Cart 8, 1006 Lausanne",
+            "tel": "021 617 10 07",
+            "site": "https://www.asloca.ch/asloca-vaud",
+            "procedure": "Adhésion ~80 CHF/an puis consultation juridique",
+            "delai_reaction": "1-2 semaines",
+            "cout": "Cotisation annuelle ~80 CHF"
+          }
+        },
+        "travail": {
+          "tribunal_prud_hommes": {
+            "nom": "Tribunal de prud'hommes de l'arrondissement de Lausanne",
+            "adresse": "Route du Signal 8, 1014 Lausanne",
+            "site": "https://www.vd.ch/ojv/tribunaux-de-prudhommes/lausanne",
+            "procedure": "Requête de conciliation écrite, puis demande au tribunal si échec",
+            "delai_reaction": "180 jours pour licenciement abusif (CO 336b)",
+            "cout": "Gratuit jusqu'à CHF 30'000 (CPC art. 114)"
+          },
+          "inspection_travail": {
+            "nom": "Inspection cantonale du travail (SDE)",
+            "adresse": "Rue Caroline 11, 1014 Lausanne",
+            "tel": "021 316 61 24",
+            "site": "https://www.vd.ch/themes/economie/inspection-du-travail",
+            "procedure": "Signalement par formulaire en ligne ou courrier",
+            "delai_reaction": "Variable",
+            "cout": "Gratuit"
+          },
+          "orp": {
+            "nom": "Office régional de placement (ORP)",
+            "adresse": "Place Chauderon 9, 3e étage, 1003 Lausanne",
+            "tel": "021 315 78 99",
+            "site": "https://www.vd.ch/themes/travail/chomage",
+            "procedure": "Inscription dans les 3 jours suivant fin du contrat",
+            "delai_reaction": "Immédiat",
+            "cout": "Gratuit"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Office des poursuites du district de Lausanne",
+            "adresse": "Chemin du Trabandan 28, 1014 Lausanne",
+            "tel": "021 316 64 64",
+            "site": "https://www.vd.ch/themes/etat-droit-finances/poursuite-pour-dettes",
+            "procedure": "Réquisition de poursuite ou opposition au commandement de payer",
+            "delai_reaction": "10 jours pour opposition (LP art. 74)",
+            "cout": "Émolument selon LP (généralement 30-100 CHF)"
+          },
+          "juge_de_paix": {
+            "nom": "Justice de paix du canton de Vaud",
+            "adresse": "Variable selon district — Lausanne : Palais de Justice Montbenon, 1003 Lausanne",
+            "site": "https://www.vd.ch/ojv/justices-de-paix",
+            "procedure": "Mainlevée d'opposition, expulsion, procédure sommaire",
+            "delai_reaction": "20 jours pour mainlevée provisoire (LP art. 82)",
+            "cout": "Émolument modéré"
+          },
+          "caritas_dettes": {
+            "nom": "Caritas Vaud — désendettement",
+            "adresse": "Avenue de Beaulieu 19, 1004 Lausanne",
+            "tel": "021 317 59 80",
+            "site": "https://www.caritas-vaud.ch",
+            "procedure": "Sur rendez-vous, gratuit",
+            "delai_reaction": "2-4 semaines",
+            "cout": "Gratuit"
+          }
+        },
+        "etrangers": {
+          "spop": {
+            "nom": "Service de la population du canton de Vaud (SPOP)",
+            "adresse": "Avenue de Beaulieu 19, 1014 Lausanne",
+            "tel": "021 316 46 46",
+            "site": "https://www.vd.ch/themes/population/etrangers",
+            "procedure": "Demande de permis, renouvellement, regroupement familial",
+            "delai_reaction": "30 jours pour recours (LEI art. 64)",
+            "cout": "Émoluments selon prestation (50-200 CHF)"
+          },
+          "csp_migrants": {
+            "nom": "CSP Vaud — Permanence migrants",
+            "adresse": "Beaulieu 14, 1004 Lausanne",
+            "tel": "021 560 60 60",
+            "site": "https://www.csp-vd.ch",
+            "procedure": "Permanence sur rendez-vous",
+            "delai_reaction": "1-2 semaines",
+            "cout": "Gratuit"
+          }
+        },
+        "famille": {
+          "tribunal_civil": {
+            "nom": "Tribunal civil d'arrondissement de Lausanne",
+            "adresse": "Palais de Justice de Montbenon, Allée Ernest-Ansermet 2, 1003 Lausanne",
+            "site": "https://www.vd.ch/ojv/tribunaux-darrondissement/lausanne",
+            "procedure": "Divorce, séparation, mesures protectrices",
+            "delai_reaction": "Variable selon procédure",
+            "cout": "Émoluments + dépens (assistance judiciaire possible)"
+          },
+          "apea": {
+            "nom": "Justice de paix — APEA Vaud (autorité de protection de l'adulte et de l'enfant)",
+            "adresse": "Variable selon district — Lausanne : Palais de Justice Montbenon, 1003 Lausanne",
+            "tel": "021 316 15 15",
+            "site": "https://www.vd.ch/themes/etat-droit-finances/justice/justices-de-paix",
+            "procedure": "Signalement, mesures de protection, curatelle",
+            "delai_reaction": "30 jours pour recours",
+            "cout": "Gratuit pour signalement"
+          },
+          "brapa": {
+            "nom": "BRAPA — Bureau de recouvrement et d'avances sur pensions alimentaires",
+            "adresse": "Bâtiment administratif de la Pontaise, Route des Plaines-du-Loup 1, 1014 Lausanne",
+            "tel": "021 316 52 21",
+            "site": "https://www.vd.ch/prestation/demander-des-avances-sur-pensions-alimentaires",
+            "procedure": "Formulaire + jugement en force + RIB",
+            "delai_reaction": "1-3 mois",
+            "cout": "Gratuit"
+          }
+        },
+        "social": {
+          "csr": {
+            "nom": "Centres sociaux régionaux (CSR) du canton de Vaud",
+            "adresse": "Variable selon région — voir site officiel",
+            "site": "https://www.vd.ch/themes/aides-financieres-et-soutien-social/aide-sociale",
+            "procedure": "Demande RI (revenu d'insertion) sur rendez-vous",
+            "delai_reaction": "1-3 semaines",
+            "cout": "Gratuit"
+          },
+          "csp_general": {
+            "nom": "CSP Vaud — Centre social protestant",
+            "adresse": "Beaulieu 14, 1004 Lausanne",
+            "tel": "021 560 60 60",
+            "site": "https://www.csp-vd.ch",
+            "procedure": "Permanence sociale",
+            "delai_reaction": "1 semaine",
+            "cout": "Gratuit"
+          }
+        },
+        "violence": {
+          "lavi": {
+            "nom": "Centre LAVI Vaud (Profa)",
+            "adresse": "Grand-Pont 2bis, 1003 Lausanne",
+            "tel": "021 631 03 00",
+            "site": "https://www.profa.ch/lavi",
+            "procedure": "Sur rendez-vous ou urgence",
+            "delai_reaction": "Immédiat (urgence) / 1 semaine (rdv)",
+            "cout": "Gratuit"
+          },
+          "police": {
+            "nom": "Police cantonale vaudoise",
+            "adresse": "Centre de la Blécherette, 1014 Lausanne",
+            "tel": "117 (urgence) / 021 644 44 44",
+            "site": "https://www.police.vd.ch",
+            "procedure": "Plainte au poste ou en ligne",
+            "delai_reaction": "Immédiat",
+            "cout": "Gratuit"
+          },
+          "centre_malley_prairie": {
+            "nom": "Centre d'accueil Malley-Prairie (femmes victimes de violences)",
+            "adresse": "Chemin de la Prairie 36, 1007 Lausanne",
+            "tel": "021 620 76 76 (24h/24)",
+            "site": "https://www.malleyprairie.ch",
+            "procedure": "Hébergement d'urgence",
+            "delai_reaction": "Immédiat",
+            "cout": "Gratuit"
+          }
+        },
+        "accident": {
+          "suva_vd": {
+            "nom": "SUVA — Agence de Lausanne",
+            "adresse": "Avenue d'Ouchy 18, 1006 Lausanne",
+            "tel": "0848 820 820",
+            "site": "https://www.suva.ch",
+            "procedure": "Déclaration accident par employeur sous 3 jours",
+            "delai_reaction": "3 jours pour déclaration",
+            "cout": "Couvert"
+          },
+          "tribunal_assurances": {
+            "nom": "Cour des assurances sociales du Tribunal cantonal vaudois",
+            "adresse": "Palais de justice, Route du Signal 8, 1014 Lausanne",
+            "site": "https://www.vd.ch/ojv/tribunal-cantonal/cour-des-assurances-sociales",
+            "procedure": "Recours contre décision LAA/AI/AVS",
+            "delai_reaction": "30 jours dès décision sur opposition",
+            "cout": "Gratuit (procédure assurances sociales)"
+          }
+        },
+        "assurances": {
+          "office_ai": {
+            "nom": "Office AI du canton de Vaud",
+            "adresse": "Avenue du Général-Guisan 8, 1800 Vevey",
+            "tel": "021 925 24 24",
+            "site": "https://www.aivd.ch",
+            "procedure": "Demande de prestations AI",
+            "delai_reaction": "Décision en 6-24 mois",
+            "cout": "Gratuit"
+          },
+          "caisse_avs": {
+            "nom": "Caisse cantonale vaudoise de compensation AVS",
+            "adresse": "Rue des Moulins 3, 1800 Vevey",
+            "tel": "021 964 12 11",
+            "site": "https://www.caisseavsvaud.ch",
+            "procedure": "Demande de rente, allocations familiales, PC",
+            "delai_reaction": "30 jours pour opposition",
+            "cout": "Gratuit"
+          },
+          "subsides_lamal": {
+            "nom": "OVAM — Office vaudois de l'assurance-maladie",
+            "site": "https://www.vd.ch/sante-soins-et-handicap/assurance-maladie/subside-a-lassurance-maladie",
+            "procedure": "Octroi automatique selon taxation fiscale (RDU)",
+            "delai_reaction": "Variable",
+            "cout": "Gratuit"
+          }
+        },
+        "entreprise": {
+          "registre_commerce": {
+            "nom": "Registre du commerce du canton de Vaud",
+            "adresse": "Rue de la Paix 6, 1014 Lausanne",
+            "tel": "021 316 33 80",
+            "site": "https://www.vd.ch/themes/economie/registre-du-commerce",
+            "procedure": "Inscription, modification, radiation",
+            "delai_reaction": "5-10 jours ouvrables",
+            "cout": "Émoluments selon prestation (200-1000 CHF)"
+          },
+          "office_economie": {
+            "nom": "SPEI — Service de la promotion de l'économie et de l'innovation",
+            "site": "https://www.vd.ch/themes/economie",
+            "procedure": "Conseil création d'entreprise",
+            "delai_reaction": "1-2 semaines",
+            "cout": "Gratuit"
+          }
+        }
+      },
+      "formulaires_officiels": {
+        "bail_contestation_conge": {
+          "nom": "Requête de conciliation — contestation de congé",
+          "url_ou_emplacement": "https://www.vd.ch/etat-droit-finances/districts-/-prefectures/prefectures/prestations-des-prefectures/commissions-prefectorales-de-conciliation",
+          "support": "Formulaire cantonal téléchargeable + courrier libre accepté",
+          "champs_obligatoires": ["nom", "adresse", "date_notification_conge", "motif_contestation", "copie_bail"]
+        },
+        "dettes_opposition": {
+          "nom": "Opposition au commandement de payer",
+          "url_ou_emplacement": "Formulaire papier remis avec le commandement de payer (ou oral à l'office)",
+          "support": "Au verso du commandement de payer",
+          "champs_obligatoires": ["signature_debiteur", "delai_10_jours"]
+        },
+        "travail_demande_conciliation": {
+          "nom": "Requête de conciliation prud'hommes",
+          "url_ou_emplacement": "https://www.vd.ch/ojv/tribunaux-de-prudhommes/lausanne",
+          "support": "Formulaire en ligne ou papier",
+          "champs_obligatoires": ["employeur", "employe", "objet_litige", "conclusions"]
+        }
+      }
+    },
+    "GE": {
+      "nom": "Genève",
+      "langue": "fr",
+      "population_citoyenne": 510000,
+      "site_officiel": "https://www.ge.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Commission de conciliation en matière de baux et loyers",
+            "adresse": "Rue de l'Hôtel-de-Ville 14, 1204 Genève",
+            "site": "https://www.ge.ch/organisation/commission-conciliation-matiere-baux-loyers",
+            "procedure": "Requête écrite gratuite + pièces (bail, congé, courriers)",
+            "delai_reaction": "30 jours dès congé (CO 273)",
+            "cout": "Gratuit (CPC art. 113)"
+          },
+          "tribunal": {
+            "nom": "Tribunal des baux et loyers — Genève",
+            "adresse": "Rue de l'Athénée 6-8, 1205 Genève",
+            "site": "https://justice.ge.ch/tribunaux-baux-loyers",
+            "procedure": "Saisine après échec conciliation",
+            "delai_reaction": "30 jours dès autorisation de procéder",
+            "cout": "Gratuit en bail"
+          },
+          "asloca": {
+            "nom": "ASLOCA Genève",
+            "adresse": "Rue du Lac 12, 1207 Genève",
+            "tel": "0840 17 10 07",
+            "site": "https://www.asloca.ch/asloca-geneve",
+            "procedure": "Adhésion + permanence juridique",
+            "delai_reaction": "1-2 semaines",
+            "cout": "Cotisation annuelle ~90 CHF"
+          }
+        },
+        "travail": {
+          "tribunal_prud_hommes": {
+            "nom": "Tribunal des prud'hommes de Genève",
+            "adresse": "Rue des Chaudronniers 5, 1204 Genève",
+            "site": "https://justice.ge.ch/tribunal-prudhommes",
+            "procedure": "Conciliation puis jugement (4 groupes professionnels)",
+            "delai_reaction": "180 jours pour licenciement abusif",
+            "cout": "Gratuit jusqu'à CHF 75'000 (loi cantonale)"
+          },
+          "ocirt": {
+            "nom": "OCIRT — Office cantonal de l'inspection et des relations du travail",
+            "adresse": "Rue David-Dufour 5, 1205 Genève",
+            "tel": "022 388 29 29",
+            "site": "https://www.ge.ch/dossier/inspection-travail",
+            "procedure": "Plainte / signalement conditions de travail",
+            "delai_reaction": "Variable",
+            "cout": "Gratuit"
+          },
+          "ocas": {
+            "nom": "Office cantonal de l'emploi",
+            "adresse": "Rue des Glacis-de-Rive 6, 1207 Genève",
+            "tel": "022 546 36 36",
+            "site": "https://www.ge.ch/inscrire-au-chomage",
+            "procedure": "Inscription chômage",
+            "delai_reaction": "Immédiat",
+            "cout": "Gratuit"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Office des poursuites du canton de Genève",
+            "adresse": "Rue du Stand 46, 1204 Genève",
+            "tel": "022 388 56 00",
+            "site": "https://www.ge.ch/organisation/office-poursuites",
+            "procedure": "Réquisition de poursuite, opposition, mainlevée",
+            "delai_reaction": "10 jours pour opposition (LP art. 74)",
+            "cout": "Émolument LP"
+          },
+          "tribunal_premiere_instance": {
+            "nom": "Tribunal de première instance — Mainlevée",
+            "adresse": "Place du Bourg-de-Four 1, 1204 Genève",
+            "site": "https://justice.ge.ch/tribunal-premiere-instance",
+            "procedure": "Mainlevée d'opposition (procédure sommaire)",
+            "delai_reaction": "20 jours dès opposition",
+            "cout": "Émolument modéré"
+          },
+          "caritas_ge": {
+            "nom": "Caritas Genève — désendettement",
+            "adresse": "Rue de Carouge 53, 1205 Genève",
+            "tel": "022 708 04 44",
+            "site": "https://www.caritas-geneve.ch",
+            "procedure": "Sur rendez-vous, gratuit",
+            "delai_reaction": "2-4 semaines",
+            "cout": "Gratuit"
+          }
+        },
+        "etrangers": {
+          "ocpm": {
+            "nom": "OCPM — Office cantonal de la population et des migrations",
+            "adresse": "Route de Chancy 88, 1213 Onex",
+            "tel": "022 546 46 46",
+            "site": "https://www.ge.ch/organisation/office-cantonal-population-migrations",
+            "procedure": "Permis, renouvellement, regroupement",
+            "delai_reaction": "30 jours pour recours",
+            "cout": "Émoluments cantonaux"
+          },
+          "centre_contact_suisses_immigres": {
+            "nom": "CCSI — Centre de contact Suisses-Immigrés",
+            "adresse": "Route des Acacias 25, 1227 Carouge",
+            "tel": "022 304 48 60",
+            "site": "https://www.ccsi.ch",
+            "procedure": "Permanence sur rendez-vous",
+            "delai_reaction": "1-2 semaines",
+            "cout": "Gratuit"
+          }
+        },
+        "famille": {
+          "tribunal_premiere_instance_famille": {
+            "nom": "Tribunal de première instance — Chambre des affaires familiales",
+            "adresse": "Place du Bourg-de-Four 1, 1204 Genève",
+            "site": "https://justice.ge.ch/tribunal-premiere-instance",
+            "procedure": "Divorce, séparation, mesures protectrices",
+            "delai_reaction": "Variable",
+            "cout": "Émoluments + assistance judiciaire possible"
+          },
+          "tpae": {
+            "nom": "TPAE — Tribunal de protection de l'adulte et de l'enfant",
+            "adresse": "Rue des Glacis-de-Rive 6, 1207 Genève",
+            "site": "https://justice.ge.ch/tribunal-protection-adulte-enfant",
+            "procedure": "Mesures protection, curatelle, autorité parentale",
+            "delai_reaction": "30 jours pour recours",
+            "cout": "Gratuit pour signalement"
+          },
+          "scarpa": {
+            "nom": "SCARPA — Service cantonal d'avance et de recouvrement des pensions alimentaires",
+            "adresse": "Rue Ardutius-de-Faucigny 2, 1204 Genève",
+            "tel": "022 388 55 99",
+            "site": "https://www.ge.ch/avances-recouvrement-pensions-alimentaires-scarpa",
+            "procedure": "Demande sur jugement exécutoire",
+            "delai_reaction": "1-3 mois",
+            "cout": "Gratuit"
+          }
+        },
+        "social": {
+          "hospice_general": {
+            "nom": "Hospice général — Aide sociale",
+            "adresse": "Cours de Rive 12, 1204 Genève",
+            "tel": "022 420 52 00",
+            "site": "https://www.hospicegeneral.ch",
+            "procedure": "Demande aide financière (LIASI)",
+            "delai_reaction": "1-3 semaines",
+            "cout": "Gratuit"
+          },
+          "csp_ge": {
+            "nom": "CSP Genève — Centre social protestant",
+            "adresse": "Rue du Village-Suisse 14, 1205 Genève",
+            "tel": "022 807 07 00",
+            "site": "https://csp.ch/geneve",
+            "procedure": "Permanence sociale",
+            "delai_reaction": "1 semaine",
+            "cout": "Gratuit"
+          }
+        },
+        "violence": {
+          "lavi_ge": {
+            "nom": "Centre LAVI Genève",
+            "adresse": "Boulevard Saint-Georges 72, 1205 Genève",
+            "tel": "022 320 01 02",
+            "site": "https://www.centrelavi-ge.ch",
+            "procedure": "Sur rendez-vous ou urgence",
+            "delai_reaction": "Immédiat (urgence)",
+            "cout": "Gratuit"
+          },
+          "police_ge": {
+            "nom": "Police cantonale genevoise",
+            "adresse": "Chemin de la Gravière 5, 1227 Les Acacias",
+            "tel": "117 (urgence) / 022 427 81 11",
+            "site": "https://www.ge.ch/organisation/police",
+            "procedure": "Plainte au poste",
+            "delai_reaction": "Immédiat",
+            "cout": "Gratuit"
+          },
+          "solidarite_femmes": {
+            "nom": "Solidarité Femmes Genève — hébergement femmes victimes",
+            "adresse": "Adresse confidentielle — voir site",
+            "tel": "022 797 10 10 (24h/24)",
+            "site": "https://www.solidaritefemmes-ge.org",
+            "procedure": "Hébergement d'urgence",
+            "delai_reaction": "Immédiat",
+            "cout": "Gratuit"
+          }
+        },
+        "accident": {
+          "suva_ge": {
+            "nom": "SUVA — Agence de Genève",
+            "adresse": "Rue Ami-Lullin 12, 1207 Genève",
+            "tel": "0848 820 820",
+            "site": "https://www.suva.ch",
+            "procedure": "Déclaration accident par employeur",
+            "delai_reaction": "3 jours",
+            "cout": "Couvert"
+          },
+          "chambre_assurances_sociales": {
+            "nom": "Chambre des assurances sociales — Cour de justice",
+            "adresse": "Place du Bourg-de-Four 1, 1204 Genève",
+            "site": "https://justice.ge.ch/cour-justice",
+            "procedure": "Recours contre décisions sur opposition",
+            "delai_reaction": "30 jours",
+            "cout": "Gratuit (assurances sociales)"
+          }
+        },
+        "assurances": {
+          "office_ai_ge": {
+            "nom": "Office AI du canton de Genève",
+            "adresse": "Rue des Gares 12, 1201 Genève",
+            "tel": "022 327 60 00",
+            "site": "https://www.ocas.ch/oai",
+            "procedure": "Demande prestations AI",
+            "delai_reaction": "6-24 mois",
+            "cout": "Gratuit"
+          },
+          "caisse_avs_ge": {
+            "nom": "OCAS — Office cantonal des assurances sociales",
+            "adresse": "Rue des Gares 12, 1201 Genève",
+            "tel": "022 327 27 27",
+            "site": "https://www.ocas.ch",
+            "procedure": "AVS, AI, PC, allocations familiales",
+            "delai_reaction": "30 jours pour opposition",
+            "cout": "Gratuit"
+          },
+          "service_assurance_maladie": {
+            "nom": "SAM — Service de l'assurance-maladie",
+            "site": "https://www.ge.ch/dossier/assurance-maladie",
+            "procedure": "Subsides et contrôle obligation s'assurer",
+            "delai_reaction": "Variable",
+            "cout": "Gratuit"
+          }
+        },
+        "entreprise": {
+          "registre_commerce_ge": {
+            "nom": "Registre du commerce du canton de Genève",
+            "adresse": "Rue du Puits-Saint-Pierre 4, 1204 Genève",
+            "tel": "022 546 88 60",
+            "site": "https://ge.ch/hrcintapp/companySearch.action",
+            "procedure": "Inscription, modification, radiation",
+            "delai_reaction": "5-10 jours",
+            "cout": "Émoluments fédéraux"
+          },
+          "office_promotion_economique": {
+            "nom": "DG DERI — Direction générale du développement économique",
+            "site": "https://www.ge.ch/themes/economie",
+            "procedure": "Conseil création/installation entreprise",
+            "delai_reaction": "1-2 semaines",
+            "cout": "Gratuit"
+          }
+        }
+      },
+      "formulaires_officiels": {
+        "bail_contestation_conge": {
+          "nom": "Formulaire de requête à la Commission de conciliation",
+          "url_ou_emplacement": "https://www.ge.ch/organisation/commission-conciliation-matiere-baux-loyers",
+          "support": "Formulaire PDF cantonal téléchargeable",
+          "champs_obligatoires": ["identite_parties", "objet_litige", "conclusions", "pieces"]
+        },
+        "dettes_opposition": {
+          "nom": "Opposition au commandement de payer",
+          "url_ou_emplacement": "Sur le commandement de payer remis par l'office",
+          "support": "Formulaire papier ou opposition orale à l'office",
+          "champs_obligatoires": ["signature", "delai_10_jours"]
+        }
+      }
+    },
+    "ZH": {
+      "nom": "Zürich",
+      "langue": "de",
+      "population_citoyenne": 1570000,
+      "site_officiel": "https://www.zh.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Schlichtungsbehörde in Mietsachen",
+            "adresse": "Selnaustrasse 30, 8001 Zürich (autres bezirke selon district)",
+            "site": "https://www.gerichte-zh.ch/themen/miete-und-pacht.html",
+            "procedure": "Schriftliches Gesuch beim Schlichtungsbehörde des Bezirks",
+            "delai_reaction": "30 jours dès congé (CO 273)",
+            "cout": "Gratuit (CPC art. 113)"
+          },
+          "mietgericht": {
+            "nom": "Mietgericht Zürich",
+            "adresse": "Badenerstrasse 90, 8004 Zürich",
+            "site": "https://www.gerichte-zh.ch/organisation/bezirksgerichte/bezirksgericht-zuerich/mietgericht.html",
+            "procedure": "Klage nach gescheiterter Schlichtung",
+            "delai_reaction": "30 jours dès Klagebewilligung",
+            "cout": "Gratuit en bail jusqu'à CHF 30'000"
+          },
+          "mieterverband": {
+            "nom": "Mieterverband Zürich (MV ZH)",
+            "adresse": "Tellstrasse 31, 8004 Zürich",
+            "tel": "044 296 90 20",
+            "site": "https://www.mieterverband.ch/mv/zuerich.html",
+            "procedure": "Mitgliedschaft + Beratung",
+            "delai_reaction": "1-2 semaines",
+            "cout": "Cotisation annuelle ~95 CHF"
+          }
+        },
+        "travail": {
+          "arbeitsgericht": {
+            "nom": "Arbeitsgericht Zürich",
+            "adresse": "Badenerstrasse 90, 8004 Zürich",
+            "site": "https://www.gerichte-zh.ch/organisation/bezirksgerichte/bezirksgericht-zuerich/arbeitsgericht.html",
+            "procedure": "Schlichtungsverfahren puis jugement",
+            "delai_reaction": "180 jours pour licenciement abusif",
+            "cout": "Gratuit jusqu'à CHF 30'000 (CPC art. 114)"
+          },
+          "awa": {
+            "nom": "AWA — Amt für Wirtschaft und Arbeit",
+            "adresse": "Walchestrasse 19, 8090 Zürich",
+            "tel": "043 259 49 00",
+            "site": "https://www.zh.ch/de/wirtschaft-arbeit/arbeitsbedingungen.html",
+            "procedure": "Arbeitsbedingungen, LSE, Inspection",
+            "delai_reaction": "Variable",
+            "cout": "Gratuit"
+          },
+          "rav": {
+            "nom": "RAV — Regionales Arbeitsvermittlungszentrum",
+            "site": "https://www.arbeit.swiss",
+            "procedure": "Inscription chômage",
+            "delai_reaction": "Immédiat",
+            "cout": "Gratuit"
+          }
+        },
+        "dettes": {
+          "betreibungsamt": {
+            "nom": "Betreibungsamt Zürich",
+            "adresse": "Stauffacherstrasse 78, 8026 Zürich",
+            "tel": "044 412 35 00",
+            "site": "https://www.stadt-zuerich.ch/de/sicherheit-gesundheit-umwelt-energie/recht-bewilligungen/stadtammann-und-betreibungsamt.html",
+            "procedure": "Betreibungsbegehren, Rechtsvorschlag",
+            "delai_reaction": "10 jours pour Rechtsvorschlag (LP art. 74)",
+            "cout": "Émolument LP"
+          },
+          "bezirksgericht_rechtsoeffnung": {
+            "nom": "Bezirksgericht Zürich — Rechtsöffnung",
+            "adresse": "Badenerstrasse 90, 8004 Zürich",
+            "site": "https://www.gerichte-zh.ch/organisation/bezirksgerichte/bezirksgericht-zuerich.html",
+            "procedure": "Rechtsöffnungsverfahren (sommaire)",
+            "delai_reaction": "20 jours",
+            "cout": "Émolument modéré"
+          },
+          "schuldenberatung_zh": {
+            "nom": "Schuldenberatung Kanton Zürich (Plusminus)",
+            "adresse": "Bertastrasse 35, 8003 Zürich",
+            "tel": "043 268 03 50",
+            "site": "https://www.plusminus.ch",
+            "procedure": "Beratung gratuite",
+            "delai_reaction": "2-4 semaines",
+            "cout": "Gratuit"
+          }
+        },
+        "etrangers": {
+          "migrationsamt": {
+            "nom": "Migrationsamt Kanton Zürich",
+            "adresse": "Berninastrasse 45, 8090 Zürich",
+            "tel": "043 259 88 00",
+            "site": "https://www.zh.ch/de/migration-integration.html",
+            "procedure": "Bewilligungen, Verlängerung, Familiennachzug",
+            "delai_reaction": "30 jours für Rekurs",
+            "cout": "Émoluments cantonaux"
+          },
+          "asyl_organisation_zh": {
+            "nom": "AOZ — Asyl-Organisation Zürich",
+            "adresse": "Hofwiesenstrasse 137, 8057 Zürich",
+            "tel": "044 415 66 11",
+            "site": "https://www.aoz.ch",
+            "procedure": "Conseil migrants/réfugiés",
+            "delai_reaction": "1-2 semaines",
+            "cout": "Gratuit pour bénéficiaires"
+          }
+        },
+        "famille": {
+          "bezirksgericht_familiengericht": {
+            "nom": "Bezirksgericht Zürich — Familiengericht",
+            "adresse": "Badenerstrasse 90, 8004 Zürich",
+            "site": "https://www.gerichte-zh.ch/organisation/bezirksgerichte/bezirksgericht-zuerich.html",
+            "procedure": "Scheidung, Trennung, Eheschutz",
+            "delai_reaction": "Variable",
+            "cout": "Émoluments + Prozesskostenhilfe"
+          },
+          "kesb": {
+            "nom": "KESB — Kindes- und Erwachsenenschutzbehörde",
+            "adresse": "Variable selon Bezirk — Zürich Stadt: Albisriederstrasse 199, 8047 Zürich",
+            "tel": "044 412 02 02",
+            "site": "https://www.kesb-zh.ch",
+            "procedure": "Gefährdungsmeldung, Schutzmassnahmen",
+            "delai_reaction": "30 jours pour recours",
+            "cout": "Gratuit pour signalement"
+          },
+          "alimenteninkasso": {
+            "nom": "Alimentenhilfe Stadt Zürich",
+            "adresse": "Werdstrasse 75, 8004 Zürich",
+            "tel": "044 412 60 60",
+            "site": "https://www.stadt-zuerich.ch/sd/de/index/familien_kinder_jugendliche/alimentenhilfe.html",
+            "procedure": "Bevorschussung Unterhalt",
+            "delai_reaction": "1-3 mois",
+            "cout": "Gratuit"
+          }
+        },
+        "social": {
+          "sozialamt_zh": {
+            "nom": "Sozialamt — Stadt Zürich / Gemeinde",
+            "adresse": "Werdstrasse 75, 8004 Zürich",
+            "tel": "044 412 60 00",
+            "site": "https://www.stadt-zuerich.ch/sd/de/index/ueber_das_departement/organisation/sozialzentren.html",
+            "procedure": "Sozialhilfeantrag (SKOS)",
+            "delai_reaction": "1-3 semaines",
+            "cout": "Gratuit"
+          },
+          "caritas_zh": {
+            "nom": "Caritas Zürich",
+            "adresse": "Beckenhofstrasse 16, 8006 Zürich",
+            "tel": "044 366 68 68",
+            "site": "https://www.caritas-zuerich.ch",
+            "procedure": "Beratung soziale Probleme",
+            "delai_reaction": "1 semaine",
+            "cout": "Gratuit"
+          }
+        },
+        "violence": {
+          "opferhilfe_zh": {
+            "nom": "Opferhilfe Kanton Zürich",
+            "adresse": "Stampfenbachstrasse 32, 8006 Zürich",
+            "tel": "044 299 40 50",
+            "site": "https://www.opferhilfe-zh.ch",
+            "procedure": "Sur rendez-vous ou urgence",
+            "delai_reaction": "Immédiat (urgence)",
+            "cout": "Gratuit"
+          },
+          "kantonspolizei_zh": {
+            "nom": "Kantonspolizei Zürich",
+            "adresse": "Kasernenstrasse 29, 8004 Zürich",
+            "tel": "117 (Notruf) / 044 247 22 11",
+            "site": "https://www.kapo.zh.ch",
+            "procedure": "Strafanzeige",
+            "delai_reaction": "Immédiat",
+            "cout": "Gratuit"
+          },
+          "frauenhaus_zh": {
+            "nom": "Frauenhaus Zürich Violetta",
+            "adresse": "Adresse confidentielle",
+            "tel": "044 350 04 04 (24h/24)",
+            "site": "https://www.frauenhaus-zh.ch",
+            "procedure": "Notunterkunft",
+            "delai_reaction": "Immédiat",
+            "cout": "Gratuit"
+          }
+        },
+        "accident": {
+          "suva_zh": {
+            "nom": "SUVA — Agentur Zürich",
+            "adresse": "Hohlstrasse 552, 8048 Zürich",
+            "tel": "0848 820 820",
+            "site": "https://www.suva.ch",
+            "procedure": "Unfallmeldung durch Arbeitgeber",
+            "delai_reaction": "3 jours",
+            "cout": "Couvert"
+          },
+          "sozialversicherungsgericht": {
+            "nom": "Sozialversicherungsgericht des Kantons Zürich",
+            "adresse": "Lagerhausstrasse 19, 8400 Winterthur",
+            "site": "https://www.gerichte-zh.ch/organisation/sozialversicherungsgericht.html",
+            "procedure": "Beschwerde gegen Einspracheentscheide",
+            "delai_reaction": "30 jours",
+            "cout": "Gratuit (assurances sociales)"
+          }
+        },
+        "assurances": {
+          "sva_zh": {
+            "nom": "SVA Zürich — Sozialversicherungsanstalt",
+            "adresse": "Röntgenstrasse 17, 8005 Zürich",
+            "tel": "044 448 50 00",
+            "site": "https://svazurich.ch",
+            "procedure": "AHV, IV, EL, Familienzulagen",
+            "delai_reaction": "30 jours pour Einsprache",
+            "cout": "Gratuit"
+          },
+          "iv_stelle_zh": {
+            "nom": "IV-Stelle Kanton Zürich",
+            "adresse": "Röntgenstrasse 17, 8005 Zürich",
+            "tel": "044 448 50 00",
+            "site": "https://svazurich.ch/iv",
+            "procedure": "IV-Anmeldung",
+            "delai_reaction": "6-24 mois",
+            "cout": "Gratuit"
+          },
+          "praemienverbilligung": {
+            "nom": "Prämienverbilligung Kanton Zürich",
+            "site": "https://www.zh.ch/de/gesundheit/krankenversicherung/individuelle-praemienverbilligung-ipv.html",
+            "procedure": "Antrag jährlich",
+            "delai_reaction": "Variable",
+            "cout": "Gratuit"
+          }
+        },
+        "entreprise": {
+          "handelsregisteramt_zh": {
+            "nom": "Handelsregisteramt Kanton Zürich",
+            "adresse": "Schöntalstrasse 5, 8022 Zürich",
+            "tel": "043 259 41 11",
+            "site": "https://www.zh.ch/de/wirtschaft-arbeit/handelsregister.html",
+            "procedure": "Eintragung, Mutation, Löschung",
+            "delai_reaction": "5-10 jours",
+            "cout": "Émoluments fédéraux"
+          },
+          "standortfoerderung": {
+            "nom": "Standortförderung Kanton Zürich",
+            "site": "https://www.standort.zh.ch",
+            "procedure": "Beratung Unternehmensgründung",
+            "delai_reaction": "1-2 semaines",
+            "cout": "Gratuit"
+          }
+        }
+      },
+      "formulaires_officiels": {
+        "bail_contestation_conge": {
+          "nom": "Schlichtungsgesuch Mietsachen",
+          "url_ou_emplacement": "https://www.gerichte-zh.ch/themen/miete-und-pacht.html",
+          "support": "Formulaire PDF cantonal",
+          "champs_obligatoires": ["Parteien", "Streitgegenstand", "Rechtsbegehren", "Beilagen"]
+        },
+        "dettes_opposition": {
+          "nom": "Rechtsvorschlag",
+          "url_ou_emplacement": "Sur le Zahlungsbefehl remis par l'Betreibungsamt",
+          "support": "Au verso du Zahlungsbefehl",
+          "champs_obligatoires": ["Unterschrift", "Frist_10_Tage"]
+        }
+      }
+    },
+    "BE": {
+      "nom": "Bern / Berne",
+      "langue": "de/fr",
+      "population_citoyenne": 1050000,
+      "site_officiel": "https://www.be.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Schlichtungsbehörde für Miete und Pacht / Autorité de conciliation en matière de bail",
+            "adresse": "Hodlerstrasse 7, 3011 Bern (régions selon district)",
+            "site": "https://www.justice.be.ch/fr/start/themen/miete-pacht.html",
+            "procedure": "Demande écrite gratuite (formulaire bilingue)",
+            "delai_reaction": "30 jours dès congé (CO 273)",
+            "cout": "Gratuit (CPC art. 113)"
+          },
+          "regionalgericht_bern": {
+            "nom": "Regionalgericht Bern-Mittelland — Mietgericht",
+            "adresse": "Hodlerstrasse 7, 3011 Bern",
+            "site": "https://www.justice.be.ch/justice/de/index/zivil-strafrecht/zivil-strafrecht/regionalgerichte.html",
+            "procedure": "Klage nach Schlichtung",
+            "delai_reaction": "30 jours",
+            "cout": "Gratuit en bail"
+          },
+          "mieterverband_be": {
+            "nom": "Mieterinnen- und Mieterverband Bern (MV Bern)",
+            "adresse": "Monbijoustrasse 61, 3007 Bern",
+            "tel": "031 376 60 60",
+            "site": "https://www.mieterverband.ch/mv/bern.html",
+            "procedure": "Mitgliedschaft + Beratung",
+            "delai_reaction": "1-2 semaines",
+            "cout": "Cotisation ~80 CHF/an"
+          }
+        },
+        "travail": {
+          "regionalgericht_arbeitsgericht": {
+            "nom": "Regionalgericht Bern-Mittelland — Section travail",
+            "adresse": "Hodlerstrasse 7, 3011 Bern",
+            "site": "https://www.justice.be.ch/justice/fr/index/zivil-strafrecht/zivil-strafrecht/regionalgerichte.html",
+            "procedure": "Conciliation puis jugement",
+            "delai_reaction": "180 jours pour licenciement abusif",
+            "cout": "Gratuit jusqu'à CHF 30'000"
+          },
+          "beco": {
+            "nom": "beco — Berner Wirtschaft (Arbeitsbedingungen)",
+            "adresse": "Laupenstrasse 22, 3011 Bern",
+            "tel": "031 633 58 56",
+            "site": "https://www.vol.be.ch/vol/de/index/arbeit/arbeitsbedingungen.html",
+            "procedure": "Plainte conditions travail",
+            "delai_reaction": "Variable",
+            "cout": "Gratuit"
+          },
+          "rav_be": {
+            "nom": "RAV Kanton Bern",
+            "site": "https://www.be.ch/portal/fr/index/bevoelkerung/wirtschaft/arbeit.html",
+            "procedure": "Inscription chômage",
+            "delai_reaction": "Immédiat",
+            "cout": "Gratuit"
+          }
+        },
+        "dettes": {
+          "betreibungsamt_be": {
+            "nom": "Betreibungs- und Konkursamt Bern-Mittelland",
+            "adresse": "Poststrasse 25, 3000 Bern 65",
+            "tel": "031 635 99 11",
+            "site": "https://www.justice.be.ch/justice/de/index/betreibung-konkurs.html",
+            "procedure": "Betreibung, Rechtsvorschlag",
+            "delai_reaction": "10 jours pour opposition",
+            "cout": "Émolument LP"
+          },
+          "regionalgericht_rechtsoeffnung": {
+            "nom": "Regionalgericht — Rechtsöffnung",
+            "adresse": "Hodlerstrasse 7, 3011 Bern",
+            "site": "https://www.justice.be.ch/justice/fr/index/zivil-strafrecht/zivil-strafrecht/regionalgerichte.html",
+            "procedure": "Mainlevée d'opposition",
+            "delai_reaction": "20 jours",
+            "cout": "Émolument modéré"
+          },
+          "schuldenberatung_be": {
+            "nom": "Berner Schuldenberatung",
+            "adresse": "Effingerstrasse 25, 3008 Bern",
+            "tel": "031 371 99 31",
+            "site": "https://schuldeninfo.ch",
+            "procedure": "Beratung",
+            "delai_reaction": "2-4 semaines",
+            "cout": "Gratuit"
+          }
+        },
+        "etrangers": {
+          "migrationsdienst_be": {
+            "nom": "Amt für Bevölkerungsdienste — Migration und Personenstand",
+            "adresse": "Ostermundigenstrasse 99B, 3006 Bern",
+            "tel": "031 633 53 15",
+            "site": "https://www.pom.be.ch/pom/de/index/migration.html",
+            "procedure": "Permis, renouvellement",
+            "delai_reaction": "30 jours pour recours",
+            "cout": "Émoluments cantonaux"
+          },
+          "kompetenzzentrum_integration": {
+            "nom": "Kompetenzzentrum Integration Stadt Bern",
+            "adresse": "Predigergasse 5, 3011 Bern",
+            "tel": "031 321 76 86",
+            "site": "https://www.bern.ch/integration",
+            "procedure": "Conseil migrants",
+            "delai_reaction": "1-2 semaines",
+            "cout": "Gratuit"
+          }
+        },
+        "famille": {
+          "regionalgericht_familie": {
+            "nom": "Regionalgericht Bern-Mittelland — Familienrecht",
+            "adresse": "Hodlerstrasse 7, 3011 Bern",
+            "site": "https://www.justice.be.ch/justice/de/index/zivil-strafrecht/zivil-strafrecht/regionalgerichte.html",
+            "procedure": "Scheidung, Trennung",
+            "delai_reaction": "Variable",
+            "cout": "Émoluments"
+          },
+          "kesb_be": {
+            "nom": "KESB Kanton Bern",
+            "adresse": "Variable selon district",
+            "site": "https://www.jgk.be.ch/jgk/de/index/kindes_erwachsenenschutz.html",
+            "procedure": "Mesures de protection",
+            "delai_reaction": "30 jours pour recours",
+            "cout": "Gratuit pour signalement"
+          },
+          "alimentenbevorschussung": {
+            "nom": "Alimentenbevorschussung — Sozialdienst Gemeinde",
+            "site": "https://www.gef.be.ch/gef/de/index/soziales/sozialhilfe/alimentenbevorschussung.html",
+            "procedure": "Demande sur jugement exécutoire",
+            "delai_reaction": "1-3 mois",
+            "cout": "Gratuit"
+          }
+        },
+        "social": {
+          "sozialdienst_be": {
+            "nom": "Sozialdienst Stadt Bern",
+            "adresse": "Predigergasse 12, 3011 Bern",
+            "tel": "031 321 62 11",
+            "site": "https://www.bern.ch/themen/soziales",
+            "procedure": "Sozialhilfeantrag",
+            "delai_reaction": "1-3 semaines",
+            "cout": "Gratuit"
+          },
+          "caritas_be": {
+            "nom": "Caritas Bern",
+            "adresse": "Wohlhausenmattstrasse 1, 3013 Bern",
+            "tel": "031 378 60 50",
+            "site": "https://www.caritas-bern.ch",
+            "procedure": "Sozialberatung",
+            "delai_reaction": "1 semaine",
+            "cout": "Gratuit"
+          }
+        },
+        "violence": {
+          "opferhilfe_be": {
+            "nom": "Opferhilfe Kanton Bern",
+            "adresse": "Seftigenstrasse 41, 3007 Bern",
+            "tel": "031 370 30 70",
+            "site": "https://www.opferhilfe-bern.ch",
+            "procedure": "Sur rendez-vous ou urgence",
+            "delai_reaction": "Immédiat (urgence)",
+            "cout": "Gratuit"
+          },
+          "kapo_be": {
+            "nom": "Kantonspolizei Bern",
+            "adresse": "Nordring 30, 3013 Bern",
+            "tel": "117 (Notruf) / 031 638 81 11",
+            "site": "https://www.police.be.ch",
+            "procedure": "Strafanzeige",
+            "delai_reaction": "Immédiat",
+            "cout": "Gratuit"
+          },
+          "frauenhaus_be": {
+            "nom": "Frauenhaus Region Bern",
+            "adresse": "Adresse confidentielle",
+            "tel": "031 332 55 33 (24h/24)",
+            "site": "https://www.frauenhaus-bern.ch",
+            "procedure": "Notunterkunft",
+            "delai_reaction": "Immédiat",
+            "cout": "Gratuit"
+          }
+        },
+        "accident": {
+          "suva_be": {
+            "nom": "SUVA — Agentur Bern",
+            "adresse": "Laupenstrasse 11, 3001 Bern",
+            "tel": "0848 820 820",
+            "site": "https://www.suva.ch",
+            "procedure": "Unfallmeldung",
+            "delai_reaction": "3 jours",
+            "cout": "Couvert"
+          },
+          "verwaltungsgericht_sozial": {
+            "nom": "Verwaltungsgericht des Kantons Bern — Sozialversicherungsabteilung",
+            "adresse": "Speichergasse 12, 3011 Bern",
+            "site": "https://www.justice.be.ch/justice/de/index/verwaltungsrecht.html",
+            "procedure": "Beschwerde",
+            "delai_reaction": "30 jours",
+            "cout": "Gratuit (assurances sociales)"
+          }
+        },
+        "assurances": {
+          "ausgleichskasse_be": {
+            "nom": "Ausgleichskasse Bern (AKB)",
+            "adresse": "Chutzenstrasse 10, 3007 Bern",
+            "tel": "031 379 79 79",
+            "site": "https://www.akbern.ch",
+            "procedure": "AHV, EL, Familienzulagen",
+            "delai_reaction": "30 jours pour opposition",
+            "cout": "Gratuit"
+          },
+          "iv_stelle_be": {
+            "nom": "IV-Stelle Kanton Bern",
+            "adresse": "Scheibenstrasse 70, 3014 Bern",
+            "tel": "031 327 70 70",
+            "site": "https://www.ivbe.ch",
+            "procedure": "IV-Anmeldung",
+            "delai_reaction": "6-24 mois",
+            "cout": "Gratuit"
+          },
+          "praemienverbilligung_be": {
+            "nom": "Prämienverbilligung Kanton Bern",
+            "site": "https://www.gef.be.ch/gef/de/index/krankenversicherung.html",
+            "procedure": "Antrag",
+            "delai_reaction": "Variable",
+            "cout": "Gratuit"
+          }
+        },
+        "entreprise": {
+          "handelsregisteramt_be": {
+            "nom": "Handelsregisteramt des Kantons Bern",
+            "adresse": "Poststrasse 25, 3000 Bern 65",
+            "tel": "031 635 88 11",
+            "site": "https://www.justice.be.ch/justice/de/index/handelsregister.html",
+            "procedure": "Eintragung, Mutation",
+            "delai_reaction": "5-10 jours",
+            "cout": "Émoluments fédéraux"
+          },
+          "wirtschaftsfoerderung_be": {
+            "nom": "Wirtschaftsförderung Kanton Bern",
+            "site": "https://www.berneinvest.com",
+            "procedure": "Beratung Unternehmen",
+            "delai_reaction": "1-2 semaines",
+            "cout": "Gratuit"
+          }
+        }
+      },
+      "formulaires_officiels": {
+        "bail_contestation_conge": {
+          "nom": "Schlichtungsgesuch / Requête en conciliation bail",
+          "url_ou_emplacement": "https://www.justice.be.ch/fr/start/themen/miete-pacht.html",
+          "support": "Formulaire PDF bilingue (FR/DE)",
+          "champs_obligatoires": ["parties", "objet", "conclusions", "pieces"]
+        },
+        "dettes_opposition": {
+          "nom": "Rechtsvorschlag / Opposition",
+          "url_ou_emplacement": "Sur le Zahlungsbefehl / commandement de payer",
+          "support": "Verso du commandement",
+          "champs_obligatoires": ["signature", "delai_10_jours"]
+        }
+      }
+    },
+    "BS": {
+      "nom": "Basel-Stadt",
+      "langue": "de",
+      "population_citoyenne": 200000,
+      "site_officiel": "https://www.bs.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Staatliche Schlichtungsstelle für Mietstreitigkeiten",
+            "adresse": "Bäumleingasse 5, 4001 Basel",
+            "site": "https://www.gerichte.bs.ch/zivilgericht/staatliche-schlichtungsstelle-mietstreitigkeiten.html",
+            "procedure": "Schriftliches Gesuch gratuit",
+            "delai_reaction": "30 jours dès congé (CO 273)",
+            "cout": "Gratuit (CPC art. 113)"
+          },
+          "zivilgericht_bs": {
+            "nom": "Zivilgericht Basel-Stadt",
+            "adresse": "Bäumleingasse 5, 4001 Basel",
+            "site": "https://www.gerichte.bs.ch/zivilgericht.html",
+            "procedure": "Klage nach Schlichtung",
+            "delai_reaction": "30 jours",
+            "cout": "Gratuit en bail"
+          },
+          "mieterverband_bs": {
+            "nom": "Mieterverband Basel (MV Basel)",
+            "adresse": "Clarastrasse 2, 4058 Basel",
+            "tel": "061 666 60 90",
+            "site": "https://www.mieterverband.ch/mv/basel.html",
+            "procedure": "Mitgliedschaft + Beratung",
+            "delai_reaction": "1-2 semaines",
+            "cout": "Cotisation ~85 CHF/an"
+          }
+        },
+        "travail": {
+          "zivilgericht_arbeit": {
+            "nom": "Zivilgericht Basel-Stadt — Arbeitsgericht",
+            "adresse": "Bäumleingasse 5, 4001 Basel",
+            "site": "https://www.gerichte.bs.ch/zivilgericht.html",
+            "procedure": "Schlichtung puis jugement",
+            "delai_reaction": "180 jours pour licenciement abusif",
+            "cout": "Gratuit jusqu'à CHF 30'000"
+          },
+          "awa_bs": {
+            "nom": "AWA — Amt für Wirtschaft und Arbeit BS",
+            "adresse": "Utengasse 36, 4005 Basel",
+            "tel": "061 267 87 87",
+            "site": "https://www.awa.bs.ch",
+            "procedure": "Conditions travail, Inspection",
+            "delai_reaction": "Variable",
+            "cout": "Gratuit"
+          },
+          "rav_bs": {
+            "nom": "RAV Basel-Stadt",
+            "adresse": "Hochstrasse 37, 4053 Basel",
+            "site": "https://www.awa.bs.ch/arbeitslosigkeit.html",
+            "procedure": "Inscription chômage",
+            "delai_reaction": "Immédiat",
+            "cout": "Gratuit"
+          }
+        },
+        "dettes": {
+          "betreibungsamt_bs": {
+            "nom": "Betreibungsamt Basel-Stadt",
+            "adresse": "Bäumleingasse 1, 4001 Basel",
+            "tel": "061 267 73 23",
+            "site": "https://www.betreibungsamt.bs.ch",
+            "procedure": "Betreibung, Rechtsvorschlag",
+            "delai_reaction": "10 jours pour opposition",
+            "cout": "Émolument LP"
+          },
+          "zivilgericht_rechtsoeffnung_bs": {
+            "nom": "Zivilgericht Basel-Stadt — Rechtsöffnung",
+            "adresse": "Bäumleingasse 5, 4001 Basel",
+            "site": "https://www.gerichte.bs.ch/zivilgericht.html",
+            "procedure": "Rechtsöffnungsverfahren",
+            "delai_reaction": "20 jours",
+            "cout": "Émolument modéré"
+          },
+          "schuldenberatung_bs": {
+            "nom": "Schuldenberatung Basel",
+            "adresse": "Greifengasse 23, 4058 Basel",
+            "tel": "061 691 51 35",
+            "site": "https://www.schuldenberatung-basel.ch",
+            "procedure": "Beratung",
+            "delai_reaction": "2-4 semaines",
+            "cout": "Gratuit"
+          }
+        },
+        "etrangers": {
+          "migrationsamt_bs": {
+            "nom": "Migrationsamt Basel-Stadt",
+            "adresse": "Spiegelgasse 6, 4001 Basel",
+            "tel": "061 267 70 51",
+            "site": "https://www.migrationsamt.bs.ch",
+            "procedure": "Permis, renouvellement",
+            "delai_reaction": "30 jours pour recours",
+            "cout": "Émoluments cantonaux"
+          },
+          "ggg_migration": {
+            "nom": "GGG Migration — Beratungsstelle",
+            "adresse": "Eulerstrasse 26, 4051 Basel",
+            "tel": "061 206 92 22",
+            "site": "https://www.ggg-migration.ch",
+            "procedure": "Beratung Migration",
+            "delai_reaction": "1-2 semaines",
+            "cout": "Gratuit"
+          }
+        },
+        "famille": {
+          "zivilgericht_familie_bs": {
+            "nom": "Zivilgericht Basel-Stadt — Familienrecht",
+            "adresse": "Bäumleingasse 5, 4001 Basel",
+            "site": "https://www.gerichte.bs.ch/zivilgericht.html",
+            "procedure": "Scheidung, Trennung, Eheschutz",
+            "delai_reaction": "Variable",
+            "cout": "Émoluments"
+          },
+          "kesb_bs": {
+            "nom": "KESB Basel-Stadt",
+            "adresse": "Rheinsprung 16, 4001 Basel",
+            "tel": "061 267 45 11",
+            "site": "https://www.kesb.bs.ch",
+            "procedure": "Mesures de protection",
+            "delai_reaction": "30 jours pour recours",
+            "cout": "Gratuit pour signalement"
+          },
+          "alimentenhilfe_bs": {
+            "nom": "Alimentenhilfe Basel-Stadt",
+            "adresse": "Klybeckstrasse 23, 4057 Basel",
+            "tel": "061 685 25 25",
+            "site": "https://www.jfs.bs.ch",
+            "procedure": "Bevorschussung Unterhalt",
+            "delai_reaction": "1-3 mois",
+            "cout": "Gratuit"
+          }
+        },
+        "social": {
+          "sozialhilfe_bs": {
+            "nom": "Sozialhilfe Basel-Stadt",
+            "adresse": "Klybeckstrasse 15, 4057 Basel",
+            "tel": "061 685 16 16",
+            "site": "https://www.sozialhilfe.bs.ch",
+            "procedure": "Antrag Sozialhilfe",
+            "delai_reaction": "1-3 semaines",
+            "cout": "Gratuit"
+          },
+          "caritas_bs": {
+            "nom": "Caritas beider Basel",
+            "adresse": "Lindenberg 20, 4058 Basel",
+            "tel": "061 691 55 55",
+            "site": "https://www.caritas-beider-basel.ch",
+            "procedure": "Sozialberatung",
+            "delai_reaction": "1 semaine",
+            "cout": "Gratuit"
+          }
+        },
+        "violence": {
+          "opferhilfe_bs": {
+            "nom": "Opferhilfe beider Basel",
+            "adresse": "Steinenring 53, 4051 Basel",
+            "tel": "061 205 09 10",
+            "site": "https://www.opferhilfe-bb.ch",
+            "procedure": "Sur rendez-vous ou urgence",
+            "delai_reaction": "Immédiat (urgence)",
+            "cout": "Gratuit"
+          },
+          "kapo_bs": {
+            "nom": "Kantonspolizei Basel-Stadt",
+            "adresse": "Spiegelhof, Spiegelgasse 6, 4001 Basel",
+            "tel": "117 (Notruf) / 061 267 71 11",
+            "site": "https://www.polizei.bs.ch",
+            "procedure": "Strafanzeige",
+            "delai_reaction": "Immédiat",
+            "cout": "Gratuit"
+          },
+          "frauenhaus_bs": {
+            "nom": "Frauenhaus beider Basel",
+            "adresse": "Adresse confidentielle",
+            "tel": "061 681 66 33 (24h/24)",
+            "site": "https://www.frauenhaus-basel.ch",
+            "procedure": "Notunterkunft",
+            "delai_reaction": "Immédiat",
+            "cout": "Gratuit"
+          }
+        },
+        "accident": {
+          "suva_bs": {
+            "nom": "SUVA — Agentur Basel",
+            "adresse": "Aeschengraben 21, 4051 Basel",
+            "tel": "0848 820 820",
+            "site": "https://www.suva.ch",
+            "procedure": "Unfallmeldung",
+            "delai_reaction": "3 jours",
+            "cout": "Couvert"
+          },
+          "sozialversicherungsgericht_bs": {
+            "nom": "Sozialversicherungsgericht Basel-Stadt",
+            "adresse": "Hörnliallee 3, 4125 Riehen",
+            "site": "https://www.gerichte.bs.ch/sozialversicherungsgericht.html",
+            "procedure": "Beschwerde",
+            "delai_reaction": "30 jours",
+            "cout": "Gratuit (assurances sociales)"
+          }
+        },
+        "assurances": {
+          "ausgleichskasse_bs": {
+            "nom": "Ausgleichskasse Basel-Stadt",
+            "adresse": "Wettsteinplatz 1, 4002 Basel",
+            "tel": "061 685 22 22",
+            "site": "https://www.ak-bs.ch",
+            "procedure": "AHV, EL, Familienzulagen",
+            "delai_reaction": "30 jours pour opposition",
+            "cout": "Gratuit"
+          },
+          "iv_stelle_bs": {
+            "nom": "IV-Stelle Basel-Stadt",
+            "adresse": "Lange Gasse 7, 4052 Basel",
+            "tel": "061 225 25 25",
+            "site": "https://www.iv-bs.ch",
+            "procedure": "IV-Anmeldung",
+            "delai_reaction": "6-24 mois",
+            "cout": "Gratuit"
+          },
+          "praemienverbilligung_bs": {
+            "nom": "Prämienverbilligung Amt für Sozialbeiträge BS",
+            "site": "https://www.asb.bs.ch",
+            "procedure": "Antrag",
+            "delai_reaction": "Variable",
+            "cout": "Gratuit"
+          }
+        },
+        "entreprise": {
+          "handelsregisteramt_bs": {
+            "nom": "Handelsregisteramt Basel-Stadt",
+            "adresse": "Spiegelhof, Spiegelgasse 6, 4001 Basel",
+            "tel": "061 267 84 50",
+            "site": "https://www.hra.bs.ch",
+            "procedure": "Eintragung, Mutation",
+            "delai_reaction": "5-10 jours",
+            "cout": "Émoluments fédéraux"
+          },
+          "wirtschaftsfoerderung_bs": {
+            "nom": "BaselArea — Wirtschaftsförderung",
+            "site": "https://www.baselarea.swiss",
+            "procedure": "Beratung Unternehmen",
+            "delai_reaction": "1-2 semaines",
+            "cout": "Gratuit"
+          }
+        }
+      },
+      "formulaires_officiels": {
+        "bail_contestation_conge": {
+          "nom": "Schlichtungsgesuch Mietstreitigkeiten",
+          "url_ou_emplacement": "https://www.gerichte.bs.ch/zivilgericht/staatliche-schlichtungsstelle-mietstreitigkeiten.html",
+          "support": "Formulaire PDF cantonal",
+          "champs_obligatoires": ["Parteien", "Streitgegenstand", "Rechtsbegehren", "Beilagen"]
+        },
+        "dettes_opposition": {
+          "nom": "Rechtsvorschlag",
+          "url_ou_emplacement": "Sur le Zahlungsbefehl",
+          "support": "Verso du Zahlungsbefehl",
+          "champs_obligatoires": ["Unterschrift", "Frist_10_Tage"]
+        }
+      }
+    },
+    "TI": {
+      "nom": "Ticino",
+      "langue": "it",
+      "population_citoyenne": 350000,
+      "site_officiel": "https://www4.ti.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Ufficio di conciliazione in materia di locazione",
+            "adresse": "Variable selon distretto (Lugano, Bellinzona, Locarno, Mendrisio)",
+            "site": "https://www4.ti.ch/poteri/giudiziario/uffici-di-conciliazione",
+            "procedure": "Istanza scritta gratuita",
+            "delai_reaction": "30 jours dès congé (CO 273)",
+            "cout": "Gratuit (CPC art. 113)"
+          },
+          "pretura_bail": {
+            "nom": "Pretura — Sezione locazione",
+            "adresse": "Variable selon distretto — Lugano: Via Bossi 3, 6900 Lugano",
+            "site": "https://www4.ti.ch/poteri/giudiziario/preture",
+            "procedure": "Causa dopo conciliazione fallita",
+            "delai_reaction": "30 jours",
+            "cout": "Gratuit en bail"
+          },
+          "asi_ticino": {
+            "nom": "ASI Ticino — Associazione svizzera inquilini",
+            "adresse": "Via Industria 3, 6814 Lamone",
+            "tel": "091 967 51 44",
+            "site": "https://www.asi-infoalloggio.ch",
+            "procedure": "Adhésion + consulenza",
+            "delai_reaction": "1-2 semaines",
+            "cout": "Cotisation ~80 CHF/an"
+          }
+        },
+        "travail": {
+          "pretura_lavoro": {
+            "nom": "Pretura — Sezione lavoro",
+            "adresse": "Variable selon distretto",
+            "site": "https://www4.ti.ch/poteri/giudiziario/preture",
+            "procedure": "Conciliazione poi giudizio",
+            "delai_reaction": "180 jours pour licenciement abusif",
+            "cout": "Gratuit jusqu'à CHF 30'000"
+          },
+          "ufficio_ispezione_lavoro": {
+            "nom": "Ufficio dell'ispettorato del lavoro",
+            "adresse": "Viale Stefano Franscini 17, 6500 Bellinzona",
+            "tel": "091 814 30 00",
+            "site": "https://www4.ti.ch/dfe/de/uil",
+            "procedure": "Segnalazione condizioni lavoro",
+            "delai_reaction": "Variable",
+            "cout": "Gratuit"
+          },
+          "urc": {
+            "nom": "URC — Ufficio regionale di collocamento",
+            "site": "https://www4.ti.ch/dfe/de/usml",
+            "procedure": "Iscrizione disoccupazione",
+            "delai_reaction": "Immédiat",
+            "cout": "Gratuit"
+          }
+        },
+        "dettes": {
+          "ufficio_esecuzione": {
+            "nom": "Ufficio esecuzione e fallimenti — Lugano",
+            "adresse": "Via Bossi 2a, 6900 Lugano",
+            "tel": "091 815 55 11",
+            "site": "https://www4.ti.ch/di/dg/sg/uef",
+            "procedure": "Esecuzione, opposizione",
+            "delai_reaction": "10 jours pour opposition",
+            "cout": "Émolument LP"
+          },
+          "pretura_rigetto": {
+            "nom": "Pretura — Rigetto opposizione",
+            "adresse": "Variable selon distretto",
+            "site": "https://www4.ti.ch/poteri/giudiziario/preture",
+            "procedure": "Rigetto opposizione (procedura sommaria)",
+            "delai_reaction": "20 jours",
+            "cout": "Émolument modéré"
+          },
+          "caritas_ticino": {
+            "nom": "Caritas Ticino — consulenza debiti",
+            "adresse": "Via Merlecco 8, 6963 Pregassona",
+            "tel": "091 936 30 20",
+            "site": "https://www.caritas-ticino.ch",
+            "procedure": "Su appuntamento",
+            "delai_reaction": "2-4 semaines",
+            "cout": "Gratuit"
+          }
+        },
+        "etrangers": {
+          "ufficio_migrazione_ti": {
+            "nom": "Sezione della popolazione — Ufficio migrazione",
+            "adresse": "Via Lugano 4, 6500 Bellinzona",
+            "tel": "091 814 32 80",
+            "site": "https://www4.ti.ch/di/dg/sps/sezione-della-popolazione/ufficio-della-migrazione",
+            "procedure": "Permessi, rinnovi",
+            "delai_reaction": "30 jours pour recours",
+            "cout": "Émoluments cantonaux"
+          },
+          "soccorso_operaio_ticino": {
+            "nom": "SOS Ticino — consulenza migranti",
+            "adresse": "Via Bagutti 4, 6900 Lugano",
+            "tel": "091 994 70 47",
+            "site": "https://www.sos-ti.ch",
+            "procedure": "Consulenza",
+            "delai_reaction": "1-2 semaines",
+            "cout": "Gratuit"
+          }
+        },
+        "famille": {
+          "pretura_famiglia": {
+            "nom": "Pretura — Sezione famiglia",
+            "adresse": "Variable selon distretto",
+            "site": "https://www4.ti.ch/poteri/giudiziario/preture",
+            "procedure": "Divorzio, separazione, misure protettive",
+            "delai_reaction": "Variable",
+            "cout": "Émoluments"
+          },
+          "arp": {
+            "nom": "ARP — Autorità regionale di protezione",
+            "adresse": "Variable selon distretto",
+            "site": "https://www4.ti.ch/poteri/giudiziario/arp",
+            "procedure": "Misure di protezione",
+            "delai_reaction": "30 jours pour recours",
+            "cout": "Gratuit pour segnalazione"
+          },
+          "ufficio_alimenti": {
+            "nom": "Ufficio anticipo e incasso alimenti",
+            "adresse": "Via Dogana 16, 6500 Bellinzona",
+            "tel": "091 814 54 71",
+            "site": "https://www4.ti.ch/dss/dasf/uai",
+            "procedure": "Anticipo alimenti su sentenza esecutiva",
+            "delai_reaction": "1-3 mois",
+            "cout": "Gratuit"
+          }
+        },
+        "social": {
+          "ufficio_sostegno_sociale": {
+            "nom": "USSI — Ufficio del sostegno sociale e dell'inserimento",
+            "adresse": "Via Dogana 16, 6500 Bellinzona",
+            "tel": "091 814 71 11",
+            "site": "https://www4.ti.ch/dss/dasf/ussi",
+            "procedure": "Domanda di assistenza sociale",
+            "delai_reaction": "1-3 semaines",
+            "cout": "Gratuit"
+          },
+          "caritas_ticino_sociale": {
+            "nom": "Caritas Ticino — consulenza sociale",
+            "adresse": "Via Merlecco 8, 6963 Pregassona",
+            "tel": "091 936 30 20",
+            "site": "https://www.caritas-ticino.ch",
+            "procedure": "Consulenza",
+            "delai_reaction": "1 semaine",
+            "cout": "Gratuit"
+          }
+        },
+        "violence": {
+          "lavi_ti": {
+            "nom": "Servizio LAV — Aiuto alle vittime di reati",
+            "adresse": "Viale Officina 6, 6500 Bellinzona",
+            "tel": "091 814 75 39",
+            "site": "https://www4.ti.ch/dss/dasf/sostegno/aiuto-alle-vittime-di-reati",
+            "procedure": "Su appuntamento o urgenza",
+            "delai_reaction": "Immédiat (urgence)",
+            "cout": "Gratuit"
+          },
+          "polizia_ti": {
+            "nom": "Polizia cantonale Ticino",
+            "adresse": "Via Mola 24, 6500 Bellinzona",
+            "tel": "117 (urgenza) / 091 814 11 11",
+            "site": "https://www4.ti.ch/di/pol",
+            "procedure": "Denuncia",
+            "delai_reaction": "Immédiat",
+            "cout": "Gratuit"
+          },
+          "casa_armonia": {
+            "nom": "Casa Armònia — donne vittime di violenza domestica",
+            "adresse": "Indirizzo confidenziale",
+            "tel": "091 743 19 33 (24h/24)",
+            "site": "https://www.casa-armonia.ch",
+            "procedure": "Accoglienza d'emergenza",
+            "delai_reaction": "Immédiat",
+            "cout": "Gratuit"
+          }
+        },
+        "accident": {
+          "suva_ti": {
+            "nom": "SUVA — Agenzia Bellinzona/Lugano",
+            "adresse": "Via Brigata Ravenna 10, 6500 Bellinzona",
+            "tel": "0848 820 820",
+            "site": "https://www.suva.ch",
+            "procedure": "Notifica infortunio",
+            "delai_reaction": "3 jours",
+            "cout": "Couvert"
+          },
+          "tribunale_assicurazioni": {
+            "nom": "Tribunale cantonale delle assicurazioni",
+            "adresse": "Via Pretorio 16, 6900 Lugano",
+            "site": "https://www4.ti.ch/poteri/giudiziario/tca",
+            "procedure": "Ricorso decisioni",
+            "delai_reaction": "30 jours",
+            "cout": "Gratuit (assicurazioni sociali)"
+          }
+        },
+        "assurances": {
+          "iass_ticino": {
+            "nom": "IAS — Istituto delle assicurazioni sociali",
+            "adresse": "Via Ghiringhelli 15a, 6500 Bellinzona",
+            "tel": "091 821 91 11",
+            "site": "https://www.iasticino.ch",
+            "procedure": "AVS, AI, PC, assegni familiari",
+            "delai_reaction": "30 jours pour opposizione",
+            "cout": "Gratuit"
+          },
+          "ufficio_ai_ti": {
+            "nom": "Ufficio AI Ticino",
+            "adresse": "Via Ghiringhelli 15a, 6500 Bellinzona",
+            "tel": "091 821 91 11",
+            "site": "https://www.iasticino.ch/ai",
+            "procedure": "Domanda AI",
+            "delai_reaction": "6-24 mois",
+            "cout": "Gratuit"
+          },
+          "riduzione_premio": {
+            "nom": "Ufficio assicurazione malattia — Riduzione premio",
+            "site": "https://www4.ti.ch/dss/dsp/uam",
+            "procedure": "Domanda annuale",
+            "delai_reaction": "Variable",
+            "cout": "Gratuit"
+          }
+        },
+        "entreprise": {
+          "registro_commercio_ti": {
+            "nom": "Registro di commercio del Cantone Ticino",
+            "adresse": "Via al Fiume 17, 6500 Bellinzona",
+            "tel": "091 814 47 11",
+            "site": "https://www4.ti.ch/di/dg/sg/urc",
+            "procedure": "Iscrizione, mutazione",
+            "delai_reaction": "5-10 jours",
+            "cout": "Émoluments fédéraux"
+          },
+          "promozione_economica_ti": {
+            "nom": "Ufficio per lo sviluppo economico",
+            "site": "https://www4.ti.ch/dfe/de/use",
+            "procedure": "Consulenza imprese",
+            "delai_reaction": "1-2 semaines",
+            "cout": "Gratuit"
+          }
+        }
+      },
+      "formulaires_officiels": {
+        "bail_contestation_conge": {
+          "nom": "Istanza di conciliazione locazione",
+          "url_ou_emplacement": "https://www4.ti.ch/poteri/giudiziario/uffici-di-conciliazione",
+          "support": "Modulo PDF cantonale",
+          "champs_obligatoires": ["parti", "oggetto", "conclusioni", "allegati"]
+        },
+        "dettes_opposition": {
+          "nom": "Opposizione al precetto esecutivo",
+          "url_ou_emplacement": "Sul precetto esecutivo",
+          "support": "Verso del precetto",
+          "champs_obligatoires": ["firma", "termine_10_giorni"]
+        }
+      }
+    }
+  }
+}

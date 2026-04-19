@@ -11,6 +11,7 @@
       "reduction",
       "loyer"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -116,7 +117,33 @@
           "url": "habiter.app"
         }
       },
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Constat du défaut",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Notification écrite au bailleur",
+          "delai": "dans les 7 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai de réparation",
+          "delai": "30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Saisine de l'autorité de conciliation en matière de baux",
+          "delai": "immédiat après défaut du bailleur",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -140,7 +167,58 @@
       "signalement écrit au bailleur",
       "canton",
       "localisation du défaut dans le logement"
-    ]
+    ],
+    "cascades": [
+      {
+        "titre": "Résolution du défaut moisissure",
+        "domaine": "bail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Constat du défaut",
+            "description": "Photographier la moisissure, dater les clichés, noter l'étendue (m²), pièces touchées, signes associés (odeur, condensation).",
+            "delai": "immédiat",
+            "preuve_generee": "Photos horodatées + constat écrit daté"
+          },
+          {
+            "numero": 2,
+            "action": "Notification écrite au bailleur",
+            "description": "Courrier recommandé au bailleur/régie avec photos jointes et mise en demeure de réparer (art. 259a CO).",
+            "delai": "dans les 7 jours",
+            "base_legale": "CO 259a",
+            "preuve_generee": "Accusé de réception postal"
+          },
+          {
+            "numero": 3,
+            "action": "Délai de réparation",
+            "description": "Laisser un délai raisonnable au bailleur pour intervenir (typiquement 30 jours selon gravité).",
+            "delai": "30 jours",
+            "branches": [
+              {
+                "si": "travaux effectués",
+                "alors": "fin du processus"
+              },
+              {
+                "si": "pas d'action",
+                "alors": "etape 4 (consignation et/ou conciliation)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Saisine de l'autorité de conciliation en matière de baux",
+            "description": "Requête gratuite à l'autorité paritaire cantonale pour demander réduction de loyer et/ou consignation (art. 259g CO).",
+            "delai": "immédiat après défaut du bailleur",
+            "base_legale": "CO 259g / CO 274 / CPC 197",
+            "cout": "Gratuit"
+          }
+        ]
+      }
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_defaut_bruit",
@@ -153,6 +231,7 @@
       "défaut",
       "immission"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -249,7 +328,39 @@
           "url": "habiter.app"
         }
       },
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Constat des nuisances",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Notification écrite au bailleur",
+          "delai": "dans les 7 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai d'intervention du bailleur",
+          "delai": "30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Saisine autorité de conciliation en matière de baux",
+          "delai": "immédiat après échec du délai",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Plainte police si nuisance grave",
+          "delai": "à tout moment",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -273,7 +384,65 @@
       "frequence et horaires",
       "signalement écrit au bailleur ou à la régie",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Résolution de nuisances sonores",
+        "domaine": "bail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Constat des nuisances",
+            "description": "Tenir un journal daté des bruits (heure, durée, type). Si possible, enregistrements audio horodatés et témoignages de voisins.",
+            "delai": "immédiat",
+            "preuve_generee": "Journal des nuisances + enregistrements"
+          },
+          {
+            "numero": 2,
+            "action": "Notification écrite au bailleur",
+            "description": "Courrier recommandé à la régie/bailleur détaillant les nuisances et mise en demeure d'agir (bail = fournir chose dans état convenu).",
+            "delai": "dans les 7 jours",
+            "base_legale": "CO 259a",
+            "preuve_generee": "Accusé de réception postal"
+          },
+          {
+            "numero": 3,
+            "action": "Délai d'intervention du bailleur",
+            "description": "Laisser au bailleur un délai raisonnable pour intervenir auprès de l'auteur des nuisances.",
+            "delai": "30 jours",
+            "branches": [
+              {
+                "si": "bruit cesse",
+                "alors": "fin du processus"
+              },
+              {
+                "si": "bruit persiste",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Saisine autorité de conciliation en matière de baux",
+            "description": "Requête gratuite en réduction de loyer et/ou consignation pour défaut non réparé.",
+            "delai": "immédiat après échec du délai",
+            "base_legale": "CO 259g / CPC 197",
+            "cout": "Gratuit"
+          },
+          {
+            "numero": 5,
+            "action": "Plainte police si nuisance grave",
+            "description": "En parallèle, dépôt plainte (tapage nocturne / troubles du voisinage) auprès de la police cantonale si les nuisances sont illicites.",
+            "delai": "à tout moment",
+            "base_legale": "règlements cantonaux de police"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_resiliation_conteste",
@@ -286,6 +455,7 @@
       "abusif",
       "protection"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -390,7 +560,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Vérification de la forme de la résiliation",
+          "delai": "immédiat à réception",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Collecte des éléments de contestation",
+          "delai": "sous 15 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt de la requête en contestation",
+          "delai": "30 jours dès réception du congé",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Audience de conciliation",
+          "delai": "~2 mois après dépôt",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Contestation",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -414,7 +616,58 @@
       "motif invoque par le bailleur",
       "durée du bail",
       "canton"
-    ]
+    ],
+    "cascades": [
+      {
+        "titre": "Contestation d'une résiliation de bail",
+        "domaine": "bail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérification de la forme de la résiliation",
+            "description": "Contrôler formule officielle cantonale, signature du bailleur, respect du délai et terme de congé, motif.",
+            "delai": "immédiat à réception",
+            "preuve_generee": "Copie du congé et enveloppe datée"
+          },
+          {
+            "numero": 2,
+            "action": "Collecte des éléments de contestation",
+            "description": "Rassembler preuves (échanges, travaux, hausses de loyer récentes, motif réel soupçonné) pour établir le caractère abusif ou formel.",
+            "delai": "sous 15 jours",
+            "base_legale": "CO 271 / CO 271a"
+          },
+          {
+            "numero": 3,
+            "action": "Dépôt de la requête en contestation",
+            "description": "Déposer la contestation auprès de l'autorité de conciliation en matière de baux du canton par courrier recommandé.",
+            "delai": "30 jours dès réception du congé",
+            "base_legale": "CO 273 al. 1",
+            "preuve_generee": "Récépissé de dépôt",
+            "cout": "Gratuit"
+          },
+          {
+            "numero": 4,
+            "action": "Audience de conciliation",
+            "description": "Comparution devant l'autorité. En cas d'échec, demander la prolongation du bail (art. 272) ou obtenir une autorisation de procéder au tribunal des baux.",
+            "delai": "~2 mois après dépôt",
+            "branches": [
+              {
+                "si": "accord trouvé",
+                "alors": "PV de conciliation exécutoire"
+              },
+              {
+                "si": "échec",
+                "alors": "saisine du tribunal des baux dans 30 jours"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_loyer_abusif",
@@ -427,6 +680,7 @@
       "rendement",
       "contestation"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -519,7 +773,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Collecte des indices d'abus",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande du formulaire officiel",
+          "delai": "dans les 30 jours de la conclusion",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Saisine autorité de conciliation",
+          "delai": "30 jours dès réception formulaire ou emménagement",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Audience de conciliation",
+          "delai": "sous 60 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action au tribunal des baux",
+          "delai": "30 jours après échec conciliation",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -544,7 +830,65 @@
       "date de debut du bail",
       "canton",
       "taux hypothécaire de référencée"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Contestation d'un loyer abusif",
+        "domaine": "bail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Collecte des indices d'abus",
+            "description": "Relever le loyer payé, le loyer précédent (si disponible via formulaire officiel), les rendements du bailleur, les loyers comparatifs du quartier.",
+            "delai": "immédiat",
+            "preuve_generee": "Dossier chiffré comparatif"
+          },
+          {
+            "numero": 2,
+            "action": "Demande du formulaire officiel",
+            "description": "Demander par écrit au bailleur le formulaire officiel indiquant le loyer précédent (obligatoire dans 15 cantons).",
+            "delai": "dans les 30 jours de la conclusion",
+            "base_legale": "CO 270 / CO 269d",
+            "preuve_generee": "Formulaire officiel daté"
+          },
+          {
+            "numero": 3,
+            "action": "Saisine autorité de conciliation",
+            "description": "Requête en contestation du loyer initial (ou réduction) devant l'autorité paritaire.",
+            "delai": "30 jours dès réception formulaire ou emménagement",
+            "base_legale": "CO 270 / CPC 197",
+            "cout": "Gratuit"
+          },
+          {
+            "numero": 4,
+            "action": "Audience de conciliation",
+            "description": "Présenter les indices (rendement excessif, comparaisons, loyer précédent abusif). Possibilité d'accord transactionnel.",
+            "delai": "sous 60 jours",
+            "branches": [
+              {
+                "si": "accord trouvé",
+                "alors": "fin du processus avec nouveau loyer"
+              },
+              {
+                "si": "échec",
+                "alors": "etape 5"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "action": "Action au tribunal des baux",
+            "description": "Action judiciaire dans les 30 jours suivant délivrance autorisation de procéder.",
+            "delai": "30 jours après échec conciliation",
+            "base_legale": "CO 270 / CPC 209"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_depot_garantie",
@@ -557,6 +901,7 @@
       "restitution",
       "compte bloqué"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -608,6 +953,11 @@
           "ref": "CO 257e",
           "titre": "Surete fournie par le locataire",
           "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_257_e"
+        },
+        {
+          "ref": "LP 63",
+          "titre": "Exécution sur la caution — procédure poursuite",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_63"
         }
       ],
       "jurisprudence": [
@@ -636,7 +986,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "État des lieux de sortie et décompte final",
+          "delai": "le jour de la restitution des clés",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Courrier recommandé de demande de libération",
+          "delai": "sous 30 jours après sortie",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai d'action du bailleur",
+          "delai": "1 an après fin du bail",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Saisine de l'autorité de conciliation",
+          "delai": "immédiat après refus",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -661,7 +1043,60 @@
       "garantie sur compte bloqué ou assurance",
       "canton",
       "dégâts contestes"
-    ]
+    ],
+    "cascades": [
+      {
+        "titre": "Récupération d'une garantie de loyer non restituée",
+        "domaine": "bail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "État des lieux de sortie et décompte final",
+            "description": "Exiger un état des lieux contradictoire signé et demander le décompte écrit des retenues éventuelles invoquées par le bailleur.",
+            "delai": "le jour de la restitution des clés",
+            "base_legale": "CO 267a",
+            "preuve_generee": "Procès-verbal d'état des lieux signé"
+          },
+          {
+            "numero": 2,
+            "action": "Courrier recommandé de demande de libération",
+            "description": "Écrire au bailleur et à la banque détenant la garantie pour demander la libération ; joindre PV et décompte contesté.",
+            "delai": "sous 30 jours après sortie",
+            "base_legale": "CO 257e",
+            "preuve_generee": "Copie + accusé de réception"
+          },
+          {
+            "numero": 3,
+            "action": "Délai d'action du bailleur",
+            "description": "La banque libère automatiquement la garantie si le bailleur n'a pas fait valoir de prétention en justice dans l'année suivant la fin du bail.",
+            "delai": "1 an après fin du bail",
+            "base_legale": "CO 257e al. 3",
+            "branches": [
+              {
+                "si": "aucune action du bailleur",
+                "alors": "libération automatique par la banque"
+              },
+              {
+                "si": "bailleur introduit une action",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Saisine de l'autorité de conciliation",
+            "description": "En cas de refus ou de retenue injustifiée, déposer une requête gratuite auprès de l'autorité de conciliation en matière de baux.",
+            "delai": "immédiat après refus",
+            "base_legale": "CPC 197 / CO 274",
+            "cout": "Gratuit"
+          }
+        ]
+      }
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_charges_contestees",
@@ -674,6 +1109,7 @@
       "chauffage",
       "forfait"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -756,7 +1192,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Demande de consultation du décompte",
+          "delai": "dans les 30 jours de réception du décompte",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Consultation sur place des justificatifs",
+          "delai": "sous 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Contestation écrite motivée",
+          "delai": "dans les 30 jours suivant consultation",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Saisine autorité de conciliation",
+          "delai": "immédiat après refus",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "6 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -780,7 +1248,50 @@
       "forfait ou acompte",
       "decompte reçu ou non",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Contestation des charges accessoires",
+        "domaine": "bail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Demande de consultation du décompte",
+            "description": "Demander par écrit à la régie le décompte détaillé des charges et les pièces justificatives.",
+            "delai": "dans les 30 jours de réception du décompte",
+            "base_legale": "CO 257b",
+            "preuve_generee": "Copie du décompte + justificatifs"
+          },
+          {
+            "numero": 2,
+            "action": "Consultation sur place des justificatifs",
+            "description": "Rendez-vous en régie pour vérifier factures, relevés de consommation, clés de répartition.",
+            "delai": "sous 30 jours",
+            "preuve_generee": "Notes de consultation"
+          },
+          {
+            "numero": 3,
+            "action": "Contestation écrite motivée",
+            "description": "Courrier recommandé listant les postes contestés, les montants et les motifs (charges non prévues au bail, clé de répartition erronée, doubles facturations).",
+            "delai": "dans les 30 jours suivant consultation",
+            "base_legale": "CO 257a / CO 257b",
+            "preuve_generee": "Accusé de réception"
+          },
+          {
+            "numero": 4,
+            "action": "Saisine autorité de conciliation",
+            "description": "Si la régie ne corrige pas, requête gratuite en restitution de charges indues.",
+            "delai": "immédiat après refus",
+            "base_legale": "CO 257b / CPC 197",
+            "cout": "Gratuit"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_sous_location",
@@ -792,6 +1303,7 @@
       "colocation",
       "autorisation"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -903,7 +1415,12 @@
       "accord du bailleur demande ou non",
       "loyer de sous-location prévu",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_travaux_non_faits",
@@ -916,6 +1433,7 @@
       "bailleur",
       "obligation"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1009,7 +1527,16 @@
           "url": "habiter.app"
         }
       },
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "sans délai",
+          "consequence": null,
+          "extracted_from_text": true,
+          "qualitatif": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -1033,7 +1560,11 @@
       "signalement écrit au bailleur",
       "délai depuis la demande",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_augmentation_loyer",
@@ -1046,6 +1577,7 @@
       "taux hypothécaire",
       "contestation"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1131,7 +1663,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Vérification formelle de la hausse",
+          "delai": "immédiat à réception",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Calcul du loyer admissible",
+          "delai": "sous 15 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt de la contestation",
+          "delai": "30 jours dès réception de la hausse",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Audience de conciliation",
+          "delai": "~2 mois après dépôt",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Résiliation / contestation de congé",
+          "delai": "10 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -1156,7 +1720,59 @@
       "formulaire officiel reçu ou non",
       "date de reception",
       "canton"
-    ]
+    ],
+    "cascades": [
+      {
+        "titre": "Contestation d'une hausse de loyer",
+        "domaine": "bail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérification formelle de la hausse",
+            "description": "Contrôler formule officielle cantonale, motivation écrite, respect du délai de préavis (au minimum délai de congé + 10 jours).",
+            "delai": "immédiat à réception",
+            "base_legale": "CO 269d",
+            "preuve_generee": "Copie de la formule officielle"
+          },
+          {
+            "numero": 2,
+            "action": "Calcul du loyer admissible",
+            "description": "Vérifier taux hypothécaire de référence OFL, IPC, hausses de charges invoquées et comparaison statistique. Identifier d'éventuels rendements excessifs.",
+            "delai": "sous 15 jours",
+            "base_legale": "CO 269 / CO 269a"
+          },
+          {
+            "numero": 3,
+            "action": "Dépôt de la contestation",
+            "description": "Requête auprès de l'autorité de conciliation en matière de baux du canton, par recommandé.",
+            "delai": "30 jours dès réception de la hausse",
+            "base_legale": "CO 270b",
+            "preuve_generee": "Accusé de dépôt",
+            "cout": "Gratuit"
+          },
+          {
+            "numero": 4,
+            "action": "Audience de conciliation",
+            "description": "Négociation devant l'autorité paritaire. Accord ou échec conditionnant la suite.",
+            "delai": "~2 mois après dépôt",
+            "branches": [
+              {
+                "si": "accord",
+                "alors": "PV exécutoire, hausse ajustée ou annulée"
+              },
+              {
+                "si": "échec",
+                "alors": "saisine du tribunal des baux dans 30 jours"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_etat_des_lieux",
@@ -1169,6 +1785,7 @@
       "restitution",
       "nettoyage"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1252,7 +1869,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Préparation de l'EDL",
+          "delai": "avant l'EDL officiel",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "EDL contradictoire signé",
+          "delai": "jour de l'EDL",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Notification défauts cachés",
+          "delai": "immédiatement après découverte",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Contestation des dégâts imputés",
+          "delai": "dans les 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Saisine autorité de conciliation",
+          "delai": "immédiat après échec négociation",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -1277,7 +1926,57 @@
       "état des lieux d'entree disponible",
       "nettoyage professionnel effectué ou non",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Contestation ou sécurisation d'un état des lieux",
+        "domaine": "bail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Préparation de l'EDL",
+            "description": "Visite préalable de l'appartement avec liste exhaustive des défauts préexistants. Prendre photos horodatées de chaque pièce.",
+            "delai": "avant l'EDL officiel",
+            "preuve_generee": "Photos + check-list"
+          },
+          {
+            "numero": 2,
+            "action": "EDL contradictoire signé",
+            "description": "Lors de l'EDL, exiger inscription de TOUS les défauts visibles. Ne pas signer si des défauts sont omis — demander annexe manuscrite.",
+            "delai": "jour de l'EDL",
+            "base_legale": "CO 267 / CO 267a",
+            "preuve_generee": "Protocole EDL signé par les deux parties"
+          },
+          {
+            "numero": 3,
+            "action": "Notification défauts cachés",
+            "description": "Défauts découverts après l'EDL : courrier recommandé sous 2-3 jours pour défauts non décelables à l'EDL.",
+            "delai": "immédiatement après découverte",
+            "base_legale": "CO 267a al. 2",
+            "preuve_generee": "Accusé de réception"
+          },
+          {
+            "numero": 4,
+            "action": "Contestation des dégâts imputés",
+            "description": "Si la régie impute des dégâts au locataire à la restitution, contester par écrit en invoquant usure normale et défauts préexistants.",
+            "delai": "dans les 30 jours",
+            "base_legale": "CO 267 / usure normale"
+          },
+          {
+            "numero": 5,
+            "action": "Saisine autorité de conciliation",
+            "description": "Requête gratuite pour trancher la prise en charge des dégâts et restitution de la caution.",
+            "delai": "immédiat après échec négociation",
+            "base_legale": "CO 274 / CPC 197",
+            "cout": "Gratuit"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_sous_location_refusee",
@@ -1289,6 +1988,7 @@
       "autorisation",
       "bailleur"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1371,7 +2071,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -1395,7 +2103,11 @@
       "demande écrite faite ou non",
       "durée et conditions prévues",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_animaux",
@@ -1408,6 +2120,7 @@
       "chat",
       "interdiction"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1470,6 +2183,16 @@
         {
           "ref": "TF 4A_516/2014",
           "resume": "Interdiction de detenir un chat disproportionnee lorsque l animal ne cause aucune nuisance."
+        },
+        {
+          "signature": "4A_328/2021",
+          "tribunal": "TF",
+          "date": "2021-09-28",
+          "resume": "Clause interdisant les animaux. Locataire a un chat. Le TF juge la clause disproportionnée pour un animal ne causant pas de nuisances.",
+          "role": "favorable",
+          "resultat": "favorable_locataire",
+          "from_corpus": true,
+          "match_score": 6
         }
       ],
       "modeleLettre": "Objet : Demande d autorisation de detenir un animal en logement loue\n\nMadame, Monsieur,\n\nJe soussigné(e) [NOM], locataire de l appartement sis [ADRESSE] depuis le [DATE],\n\nSollicite par la présente votre autorisation pour detenir un [TYPE_ANIMAL : CHIEN/CHAT] dans mon logement.\n\nCaracteristiques de l animal :\n- Race / type : [RACE]\n- Taille / poids adulte : [TAILLE]\n- Age : [AGE]\n\nJe m engage a :\n- Veiller à ce que l animal ne cause aucune nuisance (bruit, odeurs, degradations)\n- Assumer l entière responsabilité de tout dommage éventuel (art. 267 CO)\n- Respecter les regles de l immeuble et le reglement de maison\n- Souscrire une assurance RC couvrant les dommages causes par l animal\n\nJe note que la jurisprudence reconnait le droit du locataire a detenir un animal de compagnie en l absence de clause d interdiction ou lorsque l animal ne cause pas de nuisance objective (art. 257f CO).\n\nDans l attente de votre réponse, je vous prie d agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n\n[SIGNATURE]",
@@ -1488,7 +2211,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Contestation clause anti-animaux dans le bail",
+          "delai": "Au moment du contrat",
+          "base_legale": "CO 270b par analogie",
+          "consequence": "Clause abusive peut être écartée"
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -1512,7 +2243,11 @@
       "clause du bail sur les animaux",
       "taille du logement",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_nuisances_voisins",
@@ -1525,6 +2260,7 @@
       "immissions",
       "tapage"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1570,7 +2306,7 @@
       }
     ],
     "reponse": {
-      "explication": "Les nuisances de voisinage engagent la responsabilité du bailleur qui doit faire respecter le reglement (art. 257f CO). Le locataire victime peut exiger l intervention du bailleur. En cas d inaction, reduction de loyer possible (art. 259a CO). Le perturbateur s expose a résiliation avec 30 jours de préavis (art. 257f al. 3 CO). Le tapage nocturne (22h-7h) est une contravention de police. Les immissions excessives rélevént aussi de l art. 684 CC.",
+      "explication": "Les nuisances de voisinage engagent la responsabilité du bailleur qui doit faire respecter le reglement (art. 257f CO). Le locataire victime peut exiger l intervention du bailleur. En cas d inaction, reduction de loyer possible (art. 259a CO). Le perturbateur s expose a résiliation avec 30 jours de préavis (art. 257f al. 3 CO). Le tapage nocturne (22h-7h) est une contravention de police. Les immissions excessives rélevént aussi de l art. 684 CC.\n\nCadre légal applicable : CO 257f (Violation du devoir de diligence), CO 259a (Droits du locataire en cas de défaut), CC 684 (Immissions excessives). En cas de situation concrète, les délais, montants et autorités compétentes varient selon le canton et les faits du dossier. Une analyse personnalisée via le triage JusticePourtous ou un professionnel du droit est recommandée.",
       "articles": [
         {
           "ref": "CO 257f",
@@ -1624,7 +2360,15 @@
           "url": "habiter.app"
         }
       },
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Résiliation / contestation de congé",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -1649,7 +2393,11 @@
       "signalement à la régie ou au bailleur",
       "preuves recueillies",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_renovation_forcee",
@@ -1662,6 +2410,7 @@
       "relogement",
       "reduction"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1706,7 +2455,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le locataire doit tolérér les travaux nécessaires (art. 260 al. 1 CO). Le bailleur doit les annoncer en temps utile. Si les travaux restreignent l usage, reduction de loyer proportionnelle (art. 259d CO). Si le logement est inhabitable, le bailleur doit proposer un relogement a ses frais. Après travaux de plus-value, augmentation de loyer possible dans les limites de l art. 269a CO, contestable dans les 30 jours.",
+      "explication": "Le locataire doit tolérér les travaux nécessaires (art. 260 al. 1 CO). Le bailleur doit les annoncer en temps utile. Si les travaux restreignent l usage, reduction de loyer proportionnelle (art. 259d CO). Si le logement est inhabitable, le bailleur doit proposer un relogement a ses frais. Après travaux de plus-value, augmentation de loyer possible dans les limites de l art. 269a CO, contestable dans les 30 jours.\n\nCadre légal applicable : CO 260 (Travaux de renovation), CO 259d (Reduction du loyer), CO 269a (Loyers abusifs — cas particuliers). En cas de situation concrète, les délais, montants et autorités compétentes varient selon le canton et les faits du dossier. Une analyse personnalisée via le triage JusticePourtous ou un professionnel du droit est recommandée.",
       "articles": [
         {
           "ref": "CO 260",
@@ -1755,7 +2504,15 @@
           "url": "habiter.app"
         }
       },
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -1780,7 +2537,11 @@
       "impact sur l'habitabilite",
       "préavis reçu",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_loyer_initial_abusif",
@@ -1793,6 +2554,7 @@
       "contestation",
       "formulaire"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1835,7 +2597,7 @@
       }
     ],
     "reponse": {
-      "explication": "Contestation possible dans les 30 jours suivant la reception de la chose (art. 270 al. 1 CO) si : (1) contraint par nécessité ou marche, ET (2) loyer sensiblement supérieur au précédent. Dans les cantons VD, GE, FR, ZH, NE, formule officielle obligatoire. Sans formule, le loyer est contestable en tout temps. Le TF considere qu une hausse de plus de 10% est sensible et doit être justifiee.",
+      "explication": "Contestation possible dans les 30 jours suivant la reception de la chose (art. 270 al. 1 CO) si : (1) contraint par nécessité ou marche, ET (2) loyer sensiblement supérieur au précédent. Dans les cantons VD, GE, FR, ZH, NE, formule officielle obligatoire. Sans formule, le loyer est contestable en tout temps. Le TF considere qu une hausse de plus de 10% est sensible et doit être justifiee.\n\nCadre légal applicable : CO 270 (Contestation du loyer initial), CO 269 (Loyers abusifs — principe), CO 269d (Notification d augmentation). En cas de situation concrète, les délais, montants et autorités compétentes varient selon le canton et les faits du dossier. Une analyse personnalisée via le triage JusticePourtous ou un professionnel du droit est recommandée.",
       "articles": [
         {
           "ref": "CO 270",
@@ -1884,7 +2646,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Contestation",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -1909,7 +2679,11 @@
       "formulaire officiel reçu",
       "date d'entree dans le logement",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_frais_chauffage",
@@ -1922,6 +2696,7 @@
       "decompte",
       "accessoires"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2015,7 +2790,15 @@
           "url": "habiter.app"
         }
       },
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO/OBLF état 2025-01-01",
@@ -2040,7 +2823,11 @@
       "decompte détaillé reçu ou non",
       "type de chauffage",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_parking",
@@ -2053,6 +2840,7 @@
       "garage",
       "accessoire"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2097,7 +2885,7 @@
       }
     ],
     "reponse": {
-      "explication": "Si la place est liee au bail principal (même contrat), elle est un accessoire (art. 253a CO) et suit le même régime de protection. Le bailleur ne peut la résilier separement. Si c est un contrat séparé, les délais de résiliation sont de 2 semaines (places non couvertes) ou 3 mois (garages, art. 266c CO par analogie). Le loyer du parking est soumis aux regles sur les loyers abusifs.",
+      "explication": "Si la place est liee au bail principal (même contrat), elle est un accessoire (art. 253a CO) et suit le même régime de protection. Le bailleur ne peut la résilier separement. Si c est un contrat séparé, les délais de résiliation sont de 2 semaines (places non couvertes) ou 3 mois (garages, art. 266c CO par analogie). Le loyer du parking est soumis aux regles sur les loyers abusifs.\n\nCadre légal applicable : CO 253a (Champ d application — baux a loyer), CO 266c (Delais de conge). En cas de situation concrète, les délais, montants et autorités compétentes varient selon le canton et les faits du dossier. Une analyse personnalisée via le triage JusticePourtous ou un professionnel du droit est recommandée.",
       "articles": [
         {
           "ref": "CO 253a",
@@ -2114,6 +2902,16 @@
         {
           "ref": "TF 4A_198/2014",
           "resume": "Place de parking louee avec le logement : le bailleur ne peut résilier le parking seul."
+        },
+        {
+          "signature": "4A_247/2020",
+          "tribunal": "TF",
+          "date": "2020-04-07",
+          "resume": "Bailleur résilie uniquement la place de parc. Le TF confirme la validité si le bail de parking est indépendant du bail principal.",
+          "role": "favorable",
+          "resultat": "favorable_bailleur",
+          "from_corpus": true,
+          "match_score": 8
         }
       ],
       "modeleLettre": "",
@@ -2132,7 +2930,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Vérification du contrat",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Notification écrite au bailleur",
+          "delai": "dans les 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai de réponse",
+          "delai": "30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Saisine de l'autorité paritaire de conciliation des baux",
+          "delai": "30 jours pour contestation de résiliation; 5 ans pour créances",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Résiliation / contestation de congé",
+          "delai": "2 semaine",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -2156,7 +2986,56 @@
       "nature du litige",
       "préavis reçu",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Litige sur la location d'une place de parc",
+        "domaine": "bail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérification du contrat",
+            "description": "Identifier si la place est louée séparément (CO 253a) ou liée au logement principal; rassembler le contrat et les factures.",
+            "delai": "immédiat",
+            "preuve_generee": "Contrat + analyse"
+          },
+          {
+            "numero": 2,
+            "action": "Notification écrite au bailleur",
+            "description": "Adresser une lettre recommandée précisant le grief (loyer abusif, résiliation, défaut) et les attentes.",
+            "delai": "dans les 30 jours",
+            "base_legale": "CO 253a / CO 266c",
+            "preuve_generee": "Lettre AR"
+          },
+          {
+            "numero": 3,
+            "action": "Délai de réponse",
+            "delai": "30 jours",
+            "branches": [
+              {
+                "si": "accord trouvé",
+                "alors": "fin (régularisation)"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 4 (autorité de conciliation)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Saisine de l'autorité paritaire de conciliation des baux",
+            "description": "Requête gratuite à l'autorité paritaire cantonale (CPC 197 ss).",
+            "delai": "30 jours pour contestation de résiliation; 5 ans pour créances",
+            "base_legale": "CO 274 / CPC 197"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_cave_grenier",
@@ -2169,6 +3048,7 @@
       "accessoire",
       "dépôt"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2213,7 +3093,7 @@
       }
     ],
     "reponse": {
-      "explication": "La cave ou grenier attribue avec le logement est un accessoire du bail (art. 253a CO). Le bailleur doit le maintenir en état. Un local humide ou inonde constitue un défaut (art. 259a CO) ouvrant droit aux memes remedes. Le bailleur ne peut pas retirer un local attribue sans accord du locataire. En cas de vol, le bailleur n est responsable que s il a négligé la sécurité (serrures defectueuses).",
+      "explication": "La cave ou grenier attribue avec le logement est un accessoire du bail (art. 253a CO). Le bailleur doit le maintenir en état. Un local humide ou inonde constitue un défaut (art. 259a CO) ouvrant droit aux memes remedes. Le bailleur ne peut pas retirer un local attribue sans accord du locataire. En cas de vol, le bailleur n est responsable que s il a négligé la sécurité (serrures defectueuses).\n\nCadre légal applicable : CO 253a (Champ d application), CO 259a (Droits du locataire en cas de défaut), CO 256 (Obligation de delivrer la chose). En cas de situation concrète, les délais, montants et autorités compétentes varient selon le canton et les faits du dossier. Une analyse personnalisée via le triage JusticePourtous ou un professionnel du droit est recommandée.",
       "articles": [
         {
           "ref": "CO 253a",
@@ -2235,6 +3115,16 @@
         {
           "ref": "TF 4A_129/2011",
           "resume": "Le retrait d une cave attribuee sans accord du locataire constitue une modification unilaterale du bail."
+        },
+        {
+          "signature": "4A_172/2022",
+          "tribunal": "TF",
+          "date": "2022-04-19",
+          "resume": "Infiltrations d'eau récurrentes dans la cave. Le TF accorde une réduction de 5% car la cave n'est pas un espace de vie principal.",
+          "role": "favorable",
+          "resultat": "favorable_locataire",
+          "from_corpus": true,
+          "match_score": 8
         }
       ],
       "modeleLettre": "",
@@ -2253,7 +3143,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Constat de l'usage et défauts",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Notification écrite au bailleur",
+          "delai": "dans les 14 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai de réparation/réponse",
+          "delai": "30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Saisine de l'autorité paritaire de conciliation des baux",
+          "delai": "à tout moment selon objet",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -2277,7 +3193,56 @@
       "cave ou grenier mentionne dans le bail",
       "signalement au bailleur",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Litige sur cave, grenier ou local accessoire",
+        "domaine": "bail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Constat de l'usage et défauts",
+            "description": "Documenter l'utilisation du local accessoire (cave, grenier), photographier d'éventuels défauts (humidité, accès).",
+            "delai": "immédiat",
+            "preuve_generee": "Photos horodatées + inventaire"
+          },
+          {
+            "numero": 2,
+            "action": "Notification écrite au bailleur",
+            "description": "Lettre recommandée précisant le défaut ou le différend, demande de réparation ou de mise en jouissance (CO 256/259a).",
+            "delai": "dans les 14 jours",
+            "base_legale": "CO 253a / CO 256 / CO 259a",
+            "preuve_generee": "Lettre AR + photos"
+          },
+          {
+            "numero": 3,
+            "action": "Délai de réparation/réponse",
+            "delai": "30 jours",
+            "branches": [
+              {
+                "si": "réparation effectuée",
+                "alors": "fin"
+              },
+              {
+                "si": "absence de réaction",
+                "alors": "etape 4 (conciliation)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Saisine de l'autorité paritaire de conciliation des baux",
+            "description": "Requête gratuite pour faire trancher (réduction de loyer, exécution).",
+            "delai": "à tout moment selon objet",
+            "base_legale": "CO 259g / CPC 197"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_colocation",
@@ -2290,6 +3255,7 @@
       "depart",
       "contrat"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2335,7 +3301,7 @@
       }
     ],
     "reponse": {
-      "explication": "En bail solidaire, tous les colocataires sont solidairement responsables du loyer (art. 143 ss CO). Le bailleur peut réclamer l intégralité a n importe lequel. Un colocataire ne peut résilier sa part sans accord de tous ET du bailleur. Le depart d un colocataire ne libéré pas les autres. Pour sortir de la solidarite : avenant au bail ou résiliation par tous. En baux individuels, chacun est responsable de sa part. La sous-location (un titulaire sous-loue) est régie par l art. 262 CO.",
+      "explication": "En bail solidaire, tous les colocataires sont solidairement responsables du loyer (art. 143 ss CO). Le bailleur peut réclamer l intégralité a n importe lequel. Un colocataire ne peut résilier sa part sans accord de tous ET du bailleur. Le depart d un colocataire ne libéré pas les autres. Pour sortir de la solidarite : avenant au bail ou résiliation par tous. En baux individuels, chacun est responsable de sa part. La sous-location (un titulaire sous-loue) est régie par l art. 262 CO.\n\nCadre légal applicable : CO 143 (Solidarite — principe), CO 262 (Sous-location), CO 266c (Delais de conge). En cas de situation concrète, les délais, montants et autorités compétentes varient selon le canton et les faits du dossier. Une analyse personnalisée via le triage JusticePourtous ou un professionnel du droit est recommandée.",
       "articles": [
         {
           "ref": "CO 143",
@@ -2357,6 +3323,16 @@
         {
           "ref": "TF 4A_524/2011",
           "resume": "En bail solidaire, la résiliation n est valable que si elle emane de tous les colocataires."
+        },
+        {
+          "signature": "4A_197/2020",
+          "tribunal": "TF",
+          "date": "2020-05-12",
+          "resume": "Un colocataire quitte le logement. Le TF confirme la responsabilité solidaire de tous les co-titulaires du bail.",
+          "role": "favorable",
+          "resultat": "favorable_bailleur",
+          "from_corpus": true,
+          "match_score": 8
         }
       ],
       "modeleLettre": "Objet : Demande d'ajout d'un colocataire au bail\n\n[NOM DU BAILLEUR / RÉGIE]\n[ADRESSE DU BAILLEUR]\n\n[LIEU], le [DATE]\n\nMadame, Monsieur,\n\nLocataire(s) de l'appartement sis [ADRESSE DU LOGEMENT] en vertu du contrat de bail du [DATE DU BAIL], nous souhaitons par la présente solliciter l'ajout de [NOM, PRÉNOM DU NOUVEAU COLOCATAIRE] en qualité de colocataire solidaire au bail.\n\nConformément à l'art. 143 ss CO régissant la solidarité, le/la nouveau/nouvelle colocataire s'engage à assumer les obligations du bail de manière solidaire avec les colocataires existants.\n\nInformations sur le/la nouveau/nouvelle colocataire :\n- Nom et prénom : [NOM, PRÉNOM]\n- Date de naissance : [DATE DE NAISSANCE]\n- Profession : [PROFESSION]\n- Revenu mensuel : CHF [MONTANT]\n\nNous vous prions de bien vouloir établir un avenant au contrat de bail intégrant ce nouveau colocataire.\n\nAnnexes : [EXTRAIT DU REGISTRE DES POURSUITES, ATTESTATION D'EMPLOI DU NOUVEAU COLOCATAIRE]\n\nVeuillez agréer, Madame, Monsieur, nos salutations distinguées.\n\n[NOMS ET SIGNATURES DE TOUS LES COLOCATAIRES ACTUELS]\n[NOM ET SIGNATURE DU NOUVEAU COLOCATAIRE]",
@@ -2375,7 +3351,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Résiliation colocation",
+          "delai": "3 mois de préavis (bail d'habitation)",
+          "base_legale": "CO 266c",
+          "consequence": "Préavis usuel applicable sauf clause spéciale"
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -2399,7 +3383,11 @@
       "nombre de colocataires",
       "nature du litige",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_deces_locataire",
@@ -2412,6 +3400,7 @@
       "héritiers",
       "résiliation"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2454,7 +3443,7 @@
       }
     ],
     "reponse": {
-      "explication": "Au décès, le bail passe aux héritiers (art. 560 CC). Les héritiers peuvent résilier avec le délai légal pour le prochain terme (art. 266i CO), préavis 3 mois minimum. Le conjoint survivant à un droit légal de reprise (art. 121 CC). Le bailleur ne peut pas résilier au motif du décès. Les héritiers repondent des dettes de loyer dans la limite de la succession acceptee. En cas de repudiation, pas de responsabilité pour les dettes du bail.",
+      "explication": "Au décès, le bail passe aux héritiers (art. 560 CC). Les héritiers peuvent résilier avec le délai légal pour le prochain terme (art. 266i CO), préavis 3 mois minimum. Le conjoint survivant à un droit légal de reprise (art. 121 CC). Le bailleur ne peut pas résilier au motif du décès. Les héritiers repondent des dettes de loyer dans la limite de la succession acceptee. En cas de repudiation, pas de responsabilité pour les dettes du bail.\n\nCadre légal applicable : CO 266i (Resiliation par les héritiers), CC 560 (Acquisition de la succession), CC 121 (Logement familial). En cas de situation concrète, les délais, montants et autorités compétentes varient selon le canton et les faits du dossier. Une analyse personnalisée via le triage JusticePourtous ou un professionnel du droit est recommandée.",
       "articles": [
         {
           "ref": "CO 266i",
@@ -2476,6 +3465,16 @@
         {
           "ref": "TF 4A_461/2015",
           "resume": "Les héritiers peuvent résilier avec le délai légal sans attendre le terme contractuel."
+        },
+        {
+          "signature": "4A_516/2017",
+          "tribunal": "TF",
+          "date": "2017-12-19",
+          "resume": "Locataire quitte avant terme et propose un remplaçant solvable. Le bailleur refuse sans motif valable. Le TF libère le locataire.",
+          "role": "favorable",
+          "resultat": "favorable_locataire",
+          "from_corpus": true,
+          "match_score": 6
         }
       ],
       "modeleLettre": "Objet : Resiliation du bail suite au décès du locataire\n\nMadame, Monsieur,\n\nEn qualite d héritier(e) de feu [NOM], locataire au [ADRESSE], je résilié le bail conformement a l art. 266i CO, avec effet au [PROCHAIN TERME LÉGAL].\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
@@ -2494,7 +3493,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO/CC état 2025-01-01",
@@ -2518,7 +3525,11 @@
       "bail au nom du defunt seul ou conjoint",
       "héritiers connus",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_faillite_locataire",
@@ -2531,6 +3542,7 @@
       "garantie",
       "résiliation"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2572,7 +3584,7 @@
       }
     ],
     "reponse": {
-      "explication": "En cas de faillite, le bailleur peut exiger des sûretés pour les loyers futurs dans un délai raisonnable (art. 266h CO). Sans sûretés, résiliation immédiate possible. La faillite ne met pas fin automatiquement au bail. L administration de la faillite decide du maintien ou de la résiliation. Le dépôt de garantie (art. 257e CO) couvre en priorite les arrieres. En cas de poursuites sans faillite, le bailleur ne peut résilier que pour retard de paiement (art. 257d CO).",
+      "explication": "En cas de faillite, le bailleur peut exiger des sûretés pour les loyers futurs dans un délai raisonnable (art. 266h CO). Sans sûretés, résiliation immédiate possible. La faillite ne met pas fin automatiquement au bail. L administration de la faillite decide du maintien ou de la résiliation. Le dépôt de garantie (art. 257e CO) couvre en priorite les arrieres. En cas de poursuites sans faillite, le bailleur ne peut résilier que pour retard de paiement (art. 257d CO).\n\nCadre légal applicable : CO 266h (Faillite du locataire), CO 257d (Retard de paiement du loyer), CO 257e (Suretes du locataire). En cas de situation concrète, les délais, montants et autorités compétentes varient selon le canton et les faits du dossier. Une analyse personnalisée via le triage JusticePourtous ou un professionnel du droit est recommandée.",
       "articles": [
         {
           "ref": "CO 266h",
@@ -2594,6 +3606,16 @@
         {
           "ref": "TF 4A_182/2013",
           "resume": "Le délai raisonnable pour fournir des sûretés après faillite est en général de 60 jours."
+        },
+        {
+          "signature": "4A_88/2021",
+          "tribunal": "TF",
+          "date": "2021-04-13",
+          "resume": "Bailleur retient la garantie 8 mois après la fin du bail sans justification. Le TF ordonne la libération immédiate de la garantie avec intérêts.",
+          "role": "favorable",
+          "resultat": "favorable_locataire",
+          "from_corpus": true,
+          "match_score": 8
         }
       ],
       "modeleLettre": "",
@@ -2617,7 +3639,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Information de la masse en faillite et du bailleur",
+          "delai": "dès l'ouverture de la faillite",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande de sûretés au locataire failli",
+          "delai": "sans délai dès connaissance de la faillite",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai pour fournir les sûretés",
+          "delai": "30 jours (raisonnable)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Résiliation extraordinaire et restitution",
+          "delai": "immédiat après échéance des 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -2641,7 +3689,56 @@
       "loyers en retard",
       "sûretés demandees",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Conséquences de la faillite du locataire sur le bail",
+        "domaine": "bail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Information de la masse en faillite et du bailleur",
+            "description": "Communiquer l'ouverture de faillite à l'office des faillites et au bailleur; rassembler le contrat et les arriérés.",
+            "delai": "dès l'ouverture de la faillite",
+            "preuve_generee": "Notification écrite + extrait OFF"
+          },
+          {
+            "numero": 2,
+            "action": "Demande de sûretés au locataire failli",
+            "description": "Le bailleur peut, en cours de bail, exiger des sûretés pour les loyers à venir (CO 266h); à défaut, résilier de manière anticipée.",
+            "delai": "sans délai dès connaissance de la faillite",
+            "base_legale": "CO 266h / CO 257d / CO 257e",
+            "preuve_generee": "Lettre AR exigeant sûretés"
+          },
+          {
+            "numero": 3,
+            "action": "Délai pour fournir les sûretés",
+            "delai": "30 jours (raisonnable)",
+            "branches": [
+              {
+                "si": "sûretés fournies par la masse",
+                "alors": "continuation du bail"
+              },
+              {
+                "si": "absence de sûretés",
+                "alors": "etape 4 (résiliation extraordinaire)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Résiliation extraordinaire et restitution",
+            "description": "Résilier le bail avec effet immédiat (CO 266h) puis demander restitution; produire la créance dans la faillite.",
+            "delai": "immédiat après échéance des 30 jours",
+            "base_legale": "CO 266h / LP 211"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_changement_proprietaire",
@@ -2653,6 +3750,7 @@
       "transfert",
       "nouveau bailleur"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2742,7 +3840,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Maintien du bail après vente",
+          "delai": "Immédiat et automatique",
+          "base_legale": "CO 261",
+          "consequence": "Le nouveau propriétaire reprend le bail en l'état"
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -2766,7 +3872,11 @@
       "bail en cours ou renouvele",
       "conge reçu du nouveau propriétaire",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_droit_preemption",
@@ -2779,6 +3889,7 @@
       "immeuble",
       "locataire"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2822,7 +3933,7 @@
       }
     ],
     "reponse": {
-      "explication": "En droit suisse, le locataire n a PAS de droit de preemption légal. Un tel droit n existe que s il est convenu contractuellement (art. 216 ss CO) ou inscrit au régistre foncier. A Genève, la LDTR prevoit certaines restrictions de vente d appartements loues. Le locataire est protégé par le transfert automatique du bail (art. 261 CO) mais ne peut pas empecher la vente ni exiger d acheter.",
+      "explication": "En droit suisse, le locataire n a PAS de droit de preemption légal. Un tel droit n existe que s il est convenu contractuellement (art. 216 ss CO) ou inscrit au régistre foncier. A Genève, la LDTR prevoit certaines restrictions de vente d appartements loues. Le locataire est protégé par le transfert automatique du bail (art. 261 CO) mais ne peut pas empecher la vente ni exiger d acheter.\n\nCadre légal applicable : CO 216 (Droit de preemption conventionnel), CO 261 (Alienation de la chose louee). En cas de situation concrète, les délais, montants et autorités compétentes varient selon le canton et les faits du dossier. Une analyse personnalisée via le triage JusticePourtous ou un professionnel du droit est recommandée.",
       "articles": [
         {
           "ref": "CO 216",
@@ -2839,6 +3950,16 @@
         {
           "ref": "TF 4A_87/2012",
           "resume": "Le locataire n a pas de droit de preemption légal ; seul un accord contractuel peut en conferer un."
+        },
+        {
+          "signature": "4A_163/2021",
+          "tribunal": "TF",
+          "date": "2021-02-09",
+          "resume": "Vente de l'immeuble en PPE. Le TF rappelle que le locataire n'a pas de droit de préemption légal sauf clause contractuelle.",
+          "role": "favorable",
+          "resultat": "favorable_bailleur",
+          "from_corpus": true,
+          "match_score": 14
         }
       ],
       "modeleLettre": "",
@@ -2857,7 +3978,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Vérification de l'existence du droit",
+          "delai": "immédiat dès information de la vente",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Notification de l'intention d'exercer le droit",
+          "delai": "3 mois dès notification (sauf clause spéciale)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Conclusion de la vente aux conditions notifiées",
+          "delai": "selon convention",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action judiciaire en exécution du droit",
+          "delai": "selon procédure",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -2881,7 +4028,56 @@
       "type de bien (logement ou commercial)",
       "notification de vente reçue",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Exercice du droit de préemption du locataire",
+        "domaine": "bail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérification de l'existence du droit",
+            "description": "Lire le contrat de bail / acte notarié pour identifier la clause de préemption (CO 216) ou le droit légal applicable.",
+            "delai": "immédiat dès information de la vente",
+            "preuve_generee": "Note d'analyse contractuelle"
+          },
+          {
+            "numero": 2,
+            "action": "Notification de l'intention d'exercer le droit",
+            "description": "Adresser une déclaration formelle (recommandée) au vendeur dans le délai prévu (souvent 3 mois dès notification de la vente).",
+            "delai": "3 mois dès notification (sauf clause spéciale)",
+            "base_legale": "CO 216 / CC 681",
+            "preuve_generee": "Lettre AR"
+          },
+          {
+            "numero": 3,
+            "action": "Conclusion de la vente aux conditions notifiées",
+            "delai": "selon convention",
+            "branches": [
+              {
+                "si": "vente conclue avec le préemptaire",
+                "alors": "transfert de propriété (fin)"
+              },
+              {
+                "si": "refus du vendeur ou contestation",
+                "alors": "etape 4 (action judiciaire)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Action judiciaire en exécution du droit",
+            "description": "Saisir le tribunal civil pour faire exécuter le droit de préemption.",
+            "delai": "selon procédure",
+            "base_legale": "CO 216 / CC 681"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_prolongation",
@@ -2893,6 +4089,7 @@
       "conge",
       "consequences penibles"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2940,7 +4137,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le locataire peut demander une prolongation si la fin du bail cause des consequences penibles (art. 272 CO). Maximum 4 ans pour les logements (art. 272b CO), en une ou deux fois. Le juge considere la situation familiale, l age, la sante, le marche et les efforts de recherche. Demande dans les 30 jours du conge, a l autorite de conciliation (art. 273 CO). Peut être assortie de conditions (adaptation du loyer).",
+      "explication": "Le locataire peut demander une prolongation si la fin du bail cause des consequences penibles (art. 272 CO). Maximum 4 ans pour les logements (art. 272b CO), en une ou deux fois. Le juge considere la situation familiale, l age, la sante, le marche et les efforts de recherche. Demande dans les 30 jours du conge, a l autorite de conciliation (art. 273 CO). Peut être assortie de conditions (adaptation du loyer).\n\nCadre légal applicable : CO 272 (Prolongation — conditions), CO 272b (Prolongation — durée), CO 273 (Delai pour contester et prolonger). En cas de situation concrète, les délais, montants et autorités compétentes varient selon le canton et les faits du dossier. Une analyse personnalisée via le triage JusticePourtous ou un professionnel du droit est recommandée.",
       "articles": [
         {
           "ref": "CO 272",
@@ -2989,7 +4186,21 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "4 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -3014,7 +4225,11 @@
       "durée de prolongation souhaitee",
       "recherches de logement effectuées",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_expulsion",
@@ -3026,6 +4241,7 @@
       "exécution forcee",
       "huissier"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3068,7 +4284,7 @@
       }
     ],
     "reponse": {
-      "explication": "L expulsion ne peut se faire que sur jugement exécutoire. Le bailleur ne peut jamais procéder lui-même (justice privee interdite). Après résiliation, requete d evacuation au tribunal. Si conge contesté, le tribunal statue d abord. Jugement en force : exécution par huissier (art. 343 CPC). Le locataire peut demander un sursis d exécution en cas de circonstances exceptionnelles. L aide sociale peut intervenir pour le relogement d urgence.",
+      "explication": "L expulsion ne peut se faire que sur jugement exécutoire. Le bailleur ne peut jamais procéder lui-même (justice privee interdite). Après résiliation, requete d evacuation au tribunal. Si conge contesté, le tribunal statue d abord. Jugement en force : exécution par huissier (art. 343 CPC). Le locataire peut demander un sursis d exécution en cas de circonstances exceptionnelles. L aide sociale peut intervenir pour le relogement d urgence.\n\nCadre légal applicable : CPC 343 (Execution forcee), CO 267 (Restitution de la chose). En cas de situation concrète, les délais, montants et autorités compétentes varient selon le canton et les faits du dossier. Une analyse personnalisée via le triage JusticePourtous ou un professionnel du droit est recommandée.",
       "articles": [
         {
           "ref": "CPC 343",
@@ -3085,6 +4301,16 @@
         {
           "ref": "TF 4A_603/2016",
           "resume": "Sursis a l evacuation accorde pour courte durée quand le locataire demontre qu il sera sans logement."
+        },
+        {
+          "signature": "4A_478/2021",
+          "tribunal": "TF",
+          "date": "2021-11-02",
+          "resume": "Bailleur réclame CHF 6'000 pour des dégâts à la sortie. Le TF réduit à CHF 1'800 après distinction usure normale/dommages.",
+          "role": "favorable",
+          "resultat": "partiellement_favorable_locataire",
+          "from_corpus": true,
+          "match_score": 5
         }
       ],
       "modeleLettre": "Objet : Demande de prolongation du bail — art. 272 CO\n\nAutorité de conciliation en matière de baux à loyer\n[ADRESSE DE L'AUTORITÉ — CANTON]\n\n[LIEU], le [DATE]\n\nMadame, Monsieur,\n\nLocataire de l'appartement sis [ADRESSE DU LOGEMENT], j'ai reçu un congé pour le [DATE DE FIN DU BAIL].\n\nPar la présente, je sollicite une prolongation de bail au sens de l'art. 272 al. 1 CO, la résiliation entraînant pour moi et ma famille des conséquences pénibles qui ne se justifient pas au regard des intérêts du bailleur.\n\nMotifs justifiant la prolongation :\n- [MOTIF 1 : EX. AUCUN LOGEMENT DE REMPLACEMENT TROUVÉ MALGRÉ DES RECHERCHES ACTIVES]\n- [MOTIF 2 : EX. ENFANTS SCOLARISÉS DANS LE QUARTIER]\n- [MOTIF 3 : EX. SITUATION FINANCIÈRE NE PERMETTANT PAS UN LOYER PLUS ÉLEVÉ]\n\nJe demande une prolongation de [DURÉE SOUHAITÉE — MAX. 4 ANS POUR HABITATION, ART. 272B CO] aux mêmes conditions.\n\nConformément à l'art. 273 al. 1 CO, la présente demande est déposée dans le délai de 30 jours dès réception du congé.\n\nAnnexes : [COPIE DU BAIL, AVIS DE RÉSILIATION, PREUVES DE RECHERCHE DE LOGEMENT]\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[NOM, PRÉNOM]\n[ADRESSE COMPLÈTE]\n[SIGNATURE]",
@@ -3113,7 +4339,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Analyse du motif d'expulsion",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Régularisation si possible",
+          "delai": "dans les 30 jours de la sommation",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Contestation de la résiliation",
+          "delai": "dans les 30 jours dès réception du congé",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Audience conciliation / tribunal",
+          "delai": "selon convocation",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure judiciaire d'expulsion",
+          "delai": "respecter les délais du tribunal",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO/CPC état 2025-01-01",
@@ -3137,7 +4395,65 @@
       "date prévue de l'expulsion",
       "recours en cours",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Défense face à une procédure d'expulsion",
+        "domaine": "bail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Analyse du motif d'expulsion",
+            "description": "Identifier le motif (loyer impayé CO 257d, défaut grave, fin de bail). Vérifier le respect des délais et formes de résiliation.",
+            "delai": "immédiat",
+            "preuve_generee": "Analyse écrite du cas"
+          },
+          {
+            "numero": 2,
+            "action": "Régularisation si possible",
+            "description": "Si loyer impayé : payer l'intégralité dans le délai comminatoire de 30 jours pour éviter la résiliation. Conserver preuve de paiement.",
+            "delai": "dans les 30 jours de la sommation",
+            "base_legale": "CO 257d",
+            "preuve_generee": "Reçu de paiement"
+          },
+          {
+            "numero": 3,
+            "action": "Contestation de la résiliation",
+            "description": "Requête à l'autorité de conciliation en contestation de congé dans les 30 jours, ou demande de prolongation de bail (CO 272).",
+            "delai": "dans les 30 jours dès réception du congé",
+            "base_legale": "CO 271 / CO 271a / CO 272",
+            "cout": "Gratuit"
+          },
+          {
+            "numero": 4,
+            "action": "Audience conciliation / tribunal",
+            "description": "Présenter les arguments : congé abusif, absence de motif, prolongation pour chercher un autre logement.",
+            "delai": "selon convocation",
+            "branches": [
+              {
+                "si": "accord / prolongation",
+                "alors": "fin du processus avec délai supplémentaire"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 5"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "action": "Procédure judiciaire d'expulsion",
+            "description": "Face à une requête d'expulsion (protection judiciaire / cas clair), se défendre avec avocat ou permanence ASLOCA. Demander sursis humanitaire si situation extrême.",
+            "delai": "respecter les délais du tribunal",
+            "base_legale": "CPC 257 / LP 283"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_etat_lieux_conteste",
@@ -3150,6 +4466,7 @@
       "usure",
       "sortie"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3196,7 +4513,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le locataire restitué dans l état d une utilisation conforme (art. 267 al. 1 CO). L usure normale n est pas a sa charge. La table paritaire (ASLOCA/SVIT) fixe la durée de vie (peinture 8-10 ans, moquette 10 ans, stores 14 ans). Au-dela, aucun dedommagement. Le bailleur doit signaler les defauts immédiatement (art. 267a CO), sinon perte de droits. Le locataire peut contester les retenues sur garantie. Le fardeau de la preuve des dégâts incombe au bailleur.",
+      "explication": "Le locataire restitué dans l état d une utilisation conforme (art. 267 al. 1 CO). L usure normale n est pas a sa charge. La table paritaire (ASLOCA/SVIT) fixe la durée de vie (peinture 8-10 ans, moquette 10 ans, stores 14 ans). Au-dela, aucun dedommagement. Le bailleur doit signaler les defauts immédiatement (art. 267a CO), sinon perte de droits. Le locataire peut contester les retenues sur garantie. Le fardeau de la preuve des dégâts incombe au bailleur.\n\nCadre légal applicable : CO 267 (Restitution de la chose), CO 267a (Verification et avis des defauts). En cas de situation concrète, les délais, montants et autorités compétentes varient selon le canton et les faits du dossier. Une analyse personnalisée via le triage JusticePourtous ou un professionnel du droit est recommandée.",
       "articles": [
         {
           "ref": "CO 267",
@@ -3235,7 +4552,21 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "10 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "14 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -3260,7 +4591,11 @@
       "photos ou preuves",
       "durée d'occupation",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_reparations_locataire",
@@ -3272,6 +4607,7 @@
       "a charge",
       "locataire"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3318,7 +4654,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le locataire effectué a ses frais le menu entretien (art. 259 CO) : petites réparations sans connaissances spéciales (joints, plaquettes WC, siphons, ampoules). Les réparations plus importantes (plomberie, electricite, appareils integres) sont au bailleur (art. 256 al. 1 CO). La limite financiere est environ 150-200 CHF par réparation en pratique. Si le défaut resulte de l usure normale ou d un vice de construction, c est le bailleur qui paie, même pour de petits montants.",
+      "explication": "Le locataire effectué a ses frais le menu entretien (art. 259 CO) : petites réparations sans connaissances spéciales (joints, plaquettes WC, siphons, ampoules). Les réparations plus importantes (plomberie, electricite, appareils integres) sont au bailleur (art. 256 al. 1 CO). La limite financiere est environ 150-200 CHF par réparation en pratique. Si le défaut resulte de l usure normale ou d un vice de construction, c est le bailleur qui paie, même pour de petits montants.\n\nCadre légal applicable : CO 259 (Menu entretien), CO 256 (Obligation de delivrer la chose). En cas de situation concrète, les délais, montants et autorités compétentes varient selon le canton et les faits du dossier. Une analyse personnalisée via le triage JusticePourtous ou un professionnel du droit est recommandée.",
       "articles": [
         {
           "ref": "CO 259",
@@ -3335,6 +4671,16 @@
         {
           "ref": "TF 4A_395/2017",
           "resume": "Le menu entretien se limite aux réparations que tout locataire peut effectuér seul, sans outillage spécial."
+        },
+        {
+          "signature": "4A_147/2018",
+          "tribunal": "TF",
+          "date": "2018-03-27",
+          "resume": "Locataire demande la réparation d'un joint de robinet. Le TF confirme que le menu entretien est à la charge du locataire.",
+          "role": "favorable",
+          "resultat": "favorable_bailleur",
+          "from_corpus": true,
+          "match_score": 14
         }
       ],
       "modeleLettre": "Objet : Demande de remboursement de réparations effectuées (art. 259 et 256 CO)\n\nMadame, Monsieur,\n\nJe soussigné(e) [NOM], locataire de l appartement sis [ADRESSE],\n\nAi effectué les réparations suivantes dans le logement :\n- Nature : [DESCRIPTION_REPARATION]\n- Date : [DATE]\n- Cout : CHF [MONTANT] (facture en annexe)\n\nCes réparations dépassent le menu entretien a charge du locataire (art. 259 CO) et rélevént de l obligation du bailleur de maintenir la chose en etat (art. 256 al. 1 CO).\n\nJ avais signale ce défaut le [DATE_SIGNALEMENT] par [COURRIER/EMAIL]. En l absence de reaction de votre part dans un délai raisonnable, j ai du faire procéder à la réparation pour eviter une aggravation du dommage.\n\nJe vous demande le remboursement de CHF [MONTANT] dans un délai de 30 jours des reception de la présente.\n\nA défaut, je me réserve le droit de compenser ce montant avec le loyer conformement a l art. 120 CO.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n\n[SIGNATURE]\n\nAnnexe : facture de réparation",
@@ -3382,7 +4728,12 @@
       "cout estime",
       "clause du bail sur l'entretien",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_modification_contrat",
@@ -3395,6 +4746,7 @@
       "bail",
       "conditions"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3439,7 +4791,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le bail ne peut être modifie que d un commun accord ou par voie légale. Les augmentations de loyer nécessitént une formule officielle et le respect de la procédure (art. 269d CO). Toute autre modification (retrait de local, changement de reglement) nécessité le consentement du locataire. Le locataire peut contester une modification non conforme dans les 30 jours. Un avenant écrit est recommandé.",
+      "explication": "Le bail ne peut être modifie que d un commun accord ou par voie légale. Les augmentations de loyer nécessitént une formule officielle et le respect de la procédure (art. 269d CO). Toute autre modification (retrait de local, changement de reglement) nécessité le consentement du locataire. Le locataire peut contester une modification non conforme dans les 30 jours. Un avenant écrit est recommandé.\n\nCadre légal applicable : CO 269d (Notification de l augmentation), CO 270b (Contestation de l augmentation). En cas de situation concrète, les délais, montants et autorités compétentes varient selon le canton et les faits du dossier. Une analyse personnalisée via le triage JusticePourtous ou un professionnel du droit est recommandée.",
       "articles": [
         {
           "ref": "CO 269d",
@@ -3456,6 +4808,16 @@
         {
           "ref": "TF 4A_554/2013",
           "resume": "Modification unilaterale sans formule officielle : nulle, le locataire n est pas lie."
+        },
+        {
+          "signature": "4A_489/2018",
+          "tribunal": "TF",
+          "date": "2018-11-13",
+          "resume": "Bailleur augmente le loyer de 5% sans justification valable alors que le taux hypothécaire est stable. Le TF annule la hausse.",
+          "role": "favorable",
+          "resultat": "favorable_locataire",
+          "from_corpus": true,
+          "match_score": 5
         }
       ],
       "modeleLettre": "Objet : Opposition à la modification du bail\n\nMadame, Monsieur,\n\nJe contesté la modification notifiée le [DATE] concernant [DESCRIPTION]. Cette modification est [UNILATERALE / NON CONFORME].\n\nToute modification nécessité mon consentement ou le respect de la procédure légale.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
@@ -3474,7 +4836,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Contestation",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -3498,7 +4868,11 @@
       "par qui (bailleur ou locataire)",
       "accord mutuel ou unilateral",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_droit_retractation",
@@ -3511,6 +4885,7 @@
       "bail",
       "délai"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3555,7 +4930,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le droit suisse ne prevoit PAS de délai de retractation pour les baux. Une fois signé, le bail lie les parties. Le locataire peut chercher un accord amiable ou proposer un remplacant solvable (analogie art. 264 CO). Si le bail a commence, respect du délai de résiliation (3 mois, art. 266c CO). Un bail peut être annule pour vice du consentement (erreur, dol, crainte, art. 23 ss CO) mais les conditions sont strictes.",
+      "explication": "Le droit suisse ne prevoit PAS de délai de retractation pour les baux. Une fois signé, le bail lie les parties. Le locataire peut chercher un accord amiable ou proposer un remplacant solvable (analogie art. 264 CO). Si le bail a commence, respect du délai de résiliation (3 mois, art. 266c CO). Un bail peut être annule pour vice du consentement (erreur, dol, crainte, art. 23 ss CO) mais les conditions sont strictes.\n\nCadre légal applicable : CO 264 (Restitution anticipee), CO 266c (Delais de conge), CO 23 (Erreur — vice du consentement). En cas de situation concrète, les délais, montants et autorités compétentes varient selon le canton et les faits du dossier. Une analyse personnalisée via le triage JusticePourtous ou un professionnel du droit est recommandée.",
       "articles": [
         {
           "ref": "CO 264",
@@ -3577,6 +4952,16 @@
         {
           "ref": "TF 4A_198/2013",
           "resume": "Pas de droit de retractation après signature ; le locataire doit trouver un remplacant."
+        },
+        {
+          "signature": "4A_191/2022",
+          "tribunal": "TF",
+          "date": "2022-06-21",
+          "resume": "Résiliation envoyée avec un délai de 2 mois au lieu de 3. Le TF reporte la résiliation au prochain terme légal.",
+          "role": "favorable",
+          "resultat": "partiellement_favorable_locataire",
+          "from_corpus": true,
+          "match_score": 8
         }
       ],
       "modeleLettre": "",
@@ -3595,7 +4980,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Identification du vice du consentement",
+          "delai": "immédiat dès découverte du vice",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Notification écrite d'invalidation",
+          "delai": "dans l'année dès découverte du vice",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai de réaction du bailleur",
+          "delai": "30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action en constatation de l'invalidité",
+          "delai": "1 an dès découverte (CO 31)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Résiliation / contestation de congé",
+          "delai": "3 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -3619,7 +5036,56 @@
       "date de debut du bail",
       "motif de la retractation",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Rétractation/annulation d'un bail conclu sous pression",
+        "domaine": "bail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Identification du vice du consentement",
+            "description": "Préciser le vice (erreur, dol, crainte fondée — CO 23 ss) et rassembler les preuves (échanges, témoignages).",
+            "delai": "immédiat dès découverte du vice",
+            "preuve_generee": "Note de motivation + dossier de preuves"
+          },
+          {
+            "numero": 2,
+            "action": "Notification écrite d'invalidation",
+            "description": "Notifier au bailleur, par lettre recommandée, l'invalidation du contrat dans le délai d'un an (CO 31).",
+            "delai": "dans l'année dès découverte du vice",
+            "base_legale": "CO 23 / CO 31 / CO 264",
+            "preuve_generee": "Lettre AR"
+          },
+          {
+            "numero": 3,
+            "action": "Délai de réaction du bailleur",
+            "delai": "30 jours",
+            "branches": [
+              {
+                "si": "acceptation de l'invalidation",
+                "alors": "résolution (fin)"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 4 (action judiciaire)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Action en constatation de l'invalidité",
+            "description": "Saisir le tribunal civil pour faire constater l'invalidité et obtenir restitution.",
+            "delai": "1 an dès découverte (CO 31)",
+            "base_legale": "CO 23 / CO 31 / CPC 197"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_logement_insalubre",
@@ -3632,6 +5098,7 @@
       "habitabilite",
       "défaut grave"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3676,7 +5143,7 @@
       }
     ],
     "reponse": {
-      "explication": "Un logement insalubre constitue un défaut grave (art. 258 CO). Le locataire peut exiger la remise en état immédiate (art. 259a CO). Si totalement inhabitable, résiliation immédiate possible (art. 259b let. a CO) sans obligation de payer le loyer. En défaut grave partiel, consignation du loyer (art. 259g CO) après mise en demeure. Le locataire peut signaler au service d hygiene cantonal. Le bailleur engage sa responsabilité civile pour les dommages (frais médicaux, relogement).",
+      "explication": "Un logement insalubre constitue un défaut grave (art. 258 CO). Le locataire peut exiger la remise en état immédiate (art. 259a CO). Si totalement inhabitable, résiliation immédiate possible (art. 259b let. a CO) sans obligation de payer le loyer. En défaut grave partiel, consignation du loyer (art. 259g CO) après mise en demeure. Le locataire peut signaler au service d hygiene cantonal. Le bailleur engage sa responsabilité civile pour les dommages (frais médicaux, relogement).\n\nCadre légal applicable : CO 258 (Défaut au debut du bail), CO 259a (Droits du locataire), CO 259b (Resiliation pour défaut grave), CO 259g (Consignation du loyer). En cas de situation concrète, les délais, montants et autorités compétentes varient selon le canton et les faits du dossier. Une analyse personnalisée via le triage JusticePourtous ou un professionnel du droit est recommandée.",
       "articles": [
         {
           "ref": "CO 258",
@@ -3740,7 +5207,39 @@
           "url": "habiter.app"
         }
       },
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Documenter l'insalubrité",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Mise en demeure du bailleur",
+          "delai": "dans les 7 jours du constat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Signalement service communal hygiène/logement",
+          "delai": "en parallèle, immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Consignation du loyer",
+          "delai": "après préavis écrit",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Saisine autorité de conciliation",
+          "delai": "immédiat après consignation",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -3764,7 +5263,57 @@
       "signalement au bailleur",
       "rapport médical si impact sante",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Traitement d'un logement insalubre",
+        "domaine": "bail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Documenter l'insalubrité",
+            "description": "Photos, dates, relevés (humidité, température, vermine, installations électriques défaillantes). Rapport médical si problèmes de santé liés.",
+            "delai": "immédiat",
+            "preuve_generee": "Dossier photo + certificats médicaux"
+          },
+          {
+            "numero": 2,
+            "action": "Mise en demeure du bailleur",
+            "description": "Courrier recommandé exigeant remise en état dans un délai raisonnable, avec menace de consignation du loyer.",
+            "delai": "dans les 7 jours du constat",
+            "base_legale": "CO 259a / CO 259b",
+            "preuve_generee": "Accusé de réception"
+          },
+          {
+            "numero": 3,
+            "action": "Signalement service communal hygiène/logement",
+            "description": "Saisir l'office cantonal du logement ou le service hygiène de la commune pour inspection officielle.",
+            "delai": "en parallèle, immédiat",
+            "preuve_generee": "Rapport d'inspection communale"
+          },
+          {
+            "numero": 4,
+            "action": "Consignation du loyer",
+            "description": "Si bailleur inactif, consigner le loyer auprès de l'office désigné dans le canton (préavis obligatoire).",
+            "delai": "après préavis écrit",
+            "base_legale": "CO 259g",
+            "preuve_generee": "Récépissé de consignation"
+          },
+          {
+            "numero": 5,
+            "action": "Saisine autorité de conciliation",
+            "description": "Requête en réduction de loyer + exécution des travaux + dommages-intérêts éventuels.",
+            "delai": "immédiat après consignation",
+            "base_legale": "CO 259d / CO 259e / CPC 197",
+            "cout": "Gratuit"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_recherche_logement",
@@ -3778,6 +5327,7 @@
       "urgence",
       "relogement"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3845,6 +5395,16 @@
         {
           "ref": "TF 5A_157/2015",
           "resume": "Attribution du logement familial à l'époux gardien des enfants dans le cadre de mesures protectrices."
+        },
+        {
+          "signature": "4A_336/2018",
+          "tribunal": "TF",
+          "date": "2018-10-16",
+          "resume": "Bailleur résilie pour besoin propre sans urgence démontrée. Le TF annule le congé car le besoin n'est ni actuel ni concret.",
+          "role": "favorable",
+          "resultat": "favorable_locataire",
+          "from_corpus": true,
+          "match_score": 3
         }
       ],
       "modeleLettre": "Objet : Demande de soutien pour la recherche de logement\n\nMadame, Monsieur,\n\nJe me permets de vous contacter car je suis actuellement en situation de [SÉPARATION/EXPULSION/FIN DE BAIL] et recherche un logement de manière urgente.\n\nMa situation actuelle : [DÉCRIRE BRIEVEMENT]. Je dispose d'un revenu mensuel de CHF [MONTANT] et [AI/N'AI PAS] des enfants a charge.\n\nJe vous serais reconnaissant(e) de bien vouloir m'inscrire sur votre liste d'attente et de m'informer des demarches possibles pour obtenir un logement adapte à ma situation.\n\nJe reste a disposition pour tout complement d'information.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
@@ -3885,7 +5445,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC/CPC état 2025-01-01",
@@ -3910,7 +5478,11 @@
       "canton",
       "revenus et budget",
       "aides sociales en cours"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_loyers_impayes",
@@ -3925,6 +5497,7 @@
       "mise en demeure",
       "expulsion"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -4030,7 +5603,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Diagnostic financier immédiat",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Contact avec la régie",
+          "delai": "dans les 7 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Réponse à la sommation comminatoire",
+          "delai": "dans les 30 jours de la sommation",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours aides sociales / associations",
+          "delai": "en parallèle, immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Contestation résiliation si déjà notifiée",
+          "delai": "30 jours dès congé",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -4055,7 +5660,55 @@
       "délai fixe par le bailleur",
       "canton",
       "capacite a regulariser"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Gestion d'un arriéré de loyers (côté locataire)",
+        "domaine": "bail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Diagnostic financier immédiat",
+            "description": "Lister les loyers impayés et le montant total. Identifier la cause (perte emploi, maladie, surendettement).",
+            "delai": "immédiat",
+            "preuve_generee": "État récapitulatif"
+          },
+          {
+            "numero": 2,
+            "action": "Contact avec la régie",
+            "description": "Courrier ou entretien pour proposer un plan de paiement. Ne pas ignorer — la bonne foi compte.",
+            "delai": "dans les 7 jours",
+            "preuve_generee": "Proposition écrite de plan"
+          },
+          {
+            "numero": 3,
+            "action": "Réponse à la sommation comminatoire",
+            "description": "Dès réception d'une sommation CO 257d (30 jours de délai), payer l'intégralité pour éviter la résiliation extraordinaire.",
+            "delai": "dans les 30 jours de la sommation",
+            "base_legale": "CO 257d",
+            "preuve_generee": "Preuve de paiement intégral"
+          },
+          {
+            "numero": 4,
+            "action": "Recours aides sociales / associations",
+            "description": "Saisir le service social communal, Caritas ou le Fonds d'aide au logement pour avance de loyers.",
+            "delai": "en parallèle, immédiat",
+            "cout": "Gratuit"
+          },
+          {
+            "numero": 5,
+            "action": "Contestation résiliation si déjà notifiée",
+            "description": "Si résiliation notifiée malgré paiement ou motif non valable : saisine conciliation dans 30 jours.",
+            "delai": "30 jours dès congé",
+            "base_legale": "CO 271 / CO 273"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "bail_restitution_anticipee",
@@ -4069,6 +5722,7 @@
       "résiliation anticipee",
       "bail fin"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -4120,6 +5774,11 @@
           "ref": "CO 264",
           "titre": "Restitution anticipee de la chose",
           "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_264"
+        },
+        {
+          "ref": "CO 266g",
+          "titre": "Résiliation pour justes motifs",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_266_g"
         }
       ],
       "jurisprudence": [
@@ -4153,7 +5812,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Délai procédural",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-13",
     "sourceLoi": "CO état 2025-01-01",
@@ -4178,6 +5845,10 @@
       "solvabilité du candidat",
       "réponse du bailleur",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   }
 ]

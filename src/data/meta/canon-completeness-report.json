@@ -1,0 +1,93 @@
+{
+  "generated_at": "2026-04-19T15:27:52.626Z",
+  "duration_ms": 200,
+  "total_evaluated": 168,
+  "canon_complete_count": 168,
+  "percent": 100,
+  "by_domain": {
+    "bail": {
+      "total": 33,
+      "complete": 33,
+      "percent": 100
+    },
+    "dettes": {
+      "total": 31,
+      "complete": 31,
+      "percent": 100
+    },
+    "etrangers": {
+      "total": 33,
+      "complete": 33,
+      "percent": 100
+    },
+    "famille": {
+      "total": 37,
+      "complete": 37,
+      "percent": 100
+    },
+    "travail": {
+      "total": 34,
+      "complete": 34,
+      "percent": 100
+    }
+  },
+  "gate_target_percent": 80,
+  "gate_passed": true,
+  "results_sample": [
+    {
+      "intent_id": "bail_defaut_moisissure",
+      "domaine": "bail",
+      "canon_complete": true,
+      "has_leading": true,
+      "has_nuance": true,
+      "has_cantonal_practice": true,
+      "has_citizen_summary": true,
+      "score": 4,
+      "max_score": 4
+    },
+    {
+      "intent_id": "bail_defaut_bruit",
+      "domaine": "bail",
+      "canon_complete": true,
+      "has_leading": true,
+      "has_nuance": true,
+      "has_cantonal_practice": true,
+      "has_citizen_summary": true,
+      "score": 4,
+      "max_score": 4
+    },
+    {
+      "intent_id": "bail_resiliation_conteste",
+      "domaine": "bail",
+      "canon_complete": true,
+      "has_leading": true,
+      "has_nuance": true,
+      "has_cantonal_practice": true,
+      "has_citizen_summary": true,
+      "score": 4,
+      "max_score": 4
+    },
+    {
+      "intent_id": "bail_loyer_abusif",
+      "domaine": "bail",
+      "canon_complete": true,
+      "has_leading": true,
+      "has_nuance": true,
+      "has_cantonal_practice": true,
+      "has_citizen_summary": true,
+      "score": 4,
+      "max_score": 4
+    },
+    {
+      "intent_id": "bail_depot_garantie",
+      "domaine": "bail",
+      "canon_complete": true,
+      "has_leading": true,
+      "has_nuance": true,
+      "has_cantonal_practice": true,
+      "has_citizen_summary": true,
+      "score": 4,
+      "max_score": 4
+    }
+  ]
+}

@@ -10,6 +10,7 @@
       "incapacité",
       "période"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -97,7 +98,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Documenter l'incapacité et la date du congé",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition écrite à l'employeur",
+          "delai": "sans délai, au plus vite après réception",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Tentative de conciliation",
+          "delai": "sans attendre",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action devant le Tribunal des prud'hommes",
+          "delai": "selon délais fixés par l'autorité de conciliation",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -122,7 +155,51 @@
       "certificat médical",
       "date du licenciement",
       "date de debut de l'arrêt maladie"
-    ]
+    ],
+    "cascades": [
+      {
+        "titre": "Contestation d'un licenciement en période de maladie",
+        "domaine": "travail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Documenter l'incapacité et la date du congé",
+            "description": "Réunir certificats médicaux couvrant la période, copie du congé, calendrier précis (date de réception du congé vs début/durée de la protection CO 336c).",
+            "delai": "immédiat",
+            "base_legale": "CO 336c",
+            "preuve_generee": "Dossier médical + copie du congé daté"
+          },
+          {
+            "numero": 2,
+            "action": "Opposition écrite à l'employeur",
+            "description": "Courrier recommandé invoquant la nullité du congé donné en temps inopportun, ou le caractère abusif, et maintien à disposition.",
+            "delai": "sans délai, au plus vite après réception",
+            "base_legale": "CO 336c / CO 336",
+            "preuve_generee": "Accusé de réception"
+          },
+          {
+            "numero": 3,
+            "action": "Tentative de conciliation",
+            "description": "Saisir l'autorité de conciliation compétente en matière de droit du travail du canton (gratuit jusqu'à 30 000 CHF de valeur litigieuse).",
+            "delai": "sans attendre",
+            "base_legale": "CPC 197 / LTr",
+            "cout": "Gratuit jusqu'à 30'000 CHF"
+          },
+          {
+            "numero": 4,
+            "action": "Action devant le Tribunal des prud'hommes",
+            "description": "Si pas d'accord, saisir le tribunal pour faire constater la nullité (réintégration et salaire) ou obtenir l'indemnité pour congé abusif (max 6 mois de salaire).",
+            "delai": "selon délais fixés par l'autorité de conciliation",
+            "base_legale": "CO 336a",
+            "preuve_generee": "Jugement"
+          }
+        ]
+      }
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_salaire_impaye",
@@ -135,6 +212,7 @@
       "paiement",
       "mise en demeure"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -228,7 +306,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Calcul et constat du salaire dû",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Mise en demeure écrite",
+          "delai": "sans délai, au plus 30 jours après échéance",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Conciliation et/ou poursuite",
+          "delai": "dès l'expiration de la mise en demeure",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Jugement et exécution forcée",
+          "delai": "selon procédure",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "6 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -252,7 +362,60 @@
       "nombre de mois impayés",
       "mises en demeure envoyees",
       "type de contrat"
-    ]
+    ],
+    "cascades": [
+      {
+        "titre": "Recouvrement d'un salaire impayé",
+        "domaine": "travail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Calcul et constat du salaire dû",
+            "description": "Établir le décompte précis (brut, net, heures supplémentaires, vacances, 13e, indemnités) et conserver contrats, fiches de paie et communications.",
+            "delai": "immédiat",
+            "base_legale": "CO 322 ss",
+            "preuve_generee": "Décompte écrit + pièces justificatives"
+          },
+          {
+            "numero": 2,
+            "action": "Mise en demeure écrite",
+            "description": "Courrier recommandé à l'employeur fixant un délai de paiement (10 à 30 jours) avec menace de poursuite.",
+            "delai": "sans délai, au plus 30 jours après échéance",
+            "base_legale": "CO 102 / CO 323",
+            "preuve_generee": "Accusé de réception postal"
+          },
+          {
+            "numero": 3,
+            "action": "Conciliation et/ou poursuite",
+            "description": "Au choix : requête de conciliation gratuite (prud'hommes) ou réquisition de poursuite à l'Office des poursuites.",
+            "delai": "dès l'expiration de la mise en demeure",
+            "base_legale": "CPC 197 / LP 38 ss",
+            "branches": [
+              {
+                "si": "pas d'opposition du débiteur",
+                "alors": "continuation de la poursuite"
+              },
+              {
+                "si": "opposition",
+                "alors": "mainlevée ou action au fond"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Jugement et exécution forcée",
+            "description": "Obtenir un jugement du tribunal des prud'hommes ou une mainlevée, puis requérir saisie de salaire/biens.",
+            "delai": "selon procédure",
+            "base_legale": "LP 88 ss",
+            "cout": "Gratuit jusqu'à 30'000 CHF au fond"
+          }
+        ]
+      }
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_heures_sup",
@@ -265,6 +428,7 @@
       "temps de travail",
       "compensation"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -358,7 +522,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Documentation des heures",
+          "delai": "en continu",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande écrite de compensation",
+          "delai": "avant la fin des rapports de travail de préférence",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Rappel formel et mise en demeure",
+          "delai": "après 14 jours sans réponse",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Saisine tribunal des prud'hommes",
+          "delai": "dans les 5 ans (prescription)",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO/LTr état 2025-01-01",
@@ -382,7 +572,49 @@
       "preuve des heures (pointage, emails)",
       "ce que dit le contrat sur les heures sup",
       "taux d'activité contractuel"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Récupération des heures supplémentaires",
+        "domaine": "travail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Documentation des heures",
+            "description": "Tenir un journal précis des heures effectuées (début, fin, pauses). Conserver e-mails, badgeages, plannings.",
+            "delai": "en continu",
+            "preuve_generee": "Relevé d'heures détaillé"
+          },
+          {
+            "numero": 2,
+            "action": "Demande écrite de compensation",
+            "description": "Courrier ou e-mail à l'employeur demandant compensation (repos ou paiement) avec décompte chiffré. Majoration 25% due (sauf dérogation écrite conforme).",
+            "delai": "avant la fin des rapports de travail de préférence",
+            "base_legale": "CO 321c",
+            "preuve_generee": "Courrier daté + accusé"
+          },
+          {
+            "numero": 3,
+            "action": "Rappel formel et mise en demeure",
+            "description": "Si pas de réponse sous 14 jours, mise en demeure recommandée avec délai de paiement de 10 jours.",
+            "delai": "après 14 jours sans réponse",
+            "preuve_generee": "Mise en demeure recommandée"
+          },
+          {
+            "numero": 4,
+            "action": "Saisine tribunal des prud'hommes",
+            "description": "Procédure simplifiée gratuite jusqu'à 30'000 CHF (procédure simplifiée CPC 243). Pas de frais de justice pour le salarié.",
+            "delai": "dans les 5 ans (prescription)",
+            "base_legale": "CO 321c / CPC 243 / CO 128 ch.3",
+            "cout": "Gratuit jusqu'à 30'000 CHF"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_harcelement",
@@ -395,6 +627,7 @@
       "personnalite",
       "protection"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -495,7 +728,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Documenter les faits",
+          "delai": "immédiat et continu",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Signalement interne à l'employeur",
+          "delai": "dès les premiers faits",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours aux autorités compétentes",
+          "delai": "après échec du signalement interne",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Actions civiles et pénales",
+          "delai": "selon prescription (3 mois plainte pénale pour la plupart des faits)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "6 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO/LEg état 2025-01-01",
@@ -519,7 +784,60 @@
       "durée et frequence",
       "preuves (emails, témoins, journal)",
       "demarches déjà entreprises (RH, médecin)"
-    ]
+    ],
+    "cascades": [
+      {
+        "titre": "Action contre un harcèlement au travail",
+        "domaine": "travail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Documenter les faits",
+            "description": "Tenir un journal détaillé (dates, lieux, témoins, captures, messages), conserver toute preuve médicale (arrêts, consultations) et témoignages.",
+            "delai": "immédiat et continu",
+            "base_legale": "CO 328 / LTr 6 / OLT3 2",
+            "preuve_generee": "Journal + pièces médicales + témoignages écrits"
+          },
+          {
+            "numero": 2,
+            "action": "Signalement interne à l'employeur",
+            "description": "Alerter par écrit (RH, supérieur hiérarchique, personne de confiance) en demandant des mesures de protection concrètes.",
+            "delai": "dès les premiers faits",
+            "base_legale": "CO 328",
+            "preuve_generee": "Copie + accusé de réception"
+          },
+          {
+            "numero": 3,
+            "action": "Recours aux autorités compétentes",
+            "description": "Si inaction : saisir l'inspection du travail cantonale, le Bureau de l'égalité (si harcèlement sexuel, LEg), ou le médecin du travail.",
+            "delai": "après échec du signalement interne",
+            "base_legale": "LEg 4 / LTr 54",
+            "cout": "Gratuit"
+          },
+          {
+            "numero": 4,
+            "action": "Actions civiles et pénales",
+            "description": "Selon gravité : action civile en protection de la personnalité et indemnité (CO 328, LEg 5), plainte pénale (CP 177, 180, 181, 193), résiliation avec justes motifs (CO 337) si situation intenable.",
+            "delai": "selon prescription (3 mois plainte pénale pour la plupart des faits)",
+            "base_legale": "CO 328 / CO 337 / CP 177 ss / LEg 5",
+            "branches": [
+              {
+                "si": "harcèlement sexuel prouvé",
+                "alors": "indemnité LEg jusqu'à 6 mois de salaire"
+              },
+              {
+                "si": "atteinte grave à la santé",
+                "alors": "démission justes motifs + dommages-intérêts"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_licenciement_abusif",
@@ -532,6 +850,7 @@
       "contestation",
       "motif"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -626,7 +945,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Analyse du motif du congé",
+          "delai": "immédiat à réception",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition écrite au licenciement",
+          "delai": "avant la fin du délai de congé",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Saisine de l'autorité de conciliation",
+          "delai": "180 jours après la fin des rapports de travail",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action au tribunal des prud'hommes",
+          "delai": "30 jours dès autorisation de procéder",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition au commandement de payer",
+          "delai": "6 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -651,7 +1002,59 @@
       "contexte du licenciement",
       "opposition écrite envoyee ou non",
       "délai depuis la notification"
-    ]
+    ],
+    "cascades": [
+      {
+        "titre": "Action en indemnité pour licenciement abusif",
+        "domaine": "travail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Analyse du motif du congé",
+            "description": "Identifier les indices de congé abusif : représailles, motif discriminatoire, atteinte à la personnalité, dénonciation de bonne foi.",
+            "delai": "immédiat à réception",
+            "base_legale": "CO 336"
+          },
+          {
+            "numero": 2,
+            "action": "Opposition écrite au licenciement",
+            "description": "Faire opposition par courrier recommandé AVANT l'échéance du délai de congé. Sans opposition, le droit à l'indemnité est perdu.",
+            "delai": "avant la fin du délai de congé",
+            "base_legale": "CO 336b al. 1",
+            "preuve_generee": "Copie + accusé de réception"
+          },
+          {
+            "numero": 3,
+            "action": "Saisine de l'autorité de conciliation",
+            "description": "Après la fin des rapports de travail, déposer la requête en paiement de l'indemnité auprès de l'autorité cantonale.",
+            "delai": "180 jours après la fin des rapports de travail",
+            "base_legale": "CO 336b al. 2",
+            "cout": "Gratuit jusqu'à 30'000 CHF"
+          },
+          {
+            "numero": 4,
+            "action": "Action au tribunal des prud'hommes",
+            "description": "Si échec conciliation, saisine du tribunal. Indemnité jusqu'à 6 mois de salaire selon gravité.",
+            "delai": "30 jours dès autorisation de procéder",
+            "base_legale": "CO 336a",
+            "branches": [
+              {
+                "si": "transaction",
+                "alors": "fin"
+              },
+              {
+                "si": "jugement favorable",
+                "alors": "exécution forcée si refus employeur"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_certificat",
@@ -664,6 +1067,7 @@
       "référence",
       "formulation"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -714,6 +1118,11 @@
           "ref": "CO 330a",
           "titre": "Certificat de travail",
           "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_330_a"
+        },
+        {
+          "ref": "CO 331",
+          "titre": "Prévoyance professionnelle — certificat",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_331"
         }
       ],
       "jurisprudence": [
@@ -742,7 +1151,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Demande écrite du certificat",
+          "delai": "à tout moment pendant/après emploi",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Analyse du certificat reçu",
+          "delai": "dans les 14 jours de réception",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande de rectification motivée",
+          "delai": "dans les 30 jours de réception",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure prud'homale",
+          "delai": "dans les 10 ans (prescription)",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -766,7 +1201,50 @@
       "contenu contesté (formulation précis)",
       "durée du rapport de travail",
       "demandes écrites déjà faites"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Obtention ou rectification du certificat de travail",
+        "domaine": "travail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Demande écrite du certificat",
+            "description": "Courrier ou e-mail demandant formellement un certificat de travail complet (fonctions, qualité, durée) ou qualifié.",
+            "delai": "à tout moment pendant/après emploi",
+            "base_legale": "CO 330a",
+            "preuve_generee": "Demande écrite datée"
+          },
+          {
+            "numero": 2,
+            "action": "Analyse du certificat reçu",
+            "description": "Vérifier véracité, exhaustivité, bienveillance. Repérer formules codées dommageables ou omissions importantes.",
+            "delai": "dans les 14 jours de réception",
+            "preuve_generee": "Analyse écrite du certificat"
+          },
+          {
+            "numero": 3,
+            "action": "Demande de rectification motivée",
+            "description": "Courrier recommandé listant les corrections demandées, faits précis à l'appui (évaluations, e-mails positifs).",
+            "delai": "dans les 30 jours de réception",
+            "base_legale": "CO 330a",
+            "preuve_generee": "Accusé de réception"
+          },
+          {
+            "numero": 4,
+            "action": "Procédure prud'homale",
+            "description": "En cas de refus, action au tribunal des prud'hommes — procédure simplifiée gratuite jusqu'à 30'000 CHF.",
+            "delai": "dans les 10 ans (prescription)",
+            "base_legale": "CO 330a / CO 127 / CPC 243",
+            "cout": "Gratuit jusqu'à 30'000 CHF"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_vacances",
@@ -779,6 +1257,7 @@
       "report",
       "compensation"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -867,7 +1346,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Décompte du solde",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande écrite à l'employeur",
+          "delai": "avant fin des rapports",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Mise en demeure",
+          "delai": "après 14 jours sans réponse",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action au tribunal des prud'hommes",
+          "delai": "dans les 5 ans",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "4 semaine",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -892,7 +1403,50 @@
       "ce que dit le contrat",
       "vacances déjà prises dans l'année",
       "fin du contrat prévue ou non"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Réclamation de solde de vacances",
+        "domaine": "travail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Décompte du solde",
+            "description": "Calculer les jours acquis (min. 4 semaines CO 329a, 5 semaines pour <20 ans) vs pris. Vérifier fiches de paie et certificats.",
+            "delai": "immédiat",
+            "preuve_generee": "Décompte chiffré"
+          },
+          {
+            "numero": 2,
+            "action": "Demande écrite à l'employeur",
+            "description": "Courrier ou e-mail demandant paiement du solde (si fin des rapports) ou prise effective (si rapports en cours).",
+            "delai": "avant fin des rapports",
+            "base_legale": "CO 329a / CO 329d",
+            "preuve_generee": "Demande écrite"
+          },
+          {
+            "numero": 3,
+            "action": "Mise en demeure",
+            "description": "Courrier recommandé exigeant paiement dans 10 jours, intérêts moratoires 5%.",
+            "delai": "après 14 jours sans réponse",
+            "base_legale": "CO 104",
+            "preuve_generee": "Accusé de réception"
+          },
+          {
+            "numero": 4,
+            "action": "Action au tribunal des prud'hommes",
+            "description": "Procédure simplifiée gratuite jusqu'à 30'000 CHF. Prescription 5 ans.",
+            "delai": "dans les 5 ans",
+            "base_legale": "CO 329d / CO 128 ch.3 / CPC 243",
+            "cout": "Gratuit jusqu'à 30'000 CHF"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_grossesse",
@@ -905,6 +1459,7 @@
       "conge",
       "allaitement"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -997,7 +1552,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Annonce à l'employeur",
+          "delai": "dès connaissance",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Adaptation du poste",
+          "delai": "progressivement selon stade",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Contestation d'un licenciement pendant la grossesse",
+          "delai": "immédiat si licenciement",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Allocation maternité APG",
+          "delai": "après accouchement, dans les 5 ans",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action prud'homale si violation",
+          "delai": "selon délai prescription (5-10 ans)",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO/LEg/LTr état 2025-01-01",
@@ -1021,7 +1608,58 @@
       "date du licenciement",
       "type de contrat",
       "employeur informé ou non de la grossesse"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Protection pendant la grossesse et maternité",
+        "domaine": "travail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Annonce à l'employeur",
+            "description": "Informer (de préférence par écrit) l'employeur de la grossesse. Remettre certificat médical. La protection s'active dès l'annonce.",
+            "delai": "dès connaissance",
+            "base_legale": "CO 336c al. 1 let. c",
+            "preuve_generee": "Courrier + certificat médical"
+          },
+          {
+            "numero": 2,
+            "action": "Adaptation du poste",
+            "description": "Demander adaptations (pas de travail de nuit après 8e mois, pas de charges lourdes, pauses supplémentaires). Certificat médical à l'appui si nécessaire.",
+            "delai": "progressivement selon stade",
+            "base_legale": "LTr 35 / OLT 1 art. 60-64"
+          },
+          {
+            "numero": 3,
+            "action": "Contestation d'un licenciement pendant la grossesse",
+            "description": "Licenciement nul pendant grossesse + 16 semaines après accouchement. Courrier recommandé immédiat pour rappeler la nullité.",
+            "delai": "immédiat si licenciement",
+            "base_legale": "CO 336c al. 1 let. c / CO 336c al. 2",
+            "preuve_generee": "Courrier recommandé"
+          },
+          {
+            "numero": 4,
+            "action": "Allocation maternité APG",
+            "description": "Demande d'allocation maternité (14 semaines, 80% du salaire) via la caisse de compensation AVS.",
+            "delai": "après accouchement, dans les 5 ans",
+            "base_legale": "LAPG 16b-16h",
+            "cout": "Gratuit"
+          },
+          {
+            "numero": 5,
+            "action": "Action prud'homale si violation",
+            "description": "Si l'employeur ne respecte pas la protection ou refuse le poste : action au tribunal des prud'hommes.",
+            "delai": "selon délai prescription (5-10 ans)",
+            "base_legale": "CO 328 / CO 336c / CPC 243",
+            "cout": "Gratuit jusqu'à 30'000 CHF"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_accident",
@@ -1034,6 +1672,7 @@
       "declaration",
       "indemnité"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1125,7 +1764,16 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "dans les plus brefs délais",
+          "consequence": null,
+          "extracted_from_text": true,
+          "qualitatif": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LAA état 2025-01-01",
@@ -1150,7 +1798,11 @@
       "declaration faite ou non",
       "taux d'occupation (plus ou moins de 8h/semaine)",
       "certificat médical"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_contrat_oral",
@@ -1163,6 +1815,7 @@
       "preuve",
       "travail au noir"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1275,7 +1928,12 @@
       "durée de la relation de travail",
       "preuves existantes (SMS, virements, témoins)",
       "rémunération convenue"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_periode_essai",
@@ -1287,6 +1945,7 @@
       "délai",
       "debut"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1369,7 +2028,27 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "1 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Résiliation / contestation de congé",
+          "delai": "7 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -1393,7 +2072,11 @@
       "date de debut du travail",
       "date de la résiliation",
       "motif invoque"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_non_concurrence",
@@ -1405,6 +2088,7 @@
       "interdiction",
       "concurrence"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1493,7 +2177,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -1517,7 +2209,11 @@
       "qui a résilié le contrat",
       "durée et perimetre de la clause",
       "acces à la clientele ou secrets d'affaires"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_secret_professionnel",
@@ -1530,6 +2226,7 @@
       "données",
       "devoir"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1595,6 +2292,16 @@
         {
           "ref": "TF 4A_226/2014",
           "resume": "Licenciement immédiat justifie pour transmission de données clients à un concurrent."
+        },
+        {
+          "signature": "4A_476/2019",
+          "tribunal": "TF",
+          "date": "2019-09-03",
+          "resume": "Employé licencié après avoir signalé des irrégularités comptables à la direction. Le TF qualifie le congé d'abusif car l'employé a respecté la procédure de signalement interne.",
+          "role": "favorable",
+          "resultat": "favorable_employe",
+          "from_corpus": true,
+          "match_score": 5
         }
       ],
       "modeleLettre": "",
@@ -1613,7 +2320,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Identification des informations couvertes",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Mise en demeure de cesser ou de respecter",
+          "delai": "dans les 14 jours suivant la découverte",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai pour cesser/réparer",
+          "delai": "30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action civile et plainte pénale",
+          "delai": "3 ans pour action civile (CO 60); 3 mois pour plainte pénale",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO/CP état 2025-01-01",
@@ -1637,7 +2370,56 @@
       "contrat de travail (clause de confidentialite)",
       "infos déjà divulguées ou non",
       "motif de la divulgation envisagee"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Protection ou violation du secret professionnel",
+        "domaine": "travail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Identification des informations couvertes",
+            "description": "Lister précisément les données confidentielles (clients, brevets, méthodes), vérifier les clauses contractuelles applicables.",
+            "delai": "immédiat",
+            "preuve_generee": "Note interne d'identification"
+          },
+          {
+            "numero": 2,
+            "action": "Mise en demeure de cesser ou de respecter",
+            "description": "Notifier par écrit (recommandé) à l'employé/ex-employé l'obligation de respecter le secret (CO 321a).",
+            "delai": "dans les 14 jours suivant la découverte",
+            "base_legale": "CO 321a / CO 321e",
+            "preuve_generee": "Lettre AR"
+          },
+          {
+            "numero": 3,
+            "action": "Délai pour cesser/réparer",
+            "delai": "30 jours",
+            "branches": [
+              {
+                "si": "cessation et accord",
+                "alors": "fin (engagement écrit)"
+              },
+              {
+                "si": "violation persistante",
+                "alors": "etape 4 (action civile et/ou pénale)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Action civile et plainte pénale",
+            "description": "Action en dommages-intérêts (CO 321e) et plainte pénale pour violation du secret commercial (CP 162).",
+            "delai": "3 ans pour action civile (CO 60); 3 mois pour plainte pénale",
+            "base_legale": "CO 321e / CP 162"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_temps_partiel",
@@ -1649,6 +2431,7 @@
       "égalité",
       "travail sur appel"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1713,6 +2496,16 @@
         {
           "ref": "TF 4A_509/2009",
           "resume": "Le travailleur sur appel régulier peut pretendre au volume moyen de travail des 12 derniers mois si l employeur réduit brusquement les heures."
+        },
+        {
+          "signature": "4A_363/2019",
+          "tribunal": "TF",
+          "date": "2019-11-26",
+          "resume": "Employée à 60% exclue du bonus annuel réservé aux temps pleins. Le TF juge cette distinction discriminatoire et accorde le bonus au prorata.",
+          "role": "favorable",
+          "resultat": "favorable_employe",
+          "from_corpus": true,
+          "match_score": 6
         }
       ],
       "modeleLettre": "Objet : Réclamation relative aux conditions de travail à temps partiel (art. 319, 329a CO)\n\n[NOM DE L EMPLOYEUR]\n[ADRESSE DE L EMPLOYEUR]\n\n[LIEU], le [DATE]\n\nMadame, Monsieur,\n\nPar la présente, je me permets de vous adresser une réclamation concernant mes conditions de travail à temps partiel.\n\nJe suis employé(e) à un taux de [POURCENTAGE]% depuis le [DATE D ENGAGEMENT] en qualité de [FONCTION]. Mon salaire mensuel est de CHF [MONTANT].\n\nJe constate les irrégularités suivantes :\n[CHOISIR LES MOTIFS APPLICABLES]\n- Des heures de travail supplémentaires régulières non rémunérées, dépassant mon taux contractuel\n- Un droit aux vacances non calculé proportionnellement (art. 329a CO)\n- Une exclusion injustifiée des avantages sociaux accordés aux employés à plein temps\n- Un salaire horaire inférieur à celui des collègues à plein temps pour un travail équivalent\n- Des cotisations LPP non versées malgré le dépassement du seuil d entrée\n\nConformément au principe de non-discrimination et à l art. 319 CO, les travailleurs à temps partiel ont droit aux mêmes conditions, calculées proportionnellement à leur taux d activité.\n\nJe vous demande :\n1. La régularisation de [OBJET DE LA DEMANDE]\n2. Le paiement rétroactif de CHF [MONTANT] pour la période du [DATE] au [DATE]\n\nSans suite favorable dans un délai de 30 jours, je saisirai l autorité de conciliation compétente.\n\nJe vous prie d agréer, Madame, Monsieur, mes salutations distinguées.\n\n[NOM, PRÉNOM]\n[ADRESSE]\n[SIGNATURE]",
@@ -1755,7 +2548,12 @@
       "type de contrat (fixe ou sur appel)",
       "probleme précis (salaire, vacances, assurances)",
       "comparaison avec collegues a plein temps"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_teletravail",
@@ -1768,6 +2566,7 @@
       "frais",
       "equipement"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1835,6 +2634,16 @@
         {
           "ref": "TF 4A_533/2018",
           "resume": "L employeur qui impose le teletravail doit rembourser une part des frais de loyer et d electricite du domicile."
+        },
+        {
+          "signature": "4A_287/2021",
+          "tribunal": "TF",
+          "date": "2021-12-21",
+          "resume": "Employeur impose le télétravail sans rembourser les frais de connexion et d'équipement. Le TF condamne au remboursement des frais nécessaires.",
+          "role": "favorable",
+          "resultat": "favorable_employe",
+          "from_corpus": true,
+          "match_score": 13
         }
       ],
       "modeleLettre": "Objet : Demande de remboursement des frais de teletravail\n\nMadame, Monsieur,\n\nTravaillant depuis mon domicile [X] jours par semaine [SELON ACCORD / SUR VOTRE INSTRUCTION], je vous demande le remboursement des frais engages conformement a l art. 327a CO : [EQUIPEMENT, INTERNET, ELECTRICITE, PART DE LOYER].\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
@@ -1877,7 +2686,12 @@
       "qui a initie le teletravail",
       "frais engages (internet, matériel)",
       "ce que dit le contrat ou le reglement"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_burnout",
@@ -1890,6 +2704,7 @@
       "sante",
       "incapacité"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1989,7 +2804,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "720 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO/LTr état 2025-01-01",
@@ -2014,7 +2837,11 @@
       "ancienneté",
       "demarches auprès de l'employeur",
       "assurance perte de gain existante ou non"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_assurance_chomage",
@@ -2027,6 +2854,7 @@
       "LACI",
       "conditions"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2099,6 +2927,16 @@
         {
           "ref": "TF 8C_465/2017",
           "resume": "La demission pour cause de harcélément n entraine pas de suspension si le harcélément est prouve."
+        },
+        {
+          "signature": "4A_525/2019",
+          "tribunal": "TF",
+          "date": "2019-02-12",
+          "resume": "Licenciement immédiat sans juste motif réel. Le TF accorde le salaire jusqu'au terme ordinaire plus une indemnité de 2 mois.",
+          "role": "favorable",
+          "resultat": "favorable_employe",
+          "from_corpus": true,
+          "match_score": 3
         }
       ],
       "modeleLettre": "Objet : Inscription au chômage et demande d'indemnités — art. 13 ss LACI\n\nOffice régional de placement (ORP)\n[ADRESSE DE L'ORP — CANTON]\n\n[LIEU], le [DATE]\n\nMadame, Monsieur,\n\nPar la présente, je sollicite mon inscription au chômage et le versément des indemnités journalières conformément à la LACI.\n\nMa situation :\n- Dernier employeur : [NOM DE L'EMPLOYEUR]\n- Fonction occupée : [POSTE]\n- Date de fin du contrat : [DATE]\n- Motif de la fin des rapports de travail : [LICENCIEMENT / FIN CDD / AUTRE]\n- Période de cotisation : [NOMBRE DE MOIS] mois au cours des 2 dernières années (art. 13 LACI)\n- Dernier salaire brut mensuel : CHF [MONTANT]\n\nJe confirmé être apte au placement, disposé(e) à accepter un travail convenable et à effectuér les recherches d'emploi requises.\n\nJe joins les documents nécessaires à l'examen de mon droit aux indemnités (art. 22 et 27 LACI).\n\nAnnexes : [ATTESTATION DE L'EMPLOYEUR, CERTIFICAT DE TRAVAIL, FICHES DE SALAIRE DES 6 DERNIERS MOIS, CONTRAT DE TRAVAIL, LETTRE DE LICENCIEMENT, PIÈCE D'IDENTITÉ]\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[NOM, PRÉNOM]\n[ADRESSE COMPLÈTE]\n[TÉLÉPHONE / EMAIL]\n[SIGNATURE]",
@@ -2127,7 +2965,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Inscription à l'ORP dès notification du congé",
+          "delai": "avant fin des rapports",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt dossier à la caisse de chômage",
+          "delai": "sous 3 mois après fin emploi (sinon perte partielle)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recherches d'emploi documentées",
+          "delai": "dès préavis et chaque mois",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Contestation d'une décision de suspension/refus",
+          "delai": "30 jours dès décision",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours au tribunal cantonal",
+          "delai": "30 jours dès décision sur opposition",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LACI état 2025-01-01",
@@ -2152,7 +3022,59 @@
       "age",
       "dernier salaire",
       "inscription ORP faite ou non"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Inscription et droits au chômage",
+        "domaine": "travail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Inscription à l'ORP dès notification du congé",
+            "description": "S'inscrire à l'office régional de placement avant le dernier jour de travail pour éviter suspension.",
+            "delai": "avant fin des rapports",
+            "base_legale": "LACI 8 / LACI 10",
+            "preuve_generee": "Attestation d'inscription"
+          },
+          {
+            "numero": 2,
+            "action": "Dépôt dossier à la caisse de chômage",
+            "description": "Choisir la caisse (syndicale ou publique) et déposer demande d'indemnités avec : certificat de travail, décompte salaire 12 derniers mois, lettre de congé, attestations employeur.",
+            "delai": "sous 3 mois après fin emploi (sinon perte partielle)",
+            "base_legale": "LACI 20 / OACI 29",
+            "preuve_generee": "Confirmation réception dossier"
+          },
+          {
+            "numero": 3,
+            "action": "Recherches d'emploi documentées",
+            "description": "Effectuer en moyenne 10-12 recherches/mois dès préavis. Conserver toutes preuves (e-mails, candidatures, refus).",
+            "delai": "dès préavis et chaque mois",
+            "base_legale": "LACI 17 / OACI 26",
+            "preuve_generee": "Journal de recherches"
+          },
+          {
+            "numero": 4,
+            "action": "Contestation d'une décision de suspension/refus",
+            "description": "Opposition écrite auprès de la caisse dans les 30 jours. Pas de frais.",
+            "delai": "30 jours dès décision",
+            "base_legale": "LPGA 52 / LACI 100",
+            "cout": "Gratuit"
+          },
+          {
+            "numero": 5,
+            "action": "Recours au tribunal cantonal",
+            "description": "Si opposition rejetée, recours au tribunal cantonal des assurances dans les 30 jours. Gratuit en 1ère instance.",
+            "delai": "30 jours dès décision sur opposition",
+            "base_legale": "LPGA 56 / LPGA 61",
+            "cout": "Gratuit"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_orp_inscription",
@@ -2165,6 +3087,7 @@
       "recherche emploi",
       "obligation"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2226,6 +3149,16 @@
         {
           "ref": "TF 8C_192/2013",
           "resume": "L inscription tardive a l ORP entraine la perte des indemnités pour les jours antérieurs a l inscription."
+        },
+        {
+          "signature": "4A_194/2021",
+          "tribunal": "TF",
+          "date": "2021-07-06",
+          "resume": "Employeur supprime le 13e salaire après 8 ans de versément régulier. Le TF juge qu'un usage s'est constitué et oblige au paiement.",
+          "role": "favorable",
+          "resultat": "favorable_employe",
+          "from_corpus": true,
+          "match_score": 3
         }
       ],
       "modeleLettre": "",
@@ -2242,7 +3175,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Réunion des documents",
+          "delai": "dès réception du licenciement",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Inscription à l'ORP du domicile",
+          "delai": "1er jour de chômage (rétroactivité limitée)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Examen du droit aux indemnités",
+          "delai": "30 à 60 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition puis recours au tribunal cantonal des assurances",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LACI état 2025-01-01",
@@ -2266,7 +3225,56 @@
       "commune de domicile",
       "inscription déjà faite ou non",
       "preuves de recherche d'emploi existantes"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Inscription à l'ORP et demande d'indemnités chômage",
+        "domaine": "travail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Réunion des documents",
+            "description": "Rassembler contrat de travail, lettre de licenciement, certificat de travail, preuves de recherches d'emploi.",
+            "delai": "dès réception du licenciement",
+            "preuve_generee": "Dossier complet"
+          },
+          {
+            "numero": 2,
+            "action": "Inscription à l'ORP du domicile",
+            "description": "Se présenter à l'ORP au plus tard le 1er jour de chômage et remplir la demande d'indemnités auprès de la caisse choisie.",
+            "delai": "1er jour de chômage (rétroactivité limitée)",
+            "base_legale": "LACI 17",
+            "preuve_generee": "Confirmation d'inscription ORP"
+          },
+          {
+            "numero": 3,
+            "action": "Examen du droit aux indemnités",
+            "delai": "30 à 60 jours",
+            "branches": [
+              {
+                "si": "indemnités accordées",
+                "alors": "versements mensuels (fin courante)"
+              },
+              {
+                "si": "refus ou pénalité (LACI 30)",
+                "alors": "etape 4 (opposition/recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Opposition puis recours au tribunal cantonal des assurances",
+            "description": "Opposition à la caisse de chômage dans 30 jours, puis recours au tribunal des assurances.",
+            "delai": "30 jours dès notification",
+            "base_legale": "LACI 30 / LPGA 52 / LPGA 56"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_delai_conge",
@@ -2279,6 +3287,7 @@
       "préavis",
       "fin contrat"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2340,6 +3349,16 @@
         {
           "ref": "TF 4A_56/2013",
           "resume": "Le conge doit parvenir a l employé avant le debut du délai de préavis ; un envoi tardif reporte au terme suivant."
+        },
+        {
+          "signature": "4A_89/2017",
+          "tribunal": "TF",
+          "date": "2017-05-15",
+          "resume": "Licenciement au 12e jour de la période d'essai sans motif. Le TF confirme la validité mais rappelle que même en période d'essai, le congé abusif reste sanctionnable.",
+          "role": "favorable",
+          "resultat": "favorable_employeur",
+          "from_corpus": true,
+          "match_score": 8
         }
       ],
       "modeleLettre": "Objet : Resiliation du contrat de travail\n\nMadame, Monsieur,\n\nPar la présente, je vous notifié la résiliation de mon contrat de travail avec effet au [DATE], en respectant le délai de [1/2/3] mois prévu par [LE CONTRAT / L ART. 335C CO].\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
@@ -2358,7 +3377,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Calcul du délai applicable",
+          "delai": "immédiat dès réception",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Vérification de la forme",
+          "delai": "sous 7 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande écrite de motifs",
+          "delai": "dans les 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Contestation si congé abusif ou en temps inopportun",
+          "delai": "avant fin délai congé (opposition) + 180 jours (action)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "7 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -2380,7 +3431,51 @@
       "ce que dit le contrat sur le préavis",
       "CCT applicable ou non",
       "période d'essai en cours ou non"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Vérification et contestation d'un délai de congé",
+        "domaine": "travail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Calcul du délai applicable",
+            "description": "Délais légaux CO 335c : 7 jours période d'essai, 1 mois (1ère année), 2 mois (2e-9e année), 3 mois (dès 10e année). Vérifier si le contrat prévoit plus.",
+            "delai": "immédiat dès réception",
+            "base_legale": "CO 335b / CO 335c",
+            "preuve_generee": "Décompte daté"
+          },
+          {
+            "numero": 2,
+            "action": "Vérification de la forme",
+            "description": "Contrôler forme écrite requise par contrat/CCT, mention des motifs si demandée (CO 335 al. 2), respect du terme mensuel.",
+            "delai": "sous 7 jours",
+            "base_legale": "CO 335 / CO 335c al. 1",
+            "preuve_generee": "Analyse du courrier de congé"
+          },
+          {
+            "numero": 3,
+            "action": "Demande écrite de motifs",
+            "description": "Si motifs non communiqués, demande écrite à l'employeur — obligation de les indiquer par écrit.",
+            "delai": "dans les 30 jours",
+            "base_legale": "CO 335 al. 2",
+            "preuve_generee": "Accusé de réception"
+          },
+          {
+            "numero": 4,
+            "action": "Contestation si congé abusif ou en temps inopportun",
+            "description": "Opposition par écrit au plus tard à la fin du délai de congé. Saisine tribunal des prud'hommes dans les 180 jours après fin des rapports.",
+            "delai": "avant fin délai congé (opposition) + 180 jours (action)",
+            "base_legale": "CO 336b / CO 336c",
+            "preuve_generee": "Opposition recommandée"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_indemnite_depart",
@@ -2393,6 +3488,7 @@
       "licenciement",
       "age"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2459,6 +3555,16 @@
         {
           "ref": "TF 4A_194/2011",
           "resume": "Les prestations LPP financees par l employeur sont deduites de l indemnité de depart."
+        },
+        {
+          "signature": "4A_525/2019",
+          "tribunal": "TF",
+          "date": "2019-02-12",
+          "resume": "Licenciement immédiat sans juste motif réel. Le TF accorde le salaire jusqu'au terme ordinaire plus une indemnité de 2 mois.",
+          "role": "favorable",
+          "resultat": "favorable_employe",
+          "from_corpus": true,
+          "match_score": 5
         }
       ],
       "modeleLettre": "Objet : Demande d indemnité de départ (art. 339b CO)\n\n[NOM DE L EMPLOYEUR]\n[ADRESSE DE L EMPLOYEUR]\n\n[LIEU], le [DATE]\n\nMadame, Monsieur,\n\nPar la présente, je vous demande le versement de l indemnité de départ prévue à l art. 339b CO.\n\nJ ai été au service de votre entreprise du [DATE DE DÉBUT] au [DATE DE FIN], soit pendant [NOMBRE] années. J étais âgé(e) de [ÂGE] ans au moment de la fin des rapports de travail.\n\nConformément à l art. 339b al. 1 CO, l indemnité de départ est due lorsque le travailleur a au moins 50 ans et 20 ans de service. Ces conditions sont remplies dans mon cas.\n\nLe montant de l indemnité s élève, conformément à l art. 339c CO, à :\n- De 20 à 25 ans de service : 2 mois de salaire\n- De 25 à 30 ans de service : 3 mois de salaire\n- De 30 à 35 ans de service : 4 mois de salaire\n- Plus de 35 ans de service : 5 mois de salaire\n\nSur la base de mon dernier salaire mensuel brut de CHF [MONTANT SALAIRE], l indemnité due s élève à CHF [MONTANT INDEMNITÉ], soit [NOMBRE] mois de salaire.\n\nJe note que conformément à l art. 339d CO, les prestations de prévoyance professionnelle ne peuvent être déduites que si elles sont financées au moins pour moitié par l employeur.\n\nJe vous prie de bien vouloir procéder au versement dans un délai de 30 jours.\n\nJe vous prie d agréer, Madame, Monsieur, mes salutations distinguées.\n\n[NOM, PRÉNOM]\n[ADRESSE]\n[SIGNATURE]",
@@ -2477,7 +3583,27 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "50 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "2 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "8 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -2499,7 +3625,11 @@
       "nombre d'annees de service",
       "prevoyance professionnelle (LPP) existante",
       "motif de fin de contrat"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_convention_collective",
@@ -2511,6 +3641,7 @@
       "contrat-type",
       "branche"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2576,6 +3707,16 @@
         {
           "ref": "TF 4A_163/2012",
           "resume": "La CCT etendue s applique même si le contrat individuel prevoit des conditions differentes, pour autant que la CCT soit plus favorable."
+        },
+        {
+          "signature": "4A_159/2016",
+          "tribunal": "TF",
+          "date": "2016-06-28",
+          "resume": "Employeur ne respecte pas les salaires minimaux de la CCT étendue. Le TF ordonne le paiement rétroactif des différences salariales.",
+          "role": "favorable",
+          "resultat": "favorable_employe",
+          "from_corpus": true,
+          "match_score": 11
         }
       ],
       "modeleLettre": "",
@@ -2599,7 +3740,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Identification de la CCT applicable",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande d'application à l'employeur",
+          "delai": "dans les 30 jours suivant l'identification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai de mise en conformité",
+          "delai": "30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Saisine de la commission paritaire ou du tribunal des prud'hommes",
+          "delai": "5 ans (prescription créances de salaire CO 128)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -2621,7 +3794,56 @@
       "canton",
       "employeur membre d'une association patronale ou non",
       "probleme précis (salaire, vacances, etc.)"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Application d'une convention collective de travail (CCT)",
+        "domaine": "travail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Identification de la CCT applicable",
+            "description": "Vérifier la branche, le canton, l'extension éventuelle (force obligatoire), les conditions personnelles.",
+            "delai": "immédiat",
+            "preuve_generee": "Note d'analyse + texte de la CCT"
+          },
+          {
+            "numero": 2,
+            "action": "Demande d'application à l'employeur",
+            "description": "Notifier par écrit (recommandé) à l'employeur la non-conformité du contrat à la CCT (salaire, horaire, vacances).",
+            "delai": "dans les 30 jours suivant l'identification",
+            "base_legale": "CO 356 / CO 357",
+            "preuve_generee": "Lettre AR + relevé des écarts"
+          },
+          {
+            "numero": 3,
+            "action": "Délai de mise en conformité",
+            "delai": "30 jours",
+            "branches": [
+              {
+                "si": "mise en conformité par l'employeur",
+                "alors": "fin"
+              },
+              {
+                "si": "refus ou silence",
+                "alors": "etape 4 (saisine de la commission paritaire ou du tribunal)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Saisine de la commission paritaire ou du tribunal des prud'hommes",
+            "description": "Plainte à la commission paritaire CCT, ou requête de conciliation puis action devant le tribunal des prud'hommes.",
+            "delai": "5 ans (prescription créances de salaire CO 128)",
+            "base_legale": "CO 357 / CO 128 / CPC 197 ss"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_temporaire",
@@ -2634,6 +3856,7 @@
       "location services",
       "mission"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2725,7 +3948,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Vérification du contrat et missions",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Mise en demeure de l'agence",
+          "delai": "dans les 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai de réponse",
+          "delai": "30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Plainte au SECO/SCAV et/ou tribunal des prud'hommes",
+          "delai": "5 ans (CO 128) pour les créances",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LSE état 2025-01-01",
@@ -2747,7 +4002,56 @@
       "durée de la mission",
       "contrat signé avec l'agence ou non",
       "probleme précis (salaire, fin de mission, accident)"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Litige avec une agence de travail temporaire",
+        "domaine": "travail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérification du contrat et missions",
+            "description": "Lire le contrat-cadre et le contrat de mission, vérifier la conformité aux CCT-Location de services et aux fiches de salaire.",
+            "delai": "immédiat",
+            "preuve_generee": "Tableau écarts contrat/loi"
+          },
+          {
+            "numero": 2,
+            "action": "Mise en demeure de l'agence",
+            "description": "Adresser une mise en demeure recommandée (salaire, certificat de travail, indemnités).",
+            "delai": "dans les 30 jours",
+            "base_legale": "LSE 12 / LSE 19 / LSE 20",
+            "preuve_generee": "Lettre AR"
+          },
+          {
+            "numero": 3,
+            "action": "Délai de réponse",
+            "delai": "30 jours",
+            "branches": [
+              {
+                "si": "régularisation",
+                "alors": "fin"
+              },
+              {
+                "si": "refus ou silence",
+                "alors": "etape 4 (saisine SECO ou tribunal)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Plainte au SECO/SCAV et/ou tribunal des prud'hommes",
+            "description": "Signaler à l'autorité cantonale de surveillance du marché du travail (SECO/SCAV); ouvrir action prud'homale.",
+            "delai": "5 ans (CO 128) pour les créances",
+            "base_legale": "LSE 19 / LSE 20 / CPC 197"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_stagiaire",
@@ -2760,6 +4064,7 @@
       "rémunération",
       "formation"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2822,6 +4127,16 @@
         {
           "ref": "TF 4A_200/2015",
           "resume": "Un stage de longue durée avec travail productif est requalifie en contrat de travail ouvrant droit au salaire usuel."
+        },
+        {
+          "signature": "4A_611/2017",
+          "tribunal": "TF",
+          "date": "2017-08-29",
+          "resume": "Employé réclame 320 heures supplémentaires sur 2 ans. Le TF confirme l'obligation de paiement majoré de 25% en l'absence de compensation par du temps libre.",
+          "role": "favorable",
+          "resultat": "favorable_employe",
+          "from_corpus": true,
+          "match_score": 3
         }
       ],
       "modeleLettre": "",
@@ -2840,7 +4155,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Qualification du stage",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande de reconnaissance comme contrat de travail",
+          "delai": "30 jours suivant la qualification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai de réponse",
+          "delai": "30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action devant le tribunal des prud'hommes",
+          "delai": "5 ans dès chaque échéance de salaire (CO 128)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -2863,7 +4210,56 @@
       "contenu reel du travail effectué",
       "convention de stage signée ou non",
       "lien avec une formation"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Reconnaissance et conditions d'un stage",
+        "domaine": "travail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Qualification du stage",
+            "description": "Vérifier si le stage est réellement formatif (objectif pédagogique, encadrement) ou s'il dissimule un emploi (CO 319).",
+            "delai": "immédiat",
+            "preuve_generee": "Convention de stage + fiche d'analyse"
+          },
+          {
+            "numero": 2,
+            "action": "Demande de reconnaissance comme contrat de travail",
+            "description": "Si le stage est en réalité un emploi, mettre l'employeur en demeure de régulariser (salaire conforme, contrat).",
+            "delai": "30 jours suivant la qualification",
+            "base_legale": "CO 319 / CO 344",
+            "preuve_generee": "Lettre AR"
+          },
+          {
+            "numero": 3,
+            "action": "Délai de réponse",
+            "delai": "30 jours",
+            "branches": [
+              {
+                "si": "requalification acceptée",
+                "alors": "régularisation (fin)"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 4 (action prud'homale)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Action devant le tribunal des prud'hommes",
+            "description": "Requête de conciliation puis action en paiement du salaire dû et requalification.",
+            "delai": "5 ans dès chaque échéance de salaire (CO 128)",
+            "base_legale": "CO 319 / CO 128 / CPC 197"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_apprenti",
@@ -2876,6 +4272,7 @@
       "formation",
       "droits"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2976,7 +4373,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Vérification du contrat d'apprentissage",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Saisine de l'autorité cantonale de la formation professionnelle",
+          "delai": "dans les 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Médiation cantonale",
+          "delai": "30 à 60 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action prud'homale ou résiliation",
+          "delai": "5 ans pour créances salariales (CO 128)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Résiliation / contestation de congé",
+          "delai": "3 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -2998,7 +4427,56 @@
       "type de formation (CFC, AFP)",
       "probleme précis",
       "commissaire professionnel contacte ou non"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Litige relatif à un contrat d'apprentissage",
+        "domaine": "travail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérification du contrat d'apprentissage",
+            "description": "S'assurer du respect des éléments légaux (forme écrite, plan de formation, salaire min, vacances).",
+            "delai": "immédiat",
+            "preuve_generee": "Analyse du contrat datée"
+          },
+          {
+            "numero": 2,
+            "action": "Saisine de l'autorité cantonale de la formation professionnelle",
+            "description": "Signaler à l'office cantonal compétent en formation professionnelle toute violation, puis mettre en demeure l'employeur.",
+            "delai": "dans les 30 jours",
+            "base_legale": "CO 344 / CO 345a",
+            "preuve_generee": "Lettre AR + signalement"
+          },
+          {
+            "numero": 3,
+            "action": "Médiation cantonale",
+            "delai": "30 à 60 jours",
+            "branches": [
+              {
+                "si": "accord trouvé",
+                "alors": "fin (régularisation)"
+              },
+              {
+                "si": "désaccord persistant ou rupture du contrat",
+                "alors": "etape 4 (action prud'homale)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Action prud'homale ou résiliation",
+            "description": "Saisir le tribunal des prud'hommes (litige) ou prononcer la résiliation pour justes motifs (CO 346).",
+            "delai": "5 ans pour créances salariales (CO 128)",
+            "base_legale": "CO 344 / CO 344a / CO 346"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_13e_salaire",
@@ -3010,6 +4488,7 @@
       "bonus",
       "rémunération"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3093,7 +4572,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -3115,7 +4602,11 @@
       "CCT applicable",
       "usage dans l'entreprise",
       "en cours d'annee ou fin de contrat"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_gratification",
@@ -3127,6 +4618,7 @@
       "prime",
       "discretionnaire"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3213,7 +4705,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Analyse du fondement de la gratification",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Mise en demeure de l'employeur",
+          "delai": "dans les 30 jours suivant l'échéance",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai de réponse",
+          "delai": "30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action devant le tribunal des prud'hommes",
+          "delai": "5 ans dès l'échéance (CO 128)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -3235,7 +4759,56 @@
       "ce que dit le contrat",
       "communication de l'employeur sur le bonus",
       "proportion du bonus par rapport au salaire"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Réclamation d'une gratification ou bonus",
+        "domaine": "travail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Analyse du fondement de la gratification",
+            "description": "Vérifier si la gratification est convenue (contrat, usage répété de 3+ années) ou laissée à l'appréciation (CO 322d).",
+            "delai": "immédiat",
+            "preuve_generee": "Analyse contractuelle"
+          },
+          {
+            "numero": 2,
+            "action": "Mise en demeure de l'employeur",
+            "description": "Réclamer par lettre recommandée le versement de la gratification due, en motivant juridiquement.",
+            "delai": "dans les 30 jours suivant l'échéance",
+            "base_legale": "CO 322d",
+            "preuve_generee": "Lettre AR"
+          },
+          {
+            "numero": 3,
+            "action": "Délai de réponse",
+            "delai": "30 jours",
+            "branches": [
+              {
+                "si": "versement",
+                "alors": "fin"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 4 (procédure prud'homale)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Action devant le tribunal des prud'hommes",
+            "description": "Saisir l'autorité de conciliation puis le tribunal des prud'hommes en cas d'échec.",
+            "delai": "5 ans dès l'échéance (CO 128)",
+            "base_legale": "CO 322d / CO 128 / CPC 197"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_frais_professionnels",
@@ -3248,6 +4821,7 @@
       "deplacement",
       "repas"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3311,6 +4885,16 @@
         {
           "ref": "TF 4A_533/2018",
           "resume": "L obligation de rembourser les frais professionnels est imperative ; un forfait insuffisant doit être complete."
+        },
+        {
+          "signature": "4A_287/2021",
+          "tribunal": "TF",
+          "date": "2021-12-21",
+          "resume": "Employeur impose le télétravail sans rembourser les frais de connexion et d'équipement. Le TF condamne au remboursement des frais nécessaires.",
+          "role": "favorable",
+          "resultat": "favorable_employe",
+          "from_corpus": true,
+          "match_score": 16
         }
       ],
       "modeleLettre": "Objet : Demande de remboursement de frais professionnels\n\nMadame, Monsieur,\n\nConformément a l art. 327a CO, je vous demande le remboursement des frais professionnels suivants engages dans le cadre de mon travail :\n- [TYPE DE FRAIS] : CHF [MONTANT] (justificatif joint)\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
@@ -3329,7 +4913,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Demande de remboursement frais pro",
+          "delai": "À fournir au fur et à mesure — action civile prescrit 5 ans",
+          "base_legale": "CO 327a / CO 128",
+          "consequence": "Au-delà : prescription"
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -3351,7 +4943,11 @@
       "accord écrit ou reglement interne",
       "montants engages",
       "forfait frais existant ou non"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_protection_donnees",
@@ -3364,6 +4960,7 @@
       "personnel",
       "vie privee"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3428,6 +5025,16 @@
         {
           "ref": "TF 4A_518/2020",
           "resume": "L employeur qui refuse l acces au dossier personnel viole l art. 328b CO et la LPD."
+        },
+        {
+          "signature": "4A_518/2020",
+          "tribunal": "TF",
+          "date": "2020-12-15",
+          "resume": "Employeur installe une caméra cachée au poste de travail. Le TF juge la surveillance disproportionnée et écarte les preuves obtenues.",
+          "role": "favorable",
+          "resultat": "favorable_employe",
+          "from_corpus": true,
+          "match_score": 5
         }
       ],
       "modeleLettre": "Objet : Demande d acces à mes données personnelles\n\nMadame, Monsieur,\n\nConformément a l art. 25 LPD et a l art. 328b CO, je demande l acces a l intégralité des données me concernant detenues par l entreprise, y compris mon dossier personnel.\n\nJe vous prie de me transmettre ces informations dans un délai de 30 jours.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
@@ -3473,7 +5080,12 @@
       "ce que l'employeur fait ou veut faire",
       "consentement donne ou non",
       "reglement interne existant"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_surveillance",
@@ -3486,6 +5098,7 @@
       "email",
       "monitoring"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3574,7 +5187,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Documentation de la surveillance",
+          "delai": "immédiat dès découverte",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande d'information et opposition",
+          "delai": "dans les 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai de réponse",
+          "delai": "30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Plainte au PFPDT, SECO et/ou action civile",
+          "delai": "selon procédure (action civile : 1 an dès connaissance du dommage)",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO/OLT 3 état 2025-01-01",
@@ -3596,7 +5235,56 @@
       "employés informes ou non",
       "but déclaré de la surveillance",
       "reglement interne ou accord"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Contestation de la surveillance des employés",
+        "domaine": "travail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Documentation de la surveillance",
+            "description": "Identifier les moyens utilisés (caméras, logiciels, géolocalisation), leur but et leur proportionnalité (CO 328b).",
+            "delai": "immédiat dès découverte",
+            "preuve_generee": "Inventaire détaillé daté"
+          },
+          {
+            "numero": 2,
+            "action": "Demande d'information et opposition",
+            "description": "Demander par écrit à l'employeur la finalité de la surveillance et exiger sa cessation/limitation si excessive.",
+            "delai": "dans les 30 jours",
+            "base_legale": "CO 328 / CO 328b",
+            "preuve_generee": "Lettre AR"
+          },
+          {
+            "numero": 3,
+            "action": "Délai de réponse",
+            "delai": "30 jours",
+            "branches": [
+              {
+                "si": "cessation/conformité",
+                "alors": "fin"
+              },
+              {
+                "si": "refus ou silence",
+                "alors": "etape 4 (saisine PFPDT/SECO ou tribunal)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Plainte au PFPDT, SECO et/ou action civile",
+            "description": "Plainte au Préposé fédéral à la protection des données et/ou inspection du travail; action prud'homale en réparation.",
+            "delai": "selon procédure (action civile : 1 an dès connaissance du dommage)",
+            "base_legale": "CO 328 / CO 328b / LPD 32"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_reference_negative",
@@ -3609,6 +5297,7 @@
       "ancien employeur",
       "reputation"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3692,7 +5381,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Action en rectification du certificat",
+          "delai": "10 ans (prescription ordinaire)",
+          "base_legale": "CO 330a / CO 127",
+          "consequence": "Au-delà : plus actionnable"
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
@@ -3714,7 +5411,11 @@
       "comment l'employé l'a appris",
       "preuves (temoignage du nouvel employeur)",
       "certificat de travail écrit déjà en possession"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_chomage",
@@ -3729,6 +5430,7 @@
       "délai-cadre",
       "cotisation"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3834,7 +5536,27 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "12 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "55 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "60 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LACI état 2025-01-01",
@@ -3857,7 +5579,11 @@
       "motif de la perte d'emploi",
       "inscription ORP effectuée ou non",
       "charges de famille"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_maladie",
@@ -3872,6 +5598,7 @@
       "protection",
       "incapacité"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3969,7 +5696,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Annonce immédiate à l'employeur",
+          "delai": "premier jour d'absence",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Vérification de la couverture",
+          "delai": "sous 7 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Protection contre le licenciement",
+          "delai": "tout au long de l'arrêt",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Contestation d'un licenciement abusif",
+          "delai": "immédiat dès réception congé",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action prud'homale",
+          "delai": "délai constitution au tribunal",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO/LCA état 2025-01-01",
@@ -3992,7 +5751,59 @@
       "assurance perte de gain (IJM) existante ou non",
       "durée de l'arrêt actuel",
       "canton de travail"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Arrêt maladie et protection de l'emploi",
+        "domaine": "travail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Annonce immédiate à l'employeur",
+            "description": "Informer l'employeur dès le premier jour d'absence. Certificat médical si durée >3 jours ou selon règlement interne.",
+            "delai": "premier jour d'absence",
+            "base_legale": "CO 324a",
+            "preuve_generee": "Certificat médical"
+          },
+          {
+            "numero": 2,
+            "action": "Vérification de la couverture",
+            "description": "Identifier la source du salaire pendant maladie : échelle bernoise/zurichoise (CO 324a) ou assurance perte de gain collective.",
+            "delai": "sous 7 jours",
+            "base_legale": "CO 324a / CCT applicable",
+            "preuve_generee": "Analyse du contrat et CCT"
+          },
+          {
+            "numero": 3,
+            "action": "Protection contre le licenciement",
+            "description": "Délai de protection dès l'incapacité : 30 jours (1ère année), 90 jours (2e-5e année), 180 jours (dès 6e année). Licenciement notifié pendant = nul.",
+            "delai": "tout au long de l'arrêt",
+            "base_legale": "CO 336c al. 1 let. b",
+            "preuve_generee": "Rappel écrit de la protection si licenciement"
+          },
+          {
+            "numero": 4,
+            "action": "Contestation d'un licenciement abusif",
+            "description": "Si l'employeur licencie pendant la période protégée ou utilise la maladie comme motif : courrier immédiat rappelant la nullité.",
+            "delai": "immédiat dès réception congé",
+            "base_legale": "CO 336c / CO 336",
+            "preuve_generee": "Courrier recommandé"
+          },
+          {
+            "numero": 5,
+            "action": "Action prud'homale",
+            "description": "Action devant le tribunal des prud'hommes pour nullité du congé ou indemnité (jusqu'à 6 mois de salaire).",
+            "delai": "délai constitution au tribunal",
+            "base_legale": "CO 336a / CPC 243",
+            "cout": "Gratuit jusqu'à 30'000 CHF"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_saisie_salaire",
@@ -4007,6 +5818,7 @@
       "employeur",
       "retenue"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -4104,7 +5916,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "10 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
@@ -4127,7 +5947,11 @@
       "montant de la saisie notifiée",
       "loyer et primes d'assurance maladie",
       "commandement de payer reçu"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "travail_discrimination_salariale",
@@ -4141,6 +5965,7 @@
       "salaire inégal",
       "genre"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -4256,7 +6081,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Prescription",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-13",
     "sourceLoi": "LEg état 2025-01-01, CO état 2025-01-01",
@@ -4281,6 +6114,10 @@
       "ancienneté et formation",
       "démarches déja entreprises",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   }
 ]

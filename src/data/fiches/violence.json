@@ -12,6 +12,7 @@
       "protection",
       "mesures"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -122,7 +123,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "14 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CC/LAVI/CP état 2025-01-01",
@@ -144,7 +153,11 @@
       "danger immédiat ou non",
       "cohabitation actuelle avec l'auteur",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "violence_foyer_accueil",
@@ -159,6 +172,7 @@
       "confidentialite",
       "refuge"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -214,6 +228,16 @@
         {
           "ref": "TF 5A_830/2018",
           "resume": "Le droit de la victime à la protection de sa vie privee (art. 28 CC) justifie le maintien du secret sur l'adresse du foyer d'accueil."
+        },
+        {
+          "signature": "ATF 134 II 235",
+          "tribunal": "TF",
+          "date": "2008-04-15",
+          "resume": "L'expulsion du logement commun au sens de l'art. 28b CC peut etre ordonnee en procedure superprovisionnelle si la victime est en danger.",
+          "role": "favorable",
+          "resultat": "favorable_locataire",
+          "from_corpus": true,
+          "match_score": 5
         }
       ],
       "modeleLettre": "",
@@ -248,7 +272,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Mise en sécurité immédiate",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Contact avec le centre LAVI ou la police",
+          "delai": "dans les heures suivant la mise à l'abri",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Hébergement en foyer",
+          "delai": "durée selon situation (généralement 7 à 90 jours)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande d'éloignement et plainte pénale",
+          "delai": "dès stabilisation, dans les 90 jours",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LAVI/CC état 2025-01-01",
@@ -270,7 +320,56 @@
       "danger immédiat ou depart planifie",
       "contact prealable avec un centre LAVI",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Mise à l'abri en foyer d'accueil pour victimes",
+        "domaine": "violence",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Mise en sécurité immédiate",
+            "description": "Quitter le domicile dangereux, prendre papiers d'identité, médicaments, effets personnels essentiels.",
+            "delai": "immédiat",
+            "preuve_generee": "Note du moment de mise à l'abri"
+          },
+          {
+            "numero": 2,
+            "action": "Contact avec le centre LAVI ou la police",
+            "description": "Appeler le 117 ou le centre LAVI cantonal pour orientation vers un foyer agréé (LAVI 12).",
+            "delai": "dans les heures suivant la mise à l'abri",
+            "base_legale": "LAVI 12 / LAVI 14",
+            "preuve_generee": "Procès-verbal d'orientation LAVI"
+          },
+          {
+            "numero": 3,
+            "action": "Hébergement en foyer",
+            "delai": "durée selon situation (généralement 7 à 90 jours)",
+            "branches": [
+              {
+                "si": "stabilisation et solution de relogement",
+                "alors": "sortie du foyer (fin de la mise à l'abri)"
+              },
+              {
+                "si": "danger persistant",
+                "alors": "etape 4 (mesures de protection complémentaires)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Demande d'éloignement et plainte pénale",
+            "description": "Saisir l'APEA, le tribunal civil (CC 28b) ou déposer plainte pénale auprès du Ministère public.",
+            "delai": "dès stabilisation, dans les 90 jours",
+            "base_legale": "CC 28b"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "violence_plainte",
@@ -286,6 +385,7 @@
       "office",
       "dépôt"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -399,7 +499,27 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Plainte pénale",
+          "delai": "3 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Prescription",
+          "delai": "10 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Prescription",
+          "delai": "7 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CP/CPP/LAVI état 2025-01-01",
@@ -421,6 +541,2213 @@
       "date des faits",
       "preuves disponibles (constat médical, témoins, messages)",
       "lien avec l'auteur (conjoint, ex, inconnu)"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "violence_ordonnance_protection",
+    "domaine": "violence",
+    "sousDomaine": "protection-civile",
+    "tags": [
+      "ordonnance",
+      "protection",
+      "civile",
+      "CC28b",
+      "interdiction approche",
+      "urgence"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Nature des faits ?",
+        "options": [
+          "violence physique",
+          "menaces",
+          "harcèlement",
+          "stalking"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Lien avec l auteur ?",
+        "options": [
+          "conjoint",
+          "ex",
+          "voisin",
+          "inconnu"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Urgence (super provisionnel) ?",
+        "options": [
+          "oui urgence immédiate",
+          "oui dans les jours",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Preuves disponibles ?",
+        "options": [
+          "plainte",
+          "certificat médical",
+          "messages",
+          "témoins"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'article 28b CC permet à toute victime de violences, menaces ou harcèlement de demander au juge civil des mesures de protection : interdiction d'approcher (généralement 100 m), de fréquenter des lieux déterminés (domicile, lieu de travail), de prendre contact (téléphone, SMS, réseaux sociaux), ou encore l'expulsion du domicile commun (art. 28b al. 2 CC). La requête se dépose au tribunal civil du domicile du demandeur. En cas d'urgence, des mesures super-provisionnelles peuvent être ordonnées sans audition préalable (art. 265 CPC). La procédure est gratuite pour la victime en cas de violence domestique dans plusieurs cantons. La violation de l'ordonnance est pénalement sanctionnée (art. 292 CP, insoumission à une décision).",
+      "articles": [
+        {
+          "ref": "CC 28b",
+          "titre": "Protection contre la violence, menaces ou harcèlement",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr"
+        },
+        {
+          "ref": "CPC 265",
+          "titre": "Mesures superprovisionnelles",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2010/262/fr"
+        },
+        {
+          "ref": "CP 292",
+          "titre": "Insoumission à décision",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 144 III 257",
+          "resume": "Les mesures de l art. 28b CC peuvent être prononcées même sans faute pénale avérée, sur vraisemblance."
+        },
+        {
+          "ref": "TF 5A_377/2018",
+          "resume": "L interdiction d approcher de 100 m est une mesure standard proportionnée en cas de violences répétées."
+        }
+      ],
+      "modeleLettre": "Objet : Requête de mesures protectrices au sens de l'art. 28b CC\n\nMadame/Monsieur le Juge civil,\n\nPar la présente, je requiers l'émission d'une ordonnance prononçant à l'encontre de [NOM auteur] :\n- l'interdiction d'approcher à moins de 100 m du soussigné(e)\n- l'interdiction de prendre contact (tél/SMS/e-mail/réseaux)\n- [l'expulsion du domicile commun]\n\nFaits : [résumer les incidents, dates, circonstances].\n\nEn raison de l'urgence, je sollicite le prononcé en mesures superprovisionnelles.\n\nPièces : plainte pénale, certificat médical, messages, témoignages.\n\n[Signature]",
+      "services": [
+        {
+          "nom": "Centre LAVI Vaud",
+          "tel": "021 631 03 00",
+          "url": "https://www.vaud.ch/lavi",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre LAVI Genève",
+          "tel": "022 320 01 02",
+          "url": "https://www.centrelavi-ge.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "violencequefaire.ch",
+          "tel": "0848 212 212",
+          "url": "https://www.violencequefaire.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Documentation des violences",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Requête au juge civil (mesures de protection)",
+          "delai": "sans délai (urgence possible)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision provisionnelle et audience",
+          "delai": "quelques heures à 10 jours (super-provisionnel) / 30 à 60 jours (provisionnel)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours ou procédure pénale parallèle",
+          "delai": "10 jours (appel) / sans délai (plainte)",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "CC/CPC état 2025-01-01",
+    "match_description": "Demande d'ordonnance civile de protection (interdiction approche, expulsion)",
+    "profane_aliases": [
+      "interdiction d approcher",
+      "ordonnance protection civile",
+      "éloigner ex"
+    ],
+    "negative_signals": [
+      "mesures pénales (voir CPP 216)",
+      "divorce sans violence"
+    ],
+    "required_facts": [
+      "faits et dates",
+      "lien avec l auteur",
+      "preuves",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Obtention d'une ordonnance de protection",
+        "domaine": "violence",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Documentation des violences",
+            "description": "Rassembler preuves : certificats médicaux, messages/SMS, photos de blessures, témoignages, rapports de police antérieurs.",
+            "delai": "immédiat",
+            "preuve_generee": "Dossier de preuves daté"
+          },
+          {
+            "numero": 2,
+            "action": "Requête au juge civil (mesures de protection)",
+            "description": "Requête écrite au tribunal civil pour mesures protectrices (interdiction d'approche, d'entrer au domicile, de contacter) — art. 28b CC.",
+            "delai": "sans délai (urgence possible)",
+            "base_legale": "CC 28b / CPC 261-269",
+            "preuve_generee": "Requête déposée + accusé de réception tribunal"
+          },
+          {
+            "numero": 3,
+            "action": "Décision provisionnelle et audience",
+            "description": "Le juge peut prononcer des mesures superprovisionnelles (immédiates) puis confirmer en procédure provisionnelle après audition des parties.",
+            "delai": "quelques heures à 10 jours (super-provisionnel) / 30 à 60 jours (provisionnel)",
+            "branches": [
+              {
+                "si": "ordonnance accordée",
+                "alors": "exécution des mesures"
+              },
+              {
+                "si": "rejet ou insuffisance",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours ou procédure pénale parallèle",
+            "description": "Appel au tribunal cantonal ET/OU dépôt de plainte pénale (violence conjugale poursuivie d'office dès juillet 2020).",
+            "delai": "10 jours (appel) / sans délai (plainte)",
+            "base_legale": "CC 28b / CP 123 / CP 126",
+            "cout": "assistance judiciaire possible + LAVI"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "violence_eloignement_domicile_penal",
+    "domaine": "violence",
+    "sousDomaine": "penale",
+    "tags": [
+      "éloignement",
+      "domicile",
+      "CPP 216",
+      "police",
+      "violence conjugale",
+      "expulsion temporaire"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Violence commise au domicile commun ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Police est-elle intervenue ?",
+        "options": [
+          "oui",
+          "non",
+          "appelée en cours"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "L auteur a-t-il été éloigné par la police ?",
+        "options": [
+          "oui 14 jours",
+          "non",
+          "je ne sais pas"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Souhaitez-vous prolonger l éloignement ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "En cas de violence domestique, la police peut immédiatement expulser l'auteur du domicile commun pour une durée initiale jusqu'à 14 jours (art. 28b al. 4 CC et lois cantonales d'application, p. ex. LVPPol VD, LaVD-CPP GE). Cette mesure policière préventive est indépendante d'une plainte pénale. La victime peut ensuite demander une prolongation au juge civil (art. 28b CC) ou, si une procédure pénale est ouverte, des mesures au sens du CPP 216 (port d'un bracelet électronique possible dès 2022 dans certains cantons). Le bracelet anti-rapprochement peut être ordonné par le Ministère public. La violation de l'éloignement constitue une infraction (art. 292 CP) et peut justifier une détention provisoire.",
+      "articles": [
+        {
+          "ref": "CC 28b",
+          "titre": "Protection contre la violence, menaces ou harcèlement",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr"
+        },
+        {
+          "ref": "CPP 216",
+          "titre": "Mesures de protection",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2010/262/fr"
+        },
+        {
+          "ref": "CP 292",
+          "titre": "Insoumission",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "TF 6B_517/2018",
+          "resume": "L éloignement policier est une mesure de police administrative indépendante de la plainte pénale."
+        },
+        {
+          "ref": "TF 1B_517/2020",
+          "resume": "Le bracelet électronique anti-rapprochement peut être ordonné en mesure de protection pénale."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Police 117 (urgence)",
+          "tel": "117",
+          "url": "",
+          "canton": "VD"
+        },
+        {
+          "nom": "Police GE (urgence)",
+          "tel": "117",
+          "url": "",
+          "canton": "GE"
+        },
+        {
+          "nom": "Centre LAVI Vaud",
+          "tel": "021 631 03 00",
+          "url": "https://www.vaud.ch/lavi",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre LAVI Genève",
+          "tel": "022 320 01 02",
+          "url": "https://www.centrelavi-ge.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Malley-Prairie foyer pour femmes VD",
+          "tel": "021 620 76 76",
+          "url": "https://www.malleyprairie.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Solidarité Femmes Genève",
+          "tel": "022 797 10 10",
+          "url": "https://www.solidaritefemmes-ge.org",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Documentation des actes de violence",
+          "delai": "immédiat dès l'incident",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Plainte à la police et demande de mesure d'éloignement",
+          "delai": "dans les 48 heures suivant l'incident",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision de la police ou du Ministère public",
+          "delai": "10 jours (mesure d'éloignement initiale)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Requête au tribunal civil pour mesures protectrices",
+          "delai": "à tout moment, urgence possible",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "14 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "CC/CPP/lois cantonales état 2025",
+    "match_description": "Éloignement du domicile par la police ou le juge pénal",
+    "profane_aliases": [
+      "éloignement 14 jours",
+      "police a expulsé mon conjoint",
+      "bracelet électronique"
+    ],
+    "negative_signals": [
+      "ordonnance civile seule (voir 28b)",
+      "divorce"
+    ],
+    "required_facts": [
+      "intervention police faite ou non",
+      "canton",
+      "volonté de prolonger"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Éloignement du conjoint violent (procédure pénale)",
+        "domaine": "violence",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Documentation des actes de violence",
+            "description": "Photos des blessures, certificats médicaux, témoignages, copies de SMS/messages, journal des incidents.",
+            "delai": "immédiat dès l'incident",
+            "preuve_generee": "Dossier de preuves daté"
+          },
+          {
+            "numero": 2,
+            "action": "Plainte à la police et demande de mesure d'éloignement",
+            "description": "Déposer plainte (CP 123 ss) et demander expulsion immédiate du conjoint (CPP 216 / CC 28b).",
+            "delai": "dans les 48 heures suivant l'incident",
+            "base_legale": "CPP 216 / CC 28b",
+            "preuve_generee": "Procès-verbal de plainte"
+          },
+          {
+            "numero": 3,
+            "action": "Décision de la police ou du Ministère public",
+            "delai": "10 jours (mesure d'éloignement initiale)",
+            "branches": [
+              {
+                "si": "éloignement ordonné",
+                "alors": "demande de prolongation par le juge civil (etape 4)"
+              },
+              {
+                "si": "éloignement refusé",
+                "alors": "etape 4 (saisine directe du juge civil)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Requête au tribunal civil pour mesures protectrices",
+            "description": "Saisir le tribunal civil compétent pour prolongation/protection (CC 28b) — interdiction de périmètre, de contact.",
+            "delai": "à tout moment, urgence possible",
+            "base_legale": "CC 28b / CP 292"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "violence_mariage_force",
+    "domaine": "violence",
+    "sousDomaine": "mariage-force",
+    "tags": [
+      "mariage forcé",
+      "CP 181a",
+      "contrainte",
+      "annulation",
+      "étranger"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Mariage déjà conclu ?",
+        "options": [
+          "non imminent",
+          "oui récent",
+          "oui ancien"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Lieu du mariage ?",
+        "options": [
+          "Suisse",
+          "étranger",
+          "prévu à l étranger"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Êtes-vous actuellement en sécurité ?",
+        "options": [
+          "oui",
+          "non menace immédiate",
+          "sous pression"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Âge au moment du mariage ?",
+        "options": [
+          "<18",
+          "18-20",
+          ">20"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le mariage forcé est un crime sanctionné d'une peine privative de liberté de 5 ans au plus (art. 181a CP) — la contrainte peut être physique, psychologique, économique ou religieuse. Poursuite d'office (pas besoin de plainte). Le mariage conclu sous contrainte est absolument nul (art. 105 ch. 5 CC) : action en nullité imprescriptible, pouvant être introduite par un des conjoints ou par les autorités. Les mariages de mineurs (avant 18 ans) sont aussi annulables (art. 105 ch. 6 CC depuis 2013). Une victime risquant un mariage forcé peut obtenir des mesures de protection urgentes (CC 28b) ainsi que l'intervention de l'autorité de protection. Pour les personnes envoyées à l'étranger, le Département fédéral des affaires étrangères (DFAE) peut coordonner le retour.",
+      "articles": [
+        {
+          "ref": "CP 181a",
+          "titre": "Mariage forcé",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr"
+        },
+        {
+          "ref": "CC 105",
+          "titre": "Causes absolues d annulation du mariage",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr"
+        },
+        {
+          "ref": "CC 28b",
+          "titre": "Protection contre la violence, menaces ou harcèlement",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "TF 6B_1045/2017",
+          "resume": "La contrainte au sens de l art. 181a CP couvre la pression psychologique familiale et culturelle."
+        },
+        {
+          "ref": "TF 5A_608/2012",
+          "resume": "Le mariage forcé est absolument nul et l action en nullité est imprescriptible."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "SOS Mariage forcé (Terre des Femmes)",
+          "tel": "0800 800 007",
+          "url": "https://www.mariage-force.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre LAVI Vaud",
+          "tel": "021 631 03 00",
+          "url": "https://www.vaud.ch/lavi",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre LAVI Genève",
+          "tel": "022 320 01 02",
+          "url": "https://www.centrelavi-ge.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Solidarité Femmes Genève",
+          "tel": "022 797 10 10",
+          "url": "https://www.solidaritefemmes-ge.org",
+          "canton": "GE"
+        },
+        {
+          "nom": "Malley-Prairie foyer pour femmes VD",
+          "tel": "021 620 76 76",
+          "url": "https://www.malleyprairie.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "DFAE Helpline",
+          "tel": "+41 800 24 7 365",
+          "url": "https://www.eda.admin.ch",
+          "canton": "VD"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Mise en sécurité de la victime",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Plainte pénale et signalement",
+          "delai": "dès la mise en sécurité",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure pénale et action en annulation civile",
+          "delai": "varie selon enquête",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action en annulation du mariage",
+          "delai": "imprescriptible (CC 105 ch. 5)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "CP/CC état 2025-01-01",
+    "match_description": "Situation de mariage forcé, menace ou annulation",
+    "profane_aliases": [
+      "on veut me marier de force",
+      "mariage imposé famille",
+      "annuler mariage forcé"
+    ],
+    "negative_signals": [
+      "divorce ordinaire (voir famille)",
+      "mariage blanc/complaisance"
+    ],
+    "required_facts": [
+      "mariage conclu ou imminent",
+      "lieu",
+      "pays",
+      "sécurité actuelle"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Action contre un mariage forcé",
+        "domaine": "violence",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Mise en sécurité de la victime",
+            "description": "Évaluer la dangerosité, contacter le centre LAVI ou un foyer si nécessaire, conserver les preuves de pression.",
+            "delai": "immédiat",
+            "preuve_generee": "Note de mise à l'abri"
+          },
+          {
+            "numero": 2,
+            "action": "Plainte pénale et signalement",
+            "description": "Déposer plainte pour mariage forcé (CP 181a) auprès de la police ou du Ministère public.",
+            "delai": "dès la mise en sécurité",
+            "base_legale": "CP 181a",
+            "preuve_generee": "Procès-verbal de plainte"
+          },
+          {
+            "numero": 3,
+            "action": "Procédure pénale et action en annulation civile",
+            "delai": "varie selon enquête",
+            "branches": [
+              {
+                "si": "annulation civile possible",
+                "alors": "etape 4 (action civile)"
+              },
+              {
+                "si": "uniquement procédure pénale",
+                "alors": "suivi par le Ministère public (fin civile)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Action en annulation du mariage",
+            "description": "Saisir le tribunal civil du domicile pour faire annuler le mariage forcé.",
+            "delai": "imprescriptible (CC 105 ch. 5)",
+            "base_legale": "CC 105 ch. 5 / CC 28b"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "violence_stalking_harcelement",
+    "domaine": "violence",
+    "sousDomaine": "stalking",
+    "tags": [
+      "stalking",
+      "harcèlement",
+      "persistant",
+      "CP 179",
+      "suivi",
+      "messages"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Fréquence du harcèlement ?",
+        "options": [
+          "quotidien",
+          "plusieurs/semaine",
+          "sporadique"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Forme du harcèlement ?",
+        "options": [
+          "physique/suivi",
+          "téléphone/SMS",
+          "cyber",
+          "mixte"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Durée ?",
+        "options": [
+          "<1 mois",
+          "1-6 mois",
+          ">6 mois"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Identité de l auteur connue ?",
+        "options": [
+          "oui",
+          "non",
+          "soupçon"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Depuis 2023, le stalking (harcèlement obsessionnel) constitue une infraction pénale spécifique (art. 181a al. 2 CP ou dispositions cantonales selon les lois). Auparavant, il était poursuivi via art. 180 CP (menaces), art. 181 (contrainte), art. 179septies (utilisation abusive d'installations de télécommunication) ou art. 173-177 CP (atteinte à l'honneur). Parallèlement, la victime peut demander au juge civil des mesures de protection (art. 28b CC) : interdiction de contact, d'approcher, de lieux. Il est essentiel de documenter tout : capture d'écran messages, journal des rencontres, témoignages. Le dépôt de plainte dans les 3 mois après chaque acte (art. 31 CP) reste nécessaire pour les infractions sur plainte. Les centres LAVI accompagnent gratuitement dans la démarche.",
+      "articles": [
+        {
+          "ref": "CP 179septies",
+          "titre": "Harcèlement obsessionnel (stalking)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr"
+        },
+        {
+          "ref": "CP 180",
+          "titre": "Menaces",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr"
+        },
+        {
+          "ref": "CP 181",
+          "titre": "Contrainte",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr"
+        },
+        {
+          "ref": "CC 28b",
+          "titre": "Protection contre la violence, menaces ou harcèlement",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "TF 6B_507/2016",
+          "resume": "Le harcèlement répété peut relever de la contrainte (181 CP) et de l atteinte à la liberté personnelle."
+        },
+        {
+          "ref": "TF 6B_332/2019",
+          "resume": "L utilisation abusive d installations de télécommunications (179septies CP) couvre les appels et SMS répétés importuns."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Centre LAVI Vaud",
+          "tel": "021 631 03 00",
+          "url": "https://www.vaud.ch/lavi",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre LAVI Genève",
+          "tel": "022 320 01 02",
+          "url": "https://www.centrelavi-ge.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "violencequefaire.ch",
+          "tel": "0848 212 212",
+          "url": "https://www.violencequefaire.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Police 117 (urgence)",
+          "tel": "117",
+          "url": "",
+          "canton": "VD"
+        },
+        {
+          "nom": "Police GE (urgence)",
+          "tel": "117",
+          "url": "",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Documentation des faits de harcèlement",
+          "delai": "immédiat et continu",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Plainte pénale",
+          "delai": "dans les 3 mois dès le dernier acte (délai de plainte)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Phase d'enquête pénale",
+          "delai": "selon canton (3 à 12 mois)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Requête civile en protection",
+          "delai": "à tout moment",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Plainte pénale",
+          "delai": "3 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "CP/CC état 2025",
+    "match_description": "Harcèlement persistant, stalking, cyber-harcèlement",
+    "profane_aliases": [
+      "stalker",
+      "harcèlement constant",
+      "suivi obsessionnel",
+      "messages incessants"
+    ],
+    "negative_signals": [
+      "menaces isolées ponctuelles (voir menaces)",
+      "diffamation sans répétition"
+    ],
+    "required_facts": [
+      "fréquence et durée",
+      "forme du harcèlement",
+      "preuves documentées",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Procédure contre le harcèlement obsessionnel (stalking)",
+        "domaine": "violence",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Documentation des faits de harcèlement",
+            "description": "Tenir un journal détaillé : dates, heures, lieux, contenu des messages, témoins, captures d'écran.",
+            "delai": "immédiat et continu",
+            "preuve_generee": "Journal de stalking horodaté"
+          },
+          {
+            "numero": 2,
+            "action": "Plainte pénale",
+            "description": "Déposer plainte pour harcèlement (CP 179septies, 180, 181) auprès de la police ou du Ministère public.",
+            "delai": "dans les 3 mois dès le dernier acte (délai de plainte)",
+            "base_legale": "CP 179septies / CP 180 / CP 181",
+            "preuve_generee": "Procès-verbal de plainte + numéro de cause"
+          },
+          {
+            "numero": 3,
+            "action": "Phase d'enquête pénale",
+            "delai": "selon canton (3 à 12 mois)",
+            "branches": [
+              {
+                "si": "ordonnance pénale ou condamnation",
+                "alors": "exécution + mesures civiles (etape 4)"
+              },
+              {
+                "si": "classement",
+                "alors": "etape 4 (action civile autonome)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Requête civile en protection",
+            "description": "Saisir le tribunal civil pour interdiction de contact, de périmètre, mesures provisionnelles (CC 28b).",
+            "delai": "à tout moment",
+            "base_legale": "CC 28b"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "violence_maltraitance_enfant",
+    "domaine": "violence",
+    "sousDomaine": "enfance",
+    "tags": [
+      "enfant",
+      "maltraitance",
+      "CC 314",
+      "APEA",
+      "signalement",
+      "protection"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qui fait l objet de préoccupation ?",
+        "options": [
+          "enfant proche",
+          "mon enfant",
+          "moi mineur",
+          "voisin"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Type de maltraitance ?",
+        "options": [
+          "physique",
+          "psychologique",
+          "sexuelle",
+          "négligence"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Urgence ?",
+        "options": [
+          "immédiate",
+          "préoccupante",
+          "suivi"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Signalement déjà fait ?",
+        "options": [
+          "oui APEA",
+          "oui police",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Toute personne peut (et les professionnels doivent) signaler à l'APEA (Autorité de protection de l'enfant et de l'adulte) le cas d'un enfant dont le bien-être est menacé (art. 314c-d CC, obligation renforcée depuis 2019 pour personnes exerçant une activité professionnelle avec enfants). Le signalement est protégé : pas de violation du secret professionnel ni du secret de fonction (art. 314c al. 3 CC). L'APEA peut ordonner des mesures protectrices (art. 307-315 CC) allant du simple rappel à l'ordre au retrait de l'autorité parentale et placement en famille d'accueil/institution. En cas d'urgence immédiate, la police intervient (117) et peut procéder à un placement d'urgence. Les infractions pénales (lésions, négligence) sont poursuivies d'office.",
+      "articles": [
+        {
+          "ref": "CC 314c",
+          "titre": "Droit d aviser l APEA (anciennement 314d)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr"
+        },
+        {
+          "ref": "CC 307",
+          "titre": "Mesures protectrices de l enfant",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr"
+        },
+        {
+          "ref": "CC 310",
+          "titre": "Retrait du droit de garde",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr"
+        },
+        {
+          "ref": "CP 219",
+          "titre": "Violation du devoir d assistance",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 144 III 28",
+          "resume": "Le signalement à l APEA n engage pas la responsabilité du signaleur s il est fait de bonne foi."
+        },
+        {
+          "ref": "TF 5A_708/2019",
+          "resume": "Le retrait de la garde est ultima ratio ; une curatelle éducative doit être envisagée d abord."
+        }
+      ],
+      "modeleLettre": "Objet : Signalement à l'APEA\n\nMadame, Monsieur,\n\nJ'ai l'honneur de vous signaler la situation préoccupante de l'enfant [NOM, né le DATE], domicilié à [ADRESSE].\n\nFaits observés : [description factuelle sans jugement].\n\nPersonnes concernées : [noms des parents/responsables].\n\nJe reste à disposition pour tout complément d'information.\n\n[Signature et coordonnées]",
+      "services": [
+        {
+          "nom": "APEA Vaud (Justice de paix)",
+          "url": "https://www.vd.ch/themes/justice/justice-de-paix",
+          "canton": "VD"
+        },
+        {
+          "nom": "Tribunal de protection GE",
+          "url": "https://justice.ge.ch/fr/institution/tribunal-de-protection-de-ladulte-et-de-lenfant",
+          "canton": "GE"
+        },
+        {
+          "nom": "Fondation suisse pour l'enfance SOS 147",
+          "tel": "147",
+          "url": "https://www.147.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Pro Juventute",
+          "tel": "147",
+          "url": "https://www.projuventute.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {
+        "famille": {
+          "condition": "enfant_concerne",
+          "url": "famille"
+        }
+      },
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "CC/CP état 2025",
+    "match_description": "Signalement ou constat de maltraitance sur enfant",
+    "profane_aliases": [
+      "enfant en danger",
+      "signaler maltraitance",
+      "APEA enfant"
+    ],
+    "negative_signals": [
+      "divorce conflit parental sans maltraitance",
+      "autorité parentale pure"
+    ],
+    "required_facts": [
+      "type de maltraitance",
+      "urgence",
+      "lien avec l enfant",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "violence_foyer_refuge",
+    "domaine": "violence",
+    "sousDomaine": "foyer",
+    "tags": [
+      "foyer",
+      "refuge",
+      "femmes",
+      "hébergement",
+      "LAVI",
+      "urgence"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Besoin immédiat d hébergement ?",
+        "options": [
+          "ce soir",
+          "cette semaine",
+          "préparation"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Avec enfants ?",
+        "options": [
+          "seul(e)",
+          "enfants mineurs",
+          "enfants majeurs"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous des ressources financières ?",
+        "options": [
+          "oui",
+          "partielles",
+          "aucune"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Police prévenue ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Les foyers d'accueil pour femmes victimes de violences sont organisés dans chaque canton et ouverts 24h/24. Malley-Prairie (VD), Solidarité Femmes (GE, NE, BE, VS, FR), Au Cœur des Grottes (GE migrantes) offrent hébergement sécurisé, accompagnement psychologique, juridique et social. L'accès est gratuit sur la base de la LAVI (art. 12-17) pour les victimes d'infractions. Les frais de séjour sont couverts soit par l'aide aux victimes (LAVI), soit par l'aide sociale cantonale, soit par l'assurance. Les hommes victimes de violences disposent aussi de structures (moins nombreuses). Les adresses des foyers restent confidentielles pour la sécurité des résidentes. Le premier contact se fait par téléphone ou via la police.",
+      "articles": [
+        {
+          "ref": "LAVI 12",
+          "titre": "Aide immédiate",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2008/228/fr"
+        },
+        {
+          "ref": "LAVI 14",
+          "titre": "Prise en charge des frais",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2008/228/fr"
+        },
+        {
+          "ref": "CC 28b",
+          "titre": "Protection contre la violence, menaces ou harcèlement",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "TF 1C_376/2013",
+          "resume": "L anonymat des adresses de foyers est protégé au titre du droit à la sécurité des victimes."
+        },
+        {
+          "ref": "ATF 144 II 56",
+          "resume": "Les frais d hébergement en foyer LAVI sont pris en charge sous condition de qualité de victime."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Malley-Prairie foyer pour femmes VD",
+          "tel": "021 620 76 76",
+          "url": "https://www.malleyprairie.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Solidarité Femmes Genève",
+          "tel": "022 797 10 10",
+          "url": "https://www.solidaritefemmes-ge.org",
+          "canton": "GE"
+        },
+        {
+          "nom": "Au Cœur des Grottes GE",
+          "tel": "022 338 24 80",
+          "url": "https://aucoeurdesgrottes.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Centre LAVI Vaud",
+          "tel": "021 631 03 00",
+          "url": "https://www.vaud.ch/lavi",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre LAVI Genève",
+          "tel": "022 320 01 02",
+          "url": "https://www.centrelavi-ge.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "violencequefaire.ch",
+          "tel": "0848 212 212",
+          "url": "https://www.violencequefaire.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Police 117 (urgence)",
+          "tel": "117",
+          "url": "",
+          "canton": "VD"
+        },
+        {
+          "nom": "Police GE (urgence)",
+          "tel": "117",
+          "url": "",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Évaluation du danger immédiat",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Contact d'un refuge LAVI",
+          "delai": "dans les heures suivant l'évaluation",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Séjour au refuge",
+          "delai": "généralement 2 semaines à 3 mois",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Saisine du tribunal civil ou plainte pénale",
+          "delai": "dès que possible",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LAVI état 2025-01-01",
+    "match_description": "Recherche de refuge ou foyer pour victime de violence",
+    "profane_aliases": [
+      "foyer pour femme battue",
+      "refuge urgent",
+      "hébergement sécurisé violence"
+    ],
+    "negative_signals": [
+      "hébergement sans-abri non lié violence",
+      "logement long terme"
+    ],
+    "required_facts": [
+      "urgence",
+      "composition famille",
+      "canton",
+      "lien auteur"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Accès à un refuge pour victimes de violence",
+        "domaine": "violence",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Évaluation du danger immédiat",
+            "description": "Identifier le niveau de danger, prévoir un sac d'urgence (papiers, médicaments, vêtements).",
+            "delai": "immédiat",
+            "preuve_generee": "Plan de sécurité"
+          },
+          {
+            "numero": 2,
+            "action": "Contact d'un refuge LAVI",
+            "description": "Appeler le numéro d'urgence LAVI cantonal (24/7) pour orientation vers un refuge.",
+            "delai": "dans les heures suivant l'évaluation",
+            "base_legale": "LAVI 12 / LAVI 14",
+            "preuve_generee": "Confirmation d'admission"
+          },
+          {
+            "numero": 3,
+            "action": "Séjour au refuge",
+            "delai": "généralement 2 semaines à 3 mois",
+            "branches": [
+              {
+                "si": "stabilisation et relogement trouvé",
+                "alors": "sortie accompagnée (fin)"
+              },
+              {
+                "si": "danger persistant",
+                "alors": "etape 4 (mesures judiciaires)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Saisine du tribunal civil ou plainte pénale",
+            "description": "Demander des mesures protectrices urgentes (CC 28b) ou déposer plainte pénale.",
+            "delai": "dès que possible",
+            "base_legale": "CC 28b"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "violence_psychologique_preuves",
+    "domaine": "violence",
+    "sousDomaine": "psychologique",
+    "tags": [
+      "violence",
+      "psychologique",
+      "preuves",
+      "CP 123",
+      "emprise",
+      "harcèlement"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Forme principale de violence ?",
+        "options": [
+          "humiliations",
+          "isolement",
+          "contrôle",
+          "menaces",
+          "mixte"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Contexte ?",
+        "options": [
+          "conjugal",
+          "professionnel",
+          "familial",
+          "voisinage"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Preuves disponibles ?",
+        "options": [
+          "messages",
+          "témoins",
+          "certificats psy",
+          "aucune"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Impact santé mentale ?",
+        "options": [
+          "anxiété",
+          "dépression",
+          "PTSD",
+          "hospitalisation"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La violence psychologique n'est pas une infraction autonome en droit suisse mais peut relever de plusieurs qualifications : lésions corporelles simples si atteinte à la santé (art. 123 CP, TF admettant des lésions psychiques), contrainte (art. 181 CP), menaces (art. 180 CP), diffamation (art. 173 CP), injure (art. 177 CP). La difficulté probatoire est réelle : il faut rassembler messages écrits, emails, enregistrements (dans les limites de la loi), témoignages, attestations médicales (psychiatre/psychologue documentant le lien causal), main courante police. Un certificat médical circonstancié est crucial. Au civil, les mesures CC 28b (interdiction contact, approche) peuvent être obtenues sur vraisemblance. Une prise en charge thérapeutique parallèle renforce le dossier.",
+      "articles": [
+        {
+          "ref": "CP 123",
+          "titre": "Lésions corporelles simples",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr"
+        },
+        {
+          "ref": "CP 180",
+          "titre": "Menaces",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr"
+        },
+        {
+          "ref": "CP 181",
+          "titre": "Contrainte",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr"
+        },
+        {
+          "ref": "CC 28b",
+          "titre": "Protection contre la violence, menaces ou harcèlement",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 134 IV 189",
+          "resume": "Les lésions corporelles simples (CP 123) peuvent englober des atteintes psychiques avérées par certificat médical."
+        },
+        {
+          "ref": "TF 6B_1149/2019",
+          "resume": "L emprise psychologique peut relever de la contrainte (CP 181) si elle limite durablement la liberté de la victime."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Centre LAVI Vaud",
+          "tel": "021 631 03 00",
+          "url": "https://www.vaud.ch/lavi",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre LAVI Genève",
+          "tel": "022 320 01 02",
+          "url": "https://www.centrelavi-ge.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "violencequefaire.ch",
+          "tel": "0848 212 212",
+          "url": "https://www.violencequefaire.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Malley-Prairie foyer pour femmes VD",
+          "tel": "021 620 76 76",
+          "url": "https://www.malleyprairie.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Solidarité Femmes Genève",
+          "tel": "022 797 10 10",
+          "url": "https://www.solidaritefemmes-ge.org",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Documentation systématique",
+          "delai": "immédiat et continu",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Consultation médicale et psychologique",
+          "delai": "dans les 14 jours suivant le début de la documentation",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Évaluation par centre LAVI",
+          "delai": "30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Plainte pénale ou action civile",
+          "delai": "3 mois dès le dernier acte (délai de plainte CP 180)",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "CP/CC état 2025",
+    "match_description": "Violence psychologique, preuves et qualification juridique",
+    "profane_aliases": [
+      "violence morale",
+      "emprise conjugale",
+      "humiliations répétées"
+    ],
+    "negative_signals": [
+      "violence physique isolée (voir CP 123/126)",
+      "conflits sans gravité"
+    ],
+    "required_facts": [
+      "type de violence",
+      "contexte",
+      "preuves disponibles",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Constitution de preuves de violence psychologique",
+        "domaine": "violence",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Documentation systématique",
+            "description": "Journal détaillé des incidents (date, heure, contexte), captures de messages, courriels, témoignages écrits.",
+            "delai": "immédiat et continu",
+            "preuve_generee": "Dossier de preuves chronologique"
+          },
+          {
+            "numero": 2,
+            "action": "Consultation médicale et psychologique",
+            "description": "Faire établir des certificats médicaux et psychologiques attestant l'impact des violences.",
+            "delai": "dans les 14 jours suivant le début de la documentation",
+            "base_legale": "CP 123 / CP 180",
+            "preuve_generee": "Certificats médicaux datés"
+          },
+          {
+            "numero": 3,
+            "action": "Évaluation par centre LAVI",
+            "delai": "30 jours",
+            "branches": [
+              {
+                "si": "constitution suffisante du dossier",
+                "alors": "etape 4 (action judiciaire)"
+              },
+              {
+                "si": "preuves insuffisantes",
+                "alors": "poursuite de la documentation"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Plainte pénale ou action civile",
+            "description": "Déposer plainte (CP 180/181) ou requête civile (CC 28b) selon stratégie.",
+            "delai": "3 mois dès le dernier acte (délai de plainte CP 180)",
+            "base_legale": "CP 180 / CP 181 / CC 28b"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "violence_garde_enfants",
+    "domaine": "violence",
+    "sousDomaine": "garde",
+    "tags": [
+      "garde",
+      "enfants",
+      "autorité parentale",
+      "CC 298",
+      "droit visite",
+      "protection"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Violence subie par ?",
+        "options": [
+          "parent",
+          "enfant",
+          "les deux"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Autorité parentale actuelle ?",
+        "options": [
+          "conjointe",
+          "exclusive moi",
+          "exclusive autre",
+          "pas encore fixée"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Droit de visite en cours ?",
+        "options": [
+          "libre",
+          "surveillé",
+          "suspendu",
+          "aucun"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Enfant exposé à la violence ?",
+        "options": [
+          "direct",
+          "témoin",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Dans un contexte de violence conjugale, la garde et l'autorité parentale peuvent être modifiées. L'autorité parentale conjointe reste la règle (art. 298 CC) mais le juge peut l'attribuer exclusivement au parent victime si le bien de l'enfant l'exige (art. 298 al. 2 CC et 301a). Le droit de visite (art. 273 CC) peut être : libre, surveillé (point rencontre), ou suspendu en cas de mise en danger. L'exposition de l'enfant à la violence conjugale constitue elle-même une forme de maltraitance justifiant des mesures protectrices (art. 307-315 CC). L'APEA et le juge matrimonial coopèrent. Une victime doit mentionner dans toute procédure de séparation/divorce le contexte de violence pour que des mesures adaptées soient prises.",
+      "articles": [
+        {
+          "ref": "CC 298",
+          "titre": "Autorité parentale",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr"
+        },
+        {
+          "ref": "CC 273",
+          "titre": "Droit de visite",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr"
+        },
+        {
+          "ref": "CC 307",
+          "titre": "Mesures protectrices de l enfant",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr"
+        },
+        {
+          "ref": "CC 301a",
+          "titre": "Autorité parentale après séparation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 142 III 1",
+          "resume": "L autorité parentale conjointe peut être écartée si la communication entre parents est impossible en raison de la violence."
+        },
+        {
+          "ref": "TF 5A_840/2017",
+          "resume": "L enfant témoin de violence conjugale subit lui-même une maltraitance justifiant mesures protectrices."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Centre LAVI Vaud",
+          "tel": "021 631 03 00",
+          "url": "https://www.vaud.ch/lavi",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre LAVI Genève",
+          "tel": "022 320 01 02",
+          "url": "https://www.centrelavi-ge.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Point Rencontre Vaud",
+          "tel": "021 661 20 00",
+          "url": "https://www.point-rencontre.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Point Rencontre Genève",
+          "tel": "022 807 35 05",
+          "url": "https://www.pointrencontre.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {
+        "famille": {
+          "condition": "garde_enfants",
+          "url": "famille"
+        }
+      },
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Mise en sécurité des enfants",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Signalement à l'APEA",
+          "delai": "dans les 48 heures suivant la mise en sécurité",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Évaluation de l'APEA et mesures provisoires",
+          "delai": "30 jours (mesures urgentes)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action devant le tribunal de protection",
+          "delai": "30 jours dès notification (recours APEA)",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "CC état 2025",
+    "match_description": "Question de garde et droit de visite dans contexte de violence",
+    "profane_aliases": [
+      "garde enfant violence",
+      "visite surveillée",
+      "suspendre droit de visite"
+    ],
+    "negative_signals": [
+      "divorce sans violence (voir famille)",
+      "mariage forcé"
+    ],
+    "required_facts": [
+      "nature de la violence",
+      "âge enfants",
+      "AP actuelle",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Protection des enfants exposés à la violence conjugale",
+        "domaine": "violence",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Mise en sécurité des enfants",
+            "description": "Sécuriser physiquement les enfants, documenter leur exposition (témoignages, certificats médicaux pédiatriques).",
+            "delai": "immédiat",
+            "preuve_generee": "Plan de sécurité enfants"
+          },
+          {
+            "numero": 2,
+            "action": "Signalement à l'APEA",
+            "description": "Saisir l'autorité de protection de l'enfant et de l'adulte (APEA) du domicile (CC 307 ss).",
+            "delai": "dans les 48 heures suivant la mise en sécurité",
+            "base_legale": "CC 307",
+            "preuve_generee": "Accusé de réception APEA"
+          },
+          {
+            "numero": 3,
+            "action": "Évaluation de l'APEA et mesures provisoires",
+            "delai": "30 jours (mesures urgentes)",
+            "branches": [
+              {
+                "si": "mesures de protection ordonnées",
+                "alors": "suivi APEA (fin courante)"
+              },
+              {
+                "si": "mesures insuffisantes ou refus",
+                "alors": "etape 4 (recours/tribunal)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Action devant le tribunal de protection",
+            "description": "Recours contre la décision APEA ou requête de modification de la garde (CC 298 / CC 301a).",
+            "delai": "30 jours dès notification (recours APEA)",
+            "base_legale": "CC 273 / CC 298 / CC 301a / CC 307"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "violence_lavi_indemnisation",
+    "domaine": "violence",
+    "sousDomaine": "lavi",
+    "tags": [
+      "LAVI",
+      "indemnisation",
+      "réparation morale",
+      "aide victime",
+      "délai"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Date de l infraction ?",
+        "options": [
+          "<1 an",
+          "1-5 ans",
+          ">5 ans"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Type d infraction ?",
+        "options": [
+          "violence physique",
+          "sexuelle",
+          "psy",
+          "homicide proche"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Procédure pénale engagée ?",
+        "options": [
+          "oui",
+          "en cours",
+          "non",
+          "classée"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Dommages subis ?",
+        "options": [
+          "frais médicaux",
+          "perte gain",
+          "moral",
+          "cumul"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La LAVI (Loi fédérale sur l'aide aux victimes d'infractions) ouvre trois types de prestations : (1) aide immédiate gratuite (conseil, hébergement urgent, soutien psychologique) sans délai ; (2) aide à plus long terme (prise en charge de consultations, frais d'avocat, soins) ; (3) indemnisation (dommages matériels et perte de gain) et réparation morale (tort moral, max CHF 70 000 pour victime, CHF 35 000 pour proche) — art. 19-23 LAVI. La demande d'indemnisation et de réparation morale doit être déposée au canton dans les 5 ans après l'infraction ou sa révélation (art. 25 LAVI). L'ouverture d'une procédure pénale n'est pas requise mais la qualité de victime LAVI doit être démontrée. Subsidiarité : la LAVI ne paie que ce que les assurances/auteur ne couvrent pas.",
+      "articles": [
+        {
+          "ref": "LAVI 19",
+          "titre": "Indemnisation et réparation morale",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2008/228/fr"
+        },
+        {
+          "ref": "LAVI 25",
+          "titre": "Délai de dépôt LAVI",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2008/228/fr"
+        },
+        {
+          "ref": "LAVI 13",
+          "titre": "Aide immédiate et à plus long terme",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2008/228/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 139 II 107",
+          "resume": "La qualité de victime LAVI suppose une atteinte directe à l intégrité corporelle, sexuelle ou psychique."
+        },
+        {
+          "ref": "TF 1C_202/2018",
+          "resume": "Le délai de 5 ans LAVI 25 court dès la révélation ou la reconnaissance de l atteinte (infractions refoulées)."
+        }
+      ],
+      "modeleLettre": "Objet : Demande LAVI — indemnisation et réparation morale\n\nMadame, Monsieur,\n\nJe soussigné(e) [NOM] dépose une demande fondée sur la LAVI.\n\nFaits : infraction commise le [DATE] (ou révélée), [description]. Procédure pénale : [état].\n\nJe sollicite : aide immédiate, prise en charge de [frais], indemnisation pour [dommages], et réparation morale.\n\nPièces : plainte, certificats médicaux, factures, décision pénale.\n\n[Signature]",
+      "services": [
+        {
+          "nom": "Centre LAVI Vaud",
+          "tel": "021 631 03 00",
+          "url": "https://www.vaud.ch/lavi",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre LAVI Genève",
+          "tel": "022 320 01 02",
+          "url": "https://www.centrelavi-ge.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Contact avec un centre de consultation LAVI",
+          "delai": "sans délai (idéalement rapidement)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt de la demande d'indemnisation",
+          "delai": "5 ans dès commission de l'infraction",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Instruction et décision de l'autorité LAVI",
+          "delai": "6 à 18 mois",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours au tribunal cantonal",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LAVI état 2025-01-01",
+    "match_description": "Demande LAVI (aide immédiate, indemnisation, réparation morale)",
+    "profane_aliases": [
+      "indemnisation victime",
+      "LAVI argent",
+      "tort moral victime"
+    ],
+    "negative_signals": [
+      "infraction hors Suisse sans lien Suisse",
+      "pur litige civil"
+    ],
+    "required_facts": [
+      "date infraction",
+      "type",
+      "dommages",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Demande d'indemnisation LAVI",
+        "domaine": "violence",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Contact avec un centre de consultation LAVI",
+            "description": "Prendre rendez-vous avec un centre LAVI cantonal (consultation gratuite et confidentielle) pour analyse de la situation et aide immédiate.",
+            "delai": "sans délai (idéalement rapidement)",
+            "base_legale": "LAVI 9 / LAVI 13",
+            "preuve_generee": "Attestation de consultation LAVI"
+          },
+          {
+            "numero": 2,
+            "action": "Dépôt de la demande d'indemnisation",
+            "description": "Formulaire écrit à l'autorité cantonale LAVI avec pièces : plainte/jugement pénal, certificats médicaux, factures, justificatifs de dommages.",
+            "delai": "5 ans dès commission de l'infraction",
+            "base_legale": "LAVI 25 / LAVI 26",
+            "preuve_generee": "Dossier LAVI déposé + accusé de réception"
+          },
+          {
+            "numero": 3,
+            "action": "Instruction et décision de l'autorité LAVI",
+            "description": "L'autorité cantonale instruit la demande (éventuelle audition, complément de pièces) puis rend une décision (indemnité jusqu'à 120'000 CHF, réparation morale jusqu'à 70'000 CHF).",
+            "delai": "6 à 18 mois",
+            "branches": [
+              {
+                "si": "indemnisation accordée",
+                "alors": "versement"
+              },
+              {
+                "si": "refus ou montant insuffisant",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours au tribunal cantonal",
+            "description": "Recours écrit motivé au tribunal cantonal administratif dans les 30 jours (procédure gratuite).",
+            "delai": "30 jours dès notification",
+            "base_legale": "LAVI 29 / LPGA 56 par analogie",
+            "cout": "gratuit"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "violence_plainte_conjugale",
+    "domaine": "violence",
+    "sousDomaine": "plainte",
+    "tags": [
+      "plainte",
+      "conjugale",
+      "CP 31",
+      "CP 123",
+      "CP 55a",
+      "dépôt",
+      "retrait"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Nature des violences ?",
+        "options": [
+          "gifles/coups légers",
+          "lésions avec blessures",
+          "menaces",
+          "séquestration"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Date des dernières violences ?",
+        "options": [
+          "<3 mois",
+          "3-6 mois",
+          ">6 mois"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Hésitez-vous à porter plainte ?",
+        "options": [
+          "oui",
+          "non",
+          "déjà portée"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Conséquences craintes ?",
+        "options": [
+          "représailles",
+          "séparation",
+          "impact enfants",
+          "aucune"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La plainte pénale pour violence conjugale doit être déposée dans les 3 mois après connaissance des faits et de l'auteur (art. 31 CP) pour les infractions sur plainte (voies de fait CP 126, injure CP 177). Les lésions corporelles simples dans le cadre conjugal (CP 123 ch. 2) sont poursuivies d'office depuis 2004, tout comme les lésions graves, contrainte sexuelle, viol, séquestration. Particularité violence domestique : la procédure peut être suspendue puis classée avec l'accord de la victime (art. 55a CP), sauf si l'intérêt public l'emporte. La victime n'est donc pas totalement maîtresse de la procédure. La plainte peut être déposée oralement à la police ou par écrit au Ministère public. La victime bénéficie des droits de la LAVI.",
+      "articles": [
+        {
+          "ref": "CP 31",
+          "titre": "Délai pour déposer plainte",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr"
+        },
+        {
+          "ref": "CP 123",
+          "titre": "Lésions corporelles simples",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr"
+        },
+        {
+          "ref": "CP 126",
+          "titre": "Voies de fait",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr"
+        },
+        {
+          "ref": "CP 180",
+          "titre": "Menaces",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr"
+        },
+        {
+          "ref": "CP 55a",
+          "titre": "Suspension et classement en cas de violence domestique",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 142 IV 299",
+          "resume": "La suspension CP 55a exige l accord de la victime mais le MP garde un pouvoir d appréciation (intérêt public)."
+        },
+        {
+          "ref": "TF 6B_1194/2019",
+          "resume": "Les lésions corporelles simples dans un couple (art. 123 ch. 2 ch. 3-6 CP) sont toujours poursuivies d office."
+        }
+      ],
+      "modeleLettre": "Objet : Plainte pénale\n\nAu Ministère public [CANTON],\n\nJe soussigné(e) [NOM, adresse] porte plainte pénale contre [NOM auteur] pour :\n- lésions corporelles simples (art. 123 CP)\n- voies de fait (art. 126 CP)\n- menaces (art. 180 CP)\n\nFaits : [dates, lieux, déroulement précis des violences].\n\nPièces : certificats médicaux, photos, messages, témoins.\n\nJe me constitue partie plaignante et sollicite assistance LAVI.\n\n[Signature]",
+      "services": [
+        {
+          "nom": "Centre LAVI Vaud",
+          "tel": "021 631 03 00",
+          "url": "https://www.vaud.ch/lavi",
+          "canton": "VD"
+        },
+        {
+          "nom": "Centre LAVI Genève",
+          "tel": "022 320 01 02",
+          "url": "https://www.centrelavi-ge.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Malley-Prairie foyer pour femmes VD",
+          "tel": "021 620 76 76",
+          "url": "https://www.malleyprairie.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Solidarité Femmes Genève",
+          "tel": "022 797 10 10",
+          "url": "https://www.solidaritefemmes-ge.org",
+          "canton": "GE"
+        },
+        {
+          "nom": "Police 117 (urgence)",
+          "tel": "117",
+          "url": "",
+          "canton": "VD"
+        },
+        {
+          "nom": "Police GE (urgence)",
+          "tel": "117",
+          "url": "",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Mise en sécurité et certificat médical",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt de plainte à la police",
+          "delai": "sans délai (prescription variable selon infraction)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Instruction par le ministère public",
+          "delai": "variable (3 à 12 mois)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours contre classement et LAVI",
+          "delai": "10 jours (recours) / 5 ans (LAVI)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "CP état 2025-01-01",
+    "match_description": "Dépôt de plainte pénale pour violence conjugale",
+    "profane_aliases": [
+      "porter plainte mari violent",
+      "plainte conjoint violent",
+      "violence conjugale police"
+    ],
+    "negative_signals": [
+      "violence hors couple (voir plainte générale)",
+      "indemnisation seule (voir LAVI)"
+    ],
+    "required_facts": [
+      "nature des faits",
+      "date",
+      "preuves",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Dépôt d'une plainte pour violence conjugale",
+        "domaine": "violence",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Mise en sécurité et certificat médical",
+            "description": "Se mettre en sécurité (foyer, proche), consulter un médecin pour certificat médical détaillé des blessures, conserver SMS/photos.",
+            "delai": "immédiat",
+            "preuve_generee": "Certificat médical + preuves numériques"
+          },
+          {
+            "numero": 2,
+            "action": "Dépôt de plainte à la police",
+            "description": "Plainte au poste de police : audition, procès-verbal, photos des blessures par la police. Depuis 2020, les violences conjugales sont poursuivies d'office.",
+            "delai": "sans délai (prescription variable selon infraction)",
+            "base_legale": "CP 55a / CP 123 / CP 126 / CPP 301",
+            "preuve_generee": "Procès-verbal de plainte"
+          },
+          {
+            "numero": 3,
+            "action": "Instruction par le ministère public",
+            "description": "Le ministère public ouvre une instruction (auditions, expertise médicale, éventuelle détention provisoire ou éloignement). Possibilité d'expulsion du domicile (CP 28b par police).",
+            "delai": "variable (3 à 12 mois)",
+            "branches": [
+              {
+                "si": "ordonnance pénale ou renvoi en jugement",
+                "alors": "procédure judiciaire"
+              },
+              {
+                "si": "classement",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours contre classement et LAVI",
+            "description": "Recours contre le classement devant l'instance de recours pénale dans les 10 jours. Dépôt de demande LAVI en parallèle pour aide et indemnisation.",
+            "delai": "10 jours (recours) / 5 ans (LAVI)",
+            "base_legale": "CPP 322 / LAVI",
+            "cout": "LAVI : aide gratuite"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   }
 ]

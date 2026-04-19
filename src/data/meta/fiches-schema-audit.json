@@ -1,0 +1,194 @@
+{
+  "generated_at": "2026-04-19T17:56:02.044Z",
+  "strict": false,
+  "summary": {
+    "total": 284,
+    "valid_count": 284,
+    "invalid_count": 0,
+    "valid_pct": 100,
+    "warning_count": 0,
+    "error_count": 0,
+    "duplicates": []
+  },
+  "by_error_code": {},
+  "by_warning_code": {},
+  "by_domain": {
+    "accident": {
+      "valid": 13,
+      "invalid": 0
+    },
+    "assurance": {
+      "valid": 15,
+      "invalid": 0
+    },
+    "bail": {
+      "valid": 33,
+      "invalid": 0
+    },
+    "circulation": {
+      "valid": 10,
+      "invalid": 0
+    },
+    "consommation": {
+      "valid": 10,
+      "invalid": 0
+    },
+    "dettes": {
+      "valid": 31,
+      "invalid": 0
+    },
+    "entreprise": {
+      "valid": 12,
+      "invalid": 0
+    },
+    "etranger": {
+      "valid": 30,
+      "invalid": 0
+    },
+    "etrangers": {
+      "valid": 3,
+      "invalid": 0
+    },
+    "famille": {
+      "valid": 35,
+      "invalid": 0
+    },
+    "succession": {
+      "valid": 2,
+      "invalid": 0
+    },
+    "sante": {
+      "valid": 10,
+      "invalid": 0
+    },
+    "social": {
+      "valid": 13,
+      "invalid": 0
+    },
+    "successions": {
+      "valid": 10,
+      "invalid": 0
+    },
+    "travail": {
+      "valid": 34,
+      "invalid": 0
+    },
+    "violence": {
+      "valid": 13,
+      "invalid": 0
+    },
+    "voisinage": {
+      "valid": 10,
+      "invalid": 0
+    }
+  },
+  "per_file": [
+    {
+      "file": "accident.json",
+      "fiche_count": 13,
+      "valid": 13,
+      "invalid": 0,
+      "with_warnings": 0
+    },
+    {
+      "file": "assurances.json",
+      "fiche_count": 15,
+      "valid": 15,
+      "invalid": 0,
+      "with_warnings": 0
+    },
+    {
+      "file": "bail.json",
+      "fiche_count": 33,
+      "valid": 33,
+      "invalid": 0,
+      "with_warnings": 0
+    },
+    {
+      "file": "circulation.json",
+      "fiche_count": 10,
+      "valid": 10,
+      "invalid": 0,
+      "with_warnings": 0
+    },
+    {
+      "file": "consommation.json",
+      "fiche_count": 10,
+      "valid": 10,
+      "invalid": 0,
+      "with_warnings": 0
+    },
+    {
+      "file": "dettes.json",
+      "fiche_count": 31,
+      "valid": 31,
+      "invalid": 0,
+      "with_warnings": 0
+    },
+    {
+      "file": "entreprise.json",
+      "fiche_count": 12,
+      "valid": 12,
+      "invalid": 0,
+      "with_warnings": 0
+    },
+    {
+      "file": "etrangers.json",
+      "fiche_count": 33,
+      "valid": 33,
+      "invalid": 0,
+      "with_warnings": 0
+    },
+    {
+      "file": "famille.json",
+      "fiche_count": 37,
+      "valid": 37,
+      "invalid": 0,
+      "with_warnings": 0
+    },
+    {
+      "file": "sante.json",
+      "fiche_count": 10,
+      "valid": 10,
+      "invalid": 0,
+      "with_warnings": 0
+    },
+    {
+      "file": "social.json",
+      "fiche_count": 13,
+      "valid": 13,
+      "invalid": 0,
+      "with_warnings": 0
+    },
+    {
+      "file": "successions.json",
+      "fiche_count": 10,
+      "valid": 10,
+      "invalid": 0,
+      "with_warnings": 0
+    },
+    {
+      "file": "travail.json",
+      "fiche_count": 34,
+      "valid": 34,
+      "invalid": 0,
+      "with_warnings": 0
+    },
+    {
+      "file": "violence.json",
+      "fiche_count": 13,
+      "valid": 13,
+      "invalid": 0,
+      "with_warnings": 0
+    },
+    {
+      "file": "voisinage.json",
+      "fiche_count": 10,
+      "valid": 10,
+      "invalid": 0,
+      "with_warnings": 0
+    }
+  ],
+  "top_problematic": [],
+  "invalid_fiches": []
+}

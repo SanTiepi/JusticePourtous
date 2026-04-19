@@ -1,0 +1,1595 @@
+[
+  {
+    "id": "sante_consentement_eclaire",
+    "domaine": "sante",
+    "sousDomaine": "consentement",
+    "tags": [
+      "consentement",
+      "éclairé",
+      "information",
+      "patient",
+      "personnalité",
+      "intervention médicale"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel type d'intervention est concerné ?",
+        "options": [
+          "opération chirurgicale",
+          "traitement médicamenteux",
+          "examen invasif",
+          "psychothérapie"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quelles informations avez-vous reçues avant l'intervention ?",
+        "options": [
+          "complètes (risques, alternatives, coûts)",
+          "partielles",
+          "aucune"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Y a-t-il eu un dommage suite à l'intervention ?",
+        "options": [
+          "oui, dommage corporel",
+          "oui, conséquences psychologiques",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Le consentement a-t-il été recueilli par écrit ?",
+        "options": [
+          "oui",
+          "oral seulement",
+          "absent"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Toute intervention médicale, même bénigne, constitue une atteinte à l'intégrité corporelle (art. 28 CC) qui doit être justifiée par le consentement éclairé du patient (ou par un état de nécessité). Le médecin a un devoir d'information précontractuel : il doit exposer au patient, en termes compréhensibles, le diagnostic, la nature et le but de l'intervention proposée, ses chances de succès, ses risques (y compris rares mais graves), les alternatives thérapeutiques et le coût. Ce devoir résulte de l'art. 398 CO (mandat) et des lois cantonales sur la santé (LSP-VD, LS-GE, etc.). Le consentement doit être libre, donné en pleine capacité de discernement (art. 16 CC) et porter sur l'intervention concrète. Il peut être retiré à tout moment. L'absence ou l'insuffisance d'information rend l'intervention illicite — même si elle a été techniquement bien exécutée — et fonde la responsabilité du médecin pour le dommage qui en résulte (art. 41 CO en RC privée ; loi cantonale sur la responsabilité de l'État pour les hôpitaux publics). Une exception est admise pour les urgences vitales (consentement présumé) et pour le privilège thérapeutique (très restrictif).",
+      "articles": [
+        {
+          "ref": "CC 28",
+          "titre": "Protection de la personnalité — atteintes",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_28"
+        },
+        {
+          "ref": "CC 16",
+          "titre": "Capacité de discernement",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_16"
+        },
+        {
+          "ref": "CO 398",
+          "titre": "Devoirs du mandataire — diligence et information",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_398"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 133 III 121",
+          "resume": "Le médecin a un devoir étendu d'information sur les risques de l'intervention, y compris les risques rares mais graves. La preuve du consentement éclairé incombe au médecin."
+        },
+        {
+          "ref": "ATF 117 Ib 197",
+          "resume": "L'absence de consentement éclairé rend l'intervention illicite, même si elle a été techniquement irréprochable. Le patient peut prétendre à des dommages-intérêts pour le préjudice subi."
+        }
+      ],
+      "modeleLettre": "Objet : Demande d'explications sur défaut d'information préalable et consentement éclairé\n\nRecommandé\n\n[ÉTABLISSEMENT MÉDICAL / MÉDECIN]\n[ADRESSE]\n\nDocteur,\n\nJe me permets de revenir vers vous concernant l'intervention médicale dont j'ai bénéficié le [DATE] dans votre cabinet/établissement, à savoir : [DESCRIPTION DE L'INTERVENTION].\n\nJ'ai constaté qu'avant cette intervention :\n[ ] aucune information complète sur les risques rares mais graves ne m'a été communiquée\n[ ] les alternatives thérapeutiques (notamment [ALTERNATIVES]) ne m'ont pas été présentées\n[ ] le coût n'a pas été chiffré\n[ ] aucun document de consentement écrit n'a été signé\n\nÀ la suite de l'intervention, j'ai subi le dommage suivant : [DESCRIPTION].\n\nConformément aux art. 28 CC et 398 CO ainsi qu'à la jurisprudence du Tribunal fédéral (notamment ATF 133 III 121), tout patient a droit à une information préalable complète permettant un consentement éclairé, dont la preuve incombe au médecin.\n\nJe vous prie de bien vouloir, dans un délai de 30 jours :\n1. Me transmettre l'intégralité de mon dossier médical (art. 8 LPD ; art. 28 CC)\n2. Me communiquer le document attestant le consentement éclairé recueilli\n3. Indiquer les explications fournies, datées et signées le cas échéant\n\nÀ défaut, je saisirai la commission cantonale de surveillance des professions de la santé et, le cas échéant, j'introduirai une action en responsabilité civile.\n\nVeuillez agréer, Docteur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Organisation suisse des patients (OSP)",
+          "tel": "044 252 54 22",
+          "url": "https://www.spo.ch",
+          "canton": "ZH"
+        },
+        {
+          "nom": "Bureau cantonal de médiation santé Vaud",
+          "url": "https://www.vd.ch/themes/sante-soins-et-handicap/droits-des-patients",
+          "canton": "VD"
+        },
+        {
+          "nom": "Commission de surveillance des professions de la santé Genève",
+          "url": "https://www.ge.ch/organisation/commission-surveillance-professions-sante-droits-patient",
+          "canton": "GE"
+        },
+        {
+          "nom": "FRC santé",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "ombudsman santé cantonal",
+          "indication": "Première étape — médiation gratuite"
+        },
+        {
+          "type": "avocat",
+          "indication": "En cas de dommage corporel important ou refus de transmission du dossier"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Le patient n'a pas reçu une information préalable complète et conteste la validité du consentement",
+    "profane_aliases": [
+      "pas informé des risques",
+      "opéré sans accord",
+      "médecin n'a rien expliqué",
+      "alternatives cachées",
+      "consentement oral"
+    ],
+    "negative_signals": [
+      "urgence vitale documentée",
+      "consentement écrit signé après information détaillée",
+      "patient incapable de discernement"
+    ],
+    "required_facts": [
+      "type d'intervention",
+      "nature de l'information reçue",
+      "preuve écrite du consentement",
+      "dommage subi le cas échéant"
+    ],
+    "last_verified_at": "2026-04-19",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-19",
+    "readiness": "beta",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "sante_dossier_medical_acces",
+    "domaine": "sante",
+    "sousDomaine": "dossier_médical",
+    "tags": [
+      "dossier médical",
+      "accès",
+      "LPD",
+      "personnalité",
+      "copie",
+      "renseignements"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel établissement détient le dossier ?",
+        "options": [
+          "médecin privé",
+          "hôpital public",
+          "clinique privée",
+          "psychiatre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quel type de demande ?",
+        "options": [
+          "consultation simple",
+          "copie intégrale",
+          "rectification",
+          "suppression"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous déjà fait une demande écrite ?",
+        "options": [
+          "oui, sans réponse",
+          "oui, refus",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Est-ce votre dossier ou celui d'un proche décédé ?",
+        "options": [
+          "le mien",
+          "proche décédé",
+          "représentant légal"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le patient dispose d'un droit d'accès gratuit à l'intégralité de son dossier médical, fondé sur l'art. 8 de la Loi fédérale sur la protection des données (LPD, RS 235.1) ainsi que sur la protection de la personnalité (art. 28 CC). Le droit d'accès comprend la consultation, la délivrance d'une copie et l'obtention d'explications. Le dossier contient l'anamnèse, les diagnostics, les résultats d'examens, les ordonnances, la correspondance médicale et les notes du médecin. Les notes purement personnelles du médecin (impressions subjectives non utilisées pour la décision médicale) peuvent être caviardées (art. 9 LPD). Le détenteur doit répondre dans un délai de 30 jours (art. 25 LPD). Pour les hôpitaux publics, les lois cantonales sur la santé (LSP-VD, LS-GE) prévoient un droit similaire. Pour le dossier d'un proche décédé, l'accès est ouvert aux héritiers ayant un intérêt digne de protection (art. 28 CC) — typiquement pour faire valoir des droits successoraux ou en responsabilité. Le secret médical (art. 321 CP) ne peut être opposé au patient lui-même. Refus injustifié = infraction à la LPD passible d'amende et action civile en exécution.",
+      "articles": [
+        {
+          "ref": "LPD 8",
+          "titre": "Droit d'accès du patient à ses données",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2022/491/fr#art_8"
+        },
+        {
+          "ref": "LPD 25",
+          "titre": "Modalités et délai du droit d'accès (30 jours)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2022/491/fr#art_25"
+        },
+        {
+          "ref": "CC 28",
+          "titre": "Protection de la personnalité — droits du patient",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_28"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 138 III 425",
+          "resume": "Le droit d'accès au dossier médical est un droit de la personnalité (art. 28 CC) qui peut être exercé contre tout détenteur, y compris hôpital public. La gratuité est la règle, les exceptions sont restrictives."
+        },
+        {
+          "ref": "ATF 119 II 222",
+          "resume": "Les notes personnelles du médecin n'échappent au droit d'accès que dans la mesure où elles sont strictement subjectives et non incorporées dans le processus décisionnel."
+        }
+      ],
+      "modeleLettre": "Objet : Demande d'accès à mon dossier médical (art. 8 LPD ; art. 28 CC)\n\nRecommandé\n\n[ÉTABLISSEMENT / MÉDECIN]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe soussigné(e) [NOM, PRÉNOM, DATE DE NAISSANCE, ADRESSE], vous demande par la présente :\n\nL'ACCÈS À L'INTÉGRALITÉ DE MON DOSSIER MÉDICAL\n\nme concernant et détenu dans vos fichiers, conformément aux art. 8 et 25 de la Loi fédérale sur la protection des données (LPD) ainsi qu'à l'art. 28 CC.\n\nMa demande porte sur :\n[X] Une copie complète de toutes les pièces du dossier médical (anamnèse, diagnostics, examens, ordonnances, courriers, comptes-rendus opératoires, notes)\n[ ] La transmission par voie postale recommandée OU [ ] par voie électronique sécurisée à l'adresse [EMAIL]\n[ ] Si certaines pièces sont caviardées, indication précise du motif et de la base légale\n\nLe traitement de cette demande doit intervenir dans un délai de 30 jours (art. 25 LPD).\n\nLa délivrance est gratuite (art. 25 al. 6 LPD), sauf à justifier d'un motif légal de facturation.\n\nÀ défaut de réponse dans le délai, je saisirai le préposé fédéral à la protection des données (PFPDT) ainsi que la commission cantonale de surveillance des professions de la santé.\n\nJoint : copie de pièce d'identité.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Préposé fédéral à la protection des données (PFPDT)",
+          "tel": "058 462 43 95",
+          "url": "https://www.edoeb.admin.ch",
+          "canton": "BE"
+        },
+        {
+          "nom": "Préposé cantonal à la protection des données VD",
+          "url": "https://www.vd.ch/themes/etat-droit-finances/protection-des-donnees",
+          "canton": "VD"
+        },
+        {
+          "nom": "Préposé cantonal à la protection des données GE",
+          "url": "https://www.ge.ch/protection-donnees-transparence",
+          "canton": "GE"
+        },
+        {
+          "nom": "Organisation suisse des patients (OSP)",
+          "tel": "044 252 54 22",
+          "url": "https://www.spo.ch",
+          "canton": "ZH"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "préposé cantonal protection des données",
+          "indication": "Médiation gratuite pour faire respecter le droit d'accès"
+        },
+        {
+          "type": "avocat",
+          "indication": "En cas de refus persistant ou enjeux importants"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Délai procédural",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Le patient veut obtenir une copie complète de son dossier médical, gratuitement",
+    "profane_aliases": [
+      "récupérer dossier médical",
+      "copie hôpital",
+      "médecin refuse mes papiers",
+      "consulter mes analyses",
+      "transférer dossier"
+    ],
+    "negative_signals": [
+      "demande sur dossier d'un tiers sans qualité",
+      "demande déjà satisfaite récemment",
+      "refus motivé pour notes purement personnelles"
+    ],
+    "required_facts": [
+      "identité du demandeur",
+      "détenteur du dossier",
+      "objet précis de la demande",
+      "preuve d'envoi"
+    ],
+    "last_verified_at": "2026-04-19",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-19",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "sante_refus_traitement",
+    "domaine": "sante",
+    "sousDomaine": "refus_traitement",
+    "tags": [
+      "refus de soins",
+      "autonomie",
+      "capacité de discernement",
+      "transfusion",
+      "fin de vie",
+      "personnalité"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le contexte de votre refus ?",
+        "options": [
+          "soins ambulatoires",
+          "hospitalisation",
+          "urgence vitale",
+          "fin de vie"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Êtes-vous capable de discernement ?",
+        "options": [
+          "oui",
+          "discernement partiel",
+          "non — mais directives anticipées"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Qui s'oppose au refus ?",
+        "options": [
+          "médecin",
+          "famille",
+          "hôpital",
+          "personne"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous documenté votre refus par écrit ?",
+        "options": [
+          "oui",
+          "oral",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Tout patient adulte capable de discernement (art. 16 CC) a le droit absolu de refuser un traitement médical, même vital, en vertu de son droit à l'autodétermination et à l'intégrité corporelle (art. 28 CC). Aucune intervention ne peut lui être imposée — un traitement administré contre la volonté d'un patient capable constitue une atteinte illicite à la personnalité, sanctionnée pénalement (art. 122-128 CP, lésions corporelles) et civilement. Le refus peut porter sur toute mesure : transfusion sanguine, chimiothérapie, réanimation, intubation, etc. Le médecin a un devoir d'information renforcé sur les conséquences du refus, mais doit respecter ce dernier. Pour les personnes incapables de discernement, le médecin doit suivre, dans l'ordre : (1) les directives anticipées rédigées en pleine capacité (art. 370 CC) ; (2) les indications du représentant thérapeutique désigné ; (3) la volonté présumée du patient évaluée avec les proches. En cas de désaccord entre proches et médecin, l'APEA peut être saisie. Pour les mineurs capables de discernement (≈ 14-16 ans selon la maturité), leur consentement personnel est requis et leur refus prévaut.",
+      "articles": [
+        {
+          "ref": "CC 16",
+          "titre": "Capacité de discernement — base du droit de refuser",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_16"
+        },
+        {
+          "ref": "CC 28",
+          "titre": "Protection de la personnalité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_28"
+        },
+        {
+          "ref": "CC 370",
+          "titre": "Directives anticipées du patient",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_370"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 127 IV 154",
+          "resume": "Le refus de traitement par un patient capable de discernement doit être respecté même en cas de risque vital. Le médecin qui passe outre commet des lésions corporelles intentionnelles."
+        },
+        {
+          "ref": "ATF 134 III 343",
+          "resume": "Les directives anticipées rédigées par un patient capable de discernement lient le médecin lorsque le patient devient incapable, sauf indices sérieux qu'elles ne reflètent plus sa volonté."
+        }
+      ],
+      "modeleLettre": "Objet : Notification de refus de traitement médical (art. 28 CC ; art. 16 CC)\n\nRecommandé / remis en main propre\n\n[MÉDECIN TRAITANT / SERVICE HOSPITALIER]\n[ADRESSE]\n\nDocteur,\n\nJe soussigné(e) [NOM, PRÉNOM, DATE DE NAISSANCE, ADRESSE], déclare en pleine capacité de discernement (art. 16 CC) :\n\nREFUSER LE / LES TRAITEMENT(S) SUIVANT(S) :\n\n[ ] [TRAITEMENT 1 — description précise]\n[ ] [TRAITEMENT 2 — description précise]\n\nMotifs personnels (non requis mais utiles) : [CONVICTION / VOLONTÉ / EXPÉRIENCE].\n\nJ'ai été informé(e) par le Dr [NOM] le [DATE] des conséquences possibles de ce refus, à savoir : [CONSÉQUENCES EXPLIQUÉES]. Je les comprends et les accepte en pleine conscience.\n\nMon refus est libre et délibéré. Il vaut interdiction d'intervention au sens de l'art. 28 CC et révocation expresse de tout consentement antérieur portant sur ce(s) traitement(s).\n\nMon refus reste valable même si je deviens ultérieurement incapable de discernement (cf. directives anticipées jointes le cas échéant, art. 370 CC).\n\nJe demande que la présente déclaration soit versée à mon dossier médical et qu'une copie en soit remise à toute équipe soignante intervenante.\n\nVeuillez agréer, Docteur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]\n\nTémoin (facultatif) : [NOM, SIGNATURE]",
+      "services": [
+        {
+          "nom": "Organisation suisse des patients (OSP)",
+          "tel": "044 252 54 22",
+          "url": "https://www.spo.ch",
+          "canton": "ZH"
+        },
+        {
+          "nom": "Pro Mente Sana — droits des patients en psychiatrie",
+          "url": "https://www.promentesana.org",
+          "canton": "GE"
+        },
+        {
+          "nom": "Bureau cantonal de médiation santé Vaud",
+          "url": "https://www.vd.ch/themes/sante-soins-et-handicap/droits-des-patients",
+          "canton": "VD"
+        },
+        {
+          "nom": "EXIT Suisse romande (fin de vie)",
+          "url": "https://exit-romandie.ch",
+          "canton": "GE"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "ombudsman santé cantonal",
+          "indication": "Si le refus n'est pas respecté en milieu hospitalier"
+        },
+        {
+          "type": "avocat",
+          "indication": "Pour atteinte illicite à la personnalité (art. 28a CC)"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "16 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Le patient veut refuser un traitement médical et faire respecter sa décision par les soignants",
+    "profane_aliases": [
+      "refuser opération",
+      "refuser chimio",
+      "pas de transfusion",
+      "interrompre traitement",
+      "ne pas réanimer"
+    ],
+    "negative_signals": [
+      "patient incapable de discernement sans directives",
+      "danger pour autrui (maladie infectieuse, psychiatrie)",
+      "mineur très jeune"
+    ],
+    "required_facts": [
+      "capacité de discernement",
+      "information reçue sur les conséquences",
+      "documentation écrite du refus",
+      "absence de directive contraire"
+    ],
+    "last_verified_at": "2026-04-19",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-19",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "sante_secret_medical",
+    "domaine": "sante",
+    "sousDomaine": "secret_médical",
+    "tags": [
+      "secret médical",
+      "confidentialité",
+      "violation",
+      "art. 321 CP",
+      "déliement",
+      "médecin cantonal"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel type de violation soupçonnez-vous ?",
+        "options": [
+          "communication à un employeur",
+          "communication à la famille",
+          "publication / réseaux sociaux",
+          "communication à une assurance"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Le médecin avait-il votre accord ?",
+        "options": [
+          "non, pas du tout",
+          "oui mais limité",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Quelles sont les conséquences pour vous ?",
+        "options": [
+          "atteinte à la réputation",
+          "perte d'emploi",
+          "refus d'assurance",
+          "détresse morale"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Disposez-vous de preuves ?",
+        "options": [
+          "écrites",
+          "témoignages",
+          "indices indirects"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le secret professionnel médical est protégé par l'art. 321 CP, qui sanctionne d'une peine privative de liberté jusqu'à trois ans ou d'une peine pécuniaire toute personne (médecin, pharmacien, infirmier, sage-femme, leurs auxiliaires) qui révèle un secret confié dans l'exercice de sa profession. L'infraction se poursuit sur plainte du lésé (art. 30 CP). Le secret couvre tout fait porté à la connaissance du soignant (diagnostic, traitement, confidence). Le délieur est : (1) le consentement du patient (art. 321 ch. 2 CP), qui doit être éclairé et porter sur l'information précise ; (2) une autorisation de l'autorité supérieure (médecin cantonal, art. 321 ch. 2 CP) ; (3) une obligation légale de déclarer (par ex. art. 364 CP : maltraitance d'enfant ; LEp pour maladies transmissibles). En parallèle, la victime peut agir civilement en protection de la personnalité (art. 28 CC) avec demande de dommages-intérêts (art. 41 CO) et tort moral (art. 49 CO). Plainte pénale dans les 3 mois dès la connaissance de l'auteur (art. 31 CP).",
+      "articles": [
+        {
+          "ref": "CP 321",
+          "titre": "Violation du secret professionnel — peine et déliement",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_321"
+        },
+        {
+          "ref": "CC 28",
+          "titre": "Protection de la personnalité — atteinte par révélation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_28"
+        },
+        {
+          "ref": "CO 49",
+          "titre": "Réparation du tort moral en cas d'atteinte à la personnalité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_49"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 142 IV 65",
+          "resume": "La révélation par un médecin du diagnostic de son patient à l'employeur sans autorisation expresse constitue une violation du secret professionnel au sens de l'art. 321 CP, même si l'information était déjà partiellement connue."
+        },
+        {
+          "ref": "ATF 137 IV 269",
+          "resume": "L'obligation légale de déclarer (art. 14 CP) doit reposer sur une base légale claire. Une simple incitation cantonale ou éthique ne suffit pas à délier le médecin du secret."
+        }
+      ],
+      "modeleLettre": "Objet : Plainte pénale pour violation du secret professionnel (art. 321 CP)\n\nRecommandé\n\nMinistère public du canton de [CANTON]\n[ADRESSE]\n\nMadame, Monsieur le Procureur,\n\nJe soussigné(e) [NOM, PRÉNOM, DATE DE NAISSANCE, ADRESSE], dépose par la présente PLAINTE PÉNALE contre :\n\n[NOM DU PROFESSIONNEL DE LA SANTÉ], [PROFESSION], domicilié(e) à [ADRESSE]\n\nFAITS :\nLe [DATE], le mis en cause a révélé à [DESTINATAIRE — employeur, famille, etc.] les informations médicales suivantes me concernant : [DESCRIPTION PRÉCISE].\n\nCes informations m'avaient été communiquées dans le cadre de notre relation thérapeutique entamée le [DATE] et étaient couvertes par le secret professionnel.\n\nJe n'ai jamais consenti à cette révélation. Aucune autorité supérieure ne l'avait autorisée. Aucune obligation légale ne l'exigeait.\n\nQUALIFICATION JURIDIQUE :\nCes faits constituent une violation du secret professionnel au sens de l'art. 321 CP, infraction poursuivie sur plainte (art. 30 CP). Je dépose la présente plainte dans le délai de trois mois prévu à l'art. 31 CP, ayant eu connaissance des faits le [DATE].\n\nJ'ai subi le préjudice suivant : [DESCRIPTION — perte d'emploi, atteinte réputation, etc.]\n\nJe me constitue partie plaignante, tant au pénal qu'au civil, et réserve mes prétentions en dommages-intérêts et tort moral.\n\nMOYENS DE PREUVE :\n- [pièce 1]\n- [pièce 2]\n- [témoins éventuels]\n\nJoint : copie de pièce d'identité, pièces probatoires.\n\nVeuillez agréer, Madame, Monsieur le Procureur, mes salutations respectueuses.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Ministère public Vaud",
+          "url": "https://www.vd.ch/themes/justice/ministere-public",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ministère public Genève",
+          "url": "https://justice.ge.ch/fr/institution/ministere-public",
+          "canton": "GE"
+        },
+        {
+          "nom": "Médecin cantonal Vaud",
+          "url": "https://www.vd.ch/themes/sante-soins-et-handicap/medecin-cantonal",
+          "canton": "VD"
+        },
+        {
+          "nom": "Commission de surveillance des professions de la santé GE",
+          "url": "https://www.ge.ch/organisation/commission-surveillance-professions-sante-droits-patient",
+          "canton": "GE"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "avocat",
+          "indication": "Recommandé pour articuler plainte pénale + action civile en réparation"
+        },
+        {
+          "type": "centre LAVI",
+          "indication": "Si l'atteinte est grave et a causé une souffrance importante"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Plainte pénale",
+          "delai": "3 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Un soignant a révélé sans droit des informations médicales — plainte pénale et action civile",
+    "profane_aliases": [
+      "médecin a parlé à mon patron",
+      "secret médical violé",
+      "infirmière a divulgué",
+      "diagnostic révélé sans accord",
+      "fuite hôpital"
+    ],
+    "negative_signals": [
+      "consentement éclairé du patient",
+      "obligation légale de déclarer (maltraitance enfant, maladie transmissible)",
+      "déliement par le médecin cantonal"
+    ],
+    "required_facts": [
+      "identité du soignant",
+      "nature de l'information révélée",
+      "destinataire",
+      "absence de consentement"
+    ],
+    "last_verified_at": "2026-04-19",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-19",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "sante_lamal_choix_assureur",
+    "domaine": "sante",
+    "sousDomaine": "lamal",
+    "tags": [
+      "LAMal",
+      "caisse maladie",
+      "changement",
+      "résiliation",
+      "obligation d'assurance",
+      "primes"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est votre démarche ?",
+        "options": [
+          "changer de caisse",
+          "changer de modèle (HMO, médecin de famille)",
+          "changer de franchise",
+          "première affiliation"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quel est le motif ?",
+        "options": [
+          "primes trop élevées",
+          "service insatisfaisant",
+          "hausse de prime",
+          "déménagement"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "À quelle date prévoyez-vous le changement ?",
+        "options": [
+          "1er janvier",
+          "1er juillet (cas particuliers)",
+          "immédiatement"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous des arriérés de primes ?",
+        "options": [
+          "non",
+          "oui, partiels",
+          "oui, importants"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'assurance-maladie obligatoire (LAMal) couvre toutes les personnes domiciliées en Suisse (art. 3 LAMal) — affiliation obligatoire dans les 3 mois suivant la prise de domicile. Tout assuré peut librement choisir parmi les caisses-maladie reconnues et changer chaque année (art. 7 LAMal). Le délai de résiliation ordinaire est de fin novembre pour effet au 1er janvier suivant (art. 7 al. 1 LAMal) — la résiliation doit parvenir à la caisse au plus tard le dernier jour ouvrable de novembre. En cas de communication d'une nouvelle prime, l'assuré dispose d'un délai prolongé : il peut résilier dans le mois suivant la notification, avec effet au 1er juillet (art. 7 al. 2 LAMal). L'effet de la résiliation est subordonné à la conclusion d'un nouveau contrat d'assurance prouvée par une attestation. La caisse ne peut pas refuser un nouvel assuré (art. 4 LAMal — obligation de contracter). Pour un changement de modèle (médecin de famille, HMO, télémédecine) ou de franchise, les conditions et délais figurent dans les conditions d'assurance, généralement modifiables au 1er janvier. En cas d'arriérés de primes, la caisse n'est pas tenue de libérer le départ tant que les arriérés ne sont pas réglés (art. 7 al. 4 LAMal).",
+      "articles": [
+        {
+          "ref": "LAMal 3",
+          "titre": "Obligation d'assurance",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_3"
+        },
+        {
+          "ref": "LAMal 4",
+          "titre": "Choix de l'assureur — obligation de contracter",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_4"
+        },
+        {
+          "ref": "LAMal 7",
+          "titre": "Changement d'assureur — délais",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_7"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 137 V 11",
+          "resume": "Le délai de résiliation de l'art. 7 LAMal est strict. Une résiliation reçue après le dernier jour ouvrable de novembre ne produit aucun effet — l'assuré reste lié pour une année entière."
+        },
+        {
+          "ref": "ATF 124 V 333",
+          "resume": "L'obligation de contracter de l'art. 4 LAMal interdit à toute caisse reconnue de refuser un nouvel assuré — refus = sanction administrative et action en exécution."
+        }
+      ],
+      "modeleLettre": "Objet : Résiliation de l'assurance obligatoire des soins (LAMal) — art. 7 LAMal\n\nRecommandé\n\n[CAISSE-MALADIE ACTUELLE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe soussigné(e) [NOM, PRÉNOM, DATE DE NAISSANCE], assuré(e) auprès de votre caisse sous le n° de police [NUMÉRO], résilie par la présente le contrat d'assurance obligatoire des soins (LAMal) avec effet au :\n\n[X] 31 décembre [ANNÉE] — résiliation ordinaire selon art. 7 al. 1 LAMal\n[ ] 30 juin [ANNÉE] — résiliation suite à hausse de prime selon art. 7 al. 2 LAMal\n\nMotif : changement de caisse pour [NOUVELLE CAISSE].\n\nJe joins l'attestation d'affiliation établie par [NOUVELLE CAISSE] confirmant la couverture continue à compter du jour suivant la résiliation, conformément à l'art. 7 al. 5 LAMal.\n\nJe vous prie de bien vouloir :\n1. Confirmer par écrit la prise en compte de cette résiliation\n2. Procéder au décompte final et restituer toute prime payée d'avance\n3. Transmettre à la nouvelle caisse les indications nécessaires pour la continuité de la couverture\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]\n\nAnnexe : attestation d'affiliation [NOUVELLE CAISSE]",
+      "services": [
+        {
+          "nom": "Office fédéral de la santé publique (OFSP) — surveillance LAMal",
+          "tel": "058 462 21 11",
+          "url": "https://www.bag.admin.ch",
+          "canton": "BE"
+        },
+        {
+          "nom": "Comparatif primes priminfo",
+          "url": "https://www.priminfo.admin.ch",
+          "canton": "BE"
+        },
+        {
+          "nom": "Médiation Santésuisse",
+          "url": "https://www.santesuisse.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "FRC santé — comparateur et conseils",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "OFSP",
+          "indication": "Si la caisse refuse à tort la résiliation ou un nouvel assuré"
+        },
+        {
+          "type": "tribunal cantonal des assurances",
+          "indication": "Pour contester une décision de la caisse"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "L'assuré veut changer de caisse-maladie LAMal et connaître les délais et obligations",
+    "profane_aliases": [
+      "changer caisse maladie",
+      "résilier assurance maladie",
+      "trop cher cette caisse",
+      "comparer primes",
+      "nouvelle caisse"
+    ],
+    "negative_signals": [
+      "arriérés de primes non réglés",
+      "résiliation hors délai",
+      "absence d'attestation nouvelle caisse"
+    ],
+    "required_facts": [
+      "caisse actuelle",
+      "nouvelle caisse",
+      "date d'effet souhaitée",
+      "absence d'arriérés"
+    ],
+    "last_verified_at": "2026-04-19",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-19",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "sante_lamal_refus_prestation",
+    "domaine": "sante",
+    "sousDomaine": "lamal_refus",
+    "tags": [
+      "LAMal",
+      "refus de prestation",
+      "remboursement",
+      "opposition",
+      "LPGA",
+      "tribunal des assurances"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel type de prestation est refusé ?",
+        "options": [
+          "médicament hors liste",
+          "traitement non conventionnel",
+          "intervention à l'étranger",
+          "physiothérapie / rééducation"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Avez-vous reçu une décision écrite ?",
+        "options": [
+          "oui, formelle",
+          "lettre simple",
+          "refus oral"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Combien de temps depuis la décision ?",
+        "options": [
+          "<30 jours",
+          "30-90 jours",
+          ">90 jours"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Le médecin est-il prêt à motiver l'utilité ?",
+        "options": [
+          "oui",
+          "non",
+          "à demander"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'assurance obligatoire des soins (LAMal) couvre les prestations qui sont efficaces, appropriées et économiques (art. 32 al. 1 LAMal — critères EAE). Les prestations sont soit listées limitativement (analyses, médicaments — listes des spécialités, des moyens et appareils), soit ouvertes (prestations médicales, art. 25 LAMal). La caisse peut refuser le remboursement si la prestation : (1) n'est pas dans une liste positive (médicaments hors liste sauf cas exceptionnels art. 71a-71d OAMal pour les médicaments orphelins) ; (2) ne remplit pas les critères EAE selon l'OFSP ; (3) relève de l'assurance complémentaire. Toute décision défavorable doit être motivée et notifiée formellement (art. 49 LPGA, RS 830.1). L'assuré peut former opposition dans un délai de 30 jours (art. 52 LPGA), gratuite, sans avocat. L'opposition doit être motivée et accompagnée de pièces (rapport médical détaillé, références à la jurisprudence). Si l'opposition est rejetée par décision sur opposition, recours possible au tribunal cantonal des assurances dans les 30 jours (art. 56-58 LPGA). Procédure gratuite mais nécessite avocat fortement recommandé. Le Tribunal fédéral est l'instance ultime (art. 62 LPGA).",
+      "articles": [
+        {
+          "ref": "LAMal 25",
+          "titre": "Prestations médicales générales",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_25"
+        },
+        {
+          "ref": "LAMal 32",
+          "titre": "Conditions — efficacité, adéquation, économicité (EAE)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_32"
+        },
+        {
+          "ref": "LPGA 49",
+          "titre": "Décisions et notification (LPGA)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2002/510/fr#art_49"
+        },
+        {
+          "ref": "LPGA 52",
+          "titre": "Opposition (30 jours)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2002/510/fr#art_52"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 136 V 395",
+          "resume": "L'application du critère d'économicité ne permet pas de refuser un médicament efficace au seul motif qu'une alternative moins chère existe — encore faut-il qu'elle soit thérapeutiquement équivalente."
+        },
+        {
+          "ref": "ATF 142 V 325",
+          "resume": "Pour un médicament hors liste, la prise en charge selon art. 71a OAMal suppose un cas grave, l'absence d'alternative et un bénéfice thérapeutique élevé documenté."
+        }
+      ],
+      "modeleLettre": "Objet : Opposition à votre décision du [DATE] — refus de prestation (art. 52 LPGA)\n\nRecommandé\n\n[CAISSE-MALADIE]\nService oppositions\n[ADRESSE]\n\nMadame, Monsieur,\n\nN° d'assuré : [NUMÉRO]\nN° de dossier : [NUMÉRO]\n\nPar décision notifiée le [DATE NOTIFICATION], reçue le [DATE RÉCEPTION], vous avez refusé la prise en charge de la prestation suivante :\n\n[DÉSIGNATION PRÉCISE — médicament, traitement, intervention] prescrit(e) par le Dr [NOM] le [DATE].\n\nJe forme par la présente OPPOSITION à cette décision dans le délai de 30 jours prévu à l'art. 52 LPGA.\n\nMOTIFS :\n\n1. La prestation refusée remplit les critères d'efficacité, d'adéquation et d'économicité de l'art. 32 LAMal. Le rapport médical détaillé du Dr [NOM] daté du [DATE] (joint) atteste que :\n   - cette prestation est médicalement nécessaire pour traiter [DIAGNOSTIC]\n   - aucune alternative équivalente n'est disponible\n   - le rapport coût/bénéfice est favorable\n\n2. [ARGUMENTS COMPLÉMENTAIRES — référence à la jurisprudence, comparaison avec d'autres cas, expert externe]\n\n3. La motivation de votre décision est insuffisante au regard de l'art. 49 LPGA, car [PRÉCISER].\n\nCONCLUSIONS :\n\nJe vous prie de bien vouloir :\n1. Annuler la décision du [DATE]\n2. Prendre en charge la prestation refusée à hauteur de [MONTANT] CHF\n3. Subsidiairement, ordonner une expertise médicale indépendante\n\nJoint :\n- copie de la décision contestée\n- rapport médical du Dr [NOM]\n- factures / devis\n- pièces complémentaires\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Office fédéral de la santé publique (OFSP)",
+          "tel": "058 462 21 11",
+          "url": "https://www.bag.admin.ch",
+          "canton": "BE"
+        },
+        {
+          "nom": "Tribunal cantonal des assurances Vaud",
+          "url": "https://www.vd.ch/themes/justice/tribunaux",
+          "canton": "VD"
+        },
+        {
+          "nom": "Chambre des assurances sociales Genève",
+          "url": "https://justice.ge.ch/fr/institution/cour-de-justice/chambre-assurances-sociales",
+          "canton": "GE"
+        },
+        {
+          "nom": "Procap Suisse — défense des assurés",
+          "tel": "032 322 84 86",
+          "url": "https://www.procap.ch",
+          "canton": "BE"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "avocat spécialisé droit des assurances",
+          "indication": "Recommandé en cas de recours au tribunal cantonal"
+        },
+        {
+          "type": "Procap / Pro Infirmis",
+          "indication": "Soutien gratuit dès la phase d'opposition"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Opposition au commandement de payer",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "L'assuré conteste un refus de prestation par sa caisse-maladie LAMal — opposition puis recours",
+    "profane_aliases": [
+      "caisse refuse de payer",
+      "remboursement refusé",
+      "médicament pas pris en charge",
+      "opération à l'étranger non remboursée",
+      "contester décision caisse"
+    ],
+    "negative_signals": [
+      "prestation manifestement hors LAMal (esthétique pure)",
+      "délai d'opposition dépassé",
+      "demande déjà accordée ou en cours"
+    ],
+    "required_facts": [
+      "décision écrite reçue",
+      "date de notification",
+      "rapport médical à l'appui",
+      "respect du délai de 30 jours"
+    ],
+    "last_verified_at": "2026-04-19",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-19",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "sante_assurance_complementaire_refus",
+    "domaine": "sante",
+    "sousDomaine": "complémentaire",
+    "tags": [
+      "assurance complémentaire",
+      "LCA",
+      "refus",
+      "réticence",
+      "questionnaire santé",
+      "résiliation"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel type d'assurance ?",
+        "options": [
+          "complémentaire hospitalisation",
+          "soins dentaires",
+          "médecines alternatives",
+          "perte de gain maladie privée"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quel est le motif du refus ?",
+        "options": [
+          "réticence (omission au questionnaire)",
+          "exclusion contractuelle",
+          "prestation hors couverture",
+          "résiliation par l'assureur"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous reçu une décision écrite ?",
+        "options": [
+          "oui",
+          "lettre simple",
+          "oral"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Quand est née la prétention ?",
+        "options": [
+          "<6 mois",
+          "6-24 mois",
+          ">24 mois"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Les assurances complémentaires (hospitalisation privée, soins dentaires, perte de gain maladie hors LAA, etc.) relèvent du droit privé et de la Loi sur le contrat d'assurance (LCA, RS 221.229.1), non de la LAMal. Contrairement à l'assurance de base, l'assureur peut refuser de contracter, exclure des prestations et résilier dans les conditions contractuelles. L'art. 4 LCA impose au preneur d'assurance, au moment de la conclusion, de déclarer tous les faits importants connus pour l'appréciation du risque (questionnaire santé). En cas d'omission ou de fausse déclaration (réticence), l'assureur peut résilier le contrat dans les 4 semaines après en avoir eu connaissance (art. 6 LCA) et refuser ses prestations pour les sinistres en lien avec le fait dissimulé. La réticence se prescrit absolument après 5 ans dès la conclusion (art. 6 al. 3 LCA). Toute décision de refus doit être motivée par écrit. Les contestations relèvent du tribunal civil cantonal compétent (art. 7-8 CPC, valeurs litigieuses < 30'000 CHF = tribunal de district ; > 30'000 CHF = tribunal cantonal supérieur). Une médiation préalable via l'Ombudsman des assurances privées et la Suva est gratuite et fortement recommandée avant toute action judiciaire.",
+      "articles": [
+        {
+          "ref": "LCA 4",
+          "titre": "Devoir de déclarer (questionnaire santé)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/719_734_715/fr#art_4"
+        },
+        {
+          "ref": "LCA 6",
+          "titre": "Conséquences de la réticence — résiliation et refus",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/719_734_715/fr#art_6"
+        },
+        {
+          "ref": "LCA 38",
+          "titre": "Avis de sinistre et délais",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/719_734_715/fr#art_38"
+        },
+        {
+          "ref": "LCA 46",
+          "titre": "Prescription des prétentions (5 ans)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/719_734_715/fr#art_46"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 136 III 334",
+          "resume": "La réticence (art. 6 LCA) exige une question précise dans le questionnaire et une omission objectivement importante. La preuve incombe à l'assureur. La résiliation doit intervenir dans les 4 semaines dès la connaissance complète du fait."
+        },
+        {
+          "ref": "ATF 138 III 2",
+          "resume": "Une exclusion contractuelle de prestation doit être claire, non équivoque et portée à la connaissance du preneur. Les clauses ambiguës s'interprètent contre l'assureur (in dubio contra stipulatorem)."
+        }
+      ],
+      "modeleLettre": "Objet : Contestation de refus de prestation et demande de réexamen (assurance complémentaire LCA)\n\nRecommandé\n\n[ASSUREUR COMPLÉMENTAIRE]\nService sinistres\n[ADRESSE]\n\nMadame, Monsieur,\n\nN° de police : [NUMÉRO]\nN° de sinistre : [NUMÉRO]\n\nPar courrier du [DATE], vous m'avez notifié votre refus de prendre en charge la prestation suivante : [DESCRIPTION].\n\nMotif invoqué : [RÉTICENCE / EXCLUSION CONTRACTUELLE / HORS COUVERTURE].\n\nJe conteste ce refus pour les motifs suivants :\n\n1. [SI RÉTICENCE INVOQUÉE :] Le fait que vous me reprochez d'avoir omis de déclarer ne constitue pas une réticence au sens de l'art. 4 LCA car :\n   - la question posée dans votre questionnaire n'était pas précise\n   - l'omission ne portait pas sur un fait objectivement important\n   - votre droit de résiliation est échu, le délai de 4 semaines de l'art. 6 LCA étant dépassé\n\n2. [SI EXCLUSION CONTRACTUELLE :] La clause d'exclusion invoquée n'est pas applicable au cas d'espèce car [JUSTIFIER]. En cas d'ambiguïté, elle s'interprète contre l'assureur.\n\n3. La prestation refusée est couverte par les conditions générales en vertu de [RÉFÉRENCE CONTRACTUELLE].\n\nJe vous demande dans un délai de 30 jours :\n1. Le réexamen de votre décision\n2. La prise en charge intégrale du sinistre à hauteur de [MONTANT] CHF\n3. Subsidiairement, la motivation détaillée du refus\n\nÀ défaut, je saisirai l'Ombudsman des assurances privées puis le tribunal civil compétent. La prescription est suspendue par la présente.\n\nJoint : copie de la décision, contrat d'assurance, justificatifs médicaux et factures.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Ombudsman des assurances privées et de la Suva",
+          "tel": "044 211 30 90",
+          "url": "https://www.ombudsman-assurance.ch",
+          "canton": "ZH"
+        },
+        {
+          "nom": "FRC santé — assurances complémentaires",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Tribunal civil de l'arrondissement (VD)",
+          "url": "https://www.vd.ch/themes/justice/tribunaux",
+          "canton": "VD"
+        },
+        {
+          "nom": "Tribunal de première instance Genève",
+          "url": "https://justice.ge.ch/fr/institution/tribunal-de-premiere-instance",
+          "canton": "GE"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "ombudsman des assurances privées",
+          "indication": "Médiation gratuite — étape recommandée avant tribunal"
+        },
+        {
+          "type": "avocat spécialisé droit des assurances",
+          "indication": "Pour litige judiciaire ou enjeu financier important"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Résiliation / contestation de congé",
+          "delai": "4 semaine",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "L'assureur complémentaire refuse une prestation pour réticence ou exclusion contractuelle",
+    "profane_aliases": [
+      "complémentaire ne paie pas",
+      "réticence assurance",
+      "questionnaire santé",
+      "exclusion contractuelle",
+      "résiliation assureur"
+    ],
+    "negative_signals": [
+      "fausse déclaration manifeste et grave",
+      "exclusion claire dans les CGA acceptées",
+      "prescription 5 ans dépassée"
+    ],
+    "required_facts": [
+      "police d'assurance",
+      "questionnaire santé",
+      "motif détaillé du refus",
+      "date de connaissance par l'assureur"
+    ],
+    "last_verified_at": "2026-04-19",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-19",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "sante_directive_anticipee",
+    "domaine": "sante",
+    "sousDomaine": "directives_anticipées",
+    "tags": [
+      "directives anticipées",
+      "fin de vie",
+      "représentant thérapeutique",
+      "incapacité",
+      "art. 370 CC",
+      "personnalité"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est votre objectif ?",
+        "options": [
+          "rédiger des directives",
+          "modifier des directives existantes",
+          "désigner un représentant thérapeutique",
+          "faire respecter des directives"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Avez-vous une maladie évolutive identifiée ?",
+        "options": [
+          "oui, grave",
+          "oui, modérée",
+          "non, prévention"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous identifié un proche de confiance ?",
+        "options": [
+          "oui, un",
+          "oui, plusieurs",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Souhaitez-vous l'avis d'un médecin ?",
+        "options": [
+          "déjà fait",
+          "à organiser",
+          "pas nécessaire"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Les directives anticipées sont régies par les art. 370-373 CC depuis le nouveau droit de la protection de l'adulte (2013). Toute personne capable de discernement peut, par écrit, déterminer les traitements médicaux auxquels elle consent ou non au cas où elle deviendrait incapable de discernement (art. 370 al. 1 CC). Elle peut également désigner une personne physique chargée de s'entretenir avec le médecin et de décider en son nom (représentant thérapeutique, art. 370 al. 2 CC). Forme : les directives doivent être rédigées par écrit, datées et signées de la main de l'auteur (art. 371 al. 1 CC). Elles peuvent être inscrites sur la carte d'assuré (art. 371 al. 2 CC). Elles sont révocables en tout temps de la même manière. Le médecin doit respecter les directives anticipées, sauf si elles violent des dispositions légales ou si des doutes sérieux laissent supposer qu'elles ne reflètent plus la volonté présumée du patient (art. 372 al. 2 CC). En cas de désaccord, l'APEA peut être saisie par le médecin, le représentant thérapeutique ou un proche (art. 373 CC). Sans directives, la loi établit un ordre de représentation : conjoint, descendants, parents, frères et sœurs (art. 378 CC).",
+      "articles": [
+        {
+          "ref": "CC 370",
+          "titre": "Directives anticipées du patient — principe",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_370"
+        },
+        {
+          "ref": "CC 371",
+          "titre": "Forme des directives anticipées",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_371"
+        },
+        {
+          "ref": "CC 372",
+          "titre": "Survenance de l'incapacité — application des directives",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_372"
+        },
+        {
+          "ref": "CC 373",
+          "titre": "Intervention de l'autorité de protection (APEA)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_373"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 134 III 343",
+          "resume": "Les directives anticipées valablement rédigées lient le médecin lorsque le patient devient incapable. Le médecin ne peut s'en écarter que sur la base d'indices concrets que la volonté actuelle diffère."
+        },
+        {
+          "ref": "ATF 144 III 264",
+          "resume": "Le représentant thérapeutique désigné selon l'art. 370 al. 2 CC bénéficie d'un pouvoir prioritaire par rapport aux proches au sens de l'art. 378 CC, dans le cadre fixé par les directives."
+        }
+      ],
+      "modeleLettre": "DIRECTIVES ANTICIPÉES (art. 370-373 CC)\n\nJe soussigné(e) :\nNom, prénom : [NOM]\nDate de naissance : [DATE]\nAdresse : [ADRESSE]\nN° AVS : [NUMÉRO]\n\nDéclare en pleine capacité de discernement, librement et après mûre réflexion :\n\n1. SITUATIONS VISÉES\nCes directives s'appliquent au cas où je serais incapable de discernement de manière durable (coma, démence avancée, atteinte cérébrale grave) et incapable d'exprimer ma volonté.\n\n2. TRAITEMENTS QUE J'ACCEPTE\n- Soins palliatifs et traitement de la douleur, même s'ils raccourcissent la vie\n- Hydratation et alimentation tant que cela apaise\n- [AJOUTER]\n\n3. TRAITEMENTS QUE JE REFUSE\n- Réanimation cardio-pulmonaire en cas d'arrêt cardiaque\n- Intubation et ventilation mécanique prolongée\n- Alimentation et hydratation artificielles prolongées en phase terminale\n- Dialyse en phase terminale\n- [AJOUTER]\n\n4. REPRÉSENTANT THÉRAPEUTIQUE (art. 370 al. 2 CC)\nJe désigne comme représentant thérapeutique :\nNom : [NOM]\nLien : [LIEN — conjoint, enfant, ami]\nAdresse : [ADRESSE]\nTéléphone : [NUMÉRO]\n\nEn cas d'empêchement, je désigne subsidiairement : [NOM, COORDONNÉES]\n\n5. AUTRES VOLONTÉS\n[Don d'organes : oui / non / selon registre]\n[Lieu de fin de vie souhaité]\n[Dispositions spirituelles]\n\n6. RÉVOCABILITÉ\nLes présentes directives peuvent être révoquées ou modifiées à tout moment de la même manière (art. 371 CC).\n\nFait à [LIEU], le [DATE]\nSignature manuscrite : ____________________\n\n[Témoins éventuels — non requis légalement mais utiles]\nNom et signature : ____________________",
+      "services": [
+        {
+          "nom": "FMH — formulaires de directives anticipées",
+          "url": "https://www.fmh.ch",
+          "canton": "BE"
+        },
+        {
+          "nom": "Pro Senectute Vaud — accompagnement",
+          "tel": "021 646 17 21",
+          "url": "https://vd.prosenectute.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caritas — directives anticipées",
+          "url": "https://www.caritas.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "EXIT Suisse romande",
+          "url": "https://exit-romandie.ch",
+          "canton": "GE"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "médecin de famille",
+          "indication": "Discussion préalable recommandée pour valider la cohérence médicale"
+        },
+        {
+          "type": "APEA",
+          "indication": "En cas de désaccord entre proches et médecin sur l'application des directives"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Toute personne capable veut rédiger des directives anticipées valables pour la fin de vie",
+    "profane_aliases": [
+      "testament biologique",
+      "ne pas être réanimé",
+      "directives fin de vie",
+      "représentant thérapeutique",
+      "préparer son incapacité"
+    ],
+    "negative_signals": [
+      "personne déjà incapable de discernement",
+      "directives orales",
+      "absence de signature manuscrite"
+    ],
+    "required_facts": [
+      "capacité de discernement actuelle",
+      "forme écrite et signature",
+      "désignation d'un représentant si possible",
+      "communication aux proches et au médecin"
+    ],
+    "last_verified_at": "2026-04-19",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-19",
+    "readiness": "beta",
+    "information_only": true,
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "sante_erreur_medicale_plainte",
+    "domaine": "sante",
+    "sousDomaine": "responsabilité_médicale",
+    "tags": [
+      "erreur médicale",
+      "responsabilité",
+      "plainte",
+      "commission cantonale",
+      "dommages-intérêts",
+      "expertise"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Type d'erreur soupçonnée ?",
+        "options": [
+          "diagnostic erroné",
+          "erreur opératoire",
+          "mauvaise prescription",
+          "défaut de surveillance"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quel dommage avez-vous subi ?",
+        "options": [
+          "atteinte temporaire",
+          "atteinte permanente",
+          "décès d'un proche",
+          "préjudice financier"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Quand les faits se sont-ils produits ?",
+        "options": [
+          "<6 mois",
+          "6 mois - 2 ans",
+          "2-10 ans"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "S'agit-il d'un soignant en cabinet privé ou hôpital ?",
+        "options": [
+          "cabinet privé",
+          "hôpital public",
+          "clinique privée"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La responsabilité médicale repose sur trois piliers selon le contexte. Pour le médecin en cabinet privé : responsabilité contractuelle fondée sur l'art. 398 CO (mandat) — obligation de moyens et non de résultat. Le médecin répond de la diligence qu'il aurait dû employer selon les règles de l'art médical (lex artis). La prescription est de 10 ans dès le jour où la prétention naît (art. 127 CO). Pour les hôpitaux publics : responsabilité de l'État selon les lois cantonales sur la responsabilité (LRECA-VD, LREC-GE) — souvent avec une procédure simplifiée et une prescription de 5 ans. Pour les cliniques privées : responsabilité contractuelle (cliniques) cumulée avec la responsabilité personnelle du médecin. Quatre conditions cumulatives : (1) une faute (violation de la lex artis) ; (2) un dommage ; (3) un lien de causalité ; (4) parfois l'illicéité (responsabilité de l'État). Voies d'action : (a) commission cantonale de surveillance des professions de la santé (sanction disciplinaire — pas indemnitaire mais utile pour preuve) ; (b) plainte pénale si lésions graves ou négligence (art. 125 CP) ; (c) action civile directe au tribunal compétent. Une expertise médicale (FMH ou indépendante) est généralement décisive. Le bureau d'expertise de la FMH facture environ 5'000-15'000 CHF.",
+      "articles": [
+        {
+          "ref": "CO 398",
+          "titre": "Devoirs du mandataire — diligence du médecin",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_398"
+        },
+        {
+          "ref": "CO 41",
+          "titre": "Acte illicite — responsabilité civile",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_41"
+        },
+        {
+          "ref": "CO 127",
+          "titre": "Prescription décennale (responsabilité contractuelle)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_127"
+        },
+        {
+          "ref": "CP 125",
+          "titre": "Lésions corporelles par négligence",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_125"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 130 IV 7",
+          "resume": "L'erreur médicale punissable au sens de l'art. 125 CP suppose une violation des règles de l'art objectivement reconnaissables et un lien de causalité naturelle et adéquate avec le dommage."
+        },
+        {
+          "ref": "ATF 133 III 121",
+          "resume": "La responsabilité du médecin pour défaut d'information préalable existe indépendamment de la qualité technique de l'intervention. Le patient doit prouver qu'avec une information correcte il aurait refusé."
+        }
+      ],
+      "modeleLettre": "Objet : Demande d'expertise et notification d'action en responsabilité médicale\n\nRecommandé\n\n[MÉDECIN / ÉTABLISSEMENT]\n[ADRESSE]\n\nDocteur, Madame, Monsieur,\n\nJ'ai été pris(e) en charge dans votre cabinet/établissement entre le [DATE] et le [DATE] pour [MOTIF DE LA PRISE EN CHARGE].\n\nLes faits suivants se sont produits le [DATE] : [DESCRIPTION PRÉCISE DE L'ÉPISODE PROBLÉMATIQUE].\n\nIl en est résulté pour moi le dommage suivant : [DESCRIPTION — atteinte corporelle, perte de gain, frais médicaux supplémentaires, tort moral].\n\nJ'estime que votre prise en charge a méconnu les règles de l'art médical (lex artis), notamment sur les points suivants :\n[ ] [POINT 1]\n[ ] [POINT 2]\n[ ] [POINT 3]\n\nEn application des art. 398 CO et 41 CO, je vous tiens pour responsable du dommage subi.\n\nJe vous prie de bien vouloir, dans un délai de 60 jours :\n1. Me transmettre l'intégralité de mon dossier médical (art. 8 LPD)\n2. Communiquer l'incident à votre assurance responsabilité civile professionnelle\n3. Indiquer si vous acceptez de soumettre l'affaire à une expertise médicale indépendante (FMH ou autre)\n4. Prendre position sur ma prétention en réparation à hauteur provisoire de [MONTANT] CHF (à préciser après expertise)\n\nÀ défaut d'accord amiable, je saisirai :\n- la commission cantonale de surveillance des professions de la santé\n- le tribunal civil compétent (avec demande d'expertise judiciaire)\n- le ministère public si les faits relèvent de l'art. 125 CP\n\nLa présente vaut interruption de la prescription au sens de l'art. 135 CO.\n\nVeuillez agréer, Docteur, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Bureau d'expertises extrajudiciaires de la FMH",
+          "tel": "031 359 11 11",
+          "url": "https://www.fmh.ch/services/gutachterstelle.html",
+          "canton": "BE"
+        },
+        {
+          "nom": "Commission cantonale de surveillance des professions de la santé Vaud",
+          "url": "https://www.vd.ch/themes/sante-soins-et-handicap/professions-de-la-sante",
+          "canton": "VD"
+        },
+        {
+          "nom": "Commission de surveillance des professions de la santé Genève",
+          "url": "https://www.ge.ch/organisation/commission-surveillance-professions-sante-droits-patient",
+          "canton": "GE"
+        },
+        {
+          "nom": "Organisation suisse des patients (OSP)",
+          "tel": "044 252 54 22",
+          "url": "https://www.spo.ch",
+          "canton": "ZH"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "expertise FMH",
+          "indication": "Étape clé pour établir la faute médicale — coût élevé mais déterminant"
+        },
+        {
+          "type": "avocat spécialisé responsabilité médicale",
+          "indication": "Indispensable dès qu'un dommage important est en jeu"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Prescription",
+          "delai": "10 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Prescription",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Le patient ou ses proches dénoncent une erreur médicale et demandent réparation",
+    "profane_aliases": [
+      "erreur opération",
+      "mauvais diagnostic",
+      "négligence hôpital",
+      "complication évitable",
+      "responsabilité médecin"
+    ],
+    "negative_signals": [
+      "complication inhérente au risque opératoire connu",
+      "consentement éclairé obtenu",
+      "absence de dommage prouvé"
+    ],
+    "required_facts": [
+      "nature précise de l'erreur invoquée",
+      "dommage subi et causalité",
+      "dossier médical complet",
+      "respect des délais de prescription"
+    ],
+    "last_verified_at": "2026-04-19",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-19",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "sante_patient_hospitalisation_force",
+    "domaine": "sante",
+    "sousDomaine": "PLAFA",
+    "tags": [
+      "PLAFA",
+      "placement à des fins d'assistance",
+      "hospitalisation forcée",
+      "psychiatrie",
+      "art. 426 CC",
+      "recours"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qui est concerné ?",
+        "options": [
+          "moi-même",
+          "un proche",
+          "représentant légal"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quel est le motif invoqué ?",
+        "options": [
+          "trouble psychique",
+          "déficience mentale",
+          "grave abandon",
+          "état grave d'addiction"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Qui a ordonné le placement ?",
+        "options": [
+          "APEA",
+          "médecin (placement médical 6 semaines)",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Combien de temps depuis le placement ?",
+        "options": [
+          "<10 jours",
+          "10-42 jours",
+          ">42 jours"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le placement à des fins d'assistance (PLAFA, art. 426-439 CC) permet de placer une personne, même contre sa volonté, dans une institution appropriée lorsqu'elle souffre de troubles psychiques, d'une déficience mentale ou de grave abandon, et que son besoin d'assistance ne peut être satisfait autrement (art. 426 CC). La compétence appartient à l'autorité de protection de l'adulte (APEA). En cas d'urgence, un médecin habilité par le canton peut ordonner un placement de courte durée (max 6 semaines, art. 429 CC). La personne placée doit être informée par écrit de son droit : (1) d'être assistée d'une personne de confiance ; (2) de demander à tout moment sa libération ; (3) de saisir le tribunal contre la décision de placement, le maintien, le rejet d'une demande de libération ou les mesures restreignant la liberté de mouvement (art. 439 CC). Le délai de recours est de 10 jours dès la notification (art. 450b CC). Le tribunal cantonal compétent (autorité judiciaire de recours selon le canton) statue rapidement et gratuitement. Une assistance juridique gratuite est en principe accordée. Un examen périodique du placement est obligatoire (au moins tous les 6 mois la première année, puis annuellement, art. 431 CC).",
+      "articles": [
+        {
+          "ref": "CC 426",
+          "titre": "Placement à des fins d'assistance — conditions",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_426"
+        },
+        {
+          "ref": "CC 429",
+          "titre": "Placement médical d'urgence (6 semaines)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_429"
+        },
+        {
+          "ref": "CC 439",
+          "titre": "Recours au tribunal — droits du placé",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_439"
+        },
+        {
+          "ref": "CC 450b",
+          "titre": "Délai de recours (10 jours)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_450_b"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 140 III 105",
+          "resume": "Le PLAFA doit respecter le principe de proportionnalité : il n'est admissible que si aucune alternative moins incisive (suivi ambulatoire, hébergement protégé) n'est possible. La motivation de l'APEA doit l'établir."
+        },
+        {
+          "ref": "ATF 139 III 257",
+          "resume": "Le droit d'être entendu de la personne placée doit être garanti — elle doit pouvoir s'exprimer personnellement devant l'autorité, avec assistance d'une personne de confiance, sauf impossibilité documentée."
+        }
+      ],
+      "modeleLettre": "Objet : Recours contre la décision de placement à des fins d'assistance du [DATE] (art. 439 CC)\n\nRecommandé / par fax / par e-mail\n\nTribunal cantonal — autorité judiciaire de recours en matière de protection de l'adulte\n[CANTON]\n[ADRESSE]\n\nMadame, Monsieur le Président,\n\nJe soussigné(e) [NOM, PRÉNOM, DATE DE NAISSANCE], actuellement placé(e) à [INSTITUTION] depuis le [DATE] sur décision de [APEA / MÉDECIN] notifiée le [DATE NOTIFICATION], forme par la présente :\n\nRECOURS contre la décision de placement à des fins d'assistance,\n\ndans le délai de 10 jours prévu à l'art. 450b CC.\n\nCONCLUSIONS :\n1. Annuler la décision de placement du [DATE]\n2. Ordonner ma libération immédiate\n3. Subsidiairement, ordonner mon transfert dans une institution moins restrictive\n4. M'octroyer l'assistance judiciaire gratuite\n5. Me désigner un avocat d'office\n\nMOTIFS :\n\n1. Les conditions de l'art. 426 CC ne sont pas (ou plus) remplies : [JUSTIFIER]\n   - absence de trouble psychique grave\n   - capacité de me prendre en charge (réseau familial, suivi ambulatoire)\n   - alternatives moins incisives non examinées\n\n2. Le principe de proportionnalité (art. 36 al. 3 Cst.) n'a pas été respecté : un suivi ambulatoire serait suffisant.\n\n3. Mon droit d'être entendu n'a pas été correctement garanti : [PRÉCISER].\n\n4. Le placement est devenu sans objet du fait de [ÉVOLUTION].\n\nJe demande à être entendu(e) personnellement par le tribunal et à être assisté(e) de [PERSONNE DE CONFIANCE].\n\nJoint : copie de la décision contestée.\n\nVeuillez agréer, Madame, Monsieur le Président, mes salutations respectueuses.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Pro Mente Sana — droits en psychiatrie",
+          "tel": "0840 0000 60",
+          "url": "https://www.promentesana.org",
+          "canton": "GE"
+        },
+        {
+          "nom": "Tribunal cantonal Vaud — Cour de droit administratif et public",
+          "url": "https://www.vd.ch/themes/justice/tribunal-cantonal",
+          "canton": "VD"
+        },
+        {
+          "nom": "Cour de justice Genève — Chambre de surveillance",
+          "url": "https://justice.ge.ch/fr/institution/cour-de-justice",
+          "canton": "GE"
+        },
+        {
+          "nom": "Permanence d'avocats — assistance judiciaire",
+          "url": "https://www.oav.ch",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "avocat d'office",
+          "indication": "Désignation gratuite — à demander dans le recours"
+        },
+        {
+          "type": "Pro Mente Sana",
+          "indication": "Soutien spécialisé pour les personnes en psychiatrie"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "6 semaine",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Recours",
+          "delai": "10 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "6 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "match_description": "Une personne placée en PLAFA ou un proche conteste l'hospitalisation et veut faire libérer le patient",
+    "profane_aliases": [
+      "internement psychiatrique",
+      "hospitalisation forcée",
+      "libérer mon frère hôpital psy",
+      "PLAFA recours",
+      "placement contre volonté"
+    ],
+    "negative_signals": [
+      "danger immédiat pour soi ou autrui clairement établi",
+      "absence de toute alternative thérapeutique",
+      "personne consentant au séjour"
+    ],
+    "required_facts": [
+      "décision de placement écrite",
+      "date de notification",
+      "motif invoqué",
+      "alternatives possibles"
+    ],
+    "last_verified_at": "2026-04-19",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-19",
+    "readiness": "beta",
+    "claude_review_date": "2026-04-19"
+  }
+]

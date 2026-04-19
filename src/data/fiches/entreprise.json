@@ -12,6 +12,7 @@
       "sursis",
       "tresorerie"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -118,7 +119,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "4 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP/CO état 2025-01-01",
@@ -140,7 +149,11 @@
       "duree des difficultés",
       "poursuites en cours ou non",
       "salaires payes ou en retard"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "entreprise_surendettement",
@@ -155,6 +168,7 @@
       "responsabilité",
       "administrateur"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -246,7 +260,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Prescription",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO/LP état 2025-01-01",
@@ -268,6 +290,2287 @@
       "bilan intermediaire établi ou non",
       "organe de revision informé ou non",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "entreprise_commandement_payer_societe",
+    "domaine": "entreprise",
+    "sousDomaine": "poursuites",
+    "tags": [
+      "commandement",
+      "payer",
+      "société",
+      "SARL",
+      "SA",
+      "LP 69",
+      "opposition"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Forme juridique ?",
+        "options": [
+          "SARL",
+          "SA",
+          "raison individuelle",
+          "association"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Montant réclamé ?",
+        "options": [
+          "<5 000",
+          "5 000-50 000",
+          ">50 000"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Créance contestée ?",
+        "options": [
+          "oui totalement",
+          "oui partiellement",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Délai depuis notification ?",
+        "options": [
+          "<10 jours",
+          "10-20 jours",
+          ">20 jours"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La société débitrice (SARL ou SA) reçoit un commandement de payer notifié par l'Office des poursuites (art. 69 LP). Elle dispose de 10 jours pour faire opposition (art. 74 LP), qui peut être totale ou partielle, sans nécessité de motiver. L'opposition se fait oralement lors de la notification ou par écrit à l'Office. Sans opposition, le créancier pourra requérir la continuation de la poursuite (art. 88 LP) — pour une société inscrite au RC, c'est la voie de la faillite qui suit (art. 166 LP, commination de faillite). L'opposition bloque la poursuite : le créancier devra agir en mainlevée (procédure ordinaire si pas de titre, sommaire si reconnaissance de dette/jugement). La continuation tardive peut être contestée. Les organes (administrateurs) doivent surveiller ces notifications sous peine de responsabilité personnelle.",
+      "articles": [
+        {
+          "ref": "LP 69",
+          "titre": "Commandement de payer",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr"
+        },
+        {
+          "ref": "LP 74",
+          "titre": "Opposition",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr"
+        },
+        {
+          "ref": "LP 88",
+          "titre": "Réquisition de continuer",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr"
+        },
+        {
+          "ref": "LP 166",
+          "titre": "Commination de faillite",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 141 III 278",
+          "resume": "L opposition peut être partielle et se rapporte aux montants et accessoires qu elle couvre expressément."
+        },
+        {
+          "ref": "TF 5A_517/2018",
+          "resume": "La notification à la société doit se faire au domicile de l organe selon le registre du commerce."
+        }
+      ],
+      "modeleLettre": "Objet : Opposition au commandement de payer n° [N°]\n\nA l'Office des poursuites de [LIEU],\n\nAu nom de la société [NOM], inscrite au RC sous IDE [N°], je forme opposition totale au commandement de payer n° [N°] notifié le [DATE].\n\nSignature autorisée : [Nom et fonction]\n\n[Signature]",
+      "services": [
+        {
+          "nom": "Office des poursuites VD",
+          "url": "https://www.vd.ch/poursuites",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office des poursuites GE",
+          "url": "https://www.ge.ch/office-poursuites",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "CVCI Chambre vaudoise du commerce",
+          "tel": "021 613 35 35",
+          "url": "https://www.cvci.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "CCIG Genève",
+          "tel": "022 819 91 11",
+          "url": "https://www.ccig.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {
+        "dettes": {
+          "condition": "poursuite_societe",
+          "url": "dettes"
+        }
+      },
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Analyse du commandement et de la créance",
+          "delai": "immédiat dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Faire opposition dans les 10 jours",
+          "delai": "10 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Réaction du créancier : mainlevée ou action civile",
+          "delai": "variable (pas de délai impératif, mais prescription)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Défense en mainlevée ou procès au fond",
+          "delai": "selon convocation",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition au commandement de payer",
+          "delai": "10 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LP état 2025-01-01",
+    "match_description": "Société recevant un commandement de payer et voulant faire opposition",
+    "profane_aliases": [
+      "poursuite contre ma SARL",
+      "commandement payer société",
+      "opposition SARL"
+    ],
+    "negative_signals": [
+      "poursuite contre personne physique (voir dettes)",
+      "créance déjà jugée"
+    ],
+    "required_facts": [
+      "forme juridique",
+      "date notification",
+      "montant",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Commandement de payer reçu par une société",
+        "domaine": "entreprise",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Analyse du commandement et de la créance",
+            "description": "Vérifier identité du créancier, montant, cause, échéances, éventuelles prescriptions. Consulter le dossier comptable de la société.",
+            "delai": "immédiat dès notification",
+            "preuve_generee": "Copie du commandement + dossier créance"
+          },
+          {
+            "numero": 2,
+            "action": "Faire opposition dans les 10 jours",
+            "description": "Déclaration d'opposition (totale ou partielle) à l'office des poursuites OU directement sur le commandement. L'opposition suspend la poursuite.",
+            "delai": "10 jours dès notification",
+            "base_legale": "LP 74 / LP 75",
+            "preuve_generee": "Formulaire d'opposition déposé + timbre office"
+          },
+          {
+            "numero": 3,
+            "action": "Réaction du créancier : mainlevée ou action civile",
+            "description": "Le créancier doit agir pour lever l'opposition : requête de mainlevée (provisoire/définitive) si titre, ou action civile au fond si contestation.",
+            "delai": "variable (pas de délai impératif, mais prescription)",
+            "branches": [
+              {
+                "si": "pas d'action du créancier",
+                "alors": "poursuite prescrite après 1 an"
+              },
+              {
+                "si": "mainlevée ou action",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Défense en mainlevée ou procès au fond",
+            "description": "Audience de mainlevée (15-30 jours) ou procès civil. Conseil : mandater un juriste/avocat pour personnes morales (société = représentation obligatoire en certains cas).",
+            "delai": "selon convocation",
+            "base_legale": "LP 80-82 / LP 83 / CPC",
+            "cout": "frais de justice selon tarif"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "entreprise_creances_impayees_recouvrement",
+    "domaine": "entreprise",
+    "sousDomaine": "recouvrement",
+    "tags": [
+      "créance",
+      "impayée",
+      "recouvrement",
+      "LP 38",
+      "mise en demeure",
+      "poursuite"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Votre créance est-elle reconnue par écrit ?",
+        "options": [
+          "facture",
+          "contrat",
+          "jugement",
+          "oral"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Avez-vous mis le débiteur en demeure ?",
+        "options": [
+          "oui écrit",
+          "oui oral",
+          "non"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Type de débiteur ?",
+        "options": [
+          "société",
+          "personne physique",
+          "indépendant"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Montant ?",
+        "options": [
+          "<1 000",
+          "1 000-10 000",
+          ">10 000"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Pour recouvrer une créance, il convient d'abord d'envoyer une mise en demeure écrite (art. 102 CO) fixant un délai (typiquement 10-30 jours) et mentionnant les intérêts moratoires 5% dès exigibilité (art. 104 CO). À défaut de paiement, engager une poursuite ordinaire par réquisition à l'Office des poursuites du domicile du débiteur (art. 38 et 67 LP) — pour 73 CHF de frais initial environ. Si le débiteur fait opposition, obtenir la mainlevée (définitive si titre, provisoire si reconnaissance, ordinaire sinon) puis continuer la poursuite. Si débiteur = société RC, la voie finale est la faillite. Les créances commerciales se prescrivent par 5 ans (CO 128). Une cession à société de recouvrement/factoring est une alternative. Le tribunal de commerce (ZH, BE, AG, SG) ou le tribunal civil ordinaire est compétent pour les actions judiciaires.",
+      "articles": [
+        {
+          "ref": "LP 38",
+          "titre": "Biens exécutables",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr"
+        },
+        {
+          "ref": "CO 102",
+          "titre": "Mise en demeure",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 104",
+          "titre": "Intérêts moratoires",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 128",
+          "titre": "Prescription 5 ans commerciale",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 130 III 591",
+          "resume": "La mise en demeure doit indiquer clairement le montant dû et une sommation de payer."
+        },
+        {
+          "ref": "TF 4A_39/2019",
+          "resume": "L intérêt moratoire court dès la sommation ou à l échéance convenue sans mise en demeure."
+        }
+      ],
+      "modeleLettre": "Objet : Mise en demeure — dernière sommation\n\nMadame, Monsieur,\n\nMalgré nos relances des [DATES], le montant de CHF [X] correspondant à notre facture n° [N°] du [DATE] demeure impayé.\n\nConformément à l'art. 102 CO, je vous mets en demeure de régler ce montant dans un délai de 10 jours, majoré des intérêts moratoires à 5% dès exigibilité.\n\nA défaut, des poursuites seront engagées à vos frais.\n\n[Signature]",
+      "services": [
+        {
+          "nom": "Office des poursuites VD",
+          "url": "https://www.vd.ch/poursuites",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office des poursuites GE",
+          "url": "https://www.ge.ch/office-poursuites",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "CVCI Chambre vaudoise du commerce",
+          "tel": "021 613 35 35",
+          "url": "https://www.cvci.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "CCIG Genève",
+          "tel": "022 819 91 11",
+          "url": "https://www.ccig.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Rappel et mise en demeure",
+          "delai": "dès l'échéance + 10 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Réquisition de poursuite à l'office",
+          "delai": "dès expiration de la mise en demeure",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Commandement de payer et opposition éventuelle",
+          "delai": "10 jours pour opposition",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Mainlevée (provisoire/définitive) ou action au fond",
+          "delai": "audience de mainlevée dans 15-30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LP/CO état 2025",
+    "match_description": "Recouvrement de créances commerciales impayées",
+    "profane_aliases": [
+      "mon client ne paie pas",
+      "recouvrer factures",
+      "poursuivre mauvais payeur"
+    ],
+    "negative_signals": [
+      "contestation de la créance elle-même",
+      "faillite du débiteur"
+    ],
+    "required_facts": [
+      "nature créance",
+      "mise en demeure faite ou non",
+      "débiteur identifié",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Recouvrement de créances impayées",
+        "domaine": "entreprise",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Rappel et mise en demeure",
+            "description": "Envoyer un 1er rappel amiable, puis une mise en demeure formelle par recommandé (fixant un dernier délai de 10-14 jours).",
+            "delai": "dès l'échéance + 10 jours",
+            "base_legale": "CO 102",
+            "preuve_generee": "Rappels datés + mise en demeure recommandée"
+          },
+          {
+            "numero": 2,
+            "action": "Réquisition de poursuite à l'office",
+            "description": "Si aucun paiement, déposer une réquisition de poursuite à l'office des poursuites du domicile/siège du débiteur.",
+            "delai": "dès expiration de la mise en demeure",
+            "base_legale": "LP 67 / LP 68",
+            "preuve_generee": "Accusé de réception de l'office"
+          },
+          {
+            "numero": 3,
+            "action": "Commandement de payer et opposition éventuelle",
+            "description": "L'office notifie le commandement. Le débiteur a 10 jours pour faire opposition. Si pas d'opposition, continuation possible.",
+            "delai": "10 jours pour opposition",
+            "branches": [
+              {
+                "si": "pas d'opposition",
+                "alors": "requête de continuation de la poursuite"
+              },
+              {
+                "si": "opposition",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Mainlevée (provisoire/définitive) ou action au fond",
+            "description": "Si titre authentique / reconnaissance écrite : mainlevée provisoire. Si jugement : mainlevée définitive. Sinon, action civile au fond.",
+            "delai": "audience de mainlevée dans 15-30 jours",
+            "base_legale": "LP 80-82 / LP 83 / CPC 250",
+            "cout": "frais de justice selon tarif cantonal"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "entreprise_faillite_personnelle",
+    "domaine": "entreprise",
+    "sousDomaine": "faillite",
+    "tags": [
+      "faillite",
+      "personnelle",
+      "LP 191",
+      "insolvabilité",
+      "indépendant"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Êtes-vous inscrit au registre du commerce ?",
+        "options": [
+          "oui",
+          "non",
+          "ancien"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Insolvabilité ?",
+        "options": [
+          "temporaire",
+          "définitive",
+          "doute"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous des actifs ?",
+        "options": [
+          "aucun",
+          "quelques-uns",
+          "oui immeuble/véhicule"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Motif principal des dettes ?",
+        "options": [
+          "échec business",
+          "maladie",
+          "divorce",
+          "cumul"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Une personne physique peut déclarer elle-même sa faillite (faillite sans poursuite préalable, art. 191 LP). Condition : être insolvable, c'est-à-dire hors d'état de satisfaire durablement ses créanciers. Elle s'adresse au juge de la faillite du for de la poursuite. Les personnes non inscrites au RC doivent se soumettre préalablement à la procédure de déclaration d'insolvabilité. La faillite entraîne la liquidation des actifs par l'Office des faillites et la délivrance d'actes de défaut de biens pour le solde des créances (qui deviennent imprescriptibles mais non poursuivies sauf retour à meilleure fortune art. 265 LP). Depuis 2025, la LP 333a offre une procédure de nouveau départ pour particuliers sans actif permettant l'extinction des dettes résiduelles après 3 ans. La perte de la considération commerciale est notable.",
+      "articles": [
+        {
+          "ref": "LP 191",
+          "titre": "Faillite sans poursuite préalable",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr"
+        },
+        {
+          "ref": "LP 265",
+          "titre": "Retour à meilleure fortune",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr"
+        },
+        {
+          "ref": "LP 333a",
+          "titre": "Procédure de nouveau départ",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 137 III 460",
+          "resume": "L insolvabilité suppose une incapacité durable, non temporaire, de satisfaire aux créances."
+        },
+        {
+          "ref": "TF 5A_329/2019",
+          "resume": "La faillite personnelle art. 191 LP n est ouverte qu aux personnes inscrites au RC ; pour les autres, déclaration d insolvabilité préalable."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Office des faillites VD",
+          "url": "https://www.vd.ch/faillites",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office des faillites GE",
+          "url": "https://www.ge.ch/office-faillites",
+          "canton": "GE"
+        },
+        {
+          "nom": "CSP SOS Dettes VD",
+          "tel": "0840 43 21 00",
+          "url": "https://csp.ch/vaud/dettes",
+          "canton": "VD"
+        },
+        {
+          "nom": "Caritas Dettes GE",
+          "tel": "022 708 04 48",
+          "url": "https://www.caritas-geneve.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {
+        "dettes": {
+          "condition": "insolvabilite",
+          "url": "dettes"
+        }
+      },
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Bilan de situation et inventaire",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Tentative d'accord amiable ou sursis",
+          "delai": "avant poursuites en voie de faillite",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Déclaration d'insolvabilité ou faillite sur requête",
+          "delai": "dès insolvabilité manifeste",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure de faillite par l'office",
+          "delai": "6 à 24 mois",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LP état 2025 (nouveau départ 2025)",
+    "match_description": "Déclaration de faillite personnelle pour personne physique",
+    "profane_aliases": [
+      "je veux faire faillite",
+      "faillite personnelle",
+      "insolvable personne physique"
+    ],
+    "negative_signals": [
+      "faillite de société (voir dissolution/surendettement)",
+      "simple désendettement"
+    ],
+    "required_facts": [
+      "statut RC",
+      "caractère durable insolvabilité",
+      "actifs",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Faillite personnelle (indépendant) — démarches",
+        "domaine": "entreprise",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Bilan de situation et inventaire",
+            "description": "Établir bilan complet : actifs (biens, créances), passifs (dettes, poursuites en cours), revenus, charges. Consulter un conseiller dettes (Caritas, CSP).",
+            "delai": "immédiat",
+            "preuve_generee": "Bilan détaillé + état des poursuites"
+          },
+          {
+            "numero": 2,
+            "action": "Tentative d'accord amiable ou sursis",
+            "description": "Avant faillite, proposer un concordat amiable aux créanciers OU demander un sursis concordataire au tribunal.",
+            "delai": "avant poursuites en voie de faillite",
+            "base_legale": "LP 293 ss",
+            "preuve_generee": "Propositions écrites aux créanciers + réponses"
+          },
+          {
+            "numero": 3,
+            "action": "Déclaration d'insolvabilité ou faillite sur requête",
+            "description": "Indépendant peut déclarer son insolvabilité au tribunal (LP 191) OU subir la faillite sur requête d'un créancier poursuivant.",
+            "delai": "dès insolvabilité manifeste",
+            "base_legale": "LP 190 / LP 191",
+            "branches": [
+              {
+                "si": "concordat homologué",
+                "alors": "plan de remboursement"
+              },
+              {
+                "si": "faillite prononcée",
+                "alors": "etape 4"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Procédure de faillite par l'office",
+            "description": "L'office des faillites inventorie les biens, réalise les actifs, distribue aux créanciers. Actes de défaut de biens pour le solde. Réhabilitation possible après.",
+            "delai": "6 à 24 mois",
+            "base_legale": "LP 197 ss / LP 265 / LP 265a",
+            "cout": "frais de faillite prélevés sur l'actif"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "entreprise_sursis_concordataire",
+    "domaine": "entreprise",
+    "sousDomaine": "assainissement",
+    "tags": [
+      "sursis",
+      "concordat",
+      "LP 293",
+      "assainissement",
+      "insolvabilité",
+      "commissaire"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Société en difficulté de trésorerie ?",
+        "options": [
+          "oui passagère",
+          "oui structurelle",
+          "oui insolvable"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Business plan de redressement ?",
+        "options": [
+          "prêt",
+          "en préparation",
+          "non"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Accord créanciers principaux ?",
+        "options": [
+          "oui",
+          "partiel",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Perte de capital / surendettement ?",
+        "options": [
+          "perte capital",
+          "surendettement",
+          "ni l un ni l autre"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le sursis concordataire est un outil d'assainissement ouvert aux entreprises et personnes surendettées (art. 293 ss LP). La requête est déposée au juge du concordat du siège. Il examine les perspectives d'assainissement et, si elles sont sérieuses, octroie d'abord un sursis provisoire de 4 mois (art. 293a LP), prolongeable jusqu'à 8 mois, sans publication nécessaire. Un commissaire est désigné pour instruire, négocier avec les créanciers et préparer un projet de concordat. En cas de succès, un sursis définitif de 6 à 12 mois est octroyé (art. 294-296 LP), prolongeable à 24 mois. Le concordat peut être ordinaire (dividende), par abandon d'actif (liquidation encadrée), ou simple remise de dette. L'homologation par le juge (art. 306 LP) est requise. Le sursis protège contre les poursuites et suspend l'obligation d'aviser le juge en cas de surendettement (CO 725b).",
+      "articles": [
+        {
+          "ref": "LP 293",
+          "titre": "Sursis concordataire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr"
+        },
+        {
+          "ref": "LP 296",
+          "titre": "Octroi du sursis définitif",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr"
+        },
+        {
+          "ref": "LP 306",
+          "titre": "Homologation concordat",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr"
+        },
+        {
+          "ref": "CO 725b",
+          "titre": "Avis au juge en cas de surendettement",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 140 III 111",
+          "resume": "Le juge octroie le sursis si les perspectives d assainissement sont vraisemblables, sans exiger certitude."
+        },
+        {
+          "ref": "TF 5A_151/2018",
+          "resume": "La présence d un business plan cohérent et le soutien de créanciers clés sont déterminants pour l octroi du sursis."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Office des faillites VD",
+          "url": "https://www.vd.ch/faillites",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office des faillites GE",
+          "url": "https://www.ge.ch/office-faillites",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "CVCI Chambre vaudoise du commerce",
+          "tel": "021 613 35 35",
+          "url": "https://www.cvci.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "CCIG Genève",
+          "tel": "022 819 91 11",
+          "url": "https://www.ccig.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Notaires de Vaud",
+          "url": "https://www.notaires-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Chambre des notaires GE",
+          "url": "https://www.notaires-geneve.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Inventaire et bilan d'assainissement",
+          "delai": "immédiat dès constat de surendettement (CO 725b)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Requête au juge du concordat",
+          "delai": "dans les 30 jours suivant le diagnostic",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Sursis provisoire et nomination du commissaire",
+          "delai": "4 mois (sursis provisoire), prolongeable",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Ouverture de la faillite ou homologation",
+          "delai": "selon décision judiciaire",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "4 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "LP état 2025",
+    "match_description": "Sursis concordataire pour entreprise en difficulté",
+    "profane_aliases": [
+      "redresser ma société",
+      "sursis insolvabilité",
+      "concordat entreprise"
+    ],
+    "negative_signals": [
+      "dissolution volontaire sans difficulté",
+      "faillite déjà prononcée"
+    ],
+    "required_facts": [
+      "perspectives redressement",
+      "état du capital",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Demande de sursis concordataire",
+        "domaine": "entreprise",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Inventaire et bilan d'assainissement",
+            "description": "Établir bilan, plan de trésorerie, liste des créanciers, projet de concordat.",
+            "delai": "immédiat dès constat de surendettement (CO 725b)",
+            "preuve_generee": "Bilan + projet de concordat"
+          },
+          {
+            "numero": 2,
+            "action": "Requête au juge du concordat",
+            "description": "Déposer la requête de sursis concordataire avec pièces auprès du tribunal compétent (LP 293).",
+            "delai": "dans les 30 jours suivant le diagnostic",
+            "base_legale": "LP 293 / CO 725b",
+            "preuve_generee": "Quittance de dépôt + numéro de procédure"
+          },
+          {
+            "numero": 3,
+            "action": "Sursis provisoire et nomination du commissaire",
+            "delai": "4 mois (sursis provisoire), prolongeable",
+            "branches": [
+              {
+                "si": "sursis définitif accordé (LP 296)",
+                "alors": "exécution du concordat"
+              },
+              {
+                "si": "rejet",
+                "alors": "etape 4 (faillite)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Ouverture de la faillite ou homologation",
+            "description": "Selon issue : homologation du concordat (LP 306) ou ouverture de la faillite par le juge.",
+            "delai": "selon décision judiciaire",
+            "base_legale": "LP 296 / LP 306"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "entreprise_creation_sarl",
+    "domaine": "entreprise",
+    "sousDomaine": "creation",
+    "tags": [
+      "SARL",
+      "création",
+      "CO 773",
+      "CO 777",
+      "capital",
+      "notaire"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Nombre d associés prévu ?",
+        "options": [
+          "1",
+          "2-5",
+          ">5"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Capital disponible ?",
+        "options": [
+          "20 000",
+          "20 000-50 000",
+          ">50 000"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Activité déjà en exercice ?",
+        "options": [
+          "non",
+          "entreprise individuelle",
+          "autre forme"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Siège envisagé ?",
+        "options": [
+          "canton",
+          "domicile",
+          "à choisir"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La SARL (société à responsabilité limitée) requiert un capital social minimum de CHF 20'000 entièrement libéré (art. 773 et 777c CO). Elle peut être constituée par une ou plusieurs personnes physiques ou morales (art. 775 CO). Étapes : (1) choix nom et siège, vérification disponibilité au RC ; (2) acte constitutif chez un notaire avec statuts, nomination des gérants ; (3) libération du capital sur compte de consignation bancaire ; (4) déclaration d'apport si apports en nature ; (5) inscription au RC qui fait naître la personnalité juridique (art. 779 CO). Coût total environ 2'000-4'000 CHF (notaire, RC, FOSC). L'immatriculation TVA est obligatoire dès 100'000 CHF de chiffre d'affaires. Les gérants avec signature doivent être inscrits au RC. Les associés sont responsables jusqu'à leur part sociale (sauf abus, responsabilité personnelle art. 827 CO).",
+      "articles": [
+        {
+          "ref": "CO 773",
+          "titre": "SARL capital minimum",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 777",
+          "titre": "SARL fondation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 779",
+          "titre": "Inscription au RC",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 827",
+          "titre": "Responsabilité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 139 III 24",
+          "resume": "La SARL acquiert la personnalité juridique dès l inscription au RC, pas avant."
+        },
+        {
+          "ref": "TF 4A_506/2018",
+          "resume": "L associé unique répond sous certaines conditions pour confusion des patrimoines (piercing)."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Registre du commerce Vaud",
+          "tel": "021 316 37 51",
+          "url": "https://www.rc.vd.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Registre du commerce Genève",
+          "tel": "022 388 87 67",
+          "url": "https://www.ge.ch/rc",
+          "canton": "GE"
+        },
+        {
+          "nom": "Notaires de Vaud",
+          "url": "https://www.notaires-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Chambre des notaires GE",
+          "url": "https://www.notaires-geneve.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "CVCI Chambre vaudoise du commerce",
+          "tel": "021 613 35 35",
+          "url": "https://www.cvci.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "CCIG Genève",
+          "tel": "022 819 91 11",
+          "url": "https://www.ccig.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Élaboration des statuts et libération du capital",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Acte authentique devant notaire",
+          "delai": "dans les 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Inscription au registre du commerce",
+          "delai": "généralement 5 à 15 jours ouvrables",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours contre le refus d'inscription",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "CO état 2025-01-01",
+    "match_description": "Création d'une SARL : capital, notaire, RC, formalités",
+    "profane_aliases": [
+      "créer SARL",
+      "fonder société",
+      "constituer SARL Suisse"
+    ],
+    "negative_signals": [
+      "création SA (voir SA)",
+      "entreprise individuelle simple"
+    ],
+    "required_facts": [
+      "capital disponible",
+      "associés",
+      "siège",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Création d'une Sàrl",
+        "domaine": "entreprise",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Élaboration des statuts et libération du capital",
+            "description": "Rédiger les statuts (objet social, siège, capital min CHF 20'000 entièrement libéré), ouvrir un compte de consignation.",
+            "delai": "immédiat",
+            "preuve_generee": "Projet de statuts + attestation bancaire de consignation"
+          },
+          {
+            "numero": 2,
+            "action": "Acte authentique devant notaire",
+            "description": "Faire constater la fondation par acte authentique (CO 777). Désignation des organes (gérants, organe de révision si nécessaire CO 727a).",
+            "delai": "dans les 30 jours",
+            "base_legale": "CO 773 / CO 777 / CO 779",
+            "preuve_generee": "Acte de fondation notarié"
+          },
+          {
+            "numero": 3,
+            "action": "Inscription au registre du commerce",
+            "delai": "généralement 5 à 15 jours ouvrables",
+            "branches": [
+              {
+                "si": "inscription validée",
+                "alors": "personnalité juridique acquise (fin)"
+              },
+              {
+                "si": "refus motivé du préposé",
+                "alors": "etape 4 (recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours contre le refus d'inscription",
+            "description": "Recours auprès de l'autorité cantonale de surveillance du registre du commerce.",
+            "delai": "30 jours dès notification",
+            "base_legale": "ORC 165 / loi cantonale de procédure"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "entreprise_creation_sa",
+    "domaine": "entreprise",
+    "sousDomaine": "creation",
+    "tags": [
+      "SA",
+      "création",
+      "CO 620",
+      "CO 632",
+      "capital-actions",
+      "notaire"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Capital disponible ?",
+        "options": [
+          "100 000",
+          "100 000-500 000",
+          ">500 000"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Nombre de fondateurs ?",
+        "options": [
+          "1",
+          "2-5",
+          ">5"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Conseil d administration prévu ?",
+        "options": [
+          "1 membre",
+          "2-3",
+          "plus"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Apports ?",
+        "options": [
+          "espèces seules",
+          "en nature",
+          "mixte"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La SA (société anonyme) exige un capital-actions minimum de CHF 100'000, dont au moins CHF 50'000 libéré à la fondation (art. 620 et 632 CO). Formalités : (1) statuts authentiques chez notaire ; (2) acte constitutif signé par les fondateurs ; (3) libération du capital sur compte de consignation bancaire (ou apport en nature avec rapport de vérification) ; (4) nomination d'un conseil d'administration (au moins un membre domicilié en Suisse avec signature individuelle ou deux avec signature collective art. 718 CO) ; (5) désignation d'un organe de révision sauf opting-out possible pour petite SA (art. 727a CO) ; (6) inscription au RC qui fait naître la personnalité juridique. Coûts : 4'000-8'000 CHF (notaire, RC). Avantages vs SARL : anonymat possible des actionnaires, actions transférables, image de solidité.",
+      "articles": [
+        {
+          "ref": "CO 620",
+          "titre": "Société anonyme",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 632",
+          "titre": "Capital-actions minimum",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 718",
+          "titre": "Représentation SA",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 727a",
+          "titre": "Opting-out révision",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 140 III 167",
+          "resume": "La SA naît par l inscription au RC ; l acte constitutif antérieur crée une société simple."
+        },
+        {
+          "ref": "TF 4A_459/2019",
+          "resume": "Les apports en nature doivent être évalués par rapport de vérification conforme."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Registre du commerce Vaud",
+          "tel": "021 316 37 51",
+          "url": "https://www.rc.vd.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Registre du commerce Genève",
+          "tel": "022 388 87 67",
+          "url": "https://www.ge.ch/rc",
+          "canton": "GE"
+        },
+        {
+          "nom": "Notaires de Vaud",
+          "url": "https://www.notaires-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Chambre des notaires GE",
+          "url": "https://www.notaires-geneve.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "CVCI Chambre vaudoise du commerce",
+          "tel": "021 613 35 35",
+          "url": "https://www.cvci.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "CCIG Genève",
+          "tel": "022 819 91 11",
+          "url": "https://www.ccig.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Préparation des statuts et capital",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Acte authentique de fondation",
+          "delai": "dans les 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Inscription au registre du commerce",
+          "delai": "5 à 15 jours ouvrables",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours contre la décision de l'office du registre",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "CO état 2025-01-01 (droit SA révisé)",
+    "match_description": "Création d'une SA : capital-actions, CA, formalités",
+    "profane_aliases": [
+      "créer SA",
+      "société anonyme fondation",
+      "constituer SA Suisse"
+    ],
+    "negative_signals": [
+      "SARL (voir SARL)",
+      "association"
+    ],
+    "required_facts": [
+      "capital",
+      "structure CA",
+      "apports",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Création d'une société anonyme (SA)",
+        "domaine": "entreprise",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Préparation des statuts et capital",
+            "description": "Rédiger statuts, libérer au moins CHF 50'000 (sur capital min CHF 100'000), désigner le conseil d'administration et l'organe de révision (CO 727a).",
+            "delai": "immédiat",
+            "preuve_generee": "Projet de statuts + attestation de consignation"
+          },
+          {
+            "numero": 2,
+            "action": "Acte authentique de fondation",
+            "description": "Faire constater la fondation par acte authentique notarié (CO 632 ss). Acceptation par les organes désignés.",
+            "delai": "dans les 30 jours",
+            "base_legale": "CO 620 / CO 632 / CO 718",
+            "preuve_generee": "Acte de fondation notarié"
+          },
+          {
+            "numero": 3,
+            "action": "Inscription au registre du commerce",
+            "delai": "5 à 15 jours ouvrables",
+            "branches": [
+              {
+                "si": "inscription effectuée",
+                "alors": "SA constituée (fin)"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 4 (recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours contre la décision de l'office du registre",
+            "description": "Recours auprès de l'autorité cantonale de surveillance du registre du commerce.",
+            "delai": "30 jours dès notification",
+            "base_legale": "ORC 165"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "entreprise_conflit_associes_sarl",
+    "domaine": "entreprise",
+    "sousDomaine": "gouvernance",
+    "tags": [
+      "conflit",
+      "associés",
+      "SARL",
+      "CO 798",
+      "CO 818",
+      "blocage",
+      "exclusion"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Nature du conflit ?",
+        "options": [
+          "blocage décisions",
+          "violation devoirs",
+          "concurrence",
+          "financier"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Part dans la société ?",
+        "options": [
+          "minoritaire",
+          "paritaire",
+          "majoritaire"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Statuts prévoient-ils arbitrage/clause sortie ?",
+        "options": [
+          "oui",
+          "non",
+          "je ne sais pas"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Assemblée récente tenue ?",
+        "options": [
+          "oui conflictuelle",
+          "non",
+          "report"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "En SARL, les décisions se prennent en assemblée (art. 798 CO) à la majorité simple sauf exceptions statutaires ou décisions importantes (art. 808 CO). En cas de blocage durable, plusieurs voies : (1) action en dissolution pour justes motifs (art. 821 al. 1 ch. 3 CO) — exigeante, ultime recours ; (2) action en exclusion d'un associé pour justes motifs (art. 823 CO) ; (3) action en sortie (art. 822 CO) avec indemnisation en espèces ; (4) action en responsabilité contre gérants violant leurs devoirs (art. 827 CO ; 754 CO par renvoi). La médiation et le recours à un arbitre statutaire sont encouragés. La procédure prud'homale peut s'appliquer si conflit entre associé-gérant employé et société. Les actes de concurrence déloyale (LCD) peuvent engager responsabilité individuelle.",
+      "articles": [
+        {
+          "ref": "CO 798",
+          "titre": "SARL décisions des associés",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 808",
+          "titre": "Majorités qualifiées",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 822",
+          "titre": "Sortie pour justes motifs",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 823",
+          "titre": "Exclusion",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 139 III 89",
+          "resume": "Les justes motifs de dissolution SARL incluent blocages durables rendant la collaboration impossible."
+        },
+        {
+          "ref": "TF 4A_58/2018",
+          "resume": "L indemnité de sortie se calcule selon la valeur réelle des parts, pas seulement nominale."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "CVCI Chambre vaudoise du commerce",
+          "tel": "021 613 35 35",
+          "url": "https://www.cvci.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "CCIG Genève",
+          "tel": "022 819 91 11",
+          "url": "https://www.ccig.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Registre du commerce Vaud",
+          "tel": "021 316 37 51",
+          "url": "https://www.rc.vd.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Registre du commerce Genève",
+          "tel": "022 388 87 67",
+          "url": "https://www.ge.ch/rc",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Documentation du conflit",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Tentative de résolution interne et mise en demeure",
+          "delai": "dans les 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Délai de négociation",
+          "delai": "30 à 60 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Action en exclusion ou en dissolution pour justes motifs",
+          "delai": "selon procédure",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "CO état 2025",
+    "match_description": "Conflit entre associés d'une SARL (blocage, sortie, exclusion)",
+    "profane_aliases": [
+      "associé SARL en conflit",
+      "sortir SARL",
+      "exclure associé"
+    ],
+    "negative_signals": [
+      "litige avec client/fournisseur (voir CGV)",
+      "dissolution paisible volontaire"
+    ],
+    "required_facts": [
+      "nature conflit",
+      "part détenue",
+      "statuts spécifiques",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Résolution d'un conflit entre associés Sàrl",
+        "domaine": "entreprise",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Documentation du conflit",
+            "description": "Rassembler statuts, procès-verbaux d'assemblée, échanges écrits, comptes annuels, identifier les violations alléguées.",
+            "delai": "immédiat",
+            "preuve_generee": "Dossier de conflit horodaté"
+          },
+          {
+            "numero": 2,
+            "action": "Tentative de résolution interne et mise en demeure",
+            "description": "Convoquer une assemblée, proposer médiation; si échec, mise en demeure formelle de l'associé fautif (CO 808).",
+            "delai": "dans les 30 jours",
+            "base_legale": "CO 798 / CO 808",
+            "preuve_generee": "PV d'assemblée + lettre AR"
+          },
+          {
+            "numero": 3,
+            "action": "Délai de négociation",
+            "delai": "30 à 60 jours",
+            "branches": [
+              {
+                "si": "accord trouvé (modification statutaire, rachat de parts)",
+                "alors": "fin (exécution)"
+              },
+              {
+                "si": "blocage persistant",
+                "alors": "etape 4 (action judiciaire)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Action en exclusion ou en dissolution pour justes motifs",
+            "description": "Saisir le tribunal civil compétent pour exclure l'associé (CO 823) ou requérir la dissolution (CO 821).",
+            "delai": "selon procédure",
+            "base_legale": "CO 821 / CO 822 / CO 823"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "entreprise_dissolution_societe",
+    "domaine": "entreprise",
+    "sousDomaine": "dissolution",
+    "tags": [
+      "dissolution",
+      "liquidation",
+      "SARL",
+      "SA",
+      "CO 736",
+      "CO 821",
+      "RC"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Forme juridique ?",
+        "options": [
+          "SA",
+          "SARL",
+          "association",
+          "coopérative"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Motif de dissolution ?",
+        "options": [
+          "volontaire",
+          "atteinte du but",
+          "perte capital",
+          "décision justice"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "État des actifs ?",
+        "options": [
+          "suffisants",
+          "tout juste",
+          "insuffisants"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Dettes en cours ?",
+        "options": [
+          "aucune",
+          "modestes",
+          "importantes"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La dissolution d'une SA (art. 736 CO) ou d'une SARL (art. 821 CO) peut intervenir par : décision de l'assemblée générale à la majorité qualifiée, atteinte du but, expiration durée, jugement (justes motifs, art. 736 ch. 4 CO / 821 al. 1 ch. 3 CO), faillite. La décision de dissolution doit être constatée par acte authentique (sauf certaines causes légales) et inscrite au RC. S'ouvre alors la période de liquidation : la société porte la mention 'en liquidation' ; les liquidateurs (souvent les administrateurs/gérants) recouvrent les créances, règlent les dettes, réalisent les actifs. Appel aux créanciers par publication (art. 742 CO) suivi d'un délai d'opposition. Répartition du solde entre actionnaires/associés après 1 an minimum (délai légal, art. 745 CO). Radiation au RC après clôture de la liquidation.",
+      "articles": [
+        {
+          "ref": "CO 736",
+          "titre": "SA dissolution",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 821",
+          "titre": "SARL dissolution",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 742",
+          "titre": "Appel aux créanciers",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 745",
+          "titre": "Répartition du solde",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 138 III 294",
+          "resume": "La dissolution pour justes motifs doit établir impossibilité durable de poursuivre le but social."
+        },
+        {
+          "ref": "TF 4A_221/2020",
+          "resume": "La répartition anticipée aux associés avant apurement des dettes engage la responsabilité des liquidateurs."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Registre du commerce Vaud",
+          "tel": "021 316 37 51",
+          "url": "https://www.rc.vd.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Registre du commerce Genève",
+          "tel": "022 388 87 67",
+          "url": "https://www.ge.ch/rc",
+          "canton": "GE"
+        },
+        {
+          "nom": "Notaires de Vaud",
+          "url": "https://www.notaires-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Chambre des notaires GE",
+          "url": "https://www.notaires-geneve.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Office des faillites VD",
+          "url": "https://www.vd.ch/faillites",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office des faillites GE",
+          "url": "https://www.ge.ch/office-faillites",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Décision de dissolution",
+          "delai": "selon convocation statutaire (au moins 20 jours)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Inscription de la dissolution au registre du commerce",
+          "delai": "dans les 30 jours suivant la décision",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Liquidation et appel aux créanciers",
+          "delai": "1 an au moins après le 3e appel aux créanciers (CO 745)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Radiation finale au registre du commerce",
+          "delai": "après clôture des comptes de liquidation",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "1 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "CO état 2025",
+    "match_description": "Dissolution et liquidation d'une société (SA ou SARL)",
+    "profane_aliases": [
+      "dissoudre ma SARL",
+      "liquider société",
+      "radier entreprise RC"
+    ],
+    "negative_signals": [
+      "faillite (procédure distincte)",
+      "transfert/vente société"
+    ],
+    "required_facts": [
+      "motif dissolution",
+      "état financier",
+      "forme",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Dissolution d'une société (SA ou Sàrl)",
+        "domaine": "entreprise",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Décision de dissolution",
+            "description": "Convoquer l'assemblée générale, voter la dissolution avec quorum requis, désigner les liquidateurs (CO 736 / CO 821).",
+            "delai": "selon convocation statutaire (au moins 20 jours)",
+            "base_legale": "CO 736 / CO 821",
+            "preuve_generee": "PV d'assemblée notarié si requis"
+          },
+          {
+            "numero": 2,
+            "action": "Inscription de la dissolution au registre du commerce",
+            "description": "Annoncer la dissolution et la mise en liquidation auprès du registre du commerce.",
+            "delai": "dans les 30 jours suivant la décision",
+            "base_legale": "CO 738 / ORC",
+            "preuve_generee": "Extrait RC mentionnant la liquidation"
+          },
+          {
+            "numero": 3,
+            "action": "Liquidation et appel aux créanciers",
+            "delai": "1 an au moins après le 3e appel aux créanciers (CO 745)",
+            "branches": [
+              {
+                "si": "actif positif après paiement des créanciers",
+                "alors": "répartition entre actionnaires (etape 4)"
+              },
+              {
+                "si": "surendettement",
+                "alors": "ouverture de la faillite"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Radiation finale au registre du commerce",
+            "description": "Rapport final des liquidateurs et requête de radiation auprès du registre du commerce.",
+            "delai": "après clôture des comptes de liquidation",
+            "base_legale": "CO 745 / CO 746"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "entreprise_surendettement_personne_morale",
+    "domaine": "entreprise",
+    "sousDomaine": "surendettement",
+    "tags": [
+      "surendettement",
+      "CO 725",
+      "CO 725b",
+      "perte capital",
+      "avis juge",
+      "organe révision"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Stade financier ?",
+        "options": [
+          "perte capital",
+          "surendettement",
+          "doute"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Bilan intermédiaire établi ?",
+        "options": [
+          "oui à valeur exploitation",
+          "oui à valeur liquidation",
+          "non"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Organe de révision prévenu ?",
+        "options": [
+          "oui",
+          "non",
+          "pas d organe"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Postposition de dettes obtenue ?",
+        "options": [
+          "oui couvrante",
+          "oui partielle",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Les administrateurs SA ou gérants SARL doivent agir dès que : (1) la moitié du capital-actions et des réserves légales n'est plus couverte (perte de capital, art. 725 CO) : convocation d'AG et mesures d'assainissement ; (2) il y a raison sérieuse d'admettre que la société est surendettée (dettes dépassent actifs, art. 725b CO) : établissement d'un bilan intermédiaire à valeur d'exploitation ET de liquidation, vérification par l'organe de révision. Si le surendettement est confirmé, l'avis au juge est obligatoire (art. 725b al. 3 CO) sauf si des créanciers acceptent la postposition (subordination) de leurs créances à concurrence du déficit (art. 725b al. 4 CO). L'omission engage la responsabilité personnelle et pénale des organes (art. 754 CO ; art. 165 CP gestion fautive). La révision 2023 a renforcé les obligations de surveillance continue de la solvabilité.",
+      "articles": [
+        {
+          "ref": "CO 725",
+          "titre": "Perte de capital et surendettement",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 725a",
+          "titre": "Mesures en cas de perte de capital",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 725b",
+          "titre": "Avis au juge en cas de surendettement",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 754",
+          "titre": "Responsabilité des administrateurs",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 132 III 564",
+          "resume": "L avis tardif au juge engage la responsabilité personnelle pour le dommage d aggravation."
+        },
+        {
+          "ref": "TF 4A_505/2020",
+          "resume": "L administrateur doit surveiller en continu les indicateurs de solvabilité, pas attendre le bilan annuel."
+        }
+      ],
+      "modeleLettre": "",
+      "services": [
+        {
+          "nom": "Office des faillites VD",
+          "url": "https://www.vd.ch/faillites",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office des faillites GE",
+          "url": "https://www.ge.ch/office-faillites",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "CVCI Chambre vaudoise du commerce",
+          "tel": "021 613 35 35",
+          "url": "https://www.cvci.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "CCIG Genève",
+          "tel": "022 819 91 11",
+          "url": "https://www.ccig.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Notaires de Vaud",
+          "url": "https://www.notaires-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Chambre des notaires GE",
+          "url": "https://www.notaires-geneve.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Constat du surendettement",
+          "delai": "immédiat dès indices sérieux",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Avis au juge ou plan d'assainissement",
+          "delai": "sans retard (immédiat)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision du juge",
+          "delai": "selon urgence (généralement quelques semaines)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure de faillite et responsabilité des organes",
+          "delai": "selon procédure LP",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "CO état 2025 (révision 2023)",
+    "match_description": "Perte de capital ou surendettement d'une société, obligations des organes",
+    "profane_aliases": [
+      "ma SARL est surendettée",
+      "avis au juge faillite",
+      "perte capital SA"
+    ],
+    "negative_signals": [
+      "faillite personnelle",
+      "dettes personnelles dirigeant"
+    ],
+    "required_facts": [
+      "état financier",
+      "bilan intermédiaire",
+      "organe de révision",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Gestion du surendettement d'une personne morale",
+        "domaine": "entreprise",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Constat du surendettement",
+            "description": "Établir un bilan intermédiaire aux valeurs d'exploitation et de liquidation; identifier le surendettement au sens de CO 725a.",
+            "delai": "immédiat dès indices sérieux",
+            "base_legale": "CO 725 / CO 725a",
+            "preuve_generee": "Bilan intermédiaire signé par l'organe de révision"
+          },
+          {
+            "numero": 2,
+            "action": "Avis au juge ou plan d'assainissement",
+            "description": "Si surendettement confirmé : avis obligatoire au juge (CO 725b), à moins qu'un plan d'assainissement crédible ne soit présenté dans un délai approprié.",
+            "delai": "sans retard (immédiat)",
+            "base_legale": "CO 725b",
+            "preuve_generee": "Notification au juge ou plan d'assainissement documenté"
+          },
+          {
+            "numero": 3,
+            "action": "Décision du juge",
+            "delai": "selon urgence (généralement quelques semaines)",
+            "branches": [
+              {
+                "si": "ajournement de la faillite (sursis)",
+                "alors": "exécution du plan d'assainissement"
+              },
+              {
+                "si": "ouverture de la faillite",
+                "alors": "etape 4 (procédure de faillite)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Procédure de faillite et responsabilité des organes",
+            "description": "Office des faillites prend en charge; en parallèle, examen de la responsabilité des administrateurs (CO 754).",
+            "delai": "selon procédure LP",
+            "base_legale": "CO 754 / LP 192 ss"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "entreprise_cgv_conflit_client",
+    "domaine": "entreprise",
+    "sousDomaine": "contrats",
+    "tags": [
+      "CGV",
+      "conflit",
+      "client",
+      "fournisseur",
+      "CO 184",
+      "CO 197",
+      "garantie",
+      "vente"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Position dans le litige ?",
+        "options": [
+          "vendeur",
+          "acheteur",
+          "prestataire service",
+          "client service"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Nature du défaut/différend ?",
+        "options": [
+          "défaut produit",
+          "retard livraison",
+          "prix",
+          "résiliation"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "CGV intégrées au contrat ?",
+        "options": [
+          "oui signées",
+          "oui référencées",
+          "non",
+          "contestées"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Montant en jeu ?",
+        "options": [
+          "<5 000",
+          "5 000-30 000",
+          "30 000-100 000",
+          ">100 000"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Un contrat de vente (art. 184 CO) ou de prestation oblige les parties à leurs obligations réciproques. Les CGV ne s'appliquent que si elles ont été portées à la connaissance du cocontractant avant ou lors de la conclusion (art. 1 CO). Les clauses inhabituelles sont exclues (règle de l'insolite). Pour les défauts de la chose vendue, le Code prévoit : avis immédiat (art. 201 CO) sous peine de déchéance, action rédhibitoire (résolution) ou en diminution du prix (art. 205 CO), délai de prescription de 2 ans dès réception (art. 210 CO), porté à 5 ans pour immobilier. Pour les retards, mise en demeure, dommages-intérêts, possible résolution (art. 107-109 CO). La LCD (loi sur la concurrence déloyale) peut compléter. Les litiges inférieurs à 30'000 CHF passent par conciliation obligatoire puis tribunal civil ordinaire.",
+      "articles": [
+        {
+          "ref": "CO 184",
+          "titre": "Contrat de vente",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 197",
+          "titre": "Garantie pour défauts",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 201",
+          "titre": "Avis des défauts",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        },
+        {
+          "ref": "CO 210",
+          "titre": "Prescription 2/5 ans",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 138 III 401",
+          "resume": "L avis des défauts doit être immédiat, sa tardiveté entraîne déchéance des droits."
+        },
+        {
+          "ref": "TF 4A_234/2019",
+          "resume": "Les clauses inhabituelles des CGV ne sont pas opposables sans acceptation spécifique."
+        }
+      ],
+      "modeleLettre": "Objet : Avis de défaut et réserve de droits\n\nMadame, Monsieur,\n\nSuite à la livraison du [DATE] de [OBJET], je constate les défauts suivants : [description précise].\n\nConformément à l'art. 201 CO, je vous avise immédiatement de ces défauts et demande :\n- [réparation / remplacement / diminution prix / résolution]\n\nA défaut d'accord amiable dans les 30 jours, je saisirai l'autorité de conciliation.\n\n[Signature]",
+      "services": [
+        {
+          "nom": "Ordre des avocats VD",
+          "url": "https://www.avocats-vaud.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ordre des avocats GE",
+          "url": "https://www.odage.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "CVCI Chambre vaudoise du commerce",
+          "tel": "021 613 35 35",
+          "url": "https://www.cvci.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "CCIG Genève",
+          "tel": "022 819 91 11",
+          "url": "https://www.ccig.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Autorité conciliation VD",
+          "url": "https://www.vd.ch/themes/justice/tribunaux",
+          "canton": "VD"
+        },
+        {
+          "nom": "Autorité conciliation GE",
+          "url": "https://justice.ge.ch",
+          "canton": "GE"
+        }
+      ],
+      "routageEcosysteme": {},
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Prescription",
+          "delai": "2 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Mise en demeure",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
+    },
+    "maj": "2026-04-18",
+    "sourceLoi": "CO état 2025",
+    "match_description": "Conflit commercial entre entreprise et client/fournisseur",
+    "profane_aliases": [
+      "client ne veut pas payer",
+      "fournisseur livre défectueux",
+      "résilier contrat commercial"
+    ],
+    "negative_signals": [
+      "poursuite déjà engagée (voir commandement)",
+      "litige travail"
+    ],
+    "required_facts": [
+      "position (vendeur/acheteur)",
+      "nature du défaut",
+      "CGV applicables",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   }
 ]

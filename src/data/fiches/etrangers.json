@@ -11,6 +11,7 @@
       "établissement",
       "conditions"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -98,7 +99,21 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "10 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LEI état 2025-01-01",
@@ -119,7 +134,11 @@
       "nationalite",
       "integration (langue, travail)",
       "casier judiciaire"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_naturalisation",
@@ -132,6 +151,7 @@
       "passeport",
       "conditions"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -223,7 +243,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Vérification des conditions fédérales",
+          "delai": "avant dépôt",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Vérification des conditions cantonales/communales",
+          "delai": "selon canton",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt de la demande à la commune",
+          "delai": "quand prêt",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Audition et décisions cantonales/communales",
+          "delai": "6-24 mois selon canton",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision fédérale SEM",
+          "delai": "3-12 mois",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LN état 2025-01-01",
@@ -244,7 +296,73 @@
       "permis actuel",
       "niveau de langue",
       "casier judiciaire et poursuites"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Procédure de naturalisation ordinaire",
+        "domaine": "etrangers",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérification des conditions fédérales",
+            "description": "Permis C + 10 ans de résidence en CH (dont 3 des 5 dernières années) + intégration + connaissance langue B1 oral / A2 écrit + absence condamnation.",
+            "delai": "avant dépôt",
+            "base_legale": "LN 9 / LN 11 / LN 12",
+            "preuve_generee": "Dossier de vérification"
+          },
+          {
+            "numero": 2,
+            "action": "Vérification des conditions cantonales/communales",
+            "description": "Chaque canton/commune fixe des exigences supplémentaires (durée résidence cantonale/communale, test civisme, audition).",
+            "delai": "selon canton",
+            "preuve_generee": "Conditions cantonales écrites"
+          },
+          {
+            "numero": 3,
+            "action": "Dépôt de la demande à la commune",
+            "description": "Formulaire + justificatifs (attestations, extraits registres, certificats langue, déclaration intégration). Émoluments variables.",
+            "delai": "quand prêt",
+            "base_legale": "LN 13 / OLN",
+            "cout": "Variable (500-2500 CHF)",
+            "preuve_generee": "Accusé de dépôt"
+          },
+          {
+            "numero": 4,
+            "action": "Audition et décisions cantonales/communales",
+            "description": "Audition d'intégration (commune ou canton). Décision municipale puis cantonale.",
+            "delai": "6-24 mois selon canton",
+            "branches": [
+              {
+                "si": "décisions positives",
+                "alors": "etape 5"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 6"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "action": "Décision fédérale SEM",
+            "description": "Le SEM accorde l'autorisation fédérale. Prestation de serment/promesse civique selon canton.",
+            "delai": "3-12 mois",
+            "base_legale": "LN 13 al. 3"
+          },
+          {
+            "numero": 6,
+            "action": "Recours contre refus",
+            "description": "Recours au tribunal cantonal (30 jours) puis TAF (30 jours). Procédure coûteuse, examen limité de l'intégration.",
+            "delai": "30 jours dès décision",
+            "base_legale": "LN 46 / LTAF 31"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_regroupement",
@@ -257,6 +375,7 @@
       "enfant",
       "délai"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -349,7 +468,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "18 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "1 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LEI état 2025-01-01",
@@ -370,7 +515,11 @@
       "lien familial",
       "nationalite du membre de famille",
       "logement et revenus"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_renvoi",
@@ -382,6 +531,7 @@
       "recours",
       "interdiction entree"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -473,7 +623,21 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Recours",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "6 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LEI/CP état 2025-01-01",
@@ -494,7 +658,11 @@
       "délai de depart",
       "recours déposé ou non",
       "famille en Suisse"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_permis_travail",
@@ -507,6 +675,7 @@
       "marche",
       "admission"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -598,7 +767,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Constitution du dossier employeur",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt de la demande au SEM via service cantonal",
+          "delai": "dans les 30 jours suivant la signature du contrat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision combinée canton/SEM",
+          "delai": "1 à 4 mois selon nationalité (UE/AELE vs État tiers)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours au tribunal cantonal puis au TAF",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LEI état 2025-01-01",
@@ -619,7 +820,56 @@
       "offre d'emploi concrete",
       "qualifications",
       "type de permis actuel"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Demande de permis de travail (LEI)",
+        "domaine": "etranger",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Constitution du dossier employeur",
+            "description": "L'employeur prépare contrat, justification du besoin, preuve de recherches préalables (priorité indigène).",
+            "delai": "immédiat",
+            "preuve_generee": "Dossier complet d'admission"
+          },
+          {
+            "numero": 2,
+            "action": "Dépôt de la demande au SEM via service cantonal",
+            "description": "L'employeur dépose la demande auprès de l'office cantonal de la population/migration, qui transmet au SEM si compétence fédérale.",
+            "delai": "dans les 30 jours suivant la signature du contrat",
+            "base_legale": "LEI 18 / LEI 21 / LEI 22",
+            "preuve_generee": "Quittance de dépôt"
+          },
+          {
+            "numero": 3,
+            "action": "Décision combinée canton/SEM",
+            "delai": "1 à 4 mois selon nationalité (UE/AELE vs État tiers)",
+            "branches": [
+              {
+                "si": "autorisation accordée",
+                "alors": "délivrance du permis (fin)"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 4 (recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours au tribunal cantonal puis au TAF",
+            "description": "Recours dans les délais légaux contre la décision de refus (autorité cantonale puis Tribunal administratif fédéral).",
+            "delai": "30 jours dès notification",
+            "base_legale": "LEI 64 / PA 50"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_asile_procedure",
@@ -632,6 +882,7 @@
       "SEM",
       "audition"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -731,7 +982,27 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "140 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "1 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "7 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LAsi état 2025-01-01",
@@ -752,7 +1023,11 @@
       "motifs de persecution",
       "date d'arrivee en Suisse",
       "passage par un autre pays Dublin"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_sans_papiers_droits",
@@ -765,6 +1040,7 @@
       "illégale",
       "regularisation"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -862,7 +1138,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO/Cst/LEI état 2025-01-01",
@@ -883,7 +1167,11 @@
       "attaches familiales",
       "activité professionnelle",
       "état de sante"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_violence_permis",
@@ -896,6 +1184,7 @@
       "séparation",
       "poursuite sejour"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -991,7 +1280,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Mise en sécurité immédiate",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Documentation complète des violences",
+          "delai": "dans les 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Annonce au service cantonal migration",
+          "delai": "dès séparation envisagée",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Constitution du dossier de maintien",
+          "delai": "selon échanges avec SPOP/SEM",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours contre refus",
+          "delai": "30 jours dès décision",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LEI état 2025-01-01",
@@ -1012,7 +1333,56 @@
       "preuves de violence",
       "durée du mariage",
       "enfants"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Protection du permis en cas de violence conjugale",
+        "domaine": "etrangers",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Mise en sécurité immédiate",
+            "description": "Contacter la police (117), un centre d'accueil LAVI, une maison d'accueil pour femmes. Certificat médical immédiat pour toute blessure.",
+            "delai": "immédiat",
+            "base_legale": "LAVI 1 / CEDH 3",
+            "preuve_generee": "Constat médical + rapport police"
+          },
+          {
+            "numero": 2,
+            "action": "Documentation complète des violences",
+            "description": "Rassembler tout : certificats médicaux, plaintes, témoignages, messages, photos, rapports associations (LAVI, centres spécialisés).",
+            "delai": "dans les 30 jours",
+            "preuve_generee": "Dossier horodaté complet"
+          },
+          {
+            "numero": 3,
+            "action": "Annonce au service cantonal migration",
+            "description": "Avant toute séparation, courrier recommandé au service cantonal demandant maintien du permis sur base LEI 50 al. 2 (raisons personnelles majeures).",
+            "delai": "dès séparation envisagée",
+            "base_legale": "LEI 50 al. 1 let. b / LEI 50 al. 2 / OASA 77",
+            "preuve_generee": "Accusé de réception"
+          },
+          {
+            "numero": 4,
+            "action": "Constitution du dossier de maintien",
+            "description": "Démontrer : (a) violence conjugale / réintégration sociale dans le pays d'origine compromise, (b) intégration en CH. Soutien mandataire migration crucial.",
+            "delai": "selon échanges avec SPOP/SEM",
+            "base_legale": "LEI 50 al. 2"
+          },
+          {
+            "numero": 5,
+            "action": "Recours contre refus",
+            "description": "Si le service cantonal refuse le maintien : recours cantonal (30 jours) puis TAF. Jurisprudence ATF 136 II 1 protège les victimes.",
+            "delai": "30 jours dès décision",
+            "base_legale": "LEI 112 / ATF 136 II 1"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_aide_urgence",
@@ -1025,6 +1395,7 @@
       "NEM",
       "debout"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1113,7 +1484,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Vérification des conditions constitutionnelles",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Saisine du service cantonal compétent",
+          "delai": "immédiat dès besoin",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Accompagnement associatif",
+          "delai": "dans les 7 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours contre décision défavorable",
+          "delai": "30 jours dès décision",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Accès aux soins médicaux",
+          "delai": "à tout moment",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "Cst/LAsi état 2025-01-01",
@@ -1134,7 +1537,56 @@
       "décision NEM ou renvoi",
       "situation de detresse",
       "canton"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Demande d'aide d'urgence pour NEM / personne à l'aide d'urgence",
+        "domaine": "etrangers",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérification des conditions constitutionnelles",
+            "description": "Droit fondamental à l'aide d'urgence pour tous en Suisse (logement minimal, nourriture, soins médicaux urgents), même en cas de NEM ou renvoi.",
+            "delai": "immédiat",
+            "base_legale": "Cst. 12 / LAsi 82",
+            "preuve_generee": "Situation documentée"
+          },
+          {
+            "numero": 2,
+            "action": "Saisine du service cantonal compétent",
+            "description": "Selon canton : service social, bureau aide d'urgence, centre d'hébergement spécifique. Se présenter en personne avec pièce d'identité et décision NEM/renvoi.",
+            "delai": "immédiat dès besoin",
+            "base_legale": "LAsi 82 / législation cantonale",
+            "preuve_generee": "Attestation d'entrée dans dispositif"
+          },
+          {
+            "numero": 3,
+            "action": "Accompagnement associatif",
+            "description": "Contacter immédiatement : OSAR, Caritas, SOS Asile, centres sociaux protestants. Appui pour accès aux prestations et défense des droits.",
+            "delai": "dans les 7 jours",
+            "cout": "Gratuit"
+          },
+          {
+            "numero": 4,
+            "action": "Recours contre décision défavorable",
+            "description": "En cas de refus ou de conditions contraires à la dignité : plainte/recours aux autorités cantonales (30 jours) puis tribunal cantonal.",
+            "delai": "30 jours dès décision",
+            "base_legale": "Cst. 12 / CEDH 3"
+          },
+          {
+            "numero": 5,
+            "action": "Accès aux soins médicaux",
+            "description": "Urgences médicales toujours accessibles (serment hippocratique + droit fondamental). Structures spécialisées : Point d'eau, USMi, permanences sans-papiers.",
+            "delai": "à tout moment",
+            "cout": "Gratuit en urgence"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_recours_renvoi",
@@ -1147,6 +1599,7 @@
       "délai",
       "effet suspensif"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1245,7 +1698,21 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "7 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Recours",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LAsi/LTAF/PA état 2025-01-01",
@@ -1266,7 +1733,11 @@
       "délai de recours (30 jours)",
       "motifs du recours",
       "effet suspensif demande"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_permis_b_renouvellement",
@@ -1279,6 +1750,7 @@
       "conditions",
       "refus"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1366,7 +1838,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Dépôt de la demande de renouvellement",
+          "delai": "au moins 3 mois avant échéance du permis",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Suivi et fourniture de pièces complémentaires",
+          "delai": "dans le délai imparti par l'autorité (typiquement 10-30 jours)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Droit d'être entendu avant décision négative",
+          "delai": "dans le délai fixé par l'autorité",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours contre la décision de refus",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LEI état 2025-01-01",
@@ -1387,7 +1891,60 @@
       "motif du sejour (travail, famille)",
       "aide sociale percue",
       "condamnations pénales"
-    ]
+    ],
+    "cascades": [
+      {
+        "titre": "Renouvellement ou recours concernant un permis B",
+        "domaine": "etrangers",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Dépôt de la demande de renouvellement",
+            "description": "Déposer le formulaire cantonal complet (pièces d'identité, contrat de travail, attestation de non-poursuite, justificatifs de revenus et de logement) au moins 3 mois avant l'échéance.",
+            "delai": "au moins 3 mois avant échéance du permis",
+            "base_legale": "LEI 33 / OASA 59",
+            "preuve_generee": "Quittance de dépôt"
+          },
+          {
+            "numero": 2,
+            "action": "Suivi et fourniture de pièces complémentaires",
+            "description": "Répondre rapidement aux demandes de l'autorité migratoire cantonale (SPOP/OCPM…) ; conserver copies et accusés.",
+            "delai": "dans le délai imparti par l'autorité (typiquement 10-30 jours)",
+            "base_legale": "PA 13 / LEI 90"
+          },
+          {
+            "numero": 3,
+            "action": "Droit d'être entendu avant décision négative",
+            "description": "En cas de refus envisagé, l'autorité doit permettre de se déterminer par écrit. Utiliser ce droit pour produire tous les éléments favorables (intégration, famille, emploi).",
+            "delai": "dans le délai fixé par l'autorité",
+            "base_legale": "Cst 29 al. 2 / PA 30",
+            "preuve_generee": "Prise de position écrite"
+          },
+          {
+            "numero": 4,
+            "action": "Recours contre la décision de refus",
+            "description": "Recours auprès de l'autorité cantonale supérieure, puis éventuellement Tribunal administratif cantonal et TAF. Effet suspensif en général.",
+            "delai": "30 jours dès notification",
+            "base_legale": "LEI 64 ss / LTAF / PA 50",
+            "cout": "Avance de frais selon canton",
+            "branches": [
+              {
+                "si": "recours admis",
+                "alors": "renouvellement accordé"
+              },
+              {
+                "si": "recours rejeté",
+                "alors": "recours au TAF puis TF"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_permis_c_conditions",
@@ -1400,6 +1957,7 @@
       "integration",
       "durée"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1486,7 +2044,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Vérification du délai de résidence",
+          "delai": "vérifier anticipation",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Preuves d'intégration",
+          "delai": "sous 60 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt de la demande",
+          "delai": "quand prêt",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision cantonale et fédérale",
+          "delai": "3-12 mois",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours contre refus",
+          "delai": "30 jours dès décision",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LEI état 2025-01-01",
@@ -1507,7 +2097,66 @@
       "integration",
       "aide sociale",
       "casier judiciaire"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Demande d'obtention du permis C",
+        "domaine": "etrangers",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérification du délai de résidence",
+            "description": "Permis C standard : 10 ans de résidence en CH (5 ans pour États à accord de réciprocité : UE-AELE, USA, Canada). Permis C anticipé : 5 ans si intégration très poussée.",
+            "delai": "vérifier anticipation",
+            "base_legale": "LEI 34 / OIE 60",
+            "preuve_generee": "Décompte temporel"
+          },
+          {
+            "numero": 2,
+            "action": "Preuves d'intégration",
+            "description": "Rassembler : niveau langue (A2 oral / A1 écrit standard, B1/A2 pour anticipé), absence aide sociale/dettes, respect sécurité publique, participation vie économique.",
+            "delai": "sous 60 jours",
+            "base_legale": "LEI 58a / OIE 77a-77f",
+            "preuve_generee": "Dossier d'intégration"
+          },
+          {
+            "numero": 3,
+            "action": "Dépôt de la demande",
+            "description": "Formulaire au service cantonal migration avec : passeport, permis B actuel, attestations intégration, extraits poursuites/casier, contrat travail.",
+            "delai": "quand prêt",
+            "cout": "Variable 160-180 CHF",
+            "preuve_generee": "Accusé de dépôt"
+          },
+          {
+            "numero": 4,
+            "action": "Décision cantonale et fédérale",
+            "description": "Service cantonal décide, SEM approuve. Délai 3-12 mois. Permis C délivré sans durée, contrôle périodique.",
+            "delai": "3-12 mois",
+            "branches": [
+              {
+                "si": "accord",
+                "alors": "fin du processus"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 5"
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "action": "Recours contre refus",
+            "description": "Recours cantonal 30 jours puis TAF. Examen du caractère discrétionnaire mais intégration contrôlée.",
+            "delai": "30 jours dès décision",
+            "base_legale": "LEI 112"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_naturalisation_facilitee",
@@ -1520,6 +2169,7 @@
       "suisse",
       "3e generation"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1604,7 +2254,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Vérification des conditions",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt de la demande au SEM",
+          "delai": "dans les 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Enquête et décision",
+          "delai": "12 à 24 mois",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours au Tribunal administratif fédéral (TAF)",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LN état 2025-01-01",
@@ -1625,7 +2307,56 @@
       "durée de residence en Suisse",
       "integration",
       "lien avec la Suisse"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Demande de naturalisation facilitée",
+        "domaine": "etranger",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérification des conditions",
+            "description": "Confirmer le motif (mariage avec Suisse depuis 3 ans, communauté conjugale, intégration, séjour 5 ans en Suisse).",
+            "delai": "immédiat",
+            "preuve_generee": "Liste justificatifs (acte mariage, attestations séjour, intégration)"
+          },
+          {
+            "numero": 2,
+            "action": "Dépôt de la demande au SEM",
+            "description": "Envoyer le formulaire et les pièces au Secrétariat d'État aux migrations (LN 21 / LN 24a).",
+            "delai": "dans les 30 jours",
+            "base_legale": "LN 21 / LN 24a",
+            "preuve_generee": "Accusé de réception SEM"
+          },
+          {
+            "numero": 3,
+            "action": "Enquête et décision",
+            "delai": "12 à 24 mois",
+            "branches": [
+              {
+                "si": "naturalisation accordée",
+                "alors": "octroi de la nationalité (fin)"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 4 (recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours au Tribunal administratif fédéral (TAF)",
+            "description": "Recours dans les 30 jours contre la décision du SEM.",
+            "delai": "30 jours dès notification",
+            "base_legale": "LN 36 / LTAF 31 ss"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_regroupement_familial",
@@ -1639,6 +2370,7 @@
       "délai",
       "conditions"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1733,7 +2465,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Vérification des conditions",
+          "delai": "avant dépôt",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Respect du délai de regroupement",
+          "delai": "dans les 5 ans / 1 an",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Constitution du dossier",
+          "delai": "sous 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt auprès du service cantonal migration",
+          "delai": "quand prêt",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision et entrée en Suisse",
+          "delai": "3-12 mois",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LEI état 2025-01-01",
@@ -1754,7 +2518,74 @@
       "lien familial",
       "délais respectes",
       "logement et revenu suffisants"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Demande de regroupement familial",
+        "domaine": "etrangers",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérification des conditions",
+            "description": "Titulaire : permis C (ou B sous conditions) / Suisse / UE-AELE. Logement suffisant, ressources sans aide sociale, pas de dépendance durable.",
+            "delai": "avant dépôt",
+            "base_legale": "LEI 42-44 / ALCP annexe I art. 3",
+            "preuve_generee": "Dossier de vérification"
+          },
+          {
+            "numero": 2,
+            "action": "Respect du délai de regroupement",
+            "description": "Délais : 5 ans dès autorisation / regroupement, 1 an pour enfants >12 ans. Hors délai = motif familial majeur requis.",
+            "delai": "dans les 5 ans / 1 an",
+            "base_legale": "LEI 47",
+            "preuve_generee": "Chronologie documentée"
+          },
+          {
+            "numero": 3,
+            "action": "Constitution du dossier",
+            "description": "Actes d'état civil (mariage, naissance), passeport, preuves logement (contrat bail), revenus (fiches salaire 6 mois), attestation non-aide sociale.",
+            "delai": "sous 30 jours",
+            "preuve_generee": "Dossier complet"
+          },
+          {
+            "numero": 4,
+            "action": "Dépôt auprès du service cantonal migration",
+            "description": "Dépôt formulaire + dossier au SEM cantonal. Émoluments variables (80-150 CHF par personne).",
+            "delai": "quand prêt",
+            "base_legale": "OASA 73",
+            "cout": "80-150 CHF",
+            "preuve_generee": "Accusé de dépôt"
+          },
+          {
+            "numero": 5,
+            "action": "Décision et entrée en Suisse",
+            "description": "Visa D délivré après autorisation d'entrée. Permis remis en CH dans 14 jours.",
+            "delai": "3-12 mois",
+            "branches": [
+              {
+                "si": "accord",
+                "alors": "entrée en Suisse"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 6"
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "action": "Recours contre refus",
+            "description": "Recours au tribunal cantonal dans 30 jours, puis TAF. Gratuit si assistance judiciaire accordée.",
+            "delai": "30 jours dès décision",
+            "base_legale": "LEI 112 / LTAF 31"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_renvoi_recours",
@@ -1767,6 +2598,7 @@
       "délai",
       "effet suspensif"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1851,7 +2683,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Analyse de la décision notifiée",
+          "delai": "immédiat dès réception",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Consultation d'un mandataire qualifié",
+          "delai": "sous 7 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt du recours avec demande d'effet suspensif",
+          "delai": "30 jours (ou délai notifié)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Production des preuves d'intégration / risques",
+          "delai": "pendant l'instruction",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision de recours",
+          "delai": "selon instance",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LEI/CEDH état 2025-01-01",
@@ -1872,7 +2736,56 @@
       "date et délai de recours",
       "motifs de contestation",
       "attaches en Suisse"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Recours contre une décision de renvoi",
+        "domaine": "etrangers",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Analyse de la décision notifiée",
+            "description": "Identifier l'autorité (SEM, canton), la base légale invoquée (LEI 64, révocation permis, refus prolongation), le délai de recours, l'effet suspensif.",
+            "delai": "immédiat dès réception",
+            "base_legale": "LEI 64 / LEI 83",
+            "preuve_generee": "Analyse annotée"
+          },
+          {
+            "numero": 2,
+            "action": "Consultation d'un mandataire qualifié",
+            "description": "Consulter immédiatement un centre juridique migration (CSP, Caritas, Centre social protestant) ou avocat spécialisé. Assistance judiciaire possible.",
+            "delai": "sous 7 jours",
+            "cout": "Variable (gratuit avec AJ)"
+          },
+          {
+            "numero": 3,
+            "action": "Dépôt du recours avec demande d'effet suspensif",
+            "description": "Recours écrit motivé dans le délai (souvent 30 jours, parfois 5 ou 10 pour asile). Demander explicitement la restitution de l'effet suspensif si non accordé d'office.",
+            "delai": "30 jours (ou délai notifié)",
+            "base_legale": "LEI 112 / LAsi 108 / PA 55",
+            "preuve_generee": "Acte de recours déposé"
+          },
+          {
+            "numero": 4,
+            "action": "Production des preuves d'intégration / risques",
+            "description": "Rassembler : années résidence, emploi, liens familiaux CH, attestations intégration, preuves risques pays d'origine (art. 3 CEDH, non-refoulement).",
+            "delai": "pendant l'instruction",
+            "base_legale": "CEDH 3 / LEI 83 / LAsi 5"
+          },
+          {
+            "numero": 5,
+            "action": "Décision de recours",
+            "description": "Décision sur recours. Ensuite : TAF dans 30 jours (gratuit si AJ). Cas extrême : CEDH après épuisement voies internes.",
+            "delai": "selon instance",
+            "base_legale": "LTAF 31 / CEDH 34"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_admission_provisoire_f",
@@ -1885,6 +2798,7 @@
       "renvoi",
       "inexigible"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -1967,7 +2881,21 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LEI état 2025-01-01",
@@ -1988,7 +2916,11 @@
       "motif (asile, renvoi inexigible)",
       "canton",
       "situation professionnelle"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_cas_rigueur",
@@ -2001,6 +2933,7 @@
       "sans papiers",
       "permis B"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2088,7 +3021,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "18 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LEI/OASA état 2025-01-01",
@@ -2109,7 +3050,11 @@
       "integration (travail, langue, liens)",
       "casier judiciaire",
       "independance financiere"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_integration_criteres",
@@ -2122,6 +3067,7 @@
       "valeurs",
       "convention"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2202,7 +3148,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Auto-évaluation",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande de reconnaissance ou de plan d'intégration",
+          "delai": "dans les 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Évaluation cantonale",
+          "delai": "30 à 90 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours contre la décision cantonale",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LEI/OASA état 2025-01-01",
@@ -2223,7 +3195,56 @@
       "niveau de langue actuel",
       "situation professionnelle",
       "respect de l'ordre public"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Évaluation et mise à jour des critères d'intégration",
+        "domaine": "etranger",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Auto-évaluation",
+            "description": "Comparer sa situation aux 4 critères LEI 58a (respect ordre juridique, valeurs Cst., compétences linguistiques, participation économique/formation).",
+            "delai": "immédiat",
+            "preuve_generee": "Tableau d'auto-évaluation"
+          },
+          {
+            "numero": 2,
+            "action": "Demande de reconnaissance ou de plan d'intégration",
+            "description": "Adresser au service cantonal des migrations une demande d'attestation ou de mise en place d'une convention d'intégration.",
+            "delai": "dans les 30 jours",
+            "base_legale": "LEI 58a / LEI 58b / OASA 77a-77g",
+            "preuve_generee": "Accusé de réception"
+          },
+          {
+            "numero": 3,
+            "action": "Évaluation cantonale",
+            "delai": "30 à 90 jours",
+            "branches": [
+              {
+                "si": "critères jugés remplis",
+                "alors": "attestation délivrée (fin)"
+              },
+              {
+                "si": "manques identifiés",
+                "alors": "convention d'intégration ou etape 4 (recours en cas de décision défavorable)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours contre la décision cantonale",
+            "description": "Recours auprès du tribunal cantonal puis du TAF.",
+            "delai": "30 jours dès notification",
+            "base_legale": "LEI 58a / loi cantonale de procédure"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_cours_langue_obligatoires",
@@ -2236,6 +3257,7 @@
       "francais",
       "integration"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2290,6 +3312,16 @@
         {
           "ref": "TF 2C_846/2018",
           "resume": "Les exigences linguistiques doivent être proportionnees à l'age, la formation et la situation personnelle du requérant."
+        },
+        {
+          "signature": "2C_178/2018",
+          "tribunal": "TF",
+          "date": "2018-05-15",
+          "resume": "Autorité refuse le renouvellement du permis B pour défaut d'intégration (dépendance à l'aide sociale, infractions). Le TF confirme le non-renouvellement.",
+          "role": "favorable",
+          "resultat": "favorable_autorite",
+          "from_corpus": true,
+          "match_score": 5
         }
       ],
       "modeleLettre": "",
@@ -2311,7 +3343,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Notification de la convention",
+          "delai": "immédiat dès réception",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Inscription aux cours",
+          "delai": "dans les 30 jours suivant la signature",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Atteinte des objectifs linguistiques",
+          "delai": "selon convention (généralement 12 à 24 mois)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours contre les sanctions",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LEI état 2025-01-01",
@@ -2332,7 +3390,56 @@
       "obligation liee a quel permis",
       "canton de domicile",
       "financement des cours"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Cours de langue obligatoires (convention d'intégration)",
+        "domaine": "etranger",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Notification de la convention",
+            "description": "Examiner la convention d'intégration imposée par l'autorité cantonale (objectifs linguistiques, calendrier).",
+            "delai": "immédiat dès réception",
+            "preuve_generee": "Convention signée"
+          },
+          {
+            "numero": 2,
+            "action": "Inscription aux cours",
+            "description": "S'inscrire à un cours certifié (FIDE) auprès d'un prestataire reconnu et débuter dans le délai imparti.",
+            "delai": "dans les 30 jours suivant la signature",
+            "base_legale": "LEI 58a / LEI 58b",
+            "preuve_generee": "Confirmation d'inscription"
+          },
+          {
+            "numero": 3,
+            "action": "Atteinte des objectifs linguistiques",
+            "delai": "selon convention (généralement 12 à 24 mois)",
+            "branches": [
+              {
+                "si": "objectifs atteints (test FIDE/téléRSI/etc.)",
+                "alors": "décharge de la convention (fin)"
+              },
+              {
+                "si": "objectifs non atteints sans excuse",
+                "alors": "etape 4 (sanctions et recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours contre les sanctions",
+            "description": "Recours administratif cantonal contre toute sanction (non-renouvellement, rétrogradation du permis).",
+            "delai": "30 jours dès notification",
+            "base_legale": "LEI 58a / loi cantonale de procédure"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_aide_sociale_permis",
@@ -2345,6 +3452,7 @@
       "revocation",
       "dependance"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2429,7 +3537,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Évaluation de la situation",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Information préventive de l'autorité cantonale",
+          "delai": "dans les 14 jours suivant la convocation",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision de l'office cantonal",
+          "delai": "30 à 90 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours juridictionnel",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LEI état 2025-01-01",
@@ -2450,7 +3584,56 @@
       "durée de la dependance",
       "montant de l'aide",
       "perspectives de sortie"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Conséquences sur le permis du recours à l'aide sociale",
+        "domaine": "etranger",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Évaluation de la situation",
+            "description": "Lister montants d'aide reçus, période, motifs (perte d'emploi, maladie), incidence sur le permis (LEI 62 / LEI 63).",
+            "delai": "immédiat",
+            "preuve_generee": "Bilan d'aide sociale daté"
+          },
+          {
+            "numero": 2,
+            "action": "Information préventive de l'autorité cantonale",
+            "description": "Si convocation reçue, fournir explications écrites et justificatifs (effort de réinsertion, recherches d'emploi).",
+            "delai": "dans les 14 jours suivant la convocation",
+            "base_legale": "LEI 62 / LEI 63 / LEI 29",
+            "preuve_generee": "Mémoire écrit + AR"
+          },
+          {
+            "numero": 3,
+            "action": "Décision de l'office cantonal",
+            "delai": "30 à 90 jours",
+            "branches": [
+              {
+                "si": "permis maintenu / avertissement",
+                "alors": "suivi (fin courante)"
+              },
+              {
+                "si": "révocation/non-renouvellement",
+                "alors": "etape 4 (recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours juridictionnel",
+            "description": "Recours auprès du tribunal cantonal puis, le cas échéant, au TAF.",
+            "delai": "30 jours dès notification",
+            "base_legale": "LEI 64 / LEI 65"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_travail_asile",
@@ -2463,6 +3646,7 @@
       "permis N",
       "interdiction"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2519,6 +3703,16 @@
         {
           "ref": "TF 2C_1018/2016",
           "resume": "Le refus d'autorisation de travail pour un requérant d'asile doit être motive par des raisons concretes liees au marche de l'emploi."
+        },
+        {
+          "signature": "2C_452/2021",
+          "tribunal": "TF",
+          "date": "2021-08-10",
+          "resume": "Requérant invoque des persécutions politiques dans son pays. Le TF renvoie au SEM pour instruction complémentaire, les auditions ayant été insuffisantes.",
+          "role": "neutre",
+          "resultat": "renvoi_pour_instruction",
+          "from_corpus": true,
+          "match_score": 3
         }
       ],
       "modeleLettre": "",
@@ -2540,7 +3734,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Vérification de l'éligibilité",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande d'autorisation par l'employeur",
+          "delai": "dans les 30 jours suivant l'offre",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision cantonale",
+          "delai": "30 à 60 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours administratif",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LAsi/LEI état 2025-01-01",
@@ -2561,7 +3787,56 @@
       "délai depuis la demande d'asile",
       "canton",
       "offre d'emploi concrete"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Autorisation de travailler pour personne en procédure d'asile",
+        "domaine": "etranger",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérification de l'éligibilité",
+            "description": "Confirmer le statut (livret N, F), l'absence d'interdiction de travail durant les 3 premiers mois, le canton attribué.",
+            "delai": "immédiat",
+            "preuve_generee": "Note d'éligibilité"
+          },
+          {
+            "numero": 2,
+            "action": "Demande d'autorisation par l'employeur",
+            "description": "L'employeur dépose la demande au service cantonal de l'emploi/migration avec contrat et description du poste.",
+            "delai": "dans les 30 jours suivant l'offre",
+            "base_legale": "LAsi 43 / LAsi 86 / LEI 85a",
+            "preuve_generee": "Quittance de dépôt"
+          },
+          {
+            "numero": 3,
+            "action": "Décision cantonale",
+            "delai": "30 à 60 jours",
+            "branches": [
+              {
+                "si": "autorisation accordée",
+                "alors": "début de l'activité (fin)"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 4 (recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours administratif",
+            "description": "Recours contre la décision cantonale auprès du tribunal cantonal compétent.",
+            "delai": "30 jours dès notification",
+            "base_legale": "loi cantonale de procédure / LAsi 108"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_permis_frontalier_g",
@@ -2574,6 +3849,7 @@
       "transfrontalier",
       "UE"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2627,6 +3903,16 @@
         {
           "ref": "TF 2C_1061/2015",
           "resume": "Le retour hebdomadaire au domicile est une condition essentielle du statut de frontalier ; un retour mensuel ne suffit pas."
+        },
+        {
+          "signature": "2C_189/2017",
+          "tribunal": "TF",
+          "date": "2017-05-30",
+          "resume": "Travailleur frontalier se voit refuser le renouvellement de son permis G. Le TF confirme que la perte d'emploi entraîne la caducité de l'autorisation frontalière.",
+          "role": "favorable",
+          "resultat": "favorable_autorite",
+          "from_corpus": true,
+          "match_score": 16
         }
       ],
       "modeleLettre": "",
@@ -2643,7 +3929,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Vérification des conditions",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt de la demande au canton de travail",
+          "delai": "dans les 30 jours suivant la prise d'emploi",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision cantonale",
+          "delai": "30 à 90 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours auprès du tribunal cantonal",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LEI/ALCP état 2025-01-01",
@@ -2664,7 +3982,56 @@
       "lieu de residence",
       "employeur en Suisse",
       "retour hebdomadaire au domicile"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Demande ou renouvellement de permis frontalier (G)",
+        "domaine": "etranger",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérification des conditions",
+            "description": "Domicile dans une zone frontalière voisine, employeur en Suisse, retour hebdomadaire au domicile (LEI 35 / ALCP 7).",
+            "delai": "immédiat",
+            "preuve_generee": "Justificatif de domicile + contrat de travail"
+          },
+          {
+            "numero": 2,
+            "action": "Dépôt de la demande au canton de travail",
+            "description": "L'employeur ou le travailleur dépose le formulaire au service cantonal des migrations.",
+            "delai": "dans les 30 jours suivant la prise d'emploi",
+            "base_legale": "LEI 35 / ALCP 7",
+            "preuve_generee": "Accusé de réception"
+          },
+          {
+            "numero": 3,
+            "action": "Décision cantonale",
+            "delai": "30 à 90 jours",
+            "branches": [
+              {
+                "si": "permis G délivré (5 ans renouvelable UE/AELE)",
+                "alors": "exercice de l'activité (fin)"
+              },
+              {
+                "si": "refus ou non-renouvellement",
+                "alors": "etape 4 (recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours auprès du tribunal cantonal",
+            "description": "Recours administratif dans le délai légal.",
+            "delai": "30 jours dès notification",
+            "base_legale": "LEI 64 / loi cantonale de procédure"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_detachement_travailleurs",
@@ -2677,6 +4044,7 @@
       "étrangère",
       "prestation"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2750,7 +4118,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Préparation de la déclaration",
+          "delai": "au moins 8 jours avant le début de la mission",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Annonce électronique au SECO",
+          "delai": "8 jours avant le début",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Contrôle SECO/commissions paritaires",
+          "delai": "pendant et après la mission",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Sanctions administratives et recours",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "8 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LDet état 2025-01-01",
@@ -2771,7 +4171,56 @@
       "pays de l'entreprise",
       "nombre de travailleurs",
       "secteur d'activité"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Détachement de travailleurs en Suisse",
+        "domaine": "etranger",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Préparation de la déclaration",
+            "description": "Identifier la mission, lister les employés détachés, vérifier conditions minimales suisses (salaire, horaire, sécurité).",
+            "delai": "au moins 8 jours avant le début de la mission",
+            "preuve_generee": "Dossier d'annonce"
+          },
+          {
+            "numero": 2,
+            "action": "Annonce électronique au SECO",
+            "description": "Soumettre l'annonce via la plateforme officielle 8 jours avant la mission (LDet 6).",
+            "delai": "8 jours avant le début",
+            "base_legale": "LDet 2 / LDet 6",
+            "preuve_generee": "Confirmation électronique"
+          },
+          {
+            "numero": 3,
+            "action": "Contrôle SECO/commissions paritaires",
+            "delai": "pendant et après la mission",
+            "branches": [
+              {
+                "si": "conformité aux conditions minimales",
+                "alors": "fin de la mission"
+              },
+              {
+                "si": "violations constatées",
+                "alors": "etape 4 (sanctions et recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Sanctions administratives et recours",
+            "description": "Le SECO peut prononcer amende, interdiction; recours auprès du TAF.",
+            "delai": "30 jours dès notification",
+            "base_legale": "LDet 9 / PA 50"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_reconnaissance_diplomes",
@@ -2784,6 +4233,7 @@
       "formation",
       "étranger"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2826,12 +4276,27 @@
           "ref": "ALCP Annexe III",
           "titre": "Reconnaissance mutuelle des qualifications professionnelles",
           "lien": "https://www.fedlex.admin.ch/eli/cc/2002/243/fr"
+        },
+        {
+          "ref": "LEI 27",
+          "titre": "Séjour pour formation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_27"
         }
       ],
       "jurisprudence": [
         {
           "ref": "TF 2C_472/2017",
           "resume": "Le refus de reconnaissance d'un diplome médical étranger doit être proportionnel et offrir la possibilite de mesures compensatoires."
+        },
+        {
+          "signature": "2C_845/2020",
+          "tribunal": "TF",
+          "date": "2020-12-08",
+          "resume": "Personne d'origine palestinienne née au Liban demande la reconnaissance du statut d'apatride. Le TF reconnaît l'apatridie et accorde une autorisation de séjour.",
+          "role": "favorable",
+          "resultat": "favorable_étranger",
+          "from_corpus": true,
+          "match_score": 3
         }
       ],
       "modeleLettre": "",
@@ -2853,7 +4318,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Identification de l'autorité compétente",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Dépôt du dossier de reconnaissance",
+          "delai": "dans les 30 jours après identification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Évaluation de l'autorité",
+          "delai": "généralement 4 à 12 mois",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours au Tribunal administratif fédéral",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "ALCP état 2025-01-01",
@@ -2874,7 +4365,60 @@
       "pays d'obtention",
       "profession visee",
       "profession reglementee ou non"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Reconnaissance d'un diplôme étranger",
+        "domaine": "etranger",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Identification de l'autorité compétente",
+            "description": "Selon profession : SEFRI (formations professionnelles), CDIP (enseignement), MEBEKO (médecine), CRS (santé non médicale).",
+            "delai": "immédiat",
+            "preuve_generee": "Note d'orientation"
+          },
+          {
+            "numero": 2,
+            "action": "Dépôt du dossier de reconnaissance",
+            "description": "Soumettre diplôme légalisé/apostille, traduit, descriptif des cours, et payer les émoluments.",
+            "delai": "dans les 30 jours après identification",
+            "base_legale": "ALCP Annexe III / loi sur la formation professionnelle",
+            "preuve_generee": "Quittance d'enregistrement"
+          },
+          {
+            "numero": 3,
+            "action": "Évaluation de l'autorité",
+            "delai": "généralement 4 à 12 mois",
+            "branches": [
+              {
+                "si": "reconnaissance complète",
+                "alors": "exercice autorisé (fin)"
+              },
+              {
+                "si": "mesures de compensation (stage, examen)",
+                "alors": "réalisation puis revérification"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 4 (recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours au Tribunal administratif fédéral",
+            "description": "Recours contre la décision dans les 30 jours.",
+            "delai": "30 jours dès notification",
+            "base_legale": "LTAF 31 ss / PA 50"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_assurances_sociales",
@@ -2888,6 +4432,7 @@
       "chomage",
       "étranger"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -2963,7 +4508,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Identification du statut et des conventions",
+          "delai": "immédiat dès l'arrivée ou la prise d'emploi",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Affiliation auprès des caisses compétentes",
+          "delai": "3 mois pour LAMal, immédiat pour AVS/LAA via employeur",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Vérification annuelle et mises à jour",
+          "delai": "annuellement",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Opposition puis recours au tribunal cantonal des assurances",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "1 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LAVS/LPP état 2025-01-01",
@@ -2984,7 +4561,56 @@
       "durée de cotisation",
       "prestation demandee (AVS, AI, chomage)",
       "accords bilateraux applicables"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Affiliation aux assurances sociales pour étrangers",
+        "domaine": "etranger",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Identification du statut et des conventions",
+            "description": "Clarifier la nationalité, le permis, l'employeur, vérifier les conventions bilatérales/UE applicables (AVS, LPP).",
+            "delai": "immédiat dès l'arrivée ou la prise d'emploi",
+            "preuve_generee": "Note d'analyse"
+          },
+          {
+            "numero": 2,
+            "action": "Affiliation auprès des caisses compétentes",
+            "description": "L'employeur affilie aux assurances sociales (AVS, LPP, LAA); l'assuré s'affilie à l'AOS LAMal dans les 3 mois.",
+            "delai": "3 mois pour LAMal, immédiat pour AVS/LAA via employeur",
+            "base_legale": "LAVS 1a / LPP 25f / LAMal 3",
+            "preuve_generee": "Confirmations d'affiliation"
+          },
+          {
+            "numero": 3,
+            "action": "Vérification annuelle et mises à jour",
+            "delai": "annuellement",
+            "branches": [
+              {
+                "si": "situation conforme",
+                "alors": "suivi (fin courante)"
+              },
+              {
+                "si": "refus d'affiliation ou litige",
+                "alors": "etape 4 (opposition/recours)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Opposition puis recours au tribunal cantonal des assurances",
+            "description": "Opposition à la décision, puis recours dans les 30 jours.",
+            "delai": "30 jours dès notification",
+            "base_legale": "LPGA 52 / LPGA 56"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_double_nationalite",
@@ -2997,6 +4623,7 @@
       "obligation",
       "militaire"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3057,7 +4684,33 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Vérification des règles dans les deux États",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Annonce à l'office de l'état civil",
+          "delai": "dans les 30 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Mise à jour des documents",
+          "delai": "60 à 90 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours auprès de l'autorité concernée",
+          "delai": "selon droit national applicable",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LN état 2025-01-01",
@@ -3078,7 +4731,56 @@
       "loi du pays d'origine sur la double nationalite",
       "obligations militaires",
       "naturalisation en cours ou prévue"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Reconnaissance et exercice de la double nationalité",
+        "domaine": "etranger",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérification des règles dans les deux États",
+            "description": "Confirmer que l'État d'origine permet la double nationalité (la Suisse l'admet — LN 7).",
+            "delai": "immédiat",
+            "preuve_generee": "Note de droit comparé"
+          },
+          {
+            "numero": 2,
+            "action": "Annonce à l'office de l'état civil",
+            "description": "Communiquer l'acquisition de la nouvelle nationalité à l'office de l'état civil suisse pour mise à jour des données.",
+            "delai": "dans les 30 jours",
+            "base_legale": "LN 7 / Cst. 37",
+            "preuve_generee": "Confirmation d'enregistrement"
+          },
+          {
+            "numero": 3,
+            "action": "Mise à jour des documents",
+            "delai": "60 à 90 jours",
+            "branches": [
+              {
+                "si": "double nationalité reconnue par les deux États",
+                "alors": "passeports actifs des deux États (fin)"
+              },
+              {
+                "si": "perte automatique d'une nationalité",
+                "alors": "etape 4 (recours éventuel dans l'État concerné)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours auprès de l'autorité concernée",
+            "description": "Recours selon la procédure de l'État ayant prononcé la perte ou refus.",
+            "delai": "selon droit national applicable",
+            "base_legale": "Cst. 37 / convention bilatérale éventuelle"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_apatridie",
@@ -3091,6 +4793,7 @@
       "statut",
       "protection"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3134,6 +4837,16 @@
         {
           "ref": "TF 2C_36/2012",
           "resume": "Le SEM doit examiner d'office si le requérant est apatride lorsque les indices sont suffisants."
+        },
+        {
+          "signature": "2C_845/2020",
+          "tribunal": "TF",
+          "date": "2020-12-08",
+          "resume": "Personne d'origine palestinienne née au Liban demande la reconnaissance du statut d'apatride. Le TF reconnaît l'apatridie et accorde une autorisation de séjour.",
+          "role": "favorable",
+          "resultat": "favorable_étranger",
+          "from_corpus": true,
+          "match_score": 6
         }
       ],
       "modeleLettre": "",
@@ -3150,7 +4863,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Constitution du dossier de preuves",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande de reconnaissance au SEM",
+          "delai": "dans les 60 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision du SEM",
+          "delai": "6 à 18 mois",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours au TAF",
+          "delai": "30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "18 moi",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "Convention 1954/CC état 2025-01-01",
@@ -3171,7 +4916,56 @@
       "preuves d'absence de nationalite",
       "sejour en Suisse",
       "demarches déjà effectuées"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Reconnaissance du statut d'apatride",
+        "domaine": "etranger",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Constitution du dossier de preuves",
+            "description": "Réunir tout élément établissant l'absence de nationalité (refus officiels, ancien passeport invalidé, attestations consulaires).",
+            "delai": "immédiat",
+            "preuve_generee": "Dossier d'apatridie"
+          },
+          {
+            "numero": 2,
+            "action": "Demande de reconnaissance au SEM",
+            "description": "Déposer une demande de reconnaissance du statut d'apatride auprès du SEM (Convention de New York 1954).",
+            "delai": "dans les 60 jours",
+            "base_legale": "Convention apatrides 1954 / CC 30 al. 1 let. b",
+            "preuve_generee": "Accusé de réception SEM"
+          },
+          {
+            "numero": 3,
+            "action": "Décision du SEM",
+            "delai": "6 à 18 mois",
+            "branches": [
+              {
+                "si": "statut reconnu",
+                "alors": "octroi du permis B (fin)"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 4 (recours TAF)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours au TAF",
+            "description": "Recours au Tribunal administratif fédéral dans les 30 jours.",
+            "delai": "30 jours dès notification",
+            "base_legale": "LTAF 31 ss / PA 50"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_mna_mineurs",
@@ -3184,6 +4978,7 @@
       "tutelle",
       "protection"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3267,7 +5062,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Identification et signalement",
+          "delai": "immédiat à l'arrivée",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Désignation d'un tuteur ou personne de confiance",
+          "delai": "sans délai (immédiat)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure d'asile et hébergement adapté",
+          "delai": "selon procédure d'asile",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours au TAF",
+          "delai": "5 ou 30 jours dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "18 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LAsi/LEI/CDE état 2025-01-01",
@@ -3288,7 +5115,57 @@
       "pays d'origine",
       "date d'arrivee",
       "demande d'asile déposée ou non"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Protection des mineurs non accompagnés (MNA)",
+        "domaine": "etranger",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Identification et signalement",
+            "description": "L'autorité (police, SEM, ONG) identifie le mineur, fait procéder à un examen d'âge si doute.",
+            "delai": "immédiat à l'arrivée",
+            "base_legale": "LAsi 17 / CDE 3",
+            "preuve_generee": "Procès-verbal d'identification"
+          },
+          {
+            "numero": 2,
+            "action": "Désignation d'un tuteur ou personne de confiance",
+            "description": "L'autorité cantonale (APEA) désigne un représentant légal ou personne de confiance pour la procédure.",
+            "delai": "sans délai (immédiat)",
+            "base_legale": "LAsi 17 al. 3 / CC 327a",
+            "preuve_generee": "Décision de désignation"
+          },
+          {
+            "numero": 3,
+            "action": "Procédure d'asile et hébergement adapté",
+            "delai": "selon procédure d'asile",
+            "branches": [
+              {
+                "si": "asile/protection accordés",
+                "alors": "intégration et formation (fin)"
+              },
+              {
+                "si": "refus",
+                "alors": "etape 4 (recours TAF)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Recours au TAF",
+            "description": "Recours dans les délais réduits (5 ou 30 jours selon procédure).",
+            "delai": "5 ou 30 jours dès notification",
+            "base_legale": "LAsi 108 / LTAF 31 ss"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_dublin_transfert",
@@ -3301,6 +5178,7 @@
       "recours",
       "règlement"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3390,7 +5268,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Réception et analyse de la décision",
+          "delai": "immédiat",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Préparation du recours et effet suspensif",
+          "delai": "5 jours dès notification (délai LAsi 108 al. 2)",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Décision du TAF",
+          "delai": "souvent 5 à 15 jours pour effet suspensif, fond plus long",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Demande de reconsidération ou recours en révision",
+          "delai": "sans délai si faits nouveaux",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "5 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "Dublin III/LAsi état 2025-01-01",
@@ -3411,7 +5321,56 @@
       "empreintes prises ou non",
       "date de la décision Dublin",
       "raisons de sante ou famille en Suisse"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Recours contre une décision de transfert Dublin",
+        "domaine": "etranger",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Réception et analyse de la décision",
+            "description": "Lire la décision de transfert (État responsable, motifs Dublin III art. 3), identifier risques et clauses de souveraineté possibles.",
+            "delai": "immédiat",
+            "preuve_generee": "Décision annotée"
+          },
+          {
+            "numero": 2,
+            "action": "Préparation du recours et effet suspensif",
+            "description": "Rédiger un recours motivé invoquant l'art. 3(2) ou la clause discrétionnaire (art. 17), demander expressément l'effet suspensif.",
+            "delai": "5 jours dès notification (délai LAsi 108 al. 2)",
+            "base_legale": "Dublin III art. 3 / Dublin III art. 17 / LAsi 108 al. 2",
+            "preuve_generee": "Mémoire de recours déposé au TAF"
+          },
+          {
+            "numero": 3,
+            "action": "Décision du TAF",
+            "delai": "souvent 5 à 15 jours pour effet suspensif, fond plus long",
+            "branches": [
+              {
+                "si": "effet suspensif accordé puis fond admis",
+                "alors": "annulation du transfert (fin)"
+              },
+              {
+                "si": "rejet",
+                "alors": "etape 4 (transfert ou demande de reconsidération)"
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "action": "Demande de reconsidération ou recours en révision",
+            "description": "En présence de faits nouveaux, déposer une demande de reconsidération au SEM ou de révision au TAF.",
+            "delai": "sans délai si faits nouveaux",
+            "base_legale": "PA 66 / LAsi 111b"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etranger_visa_schengen_refus",
@@ -3424,6 +5383,7 @@
       "recours",
       "court sejour"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3498,7 +5458,39 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Analyse du refus notifié",
+          "delai": "immédiat dès notification",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Constitution du dossier de recours",
+          "delai": "sous 14 jours",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours écrit au SEM",
+          "delai": "30 jours dès refus",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Recours TAF si échec SEM",
+          "delai": "30 jours dès décision SEM",
+          "consequence": null,
+          "from_cascade": true
+        },
+        {
+          "procedure": "Nouvelle demande bonifiée",
+          "delai": "à tout moment",
+          "consequence": null,
+          "from_cascade": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "Code des visas/LEI état 2025-01-01",
@@ -3519,7 +5511,57 @@
       "pays ayant refuse",
       "date du refus",
       "documents fournis"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "cascades": [
+      {
+        "titre": "Recours contre un refus de visa Schengen",
+        "domaine": "etrangers",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Analyse du refus notifié",
+            "description": "Identifier le motif (A-H selon Code des visas UE) : doc manquants, doute sur volonté retour, ressources insuffisantes, risque immigration illégale.",
+            "delai": "immédiat dès notification",
+            "base_legale": "Code visa 810/2009 art. 32",
+            "preuve_generee": "Analyse du formulaire type"
+          },
+          {
+            "numero": 2,
+            "action": "Constitution du dossier de recours",
+            "description": "Rassembler : attestation d'emploi/études, ressources (relevés 3 mois), liens pays origine (famille, propriété), invitation détaillée, historique voyages.",
+            "delai": "sous 14 jours",
+            "preuve_generee": "Dossier complet de preuves"
+          },
+          {
+            "numero": 3,
+            "action": "Recours écrit au SEM",
+            "description": "Recours au SEM dans les 30 jours dès notification. Émoluments 150 CHF (remboursés si succès). Bonne structuration essentielle.",
+            "delai": "30 jours dès refus",
+            "base_legale": "LEI 6 / PA 50",
+            "cout": "150 CHF",
+            "preuve_generee": "Recours déposé horodaté"
+          },
+          {
+            "numero": 4,
+            "action": "Recours TAF si échec SEM",
+            "description": "Si décision SEM négative : recours TAF dans 30 jours. Émoluments 1'500-3'000 CHF (assistance judiciaire possible).",
+            "delai": "30 jours dès décision SEM",
+            "base_legale": "LTAF 31 / PA 50"
+          },
+          {
+            "numero": 5,
+            "action": "Nouvelle demande bonifiée",
+            "description": "En parallèle ou après échec recours : nouvelle demande avec dossier renforcé (liens pays, preuves financières, lettre hôte officielle).",
+            "delai": "à tout moment",
+            "cout": "80 CHF émolument visa"
+          }
+        ]
+      }
+    ],
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etrangers_renvoi",
@@ -3534,6 +5576,7 @@
       "asile",
       "refoulement"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3638,7 +5681,21 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Recours",
+          "delai": "5 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LEI/LAsi état 2025-01-01",
@@ -3659,7 +5716,11 @@
       "délai pour quitter",
       "recours déposé",
       "risques en cas de retour"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etrangers_recours",
@@ -3674,6 +5735,7 @@
       "refus",
       "opposition"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3770,7 +5832,15 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Recours",
+          "delai": "30 jour",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "PA/LTF/LEI état 2025-01-01",
@@ -3791,7 +5861,11 @@
       "autorite qui a decide",
       "délai de recours",
       "motifs de contestation"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   },
   {
     "id": "etrangers_regroupement",
@@ -3806,6 +5880,7 @@
       "permis",
       "LEI"
     ],
+    "confiance": "probable",
     "questions": [
       {
         "id": "q1",
@@ -3913,7 +5988,27 @@
         }
       ],
       "routageEcosysteme": {},
-      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
+      "delais": [
+        {
+          "procedure": "Procédure applicable",
+          "delai": "18 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "5 an",
+          "consequence": null,
+          "extracted_from_text": true
+        },
+        {
+          "procedure": "Procédure applicable",
+          "delai": "3 an",
+          "consequence": null,
+          "extracted_from_text": true
+        }
+      ]
     },
     "maj": "2026-04-07",
     "sourceLoi": "LEI état 2025-01-01",
@@ -3934,6 +6029,10 @@
       "lien familial concerne",
       "délais de demande respectes",
       "logement et revenus suffisants"
-    ]
+    ],
+    "last_verified_at": "2026-04-07",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-07",
+    "claude_review_date": "2026-04-19"
   }
 ]

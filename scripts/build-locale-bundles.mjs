@@ -12,11 +12,37 @@ const EXTENDED = join(ROOT, 'src', 'public', 'i18n-extended.js');
 const OUTPUT_DIR = join(ROOT, 'src', 'public', 'locales');
 
 function loadBundles() {
+  function createNode() {
+    return {
+      innerHTML: '',
+      textContent: '',
+      setAttribute() {},
+      appendChild() {},
+      querySelector() { return null; },
+      querySelectorAll() { return []; }
+    };
+  }
   const sandbox = {
     console,
-    window: {},
-    document: {}
+    fetch: async function () {
+      return { ok: false, json: async function () { return {}; } };
+    },
+    sessionStorage: { getItem() { return null; }, setItem() {}, removeItem() {} },
+    localStorage: { getItem() { return null; }, setItem() {}, removeItem() {} },
+    window: {
+      location: { pathname: '/' },
+      __JB_I18N_NO_INIT__: true
+    },
+    document: {
+      readyState: 'loading',
+      documentElement: { lang: 'fr', dir: 'ltr' },
+      createElement: createNode,
+      querySelector() { return null; },
+      querySelectorAll() { return []; },
+      addEventListener() {}
+    }
   };
+  sandbox.window.document = sandbox.document;
   vm.createContext(sandbox);
   vm.runInContext(readFileSync(SOURCE, 'utf-8'), sandbox, { filename: SOURCE });
   vm.runInContext(readFileSync(EXTENDED, 'utf-8'), sandbox, { filename: EXTENDED });

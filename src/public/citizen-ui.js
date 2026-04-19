@@ -197,6 +197,19 @@
     alert(text);
   }
 
+  function translateAttributeText(node, attr, text, pagePath) {
+    if (!node) return;
+    node.setAttribute(attr, text);
+    if (currentLang() === 'fr' || typeof translatePlainText !== 'function') return;
+    translatePlainText(text, {
+      lang: currentLang(),
+      content_type: 'chrome/ui',
+      page_path: pagePath || '/citizen-ui'
+    }).then(function (translated) {
+      if (translated) node.setAttribute(attr, translated);
+    }).catch(function () { /* noop */ });
+  }
+
   function closeModal() {
     var existing = document.getElementById('citizenModal');
     if (existing) existing.remove();
@@ -230,6 +243,7 @@
       },
       onclick: closeModal
     }, ['×']);
+    translateAttributeText(closeBtn, 'aria-label', 'Fermer', '/citizen/modal');
     box.appendChild(closeBtn);
     box.appendChild(contentNode);
     overlay.appendChild(box);
@@ -393,7 +407,7 @@
     }
     // Connecté : charge data
     var loading = el('div');
-    loading.innerHTML = '<p style="text-align:center;color:#666;padding:40px 0">Chargement…</p>';
+    applyDynamicHtml(loading, '<p style="text-align:center;color:#666;padding:40px 0">Chargement…</p>', '/citizen/loading');
     openModal(loading);
     var meR = await Citizen.me();
     if (!meR.ok) {
@@ -571,6 +585,15 @@
     btn.className = 'letter-generate-btn btn-primary';
     btn.type = 'button';
     btn.textContent = '📄 Générer une lettre';
+    if (currentLang() !== 'fr' && typeof translatePlainText === 'function') {
+      translatePlainText('📄 Générer une lettre', {
+        lang: currentLang(),
+        content_type: 'chrome/ui',
+        page_path: '/citizen/letter'
+      }).then(function (translated) {
+        if (translated) btn.textContent = translated;
+      }).catch(function () { /* noop */ });
+    }
     btn.onclick = function () { openLetterModal(opts.case_id, opts.ficheId); };
     parent.appendChild(btn);
   }
@@ -610,6 +633,7 @@
         '<div id="letterResult"></div>' +
       '</div>';
     document.body.appendChild(modal);
+    translateAttributeText(modal.querySelector('.citizen-modal-close'), 'aria-label', 'Fermer', '/citizen/letter');
     if (shouldTranslateUi()) {
       translateFragmentInPlace('.letter-modal .citizen-modal-content', { content_type: 'chrome/ui', page_path: '/citizen/letter' });
     }

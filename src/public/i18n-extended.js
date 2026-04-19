@@ -1,16 +1,15 @@
 /**
- * i18n-extended — Phase Cortex 4 (mode dégradé DE/IT)
+ * i18n-extended — Compléments UI multilingues
  *
- * Ajoute les clés CRITIQUES manquantes pour DE et IT :
+ * Ajoute les clés UI manquantes sur les 9 langues proposées :
  *   - paywall (continuer 2 CHF)
  *   - bouton "Ce cas me dépasse"
  *   - statuts de round (R1, R2, R3, synthèse)
  *   - certificate warnings
  *   - degraded mode banner strings
- *   - LLCA disclaimer (déjà présent mais on assure la cohérence avec le bandeau)
  *
- * IMPORTANT : on ne traduit JAMAIS le contenu juridique des fiches.
- * Seule l'interface de pilotage (chrome) est traduite.
+ * IMPORTANT : ce fichier complète l'interface (chrome) uniquement.
+ * Le contenu juridique structuré reste géré par l'orchestrateur de traduction.
  *
  * Doit être chargé APRÈS i18n.js. Augmente la variable globale `I18N`.
  */
@@ -425,5 +424,5 @@
   if (I18N.hr) extend(I18N.hr, HR);
 
   // Expose pour debug
-  window.__JB_I18N_EXTENDED__ = { FR: FR, DE: DE, IT: IT };
+  window.__JB_I18N_EXTENDED__ = { FR: FR, DE: DE, IT: IT, EN: EN, PT: PT, AR: AR, TR: TR, SQ: SQ, HR: HR };
 })();

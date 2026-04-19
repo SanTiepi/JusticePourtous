@@ -49,6 +49,11 @@
       color: var(--text-dim);
       font-size: 13px;
     }
+    .lang-switcher-host {
+      margin-top: 12px;
+      display: flex;
+      justify-content: flex-end;
+    }
     header .meta {
       margin-top: 10px;
       display: flex;
@@ -206,6 +211,7 @@
   <header class="dashboard-header">
     <h1>Dashboard JusticePourtous</h1>
     <div class="subtitle">Santé produit — coverage, quality, freshness, actionability</div>
+    <div class="lang-switcher-host" id="langSwitcher"></div>
     <div class="meta">
       <div><span class="dot" id="status-dot"></span><span id="status-text">Chargement…</span></div>
       <div id="last-update">—</div>
@@ -272,7 +278,21 @@
     </section>
   </main>
 
+  <script src="/i18n.js"></script>
   <script>
+    if (typeof createLangSwitcher === 'function') {
+      document.getElementById('langSwitcher').appendChild(createLangSwitcher());
+    }
+    document.documentElement.lang = typeof getLang === 'function' ? getLang() : 'fr';
+
+    function translateDashboardFragments() {
+      if (typeof getLang !== 'function' || getLang() === 'fr' || typeof translateFragmentInPlace !== 'function') return;
+      translateFragmentInPlace('header.dashboard-header', { content_type: 'chrome/ui', page_path: '/dashboard.html' });
+      translateFragmentInPlace('main', { content_type: 'chrome/ui', page_path: '/dashboard.html' });
+    }
+
+    translateDashboardFragments();
+
     // Seuils de couleurs (voir spec)
     const THRESHOLDS = {
       coverage_quality:   { green: 60, orange: 30 },
@@ -393,6 +413,7 @@
       document.getElementById('status-text').textContent = 'OK';
       const d = new Date(data.generated_at);
       document.getElementById('last-update').textContent = `Mis à jour : ${d.toLocaleString('fr-CH')}`;
+      translateDashboardFragments();
     }
 
     function setError(msg) {
@@ -401,6 +422,7 @@
       const banner = document.getElementById('error-banner');
       banner.style.display = 'block';
       banner.textContent = msg;
+      translateDashboardFragments();
     }
 
     async function fetchMetrics() {

@@ -3478,28 +3478,40 @@ function translateStaticFragmentIfNeeded() {
   if (getLang() === 'fr') return Promise.resolve(false);
   var root = document.querySelector(selector);
   if (!root) return Promise.resolve(false);
-  var cacheKey = 'jb_i18n_fragment:' + getLang() + ':' + path;
-  try {
-    var cached = sessionStorage.getItem(cacheKey);
-    if (cached) {
-      root.innerHTML = cached;
-      return Promise.resolve(true);
-    }
-  } catch (e) { /* silent */ }
-  return translateHtmlFragment(root.innerHTML, {
-    lang: getLang(),
-    content_type: 'chrome/ui',
-    page_path: path
-  }).then(function(payload) {
-    if (payload && payload.html) {
-      root.innerHTML = payload.html;
-      try { sessionStorage.setItem(cacheKey, payload.html); } catch (e) { /* silent */ }
-      return true;
-    }
-    return false;
-  }).catch(function() {
-    return false;
+  if (root.__jbI18nStaticPromise) return root.__jbI18nStaticPromise;
+  var previousVisibility = root.__jbI18nOriginalVisibility;
+  if (previousVisibility === undefined) previousVisibility = root.style.visibility || '';
+  root.__jbI18nOriginalVisibility = previousVisibility;
+  root.style.visibility = 'hidden';
+  root.__jbI18nStaticPromise = Promise.resolve().then(function() {
+    var cacheKey = 'jb_i18n_fragment:' + getLang() + ':' + path;
+    try {
+      var cached = sessionStorage.getItem(cacheKey);
+      if (cached) {
+        root.innerHTML = cached;
+        return true;
+      }
+    } catch (e) { /* silent */ }
+    return translateHtmlFragment(root.innerHTML, {
+      lang: getLang(),
+      content_type: 'chrome/ui',
+      page_path: path
+    }).then(function(payload) {
+      if (payload && payload.html) {
+        root.innerHTML = payload.html;
+        try { sessionStorage.setItem(cacheKey, payload.html); } catch (e) { /* silent */ }
+        return true;
+      }
+      return false;
+    }).catch(function() {
+      return false;
+    });
+  }).finally(function() {
+    root.style.visibility = root.__jbI18nOriginalVisibility || '';
+    delete root.__jbI18nStaticPromise;
+    delete root.__jbI18nOriginalVisibility;
   });
+  return root.__jbI18nStaticPromise;
 }
 
 function translateHtmlFragment(html, options) {
@@ -3524,7 +3536,12 @@ function translateHtmlFragment(html, options) {
 function translateFragmentInPlace(selector, options) {
   var node = document.querySelector(selector);
   if (!node || getLang() === 'fr') return Promise.resolve(false);
-  return translateHtmlFragment(node.innerHTML, options)
+  if (node.__jbI18nDynamicPromise) return node.__jbI18nDynamicPromise;
+  var previousVisibility = node.__jbI18nOriginalVisibility;
+  if (previousVisibility === undefined) previousVisibility = node.style.visibility || '';
+  node.__jbI18nOriginalVisibility = previousVisibility;
+  node.style.visibility = 'hidden';
+  node.__jbI18nDynamicPromise = translateHtmlFragment(node.innerHTML, options)
     .then(function(payload) {
       if (payload && payload.html) {
         node.innerHTML = payload.html;
@@ -3532,7 +3549,13 @@ function translateFragmentInPlace(selector, options) {
       }
       return false;
     })
-    .catch(function() { return false; });
+    .catch(function() { return false; })
+    .finally(function() {
+      node.style.visibility = node.__jbI18nOriginalVisibility || '';
+      delete node.__jbI18nDynamicPromise;
+      delete node.__jbI18nOriginalVisibility;
+    });
+  return node.__jbI18nDynamicPromise;
 }
 
 function translatePlainText(text, options) {
@@ -3547,6 +3570,48 @@ function translatePlainText(text, options) {
     .catch(function() { return text; });
 }
 
+function translateHeadIfNeeded() {
+  if (getLang() === 'fr' || typeof document === 'undefined') return Promise.resolve(false);
+  var path = (window.location && window.location.pathname) || '/';
+  var targets = [
+    { selector: 'title', attr: null, cache_id: 'title' },
+    { selector: 'meta[name="description"]', attr: 'content', cache_id: 'meta:description' },
+    { selector: 'meta[property="og:title"]', attr: 'content', cache_id: 'meta:og:title' },
+    { selector: 'meta[property="og:description"]', attr: 'content', cache_id: 'meta:og:description' }
+  ];
+  var jobs = targets.map(function(target) {
+    var node = document.querySelector(target.selector);
+    if (!node) return Promise.resolve(false);
+    var currentValue = target.attr ? node.getAttribute(target.attr) : node.textContent;
+    if (!currentValue) return Promise.resolve(false);
+    var cacheKey = 'jb_i18n_head:' + getLang() + ':' + path + ':' + target.cache_id;
+    try {
+      var cached = sessionStorage.getItem(cacheKey);
+      if (cached) {
+        if (target.attr) node.setAttribute(target.attr, cached);
+        else node.textContent = cached;
+        return Promise.resolve(true);
+      }
+    } catch (e) { /* silent */ }
+    return translatePlainText(currentValue, {
+      lang: getLang(),
+      content_type: 'chrome/ui',
+      page_path: path + '#head'
+    }).then(function(translated) {
+      if (!translated || translated === currentValue) return false;
+      if (target.attr) node.setAttribute(target.attr, translated);
+      else node.textContent = translated;
+      try { sessionStorage.setItem(cacheKey, translated); } catch (e) { /* silent */ }
+      return true;
+    }).catch(function() {
+      return false;
+    });
+  });
+  return Promise.all(jobs).then(function(results) {
+    return results.some(Boolean);
+  });
+}
+
 function initI18nRuntime() {
   var lang = getLang();
   document.documentElement.lang = lang;
@@ -3557,16 +3622,19 @@ function initI18nRuntime() {
     .then(function() {
       applyDataTranslations(document);
       applyChromeTranslations();
-      return translateStaticFragmentIfNeeded();
+      return translateHeadIfNeeded().then(function() {
+        return translateStaticFragmentIfNeeded();
+      });
     })
     .catch(function() {
       return false;
     });
 }
 
-window.__JB_I18N_READY__ = initI18nRuntime();
+var shouldInitI18n = !(typeof window !== 'undefined' && window.__JB_I18N_NO_INIT__);
+window.__JB_I18N_READY__ = shouldInitI18n ? initI18nRuntime() : Promise.resolve(false);
 
-if (typeof document !== 'undefined') {
+if (shouldInitI18n && typeof document !== 'undefined') {
   document.addEventListener('DOMContentLoaded', function() {
     window.__JB_I18N_READY__ = initI18nRuntime();
   }, { once: true });

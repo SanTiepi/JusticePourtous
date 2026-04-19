@@ -52,7 +52,7 @@
     <div class="hero-inner">
       <p class="hero-eyebrow" data-i18n="hero.eyebrow">Droit suisse pratique</p>
       <h1 class="hero-title">
-        Le droit suisse,<br>
+        <span data-i18n="hero.title_line1">Le droit suisse,</span><br>
         <span class="hero-accent" data-i18n="hero.title_accent">accessible à tous.</span>
       </h1>
       <p class="hero-subtitle" data-i18n="hero.subtitle">
@@ -123,11 +123,11 @@
           </button>
         </div>
         <div class="search-suggestions">
-          <button type="button" class="suggestion" onclick="fillSearch('mon propriétaire refuse de rembourser ma caution')" data-i18n="search.suggestion_caution">Caution non remboursée</button>
-          <button type="button" class="suggestion" onclick="fillSearch('licenciement pendant arrêt maladie')" data-i18n="search.suggestion_licenciement">Licenciement &amp; maladie</button>
-          <button type="button" class="suggestion" onclick="fillSearch('heures supplémentaires non payées')" data-i18n="search.suggestion_heures">Heures sup impayées</button>
-          <button type="button" class="suggestion" onclick="fillSearch('j\'ai reçu un commandement de payer')" data-i18n="search.suggestion_commandement">Commandement de payer</button>
-          <button type="button" class="suggestion" onclick="fillSearch('mon ex ne paie pas la pension')" data-i18n="search.suggestion_pension">Pension impayée</button>
+          <button type="button" class="suggestion" onclick="fillSearch('search.fill_caution')" data-i18n="search.suggestion_caution">Caution non remboursée</button>
+          <button type="button" class="suggestion" onclick="fillSearch('search.fill_licenciement')" data-i18n="search.suggestion_licenciement">Licenciement &amp; maladie</button>
+          <button type="button" class="suggestion" onclick="fillSearch('search.fill_heures')" data-i18n="search.suggestion_heures">Heures sup impayées</button>
+          <button type="button" class="suggestion" onclick="fillSearch('search.fill_commandement')" data-i18n="search.suggestion_commandement">Commandement de payer</button>
+          <button type="button" class="suggestion" onclick="fillSearch('search.fill_pension')" data-i18n="search.suggestion_pension">Pension impayée</button>
         </div>
       </form>
     </div>
@@ -185,8 +185,8 @@
     <div class="stat-inner">
       <div class="stat-number">72<span class="stat-pct">%</span></div>
       <p class="stat-text">
-        des Suisses renoncent à faire valoir leurs droits à cause du coût.
-        <span class="stat-source">sondage gfs.bern, 2023</span>
+        <span data-i18n="stat.text">des Suisses renoncent à faire valoir leurs droits à cause du coût.</span>
+        <span class="stat-source" data-i18n="stat.source">sondage gfs.bern, 2023</span>
       </p>
     </div>
   </section>
@@ -227,8 +227,13 @@
       window.location.href = '/resultat.html?q=' + encodeURIComponent(q);
     }
 
-    function fillSearch(text) {
+    function fillSearch(textOrKey) {
       var input = document.getElementById('searchInput');
+      var text = textOrKey;
+      if (typeof t === 'function') {
+        var translated = t(textOrKey);
+        if (translated && translated !== textOrKey) text = translated;
+      }
       input.value = text;
       input.focus();
     }
@@ -291,6 +296,8 @@
     /* Load domains */
     async function loadDomaines() {
       var container = document.getElementById('domaines');
+      var needsTranslation = getLang() !== 'fr' && typeof translateHtmlFragment === 'function';
+      if (needsTranslation) container.style.visibility = 'hidden';
       try {
         var res = await fetch('/api/domaines');
         if (!res.ok) return;
@@ -313,7 +320,18 @@
             '<p class="domain-desc">' + d.description + '</p>';
           container.appendChild(card);
         }
+        if (needsTranslation) {
+          var payload = await translateHtmlFragment(container.innerHTML, {
+            lang: getLang(),
+            content_type: 'chrome/ui',
+            page_path: '/index-domaines'
+          });
+          if (payload && payload.html) container.innerHTML = payload.html;
+        }
       } catch (e) { /* silent */ }
+      finally {
+        container.style.visibility = '';
+      }
     }
     loadDomaines();
   </script>

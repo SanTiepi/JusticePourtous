@@ -1,0 +1,95 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  test-subset-core:
+    name: Tests subset non-LLM
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Même subset que deploy.sh — structurel seulement, pas de réseau Anthropic
+      - name: Run core tests
+        env:
+          NODE_ENV: test
+          ADMIN_TOKEN: ci-admin-token
+        run: |
+          TEST_FILES=$(ls test/*.test.mjs | grep -v -E '(^test/triage\.|e2e|llm-nav|letter-gen|deep-analysis|premium|stress|adversarial-eval)')
+          node --test --test-timeout=30000 $TEST_FILES
+
+  health-check-smoke:
+    name: Health check smoke
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Vérifie que les 12 checks passent sur un clone propre (sans prod secrets)
+      - name: Run health checks
+        env:
+          NODE_ENV: development
+        run: |
+          node -e "
+            import('./src/services/health-check.mjs').then(async m => {
+              const r = await m.runHealthChecks();
+              console.log('global:', r.global_status, JSON.stringify(r.summary));
+              if (r.global_status === 'failing') {
+                for (const c of r.checks) if (c.status === 'error') console.log('ERROR:', c.name, c.detail);
+                process.exit(1);
+              }
+            });
+          "
+
+  benchmark-vs-llm-brut:
+    name: Benchmark structurel (non-regression)
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run benchmark
+        run: node scripts/benchmark-vs-llm-brut.mjs
+
+      # Le score doit rester >= 60 (seuil baseline post-34-règles)
+      - name: Gate benchmark score
+        run: |
+          SCORE=$(node -e "console.log(JSON.parse(require('fs').readFileSync('src/data/meta/benchmark-report.json','utf8')).summary.jpt_avg_score)")
+          echo "Score JPT: $SCORE"
+          node -e "
+            const s = $SCORE;
+            if (s < 60) { console.error('REGRESSION benchmark: score ' + s + ' < 60'); process.exit(1); }
+            console.log('OK score >= 60');
+          "

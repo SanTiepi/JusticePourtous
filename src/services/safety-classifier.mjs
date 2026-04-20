@@ -166,8 +166,39 @@ function roundToHour(ms) {
 }
 
 /**
+ * Préambule empathique commun à tous les signaux détresse/violence/mineur.
+ * Explicite au citoyen que l'humain vient avant le dossier.
+ */
+const EMPATHIC_PREAMBLE_DETRESSE =
+  'Nous avons détecté que vous vivez une situation de détresse. Avant toute démarche juridique, nous vous invitons à parler à une personne qui peut vous écouter maintenant.';
+const EMPATHIC_PREAMBLE_VIOLENCE =
+  'Nous avons détecté des signaux indiquant que vous vivez une situation de violence. Votre sécurité immédiate passe avant toute procédure juridique.';
+const EMPATHIC_PREAMBLE_MINEUR =
+  'Nous voyons que tu es jeune. Tu n\'es pas seul·e, et il y a des personnes formées pour t\'écouter en toute confidentialité.';
+
+const DISCLAIMER_HUMAN_FIRST =
+  'Votre santé compte plus qu\'un dossier juridique. Prenez soin de vous.';
+
+const CONTINUE_BUTTON = {
+  label: 'Continuer le triage juridique quand même',
+  action: 'continue_anyway',
+  note: 'Vous pouvez choisir de poursuivre l\'analyse juridique. Nous garderons les numéros d\'urgence affichés en bas de page.'
+};
+
+/**
  * Construit la réponse de redirection pour un signal détecté.
  * Court-circuite le pipeline juridique.
+ *
+ * Enrichissements (2026-04-19 citizen UX) :
+ *  - preamble empathique explicite
+ *  - ressources élargies (La Main Tendue 143, Pro Mente Sana, VIVAVA, SOS Femmes)
+ *  - liens cliquables (url + tel:)
+ *  - bouton explicite "continuer le triage juridique quand même"
+ *  - disclaimer humain-first
+ *
+ * Contrat stable : tous les anciens champs (type, signal, message, resources,
+ * priority, can_continue_later, discreet_mode, clear_history_available,
+ * adapted_language) sont préservés. Nouveaux champs optionnels ajoutés.
  */
 export function buildSafetyResponse(signal_type) {
   switch (signal_type) {
@@ -175,12 +206,16 @@ export function buildSafetyResponse(signal_type) {
       return {
         type: 'safety_redirect',
         signal: signal_type,
+        preamble: EMPATHIC_PREAMBLE_DETRESSE,
         message: 'Votre situation nécessite une écoute immédiate. Voici des ressources disponibles :',
         resources: [
-          { name: 'La Main Tendue', phone: '143', note: '24h/24, anonyme, gratuit' },
-          { name: 'Urgences médicales', phone: '144', note: '24h/24' },
-          { name: 'Pro Juventute (jeunes)', phone: '147', note: 'si moins de 25 ans' }
+          { name: 'La Main Tendue', phone: '143', tel: 'tel:143', url: 'https://www.143.ch', note: '24h/24, anonyme, gratuit' },
+          { name: 'Pro Mente Sana', phone: '0848 800 858', tel: 'tel:+41848800858', url: 'https://www.promentesana.ch', note: 'conseil en santé psychique' },
+          { name: 'Urgences médicales', phone: '144', tel: 'tel:144', note: '24h/24' },
+          { name: 'Pro Juventute (jeunes)', phone: '147', tel: 'tel:147', url: 'https://www.147.ch', note: 'si moins de 25 ans' }
         ],
+        continue_anyway: CONTINUE_BUTTON,
+        disclaimer: DISCLAIMER_HUMAN_FIRST,
         can_continue_later: true,
         priority: 'critical'
       };
@@ -188,12 +223,18 @@ export function buildSafetyResponse(signal_type) {
       return {
         type: 'safety_redirect',
         signal: signal_type,
+        preamble: EMPATHIC_PREAMBLE_VIOLENCE,
         message: 'Votre sécurité passe avant tout. Si vous êtes en danger immédiat, appelez le 117.',
         resources: [
-          { name: 'Police (urgence)', phone: '117', note: 'en cas de danger immédiat' },
-          { name: 'LAVI (aide aux victimes)', phone: '0848 28 28 28', note: 'soutien confidentiel' },
-          { name: 'Urgences médicales', phone: '144', note: 'blessures' }
+          { name: 'Police (urgence)', phone: '117', tel: 'tel:117', note: 'en cas de danger immédiat' },
+          { name: 'VIVAVA (violence conjugale)', phone: '0800 800 300', tel: 'tel:+41800800300', url: 'https://www.aide-aux-victimes.ch', note: 'écoute 24h/24, confidentiel' },
+          { name: 'SOS Femmes', phone: '0848 800 300', tel: 'tel:+41848800300', note: 'soutien aux femmes' },
+          { name: 'LAVI (aide aux victimes)', phone: '0848 28 28 28', tel: 'tel:+41848282828', url: 'https://www.aide-aux-victimes.ch', note: 'soutien confidentiel, frais juridiques pris en charge' },
+          { name: 'La Main Tendue', phone: '143', tel: 'tel:143', url: 'https://www.143.ch', note: 'écoute 24h/24' },
+          { name: 'Urgences médicales', phone: '144', tel: 'tel:144', note: 'blessures' }
         ],
+        continue_anyway: CONTINUE_BUTTON,
+        disclaimer: DISCLAIMER_HUMAN_FIRST,
         discreet_mode: true,
         clear_history_available: true,
         priority: 'critical'
@@ -203,17 +244,26 @@ export function buildSafetyResponse(signal_type) {
         type: 'safety_refusal',
         signal: signal_type,
         message: 'Je ne peux pas vous accompagner dans cette démarche. Si une personne est en danger, appelez le 117.',
+        resources: [
+          { name: 'Police (urgence)', phone: '117', tel: 'tel:117', note: 'en cas de danger immédiat' },
+          { name: 'La Main Tendue', phone: '143', tel: 'tel:143', url: 'https://www.143.ch', note: 'si vous voulez parler à quelqu\'un' }
+        ],
+        disclaimer: 'Nous ne pouvons pas vous aider à commettre un acte violent. Mais nous pouvons vous aider à trouver une voie légale. Décrivez votre situation sans menace.',
         priority: 'high'
       };
     case SIGNAL_TYPES.MINEUR:
       return {
         type: 'minor_redirect',
         signal: signal_type,
+        preamble: EMPATHIC_PREAMBLE_MINEUR,
         message: 'Pour t\'accompagner au mieux, voici des ressources adaptées :',
         resources: [
-          { name: 'Pro Juventute', phone: '147', note: 'gratuit, confidentiel, 24h/24' },
+          { name: 'Pro Juventute', phone: '147', tel: 'tel:147', url: 'https://www.147.ch', note: 'gratuit, confidentiel, 24h/24' },
+          { name: 'La Main Tendue', phone: '143', tel: 'tel:143', url: 'https://www.143.ch', note: '24h/24, anonyme' },
           { name: 'TPAE (protection)', note: 'autorité de protection de l\'enfant et de l\'adulte' }
         ],
+        continue_anyway: CONTINUE_BUTTON,
+        disclaimer: 'Tu peux toujours appeler ces numéros, ils sont gratuits et confidentiels.',
         adapted_language: true,
         priority: 'high'
       };
@@ -222,6 +272,7 @@ export function buildSafetyResponse(signal_type) {
         type: 'constructive_refusal',
         signal: signal_type,
         message: 'Je ne peux pas vous aider sur cette voie, mais voici les démarches légales qui peuvent atteindre un résultat similaire.',
+        disclaimer: 'Reformulez votre situation sans mention d\'acte illégal et nous pourrons vous orienter vers les recours légaux disponibles.',
         priority: 'medium'
       };
     default:

@@ -53,7 +53,23 @@ const CONTINUATION_RAW_API_COST = 80;
  */
 export async function handleTriageStart({ texte, canton } = {}) {
   if (!texte || typeof texte !== 'string' || texte.trim().length < 3) {
-    return errorPayload('Décrivez votre problème en quelques mots', 400);
+    return errorPayload(
+      'Décrivez votre problème en quelques mots',
+      400,
+      {
+        error_code: 'texte_too_short',
+        user_message: 'Nous avons besoin d\'une description de votre situation pour vous aider.',
+        examples: [
+          'Mon propriétaire refuse de rendre ma caution',
+          'J\'ai été licencié pendant mon arrêt maladie',
+          'L\'assurance refuse de me rembourser',
+          'Ma voisine fait du bruit toutes les nuits',
+          'Je dois quitter mon appartement dans 15 jours'
+        ],
+        retry_available: true,
+        min_chars: 3
+      }
+    );
   }
 
   // 1. Safety classifier — court-circuit AVANT tout appel LLM
@@ -353,6 +369,62 @@ function finalizePayload(data) {
   return shaped;
 }
 
-function errorPayload(error, http_status = 500) {
-  return { status: 'error', error, http_status };
+/**
+ * Construit un payload d'erreur citizen-friendly.
+ *
+ * Contrat stable (non-breaking) :
+ *  - `status` et `error` conservés (consumers existants continuent de marcher)
+ *  - `http_status` conservé
+ *
+ * Nouveaux champs optionnels (2026-04-19 citizen UX) :
+ *  - `error_code`         — clé machine stable (ex: 'texte_too_short', 'server_error')
+ *  - `user_message`       — message empathique destiné à l'affichage direct
+ *  - `examples`           — array de chaînes d'aide (cas texte_too_short)
+ *  - `retry_available`    — booléen : le client peut-il réessayer sans changement ?
+ *  - `support_link`       — URL de contact en cas d'erreur persistante
+ *  - `disclaimer`         — message additionnel (ex: "vos données n'ont pas été perdues")
+ *
+ * Sécurité : pour les 5xx, le message technique brut n'est PAS exposé au
+ * citoyen ; `error` est conservé (le front peut logger) mais `user_message`
+ * est un texte sanitisé.
+ */
+function errorPayload(error, http_status = 500, extras = {}) {
+  const payload = { status: 'error', error, http_status };
+
+  // Messages citoyens par défaut selon le http_status.
+  const isServerError = http_status >= 500;
+  const isNotFound = http_status === 404;
+  const isForbidden = http_status === 403;
+
+  if (!extras.user_message) {
+    if (isServerError) {
+      payload.user_message = 'Une erreur technique est survenue. Vos données n\'ont pas été perdues. Essayez à nouveau dans quelques instants.';
+      payload.retry_available = true;
+      payload.support_link = 'mailto:support@justicepourtous.ch';
+      payload.disclaimer = 'Si le problème persiste, contactez-nous — nous sommes là pour vous aider.';
+      // NE PAS exposer le message technique brut au citoyen en 5xx
+      payload.error = 'server_error';
+      payload.error_code = extras.error_code || 'server_error';
+    } else if (isNotFound) {
+      payload.user_message = error || 'Session expirée ou introuvable. Recommencez l\'analyse.';
+      payload.retry_available = false;
+      payload.error_code = extras.error_code || 'case_not_found';
+    } else if (isForbidden) {
+      payload.user_message = 'Accès refusé. Recommencez une nouvelle analyse.';
+      payload.retry_available = false;
+      payload.error_code = extras.error_code || 'forbidden';
+    } else {
+      // 400 générique
+      payload.user_message = error;
+      payload.retry_available = true;
+      payload.error_code = extras.error_code || 'bad_request';
+    }
+  }
+
+  // Merge explicite des extras (qui surchargent les défauts si fournis)
+  for (const [k, v] of Object.entries(extras)) {
+    if (v !== undefined) payload[k] = v;
+  }
+
+  return payload;
 }

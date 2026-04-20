@@ -58,13 +58,17 @@ const PATTERNS = [
     signal: SIGNAL_TYPES.VIOLENCE,
     severity: 9,
     patterns: [
-      /\bil (me )?(frappe|bat|tape|cogne)/i,
-      /\belle (me )?(frappe|bat|tape|cogne)/i,
-      /\bm'a (frapp|batt|tap|cogn)/i,
-      /\bviolence (domestique|conjugale)/i,
+      // Agresseur nommé par pronom (il/elle) ou terme de relation
+      // (conjoint, mari, femme, partenaire, compagnon, compagne, époux,
+      // épouse, copain, copine, père, mère, frère, fils, ex, etc.)
+      // — nécessaire car "Mon conjoint me frappe" était laissé passer.
+      /\b(il|elle|mon (conjoint|mari|partenaire|compagnon|copain|père|frère|fils|ex|beau-p[èe]re)|ma (femme|partenaire|compagne|copine|mère|sœur|fille|ex|belle-m[èe]re)|mes parents) (me |nous )?(frappe|bat|tape|cogne|tabasse|maltraite|agresse|menace|viole|violent|brutalise)/i,
+      /\bm'a (frapp|batt|tap|cogn|maltrait|agress|menac)/i,
+      /\bviolence (domestique|conjugale|familiale|sur enfant)/i,
       /\bpeur de rentrer (chez|à la maison)/i,
-      /\bil me menace\b/i,
-      /\bje crains pour ma (vie|sécurité)/i
+      /\bje crains pour ma (vie|sécurité|intégrité)/i,
+      /\bil (me|nous) tabasse/i,
+      /\bje suis (battu|battue|maltrait[ée])/i
     ],
     actions: [ACTIONS.LAVI, ACTIONS.URGENCE_144]
   },

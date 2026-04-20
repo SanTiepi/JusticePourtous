@@ -42,7 +42,7 @@ import {
   getUpcomingDeadlines, closeAccount
 } from './services/citizen-account.mjs';
 import { generateLetterPDF } from './services/letter-pdf-generator.mjs';
-import { recordOutcome } from './services/outcomes-tracker.mjs';
+import { recordOutcome, recordSimpleOutcome, getAggregateStats as getOutcomesAggregateStats } from './services/outcomes-tracker.mjs';
 import { extractDeadlinesFromCase, scheduleReminders, listRemindersForCase, _listRemindersForTests, maskAccountId } from './services/deadline-reminders.mjs';
 import { computeDashboardMetrics } from './services/dashboard-metrics.mjs';
 import { analyserCas } from './services/pipeline-v3.mjs';
@@ -949,6 +949,43 @@ const server = createServer(async (req, res) => {
         ? { ...result, status: result.status === 'updated' ? 'updated' : 'stored' }
         : result;
       return json(res, ok ? 200 : 400, { ...normalized, disclaimer: DISCLAIMER });
+    }
+
+    // Simplified citizen feedback: "Did this help?" widget ─────────
+    if (path === '/api/outcome' && method === 'POST') {
+      const body = (await parseBody(req)) || {};
+      // Pull context (domaine / fiche_id / canton) from the case if available
+      let context = {};
+      if (body.case_id) {
+        const caseRec = getCase(body.case_id);
+        if (caseRec) {
+          const primary = caseRec.state?.enriched_primary;
+          context = {
+            fiche_id: primary?.fiche?.id || primary?.id || null,
+            domaine: primary?.fiche?.domaine || primary?.domaine || null,
+            canton: caseRec.state?.canton || null
+          };
+        }
+      }
+      const result = recordSimpleOutcome({
+        case_id: body.case_id,
+        helpful: body.helpful,
+        free_text: body.free_text || '',
+        consent: body.consent_anon_aggregate === true,
+        context
+      });
+      const status = result.recorded
+        ? 200
+        : (result.reason === 'consent_required' ? 403 : 400);
+      return json(res, status, { ...result, disclaimer: DISCLAIMER });
+    }
+
+    // Admin: outcomes aggregate stats (k-anon enforced) ────────────
+    if (path === '/api/admin/outcomes' && method === 'GET') {
+      if (!checkAdmin(req, res)) return;
+      const since = url.searchParams.get('since');
+      const stats = getOutcomesAggregateStats({ since });
+      return json(res, 200, { ...stats, disclaimer: DISCLAIMER });
     }
 
     // ─── Case lettre (PDF generation) ─────────────────────────────

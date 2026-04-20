@@ -412,11 +412,175 @@ export function _listOutcomes() {
   return store.outcomes.slice();
 }
 
+/** Alias explicite pour tests (requis par la collecte feedback citoyen). */
+export function _listOutcomesForTests() {
+  return store.outcomes.slice();
+}
+
 /**
  * Snapshot complet du store (pour reporting). Anonymisé par construction.
  */
 export function snapshotStore() {
   return { outcomes: store.outcomes.slice() };
+}
+
+// ─── Simplified citizen-facing API ─────────────────────────────
+
+/**
+ * Mapping bucket "helpful" (1/2/3) → result normalisé.
+ *  1 = pas utile          → 'lost'     (proxy: le triage n'a pas aidé)
+ *  2 = en partie           → 'partially_won'
+ *  3 = oui, utile          → 'won'
+ * Cette normalisation permet de réutiliser les agrégats existants
+ * (by_result) pour les rapports k-anon.
+ */
+const HELPFUL_TO_RESULT = { 1: 'lost', 2: 'partially_won', 3: 'won' };
+
+/**
+ * Enregistre un "helpful feedback" simplifié depuis le front.
+ * Signature minimaliste pour l'endpoint POST /api/outcome.
+ *
+ * @param {object} input
+ * @param {string} input.case_id
+ * @param {number} input.helpful - 1 | 2 | 3
+ * @param {string} [input.free_text]
+ * @param {boolean} input.consent - consent_anon_aggregate explicite
+ * @param {object} [input.context] - { fiche_id, domaine, canton } si connu côté serveur
+ * @returns {{recorded: boolean, outcome_id?: string, reason?: string}}
+ */
+export function recordSimpleOutcome({
+  case_id,
+  helpful,
+  free_text = '',
+  consent = false,
+  context = {}
+} = {}) {
+  if (consent !== true) {
+    return { recorded: false, reason: 'consent_required' };
+  }
+  if (!case_id || typeof case_id !== 'string') {
+    return { recorded: false, reason: 'case_id_required' };
+  }
+  const helpfulNum = Number(helpful);
+  if (![1, 2, 3].includes(helpfulNum)) {
+    return { recorded: false, reason: 'helpful_invalid' };
+  }
+
+  // Rate limit : un seul helpful-feedback par case_id, quel que soit le fiche_id.
+  // On matche par case_id_hash seul (et non par (case_id_hash, fiche_id) comme recordOutcome)
+  // pour empêcher plusieurs "did this help?" sur un même case.
+  const case_id_hash = hashCaseId(case_id);
+  const already = store.outcomes.find(
+    o => o.case_id_hash === case_id_hash && o._feedback_source === 'helpful_widget'
+  );
+  if (already) {
+    return { recorded: false, reason: 'already_recorded' };
+  }
+
+  const fiche_id = (context.fiche_id && typeof context.fiche_id === 'string')
+    ? context.fiche_id
+    : '_unknown_feedback';
+  const domaine = (context.domaine && typeof context.domaine === 'string')
+    ? context.domaine
+    : 'unknown';
+  const canton = context.canton || null;
+  const result = HELPFUL_TO_RESULT[helpfulNum];
+  const cleanedNotes = anonymizeNotes(free_text || '');
+
+  const outcome = {
+    outcome_id: newOutcomeId(),
+    created_at: new Date().toISOString(),
+    case_id_hash,
+    fiche_id,
+    intent_id: lookupIntentId(fiche_id),
+    domaine,
+    canton,
+    action_taken: 'awaiting',
+    result,
+    duration_weeks: null,
+    cost_chf: null,
+    satisfaction: helpfulNum, // 1-3 scale, re-scaled
+    helpful: helpfulNum,
+    notes_anonymized: cleanedNotes,
+    _feedback_source: 'helpful_widget'
+  };
+
+  store.outcomes.push(outcome);
+  scheduleSave();
+
+  return { recorded: true, outcome_id: outcome.outcome_id };
+}
+
+/**
+ * Agrégats globaux pour l'admin dashboard.
+ * Respecte k-anonymity (k=5) par bucket (domaine × result).
+ *
+ * @param {object} [opts]
+ * @param {string|number} [opts.since] - ISO date ou timestamp, filtre created_at >= since
+ * @returns {{total, helpful_distribution, top_domains, since}}
+ */
+export function getAggregateStats({ since = null } = {}) {
+  let outcomes = store.outcomes.slice();
+  let sinceMs = null;
+  if (since) {
+    const parsed = typeof since === 'number' ? since : Date.parse(since);
+    if (Number.isFinite(parsed)) {
+      sinceMs = parsed;
+      outcomes = outcomes.filter(o => {
+        const t = Date.parse(o.created_at);
+        return Number.isFinite(t) && t >= sinceMs;
+      });
+    }
+  }
+
+  const total = outcomes.length;
+
+  // Distribution helpful globale (1/2/3). On ne publie le détail que si total ≥ k.
+  const helpfulRaw = { 1: 0, 2: 0, 3: 0 };
+  for (const o of outcomes) {
+    const h = Number(o.helpful);
+    if ([1, 2, 3].includes(h)) helpfulRaw[h]++;
+  }
+  const helpful_distribution = (total >= K_ANONYMITY_THRESHOLD)
+    ? helpfulRaw
+    : null; // k-anon : masqué sous le seuil
+
+  // Top domaines avec k-anon par bucket (domaine × result)
+  const byDomaine = new Map();
+  for (const o of outcomes) {
+    const d = o.domaine || 'unknown';
+    if (!byDomaine.has(d)) byDomaine.set(d, { domaine: d, total: 0, by_result: {} });
+    const entry = byDomaine.get(d);
+    entry.total++;
+    const r = o.result || 'unknown';
+    entry.by_result[r] = (entry.by_result[r] || 0) + 1;
+  }
+
+  const top_domains = [];
+  for (const entry of byDomaine.values()) {
+    // k-anon : n'exposer que si chaque bucket (domaine × result) ≥ k
+    // Pour les rapports admin on inclut le domaine si le total ≥ k,
+    // et on filtre les sous-buckets < k.
+    if (entry.total < K_ANONYMITY_THRESHOLD) continue;
+    const filteredByResult = {};
+    for (const [r, n] of Object.entries(entry.by_result)) {
+      if (n >= K_ANONYMITY_THRESHOLD) filteredByResult[r] = n;
+    }
+    top_domains.push({
+      domaine: entry.domaine,
+      total: entry.total,
+      by_result: filteredByResult
+    });
+  }
+  top_domains.sort((a, b) => b.total - a.total);
+
+  return {
+    total,
+    helpful_distribution,
+    top_domains,
+    k_anonymity_threshold: K_ANONYMITY_THRESHOLD,
+    since: sinceMs ? new Date(sinceMs).toISOString() : null
+  };
 }
 
 loadStore();

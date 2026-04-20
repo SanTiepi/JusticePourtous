@@ -16,10 +16,10 @@ import {
 // ============================================================
 // Phase Cortex — règles normatives exécutables
 // ------------------------------------------------------------
-// Réalité du commit (cf. CLAUDE.md) : 22 règles dans 7 domaines.
-// L'objectif initial annoncé dans la roadmap (~100 règles, 11
-// domaines : famille, etrangers, social, violence, accident,
-// entreprise) n'a jamais été commité dans normative-compiler.mjs.
+// Réalité du commit (cf. CLAUDE.md) : après extension 2026-04,
+// 54 règles dans 14 domaines (ajout de SUCCESSIONS + rules
+// supplémentaires en bail/travail/dettes/assurances/famille/
+// etrangers/social/violence).
 // Les seuils ci-dessous reflètent l'état réel exporté par le module
 // pour qu'ils soient une régression utile (et non une aspiration).
 // Si de nouvelles règles arrivent, on remontera les seuils.
@@ -27,23 +27,23 @@ import {
 
 describe('Phase Cortex — règles normatives (réalité du commit)', () => {
   describe('Compte total et distribution par domaine commité', () => {
-    it('ALL_RULES >= 20 (réel ≈ 22, seuil ajusté à la réalité)', () => {
+    it('ALL_RULES >= 50 (réel ≈ 54, seuil ajusté à la réalité)', () => {
       assert.ok(
-        ALL_RULES.length >= 20,
-        `Seulement ${ALL_RULES.length} règles, attendu >= 20`,
+        ALL_RULES.length >= 50,
+        `Seulement ${ALL_RULES.length} règles, attendu >= 50`,
       );
     });
 
-    it('bail: >= 6 règles', () => {
-      assert.ok(BAIL_RULES.length >= 6, `bail: ${BAIL_RULES.length} règles`);
+    it('bail: >= 9 règles', () => {
+      assert.ok(BAIL_RULES.length >= 9, `bail: ${BAIL_RULES.length} règles`);
     });
 
-    it('travail: >= 3 règles', () => {
-      assert.ok(TRAVAIL_RULES.length >= 3, `travail: ${TRAVAIL_RULES.length} règles`);
+    it('travail: >= 6 règles', () => {
+      assert.ok(TRAVAIL_RULES.length >= 6, `travail: ${TRAVAIL_RULES.length} règles`);
     });
 
-    it('dettes: >= 3 règles', () => {
-      assert.ok(DETTES_RULES.length >= 3, `dettes: ${DETTES_RULES.length} règles`);
+    it('dettes: >= 5 règles', () => {
+      assert.ok(DETTES_RULES.length >= 5, `dettes: ${DETTES_RULES.length} règles`);
     });
 
     it('transversal: >= 1 règle', () => {
@@ -54,8 +54,8 @@ describe('Phase Cortex — règles normatives (réalité du commit)', () => {
       assert.ok(CONSOMMATION_RULES.length >= 3, `consommation: ${CONSOMMATION_RULES.length} règles`);
     });
 
-    it('assurances: >= 3 règles', () => {
-      assert.ok(ASSURANCES_RULES.length >= 3, `assurances: ${ASSURANCES_RULES.length} règles`);
+    it('assurances: >= 5 règles', () => {
+      assert.ok(ASSURANCES_RULES.length >= 5, `assurances: ${ASSURANCES_RULES.length} règles`);
     });
 
     it('voisinage: >= 3 règles', () => {

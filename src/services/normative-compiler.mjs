@@ -171,6 +171,94 @@ const BAIL_RULES = [
     exceptions: [],
   },
 
+  // ─── Prolongation du bail ───────────────────────────────────
+  {
+    id: 'bail_prolongation',
+    label: 'Prolongation du bail d\'habitation',
+    base_legale: 'CO 272-272c',
+    source_ids: ['fedlex:rs220:co-272', 'fedlex:rs220:co-272a', 'fedlex:rs220:co-272b', 'fedlex:rs220:co-272c'],
+    condition: (f) => f.domaine === 'bail' && (f.prolongation_demandee || f.conge_recu),
+    consequence: (f) => ({
+      text: 'Le locataire peut demander une prolongation du bail en cas de congé causant des conséquences pénibles, si l\'intérêt du bailleur ne s\'y oppose pas.',
+      delai_saisine: '30 jours dès réception du congé',
+      delai_jours_saisine: 30,
+      duree_max_habitation: '4 ans',
+      duree_max_commercial: '6 ans',
+      type_bail: f.type_bail || 'habitation',
+      autorite: 'Commission de conciliation en matière de bail',
+      gratuit: true,
+      nombre_prolongations: 'La prolongation peut être accordée une ou deux fois (CO 272b al. 1).',
+      critere: 'Pesée d\'intérêts : pénibilité pour le locataire vs. intérêt du bailleur.',
+    }),
+    exceptions: [
+      {
+        id: 'bail_prolongation_exclue_defaut_paiement',
+        label: 'Pas de prolongation si congé pour défaut de paiement',
+        condition: (f) => f.motif_conge === 'defaut_paiement' || f.motif_conge === 'demeure',
+        consequence: 'La prolongation est exclue en cas de résiliation pour demeure du locataire (CO 272a al. 1 let. a).',
+        source_id: 'fedlex:rs220:co-272a',
+        blocks: true,
+      },
+      {
+        id: 'bail_prolongation_exclue_violation_devoirs',
+        label: 'Pas de prolongation si violation grave des devoirs',
+        condition: (f) => f.motif_conge === 'violation_devoirs' || f.motif_conge === 'manquement_grave',
+        consequence: 'La prolongation est exclue en cas de violation grave des devoirs du locataire (CO 272a al. 1 let. b).',
+        source_id: 'fedlex:rs220:co-272a',
+        blocks: true,
+      },
+    ],
+  },
+
+  // ─── Sous-location ──────────────────────────────────────────
+  {
+    id: 'bail_sous_location',
+    label: 'Droit à la sous-location',
+    base_legale: 'CO 262',
+    source_ids: ['fedlex:rs220:co-262'],
+    condition: (f) => f.domaine === 'bail' && f.sous_location,
+    consequence: () => ({
+      text: 'Le locataire peut sous-louer tout ou partie de la chose avec le consentement du bailleur. Le bailleur ne peut refuser son consentement qu\'à des conditions strictes.',
+      consentement: 'Consentement écrit du bailleur recommandé',
+      motifs_refus_legaux: [
+        'Refus du locataire de communiquer les conditions de la sous-location',
+        'Conditions abusives par rapport à celles du bail principal',
+        'Inconvénients majeurs pour le bailleur',
+      ],
+      forme_demande: 'Lettre recommandée au bailleur avec nom du sous-locataire, durée, loyer',
+      delai_reponse: 'Bailleur doit répondre dans un délai raisonnable (typiquement 30 jours)',
+      consequence_refus_injustifie: 'Le locataire peut saisir la commission de conciliation si le refus est injustifié.',
+    }),
+    exceptions: [
+      {
+        id: 'bail_sous_location_sans_consentement',
+        label: 'Sous-location sans consentement = motif de résiliation',
+        condition: (f) => f.sous_location_sans_consentement,
+        consequence: 'Sous-louer sans demander le consentement constitue un manquement pouvant justifier une résiliation ordinaire (voire extraordinaire si grave).',
+        source_id: 'fedlex:rs220:co-262',
+        blocks: false,
+      },
+    ],
+  },
+
+  // ─── Intérêt de la garantie de loyer ────────────────────────
+  {
+    id: 'bail_caution_interets',
+    label: 'Intérêts de la garantie de loyer',
+    base_legale: 'CO 257e al. 2',
+    source_ids: ['fedlex:rs220:co-257e'],
+    condition: (f) => f.domaine === 'bail' && (f.caution_deposee || f.fin_bail),
+    consequence: () => ({
+      text: 'La garantie doit être déposée sur un compte d\'épargne bancaire au nom du locataire. Les intérêts reviennent au locataire.',
+      forme_depot: 'Compte bancaire bloqué au nom du locataire',
+      interets_beneficiaire: 'Locataire',
+      liberation: 'Accord écrit du bailleur OU commandement de payer non frappé d\'opposition OU jugement',
+      prescription_pretentions: '1 an après fin du bail (CO 257e al. 3)',
+      recuperation_directe: 'Si bailleur n\'agit pas dans l\'année, la banque libère sur simple demande du locataire.',
+    }),
+    exceptions: [],
+  },
+
   // ─── Défaut de la chose louée ───────────────────────────────
   {
     id: 'bail_reduction_defaut',
@@ -254,6 +342,94 @@ const TRAVAIL_RULES = [
     ],
   },
   {
+    id: 'travail_certificat_travail',
+    label: 'Droit au certificat de travail',
+    base_legale: 'CO 330a',
+    source_ids: ['fedlex:rs220:co-330a'],
+    condition: (f) => f.domaine === 'travail' && (f.certificat_travail || f.fin_emploi),
+    consequence: () => ({
+      text: 'Le travailleur peut en tout temps demander à l\'employeur un certificat portant sur la nature et la durée des rapports de travail, la qualité de son travail et sa conduite.',
+      types: [
+        { type: 'certificat_complet', contenu: 'Nature + durée + qualité travail + conduite' },
+        { type: 'certificat_simple', contenu: 'Nature et durée uniquement (sur demande explicite du travailleur)' },
+      ],
+      principes: ['véracité', 'bienveillance', 'complétude'],
+      droit_rectification: 'Le travailleur peut exiger la rectification d\'un certificat inexact ou ambigu. Action possible devant le tribunal des prud\'hommes.',
+      prescription: '10 ans (CO 127) pour l\'action en délivrance; en pratique recommandée dans les 1-2 ans après la fin du contrat.',
+    }),
+    exceptions: [],
+  },
+  {
+    id: 'travail_heures_supplementaires',
+    label: 'Compensation des heures supplémentaires',
+    base_legale: 'CO 321c',
+    source_ids: ['fedlex:rs220:co-321c'],
+    condition: (f) => f.domaine === 'travail' && f.heures_supplementaires,
+    consequence: (f) => {
+      const heures = Number.isFinite(f.nombre_heures_sup) ? f.nombre_heures_sup : null;
+      const taux_horaire = Number.isFinite(f.taux_horaire) ? f.taux_horaire : null;
+      const indemnite = (heures !== null && taux_horaire !== null) ? Math.round(heures * taux_horaire * 1.25) : null;
+      return {
+        text: 'L\'employeur doit compenser les heures supplémentaires soit par un congé équivalent (avec accord du travailleur), soit par le versement du salaire majoré de 25%.',
+        compensation_par_defaut: 'Salaire + supplément 25% (sauf accord écrit contraire)',
+        taux_majoration: '125%',
+        compensation_alternative: 'Congé équivalent en temps, mais uniquement avec l\'accord du travailleur',
+        exception_convention: 'Un accord écrit ou une CCT peut déroger (par ex. supprimer le supplément pour cadres).',
+        heures_declarees: heures,
+        indemnite_estimee_chf: indemnite,
+        prescription: '5 ans (CO 128 ch. 3)',
+      };
+    },
+    exceptions: [
+      {
+        id: 'travail_heures_sup_renonciation_ecrite',
+        label: 'Renonciation écrite au supplément (sauf LTr)',
+        condition: (f) => f.accord_ecrit_pas_supplement === true,
+        consequence: 'Le supplément peut être supprimé par accord écrit, CCT ou contrat-type (CO 321c al. 3). Mais les heures supplémentaires au sens de la LTr (>45h ou >50h) donnent toujours droit à un supplément de 25% minimum.',
+        source_id: 'fedlex:rs220:co-321c',
+        blocks: false,
+      },
+    ],
+  },
+  {
+    id: 'travail_resiliation_abusive',
+    label: 'Indemnité pour résiliation abusive',
+    base_legale: 'CO 336-336a',
+    source_ids: ['fedlex:rs220:co-336', 'fedlex:rs220:co-336a'],
+    condition: (f) => f.domaine === 'travail' && f.conge_abusif,
+    consequence: (f) => {
+      const salaire = Number.isFinite(f.salaire_mensuel) ? f.salaire_mensuel : null;
+      const indemnite_max = salaire ? salaire * 6 : null;
+      return {
+        text: 'En cas de résiliation abusive (motif discriminatoire, représailles, bonne foi), la partie qui a reçu le congé a droit à une indemnité jusqu\'à 6 mois de salaire.',
+        indemnite_max_mois: 6,
+        indemnite_max_chf: indemnite_max,
+        delai_opposition: '60 jours au maximum avant la fin du délai de congé, par écrit',
+        delai_jours_action: 180,
+        delai_action: '180 jours après la fin des rapports de travail pour saisir le tribunal',
+        motifs_typiques: [
+          'Appartenance à un syndicat',
+          'Exercice d\'un droit constitutionnel',
+          'Plainte interne de bonne foi (CO 336 al. 1 let. d)',
+          'Représailles suite à accident LAA / maladie',
+          'Service militaire / obligation légale',
+        ],
+        autorite: 'Tribunal des prud\'hommes',
+        condition_prealable: 'Opposition écrite au congé avant la fin du délai de résiliation (CO 336b).',
+      };
+    },
+    exceptions: [
+      {
+        id: 'travail_resiliation_abusive_pas_opposition',
+        label: 'Indemnité perdue sans opposition écrite préalable',
+        condition: (f) => f.opposition_conge_ecrite === false,
+        consequence: 'À défaut d\'opposition écrite avant la fin du délai de congé, la prétention en indemnité est perdue (CO 336b al. 1).',
+        source_id: 'fedlex:rs220:co-336b',
+        blocks: true,
+      },
+    ],
+  },
+  {
     id: 'travail_salaire_impaye_mise_en_demeure',
     label: 'Mise en demeure pour salaire impayé',
     base_legale: 'CO 102, CO 337',
@@ -320,6 +496,63 @@ const DETTES_RULES = [
         label: 'Pension alimentaire: saisie étendue possible',
         condition: (f) => f.creance_alimentaire,
         consequence: 'Pour les créances alimentaires, le minimum vital peut être entamé (LP 93 al. 2). Le débiteur conserve un minimum absolu.',
+        source_id: 'fedlex:rs281.1:lp-93',
+        blocks: false,
+      },
+    ],
+  },
+  {
+    id: 'dettes_continuation_poursuite',
+    label: 'Continuation de la poursuite après levée d\'opposition',
+    base_legale: 'LP 88',
+    source_ids: ['fedlex:rs281.1:lp-88'],
+    condition: (f) => f.domaine === 'dettes' && (f.opposition_levee || f.mainlevee_prononcee),
+    consequence: () => ({
+      text: 'Lorsque la poursuite n\'est pas arrêtée par une opposition, le créancier peut requérir la continuation de la poursuite. Le délai court dès la levée d\'opposition ou la notification du commandement non frappé d\'opposition.',
+      delai_min: '20 jours après notification du commandement de payer',
+      delai_min_jours: 20,
+      delai_max: '1 an dès la notification du commandement de payer',
+      delai_max_jours: 365,
+      point_depart: 'Notification du commandement ou entrée en force du jugement de mainlevée',
+      consequence_passe_delai: 'Le commandement de payer devient caduc; il faut relancer une nouvelle poursuite.',
+      suite: 'L\'office procède à la saisie (LP 89) ou à la faillite (LP 159) selon le mode de poursuite.',
+    }),
+    exceptions: [],
+  },
+  {
+    id: 'dettes_saisie_revenu_csias',
+    label: 'Saisie de revenu — minimum vital élargi (CSIAS + frais effectifs)',
+    base_legale: 'LP 93 + Normes CSIAS + pratique cantonale',
+    source_ids: ['fedlex:rs281.1:lp-93', 'csias:normes:minimum-vital-saisie'],
+    condition: (f) => f.domaine === 'dettes' && f.saisie_revenu === true,
+    consequence: (f) => {
+      const base = f.canton === 'GE' ? 1350 : 1200;
+      const enfants = (f.nombre_enfants || 0);
+      const loyer = Number.isFinite(f.loyer_effectif) ? f.loyer_effectif : 0;
+      const lamal = Number.isFinite(f.prime_lamal) ? f.prime_lamal : 0;
+      const frais_pro = Number.isFinite(f.frais_professionnels) ? f.frais_professionnels : 0;
+      const total = base + (enfants * 400) + loyer + lamal + frais_pro;
+      return {
+        text: `Le minimum vital pour la saisie comprend le forfait d'entretien (${base} CHF base + ${enfants * 400} enfants), le loyer effectif, les primes LAMal, et les frais professionnels indispensables.`,
+        composantes: {
+          forfait_base_chf: base,
+          supplements_enfants_chf: enfants * 400,
+          loyer_effectif_chf: loyer,
+          prime_lamal_chf: lamal,
+          frais_professionnels_chf: frais_pro,
+        },
+        total_minimum_vital_chf: total,
+        part_saisissable: 'Revenu mensuel net − minimum vital total = quotité saisissable',
+        duree_saisie_max: '1 an (LP 93 al. 2), renouvelable après procès-verbal',
+        note_cantonale: 'Les offices cantonaux appliquent les Normes CSIAS et les directives cantonales. Des suppléments peuvent s\'ajouter (primes assurances complémentaires, pension, etc.).',
+      };
+    },
+    exceptions: [
+      {
+        id: 'dettes_saisie_alimentaire_etendue',
+        label: 'Créance alimentaire: saisie pouvant entamer le minimum vital',
+        condition: (f) => f.creance_alimentaire === true,
+        consequence: 'Pour les créances d\'aliments courants des 12 derniers mois, le minimum vital peut être entamé (LP 93 al. 3 et jurisprudence), dans les limites du minimum absolu.',
         source_id: 'fedlex:rs281.1:lp-93',
         blocks: false,
       },
@@ -500,6 +733,52 @@ const ASSURANCES_RULES = [
     exceptions: [],
   },
   {
+    id: 'assurance_lamal_refus_prestations',
+    label: 'Opposition au refus de prestations LAMal',
+    base_legale: 'LAMal 56-60 + LPGA 52',
+    source_ids: ['fedlex:rs832.10:lamal-56', 'fedlex:rs832.10:lamal-60', 'fedlex:rs830.1:lpga-52'],
+    condition: (f) => f.domaine === 'assurances' && (f.refus_lamal || f.decision_lamal),
+    consequence: () => ({
+      text: 'En cas de refus de prise en charge par l\'assureur LAMal (traitement, médicament, hospitalisation), le patient peut former opposition dans les 30 jours.',
+      delai_opposition: '30 jours',
+      delai_jours: 30,
+      point_depart: 'notification de la décision de refus',
+      forme: 'Opposition écrite et motivée à l\'assureur',
+      gratuit: true,
+      motifs_typiques_refus: [
+        'Prestation jugée non économique (LAMal 56)',
+        'Traitement non inscrit au catalogue des prestations',
+        'Absence d\'efficacité / appropriation / économicité (EAE)',
+      ],
+      etape_suivante: 'Si l\'opposition est rejetée, recours au tribunal cantonal des assurances dans les 30 jours.',
+      suivi: 'Tribunal fédéral en dernière instance (LTF 95).',
+    }),
+    exceptions: [],
+  },
+  {
+    id: 'assurance_laa_refus_ij',
+    label: 'Opposition au refus d\'indemnité journalière LAA',
+    base_legale: 'LAA 66 + LPGA 52',
+    source_ids: ['fedlex:rs832.20:laa-66', 'fedlex:rs830.1:lpga-52'],
+    condition: (f) => f.domaine === 'assurances' && (f.refus_laa || f.refus_ij_accident),
+    consequence: () => ({
+      text: 'Le refus de l\'indemnité journalière LAA (SUVA ou assureur privé) peut être contesté par opposition dans les 30 jours.',
+      delai_opposition: '30 jours',
+      delai_jours: 30,
+      point_depart: 'notification de la décision',
+      forme: 'Opposition écrite et motivée à l\'assureur (SUVA / assureur LAA privé)',
+      gratuit: true,
+      taux_ij: '80% du gain assuré dès le 3e jour qui suit celui de l\'accident (LAA 17)',
+      contestation_frequente: [
+        'Lien de causalité accident-atteinte nié',
+        'Atteinte considérée comme état antérieur (maladie)',
+        'Capacité de travail estimée supérieure à la réalité',
+      ],
+      etape_suivante: 'Recours au tribunal cantonal des assurances dans les 30 jours si décision sur opposition défavorable.',
+    }),
+    exceptions: [],
+  },
+  {
     id: 'assurance_accident_delai_annonce',
     label: 'Délai d\'annonce d\'un accident professionnel',
     base_legale: 'LAA 45, OLAA 53',
@@ -615,6 +894,69 @@ const FAMILLE_RULES = [
     ],
   },
   {
+    id: 'famille_entretien_post_divorce',
+    label: 'Contribution d\'entretien après divorce (ex-conjoint)',
+    base_legale: 'CC 125',
+    source_ids: ['fedlex:rs210:cc-125'],
+    condition: (f) => f.domaine === 'famille' && (f.divorce || f.type_pension === 'conjoint'),
+    consequence: (f) => {
+      const duree = Number.isFinite(f.duree_mariage_annees) ? f.duree_mariage_annees : null;
+      const mariage_lebenspraegend = duree !== null && duree >= 10;
+      return {
+        text: 'Après le divorce, une contribution d\'entretien peut être allouée à l\'ex-conjoint qui ne peut raisonnablement pourvoir lui-même à son entretien convenable.',
+        critere_principal: 'Le mariage a-t-il marqué durablement la vie de l\'époux créancier (« lebenspraegend ») ?',
+        duree_mariage_annees: duree,
+        mariage_lebenspraegend_probable: mariage_lebenspraegend,
+        criteres_ponderables: [
+          'Durée du mariage',
+          'Répartition des tâches pendant le mariage',
+          'Âge et état de santé des époux',
+          'Revenu et fortune des époux',
+          'Étendue et durée de la prise en charge des enfants',
+          'Formation et perspectives de gain',
+          'Expectatives LPP / AVS',
+        ],
+        methode: 'Méthode en deux étapes du TF (ATF 147 III 265) : minimum vital + répartition excédent.',
+        duree_typique: duree && duree >= 20 ? 'Souvent jusqu\'à l\'âge AVS (contribution durable)' : 'Limitée dans le temps (réinsertion)',
+        minimum_vital_debirentier: 'Intangible (jurisprudence constante).',
+        modification: 'Modification possible en cas de changement notable et durable des circonstances (CC 129).',
+      };
+    },
+    exceptions: [
+      {
+        id: 'famille_entretien_concubinage_qualifie',
+        label: 'Concubinage stable du créancier = suppression possible',
+        condition: (f) => f.concubinage_stable === true,
+        consequence: 'Un concubinage stable (5 ans) du créancier peut entraîner la suppression de la contribution (ATF 124 III 52).',
+        source_id: 'fedlex:rs210:cc-125',
+        blocks: false,
+      },
+    ],
+  },
+  {
+    id: 'famille_mesures_protectrices_union',
+    label: 'Mesures protectrices de l\'union conjugale',
+    base_legale: 'CC 172-179',
+    source_ids: ['fedlex:rs210:cc-172', 'fedlex:rs210:cc-176'],
+    condition: (f) => f.domaine === 'famille' && (f.separation || f.mesures_protectrices),
+    consequence: (f) => ({
+      text: 'En cas de crise conjugale (violence, séparation, désaccord grave), un époux peut saisir le juge pour obtenir des mesures protectrices (attribution du domicile, garde des enfants, contribution d\'entretien, séparation des biens).',
+      autorite: 'Juge civil du domicile (tribunal de district / d\'arrondissement)',
+      procedure: 'Procédure sommaire (CPC 271) — rapide, contradictoire',
+      urgence: f.urgence === true ? 'Mesures superprovisionnelles possibles en cas d\'urgence (CPC 265) — sans audition préalable' : 'Audition contradictoire habituelle',
+      objets_possibles: [
+        'Attribution du logement conjugal (CC 176 al. 1 ch. 2)',
+        'Attribution de la garde et droit de visite (CC 176 al. 3)',
+        'Contribution d\'entretien famille et conjoint (CC 176 al. 1 ch. 1)',
+        'Séparation des biens (CC 176 al. 1 ch. 3)',
+        'Avis au débiteur (CC 177)',
+      ],
+      delai_urgence: f.urgence ? 'Superprovisionnelles : jours (audition reportée)' : 'Provisionnelles : 2-8 semaines typique',
+      duree_validite: 'Jusqu\'à modification ou reprise de la vie commune ou divorce',
+    }),
+    exceptions: [],
+  },
+  {
     id: 'famille_autorite_parentale_conjointe',
     label: 'Autorité parentale conjointe par défaut',
     base_legale: 'CC 296 al. 2',
@@ -642,6 +984,81 @@ const ETRANGERS_RULES = [
       autorite_competente: f.canton
         ? `Service de la population / migration du canton de ${f.canton}`
         : 'Service cantonal de la population (canton de domicile)',
+    }),
+    exceptions: [],
+  },
+  {
+    id: 'etrangers_regroupement_familial',
+    label: 'Regroupement familial — délai et conditions',
+    base_legale: 'LEI 43-44',
+    source_ids: ['fedlex:rs142.20:lei-43', 'fedlex:rs142.20:lei-44'],
+    condition: (f) => f.domaine === 'etrangers' && f.regroupement_familial,
+    consequence: (f) => {
+      const permis = f.type_permis || null;
+      const delai_principal = '12 mois dès octroi du permis ou du lien familial';
+      const delai_enfants_12plus = permis === 'C'
+        ? '5 ans dès octroi du permis OU 12 mois après le 12e anniversaire si survient plus tard'
+        : '5 ans dès octroi du permis OU 12 mois après le 12e anniversaire';
+      return {
+        text: 'Les ressortissants étrangers titulaires d\'un permis B ou C peuvent obtenir le regroupement familial pour leur conjoint et leurs enfants mineurs, dans certains délais.',
+        type_permis_requerant: permis,
+        delai_principal: delai_principal,
+        delai_enfants_plus_12_ans: delai_enfants_12plus,
+        conditions_cumulatives: [
+          'Logement approprié à la taille de la famille',
+          'Moyens financiers suffisants (pas d\'aide sociale)',
+          'Volonté et capacité à communiquer (langue nationale, pour conjoint permis B dès 2019)',
+          'Absence de motif de révocation (condamnations, aide sociale)',
+        ],
+        consequence_delai_depasse: 'Regroupement différé possible uniquement pour « raisons familiales majeures » (LEI 47 al. 4) — intérêt supérieur de l\'enfant, changement notable.',
+        autorite: f.canton
+          ? `Service de la population / migration du canton de ${f.canton}`
+          : 'Service cantonal des migrations, avec approbation SEM',
+        recours: 'Recours cantonal 30 jours, puis Tribunal administratif fédéral',
+      };
+    },
+    exceptions: [
+      {
+        id: 'etrangers_regroupement_permis_b_conjoint_attente',
+        label: 'Permis B : regroupement soumis à conditions renforcées',
+        condition: (f) => f.type_permis === 'B',
+        consequence: 'Pour les titulaires d\'un permis B, le regroupement familial est possible mais non un droit absolu (LEI 44). Refus possible si conditions non remplies, sous réserve de l\'art. 8 CEDH.',
+        source_id: 'fedlex:rs142.20:lei-44',
+        blocks: false,
+      },
+    ],
+  },
+  {
+    id: 'etrangers_revocation_permis',
+    label: 'Révocation du permis de séjour — motifs et procédure',
+    base_legale: 'LEI 62-63',
+    source_ids: ['fedlex:rs142.20:lei-62', 'fedlex:rs142.20:lei-63'],
+    condition: (f) => f.domaine === 'etrangers' && (f.revocation_permis || f.menace_revocation),
+    consequence: (f) => ({
+      text: 'L\'autorité peut révoquer un permis B ou C en cas de motifs graves. Le droit d\'être entendu (audition préalable) doit être respecté.',
+      motifs_permis_b_lei62: [
+        'Condamnation à une peine privative de liberté de longue durée (jurisp. : >1 an)',
+        'Atteinte grave ou répétée à la sécurité et l\'ordre publics',
+        'Dépendance durable et importante à l\'aide sociale',
+        'Fausses déclarations / dissimulation de faits essentiels',
+        'Non-respect d\'une convention d\'intégration',
+      ],
+      motifs_permis_c_lei63: [
+        'Condamnation à peine privative de liberté de longue durée',
+        'Atteinte très grave à la sécurité et l\'ordre publics',
+        'Dépendance durable et importante à l\'aide sociale (si <15 ans de séjour)',
+      ],
+      procedure: [
+        '1. Information des motifs envisagés',
+        '2. Droit d\'être entendu (audition ou prise de position écrite, délai 30 jours)',
+        '3. Décision motivée et notifiée',
+        '4. Délai de recours 30 jours',
+      ],
+      autorite: f.canton
+        ? `Service de la population / migration du canton de ${f.canton}`
+        : 'Service cantonal des migrations',
+      recours: 'Recours cantonal 30 jours, puis Tribunal administratif fédéral (TAF), puis TF',
+      examen_proportionnalite: 'Pesée d\'intérêts obligatoire : durée du séjour, intégration, liens familiaux (art. 8 CEDH), gravité des faits.',
     }),
     exceptions: [],
   },
@@ -698,6 +1115,103 @@ const SOCIAL_RULES = [
     exceptions: [],
   },
   {
+    id: 'social_ai_rente_ordinaire',
+    label: 'Rente AI — seuil d\'invalidité et échelle',
+    base_legale: 'LAI 28-28b',
+    source_ids: ['fedlex:rs831.20:lai-28', 'fedlex:rs831.20:lai-28b'],
+    condition: (f) => f.domaine === 'social' && (f.demande_ai || f.type_aide === 'ai'),
+    consequence: (f) => {
+      const taux = Number.isFinite(f.taux_invalidite) ? f.taux_invalidite : null;
+      let droit = null;
+      let quotite = null;
+      if (taux !== null) {
+        if (taux < 40) { droit = false; quotite = 0; }
+        else if (taux < 50) { droit = true; quotite = taux; }
+        else if (taux < 70) { droit = true; quotite = taux; }
+        else { droit = true; quotite = 100; }
+      }
+      return {
+        text: 'Le droit à une rente AI suppose un taux d\'invalidité d\'au moins 40% et une cotisation minimale de 3 ans. Depuis 2022, l\'échelle est linéaire entre 40% et 70%.',
+        seuil_minimum: '40% d\'invalidité',
+        cotisation_minimale: '3 années complètes de cotisations AVS/AI',
+        taux_declare: taux,
+        droit_probable: droit,
+        quotite_rente_percent: quotite,
+        echelle: [
+          { taux_inv: '< 40%', rente: 'aucune' },
+          { taux_inv: '40-49%', rente: 'rente partielle linéaire (quart, demi...) selon taux exact' },
+          { taux_inv: '50-69%', rente: 'rente partielle linéaire' },
+          { taux_inv: '>= 70%', rente: 'rente entière' },
+        ],
+        delai_attente: '6 mois d\'incapacité de travail d\'au moins 40% (LAI 28 al. 1 let. b)',
+        delai_carence: 'Rente versée au plus tôt 6 mois après le dépôt de la demande (LAI 29 al. 1)',
+        autorite: 'Office AI cantonal',
+      };
+    },
+    exceptions: [
+      {
+        id: 'social_ai_cotisation_insuffisante',
+        label: 'Cotisation inférieure à 3 ans — pas de rente ordinaire',
+        condition: (f) => f.annees_cotisation !== undefined && f.annees_cotisation < 3,
+        consequence: 'Sans 3 années complètes de cotisations, pas de rente ordinaire. Rente extraordinaire possible sous conditions restrictives (LAI 39).',
+        source_id: 'fedlex:rs831.20:lai-28',
+        blocks: true,
+      },
+    ],
+  },
+  {
+    id: 'social_chomage_conditions',
+    label: 'Indemnités chômage — conditions et délais',
+    base_legale: 'LACI 8-14',
+    source_ids: ['fedlex:rs837.0:laci-8', 'fedlex:rs837.0:laci-13', 'fedlex:rs837.0:laci-14'],
+    condition: (f) => f.domaine === 'social' && (f.demande_chomage || f.type_aide === 'chomage'),
+    consequence: (f) => {
+      const cotisation = Number.isFinite(f.mois_cotisation) ? f.mois_cotisation : null;
+      const age = Number.isFinite(f.age) ? f.age : null;
+      const enfants = Number.isFinite(f.nombre_enfants) ? f.nombre_enfants : 0;
+      let duree_max = null;
+      if (cotisation !== null && age !== null) {
+        if (cotisation >= 12 && cotisation < 18) duree_max = 260; // 260 IJ
+        else if (cotisation >= 18 && age < 55) duree_max = 400;
+        else if (cotisation >= 18 && age >= 55) duree_max = 520;
+        else if (cotisation >= 22 && enfants > 0) duree_max = 520;
+      }
+      return {
+        text: 'Pour avoir droit aux indemnités chômage, il faut avoir cotisé 12 mois dans les 2 dernières années, être apte au placement, et s\'être inscrit auprès de l\'ORP.',
+        conditions_cumulatives: [
+          'Perte de travail indemnisable (LACI 11)',
+          'Domicile en Suisse (LACI 8 al. 1 let. c)',
+          'Âge d\'assuré — avoir achevé la scolarité obligatoire, n\'ayant pas atteint l\'âge AVS',
+          'Avoir cotisé min. 12 mois dans les 2 dernières années (LACI 13)',
+          'Être apte au placement (LACI 15)',
+          'Satisfaire aux exigences de contrôle (ORP)',
+        ],
+        delai_inscription: 'Le jour même de la perte de travail, à l\'ORP',
+        delai_inscription_jours: 1,
+        mois_cotisation_declares: cotisation,
+        duree_max_ij_selon_profil: duree_max,
+        echelle_duree: [
+          { cotisation: '12-17 mois', age: '< 55 ans', ij_max: 260 },
+          { cotisation: '18+ mois', age: '< 55 ans', ij_max: 400 },
+          { cotisation: '22+ mois', age: '>= 55 ans OU enfants', ij_max: 520 },
+        ],
+        taux_ij: '80% du gain assuré (70% sans enfants et gain > CHF 3\'797)',
+        delai_attente: '5-20 jours selon gain (LACI 18)',
+        autorite: 'ORP / caisse de chômage',
+      };
+    },
+    exceptions: [
+      {
+        id: 'social_chomage_liberation_cotisation',
+        label: 'Libération des conditions de cotisation',
+        condition: (f) => f.motif_liberation_cotisation === true,
+        consequence: 'Certaines personnes sont libérées de la période de cotisation (formation, maladie de longue durée, divorce, séjour à l\'étranger pour un conjoint travaillant). Voir LACI 14.',
+        source_id: 'fedlex:rs837.0:laci-14',
+        blocks: false,
+      },
+    ],
+  },
+  {
     id: 'social_recours_decision_delai',
     label: 'Délai de recours contre une décision d\'aide sociale',
     base_legale: 'LASoc cantonales (typiquement 30 jours)',
@@ -738,6 +1252,69 @@ const VIOLENCE_RULES = [
         blocks: true,
       },
     ],
+  },
+  {
+    id: 'violence_mesures_eloignement',
+    label: 'Mesures d\'éloignement du conjoint violent',
+    base_legale: 'CC 28b + lois cantonales sur la violence domestique',
+    source_ids: ['fedlex:rs210:cc-28b', 'canton:ge-lvd', 'canton:vd-lvd'],
+    condition: (f) => f.domaine === 'violence' && (f.violence_domestique || f.mesures_eloignement),
+    consequence: (f) => ({
+      text: 'En cas de violence, de menaces ou de harcèlement, la victime peut demander des mesures d\'éloignement (interdiction de périmètre, interdiction de contact, expulsion du domicile commun).',
+      voie_civile: {
+        base: 'CC 28b',
+        autorite: 'Juge civil du domicile',
+        mesures: [
+          'Interdiction de s\'approcher (périmètre donné, typ. 100-500m)',
+          'Interdiction de fréquenter certains lieux (domicile, lieu de travail, école des enfants)',
+          'Interdiction de prendre contact (téléphone, courriel, réseaux sociaux)',
+        ],
+        procedure: 'Procédure sommaire + superprovisionnelles en urgence',
+      },
+      voie_policiere_cantonale: {
+        base: 'Lois cantonales (ex. LOVD VD, LVD GE)',
+        autorite: 'Police cantonale',
+        duree_initiale: '10 à 14 jours selon canton',
+        duree_jours_min: 10,
+        duree_jours_max: 14,
+        prolongation: 'Prolongation possible par le juge civil jusqu\'à 3 mois',
+      },
+      voie_penale: {
+        base: 'CPP + mesures provisionnelles',
+        autorite: 'Ministère public / juge des mesures de contrainte',
+      },
+      accompagnement: 'Centre LAVI cantonal, hébergement d\'urgence (maisons d\'accueil), plainte pénale possible séparément.',
+      urgence: f.urgence === true ? 'Police: 117. Ordonnance de protection d\'urgence possible par décision du commandant de police.' : 'Demande au juge civil en procédure sommaire.',
+    }),
+    exceptions: [],
+  },
+  {
+    id: 'violence_lavi_indemnite',
+    label: 'Indemnisation et réparation morale LAVI',
+    base_legale: 'LAVI 19-30',
+    source_ids: ['fedlex:rs312.5:lavi-19', 'fedlex:rs312.5:lavi-22', 'fedlex:rs312.5:lavi-23'],
+    condition: (f) => f.domaine === 'violence' && f.victime === true && (f.indemnite_lavi || f.demande_indemnite),
+    consequence: (f) => ({
+      text: 'La victime d\'une infraction commise en Suisse peut obtenir de l\'État une indemnité pour le dommage subi et une réparation morale (tort moral), si elle ne peut l\'obtenir de l\'auteur ou d\'un tiers.',
+      conditions_cumulatives: [
+        'Atteinte à l\'intégrité physique, psychique ou sexuelle',
+        'Infraction commise en Suisse',
+        'Dépôt de la demande au canton',
+      ],
+      prestations: [
+        { type: 'indemnite_dommage_materiel', plafond_chf: 120000, description: 'Indemnité pour dommage matériel (revenus, frais médicaux non couverts, etc.)' },
+        { type: 'reparation_morale_victime', plafond_chf: 70000, description: 'Réparation morale pour la victime directe (LAVI 23)' },
+        { type: 'reparation_morale_proches', plafond_chf: 35000, description: 'Réparation morale pour les proches de la victime (LAVI 23)' },
+      ],
+      subsidiarite: 'Les prestations LAVI sont subsidiaires à celles de l\'auteur, des assurances et d\'autres tiers (LAVI 4).',
+      conditions_revenu_indemnite: 'L\'indemnité pour dommage matériel est soumise à conditions de revenu (LAVI 6).',
+      delai: '5 ans dès la commission de l\'infraction (LAVI 25)',
+      delai_jours: 5 * 365,
+      autorite: f.canton
+        ? `Instance LAVI du canton de ${f.canton}`
+        : 'Instance cantonale LAVI (selon canton de l\'infraction ou de domicile)',
+    }),
+    exceptions: [],
   },
   {
     id: 'violence_lavi_aide_immediate',
@@ -794,6 +1371,80 @@ const ACCIDENT_RULES = [
   },
 ];
 
+const SUCCESSIONS_RULES = [
+  {
+    id: 'successions_reserve_hereditaire',
+    label: 'Réserve héréditaire — descendants et conjoint',
+    base_legale: 'CC 470-471 (révision 2023)',
+    source_ids: ['fedlex:rs210:cc-470', 'fedlex:rs210:cc-471'],
+    condition: (f) => f.domaine === 'successions' && (f.reserve_heritiere || f.heritage),
+    consequence: (f) => {
+      const a_descendants = f.descendants === true || (Number.isFinite(f.nombre_enfants) && f.nombre_enfants > 0);
+      const a_conjoint = f.conjoint === true || f.partenaire_enregistre === true;
+      const a_parents = f.parents_vivants === true;
+      // Depuis le 1er janvier 2023 (révision CC): descendants = 1/2, conjoint = 1/2, parents = 0.
+      const reserves = [];
+      let quotite_disponible = 1;
+      if (a_descendants) { reserves.push({ qui: 'descendants', reserve: '1/2 de leur part légale', fraction_num: 0.5, base_legale: 'CC 471 ch. 1' }); quotite_disponible -= 0.5; }
+      if (a_conjoint) { reserves.push({ qui: 'conjoint survivant / partenaire enregistré', reserve: '1/2 de sa part légale', fraction_num: 0.5, base_legale: 'CC 471 ch. 2' }); }
+      return {
+        text: 'Depuis la révision du droit successoral entrée en vigueur au 1er janvier 2023, la réserve des descendants est de 1/2 et celle du conjoint de 1/2. Les parents n\'ont plus de réserve.',
+        reserves_applicables: reserves,
+        parents_reserve: a_parents ? 'Aucune — supprimée par la révision 2023 (anciennement 1/2)' : null,
+        quotite_disponible_indicative: 'La quotité disponible augmente sensiblement — plus grande liberté testamentaire.',
+        action_en_reduction: 'L\'héritier lésé dans sa réserve peut agir en réduction dans l\'année suivant la connaissance de l\'atteinte, et au plus 10 ans (CC 533).',
+        delai_reduction_prescription_absolu: '10 ans',
+        delai_reduction_prescription_relatif: '1 an dès connaissance',
+        autorite: 'Tribunal civil du dernier domicile du défunt',
+      };
+    },
+    exceptions: [
+      {
+        id: 'successions_exheredation',
+        label: 'Exhérédation — suppression de la réserve pour motifs graves',
+        condition: (f) => f.exheredation === true,
+        consequence: 'Un héritier réservataire peut être exhérédé pour cause d\'infraction grave contre le défunt ou ses proches (CC 477), ou pour violation grave des obligations de famille. L\'exhérédation doit être motivée dans le testament.',
+        source_id: 'fedlex:rs210:cc-477',
+        blocks: false,
+      },
+    ],
+  },
+  {
+    id: 'successions_repudiation',
+    label: 'Répudiation de la succession — délai',
+    base_legale: 'CC 566-567',
+    source_ids: ['fedlex:rs210:cc-566', 'fedlex:rs210:cc-567'],
+    condition: (f) => f.domaine === 'successions' && (f.repudiation || f.succession_endettee),
+    consequence: (f) => ({
+      text: 'L\'héritier peut répudier la succession dans les 3 mois. Le délai court dès la connaissance du décès pour les héritiers légaux, et dès la notification officielle pour les héritiers institués par testament.',
+      delai_mois: 3,
+      delai_jours: 90,
+      point_depart: 'Connaissance du décès (héritiers légaux) ou notification officielle (héritiers institués)',
+      forme: 'Déclaration écrite ou orale à l\'autorité compétente (juge de paix / justice de paix / autorité successorale cantonale)',
+      effet: 'L\'héritier qui répudie est considéré comme n\'ayant jamais été héritier. Les héritiers suivants dans l\'ordre prennent sa place.',
+      prolongation: 'Prolongation possible par l\'autorité en cas de justes motifs (CC 567 al. 3)',
+      presomption_repudiation: 'Si la succession est notoirement insolvable au décès, elle est présumée répudiée (CC 566 al. 2) — aucune action requise.',
+      insolvabilite: f.succession_endettee === true ? 'Envisager le bénéfice d\'inventaire (CC 580) avant de décider.' : null,
+      benefice_inventaire: 'Demande dans le mois dès connaissance (CC 580) — permet de connaître l\'actif/passif avant de choisir.',
+      delai_benefice_inventaire_jours: 30,
+      autorite: f.canton
+        ? `Autorité successorale cantonale / Juge de paix du canton de ${f.canton}`
+        : 'Autorité successorale du dernier domicile du défunt',
+      attention: 'Passé 3 mois sans répudiation, l\'héritier est réputé avoir accepté (acceptation tacite) — il répond des dettes sur son propre patrimoine.',
+    }),
+    exceptions: [
+      {
+        id: 'successions_acceptation_tacite',
+        label: 'Acceptation tacite par immixtion',
+        condition: (f) => f.immixtion_heritier === true || f.a_dispose_biens_succession === true,
+        consequence: 'L\'héritier qui s\'immisce dans les affaires de la succession (prélève des biens, vend, dispose) perd le droit de répudier (CC 571 al. 2).',
+        source_id: 'fedlex:rs210:cc-571',
+        blocks: true,
+      },
+    ],
+  },
+];
+
 const ENTREPRISE_RULES = [
   {
     id: 'entreprise_faillite_opposition_delai',
@@ -839,6 +1490,7 @@ const ALL_RULES = [
   ...VIOLENCE_RULES,
   ...ACCIDENT_RULES,
   ...ENTREPRISE_RULES,
+  ...SUCCESSIONS_RULES,
 ];
 
 // ─── Public API ─────────────────────────────────────────────────
@@ -904,5 +1556,6 @@ export {
   VIOLENCE_RULES,
   ACCIDENT_RULES,
   ENTREPRISE_RULES,
+  SUCCESSIONS_RULES,
   execRule,
 };

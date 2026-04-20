@@ -17,9 +17,9 @@ import {
 // Phase Cortex — règles normatives exécutables
 // ------------------------------------------------------------
 // Réalité du commit (cf. CLAUDE.md) : après extension 2026-04,
-// 54 règles dans 14 domaines (ajout de SUCCESSIONS + rules
-// supplémentaires en bail/travail/dettes/assurances/famille/
-// etrangers/social/violence).
+// 76 règles dans 18 domaines (ajout de FISCAL/LPP/PPE/CIRCULATION
+// en plus de bail/travail/dettes supplémentaires + violence +
+// successions étendu).
 // Les seuils ci-dessous reflètent l'état réel exporté par le module
 // pour qu'ils soient une régression utile (et non une aspiration).
 // Si de nouvelles règles arrivent, on remontera les seuils.
@@ -27,23 +27,23 @@ import {
 
 describe('Phase Cortex — règles normatives (réalité du commit)', () => {
   describe('Compte total et distribution par domaine commité', () => {
-    it('ALL_RULES >= 50 (réel ≈ 54, seuil ajusté à la réalité)', () => {
+    it('ALL_RULES >= 75 (réel ≈ 76, seuil ajusté à la réalité)', () => {
       assert.ok(
-        ALL_RULES.length >= 50,
-        `Seulement ${ALL_RULES.length} règles, attendu >= 50`,
+        ALL_RULES.length >= 75,
+        `Seulement ${ALL_RULES.length} règles, attendu >= 75`,
       );
     });
 
-    it('bail: >= 9 règles', () => {
-      assert.ok(BAIL_RULES.length >= 9, `bail: ${BAIL_RULES.length} règles`);
+    it('bail: >= 10 règles', () => {
+      assert.ok(BAIL_RULES.length >= 10, `bail: ${BAIL_RULES.length} règles`);
     });
 
-    it('travail: >= 6 règles', () => {
-      assert.ok(TRAVAIL_RULES.length >= 6, `travail: ${TRAVAIL_RULES.length} règles`);
+    it('travail: >= 7 règles', () => {
+      assert.ok(TRAVAIL_RULES.length >= 7, `travail: ${TRAVAIL_RULES.length} règles`);
     });
 
-    it('dettes: >= 5 règles', () => {
-      assert.ok(DETTES_RULES.length >= 5, `dettes: ${DETTES_RULES.length} règles`);
+    it('dettes: >= 9 règles', () => {
+      assert.ok(DETTES_RULES.length >= 9, `dettes: ${DETTES_RULES.length} règles`);
     });
 
     it('transversal: >= 1 règle', () => {

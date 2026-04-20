@@ -289,6 +289,46 @@ const BAIL_RULES = [
       },
     ],
   },
+
+  // ─── Commission de conciliation obligatoire ─────────────────
+  {
+    id: 'bail_commission_conciliation',
+    label: 'Commission de conciliation en matière de bail — étape obligatoire',
+    base_legale: 'CO 274c + OBLF 5',
+    source_ids: ['fedlex:rs220:co-274c', 'fedlex:rs221.213.11:oblf-5'],
+    condition: (f) => f.domaine === 'bail' && (
+      f.litige_bail === true ||
+      f.conge_recu === true ||
+      f.augmentation_recue === true ||
+      f.defaut_signale === true ||
+      f.prolongation_demandee === true
+    ),
+    consequence: () => ({
+      text: 'Avant toute action au tribunal en matière de bail, les parties doivent saisir la commission de conciliation. La procédure est gratuite et orale.',
+      autorite: 'Commission de conciliation en matière de bail (cantonale)',
+      gratuit: true,
+      procedure: 'Orale et contradictoire',
+      duree_typique: 'Audience dans 2-4 mois',
+      issues_possibles: [
+        'Accord (transaction) — force exécutoire (CPC 208)',
+        'Proposition de jugement (valeurs litigieuses ≤ 5\'000 CHF) — CO 274e al. 3',
+        'Autorisation de procéder (si pas d\'accord) — délai 30 jours pour saisir le tribunal',
+      ],
+      delai_action_apres_autorisation: '30 jours dès délivrance de l\'autorisation de procéder (CPC 209 al. 3)',
+      delai_jours_action: 30,
+      obligatoire: 'Oui — l\'action directe devant le tribunal est irrecevable sans passage préalable (sauf cas expulsion motif de demeure CO 257d)',
+    }),
+    exceptions: [
+      {
+        id: 'bail_conciliation_exception_expulsion_demeure',
+        label: 'Expulsion pour demeure (CO 257d) — procédure sommaire directe',
+        condition: (f) => f.motif_conge === 'defaut_paiement' || f.motif_conge === 'demeure',
+        consequence: 'En cas de résiliation anticipée pour demeure du locataire (CO 257d), le bailleur peut saisir directement le juge en procédure sommaire (CPC 257) sans passer par la conciliation.',
+        source_id: 'fedlex:rs220:co-257d',
+        blocks: false,
+      },
+    ],
+  },
 ];
 
 // ═══════════════════════════════════════════════════════════════
@@ -430,6 +470,45 @@ const TRAVAIL_RULES = [
     ],
   },
   {
+    id: 'travail_protection_grossesse',
+    label: 'Protection contre le licenciement pendant la grossesse et le post-partum',
+    base_legale: 'CO 336c al. 1 let. c + LTr 35-35a',
+    source_ids: ['fedlex:rs220:co-336c', 'fedlex:rs822.11:ltr-35', 'fedlex:rs822.11:ltr-35a'],
+    condition: (f) => f.domaine === 'travail' && (f.grossesse === true || f.accouchement_recent === true),
+    consequence: (f) => ({
+      text: 'Pendant la grossesse et les 16 semaines qui suivent l\'accouchement, le licenciement donné par l\'employeur est NUL (sans effet juridique). Le congé donné pendant une période protégée précédant la grossesse voit son délai suspendu.',
+      duree_protection_postnatale_semaines: 16,
+      duree_protection_postnatale_jours: 112,
+      debut_protection: 'Premier jour de la grossesse (dès conception, même si inconnue à l\'employeur au moment du congé)',
+      fin_protection: '16 semaines après l\'accouchement',
+      consequence_violation: 'Le licenciement est NUL (CO 336c al. 2). La travailleuse reste employée et a droit au salaire.',
+      conge_maternite_payant: '14 semaines d\'allocation pour perte de gain maternité (LAPG 16b-16h) — 80% du revenu',
+      interdiction_travailler_postnatale: 'Interdiction absolue de travailler pendant les 8 semaines suivant l\'accouchement (LTr 35a al. 3)',
+      protection_travaux_penibles: 'Dispense ou aménagement pour travaux pénibles/dangereux (LTr 35 + OLT1 62)',
+      grossesse_declaree: f.grossesse === true,
+      accouchement_recent: f.accouchement_recent === true,
+      pause_allaitement: 'Jusqu\'à 1 an après accouchement: temps d\'allaitement rémunéré (LTr 35a al. 2 + OLT1 60)',
+    }),
+    exceptions: [
+      {
+        id: 'travail_grossesse_periode_essai',
+        label: 'Pas de protection pendant la période d\'essai',
+        condition: (f) => f.periode_essai === true,
+        consequence: 'La protection contre le licenciement en cas de grossesse ne s\'applique pas pendant le temps d\'essai (CO 336c al. 1).',
+        source_id: 'fedlex:rs220:co-336c',
+        blocks: true,
+      },
+      {
+        id: 'travail_grossesse_resiliation_immediate',
+        label: 'Résiliation immédiate pour justes motifs non bloquée',
+        condition: (f) => f.justes_motifs === true,
+        consequence: 'La protection ne s\'applique pas en cas de résiliation immédiate pour justes motifs (CO 337). L\'employeur doit prouver les justes motifs.',
+        source_id: 'fedlex:rs220:co-337',
+        blocks: false,
+      },
+    ],
+  },
+  {
     id: 'travail_salaire_impaye_mise_en_demeure',
     label: 'Mise en demeure pour salaire impayé',
     base_legale: 'CO 102, CO 337',
@@ -554,6 +633,142 @@ const DETTES_RULES = [
         condition: (f) => f.creance_alimentaire === true,
         consequence: 'Pour les créances d\'aliments courants des 12 derniers mois, le minimum vital peut être entamé (LP 93 al. 3 et jurisprudence), dans les limites du minimum absolu.',
         source_id: 'fedlex:rs281.1:lp-93',
+        blocks: false,
+      },
+    ],
+  },
+  {
+    id: 'dettes_mainlevee_provisoire',
+    label: 'Mainlevée provisoire de l\'opposition — reconnaissance de dette',
+    base_legale: 'LP 82',
+    source_ids: ['fedlex:rs281.1:lp-82'],
+    condition: (f) => f.domaine === 'dettes' && (f.mainlevee_provisoire_requise === true || f.reconnaissance_dette_signee === true),
+    consequence: (f) => ({
+      text: 'Si le créancier dispose d\'une reconnaissance de dette écrite et signée, il peut requérir la mainlevée provisoire de l\'opposition. Le juge ordonne la mainlevée sauf si le débiteur rend immédiatement vraisemblable sa libération.',
+      autorite: 'Juge de la mainlevée (tribunal de district / arrondissement)',
+      procedure: 'Procédure sommaire (CPC 251 let. a)',
+      titre_requis: 'Reconnaissance de dette écrite et signée par le débiteur (avec montant déterminé)',
+      delai_jugement: 'Typiquement 1-3 mois',
+      moyens_debiteur: [
+        'Rendre vraisemblable la libération (paiement, compensation, remise de dette)',
+        'Contester l\'authenticité de la signature',
+        'Invoquer un vice du consentement (erreur, dol, crainte fondée)',
+      ],
+      consequence_mainlevee_accordee: 'Le créancier peut requérir la continuation de la poursuite (saisie ou faillite). Le débiteur peut encore agir en libération de dette (LP 83 al. 2) dans les 20 jours.',
+      emolument_typique_chf: '100-400 CHF selon valeur litigieuse',
+      recours: 'Recours cantonal (CPC 319) dans les 10 jours',
+      delai_recours_jours: 10,
+    }),
+    exceptions: [
+      {
+        id: 'dettes_mainlevee_provisoire_libération_vraisemblable',
+        label: 'Libération rendue vraisemblable = mainlevée refusée',
+        condition: (f) => f.liberation_vraisemblable === true || f.paiement_prouve === true,
+        consequence: 'Si le débiteur rend immédiatement vraisemblable sa libération (quittance, reçu, preuve de compensation), la mainlevée provisoire est refusée (LP 82 al. 2).',
+        source_id: 'fedlex:rs281.1:lp-82',
+        blocks: true,
+      },
+    ],
+  },
+  {
+    id: 'dettes_mainlevee_definitive',
+    label: 'Mainlevée définitive de l\'opposition — jugement exécutoire',
+    base_legale: 'LP 80-81',
+    source_ids: ['fedlex:rs281.1:lp-80', 'fedlex:rs281.1:lp-81'],
+    condition: (f) => f.domaine === 'dettes' && (f.mainlevee_definitive_requise === true || f.jugement_executoire === true || f.decision_administrative_executoire === true),
+    consequence: () => ({
+      text: 'Lorsque le créancier dispose d\'un jugement exécutoire ou d\'une décision administrative assimilée, il peut requérir la mainlevée définitive. Les moyens du débiteur sont très limités.',
+      autorite: 'Juge de la mainlevée (tribunal de district / arrondissement)',
+      procedure: 'Procédure sommaire (CPC 251 let. a)',
+      titres_admissibles: [
+        'Jugement suisse exécutoire (LP 80 al. 1)',
+        'Jugement étranger reconnu selon la CL ou la LDIP',
+        'Décision administrative exécutoire assimilée (LP 80 al. 2 — AVS, AI, LAA, impôts, etc.)',
+        'Sentence arbitrale exécutoire',
+        'Transaction judiciaire ou extrajudiciaire homologuée',
+      ],
+      moyens_debiteur: [
+        'Prouver par titre l\'extinction ou le sursis de la dette depuis le jugement (LP 81 al. 1)',
+        'Invoquer la prescription depuis le jugement',
+        'Opposer la compensation, mais uniquement si reconnue par titre',
+      ],
+      consequence_mainlevee: 'Mainlevée définitive — aucune action en libération de dette possible. Le créancier peut continuer la poursuite.',
+      recours: 'Recours cantonal (CPC 319) dans les 10 jours',
+      delai_recours_jours: 10,
+    }),
+    exceptions: [
+      {
+        id: 'dettes_mainlevee_definitive_extinction_prouvee',
+        label: 'Extinction prouvée par titre depuis le jugement',
+        condition: (f) => f.extinction_posterieure_prouvee === true,
+        consequence: 'Si le débiteur prouve par titre l\'extinction, le sursis ou la prescription de la dette survenus après le jugement, la mainlevée définitive est refusée (LP 81 al. 1).',
+        source_id: 'fedlex:rs281.1:lp-81',
+        blocks: true,
+      },
+    ],
+  },
+  {
+    id: 'dettes_action_liberation_dette',
+    label: 'Action en libération de dette après mainlevée provisoire',
+    base_legale: 'LP 83',
+    source_ids: ['fedlex:rs281.1:lp-83'],
+    condition: (f) => f.domaine === 'dettes' && (f.mainlevee_provisoire_prononcee === true || f.action_liberation_dette === true),
+    consequence: () => ({
+      text: 'Dans les 20 jours dès la notification du jugement de mainlevée provisoire, le débiteur peut agir en libération de dette devant le juge ordinaire. L\'action inverse les rôles procéduraux : le débiteur est demandeur.',
+      delai: '20 jours',
+      delai_jours: 20,
+      point_depart: 'notification du jugement de mainlevée provisoire',
+      autorite: 'Tribunal ordinaire du for de la poursuite (CPC 46)',
+      procedure: 'Procédure ordinaire ou simplifiée selon valeur litigieuse',
+      effet: 'Suspend la continuation de la poursuite jusqu\'au jugement au fond (LP 83 al. 2). La poursuite ne peut être continuée qu\'après jugement définitif de libération rejeté.',
+      fardeau_preuve: 'Le débiteur (demandeur) doit prouver qu\'il ne doit pas le montant réclamé. Inversion des rôles probatoires.',
+      consequence_passe_delai: 'Sans action dans les 20 jours, la mainlevée provisoire devient définitive — la poursuite peut continuer sans restriction.',
+      frais: 'Avance de frais et dépens à la charge du débiteur (fardeau de la preuve et du procès)',
+    }),
+    exceptions: [
+      {
+        id: 'dettes_liberation_restitution_delai',
+        label: 'Restitution de délai en cas d\'empêchement non fautif',
+        condition: (f) => f.empechement_non_fautif === true,
+        consequence: 'Le délai de 20 jours peut faire l\'objet d\'une restitution en cas d\'empêchement non fautif (CPC 148), par requête motivée dans les 10 jours après la fin de l\'empêchement.',
+        source_id: 'fedlex:rs272:cpc-148',
+        blocks: false,
+      },
+    ],
+  },
+  {
+    id: 'dettes_sequestre_contestation',
+    label: 'Contestation d\'un séquestre — opposition et recours',
+    base_legale: 'LP 278',
+    source_ids: ['fedlex:rs281.1:lp-278'],
+    condition: (f) => f.domaine === 'dettes' && (f.sequestre_execute === true || f.ordonnance_sequestre_recue === true),
+    consequence: () => ({
+      text: 'Le débiteur ou un tiers touché par un séquestre peut former opposition à l\'ordonnance de séquestre dans les 10 jours dès la connaissance du séquestre. Le recours contre la décision sur opposition s\'exerce dans les 10 jours également.',
+      delai_opposition: '10 jours',
+      delai_jours_opposition: 10,
+      point_depart_opposition: 'Connaissance du séquestre (notification du procès-verbal ou de l\'ordonnance)',
+      autorite_opposition: 'Juge qui a ordonné le séquestre',
+      procedure: 'Procédure sommaire (CPC 251 let. a)',
+      moyens: [
+        'Contester la créance alléguée (existence, quotité, exigibilité)',
+        'Contester les cas de séquestre (LP 271)',
+        'Contester la quotité des biens séquestrés',
+        'Invoquer l\'insaisissabilité de certains biens',
+      ],
+      delai_recours: '10 jours dès notification de la décision sur opposition',
+      delai_jours_recours: 10,
+      autorite_recours: 'Autorité cantonale supérieure (tribunal cantonal)',
+      validation_sequestre: 'Le créancier doit valider le séquestre par une poursuite ou une action dans les 10 jours (LP 279), faute de quoi le séquestre tombe.',
+      delai_validation_creancier_jours: 10,
+      surete: 'Le juge peut exiger des sûretés du créancier pour le dommage éventuel (LP 273)',
+    }),
+    exceptions: [
+      {
+        id: 'dettes_sequestre_tiers_revendication',
+        label: 'Tiers propriétaire de biens séquestrés — revendication',
+        condition: (f) => f.tiers_proprietaire === true,
+        consequence: 'Un tiers qui revendique la propriété d\'un bien séquestré peut agir par voie de revendication (LP 106-109) dans les 10 jours dès connaissance du séquestre.',
+        source_id: 'fedlex:rs281.1:lp-106',
         blocks: false,
       },
     ],
@@ -1317,6 +1532,53 @@ const VIOLENCE_RULES = [
     exceptions: [],
   },
   {
+    id: 'violence_protection_ordonnance',
+    label: 'Ordonnance de protection civile (superprovisionnelle / provisionnelle)',
+    base_legale: 'CC 28b + CPC 261-265',
+    source_ids: ['fedlex:rs210:cc-28b', 'fedlex:rs272:cpc-261', 'fedlex:rs272:cpc-265'],
+    condition: (f) => f.domaine === 'violence' && (f.ordonnance_protection === true || f.mesures_superprovisionnelles === true),
+    consequence: (f) => ({
+      text: 'Le juge civil peut prononcer des mesures superprovisionnelles (sans audition de la partie adverse) en cas d\'urgence particulière, suivies d\'une audience contradictoire sous 10 jours. Une ordonnance de police administrative cantonale peut prendre le relais pour 10-14 jours.',
+      procedure_judiciaire: {
+        base: 'CC 28b + CPC 261-265',
+        autorite: 'Juge civil du domicile ou du lieu de l\'acte',
+        mesures_superprovisionnelles: {
+          delai_prononce: 'Sans délai (heures — même jours fériés)',
+          sans_audition: true,
+          duree: '10 jours maximum avant audience contradictoire (CPC 265 al. 2)',
+          delai_jours_audience: 10,
+        },
+        mesures_provisionnelles: {
+          procedure: 'Procédure sommaire contradictoire (CPC 253)',
+          duree: 'Jusqu\'au jugement au fond ou expiration fixée',
+          renouvelable: true,
+        },
+        mesures_possibles: [
+          'Interdiction d\'approcher (périmètre — typiquement 100-500m)',
+          'Interdiction de fréquenter certains lieux (domicile, travail, école)',
+          'Interdiction de prendre contact (physique, téléphone, email, réseaux sociaux)',
+          'Attribution exclusive du logement commun',
+          'Expulsion du domicile commun',
+        ],
+      },
+      voie_police_cantonale: {
+        base: 'Lois cantonales sur la violence domestique (LOVD VD, LVD GE, etc.)',
+        autorite: 'Police cantonale (commandement)',
+        duree_initiale_jours: 10,
+        duree_max_jours: 14,
+        prolongation: 'Prolongation jusqu\'à 3 mois possible par requête au juge civil',
+        delai_recours_cantonal: 'Typiquement 10-30 jours selon canton',
+      },
+      sanction_violation: 'La violation de l\'ordonnance est punissable (CP 292 — insoumission à décision de l\'autorité) : amende ou emprisonnement.',
+      article_cp_violation: 'CP 292',
+      delai_recours_judiciaire: '10 jours dès notification de l\'ordonnance (CPC 319)',
+      delai_jours_recours: 10,
+      urgence: f.urgence === true ? 'Police 117 en cas de danger immédiat. Ordonnance de protection d\'urgence possible.' : 'Demande au juge civil.',
+      cumul_penal: 'Une plainte pénale (lésions, menaces, contrainte) peut être déposée en parallèle — indépendante de la voie civile.',
+    }),
+    exceptions: [],
+  },
+  {
     id: 'violence_lavi_aide_immediate',
     label: 'Aide immédiate LAVI sans conditions financières',
     base_legale: 'LAVI 13',
@@ -1445,6 +1707,680 @@ const SUCCESSIONS_RULES = [
   },
 ];
 
+// Extension SUCCESSIONS
+SUCCESSIONS_RULES.push(
+  {
+    id: 'successions_action_reduction',
+    label: 'Action en réduction — protection des réservataires',
+    base_legale: 'CC 522-533',
+    source_ids: ['fedlex:rs210:cc-522', 'fedlex:rs210:cc-527', 'fedlex:rs210:cc-533'],
+    condition: (f) => f.domaine === 'successions' && (f.reserve_atteinte === true || f.action_reduction === true || f.liberalite_excessive === true),
+    consequence: () => ({
+      text: 'L\'héritier réservataire dont la réserve est lésée peut agir en réduction contre les libéralités entre vifs et les dispositions à cause de mort qui excèdent la quotité disponible.',
+      delai_relatif: '1 an dès connaissance de la lésion de la réserve',
+      delai_jours_relatif: 365,
+      delai_absolu: '10 ans dès l\'ouverture de la succession',
+      delai_jours_absolu: 3650,
+      autorite: 'Tribunal civil du dernier domicile du défunt',
+      procedure: 'Procédure ordinaire',
+      ordre_reduction: [
+        '1. Dispositions à cause de mort (testament / pacte successoral)',
+        '2. Libéralités entre vifs les plus récentes d\'abord',
+        '3. Libéralités plus anciennes (remonter dans le temps, CC 532)',
+      ],
+      liberalites_reductibles: [
+        'Donations faites dans les 5 ans précédant le décès (CC 527 ch. 3)',
+        'Libéralités manifestement destinées à éluder les règles de la réserve (CC 527 ch. 4)',
+        'Dotations, avancements d\'hoirie révocables, abandons de droits de réversion',
+        'Toute libéralité au conjoint dans les 5 ans précédant le décès',
+      ],
+      effet: 'Le bénéficiaire de la libéralité doit restituer (en nature ou en valeur) ce qui dépasse la quotité disponible.',
+      valeur_determinante: 'Valeur des biens au moment du décès (CC 537 al. 2)',
+    }),
+    exceptions: [
+      {
+        id: 'successions_reduction_exheredation_valable',
+        label: 'Exhérédation valable bloque l\'action',
+        condition: (f) => f.exheredation_valable === true,
+        consequence: 'Si l\'héritier a été valablement exhérédé (motifs CC 477), il perd sa qualité de réservataire et son droit à la réduction.',
+        source_id: 'fedlex:rs210:cc-477',
+        blocks: true,
+      },
+    ],
+  },
+  {
+    id: 'successions_exheredation_motifs',
+    label: 'Exhérédation — motifs limitatifs et forme',
+    base_legale: 'CC 477-480',
+    source_ids: ['fedlex:rs210:cc-477', 'fedlex:rs210:cc-478', 'fedlex:rs210:cc-479'],
+    condition: (f) => f.domaine === 'successions' && (f.exheredation === true || f.exheredation_envisagee === true),
+    consequence: () => ({
+      text: 'Un héritier réservataire ne peut être privé de sa réserve que dans des cas limitativement énumérés : infraction grave contre le défunt ou un proche, ou violation grave d\'obligations légales de famille.',
+      motifs_limitatifs: [
+        'Infraction grave contre le défunt ou l\'un de ses proches (CC 477 ch. 1) — p.ex. crime/délit grave',
+        'Violation grave des obligations que la loi lui impose envers le défunt ou sa famille (CC 477 ch. 2) — p.ex. abandon, défaut d\'entretien',
+      ],
+      exheredation_surendettement: 'L\'exhérédation d\'un descendant surendetté (CC 480) est possible pour protéger ses descendants — la moitié de la part va aux enfants du descendant exhérédé.',
+      forme_obligatoire: 'L\'exhérédation doit être prononcée dans un testament ou un pacte successoral. Elle doit indiquer le motif de manière suffisamment précise.',
+      fardeau_preuve: 'Celui qui se prévaut de l\'exhérédation doit prouver le motif (CC 479 al. 2). En cas de doute sur la validité, l\'exhérédation est inopérante.',
+      effet: 'L\'héritier exhérédé perd sa réserve ET sa part légale. Il est considéré comme prédécédé (sauf substitution).',
+      contestation: 'L\'héritier exhérédé peut contester la validité de l\'exhérédation par une action en nullité ou en réduction dans le délai de CC 533 (1 an / 10 ans).',
+      autorite: 'Tribunal civil du dernier domicile du défunt',
+    }),
+    exceptions: [
+      {
+        id: 'successions_exheredation_pardon',
+        label: 'Pardon ultérieur = exhérédation caduque',
+        condition: (f) => f.pardon_defunt === true,
+        consequence: 'Si le défunt a pardonné à l\'héritier après la cause d\'exhérédation (manifesté par acte ou comportement), l\'exhérédation est caduque.',
+        source_id: 'fedlex:rs210:cc-477',
+        blocks: true,
+      },
+    ],
+  },
+  {
+    id: 'successions_rapport_liberalites',
+    label: 'Rapport des libéralités entre descendants',
+    base_legale: 'CC 626-632',
+    source_ids: ['fedlex:rs210:cc-626', 'fedlex:rs210:cc-628', 'fedlex:rs210:cc-630'],
+    condition: (f) => f.domaine === 'successions' && (f.rapport_liberalites === true || f.donation_descendant === true),
+    consequence: (f) => ({
+      text: 'Les descendants qui viennent à la succession doivent rapporter à la masse successorale toutes les libéralités reçues à titre d\'avancement d\'hoirie (dot, frais d\'établissement, abandon de biens, remise de dette), sauf dispense expresse du disposant.',
+      presomption: 'Les libéralités aux descendants sont présumées rapportables (CC 626 al. 2).',
+      liberalites_rapportables: [
+        'Avancements d\'hoirie (dot, installation, donations)',
+        'Frais d\'établissement (formation exceptionnelle, installation professionnelle)',
+        'Abandon de biens, remise de dette',
+        'Constitutions de revenus, dotations',
+      ],
+      non_rapportables_sauf_disposition_contraire: [
+        'Cadeaux d\'usage (anniversaires, Noël)',
+        'Frais d\'entretien et d\'éducation normaux (CC 631)',
+      ],
+      dispense_possible: 'Le défunt peut dispenser expressément du rapport (dans l\'acte de libéralité ou par testament). La dispense ne peut porter atteinte aux réserves (CC 626 al. 2).',
+      valeur_rapport: 'Valeur de la libéralité au moment du décès (CC 630 al. 1), sauf convention contraire. Les plus-values et moins-values non imputables au bénéficiaire sont prises en compte.',
+      modalites_rapport: [
+        'Rapport en nature (CC 628 al. 1) — au choix de l\'héritier',
+        'Rapport en moins-prenant (imputation sur la part) — par défaut si valeur ≤ part héréditaire',
+        'Si valeur > part : restitution de l\'excédent (CC 629)',
+      ],
+      descendants_exclus: 'Les descendants qui répudient ou sont exhérédés ne sont pas tenus de rapporter.',
+      autorite: 'Tribunal civil du dernier domicile du défunt (en cas de litige au partage)',
+      delai_prescription: 'Pas de prescription propre — l\'action en partage est imprescriptible (CC 604)',
+    }),
+    exceptions: [
+      {
+        id: 'successions_rapport_non_descendants',
+        label: 'Héritiers non descendants — pas de rapport par défaut',
+        condition: (f) => f.rapport_heritiers_non_descendants === true,
+        consequence: 'Les héritiers autres que les descendants (conjoint, frères/soeurs, etc.) ne sont tenus au rapport que si le défunt l\'a expressément prescrit (CC 626 al. 1 a contrario).',
+        source_id: 'fedlex:rs210:cc-626',
+        blocks: true,
+      },
+    ],
+  },
+);
+
+// ═══════════════════════════════════════════════════════════════
+// FISCAL RULES — impôts directs et LIFD/LHID
+// ═══════════════════════════════════════════════════════════════
+
+const FISCAL_RULES = [
+  {
+    id: 'fiscal_taxation_reclamation',
+    label: 'Réclamation contre la décision de taxation',
+    base_legale: 'LIFD 132 + LHID 48',
+    source_ids: ['fedlex:rs642.11:lifd-132', 'fedlex:rs642.14:lhid-48'],
+    condition: (f) => f.domaine === 'fiscal' && (f.decision_taxation === true || f.reclamation_fiscale === true),
+    consequence: (f) => ({
+      text: 'Le contribuable peut adresser une réclamation écrite à l\'autorité de taxation dans les 30 jours dès la notification de la décision. La réclamation doit être motivée et, le cas échéant, accompagnée des moyens de preuve.',
+      delai: '30 jours',
+      delai_jours: 30,
+      point_depart: 'notification de la décision de taxation',
+      autorite: f.canton
+        ? `Administration fiscale cantonale de ${f.canton} (impôt cantonal et fédéral direct)`
+        : 'Administration cantonale des contributions (impôt cantonal et IFD)',
+      forme: 'Écrite, motivée, signée',
+      contenu: [
+        'Désignation de la décision attaquée',
+        'Conclusions (quel revenu/fortune rectifié)',
+        'Motivation (faits et droit)',
+        'Offres de preuves (pièces, témoins)',
+      ],
+      gratuit: true,
+      effet: 'Effet dévolutif — l\'autorité réexamine toute la taxation et peut procéder à la reformatio in pejus (CC LIFD 135 al. 1).',
+      decision: 'Décision sur réclamation motivée par l\'autorité',
+      recours_suivant: 'Recours à la commission cantonale de recours en matière fiscale ou au tribunal administratif, 30 jours dès notification de la décision sur réclamation (LIFD 140 + LHID 50)',
+      delai_recours_suivant_jours: 30,
+      taxation_office_sans_retour: 'Si la taxation a été notifiée d\'office, la réclamation doit être motivée sous peine d\'irrecevabilité (LIFD 132 al. 3)',
+    }),
+    exceptions: [
+      {
+        id: 'fiscal_taxation_office_motivation',
+        label: 'Taxation d\'office — réclamation doit démontrer le caractère manifestement inexact',
+        condition: (f) => f.taxation_office === true,
+        consequence: 'Contre une taxation d\'office (défaut de déclaration), la réclamation n\'est recevable que si elle démontre le caractère manifestement inexact (LIFD 132 al. 3). Le contribuable doit produire les éléments manquants.',
+        source_id: 'fedlex:rs642.11:lifd-132',
+        blocks: false,
+      },
+    ],
+  },
+  {
+    id: 'fiscal_remise_impot',
+    label: 'Demande de remise d\'impôt pour situation financière difficile',
+    base_legale: 'LIFD 167-167g + LHID 47',
+    source_ids: ['fedlex:rs642.11:lifd-167', 'fedlex:rs642.14:lhid-47'],
+    condition: (f) => f.domaine === 'fiscal' && (f.demande_remise === true || f.difficulte_financiere_fiscale === true),
+    consequence: (f) => ({
+      text: 'Le contribuable qui, par suite de pertes ou de circonstances extraordinaires (maladie, accident, charges de famille, chômage), se trouve dans le dénuement ou dont l\'acquittement de l\'impôt entraînerait pour lui des conséquences très dures peut demander la remise totale ou partielle de l\'impôt.',
+      autorite_ifd: 'Administration fédérale des contributions (AFC) — après préavis du canton',
+      autorite_canton: f.canton
+        ? `Service cantonal des contributions / Commission de remise du canton de ${f.canton}`
+        : 'Autorité cantonale de remise (service des contributions)',
+      conditions_cumulatives: [
+        'Impôt dû devenu définitif (décision entrée en force)',
+        'Situation financière actuelle (pas prospective) justifiant le dénuement',
+        'Acquittement entraînerait des conséquences très dures (disproportion entre dette et capacité)',
+        'Pas de faute propre du contribuable (pas de manquement grave)',
+      ],
+      exclusions_typiques: [
+        'Impôts anticipés et retenus à la source (pas de remise IA LIFD 167b al. 3)',
+        'Dettes aliénées par cession ou actes de défaut de biens',
+      ],
+      delai: 'Pas de délai légal — demande possible tant que l\'impôt n\'est pas payé / prescrit',
+      gratuit: 'Oui — pas d\'émolument pour la demande',
+      forme: 'Écrite, motivée, accompagnée de pièces (budget familial, revenus, charges, dettes, fortune, attestations)',
+      decision_sur_recours: 'La décision de refus peut faire l\'objet d\'un recours (LIFD 167g) ; la décision d\'octroi n\'est pas attaquable par des tiers.',
+      effet: 'Remise totale ou partielle — le solde est éteint. Peut s\'accompagner de plans de paiement.',
+      note_interet_public: 'L\'autorité tient compte de l\'intérêt public (équité fiscale) et évite de créer un précédent abusif.',
+    }),
+    exceptions: [
+      {
+        id: 'fiscal_remise_faute_grave',
+        label: 'Faute grave du contribuable bloque la remise',
+        condition: (f) => f.faute_grave_contribuable === true || f.soustraction_fiscale === true,
+        consequence: 'En cas de faute grave du contribuable (fraude fiscale, soustraction répétée, dissimulation manifeste), la remise est en principe refusée (LIFD 167 al. 1 a contrario).',
+        source_id: 'fedlex:rs642.11:lifd-167',
+        blocks: true,
+      },
+    ],
+  },
+  {
+    id: 'fiscal_rappel_impot',
+    label: 'Rappel d\'impôt — prescription et droit d\'être entendu',
+    base_legale: 'LIFD 151-153 + LHID 53',
+    source_ids: ['fedlex:rs642.11:lifd-151', 'fedlex:rs642.11:lifd-152', 'fedlex:rs642.11:lifd-153', 'fedlex:rs642.14:lhid-53'],
+    condition: (f) => f.domaine === 'fiscal' && (f.rappel_impot === true || f.procedure_rappel === true),
+    consequence: (f) => ({
+      text: 'Si des faits ou moyens de preuve inconnus de l\'autorité au moment de la taxation permettent de constater que celle-ci est incomplète, une procédure de rappel d\'impôt peut être ouverte. Le contribuable a un droit d\'être entendu complet avant toute décision.',
+      prescription_droit_ouvrir: '10 ans dès la fin de la période fiscale (LIFD 152 al. 1)',
+      prescription_droit_ouvrir_annees: 10,
+      prescription_fixation: '15 ans dès la fin de la période fiscale (LIFD 152 al. 3) — délai maximum',
+      prescription_fixation_annees: 15,
+      conditions_ouverture: [
+        'Faits ou moyens de preuve inconnus de l\'autorité au moment de la taxation',
+        'Taxation incomplète résultant de ces faits',
+        'Pas de faute de l\'autorité dans l\'incomplétude (si l\'autorité aurait pu se rendre compte → impossible)',
+      ],
+      droit_etre_entendu: 'Obligatoire — le contribuable reçoit notification écrite de l\'ouverture et peut se déterminer par écrit sur les faits et leur imputabilité (LIFD 153)',
+      forme_ouverture: 'Notification écrite avec désignation des années et faits, accompagnée d\'un délai pour se déterminer (typiquement 30 jours)',
+      distinction_soustraction: 'Le rappel n\'est PAS une sanction pénale. Si soustraction intentionnelle, une amende fiscale (LIFD 175) s\'ajoute — procédure pénale fiscale distincte.',
+      impact: 'L\'impôt supplémentaire est dû avec intérêts moratoires. Pas de remise automatique.',
+      autorite: f.canton
+        ? `Administration cantonale des contributions de ${f.canton}`
+        : 'Administration cantonale des contributions',
+      denonciation_spontanee: 'Le contribuable peut bénéficier d\'une dénonciation spontanée non punissable (une fois dans la vie, LIFD 175 al. 3) — remise de l\'amende mais rappel d\'impôt dû avec intérêts.',
+    }),
+    exceptions: [
+      {
+        id: 'fiscal_rappel_prescription_acquise',
+        label: 'Prescription de 15 ans acquise — rappel impossible',
+        condition: (f) => f.annees_depuis_periode !== undefined && f.annees_depuis_periode > 15,
+        consequence: 'Passé 15 ans dès la fin de la période fiscale, la prescription absolue est acquise — aucun rappel d\'impôt n\'est plus possible (LIFD 152 al. 3).',
+        source_id: 'fedlex:rs642.11:lifd-152',
+        blocks: true,
+      },
+      {
+        id: 'fiscal_rappel_faute_autorite',
+        label: 'Faute de l\'autorité exclut le rappel',
+        condition: (f) => f.faute_autorite_taxation === true,
+        consequence: 'Si l\'autorité aurait pu se rendre compte des faits lors de la taxation (éléments apparents dans la déclaration ou les annexes), le rappel d\'impôt est exclu — seule une révision en défaveur du contribuable est en principe impossible.',
+        source_id: 'fedlex:rs642.11:lifd-151',
+        blocks: true,
+      },
+    ],
+  },
+];
+
+// ═══════════════════════════════════════════════════════════════
+// LPP RULES — prévoyance professionnelle (retraite)
+// ═══════════════════════════════════════════════════════════════
+
+const LPP_RULES = [
+  {
+    id: 'lpp_prestation_invalidite',
+    label: 'Prestation d\'invalidité LPP — coordination avec AI',
+    base_legale: 'LPP 23-26',
+    source_ids: ['fedlex:rs831.40:lpp-23', 'fedlex:rs831.40:lpp-24', 'fedlex:rs831.40:lpp-26'],
+    condition: (f) => f.domaine === 'lpp' && (f.invalidite === true || f.rente_invalidite_lpp === true),
+    consequence: (f) => {
+      const taux_ai = Number.isFinite(f.taux_invalidite_ai) ? f.taux_invalidite_ai : null;
+      let droit_lpp = null;
+      let quotite = null;
+      if (taux_ai !== null) {
+        if (taux_ai < 40) { droit_lpp = false; quotite = 0; }
+        else if (taux_ai < 50) { droit_lpp = true; quotite = taux_ai; }
+        else if (taux_ai < 70) { droit_lpp = true; quotite = taux_ai; }
+        else { droit_lpp = true; quotite = 100; }
+      }
+      return {
+        text: 'L\'assuré qui est invalide à 40% au moins au sens de l\'AI a droit à des prestations d\'invalidité de la prévoyance professionnelle obligatoire. La rente LPP est coordonnée avec la rente AI — décision AI = liante pour l\'institution de prévoyance.',
+        seuil_minimum: '40% d\'invalidité AI (LPP 23)',
+        coordination_ai: 'La décision de l\'Office AI sur le taux est liante pour l\'institution LPP (sauf erreur manifeste). L\'institution peut intervenir dans la procédure AI (LAI 49).',
+        echelle_quotite: [
+          { taux_ai: '< 40%', rente_lpp: 'aucune' },
+          { taux_ai: '40-49%', rente_lpp: 'rente partielle linéaire' },
+          { taux_ai: '50-69%', rente_lpp: 'rente partielle linéaire' },
+          { taux_ai: '>= 70%', rente_lpp: 'rente entière' },
+        ],
+        taux_ai_declare: taux_ai,
+        droit_probable_lpp: droit_lpp,
+        quotite_rente_percent: quotite,
+        debut_prestations: 'Dès la naissance du droit à une rente AI (LPP 26 al. 1) — décision AI',
+        montant_minimum_obligatoire: 'LPP obligatoire: rente calculée sur l\'avoir de vieillesse projeté jusqu\'à l\'âge de référence, avec taux de conversion 6.8% (LPP 14)',
+        sur_obligatoire: 'Les règlements LPP enveloppants (avec part sur-obligatoire) peuvent prévoir des prestations plus élevées — consulter le règlement de la caisse.',
+        autorite: 'Institution de prévoyance (caisse LPP) de l\'employeur au moment de la survenance de l\'incapacité de travail durable',
+        recours: 'Action au tribunal cantonal des assurances (LPP 73) — sans épuisement préalable d\'opposition',
+        prescription_action: '5 ans pour les prestations périodiques, 10 ans pour le capital (LPP 41)',
+      };
+    },
+    exceptions: [
+      {
+        id: 'lpp_invalidite_avant_affiliation',
+        label: 'Invalidité survenue avant affiliation = pas de droit LPP',
+        condition: (f) => f.incapacite_anterieure_affiliation === true,
+        consequence: 'Si la cause de l\'invalidité (incapacité de travail durable) est survenue avant l\'affiliation à l\'institution de prévoyance, celle-ci n\'est pas tenue aux prestations (LPP 23 — lien temporel).',
+        source_id: 'fedlex:rs831.40:lpp-23',
+        blocks: true,
+      },
+    ],
+  },
+  {
+    id: 'lpp_encouragement_propriete',
+    label: 'Encouragement à la propriété du logement — retrait anticipé LPP',
+    base_legale: 'LPP 30c + OEPL',
+    source_ids: ['fedlex:rs831.40:lpp-30c', 'fedlex:rs831.411:oepl-1'],
+    condition: (f) => f.domaine === 'lpp' && (f.encouragement_propriete === true || f.retrait_achat_logement === true || f.versement_anticipe === true),
+    consequence: (f) => {
+      const age = Number.isFinite(f.age) ? f.age : null;
+      return {
+        text: 'L\'assuré peut retirer ou mettre en gage tout ou partie de son avoir LPP pour l\'acquisition ou la construction d\'un logement à usage propre (résidence principale), l\'amortissement d\'un emprunt hypothécaire ou l\'acquisition de parts de coopératives d\'habitation.',
+        utilisations_autorisees: [
+          'Acquisition ou construction d\'un logement en propriété pour usage propre',
+          'Investissements augmentant la valeur du logement (rénovations majeures)',
+          'Amortissement d\'un emprunt hypothécaire existant',
+          'Acquisition de parts de coopératives d\'habitation / sociétés immobilières analogues',
+        ],
+        condition_usage: 'Usage PROPRE = résidence principale de l\'assuré. Pas de résidences secondaires ni de biens de placement.',
+        montant_minimum_retrait: '20\'000 CHF (sauf parts de coopératives)',
+        montant_minimum_chf: 20000,
+        limitation_apres_50_ans: age !== null && age >= 50
+          ? 'À partir de 50 ans, le retrait est limité au montant de l\'avoir à 50 ans OU à la moitié de l\'avoir actuel (le plus favorable) — LPP 30c al. 2'
+          : 'Avant 50 ans : retrait de la totalité de l\'avoir possible',
+        age_declare: age,
+        frequence: 'Retrait possible tous les 5 ans (OEPL 5)',
+        consentement_conjoint: 'Consentement écrit du conjoint / partenaire enregistré OBLIGATOIRE (LPP 30c al. 5) — signature authentifiée',
+        impot_retrait: 'Le versement est imposé séparément du reste du revenu comme prestation en capital (LIFD 38 + canton) — taux réduit',
+        remboursement: 'Remboursement autorisé (et recommandé pour reconstituer les prestations), jusqu\'à 3 ans avant la retraite (LPP 30d al. 3)',
+        restriction_revente: 'En cas de revente, obligation de restitution à la caisse si prix > acquisition (LPP 30d) — mention au registre foncier',
+        mise_en_gage: 'Alternative: mise en gage de l\'avoir (sans retrait) — permet meilleur emprunt hypothécaire sans impact fiscal immédiat',
+        couverture_apres_retrait: 'Le retrait diminue les prestations futures (vieillesse, invalidité, décès). Il est recommandé de conclure une assurance complémentaire.',
+        autorite: 'Institution de prévoyance (caisse LPP)',
+        delai_versement: 'Maximum 6 mois dès demande complète',
+      };
+    },
+    exceptions: [
+      {
+        id: 'lpp_propriete_consentement_conjoint_manquant',
+        label: 'Défaut de consentement du conjoint = retrait nul',
+        condition: (f) => f.conjoint_present === true && f.consentement_conjoint_ecrit === false,
+        consequence: 'Le retrait sans consentement écrit du conjoint ou partenaire enregistré est nul (LPP 30c al. 5). Le conjoint peut agir pour restitution.',
+        source_id: 'fedlex:rs831.40:lpp-30c',
+        blocks: true,
+      },
+    ],
+  },
+  {
+    id: 'lpp_partage_divorce',
+    label: 'Partage de la prévoyance LPP au divorce',
+    base_legale: 'LPP 22-22f + CC 122-124e',
+    source_ids: ['fedlex:rs831.40:lpp-22', 'fedlex:rs210:cc-122', 'fedlex:rs210:cc-123', 'fedlex:rs210:cc-124'],
+    condition: (f) => f.domaine === 'lpp' && (f.divorce === true || f.partage_lpp === true),
+    consequence: (f) => ({
+      text: 'Au divorce, les prestations de sortie LPP acquises pendant le mariage (entre mariage et introduction de la procédure) sont partagées par moitié entre les époux. Le partage s\'opère indépendamment du régime matrimonial.',
+      principe: 'Partage par moitié des prestations de sortie acquises pendant le mariage (CC 122)',
+      periode_partage: 'Du jour du mariage au jour du dépôt de la demande en divorce',
+      objets_partage: [
+        'Avoir de vieillesse LPP (obligatoire + sur-obligatoire)',
+        'Libre passage (comptes de libre passage, polices de libre passage)',
+        'Pilier 3a (si argument de rattachement professionnel — jurisprudence)',
+      ],
+      non_partage: [
+        'Prestations acquises avant le mariage',
+        'Prestations acquises après introduction de la demande',
+        'Rentes déjà versées (mais calcul hypothétique possible CC 124)',
+      ],
+      cas_rente_en_cours: 'Si l\'un des époux reçoit déjà une rente LPP (invalidité ou vieillesse) au moment du divorce, le partage s\'opère par transfert d\'une part de la rente (CC 124a) calculée selon les tables LPC.',
+      transfert: 'La part transférée est portée à l\'avoir de prévoyance ou au compte de libre passage de l\'ex-conjoint bénéficiaire (CC 123)',
+      forme: 'Convention des époux homologuée par le juge OU décision judiciaire du juge du divorce',
+      autorite_decision: 'Juge du divorce (tribunal civil de district / arrondissement)',
+      execution: 'Tribunal des assurances sociales cantonal ordonne le transfert aux institutions LPP',
+      refus_partage: 'Un partage peut être refusé en cas de violation manifeste de l\'équité (CC 124b) — ex: un époux a causé la ruine financière, absence pendant le mariage, etc.',
+      delai_reclamation: 'Imprescriptible pendant le mariage ; action récursoire possible après divorce si partage non effectué (prescription 10 ans)',
+      valeurs_determinantes: 'Valeurs au jour de l\'introduction de la procédure en divorce (CC 123 al. 1)',
+      impact_fiscal: 'Le transfert est exempt d\'impôt (pas de prestation en capital imposable) car il reste dans le cycle de la prévoyance.',
+    }),
+    exceptions: [
+      {
+        id: 'lpp_partage_inequitable',
+        label: 'Partage inéquitable — refus ou réduction',
+        condition: (f) => f.inequite_partage === true,
+        consequence: 'Le juge peut refuser le partage (ou ne le faire que partiellement) en cas d\'inéquité manifeste (CC 124b al. 2) — ex: période de mariage très courte, violation des obligations d\'entretien.',
+        source_id: 'fedlex:rs210:cc-124',
+        blocks: false,
+      },
+    ],
+  },
+];
+
+// ═══════════════════════════════════════════════════════════════
+// PPE RULES — propriété par étages (copropriété)
+// ═══════════════════════════════════════════════════════════════
+
+const PPE_RULES = [
+  {
+    id: 'ppe_charges_communes',
+    label: 'Répartition des charges communes — PPE',
+    base_legale: 'CC 712h-712m',
+    source_ids: ['fedlex:rs210:cc-712h', 'fedlex:rs210:cc-712m'],
+    condition: (f) => f.domaine === 'ppe' && (f.charges_communes === true || f.repartition_charges === true),
+    consequence: (f) => ({
+      text: 'Les charges communes (frais d\'entretien, réparations, chauffage, conciergerie, primes d\'assurance du bâtiment) sont réparties entre les copropriétaires en proportion des quotes-parts (millièmes), sauf convention contraire inscrite dans l\'acte constitutif ou le règlement d\'administration.',
+      principe: 'Répartition selon quotes-parts (millièmes) — CC 712h al. 1',
+      forme_convention_contraire: 'Convention dérogatoire possible dans l\'acte constitutif ou par décision de l\'assemblée des copropriétaires (CC 712h al. 3)',
+      categories_charges: [
+        'Charges d\'entretien et réparations courantes (usage intensif pris en compte)',
+        'Charges d\'administration (conciergerie, gestion)',
+        'Charges d\'énergie (chauffage — selon consommation avec compteurs individuels, OMEn)',
+        'Primes d\'assurance bâtiment',
+        'Fonds de rénovation (CC 712m al. 1 ch. 5)',
+      ],
+      decision_budget: 'L\'assemblée des copropriétaires décide du budget annuel à la majorité des voix et des quotes-parts (CC 712m al. 2 — majorité simple par défaut)',
+      paiement: 'Avances trimestrielles ou mensuelles selon règlement. Décompte annuel après exercice.',
+      opposition: 'Un copropriétaire peut contester une décision de l\'assemblée dans les 30 jours dès notification (CC 712p — voir règle ppe_recours_decision_ag)',
+      garantie_creances: 'Hypothèque légale pour les charges des 3 dernières années (CC 712i) — inscription dans les 3 mois dès exigibilité',
+      delai_hypotheque_mois: 3,
+      autorite: 'Administrateur / assemblée des copropriétaires — en cas de litige : tribunal civil',
+    }),
+    exceptions: [
+      {
+        id: 'ppe_charges_usage_exclusif',
+        label: 'Charges liées à l\'usage exclusif — seul le bénéficiaire paye',
+        condition: (f) => f.charges_usage_exclusif === true,
+        consequence: 'Les charges liées à des parties dont un copropriétaire a l\'usage exclusif (balcon, jardin, cave) peuvent être mises à sa charge seule selon le règlement (CC 712h al. 3).',
+        source_id: 'fedlex:rs210:cc-712h',
+        blocks: false,
+      },
+    ],
+  },
+  {
+    id: 'ppe_travaux_majoritaire',
+    label: 'Travaux en PPE — majorités selon type',
+    base_legale: 'CC 647c-647e + 712g',
+    source_ids: ['fedlex:rs210:cc-647c', 'fedlex:rs210:cc-647d', 'fedlex:rs210:cc-647e', 'fedlex:rs210:cc-712g'],
+    condition: (f) => f.domaine === 'ppe' && (f.travaux_ppe === true || f.decision_travaux === true),
+    consequence: (f) => {
+      const type = f.type_travaux || null;
+      const majorites = {
+        entretien: { nom: 'Actes d\'administration courante (CC 647a)', majorite: 'Administrateur décide seul', article: 'CC 647a' },
+        necessaires: { nom: 'Travaux de construction nécessaires (CC 647c)', majorite: 'Majorité simple des copropriétaires (1 voix par unité)', article: 'CC 647c' },
+        utiles: { nom: 'Travaux utiles (CC 647d)', majorite: 'Majorité des copropriétaires représentant la majorité des quotes-parts (double majorité)', article: 'CC 647d' },
+        somptuaires: { nom: 'Travaux somptuaires / de pur agrément (CC 647e)', majorite: 'UNANIMITÉ de tous les copropriétaires', article: 'CC 647e' },
+      };
+      const info = type ? majorites[type] : null;
+      return {
+        text: 'La majorité requise pour une décision de travaux dépend de leur nature : nécessaires (majorité simple), utiles (double majorité), somptuaires (unanimité).',
+        type_travaux_declare: type,
+        majorite_applicable: info || 'À déterminer selon nature — voir tableau',
+        tableau_majorites: [
+          { type: 'Administration courante', majorite_requise: 'Administrateur seul', base: 'CC 647a' },
+          { type: 'Travaux nécessaires (conservation)', majorite_requise: 'Majorité simple (par tête)', base: 'CC 647c' },
+          { type: 'Travaux utiles (amélioration)', majorite_requise: 'Double majorité : têtes + quotes-parts', base: 'CC 647d' },
+          { type: 'Travaux somptuaires', majorite_requise: 'UNANIMITÉ', base: 'CC 647e' },
+        ],
+        regle_2023: 'Depuis le 1er janvier 2023 (révision), les travaux utiles de rénovation énergétique bénéficient d\'un régime allégé dans certains cantons.',
+        proces_verbal: 'Décision consignée au procès-verbal de l\'assemblée (CC 712m) avec indication du nombre de voix',
+        contestation_delai: '30 jours dès notification pour contester (CC 712p renvoyant à CC 75)',
+        delai_jours_contestation: 30,
+        autorite_contestation: 'Tribunal civil du lieu de l\'immeuble',
+        financement: 'Prélèvement sur le fonds de rénovation ou appel de fonds proportionnel aux quotes-parts (sauf autre règle)',
+        travaux_urgents: 'L\'administrateur ou un copropriétaire peut entreprendre seul des travaux urgents (CC 647 al. 2 ch. 1), à charge d\'en informer la communauté.',
+      };
+    },
+    exceptions: [
+      {
+        id: 'ppe_travaux_droit_cantonal',
+        label: 'Dérogations cantonales ou règlement interne',
+        condition: (f) => f.regle_ppe_derogatoire === true,
+        consequence: 'Le règlement d\'administration peut prévoir des majorités différentes (plus strictes, pas moins), sauf pour travaux somptuaires qui exigent toujours l\'unanimité (CC 647e al. 1).',
+        source_id: 'fedlex:rs210:cc-712g',
+        blocks: false,
+      },
+    ],
+  },
+  {
+    id: 'ppe_recours_decision_ag',
+    label: 'Recours contre une décision de l\'assemblée des copropriétaires',
+    base_legale: 'CC 712p + CC 75',
+    source_ids: ['fedlex:rs210:cc-712p', 'fedlex:rs210:cc-75'],
+    condition: (f) => f.domaine === 'ppe' && (f.recours_decision_ag === true || f.contestation_ag === true),
+    consequence: (f) => ({
+      text: 'Tout copropriétaire qui n\'a pas consenti à la décision ou qui n\'y a pas été régulièrement convoqué peut, dans le mois dès qu\'il en a eu connaissance, l\'attaquer en justice.',
+      delai: '1 mois (30 jours)',
+      delai_jours: 30,
+      point_depart: 'connaissance de la décision (à défaut de notification : date raisonnablement présumée)',
+      autorite: 'Tribunal civil du lieu de l\'immeuble',
+      qualite_pour_agir: [
+        'Copropriétaire qui n\'a pas consenti à la décision (vote contre / abstention)',
+        'Copropriétaire qui n\'a pas été régulièrement convoqué à l\'assemblée',
+        'Copropriétaire empêché de voter (représentation refusée abusivement)',
+      ],
+      motifs_invocables: [
+        'Violation de la loi (CC 647c-e, majorité incorrecte)',
+        'Violation de l\'acte constitutif ou du règlement (convocation, ordre du jour, quorum)',
+        'Décision contraire à la destination de l\'immeuble',
+        'Décision abusive (abus de majorité, atteinte disproportionnée aux droits individuels)',
+      ],
+      procedure: 'Procédure ordinaire ou simplifiée selon valeur litigieuse (CPC 243)',
+      effet_jugement: 'Annulation ex tunc de la décision (rétroactive). La décision est réputée n\'avoir jamais existé.',
+      mesures_provisionnelles: 'Possibilité de demander des mesures provisionnelles (CPC 261) pour suspendre l\'exécution de la décision attaquée',
+      consequence_passe_delai: 'Passé le délai d\'1 mois, la décision devient inattaquable (sauf nullité absolue rare — décision contraire à l\'ordre public, atteinte à un droit strictement personnel)',
+      role_administrateur: 'L\'administrateur défend la communauté (CC 712s). Le copropriétaire agit CONTRE la communauté.',
+    }),
+    exceptions: [
+      {
+        id: 'ppe_ag_nullite_absolue',
+        label: 'Nullité absolue — hors délai possible',
+        condition: (f) => f.decision_nullite_absolue === true,
+        consequence: 'Une décision frappée de nullité absolue (ex: violation d\'un droit strictement personnel, contraire à l\'ordre public, impossibilité objective) peut être invoquée en tout temps — hors délai d\'un mois.',
+        source_id: 'fedlex:rs210:cc-75',
+        blocks: false,
+      },
+    ],
+  },
+];
+
+// ═══════════════════════════════════════════════════════════════
+// CIRCULATION RULES — LCR et retraits de permis
+// ═══════════════════════════════════════════════════════════════
+
+const CIRCULATION_RULES = [
+  {
+    id: 'circulation_retrait_permis_admonestation',
+    label: 'Retrait de permis à titre d\'admonestation — infraction légère',
+    base_legale: 'LCR 16a',
+    source_ids: ['fedlex:rs741.01:lcr-16a'],
+    condition: (f) => f.domaine === 'circulation' && (f.infraction_legere === true || f.retrait_admonestation === true),
+    consequence: (f) => {
+      const recidive = f.recidive === true;
+      return {
+        text: 'Pour une infraction légère (mise en danger faible des autres usagers), un avertissement est prononcé. Si l\'intéressé a déjà été sanctionné dans les 2 années précédentes, un retrait de permis de 1 mois AU MOINS peut être prononcé.',
+        premiere_infraction: 'Avertissement (pas de retrait) sauf cumul',
+        recidive_2_ans: 'Retrait de 1 mois au moins (LCR 16a al. 2)',
+        duree_minimum_mois: recidive ? 1 : 0,
+        recidive_declaree: recidive,
+        exemples_leger: [
+          'Excès de vitesse 1-15 km/h en localité',
+          'Excès 1-20 km/h hors localité',
+          'Excès 1-25 km/h sur autoroute',
+          'Distance insuffisante (cas léger)',
+          'Infraction aux règles de stationnement grave mais sans mise en danger',
+        ],
+        consideration: 'Mise en danger FAIBLE des autres + faute LÉGÈRE du conducteur (cumul cumulatif CP 100 ch. 1)',
+        delai_recours: '30 jours dès notification (LCR 24 + loi cantonale de procédure)',
+        delai_jours_recours: 30,
+        autorite_decision: f.canton
+          ? `Service cantonal des automobiles (SAN) / Office de la circulation du canton de ${f.canton}`
+          : 'Service cantonal des automobiles (Office de la circulation)',
+        autorite_recours: 'Tribunal administratif cantonal (puis TF)',
+        effet_suspensif: 'Selon canton — généralement pas d\'effet suspensif automatique, demande de restitution possible',
+        procedure: 'Procédure administrative contradictoire avec droit d\'être entendu (audition ou prise de position écrite)',
+        cumul_amende: 'Le retrait administratif s\'ajoute à l\'amende pénale (infraction au code de la route) — pas de double sanction au sens strict (dualité admin/pénal)',
+        casier_admin: 'Inscrit au Système d\'information relatif à l\'admission à la circulation (SIAC / ADMAS) — consultable par autorités',
+      };
+    },
+    exceptions: [],
+  },
+  {
+    id: 'circulation_retrait_permis_obligatoire',
+    label: 'Retrait de permis obligatoire — infraction moyennement grave ou grave',
+    base_legale: 'LCR 16b-16c',
+    source_ids: ['fedlex:rs741.01:lcr-16b', 'fedlex:rs741.01:lcr-16c'],
+    condition: (f) => f.domaine === 'circulation' && (f.infraction_moyenne === true || f.infraction_grave === true || f.retrait_obligatoire === true),
+    consequence: (f) => {
+      const type = f.infraction_grave === true ? 'grave' : (f.infraction_moyenne === true ? 'moyenne' : null);
+      const recidive = f.recidive === true;
+      let duree_min = null;
+      let base_article = null;
+      if (type === 'moyenne') {
+        duree_min = recidive ? 4 : 1; // LCR 16b al. 2
+        base_article = 'LCR 16b';
+      } else if (type === 'grave') {
+        duree_min = recidive ? 12 : 3; // LCR 16c al. 2
+        base_article = 'LCR 16c';
+      }
+      return {
+        text: `Infraction ${type || 'à qualifier'} : le retrait de permis est obligatoire. La durée minimale est fixée par la loi et ne peut pas être réduite en dessous.`,
+        type_infraction_declare: type,
+        recidive_5_ans: recidive,
+        duree_minimum_mois: duree_min,
+        base_article_applicable: base_article,
+        moyenne_definition: 'Mise en danger ACCRUE des autres usagers + faute NON légère (LCR 16b al. 1)',
+        grave_definition: 'Mise en danger SÉRIEUSE des autres usagers + faute GRAVE ou intentionnelle (LCR 16c al. 1)',
+        exemples_moyenne: [
+          'Excès 16-24 km/h en localité',
+          'Excès 21-29 km/h hors localité',
+          'Excès 26-34 km/h sur autoroute',
+          'Ébriété 0.5-0.79‰',
+          'Refus de céder le passage avec mise en danger',
+        ],
+        exemples_grave: [
+          'Excès ≥ 25 km/h en localité / ≥ 30 km/h hors localité / ≥ 35 km/h autoroute',
+          'Ébriété qualifiée ≥ 0.8‰ (art. 91 al. 2 LCR)',
+          'Conduite sous stupéfiants',
+          'Fuite après accident avec blessés',
+          'Violation grossière des règles (course-poursuite, circulation à contresens)',
+        ],
+        duree_table_moyenne: [
+          { situation: '1ère infraction', duree_min: '1 mois' },
+          { situation: 'Récidive dans 5 ans', duree_min: '4 mois' },
+          { situation: 'Récidive multiple', duree_min: '9 mois' },
+          { situation: 'Après retrait pour infraction grave', duree_min: '12 mois (LCR 16b al. 2 let. d)' },
+        ],
+        duree_table_grave: [
+          { situation: '1ère infraction', duree_min: '3 mois' },
+          { situation: 'Récidive dans 10 ans (après grave)', duree_min: '12 mois' },
+          { situation: 'Récidive dans 10 ans (après 2 graves)', duree_min: 'DÉFINITIF (LCR 16c al. 2 let. d)' },
+        ],
+        delai_recours: '30 jours dès notification',
+        delai_jours_recours: 30,
+        autorite_decision: f.canton
+          ? `Service cantonal des automobiles de ${f.canton}`
+          : 'Service cantonal des automobiles (Office de la circulation)',
+        test_MCT: 'Un test psychologique / médical (MCT) peut être ordonné pour attester l\'aptitude avant restitution — obligatoire pour chauffard (Via sicura)',
+        ne_peut_etre_reduit: 'La durée minimale légale est INTANGIBLE — le juge ne peut pas réduire en dessous même pour bonne renommée ou nécessité professionnelle (ATF 132 II 234).',
+        adaptation_necessite_professionnelle: 'La nécessité professionnelle est prise en compte uniquement pour ALLONGER la durée ou pas, dans les cas où un retrait plus court serait suffisant — mais jamais pour réduire sous le minimum légal.',
+      };
+    },
+    exceptions: [
+      {
+        id: 'circulation_chauffard_via_sicura',
+        label: 'Délit de chauffard — retrait minimum 2 ans (Via sicura)',
+        condition: (f) => f.delit_chauffard === true,
+        consequence: 'En cas de délit de chauffard (LCR 90 al. 3 et 4 — excès massifs), le retrait est de 2 ans au moins (LCR 16c al. 2 let. abis). Peine privative de liberté 1-4 ans + amende.',
+        source_id: 'fedlex:rs741.01:lcr-16c',
+        blocks: false,
+      },
+    ],
+  },
+  {
+    id: 'circulation_recours_retrait',
+    label: 'Recours contre un retrait de permis',
+    base_legale: 'LCR 24 + lois cantonales de procédure administrative',
+    source_ids: ['fedlex:rs741.01:lcr-24'],
+    condition: (f) => f.domaine === 'circulation' && (f.recours_retrait === true || f.decision_retrait_recue === true),
+    consequence: (f) => ({
+      text: 'Le recours contre une décision de retrait de permis est adressé au tribunal administratif cantonal dans les 30 jours dès la notification. L\'effet suspensif varie selon canton et nature de la décision.',
+      delai: '30 jours',
+      delai_jours: 30,
+      point_depart: 'notification de la décision de retrait',
+      autorite_recours_1: f.canton
+        ? `Tribunal cantonal / Cour administrative du canton de ${f.canton}`
+        : 'Tribunal administratif cantonal',
+      autorite_recours_2: 'Tribunal fédéral (recours en matière de droit public, LTF 82)',
+      delai_recours_tf: '30 jours dès notification de l\'arrêt cantonal',
+      forme: 'Écrite, motivée, signée, accompagnée de la décision attaquée et des pièces à l\'appui',
+      effet_suspensif: {
+        regle_generale: 'L\'effet suspensif est SOUVENT refusé en matière de retrait (intérêt public à la sécurité routière)',
+        regle_cantonale: 'Varie selon canton — certains cantons accordent effet suspensif pour infractions légères, d\'autres jamais',
+        demande: 'Doit être demandé expressément dans le recours (sinon décision exécutoire immédiatement)',
+        critere_balance: 'Pesée d\'intérêts : sécurité routière vs. conséquences pour le recourant (perte d\'emploi, famille)',
+      },
+      motifs_invocables: [
+        'Constatation inexacte des faits',
+        'Violation du droit (LCR, LTV, OAC)',
+        'Qualification juridique erronée (léger vs. moyen vs. grave)',
+        'Proportionnalité de la durée (mais pas en dessous du minimum légal)',
+        'Violation du droit d\'être entendu',
+      ],
+      procedure: 'Procédure administrative ordinaire avec échange d\'écritures (recours, réponse, réplique, duplique)',
+      frais: 'Emolument judiciaire selon valeur/intérêt (typiquement 500-3\'000 CHF), à charge du recourant s\'il succombe',
+      assistance_judiciaire: 'Possible si moyens insuffisants et cause pas dénuée de chances de succès (CPC 117 par analogie cantonale)',
+      note: 'Consulter rapidement un avocat spécialisé en droit administratif routier — délais courts et procédure technique.',
+    }),
+    exceptions: [
+      {
+        id: 'circulation_recours_hors_delai',
+        label: 'Délai dépassé — recours irrecevable sauf restitution',
+        condition: (f) => f.delai_recours_depasse === true,
+        consequence: 'Passé le délai de 30 jours, le recours est irrecevable (décision en force). Une restitution de délai est possible en cas d\'empêchement non fautif (accident, hospitalisation, PTT) par requête motivée dans les 10 jours après la fin de l\'empêchement.',
+        source_id: 'fedlex:rs741.01:lcr-24',
+        blocks: true,
+      },
+    ],
+  },
+];
+
 const ENTREPRISE_RULES = [
   {
     id: 'entreprise_faillite_opposition_delai',
@@ -1491,6 +2427,10 @@ const ALL_RULES = [
   ...ACCIDENT_RULES,
   ...ENTREPRISE_RULES,
   ...SUCCESSIONS_RULES,
+  ...FISCAL_RULES,
+  ...LPP_RULES,
+  ...PPE_RULES,
+  ...CIRCULATION_RULES,
 ];
 
 // ─── Public API ─────────────────────────────────────────────────
@@ -1557,5 +2497,9 @@ export {
   ACCIDENT_RULES,
   ENTREPRISE_RULES,
   SUCCESSIONS_RULES,
+  FISCAL_RULES,
+  LPP_RULES,
+  PPE_RULES,
+  CIRCULATION_RULES,
   execRule,
 };

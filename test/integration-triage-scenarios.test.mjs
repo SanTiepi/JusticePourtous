@@ -359,3 +359,80 @@ describe('Integration — Triage scenarios end-to-end', () => {
       `unexpected next status: ${r2.data.status}`);
   });
 });
+
+// ─── Coverage des 6 domaines non couverts ci-dessus ────────────────
+// (voisinage, accident, social, entreprise, consommation, circulation,
+//  successions, sante). LLM_MOCK=1 rend ces tests rapides (~150ms chacun).
+describe('integration — domaines additionnels (couverture complète)', () => {
+  it('voisinage : nuisance sonore voisin répétée', async () => {
+    const r = await httpPost('/api/triage', {
+      texte: 'Mon voisin fait du bruit toutes les nuits après 22h malgré mes plaintes',
+      canton: 'VD'
+    });
+    assertCommonShape(r);
+    assert.ok(VALID_STATUSES.has(r.data.status));
+  });
+
+  it('accident : accident domestique locataire', async () => {
+    const r = await httpPost('/api/triage', {
+      texte: 'Je suis tombé dans l\'escalier de mon immeuble mal entretenu, jambe cassée',
+      canton: 'GE'
+    });
+    assertCommonShape(r);
+    assert.ok(VALID_STATUSES.has(r.data.status));
+  });
+
+  it('social : AI refus rente après maladie longue', async () => {
+    const r = await httpPost('/api/triage', {
+      texte: 'L\'AI a refusé ma demande de rente après 2 ans d\'arrêt maladie',
+      canton: 'VD'
+    });
+    assertCommonShape(r);
+    assert.ok(VALID_STATUSES.has(r.data.status));
+  });
+
+  it('entreprise : créance impayée client SA', async () => {
+    const r = await httpPost('/api/triage', {
+      texte: 'Ma SA a une créance de 15000 CHF impayée depuis 6 mois par un client',
+      canton: 'ZH'
+    });
+    assertCommonShape(r);
+    assert.ok(VALID_STATUSES.has(r.data.status));
+  });
+
+  it('consommation : produit défectueux magasin refuse remboursement', async () => {
+    const r = await httpPost('/api/triage', {
+      texte: 'J\'ai acheté un lave-linge il y a 3 mois, il ne marche plus, le magasin refuse le remboursement',
+      canton: 'VD'
+    });
+    assertCommonShape(r);
+    assert.ok(VALID_STATUSES.has(r.data.status));
+  });
+
+  it('circulation : retrait permis pour excès de vitesse', async () => {
+    const r = await httpPost('/api/triage', {
+      texte: 'On m\'a retiré le permis pour 3 mois pour excès de vitesse sur autoroute',
+      canton: 'GE'
+    });
+    assertCommonShape(r);
+    assert.ok(VALID_STATUSES.has(r.data.status));
+  });
+
+  it('successions : père décédé sans testament, partage contesté', async () => {
+    const r = await httpPost('/api/triage', {
+      texte: 'Mon père est décédé sans testament, mes frères et moi ne sommes pas d\'accord sur le partage',
+      canton: 'BE'
+    });
+    assertCommonShape(r);
+    assert.ok(VALID_STATUSES.has(r.data.status));
+  });
+
+  it('sante : accès dossier médical refusé par hôpital', async () => {
+    const r = await httpPost('/api/triage', {
+      texte: 'L\'hôpital refuse de me donner mon dossier médical après mon opération',
+      canton: 'VD'
+    });
+    assertCommonShape(r);
+    assert.ok(VALID_STATUSES.has(r.data.status));
+  });
+});

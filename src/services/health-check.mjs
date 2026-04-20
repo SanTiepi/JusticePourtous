@@ -189,6 +189,21 @@ async function checkLogger() {
   };
 }
 
+async function checkFicheSchema() {
+  const { validateAllFiches, countFicheSchemaIssues } = await import('./fiche-validator.mjs');
+  const report = validateAllFiches();
+  const stats = countFicheSchemaIssues(report);
+  // Error = critical (missing required field, invalid enum). Warn = soft.
+  const status = stats.errors > 0 ? 'error' : (stats.warnings > 10 ? 'warn' : 'ok');
+  return {
+    total_fiches: report.total,
+    valid: report.valid,
+    errors: stats.errors,
+    warnings: stats.warnings,
+    status
+  };
+}
+
 async function checkCoverageCertificate() {
   const { certifyIssue, requireSufficientCertificate } = await import('./coverage-certificate.mjs');
   const testIssue = {
@@ -226,7 +241,8 @@ export async function runHealthChecks() {
     timed('citizen_account', checkCitizenAccount),
     timed('coverage_certificate', checkCoverageCertificate),
     timed('enrich_cache', checkEnrichCache),
-    timed('logger', checkLogger)
+    timed('logger', checkLogger),
+    timed('fiche_schema', checkFicheSchema)
   ]);
 
   const hasError = results.some(r => r.status === 'error');

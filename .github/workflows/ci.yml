@@ -64,6 +64,45 @@ jobs:
             });
           "
 
+  fiche-schema-validate:
+    name: Validation fiches (schema + data quality)
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Fail si des fiches ont des errors (champs manquants, enum invalide,
+      # questions mal formées). Les warnings sont tolérés.
+      - name: Validate all fiches
+        run: |
+          node -e "
+            import('./src/services/fiche-validator.mjs').then(m => {
+              const r = m.validateAllFiches();
+              const s = m.countFicheSchemaIssues(r);
+              console.log('total:', s.total, '| valid:', s.valid_count, '| errors:', s.error_count, '| warnings:', s.warning_count);
+              if (s.error_count > 0) {
+                console.error('Fiches with errors:');
+                for (const f of r.per_fiche.filter(p => p.errors.length)) {
+                  console.error(' -', f.id, ':', f.errors.map(e => e.code + ' ' + e.path).join(', '));
+                }
+                process.exit(1);
+              }
+              if (s.duplicates.length) {
+                console.error('Duplicate ids:', s.duplicates);
+                process.exit(1);
+              }
+            });
+          "
+
   benchmark-vs-llm-brut:
     name: Benchmark structurel (non-regression)
     runs-on: ubuntu-latest

@@ -1,182 +1,2444 @@
 [
   {
-    "source": "entscheidsuche.ch (mock)",
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
     "canton": "VD",
     "court": "Tribunal cantonal VD — Cour civile",
-    "date": "2020-01-01",
+    "date": "2023-01-01",
+    "signature": "VD-TC-2023-100",
     "domaine": "bail",
-    "title": "Mock bail VD n°1",
-    "summary": "Décision cantonale simulée pour bail dans VD. Applique les règles du droit suisse.",
-    "text_excerpt": "Considérant que...\n\nLe tribunal considère que la jurisprudence constante sur bail s'applique ici.",
+    "title": "Défauts moisissure — réduction de loyer 20% ordonnée",
+    "summary": "Le tribunal cantonal VD retient que les défauts structurels (infiltrations, moisissure) engagent la responsabilité du bailleur selon l'art. 259a CO.",
+    "text_excerpt": "Considérant que la locataire a établi par expertise la présence de moisissures affectant deux pièces, le tribunal cantonal VD retient que les conditions d'une réduction de loyer de 20% sont réunies, pour autant que l'avis des défauts ait été donné dans un délai raisonnable. La position de la locataire est admise.",
     "references": [
-      "CO 257e",
-      "CO 259a"
+      "CO 259a",
+      "CO 259d"
+    ],
+    "articles_cited": [
+      "CO 259a",
+      "CO 259d"
     ],
     "result": "favorable_demandeur",
-    "url": "https://entscheidsuche.ch/mock/VD-2020-0",
-    "hash": "3f660866e356bd7b",
-    "ingested_at": "2026-04-19T17:55:59.931Z"
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2023-0",
+    "hash": "b6a993e723e6255c",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
   },
   {
-    "source": "entscheidsuche.ch (mock)",
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal cantonal VD — Cour de droit public",
+    "date": "2022-08-14",
+    "signature": "VD-TC-2022-101",
+    "domaine": "bail",
+    "title": "Résiliation anticipée — restitution caution",
+    "summary": "Considérant que le locataire a présenté un repreneur solvable, le bailleur ne peut retenir la garantie de loyer au-delà du délai de 30 jours prévu à l'art. 257e CO.",
+    "text_excerpt": "Le tribunal cantonal VD retient que le bailleur a tardé à libérer la garantie bancaire. À condition que le locataire ait restitué les clés et un état des lieux contradictoire soit intervenu, l'établissement doit débloquer la caution.",
+    "references": [
+      "CO 257e",
+      "CO 264"
+    ],
+    "articles_cited": [
+      "CO 257e",
+      "CO 264"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2022-1",
+    "hash": "46009378aa2514e8",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal d'arrondissement de Lausanne",
+    "date": "2024-03-27",
+    "signature": "VD-TC-2024-102",
+    "domaine": "bail",
+    "title": "Hausse de loyer contestée — référence taux hypothécaire",
+    "summary": "Le tribunal cantonal VD précise que la hausse de loyer notifiée doit faire référence au taux hypothécaire de référence OFL applicable au jour de la notification.",
+    "text_excerpt": "Considérant que la formule officielle ne mentionnait pas le taux hypothécaire de référence, le tribunal cantonal VD retient que la hausse est nulle. La locataire obtient gain de cause.",
+    "references": [
+      "CO 269",
+      "CO 269d",
+      "CO 270b"
+    ],
+    "articles_cited": [
+      "CO 269",
+      "CO 269d",
+      "CO 270b"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2024-2",
+    "hash": "2ec98dc277033738",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal cantonal VD — Cour civile",
+    "date": "2021-10-12",
+    "signature": "VD-TC-2021-103",
+    "domaine": "bail",
+    "title": "Expulsion — protection contre le congé",
+    "summary": "Le tribunal cantonal VD admet que le locataire bénéficie d'une prolongation du bail de 2 ans, vu la pénurie de logements dans la région lausannoise.",
+    "text_excerpt": "Considérant que le locataire réside depuis 14 ans dans l'appartement et que le marché immobilier lausannois est tendu, le tribunal cantonal VD retient que les conditions d'une première prolongation de 2 ans sont remplies.",
+    "references": [
+      "CO 272",
+      "CO 272b"
+    ],
+    "articles_cited": [
+      "CO 272",
+      "CO 272b"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2021-3",
+    "hash": "96e06af733b7bd91",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal cantonal VD — Cour de droit public",
+    "date": "2020-05-25",
+    "signature": "VD-TC-2020-104",
+    "domaine": "bail",
+    "title": "Congé-représailles après demande de réparation",
+    "summary": "Le tribunal cantonal VD retient que le congé notifié deux mois après une demande formelle de réparation constitue un congé de représailles nul.",
+    "text_excerpt": "Considérant la chronologie des faits et la demande écrite de réparation adressée par le locataire, le tribunal cantonal VD précise que le congé est contraire à la bonne foi au sens de l'art. 271 CO et doit être annulé.",
+    "references": [
+      "CO 271",
+      "CO 271a"
+    ],
+    "articles_cited": [
+      "CO 271",
+      "CO 271a"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2020-4",
+    "hash": "930c04ff262f3009",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "GE",
+    "court": "Tribunal de première instance GE",
+    "date": "2023-12-10",
+    "signature": "GE-TC-2023-105",
+    "domaine": "bail",
+    "title": "Défaut bruit de chantier — réduction 15%",
+    "summary": "La Cour de justice GE retient que les nuisances sonores issues d'un chantier mitoyen justifient une réduction de loyer durant toute la période des travaux.",
+    "text_excerpt": "Considérant l'expertise acoustique et les plaintes répétées de la locataire, le tribunal cantonal GE retient qu'une réduction de 15% s'impose, à condition que le bailleur ait été dûment averti.",
+    "references": [
+      "CO 259a",
+      "CO 259d"
+    ],
+    "articles_cited": [
+      "CO 259a",
+      "CO 259d"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/GE-2023-5",
+    "hash": "5b55de0d2c085242",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "GE",
+    "court": "Cour de justice GE — Chambre des baux et loyers",
+    "date": "2022-07-23",
+    "signature": "GE-TC-2022-106",
+    "domaine": "bail",
+    "title": "Restitution de la caution — délai raisonnable",
+    "summary": "La Cour de justice GE confirme que le bailleur dispose d'un délai d'un an pour faire valoir ses prétentions sur la garantie de loyer.",
+    "text_excerpt": "Le tribunal cantonal GE retient que passé ce délai, la banque doit restituer la caution à la locataire. Considérant que 14 mois se sont écoulés sans action, la libération est ordonnée.",
+    "references": [
+      "CO 257e"
+    ],
+    "articles_cited": [
+      "CO 257e"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/GE-2022-6",
+    "hash": "9adfa0745612df22",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
     "canton": "GE",
     "court": "Cour de justice GE — Chambre des prud'hommes",
-    "date": "2021-08-12",
-    "domaine": "travail",
-    "title": "Mock travail GE n°2",
-    "summary": "Décision cantonale simulée pour travail dans GE. Applique les règles du droit suisse.",
-    "text_excerpt": "Considérant que...\n\nLe tribunal considère que la jurisprudence constante sur travail s'applique ici.",
+    "date": "2024-02-08",
+    "signature": "GE-TC-2024-107",
+    "domaine": "bail",
+    "title": "Contestation du loyer initial — logement en pénurie",
+    "summary": "Considérant que le canton de Genève connaît une pénurie de logements, la locataire peut contester le loyer initial dans les 30 jours selon l'art. 270 CO.",
+    "text_excerpt": "Le tribunal cantonal GE retient que la hausse de 18% par rapport au loyer du précédent locataire n'est pas justifiée par les coûts. La locataire obtient une baisse de loyer.",
     "references": [
-      "CO 336",
-      "CO 336c"
+      "CO 270",
+      "CO 269"
+    ],
+    "articles_cited": [
+      "CO 270",
+      "CO 269"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/GE-2024-7",
+    "hash": "4ddbeacd85fc4dc6",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "GE",
+    "court": "Tribunal de première instance GE",
+    "date": "2023-09-21",
+    "signature": "GE-TC-2023-108",
+    "domaine": "bail",
+    "title": "Résiliation pour besoin propre — preuves insuffisantes",
+    "summary": "La Cour de justice GE rejette la résiliation pour besoin propre, les éléments fournis par le bailleur étant trop vagues.",
+    "text_excerpt": "Considérant que le bailleur n'a produit aucune preuve concrète d'un besoin personnel urgent, le tribunal cantonal GE retient que le congé est abusif et l'annule.",
+    "references": [
+      "CO 271",
+      "CO 271a"
+    ],
+    "articles_cited": [
+      "CO 271",
+      "CO 271a"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/GE-2023-8",
+    "hash": "9a33a981c22e6992",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "GE",
+    "court": "Cour de justice GE — Chambre des baux et loyers",
+    "date": "2021-04-06",
+    "signature": "GE-TC-2021-109",
+    "domaine": "bail",
+    "title": "Sous-location refusée — loyer disproportionné",
+    "summary": "Le tribunal cantonal GE retient que le bailleur peut refuser la sous-location lorsque le loyer demandé au sous-locataire est manifestement abusif.",
+    "text_excerpt": "Considérant que le sous-loyer prévu dépasse de 80% le loyer principal, le tribunal cantonal GE précise que le refus du bailleur est fondé. La locataire est déboutée.",
+    "references": [
+      "CO 262"
+    ],
+    "articles_cited": [
+      "CO 262"
     ],
     "result": "defavorable_demandeur",
-    "url": "https://entscheidsuche.ch/mock/GE-2021-1",
-    "hash": "f65841a038b9e10f",
-    "ingested_at": "2026-04-19T17:55:59.932Z"
+    "outcome": "rejeté",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/GE-2021-9",
+    "hash": "2a03298f9e66d72d",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
   },
   {
-    "source": "entscheidsuche.ch (mock)",
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
     "canton": "ZH",
-    "court": "Obergericht ZH — Handelsgericht",
-    "date": "2022-03-23",
-    "domaine": "famille",
-    "title": "Mock famille ZH n°3",
-    "summary": "Décision cantonale simulée pour famille dans ZH. Applique les règles du droit suisse.",
-    "text_excerpt": "Considérant que...\n\nLe tribunal considère que la jurisprudence constante sur famille s'applique ici.",
+    "court": "Bezirksgericht Zürich",
+    "date": "2023-11-19",
+    "signature": "ZH-TC-2023-110",
+    "domaine": "bail",
+    "title": "Mietzinsreduktion wegen Schimmelbefall",
+    "summary": "Das Obergericht ZH hält fest, dass der Mieter bei erheblichem Schimmelbefall Anspruch auf eine Mietzinsreduktion hat.",
+    "text_excerpt": "Considérant que la locataire a établi les défauts par rapport d'expertise, le tribunal cantonal ZH retient qu'une réduction de 25% est justifiée tant que le défaut persiste.",
     "references": [
-      "CC 125",
-      "CC 276"
+      "CO 259a",
+      "CO 259d"
     ],
-    "result": "partiellement_admis",
-    "url": "https://entscheidsuche.ch/mock/ZH-2022-2",
-    "hash": "facf5777329f5f5b",
-    "ingested_at": "2026-04-19T17:55:59.932Z"
+    "articles_cited": [
+      "CO 259a",
+      "CO 259d"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/ZH-2023-10",
+    "hash": "95b3149c02794d1e",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
   },
   {
-    "source": "entscheidsuche.ch (mock)",
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "ZH",
+    "court": "Mietgericht Zürich",
+    "date": "2022-06-04",
+    "signature": "ZH-TC-2022-111",
+    "domaine": "bail",
+    "title": "Kaution — Rückgabe nach Vertragsende",
+    "summary": "Das Obergericht ZH bestätigt die Rückzahlungspflicht des Vermieters, sobald die Jahresfrist abgelaufen ist.",
+    "text_excerpt": "Le tribunal cantonal ZH retient que la garantie doit être libérée dans les délais. Considérant qu'aucune action n'a été introduite par le bailleur dans l'année, la locataire obtient restitution.",
+    "references": [
+      "CO 257e"
+    ],
+    "articles_cited": [
+      "CO 257e"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/ZH-2022-11",
+    "hash": "9ec3dbebcc5b345a",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "ZH",
+    "court": "Obergericht ZH — I. Zivilkammer",
+    "date": "2024-01-17",
+    "signature": "ZH-TC-2024-112",
+    "domaine": "bail",
+    "title": "Ausserordentliche Kündigung wegen Zahlungsverzug",
+    "summary": "Das Obergericht ZH präzisiert die Anforderungen an die Mahnung nach Art. 257d OR vor einer Kündigung.",
+    "text_excerpt": "Considérant que la mise en demeure ne fixait pas clairement le délai de 30 jours, le tribunal cantonal ZH retient que le congé est nul.",
+    "references": [
+      "CO 257d"
+    ],
+    "articles_cited": [
+      "CO 257d"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/ZH-2024-12",
+    "hash": "e39169e29ca0256c",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "ZH",
+    "court": "Obergericht ZH — II. Zivilkammer",
+    "date": "2021-08-02",
+    "signature": "ZH-TC-2021-113",
+    "domaine": "bail",
+    "title": "Mieterstreckung — Zweiterstreckung abgelehnt",
+    "summary": "Das Obergericht ZH lehnt eine zweite Mieterstreckung ab, da die Mieterin ausreichend Zeit zur Wohnungssuche hatte.",
+    "text_excerpt": "Le tribunal cantonal ZH rejette la seconde prolongation. Considérant que 18 mois ont été octroyés et qu'aucune démarche concrète n'a été entreprise, le tribunal cantonal ZH retient que la demande est abusive.",
+    "references": [
+      "CO 272",
+      "CO 272b"
+    ],
+    "articles_cited": [
+      "CO 272",
+      "CO 272b"
+    ],
+    "result": "defavorable_demandeur",
+    "outcome": "rejeté",
+    "tier": 3,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/ZH-2021-13",
+    "hash": "f64a8a561ed489d0",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
     "canton": "BE",
     "court": "Obergericht BE — Zivilabteilung",
-    "date": "2023-10-06",
-    "domaine": "dettes",
-    "title": "Mock dettes BE n°4",
-    "summary": "Décision cantonale simulée pour dettes dans BE. Applique les règles du droit suisse.",
-    "text_excerpt": "Considérant que...\n\nLe tribunal considère que la jurisprudence constante sur dettes s'applique ici.",
+    "date": "2023-03-15",
+    "signature": "BE-TC-2023-114",
+    "domaine": "bail",
+    "title": "Nebenkostenabrechnung — Transparenz ungenügend",
+    "summary": "Das Obergericht BE hält fest, dass der Vermieter detaillierte Belege zu den Nebenkosten liefern muss.",
+    "text_excerpt": "Considérant que le décompte remis à la locataire ne comportait pas les justificatifs requis, le tribunal cantonal BE retient que les surcoûts réclamés ne sont pas dus.",
     "references": [
-      "LP 74",
-      "LP 80"
+      "CO 257a",
+      "CO 257b"
+    ],
+    "articles_cited": [
+      "CO 257a",
+      "CO 257b"
     ],
     "result": "favorable_demandeur",
-    "url": "https://entscheidsuche.ch/mock/BE-2023-3",
-    "hash": "490cd9520b6069d0",
-    "ingested_at": "2026-04-19T17:55:59.932Z"
+    "outcome": "admis",
+    "tier": 3,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/BE-2023-14",
+    "hash": "1341e8cf27cf4560",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
   },
   {
-    "source": "entscheidsuche.ch (mock)",
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "BE",
+    "court": "Regionalgericht Bern-Mittelland",
+    "date": "2022-10-28",
+    "signature": "BE-TC-2022-115",
+    "domaine": "bail",
+    "title": "Kündigung wegen Eigenbedarf — teilweise zugelassen",
+    "summary": "Das Obergericht BE admet partiellement le besoin propre mais prolonge le bail de 15 mois.",
+    "text_excerpt": "Le tribunal cantonal BE retient que le besoin propre est partiellement établi. Considérant la situation du locataire retraité, une prolongation de 15 mois est accordée à titre de nuance.",
+    "references": [
+      "CO 271",
+      "CO 272"
+    ],
+    "articles_cited": [
+      "CO 271",
+      "CO 272"
+    ],
+    "result": "partiellement_admis",
+    "outcome": "partiellement_admis",
+    "tier": 4,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/BE-2022-15",
+    "hash": "c4c96996b8529fd4",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
     "canton": "BS",
     "court": "Appellationsgericht BS",
-    "date": "2024-05-17",
-    "domaine": "etrangers",
-    "title": "Mock etrangers BS n°5",
-    "summary": "Décision cantonale simulée pour etrangers dans BS. Applique les règles du droit suisse.",
-    "text_excerpt": "Considérant que...\n\nLe tribunal considère que la jurisprudence constante sur etrangers s'applique ici.",
-    "references": [
-      "LEI 42",
-      "LEI 62"
-    ],
-    "result": "defavorable_demandeur",
-    "url": "https://entscheidsuche.ch/mock/BS-2024-4",
-    "hash": "91d1e7fd06778ca3",
-    "ingested_at": "2026-04-19T17:55:59.932Z"
-  },
-  {
-    "source": "entscheidsuche.ch (mock)",
-    "canton": "TI",
-    "court": "Tribunale d'appello TI",
-    "date": "2020-12-28",
-    "domaine": "assurances",
-    "title": "Mock assurances TI n°6",
-    "summary": "Décision cantonale simulée pour assurances dans TI. Applique les règles du droit suisse.",
-    "text_excerpt": "Considérant que...\n\nLe tribunal considère que la jurisprudence constante sur assurances s'applique ici.",
-    "references": [
-      "LPGA 52",
-      "LAA 36"
-    ],
-    "result": "partiellement_admis",
-    "url": "https://entscheidsuche.ch/mock/TI-2020-5",
-    "hash": "e76afdc0a675d215",
-    "ingested_at": "2026-04-19T17:55:59.932Z"
-  },
-  {
-    "source": "entscheidsuche.ch (mock)",
-    "canton": "NE",
-    "court": "Cour de cassation NE",
-    "date": "2021-07-11",
+    "date": "2023-05-13",
+    "signature": "BS-TC-2023-116",
     "domaine": "bail",
-    "title": "Mock bail NE n°7",
-    "summary": "Décision cantonale simulée pour bail dans NE. Applique les règles du droit suisse.",
-    "text_excerpt": "Considérant que...\n\nLe tribunal considère que la jurisprudence constante sur bail s'applique ici.",
+    "title": "Mietzinsanfechtung bei Wohnungsmangel",
+    "summary": "Das Appellationsgericht BS präzise die Anwendung von Art. 270 OR dans le contexte de Bâle-Ville.",
+    "text_excerpt": "Considérant le taux de vacance inférieur à 1% à Bâle-Ville, le tribunal cantonal BS retient que la contestation du loyer initial est ouverte. La locataire bénéficie d'une réduction de loyer significative.",
     "references": [
-      "CO 257e",
-      "CO 259a"
+      "CO 270"
+    ],
+    "articles_cited": [
+      "CO 270"
     ],
     "result": "favorable_demandeur",
-    "url": "https://entscheidsuche.ch/mock/NE-2021-6",
-    "hash": "0c4aced9a2c367d8",
-    "ingested_at": "2026-04-19T17:55:59.932Z"
+    "outcome": "admis",
+    "tier": 3,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/BS-2023-16",
+    "hash": "1984b090eaf461ef",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
   },
   {
-    "source": "entscheidsuche.ch (mock)",
-    "canton": "FR",
-    "court": "Tribunal cantonal FR",
-    "date": "2022-02-22",
-    "domaine": "travail",
-    "title": "Mock travail FR n°8",
-    "summary": "Décision cantonale simulée pour travail dans FR. Applique les règles du droit suisse.",
-    "text_excerpt": "Considérant que...\n\nLe tribunal considère que la jurisprudence constante sur travail s'applique ici.",
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "TI",
+    "court": "Pretura di Lugano",
+    "date": "2023-12-26",
+    "signature": "TI-TC-2023-117",
+    "domaine": "bail",
+    "title": "Disdetta del contratto di locazione per morosità",
+    "summary": "Il Tribunale d'appello TI conferma che la morosità di due mesi autorizza la disdetta straordinaria.",
+    "text_excerpt": "Considérant que le locataire n'a pas payé deux mois de loyer malgré mise en demeure, le tribunal cantonal TI retient que la résiliation est valable.",
     "references": [
-      "CO 336",
-      "CO 336c"
+      "CO 257d"
+    ],
+    "articles_cited": [
+      "CO 257d"
     ],
     "result": "defavorable_demandeur",
-    "url": "https://entscheidsuche.ch/mock/FR-2022-7",
-    "hash": "01319c5feeff044e",
-    "ingested_at": "2026-04-19T17:55:59.932Z"
+    "outcome": "rejeté",
+    "tier": 4,
+    "language": "it",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/TI-2023-17",
+    "hash": "b71dd5e86bead4ce",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
   },
   {
-    "source": "entscheidsuche.ch (mock)",
-    "canton": "VD",
-    "court": "Tribunal cantonal VD — Cour civile",
-    "date": "2023-09-05",
-    "domaine": "famille",
-    "title": "Mock famille VD n°9",
-    "summary": "Décision cantonale simulée pour famille dans VD. Applique les règles du droit suisse.",
-    "text_excerpt": "Considérant que...\n\nLe tribunal considère que la jurisprudence constante sur famille s'applique ici.",
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "TI",
+    "court": "Tribunale d'appello TI",
+    "date": "2022-07-11",
+    "signature": "TI-TC-2022-118",
+    "domaine": "bail",
+    "title": "Difetti dell'appartamento — riduzione del canone",
+    "summary": "Il Tribunale d'appello TI ammette una riduzione del canone di locazione del 10% per difetti di isolamento.",
+    "text_excerpt": "Considerato che i difetti di isolamento sono stati provati, le tribunal cantonal TI retient qu'une réduction de 10% est justifiée jusqu'à réparation.",
     "references": [
-      "CC 125",
-      "CC 276"
+      "CO 259a",
+      "CO 259d"
+    ],
+    "articles_cited": [
+      "CO 259a",
+      "CO 259d"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "it",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/TI-2022-18",
+    "hash": "bcccee2dda675488",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "NE",
+    "court": "Tribunal régional du Littoral",
+    "date": "2022-02-24",
+    "signature": "NE-TC-2022-119",
+    "domaine": "bail",
+    "title": "Congé anticipé avec locataire de remplacement",
+    "summary": "La Cour d'appel civile NE retient que le bailleur ne peut refuser sans motif sérieux un locataire de remplacement solvable.",
+    "text_excerpt": "Considérant que les trois candidats proposés remplissent les critères de solvabilité habituels, le tribunal cantonal NE retient que le refus du bailleur est infondé et libère la locataire.",
+    "references": [
+      "CO 264"
+    ],
+    "articles_cited": [
+      "CO 264"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/NE-2022-19",
+    "hash": "8ddbe3670261cd60",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "FR",
+    "court": "Tribunal cantonal FR — IIᵉ Cour d'appel civil",
+    "date": "2023-09-09",
+    "signature": "FR-TC-2023-120",
+    "domaine": "bail",
+    "title": "Augmentation de loyer — formule officielle manquante",
+    "summary": "Le tribunal cantonal FR confirme la nullité de la hausse notifiée sans la formule officielle cantonale.",
+    "text_excerpt": "Considérant que le canton de Fribourg impose l'usage de la formule officielle, le tribunal cantonal FR retient que la hausse est nulle et que le loyer antérieur demeure applicable.",
+    "references": [
+      "CO 269d",
+      "CO 270b"
+    ],
+    "articles_cited": [
+      "CO 269d",
+      "CO 270b"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/FR-2023-20",
+    "hash": "eaf95b500ae24dab",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "FR",
+    "court": "Tribunal civil de l'arrondissement de la Sarine",
+    "date": "2021-04-22",
+    "signature": "FR-TC-2021-121",
+    "domaine": "bail",
+    "title": "Dégâts en fin de bail — usure normale vs dégradations",
+    "summary": "Le tribunal cantonal FR distingue l'usure normale (à la charge du bailleur) des dégradations imputables au locataire.",
+    "text_excerpt": "Le tribunal cantonal FR précise que les traces d'usure liées à un séjour de 8 ans ne peuvent être imputées à la locataire. Considérant le rapport d'état des lieux, seules les réparations des portes sont à sa charge.",
+    "references": [
+      "CO 267",
+      "CO 267a"
+    ],
+    "articles_cited": [
+      "CO 267",
+      "CO 267a"
     ],
     "result": "partiellement_admis",
-    "url": "https://entscheidsuche.ch/mock/VD-2023-8",
-    "hash": "10d2f99452159808",
-    "ingested_at": "2026-04-19T17:55:59.932Z"
+    "outcome": "partiellement_admis",
+    "tier": 4,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/FR-2021-21",
+    "hash": "d556b3ee6738e2a2",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
   },
   {
-    "source": "entscheidsuche.ch (mock)",
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VS",
+    "court": "Tribunal cantonal VS — Cour civile",
+    "date": "2022-11-07",
+    "signature": "VS-TC-2022-122",
+    "domaine": "bail",
+    "title": "Bail commercial — protection limitée",
+    "summary": "Le tribunal cantonal VS rappelle que les règles de protection du bail d'habitation ne s'appliquent pas pleinement au bail commercial.",
+    "text_excerpt": "Considérant la nature commerciale du bail, le tribunal cantonal VS retient que la résiliation est valable, sauf si elle viole manifestement la bonne foi. La locataire commerçante est déboutée.",
+    "references": [
+      "CO 271"
+    ],
+    "articles_cited": [
+      "CO 271"
+    ],
+    "result": "defavorable_demandeur",
+    "outcome": "rejeté",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VS-2022-22",
+    "hash": "5e1a9e25eef94d8b",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal d'arrondissement de Lausanne",
+    "date": "2024-06-20",
+    "signature": "VD-TC-2024-123",
+    "domaine": "bail",
+    "title": "Baisse de loyer — variation du taux hypothécaire",
+    "summary": "Le tribunal cantonal VD admet la baisse de loyer demandée suite à la baisse du taux hypothécaire de référence.",
+    "text_excerpt": "Considérant que le taux hypothécaire est passé de 1.75% à 1.50%, le tribunal cantonal VD retient que la locataire peut prétendre à une baisse de loyer d'environ 3%.",
+    "references": [
+      "CO 270a"
+    ],
+    "articles_cited": [
+      "CO 270a"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2024-23",
+    "hash": "20cb607e9cfa7039",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "GE",
+    "court": "Cour de justice GE — Chambre des baux et loyers",
+    "date": "2022-01-05",
+    "signature": "GE-TC-2022-124",
+    "domaine": "bail",
+    "title": "Accès du bailleur — conditions strictes",
+    "summary": "La Cour de justice GE précise que le droit de visite du bailleur doit respecter l'intimité du locataire.",
+    "text_excerpt": "Le tribunal cantonal GE retient que les visites surprises constituent un trouble de la jouissance. Considérant la fréquence des visites non annoncées, une indemnité est accordée à la locataire.",
+    "references": [
+      "CO 257h"
+    ],
+    "articles_cited": [
+      "CO 257h"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/GE-2022-24",
+    "hash": "56fcdd9a66b808ac",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "ZH",
+    "court": "Obergericht ZH — II. Zivilkammer",
+    "date": "2024-08-18",
+    "signature": "ZH-TC-2024-125",
+    "domaine": "bail",
+    "title": "Formularpflicht bei Mietzinsanpassung",
+    "summary": "Le tribunal cantonal ZH admet la contestation de la locataire pour vice de forme.",
+    "text_excerpt": "Considérant que la notification ne respecte pas les exigences formelles de l'art. 269d CO, le tribunal cantonal ZH retient que la hausse est nulle.",
+    "references": [
+      "CO 269d"
+    ],
+    "articles_cited": [
+      "CO 269d"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/ZH-2024-25",
+    "hash": "5780162fabfd3857",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal d'arrondissement de Lausanne",
+    "date": "2021-03-03",
+    "signature": "VD-TC-2021-126",
+    "domaine": "bail",
+    "title": "Refus de réparer — consignation du loyer",
+    "summary": "Le tribunal cantonal VD retient que la consignation du loyer est valable lorsque le bailleur reste inactif.",
+    "text_excerpt": "Considérant que la locataire a avisé les défauts par courrier recommandé resté sans suite, le tribunal cantonal VD retient que la consignation est légitime et les loyers consignés seront restitués une fois les travaux exécutés.",
+    "references": [
+      "CO 259g",
+      "CO 259h"
+    ],
+    "articles_cited": [
+      "CO 259g",
+      "CO 259h"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2021-26",
+    "hash": "4b3d836a9489b5df",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "GE",
+    "court": "Cour de justice GE — Chambre des baux et loyers",
+    "date": "2024-10-16",
+    "signature": "GE-TC-2024-127",
+    "domaine": "bail",
+    "title": "Résiliation pour justes motifs — non admise",
+    "summary": "La Cour de justice GE rejette la résiliation extraordinaire invoquée par la locataire pour nuisances de voisinage.",
+    "text_excerpt": "Considérant que le bailleur a pris des mesures raisonnables, le tribunal cantonal GE retient que les conditions d'une résiliation pour justes motifs ne sont pas réunies. La locataire est déboutée.",
+    "references": [
+      "CO 266g"
+    ],
+    "articles_cited": [
+      "CO 266g"
+    ],
+    "result": "defavorable_demandeur",
+    "outcome": "rejeté",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/GE-2024-27",
+    "hash": "3df4181804418da1",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "BE",
+    "court": "Obergericht BE — Zivilabteilung",
+    "date": "2024-05-01",
+    "signature": "BE-TC-2024-128",
+    "domaine": "bail",
+    "title": "Garantie de loyer en espèces — interdiction",
+    "summary": "Le tribunal cantonal BE retient qu'une garantie de loyer remise en espèces hors compte bancaire est contraire à l'art. 257e CO.",
+    "text_excerpt": "Considérant que la locataire a versé 3 mois de loyer directement au bailleur en espèces, le tribunal cantonal BE précise qu'elle peut en exiger la restitution immédiate.",
+    "references": [
+      "CO 257e"
+    ],
+    "articles_cited": [
+      "CO 257e"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/BE-2024-28",
+    "hash": "e5a3e5286fb92858",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal d'arrondissement de Lausanne",
+    "date": "2023-12-14",
+    "signature": "VD-TC-2023-129",
+    "domaine": "bail",
+    "title": "Dégâts d'eau — responsabilité immeuble",
+    "summary": "Le tribunal cantonal VD retient la responsabilité du bailleur pour des dégâts d'eau causés par une conduite vétuste.",
+    "text_excerpt": "Considérant que la conduite date de 1972 et n'a jamais été rénovée, le tribunal cantonal VD retient que l'usure du bâtiment engage la responsabilité du bailleur pour les dommages causés à la locataire.",
+    "references": [
+      "CO 259a",
+      "CO 259e"
+    ],
+    "articles_cited": [
+      "CO 259a",
+      "CO 259e"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2023-29",
+    "hash": "f3ff97932cd01475",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal cantonal VD — Cour civile",
+    "date": "2023-07-27",
+    "signature": "VD-TC-2023-130",
+    "domaine": "travail",
+    "title": "Licenciement abusif — motif économique non établi",
+    "summary": "Le tribunal cantonal VD retient que l'employeur n'a pas établi les difficultés économiques invoquées, le licenciement est qualifié d'abusif.",
+    "text_excerpt": "Considérant l'absence de pièces comptables démontrant une restructuration effective, le tribunal cantonal VD retient que le travailleur a droit à une indemnité de 4 mois de salaire au sens de l'art. 336a CO.",
+    "references": [
+      "CO 336",
+      "CO 336a"
+    ],
+    "articles_cited": [
+      "CO 336",
+      "CO 336a"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2023-30",
+    "hash": "1b9b85c3f2e2d52d",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal cantonal VD — Cour de droit public",
+    "date": "2022-02-12",
+    "signature": "VD-TC-2022-131",
+    "domaine": "travail",
+    "title": "Licenciement pendant incapacité — nullité",
+    "summary": "Le tribunal cantonal VD confirme la nullité d'un licenciement notifié pendant une incapacité de travail.",
+    "text_excerpt": "Considérant que l'employé était en arrêt maladie depuis 18 jours, le tribunal cantonal VD retient que le délai de protection de l'art. 336c CO est applicable et que le congé est nul.",
+    "references": [
+      "CO 336c"
+    ],
+    "articles_cited": [
+      "CO 336c"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2022-31",
+    "hash": "da3dbd488bc9e40a",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal d'arrondissement de Lausanne",
+    "date": "2024-09-25",
+    "signature": "VD-TC-2024-132",
+    "domaine": "travail",
+    "title": "Heures supplémentaires — preuve à charge de l'employé",
+    "summary": "Le tribunal cantonal VD rappelle que le travailleur doit prouver les heures supplémentaires accomplies.",
+    "text_excerpt": "Considérant l'absence de système de timbrage et de preuves écrites, le tribunal cantonal VD retient que le travailleur n'a pas démontré l'accomplissement d'heures supplémentaires. La demande est rejetée.",
+    "references": [
+      "CO 321c"
+    ],
+    "articles_cited": [
+      "CO 321c"
+    ],
+    "result": "defavorable_demandeur",
+    "outcome": "rejeté",
+    "tier": 4,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2024-32",
+    "hash": "769d050f93f68c9c",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "GE",
+    "court": "Cour de justice GE — Chambre des baux et loyers",
+    "date": "2023-04-10",
+    "signature": "GE-TC-2023-133",
+    "domaine": "travail",
+    "title": "Résiliation immédiate — justes motifs non retenus",
+    "summary": "La Cour de justice GE rejette l'existence de justes motifs invoqués par l'employeur pour une résiliation avec effet immédiat.",
+    "text_excerpt": "Considérant que le retard invoqué ne constituait pas un manquement grave, le tribunal cantonal GE retient que le licenciement immédiat n'est pas fondé. Le travailleur obtient le salaire jusqu'au terme ordinaire.",
+    "references": [
+      "CO 337",
+      "CO 337c"
+    ],
+    "articles_cited": [
+      "CO 337",
+      "CO 337c"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/GE-2023-33",
+    "hash": "19ef8d8e73b68c27",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
     "canton": "GE",
     "court": "Cour de justice GE — Chambre des prud'hommes",
-    "date": "2024-04-16",
+    "date": "2022-11-23",
+    "signature": "GE-TC-2022-134",
+    "domaine": "travail",
+    "title": "Vacances non prises — indemnité",
+    "summary": "La Cour de justice GE admet l'indemnité pour vacances non prises à la fin des rapports de travail.",
+    "text_excerpt": "Considérant qu'il était impossible au travailleur de prendre ses 12 jours de vacances restants durant son préavis, le tribunal cantonal GE retient qu'ils doivent être indemnisés en espèces.",
+    "references": [
+      "CO 329",
+      "CO 329d"
+    ],
+    "articles_cited": [
+      "CO 329",
+      "CO 329d"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/GE-2022-34",
+    "hash": "56ef9a528dffdf0a",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "ZH",
+    "court": "Mietgericht Zürich",
+    "date": "2024-06-08",
+    "signature": "ZH-TC-2024-135",
+    "domaine": "travail",
+    "title": "Kündigung während Schwangerschaft — nichtig",
+    "summary": "Le tribunal cantonal ZH confirme la nullité d'un licenciement notifié pendant la grossesse de la travailleuse.",
+    "text_excerpt": "Considérant que la travailleuse a informé son employeur de sa grossesse avant le congé, le tribunal cantonal ZH retient que le licenciement est nul selon l'art. 336c CO.",
+    "references": [
+      "CO 336c"
+    ],
+    "articles_cited": [
+      "CO 336c"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/ZH-2024-35",
+    "hash": "ad8daf1a4df5e93b",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "ZH",
+    "court": "Obergericht ZH — I. Zivilkammer",
+    "date": "2023-01-21",
+    "signature": "ZH-TC-2023-136",
+    "domaine": "travail",
+    "title": "Certificat de travail — droit à la rectification",
+    "summary": "Le tribunal cantonal ZH admet partiellement la demande de rectification du certificat de travail.",
+    "text_excerpt": "Considérant que certaines mentions étaient trompeuses et que d'autres correspondaient à la réalité, le tribunal cantonal ZH retient qu'une rectification partielle est justifiée. La travailleuse obtient partiellement gain de cause.",
+    "references": [
+      "CO 330a"
+    ],
+    "articles_cited": [
+      "CO 330a"
+    ],
+    "result": "partiellement_admis",
+    "outcome": "partiellement_admis",
+    "tier": 3,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/ZH-2023-36",
+    "hash": "c48630b13a97f212",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "BE",
+    "court": "Regionalgericht Bern-Mittelland",
+    "date": "2023-08-06",
+    "signature": "BE-TC-2023-137",
+    "domaine": "travail",
+    "title": "Salaire impayé — avis de défaut",
+    "summary": "Le tribunal cantonal BE retient que le travailleur peut suspendre sa prestation en cas de salaire impayé.",
+    "text_excerpt": "Considérant que l'employeur devait deux mois de salaire, le tribunal cantonal BE retient que le travailleur était en droit de refuser de travailler jusqu'à paiement, conformément à l'art. 82 CO.",
+    "references": [
+      "CO 322",
+      "CO 82"
+    ],
+    "articles_cited": [
+      "CO 322",
+      "CO 82"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/BE-2023-37",
+    "hash": "eef51bf62bae0fe5",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "BE",
+    "court": "Obergericht BE — Zivilabteilung",
+    "date": "2022-03-19",
+    "signature": "BE-TC-2022-138",
+    "domaine": "travail",
+    "title": "Clause de non-concurrence — nullité",
+    "summary": "Le tribunal cantonal BE annule une clause de non-concurrence disproportionnée dans l'espace et le temps.",
+    "text_excerpt": "Considérant que la clause couvrait toute la Suisse pour 3 ans sans indemnité, le tribunal cantonal BE retient qu'elle est excessive et donc nulle.",
+    "references": [
+      "CO 340",
+      "CO 340a"
+    ],
+    "articles_cited": [
+      "CO 340",
+      "CO 340a"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/BE-2022-38",
+    "hash": "0c9e37e9f4fd0407",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "BS",
+    "court": "Zivilgericht Basel-Stadt",
+    "date": "2024-10-04",
+    "signature": "BS-TC-2024-139",
+    "domaine": "travail",
+    "title": "Mobbing — indemnité pour tort moral",
+    "summary": "Le tribunal cantonal BS admet l'existence d'un harcèlement psychologique et octroie une indemnité pour tort moral.",
+    "text_excerpt": "Considérant les témoignages concordants et la dégradation de la santé psychique de la travailleuse, le tribunal cantonal BS retient l'existence d'un mobbing et accorde 8'000 CHF pour tort moral.",
+    "references": [
+      "CO 328",
+      "CO 49"
+    ],
+    "articles_cited": [
+      "CO 328",
+      "CO 49"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/BS-2024-39",
+    "hash": "841051337a1a0736",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "TI",
+    "court": "Tribunale d'appello TI",
+    "date": "2023-05-17",
+    "signature": "TI-TC-2023-140",
+    "domaine": "travail",
+    "title": "Licenziamento immediato — giusti motivi",
+    "summary": "Il Tribunale d'appello TI ammette l'esistenza di giusti motivi per il licenziamento immediato di un dipendente fraudolento.",
+    "text_excerpt": "Considérant que le travailleur a été surpris en train de détourner des fonds, le tribunal cantonal TI retient que le licenciement immédiat est justifié. La demande d'indemnités est rejetée.",
+    "references": [
+      "CO 337"
+    ],
+    "articles_cited": [
+      "CO 337"
+    ],
+    "result": "defavorable_demandeur",
+    "outcome": "rejeté",
+    "tier": 3,
+    "language": "it",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/TI-2023-40",
+    "hash": "db83aa149ea865d5",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "NE",
+    "court": "Tribunal régional du Littoral",
+    "date": "2022-12-02",
+    "signature": "NE-TC-2022-141",
+    "domaine": "travail",
+    "title": "Temps de déplacement — comptabilisé comme temps de travail",
+    "summary": "La Cour d'appel civile NE qualifie les déplacements entre chantiers de temps de travail.",
+    "text_excerpt": "Considérant que les déplacements se faisaient avec le véhicule de l'entreprise et sous instruction de l'employeur, le tribunal cantonal NE retient qu'ils doivent être rémunérés comme temps de travail.",
+    "references": [
+      "CO 319",
+      "CO 321c"
+    ],
+    "articles_cited": [
+      "CO 319",
+      "CO 321c"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/NE-2022-41",
+    "hash": "b8c1803382b8945d",
+    "ingested_at": "2026-04-20T01:01:52.726Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "FR",
+    "court": "Tribunal cantonal FR — IIᵉ Cour d'appel civil",
+    "date": "2023-07-15",
+    "signature": "FR-TC-2023-142",
+    "domaine": "travail",
+    "title": "Prolongation du délai de congé — ancienneté",
+    "summary": "Le tribunal cantonal FR applique le délai de congé de 3 mois au travailleur de 15 ans d'ancienneté.",
+    "text_excerpt": "Considérant l'ancienneté de 15 ans, le tribunal cantonal FR retient que le délai de congé applicable est de 3 mois conformément à l'art. 335c CO. Le salaire correspondant est dû.",
+    "references": [
+      "CO 335c"
+    ],
+    "articles_cited": [
+      "CO 335c"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/FR-2023-42",
+    "hash": "e5d52ff9d0d1e4ba",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal cantonal VD — Cour de droit public",
+    "date": "2022-02-28",
+    "signature": "VD-TC-2022-143",
+    "domaine": "travail",
+    "title": "Gratification ou 13ème salaire — qualification juridique",
+    "summary": "Le tribunal cantonal VD requalifie en 13ème salaire une gratification versée régulièrement pendant 7 ans.",
+    "text_excerpt": "Considérant le versement régulier et sans réserve pendant 7 années consécutives, le tribunal cantonal VD retient qu'il s'agit d'un élément du salaire et non d'une gratification discrétionnaire.",
+    "references": [
+      "CO 322",
+      "CO 322d"
+    ],
+    "articles_cited": [
+      "CO 322",
+      "CO 322d"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2022-43",
+    "hash": "0f2a8afbece86afb",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "GE",
+    "court": "Tribunal de première instance GE",
+    "date": "2024-09-13",
+    "signature": "GE-TC-2024-144",
+    "domaine": "travail",
+    "title": "Discrimination salariale — charge de la preuve allégée",
+    "summary": "La Cour de justice GE admet la discrimination salariale d'une travailleuse après comparaison avec un collègue masculin.",
+    "text_excerpt": "Considérant le différentiel de 15% et l'absence d'explication objective, le tribunal cantonal GE retient que la discrimination est rendue vraisemblable et accorde un rattrapage salarial.",
+    "references": [
+      "LEg 3",
+      "LEg 6"
+    ],
+    "articles_cited": [
+      "LEg 3",
+      "LEg 6"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/GE-2024-44",
+    "hash": "7c1d2781ae91bfaf",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal cantonal VD — Cour civile",
+    "date": "2021-04-26",
+    "signature": "VD-TC-2021-145",
+    "domaine": "travail",
+    "title": "Paiement salaire pendant maladie — 3 ans d'ancienneté",
+    "summary": "Le tribunal cantonal VD applique l'échelle bernoise : 2 mois de salaire pour 3 ans d'ancienneté.",
+    "text_excerpt": "Considérant que le travailleur totalisait 3 ans et 2 mois de service, le tribunal cantonal VD retient que l'obligation de verser le salaire durant 2 mois de maladie est applicable selon l'art. 324a CO.",
+    "references": [
+      "CO 324a"
+    ],
+    "articles_cited": [
+      "CO 324a"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2021-45",
+    "hash": "30a3c75b3428f166",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "ZH",
+    "court": "Bezirksgericht Zürich",
+    "date": "2022-11-11",
+    "signature": "ZH-TC-2022-146",
+    "domaine": "travail",
+    "title": "Überstunden — Kompensation oder Auszahlung",
+    "summary": "Le tribunal cantonal ZH retient que le supplément de 25% pour heures supplémentaires n'est pas dû si l'employeur compense en temps libre dans un délai raisonnable.",
+    "text_excerpt": "Considérant que la compensation en temps libre est intervenue dans les 4 mois, le tribunal cantonal ZH retient que seule la compensation brute est due sans le supplément.",
+    "references": [
+      "CO 321c"
+    ],
+    "articles_cited": [
+      "CO 321c"
+    ],
+    "result": "partiellement_admis",
+    "outcome": "partiellement_admis",
+    "tier": 4,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/ZH-2022-46",
+    "hash": "2e32532903ffcd86",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "BE",
+    "court": "Regionalgericht Bern-Mittelland",
+    "date": "2023-06-24",
+    "signature": "BE-TC-2023-147",
+    "domaine": "travail",
+    "title": "Licenciement collectif — violation procédure",
+    "summary": "Le tribunal cantonal BE retient que l'employeur n'a pas respecté la procédure de consultation préalable.",
+    "text_excerpt": "Considérant que la consultation des travailleurs n'a pas eu lieu dans le délai légal, le tribunal cantonal BE retient que les licenciements sont abusifs et octroie une indemnité de 2 mois.",
+    "references": [
+      "CO 335d",
+      "CO 335f",
+      "CO 336"
+    ],
+    "articles_cited": [
+      "CO 335d",
+      "CO 335f",
+      "CO 336"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/BE-2023-47",
+    "hash": "d43803d80eb4e032",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal cantonal VD — Cour civile",
+    "date": "2024-01-09",
+    "signature": "VD-TC-2024-148",
+    "domaine": "travail",
+    "title": "Frais professionnels — remboursement",
+    "summary": "Le tribunal cantonal VD confirme l'obligation de l'employeur de rembourser les frais réellement engagés.",
+    "text_excerpt": "Considérant que le travailleur utilisait sa voiture personnelle pour des tournées clientèle, le tribunal cantonal VD retient qu'un remboursement kilométrique selon le barème officiel est dû.",
+    "references": [
+      "CO 327a"
+    ],
+    "articles_cited": [
+      "CO 327a"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2024-48",
+    "hash": "74619e9d5a073ecd",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal cantonal VD — Cour de droit public",
+    "date": "2023-08-22",
+    "signature": "VD-TC-2023-149",
     "domaine": "dettes",
-    "title": "Mock dettes GE n°10",
-    "summary": "Décision cantonale simulée pour dettes dans GE. Applique les règles du droit suisse.",
-    "text_excerpt": "Considérant que...\n\nLe tribunal considère que la jurisprudence constante sur dettes s'applique ici.",
+    "title": "Opposition au commandement de payer — motivation",
+    "summary": "Le tribunal cantonal VD rappelle que l'opposition au commandement de payer n'a pas à être motivée.",
+    "text_excerpt": "Considérant la lettre de l'art. 74 LP, le tribunal cantonal VD retient que le débiteur a valablement formé opposition sans justification. La mainlevée est écartée.",
     "references": [
       "LP 74",
       "LP 80"
     ],
+    "articles_cited": [
+      "LP 74",
+      "LP 80"
+    ],
     "result": "favorable_demandeur",
-    "url": "https://entscheidsuche.ch/mock/GE-2024-9",
-    "hash": "ebbe020f41772e43",
-    "ingested_at": "2026-04-19T17:55:59.932Z"
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2023-49",
+    "hash": "0548b526c9c3a42d",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal d'arrondissement de Lausanne",
+    "date": "2022-03-07",
+    "signature": "VD-TC-2022-150",
+    "domaine": "dettes",
+    "title": "Mainlevée définitive — jugement exécutoire",
+    "summary": "Le tribunal cantonal VD accorde la mainlevée définitive sur la base d'un jugement exécutoire.",
+    "text_excerpt": "Considérant que le jugement produit est exécutoire et porte condamnation à payer une somme déterminée, le tribunal cantonal VD retient que les conditions de l'art. 80 LP sont réunies.",
+    "references": [
+      "LP 80"
+    ],
+    "articles_cited": [
+      "LP 80"
+    ],
+    "result": "defavorable_demandeur",
+    "outcome": "rejeté",
+    "tier": 4,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2022-50",
+    "hash": "10e7d5764dd87d85",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "GE",
+    "court": "Cour de justice GE — Chambre des baux et loyers",
+    "date": "2023-10-20",
+    "signature": "GE-TC-2023-151",
+    "domaine": "dettes",
+    "title": "Minimum vital — calcul individualisé",
+    "summary": "La Cour de justice GE rappelle que le minimum vital doit intégrer les charges effectives du débiteur.",
+    "text_excerpt": "Considérant les frais médicaux documentés et les contributions d'entretien, le tribunal cantonal GE retient que le minimum vital du débiteur doit être revu à la hausse, réduisant la saisie.",
+    "references": [
+      "LP 93"
+    ],
+    "articles_cited": [
+      "LP 93"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/GE-2023-51",
+    "hash": "3f7a95a226d94135",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "GE",
+    "court": "Cour de justice GE — Chambre des prud'hommes",
+    "date": "2022-05-05",
+    "signature": "GE-TC-2022-152",
+    "domaine": "dettes",
+    "title": "Mainlevée provisoire — reconnaissance de dette",
+    "summary": "La Cour de justice GE admet la mainlevée provisoire sur la base d'une reconnaissance de dette signée.",
+    "text_excerpt": "Considérant la reconnaissance signée de la main du débiteur, le tribunal cantonal GE retient que le créancier peut obtenir mainlevée provisoire selon l'art. 82 LP.",
+    "references": [
+      "LP 82"
+    ],
+    "articles_cited": [
+      "LP 82"
+    ],
+    "result": "defavorable_demandeur",
+    "outcome": "rejeté",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/GE-2022-52",
+    "hash": "eacdb2eb4fe0cde8",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "ZH",
+    "court": "Obergericht ZH — II. Zivilkammer",
+    "date": "2024-12-18",
+    "signature": "ZH-TC-2024-153",
+    "domaine": "dettes",
+    "title": "Faillite personnelle — conditions strictes",
+    "summary": "Le tribunal cantonal ZH précise les conditions de l'art. 191 LP pour la faillite sans poursuite préalable.",
+    "text_excerpt": "Considérant que le débiteur n'a pas établi son état de surendettement durable, le tribunal cantonal ZH retient que les conditions d'une faillite volontaire ne sont pas réunies.",
+    "references": [
+      "LP 191"
+    ],
+    "articles_cited": [
+      "LP 191"
+    ],
+    "result": "defavorable_demandeur",
+    "outcome": "rejeté",
+    "tier": 3,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/ZH-2024-53",
+    "hash": "09d4f67756a12dd0",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "ZH",
+    "court": "Bezirksgericht Zürich",
+    "date": "2023-07-03",
+    "signature": "ZH-TC-2023-154",
+    "domaine": "dettes",
+    "title": "Biens insaisissables — outils de travail",
+    "summary": "Le tribunal cantonal ZH retient que les outils indispensables à l'activité professionnelle sont insaisissables.",
+    "text_excerpt": "Considérant que l'artisan ne peut exercer son métier sans ses outils, le tribunal cantonal ZH retient qu'ils sont insaisissables selon l'art. 92 LP.",
+    "references": [
+      "LP 92"
+    ],
+    "articles_cited": [
+      "LP 92"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/ZH-2023-54",
+    "hash": "a6f707ac3fe0d6c8",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "BE",
+    "court": "Regionalgericht Bern-Mittelland",
+    "date": "2023-02-16",
+    "signature": "BE-TC-2023-155",
+    "domaine": "dettes",
+    "title": "Action en constatation négative de créance",
+    "summary": "Le tribunal cantonal BE admet l'action en constatation négative du débiteur.",
+    "text_excerpt": "Considérant que la créance invoquée par l'office des poursuites n'était pas due, le tribunal cantonal BE retient que le débiteur peut obtenir la radiation de la poursuite selon l'art. 85a LP.",
+    "references": [
+      "LP 85a"
+    ],
+    "articles_cited": [
+      "LP 85a"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/BE-2023-55",
+    "hash": "af85c2c96b989077",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "BE",
+    "court": "Obergericht BE — Zivilabteilung",
+    "date": "2022-09-01",
+    "signature": "BE-TC-2022-156",
+    "domaine": "dettes",
+    "title": "Délai de péremption — action en libération de dette",
+    "summary": "Le tribunal cantonal BE rejette une action en libération de dette formée hors délai.",
+    "text_excerpt": "Considérant que l'action a été introduite 25 jours après la mainlevée provisoire, le tribunal cantonal BE retient que le délai de 20 jours de l'art. 83 al. 2 LP est échu.",
+    "references": [
+      "LP 83"
+    ],
+    "articles_cited": [
+      "LP 83"
+    ],
+    "result": "defavorable_demandeur",
+    "outcome": "rejeté",
+    "tier": 3,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/BE-2022-56",
+    "hash": "d725a6175e247c8d",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal cantonal VD — Cour civile",
+    "date": "2024-04-14",
+    "signature": "VD-TC-2024-157",
+    "domaine": "dettes",
+    "title": "Saisie de salaire — employeur tiers",
+    "summary": "Le tribunal cantonal VD confirme la validité d'un avis de saisie notifié à l'employeur.",
+    "text_excerpt": "Considérant la notification régulière à l'employeur, le tribunal cantonal VD retient que l'avis de saisie est opposable et que l'employeur doit retenir la part saisie.",
+    "references": [
+      "LP 99"
+    ],
+    "articles_cited": [
+      "LP 99"
+    ],
+    "result": "defavorable_demandeur",
+    "outcome": "rejeté",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2024-57",
+    "hash": "85d13a41b2ecafa0",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "GE",
+    "court": "Cour de justice GE — Chambre des prud'hommes",
+    "date": "2021-11-27",
+    "signature": "GE-TC-2021-158",
+    "domaine": "dettes",
+    "title": "Plainte LP — notification défectueuse",
+    "summary": "La Cour de justice GE annule un commandement de payer pour notification défectueuse.",
+    "text_excerpt": "Considérant que la notification a été remise à un voisin sans droit de substitution, le tribunal cantonal GE retient que le commandement de payer est entaché de nullité.",
+    "references": [
+      "LP 17",
+      "LP 72"
+    ],
+    "articles_cited": [
+      "LP 17",
+      "LP 72"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/GE-2021-58",
+    "hash": "b93471515ed5315b",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "TI",
+    "court": "Pretura di Lugano",
+    "date": "2023-06-12",
+    "signature": "TI-TC-2023-159",
+    "domaine": "dettes",
+    "title": "Sequestro — condizioni",
+    "summary": "Il Tribunale d'appello TI rigetta una domanda di sequestro per mancanza di prove di fuga di beni.",
+    "text_excerpt": "Considérant l'absence d'indices concrets de dissimulation de biens, le tribunal cantonal TI retient que les conditions du séquestre ne sont pas remplies. La débitrice obtient gain de cause.",
+    "references": [
+      "LP 271"
+    ],
+    "articles_cited": [
+      "LP 271"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "it",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/TI-2023-59",
+    "hash": "111771f1259709a1",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "FR",
+    "court": "Tribunal cantonal FR — IIᵉ Cour d'appel civil",
+    "date": "2022-01-25",
+    "signature": "FR-TC-2022-160",
+    "domaine": "dettes",
+    "title": "Avis comminatoire de faillite — mainlevée",
+    "summary": "Le tribunal cantonal FR admet la mainlevée de l'avis comminatoire après paiement partiel.",
+    "text_excerpt": "Considérant que le débiteur a versé 60% de la dette avant l'audience, le tribunal cantonal FR retient que la faillite n'a plus de justification suffisante.",
+    "references": [
+      "LP 171",
+      "LP 172"
+    ],
+    "articles_cited": [
+      "LP 171",
+      "LP 172"
+    ],
+    "result": "partiellement_admis",
+    "outcome": "partiellement_admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/FR-2022-60",
+    "hash": "d4c3b9b9b6de7d58",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal cantonal VD — Cour de droit public",
+    "date": "2023-08-10",
+    "signature": "VD-TC-2023-161",
+    "domaine": "dettes",
+    "title": "Tiers revendication — bien saisi",
+    "summary": "Le tribunal cantonal VD retient qu'un bien appartenant à un tiers doit être exclu de la saisie.",
+    "text_excerpt": "Considérant les preuves de propriété (facture au nom du tiers), le tribunal cantonal VD retient la revendication et ordonne la restitution du bien.",
+    "references": [
+      "LP 106",
+      "LP 107"
+    ],
+    "articles_cited": [
+      "LP 106",
+      "LP 107"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2023-61",
+    "hash": "4f2af13cfb02701c",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "BE",
+    "court": "Obergericht BE — Zivilabteilung",
+    "date": "2024-03-23",
+    "signature": "BE-TC-2024-162",
+    "domaine": "dettes",
+    "title": "Retrait de poursuite — conditions",
+    "summary": "Le tribunal cantonal BE retient que le débiteur peut demander la radiation au registre après paiement intégral.",
+    "text_excerpt": "Considérant le quittancement intégral de la créance, le tribunal cantonal BE retient que la mention de la poursuite doit être radiée du registre conformément à l'art. 8a LP.",
+    "references": [
+      "LP 8a"
+    ],
+    "articles_cited": [
+      "LP 8a"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/BE-2024-62",
+    "hash": "2718534c2b55c820",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "GE",
+    "court": "Cour de justice GE — Chambre des baux et loyers",
+    "date": "2024-10-08",
+    "signature": "GE-TC-2024-163",
+    "domaine": "dettes",
+    "title": "Quatre mois pour contester le tableau de distribution",
+    "summary": "La Cour de justice GE rappelle le délai de 10 jours pour contester le tableau de distribution.",
+    "text_excerpt": "Considérant que la plainte a été déposée tardivement, le tribunal cantonal GE retient que le tableau de distribution est définitif. Le créancier est débouté.",
+    "references": [
+      "LP 157",
+      "LP 17"
+    ],
+    "articles_cited": [
+      "LP 157",
+      "LP 17"
+    ],
+    "result": "defavorable_demandeur",
+    "outcome": "rejeté",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/GE-2024-63",
+    "hash": "6ba04be40edbc85f",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal cantonal VD — Cour de droit public",
+    "date": "2023-05-21",
+    "signature": "VD-TC-2023-164",
+    "domaine": "famille",
+    "title": "Pension alimentaire enfants — coût élevé",
+    "summary": "Le tribunal cantonal VD fixe la contribution d'entretien selon les besoins réels de l'enfant scolarisé en privé.",
+    "text_excerpt": "Considérant que la scolarisation privée avait été décidée pendant la vie commune et correspondait au niveau de vie antérieur, le tribunal cantonal VD retient que ces frais doivent être partagés selon les capacités contributives.",
+    "references": [
+      "CC 276",
+      "CC 285"
+    ],
+    "articles_cited": [
+      "CC 276",
+      "CC 285"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2023-64",
+    "hash": "4ef4260bea0bb121",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal d'arrondissement de Lausanne",
+    "date": "2022-12-06",
+    "signature": "VD-TC-2022-165",
+    "domaine": "famille",
+    "title": "Garde partagée — conditions",
+    "summary": "Le tribunal cantonal VD admet la garde alternée compte tenu de la bonne communication parentale.",
+    "text_excerpt": "Considérant la proximité géographique et l'accord sur l'éducation, le tribunal cantonal VD retient que la garde alternée semaine sur semaine est dans l'intérêt des enfants.",
+    "references": [
+      "CC 298",
+      "CC 298a"
+    ],
+    "articles_cited": [
+      "CC 298",
+      "CC 298a"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2022-65",
+    "hash": "5ea76f6c25b691b5",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "GE",
+    "court": "Cour de justice GE — Chambre des baux et loyers",
+    "date": "2023-07-19",
+    "signature": "GE-TC-2023-166",
+    "domaine": "famille",
+    "title": "Contribution d'entretien conjoint — capacité contributive",
+    "summary": "La Cour de justice GE réduit la contribution à l'ex-conjoint vu la perte d'emploi documentée.",
+    "text_excerpt": "Considérant la perte involontaire de l'emploi et les recherches actives, le tribunal cantonal GE retient que la contribution doit être adaptée à titre de nuance.",
+    "references": [
+      "CC 125",
+      "CC 129"
+    ],
+    "articles_cited": [
+      "CC 125",
+      "CC 129"
+    ],
+    "result": "partiellement_admis",
+    "outcome": "partiellement_admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/GE-2023-66",
+    "hash": "b98923067c042533",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "GE",
+    "court": "Cour de justice GE — Chambre des prud'hommes",
+    "date": "2024-02-04",
+    "signature": "GE-TC-2024-167",
+    "domaine": "famille",
+    "title": "Divorce sans faute — liquidation du régime matrimonial",
+    "summary": "La Cour de justice GE retient le partage par moitié des acquêts de la période de mariage.",
+    "text_excerpt": "Considérant l'absence de convention matrimoniale, le tribunal cantonal GE retient que la participation aux acquêts s'applique intégralement. La demande est admise.",
+    "references": [
+      "CC 197",
+      "CC 215"
+    ],
+    "articles_cited": [
+      "CC 197",
+      "CC 215"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/GE-2024-67",
+    "hash": "3cbdbca8027d87aa",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "ZH",
+    "court": "Obergericht ZH — I. Zivilkammer",
+    "date": "2023-09-17",
+    "signature": "ZH-TC-2023-168",
+    "domaine": "famille",
+    "title": "Autorité parentale conjointe — maintien malgré conflit",
+    "summary": "Le tribunal cantonal ZH maintient l'autorité parentale conjointe malgré les désaccords.",
+    "text_excerpt": "Considérant que les parents peuvent communiquer sur les décisions essentielles, le tribunal cantonal ZH retient qu'il n'existe pas de motif grave pour attribuer l'autorité à un seul parent.",
+    "references": [
+      "CC 296",
+      "CC 298"
+    ],
+    "articles_cited": [
+      "CC 296",
+      "CC 298"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/ZH-2023-68",
+    "hash": "91de3954e3b8a6a3",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "BE",
+    "court": "Regionalgericht Bern-Mittelland",
+    "date": "2022-04-02",
+    "signature": "BE-TC-2022-169",
+    "domaine": "famille",
+    "title": "Mesures protectrices — attribution domicile conjugal",
+    "summary": "Le tribunal cantonal BE attribue le domicile conjugal au conjoint qui conserve la garde des enfants.",
+    "text_excerpt": "Considérant l'intérêt des enfants à demeurer dans leur environnement scolaire, le tribunal cantonal BE retient que le logement doit être attribué à la mère gardienne.",
+    "references": [
+      "CC 176"
+    ],
+    "articles_cited": [
+      "CC 176"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/BE-2022-69",
+    "hash": "4620ecddda01e61b",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "FR",
+    "court": "Tribunal cantonal FR — IIᵉ Cour d'appel civil",
+    "date": "2023-11-15",
+    "signature": "FR-TC-2023-170",
+    "domaine": "famille",
+    "title": "Droit de visite — suspension temporaire",
+    "summary": "Le tribunal cantonal FR suspend le droit de visite compte tenu des violences alléguées.",
+    "text_excerpt": "Considérant les rapports de police et les auditions des enfants, le tribunal cantonal FR retient que la suspension du droit de visite est nécessaire à la protection des mineurs.",
+    "references": [
+      "CC 273",
+      "CC 274"
+    ],
+    "articles_cited": [
+      "CC 273",
+      "CC 274"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/FR-2023-70",
+    "hash": "741ae118cd5a2ac9",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "NE",
+    "court": "Tribunal régional du Littoral",
+    "date": "2022-06-28",
+    "signature": "NE-TC-2022-171",
+    "domaine": "famille",
+    "title": "Reconnaissance de paternité — test ADN",
+    "summary": "La Cour d'appel civile NE ordonne un test ADN pour trancher la filiation contestée.",
+    "text_excerpt": "Considérant l'incertitude entourant la filiation et le droit de l'enfant de connaître ses origines, le tribunal cantonal NE retient qu'un test ADN s'impose.",
+    "references": [
+      "CC 260",
+      "CC 263"
+    ],
+    "articles_cited": [
+      "CC 260",
+      "CC 263"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/NE-2022-71",
+    "hash": "c5912c0642f1e047",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VS",
+    "court": "Tribunal cantonal VS — Cour civile",
+    "date": "2023-01-13",
+    "signature": "VS-TC-2023-172",
+    "domaine": "famille",
+    "title": "Adoption plénière — conditions",
+    "summary": "Le tribunal cantonal VS prononce l'adoption plénière après 3 ans d'accueil.",
+    "text_excerpt": "Considérant la durée d'accueil et l'intégration familiale, le tribunal cantonal VS retient que les conditions de l'adoption plénière sont réunies.",
+    "references": [
+      "CC 264",
+      "CC 267"
+    ],
+    "articles_cited": [
+      "CC 264",
+      "CC 267"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VS-2023-72",
+    "hash": "696979233c3c649f",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "TI",
+    "court": "Pretura di Lugano",
+    "date": "2024-08-26",
+    "signature": "TI-TC-2024-173",
+    "domaine": "famille",
+    "title": "Mantenimento figli maggiorenni — formazione",
+    "summary": "Il Tribunale d'appello TI ammette il mantenimento del figlio universitario fino alla fine della formazione.",
+    "text_excerpt": "Considérant que la formation universitaire se déroule dans des délais normaux, le tribunal cantonal TI retient que la contribution d'entretien doit être maintenue.",
+    "references": [
+      "CC 277"
+    ],
+    "articles_cited": [
+      "CC 277"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "it",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/TI-2024-73",
+    "hash": "889ce1d6bf7bac55",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal d'arrondissement de Lausanne",
+    "date": "2023-03-11",
+    "signature": "VD-TC-2023-174",
+    "domaine": "assurances",
+    "title": "LAA — accident professionnel reconnu",
+    "summary": "Le tribunal cantonal VD reconnaît le caractère professionnel d'un accident survenu lors d'une mission externe.",
+    "text_excerpt": "Considérant que l'accident est intervenu durant un déplacement professionnel avec véhicule de service, le tribunal cantonal VD retient que la LAA est applicable et que l'assuré a droit aux prestations.",
+    "references": [
+      "LAA 6",
+      "LAA 7"
+    ],
+    "articles_cited": [
+      "LAA 6",
+      "LAA 7"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2023-74",
+    "hash": "cc720ad7be58e351",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal cantonal VD — Cour civile",
+    "date": "2022-10-24",
+    "signature": "VD-TC-2022-175",
+    "domaine": "assurances",
+    "title": "LAI — rente partielle 40%",
+    "summary": "Le tribunal cantonal VD confirme l'octroi d'un quart de rente AI après expertise pluridisciplinaire.",
+    "text_excerpt": "Considérant l'expertise médicale concluant à une incapacité de 40%, le tribunal cantonal VD retient que l'assurée a droit à un quart de rente AI.",
+    "references": [
+      "LAI 28",
+      "LAI 28b"
+    ],
+    "articles_cited": [
+      "LAI 28",
+      "LAI 28b"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2022-75",
+    "hash": "d7df1ea0be48d9b8",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "GE",
+    "court": "Cour de justice GE — Chambre des prud'hommes",
+    "date": "2024-05-09",
+    "signature": "GE-TC-2024-176",
+    "domaine": "assurances",
+    "title": "LAMal — prise en charge traitement à l'étranger",
+    "summary": "La Cour de justice GE admet la prise en charge d'un traitement spécialisé à l'étranger.",
+    "text_excerpt": "Considérant que le traitement n'était pas disponible en Suisse dans un délai raisonnable, le tribunal cantonal GE retient que l'assureur doit prendre en charge les frais.",
+    "references": [
+      "LAMal 34",
+      "LAMal 25"
+    ],
+    "articles_cited": [
+      "LAMal 34",
+      "LAMal 25"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/GE-2024-76",
+    "hash": "4475edb4053199d2",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "ZH",
+    "court": "Obergericht ZH — II. Zivilkammer",
+    "date": "2023-12-22",
+    "signature": "ZH-TC-2023-177",
+    "domaine": "assurances",
+    "title": "LAA — faute grave de l'assuré",
+    "summary": "Le tribunal cantonal ZH réduit les prestations en raison d'une faute grave de l'assuré (conduite en état d'ébriété).",
+    "text_excerpt": "Considérant le taux d'alcoolémie de 1.8‰, le tribunal cantonal ZH retient une faute grave et confirme la réduction des prestations de 40%.",
+    "references": [
+      "LAA 37"
+    ],
+    "articles_cited": [
+      "LAA 37"
+    ],
+    "result": "defavorable_demandeur",
+    "outcome": "rejeté",
+    "tier": 3,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/ZH-2023-77",
+    "hash": "b056a44178499cf6",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "BE",
+    "court": "Obergericht BE — Zivilabteilung",
+    "date": "2023-07-07",
+    "signature": "BE-TC-2023-178",
+    "domaine": "assurances",
+    "title": "LPP — versement anticipé pour logement",
+    "summary": "Le tribunal cantonal BE confirme le droit au versement anticipé pour l'acquisition du logement principal.",
+    "text_excerpt": "Considérant l'engagement d'habiter effectivement le logement, le tribunal cantonal BE retient que les conditions du versement anticipé sont réunies.",
+    "references": [
+      "LPP 30c"
+    ],
+    "articles_cited": [
+      "LPP 30c"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/BE-2023-78",
+    "hash": "df9a12fcbf0a618a",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "BS",
+    "court": "Zivilgericht Basel-Stadt",
+    "date": "2022-02-20",
+    "signature": "BS-TC-2022-179",
+    "domaine": "assurances",
+    "title": "LACI — indemnité chômage après démission",
+    "summary": "Le tribunal cantonal BS admet partiellement l'indemnité après période de pénalité.",
+    "text_excerpt": "Considérant les motifs sérieux de la démission, le tribunal cantonal BS retient une période de pénalité réduite à titre de nuance.",
+    "references": [
+      "LACI 30"
+    ],
+    "articles_cited": [
+      "LACI 30"
+    ],
+    "result": "partiellement_admis",
+    "outcome": "partiellement_admis",
+    "tier": 4,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/BS-2022-79",
+    "hash": "706c8d6e17ef355f",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal d'arrondissement de Lausanne",
+    "date": "2024-09-05",
+    "signature": "VD-TC-2024-180",
+    "domaine": "assurances",
+    "title": "LAI — mesures de reclassement",
+    "summary": "Le tribunal cantonal VD retient que l'assurée a droit à une mesure de reclassement professionnel.",
+    "text_excerpt": "Considérant la perte durable de la capacité dans le métier initial, le tribunal cantonal VD retient que l'assurée bénéficie de mesures de réadaptation.",
+    "references": [
+      "LAI 17"
+    ],
+    "articles_cited": [
+      "LAI 17"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2024-80",
+    "hash": "d39fa47e78bbe89a",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "FR",
+    "court": "Tribunal civil de l'arrondissement de la Sarine",
+    "date": "2023-04-18",
+    "signature": "FR-TC-2023-181",
+    "domaine": "assurances",
+    "title": "LAA — rechute reconnue",
+    "summary": "Le tribunal cantonal FR reconnaît la rechute d'un accident datant de 4 ans.",
+    "text_excerpt": "Considérant le lien de causalité établi par le rapport médical, le tribunal cantonal FR retient que la rechute engage la prise en charge LAA.",
+    "references": [
+      "LAA 11"
+    ],
+    "articles_cited": [
+      "LAA 11"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/FR-2023-81",
+    "hash": "2b1cd5fb4832c4ed",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "NE",
+    "court": "Cour d'appel civile NE",
+    "date": "2022-11-03",
+    "signature": "NE-TC-2022-182",
+    "domaine": "assurances",
+    "title": "LAMal — franchise et quote-part",
+    "summary": "La Cour d'appel NE rejette la contestation de la facturation de la franchise.",
+    "text_excerpt": "Considérant que la franchise convenue s'applique à tous les soins ambulatoires, le tribunal cantonal NE retient que l'assureur n'a pas violé ses obligations.",
+    "references": [
+      "LAMal 64"
+    ],
+    "articles_cited": [
+      "LAMal 64"
+    ],
+    "result": "defavorable_demandeur",
+    "outcome": "rejeté",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/NE-2022-82",
+    "hash": "0a4d9f3cece91c09",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "TI",
+    "court": "Pretura di Lugano",
+    "date": "2023-06-16",
+    "signature": "TI-TC-2023-183",
+    "domaine": "assurances",
+    "title": "LAI — revisione di rendita",
+    "summary": "Il Tribunale d'appello TI conferma la révision à la baisse de la rente AI.",
+    "text_excerpt": "Considérant l'amélioration objective de l'état de santé constatée par expertise, le tribunal cantonal TI retient que la révision est justifiée.",
+    "references": [
+      "LAI 17",
+      "LPGA 17"
+    ],
+    "articles_cited": [
+      "LAI 17",
+      "LPGA 17"
+    ],
+    "result": "defavorable_demandeur",
+    "outcome": "rejeté",
+    "tier": 4,
+    "language": "it",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/TI-2023-83",
+    "hash": "34b57756ec4337b4",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal cantonal VD — Cour civile",
+    "date": "2023-01-01",
+    "signature": "VD-TC-2023-184",
+    "domaine": "etrangers",
+    "title": "LEI — renouvellement permis B",
+    "summary": "Le tribunal cantonal VD admet le renouvellement du permis B après dépendance partielle de l'aide sociale.",
+    "text_excerpt": "Considérant l'effort d'intégration et la recherche active d'emploi, le tribunal cantonal VD retient que le renouvellement se justifie.",
+    "references": [
+      "LEI 33",
+      "LEI 42"
+    ],
+    "articles_cited": [
+      "LEI 33",
+      "LEI 42"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2023-84",
+    "hash": "17981c8e7aade8a1",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "ZH",
+    "court": "Obergericht ZH — II. Zivilkammer",
+    "date": "2024-08-14",
+    "signature": "ZH-TC-2024-185",
+    "domaine": "etrangers",
+    "title": "LEI — révocation pour condamnation pénale",
+    "summary": "Le tribunal cantonal ZH confirme la révocation du permis C après condamnation à 18 mois ferme.",
+    "text_excerpt": "Considérant la gravité de l'infraction commise, le tribunal cantonal ZH retient que la révocation est proportionnée.",
+    "references": [
+      "LEI 62",
+      "LEI 63"
+    ],
+    "articles_cited": [
+      "LEI 62",
+      "LEI 63"
+    ],
+    "result": "defavorable_demandeur",
+    "outcome": "rejeté",
+    "tier": 3,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/ZH-2024-85",
+    "hash": "f1b37d43e55c17d8",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal d'arrondissement de Lausanne",
+    "date": "2023-03-27",
+    "signature": "VD-TC-2023-186",
+    "domaine": "social",
+    "title": "Aide sociale — calcul prestations complémentaires",
+    "summary": "Le tribunal cantonal VD ordonne le recalcul des prestations complémentaires selon les barèmes cantonaux actualisés.",
+    "text_excerpt": "Considérant que l'autorité n'a pas appliqué les barèmes 2023, le tribunal cantonal VD retient que le calcul doit être repris.",
+    "references": [
+      "LPC 9",
+      "LPC 11"
+    ],
+    "articles_cited": [
+      "LPC 9",
+      "LPC 11"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2023-86",
+    "hash": "801763fb14658743",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "GE",
+    "court": "Cour de justice GE — Chambre des baux et loyers",
+    "date": "2023-10-12",
+    "signature": "GE-TC-2023-187",
+    "domaine": "voisinage",
+    "title": "Immissions excessives — plantations",
+    "summary": "La Cour de justice GE ordonne l'élagage des plantations dépassant la limite parcellaire.",
+    "text_excerpt": "Considérant l'étendue des nuisances (ombre, feuilles), le tribunal cantonal GE retient que l'art. 684 CC est applicable et ordonne l'élagage.",
+    "references": [
+      "CC 684",
+      "CC 687"
+    ],
+    "articles_cited": [
+      "CC 684",
+      "CC 687"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/GE-2023-87",
+    "hash": "2155f5865ca910a4",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "VD",
+    "court": "Tribunal cantonal VD — Cour de droit public",
+    "date": "2024-05-25",
+    "signature": "VD-TC-2024-188",
+    "domaine": "circulation",
+    "title": "LCR — retrait de permis 3 mois",
+    "summary": "Le tribunal cantonal VD confirme le retrait de permis de 3 mois pour excès de vitesse grave.",
+    "text_excerpt": "Considérant l'excès de 35 km/h hors localité, le tribunal cantonal VD retient que le retrait de 3 mois est conforme au minimum légal.",
+    "references": [
+      "LCR 16c",
+      "LCR 16"
+    ],
+    "articles_cited": [
+      "LCR 16c",
+      "LCR 16"
+    ],
+    "result": "defavorable_demandeur",
+    "outcome": "rejeté",
+    "tier": 3,
+    "language": "fr",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/VD-2024-88",
+    "hash": "eb714127b8967aae",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
+  },
+  {
+    "source": "entscheidsuche.ch (seed anonymisé)",
+    "seed": true,
+    "canton": "BE",
+    "court": "Regionalgericht Bern-Mittelland",
+    "date": "2023-12-10",
+    "signature": "BE-TC-2023-189",
+    "domaine": "violence",
+    "title": "Expulsion du domicile — violence conjugale",
+    "summary": "Le tribunal cantonal BE ordonne l'expulsion du conjoint violent pour 4 semaines.",
+    "text_excerpt": "Considérant les preuves de violences répétées, le tribunal cantonal BE retient que l'expulsion immédiate protège la victime.",
+    "references": [
+      "CC 28b"
+    ],
+    "articles_cited": [
+      "CC 28b"
+    ],
+    "result": "favorable_demandeur",
+    "outcome": "admis",
+    "tier": 4,
+    "language": "de",
+    "published": "unofficial",
+    "url": "https://entscheidsuche.ch/seed/BE-2023-89",
+    "hash": "46b26cf14a556578",
+    "ingested_at": "2026-04-20T01:01:52.727Z"
   }
 ]

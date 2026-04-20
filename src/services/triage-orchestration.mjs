@@ -35,6 +35,10 @@ import { detectPivot } from './pivot-detector.mjs';
 import { debitSession } from './premium.mjs';
 import { requireSufficientCertificate } from './coverage-certificate.mjs';
 import { shapePayload } from './payload-shaper.mjs';
+import { autoScheduleRemindersForCase } from './deadline-reminders.mjs';
+import { createLogger } from './logger.mjs';
+
+const log = createLogger('triage-orchestration');
 
 /** Prix de la continuation (round 2+) = 200 centimes (2 CHF). */
 export const CONTINUATION_PRICE_CENTIMES = 200;
@@ -365,6 +369,28 @@ function finalizePayload(data) {
       last_public_response: { ...shaped, _resume_status: status },
       last_answers: data.infosExtraites || null
     });
+
+    // Auto-schedule deadline reminders quand on atteint ready_for_pipeline
+    // ET que le case est lié à un compte citoyen (longitudinal 12mo).
+    // Non-bloquant : en cas d'erreur on log et on continue.
+    if (status === 'ready_for_pipeline') {
+      try {
+        const caseRec = getCase(data.case_id);
+        if (caseRec && caseRec.linked_account_id) {
+          const auto = autoScheduleRemindersForCase(caseRec, caseRec.linked_account_id);
+          if (auto.scheduled > 0) {
+            log.info('auto_reminders_scheduled', {
+              case_id: data.case_id,
+              scheduled: auto.scheduled,
+              skipped: auto.skipped
+            });
+            shaped.reminders_auto_scheduled = auto.scheduled;
+          }
+        }
+      } catch (err) {
+        log.warn('auto_reminders_failed', { case_id: data.case_id, err: err.message });
+      }
+    }
   }
   return shaped;
 }

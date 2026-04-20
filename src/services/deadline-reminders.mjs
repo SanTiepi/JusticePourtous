@@ -1,15 +1,30 @@
 /**
  * Deadline Reminders — Cortex Phase 3
  *
- * Extrait les délais juridiques d'un cas (enriched_primary.delais, cascades),
- * les convertit en dates ISO absolues, calcule la sévérité et planifie
- * des rappels multi-niveaux.
+ * Flow end-to-end (citoyen authentifié) :
  *
- * Pas d'envoi d'email/SMS ici — uniquement la logique de scheduling. Un script
- * externe (scripts/send-due-reminders.mjs) consomme listDueReminders() pour
- * simuler / exécuter l'envoi.
+ *   1. Triage → fiche avec `delais` (ex: opposition commandement 10j)
+ *   2. Si le case a un `linked_account_id` ET au moins un délai < 90j,
+ *      on planifie automatiquement un reminder via `scheduleReminder(...)`
+ *      (appelé depuis triage-orchestration ou citizen-account.linkCaseToAccount).
+ *   3. Cron quotidien : `scripts/send-due-reminders.mjs`
+ *        - charge `getDueReminders({ before: Date.now() + 48h })`
+ *        - pour chaque : envoi email via Resend (RESEND_API_KEY en prod)
+ *        - marque `markAsSent(reminder_id, { sent_at, result })`
+ *        - output JSON stats (sent / skipped / errors)
+ *   4. Endpoint admin `/api/admin/reminders` → liste paginée, account_ids masqués.
+ *
+ * Deux APIs cohabitent :
+ *   - Legacy (plural) : `scheduleReminders(caseRec, contact)` extrait tous
+ *     les délais d'un case et crée des rappels multi-niveaux. Utilisée par
+ *     les routes HTTP `/api/case/:id/reminders/schedule`.
+ *   - Nouvelle (singular) : `scheduleReminder({ account_id, case_id,
+ *     due_date, titre, description })` — planification unitaire, côté
+ *     citizen account longitudinal.
  *
  * Persistance : src/data/meta/scheduled-reminders.json via atomic-write.
+ * Dry-run : `REMINDERS_DRY_RUN=1` sur le script d'envoi — n'appelle pas
+ * Resend, log seulement.
  */
 
 import { randomBytes } from 'node:crypto';
@@ -212,10 +227,8 @@ function saveStore(store) {
 export function _resetRemindersForTests({ path } = {}) {
   if (path) STORE_PATH = path;
   try {
-    if (existsSync(STORE_PATH)) {
-      // Overwrite with empty store
-      saveStore({ reminders: [] });
-    }
+    // Always write an empty store (create if missing, overwrite if exists).
+    saveStore({ reminders: [] });
   } catch { /* noop */ }
 }
 
@@ -354,4 +367,206 @@ export function getReminderStats() {
     pending: total - sent,
     due_now: listDueReminders().length
   };
+}
+
+// ─── Nouvelle API unitaire (citizen-account / triage auto-schedule) ──
+
+/**
+ * Planifie UN reminder unitaire. Utilisé quand le citoyen est authentifié
+ * (compte longitudinal) et qu'on veut associer un délai à son account_id.
+ *
+ * Ne crée PAS de cascade de rappels (J-14/J-7/J-1) : ici on enregistre
+ * l'échéance et on laissera le script d'envoi décider (horizon 48h).
+ *
+ * @param {object} params
+ * @param {string} params.account_id
+ * @param {string} params.case_id
+ * @param {string|Date|number} params.due_date — ISO, Date, ou ms
+ * @param {string} params.titre
+ * @param {string} [params.description]
+ * @param {string} [params.severity] — override (auto-calculée sinon)
+ * @returns {string} reminder_id
+ */
+export function scheduleReminder({
+  account_id,
+  case_id,
+  due_date,
+  titre,
+  description = '',
+  severity = null
+} = {}) {
+  if (!account_id || typeof account_id !== 'string') {
+    throw new Error('account_id requis');
+  }
+  if (!case_id || typeof case_id !== 'string') {
+    throw new Error('case_id requis');
+  }
+  if (!titre || typeof titre !== 'string') {
+    throw new Error('titre requis');
+  }
+
+  let dueMs;
+  if (due_date instanceof Date) dueMs = due_date.getTime();
+  else if (typeof due_date === 'number') dueMs = due_date;
+  else if (typeof due_date === 'string') dueMs = new Date(due_date).getTime();
+  else throw new Error('due_date invalide');
+  if (Number.isNaN(dueMs)) throw new Error('due_date invalide');
+
+  const now = Date.now();
+  const daysRemaining = Math.ceil((dueMs - now) / DAY_MS);
+  const computedSeverity = severity || severityFromDaysRemaining(daysRemaining);
+
+  const reminder = {
+    reminder_id: randomBytes(8).toString('hex'),
+    account_id,
+    case_id,
+    procedure: titre,
+    titre,
+    description,
+    delai_raw: description || titre,
+    delai_date_iso: new Date(dueMs).toISOString(),
+    due_date_iso: new Date(dueMs).toISOString(),
+    due_date_ms: dueMs,
+    // Pour compat avec listDueReminders legacy : on aligne reminder_at sur
+    // due_date (le script d'envoi filtre par horizon = now + 48h).
+    reminder_at_iso: new Date(dueMs).toISOString(),
+    reminder_at_ms: dueMs,
+    severity: computedSeverity,
+    contact: null,
+    base_legale: null,
+    consequence: null,
+    created_at_iso: new Date(now).toISOString(),
+    sent: false,
+    sent_at_iso: null,
+    send_result: null
+  };
+
+  const store = loadStore();
+  store.reminders.push(reminder);
+  saveStore(store);
+  return reminder.reminder_id;
+}
+
+/**
+ * Retourne les reminders dont l'échéance ou la date de rappel tombe avant
+ * `before` (par défaut now + 48h) ET qui ne sont pas encore envoyés.
+ *
+ * @param {object} [opts]
+ * @param {number|Date|string} [opts.before] — default: now + 48h
+ * @returns {Array}
+ */
+export function getDueReminders({ before } = {}) {
+  let beforeMs;
+  if (before == null) beforeMs = Date.now() + 48 * 60 * 60 * 1000;
+  else if (before instanceof Date) beforeMs = before.getTime();
+  else if (typeof before === 'number') beforeMs = before;
+  else if (typeof before === 'string') beforeMs = new Date(before).getTime();
+  else beforeMs = Date.now() + 48 * 60 * 60 * 1000;
+
+  const store = loadStore();
+  return store.reminders
+    .filter(r => !r.sent)
+    .filter(r => {
+      const candidate = r.due_date_ms || r.reminder_at_ms;
+      return typeof candidate === 'number' && candidate <= beforeMs;
+    })
+    .sort((a, b) => (a.due_date_ms || a.reminder_at_ms) - (b.due_date_ms || b.reminder_at_ms));
+}
+
+/**
+ * Marque un reminder comme envoyé en attachant un résultat d'envoi.
+ *
+ * @param {string} reminder_id
+ * @param {object} [opts]
+ * @param {number|string|Date} [opts.sent_at]
+ * @param {object} [opts.result] — { ok, provider, message_id?, error? }
+ */
+export function markAsSent(reminder_id, { sent_at = Date.now(), result = null } = {}) {
+  const store = loadStore();
+  const r = store.reminders.find(x => x.reminder_id === reminder_id);
+  if (!r) return null;
+  let sentAtMs;
+  if (sent_at instanceof Date) sentAtMs = sent_at.getTime();
+  else if (typeof sent_at === 'number') sentAtMs = sent_at;
+  else if (typeof sent_at === 'string') sentAtMs = new Date(sent_at).getTime();
+  else sentAtMs = Date.now();
+
+  r.sent = true;
+  r.sent_at_iso = new Date(sentAtMs).toISOString();
+  if (result) r.send_result = result;
+  saveStore(store);
+  return r;
+}
+
+/**
+ * Helper tests : retourne tous les reminders (clone) du store.
+ */
+export function _listRemindersForTests() {
+  const store = loadStore();
+  return store.reminders.map(r => ({ ...r }));
+}
+
+// ─── Auto-scheduling depuis un case triaged ────────────────────
+
+/**
+ * Auto-planifie des reminders pour un case lié à un compte citoyen.
+ *
+ * Règle : ne planifie QUE les délais < 90j (pas les "6 mois" etc.), et
+ * UN reminder par délai (pas de cascade — c'est scheduleReminders qui fait ça).
+ * Idempotent : si un reminder même (account_id, case_id, due_date, titre) existe
+ * déjà, on skip.
+ *
+ * @param {object} caseRec — case-store record
+ * @param {string} account_id
+ * @param {object} [opts]
+ * @returns {{ scheduled: number, skipped: number, reminder_ids: string[] }}
+ */
+export function autoScheduleRemindersForCase(caseRec, account_id, { maxDaysAhead = 90, now = Date.now() } = {}) {
+  if (!caseRec || !account_id) return { scheduled: 0, skipped: 0, reminder_ids: [] };
+  const deadlines = extractDeadlinesFromCase(caseRec, now);
+  const store = loadStore();
+  const existing = new Set(
+    store.reminders
+      .filter(r => r.account_id === account_id && r.case_id === caseRec.case_id)
+      .map(r => `${r.procedure}::${r.due_date_iso || r.delai_date_iso}`)
+  );
+
+  const ids = [];
+  let skipped = 0;
+
+  for (const d of deadlines) {
+    if (!d.delai_date_iso || d.days_remaining == null) { skipped++; continue; }
+    if (d.days_remaining > maxDaysAhead) { skipped++; continue; }
+    if (d.days_remaining < 0) { skipped++; continue; }
+    const key = `${d.procedure}::${d.delai_date_iso}`;
+    if (existing.has(key)) { skipped++; continue; }
+
+    try {
+      const id = scheduleReminder({
+        account_id,
+        case_id: caseRec.case_id,
+        due_date: d.delai_date_iso,
+        titre: d.procedure,
+        description: [d.delai_raw, d.base_legale, d.consequence].filter(Boolean).join(' | '),
+        severity: d.severity
+      });
+      ids.push(id);
+    } catch {
+      skipped++;
+    }
+  }
+
+  return { scheduled: ids.length, skipped, reminder_ids: ids };
+}
+
+// ─── k-anonymization helper ────────────────────────────────────
+
+/**
+ * Masque un account_id pour les logs (k-anon). Garde les 4 premiers chars
+ * et le reste devient ****.
+ */
+export function maskAccountId(account_id) {
+  if (!account_id || typeof account_id !== 'string') return '****';
+  if (account_id.length <= 4) return '****';
+  return account_id.slice(0, 4) + '****';
 }

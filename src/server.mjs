@@ -43,7 +43,7 @@ import {
 } from './services/citizen-account.mjs';
 import { generateLetterPDF } from './services/letter-pdf-generator.mjs';
 import { recordOutcome } from './services/outcomes-tracker.mjs';
-import { extractDeadlinesFromCase, scheduleReminders, listRemindersForCase } from './services/deadline-reminders.mjs';
+import { extractDeadlinesFromCase, scheduleReminders, listRemindersForCase, _listRemindersForTests, maskAccountId } from './services/deadline-reminders.mjs';
 import { computeDashboardMetrics } from './services/dashboard-metrics.mjs';
 import { analyserCas } from './services/pipeline-v3.mjs';
 import { getRegistryStats, getSourceById, getSourcesByDomain, getSourcesByTier, validateClaimSources } from './services/source-registry.mjs';
@@ -1801,6 +1801,47 @@ const server = createServer(async (req, res) => {
     if (path === '/api/admin/analytics' && method === 'GET') {
       if (!checkAdmin(req, res)) return;
       return json(res, 200, { ...getAnalyticsStats(), disclaimer: DISCLAIMER });
+    }
+
+    // ─── Admin : liste des deadline reminders (account_ids masqués) ─
+    if (path === '/api/admin/reminders' && method === 'GET') {
+      if (!checkAdmin(req, res)) return;
+      const status = url.searchParams.get('status'); // 'pending' | 'sent' | null
+      const limit = Math.min(200, parseInt(url.searchParams.get('limit') || '50', 10) || 50);
+      const offset = Math.max(0, parseInt(url.searchParams.get('offset') || '0', 10) || 0);
+
+      const all = _listRemindersForTests();
+      let filtered = all;
+      if (status === 'pending') filtered = all.filter(r => !r.sent);
+      else if (status === 'sent') filtered = all.filter(r => r.sent);
+
+      filtered.sort((a, b) => {
+        const am = a.due_date_ms || a.reminder_at_ms || 0;
+        const bm = b.due_date_ms || b.reminder_at_ms || 0;
+        return am - bm;
+      });
+
+      const paged = filtered.slice(offset, offset + limit).map(r => ({
+        reminder_id: r.reminder_id,
+        account_id_masked: maskAccountId(r.account_id || ''),
+        has_account: !!r.account_id,
+        case_id: r.case_id,
+        titre: r.titre || r.procedure,
+        due_date_iso: r.due_date_iso || r.delai_date_iso,
+        severity: r.severity,
+        sent: !!r.sent,
+        sent_at_iso: r.sent_at_iso,
+        created_at_iso: r.created_at_iso,
+        send_result: r.send_result
+      }));
+
+      return json(res, 200, {
+        total: filtered.length,
+        limit,
+        offset,
+        reminders: paged,
+        disclaimer: DISCLAIMER
+      });
     }
 
     // Static files

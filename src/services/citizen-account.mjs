@@ -30,7 +30,7 @@ import {
   _linkCaseToAccount as caseStoreLink,
   exportCase
 } from './case-store.mjs';
-import { extractDeadlinesFromCase } from './deadline-reminders.mjs';
+import { extractDeadlinesFromCase, autoScheduleRemindersForCase } from './deadline-reminders.mjs';
 import { createLogger } from './logger.mjs';
 
 const log = createLogger('citizen-account');
@@ -343,12 +343,26 @@ export function linkCaseToAccount(session_token, case_id) {
   }
 
   scheduleSave();
+
+  // Auto-schedule deadline reminders pour ce case (non-bloquant)
+  let reminders_scheduled = 0;
+  try {
+    const caseRecFresh = getCase(case_id);
+    if (caseRecFresh) {
+      const auto = autoScheduleRemindersForCase(caseRecFresh, account.account_id);
+      reminders_scheduled = auto.scheduled;
+    }
+  } catch (err) {
+    log.warn('link_auto_reminders_failed', { case_id, err: err.message });
+  }
+
   return {
     status: 200,
     case_id,
     account_id: account.account_id,
     linked: true,
-    new_expires_at_ms: Date.now() + LINKED_CASE_TTL_MS
+    new_expires_at_ms: Date.now() + LINKED_CASE_TTL_MS,
+    reminders_scheduled
   };
 }
 

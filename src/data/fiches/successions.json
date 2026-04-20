@@ -1544,5 +1544,1567 @@
     "readiness": "beta",
     "information_only": true,
     "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "successions_rapport_liberalites",
+    "domaine": "successions",
+    "sousDomaine": "rapport_entre_descendants",
+    "tags": [
+      "rapport",
+      "libéralités",
+      "descendants",
+      "égalité",
+      "donations",
+      "avance d'hoirie"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Êtes-vous descendant (enfant ou petit-enfant) du défunt ?",
+        "options": [
+          "oui, enfant direct",
+          "oui, petit-enfant par représentation",
+          "non"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Un cohéritier a-t-il reçu des donations importantes du vivant du défunt ?",
+        "options": [
+          "oui, donation immobilière",
+          "oui, somme d'argent > 20'000 CHF",
+          "oui, prise en charge d'études",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Le défunt avait-il dispensé le donataire du rapport ?",
+        "options": [
+          "oui, expressément",
+          "non, silence",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "À quand remonte la donation ?",
+        "options": [
+          "< 5 ans avant décès",
+          "5-10 ans",
+          "> 10 ans"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le rapport successoral (art. 626 ss CC) est le mécanisme qui oblige les descendants cohéritiers à réintégrer, dans la masse à partager, les libéralités qu'ils ont reçues du défunt de son vivant. L'objectif est de préserver l'égalité entre frères et sœurs. Selon l'art. 626 al. 2 CC, les descendants doivent rapporter 'ce qui leur a été donné, soit à titre de dot, d'établissement ou de cession de biens, soit par remise de dettes ou autres avantages semblables'. Le rapport peut être en nature (restitution du bien) ou en valeur (compensation monétaire). Le défunt peut dispenser le donataire du rapport par disposition expresse, mais cette dispense ne peut porter atteinte à la réserve des autres héritiers (art. 629 CC). La valeur à rapporter est celle de la libéralité au moment du décès (art. 630 CC), sauf convention contraire. Les cadeaux d'usage, les frais d'éducation normaux et les dépenses d'assistance courantes ne sont pas sujets à rapport. Les héritiers qui ne sont pas descendants (conjoint, parents) ne sont pas soumis au rapport sauf disposition expresse.",
+      "articles": [
+        {
+          "ref": "CC 626",
+          "titre": "Rapports — descendants",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_626"
+        },
+        {
+          "ref": "CC 629",
+          "titre": "Dispense du rapport",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_629"
+        },
+        {
+          "ref": "CC 630",
+          "titre": "Valeur des biens à rapporter",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_630"
+        },
+        {
+          "ref": "CC 522",
+          "titre": "Action en réduction en cas d'atteinte à la réserve",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_522"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 131 III 49",
+          "resume": "Le rapport porte sur la valeur au jour du décès, pas au jour de la donation. Les plus-values immobilières profitent à la masse."
+        },
+        {
+          "ref": "ATF 116 II 667",
+          "resume": "Les cadeaux d'usage (anniversaires, mariage) ne sont pas sujets à rapport, mais une donation déguisée oui."
+        }
+      ],
+      "modeleLettre": "Objet : Demande de rapport des libéralités — succession [NOM DÉFUNT]\n\nRecommandé\n\n[NOTAIRE / EXÉCUTEUR TESTAMENTAIRE / COHÉRITIER]\n[ADRESSE]\n\nMadame, Monsieur,\n\nDans le cadre de la succession de [NOM DU DÉFUNT], décédé(e) le [DATE], j'ai constaté que le cohéritier [NOM] a bénéficié des libéralités suivantes du vivant du défunt :\n[ ] Donation immobilière du [DATE] — [OBJET] — valeur estimée [MONTANT] CHF\n[ ] Somme d'argent du [DATE] — [MONTANT] CHF\n[ ] Prise en charge d'études / établissement — [MONTANT] CHF\n\nEn application des art. 626 à 630 CC, ces libéralités sont sujettes à rapport à la masse successorale, sauf dispense expresse du défunt.\n\nJe vous prie de bien vouloir :\n1. Établir la liste détaillée de toutes les donations rapportables\n2. Intégrer leur valeur au jour du décès dans la masse à partager\n3. Proposer un nouveau projet de partage tenant compte de ces rapports\n\nÀ défaut, je me réserve le droit d'agir en justice (art. 604 CC — action en partage).\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération Suisse des Notaires (FSN)",
+          "url": "https://www.notaires-suisses.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Justice de paix Vaud (autorité successorale)",
+          "url": "https://www.vd.ch/themes/justice/justices-de-paix",
+          "canton": "VD"
+        },
+        {
+          "nom": "Chambre des notaires de Genève",
+          "tel": "022 781 89 70",
+          "url": "https://www.geneve-notaires.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats vaudois",
+          "url": "https://www.oav.ch",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "notaire",
+          "indication": "Inventaire et évaluation des donations rapportables"
+        },
+        {
+          "type": "avocat",
+          "indication": "Dès conflit ouvert entre cohéritiers sur l'existence ou la valeur du rapport"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un descendant s'estime lésé car un cohéritier a reçu des donations importantes non rapportées à la succession",
+    "profane_aliases": [
+      "mon frère a reçu avant",
+      "donation injuste",
+      "avance d'hoirie",
+      "partage inégal",
+      "maison donnée à un seul enfant"
+    ],
+    "negative_signals": [
+      "dispense expresse de rapport documentée",
+      "héritier non descendant",
+      "cadeau d'usage modeste"
+    ],
+    "required_facts": [
+      "qualité de descendant",
+      "identification de la libéralité",
+      "date et valeur de la donation",
+      "existence ou non d'une dispense"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "successions_exheredation_motifs",
+    "domaine": "successions",
+    "sousDomaine": "exhérédation",
+    "tags": [
+      "exhérédation",
+      "motifs",
+      "réservataire",
+      "sanction",
+      "testament"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Êtes-vous la personne exhérédée ou un tiers intéressé ?",
+        "options": [
+          "exhérédé moi-même",
+          "cohéritier",
+          "légataire",
+          "tiers"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "L'exhérédation figure-t-elle dans le testament avec un motif écrit ?",
+        "options": [
+          "oui, avec motif détaillé",
+          "oui, motif vague ou absent",
+          "non mentionnée"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Quel est le motif invoqué ?",
+        "options": [
+          "crime/délit grave contre le défunt",
+          "violation grave des devoirs familiaux",
+          "endettement lourd (art. 480 CC)",
+          "aucun motif"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous connaissance de la disposition ?",
+        "options": [
+          "oui, < 1 an",
+          "oui, > 1 an",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'exhérédation (art. 477-480 CC) est la privation par testament de la réserve héréditaire d'un héritier réservataire. Elle constitue une sanction exceptionnelle qui ne peut être prononcée que pour des motifs graves strictement énumérés par la loi. Deux motifs principaux sont admis (art. 477 CC) : (1) un crime ou un délit grave commis contre le défunt ou l'un de ses proches ; (2) une violation grave des devoirs qui incombent à l'héritier envers le défunt ou sa famille (ex : abandon total, maltraitance, outrage). Le motif doit être énoncé dans le testament (art. 479 al. 1 CC), sans quoi l'exhérédation est nulle. Le fardeau de la preuve du motif incombe à ceux qui s'en prévalent (art. 479 al. 2 CC). Une forme particulière d'exhérédation existe pour les descendants surendettés (art. 480 CC) : le défunt peut priver de la moitié de la réserve un descendant contre lequel existent des actes de défaut de biens, la moitié profitant aux enfants de ce descendant. L'héritier exhéréré peut attaquer la disposition par une action en nullité (art. 519 CC) ou en contestation du motif dans le délai d'un an dès la connaissance de la cause d'annulation (art. 521 CC).",
+      "articles": [
+        {
+          "ref": "CC 477",
+          "titre": "Exhérédation — motifs",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_477"
+        },
+        {
+          "ref": "CC 479",
+          "titre": "Exhérédation — expression du motif et fardeau de la preuve",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_479"
+        },
+        {
+          "ref": "CC 480",
+          "titre": "Exhérédation du descendant insolvable",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_480"
+        },
+        {
+          "ref": "CC 521",
+          "titre": "Action en nullité — délai",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_521"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 132 III 305",
+          "resume": "Les motifs d'exhérédation doivent être appréciés strictement : seul un comportement objectivement grave et culpable justifie la privation de la réserve."
+        },
+        {
+          "ref": "ATF 106 II 304",
+          "resume": "L'absence totale de relations familiales pendant des décennies peut constituer une violation grave des devoirs familiaux, mais doit être imputable à l'héritier."
+        }
+      ],
+      "modeleLettre": "Objet : Contestation de l'exhérédation prononcée par [NOM DÉFUNT]\n\nRecommandé\n\n[NOTAIRE / EXÉCUTEUR TESTAMENTAIRE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJ'ai pris connaissance le [DATE] du testament de [NOM DU DÉFUNT], décédé(e) le [DATE], lequel prononce mon exhérédation en qualité d'héritier réservataire ([QUALITÉ : enfant / conjoint]).\n\nJe conteste cette exhérédation pour les motifs suivants :\n[ ] le motif n'est pas énoncé dans le testament (art. 479 al. 1 CC — nullité)\n[ ] le motif invoqué ne correspond pas aux faits\n[ ] le motif invoqué n'atteint pas le seuil de gravité requis par l'art. 477 CC\n\nEn application des art. 519 et 521 CC, j'introduis par la présente l'action en nullité / en contestation du motif d'exhérédation, dans le délai d'un an dès connaissance.\n\nJe vous prie de :\n1. Suspendre la liquidation de la succession sur la part correspondant à ma réserve\n2. Me transmettre une copie intégrale du testament et des pièces justifiant le motif invoqué\n\nÀ défaut, je saisirai l'autorité de conciliation civile (art. 28 CPC) du dernier domicile du défunt.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération Suisse des Notaires (FSN)",
+          "url": "https://www.notaires-suisses.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Justice de paix Vaud (autorité successorale)",
+          "url": "https://www.vd.ch/themes/justice/justices-de-paix",
+          "canton": "VD"
+        },
+        {
+          "nom": "Chambre des notaires de Genève",
+          "tel": "022 781 89 70",
+          "url": "https://www.geneve-notaires.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats vaudois",
+          "url": "https://www.oav.ch",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "avocat",
+          "indication": "Indispensable — l'action doit être introduite dans le délai d'un an"
+        },
+        {
+          "type": "notaire",
+          "indication": "Pour suspendre la liquidation partielle en attendant la décision"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un héritier réservataire a été exhéréré par testament et conteste le motif ou l'absence de motif",
+    "profane_aliases": [
+      "déshérité par testament",
+      "testament me prive",
+      "exclu de l'héritage",
+      "mon père m'a rayé"
+    ],
+    "negative_signals": [
+      "crime grave contre le défunt prouvé",
+      "comportement gravement outrageant documenté"
+    ],
+    "required_facts": [
+      "qualité d'héritier réservataire",
+      "contenu du testament",
+      "motif invoqué",
+      "date de connaissance"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "successions_testament_olographe_forme",
+    "domaine": "successions",
+    "sousDomaine": "testament_olographe",
+    "tags": [
+      "testament",
+      "olographe",
+      "forme",
+      "écriture",
+      "signature",
+      "date",
+      "validité"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qui a rédigé le testament ?",
+        "options": [
+          "le défunt entièrement à la main",
+          "dactylographié puis signé",
+          "dicté à un tiers"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Le testament porte-t-il une date complète (jour/mois/année) ?",
+        "options": [
+          "oui, complète",
+          "mois/année seulement",
+          "aucune date"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Est-il signé ?",
+        "options": [
+          "signature manuscrite",
+          "initiales seulement",
+          "non signé"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Conteste-t-on la forme ou le contenu ?",
+        "options": [
+          "forme (vice formel)",
+          "contenu (capacité, influence)",
+          "les deux"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le testament olographe (art. 505 CC) est la forme la plus courante en Suisse. Il est soumis à trois exigences strictes et cumulatives : (1) être écrit ENTIÈREMENT à la main par le testateur — toute partie dactylographiée, imprimée ou écrite par un tiers entraîne la nullité formelle ; (2) être DATÉ de manière complète, avec jour, mois et année, de la main du testateur ; (3) être SIGNÉ de la main du testateur. Le testament peut être rédigé sur tout support (feuille, carnet, nappe...) du moment que les trois conditions sont respectées. Les corrections, ratures ou ajouts doivent être faits à la main et confirmés par une nouvelle signature ou initiale datée, sinon ils peuvent être considérés comme non écrits. La date incomplète (par ex. uniquement 'Noël 2024') entraîne la nullité si elle est pertinente pour déterminer la capacité du testateur ou l'ordre chronologique de plusieurs testaments. Le testament doit être remis à l'autorité compétente (juge de paix / notaire selon canton) dans les meilleurs délais après le décès (art. 556 CC). Un testament vicié dans la forme peut être attaqué en nullité dans le délai d'un an (art. 521 CC). La capacité de tester suppose d'être majeur et capable de discernement (art. 467 CC).",
+      "articles": [
+        {
+          "ref": "CC 505",
+          "titre": "Testament olographe — forme",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_505"
+        },
+        {
+          "ref": "CC 467",
+          "titre": "Capacité de tester",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_467"
+        },
+        {
+          "ref": "CC 519",
+          "titre": "Causes d'annulation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_519"
+        },
+        {
+          "ref": "CC 521",
+          "titre": "Prescription de l'action en nullité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_521"
+        },
+        {
+          "ref": "CC 556",
+          "titre": "Obligation de remise",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_556"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 116 II 117",
+          "resume": "Une date incomplète entraîne la nullité du testament olographe lorsqu'elle est pertinente pour juger de la capacité du testateur ou l'ordre chronologique avec un autre testament."
+        },
+        {
+          "ref": "ATF 144 III 81",
+          "resume": "La signature doit permettre l'identification du testateur et refléter sa volonté définitive. Des initiales peuvent suffire si elles correspondent à l'usage signatorique du testateur."
+        }
+      ],
+      "modeleLettre": "Objet : Dépôt et contestation formelle d'un testament olographe — succession [NOM DÉFUNT]\n\nRecommandé\n\n[JUGE DE PAIX / NOTAIRE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nDans le cadre de la succession de [NOM DU DÉFUNT], décédé(e) le [DATE], je vous transmets (ou vous informe du dépôt) d'un testament olographe daté du [DATE] découvert le [DATE].\n\nJe vous informe que je conteste la validité formelle de ce testament pour les motifs suivants :\n[ ] testament partiellement dactylographié / imprimé (violation art. 505 al. 1 CC)\n[ ] absence de date complète (jour/mois/année) (violation art. 505 al. 1 CC)\n[ ] absence de signature manuscrite du testateur\n[ ] ratures/corrections non confirmées\n[ ] doute sérieux sur l'authenticité de l'écriture\n\nEn application des art. 519-521 CC, j'entends introduire l'action en nullité de ce testament dans le délai d'un an dès connaissance.\n\nJe vous prie de :\n1. Ordonner un examen graphologique si nécessaire\n2. Suspendre l'exécution du testament pour les dispositions contestées\n3. Convoquer les héritiers pour une audience d'ouverture du testament\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération Suisse des Notaires (FSN)",
+          "url": "https://www.notaires-suisses.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Justice de paix Vaud (autorité successorale)",
+          "url": "https://www.vd.ch/themes/justice/justices-de-paix",
+          "canton": "VD"
+        },
+        {
+          "nom": "Chambre des notaires de Genève",
+          "tel": "022 781 89 70",
+          "url": "https://www.geneve-notaires.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats vaudois",
+          "url": "https://www.oav.ch",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "notaire",
+          "indication": "Dépôt et ouverture du testament"
+        },
+        {
+          "type": "avocat",
+          "indication": "Si contestation formelle — délai d'un an impératif"
+        },
+        {
+          "type": "expert graphologue",
+          "indication": "Si doute sur l'authenticité de l'écriture ou de la signature"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un héritier conteste la validité formelle d'un testament olographe (écriture, date, signature) ou en découvre un",
+    "profane_aliases": [
+      "testament manuscrit",
+      "testament à la main",
+      "testament pas daté",
+      "faux testament",
+      "écriture pas celle du défunt"
+    ],
+    "negative_signals": [
+      "testament authentique notarié",
+      "testament oral (exceptionnel)",
+      "écriture manuscrite + date + signature intactes"
+    ],
+    "required_facts": [
+      "type de testament",
+      "forme de rédaction (manuscrite/dactylo)",
+      "présence de date complète",
+      "présence de signature",
+      "date de découverte"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "successions_legs_vs_institution_heritier",
+    "domaine": "successions",
+    "sousDomaine": "legs",
+    "tags": [
+      "legs",
+      "légataire",
+      "institution héritier",
+      "dispositions",
+      "testament"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est votre rôle dans la succession ?",
+        "options": [
+          "légataire (bénéficiaire d'un legs)",
+          "héritier institué",
+          "héritier légal non institué",
+          "exécuteur testamentaire"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Le testament mentionne-t-il un bien spécifique ou une quote-part ?",
+        "options": [
+          "bien spécifique (ex : la maison, la voiture)",
+          "quote-part (ex : 1/4 de la succession)",
+          "les deux",
+          "libellé ambigu"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Le legs a-t-il été délivré (remis) ?",
+        "options": [
+          "oui",
+          "non",
+          "partiellement"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Y a-t-il des dettes dépassant l'actif ?",
+        "options": [
+          "oui",
+          "non",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le droit successoral suisse distingue fondamentalement deux catégories de bénéficiaires par testament : l'héritier institué et le légataire. L'héritier institué (art. 483 CC) succède à titre universel : il reçoit une quote-part ou la totalité de la succession et participe à l'actif comme au passif — il est solidairement tenu des dettes (art. 603 CC). Le légataire (art. 484 CC), en revanche, reçoit à titre particulier un bien déterminé (objet, immeuble, somme d'argent) sans répondre des dettes sur son patrimoine propre. Le légataire dispose d'une créance personnelle contre les héritiers pour obtenir la délivrance du legs (art. 562 CC), prescriptible selon les règles ordinaires. La distinction produit des conséquences pratiques majeures : (1) le légataire ne participe pas au partage ni à l'administration de la succession ; (2) il ne peut pas requérir l'inventaire ; (3) en cas d'insuffisance de l'actif, le legs peut être réduit proportionnellement (art. 486 CC) ; (4) le légataire ne subit pas les frais de liquidation. Un libellé ambigu ('je donne ma maison à X') est interprété selon l'art. 484 CC comme un legs, non une institution d'héritier, sauf volonté manifestement contraire.",
+      "articles": [
+        {
+          "ref": "CC 483",
+          "titre": "Institution d'héritier",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_483"
+        },
+        {
+          "ref": "CC 484",
+          "titre": "Legs particulier",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_484"
+        },
+        {
+          "ref": "CC 486",
+          "titre": "Réduction des legs insuffisance d'actif",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_486"
+        },
+        {
+          "ref": "CC 562",
+          "titre": "Délivrance du legs — action du légataire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_562"
+        },
+        {
+          "ref": "CC 603",
+          "titre": "Responsabilité solidaire des héritiers pour les dettes",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_603"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 115 II 323",
+          "resume": "En cas de libellé ambigu, la règle d'interprétation favorise la qualification de legs (art. 484 CC) sur celle d'institution d'héritier."
+        },
+        {
+          "ref": "ATF 132 III 677",
+          "resume": "Le légataire doit demander expressément la délivrance aux héritiers ; la créance se prescrit par 10 ans (art. 127 CO)."
+        }
+      ],
+      "modeleLettre": "Objet : Demande de délivrance du legs — succession [NOM DÉFUNT]\n\nRecommandé\n\n[HÉRITIERS / NOTAIRE / EXÉCUTEUR TESTAMENTAIRE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nPar testament du [DATE], [NOM DU DÉFUNT], décédé(e) le [DATE], m'a institué légataire du bien suivant : [DESCRIPTION PRÉCISE DU BIEN / MONTANT].\n\nEn application de l'art. 562 CC, je dispose d'une créance personnelle contre les héritiers pour obtenir la délivrance de ce legs.\n\nJe vous prie de bien vouloir :\n1. Me remettre le bien légué ou sa contre-valeur dans un délai de 30 jours\n2. M'informer de l'état de la succession et de toute difficulté éventuelle (insuffisance d'actif entraînant réduction au sens de l'art. 486 CC)\n3. Dresser un procès-verbal de délivrance\n\nÀ défaut, j'introduirai une action en délivrance de legs devant le tribunal compétent du dernier domicile du défunt.\n\nJe précise que je ne réponds pas des dettes successorales sur mon patrimoine propre (art. 484 CC a contrario).\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération Suisse des Notaires (FSN)",
+          "url": "https://www.notaires-suisses.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Justice de paix Vaud (autorité successorale)",
+          "url": "https://www.vd.ch/themes/justice/justices-de-paix",
+          "canton": "VD"
+        },
+        {
+          "nom": "Chambre des notaires de Genève",
+          "tel": "022 781 89 70",
+          "url": "https://www.geneve-notaires.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats vaudois",
+          "url": "https://www.oav.ch",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "notaire",
+          "indication": "Qualification juridique du legs et coordination avec les héritiers"
+        },
+        {
+          "type": "avocat",
+          "indication": "Si refus de délivrance ou contestation par les héritiers"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un bénéficiaire d'un testament s'interroge sur sa qualité (légataire vs héritier) ou réclame la délivrance d'un legs",
+    "profane_aliases": [
+      "testament me donne la maison",
+      "j'ai reçu par testament",
+      "legs pas délivré",
+      "suis-je héritier ou légataire",
+      "ma part dans le testament"
+    ],
+    "negative_signals": [
+      "renonciation expresse du légataire",
+      "legs grevé de charges refusées"
+    ],
+    "required_facts": [
+      "contenu précis du testament",
+      "nature du bien (spécifique ou quote-part)",
+      "qualité successorale",
+      "état de la succession"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "successions_partage_force",
+    "domaine": "successions",
+    "sousDomaine": "partage",
+    "tags": [
+      "partage",
+      "action",
+      "cohéritiers",
+      "blocage",
+      "forcé",
+      "indivision"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Depuis quand la succession est-elle ouverte ?",
+        "options": [
+          "< 6 mois",
+          "6-12 mois",
+          "1-5 ans",
+          "> 5 ans"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Combien de cohéritiers ?",
+        "options": [
+          "2",
+          "3",
+          "4 ou plus"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Pourquoi le partage bloque-t-il ?",
+        "options": [
+          "désaccord sur la valeur des biens",
+          "refus d'un cohéritier",
+          "absence d'accord sur l'attribution",
+          "un héritier inatteignable"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Y a-t-il un exécuteur testamentaire ?",
+        "options": [
+          "oui",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "À l'ouverture de la succession, les biens deviennent la propriété commune des héritiers (communauté héréditaire, art. 602 CC). Aucun héritier n'est tenu de demeurer dans l'indivision : chaque cohéritier peut en tout temps demander le partage (art. 604 CC), sauf convention ou disposition testamentaire contraire. Si un accord amiable est impossible, l'action en partage (art. 604 CC) est ouverte devant le tribunal du dernier domicile du défunt. Le juge procède alors selon les règles des art. 607 à 617 CC : inventaire, évaluation, formation des lots, attribution par tirage au sort ou par accord. Les biens indivisibles (immeubles, entreprises) peuvent être attribués à un cohéritier avec soulte, ou vendus aux enchères publiques si aucun accord n'est trouvé. Les dispositions testamentaires du défunt sur le partage sont respectées dans les limites de la réserve (art. 608 CC). Le délai de prescription de l'action en partage est en principe de 30 ans (prescription ordinaire, art. 127 CO appliqué par analogie), mais certains cantons prévoient des règles spécifiques. Pendant la procédure, les cohéritiers restent soumis à la gestion commune de la succession. Une administration officielle (art. 554 CC) peut être demandée en cas de conflit profond ou d'héritier inatteignable.",
+      "articles": [
+        {
+          "ref": "CC 602",
+          "titre": "Communauté héréditaire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_602"
+        },
+        {
+          "ref": "CC 604",
+          "titre": "Action en partage",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_604"
+        },
+        {
+          "ref": "CC 607",
+          "titre": "Règles du partage",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_607"
+        },
+        {
+          "ref": "CC 608",
+          "titre": "Dispositions du défunt sur le partage",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_608"
+        },
+        {
+          "ref": "CC 617",
+          "titre": "Attribution de l'immeuble agricole / entreprise",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_617"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 137 III 113",
+          "resume": "L'action en partage peut être introduite par tout cohéritier en tout temps ; elle est imprescriptible dans l'intérêt de sortir de l'indivision."
+        },
+        {
+          "ref": "ATF 143 III 425",
+          "resume": "Le juge du partage dispose d'un large pouvoir d'appréciation pour former les lots ; il doit rechercher une attribution équitable avant d'ordonner la vente aux enchères."
+        }
+      ],
+      "modeleLettre": "Objet : Action en partage successoral — succession [NOM DÉFUNT]\n\nRecommandé\n\n[AUTORITÉ DE CONCILIATION CIVILE / TRIBUNAL / COHÉRITIERS]\n[ADRESSE]\n\nMadame, Monsieur,\n\nÀ la suite du décès de [NOM DU DÉFUNT] survenu le [DATE], la succession est ouverte et je suis cohéritier(ère) en qualité de [QUALITÉ].\n\nMalgré mes démarches amiables entreprises depuis le [DATE], le partage est bloqué pour les motifs suivants :\n[ ] désaccord sur la valeur d'un ou plusieurs biens\n[ ] refus d'un cohéritier de coopérer\n[ ] absence d'accord sur l'attribution des biens\n[ ] un cohéritier est inatteignable\n\nEn application de l'art. 604 CC, j'introduis par la présente l'ACTION EN PARTAGE et je demande :\n1. La formation de lots selon les art. 607 ss CC\n2. L'évaluation des biens indivisibles (immeuble, entreprise) et leur attribution avec soulte, à défaut vente aux enchères publiques\n3. Éventuellement la désignation d'un administrateur officiel (art. 554 CC)\n\nPièces jointes : certificat d'héritier, inventaire provisoire, correspondance amiable.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération Suisse des Notaires (FSN)",
+          "url": "https://www.notaires-suisses.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Justice de paix Vaud (autorité successorale)",
+          "url": "https://www.vd.ch/themes/justice/justices-de-paix",
+          "canton": "VD"
+        },
+        {
+          "nom": "Chambre des notaires de Genève",
+          "tel": "022 781 89 70",
+          "url": "https://www.geneve-notaires.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats vaudois",
+          "url": "https://www.oav.ch",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "avocat",
+          "indication": "Indispensable dès saisine du tribunal ou si patrimoine important (>200k CHF)"
+        },
+        {
+          "type": "notaire",
+          "indication": "Pour tentative de partage amiable et inventaire"
+        },
+        {
+          "type": "justice de paix / autorité de conciliation",
+          "indication": "Premier passage obligatoire dans la plupart des cantons"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un cohéritier souhaite forcer le partage d'une succession bloquée par refus ou désaccord",
+    "profane_aliases": [
+      "partage bloqué",
+      "héritage pas fait",
+      "frère refuse partage",
+      "indivision",
+      "liquidation succession bloquée"
+    ],
+    "negative_signals": [
+      "pacte de maintien de l'indivision valide",
+      "succession de moins de 3 mois",
+      "exécuteur testamentaire en cours de mission"
+    ],
+    "required_facts": [
+      "date du décès",
+      "nombre de cohéritiers",
+      "motifs du blocage",
+      "démarches amiables entreprises"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "successions_dettes_responsabilite_heritiers",
+    "domaine": "successions",
+    "sousDomaine": "dettes",
+    "tags": [
+      "dettes",
+      "héritier",
+      "responsabilité",
+      "solidarité",
+      "passif",
+      "créancier"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Avez-vous accepté la succession ?",
+        "options": [
+          "oui, acceptation expresse",
+          "acceptation tacite (gestion)",
+          "pas encore décidé",
+          "j'envisage renoncer"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quel est votre délai depuis le décès ?",
+        "options": [
+          "< 3 mois",
+          "3-6 mois",
+          "> 6 mois"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Connaissez-vous l'état financier du défunt ?",
+        "options": [
+          "actif net positif",
+          "actif = passif",
+          "passif supérieur à l'actif (insolvable)",
+          "inconnu"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Un créancier vous a-t-il déjà réclamé le paiement ?",
+        "options": [
+          "oui, mise en demeure",
+          "oui, poursuite en cours",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Par l'acceptation de la succession (expresse ou tacite), les héritiers deviennent propriétaires des biens mais répondent aussi solidairement et personnellement des dettes du défunt sur leur patrimoine propre (art. 560 et 603 CC). La solidarité signifie que chaque créancier peut réclamer l'intégralité de sa créance à n'importe quel héritier, à charge pour lui d'exercer une action récursoire contre les cohéritiers. Pour se protéger, l'héritier dispose de trois options : (1) RENONCER à la succession dans un délai de 3 mois dès la connaissance du décès (art. 567 CC) — la renonciation est définitive ; (2) requérir le BÉNÉFICE D'INVENTAIRE dans le même délai (art. 580 CC) — l'héritier n'est alors responsable que jusqu'à concurrence de l'actif successoral ; (3) demander la LIQUIDATION OFFICIELLE (art. 593 CC) lorsque le passif est soupçonné d'excéder l'actif — la succession est alors liquidée comme une faillite et les héritiers ne répondent de rien au-delà de ce qu'ils ont éventuellement reçu. La responsabilité des héritiers dure 5 ans à compter du partage (art. 639 CC) pour les dettes communes non réparties. Attention : toute gestion active (vente, paiement de factures) avant la fin du délai de réflexion peut valoir acceptation tacite et rendre la renonciation impossible.",
+      "articles": [
+        {
+          "ref": "CC 560",
+          "titre": "Acquisition — universalité",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_560"
+        },
+        {
+          "ref": "CC 567",
+          "titre": "Délai pour la renonciation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_567"
+        },
+        {
+          "ref": "CC 580",
+          "titre": "Bénéfice d'inventaire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_580"
+        },
+        {
+          "ref": "CC 593",
+          "titre": "Liquidation officielle",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_593"
+        },
+        {
+          "ref": "CC 603",
+          "titre": "Solidarité des héritiers",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_603"
+        },
+        {
+          "ref": "CC 639",
+          "titre": "Responsabilité après le partage — 5 ans",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_639"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 138 III 354",
+          "resume": "Le délai de 3 mois pour renoncer court dès la CONNAISSANCE du décès, pas dès le décès ; le fardeau de la preuve incombe à ceux qui soutiennent que le délai a couru plus tôt."
+        },
+        {
+          "ref": "ATF 131 III 49",
+          "resume": "La gestion active des biens (vente, paiement) par un héritier avant expiration du délai peut valoir acceptation tacite et fermer la voie de la renonciation."
+        }
+      ],
+      "modeleLettre": "Objet : Déclaration de renonciation à la succession / requête en bénéfice d'inventaire — défunt [NOM]\n\nRecommandé\n\n[JUSTICE DE PAIX / AUTORITÉ COMPÉTENTE CANTONALE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nÀ la suite du décès de [NOM DU DÉFUNT] survenu le [DATE], dont j'ai eu connaissance le [DATE], et en ma qualité d'héritier [préciser le lien], je déclare par la présente :\n\n[Option A — RENONCIATION]\nRENONCER à la succession conformément aux art. 566 ss CC, dans le délai de 3 mois prévu par l'art. 567 CC.\n\n[Option B — BÉNÉFICE D'INVENTAIRE]\nREQUÉRIR le bénéfice d'inventaire conformément aux art. 580 ss CC, afin de n'être tenu des dettes successorales que jusqu'à concurrence de l'actif.\n\n[Option C — LIQUIDATION OFFICIELLE]\nREQUÉRIR la liquidation officielle de la succession conformément à l'art. 593 CC, le passif paraissant excéder l'actif.\n\nJe vous prie de bien vouloir enregistrer ma déclaration et m'adresser confirmation écrite.\n\nPièces jointes : certificat de décès, pièce d'identité, preuve de ma qualité d'héritier.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération Suisse des Notaires (FSN)",
+          "url": "https://www.notaires-suisses.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Justice de paix Vaud (autorité successorale)",
+          "url": "https://www.vd.ch/themes/justice/justices-de-paix",
+          "canton": "VD"
+        },
+        {
+          "nom": "Chambre des notaires de Genève",
+          "tel": "022 781 89 70",
+          "url": "https://www.geneve-notaires.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats vaudois",
+          "url": "https://www.oav.ch",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "justice de paix",
+          "indication": "Autorité compétente pour recevoir la renonciation ou ouvrir le bénéfice d'inventaire"
+        },
+        {
+          "type": "notaire",
+          "indication": "Évaluation du patrimoine successoral avant décision"
+        },
+        {
+          "type": "avocat",
+          "indication": "Si poursuite déjà engagée par un créancier"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un héritier s'interroge sur sa responsabilité pour les dettes du défunt et cherche à se protéger",
+    "profane_aliases": [
+      "dettes du défunt",
+      "créancier réclame héritier",
+      "père laissé dettes",
+      "héritage surendetté",
+      "renoncer à l'héritage"
+    ],
+    "negative_signals": [
+      "renonciation déjà validée",
+      "liquidation officielle ouverte",
+      "délai de 3 mois depuis partage déjà expiré"
+    ],
+    "required_facts": [
+      "date de connaissance du décès",
+      "état de l'acceptation",
+      "état financier de la succession",
+      "poursuites éventuelles"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "successions_testament_authentique_procedure",
+    "domaine": "successions",
+    "sousDomaine": "testament_authentique",
+    "tags": [
+      "testament",
+      "authentique",
+      "notaire",
+      "forme",
+      "témoins",
+      "procédure"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Le testateur est-il capable d'écrire ?",
+        "options": [
+          "oui",
+          "non — incapacité physique",
+          "non — incapacité de lire"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Souhaite-t-il faire un testament authentique ?",
+        "options": [
+          "oui, sécurité max",
+          "hésite",
+          "juste pour information"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Les deux témoins prévus sont-ils identifiés ?",
+        "options": [
+          "oui, indépendants",
+          "oui mais lien familial",
+          "pas encore"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Y a-t-il des dispositions complexes (fiducie, charges) ?",
+        "options": [
+          "oui",
+          "non, simples"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le testament authentique (art. 499-504 CC) est reçu par un officier public (notaire, juge de paix ou fonctionnaire habilité selon le droit cantonal). C'est la forme la plus sécurisée, particulièrement recommandée pour les personnes ne pouvant lire ou écrire, les dispositions complexes (fiducie, substitutions, charges) ou les patrimoines importants. La procédure suit un formalisme strict (art. 500-501 CC) : (1) le testateur communique ses volontés à l'officier qui rédige l'acte ; (2) le testateur lit l'acte (ou l'officier le lui lit en présence de deux témoins si le testateur ne peut/sait lire) ; (3) le testateur signe (ou déclare ne pas pouvoir) ; (4) l'officier atteste par sa signature ; (5) deux témoins capables, ne devant pas être héritiers ni parents du testateur (art. 503 CC), confirment par leur signature. L'exigence des témoins indépendants est absolue : un testament authentique signé en présence d'un témoin héritier est NUL dans cette disposition (art. 503 al. 2 CC). L'acte est conservé en minute par l'officier, offrant une grande sécurité contre la perte, la contestation de l'écriture ou de la date. Les frais (300-1500 CHF selon complexité et canton) sont compensés par la robustesse juridique. La forme authentique est OBLIGATOIRE pour le pacte successoral (art. 512 CC).",
+      "articles": [
+        {
+          "ref": "CC 499",
+          "titre": "Testament authentique — formes",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_499"
+        },
+        {
+          "ref": "CC 500",
+          "titre": "Déclaration du testateur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_500"
+        },
+        {
+          "ref": "CC 501",
+          "titre": "Rôle de l'officier public",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_501"
+        },
+        {
+          "ref": "CC 503",
+          "titre": "Témoins — qualités requises",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_503"
+        },
+        {
+          "ref": "CC 504",
+          "titre": "Conservation des testaments",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_504"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 129 III 113",
+          "resume": "Un testament authentique signé en présence d'un témoin parent ou héritier du testateur entraîne la nullité de la disposition en faveur de ce dernier (art. 503 al. 2 CC), mais pas nécessairement des autres dispositions."
+        },
+        {
+          "ref": "ATF 116 II 310",
+          "resume": "Le formalisme strict du testament authentique est impératif ; toute omission dans la procédure peut entraîner la nullité totale ou partielle du testament."
+        }
+      ],
+      "modeleLettre": "Objet : Demande de rendez-vous pour établissement d'un testament authentique\n\n[NOTAIRE]\n[ADRESSE]\n\nMaître,\n\nJe souhaite établir un testament authentique conformément aux art. 499 ss CC.\n\nMes coordonnées :\n- Nom, prénom : [NOM]\n- Date de naissance : [DATE]\n- Domicile : [ADRESSE]\n- État civil : [MARIÉ / DIVORCÉ / VEUF / CÉLIBATAIRE]\n- Enfants : [NOMBRE ET NOMS]\n\nDispositions envisagées (à préciser ensemble lors du rendez-vous) :\n[ ] institution d'héritier(s) pour la quotité disponible\n[ ] legs particuliers (biens, sommes)\n[ ] exécuteur testamentaire désigné\n[ ] charges / conditions\n[ ] substitution fiduciaire\n\nJe vous prie de bien vouloir :\n1. Me fixer un rendez-vous\n2. M'informer du coût estimatif\n3. M'indiquer si je dois amener les deux témoins ou si vous disposez d'un pool interne\n\nVeuillez agréer, Maître, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération Suisse des Notaires (FSN)",
+          "url": "https://www.notaires-suisses.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Justice de paix Vaud (autorité successorale)",
+          "url": "https://www.vd.ch/themes/justice/justices-de-paix",
+          "canton": "VD"
+        },
+        {
+          "nom": "Chambre des notaires de Genève",
+          "tel": "022 781 89 70",
+          "url": "https://www.geneve-notaires.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats vaudois",
+          "url": "https://www.oav.ch",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "notaire",
+          "indication": "Prestataire obligatoire pour le testament authentique"
+        },
+        {
+          "type": "avocat",
+          "indication": "Consultation préalable utile pour patrimoine complexe ou famille recomposée"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Une personne souhaite établir un testament authentique (notarié) et s'informe sur la procédure",
+    "profane_aliases": [
+      "testament notaire",
+      "testament officiel",
+      "faire son testament chez le notaire",
+      "testament sécurisé"
+    ],
+    "negative_signals": [
+      "testateur sans patrimoine significatif préférant l'olographe",
+      "pacte successoral requis (forme obligatoire)"
+    ],
+    "required_facts": [
+      "capacité de discernement",
+      "capacité de lire/écrire",
+      "complexité des dispositions",
+      "disponibilité de témoins indépendants"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "successions_certificat_heritier",
+    "domaine": "successions",
+    "sousDomaine": "certificat_heritier",
+    "tags": [
+      "certificat",
+      "héritier",
+      "justice de paix",
+      "attestation",
+      "procédure"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pour quelle démarche avez-vous besoin du certificat ?",
+        "options": [
+          "banque (fonds du défunt)",
+          "assurance vie",
+          "vente d'immeuble",
+          "immatriculation véhicule",
+          "autre"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Depuis quand le décès est-il survenu ?",
+        "options": [
+          "< 1 mois",
+          "1-6 mois",
+          "> 6 mois"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Y a-t-il un testament connu ?",
+        "options": [
+          "oui, déposé",
+          "oui mais pas encore déposé",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Tous les héritiers sont-ils identifiés ?",
+        "options": [
+          "oui",
+          "non, recherche en cours",
+          "conflit d'identification"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le certificat d'héritier (art. 559 CC) est le document officiel attestant la qualité d'héritier d'une personne. Il est délivré par l'autorité compétente du dernier domicile du défunt (justice de paix, autorité successorale cantonale, notaire selon le canton) sur présentation du livret de famille, de l'acte de décès, du testament éventuel et des pièces d'identité des héritiers. Le certificat permet aux héritiers de prouver leur qualité vis-à-vis des tiers (banques, assurances, registre foncier, office de la circulation) pour accéder aux biens du défunt. La procédure dure généralement 1 à 3 mois : l'autorité attend l'expiration du délai de renonciation de 3 mois (art. 567 CC) et vérifie qu'aucun testament ne modifie la dévolution. En cas de testament, celui-ci doit être préalablement déposé et ouvert (art. 556 CC). Le certificat peut être délivré à titre provisoire pour les opérations urgentes (blocage de compte, funérailles). Le coût varie selon les cantons (souvent 100-500 CHF). Si un cohéritier conteste la dévolution, le certificat peut être refusé ou sa délivrance suspendue jusqu'à décision judiciaire. Le certificat d'héritier n'a qu'une valeur déclarative et n'accorde pas de droits de fond — un héritier omis conserve ses droits même sans figurer au certificat.",
+      "articles": [
+        {
+          "ref": "CC 559",
+          "titre": "Certificat d'héritier",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_559"
+        },
+        {
+          "ref": "CC 556",
+          "titre": "Dépôt et ouverture du testament",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_556"
+        },
+        {
+          "ref": "CC 567",
+          "titre": "Délai de renonciation — 3 mois",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_567"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 128 III 318",
+          "resume": "Le certificat d'héritier a valeur déclarative : il constate la dévolution probable sans préjuger définitivement des droits en cas de contestation ultérieure."
+        },
+        {
+          "ref": "ATF 118 II 108",
+          "resume": "Un certificat d'héritier peut être délivré à titre provisoire pour des opérations urgentes, sans attendre l'expiration du délai de renonciation."
+        }
+      ],
+      "modeleLettre": "Objet : Demande de délivrance d'un certificat d'héritier — défunt [NOM]\n\nRecommandé\n\n[JUSTICE DE PAIX / AUTORITÉ SUCCESSORALE CANTONALE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nÀ la suite du décès de [NOM DU DÉFUNT], survenu le [DATE] à [LIEU], j'ai l'honneur de solliciter la délivrance d'un certificat d'héritier au sens de l'art. 559 CC.\n\nMa qualité d'héritier : [descendant / conjoint / parent / légataire universel].\n\nBut de la demande :\n[ ] accès aux comptes bancaires du défunt auprès de [NOM BANQUE]\n[ ] opération au registre foncier (vente/transfert de l'immeuble sis à [ADRESSE])\n[ ] réclamation d'un capital d'assurance-vie auprès de [ASSUREUR]\n[ ] immatriculation du véhicule [MARQUE/IMMATRICULATION]\n[ ] autre : [PRÉCISER]\n\nPièces jointes :\n- Certificat de décès\n- Livret de famille / acte de naissance\n- Pièce d'identité\n- Testament éventuel / acte de dépôt\n- Procuration des autres cohéritiers le cas échéant\n\nJe vous remercie par avance de bien vouloir donner suite à ma demande dans les meilleurs délais. Si la procédure ordinaire devait excéder les besoins urgents (funérailles, blocage de comptes), je sollicite subsidiairement la délivrance d'un certificat provisoire.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération Suisse des Notaires (FSN)",
+          "url": "https://www.notaires-suisses.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Justice de paix Vaud (autorité successorale)",
+          "url": "https://www.vd.ch/themes/justice/justices-de-paix",
+          "canton": "VD"
+        },
+        {
+          "nom": "Chambre des notaires de Genève",
+          "tel": "022 781 89 70",
+          "url": "https://www.geneve-notaires.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats vaudois",
+          "url": "https://www.oav.ch",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "justice de paix",
+          "indication": "Autorité compétente dans la plupart des cantons romands (VD, FR, VS, NE, JU)"
+        },
+        {
+          "type": "notaire",
+          "indication": "Compétent dans certains cantons (GE partiellement), pour opérations immobilières"
+        },
+        {
+          "type": "avocat",
+          "indication": "Si contestation de la dévolution ou refus de délivrance"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un héritier a besoin d'un certificat d'héritier pour accéder aux biens du défunt auprès d'une banque, assurance ou registre",
+    "profane_aliases": [
+      "certificat pour la banque",
+      "prouver que je suis héritier",
+      "attestation succession",
+      "déblocage compte défunt"
+    ],
+    "negative_signals": [
+      "renonciation déjà effectuée",
+      "contestation judiciaire pendante sur la qualité d'héritier"
+    ],
+    "required_facts": [
+      "dernier domicile du défunt",
+      "qualité de l'héritier",
+      "but de la demande",
+      "existence d'un testament"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "successions_administration_officielle",
+    "domaine": "successions",
+    "sousDomaine": "administration_officielle",
+    "tags": [
+      "administration officielle",
+      "administrateur",
+      "554 CC",
+      "conflit",
+      "absence",
+      "conservation"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la situation qui justifie l'administration officielle ?",
+        "options": [
+          "héritier absent ou inconnu",
+          "conflit grave entre cohéritiers",
+          "enfant mineur sans représentant",
+          "succession abandonnée"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Depuis quand la succession est-elle ouverte ?",
+        "options": [
+          "< 1 mois",
+          "1-6 mois",
+          "> 6 mois"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Y a-t-il des biens périssables ou menacés (entreprise, immeuble) ?",
+        "options": [
+          "oui, urgent",
+          "oui, modéré",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous un exécuteur testamentaire désigné ?",
+        "options": [
+          "oui",
+          "non",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'administration officielle de la succession (art. 554 CC) est une mesure protectrice ordonnée par l'autorité compétente (justice de paix ou autorité successorale) pour préserver les biens de la succession dans trois cas principaux : (1) l'un des héritiers est absent de manière prolongée et ne peut être représenté ; (2) aucun des intéressés ne peut justifier immédiatement de ses droits d'héritier ou l'existence d'un héritier est incertaine ; (3) tous les héritiers ne sont pas connus. Une administration d'office peut aussi être ordonnée si l'autorité l'estime nécessaire pour d'autres motifs (conflit grave, mineur non représenté, biens en péril). L'administrateur, désigné par l'autorité, est un tiers neutre (souvent notaire ou avocat) qui prend possession des biens, les conserve, encaisse les créances, paie les dettes courantes et gère l'entreprise jusqu'à la résolution des conflits ou l'identification des héritiers. Il rend compte à l'autorité et perçoit une rémunération (généralement horaire ou en pourcentage de l'actif géré). L'administration officielle NE se confond PAS avec la liquidation officielle (art. 593 CC), qui intervient lorsque le passif excède vraisemblablement l'actif. Elle est par nature temporaire et prend fin dès que les conditions qui l'ont justifiée disparaissent. Les héritiers peuvent demander sa levée en prouvant leur qualité et leur capacité de gérer.",
+      "articles": [
+        {
+          "ref": "CC 554",
+          "titre": "Administration officielle — cas",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_554"
+        },
+        {
+          "ref": "CC 555",
+          "titre": "Héritiers inconnus — sommation publique",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_555"
+        },
+        {
+          "ref": "CC 593",
+          "titre": "Liquidation officielle (à distinguer)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_593"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 130 III 550",
+          "resume": "L'administration officielle est une mesure temporaire de sauvegarde ; elle doit cesser dès que les héritiers peuvent prouver leur qualité et leur capacité de gérer."
+        },
+        {
+          "ref": "ATF 125 III 219",
+          "resume": "L'autorité dispose d'un large pouvoir d'appréciation pour ordonner l'administration officielle, notamment en cas de conflit grave entre cohéritiers menaçant les biens successoraux."
+        }
+      ],
+      "modeleLettre": "Objet : Requête en administration officielle de la succession — défunt [NOM]\n\nRecommandé\n\n[JUSTICE DE PAIX / AUTORITÉ SUCCESSORALE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nÀ la suite du décès de [NOM DU DÉFUNT], survenu le [DATE], et en ma qualité [d'héritier / de créancier / d'exécuteur testamentaire], j'ai l'honneur de solliciter l'ordonnance d'une administration officielle de la succession au sens de l'art. 554 CC.\n\nCirconstances justifiant la mesure :\n[ ] l'un des héritiers ([NOM]) est absent / introuvable depuis [DATE]\n[ ] l'identité complète des héritiers n'est pas encore établie\n[ ] un conflit grave entre cohéritiers menace les biens successoraux (détails : [PRÉCISER])\n[ ] les biens comportent une entreprise / un immeuble / des actifs financiers qui requièrent une gestion immédiate et qualifiée\n[ ] un héritier mineur est dépourvu de représentant valable\n\nJe vous prie de :\n1. Désigner un administrateur officiel (de préférence [NOM éventuel, notaire / avocat])\n2. Définir le périmètre de sa mission (inventaire, gestion courante, paiements)\n3. Ordonner les mesures conservatoires urgentes (blocage de comptes, mise sous scellés)\n\nPièces jointes : certificat de décès, inventaire provisoire, documentation sur le conflit.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération Suisse des Notaires (FSN)",
+          "url": "https://www.notaires-suisses.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Justice de paix Vaud (autorité successorale)",
+          "url": "https://www.vd.ch/themes/justice/justices-de-paix",
+          "canton": "VD"
+        },
+        {
+          "nom": "Chambre des notaires de Genève",
+          "tel": "022 781 89 70",
+          "url": "https://www.geneve-notaires.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats vaudois",
+          "url": "https://www.oav.ch",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "justice de paix",
+          "indication": "Autorité compétente dans la plupart des cantons"
+        },
+        {
+          "type": "avocat",
+          "indication": "Pour motiver la requête en cas de conflit complexe"
+        },
+        {
+          "type": "notaire",
+          "indication": "Candidat fréquent à la fonction d'administrateur"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un héritier, créancier ou tiers demande la mise sous administration officielle d'une succession menacée, conflictuelle ou incertaine",
+    "profane_aliases": [
+      "administrateur succession",
+      "tiers gérant héritage",
+      "succession sous tutelle",
+      "cohéritier dangereux",
+      "héritier introuvable"
+    ],
+    "negative_signals": [
+      "succession liquide et consensuelle",
+      "exécuteur testamentaire valable en fonction",
+      "passif > actif (plutôt liquidation officielle)"
+    ],
+    "required_facts": [
+      "circonstances justifiant la mesure",
+      "nature des biens",
+      "identification des cohéritiers",
+      "urgence"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "successions_reserve_conjoint_vs_enfants",
+    "domaine": "successions",
+    "sousDomaine": "réserve_conjoint",
+    "tags": [
+      "réserve",
+      "conjoint",
+      "partenaire",
+      "enfants",
+      "quotité disponible",
+      "réforme 2023"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le statut du couple ?",
+        "options": [
+          "marié — régime ordinaire",
+          "partenariat enregistré",
+          "concubinage (pas de succession légale)"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Le défunt laisse-t-il des enfants ?",
+        "options": [
+          "oui, enfants communs",
+          "oui, enfants d'un précédent lit",
+          "non, pas d'enfants"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Y a-t-il un testament ou contrat de mariage ?",
+        "options": [
+          "testament en faveur du conjoint",
+          "contrat de mariage (communauté/séparation)",
+          "les deux",
+          "aucun"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Le défunt a-t-il fait des donations importantes avant décès ?",
+        "options": [
+          "oui",
+          "non",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Depuis la révision du droit successoral entrée en vigueur le 1er janvier 2023, les règles de réserve ont été modifiées pour donner plus de liberté au testateur et renforcer la position du conjoint vivant sans enfants communs. La dévolution légale sans testament (art. 462 CC) reste : en présence d'enfants, la moitié au conjoint et la moitié aux enfants (parts égales entre eux) ; sans enfants mais avec parents, 3/4 au conjoint et 1/4 aux parents ; sans enfants ni parents, tout au conjoint. LES RÉSERVES depuis 2023 : pour les descendants, la réserve est de 1/2 de la part légale (art. 471 ch. 1 CC, réduite de 3/4 à 1/2) ; pour le conjoint ou partenaire, la réserve reste de 1/2 de la part légale ; pour les parents, la réserve est SUPPRIMÉE. La QUOTITÉ DISPONIBLE est donc : avec enfants et conjoint, 1/2 disponible (au lieu de 3/8 avant) ; sans enfants, 1/4 disponible. Cela signifie que le défunt peut désormais avantager fortement son conjoint (ou un tiers) via testament, jusqu'à la quotité disponible, sans que les enfants puissent s'y opposer au-delà de leur réserve de 1/2. Attention : les droits de préciput du conjoint survivant (logement familial, mobilier) prévus à l'art. 612a CC sont préservés, et les règles de partage tiennent compte du régime matrimonial préalable (liquidation du régime avant succession).",
+      "articles": [
+        {
+          "ref": "CC 462",
+          "titre": "Dévolution légale — conjoint et descendants",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_462"
+        },
+        {
+          "ref": "CC 470",
+          "titre": "Réserve — quotité disponible",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_470"
+        },
+        {
+          "ref": "CC 471",
+          "titre": "Réserve des descendants (1/2) et du conjoint (1/2)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_471"
+        },
+        {
+          "ref": "CC 612a",
+          "titre": "Attribution prioritaire du logement familial au conjoint survivant",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_612_a"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 145 III 1",
+          "resume": "La réduction des libéralités excessives s'opère dans l'ordre fixé par l'art. 532 CC : d'abord les dispositions testamentaires, puis les donations entre vifs en remontant chronologiquement."
+        },
+        {
+          "ref": "ATF 140 III 193",
+          "resume": "L'attribution prioritaire du logement familial au conjoint survivant (art. 612a CC) peut être exigée dans le partage, moyennant soulte aux autres héritiers."
+        }
+      ],
+      "modeleLettre": "Objet : Demande de calcul des réserves et de la quotité disponible — succession [NOM DÉFUNT]\n\n[NOTAIRE]\n[ADRESSE]\n\nMaître,\n\nÀ la suite du décès de [NOM DU DÉFUNT], survenu le [DATE], et en ma qualité de [conjoint survivant / enfant], je vous prie de bien vouloir procéder au calcul exact des réserves héréditaires et de la quotité disponible, conformément aux art. 470-471 CC dans leur teneur depuis la réforme du 1er janvier 2023.\n\nComposition de la succession :\n- Conjoint / partenaire : [oui / non]\n- Enfants : [NOMBRE, communs ou d'un précédent lit]\n- Parents du défunt vivants : [oui / non]\n- Autres héritiers légaux : [PRÉCISER]\n\nDispositions connues :\n- Testament du [DATE] : [DESCRIPTION SOMMAIRE]\n- Contrat de mariage : [OUI / NON — régime]\n- Donations entre vifs du vivant : [LISTE]\n\nJe sollicite en particulier :\n1. Le calcul de la part légale de chaque héritier\n2. Le calcul des réserves actualisées (1/2 descendants, 1/2 conjoint, 0 parents)\n3. La quotité disponible résultante\n4. L'application éventuelle de l'art. 612a CC (logement familial)\n\nVeuillez agréer, Maître, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Fédération Suisse des Notaires (FSN)",
+          "url": "https://www.notaires-suisses.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Justice de paix Vaud (autorité successorale)",
+          "url": "https://www.vd.ch/themes/justice/justices-de-paix",
+          "canton": "VD"
+        },
+        {
+          "nom": "Chambre des notaires de Genève",
+          "tel": "022 781 89 70",
+          "url": "https://www.geneve-notaires.ch",
+          "canton": "GE"
+        },
+        {
+          "nom": "Ordre des avocats vaudois",
+          "url": "https://www.oav.ch",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "notaire",
+          "indication": "Calcul des réserves et projet de partage"
+        },
+        {
+          "type": "avocat",
+          "indication": "Si conflit entre conjoint survivant et enfants d'un précédent lit"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un conjoint survivant ou un enfant s'interroge sur les réserves applicables depuis la réforme successorale 2023",
+    "profane_aliases": [
+      "part du conjoint",
+      "part des enfants",
+      "réforme 2023 héritage",
+      "nouvelle quotité disponible",
+      "héritage veuf veuve"
+    ],
+    "negative_signals": [
+      "concubinage sans testament (pas de droits légaux)",
+      "divorce antérieur au décès (plus conjoint)"
+    ],
+    "required_facts": [
+      "statut du couple",
+      "présence/absence d'enfants",
+      "régime matrimonial",
+      "dispositions testamentaires éventuelles"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
   }
 ]

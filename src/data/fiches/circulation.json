@@ -1629,5 +1629,1663 @@
     "review_expiry": "2027-04-18",
     "readiness": "beta",
     "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "circulation_expertise_vehicule_contestee",
+    "domaine": "circulation",
+    "sousDomaine": "expertise",
+    "tags": [
+      "expertise",
+      "véhicule",
+      "assurance",
+      "contestation",
+      "dommage",
+      "valeur"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "De quel type d'expertise s'agit-il ?",
+        "options": [
+          "dommage matériel après accident",
+          "valeur vénale avant-après",
+          "vice caché vente",
+          "casco contestée"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Qui a mandaté l'expert ?",
+        "options": [
+          "l'assurance adverse",
+          "mon assurance",
+          "le garage",
+          "un expert indépendant"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Quel est le désaccord principal ?",
+        "options": [
+          "montant du dommage sous-évalué",
+          "véhicule déclaré épave à tort",
+          "vétusté excessive appliquée",
+          "valeur vénale avant accident"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous des contre-preuves ?",
+        "options": [
+          "deuxième devis",
+          "photos détaillées",
+          "factures entretien",
+          "aucune"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Après un sinistre automobile, l'expertise du véhicule est centrale pour déterminer le montant de l'indemnisation. Lorsque le véhicule est réparable, l'expert évalue le coût de remise en état ; lorsqu'il est économiquement irréparable (coût de réparation > valeur vénale avant sinistre), il est déclaré 'épave' et l'indemnité correspond à la valeur vénale avant accident, moins la valeur résiduelle (épave). L'expertise de l'assurance adverse (RC du responsable) est contractuellement opposable à l'assureur mais PAS au lésé tiers, qui conserve le droit à la réparation intégrale du dommage (art. 58 LCR — responsabilité causale du détenteur ; art. 41 et 43 CO). En pratique : (1) si vous contestez l'expertise de l'assurance, vous pouvez demander une CONTRE-EXPERTISE à vos frais (généralement 300-800 CHF), remboursée si elle fait bouger le résultat de plus de 10-20% ; (2) les EXPERTS TCS et ACS proposent des expertises indépendantes avec neutralité reconnue ; (3) en cas de désaccord persistant, une EXPERTISE JUDICIAIRE peut être sollicitée devant le tribunal civil (CPC 183 ss) ; (4) le BURY-BOOK EUROTAX est la référence de valeur vénale, mais il doit être ajusté à l'état réel du véhicule (entretien, kilométrage, options, pneus). Les points fréquemment sous-évalués : valeur des options / équipements spéciaux, accessoires neufs (pneus hiver, galerie), travaux d'entretien récents, valeur sentimentale (NON indemnisable sauf rare jurisprudence). Le lésé a DROIT à la valeur de remplacement d'un véhicule EN ÉTAT ÉQUIVALENT, pas seulement la valeur de revente moyenne. Pour la CASCO, les conditions contractuelles (CGA) s'appliquent en priorité, avec souvent une déduction pour vétusté.",
+      "articles": [
+        {
+          "ref": "LCR 58",
+          "titre": "Responsabilité causale du détenteur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_58"
+        },
+        {
+          "ref": "CO 41",
+          "titre": "Responsabilité délictuelle",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_41"
+        },
+        {
+          "ref": "CO 43",
+          "titre": "Mode et étendue de la réparation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_43"
+        },
+        {
+          "ref": "LCA 33",
+          "titre": "Étendue du risque couvert (casco)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/1_1_1/fr#art_33"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 131 III 12",
+          "resume": "Le lésé a droit à la réparation intégrale du dommage, ce qui inclut la valeur de remplacement permettant d'acquérir un véhicule de qualité et d'état équivalents à celui endommagé."
+        },
+        {
+          "ref": "ATF 126 III 388",
+          "resume": "En cas de contestation de l'expertise de l'assureur, une contre-expertise indépendante s'impose ; l'assureur ne peut imposer son évaluation unilatérale au lésé tiers."
+        }
+      ],
+      "modeleLettre": "Objet : Contestation de l'expertise du [DATE] — sinistre n° [N°]\n\nRecommandé\n\n[ASSURANCE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJ'accuse réception de votre offre d'indemnisation du [DATE] basée sur l'expertise de [EXPERT] du [DATE] pour le sinistre n° [N°].\n\nJe conteste les conclusions de cette expertise pour les motifs suivants :\n[ ] valeur vénale avant sinistre sous-évaluée : [MONTANT proposé] CHF vs [MONTANT réclamé] CHF — motif : [options, entretien, kilométrage]\n[ ] vétusté excessive appliquée : [%] — je conteste son taux au regard de l'état d'entretien\n[ ] véhicule déclaré épave à tort — les réparations sont techniquement et économiquement justifiées\n[ ] coût de réparation sous-estimé — devis contradictoire joint\n[ ] accessoires et options non valorisés : [LISTE]\n\nPièces jointes :\n- Contre-devis du garage [NOM]\n- Photos détaillées avant sinistre\n- Factures d'entretien des 3 dernières années\n- Cote Eurotax / expertise indépendante TCS\n\nEn application des art. 41 et 43 CO et de la jurisprudence (ATF 131 III 12), j'ai droit à la réparation intégrale de mon dommage, soit la valeur permettant d'acquérir un véhicule équivalent.\n\nJe vous prie de :\n1. Revoir votre offre dans un délai de 30 jours\n2. À défaut, accepter de mandater conjointement un expert neutre (TCS/ACS)\n3. À défaut encore, je saisirai le tribunal civil compétent\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "TCS — section juridique",
+          "tel": "0800 140 140",
+          "url": "https://www.tcs.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Service des automobiles et de la navigation (Vaud)",
+          "tel": "021 316 82 10",
+          "url": "https://www.vd.ch/themes/mobilite/permis-vehicules",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office cantonal des véhicules (Genève)",
+          "url": "https://www.ge.ch/dossier/vehicules",
+          "canton": "GE"
+        },
+        {
+          "nom": "ACS — Automobile Club Suisse",
+          "url": "https://www.acs.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Eurotax — cote véhicule",
+          "url": "https://www.eurotax.ch",
+          "canton": "CH"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "expert indépendant TCS",
+          "indication": "Expertise contradictoire reconnue"
+        },
+        {
+          "type": "ombudsman de l'assurance privée",
+          "indication": "Médiation gratuite avant procédure"
+        },
+        {
+          "type": "avocat",
+          "indication": "Si dommage > 10'000 CHF et désaccord persistant"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un automobiliste conteste l'expertise de l'assurance sur la valeur ou le dommage de son véhicule",
+    "profane_aliases": [
+      "expert assurance sous-évalue",
+      "voiture épave contester",
+      "expertise pas juste",
+      "dommage voiture pas couvert"
+    ],
+    "negative_signals": [
+      "expertise acceptée par signature",
+      "deuxième expertise confirmant la première à moins de 10%"
+    ],
+    "required_facts": [
+      "type d'expertise",
+      "mandant de l'expert",
+      "motif de contestation",
+      "contre-preuves disponibles"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "circulation_dommage_corporel_pieton",
+    "domaine": "circulation",
+    "sousDomaine": "dommage_corporel",
+    "tags": [
+      "piéton",
+      "dommage corporel",
+      "LCR 58",
+      "LAA",
+      "indemnisation",
+      "tort moral"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le contexte du choc ?",
+        "options": [
+          "piéton sur passage protégé",
+          "piéton hors passage",
+          "trottoir / zone piétonne",
+          "enfant"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quelles sont les blessures ?",
+        "options": [
+          "légères (hématomes)",
+          "moyennes (fractures)",
+          "graves (séquelles durables)",
+          "invalidité / décès"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Quel est votre statut d'assurance ?",
+        "options": [
+          "salarié (LAA)",
+          "indépendant",
+          "AVS retraité",
+          "étudiant / sans activité"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "L'accident a-t-il été déclaré à la police ?",
+        "options": [
+          "oui, constat",
+          "police appelée sans constat",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Un piéton victime d'un accident de la circulation cumule plusieurs régimes d'indemnisation qui se coordonnent (art. 39 ss LCA sur la coordination) : (1) RESPONSABILITÉ CIVILE DU DÉTENTEUR DU VÉHICULE (art. 58 LCR) : responsabilité CAUSALE (sans faute), le détenteur est présumé responsable sauf preuve d'une force majeure ou d'une faute grave et exclusive du lésé. L'assurance RC obligatoire (art. 63 LCR) couvre les dommages jusqu'à 100 millions CHF ; le piéton peut agir directement contre l'assureur (art. 65 LCR). (2) LAA (salarié) : si l'accident survient sur le trajet domicile-travail ou pendant le travail, la Suva ou l'assureur LAA couvre les frais médicaux, la perte de gain (80% du salaire dès le 3e jour), la rente d'invalidité éventuelle et les prestations aux survivants. (3) AI/AVS si invalidité permanente en dehors du cadre professionnel. (4) LAMAL pour les frais médicaux si aucune LAA ne s'applique. Le PIÉTON BÉNÉFICIE D'UNE PROTECTION RENFORCÉE (art. 33 LCR — passage piéton ; art. 36 OCR — priorité piéton). La faute du piéton (traversée hors passage, inattention) peut entraîner une RÉDUCTION de l'indemnité selon l'art. 44 CO, mais jamais une exclusion totale sauf faute grave et exclusive (jurisprudence constante : ATF 115 II 283). L'ENFANT piéton bénéficie d'une protection maximale : la faute lui est moins imputée et le conducteur doit redoubler de prudence (art. 26 al. 2 LCR). Les TYPES DE DOMMAGES indemnisables : frais médicaux (y compris rééducation), perte de gain (passée et future, actuarielle), tort moral (art. 47 et 49 CO — 15'000 à 200'000+ CHF selon gravité), atteinte à l'avenir économique, frais d'aide ménagère. Le délai de prescription est de 3 ans dès la CONNAISSANCE du dommage et de l'auteur, 10 ans au maximum depuis l'acte (art. 60 CO).",
+      "articles": [
+        {
+          "ref": "LCR 58",
+          "titre": "Responsabilité causale du détenteur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_58"
+        },
+        {
+          "ref": "LCR 63",
+          "titre": "Assurance responsabilité civile obligatoire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_63"
+        },
+        {
+          "ref": "LCR 65",
+          "titre": "Action directe du lésé contre l'assureur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_65"
+        },
+        {
+          "ref": "LCR 33",
+          "titre": "Priorité au passage piéton",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_33"
+        },
+        {
+          "ref": "CO 47",
+          "titre": "Tort moral en cas de décès ou lésions corporelles graves",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_47"
+        },
+        {
+          "ref": "LAA 6",
+          "titre": "Principe — couverture LAA",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr#art_6"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 115 II 283",
+          "resume": "La réduction pour faute du piéton ne peut excluer totalement la responsabilité causale du détenteur sauf faute grave et exclusive de la victime. La responsabilité de l'art. 58 LCR subsiste même en cas de négligence du piéton."
+        },
+        {
+          "ref": "ATF 146 III 313",
+          "resume": "Le tort moral pour lésions corporelles graves (invalidité 50%+) se situe entre 80'000 et 150'000 CHF selon l'âge, les séquelles et l'impact sur la vie personnelle et familiale."
+        }
+      ],
+      "modeleLettre": "Objet : Déclaration de sinistre et demande d'indemnisation — accident du [DATE]\n\nRecommandé\n\n[ASSURANCE RC DU VÉHICULE RESPONSABLE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe vous informe officiellement que j'ai été victime le [DATE] à [LIEU] d'un accident de la circulation alors que je traversais [PASSAGE PIÉTON / HORS PASSAGE / TROTTOIR].\n\nLe véhicule impliqué est immatriculé [N° PLAQUE], conduit par [NOM CONDUCTEUR], assuré RC auprès de votre compagnie (référence : [N° POLICE si connu]).\n\nRapport de police : [N° DU PV si disponible] établi par la police de [LIEU].\n\nConséquences pour moi :\n- Lésions corporelles : [DESCRIPTION], attestées par certificats médicaux joints\n- Incapacité de travail : [durée, pourcentage]\n- Perte de gain : [MONTANT estimé]\n- Frais médicaux : [MONTANT à ce stade, évolutif]\n- Séquelles probables : [PRONOSTIC]\n- Tort moral invoqué\n\nEn application des art. 58 LCR et 65 LCR (action directe), je fais valoir mon droit à la réparation intégrale de mon dommage, à la charge de votre assurée.\n\nJe vous prie de :\n1. Enregistrer ma déclaration et m'attribuer un n° de dossier\n2. Désigner un médecin-conseil pour évaluer mes séquelles le moment venu (stabilisation)\n3. Verser une avance sur indemnisation pour couvrir mes frais immédiats (CHF [MONTANT])\n4. M'indemniser finalement selon barème tort moral (ATF 146 III 313 et suivants) après stabilisation\n\nPièces jointes : rapport médical initial, PV de police, certificats d'arrêt de travail, fiches de salaire.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "TCS — section juridique",
+          "tel": "0800 140 140",
+          "url": "https://www.tcs.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Service des automobiles et de la navigation (Vaud)",
+          "tel": "021 316 82 10",
+          "url": "https://www.vd.ch/themes/mobilite/permis-vehicules",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office cantonal des véhicules (Genève)",
+          "url": "https://www.ge.ch/dossier/vehicules",
+          "canton": "GE"
+        },
+        {
+          "nom": "ACS — Automobile Club Suisse",
+          "url": "https://www.acs.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Suva — accidents professionnels et trajet",
+          "tel": "0848 820 820",
+          "url": "https://www.suva.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Bureau de prévention des accidents (BPA)",
+          "url": "https://www.bfu.ch",
+          "canton": "CH"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "avocat RC circulation",
+          "indication": "Indispensable dès lésions corporelles sérieuses ou incapacité > 3 mois"
+        },
+        {
+          "type": "médecin-conseil",
+          "indication": "Évaluation des séquelles une fois l'état stabilisé"
+        },
+        {
+          "type": "ombudsman assurance privée",
+          "indication": "Si refus ou sous-indemnisation manifeste"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un piéton victime d'un accident de la circulation cherche à faire valoir ses droits à indemnisation",
+    "profane_aliases": [
+      "piéton renversé",
+      "accident sur passage",
+      "blessé par voiture",
+      "dommage corporel piéton"
+    ],
+    "negative_signals": [
+      "piéton ivre traversant hors passage de nuit",
+      "faute exclusive grave du piéton"
+    ],
+    "required_facts": [
+      "circonstances de l'accident",
+      "statut d'assurance",
+      "nature des lésions",
+      "rapport de police"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "circulation_accident_sortie_autoroute",
+    "domaine": "circulation",
+    "sousDomaine": "accident_autoroute",
+    "tags": [
+      "autoroute",
+      "sortie",
+      "bretelle",
+      "perte maîtrise",
+      "OCR",
+      "vitesse"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Où exactement l'accident a-t-il eu lieu ?",
+        "options": [
+          "bretelle de sortie",
+          "voie de décélération",
+          "jonction avec route cantonale",
+          "péage / aire"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Circonstances principales ?",
+        "options": [
+          "perte de maîtrise personnelle",
+          "collision arrière par tiers",
+          "queue de bouchon non vue",
+          "obstacle imprévu"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Y a-t-il eu blessés ?",
+        "options": [
+          "non",
+          "blessures légères",
+          "blessures graves",
+          "décès"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous reçu une ordonnance pénale ?",
+        "options": [
+          "non, juste constat",
+          "oui, infraction simple",
+          "oui, infraction grave (retrait permis)"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Les accidents en sortie d'autoroute constituent une catégorie spécifique très représentée dans les statistiques. La configuration (virage serré après une portion rapide, décélération insuffisante, changement de chaussée) impose une ADAPTATION de la vitesse (art. 32 LCR ; art. 4 OCR), au-delà des limites générales. La VITESSE RESTE ADAPTÉE AUX CIRCONSTANCES en tout temps, même si la vitesse affichée n'est pas dépassée. Les bretelles de sortie sont normalement signalées avec une vitesse recommandée (panneau carré jaune) ou obligatoire (panneau rond). La jurisprudence retient fréquemment la FAUTE DU CONDUCTEUR pour perte de maîtrise en bretelle (art. 31 LCR), même sans dépassement formel de la limite affichée. Les sanctions possibles : (1) infraction simple (art. 90 al. 1 LCR) si perte de maîtrise sans excès ni conséquences graves — amende ; (2) infraction moyenne (art. 16b LCR) — retrait de permis mini 1 mois ; (3) infraction grave (art. 16c LCR) si mise en danger sérieuse — retrait mini 3 mois ; (4) si mise en danger d'autrui + vitesse inadaptée marquée = violation grave des règles (art. 90 al. 2 LCR) — jusqu'à 3 ans de prison + retrait obligatoire. En cas de COLLISION ARRIÈRE par un tiers en fin de bouchon, la responsabilité du suiveur est présumée (art. 34 LCR — distance de sécurité) sauf freinage soudain injustifié. Le VÉHICULE PERCUTÉ peut toutefois voir sa responsabilité engagée s'il s'est arrêté brusquement sans cause légitime. Pour l'INDEMNISATION, les règles de l'accident ordinaire s'appliquent (RC obligatoire, casco éventuelle, LAA si trajet travail). Attention aux DOUBLES INFRACTIONS : en cas de vitesse excessive en sortie + perte de maîtrise, le juge peut retenir concours (art. 49 CP) et aggravation.",
+      "articles": [
+        {
+          "ref": "LCR 31",
+          "titre": "Maîtrise du véhicule",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_31"
+        },
+        {
+          "ref": "LCR 32",
+          "titre": "Vitesse adaptée aux circonstances",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_32"
+        },
+        {
+          "ref": "LCR 34",
+          "titre": "Distance de sécurité entre véhicules",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_34"
+        },
+        {
+          "ref": "LCR 90",
+          "titre": "Violation des règles — sanctions",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_90"
+        },
+        {
+          "ref": "LCR 16c",
+          "titre": "Retrait pour infraction grave",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_16_c"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 140 IV 89",
+          "resume": "La vitesse inadaptée en sortie d'autoroute peut constituer une infraction grave (art. 90 al. 2 LCR) même en deçà des limites affichées, dès lors qu'elle crée une mise en danger sérieuse d'autrui."
+        },
+        {
+          "ref": "TF 6B_937/2019",
+          "resume": "Le conducteur qui percute un véhicule arrêté en fin de bouchon de sortie est présumé avoir violé la distance de sécurité ; le renversement de la présomption exige la preuve d'un freinage inattendu et injustifié."
+        }
+      ],
+      "modeleLettre": "Objet : Opposition à l'ordonnance pénale du [DATE] — accident en sortie d'autoroute\n\nRecommandé\n\n[MINISTÈRE PUBLIC CANTONAL]\n[ADRESSE]\n\nMadame, Monsieur le Procureur,\n\nJ'ai reçu le [DATE] votre ordonnance pénale n° [N°] me reprochant une violation des art. [90 al. 1 / 90 al. 2 / 31 LCR] et me sanctionnant par [AMENDE / RETRAIT / PEINE PÉCUNIAIRE].\n\nDans le délai légal de 10 jours (art. 354 CPP), je forme OPPOSITION à cette ordonnance pour les motifs suivants :\n\n1. Circonstances factuelles : [DÉCRIRE l'accident, la configuration de la sortie, la météo, l'état de la route, la présence d'un bouchon soudain, etc.]\n\n2. Éléments contestés :\n[ ] je n'ai pas dépassé la vitesse affichée\n[ ] les conditions météo/route étaient extraordinaires et non prévisibles\n[ ] l'incident résulte d'un freinage brutal imprévisible devant moi\n[ ] la signalisation de la sortie était déficiente\n[ ] pas de mise en danger concrète d'autrui\n\n3. Pièces à verser au dossier :\n- photos de la configuration des lieux\n- rapport météorologique MeteoSuisse\n- témoignages : [NOMS]\n- dossier du véhicule attestant de l'entretien\n\nJe sollicite :\n1. L'instruction approfondie de ma cause\n2. Une audience devant le ministère public\n3. Subsidiairement, la requalification en infraction légère (art. 100 LCR — cas de peu de gravité)\n\nVeuillez agréer, Madame, Monsieur le Procureur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "TCS — section juridique",
+          "tel": "0800 140 140",
+          "url": "https://www.tcs.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Service des automobiles et de la navigation (Vaud)",
+          "tel": "021 316 82 10",
+          "url": "https://www.vd.ch/themes/mobilite/permis-vehicules",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office cantonal des véhicules (Genève)",
+          "url": "https://www.ge.ch/dossier/vehicules",
+          "canton": "GE"
+        },
+        {
+          "nom": "ACS — Automobile Club Suisse",
+          "url": "https://www.acs.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Bureau de prévention des accidents (BPA)",
+          "url": "https://www.bfu.ch",
+          "canton": "CH"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "avocat circulation routière",
+          "indication": "Indispensable dès infraction grave ou retrait de permis envisagé"
+        },
+        {
+          "type": "ombudsman assurance",
+          "indication": "Si RC refuse de couvrir suite à faute"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un conducteur a eu un accident en bretelle de sortie d'autoroute et conteste la procédure pénale ou cherche à se défendre",
+    "profane_aliases": [
+      "accident sortie autoroute",
+      "perdu contrôle bretelle",
+      "rentré dans voiture bouchon",
+      "vitesse inadaptée sortie"
+    ],
+    "negative_signals": [
+      "alcoolémie documentée",
+      "témoins confirmant une manœuvre dangereuse",
+      "acceptation écrite de l'ordonnance"
+    ],
+    "required_facts": [
+      "lieu précis",
+      "circonstances météo/trafic",
+      "vitesse réelle",
+      "ordonnance pénale reçue"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "circulation_chauffeur_employe_responsabilite",
+    "domaine": "circulation",
+    "sousDomaine": "responsabilité_employeur",
+    "tags": [
+      "employé",
+      "chauffeur",
+      "employeur",
+      "CO 55",
+      "risque professionnel",
+      "trajet"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est votre statut lors de l'accident ?",
+        "options": [
+          "chauffeur salarié (livreur, taxi, routier)",
+          "employé utilisant véhicule de service",
+          "employé avec son propre véhicule pour mission",
+          "trajet domicile-travail"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "À qui appartient le véhicule ?",
+        "options": [
+          "à l'employeur",
+          "à moi (indemnité KM)",
+          "location longue durée",
+          "véhicule de pool"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Quel est le dommage subi ou causé ?",
+        "options": [
+          "dommage à un tiers (accident de ma faute)",
+          "accident subi, je suis blessé",
+          "dommage matériel sur véhicule employeur",
+          "amende/retrait permis"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre employeur vous a-t-il mis en cause financièrement ?",
+        "options": [
+          "oui, mise en demeure",
+          "oui, retenue sur salaire",
+          "non",
+          "procédure en cours"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La responsabilité en cas d'accident impliquant un chauffeur employé mobilise plusieurs régimes combinés : (1) Vis-à-vis des TIERS : l'EMPLOYEUR répond des actes illicites de son employé (art. 55 CO) causés dans l'exercice de ses fonctions, sauf s'il prouve avoir pris tous les soins nécessaires au choix et à la surveillance. La RESPONSABILITÉ CAUSALE DU DÉTENTEUR (art. 58 LCR) s'applique indépendamment ; l'assurance RC obligatoire du véhicule couvre le tiers lésé. Le tiers peut agir directement contre l'assureur RC. (2) Vis-à-vis de L'EMPLOYEUR : l'employé ne répond du dommage CAUSÉ À L'EMPLOYEUR (véhicule, marchandise) qu'en cas de FAUTE CONTRACTUELLE (art. 321e CO), appréciée selon le risque professionnel, la formation, les instructions et l'expérience. La jurisprudence limite fortement la responsabilité du chauffeur : sauf faute grave (conduite en état d'ivresse, course-poursuite, intention), il ne répond pas des dommages usuels liés au risque professionnel. La retenue sur salaire pour dommage est LIMITÉE par l'art. 323b CO (partie saisissable uniquement) et nécessite le consentement écrit ou un jugement. (3) Vis-à-vis de l'AUTORITÉ PÉNALE : l'employé conducteur répond PERSONNELLEMENT des infractions routières (amendes, retraits de permis), jamais l'employeur, même si la mission était professionnelle. (4) Couverture SUVA/LAA : les lésions corporelles de l'employé pendant le trajet ou la mission sont couvertes ; l'employé a droit aux prestations même en cas de faute. Si l'employé doit utiliser SON VÉHICULE PERSONNEL, l'employeur doit indemniser les frais réels (art. 327a CO) y compris la prime casco et l'usure, et prendre en charge le risque.",
+      "articles": [
+        {
+          "ref": "CO 55",
+          "titre": "Responsabilité de l'employeur pour ses auxiliaires",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_55"
+        },
+        {
+          "ref": "CO 321e",
+          "titre": "Responsabilité de l'employé envers l'employeur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_321_e"
+        },
+        {
+          "ref": "CO 323b",
+          "titre": "Compensation du salaire limitée",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_323_b"
+        },
+        {
+          "ref": "CO 327a",
+          "titre": "Remboursement des frais professionnels",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_327_a"
+        },
+        {
+          "ref": "LCR 58",
+          "titre": "Responsabilité causale du détenteur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_58"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 135 V 56",
+          "resume": "L'employé ne répond du dommage causé à l'employeur qu'en cas de faute (art. 321e CO). Le risque professionnel ordinaire reste à charge de l'employeur qui l'assume par la nature de son activité."
+        },
+        {
+          "ref": "ATF 129 III 124",
+          "resume": "La retenue sur salaire pour couvrir un dommage causé par l'employé exige soit le consentement écrit, soit un jugement. La partie insaisissable du salaire (minimum vital) doit être respectée."
+        }
+      ],
+      "modeleLettre": "Objet : Contestation de la mise en cause financière par l'employeur — accident du [DATE]\n\nRecommandé\n\n[EMPLOYEUR]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe fais suite à votre courrier du [DATE] me mettant en cause financièrement à hauteur de [MONTANT] CHF suite à l'accident du [DATE] survenu avec le véhicule de service.\n\nJe conteste votre demande pour les motifs suivants :\n\n1. Contexte de l'accident : [BRÈVE DESCRIPTION, circonstances défavorables, non-faute caractérisée]\n\n2. Absence de faute grave :\n- aucun dépassement de vitesse signalé\n- pas d'alcool ni distraction\n- conditions de conduite difficiles (météo, trafic, fatigue liée à la mission)\n- l'incident relève du risque professionnel ordinaire de mon activité de chauffeur\n\n3. En application de l'art. 321e CO et de la jurisprudence (ATF 135 V 56), l'employé ne répond du dommage à l'employeur QU'EN CAS DE FAUTE. Le risque professionnel ordinaire (accident sans faute grave) reste à charge de l'employeur.\n\n4. Toute retenue sur mon salaire sans mon consentement écrit ou jugement est illicite (art. 323b CO).\n\nJe vous prie de :\n1. Renoncer à toute mise en cause financière\n2. Communiquer le dossier complet (rapport d'expertise, déclaration RC à votre assurance)\n3. Confirmer par écrit l'abandon de toute procédure\n\nÀ défaut, je saisirai le tribunal des prud'hommes et le cas échéant l'office cantonal de l'emploi.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "TCS — section juridique",
+          "tel": "0800 140 140",
+          "url": "https://www.tcs.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Service des automobiles et de la navigation (Vaud)",
+          "tel": "021 316 82 10",
+          "url": "https://www.vd.ch/themes/mobilite/permis-vehicules",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office cantonal des véhicules (Genève)",
+          "url": "https://www.ge.ch/dossier/vehicules",
+          "canton": "GE"
+        },
+        {
+          "nom": "ACS — Automobile Club Suisse",
+          "url": "https://www.acs.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Unia — syndicat",
+          "tel": "0848 864 862",
+          "url": "https://www.unia.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Tribunal des prud'hommes Vaud",
+          "url": "https://www.vd.ch/themes/justice/prudhommes",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "syndicat",
+          "indication": "Conseil et représentation gratuits pour les membres"
+        },
+        {
+          "type": "tribunal des prud'hommes",
+          "indication": "Si retenue sur salaire ou licenciement"
+        },
+        {
+          "type": "avocat",
+          "indication": "Si dommage important (> 20'000 CHF) et procédure pénale parallèle"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un employé conducteur est mis en cause par son employeur suite à un accident de la circulation pendant le travail",
+    "profane_aliases": [
+      "employeur veut me faire payer accident",
+      "chauffeur responsable véhicule service",
+      "retenue sur salaire accident"
+    ],
+    "negative_signals": [
+      "faute grave caractérisée (alcool, drogue, excès délibéré)",
+      "consentement écrit préalable à la retenue"
+    ],
+    "required_facts": [
+      "statut d'emploi",
+      "propriété du véhicule",
+      "nature du dommage",
+      "faute éventuelle"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "circulation_delit_fuite_consequences",
+    "domaine": "circulation",
+    "sousDomaine": "délit_fuite",
+    "tags": [
+      "délit de fuite",
+      "LCR 92",
+      "fuite",
+      "conducteur",
+      "sanction",
+      "retrait"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est votre situation ?",
+        "options": [
+          "je suis parti après un accrochage",
+          "j'ai été accusé à tort",
+          "je n'ai pas vu que j'avais heurté quelque chose",
+          "victime d'un délit de fuite"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quel était le type de dommage ?",
+        "options": [
+          "dommage matériel seul (véhicule garé)",
+          "dommage matériel + conducteur présent",
+          "lésions corporelles",
+          "décès"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Combien de temps après, la police a-t-elle agi ?",
+        "options": [
+          "sur place",
+          "dans les heures suivantes",
+          "jours/semaines plus tard",
+          "procédure en cours"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous fait une déclaration ?",
+        "options": [
+          "oui, spontanée",
+          "oui, après convocation",
+          "non, garde le silence",
+          "conseillé par avocat"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le délit de fuite (art. 92 LCR) est l'une des infractions les plus lourdement sanctionnées par la LCR. L'art. 92 al. 2 LCR prévoit que tout conducteur impliqué dans un accident ayant entraîné des dommages matériels ou corporels doit IMMÉDIATEMENT s'arrêter, prêter assistance aux blessés, aviser les personnes lésées et, s'il y a dommage matériel seul à un véhicule ou à un bien sans propriétaire présent, laisser ses coordonnées ou avertir la police sans délai. La violation intentionnelle est un DÉLIT (art. 92 al. 2 LCR) puni d'une peine privative de liberté jusqu'à 3 ANS ou d'une peine pécuniaire. Le RETRAIT DE PERMIS est systématique : minimum 3 mois en première infraction (art. 16c al. 1 let. c LCR), minimum 12 mois en récidive. Même le délit de fuite après dommage matériel seul (par ex. voiture éraflée en stationnement) est puni : une simple CARTE DE VISITE NE SUFFIT PAS — il faut soit laisser un contact, soit prévenir la police dans un DÉLAI RAISONNABLE (souvent 24h selon jurisprudence). Le CONDUCTEUR QUI SE PRÉSENTE SPONTANÉMENT à la police dans les 24-48h, quand il réalise avoir endommagé un bien sans s'en apercevoir sur le moment, bénéficie d'une atténuation importante (art. 48 CP — circonstances atténuantes). Les LÉSIONS CORPORELLES AVEC FUITE sont traitées comme concours (art. 92 LCR + art. 125 CP lésions corporelles par négligence) et peuvent aboutir à des peines fermes. L'ASSURANCE RC obligatoire continue de couvrir les tiers lésés (protection de la victime), mais peut RÉCUPÉRER les montants contre l'auteur fugitif (art. 65 al. 3 LCR). La CASCO peut REFUSER la couverture du véhicule propre si clause d'exclusion pour faute grave (art. 14 LCA). La prescription pénale est de 7 ans pour le délit (art. 97 CP).",
+      "articles": [
+        {
+          "ref": "LCR 51",
+          "titre": "Obligations en cas d'accident",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_51"
+        },
+        {
+          "ref": "LCR 92",
+          "titre": "Délit de fuite — sanctions pénales",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_92"
+        },
+        {
+          "ref": "LCR 16c",
+          "titre": "Retrait pour infraction grave (délit de fuite)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_16_c"
+        },
+        {
+          "ref": "LCR 65",
+          "titre": "Droit de recours de l'assureur RC",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_65"
+        },
+        {
+          "ref": "CP 48",
+          "titre": "Circonstances atténuantes (aveu spontané)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_48"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 142 IV 359",
+          "resume": "Le délit de fuite est constitué dès que le conducteur s'éloigne volontairement sans remplir ses obligations d'information, même sur un dommage matériel mineur ; l'intention suffit, pas besoin de but spécifique."
+        },
+        {
+          "ref": "TF 6B_1198/2018",
+          "resume": "Le conducteur qui se présente spontanément à la police après avoir réalisé l'accident, dans un délai raisonnable (24-48h), bénéficie d'une atténuation importante au titre de l'art. 48 CP, mais cela ne fait pas disparaître l'infraction."
+        }
+      ],
+      "modeleLettre": "Objet : Déclaration spontanée — incident de circulation du [DATE]\n\nRecommandé\n\n[POLICE CANTONALE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe me présente spontanément à vos services concernant un incident de circulation survenu le [DATE] à [LIEU APPROXIMATIF], auquel j'ai pu être impliqué(e) sans en avoir eu clairement conscience sur le moment.\n\nDescription :\n- Date et heure approximative : [DATE, HEURE]\n- Lieu : [LIEU]\n- Véhicule : [MARQUE, IMMATRICULATION]\n- Circonstances : [DÉCRIRE — manœuvre de parking, stationnement, etc.]\n- Dommage constaté (sur mon véhicule / que j'ai pu causer) : [DESCRIPTION]\n\nJ'ai pris connaissance ultérieurement, par [TÉMOIN / CAMÉRA / CONSTAT] que cet incident avait pu causer un dommage à [BIEN / VÉHICULE TIERS].\n\nDans le respect de mes obligations légales (art. 51 LCR), je souhaite :\n1. Signaler cet incident dans les meilleurs délais\n2. Communiquer mes coordonnées complètes pour toute procédure (compagnie RC : [ASSUREUR, N° POLICE])\n3. Me mettre à disposition pour audition si nécessaire\n\nJe sollicite la prise en compte de ma démarche spontanée au titre de l'art. 48 CP (circonstances atténuantes).\n\nCoordonnées complètes : [NOM, PRÉNOM, ADRESSE, DATE DE NAISSANCE, TÉLÉPHONE].\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "TCS — section juridique",
+          "tel": "0800 140 140",
+          "url": "https://www.tcs.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Service des automobiles et de la navigation (Vaud)",
+          "tel": "021 316 82 10",
+          "url": "https://www.vd.ch/themes/mobilite/permis-vehicules",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office cantonal des véhicules (Genève)",
+          "url": "https://www.ge.ch/dossier/vehicules",
+          "canton": "GE"
+        },
+        {
+          "nom": "ACS — Automobile Club Suisse",
+          "url": "https://www.acs.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Police cantonale Vaud",
+          "tel": "117 / 021 644 44 44",
+          "url": "https://www.vd.ch/police",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "avocat pénaliste circulation",
+          "indication": "INDISPENSABLE — peines et retrait très sévères"
+        },
+        {
+          "type": "assurance protection juridique",
+          "indication": "Vérifier la couverture avant d'agir"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un conducteur se retrouve accusé (ou suspecté) de délit de fuite après un accident et cherche à limiter les conséquences",
+    "profane_aliases": [
+      "parti après accrochage",
+      "accusé délit de fuite",
+      "pas vu que j'ai touché voiture",
+      "n'ai pas laissé mot"
+    ],
+    "negative_signals": [
+      "coordonnées laissées et police avertie immédiatement",
+      "récidive avec antécédents lourds"
+    ],
+    "required_facts": [
+      "nature du dommage",
+      "délai de réaction",
+      "déclaration spontanée éventuelle",
+      "assurance RC"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "circulation_casco_vol_vs_degats",
+    "domaine": "circulation",
+    "sousDomaine": "casco",
+    "tags": [
+      "casco",
+      "vol",
+      "dégâts",
+      "LCA",
+      "franchise",
+      "vétusté",
+      "indemnisation"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel type de sinistre casco ?",
+        "options": [
+          "vol total du véhicule",
+          "vol d'accessoires/radio",
+          "dégâts par effraction",
+          "dégâts dus à vandalisme / grêle / collision sans tiers"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quel type de casco avez-vous ?",
+        "options": [
+          "casco partielle (vol, bris, force majeure)",
+          "casco complète (tous dommages)",
+          "pas de casco",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "L'assurance a-t-elle répondu ?",
+        "options": [
+          "accepté",
+          "refusé partiellement",
+          "refusé totalement",
+          "en attente"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous des preuves de dépôt de plainte ?",
+        "options": [
+          "oui, plainte pénale déposée",
+          "constat uniquement",
+          "aucune déclaration"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'assurance CASCO, contrairement à la RC obligatoire (art. 63 LCR), est FACULTATIVE et régie par la LCA. Deux niveaux principaux : (1) la CASCO PARTIELLE couvre le vol, le bris de glace, l'incendie, la grêle, les collisions avec des animaux et certains événements naturels ; (2) la CASCO COMPLÈTE (full-casco) ajoute les dommages causés par soi-même à son propre véhicule (collision avec un poteau, sortie de route sans tiers). Le VOL est typiquement couvert par la casco partielle, à condition de : (i) DÉPOSER UNE PLAINTE PÉNALE dans les 24-48h (art. 38 LCA — obligation d'annonce) ; (ii) ne pas avoir laissé les CLÉS dans le véhicule (clause d'exclusion standard) ; (iii) avoir FERMÉ le véhicule à clé. Les CAS D'EXCLUSION FRÉQUENTS incluent : vol avec clés laissées dans le véhicule, portes non verrouillées, véhicule laissé dans un endroit dangereux sans surveillance, faute grave de l'assuré. La FRANCHISE casco est généralement 500-1000 CHF pour le vol, déductible de l'indemnité. L'INDEMNITÉ est calculée selon la VALEUR VÉNALE avant sinistre, moins la franchise, moins la valeur résiduelle si véhicule retrouvé. La VÉTUSTÉ (ou amortissement annuel) est normalement appliquée dans les conditions générales : par ex. 10% par année au-delà de la 3e année. Pour les DÉGÂTS VANDALISME / GRÊLE, la casco partielle couvre sans faute de l'assuré. En cas de REFUS de l'assureur, l'assuré peut : (1) demander la motivation écrite et le dossier complet ; (2) saisir l'OMBUDSMAN de l'assurance privée (médiation gratuite) ; (3) agir au tribunal civil (prescription 2 ans dès connaissance du refus, art. 46 LCA). Les ACCESSOIRES NON LISTÉS dans les CGA peuvent ne pas être couverts ; il est essentiel de DÉCLARER les accessoires de valeur (installation audio, jantes spéciales) à la souscription.",
+      "articles": [
+        {
+          "ref": "LCA 33",
+          "titre": "Étendue du risque couvert",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/1_1_1/fr#art_33"
+        },
+        {
+          "ref": "LCA 38",
+          "titre": "Obligation d'annonce du sinistre",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/1_1_1/fr#art_38"
+        },
+        {
+          "ref": "LCA 46",
+          "titre": "Prescription (2 ans)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/1_1_1/fr#art_46"
+        },
+        {
+          "ref": "CO 43",
+          "titre": "Évaluation du dommage",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_43"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 138 III 799",
+          "resume": "Les clauses d'exclusion casco doivent être interprétées de manière restrictive et communiquées clairement à l'assuré. Les exclusions non signalées peuvent être écartées."
+        },
+        {
+          "ref": "ATF 124 III 155",
+          "resume": "L'assuré qui laisse les clés dans le véhicule ou ne ferme pas à clé commet une faute grave qui justifie la réduction ou le refus de prestation casco."
+        }
+      ],
+      "modeleLettre": "Objet : Contestation du refus de prestation casco — sinistre n° [N°]\n\nRecommandé\n\n[ASSURANCE CASCO]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJ'ai reçu le [DATE] votre courrier refusant la prise en charge du sinistre n° [N°] relatif à [VOL TOTAL / DÉGÂTS / VOL D'ACCESSOIRES] survenu le [DATE] à [LIEU].\n\nMotif invoqué par vous : [CITER LE MOTIF].\n\nJe conteste ce refus pour les motifs suivants :\n[ ] le sinistre relève bien de la garantie souscrite (casco partielle/complète)\n[ ] la clause d'exclusion invoquée est ambiguë / non clairement communiquée (cf. ATF 138 III 799)\n[ ] aucune faute grave ne m'est imputable — j'ai pris les précautions raisonnables (véhicule fermé, clés sur moi)\n[ ] le dépôt de plainte pénale a été effectué dans le délai (PV joint)\n[ ] les accessoires étaient déclarés à la souscription (déclaration jointe)\n\nPièces jointes :\n- Contrat et conditions générales CASCO\n- Plainte pénale déposée à la police\n- Photos du véhicule\n- Témoignages éventuels\n- Déclaration initiale de sinistre\n\nEn application de la LCA et des art. 33 et 38 notamment, je vous mets en demeure de :\n1. Reconsidérer votre décision dans un délai de 30 jours\n2. Verser l'indemnité due : [MONTANT] CHF, moins franchise contractuelle\n3. À défaut, je saisirai l'Ombudsman de l'assurance privée, puis le tribunal civil compétent\n\nLe délai de prescription (art. 46 LCA, 2 ans) est expressément interrompu par la présente.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "TCS — section juridique",
+          "tel": "0800 140 140",
+          "url": "https://www.tcs.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Service des automobiles et de la navigation (Vaud)",
+          "tel": "021 316 82 10",
+          "url": "https://www.vd.ch/themes/mobilite/permis-vehicules",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office cantonal des véhicules (Genève)",
+          "url": "https://www.ge.ch/dossier/vehicules",
+          "canton": "GE"
+        },
+        {
+          "nom": "ACS — Automobile Club Suisse",
+          "url": "https://www.acs.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Ombudsman de l'assurance privée",
+          "tel": "044 211 30 90",
+          "url": "https://www.ombudsman-assurance.ch",
+          "canton": "CH"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "Ombudsman de l'assurance privée",
+          "indication": "Médiation gratuite avant procédure"
+        },
+        {
+          "type": "tribunal civil",
+          "indication": "Délai de prescription 2 ans, à interrompre par mise en demeure"
+        },
+        {
+          "type": "avocat",
+          "indication": "Si valeur > 10'000 CHF ou refus manifestement abusif"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un assuré conteste un refus ou une réduction de prestation de son assurance casco pour vol ou dégâts",
+    "profane_aliases": [
+      "assurance casco refuse",
+      "voiture volée assurance",
+      "dégâts casco pas payés",
+      "casco vétusté excessive"
+    ],
+    "negative_signals": [
+      "clés laissées dans le véhicule documenté",
+      "faute grave avérée",
+      "plainte pénale non déposée"
+    ],
+    "required_facts": [
+      "type de casco",
+      "circonstances du sinistre",
+      "plainte pénale déposée",
+      "CGA contractuelles"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "circulation_radar_photo_contestation",
+    "domaine": "circulation",
+    "sousDomaine": "contrôle_vitesse",
+    "tags": [
+      "radar",
+      "photo",
+      "vitesse",
+      "contestation",
+      "preuve",
+      "conducteur"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment avez-vous été contrôlé ?",
+        "options": [
+          "radar fixe",
+          "radar mobile (caméra)",
+          "radar laser bord de route",
+          "contrôle embarqué"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Reconnaissez-vous conduire au moment des faits ?",
+        "options": [
+          "oui",
+          "non, un autre conducteur",
+          "incertitude (photo peu nette)"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Quelle est la vitesse mesurée / limite ?",
+        "options": [
+          "dépassement < 10 km/h",
+          "dépassement 11-25 km/h",
+          "dépassement 26+ km/h (chauffard potentiel)"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous reçu une amende d'ordre ou ordonnance pénale ?",
+        "options": [
+          "amende d'ordre (papillon)",
+          "ordonnance pénale avec retrait",
+          "simple avis à identifier conducteur"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Les contrôles radars photographiques constituent la majorité des sanctions pour excès de vitesse en Suisse. Les radars utilisés sont soumis à des NORMES TECHNIQUES strictes (OMétr — Ordonnance sur les instruments de mesure, étalonnage annuel METAS obligatoire). Le CONDUCTEUR PHOTOGRAPHIÉ n'est pas nécessairement le DÉTENTEUR du véhicule : la police demande souvent par un 'avis à identifier' au détenteur d'indiquer qui conduisait. Le détenteur n'a pas l'OBLIGATION de dénoncer son conjoint, ses enfants ou lui-même (droit au silence ; art. 113 CPP), mais un REFUS D'IDENTIFIER peut entraîner le soupçon qu'il conduisait lui-même ou la transmission du dossier au tribunal, qui peut néanmoins l'inculper sur présomption (art. 6 CPP). MARGES DE SÉCURITÉ sur la vitesse mesurée (OMétr et pratique) : radar fixe — 3 km/h jusqu'à 100 km/h, 3% au-delà ; radar mobile — 5 km/h jusqu'à 100 km/h, 5% au-delà ; radar laser — 4 km/h jusqu'à 100 km/h, 4% au-delà. La vitesse retenue pour la sanction est la vitesse mesurée MOINS la marge. Seuils (art. 90 LCR et jurisprudence) : infraction simple < 16 km/h en localité / 21 hors localité / 26 autoroute (amende simple) ; infraction moyenne = retrait permis obligatoire min 1 mois ; infraction grave = retrait min 3 mois + peine pécuniaire/privative ; DÉLIT DE CHAUFFARD (art. 90 al. 3 LCR) = dépassement 40 km/h en localité / 50 km/h hors localité / 60 km/h autoroute = peine PRIVATIVE OBLIGATOIRE 1-4 ans + retrait permis 2 ans minimum. CONTESTATION possible : (i) demander l'image originale, le certificat d'étalonnage METAS, le rapport d'intervention ; (ii) vérifier la signalisation (limite effectivement affichée avant le radar) ; (iii) contester l'identification du conducteur si photo peu nette ; (iv) erreur de lecture de plaque. La procédure : amende d'ordre payée = acceptation ; non-paiement = ordonnance pénale ; opposition dans 10 jours (art. 354 CPP).",
+      "articles": [
+        {
+          "ref": "LCR 32",
+          "titre": "Vitesse maximale adaptée",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_32"
+        },
+        {
+          "ref": "LCR 90",
+          "titre": "Violation des règles — sanctions échelonnées",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_90"
+        },
+        {
+          "ref": "LCR 16a",
+          "titre": "Retrait pour infraction légère",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_16_a"
+        },
+        {
+          "ref": "CPP 113",
+          "titre": "Droit de se taire (détenteur non obligé de dénoncer proches)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_113"
+        },
+        {
+          "ref": "CPP 354",
+          "titre": "Opposition à ordonnance pénale — 10 jours",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_354"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 140 IV 188",
+          "resume": "Le détenteur n'est pas obligé de dénoncer le conducteur si celui-ci est un proche (droit au silence), mais il peut être inculpé s'il ne collabore pas et qu'il est le conducteur le plus probable."
+        },
+        {
+          "ref": "TF 6B_1082/2016",
+          "resume": "La marge de sécurité prescrite par l'OMétr est déduite obligatoirement de la vitesse mesurée ; les sanctions doivent se baser sur la vitesse 'nette' après déduction."
+        }
+      ],
+      "modeleLettre": "Objet : Opposition à l'ordonnance pénale du [DATE] — n° [N°]\n\nRecommandé\n\n[MINISTÈRE PUBLIC CANTONAL]\n[ADRESSE]\n\nMadame, Monsieur le Procureur,\n\nJ'ai reçu le [DATE] votre ordonnance pénale n° [N°] pour excès de vitesse mesuré par radar le [DATE] à [LIEU], à [VITESSE] km/h pour une limite de [LIMITE] km/h.\n\nDans le délai de 10 jours (art. 354 CPP), je forme OPPOSITION pour les motifs suivants :\n\n[Option A — contestation de la mesure]\n1. Je sollicite la production des pièces techniques :\n- certificat d'étalonnage METAS du radar utilisé\n- rapport technique de la mesure (heure, position, angle)\n- image originale haute résolution\n\n2. Je conteste l'application correcte de la marge de sécurité OMétr : vitesse mesurée [X] - marge [Y] = vitesse retenue [X-Y].\n\n3. Je conteste la signalisation effective de la limite [vérification nécessaire de la succession des panneaux].\n\n[Option B — contestation de l'identification]\n1. La photographie ne permet pas une identification certaine du conducteur.\n2. D'autres personnes peuvent avoir conduit le véhicule à cette date : [PERSONNES].\n3. Je me prévaux du droit au silence (art. 113 CPP) concernant les proches conducteurs potentiels.\n\nJe sollicite :\n1. L'instruction complète du dossier\n2. Une audience devant le procureur\n3. Subsidiairement, la requalification en infraction légère (art. 100 LCR — cas de peu de gravité)\n\nVeuillez agréer, Madame, Monsieur le Procureur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "TCS — section juridique",
+          "tel": "0800 140 140",
+          "url": "https://www.tcs.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Service des automobiles et de la navigation (Vaud)",
+          "tel": "021 316 82 10",
+          "url": "https://www.vd.ch/themes/mobilite/permis-vehicules",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office cantonal des véhicules (Genève)",
+          "url": "https://www.ge.ch/dossier/vehicules",
+          "canton": "GE"
+        },
+        {
+          "nom": "ACS — Automobile Club Suisse",
+          "url": "https://www.acs.ch",
+          "canton": "CH"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "avocat pénaliste circulation",
+          "indication": "Indispensable pour infraction grave ou chauffard"
+        },
+        {
+          "type": "Office fédéral de métrologie METAS",
+          "url": "https://www.metas.ch",
+          "indication": "Certificats d'étalonnage des radars"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un conducteur conteste une amende ou ordonnance pénale suite à un contrôle radar, notamment la mesure ou l'identification",
+    "profane_aliases": [
+      "flashé radar",
+      "contester amende vitesse",
+      "photo radar pas claire",
+      "excès de vitesse identification"
+    ],
+    "negative_signals": [
+      "paiement spontané de l'amende d'ordre",
+      "reconnaissance écrite de l'infraction"
+    ],
+    "required_facts": [
+      "type de radar",
+      "vitesse mesurée et limite",
+      "identification du conducteur",
+      "pièces techniques disponibles"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "circulation_vehicule_immobilise_garage_frais",
+    "domaine": "circulation",
+    "sousDomaine": "indisponibilité_véhicule",
+    "tags": [
+      "véhicule immobilisé",
+      "garage",
+      "véhicule de remplacement",
+      "perte usage",
+      "frais"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pourquoi votre véhicule est-il immobilisé ?",
+        "options": [
+          "réparation après accident (RC tiers)",
+          "réparation casco",
+          "panne non liée à accident",
+          "saisie/mise en fourrière"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Combien de temps prévu ?",
+        "options": [
+          "< 1 semaine",
+          "1-4 semaines",
+          "> 1 mois",
+          "inconnu"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Disposez-vous d'un véhicule de remplacement ?",
+        "options": [
+          "oui, pris en charge",
+          "oui à mes frais",
+          "non, j'utilise transport public",
+          "non, je suis bloqué"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre usage habituel du véhicule est :",
+        "options": [
+          "professionnel indispensable",
+          "professionnel occasionnel",
+          "privé principal",
+          "privé occasionnel"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Lorsqu'un véhicule est immobilisé au garage à cause d'un sinistre, l'usager peut subir un PRÉJUDICE DE PERTE D'USAGE (privation d'utilisation), qui est un poste de dommage INDEMNISABLE distinct des frais de réparation. Deux scénarios : (1) ACCIDENT CAUSÉ PAR UN TIERS : l'assurance RC du responsable doit prendre en charge, en plus des réparations : (i) un VÉHICULE DE REMPLACEMENT équivalent pendant toute la durée de réparation (art. 41 et 43 CO — réparation intégrale) ; (ii) à défaut, une INDEMNITÉ FORFAITAIRE pour perte d'usage (barème TCS : environ 30-80 CHF/jour selon catégorie de véhicule) ; (iii) les FRAIS DE DÉPLACEMENT (taxis, location, transport public). La réparation doit être faite dans un délai raisonnable sans traînasser. (2) SINISTRE CASCO (sans tiers) : la casco ne couvre en principe PAS la perte d'usage, sauf option 'véhicule de remplacement' souscrite dans la police (complément facultatif typiquement 50-150 CHF/année de prime). Les CGA varient fortement d'un assureur à l'autre. Le véhicule de remplacement est généralement fourni uniquement pendant la réparation, pas pour les démarches administratives. En cas de VÉHICULE ÉPAVE, l'indemnité pour perte d'usage court jusqu'au paiement de l'indemnité (permettant le rachat d'un véhicule), sous réserve d'un délai 'raisonnable' (souvent 14-30 jours). Les USAGERS PROFESSIONNELS (livreurs, taxis, représentants) doivent documenter précisément leurs pertes de revenus effectives. Les AUTOÉCOLES et locations sont remboursées sur facture. Attention : certains GARAGES CONCLUENT DES CONTRATS DE PRÊT gratuits contre engagement de réparer chez eux — vérifier les conditions (assurance incluse ? limite de km ?). En cas de SÉQUESTRE ou MISE EN FOURRIÈRE, les frais journaliers sont à la charge du propriétaire sauf contestation réussie.",
+      "articles": [
+        {
+          "ref": "CO 41",
+          "titre": "Responsabilité délictuelle",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_41"
+        },
+        {
+          "ref": "CO 43",
+          "titre": "Mode et étendue de la réparation — véhicule de remplacement",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_43"
+        },
+        {
+          "ref": "LCR 58",
+          "titre": "Responsabilité causale du détenteur",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_58"
+        },
+        {
+          "ref": "LCA 33",
+          "titre": "Casco — étendue du risque",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/1_1_1/fr#art_33"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 126 III 388",
+          "resume": "La perte d'usage d'un véhicule constitue un poste de dommage indemnisable par le responsable, soit en nature (véhicule de remplacement), soit forfaitairement selon des barèmes de type TCS."
+        },
+        {
+          "ref": "ATF 131 III 12",
+          "resume": "L'obligation de minimiser le dommage impose à la victime d'accepter un véhicule de remplacement équivalent et de ne pas prolonger inutilement la durée d'immobilisation."
+        }
+      ],
+      "modeleLettre": "Objet : Demande de véhicule de remplacement / indemnité de perte d'usage — sinistre n° [N°]\n\nRecommandé\n\n[ASSURANCE RC DU RESPONSABLE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nSuite à l'accident du [DATE] dont votre assurée est responsable (sinistre n° [N°]), mon véhicule [MARQUE/MODÈLE/IMMATRICULATION] est immobilisé au garage [NOM] depuis le [DATE] pour réparation, durée estimée [JOURS] jours.\n\nEn application des art. 41 et 43 CO et de la jurisprudence (ATF 126 III 388), je vous demande la prise en charge :\n1. D'un VÉHICULE DE REMPLACEMENT équivalent (catégorie [X]) pendant toute la durée de l'immobilisation, directement auprès d'un loueur agréé par votre compagnie.\n\n2. À défaut, une INDEMNITÉ FORFAITAIRE de perte d'usage selon barème TCS : [MONTANT]/jour × [JOURS] = [TOTAL] CHF.\n\n3. Les FRAIS COMPLÉMENTAIRES engagés (transports publics, taxis pour rendez-vous professionnels, autre véhicule loué) : [MONTANT] CHF (justificatifs joints).\n\n[Si usage professionnel]\n4. La PERTE DE REVENUS subie en raison de l'impossibilité d'exercer mon activité : [MONTANT] CHF (justifiée par factures, commandes, fiche de salaire).\n\nPièces jointes : devis du garage, attestation de durée de réparation, justificatifs de frais, le cas échéant justificatifs d'usage professionnel.\n\nJe vous prie de m'indiquer sous 10 jours :\n- Si vous fournissez un véhicule de remplacement via un partenaire\n- À défaut, votre acceptation du versement de l'indemnité forfaitaire\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "TCS — section juridique",
+          "tel": "0800 140 140",
+          "url": "https://www.tcs.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Service des automobiles et de la navigation (Vaud)",
+          "tel": "021 316 82 10",
+          "url": "https://www.vd.ch/themes/mobilite/permis-vehicules",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office cantonal des véhicules (Genève)",
+          "url": "https://www.ge.ch/dossier/vehicules",
+          "canton": "GE"
+        },
+        {
+          "nom": "ACS — Automobile Club Suisse",
+          "url": "https://www.acs.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Ombudsman de l'assurance privée",
+          "tel": "044 211 30 90",
+          "url": "https://www.ombudsman-assurance.ch",
+          "canton": "CH"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "ombudsman assurance",
+          "indication": "Médiation si refus du véhicule de remplacement"
+        },
+        {
+          "type": "avocat",
+          "indication": "Si perte de revenus professionnels importante"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un conducteur cherche à faire indemniser la perte d'usage de son véhicule immobilisé après un sinistre",
+    "profane_aliases": [
+      "voiture au garage longtemps",
+      "véhicule remplacement assurance",
+      "perte jouissance voiture",
+      "immobilisation voiture"
+    ],
+    "negative_signals": [
+      "immobilisation liée à une panne non couverte",
+      "usage marginal du véhicule"
+    ],
+    "required_facts": [
+      "cause de l'immobilisation",
+      "durée",
+      "usage du véhicule",
+      "dépenses engagées"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "circulation_permis_etranger_reconnaissance",
+    "domaine": "circulation",
+    "sousDomaine": "permis_étranger",
+    "tags": [
+      "permis étranger",
+      "échange",
+      "reconnaissance",
+      "UE",
+      "hors UE",
+      "délai 12 mois"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "D'où provient votre permis ?",
+        "options": [
+          "UE/AELE",
+          "pays reconnu (USA, Canada, Japon, etc.)",
+          "pays non reconnu"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Depuis quand êtes-vous en Suisse ?",
+        "options": [
+          "< 6 mois",
+          "6-12 mois",
+          "12-24 mois",
+          "> 24 mois"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Votre statut de séjour :",
+        "options": [
+          "résident permanent (C)",
+          "permis B",
+          "permis L/G",
+          "frontalier"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous déjà été contrôlé ?",
+        "options": [
+          "non",
+          "oui, infraction constatée",
+          "contrôle sans infraction"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La reconnaissance des permis de conduire étrangers en Suisse est régie par l'Ordonnance réglant l'admission à la circulation routière (OAC) et les accords bilatéraux. RÈGLES GÉNÉRALES : (1) Pour les RÉSIDENTS en Suisse, le permis étranger est VALABLE 12 MOIS à partir de la date d'établissement en Suisse (art. 42 OAC). Passé ce délai, il faut ÉCHANGER le permis contre un permis suisse ; à défaut, le permis étranger N'EST PLUS VALABLE et conduire sans permis valable constitue une infraction (art. 95 LCR — jusqu'à 3 ans privatif). (2) Les PAYS UE/AELE bénéficient d'un ÉCHANGE SIMPLIFIÉ sans examen pour les catégories A, B, BE, G (voitures, motos légères) ; un examen de contrôle peut être exigé pour les catégories PROFESSIONNELLES (C, D). (3) Les PAYS RECONNUS (liste limitative à l'annexe de l'OAC : Canada, USA, Japon, Australie, Afrique du Sud, etc.) bénéficient d'un échange sans examen pratique si le permis a été obtenu à l'étranger depuis plus de 12 mois (à défaut, examen théorique et pratique complet). (4) Les PAYS NON RECONNUS imposent l'EXAMEN COMPLET (théorie + pratique), avec possibilité de raccourcir si l'expérience est documentée. CONDUITE DE SHORT TERM (< 12 mois) : le permis étranger + traduction officielle ou permis international suffisent. FRONTALIERS : règles particulières, permis étranger valable sans limite pour l'usage frontalier. Un permis obtenu dans un pays reconnu PUIS ÉCHANGÉ contre un permis d'un autre pays avant la venue en Suisse peut être refusé à l'échange (contournement présumé). L'OMISSION D'ÉCHANGER dans les 12 mois est une infraction grave (art. 95 LCR) : amende + invalidation du permis étranger. Pour éviter : prendre rendez-vous dès les 10 premiers mois auprès du Service des automobiles cantonal avec passeport, permis B/C, ancien permis et certificat médical selon âge/catégorie.",
+      "articles": [
+        {
+          "ref": "LCR 42",
+          "titre": "Conditions d'admission à la circulation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_42"
+        },
+        {
+          "ref": "LCR 95",
+          "titre": "Conduite sans permis valable — sanctions",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_95"
+        },
+        {
+          "ref": "OAC 42",
+          "titre": "Permis étranger — reconnaissance et délai de 12 mois",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1976/2423_2423_2423/fr#art_42"
+        },
+        {
+          "ref": "OAC 44",
+          "titre": "Échange du permis étranger",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1976/2423_2423_2423/fr#art_44"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 139 IV 42",
+          "resume": "La conduite avec un permis étranger non échangé dans le délai de 12 mois équivaut à une conduite sans permis valable au sens de l'art. 95 LCR ; la sanction est pénale et administrative (retrait d'utilisation)."
+        },
+        {
+          "ref": "TF 6B_893/2015",
+          "resume": "La reconnaissance du permis étranger par OAC 42 cesse automatiquement après 12 mois de résidence en Suisse, sans que l'autorité doive le notifier à l'intéressé ; la responsabilité de l'échange incombe au détenteur."
+        }
+      ],
+      "modeleLettre": "Objet : Demande d'échange de permis de conduire étranger\n\n[SERVICE CANTONAL DES AUTOMOBILES]\n[ADRESSE]\n\nMadame, Monsieur,\n\nPar la présente, je sollicite l'échange de mon permis de conduire étranger contre un permis de conduire suisse, conformément à l'art. 44 OAC.\n\nMes coordonnées :\n- Nom, prénom : [NOM]\n- Date de naissance : [DATE]\n- Adresse en Suisse : [ADRESSE]\n- Permis de séjour : [B/C/L, date de délivrance]\n- Date d'entrée en Suisse : [DATE]\n\nPermis de conduire étranger :\n- Pays de délivrance : [PAYS]\n- Date d'obtention : [DATE]\n- Catégories : [A, B, C, etc.]\n- N° du permis : [N°]\n\nPièces jointes :\n[ ] permis de conduire étranger original + copie\n[ ] passeport + permis de séjour\n[ ] certificat médical (obligatoire dès 65 ans ou catégorie professionnelle)\n[ ] photos passeport récentes\n[ ] traduction officielle si permis non rédigé en FR/DE/IT/EN\n[ ] frais d'échange : [MONTANT cantonal, env. 150-250 CHF]\n\nJe sollicite, le cas échéant :\n- une dispense d'examen (si pays UE/AELE ou reconnu)\n- la fixation d'un examen de contrôle si nécessaire pour ma catégorie\n\nEn vous remerciant par avance de l'attention portée à ma demande, je vous prie d'agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "TCS — section juridique",
+          "tel": "0800 140 140",
+          "url": "https://www.tcs.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Service des automobiles et de la navigation (Vaud)",
+          "tel": "021 316 82 10",
+          "url": "https://www.vd.ch/themes/mobilite/permis-vehicules",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office cantonal des véhicules (Genève)",
+          "url": "https://www.ge.ch/dossier/vehicules",
+          "canton": "GE"
+        },
+        {
+          "nom": "ACS — Automobile Club Suisse",
+          "url": "https://www.acs.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "OFROU — Office fédéral des routes",
+          "url": "https://www.astra.admin.ch",
+          "canton": "CH"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "Service cantonal des automobiles",
+          "indication": "Procédure d'échange"
+        },
+        {
+          "type": "avocat",
+          "indication": "Si sanction pour conduite avec permis non échangé"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un résident étranger en Suisse cherche à échanger son permis de conduire étranger ou s'interroge sur sa validité",
+    "profane_aliases": [
+      "permis étranger valable",
+      "échanger permis USA Suisse",
+      "permis UE conduire Suisse",
+      "12 mois permis étranger"
+    ],
+    "negative_signals": [
+      "résident depuis moins de 3 mois (pas d'urgence)",
+      "permis international en cours de validité"
+    ],
+    "required_facts": [
+      "pays d'origine du permis",
+      "date d'établissement en Suisse",
+      "catégorie de permis",
+      "statut de séjour"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "circulation_accident_vehicule_non_assure",
+    "domaine": "circulation",
+    "sousDomaine": "fonds_garantie",
+    "tags": [
+      "non assuré",
+      "fonds national de garantie",
+      "NGF",
+      "conducteur inconnu",
+      "délit de fuite"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le problème principal ?",
+        "options": [
+          "véhicule adverse non assuré",
+          "conducteur inconnu (délit de fuite)",
+          "véhicule volé ayant causé l'accident",
+          "véhicule étranger non assuré"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la nature de votre dommage ?",
+        "options": [
+          "dommage corporel seul",
+          "dommage matériel seul",
+          "les deux"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous déclaré à la police ?",
+        "options": [
+          "oui, plainte immédiate",
+          "rapport de police",
+          "pas de déclaration"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre propre couverture ?",
+        "options": [
+          "RC obligatoire uniquement",
+          "RC + casco",
+          "RC + protection juridique",
+          "rien de plus que RC"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Lorsqu'une victime d'accident se trouve face à un véhicule NON ASSURÉ, un CONDUCTEUR INCONNU (délit de fuite non élucidé) ou un VÉHICULE VOLÉ, le droit suisse prévoit une protection subsidiaire par le FONDS NATIONAL SUISSE DE GARANTIE (FNG, art. 76 LCR). Ce fonds, financé par les assureurs RC, intervient pour indemniser les LÉSÉS qui ne peuvent obtenir réparation auprès d'un assureur. CHAMP D'INTERVENTION : (1) véhicule non assuré (détenteur sans RC malgré l'obligation — art. 63 LCR) ; (2) conducteur inconnu non identifié (délit de fuite resté sans auteur) ; (3) véhicule volé utilisé pour commettre l'accident, quand la casco du propriétaire ne couvre pas ; (4) véhicule étranger sans assurance valable. LIMITES IMPORTANTES : (i) pour les DOMMAGES MATÉRIELS causés par un conducteur inconnu, une FRANCHISE de 1000 CHF s'applique (art. 76a al. 2 LCR) afin de prévenir les déclarations abusives (auto-dégradation) ; (ii) pour les DOMMAGES CORPORELS, aucune franchise ne s'applique — couverture intégrale selon les règles RC ordinaires ; (iii) le FNG est SUBSIDIAIRE : il n'intervient que si aucune autre assurance (casco, LAA, LAMal) ne couvre le sinistre ou pour la différence non couverte. PROCÉDURE : déclaration immédiate à la police (indispensable pour établir le caractère 'non identifié' ou 'non assuré'), déclaration au FNG via son portail en ligne ou par courrier, avec pièces justificatives (PV, rapport médical, devis). Délai de prescription : règles ordinaires (3 ans dommage corporel, 3 ans matériel, art. 60 CO). Si l'auteur est IDENTIFIÉ ULTÉRIEUREMENT, le FNG a un droit de RECOURS contre lui. Pour les DOMMAGES DU CONDUCTEUR NON ASSURÉ lui-même, le FNG N'INTERVIENT PAS : il ne protège que les tiers lésés. L'ASSURANCE CASCO du lésé peut couvrir en amont les dommages matériels de son véhicule (sous franchise casco) puis subroger contre le responsable / FNG. Protection juridique utile pour accompagner la procédure.",
+      "articles": [
+        {
+          "ref": "LCR 63",
+          "titre": "Obligation d'assurance RC",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_63"
+        },
+        {
+          "ref": "LCR 76",
+          "titre": "Fonds national de garantie",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_76"
+        },
+        {
+          "ref": "LCR 76a",
+          "titre": "Intervention du FNG — franchise matérielle",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_76_a"
+        },
+        {
+          "ref": "LCR 96",
+          "titre": "Circulation sans assurance RC — sanctions",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_96"
+        },
+        {
+          "ref": "CO 60",
+          "titre": "Prescription délictuelle",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_60"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 129 III 331",
+          "resume": "Le Fonds national de garantie intervient de manière subsidiaire : la victime doit d'abord épuiser les autres recours possibles (casco, LAA, LAMal) avant de se tourner vers le FNG pour la différence."
+        },
+        {
+          "ref": "ATF 140 II 520",
+          "resume": "La franchise de 1000 CHF pour dommages matériels causés par un conducteur inconnu est absolue ; elle ne peut être écartée même en cas de circonstances exceptionnelles."
+        }
+      ],
+      "modeleLettre": "Objet : Demande d'indemnisation — Fonds national suisse de garantie (FNG)\n\nRecommandé\n\n[Fonds national suisse de garantie]\n[Adresse : Schadenregelung Büro für Opferhilfe, Hohlstrasse 552, 8048 Zurich]\n\nMadame, Monsieur,\n\nJe sollicite l'intervention du Fonds national de garantie au sens des art. 76 et 76a LCR, à la suite de l'accident suivant :\n\nCirconstances :\n- Date et heure : [DATE, HEURE]\n- Lieu : [LIEU COMPLET]\n- Rapport de police : [N° DU PV] établi par la police de [LIEU]\n- Véhicule responsable : [IMMATRICULATION / DESCRIPTION]\n\nMotif de saisine du FNG :\n[ ] véhicule responsable non assuré (art. 76 al. 1 LCR)\n[ ] conducteur inconnu / délit de fuite non élucidé\n[ ] véhicule volé (propriétaire non responsable, casco ne couvrant pas)\n[ ] véhicule étranger sans couverture valable\n\nDommage subi :\n- Dommage corporel : [DESCRIPTION médicale, rapport joint]\n- Dommage matériel : [MONTANT, devis joint]\n- Perte de gain : [MONTANT]\n- Autres frais : [DÉTAIL]\n\nRecours préalables épuisés (principe de subsidiarité) :\n[ ] assurance casco — situation : [couverte partiellement / refus / pas de casco]\n[ ] LAA / SUVA — si applicable\n[ ] LAMal — pour les frais médicaux\n\nPièces jointes : rapport de police, plainte pénale déposée le [DATE], rapports médicaux, devis de réparation, déclaration de sinistre à l'assurance casco le cas échéant.\n\nJe vous prie de bien vouloir :\n1. Enregistrer ma demande et m'attribuer un n° de dossier\n2. Examiner ma situation selon les art. 76 et 76a LCR\n3. Verser une avance sur indemnisation pour les frais urgents\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "TCS — section juridique",
+          "tel": "0800 140 140",
+          "url": "https://www.tcs.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Service des automobiles et de la navigation (Vaud)",
+          "tel": "021 316 82 10",
+          "url": "https://www.vd.ch/themes/mobilite/permis-vehicules",
+          "canton": "VD"
+        },
+        {
+          "nom": "Office cantonal des véhicules (Genève)",
+          "url": "https://www.ge.ch/dossier/vehicules",
+          "canton": "GE"
+        },
+        {
+          "nom": "ACS — Automobile Club Suisse",
+          "url": "https://www.acs.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Fonds national suisse de garantie (FNG/NGF)",
+          "tel": "044 628 89 30",
+          "url": "https://www.nvb.ch",
+          "canton": "CH"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "avocat RC circulation",
+          "indication": "Très utile, procédure FNG complexe"
+        },
+        {
+          "type": "protection juridique",
+          "indication": "Vérifier couverture et limite (souvent plafonnée)"
+        },
+        {
+          "type": "LAVI (aide aux victimes)",
+          "indication": "Conseil et soutien gratuit en cas de lésions corporelles"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Une victime d'accident doit faire valoir ses droits contre un véhicule non assuré, volé ou un conducteur inconnu via le Fonds national de garantie",
+    "profane_aliases": [
+      "accident auteur non assuré",
+      "délit de fuite indemnisation",
+      "voiture volée accident",
+      "fonds de garantie auto"
+    ],
+    "negative_signals": [
+      "auteur identifié et assuré",
+      "dommage couvert intégralement par la casco",
+      "plainte non déposée"
+    ],
+    "required_facts": [
+      "nature du problème (non assuré, inconnu, volé)",
+      "dommage corporel/matériel",
+      "couvertures existantes",
+      "plainte police"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
   }
 ]

@@ -1591,5 +1591,1638 @@
     "review_expiry": "2027-04-19",
     "readiness": "beta",
     "claude_review_date": "2026-04-19"
+  },
+  {
+    "id": "sante_refus_nouveau_patient",
+    "domaine": "sante",
+    "sousDomaine": "accès_aux_soins",
+    "tags": [
+      "refus patient",
+      "médecin traitant",
+      "discrimination",
+      "accès aux soins",
+      "urgence"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel type de refus avez-vous subi ?",
+        "options": [
+          "pas de nouveau patient accepté",
+          "refus motivé par votre assurance (base LAMal)",
+          "refus motivé explicitement par un critère personnel",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Avez-vous besoin urgent de soins ?",
+        "options": [
+          "oui, urgence vitale",
+          "oui, besoin non reporté > 1 semaine",
+          "non, soins planifiables"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous déjà contacté plusieurs médecins ?",
+        "options": [
+          "oui, plus de 5",
+          "2 à 5",
+          "1 seul"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Êtes-vous assuré via LAMal de base ou complémentaire ?",
+        "options": [
+          "LAMal de base uniquement",
+          "LAMal + complémentaire",
+          "franchise élevée / délai d'attente"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le refus d'un médecin généraliste d'accepter un nouveau patient n'est en principe PAS illégal en Suisse : les médecins exerçant en pratique privée jouissent de la liberté contractuelle (art. 394 ss CO sur le mandat). Toutefois, cette liberté connaît des limites strictes : (1) L'URGENCE vitale impose au médecin l'obligation d'assistance (art. 128 CP, omission de prêter secours, et art. 40 LPMéd sur les devoirs professionnels). Un refus en situation d'urgence est pénalement répréhensible. (2) La DISCRIMINATION fondée sur le genre, l'origine, la religion, le handicap ou l'orientation sexuelle est interdite (art. 8 al. 2 Cst. et LHand pour le handicap). Un refus explicite pour ces motifs peut être sanctionné. (3) Certains cantons imposent une obligation de prise en charge aux médecins conventionnés LAMal dans le cadre d'un plan cantonal de garde ou de médecine de premier recours. (4) Le médecin traitant ne peut PAS refuser un patient pour lequel il a initié un traitement sans assurer la continuité des soins (art. 40 al. b LPMéd). En pratique, si vous êtes confronté à un refus : sollicitez les gardes médicales 144/numéros cantonaux pour les urgences ; contactez l'assurance-maladie qui doit garantir l'accès aux soins ; signalez à la commission cantonale de surveillance les refus potentiellement discriminatoires ; la hotline patients (OSP 044 252 54 22) propose une médiation. Pour des soins non urgents, le changement de canton ou le recours à un médecin permanence reste possible.",
+      "articles": [
+        {
+          "ref": "CO 394",
+          "titre": "Mandat — définition et conclusion",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_394"
+        },
+        {
+          "ref": "CP 128",
+          "titre": "Omission de prêter secours",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_128"
+        },
+        {
+          "ref": "LPMéd 40",
+          "titre": "Devoirs professionnels du médecin",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2007/537/fr#art_40"
+        },
+        {
+          "ref": "Cst 8",
+          "titre": "Égalité et non-discrimination",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_8"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 131 I 455",
+          "resume": "La liberté de choix du médecin connaît des limites : en situation d'urgence vitale, l'obligation d'assistance prime la liberté contractuelle du praticien."
+        },
+        {
+          "ref": "ATF 133 III 121",
+          "resume": "Un médecin qui a initié un traitement ne peut interrompre la relation sans organiser la continuité des soins, sous peine d'engager sa responsabilité contractuelle."
+        }
+      ],
+      "modeleLettre": "Objet : Plainte / signalement — refus d'accès aux soins\n\nRecommandé\n\n[COMMISSION CANTONALE DE SURVEILLANCE DES PROFESSIONS DE LA SANTÉ]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe me permets de porter à votre connaissance le refus que j'ai subi le [DATE] auprès du [NOM DU MÉDECIN/CABINET], situé à [ADRESSE].\n\nCirconstances :\n[ ] j'ai sollicité un rendez-vous en qualité de nouveau patient pour [MOTIF MÉDICAL]\n[ ] le cabinet m'a indiqué refuser explicitement en raison de [MOTIF DÉCLARÉ, notamment si discriminatoire ou lié à l'assurance]\n[ ] ma situation médicale est [URGENCE / NON URGENCE MAIS BESOIN AVÉRÉ] comme en atteste [PIÈCE JOINTE]\n[ ] j'ai contacté [NOMBRE] autres praticiens sans succès\n\nJe considère que ce refus est problématique au regard :\n[ ] de l'obligation d'assistance en cas d'urgence (art. 128 CP ; art. 40 LPMéd)\n[ ] de l'interdiction de discrimination (art. 8 al. 2 Cst)\n[ ] de l'obligation de continuité des soins le cas échéant\n\nJe vous prie de bien vouloir :\n1. Examiner la conformité de ce refus aux règles professionnelles\n2. Solliciter les explications du praticien\n3. Me tenir informé des suites données\n\nSubsidiairement, je sollicite votre médiation pour obtenir un rendez-vous auprès d'un autre professionnel.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Organisation suisse des patients (OSP/SPO)",
+          "tel": "044 252 54 22",
+          "url": "https://www.spo.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Bureau cantonal de médiation santé Vaud",
+          "url": "https://www.vd.ch/themes/sante-soins-et-handicap/droits-des-patients",
+          "canton": "VD"
+        },
+        {
+          "nom": "Commission de surveillance des professions de la santé Genève",
+          "url": "https://www.ge.ch/organisation/commission-surveillance-professions-sante-droits-patient",
+          "canton": "GE"
+        },
+        {
+          "nom": "FRC — conseil santé",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Garde médicale 0848 133 133 (VD)",
+          "tel": "0848 133 133",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "médiation santé cantonale",
+          "indication": "Première étape, gratuite"
+        },
+        {
+          "type": "commission cantonale de surveillance",
+          "indication": "Si refus explicitement discriminatoire ou en urgence"
+        },
+        {
+          "type": "avocat",
+          "indication": "Si préjudice important lié au défaut de soins"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un patient s'est vu refuser l'accès par un médecin généraliste et s'interroge sur ses recours",
+    "profane_aliases": [
+      "médecin refuse me prendre",
+      "plus de nouveau patient",
+      "pas de médecin traitant",
+      "cabinet complet refuse",
+      "médecin pas assez"
+    ],
+    "negative_signals": [
+      "urgence adressée correctement au 144",
+      "refus motivé par conflit d'intérêt documenté",
+      "cabinet en cessation d'activité"
+    ],
+    "required_facts": [
+      "motif déclaré du refus",
+      "urgence médicale",
+      "démarches alternatives",
+      "canton"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "sante_responsabilite_professionnel",
+    "domaine": "sante",
+    "sousDomaine": "responsabilité_médicale",
+    "tags": [
+      "responsabilité",
+      "médecin",
+      "CO 398",
+      "mandat",
+      "dommage",
+      "erreur médicale"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel type de dommage avez-vous subi ?",
+        "options": [
+          "dommage corporel (séquelle, invalidité)",
+          "dommage psychique",
+          "dommage économique (perte de gain)",
+          "combinaison"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Dans quel cadre l'acte médical a-t-il eu lieu ?",
+        "options": [
+          "cabinet privé",
+          "hôpital public",
+          "clinique privée",
+          "médecin conseil assurance"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous des preuves (dossier, imagerie, témoins) ?",
+        "options": [
+          "dossier médical complet",
+          "partiel",
+          "témoignages uniquement",
+          "rien"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Le dommage est-il stabilisé ?",
+        "options": [
+          "oui",
+          "non, évolution en cours",
+          "pronostic incertain"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La responsabilité civile du professionnel de la santé (médecin, dentiste, physiothérapeute, etc.) découle généralement du mandat (art. 394 ss CO). Le professionnel a un devoir de DILIGENCE (art. 398 al. 2 CO) : il doit fournir les prestations conformes aux règles de l'art médical au moment de l'intervention (état de la science actuel). Le mandat n'oblige PAS à un résultat (la guérison n'est pas promise), mais à une exécution diligente. Pour engager la responsabilité, quatre conditions cumulatives doivent être réunies : (1) un ACTE ILLICITE ou une violation du contrat (erreur de diagnostic, erreur de technique, défaut d'information, insuffisance de surveillance post-opératoire) ; (2) un DOMMAGE concret et quantifiable ; (3) un LIEN DE CAUSALITÉ adéquat entre la faute et le dommage ; (4) une FAUTE (intention ou négligence). Le fardeau de la preuve incombe au patient, sauf pour le devoir d'information où le médecin doit prouver avoir correctement informé. En CABINET PRIVÉ, la responsabilité contractuelle (CO) et extracontractuelle (art. 41 CO) peuvent se cumuler. En HÔPITAL PUBLIC, c'est la loi cantonale sur la responsabilité de l'État qui s'applique (délais souvent plus courts, 1-5 ans selon canton). Le délai de prescription est de 10 ans pour l'action contractuelle (art. 127 CO) et de 3 ans (subjectif) / 10 ans (objectif) pour l'action délictuelle (art. 60 CO), réformée en 2020. Une EXPERTISE MÉDICALE est souvent nécessaire ; le FMH propose une procédure extrajudiciaire gratuite via le Bureau d'expertises.",
+      "articles": [
+        {
+          "ref": "CO 394",
+          "titre": "Mandat — conclusion",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_394"
+        },
+        {
+          "ref": "CO 398",
+          "titre": "Devoirs du mandataire — diligence",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_398"
+        },
+        {
+          "ref": "CO 41",
+          "titre": "Responsabilité délictuelle",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_41"
+        },
+        {
+          "ref": "CO 60",
+          "titre": "Prescription de l'action délictuelle",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_60"
+        },
+        {
+          "ref": "CO 127",
+          "titre": "Prescription ordinaire 10 ans",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_127"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 133 III 121",
+          "resume": "Le devoir de diligence du médecin s'apprécie selon les règles de l'art médical au moment de l'intervention ; une erreur de jugement professionnel n'est une faute que si elle est manifestement contraire à l'état de la science."
+        },
+        {
+          "ref": "ATF 120 II 248",
+          "resume": "Le patient doit prouver le dommage, la faute et le lien de causalité. Le renversement du fardeau de la preuve ne s'applique qu'au devoir d'information, dont la preuve incombe au médecin."
+        }
+      ],
+      "modeleLettre": "Objet : Mise en cause de responsabilité — acte médical du [DATE]\n\nRecommandé\n\n[CABINET / HÔPITAL / ASSURANCE RC MÉDECIN]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe me permets de revenir vers vous concernant l'acte médical du [DATE] réalisé par [Dr/Prof. NOM] à [LIEU], dans le cadre de [CONTEXTE: consultation, opération, traitement].\n\nÀ la suite de cet acte, j'ai subi le dommage suivant :\n[ ] dommage corporel : [DESCRIPTION, séquelle, invalidité %]\n[ ] dommage psychique : [DESCRIPTION]\n[ ] perte de gain : [MONTANT approximatif]\n[ ] frais médicaux supplémentaires : [MONTANT]\n\nJ'estime que votre responsabilité est engagée pour les motifs suivants :\n[ ] erreur de diagnostic (éléments : [PRÉCISER])\n[ ] erreur technique opératoire\n[ ] défaut d'information préalable (art. 398 CO)\n[ ] insuffisance de suivi post-opératoire\n\nConformément aux art. 398 CO et suivants, je vous mets en demeure de :\n1. Transmettre mon dossier médical complet à [DESTINATAIRE / MOI-MÊME]\n2. Communiquer l'identité de votre assureur RC professionnelle\n3. Proposer dans un délai de 30 jours une position sur l'indemnisation\n\nJe me réserve la possibilité de solliciter une expertise auprès du Bureau d'expertises FMH ou d'engager une action judiciaire en dommages-intérêts.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Organisation suisse des patients (OSP/SPO)",
+          "tel": "044 252 54 22",
+          "url": "https://www.spo.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Bureau cantonal de médiation santé Vaud",
+          "url": "https://www.vd.ch/themes/sante-soins-et-handicap/droits-des-patients",
+          "canton": "VD"
+        },
+        {
+          "nom": "Commission de surveillance des professions de la santé Genève",
+          "url": "https://www.ge.ch/organisation/commission-surveillance-professions-sante-droits-patient",
+          "canton": "GE"
+        },
+        {
+          "nom": "FRC — conseil santé",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Bureau d'expertises extrajudiciaires FMH",
+          "url": "https://www.fmh.ch/services/bureau-expertises.cfm",
+          "canton": "CH"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "médiation santé cantonale",
+          "indication": "Première étape gratuite pour dommages modérés"
+        },
+        {
+          "type": "Bureau d'expertises FMH",
+          "indication": "Expertise extrajudiciaire à coût réduit"
+        },
+        {
+          "type": "avocat RC médicale",
+          "indication": "Indispensable pour dommages corporels durables (> 30% invalidité)"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un patient subit un dommage suite à un acte médical et envisage une action en responsabilité",
+    "profane_aliases": [
+      "erreur médecin",
+      "opération ratée",
+      "médecin faute",
+      "séquelles opération",
+      "dommages médecin"
+    ],
+    "negative_signals": [
+      "dommage préexistant documenté",
+      "consentement éclairé signé après information complète",
+      "aléa thérapeutique connu et accepté"
+    ],
+    "required_facts": [
+      "nature de l'acte médical",
+      "dommage précis",
+      "lien de causalité",
+      "délai depuis les faits",
+      "dossier médical disponible"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "sante_refus_vaccination_enfant",
+    "domaine": "sante",
+    "sousDomaine": "vaccination_mineur",
+    "tags": [
+      "vaccination",
+      "enfant",
+      "autorité parentale",
+      "refus",
+      "école",
+      "capacité de discernement"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la position entre parents ?",
+        "options": [
+          "désaccord entre parents",
+          "les deux parents refusent",
+          "parent seul divorcé"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Âge de l'enfant ?",
+        "options": [
+          "< 12 ans",
+          "12-15 ans",
+          "16+ ans"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "De quelle vaccination s'agit-il ?",
+        "options": [
+          "vaccination recommandée (OFSP)",
+          "vaccination obligatoire (professionnel santé)",
+          "vaccination voyage",
+          "scolaire / crèche exigée"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Y a-t-il un avis médical particulier ?",
+        "options": [
+          "oui, contre-indication médicale",
+          "oui, avis favorable",
+          "aucun"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La question de la vaccination de l'enfant mobilise plusieurs principes juridiques qui doivent s'articuler : (1) L'AUTORITÉ PARENTALE conjointe (art. 296 ss CC) impose aux parents de décider ensemble des questions médicales importantes (art. 301 CC) ; en cas de désaccord, la décision la plus raisonnable pour le bien de l'enfant prévaut et peut être tranchée par l'autorité de protection de l'enfant (APEA, art. 308 CC) ou le juge du divorce. (2) La CAPACITÉ DE DISCERNEMENT du mineur (art. 16 CC) peut être reconnue pour des décisions médicales, y compris vaccinales, généralement à partir de 12-14 ans selon la maturité ; à ce stade, l'adolescent peut consentir ou refuser lui-même, même contre l'avis parental, s'il comprend les enjeux. (3) En Suisse, AUCUNE vaccination n'est obligatoire pour l'enfant ordinaire : l'OFSP recommande le plan vaccinal suisse, mais la vaccination relève du consentement libre et éclairé. Certaines professions de santé ont des exigences spécifiques (hépatite B), et certains établissements scolaires/crèches peuvent demander des vaccinations pour maintenir la collectivité (mais ne peuvent exclure sans base légale cantonale). En cas d'ÉPIDÉMIE, la LEp (Loi sur les épidémies, art. 22) permet à l'OFSP d'imposer des vaccinations à certaines catégories exposées. (4) En cas de désaccord grave entre parents, la saisine de l'APEA (art. 307 CC) permet au juge d'autoriser la vaccination au nom de l'intérêt de l'enfant. Un parent ne peut pas vacciner l'enfant sans l'accord de l'autre si la vaccination est importante (non routinière).",
+      "articles": [
+        {
+          "ref": "CC 296",
+          "titre": "Autorité parentale conjointe",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_296"
+        },
+        {
+          "ref": "CC 301",
+          "titre": "Décisions relatives à l'enfant — communauté parentale",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_301"
+        },
+        {
+          "ref": "CC 307",
+          "titre": "Mesures de protection de l'enfant — APEA",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_307"
+        },
+        {
+          "ref": "CC 16",
+          "titre": "Capacité de discernement",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_16"
+        },
+        {
+          "ref": "LEp 22",
+          "titre": "Vaccinations obligatoires en cas d'épidémie",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2015/297/fr#art_22"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 134 II 235",
+          "resume": "Un mineur capable de discernement peut consentir seul à un acte médical, y compris refuser une vaccination, si la décision concerne sa sphère personnelle."
+        },
+        {
+          "ref": "TF 5A_789/2016",
+          "resume": "En cas de désaccord parental persistant sur la vaccination, l'APEA peut autoriser le parent favorable à faire vacciner l'enfant si cela correspond à son intérêt objectif (plan vaccinal OFSP)."
+        }
+      ],
+      "modeleLettre": "Objet : Désaccord parental sur la vaccination — requête à l'APEA\n\nRecommandé\n\n[AUTORITÉ DE PROTECTION DE L'ENFANT ET DE L'ADULTE (APEA)]\n[ADRESSE]\n\nMadame, Monsieur,\n\nEn ma qualité de parent de [NOM ENFANT], né(e) le [DATE], et dans l'exercice de l'autorité parentale conjointe avec [NOM AUTRE PARENT], je vous saisis dans les termes suivants :\n\nSituation :\n[ ] désaccord persistant avec l'autre parent sur la vaccination de [NOM ENFANT] contre [MALADIE]\n[ ] recommandation OFSP / avis médical joint\n[ ] discussions préalables entre parents engagées le [DATE], restées sans résultat\n\nMotifs de la vaccination :\n- recommandation OFSP (plan vaccinal suisse)\n- exigence de l'école / crèche : [PRÉCISER]\n- protection de la santé de l'enfant : [ÉLÉMENTS MÉDICAUX]\n\nPosition de l'autre parent : [RÉSUMER MOTIFS INVOQUÉS]\n\nJe vous prie de :\n1. Entendre les deux parents et le cas échéant l'enfant selon son âge et son discernement (art. 314a CC)\n2. Statuer sur l'autorisation de procéder à la vaccination (art. 307 CC)\n3. Trancher l'autorité décisionnelle sur les questions médicales ordinaires si le désaccord est structurel\n\nPièces jointes : certificat médical recommandant la vaccination, livret de famille, correspondance entre parents.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Organisation suisse des patients (OSP/SPO)",
+          "tel": "044 252 54 22",
+          "url": "https://www.spo.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Bureau cantonal de médiation santé Vaud",
+          "url": "https://www.vd.ch/themes/sante-soins-et-handicap/droits-des-patients",
+          "canton": "VD"
+        },
+        {
+          "nom": "Commission de surveillance des professions de la santé Genève",
+          "url": "https://www.ge.ch/organisation/commission-surveillance-professions-sante-droits-patient",
+          "canton": "GE"
+        },
+        {
+          "nom": "FRC — conseil santé",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "OFSP — Plan vaccinal suisse",
+          "url": "https://www.bag.admin.ch",
+          "canton": "CH"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "médecin pédiatre",
+          "indication": "Avis médical documenté indispensable avant saisine APEA"
+        },
+        {
+          "type": "APEA",
+          "indication": "Compétent pour trancher le désaccord parental"
+        },
+        {
+          "type": "médiation familiale",
+          "indication": "Amiable avant saisine judiciaire"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un parent s'interroge sur la vaccination de son enfant en cas de désaccord familial ou d'exigence scolaire",
+    "profane_aliases": [
+      "parent refuse vaccin enfant",
+      "vaccin école obligatoire",
+      "désaccord sur vaccin",
+      "ado refuse vaccination"
+    ],
+    "negative_signals": [
+      "deux parents d'accord sur le refus (pas de conflit)",
+      "vaccination routinière sans désaccord"
+    ],
+    "required_facts": [
+      "âge et discernement de l'enfant",
+      "vaccination concernée",
+      "position des deux parents",
+      "avis médical"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "sante_facture_medicale_contestation",
+    "domaine": "sante",
+    "sousDomaine": "facturation",
+    "tags": [
+      "facture",
+      "TARMED",
+      "TARDOC",
+      "tarifs",
+      "contestation",
+      "assurance"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la nature de la facture contestée ?",
+        "options": [
+          "consultation médicale",
+          "hospitalisation",
+          "soins ambulatoires spécialisés",
+          "honoraires non couverts LAMal"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Qui vous adresse la facture ?",
+        "options": [
+          "médecin directement (tiers garant)",
+          "assurance via caisse (tiers payant)",
+          "hôpital"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous reçu le détail des positions (TARMED/TARDOC) ?",
+        "options": [
+          "oui, détaillé",
+          "non, montant global",
+          "illisible"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "L'assurance a-t-elle refusé de prendre en charge ?",
+        "options": [
+          "oui, partiellement",
+          "oui, totalement",
+          "aucune demande encore"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Les prestations médicales ambulatoires sont facturées selon la structure tarifaire TARMED (et progressivement TARDOC depuis 2025), conventionnée entre assureurs et fournisseurs de prestations. Le patient a le DROIT D'OBTENIR UNE COPIE DE LA FACTURE DÉTAILLÉE (art. 42 LAMal), qui doit indiquer chaque position tarifaire, le point tarifaire, la valeur du point cantonale et le total. Le médecin doit transmettre une copie au patient même en système du tiers payant (où l'assurance règle directement au prestataire). Si une facture semble ABUSIVE ou CONTRADICTOIRE, trois voies sont ouvertes : (1) CONTESTER auprès du prestataire en demandant justification de chaque position ; certains codes nécessitent des conditions précises (durée, qualification). (2) Saisir l'ASSURANCE-MALADIE qui a une obligation de contrôle économique (art. 56 LAMal) ; elle peut refuser de rembourser des positions non conformes. (3) Si le différend persiste, saisir le TRIBUNAL ARBITRAL cantonal compétent pour les litiges tarifaires entre assureurs et fournisseurs (art. 89 LAMal) ; le patient peut intervenir comme tiers intéressé. En cas de soupçon de facturation excessive ou frauduleuse, le Bureau d'information santé (SASIS SA, Ombudsman de l'assurance-maladie) conduit des médiations gratuites. Pour les PRESTATIONS HORS LAMAL (dentaire, médecine complémentaire non reconnue, chambre privée), la facture relève du contrat direct médecin-patient (CO 394 ss) ; le patient peut contester le montant selon les règles du mandat et des usages du secteur. Les factures hospitalières sont soumises aux forfaits SwissDRG (hospitalisation stationnaire) ou aux tarifs TARMED (ambulatoire).",
+      "articles": [
+        {
+          "ref": "LAMal 42",
+          "titre": "Relevé des prestations au patient",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_42"
+        },
+        {
+          "ref": "LAMal 56",
+          "titre": "Contrôle économique — proportionnalité des prestations",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_56"
+        },
+        {
+          "ref": "LAMal 89",
+          "titre": "Tribunal arbitral cantonal",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_89"
+        },
+        {
+          "ref": "CO 394",
+          "titre": "Mandat (prestations hors LAMal)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_394"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 144 V 138",
+          "resume": "Le patient a droit à une facture détaillée intelligible, comprenant chaque position tarifaire et son coût unitaire, même en système du tiers payant."
+        },
+        {
+          "ref": "ATF 135 V 237",
+          "resume": "Le contrôle économique (art. 56 LAMal) permet à l'assurance de refuser le remboursement de prestations disproportionnées par rapport aux standards du secteur."
+        }
+      ],
+      "modeleLettre": "Objet : Contestation de facture médicale du [DATE] — demande de détail\n\nRecommandé\n\n[CABINET / HÔPITAL]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJ'ai reçu le [DATE] votre facture n° [N°] d'un montant total de [MONTANT] CHF, relative aux prestations du [DATE] (dossier [N°]).\n\nConformément à l'art. 42 LAMal, je sollicite :\n1. Le relevé détaillé des positions tarifaires TARMED/TARDOC facturées, avec pour chacune :\n   - code de position\n   - durée/quantité\n   - point tarifaire et valeur du point applicable\n   - justification médicale\n2. Une copie du dossier médical relatif à cette journée\n\nJe conteste spécifiquement les positions suivantes :\n[ ] position [CODE] : montant [X] CHF — motif : [DURÉE, qualification non respectée, prestation non effectuée]\n[ ] facture globale paraissant excessive au regard de la nature de la prestation\n\nDans l'attente de votre réponse, je ne procède pas au règlement. Je me réserve le droit de saisir mon assurance-maladie pour contrôle économique (art. 56 LAMal) et le cas échéant le Tribunal arbitral cantonal (art. 89 LAMal).\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Organisation suisse des patients (OSP/SPO)",
+          "tel": "044 252 54 22",
+          "url": "https://www.spo.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Bureau cantonal de médiation santé Vaud",
+          "url": "https://www.vd.ch/themes/sante-soins-et-handicap/droits-des-patients",
+          "canton": "VD"
+        },
+        {
+          "nom": "Commission de surveillance des professions de la santé Genève",
+          "url": "https://www.ge.ch/organisation/commission-surveillance-professions-sante-droits-patient",
+          "canton": "GE"
+        },
+        {
+          "nom": "FRC — conseil santé",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ombudsman de l'assurance-maladie sociale",
+          "tel": "041 226 10 11",
+          "url": "https://www.om-kv.ch",
+          "canton": "CH"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "assurance-maladie (service client)",
+          "indication": "Contrôle économique gratuit"
+        },
+        {
+          "type": "Ombudsman LAMal",
+          "indication": "Médiation gratuite si refus de l'assurance"
+        },
+        {
+          "type": "Tribunal arbitral cantonal LAMal",
+          "indication": "Dernière instance tarifaire"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Le patient conteste le montant ou les positions d'une facture médicale et cherche à obtenir le détail ou une réduction",
+    "profane_aliases": [
+      "facture médecin trop chère",
+      "contester honoraires",
+      "tarif abusif médecin",
+      "hôpital facture salée"
+    ],
+    "negative_signals": [
+      "prestations hors LAMal expressément acceptées par contrat préalable",
+      "facture déjà payée sans réserve"
+    ],
+    "required_facts": [
+      "détail de la facture",
+      "régime de paiement (tiers garant/payant)",
+      "prestations effectivement reçues",
+      "position de l'assurance"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "sante_franchise_quote_part",
+    "domaine": "sante",
+    "sousDomaine": "participation_assuré",
+    "tags": [
+      "franchise",
+      "quote-part",
+      "participation",
+      "LAMal",
+      "plafond",
+      "exonération enfant"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est votre niveau de franchise actuel ?",
+        "options": [
+          "franchise ordinaire (300 CHF)",
+          "franchise à option (500/1000/1500/2000/2500 CHF)",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Êtes-vous enfant, jeune (18-25) ou adulte ?",
+        "options": [
+          "enfant (< 18)",
+          "jeune adulte (18-25)",
+          "adulte (26+)"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous atteint le plafond annuel de quote-part ?",
+        "options": [
+          "oui",
+          "non",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Votre souci concerne :",
+        "options": [
+          "comprendre le calcul",
+          "contester un montant",
+          "changer de franchise",
+          "exonération"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'assurance-maladie obligatoire (LAMal) prévoit une participation financière de l'assuré aux coûts, composée de trois éléments (art. 64 LAMal et OAMal) : (1) La FRANCHISE annuelle : 300 CHF pour les adultes en franchise ordinaire ; 0 CHF pour les enfants ; options possibles de 500, 1000, 1500, 2000 ou 2500 CHF avec réduction de prime. Tant que la franchise n'est pas atteinte, l'assuré paie intégralement les frais. (2) La QUOTE-PART : 10% des frais dépassant la franchise, avec un plafond annuel de 700 CHF pour les adultes (350 CHF pour les enfants). La quote-part est portée à 20% pour les médicaments original dont existe un générique moins cher, sauf exception médicale. (3) La PARTICIPATION HOSPITALIÈRE : 15 CHF par jour d'hospitalisation stationnaire pour les adultes non assujettis à obligation familiale, sans plafond. Les ENFANTS (< 18 ans) bénéficient d'une exonération de franchise ordinaire (mais peuvent avoir une franchise à option) et d'une quote-part plafonnée à 350 CHF/an. Les JEUNES ADULTES (18-25 ans en formation) bénéficient d'une prime réduite. Les PRESTATIONS DE MATERNITÉ sont entièrement exonérées de participation (franchise, quote-part, participation hospitalière) depuis la 13e semaine de grossesse jusqu'à 8 semaines après accouchement (art. 64 al. 7 LAMal). Un assuré avec une MALADIE CHRONIQUE qui dépasse chaque année la franchise et la quote-part maximale peut avoir intérêt à conserver une franchise basse. Un assuré en bonne santé peut réduire sa prime en choisissant une franchise haute, mais doit provisionner les 2500 CHF potentiels. Le changement de franchise se fait par écrit avant le 30 novembre pour l'année suivante.",
+      "articles": [
+        {
+          "ref": "LAMal 64",
+          "titre": "Participation de l'assuré — franchise, quote-part, hospitalisation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_64"
+        },
+        {
+          "ref": "OAMal 103",
+          "titre": "Montant de la franchise et de la quote-part",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1995/3867_3867_3867/fr#art_103"
+        },
+        {
+          "ref": "OAMal 104",
+          "titre": "Franchises à option",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1995/3867_3867_3867/fr#art_104"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 130 V 379",
+          "resume": "La franchise et la quote-part LAMal sont impératives ; aucune dispense contractuelle ou administrative n'est admise hors des cas prévus par la loi (maternité, enfant, maladie chronique)."
+        },
+        {
+          "ref": "ATF 135 V 201",
+          "resume": "Le changement de franchise à option doit respecter les délais de l'art. 94 OAMal ; un changement hors délai n'a d'effet que pour l'année suivante."
+        }
+      ],
+      "modeleLettre": "Objet : Demande de décompte détaillé franchise et quote-part — [ANNÉE]\n\n[CAISSE-MALADIE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nAssuré n° [N° POLICE], je vous prie de bien vouloir me communiquer :\n\n1. Le DÉCOMPTE CUMULÉ de mes participations pour l'année [ANNÉE] :\n   - franchise payée à ce jour : [MONTANT] CHF\n   - quote-part payée à ce jour : [MONTANT] CHF\n   - participation hospitalière : [MONTANT] CHF\n   - plafond annuel de quote-part atteint le cas échéant\n\n2. La liste des prestations facturées et remboursées depuis le 1er janvier [ANNÉE] ayant imputé ces montants.\n\n3. Le cas échéant, l'application de l'exonération prévue à l'art. 64 al. 7 LAMal pour les prestations de maternité.\n\n[Option : changement de franchise]\nJe sollicite par ailleurs le changement de ma franchise de [X] CHF à [Y] CHF, avec effet au 1er janvier [ANNÉE+1].\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Organisation suisse des patients (OSP/SPO)",
+          "tel": "044 252 54 22",
+          "url": "https://www.spo.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Bureau cantonal de médiation santé Vaud",
+          "url": "https://www.vd.ch/themes/sante-soins-et-handicap/droits-des-patients",
+          "canton": "VD"
+        },
+        {
+          "nom": "Commission de surveillance des professions de la santé Genève",
+          "url": "https://www.ge.ch/organisation/commission-surveillance-professions-sante-droits-patient",
+          "canton": "GE"
+        },
+        {
+          "nom": "FRC — conseil santé",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Comparateur OFSP primes LAMal",
+          "url": "https://www.priminfo.admin.ch",
+          "canton": "CH"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "service client caisse-maladie",
+          "indication": "Première demande — doit répondre sous 30 jours"
+        },
+        {
+          "type": "Ombudsman LAMal",
+          "indication": "Médiation gratuite en cas de calcul contesté"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un assuré cherche à comprendre sa franchise, sa quote-part et sa participation hospitalière LAMal",
+    "profane_aliases": [
+      "franchise pas comprise",
+      "quote-part maximum",
+      "plafond assurance maladie",
+      "participation hospitalière",
+      "réduire prime"
+    ],
+    "negative_signals": [
+      "assuré sans LAMal obligatoire (étranger non soumis)",
+      "prestations hors catalogue LAMal"
+    ],
+    "required_facts": [
+      "franchise choisie",
+      "âge",
+      "prestations reçues dans l'année",
+      "maternité éventuelle"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "sante_changement_assureur_lamal",
+    "domaine": "sante",
+    "sousDomaine": "changement_assureur",
+    "tags": [
+      "changement",
+      "assureur",
+      "LAMal",
+      "résiliation",
+      "délai",
+      "30 novembre"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pour quel motif souhaitez-vous changer ?",
+        "options": [
+          "prime trop élevée",
+          "mauvais service",
+          "augmentation annuelle",
+          "déménagement cantonal"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "À quelle date souhaitez-vous changer ?",
+        "options": [
+          "1er janvier prochain (délai 30 nov)",
+          "1er juillet (hausse franchise)",
+          "immédiat (hausse prime extraordinaire)"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous déjà trouvé un nouvel assureur ?",
+        "options": [
+          "oui, contrat signé",
+          "oui, devis en cours",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous des retards de prime ?",
+        "options": [
+          "oui, mise en demeure en cours",
+          "oui, actes de défaut de biens",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Le changement d'assureur LAMal est un droit fondamental de l'assuré garanti par l'art. 7 LAMal. Deux cas principaux : (1) CHANGEMENT ORDINAIRE au 1er janvier : la résiliation doit parvenir à l'assureur actuel au plus tard le 30 NOVEMBRE, par écrit et avec signature. Le nouveau contrat doit être conclu SIMULTANÉMENT, sans interruption d'assurance (sinon violation de l'obligation d'assurance, art. 3 LAMal). (2) CHANGEMENT EXTRAORDINAIRE en cas de hausse de prime : quand l'assureur annonce une AUGMENTATION de prime (en règle générale en octobre pour l'année suivante) ou une HAUSSE de franchise, l'assuré dispose d'un délai de résiliation raccourci : 1 MOIS dès la communication, avec effet à la fin du mois suivant. Cela permet un changement au 1er janvier même avec notification tardive, ou au 1er juillet dans de rares cas. L'ACCEPTATION par le nouvel assureur est OBLIGATOIRE pour l'assurance obligatoire de base (art. 4 LAMal) : aucun assureur ne peut refuser un assuré domicilié dans son rayon d'activité pour l'assurance de base, quel que soit l'âge, l'état de santé ou les antécédents. En revanche, les ASSURANCES COMPLÉMENTAIRES (LCA) peuvent refuser ou exclure selon l'état de santé. Un assuré avec RETARD DE PRIMES peut voir son changement REFUSÉ temporairement : l'art. 7 al. 4 LAMal permet à l'ancien assureur de s'opposer à la résiliation tant qu'il existe des arriérés. Après régularisation, le changement est acceptable. Attention à bien RESPECTER LES DÉLAIS : un envoi tardif (reçu le 1er décembre) ne produit pas effet pour l'année suivante. Utiliser le recommandé A+ et conserver la preuve d'envoi.",
+      "articles": [
+        {
+          "ref": "LAMal 3",
+          "titre": "Obligation d'assurance",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_3"
+        },
+        {
+          "ref": "LAMal 4",
+          "titre": "Libre choix de l'assureur — obligation d'acceptation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_4"
+        },
+        {
+          "ref": "LAMal 7",
+          "titre": "Changement d'assureur — délais",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_7"
+        },
+        {
+          "ref": "LAMal 64a",
+          "titre": "Retard de paiement des primes",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_64_a"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 127 V 38",
+          "resume": "L'obligation d'acceptation par un nouvel assureur LAMal est absolue pour l'assurance de base ; aucun refus ne peut être motivé par l'état de santé ou les antécédents."
+        },
+        {
+          "ref": "ATF 140 V 260",
+          "resume": "La résiliation LAMal non reçue par l'assureur dans le délai de l'art. 7 LAMal ne produit pas effet, même si l'envoi a été posté à temps : c'est la réception qui compte."
+        }
+      ],
+      "modeleLettre": "Objet : Résiliation de la police LAMal n° [N°] au 31.12.[ANNÉE] / résiliation extraordinaire\n\nRecommandé A+\n\n[ASSUREUR ACTUEL]\n[ADRESSE]\n\nMadame, Monsieur,\n\nConformément à l'art. 7 LAMal, je résilie par la présente ma police d'assurance-maladie obligatoire n° [N°], avec effet au [31 décembre ANNÉE / fin de mois selon motif extraordinaire].\n\n[Option A — résiliation ordinaire]\nMotif : changement d'assureur au 1er janvier [ANNÉE+1]. Délai respecté : envoi avant le 30 novembre.\n\n[Option B — résiliation extraordinaire pour hausse]\nMotif : augmentation de prime / franchise annoncée par votre courrier du [DATE]. Résiliation dans le délai de 1 mois (art. 7 al. 2 LAMal).\n\nJe confirme avoir conclu un nouveau contrat d'assurance-maladie obligatoire auprès de [NOM NOUVEL ASSUREUR], avec effet au [DATE], afin d'éviter toute interruption d'assurance (art. 3 LAMal).\n\nJe vous prie de bien vouloir :\n1. M'adresser confirmation écrite de la résiliation\n2. Me transmettre le décompte final (primes payées, participations)\n3. Procéder aux remboursements éventuels\n\nAssuré : [NOM, PRÉNOM, DATE DE NAISSANCE, N° AVS]\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Organisation suisse des patients (OSP/SPO)",
+          "tel": "044 252 54 22",
+          "url": "https://www.spo.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Bureau cantonal de médiation santé Vaud",
+          "url": "https://www.vd.ch/themes/sante-soins-et-handicap/droits-des-patients",
+          "canton": "VD"
+        },
+        {
+          "nom": "Commission de surveillance des professions de la santé Genève",
+          "url": "https://www.ge.ch/organisation/commission-surveillance-professions-sante-droits-patient",
+          "canton": "GE"
+        },
+        {
+          "nom": "FRC — conseil santé",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Comparateur OFSP primes LAMal",
+          "url": "https://www.priminfo.admin.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Comparis.ch — comparateur",
+          "url": "https://www.comparis.ch",
+          "canton": "CH"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "Ombudsman LAMal",
+          "indication": "Si refus de résiliation abusif par l'ancien assureur"
+        },
+        {
+          "type": "autorité cantonale de surveillance (OFSP)",
+          "indication": "Si violation systématique de l'obligation d'acceptation"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un assuré souhaite changer d'assureur LAMal pour réduire sa prime ou changer de service",
+    "profane_aliases": [
+      "changer caisse maladie",
+      "résilier assurance maladie",
+      "nouvelle caisse",
+      "prime trop chère changer"
+    ],
+    "negative_signals": [
+      "retards de primes ou actes de défaut de biens non régularisés",
+      "envoi de résiliation après le 30 novembre pour changement au 1er janvier"
+    ],
+    "required_facts": [
+      "date visée de changement",
+      "motif (ordinaire ou extraordinaire)",
+      "existence d'un nouveau contrat signé",
+      "retards de primes éventuels"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "sante_medecin_traitant_continuite",
+    "domaine": "sante",
+    "sousDomaine": "continuité_soins",
+    "tags": [
+      "médecin traitant",
+      "continuité",
+      "mandat",
+      "suivi",
+      "rupture",
+      "dossier"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Votre médecin a-t-il interrompu votre suivi ?",
+        "options": [
+          "oui, départ en retraite",
+          "oui, refus de continuer",
+          "oui, cabinet fermé",
+          "relation tendue"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Êtes-vous sous traitement chronique ?",
+        "options": [
+          "oui, maladie chronique (diabète, HTA, etc.)",
+          "oui, psychothérapie",
+          "oui, traitement douleur",
+          "non"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Votre médecin vous a-t-il orienté vers un confrère ?",
+        "options": [
+          "oui, contact fourni",
+          "oui, liste",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous accès à votre dossier médical ?",
+        "options": [
+          "oui, transmis",
+          "en attente",
+          "non"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "La relation médecin-patient est un mandat (art. 394 ss CO) qui impose au médecin un DEVOIR DE CONTINUITÉ et de FIDÉLITÉ pour les patients qu'il suit (art. 398 CO ; art. 40 LPMéd sur les devoirs professionnels). Le médecin peut en principe mettre fin à la relation (résiliation du mandat, art. 404 CO), mais cette liberté est limitée lorsque l'interruption expose le patient à un préjudice. Concrètement : (1) DÉPART À LA RETRAITE, FERMETURE DU CABINET, DÉMÉNAGEMENT : le médecin doit organiser la transmission des soins avec un préavis raisonnable (généralement 3-6 mois), transmettre le dossier médical au confrère désigné par le patient, et s'assurer qu'aucun traitement en cours n'est interrompu brutalement. (2) RUPTURE DE CONFIANCE : le médecin peut refuser de poursuivre, mais doit garantir les soins urgents et fournir un préavis suffisant pour permettre au patient de trouver un remplaçant. (3) TRAITEMENT CHRONIQUE ou MALADIE GRAVE : la jurisprudence exige un préavis plus long (6-12 mois) et une orientation active vers un confrère qualifié. L'abandon brutal d'un patient chronique sans organisation de la relève peut engager la responsabilité du médecin. Le PATIENT dispose de son côté d'un droit absolu d'interruption de la relation (art. 404 CO) ; il peut demander à tout moment le TRANSFERT DE SON DOSSIER (art. 8 LPD ; jurisprudence constante). Le médecin ne peut PAS retenir le dossier pour cause de facture impayée, mais peut exiger le paiement du coût de copie (papier/électronique). Le nouveau médecin peut demander le dossier sur procuration signée du patient.",
+      "articles": [
+        {
+          "ref": "CO 394",
+          "titre": "Mandat — définition",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_394"
+        },
+        {
+          "ref": "CO 398",
+          "titre": "Devoirs du mandataire — diligence",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_398"
+        },
+        {
+          "ref": "CO 404",
+          "titre": "Résiliation du mandat par chaque partie",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_404"
+        },
+        {
+          "ref": "LPMéd 40",
+          "titre": "Devoirs professionnels du médecin",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2007/537/fr#art_40"
+        },
+        {
+          "ref": "LPD 25",
+          "titre": "Droit d'accès aux données personnelles (dossier médical)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1993/1945_1945_1945/fr#art_25"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 133 III 121",
+          "resume": "Le médecin qui met fin à une relation thérapeutique doit organiser la continuité des soins, en particulier pour les patients chroniques ; à défaut, il engage sa responsabilité."
+        },
+        {
+          "ref": "ATF 127 III 328",
+          "resume": "La résiliation abrupte et à contretemps d'un mandat de confiance est illicite et peut donner lieu à dommages-intérêts, même si la résiliation en soi est permise par l'art. 404 CO."
+        }
+      ],
+      "modeleLettre": "Objet : Demande de transmission du dossier médical et de continuité des soins\n\nRecommandé\n\n[Dr/Prof. NOM]\n[ADRESSE]\n\nDocteur,\n\nJe me permets de revenir vers vous suite à [votre annonce d'interruption des soins du DATE / votre communication concernant le cabinet].\n\nJe suis suivi(e) par vos soins depuis le [DATE] pour [MOTIF/PATHOLOGIE], avec les traitements et suivis suivants :\n[ ] traitement médicamenteux : [LISTE]\n[ ] suivi régulier : [FRÉQUENCE]\n[ ] contrôles spécialisés programmés : [DATES]\n\nJe vous remercie de bien vouloir :\n1. Me transmettre sous forme [papier/électronique] l'INTÉGRALITÉ de mon dossier médical (art. 8 LPD) ou le faire parvenir directement à [NOM NOUVEAU MÉDECIN] à [ADRESSE]\n2. Préciser le délai durant lequel vous continuerez à assurer les prescriptions urgentes et l'accès à mon dossier\n3. Proposer une liste de confrères susceptibles de prendre la suite, particulièrement pour mon traitement chronique\n4. Organiser une consultation de transmission si possible\n\nConformément aux art. 398 et 404 CO et aux règles de continuité des soins (LPMéd 40), j'attire votre attention sur ma situation [chronique/urgente] qui requiert une transition soignée.\n\nVeuillez agréer, Docteur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Organisation suisse des patients (OSP/SPO)",
+          "tel": "044 252 54 22",
+          "url": "https://www.spo.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Bureau cantonal de médiation santé Vaud",
+          "url": "https://www.vd.ch/themes/sante-soins-et-handicap/droits-des-patients",
+          "canton": "VD"
+        },
+        {
+          "nom": "Commission de surveillance des professions de la santé Genève",
+          "url": "https://www.ge.ch/organisation/commission-surveillance-professions-sante-droits-patient",
+          "canton": "GE"
+        },
+        {
+          "nom": "FRC — conseil santé",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "médiation santé cantonale",
+          "indication": "Si refus de transmission du dossier ou interruption brutale"
+        },
+        {
+          "type": "commission cantonale de surveillance",
+          "indication": "Si manquement aux devoirs professionnels documenté"
+        },
+        {
+          "type": "avocat",
+          "indication": "Si dommage corporel résultant de la rupture de suivi"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un patient voit son suivi médical interrompu et cherche à organiser la continuité des soins et le transfert de dossier",
+    "profane_aliases": [
+      "médecin arrête",
+      "médecin retraite dossier",
+      "cabinet ferme",
+      "changer de médecin traitant",
+      "récupérer dossier médical"
+    ],
+    "negative_signals": [
+      "patient sans suivi chronique changeant pour convenance",
+      "relation médicale de courte durée et sans traitement en cours"
+    ],
+    "required_facts": [
+      "motif de l'interruption",
+      "existence d'un traitement chronique",
+      "préavis donné",
+      "disponibilité du dossier"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "sante_hospitalisation_privee_semi_privee",
+    "domaine": "sante",
+    "sousDomaine": "assurance_complementaire",
+    "tags": [
+      "hospitalisation",
+      "privée",
+      "semi-privée",
+      "complémentaire",
+      "chambre",
+      "facture"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel type de division avez-vous occupé ?",
+        "options": [
+          "division commune (LAMal)",
+          "semi-privée",
+          "privée"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Quelle assurance complémentaire avez-vous ?",
+        "options": [
+          "aucune",
+          "semi-privée (CSP)",
+          "privée (CSP)",
+          "ne sait pas"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Qui vous a facturé le supplément ?",
+        "options": [
+          "hôpital directement",
+          "médecin traitant",
+          "cabinet médical indépendant"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "L'assurance a-t-elle refusé la prise en charge ?",
+        "options": [
+          "oui, partielle",
+          "oui, totale",
+          "non, encore en attente"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'assurance-maladie obligatoire (LAMal) couvre l'hospitalisation en DIVISION COMMUNE selon les forfaits SwissDRG (art. 25 LAMal). Pour les divisions SEMI-PRIVÉE (chambre à 2 lits, choix partiel du médecin) et PRIVÉE (chambre individuelle, choix complet du médecin, honoraires spéciaux), l'assuré doit souscrire une ASSURANCE COMPLÉMENTAIRE (LCA, non soumise à la LAMal). Le SUPPLÉMENT d'hospitalisation privée/semi-privée comprend généralement : (1) différence de chambre (confort, nombre de lits) ; (2) HONORAIRES SPÉCIAUX du médecin-chef (souvent 2-3 fois le tarif ordinaire) ; (3) prestations hôtelières supérieures. La facturation est ventilée entre LAMal (forfait DRG) et LCA (supplément). Un PROBLÈME COURANT survient quand l'assuré bénéficie d'une complémentaire SEMI-PRIVÉE mais se retrouve en chambre PRIVÉE (surclassement non autorisé, ou médecin facturant en privé alors que l'assuré n'a que la semi-privée). Dans ce cas, la différence reste à charge de l'assuré, qui peut la CONTESTER en démontrant : (i) qu'il n'a pas donné son consentement éclairé au surclassement ; (ii) que l'hôpital n'a pas vérifié sa couverture avant l'admission ; (iii) que le médecin-chef n'était pas celui qu'il avait choisi. L'ASSURANCE COMPLÉMENTAIRE peut refuser la prise en charge si : intervention non urgente sans garantie préalable ; traitement à l'étranger non couvert ; antécédents médicaux exclus lors de la souscription. Les contrats LCA permettent des RÉSERVES médicales (exclusion de certaines pathologies) qui doivent être expressément annoncées à l'assuré (art. 3 LCA). La FINMA surveille les assureurs LCA et reçoit les plaintes de consommateurs. L'ombudsman de l'assurance privée propose une médiation gratuite.",
+      "articles": [
+        {
+          "ref": "LAMal 25",
+          "titre": "Prestations — hospitalisation stationnaire",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_25"
+        },
+        {
+          "ref": "LAMal 41",
+          "titre": "Choix du fournisseur et prise en charge des coûts",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_41"
+        },
+        {
+          "ref": "LCA 3",
+          "titre": "Information précontractuelle et réserves",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/1_1_1/fr#art_3"
+        },
+        {
+          "ref": "LCA 38",
+          "titre": "Avis du sinistre et obligations d'information",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/11/1_1_1/fr#art_38"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 142 V 448",
+          "resume": "Le patient hospitalisé doit être informé clairement des conséquences financières du choix d'une division supérieure ; à défaut, le surplus peut être réduit ou annulé."
+        },
+        {
+          "ref": "ATF 138 III 799",
+          "resume": "Les réserves LCA doivent être formulées de manière claire et communiquées à l'assuré avant la conclusion du contrat pour être valables."
+        }
+      ],
+      "modeleLettre": "Objet : Contestation de facturation — hospitalisation division privée/semi-privée du [DATE]\n\nRecommandé\n\n[HÔPITAL / ASSURANCE COMPLÉMENTAIRE]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe me permets de contester la facture / le refus de prise en charge relatif à mon hospitalisation du [DATE AU DATE] au [NOM ÉTABLISSEMENT], service de [SPÉCIALITÉ].\n\nSituation :\n- Assurance de base LAMal : [ASSUREUR, N° POLICE]\n- Assurance complémentaire : [ASSUREUR, PRODUIT : semi-privée / privée]\n- Montant contesté : [MONTANT] CHF — nature : [chambre / honoraires médecin / autre]\n\nMotifs de contestation :\n[ ] je n'ai pas été informé(e) lors de l'admission du niveau de division et des conséquences financières\n[ ] le médecin facturant n'est pas celui que j'avais choisi dans ma police complémentaire\n[ ] l'hôpital n'a pas vérifié ma couverture avant l'admission\n[ ] l'assurance complémentaire refuse la prise en charge pour un motif non conforme aux conditions contractuelles (art. 3 LCA)\n[ ] urgence médicale n'ayant pas permis un choix éclairé\n\nJe vous prie de :\n1. Communiquer le détail de la facture avec ventilation LAMal / LCA\n2. Transmettre la décision de l'assurance complémentaire\n3. Revoir le montant à ma charge dans un délai de 30 jours\n\nÀ défaut, je saisirai l'ombudsman de l'assurance privée et le cas échéant la FINMA.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Organisation suisse des patients (OSP/SPO)",
+          "tel": "044 252 54 22",
+          "url": "https://www.spo.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Bureau cantonal de médiation santé Vaud",
+          "url": "https://www.vd.ch/themes/sante-soins-et-handicap/droits-des-patients",
+          "canton": "VD"
+        },
+        {
+          "nom": "Commission de surveillance des professions de la santé Genève",
+          "url": "https://www.ge.ch/organisation/commission-surveillance-professions-sante-droits-patient",
+          "canton": "GE"
+        },
+        {
+          "nom": "FRC — conseil santé",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Ombudsman de l'assurance privée",
+          "tel": "044 211 30 90",
+          "url": "https://www.ombudsman-assurance.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "FINMA — autorité de surveillance",
+          "url": "https://www.finma.ch",
+          "canton": "CH"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "service client assurance complémentaire",
+          "indication": "Demande de reconsidération écrite"
+        },
+        {
+          "type": "Ombudsman de l'assurance privée",
+          "indication": "Médiation gratuite pour LCA"
+        },
+        {
+          "type": "tribunal civil",
+          "indication": "Pour les litiges > 10'000 CHF après échec de médiation"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un patient conteste une facture d'hospitalisation en division privée/semi-privée ou le refus de son assurance complémentaire",
+    "profane_aliases": [
+      "chambre privée hôpital",
+      "semi-privée facture",
+      "assurance complémentaire refuse hôpital",
+      "surclassement chambre"
+    ],
+    "negative_signals": [
+      "consentement écrit clair au surclassement",
+      "patient ayant explicitement demandé le surclassement sans couverture"
+    ],
+    "required_facts": [
+      "division occupée",
+      "couverture complémentaire",
+      "urgence/non urgence",
+      "information reçue à l'admission"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "sante_curatelle_medicale",
+    "domaine": "sante",
+    "sousDomaine": "représentation_médicale",
+    "tags": [
+      "curatelle",
+      "représentation",
+      "APEA",
+      "soins",
+      "incapacité",
+      "CC 378"
+    ],
+    "confiance": "probable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qui est la personne concernée ?",
+        "options": [
+          "moi-même (anticipation)",
+          "mon conjoint/partenaire",
+          "mon parent âgé",
+          "un enfant majeur"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "La personne est-elle encore capable de discernement ?",
+        "options": [
+          "oui, mais baisse progressive",
+          "variable selon les jours",
+          "non, incapacité durable"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Y a-t-il un mandat pour cause d'inaptitude préexistant ?",
+        "options": [
+          "oui, rédigé",
+          "en cours de rédaction",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est la décision médicale à prendre ?",
+        "options": [
+          "traitement vital",
+          "opération non urgente",
+          "placement EMS",
+          "fin de vie"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "Lorsqu'une personne devient INCAPABLE DE DISCERNEMENT (art. 16 CC) et doit recevoir des soins médicaux, le droit suisse prévoit une cascade de représentation (art. 378 CC) : (1) la PERSONNE DÉSIGNÉE dans les directives anticipées ou le mandat pour cause d'inaptitude (art. 360 ss CC) ; (2) le CURATEUR ayant pour tâche la représentation dans le domaine médical ; (3) le conjoint ou partenaire enregistré faisant ménage commun ou fournissant une assistance régulière ; (4) la personne faisant ménage commun et fournissant assistance régulière (concubin) ; (5) les descendants fournissant assistance régulière ; (6) les parents fournissant assistance régulière ; (7) les frères et sœurs fournissant assistance régulière. Le représentant doit décider conformément à la volonté présumée et aux intérêts du patient. Pour les SOINS URGENTS, le médecin peut agir sans consentement (art. 379 CC) selon la volonté présumée. Pour les TRAITEMENTS DE LONGUE DURÉE, le représentant doit signer un PLAN DE TRAITEMENT avec le médecin (art. 377 CC). L'APEA (Autorité de protection de l'adulte) peut instituer une CURATELLE DE PORTÉE GÉNÉRALE (art. 398 CC) ou de COOPÉRATION/REPRÉSENTATION (art. 394 CC) pour le domaine médical si aucun représentant légal n'est disponible ou si des conflits familiaux entravent les décisions. Le MANDAT POUR CAUSE D'INAPTITUDE (art. 360 CC) est l'outil le plus puissant d'anticipation : rédigé par la personne capable de discernement, il désigne un mandataire pour tous les domaines (personnel, financier, médical) et évite la curatelle. Il prend effet dès la constatation d'incapacité par l'APEA. Les DIRECTIVES ANTICIPÉES (art. 370 ss CC) complètent le dispositif pour les décisions médicales de fin de vie.",
+      "articles": [
+        {
+          "ref": "CC 16",
+          "titre": "Capacité de discernement",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_16"
+        },
+        {
+          "ref": "CC 360",
+          "titre": "Mandat pour cause d'inaptitude",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_360"
+        },
+        {
+          "ref": "CC 377",
+          "titre": "Plan de traitement",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_377"
+        },
+        {
+          "ref": "CC 378",
+          "titre": "Cascade de représentation médicale",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_378"
+        },
+        {
+          "ref": "CC 394",
+          "titre": "Curatelle de représentation",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_394"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 141 III 145",
+          "resume": "La cascade de représentation de l'art. 378 CC est contraignante : le médecin doit s'adresser en priorité au représentant désigné par directives anticipées ou mandat d'inaptitude avant de solliciter la famille."
+        },
+        {
+          "ref": "ATF 140 III 529",
+          "resume": "Le mandat pour cause d'inaptitude prend effet dès que l'APEA constate l'incapacité durable ; il doit revêtir la forme olographe complète ou authentique (art. 361 CC)."
+        }
+      ],
+      "modeleLettre": "Objet : Requête en institution d'une curatelle de représentation — soins médicaux\n\nRecommandé\n\n[AUTORITÉ DE PROTECTION DE L'ADULTE (APEA)]\n[ADRESSE]\n\nMadame, Monsieur,\n\nEn qualité de [LIEN FAMILIAL] de Monsieur/Madame [NOM], né(e) le [DATE], domicilié(e) à [ADRESSE], je vous saisis aux fins d'instituer une curatelle de représentation dans le domaine médical (art. 394 CC).\n\nSituation :\n- Incapacité de discernement [permanente/variable] attestée par certificat médical du [DATE] joint\n- Pathologie : [PRÉCISER — démence, AVC, coma, etc.]\n- Décisions médicales à prendre prochainement : [PRÉCISER — opération, placement EMS, traitement]\n- Absence de directives anticipées et de mandat pour cause d'inaptitude\n- Absence de représentant naturel disponible ou conflit familial documenté : [PRÉCISER]\n\nJe propose en qualité de curateur : [NOM proposé / curateur professionnel]\n\nJe sollicite :\n1. L'institution d'une curatelle de représentation pour les soins médicaux\n2. Subsidiairement, la reconnaissance d'un cercle de représentants naturels selon la cascade de l'art. 378 CC\n3. Des mesures provisionnelles urgentes si l'état de santé le requiert (art. 445 CC)\n\nPièces jointes : certificat médical d'incapacité, état civil, correspondance familiale, plan de traitement proposé par le médecin.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Organisation suisse des patients (OSP/SPO)",
+          "tel": "044 252 54 22",
+          "url": "https://www.spo.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Bureau cantonal de médiation santé Vaud",
+          "url": "https://www.vd.ch/themes/sante-soins-et-handicap/droits-des-patients",
+          "canton": "VD"
+        },
+        {
+          "nom": "Commission de surveillance des professions de la santé Genève",
+          "url": "https://www.ge.ch/organisation/commission-surveillance-professions-sante-droits-patient",
+          "canton": "GE"
+        },
+        {
+          "nom": "FRC — conseil santé",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "APEA cantonale",
+          "indication": "Autorité compétente pour instituer la curatelle"
+        },
+        {
+          "type": "médecin traitant",
+          "indication": "Certificat d'incapacité et plan de traitement"
+        },
+        {
+          "type": "notaire",
+          "indication": "Rédaction anticipée du mandat pour cause d'inaptitude"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés."
+    },
+    "match_description": "Un proche d'une personne en incapacité médicale cherche à organiser sa représentation pour les décisions de soins",
+    "profane_aliases": [
+      "parent âgé ne peut plus décider",
+      "démence décision médicale",
+      "tuteur médical",
+      "représenter un proche à l'hôpital"
+    ],
+    "negative_signals": [
+      "patient capable de discernement (pas de curatelle médicale)",
+      "mandat pour cause d'inaptitude déjà valide",
+      "directives anticipées valides"
+    ],
+    "required_facts": [
+      "état de discernement du patient",
+      "existence de directives anticipées/mandat",
+      "décisions médicales pendantes",
+      "cercle familial disponible"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": false,
+    "claude_review_date": "2026-04-20"
+  },
+  {
+    "id": "sante_assistance_suicide_fin_vie",
+    "domaine": "sante",
+    "sousDomaine": "fin_de_vie",
+    "tags": [
+      "fin de vie",
+      "assistance au suicide",
+      "EXIT",
+      "Dignitas",
+      "directives anticipées",
+      "capacité discernement"
+    ],
+    "confiance": "variable",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est votre situation ?",
+        "options": [
+          "maladie terminale diagnostiquée",
+          "souffrance chronique incurable",
+          "information préventive (pas urgence)"
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Êtes-vous capable de discernement ?",
+        "options": [
+          "oui, clairement",
+          "oui mais variable",
+          "non"
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Avez-vous rédigé des directives anticipées ?",
+        "options": [
+          "oui",
+          "en cours",
+          "non"
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Avez-vous contacté une association ?",
+        "options": [
+          "EXIT",
+          "Dignitas",
+          "Pallium / soins palliatifs",
+          "aucune"
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Votre canton ?",
+        "type": "canton"
+      }
+    ],
+    "reponse": {
+      "explication": "L'ASSISTANCE AU SUICIDE est tolérée en Suisse selon un cadre strict issu de l'art. 115 CP : l'assistance est punissable UNIQUEMENT si elle est motivée par un mobile égoïste. Par conséquent, une assistance désintéressée, par exemple de la part d'un médecin ou d'une association d'aide au décès, n'est pas punissable si elle respecte certaines conditions : (1) la personne doit être CAPABLE DE DISCERNEMENT (art. 16 CC) concernant la décision de mourir — capacité régulièrement évaluée par un médecin indépendant ; (2) la décision doit être LIBRE, réfléchie et PERSISTANTE dans le temps (plusieurs consultations espacées) ; (3) la personne doit effectuer ELLE-MÊME le geste final (ingestion ou injection du produit, généralement du pentobarbital) — l'euthanasie active (tiers qui administre) reste un homicide (art. 114 CP). Les ASSOCIATIONS d'aide au suicide (EXIT, Dignitas, Life Circle) encadrent la démarche : évaluation médicale, délai de réflexion (2-4 semaines), acte effectué au domicile ou dans un local de l'association. EXIT Suisse romande accepte uniquement les résidents suisses (EXIT A.D.M.D), Dignitas accepte les étrangers. Les SOINS PALLIATIFS (Pallium, services hospitaliers) offrent une alternative : accompagnement de fin de vie sans précipiter la mort. Les DIRECTIVES ANTICIPÉES (art. 370-373 CC) sont IMPÉRATIVES pour exprimer les volontés sur l'arrêt des traitements (réanimation, alimentation artificielle) si la personne devient incapable de discernement. Certains cantons (VD notamment) ont légiféré pour autoriser expressément l'assistance au suicide dans les EMS et hôpitaux publics. Les proches peuvent AUSSI ÊTRE AIDÉS par les associations (consultation, accompagnement post-décès). Les médecins ne sont PAS obligés de participer (clause de conscience, art. 40 LPMéd).",
+      "articles": [
+        {
+          "ref": "CP 114",
+          "titre": "Meurtre sur demande de la victime (euthanasie active)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_114"
+        },
+        {
+          "ref": "CP 115",
+          "titre": "Incitation et assistance au suicide — mobile égoïste",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_115"
+        },
+        {
+          "ref": "CC 370",
+          "titre": "Directives anticipées du patient",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_370"
+        },
+        {
+          "ref": "CC 372",
+          "titre": "Contenu des directives anticipées",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_372"
+        }
+      ],
+      "jurisprudence": [
+        {
+          "ref": "ATF 136 II 415",
+          "resume": "L'assistance au suicide est licite si elle est désintéressée, que la personne est capable de discernement, que son souhait est libre, réfléchi et persistant, et qu'elle commet elle-même l'acte final."
+        },
+        {
+          "ref": "TF 2C_9/2010",
+          "resume": "Les cantons peuvent encadrer l'assistance au suicide dans les institutions publiques (EMS, hôpitaux) ; certains l'autorisent expressément comme le canton de Vaud."
+        }
+      ],
+      "modeleLettre": "Objet : Demande d'information et d'évaluation — accompagnement de fin de vie\n\nConfidentiel — Recommandé\n\n[ASSOCIATION EXIT A.D.M.D SUISSE ROMANDE / MÉDECIN TRAITANT]\n[ADRESSE]\n\nMadame, Monsieur,\n\nJe m'adresse à vous [en mon nom personnel / pour un proche] dans une situation de souffrance liée à [PATHOLOGIE / CIRCONSTANCES].\n\nSituation médicale :\n- Diagnostic : [PATHOLOGIE TERMINALE / CHRONIQUE]\n- Pronostic : [DURÉE PROBABLE]\n- Traitements actuels : [LISTE]\n- Souffrances vécues : [PHYSIQUE / PSYCHIQUE]\n\nJe sollicite :\n1. Un rendez-vous pour évaluation de ma capacité de discernement et de ma demande\n2. Des informations complètes sur la procédure d'assistance au suicide (conditions, délais, coûts)\n3. Une présentation des alternatives (soins palliatifs, ajustement du traitement)\n4. Une aide à la rédaction de directives anticipées conformes aux art. 370-373 CC\n\nJe comprends que le médecin conserve sa clause de conscience (art. 40 LPMéd) et qu'une décision éventuelle devra être réitérée dans le temps après un délai de réflexion.\n\nJe joins à la présente un certificat médical résumant ma situation et ma pièce d'identité.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[LIEU], le [DATE]\n[SIGNATURE]",
+      "services": [
+        {
+          "nom": "Organisation suisse des patients (OSP/SPO)",
+          "tel": "044 252 54 22",
+          "url": "https://www.spo.ch",
+          "canton": "CH"
+        },
+        {
+          "nom": "Bureau cantonal de médiation santé Vaud",
+          "url": "https://www.vd.ch/themes/sante-soins-et-handicap/droits-des-patients",
+          "canton": "VD"
+        },
+        {
+          "nom": "Commission de surveillance des professions de la santé Genève",
+          "url": "https://www.ge.ch/organisation/commission-surveillance-professions-sante-droits-patient",
+          "canton": "GE"
+        },
+        {
+          "nom": "FRC — conseil santé",
+          "url": "https://www.frc.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "EXIT A.D.M.D Suisse romande",
+          "tel": "021 320 62 72",
+          "url": "https://www.exit-romandie.ch",
+          "canton": "VD"
+        },
+        {
+          "nom": "Dignitas (étrangers acceptés)",
+          "url": "https://www.dignitas.ch",
+          "canton": "ZH"
+        },
+        {
+          "nom": "Palliative ch — soins palliatifs",
+          "url": "https://www.palliative.ch",
+          "canton": "CH"
+        }
+      ],
+      "escalade": [
+        {
+          "type": "médecin indépendant",
+          "indication": "Évaluation de la capacité de discernement (obligatoire)"
+        },
+        {
+          "type": "association d'aide au décès",
+          "indication": "Encadrement de la démarche"
+        },
+        {
+          "type": "soins palliatifs",
+          "indication": "Alternative à discuter systématiquement"
+        }
+      ],
+      "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés. Cette fiche est purement informative et ne constitue ni une incitation ni un encouragement à l'assistance au suicide. Toute décision doit être mûrement réfléchie et accompagnée médicalement."
+    },
+    "match_description": "Une personne gravement malade ou un proche s'informe sur l'assistance au suicide, les directives anticipées et les alternatives",
+    "profane_aliases": [
+      "mourir dans la dignité",
+      "EXIT association",
+      "aide au suicide suisse",
+      "souffrance insupportable",
+      "fin de vie choisie"
+    ],
+    "negative_signals": [
+      "dépression non traitée ou tendance suicidaire passagère",
+      "pression familiale documentée",
+      "absence de pathologie grave"
+    ],
+    "required_facts": [
+      "état médical documenté",
+      "capacité de discernement",
+      "persistance dans le temps",
+      "directives anticipées"
+    ],
+    "last_verified_at": "2026-04-20",
+    "review_scope": "reviewed_by_claude",
+    "review_expiry": "2027-04-20",
+    "readiness": "beta",
+    "information_only": true,
+    "claude_review_date": "2026-04-20"
   }
 ]

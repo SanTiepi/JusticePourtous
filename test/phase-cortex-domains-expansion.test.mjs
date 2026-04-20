@@ -67,13 +67,12 @@ describe('Phase Cortex — Expansion 3 nouveaux domaines (consommation, voisinag
     }
   });
 
-  it('chaque nouveau domaine a EXACTEMENT 10 fiches', () => {
+  it('chaque nouveau domaine a AU MOINS 10 fiches (élargi depuis 2026-04 — enrichissement circulation à 20+)', () => {
     for (const d of NEW_DOMAINS) {
       const fiches = loadDomainFiches(d);
-      assert.equal(
-        fiches.length,
-        10,
-        `Domaine ${d}: attendu 10 fiches, trouvé ${fiches.length}`
+      assert.ok(
+        fiches.length >= 10,
+        `Domaine ${d}: attendu >= 10 fiches, trouvé ${fiches.length}`
       );
     }
   });
@@ -163,7 +162,7 @@ describe('Phase Cortex — Expansion 3 nouveaux domaines (consommation, voisinag
         `Le service fiches.mjs ne charge pas le domaine ${d}`
       );
       const fiches = getFichesByDomaine(d);
-      assert.equal(fiches.length, 10, `getFichesByDomaine('${d}') doit renvoyer 10 fiches`);
+      assert.ok(fiches.length >= 10, `getFichesByDomaine('${d}') doit renvoyer >= 10 fiches`);
     }
   });
 

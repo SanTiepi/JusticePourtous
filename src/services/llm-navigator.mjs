@@ -12,6 +12,7 @@
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { mockCallNavigator, isMockEnabled } from './llm-mock.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const fichesDir = join(__dirname, '..', 'data', 'fiches');
@@ -125,6 +126,18 @@ const RESPONSE_SCHEMA = `{
  * Call Claude API to navigate the user's problem
  */
 async function callNavigator(userText, previousAnswers) {
+  // Test harness: deterministic mock when LLM_MOCK=1 (CI, integration tests).
+  // Strictly guarded — no effect in production.
+  if (isMockEnabled()) {
+    const result = await mockCallNavigator(userText, previousAnswers);
+    if (!result) return null;
+    // Filter fiche IDs through the catalog (same invariant as the real path)
+    const validIds = new Set(ficheCatalog.map(line => line.split(' ')[0]));
+    result.navigation.fiches_pertinentes = (result.navigation.fiches_pertinentes || [])
+      .filter(id => validIds.has(id));
+    return result;
+  }
+
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) return null; // Fallback to semantic search
 
@@ -247,9 +260,10 @@ function getQuestionsForFiche(ficheId) {
 }
 
 /**
- * Check if API key is available
+ * Check if navigator is available (real API or deterministic mock)
  */
 function isAvailable() {
+  if (isMockEnabled()) return true;
   return !!process.env.ANTHROPIC_API_KEY;
 }
 

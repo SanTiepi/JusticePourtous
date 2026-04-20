@@ -46,13 +46,13 @@ describe('health-check — runHealthChecks', () => {
     assert.equal(r.global_status, expected);
   });
 
-  it('includes the 12 expected named checks', async () => {
+  it('includes the 13 expected named checks', async () => {
     const r = await runHealthChecks();
     const names = new Set(r.checks.map(c => c.name));
     const expected = [
       'caselaw', 'case_store', 'citizen_account', 'coverage_certificate',
-      'enrich_cache', 'fiches', 'freshness', 'graph', 'intent_catalog',
-      'logger', 'normative_compiler', 'source_registry'
+      'enrich_cache', 'fiche_schema', 'fiches', 'freshness', 'graph',
+      'intent_catalog', 'logger', 'normative_compiler', 'source_registry'
     ];
     assert.equal(names.size, expected.length);
     for (const name of expected) assert.ok(names.has(name), `missing check: ${name}`);

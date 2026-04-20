@@ -16,13 +16,18 @@ echo "=== JusticePourtous Deploy ==="
 # 1. Tests locaux (subset non-LLM, strict timeout)
 # `npm test` complet a des tests LLM qui timeout selon la dispo réseau Anthropic.
 # On lance uniquement le subset critique structurel + timeout 30s.
+# Les tests triage (triage, integration-triage, phase6-frontend-triage,
+# phase-cortex-language-router) sont réinclus via LLM_MOCK=1 (mock
+# déterministe src/services/llm-mock.mjs). Les tests LLM coûteux
+# (llm-nav, letter-gen, deep-analysis, premium, stress, adversarial-eval, e2e)
+# restent exclus : ils demandent une vraie clé Anthropic.
 # Bypass avec `SKIP_TESTS=1 bash scripts/deploy.sh` si nécessaire (hotfix).
 echo "[1/5] Running core tests (non-LLM subset)..."
 if [ "${SKIP_TESTS:-0}" = "1" ]; then
   echo "  SKIP_TESTS=1 → gate test contournée (mode hotfix)"
 else
-  TEST_FILES=$(ls test/*.test.mjs | grep -v -E '(^test/triage\.|e2e|llm-nav|letter-gen|deep-analysis|premium|stress|adversarial-eval|integration-triage|phase6-frontend-triage|phase-cortex-language-router)')
-  TEST_OUTPUT=$(NODE_ENV=test ADMIN_TOKEN=deploy-gate node --test --test-timeout=30000 $TEST_FILES 2>&1)
+  TEST_FILES=$(ls test/*.test.mjs | grep -v -E '(e2e|llm-nav|letter-gen|deep-analysis|premium|stress|adversarial-eval)')
+  TEST_OUTPUT=$(LLM_MOCK=1 NODE_ENV=test ADMIN_TOKEN=deploy-gate node --test --test-timeout=30000 $TEST_FILES 2>&1)
   TEST_EXIT=$?
   echo "$TEST_OUTPUT" | grep -E '^ℹ (tests|pass|fail|cancelled|duration)' | head -5
   if [ $TEST_EXIT -ne 0 ]; then

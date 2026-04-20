@@ -23,13 +23,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Même subset que deploy.sh — structurel seulement, pas de réseau Anthropic
+      # Même subset que deploy.sh — structurel + triage mocké via LLM_MOCK=1.
+      # Les 4 tests qui appellent /api/triage (triage, integration-triage,
+      # phase6-frontend-triage, phase-cortex-language-router) sont réinclus
+      # grâce au mock déterministe dans src/services/llm-mock.mjs.
+      # Les tests qui stressent réellement le LLM (llm-nav, letter-gen,
+      # deep-analysis, premium, stress, adversarial-eval, e2e) restent exclus —
+      # ils nécessitent une vraie clé Anthropic.
       - name: Run core tests
         env:
           NODE_ENV: test
           ADMIN_TOKEN: ci-admin-token
+          LLM_MOCK: '1'
         run: |
-          TEST_FILES=$(ls test/*.test.mjs | grep -v -E '(^test/triage\.|e2e|llm-nav|letter-gen|deep-analysis|premium|stress|adversarial-eval|integration-triage|phase6-frontend-triage|phase-cortex-language-router)')
+          TEST_FILES=$(ls test/*.test.mjs | grep -v -E '(e2e|llm-nav|letter-gen|deep-analysis|premium|stress|adversarial-eval)')
           node --test --test-timeout=30000 $TEST_FILES
 
   health-check-smoke:

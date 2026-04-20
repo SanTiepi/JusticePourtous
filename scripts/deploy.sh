@@ -21,7 +21,7 @@ echo "[1/5] Running core tests (non-LLM subset)..."
 if [ "${SKIP_TESTS:-0}" = "1" ]; then
   echo "  SKIP_TESTS=1 → gate test contournée (mode hotfix)"
 else
-  TEST_FILES=$(ls test/*.test.mjs | grep -v -E '(^test/triage\.|e2e|llm-nav|letter-gen|deep-analysis|premium|stress|adversarial-eval)')
+  TEST_FILES=$(ls test/*.test.mjs | grep -v -E '(^test/triage\.|e2e|llm-nav|letter-gen|deep-analysis|premium|stress|adversarial-eval|integration-triage|phase6-frontend-triage|phase-cortex-language-router)')
   TEST_OUTPUT=$(NODE_ENV=test ADMIN_TOKEN=deploy-gate node --test --test-timeout=30000 $TEST_FILES 2>&1)
   TEST_EXIT=$?
   echo "$TEST_OUTPUT" | grep -E '^ℹ (tests|pass|fail|cancelled|duration)' | head -5

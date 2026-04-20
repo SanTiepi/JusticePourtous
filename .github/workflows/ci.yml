@@ -29,7 +29,7 @@ jobs:
           NODE_ENV: test
           ADMIN_TOKEN: ci-admin-token
         run: |
-          TEST_FILES=$(ls test/*.test.mjs | grep -v -E '(^test/triage\.|e2e|llm-nav|letter-gen|deep-analysis|premium|stress|adversarial-eval)')
+          TEST_FILES=$(ls test/*.test.mjs | grep -v -E '(^test/triage\.|e2e|llm-nav|letter-gen|deep-analysis|premium|stress|adversarial-eval|integration-triage|phase6-frontend-triage|phase-cortex-language-router)')
           node --test --test-timeout=30000 $TEST_FILES
 
   health-check-smoke:

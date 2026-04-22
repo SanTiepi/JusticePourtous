@@ -1,24 +1,30 @@
 {
-  "generatedAt": "2026-04-19T17:56:02.657Z",
+  "generatedAt": "2026-04-22T19:30:36.564Z",
   "totals": {
-    "fiches": 284,
-    "totalRefOccurrences": 878,
-    "uniqueRefs": 533,
-    "resolvedUnique": 531,
-    "unresolvedUnique": 2,
-    "resolvedOccurrences": 876,
-    "unresolvedOccurrences": 2
+    "fiches": 314,
+    "totalRefOccurrences": 1012,
+    "uniqueRefs": 585,
+    "resolvedUnique": 576,
+    "unresolvedUnique": 9,
+    "resolvedOccurrences": 1002,
+    "unresolvedOccurrences": 10
   },
   "coverage": {
-    "uniquePercent": 99.62,
-    "occurrencesPercent": 99.77
+    "uniquePercent": 98.46,
+    "occurrencesPercent": 99.01
   },
   "unresolvedByPrefix": [
     {
       "prefix": "CST",
-      "count": 2,
-      "occurrences": 2,
+      "count": 3,
+      "occurrences": 3,
       "refs": [
+        {
+          "ref": "Cst 8",
+          "occurrences": 1,
+          "ficheId": "sante_refus_nouveau_patient",
+          "domaine": "sante"
+        },
         {
           "ref": "Cst 29",
           "occurrences": 1,
@@ -32,9 +38,101 @@
           "domaine": "social"
         }
       ]
+    },
+    {
+      "prefix": "OAC",
+      "count": 2,
+      "occurrences": 2,
+      "refs": [
+        {
+          "ref": "OAC 42",
+          "occurrences": 1,
+          "ficheId": "circulation_permis_etranger_reconnaissance",
+          "domaine": "circulation"
+        },
+        {
+          "ref": "OAC 44",
+          "occurrences": 1,
+          "ficheId": "circulation_permis_etranger_reconnaissance",
+          "domaine": "circulation"
+        }
+      ]
+    },
+    {
+      "prefix": "UNKNOWN",
+      "count": 1,
+      "occurrences": 2,
+      "refs": [
+        {
+          "ref": "LPMéd 40",
+          "occurrences": 2,
+          "ficheId": "sante_refus_nouveau_patient",
+          "domaine": "sante"
+        }
+      ]
+    },
+    {
+      "prefix": "OAMAL",
+      "count": 2,
+      "occurrences": 2,
+      "refs": [
+        {
+          "ref": "OAMal 103",
+          "occurrences": 1,
+          "ficheId": "sante_franchise_quote_part",
+          "domaine": "sante"
+        },
+        {
+          "ref": "OAMal 104",
+          "occurrences": 1,
+          "ficheId": "sante_franchise_quote_part",
+          "domaine": "sante"
+        }
+      ]
+    },
+    {
+      "prefix": "LEP",
+      "count": 1,
+      "occurrences": 1,
+      "refs": [
+        {
+          "ref": "LEp 22",
+          "occurrences": 1,
+          "ficheId": "sante_refus_vaccination_enfant",
+          "domaine": "sante"
+        }
+      ]
     }
   ],
   "top20Unresolved": [
+    {
+      "ref": "LPMéd 40",
+      "occurrences": 2
+    },
+    {
+      "ref": "OAC 42",
+      "occurrences": 1
+    },
+    {
+      "ref": "OAC 44",
+      "occurrences": 1
+    },
+    {
+      "ref": "Cst 8",
+      "occurrences": 1
+    },
+    {
+      "ref": "LEp 22",
+      "occurrences": 1
+    },
+    {
+      "ref": "OAMal 103",
+      "occurrences": 1
+    },
+    {
+      "ref": "OAMal 104",
+      "occurrences": 1
+    },
     {
       "ref": "Cst 29",
       "occurrences": 1
@@ -47,7 +145,7 @@
   "resolvedSample": [
     {
       "ref": "LAA 6",
-      "occurrences": 6,
+      "occurrences": 7,
       "source_id": "fedlex:rs832.20:laa-6",
       "tier": 1
     },
@@ -71,13 +169,13 @@
     },
     {
       "ref": "LCR 58",
-      "occurrences": 7,
+      "occurrences": 11,
       "source_id": "fedlex:rs741.01:lcr-58",
       "tier": 1
     },
     {
       "ref": "LCR 63",
-      "occurrences": 2,
+      "occurrences": 4,
       "source_id": "fedlex:rs741.01:lcr-63",
       "tier": 1
     },
@@ -89,13 +187,13 @@
     },
     {
       "ref": "CO 47",
-      "occurrences": 2,
+      "occurrences": 3,
       "source_id": "fedlex:rs220:co-47",
       "tier": 1
     },
     {
       "ref": "CO 41",
-      "occurrences": 5,
+      "occurrences": 8,
       "source_id": "fedlex:rs220:co-41",
       "tier": 1
     },
@@ -107,31 +205,31 @@
     },
     {
       "ref": "CO 60",
-      "occurrences": 4,
+      "occurrences": 6,
       "source_id": "fedlex:rs220:co-60",
       "tier": 1
     },
     {
       "ref": "LCR 65",
-      "occurrences": 6,
+      "occurrences": 8,
       "source_id": "fedlex:rs741.01:lcr-65",
       "tier": 1
     },
     {
       "ref": "LCR 76",
-      "occurrences": 1,
+      "occurrences": 2,
       "source_id": "fedlex:rs741.01:lcr-76",
       "tier": 1
     },
     {
       "ref": "LCR 51",
-      "occurrences": 2,
+      "occurrences": 3,
       "source_id": "fedlex:rs741.01:lcr-51",
       "tier": 1
     },
     {
       "ref": "LCR 92",
-      "occurrences": 2,
+      "occurrences": 3,
       "source_id": "fedlex:rs741.01:lcr-92",
       "tier": 1
     },
@@ -197,7 +295,7 @@
     },
     {
       "ref": "CO 43",
-      "occurrences": 1,
+      "occurrences": 4,
       "source_id": "fedlex:rs220:co-43",
       "tier": 1
     },
@@ -221,7 +319,7 @@
     },
     {
       "ref": "LCA 46",
-      "occurrences": 3,
+      "occurrences": 4,
       "source_id": "fedlex:rs221.229.1:lca-46",
       "tier": 1
     }

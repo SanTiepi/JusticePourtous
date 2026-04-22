@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-19T17:56:02.044Z",
+  "generated_at": "2026-04-22T19:30:35.770Z",
   "strict": false,
   "summary": {
-    "total": 284,
-    "valid_count": 284,
+    "total": 314,
+    "valid_count": 314,
     "invalid_count": 0,
     "valid_pct": 100,
     "warning_count": 0,
@@ -26,7 +26,7 @@
       "invalid": 0
     },
     "circulation": {
-      "valid": 10,
+      "valid": 20,
       "invalid": 0
     },
     "consommation": {
@@ -58,7 +58,7 @@
       "invalid": 0
     },
     "sante": {
-      "valid": 10,
+      "valid": 20,
       "invalid": 0
     },
     "social": {
@@ -66,7 +66,7 @@
       "invalid": 0
     },
     "successions": {
-      "valid": 10,
+      "valid": 20,
       "invalid": 0
     },
     "travail": {
@@ -106,8 +106,8 @@
     },
     {
       "file": "circulation.json",
-      "fiche_count": 10,
-      "valid": 10,
+      "fiche_count": 20,
+      "valid": 20,
       "invalid": 0,
       "with_warnings": 0
     },
@@ -148,8 +148,8 @@
     },
     {
       "file": "sante.json",
-      "fiche_count": 10,
-      "valid": 10,
+      "fiche_count": 20,
+      "valid": 20,
       "invalid": 0,
       "with_warnings": 0
     },
@@ -162,8 +162,8 @@
     },
     {
       "file": "successions.json",
-      "fiche_count": 10,
-      "valid": 10,
+      "fiche_count": 20,
+      "valid": 20,
       "invalid": 0,
       "with_warnings": 0
     },

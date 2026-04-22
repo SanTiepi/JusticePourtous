@@ -77,4 +77,18 @@ describe('server i18n integration', () => {
     assert.match(html, /hreflang="de"/);
     assert.match(html, /\[\[de\]\]/);
   });
+
+  it('traduit /api/search avec un payload public allégé pour éviter les latences extrêmes', async () => {
+    const q = encodeURIComponent('mon propriétaire refuse de rembourser ma caution');
+    const res = await request(`/api/search?q=${q}&lang=en`);
+    assert.equal(res.status, 200);
+    const data = res.json();
+    assert.equal(data.display_lang, 'en');
+    assert.equal(data.source_lang, 'fr');
+    assert.ok(['fresh', 'cached'].includes(data.translation_status));
+    assert.match(data.fiche.reponse.explication, /\[\[en\]\]/);
+    assert.ok(!('patterns' in data), 'search payload should not expose unused heavy fields');
+    assert.ok((data.jurisprudence || []).length <= 7, 'search payload should cap jurisprudence excerpts');
+    assert.ok((data.templates || []).length <= 5, 'search payload should cap templates');
+  });
 });

@@ -1,7 +1,7 @@
 /**
  * i18n-extended — Compléments UI multilingues
  *
- * Ajoute les clés UI manquantes sur les 9 langues proposées :
+ * Ajoute les clés UI manquantes sur les 4 langues supportées (FR/DE/IT/EN) :
  *   - paywall (continuer 2 CHF)
  *   - bouton "Ce cas me dépasse"
  *   - statuts de round (R1, R2, R3, synthèse)
@@ -34,7 +34,7 @@
     'paywall.cta_topup': 'Recharger mon portefeuille',
     'paywall.explainer': 'Le premier tour est gratuit. Pour aller plus loin (questions ciblées, plan d\'action, lettres), comptez 2 CHF.',
     'paywall.no_subscription': 'Pas d\'abonnement, paiement à l\'usage.',
-    'premium.cost_translation': 'Traduction (8 langues)',
+    'premium.cost_translation': 'Traduction (3 langues)',
     'premium.login_title': 'Déjà client ?',
     'premium.login_intro': 'Connectez-vous avec votre email pour retrouver votre solde.',
     'premium.login_email_placeholder': 'Votre email',
@@ -43,6 +43,15 @@
     'premium.login_verify': 'Vérifier',
     'premium.login_resend_code': 'Renvoyer un code',
     'premium.login_email_sent': 'Code envoyé à {{email}}',
+    'premium.translate_select': 'Traduire en...',
+    'premium.translate_button': 'Traduire (~CHF 0.10)',
+    'premium.translate_choose_lang': 'Choisissez une langue.',
+    'premium.translate_title': 'Traduction',
+    'premium.translate_cost_receipt': 'Coût traduction : <strong>CHF {{cost}}</strong> — Solde : CHF {{remaining}}',
+    'premium.payment_processing_title': 'Paiement reçu — activation en cours',
+    'premium.payment_processing_text': 'Votre compte premium est en cours d\'activation. Cela prend généralement quelques secondes.',
+    'premium.payment_processing_warning': 'Votre paiement a été reçu. L\'activation prend plus de temps que prévu. Rechargez cette page dans quelques instants. Si le problème persiste, contactez-nous.',
+    'premium.back_to_premium': 'Retour',
 
     // -- Over-my-head escape --
     'overmyhead.button': 'Ce cas me dépasse',
@@ -61,6 +70,21 @@
     'cert.limited': 'Analyse fournie avec réserves',
     'cert.insufficient': 'Lacunes importantes — voir détails',
     'cert.warning_label': 'Élément(s) à vérifier',
+    'result.caselaw_canon': 'Jurisprudence canonique',
+    'result.leading_cases': '📌 Décisions déterminantes',
+    'result.nuances': '⚖️ Nuances et contre-cas',
+    'result.cantonal_practice': '🏛️ Pratique cantonale',
+    'result.similar_cases_count': '{{count}} cas similaires (exploration)',
+    'result.median_label': 'médian',
+    'result.articles_label': 'Articles',
+    'result.source_label': 'Source',
+    'result.source_asloca_kit': 'Source : ASLOCA Kit {{number}}',
+    'result.source_asloca_ref': 'Source : ASLOCA {{ref}}',
+    'result.source_asloca_short': 'ASLOCA Kit',
+    'role.leading': 'Clé',
+    'role.nuance': 'Nuance',
+    'role.cantonal': 'Cantonal',
+    'role.similar': 'Comparable',
 
     // -- Degraded mode banner --
     'degraded.title': 'Mode dégradé',
@@ -82,7 +106,7 @@
     'paywall.cta_topup': 'Guthaben aufladen',
     'paywall.explainer': 'Die erste Runde ist kostenlos. Für weitere Schritte (gezielte Fragen, Aktionsplan, Briefe) fallen 2 CHF an.',
     'paywall.no_subscription': 'Kein Abonnement, Bezahlung pro Nutzung.',
-    'premium.cost_translation': 'Übersetzung (8 Sprachen)',
+    'premium.cost_translation': 'Übersetzung (3 Sprachen)',
     'premium.login_title': 'Bereits Kunde?',
     'premium.login_intro': 'Melden Sie sich mit Ihrer E-Mail-Adresse an, um Ihr Guthaben wiederzufinden.',
     'premium.login_email_placeholder': 'Ihre E-Mail',
@@ -91,6 +115,15 @@
     'premium.login_verify': 'Bestätigen',
     'premium.login_resend_code': 'Code erneut senden',
     'premium.login_email_sent': 'Code an {{email}} gesendet',
+    'premium.translate_select': 'Übersetzen in...',
+    'premium.translate_button': 'Übersetzen (~CHF 0.10)',
+    'premium.translate_choose_lang': 'Bitte wählen Sie eine Sprache.',
+    'premium.translate_title': 'Übersetzung',
+    'premium.translate_cost_receipt': 'Übersetzungskosten: <strong>CHF {{cost}}</strong> — Guthaben: CHF {{remaining}}',
+    'premium.payment_processing_title': 'Zahlung erhalten — Aktivierung läuft',
+    'premium.payment_processing_text': 'Ihr Premium-Konto wird gerade aktiviert. Das dauert in der Regel nur wenige Sekunden.',
+    'premium.payment_processing_warning': 'Ihre Zahlung wurde erhalten. Die Aktivierung dauert länger als erwartet. Laden Sie diese Seite in wenigen Augenblicken neu. Wenn das Problem weiterhin besteht, kontaktieren Sie uns.',
+    'premium.back_to_premium': 'Zurück',
 
     // Over-my-head
     'overmyhead.button': 'Dieser Fall überfordert mich',
@@ -109,6 +142,21 @@
     'cert.limited': 'Analyse mit Vorbehalten',
     'cert.insufficient': 'Wesentliche Lücken — siehe Details',
     'cert.warning_label': 'Zu überprüfende(s) Element(e)',
+    'result.caselaw_canon': 'Leitrechtsprechung',
+    'result.leading_cases': '📌 Massgebende Entscheide',
+    'result.nuances': '⚖️ Nuancen und Gegenfälle',
+    'result.cantonal_practice': '🏛️ Kantonale Praxis',
+    'result.similar_cases_count': '{{count}} ähnliche Fälle (Vertiefung)',
+    'result.median_label': 'Median',
+    'result.articles_label': 'Artikel',
+    'result.source_label': 'Quelle',
+    'result.source_asloca_kit': 'Quelle: ASLOCA-Kit {{number}}',
+    'result.source_asloca_ref': 'Quelle: ASLOCA {{ref}}',
+    'result.source_asloca_short': 'ASLOCA-Kit',
+    'role.leading': 'Leitfall',
+    'role.nuance': 'Nuance',
+    'role.cantonal': 'Kantonal',
+    'role.similar': 'Vergleichbar',
 
     // Degraded banner
     'degraded.title': 'Degradierter Modus',
@@ -130,7 +178,7 @@
     'paywall.cta_topup': 'Ricaricare il portafoglio',
     'paywall.explainer': 'Il primo turno è gratuito. Per andare oltre (domande mirate, piano d\'azione, lettere), il costo è di 2 CHF.',
     'paywall.no_subscription': 'Nessun abbonamento, pagamento per utilizzo.',
-    'premium.cost_translation': 'Traduzione (8 lingue)',
+    'premium.cost_translation': 'Traduzione (3 lingue)',
     'premium.login_title': 'Già cliente?',
     'premium.login_intro': 'Acceda con la sua email per ritrovare il suo saldo.',
     'premium.login_email_placeholder': 'La sua email',
@@ -139,6 +187,15 @@
     'premium.login_verify': 'Verificare',
     'premium.login_resend_code': 'Inviare di nuovo il codice',
     'premium.login_email_sent': 'Codice inviato a {{email}}',
+    'premium.translate_select': 'Tradurre in...',
+    'premium.translate_button': 'Tradurre (~CHF 0.10)',
+    'premium.translate_choose_lang': 'Selezioni una lingua.',
+    'premium.translate_title': 'Traduzione',
+    'premium.translate_cost_receipt': 'Costo traduzione: <strong>CHF {{cost}}</strong> — Saldo: CHF {{remaining}}',
+    'premium.payment_processing_title': 'Pagamento ricevuto — attivazione in corso',
+    'premium.payment_processing_text': 'Il suo account premium è in fase di attivazione. Di solito richiede solo pochi secondi.',
+    'premium.payment_processing_warning': 'Il suo pagamento è stato ricevuto. L\'attivazione richiede più tempo del previsto. Ricarichi questa pagina tra qualche istante. Se il problema persiste, ci contatti.',
+    'premium.back_to_premium': 'Indietro',
 
     // Over-my-head
     'overmyhead.button': 'Questo caso mi supera',
@@ -157,6 +214,21 @@
     'cert.limited': 'Analisi fornita con riserva',
     'cert.insufficient': 'Lacune importanti — vedere dettagli',
     'cert.warning_label': 'Elemento/i da verificare',
+    'result.caselaw_canon': 'Giurisprudenza canonica',
+    'result.leading_cases': '📌 Decisioni determinanti',
+    'result.nuances': '⚖️ Sfumature e controcasi',
+    'result.cantonal_practice': '🏛️ Pratica cantonale',
+    'result.similar_cases_count': '{{count}} casi simili (esplorazione)',
+    'result.median_label': 'mediana',
+    'result.articles_label': 'Articoli',
+    'result.source_label': 'Fonte',
+    'result.source_asloca_kit': 'Fonte: ASLOCA Kit {{number}}',
+    'result.source_asloca_ref': 'Fonte: ASLOCA {{ref}}',
+    'result.source_asloca_short': 'ASLOCA Kit',
+    'role.leading': 'Chiave',
+    'role.nuance': 'Sfumatura',
+    'role.cantonal': 'Cantonale',
+    'role.similar': 'Simile',
 
     // Degraded banner
     'degraded.title': 'Modalità degradata',
@@ -177,7 +249,7 @@
     'paywall.cta_topup': 'Top up my wallet',
     'paywall.explainer': 'The first round is free. To go further (targeted questions, action plan, letters), the price is 2 CHF.',
     'paywall.no_subscription': 'No subscription, pay only when you use it.',
-    'premium.cost_translation': 'Translation (8 languages)',
+    'premium.cost_translation': 'Translation (3 languages)',
     'premium.login_title': 'Already a customer?',
     'premium.login_intro': 'Sign in with your email to recover your balance.',
     'premium.login_email_placeholder': 'Your email',
@@ -186,6 +258,15 @@
     'premium.login_verify': 'Verify',
     'premium.login_resend_code': 'Send another code',
     'premium.login_email_sent': 'Code sent to {{email}}',
+    'premium.translate_select': 'Translate into...',
+    'premium.translate_button': 'Translate (~CHF 0.10)',
+    'premium.translate_choose_lang': 'Choose a language.',
+    'premium.translate_title': 'Translation',
+    'premium.translate_cost_receipt': 'Translation cost: <strong>CHF {{cost}}</strong> — Balance: CHF {{remaining}}',
+    'premium.payment_processing_title': 'Payment received — activation in progress',
+    'premium.payment_processing_text': 'Your premium account is being activated. This usually takes only a few seconds.',
+    'premium.payment_processing_warning': 'Your payment has been received. Activation is taking longer than expected. Reload this page in a few moments. If the problem persists, contact us.',
+    'premium.back_to_premium': 'Back',
     'overmyhead.button': 'This case is beyond me',
     'overmyhead.title': 'Find a human expert',
     'overmyhead.text': 'We redirect you to a suitable service (free cantonal directory, association, duty lawyer).',
@@ -198,206 +279,26 @@
     'cert.limited': 'Analysis provided with reservations',
     'cert.insufficient': 'Important gaps — see details',
     'cert.warning_label': 'Item(s) to verify',
+    'result.caselaw_canon': 'Canonical case law',
+    'result.leading_cases': '📌 Leading cases',
+    'result.nuances': '⚖️ Nuances and counter-cases',
+    'result.cantonal_practice': '🏛️ Cantonal practice',
+    'result.similar_cases_count': '{{count}} similar cases (exploration)',
+    'result.median_label': 'median',
+    'result.articles_label': 'Articles',
+    'result.source_label': 'Source',
+    'result.source_asloca_kit': 'Source: ASLOCA Kit {{number}}',
+    'result.source_asloca_ref': 'Source: ASLOCA {{ref}}',
+    'result.source_asloca_short': 'ASLOCA Kit',
+    'role.leading': 'Key',
+    'role.nuance': 'Nuance',
+    'role.cantonal': 'Cantonal',
+    'role.similar': 'Similar',
     'degraded.title': 'Limited mode',
     'degraded.body_de': 'Your question was in German. Our legal analysis is shown in French (limited mode).',
     'degraded.body_it': 'Your question was in Italian. Our legal analysis is shown in French (limited mode).',
     'degraded.action_de': 'For advice in German, contact the Mieterverband or unia.ch depending on the area.',
     'degraded.action_it': 'For advice in Italian, contact ASLOCA Ticino or unia.ch depending on the area.'
-  };
-
-  // -------------------------------------------------------------------------
-  // PT
-  // -------------------------------------------------------------------------
-
-  var PT = {
-    'paywall.title': 'Continuar a análise',
-    'paywall.price_chf': '2 CHF',
-    'paywall.cta_continue': 'Continuar a análise — 2 CHF',
-    'paywall.cta_topup': 'Recarregar a minha carteira',
-    'paywall.explainer': 'A primeira ronda é gratuita. Para ir mais longe (perguntas direcionadas, plano de ação, cartas), o preço é 2 CHF.',
-    'paywall.no_subscription': 'Sem subscrição, pagamento por utilização.',
-    'premium.cost_translation': 'Tradução (8 línguas)',
-    'premium.login_title': 'Já é cliente?',
-    'premium.login_intro': 'Entre com o seu email para recuperar o seu saldo.',
-    'premium.login_email_placeholder': 'Seu email',
-    'premium.login_send_code': 'Receber um código',
-    'premium.login_code_placeholder': 'Código de 6 dígitos',
-    'premium.login_verify': 'Verificar',
-    'premium.login_resend_code': 'Reenviar um código',
-    'premium.login_email_sent': 'Código enviado para {{email}}',
-    'overmyhead.button': 'Este caso ultrapassa-me',
-    'overmyhead.title': 'Encontrar um profissional',
-    'overmyhead.text': 'Redirecionamos para um serviço competente (diretório cantonal gratuito, associação, advogado de prevenção).',
-    'round.r1': 'R1 — Compreendo a sua situação',
-    'round.r2': 'R2 — Aprofundo os pontos-chave',
-    'round.r3': 'R3 — Valido os detalhes',
-    'round.synthesis': 'Síntese — Redijo o seu plano de ação',
-    'round.contradiction': 'Análise — Consulto leis e jurisprudência',
-    'cert.sufficient': 'Análise completa — fontes verificadas',
-    'cert.limited': 'Análise fornecida com reservas',
-    'cert.insufficient': 'Lacunas importantes — ver detalhes',
-    'cert.warning_label': 'Elemento(s) a verificar',
-    'degraded.title': 'Modo limitado',
-    'degraded.body_de': 'A sua pergunta foi em alemão. A nossa análise jurídica é mostrada em francês (modo limitado).',
-    'degraded.body_it': 'A sua pergunta foi em italiano. A nossa análise jurídica é mostrada em francês (modo limitado).',
-    'degraded.action_de': 'Para aconselhamento em alemão, contacte o Mieterverband ou o unia.ch conforme a área.',
-    'degraded.action_it': 'Para aconselhamento em italiano, contacte a ASLOCA Ticino ou o unia.ch conforme a área.'
-  };
-
-  // -------------------------------------------------------------------------
-  // AR
-  // -------------------------------------------------------------------------
-
-  var AR = {
-    'paywall.title': 'متابعة التحليل',
-    'paywall.price_chf': '2 CHF',
-    'paywall.cta_continue': 'متابعة التحليل — 2 CHF',
-    'paywall.cta_topup': 'إعادة شحن المحفظة',
-    'paywall.explainer': 'الجولة الأولى مجانية. للمتابعة أكثر (أسئلة موجّهة، خطة عمل، رسائل)، السعر هو 2 CHF.',
-    'paywall.no_subscription': 'لا يوجد اشتراك، الدفع حسب الاستخدام.',
-    'premium.cost_translation': 'الترجمة (8 لغات)',
-    'premium.login_title': 'عميل بالفعل؟',
-    'premium.login_intro': 'سجّل الدخول ببريدك الإلكتروني لاستعادة رصيدك.',
-    'premium.login_email_placeholder': 'بريدك الإلكتروني',
-    'premium.login_send_code': 'الحصول على رمز',
-    'premium.login_code_placeholder': 'رمز من 6 أرقام',
-    'premium.login_verify': 'تحقّق',
-    'premium.login_resend_code': 'إرسال رمز جديد',
-    'premium.login_email_sent': 'تم إرسال الرمز إلى {{email}}',
-    'overmyhead.button': 'هذه القضية تتجاوزني',
-    'overmyhead.title': 'العثور على مختص بشري',
-    'overmyhead.text': 'نوجّهك إلى خدمة مناسبة: دليل كانتوني مجاني أو جمعية أو محامٍ مناوب.',
-    'round.r1': 'R1 — أفهم وضعك',
-    'round.r2': 'R2 — أُدقّق النقاط الأساسية',
-    'round.r3': 'R3 — أتحقق من التفاصيل',
-    'round.synthesis': 'الخلاصة — أكتب خطة العمل',
-    'round.contradiction': 'التحليل — أراجع القوانين والاجتهادات',
-    'cert.sufficient': 'تحليل كامل — مصادر موثقة',
-    'cert.limited': 'تحليل مع تحفظات',
-    'cert.insufficient': 'نواقص مهمة — راجع التفاصيل',
-    'cert.warning_label': 'عنصر / عناصر يجب التحقق منها',
-    'degraded.title': 'وضع محدود',
-    'degraded.body_de': 'تم طرح سؤالك بالألمانية. نعرض التحليل القانوني بالفرنسية حالياً (وضع محدود).',
-    'degraded.body_it': 'تم طرح سؤالك بالإيطالية. نعرض التحليل القانوني بالفرنسية حالياً (وضع محدود).',
-    'degraded.action_de': 'للاستشارة بالألمانية، يمكنك التواصل مع Mieterverband أو unia.ch بحسب المجال.',
-    'degraded.action_it': 'للاستشارة بالإيطالية، يمكنك التواصل مع ASLOCA Ticino أو unia.ch بحسب المجال.'
-  };
-
-  // -------------------------------------------------------------------------
-  // TR
-  // -------------------------------------------------------------------------
-
-  var TR = {
-    'paywall.title': 'Analizi sürdür',
-    'paywall.price_chf': '2 CHF',
-    'paywall.cta_continue': 'Analizi sürdür — 2 CHF',
-    'paywall.cta_topup': 'Cüzdanımı yükle',
-    'paywall.explainer': 'İlk tur ücretsizdir. Daha ileri gitmek için (hedefe yönelik sorular, eylem planı, mektuplar) ücret 2 CHF\'dir.',
-    'paywall.no_subscription': 'Abonelik yok, kullanım başına ödeme.',
-    'premium.cost_translation': 'Çeviri (8 dil)',
-    'premium.login_title': 'Zaten müşteri misiniz?',
-    'premium.login_intro': 'Bakiyenizi görmek için e-posta adresinizle giriş yapın.',
-    'premium.login_email_placeholder': 'E-posta adresiniz',
-    'premium.login_send_code': 'Bir kod al',
-    'premium.login_code_placeholder': '6 haneli kod',
-    'premium.login_verify': 'Doğrula',
-    'premium.login_resend_code': 'Kodu yeniden gönder',
-    'premium.login_email_sent': 'Kod {{email}} adresine gönderildi',
-    'overmyhead.button': 'Bu dosya beni aşıyor',
-    'overmyhead.title': 'Bir uzmana yönel',
-    'overmyhead.text': 'Sizi uygun bir hizmete yönlendiriyoruz: ücretsiz kanton rehberi, dernek veya nöbetçi avukat.',
-    'round.r1': 'R1 — Durumunuzu anlıyorum',
-    'round.r2': 'R2 — Ana noktaları netleştiriyorum',
-    'round.r3': 'R3 — Ayrıntıları doğruluyorum',
-    'round.synthesis': 'Özet — Eylem planınızı hazırlıyorum',
-    'round.contradiction': 'Analiz — Kanunları ve içtihadı inceliyorum',
-    'cert.sufficient': 'Tam analiz — doğrulanmış kaynaklar',
-    'cert.limited': 'Çekincelerle sunulan analiz',
-    'cert.insufficient': 'Önemli eksikler — ayrıntılara bakın',
-    'cert.warning_label': 'Doğrulanması gereken unsur(lar)',
-    'degraded.title': 'Sınırlı mod',
-    'degraded.body_de': 'Sorunuz Almanca yazıldı. Hukuki analizimiz şu anda Fransızca gösteriliyor (sınırlı mod).',
-    'degraded.body_it': 'Sorunuz İtalyanca yazıldı. Hukuki analizimiz şu anda Fransızca gösteriliyor (sınırlı mod).',
-    'degraded.action_de': 'Almanca danışmanlık için alana göre Mieterverband veya unia.ch ile iletişime geçin.',
-    'degraded.action_it': 'İtalyanca danışmanlık için alana göre ASLOCA Ticino veya unia.ch ile iletişime geçin.'
-  };
-
-  // -------------------------------------------------------------------------
-  // SQ
-  // -------------------------------------------------------------------------
-
-  var SQ = {
-    'paywall.title': 'Vazhdo analizën',
-    'paywall.price_chf': '2 CHF',
-    'paywall.cta_continue': 'Vazhdo analizën — 2 CHF',
-    'paywall.cta_topup': 'Rimbush portofolin tim',
-    'paywall.explainer': 'Raundi i parë është falas. Për të vazhduar më tej (pyetje të synuara, plan veprimi, letra), çmimi është 2 CHF.',
-    'paywall.no_subscription': 'Pa abonim, pagesë sipas përdorimit.',
-    'premium.cost_translation': 'Përkthim (8 gjuhë)',
-    'premium.login_title': 'Jeni tashmë klient?',
-    'premium.login_intro': 'Hyni me emailin tuaj për të gjetur sërish balancën tuaj.',
-    'premium.login_email_placeholder': 'Emaili juaj',
-    'premium.login_send_code': 'Merr një kod',
-    'premium.login_code_placeholder': 'Kod 6-shifror',
-    'premium.login_verify': 'Verifiko',
-    'premium.login_resend_code': 'Dërgo sërish kodin',
-    'premium.login_email_sent': 'Kodi u dërgua te {{email}}',
-    'overmyhead.button': 'Ky rast më tejkalon',
-    'overmyhead.title': 'Gjej një profesionist',
-    'overmyhead.text': 'Ju drejtojmë te një shërbim i përshtatshëm: drejtori kantonale falas, shoqatë ose avokat kujdestar.',
-    'round.r1': 'R1 — E kuptoj situatën tuaj',
-    'round.r2': 'R2 — Sqaroj pikat kyçe',
-    'round.r3': 'R3 — Verifikoj hollësitë',
-    'round.synthesis': 'Përmbledhje — Hartoj planin tuaj të veprimit',
-    'round.contradiction': 'Analizë — Konsultoj ligjet dhe jurisprudencën',
-    'cert.sufficient': 'Analizë e plotë — burime të verifikuara',
-    'cert.limited': 'Analizë me rezerva',
-    'cert.insufficient': 'Mungesa të rëndësishme — shihni hollësitë',
-    'cert.warning_label': 'Element(et) për t’u verifikuar',
-    'degraded.title': 'Modalitet i kufizuar',
-    'degraded.body_de': 'Pyetja juaj ishte në gjermanisht. Analiza jonë juridike shfaqet tani në frëngjisht (modalitet i kufizuar).',
-    'degraded.body_it': 'Pyetja juaj ishte në italisht. Analiza jonë juridike shfaqet tani në frëngjisht (modalitet i kufizuar).',
-    'degraded.action_de': 'Për këshillim në gjermanisht, kontaktoni Mieterverband ose unia.ch sipas fushës.',
-    'degraded.action_it': 'Për këshillim në italisht, kontaktoni ASLOCA Ticino ose unia.ch sipas fushës.'
-  };
-
-  // -------------------------------------------------------------------------
-  // HR
-  // -------------------------------------------------------------------------
-
-  var HR = {
-    'paywall.title': 'Nastavi analizu',
-    'paywall.price_chf': '2 CHF',
-    'paywall.cta_continue': 'Nastavi analizu — 2 CHF',
-    'paywall.cta_topup': 'Nadoplati moj novčanik',
-    'paywall.explainer': 'Prvi krug je besplatan. Za nastavak (ciljana pitanja, plan djelovanja, pisma) cijena je 2 CHF.',
-    'paywall.no_subscription': 'Nema pretplate, plaćanje po korištenju.',
-    'premium.cost_translation': 'Prijevod (8 jezika)',
-    'premium.login_title': 'Već ste klijent?',
-    'premium.login_intro': 'Prijavite se svojim e-mailom kako biste ponovno pronašli svoj saldo.',
-    'premium.login_email_placeholder': 'Vaš e-mail',
-    'premium.login_send_code': 'Primite kod',
-    'premium.login_code_placeholder': '6-znamenkasti kod',
-    'premium.login_verify': 'Potvrdi',
-    'premium.login_resend_code': 'Ponovno pošalji kod',
-    'premium.login_email_sent': 'Kod je poslan na {{email}}',
-    'overmyhead.button': 'Ovaj slučaj me nadilazi',
-    'overmyhead.title': 'Pronađi stručnu osobu',
-    'overmyhead.text': 'Usmjeravamo vas prema odgovarajućoj službi: besplatan kantonalni imenik, udruga ili dežurni odvjetnik.',
-    'round.r1': 'R1 — Razumijem vašu situaciju',
-    'round.r2': 'R2 — Pojašnjavam ključne točke',
-    'round.r3': 'R3 — Provjeravam detalje',
-    'round.synthesis': 'Sažetak — Sastavljam vaš plan djelovanja',
-    'round.contradiction': 'Analiza — Provjeravam zakone i sudsku praksu',
-    'cert.sufficient': 'Potpuna analiza — provjereni izvori',
-    'cert.limited': 'Analiza uz ograničenja',
-    'cert.insufficient': 'Važni nedostaci — pogledajte detalje',
-    'cert.warning_label': 'Element(i) koje treba provjeriti',
-    'degraded.title': 'Ograničeni način rada',
-    'degraded.body_de': 'Vaše pitanje bilo je na njemačkom. Naša pravna analiza trenutačno se prikazuje na francuskom (ograničeni način rada).',
-    'degraded.body_it': 'Vaše pitanje bilo je na talijanskom. Naša pravna analiza trenutačno se prikazuje na francuskom (ograničeni način rada).',
-    'degraded.action_de': 'Za savjetovanje na njemačkom obratite se Mieterverbandu ili unia.ch, ovisno o području.',
-    'degraded.action_it': 'Za savjetovanje na talijanskom obratite se ASLOCA Ticino ili unia.ch, ovisno o području.'
   };
 
   // -------------------------------------------------------------------------
@@ -417,12 +318,7 @@
   if (I18N.de) extend(I18N.de, DE);
   if (I18N.it) extend(I18N.it, IT);
   if (I18N.en) extend(I18N.en, EN);
-  if (I18N.pt) extend(I18N.pt, PT);
-  if (I18N.ar) extend(I18N.ar, AR);
-  if (I18N.tr) extend(I18N.tr, TR);
-  if (I18N.sq) extend(I18N.sq, SQ);
-  if (I18N.hr) extend(I18N.hr, HR);
 
   // Expose pour debug
-  window.__JB_I18N_EXTENDED__ = { FR: FR, DE: DE, IT: IT, EN: EN, PT: PT, AR: AR, TR: TR, SQ: SQ, HR: HR };
+  window.__JB_I18N_EXTENDED__ = { FR: FR, DE: DE, IT: IT, EN: EN };
 })();

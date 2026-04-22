@@ -646,6 +646,7 @@
         ficheId: ficheId,
         type: f.type.value,
         format: f.format.value,
+        lang: currentLang(),
         userContext: {
           nom: f.nom.value,
           adresse: f.adresse.value,

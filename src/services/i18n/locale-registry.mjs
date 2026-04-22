@@ -1,18 +1,13 @@
-export const OFFERED_LOCALES = ['fr', 'de', 'it', 'en', 'pt', 'ar', 'tr', 'sq', 'hr'];
+export const OFFERED_LOCALES = ['fr', 'de', 'it', 'en'];
 export const DEFAULT_LOCALE = 'fr';
-export const RTL_LOCALES = ['ar'];
-export const UNSUPPORTED_BUT_DETECTED = ['rm'];
+export const RTL_LOCALES = [];
+export const UNSUPPORTED_BUT_DETECTED = ['rm', 'pt', 'ar', 'tr', 'sq', 'hr'];
 
 const LOCALE_META = {
   fr: { name: 'Français', deepl: 'FR', dir: 'ltr' },
   de: { name: 'Deutsch', deepl: 'DE', dir: 'ltr' },
   it: { name: 'Italiano', deepl: 'IT', dir: 'ltr' },
   en: { name: 'English', deepl: 'EN', dir: 'ltr' },
-  pt: { name: 'Português', deepl: 'PT-PT', dir: 'ltr' },
-  ar: { name: 'العربية', deepl: 'AR', dir: 'rtl' },
-  tr: { name: 'Türkçe', deepl: 'TR', dir: 'ltr' },
-  sq: { name: 'Shqip', deepl: null, dir: 'ltr' },
-  hr: { name: 'Hrvatski', deepl: null, dir: 'ltr' },
 };
 
 export function isOfferedLocale(value) {

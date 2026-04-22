@@ -12,9 +12,10 @@ async function initConsultation(domaine) {
   currentDomaine = domaine;
   currentAnswers = [];
   currentStep = 0;
+  var lang = typeof getLang === 'function' ? getLang() : 'fr';
 
   try {
-    var res = await fetch('/api/domaines/' + domaine + '/questions');
+    var res = await fetch('/api/domaines/' + domaine + '/questions?lang=' + encodeURIComponent(lang));
     if (!res.ok) throw new Error('Erreur ' + res.status);
     var data = await res.json();
     currentQuestions = data.questions || [];
@@ -134,6 +135,7 @@ function prevQuestion() {
 
 async function submitConsultation() {
   var canton = currentAnswers.find(function(a) { return a && a.length === 2 && a === a.toUpperCase(); }) || 'VD';
+  var lang = typeof getLang === 'function' ? getLang() : 'fr';
 
   // Show loading state
   var card = document.getElementById('questionCard');
@@ -146,7 +148,8 @@ async function submitConsultation() {
       body: JSON.stringify({
         domaine: currentDomaine,
         reponses: currentAnswers,
-        canton: canton
+        canton: canton,
+        lang: lang
       })
     });
 
@@ -180,7 +183,8 @@ async function loadResultat(ficheId) {
 
   if (!data) {
     try {
-      var res = await fetch('/api/fiches/' + ficheId);
+      var lang = typeof getLang === 'function' ? getLang() : 'fr';
+      var res = await fetch('/api/fiches/' + ficheId + '?lang=' + encodeURIComponent(lang));
       if (!res.ok) throw new Error(t('result.error_fiche'));
       data = await res.json();
     } catch (e) {
@@ -354,7 +358,8 @@ async function loadSearchResultat(query) {
   startLoadingIndicator(container);
 
   try {
-    var res = await fetch('/api/search?q=' + encodeURIComponent(query));
+    var lang = typeof getLang === 'function' ? getLang() : 'fr';
+    var res = await fetch('/api/search?q=' + encodeURIComponent(query) + '&lang=' + encodeURIComponent(lang));
     var data = await res.json();
     stopLoadingIndicator();
 
@@ -527,29 +532,29 @@ function renderEnrichedResult(data, query, container) {
   var canon = data.caselaw_canon;
   if (canon && (canon.leading_cases?.length || canon.nuances?.length || canon.cantonal_practice?.length)) {
     html += '<div class="card caselaw-canon"' + stagger() + '>';
-    html += '<h3>Jurisprudence canonique</h3>';
+    html += '<h3>' + t('result.caselaw_canon') + '</h3>';
 
     if (canon.leading_cases && canon.leading_cases.length) {
-      html += '<h4 class="canon-section">📌 Leading cases (décisions déterminantes)</h4>';
+      html += '<h4 class="canon-section">' + t('result.leading_cases') + '</h4>';
       canon.leading_cases.slice(0, 3).forEach(function(lc) {
         html += renderCanonCase(lc, 'leading');
       });
     }
     if (canon.nuances && canon.nuances.length) {
-      html += '<h4 class="canon-section">⚖️ Nuances et contre-cas</h4>';
+      html += '<h4 class="canon-section">' + t('result.nuances') + '</h4>';
       canon.nuances.slice(0, 2).forEach(function(nc) {
         html += renderCanonCase(nc, 'nuance');
       });
     }
     if (canon.cantonal_practice && canon.cantonal_practice.length) {
-      html += '<h4 class="canon-section">🏛️ Pratique cantonale</h4>';
+      html += '<h4 class="canon-section">' + t('result.cantonal_practice') + '</h4>';
       canon.cantonal_practice.slice(0, 3).forEach(function(cp) {
         html += renderCanonCase(cp, 'cantonal');
       });
     }
     if (canon.similar_cases && canon.similar_cases.length) {
       html += '<details class="canon-similar">';
-      html += '<summary>' + canon.similar_cases.length + ' cas similaires (exploration)</summary>';
+      html += '<summary>' + t('result.similar_cases_count', { count: canon.similar_cases.length }) + '</summary>';
       canon.similar_cases.slice(0, 10).forEach(function(sc) {
         html += renderCanonCase(sc, 'similar');
       });
@@ -584,7 +589,7 @@ function renderEnrichedResult(data, query, container) {
       if (j.principeCle) html += '<div class="juris-principle">' + escHtml(j.principeCle) + '</div>';
       if (j.fourchetteMontant) {
         var fm = j.fourchetteMontant;
-        html += '<div class="juris-range">' + escHtml(fm.min || '') + ' &mdash; ' + escHtml(fm.max || '') + (fm.median ? ' (médian: ' + escHtml(fm.median) + ')' : '') + '</div>';
+        html += '<div class="juris-range">' + escHtml(fm.min || '') + ' &mdash; ' + escHtml(fm.max || '') + (fm.median ? ' (' + t('result.median_label') + ': ' + escHtml(fm.median) + ')' : '') + '</div>';
       }
       html += '</div>';
     });
@@ -679,7 +684,7 @@ function renderEnrichedResult(data, query, container) {
       html += '<div class="hidden vulg-answer" id="' + qId + '">';
       html += '<div class="vulg-short"><strong>' + escHtml(q.reponse_courte) + '</strong></div>';
       html += '<div class="vulg-detail">' + escHtml(q.reponse_detail) + '</div>';
-      html += '<div class="vulg-source">Source: ASLOCA Kit ' + escHtml(q.numero || '') + '</div>';
+      html += '<div class="vulg-source">' + t('result.source_asloca_kit', { number: q.numero || '' }) + '</div>';
       html += '</div>';
       html += '</div>';
     });
@@ -695,7 +700,7 @@ function renderEnrichedResult(data, query, container) {
       html += '<div class="ae-icon elevee">!</div>';
       html += '<div class="ae-content">';
       html += '<div class="ae-title">' + escHtml(ae.erreur) + '</div>';
-      html += '<div class="ae-source">Source: ASLOCA ' + escHtml(ae.question_ref || '') + '</div>';
+      html += '<div class="ae-source">' + t('result.source_asloca_ref', { ref: ae.question_ref || '' }) + '</div>';
       html += '</div></div>';
     });
     html += '</div>';
@@ -739,7 +744,7 @@ function renderEnrichedResult(data, query, container) {
     .replace('{{articles}}', meta.articlesCount || articles.length || 0)
     .replace('{{arrets}}', meta.jurisprudenceCount || juris.length || 0);
   html += '<span>' + footerText;
-  if (vulg) html += ', <span class="source-count">ASLOCA Kit</span>';
+  if (vulg) html += ', <span class="source-count">' + t('result.source_asloca_short') + '</span>';
   if (normRules.length) html += ', <span class="source-count">' + t('result.source_rules').replace('{{count}}', normRules.length) + '</span>';
   html += '</span></div>';
 
@@ -800,6 +805,8 @@ function renderEnrichedResult(data, query, container) {
 // Rendu d'un cas canon (leading / nuance / cantonal / similar)
 function renderCanonCase(c, kind) {
   var roleCls = c.role_citizen || 'neutre';
+  var roleLabel = t('role.' + roleCls);
+  if (!roleLabel || roleLabel === ('role.' + roleCls)) roleLabel = roleCls;
   var tierLabel = c.tier_label || ('Tier ' + (c.tier || '?'));
   var html = '<div class="canon-card canon-' + kind + '">';
   html += '<div class="canon-header">';
@@ -807,7 +814,7 @@ function renderCanonCase(c, kind) {
   html += '<span class="canon-tier tier-' + (c.tier || 4) + '">' + escHtml(tierLabel) + '</span>';
   if (c.canton) html += '<span class="canon-canton">' + escHtml(c.canton) + '</span>';
   if (c.date) html += '<span class="canon-date">' + escHtml(c.date) + '</span>';
-  html += '<span class="canon-role role-' + roleCls + '">' + escHtml(roleCls) + '</span>';
+  html += '<span class="canon-role role-' + roleCls + '">' + escHtml(roleLabel) + '</span>';
   html += '</div>';
   if (c.citizen_summary) {
     html += '<div class="canon-summary">' + escHtml(c.citizen_summary) + '</div>';
@@ -815,9 +822,9 @@ function renderCanonCase(c, kind) {
   if (c.court) html += '<div class="canon-court">' + escHtml(c.court) + '</div>';
   if (c.article_refs_resolved && c.article_refs_resolved.length) {
     var refs = c.article_refs_resolved.filter(function(r) { return r.resolved; }).slice(0, 3).map(function(r) { return r.ref; });
-    if (refs.length) html += '<div class="canon-refs">Articles : ' + escHtml(refs.join(', ')) + '</div>';
+    if (refs.length) html += '<div class="canon-refs">' + t('result.articles_label') + ' : ' + escHtml(refs.join(', ')) + '</div>';
   }
-  if (c.url) html += '<a href="' + escHtml(c.url) + '" target="_blank" rel="noopener" class="canon-source">Source</a>';
+  if (c.url) html += '<a href="' + escHtml(c.url) + '" target="_blank" rel="noopener" class="canon-source">' + t('result.source_label') + '</a>';
   html += '</div>';
   return html;
 }

@@ -138,7 +138,7 @@ function buildAlternateLinks(slug) {
 
 function renderGuideHtml(model) {
   const htmlLang = escapeHtml(model.locale);
-  const dir = htmlLang === 'ar' ? 'rtl' : 'ltr';
+  const dir = 'ltr';
   const alternateLinks = buildAlternateLinks(model.slug);
   const articlesBlock = model.articles.length
     ? `

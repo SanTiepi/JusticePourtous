@@ -96,7 +96,7 @@
               <span data-i18n="premium.cost_letter_range">CHF 0.05 – 0.10</span>
             </div>
             <div class="premium-cost-row">
-              <span data-i18n="premium.cost_translation">Traduction (8 langues)</span>
+              <span data-i18n="premium.cost_translation">Traduction (3 langues)</span>
               <span>CHF 0.10 – 0.20</span>
             </div>
           </div>
@@ -181,11 +181,6 @@
                 <option value="de">Deutsch</option>
                 <option value="it">Italiano</option>
                 <option value="en">English</option>
-                <option value="pt">Português</option>
-                <option value="ar">العربية</option>
-                <option value="tr">Türkçe</option>
-                <option value="sq">Shqip</option>
-                <option value="hr">Hrvatski</option>
               </select>
               <button id="docxDownload" class="btn btn-sm btn-primary hidden" onclick="telechargerDocx()">
                 <span data-i18n="action.telecharger_docx">Télécharger .docx</span>
@@ -434,8 +429,8 @@
       var el = document.getElementById('noSession');
       el.innerHTML = '<div class="card" style="text-align:center;padding:3rem">' +
         '<div class="loading-spinner" style="margin:0 auto 1rem"></div>' +
-        '<h3>Paiement reçu — activation en cours</h3>' +
-        '<p style="color:var(--text-secondary)">Votre compte premium est en cours d\'activation. Cela prend généralement quelques secondes.</p>' +
+        '<h3>' + t('premium.payment_processing_title') + '</h3>' +
+        '<p style="color:var(--text-secondary)">' + t('premium.payment_processing_text') + '</p>' +
         '</div>';
       translatePremiumFragment('#noSession', '/premium/payment-processing');
     }
@@ -445,14 +440,14 @@
       var el = document.getElementById('noSession');
       el.innerHTML = '<div class="card ' + cls + '" style="text-align:center;padding:2rem">' +
         '<p>' + msg + '</p>' +
-        '<a href="/premium.html" class="btn btn-primary mt-lg">Retour</a>' +
+        '<a href="/premium.html" class="btn btn-primary mt-lg">' + t('premium.back_to_premium') + '</a>' +
         '</div>';
       translatePremiumFragment('#noSession', '/premium/payment-message');
     }
 
     function pollStripeSession(stripeSessionId, attempt) {
       if (attempt > 15) {
-        showPaymentMessage('Votre paiement a été reçu. L\'activation prend plus de temps que prévu. Rechargez cette page dans quelques instants. Si le problème persiste, contactez-nous.', 'warning');
+        showPaymentMessage(t('premium.payment_processing_warning'), 'warning');
         return;
       }
       fetch('/api/stripe/session-status?session_id=' + stripeSessionId)
@@ -527,7 +522,7 @@
         var res = await fetch('/api/premium/analyze-v3', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ texte: q, session: sessionCode })
+          body: JSON.stringify({ texte: q, session: sessionCode, lang: getLang() })
         });
         var data = await res.json();
         stopPremiumLoading();
@@ -564,7 +559,7 @@
         var res = await fetch('/api/premium/analyze-v3/refine', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ texte: lastQuery, reponses: answers, session: sessionCode })
+          body: JSON.stringify({ texte: lastQuery, reponses: answers, session: sessionCode, lang: getLang() })
         });
         var data = await res.json();
         if (data.error) { txt.textContent = data.error; return; }
@@ -711,17 +706,12 @@
       // Translate bar
       html += '<div class="translate-bar" style="margin-top:1rem;display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap">';
       html += '<select id="translateLang" class="select" style="max-width:180px">';
-      html += '<option value="">Traduire en...</option>';
+      html += '<option value="">' + t('premium.translate_select') + '</option>';
       html += '<option value="de">Deutsch</option>';
       html += '<option value="it">Italiano</option>';
       html += '<option value="en">English</option>';
-      html += '<option value="pt">Portugu\u00eas</option>';
-      html += '<option value="ar">\u0627\u0644\u0639\u0631\u0628\u064a\u0629</option>';
-      html += '<option value="tr">T\u00fcrk\u00e7e</option>';
-      html += '<option value="sq">Shqip</option>';
-      html += '<option value="hr">Hrvatski</option>';
       html += '</select>';
-      html += '<button class="btn btn-sm btn-secondary" onclick="translateResponse()">Traduire (~CHF 0.10)</button>';
+      html += '<button class="btn btn-sm btn-secondary" onclick="translateResponse()">' + t('premium.translate_button') + '</button>';
       html += '<span id="translateStatus" style="font-size:0.85rem;color:var(--text-secondary)"></span>';
       html += '</div>';
 
@@ -732,7 +722,7 @@
 
     async function translateResponse() {
       var lang = document.getElementById('translateLang');
-      if (!lang || !lang.value) { premiumAlert('Choisissez une langue.', '/premium/translate'); return; }
+      if (!lang || !lang.value) { premiumAlert(t('premium.translate_choose_lang'), '/premium/translate'); return; }
       var targetLang = lang.value;
       var status = document.getElementById('translateStatus');
 
@@ -759,9 +749,12 @@
         // Replace response content with translated text, keep translate bar
         var existingBar = txt.querySelector('.translate-bar');
         var barHtml = existingBar ? existingBar.outerHTML : '';
-        txt.innerHTML = '<div class="card-highlight"><h4>Traduction</h4><p style="white-space:pre-wrap">' + esc(data.translated) + '</p></div>';
+        txt.innerHTML = '<div class="card-highlight"><h4>' + t('premium.translate_title') + '</h4><p style="white-space:pre-wrap">' + esc(data.translated) + '</p></div>';
         if (data.cost) {
-          txt.innerHTML += '<div class="premium-cost-receipt">Coût traduction : <strong>CHF ' + (data.cost.charged_centimes / 100).toFixed(2) + '</strong> — Solde : CHF ' + (data.cost.solde_restant / 100).toFixed(2) + '</div>';
+          txt.innerHTML += '<div class="premium-cost-receipt">' + t('premium.translate_cost_receipt', {
+            cost: (data.cost.charged_centimes / 100).toFixed(2),
+            remaining: (data.cost.solde_restant / 100).toFixed(2)
+          }) + '</div>';
         }
         txt.innerHTML += barHtml;
         translatePremiumFragment('#reponseTexte', '/premium/translated-response');
@@ -877,7 +870,8 @@
             session: sessionCode,
             ficheId: lastFicheId,
             userContext: lastQuery,
-            type: selectedType
+            type: selectedType,
+            lang: getLang()
           })
         });
         var data = await res.json();

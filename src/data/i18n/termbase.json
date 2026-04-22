@@ -1,5 +1,5 @@
 {
-  "version": "2026-04-19-v1",
+  "version": "2026-04-22-v4",
   "global": {
     "never_translate": [
       "Fedlex",
@@ -19,32 +19,17 @@
       "mise en demeure": {
         "de": "Mahnung",
         "it": "diffida",
-        "en": "formal notice",
-        "pt": "notificação formal",
-        "ar": "إنذار رسمي",
-        "tr": "resmi ihtar",
-        "sq": "njoftim formal",
-        "hr": "službena opomena"
+        "en": "formal notice"
       },
       "commandement de payer": {
         "de": "Zahlungsbefehl",
         "it": "precetto esecutivo",
-        "en": "payment order",
-        "pt": "comando de pagamento",
-        "ar": "أمر بالدفع",
-        "tr": "ödeme emri",
-        "sq": "urdhër pagese",
-        "hr": "platni nalog"
+        "en": "payment order"
       },
       "bail": {
         "de": "Mietvertrag",
         "it": "contratto di locazione",
-        "en": "lease agreement",
-        "pt": "contrato de arrendamento",
-        "ar": "عقد الإيجار",
-        "tr": "kira sözleşmesi",
-        "sq": "kontrata e qirasë",
-        "hr": "ugovor o najmu"
+        "en": "lease agreement"
       }
     },
     "translate": {}
@@ -52,7 +37,33 @@
   "domains": {
     "bail": {
       "never_translate": ["Mieterverband", "commission de conciliation"],
-      "preferred": {}
+      "preferred": {
+        "bailleur": {
+          "de": "Vermieter",
+          "it": "locatore",
+          "en": "landlord"
+        },
+        "locataire": {
+          "de": "Mieter",
+          "it": "conduttore",
+          "en": "tenant"
+        },
+        "loyer": {
+          "de": "Miete",
+          "it": "pigione",
+          "en": "rent"
+        },
+        "dépôt de garantie": {
+          "de": "Mietkaution",
+          "it": "deposito di garanzia",
+          "en": "security deposit"
+        },
+        "caution": {
+          "de": "Kaution",
+          "it": "cauzione",
+          "en": "deposit"
+        }
+      }
     },
     "travail": {
       "never_translate": ["unia.ch"],

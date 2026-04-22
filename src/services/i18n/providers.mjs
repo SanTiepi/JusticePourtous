@@ -104,16 +104,27 @@ function applyGlossaryPreface(text, glossary) {
 function applyGlossaryOverrides(text, glossary) {
   if (!text || !glossary || !Object.keys(glossary).length) return text;
   let out = text;
-  for (const [source, target] of Object.entries(glossary)) {
-    if (source && target && out.includes(source)) out = out.split(source).join(target);
+  const entries = Object.entries(glossary).sort((a, b) => b[0].length - a[0].length);
+  for (const [source, target] of entries) {
+    if (!source || !target) continue;
+    const pattern = new RegExp(`(?<![\\p{L}])${escapeRegExp(source)}(?![\\p{L}])`, 'gu');
+    out = out.replace(pattern, target);
   }
   return out;
 }
 
-async function callFakeTranslation({ text, targetLang }) {
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+async function callFakeTranslation({ text, targetLang, glossary = {} }) {
   if (process.env.JB_TRANSLATION_FAKE !== '1') return null;
+  const delayMs = Number(process.env.JB_TRANSLATION_FAKE_DELAY_MS || 0);
+  if (Number.isFinite(delayMs) && delayMs > 0) {
+    await new Promise((resolve) => setTimeout(resolve, delayMs));
+  }
   return {
-    text: `[[${targetLang}]] ${text}`,
+    text: applyGlossaryOverrides(`[[${targetLang}]] ${text}`, glossary),
     provider: 'fake_mt',
     usage: null
   };

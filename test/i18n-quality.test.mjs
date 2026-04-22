@@ -33,8 +33,7 @@ const frenchLeakPatterns = [
 ];
 
 const localeSpecificDenylist = {
-  en: ['Contestation'],
-  sq: ['situtat', 'ringarkkohet', 'Gjeneraani', 'pranueshmris', 'referancave']
+  en: ['Contestation']
 };
 
 test('non-French locale bundles do not contain obvious French UI leakage', function () {

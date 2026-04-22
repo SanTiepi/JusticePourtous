@@ -139,6 +139,108 @@ async function maybeTranslateText(req, url, body, text, options = {}) {
   });
 }
 
+function limitItems(list, limit) {
+  return Array.isArray(list) ? list.slice(0, limit) : [];
+}
+
+function truncateText(value, maxLength = 800) {
+  if (typeof value !== 'string') return value;
+  if (value.length <= maxLength) return value;
+  return `${value.slice(0, maxLength).trimEnd()}…`;
+}
+
+function pickSearchJurisprudence(list) {
+  if (!Array.isArray(list) || !list.length) return [];
+  const favorable = list.filter((item) => item?.role === 'favorable').slice(0, 3);
+  const defavorable = list.filter((item) => item?.role === 'defavorable').slice(0, 2);
+  const neutre = list.filter((item) => !item?.role || item.role === 'neutre').slice(0, 2);
+  const picked = [...favorable, ...defavorable, ...neutre];
+  if (picked.length) return picked;
+  return list.slice(0, 5);
+}
+
+function shapeSearchPayload(payload) {
+  if (!payload || typeof payload !== 'object' || payload.type === 'taxonomie' || payload.type === 'unclear') {
+    return payload;
+  }
+
+  const fiche = payload.fiche || {};
+  const reponse = fiche.reponse || {};
+  const vulgarisation = payload.vulgarisation || null;
+  const canon = payload.caselaw_canon || null;
+  const articles = Array.isArray(payload.articles) ? payload.articles : [];
+  const jurisprudence = Array.isArray(payload.jurisprudence) ? payload.jurisprudence : [];
+  const templates = Array.isArray(payload.templates) ? payload.templates : [];
+  const delais = Array.isArray(payload.delais) ? payload.delais : [];
+  const antiErreurs = Array.isArray(payload.antiErreurs) ? payload.antiErreurs : [];
+  const escalade = Array.isArray(payload.escalade) ? payload.escalade : [];
+  const suggestions = Array.isArray(payload.suggested_questions) ? payload.suggested_questions : [];
+  const normativeRules = Array.isArray(payload.normative_rules) ? payload.normative_rules : [];
+
+  return {
+    fiche: {
+      id: fiche.id,
+      domaine: fiche.domaine,
+      sousDomaine: fiche.sousDomaine,
+      tags: limitItems(fiche.tags, 10),
+      confiance: fiche.confiance,
+      description: fiche.description,
+      last_verified_at: fiche.last_verified_at,
+      freshness: fiche.freshness,
+      review_scope: fiche.review_scope,
+      review_expiry: fiche.review_expiry,
+      reponse: {
+        explication: reponse.explication || '',
+        actions: limitItems(reponse.actions, 5)
+      }
+    },
+    confiance: payload.confiance,
+    lacunes: limitItems(payload.lacunes, 6),
+    articles: limitItems(articles, 5),
+    delais: limitItems(delais, 5),
+    antiErreurs: limitItems(antiErreurs, 4),
+    escalade: limitItems(escalade, 5),
+    templates: limitItems(templates, 3).map((template) => ({
+      ...template,
+      contenu: truncateText(template?.contenu, 800),
+      template: truncateText(template?.template, 800),
+      texte: truncateText(template?.texte, 800)
+    })),
+    jurisprudence: pickSearchJurisprudence(jurisprudence),
+    caselaw_canon: canon ? {
+      leading_cases: limitItems(canon.leading_cases, 3),
+      nuances: limitItems(canon.nuances, 2),
+      cantonal_practice: limitItems(canon.cantonal_practice, 3),
+      similar_cases: limitItems(canon.similar_cases, 10)
+    } : null,
+    vulgarisation: vulgarisation ? {
+      questions_citoyennes: limitItems(vulgarisation.questions_citoyennes, 5),
+      anti_erreurs: limitItems(vulgarisation.anti_erreurs, 4),
+      delais: limitItems(vulgarisation.delais, 5)
+    } : null,
+    normative_rules: limitItems(normativeRules, 5),
+    suggested_questions: limitItems(suggestions, 5),
+    alternatives: limitItems(payload.alternatives || payload.related, 5),
+    llm_triage: payload.llm_triage ? {
+      ficheId: payload.llm_triage.ficheId,
+      domaine: payload.llm_triage.domaine,
+      resume: payload.llm_triage.resume,
+      confiance: payload.llm_triage.confiance,
+      questions: limitItems(payload.llm_triage.questions, 5),
+      complet: payload.llm_triage.complet
+    } : null,
+    triage_method: payload.triage_method,
+    disclaimer: payload.disclaimer,
+    _meta: {
+      ...(payload._meta || {}),
+      articlesCount: payload._meta?.articlesCount || articles.length,
+      jurisprudenceCount: payload._meta?.jurisprudenceCount || jurisprudence.length,
+      templatesCount: payload._meta?.templatesCount || templates.length,
+      escaladeCount: payload._meta?.escaladeCount || escalade.length
+    }
+  };
+}
+
 // ─── Stripe (optional — graceful if no keys) ───────────────────
 let stripe = null;
 const STRIPE_SECRET = process.env.STRIPE_SECRET_KEY;
@@ -1162,10 +1264,11 @@ const server = createServer(async (req, res) => {
           triageResult.data
         );
 
+        const shapedResponse = shapeSearchPayload(responseData);
         logTriage(q, triageResult.data, 'llm', Date.now() - triageStart);
-        return json(res, 200, await maybeTranslatePayload(req, url, null, responseData, {
+        return json(res, 200, await maybeTranslatePayload(req, url, null, shapedResponse, {
           contentType: 'structured_legal_content',
-          domain: responseData?.fiche?.domaine || triageResult.data?.domaine
+          domain: shapedResponse?.fiche?.domaine || triageResult.data?.domaine
         }));
       }
 
@@ -1188,10 +1291,11 @@ const server = createServer(async (req, res) => {
       if (fallbackData.fiche?.id) {
         fallbackData.suggested_questions = generateSuggestedQuestions(fallbackData.fiche.id, fallbackData, null);
       }
+      const shapedFallback = shapeSearchPayload(fallbackData);
       logTriage(q, result.data, 'keyword_fallback', Date.now() - triageStart);
-      return json(res, result.status, await maybeTranslatePayload(req, url, null, fallbackData, {
+      return json(res, result.status, await maybeTranslatePayload(req, url, null, shapedFallback, {
         contentType: 'structured_legal_content',
-        domain: fallbackData?.fiche?.domaine
+        domain: shapedFallback?.fiche?.domaine
       }));
     }
 

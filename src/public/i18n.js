@@ -8,7 +8,7 @@
  *   t('nav.annuaire')           → "Annuaire" / "Verzeichnis"
  *   t('hero.subtitle', {name})  → interpolation with {{name}}
  *   setLang('de')               → switch + reload UI
- *   getLang()                    → 'fr' | 'de' | 'it' | 'en' | 'pt' | 'ar' | 'tr' | 'sq' | 'hr'
+ *   getLang()                    → 'fr' | 'de' | 'it' | 'en'
  */
 
 // ---------------------------------------------------------------------------
@@ -3267,7 +3267,7 @@ function getLang() {
 
 /**
  * Set the language and persist to localStorage.
- * @param {string} lang - 'fr', 'de', 'it', 'en', 'pt', 'ar', 'tr', 'sq' or 'hr'
+ * @param {string} lang - 'fr', 'de', 'it' or 'en'
  */
 function setLang(lang) {
   var normalized = normalizeLang(lang);
@@ -3275,9 +3275,8 @@ function setLang(lang) {
   _currentLang = normalized;
   try { localStorage.setItem('jb_lang', normalized); } catch (e) { /* silent */ }
   setCookie('jb_lang', normalized);
-  // Update html[lang] attribute for CSS selectors (e.g. RTL for Arabic)
   document.documentElement.lang = normalized;
-  document.documentElement.dir = normalized === 'ar' ? 'rtl' : 'ltr';
+  document.documentElement.dir = 'ltr';
   ensureBundle(normalized);
   // Dispatch event so components can react
   if (typeof CustomEvent !== 'undefined') {
@@ -3333,23 +3332,17 @@ function tLoadingMessages(prefix) {
 
 /**
  * Language metadata. Names shown in the dropdown in their own language.
- * AR is marked as RTL. RTL partially implemented via CSS (html[lang="ar"] { direction: rtl }).
  */
 var LANG_META = {
   fr: { label: 'FR', name: 'Fran\u00e7ais' },
   de: { label: 'DE', name: 'Deutsch' },
   it: { label: 'IT', name: 'Italiano' },
-  en: { label: 'EN', name: 'English' },
-  pt: { label: 'PT', name: 'Portugu\u00eas' },
-  ar: { label: 'AR', name: '\u0627\u0644\u0639\u0631\u0628\u064a\u0629', rtl: true },
-  tr: { label: 'TR', name: 'T\u00fcrk\u00e7e' },
-  sq: { label: 'SQ', name: 'Shqip' },
-  hr: { label: 'HR', name: 'Hrvatski' }
+  en: { label: 'EN', name: 'English' }
 };
 
 /**
  * Create a language switcher DOM element.
- * With 9 languages, renders a compact <select> dropdown instead of individual buttons.
+ * Renders a compact <select> dropdown.
  * Each option shows the language code and native name (e.g. "FR — Fran\u00e7ais").
  * Active language is pre-selected.
  *
@@ -3359,7 +3352,7 @@ function createLangSwitcher() {
   var container = document.createElement('div');
   container.className = 'lang-switcher';
 
-  var langs = ['fr', 'de', 'it', 'en', 'pt', 'ar', 'tr', 'sq', 'hr'];
+  var langs = ['fr', 'de', 'it', 'en'];
   var current = getLang();
 
   var label = document.createElement('label');
@@ -3615,7 +3608,7 @@ function translateHeadIfNeeded() {
 function initI18nRuntime() {
   var lang = getLang();
   document.documentElement.lang = lang;
-  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.documentElement.dir = 'ltr';
   applyDataTranslations(document);
   applyChromeTranslations();
   return Promise.resolve(ensureBundle(lang))

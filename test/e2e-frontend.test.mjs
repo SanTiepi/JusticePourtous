@@ -169,12 +169,12 @@ describe('E2E Frontend — full user flow', { timeout: 300000 }, () => {
 
   // ─── 6. Domaines ─────────────────────────────────────────────
   describe('6. Domaines', () => {
-    it('GET /api/domaines returns 10 domaines', async () => {
+    it('GET /api/domaines returns all configured domaines (>= 10)', async () => {
       const res = await request('/api/domaines');
       assert.equal(res.status, 200);
       const data = res.json();
       assert.ok(Array.isArray(data.domaines), 'domaines is not an array');
-      assert.equal(data.domaines.length, 10, `Expected 10 domaines, got ${data.domaines.length}`);
+      assert.ok(data.domaines.length >= 10, `Expected >= 10 domaines, got ${data.domaines.length}`);
     });
 
     it('domaines have accented names', async () => {

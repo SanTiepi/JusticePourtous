@@ -14,3 +14,7 @@ src/data/meta/cases.json
 src/data/meta/analytics.json
 src/data/meta/harvest-log.json
 src/data/meta/entscheidsuche-ingestion-log.json
+
+# Mock outputs du script ingest-entscheidsuche (--mock par défaut en dev/CI)
+# Le vrai corpus seed est entscheidsuche-2026-04-19.json (tracké).
+src/data/jurisprudence-cantonale/entscheidsuche-*-mock.json

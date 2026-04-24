@@ -188,7 +188,8 @@ async function main() {
 
   mkdirSync(OUT_DIR, { recursive: true });
   const today = new Date().toISOString().slice(0, 10);
-  const outPath = join(OUT_DIR, `entscheidsuche-${today}.json`);
+  const suffix = flags.mock ? '-mock' : '';
+  const outPath = join(OUT_DIR, `entscheidsuche-${today}${suffix}.json`);
   writeFileSync(outPath, JSON.stringify(unique, null, 2), 'utf8');
 
   // Index par canton et par domaine

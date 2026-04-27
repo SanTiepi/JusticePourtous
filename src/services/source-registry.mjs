@@ -318,7 +318,7 @@ export const RS_BY_PREFIX = Object.freeze({
   CP: { rs: '311.0', titre: 'Code pénal suisse', tier: 1, scope: 'CH' },
   CPP: { rs: '312.0', titre: 'Code de procédure pénale', tier: 1, scope: 'CH' },
   CPC: { rs: '272', titre: 'Code de procédure civile', tier: 1, scope: 'CH' },
-  CST: { rs: '101', titre: 'Constitution fédérale', tier: 1, scope: 'CH' },
+  Cst: { rs: '101', titre: 'Constitution fédérale', tier: 1, scope: 'CH' },
   // Poursuites et faillites
   LP: { rs: '281.1', titre: 'Loi fédérale sur la poursuite pour dettes et la faillite', tier: 1, scope: 'CH' },
   // Assurances sociales
@@ -328,6 +328,7 @@ export const RS_BY_PREFIX = Object.freeze({
   LAI: { rs: '831.20', titre: 'Loi fédérale sur l\'assurance-invalidité', tier: 1, scope: 'CH' },
   RAI: { rs: '831.201', titre: 'Règlement sur l\'assurance-invalidité', tier: 1, scope: 'CH' },
   LAMal: { rs: '832.10', titre: 'Loi fédérale sur l\'assurance-maladie', tier: 1, scope: 'CH' },
+  OAMal: { rs: '832.102', titre: 'Ordonnance sur l\'assurance-maladie', tier: 1, scope: 'CH' },
   LAVS: { rs: '831.10', titre: 'Loi fédérale sur l\'assurance-vieillesse et survivants', tier: 1, scope: 'CH' },
   LPC: { rs: '831.30', titre: 'Loi fédérale sur les prestations complémentaires', tier: 1, scope: 'CH' },
   LAPG: { rs: '834.1', titre: 'Loi fédérale sur les allocations pour perte de gain', tier: 1, scope: 'CH' },
@@ -346,12 +347,16 @@ export const RS_BY_PREFIX = Object.freeze({
   LAO: { rs: '741.03', titre: 'Loi fédérale sur les amendes d\'ordre', tier: 1, scope: 'CH' },
   OAO: { rs: '741.031', titre: 'Ordonnance sur les amendes d\'ordre', tier: 1, scope: 'CH' },
   OETV: { rs: '741.41', titre: 'Ordonnance concernant les exigences techniques requises pour les véhicules', tier: 1, scope: 'CH' },
+  OAC: { rs: '741.51', titre: 'Ordonnance réglant l\'admission des personnes et des véhicules à la circulation routière', tier: 1, scope: 'CH' },
   LCA: { rs: '221.229.1', titre: 'Loi fédérale sur le contrat d\'assurance', tier: 1, scope: 'CH' },
   LTr: { rs: '822.11', titre: 'Loi fédérale sur le travail', tier: 1, scope: 'CH' },
   LEg: { rs: '151.1', titre: 'Loi fédérale sur l\'égalité', tier: 1, scope: 'CH' },
   LPD: { rs: '235.1', titre: 'Loi fédérale sur la protection des données', tier: 1, scope: 'CH' },
   LCD: { rs: '241', titre: 'Loi fédérale contre la concurrence déloyale', tier: 1, scope: 'CH' },
   LDIP: { rs: '291', titre: 'Loi fédérale sur le droit international privé', tier: 1, scope: 'CH' },
+  // Santé publique
+  LEp: { rs: '818.101', titre: 'Loi fédérale sur la lutte contre les maladies transmissibles de l\'homme (Loi sur les épidémies)', tier: 1, scope: 'CH' },
+  LPMéd: { rs: '811.11', titre: 'Loi fédérale sur les professions médicales universitaires', tier: 1, scope: 'CH' },
   // Cantonal / pratique (pas un RS Fedlex, mais on reconnaît)
   LASV: { rs: 'vd.lasv', titre: 'Loi vaudoise sur l\'action sociale', tier: 1, scope: 'VD' },
   LIASI: { rs: 'ge.liasi', titre: 'Loi genevoise sur l\'insertion et l\'aide sociale individuelle', tier: 1, scope: 'GE' },
@@ -359,21 +364,39 @@ export const RS_BY_PREFIX = Object.freeze({
   CSIAS: { rs: 'csias', titre: 'Normes CSIAS (Conférence suisse des institutions d\'action sociale)', tier: 3, scope: 'CH' }
 });
 
-/** Extrait le préfixe d'une ref type "CO 259a" → "CO". */
+/** Extrait le préfixe d'une ref type "CO 259a" → "CO", "LPMéd 40" → "LPMéd". */
 export function extractPrefix(ref) {
   if (!ref || typeof ref !== 'string') return null;
-  const m = ref.trim().match(/^([A-Z][A-Za-z]*)\s/);
+  // Premier caractère = lettre latine majuscule, suivants = lettres latines
+  // ou accentuées (LPMéd, LSAss, …). \p{L} couvre lettres Unicode.
+  const m = ref.trim().match(/^([A-Z][\p{L}]*)\s/u);
   return m ? m[1] : null;
+}
+
+// Index case-insensitive bâti à la première résolution. Permet de tolérer
+// "cst", "CST", "Cst" sans dupliquer les entrées dans la table principale.
+let _prefixIndexCI = null;
+function ciLookup(prefix) {
+  if (!_prefixIndexCI) {
+    _prefixIndexCI = new Map();
+    for (const [k, v] of Object.entries(RS_BY_PREFIX)) {
+      _prefixIndexCI.set(k.toLowerCase(), v);
+    }
+  }
+  return _prefixIndexCI.get(prefix.toLowerCase()) || null;
 }
 
 /**
  * Résout dynamiquement une ref via le préfixe RS. Retourne null si préfixe
  * inconnu. Le source_id généré est stable : fedlex:rs{RS}:{slug-ref}.
+ *
+ * Lookup : exact match d'abord (préserve casse canonique de la table),
+ * puis fallback case-insensitive (tolère variations de casse en fiche).
  */
 export function resolveByPrefix(ref) {
   const prefix = extractPrefix(ref);
   if (!prefix) return null;
-  const entry = RS_BY_PREFIX[prefix];
+  const entry = RS_BY_PREFIX[prefix] || ciLookup(prefix);
   if (!entry) return null;
   // Slug : "CO 259a" → "co-259a"
   const slug = ref.trim().toLowerCase().replace(/\s+/g, '-').replace(/[^\w.\-:]/g, '');

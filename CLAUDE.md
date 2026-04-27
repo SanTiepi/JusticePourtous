@@ -46,13 +46,13 @@
 
 ## Mode actif (éphémère — contexte de la session en cours)
 
-### État actuel (mis à jour 2026-04-19)
+### État actuel (mis à jour 2026-04-28)
 - **15 domaines couverts** (10 core + consommation/voisinage/circulation/successions/sante en `readiness: beta`)
-- **284 fiches** dont **100% `reviewed_by_claude`** (checklist structurelle stricte) + 29 `information_only`
-- **145/284 avec cascades structurées** (actionabilité)
-- **34 règles normatives exécutables** sur **13 domaines** (bail/travail/dettes/transversal/consommation/assurances/voisinage + famille/etrangers/social/violence/accident/entreprise — +12 règles ajoutées 2026-04-19 via phase5-domain-extension fix)
-- **282 invariants régression juridique** (hash-lock sur délais/articles, recalculés 2026-04-19 avec les +12 règles)
-- **376 intents catalogués**, pages SEO guides = 253
+- **314 fiches** dont **281 `reviewed_by_claude`** (100% des fiches actionnables, checklist structurelle stricte) + **33 `information_only`**
+- **145/314 avec cascades structurées** (actionabilité)
+- **76 règles normatives exécutables** sur **18 modules** (bail/travail/dettes/transversal/consommation/assurances/voisinage/famille/etrangers/social/violence/accident/entreprise + fiscal/LPP/PPE/circulation/successions — +42 règles depuis 2026-04-19, dont +22 fiscal/LPP/PPE et +20 phase5)
+- **282 invariants régression juridique** sur 30 fiches gold (hash-lock sur délais/articles, recalculés post-extension règles)
+- **326 intents catalogués**, pages SEO guides = 253
 - **Source-registry 100% résolution** (fallback RS Fedlex — CC/CO/LP/LAA/LAI/LAMal/LCR/LAO/...)
 - **Corpus jurisprudence cantonale** en ingestion via `scripts/ingest-entscheidsuche.mjs` (lacune démocratique comblée)
 - **Compte citoyen longitudinal 12 mois** (magic link, k-anonymization)
@@ -82,7 +82,7 @@
 - Semantic routing "récupérer la garde" → violence au lieu de famille (DOMAIN_REQUIRED_TRIGGERS pour violence)
 - Phase4 scope test assertait draft_automated alors que fiches legitimes en reviewed_by_claude
 
-**Normative compiler** : 22 → 34 règles (+12 FAMILLE/ETRANGERS/SOCIAL/VIOLENCE/ACCIDENT/ENTREPRISE). **282 invariants** régression juridique (recalculés).
+**Normative compiler** : 22 → 34 → 54 → 76 règles (+12 phase5 puis +20 phase5b puis +22 FISCAL/LPP/PPE + LP depth). **282 invariants** régression juridique (recalculés).
 
 **Deploy live** : 12/12 ok sur https://justicepourtous.ch. Secrets CITIZEN_EMAIL_SALT + OUTCOMES_HASH_SALT générés + vault. Image repo nettoyée (cases.json 200MB retiré de l'historique via filter-branch).
 

@@ -91,7 +91,6 @@ async function runFreshnessCheck(options = {}) {
   console.log(`Freshness check: ${articles.length} articles loaded`);
 
   const report = {
-    generated_at: new Date().toISOString(),
     total_articles: articles.length,
     with_fedlex_url: 0,
     without_fedlex_url: 0,
@@ -119,12 +118,19 @@ async function runFreshnessCheck(options = {}) {
     }
   }
 
-  // 2. URL spot-check (sample random articles with Fedlex URLs)
+  // 2. URL spot-check — échantillon déterministe et uniformément distribué
+  // (tri alphabétique par ref puis stride régulier → reproductible entre runs,
+  // tout en couvrant l'ensemble du corpus plutôt que les N premiers)
   if (checkUrls) {
     const withUrl = articles.filter(a => a.lienFedlex);
-    const sample = withUrl.length <= sampleSize
-      ? withUrl
-      : withUrl.sort(() => Math.random() - 0.5).slice(0, sampleSize);
+    let sample;
+    if (withUrl.length <= sampleSize) {
+      sample = withUrl;
+    } else {
+      const sorted = [...withUrl].sort((a, b) => (a.ref || '').localeCompare(b.ref || ''));
+      const stride = sorted.length / sampleSize;
+      sample = Array.from({ length: sampleSize }, (_, i) => sorted[Math.floor(i * stride)]);
+    }
 
     console.log(`Checking ${sample.length} Fedlex URLs...`);
     for (const art of sample) {

@@ -333,8 +333,8 @@ describe('scripts/audit-fiches-schema.mjs', () => {
     assert.ok(fs.existsSync(reportPath), 'rapport JSON manquant');
     const json = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
     assert.ok(json.summary && typeof json.summary.total === 'number');
-    assert.ok(json.generated_at);
-    // Console output sanity
+    assert.ok(typeof json.strict === 'boolean');
+    // Console output sanity (timestamp en console seulement, pas dans le JSON déterministe)
     assert.ok(stdout.includes('AUDIT SCHEMA FICHES'));
   });
 });

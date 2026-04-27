@@ -174,7 +174,6 @@ function auditCoverage() {
   }
 
   const report = {
-    generatedAt: new Date().toISOString(),
     totals: {
       fiches: fiches.length,
       totalRefOccurrences: totalOccurrences,

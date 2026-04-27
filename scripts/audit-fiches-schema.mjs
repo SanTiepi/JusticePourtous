@@ -45,7 +45,6 @@ function main() {
   const stats = countFicheSchemaIssues(report);
 
   const out = {
-    generated_at: new Date().toISOString(),
     strict: STRICT,
     summary: {
       total: stats.total,
@@ -75,7 +74,7 @@ function main() {
   console.log('═══════════════════════════════════════════════════════════════');
   console.log('  AUDIT SCHEMA FICHES — JusticePourtous');
   console.log('═══════════════════════════════════════════════════════════════');
-  console.log(`  Généré : ${out.generated_at}  (${took} ms)`);
+  console.log(`  Généré : ${new Date().toISOString()}  (${took} ms)`);
   console.log(`  Mode   : ${STRICT ? 'STRICT' : 'normal'}${TOLERANT ? ' (tolerant)' : ''}`);
   console.log('');
   console.log(`  Total fiches      : ${stats.total}`);

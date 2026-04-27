@@ -24,7 +24,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "accident_circulation",
@@ -54,7 +54,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "accident_circulation_roles_assurances",
@@ -78,11 +78,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "accident_constat_amiable",
@@ -105,11 +105,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "accident_domestique_responsabilite",
@@ -133,11 +133,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "accident_domicile_assurance",
@@ -188,7 +188,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "accident_expertise_medicale",
@@ -233,11 +233,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "accident_invalidite_suite",
@@ -261,11 +261,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "accident_lca_defaut",
@@ -355,11 +355,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "accident_rc_vehicules_indemnisation",
@@ -387,7 +387,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "accident_responsabilite_civile",
@@ -417,7 +417,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "accident_retrait_permis",
@@ -511,7 +511,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "accident_travail_prestations_laa",
@@ -535,11 +535,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "accident_voies_de_fait",
@@ -634,7 +634,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "assurance_ai_opposition",
@@ -658,12 +658,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "partial",
-    "has_cascade": false,
+    "etat_couverture": "complete",
+    "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "assurance_ai_rente",
@@ -693,7 +693,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "assurance_allocations_familiales",
@@ -716,11 +716,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "assurance_avs_calcul",
@@ -767,11 +767,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "assurance_chomage_contestation",
@@ -818,11 +818,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "assurance_chomage_inscription",
@@ -845,11 +845,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "assurance_complementaire_refus",
@@ -922,7 +922,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "assurance_invalidite_reclassement",
@@ -973,7 +973,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "assurance_laa_contestation",
@@ -1002,7 +1002,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "assurance_laa_employeur_declaration",
@@ -1030,7 +1030,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "assurance_lamal_changement",
@@ -1097,12 +1097,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "partial",
-    "has_cascade": false,
+    "etat_couverture": "complete",
+    "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "assurance_lpp_litige",
@@ -1148,11 +1148,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "assurance_pc_avs_ai",
@@ -1180,7 +1180,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "assurance_perte_gain_maladie",
@@ -1232,7 +1232,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "assurance_rc_menage",
@@ -1347,7 +1347,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_ascenseur_panne",
@@ -1397,7 +1397,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_baby_sitting_resiliation",
@@ -1464,12 +1464,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "stub",
-    "has_cascade": false,
+    "etat_couverture": "partial",
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_changement_proprietaire",
@@ -1495,7 +1495,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_charges_contestees",
@@ -1522,7 +1522,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_colocation",
@@ -1549,7 +1549,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_conciliation_procedure",
@@ -1621,7 +1621,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_defaut_bruit",
@@ -1648,7 +1648,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_defaut_moisissure",
@@ -1676,7 +1676,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_depot_garantie",
@@ -1698,12 +1698,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "stub",
+    "etat_couverture": "complete",
     "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_discrimination_location",
@@ -1747,12 +1747,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "stub",
-    "has_cascade": false,
+    "etat_couverture": "partial",
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_droit_retractation",
@@ -1775,11 +1775,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_etat_des_lieux",
@@ -1806,7 +1806,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_etat_lieux_conteste",
@@ -1833,7 +1833,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_expulsion",
@@ -1854,12 +1854,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "partial",
+    "etat_couverture": "complete",
     "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_faillite_locataire",
@@ -1882,11 +1882,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_frais_chauffage",
@@ -1913,7 +1913,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_fuite_eau",
@@ -1981,12 +1981,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "partial",
+    "etat_couverture": "complete",
     "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_loyer_abusif",
@@ -2013,7 +2013,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_loyer_initial_abusif",
@@ -2035,12 +2035,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "stub",
+    "etat_couverture": "partial",
     "has_cascade": false,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_loyers_impayes",
@@ -2069,7 +2069,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_modification_contrat",
@@ -2091,12 +2091,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "stub",
+    "etat_couverture": "partial",
     "has_cascade": false,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_nuisances_voisins",
@@ -2123,7 +2123,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_parking",
@@ -2145,12 +2145,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "stub",
-    "has_cascade": false,
+    "etat_couverture": "partial",
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_prolongation",
@@ -2176,7 +2176,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_punaises_lit",
@@ -2227,7 +2227,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_reglement_immeuble",
@@ -2276,7 +2276,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_reparations_locataire",
@@ -2302,7 +2302,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_resiliation_conteste",
@@ -2329,7 +2329,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_restitution_anticipee",
@@ -2352,12 +2352,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "stub",
+    "etat_couverture": "partial",
     "has_cascade": false,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-13"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_sous_location",
@@ -2383,7 +2383,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_sous_location_refusee",
@@ -2409,7 +2409,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "bail_travaux_non_faits",
@@ -2436,7 +2436,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "circulation_accident_responsabilite_civile",
@@ -2459,12 +2459,67 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
+    "etat_couverture": "complete",
+    "has_cascade": true,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-18"
+  },
+  {
+    "id": "circulation_accident_sortie_autoroute",
+    "label_citoyen": "J'ai une situation liée à : Accident sortie autoroute",
+    "label_juridique": "Accident sortie autoroute",
+    "domaines": [
+      "circulation"
+    ],
+    "fiches_associees": [
+      "circulation_accident_sortie_autoroute"
+    ],
+    "sousDomaine": "accident_autoroute",
+    "tags": [
+      "autoroute",
+      "sortie",
+      "bretelle",
+      "perte maîtrise",
+      "OCR",
+      "vitesse"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
     "etat_couverture": "partial",
     "has_cascade": false,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "circulation_accident_vehicule_non_assure",
+    "label_citoyen": "J'ai une situation liée à : Accident vehicule non assure",
+    "label_juridique": "Accident vehicule non assure",
+    "domaines": [
+      "circulation"
+    ],
+    "fiches_associees": [
+      "circulation_accident_vehicule_non_assure"
+    ],
+    "sousDomaine": "fonds_garantie",
+    "tags": [
+      "non assuré",
+      "fonds national de garantie",
+      "NGF",
+      "conducteur inconnu",
+      "délit de fuite"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
   },
   {
     "id": "circulation_alcool_retrait_permis",
@@ -2491,7 +2546,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "circulation_amende_ordre",
@@ -2513,12 +2568,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "partial",
-    "has_cascade": false,
+    "etat_couverture": "complete",
+    "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "circulation_assurance_rc_obligatoire",
@@ -2545,7 +2600,64 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
+  },
+  {
+    "id": "circulation_casco_vol_vs_degats",
+    "label_citoyen": "J'ai une situation liée à : Casco vol vs degats",
+    "label_juridique": "Casco vol vs degats",
+    "domaines": [
+      "circulation"
+    ],
+    "fiches_associees": [
+      "circulation_casco_vol_vs_degats"
+    ],
+    "sousDomaine": "casco",
+    "tags": [
+      "casco",
+      "vol",
+      "dégâts",
+      "LCA",
+      "franchise",
+      "vétusté",
+      "indemnisation"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "circulation_chauffeur_employe_responsabilite",
+    "label_citoyen": "J'ai une situation liée à : Chauffeur employe responsabilite",
+    "label_juridique": "Chauffeur employe responsabilite",
+    "domaines": [
+      "circulation"
+    ],
+    "fiches_associees": [
+      "circulation_chauffeur_employe_responsabilite"
+    ],
+    "sousDomaine": "responsabilité_employeur",
+    "tags": [
+      "employé",
+      "chauffeur",
+      "employeur",
+      "CO 55",
+      "risque professionnel",
+      "trajet"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
   },
   {
     "id": "circulation_conducteur_sans_permis",
@@ -2572,7 +2684,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "circulation_constat_amiable_europeen",
@@ -2599,7 +2711,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "circulation_cycliste_droits",
@@ -2627,7 +2739,119 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
+  },
+  {
+    "id": "circulation_delit_fuite_consequences",
+    "label_citoyen": "J'ai une situation liée à : Delit fuite consequences",
+    "label_juridique": "Delit fuite consequences",
+    "domaines": [
+      "circulation"
+    ],
+    "fiches_associees": [
+      "circulation_delit_fuite_consequences"
+    ],
+    "sousDomaine": "délit_fuite",
+    "tags": [
+      "délit de fuite",
+      "LCR 92",
+      "fuite",
+      "conducteur",
+      "sanction",
+      "retrait"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "circulation_dommage_corporel_pieton",
+    "label_citoyen": "J'ai une situation liée à : Dommage corporel pieton",
+    "label_juridique": "Dommage corporel pieton",
+    "domaines": [
+      "circulation"
+    ],
+    "fiches_associees": [
+      "circulation_dommage_corporel_pieton"
+    ],
+    "sousDomaine": "dommage_corporel",
+    "tags": [
+      "piéton",
+      "dommage corporel",
+      "LCR 58",
+      "LAA",
+      "indemnisation",
+      "tort moral"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "circulation_expertise_vehicule_contestee",
+    "label_citoyen": "J'ai une situation liée à : Expertise vehicule contestee",
+    "label_juridique": "Expertise vehicule contestee",
+    "domaines": [
+      "circulation"
+    ],
+    "fiches_associees": [
+      "circulation_expertise_vehicule_contestee"
+    ],
+    "sousDomaine": "expertise",
+    "tags": [
+      "expertise",
+      "véhicule",
+      "assurance",
+      "contestation",
+      "dommage",
+      "valeur"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "circulation_permis_etranger_reconnaissance",
+    "label_citoyen": "J'ai une situation liée à : Permis etranger reconnaissance",
+    "label_juridique": "Permis etranger reconnaissance",
+    "domaines": [
+      "circulation"
+    ],
+    "fiches_associees": [
+      "circulation_permis_etranger_reconnaissance"
+    ],
+    "sousDomaine": "permis_étranger",
+    "tags": [
+      "permis étranger",
+      "échange",
+      "reconnaissance",
+      "UE",
+      "hors UE",
+      "délai 12 mois"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
   },
   {
     "id": "circulation_pieton_priorite",
@@ -2654,7 +2878,35 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
+  },
+  {
+    "id": "circulation_radar_photo_contestation",
+    "label_citoyen": "J'ai une situation liée à : Radar photo contestation",
+    "label_juridique": "Radar photo contestation",
+    "domaines": [
+      "circulation"
+    ],
+    "fiches_associees": [
+      "circulation_radar_photo_contestation"
+    ],
+    "sousDomaine": "contrôle_vitesse",
+    "tags": [
+      "radar",
+      "photo",
+      "vitesse",
+      "contestation",
+      "preuve",
+      "conducteur"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
   },
   {
     "id": "circulation_refus_test_alcool",
@@ -2681,7 +2933,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "circulation_retrait_permis_exces_vitesse",
@@ -2703,12 +2955,39 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
+    "etat_couverture": "complete",
+    "has_cascade": true,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-18"
+  },
+  {
+    "id": "circulation_vehicule_immobilise_garage_frais",
+    "label_citoyen": "J'ai une situation liée à : Vehicule immobilise garage frais",
+    "label_juridique": "Vehicule immobilise garage frais",
+    "domaines": [
+      "circulation"
+    ],
+    "fiches_associees": [
+      "circulation_vehicule_immobilise_garage_frais"
+    ],
+    "sousDomaine": "indisponibilité_véhicule",
+    "tags": [
+      "véhicule immobilisé",
+      "garage",
+      "véhicule de remplacement",
+      "perte usage",
+      "frais"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
     "etat_couverture": "partial",
     "has_cascade": false,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-20"
   },
   {
     "id": "consommation_achat_occasion_caches",
@@ -2735,7 +3014,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "consommation_annulation_commande_en_ligne",
@@ -2758,12 +3037,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "partial",
-    "has_cascade": false,
+    "etat_couverture": "complete",
+    "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "consommation_cgv_clauses_abusives",
@@ -2791,7 +3070,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "consommation_defaut_produit_garantie",
@@ -2814,12 +3093,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "partial",
-    "has_cascade": false,
+    "etat_couverture": "complete",
+    "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "consommation_livraison_retard",
@@ -2841,12 +3120,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "partial",
-    "has_cascade": false,
+    "etat_couverture": "complete",
+    "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "consommation_pratiques_deloyales",
@@ -2873,7 +3152,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "consommation_remboursement_refuse",
@@ -2900,7 +3179,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "consommation_reparation_sous_garantie",
@@ -2927,7 +3206,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "consommation_service_apres_vente",
@@ -2954,7 +3233,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "consommation_vente_forcee_porte_a_porte",
@@ -2981,7 +3260,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "dettes_acte_defaut_biens",
@@ -3007,7 +3286,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_acte_defaut_biens_effets",
@@ -3030,11 +3309,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_arrangement_amiable",
@@ -3056,12 +3335,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "stub",
+    "etat_couverture": "complete",
     "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_arrangement_amiable_negociation",
@@ -3089,7 +3368,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_assainissement_financier",
@@ -3112,11 +3391,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
-    "has_jurisprudence": false,
+    "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_budget_conseil",
@@ -3139,11 +3418,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
-    "has_jurisprudence": false,
+    "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_commandement_contestation",
@@ -3170,7 +3449,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_commandement_payer",
@@ -3197,7 +3476,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_concordat",
@@ -3224,7 +3503,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_creancier_abusif",
@@ -3251,7 +3530,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_credit_abusif",
@@ -3324,7 +3603,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_faillite_personnelle",
@@ -3351,7 +3630,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_faillite_personnelle_procedure",
@@ -3378,7 +3657,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_for_poursuite",
@@ -3401,11 +3680,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_impots_arrieres",
@@ -3432,7 +3711,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_leasing_probleme",
@@ -3480,7 +3759,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_mainlevee_provisoire",
@@ -3507,7 +3786,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_mediation_dettes",
@@ -3529,12 +3808,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "stub",
+    "etat_couverture": "partial",
     "has_cascade": false,
     "has_template": true,
     "has_jurisprudence": false,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_minimum_vital",
@@ -3561,7 +3840,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_minimum_vital_lp",
@@ -3589,7 +3868,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_opposition",
@@ -3616,7 +3895,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_plainte_lp",
@@ -3644,7 +3923,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_poursuite_effets_change",
@@ -3668,11 +3947,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_prescription",
@@ -3699,7 +3978,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_primes_maladie",
@@ -3727,7 +4006,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_recouvrement_harcelement",
@@ -3798,7 +4077,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_revendication",
@@ -3825,7 +4104,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_saisie_salaire",
@@ -3852,7 +4131,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_saisie_salaire_quotite",
@@ -3879,7 +4158,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_sequestre",
@@ -3906,7 +4185,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "dettes_sursis_concordataire",
@@ -3933,7 +4212,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "entreprise_administrateur_responsabilite",
@@ -4006,7 +4285,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "entreprise_commandement_payer_societe",
@@ -4030,12 +4309,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "partial",
-    "has_cascade": false,
+    "etat_couverture": "complete",
+    "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "entreprise_conflit_associes_sarl",
@@ -4060,11 +4339,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "entreprise_creances_impayees_recouvrement",
@@ -4087,12 +4366,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "partial",
-    "has_cascade": false,
+    "etat_couverture": "complete",
+    "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "entreprise_creation_sa",
@@ -4116,11 +4395,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "entreprise_creation_sarl",
@@ -4144,11 +4423,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "entreprise_creation_statuts",
@@ -4199,7 +4478,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "entreprise_dissolution_societe",
@@ -4224,11 +4503,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "entreprise_faillite",
@@ -4273,11 +4552,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "entreprise_licenciement_collectif",
@@ -4374,7 +4653,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "entreprise_surendettement_personne_morale",
@@ -4398,11 +4677,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "entreprise_sursis_concordataire",
@@ -4426,11 +4705,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "entreprise_tva_amende",
@@ -4478,7 +4757,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_aide_sociale_permis",
@@ -4501,11 +4780,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_aide_urgence",
@@ -4532,7 +4811,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_apatridie",
@@ -4555,11 +4834,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_asile_procedure",
@@ -4586,7 +4865,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_assurances_sociales",
@@ -4610,11 +4889,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_cas_rigueur",
@@ -4641,7 +4920,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_cours_langue_obligatoires",
@@ -4664,11 +4943,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_detachement_travailleurs",
@@ -4691,11 +4970,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_detention_administrative",
@@ -4740,11 +5019,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_dublin_transfert",
@@ -4767,11 +5046,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_integration_criteres",
@@ -4794,11 +5073,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_interdiction_entree",
@@ -4866,11 +5145,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_naturalisation",
@@ -4897,7 +5176,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_naturalisation_facilitee",
@@ -4920,11 +5199,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_permis_b_c",
@@ -4952,7 +5231,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_permis_b_renouvellement",
@@ -4979,7 +5258,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_permis_c_conditions",
@@ -5006,7 +5285,7 @@
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_permis_frontalier_g",
@@ -5029,11 +5308,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_permis_travail",
@@ -5056,11 +5335,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_reconnaissance_diplomes",
@@ -5082,12 +5361,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "stub",
-    "has_cascade": false,
+    "etat_couverture": "partial",
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_recours_renvoi",
@@ -5114,7 +5393,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_regroupement",
@@ -5141,7 +5420,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_regroupement_familial",
@@ -5169,7 +5448,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_renvoi",
@@ -5195,7 +5474,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_renvoi_recours",
@@ -5222,7 +5501,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_retour_volontaire",
@@ -5292,7 +5571,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_travail_asile",
@@ -5315,11 +5594,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_violence_permis",
@@ -5346,7 +5625,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etranger_visa_schengen_refus",
@@ -5373,7 +5652,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etrangers_recours",
@@ -5402,7 +5681,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etrangers_regroupement",
@@ -5431,7 +5710,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "etrangers_renvoi",
@@ -5460,7 +5739,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_adoption",
@@ -5487,7 +5766,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_autorite_parentale_conjointe",
@@ -5514,7 +5793,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_avance_pensions",
@@ -5564,7 +5843,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_contestation_paternite",
@@ -5591,7 +5870,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_curatelle",
@@ -5618,7 +5897,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_dette_successorale",
@@ -5645,7 +5924,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_divorce",
@@ -5673,7 +5952,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_divorce_procedure",
@@ -5700,7 +5979,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_droit_retour",
@@ -5723,11 +6002,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_droit_visite",
@@ -5754,7 +6033,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_enlevement_international",
@@ -5777,11 +6056,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_executeur_testamentaire",
@@ -5804,11 +6083,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_garde",
@@ -5836,7 +6115,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_garde_modification",
@@ -5863,7 +6142,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_indignite_successorale",
@@ -5886,11 +6165,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_liquidation_regime",
@@ -5913,11 +6192,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_mariage_etranger",
@@ -5940,11 +6219,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_mesures_protection",
@@ -5972,7 +6251,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_mesures_provisionnelles",
@@ -5998,7 +6277,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_nom_famille",
@@ -6021,11 +6300,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_pacs_rupture",
@@ -6070,11 +6349,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_partenariat_enregistre",
@@ -6097,11 +6376,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_pension",
@@ -6130,7 +6409,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_pension_enfant_majeur",
@@ -6179,7 +6458,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_pension_montant",
@@ -6207,7 +6486,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_placement_enfant",
@@ -6258,7 +6537,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_reconnaissance_paternite",
@@ -6285,7 +6564,7 @@
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_reconnaissance_paternite_procedure",
@@ -6308,11 +6587,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_regime_matrimonial",
@@ -6336,11 +6615,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_reserve_hereditaire",
@@ -6363,11 +6642,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_separation_concubinage",
@@ -6412,11 +6691,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_succession_reserve",
@@ -6443,7 +6722,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_testament_olographe",
@@ -6470,7 +6749,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_usufruit_conjoint",
@@ -6493,11 +6772,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "famille_violence_conjugale",
@@ -6524,7 +6803,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "succession_repudiation",
@@ -6552,7 +6831,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "succession_reserves",
@@ -6581,7 +6860,567 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
+  },
+  {
+    "id": "sante_assistance_suicide_fin_vie",
+    "label_citoyen": "J'ai une situation liée à : Assistance suicide fin vie",
+    "label_juridique": "Assistance suicide fin vie",
+    "domaines": [
+      "sante"
+    ],
+    "fiches_associees": [
+      "sante_assistance_suicide_fin_vie"
+    ],
+    "sousDomaine": "fin_de_vie",
+    "tags": [
+      "fin de vie",
+      "assistance au suicide",
+      "EXIT",
+      "Dignitas",
+      "directives anticipées",
+      "capacité discernement"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "sante_assurance_complementaire_refus",
+    "label_citoyen": "J'ai une situation liée à : Assurance complementaire refus",
+    "label_juridique": "Assurance complementaire refus",
+    "domaines": [
+      "sante"
+    ],
+    "fiches_associees": [
+      "sante_assurance_complementaire_refus"
+    ],
+    "sousDomaine": "complémentaire",
+    "tags": [
+      "assurance complémentaire",
+      "LCA",
+      "refus",
+      "réticence",
+      "questionnaire santé",
+      "résiliation"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-19"
+  },
+  {
+    "id": "sante_changement_assureur_lamal",
+    "label_citoyen": "J'ai une situation liée à : Changement assureur lamal",
+    "label_juridique": "Changement assureur lamal",
+    "domaines": [
+      "sante"
+    ],
+    "fiches_associees": [
+      "sante_changement_assureur_lamal"
+    ],
+    "sousDomaine": "changement_assureur",
+    "tags": [
+      "changement",
+      "assureur",
+      "LAMal",
+      "résiliation",
+      "délai",
+      "30 novembre"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "sante_consentement_eclaire",
+    "label_citoyen": "J'ai une situation liée à : Consentement eclaire",
+    "label_juridique": "Consentement eclaire",
+    "domaines": [
+      "sante"
+    ],
+    "fiches_associees": [
+      "sante_consentement_eclaire"
+    ],
+    "sousDomaine": "consentement",
+    "tags": [
+      "consentement",
+      "éclairé",
+      "information",
+      "patient",
+      "personnalité",
+      "intervention médicale"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-19"
+  },
+  {
+    "id": "sante_curatelle_medicale",
+    "label_citoyen": "J'ai une situation liée à : Curatelle medicale",
+    "label_juridique": "Curatelle medicale",
+    "domaines": [
+      "sante"
+    ],
+    "fiches_associees": [
+      "sante_curatelle_medicale"
+    ],
+    "sousDomaine": "représentation_médicale",
+    "tags": [
+      "curatelle",
+      "représentation",
+      "APEA",
+      "soins",
+      "incapacité",
+      "CC 378"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "sante_directive_anticipee",
+    "label_citoyen": "J'ai une situation liée à : Directive anticipee",
+    "label_juridique": "Directive anticipee",
+    "domaines": [
+      "sante"
+    ],
+    "fiches_associees": [
+      "sante_directive_anticipee"
+    ],
+    "sousDomaine": "directives_anticipées",
+    "tags": [
+      "directives anticipées",
+      "fin de vie",
+      "représentant thérapeutique",
+      "incapacité",
+      "art. 370 CC",
+      "personnalité"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-19"
+  },
+  {
+    "id": "sante_dossier_medical_acces",
+    "label_citoyen": "J'ai une situation liée à : Dossier medical acces",
+    "label_juridique": "Dossier medical acces",
+    "domaines": [
+      "sante"
+    ],
+    "fiches_associees": [
+      "sante_dossier_medical_acces"
+    ],
+    "sousDomaine": "dossier_médical",
+    "tags": [
+      "dossier médical",
+      "accès",
+      "LPD",
+      "personnalité",
+      "copie",
+      "renseignements"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-19"
+  },
+  {
+    "id": "sante_erreur_medicale_plainte",
+    "label_citoyen": "J'ai une situation liée à : Erreur medicale plainte",
+    "label_juridique": "Erreur medicale plainte",
+    "domaines": [
+      "sante"
+    ],
+    "fiches_associees": [
+      "sante_erreur_medicale_plainte"
+    ],
+    "sousDomaine": "responsabilité_médicale",
+    "tags": [
+      "erreur médicale",
+      "responsabilité",
+      "plainte",
+      "commission cantonale",
+      "dommages-intérêts",
+      "expertise"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-19"
+  },
+  {
+    "id": "sante_facture_medicale_contestation",
+    "label_citoyen": "J'ai une situation liée à : Facture medicale contestation",
+    "label_juridique": "Facture medicale contestation",
+    "domaines": [
+      "sante"
+    ],
+    "fiches_associees": [
+      "sante_facture_medicale_contestation"
+    ],
+    "sousDomaine": "facturation",
+    "tags": [
+      "facture",
+      "TARMED",
+      "TARDOC",
+      "tarifs",
+      "contestation",
+      "assurance"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "sante_franchise_quote_part",
+    "label_citoyen": "J'ai une situation liée à : Franchise quote part",
+    "label_juridique": "Franchise quote part",
+    "domaines": [
+      "sante"
+    ],
+    "fiches_associees": [
+      "sante_franchise_quote_part"
+    ],
+    "sousDomaine": "participation_assuré",
+    "tags": [
+      "franchise",
+      "quote-part",
+      "participation",
+      "LAMal",
+      "plafond",
+      "exonération enfant"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "sante_hospitalisation_privee_semi_privee",
+    "label_citoyen": "J'ai une situation liée à : Hospitalisation privee semi privee",
+    "label_juridique": "Hospitalisation privee semi privee",
+    "domaines": [
+      "sante"
+    ],
+    "fiches_associees": [
+      "sante_hospitalisation_privee_semi_privee"
+    ],
+    "sousDomaine": "assurance_complementaire",
+    "tags": [
+      "hospitalisation",
+      "privée",
+      "semi-privée",
+      "complémentaire",
+      "chambre",
+      "facture"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "sante_lamal_choix_assureur",
+    "label_citoyen": "J'ai une situation liée à : Lamal choix assureur",
+    "label_juridique": "Lamal choix assureur",
+    "domaines": [
+      "sante"
+    ],
+    "fiches_associees": [
+      "sante_lamal_choix_assureur"
+    ],
+    "sousDomaine": "lamal",
+    "tags": [
+      "LAMal",
+      "caisse maladie",
+      "changement",
+      "résiliation",
+      "obligation d'assurance",
+      "primes"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-19"
+  },
+  {
+    "id": "sante_lamal_refus_prestation",
+    "label_citoyen": "J'ai une situation liée à : Lamal refus prestation",
+    "label_juridique": "Lamal refus prestation",
+    "domaines": [
+      "sante"
+    ],
+    "fiches_associees": [
+      "sante_lamal_refus_prestation"
+    ],
+    "sousDomaine": "lamal_refus",
+    "tags": [
+      "LAMal",
+      "refus de prestation",
+      "remboursement",
+      "opposition",
+      "LPGA",
+      "tribunal des assurances"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-19"
+  },
+  {
+    "id": "sante_medecin_traitant_continuite",
+    "label_citoyen": "J'ai une situation liée à : Medecin traitant continuite",
+    "label_juridique": "Medecin traitant continuite",
+    "domaines": [
+      "sante"
+    ],
+    "fiches_associees": [
+      "sante_medecin_traitant_continuite"
+    ],
+    "sousDomaine": "continuité_soins",
+    "tags": [
+      "médecin traitant",
+      "continuité",
+      "mandat",
+      "suivi",
+      "rupture",
+      "dossier"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "sante_patient_hospitalisation_force",
+    "label_citoyen": "J'ai une situation liée à : Patient hospitalisation force",
+    "label_juridique": "Patient hospitalisation force",
+    "domaines": [
+      "sante"
+    ],
+    "fiches_associees": [
+      "sante_patient_hospitalisation_force"
+    ],
+    "sousDomaine": "PLAFA",
+    "tags": [
+      "PLAFA",
+      "placement à des fins d'assistance",
+      "hospitalisation forcée",
+      "psychiatrie",
+      "art. 426 CC",
+      "recours"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-19"
+  },
+  {
+    "id": "sante_refus_nouveau_patient",
+    "label_citoyen": "J'ai une situation liée à : Refus nouveau patient",
+    "label_juridique": "Refus nouveau patient",
+    "domaines": [
+      "sante"
+    ],
+    "fiches_associees": [
+      "sante_refus_nouveau_patient"
+    ],
+    "sousDomaine": "accès_aux_soins",
+    "tags": [
+      "refus patient",
+      "médecin traitant",
+      "discrimination",
+      "accès aux soins",
+      "urgence",
+      "libre choix du médecin"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "sante_refus_traitement",
+    "label_citoyen": "J'ai une situation liée à : Refus traitement",
+    "label_juridique": "Refus traitement",
+    "domaines": [
+      "sante"
+    ],
+    "fiches_associees": [
+      "sante_refus_traitement"
+    ],
+    "sousDomaine": "refus_traitement",
+    "tags": [
+      "refus de soins",
+      "autonomie",
+      "capacité de discernement",
+      "transfusion",
+      "fin de vie",
+      "personnalité"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-19"
+  },
+  {
+    "id": "sante_refus_vaccination_enfant",
+    "label_citoyen": "J'ai une situation liée à : Refus vaccination enfant",
+    "label_juridique": "Refus vaccination enfant",
+    "domaines": [
+      "sante"
+    ],
+    "fiches_associees": [
+      "sante_refus_vaccination_enfant"
+    ],
+    "sousDomaine": "vaccination_mineur",
+    "tags": [
+      "vaccination",
+      "enfant",
+      "autorité parentale",
+      "refus",
+      "école",
+      "capacité de discernement"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "sante_responsabilite_professionnel",
+    "label_citoyen": "J'ai une situation liée à : Responsabilite professionnel",
+    "label_juridique": "Responsabilite professionnel",
+    "domaines": [
+      "sante"
+    ],
+    "fiches_associees": [
+      "sante_responsabilite_professionnel"
+    ],
+    "sousDomaine": "responsabilité_médicale",
+    "tags": [
+      "responsabilité",
+      "médecin",
+      "CO 398",
+      "mandat",
+      "dommage",
+      "erreur médicale"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "sante_secret_medical",
+    "label_citoyen": "J'ai une situation liée à : Secret medical",
+    "label_juridique": "Secret medical",
+    "domaines": [
+      "sante"
+    ],
+    "fiches_associees": [
+      "sante_secret_medical"
+    ],
+    "sousDomaine": "secret_médical",
+    "tags": [
+      "secret médical",
+      "confidentialité",
+      "violation",
+      "art. 321 CP",
+      "déliement",
+      "médecin cantonal"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-19"
   },
   {
     "id": "social_aide_sociale",
@@ -6611,7 +7450,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "social_aide_sociale_contestation",
@@ -6684,7 +7523,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "social_aide_victime_lavi",
@@ -6799,11 +7638,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "social_curatelle_volontaire",
@@ -6849,11 +7688,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "social_dignite_minimale",
@@ -6876,11 +7715,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "social_directives_anticipees",
@@ -6932,7 +7771,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "social_hebergement_urgence_procedure",
@@ -6956,11 +7795,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "social_logement_social",
@@ -7030,11 +7869,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "social_refus_aide_recours",
@@ -7058,12 +7897,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "partial",
-    "has_cascade": false,
+    "etat_couverture": "complete",
+    "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "social_reinsertion_professionnelle",
@@ -7087,11 +7926,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "social_remboursement_aide",
@@ -7115,11 +7954,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "social_revenu_insertion",
@@ -7164,12 +8003,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "partial",
-    "has_cascade": false,
+    "etat_couverture": "complete",
+    "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "social_sanspapiers_aide_urgence",
@@ -7193,11 +8032,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "social_subsides_assurance",
@@ -7223,6 +8062,567 @@
     "last_verified_at": null
   },
   {
+    "id": "successions_action_petition_heredite",
+    "label_citoyen": "J'ai une situation liée à : Action petition heredite",
+    "label_juridique": "Action petition heredite",
+    "domaines": [
+      "successions"
+    ],
+    "fiches_associees": [
+      "successions_action_petition_heredite"
+    ],
+    "sousDomaine": "pétition_d_hérédité",
+    "tags": [
+      "pétition d'hérédité",
+      "possession",
+      "biens successoraux",
+      "restitution",
+      "tiers possesseur",
+      "imprescriptible"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-19"
+  },
+  {
+    "id": "successions_administration_officielle",
+    "label_citoyen": "J'ai une situation liée à : Administration officielle",
+    "label_juridique": "Administration officielle",
+    "domaines": [
+      "successions"
+    ],
+    "fiches_associees": [
+      "successions_administration_officielle"
+    ],
+    "sousDomaine": "administration_officielle",
+    "tags": [
+      "administration officielle",
+      "administrateur",
+      "554 CC",
+      "conflit",
+      "absence",
+      "conservation"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "successions_benefice_inventaire",
+    "label_citoyen": "J'ai une situation liée à : Benefice inventaire",
+    "label_juridique": "Benefice inventaire",
+    "domaines": [
+      "successions"
+    ],
+    "fiches_associees": [
+      "successions_benefice_inventaire"
+    ],
+    "sousDomaine": "inventaire",
+    "tags": [
+      "bénéfice d'inventaire",
+      "inventaire",
+      "succession",
+      "responsabilité limitée",
+      "1 mois",
+      "publication"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-19"
+  },
+  {
+    "id": "successions_certificat_heritier",
+    "label_citoyen": "J'ai une situation liée à : Certificat heritier",
+    "label_juridique": "Certificat heritier",
+    "domaines": [
+      "successions"
+    ],
+    "fiches_associees": [
+      "successions_certificat_heritier"
+    ],
+    "sousDomaine": "certificat_heritier",
+    "tags": [
+      "certificat",
+      "héritier",
+      "justice de paix",
+      "attestation",
+      "procédure",
+      "dévolution"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "successions_conjoint_survivant",
+    "label_citoyen": "J'ai une situation liée à : Conjoint survivant",
+    "label_juridique": "Conjoint survivant",
+    "domaines": [
+      "successions"
+    ],
+    "fiches_associees": [
+      "successions_conjoint_survivant"
+    ],
+    "sousDomaine": "part_du_conjoint",
+    "tags": [
+      "conjoint survivant",
+      "partenaire enregistré",
+      "veuf",
+      "veuve",
+      "part légale",
+      "usufruit"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-19"
+  },
+  {
+    "id": "successions_dettes_responsabilite_heritiers",
+    "label_citoyen": "J'ai une situation liée à : Dettes responsabilite heritiers",
+    "label_juridique": "Dettes responsabilite heritiers",
+    "domaines": [
+      "successions"
+    ],
+    "fiches_associees": [
+      "successions_dettes_responsabilite_heritiers"
+    ],
+    "sousDomaine": "dettes",
+    "tags": [
+      "dettes",
+      "héritier",
+      "responsabilité",
+      "solidarité",
+      "passif",
+      "créancier"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "successions_exheredation_motifs",
+    "label_citoyen": "J'ai une situation liée à : Exheredation motifs",
+    "label_juridique": "Exheredation motifs",
+    "domaines": [
+      "successions"
+    ],
+    "fiches_associees": [
+      "successions_exheredation_motifs"
+    ],
+    "sousDomaine": "exhérédation",
+    "tags": [
+      "exhérédation",
+      "motifs",
+      "réservataire",
+      "sanction",
+      "testament",
+      "action en nullité"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "successions_heritier_reserve",
+    "label_citoyen": "J'ai une situation liée à : Heritier reserve",
+    "label_juridique": "Heritier reserve",
+    "domaines": [
+      "successions"
+    ],
+    "fiches_associees": [
+      "successions_heritier_reserve"
+    ],
+    "sousDomaine": "réserve_héréditaire",
+    "tags": [
+      "réserve",
+      "héritier",
+      "lésé",
+      "réduction",
+      "quotité disponible",
+      "action en réduction"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-19"
+  },
+  {
+    "id": "successions_indignite",
+    "label_citoyen": "J'ai une situation liée à : Indignite",
+    "label_juridique": "Indignite",
+    "domaines": [
+      "successions"
+    ],
+    "fiches_associees": [
+      "successions_indignite"
+    ],
+    "sousDomaine": "indignité",
+    "tags": [
+      "indignité",
+      "héritier indigne",
+      "exclusion",
+      "atteinte",
+      "homicide",
+      "captation"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-19"
+  },
+  {
+    "id": "successions_legs_refus",
+    "label_citoyen": "J'ai une situation liée à : Legs refus",
+    "label_juridique": "Legs refus",
+    "domaines": [
+      "successions"
+    ],
+    "fiches_associees": [
+      "successions_legs_refus"
+    ],
+    "sousDomaine": "legs",
+    "tags": [
+      "legs",
+      "légataire",
+      "refus",
+      "exécution",
+      "délivrance",
+      "particulier"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-19"
+  },
+  {
+    "id": "successions_legs_vs_institution_heritier",
+    "label_citoyen": "J'ai une situation liée à : Legs vs institution heritier",
+    "label_juridique": "Legs vs institution heritier",
+    "domaines": [
+      "successions"
+    ],
+    "fiches_associees": [
+      "successions_legs_vs_institution_heritier"
+    ],
+    "sousDomaine": "legs",
+    "tags": [
+      "legs",
+      "légataire",
+      "institution héritier",
+      "dispositions",
+      "testament",
+      "délivrance du legs"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "successions_liquidation_partage",
+    "label_citoyen": "J'ai une situation liée à : Liquidation partage",
+    "label_juridique": "Liquidation partage",
+    "domaines": [
+      "successions"
+    ],
+    "fiches_associees": [
+      "successions_liquidation_partage"
+    ],
+    "sousDomaine": "partage",
+    "tags": [
+      "partage",
+      "liquidation",
+      "communauté héréditaire",
+      "actions",
+      "indivision",
+      "lots"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-19"
+  },
+  {
+    "id": "successions_pacte_successoral",
+    "label_citoyen": "J'ai une situation liée à : Pacte successoral",
+    "label_juridique": "Pacte successoral",
+    "domaines": [
+      "successions"
+    ],
+    "fiches_associees": [
+      "successions_pacte_successoral"
+    ],
+    "sousDomaine": "pacte_successoral",
+    "tags": [
+      "pacte successoral",
+      "renonciation anticipée",
+      "institution d'héritier",
+      "notaire",
+      "forme authentique",
+      "soulte"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-19"
+  },
+  {
+    "id": "successions_partage_force",
+    "label_citoyen": "J'ai une situation liée à : Partage force",
+    "label_juridique": "Partage force",
+    "domaines": [
+      "successions"
+    ],
+    "fiches_associees": [
+      "successions_partage_force"
+    ],
+    "sousDomaine": "partage",
+    "tags": [
+      "partage",
+      "action",
+      "cohéritiers",
+      "blocage",
+      "forcé",
+      "indivision"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "successions_rapport_liberalites",
+    "label_citoyen": "J'ai une situation liée à : Rapport liberalites",
+    "label_juridique": "Rapport liberalites",
+    "domaines": [
+      "successions"
+    ],
+    "fiches_associees": [
+      "successions_rapport_liberalites"
+    ],
+    "sousDomaine": "rapport_entre_descendants",
+    "tags": [
+      "rapport",
+      "libéralités",
+      "descendants",
+      "égalité",
+      "donations",
+      "avance d'hoirie"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "successions_renonciation",
+    "label_citoyen": "J'ai une situation liée à : Renonciation",
+    "label_juridique": "Renonciation",
+    "domaines": [
+      "successions"
+    ],
+    "fiches_associees": [
+      "successions_renonciation"
+    ],
+    "sousDomaine": "répudiation",
+    "tags": [
+      "renonciation",
+      "répudiation",
+      "succession",
+      "dette",
+      "héritier",
+      "délai 3 mois"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-19"
+  },
+  {
+    "id": "successions_reserve_conjoint_vs_enfants",
+    "label_citoyen": "J'ai une situation liée à : Reserve conjoint vs enfants",
+    "label_juridique": "Reserve conjoint vs enfants",
+    "domaines": [
+      "successions"
+    ],
+    "fiches_associees": [
+      "successions_reserve_conjoint_vs_enfants"
+    ],
+    "sousDomaine": "réserve_conjoint",
+    "tags": [
+      "réserve",
+      "conjoint",
+      "partenaire",
+      "enfants",
+      "quotité disponible",
+      "réforme 2023"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "successions_testament_authentique_procedure",
+    "label_citoyen": "J'ai une situation liée à : Testament authentique procedure",
+    "label_juridique": "Testament authentique procedure",
+    "domaines": [
+      "successions"
+    ],
+    "fiches_associees": [
+      "successions_testament_authentique_procedure"
+    ],
+    "sousDomaine": "testament_authentique",
+    "tags": [
+      "testament",
+      "authentique",
+      "notaire",
+      "forme",
+      "témoins",
+      "procédure"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
+    "id": "successions_testament_contestation",
+    "label_citoyen": "J'ai une situation liée à : Testament contestation",
+    "label_juridique": "Testament contestation",
+    "domaines": [
+      "successions"
+    ],
+    "fiches_associees": [
+      "successions_testament_contestation"
+    ],
+    "sousDomaine": "vices_du_testament",
+    "tags": [
+      "testament",
+      "contestation",
+      "nullité",
+      "annulation",
+      "vice de forme",
+      "incapacité"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-19"
+  },
+  {
+    "id": "successions_testament_olographe_forme",
+    "label_citoyen": "J'ai une situation liée à : Testament olographe forme",
+    "label_juridique": "Testament olographe forme",
+    "domaines": [
+      "successions"
+    ],
+    "fiches_associees": [
+      "successions_testament_olographe_forme"
+    ],
+    "sousDomaine": "testament_olographe",
+    "tags": [
+      "testament",
+      "olographe",
+      "forme",
+      "écriture",
+      "signature",
+      "date",
+      "validité"
+    ],
+    "cantons_specifiques": [],
+    "volume_estime": null,
+    "etat_couverture": "partial",
+    "has_cascade": false,
+    "has_template": true,
+    "has_jurisprudence": true,
+    "has_source_ids": true,
+    "last_verified_at": "2026-04-20"
+  },
+  {
     "id": "travail_13e_salaire",
     "label_citoyen": "On me refuse mon 13e salaire",
     "label_juridique": "Droit au 13e salaire",
@@ -7246,7 +8646,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_accident",
@@ -7273,7 +8673,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_accident_non_professionnel",
@@ -7319,11 +8719,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_assurance_chomage",
@@ -7350,7 +8750,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_burnout",
@@ -7377,7 +8777,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_certificat",
@@ -7399,12 +8799,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "stub",
+    "etat_couverture": "complete",
     "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_chomage",
@@ -7433,7 +8833,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_contrat_oral",
@@ -7460,7 +8860,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_convention_collective",
@@ -7482,11 +8882,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_delai_conge",
@@ -7513,7 +8913,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_demission",
@@ -7585,7 +8985,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-13"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_egalite_homme_femme",
@@ -7634,7 +9034,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_gratification",
@@ -7656,11 +9056,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_grossesse",
@@ -7687,7 +9087,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_harcelement",
@@ -7714,7 +9114,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_heures_sup",
@@ -7741,7 +9141,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_horaires_pauses",
@@ -7791,7 +9191,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_licenciement_abusif",
@@ -7818,7 +9218,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_licenciement_immediat",
@@ -7867,7 +9267,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_maladie",
@@ -7896,7 +9296,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_maternite_conge",
@@ -7966,7 +9366,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_orp_inscription",
@@ -7989,11 +9389,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_paternite_conge",
@@ -8041,7 +9441,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_proces_verbal",
@@ -8090,7 +9490,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_reference_negative",
@@ -8117,7 +9517,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_saisie_salaire",
@@ -8146,7 +9546,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_salaire_impaye",
@@ -8173,7 +9573,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_secret_professionnel",
@@ -8196,11 +9596,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_stagiaire",
@@ -8223,11 +9623,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_surveillance",
@@ -8250,11 +9650,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_teletravail",
@@ -8281,7 +9681,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_temporaire",
@@ -8304,11 +9704,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_temps_partiel",
@@ -8334,7 +9734,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "travail_travail_nuit_dimanche",
@@ -8384,7 +9784,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-08"
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "violence_constitution_partie_civile",
@@ -8457,7 +9857,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "violence_eloignement_domicile_penal",
@@ -8481,11 +9881,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "violence_enfant_maltraitance",
@@ -8533,11 +9933,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "violence_foyer_refuge",
@@ -8561,11 +9961,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "violence_garde_enfants",
@@ -8589,11 +9989,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "violence_harcelement_rue",
@@ -8637,12 +10037,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "partial",
-    "has_cascade": false,
+    "etat_couverture": "complete",
+    "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "violence_maltraitance_enfant",
@@ -8670,7 +10070,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "violence_mariage_force",
@@ -8693,11 +10093,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "violence_menace_mort",
@@ -8786,12 +10186,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "partial",
-    "has_cascade": false,
+    "etat_couverture": "complete",
+    "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "violence_plainte",
@@ -8821,7 +10221,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "violence_plainte_conjugale",
@@ -8845,12 +10245,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "partial",
-    "has_cascade": false,
+    "etat_couverture": "complete",
+    "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "violence_proteger_soi_urgence",
@@ -8896,11 +10296,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "violence_retrait_plainte",
@@ -8967,11 +10367,11 @@
     "cantons_specifiques": [],
     "volume_estime": null,
     "etat_couverture": "partial",
-    "has_cascade": false,
+    "has_cascade": true,
     "has_template": false,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-07"
   },
   {
     "id": "violence_victime_indemnisation",
@@ -9044,7 +10444,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "voisinage_arbres_limites",
@@ -9067,12 +10467,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "partial",
-    "has_cascade": false,
+    "etat_couverture": "complete",
+    "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "voisinage_bruit_nuisances",
@@ -9095,12 +10495,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "partial",
-    "has_cascade": false,
+    "etat_couverture": "complete",
+    "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "voisinage_distances_plantations",
@@ -9128,7 +10528,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "voisinage_dommages_propriete",
@@ -9155,7 +10555,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "voisinage_eau_ruissellement",
@@ -9182,7 +10582,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "voisinage_fumee_odeurs",
@@ -9205,12 +10605,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "partial",
-    "has_cascade": false,
+    "etat_couverture": "complete",
+    "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "voisinage_murs_mitoyens",
@@ -9237,7 +10637,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "voisinage_servitudes_passage",
@@ -9264,7 +10664,7 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   },
   {
     "id": "voisinage_vibrations_travaux",
@@ -9291,6 +10691,6 @@
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": null
+    "last_verified_at": "2026-04-18"
   }
 ]

@@ -319,7 +319,7 @@ function ficheToIntent(fiche) {
     has_template: !!r.modeleLettre,
     has_jurisprudence: Array.isArray(r.jurisprudence) && r.jurisprudence.length > 0,
     has_source_ids: hasSourceIds,
-    last_verified_at: fiche.dateVerification || null,
+    last_verified_at: fiche.last_verified_at || fiche.dateVerification || null,
   };
 }
 

@@ -1,85 +1,85 @@
 {
-  "generated_at": "2026-04-18T23:13:52.300Z",
+  "generated_at": "2026-04-27T23:35:26.295Z",
   "totals": {
-    "total": 326,
-    "complete": 11,
-    "partial": 212,
-    "stub": 11,
+    "total": 406,
+    "complete": 62,
+    "partial": 252,
+    "stub": 0,
     "missing": 92,
-    "quality_pct": 37
+    "quality_pct": 46
   },
   "by_domain": [
     {
       "domain": "travail",
       "total": 45,
-      "complete": 4,
-      "partial": 29,
-      "stub": 1,
+      "complete": 10,
+      "partial": 24,
+      "stub": 0,
       "missing": 11,
-      "quality_pct": 42
+      "quality_pct": 49
     },
     {
       "domain": "bail",
       "total": 43,
-      "complete": 3,
-      "partial": 23,
-      "stub": 7,
+      "complete": 11,
+      "partial": 22,
+      "stub": 0,
       "missing": 10,
-      "quality_pct": 37
+      "quality_pct": 51
     },
     {
       "domain": "famille",
       "total": 42,
-      "complete": 1,
-      "partial": 36,
+      "complete": 7,
+      "partial": 30,
       "stub": 0,
       "missing": 5,
-      "quality_pct": 45
+      "quality_pct": 52
     },
     {
       "domain": "etrangers",
       "total": 38,
-      "complete": 1,
-      "partial": 31,
-      "stub": 1,
+      "complete": 7,
+      "partial": 26,
+      "stub": 0,
       "missing": 5,
-      "quality_pct": 44
+      "quality_pct": 53
     },
     {
       "domain": "dettes",
       "total": 36,
-      "complete": 2,
-      "partial": 27,
-      "stub": 2,
+      "complete": 9,
+      "partial": 22,
+      "stub": 0,
       "missing": 5,
-      "quality_pct": 44
+      "quality_pct": 56
     },
     {
       "domain": "assurances",
       "total": 30,
-      "complete": 0,
-      "partial": 15,
+      "complete": 2,
+      "partial": 13,
       "stub": 0,
       "missing": 15,
-      "quality_pct": 25
+      "quality_pct": 28
     },
     {
       "domain": "social",
       "total": 25,
-      "complete": 0,
-      "partial": 13,
+      "complete": 2,
+      "partial": 11,
       "stub": 0,
       "missing": 12,
-      "quality_pct": 26
+      "quality_pct": 30
     },
     {
       "domain": "violence",
       "total": 25,
-      "complete": 0,
-      "partial": 13,
+      "complete": 3,
+      "partial": 10,
       "stub": 0,
       "missing": 12,
-      "quality_pct": 26
+      "quality_pct": 32
     },
     {
       "domain": "accident",
@@ -91,13 +91,58 @@
       "quality_pct": 30
     },
     {
+      "domain": "circulation",
+      "total": 20,
+      "complete": 3,
+      "partial": 17,
+      "stub": 0,
+      "missing": 0,
+      "quality_pct": 57
+    },
+    {
       "domain": "entreprise",
       "total": 20,
-      "complete": 0,
-      "partial": 12,
+      "complete": 2,
+      "partial": 10,
       "stub": 0,
       "missing": 8,
-      "quality_pct": 30
+      "quality_pct": 35
+    },
+    {
+      "domain": "sante",
+      "total": 20,
+      "complete": 0,
+      "partial": 20,
+      "stub": 0,
+      "missing": 0,
+      "quality_pct": 50
+    },
+    {
+      "domain": "successions",
+      "total": 20,
+      "complete": 0,
+      "partial": 20,
+      "stub": 0,
+      "missing": 0,
+      "quality_pct": 50
+    },
+    {
+      "domain": "consommation",
+      "total": 10,
+      "complete": 3,
+      "partial": 7,
+      "stub": 0,
+      "missing": 0,
+      "quality_pct": 65
+    },
+    {
+      "domain": "voisinage",
+      "total": 10,
+      "complete": 3,
+      "partial": 7,
+      "stub": 0,
+      "missing": 0,
+      "quality_pct": 65
     }
   ],
   "top_20_priority": [
@@ -126,6 +171,34 @@
       "id": "assurance_chomage_contestation",
       "domaine": "assurances",
       "label_citoyen": "Je conteste une décision de la caisse chômage",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "accident_domicile_assurance",
+      "domaine": "accident",
+      "label_citoyen": "Un accident est arrivé chez moi, qui est responsable ?",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "accident_expertise_medicale",
+      "domaine": "accident",
+      "label_citoyen": "On me convoque à une expertise médicale",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "accident_lca_defaut",
+      "domaine": "accident",
+      "label_citoyen": "Mon assurance refuse un accident pour faute",
+      "etat_couverture": "missing",
+      "volume_estime": null
+    },
+    {
+      "id": "accident_medical",
+      "domaine": "accident",
+      "label_citoyen": "J'ai eu un accident médical (erreur médicale)",
       "etat_couverture": "missing",
       "volume_estime": null
     },
@@ -182,34 +255,6 @@
       "id": "violence_harcelement_rue",
       "domaine": "violence",
       "label_citoyen": "Je subis du harcèlement de rue",
-      "etat_couverture": "missing",
-      "volume_estime": null
-    },
-    {
-      "id": "accident_domicile_assurance",
-      "domaine": "accident",
-      "label_citoyen": "Un accident est arrivé chez moi, qui est responsable ?",
-      "etat_couverture": "missing",
-      "volume_estime": null
-    },
-    {
-      "id": "accident_expertise_medicale",
-      "domaine": "accident",
-      "label_citoyen": "On me convoque à une expertise médicale",
-      "etat_couverture": "missing",
-      "volume_estime": null
-    },
-    {
-      "id": "accident_lca_defaut",
-      "domaine": "accident",
-      "label_citoyen": "Mon assurance refuse un accident pour faute",
-      "etat_couverture": "missing",
-      "volume_estime": null
-    },
-    {
-      "id": "accident_medical",
-      "domaine": "accident",
-      "label_citoyen": "J'ai eu un accident médical (erreur médicale)",
       "etat_couverture": "missing",
       "volume_estime": null
     },

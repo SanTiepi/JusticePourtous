@@ -55,7 +55,6 @@ function buildReport() {
   }
 
   return {
-    generated_at: new Date().toISOString(),
     k_anonymity_threshold: K_ANONYMITY_THRESHOLD,
     total_outcomes: outcomes.length,
     intents_tracked: intents.size,

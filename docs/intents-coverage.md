@@ -1,6 +1,6 @@
 # Intents — Couverture
 
-_Généré automatiquement par `scripts/intent-coverage-report.mjs` — 2026-04-27T23:35:26.295Z_
+_Généré automatiquement par `scripts/intent-coverage-report.mjs`_
 
 ## Totaux
 

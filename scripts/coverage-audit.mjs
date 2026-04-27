@@ -43,7 +43,6 @@ const CANTONS_PRINCIPAUX = [...CANTONS_ROMANDS, 'BE', 'ZH', 'BS'];
 
 function audit() {
   const report = {
-    date: new Date().toISOString(),
     score: 0,
     maxScore: 0,
     lacunes: [],
@@ -249,7 +248,7 @@ writeFileSync(outFile, JSON.stringify(report, null, 2), 'utf-8');
 // Display
 console.log(`\n${'='.repeat(60)}`);
 console.log(`  AUDIT DE COUVERTURE — JusticePourtous`);
-console.log(`  ${report.date}`);
+console.log(`  ${new Date().toISOString()}`);
 console.log(`${'='.repeat(60)}\n`);
 console.log(`  Score global: ${report.score}/${report.maxScore} (${report.scorePct}%)\n`);
 

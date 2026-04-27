@@ -1,21 +1,20 @@
 {
-  "date": "2026-04-07T22:47:14.938Z",
-  "score": 144,
+  "score": 150,
   "maxScore": 160,
   "lacunes": [
     {
       "type": "tracabilite",
-      "message": "182 fiches sans référence légale explicite"
+      "message": "314 fiches sans référence légale explicite"
     }
   ],
   "couverture": {
     "bail": {
-      "fiches": 32,
+      "fiches": 33,
       "cible": 30,
       "score": "10/10"
     },
     "travail": {
-      "fiches": 33,
+      "fiches": 34,
       "cible": 30,
       "score": "10/10"
     },
@@ -35,14 +34,14 @@
       "score": "10/10"
     },
     "articles": {
-      "total": 622,
+      "total": 4459,
       "cible": 3000,
       "score": "10/10"
     },
     "arrets": {
-      "total": 217,
+      "total": 2521,
       "cible": 5000,
-      "score": "4/10"
+      "score": "10/10"
     },
     "delais": {
       "total": 28,
@@ -109,5 +108,5 @@
   "recommandations": [
     "CRITIQUE: Ajouter les références légales aux fiches sans source"
   ],
-  "scorePct": 90
+  "scorePct": 94
 }

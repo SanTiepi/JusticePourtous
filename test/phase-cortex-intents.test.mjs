@@ -154,7 +154,6 @@ describe('Phase Cortex — catalogue d\'intents', () => {
   it('6. le rapport coverage-report est généré et parseable', () => {
     assert.ok(fs.existsSync(REPORT_JSON_PATH), 'intents-coverage-report.json manquant');
     assert.ok(fs.existsSync(REPORT_MD_PATH), 'docs/intents-coverage.md manquant');
-    assert.equal(typeof report.generated_at, 'string');
     assert.equal(typeof report.totals, 'object');
     assert.equal(report.totals.total, intents.length, 'total du rapport ≠ taille du catalogue');
     assert.ok(Array.isArray(report.by_domain));

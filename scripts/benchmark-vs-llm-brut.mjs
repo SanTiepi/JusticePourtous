@@ -118,7 +118,6 @@ function main() {
   const avgDelta = valid.reduce((s, r) => s + (r.advantage_delta || 0), 0) / valid.length;
 
   const report = {
-    generated_at: new Date().toISOString(),
     note: 'Benchmark structurel JPT vs LLM brut. Mesure les métadonnées vérifiables. Pas un benchmark contre avocat humain.',
     golden_cases: results,
     summary: {

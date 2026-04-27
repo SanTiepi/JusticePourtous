@@ -63,8 +63,6 @@ async function main() {
   }
 
   const report = {
-    generated_at: new Date().toISOString(),
-    duration_ms: Date.now() - start,
     total_evaluated: results.length,
     canon_complete_count: canonComplete,
     percent: Math.round((canonComplete / results.length) * 100),

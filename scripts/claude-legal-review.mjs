@@ -179,7 +179,6 @@ function reviewFiche(fiche) {
 function main() {
   const files = readdirSync(FICHES_DIR).filter(f => f.endsWith('.json'));
   const report = {
-    generated_at: new Date().toISOString(),
     dry_run: DRY_RUN,
     total: 0,
     reviewed: 0,

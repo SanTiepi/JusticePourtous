@@ -112,7 +112,6 @@ function buildReport(intents) {
   totals.quality_pct = qualityScore(totals);
 
   return {
-    generated_at: new Date().toISOString(),
     totals,
     by_domain: domainRows,
     top_20_priority: top20,
@@ -123,7 +122,7 @@ function toMarkdown(report) {
   const lines = [];
   lines.push(`# Intents — Couverture`);
   lines.push('');
-  lines.push(`_Généré automatiquement par \`scripts/intent-coverage-report.mjs\` — ${report.generated_at}_`);
+  lines.push(`_Généré automatiquement par \`scripts/intent-coverage-report.mjs\`_`);
   lines.push('');
   lines.push(`## Totaux`);
   lines.push('');

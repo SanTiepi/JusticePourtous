@@ -12,13 +12,33 @@ const log = createLogger('atomic-write');
 
 /**
  * Write data atomically: write to tmpPath, then rename over target.
+ *
+ * The rename is retried briefly on EPERM/EBUSY/EACCES — Windows can transiently
+ * hold a lock on the destination (AV scanner, indexer, parallel test runners)
+ * and reject the rename even though the writer owns the file.
+ *
  * @param {string} filePath — target file path
  * @param {string} data — stringified content to write
  */
 export function atomicWriteSync(filePath, data) {
   const tmpPath = filePath + '.tmp';
   writeFileSync(tmpPath, data, 'utf-8');
-  renameSync(tmpPath, filePath);
+
+  const transient = new Set(['EPERM', 'EBUSY', 'EACCES']);
+  const delays = [5, 15, 40, 100, 250];
+  let lastErr;
+  for (let i = 0; i <= delays.length; i++) {
+    try {
+      renameSync(tmpPath, filePath);
+      return;
+    } catch (err) {
+      lastErr = err;
+      if (!transient.has(err.code) || i === delays.length) throw err;
+      const until = Date.now() + delays[i];
+      while (Date.now() < until) { /* spin briefly */ }
+    }
+  }
+  throw lastErr;
 }
 
 /**

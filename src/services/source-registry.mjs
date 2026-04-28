@@ -327,6 +327,7 @@ export const RS_BY_PREFIX = Object.freeze({
   OLAA: { rs: '832.202', titre: 'Ordonnance sur l\'assurance-accidents', tier: 1, scope: 'CH' },
   LAI: { rs: '831.20', titre: 'Loi fédérale sur l\'assurance-invalidité', tier: 1, scope: 'CH' },
   RAI: { rs: '831.201', titre: 'Règlement sur l\'assurance-invalidité', tier: 1, scope: 'CH' },
+  OMAI: { rs: '831.232.51', titre: 'Ordonnance concernant la remise de moyens auxiliaires par l\'assurance-invalidité', tier: 1, scope: 'CH' },
   LAMal: { rs: '832.10', titre: 'Loi fédérale sur l\'assurance-maladie', tier: 1, scope: 'CH' },
   OAMal: { rs: '832.102', titre: 'Ordonnance sur l\'assurance-maladie', tier: 1, scope: 'CH' },
   LAVS: { rs: '831.10', titre: 'Loi fédérale sur l\'assurance-vieillesse et survivants', tier: 1, scope: 'CH' },
@@ -334,6 +335,7 @@ export const RS_BY_PREFIX = Object.freeze({
   LAPG: { rs: '834.1', titre: 'Loi fédérale sur les allocations pour perte de gain', tier: 1, scope: 'CH' },
   LAFam: { rs: '836.2', titre: 'Loi fédérale sur les allocations familiales', tier: 1, scope: 'CH' },
   LACI: { rs: '837.0', titre: 'Loi fédérale sur l\'assurance-chômage', tier: 1, scope: 'CH' },
+  OACI: { rs: '837.02', titre: 'Ordonnance sur l\'assurance-chômage obligatoire et l\'indemnité en cas d\'insolvabilité', tier: 1, scope: 'CH' },
   LPP: { rs: '831.40', titre: 'Loi fédérale sur la prévoyance professionnelle', tier: 1, scope: 'CH' },
   // Étrangers & asile
   LAsi: { rs: '142.31', titre: 'Loi sur l\'asile', tier: 1, scope: 'CH' },
@@ -357,11 +359,14 @@ export const RS_BY_PREFIX = Object.freeze({
   // Santé publique
   LEp: { rs: '818.101', titre: 'Loi fédérale sur la lutte contre les maladies transmissibles de l\'homme (Loi sur les épidémies)', tier: 1, scope: 'CH' },
   LPMéd: { rs: '811.11', titre: 'Loi fédérale sur les professions médicales universitaires', tier: 1, scope: 'CH' },
+  // Environnement
+  OPB: { rs: '814.41', titre: 'Ordonnance sur la protection contre le bruit', tier: 1, scope: 'CH' },
   // Cantonal / pratique (pas un RS Fedlex, mais on reconnaît)
   LASV: { rs: 'vd.lasv', titre: 'Loi vaudoise sur l\'action sociale', tier: 1, scope: 'VD' },
   LIASI: { rs: 'ge.liasi', titre: 'Loi genevoise sur l\'insertion et l\'aide sociale individuelle', tier: 1, scope: 'GE' },
   LVLAMal: { rs: 'vd.lvlamal', titre: 'Loi vaudoise d\'application LAMal', tier: 1, scope: 'VD' },
-  CSIAS: { rs: 'csias', titre: 'Normes CSIAS (Conférence suisse des institutions d\'action sociale)', tier: 3, scope: 'CH' }
+  CSIAS: { rs: 'csias', titre: 'Normes CSIAS (Conférence suisse des institutions d\'action sociale)', tier: 3, scope: 'CH' },
+  SKOS: { rs: 'csias', titre: 'Normes SKOS (Schweizerische Konferenz für Sozialhilfe — équivalent allemand de CSIAS)', tier: 3, scope: 'CH' }
 });
 
 /** Extrait le préfixe d'une ref type "CO 259a" → "CO", "LPMéd 40" → "LPMéd". */

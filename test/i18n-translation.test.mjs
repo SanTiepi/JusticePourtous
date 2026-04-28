@@ -163,6 +163,80 @@ describe('translation orchestrator', () => {
   });
 });
 
+describe('translation orchestrator — fallback provider down', () => {
+  // Simule LLM/DeepL indisponible (panne, quota, timeout) via le hook test
+  // JB_TRANSLATION_FAKE_THROW. Vérifie que les fonctions ne throw jamais
+  // et retournent le contenu source avec translation_status='failed'.
+
+  it('translateTextContent retourne text source + status=failed quand provider throw', async () => {
+    process.env.JB_TRANSLATION_FAKE_THROW = '1';
+    try {
+      // ID unique pour éviter les collisions cache avec d'autres tests
+      const sourceText = `Texte source provider-down ${Date.now()}`;
+      const result = await translateTextContent(sourceText, {
+        targetLang: 'de',
+        sourceLang: 'fr',
+        contentType: 'text'
+      });
+      assert.equal(result.translation_status, 'failed',
+        `attendu 'failed', reçu '${result.translation_status}'`);
+      assert.equal(result.translated, sourceText, 'le texte source doit être renvoyé intact');
+      assert.equal(result.display_lang, 'de');
+      assert.equal(result.source_lang, 'fr');
+      assert.ok(result.translation_error, 'translation_error attendu');
+      assert.equal(result.qa_failed, true);
+      assert.equal(result.needs_regen, true);
+    } finally {
+      delete process.env.JB_TRANSLATION_FAKE_THROW;
+    }
+  });
+
+  it('translateStructuredContent retourne contenu source + status=failed quand provider throw', async () => {
+    process.env.JB_TRANSLATION_FAKE_THROW = '1';
+    try {
+      const suffix = `provider-down-${Date.now()}`;
+      const payload = {
+        fiche: {
+          id: 'test_fallback',
+          domaine: 'bail',
+          reponse: { explication: `Texte structuré source ${suffix}` }
+        }
+      };
+      const result = await translateStructuredContent(payload, {
+        targetLang: 'it',
+        sourceLang: 'fr',
+        contentType: 'structured_legal_content',
+        domain: 'bail'
+      });
+      assert.equal(result.translation_status, 'failed',
+        `attendu 'failed', reçu '${result.translation_status}'`);
+      // Le contenu source doit être présent (intact)
+      assert.equal(result.fiche.reponse.explication, `Texte structuré source ${suffix}`);
+      assert.equal(result.display_lang, 'it');
+      assert.equal(result.source_lang, 'fr');
+      assert.ok(result.translation_error, 'translation_error attendu');
+    } finally {
+      delete process.env.JB_TRANSLATION_FAKE_THROW;
+    }
+  });
+
+  it('court-circuit lang=source : pas d\'appel provider, status=fresh même si THROW activé', async () => {
+    process.env.JB_TRANSLATION_FAKE_THROW = '1';
+    try {
+      const result = await translateTextContent('Hello world', {
+        targetLang: 'fr',
+        sourceLang: 'fr',
+        contentType: 'text'
+      });
+      // targetLang === sourceLang → pas d'appel provider, doit toujours réussir
+      assert.equal(result.translation_status, 'fresh');
+      assert.equal(result.translated, 'Hello world');
+    } finally {
+      delete process.env.JB_TRANSLATION_FAKE_THROW;
+    }
+  });
+});
+
 describe('translation QA heuristics', () => {
   it('saute la QA sur les libellés courts mais la garde pour les phrases juridiques', () => {
     assert.equal(shouldRunQa('Source', { contentType: 'chrome/ui' }), false);

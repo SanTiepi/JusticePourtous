@@ -119,6 +119,12 @@ function escapeRegExp(value) {
 
 async function callFakeTranslation({ text, targetLang, glossary = {} }) {
   if (process.env.JB_TRANSLATION_FAKE !== '1') return null;
+  // Test hook : simule une panne LLM (API Anthropic down, quota épuisé, timeout)
+  // pour tester le fallback gracieux côté caller. Sans cela, impossible de
+  // tester les chemins try/catch sans une vraie clé API down.
+  if (process.env.JB_TRANSLATION_FAKE_THROW === '1') {
+    throw new Error('fake_translation_failure (LLM provider unavailable)');
+  }
   const delayMs = Number(process.env.JB_TRANSLATION_FAKE_DELAY_MS || 0);
   if (Number.isFinite(delayMs) && delayMs > 0) {
     await new Promise((resolve) => setTimeout(resolve, delayMs));

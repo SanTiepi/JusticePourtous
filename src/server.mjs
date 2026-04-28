@@ -116,27 +116,52 @@ function pickLastVerifiedHint(payload) {
     || null;
 }
 
+// Bulletproof : un appel à maybeTranslatePayload ne doit JAMAIS faire 5xx un endpoint.
+// Si translateStructuredContent (qui catch déjà ses translateNode internes) échoue
+// au niveau cache/buildKey/withMeta, on renvoie le payload source intact avec un
+// translation_status: 'failed_internal' pour signaler la dégradation au caller.
 async function maybeTranslatePayload(req, url, body, payload, options = {}) {
   const lang = normalizeLocale(resolveRequestLocale(req, url, body));
-  const translated = await translateStructuredContent(payload, {
-    targetLang: lang,
-    sourceLang: DEFAULT_LOCALE,
-    contentType: options.contentType || 'structured_legal_content',
-    domain: options.domain || pickDomainHint(payload),
-    sourceLastVerified: options.sourceLastVerified || pickLastVerifiedHint(payload)
-  });
-  return translated;
+  try {
+    return await translateStructuredContent(payload, {
+      targetLang: lang,
+      sourceLang: DEFAULT_LOCALE,
+      contentType: options.contentType || 'structured_legal_content',
+      domain: options.domain || pickDomainHint(payload),
+      sourceLastVerified: options.sourceLastVerified || pickLastVerifiedHint(payload)
+    });
+  } catch (err) {
+    log.warn('translate_payload_failed_fallback_source', { lang, err: err.message });
+    return {
+      ...payload,
+      display_lang: lang,
+      source_lang: DEFAULT_LOCALE,
+      translation_status: 'failed_internal',
+      translation_error: err.message
+    };
+  }
 }
 
 async function maybeTranslateText(req, url, body, text, options = {}) {
   const lang = normalizeLocale(resolveRequestLocale(req, url, body));
-  return await translateTextContent(text, {
-    targetLang: lang,
-    sourceLang: DEFAULT_LOCALE,
-    contentType: options.contentType || 'text',
-    domain: options.domain || null,
-    sourceLastVerified: options.sourceLastVerified || null
-  });
+  try {
+    return await translateTextContent(text, {
+      targetLang: lang,
+      sourceLang: DEFAULT_LOCALE,
+      contentType: options.contentType || 'text',
+      domain: options.domain || null,
+      sourceLastVerified: options.sourceLastVerified || null
+    });
+  } catch (err) {
+    log.warn('translate_text_failed_fallback_source', { lang, err: err.message });
+    return {
+      translated: text,
+      display_lang: lang,
+      source_lang: DEFAULT_LOCALE,
+      translation_status: 'failed_internal',
+      translation_error: err.message
+    };
+  }
 }
 
 function limitItems(list, limit) {
@@ -763,32 +788,26 @@ const server = createServer(async (req, res) => {
       if (body.html.length > 50000) {
         return json(res, 413, { error: 'Fragment trop volumineux', disclaimer: DISCLAIMER });
       }
-      try {
-        const translated = await maybeTranslateText(req, url, body, body.html, {
-          contentType: 'html'
-        });
-        if (translated.translation_status === 'failed') {
-          return json(res, 503, {
-            error: 'Traduction indisponible pour la langue demandée',
-            display_lang: translated.display_lang,
-            source_lang: translated.source_lang,
-            translation_status: translated.translation_status,
-            translation_pipeline_version: translated.translation_pipeline_version,
-            disclaimer: DISCLAIMER
-          });
-        }
-        return json(res, 200, {
-          html: translated.translated,
-          display_lang: translated.display_lang,
-          source_lang: translated.source_lang,
-          translation_status: translated.translation_status,
-          translation_pipeline_version: translated.translation_pipeline_version,
-          translated_at: translated.translated_at,
-          disclaimer: DISCLAIMER
-        });
-      } catch (err) {
-        return json(res, 503, { error: err.message, disclaimer: DISCLAIMER });
-      }
+      // Bulletproof : maybeTranslateText ne throw plus jamais (catch interne →
+      // renvoie le texte source avec translation_status='failed' ou 'failed_internal').
+      // On répond TOUJOURS 200 avec le HTML le mieux disponible. Le frontend
+      // lit translation_status pour afficher éventuellement un avertissement
+      // discret ("traduction indisponible — texte affiché en langue source").
+      // Évite la cascade 503 observée en prod quand l'API LLM est down (~108
+      // erreurs sur 9 jours, toutes par grappes de ~9 fragments simultanés).
+      const translated = await maybeTranslateText(req, url, body, body.html, {
+        contentType: 'html'
+      });
+      return json(res, 200, {
+        html: translated.translated || body.html,
+        display_lang: translated.display_lang,
+        source_lang: translated.source_lang,
+        translation_status: translated.translation_status,
+        translation_pipeline_version: translated.translation_pipeline_version,
+        translated_at: translated.translated_at,
+        translation_error: translated.translation_error || undefined,
+        disclaimer: DISCLAIMER
+      });
     }
 
     // NOTE: first /api/premium/estimate handler removed (duplicate — caught all requests).

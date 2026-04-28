@@ -158,32 +158,51 @@ export async function translateTextContent(text, options = {}) {
     };
   }
 
-  const translated = await translateOneString(text, {
-    ...options,
-    targetLang,
-    sourceLang,
-    contentType
-  });
-  const translatedAt = new Date().toISOString();
-  setCacheEntry(key, {
-    translated_text: translated,
-    translated_at: translatedAt,
-    qa_passed: true,
-    qa_failed: false,
-    needs_regen: false
-  });
-  return {
-    translated,
-    display_lang: targetLang,
-    source_lang: sourceLang,
-    translation_status: 'fresh',
-    translation_pipeline_version: TRANSLATION_PIPELINE_VERSION,
-    translated_at: translatedAt,
-    qa_passed: true,
-    qa_failed: false,
-    cache_hit: false,
-    needs_regen: false
-  };
+  // Bulletproof : si translateOneString échoue (LLM indispo, timeout, quota), on
+  // renvoie le texte source plutôt que de propager l'erreur. Le caller décide
+  // (200 + warning vs autre stratégie) en lisant translation_status.
+  try {
+    const translated = await translateOneString(text, {
+      ...options,
+      targetLang,
+      sourceLang,
+      contentType
+    });
+    const translatedAt = new Date().toISOString();
+    setCacheEntry(key, {
+      translated_text: translated,
+      translated_at: translatedAt,
+      qa_passed: true,
+      qa_failed: false,
+      needs_regen: false
+    });
+    return {
+      translated,
+      display_lang: targetLang,
+      source_lang: sourceLang,
+      translation_status: 'fresh',
+      translation_pipeline_version: TRANSLATION_PIPELINE_VERSION,
+      translated_at: translatedAt,
+      qa_passed: true,
+      qa_failed: false,
+      cache_hit: false,
+      needs_regen: false
+    };
+  } catch (err) {
+    return {
+      translated: text,
+      display_lang: targetLang,
+      source_lang: sourceLang,
+      translation_status: 'failed',
+      translation_pipeline_version: TRANSLATION_PIPELINE_VERSION,
+      translated_at: new Date().toISOString(),
+      qa_passed: false,
+      qa_failed: true,
+      cache_hit: false,
+      needs_regen: true,
+      translation_error: err.message
+    };
+  }
 }
 
 async function translateNode(node, ctx, keyHint = '') {

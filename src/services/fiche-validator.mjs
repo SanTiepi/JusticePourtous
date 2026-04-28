@@ -362,6 +362,7 @@ export function validateAllFiches({ root, strict = false } = {}) {
 
       per_fiche.push({
         id: fiche?.id ?? '<no-id>',
+        domaine: fiche?.domaine ?? null,
         file,
         valid: result.valid,
         errors: result.errors,
@@ -403,10 +404,10 @@ export function countFicheSchemaIssues(report) {
   const topProblematic = [];
 
   for (const item of r.per_fiche) {
-    if (!byDomain[item.id?.split('_')?.[0] ?? 'unknown']) {
-      byDomain[item.id?.split('_')?.[0] ?? 'unknown'] = { valid: 0, invalid: 0 };
-    }
-    const dKey = item.id?.split('_')?.[0] ?? 'unknown';
+    // Utilise le champ canonique fiche.domaine. Fallback sur préfixe d'id pour
+    // les fiches anciennes sans domaine explicite (ne devrait plus arriver).
+    const dKey = item.domaine ?? item.id?.split('_')?.[0] ?? 'unknown';
+    if (!byDomain[dKey]) byDomain[dKey] = { valid: 0, invalid: 0 };
     if (item.valid) byDomain[dKey].valid++;
     else byDomain[dKey].invalid++;
 

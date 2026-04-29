@@ -218,7 +218,9 @@
     "last_verified_at": "2026-04-07",
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-07",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "bail_defaut_bruit",
@@ -667,7 +669,9 @@
     "last_verified_at": "2026-04-07",
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-07",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "bail_loyer_abusif",
@@ -888,7 +892,9 @@
         ]
       }
     ],
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "bail_depot_garantie",
@@ -955,9 +961,9 @@
           "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_257_e"
         },
         {
-          "ref": "LP 63",
-          "titre": "Exécution sur la caution — procédure poursuite",
-          "lien": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_63"
+          "ref": "CO 267",
+          "titre": "Restitution de la chose louée",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_267"
         }
       ],
       "jurisprudence": [
@@ -1054,7 +1060,7 @@
             "action": "État des lieux de sortie et décompte final",
             "description": "Exiger un état des lieux contradictoire signé et demander le décompte écrit des retenues éventuelles invoquées par le bailleur.",
             "delai": "le jour de la restitution des clés",
-            "base_legale": "CO 267a",
+            "base_legale": "CO 267 / CO 267a",
             "preuve_generee": "Procès-verbal d'état des lieux signé"
           },
           {
@@ -1096,7 +1102,9 @@
     "last_verified_at": "2026-04-07",
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-07",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "fixed"
   },
   {
     "id": "bail_charges_contestees",
@@ -1772,7 +1780,9 @@
     "last_verified_at": "2026-04-07",
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-07",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "bail_etat_des_lieux",
@@ -2597,7 +2607,7 @@
       }
     ],
     "reponse": {
-      "explication": "Contestation possible dans les 30 jours suivant la reception de la chose (art. 270 al. 1 CO) si : (1) contraint par nécessité ou marche, ET (2) loyer sensiblement supérieur au précédent. Dans les cantons VD, GE, FR, ZH, NE, formule officielle obligatoire. Sans formule, le loyer est contestable en tout temps. Le TF considere qu une hausse de plus de 10% est sensible et doit être justifiee.\n\nCadre légal applicable : CO 270 (Contestation du loyer initial), CO 269 (Loyers abusifs — principe), CO 269d (Notification d augmentation). En cas de situation concrète, les délais, montants et autorités compétentes varient selon le canton et les faits du dossier. Une analyse personnalisée via le triage JusticePourtous ou un professionnel du droit est recommandée.",
+      "explication": "⚠️ DÉLAI 30 JOURS PÉREMPTOIRE — passé ce délai, contestation possible uniquement si formule officielle manquante.\n\nContestation possible dans les 30 jours suivant la réception de la chose (art. 270 al. 1 CO) si : (1) contraint par nécessité personnelle ou pénurie de logements sur le marché, ET (2) loyer sensiblement supérieur au précédent. Dans les cantons VD, GE, FR, ZH, ZG, NE (et autres cantons selon arrêté cantonal sur la pénurie de logements), formule officielle obligatoire pour fixer le loyer initial (art. 270 al. 2 CO). Sans formule, le loyer initial est contestable en tout temps (jurisprudence constante TF). Le TF considère qu'une hausse de plus de 10% est sensible et doit être justifiée.\n\nCadre légal applicable : CO 270 (Contestation du loyer initial), CO 269 (Loyers abusifs — principe), CO 269a (Loyers non abusifs — critères), CO 269d (Notification d'augmentation). En cas de situation concrète, les délais, montants et autorités compétentes varient selon le canton et les faits du dossier. Une analyse personnalisée via le triage JusticePourtous ou un professionnel du droit est recommandée.",
       "articles": [
         {
           "ref": "CO 270",
@@ -2625,7 +2635,7 @@
           "resume": "Sans formule officielle, le loyer initial est contestable en tout temps."
         }
       ],
-      "modeleLettre": "Objet : Contestation du loyer initial\n\nA la Commission de conciliation,\n\nMadame, Monsieur,\n\nEmménage au [ADRESSE] le [DATE], loyer CHF [MONTANT]. Je contesté ce loyer initial (art. 270 CO) car [SENSIBLEMENT SUPÉRIEUR AU PRÉCÉDENT / ABSENCE DE FORMULE OFFICIELLE].\n\nJe demande la fixation judiciaire d un loyer non abusif.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[SIGNATURE]",
+      "modeleLettre": "Objet : Requête en contestation du loyer initial — bail [ADRESSE]\n\nCommission de conciliation en matière de baux à loyer\n[DISTRICT/ARRONDISSEMENT]\n\n[LIEU], le [DATE]\n\nMadame, Monsieur,\n\nJ'ai emménagé au [ADRESSE COMPLÈTE] le [DATE D'ENTRÉE], pour un loyer mensuel de CHF [MONTANT] hors charges.\n\nJe conteste ce loyer initial sur la base de l'art. 270 CO pour les motifs suivants :\n\n[CHOISIR / ADAPTER]\n☐ Le bailleur ne m'a pas remis la formule officielle prévue à l'art. 270 al. 2 CO (canton soumis à l'obligation : VD/GE/FR/ZH/ZG/NE/...). Le loyer est dès lors contestable en tout temps.\n☐ Le loyer convenu est sensiblement supérieur (+ [POURCENTAGE]%) à celui du locataire précédent (CHF [MONTANT PRÉCÉDENT]) sans justification fondée sur l'art. 269 et 269a CO.\n☐ J'ai été contraint·e de signer le bail en raison de la pénurie de logements sur le marché [LOCALITÉ].\n\nJe sollicite la fixation judiciaire d'un loyer non abusif.\n\nAnnexes : copie du contrat de bail, [formule officielle / attestation absence], [autres pièces].\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\n[NOM, PRÉNOM]\n[ADRESSE COMPLÈTE]\n[SIGNATURE]",
       "services": [
         {
           "nom": "ASLOCA Vaud",
@@ -2680,10 +2690,51 @@
       "date d'entree dans le logement",
       "canton"
     ],
-    "last_verified_at": "2026-04-07",
+    "cascades": [
+      {
+        "titre": "Contestation du loyer initial",
+        "domaine": "bail",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Vérifier la formule officielle",
+            "description": "Identifier le canton du logement. Si VD/GE/FR/ZH/ZG/NE (ou autre canton avec arrêté pénurie) : la formule officielle est obligatoire. Si aucune formule reçue à la signature → loyer contestable EN TOUT TEMPS (pas de délai). Si formule reçue, vérifier qu'elle indique le loyer du locataire précédent et le motif de la hausse.",
+            "delai": "immédiat dès l'emménagement",
+            "base_legale": "CO 270 al. 2 / OBLF 19",
+            "preuve_generee": "Copie du contrat + formule officielle (ou attestation de son absence)"
+          },
+          {
+            "numero": 2,
+            "action": "Obtenir le loyer du locataire précédent",
+            "description": "Demander au bailleur ou consulter la formule officielle. Comparer : si hausse > 10% sans justification structurelle (travaux, baisse taux hypothécaire), elle est présumée abusive (TF jurisprudence constante).",
+            "delai": "dans les jours suivant l'emménagement",
+            "preuve_generee": "Documents comparatifs (formule, demande écrite au bailleur)"
+          },
+          {
+            "numero": 3,
+            "action": "Dépôt de la requête en contestation",
+            "description": "Déposer la requête écrite à la commission de conciliation des baux du district. Procédure gratuite (art. 113 CPC). Indiquer : loyer actuel, loyer précédent, demande de fixation judiciaire d'un loyer non abusif, motif (formule manquante OU hausse sensible non justifiée).",
+            "delai": "30 jours dès réception de la chose si formule présente / EN TOUT TEMPS si formule manquante",
+            "base_legale": "CO 270 al. 1 / CPC 197",
+            "cout": "Gratuit jusqu'à CHF 30'000 en bail",
+            "preuve_generee": "Accusé de réception de la requête de conciliation"
+          },
+          {
+            "numero": 4,
+            "action": "Audience de conciliation",
+            "description": "Présence obligatoire (sauf représentation). La commission propose un loyer non abusif basé sur le rendement, les loyers comparables, le taux hypothécaire de référence (OFL). En cas d'accord : protocolé. En cas de désaccord : autorisation de procéder délivrée pour saisir le tribunal des baux dans les 30 jours.",
+            "delai": "convocation environ 2 mois après dépôt",
+            "base_legale": "CPC 197 / CPC 209",
+            "preuve_generee": "Procès-verbal de conciliation ou autorisation de procéder"
+          }
+        ]
+      }
+    ],
+    "last_verified_at": "2026-04-29",
     "review_scope": "reviewed_by_claude",
-    "review_expiry": "2027-04-07",
-    "claude_review_date": "2026-04-19"
+    "review_expiry": "2027-04-29",
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29"
   },
   {
     "id": "bail_frais_chauffage",
@@ -4453,7 +4504,9 @@
         ]
       }
     ],
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "bail_etat_lieux_conteste",

@@ -215,7 +215,9 @@
     "last_verified_at": "2026-04-07",
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-07",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "dettes_opposition",
@@ -274,7 +276,7 @@
       }
     ],
     "reponse": {
-      "explication": "Après opposition du debiteur, le créancier doit obtenir la mainlevee pour continuer la poursuite. Il existe deux types : (1) la mainlevee definitive (art. 80 LP) si le créancier dispose d'un jugement exécutoire ou d'un titre equivalent, (2) la mainlevee provisoire (art. 82 LP) si le créancier dispose d'une reconnaissance de dette signée (contrat, facture acceptee, billet a ordre). Pour la mainlevee provisoire, le debiteur peut s'opposer en rendant vraisemblable sa libération (paiement, prescription, compensation). Si la mainlevee provisoire est accordee, le debiteur peut encore agir en libération de dette dans les 20 jours (art. 83 al. 2 LP). La procédure de mainlevee est sommaire et rapide (quelques semaines). Sans titre de mainlevee, le créancier doit agir en justice au fond (procédure ordinaire) pour obtenir un jugement, puis revenir avec la mainlevee definitive.",
+      "explication": "⚠️ IMPORTANT — Cette fiche traite de la phase APRÈS votre opposition. Si vous venez de recevoir un commandement de payer et n'avez PAS encore fait opposition, vous avez 10 jours seulement (art. 74 al. 1 LP) pour faire opposition à l'office des poursuites — voir la fiche 'commandement de payer'. Passé ce délai péremptoire, la dette devient exécutoire.\n\nAprès votre opposition, le créancier doit obtenir la mainlevée pour continuer la poursuite. Il existe deux types : (1) la mainlevée définitive (art. 80 LP) si le créancier dispose d'un jugement exécutoire ou d'un titre équivalent, (2) la mainlevée provisoire (art. 82 LP) si le créancier dispose d'une reconnaissance de dette signée (contrat, facture acceptée, billet à ordre). Pour la mainlevée provisoire, le débiteur peut s'opposer en rendant vraisemblable sa libération (paiement, prescription, compensation). Si la mainlevée provisoire est accordée, le débiteur peut encore agir en libération de dette dans les 20 jours (art. 83 al. 2 LP). La procédure de mainlevée est sommaire et rapide (quelques semaines). Sans titre de mainlevée, le créancier doit agir en justice au fond (procédure ordinaire) pour obtenir un jugement, puis revenir avec la mainlevée définitive.",
       "articles": [
         {
           "ref": "LP 74",
@@ -307,7 +309,7 @@
           "resume": "Le contrat de bail signé vaut reconnaissance de dette pour les loyers echus et justifie la mainlevee provisoire."
         }
       ],
-      "modeleLettre": "Objet : Opposition à la mainlevée / contestation de la créance — poursuite n° [NUMÉRO DE POURSUITE]\n\nTribunal [COMPÉTENT] de [LIEU]\n[ADRESSE DU TRIBUNAL]\n\n[LIEU], le [DATE]\n\nMadame, Monsieur le/la Juge,\n\nSuite au commandement de payer n° [NUMÉRO DE POURSUITE] notifié le [DATE], j'ai formé opposition conformément à l'art. 74 LP.\n\nLe créancier [NOM DU CRÉANCIER] a requis la mainlevée de mon opposition. Je contesté cette requête pour les motifs suivants :\n\n[MOTIF 1 : EX. LA DETTE EST PRESCRITE / LE MONTANT EST ERRONÉ / LE DOCUMENT PRODUIT NE CONSTITUE PAS UNE RECONNAISSANCE DE DETTE AU SENS DE L'ART. 82 LP / LA DETTE A ÉTÉ PAYÉE LE [DATE] — preuve en annexe]\n\nConformément à l'art. 82 LP, la mainlevée provisoire ne peut être accordée que si le créancier produit une reconnaissance de dette. À défaut d'un tel titre, la mainlevée doit être refusée et le créancier renvoyé à agir au fond.\n\nJe me réserve le droit d'agir en libération de dette selon l'art. 83 al. 2 LP le cas échéant.\n\nAnnexes : [LISTE DES PIÈCES JUSTIFICATIVES]\n\nVeuillez agréer, Madame, Monsieur le/la Juge, mes salutations distinguées.\n\n[NOM, PRÉNOM]\n[ADRESSE COMPLÈTE]\n[SIGNATURE]",
+      "modeleLettre": "Objet : Détermination dans la procédure de mainlevée — poursuite n° [NUMÉRO DE POURSUITE]\n\n⚠️ AVERTISSEMENT — Ce modèle s'adresse au TRIBUNAL et concerne la procédure de MAINLEVÉE (étape postérieure à votre opposition). Il NE remplace PAS la lettre d'opposition au commandement de payer (qui s'adresse à l'OFFICE DES POURSUITES dans les 10 jours — voir fiche dettes_commandement_payer).\n\nTribunal de [LIEU] — Procédure sommaire (mainlevée)\n[ADRESSE DU TRIBUNAL]\n\n[LIEU], le [DATE]\n\nMadame, Monsieur le/la Juge,\n\nSuite au commandement de payer n° [NUMÉRO DE POURSUITE] notifié le [DATE], j'ai formé opposition conformément à l'art. 74 LP.\n\nLe créancier [NOM DU CRÉANCIER] a requis la mainlevée de mon opposition. Je conteste cette requête pour les motifs suivants :\n\n[MOTIF 1 : EX. LA DETTE EST PRESCRITE / LE MONTANT EST ERRONÉ / LE DOCUMENT PRODUIT NE CONSTITUE PAS UNE RECONNAISSANCE DE DETTE AU SENS DE L'ART. 82 LP / LA DETTE A ÉTÉ PAYÉE LE [DATE] — preuve en annexe]\n\nConformément à l'art. 82 LP, la mainlevée provisoire ne peut être accordée que si le créancier produit une reconnaissance de dette. À défaut d'un tel titre, la mainlevée doit être refusée et le créancier renvoyé à agir au fond.\n\nJe me réserve le droit d'agir en libération de dette selon l'art. 83 al. 2 LP le cas échéant.\n\nAnnexes : [LISTE DES PIÈCES JUSTIFICATIVES]\n\nVeuillez agréer, Madame, Monsieur le/la Juge, mes salutations distinguées.\n\n[NOM, PRÉNOM]\n[ADRESSE COMPLÈTE]\n[SIGNATURE]",
       "services": [
         {
           "nom": "Centre social protestant VD",
@@ -359,7 +361,7 @@
     },
     "maj": "2026-04-07",
     "sourceLoi": "LP état 2025-01-01",
-    "match_description": "La personne a fait ou veut faire opposition à un commandement de payer et le créancier demande la mainlevee",
+    "match_description": "La personne a déjà fait opposition au commandement de payer et le créancier demande la mainlevée. ⚠️ Si vous cherchez COMMENT faire opposition (avant la mainlevée), voir la fiche dettes_commandement_payer (délai 10 jours péremptoire).",
     "profane_aliases": [
       "j'ai fait opposition et maintenant",
       "mainlevee c'est quoi",
@@ -420,7 +422,9 @@
         ]
       }
     ],
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "fixed"
   },
   {
     "id": "dettes_minimum_vital",
@@ -2220,7 +2224,9 @@
         ]
       }
     ],
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "dettes_mainlevee_definitive",

@@ -576,7 +576,7 @@
       }
     ],
     "reponse": {
-      "explication": "Le renvoi (art. 64 LEI) est ordonne lorsqu'une autorisation est refusee ou revoquee. Il doit respecter le principe de proportionnalite et la CEDH (art. 8 CEDH, droit à la vie privee et familiale). L'expulsion pénale (art. 66a CP) est prononcee par le juge pénal pour certaines infractions graves et est en principe obligatoire, sauf clause de rigueur (art. 66a al. 2 CP). Le recours contre une décision de renvoi doit être déposé dans les 30 jours auprès du tribunal cantonal compétent (art. 64 al. 3 LEI). Le recours à un effet suspensif en principe. Des mesures de contrainte (detention administrative) peuvent être ordonnees pour assurer l'exécution du renvoi (art. 76 LEI), limitees a 6 mois (18 mois maximum). Le renvoi est impossible vers un pays ou la personne risque la torture ou des traitements inhumains (art. 25 al. 3 Cst., non-refoulement).",
+      "explication": "⚠️ DÉLAI DE RECOURS PÉREMPTOIRE — 30 jours en règle générale, parfois 5 jours en procédure d'asile accélérée (art. 108 al. 1 LAsi). Passé ce délai, le recours est irrecevable. Vérifiez immédiatement la lettre de notification : elle indique précisément le délai et l'autorité de recours.\n\nLe renvoi (art. 64 LEI) est ordonné lorsqu'une autorisation est refusée ou révoquée. Il doit respecter le principe de proportionnalité et la CEDH (art. 8 CEDH, droit à la vie privée et familiale). L'expulsion pénale (art. 66a CP) est prononcée par le juge pénal pour certaines infractions graves et est en principe obligatoire, sauf clause de rigueur (art. 66a al. 2 CP).\n\nVoies de recours :\n- Décision SEM en matière d'asile → recours au Tribunal administratif fédéral (TAF), délai 30 jours (art. 108 al. 1 LAsi) ou 5 jours en procédure accélérée\n- Décision SEM hors asile → recours au TAF, délai 30 jours (art. 50 al. 1 LTAF)\n- Décision cantonale → recours au tribunal cantonal supérieur dans le délai prévu par le droit cantonal (généralement 30 jours), puis au Tribunal fédéral\n\nLe recours a effet suspensif en principe. Des mesures de contrainte (détention administrative) peuvent être ordonnées pour assurer l'exécution du renvoi (art. 76 LEI), limitées à 6 mois (18 mois maximum). Le renvoi est impossible vers un pays où la personne risque la torture ou des traitements inhumains (art. 25 al. 3 Cst., non-refoulement).",
       "articles": [
         {
           "ref": "LEI 64",
@@ -659,10 +659,50 @@
       "recours déposé ou non",
       "famille en Suisse"
     ],
-    "last_verified_at": "2026-04-07",
+    "cascades": [
+      {
+        "titre": "Recours contre une décision de renvoi",
+        "domaine": "etrangers",
+        "etapes": [
+          {
+            "numero": 1,
+            "action": "Lecture immédiate de la décision",
+            "description": "Identifier sur la lettre : (a) l'autorité qui a décidé (SEM, autorité cantonale), (b) le délai de recours indiqué (30 jours en règle, 5 jours en procédure d'asile accélérée), (c) l'autorité de recours désignée. Noter la date de notification — c'est elle qui fait courir le délai.",
+            "delai": "immédiat dès réception",
+            "base_legale": "LAsi 108 / LTAF 50 / droit cantonal",
+            "preuve_generee": "Copie annotée de la décision avec date et délai surlignés"
+          },
+          {
+            "numero": 2,
+            "action": "Consultation juridique URGENTE",
+            "description": "Contacter immédiatement un service juridique spécialisé (Caritas, CSP, Centre social protestant, permanences juridiques cantonales pour étrangers). Le délai est péremptoire — un retard d'un jour rend le recours irrecevable. Une consultation gratuite ou à coût réduit est généralement disponible pour les bénéficiaires d'aide sociale.",
+            "delai": "dans les 5 jours suivant la notification (pour avoir le temps de préparer le recours)",
+            "preuve_generee": "Mandat de représentation ou notes de consultation"
+          },
+          {
+            "numero": 3,
+            "action": "Préparation et dépôt du recours motivé",
+            "description": "Le recours doit être écrit, signé, motivé, et inclure : (a) la décision attaquée, (b) les motifs (violation art. 8 CEDH, proportionnalité, intégration, attaches familiales, non-refoulement), (c) les conclusions précises (annulation), (d) demande d'effet suspensif (art. 55 PA), (e) demande d'assistance judiciaire si nécessaire (art. 65 PA). Annexer toutes les pièces justificatives.",
+            "delai": "30 jours dès notification (5 jours en procédure d'asile accélérée)",
+            "base_legale": "LTAF 50 / LAsi 108 / PA 52",
+            "preuve_generee": "Recours déposé avec accusé de réception (recommandé)"
+          },
+          {
+            "numero": 4,
+            "action": "Suivi et exécution",
+            "description": "L'effet suspensif est en principe accordé : pas de renvoi pendant la procédure. Le recours peut prendre plusieurs mois. En cas de rejet, recours possible au Tribunal fédéral dans certains cas (art. 83 LTF — exclusions étendues en matière de droit des étrangers).",
+            "delai": "selon procédure",
+            "base_legale": "PA 55 / LTF 100",
+            "preuve_generee": "Décision finale, dossier complet"
+          }
+        ]
+      }
+    ],
+    "last_verified_at": "2026-04-29",
     "review_scope": "reviewed_by_claude",
-    "review_expiry": "2027-04-07",
-    "claude_review_date": "2026-04-19"
+    "review_expiry": "2027-04-29",
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29"
   },
   {
     "id": "etranger_permis_travail",

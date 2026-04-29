@@ -20,7 +20,10 @@ const DOMAINS = ['bail', 'travail', 'dettes', 'etrangers', 'famille', 'accident'
 const PRE_EXISTING_CASCADES = {
   bail_defaut_moisissure: '9ac1f073ee0bcda50c471e9a06c8477d61f8d0fadb2c604e0e6a490c75400480',
   bail_resiliation_conteste: '0797400aa2ed25bbae603ee2cad7f934e1098e0ca81ddfc33ff39924d4428544',
-  bail_depot_garantie: 'da5334b4c8a7df110c4717c07e095c08b61a80120239ee31aa4e91e303507451',
+  // Hash mis à jour 2026-04-29 — modification volontaire (legal-review-claude.md #2) :
+  // base_legale étape 1 "CO 267a" → "CO 267 / CO 267a" (clarification — la restitution
+  // de la chose CO 267 est la base premier-rang, CO 267a régit l'avis des défauts).
+  bail_depot_garantie: 'f3194b5d8a1feed1ce12d80cf9441549e5ef560326fa790e21fbf158a7c0907b',
   bail_augmentation_loyer: '196763c716531dab9d52d97a24c49a21175063e993b4b6b1dadaa88f7fe881ce',
   travail_licenciement_maladie: '283c52798872801ce1353253c941ab3e0ef440eef62b3bbb84e63805d5539fac',
   travail_salaire_impaye: 'db2a0c4b89c2ee5271e378418fa18a002e63a01baac2a2216efd0f14a4697b08',

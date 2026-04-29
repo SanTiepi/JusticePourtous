@@ -12,6 +12,7 @@
 - **Atomic-write Windows EPERM** ([118f663](src/services/atomic-write.mjs)) — retry borné (5/15/40/100/250 ms) sur EPERM/EBUSY/EACCES, élimine flake Windows en tests parallèles.
 - **Intent-catalog last_verified_at** ([48b8099](scripts/build-intent-catalog.mjs)) — lisait dateVerification (52/314) au lieu de last_verified_at (314/314). Qualité 37% → 46%, complete 11 → 64.
 - **/api/fiches/:id enrichi** ([f6b3f72](src/server.mjs)) — retourne anti-erreurs + vulgarisation (parité /api/search). Fix régression invisible : pages résultat accédées en direct ne montraient PAS les anti-erreurs.
+- **🐛 Widget feedback inversion signal** ([6969279](src/public/app.js)) — Bug critique trouvé en cycle 30 : mon widget thumbs envoyait `helpful: true/false` mais le backend attend `1|2|3`. `Number(true)=1` → 👍 enregistré comme **NON**. Si Robin avait commencé à recevoir des outcomes avant ce fix, ils auraient TOUS été inversés. Fix : mapping explicite `true→3 / false→1` dans `submitQuickFeedback`. +3 tests régression ([211b8d9](test/outcomes-collection.test.mjs)).
 
 ### ⚖️ Legal review (281/281 fiches actionnables = **100%**)
 

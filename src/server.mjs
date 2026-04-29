@@ -569,7 +569,18 @@ const server = createServer(async (req, res) => {
       const ficheId = path.match(/^\/api\/fiches\/([^/]+)$/)[1];
       const fiche = getFicheById(ficheId);
       if (!fiche) return json(res, 404, { error: 'Fiche non trouvee', disclaimer: DISCLAIMER });
-      return json(res, 200, await maybeTranslatePayload(req, url, null, { fiche, disclaimer: DISCLAIMER }, {
+      // Enrichissement : ajoute anti-erreurs du domaine et vulgarisation associée.
+      // Avant ce fix, /api/fiches/:id ne retournait QUE la fiche brute, donc les
+      // users qui arrivaient direct sur /resultat.html (lien partagé, SEO) ne
+      // voyaient pas les anti-erreurs ni la vulgarisation citoyenne — alors que
+      // /api/search les retournait. Comportement maintenant uniforme.
+      const aeResult = getAntiErreursByDomaine(fiche.domaine);
+      const antiErreurs = aeResult?.data?.erreurs || [];
+      const vulgarisation = getVulgarisationForFiche(ficheId);
+      const enrichedPayload = { fiche, disclaimer: DISCLAIMER };
+      if (antiErreurs.length) enrichedPayload.antiErreurs = antiErreurs;
+      if (vulgarisation) enrichedPayload.vulgarisation = vulgarisation;
+      return json(res, 200, await maybeTranslatePayload(req, url, null, enrichedPayload, {
         contentType: 'structured_legal_content',
         domain: fiche?.domaine,
         sourceLastVerified: fiche?.last_verified_at

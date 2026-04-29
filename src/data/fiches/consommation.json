@@ -217,7 +217,9 @@
       }
     ],
     "readiness": "beta",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "consommation_annulation_commande_en_ligne",
@@ -423,7 +425,9 @@
       }
     ],
     "readiness": "beta",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "consommation_cgv_clauses_abusives",
@@ -755,7 +759,9 @@
       }
     ],
     "readiness": "beta",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "consommation_reparation_sous_garantie",
@@ -891,7 +897,9 @@
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-18",
     "readiness": "beta",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "consommation_achat_occasion_caches",
@@ -1033,7 +1041,9 @@
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-18",
     "readiness": "beta",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "consommation_vente_forcee_porte_a_porte",
@@ -1171,7 +1181,9 @@
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-18",
     "readiness": "beta",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "consommation_pratiques_deloyales",
@@ -1451,7 +1463,9 @@
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-18",
     "readiness": "beta",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "consommation_service_apres_vente",
@@ -1595,6 +1609,8 @@
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-18",
     "readiness": "beta",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   }
 ]

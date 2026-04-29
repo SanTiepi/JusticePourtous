@@ -302,7 +302,9 @@
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-19",
     "readiness": "beta",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "sante_refus_traitement",
@@ -458,7 +460,9 @@
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-19",
     "readiness": "beta",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "sante_secret_medical",
@@ -613,7 +617,9 @@
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-19",
     "readiness": "beta",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "sante_lamal_choix_assureur",
@@ -769,7 +775,9 @@
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-19",
     "readiness": "beta",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "sante_lamal_refus_prestation",
@@ -930,7 +938,9 @@
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-19",
     "readiness": "beta",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "sante_assurance_complementaire_refus",
@@ -1097,7 +1107,9 @@
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-19",
     "readiness": "beta",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "sante_directive_anticipee",
@@ -1418,7 +1430,9 @@
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-19",
     "readiness": "beta",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "sante_patient_hospitalisation_force",
@@ -1590,7 +1604,9 @@
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-19",
     "readiness": "beta",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "sante_refus_nouveau_patient",
@@ -1752,7 +1768,9 @@
     "review_expiry": "2027-04-20",
     "readiness": "beta",
     "information_only": false,
-    "claude_review_date": "2026-04-20"
+    "claude_review_date": "2026-04-20",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "sante_responsabilite_professionnel",
@@ -1922,7 +1940,9 @@
     "review_expiry": "2027-04-20",
     "readiness": "beta",
     "information_only": false,
-    "claude_review_date": "2026-04-20"
+    "claude_review_date": "2026-04-20",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "sante_refus_vaccination_enfant",
@@ -2087,7 +2107,9 @@
     "review_expiry": "2027-04-20",
     "readiness": "beta",
     "information_only": false,
-    "claude_review_date": "2026-04-20"
+    "claude_review_date": "2026-04-20",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "sante_facture_medicale_contestation",
@@ -2248,7 +2270,9 @@
     "review_expiry": "2027-04-20",
     "readiness": "beta",
     "information_only": false,
-    "claude_review_date": "2026-04-20"
+    "claude_review_date": "2026-04-20",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "sante_franchise_quote_part",
@@ -2400,7 +2424,9 @@
     "review_expiry": "2027-04-20",
     "readiness": "beta",
     "information_only": false,
-    "claude_review_date": "2026-04-20"
+    "claude_review_date": "2026-04-20",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "sante_changement_assureur_lamal",
@@ -2561,7 +2587,9 @@
     "review_expiry": "2027-04-20",
     "readiness": "beta",
     "information_only": false,
-    "claude_review_date": "2026-04-20"
+    "claude_review_date": "2026-04-20",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "sante_medecin_traitant_continuite",
@@ -2723,7 +2751,9 @@
     "review_expiry": "2027-04-20",
     "readiness": "beta",
     "information_only": false,
-    "claude_review_date": "2026-04-20"
+    "claude_review_date": "2026-04-20",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "sante_hospitalisation_privee_semi_privee",
@@ -2889,7 +2919,9 @@
     "review_expiry": "2027-04-20",
     "readiness": "beta",
     "information_only": false,
-    "claude_review_date": "2026-04-20"
+    "claude_review_date": "2026-04-20",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "sante_curatelle_medicale",
@@ -3051,7 +3083,9 @@
     "review_expiry": "2027-04-20",
     "readiness": "beta",
     "information_only": false,
-    "claude_review_date": "2026-04-20"
+    "claude_review_date": "2026-04-20",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "sante_assistance_suicide_fin_vie",

@@ -218,11 +218,17 @@ async function loadResultat(ficheId) {
   if (fiche.claude_legal_review_date) {
     var reviewDate = String(fiche.claude_legal_review_date);
     var reviewNote = fiche.claude_legal_review_notes || 'verified';
-    var reviewLabel = reviewNote === 'fixed'
-      ? 'Articles, délais et autorités relus et corrigés le ' + reviewDate
-      : (reviewNote === 'verified_minor_imprecision'
-          ? 'Articles, délais et autorités relus le ' + reviewDate + ' (imprécisions mineures connues)'
-          : 'Articles, délais et autorités relus le ' + reviewDate);
+    var reviewLabel;
+    if (reviewNote === 'fixed') {
+      reviewLabel = 'Articles, délais et autorités relus et corrigés le ' + reviewDate;
+    } else if (reviewNote === 'verified_minor_imprecision') {
+      reviewLabel = 'Articles, délais et autorités relus le ' + reviewDate + ' (imprécisions mineures connues)';
+    } else if (reviewNote === 'verified_information_only') {
+      // Fiches purement informationnelles — pas de cascade ni délai péremptoire
+      reviewLabel = 'Références juridiques relues le ' + reviewDate + ' (fiche informationnelle)';
+    } else {
+      reviewLabel = 'Articles, délais et autorités relus le ' + reviewDate;
+    }
     html += '<div class="legal-review-badge" role="status" aria-label="Vérification juridique"' + stagger() + '>';
     html += '<span class="badge-icon" aria-hidden="true">⚖️</span>';
     html += '<div class="badge-text">';

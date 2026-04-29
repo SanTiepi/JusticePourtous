@@ -324,6 +324,10 @@ async function loadResultat(ficheId) {
 
 // Envoie le feedback rapide thumbs up/down (POST /api/outcome — endpoint simple
 // existant). Auto-désactive le widget après envoi pour éviter les doubles clics.
+//
+// IMPORTANT : le backend attend helpful sur l'échelle 1 (non) / 2 (neutre) /
+// 3 (oui), pas un booléen. Voir src/services/outcomes-tracker.mjs:465.
+// Le mapping ici : true → 3 (👍 oui), false → 1 (👎 non).
 function submitQuickFeedback(helpful) {
   var widget = document.getElementById('quickFeedback');
   if (!widget || widget.dataset.submitted === '1') return;
@@ -331,12 +335,13 @@ function submitQuickFeedback(helpful) {
   var caseId = widget.dataset.caseId;
   var buttons = widget.querySelectorAll('.qf-btn');
   buttons.forEach(function(b) { b.disabled = true; });
+  var helpfulScore = helpful ? 3 : 1;
   fetch('/api/outcome', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       case_id: caseId,
-      helpful: !!helpful,
+      helpful: helpfulScore,
       consent_anon_aggregate: true
     })
   }).then(function(res) {

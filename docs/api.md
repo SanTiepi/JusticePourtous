@@ -31,6 +31,16 @@ Triage interactif. Body : `{ texte, canton?, account_id? }`.
 ### `GET /api/domaines` / `/api/cantons` / `/api/baremes` / `/api/calculateurs`
 Données statiques (catalogue, baremes minimum vital, etc.).
 
+### `GET /api/stats`
+**Nouveau 2026-04-29.** Stats publiques de transparence (sans auth). Retourne :
+```json
+{
+  "corpus": { "total_fiches": 314, "domaines_couverts": 15, "fiches_actionnables": 281, "fiches_information_only": 33, "total_articles_cites": 1012 },
+  "qualite": { "claude_legal_reviewed": 314, "claude_legal_reviewed_pct": 100, "fiches_avec_cascade": 147, "fiches_avec_modele_lettre": 232 },
+  "meta": { "version_review": "2026-04-29", "legal_review_disclaimer": "..." }
+}
+```
+
 ## Admin (auth via `Authorization: Bearer $ADMIN_TOKEN`)
 
 ### `GET /api/admin/legal-review-status`

@@ -147,6 +147,23 @@ describe('Server API', () => {
     assert.match(data.fiche.claude_legal_review_date, /^\d{4}-\d{2}-\d{2}$/);
   });
 
+  it('GET /api/stats retourne stats publiques sans auth', async () => {
+    // Régression : endpoint public de transparence (pas d'auth requise).
+    const res = await request('/api/stats');
+    assert.equal(res.status, 200);
+    const data = res.json();
+    assert.ok(data.corpus, 'corpus présent');
+    assert.equal(typeof data.corpus.total_fiches, 'number');
+    assert.ok(data.corpus.total_fiches >= 200);
+    assert.equal(typeof data.corpus.fiches_actionnables, 'number');
+    assert.ok(data.qualite, 'qualite présent');
+    assert.equal(typeof data.qualite.claude_legal_reviewed, 'number');
+    assert.equal(typeof data.qualite.claude_legal_reviewed_pct, 'number');
+    assert.ok(data.meta);
+    assert.ok(data.meta.legal_review_disclaimer.includes('avocat'),
+      'disclaimer doit mentionner que ce n\'est pas un avocat humain');
+  });
+
   it('404 sur route inconnue', async () => {
     const res = await request('/api/inexistant');
     assert.equal(res.status, 404);

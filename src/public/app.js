@@ -214,6 +214,25 @@ async function loadResultat(ficheId) {
   html += '<p>' + r.explication + '</p>';
   html += '</div>';
 
+  // Trust badge — review juridique critique (si applicable)
+  if (fiche.claude_legal_review_date) {
+    var reviewDate = String(fiche.claude_legal_review_date);
+    var reviewNote = fiche.claude_legal_review_notes || 'verified';
+    var reviewLabel = reviewNote === 'fixed'
+      ? 'Articles, délais et autorités relus et corrigés le ' + reviewDate
+      : (reviewNote === 'verified_minor_imprecision'
+          ? 'Articles, délais et autorités relus le ' + reviewDate + ' (imprécisions mineures connues)'
+          : 'Articles, délais et autorités relus le ' + reviewDate);
+    html += '<div class="legal-review-badge" role="status" aria-label="Vérification juridique"' + stagger() + '>';
+    html += '<span class="badge-icon" aria-hidden="true">⚖️</span>';
+    html += '<div class="badge-text">';
+    html += '<strong>Vérification juridique critique</strong>';
+    html += '<span class="badge-detail">' + reviewLabel + '</span>';
+    html += '<span class="badge-disclaimer">Relecture par IA — ne remplace pas un conseil d\'avocat humain.</span>';
+    html += '</div>';
+    html += '</div>';
+  }
+
   // Premium CTA
   html += renderPremiumCTA();
 
@@ -285,8 +304,49 @@ async function loadResultat(ficheId) {
   html += '<a href="/premium.html" class="btn btn-sm">' + t('upsell.button') + '</a>';
   html += '</div>';
 
+  // Quick feedback widget (1-clic, anonyme, opt-in agrégat) — funnel simple
+  // pour augmenter le taux d'outcomes (0 en 9 jours sur la prod). Le formulaire
+  // long renderOutcomesPrompt reste disponible plus loin pour les users motivés.
+  var caseIdForFeedback = (data.case_id || data.caseId || '');
+  if (caseIdForFeedback) {
+    html += '<div class="quick-feedback" id="quickFeedback" data-case-id="' + caseIdForFeedback + '">';
+    html += '<p class="qf-question">Cette réponse vous a-t-elle aidé ?</p>';
+    html += '<div class="qf-buttons">';
+    html += '<button type="button" class="qf-btn" data-helpful="true" onclick="submitQuickFeedback(true)">👍 Oui</button>';
+    html += '<button type="button" class="qf-btn" data-helpful="false" onclick="submitQuickFeedback(false)">👎 Non</button>';
+    html += '</div>';
+    html += '<p class="qf-disclaimer">Anonyme. Agrégé pour améliorer les futurs triages.</p>';
+    html += '</div>';
+  }
+
   document.getElementById('resultat').innerHTML = html;
 }
+
+// Envoie le feedback rapide thumbs up/down (POST /api/outcome — endpoint simple
+// existant). Auto-désactive le widget après envoi pour éviter les doubles clics.
+function submitQuickFeedback(helpful) {
+  var widget = document.getElementById('quickFeedback');
+  if (!widget || widget.dataset.submitted === '1') return;
+  widget.dataset.submitted = '1';
+  var caseId = widget.dataset.caseId;
+  var buttons = widget.querySelectorAll('.qf-btn');
+  buttons.forEach(function(b) { b.disabled = true; });
+  fetch('/api/outcome', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      case_id: caseId,
+      helpful: !!helpful,
+      consent_anon_aggregate: true
+    })
+  }).then(function(res) {
+    var msg = res.ok ? 'Merci pour votre retour.' : 'Retour enregistré localement.';
+    widget.innerHTML = '<p class="qf-thanks">✓ ' + msg + '</p>';
+  }).catch(function() {
+    widget.innerHTML = '<p class="qf-thanks">✓ Merci.</p>';
+  });
+}
+window.submitQuickFeedback = submitQuickFeedback;
 
 function copyLettre() {
   var text = document.getElementById('lettreText').textContent;

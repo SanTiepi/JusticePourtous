@@ -214,6 +214,11 @@ function shapeSearchPayload(payload) {
       freshness: fiche.freshness,
       review_scope: fiche.review_scope,
       review_expiry: fiche.review_expiry,
+      // Trust signal pour le citoyen — date de la review juridique critique
+      // (articles, délais, autorités) faite avec perspective d'avocat.
+      // null si la fiche n'a pas encore été reviewée juridiquement.
+      claude_legal_review_date: fiche.claude_legal_review_date || null,
+      claude_legal_review_notes: fiche.claude_legal_review_notes || null,
       reponse: {
         explication: reponse.explication || '',
         actions: limitItems(reponse.actions, 5)

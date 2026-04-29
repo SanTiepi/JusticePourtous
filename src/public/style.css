@@ -4201,3 +4201,65 @@ body.has-disclaimer {
 .canon-similar summary { cursor: pointer; font-size: .9rem; color: #4a5670; margin-top: 1rem; }
 .canon-similar summary:hover { color: #1f2a36; }
 
+/* ─── Trust badge — review juridique critique ─────────────────────── */
+.legal-review-badge {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  padding: 0.85rem 1rem;
+  margin: 1rem 0;
+  background: linear-gradient(135deg, #f0f9f4 0%, #e8f5ed 100%);
+  border-left: 4px solid #1d7042;
+  border-radius: 6px;
+  animation: fadeIn 0.4s ease both;
+}
+.legal-review-badge .badge-icon { font-size: 1.5rem; line-height: 1; }
+.legal-review-badge .badge-text { display: flex; flex-direction: column; gap: 0.15rem; flex: 1; }
+.legal-review-badge .badge-text strong { color: #0f4f2c; font-size: 0.92rem; }
+.legal-review-badge .badge-detail { font-size: 0.85rem; color: #1d5a36; }
+.legal-review-badge .badge-disclaimer { font-size: 0.75rem; color: #4a5b50; font-style: italic; margin-top: 0.2rem; }
+
+/* ─── Quick feedback widget (thumbs up/down) ───────────────────────── */
+.quick-feedback {
+  margin: 1.5rem 0 0.5rem;
+  padding: 1rem 1.25rem;
+  background: #f7f9fc;
+  border: 1px solid #e3e8ef;
+  border-radius: 8px;
+  text-align: center;
+}
+.quick-feedback .qf-question {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+.quick-feedback .qf-buttons { display: inline-flex; gap: 0.75rem; }
+.quick-feedback .qf-btn {
+  padding: 0.55rem 1.25rem;
+  font-size: 1rem;
+  background: #fff;
+  border: 1.5px solid #c9d1da;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.quick-feedback .qf-btn:hover:not(:disabled) {
+  border-color: #1d7042;
+  background: #f0f9f4;
+  transform: translateY(-1px);
+}
+.quick-feedback .qf-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.quick-feedback .qf-disclaimer {
+  margin: 0.6rem 0 0;
+  font-size: 0.75rem;
+  color: #6a7787;
+  font-style: italic;
+}
+.quick-feedback .qf-thanks {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #1d7042;
+  font-weight: 500;
+}
+

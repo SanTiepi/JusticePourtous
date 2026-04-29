@@ -3538,6 +3538,13 @@ function translateFragmentInPlace(selector, options) {
     .then(function(payload) {
       if (payload && payload.html) {
         node.innerHTML = payload.html;
+        // Signaler la dégradation au user si le provider de traduction a échoué.
+        // Backend retourne maintenant 200 + translation_status='failed' (au lieu
+        // de 503) pour ne pas casser l'UX. On affiche un avertissement discret
+        // en haut de la page pour expliquer pourquoi le contenu reste en FR.
+        if (payload.translation_status === 'failed' || payload.translation_status === 'failed_internal') {
+          showTranslationDegradedBanner(payload.source_lang || 'fr');
+        }
         return true;
       }
       return false;
@@ -3549,6 +3556,29 @@ function translateFragmentInPlace(selector, options) {
       delete node.__jbI18nOriginalVisibility;
     });
   return node.__jbI18nDynamicPromise;
+}
+
+// Affiche une fois (max 1 banner par page) un avertissement discret quand la
+// traduction a échoué côté provider (LLM/DeepL down). Le contenu source-lang
+// est servi en fallback ; cet avertissement explique pourquoi le user voit du
+// FR alors qu'il a demandé une autre langue.
+function showTranslationDegradedBanner(sourceLang) {
+  if (typeof document === 'undefined') return;
+  if (document.getElementById('jb-translation-degraded')) return;
+  var labels = {
+    de: 'Übersetzung vorübergehend nicht verfügbar — Inhalt auf Französisch angezeigt.',
+    it: 'Traduzione temporaneamente non disponibile — contenuto mostrato in francese.',
+    en: 'Translation temporarily unavailable — content shown in French.'
+  };
+  var lang = (typeof getLang === 'function') ? getLang() : 'en';
+  var msg = labels[lang] || labels.en;
+  var banner = document.createElement('div');
+  banner.id = 'jb-translation-degraded';
+  banner.setAttribute('role', 'status');
+  banner.setAttribute('aria-live', 'polite');
+  banner.style.cssText = 'background:#fff3cd;color:#664d03;border-bottom:1px solid #ffe69c;padding:8px 16px;font-size:.85rem;text-align:center;position:sticky;top:0;z-index:9999;';
+  banner.textContent = '⚠️ ' + msg;
+  document.body.insertBefore(banner, document.body.firstChild);
 }
 
 function translatePlainText(text, options) {

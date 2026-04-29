@@ -46,9 +46,10 @@
 
 ## Mode actif (éphémère — contexte de la session en cours)
 
-### État actuel (mis à jour 2026-04-28)
+### État actuel (mis à jour 2026-04-29)
 - **15 domaines couverts** (10 core + consommation/voisinage/circulation/successions/sante en `readiness: beta`)
 - **314 fiches** dont **281 `reviewed_by_claude`** (100% des fiches actionnables, checklist structurelle stricte) + **33 `information_only`**
+- **32 fiches `claude_legal_review_date: 2026-04-29`** (review juridique critique : articles, délais, autorités, modèle de lettre — 4 fix critiques + 6 imprécisions corrigées + 22 validées sans modif). Voir docs/legal-review-claude.md. ⚠️ Pas un avocat — recommandation de faire valider 5 fiches gold par 1 vrai juriste avant contact associations.
 - **145/314 avec cascades structurées** (actionabilité)
 - **76 règles normatives exécutables** sur **18 modules** (bail/travail/dettes/transversal/consommation/assurances/voisinage/famille/etrangers/social/violence/accident/entreprise + fiscal/LPP/PPE/circulation/successions — +42 règles depuis 2026-04-19, dont +22 fiscal/LPP/PPE et +20 phase5)
 - **282 invariants régression juridique** sur 30 fiches gold (hash-lock sur délais/articles, recalculés post-extension règles)

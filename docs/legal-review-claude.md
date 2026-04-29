@@ -157,3 +157,48 @@ Cette review est faite par un LLM, pas un avocat. Elle peut :
 - **Ne pas détecter** : nuances jurisprudentielles très récentes, divergences cantonales subtiles, applications doctrinales contestées
 
 Cette review **complète** mais **ne remplace pas** une validation juridique humaine pour les fiches de production.
+
+---
+
+## Addendum 2026-04-29 — Extension à 14 fiches gold supplémentaires
+
+Suite à la review initiale de 18 fiches, 14 fiches additionnelles ont été review-ées (focus sur les sujets à enjeu critique : minimum vital, protection grossesse, aide d'urgence, accident travail).
+
+### Liste
+
+| Fiche | Note | Commentaire |
+|---|---|---|
+| `bail_loyers_impayes` | ✅ verified | Procédure 257d correcte (mise en demeure 30j puis résiliation 30j) |
+| `bail_charges_contestees` | ✅ verified | CO 257a/b corrects, droit consultation justifié |
+| `bail_etat_des_lieux` | ✅ verified | CO 267/267a, défauts non signalés présumés acceptés correct |
+| `bail_droit_retractation` | ✅ verified | Important : pas de droit de rétractation pour les baux. Bien capturé |
+| `travail_grossesse` | ✅ verified | Protection 16 sem post-partum (336c CO), APG 14 sem corrects |
+| `travail_chomage` | 🟡 verified_minor_imprecision | Manque cascade + clarification délai inscription ORP |
+| `travail_periode_essai` | ✅ verified | 1 mois extensible 3 max, délai 7j, suspension maladie OK |
+| `travail_maladie` | ✅ verified | Échelles bernoise/zurichoise/bâloise correctes |
+| `dettes_saisie_salaire` | ✅ verified | Minimum vital LP, traitement 13e salaire et bonus |
+| `dettes_minimum_vital_lp` | ✅ verified | Normes Conférence préposés correctes (CHF 1200/1700) |
+| `dettes_acte_defaut_biens` | ✅ verified | LP 149 + 149a (prescription 20 ans) corrects |
+| `famille_pension_impayee` | ✅ verified | Art. 217 CP + Bureau cantonal recouvrement |
+| `etranger_aide_urgence` | ✅ verified | Cst 12 + ATF 131 I 166 — droit absolu indépendant statut |
+| `accident_travail` | 🟡 verified_minor_imprecision | Délai annonce LAA imprécis ("dans les jours suivant" — voir art. 45 LPGA + 53 OLAA) |
+
+### Bilan global après les 2 sessions de review
+
+- **32 fiches gold review-ées** (18 + 14) sur les domaines bail, travail, dettes, famille, etranger, accident, violence
+- **4 fix critiques appliqués** (peuvent faire perdre un droit)
+- **6 imprécisions importantes corrigées**
+- **2 imprécisions mineures restantes** (cascade manquante + délai imprécis — non critiques)
+- **20 fiches validées 100% correctes** sans modification nécessaire
+- **`claude_legal_review_date: 2026-04-29`** + `claude_legal_review_notes` (verified / verified_minor_imprecision / fixed) sur les 32 fiches
+
+### Recommandation finale
+
+Sur ces 32 fiches gold, **5 sont prioritaires pour validation par 1 vrai avocat** avant contact associations :
+1. `bail_defaut_moisissure` — la plus consultée (3 vues prod)
+2. `bail_resiliation_conteste` — délai péremptoire 30j
+3. `dettes_commandement_payer` — délai péremptoire 10j (le plus court)
+4. `etranger_renvoi` — enjeu = présence en Suisse
+5. `travail_licenciement_abusif` — délai 180j
+
+Coût estimé : CHF 500-1500 pour 1 avocat spécialisé droit suisse contemporain.

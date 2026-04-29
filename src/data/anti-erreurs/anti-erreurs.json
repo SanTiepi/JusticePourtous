@@ -223,5 +223,23 @@
     "correction": "Inclure systématiquement une demande d'effet suspensif dans tout recours contre un renvoi",
     "base_legale": "LAsi 108 al. 2, PA 55",
     "frequence": "Fréquente"
+  },
+  {
+    "domaine": "dettes",
+    "erreur": "Adresser sa lettre d'opposition au tribunal au lieu de l'office des poursuites",
+    "gravite": "critique",
+    "consequence": "L'opposition est considérée comme nulle (mauvais destinataire) → délai de 10 jours non respecté → la dette devient exécutoire",
+    "correction": "L'opposition au commandement de payer (art. 74 LP) se fait UNIQUEMENT à l'OFFICE DES POURSUITES (oralement à l'huissier ou par écrit à l'office). Pas au tribunal. Le tribunal n'intervient qu'à l'étape suivante (mainlevée).",
+    "base_legale": "LP 74 al. 1, LP 75",
+    "frequence": "Très fréquente"
+  },
+  {
+    "domaine": "bail",
+    "erreur": "Confondre nullité de forme du congé (sans délai) et annulabilité pour abus (délai 30 jours)",
+    "gravite": "critique",
+    "consequence": "Croire qu'on a 30 jours pour contester un congé sur papier libre alors qu'il est NUL DE PLEIN DROIT (sans délai). À l'inverse : laisser passer 30 jours sur un congé valable en forme parce qu'on pense pouvoir invoquer la nullité.",
+    "correction": "Vérifier d'abord la FORME du congé (formulaire officiel obligatoire pour bail d'habitation, art. 266l al. 2 CO). Sans formule = NULLITÉ (sans délai). Avec formule = ANNULABILITÉ (30 jours pour saisir la commission de conciliation, art. 273 CO).",
+    "base_legale": "CO 266l al. 2, art. 9 OBLF, CO 271/271a, CO 273",
+    "frequence": "Fréquente"
   }
 ]

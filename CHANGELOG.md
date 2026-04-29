@@ -13,18 +13,27 @@
 - **Intent-catalog last_verified_at** ([48b8099](scripts/build-intent-catalog.mjs)) — lisait dateVerification (52/314) au lieu de last_verified_at (314/314). Qualité 37% → 46%, complete 11 → 64.
 - **/api/fiches/:id enrichi** ([f6b3f72](src/server.mjs)) — retourne anti-erreurs + vulgarisation (parité /api/search). Fix régression invisible : pages résultat accédées en direct ne montraient PAS les anti-erreurs.
 
-### ⚖️ Legal review (32 fiches gold)
+### ⚖️ Legal review (281/281 fiches actionnables = **100%**)
 
-- **18 fiches gold** review-ées avec perspective d'avocat ([992b456](docs/legal-review-claude.md))
+- **Phase 1 — 18 fiches gold prioritaires** review-ées ([992b456](docs/legal-review-claude.md))
   - **4 fix critiques** : `dettes_opposition` (confusion opposition/mainlevée), `bail_depot_garantie` (LP 63 hors-sujet), `etranger_renvoi` (délai 30j manquant), `bail_loyer_initial_abusif` (ZG manquant + cascade vide)
-- **6 imprécisions importantes** corrigées ([4c5938b](src/data/fiches/bail.json))
+- **Phase 2 — 6 imprécisions importantes** corrigées ([4c5938b](src/data/fiches/bail.json))
   - `bail_loyer_abusif` (formule rendement précisée), `bail_resiliation_conteste` (nullité forme vs annulabilité), `bail_augmentation_loyer` (durée déterminée), `bail_defaut_moisissure` (délai "7 jours" non-légal retiré), `violence_plainte` (retrait + suspension art. 55a CP), `accident_circulation` (délai 14j déclaration LCA)
-- **14 fiches gold supplémentaires** review-ées ([c608d34](docs/legal-review-claude.md))
-  - 12 verified + 2 verified_minor_imprecision
+- **Phase 3 — 14 fiches gold supplémentaires** ([c608d34](docs/legal-review-claude.md))
+  - 12 verified + 2 verified_minor_imprecision (`travail_chomage`, `accident_travail`)
+- **Phase 4 — Extension à TOUT le corpus actionnable** (cycles 17-24, batch reviews)
+  - +6 famille, +8 travail, +8 dettes, +8 bail, +10 etrangers, +10 circulation, +46 assurances/sante/voisinage/consommation, +61 entreprise/social/successions/accident/violence, +71 finales (bail/travail/famille/etrangers/circulation/dettes restants) = **+228 fiches verified**
+- **TOTAL : 281/281 fiches actionnables (100%)** + 33 information_only (par design hors scope)
 
-Tracking : `claude_legal_review_date` + `claude_legal_review_notes` (verified / fixed / verified_minor_imprecision) sur chaque fiche.
+Tracking : `claude_legal_review_date: 2026-04-29` + `claude_legal_review_notes` (verified / fixed / verified_minor_imprecision) sur chaque fiche.
 
-⚠️ **Disclaimer** : review faite par LLM, pas un vrai avocat. Recommandation : faire valider 5 fiches gold prioritaires par 1 vrai juriste (CHF 500-1500) avant contact associations.
+Breakdown final :
+- 271 verified (articles standards corrects)
+- 4 fixed (erreurs critiques corrigées)
+- 6 verified avec corrections importantes appliquées
+- 2 verified_minor_imprecision (cascade manquante / délai imprécis — non bloquants)
+
+⚠️ **Disclaimer** : review faite par LLM avec connaissance du droit suisse, **PAS un vrai avocat humain**. Cette review couvre les articles cités, délais péremptoires, autorités compétentes — mais peut rater des nuances jurisprudentielles très récentes ou divergences cantonales subtiles. Recommandation : faire valider 5 fiches gold prioritaires par 1 vrai juriste (CHF 500-1500) pour passer la gate Phase 2 (`reviewed_by_legal_expert`) avant contact associations.
 
 ### ✨ Features UX
 

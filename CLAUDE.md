@@ -140,15 +140,23 @@
 4. Jurisprudence cantonale (entscheidsuche) — couvre les gaps contradictoire
 5. CCT/CCNT (conventions collectives) — impacte salaire impayé
 
-### Prochaine action
-- Ingérer les sources de vulgarisation (Mobilière, droitpourlapratique, guidesocial, ASLOCA kit)
-- Deploy site avec toutes les nouvelles features
-- Feedback utilisateurs réels sur bail/travail/dettes
+### Prochaine action (mis à jour 2026-04-29)
+- **CRITIQUE** : faire valider 5 fiches gold par 1 vrai avocat (CHF 500-1500) avant
+  de contacter ASLOCA/Caritas. Cibles : `bail_defaut_moisissure`, `bail_resiliation_conteste`,
+  `dettes_commandement_payer`, `etranger_renvoi`, `travail_licenciement_abusif`.
+- Pousser les ~19 commits unpushed (legal review + UX trust badge + fallback i18n)
+  → trigger deploy via scripts/deploy.sh
+- Recruter 5-10 testeurs réels (réseau Morges/Batiscan) pour valider funnel triage
+  → outcomes feedback (objectif : passer de 0 à ≥5 outcomes pour pouvoir mesurer
+  satisfaction citoyenne réelle)
+- Étendre review juridique aux 280 fiches restantes (par batch de ~15) selon
+  trafic SEO observé en prod analytics
 
 ### Blockers
-- API Anthropic sans crédits → CLI fallback local OK, prod non
-- Page résultat encore en ancien format
-- ~~LEI Fedlex harvest~~ RÉSOLU — 294 articles (LEI 123, LAsi 119, LN 52)
+- ~~API Anthropic sans crédits~~ : fallback gracieux i18n + LLM_MOCK CI OK
+- ~~Page résultat ancien format~~ : trust badge + quick feedback widget ajoutés
+- 0 reviewed_by_legal_expert (humain) → bloque gate_phase2 + crédibilité associations
+- 0 outcomes en 9 jours prod → on ne sait PAS si triages aident vraiment
 
 ## Commandes
 ```bash

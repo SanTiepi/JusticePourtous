@@ -46,16 +46,22 @@ async function checkFiches() {
   const dir = join(ROOT, 'src/data/fiches');
   const files = readdirSync(dir).filter(f => f.endsWith('.json'));
   let total = 0;
+  let claudeLegalReviewed = 0;
   const byDomain = {};
   for (const f of files) {
     const arr = JSON.parse(readFileSync(join(dir, f), 'utf8'));
     const domain = f.replace('.json', '');
     byDomain[domain] = arr.length;
     total += arr.length;
+    for (const fiche of arr) {
+      if (fiche.claude_legal_review_date) claudeLegalReviewed++;
+    }
   }
   return {
     total_fiches: total,
     domains: Object.keys(byDomain).length,
+    claude_legal_reviewed: claudeLegalReviewed,
+    claude_legal_reviewed_pct: total > 0 ? Math.round((claudeLegalReviewed / total) * 100) : 0,
     status: total >= 200 ? 'ok' : 'warn'
   };
 }

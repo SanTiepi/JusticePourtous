@@ -1421,6 +1421,47 @@ const server = createServer(async (req, res) => {
       return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });
     }
 
+    // Suivi du chantier legal review — liste les fiches NON encore review-ées
+    // juridiquement (champ claude_legal_review_date absent), groupées par
+    // domaine, avec filtre par actionable (exclut information_only).
+    // Permet de planifier la suite du chantier review (32/281 actuellement = 11%).
+    if (path === '/api/admin/legal-review-status' && method === 'GET') {
+      if (!checkAdmin(req, res)) return;
+      const fiches = (await import('./services/fiches.mjs')).getAllFiches();
+      const reviewed = [];
+      const pending = [];
+      const informationOnly = [];
+      const byDomainPending = {};
+      for (const f of fiches) {
+        if (f.information_only) {
+          informationOnly.push({ id: f.id, domaine: f.domaine });
+          continue;
+        }
+        if (f.claude_legal_review_date) {
+          reviewed.push({
+            id: f.id,
+            domaine: f.domaine,
+            date: f.claude_legal_review_date,
+            notes: f.claude_legal_review_notes || 'verified'
+          });
+        } else {
+          pending.push({ id: f.id, domaine: f.domaine });
+          byDomainPending[f.domaine] = (byDomainPending[f.domaine] || 0) + 1;
+        }
+      }
+      return json(res, 200, {
+        total_actionable: fiches.length - informationOnly.length,
+        reviewed_count: reviewed.length,
+        pending_count: pending.length,
+        information_only_count: informationOnly.length,
+        review_pct: Math.round((reviewed.length / Math.max(1, fiches.length - informationOnly.length)) * 100),
+        reviewed,
+        pending,
+        pending_by_domain: byDomainPending,
+        disclaimer: DISCLAIMER
+      });
+    }
+
     // Metrics snapshot (admin)
     if (path === '/api/admin/metrics' && method === 'GET') {
       if (!checkAdmin(req, res)) return;

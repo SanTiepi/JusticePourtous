@@ -2035,12 +2035,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "partial",
-    "has_cascade": false,
+    "etat_couverture": "complete",
+    "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-07"
+    "last_verified_at": "2026-04-29"
   },
   {
     "id": "bail_loyers_impayes",
@@ -5469,12 +5469,12 @@
     ],
     "cantons_specifiques": [],
     "volume_estime": null,
-    "etat_couverture": "partial",
-    "has_cascade": false,
+    "etat_couverture": "complete",
+    "has_cascade": true,
     "has_template": true,
     "has_jurisprudence": true,
     "has_source_ids": true,
-    "last_verified_at": "2026-04-07"
+    "last_verified_at": "2026-04-29"
   },
   {
     "id": "etranger_renvoi_recours",

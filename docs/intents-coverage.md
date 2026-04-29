@@ -5,20 +5,20 @@ _Généré automatiquement par `scripts/intent-coverage-report.mjs`_
 ## Totaux
 
 - **Total intents** : 406
-- Complete : 62
-- Partial  : 252
+- Complete : 64
+- Partial  : 250
 - Stub     : 0
 - Missing  : 92
-- **Qualité globale** : 46%
+- **Qualité globale** : 47%
 
 ## Par domaine
 
 | Domaine | Total | Complete | Partial | Stub | Missing | Qualité |
 |---|---:|---:|---:|---:|---:|---:|
 | travail | 45 | 10 | 24 | 0 | 11 | 49% |
-| bail | 43 | 11 | 22 | 0 | 10 | 51% |
+| bail | 43 | 12 | 21 | 0 | 10 | 52% |
 | famille | 42 | 7 | 30 | 0 | 5 | 52% |
-| etrangers | 38 | 7 | 26 | 0 | 5 | 53% |
+| etrangers | 38 | 8 | 25 | 0 | 5 | 54% |
 | dettes | 36 | 9 | 22 | 0 | 5 | 56% |
 | assurances | 30 | 2 | 13 | 0 | 15 | 28% |
 | social | 25 | 2 | 11 | 0 | 12 | 30% |

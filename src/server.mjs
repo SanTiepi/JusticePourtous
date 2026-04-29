@@ -526,6 +526,49 @@ const server = createServer(async (req, res) => {
       return json(res, 200, { status: 'ok', timestamp: new Date().toISOString(), disclaimer: DISCLAIMER });
     }
 
+    // Stats publiques (sans auth) — transparence pour citoyens/assos/journalistes.
+    // Pas de PII, pas de stats internes (cases, outcomes individuels). Juste les
+    // chiffres-clés du corpus (volume + qualité review).
+    if (path === '/api/stats' && method === 'GET') {
+      const { getAllFiches } = await import('./services/fiches.mjs');
+      const fiches = getAllFiches();
+      const domaines = new Set();
+      let totalArticles = 0;
+      let claudeLegalReviewed = 0;
+      let infoOnly = 0;
+      let withCascades = 0;
+      let withTemplate = 0;
+      for (const f of fiches) {
+        domaines.add(f.domaine);
+        if (f.claude_legal_review_date) claudeLegalReviewed++;
+        if (f.information_only) infoOnly++;
+        if (Array.isArray(f.cascades) && f.cascades.length > 0) withCascades++;
+        if (f.reponse?.modeleLettre) withTemplate++;
+        totalArticles += (f.reponse?.articles?.length || 0);
+      }
+      return json(res, 200, {
+        corpus: {
+          total_fiches: fiches.length,
+          domaines_couverts: domaines.size,
+          fiches_actionnables: fiches.length - infoOnly,
+          fiches_information_only: infoOnly,
+          total_articles_cites: totalArticles
+        },
+        qualite: {
+          claude_legal_reviewed: claudeLegalReviewed,
+          claude_legal_reviewed_pct: Math.round((claudeLegalReviewed / fiches.length) * 100),
+          fiches_avec_cascade: withCascades,
+          fiches_avec_modele_lettre: withTemplate
+        },
+        meta: {
+          version_review: '2026-04-29',
+          legal_review_disclaimer: 'Review juridique critique faite par LLM avec connaissance du droit suisse. Ne remplace pas un avocat humain.',
+          generated_at: new Date().toISOString()
+        },
+        disclaimer: DISCLAIMER
+      });
+    }
+
     // Health check approfondi (10 modules critiques)
     // Retourne 200 si `ok`, 200 si `degraded`, 503 si `failing`.
     if (path === '/api/health/deep' && method === 'GET') {

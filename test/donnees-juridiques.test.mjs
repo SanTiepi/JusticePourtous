@@ -116,6 +116,26 @@ describe('Données juridiques API', () => {
     assert.equal(res.data.domaine, 'bail');
   });
 
+  it('anti-erreurs : chaque entrée a domaine, erreur, gravite, consequence, correction, base_legale', async () => {
+    // Validation schema des entrées (regression : si une nouvelle entry mal formée
+    // est ajoutée comme l'étaient mes 2 ajouts en cycle 39, on la détecte au lieu
+    // d'un crash silencieux côté frontend qui consomme ces champs)
+    const fs = await import('node:fs');
+    const path = await import('node:path');
+    const arr = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'src/data/anti-erreurs/anti-erreurs.json'), 'utf8'));
+    assert.ok(arr.length >= 25, `attendu ≥ 25 anti-erreurs, reçu ${arr.length}`);
+    // Vocabulary réel observé dans le corpus (FR descriptif)
+    const validGravite = ['critique', 'élevée', 'moyenne', 'faible'];
+    for (const ae of arr) {
+      assert.ok(ae.domaine, `anti-erreur sans domaine: ${JSON.stringify(ae).slice(0, 80)}`);
+      assert.ok(ae.erreur, `anti-erreur sans erreur: ${ae.domaine}`);
+      assert.ok(validGravite.includes(ae.gravite), `gravite invalide: ${ae.gravite}`);
+      assert.ok(ae.consequence, `anti-erreur sans consequence: ${ae.domaine}`);
+      assert.ok(ae.correction, `anti-erreur sans correction: ${ae.domaine}`);
+      assert.ok(ae.base_legale, `anti-erreur sans base_legale: ${ae.domaine}`);
+    }
+  });
+
   // --- Patterns ---
   it('GET /api/patterns retourne les patterns praticien', async () => {
     const res = await httpGet('/api/patterns');

@@ -1,0 +1,106 @@
+{
+  "total": 314,
+  "actionable": 281,
+  "information_only": 33,
+  "reviewed": 314,
+  "reviewed_pct": 100,
+  "notes_breakdown": {
+    "verified": 275,
+    "fixed": 4,
+    "verified_minor_imprecision": 2,
+    "verified_information_only": 33
+  },
+  "by_domain": {
+    "accident": {
+      "total": 13,
+      "reviewed": 13,
+      "pending": 0,
+      "pct": 100
+    },
+    "assurances": {
+      "total": 15,
+      "reviewed": 15,
+      "pending": 0,
+      "pct": 100
+    },
+    "bail": {
+      "total": 33,
+      "reviewed": 33,
+      "pending": 0,
+      "pct": 100
+    },
+    "circulation": {
+      "total": 20,
+      "reviewed": 20,
+      "pending": 0,
+      "pct": 100
+    },
+    "consommation": {
+      "total": 10,
+      "reviewed": 10,
+      "pending": 0,
+      "pct": 100
+    },
+    "dettes": {
+      "total": 31,
+      "reviewed": 31,
+      "pending": 0,
+      "pct": 100
+    },
+    "entreprise": {
+      "total": 12,
+      "reviewed": 12,
+      "pending": 0,
+      "pct": 100
+    },
+    "etrangers": {
+      "total": 33,
+      "reviewed": 33,
+      "pending": 0,
+      "pct": 100
+    },
+    "famille": {
+      "total": 37,
+      "reviewed": 37,
+      "pending": 0,
+      "pct": 100
+    },
+    "sante": {
+      "total": 20,
+      "reviewed": 20,
+      "pending": 0,
+      "pct": 100
+    },
+    "social": {
+      "total": 13,
+      "reviewed": 13,
+      "pending": 0,
+      "pct": 100
+    },
+    "successions": {
+      "total": 20,
+      "reviewed": 20,
+      "pending": 0,
+      "pct": 100
+    },
+    "travail": {
+      "total": 34,
+      "reviewed": 34,
+      "pending": 0,
+      "pct": 100
+    },
+    "violence": {
+      "total": 13,
+      "reviewed": 13,
+      "pending": 0,
+      "pct": 100
+    },
+    "voisinage": {
+      "total": 10,
+      "reviewed": 10,
+      "pending": 0,
+      "pct": 100
+    }
+  },
+  "pending": []
+}

@@ -10,7 +10,11 @@
     "test:i18n": "node --test test/i18n-audit.test.mjs test/i18n-quality.test.mjs test/i18n-translation.test.mjs test/server-i18n.test.mjs test/i18n-runtime-safeguards.test.mjs",
     "build:locales": "node scripts/build-locale-bundles.mjs",
     "build:guides": "node scripts/generate-seo-pages.mjs",
-    "audit:i18n": "node scripts/audit-i18n-coverage.mjs && npm run test:i18n"
+    "audit:i18n": "node scripts/audit-i18n-coverage.mjs && npm run test:i18n",
+    "audit:legal-review": "node scripts/legal-review-summary.mjs",
+    "audit:fiches": "node scripts/audit-fiches-schema.mjs",
+    "audit:source-id": "node scripts/audit-source-id-coverage.mjs",
+    "audit:all": "npm run audit:fiches && npm run audit:source-id && npm run audit:legal-review"
   },
   "keywords": [
     "justice",

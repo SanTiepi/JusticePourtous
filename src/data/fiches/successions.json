@@ -310,7 +310,9 @@
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-19",
     "readiness": "beta",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "successions_renonciation",
@@ -619,7 +621,9 @@
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-19",
     "readiness": "beta",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "successions_benefice_inventaire",
@@ -1081,7 +1085,9 @@
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-19",
     "readiness": "beta",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "successions_indignite",
@@ -1235,7 +1241,9 @@
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-19",
     "readiness": "beta",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "successions_action_petition_heredite",
@@ -1389,7 +1397,9 @@
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-19",
     "readiness": "beta",
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "successions_conjoint_survivant",
@@ -1696,7 +1706,9 @@
     "review_expiry": "2027-04-20",
     "readiness": "beta",
     "information_only": false,
-    "claude_review_date": "2026-04-20"
+    "claude_review_date": "2026-04-20",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "successions_exheredation_motifs",
@@ -1848,7 +1860,9 @@
     "review_expiry": "2027-04-20",
     "readiness": "beta",
     "information_only": false,
-    "claude_review_date": "2026-04-20"
+    "claude_review_date": "2026-04-20",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "successions_testament_olographe_forme",
@@ -2011,7 +2025,9 @@
     "review_expiry": "2027-04-20",
     "readiness": "beta",
     "information_only": false,
-    "claude_review_date": "2026-04-20"
+    "claude_review_date": "2026-04-20",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "successions_legs_vs_institution_heritier",
@@ -2169,7 +2185,9 @@
     "review_expiry": "2027-04-20",
     "readiness": "beta",
     "information_only": false,
-    "claude_review_date": "2026-04-20"
+    "claude_review_date": "2026-04-20",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "successions_partage_force",
@@ -2331,7 +2349,9 @@
     "review_expiry": "2027-04-20",
     "readiness": "beta",
     "information_only": false,
-    "claude_review_date": "2026-04-20"
+    "claude_review_date": "2026-04-20",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "successions_dettes_responsabilite_heritiers",
@@ -2499,7 +2519,9 @@
     "review_expiry": "2027-04-20",
     "readiness": "beta",
     "information_only": false,
-    "claude_review_date": "2026-04-20"
+    "claude_review_date": "2026-04-20",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "successions_testament_authentique_procedure",
@@ -2653,7 +2675,9 @@
     "review_expiry": "2027-04-20",
     "readiness": "beta",
     "information_only": false,
-    "claude_review_date": "2026-04-20"
+    "claude_review_date": "2026-04-20",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "successions_certificat_heritier",
@@ -2804,7 +2828,9 @@
     "review_expiry": "2027-04-20",
     "readiness": "beta",
     "information_only": false,
-    "claude_review_date": "2026-04-20"
+    "claude_review_date": "2026-04-20",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "successions_administration_officielle",
@@ -2956,7 +2982,9 @@
     "review_expiry": "2027-04-20",
     "readiness": "beta",
     "information_only": false,
-    "claude_review_date": "2026-04-20"
+    "claude_review_date": "2026-04-20",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   },
   {
     "id": "successions_reserve_conjoint_vs_enfants",
@@ -3108,6 +3136,8 @@
     "review_expiry": "2027-04-20",
     "readiness": "beta",
     "information_only": false,
-    "claude_review_date": "2026-04-20"
+    "claude_review_date": "2026-04-20",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified"
   }
 ]

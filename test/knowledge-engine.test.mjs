@@ -224,4 +224,44 @@ describe('Knowledge Engine API', () => {
       assert.ok(typeof res.data.stats.missingArticleRefs === 'number');
     });
   });
+
+  // --- Legal review status (suivi chantier review juridique) ---
+  describe('GET /api/admin/legal-review-status', () => {
+    it('refuse 403 sans token admin', async () => {
+      const res = await httpGet('/api/admin/legal-review-status');
+      assert.equal(res.status, 403);
+    });
+
+    it('retourne le suivi reviewed/pending par domaine avec token', async () => {
+      const res = await httpGet('/api/admin/legal-review-status', {
+        headers: { authorization: `Bearer ${process.env.ADMIN_TOKEN}` }
+      });
+      assert.equal(res.status, 200);
+      assert.equal(typeof res.data.total_actionable, 'number');
+      assert.equal(typeof res.data.reviewed_count, 'number');
+      assert.equal(typeof res.data.pending_count, 'number');
+      assert.equal(typeof res.data.review_pct, 'number');
+      assert.ok(Array.isArray(res.data.reviewed));
+      assert.ok(Array.isArray(res.data.pending));
+      assert.equal(typeof res.data.pending_by_domain, 'object');
+      // Sanity : reviewed + pending + info_only = total fiches
+      const total = res.data.reviewed_count + res.data.pending_count + res.data.information_only_count;
+      assert.ok(total >= 200, 'au moins 200 fiches au total');
+    });
+
+    it('chaque entrée reviewed a id/domaine/date/notes', async () => {
+      const res = await httpGet('/api/admin/legal-review-status', {
+        headers: { authorization: `Bearer ${process.env.ADMIN_TOKEN}` }
+      });
+      assert.equal(res.status, 200);
+      if (res.data.reviewed.length > 0) {
+        const first = res.data.reviewed[0];
+        assert.ok(first.id);
+        assert.ok(first.domaine);
+        assert.match(first.date, /^\d{4}-\d{2}-\d{2}$/);
+        assert.ok(['verified', 'fixed', 'verified_minor_imprecision'].includes(first.notes),
+          `notes attendu: verified/fixed/verified_minor_imprecision, reçu: ${first.notes}`);
+      }
+    });
+  });
 });

@@ -418,9 +418,16 @@ function computeReadinessMetrics() {
 function computeReviewMetrics() {
   const fiches = getAllFiches() || [];
   const counts = { draft_automated: 0, reviewed_by_claude: 0, reviewed_by_legal_expert: 0, unknown: 0 };
+  let claudeLegalReviewed = 0;
+  const claudeLegalNotes = { verified: 0, fixed: 0, verified_minor_imprecision: 0 };
   for (const f of fiches) {
     const r = f.review_scope || 'unknown';
     counts[r] = (counts[r] || 0) + 1;
+    if (f.claude_legal_review_date) {
+      claudeLegalReviewed++;
+      const note = f.claude_legal_review_notes || 'verified';
+      if (claudeLegalNotes[note] !== undefined) claudeLegalNotes[note]++;
+    }
   }
   // Une fiche "structurellement validée" = reviewed_by_claude OU reviewed_by_legal_expert
   // (Claude fait le review structurel, expert humain ajoute le review juridique fin)
@@ -435,7 +442,13 @@ function computeReviewMetrics() {
     structurally_validated_percent: pct(structurallyValidated, fiches.length),
     structurally_validated_target: 40,
     structurally_validated_passed: pct(structurallyValidated, fiches.length) >= 40,
-    // Juridique expert : seuil cible Phase 2 roadmap durcie
+    // Review juridique critique par Claude (3e niveau, perspective avocat) —
+    // articles, délais, autorités, modèle de lettre, anti-erreurs.
+    // Ne remplace pas reviewed_by_legal_expert (humain) mais comble le gap.
+    claude_legal_reviewed_count: claudeLegalReviewed,
+    claude_legal_reviewed_percent: pct(claudeLegalReviewed, fiches.length),
+    claude_legal_reviewed_breakdown: claudeLegalNotes,
+    // Juridique expert humain : seuil cible Phase 2 roadmap durcie
     expert_reviewed_percent: pct(counts.reviewed_by_legal_expert, fiches.length),
     gate_phase2_target_percent: 20,
     gate_phase2_passed: counts.reviewed_by_legal_expert / Math.max(1, fiches.length) >= 0.20

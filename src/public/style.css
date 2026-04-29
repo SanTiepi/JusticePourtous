@@ -4219,6 +4219,18 @@ body.has-disclaimer {
 .legal-review-badge .badge-detail { font-size: 0.85rem; color: #1d5a36; }
 .legal-review-badge .badge-disclaimer { font-size: 0.75rem; color: #4a5b50; font-style: italic; margin-top: 0.2rem; }
 
+/* ─── Guide pages — legal review label ───────────────────────────── */
+.guide-legal-review {
+  display: inline-block;
+  margin: 0.5rem 0 1rem;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.85rem;
+  color: #1d5a36;
+  background: #f0f9f4;
+  border-left: 3px solid #1d7042;
+  border-radius: 4px;
+}
+
 /* ─── Quick feedback widget (thumbs up/down) ───────────────────────── */
 .quick-feedback {
   margin: 1.5rem 0 0.5rem;

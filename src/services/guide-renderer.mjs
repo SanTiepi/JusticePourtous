@@ -101,6 +101,9 @@ function buildGuideModel(intent, fiche, locale) {
     disclaimer_title: 'Information juridique générale',
     disclaimer_text: 'JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Ce service ne remplace pas un conseil d’avocat personnalisé.',
     verified_label: fiche?.last_verified_at ? `Sources vérifiées le ${fiche.last_verified_at}.` : null,
+    legal_review_label: fiche?.claude_legal_review_date
+      ? `⚖️ Articles, délais et autorités relus par notre IA juridique le ${fiche.claude_legal_review_date}. Ne remplace pas un avocat humain.`
+      : null,
     no_articles_text: 'Cette fiche ne contient pas encore de liste d’articles publics.',
     no_delais_text: 'Cette fiche ne contient pas encore de délai critique structuré.',
     tags: (intent.tags || []).slice(0, 8),
@@ -241,6 +244,7 @@ function renderGuideHtml(model) {
       <p class="guide-summary">${escapeHtml(model.summary)}</p>
       ${cantonsBlock}
       ${model.verified_label ? `<p class="guide-verified">${escapeHtml(model.verified_label)}</p>` : ''}
+      ${model.legal_review_label ? `<p class="guide-legal-review">${escapeHtml(model.legal_review_label)}</p>` : ''}
       ${articlesBlock}
       ${delaisBlock}
       ${tagsBlock}

@@ -46,10 +46,14 @@
 
 ## Mode actif (éphémère — contexte de la session en cours)
 
-### État actuel (mis à jour 2026-04-29)
+### État actuel (mis à jour 2026-04-29 — fin session legal review + UX)
 - **15 domaines couverts** (10 core + consommation/voisinage/circulation/successions/sante en `readiness: beta`)
 - **314 fiches** dont **281 `reviewed_by_claude`** (100% des fiches actionnables, checklist structurelle stricte) + **33 `information_only`**
 - **32 fiches `claude_legal_review_date: 2026-04-29`** (review juridique critique : articles, délais, autorités, modèle de lettre — 4 fix critiques + 6 imprécisions corrigées + 22 validées sans modif). Voir docs/legal-review-claude.md. ⚠️ Pas un avocat — recommandation de faire valider 5 fiches gold par 1 vrai juriste avant contact associations.
+- **Trust badge frontend** affichant `claude_legal_review_date` sur la page résultat pour les 32 fiches review-ées. CSS dédié, disclaimer explicite "ne remplace pas un avocat humain".
+- **Quick feedback widget** (thumbs up/down 1-clic) sur page résultat → POST /api/outcome. Vise à débloquer le 0 outcome / 466 vues observé en prod (friction du formulaire long 5 fields).
+- **/api/fiches/:id enrichi** — retourne maintenant antiErreurs (par domaine) + vulgarisation (par fiche) en plus de la fiche brute. Parité avec /api/search. Fix d'une régression invisible : pages résultat accédées en direct (lien partagé, SEO) n'affichaient PAS les anti-erreurs avant.
+- **i18n bulletproof** : 3 couches de fallback gracieux quand provider LLM down → JAMAIS de 5xx sur traduction (élimine les 108 erreurs 5xx observées sur 9 jours de prod en grappes /api/domaines + /api/i18n/html).
 - **145/314 avec cascades structurées** (actionabilité)
 - **76 règles normatives exécutables** sur **18 modules** (bail/travail/dettes/transversal/consommation/assurances/voisinage/famille/etrangers/social/violence/accident/entreprise + fiscal/LPP/PPE/circulation/successions — +42 règles depuis 2026-04-19, dont +22 fiscal/LPP/PPE et +20 phase5)
 - **282 invariants régression juridique** sur 30 fiches gold (hash-lock sur délais/articles, recalculés post-extension règles)

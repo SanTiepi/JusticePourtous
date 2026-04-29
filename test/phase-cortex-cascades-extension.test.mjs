@@ -18,7 +18,10 @@ const DOMAINS = ['bail', 'travail', 'dettes', 'etrangers', 'famille', 'accident'
 // Ces valeurs garantissent qu'aucune modification n'a été apportée
 // aux 12 fiches qui avaient déjà une cascade avant la Phase Cortex 1.
 const PRE_EXISTING_CASCADES = {
-  bail_defaut_moisissure: '9ac1f073ee0bcda50c471e9a06c8477d61f8d0fadb2c604e0e6a490c75400480',
+  // Hash mis à jour 2026-04-29 — modification volontaire (legal-review-claude.md #8) :
+  // étape 2 délai "dans les 7 jours" → "sans retard (immédiat dès découverte)" — le délai
+  // de 7 jours n'a aucune base légale. Avis du défaut doit être immédiat (CO 257g al. 1).
+  bail_defaut_moisissure: '45530b41deb903ec4218842a304e78d0de7f2d9a1f538938c34710845a5f17f1',
   bail_resiliation_conteste: '0797400aa2ed25bbae603ee2cad7f934e1098e0ca81ddfc33ff39924d4428544',
   // Hash mis à jour 2026-04-29 — modification volontaire (legal-review-claude.md #2) :
   // base_legale étape 1 "CO 267a" → "CO 267 / CO 267a" (clarification — la restitution

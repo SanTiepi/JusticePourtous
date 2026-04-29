@@ -419,7 +419,12 @@ function computeReviewMetrics() {
   const fiches = getAllFiches() || [];
   const counts = { draft_automated: 0, reviewed_by_claude: 0, reviewed_by_legal_expert: 0, unknown: 0 };
   let claudeLegalReviewed = 0;
-  const claudeLegalNotes = { verified: 0, fixed: 0, verified_minor_imprecision: 0 };
+  const claudeLegalNotes = {
+    verified: 0,
+    fixed: 0,
+    verified_minor_imprecision: 0,
+    verified_information_only: 0
+  };
   for (const f of fiches) {
     const r = f.review_scope || 'unknown';
     counts[r] = (counts[r] || 0) + 1;

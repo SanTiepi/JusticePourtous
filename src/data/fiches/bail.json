@@ -1432,7 +1432,9 @@
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-07",
     "information_only": true,
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified_information_only"
   },
   {
     "id": "bail_travaux_non_faits",
@@ -4823,7 +4825,9 @@
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-07",
     "information_only": true,
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified_information_only"
   },
   {
     "id": "bail_modification_contrat",

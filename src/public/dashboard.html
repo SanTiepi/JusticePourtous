@@ -426,8 +426,9 @@
         card('Reviewed by Claude (structurel)', rv.structurally_validated_percent, '%', rv.structurally_validated_passed ? 'green' : 'red'),
         card('Legal review (Claude, juridique)', legalPct, '%', legalStatus),
         card('Legal reviewed count', legalCount, '/' + (rv.total || 314), 'blue'),
-        card('Verified', breakdown.verified || 0, '', 'green'),
-        card('Fixed (corrigées)', breakdown.fixed || 0, '', 'orange'),
+        card('Verified (actionnables)', breakdown.verified || 0, '', 'green'),
+        card('Fixed (erreurs corrigées)', breakdown.fixed || 0, '', 'orange'),
+        card('Verified (info-only)', breakdown.verified_information_only || 0, '', 'blue'),
         card('Expert humain (gate Phase 2)', rv.expert_reviewed_percent, '%', expertStatus)
       ].join('');
 

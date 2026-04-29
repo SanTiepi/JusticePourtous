@@ -748,7 +748,9 @@
     "review_expiry": "2027-04-18",
     "readiness": "beta",
     "information_only": true,
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified_information_only"
   },
   {
     "id": "voisinage_dommages_propriete",
@@ -1155,7 +1157,9 @@
     "review_expiry": "2027-04-18",
     "readiness": "beta",
     "information_only": true,
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified_information_only"
   },
   {
     "id": "voisinage_servitudes_passage",
@@ -1284,7 +1288,9 @@
     "review_expiry": "2027-04-18",
     "readiness": "beta",
     "information_only": true,
-    "claude_review_date": "2026-04-19"
+    "claude_review_date": "2026-04-19",
+    "claude_legal_review_date": "2026-04-29",
+    "claude_legal_review_notes": "verified_information_only"
   },
   {
     "id": "voisinage_animaux_errants",

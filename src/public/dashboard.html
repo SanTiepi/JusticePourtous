@@ -276,6 +276,13 @@
         <div class="loading-state">Chargement…</div>
       </div>
     </section>
+
+    <section>
+      <h2>Legal Review</h2>
+      <div class="cards" id="review-cards">
+        <div class="loading-state">Chargement…</div>
+      </div>
+    </section>
   </main>
 
   <script src="/i18n.js"></script>
@@ -406,6 +413,22 @@
       document.getElementById('safety-cards').innerHTML = [
         card('Safety signals (7j)', s.safety_signals_last_7d, '', s.safety_signals_last_7d === 0 ? 'green' : 'red'),
         card('Certificats insufficient (7j)', s.insufficient_certificates_last_7d, '', s.insufficient_certificates_last_7d === 0 ? 'green' : 'orange')
+      ].join('');
+
+      // Legal Review (claude_legal_review_date — niveau 3 review juridique critique)
+      const rv = data.review || {};
+      const legalCount = rv.claude_legal_reviewed_count || 0;
+      const legalPct = rv.claude_legal_reviewed_percent || 0;
+      const breakdown = rv.claude_legal_reviewed_breakdown || {};
+      const legalStatus = legalPct >= 30 ? 'green' : (legalPct >= 10 ? 'orange' : 'red');
+      const expertStatus = (rv.expert_reviewed_percent || 0) >= rv.gate_phase2_target_percent ? 'green' : 'orange';
+      document.getElementById('review-cards').innerHTML = [
+        card('Reviewed by Claude (structurel)', rv.structurally_validated_percent, '%', rv.structurally_validated_passed ? 'green' : 'red'),
+        card('Legal review (Claude, juridique)', legalPct, '%', legalStatus),
+        card('Legal reviewed count', legalCount, '/' + (rv.total || 314), 'blue'),
+        card('Verified', breakdown.verified || 0, '', 'green'),
+        card('Fixed (corrigées)', breakdown.fixed || 0, '', 'orange'),
+        card('Expert humain (gate Phase 2)', rv.expert_reviewed_percent, '%', expertStatus)
       ].join('');
 
       // Meta

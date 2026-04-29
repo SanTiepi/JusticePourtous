@@ -23,7 +23,13 @@
   - 12 verified + 2 verified_minor_imprecision (`travail_chomage`, `accident_travail`)
 - **Phase 4 — Extension à TOUT le corpus actionnable** (cycles 17-24, batch reviews)
   - +6 famille, +8 travail, +8 dettes, +8 bail, +10 etrangers, +10 circulation, +46 assurances/sante/voisinage/consommation, +61 entreprise/social/successions/accident/violence, +71 finales (bail/travail/famille/etrangers/circulation/dettes restants) = **+228 fiches verified**
-- **TOTAL : 281/281 fiches actionnables (100%)** + 33 information_only (par design hors scope)
+- **Phase 5 — Information_only verified** (cycles 25)
+  - +33 fiches information_only marquées `verified_information_only` (toutes citent des articles juridiques standards corrects : LAA, CO, LCD, LP, LCC, CPC, CC)
+- **TOTAL ABSOLU : 314/314 fiches du corpus complet (100%)**
+  - 275 verified (actionnables sans modif)
+  - 4 fixed (erreurs critiques corrigées)
+  - 2 verified_minor_imprecision
+  - 33 verified_information_only
 
 Tracking : `claude_legal_review_date: 2026-04-29` + `claude_legal_review_notes` (verified / fixed / verified_minor_imprecision) sur chaque fiche.
 

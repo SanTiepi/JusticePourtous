@@ -19,7 +19,9 @@
     "e2e:triage": "node scripts/e2e-triage-funnel.mjs",
     "probe:sitemap": "node scripts/probe-sitemap-urls.mjs --sample=80",
     "probe:sitemap:all": "node scripts/probe-sitemap-urls.mjs --all",
-    "metrics:daily": "node scripts/send-daily-metrics.mjs"
+    "metrics:daily": "node scripts/send-daily-metrics.mjs",
+    "check:fast": "npm run audit:fiches && npm run audit:source-id && npm run audit:sitemap",
+    "check:all": "npm run check:fast && npm run audit:legal-review && npm run probe:sitemap"
   },
   "keywords": [
     "justice",

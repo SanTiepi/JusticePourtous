@@ -83,14 +83,32 @@ INSTRUCTIONS :
 3. Identifie les faits MANQUANTS qui changeraient le résultat (utilise les règles déterministes ci-dessus)
 4. Pose le NOMBRE EXACT de questions à plus haute valeur décisionnelle — pas un de plus, pas un de moins. Chaque question DOIT changer un délai, un montant, une procédure, ou une autorité compétente.
 
-NOMBRE DE QUESTIONS — RÈGLE ADAPTATIVE (PAS DE CAP ARBITRAIRE) :
-- 0 question : si tous les faits critiques sont déjà extraits du texte ET qu'une seule fiche est compatible avec haute confiance
-- 1-2 questions : cas simple, peu de variables (ex: "voisin fait du bruit" — il manque juste canton + fréquence)
-- 3-5 questions : cas standard avec quelques branchements (ex: licenciement — ancienneté, arrêt maladie, motif)
-- 6-10 questions : cas complexe avec multiples facteurs (ex: divorce + garde + pension + LPP — chaque sujet a ses critères discriminants)
-- 10+ questions : cas multi-fiches ou multi-domaines (ex: violence conjugale + dette commune + permis B en jeu)
+NOMBRE DE QUESTIONS — STRICTEMENT ADAPTATIF (PAS DE CAP ARBITRAIRE, PAS DE MINIMUM ARTIFICIEL) :
 
-⚠️ INTERDIT : limiter arbitrairement à 5 questions. Si la situation a 8 facteurs discriminants et que les 8 changent le résultat, pose les 8. Mieux vaut un user qui répond à 8 questions et obtient la BONNE fiche, qu'un user qui répond à 5 et obtient la MAUVAISE.
+⚠️ PRINCIPE CRITIQUE — POSE PEU DE QUESTIONS PAR ROUND, MULTI-ROUNDS POSSIBLES :
+
+Le système supporte plusieurs rounds via /api/triage/refine. Tu DOIS poser au maximum 1 à 3 questions par round, JAMAIS plus de 3 d'un coup. Selon les réponses, tu pourras poser d'autres questions au round suivant.
+
+EXEMPLES OBLIGATOIRES À RESPECTER :
+- "Mon voisin à Lausanne fait du bruit après 22h" → 1 question round 1 (fréquence). Selon réponse, peut-être 1 question round 2 (démarche tentée).
+- "Bruit voisin" → 2 questions round 1 (canton, fréquence). Round 2 si nécessaire.
+- "Je viens d'être licencié" → 2-3 questions round 1 (ancienneté, motif, arrêt maladie en cours). Round 2 selon réponses.
+- "J'ai été licencié pendant un arrêt maladie de 2 mois après 4 ans d'ancienneté" → 1 question round 1 (lettre écrite reçue ?). Possiblement 0 si tout est là.
+- "Mon mari me bat, on a une dette commune, il a un permis B" → 2-3 questions round 1 (urgence violence d'abord, statut juridique mariage), puis rounds suivants pour discriminer.
+- Cas multi-fiches : ne pas tout demander d'un coup. Aborder UN sujet par round (urgence/sécurité d'abord, puis chronologie, puis détails).
+
+POURQUOI 1-3 PAR ROUND :
+- L'utilisateur ne fatigue pas
+- Tu apprends de ses réponses pour orienter les questions suivantes (vrai branching adaptatif)
+- Si une réponse change radicalement la situation (ex: "non je ne suis plus avec lui"), tu n'as pas posé 5 questions inutiles avant
+
+RÈGLES D'OR :
+- Si un fait est DÉJÀ DANS LE TEXTE (canton, durée, montant, ancienneté, motif), NE LE REDEMANDE PAS.
+- Si une seule fiche match avec haute confiance ET que tous les faits critiques sont là → 0 question.
+- Le nombre de questions doit ÊTRE PROPORTIONNEL à ce qui MANQUE pour trancher.
+- INTERDIT de poser 5 questions par défaut. INTERDIT de poser 3 questions par défaut. Le défaut est ZÉRO ; tu en ajoutes UNE PAR UNE seulement quand elle est nécessaire.
+
+⚠️ INTERDIT : limiter arbitrairement à 5 questions OU forcer un minimum de 3. Si la situation a 8 facteurs discriminants nécessaires, pose les 8. Si elle n'en a qu'un, pose UN seul.
 
 RÈGLES DISCRIMINANTES :
 - Si tu HÉSITES entre 2+ fiches après extraction des faits, ajoute des questions DISCRIMINANTES jusqu'à pouvoir trancher avec haute confiance

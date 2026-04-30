@@ -4846,47 +4846,64 @@ body.has-disclaimer {
   border-radius: 4px;
 }
 
-/* ─── Quick feedback widget (thumbs up/down) ───────────────────────── */
+/* ─── Quick feedback widget (thumbs up/down) — visible & engageant ─── */
 .quick-feedback {
-  margin: 1.5rem 0 0.5rem;
-  padding: 1rem 1.25rem;
-  background: #f7f9fc;
-  border: 1px solid #e3e8ef;
-  border-radius: 8px;
+  margin: 2rem 0 1rem;
+  padding: 1.5rem 1.5rem 1.25rem;
+  background: linear-gradient(135deg, #fffaf0 0%, #fff5e1 100%);
+  border: 1.5px solid #f0d472;
+  border-radius: 12px;
   text-align: center;
+  box-shadow: 0 2px 8px rgba(160, 105, 0, 0.06);
 }
 .quick-feedback .qf-question {
-  margin: 0 0 0.75rem;
-  font-size: 0.95rem;
-  color: #2c3e50;
-  font-weight: 500;
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  color: #5a4400;
+  font-weight: 600;
 }
-.quick-feedback .qf-buttons { display: inline-flex; gap: 0.75rem; }
+.quick-feedback .qf-buttons {
+  display: inline-flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
 .quick-feedback .qf-btn {
-  padding: 0.55rem 1.25rem;
-  font-size: 1rem;
+  padding: 0.75rem 1.75rem;
+  font-size: 1.05rem;
+  font-weight: 600;
   background: #fff;
-  border: 1.5px solid #c9d1da;
+  border: 2px solid #c9d1da;
   border-radius: 999px;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: all 0.18s ease;
+  min-width: 110px;
+  min-height: 48px; /* tap target mobile */
 }
 .quick-feedback .qf-btn:hover:not(:disabled) {
   border-color: #1d7042;
   background: #f0f9f4;
-  transform: translateY(-1px);
+  color: #155433;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(29, 112, 66, 0.15);
+}
+.quick-feedback .qf-btn[data-helpful="false"]:hover:not(:disabled) {
+  border-color: #c92a2a;
+  background: #fef2f2;
+  color: #991b1b;
+  box-shadow: 0 4px 12px rgba(201, 42, 42, 0.15);
 }
 .quick-feedback .qf-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 .quick-feedback .qf-disclaimer {
-  margin: 0.6rem 0 0;
-  font-size: 0.75rem;
-  color: #6a7787;
+  margin: 0.75rem 0 0;
+  font-size: 0.78rem;
+  color: #6a5212;
   font-style: italic;
 }
 .quick-feedback .qf-thanks {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #1d7042;
-  font-weight: 500;
+  font-weight: 600;
+  padding: 0.5rem 0;
 }
 

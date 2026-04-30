@@ -8,32 +8,239 @@ var currentDomaine = '';
 
 // ===== Consultation flow =====
 
+// Refactor 2026-04-30 : abandon du quizz rigide template-de-fiche-1 (causait
+// des questions incohérentes type "quand par rapport à votre arrêt maladie ?"
+// après que l'user ait répondu NON à "êtes-vous en arrêt maladie ?").
+// Remplacé par textarea + POST /api/triage (LLM-first navigator, robuste).
+var DOMAIN_PLACEHOLDERS = {
+  bail: 'Mon propriétaire refuse de rembourser ma caution / Moisissure dans mon appartement / J\'ai reçu un congé...',
+  travail: 'Mon employeur refuse de me payer mes heures sup / J\'ai été licencié pendant un arrêt / Mon certificat de travail est négatif...',
+  dettes: 'J\'ai reçu un commandement de payer / Je n\'arrive plus à payer mes factures / On me menace de saisie...',
+  famille: 'Mon ex ne paie plus la pension / Je veux divorcer / Question de garde des enfants...',
+  etrangers: 'Décision de renvoi / Mon permis B n\'est pas renouvelé / Refus de regroupement familial...',
+  social: 'Refus d\'aide sociale / Réduction de prestations / Problème avec l\'ORP...',
+  violence: 'Je suis victime de violence / Je veux porter plainte / Mesures de protection...',
+  accident: 'Accident de la circulation / Accident professionnel / Refus d\'assurance...',
+  assurances: 'Refus de prestations LAA/AI/LAMal / Litige avec mon assurance...',
+  entreprise: 'Difficultés financières de ma société / Conflit entre associés / Recouvrement clients...',
+  consommation: 'Produit défectueux / Livraison non reçue / Garantie refusée...',
+  voisinage: 'Bruit du voisin / Conflit de servitude / Arbres trop proches...',
+  successions: 'Question sur héritage / Réserve héréditaire / Renonciation succession...',
+  sante: 'Refus de soins / Litige médical / Question sur LAMal...',
+  circulation: 'Retrait de permis / Amende d\'ordre / Accident sans police...'
+};
+
 async function initConsultation(domaine) {
   currentDomaine = domaine;
-  currentAnswers = [];
-  currentStep = 0;
+  var card = document.getElementById('questionCard');
+  if (!card) return;
+
+  // Cacher la barre de progression
+  var progress = document.querySelector('.consult-progress');
+  if (progress) progress.style.display = 'none';
+
+  var placeholder = DOMAIN_PLACEHOLDERS[domaine] || 'Décrivez votre situation en quelques mots, comme à un ami...';
+  var domaineLabel = domaine.charAt(0).toUpperCase() + domaine.slice(1);
+
+  card.innerHTML =
+    '<h2 style="margin:0 0 0.5rem;">Votre situation — ' + domaineLabel + '</h2>' +
+    '<p style="color:#4a5b6e;margin:0 0 1.25rem;line-height:1.5;">Décrivez votre cas en quelques mots, dans vos mots à vous. Notre IA identifie ensuite la situation juridique précise et vous oriente.</p>' +
+    '<textarea id="consultText" rows="5" maxlength="800" placeholder="' + placeholder.replace(/"/g, '&quot;') + '" style="width:100%;padding:0.85rem 1rem;font-size:1rem;line-height:1.55;border:1.5px solid #c9d4df;border-radius:8px;font-family:inherit;resize:vertical;min-height:120px;"></textarea>' +
+    '<div style="display:flex;gap:0.75rem;margin-top:1rem;flex-wrap:wrap;">' +
+      '<button class="btn btn-primary" onclick="submitConsultText()" style="flex:1;min-width:200px;padding:0.85rem 1.5rem;font-size:1rem;font-weight:600;background:#1d7042;color:#fff;border:none;border-radius:999px;cursor:pointer;">Analyser ma situation</button>' +
+      '<a href="/" class="btn btn-secondary" style="padding:0.85rem 1.25rem;font-size:0.95rem;color:#4a5b6e;text-decoration:none;border:1px solid #c9d4df;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;">Retour</a>' +
+    '</div>' +
+    '<p style="color:#6a7787;font-size:0.82rem;margin-top:1rem;">🔒 Anonyme · Aucun compte requis · Gratuit</p>';
+
+  // Auto-focus la textarea
+  setTimeout(function() {
+    var ta = document.getElementById('consultText');
+    if (ta) ta.focus();
+  }, 100);
+}
+
+// Variables d'état pour le flow conversationnel
+var jbCaseId = null;
+var jbCurrentQuestions = [];
+var jbAnswersGiven = {};
+
+// Soumet le texte au triage LLM-first puis affiche les questions follow-up
+// pertinentes (générées par le LLM en fonction du texte initial). Branching
+// vrai : chaque réponse re-triage le contexte via /api/triage/refine.
+async function submitConsultText() {
+  var ta = document.getElementById('consultText');
+  if (!ta) return;
+  var texte = (ta.value || '').trim();
+  if (texte.length < 10) {
+    alert('Décrivez votre situation en au moins quelques mots.');
+    ta.focus();
+    return;
+  }
   var lang = typeof getLang === 'function' ? getLang() : 'fr';
+  var card = document.getElementById('questionCard');
+  if (card) card.innerHTML = '<div class="loading" style="text-align:center;padding:3rem 1rem;color:#4a5b6e;font-size:1.1rem;">⚖️ Analyse en cours...</div>';
 
   try {
-    var res = await fetch('/api/domaines/' + domaine + '/questions?lang=' + encodeURIComponent(lang));
-    if (!res.ok) throw new Error('Erreur ' + res.status);
+    var res = await fetch('/api/triage?lang=' + encodeURIComponent(lang), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ texte: texte, canton: null, lang: lang })
+    });
     var data = await res.json();
-    currentQuestions = data.questions || [];
-    if (currentQuestions.length === 0) throw new Error('Aucune question');
-    showQuestion();
+    if (!res.ok) throw new Error(data.error || 'Erreur ' + res.status);
+    handleTriageResponse(data);
   } catch (e) {
+    showTriageError(e.message);
+  }
+}
+window.submitConsultText = submitConsultText;
+
+// Aiguillage selon la réponse triage : questions à poser OU résultat OU erreur
+function handleTriageResponse(data) {
+  jbCaseId = data.case_id || data.sessionId || jbCaseId;
+
+  // 1) Le triage a besoin de plus d'info → afficher les questions LLM
+  if (data.status === 'ask_questions' && Array.isArray(data.questionsManquantes) && data.questionsManquantes.length > 0) {
+    jbCurrentQuestions = data.questionsManquantes;
+    renderTriageQuestions(data);
+    return;
+  }
+  // 2) Safety stop / out of scope
+  if (data.status === 'safety_stop' || data.status === 'out_of_scope' || data.status === 'human_tier') {
     var card = document.getElementById('questionCard');
-    if (card) card.classList.add('hidden');
-    var errBox = document.getElementById('errorBox');
-    if (errBox) {
-      errBox.textContent = t('error.charge_failed') + ' ';
-      var link = document.createElement('a');
-      link.href = '/';
-      link.textContent = t('result.back_home');
-      errBox.appendChild(link);
-      errBox.classList.remove('hidden');
+    if (card) card.innerHTML =
+      '<div class="error-box"><strong>Orientation vers un service spécialisé</strong><p style="margin:0.75rem 0;">' +
+      (data.message || data.error || 'Pour cette situation, nous vous recommandons de contacter directement un service spécialisé.') +
+      '</p><a href="/annuaire.html" class="btn btn-primary" style="display:inline-block;margin-top:0.5rem;">Voir l\'annuaire des services</a></div>';
+    return;
+  }
+  // 3) Résultat prêt → rediriger vers /resultat.html
+  var ficheId = data.ficheId || data.fiche?.id;
+  if (ficheId) {
+    sessionStorage.setItem('jb_result', JSON.stringify(data));
+    window.location.href = '/resultat.html?fiche=' + ficheId;
+    return;
+  }
+  showTriageError('Pas de résultat — réessayez avec plus de détails.');
+}
+
+// Affiche les questions follow-up générées par le LLM, en flow étape par étape
+function renderTriageQuestions(triageData) {
+  jbAnswersGiven = {};
+  var card = document.getElementById('questionCard');
+  if (!card) return;
+
+  // Affiche la 1ère question — les autres viennent par /api/triage/refine
+  showNextQuestion(0);
+}
+
+function showNextQuestion(idx) {
+  var card = document.getElementById('questionCard');
+  if (!card) return;
+  if (idx >= jbCurrentQuestions.length) {
+    // Toutes les questions ont été répondues — soumettre les réponses
+    submitTriageAnswers();
+    return;
+  }
+  var q = jbCurrentQuestions[idx];
+  var total = jbCurrentQuestions.length;
+  var progressPct = Math.round(((idx + 1) / total) * 100);
+  var importanceBadge = q.importance === 'critique'
+    ? '<span style="display:inline-block;padding:2px 8px;background:#fef2f2;color:#991b1b;border-radius:999px;font-size:0.72rem;font-weight:600;margin-left:0.5rem;">Critique</span>'
+    : '';
+
+  card.innerHTML =
+    '<div style="margin-bottom:1.5rem;">' +
+      '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;font-size:0.82rem;color:#6a7787;">' +
+        '<span>Question ' + (idx + 1) + ' / ' + total + '</span>' +
+        '<span>' + progressPct + '%</span>' +
+      '</div>' +
+      '<div style="height:6px;background:#eef2f5;border-radius:999px;overflow:hidden;">' +
+        '<div style="width:' + progressPct + '%;height:100%;background:#1d7042;transition:width 0.25s ease;"></div>' +
+      '</div>' +
+    '</div>' +
+    '<h2 style="margin:0 0 1rem;font-size:1.25rem;line-height:1.4;">' + escHtmlSafe(q.question) + importanceBadge + '</h2>' +
+    '<div id="qOptions" style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.25rem;">' +
+      (q.choix || []).map(function(c, i) {
+        return '<button class="qb-option" data-val="' + escHtmlAttr(c) + '" style="padding:0.85rem 1rem;text-align:left;background:#fff;border:1.5px solid #c9d4df;border-radius:8px;cursor:pointer;font-size:0.95rem;line-height:1.4;color:#1f2a36;transition:all 0.15s;min-height:48px;">' + escHtmlSafe(c) + '</button>';
+      }).join('') +
+    '</div>' +
+    '<div style="display:flex;gap:0.75rem;flex-wrap:wrap;">' +
+      (idx > 0 ? '<button class="btn btn-secondary" onclick="showNextQuestion(' + (idx - 1) + ')" style="padding:0.7rem 1.25rem;font-size:0.92rem;border:1px solid #c9d4df;border-radius:999px;background:#fff;cursor:pointer;">← Précédent</button>' : '') +
+      '<button class="btn btn-secondary" onclick="skipTriageQuestions()" style="padding:0.7rem 1.25rem;font-size:0.85rem;color:#6a7787;border:none;background:transparent;cursor:pointer;text-decoration:underline;">Passer les questions</button>' +
+    '</div>';
+
+  // Bind des clics options
+  var opts = card.querySelectorAll('.qb-option');
+  opts.forEach(function(btn) {
+    btn.addEventListener('mouseenter', function() {
+      btn.style.borderColor = '#1d7042';
+      btn.style.background = '#f0f9f4';
+    });
+    btn.addEventListener('mouseleave', function() {
+      btn.style.borderColor = '#c9d4df';
+      btn.style.background = '#fff';
+    });
+    btn.addEventListener('click', function() {
+      var val = btn.getAttribute('data-val');
+      jbAnswersGiven[q.id || ('q' + idx)] = val;
+      // Auto-avance
+      showNextQuestion(idx + 1);
+    });
+  });
+}
+window.showNextQuestion = showNextQuestion;
+
+// Soumet toutes les réponses au backend pour affiner le triage
+async function submitTriageAnswers() {
+  var card = document.getElementById('questionCard');
+  if (card) card.innerHTML = '<div class="loading" style="text-align:center;padding:3rem 1rem;color:#4a5b6e;font-size:1.1rem;">⚖️ Affinage du triage...</div>';
+  var lang = typeof getLang === 'function' ? getLang() : 'fr';
+  try {
+    var res = await fetch('/api/triage/refine?lang=' + encodeURIComponent(lang), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ sessionId: jbCaseId, reponses: jbAnswersGiven, lang: lang })
+    });
+    var data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Erreur ' + res.status);
+    handleTriageResponse(data);
+  } catch (e) {
+    showTriageError(e.message);
+  }
+}
+
+// Permet de sauter les questions et voir le résultat avec ce qu'on a
+function skipTriageQuestions() {
+  if (Object.keys(jbAnswersGiven).length === 0) {
+    // Aucune réponse — rediriger directement avec la fiche initiale
+    var stored = sessionStorage.getItem('jb_result');
+    if (stored) {
+      try {
+        var d = JSON.parse(stored);
+        var fid = d.ficheId || d.fiche?.id;
+        if (fid) { window.location.href = '/resultat.html?fiche=' + fid; return; }
+      } catch (e) { /* noop */ }
     }
   }
+  submitTriageAnswers();
+}
+window.skipTriageQuestions = skipTriageQuestions;
+
+function showTriageError(msg) {
+  var card = document.getElementById('questionCard');
+  if (!card) return;
+  card.innerHTML =
+    '<div class="error-box"><strong>Une erreur est survenue.</strong>' +
+    '<p style="margin:0.5rem 0 1rem;">' + escHtmlSafe(msg || 'Réessayez plus tard.') + '</p>' +
+    '<button class="btn btn-secondary" onclick="initConsultation(currentDomaine)" style="padding:0.7rem 1.25rem;border:1px solid #c9d4df;border-radius:999px;background:#fff;cursor:pointer;">Réessayer</button></div>';
+}
+
+function escHtmlSafe(s) {
+  return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+function escHtmlAttr(s) {
+  return escHtmlSafe(s).replace(/'/g, '&#39;');
 }
 
 function showQuestion() {

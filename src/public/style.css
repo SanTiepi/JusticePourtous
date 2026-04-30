@@ -2143,26 +2143,35 @@ body.has-disclaimer {
   color: var(--text-secondary);
 }
 
-/* --- Notice juridique bar (homepage — thin strip between nav and hero) --- */
+/* --- Notice juridique bar (homepage — thin strip between nav and hero)
+   Améliorée 2026-04-30 : couleur ambre + icône pour mieux signaler
+   le caractère informatif (n'est pas un conseil juridique). */
 .notice-juridique-bar {
-  border-bottom: 1px solid var(--border-subtle);
-  padding: 6px 0;
+  background: #fff8e1;
+  border-bottom: 1px solid #f0d472;
+  padding: 8px 0;
   text-align: center;
 }
-
 .notice-juridique-inner {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--space-xl);
-  font-size: 0.68rem;
-  line-height: 1.4;
-  color: var(--text-tertiary);
-  opacity: 0.7;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: #6b5212;
 }
-
+.notice-juridique-inner::before {
+  content: 'ⓘ ';
+  font-weight: 700;
+  color: #a06900;
+}
 .notice-juridique-inner strong {
-  color: var(--text-tertiary);
+  color: #5a4400;
   font-weight: 600;
+}
+@media (max-width: 640px) {
+  .notice-juridique-bar { padding: 6px 8px; }
+  .notice-juridique-inner { font-size: 0.72rem; padding: 0 8px; }
 }
 
 /* --- Hero --- */
@@ -4250,6 +4259,98 @@ body.has-disclaimer {
 .legal-review-badge .badge-text strong { color: #0f4f2c; font-size: 0.92rem; }
 .legal-review-badge .badge-detail { font-size: 0.85rem; color: #1d5a36; }
 .legal-review-badge .badge-disclaimer { font-size: 0.75rem; color: #4a5b50; font-style: italic; margin-top: 0.2rem; }
+
+/* ─── Méthodologie — listes IA fait/fait jamais avec couleurs distinctes ── */
+.method-two-col-distinct {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.method-card-do, .method-card-dont {
+  padding: 1.25rem 1.4rem;
+  border-radius: 10px;
+  border: 1px solid;
+}
+.method-card-do {
+  background: #f0f9f4;
+  border-color: #c8e2d4;
+}
+.method-card-dont {
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+.method-card-title-do {
+  color: #155433;
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+}
+.method-card-title-dont {
+  color: #991b1b;
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+}
+.method-list-check, .method-list-cross {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.method-list-check li, .method-list-cross li {
+  padding: 0.4rem 0 0.4rem 1.7rem;
+  position: relative;
+  color: #2c3e50;
+  line-height: 1.5;
+}
+.method-list-check li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #1d7042;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.method-list-cross li::before {
+  content: '✗';
+  position: absolute;
+  left: 0;
+  color: #c92a2a;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+/* ─── Méthodologie — Tableau niveaux de confiance ──────────────── */
+.method-confidence-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(15, 29, 44, 0.04);
+}
+.method-confidence-table th {
+  background: #f7f9fc;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #4a5b6e;
+  border-bottom: 1px solid #e3e8ef;
+}
+.method-confidence-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #eef2f5;
+  vertical-align: middle;
+  color: #2c3e50;
+  line-height: 1.5;
+}
+.method-confidence-table tr:last-child td { border-bottom: none; }
+.method-confidence-table td:first-child {
+  white-space: nowrap;
+  width: 130px;
+}
 
 /* ─── Mobile : widget compact remplace le gros header ─────────────
    Robin 2026-04-30 : sur mobile le nav prenait trop de place et ne se

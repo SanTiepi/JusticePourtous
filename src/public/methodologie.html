@@ -74,19 +74,19 @@
 
       <section class="method-section">
         <h2>Ce que l'IA fait et ne fait pas</h2>
-        <div class="method-two-col">
-          <div class="method-do">
-            <h3>L'IA fait</h3>
-            <ul class="method-list">
+        <div class="method-two-col method-two-col-distinct">
+          <div class="method-do method-card-do">
+            <h3 class="method-card-title-do">✅ L'IA fait</h3>
+            <ul class="method-list method-list-check">
               <li>Comprendre votre problème en langage naturel</li>
               <li>Identifier les fiches juridiques pertinentes</li>
               <li>Extraire les informations de votre description</li>
               <li>Poser les bonnes questions de suivi</li>
             </ul>
           </div>
-          <div class="method-dont">
-            <h3>L'IA ne fait jamais</h3>
-            <ul class="method-list">
+          <div class="method-dont method-card-dont">
+            <h3 class="method-card-title-dont">❌ L'IA ne fait jamais</h3>
+            <ul class="method-list method-list-cross">
               <li>Rédiger du contenu juridique</li>
               <li>Inventer des articles de loi ou des arrêts</li>
               <li>Donner un avis sur vos chances de succès</li>
@@ -99,24 +99,32 @@
       <section class="method-section">
         <h2>Niveaux de confiance</h2>
         <p>Chaque réponse est accompagnée d'un niveau de confiance :</p>
-        <div class="method-confidence">
-          <div class="method-conf-item">
-            <span class="badge badge-simple">Certain</span>
-            <span>Loi claire + jurisprudence constante du TF</span>
-          </div>
-          <div class="method-conf-item">
-            <span class="badge badge-moyen">Probable</span>
-            <span>Jurisprudence majoritaire mais pas unanime</span>
-          </div>
-          <div class="method-conf-item">
-            <span class="badge badge-complexe">Variable</span>
-            <span>Dépend du canton, du juge, des circonstances</span>
-          </div>
-          <div class="method-conf-item">
-            <span class="badge badge-confiance">Incertain</span>
-            <span>Peu de jurisprudence — consultez un professionnel</span>
-          </div>
-        </div>
+        <table class="method-confidence-table">
+          <thead>
+            <tr>
+              <th scope="col">Niveau</th>
+              <th scope="col">Quand</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge badge-simple">Certain</span></td>
+              <td>Loi claire + jurisprudence constante du Tribunal fédéral</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-moyen">Probable</span></td>
+              <td>Jurisprudence majoritaire mais pas unanime</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-complexe">Variable</span></td>
+              <td>Dépend du canton, du juge, des circonstances</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-confiance">Incertain</span></td>
+              <td>Peu de jurisprudence — consultez un professionnel</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
 
       <section class="method-section">

@@ -40,7 +40,13 @@ test('homepage keeps generated content and search suggestions locale-aware', fun
 test('legal-content frontends propagate lang explicitly to APIs', function () {
   assert.match(APP_SOURCE, /\/api\/search\?q=' \+ encodeURIComponent\(query\) \+ '&lang=' \+ encodeURIComponent\(lang\)/, 'search result page must send lang explicitly');
   assert.match(APP_SOURCE, /\/api\/fiches\/' \+ ficheId \+ '\?lang=' \+ encodeURIComponent\(lang\)/, 'fiche fetch must send lang explicitly');
-  assert.match(APP_SOURCE, /\/api\/domaines\/' \+ domaine \+ '\/questions\?lang=' \+ encodeURIComponent\(lang\)/, 'consultation questions must send lang explicitly');
+  // 2026-04-30 — refactor consultation : abandon du quizz template /api/domaines/X/questions
+  // (causait questions incohérentes "quand par rapport à l'arrêt maladie ?" alors que
+  // le user avait dit NON à l'arrêt). Remplacé par textarea libre + /api/triage LLM-first
+  // qui génère des questions follow-up pertinentes via questionsManquantes, puis
+  // /api/triage/refine pour affiner. Vérifie que le nouveau flow envoie aussi lang.
+  assert.match(APP_SOURCE, /\/api\/triage\?lang=' \+ encodeURIComponent\(lang\)/, 'consultation triage start must send lang in URL');
+  assert.match(APP_SOURCE, /\/api\/triage\/refine\?lang=' \+ encodeURIComponent\(lang\)/, 'consultation triage refine must send lang in URL');
   assert.match(APP_SOURCE, /lang: lang/, 'consultation submit must include lang in body');
   assert.match(PREMIUM_SOURCE, /JSON\.stringify\(\{ texte: q, session: sessionCode, lang: getLang\(\) \}\)/, 'premium analysis must include lang');
   assert.match(PREMIUM_SOURCE, /JSON\.stringify\(\{ texte: lastQuery, reponses: answers, session: sessionCode, lang: getLang\(\) \}\)/, 'premium refine must include lang');

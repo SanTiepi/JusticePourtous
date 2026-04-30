@@ -142,8 +142,9 @@ export function generateSitemap({
     });
   }
 
-  // Pages guides (uniquement celles qui existent réellement)
+  // Pages guides FR (priorité 0.8) + versions multilangues DE/IT/EN si présentes (priorité 0.5)
   let guideCount = 0;
+  let multilangCount = 0;
   if (fs.existsSync(_guides)) {
     const files = fs.readdirSync(_guides).filter((f) => f.endsWith('.html')).sort();
     for (const file of files) {
@@ -157,6 +158,20 @@ export function generateSitemap({
         priority: '0.8',
       });
       guideCount += 1;
+      // Inclure les versions multilangues SI le fichier physique existe
+      // (évite 404 SEO si une langue est manquante pour un slug donné).
+      for (const locale of ['de', 'it', 'en']) {
+        const localizedPath = path.join(_guides, locale, file);
+        if (fs.existsSync(localizedPath)) {
+          urls.push({
+            loc: `${SITE_URL}/guides/${locale}/${id}.html`,
+            lastmod,
+            changefreq: 'monthly',
+            priority: '0.5',
+          });
+          multilangCount += 1;
+        }
+      }
     }
   }
 
@@ -178,7 +193,7 @@ export function generateSitemap({
   fs.writeFileSync(_out, lines.join('\n'), 'utf8');
 
   if (process.argv[1] === __filename) {
-    console.log(`✓ Sitemap : ${urls.length} URLs (${MAIN_PAGES.length} principales + ${guideCount} guides) → ${_out}`);
+    console.log(`✓ Sitemap : ${urls.length} URLs (${MAIN_PAGES.length} principales + ${guideCount} guides FR + ${multilangCount} multilang DE/IT/EN) → ${_out}`);
   }
 
   return {
@@ -186,6 +201,7 @@ export function generateSitemap({
     totalUrls: urls.length,
     mainPages: MAIN_PAGES.length,
     guidePages: guideCount,
+    multilangPages: multilangCount,
   };
 }
 

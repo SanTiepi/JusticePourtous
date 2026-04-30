@@ -4260,6 +4260,78 @@ body.has-disclaimer {
 .legal-review-badge .badge-detail { font-size: 0.85rem; color: #1d5a36; }
 .legal-review-badge .badge-disclaimer { font-size: 0.75rem; color: #4a5b50; font-style: italic; margin-top: 0.2rem; }
 
+/* ─── Annuaire — placeholder initial avant choix canton ───────────── */
+.annuaire-placeholder {
+  margin: 2rem 0;
+  padding: 2.5rem 1.75rem;
+  background: linear-gradient(135deg, #f7f9fc 0%, #f0f4f9 100%);
+  border: 1px dashed #c9d4df;
+  border-radius: 12px;
+  text-align: center;
+  animation: fadeIn 0.4s ease both;
+}
+.annuaire-placeholder-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+.annuaire-placeholder h3 {
+  font-size: 1.15rem;
+  color: #1f2a36;
+  margin: 0 0 0.75rem;
+  font-weight: 600;
+}
+.annuaire-placeholder p {
+  font-size: 0.92rem;
+  color: #4a5b6e;
+  line-height: 1.55;
+  margin: 0 auto 0.75rem;
+  max-width: 560px;
+}
+.annuaire-placeholder-tip {
+  font-size: 0.85rem !important;
+  color: #6a5212 !important;
+  background: #fff8e1;
+  padding: 0.65rem 1rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 0.5rem !important;
+}
+
+/* ─── Annuaire — filtres améliorés (vert primary + active state) ──── */
+.directory-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0 1rem;
+}
+.filter-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  background: #fff;
+  color: #4a5b6e;
+  border: 1.5px solid #e3e8ef;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-weight: 500;
+}
+.filter-btn:hover {
+  border-color: #1d7042;
+  color: #1d7042;
+  background: #f0f9f4;
+}
+.filter-btn.active {
+  background: #1d7042;
+  color: white;
+  border-color: #1d7042;
+  font-weight: 600;
+}
+.filter-btn.active:hover {
+  background: #155433;
+  color: white;
+}
+
 /* ─── Méthodologie — listes IA fait/fait jamais avec couleurs distinctes ── */
 .method-two-col-distinct {
   display: grid;

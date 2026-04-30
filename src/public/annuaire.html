@@ -92,7 +92,15 @@
         <button class="filter-btn" data-type="aide" onclick="filterServices('aide', this)" data-i18n="annuaire.filter_aide">Aide juridictionnelle</button>
       </div>
 
-      <div id="services"></div>
+      <div id="services">
+        <!-- Placeholder initial : aide visuelle avant qu'un canton soit choisi -->
+        <div class="annuaire-placeholder" id="annuairePlaceholder">
+          <div class="annuaire-placeholder-icon">📍</div>
+          <h3>Choisissez votre canton ci-dessus</h3>
+          <p>Vous obtiendrez la liste des services juridiques gratuits ou à tarif réduit dans votre canton : ASLOCA (bail), Caritas (dettes), CSP (étrangers), syndicats (travail), commissions de conciliation, services d'aide juridictionnelle.</p>
+          <p class="annuaire-placeholder-tip">💡 Ces services connaissent les spécificités cantonales (formulaires, autorités, délais) — toujours plus précis qu'une recherche générique.</p>
+        </div>
+      </div>
 
     </div>
   </main>
@@ -171,7 +179,13 @@
       var filterBar = document.getElementById('filterBar');
 
       if (!canton) {
-        container.innerHTML = '';
+        // Restaurer le placeholder initial
+        container.innerHTML = '<div class="annuaire-placeholder" id="annuairePlaceholder">' +
+          '<div class="annuaire-placeholder-icon">📍</div>' +
+          '<h3>Choisissez votre canton ci-dessus</h3>' +
+          '<p>Vous obtiendrez la liste des services juridiques gratuits ou à tarif réduit dans votre canton : ASLOCA (bail), Caritas (dettes), CSP (étrangers), syndicats (travail), commissions de conciliation, services d\'aide juridictionnelle.</p>' +
+          '<p class="annuaire-placeholder-tip">💡 Ces services connaissent les spécificités cantonales (formulaires, autorités, délais) — toujours plus précis qu\'une recherche générique.</p>' +
+        '</div>';
         filterBar.classList.add('hidden');
         allServices = [];
         return;

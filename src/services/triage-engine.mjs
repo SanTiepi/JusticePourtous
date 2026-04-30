@@ -147,8 +147,17 @@ async function triageLLM(texte, canton) {
       enrichedAll: enrichedFiches
     });
     recordRound(caseInfo.case_id, { questions: questionsManquantes, answers: {} });
-    const gateAdvance = advancePaymentGate(caseInfo.case_id, 'complete_bootstrap_round');
-    if (gateAdvance?.payment_gate) caseInfo.payment_gate = gateAdvance.payment_gate;
+    // PAYMENT GATE — fix 2026-04-30 : ne déclencher 'complete_bootstrap_round'
+    // (qui passe BOOTSTRAP → CONTINUATION_REQUIRED → bloque refine) QUE si le
+    // triage est vraiment terminé (pas de questions critiques restantes).
+    // Sinon, le user pouvait pas répondre aux follow-up sans payer = absurde.
+    // Tant que questionsManquantes critiques restent → le triage continue
+    // gratuitement en multi-rounds. Paiement n'intervient que pour les
+    // features post-triage (analyse approfondie, lettres premium).
+    if (!hasUnansweredCritical) {
+      const gateAdvance = advancePaymentGate(caseInfo.case_id, 'complete_bootstrap_round');
+      if (gateAdvance?.payment_gate) caseInfo.payment_gate = gateAdvance.payment_gate;
+    }
 
     // 9. Generate action plan (even partial)
     const planAction = generateActionPlan(primary, effectiveCanton);

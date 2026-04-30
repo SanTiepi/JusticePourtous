@@ -105,13 +105,46 @@ function handleTriageResponse(data) {
     renderTriageQuestions(data);
     return;
   }
-  // 2) Safety stop / out of scope
-  if (data.status === 'safety_stop' || data.status === 'out_of_scope' || data.status === 'human_tier') {
+  // 2) Safety stop — afficher TOUTES les ressources d'urgence (LAVI, 117, etc.)
+  //    Le backend retourne un safety_response riche avec preamble + resources.
+  //    UX critique : présenter les téléphones d'urgence en gros, cliquables.
+  if (data.status === 'safety_stop') {
     var card = document.getElementById('questionCard');
-    if (card) card.innerHTML =
+    if (!card) return;
+    var sr = data.safety_response || {};
+    var resources = sr.resources || [];
+    var resourcesHtml = resources.map(function(r) {
+      return '<a href="' + (r.tel || '#') + '" style="display:block;padding:1rem;margin-bottom:0.5rem;background:#fff;border:2px solid #c92a2a;border-radius:8px;text-decoration:none;color:#1f2a36;">' +
+        '<div style="display:flex;align-items:center;gap:0.75rem;">' +
+          '<div style="font-size:1.5rem;">📞</div>' +
+          '<div style="flex:1;">' +
+            '<div style="font-weight:700;color:#c92a2a;font-size:1.1rem;">' + escHtmlSafe(r.name) + ' · ' + escHtmlSafe(r.phone) + '</div>' +
+            (r.note ? '<div style="font-size:0.85rem;color:#4a5b6e;margin-top:0.2rem;">' + escHtmlSafe(r.note) + '</div>' : '') +
+          '</div>' +
+        '</div>' +
+      '</a>';
+    }).join('');
+    card.innerHTML =
+      '<div style="background:#fff5f5;border:2px solid #c92a2a;border-radius:12px;padding:1.5rem;">' +
+        '<h2 style="color:#c92a2a;margin:0 0 0.75rem;font-size:1.4rem;">⚠️ Votre sécurité d\'abord</h2>' +
+        (sr.preamble ? '<p style="font-size:1rem;line-height:1.55;margin:0 0 1rem;color:#1f2a36;">' + escHtmlSafe(sr.preamble) + '</p>' : '') +
+        (sr.message ? '<p style="font-weight:600;margin:0 0 1rem;color:#1f2a36;">' + escHtmlSafe(sr.message) + '</p>' : '') +
+        '<div style="margin:1rem 0;">' + resourcesHtml + '</div>' +
+        (sr.disclaimer ? '<p style="font-size:0.82rem;color:#6a7787;margin:1rem 0 0;font-style:italic;">' + escHtmlSafe(sr.disclaimer) + '</p>' : '') +
+        '<div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid #fecaca;text-align:center;">' +
+          '<a href="/" style="display:inline-block;padding:0.75rem 1.5rem;background:#fff;border:1px solid #c9d4df;border-radius:999px;color:#4a5b6e;text-decoration:none;font-size:0.9rem;">← Retour à l\'accueil</a>' +
+        '</div>' +
+      '</div>';
+    return;
+  }
+  // 3) Out of scope / human tier — orientation simple
+  if (data.status === 'out_of_scope' || data.status === 'human_tier') {
+    var card2 = document.getElementById('questionCard');
+    var resp = data.out_of_scope_response || data.human_tier_response || {};
+    if (card2) card2.innerHTML =
       '<div class="error-box"><strong>Orientation vers un service spécialisé</strong><p style="margin:0.75rem 0;">' +
-      (data.message || data.error || 'Pour cette situation, nous vous recommandons de contacter directement un service spécialisé.') +
-      '</p><a href="/annuaire.html" class="btn btn-primary" style="display:inline-block;margin-top:0.5rem;">Voir l\'annuaire des services</a></div>';
+      escHtmlSafe(resp.message || data.error || 'Pour cette situation, nous vous recommandons de contacter directement un service spécialisé.') +
+      '</p><a href="/annuaire.html" class="btn btn-primary" style="display:inline-block;margin-top:0.5rem;padding:0.75rem 1.5rem;background:#1d7042;color:#fff;border-radius:999px;text-decoration:none;">Voir l\'annuaire des services</a></div>';
     return;
   }
   // 3) Résultat prêt → rediriger vers /resultat.html

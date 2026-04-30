@@ -2122,23 +2122,32 @@ const server = createServer(async (req, res) => {
         trackLanguage(locale);
         return serveStatic(req, res, localizedStaticPath);
       }
-      const rendered = await renderGuideForLocale(slug, locale);
-      if (!rendered) {
-        return json(res, 404, { error: 'Guide introuvable', disclaimer: DISCLAIMER });
+      // Fallback gracieux 2026-04-30 : si la traduction à la volée échoue
+      // (LLM down, throw, etc.), on sert la version FR au lieu de 5xx.
+      // Évite les 500 SEO catastrophiques pour des URLs listées dans le sitemap.
+      let rendered;
+      try {
+        rendered = await renderGuideForLocale(slug, locale);
+      } catch (err) {
+        rendered = null;
       }
-      if (!rendered.html) {
-        return json(res, 503, {
-          error: 'Guide indisponible dans la langue demandée',
-          display_lang: locale,
-          source_lang: 'fr',
-          translation_status: rendered.translation_status || 'failed',
-          translation_pipeline_version: TRANSLATION_PIPELINE_VERSION,
-          disclaimer: DISCLAIMER
-        });
+      if (rendered && rendered.html) {
+        setSecurityHeaders(res);
+        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+        return res.end(rendered.html);
       }
-      setSecurityHeaders(res);
-      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-      return res.end(rendered.html);
+      // Fallback : version FR si elle existe
+      const frPath = join(publicDir, 'guides', `${slug}.html`);
+      if (existsSync(frPath)) {
+        trackPageView(path);
+        trackLanguage('fr');
+        setSecurityHeaders(res);
+        res.setHeader('Content-Language', 'fr');
+        res.setHeader('X-Translation-Fallback', 'fr-source');
+        return serveStatic(req, res, frPath);
+      }
+      // Vraie 404 : ni version localisée ni source FR
+      return json(res, 404, { error: 'Guide introuvable', disclaimer: DISCLAIMER });
     }
 
     // SEO guides (Phase Cortex §8) — pages statiques par intent.

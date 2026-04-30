@@ -32,6 +32,7 @@ const MAIN_PAGES = [
   { loc: '/methodologie.html', priority: '0.5', changefreq: 'monthly' },
   { loc: '/consulter.html', priority: '0.5', changefreq: 'monthly' },
   { loc: '/premium.html', priority: '0.5', changefreq: 'monthly' },
+  { loc: '/pour-juristes.html', priority: '0.4', changefreq: 'monthly' },
   { loc: '/cgu.html', priority: '0.3', changefreq: 'yearly' },
   { loc: '/confidentialite.html', priority: '0.3', changefreq: 'yearly' },
   { loc: '/mentions-legales.html', priority: '0.3', changefreq: 'yearly' },

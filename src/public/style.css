@@ -2056,12 +2056,16 @@ body.has-disclaimer {
   cursor: default;
 }
 
-/* --- Quick Exit (safety feature for vulnerable users) --- */
+/* --- Quick Exit (safety feature for vulnerable users) ---
+   Critique : doit rester TRÈS visible et accessible en 1 tap.
+   Desktop : top-right discret (header présent)
+   Mobile : top-LEFT en rouge (header caché, widget en top-right)
+*/
 .quick-exit {
   position: fixed;
   top: var(--space-md);
   right: var(--space-md);
-  z-index: 200;
+  z-index: 1000;
   display: flex;
   align-items: center;
   gap: var(--space-sm);
@@ -2093,6 +2097,34 @@ body.has-disclaimer {
 
 .quick-exit:hover .quick-exit-label {
   display: inline;
+}
+
+/* ─── MOBILE : quick-exit ROUGE en top-LEFT, bien visible ──────── */
+@media (max-width: 640px) {
+  .quick-exit {
+    top: 8px;
+    left: 8px;
+    right: auto;
+    height: auto;
+    padding: 8px 14px 8px 12px;
+    background: #c92a2a;
+    color: #fff !important;
+    border-color: #c92a2a;
+    box-shadow: 0 2px 12px rgba(201, 42, 42, 0.35);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    z-index: 1001;
+  }
+  .quick-exit svg path { stroke: #fff; }
+  .quick-exit:hover {
+    background: #a51d1d;
+    border-color: #a51d1d;
+  }
+  /* Le label ('Quitter — sortie rapide') n'est PAS affiché sur mobile pour
+     compacité ; le mot 'Quitter' principal suffit, déjà visible. */
+  .quick-exit-label { display: none !important; }
 }
 
 /* --- Notice juridique (inline — secondary pages) --- */

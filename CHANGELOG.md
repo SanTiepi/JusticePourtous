@@ -1,5 +1,45 @@
 # Changelog
 
+## [Session 2026-04-30] — Loop autonomie (10+ ticks enchaînés, tous deployed)
+
+10 commits successifs en prod. Tests : 1582/1582 verts. 0 commit unpushed.
+
+### 🔴 Fix critique triage
+- **Branching dynamique LLM** — abandon du quizz template `getQuestionsForDomaine()` (questions incohérentes type "quand par rapport à votre arrêt maladie ?" alors que user avait dit NON à arrêt). Remplacé par textarea + `/api/triage` LLM-first.
+- **Multi-rounds adaptatifs** ([2ce9457](src/services/llm-navigator.mjs) + [16351e5](src/services/llm-navigator.mjs)) — 1-3 questions PAR ROUND (au lieu de 5 d'un coup). Exemples concrets dans le prompt selon complexité (1 → 10+ questions).
+- **Payment gate refine** ([479b4d3](src/services/triage-engine.mjs)) — bloquait HTTP 402 sur le 2ème round. Fixé : refine gratuit tant que triage incomplet.
+- **Safety_response affichage frontend** ([479b4d3](src/public/app.js)) — bandeau rouge ⚠️ + ressources d'urgence cliquables (LAVI, VIVAVA, 117) en cards 1-tap mobile.
+- **ask_contradiction + pivot_detected** ([68762c1](src/public/app.js)) — statuts non gérés frontend (écran bloqué). Maintenant gérés.
+
+### 📱 Mobile
+- **Widget compact top-right** ([dd1113d](src/public/i18n.js)) — header sticky 64px caché < 640px. Widget flottant ⚖️ home + lang + Premium.
+- **Quick-exit ROUGE top-LEFT mobile** ([074565f](src/public/style.css)) — feature sécurité critique. Auparavant chevauchait le burger.
+
+### 🎨 UI
+- **Méthodologie** ([992b456](src/public/methodologie.html)) — listes "IA fait/fait jamais" en cards vert/rouge + tableau confiance HTML structuré + Limites actualisées (26 cantons + lien pro bono).
+- **Trust bar globale FR/DE/IT/EN** sur toutes les pages publiques.
+- **Notice juridique ambre** + icône ⓘ (au lieu d'opacity 0.7).
+- **Hero home** : 3 trust chips (🆓 Gratuit · 🔒 Anonyme · 📚 Sources Fedlex) + gros bouton vert "→ Décrire ma situation en 30 secondes".
+- **Annuaire placeholder** ([4525161](src/public/annuaire.html)) — "📍 Choisissez votre canton" + liste des services typiques + filtres pill vert/active.
+- **Premium badge "⭐ Le plus choisi"** ([e1bca6e](src/public/premium.html)) — bordure verte + box-shadow distinct.
+- **Resultat loading spinner** ([a0426ba](src/public/resultat.html)) — vrai spinner CSS animé.
+- **Quick feedback widget engageant** ([22c0b74](src/public/style.css)) — gradient ambre, boutons +taille (min-height 48px tap target), hover 👍 vert / 👎 rouge.
+
+### 🌍 i18n
+- **Hero chips + CTA traduits** ([51548ca](src/public/locales/)) — 16 nouvelles entrées (4 keys × 4 locales).
+
+### 🌐 SEO
+- **Sitemap multilangues** ([344b886](scripts/generate-sitemap.mjs)) — 324 → **1196 URLs** (+872 versions DE/IT/EN avec priority 0.5).
+- **verify-sitemap-integrity.mjs** ([439188b](scripts/verify-sitemap-integrity.mjs)) — détecte 404 SEO + orphelins HTML.
+
+### 🧪 Tests E2E
+- **e2e-triage-funnel.mjs** ([39d2cd5](scripts/e2e-triage-funnel.mjs)) — 8/8 cas types OK (multi-rounds inclus, safety_stop reconnu).
+
+### 📊 Métriques prod
+- Health 13/13 ok · 0 erreur 5xx depuis tous les deploys · 314/314 fiches legal-reviewed.
+
+---
+
 ## [Unreleased] — Session 2026-04-28 → 2026-04-29
 
 27 commits unpushed. Tests : 1577/1577 verts. Push déclenchera deploy via [scripts/deploy.sh](scripts/deploy.sh).

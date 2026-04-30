@@ -4219,6 +4219,49 @@ body.has-disclaimer {
 .legal-review-badge .badge-detail { font-size: 0.85rem; color: #1d5a36; }
 .legal-review-badge .badge-disclaimer { font-size: 0.75rem; color: #4a5b50; font-style: italic; margin-top: 0.2rem; }
 
+/* ─── Home hero — trust chips + CTA principal renforcé ──────────── */
+.hero-trust-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 1.25rem 0 1.5rem;
+}
+.hero-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #155433;
+  background: #f0f9f4;
+  border: 1px solid #c8e2d4;
+  border-radius: 999px;
+}
+.hero-cta-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.95rem 1.85rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  background: #1d7042;
+  color: white !important;
+  text-decoration: none !important;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(29, 112, 66, 0.25);
+  transition: all 0.18s ease;
+}
+.hero-cta-btn:hover {
+  background: #155433;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(29, 112, 66, 0.35);
+}
+@media (max-width: 600px) {
+  .hero-cta-btn { font-size: 0.95rem; padding: 0.8rem 1.5rem; }
+  .hero-chip { font-size: 0.8rem; padding: 0.3rem 0.7rem; }
+}
+
 /* ─── /pour-juristes.html — page dédiée pro bono review ─────────── */
 .pj-page { max-width: 920px; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
 

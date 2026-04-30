@@ -1,7 +1,9 @@
 # Email à UNIL Law Clinic
 
-**À** : lawclinic@unil.ch
-**CC** : (ajouter prof responsable si trouvé sur le site UNIL)
+**⚠️ Pas d'email générique `lawclinic@unil.ch`.** La Law Clinic est dirigée par 6 professeurs. Recommandation : écrire directement à **Prof. Evelyne Schmid** (droit international public, profil le plus aligné avec un projet citoyen droits humains/migration).
+
+**À** : evelyne.schmid@unil.ch
+**CC (optionnel)** : audrey.lebret@unil.ch (vulnérabilité), veronique.boillet@unil.ch (droit suisse public)
 **Objet** : Proposition de mandat pro bono — JusticePourtous (legal tech citoyen)
 
 ---

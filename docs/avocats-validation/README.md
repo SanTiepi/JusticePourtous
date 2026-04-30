@@ -24,26 +24,29 @@
 ### A) Associations spécialisées (le plus prometteur)
 Elles valident **leur** domaine — c'est leur intérêt direct (tu deviens un canal qui dirige vers elles).
 
-1. **ASLOCA Vaud** (Lausanne) — Rue Jean-Jacques Cart 8, 021 617 11 37, vaud@asloca.ch
+1. **ASLOCA Vaud** (Lausanne) — Rue Jean-Jacques-Cart 8, **021 617 11 37**, formulaire : https://vaud.asloca.ch/contact (pas d'email public)
    - Cible : 2 fiches bail
    - Argument : "Je dirige des locataires vers vous depuis JusticePourtous, je veux m'assurer que mes fiches bail sont juridiquement irréprochables avant d'augmenter le trafic vers ASLOCA"
 
-2. **Caritas Vaud — Service désendettement** — 021 317 59 80, info@caritas-vaud.ch
+2. **Caritas Vaud — Service désendettement** — **021 317 59 80**, **info@caritas-vaud.ch**
    - Cible : fiche dettes_commandement_payer
    - Argument similaire
 
-3. **CSP Vaud (Centre social protestant)** — 021 560 60 60
+3. **CSP Vaud (Centre social protestant)** — **021 560 60 60**, **info@csp-vd.ch**
    - Cible : etranger_renvoi (ils ont la consultation juridique pour étrangers à Vevey)
 
-4. **Unia VD (syndicat)** — 0848 949 120
+4. **Unia VD (syndicat)** — **0848 606 606**, **vaud@unia.ch**
    - Cible : travail_licenciement_abusif
 
 ### B) Universités — Cliniques juridiques étudiantes
 Étudiants en master + supervision prof. C'est leur exercice pédagogique.
 
-5. **UNIL Law Clinic** (Lausanne) — Faculté de droit
-   - Site : https://www.unil.ch/droit/lawclinic
-   - Email : lawclinic@unil.ch
+5. **UNIL Law Clinic** (Lausanne) — Faculté de droit, dirigée par 6 professeurs
+   - Site : https://www.unil.ch/ecolededroit/fr/home/ressources/espaces/etudiantes/clinique.html
+   - **Pas d'email générique**. Cibler directement :
+     - **Prof. Evelyne Schmid** (droit international public — projets droits humains/migration) : **evelyne.schmid@unil.ch**
+     - Prof. Audrey Lebret (vulnérabilité)
+     - Prof. Véronique Boillet (droit suisse public)
    - Encadrée par professeurs, étudiants en master font des avis juridiques pour ONG/projets sociaux GRATUITEMENT (juin-décembre)
    - **Le plus prometteur pour validation systématique**
 

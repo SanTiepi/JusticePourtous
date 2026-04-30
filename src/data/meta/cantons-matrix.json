@@ -383,19 +383,33 @@
           "nom": "Requête de conciliation — contestation de congé",
           "url_ou_emplacement": "https://www.vd.ch/etat-droit-finances/districts-/-prefectures/prefectures/prestations-des-prefectures/commissions-prefectorales-de-conciliation",
           "support": "Formulaire cantonal téléchargeable + courrier libre accepté",
-          "champs_obligatoires": ["nom", "adresse", "date_notification_conge", "motif_contestation", "copie_bail"]
+          "champs_obligatoires": [
+            "nom",
+            "adresse",
+            "date_notification_conge",
+            "motif_contestation",
+            "copie_bail"
+          ]
         },
         "dettes_opposition": {
           "nom": "Opposition au commandement de payer",
           "url_ou_emplacement": "Formulaire papier remis avec le commandement de payer (ou oral à l'office)",
           "support": "Au verso du commandement de payer",
-          "champs_obligatoires": ["signature_debiteur", "delai_10_jours"]
+          "champs_obligatoires": [
+            "signature_debiteur",
+            "delai_10_jours"
+          ]
         },
         "travail_demande_conciliation": {
           "nom": "Requête de conciliation prud'hommes",
           "url_ou_emplacement": "https://www.vd.ch/ojv/tribunaux-de-prudhommes/lausanne",
           "support": "Formulaire en ligne ou papier",
-          "champs_obligatoires": ["employeur", "employe", "objet_litige", "conclusions"]
+          "champs_obligatoires": [
+            "employeur",
+            "employe",
+            "objet_litige",
+            "conclusions"
+          ]
         }
       }
     },
@@ -654,13 +668,21 @@
           "nom": "Formulaire de requête à la Commission de conciliation",
           "url_ou_emplacement": "https://www.ge.ch/organisation/commission-conciliation-matiere-baux-loyers",
           "support": "Formulaire PDF cantonal téléchargeable",
-          "champs_obligatoires": ["identite_parties", "objet_litige", "conclusions", "pieces"]
+          "champs_obligatoires": [
+            "identite_parties",
+            "objet_litige",
+            "conclusions",
+            "pieces"
+          ]
         },
         "dettes_opposition": {
           "nom": "Opposition au commandement de payer",
           "url_ou_emplacement": "Sur le commandement de payer remis par l'office",
           "support": "Formulaire papier ou opposition orale à l'office",
-          "champs_obligatoires": ["signature", "delai_10_jours"]
+          "champs_obligatoires": [
+            "signature",
+            "delai_10_jours"
+          ]
         }
       }
     },
@@ -918,13 +940,21 @@
           "nom": "Schlichtungsgesuch Mietsachen",
           "url_ou_emplacement": "https://www.gerichte-zh.ch/themen/miete-und-pacht.html",
           "support": "Formulaire PDF cantonal",
-          "champs_obligatoires": ["Parteien", "Streitgegenstand", "Rechtsbegehren", "Beilagen"]
+          "champs_obligatoires": [
+            "Parteien",
+            "Streitgegenstand",
+            "Rechtsbegehren",
+            "Beilagen"
+          ]
         },
         "dettes_opposition": {
           "nom": "Rechtsvorschlag",
           "url_ou_emplacement": "Sur le Zahlungsbefehl remis par l'Betreibungsamt",
           "support": "Au verso du Zahlungsbefehl",
-          "champs_obligatoires": ["Unterschrift", "Frist_10_Tage"]
+          "champs_obligatoires": [
+            "Unterschrift",
+            "Frist_10_Tage"
+          ]
         }
       }
     },
@@ -1179,13 +1209,21 @@
           "nom": "Schlichtungsgesuch / Requête en conciliation bail",
           "url_ou_emplacement": "https://www.justice.be.ch/fr/start/themen/miete-pacht.html",
           "support": "Formulaire PDF bilingue (FR/DE)",
-          "champs_obligatoires": ["parties", "objet", "conclusions", "pieces"]
+          "champs_obligatoires": [
+            "parties",
+            "objet",
+            "conclusions",
+            "pieces"
+          ]
         },
         "dettes_opposition": {
           "nom": "Rechtsvorschlag / Opposition",
           "url_ou_emplacement": "Sur le Zahlungsbefehl / commandement de payer",
           "support": "Verso du commandement",
-          "champs_obligatoires": ["signature", "delai_10_jours"]
+          "champs_obligatoires": [
+            "signature",
+            "delai_10_jours"
+          ]
         }
       }
     },
@@ -1444,13 +1482,21 @@
           "nom": "Schlichtungsgesuch Mietstreitigkeiten",
           "url_ou_emplacement": "https://www.gerichte.bs.ch/zivilgericht/staatliche-schlichtungsstelle-mietstreitigkeiten.html",
           "support": "Formulaire PDF cantonal",
-          "champs_obligatoires": ["Parteien", "Streitgegenstand", "Rechtsbegehren", "Beilagen"]
+          "champs_obligatoires": [
+            "Parteien",
+            "Streitgegenstand",
+            "Rechtsbegehren",
+            "Beilagen"
+          ]
         },
         "dettes_opposition": {
           "nom": "Rechtsvorschlag",
           "url_ou_emplacement": "Sur le Zahlungsbefehl",
           "support": "Verso du Zahlungsbefehl",
-          "champs_obligatoires": ["Unterschrift", "Frist_10_Tage"]
+          "champs_obligatoires": [
+            "Unterschrift",
+            "Frist_10_Tage"
+          ]
         }
       }
     },
@@ -1707,15 +1753,929 @@
           "nom": "Istanza di conciliazione locazione",
           "url_ou_emplacement": "https://www4.ti.ch/poteri/giudiziario/uffici-di-conciliazione",
           "support": "Modulo PDF cantonale",
-          "champs_obligatoires": ["parti", "oggetto", "conclusioni", "allegati"]
+          "champs_obligatoires": [
+            "parti",
+            "oggetto",
+            "conclusioni",
+            "allegati"
+          ]
         },
         "dettes_opposition": {
           "nom": "Opposizione al precetto esecutivo",
           "url_ou_emplacement": "Sul precetto esecutivo",
           "support": "Verso del precetto",
-          "champs_obligatoires": ["firma", "termine_10_giorni"]
+          "champs_obligatoires": [
+            "firma",
+            "termine_10_giorni"
+          ]
         }
       }
+    },
+    "VS": {
+      "nom": "Valais",
+      "langue": "fr",
+      "population_citoyenne": null,
+      "site_officiel": "https://www.vs.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Commission cantonale de conciliation en matière de bail à loyer",
+            "adresse": "Avenue du Midi 7, 1950 Sion",
+            "site": "https://www.vs.ch",
+            "cout": "Gratuit",
+            "delai_reaction": "2-6 semaines",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Office des poursuites du district de Sion, Hérens et Conthey",
+            "adresse": "Route de la Piscine 10, Case postale 634, 1951 Sion",
+            "telephone": "027 606 16 10",
+            "site": null,
+            "delai_reaction": "10 jours dès notification du commandement de payer (LP 74)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "travail": {
+          "tribunal_prudhommes": {
+            "nom": "Tribunal des prud'hommes Valais",
+            "adresse": "Palais de justice, Avenue Mathieu-Schiner 1, 1950 Sion",
+            "site": null,
+            "cout": "Gratuit jusqu'à CHF 30'000 (CPC art. 114)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "famille": {
+          "apea": {
+            "nom": "Autorité de protection de l'enfant et de l'adulte (APEA)",
+            "adresse": "Variable selon le district — Sion : Avenue de la Gare 39, 1950 Sion",
+            "site": "https://www.vs.ch/web/sjsj/autorites-de-protection-de-l-enfant-et-de-l-adulte1",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "violence": {
+          "lavi": {
+            "nom": "Centre LAVI Valais romand",
+            "adresse": "Rue des Vergers 1, 1950 Sion",
+            "telephone": "027 607 31 00",
+            "site": "https://www.aide-aux-victimes.ch",
+            "cout": "Gratuit",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "social": {
+          "subsides_lamal": {
+            "nom": "Service des subsides LAMal Valais",
+            "adresse": null,
+            "site": "https://www.vs.ch",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "etrangers": {
+          "naturalisation": {
+            "nom": "Service des naturalisations Valais",
+            "site": "https://www.vs.ch",
+            "delai": null,
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "transversal": {
+          "assistance_judiciaire": {
+            "nom": "Tribunal cantonal, Palais de justice, Avenue Mathieu-Schiner 1, 1950 Sion",
+            "site": "https://www.vs.ch/web/sj/assistance-judiciaire",
+            "telephone": "027 606 58 00",
+            "seuil": "Basé sur minimum vital LP élargi",
+            "source": "donnees-cantonales-auto"
+          }
+        }
+      },
+      "_source": "donnees-cantonales-auto-2026-04-30",
+      "_note": "Données partielles auto-générées depuis donnees-cantonales.json. Pour enrichissement curé (formulaires, ASLOCA local, etc.), voir VD/GE/ZH/BE/BS/TI."
+    },
+    "FR": {
+      "nom": "Fribourg",
+      "langue": "fr-de",
+      "population_citoyenne": null,
+      "site_officiel": "https://www.fr.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Commission de conciliation en matière de bail du district de la Sarine",
+            "adresse": "Route des Arsenaux 16, 1700 Fribourg",
+            "site": "https://www.fr.ch",
+            "cout": "Gratuit",
+            "delai_reaction": "2-4 semaines",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Office des poursuites de la Sarine",
+            "adresse": "Avenue de Beauregard 13, 1700 Fribourg",
+            "telephone": "026 305 40 00",
+            "site": null,
+            "delai_reaction": "10 jours dès notification du commandement de payer (LP 74)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "travail": {
+          "tribunal_prudhommes": {
+            "nom": "Tribunal des prud'hommes Fribourg",
+            "adresse": "Route des Arsenaux 16, 1700 Fribourg",
+            "site": "https://www.fr.ch/etat-et-droit/justice/pouvoir-judiciaire-tribunal-des-prudhommes",
+            "cout": "Gratuit jusqu'à CHF 30'000 (CPC art. 114)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "famille": {
+          "apea": {
+            "nom": "Justice de paix (APEA) de la Sarine",
+            "adresse": "Route des Arsenaux 16, 1700 Fribourg",
+            "site": null,
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "violence": {
+          "lavi": {
+            "nom": "Centre de consultation LAVI pour enfants, hommes et victimes de la circulation",
+            "adresse": "Boulevard de Pérolles 18A, 1701 Fribourg",
+            "telephone": "026 305 15 80",
+            "site": "https://www.fr.ch",
+            "cout": "Gratuit",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "social": {
+          "subsides_lamal": {
+            "nom": "Service des subsides LAMal Fribourg",
+            "adresse": null,
+            "site": "https://www.fr.ch",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "etrangers": {
+          "naturalisation": {
+            "nom": "Service des naturalisations Fribourg",
+            "site": "https://www.fr.ch/vie-quotidienne/permis-de-sejour-et-naturalisation/la-naturalisation/naturalisation-ordinaire",
+            "delai": null,
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "transversal": {
+          "assistance_judiciaire": {
+            "nom": "Tribunal cantonal, Route des Arsenaux 16, 1700 Fribourg",
+            "site": "https://www.fr.ch/etat-et-droit/justice",
+            "telephone": "026 305 15 00",
+            "seuil": "Basé sur minimum vital LP élargi",
+            "source": "donnees-cantonales-auto"
+          }
+        }
+      },
+      "_source": "donnees-cantonales-auto-2026-04-30",
+      "_note": "Données partielles auto-générées depuis donnees-cantonales.json. Pour enrichissement curé (formulaires, ASLOCA local, etc.), voir VD/GE/ZH/BE/BS/TI."
+    },
+    "NE": {
+      "nom": "Neuchâtel",
+      "langue": "fr",
+      "population_citoyenne": null,
+      "site_officiel": "https://www.ne.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Commission de conciliation en matière de bail du district de Neuchâtel",
+            "adresse": "Rue du Pommier 1, 2000 Neuchâtel",
+            "site": null,
+            "cout": "Gratuit",
+            "delai_reaction": "2-4 semaines",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Office des poursuites de Neuchâtel",
+            "adresse": "Avenue Léopold-Robert 63, Case postale 1204, 2301 La Chaux-de-Fonds",
+            "telephone": "032 889 61 16",
+            "site": null,
+            "delai_reaction": "10 jours dès notification du commandement de payer (LP 74)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "travail": {
+          "tribunal_prudhommes": {
+            "nom": "Tribunal des prud'hommes Neuchâtel",
+            "adresse": "Rue du Pommier 1, 2000 Neuchâtel",
+            "site": null,
+            "cout": "Gratuit jusqu'à CHF 30'000 (CPC art. 114)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "famille": {
+          "apea": {
+            "nom": "Autorité de protection de l'enfant et de l'adulte (APEA)",
+            "adresse": "Tribunal régional, Rue du Pommier 1, 2000 Neuchâtel",
+            "site": "https://www.ne.ch/autorites/PJNE/tribunaux-régionaux/Pages/INST-apea2.aspx",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "violence": {
+          "lavi": {
+            "nom": "Service d'aide aux victimes (SAVI)",
+            "adresse": "Rue des Poudrières 135, 2000 Neuchâtel",
+            "telephone": "032 889 66 49",
+            "site": "https://www.ne.ch",
+            "cout": "Gratuit",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "social": {
+          "subsides_lamal": {
+            "nom": "Service des subsides LAMal Neuchâtel",
+            "adresse": null,
+            "site": "https://www.ne.ch",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "etrangers": {
+          "naturalisation": {
+            "nom": "Service des naturalisations Neuchâtel",
+            "site": "https://www.ne.ch/autorites/DESC/SCPO/naturalisation/Pages/Naturalisation-ordinaire.aspx",
+            "delai": null,
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "transversal": {
+          "assistance_judiciaire": {
+            "nom": "Tribunal cantonal, Rue du Pommier 1, 2000 Neuchâtel",
+            "site": "https://www.ne.ch",
+            "telephone": "032 889 62 22",
+            "seuil": "Basé sur minimum vital LP élargi",
+            "source": "donnees-cantonales-auto"
+          }
+        }
+      },
+      "_source": "donnees-cantonales-auto-2026-04-30",
+      "_note": "Données partielles auto-générées depuis donnees-cantonales.json. Pour enrichissement curé (formulaires, ASLOCA local, etc.), voir VD/GE/ZH/BE/BS/TI."
+    },
+    "JU": {
+      "nom": "Jura",
+      "langue": "fr",
+      "population_citoyenne": null,
+      "site_officiel": "https://www.ju.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Commission de conciliation en matière de bail — District de Delémont",
+            "adresse": "Hôtel de Ville, Case postale, 2800 Delémont",
+            "site": null,
+            "cout": "Gratuit",
+            "delai_reaction": "2-6 semaines",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Office des poursuites de Delémont",
+            "adresse": "Rue de l'Avenir 2, 2800 Delémont",
+            "telephone": "032 420 56 60",
+            "site": null,
+            "delai_reaction": "10 jours dès notification du commandement de payer (LP 74)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "travail": {
+          "tribunal_prudhommes": {
+            "nom": "Tribunal des prud'hommes Jura",
+            "adresse": "Rue du 24-Septembre 2, 2800 Delémont",
+            "site": null,
+            "cout": "Gratuit jusqu'à CHF 30'000 (CPC art. 114)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "famille": {
+          "apea": {
+            "nom": "Autorité de protection de l'enfant et de l'adulte (APEA)",
+            "adresse": "Rue de la Préfecture 12, 2800 Delémont",
+            "site": null,
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "violence": {
+          "lavi": {
+            "nom": "Centre LAVI Jura",
+            "adresse": "Quai de la Sorne 22, 2800 Delémont",
+            "telephone": "032 420 81 00",
+            "site": "https://www.aide-aux-victimes.ch",
+            "cout": "Gratuit",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "social": {
+          "subsides_lamal": {
+            "nom": "Service des subsides LAMal Jura",
+            "adresse": null,
+            "site": "https://www.jura.ch",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "etrangers": {
+          "naturalisation": {
+            "nom": "Service des naturalisations Jura",
+            "site": "https://www.jura.ch",
+            "delai": null,
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "transversal": {
+          "assistance_judiciaire": {
+            "nom": "Tribunal cantonal, Rue du 24-Septembre 2, 2800 Delémont",
+            "site": "https://www.jura.ch",
+            "telephone": "032 420 90 00",
+            "seuil": "Basé sur minimum vital LP élargi",
+            "source": "donnees-cantonales-auto"
+          }
+        }
+      },
+      "_source": "donnees-cantonales-auto-2026-04-30",
+      "_note": "Données partielles auto-générées depuis donnees-cantonales.json. Pour enrichissement curé (formulaires, ASLOCA local, etc.), voir VD/GE/ZH/BE/BS/TI."
+    },
+    "LU": {
+      "nom": "Lucerne",
+      "langue": "de",
+      "population_citoyenne": null,
+      "site_officiel": "https://www.lu.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Schlichtungsbehörde in Mietsachen Luzern",
+            "adresse": "Obergrundstrasse 46, 6002 Luzern",
+            "site": "https://www.lu.ch/verwaltung/JSD/gericht/schlichtungsbehoerde",
+            "cout": "Gratuit",
+            "delai_reaction": "2-4 semaines",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Betreibungs- und Konkursamt Luzern",
+            "adresse": "Obergrundstrasse 46, 6002 Luzern",
+            "telephone": "041 228 54 54",
+            "site": null,
+            "delai_reaction": "10 jours dès notification du commandement de payer (LP 74)",
+            "source": "donnees-cantonales-auto"
+          }
+        }
+      },
+      "_source": "donnees-cantonales-auto-2026-04-30",
+      "_note": "Données partielles auto-générées depuis donnees-cantonales.json. Pour enrichissement curé (formulaires, ASLOCA local, etc.), voir VD/GE/ZH/BE/BS/TI."
+    },
+    "SG": {
+      "nom": "Saint-Gall",
+      "langue": "de",
+      "population_citoyenne": null,
+      "site_officiel": "https://www.sg.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Schlichtungsbehörde für Mietverhältnisse",
+            "adresse": "Oberer Graben 2, 9000 St. Gallen",
+            "site": null,
+            "cout": "Gratuit",
+            "delai_reaction": "30 jours dès notification du congé (CO 273)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Betreibungsamt St. Gallen",
+            "adresse": "Neugasse 3, 9000 St. Gallen",
+            "telephone": "071 224 53 53",
+            "site": null,
+            "delai_reaction": "10 jours dès notification du commandement de payer (LP 74)",
+            "source": "donnees-cantonales-auto"
+          }
+        }
+      },
+      "_source": "donnees-cantonales-auto-2026-04-30",
+      "_note": "Données partielles auto-générées depuis donnees-cantonales.json. Pour enrichissement curé (formulaires, ASLOCA local, etc.), voir VD/GE/ZH/BE/BS/TI."
+    },
+    "AG": {
+      "nom": "Argovie",
+      "langue": "de",
+      "population_citoyenne": null,
+      "site_officiel": "https://www.ag.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Schlichtungsbehörde für Miete und Pacht",
+            "adresse": "Variable selon Bezirk",
+            "site": null,
+            "cout": "Gratuit",
+            "delai_reaction": "30 jours dès notification du congé (CO 273)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Betreibungsamt Aarau",
+            "adresse": "Rain 24, 5001 Aarau",
+            "telephone": "062 835 35 50",
+            "site": null,
+            "delai_reaction": "10 jours dès notification du commandement de payer (LP 74)",
+            "source": "donnees-cantonales-auto"
+          }
+        }
+      },
+      "_source": "donnees-cantonales-auto-2026-04-30",
+      "_note": "Données partielles auto-générées depuis donnees-cantonales.json. Pour enrichissement curé (formulaires, ASLOCA local, etc.), voir VD/GE/ZH/BE/BS/TI."
+    },
+    "SO": {
+      "nom": "Soleure",
+      "langue": "de",
+      "population_citoyenne": null,
+      "site_officiel": "https://www.so.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Schlichtungsbehörde in Mietsachen",
+            "adresse": "Variable selon Amtei",
+            "site": null,
+            "cout": "Gratuit",
+            "delai_reaction": "30 jours dès notification du congé (CO 273)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Betreibungsamt Solothurn",
+            "adresse": "Bielstrasse 9, 4502 Solothurn",
+            "telephone": "032 627 64 64",
+            "site": null,
+            "delai_reaction": "10 jours dès notification du commandement de payer (LP 74)",
+            "source": "donnees-cantonales-auto"
+          }
+        }
+      },
+      "_source": "donnees-cantonales-auto-2026-04-30",
+      "_note": "Données partielles auto-générées depuis donnees-cantonales.json. Pour enrichissement curé (formulaires, ASLOCA local, etc.), voir VD/GE/ZH/BE/BS/TI."
+    },
+    "BL": {
+      "nom": "Bâle-Campagne",
+      "langue": "de",
+      "population_citoyenne": null,
+      "site_officiel": "https://www.bl.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Schlichtungsbehörde für Mietangelegenheiten",
+            "adresse": "Variable selon le district (Arlesheim, Liestal, Sissach, Waldenburg, Laufen)",
+            "site": null,
+            "cout": "Gratuit",
+            "delai_reaction": "30 jours dès notification du congé (CO 273)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Betreibungsamt Arlesheim",
+            "adresse": "Kirchgasse 5, 4144 Arlesheim",
+            "telephone": "061 552 12 12",
+            "site": null,
+            "delai_reaction": "10 jours dès notification du commandement de payer (LP 74)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "famille": {
+          "apea": {
+            "nom": "KESB Baselland",
+            "adresse": "Variable selon Bezirk",
+            "site": "https://www.baselland.ch/politik-und-behorden/direktionen/sicherheitsdirektion/kesb",
+            "source": "donnees-cantonales-auto"
+          }
+        }
+      },
+      "_source": "donnees-cantonales-auto-2026-04-30",
+      "_note": "Données partielles auto-générées depuis donnees-cantonales.json. Pour enrichissement curé (formulaires, ASLOCA local, etc.), voir VD/GE/ZH/BE/BS/TI."
+    },
+    "SH": {
+      "nom": "Schaffhouse",
+      "langue": "de",
+      "population_citoyenne": null,
+      "site_officiel": "https://www.sh.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Schlichtungsbehörde in Mietsachen",
+            "adresse": "Herrenacker 4, 8200 Schaffhausen",
+            "site": null,
+            "cout": "Gratuit",
+            "delai_reaction": "30 jours dès notification du congé (CO 273)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Betreibungsamt Schaffhausen",
+            "adresse": "Mühlentalstrasse 105, 8200 Schaffhausen",
+            "telephone": "052 632 74 51",
+            "site": null,
+            "delai_reaction": "10 jours dès notification du commandement de payer (LP 74)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "famille": {
+          "apea": {
+            "nom": "KESB Schaffhausen",
+            "adresse": "Mühlentalstrasse 105, 8200 Schaffhausen",
+            "site": null,
+            "source": "donnees-cantonales-auto"
+          }
+        }
+      },
+      "_source": "donnees-cantonales-auto-2026-04-30",
+      "_note": "Données partielles auto-générées depuis donnees-cantonales.json. Pour enrichissement curé (formulaires, ASLOCA local, etc.), voir VD/GE/ZH/BE/BS/TI."
+    },
+    "AR": {
+      "nom": "Appenzell Rhodes-Extérieures",
+      "langue": "de",
+      "population_citoyenne": null,
+      "site_officiel": "https://www.ar.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Schlichtungsbehörde in Mietsachen",
+            "adresse": "Regierungsgebäude, 9100 Herisau",
+            "site": null,
+            "cout": "Gratuit",
+            "delai_reaction": "30 jours dès notification du congé (CO 273)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Betreibungsamt Appenzell A.Rh.",
+            "adresse": "Regierungsgebäude, 9100 Herisau",
+            "telephone": "071 353 63 63",
+            "site": null,
+            "delai_reaction": "10 jours dès notification du commandement de payer (LP 74)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "famille": {
+          "apea": {
+            "nom": "KESB Appenzell Ausserrhoden",
+            "adresse": "Regierungsgebäude, 9100 Herisau",
+            "site": null,
+            "source": "donnees-cantonales-auto"
+          }
+        }
+      },
+      "_source": "donnees-cantonales-auto-2026-04-30",
+      "_note": "Données partielles auto-générées depuis donnees-cantonales.json. Pour enrichissement curé (formulaires, ASLOCA local, etc.), voir VD/GE/ZH/BE/BS/TI."
+    },
+    "AI": {
+      "nom": "Appenzell Rhodes-Intérieures",
+      "langue": "de",
+      "population_citoyenne": null,
+      "site_officiel": "https://www.ai.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Vermittleramt",
+            "adresse": "Marktgasse 2, 9050 Appenzell",
+            "site": null,
+            "cout": "Gratuit",
+            "delai_reaction": "30 jours dès notification du congé (CO 273)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Betreibungsamt Appenzell I.Rh.",
+            "adresse": "Marktgasse 2, 9050 Appenzell",
+            "telephone": "071 788 93 11",
+            "site": null,
+            "delai_reaction": "10 jours dès notification du commandement de payer (LP 74)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "famille": {
+          "apea": {
+            "nom": "KESB Appenzell Innerrhoden",
+            "adresse": "Marktgasse 2, 9050 Appenzell",
+            "site": null,
+            "source": "donnees-cantonales-auto"
+          }
+        }
+      },
+      "_source": "donnees-cantonales-auto-2026-04-30",
+      "_note": "Données partielles auto-générées depuis donnees-cantonales.json. Pour enrichissement curé (formulaires, ASLOCA local, etc.), voir VD/GE/ZH/BE/BS/TI."
+    },
+    "GR": {
+      "nom": "Grisons",
+      "langue": "de-it-rm",
+      "population_citoyenne": null,
+      "site_officiel": "https://www.gr.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Schlichtungsbehörde für Mietsachen / Autorità di conciliazione in materia di locazione",
+            "adresse": "Variable selon Bezirk/Region (Chur, Davos, Engadin, etc.)",
+            "site": null,
+            "cout": "Gratuit",
+            "delai_reaction": "30 jours dès notification du congé (CO 273)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Betreibungsamt Chur",
+            "adresse": "Grabenstrasse 28, 7000 Chur",
+            "telephone": "081 254 36 30",
+            "site": null,
+            "delai_reaction": "10 jours dès notification du commandement de payer (LP 74)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "famille": {
+          "apea": {
+            "nom": "KESB Graubünden",
+            "adresse": "Variable selon Region",
+            "site": "https://www.gr.ch/DE/institutionen/verwaltung/djsg/afb/kesb",
+            "source": "donnees-cantonales-auto"
+          }
+        }
+      },
+      "_source": "donnees-cantonales-auto-2026-04-30",
+      "_note": "Données partielles auto-générées depuis donnees-cantonales.json. Pour enrichissement curé (formulaires, ASLOCA local, etc.), voir VD/GE/ZH/BE/BS/TI."
+    },
+    "TG": {
+      "nom": "Thurgovie",
+      "langue": "de",
+      "population_citoyenne": null,
+      "site_officiel": "https://www.tg.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Schlichtungsbehörde in Mietsachen",
+            "adresse": "Variable selon Bezirk (Frauenfeld, Kreuzlingen, Weinfelden, etc.)",
+            "site": null,
+            "cout": "Gratuit",
+            "delai_reaction": "30 jours dès notification du congé (CO 273)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Betreibungsamt Frauenfeld",
+            "adresse": "Schlossmühlestrasse 15, 8500 Frauenfeld",
+            "telephone": "052 724 15 60",
+            "site": null,
+            "delai_reaction": "10 jours dès notification du commandement de payer (LP 74)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "famille": {
+          "apea": {
+            "nom": "KESB Thurgau",
+            "adresse": "Variable selon Bezirk",
+            "site": "https://kesb.tg.ch",
+            "source": "donnees-cantonales-auto"
+          }
+        }
+      },
+      "_source": "donnees-cantonales-auto-2026-04-30",
+      "_note": "Données partielles auto-générées depuis donnees-cantonales.json. Pour enrichissement curé (formulaires, ASLOCA local, etc.), voir VD/GE/ZH/BE/BS/TI."
+    },
+    "UR": {
+      "nom": "Uri",
+      "langue": "de",
+      "population_citoyenne": null,
+      "site_officiel": "https://www.ur.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Schlichtungsbehörde in Mietsachen",
+            "adresse": "Rathausplatz 1, 6460 Altdorf",
+            "site": null,
+            "cout": "Gratuit",
+            "delai_reaction": "30 jours dès notification du congé (CO 273)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Betreibungsamt Uri",
+            "adresse": "Rathausplatz 1, 6460 Altdorf",
+            "telephone": "041 875 21 31",
+            "site": null,
+            "delai_reaction": "10 jours dès notification du commandement de payer (LP 74)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "famille": {
+          "apea": {
+            "nom": "KESB Uri",
+            "adresse": "Rathausplatz 1, 6460 Altdorf",
+            "site": null,
+            "source": "donnees-cantonales-auto"
+          }
+        }
+      },
+      "_source": "donnees-cantonales-auto-2026-04-30",
+      "_note": "Données partielles auto-générées depuis donnees-cantonales.json. Pour enrichissement curé (formulaires, ASLOCA local, etc.), voir VD/GE/ZH/BE/BS/TI."
+    },
+    "SZ": {
+      "nom": "Schwytz",
+      "langue": "de",
+      "population_citoyenne": null,
+      "site_officiel": "https://www.sz.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Schlichtungsbehörde in Mietsachen",
+            "adresse": "Variable selon Bezirk (Schwyz, Einsiedeln, etc.)",
+            "site": null,
+            "cout": "Gratuit",
+            "delai_reaction": "30 jours dès notification du congé (CO 273)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Betreibungsamt Schwyz",
+            "adresse": "Bahnhofstrasse 9, 6430 Schwyz",
+            "telephone": "041 819 20 50",
+            "site": null,
+            "delai_reaction": "10 jours dès notification du commandement de payer (LP 74)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "famille": {
+          "apea": {
+            "nom": "KESB Schwyz",
+            "adresse": "Variable selon Bezirk",
+            "site": null,
+            "source": "donnees-cantonales-auto"
+          }
+        }
+      },
+      "_source": "donnees-cantonales-auto-2026-04-30",
+      "_note": "Données partielles auto-générées depuis donnees-cantonales.json. Pour enrichissement curé (formulaires, ASLOCA local, etc.), voir VD/GE/ZH/BE/BS/TI."
+    },
+    "OW": {
+      "nom": "Obwald",
+      "langue": "de",
+      "population_citoyenne": null,
+      "site_officiel": "https://www.ow.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Schlichtungsbehörde in Mietsachen",
+            "adresse": "Rathaus, 6060 Sarnen",
+            "site": null,
+            "cout": "Gratuit",
+            "delai_reaction": "30 jours dès notification du congé (CO 273)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Betreibungsamt Obwalden",
+            "adresse": "St. Antonistrasse 4, 6060 Sarnen",
+            "telephone": "041 666 62 92",
+            "site": null,
+            "delai_reaction": "10 jours dès notification du commandement de payer (LP 74)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "famille": {
+          "apea": {
+            "nom": "KESB Obwalden",
+            "adresse": "St. Antonistrasse 4, 6060 Sarnen",
+            "site": null,
+            "source": "donnees-cantonales-auto"
+          }
+        }
+      },
+      "_source": "donnees-cantonales-auto-2026-04-30",
+      "_note": "Données partielles auto-générées depuis donnees-cantonales.json. Pour enrichissement curé (formulaires, ASLOCA local, etc.), voir VD/GE/ZH/BE/BS/TI."
+    },
+    "NW": {
+      "nom": "Nidwald",
+      "langue": "de",
+      "population_citoyenne": null,
+      "site_officiel": "https://www.nw.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Schlichtungsbehörde in Mietsachen",
+            "adresse": "Rathausplatz 1, 6371 Stans",
+            "site": null,
+            "cout": "Gratuit",
+            "delai_reaction": "30 jours dès notification du congé (CO 273)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Betreibungsamt Nidwalden",
+            "adresse": "Engelbergstrasse 34, 6371 Stans",
+            "telephone": "041 618 73 50",
+            "site": null,
+            "delai_reaction": "10 jours dès notification du commandement de payer (LP 74)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "famille": {
+          "apea": {
+            "nom": "KESB Nidwalden",
+            "adresse": "Engelbergstrasse 34, 6371 Stans",
+            "site": null,
+            "source": "donnees-cantonales-auto"
+          }
+        }
+      },
+      "_source": "donnees-cantonales-auto-2026-04-30",
+      "_note": "Données partielles auto-générées depuis donnees-cantonales.json. Pour enrichissement curé (formulaires, ASLOCA local, etc.), voir VD/GE/ZH/BE/BS/TI."
+    },
+    "GL": {
+      "nom": "Glaris",
+      "langue": "de",
+      "population_citoyenne": null,
+      "site_officiel": "https://www.gl.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Schlichtungsbehörde in Mietsachen",
+            "adresse": "Spielhof 1, 8750 Glarus",
+            "site": null,
+            "cout": "Gratuit",
+            "delai_reaction": "30 jours dès notification du congé (CO 273)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Betreibungsamt Glarus",
+            "adresse": "Spielhof 1, 8750 Glarus",
+            "telephone": "055 646 61 40",
+            "site": null,
+            "delai_reaction": "10 jours dès notification du commandement de payer (LP 74)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "famille": {
+          "apea": {
+            "nom": "KESB Glarus",
+            "adresse": "Spielhof 1, 8750 Glarus",
+            "site": null,
+            "source": "donnees-cantonales-auto"
+          }
+        }
+      },
+      "_source": "donnees-cantonales-auto-2026-04-30",
+      "_note": "Données partielles auto-générées depuis donnees-cantonales.json. Pour enrichissement curé (formulaires, ASLOCA local, etc.), voir VD/GE/ZH/BE/BS/TI."
+    },
+    "ZG": {
+      "nom": "Zoug",
+      "langue": "de",
+      "population_citoyenne": null,
+      "site_officiel": "https://www.zg.ch",
+      "autorites": {
+        "bail": {
+          "conciliation": {
+            "nom": "Schlichtungsbehörde in Mietsachen",
+            "adresse": "Aabachstrasse 5, 6300 Zug",
+            "site": null,
+            "cout": "Gratuit",
+            "delai_reaction": "30 jours dès notification du congé (CO 273)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "dettes": {
+          "office_poursuites": {
+            "nom": "Betreibungsamt Zug",
+            "adresse": "Aabachstrasse 5, 6300 Zug",
+            "telephone": "041 728 55 80",
+            "site": null,
+            "delai_reaction": "10 jours dès notification du commandement de payer (LP 74)",
+            "source": "donnees-cantonales-auto"
+          }
+        },
+        "famille": {
+          "apea": {
+            "nom": "KESB Zug",
+            "adresse": "Aabachstrasse 5, 6300 Zug",
+            "site": "https://www.zg.ch/behoerden/direktion-des-innern/kesb",
+            "source": "donnees-cantonales-auto"
+          }
+        }
+      },
+      "_source": "donnees-cantonales-auto-2026-04-30",
+      "_note": "Données partielles auto-générées depuis donnees-cantonales.json. Pour enrichissement curé (formulaires, ASLOCA local, etc.), voir VD/GE/ZH/BE/BS/TI."
     }
-  }
+  },
+  "cantons_couverts": 26,
+  "last_extension": "2026-04-30"
 }

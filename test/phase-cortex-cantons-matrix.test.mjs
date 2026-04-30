@@ -49,10 +49,18 @@ describe('Cantons Matrix — fichier de données', () => {
     assert.ok(parsed.fallback_federal, 'fallback_federal requis');
   });
 
-  it('contient exactement les 6 cantons supportés', () => {
+  it('contient au moins les 6 cantons core supportés', () => {
+    // Originellement 6 cantons curés humainement (VD/GE/ZH/BE/BS/TI).
+    // Étendu à 26 le 2026-04-30 via scripts/extend-cantons-matrix.mjs (auto-
+    // généré depuis donnees-cantonales.json). Les 6 core gardent la richesse
+    // des 10 domaines ; les 20 nouveaux ont des données partielles marquées
+    // _source: 'donnees-cantonales-auto'.
     const m = getCantonsMatrix();
-    const keys = Object.keys(m.cantons).sort();
-    assert.deepEqual(keys, [...EXPECTED_CANTONS].sort());
+    const keys = Object.keys(m.cantons);
+    for (const c of EXPECTED_CANTONS) {
+      assert.ok(keys.includes(c), `Canton core ${c} manquant`);
+    }
+    assert.ok(keys.length >= 6, `attendu au moins 6 cantons, reçu ${keys.length}`);
   });
 
   it('chaque canton a les 10 domaines couverts', () => {
@@ -90,10 +98,12 @@ describe('Cantons Matrix — fichier de données', () => {
 });
 
 describe('Cantons Matrix — API', () => {
-  it('listCantonsSupported() retourne exactement les 6 cantons', () => {
+  it('listCantonsSupported() inclut les 6 cantons core (étendu à 26 depuis 2026-04-30)', () => {
     const supported = listCantonsSupported();
-    assert.equal(supported.length, 6);
-    assert.deepEqual([...supported].sort(), [...EXPECTED_CANTONS].sort());
+    assert.ok(supported.length >= 6, `attendu au moins 6, reçu ${supported.length}`);
+    for (const c of EXPECTED_CANTONS) {
+      assert.ok(supported.includes(c), `Canton core ${c} manquant`);
+    }
   });
 
   it('getAutoritesByCantonDomaine(VD, bail) retourne >= 2 entrées', () => {

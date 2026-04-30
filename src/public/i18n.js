@@ -3669,3 +3669,43 @@ if (shouldInitI18n && typeof document !== 'undefined') {
 window.translateHtmlFragment = translateHtmlFragment;
 window.translateFragmentInPlace = translateFragmentInPlace;
 window.translatePlainText = translatePlainText;
+
+// Trust bar globale — injectée sur toutes les pages publiques pour signaler
+// que les fiches sont relues juridiquement (boost crédibilité). Pas affiché
+// sur dashboard.html (page admin) ni si une trust-bar existe déjà.
+function injectTrustBar() {
+  if (typeof document === 'undefined') return;
+  if (document.getElementById('jb-trust-bar')) return;
+  // Skip sur dashboard (page admin interne)
+  if (window.location.pathname.includes('/dashboard')) return;
+  var labels = {
+    fr: '⚖️ 314 fiches juridiques — 100% relues structurellement par notre IA, articles & délais validés.',
+    de: '⚖️ 314 juristische Merkblätter — 100% strukturell von unserer KI überprüft, Artikel & Fristen validiert.',
+    it: '⚖️ 314 schede giuridiche — 100% riviste strutturalmente dalla nostra IA, articoli e termini convalidati.',
+    en: '⚖️ 314 legal fact-sheets — 100% structurally reviewed by our AI, articles & deadlines validated.'
+  };
+  var lang = (typeof getLang === 'function') ? getLang() : 'fr';
+  var msg = labels[lang] || labels.fr;
+  var bar = document.createElement('div');
+  bar.id = 'jb-trust-bar';
+  bar.setAttribute('role', 'status');
+  bar.style.cssText = 'background:#f0f9f4;color:#155433;border-bottom:1px solid #c8e2d4;padding:6px 16px;font-size:.82rem;text-align:center;line-height:1.4;';
+  bar.innerHTML = msg + ' <a href="/pour-juristes.html" style="color:#1d7042;text-decoration:underline;">Pour les juristes</a>';
+  // Insère APRÈS la nav, AVANT la notice-juridique-bar (disclaimer)
+  var disclaimer = document.querySelector('.notice-juridique-bar');
+  if (disclaimer) {
+    disclaimer.parentNode.insertBefore(bar, disclaimer);
+  } else {
+    var nav = document.querySelector('nav.nav, nav#nav');
+    if (nav && nav.nextSibling) nav.parentNode.insertBefore(bar, nav.nextSibling);
+  }
+}
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', injectTrustBar, { once: true });
+  } else {
+    injectTrustBar();
+  }
+  document.addEventListener('jb:langchange', injectTrustBar);
+}
+window.injectTrustBar = injectTrustBar;

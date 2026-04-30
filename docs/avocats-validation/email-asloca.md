@@ -1,7 +1,10 @@
 # Email à ASLOCA Vaud
 
-**À** : vaud@asloca.ch
-**CC** : (optionnel) info@asloca.ch
+**⚠️ ASLOCA Vaud n'a pas d'email public.** Deux options :
+
+1. **Formulaire web** : https://vaud.asloca.ch/contact (à remplir avec le contenu ci-dessous)
+2. **Téléphone** : 021 617 11 37 (lundi-vendredi, sur rendez-vous uniquement) — 5 min pour pitcher puis suivre par email avec le lien GitHub
+
 **Objet** : Vérification croisée — JusticePourtous oriente des locataires vers ASLOCA
 
 ---

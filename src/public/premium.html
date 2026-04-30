@@ -108,14 +108,14 @@
             <p class="premium-code-label" data-i18n="premium.login_intro">Connectez-vous avec votre email pour retrouver votre solde.</p>
             <div id="loginStep1">
               <div class="premium-code-row">
-                <input type="email" id="loginEmail" class="input" data-i18n-placeholder="premium.login_email_placeholder" placeholder="Votre email">
+                <input type="email" id="loginEmail" class="input" data-i18n-placeholder="premium.login_email_placeholder" placeholder="Votre email" aria-label="Adresse email pour réception du code">
                 <button class="btn btn-secondary" onclick="sendLoginCode()" data-i18n="premium.login_send_code">Recevoir un code</button>
               </div>
             </div>
             <div id="loginStep2" class="hidden">
               <p class="premium-code-label" id="loginEmailSent"></p>
               <div class="premium-code-row">
-                <input type="text" id="loginCode" class="input" data-i18n-placeholder="premium.login_code_placeholder" placeholder="Code à 6 chiffres" maxlength="6" pattern="[0-9]{6}">
+                <input type="text" id="loginCode" class="input" data-i18n-placeholder="premium.login_code_placeholder" placeholder="Code à 6 chiffres" maxlength="6" pattern="[0-9]{6}" aria-label="Code de vérification 6 chiffres reçu par email">
                 <button class="btn btn-primary" onclick="verifyLoginCode()" data-i18n="premium.login_verify">Vérifier</button>
               </div>
               <p class="premium-code-label" style="margin-top:0.5rem"><a href="#" data-i18n="premium.login_resend_code" onclick="document.getElementById('loginStep1').classList.remove('hidden');document.getElementById('loginStep2').classList.add('hidden');return false">Renvoyer un code</a></p>

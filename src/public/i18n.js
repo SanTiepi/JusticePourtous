@@ -3670,6 +3670,36 @@ window.translateHtmlFragment = translateHtmlFragment;
 window.translateFragmentInPlace = translateFragmentInPlace;
 window.translatePlainText = translatePlainText;
 
+// Widget mobile compact (top-right corner) qui remplace le header trop grand
+// sur mobile (Robin 2026-04-30 — header 64px sticky prenait trop de place).
+// Affichage géré en CSS via @media (max-width:640px).
+function injectMobileCornerWidget() {
+  if (typeof document === 'undefined') return;
+  if (document.getElementById('jb-mobile-corner')) return;
+  if (window.location.pathname.includes('/dashboard')) return;
+  var widget = document.createElement('div');
+  widget.id = 'jb-mobile-corner';
+  widget.className = 'mobile-corner-widget';
+  widget.innerHTML =
+    '<a href="/" class="mcw-home" aria-label="Accueil" title="Accueil">⚖️</a>' +
+    '<span class="mcw-lang"></span>' +
+    '<a href="/premium.html" class="mcw-premium">Premium</a>';
+  document.body.appendChild(widget);
+  // Inject lang switcher dans .mcw-lang
+  if (typeof createLangSwitcher === 'function') {
+    var langSlot = widget.querySelector('.mcw-lang');
+    if (langSlot && !langSlot.firstChild) langSlot.appendChild(createLangSwitcher());
+  }
+}
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', injectMobileCornerWidget, { once: true });
+  } else {
+    injectMobileCornerWidget();
+  }
+}
+window.injectMobileCornerWidget = injectMobileCornerWidget;
+
 // Trust bar globale — injectée sur toutes les pages publiques pour signaler
 // que les fiches sont relues juridiquement (boost crédibilité). Pas affiché
 // sur dashboard.html (page admin) ni si une trust-bar existe déjà.

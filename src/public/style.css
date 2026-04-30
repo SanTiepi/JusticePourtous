@@ -4219,6 +4219,248 @@ body.has-disclaimer {
 .legal-review-badge .badge-detail { font-size: 0.85rem; color: #1d5a36; }
 .legal-review-badge .badge-disclaimer { font-size: 0.75rem; color: #4a5b50; font-style: italic; margin-top: 0.2rem; }
 
+/* ─── /pour-juristes.html — page dédiée pro bono review ─────────── */
+.pj-page { max-width: 920px; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
+
+.pj-hero {
+  text-align: center;
+  padding: 2.5rem 1rem 2rem;
+  border-bottom: 1px solid #eef2f5;
+  margin-bottom: 2rem;
+}
+.pj-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1d7042;
+  background: #f0f9f4;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  margin: 0 0 1.25rem;
+}
+.pj-h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #0f1d2c;
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.02em;
+}
+.pj-lead {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #3a4a5c;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.pj-lead strong { color: #0f1d2c; }
+
+.pj-cta-block {
+  text-align: center;
+  margin: 2.5rem 0;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #f0f9f4 0%, #e8f5ed 100%);
+  border-radius: 12px;
+  animation: fadeIn 0.4s ease both;
+}
+.pj-cta-block-bottom { margin-top: 3rem; }
+.pj-cta-block .pj-h2 { margin-top: 0; }
+.pj-cta-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  background: #1d7042;
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(29, 112, 66, 0.25);
+  transition: all 0.18s ease;
+}
+.pj-cta-btn:hover {
+  background: #155433;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(29, 112, 66, 0.35);
+  color: white;
+  text-decoration: none;
+}
+.pj-cta-sub {
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  color: #4a5b6e;
+}
+
+.pj-section { margin: 3rem 0; }
+.pj-section-soft {
+  background: #f7f9fc;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+}
+.pj-h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f1d2c;
+  margin: 0 0 1rem;
+  letter-spacing: -0.01em;
+}
+.pj-h2-sub {
+  font-size: 0.95rem;
+  color: #4a5b6e;
+  margin: -0.5rem 0 1.5rem;
+}
+
+.pj-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.pj-card-soft {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e3e8ef;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.pj-card-soft:hover {
+  border-color: #c9d4df;
+  transform: translateY(-1px);
+}
+.pj-card-icon { font-size: 1.5rem; line-height: 1; margin-bottom: 0.5rem; }
+.pj-card-soft h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+  color: #0f1d2c;
+}
+.pj-card-soft p {
+  font-size: 0.92rem;
+  color: #3a4a5c;
+  margin: 0;
+  line-height: 1.55;
+}
+
+.pj-fiche-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.pj-fiche-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  background: white;
+  border: 1.5px solid #e3e8ef;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.18s ease;
+}
+.pj-fiche-card:hover {
+  border-color: #1d7042;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 29, 44, 0.06);
+  text-decoration: none;
+  color: inherit;
+}
+.pj-fiche-card h3 {
+  font-size: 1.05rem;
+  margin: 0;
+  color: #0f1d2c;
+  font-weight: 600;
+}
+.pj-fiche-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #1d7042;
+  background: #f0f9f4;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  align-self: flex-start;
+}
+.pj-fiche-articles {
+  font-size: 0.85rem;
+  color: #4a5b6e;
+  margin: 0;
+  line-height: 1.45;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+.pj-fiche-cta {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #1d7042;
+  margin-top: auto;
+}
+.pj-fiche-card-extra {
+  background: #fafbfc;
+  border-style: dashed;
+}
+
+.pj-offer {
+  padding: 1rem 1.25rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 3px solid #1d7042;
+}
+.pj-offer strong {
+  display: block;
+  color: #0f1d2c;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+.pj-offer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #3a4a5c;
+  line-height: 1.5;
+}
+
+.pj-stats {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eef2f5;
+  text-align: center;
+}
+.pj-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+.pj-stats-grid > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+.pj-stat-num {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1d7042;
+  font-variant-numeric: tabular-nums;
+}
+.pj-stat-label {
+  font-size: 0.78rem;
+  color: #6a7787;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.pj-stats-link {
+  font-size: 0.85rem;
+  color: #6a7787;
+  margin: 0.5rem 0 0;
+}
+
+@media (max-width: 600px) {
+  .pj-hero { padding: 1.5rem 0.5rem; }
+  .pj-cta-btn { font-size: 1.05rem; padding: 0.85rem 1.5rem; }
+  .pj-fiche-card { padding: 1rem; }
+}
+
 /* ─── Guide pages — legal review label ───────────────────────────── */
 .guide-legal-review {
   display: inline-block;

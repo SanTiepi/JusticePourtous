@@ -31,69 +31,126 @@
   </nav>
 
   <main class="page">
-    <div class="page-inner">
-      <p class="hero-eyebrow">Pour les juristes</p>
-      <h1 class="page-title">Validation pro bono — programme de relecture</h1>
-      <p class="guide-summary">JusticePourtous est un outil gratuit de triage juridique citoyen. 314 fiches, 100% relues par une IA — 0% par un·e juriste humain·e. Vous pouvez nous aider à passer cette gate qualité critique.</p>
+    <div class="page-inner pj-page">
 
-      <section class="guide-section">
-        <h2>⚖️ Pourquoi c'est important</h2>
-        <p>JusticePourtous oriente déjà des centaines de citoyens par mois vers les bonnes ressources (ASLOCA, Caritas, CSP, syndicats…). Avant tout partenariat structuré avec des associations, nous avons besoin de <strong>l'œil d'au moins un·e juriste</strong> sur les fiches gold les plus consultées.</p>
-        <p>Une erreur sur un délai péremptoire (10 jours pour l'opposition au commandement de payer, 30 jours pour contester un congé, 5-30 jours pour un recours en matière d'asile) peut faire <strong>perdre un droit irrécupérable</strong> à un·e citoyen·ne.</p>
+      <!-- HERO — l'enjeu en une phrase + stat -->
+      <header class="pj-hero">
+        <p class="pj-eyebrow">Pour les juristes — programme pro bono</p>
+        <h1 class="pj-h1">5 minutes de votre temps<br>peuvent prévenir une perte de droit.</h1>
+        <p class="pj-lead">JusticePourtous est un outil gratuit de triage juridique citoyen. <strong>314 fiches</strong> en production, relues par une IA. <strong>0 par un juriste humain</strong>. C'est cette gate qualité que nous voulons franchir avec votre regard.</p>
+      </header>
+
+      <!-- CTA PRINCIPAL — gros bouton centré -->
+      <div class="pj-cta-block">
+        <a href="mailto:robin@batiscan.ch?subject=Pro%20bono%20review%20JusticePourtous&amp;body=Bonjour%20Robin%2C%0A%0AJe%20peux%20relire%20la%2Fles%20fiche(s)%20suivante(s)%20%3A%0A-%20%5B%C3%A0%20cocher%5D%20bail_defaut_moisissure%0A-%20%5B%C3%A0%20cocher%5D%20bail_resiliation_conteste%0A-%20%5B%C3%A0%20cocher%5D%20dettes_commandement_payer%0A-%20%5B%C3%A0%20cocher%5D%20etranger_renvoi%0A-%20%5B%C3%A0%20cocher%5D%20travail_licenciement_abusif%0A%0AContexte%20(asso%2C%20cabinet%2C%20%C3%A9tudes%2C%20libre)%20%3A%20%5B...%5D%0AComment%20me%20cr%C3%A9diter%20%3A%20%5Bnom%20%2F%20asso%20%2F%20anonyme%5D%0A%0ABonne%20journ%C3%A9e%2C%0A%5BVotre%20nom%5D" class="pj-cta-btn">
+          📧 Je peux relire une fiche en 5 minutes
+        </a>
+        <p class="pj-cta-sub">Email pré-rempli. Réponse personnelle de Robin (Morges, VD) sous 24h.</p>
+      </div>
+
+      <!-- POURQUOI — court et fort -->
+      <section class="pj-section">
+        <h2 class="pj-h2">Pourquoi votre relecture compte</h2>
+        <div class="pj-grid-2">
+          <div class="pj-card-soft">
+            <div class="pj-card-icon">⚠️</div>
+            <h3>Délais péremptoires</h3>
+            <p>Une erreur sur le délai d'opposition (10 jours, LP 74) ou de contestation de congé (30 jours, CO 273) = un droit perdu pour de bon. Pas de seconde chance.</p>
+          </div>
+          <div class="pj-card-soft">
+            <div class="pj-card-icon">🤝</div>
+            <h3>Avant les associations</h3>
+            <p>JusticePourtous oriente déjà vers ASLOCA, Caritas, CSP, syndicats. Avant de demander un partenariat formel, nous voulons votre validation.</p>
+          </div>
+        </div>
       </section>
 
-      <section class="guide-section">
-        <h2>📋 Ce que nous vous demandons</h2>
-        <ul class="guide-articles">
-          <li><strong>5 minutes par fiche</strong> — grille de 6 questions cochables (articles, délais, autorité, modèle de lettre, anti-erreurs, verdict)</li>
-          <li><strong>5 fiches gold prioritaires</strong> au total — vous choisissez celle(s) de votre domaine</li>
-          <li><strong>Format libre</strong> — email, GitHub issue, téléphone, café</li>
-        </ul>
+      <!-- LES 5 FICHES — en cards -->
+      <section class="pj-section">
+        <h2 class="pj-h2">Les 5 fiches à relire</h2>
+        <p class="pj-h2-sub">Choisissez celle(s) de votre domaine. 5 minutes par fiche, 6 questions cochables.</p>
+        <div class="pj-fiche-grid">
+          <a href="/guides/bail_defaut_moisissure.html" class="pj-fiche-card">
+            <span class="pj-fiche-tag">Bail</span>
+            <h3>Défaut moisissure</h3>
+            <p class="pj-fiche-articles">CO 256-259g · TF 4A_32/2018</p>
+            <span class="pj-fiche-cta">Voir la fiche →</span>
+          </a>
+          <a href="/guides/bail_resiliation_conteste.html" class="pj-fiche-card">
+            <span class="pj-fiche-tag">Bail</span>
+            <h3>Résiliation contestée</h3>
+            <p class="pj-fiche-articles">CO 271-273 · délai 30j péremptoire</p>
+            <span class="pj-fiche-cta">Voir la fiche →</span>
+          </a>
+          <a href="/guides/dettes_commandement_payer.html" class="pj-fiche-card">
+            <span class="pj-fiche-tag">Dettes</span>
+            <h3>Commandement de payer</h3>
+            <p class="pj-fiche-articles">LP 74 ss · délai 10j péremptoire</p>
+            <span class="pj-fiche-cta">Voir la fiche →</span>
+          </a>
+          <a href="/guides/etranger_renvoi.html" class="pj-fiche-card">
+            <span class="pj-fiche-tag">Étrangers</span>
+            <h3>Décision de renvoi</h3>
+            <p class="pj-fiche-articles">LEI 64 + LAsi 108 · 30j voire 5j</p>
+            <span class="pj-fiche-cta">Voir la fiche →</span>
+          </a>
+          <a href="/guides/travail_licenciement_abusif.html" class="pj-fiche-card">
+            <span class="pj-fiche-tag">Travail</span>
+            <h3>Licenciement abusif</h3>
+            <p class="pj-fiche-articles">CO 336-336b · délai 180j</p>
+            <span class="pj-fiche-cta">Voir la fiche →</span>
+          </a>
+          <a href="https://github.com/SanTiepi/JusticePourtous/tree/master/docs/avocats-validation" rel="noopener" target="_blank" class="pj-fiche-card pj-fiche-card-extra">
+            <span class="pj-fiche-tag">Dossier complet</span>
+            <h3>📂 Voir tous les détails</h3>
+            <p class="pj-fiche-articles">Articles, jurisprudence, cascade, modèle de lettre, grille de review</p>
+            <span class="pj-fiche-cta">GitHub →</span>
+          </a>
+        </div>
       </section>
 
-      <section class="guide-section">
-        <h2>🎯 Les 5 fiches gold</h2>
-        <ul class="guide-articles">
-          <li><strong>Bail — défaut moisissure</strong> (CO 256-259g) — <a href="/guides/bail_defaut_moisissure.html">voir la fiche</a></li>
-          <li><strong>Bail — résiliation contestée</strong> (CO 271-273, délai 30j) — <a href="/guides/bail_resiliation_conteste.html">voir la fiche</a></li>
-          <li><strong>Dettes — commandement de payer</strong> (LP 74 ss, délai 10j péremptoire) — <a href="/guides/dettes_commandement_payer.html">voir la fiche</a></li>
-          <li><strong>Étrangers — décision de renvoi</strong> (LEI 64 + LAsi 108, délai 30j voire 5j) — <a href="/guides/etranger_renvoi.html">voir la fiche</a></li>
-          <li><strong>Travail — licenciement abusif</strong> (CO 336-336b, délai 180j) — <a href="/guides/travail_licenciement_abusif.html">voir la fiche</a></li>
-        </ul>
+      <!-- CE QU'ON OFFRE -->
+      <section class="pj-section pj-section-soft">
+        <h2 class="pj-h2">Ce que vous gagnez en retour</h2>
+        <div class="pj-grid-2">
+          <div class="pj-offer">
+            <strong>Crédit visible</strong>
+            <p>Sur la fiche en production : « Reviewed by [votre nom / votre asso / anonyme] »</p>
+          </div>
+          <div class="pj-offer">
+            <strong>Aucune responsabilité</strong>
+            <p>Disclaimer fort : votre relecture est consultative, n'engage ni vous ni votre asso/cabinet.</p>
+          </div>
+          <div class="pj-offer">
+            <strong>Transparence totale</strong>
+            <p>Si vous identifiez une erreur, nous corrigeons avant tout déploiement public.</p>
+          </div>
+          <div class="pj-offer">
+            <strong>Visibilité optionnelle</strong>
+            <p>Votre asso/cabinet peut être citée comme partenaire académique sur la page Méthodologie.</p>
+          </div>
+        </div>
       </section>
 
-      <section class="guide-section">
-        <h2>🤝 Ce que nous vous offrons en retour</h2>
-        <ul class="guide-articles">
-          <li><strong>Crédit visible</strong> sur la fiche en production : "Reviewed by [votre nom / votre asso / anonyme]"</li>
-          <li><strong>Disclaimer fort</strong> : votre relecture est consultative et n'engage AUCUNE responsabilité juridique</li>
-          <li><strong>Transparence totale</strong> : si vous identifiez une erreur, nous corrigeons avant tout déploiement public</li>
-          <li><strong>Visibilité</strong> : votre asso/cabinet peut être citée comme partenaire académique sur la page Méthodologie</li>
-        </ul>
-      </section>
+      <!-- CTA secondaire en bas -->
+      <div class="pj-cta-block pj-cta-block-bottom">
+        <h2 class="pj-h2">Prêt·e à relire une fiche ?</h2>
+        <a href="mailto:robin@batiscan.ch?subject=Pro%20bono%20review%20JusticePourtous" class="pj-cta-btn">
+          📧 robin@batiscan.ch
+        </a>
+        <p class="pj-cta-sub">Disponible aussi pour 30 min téléphone ou un café Lausanne/Genève.</p>
+      </div>
 
-      <section class="guide-section">
-        <h2>📁 Dossier complet</h2>
-        <p>Le dossier de validation (fiches en MD lisible, grille de review, processus) est public sur GitHub :</p>
-        <p><a href="https://github.com/SanTiepi/JusticePourtous/tree/master/docs/avocats-validation" rel="noopener" target="_blank" class="btn btn-primary">📂 Accéder au dossier de validation</a></p>
-      </section>
-
-      <section class="guide-section guide-cta">
-        <h2>📨 Pour participer</h2>
-        <p>Écrivez à <a href="mailto:robin@batiscan.ch?subject=Pro bono review JusticePourtous">robin@batiscan.ch</a> en indiquant la/les fiche(s) qui vous intéressent. Robin Fragnière (Morges, VD) répond personnellement.</p>
-        <p>Disponible aussi pour 30 minutes téléphoniques ou un café Lausanne/Genève.</p>
-      </section>
-
-      <section class="guide-section">
-        <h2>📊 État actuel du corpus</h2>
-        <p>Données live : <a href="/api/stats" rel="noopener" target="_blank">/api/stats</a></p>
-        <ul class="guide-articles">
-          <li>314 fiches actionnables, 15 domaines</li>
-          <li>1012 articles cités, 100% résolus dans Fedlex</li>
-          <li>76 règles normatives exécutables (Bail / Travail / Dettes / etc.)</li>
-          <li>282 invariants régression juridique (hash-lock sur délais/articles)</li>
-          <li>0 outcome citoyen reçu en 9 jours de prod (formulaire de feedback peu utilisé) — votre relecture peut nous aider à inspirer confiance</li>
-        </ul>
+      <!-- STATS — discrètes en bas -->
+      <section class="pj-stats">
+        <div class="pj-stats-grid">
+          <div><span class="pj-stat-num">314</span><span class="pj-stat-label">fiches actionnables</span></div>
+          <div><span class="pj-stat-num">15</span><span class="pj-stat-label">domaines</span></div>
+          <div><span class="pj-stat-num">1012</span><span class="pj-stat-label">articles cités</span></div>
+          <div><span class="pj-stat-num">76</span><span class="pj-stat-label">règles exécutables</span></div>
+          <div><span class="pj-stat-num">282</span><span class="pj-stat-label">invariants régression</span></div>
+        </div>
+        <p class="pj-stats-link">Données live : <a href="/api/stats" rel="noopener" target="_blank">/api/stats</a></p>
       </section>
     </div>
   </main>
@@ -107,8 +164,8 @@
       <div class="footer-links">
         <a href="/methodologie.html">Méthodologie</a>
         <a href="/annuaire.html">Annuaire</a>
-        <a href="/confidentialite.html">Confidentialité</a>
         <a href="/pour-juristes.html">Pour les juristes</a>
+        <a href="/confidentialite.html">Confidentialité</a>
       </div>
       <div class="footer-legal">Information juridique générale — pas un substitut au conseil d'avocat.</div>
       <div class="footer-copy">© 2026 JusticePourtous</div>

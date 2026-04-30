@@ -105,6 +105,34 @@ function handleTriageResponse(data) {
     renderTriageQuestions(data);
     return;
   }
+  // 1b) Contradiction détectée entre 2 rounds → poser la question de clarification
+  if (data.status === 'ask_contradiction' && data.contradiction_question) {
+    var cq = data.contradiction_question;
+    jbCurrentQuestions = [{
+      id: cq.id || 'contradiction',
+      question: cq.question || 'Pouvez-vous clarifier ce point ?',
+      choix: cq.choix || cq.options || ['Oui', 'Non', 'Je ne sais pas'],
+      importance: 'critique'
+    }];
+    renderTriageQuestions(data);
+    return;
+  }
+  // 1c) Pivot détecté (le LLM a changé d'avis sur le domaine/fiche) → reprendre le flow
+  if (data.status === 'pivot_detected') {
+    // Le triage a re-routé vers une autre fiche : continue avec les nouvelles questions
+    if (Array.isArray(data.questionsManquantes) && data.questionsManquantes.length > 0) {
+      jbCurrentQuestions = data.questionsManquantes;
+      renderTriageQuestions(data);
+      return;
+    }
+    // Pivot sans questions = résultat sur la nouvelle fiche
+    var pivotFiche = data.ficheId || data.fiche?.id;
+    if (pivotFiche) {
+      sessionStorage.setItem('jb_result', JSON.stringify(data));
+      window.location.href = '/resultat.html?fiche=' + pivotFiche;
+      return;
+    }
+  }
   // 2) Safety stop — afficher TOUTES les ressources d'urgence (LAVI, 117, etc.)
   //    Le backend retourne un safety_response riche avec preamble + resources.
   //    UX critique : présenter les téléphones d'urgence en gros, cliquables.

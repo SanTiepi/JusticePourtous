@@ -283,6 +283,13 @@
         <div class="loading-state">Chargement…</div>
       </div>
     </section>
+
+    <section>
+      <h2>Outcomes citoyens (feedback)</h2>
+      <div class="cards" id="outcomes-cards">
+        <div class="loading-state">Chargement…</div>
+      </div>
+    </section>
   </main>
 
   <script src="/i18n.js"></script>
@@ -431,6 +438,34 @@
         card('Verified (info-only)', breakdown.verified_information_only || 0, '', 'blue'),
         card('Expert humain (gate Phase 2)', rv.expert_reviewed_percent, '%', expertStatus)
       ].join('');
+
+      // Outcomes citoyens (feedback) — fetch séparé via /api/admin/outcomes
+      // (pas dans le dashboard payload). Critique : 0 outcome = on ne sait pas
+      // si les triages aident vraiment les citoyens.
+      try {
+        const outRes = await fetch('/api/admin/outcomes', { headers });
+        if (outRes.ok) {
+          const out = await outRes.json();
+          const total = out.total || 0;
+          const topDomains = out.top_domains?.length || 0;
+          const helpful = out.helpful_distribution;
+          const helpfulPct = helpful && helpful.helpful_3 != null
+            ? Math.round((helpful.helpful_3 / Math.max(1, total)) * 100)
+            : null;
+          const totalStatus = total === 0 ? 'red' : (total < 5 ? 'orange' : 'green');
+          const helpfulStatus = helpfulPct == null ? 'gray' : (helpfulPct >= 70 ? 'green' : helpfulPct >= 50 ? 'orange' : 'red');
+          document.getElementById('outcomes-cards').innerHTML = [
+            card('Outcomes total', total, '', totalStatus),
+            card('Domaines avec feedback (k=5)', topDomains, '', topDomains > 0 ? 'green' : 'orange'),
+            helpfulPct != null ? card('Helpful 👍 %', helpfulPct, '%', helpfulStatus) : card('Helpful 👍', '—', '', 'gray'),
+            card('Threshold k-anon', out.k_anonymity_threshold || 5, '', 'blue')
+          ].join('');
+        } else {
+          document.getElementById('outcomes-cards').innerHTML = '<div class="loading-state">Erreur ' + outRes.status + '</div>';
+        }
+      } catch (e) {
+        document.getElementById('outcomes-cards').innerHTML = '<div class="loading-state">Erreur réseau</div>';
+      }
 
       // Meta
       document.getElementById('status-dot').className = 'dot';

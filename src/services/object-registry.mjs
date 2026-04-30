@@ -328,9 +328,23 @@ function buildAuthorityContacts(data) {
   // From annuaire (escalade includes relais network)
   const sources = [...(data.escalade || [])];
 
+  // Date de fraîcheur : entry-level si présente (e.last_verified_at,
+  // e.maj, e.dateMiseAJour), sinon fallback global (data._sourceMtime).
+  // Permet de signaler à l'UI quand un contact est potentiellement obsolète
+  // (numéro changé, organisation fusionnée, etc.).
+  const fallbackDate = data._sourceMtime || null;
+
   for (const e of sources) {
-    // Escalade entries can have multiple cantons
     const cantons = e.cantons || (e.canton ? [e.canton] : ['CH']);
+    const entryDate = e.last_verified_at || e.maj || e.dateMiseAJour || fallbackDate;
+    // Calcul fraîcheur en jours depuis la dernière vérification
+    let freshness_status = 'unknown';
+    if (entryDate) {
+      const ageDays = Math.floor((Date.now() - new Date(entryDate).getTime()) / 86400000);
+      if (ageDays < 365) freshness_status = 'fresh';
+      else if (ageDays < 730) freshness_status = 'aging';
+      else freshness_status = 'stale';
+    }
     for (const canton of cantons) {
       const key = `${e.id || e.nom}:${canton}`;
       if (seen.has(key)) continue;
@@ -348,8 +362,8 @@ function buildAuthorityContacts(data) {
         conditions: e.conditions || null,
         langues: e.langues || ['fr'],
         service_level: e.gratuit !== false ? 'gratuit' : 'payant',
-        verification_date: null, // TODO: track contact freshness
-        freshness_status: 'unknown',
+        verification_date: entryDate,
+        freshness_status,
       });
     }
   }

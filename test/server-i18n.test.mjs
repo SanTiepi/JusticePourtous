@@ -78,6 +78,26 @@ describe('server i18n integration', () => {
     assert.match(html, /\[\[de\]\]/);
   });
 
+  it('régression : /guides/<lang>/<slug-inexistant>.html → fallback FR (200) au lieu de 500', async () => {
+    // Bug détecté tick #14 : un slug listé dans le sitemap mais sans fichier
+    // physique localisé renvoyait 500 (renderGuideForLocale throw, attrapé
+    // par le handler global). Désormais : try/catch + fallback vers FR
+    // si le source existe, vraie 404 sinon.
+    // On utilise un slug FR existant mais peu probable d'avoir une version
+    // localisée pré-générée ET stable.
+    const res = await request('/guides/de/bail_defaut_moisissure.html');
+    assert.notEqual(res.status, 500, 'JAMAIS 500 sur guide localisé — bug régression');
+    // Acceptable : 200 (traduit ou fallback FR) ou 404 (vraiment introuvable)
+    assert.ok(res.status === 200 || res.status === 404,
+      `attendu 200 ou 404, reçu ${res.status}`);
+  });
+
+  it('régression : /guides/<lang>/slug-totalement-inexistant.html → 404 propre', async () => {
+    // Vraie 404 : ni version localisée ni source FR
+    const res = await request('/guides/de/abcdef_xyz_inexistant.html');
+    assert.equal(res.status, 404, 'doit être 404 (pas 500)');
+  });
+
   it('traduit /api/search avec un payload public allégé pour éviter les latences extrêmes', async () => {
     const q = encodeURIComponent('mon propriétaire refuse de rembourser ma caution');
     const res = await request(`/api/search?q=${q}&lang=en`);

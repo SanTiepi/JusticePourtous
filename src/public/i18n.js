@@ -3680,10 +3680,12 @@ function injectMobileCornerWidget() {
   var widget = document.createElement('div');
   widget.id = 'jb-mobile-corner';
   widget.className = 'mobile-corner-widget';
+  widget.setAttribute('role', 'navigation');
+  widget.setAttribute('aria-label', 'Navigation rapide');
   widget.innerHTML =
     '<a href="/" class="mcw-home" aria-label="Accueil" title="Accueil">⚖️</a>' +
     '<span class="mcw-lang"></span>' +
-    '<a href="/premium.html" class="mcw-premium">Premium</a>';
+    '<a href="/premium.html" class="mcw-premium" aria-label="Page Premium">Premium</a>';
   document.body.appendChild(widget);
   // Inject lang switcher dans .mcw-lang
   if (typeof createLangSwitcher === 'function') {

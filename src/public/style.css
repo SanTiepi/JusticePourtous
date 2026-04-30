@@ -4260,6 +4260,29 @@ body.has-disclaimer {
 .legal-review-badge .badge-detail { font-size: 0.85rem; color: #1d5a36; }
 .legal-review-badge .badge-disclaimer { font-size: 0.75rem; color: #4a5b50; font-style: italic; margin-top: 0.2rem; }
 
+/* ─── Premium — badge "le plus choisi" sur le tier recommandé ────── */
+.premium-pricing-card.premium-pricing-featured {
+  position: relative;
+  border: 2px solid #1d7042;
+  box-shadow: 0 4px 16px rgba(29, 112, 66, 0.15);
+}
+.premium-pricing-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1d7042;
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(29, 112, 66, 0.3);
+}
+
 /* ─── Annuaire — placeholder initial avant choix canton ───────────── */
 .annuaire-placeholder {
   margin: 2rem 0;

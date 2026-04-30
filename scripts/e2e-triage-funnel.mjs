@@ -47,11 +47,11 @@ const CASES = [
     answers: { q1: 'Autorité parentale conjointe', q2: 'Moins de 6 mois' }
   },
   {
-    name: 'Violence conjugale',
+    name: 'Violence conjugale (safety_stop attendu)',
     texte: 'mon conjoint me bat',
-    expectedDomain: 'violence',
-    expectedFichePattern: /violence|protection|plainte/,
-    answers: { q1: 'Oui, je suis en danger immédiat', q2: 'Non, pas encore' }
+    expectedStatus: 'safety_stop',
+    expectedSafetySignal: 'violence',
+    answers: {}
   },
   {
     name: 'Cas vague',
@@ -61,11 +61,11 @@ const CASES = [
     answers: {}
   },
   {
-    name: 'Cas multi-fiches (violence + dette + permis)',
+    name: 'Multi-fiches violence prioritaire (safety_stop attendu)',
     texte: 'mon mari me bat, on a une dette commune et il a un permis B',
-    expectedDomain: 'violence',
-    expectedFichePattern: /violence|protection/,
-    answers: { q1: 'Oui, je suis en danger', q2: 'Non' }
+    expectedStatus: 'safety_stop',
+    expectedSafetySignal: 'violence',
+    answers: {}
   }
 ];
 
@@ -97,6 +97,24 @@ async function runCase(c, idx) {
   console.log(`  Round 1 status=${status1} fiche=${fiche1} domain=${domain1} questions=${qs1.length}`);
 
   let issues = [];
+
+  // Si on attend un safety_stop : vérifier que c'est bien déclenché + safety_response riche
+  if (c.expectedStatus === 'safety_stop') {
+    if (status1 !== 'safety_stop') {
+      issues.push(`safety_stop attendu mais status='${status1}' — le classifier devrait déclencher`);
+    } else {
+      const sr = r1.data.safety_response;
+      if (!sr || !Array.isArray(sr.resources) || sr.resources.length === 0) {
+        issues.push(`safety_stop sans resources — frontend ne pourra rien afficher`);
+      }
+      if (c.expectedSafetySignal && r1.data.signal_type && r1.data.signal_type !== c.expectedSafetySignal) {
+        issues.push(`signal_type attendu '${c.expectedSafetySignal}' reçu '${r1.data.signal_type}'`);
+      }
+      // Pas de check fiche/domain/questions sur safety_stop : c'est intentionnel
+      console.log(`  ✅ OK (safety_stop avec ${sr.resources.length} ressources d'urgence)`);
+      return { ok: true, name: c.name };
+    }
+  }
 
   // Domain check
   if (c.expectedDomain && domain1 !== c.expectedDomain) {

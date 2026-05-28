@@ -17,6 +17,7 @@
     "audit:sitemap": "node scripts/verify-sitemap-integrity.mjs",
     "audit:all": "npm run audit:fiches && npm run audit:source-id && npm run audit:legal-review && npm run audit:sitemap",
     "e2e:triage": "node scripts/e2e-triage-funnel.mjs",
+    "e2e:domains": "node scripts/live-domain-battery.mjs",
     "probe:sitemap": "node scripts/probe-sitemap-urls.mjs --sample=80",
     "probe:sitemap:all": "node scripts/probe-sitemap-urls.mjs --all",
     "metrics:daily": "node scripts/send-daily-metrics.mjs",

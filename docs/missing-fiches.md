@@ -7,7 +7,7 @@ correspondance exacte.
 
 Ces fiches sont à créer après validation juridique humaine.
 
-## État actuel : 2 gaps identifiés via le harness 30-cas (mis à jour 2026-05-28)
+## État actuel : 3 gaps identifiés (mis à jour 2026-05-29)
 
 Les deux gaps historiques sont comblés :
 
@@ -25,6 +25,13 @@ Les deux gaps historiques sont comblés :
   - **base juridique** : CO 257f (usage de la chose conformément au contrat), CO 259a/d (défauts imputables au bailleur), éventuellement CC 684 (troubles de voisinage côté civil)
   - **pourquoi manquante** : `adv_bail_07` (voisin bruyant, régie inactive) — le navigator retourne `voisinage_bruit_nuisances` (droit du voisinage côté civil) au lieu d'une fiche bail expliquant les droits du locataire contre la régie inactive (réduction de loyer, congé extraordinaire).
   - **priorité** : haute. Cas fréquent où le locataire ne sait pas qu'il a un recours contre le bailleur (et pas seulement contre le voisin direct).
+
+### Gap détecté par la batterie de tests live 2026-05-29 (couverture 15 domaines)
+
+- ⛔ `assurance_privee_refus_prestation` (assurance ménage / RC privée / casco hors circulation)
+  - **base juridique (indicative, à valider par un juriste)** : LCA (loi sur le contrat d'assurance) — notamment avis de sinistre, obligation de réduire le dommage, prescription 2 ans ; conditions générales d'assurance (CGA).
+  - **pourquoi manquante** : test live « mon assurance refuse de payer après un dégât des eaux qui a ruiné mon salon » → le navigator route vers `consommation_remboursement_refuse` (remboursement générique). Le domaine `assurances` ne contient que de l'**assurance sociale** (LAA/AI/AVS/LAMal/chômage) ; aucune fiche pour l'**assurance privée de chose/responsabilité** (ménage, RC, dégâts des eaux). Le fallback conso est raisonnable faute de mieux, mais sous-optimal pour l'usager.
+  - **priorité** : moyenne-haute. Sinistre ménage/RC refusé = situation courante chez les particuliers ; aucune couverture actuelle.
 
 Pour rouvrir cette liste, relancer l'éval adversariale et capturer les nouveaux
 cas où le navigator se rabat sur une fiche voisine :

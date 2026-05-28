@@ -34,13 +34,33 @@ function pickSample(urls, n) {
   return Array.from({ length: n }, (_, i) => urls[Math.floor(i * stride)]);
 }
 
+const MAX_RETRIES = 3; // sur échec de connexion (status 0), pas sur 4xx/5xx
+
+// Un seul fetch, retourne le status HTTP ou throw sur échec connexion.
+async function fetchStatus(url, method) {
+  const res = await fetch(url, { method, redirect: 'manual' });
+  return res.status;
+}
+
 async function probe(url) {
   const started = Date.now();
+  let lastErr;
+  // Retry sur échec de connexion transitoire (saturation sous forte concurrence).
+  for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+    try {
+      const status = await fetchStatus(url, 'HEAD');
+      return { url, status, duration_ms: Date.now() - started, attempts: attempt + 1 };
+    } catch (err) {
+      lastErr = err;
+      await new Promise(r => setTimeout(r, 200 * (attempt + 1))); // backoff léger
+    }
+  }
+  // HEAD a échoué tous les retries — fallback GET (certains serveurs/CDN rejettent HEAD).
   try {
-    const res = await fetch(url, { method: 'HEAD', redirect: 'manual' });
-    return { url, status: res.status, duration_ms: Date.now() - started };
+    const status = await fetchStatus(url, 'GET');
+    return { url, status, duration_ms: Date.now() - started, via: 'GET' };
   } catch (err) {
-    return { url, status: 0, error: err.message, duration_ms: Date.now() - started };
+    return { url, status: 0, error: (lastErr || err).message, duration_ms: Date.now() - started };
   }
 }
 

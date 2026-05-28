@@ -1,0 +1,27 @@
+{
+  "$comment": "Hooks SessionStart/Stop pour le pattern .claude/memory/ versionnée. Généré par /init-repo.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$CLAUDE_PROJECT_DIR/.claude/scripts/sync-memory-in.ps1\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$CLAUDE_PROJECT_DIR/.claude/scripts/sync-memory-out.ps1\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

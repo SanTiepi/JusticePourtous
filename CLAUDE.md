@@ -46,7 +46,13 @@
 
 ## Mode actif (éphémère — contexte de la session en cours)
 
-### État actuel (mis à jour 2026-04-29 — fin session legal review + UX)
+### État actuel (mis à jour 2026-05-29 — voir aussi .claude/memory/PROJECT.md + HISTORY.md)
+
+**⚠️ Delta depuis 2026-04-29** (la liste détaillée ci-dessous date du 2026-04-29 — la lire avec ce delta) :
+- **Review juridique LLM étendue à 314/314 fiches** : tout le corpus a `claude_legal_review_date` + `claude_legal_review_notes` (pas seulement les 281 actionnables). NB : `reviewed_by_claude` n'est pas un vrai champ — le champ réel est `claude_review_date`. Toujours **0 review humaine**.
+- **Loop autonome 2026-04-30** : refonte triage (branching dynamique LLM, abandon quizz template), UX safety mobile, i18n FR/DE/IT/EN, SEO sitemap 324→1196, premium UI, cantons 6→26, kit pro bono. Cf. HISTORY.md.
+- **Sprint adversarial 2026-05-28** : routine morte après 1 run (404) ; infra eval CLI `claude -p` + 30 cas + 2 gaps livrés ; reprise manuelle (retry-on-parse-fail + fix `adv_famille_04`, commit `f95eae1`). +10 cas (→40) parkés.
+
 - **15 domaines couverts** (10 core + consommation/voisinage/circulation/successions/sante en `readiness: beta`)
 - **314 fiches** dont **281 `reviewed_by_claude`** (100% des fiches actionnables, checklist structurelle stricte) + **33 `information_only`**
 - **281/281 fiches actionnables `claude_legal_review_date: 2026-04-29` (100%)** — review juridique critique appliquée à TOUT le corpus actionnable : articles cités, délais péremptoires, autorités compétentes, modèles de lettre. Breakdown : **271 verified** (articles standards corrects sans modif), **4 fixed** (4 erreurs critiques pouvant faire perdre un droit corrigées : dettes_opposition, bail_depot_garantie, etranger_renvoi, bail_loyer_initial_abusif), **6 imprécisions importantes** corrigées (loyer abusif, nullité forme, durée déterminée, délai 7j non-légal, retrait plainte, déclaration LCA), **2 verified_minor_imprecision** (travail_chomage cascade, accident_travail délai LAA imprécis). Voir docs/legal-review-claude.md. ⚠️ Review faite par LLM avec connaissance droit suisse — **pas un avocat humain**. Recommandation persiste : faire valider 5 fiches gold prioritaires par 1 vrai juriste (CHF 500-1500) avant contact associations pour passer la gate Phase 2 (`reviewed_by_legal_expert`).
@@ -140,17 +146,15 @@
 4. Jurisprudence cantonale (entscheidsuche) — couvre les gaps contradictoire
 5. CCT/CCNT (conventions collectives) — impacte salaire impayé
 
-### Prochaine action (mis à jour 2026-04-29)
+### Prochaine action (mis à jour 2026-05-29)
 - **CRITIQUE** : faire valider 5 fiches gold par 1 vrai avocat (CHF 500-1500) avant
-  de contacter ASLOCA/Caritas. Cibles : `bail_defaut_moisissure`, `bail_resiliation_conteste`,
+  de contacter ASLOCA/Caritas. Kit pro bono déjà construit (page + 5 dossiers + 5 emails).
+  Cibles : `bail_defaut_moisissure`, `bail_resiliation_conteste`,
   `dettes_commandement_payer`, `etranger_renvoi`, `travail_licenciement_abusif`.
-- Pousser les ~19 commits unpushed (legal review + UX trust badge + fallback i18n)
-  → trigger deploy via scripts/deploy.sh
-- Recruter 5-10 testeurs réels (réseau Morges/Batiscan) pour valider funnel triage
-  → outcomes feedback (objectif : passer de 0 à ≥5 outcomes pour pouvoir mesurer
-  satisfaction citoyenne réelle)
-- Étendre review juridique aux 280 fiches restantes (par batch de ~15) selon
-  trafic SEO observé en prod analytics
+- Recruter 5-10 testeurs réels (réseau Morges/Batiscan) → passer de 0 à ≥5 outcomes
+  mesurables (toujours 0 outcome en prod = on ne sait pas si les triages aident).
+- Pousser le commit `f95eae1` (sprint quick-wins) + valider les diffs mémoire via `/bye`.
+- Sprint adversarial : reprendre les +10 cas (→40) si on veut clore la cible.
 
 ### Blockers
 - ~~API Anthropic sans crédits~~ : fallback gracieux i18n + LLM_MOCK CI OK

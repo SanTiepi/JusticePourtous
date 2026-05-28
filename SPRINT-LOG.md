@@ -1,11 +1,13 @@
 # SPRINT-LOG — JusticePourtous
 
-Sprint autonome démarré 2026-05-28 (heure à confirmer au moment du /schedule create).
+Sprint autonome démarré **2026-05-28 00:42 UTC** (routine créée), premier run prévu **2026-05-28 02:04 UTC** (≈ 04:04 Europe/Zurich).
 Goal : **Étendre adversarial harness de 20 → 40 cas, maintenir LLM-first ≥95%, identifier fiches manquantes pour les fails (sans créer les vraies fiches — validation juridique humaine requise).**
 
 Durée cible : 24h initial, prolonger si goal pas atteint.
-Cron : toutes les 6h (4 runs/jour).
+Cron : `0 */2 * * *` UTC (toutes les 2h, 12 runs/jour — agressif pour test rapide).
+Modèle : claude-opus-4-7.
 Mode safety : push master direct, mais CI gates protègent (tests subset core, validation fiches errors-bloquantes, benchmark JPT score >= 60). Pas d'auto-deploy VPS (deploy manuel).
+Mesure adversarial : via `claude -p` CLI (abonnement Max), PAS via ANTHROPIC_API_KEY. Si CLI absent du sandbox, skip + log.
 
 ## Definition of done
 
@@ -51,8 +53,19 @@ L'adversarial harness extension = pur algorithmique, bordé, mesurable, safe.
 - Prochaine action : <ou stop si goal atteint>
 -->
 
-### Setup — 2026-05-28 (heure à confirmer)
-- Routine ID : (à remplir après /schedule create)
-- Cron : `15 */6 * * *` UTC (toutes les 6h, à H+15min)
-- Lien admin : https://claude.ai/code/routines
-- Mode : push master direct, CI gates = filet
+### Setup — 2026-05-28 00:42 UTC
+- **Routine ID** : `trig_01Mw2ic9bMScNXbSa8Wq11TY`
+- **Cron** : `0 */2 * * *` UTC (12 runs/jour, intervalle 2h)
+- **Modèle** : claude-opus-4-7
+- **Premier run prévu** : 2026-05-28 02:04 UTC (≈ 04:04 Europe/Zurich)
+- **Lien admin** : https://claude.ai/code/routines/trig_01Mw2ic9bMScNXbSa8Wq11TY
+- **Mode** : push master direct, CI gates = filet (pas d'auto-deploy VPS)
+- **Mesure adversarial** : `claude -p` CLI subscription Max (pas API key)
+- **⚠ Pré-requis avant run 1** : `/web-setup` côté Robin pour connecter Claude GitHub App au repo SanTiepi/JusticePourtous (sans ça, le `git push master` du run 1 échoue)
+- **Kill switch** : `/schedule update trig_01Mw2ic9bMScNXbSa8Wq11TY --enabled false` ou UI
+
+### Attente premier run
+Points à surveiller au run 1 :
+- ✓ ou ✗ : Le clone GitHub fonctionne (dépend de /web-setup)
+- ✓ ou ✗ : `claude -p` CLI dispo dans le sandbox CCR — chercher la ligne "adversarial CLI eval skipped: claude CLI not in PATH" dans le SPRINT-LOG.md post-run
+- Probable focus run 1 : créer `scripts/adversarial-eval-cli.mjs` (l'infra eval) plutôt que ajouter des cas. C'est OK — l'infra est prérequis pour mesurer la suite.

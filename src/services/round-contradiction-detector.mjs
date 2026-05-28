@@ -12,6 +12,14 @@
  * de navigation.infos_extraites et de l'objet facts normalisé.
  */
 
+// Faits ATOMIQUES comparables entre rounds. On EXCLUT volontairement les champs
+// en texte libre (adversaire, situation_personnelle) : le LLM les ré-extrait avec
+// un wording légèrement différent à chaque round (« régie » → « Régie immobilier »),
+// ce que la comparaison stricte (lowercase/trim) prend pour une contradiction. Sur
+// `adversaire` (severity 3, bloquant) cela ré-posait en boucle « vous aviez dit X
+// puis Y, lequel ? » jusqu'à MAX_ROUNDS → funnel bloqué, l'usager n'atteint jamais
+// le résultat (détecté en test live 2026-05-29). On ne compare donc que des faits
+// structurés / énumérables, où une différence est une vraie contradiction.
 const COMPARABLE_KEYS = [
   'canton',
   'date',
@@ -20,11 +28,9 @@ const COMPARABLE_KEYS = [
   'domaine',
   'statut_employeur',
   'statut_locataire',
-  'adversaire',
   'montant_chf',
   'delai_jours',
-  'nombre_enfants',
-  'situation_personnelle'
+  'nombre_enfants'
 ];
 
 function normalize(v) {
@@ -64,7 +70,7 @@ export function detectRoundContradictions(before = {}, after = {}) {
 }
 
 function severityFor(key) {
-  const HIGH = new Set(['canton', 'domaine', 'date', 'statut_employeur', 'statut_locataire', 'adversaire']);
+  const HIGH = new Set(['canton', 'domaine', 'date', 'statut_employeur', 'statut_locataire']);
   const MED = new Set(['date_debut', 'date_fin', 'delai_jours', 'montant_chf']);
   if (HIGH.has(key)) return 3;
   if (MED.has(key)) return 2;

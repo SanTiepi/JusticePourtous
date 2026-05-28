@@ -211,6 +211,31 @@ describe('round-contradiction-detector', () => {
     assert.equal(contras[0].key, 'canton');
     assert.equal(contras[1].key, 'montant_chf');
   });
+
+  // Régression funnel-loop (détecté en test live 2026-05-29) : les champs en texte
+  // libre sont ré-extraits par le LLM avec un wording variable d'un round à l'autre.
+  // Avant le fix, `adversaire` (severity 3) bloquait en boucle sur ask_contradiction.
+  it('adversaire ré-extrait avec wording différent ≠ contradiction bloquante', () => {
+    const contras = detectRoundContradictions(
+      { canton: 'VD', adversaire: 'régie (propriétaire/gestionnaire)' },
+      { canton: 'VD', adversaire: 'Régie (propriétaire/gestionnaire immobilier)' }
+    );
+    assert.equal(contras.length, 0, 'adversaire (texte libre) est exclu de la comparaison');
+    assert.equal(shouldBlockForContradiction(contras), false);
+  });
+
+  it('situation_personnelle (texte libre) ne bloque pas le funnel', () => {
+    const contras = detectRoundContradictions(
+      { situation_personnelle: 'locataire avec enfants' },
+      { situation_personnelle: 'locataire, deux enfants à charge' }
+    );
+    assert.equal(shouldBlockForContradiction(contras), false);
+  });
+
+  it('une vraie contradiction structurée (canton) bloque toujours', () => {
+    const contras = detectRoundContradictions({ canton: 'VD' }, { canton: 'GE' });
+    assert.equal(shouldBlockForContradiction(contras), true);
+  });
 });
 
 // ============================================================

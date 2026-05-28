@@ -260,9 +260,9 @@ export const ADVERSARIAL_CASES = [
     id: 'adv_famille_04',
     query: 'Mon père est mort il y a 2 mois sans laisser de papier qui dit quoi pour qui. On est 3 enfants mais ma belle-mère prétend qu\'elle a droit à tout.',
     canton: 'TI',
-    expected_domaine: 'famille',
+    expected_domaine: 'successions',
     expected_any_article: ['CC 457', 'CC 458', 'CC 462'],
-    notes: 'Succession ab intestat / réserve héréditaire — sans "succession" ni "testament".',
+    notes: 'Succession ab intestat / réserve héréditaire — sans "succession" ni "testament". Domaine = successions (le navigator route correctement ici, pas vers famille).',
   },
 
   // ========== ÉTRANGERS — extension wave 2 ==========

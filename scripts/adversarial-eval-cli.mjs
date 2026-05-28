@@ -41,6 +41,7 @@ const flag = (name, def) => {
 const LIMIT = parseInt(flag('--limit', String(ADVERSARIAL_CASES.length)), 10);
 const MODEL = flag('--model', 'haiku');
 const CONCURRENCY = parseInt(flag('--concurrency', '4'), 10);
+const PARSE_RETRIES = parseInt(flag('--retries', '1'), 10);
 const JSON_MODE = args.includes('--json');
 const log = JSON_MODE ? () => {} : (...a) => console.log(...a);
 const writeRaw = JSON_MODE ? () => {} : (s) => process.stdout.write(s);
@@ -69,7 +70,7 @@ function loadFicheIndex() {
 const SCHEMA_REMINDER = `\n\nIMPORTANT — Réponds UNIQUEMENT avec un objet JSON valide (pas de markdown, pas de \`\`\`). La clé OBLIGATOIRE est "fiches_pertinentes" (array de string IDs du catalogue, pas d'objets imbriqués). Schéma minimal :\n{"fiches_pertinentes":["id1","id2"],"confiance":"haute|moyenne|basse","resume_situation":"..."}`;
 
 // ─── Spawn claude -p, return parsed JSON or {error} ────────────
-async function callClaudeCLI(userQuery, systemPromptFile, cleanCwd) {
+function spawnClaudeOnce(userQuery, systemPromptFile, cleanCwd) {
   return new Promise((resolve) => {
     const child = spawn('claude', [
       '-p',
@@ -116,9 +117,20 @@ async function callClaudeCLI(userQuery, systemPromptFile, cleanCwd) {
       if (m) {
         try { resolve({ data: JSON.parse(m[0]), raw: out }); return; } catch {}
       }
-      resolve({ error: `parse failed: ${clean.slice(0, 200)}`, raw: out });
+      resolve({ error: `parse failed: ${clean.slice(0, 200)}`, raw: out, parseFail: true });
     });
   });
+}
+
+// Retry wrapper: haiku occasionally answers outside the JSON schema. A single
+// retry recovers most of these transient parse failures (only parse-fails are
+// retried — exit-code errors like timeouts are not, to avoid re-waiting).
+async function callClaudeCLI(userQuery, systemPromptFile, cleanCwd) {
+  let resp = await spawnClaudeOnce(userQuery, systemPromptFile, cleanCwd);
+  for (let attempt = 0; attempt < PARSE_RETRIES && resp.parseFail; attempt++) {
+    resp = await spawnClaudeOnce(userQuery, systemPromptFile, cleanCwd);
+  }
+  return resp;
 }
 
 // ─── Scoring ───────────────────────────────────────────────────

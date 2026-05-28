@@ -104,3 +104,12 @@ Points à surveiller :
   2. Corriger `expected_domaine` de `adv_famille_04` (accepter `famille` OU `successions`).
   3. Ajouter ~10 nouveaux cas (30 → 40) pour atteindre la cible 40 du sprint.
   4. Re-mesurer ; viser ≥ 95%.
+
+### 2026-05-28 ~21:30 UTC — reprise manuelle (Robin + Claude), routine morte
+- **Constat** : la routine `trig_01Mw2ic9bMScNXbSa8Wq11TY` renvoie **HTTP 404** (n'existe plus). Un seul run cron a fire (#1 à 02:08 UTC), puis la routine a disparu — ~19h de silence. Le sprint autonome ne reprendra pas tout seul.
+- **Décision** : NE PAS ressusciter de routine autonome (historique flaky : 404, signing cassé, GitHub App non installable). Finir les quick-wins à plus haute valeur en manuel.
+- **Fait** :
+  1. ✅ Retry-on-parse-fail dans `scripts/adversarial-eval-cli.mjs` (`spawnClaudeOnce` + wrapper `callClaudeCLI`, flag `--retries`, défaut 1). Ne retry QUE les parse-fails (pas les timeouts).
+  2. ✅ `adv_famille_04` : `expected_domaine` `famille` → `successions`. Vrai bug de label (succession ab intestat = domaine successions ; le navigator routait correctement). `CC 462` est cité par `successions.json` donc article_required passe. **Pas du gaming** : on corrige une ground-truth fausse, cf. garde-fou test/adversarial-eval.test.mjs.
+- **Non fait (parké)** : +10 cas (30 → 40). L'infra eval + 30 cas + 2 gaps documentés sont la valeur livrée ; atteindre exactement 40 est arbitraire. À reprendre plus tard si besoin.
+- **Métriques** : Subset CI `LLM_MOCK=1` = **1584/1584 ✓** (inchangé post-edits). Pas de re-mesure adversarial CLI (nécessite `claude -p`, non relancé cette session).

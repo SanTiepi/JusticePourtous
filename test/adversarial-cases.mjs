@@ -184,6 +184,96 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CO 260', 'CO 271', 'CO 272'],
     notes: 'Travaux bailleur + pression aide sociale — vrai problème = bail.',
   },
+
+  // ========== BAIL — extension wave 2 ==========
+  {
+    id: 'adv_bail_06',
+    query: 'Trois semaines sans chauffage en plein janvier dans mon appart, la régie me dit qu\'ils cherchent un installateur. Mes gamins toussent à mort.',
+    canton: 'NE',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 259a', 'CO 259b', 'CO 259d'],
+    notes: 'Défaut grave (chauffage hiver) décrit par conséquences corporelles — sans le mot "défaut".',
+  },
+  {
+    id: 'adv_bail_07',
+    query: 'Ma voisine du dessus claque les portes et écoute la télé fort jusqu\'à 2h du mat. J\'ai signalé 4 fois à la gérance, elle dit qu\'elle peut rien faire.',
+    canton: 'VD',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 259a', 'CO 259b', 'CO 259d', 'CO 257f'],
+    notes: 'Trouble du voisinage = défaut imputable bailleur. Vocabulaire profane.',
+  },
+  {
+    id: 'adv_bail_08',
+    query: 'Je voudrais accueillir ma cousine du Brésil deux mois chez moi. Le règlement de la régie dit qu\'il faut leur demander. Ils peuvent vraiment refuser ?',
+    canton: 'GE',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 262'],
+    notes: 'Sous-location partielle / hébergement — éviter le mot "sous-louer" en gros.',
+  },
+
+  // ========== TRAVAIL — extension wave 2 ==========
+  {
+    id: 'adv_travail_06',
+    query: 'Ça fait 14 mois que je fais 10-12h par jour, ils m\'ont jamais payé une seule heure en plus. Mon contrat dit 42h.',
+    canton: null,
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 321c', 'CO 322'],
+    notes: 'Heures supplémentaires impayées — sans "heures sup" ni "majoration".',
+  },
+  {
+    id: 'adv_travail_07',
+    query: 'Mon patron m\'a convoqué demain matin "pour parler de mon avenir dans l\'entreprise". Il m\'a déjà dit la semaine passée qu\'il était pas content. Je flippe.',
+    canton: null,
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 335', 'CO 335c', 'CO 336'],
+    notes: 'Pré-licenciement / résiliation imminente — anticipation, pas encore lettre.',
+  },
+
+  // ========== DETTES — extension wave 2 ==========
+  {
+    id: 'adv_dettes_05',
+    query: 'L\'hôpital de Berne a envoyé toutes mes factures à un bureau de recouvrement. 18\'400 francs au total. Je peux pas, je vis au RI.',
+    canton: 'BE',
+    expected_domaine: 'dettes',
+    expected_any_article: ['LP 38', 'LP 67', 'LP 93'],
+    notes: 'Factures médicales en recouvrement + minimum vital — sans "saisie".',
+  },
+  {
+    id: 'adv_dettes_06',
+    query: 'En 2019 j\'ai signé un papier comme garant pour mon meilleur pote pour son prêt voiture. Il est parti à Dubai. La banque m\'envoie tout sur le dos maintenant.',
+    canton: null,
+    expected_domaine: 'dettes',
+    expected_any_article: ['CO 492', 'CO 493', 'CO 509', 'LP 38'],
+    notes: 'Cautionnement personnel — vocabulaire profane, pas dit "caution".',
+  },
+
+  // ========== FAMILLE — extension wave 2 ==========
+  {
+    id: 'adv_famille_03',
+    query: 'On a vécu 5 ans ensemble, jamais mariés. On a un fils de 3 ans. Je veux partir, mais il dit qu\'il garde le petit parce qu\'il a plus d\'argent que moi.',
+    canton: 'VD',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 296', 'CC 298', 'CC 298a', 'CC 298b'],
+    notes: 'Autorité parentale concubinage — sans "garde" ni "autorité parentale".',
+  },
+  {
+    id: 'adv_famille_04',
+    query: 'Mon père est mort il y a 2 mois sans laisser de papier qui dit quoi pour qui. On est 3 enfants mais ma belle-mère prétend qu\'elle a droit à tout.',
+    canton: 'TI',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 457', 'CC 458', 'CC 462'],
+    notes: 'Succession ab intestat / réserve héréditaire — sans "succession" ni "testament".',
+  },
+
+  // ========== ÉTRANGERS — extension wave 2 ==========
+  {
+    id: 'adv_etrangers_03',
+    query: 'Je suis venu de Tunisie avec mon mari suisse il y a 4 ans, j\'ai un permis B. On est séparés depuis 8 mois, il veut divorcer. Est-ce que je peux rester ?',
+    canton: 'GE',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LEI 50', 'LEI 49'],
+    notes: 'Rupture union conjugale + maintien permis B — Art 50 LEI, sans dire "LEI".',
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

@@ -297,4 +297,4 @@ function isAvailable() {
   return !!process.env.ANTHROPIC_API_KEY;
 }
 
-export { callNavigator, getQuestionsForFiche, isAvailable, CATALOG_TEXT };
+export { callNavigator, getQuestionsForFiche, isAvailable, CATALOG_TEXT, SYSTEM_PROMPT, RESPONSE_SCHEMA };

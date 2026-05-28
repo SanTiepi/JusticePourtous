@@ -1,5 +1,5 @@
 import { createServer } from 'node:http';
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { atomicWriteSync, safeLoadJSON } from './services/atomic-write.mjs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, extname } from 'node:path';
@@ -1197,9 +1197,12 @@ const server = createServer(async (req, res) => {
           if (result?.error) {
             return json(res, 400, { error: result.error, disclaimer: DISCLAIMER });
           }
+          // letter_id vit dans result.metadata (pas au top-level) — sinon download_url
+          // contient "undefined" et le lien de téléchargement 404.
+          const letterId = result.metadata?.letter_id || result.letter_id;
           return json(res, 200, {
             ...result,
-            download_url: `/api/case/${caseId}/letter/${result.letter_id}/download`,
+            download_url: `/api/case/${caseId}/letter/${letterId}/download`,
             disclaimer: DISCLAIMER
           });
         } catch (err) {
@@ -1211,21 +1214,31 @@ const server = createServer(async (req, res) => {
     {
       const letterDlMatch = path.match(/^\/api\/case\/([^/]+)\/letter\/([^/]+)\/download$/);
       if (letterDlMatch && method === 'GET') {
-        const caseId = decodeURIComponent(letterDlMatch[1]);
         const letterId = decodeURIComponent(letterDlMatch[2]);
         try {
           const { _getOutputDir } = await import('./services/letter-pdf-generator.mjs');
           const dir = _getOutputDir();
-          const filePath = join(dir, `${letterId}.pdf`);
-          if (!existsSync(filePath)) {
+          // Le fichier généré est `${ficheId}_${type}_${letter_id}.${ext}` (docx ou pdf).
+          // On le retrouve par son suffixe letter_id (hash unique) — la route n'a pas
+          // le ficheId/type/ext dans l'URL. letterId ne sert qu'au filtrage (pas de
+          // construction de chemin → pas de path-traversal).
+          let filename = null;
+          try {
+            filename = readdirSync(dir).find(f => f.includes(`_${letterId}.`) || f.startsWith(`${letterId}.`));
+          } catch { /* dossier absent → traité comme introuvable */ }
+          if (!filename) {
             return json(res, 404, { error: 'Lettre introuvable', disclaimer: DISCLAIMER });
           }
+          const ext = filename.split('.').pop().toLowerCase();
+          const contentType = ext === 'docx'
+            ? 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+            : (ext === 'pdf' ? 'application/pdf' : 'application/octet-stream');
           setSecurityHeaders(res);
           res.writeHead(200, {
-            'Content-Type': 'application/pdf',
-            'Content-Disposition': `attachment; filename="letter-${letterId}.pdf"`
+            'Content-Type': contentType,
+            'Content-Disposition': `attachment; filename="${filename}"`
           });
-          return res.end(readFileSync(filePath));
+          return res.end(readFileSync(join(dir, filename)));
         } catch (err) {
           return json(res, 500, { error: err.message, disclaimer: DISCLAIMER });
         }

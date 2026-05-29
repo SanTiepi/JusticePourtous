@@ -52,6 +52,19 @@ async function buildCanonSafe(fiche, citizenCanton) {
  * @param {string} [sessionId] - Pour les tours suivants
  * @param {object} [reponses] - Réponses aux questions posées au tour précédent
  */
+// Délais affichés (top-level du résultat) : PRIORITÉ aux délais SPÉCIFIQUES de la
+// fiche (issus de sa cascade) ; fallback sur les délais du DOMAINE (génériques)
+// seulement si la fiche n'en a pas. Avant ce fix, une fiche caution affichait des
+// délais bail sans rapport (contestation de congé / prolongation / loyer initial).
+function topDelaisCritiques(primary) {
+  if (!primary) return [];
+  const own = primary.fiche?.reponse?.delais;
+  const list = (Array.isArray(own) && own.length)
+    ? own
+    : (primary.delais || []).filter(d => d.domaine === primary.fiche?.domaine);
+  return list.slice(0, 3).map(d => ({ procedure: d.procedure, delai: d.delai, consequence: d.consequence }));
+}
+
 export async function triage(texte, canton, sessionId, reponses) {
   if (!texte && !sessionId) {
     return { status: 400, error: 'Décrivez votre problème en quelques mots' };
@@ -230,11 +243,8 @@ async function triageLLM(texte, canton) {
         // Contacts filtered by canton
         contacts: filterContacts(primary.escalade || [], effectiveCanton),
 
-        // Deadlines from our data
-        delaisCritiques: (primary.delais || [])
-          .filter(d => d.domaine === primary.fiche.domaine)
-          .slice(0, 3)
-          .map(d => ({ procedure: d.procedure, delai: d.delai, consequence: d.consequence })),
+        // Deadlines : délais spécifiques de la fiche prioritaires sur ceux du domaine
+        delaisCritiques: topDelaisCritiques(primary),
 
         // Jurisprudence enrichie (tier/age/role) — Phase 3 (legacy)
         jurisprudence_enriched: (primary.jurisprudence || []).map(enrichDecisionHolding),
@@ -356,9 +366,7 @@ async function refineTriage(sessionId, reponses) {
           lettresDisponibles: planAction.lettresDisponibles?.slice(0, 3)
         } : null,
         contacts: filterContacts(primary.escalade || [], effectiveCanton),
-        delaisCritiques: (primary.delais || [])
-          .filter(d => d.domaine === primary.fiche.domaine).slice(0, 3)
-          .map(d => ({ procedure: d.procedure, delai: d.delai, consequence: d.consequence })),
+        delaisCritiques: topDelaisCritiques(primary),
         jurisprudence_enriched: (primary.jurisprudence || []).map(enrichDecisionHolding),
         caselaw_canon: caselawCanonRefine,
         confiance: primary.confiance || 'variable',
@@ -454,9 +462,7 @@ function triageFallback(texte, canton) {
       urgence: 'ce_mois',
 
       contacts: primary ? filterContacts(primary.escalade || [], canton) : filterContacts([], canton),
-      delaisCritiques: primary ? (primary.delais || [])
-        .filter(d => d.domaine === bestDomaine).slice(0, 3)
-        .map(d => ({ procedure: d.procedure, delai: d.delai, consequence: d.consequence })) : [],
+      delaisCritiques: topDelaisCritiques(primary),
       confiance: 'incertain',
       lacunes: [
         'Mode basique : nous ne sommes pas certains d\'avoir identifié la bonne situation.',

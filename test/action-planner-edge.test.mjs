@@ -153,3 +153,54 @@ test('canton array → objet gracieux (String(canton), plus de toUpperCase crash
   assert.equal(typeof result, 'object');
   assert.notEqual(result, null);
 });
+
+// --- 4. Contenu SPÉCIFIQUE de la fiche prioritaire sur le générique de domaine ---
+// Régression 2026-05-29 : une fiche caution affichait les étapes/délais GÉNÉRIQUES
+// du domaine bail (moisissure/consignation, congé/prolongation) au lieu de son
+// contenu spécifique → "infos rien à voir". Le plan doit privilégier la cascade
+// de la fiche (étapes) et ses délais propres.
+test('étapes + délais viennent de la cascade SPÉCIFIQUE de la fiche, pas du pattern domaine', () => {
+  const enriched = {
+    fiche: {
+      id: 'bail_x_specifique', domaine: 'bail', sousDomaine: 'caution',
+      reponse: {
+        explication: 'situation spécifique',
+        articles: [{ ref: 'CO 257e', titre: 'Garantie' }],
+        delais: [{ procedure: 'Libération de la garantie', delai: 'sous 30 jours', consequence: null }]
+      },
+      cascades: [{
+        titre: 'Récupération garantie',
+        etapes: [
+          { numero: 1, action: 'État des lieux de sortie', description: 'décompte final' },
+          { numero: 2, action: 'Courrier de demande de libération', description: 'recommandé' }
+        ]
+      }]
+    },
+    patterns: [{ strategieOptimale: ['ÉTAPE GÉNÉRIQUE DOMAINE (ne doit PAS apparaître)'], neJamaisFaire: ['warning domaine'] }],
+    delais: [{ domaine: 'bail', procedure: 'Contestation du congé (générique)', delai: '30 jours' }],
+    articles: [], jurisprudence: [], templates: [], antiErreurs: [],
+    preuves: [], escalade: [], cascades: [], confiance: 'haut', lacunes: []
+  };
+  const plan = generateActionPlan(enriched, 'VD');
+  // étapes = cascade de la fiche
+  const actions = plan.etapes.map(e => e.action).join(' | ');
+  assert.ok(/État des lieux de sortie/.test(actions), 'étape spécifique fiche attendue');
+  assert.ok(!/GÉNÉRIQUE DOMAINE/.test(actions), 'le pattern générique de domaine ne doit PAS être utilisé');
+  assert.ok(!/warning domaine/.test(actions), 'le neJamaisFaire de domaine ne doit pas s\'afficher quand la cascade fiche est utilisée');
+  // délais = ceux de la fiche
+  const procedures = plan.delaisCritiques.map(d => d.procedure).join(' | ');
+  assert.ok(/Libération de la garantie/.test(procedures), 'délai spécifique fiche attendu');
+  assert.ok(!/Contestation du congé/.test(procedures), 'les délais génériques de domaine ne doivent pas apparaître');
+});
+
+test('fiche SANS cascade → fallback sur le pattern de domaine (pas de régression)', () => {
+  const enriched = {
+    fiche: { id: 'x', domaine: 'bail', reponse: { explication: 'x', articles: [] } },
+    patterns: [{ strategieOptimale: ['Étape pattern domaine'] }],
+    delais: [{ domaine: 'bail', procedure: 'Délai domaine', delai: '30 jours' }],
+    articles: [], jurisprudence: [], templates: [], antiErreurs: [],
+    preuves: [], escalade: [], cascades: [], confiance: 'haut', lacunes: []
+  };
+  const plan = generateActionPlan(enriched, 'VD');
+  assert.ok(plan.etapes.some(e => /Étape pattern domaine/.test(e.action)), 'fallback pattern attendu sans cascade fiche');
+});

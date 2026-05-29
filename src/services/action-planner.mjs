@@ -60,9 +60,15 @@ export function generateActionPlan(enriched, canton) {
     // 4. Documents à réunir
     documents: buildDocumentList(preuves, fiche.domaine),
 
-    // 5. Délais critiques
-    delaisCritiques: delais
-      .filter(d => d.domaine === fiche.domaine)
+    // 5. Délais critiques — PRIORITÉ aux délais SPÉCIFIQUES de la fiche (issus de
+    // sa cascade) ; fallback sur les délais du DOMAINE (génériques) seulement si la
+    // fiche n'en a pas. Avant ce fix, une fiche caution affichait des délais bail
+    // sans rapport (contestation de congé / prolongation / loyer initial).
+    delaisCritiques: (
+      (Array.isArray(fiche.reponse?.delais) && fiche.reponse.delais.length)
+        ? fiche.reponse.delais
+        : delais.filter(d => d.domaine === fiche.domaine)
+    )
       .slice(0, 5)
       .map(d => ({
         procedure: d.procedure,
@@ -115,8 +121,25 @@ function buildSteps(fiche, pattern, delais, preuves, templates, canton) {
   const steps = [];
   let stepNum = 1;
 
-  // If pattern has strategieOptimale, use it as base
-  if (pattern?.strategieOptimale) {
+  // PRIORITÉ : étapes SPÉCIFIQUES de la cascade de la fiche (propres à la situation
+  // décrite par l'utilisateur). Avant ce fix, on utilisait d'abord le pattern de
+  // DOMAINE générique → une fiche caution héritait des étapes moisissure/consignation
+  // du pattern bail générique (« infos rien à voir »).
+  const ficheCascade = Array.isArray(fiche?.cascades) ? fiche.cascades[0] : null;
+  if (ficheCascade?.etapes?.length) {
+    for (const et of ficheCascade.etapes) {
+      const action = (typeof et === 'string') ? et : (et.action || et.titre || et.probleme || '');
+      if (!action) continue;
+      steps.push({
+        numero: stepNum++,
+        action,
+        description: (et && typeof et === 'object') ? et.description : undefined,
+        type: 'etape',
+        source: ficheCascade.titre || 'Cascade de la situation'
+      });
+    }
+  } else if (pattern?.strategieOptimale) {
+    // Fallback : pattern de domaine (générique) si la fiche n'a pas de cascade.
     for (const action of pattern.strategieOptimale) {
       steps.push({
         numero: stepNum++,
@@ -175,8 +198,11 @@ function buildSteps(fiche, pattern, delais, preuves, templates, canton) {
     });
   }
 
-  // Add "never do" warnings from pattern
-  if (pattern?.neJamaisFaire?.length > 0) {
+  // Avertissement "ne jamais faire" du pattern de DOMAINE : seulement si on n'a
+  // PAS utilisé la cascade spécifique de la fiche (sinon le warning de domaine peut
+  // être hors-sujet — ex. "ne jamais réduire le loyer" sur un cas de caution). Les
+  // pièges spécifiques de la fiche sont déjà exposés via `pieges` (antiErreurs).
+  if (!ficheCascade?.etapes?.length && pattern?.neJamaisFaire?.length > 0) {
     steps.push({
       numero: stepNum++,
       action: `⚠ NE FAITES SURTOUT PAS : ${pattern.neJamaisFaire[0]}`,

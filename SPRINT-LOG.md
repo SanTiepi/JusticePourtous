@@ -158,3 +158,21 @@ Points à surveiller :
   - `buildContradictionQuestion` : 4 cas (format id/choix/kind, tri sévérité, tableau vide, valeurs dans le texte)
   - **Régression boucle texte libre** : 4 cas vérifiant que `adversaire` et `situation_personnelle` sont absents de `COMPARABLE_KEYS` et ne déclenchent jamais de contradiction (le bug historique : LLM ré-extrait en wording différent → fausse contradiction → question posée en boucle → funnel bloqué)
 - **Prochaine action** : autres régressions item 2 si pertinent, ou item 3 (robustesse edge cases non couverts) ; validation humaine reste hors scope autonomous.
+
+### 2026-05-29 UTC — run agent horaire (grounding lettre)
+- **Tenté** : tests régression grounding lettre — injection faits utilisateur dans corps (item 2, sous-item restant)
+- **Résultat** : passed ✓
+- **Commits** : `24aafde`
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **1725/1725 ✓** (docx absent → `npm install`, puis vert)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓
+  - Nouveaux tests : **6 tests** dans `test/letter-template-regression.test.mjs` (suite 2 — grounding)
+- **Ce qui a été fait** : ajout suite `generateLetter — grounding des faits du cas (mode template)` dans le fichier existant `test/letter-template-regression.test.mjs`. 6 cas sans API key (mode template forcé) :
+  - nom → apparaît ≥2× (en-tête + signature), aucun `[Votre nom]` résiduel
+  - adresse → apparaît dans l'en-tête
+  - description (chemin générique, fiche sans modeleLettre) → description dans corps, pas de placeholder `[Description de votre situation]`
+  - description (fiche avec placeholder `[description]`) → placeholder remplacé, texte utilisateur présent
+  - userContext vide → pas de crash, retourne lettre en mode template
+  - lieu déduit du NPA → apparaît dans ligne date (régression `deriveLieu`)
+- **Prochaine action** : item 3 (robustesse edge cases) ou item 4 (i18n/SEO) ; validation humaine reste hors scope autonomous.

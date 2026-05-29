@@ -264,3 +264,23 @@ Points à surveiller :
     - `wallet CRUD` (9 cas) : null guards, link→appears, pas de doublon, reverse lookup
 - **Rationale** : `auth.mjs` est le module d'authentification (codes magiques, tokens 1h, protection brute-force MAX_ATTEMPTS=5). Aucun test direct n'existait — un bug de lockout ou d'expiry serait invisible. Les 3 propriétés critiques de sécurité (brute-force, rate-limit, token expiry) sont désormais régression-lockées.
 - **Prochaine action** : item 4 (i18n/SEO) bloqué sans LLM. Alternatives : `analytics.mjs`, item 5 (gaps docs).
+
+### 2026-05-29 UTC — run agent horaire (analytics.mjs)
+- **Tenté** : item 3 — tests unitaires `analytics.mjs` (0 couverture directe précédemment)
+- **Résultat** : passed ✓
+- **Commits** : `557abaa`
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **1908/1908 ✓** (+17 tests)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **17 tests** dans `test/analytics.test.mjs`
+- **Ce qui a été fait** :
+  - Export `_resetForTests()` ajouté à `src/services/analytics.mjs` (pattern identique à `auth.mjs` — reset du singleton in-memory, jamais appelé en prod).
+  - `test/analytics.test.mjs` — 5 suites / 17 tests zéro-LLM zéro-réseau :
+    - `trackPageView` (4 cas) : incrément, double-incrément, null/vide no-op, multi-paths indépendants
+    - `trackSearch` (2 cas) : démarre à 0, incrément successif
+    - `trackPremiumAnalysis` (2 cas) : démarre à 0, incrément
+    - `trackLanguage` (6 cas) : track valide, normalisation minuscules, troncature 10 chars, null/vide no-op, double-incrément, multi-langues coexistantes
+    - `getStats` (3 cas) : tous champs présents, `_snapshotAt` ISO fresh, round-trip track→getStats
+- **Rationale** : `analytics.mjs` est le seul module de service restant sans couverture directe (excluant les modules LLM filtrés du CI). Module simple mais critique pour les métriques prod (4 fonctions de tracking, singleton in-memory).
+- **Prochaine action** : item 4 (i18n/SEO) bloqué sans LLM. Modules de service sans tests : `document-ingester.mjs` (nécessite FS mocking), `docx-generator.mjs` (couvert indirectement via letter-pdf-contract). Sprint goal déjà atteint — prochaine valeur = recrutement testeurs réels (hors scope autonomous) ou validation juridique humaine (hors scope autonomous).

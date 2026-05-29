@@ -423,6 +423,12 @@ export function queryByDecision(signature) {
 // --- Query by domain (association entry point) ---
 
 export function queryByDomain(domain, filters = {}) {
+  // Garde : null/undefined/non-string ne doit pas crasher (les autres points
+  // d'entrée du knowledge-engine gèrent ces cas gracieusement) — sinon un appel
+  // avec un domaine absent provoque un TypeError = 500 côté HTTP.
+  if (typeof domain !== 'string' || domain.trim() === '') {
+    return { status: 404, error: `Domaine '${domain}' non trouvé` };
+  }
   const d = domain.toLowerCase();
   const fiches = (graph.domaineToFiches[d] || [])
     .map(id => ficheMap.get(id))

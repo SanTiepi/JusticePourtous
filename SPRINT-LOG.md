@@ -126,3 +126,19 @@ Points à surveiller :
   2. ✅ `adv_famille_04` : `expected_domaine` `famille` → `successions`. Vrai bug de label (succession ab intestat = domaine successions ; le navigator routait correctement). `CC 462` est cité par `successions.json` donc article_required passe. **Pas du gaming** : on corrige une ground-truth fausse, cf. garde-fou test/adversarial-eval.test.mjs.
 - **Non fait (parké)** : +10 cas (30 → 40). L'infra eval + 30 cas + 2 gaps documentés sont la valeur livrée ; atteindre exactement 40 est arbitraire. À reprendre plus tard si besoin.
 - **Métriques** : Subset CI `LLM_MOCK=1` = **1584/1584 ✓** (inchangé post-edits). Pas de re-mesure adversarial CLI (nécessite `claude -p`, non relancé cette session).
+
+### 2026-05-29 UTC — run agent horaire (mesure 40 cas)
+- **Tenté** : re-mesurer l'éval adversariale sur les 40 cas + documenter les nouveaux gaps
+- **Résultat** : passed ✓ — **sprint goal atteint**
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **1601/1601 ✓** (post `npm install docx`)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - **Adversarial CLI (40 cas, haiku, concurrency=4) : 98% global** (38×100% + 2×63%)
+    - Seul rubric en échec : `article_required` (2/40 = 5%)
+    - `adv_dettes_06` 63% : domaine correct (dettes), articles CO 492/493/509 absents → fiche `dettes_cautionnement_personnel` manquante (déjà documentée)
+    - `adv_circulation_01` 63% : domaine correct (circulation), articles LCR 16/16b/16c absents → fiche `circulation_retrait_permis` manquante (nouveau gap)
+    - `adv_bail_07` (voisin bruyant) : **repasse à 100%** — le fail run#1 était probablement un aléa haiku, pas un vrai trou
+- **Commits** : voir ci-dessous
+- **Sprint goal** : ✅ ≥95% LLM-first sur 40 cas (98% atteint). Definition of done satisfaite.
+- **Prochaine action** : validation juridique humaine (avocat) sur les 5 fiches gold prioritaires avant contact ASLOCA/Caritas — hors scope autonomous.

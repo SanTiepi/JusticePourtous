@@ -7,12 +7,19 @@ correspondance exacte.
 
 Ces fiches sont à créer après validation juridique humaine.
 
-## État actuel : 3 gaps identifiés (mis à jour 2026-05-29)
+## État actuel : 4 gaps identifiés (mis à jour 2026-05-29)
 
 Les deux gaps historiques sont comblés :
 
 - ✅ `bail_restitution_anticipee` (CO 264) — créée + `claude_review_date: 2026-04-19`
 - ✅ `travail_discrimination_salariale` (LEg 3 / LEg 5 / Cst 8 al. 3) — créée + `claude_review_date: 2026-04-19`
+
+### Gap détecté par l'éval CLI 2026-05-29 (mesure 40 cas — score global 98%)
+
+- ⛔ `circulation_retrait_permis`
+  - **base juridique** : LCR 16, LCR 16b (infraction légère), LCR 16c (infraction grave — récidive), LCR 16a (retrait d'emblée)
+  - **pourquoi manquante** : `adv_circulation_01` (feu rouge, récidive, office des automobiles) — le navigator trouve `circulation_amende_ordre` (LCR 6 / LAO 1 / LCR 90) au lieu d'une fiche dédiée au **retrait administratif de permis** (LCR 16/16b/16c). La fiche amende d'ordre traite les amendes pénales, pas le retrait administratif par l'office des automobiles.
+  - **priorité** : haute. La distinction amende pénale / retrait administratif est fondamentale (procédures, délais, instances totalement différents). Cas fréquent chez les citoyens récidivistes.
 
 ### Gaps détectés par l'éval CLI 2026-05-28 (extension 20→30 cas)
 

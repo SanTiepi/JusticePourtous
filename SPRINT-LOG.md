@@ -284,3 +284,10 @@ Points à surveiller :
     - `getStats` (3 cas) : tous champs présents, `_snapshotAt` ISO fresh, round-trip track→getStats
 - **Rationale** : `analytics.mjs` est le seul module de service restant sans couverture directe (excluant les modules LLM filtrés du CI). Module simple mais critique pour les métriques prod (4 fonctions de tracking, singleton in-memory).
 - **Prochaine action** : item 4 (i18n/SEO) bloqué sans LLM. Modules de service sans tests : `document-ingester.mjs` (nécessite FS mocking), `docx-generator.mjs` (couvert indirectement via letter-pdf-contract). Sprint goal déjà atteint — prochaine valeur = recrutement testeurs réels (hors scope autonomous) ou validation juridique humaine (hors scope autonomous).
+
+### 2026-05-29 ~10:58 UTC — loop LOCAL (ship + verify)
+- **Pull** : déjà à jour (commits cloud test/hooks intégrés en local).
+- **Deploy** : OUI — prod accusait du runtime non déployé depuis `4a24767` (les runs cloud horaires ont commité sur master mais le cloud ne peut pas déployer). Changements reviewés (trust but verify) → tous SÛRS : exports test-only (`auth.mjs`, `analytics.mjs _resetForTests`, `guide-renderer.mjs _internals`) + 1 garde défensive `domain-recommender` (`if (!Array.isArray(enrichedAll)) return []`). `deploy.sh` gates verts.
+- **Live** : `/api/health/deep` 13/13 ✓ · triage moisissure→`bail_defaut_moisissure` ✓ · génération+download lettre 200 docx ✓.
+- **Hotfix / rollback** : aucun.
+- **État** : prod réalignée sur master. Division cloud(dev)/local(ship) fonctionne.

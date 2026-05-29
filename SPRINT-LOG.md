@@ -390,3 +390,28 @@ Points à surveiller :
   - `calcul status` (4 cas) : lacunaire (>2 hautes), partiel (≤2 hautes score<80), suffisant (score=100), insuffisant (critique fail)
 - **Rationale** : `investigation-checklist.mjs` implémente 17 checks procéduraux CPP en code exécutable (condition/verify/detail par check). Les helpers `timeDiffHours` et `monthsDiff` (internes non-exportés) sont testés via leurs effets observables. Aucun test par path/condition n'existait — la couverture se limitait à 3 cas d'intégration avec des mocks réalistes du cas Fragnière.
 - **Prochaine action** : item 4 (i18n/SEO) bloqué sans LLM. Modules restants sans tests directs : `document-ingester.mjs` (LLM+FS, complexe) et `docx-generator.mjs` (couvert indirectement). Sprint goal atteint.
+
+### 2026-05-29 UTC — run agent horaire (regression-invariants-runner direct)
+- **Tenté** : item 3 — tests directs pour `regression-invariants-runner.mjs` (8 types de check, couverture existante = uniquement chemin passant sur 30 vraies fiches)
+- **Résultat** : passed ✓
+- **Commits** : `cdb025c`
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2160/2160 ✓** (+57 tests)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **57 tests** dans `test/regression-invariants-runner.test.mjs`
+- **Ce qui a été fait** : `test/regression-invariants-runner.test.mjs` — 12 suites / 57 tests zéro-LLM zéro-réseau sur le runner des 282 invariants de régression juridique :
+  - `detectServiceType` (14 cas) : null, vide, 10 patterns (asloca/syndicat/tribunal/conciliation/lavi/caritas/csp/office_poursuites/egalite/avocat), inconnu→null
+  - `CONFIANCE_ORDER` (1 cas) : invariant ordre des 4 niveaux
+  - `check article_present` (4 cas) : présent, absent, articles vides, null
+  - `check article_with_source_id` (3 cas) : source_id inline, regex sans match, article sans source_id
+  - `check delai_exists` (5 cas) : tokens, texte exact, absent, match vide, cascades null
+  - `check escalade_type_present` (5 cas) : type explicite, déduit du nom, substring, absent, null
+  - `check confiance_at_least` (5 cas) : même, supérieur, inférieur, inconnu, fiche invalide
+  - `check jurisprudence_min_count` (4 cas) : exactement N, plus, moins, 0 arrêts
+  - `check tag_present` (5 cas) : exact, casse, absent, partiel, null
+  - `check template_exists` (4 cas) : présent, absent, trop court, reponse null
+  - `runInvariants guards` (3 cas) : vide, fiche introuvable, type inconnu
+  - `runInvariants agrégats` (4 cas) : 2/3 pass, tous passants, lookup intent_id fallback, exception gracieuse
+- **Rationale** : `regression-invariants-runner.mjs` est le module qui vérifie les 282 invariants de régression juridique (hash-lock délais/articles sur 30 fiches gold). La couverture `phase-cortex-regression-juridique.test.mjs` ne testait que le chemin passant sur les vraies fiches. Les cas d'échec (article manquant, délai introuvable, confiance trop basse) et les null guards n'étaient pas couverts.
+- **Prochaine action** : modules restants sans tests directs = `document-ingester.mjs` (LLM+FS, skip) et `docx-generator.mjs` (couvert indirectement). Sprint goal atteint — valeur restante = validation humaine avocat (hors scope autonomous).

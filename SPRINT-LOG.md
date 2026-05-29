@@ -368,3 +368,25 @@ Points à surveiller :
   - `getNiveauxConfiance` (1 cas) : 200 ou 404 selon présence fichier
 - **Rationale** : `donnees-juridiques.mjs` expose 20 fonctions de recherche/chargement utilisées dans tous les endpoints `/api/donnees/*`. Aucun test direct n'existait — la couverture était via HTTP uniquement (plus lent, moins précis, ne teste pas les 404 et l'insensibilité à la casse). Les invariants total==longueur et le comportement des lookups par ID/code sont désormais régression-lockés.
 - **Prochaine action** : item 4 (i18n/SEO) bloqué sans LLM. Restent sans tests directs : `document-ingester.mjs` (LLM+FS, complexe) et `docx-generator.mjs` (couvert indirectement). Sprint goal atteint — valeur restante = validation humaine avocat + recrutement testeurs réels (hors scope autonomous).
+
+### 2026-05-29 UTC — run agent horaire (investigation-checklist direct)
+- **Tenté** : item 3 — tests directs pour `investigation-checklist.mjs` (17 checks CPP procéduraux, testés seulement via 3 cas d'intégration dans `dossier-analyzer.test.mjs`)
+- **Résultat** : passed ✓
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2103/2103 ✓** (npm install en amont)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **28 cas / 9 suites** dans `test/investigation-checklist.test.mjs`
+- **Ce qui a été fait** : `test/investigation-checklist.test.mjs` — 9 suites / 28 tests zéro-LLM zéro-réseau sur les 17 checks CPP du module :
+  - `structure de retour` (3 cas) : champs attendus, status=insuffisant sur dossier vide, total_checks≥5
+  - `dossier parfait` (3 cas) : score=100, 17/17 checks satisfaits, summary vide
+  - `conditionnels type_deces` (4 cas) : accidentel→alerte non applicable, suspect→applicable, violent→autopsie applicable, prelevements_scene conditionnel
+  - `alerte police délai (timeDiffHours)` (4 cas) : 15min OK, 2h exact OK (borne ≤2), 3h fail (critique), heures manquantes fail
+  - `conditionnels lieu_deces` (3 cas) : domicile→enquete_voisinage applicable, hopital→non applicable, domicile→acces applicable
+  - `resultats_prelevements_communiques` (3 cas) : absent→non applicable, 3/3 OK, 1/3 fail (haute)
+  - `instruction bidirectionnelle + in dubio` (4 cas) : rapport=false→non applicables, rapport=true complet OK, hypothese=false→fail critique, classement=true→in_dubio fail
+  - `celerite (monthsDiff)` (3 cas) : ~18 mois OK, ~26 mois fail, dates manquantes fail
+  - `calcul status` (4 cas) : lacunaire (>2 hautes), partiel (≤2 hautes score<80), suffisant (score=100), insuffisant (critique fail)
+- **Rationale** : `investigation-checklist.mjs` implémente 17 checks procéduraux CPP en code exécutable (condition/verify/detail par check). Les helpers `timeDiffHours` et `monthsDiff` (internes non-exportés) sont testés via leurs effets observables. Aucun test par path/condition n'existait — la couverture se limitait à 3 cas d'intégration avec des mocks réalistes du cas Fragnière.
+- **Prochaine action** : item 4 (i18n/SEO) bloqué sans LLM. Modules restants sans tests directs : `document-ingester.mjs` (LLM+FS, complexe) et `docx-generator.mjs` (couvert indirectement). Sprint goal atteint.

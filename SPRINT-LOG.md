@@ -142,3 +142,19 @@ Points à surveiller :
 - **Commits** : voir ci-dessous
 - **Sprint goal** : ✅ ≥95% LLM-first sur 40 cas (98% atteint). Definition of done satisfaite.
 - **Prochaine action** : validation juridique humaine (avocat) sur les 5 fiches gold prioritaires avant contact ASLOCA/Caritas — hors scope autonomous.
+
+### 2026-05-29 — run agent horaire (régression boucle contradiction)
+- **Tenté** : tests unitaires `round-contradiction-detector` — régression item 2 (boucle ask_contradiction sur champs texte libre)
+- **Résultat** : passed ✓
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **1719/1719 ✓** (docx absent → `npm install` en amont, puis vert)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **23 tests** dans `test/round-contradiction-detector.test.mjs`
+- **Ce qui a été fait** : `test/round-contradiction-detector.test.mjs` — 4 suites / 23 tests unitaires directs sur les 3 exports du module :
+  - `detectRoundContradictions` : 10 cas (detection champs structurés, insensibilité casse, ajout d'info vs contradiction, null guards, tri sévérité)
+  - `shouldBlockForContradiction` : 5 cas (seuils severity 1/2/3, tableau vide, mix)
+  - `buildContradictionQuestion` : 4 cas (format id/choix/kind, tri sévérité, tableau vide, valeurs dans le texte)
+  - **Régression boucle texte libre** : 4 cas vérifiant que `adversaire` et `situation_personnelle` sont absents de `COMPARABLE_KEYS` et ne déclenchent jamais de contradiction (le bug historique : LLM ré-extrait en wording différent → fausse contradiction → question posée en boucle → funnel bloqué)
+- **Prochaine action** : autres régressions item 2 si pertinent, ou item 3 (robustesse edge cases non couverts) ; validation humaine reste hors scope autonomous.

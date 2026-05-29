@@ -274,6 +274,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['LEI 50', 'LEI 49'],
     notes: 'Rupture union conjugale + maintien permis B — Art 50 LEI, sans dire "LEI".',
   },
+
+  // ========== WAVE 3 — 10 nouveaux domaines et angles non couverts ==========
+
+  // BAIL — hausse de loyer indexée au renchérissement
+  {
+    id: 'adv_bail_09',
+    query: 'La régie vient de m\'envoyer une lettre qui dit que mon loyer monte de 3.4% dès le 1er avril, justifié par "l\'évolution des prix depuis la signature du bail". J\'ai cherché sur internet et ça me semble excessif. Comment c\'est calculé ?',
+    canton: 'VD',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 269b', 'CO 270', 'CO 270b'],
+    notes: 'Indexation loyer au renchérissement IPC — sans les mots "indexation" ni "IPC". Le % peut être contesté si mal calculé.',
+  },
+
+  // TRAVAIL — clause de non-concurrence post-emploi
+  {
+    id: 'adv_travail_08',
+    query: 'J\'ai accepté un poste chez un concurrent direct. Mon ancien employeur m\'a envoyé une lettre d\'avocat en citant "l\'article 8 de mon contrat d\'embauche" — il dit que j\'ai pas le droit de travailler dans la branche pendant 2 ans.',
+    canton: null,
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 340', 'CO 340a', 'CO 340b'],
+    notes: 'Clause de non-concurrence post-emploi — sans "non-concurrence". Durée 2 ans potentiellement excessive.',
+  },
+
+  // ÉTRANGERS — naturalisation (vocabulaire profane : "passeport rouge")
+  {
+    id: 'adv_etrangers_04',
+    query: 'Ça fait 12 ans que je vis ici, j\'ai le permis C depuis 4 ans, je parle français, je paie mes impôts, j\'ai jamais eu de problème avec la justice. Mon voisin dit qu\'il suffit de 10 ans pour avoir le passeport rouge. C\'est vrai ? Je fais comment ?',
+    canton: 'GE',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LN 9', 'LN 10', 'LEI 34'],
+    notes: 'Naturalisation ordinaire — "passeport rouge" plutôt que "naturalisation". Durée de séjour + conditions.',
+  },
+
+  // SUCCESSIONS — réserve héréditaire lésée par testament
+  {
+    id: 'adv_successions_01',
+    query: 'Mon père est décédé il y a deux semaines. Il avait fait un testament notarié qui laisse 80% de ses biens à une fondation religieuse et ne nous laisse que 20% à nous trois enfants. Il pouvait vraiment faire ça ?',
+    canton: 'TI',
+    expected_domaine: 'successions',
+    expected_any_article: ['CC 471', 'CC 522'],
+    notes: 'Réserve héréditaire lésée par testament — sans "réserve" ni "quotité disponible". Complément à adv_famille_04 (ab intestat).',
+  },
+
+  // VOISINAGE — arbres empiétants (racines + branches)
+  {
+    id: 'adv_voisinage_01',
+    query: 'Les racines du grand noyer de chez mon voisin soulèvent ma terrasse et ses branches plongent au-dessus de ma voiture. J\'en ai parlé plusieurs fois, il dit que l\'arbre est là depuis 40 ans et qu\'il ne touchera pas à un seul tronc.',
+    canton: 'BE',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 684', 'CC 685', 'CC 687'],
+    notes: 'Empiètement végétal — "noyer", "racines", "branches" sans les termes juridiques. Droit de couper CC 687.',
+  },
+
+  // CONSOMMATION — garantie légale 2 ans vs 1 an commercial
+  {
+    id: 'adv_consommation_01',
+    query: 'J\'ai acheté un lave-vaisselle 1100 francs dans une grande surface il y a 14 mois. La pompe a lâché. Le service après-vente dit que la garantie d\'un an est expirée et qu\'ils ne feront rien. Y\'a-t-il un autre recours ?',
+    canton: null,
+    expected_domaine: 'consommation',
+    expected_any_article: ['CO 197', 'CO 210'],
+    notes: 'Garantie légale vice caché 2 ans CO 210 vs 1 an commercial — vocabulaire profane. Fréquent et mal connu.',
+  },
+
+  // FAMILLE — recherche en paternité / reconnaissance forcée
+  {
+    id: 'adv_famille_05',
+    query: 'Je suis enceinte de 6 mois. Le père biologique nie tout et refuse de signer quoi que ce soit. Je veux que l\'enfant soit reconnu officiellement par son père et que celui-ci participe financièrement. C\'est possible de l\'obliger ?',
+    canton: 'VD',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 261', 'CC 260', 'CC 276'],
+    notes: 'Action en constatation de paternité + obligation alimentaire — sans "filiation" ni "action en paternité".',
+  },
+
+  // CIRCULATION — retrait de permis après infraction routière
+  {
+    id: 'adv_circulation_01',
+    query: 'Hier soir j\'ai grillé un feu rouge, la police m\'a arrêté et m\'a dit que j\'allais probablement recevoir une convocation de l\'office des automobiles pour discuter de mon permis. J\'ai déjà un avertissement de l\'an dernier. C\'est quoi la suite ?',
+    canton: 'ZH',
+    expected_domaine: 'circulation',
+    expected_any_article: ['LCR 16', 'LCR 16b', 'LCR 16c'],
+    notes: 'Retrait de permis administratif après récidive — sans "retrait administratif". Récidive aggrave la sanction.',
+  },
+
+  // DETTES — surendettement total / concordat
+  {
+    id: 'adv_dettes_07',
+    query: 'Je dois 54\'000 francs en tout entre deux cartes de crédit, un crédit conso et des impôts impayés. Je gagne 3200 nets. Je commence à plus répondre au téléphone. Y\'a-t-il une procédure légale pour reprendre le contrôle et éventuellement repartir à zéro ?',
+    canton: null,
+    expected_domaine: 'dettes',
+    expected_any_article: ['LP 293', 'LP 38', 'LP 67'],
+    notes: 'Sursis concordataire / désendettement — "repartir à zéro" au lieu de "concordat". Cumul de créanciers.',
+  },
+
+  // HYBRIDE — bailleur qui veut vider l\'immeuble pour travaux (piège : "vider" ≠ expulsion)
+  {
+    id: 'adv_hybride_03',
+    query: 'Le propriétaire veut rénover entièrement l\'immeuble et nous demande de vider nos appartements pendant 4 mois. Il propose 800 francs de dédommagement. Je suis parent seul avec deux enfants — me retrouver à l\'hôtel 4 mois avec 800 francs c\'est intenable. Il peut vraiment exiger ça ?',
+    canton: 'GE',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 260', 'CO 259d', 'CO 272'],
+    notes: 'Travaux extensifs bailleur + évacuation temporaire — "vider" pourrait confondre avec expulsion. Droit réduction loyer CO 259d, tolérance travaux CO 260.',
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

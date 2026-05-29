@@ -275,6 +275,8 @@ function renderGuideHtml(model) {
 </html>`;
 }
 
+export const _internals = { escapeHtml, truncate, extractDelais, extractArticles };
+
 export async function renderGuideForLocale(slug, locale = 'fr') {
   const intent = loadIntents().find((entry) => entry.id === slug);
   if (!intent) return null;

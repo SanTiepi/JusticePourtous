@@ -105,6 +105,19 @@ Points à surveiller :
   3. Ajouter ~10 nouveaux cas (30 → 40) pour atteindre la cible 40 du sprint.
   4. Re-mesurer ; viser ≥ 95%.
 
+### 2026-05-29 UTC — run autonome (agent horaire)
+- **Tenté** : +10 cas adversariaux (wave 3), 30 → 40. Objectif sprint atteint.
+- **Résultat** : passed
+- **Commits** : `ddc6aff`
+- **Métriques** :
+  - CI subset : 1587/1587 ✓ (note : `docx` manquait dans node_modules → `npm install` lancé en amont, puis 1587/1587)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Adversarial CLI : non re-mesuré ce run (nécessite `claude -p` actif)
+- **Nouveaux cas** : adv_bail_09 (indexation IPC), adv_travail_08 (non-concurrence), adv_etrangers_04 (naturalisation), adv_successions_01 (réserve héréditaire), adv_voisinage_01 (arbres empiétants), adv_consommation_01 (garantie légale 2 ans), adv_famille_05 (paternité contestée), adv_circulation_01 (retrait permis), adv_dettes_07 (concordat/surendettement), adv_hybride_03 (travaux bailleur + évacuation)
+- **Domaines couverts pour la 1ère fois** : successions, voisinage, consommation, circulation
+- **Prochaine action** : re-mesurer avec `node scripts/adversarial-eval-cli.mjs` (nécessite CLI claude actif) pour voir le score réel sur 40 cas. Si ≥ 95% LLM-first → **sprint goal atteint**. Si fails nouveaux → documenter dans `docs/missing-fiches.md`.
+
 ### 2026-05-28 ~21:30 UTC — reprise manuelle (Robin + Claude), routine morte
 - **Constat** : la routine `trig_01Mw2ic9bMScNXbSa8Wq11TY` renvoie **HTTP 404** (n'existe plus). Un seul run cron a fire (#1 à 02:08 UTC), puis la routine a disparu — ~19h de silence. Le sprint autonome ne reprendra pas tout seul.
 - **Décision** : NE PAS ressusciter de routine autonome (historique flaky : 404, signing cassé, GitHub App non installable). Finir les quick-wins à plus haute valeur en manuel.

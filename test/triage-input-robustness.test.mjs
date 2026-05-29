@@ -71,4 +71,14 @@ describe('Triage input robustness — gestion gracieuse des entrées limites', (
   it('texte non français (anglais) → réponse structurée, pas de crash', async () => {
     await assertGraceful('texte anglais', 'my landlord refuses to fix the mold', 'VD');
   });
+
+  // Régression 2026-05-29 : un `canton` non-string venu d'un body API malformé
+  // ({canton:[]}, number, objet) faisait crasher filterContacts → canton.toUpperCase
+  // = 500 en prod. Le triage assainit désormais canton à l'entrée (→ null).
+  for (const canton of [[], 42, { x: 1 }, '']) {
+    it(`canton non-string (${JSON.stringify(canton)}) → gracieux, pas de 500`, async () => {
+      const res = await assertGraceful(`canton ${JSON.stringify(canton)}`, 'moisissure à Lausanne depuis 3 mois', canton);
+      assert.notEqual(Number(res.status), 500, 'ne doit jamais être un 500');
+    });
+  }
 });

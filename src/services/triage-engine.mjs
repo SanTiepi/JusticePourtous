@@ -57,6 +57,11 @@ export async function triage(texte, canton, sessionId, reponses) {
     return { status: 400, error: 'Décrivez votre problème en quelques mots' };
   }
 
+  // Assainit `canton` dès l'entrée : un body API malformé ({canton:[]}, number,
+  // objet…) ne doit pas crasher les `canton.toUpperCase()` downstream (= 500).
+  // Non-string ou vide → null (= "pas de canton précisé").
+  canton = (typeof canton === 'string' && canton.trim()) ? canton.trim() : null;
+
   // Resume existing session if refining (sessionId = case_id in the new store)
   if (sessionId && reponses) {
     return await refineTriage(sessionId, reponses);

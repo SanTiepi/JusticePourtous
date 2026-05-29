@@ -14,6 +14,7 @@
  * @returns {Array<{domaine, priority_score, reasons}>}
  */
 export function recommendDomainOrder(enrichedAll = []) {
+  if (!Array.isArray(enrichedAll)) return [];
   const byDomain = new Map();
 
   for (const e of enrichedAll) {

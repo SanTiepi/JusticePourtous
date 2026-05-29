@@ -176,3 +176,19 @@ Points à surveiller :
   - userContext vide → pas de crash, retourne lettre en mode template
   - lieu déduit du NPA → apparaît dans ligne date (régression `deriveLieu`)
 - **Prochaine action** : item 3 (robustesse edge cases) ou item 4 (i18n/SEO) ; validation humaine reste hors scope autonomous.
+
+### 2026-05-29 UTC — run agent horaire (robustesse pivot-detector + domain-recommender)
+- **Tenté** : item 3 — tests de robustesse + fix bug sur `pivot-detector.mjs` et `domain-recommender.mjs`
+- **Résultat** : passed ✓
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **1757/1757 ✓** (`npm install` en amont, docx absent)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **32 tests** dans `test/pivot-detector-domain-recommender.test.mjs`
+- **Ce qui a été fait** :
+  - **Bug fix** `src/services/domain-recommender.mjs` : `recommendDomainOrder(null)` crashait avec "enrichedAll is not iterable" (paramètre par défaut `= []` ne s'applique pas à `null`, seulement à `undefined`). Garde `if (!Array.isArray(enrichedAll)) return []` ajoutée. Fonction appelée dans `triage-enrichment.mjs`.
+  - **Tests** `test/pivot-detector-domain-recommender.test.mjs` : 7 suites / 32 tests pures (zéro LLM, zéro réseau) :
+    - `detectPivot` : entrées dégénérées (null, undefined, vide), domain change, même domaine fiche différente, situation shift vs stable, contradictions centrales severity ≥ 3
+    - `recommendDomainOrder` : null/undefined/tableau vide, entrées nulles dans le tableau, scoring délais (critique/court/30j/immédiat/48h), bonus cascade, pénalité confiance incertaine, bonus financier bail/dettes/travail, tri multi-domaines, regroupement même domaine
+- **Prochaine action** : item 4 (i18n/SEO completeness) ou autres edge cases non couverts

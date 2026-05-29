@@ -97,9 +97,15 @@ describe('Triage adversarial', () => {
     const sorted = [...durations].sort((a, b) => a - b);
     const p95 = sorted[Math.floor(sorted.length * 0.95)];
 
+    // Seuil tolérant à la charge : c'est un garde-fou anti-régression GROSSIÈRE
+    // (la recherche est en mémoire, normalement sub-ms à quelques ms). Le seuil
+    // serré d'origine (12ms) flakait quand ce test tourne dans le subset CI
+    // complet en parallèle (contention CPU/GC → p95 ~12-15ms alors que le code
+    // est correct, cf. flake i18n 2026-05-29). 50ms garde ~3-4x de marge sous
+    // charge tout en détectant une vraie régression (ex. passage en O(n²) → 100ms+).
     assert.ok(
-      p95 < 12,
-      `P95 too high (${p95.toFixed(2)}ms), expected < 12ms over ${durations.length} searches`
+      p95 < 50,
+      `P95 too high (${p95.toFixed(2)}ms), expected < 50ms over ${durations.length} searches`
     );
   });
 });

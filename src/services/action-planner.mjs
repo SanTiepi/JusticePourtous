@@ -17,8 +17,11 @@
 export function generateActionPlan(enriched, canton) {
   if (!enriched?.fiche) return null;
 
-  const { fiche, articles, jurisprudence, templates, delais, antiErreurs,
-          patterns, preuves, escalade, cascades, confiance, lacunes } = enriched;
+  // Défauts = [] : une fiche enrichie partielle (sans ces tableaux) ne doit pas
+  // crasher (ex. patterns[0], jurisprudence.slice → TypeError = 500 côté HTTP).
+  const { fiche, articles = [], jurisprudence = [], templates = [], delais = [],
+          antiErreurs = [], patterns = [], preuves = [], escalade = [],
+          cascades = [], confiance, lacunes = [] } = enriched;
 
   // Find the most relevant pattern for this situation
   const pattern = patterns[0]; // First match by domain
@@ -205,9 +208,10 @@ function buildDocumentList(preuves, domaine) {
 function buildContacts(escalade, canton) {
   let contacts = escalade;
 
-  // Filter by canton if specified
+  // Filter by canton if specified (String() : canton non-string venu d'un body
+  // API malformé ne doit pas crasher — sinon TypeError = 500).
   if (canton) {
-    const c = canton.toUpperCase();
+    const c = String(canton).toUpperCase();
     contacts = contacts.filter(e =>
       e.cantons?.includes(c) || !e.cantons?.length
     );

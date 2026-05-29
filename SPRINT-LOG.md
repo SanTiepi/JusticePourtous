@@ -207,3 +207,18 @@ Points à surveiller :
   - `analyzeScope` (17 cas) : entrées dégénérées (null/vide/texte banal), 5 patterns hors-scope (succession/testament/héritage/brevet/fiscal), 6 patterns human_tier (TF/meurtre/"violation" non-déclenchant/constitutionnalité/mixte tf+succession), primaryDomain allowlist + ALLOWED_DOMAINS size invariant
   - `classifySafety` (19 cas) : entrées invalides (null/undefined/nombre/vide), détresse×2, violence×2, menace×1, mineur×3 (dont âge 15 → mineur, âge 25 → pas de signal via `extraCheck`), illegal_intent×1, priorité détresse>violence, log_entry (langue/round_number/timestamp arrondi à l'heure)
 - **Prochaine action** : item 4 (i18n/SEO) bloqué sans LLM (les guides multilingues sont générés par traduction LLM). Prochain incrément utile : autres modules sans tests directs (e.g. `urgency-marker` couvert, restent `payload-shaper`, `language-router`, `complexity-router`) ou item 5 (documenter nouveaux gaps docs/missing-fiches.md si l'éval adversariale révèle de nouveaux fails).
+
+### 2026-05-29 UTC — run agent horaire (robustesse atomic-write)
+- **Tenté** : item 3 — tests directs pour `atomic-write.mjs` (module de persistance critique, aucune couverture directe précédemment)
+- **Résultat** : passed ✓
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **1821/1821 ✓**
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **11 tests** dans `test/atomic-write.test.mjs`
+- **Ce qui a été fait** : `test/atomic-write.test.mjs` — 2 suites / 11 tests zéro-LLM sur le module de persistance :
+  - `atomicWriteSync` (4 cas) : création fichier avec bon contenu, absence .tmp résiduel, écrasement fichier existant, string vide
+  - `safeLoadJSON` (7 cas) : fichier absent → null, JSON valide → objet parsé, JSON invalide → null + .corrupted backup, contenu binaire → null + .corrupted, fichier vide → null, valeur JSON null → null (comportement documenté), invariant round-trip atomicWriteSync → safeLoadJSON
+- **Rationale** : `atomic-write.mjs` est utilisé par `case-store.mjs` pour toute persistance des dossiers citoyens. Un bug ici = perte de données en prod. Aucun test direct n'existait avant ce run.
+- **Prochaine action** : item 4 (i18n/SEO) bloqué sans LLM. Alternatives : tests `triage-input-robustness` déjà ajoutés par un autre run ; envisager tests edge cases `escalation-pack.mjs` (pieced-together redirections) ou `investigation-checklist.mjs` (CPP 302+ checks).

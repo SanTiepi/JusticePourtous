@@ -318,3 +318,27 @@ Points à surveiller :
 - **Live** : `/api/health/deep` 13/13 ✓ · triage moisissure→`bail_defaut_moisissure` ✓ · lettre **docx 9.7.1** 200 + content-type wordprocessing 11.8 Kb ✓.
 - **Hotfix / rollback** : aucun.
 - **Note** : la routine cloud a bumpé une dépendance (`docx`) — déployé après pré-validation + vérif live. À surveiller : laisser un agent autonome bumper des deps mérite un œil (ici minor, sans régression).
+
+### 2026-05-29 UTC — run agent horaire (donnees-juridiques direct)
+- **Tenté** : item 3 — tests directs pour `donnees-juridiques.mjs` (20 fonctions de chargement/recherche, testées uniquement via HTTP jusqu'ici)
+- **Résultat** : passed ✓
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2030/2030 ✓** (npm install en amont pour docx)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **41 tests** dans `test/donnees-juridiques-direct.test.mjs`
+- **Ce qui a été fait** : `test/donnees-juridiques-direct.test.mjs` — 24 suites / 41 tests zéro-LLM zéro-réseau sur les exports directs du module :
+  - `getAllArticles`/`searchArticles` (5 cas) : status 200, total==longueur, terme vide→tout, terme connu→sous-ensemble, nonsense→0
+  - `getAllArrets`/`searchArrets` (4 cas) : invariants identiques
+  - `getRecevabilite`/`getRecevabiliteByProcedure` (3 cas) : bail→200, fake→404
+  - `getDelais`/`getDelaisByDomaine` (4 cas) : bail→≥1 résultat, insensibilité casse, domaine inconnu→0
+  - `getAntiErreurs`/`getAntiErreursByDomaine` (3 cas) : sous-ensemble + inconnu→vide
+  - `getPatterns`/`getCasPratiques`/`getEscalade` et variantes By domaine (7 cas)
+  - `getAnnuaireComplet`/`getAnnuaireByCanton` (3 cas) : VD→non vide, normalisation majuscules
+  - `getCantons`/`getCantonByCode` (5 cas) : exactement 26 cantons, VD→200, vd→200 (normalisation), ZZ→404
+  - `getTemplates`/`getTemplateById` (3 cas) : premier ID existant→200, fake→404
+  - `getCouverture` (2 cas) : status 200, data objet non null
+  - `getNiveauxConfiance` (1 cas) : 200 ou 404 selon présence fichier
+- **Rationale** : `donnees-juridiques.mjs` expose 20 fonctions de recherche/chargement utilisées dans tous les endpoints `/api/donnees/*`. Aucun test direct n'existait — la couverture était via HTTP uniquement (plus lent, moins précis, ne teste pas les 404 et l'insensibilité à la casse). Les invariants total==longueur et le comportement des lookups par ID/code sont désormais régression-lockés.
+- **Prochaine action** : item 4 (i18n/SEO) bloqué sans LLM. Restent sans tests directs : `document-ingester.mjs` (LLM+FS, complexe) et `docx-generator.mjs` (couvert indirectement). Sprint goal atteint — valeur restante = validation humaine avocat + recrutement testeurs réels (hors scope autonomous).

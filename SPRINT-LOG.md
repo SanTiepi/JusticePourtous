@@ -222,3 +222,22 @@ Points à surveiller :
   - `safeLoadJSON` (7 cas) : fichier absent → null, JSON valide → objet parsé, JSON invalide → null + .corrupted backup, contenu binaire → null + .corrupted, fichier vide → null, valeur JSON null → null (comportement documenté), invariant round-trip atomicWriteSync → safeLoadJSON
 - **Rationale** : `atomic-write.mjs` est utilisé par `case-store.mjs` pour toute persistance des dossiers citoyens. Un bug ici = perte de données en prod. Aucun test direct n'existait avant ce run.
 - **Prochaine action** : item 4 (i18n/SEO) bloqué sans LLM. Alternatives : tests `triage-input-robustness` déjà ajoutés par un autre run ; envisager tests edge cases `escalation-pack.mjs` (pieced-together redirections) ou `investigation-checklist.mjs` (CPP 302+ checks).
+
+### 2026-05-29 UTC — run agent horaire (sécurité guide-renderer)
+- **Tenté** : item 3 — tests unitaires + intégration pour `guide-renderer.mjs` (0 couverture existante)
+- **Résultat** : passed ✓
+- **Commits** : `5755ee6`
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **1860/1860 ✓**
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **39 tests** dans `test/guide-renderer.test.mjs`
+- **Ce qui a été fait** :
+  - Export `_internals` (1 ligne) dans `src/services/guide-renderer.mjs` pour exposer les fonctions pures aux tests
+  - `escapeHtml` (11 cas) : null/undefined, `<script>`, `&`, guillemets simples/doubles, coercion nombre, attribut HTML dangereux — vérifie prévention XSS sur les pages SEO publiques
+  - `truncate` (8 cas) : bornes exactes, découpe au dernier mot, chaîne sans espace, normalisation espaces multiples
+  - `extractDelais` (6 cas) : null, cascades sans délai, cap 6, multi-cascades
+  - `extractArticles` (6 cas) : null, cap 8, lien facultatif, champs vides sans crash
+  - `renderGuideForLocale` intégration (8 cas) : slug invalide → null, fr → html valide, DOCTYPE/lang/charset, lien canonique HTTPS, h1, meta description, 0 balise `<script>` dans l'output
+- **Rationale** : `guide-renderer.mjs` génère les 253 pages SEO guides en prod (4 langues). La fonction `escapeHtml` est critique pour la sécurité mais n'avait aucun test. Un bug d'échappement = XSS possible sur un site juridique citoyen. Aucun test direct n'existait avant ce run.
+- **Prochaine action** : item 4 (i18n/SEO completeness) bloqué sans LLM. Alternatives restantes : `analytics.mjs`, `auth.mjs` (codes magiques), ou docs item 5 (gaps fiches manquantes supplémentaires).

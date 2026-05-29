@@ -267,3 +267,5 @@ export async function generateLetter({ ficheId, userContext, type }) {
 }
 
 export { VALID_TYPES, DISCLAIMER };
+// Test-only : helpers de format exposés pour verrouiller les fixes 2026-05-29.
+export { stripTrailingSalutation as _stripTrailingSalutation, deriveLieu as _deriveLieu };

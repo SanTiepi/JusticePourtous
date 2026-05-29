@@ -310,3 +310,11 @@ Points à surveiller :
 - **Live** : `/api/health/deep` 13/13 ✓ · triage moisissure→`bail_defaut_moisissure` ✓ · génération+download lettre 200 docx ✓.
 - **Hotfix / rollback** : aucun.
 - **État** : prod réalignée sur master. Division cloud(dev)/local(ship) fonctionne.
+
+### 2026-05-29 ~11:1x UTC — loop LOCAL (ship + verify)
+- **Pull** : nouveau commit cloud `41de095` (test round-orchestrator +23) **+ bump dépendance `docx` 9.6.1→9.7.1** (package.json/lock).
+- **Pré-validation bump** : `npm install` local (aligne docx 9.7.1) + `test/letter-pdf-contract` (génère un docx réel) → vert. Le bump ne casse pas la génération de lettre.
+- **Deploy** : OUI (nouveaux commits) — `deploy.sh` gate testé avec docx 9.7.1, verts.
+- **Live** : `/api/health/deep` 13/13 ✓ · triage moisissure→`bail_defaut_moisissure` ✓ · lettre **docx 9.7.1** 200 + content-type wordprocessing 11.8 Kb ✓.
+- **Hotfix / rollback** : aucun.
+- **Note** : la routine cloud a bumpé une dépendance (`docx`) — déployé après pré-validation + vérif live. À surveiller : laisser un agent autonome bumper des deps mérite un œil (ici minor, sans régression).

@@ -415,3 +415,27 @@ Points à surveiller :
   - `runInvariants agrégats` (4 cas) : 2/3 pass, tous passants, lookup intent_id fallback, exception gracieuse
 - **Rationale** : `regression-invariants-runner.mjs` est le module qui vérifie les 282 invariants de régression juridique (hash-lock délais/articles sur 30 fiches gold). La couverture `phase-cortex-regression-juridique.test.mjs` ne testait que le chemin passant sur les vraies fiches. Les cas d'échec (article manquant, délai introuvable, confiance trop basse) et les null guards n'étaient pas couverts.
 - **Prochaine action** : modules restants sans tests directs = `document-ingester.mjs` (LLM+FS, skip) et `docx-generator.mjs` (couvert indirectement). Sprint goal atteint — valeur restante = validation humaine avocat (hors scope autonomous).
+
+### 2026-05-29 UTC — run agent horaire (contradiction-detector direct)
+- **Tenté** : item 3 — tests directs pour `contradiction-detector.mjs` (4 fonctions pures, couvert uniquement par happy paths dans `dossier-analyzer.test.mjs`)
+- **Résultat** : passed ✓
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2188/2188 ✓** (+28 tests)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **28 tests** dans `test/contradiction-detector.test.mjs`
+- **Ce qui a été fait** : `test/contradiction-detector.test.mjs` — 11 suites / 28 tests zéro-LLM zéro-réseau sur les 4 fonctions du module :
+  - `buildTimeline — entrées dégénérées` (4 cas) : tableau vide, doc sans llm_extraction, faits null, faits vide
+  - `buildTimeline — champs extraits` (2 cas) : source_doc/doc_id/acteur/action/lieu, acteur absent → "inconnu"
+  - `buildTimeline — tri` (3 cas) : tri DD.MM.YYYY, tri YYYY-MM-DD, tri par heure même date
+  - `buildActorGraph — entrées dégénérées` (3 cas) : tableau vide → {}, doc sans llm_extraction, llm_extraction sans expediteur
+  - `buildActorGraph — tracking acteurs` (4 cas) : expediteur + docs_count, destinataire, claim pour acteur connu, claim acteur inconnu → ignoré sans crash
+  - `detectGaps — entrées dégénérées` (2 cas) : vide → N/A, doc sans llm_extraction
+  - `detectGaps — calculs` (3 cas) : acceptance_rate 100%, 0%, tableau {mesure, source}
+  - `detectContradictions — entrées dégénérées` (2 cas) : tout vide, doc sans llm_extraction
+  - `detectContradictions — intra_document` (1 cas) : type/severity/source
+  - `detectContradictions — temporelle` (2 cas) : même action heures différentes → severity haute, même heure → pas de contradiction
+  - `detectContradictions — questions` (2 cas) : déduplication 50 chars, conservation sans dédup intra-doc
+- **Rationale** : la couverture existante dans `dossier-analyzer.test.mjs` ne testait que 8 assertions happy-path avec des mockDocs complexes. Les entrées dégénérées (tableau vide, docs sans llm_extraction), les guards optionnels et les branches de logique (tri dates, temporal contradiction detection, acceptance_rate calcul) n'étaient pas couverts.
+- **Prochaine action** : sprint goal atteint — valeur restante = validation humaine avocat (hors scope autonomous). Modules sans couverture directe restants : `document-ingester.mjs` (LLM+FS) + `docx-generator.mjs` (couvert indirectement).

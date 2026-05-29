@@ -61,6 +61,35 @@ export function _flushUsers() {
   } catch {}
 }
 
+/** Test-only: inject a known pending code so verifyCode can be tested without email. */
+export function _testOnlySetPendingCode(email, code, { expiresAt, attempts } = {}) {
+  const normalized = email.toLowerCase().trim();
+  pendingCodes.set(normalized, {
+    code: String(code),
+    expiresAt: expiresAt ?? (Date.now() + CODE_EXPIRY_MS),
+    attempts: attempts ?? 0,
+    sentAt: Date.now() - CODE_COOLDOWN_MS - 1,
+  });
+}
+
+/** Test-only: inject an auth token entry so resolveAuthToken can be tested. */
+export function _testOnlySetAuthToken(token, { email, activeSession, expiresAt } = {}) {
+  authTokens.set(token, {
+    email,
+    activeSession: activeSession ?? null,
+    createdAt: Date.now(),
+    expiresAt: expiresAt ?? (Date.now() + AUTH_TOKEN_EXPIRY_MS),
+  });
+}
+
+/** Test-only: reset all in-memory state without persisting. */
+export function _testOnlyReset() {
+  if (saveTimer) { clearTimeout(saveTimer); saveTimer = null; }
+  pendingCodes.clear();
+  authTokens.clear();
+  users.clear();
+}
+
 loadUsers();
 
 // ─── Email sending ──────────────────────────────────────────────

@@ -1187,9 +1187,23 @@ const server = createServer(async (req, res) => {
           return json(res, 400, { error: 'ficheId requis', disclaimer: DISCLAIMER });
         }
         try {
+          // Grounder la lettre dans les FAITS du cas (texte initial + résumé +
+          // infos extraites au triage). Sinon le LLM, ne recevant que nom/adresse
+          // du formulaire, remplit de placeholders et peut dériver vers un cadre
+          // juridique faux (observé : "plainte" → cadre bail générique).
+          const caseState = caseRec.state || {};
+          const nav = caseState.navigation || {};
+          const letterContext = {
+            situation: caseState.texte_initial || undefined,
+            resume: nav.resume_situation || undefined,
+            faits_extraits: nav.infos_extraites || undefined,
+            canton: caseState.canton || undefined,
+            description: nav.resume_situation || caseState.texte_initial || undefined, // pour le fill template
+            ...(body.userContext || {}) // les champs du formulaire (nom/adresse/destinataire) priment
+          };
           const result = await generateLetterPDF({
             ficheId: body.ficheId,
-            userContext: body.userContext || caseRec.state || {},
+            userContext: letterContext,
             type: body.type,
             lang: body.lang || 'fr',
             format: body.format || 'auto'

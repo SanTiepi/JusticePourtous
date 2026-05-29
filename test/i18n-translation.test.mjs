@@ -7,7 +7,9 @@ import {
   computeStringTranslationCacheKey,
   shouldRunQa,
   translateStructuredContent,
-  translateTextContent
+  translateTextContent,
+  _getPeakTranslationConcurrency,
+  _resetPeakTranslationConcurrency
 } from '../src/services/i18n/translation-orchestrator.mjs';
 
 process.env.JB_TRANSLATION_FAKE = '1';
@@ -142,7 +144,12 @@ describe('translation orchestrator', () => {
         }
       };
 
-      const started = Date.now();
+      // Assertion STRUCTURELLE (pas wall-clock) : on mesure le pic de concurrence
+      // réellement atteint. 4 blocs avec concurrence max 2 → pic = 2 de façon
+      // déterministe (les 2 premiers démarrent, les 2 autres sont mis en queue),
+      // quel que soit le timing/charge machine. L'ancienne assertion sur
+      // `elapsed < 1800ms` flakait sous charge (faux échec ~1987ms).
+      _resetPeakTranslationConcurrency();
       await translateStructuredContent(payload, {
         targetLang: 'de',
         sourceLang: 'fr',
@@ -150,20 +157,11 @@ describe('translation orchestrator', () => {
         domain: 'bail',
         sourceLastVerified: suffix
       });
-      const elapsed = Date.now() - started;
-      // Concurrency=2 with 4×80ms tasks ≈ 160ms théorique. Seuil 600ms (Linux/CI)
-      // était trop serré sur Windows local sous charge (observé 1100ms+ alors
-      // que le code est correct). Seuil élargi à 1800ms = 4.5× séquentiel pur
-      // (320ms) — prouve toujours qu'on n'est pas en pire-cas (qui serait
-      // 4 × 80ms × N appels avec N grand).
-      const SEQUENTIAL_PURE = 4 * 80; // 320ms si tout séquentiel
-      assert.ok(elapsed < 1800,
-        `expected bounded parallelism, got ${elapsed}ms (seuil 1800ms tolère charge Windows)`);
-      // Warning si > 600ms (était l'ancien seuil) — pour traquer la régression
-      // de perf sans casser CI Linux.
-      if (elapsed > 600) {
-        console.warn(`[perf] translateStructuredContent parallélisme : ${elapsed}ms (idéal < 600ms — Windows ?)`);
-      }
+      const peak = _getPeakTranslationConcurrency();
+      // peak ≥ 2 prouve le parallélisme (un parcours séquentiel donnerait peak = 1).
+      assert.ok(peak >= 2, `attendu parallélisme (pic ≥ 2), got ${peak} → parcours séquentiel ?`);
+      // peak ≤ 2 prouve que la concurrence est bien bornée à JB_TRANSLATION_MAX_CONCURRENCY.
+      assert.ok(peak <= 2, `attendu concurrence bornée à 2, pic observé = ${peak}`);
     } finally {
       if (previousDelay === undefined) delete process.env.JB_TRANSLATION_FAKE_DELAY_MS;
       else process.env.JB_TRANSLATION_FAKE_DELAY_MS = previousDelay;

@@ -16,6 +16,23 @@ const QA_PRIORITY_KEY_PATTERN = /(?:explication|resume|citizen_summary|reponse_c
 const inFlightStringTranslations = new Map();
 const translationQueue = [];
 let activeTranslationTasks = 0;
+// Pic de concurrence observé — permet de tester le parallélisme borné de façon
+// déterministe (sans assertion wall-clock, source de flakiness sous charge).
+let peakActiveTranslationTasks = 0;
+
+function incActiveTranslation() {
+  activeTranslationTasks += 1;
+  if (activeTranslationTasks > peakActiveTranslationTasks) peakActiveTranslationTasks = activeTranslationTasks;
+}
+
+/** Test-only : pic de concurrence de traduction observé depuis le dernier reset. */
+export function _getPeakTranslationConcurrency() {
+  return peakActiveTranslationTasks;
+}
+/** Test-only : remet le compteur de pic à zéro. */
+export function _resetPeakTranslationConcurrency() {
+  peakActiveTranslationTasks = 0;
+}
 
 const DURATION_LABELS = {
   de: {
@@ -344,7 +361,7 @@ function getMaxTranslationConcurrency() {
 
 async function runWithTranslationLimit(task) {
   if (activeTranslationTasks < getMaxTranslationConcurrency()) {
-    activeTranslationTasks += 1;
+    incActiveTranslation();
     try {
       return await task();
     } finally {
@@ -361,7 +378,7 @@ async function runWithTranslationLimit(task) {
 function flushTranslationQueue() {
   while (translationQueue.length && activeTranslationTasks < getMaxTranslationConcurrency()) {
     const next = translationQueue.shift();
-    activeTranslationTasks += 1;
+    incActiveTranslation();
     Promise.resolve()
       .then(() => next.task())
       .then((value) => next.resolve(value), (err) => next.reject(err))

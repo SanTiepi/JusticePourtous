@@ -78,3 +78,16 @@ export function getStats() {
 
 // Flush on process exit (best effort)
 process.on('beforeExit', flushToFile);
+
+// Test-only: remet les compteurs à zéro sans toucher au fichier de persistance.
+// Jamais appelé en prod.
+export function _resetForTests() {
+  stats = {
+    pageViews: {},
+    searchCount: 0,
+    premiumAnalysisCount: 0,
+    languages: {},
+    lastFlush: null,
+    startedAt: new Date().toISOString()
+  };
+}

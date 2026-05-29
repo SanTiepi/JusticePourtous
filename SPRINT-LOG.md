@@ -242,6 +242,25 @@ Points à surveiller :
 - **Rationale** : `guide-renderer.mjs` génère les 253 pages SEO guides en prod (4 langues). La fonction `escapeHtml` est critique pour la sécurité mais n'avait aucun test. Un bug d'échappement = XSS possible sur un site juridique citoyen. Aucun test direct n'existait avant ce run.
 - **Prochaine action** : item 4 (i18n/SEO completeness) bloqué sans LLM. Alternatives restantes : `analytics.mjs`, ou docs item 5 (gaps fiches manquantes supplémentaires).
 
+### 2026-05-29 UTC — run agent horaire (robustesse round-orchestrator)
+- **Tenté** : item 3 — tests unitaires pour `round-orchestrator.mjs` (0 couverture directe existante, module multi-round critique)
+- **Résultat** : passed ✓
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` (post `npm install docx`) : **1989/1989 ✓**
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **23 tests** dans `test/round-orchestrator.test.mjs`
+- **Ce qui a été fait** : `test/round-orchestrator.test.mjs` — 6 suites / 23 tests purs (zéro LLM, zéro réseau) sur le module d'orchestration multi-round :
+  - `tier_humain (freeze #14)` (4 cas) : recours_tf, penal_grave, prime sur MAX_ROUNDS, retourne eval+progress
+  - `cap dur rounds (freeze #13)` (3 cas) : roundsDone=MAX_ROUNDS → ready+max_rounds_reached, roundsDone=MAX_ROUNDS-1 → continue, progress.rounds_done correct
+  - `contradictions inter-round (freeze #15)` (5 cas) : montant différent → ask_contradiction, canton severity 3 bloquant, nombre_enfants severity 1 non-bloquant, previousFacts null → pas de check, should_stop=false
+  - `stabilisation (freeze #18)` (3 cas) : Δ=0 à roundsDone=1 → score_stabilized, pas de déclenchement à round 0, sans previousEval impossible
+  - `ask_questions cap 3 + tri impact (freeze #13)` (5 cas) : 5 questions → top 3 triées desc, marginalQuestions vide → ready, should_stop=false, progress.next_questions_count, raison round N
+  - `robustesse entrées dégénérées` (3 cas) : decideNext() sans args, currentContext undefined, marginalQuestions undefined
+- **Rationale** : `round-orchestrator.mjs` implémente les règles freeze #13-#14-#15-#18 qui gouvernent toute la boucle de triage (combien de rounds, quand s'arrêter, contradictions, stabilisation). Aucun test direct n'existait. Les tests couvrent chaque branche de décision, chaque condition de stop, et les null guards.
+- **Prochaine action** : item 4 (i18n/SEO bloqué sans LLM). Alternatives restantes : `analytics.mjs`, `escalation-pack.mjs`, `investigation-checklist.mjs`, ou item 5 (gaps fiches).
+
 ### 2026-05-29 UTC — run agent horaire (sécurité auth.mjs)
 - **Tenté** : item 3 — tests unitaires `auth.mjs` (0 couverture directe précédemment)
 - **Résultat** : passed ✓

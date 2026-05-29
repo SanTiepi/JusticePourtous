@@ -192,3 +192,18 @@ Points à surveiller :
     - `detectPivot` : entrées dégénérées (null, undefined, vide), domain change, même domaine fiche différente, situation shift vs stable, contradictions centrales severity ≥ 3
     - `recommendDomainOrder` : null/undefined/tableau vide, entrées nulles dans le tableau, scoring délais (critique/court/30j/immédiat/48h), bonus cascade, pénalité confiance incertaine, bonus financier bail/dettes/travail, tri multi-domaines, regroupement même domaine
 - **Prochaine action** : item 4 (i18n/SEO completeness) ou autres edge cases non couverts
+
+### 2026-05-29 UTC — run agent horaire (robustesse safety/scope/urgency)
+- **Tenté** : item 3 suite — tests de robustesse pour `safety-classifier.mjs`, `scope-refuser.mjs`, `urgency-marker.mjs`
+- **Résultat** : passed ✓
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **1810/1810 ✓** (docx absent → `npm install` en amont, puis vert)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **53 tests** dans `test/safety-scope-urgency.test.mjs`
+- **Ce qui a été fait** : `test/safety-scope-urgency.test.mjs` — 15 suites / 53 tests zéro-LLM sur 3 modules de filtrage :
+  - `buildUrgencyMarker` (17 cas) : guards null/undefined/vide, bornes exactes 0/1/2/3/4/14/15/30/31/365, singulier/pluriel "jour/jours", libellé procédure dans action_hint, champ `delai_jours`
+  - `analyzeScope` (17 cas) : entrées dégénérées (null/vide/texte banal), 5 patterns hors-scope (succession/testament/héritage/brevet/fiscal), 6 patterns human_tier (TF/meurtre/"violation" non-déclenchant/constitutionnalité/mixte tf+succession), primaryDomain allowlist + ALLOWED_DOMAINS size invariant
+  - `classifySafety` (19 cas) : entrées invalides (null/undefined/nombre/vide), détresse×2, violence×2, menace×1, mineur×3 (dont âge 15 → mineur, âge 25 → pas de signal via `extraCheck`), illegal_intent×1, priorité détresse>violence, log_entry (langue/round_number/timestamp arrondi à l'heure)
+- **Prochaine action** : item 4 (i18n/SEO) bloqué sans LLM (les guides multilingues sont générés par traduction LLM). Prochain incrément utile : autres modules sans tests directs (e.g. `urgency-marker` couvert, restent `payload-shaper`, `language-router`, `complexity-router`) ou item 5 (documenter nouveaux gaps docs/missing-fiches.md si l'éval adversariale révèle de nouveaux fails).

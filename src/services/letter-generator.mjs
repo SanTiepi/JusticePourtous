@@ -73,12 +73,31 @@ function fillPlaceholders(template, userContext) {
   return text;
 }
 
+// L'LLM ajoute parfois une formule de politesse finale malgré la consigne, et
+// buildSwissLetterFormat en ajoute déjà une → on retire celle du corps pour
+// éviter une double salutation sur la lettre (défaut cosmétique sur un livrable juridique).
+function stripTrailingSalutation(corps) {
+  const SALUT = /(salutations|sentiments distingu|veuillez agréer|je vous prie d['’]agréer|veuillez recevoir|je vous prie de croire|dans l['’]attente)/i;
+  const lines = String(corps || '').split('\n');
+  while (lines.length && (lines[lines.length - 1].trim() === '' || SALUT.test(lines[lines.length - 1]))) lines.pop();
+  return lines.join('\n').trim();
+}
+
+// Déduit la localité (ligne « Lieu, le <date> ») depuis une adresse suisse
+// « ... NPA Localité » quand le lieu n'est pas fourni séparément (le formulaire
+// front ne collecte pas le lieu → évite un « [Localité] » non rempli).
+function deriveLieu(adresse) {
+  const m = String(adresse || '').match(/\b\d{4}\s+([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’\- ]+?)\s*$/);
+  return m ? m[1].trim() : null;
+}
+
 function buildSwissLetterFormat({ nom, adresse, lieu, destinataire, objet, corps, type }) {
   const dateStr = formatDate();
   const senderName = nom || '[Votre nom et prénom]';
   const senderAddress = adresse || '[Votre adresse]\n[NPA Localité]';
   const dest = destinataire || '[Nom du destinataire]\n[Adresse du destinataire]\n[NPA Localité]';
-  const locationStr = lieu || '[Localité]';
+  const locationStr = lieu || deriveLieu(adresse) || '[Localité]';
+  const corpsClean = stripTrailingSalutation(corps);
 
   return `${senderName}
 ${senderAddress}
@@ -91,7 +110,7 @@ Envoi en recommandé
 
 Objet : ${objet || TYPE_LABELS[type] || type}
 
-${corps}
+${corpsClean}
 
 Dans l'attente de votre réponse, je vous prie d'agréer, Madame, Monsieur, mes salutations distinguées.
 

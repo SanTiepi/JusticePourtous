@@ -240,4 +240,27 @@ Points à surveiller :
   - `extractArticles` (6 cas) : null, cap 8, lien facultatif, champs vides sans crash
   - `renderGuideForLocale` intégration (8 cas) : slug invalide → null, fr → html valide, DOCTYPE/lang/charset, lien canonique HTTPS, h1, meta description, 0 balise `<script>` dans l'output
 - **Rationale** : `guide-renderer.mjs` génère les 253 pages SEO guides en prod (4 langues). La fonction `escapeHtml` est critique pour la sécurité mais n'avait aucun test. Un bug d'échappement = XSS possible sur un site juridique citoyen. Aucun test direct n'existait avant ce run.
-- **Prochaine action** : item 4 (i18n/SEO completeness) bloqué sans LLM. Alternatives restantes : `analytics.mjs`, `auth.mjs` (codes magiques), ou docs item 5 (gaps fiches manquantes supplémentaires).
+- **Prochaine action** : item 4 (i18n/SEO completeness) bloqué sans LLM. Alternatives restantes : `analytics.mjs`, ou docs item 5 (gaps fiches manquantes supplémentaires).
+
+### 2026-05-29 UTC — run agent horaire (sécurité auth.mjs)
+- **Tenté** : item 3 — tests unitaires `auth.mjs` (0 couverture directe précédemment)
+- **Résultat** : passed ✓
+- **Commits** : `f49234f`
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **1891/1891 ✓** (+31 tests)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **31 tests** dans `test/auth.test.mjs`
+- **Ce qui a été fait** :
+  - 3 exports test-only ajoutés à `src/services/auth.mjs` : `_testOnlySetPendingCode` (injection code sans email), `_testOnlySetAuthToken` (injection token), `_testOnlyReset` (reset état in-memory).
+  - `test/auth.test.mjs` — 9 suites / 31 tests zéro-LLM zéro-réseau :
+    - `sendCode` (5 cas) : null/sans @/vide → 400, dev mode → 200 expiresIn=600, cooldown → 429 waitSec>0
+    - `verifyCode — guards` (4 cas) : paramètres manquants → 400, pas de code → 404
+    - `verifyCode — expiry` (1 cas) : code expiré → 410 + supprimé
+    - `verifyCode — brute force` (3 cas) : 1ère tentative "4 restantes", 5ème "0 restantes", 6ème lockout 429 + code supprimé
+    - `verifyCode — succès` (3 cas) : code correct → 200 + authToken hex64 + email normalisé, code à usage unique, trim autour du code
+    - `resolveAuthToken — guards` (3 cas) : null/vide/inexistant → null
+    - `resolveAuthToken — lifecycle` (3 cas) : token valide → {email,session}, expiré → null+supprimé, round-trip verifyCode→resolveAuthToken
+    - `wallet CRUD` (9 cas) : null guards, link→appears, pas de doublon, reverse lookup
+- **Rationale** : `auth.mjs` est le module d'authentification (codes magiques, tokens 1h, protection brute-force MAX_ATTEMPTS=5). Aucun test direct n'existait — un bug de lockout ou d'expiry serait invisible. Les 3 propriétés critiques de sécurité (brute-force, rate-limit, token expiry) sont désormais régression-lockées.
+- **Prochaine action** : item 4 (i18n/SEO) bloqué sans LLM. Alternatives : `analytics.mjs`, item 5 (gaps docs).

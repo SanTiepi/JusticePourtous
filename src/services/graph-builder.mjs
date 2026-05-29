@@ -469,3 +469,4 @@ if (process.argv[1]?.includes('graph-builder')) {
 }
 
 export { loadAllData };
+export const _internals = { normalizeRef, getCodeName, getCodeRS };

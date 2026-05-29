@@ -311,6 +311,32 @@ Points à surveiller :
 - **Hotfix / rollback** : aucun.
 - **État** : prod réalignée sur master. Division cloud(dev)/local(ship) fonctionne.
 
+### 2026-05-29 UTC — run agent horaire (graph-builder directs)
+- **Tenté** : item 3 — tests directs pour `graph-builder.mjs` (0 couverture directe précédemment)
+- **Résultat** : passed ✓
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2072/2072 ✓** (post `npm install`)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **40 tests** dans `test/graph-builder.test.mjs`
+- **Ce qui a été fait** :
+  - Export `_internals` (1 ligne) dans `src/services/graph-builder.mjs` pour exposer `normalizeRef`, `getCodeName`, `getCodeRS` aux tests
+  - `test/graph-builder.test.mjs` — 11 suites / 40 tests zéro-LLM zéro-réseau :
+    - `normalizeRef` (7 cas) : préfixe "art. ", sans espace, casse insensible, espaces multiples, trim, déjà normalisé, préservation "al."
+    - `getCodeName` (3 cas) : CO, CC, code inconnu → soi-même
+    - `getCodeRS` (3 cas) : CO→220, LP→281.1, inconnu→""
+    - `loadAllData` (4 cas) : clés attendues, fiches≥300, articles≥600, arrets>0
+    - `buildGraph — structure` (2 cas) : clés premier niveau, generatedAt ISO valide
+    - `buildGraph — stats` (4 cas) : totalFiches==314, totalArticles≥600, ficheToFicheLinks>0, cascadePhantoms==0
+    - `buildGraph — articleToFiches` (3 cas) : CO 259a non vide, contient bail_defaut_moisissure, objet non vide
+    - `buildGraph — domaineToFiches` (3 cas) : bail≥10, travail non vide, 5 domaines core présents
+    - `buildGraph — bidirectionnalité` (3 cas) : ficheToArticles CO 256, articleToFiches retour, ficheToFiches links
+    - `buildGraph — tableDesMatieres` (3 cas) : CO existe, nom correct, articles non vides
+    - `buildGraph — orphans` (4 cas) : tableaux, cascadePhantoms==0 (invariant prod), articlesRef array, fichesWithoutArticle array
+- **Rationale** : `graph-builder.mjs` est le module qui construit le graphe bidirectionnel des connaissances juridiques (314 fiches × 4459 articles × 2521 arrêts). C'est le socle de tout le moteur de navigation. Un bug de normalisation (`normalizeRef`) ou d'indexation rendrait des articles non-trouvables. Aucun test direct n'existait (couverture = 0).
+- **Prochaine action** : item 4 (i18n/SEO) bloqué sans LLM. Modules restants : `document-ingester.mjs` (LLM+FS complexe). Sprint goal atteint — valeur restante = validation humaine avocat (hors scope autonomous).
+
 ### 2026-05-29 ~11:1x UTC — loop LOCAL (ship + verify)
 - **Pull** : nouveau commit cloud `41de095` (test round-orchestrator +23) **+ bump dépendance `docx` 9.6.1→9.7.1** (package.json/lock).
 - **Pré-validation bump** : `npm install` local (aligne docx 9.7.1) + `test/letter-pdf-contract` (génère un docx réel) → vert. Le bump ne casse pas la génération de lettre.

@@ -467,3 +467,25 @@ Points à surveiller :
   - `evaluateComplexity — uncertainties` (4 cas) : faits_critiques, montant_inconnu, tri décroissant, contexte idéal=0 uncertainties
 - **Rationale** : `complexity-router.mjs` détermine le tier (trivial/standard/complexe/limite/humain) qui gouverne tout le routing du triage. Aucun test direct n'existait — les 7 dimensions de scoring, les hard rules asymétriques (freeze #14), et les flags étaient couverts uniquement via les tests d'intégration. Les branches critiques (descente de tier bloquée, force HUMAIN, dérivation délai depuis cascades) sont désormais régression-lockées.
 - **Prochaine action** : modules sans tests directs restants : `escalation-pack.mjs` (buildEscalationPack pure logic), `triage-enrichment.mjs`, `freshness-badge.mjs`. Ou item 5 (docs/missing-fiches.md).
+
+### 2026-05-30 UTC — run agent horaire (escalation-pack helpers directs)
+- **Tenté** : item 3 — tests directs des helpers `_internals` de `escalation-pack.mjs` (0 couverture directe des helpers ; `phase-cortex-escalation.test.mjs` ne couvrait que les happy paths via `buildEscalationPack` avec mocks de case-store + serveur HTTP)
+- **Résultat** : passed ✓
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2320/2320 ✓** (npm install en amont)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **62 tests** dans `test/escalation-pack-direct.test.mjs`
+- **Ce qui a été fait** : `test/escalation-pack-direct.test.mjs` — 9 suites / 62 tests zéro-LLM zéro-réseau sur les helpers internes de `escalation-pack.mjs` (exposés via `_internals`) :
+  - `buildEscalationPack guards` (3 cas) : null → null, {} → null, caseRec minimal valide → objet
+  - `buildSummary` (11 cas) : `resume_situation` prioritaire, fallback `texte_initial`, troncature 240 chars, "non renseignée" par défaut, domaine label + domaine inconnu brut, canton majuscules, rounds_done > 0 / = 0, fiche id, primary null
+  - `buildChronologie` (7 cas) : état vide → [], texte_initial → event initial, Q&R depuis audit.rounds, réponses vides ignorées, fallback Q&R (questions vides + answers), tri date, champ `ordre` absent dans output, audit null
+  - `buildPieces` (6 cas) : null → défaut, bail → spécifique, domaine inconnu → défaut, retourne copie (pas référence), bail non vide, tous domaines ≥ 3 pièces
+  - `buildPointsLitigieux` (8 cas) : vide → [], faits_critiques / montant_inconnu / kind inconnu, lacune string, lacune {message}, contradiction_detected, déduplication
+  - `buildQuestionsPro` (8 cas) : cap ≤ 5, templates faits_critiques/montant_inconnu, génériques bail/dettes, fallback (0 uncertainties, domaine null) → 3 génériques, cap 5 exact (3 templates + 4 génériques bail = 5), domaine inconnu → no crash
+  - `buildRedirections` (11 cas) : sans primary → génériques, tous champs présents, canton VD→Caritas, canton ZH→Caritas, canton ZG→Caritas exclue, violence→LAVI, bail→LAVI exclue, dédupe par nom, cap 8, filtre canton (canton non listé → exclue), sans restriction → incluse tous cantons
+  - `normalizeType` via buildRedirections (4 cas) : "association"→"ong", "autorité"→"autorite", null→"autorite", "avocat"→"avocat"
+  - `REDIRECTIONS_GENERIQUES invariants` (3 cas) : non vide, chaque entrée a tous les champs, ≥ 1 entrée universelle (tous cantons + tous domaines)
+- **Rationale** : `escalation-pack.mjs` construit le pack structuré "escalation vers un professionnel" — utilisé chaque fois qu'un citoyen doit passer la main. Les helpers `buildRedirections` (filtrage canton, dédupe, normalizeType) et `buildSummary` (5 branches d'entrée) avaient de la logique ramifiée sans tests directs. Le canton ZG → Caritas exclue (ZG absent de la liste) est un exemple de bug silencieux possible.
+- **Prochaine action** : modules restants sans couverture directe : `triage-enrichment.mjs` (79 lignes, orchestration). Sprint goal atteint — valeur restante = validation humaine avocat (hors scope autonomous).

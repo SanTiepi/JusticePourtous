@@ -696,3 +696,27 @@ Points à surveiller :
 - **Nouveau gap documenté** : `fiscal_taxation_office` (priorité critique — délai péremptoire 30j LIFD 132) ajouté dans `docs/missing-fiches.md` (9 gaps total)
 - **Observation** : domaine `fiscal` (readiness: beta) = blind spot complet — aucune fiche ne couvre la taxation d'office ni la réclamation. Tout cas fiscal retourne domaines=[].
 - **Prochaine action** : validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous. Domaine `fiscal` à prioriser pour phase 2 (délai péremptoire 30j LIFD 132).
+
+### 2026-05-30 UTC — run agent horaire (wave 7 adversarial : 70→80 cas)
+- **Tenté** : item 1 — wave 7 : +10 cas adversariaux couvrant des sous-cas peu testés dans 10 domaines variés
+- **Résultat** : passed ✓ — **80 cas, 0 doublon d'ID, gates verts**
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2498/2498 ✓** (données seulement — aucun code modifié)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Adversarial CLI : non re-mesuré ce run (nécessite `claude -p` actif)
+- **Nouveaux cas wave 7 (10)** :
+  - `adv_bail_11` (congé pour besoin propre abusif, délai contestation CO 273 — 30 jours péremptoire)
+  - `adv_travail_11` (heures supplémentaires 4 ans, CO 321c + prescription CO 128 — 5 ans)
+  - `adv_dettes_09` (séquestre avant jugement LP 271 — créancier pressé, transfert de biens)
+  - `adv_etrangers_06` (regroupement familial enfants mineurs Kosovo, délai péremptoire LEI 47)
+  - `adv_famille_07` (pension alimentaire impayée 4 mois, saisie salaire LP 93)
+  - `adv_assurances_03` (changement caisse maladie LAMal 7 — délai réception 30 novembre)
+  - `adv_consommation_04` (vélo électrique fissuré livraison, responsabilité vendeur CO 197/205)
+  - `adv_sante_03` (refus soins urgents hôpital cantonal, libre choix LAMal 41 al. 3)
+  - `adv_voisinage_04` (bruit nocturne 18 mois, CC 684 + double recours locataire CO 259a)
+  - `adv_entreprise_03` (fermeture raison individuelle, radiation RC, responsabilité illimitée CO 945)
+- **Note technique** : run précédent avait tenté cette wave en état HEAD détaché + stash pop qui a créé conflits (16 commits écart local/origin). Résolu par restore + pull + réapplication propre.
+- **Domaines** : 10 domaines couverts simultanément — angles inédits (délais péremptoires méconnus, procédures d'urgence, responsabilité post-fermeture)
+- **Prochaine action** : re-mesurer avec `node scripts/adversarial-eval-cli.mjs` (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

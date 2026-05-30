@@ -683,6 +683,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CO 340', 'CO 340a', 'CO 340b'],
     notes: "Clause de non-concurrence excessive — CO 340a al. 1 : la clause doit être limitée raisonnablement (lieu, temps, activité). 5 ans + Suisse entière + tout le secteur IT = vraisemblablement excessive. CO 340b : le juge peut réduire la portée. 'Tout secteur technologique en Suisse pendant 5 ans' sans 'CO 340' ni 'non-concurrence'.",
   },
+
+  // ========== WAVE 7 — sous-cas peu testés, délais péremptoires, procédures peu connues ==========
+
+  // BAIL — congé pour besoin propre abusif, délai de contestation 30 jours
+  {
+    id: 'adv_bail_11',
+    query: "Mon propriétaire m'a envoyé un courrier recommandé pour résilier mon bail pour 'besoins propres' — il veut récupérer l'appart pour sa fille. Mais je sais que sa fille vit déjà dans un grand appartement de luxe à côté. Comment je conteste ça et dans quel délai avant qu'il soit trop tard ?",
+    canton: 'GE',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 271', 'CO 271a', 'CO 273', 'CO 272'],
+    notes: "Congé pour besoin propre (CO 261) + abus de droit (CO 271) + délai de contestation 30 jours dès réception (CO 273 al. 1). 'Besoins propres' + 'sa fille vit déjà dans un grand appartement' sans 'CO 271' ni 'contestation congé délai 30 jours'. Le délai de 30 jours est péremptoire.",
+  },
+
+  // TRAVAIL — heures supplémentaires impayées, prescription 5 ans
+  {
+    id: 'adv_travail_11',
+    query: "Je travaille dans une PME depuis 4 ans. Mon contrat dit '42h/sem' mais je fais en réalité 50-55h toutes les semaines depuis le début. Mon patron dit que les heures sup sont 'comprises dans le salaire'. J'ai gardé mes fiches de salaire et mes agendas. J'ai encore combien de temps pour réclamer et comment je fais valoir mes droits ?",
+    canton: 'BE',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 321c', 'CO 128', 'CO 335b'],
+    notes: "Heures supplémentaires non rémunérées + clause 'incluses dans le salaire' potentiellement nulle si disproportionnée (CO 321c al. 1). Prescription des créances salariales 5 ans (CO 128 ch. 3). 'J\'ai gardé mes agendas' sans 'CO 321c' ni 'heures supplémentaires prescription'.",
+  },
+
+  // DETTES — séquestre avant jugement, créancier pressé
+  {
+    id: 'adv_dettes_09',
+    query: "Un client me doit 35 000 francs pour des travaux. Il vient de mettre sa voiture et ses meubles au nom de sa femme et dit qu'il n'a plus rien. J'ai peur qu'il cache ses biens avant que je puisse le poursuivre légalement. Est-ce qu'il existe un moyen d'urgence pour bloquer ses avoirs avant même d'avoir un jugement ?",
+    canton: 'VD',
+    expected_domaine: 'dettes',
+    expected_any_article: ['LP 271', 'LP 272', 'LP 278', 'LP 281'],
+    notes: "Séquestre avant jugement (LP 271 lit. a : créance non garantie + motif de séquestre probable). 'Bloquer ses avoirs avant un jugement' + 'mise au nom de sa femme' sans 'LP 271' ni 'séquestre'. Procédure d'urgence méconnue.",
+  },
+
+  // ETRANGERS — regroupement familial enfants mineurs, délai péremptoire LEI 47
+  {
+    id: 'adv_etrangers_06',
+    query: "Mon mari a le permis B depuis 6 ans en Suisse. Nous sommes du Kosovo. Nos deux enfants de 12 et 15 ans sont restés avec leurs grands-parents au pays. On veut les faire venir vivre avec nous ici. L'office des migrations nous parle d'un 'délai pour le regroupement familial'. Quel est ce délai et est-ce qu'il y a un risque que ce soit trop tard ?",
+    canton: 'ZH',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LEI 44', 'LEI 47', 'LEI 43', 'LEI 42'],
+    notes: "Regroupement familial enfants mineurs + délai LEI 47 : demande dans les 5 ans pour enfants jusqu'à 12 ans révolus (délai péremptoire !) + cas particulier enfants 12-18 ans (LEI 47 al. 4 : délai 12 mois). Enfant de 15 ans = risque de délai dépassé. 'Faire venir nos enfants' + 'délai pour le regroupement' sans 'LEI 47'.",
+  },
+
+  // FAMILLE — pension alimentaire impayée, saisie sur salaire LP 93
+  {
+    id: 'adv_famille_07',
+    query: "Divorcée depuis 2 ans, j'ai la garde de mes 2 enfants. Mon ex-mari devait payer 1 200 francs par mois selon le jugement de divorce. Depuis 4 mois il ne paye plus rien, il dit qu'il a des problèmes financiers. Comment je peux le forcer à payer et est-ce qu'on peut saisir directement son salaire ?",
+    canton: 'VD',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 285', 'CC 276', 'LP 93', 'LP 67'],
+    notes: "Pension alimentaire impayée + voies d'exécution forcée. CC 285 (contribution d'entretien) + LP 93 (saisie sur salaire sans jugement supplémentaire si jugement divorce = titre). 'Il ne paye plus rien' + 'saisir son salaire' sans 'LP 93' ni 'contributions d'entretien exécution'.",
+  },
+
+  // ASSURANCES — changement de caisse maladie, délai réception LAMal 7
+  {
+    id: 'adv_assurances_03',
+    query: "Je veux changer de caisse maladie pour économiser sur la prime à partir de janvier prochain. J'ai envoyé ma résiliation fin septembre. Mon assureur répond que ma lettre est arrivée le 1er octobre et que j'ai manqué le délai de 3 mois. Ils refusent le transfert. Est-ce qu'ils ont raison ou est-ce que je peux quand même changer ?",
+    canton: 'NE',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LAMal 7', 'LAMal 64a'],
+    notes: "Résiliation assurance maladie de base (LAMal 7) — délai : assureur doit RECEVOIR la résiliation avant le 30 novembre. 'Envoyé fin septembre' + 'arrivée 1er octobre' = dans le délai. 'Je veux changer de caisse' sans 'LAMal 7' ni 'résiliation délai novembre'. L'assureur a probablement tort.",
+  },
+
+  // CONSOMMATION — livraison défectueuse, responsabilité vendeur CO 197
+  {
+    id: 'adv_consommation_04',
+    query: "J'ai commandé un vélo électrique à 3 200 francs sur un site suisse. À la livraison, le cadre était fissuré et la batterie ne charge pas. La boutique en ligne répond que c'est 'causé par le transport' et que c'est à moi de réclamer au transporteur. Mes droits contre la boutique directement ? Et est-ce que la garantie légale couvre ça ?",
+    canton: 'AG',
+    expected_domaine: 'consommation',
+    expected_any_article: ['CO 197', 'CO 205', 'CO 208'],
+    notes: "Garantie des défauts achat à distance (CO 197 ss). CO 205 al. 1 : résolution ou réduction du prix. Délai d'avis 7 jours pour vices apparents (CO 201). 'Cadre fissuré dès la livraison' + 'boutique rejette sur le transporteur' sans 'CO 197' ni 'garantie légale'. Vendeur = responsable envers acheteur même pour dommage transport.",
+  },
+
+  // SANTE — refus soins urgents hôpital, libre choix LAMal 41 al. 3
+  {
+    id: 'adv_sante_03',
+    query: "Je me suis tordu la cheville en tombant dans un escalier un dimanche soir. Je suis allé aux urgences de l'hôpital cantonal le plus proche. Ils m'ont demandé mon attestation d'assurance et ont dit que mon assureur ne figure pas dans leur liste de 'partenaires'. Ils m'ont conseillé d'aller dans une autre ville à 30 km. Peuvent-ils vraiment refuser de soigner une urgence ?",
+    canton: 'SG',
+    expected_domaine: 'sante',
+    expected_any_article: ['LAMal 41', 'LAMal 36', 'OAMal 29'],
+    notes: "Refus de soins urgents + libre choix du médecin/hôpital (LAMal 41 al. 3 : en urgence, l'assuré peut se faire soigner par tout fournisseur). L'hôpital cantonal ne peut pas refuser les urgences pour motif d'assureur. 'Mon assureur pas dans leur liste' sans 'LAMal 41' ni 'urgence libre choix'.",
+  },
+
+  // VOISINAGE — bruit nocturne chronique, double recours locataire (CC 684 + CO 259a)
+  {
+    id: 'adv_voisinage_04',
+    query: "Mon voisin du dessus rentre tous les soirs après minuit et marche si fort que j'entends chaque pas. J'ai des tapotements de meubles jusqu'à 2h du matin. Cela dure depuis 18 mois, j'ai tout essayé à l'amiable, la régie ne répond plus. Quels recours légaux me restent-il ? Et ça change quelque chose que je sois locataire ?",
+    canton: 'ZH',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 684', 'CC 679', 'CC 679a'],
+    notes: "Troubles de voisinage excessifs (CC 684 al. 2 : immissions immatérielles). CC 679 : action en cessation + réparation. 'Marche si fort jusqu'à 2h du matin' sans 'CC 684' ni 'immissions'. Si locataire : double recours (CC 684 contre voisin + CO 259a contre bailleur pour défaut). Régie inactive = obligation du bailleur non remplie.",
+  },
+
+  // ENTREPRISE — fermeture raison individuelle, responsabilité illimitée CO 945
+  {
+    id: 'adv_entreprise_03',
+    query: "J'ai une petite boutique inscrite au registre du commerce comme raison individuelle depuis 5 ans. Je veux tout fermer. J'ai encore 15 000 francs de dettes fournisseurs et un loyer commercial en cours. Comment je fais pour radier l'inscription officielle et est-ce que je reste personnellement responsable des dettes après la fermeture ?",
+    canton: 'VD',
+    expected_domaine: 'entreprise',
+    expected_any_article: ['CO 945', 'CO 552', 'LP 39'],
+    notes: "Radiation raison individuelle au RC (ORC 155 ss) + responsabilité illimitée du titulaire (CO 945 : l'entrepreneur répond sur tout son patrimoine privé). 'Fermer ma boutique inscrite au RC' + 'rester personnellement responsable des dettes' sans 'CO 945' ni 'responsabilité illimitée'. Les dettes subsistent après radiation.",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

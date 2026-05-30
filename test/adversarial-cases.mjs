@@ -479,6 +479,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['LCR 58', 'LCR 65', 'CO 46'],
     notes: "RC propriétaire véhicule motorisé vs cycliste — 'renversé à vélo', pas 'LCR 58 responsabilité causale'. Offre assurance inférieure au dommage réel (lucrum cessans CO 46). Négociation possible, action en justice LCR 65.",
   },
+
+  // ========== WAVE 5 — approfondissement domaines sous-représentés (voisinage×2 / violence×2 / successions×2 / consommation×2 / circulation / assurances) ==========
+
+  // VOISINAGE — servitude de passage non inscrite au registre foncier (droit de passage nécessaire)
+  {
+    id: 'adv_voisinage_02',
+    query: "J'ai acheté une maison à la campagne. Pour y accéder depuis la route, je dois passer sur le chemin qui traverse le terrain du voisin — c'est comme ça depuis des générations. Son fils vient d'hériter et veut poser un portail fermé à clé. Sans ce passage, je n'ai aucun autre accès à ma propriété.",
+    canton: 'FR',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 694', 'CC 679', 'CC 684'],
+    notes: "Droit de passage nécessaire (enclave) — 'passer sur le chemin' sans 'servitude' ni 'CC 694'. Même sans inscription au RF, le droit d'accès peut être revendiqué (CC 694 voie d'accès, CC 695 servitude légale). Action en établissement de servitude ou action négatoire.",
+  },
+
+  // VOISINAGE — dégâts causés par les travaux de construction du voisin
+  {
+    id: 'adv_voisinage_03',
+    query: "Mon voisin a fait construire une grande extension accolée à notre mur mitoyen l'été passé. Depuis, j'ai des fissures dans mon salon et ma cave est humide. Un expert indépendant a établi par écrit que les dégâts viennent des travaux de fondation du voisin. Il refuse d'admettre le lien et dit que c'est la vétusté de ma maison.",
+    canton: 'GE',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 679', 'CC 684', 'CO 41'],
+    notes: "Responsabilité propriétaire foncier pour dommages consécutifs à travaux — 'fissures + humidité suite aux travaux' sans 'CC 679'. Expertise contradictoire utile. Conciliation obligatoire avant action civile dans la plupart des cantons.",
+  },
+
+  // VIOLENCE — violence conjugale répétée, protection urgente avec enfants
+  {
+    id: 'adv_violence_02',
+    query: "Mon mari me frappe régulièrement depuis des années. Hier c'était grave, j'ai des bleus. Mes enfants de 7 et 10 ans ont tout vu. Je veux partir avec eux ce soir mais j'ai peur qu'il nous retrouve et qu'il revienne. Qu'est-ce que je peux faire pour nous protéger lui et moi tout de suite ?",
+    canton: 'VD',
+    expected_domaine: 'violence',
+    expected_any_article: ['CC 28b', 'LAVI 9', 'CP 123'],
+    notes: "Violence conjugale avec urgence — 'il me frappe' sans 'expulsion du domicile CC 28b'. Mesures d'urgence civiles (ordonnance d'interdiction d'approche, expulsion du domicile conjugal) et pénales (arrestation CP 123). Hébergement d'urgence LAVI 9.",
+  },
+
+  // VIOLENCE — agression dans l'espace public par auteur inconnu, indemnisation LAVI
+  {
+    id: 'adv_violence_03',
+    query: "J'ai été agressée dans la rue vendredi soir. Deux côtes cassées, 6 semaines d'arrêt maladie. La police a ouvert une enquête mais dit qu'il y a peu de chances de retrouver l'auteur. Mon assurance maladie couvre les frais médicaux mais pas mon salaire perdu. Qui peut m'aider à récupérer ces 9'000 francs si l'auteur est introuvable ?",
+    canton: 'GE',
+    expected_domaine: 'violence',
+    expected_any_article: ['LAVI 2', 'LAVI 19', 'LAVI 22'],
+    notes: "Indemnisation LAVI quand auteur inconnu ou insolvable — 'récupérer le salaire perdu' sans 'LAVI'. L'État (bureau LAVI cantonal) indemnise les pertes économiques même sans condamnation pénale (LAVI 19, 22). Délai de dépôt : 10 ans depuis l'infraction (LAVI 25).",
+  },
+
+  // SUCCESSIONS — héritage sans testament, famille recomposée
+  {
+    id: 'adv_successions_02',
+    query: "Mon père est décédé la semaine dernière. Il était remarié depuis 12 ans — sa deuxième femme a deux enfants d'un premier mariage à elle. Mon père avait aussi une maison achetée avant le remariage. Il n'avait pas de testament. Comment se fait le partage entre moi, ma sœur, et sa veuve ?",
+    canton: 'NE',
+    expected_domaine: 'successions',
+    expected_any_article: ['CC 457', 'CC 462', 'CC 471'],
+    notes: "Succession ab intestat avec famille recomposée — 'partage entre moi, ma sœur et sa veuve' sans 'CC 462 quote-part légale conjoint'. Les enfants du conjoint survivant ne sont PAS héritiers légaux. Part légale conjoint (CC 462 : moitié) vs réserve des descendants (CC 471 : moitié des parts légales). NOTE eval wave5 : haiku inclut famille_regime_matrimonial (à cause de 'remariage') + génère IDs succession sans préfixe domaine → eval inférait domaine=famille. Routing gap : query succession + contexte remariage → risque de confusion avec famille. Gap documenté dans docs/missing-fiches.md.",
+  },
+
+  // SUCCESSIONS — contestation testament pour incapacité de discernement (curatelle)
+  {
+    id: 'adv_successions_03',
+    query: "Ma grand-mère de 93 ans était sous curatelle depuis 3 ans pour démence sénile. Mon oncle lui a fait signer un testament il y a 5 mois qui lui laisse presque tout (la maison vaut CHF 650'000). Elle est décédée le mois passé. Ce testament peut être annulé ?",
+    canton: 'GE',
+    expected_domaine: 'successions',
+    expected_any_article: ['CC 467', 'CC 519', 'CC 16'],
+    notes: "Nullité testament pour incapacité de discernement — 'curatelle pour démence' sans 'CC 467 capacité de disposer'. Curatelle de portée générale → présomption d'incapacité de discernement. Action en nullité CC 519 al. 1 ch. 1 (délai 1 an depuis la connaissance + 10 ans absolu).",
+  },
+
+  // CONSOMMATION — achat en ligne non livré, vendeur injoignable
+  {
+    id: 'adv_consommation_02',
+    query: "J'ai commandé et payé CHF 760 en ligne pour un vélo électrique. La livraison était promise sous 2 semaines, il y a maintenant 8 semaines. Le vendeur ne répond plus aux emails, le chat du site est fermé, mais le site est toujours actif et continue à vendre. Comment est-ce que je récupère mon argent ?",
+    canton: 'ZH',
+    expected_domaine: 'consommation',
+    expected_any_article: ['CO 102', 'CO 107', 'CO 184'],
+    notes: "Demeure du vendeur + e-commerce — 'ne répond plus' sans 'mise en demeure CO 102'. Recours chargeback bancaire possible (délai 120 jours Visa/MC). Mise en demeure formelle avant désistement CO 107. Plainte pénale possible si intention frauduleuse.",
+  },
+
+  // CONSOMMATION — vice caché véhicule d'occasion vendu par particulier
+  {
+    id: 'adv_consommation_03',
+    query: "J'ai acheté une voiture d'occasion à un particulier il y a 6 semaines, CHF 11'500. Il m'a dit 'impeccable, aucun problème'. Maintenant la boîte de vitesses rend l'âme — devis de CHF 4'200. Mon mécanicien dit que c'est un problème préexistant évident, pas lié à mon usage. Le vendeur dit 'vendu en l'état, c'est vos risques'.",
+    canton: 'VD',
+    expected_domaine: 'consommation',
+    expected_any_article: ['CO 197', 'CO 201', 'CO 199'],
+    notes: "Vice caché vente particulier-particulier — 'garanti sans problème' puis 'vendu en l'état'. Exclusion garantie invalide si vendeur connaissait le vice (CO 199). Délai de notification immédiatement après découverte (CO 201). Résolution ou réduction prix (CO 205).",
+  },
+
+  // CIRCULATION — conduite en état d'ivresse qualifié (première infraction)
+  {
+    id: 'adv_circulation_02',
+    query: "J'ai été contrôlé hier soir après un contrôle routier. L'alcootest indiquait 0.82 pour mille — c'est la première fois que ça m'arrive. La police m'a annoncé une dénonciation à l'office de la circulation. Est-ce que mon permis est automatiquement retiré, pour combien de temps, et est-ce que je risque du pénal ?",
+    canton: 'BE',
+    expected_domaine: 'circulation',
+    expected_any_article: ['LCR 91', 'LCR 16c', 'LCR 31'],
+    notes: "Ivresse qualifiée 1ère infraction — '0.82 pour mille' sans 'LCR 91 a. 2' ni 'infraction grave'. Seuil qualifié = ≥0.8‰ sang (≥0.4 mg/L haleine). LCR 16c : infraction grave → retrait min. 3 mois même 1ère fois. Procédure pénale et administrative parallèles (amende + jours-amende + retrait).",
+  },
+
+  // ASSURANCES — demande AI (burn-out) en souffrance depuis 10 mois, menace licenciement
+  {
+    id: 'adv_assurances_02',
+    query: "Je suis en arrêt de travail total depuis 17 mois pour burn-out sévère. J'ai déposé une demande à l'assurance-invalidité il y a 10 mois. L'office AI a demandé deux fois des examens complémentaires mais je n'ai toujours aucune décision. Mon employeur me menace de licenciement. J'ai droit à quoi pendant l'attente ?",
+    canton: 'GE',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LAI 28', 'LAI 70', 'LPGA 58'],
+    notes: "Demande AI trop longue + menace licenciement — 'arrêt total depuis 17 mois' sans 'LAI 28 rente d'invalidité'. LAI 70 (prestations provisoires pendant instruction), LPGA 58 (devoir de célérité). Protection contre licenciement ≠ absolue mais délai de résiliation suspendu si incapacité. NOTE: JusticePourtous classe AI dans domaine 'assurances' (assurance_ai_opposition).",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

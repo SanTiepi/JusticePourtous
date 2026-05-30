@@ -7,7 +7,7 @@ correspondance exacte.
 
 Ces fiches sont à créer après validation juridique humaine.
 
-## État actuel : 5 gaps identifiés (mis à jour 2026-05-30)
+## État actuel : 6 gaps identifiés (mis à jour 2026-05-30)
 
 Les deux gaps historiques sont comblés :
 
@@ -47,6 +47,16 @@ Les deux gaps historiques sont comblés :
   - **base juridique (indicative, à valider par un juriste)** : LCA (loi sur le contrat d'assurance) — notamment avis de sinistre, obligation de réduire le dommage, prescription 2 ans ; conditions générales d'assurance (CGA).
   - **pourquoi manquante** : test live « mon assurance refuse de payer après un dégât des eaux qui a ruiné mon salon » → le navigator route vers `consommation_remboursement_refuse` (remboursement générique). Le domaine `assurances` ne contient que de l'**assurance sociale** (LAA/AI/AVS/LAMal/chômage) ; aucune fiche pour l'**assurance privée de chose/responsabilité** (ménage, RC, dégâts des eaux). Le fallback conso est raisonnable faute de mieux, mais sous-optimal pour l'usager.
   - **priorité** : moyenne-haute. Sinistre ménage/RC refusé = situation courante chez les particuliers ; aucune couverture actuelle.
+
+### Gap (routing) détecté par l'éval adversariale 2026-05-30 (wave 5 — 50→60 cas)
+
+- ⛔ `successions_famille_recomposee_routing`
+  - **type** : routing gap (pas de fiche manquante — fiches successions existent)
+  - **base juridique** : CC 457 (ordre succession légale), CC 462 (quote-part légale conjoint), CC 471 (réserve héréditaire descendants)
+  - **pourquoi manquant** : `adv_successions_02` (père décédé remarié, partage entre enfants 1er mariage + veuve) — le navigator inclut `famille_regime_matrimonial` (CC 196/215 régime biens) dans les fiches retournées, à cause du contexte "remariage". Le domaine inféré devient `famille` au lieu de `successions`. Les fiches successions pertinentes (`successions_conjoint_survivant`, `successions_heritier_reserve`) sont bien identifiées mais avec des IDs légèrement incorrects (haiku génère `succession_reserve_conjoint_vs_enfants` sans le préfixe `successions_`).
+  - **impact** : un citoyen qui pose une question de succession en mentionnant "il était remarié" risque d'obtenir des informations sur les régimes matrimoniaux plutôt que sur le partage successoral. La distinction est importante : le régime matrimonial détermine la masse successorale, la succession détermine le partage.
+  - **solution recommandée** : ajout de tokens discriminants dans le prompt du navigator pour prioriser `successions` dès que les mots "décédé/décès/héritage/partage" sont présents, même en contexte famille recomposée.
+  - **priorité** : moyenne. Les fiches successions existent et sont identifiées partiellement. Le routing est améliorable sans créer de nouvelle fiche.
 
 Pour rouvrir cette liste, relancer l'éval adversariale et capturer les nouveaux
 cas où le navigator se rabat sur une fiche voisine :

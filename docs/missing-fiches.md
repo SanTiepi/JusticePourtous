@@ -7,7 +7,7 @@ correspondance exacte.
 
 Ces fiches sont à créer après validation juridique humaine.
 
-## État actuel : 4 gaps identifiés (mis à jour 2026-05-29)
+## État actuel : 5 gaps identifiés (mis à jour 2026-05-30)
 
 Les deux gaps historiques sont comblés :
 
@@ -32,6 +32,14 @@ Les deux gaps historiques sont comblés :
   - **base juridique** : CO 257f (usage de la chose conformément au contrat), CO 259a/d (défauts imputables au bailleur), éventuellement CC 684 (troubles de voisinage côté civil)
   - **pourquoi manquante** : `adv_bail_07` (voisin bruyant, régie inactive) — le navigator retourne `voisinage_bruit_nuisances` (droit du voisinage côté civil) au lieu d'une fiche bail expliquant les droits du locataire contre la régie inactive (réduction de loyer, congé extraordinaire).
   - **priorité** : haute. Cas fréquent où le locataire ne sait pas qu'il a un recours contre le bailleur (et pas seulement contre le voisin direct).
+
+### Gap détecté par l'éval adversariale 2026-05-30 (wave 4 — 40→50 cas)
+
+- ⛔ `assurance_chomage_demission_juste_motif`
+  - **base juridique** : LACI 30 (suspension pour abandon d'emploi sans juste motif — avec exception si juste motif documenté), LACI 17 (obligations du chômeur)
+  - **pourquoi manquante** : `adv_social_02` (démission pour harcèlement documenté, suspension chômage 5 semaines) — le navigator route vers `travail_harcelement` + `assurance_chomage_indemnites_conditions` + `travail_assurance_chomage` mais **aucune fiche ne couvre l'exception "juste motif" à la suspension LACI 30**. Les fiches existantes couvrent les conditions générales (LACI 8/13/27) mais pas la procédure de contestation de la suspension pour démission motivée. La distinction est fondamentale : une démission pour harcèlement documenté peut être défendue via l'exception LACI 30 al. 1 lit. a.
+  - **observation taxonomique** : JusticePourtous classe chômage/AI dans domaine `assurances` (pas `social`). Cas `adv_social_01/02/03` et `adv_assurances_01` corrects après correction `expected_domaine` (ground-truth fixes).
+  - **priorité** : haute. Cas fréquent (burn-out, harcèlement → démission → suspension chômage injuste). Sans fiche dédiée, le citoyen n'apprend pas qu'il peut contester la suspension.
 
 ### Gap détecté par la batterie de tests live 2026-05-29 (couverture 15 domaines)
 

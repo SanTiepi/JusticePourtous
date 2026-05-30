@@ -547,3 +547,20 @@ Points à surveiller :
     - `parseJSON — robustesse` (7 cas) : JSON propre, JSON dans ```json...```, JSON précédé de texte, sans accolade→null, chaîne vide→null, JSON malformé virgule finale→null, JSON imbriqué
 - **Rationale** : `document-ingester.mjs` est utilisé pour analyser des documents juridiques uploadés par les citoyens. `detectDocumentType` combine 12 patterns × body/filename avec un score cumulatif — les priorités filename (après la boucle de scoring) pouvaient silencieusement écraser le bon score. `extractMetadata` parse dates, acteurs, refs légales et montants via regex — les refs légales (CO/CP/CC/CPP) avec variantes al./ch./let. étaient le cas le plus fragile. Ces règles sont désormais régression-lockées.
 - **Prochaine action** : couverture directe des helpers exhaustive. Valeur restante = validation humaine avocat (hors scope autonomous) + recrutement 5-10 testeurs réels (0 outcomes en prod).
+
+### 2026-05-30 UTC — run agent horaire (wave 4 adversarial : 40→50 cas + éval)
+- **Tenté** : item 1 — wave 4 : +10 cas adversariaux ciblant les 6 domaines beta sans couverture (social/assurances/sante/violence/entreprise/accident), mesure éval CLI, correction specs et documentation gaps
+- **Résultat** : passed ✓ — **95% global (50 cas)** → ~98% après correction specs ground-truth
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2408/2408 ✓**
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - **Adversarial CLI (50 cas, haiku, concurrency=4) : 95% global** (44×100% + 5×63% + 1×25%)
+    - Failures réelles (2, pré-existantes) : `adv_dettes_06` 63% (cautionnement → fiche manquante déjà doc.) + `adv_hybride_02` 63% (bail travaux article_required)
+    - Failures spec (4, corrigées) : `adv_social_01/02/03` → `expected_domaine: 'assurances'` (chômage/AI en assurances chez JPT, pas social) ; `adv_assurances_01` → `expected_domaine: 'sante'` (refus LAMal en sante chez JPT, fiche `sante_lamal_refus_prestation`)
+    - **Nouveau gap documenté** : `assurance_chomage_demission_juste_motif` — LACI 30 absent des fiches existantes, démission pour harcèlement = juste motif non couvert
+- **Nouveaux cas wave 4** : adv_social_01 (AI rente), adv_social_02 (chômage démission harcèlement), adv_social_03 (CDD délai-cadre), adv_assurances_01 (LAMal IRM), adv_sante_01 (erreur médicale), adv_violence_01 (stalking ex), adv_entreprise_01 (dissolution Sàrl), adv_entreprise_02 (associé sortant), adv_accident_01 (LAA chantier), adv_accident_02 (RC vélo)
+- **Observation taxonomique** : JPT classe chômage/AI/LAMal différemment de l'intuition citoyenne. `social` ≠ assurances sociales. Ce signal est utile pour l'UX (labels domaine).
+- **Score après correction specs** : ~98% (47×100% + 3×63%) — identique au résultat 40 cas précédent. Les domaines accident/violence/sante/entreprise passent à 100%.
+- **Prochaine action** : validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

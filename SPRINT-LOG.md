@@ -580,3 +580,22 @@ Points à surveiller :
 - **Observation taxonomique** : JPT classe chômage/AI/LAMal différemment de l'intuition citoyenne. `social` ≠ assurances sociales. Ce signal est utile pour l'UX (labels domaine).
 - **Score après correction specs** : ~98% (47×100% + 3×63%) — identique au résultat 40 cas précédent. Les domaines accident/violence/sante/entreprise passent à 100%.
 - **Prochaine action** : validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-05-30 UTC — run agent horaire (normative-compiler fiscal/LPP/PPE/circulation/successions)
+- **Tenté** : item 3 — tests directs pour les 5 domaines "phase 5" du normative-compiler (fiscal, LPP, PPE, circulation, successions) — 0 couverture directe précédemment malgré 17 règles ajoutées depuis 2026-04-19
+- **Résultat** : passed ✓
+- **Commits** : `2b6d5f0`
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2446/2446 ✓** (npm install en amont — docx absent)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **31 tests** dans `test/normative-compiler.test.mjs` (+5 describe blocks)
+- **Ce qui a été fait** : 6 nouveaux describe / 31 tests dans le fichier existant `test/normative-compiler.test.mjs`, couvrant les 17 règles des domaines ajoutés en phase 5 qui n'avaient aucune couverture directe :
+  - `fiscal rules` (6 cas) : réclamation délai 30j, exception taxation_office non-bloquante, remise bloquée si faute grave, rappel impôt prescrit si >15 ans, prescription 10 ans pour ouvrir
+  - `LPP rules` (7 cas) : invalidité < 40% → droit_probable=false, 45% → quotite=45, ≥70% → rente entière, incapacité antérieure affiliation bloque (exception), retrait anticipé logement OK, conjoint sans consentement écrit bloque (exception), divorce → partage par moitié
+  - `PPE rules` (6 cas) : charges communes + délai hypothèque légale 3 mois, exception usage exclusif (non-bloquant), travaux somptuaires → UNANIMITÉ, nécessaires → majorité simple, utiles → double majorité, tableau 4 types + délai 30j contestation
+  - `circulation rules` (6 cas) : infraction légère sans récidive → admonestation (duree=0), avec récidive → 1 mois, infraction grave → 3 mois (LCR 16c), grave + récidive → 12 mois, infraction moyenne → 1 mois (LCR 16b), moyenne + récidive → 4 mois
+  - `successions rules` (6 cas) : réserve héréditaire descendants=1/2 (révision 2023), parents → Aucune réserve, répudiation délai 90j/3 mois, immixtion bloque la répudiation, action réduction 365/3650j, exhérédation pardon → caducité
+  - Mise à jour du compteur cross-domain : 22 → 70 (76 règles réelles)
+- **Rationale** : le normative-compiler exécute des règles juridiques en code (délais péremptoires, conditions de blocage). Les 17 règles fiscal/LPP/PPE/circulation/successions ajoutées en phase 5 n'avaient aucun test : une régression silencieuse pouvait modifier des délais légaux (prescription 10 ans → 15 ans, retrait permis 3 → 12 mois) sans être détectée.
+- **Prochaine action** : couverture directe quasi-exhaustive. Valeur restante = validation humaine avocat (hors scope autonomous).

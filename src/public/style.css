@@ -4907,3 +4907,71 @@ body.has-disclaimer {
   padding: 0.5rem 0;
 }
 
+/* ── Analyse personnalisée du triage (page résultat, fix P2) ───────────── */
+.triage-urgency {
+  padding: 0.9rem 1.2rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  border-left: 4px solid;
+}
+.triage-urgency.urg-immediate { background: #fdecea; color: #9B1B30; border-color: #9B1B30; }
+.triage-urgency.urg-week { background: #fff4e5; color: #B45309; border-color: #B45309; }
+.triage-urgency.urg-month { background: #fffbe6; color: #8a6d00; border-color: #c9a900; }
+
+.triage-delais .triage-delai-list { margin: 0.5rem 0 0; padding-left: 1.1rem; }
+.triage-delais .triage-delai-list li { margin-bottom: 0.6rem; line-height: 1.5; }
+.triage-delai-conseq { color: var(--accent-danger); font-size: 0.9rem; }
+
+.triage-lawyer h3 { margin-top: 0; }
+.triage-lawyer-yes { border-left: 4px solid var(--accent-warning); }
+.triage-lawyer-no { border-left: 4px solid var(--accent-success); }
+
+.triage-plan .triage-steps {
+  margin: 0.5rem 0 0;
+  padding-left: 1.3rem;
+  line-height: 1.55;
+}
+.triage-plan .triage-steps li { margin-bottom: 0.55rem; }
+.triage-step summary {
+  cursor: pointer;
+  font-weight: 500;
+}
+.triage-step summary:hover { color: var(--accent-primary); }
+.triage-step-desc {
+  margin: 0.4rem 0 0.2rem;
+  padding-left: 0.3rem;
+  color: var(--text-secondary);
+  font-size: 0.93rem;
+}
+.triage-pieges, .triage-docs {
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border-subtle);
+}
+.triage-pieges h4, .triage-docs h4 { margin: 0 0 0.5rem; font-size: 0.95rem; }
+.triage-pieges ul, .triage-docs ul { margin: 0; padding-left: 1.1rem; line-height: 1.5; }
+.triage-pieges li { margin-bottom: 0.5rem; }
+.triage-piege-fix { color: var(--accent-success); font-size: 0.9rem; }
+
+.triage-contacts .triage-contact {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.triage-contacts .triage-contact:last-child { border-bottom: none; }
+.triage-contact-name { font-weight: 600; }
+.triage-free-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent-success);
+  background: #e6f3ec;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+.triage-contact-type { font-size: 0.85rem; color: var(--text-tertiary); }
+.triage-contact-link { margin-top: 0.15rem; }
+.triage-contact-link a { color: var(--accent-secondary); }
+.triage-contact-cond { font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.15rem; }
+

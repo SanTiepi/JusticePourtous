@@ -14,6 +14,8 @@ import {
   trackSearch,
   trackPremiumAnalysis,
   trackLanguage,
+  trackEvent,
+  getFunnelMetrics,
   getStats,
   _resetForTests,
 } from '../src/services/analytics.mjs';
@@ -173,5 +175,77 @@ describe('getStats', () => {
     assert.equal(s.pageViews['/guide/bail'], 1);
     assert.equal(s.searchCount, 1);
     assert.equal(s.languages['it'], 1);
+  });
+});
+
+// ============================================================
+// trackEvent / getFunnelMetrics (funnel 2a/2b)
+// ============================================================
+
+describe('trackEvent — funnel', () => {
+  beforeEach(() => _resetForTests());
+
+  it('incrémente le compteur pour un event de l\'allowlist', () => {
+    trackEvent('home_view');
+    trackEvent('home_view');
+    assert.equal(getStats().funnel['home_view'], 2);
+  });
+
+  it('ignore un event hors allowlist (anti-pollution)', () => {
+    trackEvent('evil_event', { caseId: 'c1' });
+    trackEvent('');
+    trackEvent(null);
+    assert.equal(getStats().funnel['evil_event'], undefined);
+    assert.equal(getFunnelMetrics().cases_tracked, 0);
+  });
+
+  it('ne crash pas sans caseId', () => {
+    assert.doesNotThrow(() => trackEvent('input_focus'));
+    assert.equal(getStats().funnel['input_focus'], 1);
+  });
+
+  it('rejette un caseId malformé (pas de tracking de case)', () => {
+    trackEvent('triage_submit', { caseId: 'bad id with spaces!' });
+    assert.equal(getFunnelMetrics().cases_tracked, 0);
+    // le compteur global s\'incrémente quand même
+    assert.equal(getStats().funnel['triage_submit'], 1);
+  });
+});
+
+describe('getFunnelMetrics — corrélation submit→render', () => {
+  beforeEach(() => _resetForTests());
+
+  it('corrèle submit et result_rendered par case_id', () => {
+    trackEvent('triage_submit', { caseId: 'caseA' });
+    trackEvent('triage_result_rendered', { caseId: 'caseA' });
+    trackEvent('triage_submit', { caseId: 'caseB' }); // soumis mais jamais rendu
+    const m = getFunnelMetrics();
+    assert.equal(m.triage_submitted, 2);
+    assert.equal(m.triage_rendered, 1);
+    assert.equal(m.submit_to_render_rate, 0.5);
+  });
+
+  it('compte les erreurs sans rendu', () => {
+    trackEvent('triage_submit', { caseId: 'caseC' });
+    trackEvent('triage_error', { caseId: 'caseC' });
+    const m = getFunnelMetrics();
+    assert.equal(m.triage_submitted, 1);
+    assert.equal(m.triage_rendered, 0);
+    assert.equal(m.triage_errored_no_render, 1);
+  });
+
+  it('rate null quand aucun submit', () => {
+    trackEvent('home_view');
+    assert.equal(getFunnelMetrics().submit_to_render_rate, null);
+  });
+
+  it('un result_rendered sans case (chemin recherche) n\'affecte pas le taux', () => {
+    trackEvent('triage_submit', { caseId: 'caseD' });
+    trackEvent('triage_result_rendered', { caseId: 'caseD' });
+    trackEvent('triage_result_rendered'); // recherche, pas de case
+    const m = getFunnelMetrics();
+    assert.equal(m.triage_submitted, 1);
+    assert.equal(m.triage_rendered, 1);
+    assert.equal(m.submit_to_render_rate, 1);
   });
 });

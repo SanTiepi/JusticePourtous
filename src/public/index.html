@@ -229,7 +229,20 @@
 
   <script src="/i18n.js"></script>
   <script src="/citizen-ui.js"></script>
+  <script src="/track.js"></script>
   <script>
+    /* Funnel 2a : vue de la home + 1er focus sur le champ */
+    if (window.jbTrack) jbTrack('home_view');
+    (function () {
+      var si = document.getElementById('searchInput');
+      if (si && window.jbTrack) {
+        si.addEventListener('focus', function onFocusOnce() {
+          jbTrack('input_focus');
+          si.removeEventListener('focus', onFocusOnce);
+        });
+      }
+    })();
+
     function handleSearch(e) {
       e.preventDefault();
       var q = document.getElementById('searchInput').value.trim();

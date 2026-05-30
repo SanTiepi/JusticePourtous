@@ -57,7 +57,7 @@ import { deepAnalysis } from './services/deep-analysis.mjs';
 import { generateDocx } from './services/docx-generator.mjs';
 import { sendCode, verifyCode, linkWalletToEmail, getWalletsByEmail } from './services/auth.mjs';
 import { getVulgarisationForFiche, getVulgarisationStats } from './services/vulgarisation-loader.mjs';
-import { trackPageView, trackSearch, trackPremiumAnalysis, trackLanguage, getStats as getAnalyticsStats } from './services/analytics.mjs';
+import { trackPageView, trackSearch, trackPremiumAnalysis, trackLanguage, trackEvent, getStats as getAnalyticsStats } from './services/analytics.mjs';
 import { translateStructuredContent, translateTextContent, TRANSLATION_PIPELINE_VERSION } from './services/i18n/translation-orchestrator.mjs';
 import { resolveRequestLocale } from './services/i18n/http-locale.mjs';
 import { normalizeLocale, DEFAULT_LOCALE, isOfferedLocale } from './services/i18n/locale-registry.mjs';
@@ -365,6 +365,19 @@ const server = createServer(async (req, res) => {
     const q = url.searchParams.get('q');
     if (q && q.length > MAX_QUERY_LENGTH) {
       return json(res, 400, { error: `Requête trop longue (max ${MAX_QUERY_LENGTH} caractères)`, disclaimer: DISCLAIMER });
+    }
+
+    // ─── Funnel tracking (2a/2b) — beacon public, first-party, zéro PII ───
+    // Le client (track.js) POSTe { event, caseId } via sendBeacon. Validation
+    // stricte côté analytics (allowlist d'events + caseId sanitisé). Ne doit
+    // JAMAIS throw ni 5xx : on avale toute erreur et on renvoie 204.
+    if (path === '/api/track' && method === 'POST') {
+      try {
+        const body = await parseBody(req);
+        trackEvent(body?.event, { caseId: body?.caseId });
+      } catch { /* beacon best-effort : on ignore tout */ }
+      res.writeHead(204);
+      return res.end();
     }
 
     // ─── Stripe routes (must be before parseBody for webhook) ───

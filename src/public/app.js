@@ -52,10 +52,17 @@ async function initConsultation(domaine) {
     '</div>' +
     '<p style="color:#6a7787;font-size:0.82rem;margin-top:1rem;">🔒 Anonyme · Aucun compte requis · Gratuit</p>';
 
-  // Auto-focus la textarea
+  // Auto-focus la textarea + funnel 2a (input_focus, une seule fois)
   setTimeout(function() {
     var ta = document.getElementById('consultText');
-    if (ta) ta.focus();
+    if (!ta) return;
+    if (window.jbTrack) {
+      ta.addEventListener('focus', function onFocusOnce() {
+        jbTrack('input_focus');
+        ta.removeEventListener('focus', onFocusOnce);
+      });
+    }
+    ta.focus();
   }, 100);
 }
 
@@ -88,6 +95,8 @@ async function submitConsultText() {
     });
     var data = await res.json();
     if (!res.ok) throw new Error(data.error || 'Erreur ' + res.status);
+    // Funnel 2a : triage soumis (corrélation par case_id pour la gate submit→render)
+    if (window.jbTrack) jbTrack('triage_submit', data.case_id || data.sessionId || null);
     handleTriageResponse(data);
   } catch (e) {
     showTriageError(e.message);
@@ -132,6 +141,28 @@ function handleTriageResponse(data) {
       window.location.href = '/resultat.html?fiche=' + pivotFiche;
       return;
     }
+  }
+  // 1d) Paywall round 2+ : le round 1 (gratuit) a déjà produit un résultat ;
+  //     l'approfondissement est payant. On l'explique au lieu d'afficher un
+  //     muet "Pas de résultat" (régression UX corrigée 2026-05-31).
+  if (data.status === 'payment_required') {
+    var pcard = document.getElementById('questionCard');
+    if (!pcard) return;
+    var amount = ((data.required_amount_centimes || 200) / 100).toFixed(2);
+    var stored = null;
+    try { stored = JSON.parse(sessionStorage.getItem('jb_result') || 'null'); } catch (e) { /* noop */ }
+    var fid = stored && (stored.ficheId || (stored.fiche && stored.fiche.id));
+    pcard.innerHTML =
+      '<div class="card-highlight">' +
+        '<h2 style="margin:0 0 0.5rem;">Approfondir votre analyse</h2>' +
+        '<p style="line-height:1.55;color:#1f2a36;">Votre analyse de base est gratuite et déjà disponible. ' +
+        'Pour aller plus loin (questions de suivi, cas similaires, stratégie), l\'approfondissement coûte CHF ' + amount + '.</p>' +
+        '<div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:1rem;">' +
+          '<a href="/premium.html" class="btn btn-primary" style="padding:0.8rem 1.5rem;background:#8B2500;color:#fff;border-radius:999px;text-decoration:none;font-weight:600;">Débloquer l\'approfondissement</a>' +
+          (fid ? '<a href="/resultat.html?fiche=' + encodeURIComponent(fid) + '" class="btn btn-secondary" style="padding:0.8rem 1.25rem;border:1px solid #c9d4df;border-radius:999px;color:#4a5b6e;text-decoration:none;">Voir mon résultat actuel</a>' : '') +
+        '</div>' +
+      '</div>';
+    return;
   }
   // 2) Safety stop — afficher TOUTES les ressources d'urgence (LAVI, 117, etc.)
   //    Le backend retourne un safety_response riche avec preamble + resources.
@@ -261,7 +292,14 @@ async function submitTriageAnswers() {
     var res = await fetch('/api/triage/refine?lang=' + encodeURIComponent(lang), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ sessionId: jbCaseId, reponses: jbAnswersGiven, lang: lang })
+      // wallet_session : si l'utilisateur a déjà des crédits, le round 2+ se
+      // débite automatiquement au lieu de buter sur le paywall.
+      body: JSON.stringify({
+        sessionId: jbCaseId,
+        reponses: jbAnswersGiven,
+        lang: lang,
+        wallet_session: localStorage.getItem('jb_session') || null
+      })
     });
     var data = await res.json();
     if (!res.ok) throw new Error(data.error || 'Erreur ' + res.status);
@@ -289,6 +327,8 @@ function skipTriageQuestions() {
 window.skipTriageQuestions = skipTriageQuestions;
 
 function showTriageError(msg) {
+  // Funnel 2a : erreur de triage (corrélée au case si connu)
+  if (window.jbTrack) jbTrack('triage_error', jbCaseId);
   var card = document.getElementById('questionCard');
   if (!card) return;
   card.innerHTML =
@@ -439,26 +479,155 @@ async function submitConsultation() {
 
 // ===== Result page =====
 
+// case_id du triage courant (pour les events de profondeur 2b posés par les
+// handlers inline letter_clicked / contact_clicked / step_expanded).
+var jbResultCaseId = '';
+
+// Rend les sections PERSONNALISÉES issues du triage (plan d'action, urgence,
+// délais, besoin d'avocat, contacts cantonaux). Avant le fix P2 (2026-05-31),
+// ces données — pourtant calculées gratuitement côté serveur — étaient jetées
+// par loadResultat et le citoyen ne voyait qu'une fiche documentaire brute.
+// Renvoie '' si on n'arrive pas depuis un triage (accès direct/SEO/lien partagé).
+function renderTriageAnalysis(triage, caseId) {
+  if (!triage) return '';
+  var cid = escHtmlAttr(caseId || '');
+  var html = '';
+
+  // 1. Bandeau d'urgence
+  var urg = triage.urgence;
+  if (urg === 'immediate' || urg === 'cette_semaine' || urg === 'ce_mois') {
+    var urgClass = urg === 'immediate' ? 'urg-immediate' : (urg === 'cette_semaine' ? 'urg-week' : 'urg-month');
+    var urgText = urg === 'immediate'
+      ? '⚠ Urgent — des délais courts courent. Agissez immédiatement.'
+      : (urg === 'cette_semaine'
+        ? 'Attention aux délais — des démarches sont à faire cette semaine.'
+        : 'Des démarches sont à prévoir ce mois-ci.');
+    html += '<div class="triage-urgency ' + urgClass + '" role="alert">' + escHtmlSafe(urgText) + '</div>';
+  }
+
+  // 2. Diagnostic personnalisé
+  if (triage.diagnostic && typeof triage.diagnostic === 'string') {
+    html += '<div class="card triage-diagnostic"><h3>Votre situation</h3><p>' + escHtmlSafe(triage.diagnostic) + '</p></div>';
+  }
+
+  // 3. Délais critiques
+  if (Array.isArray(triage.delaisCritiques) && triage.delaisCritiques.length) {
+    html += '<div class="card triage-delais"><h3>⏱ Délais à ne pas manquer</h3><ul class="triage-delai-list">';
+    triage.delaisCritiques.forEach(function(d) {
+      html += '<li><strong>' + escHtmlSafe(d.procedure || '') + '</strong> — ' + escHtmlSafe(d.delai || '');
+      if (d.consequence) html += '<br><span class="triage-delai-conseq">Si dépassé : ' + escHtmlSafe(d.consequence) + '</span>';
+      html += '</li>';
+    });
+    html += '</ul></div>';
+  }
+
+  // 4. Besoin d'un avocat (verdict clair)
+  if (typeof triage.besoinAvocat === 'boolean') {
+    if (triage.besoinAvocat) {
+      html += '<div class="card triage-lawyer triage-lawyer-yes"><h3>👤 Un avocat est recommandé</h3>' +
+        '<p>Votre situation présente une complexité ou un enjeu qui justifie l\'avis d\'un professionnel. ' +
+        'Les contacts gratuits ci-dessous peuvent vous orienter en premier.</p></div>';
+    } else {
+      html += '<div class="card triage-lawyer triage-lawyer-no"><h3>✓ Vous pouvez probablement agir sans avocat</h3>' +
+        '<p>Sur la base des éléments fournis, c\'est un cas standard que vous pouvez gérer en suivant le plan ci-dessous. ' +
+        'En cas de doute, les contacts gratuits restent disponibles.</p></div>';
+    }
+  }
+
+  // 5. Plan d'action
+  var plan = triage.planAction;
+  if (plan && (Array.isArray(plan.etapes) && plan.etapes.length)) {
+    html += '<div class="card triage-plan"><h3>📋 Votre plan d\'action</h3><ol class="triage-steps">';
+    plan.etapes.forEach(function(et) {
+      var action = escHtmlSafe(et.action || '');
+      var desc = et.description ? escHtmlSafe(et.description) : '';
+      if (desc) {
+        html += '<li><details class="triage-step" ontoggle="if(this.open&&window.jbTrack)jbTrack(\'step_expanded\',\'' + cid + '\')">' +
+          '<summary>' + action + '</summary><div class="triage-step-desc">' + desc + '</div></details></li>';
+      } else {
+        html += '<li>' + action + '</li>';
+      }
+    });
+    html += '</ol>';
+
+    // Pièges à éviter
+    if (Array.isArray(plan.pieges) && plan.pieges.length) {
+      html += '<div class="triage-pieges"><h4>⚠ Pièges à éviter</h4><ul>';
+      plan.pieges.forEach(function(p) {
+        html += '<li><strong>' + escHtmlSafe(p.erreur || '') + '</strong>';
+        if (p.consequence) html += ' — ' + escHtmlSafe(p.consequence);
+        if (p.correction) html += '<br><span class="triage-piege-fix">→ ' + escHtmlSafe(p.correction) + '</span>';
+        html += '</li>';
+      });
+      html += '</ul></div>';
+    }
+
+    // Documents à réunir
+    if (Array.isArray(plan.documents) && plan.documents.length) {
+      html += '<div class="triage-docs"><h4>📎 Documents à réunir</h4><ul>';
+      plan.documents.forEach(function(doc) {
+        var label = (typeof doc === 'string') ? doc : (doc.nom || doc.label || doc.document || doc.titre || '');
+        if (label) html += '<li>' + escHtmlSafe(label) + '</li>';
+      });
+      html += '</ul></div>';
+    }
+    html += '</div>';
+  }
+
+  // 6. Contacts cantonaux
+  if (Array.isArray(triage.contacts) && triage.contacts.length) {
+    html += '<div class="card triage-contacts"><h3>📞 Contacts utiles' + (triage.contacts[0] && triage.contacts.some(function(c){return c.gratuit;}) ? ' (gratuits)' : '') + '</h3>';
+    triage.contacts.forEach(function(c) {
+      html += '<div class="triage-contact">';
+      html += '<div class="triage-contact-name">' + escHtmlSafe(c.nom || '');
+      if (c.gratuit) html += ' <span class="triage-free-tag">gratuit</span>';
+      html += '</div>';
+      if (c.type) html += '<div class="triage-contact-type">' + escHtmlSafe(c.type) + '</div>';
+      if (c.contact) {
+        var ct = String(c.contact);
+        var link;
+        if (ct.indexOf('@') > -1) link = '<a href="mailto:' + escHtmlAttr(ct) + '" onclick="if(window.jbTrack)jbTrack(\'contact_clicked\',\'' + cid + '\')">' + escHtmlSafe(ct) + '</a>';
+        else if (ct.indexOf('http') === 0) link = '<a href="' + escHtmlAttr(ct) + '" target="_blank" rel="noopener" onclick="if(window.jbTrack)jbTrack(\'contact_clicked\',\'' + cid + '\')">' + escHtmlSafe(ct) + '</a>';
+        else if (/[0-9]{6,}/.test(ct.replace(/\s/g, ''))) link = '<a href="tel:' + escHtmlAttr(ct.replace(/\s/g, '')) + '" onclick="if(window.jbTrack)jbTrack(\'contact_clicked\',\'' + cid + '\')">' + escHtmlSafe(ct) + '</a>';
+        else link = escHtmlSafe(ct);
+        html += '<div class="triage-contact-link">' + link + '</div>';
+      }
+      if (c.conditions) html += '<div class="triage-contact-cond">' + escHtmlSafe(c.conditions) + '</div>';
+      html += '</div>';
+    });
+    html += '</div>';
+  }
+
+  return html;
+}
+
 async function loadResultat(ficheId) {
-  var data = null;
+  // 1. Analyse triage personnalisée (si arrivée depuis un triage). Le payload
+  //    triage porte ficheId au top-level (PAS d'objet fiche) : avant ce fix le
+  //    guard `parsed.fiche.id` échouait toujours et l'analyse perso (plan,
+  //    urgence, besoin avocat, contacts cantonaux) était silencieusement jetée.
+  var triage = null;
   var cached = sessionStorage.getItem('jb_result');
   if (cached) {
     try {
       var parsed = JSON.parse(cached);
-      if (parsed.fiche && parsed.fiche.id === ficheId) data = parsed;
+      var parsedFicheId = parsed && (parsed.ficheId || (parsed.fiche && parsed.fiche.id));
+      if (parsedFicheId === ficheId) triage = parsed;
     } catch (e) { /* ignore parse errors */ }
   }
+  var caseId = (triage && (triage.case_id || triage.caseId)) || '';
+  jbResultCaseId = caseId;
 
-  if (!data) {
-    try {
-      var lang = typeof getLang === 'function' ? getLang() : 'fr';
-      var res = await fetch('/api/fiches/' + ficheId + '?lang=' + encodeURIComponent(lang));
-      if (!res.ok) throw new Error(t('result.error_fiche'));
-      data = await res.json();
-    } catch (e) {
-      document.getElementById('resultat').innerHTML = '<div class="error-box">' + t('result.error_fiche') + ' <a href="/">' + t('result.back_home') + '</a></div>';
-      return;
-    }
+  // 2. Corps de fiche (explication/articles/lettre/services) — TOUJOURS récupéré.
+  var data = null;
+  try {
+    var lang = typeof getLang === 'function' ? getLang() : 'fr';
+    var res = await fetch('/api/fiches/' + ficheId + '?lang=' + encodeURIComponent(lang));
+    if (!res.ok) throw new Error(t('result.error_fiche'));
+    data = await res.json();
+  } catch (e) {
+    document.getElementById('resultat').innerHTML = '<div class="error-box">' + t('result.error_fiche') + ' <a href="/">' + t('result.back_home') + '</a></div>';
+    return;
   }
 
   var fiche = data.fiche;
@@ -506,6 +675,10 @@ async function loadResultat(ficheId) {
     html += '</div>';
     html += '</div>';
   }
+
+  // Analyse personnalisée du triage (plan, urgence, délais, avocat, contacts).
+  // Vide si accès direct/SEO (pas de triage en sessionStorage) → fiche brute.
+  html += renderTriageAnalysis(triage, caseId);
 
   // Premium CTA
   html += renderPremiumCTA();
@@ -581,9 +754,9 @@ async function loadResultat(ficheId) {
   // Quick feedback widget (1-clic, anonyme, opt-in agrégat) — funnel simple
   // pour augmenter le taux d'outcomes (0 en 9 jours sur la prod). Le formulaire
   // long renderOutcomesPrompt reste disponible plus loin pour les users motivés.
-  var caseIdForFeedback = (data.case_id || data.caseId || '');
+  var caseIdForFeedback = caseId || data.case_id || data.caseId || '';
   if (caseIdForFeedback) {
-    html += '<div class="quick-feedback" id="quickFeedback" data-case-id="' + caseIdForFeedback + '">';
+    html += '<div class="quick-feedback" id="quickFeedback" data-case-id="' + escHtmlAttr(caseIdForFeedback) + '">';
     html += '<p class="qf-question">Cette réponse vous a-t-elle aidé ?</p>';
     html += '<div class="qf-buttons">';
     html += '<button type="button" class="qf-btn" data-helpful="true" onclick="submitQuickFeedback(true)">👍 Oui</button>';
@@ -594,6 +767,14 @@ async function loadResultat(ficheId) {
   }
 
   document.getElementById('resultat').innerHTML = html;
+
+  // Funnel : page résultat rendue (2a) + plan vu (2b) — corrélés par case_id
+  if (window.jbTrack) {
+    jbTrack('triage_result_rendered', caseId || null);
+    if (triage && triage.planAction && Array.isArray(triage.planAction.etapes) && triage.planAction.etapes.length) {
+      jbTrack('plan_viewed', caseId || null);
+    }
+  }
 }
 
 // Envoie le feedback rapide thumbs up/down (POST /api/outcome — endpoint simple
@@ -610,6 +791,7 @@ function submitQuickFeedback(helpful) {
   var buttons = widget.querySelectorAll('.qf-btn');
   buttons.forEach(function(b) { b.disabled = true; });
   var helpfulScore = helpful ? 3 : 1;
+  if (window.jbTrack) jbTrack('feedback_submitted', caseId);
   fetch('/api/outcome', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -628,6 +810,7 @@ function submitQuickFeedback(helpful) {
 window.submitQuickFeedback = submitQuickFeedback;
 
 function copyLettre() {
+  if (window.jbTrack) jbTrack('letter_clicked', jbResultCaseId);
   var text = document.getElementById('lettreText').textContent;
   navigator.clipboard.writeText(text).then(function() {
     var btn = document.querySelector('.copy-btn');
@@ -713,6 +896,8 @@ async function loadSearchResultat(query) {
     } else {
       renderEnrichedResult(data, query, container);
     }
+    // Funnel : rendu d'une page résultat (chemin recherche — pas de case_id)
+    if (window.jbTrack) jbTrack('triage_result_rendered', null);
   } catch (e) {
     stopLoadingIndicator();
     container.innerHTML = '<div class="error-box">' + t('result.error_connection') + ' <a href="/">' + t('result.back_home') + '</a></div>';
@@ -1105,9 +1290,11 @@ function renderEnrichedResult(data, query, container) {
     html += '</div>';
   }
 
-  // Feedback widget
+  // Feedback widget — case_id propagé pour persister via /api/outcome (et non
+  // plus le trou noir /api/feedback). Voir sendFeedback().
   var feedbackFicheId = (data.fiche || {}).id || 'unknown';
-  html += '<div class="feedback-widget" id="feedback-widget" data-fiche="' + escAttr(feedbackFicheId) + '">';
+  var feedbackCaseId = data.case_id || data.sessionId || '';
+  html += '<div class="feedback-widget" id="feedback-widget" data-fiche="' + escAttr(feedbackFicheId) + '" data-case-id="' + escAttr(feedbackCaseId) + '">';
   html += '<p>' + t('feedback.question') + '</p>';
   html += '<button class="btn btn-sm btn-feedback-yes" onclick="sendFeedback(\'oui\')">' + t('feedback.yes') + '</button>';
   html += '<button class="btn btn-sm btn-feedback-no" onclick="sendFeedback(\'non\')">' + t('feedback.no') + '</button>';
@@ -1210,12 +1397,27 @@ function renderSearchActions(query, isBottom) {
 function sendFeedback(rating) {
   var widget = document.getElementById('feedback-widget');
   if (!widget) return;
+  if (widget.dataset.submitted === '1') return;
+  widget.dataset.submitted = '1';
   var ficheId = widget.getAttribute('data-fiche') || 'unknown';
-  fetch('/api/feedback', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ ficheId: ficheId, rating: rating })
-  }).catch(function() {});
+  var caseId = widget.getAttribute('data-case-id') || '';
+  if (window.jbTrack) jbTrack('feedback_submitted', caseId);
+  // Persisté via /api/outcome (recordSimpleOutcome, k-anon) quand un case_id
+  // existe — fini le trou noir /api/feedback (tableau RAM perdu au redeploy).
+  // Mapping rating → échelle helpful 1/2/3 (oui=3, non=1, partiel=2).
+  if (caseId) {
+    var helpfulScore = rating === 'oui' ? 3 : (rating === 'non' ? 1 : 2);
+    fetch('/api/outcome', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        case_id: caseId,
+        helpful: helpfulScore,
+        consent_anon_aggregate: true,
+        context: { fiche_id: ficheId }
+      })
+    }).catch(function() {});
+  }
   widget.innerHTML = '<p class="feedback-thanks">' + t('feedback.thanks') + '</p>';
 }
 

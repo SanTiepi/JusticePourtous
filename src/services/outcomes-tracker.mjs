@@ -251,19 +251,20 @@ function validateInput(input) {
  * Enregistre un outcome.
  * @returns {{outcome_id, status}} status ∈ {'recorded','updated','no_consent','invalid'}
  */
-export function recordOutcome({
-  case_id,
-  fiche_id,
-  domaine,
-  canton = null,
-  consent_given = false,
-  action_taken = 'awaiting',
-  result = 'pending',
-  duration_weeks = null,
-  cost_chf = null,
-  satisfaction = null,
-  notes_anonymized = ''
-} = {}) {
+export function recordOutcome(input) {
+  const {
+    case_id,
+    fiche_id,
+    domaine,
+    canton = null,
+    consent_given = false,
+    action_taken = 'awaiting',
+    result = 'pending',
+    duration_weeks = null,
+    cost_chf = null,
+    satisfaction = null,
+    notes_anonymized = ''
+  } = input ?? {};
   const err = validateInput({
     case_id, fiche_id, domaine, consent_given,
     action_taken, result, duration_weeks, cost_chf, satisfaction
@@ -448,13 +449,14 @@ const HELPFUL_TO_RESULT = { 1: 'lost', 2: 'partially_won', 3: 'won' };
  * @param {object} [input.context] - { fiche_id, domaine, canton } si connu côté serveur
  * @returns {{recorded: boolean, outcome_id?: string, reason?: string}}
  */
-export function recordSimpleOutcome({
-  case_id,
-  helpful,
-  free_text = '',
-  consent = false,
-  context = {}
-} = {}) {
+export function recordSimpleOutcome(input) {
+  const {
+    case_id,
+    helpful,
+    free_text = '',
+    consent = false,
+    context = {}
+  } = input ?? {};
   if (consent !== true) {
     return { recorded: false, reason: 'consent_required' };
   }

@@ -720,3 +720,19 @@ Points à surveiller :
 - **Note technique** : run précédent avait tenté cette wave en état HEAD détaché + stash pop qui a créé conflits (16 commits écart local/origin). Résolu par restore + pull + réapplication propre.
 - **Domaines** : 10 domaines couverts simultanément — angles inédits (délais péremptoires méconnus, procédures d'urgence, responsabilité post-fermeture)
 - **Prochaine action** : re-mesurer avec `node scripts/adversarial-eval-cli.mjs` (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-05-30 UTC — run agent horaire (fix null guard outcomes-tracker)
+- **Tenté** : item 3 — corriger 2 bugs documentés dans `outcomes-tracker.mjs` : `recordOutcome(null)` et `recordSimpleOutcome(null)` déclenchaient un TypeError (destructuration paramètre null non couverte par `= {}`), provoquant HTTP 500 si un client POST le corps JSON `"null"`. Mettre à jour les tests qui verrouillaient le comportement bugué.
+- **Résultat** : passed ✓
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2498/2498 ✓**
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+- **Ce qui a été fait** :
+  - **Bug fix** `src/services/outcomes-tracker.mjs` : `recordOutcome` et `recordSimpleOutcome` : signature `function f({ ... } = {})` → `function f(input) { const { ... } = input ?? {}; }`. Le default `= {}` JS ne s'applique qu'à `undefined`, jamais à `null`. Un body API parsé comme JSON `null` (POST `/api/outcome` ou `/api/outcomes/record`) atteignait le TypeError car `null` n'est pas `undefined`. La correction `?? {}` traite null et undefined.
+  - **Tests** `test/outcomes-tracker-edge.test.mjs` : les 2 cas "BUG: throw TypeError" remplacés par les cas corrects :
+    - `recordOutcome(null)` → `{status: 'no_consent', outcome_id: null}` (consent_given=false par défaut)
+    - `recordSimpleOutcome(null)` → `{recorded: false, reason: 'consent_required'}` (consent=false par défaut)
+- **Rationale** : `recordOutcome(null)` atteignable via POST `/api/outcomes/record` avec corps JSON `"null"` → TypeError ligne 254 → HTTP 500 sur input utilisateur. `recordSimpleOutcome(null)` atteignable via POST `/api/outcome` avec corps JSON `"null"` → même crash. Ces 2 bugs étaient documentés dans les tests edge (marqués BUG À CORRIGER) depuis la session 2026-05-29. Fix minimal (2 lignes) sans impact sur la logique métier.
+- **Prochaine action** : validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous. Couverture directe exhaustive atteinte.

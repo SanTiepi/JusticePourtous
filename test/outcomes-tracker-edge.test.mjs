@@ -45,15 +45,10 @@ function reset() {
 describe('recordOutcome — payloads malformés (jamais de throw)', () => {
   beforeEach(reset);
 
-  // BUG ATTEIGNABLE À CORRIGER : recordOutcome(null) THROW au lieu de retourner
-  // un statut. La destructuration paramétrée `{ ... } = {}` n'applique son
-  // default QUE pour `undefined`, jamais pour `null`. Un body API parsé comme
-  // JSON `null` (POST /api/outcomes/record avec corps "null") atteint ce chemin
-  // → TypeError ligne 254-266 (outcomes-tracker.mjs) → 500 sur input user.
-  // Fix : `function recordOutcome(input) { input = input || {}; const { ... } = input; }`
-  // ou garde en tête. On VERROUILLE le comportement actuel (throw) pour détecter le fix.
-  it('null → BUG: throw TypeError (devrait retourner un statut)', () => {
-    assert.throws(() => recordOutcome(null), TypeError);
+  it('null → no_consent (guard null via ?? {})', () => {
+    const r = recordOutcome(null);
+    assert.equal(r.status, 'no_consent');
+    assert.equal(r.outcome_id, null);
     assert.equal(_listOutcomesForTests().length, 0);
   });
 
@@ -143,15 +138,10 @@ describe('recordOutcome — payloads malformés (jamais de throw)', () => {
 describe('recordSimpleOutcome — payloads hostiles (jamais de throw)', () => {
   beforeEach(reset);
 
-  // BUG ATTEIGNABLE À CORRIGER : recordSimpleOutcome(null) THROW au lieu de
-  // retourner { recorded:false, reason }. Même cause que recordOutcome : le
-  // default `= {}` de la destructuration paramétrée ne couvre pas `null`.
-  // Atteignable via POST /api/outcome avec corps JSON "null" → TypeError
-  // ligne 451-457 (outcomes-tracker.mjs) → 500 sur input user.
-  // Fix : `function recordSimpleOutcome(input) { input = input || {}; ... }`.
-  // On VERROUILLE le comportement actuel (throw) pour détecter le fix.
-  it('null → BUG: throw TypeError (devrait retourner recorded:false)', () => {
-    assert.throws(() => recordSimpleOutcome(null), TypeError);
+  it('null → consent_required (guard null via ?? {})', () => {
+    const r = recordSimpleOutcome(null);
+    assert.equal(r.recorded, false);
+    assert.equal(r.reason, 'consent_required');
   });
 
   it('undefined → consent_required (defaults)', () => {

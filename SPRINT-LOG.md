@@ -657,3 +657,25 @@ Points à surveiller :
   - **`successions_ab_intestat`** documentée (haute priorité) : base CC 457/458/462 — aucune fiche couvre la succession ab intestat (ordre légal quand pas de testament). Haiku génère IDs fictifs (`successions_ab_intestat`) → ficheIndex lookup échoue → article_required = false. Fail `adv_famille_04` persistant depuis wave 1.
   - **`etranger_permis_b_perte_emploi`** documentée (haute priorité) : base LEI 61/33/OASA 77b — la fiche `etranger_permis_b_renouvellement` cite LEI 33/62 mais ses tags ne couvrent pas le scénario "licenciement/fermeture entreprise". LEI 61 (extinction automatique) absent de toutes les fiches. Haiku génère IDs fictifs → lookup échoue. Fail `adv_etrangers_01` persistant depuis wave 1.
 - **Prochaine action** : validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous. Les 8 gaps sont à valider par un juriste avant création.
+
+### 2026-05-30 UTC — run agent horaire (wave 6 adversarial : 60→70 cas)
+- **Tenté** : item 1 — wave 6 : +10 cas adversariaux ciblant bail/travail/dettes/famille/étrangers/hybride/sante/fiscal/accident (domaines peu couverts ou nouveaux angles)
+- **Résultat** : passed ✓ — 70 cas dans `test/adversarial-cases.mjs`
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2498/2498 ✓** (tests data only — pas de changement de code)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Adversarial CLI : non re-mesuré ce run (nécessite `claude -p` actif)
+- **Nouveaux cas wave 6 (10)** :
+  - adv_bail_10 (travaux bailleur pendant occupation — CO 260/257h)
+  - adv_travail_09 (licenciement pendant grossesse — CO 336c)
+  - adv_dettes_08 (saisie de salaire minimum vital — LP 93)
+  - adv_famille_06 (pension enfant majeur en formation — CC 277)
+  - adv_etrangers_05 (regroupement familial conjoint étranger — LEI 42)
+  - adv_hybride_04 (séparation concubins, bail à un seul nom — CO 263)
+  - adv_sante_02 (opération urgence sans consentement, séquelles — CC 28)
+  - adv_fiscal_01 (taxation d'office, délai réclamation 30j — LIFD 132)
+  - adv_accident_03 (AANP accident sport, taux 60% — LAA 7)
+  - adv_travail_10 (clause non-concurrence excessive 5 ans — CO 340a)
+- **Couverture domaines** : 1ère apparition de `adv_fiscal_01` (domaine fiscal beta). `sante` et `accident` étoffés (2 cas chacun). Hybride concubins nouvel angle (bail+famille non-mariés). Total = 70 cas adversariaux.
+- **Prochaine action** : re-mesurer avec `node scripts/adversarial-eval-cli.mjs` (nécessite `claude -p` actif) pour score réel sur 70 cas. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

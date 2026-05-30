@@ -439,3 +439,31 @@ Points à surveiller :
   - `detectContradictions — questions` (2 cas) : déduplication 50 chars, conservation sans dédup intra-doc
 - **Rationale** : la couverture existante dans `dossier-analyzer.test.mjs` ne testait que 8 assertions happy-path avec des mockDocs complexes. Les entrées dégénérées (tableau vide, docs sans llm_extraction), les guards optionnels et les branches de logique (tri dates, temporal contradiction detection, acceptance_rate calcul) n'étaient pas couverts.
 - **Prochaine action** : sprint goal atteint — valeur restante = validation humaine avocat (hors scope autonomous). Modules sans couverture directe restants : `document-ingester.mjs` (LLM+FS) + `docx-generator.mjs` (couvert indirectement).
+
+### 2026-05-30 UTC — run agent horaire (complexity-router direct)
+- **Tenté** : item 3 — tests directs pour `complexity-router.mjs` (0 couverture directe précédemment)
+- **Résultat** : passed ✓
+- **Commits** : `9a5c7fc`
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2258/2258 ✓** (+70 tests)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **70 tests** dans `test/complexity-router.test.mjs`
+- **Ce qui a été fait** : `test/complexity-router.test.mjs` — 15 suites / 70 tests zéro-LLM zéro-réseau sur le module de routing de complexité :
+  - `TIERS + TIER_ORDER + constants` (5 cas) : invariant 5 tiers, ordre croissant, tierRank strict, maxTier, ALLOWED_DOMAINS size + bail/successions
+  - `scoreDimensions — entrées dégénérées` (3 cas) : no args, empty context, 7 clés de dimensions
+  - `dimension domains` (4 cas) : 0, 1 (dédupliqué), 2, 3+ domaines → scores 0/0/5/10
+  - `dimension clarity` (4 cas) : 0/2/3 faits critiques, faits via facts vs navigation
+  - `dimension urgency` (8 cas) : null, 1/3/14/30/31 jours, dérivation depuis cascades et depuis delais "24h"
+  - `dimension stakes` (5 cas) : null→3, <500→0, <5000→4, <50000→7, ≥50000→10
+  - `dimension adversary` (6 cas) : inconnu, particulier, avocat, état, SEM, adversaire_est_etat
+  - `dimension coverage` (5 cas) : hors scope, certain, probable, variable, confiance null
+  - `dimension jurisprudence` (5 cas) : conflit, contradictions_connues, 3+/1/0 décisions
+  - `applyHardRules` (7 cas) : vide, hors scope, recours_tf, penal_grave, constitutionnel, état, adversaire_est_etat
+  - `evaluateComplexity — tier de base` (2 cas) : TRIVIAL sur contexte idéal, structure retour
+  - `evaluateComplexity — hard rules` (2 cas) : hors scope force LIMITE, TF force HUMAIN
+  - `evaluateComplexity — asymétrie monter/descendre` (5 cas) : montée OK, descente bloquée, descente avec hard rule, delta null/calculé
+  - `evaluateComplexity — flags` (5 cas) : urgent, hors_scope, adversaire_etat, jurisprudence_conflit, humain_requis
+  - `evaluateComplexity — uncertainties` (4 cas) : faits_critiques, montant_inconnu, tri décroissant, contexte idéal=0 uncertainties
+- **Rationale** : `complexity-router.mjs` détermine le tier (trivial/standard/complexe/limite/humain) qui gouverne tout le routing du triage. Aucun test direct n'existait — les 7 dimensions de scoring, les hard rules asymétriques (freeze #14), et les flags étaient couverts uniquement via les tests d'intégration. Les branches critiques (descente de tier bloquée, force HUMAIN, dérivation délai depuis cascades) sont désormais régression-lockées.
+- **Prochaine action** : modules sans tests directs restants : `escalation-pack.mjs` (buildEscalationPack pure logic), `triage-enrichment.mjs`, `freshness-badge.mjs`. Ou item 5 (docs/missing-fiches.md).

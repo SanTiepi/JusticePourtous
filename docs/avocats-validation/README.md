@@ -5,6 +5,11 @@
 **Date** : 2026-04-30
 **Durée estimée** : 2-4 semaines pour avoir au moins 2 retours.
 
+> ⚡ **Si la route gratuite traîne (cas actuel), commence par l'amorce payante** :
+> [`AMORCE-juriste-paye.md`](AMORCE-juriste-paye.md) — 1 fiche relue par un juriste payé
+> (CHF 300–500) pour obtenir le **premier tampon humain** et débloquer la gate Phase 2,
+> puis enchaîner. Stratégie validée 2026-05-31 (ne pas viser « 5 fiches ou rien »).
+
 ---
 
 ## 5 fiches gold prioritaires

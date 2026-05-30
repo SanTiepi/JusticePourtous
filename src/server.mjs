@@ -641,7 +641,19 @@ const server = createServer(async (req, res) => {
     }
 
     // Legacy premium routes (kept for backward compat)
+    // SECURITY (P0 2026-05-31): cette route mintait un wallet GRATUITEMENT sans paiement
+    // (bypass complet du paywall + consommation de crédits Anthropic réels). En prod OU dès
+    // que Stripe est configuré, on la coupe (410) — le seul chemin légitime de création de
+    // wallet est le webhook Stripe `checkout.session.completed` (et le poll session-status)
+    // APRÈS paiement vérifié. Conservée en mode démo/dev pur (ni prod, ni Stripe) pour les
+    // tests locaux et la suite e2e (NODE_ENV=test, stripe=null).
     if (path === '/api/premium/acheter' && method === 'POST') {
+      if (process.env.NODE_ENV === 'production' || stripe) {
+        return json(res, 410, {
+          error: 'Achat de crédits indisponible via cette route. Le paiement se fait par carte bancaire (Stripe).',
+          disclaimer: DISCLAIMER
+        });
+      }
       const body = await parseBody(req);
       const result = acheterWallet(body.montant);
       return json(res, result.status, { ...result.data, disclaimer: DISCLAIMER });

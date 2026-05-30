@@ -599,3 +599,29 @@ Points à surveiller :
   - Mise à jour du compteur cross-domain : 22 → 70 (76 règles réelles)
 - **Rationale** : le normative-compiler exécute des règles juridiques en code (délais péremptoires, conditions de blocage). Les 17 règles fiscal/LPP/PPE/circulation/successions ajoutées en phase 5 n'avaient aucun test : une régression silencieuse pouvait modifier des délais légaux (prescription 10 ans → 15 ans, retrait permis 3 → 12 mois) sans être détectée.
 - **Prochaine action** : couverture directe quasi-exhaustive. Valeur restante = validation humaine avocat (hors scope autonomous).
+
+### 2026-05-30 UTC — run agent horaire (fiche-validator direct)
+- **Tenté** : item 3 — tests directs pour `fiche-validator.mjs` (gate CI #2 : 0 test direct précédemment)
+- **Résultat** : passed ✓
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2498/2498 ✓** (+52 tests)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **52 tests** dans `test/fiche-validator-direct.test.mjs`
+- **Ce qui a été fait** : `test/fiche-validator-direct.test.mjs` — 13 suites / 52 tests zéro-LLM sur les 3 exports du module :
+  - `validateFiche — entrées dégénérées` (4 cas) : null/undefined/string/tableau → INVALID_TYPE
+  - `validateFiche — fiche valide` (2 cas) : fiche complète → valid=true + shape du retour
+  - `validateFiche — MISSING_FIELD` (5 cas) : id/domaine/reponse/review_scope/null → MISSING_FIELD
+  - `validateFiche — id pattern` (4 cas) : tiret→INVALID_PATTERN, commence par chiffre, non-string→INVALID_TYPE, valide→ok
+  - `validateFiche — INVALID_ENUM` (4 cas) : domaine/confiance/review_scope hors enum, invariant 15 domaines valides
+  - `validateFiche — tags` (2 cas) : vide→MIN_ITEMS, non-tableau→INVALID_TYPE
+  - `validateFiche — questions` (6 cas) : non-tableau, < 3 items, sans id, sans text, sans options+type, type string valide
+  - `validateFiche — reponse` (7 cas) : non-objet, explication < 200, borne 200 exacte, articles vide, article sans ref, jurisprudence non-tableau, jurisprudence vide ok
+  - `validateFiche — dates ISO` (3 cas) : DD.MM.YYYY→INVALID_PATTERN, YYYY/MM/DD, format avec heure→valide
+  - `validateFiche — warnings` (8 cas) : CONFIANCE_CERTAIN_NOT_REVIEWED, EXPIRY_BEFORE_VERIFIED (antérieur + égal), NOT_ACTIONABLE (avec/sans cascades), SHORT_EXPLICATION_FEW_ARTICLES (avec/sans)
+  - `validateFiche — strict=true` (1 cas) : warning→STRICT_NOT_ACTIONABLE, warnings=[]
+  - `countFicheSchemaIssues` (5 cas) : rapport vide, 2/3 valid→valid_pct 66.7%, by_domain grouping, tri top_problematic, by_warning_code
+  - **Intégration réelle** (1 cas) : `validateAllFiches()` sur les 314 fiches prod → 0 errors, valid_pct=100% (invariant gate CI régression-locké)
+- **Rationale** : `fiche-validator.mjs` est le module utilisé dans le gate CI #2 (avant tout push). Un bug dans la logique du validateur lui-même (mauvais check MIN_ITEMS, regex ID_REGEX incorrecte, REQUIRED_TOP manquant un champ) pouvait silencieusement laisser passer des fiches invalides. Les 9 codes d'erreur (MISSING_FIELD, INVALID_TYPE, INVALID_PATTERN, INVALID_ENUM, MIN_ITEMS, MIN_LENGTH, INVALID_QUESTION, INVALID_ARTICLE) et 4 codes de warning sont désormais régression-lockés. L'invariant "314 fiches prod → 0 errors" est maintenant en test CI.
+- **Prochaine action** : couverture directe exhaustive atteinte. Valeur restante = validation humaine avocat (hors scope autonomous) + recrutement testeurs réels.

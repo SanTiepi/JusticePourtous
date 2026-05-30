@@ -548,6 +548,22 @@ Points à surveiller :
 - **Rationale** : `document-ingester.mjs` est utilisé pour analyser des documents juridiques uploadés par les citoyens. `detectDocumentType` combine 12 patterns × body/filename avec un score cumulatif — les priorités filename (après la boucle de scoring) pouvaient silencieusement écraser le bon score. `extractMetadata` parse dates, acteurs, refs légales et montants via regex — les refs légales (CO/CP/CC/CPP) avec variantes al./ch./let. étaient le cas le plus fragile. Ces règles sont désormais régression-lockées.
 - **Prochaine action** : couverture directe des helpers exhaustive. Valeur restante = validation humaine avocat (hors scope autonomous) + recrutement 5-10 testeurs réels (0 outcomes en prod).
 
+### 2026-05-30 UTC — run agent horaire (régression route HTTP download lettre)
+- **Tenté** : item 2 — régression route `GET /api/case/:id/letter/:letterId/download` via HTTP (jamais testée via HTTP malgré le test "end-to-end" mal nommé qui lisait le fichier directement sur disque)
+- **Résultat** : passed ✓
+- **Commits** : `80c0510`
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2410/2410 ✓** (+2 tests)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **2 tests** ajoutés dans `test/phase-cortex-actionable-outputs.test.mjs`
+- **Ce qui a été fait** :
+  - Helper `httpGetRaw` (Buffer chunks, binaire-safe) ajouté — le `httpGet` existant utilisait des strings pour des réponses potentiellement binaires
+  - `GET /api/case/:id/letter/:letterId/download` → 200 + Content-Type `wordprocessingml` + Content-Disposition `attachment` + magic bytes PK (DOCX = ZIP, 0x50 0x4b) + taille > 1000 bytes
+  - `GET /api/case/:id/letter/lettre-inexistante/download` → 404
+- **Rationale** : le test "end-to-end : POST letter → GET download renvoie le fichier" (ligne 527) était trompeur — il ne testait PAS la route HTTP. Il générait la lettre via POST puis lisait directement depuis le disque (readdirSync/readFileSync). La route HTTP avec ses headers (Content-Type, Content-Disposition) et la logique de lookup par suffixe letter_id n'était jamais exercée.
+- **Prochaine action** : valeur restante = validation humaine avocat (hors scope autonomous) + recrutement testeurs réels (0 outcomes en prod).
+
 ### 2026-05-30 UTC — run agent horaire (wave 4 adversarial : 40→50 cas + éval)
 - **Tenté** : item 1 — wave 4 : +10 cas adversariaux ciblant les 6 domaines beta sans couverture (social/assurances/sante/violence/entreprise/accident), mesure éval CLI, correction specs et documentation gaps
 - **Résultat** : passed ✓ — **95% global (50 cas)** → ~98% après correction specs ground-truth

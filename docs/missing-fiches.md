@@ -7,7 +7,7 @@ correspondance exacte.
 
 Ces fiches sont à créer après validation juridique humaine.
 
-## État actuel : 8 gaps identifiés (mis à jour 2026-05-30)
+## État actuel : 9 gaps identifiés (mis à jour 2026-05-30)
 
 Les deux gaps historiques sont comblés :
 
@@ -57,6 +57,14 @@ Les deux gaps historiques sont comblés :
   - **impact** : un citoyen qui pose une question de succession en mentionnant "il était remarié" risque d'obtenir des informations sur les régimes matrimoniaux plutôt que sur le partage successoral. La distinction est importante : le régime matrimonial détermine la masse successorale, la succession détermine le partage.
   - **solution recommandée** : ajout de tokens discriminants dans le prompt du navigator pour prioriser `successions` dès que les mots "décédé/décès/héritage/partage" sont présents, même en contexte famille recomposée.
   - **priorité** : moyenne. Les fiches successions existent et sont identifiées partiellement. Le routing est améliorable sans créer de nouvelle fiche.
+
+### Gap détecté par l'éval adversariale 2026-05-30 (wave 6 éval — 70 cas, score 96%)
+
+- ⛔ `fiscal_taxation_office`
+  - **base juridique** : LIFD 130 (taxation ordinaire), LIFD 132 (réclamation — délai 30 jours péremptoire dès notification), LIFD 133 (retrait de réclamation), LIFD 147/148 (recours)
+  - **pourquoi manquante** : `adv_fiscal_01` (taxation d'office impôts 2024 montant 3× trop élevé, délai 30 jours) — le navigator retourne `domaines=[]` `fiches=[]` : **le domaine `fiscal` n'est pas reconnu du tout** pour ce vocabulaire citoyen. Mots-clés "taxation d'office", "impôts", "montant 3 fois supérieur" ne déclenchent aucun routing vers le domaine `fiscal`. Le score est 0% (domaine, articles et fiches tous manquants).
+  - **observation** : le domaine `fiscal` est en `readiness: beta` avec 0 fiche dans le corpus courant (ou fiches non indexées). C'est un blind spot complet : la taxation d'office est une situation critique avec un délai de réclamation péremptoire de 30 jours (LIFD 132). Un citoyen qui rate ce délai perd définitivement son droit de contester.
+  - **priorité** : **critique**. Délai péremptoire 30 jours. Situation fréquente (déclaration non déposée ou tardive). Domaine fiscal entier non reconnu = fail systématique sur tous les cas fiscaux.
 
 ### Gaps persistants identifiés par analyse 60 cas (2026-05-30)
 

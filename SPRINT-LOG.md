@@ -679,3 +679,20 @@ Points à surveiller :
   - adv_travail_10 (clause non-concurrence excessive 5 ans — CO 340a)
 - **Couverture domaines** : 1ère apparition de `adv_fiscal_01` (domaine fiscal beta). `sante` et `accident` étoffés (2 cas chacun). Hybride concubins nouvel angle (bail+famille non-mariés). Total = 70 cas adversariaux.
 - **Prochaine action** : re-mesurer avec `node scripts/adversarial-eval-cli.mjs` (nécessite `claude -p` actif) pour score réel sur 70 cas. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-05-30 UTC — run agent horaire (éval 70 cas + gap fiscal_taxation_office)
+- **Tenté** : item 1 — mesure adversariale complète sur les 70 cas (wave 6 n'avait pas été mesuré) + item 5 — documentation nouveau gap identifié
+- **Résultat** : passed ✓ — **96% global (70 cas)** — seuil ≥95% maintenu
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2498/2498 ✓**
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - **Adversarial CLI (70 cas, haiku, concurrency=4) : 96% global** (66×100% + 2×63% + 1×25% + 1×0%)
+    - `adv_dettes_06` 63% (cautionnement — déjà documenté)
+    - `adv_social_02` 63% (LACI 30 juste motif — déjà documenté)
+    - `adv_bail_07` 25% (routing voisinage→bail — déjà documenté)
+    - `adv_fiscal_01` 0% : **domaine fiscal non reconnu du tout** (domaines=[], fiches=[]) → **nouveau gap `fiscal_taxation_office`** documenté
+    - `adv_etrangers_01` et `adv_famille_04` : repasse à 100% ce run (précédemment 63%)
+- **Nouveau gap documenté** : `fiscal_taxation_office` (priorité critique — délai péremptoire 30j LIFD 132) ajouté dans `docs/missing-fiches.md` (9 gaps total)
+- **Observation** : domaine `fiscal` (readiness: beta) = blind spot complet — aucune fiche ne couvre la taxation d'office ni la réclamation. Tout cas fiscal retourne domaines=[].
+- **Prochaine action** : validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous. Domaine `fiscal` à prioriser pour phase 2 (délai péremptoire 30j LIFD 132).

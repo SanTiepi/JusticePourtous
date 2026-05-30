@@ -126,8 +126,43 @@ function buildGuideModel(intent, fiche, locale) {
       ? `${SITE_URL}/guides/${intent.id}.html`
       : `${SITE_URL}/guides/${locale}/${intent.id}.html`,
     fr_canonical: `${SITE_URL}/guides/${intent.id}.html`,
-    cta_query: intent.label_citoyen || intent.label_juridique || intent.id
+    cta_query: intent.label_citoyen || intent.label_juridique || intent.id,
+    last_verified: fiche?.last_verified_at || intent.last_verified_at || null
   };
+}
+
+// Données structurées schema.org : BreadcrumbList (fil d'Ariane dans les SERP) +
+// Article. On évite volontairement HowTo/FAQPage (rich results dépréciés par
+// Google en 2023). JSON.stringify produit du JSON valide ; on neutralise '<'
+// pour éviter toute fermeture prématurée de </script>.
+function buildJsonLd(model) {
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Guides juridiques', item: `${SITE_URL}/guides/` },
+      { '@type': 'ListItem', position: 3, name: model.h1, item: model.canonical }
+    ]
+  };
+  const article = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: model.h1,
+    description: model.description,
+    inLanguage: model.locale,
+    isAccessibleForFree: true,
+    mainEntityOfPage: model.canonical,
+    author: { '@type': 'Organization', name: 'JusticePourtous' },
+    publisher: { '@type': 'Organization', name: 'JusticePourtous', url: SITE_URL }
+  };
+  if (model.last_verified) {
+    article.datePublished = model.last_verified;
+    article.dateModified = model.last_verified;
+  }
+  return [breadcrumb, article]
+    .map((block) => `<script type="application/ld+json">${JSON.stringify(block).replace(/</g, '\\u003c')}</script>`)
+    .join('\n  ');
 }
 
 function buildAlternateLinks(slug) {
@@ -211,6 +246,7 @@ function renderGuideHtml(model) {
   <meta property="og:url" content="${escapeHtml(model.canonical)}">
   <meta property="og:image" content="${SITE_URL}/og-image.svg">
   <meta name="twitter:card" content="summary_large_image">
+  ${buildJsonLd(model)}
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>

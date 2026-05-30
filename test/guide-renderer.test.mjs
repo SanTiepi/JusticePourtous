@@ -275,10 +275,13 @@ describe('renderGuideForLocale — intégration FR', () => {
     assert.ok(match[1].length > 5, 'description non vide');
   });
 
-  it('HTML est XSS-safe : pas de balise <script> non intentionnelle', async () => {
+  it('HTML est XSS-safe : pas de balise <script> exécutable (JSON-LD autorisé)', async () => {
     const result = await renderGuideForLocale('accident_casco_refus', 'fr');
     const scriptTags = (result.html.match(/<script[^>]*>/gi) || []);
-    assert.equal(scriptTags.length, 0, 'aucune balise <script> dans le HTML généré');
+    // JSON-LD (application/ld+json) est inerte (non exécuté par le navigateur) et
+    // standard pour les données structurées SEO : on l'autorise, on interdit le reste.
+    const execScripts = scriptTags.filter((t) => !/application\/ld\+json/i.test(t));
+    assert.equal(execScripts.length, 0, 'aucune balise <script> exécutable dans le HTML généré');
   });
 
   it('model contient slug, locale, canonical, title', async () => {

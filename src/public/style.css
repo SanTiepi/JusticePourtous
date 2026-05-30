@@ -4975,3 +4975,12 @@ body.has-disclaimer {
 .triage-contact-link a { color: var(--accent-secondary); }
 .triage-contact-cond { font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.15rem; }
 
+/* ── Hub de guides (maillage interne SEO) ─────────────────────────────── */
+.guide-hub-link { font-weight: 600; color: var(--accent-primary); text-decoration: none; font-size: 1.05rem; }
+.guide-hub-link:hover { text-decoration: underline; }
+.guide-hub-list { columns: 2; column-gap: 2.5rem; list-style: none; padding: 0; margin: 0.5rem 0 0; }
+.guide-hub-list li { margin-bottom: 0.5rem; break-inside: avoid; line-height: 1.4; }
+.guide-hub-list a { color: var(--accent-secondary); text-decoration: none; }
+.guide-hub-list a:hover { text-decoration: underline; }
+@media (max-width: 640px) { .guide-hub-list { columns: 1; } }
+

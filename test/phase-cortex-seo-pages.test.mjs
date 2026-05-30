@@ -56,8 +56,10 @@ describe('Phase Cortex — SEO pages generation', () => {
     const files = readdirSync(GUIDES).filter(f => f.endsWith('.html')).slice(0, 20);
     for (const f of files) {
       const html = readFileSync(join(GUIDES, f), 'utf-8');
-      // Pages guides sont statiques, pas de JS attendu
-      assert.ok(!/<script[^>]*>[^<]/.test(html), `${f}: script inline détecté (risque XSS)`);
+      // Pages guides sont statiques, pas de JS exécutable attendu. Le JSON-LD
+      // (application/ld+json) est inerte et standard pour le SEO : on l'exclut.
+      const stripped = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, '');
+      assert.ok(!/<script[^>]*>[^<]/.test(stripped), `${f}: script inline exécutable détecté (risque XSS)`);
     }
   });
 

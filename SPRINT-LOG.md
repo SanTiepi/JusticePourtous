@@ -506,3 +506,23 @@ Points à surveiller :
   - `buildUrgencyMarker — cas non couverts` (9 cas) : objet vide→null, high sans procedure, high avec procedure, moderate sans procedure, moderate avec procedure, critical sans procedure, délai=2→pluriel, délai=31→normal/action_hint null, délai=4→high (frontière ≤3/≤14)
 - **Rationale** : `phase3-enrichment.test.mjs` couvrait 6 happy-paths via `enrichTriageResult` mais ne testait pas : no-args, urgency_marker=null quand pas de délai, shape des champs de sortie (tier_score/tier_max/hard_rules_triggered/_eval_snapshot), ni extractFactsFromNav (branche facts=null). `urgency-marker.mjs` manquait les branches high/moderate avec et sans procedure, pluriel/singulier, et frontières de niveau.
 - **Prochaine action** : modules sans tests directs restants : `freshness-badge.mjs`. Ou item 5 (docs/missing-fiches.md). Sprint goal atteint — valeur restante = validation humaine avocat (hors scope autonomous).
+
+### 2026-05-30 UTC — run agent horaire (cantonal-juris-matcher scoreMatch directs)
+- **Tenté** : item 3 — tests directs pour la fonction `scoreMatch` de `cantonal-juris-matcher.mjs` (logique de scoring non exportée, couverte seulement via `findCantonalMatches` dans `phase-cortex-cantonal-juris.test.mjs`)
+- **Résultat** : passed ✓
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2373/2373 ✓** (`npm install` en amont)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **30 tests** dans `test/cantonal-juris-matcher-direct.test.mjs`
+- **Ce qui a été fait** :
+  - Export `_internals = { scoreMatch }` (1 ligne) dans `src/services/cantonal-juris-matcher.mjs`
+  - `test/cantonal-juris-matcher-direct.test.mjs` — 5 suites / 30 tests zéro-LLM zéro-réseau sur la logique de scoring :
+    - `domaine (condition obligatoire)` (5 cas) : domaine identique→score>0, domaine différent→0 strict, decision.domaine undefined→0, domaine null→0, cross-domain bail/travail→0
+    - `canton scoring` (5 cas) : exact match→+5, canton différent→+2, citoyenCanton null avec canton présent→+2, decision.canton absent→+0, exact>autre (comparaison)
+    - `articles partagés` (8 cas) : 0 commun→0, 1 commun→+5, 2 communs→+10, insensibilité casse, trim, article.ref vide ignoré, fiche sans articles→0, fiche.reponse null→0
+    - `tag matching` (7 cas) : tag dans title→+2, tag dans summary→+2, tag absent→+0, 2 tags→+4, insensibilité casse, fiche.tags vide→0, fiche.tags null→0
+    - `scores combinés` (5 cas) : canton+article=10, canton+article+tag=12, autrecanton+2articles+2tags=16, domaine différent neutralise tout, minimal→positif
+- **Rationale** : `scoreMatch` est la fonction centrale du matching de jurisprudence cantonale (corpus entscheidsuche). Elle combinait 4 dimensions de scoring sans aucun test par dimension ni vérification des règles d'accumulation. Désormais chaque règle de scoring est régression-lockée (priorité canton exact=5 vs autre=2, +5/article, +2/tag, condition domaine stricte).
+- **Prochaine action** : `freshness-badge.mjs` déjà couvert par `phase-cortex-freshness.test.mjs`. Module `payload-shaper.mjs` déjà couvert par `phase-cortex-payload-shape.test.mjs`. Module `docx-generator.mjs` couvert indirectement (nécessite docx). Couverture directe quasi-exhaustive — valeur restante = validation humaine avocat (hors scope autonomous).

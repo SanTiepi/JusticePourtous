@@ -108,3 +108,5 @@ export function getCantonalCorpusStats() {
 }
 
 export function _resetCacheForTests() { _cache = null; _cacheAt = 0; }
+
+export const _internals = { scoreMatch };

@@ -1,6 +1,13 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
+// Active le fake translator AVANT d'importer l'orchestrateur : le hook de panne
+// (JB_TRANSLATION_FAKE_THROW) vit dans le provider FAKE, qui n'est sélectionné que
+// si JB_TRANSLATION_FAKE='1' (cf. providers.mjs translateWithPrimaryProviders).
+// Sans cette ligne, FAKE_THROW seul est inerte → le provider réel renvoie 'fresh'
+// et le test croit à tort que la dégradation ne marche pas (régression 2026-05-30).
+process.env.JB_TRANSLATION_FAKE = '1';
+
 import {
   translateStructuredContent,
   translateTextContent

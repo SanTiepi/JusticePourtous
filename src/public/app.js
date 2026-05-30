@@ -47,7 +47,7 @@ async function initConsultation(domaine) {
     '<p style="color:#4a5b6e;margin:0 0 1.25rem;line-height:1.5;">Décrivez votre cas en quelques mots, dans vos mots à vous. Notre IA identifie ensuite la situation juridique précise et vous oriente.</p>' +
     '<textarea id="consultText" rows="5" maxlength="800" placeholder="' + placeholder.replace(/"/g, '&quot;') + '" style="width:100%;padding:0.85rem 1rem;font-size:1rem;line-height:1.55;border:1.5px solid #c9d4df;border-radius:8px;font-family:inherit;resize:vertical;min-height:120px;"></textarea>' +
     '<div style="display:flex;gap:0.75rem;margin-top:1rem;flex-wrap:wrap;">' +
-      '<button class="btn btn-primary" onclick="submitConsultText()" style="flex:1;min-width:200px;padding:0.85rem 1.5rem;font-size:1rem;font-weight:600;background:#1d7042;color:#fff;border:none;border-radius:999px;cursor:pointer;">Analyser ma situation</button>' +
+      '<button class="btn btn-primary" onclick="submitConsultText()" style="flex:1;min-width:200px;padding:0.85rem 1.5rem;font-size:1rem;font-weight:600;background:#8B2500;color:#fff;border:none;border-radius:999px;cursor:pointer;">Analyser ma situation</button>' +
       '<a href="/" class="btn btn-secondary" style="padding:0.85rem 1.25rem;font-size:0.95rem;color:#4a5b6e;text-decoration:none;border:1px solid #c9d4df;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;">Retour</a>' +
     '</div>' +
     '<p style="color:#6a7787;font-size:0.82rem;margin-top:1rem;">🔒 Anonyme · Aucun compte requis · Gratuit</p>';
@@ -203,7 +203,7 @@ function handleTriageResponse(data) {
     if (card2) card2.innerHTML =
       '<div class="error-box"><strong>Orientation vers un service spécialisé</strong><p style="margin:0.75rem 0;">' +
       escHtmlSafe(resp.message || data.error || 'Pour cette situation, nous vous recommandons de contacter directement un service spécialisé.') +
-      '</p><a href="/annuaire.html" class="btn btn-primary" style="display:inline-block;margin-top:0.5rem;padding:0.75rem 1.5rem;background:#1d7042;color:#fff;border-radius:999px;text-decoration:none;">Voir l\'annuaire des services</a></div>';
+      '</p><a href="/annuaire.html" class="btn btn-primary" style="display:inline-block;margin-top:0.5rem;padding:0.75rem 1.5rem;background:#8B2500;color:#fff;border-radius:999px;text-decoration:none;">Voir l\'annuaire des services</a></div>';
     return;
   }
   // 3) Résultat prêt → rediriger vers /resultat.html

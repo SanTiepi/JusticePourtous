@@ -65,9 +65,33 @@
         <span class="hero-chip" data-i18n="hero.chip_anonymous">🔒 Anonyme</span>
         <span class="hero-chip" data-i18n="hero.chip_sources">📚 Sources Fedlex officielles</span>
       </div>
-      <a href="#searchForm" class="hero-cta-btn" onclick="document.getElementById('searchInput').focus();">
-        <span data-i18n="hero.cta_describe">→ Décrire ma situation en 30 secondes</span>
-      </a>
+      <!-- Entrée froide : champ de recherche DIRECTEMENT dans le hero (above-the-fold).
+           Avant, c'était une ancre verte qui forçait un scroll jusqu'à la 4e section. -->
+      <form class="hero-search" id="searchForm" onsubmit="handleSearch(event)">
+        <div class="search-wrapper">
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Mon propriétaire refuse de rembourser ma caution..."
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+            maxlength="500"
+            aria-label="Décrivez votre problème juridique"
+          >
+          <button type="submit" class="search-btn">
+            <span data-i18n="action.analyser">Analyser</span>
+          </button>
+        </div>
+        <div class="search-suggestions">
+          <button type="button" class="suggestion" onclick="fillSearch('search.fill_caution')" data-i18n="search.suggestion_caution">Caution non remboursée</button>
+          <button type="button" class="suggestion" onclick="fillSearch('search.fill_licenciement')" data-i18n="search.suggestion_licenciement">Licenciement &amp; maladie</button>
+          <button type="button" class="suggestion" onclick="fillSearch('search.fill_heures')" data-i18n="search.suggestion_heures">Heures sup impayées</button>
+          <button type="button" class="suggestion" onclick="fillSearch('search.fill_commandement')" data-i18n="search.suggestion_commandement">Commandement de payer</button>
+          <button type="button" class="suggestion" onclick="fillSearch('search.fill_pension')" data-i18n="search.suggestion_pension">Pension impayée</button>
+        </div>
+      </form>
     </div>
   </header>
 
@@ -109,36 +133,15 @@
     </div>
   </section>
 
-  <!-- Search / Analyze -->
-  <section class="search-section">
+  <!-- Le formulaire de recherche a été remonté dans le hero (entrée froide,
+       above-the-fold). "Comment ça marche" + domaines restent en appui secondaire. -->
+  <section class="search-section search-section-cta">
     <div class="search-section-inner">
       <h2 class="section-eyebrow" data-i18n="search.eyebrow">Analyser ma situation</h2>
       <p class="search-section-subtitle" data-i18n="search.subtitle">Décrivez votre problème et notre IA identifie vos droits, vos délais et les démarches à suivre.</p>
-      <form class="search" id="searchForm" onsubmit="handleSearch(event)">
-        <div class="search-field">
-          <input
-            type="text"
-            id="searchInput"
-            class="search-input"
-            placeholder="Mon propriétaire refuse de rembourser ma caution..."
-            autocomplete="off"
-            autocorrect="off"
-            spellcheck="false"
-            maxlength="500"
-            aria-label="Décrivez votre problème juridique"
-          >
-          <button type="submit" class="search-submit">
-            <span data-i18n="action.analyser">Analyser</span>
-          </button>
-        </div>
-        <div class="search-suggestions">
-          <button type="button" class="suggestion" onclick="fillSearch('search.fill_caution')" data-i18n="search.suggestion_caution">Caution non remboursée</button>
-          <button type="button" class="suggestion" onclick="fillSearch('search.fill_licenciement')" data-i18n="search.suggestion_licenciement">Licenciement &amp; maladie</button>
-          <button type="button" class="suggestion" onclick="fillSearch('search.fill_heures')" data-i18n="search.suggestion_heures">Heures sup impayées</button>
-          <button type="button" class="suggestion" onclick="fillSearch('search.fill_commandement')" data-i18n="search.suggestion_commandement">Commandement de payer</button>
-          <button type="button" class="suggestion" onclick="fillSearch('search.fill_pension')" data-i18n="search.suggestion_pension">Pension impayée</button>
-        </div>
-      </form>
+      <a href="#top" class="hero-cta-btn" onclick="var s=document.getElementById('searchInput'); if(s){s.scrollIntoView({behavior:'smooth',block:'center'}); s.focus();} return false;">
+        ↑ <span data-i18n="action.analyser">Analyser</span>
+      </a>
     </div>
   </section>
 

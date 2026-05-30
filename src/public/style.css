@@ -4575,17 +4575,17 @@ body.has-disclaimer {
   padding: 0.95rem 1.85rem;
   font-size: 1.05rem;
   font-weight: 600;
-  background: #1d7042;
+  background: var(--accent-primary);
   color: white !important;
   text-decoration: none !important;
   border-radius: 999px;
-  box-shadow: 0 4px 14px rgba(29, 112, 66, 0.25);
+  box-shadow: 0 4px 14px rgba(139, 37, 0, 0.25);
   transition: all 0.18s ease;
 }
 .hero-cta-btn:hover {
-  background: #155433;
+  background: var(--accent-primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(29, 112, 66, 0.35);
+  box-shadow: 0 6px 20px rgba(139, 37, 0, 0.35);
 }
 @media (max-width: 600px) {
   .hero-cta-btn { font-size: 0.95rem; padding: 0.8rem 1.5rem; }

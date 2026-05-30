@@ -3,7 +3,7 @@
  * Shared by all route handlers: parsing, responses, static serving, rate limiting, sanitization.
  */
 
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, statSync } from 'node:fs';
 import { join, extname } from 'node:path';
 
 // ─── Constants ──────────────────────────────────────────────────
@@ -87,7 +87,12 @@ export function parseRawBody(req, maxSize) {
 // ─── Static file serving ────────────────────────────────────────
 
 export function serveStatic(req, res, filePath, publicDir) {
-  if (!existsSync(filePath)) {
+  // N'accepte QUE des fichiers : un répertoire passait le existsSync puis faisait
+  // readFileSync(dir) → EISDIR APRÈS writeHead → ERR_HTTP_HEADERS_SENT dans le
+  // catch appelant → crash process. (Régression 2026-05-31, liens vers /guides/.)
+  let stat = null;
+  try { stat = statSync(filePath); } catch { stat = null; }
+  if (!stat || !stat.isFile()) {
     const notFoundPage = join(publicDir, '404.html');
     if (existsSync(notFoundPage)) {
       setSecurityHeaders(res);

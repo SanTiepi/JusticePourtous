@@ -2164,6 +2164,12 @@ const server = createServer(async (req, res) => {
       return serveStatic(req, res, join(publicDir, 'index.html'));
     }
 
+    // Hub des guides (maillage interne) : /guides/ → index.html du dossier.
+    if (path === '/guides' || path === '/guides/') {
+      trackPageView('/guides/');
+      return serveStatic(req, res, join(publicDir, 'guides', 'index.html'));
+    }
+
     if (method === 'GET' && /^\/guides\/(fr|de|it|en|pt|ar|tr|sq|hr)\/[a-z0-9_]+\.html$/.test(path)) {
       const match = path.match(/^\/guides\/(fr|de|it|en|pt|ar|tr|sq|hr)\/([a-z0-9_]+)\.html$/);
       const locale = match[1];
@@ -2239,6 +2245,14 @@ const server = createServer(async (req, res) => {
     }
     json(res, 404, { error: 'Route non trouvée', disclaimer: DISCLAIMER });
   } catch (err) {
+    // Garde anti-crash : si une réponse a déjà commencé (headers envoyés, ex.
+    // erreur en cours de streaming static), re-appeler json() lèverait
+    // ERR_HTTP_HEADERS_SENT, NON catchée → mort du process. On termine proprement.
+    if (res.headersSent) {
+      log.error('request_error_after_headers', { path, err: err.message });
+      try { res.end(); } catch { /* socket déjà fermé */ }
+      return;
+    }
     if (err.message === 'Invalid JSON' || err.message === 'Body too large') {
       json(res, 400, { error: err.message, disclaimer: DISCLAIMER });
     } else {

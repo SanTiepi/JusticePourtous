@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 import {
   compile, getRulesForDomain, getRuleDefinitions, execRule,
   ALL_RULES, BAIL_RULES, TRAVAIL_RULES, DETTES_RULES,
-  CONSOMMATION_RULES, ASSURANCES_RULES, VOISINAGE_RULES
+  CONSOMMATION_RULES, ASSURANCES_RULES, VOISINAGE_RULES,
+  FISCAL_RULES, LPP_RULES, PPE_RULES, CIRCULATION_RULES, SUCCESSIONS_RULES,
 } from '../src/services/normative-compiler.mjs';
 import { server } from '../src/server.mjs';
 
@@ -296,14 +297,274 @@ describe('Normative Compiler', () => {
   });
 
   describe('cross-domain rule count', () => {
-    it('total rules >= 22 (13 original + 9 new)', () => {
-      assert.ok(ALL_RULES.length >= 22, `Only ${ALL_RULES.length} rules, expected >=22`);
+    it('total rules >= 70 (76 incluant fiscal/LPP/PPE/circulation/successions)', () => {
+      assert.ok(ALL_RULES.length >= 70, `Only ${ALL_RULES.length} rules, expected >=70`);
     });
 
     it('rule IDs are all unique', () => {
       const ids = ALL_RULES.map(r => r.id);
       const unique = new Set(ids);
       assert.equal(ids.length, unique.size, 'duplicate rule IDs');
+    });
+  });
+
+  describe('fiscal rules', () => {
+    it('has 3 rules', () => {
+      assert.equal(FISCAL_RULES.length, 3);
+    });
+
+    it('réclamation fiscale: délai 30 jours dès notification', () => {
+      const result = compile({ domaine: 'fiscal', decision_taxation: true });
+      const rule = result.results.find(r => r.rule_id === 'fiscal_taxation_reclamation');
+      assert.ok(rule?.applicable);
+      assert.equal(rule.consequence.delai_jours, 30);
+      assert.equal(rule.consequence.gratuit, true);
+    });
+
+    it('réclamation fiscale: taxation_office → exception non-bloquante triggérée', () => {
+      const result = compile({ domaine: 'fiscal', decision_taxation: true, taxation_office: true });
+      const rule = result.results.find(r => r.rule_id === 'fiscal_taxation_reclamation');
+      assert.ok(rule?.applicable, 'rule should still be applicable');
+      const exc = rule.exceptions.find(e => e.id === 'fiscal_taxation_office_motivation');
+      assert.ok(exc?.triggered, 'exception should trigger');
+    });
+
+    it('remise impôt: faute grave bloque la règle', () => {
+      const result = compile({ domaine: 'fiscal', demande_remise: true, faute_grave_contribuable: true });
+      const rule = result.results.find(r => r.rule_id === 'fiscal_remise_impot');
+      assert.ok(!rule?.applicable, 'faute grave should block remise');
+      assert.ok(rule?.exceptions.some(e => e.triggered));
+    });
+
+    it('remise impôt: difficulté financière sans faute → applicable', () => {
+      const result = compile({ domaine: 'fiscal', difficulte_financiere_fiscale: true });
+      const rule = result.results.find(r => r.rule_id === 'fiscal_remise_impot');
+      assert.ok(rule?.applicable);
+    });
+
+    it('rappel impôt: prescription > 15 ans → bloqué', () => {
+      const result = compile({ domaine: 'fiscal', rappel_impot: true, annees_depuis_periode: 20 });
+      const rule = result.results.find(r => r.rule_id === 'fiscal_rappel_impot');
+      assert.ok(!rule?.applicable, 'prescription absolue acquise doit bloquer');
+      assert.ok(rule?.exceptions.some(e => e.triggered && e.id === 'fiscal_rappel_prescription_acquise'));
+    });
+
+    it('rappel impôt: < 15 ans → applicable, prescription 10 ans pour ouvrir', () => {
+      const result = compile({ domaine: 'fiscal', rappel_impot: true, annees_depuis_periode: 8 });
+      const rule = result.results.find(r => r.rule_id === 'fiscal_rappel_impot');
+      assert.ok(rule?.applicable);
+      assert.equal(rule.consequence.prescription_droit_ouvrir_annees, 10);
+      assert.equal(rule.consequence.prescription_fixation_annees, 15);
+    });
+  });
+
+  describe('LPP rules', () => {
+    it('has 3 rules', () => {
+      assert.equal(LPP_RULES.length, 3);
+    });
+
+    it('invalidité < 40% → applicable mais droit_probable_lpp=false', () => {
+      const result = compile({ domaine: 'lpp', invalidite: true, taux_invalidite_ai: 35 });
+      const rule = result.results.find(r => r.rule_id === 'lpp_prestation_invalidite');
+      assert.ok(rule?.applicable);
+      assert.equal(rule.consequence.droit_probable_lpp, false);
+      assert.equal(rule.consequence.quotite_rente_percent, 0);
+    });
+
+    it('invalidité 45% → droit_probable_lpp=true, quotite=45', () => {
+      const result = compile({ domaine: 'lpp', invalidite: true, taux_invalidite_ai: 45 });
+      const rule = result.results.find(r => r.rule_id === 'lpp_prestation_invalidite');
+      assert.ok(rule?.applicable);
+      assert.equal(rule.consequence.droit_probable_lpp, true);
+      assert.equal(rule.consequence.quotite_rente_percent, 45);
+    });
+
+    it('invalidité ≥ 70% → quotite=100 (rente entière)', () => {
+      const result = compile({ domaine: 'lpp', invalidite: true, taux_invalidite_ai: 75 });
+      const rule = result.results.find(r => r.rule_id === 'lpp_prestation_invalidite');
+      assert.ok(rule?.applicable);
+      assert.equal(rule.consequence.quotite_rente_percent, 100);
+    });
+
+    it('incapacité antérieure à l\'affiliation → bloque le droit LPP', () => {
+      const result = compile({ domaine: 'lpp', invalidite: true, incapacite_anterieure_affiliation: true });
+      const rule = result.results.find(r => r.rule_id === 'lpp_prestation_invalidite');
+      assert.ok(!rule?.applicable, 'doit être bloqué par exception');
+      assert.ok(rule?.exceptions.some(e => e.triggered && e.id === 'lpp_invalidite_avant_affiliation'));
+    });
+
+    it('encouragement propriété: montant minimum 20k CHF', () => {
+      const result = compile({ domaine: 'lpp', encouragement_propriete: true });
+      const rule = result.results.find(r => r.rule_id === 'lpp_encouragement_propriete');
+      assert.ok(rule?.applicable);
+      assert.equal(rule.consequence.montant_minimum_chf, 20000);
+    });
+
+    it('encouragement propriété: conjoint présent sans consentement écrit → bloqué', () => {
+      const result = compile({ domaine: 'lpp', encouragement_propriete: true, conjoint_present: true, consentement_conjoint_ecrit: false });
+      const rule = result.results.find(r => r.rule_id === 'lpp_encouragement_propriete');
+      assert.ok(!rule?.applicable);
+      assert.ok(rule?.exceptions.some(e => e.triggered && e.id === 'lpp_propriete_consentement_conjoint_manquant'));
+    });
+
+    it('divorce → partage LPP applicable', () => {
+      const result = compile({ domaine: 'lpp', divorce: true });
+      const rule = result.results.find(r => r.rule_id === 'lpp_partage_divorce');
+      assert.ok(rule?.applicable);
+      assert.ok(rule.consequence.principe.includes('moitié'));
+    });
+  });
+
+  describe('PPE rules', () => {
+    it('has 3 rules', () => {
+      assert.equal(PPE_RULES.length, 3);
+    });
+
+    it('charges communes: applicable, délai hypothèque légale 3 mois', () => {
+      const result = compile({ domaine: 'ppe', charges_communes: true });
+      const rule = result.results.find(r => r.rule_id === 'ppe_charges_communes');
+      assert.ok(rule?.applicable);
+      assert.equal(rule.consequence.delai_hypotheque_mois, 3);
+    });
+
+    it('charges usage exclusif: exception non-bloquante triggérée', () => {
+      const result = compile({ domaine: 'ppe', charges_communes: true, charges_usage_exclusif: true });
+      const rule = result.results.find(r => r.rule_id === 'ppe_charges_communes');
+      assert.ok(rule?.applicable, 'rule should stay applicable');
+      assert.ok(rule.exceptions.some(e => e.triggered && e.id === 'ppe_charges_usage_exclusif'));
+    });
+
+    it('travaux somptuaires → unanimité requise', () => {
+      const result = compile({ domaine: 'ppe', travaux_ppe: true, type_travaux: 'somptuaires' });
+      const rule = result.results.find(r => r.rule_id === 'ppe_travaux_majoritaire');
+      assert.ok(rule?.applicable);
+      assert.ok(rule.consequence.majorite_applicable?.majorite?.includes('UNANIMITÉ'));
+    });
+
+    it('travaux nécessaires → majorité simple', () => {
+      const result = compile({ domaine: 'ppe', travaux_ppe: true, type_travaux: 'necessaires' });
+      const rule = result.results.find(r => r.rule_id === 'ppe_travaux_majoritaire');
+      assert.ok(rule?.applicable);
+      assert.ok(rule.consequence.majorite_applicable?.majorite?.includes('simple'));
+    });
+
+    it('travaux utiles → double majorité (têtes + quotes-parts)', () => {
+      const result = compile({ domaine: 'ppe', decision_travaux: true, type_travaux: 'utiles' });
+      const rule = result.results.find(r => r.rule_id === 'ppe_travaux_majoritaire');
+      assert.ok(rule?.applicable);
+      assert.ok(rule.consequence.majorite_applicable?.majorite?.includes('double'));
+    });
+
+    it('type_travaux non spécifié → tableau_majorites présent', () => {
+      const result = compile({ domaine: 'ppe', travaux_ppe: true });
+      const rule = result.results.find(r => r.rule_id === 'ppe_travaux_majoritaire');
+      assert.ok(rule?.applicable);
+      assert.equal(rule.consequence.tableau_majorites.length, 4);
+      assert.equal(rule.consequence.delai_jours_contestation, 30);
+    });
+  });
+
+  describe('circulation rules', () => {
+    it('has 3 rules', () => {
+      assert.equal(CIRCULATION_RULES.length, 3);
+    });
+
+    it('infraction légère sans récidive → admonestation, duree_minimum_mois=0', () => {
+      const result = compile({ domaine: 'circulation', infraction_legere: true });
+      const rule = result.results.find(r => r.rule_id === 'circulation_retrait_permis_admonestation');
+      assert.ok(rule?.applicable);
+      assert.equal(rule.consequence.duree_minimum_mois, 0);
+      assert.equal(rule.consequence.delai_jours_recours, 30);
+    });
+
+    it('infraction légère + récidive → retrait 1 mois minimum', () => {
+      const result = compile({ domaine: 'circulation', infraction_legere: true, recidive: true });
+      const rule = result.results.find(r => r.rule_id === 'circulation_retrait_permis_admonestation');
+      assert.ok(rule?.applicable);
+      assert.equal(rule.consequence.duree_minimum_mois, 1);
+    });
+
+    it('infraction grave → retrait obligatoire 3 mois minimum', () => {
+      const result = compile({ domaine: 'circulation', infraction_grave: true });
+      const rule = result.results.find(r => r.rule_id === 'circulation_retrait_permis_obligatoire');
+      assert.ok(rule?.applicable);
+      assert.equal(rule.consequence.duree_minimum_mois, 3);
+      assert.equal(rule.consequence.base_article_applicable, 'LCR 16c');
+    });
+
+    it('infraction grave + récidive 5 ans → 12 mois minimum', () => {
+      const result = compile({ domaine: 'circulation', infraction_grave: true, recidive: true });
+      const rule = result.results.find(r => r.rule_id === 'circulation_retrait_permis_obligatoire');
+      assert.ok(rule?.applicable);
+      assert.equal(rule.consequence.duree_minimum_mois, 12);
+    });
+
+    it('infraction moyenne → retrait 1 mois (sans récidive)', () => {
+      const result = compile({ domaine: 'circulation', infraction_moyenne: true });
+      const rule = result.results.find(r => r.rule_id === 'circulation_retrait_permis_obligatoire');
+      assert.ok(rule?.applicable);
+      assert.equal(rule.consequence.duree_minimum_mois, 1);
+      assert.equal(rule.consequence.base_article_applicable, 'LCR 16b');
+    });
+
+    it('infraction moyenne + récidive → 4 mois minimum', () => {
+      const result = compile({ domaine: 'circulation', infraction_moyenne: true, recidive: true });
+      const rule = result.results.find(r => r.rule_id === 'circulation_retrait_permis_obligatoire');
+      assert.ok(rule?.applicable);
+      assert.equal(rule.consequence.duree_minimum_mois, 4);
+    });
+  });
+
+  describe('successions rules', () => {
+    it('has at least 5 rules', () => {
+      assert.ok(SUCCESSIONS_RULES.length >= 5, `Only ${SUCCESSIONS_RULES.length} successions rules`);
+    });
+
+    it('réserve héréditaire: descendants → 1/2 réservé, revision 2023', () => {
+      const result = compile({ domaine: 'successions', heritage: true, descendants: true });
+      const rule = result.results.find(r => r.rule_id === 'successions_reserve_hereditaire');
+      assert.ok(rule?.applicable);
+      const res = rule.consequence.reserves_applicables.find(r => r.qui === 'descendants');
+      assert.ok(res, 'descendants doit apparaître dans reserves_applicables');
+      assert.equal(res.fraction_num, 0.5);
+    });
+
+    it('réserve héréditaire: parents seuls → aucune réserve (supprimée 2023)', () => {
+      const result = compile({ domaine: 'successions', heritage: true, parents_vivants: true });
+      const rule = result.results.find(r => r.rule_id === 'successions_reserve_hereditaire');
+      assert.ok(rule?.applicable);
+      assert.ok(rule.consequence.parents_reserve?.includes('Aucune'));
+      assert.equal(rule.consequence.reserves_applicables.length, 0, 'parents n\'ont plus de réserve');
+    });
+
+    it('répudiation: délai 3 mois', () => {
+      const result = compile({ domaine: 'successions', repudiation: true });
+      const rule = result.results.find(r => r.rule_id === 'successions_repudiation');
+      assert.ok(rule?.applicable);
+      assert.equal(rule.consequence.delai_mois, 3);
+      assert.equal(rule.consequence.delai_jours, 90);
+    });
+
+    it('répudiation: immixtion dans la succession → perte du droit (bloque)', () => {
+      const result = compile({ domaine: 'successions', repudiation: true, immixtion_heritier: true });
+      const rule = result.results.find(r => r.rule_id === 'successions_repudiation');
+      assert.ok(!rule?.applicable, 'immixtion doit bloquer la répudiation');
+      assert.ok(rule?.exceptions.some(e => e.triggered && e.id === 'successions_acceptation_tacite'));
+    });
+
+    it('action en réduction: délai 1 an relatif, 10 ans absolu', () => {
+      const result = compile({ domaine: 'successions', reserve_atteinte: true });
+      const rule = result.results.find(r => r.rule_id === 'successions_action_reduction');
+      assert.ok(rule?.applicable);
+      assert.equal(rule.consequence.delai_jours_relatif, 365);
+      assert.equal(rule.consequence.delai_jours_absolu, 3650);
+    });
+
+    it('exhérédation: pardon du défunt → exception bloquante (caducité)', () => {
+      const result = compile({ domaine: 'successions', exheredation: true, pardon_defunt: true });
+      const rule = result.results.find(r => r.rule_id === 'successions_exheredation_motifs');
+      assert.ok(!rule?.applicable, 'pardon doit rendre l\'exhérédation caduque');
+      assert.ok(rule?.exceptions.some(e => e.triggered && e.id === 'successions_exheredation_pardon'));
     });
   });
 });

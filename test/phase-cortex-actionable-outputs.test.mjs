@@ -99,6 +99,17 @@ async function httpGet(path) {
   });
 }
 
+async function httpGetRaw(path) {
+  const http = await import('node:http');
+  return new Promise((resolve, reject) => {
+    http.default.get(`${BASE}${path}`, res => {
+      const chunks = [];
+      res.on('data', c => chunks.push(Buffer.isBuffer(c) ? c : Buffer.from(c)));
+      res.on('end', () => resolve({ status: res.statusCode, headers: res.headers, body: Buffer.concat(chunks) }));
+    }).on('error', reject);
+  });
+}
+
 function buildFakeCaseWithDelais({ domaine = 'bail' } = {}) {
   const { case_id } = createCase({ texte: 'Mon bailleur vient de me notifier un congé abusif.', canton: 'VD' });
   const primary = {
@@ -541,5 +552,33 @@ describe('HTTP — routes actionable outputs', () => {
     assert.ok(pdfFile, 'un fichier PDF doit être présent');
     const buf = readFileSync(join(TEST_LETTERS_DIR, pdfFile));
     assert.equal(buf.slice(0, 5).toString('utf-8'), '%PDF-');
+  });
+
+  it('GET /api/case/:id/letter/:letterId/download → 200 + Content-Disposition + bytes docx', async () => {
+    const caseRec = buildFakeCaseWithDelais();
+    const postRes = await httpPost(`/api/case/${caseRec.case_id}/letter`, {
+      ficheId: 'bail_resiliation_conteste',
+      userContext: { nom: 'Test Download' },
+      type: 'contestation',
+      format: 'docx'
+    });
+    assert.equal(postRes.status, 200);
+    const downloadUrl = postRes.data.download_url;
+    assert.ok(downloadUrl, 'download_url attendu dans la réponse POST');
+
+    const dlRes = await httpGetRaw(downloadUrl);
+    assert.equal(dlRes.status, 200);
+    assert.match(dlRes.headers['content-type'] ?? '', /wordprocessingml/, 'Content-Type doit être docx');
+    assert.match(dlRes.headers['content-disposition'] ?? '', /attachment/, 'Content-Disposition doit être attachment');
+    // DOCX = ZIP : magic bytes PK (0x50 0x4b)
+    assert.equal(dlRes.body[0], 0x50, 'premier byte doit être P (0x50)');
+    assert.equal(dlRes.body[1], 0x4b, 'deuxième byte doit être K (0x4b)');
+    assert.ok(dlRes.body.length > 1000, `docx doit faire > 1000 bytes (réel: ${dlRes.body.length})`);
+  });
+
+  it('GET /api/case/:id/letter/:letterId/download → 404 si letterId inconnu', async () => {
+    const caseRec = buildFakeCaseWithDelais();
+    const dlRes = await httpGet(`/api/case/${caseRec.case_id}/letter/lettre-inexistante-xyzabc123/download`);
+    assert.equal(dlRes.status, 404);
   });
 });

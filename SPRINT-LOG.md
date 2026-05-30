@@ -489,3 +489,20 @@ Points à surveiller :
   - `REDIRECTIONS_GENERIQUES invariants` (3 cas) : non vide, chaque entrée a tous les champs, ≥ 1 entrée universelle (tous cantons + tous domaines)
 - **Rationale** : `escalation-pack.mjs` construit le pack structuré "escalation vers un professionnel" — utilisé chaque fois qu'un citoyen doit passer la main. Les helpers `buildRedirections` (filtrage canton, dédupe, normalizeType) et `buildSummary` (5 branches d'entrée) avaient de la logique ramifiée sans tests directs. Le canton ZG → Caritas exclue (ZG absent de la liste) est un exemple de bug silencieux possible.
 - **Prochaine action** : modules restants sans couverture directe : `triage-enrichment.mjs` (79 lignes, orchestration). Sprint goal atteint — valeur restante = validation humaine avocat (hors scope autonomous).
+
+### 2026-05-30 UTC — run agent horaire (triage-enrichment + urgency-marker directs)
+- **Tenté** : item 3 — tests directs pour les branches manquantes de `triage-enrichment.mjs` (entrées dégénérées, shape sortie complète, extractFactsFromNav) et `urgency-marker.mjs` (cas non couverts par `phase3-enrichment.test.mjs`)
+- **Résultat** : passed ✓
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2343/2343 ✓** (+23 tests — npm install requis en début de run, `docx` absent)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **23 tests** dans `test/triage-enrichment-direct.test.mjs`
+- **Ce qui a été fait** : `test/triage-enrichment-direct.test.mjs` — 4 suites / 23 tests zéro-LLM zéro-réseau :
+  - `enrichTriageResult — entrées dégénérées` (4 cas) : no args sans crash, enrichedAll vide → recommended_domain_order=[], delais vide+pas de delai_jours→urgency_marker=null, enrichedPrimary=null sans crash
+  - `enrichTriageResult — shape de sortie` (6 cas) : tier_score/tier_max sont des nombres, hard_rules_triggered est tableau, _eval_snapshot a tier/score/delta/delta_pct, urgency_marker.action_hint contient procedure de delais[0], uncertainties est tableau, dimensions_detail a urgency/clarity/stakes/adversary
+  - `enrichTriageResult — extractFactsFromNav via facts=null` (4 cas) : facts=null extrait depuis infos_extraites sans crash, navigation sans infos_extraites→nulls sans crash, facts explicites avec recours_tf=true→HUMAIN (override nav), montant_chf influence dimensions.stakes
+  - `buildUrgencyMarker — cas non couverts` (9 cas) : objet vide→null, high sans procedure, high avec procedure, moderate sans procedure, moderate avec procedure, critical sans procedure, délai=2→pluriel, délai=31→normal/action_hint null, délai=4→high (frontière ≤3/≤14)
+- **Rationale** : `phase3-enrichment.test.mjs` couvrait 6 happy-paths via `enrichTriageResult` mais ne testait pas : no-args, urgency_marker=null quand pas de délai, shape des champs de sortie (tier_score/tier_max/hard_rules_triggered/_eval_snapshot), ni extractFactsFromNav (branche facts=null). `urgency-marker.mjs` manquait les branches high/moderate avec et sans procedure, pluriel/singulier, et frontières de niveau.
+- **Prochaine action** : modules sans tests directs restants : `freshness-badge.mjs`. Ou item 5 (docs/missing-fiches.md). Sprint goal atteint — valeur restante = validation humaine avocat (hors scope autonomous).

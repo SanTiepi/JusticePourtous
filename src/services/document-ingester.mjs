@@ -345,3 +345,5 @@ export function enrichWithLLM(dossier, options = {}) {
 }
 
 export default { ingestDocument, ingestDossier, enrichWithLLM };
+
+export const _internals = { detectDocumentType, extractMetadata, parseJSON };

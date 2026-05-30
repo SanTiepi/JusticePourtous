@@ -526,3 +526,24 @@ Points à surveiller :
     - `scores combinés` (5 cas) : canton+article=10, canton+article+tag=12, autrecanton+2articles+2tags=16, domaine différent neutralise tout, minimal→positif
 - **Rationale** : `scoreMatch` est la fonction centrale du matching de jurisprudence cantonale (corpus entscheidsuche). Elle combinait 4 dimensions de scoring sans aucun test par dimension ni vérification des règles d'accumulation. Désormais chaque règle de scoring est régression-lockée (priorité canton exact=5 vs autre=2, +5/article, +2/tag, condition domaine stricte).
 - **Prochaine action** : `freshness-badge.mjs` déjà couvert par `phase-cortex-freshness.test.mjs`. Module `payload-shaper.mjs` déjà couvert par `phase-cortex-payload-shape.test.mjs`. Module `docx-generator.mjs` couvert indirectement (nécessite docx). Couverture directe quasi-exhaustive — valeur restante = validation humaine avocat (hors scope autonomous).
+
+### 2026-05-30 UTC — run agent horaire (document-ingester helpers directs)
+- **Tenté** : item 3 — tests directs pour les helpers purs de `document-ingester.mjs` (`detectDocumentType`, `extractMetadata`, `parseJSON`) — 0 couverture directe existante ; seul `ingestDocument` était testable mais LLM-dépendant
+- **Résultat** : passed ✓
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2408/2408 ✓** (`npm install` en amont — `docx` absent)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **35 tests** dans `test/document-ingester-direct.test.mjs`
+- **Ce qui a été fait** :
+  - Export `_internals = { detectDocumentType, extractMetadata, parseJSON }` (1 ligne) dans `src/services/document-ingester.mjs`
+  - `test/document-ingester-direct.test.mjs` — 6 suites / 35 tests zéro-LLM zéro-réseau sur les helpers internes :
+    - `detectDocumentType — patterns body` (9 cas) : arret_tribunal (tribunal cantonal + considérant), ordonnance_classement (art. 319 CPP), rapport_autopsie (CURML + toxicolog), pv_audition (prévenu + déclare), recours (recourant + intimé), plainte (dépôt de plainte), rapport_investigation (brigade criminelle), texte vide→inconnu, texte sans pattern→inconnu
+    - `detectDocumentType — hints filename` (6 cas) : autopsie_rapport.pdf→rapport_autopsie, ordonnance_classement_2024.pdf→ordonnance_classement, arret_cantonal.pdf→arret_tribunal, pv_audition_dupont.pdf→pv_audition, recours_TF.pdf→recours, plainte_2024.pdf→plainte
+    - `extractMetadata — dates` (5 cas) : format DD.MM.YYYY, format YYYY-MM-DD, format DD/MM/YYYY, filename YYMMDD_→date déduite en tête de liste, texte sans date→[]
+    - `extractMetadata — références légales` (5 cas) : CO 259a, CP 123, CC 684, texte sans ref→[], multi-refs (CO+CPP+CC)→count≥3
+    - `extractMetadata — montants CHF` (3 cas) : CHF 5'000, Fr. 500, texte sans montant→[]
+    - `parseJSON — robustesse` (7 cas) : JSON propre, JSON dans ```json...```, JSON précédé de texte, sans accolade→null, chaîne vide→null, JSON malformé virgule finale→null, JSON imbriqué
+- **Rationale** : `document-ingester.mjs` est utilisé pour analyser des documents juridiques uploadés par les citoyens. `detectDocumentType` combine 12 patterns × body/filename avec un score cumulatif — les priorités filename (après la boucle de scoring) pouvaient silencieusement écraser le bon score. `extractMetadata` parse dates, acteurs, refs légales et montants via regex — les refs légales (CO/CP/CC/CPP) avec variantes al./ch./let. étaient le cas le plus fragile. Ces règles sont désormais régression-lockées.
+- **Prochaine action** : couverture directe des helpers exhaustive. Valeur restante = validation humaine avocat (hors scope autonomous) + recrutement 5-10 testeurs réels (0 outcomes en prod).

@@ -7,7 +7,7 @@ correspondance exacte.
 
 Ces fiches sont à créer après validation juridique humaine.
 
-## État actuel : 6 gaps identifiés (mis à jour 2026-05-30)
+## État actuel : 8 gaps identifiés (mis à jour 2026-05-30)
 
 Les deux gaps historiques sont comblés :
 
@@ -57,6 +57,18 @@ Les deux gaps historiques sont comblés :
   - **impact** : un citoyen qui pose une question de succession en mentionnant "il était remarié" risque d'obtenir des informations sur les régimes matrimoniaux plutôt que sur le partage successoral. La distinction est importante : le régime matrimonial détermine la masse successorale, la succession détermine le partage.
   - **solution recommandée** : ajout de tokens discriminants dans le prompt du navigator pour prioriser `successions` dès que les mots "décédé/décès/héritage/partage" sont présents, même en contexte famille recomposée.
   - **priorité** : moyenne. Les fiches successions existent et sont identifiées partiellement. Le routing est améliorable sans créer de nouvelle fiche.
+
+### Gaps persistants identifiés par analyse 60 cas (2026-05-30)
+
+- ⛔ `successions_ab_intestat`
+  - **base juridique** : CC 457 (ordre de succession légale : descendants → ascendants → collatéraux), CC 458 (substitution par stirpes), CC 462 (quote-part légale du conjoint survivant)
+  - **pourquoi manquante** : `adv_famille_04` (père décédé sans testament, belle-mère prétend avoir droit à tout) — fail persistant 63% sur rubric `article_required`. Aucune des 20 fiches successions ne cite CC 457 ni CC 458 (vérification machine : 2026-05-30). Les fiches existantes couvrent les réserves (CC 470/471), le conjoint survivant (CC 462), les testaments (CC 467/477/479) — mais pas le régime général de **succession ab intestat** (qui hérite quoi en l'absence de testament). Le LLM génère systématiquement des IDs fictifs (`successions_ab_intestat`, `successions_ordre_legal`) absents du ficheIndex → lookup échoue → zéro article cité → article_required = false.
+  - **priorité** : haute. Situation extrêmement courante (majorité des successions en Suisse sont ab intestat). Sans cette fiche, le citoyen qui demande "mon parent est mort sans testament, comment ça se répartit ?" n'obtient pas de réponse sur l'ordre légal CC 457.
+
+- ⛔ `etranger_permis_b_perte_emploi`
+  - **base juridique** : LEI 61 (extinction du titre de séjour : non-renouvellement, départ définitif), LEI 33 (conditions de renouvellement liées à l'activité lucrative), OASA 77a/77b (tolérance pendant période de recherche d'emploi, délai 6 mois), LEI 62 (retrait du titre de séjour)
+  - **pourquoi manquante** : `adv_etrangers_01` (permis B depuis 11 ans, boîte fermée, peut-il rester ?) — fail persistant 63% sur rubric `article_required`. La fiche `etranger_permis_b_renouvellement` cite bien LEI 33 et LEI 62, mais ses tags (`renouvellement`, `refus`, `conditions`) ne signalent pas le scénario "licenciement / fermeture d'entreprise". LEI 61 (extinction automatique du titre par non-renouvellement) n'est citée par aucune fiche (vérification machine : 2026-05-30). Le LLM génère des IDs fictifs (`etranger_permis_b_chomage`, `etranger_sejour_perte_emploi`) → lookup échoue. La fiche manquante devrait couvrir : quand le permis B est-il en danger après perte d'emploi ? (LEI 61 + délai OASA 77b + exception 10 ans de séjour menant au permis C LEI 43).
+  - **priorité** : haute. Licenciement économique / fermeture d'entreprise = enjeu majeur (perte potentielle de séjour). Situation cross-domaine travail + étrangers fréquemment mal comprise.
 
 Pour rouvrir cette liste, relancer l'éval adversariale et capturer les nouveaux
 cas où le navigator se rabat sur une fiche voisine :

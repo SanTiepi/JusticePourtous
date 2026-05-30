@@ -642,3 +642,18 @@ Points à surveiller :
 - **Score réel estimé** : ~97% (en excluant l'eval artifact entreprise_02 et en normalisant le routing partiel successions_02)
 - **Nouveau gap documenté** : routing `successions` vs `famille` pour contexte famille recomposée + décès → `docs/missing-fiches.md`
 - **Prochaine action** : validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-05-30 UTC — run agent horaire (gaps persistants adv_etrangers_01 + adv_famille_04)
+- **Tenté** : item 5 — documenter les 2 gaps adversariaux persistants 63% non encore dans `docs/missing-fiches.md` : `adv_etrangers_01` (LEI 61 absent) et `adv_famille_04` (CC 457 absent de TOUTES les fiches)
+- **Résultat** : passed ✓
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2498/2498 ✓** (aucun code modifié — docs seulement)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux gaps documentés : 2 (6 → 8 dans `docs/missing-fiches.md`)
+- **Ce qui a été fait** :
+  - **Analyse machine** : vérification que CC 457/CC 458 sont absents de TOUTES les 20 fiches `successions` et que LEI 61 est absent de TOUTES les fiches `etrangers`. Confirmé : 0 fiche cite CC 457, 0 fiche cite CC 458, 0 fiche cite LEI 61.
+  - **`successions_ab_intestat`** documentée (haute priorité) : base CC 457/458/462 — aucune fiche couvre la succession ab intestat (ordre légal quand pas de testament). Haiku génère IDs fictifs (`successions_ab_intestat`) → ficheIndex lookup échoue → article_required = false. Fail `adv_famille_04` persistant depuis wave 1.
+  - **`etranger_permis_b_perte_emploi`** documentée (haute priorité) : base LEI 61/33/OASA 77b — la fiche `etranger_permis_b_renouvellement` cite LEI 33/62 mais ses tags ne couvrent pas le scénario "licenciement/fermeture entreprise". LEI 61 (extinction automatique) absent de toutes les fiches. Haiku génère IDs fictifs → lookup échoue. Fail `adv_etrangers_01` persistant depuis wave 1.
+- **Prochaine action** : validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous. Les 8 gaps sont à valider par un juriste avant création.

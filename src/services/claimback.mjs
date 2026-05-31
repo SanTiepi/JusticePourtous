@@ -167,18 +167,24 @@ export function subsideMeta() {
 
 function round(n) { return Math.round(n); }
 
-// Besoins vitaux des enfants pour les PC, avec dégression par rang (OPC art. 10 al. 1 let. a) :
-// 2 premiers enfants au montant entier, 3e-4e aux 2/3, dès le 5e au tiers. Le montant de base
-// dépend de l'âge (avant/dès 11 ans révolus). Simplification : enfants ≥11 ans rangés en premier.
-function childBesoinsVitaux(enfMoins11, enf11, baseMoins11, base11) {
-  const montants = [...Array(Math.max(0, enf11)).fill(base11), ...Array(Math.max(0, enfMoins11)).fill(baseMoins11)];
-  let total = 0;
-  montants.forEach((amt, idx) => {
-    const rang = idx + 1;
-    const facteur = rang <= 2 ? 1 : rang <= 4 ? 2 / 3 : 1 / 3;
-    total += amt * facteur;
-  });
-  return Math.round(total);
+// Besoins vitaux des enfants pour les PC — LPC art. 10 al. 1 let. a ch. 3 et 4. La dégression
+// DIFFÈRE selon l'âge (vérifié sur le PDF Fedlex LPC, RS 831.30, art. 10) :
+//  - enfants DÈS 11 ans (ch. 3) : barème par PALIERS — montant entier pour les 2 premiers, deux
+//    tiers pour les 2 suivants, un tiers pour chacun des enfants suivants.
+//  - enfants de MOINS de 11 ans (ch. 4) : 1er enfant au montant entier, chaque enfant suivant
+//    réduit d'un SIXIÈME du montant du précédent, le montant du 5e s'appliquant aussi aux suivants.
+// Chaque tranche d'âge est rangée séparément (texte légal). On somme les barèmes officiels par
+// rang (data) ; au-delà du dernier rang publié, le dernier montant s'applique. (Correction Codex :
+// l'ancien code appliquait à tort les paliers ≥11 ans aussi aux <11 ans → surestimait.)
+function childBesoinsVitaux(enfMoins11, enf11, baremeMoins11, baremeDes11) {
+  const sumByRank = (n, bareme) => {
+    let total = 0;
+    for (let rang = 1; rang <= Math.max(0, n); rang++) {
+      total += bareme[Math.min(rang, bareme.length) - 1];
+    }
+    return total;
+  };
+  return Math.round(sumByRank(enf11, baremeDes11) + sumByRank(enfMoins11, baremeMoins11));
 }
 
 /**
@@ -339,11 +345,11 @@ export function estimatePC(input) {
   }
 
   // ── Dépenses reconnues ──
-  // Besoins vitaux des enfants : dégression par rang (OPC art. 10 al. 1 let. a) — les 2
-  // premiers enfants au montant entier, 3e-4e aux 2/3, dès le 5e au tiers. (Avant : montant
-  // entier par enfant → surestimait les familles nombreuses ; corrigé sur retour Codex.)
+  // Besoins vitaux des enfants : dégression par rang selon l'âge (LPC art. 10 al. 1 let. a
+  // ch. 3 pour les ≥11 ans, ch. 4 pour les <11 ans — barèmes officiels par rang en data).
   const baseMenage = couple ? d.besoins_vitaux_annuel.couple : d.besoins_vitaux_annuel.personne_seule;
-  const besoinsEnfants = childBesoinsVitaux(enfMoins11, enf11, d.besoins_vitaux_annuel.enfant_moins_11, d.besoins_vitaux_annuel.enfant_des_11);
+  const tblEnfants = d.besoins_vitaux_enfants_par_rang;
+  const besoinsEnfants = childBesoinsVitaux(enfMoins11, enf11, tblEnfants.moins_11, tblEnfants.des_11);
   const besoinsVitaux = baseMenage + besoinsEnfants;
 
   const taille = Math.min(4, (couple ? 2 : 1) + nbEnfants);
@@ -486,7 +492,7 @@ export function buildBilan(profil) {
     total_annuel_estime: totalAnnuel,
     total_mensuel_estime: Math.round(totalAnnuel / 12),
     message: eligibles.length
-      ? `D'après ce bilan, vous pourriez récupérer environ ${totalAnnuel} CHF par an (~${Math.round(totalAnnuel / 12)} CHF/mois) au total sur ${eligibles.length} aide(s).${suffixVerifier} Estimations indicatives — vérifiez chaque montant auprès de l'autorité compétente.`
+      ? `Ce bilan détecte environ ${totalAnnuel} CHF par an (~${Math.round(totalAnnuel / 12)} CHF/mois) de droits potentiels sur ${eligibles.length} aide(s), à vérifier auprès de chaque organisme.${suffixVerifier} Attention : certaines aides — les allocations familiales notamment — sont souvent DÉJÀ versées (par l'employeur) ; il s'agit alors de confirmer qu'elles le sont, pas de les réclamer. Estimations indicatives, non contractuelles.`
       : `Ce bilan ne détecte pas de montant chiffrable sur la base de vos indications (canton de ${cantonNom}).${suffixVerifier} Les barèmes officiels intègrent d'autres éléments : en cas de doute, vérifiez auprès des autorités.`,
     avertissement: `Estimations indicatives 2026. Subside : pour Vaud, estimation basée sur les seuils officiels de l'arrêté (interpolation — pas le calcul exact de l'autorité) ; pour les autres cantons, signal + calculateur officiel. Allocations : barèmes officiels 2026 vérifiés (le montant exact dépend de l'âge de l'enfant à ZH/LU/ZG). PC : estimation fédérale simplifiée (valable tous cantons). Ne remplace pas une décision des autorités.`,
     extracted_year: 2026

@@ -35,7 +35,16 @@ function checkUrl(url) {
   // Convertit URL absolue en path relatif
   let rel = url.replace(SITE_URL, '');
   if (rel === '' || rel === '/') rel = '/index.html';
-  // Path file system
+  // Guides localisés (/guides/{de,it,en,…}/slug.html) : servis DYNAMIQUEMENT par le serveur
+  // (traduction à la volée de la source FR, avec fallback FR si la trad échoue — cf. route
+  // server.mjs ~L2238). Le fichier statique localisé n'existe pas sur disque, mais l'URL
+  // répond 200 dès lors que la SOURCE FR existe. La vraie 404 n'arrive que si la source FR
+  // manque. On valide donc ces URLs via l'existence du guide FR (sinon faux négatif 404 SEO).
+  const i18nGuide = rel.match(/^\/guides\/(?:fr|de|it|en|pt|ar|tr|sq|hr)\/([a-z0-9_]+\.html)$/);
+  if (i18nGuide) {
+    return fs.existsSync(path.join(PUBLIC_DIR, 'guides', i18nGuide[1]));
+  }
+  // Path file system (pages statiques classiques)
   const filePath = path.join(PUBLIC_DIR, rel);
   return fs.existsSync(filePath);
 }

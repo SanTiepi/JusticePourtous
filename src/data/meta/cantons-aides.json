@@ -7,7 +7,7 @@
       "formation": 268
     },
     "allocations_note": "Montants mensuels par enfant — valeurs OFFICIELLES BSV/OFAS 2026 par canton (vérifiées). Minimum fédéral LAFam 2026 : 215/enfant, 268/formation. Cantons à supplément de rang (FR/VD/VS/NE/GE) : 1er montant = 1er-2e enfant, 2e = dès le 3e. NB : ZH et LU ont un supplément d'âge (allocation enfant plus élevée dès 12 ans) non modélisé ici — valeur de base affichée. Allocation de naissance/adoption et particularités : voir votre caisse cantonale.",
-    "subside_note": "Le barème du subside d'assurance-maladie est CANTONAL. Calcul exact disponible pour VD ; pour les autres cantons, signal d'éligibilité (principe art. 65 LAMal) + lien vers le calculateur/l'autorité officielle du canton.",
+    "subside_note": "Le barème du subside d'assurance-maladie est CANTONAL. Pour VD : estimation basée sur les seuils officiels de l'arrêté (interpolation, pas le calcul exact de l'autorité). Pour les autres cantons : signal d'éligibilité (principe art. 65 LAMal) + lien vers le calculateur/l'autorité officielle du canton. Dans tous les cas, le montant exact est donné par le calculateur officiel.",
     "subside_url_federal": "https://www.ch.ch/fr/sante/assurance-maladie/reduction-de-prime-de-lassurance-maladie/",
     "pc_national": "Calcul PC fédéral (besoins vitaux, franchises, taux) — valable pour tous les cantons ; la région de loyer 1/2/3 est choisie par l'utilisateur.",
     "source_allocations": "Barèmes officiels BSV/OFAS 2026 — table 'Genres et montants des allocations familiales 2026' (FamZG/FLG + lois cantonales), Stand 12.12.2025.",

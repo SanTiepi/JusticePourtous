@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Justice économique — récupérer ses droits | JusticePourtous</title>
-  <meta name="description" content="Récupérez les aides auxquelles vous avez droit : subside d'assurance-maladie, allocations familiales, prestations complémentaires (canton de Vaud). Gratuit et anonyme.">
+  <meta name="description" content="Récupérez les aides auxquelles vous avez droit : subside d'assurance-maladie, allocations familiales et prestations complémentaires. Couverture des 26 cantons suisses. Estimation indicative, gratuite et anonyme.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://justicepourtous.ch/justice-economique.html">
   <meta property="og:title" content="Justice économique — récupérer ses droits | JusticePourtous">
@@ -40,7 +40,7 @@
 
       <p class="hero-eyebrow">Justice économique</p>
       <h1 class="page-title">Récupérez les droits qu'on oublie de réclamer</h1>
-      <p class="guide-summary">Chaque année, des millions de francs d'aides ne sont pas réclamés en Suisse. Vérifiez vos droits en 1 minute — gratuit, anonyme, sans création de compte. <strong>Tous les cantons</strong> : prestations complémentaires (calcul fédéral), allocations familiales (minimum garanti, barème détaillé pour Vaud) et subside d'assurance-maladie (estimation basée sur les barèmes officiels Vaud 2026, calculateur officiel pour les autres cantons).</p>
+      <p class="guide-summary">Chaque année, des millions de francs d'aides ne sont pas réclamés en Suisse. Vérifiez vos droits en 1 minute — gratuit, anonyme, sans création de compte. <strong>Les 26 cantons</strong> : prestations complémentaires (calcul fédéral, valable partout), allocations familiales (barèmes officiels 2026 vérifiés des 26 cantons) et subside d'assurance-maladie (estimation basée sur les seuils officiels pour Vaud, signal d'éligibilité + calculateur officiel pour les 25 autres).</p>
 
       <!-- 0. BILAN consolidé (entrée principale) -->
       <section class="card-highlight" id="toolBilan" style="border-left:4px solid #8B2500;">
@@ -174,9 +174,9 @@
         <h2>Comment on calcule (et nos sources)</h2>
         <p>Nos estimations appliquent les <strong>barèmes officiels 2026</strong>, pas des chiffres approximatifs. Elles restent indicatives : seul·e l'autorité compétente décide, et certains éléments (frais médicaux, séjour en home, situations particulières) ne sont pas couverts.</p>
         <ul style="line-height:1.6;">
-          <li><strong>Subside d'assurance-maladie</strong> — Arrêté du Conseil d'État vaudois du 17.12.2025 (seuils par catégorie de ménage).</li>
-          <li><strong>Allocations familiales</strong> — Montants officiels de l'État de Vaud (dès le 1er janvier 2025).</li>
-          <li><strong>Prestations complémentaires</strong> — Besoins vitaux OFAS 2026 + loyers maximaux reconnus (Caisse cantonale vaudoise) + franchises sur la fortune. Calcul : dépenses reconnues − revenus déterminants.</li>
+          <li><strong>Subside d'assurance-maladie</strong> — Vaud : arrêté du Conseil d'État vaudois du 17.12.2025 (seuils par catégorie). Autres cantons : barème cantonal propre → renvoi au calculateur officiel du canton.</li>
+          <li><strong>Allocations familiales</strong> — Barèmes officiels 2026 des 26 cantons (table BSV/OFAS « Genres et montants des allocations familiales »). Le montant exact dépend de l'âge de l'enfant à ZH/LU/ZG.</li>
+          <li><strong>Prestations complémentaires</strong> — Besoins vitaux OFAS 2026 (fédéraux, valables partout) + franchises sur la fortune ; loyers maximaux reconnus selon le barème vaudois (référence). Calcul : dépenses reconnues − revenus déterminants. Estimation simplifiée.</li>
         </ul>
         <p style="font-size:0.9rem;color:#6a7787;"><strong>Couverture nationale (2026)</strong> : les PC sont calculées au niveau fédéral (valable partout) ; les allocations familiales affichent les barèmes officiels 2026 vérifiés des 26 cantons (table BSV/OFAS — le montant exact dépend de l'âge de l'enfant à ZH/LU/ZG) ; pour Vaud le subside est estimé à partir des seuils officiels de l'arrêté 2026 (interpolation entre catégories — indicatif, pas le calcul exact de l'autorité) ; pour les 25 autres cantons, une orientation indicative sourcée des barèmes officiels 2026 (base de revenu cantonale + seuils ou principe d'éligibilité) avec un renvoi direct au calculateur officiel de votre canton — couverture des 26 cantons. Barèmes révisés chaque année. Aucune donnée saisie n'est enregistrée — tout est calculé en mémoire.</p>
       </section>
@@ -352,8 +352,9 @@
         track('claimback_bilan_completed');
         var h = '<div class="je-verdict" style="border-left-color:#8B2500;">';
         if (d.total_annuel_estime > 0) {
-          h += '<p style="margin:0 0 0.1rem;color:#4a5b6e;">Vous pourriez récupérer jusqu\'à</p>';
+          h += '<p style="margin:0 0 0.1rem;color:#4a5b6e;">Droits détectés à vérifier</p>';
           h += '<p class="je-amount" style="font-size:1.9rem;color:#2D6A4F;">~' + d.total_annuel_estime + ' CHF/an <span class="je-amount-sub">(~' + d.total_mensuel_estime + ' CHF/mois)</span></p>';
+          h += '<p style="font-size:0.8rem;color:#6a7787;margin:0.15rem 0 0;">Montant potentiel total, à confirmer auprès de chaque organisme. Certaines aides (les allocations familiales notamment) sont souvent <strong>déjà versées</strong> — il s\'agit alors de vérifier, pas de réclamer.</p>';
         } else {
           h += '<h3 style="margin:0 0 0.4rem;">Pas de droit évident détecté</h3>';
         }

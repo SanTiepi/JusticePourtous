@@ -18,6 +18,11 @@
     "enfant_moins_11": 7590,
     "enfant_des_11": 10815
   },
+  "_besoins_vitaux_enfants_note": "LPC art. 10 al. 1 let. a ch. 3 et 4 : la dégression diffère selon l'âge. Enfants DÈS 11 ans (ch. 3) : montant entier pour les 2 premiers, deux tiers pour les 2 suivants, un tiers pour chaque enfant supplémentaire. Enfants de MOINS de 11 ans (ch. 4) : 1er enfant au montant entier, chaque enfant suivant réduit d'un sixième du précédent, le montant du 5e enfant s'appliquant aussi aux suivants. Chaque tranche d'âge est rangée séparément. Montants officiels 2026 (base CCVD/OFAS). Vérifié sur le PDF Fedlex LPC (RS 831.30), art. 10.",
+  "besoins_vitaux_enfants_par_rang": {
+    "moins_11": [7590, 6325, 5270, 4390, 3660],
+    "des_11": [10815, 10815, 7210, 7210, 3605]
+  },
   "loyer_max_mensuel_vd": {
     "1": { "r1": 1575, "r2": 1525, "r3": 1390 },
     "2": { "r1": 1860, "r2": 1810, "r3": 1680 },

@@ -181,24 +181,36 @@ describe('claimback — calculateur PC (gap dépenses-revenus)', () => {
     assert.equal(r.breakdown.loyer_reconnu, 18900);
   });
 
-  // ── Familles : dégression des besoins vitaux par rang (OPC art. 10) — correction Codex.
-  // Base couple 31005 ; enfant <11 = 7590 ; rang 1-2 plein, 3-4 aux 2/3, dès 5e au tiers.
-  it('PC famille : besoins vitaux dégressifs (1 enfant plein, jamais de surestimation)', () => {
-    const r = estimatePC({ rente_type: 'avs', couple: true, enfants_moins11: 1, rente_mensuelle: 2000, loyer_mensuel: 1500, prime_lamal_mensuelle: 400, fortune: 0, region: 1 });
-    assert.equal(r.breakdown.besoins_vitaux, 38595); // 31005 + 7590
+  // ── Familles : dégression des besoins vitaux par rang, DIFFÉRENTE selon l'âge (LPC art. 10
+  // al. 1 let. a ch. 3/4, vérifiée sur PDF Fedlex). Base couple 31005.
+  // Enfants <11 (ch. 4) : 7590/6325/5270/4390/3660 (réduction d'1/6 par enfant, plafond au 5e).
+  // Enfants ≥11 (ch. 3) : 10815/10815/7210/7210/3605 (paliers entier/entier/2-tiers/2-tiers/tiers).
+  const pcFam = (inp) => estimatePC({ rente_type: 'avs', couple: true, rente_mensuelle: 2000, loyer_mensuel: 1500, prime_lamal_mensuelle: 400, fortune: 0, region: 1, ...inp }).breakdown.besoins_vitaux;
+  it('PC famille <11 : 1 enfant au montant plein', () => {
+    assert.equal(pcFam({ enfants_moins11: 1 }), 38595); // 31005 + 7590
   });
-  it('PC famille : 2 enfants au montant plein', () => {
-    const r = estimatePC({ rente_type: 'avs', couple: true, enfants_moins11: 2, rente_mensuelle: 2000, loyer_mensuel: 1500, prime_lamal_mensuelle: 400, fortune: 0, region: 1 });
-    assert.equal(r.breakdown.besoins_vitaux, 46185); // 31005 + 7590*2
+  it('PC famille <11 : 2e enfant réduit d\'1/6 (6325, pas 7590)', () => {
+    assert.equal(pcFam({ enfants_moins11: 2 }), 44920); // 31005 + 7590 + 6325
   });
-  it('PC famille : 3e enfant aux 2/3 (dégression appliquée)', () => {
-    const r = estimatePC({ rente_type: 'avs', couple: true, enfants_moins11: 3, rente_mensuelle: 2000, loyer_mensuel: 1500, prime_lamal_mensuelle: 400, fortune: 0, region: 1 });
-    assert.equal(r.breakdown.besoins_vitaux, 51245); // 31005 + 7590*2 + 7590*(2/3)=5060
+  it('PC famille <11 : 3 enfants (dégression géométrique ×5/6)', () => {
+    assert.equal(pcFam({ enfants_moins11: 3 }), 50190); // 31005 + 7590+6325+5270
   });
-  it('PC famille : 4 enfants — dégression < somme naïve (anti-surestimation)', () => {
-    const r = estimatePC({ rente_type: 'avs', couple: true, enfants_moins11: 4, rente_mensuelle: 2000, loyer_mensuel: 1500, prime_lamal_mensuelle: 400, fortune: 0, region: 1 });
-    assert.equal(r.breakdown.besoins_vitaux, 56305); // 31005 + 7590*2 + 5060*2 ; naïf = 61365
-    assert.ok(r.breakdown.besoins_vitaux < 31005 + 7590 * 4, 'la dégression doit réduire vs somme plate');
+  it('PC famille <11 : 4 enfants = 54580 (barème officiel CCVD 2026, pas la règle des paliers)', () => {
+    const total = pcFam({ enfants_moins11: 4 }); // 31005 + 7590+6325+5270+4390
+    assert.equal(total, 54580);
+    assert.ok(total < 31005 + 7590 * 4, 'la dégression doit réduire vs somme plate (61365)');
+    assert.ok(total < 56305, 'ne doit PAS appliquer la règle des paliers ≥11 ans (qui donnait 56305)');
+  });
+  it('PC famille <11 : dès le 5e enfant, montant plafonné au 5e rang (3660)', () => {
+    assert.equal(pcFam({ enfants_moins11: 5 }), 58240); // +3660
+    assert.equal(pcFam({ enfants_moins11: 6 }), 58240 + 3660); // 6e = montant du 5e
+  });
+  it('PC famille ≥11 : paliers entier/entier/2-tiers/2-tiers (4 enfants = 36050)', () => {
+    assert.equal(pcFam({ enfants_des11: 4 }), 31005 + 36050); // 10815*2 + 7210*2
+  });
+  it('PC famille mixte : tranches d\'âge rangées séparément', () => {
+    // 2 enfants ≥11 (10815+10815) + 2 enfants <11 (7590+6325) = 35545
+    assert.equal(pcFam({ enfants_des11: 2, enfants_moins11: 2 }), 31005 + 35545);
   });
   it('PC : flags honnêteté présents (estimation simplifiée + prime non plafonnée)', () => {
     const r = estimatePC({ rente_type: 'avs', couple: false, rente_mensuelle: 1500, loyer_mensuel: 1200, prime_lamal_mensuelle: 400, fortune: 0, region: 1 });

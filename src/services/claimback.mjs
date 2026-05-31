@@ -97,19 +97,31 @@ export function estimateAllocationsNational(canton, input) {
     'Salarié·e : vérifiez que les allocations figurent sur vos fiches de salaire.',
     'Indépendant·e / sans activité : demandez-les à votre caisse cantonale de compensation (souvent oublié).'
   ];
+  // Cantons à logique d'âge (ZH/LU dès 12 ans, ZG formation dès 18 ans) : le montant
+  // exact dépend de l'âge de l'enfant, non saisi ici → on le signale (correction Codex).
+  if (ce && ce.alloc_age_note) {
+    out.depend_age = true;
+    out.age_note = ce.alloc_age_note;
+    out.message += ' ⚠️ ' + ce.alloc_age_note;
+  }
   return out;
 }
 
 /**
- * Subside d'assurance-maladie — VD : calcul exact (estimateSubsideVD). Autres cantons :
- * signal d'éligibilité (principe fédéral) + lien vers le calculateur/l'autorité officielle.
+ * Subside d'assurance-maladie — VD : estimation basée sur les seuils officiels de l'arrêté
+ * (interpolation indicative, pas le calcul exact de l'autorité — voir subsideNational).
+ * Autres cantons : signal d'éligibilité (principe fédéral) + lien vers le calculateur officiel.
  */
 export function subsideNational(canton, input) {
   const meta = cantonsData()._meta;
   const ce = cantonEntry(canton);
-  if (ce && ce.subside_calcul_exact) {
+  if (ce && ce.subside_estimation_officielle) {
+    // VD : estimation basée sur les paramètres officiels de l'arrêté (seuils, subsides
+    // min/max), avec interpolation linéaire dans la zone dégressive — PAS la courbe de
+    // progressivité exacte de l'arrêté (coefficients RLVLAMal). Donc "estimation officielle",
+    // pas "calcul exact" (correction sur retour Codex). Montant exact = calculateur OVAM.
     const r = estimateSubsideVD(input);
-    return { ...r, canton, canton_nom: ce.nom, mode: 'calcul_exact', subside_url: ce.subside_url };
+    return { ...r, canton, canton_nom: ce.nom, mode: 'estimation_officielle', subside_url: ce.subside_url };
   }
   // Signal ENRICHI : canton avec barèmes officiels sourcés (GE/ZH/BE…). Orientation
   // indicative (base de revenu + seuils) SANS prétendre à un calcul exact — chaque
@@ -154,6 +166,20 @@ export function subsideMeta() {
 }
 
 function round(n) { return Math.round(n); }
+
+// Besoins vitaux des enfants pour les PC, avec dégression par rang (OPC art. 10 al. 1 let. a) :
+// 2 premiers enfants au montant entier, 3e-4e aux 2/3, dès le 5e au tiers. Le montant de base
+// dépend de l'âge (avant/dès 11 ans révolus). Simplification : enfants ≥11 ans rangés en premier.
+function childBesoinsVitaux(enfMoins11, enf11, baseMoins11, base11) {
+  const montants = [...Array(Math.max(0, enf11)).fill(base11), ...Array(Math.max(0, enfMoins11)).fill(baseMoins11)];
+  let total = 0;
+  montants.forEach((amt, idx) => {
+    const rang = idx + 1;
+    const facteur = rang <= 2 ? 1 : rang <= 4 ? 2 / 3 : 1 / 3;
+    total += amt * facteur;
+  });
+  return Math.round(total);
+}
 
 /**
  * Estime l'éligibilité au subside LAMal vaudois 2026.
@@ -313,14 +339,22 @@ export function estimatePC(input) {
   }
 
   // ── Dépenses reconnues ──
-  let besoinsVitaux = couple ? d.besoins_vitaux_annuel.couple : d.besoins_vitaux_annuel.personne_seule;
-  besoinsVitaux += enf11 * d.besoins_vitaux_annuel.enfant_des_11 + enfMoins11 * d.besoins_vitaux_annuel.enfant_moins_11;
+  // Besoins vitaux des enfants : dégression par rang (OPC art. 10 al. 1 let. a) — les 2
+  // premiers enfants au montant entier, 3e-4e aux 2/3, dès le 5e au tiers. (Avant : montant
+  // entier par enfant → surestimait les familles nombreuses ; corrigé sur retour Codex.)
+  const baseMenage = couple ? d.besoins_vitaux_annuel.couple : d.besoins_vitaux_annuel.personne_seule;
+  const besoinsEnfants = childBesoinsVitaux(enfMoins11, enf11, d.besoins_vitaux_annuel.enfant_moins_11, d.besoins_vitaux_annuel.enfant_des_11);
+  const besoinsVitaux = baseMenage + besoinsEnfants;
 
   const taille = Math.min(4, (couple ? 2 : 1) + nbEnfants);
   const plafondLoyerMensuel = d.loyer_max_mensuel_vd[String(taille)]['r' + region];
   const loyerAnnuelReel = num(i.loyer_mensuel) * 12;
   const loyerReconnu = Math.min(loyerAnnuelReel, plafondLoyerMensuel * 12);
+  // Prime LAMal : la PC ne reconnaît la prime QUE jusqu'à la prime moyenne régionale de
+  // référence. On ne dispose pas ici de cette prime de référence → on compte la prime saisie
+  // SANS plafond : l'estimation peut donc être HAUTE si la prime réelle dépasse la référence.
   const primeAnnuelle = num(i.prime_lamal_mensuelle) * 12;
+  const primePlafonnee = false;
   const depenses = besoinsVitaux + loyerReconnu + primeAnnuelle;
 
   // ── Revenus déterminants ──
@@ -345,15 +379,18 @@ export function estimatePC(input) {
     loyer_reconnu: loyerReconnu,
     loyer_plafond_annuel: plafondLoyerMensuel * 12,
     prime_lamal: primeAnnuelle,
+    prime_plafonnee: primePlafonnee,
     revenus_determinants: Math.round(revenus),
     rentes: renteAnnuelle,
     autres_revenus: autresRevenus,
     revenu_activite_compte: revActivitePris,
     part_fortune_comptee: partFortune
   };
+  out.estimation_simplifiee = true;
+  const caveatPrime = primeAnnuelle > 0 ? ' La prime LAMal saisie est comptée sans plafond (le calcul officiel la limite à la prime moyenne de référence) : si votre prime dépasse la moyenne régionale, cette estimation est plutôt HAUTE.' : '';
   out.message = eligible
-    ? `Estimation : vous pourriez avoir droit à environ ${out.pc_mensuelle} CHF/mois de prestations complémentaires (~${pcAnnuelle} CHF/an). Ce montant = vos dépenses reconnues (~${out.breakdown.depenses_reconnues} CHF) moins vos revenus déterminants (~${out.breakdown.revenus_determinants} CHF). Les PC sont un droit massivement sous-utilisé — déposez une demande à votre caisse de compensation.`
-    : `Selon cette estimation, vos revenus déterminants (~${out.breakdown.revenus_determinants} CHF) couvrent vos dépenses reconnues (~${out.breakdown.depenses_reconnues} CHF) : pas de PC ordinaire. Mais le calcul officiel intègre d'autres éléments — en cas de doute ou de frais médicaux élevés, vérifiez auprès de votre caisse.`;
+    ? `Estimation SIMPLIFIÉE : vous pourriez avoir droit à environ ${out.pc_mensuelle} CHF/mois de prestations complémentaires (~${pcAnnuelle} CHF/an). Ce montant = vos dépenses reconnues (~${out.breakdown.depenses_reconnues} CHF) moins vos revenus déterminants (~${out.breakdown.revenus_determinants} CHF).${caveatPrime} Le calcul officiel intègre d'autres éléments (frais médicaux, home…). Les PC sont un droit massivement sous-utilisé — déposez une demande à votre caisse de compensation pour le montant exact.`
+    : `Selon cette estimation simplifiée, vos revenus déterminants (~${out.breakdown.revenus_determinants} CHF) couvrent vos dépenses reconnues (~${out.breakdown.depenses_reconnues} CHF) : pas de PC ordinaire. Mais le calcul officiel intègre d'autres éléments — en cas de doute ou de frais médicaux élevés, vérifiez auprès de votre caisse.`;
   out.demarches = [
     'Déposez une demande PC auprès de la caisse de compensation cantonale (le droit naît au plus tôt 6 mois avant la demande — ne tardez pas).',
     'Munissez-vous de : décision de rente, bail/loyer, prime LAMal, relevés de fortune et de revenus.',
@@ -386,12 +423,12 @@ export function buildBilan(profil) {
 
   const aides = [];
 
-  // 1) Subside LAMal — calcul exact (VD) ou signal + lien officiel (autres cantons)
+  // 1) Subside LAMal — estimation officielle (VD) ou signal + lien officiel (autres cantons)
   let cat;
   if (jeune) cat = (menage === 'couple' || nbEnfants > 0) ? 'jeune_adulte_famille' : 'jeune_adulte_seul';
   else cat = nbEnfants > 0 ? 'adulte_famille_enfant' : (menage === 'couple' ? 'couple_sans_enfant' : 'adulte_seul');
   const sub = subsideNational(canton, { categorie: cat, revenu_net: p.revenu_net_annuel, nb_enfants: nbEnfants });
-  if (sub.mode === 'calcul_exact') {
+  if (sub.mode === 'estimation_officielle') {
     aides.push({
       id: 'subside', titre: "Subside d'assurance-maladie",
       eligible: !!sub.eligible,
@@ -451,7 +488,7 @@ export function buildBilan(profil) {
     message: eligibles.length
       ? `D'après ce bilan, vous pourriez récupérer environ ${totalAnnuel} CHF par an (~${Math.round(totalAnnuel / 12)} CHF/mois) au total sur ${eligibles.length} aide(s).${suffixVerifier} Estimations indicatives — vérifiez chaque montant auprès de l'autorité compétente.`
       : `Ce bilan ne détecte pas de montant chiffrable sur la base de vos indications (canton de ${cantonNom}).${suffixVerifier} Les barèmes officiels intègrent d'autres éléments : en cas de doute, vérifiez auprès des autorités.`,
-    avertissement: `Estimations indicatives 2026. Subside : calcul exact pour Vaud, signal + calculateur officiel pour les autres cantons. Allocations : barème vérifié pour Vaud, minimum fédéral garanti ailleurs. PC : calcul fédéral (valable tous cantons). Ne remplace pas une décision des autorités.`,
+    avertissement: `Estimations indicatives 2026. Subside : pour Vaud, estimation basée sur les seuils officiels de l'arrêté (interpolation — pas le calcul exact de l'autorité) ; pour les autres cantons, signal + calculateur officiel. Allocations : barèmes officiels 2026 vérifiés (le montant exact dépend de l'âge de l'enfant à ZH/LU/ZG). PC : estimation fédérale simplifiée (valable tous cantons). Ne remplace pas une décision des autorités.`,
     extracted_year: 2026
   };
 }

@@ -1,7 +1,8 @@
 /**
  * Régression — subside d'assurance-maladie enrichi par canton (GE/ZH/BE), 2026.
  *
- * VD = calcul exact (arrêté officiel). GE/ZH/BE = signal ENRICHI : base de revenu
+ * VD = estimation_officielle (seuils de l'arrêté, interpolation indicative — pas le
+ * calcul exact de l'autorité). GE/ZH/BE = signal ENRICHI : base de revenu
  * cantonale explicite + seuils indicatifs sourcés + calculateur officiel. Jamais de
  * fausse précision (chaque canton a sa propre base de revenu et sa formule).
  */
@@ -9,16 +10,16 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { subsideNational, buildBilan, listCantons } from '../src/services/claimback.mjs';
 
-test('couverture nationale : les 26 cantons ont calcul_exact ou signal_enrichi sourcé', () => {
+test('couverture nationale : les 26 cantons ont estimation_officielle ou signal_enrichi sourcé', () => {
   for (const { code } of listCantons()) {
     const r = subsideNational(code, {});
-    assert.ok(['calcul_exact', 'signal_enrichi'].includes(r.mode), `${code}: mode ${r.mode} (attendu calcul_exact/signal_enrichi)`);
+    assert.ok(['estimation_officielle', 'signal_enrichi'].includes(r.mode), `${code}: mode ${r.mode} (attendu estimation_officielle/signal_enrichi)`);
     assert.ok(r.calculateur_officiel || r.subside_url, `${code}: lien officiel manquant`);
   }
 });
 
-test('VD reste en calcul exact', () => {
-  assert.equal(subsideNational('VD', { categorie: 'adulte_seul', revenu_net: 40000 }).mode, 'calcul_exact');
+test('VD reste en estimation officielle (interpolation des seuils, pas calcul exact)', () => {
+  assert.equal(subsideNational('VD', { categorie: 'adulte_seul', revenu_net: 40000 }).mode, 'estimation_officielle');
 });
 
 test('GE/ZH/BE → signal enrichi sourcé (base de revenu + calculateur officiel)', () => {
@@ -43,7 +44,7 @@ test('GE/ZH/BE → signal enrichi sourcé (base de revenu + calculateur officiel
 });
 
 test('canton inconnu → signal générique (fallback robuste, pas de fausse précision)', () => {
-  // Les 26 cantons réels sont désormais tous couverts (calcul_exact ou signal_enrichi) ;
+  // Les 26 cantons réels sont désormais tous couverts (estimation_officielle ou signal_enrichi) ;
   // le signal générique ne sert plus que de garde-fou pour un code de canton inconnu.
   const r = subsideNational('XX', {});
   assert.equal(r.mode, 'signal');

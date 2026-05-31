@@ -231,6 +231,49 @@ async function checkCoverageCertificate() {
   };
 }
 
+async function checkClaimback() {
+  // Un /api/health/deep à 200 ne prouve PAS que le vertical Justice économique tourne.
+  // Ce check exerce réellement le moteur ClaimBack de bout en bout (correction Codex).
+  const { listCantons, buildBilan, estimatePC, subsideNational, estimateAllocationsNational } =
+    await import('./claimback.mjs');
+
+  const cantons = listCantons();
+  const problems = [];
+
+  // 1) Couverture : 26 cantons, chacun avec des allocations chiffrées ≥ minimum fédéral.
+  if (cantons.length !== 26) problems.push(`cantons=${cantons.length}≠26`);
+  for (const c of cantons) {
+    const a = estimateAllocationsNational(c.code, { enfants_moins16: 1, enfants_formation: 0 });
+    if (!Number.isFinite(a.total_mensuel) || a.total_mensuel < 215) {
+      problems.push(`alloc ${c.code}=${a.total_mensuel}`);
+    }
+  }
+
+  // 2) Bilan consolidé (famille vaudoise type) : total chiffré et cohérent.
+  const bilan = buildBilan({ canton: 'VD', menage: 'couple', age_groupe: 'adulte', nb_enfants_moins16: 2, revenu_net_annuel: 60000, region: 1, rente: 'none' });
+  if (!Array.isArray(bilan.aides) || bilan.aides.length === 0) problems.push('bilan sans aides');
+  if (!Number.isFinite(bilan.total_annuel_estime)) problems.push('bilan total NaN');
+
+  // 3) PC : estimation simplifiée présente + flags d'honnêteté.
+  const pc = estimatePC({ rente_type: 'avs', couple: false, rente_mensuelle: 1500, loyer_mensuel: 1200, prime_lamal_mensuelle: 400, fortune: 0, region: 1 });
+  if (pc.estimation_simplifiee !== true) problems.push('PC sans flag estimation_simplifiee');
+  if (!Number.isFinite(pc.pc_mensuelle)) problems.push('PC pc_mensuelle NaN');
+
+  // 4) Subside VD : label honnête (estimation_officielle, jamais "calcul_exact").
+  const sub = subsideNational('VD', { categorie: 'adulte_seul', revenu_net: 20000 });
+  if (sub.mode !== 'estimation_officielle') problems.push(`subside VD mode=${sub.mode}`);
+
+  return {
+    cantons: cantons.length,
+    bilan_aides: bilan.aides ? bilan.aides.length : 0,
+    bilan_total_annuel: bilan.total_annuel_estime,
+    pc_simplifiee: pc.estimation_simplifiee === true,
+    subside_vd_mode: sub.mode,
+    problems,
+    status: problems.length === 0 ? 'ok' : 'error'
+  };
+}
+
 /**
  * Lance tous les checks en parallèle et retourne un rapport.
  */
@@ -248,7 +291,8 @@ export async function runHealthChecks() {
     timed('coverage_certificate', checkCoverageCertificate),
     timed('enrich_cache', checkEnrichCache),
     timed('logger', checkLogger),
-    timed('fiche_schema', checkFicheSchema)
+    timed('fiche_schema', checkFicheSchema),
+    timed('claimback', checkClaimback)
   ]);
 
   const hasError = results.some(r => r.status === 'error');

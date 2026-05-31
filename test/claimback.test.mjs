@@ -180,6 +180,33 @@ describe('claimback — calculateur PC (gap dépenses-revenus)', () => {
     // loyer réel 30000 > plafond 18900 → reconnu 18900
     assert.equal(r.breakdown.loyer_reconnu, 18900);
   });
+
+  // ── Familles : dégression des besoins vitaux par rang (OPC art. 10) — correction Codex.
+  // Base couple 31005 ; enfant <11 = 7590 ; rang 1-2 plein, 3-4 aux 2/3, dès 5e au tiers.
+  it('PC famille : besoins vitaux dégressifs (1 enfant plein, jamais de surestimation)', () => {
+    const r = estimatePC({ rente_type: 'avs', couple: true, enfants_moins11: 1, rente_mensuelle: 2000, loyer_mensuel: 1500, prime_lamal_mensuelle: 400, fortune: 0, region: 1 });
+    assert.equal(r.breakdown.besoins_vitaux, 38595); // 31005 + 7590
+  });
+  it('PC famille : 2 enfants au montant plein', () => {
+    const r = estimatePC({ rente_type: 'avs', couple: true, enfants_moins11: 2, rente_mensuelle: 2000, loyer_mensuel: 1500, prime_lamal_mensuelle: 400, fortune: 0, region: 1 });
+    assert.equal(r.breakdown.besoins_vitaux, 46185); // 31005 + 7590*2
+  });
+  it('PC famille : 3e enfant aux 2/3 (dégression appliquée)', () => {
+    const r = estimatePC({ rente_type: 'avs', couple: true, enfants_moins11: 3, rente_mensuelle: 2000, loyer_mensuel: 1500, prime_lamal_mensuelle: 400, fortune: 0, region: 1 });
+    assert.equal(r.breakdown.besoins_vitaux, 51245); // 31005 + 7590*2 + 7590*(2/3)=5060
+  });
+  it('PC famille : 4 enfants — dégression < somme naïve (anti-surestimation)', () => {
+    const r = estimatePC({ rente_type: 'avs', couple: true, enfants_moins11: 4, rente_mensuelle: 2000, loyer_mensuel: 1500, prime_lamal_mensuelle: 400, fortune: 0, region: 1 });
+    assert.equal(r.breakdown.besoins_vitaux, 56305); // 31005 + 7590*2 + 5060*2 ; naïf = 61365
+    assert.ok(r.breakdown.besoins_vitaux < 31005 + 7590 * 4, 'la dégression doit réduire vs somme plate');
+  });
+  it('PC : flags honnêteté présents (estimation simplifiée + prime non plafonnée)', () => {
+    const r = estimatePC({ rente_type: 'avs', couple: false, rente_mensuelle: 1500, loyer_mensuel: 1200, prime_lamal_mensuelle: 400, fortune: 0, region: 1 });
+    assert.equal(r.estimation_simplifiee, true);
+    assert.equal(r.breakdown.prime_plafonnee, false);
+    assert.match(r.message, /SIMPLIFIÉE/);
+    assert.match(r.message, /sans plafond/); // caveat prime LAMal affiché
+  });
 });
 
 describe('claimback — listAides', () => {
@@ -252,6 +279,21 @@ describe('claimback — couverture nationale (26 cantons)', () => {
     assert.match(r.message, /Genève/i);
   });
 
+  // Cantons à logique d'âge (ZH/LU dès 12 ans, ZG formation dès 18 ans) : on signale la
+  // dépendance à l'âge plutôt que de prétendre une valeur "exacte" sans l'âge (correction Codex).
+  it('allocations ZH/LU/ZG : caveat d\'âge surfacé (depend_age + age_note)', () => {
+    for (const c of ['ZH', 'LU', 'ZG']) {
+      const r = estimateAllocationsNational(c, { enfants_moins16: 1, enfants_formation: 0 });
+      assert.equal(r.depend_age, true, c + ' devrait signaler la dépendance à l\'âge');
+      assert.ok(r.age_note && r.age_note.length > 0, c + ' age_note manquante');
+      assert.match(r.message, /âge|ans/i, c + ' message sans mention d\'âge');
+    }
+  });
+  it('allocations sans logique d\'âge : pas de faux caveat (GE)', () => {
+    const r = estimateAllocationsNational('GE', { enfants_moins16: 1, enfants_formation: 0 });
+    assert.ok(!r.depend_age);
+  });
+
   it('allocations : valeurs officielles BSV exactes (UR 240/290, SZ 230/280, GR 240/290)', () => {
     const exp = { UR: [240, 290], SZ: [230, 280], GR: [240, 290], OW: [220, 270], TG: [215, 280] };
     for (const [c, [enf, form]] of Object.entries(exp)) {
@@ -275,15 +317,15 @@ describe('claimback — couverture nationale (26 cantons)', () => {
     }
   });
 
-  it('subside VD = calcul exact', () => {
+  it('subside VD = estimation basée sur barèmes officiels (pas "calcul exact")', () => {
     const r = subsideNational('VD', { categorie: 'adulte_seul', revenu_net: 20000 });
-    assert.equal(r.mode, 'calcul_exact');
+    assert.equal(r.mode, 'estimation_officielle'); // honnêteté Codex : interpolation, pas le calcul exact de l'autorité
     assert.equal(r.eligible, true);
   });
 
   it('subside autre canton = signal + lien calculateur officiel', () => {
     const r = subsideNational('GE', { categorie: 'adulte_seul', revenu_net: 20000 });
-    assert.match(r.mode, /^signal/); // 'signal' ou 'signal_enrichi' (GE/ZH/BE sourcés) — jamais calcul_exact
+    assert.match(r.mode, /^signal/); // 'signal' ou 'signal_enrichi' (GE/ZH/BE sourcés) — jamais estimation_officielle
     assert.ok(r.calculateur_officiel);
     assert.ok(!('subside_estime_mois' in r)); // pas de fausse précision
   });

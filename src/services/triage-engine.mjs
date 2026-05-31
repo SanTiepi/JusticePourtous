@@ -119,7 +119,7 @@ async function triageLLM(texte, canton) {
     const ficheIds = nav.fiches_pertinentes || [];
     const enrichedFiches = [];
 
-    for (const ficheId of ficheIds.slice(0, 3)) {
+    for (const ficheId of ficheIds.slice(0, 5)) { // slice 3→5 (gap 5, cascades)
       const complete = queryComplete(ficheId);
       if (complete.status === 200) {
         enrichedFiches.push(complete.data);
@@ -309,7 +309,7 @@ async function refineTriage(sessionId, reponses) {
     // Re-enrich
     const ficheIds = nav.fiches_pertinentes || [];
     const enrichedFiches = [];
-    for (const ficheId of ficheIds.slice(0, 3)) {
+    for (const ficheId of ficheIds.slice(0, 5)) { // slice 3→5 (gap 5, cascades)
       const complete = queryComplete(ficheId);
       if (complete.status === 200) enrichedFiches.push(complete.data);
     }

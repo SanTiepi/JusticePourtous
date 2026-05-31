@@ -122,7 +122,20 @@ RÈGLES STRICTES :
 - Si tu ne trouves aucune fiche pertinente, dis-le honnêtement
 - Le temps n'est pas un souci — la PRÉCISION prime sur la rapidité
 - Extrais le canton si mentionné (codes CH : VD, GE, VS, NE, FR, BE, ZH, BS, LU, SG, AG, TI, SO, etc.)
-- Indique pour chaque question POURQUOI elle est importante ("change le délai", "change l'autorité", "discrimine entre fiche A et B", etc.)
+
+⚠️ INTERDICTION ABSOLUE DE FABRIQUER DU DROIT (règle constitutionnelle) :
+- Tu NAVIGUES, tu n'écris PAS de droit. Tu identifies des fiches et extrais des faits.
+- NE CITE JAMAIS de numéro d'article (CO, CC, LP, LAA, LAI, LAMal, LCR, CPP, LEI, CPC…) NULLE PART
+  dans ta sortie — ni dans "resume_situation", ni dans "pourquoi", ni dans les questions.
+- NE DONNE JAMAIS de délai chiffré ("30 jours", "10 jours") ni de nom d'autorité précis dans ta sortie.
+  Ces éléments sont délivrés par la FICHE (vérifiée), pas par toi. Si tu les écris, ils sont NON
+  SOURCÉS = fabrication interdite, même s'ils te semblent corrects.
+- "resume_situation" = description des FAITS en langage courant (qui, quoi, quand), JAMAIS de
+  qualification juridique chiffrée. Ex BON : "Congé reçu pendant un arrêt maladie." Ex INTERDIT :
+  "Congé nul selon CO 336c, délai de 30 jours."
+- Indique pour chaque question POURQUOI elle est importante en CATÉGORIE ABSTRAITE UNIQUEMENT :
+  "change un délai", "change l'autorité compétente", "discrimine entre deux fiches", "change le
+  montant", "change la procédure". JAMAIS de numéro d'article ni de délai chiffré dans ce champ.
 
 RÉPONDS UNIQUEMENT EN JSON VALIDE, sans markdown ni commentaires.`;
 
@@ -152,6 +165,26 @@ const RESPONSE_SCHEMA = `{
   "resume_situation": "Une phrase résumant la compréhension"
 }`;
 
+// Résolution tolérante d'ID (audit 2026-05-31, gap 14) : le corpus est incohérent sur
+// le préfixe singulier/pluriel (succession_/successions_, etranger_/etrangers_ coexistent).
+// Le navigator émet parfois le mauvais préfixe → la fiche était DROPPÉE en silence (perte
+// d'exhaustivité). On tente le swap de préfixe et on ne renvoie QUE des IDs existants.
+const NS_SWAPS = [
+  [/^successions_/, 'succession_'], [/^succession_/, 'successions_'],
+  [/^etrangers_/, 'etranger_'], [/^etranger_/, 'etrangers_'],
+];
+function resolveFicheId(id, validIds) {
+  if (typeof id !== 'string') return null;
+  if (validIds.has(id)) return id;
+  for (const [re, repl] of NS_SWAPS) {
+    if (re.test(id)) {
+      const alt = id.replace(re, repl);
+      if (validIds.has(alt)) return alt;
+    }
+  }
+  return null;
+}
+
 /**
  * Call Claude API to navigate the user's problem
  */
@@ -164,7 +197,7 @@ async function callNavigator(userText, previousAnswers) {
     // Filter fiche IDs through the catalog (same invariant as the real path)
     const validIds = new Set(ficheCatalog.map(line => line.split(' ')[0]));
     result.navigation.fiches_pertinentes = (result.navigation.fiches_pertinentes || [])
-      .filter(id => validIds.has(id));
+      .map(id => resolveFicheId(id, validIds)).filter(Boolean);
     return result;
   }
 
@@ -233,9 +266,10 @@ async function callNavigator(userText, previousAnswers) {
     }
   }
 
-  // Validate: all fiche IDs must exist in our catalog
+  // Validate: all fiche IDs must exist in our catalog (avec résolution d'alias, gap 14)
   const validIds = new Set(ficheCatalog.map(line => line.split(' ')[0]));
-  parsed.fiches_pertinentes = (parsed.fiches_pertinentes || []).filter(id => validIds.has(id));
+  parsed.fiches_pertinentes = (parsed.fiches_pertinentes || [])
+    .map(id => resolveFicheId(id, validIds)).filter(Boolean);
 
   // Usage info for cost tracking
   const usage = {
@@ -302,4 +336,4 @@ function isAvailable() {
   return !!process.env.ANTHROPIC_API_KEY;
 }
 
-export { callNavigator, getQuestionsForFiche, isAvailable, CATALOG_TEXT, SYSTEM_PROMPT, RESPONSE_SCHEMA };
+export { callNavigator, getQuestionsForFiche, isAvailable, CATALOG_TEXT, SYSTEM_PROMPT, RESPONSE_SCHEMA, resolveFicheId };

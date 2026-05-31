@@ -25,6 +25,27 @@ test('extractEventDate — date absolue "le 18 mai" et "18.05.2026"', () => {
   assert.equal(extractEventDate('notifié le 18.05.2026', TODAY).date.toDateString(), new Date(2026, 4, 18).toDateString());
 });
 
+test('extractEventDate — multilingue DE/IT/EN (relatif)', () => {
+  // DE
+  assert.equal(extractEventDate('vor 3 Tagen einen Zahlungsbefehl erhalten', TODAY).date.toDateString(), days(3).toDateString());
+  assert.equal(extractEventDate('vor einer Woche', TODAY).date.toDateString(), days(7).toDateString());
+  assert.equal(extractEventDate('das war gestern', TODAY).date.toDateString(), days(1).toDateString());
+  assert.equal(extractEventDate('vorgestern', TODAY).date.toDateString(), days(2).toDateString());
+  // IT
+  assert.equal(extractEventDate('ho ricevuto 3 giorni fa', TODAY).date.toDateString(), days(3).toDateString());
+  assert.equal(extractEventDate('è successo ieri', TODAY).date.toDateString(), days(1).toDateString());
+  // EN
+  assert.equal(extractEventDate('I received it 3 days ago', TODAY).date.toDateString(), days(3).toDateString());
+  assert.equal(extractEventDate('it was yesterday', TODAY).date.toDateString(), days(1).toDateString());
+  assert.equal(extractEventDate('two weeks ago', TODAY).date.toDateString(), days(14).toDateString());
+});
+
+test('extractEventDate — date littérale multilingue', () => {
+  assert.equal(extractEventDate('am 18. Mai erhalten', TODAY).date.toDateString(), new Date(2026, 4, 18).toDateString());
+  assert.equal(extractEventDate('il 18 maggio', TODAY).date.toDateString(), new Date(2026, 4, 18).toDateString());
+  assert.equal(extractEventDate('on May 18', TODAY).date.toDateString(), new Date(2026, 4, 18).toDateString());
+});
+
 test('extractEventDate — rien d\'extractible → null', () => {
   assert.equal(extractEventDate('mon propriétaire veut augmenter le loyer', TODAY), null);
   assert.equal(extractEventDate('', TODAY), null);

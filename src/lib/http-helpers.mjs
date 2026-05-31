@@ -98,6 +98,11 @@ const I18N_LOCALES = ['fr', 'de', 'it', 'en'];
  * Ne touche QUE les pages ayant un canonical (= pages de contenu indexables).
  */
 export function injectI18nSeo(html, lang) {
+  // Pages DÉJÀ multilingues (ex. guides /guides/{de,it,en}/ : hreflang path-based +
+  // canonical + lang gérés par leur propre générateur) → on n'y touche PAS, sinon on
+  // clobbe leur <html lang> et on mange leur canonical. On ne traite que les pages SANS
+  // hreflang (pages principales servies en client-side via ?lang).
+  if (/hreflang=/i.test(html)) return html;
   const loc = I18N_LOCALES.includes(lang) ? lang : 'fr';
   const m = html.match(/<link\s+rel="canonical"\s+href="([^"]+)"/i);
   const frUrl = m && m[1];

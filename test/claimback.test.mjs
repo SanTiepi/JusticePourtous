@@ -280,8 +280,8 @@ describe('claimback — couverture nationale (26 cantons)', () => {
     assert.ok(!('subside_estime_mois' in r)); // pas de fausse précision
   });
 
-  it('subside canton sans données = signal générique', () => {
-    const r = subsideNational('SG', { categorie: 'adulte_seul', revenu_net: 20000 });
+  it('canton inconnu = signal générique (fallback)', () => {
+    const r = subsideNational('XX', { categorie: 'adulte_seul', revenu_net: 20000 });
     assert.equal(r.mode, 'signal');
     assert.ok(r.calculateur_officiel);
   });

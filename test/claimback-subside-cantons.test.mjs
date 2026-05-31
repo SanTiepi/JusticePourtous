@@ -7,7 +7,15 @@
  */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { subsideNational, buildBilan } from '../src/services/claimback.mjs';
+import { subsideNational, buildBilan, listCantons } from '../src/services/claimback.mjs';
+
+test('couverture nationale : les 26 cantons ont calcul_exact ou signal_enrichi sourcé', () => {
+  for (const { code } of listCantons()) {
+    const r = subsideNational(code, {});
+    assert.ok(['calcul_exact', 'signal_enrichi'].includes(r.mode), `${code}: mode ${r.mode} (attendu calcul_exact/signal_enrichi)`);
+    assert.ok(r.calculateur_officiel || r.subside_url, `${code}: lien officiel manquant`);
+  }
+});
 
 test('VD reste en calcul exact', () => {
   assert.equal(subsideNational('VD', { categorie: 'adulte_seul', revenu_net: 40000 }).mode, 'calcul_exact');
@@ -34,9 +42,12 @@ test('GE/ZH/BE → signal enrichi sourcé (base de revenu + calculateur officiel
   }
 });
 
-test('canton sans données → signal générique (pas de fausse précision)', () => {
-  const r = subsideNational('SG', {}); // St-Gall : pas encore de barème encodé
+test('canton inconnu → signal générique (fallback robuste, pas de fausse précision)', () => {
+  // Les 26 cantons réels sont désormais tous couverts (calcul_exact ou signal_enrichi) ;
+  // le signal générique ne sert plus que de garde-fou pour un code de canton inconnu.
+  const r = subsideNational('XX', {});
   assert.equal(r.mode, 'signal');
+  assert.ok(r.calculateur_officiel);
 });
 
 test('bilan GE inclut le subside en "à vérifier" avec lien officiel GE', () => {

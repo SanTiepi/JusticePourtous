@@ -70,7 +70,7 @@ export function estimateAllocationsNational(canton, input) {
   const out = {
     canton, canton_nom: ce ? ce.nom : null, annee: meta.annee, indicatif: true,
     montants_verifies: verifie,
-    source: verifie ? 'État de Vaud (barème vérifié)' : meta.source_allocations,
+    source: meta.source_allocations,
     source_url: 'https://www.bsv.admin.ch/bsv/fr/home/assurances-sociales/famz/grundlagen-und-gesetze/ansaetze.html',
     calculateur_officiel: 'https://www.bsv.admin.ch/bsv/fr/home/assurances-sociales/famz/grundlagen-und-gesetze/ansaetze.html',
     avertissement: meta.allocations_note

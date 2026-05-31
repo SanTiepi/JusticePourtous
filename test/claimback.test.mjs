@@ -245,11 +245,19 @@ describe('claimback — couverture nationale (26 cantons)', () => {
     assert.equal(r.montants_verifies, true);
   });
 
-  it('allocations autre canton (GE) = barème cantonal indicatif (311), non vérifié', () => {
+  it('allocations GE = barème officiel BSV 2026 vérifié (311)', () => {
     const r = estimateAllocationsNational('GE', { enfants_moins16: 1, enfants_formation: 0 });
     assert.equal(r.total_mensuel, 311);
-    assert.equal(r.montants_verifies, false);
-    assert.match(r.message, /minimum fédéral/i);
+    assert.equal(r.montants_verifies, true); // tous les cantons vérifiés via la table officielle BSV 2026
+    assert.match(r.message, /Genève/i);
+  });
+
+  it('allocations : valeurs officielles BSV exactes (UR 240/290, SZ 230/280, GR 240/290)', () => {
+    const exp = { UR: [240, 290], SZ: [230, 280], GR: [240, 290], OW: [220, 270], TG: [215, 280] };
+    for (const [c, [enf, form]] of Object.entries(exp)) {
+      assert.equal(estimateAllocationsNational(c, { enfants_moins16: 1 }).total_mensuel, enf, c + ' enfant');
+      assert.equal(estimateAllocationsNational(c, { enfants_formation: 1 }).total_mensuel, form, c + ' formation');
+    }
   });
 
   it('allocations : plancher fédéral garanti pour un canton au minimum (ZH formation = 268)', () => {

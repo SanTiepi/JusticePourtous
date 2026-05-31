@@ -505,13 +505,18 @@ function renderTriageAnalysis(triage, caseId) {
     html += '<div class="triage-urgency ' + urgClass + '" role="alert">' + escHtmlSafe(urgText) + '</div>';
   }
 
-  // 1b. Compte-à-rebours d'un délai péremptoire (si une date a pu être extraite)
+  // 1b. Compte-à-rebours d'un délai péremptoire (si une date a pu être extraite).
+  //     Texte LOCALISÉ via i18n (le message serveur est en FR ; ici on respecte la langue
+  //     de l'utilisateur — FR/DE/IT/EN). Données structurées = langue-agnostiques.
   var ad = triage.alerteDelai;
-  if (ad && ad.message) {
+  if (ad && typeof ad.jours_restants === 'number') {
     var adClass = ad.depasse ? 'cd-depasse' : (ad.urgence === 'critique' ? 'cd-critique' : 'cd-actif');
+    var adMsg = ad.depasse ? t('countdown.overdue')
+      : (ad.urgence === 'critique' ? t('countdown.urgent', { n: ad.jours_restants })
+        : t('countdown.active', { n: ad.jours_restants }));
     html += '<div class="triage-countdown ' + adClass + '" role="alert">'
-      + (ad.depasse ? '' : '<span class="cd-jours">' + escHtmlSafe(String(ad.jours_restants)) + '</span><span class="cd-label">jour' + (ad.jours_restants > 1 ? 's' : '') + ' restants</span>')
-      + '<p class="cd-msg">' + escHtmlSafe(ad.message) + '</p>'
+      + (ad.depasse ? '' : '<span class="cd-jours">' + escHtmlSafe(String(ad.jours_restants)) + '</span><span class="cd-label">' + escHtmlSafe(t('countdown.remaining_label')) + '</span>')
+      + '<p class="cd-msg">' + escHtmlSafe(adMsg) + '</p>'
       + (ad.base_legale ? '<p class="cd-base">' + escHtmlSafe(ad.base_legale) + '</p>' : '')
       + '</div>';
   }

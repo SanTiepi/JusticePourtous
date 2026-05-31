@@ -66,35 +66,47 @@ de CONDUIRE (circulation), pas permis de séjour.
 
 Verrouillé par `test/complex-cases-keyword.test.mjs`. Gate complète verte.
 
-## Différé — et POURQUOI (pas par paresse, par discipline)
+## CORRECTION — le navigator LLM tourne EN PROD (haiku-4-5)
 
-- **Failles navigator (3, 5, 7, 9, 11, 12, 13, 15)** : le navigator LLM **n'est pas en prod**
-  (API Anthropic sans crédits → fallback keyword). Les correctifs sont du **prompt engineering**
-  dont l'amélioration ne peut pas être re-vérifiée à bas coût sans crédits API. Les implémenter
-  à l'aveugle risquerait de régresser les 80 cas adversariaux existants. → **À faire quand l'API
-  est financée**, avec re-run de l'éval pour mesurer.
-- **Override d'articles dans le normative-compiler (volet de gap 2 et 3)** : la synthèse propose
-  des corrections d'articles (CO 270b vs 273, CPC 23 al.1 for divorce, LCR 65…). Ce sont des
-  **affirmations juridiques** ; la Constitution du projet impose qu'elles soient **validées par
-  un humain** avant d'être traitées comme vérité. → bloqué sur la même gate que les 5 fiches gold
-  (validation juriste payé CHF 300-500).
-- **Réécriture architecturale du keyword (gap 1, slots réservés par domaine)** : testée en patch
-  fin (boost ×1.2 secondaire) = **aucun gain** sur l'exhaustivité (top-5 saturé par le dominant)
-  + régression de 1 cas → **retiré**. L'audit conclut lui-même « pas réparable en patch fin ».
-  Le vrai gain multi-fiches viendra du navigator + post-traitement graphe.
+Vérifié le 2026-05-31 : `/api/triage` renvoie le chemin navigator (clé API présente, ~$26 crédits).
+Le blocker « Anthropic sans crédits » était PÉRIMÉ. **Le chemin de prod = le navigator** (le bon),
+pas le keyword. Mon harnais `claude -p` (abonnement, haiku = modèle prod) vérifie les fixes navigator
+SANS consommer les crédits API. Les failles navigator sont donc prioritaires ET vérifiables.
 
-## Roadmap priorisée (quand l'API LLM sera financée)
+## Navigator — corrigé + mesuré + déployé + vérifié live (2026-05-31, commits fa7488c + 8da32fc)
+
+| Fix | Mesure (éval claude -p haiku, 45 cas) | Live |
+|---|---|---|
+| **gap 3A** — interdiction de citer articles/délais/autorités dans la sortie (resume/pourquoi/questions) ; le droit vient des fiches | fabrication d'articles **6/42 → 0/43** ; sélection 38→**40/40** (0 régression) | ✅ `travail_licenciement_maladie`, resume sans article |
+| **gap 9** — filtre anti-redondance canton (le navigator redemandait le canton déjà passé) | — | ✅ canton plus redemandé |
+| **gap 14** — `resolveFicheId` : alias singulier/pluriel au lieu de drop silencieux | récupère les fiches perdues, ne renvoie que des IDs réels | déployé |
+| **gap 5a** — `slice(0,3)→slice(0,5)` (cascades) | exhaustivité non tronquée | déployé |
+| **perf** — prompt caching du SYSTEM_PROMPT 35KB (cache_control) | ~10× moins cher sur rounds de session | déployé |
+
+## Différé — et POURQUOI
+
+- **Override d'articles dans le normative-compiler (volet de gap 2 et 3)** : corrections d'articles
+  (CO 270b vs 273, CPC 23 al.1 for divorce, LCR 65…) = **affirmations juridiques** ; la Constitution
+  impose qu'elles soient **validées par un humain**. → bloqué sur la gate des 5 fiches gold (juriste
+  payé CHF 300-500). NB : gap 3A (couper la fabrication) est FAIT et suffit à empêcher le LLM
+  d'afficher des articles ; reste à ENRICHIR les fiches avec les bons articles (côté données, validé).
+- **Réécriture du keyword multi-domaine (gap 1)** : testée en patch fin = aucun gain + régression
+  → retirée. Le keyword n'est qu'un fallback (le navigator est le chemin de prod). Non prioritaire.
+
+## Roadmap restante (vérifiable maintenant via `claude -p`, sans coût API)
 
 1. **deadline-detector.mjs** (gap 2, critical) — convertit toute date extraite + trigger en
-   compte-à-rebours chiffré, dies a quo correct (connaissance du décès pour successions). Délais
-   sourcés depuis les fiches/normative-compiler, jamais inventés.
-2. **Couper le canal de fabrication** (gap 3) — champ « pourquoi » → énuméré fermé ; toute base
-   légale affichée vient de la fiche/normative-compiler, jamais du LLM.
-3. **Filet de sécurité crash navigator** (gap 4) — re-passer `safety-classifier` dans le catch +
-   élargir patterns DÉTRESSE / créer DANGER_IMMINENT_TIERS → 117/144 inconditionnel.
-4. **Post-traitement graphe** (gap 5) — clusters de fiches (régimes alternatifs / cascade procédurale).
-5. **Gate anti-redondance + recalcul déterministe de la confiance** (gaps 9, 11).
-6. **Question dispositive par situation** (gap 7) + ancrage de cascade (gap 10).
-7. **Résolution tolérante d'IDs** (gap 14, alias `succession_*`/`successions_*`, `etranger_*`/`etrangers_*`).
+   compte-à-rebours ; valeurs sourcées depuis fiches/normative-compiler, jamais inventées. Le framing
+   « péremptoire » est la pièce manquante (en live, délais affichés mais `consequence: null`).
+2. **Filet de sécurité crash navigator** (gap 4) — re-passer `safety-classifier` dans le catch +
+   élargir DÉTRESSE / créer DANGER_IMMINENT_TIERS → 117/144 inconditionnel.
+3. **Post-traitement graphe** (gap 5b) — clusters de fiches (régimes alternatifs / cascade).
+4. **Recalcul déterministe de la confiance** (gap 11) — downgrade si question critique ouverte.
+5. **Question dispositive par situation** (gap 7) + ancrage de cascade (gap 10) — prompt.
+6. **Anti sur-association** (gap 12) + débunk fausses prémisses (gap 13) + double-voie pénal/admin (gap 15) — prompt.
+
+### FAIT cette session (2026-05-31)
+gap 3A (anti-fabrication, 6→0), gap 9 (redondance canton), gap 14 (alias IDs), gap 5a (slice 3→5),
+gap 8 (permis keyword), prompt caching. Tous déployés + vérifiés live.
 
 Tous les cas sont intégrés en régression permanente — ces corrections seront mesurables.

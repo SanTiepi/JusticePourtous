@@ -58,7 +58,7 @@ import { generateDocx } from './services/docx-generator.mjs';
 import { sendCode, verifyCode, linkWalletToEmail, getWalletsByEmail } from './services/auth.mjs';
 import { getVulgarisationForFiche, getVulgarisationStats } from './services/vulgarisation-loader.mjs';
 import { trackPageView, trackSearch, trackPremiumAnalysis, trackLanguage, trackEvent, recordClaimbackAmount, getStats as getAnalyticsStats } from './services/analytics.mjs';
-import { estimateSubsideVD, estimateAllocationsVD, estimatePC, buildBilan } from './services/claimback.mjs';
+import { estimateSubsideVD, estimateAllocationsVD, estimatePC, buildBilan, listCantons } from './services/claimback.mjs';
 import { translateStructuredContent, translateTextContent, TRANSLATION_PIPELINE_VERSION } from './services/i18n/translation-orchestrator.mjs';
 import { resolveRequestLocale } from './services/i18n/http-locale.mjs';
 import { normalizeLocale, DEFAULT_LOCALE, isOfferedLocale } from './services/i18n/locale-registry.mjs';
@@ -401,9 +401,14 @@ const server = createServer(async (req, res) => {
       return json(res, 200, { ...result, disclaimer: DISCLAIMER });
     }
 
+    if (path === '/api/claimback/cantons' && method === 'GET') {
+      return json(res, 200, { cantons: listCantons() });
+    }
+
     if (path === '/api/claimback/bilan' && method === 'POST') {
       const body = (await parseBody(req)) || {};
       const result = buildBilan({
+        canton: body.canton,
         menage: body.menage,
         age_groupe: body.age_groupe,
         nb_enfants_moins16: body.nb_enfants_moins16,

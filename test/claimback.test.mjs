@@ -4,7 +4,7 @@
  */
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { estimateSubsideVD, listCategories, estimateAllocationsVD, estimatePC, listAides, buildBilan } from '../src/services/claimback.mjs';
+import { estimateSubsideVD, listCategories, estimateAllocationsVD, estimatePC, listAides, buildBilan, listCantons, estimateAllocationsNational, subsideNational } from '../src/services/claimback.mjs';
 
 describe('claimback — estimateSubsideVD (adulte seul)', () => {
   it('revenu bas → éligible, niveau maximum (~331/mois)', () => {
@@ -228,6 +228,62 @@ describe('claimback — bilan consolidé', () => {
     assert.equal(b.total_mensuel_estime, Math.round(b.total_annuel_estime / 12));
     assert.equal(b.indicatif, true);
     assert.ok(b.avertissement && b.message);
+  });
+});
+
+describe('claimback — couverture nationale (26 cantons)', () => {
+  it('listCantons : 26 cantons, VD en tête, {code,nom}', () => {
+    const c = listCantons();
+    assert.equal(c.length, 26);
+    assert.equal(c[0].code, 'VD');
+    assert.ok(c.every((x) => x.code && x.code.length === 2 && x.nom));
+  });
+
+  it('allocations VD = barème cantonal détaillé (322), montants vérifiés', () => {
+    const r = estimateAllocationsNational('VD', { enfants_moins16: 1, enfants_formation: 0 });
+    assert.equal(r.total_mensuel, 322);
+    assert.equal(r.montants_verifies, true);
+  });
+
+  it('allocations autre canton (GE) = minimum fédéral garanti 240', () => {
+    const r = estimateAllocationsNational('GE', { enfants_moins16: 1, enfants_formation: 0 });
+    assert.equal(r.total_mensuel, 240);
+    assert.equal(r.montants_verifies, false);
+    assert.match(r.message, /minimum fédéral/i);
+  });
+
+  it('allocations formation autre canton = minimum fédéral 290', () => {
+    const r = estimateAllocationsNational('ZH', { enfants_moins16: 0, enfants_formation: 2 });
+    assert.equal(r.total_mensuel, 580);
+  });
+
+  it('subside VD = calcul exact', () => {
+    const r = subsideNational('VD', { categorie: 'adulte_seul', revenu_net: 20000 });
+    assert.equal(r.mode, 'calcul_exact');
+    assert.equal(r.eligible, true);
+  });
+
+  it('subside autre canton = signal + lien calculateur officiel', () => {
+    const r = subsideNational('GE', { categorie: 'adulte_seul', revenu_net: 20000 });
+    assert.equal(r.mode, 'signal');
+    assert.ok(r.calculateur_officiel);
+    assert.ok(!('subside_estime_mois' in r));
+  });
+
+  it('bilan canton non-VD : allocations au minimum fédéral + subside à vérifier', () => {
+    const b = buildBilan({ canton: 'GE', menage: 'seul', age_groupe: 'adulte', nb_enfants_moins16: 2, revenu_net_annuel: 30000, region: 1, rente: 'none' });
+    assert.equal(b.canton, 'GE');
+    const alloc = b.aides.find((a) => a.id === 'allocations');
+    assert.equal(alloc.montant_mensuel, 480); // 2 × 240
+    const sub = b.aides.find((a) => a.id === 'subside');
+    assert.equal(sub.a_verifier, true);
+    assert.equal(sub.montant_annuel, 0);
+    assert.equal(b.total_annuel_estime, 480 * 12); // seules les allocations chiffrées
+  });
+
+  it('PC reste fédéral (valable tous cantons) — calcul identique', () => {
+    const r = estimatePC({ rente_type: 'avs', couple: false, region: 1, rente_mensuelle: 1500, loyer_mensuel: 1400, prime_lamal_mensuelle: 400, fortune: 0 });
+    assert.equal(r.pc_annuelle, 24270);
   });
 });
 

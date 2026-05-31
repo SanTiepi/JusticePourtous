@@ -1,0 +1,50 @@
+{
+  "_meta": {
+    "objet": "Couverture nationale des aides — par canton",
+    "annee": 2026,
+    "allocations_minimum_federal": { "enfant": 240, "formation": 290 },
+    "allocations_note": "Dès le 1.1.2026, le minimum fédéral LAFam est de 240 CHF/enfant et 290 CHF/formation. Les cantons peuvent payer davantage. Pour les cantons non encore vérifiés individuellement, on affiche le minimum fédéral garanti (votre canton paie peut-être plus — vérifiez auprès de votre caisse).",
+    "subside_note": "Le barème du subside d'assurance-maladie est CANTONAL (formule propre à chaque canton). Calcul exact disponible pour VD ; pour les autres cantons, on donne un signal d'éligibilité fondé sur le principe fédéral (réduire la charge des primes des revenus modestes) et un lien vers le calculateur/l'autorité officielle.",
+    "subside_url_federal": "https://www.ch.ch/fr/sante/assurance-maladie/reduction-de-prime-de-lassurance-maladie/",
+    "pc_national": "Le calcul des PC est fédéral (besoins vitaux, franchises, taux) : l'outil PC fonctionne pour tous les cantons (la région de loyer 1/2/3 est choisie par l'utilisateur).",
+    "source": "OFAS (minimums LAFam 2026) + arrêtés cantonaux pour les cantons vérifiés",
+    "extracted_at": "2026-05-31"
+  },
+  "cantons": {
+    "ZH": { "nom": "Zurich" },
+    "BE": { "nom": "Berne" },
+    "LU": { "nom": "Lucerne" },
+    "UR": { "nom": "Uri" },
+    "SZ": { "nom": "Schwytz" },
+    "OW": { "nom": "Obwald" },
+    "NW": { "nom": "Nidwald" },
+    "GL": { "nom": "Glaris" },
+    "ZG": { "nom": "Zoug" },
+    "FR": { "nom": "Fribourg" },
+    "SO": { "nom": "Soleure" },
+    "BS": { "nom": "Bâle-Ville" },
+    "BL": { "nom": "Bâle-Campagne" },
+    "SH": { "nom": "Schaffhouse" },
+    "AR": { "nom": "Appenzell Rh.-Ext." },
+    "AI": { "nom": "Appenzell Rh.-Int." },
+    "SG": { "nom": "Saint-Gall" },
+    "GR": { "nom": "Grisons" },
+    "AG": { "nom": "Argovie" },
+    "TG": { "nom": "Thurgovie" },
+    "TI": { "nom": "Tessin" },
+    "VD": {
+      "nom": "Vaud",
+      "allocations_verifie": true,
+      "allocation_enfant_rang_1_2": 322,
+      "allocation_enfant_rang_3_plus": 365,
+      "allocation_formation_rang_1_2": 425,
+      "allocation_formation_rang_3_plus": 468,
+      "subside_calcul_exact": true,
+      "subside_url": "https://www.vd.ch/sante-soins-et-handicap/assurance-maladie/subside-a-lassurance-maladie"
+    },
+    "VS": { "nom": "Valais" },
+    "NE": { "nom": "Neuchâtel" },
+    "GE": { "nom": "Genève" },
+    "JU": { "nom": "Jura" }
+  }
+}

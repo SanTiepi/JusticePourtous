@@ -34,6 +34,83 @@ function pcData() {
   return _pc;
 }
 
+const CANTONS_PATH = join(__dirname, '..', 'data', 'meta', 'cantons-aides.json');
+let _cantons = null;
+function cantonsData() {
+  if (!_cantons) _cantons = JSON.parse(readFileSync(CANTONS_PATH, 'utf-8'));
+  return _cantons;
+}
+
+// Liste des 26 cantons pour les sélecteurs (VD en tête).
+export function listCantons() {
+  const c = cantonsData().cantons;
+  const arr = Object.keys(c).map((code) => ({ code, nom: c[code].nom }));
+  arr.sort((a, b) => (a.code === 'VD' ? -1 : b.code === 'VD' ? 1 : a.nom.localeCompare(b.nom, 'fr')));
+  return arr;
+}
+
+function cantonEntry(code) {
+  const c = cantonsData().cantons;
+  return (code && c[code]) ? { code, ...c[code] } : null;
+}
+
+/**
+ * Allocations familiales — couverture nationale. VD : barème cantonal détaillé (rangs).
+ * Autres cantons : minimum fédéral garanti 2026 (240 enfant / 290 formation), libellé
+ * comme plancher (le canton paie peut-être plus).
+ */
+export function estimateAllocationsNational(canton, input) {
+  const meta = cantonsData()._meta;
+  const ce = cantonEntry(canton);
+  if (ce && ce.allocations_verifie) {
+    const r = estimateAllocationsVD(input);
+    return { ...r, canton, canton_nom: ce.nom, montants_verifies: true };
+  }
+  // Plancher fédéral
+  const m16 = Math.max(0, Math.floor(Number(input && input.enfants_moins16) || 0));
+  const form = Math.max(0, Math.floor(Number(input && input.enfants_formation) || 0));
+  const total = m16 + form;
+  const out = {
+    canton, canton_nom: ce ? ce.nom : null, annee: meta.annee, indicatif: true,
+    montants_verifies: false,
+    source: 'Minimum fédéral LAFam 2026 (OFAS)',
+    source_url: 'https://www.bsv.admin.ch/bsv/fr/home/assurances-sociales/famz/grundlagen-und-gesetze/ansaetze.html',
+    calculateur_officiel: 'https://www.bsv.admin.ch/bsv/fr/home/assurances-sociales/famz/grundlagen-und-gesetze/ansaetze.html',
+    avertissement: meta.allocations_note
+  };
+  if (total <= 0) return { ...out, error: 'aucun_enfant', message: 'Indiquez au moins un enfant à charge.' };
+  const min = meta.allocations_minimum_federal;
+  const mensuel = m16 * min.enfant + form * min.formation;
+  out.enfants_moins_16 = m16; out.enfants_formation = form;
+  out.total_mensuel = mensuel; out.total_annuel = mensuel * 12; out.eligible = true;
+  out.message = `Pour ${total} enfant(s) à charge, vous avez droit à AU MOINS ~${mensuel} CHF/mois (~${mensuel * 12} CHF/an) — minimum fédéral garanti 2026. ${ce ? ce.nom : 'Votre canton'} paie peut-être davantage : vérifiez auprès de votre caisse d'allocations familiales. Pour les salarié·es, c'est versé via l'employeur ; pour les indépendant·es/sans activité, à demander.`;
+  out.demarches = [
+    'Salarié·e : vérifiez que les allocations figurent sur vos fiches de salaire.',
+    'Indépendant·e / sans activité : demandez-les à votre caisse cantonale de compensation (souvent oublié).'
+  ];
+  return out;
+}
+
+/**
+ * Subside d'assurance-maladie — VD : calcul exact (estimateSubsideVD). Autres cantons :
+ * signal d'éligibilité (principe fédéral) + lien vers le calculateur/l'autorité officielle.
+ */
+export function subsideNational(canton, input) {
+  const meta = cantonsData()._meta;
+  const ce = cantonEntry(canton);
+  if (ce && ce.subside_calcul_exact) {
+    const r = estimateSubsideVD(input);
+    return { ...r, canton, canton_nom: ce.nom, mode: 'calcul_exact', subside_url: ce.subside_url };
+  }
+  return {
+    canton, canton_nom: ce ? ce.nom : null, mode: 'signal', indicatif: true,
+    message: `Le barème du subside d'assurance-maladie est propre à chaque canton. Son but : réduire les primes des personnes à revenu modeste (souvent quand la prime dépasse ~8 à 10% du revenu déterminant). ${ce ? ce.nom : 'Votre canton'} dispose d'un calculateur officiel — vérifiez-y votre droit, beaucoup de personnes éligibles ne le réclament pas.`,
+    avertissement: meta.subside_note,
+    calculateur_officiel: (ce && ce.subside_url) || meta.subside_url_federal,
+    source: 'Principe LAMal art. 65 ; barèmes cantonaux'
+  };
+}
+
 // Aides disponibles dans le vertical Justice économique (pour le hub).
 export function listAides() {
   return [
@@ -274,6 +351,8 @@ export function estimatePC(input) {
  */
 export function buildBilan(profil) {
   const p = profil || {};
+  const canton = (typeof p.canton === 'string' && p.canton.length === 2) ? p.canton.toUpperCase() : 'VD';
+  const cInfo = cantonEntry(canton);
   const menage = p.menage === 'couple' ? 'couple' : 'seul';
   const jeune = p.age_groupe === 'jeune';
   const nbM16 = Math.max(0, Math.floor(Number(p.nb_enfants_moins16) || 0));
@@ -283,24 +362,33 @@ export function buildBilan(profil) {
 
   const aides = [];
 
-  // 1) Subside LAMal — applicable à tout le monde (assurance obligatoire)
+  // 1) Subside LAMal — calcul exact (VD) ou signal + lien officiel (autres cantons)
   let cat;
   if (jeune) cat = (menage === 'couple' || nbEnfants > 0) ? 'jeune_adulte_famille' : 'jeune_adulte_seul';
   else cat = nbEnfants > 0 ? 'adulte_famille_enfant' : (menage === 'couple' ? 'couple_sans_enfant' : 'adulte_seul');
-  const sub = estimateSubsideVD({ categorie: cat, revenu_net: p.revenu_net_annuel, nb_enfants: nbEnfants });
-  aides.push({
-    id: 'subside', titre: "Subside d'assurance-maladie",
-    eligible: !!sub.eligible,
-    montant_mensuel: sub.eligible ? sub.subside_estime_mois : 0,
-    montant_annuel: sub.eligible ? sub.estimation_annuelle : 0,
-    message: sub.message, lien: sub.calculateur_officiel
-  });
+  const sub = subsideNational(canton, { categorie: cat, revenu_net: p.revenu_net_annuel, nb_enfants: nbEnfants });
+  if (sub.mode === 'calcul_exact') {
+    aides.push({
+      id: 'subside', titre: "Subside d'assurance-maladie",
+      eligible: !!sub.eligible,
+      montant_mensuel: sub.eligible ? sub.subside_estime_mois : 0,
+      montant_annuel: sub.eligible ? sub.estimation_annuelle : 0,
+      message: sub.message, lien: sub.calculateur_officiel
+    });
+  } else {
+    aides.push({
+      id: 'subside', titre: "Subside d'assurance-maladie",
+      eligible: false, a_verifier: true, montant_mensuel: 0, montant_annuel: 0,
+      message: sub.message, lien: sub.calculateur_officiel
+    });
+  }
 
-  // 2) Allocations familiales — si enfants à charge
+  // 2) Allocations familiales — si enfants (barème VD détaillé, sinon minimum fédéral garanti)
   if (nbEnfants > 0) {
-    const al = estimateAllocationsVD({ enfants_moins16: nbM16, enfants_formation: nbForm });
+    const al = estimateAllocationsNational(canton, { enfants_moins16: nbM16, enfants_formation: nbForm });
     if (!al.error) aides.push({
-      id: 'allocations', titre: 'Allocations familiales',
+      id: 'allocations',
+      titre: al.montants_verifies ? 'Allocations familiales' : 'Allocations familiales (minimum garanti)',
       eligible: true, montant_mensuel: al.total_mensuel, montant_annuel: al.total_annuel,
       message: al.message, lien: al.calculateur_officiel
     });
@@ -324,18 +412,22 @@ export function buildBilan(profil) {
   }
 
   const eligibles = aides.filter((a) => a.montant_annuel > 0);
+  const aVerifier = aides.filter((a) => a.a_verifier);
   const totalAnnuel = eligibles.reduce((s, a) => s + a.montant_annuel, 0);
+  const cantonNom = cInfo ? cInfo.nom : canton;
+  const suffixVerifier = aVerifier.length ? ` À cela peut s'ajouter le subside d'assurance-maladie de votre canton (à vérifier sur le calculateur officiel).` : '';
 
   return {
-    canton: 'VD', indicatif: true,
+    canton, canton_nom: cantonNom, indicatif: true,
     aides,
     eligibles_count: eligibles.length,
+    a_verifier_count: aVerifier.length,
     total_annuel_estime: totalAnnuel,
     total_mensuel_estime: Math.round(totalAnnuel / 12),
     message: eligibles.length
-      ? `D'après ce bilan, vous pourriez récupérer environ ${totalAnnuel} CHF par an (~${Math.round(totalAnnuel / 12)} CHF/mois) au total sur ${eligibles.length} aide(s). Estimations indicatives — vérifiez chaque montant auprès de l'autorité compétente.`
-      : `Ce bilan ne détecte pas de droit évident sur la base de vos indications, mais les barèmes officiels intègrent d'autres éléments : en cas de doute, vérifiez directement auprès des autorités.`,
-    avertissement: "Estimations indicatives basées sur les barèmes officiels 2026 du canton de Vaud. Elles ne remplacent pas une décision des autorités compétentes. D'autres aides (bourses, avances de pensions, aides communales) ne sont pas encore couvertes.",
+      ? `D'après ce bilan, vous pourriez récupérer environ ${totalAnnuel} CHF par an (~${Math.round(totalAnnuel / 12)} CHF/mois) au total sur ${eligibles.length} aide(s).${suffixVerifier} Estimations indicatives — vérifiez chaque montant auprès de l'autorité compétente.`
+      : `Ce bilan ne détecte pas de montant chiffrable sur la base de vos indications (canton de ${cantonNom}).${suffixVerifier} Les barèmes officiels intègrent d'autres éléments : en cas de doute, vérifiez auprès des autorités.`,
+    avertissement: `Estimations indicatives 2026. Subside : calcul exact pour Vaud, signal + calculateur officiel pour les autres cantons. Allocations : barème vérifié pour Vaud, minimum fédéral garanti ailleurs. PC : calcul fédéral (valable tous cantons). Ne remplace pas une décision des autorités.`,
     extracted_year: 2026
   };
 }

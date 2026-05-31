@@ -38,7 +38,7 @@
 
       <p class="hero-eyebrow">Justice économique</p>
       <h1 class="page-title">Récupérez les droits qu'on oublie de réclamer</h1>
-      <p class="guide-summary">Chaque année, des millions de francs d'aides ne sont pas réclamés en Suisse. Vérifiez vos droits en 1 minute — gratuit, anonyme, sans création de compte. Canton de Vaud (d'autres cantons et aides arrivent).</p>
+      <p class="guide-summary">Chaque année, des millions de francs d'aides ne sont pas réclamés en Suisse. Vérifiez vos droits en 1 minute — gratuit, anonyme, sans création de compte. <strong>Tous les cantons</strong> : prestations complémentaires (calcul fédéral), allocations familiales (minimum garanti, barème détaillé pour Vaud) et subside d'assurance-maladie (calcul exact Vaud, calculateur officiel pour les autres cantons).</p>
 
       <!-- 0. BILAN consolidé (entrée principale) -->
       <section class="card-highlight" id="toolBilan" style="border-left:4px solid #8B2500;">
@@ -46,6 +46,9 @@
         <p style="margin:0 0 1rem;color:#4a5b6e;">Un seul formulaire — on vérifie toutes les aides d'un coup et on calcule le total que vous pourriez récupérer.</p>
         <form id="formBilan" onsubmit="lancerBilan(event)">
           <div class="je-grid">
+            <label class="je-label">Canton
+              <select id="biCanton" class="je-input"><option value="VD">Vaud</option></select>
+            </label>
             <label class="je-label">Situation
               <select id="biMenage" class="je-input"><option value="seul">Je vis seul·e</option><option value="couple">En couple</option></select>
             </label>
@@ -173,7 +176,7 @@
           <li><strong>Allocations familiales</strong> — Montants officiels de l'État de Vaud (dès le 1er janvier 2025).</li>
           <li><strong>Prestations complémentaires</strong> — Besoins vitaux OFAS 2026 + loyers maximaux reconnus (Caisse cantonale vaudoise) + franchises sur la fortune. Calcul : dépenses reconnues − revenus déterminants.</li>
         </ul>
-        <p style="font-size:0.9rem;color:#6a7787;">Données du <strong>canton de Vaud</strong>, valables pour 2026. Les barèmes sont cantonaux et révisés chaque année. Aucune donnée que vous saisissez n'est enregistrée — tout est calculé en mémoire.</p>
+        <p style="font-size:0.9rem;color:#6a7787;"><strong>Couverture nationale (2026)</strong> : les PC sont calculées au niveau fédéral (valable partout) ; les allocations affichent le barème vérifié pour Vaud et le minimum fédéral garanti pour les autres cantons ; le subside est calculé exactement pour Vaud et renvoie au calculateur officiel de votre canton ailleurs (barème cantonal). Barèmes révisés chaque année. Aucune donnée saisie n'est enregistrée — tout est calculé en mémoire.</p>
       </section>
 
       <section class="guide-section" style="margin-top:1.5rem;">
@@ -204,6 +207,13 @@
       if (host) host.appendChild(createLangSwitcher());
     }
     if (typeof getLang === 'function') document.documentElement.lang = getLang();
+
+    // Peuple le sélecteur de canton (couverture nationale) depuis l'API.
+    fetch('/api/claimback/cantons').then(function(r){ return r.json(); }).then(function(d){
+      var sel = document.getElementById('biCanton');
+      if (!sel || !d.cantons) return;
+      sel.innerHTML = d.cantons.map(function(c){ return '<option value="' + c.code + '">' + c.nom + '</option>'; }).join('');
+    }).catch(function(){});
 
     function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
     function track(ev){ if (window.jbTrack) jbTrack(ev); }
@@ -324,6 +334,7 @@
       function val(id){ var el = document.getElementById(id); return el ? Number(el.value) : 0; }
       try {
         var d = await post('/api/claimback/bilan', {
+          canton: document.getElementById('biCanton').value,
           menage: document.getElementById('biMenage').value,
           age_groupe: document.getElementById('biAge').value,
           region: val('biRegion'),

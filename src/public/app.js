@@ -43,7 +43,7 @@ async function initConsultation(domaine) {
   var domaineLabel = domaine.charAt(0).toUpperCase() + domaine.slice(1);
 
   card.innerHTML =
-    '<h2 style="margin:0 0 0.5rem;">Votre situation — ' + domaineLabel + '</h2>' +
+    '<h1 style="margin:0 0 0.5rem;font-size:1.5rem;">Votre situation — ' + domaineLabel + '</h1>' +
     '<p style="color:#4a5b6e;margin:0 0 1.25rem;line-height:1.5;">Décrivez votre cas en quelques mots, dans vos mots à vous. Notre IA identifie ensuite la situation juridique précise et vous oriente.</p>' +
     '<textarea id="consultText" rows="5" maxlength="800" placeholder="' + placeholder.replace(/"/g, '&quot;') + '" style="width:100%;padding:0.85rem 1rem;font-size:1rem;line-height:1.55;border:1.5px solid #c9d4df;border-radius:8px;font-family:inherit;resize:vertical;min-height:120px;"></textarea>' +
     '<div style="display:flex;gap:0.75rem;margin-top:1rem;flex-wrap:wrap;">' +

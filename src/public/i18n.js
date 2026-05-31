@@ -3173,6 +3173,9 @@ var STATIC_FRAGMENT_PATHS = {
   '/confidentialite.html': '.page-inner',
   '/cgu.html': '.page-inner',
   '/mentions-legales.html': '.page-inner',
+  '/pour-juristes.html': '.page',
+  '/guides/': '.page-inner',
+  '/guides/index.html': '.page-inner',
   '/404.html': 'main'
 };
 

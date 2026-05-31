@@ -58,7 +58,7 @@ import { generateDocx } from './services/docx-generator.mjs';
 import { sendCode, verifyCode, linkWalletToEmail, getWalletsByEmail } from './services/auth.mjs';
 import { getVulgarisationForFiche, getVulgarisationStats } from './services/vulgarisation-loader.mjs';
 import { trackPageView, trackSearch, trackPremiumAnalysis, trackLanguage, trackEvent, getStats as getAnalyticsStats } from './services/analytics.mjs';
-import { estimateSubsideVD, estimateAllocationsVD, pcSignal } from './services/claimback.mjs';
+import { estimateSubsideVD, estimateAllocationsVD, estimatePC } from './services/claimback.mjs';
 import { translateStructuredContent, translateTextContent, TRANSLATION_PIPELINE_VERSION } from './services/i18n/translation-orchestrator.mjs';
 import { resolveRequestLocale } from './services/i18n/http-locale.mjs';
 import { normalizeLocale, DEFAULT_LOCALE, isOfferedLocale } from './services/i18n/locale-registry.mjs';
@@ -401,11 +401,20 @@ const server = createServer(async (req, res) => {
       return json(res, 200, { ...result, disclaimer: DISCLAIMER });
     }
 
-    if (path === '/api/claimback/pc-signal' && method === 'POST') {
+    if (path === '/api/claimback/pc' && method === 'POST') {
       const body = (await parseBody(req)) || {};
-      const result = pcSignal({
-        rente_avs_ai: body.rente_avs_ai,
-        revenus_insuffisants: body.revenus_insuffisants
+      const result = estimatePC({
+        rente_type: body.rente_type,
+        couple: body.couple,
+        enfants_moins11: body.enfants_moins11,
+        enfants_des11: body.enfants_des11,
+        rente_mensuelle: body.rente_mensuelle,
+        autres_revenus_annuels: body.autres_revenus_annuels,
+        revenu_activite_annuel: body.revenu_activite_annuel,
+        loyer_mensuel: body.loyer_mensuel,
+        prime_lamal_mensuelle: body.prime_lamal_mensuelle,
+        fortune: body.fortune,
+        region: body.region
       });
       return json(res, 200, { ...result, disclaimer: DISCLAIMER });
     }

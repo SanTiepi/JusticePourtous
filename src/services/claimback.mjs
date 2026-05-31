@@ -27,6 +27,13 @@ function allocData() {
   return _alloc;
 }
 
+const PC_PATH = join(__dirname, '..', 'data', 'meta', 'pc-avs-ai-2026.json');
+let _pc = null;
+function pcData() {
+  if (!_pc) _pc = JSON.parse(readFileSync(PC_PATH, 'utf-8'));
+  return _pc;
+}
+
 // Aides disponibles dans le vertical Justice économique (pour le hub).
 export function listAides() {
   return [
@@ -88,33 +95,38 @@ export function estimateSubsideVD(input) {
   out.revenu_determinant_estime = round(revenuDeterminant);
   out.plafond_eligibilite = cat.limite_eligibilite;
 
-  let niveau, eligible, minMois, maxMois;
-  if (revenuDeterminant <= cat.limite_max_subside) {
+  let niveau, eligible, minMois, maxMois, estimeMois;
+  const F = cat.subside_max_mois, E = cat.subside_min_mois;
+  const C = cat.limite_max_subside, A = cat.limite_subside_min;
+  if (revenuDeterminant <= C) {
     eligible = true; niveau = 'maximum';
-    minMois = cat.subside_max_mois; maxMois = cat.subside_max_mois;
-  } else if (revenuDeterminant <= cat.limite_subside_min) {
+    minMois = F; maxMois = F; estimeMois = F;
+  } else if (revenuDeterminant <= A) {
     eligible = true; niveau = 'degressif';
-    minMois = cat.subside_min_mois; maxMois = cat.subside_max_mois;
+    minMois = E; maxMois = F;
+    // Interpolation linéaire entre le subside max (au seuil C) et min (au seuil A).
+    // Approximation transparente : la courbe officielle (coefficient de progressivité
+    // RLVLAMal) est non linéaire ; le montant exact vient du calculateur OVAM.
+    estimeMois = Math.round(F - (F - E) * ((revenuDeterminant - C) / (A - C)));
   } else if (revenuDeterminant <= cat.limite_eligibilite) {
     eligible = true; niveau = 'minimum';
-    minMois = cat.subside_min_mois; maxMois = cat.subside_min_mois;
+    minMois = E; maxMois = E; estimeMois = E;
   } else {
     eligible = false; niveau = 'au_dela_seuil_ordinaire';
-    minMois = 0; maxMois = 0;
+    minMois = 0; maxMois = 0; estimeMois = 0;
   }
 
   out.eligible = eligible;
   out.niveau = niveau;
+  out.subside_estime_mois = estimeMois;
   out.subside_min_mois = minMois;
   out.subside_max_mois = maxMois;
+  out.estimation_annuelle = estimeMois * 12;
   out.estimation_annuelle_min = minMois * 12;
   out.estimation_annuelle_max = maxMois * 12;
 
   if (eligible) {
-    const montant = niveau === 'degressif'
-      ? `entre ~${minMois} et ~${maxMois} CHF/mois`
-      : `~${minMois} CHF/mois`;
-    out.message = `Sur la base de vos indications (revenu déterminant estimé ~${out.revenu_determinant_estime} CHF), vous êtes probablement éligible au subside LAMal vaudois : ${montant} (estimation indicative, soit ~${out.estimation_annuelle_min}-${out.estimation_annuelle_max} CHF/an). Le montant exact dépend du calcul officiel de l'OVAM (revenu déterminant unifié, prime de référence, région).`;
+    out.message = `Sur la base de vos indications (revenu déterminant estimé ~${out.revenu_determinant_estime} CHF), vous êtes probablement éligible au subside LAMal vaudois : environ ${estimeMois} CHF/mois (~${out.estimation_annuelle} CHF/an). Estimation indicative — le montant exact (courbe progressive, prime de référence, région) est calculé par l'OVAM.`;
   } else {
     out.message = `Votre revenu déterminant estimé (~${out.revenu_determinant_estime} CHF) dépasse le plafond ordinaire du subside (${cat.limite_eligibilite} CHF pour votre situation). MAIS vous pourriez tout de même avoir droit à un "subside spécifique" si vos primes dépassent 10% de votre revenu déterminant — cela vaut la peine de vérifier auprès de l'OVAM, surtout en cas de primes élevées ou de famille.`;
   }
@@ -164,34 +176,89 @@ export function estimateAllocationsVD(input) {
 }
 
 /**
- * Signal indicatif (SANS montant) pour les prestations complémentaires (PC).
- * Le montant PC = différence entre dépenses reconnues et revenus ; seul l'organe PC
- * le calcule. On se limite à détecter un droit PROBABLE et à renvoyer à l'autorité.
+ * Vrai calculateur de prestations complémentaires (PC) AVS/AI — Vaud, paramètres 2026.
+ * PC annuelle = dépenses reconnues − revenus déterminants. Calcul SIMPLIFIÉ mais réel,
+ * avec décomposition transparente. Couvre les cas standards (à domicile, seul ou couple,
+ * avec enfants). Renvoie toujours à l'organe PC officiel.
+ *
+ * input: { rente_type:'avs'|'ai', couple:bool, enfants_moins11:int, enfants_des11:int,
+ *          rente_mensuelle:CHF, autres_revenus_annuels:CHF, revenu_activite_annuel:CHF,
+ *          loyer_mensuel:CHF, prime_lamal_mensuelle:CHF, fortune:CHF, region:1|2|3 }
  */
-export function pcSignal(input) {
-  const renteAVSAI = !!(input && input.rente_avs_ai);
-  const revenusInsuffisants = !!(input && input.revenus_insuffisants);
-  const probable = renteAVSAI && revenusInsuffisants;
-  let message;
-  if (probable) {
-    message = "Vous remplissez les deux conditions clés des prestations complémentaires (PC) : une rente AVS/AI et des revenus qui ne couvrent pas vos dépenses reconnues. Les PC sont un droit massivement sous-utilisé — déposez une demande auprès de votre caisse de compensation cantonale.";
-  } else if (renteAVSAI) {
-    message = "Vous touchez une rente AVS/AI : si vos revenus ne couvrent pas vos dépenses de base (loyer, primes LAMal, entretien), vérifiez votre droit aux PC — c'est souvent oublié.";
-  } else {
-    message = "Les PC complètent uniquement les rentes AVS, AI ou survivants lorsqu'elles ne suffisent pas à couvrir le minimum vital.";
-  }
-  return {
-    aide: 'PC', indicatif: true, signal: true, probable,
-    message,
-    conditions: [
-      'Toucher (ou avoir droit à) une rente AVS, AI ou de survivants',
-      'Être domicilié·e et résider habituellement en Suisse',
-      'Avoir des dépenses reconnues (loyer plafonné, forfait entretien, primes LAMal) supérieures aux revenus déterminants'
-    ],
-    base_legale: 'LPC (RS 831.30)',
-    calculateur_officiel: 'https://www.ahv-iv.ch/fr/Prestations/Prestations-compl%C3%A9mentaires-PC',
-    avertissement: 'Signal indicatif, sans montant. Le montant des PC correspond à la différence entre vos dépenses reconnues et vos revenus ; seul l\'organe PC cantonal le détermine.'
+export function estimatePC(input) {
+  const d = pcData();
+  const meta = d._meta;
+  const out = {
+    aide: 'PC', annee: meta.annee, indicatif: true,
+    base_legale: meta.base_legale,
+    source: meta.source_federal + ' ; ' + meta.source_loyer,
+    calculateur_officiel: meta.calculateur_officiel,
+    avertissement: meta.avertissement
   };
+  const i = input || {};
+  const couple = !!i.couple;
+  const renteType = i.rente_type === 'ai' ? 'ai' : 'avs';
+  const region = [1, 2, 3].includes(Number(i.region)) ? Number(i.region) : 1;
+  const num = (v) => (Number.isFinite(Number(v)) && Number(v) > 0 ? Number(v) : 0);
+  const enf11 = Math.max(0, Math.floor(num(i.enfants_des11)));
+  const enfMoins11 = Math.max(0, Math.floor(num(i.enfants_moins11)));
+  const nbEnfants = enf11 + enfMoins11;
+
+  const fortune = num(i.fortune);
+  const plafondFortune = couple ? d.plafond_fortune.couple : d.plafond_fortune.personne_seule;
+  if (fortune > plafondFortune) {
+    return { ...out, eligible: false, raison: 'fortune_trop_elevee',
+      message: `Votre fortune (~${round(fortune)} CHF) dépasse le plafond d'accès aux PC (${plafondFortune} CHF pour votre situation). Les PC ne sont alors pas ouvertes — mais d'autres aides peuvent l'être.` };
+  }
+
+  // ── Dépenses reconnues ──
+  let besoinsVitaux = couple ? d.besoins_vitaux_annuel.couple : d.besoins_vitaux_annuel.personne_seule;
+  besoinsVitaux += enf11 * d.besoins_vitaux_annuel.enfant_des_11 + enfMoins11 * d.besoins_vitaux_annuel.enfant_moins_11;
+
+  const taille = Math.min(4, (couple ? 2 : 1) + nbEnfants);
+  const plafondLoyerMensuel = d.loyer_max_mensuel_vd[String(taille)]['r' + region];
+  const loyerAnnuelReel = num(i.loyer_mensuel) * 12;
+  const loyerReconnu = Math.min(loyerAnnuelReel, plafondLoyerMensuel * 12);
+  const primeAnnuelle = num(i.prime_lamal_mensuelle) * 12;
+  const depenses = besoinsVitaux + loyerReconnu + primeAnnuelle;
+
+  // ── Revenus déterminants ──
+  const renteAnnuelle = num(i.rente_mensuelle) * 12;
+  const autresRevenus = num(i.autres_revenus_annuels);
+  const franchiseActivite = couple ? d.franchise_revenu_activite_annuel.couple : d.franchise_revenu_activite_annuel.personne_seule;
+  const revActivitePris = Math.round(d.part_revenu_activite_comptee * Math.max(0, num(i.revenu_activite_annuel) - franchiseActivite));
+  const franchiseFortune = couple ? d.franchise_fortune.couple : d.franchise_fortune.personne_seule;
+  const denomFortune = renteType === 'ai' ? d.taux_fortune_denominateur.ai : d.taux_fortune_denominateur.avs;
+  const partFortune = Math.round(Math.max(0, fortune - franchiseFortune) / denomFortune);
+  const revenus = renteAnnuelle + autresRevenus + revActivitePris + partFortune;
+
+  const pcAnnuelle = Math.max(0, Math.round(depenses - revenus));
+  const eligible = pcAnnuelle > 0;
+
+  out.eligible = eligible;
+  out.pc_annuelle = pcAnnuelle;
+  out.pc_mensuelle = Math.round(pcAnnuelle / 12);
+  out.breakdown = {
+    depenses_reconnues: Math.round(depenses),
+    besoins_vitaux: besoinsVitaux,
+    loyer_reconnu: loyerReconnu,
+    loyer_plafond_annuel: plafondLoyerMensuel * 12,
+    prime_lamal: primeAnnuelle,
+    revenus_determinants: Math.round(revenus),
+    rentes: renteAnnuelle,
+    autres_revenus: autresRevenus,
+    revenu_activite_compte: revActivitePris,
+    part_fortune_comptee: partFortune
+  };
+  out.message = eligible
+    ? `Estimation : vous pourriez avoir droit à environ ${out.pc_mensuelle} CHF/mois de prestations complémentaires (~${pcAnnuelle} CHF/an). Ce montant = vos dépenses reconnues (~${out.breakdown.depenses_reconnues} CHF) moins vos revenus déterminants (~${out.breakdown.revenus_determinants} CHF). Les PC sont un droit massivement sous-utilisé — déposez une demande à votre caisse de compensation.`
+    : `Selon cette estimation, vos revenus déterminants (~${out.breakdown.revenus_determinants} CHF) couvrent vos dépenses reconnues (~${out.breakdown.depenses_reconnues} CHF) : pas de PC ordinaire. Mais le calcul officiel intègre d'autres éléments — en cas de doute ou de frais médicaux élevés, vérifiez auprès de votre caisse.`;
+  out.demarches = [
+    'Déposez une demande PC auprès de la caisse de compensation cantonale (le droit naît au plus tôt 6 mois avant la demande — ne tardez pas).',
+    'Munissez-vous de : décision de rente, bail/loyer, prime LAMal, relevés de fortune et de revenus.',
+    'Les bénéficiaires de PC ont aussi droit au subside LAMal d\'office et au remboursement de certains frais médicaux.'
+  ];
+  return out;
 }
 
 export const _internals = { round };

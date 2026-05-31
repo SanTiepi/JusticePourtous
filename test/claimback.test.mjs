@@ -4,7 +4,7 @@
  */
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { estimateSubsideVD, listCategories, estimateAllocationsVD, pcSignal, listAides } from '../src/services/claimback.mjs';
+import { estimateSubsideVD, listCategories, estimateAllocationsVD, estimatePC, listAides } from '../src/services/claimback.mjs';
 
 describe('claimback — estimateSubsideVD (adulte seul)', () => {
   it('revenu bas → éligible, niveau maximum (~331/mois)', () => {
@@ -115,31 +115,93 @@ describe('claimback — allocations familiales VD', () => {
   });
 });
 
-describe('claimback — signal PC + listAides', () => {
-  it('rente AVS/AI + revenus insuffisants → droit probable', () => {
-    const r = pcSignal({ rente_avs_ai: true, revenus_insuffisants: true });
-    assert.equal(r.probable, true);
-    assert.equal(r.signal, true);
-    assert.ok(!('montant' in r), 'le signal PC ne donne aucun montant');
-    assert.ok(Array.isArray(r.conditions) && r.conditions.length === 3);
+describe('claimback — calculateur PC (gap dépenses-revenus)', () => {
+  it('rentier AVS seul, faible revenu → PC calculée + décomposition', () => {
+    // besoins 20670 + loyer 16800 (cap R1 18900) + prime 4800 = 42270 dépenses
+    // revenus = rente 18000 (fortune 0) → PC = 24270/an
+    const r = estimatePC({
+      rente_type: 'avs', couple: false, region: 1,
+      rente_mensuelle: 1500, loyer_mensuel: 1400, prime_lamal_mensuelle: 400, fortune: 0
+    });
+    assert.equal(r.eligible, true);
+    assert.equal(r.breakdown.depenses_reconnues, 42270);
+    assert.equal(r.breakdown.revenus_determinants, 18000);
+    assert.equal(r.pc_annuelle, 24270);
   });
 
-  it('rente seule → pas "probable" mais message ciblé', () => {
-    const r = pcSignal({ rente_avs_ai: true, revenus_insuffisants: false });
-    assert.equal(r.probable, false);
-    assert.match(r.message, /rente AVS\/AI/);
+  it('fortune au-dessus de la franchise → comptée 1/10 (AVS)', () => {
+    // fortune 80000 → (80000-30000)/10 = 5000 ajouté aux revenus
+    const r = estimatePC({
+      rente_type: 'avs', couple: false, region: 1,
+      rente_mensuelle: 1500, loyer_mensuel: 1400, prime_lamal_mensuelle: 400, fortune: 80000
+    });
+    assert.equal(r.breakdown.part_fortune_comptee, 5000);
+    assert.equal(r.pc_annuelle, 24270 - 5000);
   });
 
-  it('sans rente → message général (PC réservées aux rentiers)', () => {
-    const r = pcSignal({ rente_avs_ai: false });
-    assert.equal(r.probable, false);
+  it('AI : fortune comptée 1/15 (plus favorable)', () => {
+    const r = estimatePC({
+      rente_type: 'ai', couple: false, region: 1,
+      rente_mensuelle: 1500, loyer_mensuel: 1400, prime_lamal_mensuelle: 400, fortune: 80000
+    });
+    assert.equal(r.breakdown.part_fortune_comptee, Math.round(50000 / 15));
   });
 
-  it('listAides expose les 3 portes (subside, allocations, pc)', () => {
+  it('fortune > plafond (100k seul) → pas de PC', () => {
+    const r = estimatePC({ rente_type: 'avs', couple: false, fortune: 150000, rente_mensuelle: 1500 });
+    assert.equal(r.eligible, false);
+    assert.equal(r.raison, 'fortune_trop_elevee');
+  });
+
+  it('revenus élevés couvrant les dépenses → pas de PC (mais pas de raison fortune)', () => {
+    const r = estimatePC({
+      rente_type: 'avs', couple: false, region: 1,
+      rente_mensuelle: 5000, loyer_mensuel: 1000, prime_lamal_mensuelle: 400, fortune: 0
+    });
+    assert.equal(r.eligible, false);
+    assert.ok(!r.raison);
+  });
+
+  it('couple : besoins vitaux 31005 + plafond loyer 2 personnes', () => {
+    const r = estimatePC({
+      rente_type: 'avs', couple: true, region: 1,
+      rente_mensuelle: 2500, loyer_mensuel: 1800, prime_lamal_mensuelle: 800, fortune: 0
+    });
+    assert.equal(r.breakdown.besoins_vitaux, 31005);
+    assert.equal(r.breakdown.loyer_plafond_annuel, 1860 * 12);
+    assert.ok(r.indicatif);
+  });
+
+  it('loyer plafonné quand supérieur au maximum régional', () => {
+    const r = estimatePC({
+      rente_type: 'avs', couple: false, region: 1,
+      rente_mensuelle: 1500, loyer_mensuel: 2500, prime_lamal_mensuelle: 400, fortune: 0
+    });
+    // loyer réel 30000 > plafond 18900 → reconnu 18900
+    assert.equal(r.breakdown.loyer_reconnu, 18900);
+  });
+});
+
+describe('claimback — listAides', () => {
+  it('expose les 3 portes (subside, allocations, pc)', () => {
     const aides = listAides();
     assert.equal(aides.length, 3);
     assert.ok(aides.find((a) => a.id === 'subside' && a.statut === 'live'));
     assert.ok(aides.find((a) => a.id === 'allocations' && a.statut === 'live'));
     assert.ok(aides.find((a) => a.id === 'pc'));
+  });
+});
+
+describe('claimback — subside estimation ponctuelle', () => {
+  it('niveau dégressif → estimation ponctuelle entre min et max', () => {
+    const r = estimateSubsideVD({ categorie: 'adulte_seul', revenu_net: 30000 });
+    assert.equal(r.niveau, 'degressif');
+    assert.ok(r.subside_estime_mois >= r.subside_min_mois && r.subside_estime_mois <= r.subside_max_mois);
+    assert.equal(r.estimation_annuelle, r.subside_estime_mois * 12);
+  });
+
+  it('au seuil bas → estimation = subside max', () => {
+    const r = estimateSubsideVD({ categorie: 'adulte_seul', revenu_net: 15000 });
+    assert.equal(r.subside_estime_mois, 331);
   });
 });

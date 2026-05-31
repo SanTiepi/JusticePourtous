@@ -82,14 +82,41 @@
         <div id="resAlloc" class="je-result" aria-live="polite"></div>
       </section>
 
-      <!-- 3. Prestations complémentaires (signal) -->
+      <!-- 3. Prestations complémentaires (vrai calcul) -->
       <section class="card-highlight" id="toolPC" style="margin-top:1.5rem;">
         <h2 style="margin:0 0 0.75rem;">🧾 Prestations complémentaires (PC) — AVS / AI</h2>
-        <p style="margin:0 0 1rem;color:#4a5b6e;">Un droit massivement sous-utilisé pour les rentier·ères dont la rente ne suffit pas. Vérifions en 2 questions.</p>
+        <p style="margin:0 0 1rem;color:#4a5b6e;">Le droit le plus sous-utilisé de Suisse, pour les rentier·ères AVS/AI dont la rente ne couvre pas le minimum vital. Estimation chiffrée du montant.</p>
         <form id="formPC" onsubmit="verifierPC(event)">
-          <label class="je-check"><input type="checkbox" id="pcRente"> Je touche (ou j'ai droit à) une rente AVS, AI ou de survivant·e</label>
-          <label class="je-check"><input type="checkbox" id="pcRevenus"> Mes revenus ne couvrent pas mes dépenses de base (loyer, primes, entretien)</label>
-          <button type="submit" class="je-btn">Vérifier mon droit aux PC</button>
+          <label class="je-label">Type de rente
+            <select id="pcRenteType" class="je-input">
+              <option value="avs">Rente AVS (retraite / survivant·e)</option>
+              <option value="ai">Rente AI (invalidité)</option>
+            </select>
+          </label>
+          <label class="je-check"><input type="checkbox" id="pcCouple"> Je vis en couple (marié·e / partenariat)</label>
+          <label class="je-label">Région du logement
+            <select id="pcRegion" class="je-input">
+              <option value="1">Région 1 — grands centres (Lausanne…)</option>
+              <option value="2">Région 2 — villes</option>
+              <option value="3">Région 3 — campagne</option>
+            </select>
+          </label>
+          <label class="je-label">Rente mensuelle totale du ménage (CHF)
+            <input type="number" id="pcRente" min="0" step="50" placeholder="ex. 1800" required class="je-input">
+          </label>
+          <label class="je-label">Autres revenus annuels (CHF, hors rente — optionnel)
+            <input type="number" id="pcAutres" min="0" step="500" value="0" class="je-input">
+          </label>
+          <label class="je-label">Loyer mensuel, charges comprises (CHF)
+            <input type="number" id="pcLoyer" min="0" step="50" placeholder="ex. 1400" required class="je-input">
+          </label>
+          <label class="je-label">Prime mensuelle d'assurance-maladie (CHF)
+            <input type="number" id="pcPrime" min="0" step="10" placeholder="ex. 450" required class="je-input">
+          </label>
+          <label class="je-label">Fortune totale (épargne, titres… CHF)
+            <input type="number" id="pcFortune" min="0" step="1000" value="0" class="je-input">
+          </label>
+          <button type="submit" class="je-btn">Estimer mes PC</button>
         </form>
         <div id="resPC" class="je-result" aria-live="polite"></div>
       </section>
@@ -160,8 +187,7 @@
         var titre = d.eligible ? '✓ Vous avez probablement droit à un subside' : 'À vérifier : peut-être un subside spécifique';
         var h = '<div class="je-verdict" style="border-left-color:' + color + ';"><h3 style="color:' + color + ';margin:0 0 0.4rem;">' + titre + '</h3>';
         if (d.eligible) {
-          h += '<p class="je-amount">' + (d.subside_min_mois === d.subside_max_mois ? ('~' + d.subside_max_mois + ' CHF/mois') : ('~' + d.subside_min_mois + ' à ' + d.subside_max_mois + ' CHF/mois')) +
-            ' <span class="je-amount-sub">(~' + d.estimation_annuelle_min + '-' + d.estimation_annuelle_max + ' CHF/an)</span></p>';
+          h += '<p class="je-amount">~' + d.subside_estime_mois + ' CHF/mois <span class="je-amount-sub">(~' + d.estimation_annuelle + ' CHF/an)</span></p>';
         }
         h += '<p>' + esc(d.message) + '</p>' + warnBox(d.avertissement) + demarchesHtml(d.demarches) + officialLink(d.calculateur_officiel, 'Calculateur & formulaire officiels (État de Vaud)') + sourceHtml(d) + '</div>';
         box.innerHTML = h;
@@ -186,26 +212,46 @@
       } catch (err) { box.innerHTML = '<div class="error-box">Erreur de connexion.</div>'; }
     }
 
+    function breakdownHtml(b){
+      if (!b) return '';
+      function row(label, val, strong){ return '<tr><td style="padding:0.2rem 0;color:#4a5b6e;">' + label + '</td><td style="padding:0.2rem 0;text-align:right;' + (strong?'font-weight:700;':'') + '">' + val + ' CHF</td></tr>'; }
+      return '<table style="width:100%;border-collapse:collapse;font-size:0.9rem;margin:0.75rem 0;">' +
+        row('Besoins vitaux', b.besoins_vitaux) +
+        row('Loyer reconnu (plafond ' + b.loyer_plafond_annuel + ')', b.loyer_reconnu) +
+        row('Prime assurance-maladie', b.prime_lamal) +
+        row('= Dépenses reconnues', b.depenses_reconnues, true) +
+        '<tr><td colspan="2" style="padding:0.3rem 0;"></td></tr>' +
+        row('Rentes', b.rentes) +
+        (b.autres_revenus ? row('Autres revenus', b.autres_revenus) : '') +
+        (b.part_fortune_comptee ? row('Part de fortune comptée', b.part_fortune_comptee) : '') +
+        row('= Revenus déterminants', b.revenus_determinants, true) +
+        '</table>';
+    }
+
     async function verifierPC(e){
       e.preventDefault(); track('claimback_started');
       var box = document.getElementById('resPC');
-      box.innerHTML = '<p>Vérification…</p>';
+      box.innerHTML = '<p>Calcul en cours…</p>';
       try {
-        var d = await post('/api/claimback/pc-signal', {
-          rente_avs_ai: document.getElementById('pcRente').checked,
-          revenus_insuffisants: document.getElementById('pcRevenus').checked
+        var d = await post('/api/claimback/pc', {
+          rente_type: document.getElementById('pcRenteType').value,
+          couple: document.getElementById('pcCouple').checked,
+          region: Number(document.getElementById('pcRegion').value),
+          rente_mensuelle: Number(document.getElementById('pcRente').value),
+          autres_revenus_annuels: Number(document.getElementById('pcAutres').value),
+          loyer_mensuel: Number(document.getElementById('pcLoyer').value),
+          prime_lamal_mensuelle: Number(document.getElementById('pcPrime').value),
+          fortune: Number(document.getElementById('pcFortune').value)
         });
         track('claimback_eligibility_shown');
-        var color = d.probable ? '#2D6A4F' : '#B45309';
-        var titre = d.probable ? '✓ Droit aux PC probable' : 'À vérifier';
+        var color = d.eligible ? '#2D6A4F' : '#B45309';
+        var titre = d.eligible ? '✓ Vous pourriez avoir droit aux PC' : (d.raison === 'fortune_trop_elevee' ? 'Fortune au-dessus du plafond' : 'Probablement pas de PC ordinaire');
         var h = '<div class="je-verdict" style="border-left-color:' + color + ';"><h3 style="color:' + color + ';margin:0 0 0.4rem;">' + titre + '</h3>';
-        h += '<p>' + esc(d.message) + '</p>';
-        if (Array.isArray(d.conditions)) {
-          h += '<h3 style="margin:1rem 0 0.5rem;font-size:1rem;">Conditions des PC</h3><ul style="line-height:1.55;padding-left:1.2rem;margin:0;">';
-          d.conditions.forEach(function(c){ h += '<li>' + esc(c) + '</li>'; });
-          h += '</ul>';
+        if (d.eligible) {
+          h += '<p class="je-amount">~' + d.pc_mensuelle + ' CHF/mois <span class="je-amount-sub">(~' + d.pc_annuelle + ' CHF/an)</span></p>';
+          h += breakdownHtml(d.breakdown);
         }
-        h += warnBox(d.avertissement) + officialLink(d.calculateur_officiel, 'Informations & demande PC (officiel)') + sourceHtml(d) + '</div>';
+        h += '<p>' + esc(d.message) + '</p>' + warnBox(d.avertissement) + demarchesHtml(d.demarches) + officialLink(d.calculateur_officiel, 'Informations & demande PC (officiel)') + sourceHtml(d) + '</div>';
         box.innerHTML = h;
       } catch (err) { box.innerHTML = '<div class="error-box">Erreur de connexion.</div>'; }
     }

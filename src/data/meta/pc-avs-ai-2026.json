@@ -1,0 +1,32 @@
+{
+  "_meta": {
+    "aide": "Prestations complémentaires à l'AVS / AI (PC)",
+    "annee": 2026,
+    "canton_loyer": "VD",
+    "base_legale": "LPC (RS 831.30) ; OPC-AVS/AI",
+    "source_federal": "OFAS — Montants valables dès le 1er janvier 2026 (besoins vitaux, franchises)",
+    "source_federal_url": "https://www.bsv.admin.ch/dam/fr/sd-web/sAgdISSXenMT/f_Betr%C3%A4ge%202026.pdf",
+    "source_loyer": "Caisse cantonale vaudoise de compensation AVS — loyers maximaux reconnus PC 2026",
+    "source_loyer_url": "https://www.caisseavsvaud.ch/fr/Assurances/PC/Prestations-complementaires/Prestations-complementaires.html",
+    "calculateur_officiel": "https://www.ahv-iv.ch/fr/Prestations/Prestations-compl%C3%A9mentaires-PC",
+    "avertissement": "Estimation sérieuse basée sur les paramètres officiels 2026, mais SIMPLIFIÉE : le calcul officiel peut inclure d'autres éléments (frais médicaux/handicap, séjour en home, rendement détaillé de la fortune, frais professionnels). Seul l'organe PC cantonal décide. PC due uniquement aux bénéficiaires d'une rente AVS, AI ou de survivants.",
+    "extracted_at": "2026-05-31"
+  },
+  "besoins_vitaux_annuel": {
+    "personne_seule": 20670,
+    "couple": 31005,
+    "enfant_moins_11": 7590,
+    "enfant_des_11": 10815
+  },
+  "loyer_max_mensuel_vd": {
+    "1": { "r1": 1575, "r2": 1525, "r3": 1390 },
+    "2": { "r1": 1860, "r2": 1810, "r3": 1680 },
+    "3": { "r1": 2065, "r2": 1980, "r3": 1850 },
+    "4": { "r1": 2255, "r2": 2160, "r3": 2000 }
+  },
+  "franchise_fortune": { "personne_seule": 30000, "couple": 50000 },
+  "plafond_fortune": { "personne_seule": 100000, "couple": 200000 },
+  "taux_fortune_denominateur": { "avs": 10, "ai": 15 },
+  "franchise_revenu_activite_annuel": { "personne_seule": 1300, "couple": 1950 },
+  "part_revenu_activite_comptee": 0.6667
+}

@@ -68,7 +68,14 @@ const PATTERNS = [
       /\bpeur de rentrer (chez|à la maison)/i,
       /\bje crains pour ma (vie|sécurité|intégrité)/i,
       /\bil (me|nous) tabasse/i,
-      /\bje suis (battu|battue|maltrait[ée])/i
+      /\bje suis (battu|battue|maltrait[ée])/i,
+      // Danger imminent par un tiers (audit 2026-05-31, gap 4) : menace de mort à la
+      // 3e personne / arme. "il va nous tuer", "il a un couteau" n'étaient PAS captés
+      // (les patterns ci-dessus exigent un verbe de coups, ceux de MENACE sont en 1re
+      // personne). Une victime barricadée face à une arme recevait une fiche, pas le 117.
+      /\b(va|vont|veut|veulent|menace de|menacent de|va finir par)\s+(me\s|nous\s|te\s|la\s|le\s|les\s|m'|s')?\s*(tuer|buter|égorger|poignarder|massacrer|descendre|achever|étrangler|saigner)\b/i,
+      /\b(il|elle|ils|elles|mon (mari|ex|conjoint|compagnon|copain|voisin|p[èe]re|fils|fr[èe]re)|ma (femme|compagne|copine|voisine|m[èe]re)|quelqu'un)\b[^.!?]{0,45}\b(couteau|fusil|pistolet|revolver|machette|flingue|arme (?:à feu|blanche))\b/i,
+      /\b(menace|pointe|braque|brandit|sorti|tient)\b[^.!?]{0,15}\b(?:un |une |son |sa )?(couteau|fusil|pistolet|revolver|machette|hache)\b/i
     ],
     actions: [ACTIONS.LAVI, ACTIONS.URGENCE_144]
   },

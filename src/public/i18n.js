@@ -3426,7 +3426,8 @@ function applyChromeTranslations() {
   setText('.quick-exit .quick-exit-label', t('quickexit.sublabel'));
   setAttr('.quick-exit', 'title', t('quickexit.title'));
   setAttr('.quick-exit', 'aria-label', t('quickexit.title'));
-  setAttr('.nav-toggle', 'aria-label', t('lang.switch_label'));
+  // NB : le hamburger .nav-toggle garde son aria-label="Menu" statique (HTML).
+  // (Anciennement relabellisé à tort en "Langue" — c'est un menu, pas un sélecteur de langue.)
   setLinkText('a[href="/"]', homeLabel, { scope: '.nav-links' });
   setLinkText('a[href="/annuaire.html"]', t('nav.annuaire'));
   setLinkText('a[href="/methodologie.html"]', t('nav.methodologie'));

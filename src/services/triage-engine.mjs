@@ -149,7 +149,14 @@ async function triageLLM(texte, canton) {
     const besoinAvocat = needsLawyer(scoring, urgence, primary);
 
     // 7. Check if we need more info
-    const questionsManquantes = nav.questions_manquantes || [];
+    // Anti-redondance (audit 2026-05-31, gap 9) : le navigator ne reçoit pas le param
+    // `canton` et le redemande systématiquement (q1 "Dans quel canton…"). Si le canton
+    // est déjà connu (param ou extrait du texte), on supprime cette question gaspillée.
+    const questionsManquantes = (nav.questions_manquantes || []).filter(q => {
+      if (!effectiveCanton) return true;
+      const txt = `${q.question || ''} ${q.id || ''}`.toLowerCase();
+      return !txt.includes('canton');
+    });
     const hasUnansweredCritical = questionsManquantes.some(q => q.importance === 'critique');
 
     // 8. Create case (case-store) for follow-up — every triage gets a case_id

@@ -183,10 +183,14 @@ async function callNavigator(userText, previousAnswers) {
 
   userPrompt += `\n\nRéponds en JSON selon ce schéma :\n${RESPONSE_SCHEMA}`;
 
+  // Prompt caching (2026-05-31) : le SYSTEM_PROMPT (~35KB : catalogue 314 fiches +
+  // règles) est identique à chaque appel. On le marque cache_control ephemeral →
+  // les appels rapprochés (rounds successifs d'une même session de triage, TTL 5min)
+  // lisent le cache à ~0.1× le prix d'entrée au lieu de re-facturer 35KB plein tarif.
   const body = JSON.stringify({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 3500,
-    system: SYSTEM_PROMPT,
+    system: [{ type: 'text', text: SYSTEM_PROMPT, cache_control: { type: 'ephemeral' } }],
     messages: [{ role: 'user', content: userPrompt }]
   });
 
@@ -197,7 +201,8 @@ async function callNavigator(userText, previousAnswers) {
     headers: {
       'Content-Type': 'application/json',
       'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01'
+      'anthropic-version': '2023-06-01',
+      'anthropic-beta': 'prompt-caching-2024-07-31'
     },
     body,
     signal: controller.signal

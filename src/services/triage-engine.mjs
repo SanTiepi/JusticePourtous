@@ -67,10 +67,12 @@ function durationKey(delai) {
   if (/(immédiat|immediate|sans délai|aussitôt)/.test(t)) return 'imm';
   return null;
 }
-// Signaux FORTS de perte de droit → délai péremptoire (conservateur).
-function isPeremptoire(...texts) {
+// Signaux FORTS de perte de droit → délai péremptoire (conservateur). On vise la
+// PÉREMPTION / forfaiture (droit éteint) — PAS la prescription (juridiquement
+// distincte : interruptible) qu'on ne veut pas étiqueter "péremptoire" à tort.
+export function isPeremptoire(...texts) {
   const blob = texts.filter(Boolean).join(' ').toLowerCase();
-  return /péremptoire|forclos|déchéance|s'éteint|s’éteint|devient exécutoire|devient définiti|irrecevable|tardif|perd(?:ez|re|u|s) (?:le |votre |tout )?droit|continuation de la poursuite/.test(blob);
+  return /péremptoire|péremption|périm[ée]|forclos|forclusion|déch[ué]|s'éteint|s’éteint|devient exécutoire|devient définiti|irrecevable|tardif|perd(?:ez|re|u|s) (?:le |votre |tout )?droit|perte (?:du droit|d'indemnit|de l'indemnit|des droits)|continuation de la poursuite/.test(blob);
 }
 export function topDelaisCritiques(primary) {
   if (!primary) return [];

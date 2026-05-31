@@ -738,6 +738,15 @@ async function loadResultat(ficheId) {
     html += '</div>';
   }
 
+  // Pont Justice économique : si le domaine touche aux finances/aides, proposer ClaimBack.
+  if (fiche.domaine && ['social', 'assurances', 'dettes', 'famille'].indexOf(fiche.domaine) > -1) {
+    html += '<div class="card je-promo">';
+    html += '<h3>💰 Des droits financiers non réclamés ?</h3>';
+    html += '<p>Subside d\'assurance-maladie, allocations familiales, prestations complémentaires… Beaucoup d\'aides ne sont jamais demandées. Vérifiez vos droits en 1 minute.</p>';
+    html += '<a href="/justice-economique.html" class="btn btn-primary" onclick="if(window.jbTrack)jbTrack(\'claimback_started\')" style="display:inline-block;padding:0.7rem 1.4rem;background:#8B2500;color:#fff;border-radius:999px;text-decoration:none;">Récupérer mes droits →</a>';
+    html += '</div>';
+  }
+
   // Action buttons
   html += '<div class="result-actions">';
   html += '<button class="btn btn-print" onclick="window.print()">' + t('action.imprimer') + '</button>';

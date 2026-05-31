@@ -4984,3 +4984,19 @@ body.has-disclaimer {
 .guide-hub-list a:hover { text-decoration: underline; }
 @media (max-width: 640px) { .guide-hub-list { columns: 1; } }
 
+/* ── Justice économique / ClaimBack (hub multi-aides) ─────────────────── */
+.je-label { display: block; margin-bottom: 0.9rem; font-weight: 600; }
+.je-input { display: block; width: 100%; margin-top: 0.35rem; padding: 0.7rem; border: 1.5px solid var(--border-default); border-radius: 8px; font-size: 1rem; font-family: inherit; box-sizing: border-box; }
+.je-check { display: flex; gap: 0.55rem; align-items: flex-start; margin-bottom: 0.8rem; font-weight: 500; line-height: 1.45; cursor: pointer; }
+.je-check input { margin-top: 0.25rem; flex-shrink: 0; }
+.je-btn { display: inline-block; padding: 0.85rem 1.75rem; background: var(--accent-primary); color: #fff !important; border: none; border-radius: 999px; font-size: 1rem; font-weight: 600; cursor: pointer; text-decoration: none !important; transition: background var(--duration-fast) var(--ease-out); }
+.je-btn:hover { background: var(--accent-primary-hover); }
+.je-btn-link { margin-top: 0.75rem; }
+.je-result { margin-top: 1rem; }
+.je-result:empty { display: none; }
+.je-verdict { background: #fff; border: 1px solid var(--border-subtle); border-left: 4px solid var(--accent-success); border-radius: 8px; padding: 1.1rem 1.25rem; line-height: 1.55; }
+.je-amount { font-size: 1.3rem; font-weight: 700; margin: 0.25rem 0; color: var(--text-primary); }
+.je-amount-sub { font-size: 0.9rem; color: var(--text-tertiary); font-weight: 400; }
+.je-warn { background: #fff4e5; border-radius: 8px; padding: 0.85rem 1rem; margin: 1rem 0; font-size: 0.9rem; color: #7a4a00; }
+.je-promo { border-left: 4px solid var(--accent-primary); }
+

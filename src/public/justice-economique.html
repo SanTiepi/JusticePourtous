@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Justice économique — récupérer ses droits | JusticePourtous</title>
-  <meta name="description" content="Récupérez les aides auxquelles vous avez droit. Vérifiez en 1 minute votre éligibilité au subside d'assurance-maladie (canton de Vaud) — gratuit et anonyme.">
+  <meta name="description" content="Récupérez les aides auxquelles vous avez droit : subside d'assurance-maladie, allocations familiales, prestations complémentaires (canton de Vaud). Gratuit et anonyme.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://justicepourtous.ch/justice-economique.html">
   <meta property="og:title" content="Justice économique — récupérer ses droits | JusticePourtous">
@@ -33,18 +33,20 @@
   <main class="page">
     <div class="page-inner">
       <div class="notice-juridique" role="note">
-        <strong>Information générale</strong> — Estimation indicative basée sur les barèmes officiels. Ne remplace pas une décision de l'autorité compétente.
+        <strong>Information générale</strong> — Estimations indicatives basées sur les barèmes officiels. Ne remplacent pas une décision de l'autorité compétente.
       </div>
 
       <p class="hero-eyebrow">Justice économique</p>
       <h1 class="page-title">Récupérez les droits qu'on oublie de réclamer</h1>
-      <p class="guide-summary">Chaque année, des milliers de personnes ne demandent pas les aides auxquelles elles ont droit. Première brique : vérifiez votre éligibilité au <strong>subside d'assurance-maladie</strong> dans le canton de Vaud. Gratuit, anonyme, en 1 minute.</p>
+      <p class="guide-summary">Chaque année, des millions de francs d'aides ne sont pas réclamés en Suisse. Vérifiez vos droits en 1 minute — gratuit, anonyme, sans création de compte. Canton de Vaud (d'autres cantons et aides arrivent).</p>
 
-      <section class="card-highlight" id="claimbackCard">
-        <h2 style="margin:0 0 1rem;">💰 Subside LAMal — Vaud (2026)</h2>
-        <form id="claimbackForm" onsubmit="estimerSubside(event)">
-          <label style="display:block;margin-bottom:0.9rem;font-weight:600;">Votre situation
-            <select id="cbCategorie" style="display:block;width:100%;margin-top:0.35rem;padding:0.7rem;border:1.5px solid #c9d4df;border-radius:8px;font-size:1rem;font-family:inherit;">
+      <!-- 1. Subside LAMal -->
+      <section class="card-highlight" id="toolSubside">
+        <h2 style="margin:0 0 0.75rem;">💊 Subside d'assurance-maladie — Vaud (2026)</h2>
+        <p style="margin:0 0 1rem;color:#4a5b6e;">La réduction individuelle de primes : un droit que des milliers de Vaudois·es ne réclament pas.</p>
+        <form id="formSubside" onsubmit="estimerSubside(event)">
+          <label class="je-label">Votre situation
+            <select id="cbCategorie" class="je-input">
               <option value="adulte_seul">Adulte seul (26 ans et plus)</option>
               <option value="adulte_famille_enfant">Adulte (26+) avec enfant(s) à charge</option>
               <option value="couple_sans_enfant">Couple (26+) sans enfant</option>
@@ -53,24 +55,48 @@
               <option value="enfant">Pour un enfant (0-18 ans)</option>
             </select>
           </label>
-          <label style="display:block;margin-bottom:0.9rem;font-weight:600;">Revenu net annuel du ménage (CHF, approximatif)
-            <input type="number" id="cbRevenu" min="0" step="1000" placeholder="ex. 38000" required
-              style="display:block;width:100%;margin-top:0.35rem;padding:0.7rem;border:1.5px solid #c9d4df;border-radius:8px;font-size:1rem;font-family:inherit;">
+          <label class="je-label">Revenu net annuel du ménage (CHF, approximatif)
+            <input type="number" id="cbRevenu" min="0" step="1000" placeholder="ex. 38000" required class="je-input">
           </label>
-          <label style="display:block;margin-bottom:1rem;font-weight:600;">Nombre d'enfants à charge
-            <input type="number" id="cbEnfants" min="0" max="12" step="1" value="0"
-              style="display:block;width:100%;margin-top:0.35rem;padding:0.7rem;border:1.5px solid #c9d4df;border-radius:8px;font-size:1rem;font-family:inherit;">
+          <label class="je-label">Nombre d'enfants à charge
+            <input type="number" id="cbEnfants" min="0" max="12" step="1" value="0" class="je-input">
           </label>
-          <button type="submit" class="btn btn-primary" style="padding:0.85rem 1.75rem;background:#8B2500;color:#fff;border:none;border-radius:999px;font-size:1rem;font-weight:600;cursor:pointer;">Estimer mes droits</button>
+          <button type="submit" class="je-btn">Estimer mon subside</button>
         </form>
-        <p style="font-size:0.82rem;color:#6a7787;margin:0.9rem 0 0;">🔒 Anonyme · aucune donnée enregistrée · calcul en mémoire uniquement.</p>
+        <div id="resSubside" class="je-result" aria-live="polite"></div>
       </section>
 
-      <section id="cbResult" style="margin-top:1.5rem;" aria-live="polite"></section>
+      <!-- 2. Allocations familiales -->
+      <section class="card-highlight" id="toolAllocations" style="margin-top:1.5rem;">
+        <h2 style="margin:0 0 0.75rem;">👨‍👩‍👧 Allocations familiales — Vaud (2026)</h2>
+        <p style="margin:0 0 1rem;color:#4a5b6e;">Versées automatiquement aux salarié·es, mais souvent oubliées par les indépendant·es et les personnes sans activité.</p>
+        <form id="formAlloc" onsubmit="estimerAllocations(event)">
+          <label class="je-label">Enfants de moins de 16 ans
+            <input type="number" id="alM16" min="0" max="12" step="1" value="0" class="je-input">
+          </label>
+          <label class="je-label">Enfants en formation (16-25 ans)
+            <input type="number" id="alForm" min="0" max="12" step="1" value="0" class="je-input">
+          </label>
+          <button type="submit" class="je-btn">Estimer mes allocations</button>
+        </form>
+        <div id="resAlloc" class="je-result" aria-live="polite"></div>
+      </section>
+
+      <!-- 3. Prestations complémentaires (signal) -->
+      <section class="card-highlight" id="toolPC" style="margin-top:1.5rem;">
+        <h2 style="margin:0 0 0.75rem;">🧾 Prestations complémentaires (PC) — AVS / AI</h2>
+        <p style="margin:0 0 1rem;color:#4a5b6e;">Un droit massivement sous-utilisé pour les rentier·ères dont la rente ne suffit pas. Vérifions en 2 questions.</p>
+        <form id="formPC" onsubmit="verifierPC(event)">
+          <label class="je-check"><input type="checkbox" id="pcRente"> Je touche (ou j'ai droit à) une rente AVS, AI ou de survivant·e</label>
+          <label class="je-check"><input type="checkbox" id="pcRevenus"> Mes revenus ne couvrent pas mes dépenses de base (loyer, primes, entretien)</label>
+          <button type="submit" class="je-btn">Vérifier mon droit aux PC</button>
+        </form>
+        <div id="resPC" class="je-result" aria-live="polite"></div>
+      </section>
 
       <section class="guide-section" style="margin-top:2rem;">
         <h2>Et ensuite ?</h2>
-        <p>D'autres droits oubliés (prestations complémentaires, allocations, bourses, aides communales) et l'orientation vers les fondations et fonds privés seront ajoutés progressivement. <a href="/">Décrivez votre situation</a> pour un triage juridique complet.</p>
+        <p>D'autres droits (bourses d'études, avances sur pensions alimentaires, aides communales) et l'orientation vers les fondations privées seront ajoutés progressivement. <a href="/">Décrivez votre situation</a> pour un triage juridique complet.</p>
       </section>
     </div>
   </main>
@@ -91,7 +117,6 @@
   <script src="/i18n.js"></script>
   <script src="/track.js"></script>
   <script>
-    /* i18n : monte le sélecteur de langue (contenu FR par défaut pour ce MVP cantonal vaudois) */
     if (typeof createLangSwitcher === 'function') {
       var host = document.getElementById('langSwitcher');
       if (host) host.appendChild(createLangSwitcher());
@@ -99,53 +124,95 @@
     if (typeof getLang === 'function') document.documentElement.lang = getLang();
 
     function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    function track(ev){ if (window.jbTrack) jbTrack(ev); }
+    function officialLink(url, label){
+      return '<a href="' + esc(url) + '" target="_blank" rel="noopener" onclick="if(window.jbTrack)jbTrack(\'claimback_official_link_clicked\')" class="je-btn je-btn-link">' + esc(label) + ' →</a>';
+    }
+    function warnBox(txt){
+      return '<div class="je-warn">⚠ ' + esc(txt) + '</div>';
+    }
+    function demarchesHtml(arr){
+      if (!Array.isArray(arr) || !arr.length) return '';
+      var h = '<h3 style="margin:1rem 0 0.5rem;font-size:1rem;">Vos démarches</h3><ol style="line-height:1.55;padding-left:1.2rem;margin:0;">';
+      arr.forEach(function(s){ h += '<li>' + esc(s) + '</li>'; });
+      return h + '</ol>';
+    }
+    function sourceHtml(d){ return '<p style="font-size:0.78rem;color:#6a7787;margin:0.9rem 0 0;">Source : ' + esc(d.source || d.base_legale || '') + '.</p>'; }
 
-    async function estimerSubside(e) {
-      e.preventDefault();
-      if (window.jbTrack) jbTrack('claimback_started');
-      var box = document.getElementById('cbResult');
-      box.innerHTML = '<div class="card"><p>Calcul en cours…</p></div>';
+    async function post(url, body){
+      var res = await fetch(url, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
+      return res.json();
+    }
+
+    async function estimerSubside(e){
+      e.preventDefault(); track('claimback_started');
+      var box = document.getElementById('resSubside');
+      box.innerHTML = '<p>Calcul en cours…</p>';
       try {
-        var res = await fetch('/api/claimback/subside-vd', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            categorie: document.getElementById('cbCategorie').value,
-            revenu_net: Number(document.getElementById('cbRevenu').value),
-            nb_enfants: Number(document.getElementById('cbEnfants').value)
-          })
+        var d = await post('/api/claimback/subside-vd', {
+          categorie: document.getElementById('cbCategorie').value,
+          revenu_net: Number(document.getElementById('cbRevenu').value),
+          nb_enfants: Number(document.getElementById('cbEnfants').value)
         });
-        var d = await res.json();
-        if (d.error) { box.innerHTML = '<div class="error-box">Vérifiez vos saisies (revenu et situation).</div>'; return; }
-        if (window.jbTrack) jbTrack('claimback_eligibility_shown', null);
-
+        if (d.error) { box.innerHTML = '<div class="error-box">Vérifiez vos saisies.</div>'; return; }
+        track('claimback_eligibility_shown');
         var color = d.eligible ? '#2D6A4F' : '#B45309';
         var titre = d.eligible ? '✓ Vous avez probablement droit à un subside' : 'À vérifier : peut-être un subside spécifique';
-        var html = '<div class="card-highlight" style="border-left:4px solid ' + color + ';">';
-        html += '<h2 style="margin:0 0 0.5rem;color:' + color + ';">' + titre + '</h2>';
+        var h = '<div class="je-verdict" style="border-left-color:' + color + ';"><h3 style="color:' + color + ';margin:0 0 0.4rem;">' + titre + '</h3>';
         if (d.eligible) {
-          html += '<p style="font-size:1.25rem;font-weight:700;margin:0.25rem 0;">Estimation : ' +
-            (d.subside_min_mois === d.subside_max_mois ? ('~' + d.subside_max_mois + ' CHF/mois') : ('~' + d.subside_min_mois + ' à ' + d.subside_max_mois + ' CHF/mois')) +
-            ' <span style="font-size:0.9rem;color:#6a7787;font-weight:400;">(~' + d.estimation_annuelle_min + '-' + d.estimation_annuelle_max + ' CHF/an)</span></p>';
+          h += '<p class="je-amount">' + (d.subside_min_mois === d.subside_max_mois ? ('~' + d.subside_max_mois + ' CHF/mois') : ('~' + d.subside_min_mois + ' à ' + d.subside_max_mois + ' CHF/mois')) +
+            ' <span class="je-amount-sub">(~' + d.estimation_annuelle_min + '-' + d.estimation_annuelle_max + ' CHF/an)</span></p>';
         }
-        html += '<p style="line-height:1.55;">' + esc(d.message) + '</p>';
-        html += '<div style="background:#fff4e5;border-radius:8px;padding:0.85rem 1rem;margin:1rem 0;font-size:0.9rem;color:#7a4a00;">⚠ ' + esc(d.avertissement) + '</div>';
-        if (Array.isArray(d.demarches)) {
-          html += '<h3 style="margin:1rem 0 0.5rem;">Vos démarches</h3><ol style="line-height:1.55;padding-left:1.2rem;">';
-          d.demarches.forEach(function(s){ html += '<li>' + esc(s) + '</li>'; });
-          html += '</ol>';
-        }
-        html += '<a href="' + esc(d.calculateur_officiel) + '" target="_blank" rel="noopener" onclick="if(window.jbTrack)jbTrack(\'claimback_official_link_clicked\')" ' +
-          'class="btn btn-primary" style="display:inline-block;margin-top:0.75rem;padding:0.8rem 1.5rem;background:#8B2500;color:#fff;border-radius:999px;text-decoration:none;font-weight:600;">Calculateur & formulaire officiels (État de Vaud) →</a>';
-        html += '<p style="font-size:0.78rem;color:#6a7787;margin:0.9rem 0 0;">Source : ' + esc(d.source) + '.</p>';
-        html += '</div>';
-        box.innerHTML = html;
-        box.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } catch (err) {
-        box.innerHTML = '<div class="error-box">Erreur de connexion. Réessayez.</div>';
-      }
+        h += '<p>' + esc(d.message) + '</p>' + warnBox(d.avertissement) + demarchesHtml(d.demarches) + officialLink(d.calculateur_officiel, 'Calculateur & formulaire officiels (État de Vaud)') + sourceHtml(d) + '</div>';
+        box.innerHTML = h;
+      } catch (err) { box.innerHTML = '<div class="error-box">Erreur de connexion.</div>'; }
     }
+
+    async function estimerAllocations(e){
+      e.preventDefault(); track('claimback_started');
+      var box = document.getElementById('resAlloc');
+      box.innerHTML = '<p>Calcul en cours…</p>';
+      try {
+        var d = await post('/api/claimback/allocations-vd', {
+          enfants_moins16: Number(document.getElementById('alM16').value),
+          enfants_formation: Number(document.getElementById('alForm').value)
+        });
+        if (d.error) { box.innerHTML = '<div class="je-verdict"><p>' + esc(d.message || 'Indiquez au moins un enfant.') + '</p></div>'; return; }
+        track('claimback_eligibility_shown');
+        var h = '<div class="je-verdict" style="border-left-color:#2D6A4F;"><h3 style="color:#2D6A4F;margin:0 0 0.4rem;">✓ Droit aux allocations familiales</h3>';
+        h += '<p class="je-amount">~' + d.total_mensuel + ' CHF/mois <span class="je-amount-sub">(~' + d.total_annuel + ' CHF/an)</span></p>';
+        h += '<p>' + esc(d.message) + '</p>' + warnBox(d.avertissement) + demarchesHtml(d.demarches) + officialLink(d.calculateur_officiel, 'Détails & caisse cantonale (État de Vaud)') + sourceHtml(d) + '</div>';
+        box.innerHTML = h;
+      } catch (err) { box.innerHTML = '<div class="error-box">Erreur de connexion.</div>'; }
+    }
+
+    async function verifierPC(e){
+      e.preventDefault(); track('claimback_started');
+      var box = document.getElementById('resPC');
+      box.innerHTML = '<p>Vérification…</p>';
+      try {
+        var d = await post('/api/claimback/pc-signal', {
+          rente_avs_ai: document.getElementById('pcRente').checked,
+          revenus_insuffisants: document.getElementById('pcRevenus').checked
+        });
+        track('claimback_eligibility_shown');
+        var color = d.probable ? '#2D6A4F' : '#B45309';
+        var titre = d.probable ? '✓ Droit aux PC probable' : 'À vérifier';
+        var h = '<div class="je-verdict" style="border-left-color:' + color + ';"><h3 style="color:' + color + ';margin:0 0 0.4rem;">' + titre + '</h3>';
+        h += '<p>' + esc(d.message) + '</p>';
+        if (Array.isArray(d.conditions)) {
+          h += '<h3 style="margin:1rem 0 0.5rem;font-size:1rem;">Conditions des PC</h3><ul style="line-height:1.55;padding-left:1.2rem;margin:0;">';
+          d.conditions.forEach(function(c){ h += '<li>' + esc(c) + '</li>'; });
+          h += '</ul>';
+        }
+        h += warnBox(d.avertissement) + officialLink(d.calculateur_officiel, 'Informations & demande PC (officiel)') + sourceHtml(d) + '</div>';
+        box.innerHTML = h;
+      } catch (err) { box.innerHTML = '<div class="error-box">Erreur de connexion.</div>'; }
+    }
+
     window.estimerSubside = estimerSubside;
+    window.estimerAllocations = estimerAllocations;
+    window.verifierPC = verifierPC;
   </script>
 </body>
 </html>

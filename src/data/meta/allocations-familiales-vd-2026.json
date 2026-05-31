@@ -1,0 +1,19 @@
+{
+  "_meta": {
+    "canton": "VD",
+    "aide": "Allocations familiales (pour enfant et de formation)",
+    "annee": 2026,
+    "base_legale": "LAFam (RS 836.2) + loi vaudoise sur les allocations familiales (LVLAFam)",
+    "source": "État de Vaud — Allocations familiales (montants en vigueur dès le 1er janvier 2025, inchangés 2026)",
+    "source_url": "https://www.vd.ch/aides-financieres-et-soutien-social/aides-financieres-et-comment-les-demander/allocations-familiales",
+    "caisse": "Caisse cantonale vaudoise de compensation AVS / Caisse d'allocations familiales (021 964 12 11)",
+    "avertissement": "Pour les SALARIÉS, les allocations sont versées automatiquement par l'employeur. Pour les INDÉPENDANTS et les PERSONNES SANS ACTIVITÉ lucrative, elles doivent être demandées et sont fréquemment oubliées. Les personnes sans activité n'y ont droit que si leur revenu imposable est ≤ 60'480 CHF/an (5'040/mois). Une seule allocation par enfant (pas de cumul entre parents). Estimation indicative.",
+    "condition_sans_activite_revenu_max_annuel": 60480,
+    "extracted_at": "2026-05-31"
+  },
+  "montants_mensuels": {
+    "enfant_moins_16": { "rang_1_2": 322, "rang_3_plus": 365 },
+    "formation_jusqu_25": { "rang_1_2": 425, "rang_3_plus": 468 }
+  },
+  "allocation_naissance_adoption": 1617
+}

@@ -58,7 +58,7 @@ import { generateDocx } from './services/docx-generator.mjs';
 import { sendCode, verifyCode, linkWalletToEmail, getWalletsByEmail } from './services/auth.mjs';
 import { getVulgarisationForFiche, getVulgarisationStats } from './services/vulgarisation-loader.mjs';
 import { trackPageView, trackSearch, trackPremiumAnalysis, trackLanguage, trackEvent, getStats as getAnalyticsStats } from './services/analytics.mjs';
-import { estimateSubsideVD } from './services/claimback.mjs';
+import { estimateSubsideVD, estimateAllocationsVD, pcSignal } from './services/claimback.mjs';
 import { translateStructuredContent, translateTextContent, TRANSLATION_PIPELINE_VERSION } from './services/i18n/translation-orchestrator.mjs';
 import { resolveRequestLocale } from './services/i18n/http-locale.mjs';
 import { normalizeLocale, DEFAULT_LOCALE, isOfferedLocale } from './services/i18n/locale-registry.mjs';
@@ -388,6 +388,24 @@ const server = createServer(async (req, res) => {
         categorie: body.categorie,
         revenu_net: body.revenu_net,
         nb_enfants: body.nb_enfants
+      });
+      return json(res, 200, { ...result, disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/claimback/allocations-vd' && method === 'POST') {
+      const body = (await parseBody(req)) || {};
+      const result = estimateAllocationsVD({
+        enfants_moins16: body.enfants_moins16,
+        enfants_formation: body.enfants_formation
+      });
+      return json(res, 200, { ...result, disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/claimback/pc-signal' && method === 'POST') {
+      const body = (await parseBody(req)) || {};
+      const result = pcSignal({
+        rente_avs_ai: body.rente_avs_ai,
+        revenus_insuffisants: body.revenus_insuffisants
       });
       return json(res, 200, { ...result, disclaimer: DISCLAIMER });
     }

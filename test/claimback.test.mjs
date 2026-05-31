@@ -281,7 +281,7 @@ describe('claimback — couverture nationale (26 cantons)', () => {
   });
 
   it('subside canton sans données = signal générique', () => {
-    const r = subsideNational('JU', { categorie: 'adulte_seul', revenu_net: 20000 });
+    const r = subsideNational('SG', { categorie: 'adulte_seul', revenu_net: 20000 });
     assert.equal(r.mode, 'signal');
     assert.ok(r.calculateur_officiel);
   });

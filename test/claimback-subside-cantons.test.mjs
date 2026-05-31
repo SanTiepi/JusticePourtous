@@ -18,6 +18,10 @@ test('GE/ZH/BE → signal enrichi sourcé (base de revenu + calculateur officiel
     GE: { host: 'ge.ch', base: /RDU/i },
     ZH: { host: 'svazurich.ch', base: /Einkommen|déterminant ajusté/i },
     BE: { host: 'asv.dij.be.ch', base: /imposable|steuerbares/i },
+    VS: { host: 'vs.ch', base: /déterminant/i },
+    FR: { host: 'fr.ch', base: /déterminant/i },
+    NE: { host: 'ne.ch', base: /déterminant|fiscal/i },
+    JU: { host: 'jura.ch', base: /RDU|déterminant/i },
   };
   for (const [canton, exp] of Object.entries(expected)) {
     const r = subsideNational(canton, {});
@@ -31,7 +35,7 @@ test('GE/ZH/BE → signal enrichi sourcé (base de revenu + calculateur officiel
 });
 
 test('canton sans données → signal générique (pas de fausse précision)', () => {
-  const r = subsideNational('JU', {});
+  const r = subsideNational('SG', {}); // St-Gall : pas encore de barème encodé
   assert.equal(r.mode, 'signal');
 });
 

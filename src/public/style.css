@@ -4999,4 +4999,7 @@ body.has-disclaimer {
 .je-amount-sub { font-size: 0.9rem; color: var(--text-tertiary); font-weight: 400; }
 .je-warn { background: #fff4e5; border-radius: 8px; padding: 0.85rem 1rem; margin: 1rem 0; font-size: 0.9rem; color: #7a4a00; }
 .je-promo { border-left: 4px solid var(--accent-primary); }
+.je-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.25rem; }
+.je-grid .je-label { margin-bottom: 0.75rem; }
+@media (max-width: 560px) { .je-grid { grid-template-columns: 1fr; } }
 

@@ -261,4 +261,83 @@ export function estimatePC(input) {
   return out;
 }
 
+/**
+ * BILAN DE DROITS — orchestre toutes les aides à partir d'UN seul profil ménage et
+ * renvoie le total potentiellement récupérable + le détail par aide. C'est le cœur
+ * "find money" du vertical : une seule saisie, un screening complet.
+ *
+ * profil: { menage:'seul'|'couple', age_groupe:'jeune'|'adulte',
+ *           nb_enfants_moins16:int, nb_enfants_formation:int,
+ *           revenu_net_annuel:CHF, region:1|2|3,
+ *           rente:'none'|'avs'|'ai', rente_mensuelle:CHF, loyer_mensuel:CHF,
+ *           prime_lamal_mensuelle:CHF, fortune:CHF }
+ */
+export function buildBilan(profil) {
+  const p = profil || {};
+  const menage = p.menage === 'couple' ? 'couple' : 'seul';
+  const jeune = p.age_groupe === 'jeune';
+  const nbM16 = Math.max(0, Math.floor(Number(p.nb_enfants_moins16) || 0));
+  const nbForm = Math.max(0, Math.floor(Number(p.nb_enfants_formation) || 0));
+  const nbEnfants = nbM16 + nbForm;
+  const rente = (p.rente === 'avs' || p.rente === 'ai') ? p.rente : 'none';
+
+  const aides = [];
+
+  // 1) Subside LAMal — applicable à tout le monde (assurance obligatoire)
+  let cat;
+  if (jeune) cat = (menage === 'couple' || nbEnfants > 0) ? 'jeune_adulte_famille' : 'jeune_adulte_seul';
+  else cat = nbEnfants > 0 ? 'adulte_famille_enfant' : (menage === 'couple' ? 'couple_sans_enfant' : 'adulte_seul');
+  const sub = estimateSubsideVD({ categorie: cat, revenu_net: p.revenu_net_annuel, nb_enfants: nbEnfants });
+  aides.push({
+    id: 'subside', titre: "Subside d'assurance-maladie",
+    eligible: !!sub.eligible,
+    montant_mensuel: sub.eligible ? sub.subside_estime_mois : 0,
+    montant_annuel: sub.eligible ? sub.estimation_annuelle : 0,
+    message: sub.message, lien: sub.calculateur_officiel
+  });
+
+  // 2) Allocations familiales — si enfants à charge
+  if (nbEnfants > 0) {
+    const al = estimateAllocationsVD({ enfants_moins16: nbM16, enfants_formation: nbForm });
+    if (!al.error) aides.push({
+      id: 'allocations', titre: 'Allocations familiales',
+      eligible: true, montant_mensuel: al.total_mensuel, montant_annuel: al.total_annuel,
+      message: al.message, lien: al.calculateur_officiel
+    });
+  }
+
+  // 3) Prestations complémentaires — si rente AVS/AI
+  if (rente !== 'none') {
+    const pc = estimatePC({
+      rente_type: rente, couple: menage === 'couple',
+      enfants_moins11: nbM16, enfants_des11: nbForm,
+      rente_mensuelle: p.rente_mensuelle, loyer_mensuel: p.loyer_mensuel,
+      prime_lamal_mensuelle: p.prime_lamal_mensuelle, fortune: p.fortune, region: p.region
+    });
+    aides.push({
+      id: 'pc', titre: 'Prestations complémentaires (AVS/AI)',
+      eligible: !!pc.eligible,
+      montant_mensuel: pc.eligible ? pc.pc_mensuelle : 0,
+      montant_annuel: pc.eligible ? pc.pc_annuelle : 0,
+      message: pc.message, lien: pc.calculateur_officiel
+    });
+  }
+
+  const eligibles = aides.filter((a) => a.montant_annuel > 0);
+  const totalAnnuel = eligibles.reduce((s, a) => s + a.montant_annuel, 0);
+
+  return {
+    canton: 'VD', indicatif: true,
+    aides,
+    eligibles_count: eligibles.length,
+    total_annuel_estime: totalAnnuel,
+    total_mensuel_estime: Math.round(totalAnnuel / 12),
+    message: eligibles.length
+      ? `D'après ce bilan, vous pourriez récupérer environ ${totalAnnuel} CHF par an (~${Math.round(totalAnnuel / 12)} CHF/mois) au total sur ${eligibles.length} aide(s). Estimations indicatives — vérifiez chaque montant auprès de l'autorité compétente.`
+      : `Ce bilan ne détecte pas de droit évident sur la base de vos indications, mais les barèmes officiels intègrent d'autres éléments : en cas de doute, vérifiez directement auprès des autorités.`,
+    avertissement: "Estimations indicatives basées sur les barèmes officiels 2026 du canton de Vaud. Elles ne remplacent pas une décision des autorités compétentes. D'autres aides (bourses, avances de pensions, aides communales) ne sont pas encore couvertes.",
+    extracted_year: 2026
+  };
+}
+
 export const _internals = { round };

@@ -18,7 +18,8 @@ const FUNNEL_EVENTS = new Set([
   'home_view', 'input_focus', 'triage_submit', 'triage_result_rendered', 'triage_error',
   'plan_viewed', 'step_expanded', 'letter_clicked', 'contact_clicked', 'feedback_submitted',
   // Vertical Justice économique / ClaimBack
-  'claimback_started', 'claimback_eligibility_shown', 'claimback_official_link_clicked'
+  'claimback_started', 'claimback_eligibility_shown', 'claimback_official_link_clicked',
+  'claimback_bilan_started', 'claimback_bilan_completed'
 ]);
 
 // Fenêtre de corrélation par case_id (gate de sortie : ≥95% submit→result_rendered /7j)
@@ -32,6 +33,9 @@ let stats = {
   premiumAnalysisCount: 0,
   languages: {},       // lang → count
   funnel: {},          // event name → count
+  // Justice économique : "argent surfacé" = montant total d'aides détecté par les bilans.
+  // C'est le KPI de valeur réelle du vertical (combien d'argent dû on rend visible).
+  claimback: { bilans: 0, bilans_avec_droit: 0, total_detected_chf: 0 },
   lastFlush: null,
   startedAt: new Date().toISOString()
 };
@@ -49,6 +53,7 @@ function loadFromFile() {
     stats.premiumAnalysisCount = saved.premiumAnalysisCount || 0;
     stats.languages = saved.languages || {};
     stats.funnel = saved.funnel || {};
+    stats.claimback = saved.claimback || { bilans: 0, bilans_avec_droit: 0, total_detected_chf: 0 };
     stats.lastFlush = saved.lastFlush || null;
     stats.startedAt = saved.startedAt || stats.startedAt;
     funnelCases = (saved._funnelCases && typeof saved._funnelCases === 'object') ? saved._funnelCases : {};
@@ -109,6 +114,19 @@ export function trackLanguage(lang) {
   if (!lang || typeof lang !== 'string') return;
   const clean = lang.slice(0, 10).toLowerCase();
   stats.languages[clean] = (stats.languages[clean] || 0) + 1;
+}
+
+// Justice économique : enregistre le montant total détecté par un bilan (server-side,
+// donc fiable). Borne anti-aberration (un bilan ne peut surfacer > 100k/an de façon réaliste).
+export function recordClaimbackAmount(totalAnnuelChf) {
+  const amount = Number(totalAnnuelChf);
+  if (!Number.isFinite(amount) || amount < 0) return;
+  const clamped = Math.min(amount, 100000);
+  stats.claimback.bilans += 1;
+  if (clamped > 0) {
+    stats.claimback.bilans_avec_droit += 1;
+    stats.claimback.total_detected_chf += Math.round(clamped);
+  }
 }
 
 // Funnel event (2a/2b). name doit être dans l'allowlist. caseId optionnel :
@@ -172,6 +190,7 @@ export function _resetForTests() {
     premiumAnalysisCount: 0,
     languages: {},
     funnel: {},
+    claimback: { bilans: 0, bilans_avec_droit: 0, total_detected_chf: 0 },
     lastFlush: null,
     startedAt: new Date().toISOString()
   };

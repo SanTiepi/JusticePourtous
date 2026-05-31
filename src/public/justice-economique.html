@@ -40,6 +40,50 @@
       <h1 class="page-title">Récupérez les droits qu'on oublie de réclamer</h1>
       <p class="guide-summary">Chaque année, des millions de francs d'aides ne sont pas réclamés en Suisse. Vérifiez vos droits en 1 minute — gratuit, anonyme, sans création de compte. Canton de Vaud (d'autres cantons et aides arrivent).</p>
 
+      <!-- 0. BILAN consolidé (entrée principale) -->
+      <section class="card-highlight" id="toolBilan" style="border-left:4px solid #8B2500;">
+        <h2 style="margin:0 0 0.5rem;">🧮 Faire le bilan de mes droits</h2>
+        <p style="margin:0 0 1rem;color:#4a5b6e;">Un seul formulaire — on vérifie toutes les aides d'un coup et on calcule le total que vous pourriez récupérer.</p>
+        <form id="formBilan" onsubmit="lancerBilan(event)">
+          <div class="je-grid">
+            <label class="je-label">Situation
+              <select id="biMenage" class="je-input"><option value="seul">Je vis seul·e</option><option value="couple">En couple</option></select>
+            </label>
+            <label class="je-label">Âge
+              <select id="biAge" class="je-input"><option value="adulte">26 ans et plus</option><option value="jeune">19-25 ans</option></select>
+            </label>
+            <label class="je-label">Région
+              <select id="biRegion" class="je-input"><option value="1">Grands centres (Lausanne…)</option><option value="2">Villes</option><option value="3">Campagne</option></select>
+            </label>
+            <label class="je-label">Revenu net annuel du ménage (CHF)
+              <input type="number" id="biRevenu" min="0" step="1000" placeholder="ex. 38000" required class="je-input">
+            </label>
+            <label class="je-label">Enfants de moins de 16 ans
+              <input type="number" id="biEnfM16" min="0" max="12" step="1" value="0" class="je-input">
+            </label>
+            <label class="je-label">Enfants en formation (16-25 ans)
+              <input type="number" id="biEnfForm" min="0" max="12" step="1" value="0" class="je-input">
+            </label>
+            <label class="je-label">Touchez-vous une rente ?
+              <select id="biRente" class="je-input" onchange="toggleBilanPC()"><option value="none">Non</option><option value="avs">Rente AVS (retraite/survivant·e)</option><option value="ai">Rente AI (invalidité)</option></select>
+            </label>
+          </div>
+          <div id="biPCFields" style="display:none;margin-top:0.5rem;">
+            <p style="font-weight:600;margin:0.25rem 0 0.5rem;color:#8B2500;">Pour estimer vos prestations complémentaires :</p>
+            <div class="je-grid">
+              <label class="je-label">Rente mensuelle du ménage (CHF)<input type="number" id="biRenteMens" min="0" step="50" class="je-input"></label>
+              <label class="je-label">Loyer mensuel (CHF)<input type="number" id="biLoyer" min="0" step="50" class="je-input"></label>
+              <label class="je-label">Prime LAMal mensuelle (CHF)<input type="number" id="biPrime" min="0" step="10" class="je-input"></label>
+              <label class="je-label">Fortune totale (CHF)<input type="number" id="biFortune" min="0" step="1000" value="0" class="je-input"></label>
+            </div>
+          </div>
+          <button type="submit" class="je-btn" style="margin-top:0.75rem;">Faire mon bilan →</button>
+        </form>
+        <div id="resBilan" class="je-result" aria-live="polite"></div>
+      </section>
+
+      <h2 style="margin:2.25rem 0 0.5rem;font-size:1.2rem;color:#4a5b6e;">Ou calculez une aide en détail</h2>
+
       <!-- 1. Subside LAMal -->
       <section class="card-highlight" id="toolSubside">
         <h2 style="margin:0 0 0.75rem;">💊 Subside d'assurance-maladie — Vaud (2026)</h2>
@@ -121,9 +165,20 @@
         <div id="resPC" class="je-result" aria-live="polite"></div>
       </section>
 
-      <section class="guide-section" style="margin-top:2rem;">
+      <section class="guide-section" style="margin-top:2.5rem;">
+        <h2>Comment on calcule (et nos sources)</h2>
+        <p>Nos estimations appliquent les <strong>barèmes officiels 2026</strong>, pas des chiffres approximatifs. Elles restent indicatives : seul·e l'autorité compétente décide, et certains éléments (frais médicaux, séjour en home, situations particulières) ne sont pas couverts.</p>
+        <ul style="line-height:1.6;">
+          <li><strong>Subside d'assurance-maladie</strong> — Arrêté du Conseil d'État vaudois du 17.12.2025 (seuils par catégorie de ménage).</li>
+          <li><strong>Allocations familiales</strong> — Montants officiels de l'État de Vaud (dès le 1er janvier 2025).</li>
+          <li><strong>Prestations complémentaires</strong> — Besoins vitaux OFAS 2026 + loyers maximaux reconnus (Caisse cantonale vaudoise) + franchises sur la fortune. Calcul : dépenses reconnues − revenus déterminants.</li>
+        </ul>
+        <p style="font-size:0.9rem;color:#6a7787;">Données du <strong>canton de Vaud</strong>, valables pour 2026. Les barèmes sont cantonaux et révisés chaque année. Aucune donnée que vous saisissez n'est enregistrée — tout est calculé en mémoire.</p>
+      </section>
+
+      <section class="guide-section" style="margin-top:1.5rem;">
         <h2>Et ensuite ?</h2>
-        <p>D'autres droits (bourses d'études, avances sur pensions alimentaires, aides communales) et l'orientation vers les fondations privées seront ajoutés progressivement. <a href="/">Décrivez votre situation</a> pour un triage juridique complet.</p>
+        <p>D'autres droits (PC Familles, bourses d'études, avances sur pensions alimentaires, aides communales) et l'orientation vers les fondations privées seront ajoutés progressivement, ainsi que d'autres cantons. <a href="/">Décrivez votre situation</a> pour un triage juridique complet.</p>
       </section>
     </div>
   </main>
@@ -255,6 +310,56 @@
         box.innerHTML = h;
       } catch (err) { box.innerHTML = '<div class="error-box">Erreur de connexion.</div>'; }
     }
+
+    function toggleBilanPC(){
+      var v = document.getElementById('biRente').value;
+      document.getElementById('biPCFields').style.display = (v === 'none' ? 'none' : 'block');
+    }
+    window.toggleBilanPC = toggleBilanPC;
+
+    async function lancerBilan(e){
+      e.preventDefault(); track('claimback_bilan_started');
+      var box = document.getElementById('resBilan');
+      box.innerHTML = '<p>Analyse de vos droits…</p>';
+      function val(id){ var el = document.getElementById(id); return el ? Number(el.value) : 0; }
+      try {
+        var d = await post('/api/claimback/bilan', {
+          menage: document.getElementById('biMenage').value,
+          age_groupe: document.getElementById('biAge').value,
+          region: val('biRegion'),
+          revenu_net_annuel: val('biRevenu'),
+          nb_enfants_moins16: val('biEnfM16'),
+          nb_enfants_formation: val('biEnfForm'),
+          rente: document.getElementById('biRente').value,
+          rente_mensuelle: val('biRenteMens'),
+          loyer_mensuel: val('biLoyer'),
+          prime_lamal_mensuelle: val('biPrime'),
+          fortune: val('biFortune')
+        });
+        track('claimback_bilan_completed');
+        var h = '<div class="je-verdict" style="border-left-color:#8B2500;">';
+        if (d.total_annuel_estime > 0) {
+          h += '<p style="margin:0 0 0.1rem;color:#4a5b6e;">Vous pourriez récupérer jusqu\'à</p>';
+          h += '<p class="je-amount" style="font-size:1.9rem;color:#2D6A4F;">~' + d.total_annuel_estime + ' CHF/an <span class="je-amount-sub">(~' + d.total_mensuel_estime + ' CHF/mois)</span></p>';
+        } else {
+          h += '<h3 style="margin:0 0 0.4rem;">Pas de droit évident détecté</h3>';
+        }
+        h += '<p>' + esc(d.message) + '</p>';
+        (d.aides || []).forEach(function(a){
+          var col = a.montant_annuel > 0 ? '#2D6A4F' : '#B45309';
+          h += '<div style="border:1px solid var(--border-subtle);border-left:3px solid ' + col + ';border-radius:8px;padding:0.75rem 1rem;margin:0.6rem 0;">';
+          h += '<strong>' + esc(a.titre) + '</strong>';
+          if (a.montant_annuel > 0) h += ' — <span style="color:' + col + ';font-weight:700;">~' + a.montant_mensuel + ' CHF/mois</span>';
+          h += '<br><span style="font-size:0.9rem;color:#4a5b6e;">' + esc(a.message) + '</span>';
+          if (a.lien) h += '<br><a href="' + esc(a.lien) + '" target="_blank" rel="noopener" onclick="if(window.jbTrack)jbTrack(\'claimback_official_link_clicked\')" style="font-size:0.85rem;color:var(--accent-secondary);">Démarche officielle →</a>';
+          h += '</div>';
+        });
+        h += warnBox(d.avertissement) + '</div>';
+        box.innerHTML = h;
+        box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } catch (err) { box.innerHTML = '<div class="error-box">Erreur de connexion.</div>'; }
+    }
+    window.lancerBilan = lancerBilan;
 
     window.estimerSubside = estimerSubside;
     window.estimerAllocations = estimerAllocations;

@@ -57,8 +57,8 @@ import { deepAnalysis } from './services/deep-analysis.mjs';
 import { generateDocx } from './services/docx-generator.mjs';
 import { sendCode, verifyCode, linkWalletToEmail, getWalletsByEmail } from './services/auth.mjs';
 import { getVulgarisationForFiche, getVulgarisationStats } from './services/vulgarisation-loader.mjs';
-import { trackPageView, trackSearch, trackPremiumAnalysis, trackLanguage, trackEvent, getStats as getAnalyticsStats } from './services/analytics.mjs';
-import { estimateSubsideVD, estimateAllocationsVD, estimatePC } from './services/claimback.mjs';
+import { trackPageView, trackSearch, trackPremiumAnalysis, trackLanguage, trackEvent, recordClaimbackAmount, getStats as getAnalyticsStats } from './services/analytics.mjs';
+import { estimateSubsideVD, estimateAllocationsVD, estimatePC, buildBilan } from './services/claimback.mjs';
 import { translateStructuredContent, translateTextContent, TRANSLATION_PIPELINE_VERSION } from './services/i18n/translation-orchestrator.mjs';
 import { resolveRequestLocale } from './services/i18n/http-locale.mjs';
 import { normalizeLocale, DEFAULT_LOCALE, isOfferedLocale } from './services/i18n/locale-registry.mjs';
@@ -398,6 +398,26 @@ const server = createServer(async (req, res) => {
         enfants_moins16: body.enfants_moins16,
         enfants_formation: body.enfants_formation
       });
+      return json(res, 200, { ...result, disclaimer: DISCLAIMER });
+    }
+
+    if (path === '/api/claimback/bilan' && method === 'POST') {
+      const body = (await parseBody(req)) || {};
+      const result = buildBilan({
+        menage: body.menage,
+        age_groupe: body.age_groupe,
+        nb_enfants_moins16: body.nb_enfants_moins16,
+        nb_enfants_formation: body.nb_enfants_formation,
+        revenu_net_annuel: body.revenu_net_annuel,
+        region: body.region,
+        rente: body.rente,
+        rente_mensuelle: body.rente_mensuelle,
+        loyer_mensuel: body.loyer_mensuel,
+        prime_lamal_mensuelle: body.prime_lamal_mensuelle,
+        fortune: body.fortune
+      });
+      // KPI "argent surfacé" — enregistré côté serveur (autoritatif).
+      recordClaimbackAmount(result.total_annuel_estime);
       return json(res, 200, { ...result, disclaimer: DISCLAIMER });
     }
 

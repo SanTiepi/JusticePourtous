@@ -16,6 +16,7 @@ import {
   trackLanguage,
   trackEvent,
   getFunnelMetrics,
+  recordClaimbackAmount,
   getStats,
   _resetForTests,
 } from '../src/services/analytics.mjs';
@@ -209,6 +210,29 @@ describe('trackEvent — funnel', () => {
     assert.equal(getFunnelMetrics().cases_tracked, 0);
     // le compteur global s\'incrémente quand même
     assert.equal(getStats().funnel['triage_submit'], 1);
+  });
+});
+
+describe('recordClaimbackAmount — KPI argent surfacé', () => {
+  beforeEach(() => _resetForTests());
+
+  it('accumule le montant détecté + compte les bilans avec droit', () => {
+    recordClaimbackAmount(24270);
+    recordClaimbackAmount(0); // bilan sans droit
+    recordClaimbackAmount(7728);
+    const c = getStats().claimback;
+    assert.equal(c.bilans, 3);
+    assert.equal(c.bilans_avec_droit, 2);
+    assert.equal(c.total_detected_chf, 24270 + 7728);
+  });
+
+  it('ignore les valeurs invalides et borne les aberrations', () => {
+    recordClaimbackAmount(-5);
+    recordClaimbackAmount('abc');
+    recordClaimbackAmount(999999); // borné à 100000
+    const c = getStats().claimback;
+    assert.equal(c.bilans, 1);
+    assert.equal(c.total_detected_chf, 100000);
   });
 });
 

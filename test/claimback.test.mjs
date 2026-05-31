@@ -4,7 +4,7 @@
  */
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { estimateSubsideVD, listCategories, estimateAllocationsVD, estimatePC, listAides } from '../src/services/claimback.mjs';
+import { estimateSubsideVD, listCategories, estimateAllocationsVD, estimatePC, listAides, buildBilan } from '../src/services/claimback.mjs';
 
 describe('claimback — estimateSubsideVD (adulte seul)', () => {
   it('revenu bas → éligible, niveau maximum (~331/mois)', () => {
@@ -189,6 +189,45 @@ describe('claimback — listAides', () => {
     assert.ok(aides.find((a) => a.id === 'subside' && a.statut === 'live'));
     assert.ok(aides.find((a) => a.id === 'allocations' && a.statut === 'live'));
     assert.ok(aides.find((a) => a.id === 'pc'));
+  });
+});
+
+describe('claimback — bilan consolidé', () => {
+  it('adulte seul faible revenu, sans enfant, sans rente → seul le subside', () => {
+    const b = buildBilan({ menage: 'seul', age_groupe: 'adulte', revenu_net_annuel: 20000, region: 1, rente: 'none' });
+    const ids = b.aides.map((a) => a.id);
+    assert.deepEqual(ids, ['subside']);
+    assert.equal(b.eligibles_count, 1);
+    assert.equal(b.total_annuel_estime, b.aides[0].montant_annuel);
+  });
+
+  it('famille avec 2 enfants → subside + allocations, total = somme', () => {
+    const b = buildBilan({ menage: 'couple', age_groupe: 'adulte', nb_enfants_moins16: 2, revenu_net_annuel: 40000, region: 1, rente: 'none' });
+    const ids = b.aides.map((a) => a.id).sort();
+    assert.deepEqual(ids, ['allocations', 'subside']);
+    const somme = b.aides.filter((a) => a.montant_annuel > 0).reduce((s, a) => s + a.montant_annuel, 0);
+    assert.equal(b.total_annuel_estime, somme);
+    assert.ok(b.total_annuel_estime > 0);
+  });
+
+  it('rentier AVS seul à faibles revenus → subside + PC détectés', () => {
+    const b = buildBilan({
+      menage: 'seul', age_groupe: 'adulte', revenu_net_annuel: 18000, region: 1,
+      rente: 'avs', rente_mensuelle: 1500, loyer_mensuel: 1400, prime_lamal_mensuelle: 400, fortune: 0
+    });
+    const ids = b.aides.map((a) => a.id);
+    assert.ok(ids.includes('pc'));
+    assert.ok(ids.includes('subside'));
+    const pc = b.aides.find((a) => a.id === 'pc');
+    assert.equal(pc.montant_annuel, 24270);
+    assert.ok(b.total_annuel_estime >= 24270);
+  });
+
+  it('total mensuel = total annuel / 12 (arrondi) + indicatif', () => {
+    const b = buildBilan({ menage: 'seul', age_groupe: 'adulte', revenu_net_annuel: 20000, region: 1, rente: 'none' });
+    assert.equal(b.total_mensuel_estime, Math.round(b.total_annuel_estime / 12));
+    assert.equal(b.indicatif, true);
+    assert.ok(b.avertissement && b.message);
   });
 });
 

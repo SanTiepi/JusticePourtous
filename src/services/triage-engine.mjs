@@ -82,9 +82,14 @@ export function topDelaisCritiques(primary) {
   return base.slice(0, 3).map(d => {
     let { consequence, base_legale, attention } = d;
     if (!consequence) {
-      // enrichir un délai de cascade via le délai de procédure curaté de même durée
+      // Enrichir un délai de cascade (consequence null) via le délai de procédure curaté
+      // correspondant. Priorité : (1) libellé de délai IDENTIQUE (match sûr et précis),
+      // puis (2) même durée. On ne devine JAMAIS par similarité floue (un mauvais match
+      // = conséquence juridique fausse = pire que rien).
+      const norm = (s) => (s || '').trim().toLowerCase();
       const key = durationKey(d.delai);
-      const m = key && rich.find(r => durationKey(r.delai) === key);
+      const m = rich.find(r => norm(r.delai) === norm(d.delai))
+        || (key && rich.find(r => durationKey(r.delai) === key));
       if (m) { consequence = m.consequence; base_legale = m.base_legale; attention = attention || m.attention; }
     }
     return {

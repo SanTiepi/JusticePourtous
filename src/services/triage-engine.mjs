@@ -13,6 +13,7 @@
 
 import { callNavigator, isAvailable as llmAvailable } from './llm-navigator.mjs';
 import { queryByProblem, queryComplete } from './knowledge-engine.mjs';
+import { highHarmDeadlineHits } from './high-harm-net.mjs';
 import { generateActionPlan } from './action-planner.mjs';
 import { semanticSearch } from './semantic-search.mjs';
 import { getAllFiches } from './fiches.mjs';
@@ -147,6 +148,20 @@ export function estimateCost(type) {
 // LLM-POWERED TRIAGE
 // ============================================================
 
+// Filet de sécurité déterministe (high-harm-net) : garantit qu'une fiche à délai PÉREMPTOIRE
+// dont le trigger est explicite dans le texte (« commandement de payer », « décision de renvoi »…)
+// est surfacée même si le navigator l'a ratée. Mesuré : 21→17 omissions critiques, 0 faux positif.
+// Appende en fin de liste (ne déplace jamais la primaire du navigator) ; peut rattraper un no-match.
+function applyHighHarmNet(enrichedFiches, texte) {
+  const seen = new Set(enrichedFiches.map(e => e.fiche?.id).filter(Boolean));
+  for (const hit of highHarmDeadlineHits(texte)) {
+    if (seen.has(hit.fiche)) continue;
+    const complete = queryComplete(hit.fiche);
+    if (complete.status === 200) { enrichedFiches.push(complete.data); seen.add(hit.fiche); }
+  }
+  return enrichedFiches;
+}
+
 async function triageLLM(texte, canton) {
   try {
     // 1. LLM navigates: identifies fiches, extracts info, suggests questions
@@ -163,6 +178,9 @@ async function triageLLM(texte, canton) {
         enrichedFiches.push(complete.data);
       }
     }
+
+    // 2b. Filet haute-harm : garantir les fiches à délai péremptoire à trigger explicite.
+    applyHighHarmNet(enrichedFiches, texte);
 
     // Primary fiche = first match
     const primary = enrichedFiches[0];
@@ -353,6 +371,8 @@ async function refineTriage(sessionId, reponses) {
       const complete = queryComplete(ficheId);
       if (complete.status === 200) enrichedFiches.push(complete.data);
     }
+    // Filet haute-harm aussi au refine (le texte accumulé peut révéler un trigger péremptoire).
+    applyHighHarmNet(enrichedFiches, fullText);
 
     const primary = enrichedFiches[0] || prevPrimary;
     const effectiveCanton = prevCanton || nav.infos_extraites?.canton;

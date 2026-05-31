@@ -24,6 +24,7 @@ import { enrichTriageResult } from './triage-enrichment.mjs';
 import * as _objectRegistry from './object-registry.mjs';
 import { buildCanonForFiche } from './caselaw/index.mjs';
 import { createLogger } from './logger.mjs';
+import { buildCountdown } from './deadline-countdown.mjs';
 
 const log = createLogger('triage');
 
@@ -289,6 +290,8 @@ async function triageLLM(texte, canton) {
 
         // Deadlines : délais spécifiques de la fiche prioritaires sur ceux du domaine
         delaisCritiques: topDelaisCritiques(primary),
+        // Compte-à-rebours si une date d'événement est extractible du texte (déterministe)
+        alerteDelai: buildCountdown(topDelaisCritiques(primary), texte, new Date()),
 
         // Jurisprudence enrichie (tier/age/role) — Phase 3 (legacy)
         jurisprudence_enriched: (primary.jurisprudence || []).map(enrichDecisionHolding),
@@ -411,6 +414,7 @@ async function refineTriage(sessionId, reponses) {
         } : null,
         contacts: filterContacts(primary.escalade || [], effectiveCanton),
         delaisCritiques: topDelaisCritiques(primary),
+        alerteDelai: buildCountdown(topDelaisCritiques(primary), fullText, new Date()),
         jurisprudence_enriched: (primary.jurisprudence || []).map(enrichDecisionHolding),
         caselaw_canon: caselawCanonRefine,
         confiance: primary.confiance || 'variable',
@@ -507,6 +511,7 @@ function triageFallback(texte, canton) {
 
       contacts: primary ? filterContacts(primary.escalade || [], canton) : filterContacts([], canton),
       delaisCritiques: topDelaisCritiques(primary),
+      alerteDelai: buildCountdown(topDelaisCritiques(primary), texte, new Date()),
       confiance: 'incertain',
       lacunes: [
         'Mode basique : nous ne sommes pas certains d\'avoir identifié la bonne situation.',

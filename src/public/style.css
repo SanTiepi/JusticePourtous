@@ -4924,6 +4924,15 @@ body.has-disclaimer {
 .triage-delai-conseq { color: var(--accent-danger); font-size: 0.9rem; }
 .triage-delai-peremptoire { display: inline-block; background: var(--accent-danger, #8B2500); color: #fff; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; padding: 0.05rem 0.4rem; border-radius: 3px; vertical-align: middle; }
 .triage-delai-base { color: var(--text-muted, #777); font-size: 0.82rem; }
+/* Compte-à-rebours délai péremptoire */
+.triage-countdown { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.7rem; margin: 0.6rem 0; padding: 0.9rem 1.1rem; border-radius: 8px; border-left: 5px solid; }
+.triage-countdown.cd-actif { background: #fff4e6; border-color: #c97a00; }
+.triage-countdown.cd-critique { background: #fde8e3; border-color: #8B2500; }
+.triage-countdown.cd-depasse { background: #f3e6e6; border-color: #6b1414; }
+.triage-countdown .cd-jours { font-size: 2.1rem; font-weight: 800; line-height: 1; color: #8B2500; }
+.triage-countdown .cd-label { font-size: 0.85rem; font-weight: 600; color: #6a4a00; text-transform: uppercase; letter-spacing: 0.03em; }
+.triage-countdown .cd-msg { flex-basis: 100%; margin: 0.3rem 0 0; font-size: 0.95rem; line-height: 1.5; }
+.triage-countdown .cd-base { flex-basis: 100%; margin: 0.15rem 0 0; font-size: 0.8rem; color: var(--text-muted, #777); }
 
 .triage-lawyer h3 { margin-top: 0; }
 .triage-lawyer-yes { border-left: 4px solid var(--accent-warning); }

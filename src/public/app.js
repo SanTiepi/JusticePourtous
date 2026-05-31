@@ -505,6 +505,17 @@ function renderTriageAnalysis(triage, caseId) {
     html += '<div class="triage-urgency ' + urgClass + '" role="alert">' + escHtmlSafe(urgText) + '</div>';
   }
 
+  // 1b. Compte-à-rebours d'un délai péremptoire (si une date a pu être extraite)
+  var ad = triage.alerteDelai;
+  if (ad && ad.message) {
+    var adClass = ad.depasse ? 'cd-depasse' : (ad.urgence === 'critique' ? 'cd-critique' : 'cd-actif');
+    html += '<div class="triage-countdown ' + adClass + '" role="alert">'
+      + (ad.depasse ? '' : '<span class="cd-jours">' + escHtmlSafe(String(ad.jours_restants)) + '</span><span class="cd-label">jour' + (ad.jours_restants > 1 ? 's' : '') + ' restants</span>')
+      + '<p class="cd-msg">' + escHtmlSafe(ad.message) + '</p>'
+      + (ad.base_legale ? '<p class="cd-base">' + escHtmlSafe(ad.base_legale) + '</p>' : '')
+      + '</div>';
+  }
+
   // 2. Diagnostic personnalisé
   if (triage.diagnostic && typeof triage.diagnostic === 'string') {
     html += '<div class="card triage-diagnostic"><h3>Votre situation</h3><p>' + escHtmlSafe(triage.diagnostic) + '</p></div>';

@@ -726,13 +726,13 @@ async function loadResultat(ficheId) {
     html += '<h3>' + t('result.services_title') + '</h3>';
     r.services.forEach(function(s) {
       html += '<div class="service-item">';
-      html += '<div><div class="nom">' + s.nom + '</div>';
-      if (s.type) html += '<span class="type-tag">' + s.type + '</span>';
-      if (s.adresse) html += '<div class="adresse">' + s.adresse + '</div>';
+      html += '<div><div class="nom">' + escHtmlSafe(s.nom) + '</div>';
+      if (s.type) html += '<span class="type-tag">' + escHtmlSafe(s.type) + '</span>';
+      if (s.adresse) html += '<div class="adresse">' + escHtmlSafe(s.adresse) + '</div>';
       html += '</div>';
       html += '<div class="service-item-right">';
-      if (s.tel) html += '<a href="tel:' + s.tel + '" class="tel">' + s.tel + '</a><br>';
-      if (s.url) html += '<a href="' + s.url + '" target="_blank" rel="noopener" class="service-web-link">' + t('action.site_web') + '</a>';
+      if (s.tel) html += '<a href="tel:' + escHtmlAttr(s.tel) + '" class="tel">' + escHtmlSafe(s.tel) + '</a><br>';
+      if (s.url) html += '<a href="' + escHtmlAttr(s.url) + '" target="_blank" rel="noopener" class="service-web-link">' + t('action.site_web') + '</a>';
       html += '</div></div>';
     });
     html += '</div>';

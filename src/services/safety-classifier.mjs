@@ -45,7 +45,13 @@ const PATTERNS = [
     severity: 10,
     patterns: [
       /\bsuicid(e|er|aire)/i,
-      /me tuer\b/i,
+      // "me tuer" EN PREMIÈRE PERSONNE uniquement (suicide). Sinon "il va me tuer"
+      // (menace d'un tiers) était capté ici (sévérité 10) et routé vers le 143 suicide
+      // au lieu du 117 police — bug détecté au smoke test 2026-05-31. La menace tierce
+      // est désormais captée par le signal VIOLENCE (→ 117).
+      /\bje\s+(?:[a-zà-ÿ']+\s+){1,2}me\s+tuer\b/i,
+      /\bje\s+(?:vais|veux|voudrais|voudrai)\s+me\s+tuer\b/i,
+      /\bme\s+suicider\b/i,
       /\ben finir\b/i,
       /\bplus (envie|la force) de vivre\b/i,
       /\bj'ai plus rien\b/i,

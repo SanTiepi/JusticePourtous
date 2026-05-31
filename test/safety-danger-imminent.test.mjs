@@ -37,6 +37,19 @@ test('danger imminent par un tiers → safety déclenché (violence/détresse)',
   }
 });
 
+test('menace de mort par un tiers → VIOLENCE (police 117), PAS détresse (suicide 143)', () => {
+  // "il va me tuer" matche aussi /me tuer/ mais ne doit PAS être pris pour du suicide.
+  for (const txt of ['il va me tuer', 'mon ex a un couteau il va me tuer', 'je sais qu il va me tuer']) {
+    const r = classifySafety(txt);
+    assert.notEqual(r.signal_type, SIGNAL_TYPES.DETRESSE, `mal routé en détresse : "${txt}"`);
+    assert.equal(r.signal_type, SIGNAL_TYPES.VIOLENCE, `devrait être violence (117) : "${txt}"`);
+  }
+  // Les vrais cas de suicide en 1re personne restent en détresse.
+  for (const txt of ['je vais me tuer ce soir', 'je pense à me tuer', 'je veux me suicider']) {
+    assert.equal(classifySafety(txt).signal_type, SIGNAL_TYPES.DETRESSE, `suicide mal classé : "${txt}"`);
+  }
+});
+
 test('faux positifs évités (loyer, licenciement, arme de chasse légale, salaire, amende)', () => {
   for (const txt of NE_DOIT_PAS_DECLENCHER) {
     const r = classifySafety(txt);

@@ -180,6 +180,16 @@ export function expandQuery(text) {
   const terms = new Map();
   const matched = new Set();
 
+  // Désambiguïsation du token polysémique "permis" (audit 2026-05-31, gap 8) :
+  // "permis" sans signal migratoire mais avec signal routier = permis de CONDUIRE
+  // (circulation), pas permis de séjour (etrangers).
+  const lower = text.toLowerCase();
+  const CIRC_CUES = ['radar', 'flash', 'vitesse', 'km/h', 'kmh', 'alcool', 'taux', 'retrait', 'conduire', 'voiture', 'route', 'autoroute', 'stationnement', 'amende', 'excès', 'exces', 'ordonnance pénale', 'ethylotest', 'éthylotest'];
+  const MIGR_CUES = ['séjour', 'sejour', 'asile', 'regroupement', 'nationalité', 'nationalite', 'renvoi', 'migration', 'frontalier', 'étranger', 'etranger', 'naturalisation', 'visa', 'sans-papiers', 'sans papiers', 'permis b', 'permis c', 'permis l', 'permis f', 'permis g'];
+  const permisIsCirculation = lower.includes('permis')
+    && CIRC_CUES.some(c => lower.includes(c))
+    && !MIGR_CUES.some(c => lower.includes(c));
+
   // Check multi-word phrases first (e.g., "pas payé", "heures sup")
   for (let i = 0; i < words.length - 1; i++) {
     const bigram = `${words[i]} ${words[i + 1]}`;
@@ -196,6 +206,15 @@ export function expandQuery(text) {
   for (let i = 0; i < words.length; i++) {
     if (matched.has(i)) continue;
     const word = words[i];
+
+    // "permis" en contexte routier → circulation (override de l'expansion etrangers)
+    if (word === 'permis' && permisIsCirculation) {
+      for (const { terme, poids } of [
+        { terme: 'retrait', poids: 4 }, { terme: 'permis de conduire', poids: 5 },
+        { terme: 'circulation', poids: 3 }, { terme: 'LCR', poids: 3 }, { terme: 'conduire', poids: 2 }
+      ]) terms.set(terme, (terms.get(terme) || 0) + poids);
+      continue;
+    }
 
     // Direct match
     if (SYNONYMES[word]) {
@@ -281,9 +300,20 @@ const DOMAIN_AFFINITY_WORDS = {
   social: new Set(['aide', 'sociale', 'hebergement', 'sans-abri', 'ri', 'insertion', 'revenu', 'precarite', 'curatelle', 'apea', 'tutelle', 'protection', 'adulte']),
   violence: new Set(['violence', 'menace', 'agression', 'harcelement', 'lavi', 'foyer', 'victime', 'plainte', 'domestique', 'conjugale', 'eloignement', 'stalking', 'viol']),
   accident: new Set(['accident', 'blessure', 'collision', 'responsabilite', 'civile', 'laa', 'suva', 'corporel', 'sinistre', 'indemnite', 'dommage', 'tort', 'moral']),
-  entreprise: new Set(['faillite', 'pme', 'surendettement', 'concordat', 'cessation', 'paiement', 'sarl', 'societe', 'independant', 'raison', 'individuelle', 'registre', 'commerce', 'tva', 'liquidation'])
+  entreprise: new Set(['faillite', 'pme', 'surendettement', 'concordat', 'cessation', 'paiement', 'sarl', 'societe', 'independant', 'raison', 'individuelle', 'registre', 'commerce', 'tva', 'liquidation']),
+  // Ajouté 2026-05-31 (audit cas complexes, gap 8) : le domaine circulation était
+  // ABSENT de la table → toute affaire de circulation mentionnant "permis" était
+  // routée à 100% vers etrangers. Contrebalance le token polysémique "permis".
+  circulation: new Set(['radar', 'vitesse', 'alcool', 'retrait', 'conduire', 'voiture', 'route', 'autoroute', 'flash', 'amende', 'lcr', 'stationnement', 'ethylotest', 'permis', 'circulation', 'collision', 'constat'])
 };
 
+// NB (audit 2026-05-31, gap 1) : une tentative de boost multi-domaine secondaire
+// (×1.2 sur les domaines non-dominants) a été testée et RETIRÉE — elle n'améliorait
+// pas l'exhaustivité multi-fiches (le top-5 reste saturé par le domaine dominant :
+// l'audit conclut que le keyword "n'est pas réparable en patch fin", il faudrait des
+// slots réservés par domaine) et régressait de 1 cas sur la suite des 80. Le vrai
+// gain multi-fiches viendra du navigator LLM (post-traitement graphe). Conservé ici :
+// single-dominant + l'ajout du domaine circulation (gap 8).
 function detectDomainBoost(originalWords) {
   const scores = {};
   for (const domain of Object.keys(DOMAIN_AFFINITY_WORDS)) scores[domain] = 0;

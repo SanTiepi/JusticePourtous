@@ -122,7 +122,9 @@ prompt caching. Tous déployés + vérifiés live.
 - **gap 5b (clusters graphe)** : `ficheToFiches` (312 liens) existe, mais expansion naïve ajoute du
   bruit cross-domaine (precision↓, cf. gap 12). À faire avec filtrage de pertinence, pas naïvement.
 - **gap 5b — expansion MÊME-DOMAINE testée puis REJETÉE PAR JURY (2026-05-31, 2e passe)** :
-  mesure prod (navigator via `claude -p`, 45 cas) = recall multi-fiches **60 %** (53/89), **2,7 fiches/cas**,
+  éval **quasi-prod navigator** (harnais `claude -p` avec le vrai SYSTEM_PROMPT + modèle prod haiku —
+  PAS un E2E HTTP `/api/triage` sur les 45 cas ; 45 runs dont **43 sorties navigator exploitables + 2
+  parse-fail** sur cas redirect/hors-scope) = recall multi-fiches **60 %** (53/89), **2,7 fiches/cas**,
   **≥1 fiche pertinente dans 31/31 cas** (aucun citoyen les mains vides). Tenté : compléter les fiches
   affichées par le voisin même-domaine du graphe (`relatedSameDomainFiches`, invariant 0 cross-domaine
   sur 314 fiches). Recall vs `expected_fiches` monterait à ~70 % (~4 fiches/cas). MAIS jury LLM (juriste
@@ -132,22 +134,28 @@ prompt caching. Tous déployés + vérifiés live.
   recall vs `expected_fiches` est un MAUVAIS proxy de la pertinence ; le vrai levier est la SÉLECTION
   du navigator (rattraper les fiches d'AUTRES domaines qu'il rate), pas l'expansion post-hoc.
 
-Tous les cas sont intégrés en régression permanente — ces corrections seront mesurables.
+Le chemin KEYWORD est intégré en régression permanente (CI, `test/complex-cases-keyword.test.mjs`).
+Le scoring harm-weighted du chemin NAVIGATOR, lui, tourne sur des sorties FIGÉES (snapshot `claude -p`)
+via `npm run score:eval` : c'est une **commande reproductible**, PAS une gate de régression live
+(elle ne rejoue pas le navigator).
 
 ## Recadrage HARM-WEIGHTED + clôture du sprint technique (2026-05-31, arbitrage Codex)
 
 Codex : « ≥1 fiche pertinente » ne suffit pas si la fiche MANQUÉE porte un enjeu grave. On ne
 vise pas un recall abstrait → on vise **0 omission DANGEREUSE**. Artefacts reproductibles
-committés : `docs/eval/complex-eval-2026-05-31.json` (45 sorties navigator+keyword),
-`docs/eval/expansion-judged-2026-05-31.json` (jury), scorer `scripts/score-complex-eval.mjs`,
-résultat `docs/eval/harm-weighted-score.json`.
+committés (snapshot `claude -p`, pas un run HTTP live) : `docs/eval/complex-eval-2026-05-31.json`
+(45 runs : 43 sorties navigator exploitables + 2 parse-fail + keyword),
+`docs/eval/expansion-judged-2026-05-31.json` (jury), scorer `scripts/score-complex-eval.mjs`
+(reproductible via `npm run score:eval`), résultat `docs/eval/harm-weighted-score.json`.
 
 **Métrique harm-weighted (31 cas multi-fiches)** :
 - `au_moins_une_fiche_pertinente` : **31/31** (plancher : aucun citoyen les mains vides).
 - `recall_brut` : 53/89 (60 %).
-- **`critical_omission` : 21** (fiche manquée portant délai péremptoire / séjour / poursuite /
-  sécurité / recours) — dont 20 à délai péremptoire (sanity-check OK : dettes_opposition 10j,
-  travail_chomage 180j…). **`benign_omission` : 15.**
+- **`critical_omission` : 21** — ⚠ c'est une **métrique de RISQUE conservative, PAS un audit juridique
+  humain** : le scorer flague une fiche manquée comme critique si elle PORTE un délai péremptoire /
+  séjour / poursuite / sécurité / recours. Ça sert à PRIORISER, pas à affirmer « 21 erreurs juridiques
+  validées ». Dont 20 à délai péremptoire (sanity-check OK : dettes_opposition 10j, travail_chomage
+  180j…). **`benign_omission` : 15.**
 - `harmful_noise` (expansion) : **74 %** (37/50 ajouts hors-faits) → expansion non shippée.
 
 **Conclusion : les 21 omissions critiques sont DIFFUSES** (19 fiches distinctes sur 6 domaines :

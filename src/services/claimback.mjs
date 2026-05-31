@@ -62,28 +62,37 @@ function cantonEntry(code) {
 export function estimateAllocationsNational(canton, input) {
   const meta = cantonsData()._meta;
   const ce = cantonEntry(canton);
-  if (ce && ce.allocations_verifie) {
-    const r = estimateAllocationsVD(input);
-    return { ...r, canton, canton_nom: ce.nom, montants_verifies: true };
-  }
-  // Plancher fédéral
+  const min = meta.allocations_minimum_federal;
+  const verifie = !!(ce && ce.allocations_verifie);
   const m16 = Math.max(0, Math.floor(Number(input && input.enfants_moins16) || 0));
   const form = Math.max(0, Math.floor(Number(input && input.enfants_formation) || 0));
   const total = m16 + form;
   const out = {
     canton, canton_nom: ce ? ce.nom : null, annee: meta.annee, indicatif: true,
-    montants_verifies: false,
-    source: 'Minimum fédéral LAFam 2026 (OFAS)',
+    montants_verifies: verifie,
+    source: verifie ? 'État de Vaud (barème vérifié)' : meta.source_allocations,
     source_url: 'https://www.bsv.admin.ch/bsv/fr/home/assurances-sociales/famz/grundlagen-und-gesetze/ansaetze.html',
     calculateur_officiel: 'https://www.bsv.admin.ch/bsv/fr/home/assurances-sociales/famz/grundlagen-und-gesetze/ansaetze.html',
     avertissement: meta.allocations_note
   };
   if (total <= 0) return { ...out, error: 'aucun_enfant', message: 'Indiquez au moins un enfant à charge.' };
-  const min = meta.allocations_minimum_federal;
-  const mensuel = m16 * min.enfant + form * min.formation;
+
+  // Barème cantonal par rang, plancher minimum fédéral 2026 appliqué (sécurité légale).
+  const a = (ce && ce.alloc) || { e12: min.enfant, e3: min.enfant, f12: min.formation, f3: min.formation };
+  const e12 = Math.max(a.e12, min.enfant), e3 = Math.max(a.e3, min.enfant);
+  const f12 = Math.max(a.f12, min.formation), f3 = Math.max(a.f3, min.formation);
+  let mensuel = 0, rang = 0;
+  for (let i = 0; i < m16; i++) { rang++; mensuel += rang <= 2 ? e12 : e3; }
+  for (let i = 0; i < form; i++) { rang++; mensuel += rang <= 2 ? f12 : f3; }
+
   out.enfants_moins_16 = m16; out.enfants_formation = form;
   out.total_mensuel = mensuel; out.total_annuel = mensuel * 12; out.eligible = true;
-  out.message = `Pour ${total} enfant(s) à charge, vous avez droit à AU MOINS ~${mensuel} CHF/mois (~${mensuel * 12} CHF/an) — minimum fédéral garanti 2026. ${ce ? ce.nom : 'Votre canton'} paie peut-être davantage : vérifiez auprès de votre caisse d'allocations familiales. Pour les salarié·es, c'est versé via l'employeur ; pour les indépendant·es/sans activité, à demander.`;
+  const nomC = ce ? ce.nom : 'votre canton';
+  const base = `Pour ${total} enfant(s) à charge, allocations familiales (${nomC}) : ~${mensuel} CHF/mois (~${mensuel * 12} CHF/an).`;
+  const suffix = ` Salarié·e : versé par l'employeur. Indépendant·e / sans activité : à demander à votre caisse (souvent oublié).`;
+  out.message = verifie
+    ? base + suffix
+    : base + ` Barème cantonal indicatif (minimum fédéral 2026 garanti) — confirmez auprès de votre caisse.` + suffix;
   out.demarches = [
     'Salarié·e : vérifiez que les allocations figurent sur vos fiches de salaire.',
     'Indépendant·e / sans activité : demandez-les à votre caisse cantonale de compensation (souvent oublié).'

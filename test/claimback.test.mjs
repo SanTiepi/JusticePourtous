@@ -245,16 +245,26 @@ describe('claimback — couverture nationale (26 cantons)', () => {
     assert.equal(r.montants_verifies, true);
   });
 
-  it('allocations autre canton (GE) = minimum fédéral garanti 240', () => {
+  it('allocations autre canton (GE) = barème cantonal indicatif (311), non vérifié', () => {
     const r = estimateAllocationsNational('GE', { enfants_moins16: 1, enfants_formation: 0 });
-    assert.equal(r.total_mensuel, 240);
+    assert.equal(r.total_mensuel, 311);
     assert.equal(r.montants_verifies, false);
     assert.match(r.message, /minimum fédéral/i);
   });
 
-  it('allocations formation autre canton = minimum fédéral 290', () => {
+  it('allocations : plancher fédéral garanti pour un canton au minimum (ZH formation = 290)', () => {
     const r = estimateAllocationsNational('ZH', { enfants_moins16: 0, enfants_formation: 2 });
-    assert.equal(r.total_mensuel, 580);
+    assert.equal(r.total_mensuel, 580); // 2 × 290 (plancher fédéral 2026)
+  });
+
+  it('allocations : jamais en dessous du minimum fédéral (240/290)', () => {
+    // tous les cantons, 1 enfant <16 → ≥ 240 ; 1 en formation → ≥ 290
+    for (const c of listCantons()) {
+      const e = estimateAllocationsNational(c.code, { enfants_moins16: 1, enfants_formation: 0 });
+      assert.ok(e.total_mensuel >= 240, c.code + ' enfant < 240');
+      const f = estimateAllocationsNational(c.code, { enfants_moins16: 0, enfants_formation: 1 });
+      assert.ok(f.total_mensuel >= 290, c.code + ' formation < 290');
+    }
   });
 
   it('subside VD = calcul exact', () => {
@@ -274,11 +284,11 @@ describe('claimback — couverture nationale (26 cantons)', () => {
     const b = buildBilan({ canton: 'GE', menage: 'seul', age_groupe: 'adulte', nb_enfants_moins16: 2, revenu_net_annuel: 30000, region: 1, rente: 'none' });
     assert.equal(b.canton, 'GE');
     const alloc = b.aides.find((a) => a.id === 'allocations');
-    assert.equal(alloc.montant_mensuel, 480); // 2 × 240
+    assert.equal(alloc.montant_mensuel, 622); // 2 × 311 (barème GE indicatif)
     const sub = b.aides.find((a) => a.id === 'subside');
     assert.equal(sub.a_verifier, true);
     assert.equal(sub.montant_annuel, 0);
-    assert.equal(b.total_annuel_estime, 480 * 12); // seules les allocations chiffrées
+    assert.equal(b.total_annuel_estime, 622 * 12); // seules les allocations chiffrées
   });
 
   it('PC reste fédéral (valable tous cantons) — calcul identique', () => {

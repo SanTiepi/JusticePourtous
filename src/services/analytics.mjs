@@ -16,7 +16,9 @@ const DATA_FILE = join(__dirname, '..', 'data', 'meta', 'analytics.json');
 // 2b (profondeur, page résultat) : plan_viewed, step_expanded, letter_clicked, contact_clicked, feedback_submitted
 const FUNNEL_EVENTS = new Set([
   'home_view', 'input_focus', 'triage_submit', 'triage_result_rendered', 'triage_error',
-  'plan_viewed', 'step_expanded', 'letter_clicked', 'contact_clicked', 'feedback_submitted'
+  'plan_viewed', 'step_expanded', 'letter_clicked', 'contact_clicked', 'feedback_submitted',
+  // Vertical Justice économique / ClaimBack
+  'claimback_started', 'claimback_eligibility_shown', 'claimback_official_link_clicked'
 ]);
 
 // Fenêtre de corrélation par case_id (gate de sortie : ≥95% submit→result_rendered /7j)

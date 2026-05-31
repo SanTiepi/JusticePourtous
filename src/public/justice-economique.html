@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Justice économique — récupérer ses droits | JusticePourtous</title>
+  <meta name="description" content="Récupérez les aides auxquelles vous avez droit. Vérifiez en 1 minute votre éligibilité au subside d'assurance-maladie (canton de Vaud) — gratuit et anonyme.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://justicepourtous.ch/justice-economique.html">
+  <meta property="og:title" content="Justice économique — récupérer ses droits | JusticePourtous">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://justicepourtous.ch/justice-economique.html">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <a href="https://www.meteosuisse.admin.ch" class="quick-exit" title="Quitter rapidement ce site" aria-label="Quitter rapidement ce site">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Quitter</span>
+  </a>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand"><span class="nav-mark" aria-hidden="true"></span><span class="nav-wordmark">JusticePourtous</span></a>
+      <div class="nav-links">
+        <a href="/annuaire.html">Annuaire</a>
+        <a href="/methodologie.html">Méthodologie</a>
+        <a href="/premium.html" class="nav-premium">Premium</a>
+        <div class="lang-switcher" id="langSwitcher"></div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="page-inner">
+      <div class="notice-juridique" role="note">
+        <strong>Information générale</strong> — Estimation indicative basée sur les barèmes officiels. Ne remplace pas une décision de l'autorité compétente.
+      </div>
+
+      <p class="hero-eyebrow">Justice économique</p>
+      <h1 class="page-title">Récupérez les droits qu'on oublie de réclamer</h1>
+      <p class="guide-summary">Chaque année, des milliers de personnes ne demandent pas les aides auxquelles elles ont droit. Première brique : vérifiez votre éligibilité au <strong>subside d'assurance-maladie</strong> dans le canton de Vaud. Gratuit, anonyme, en 1 minute.</p>
+
+      <section class="card-highlight" id="claimbackCard">
+        <h2 style="margin:0 0 1rem;">💰 Subside LAMal — Vaud (2026)</h2>
+        <form id="claimbackForm" onsubmit="estimerSubside(event)">
+          <label style="display:block;margin-bottom:0.9rem;font-weight:600;">Votre situation
+            <select id="cbCategorie" style="display:block;width:100%;margin-top:0.35rem;padding:0.7rem;border:1.5px solid #c9d4df;border-radius:8px;font-size:1rem;font-family:inherit;">
+              <option value="adulte_seul">Adulte seul (26 ans et plus)</option>
+              <option value="adulte_famille_enfant">Adulte (26+) avec enfant(s) à charge</option>
+              <option value="couple_sans_enfant">Couple (26+) sans enfant</option>
+              <option value="jeune_adulte_seul">Jeune adulte (19-25 ans) seul</option>
+              <option value="jeune_adulte_famille">Jeune adulte (19-25 ans) en famille / couple</option>
+              <option value="enfant">Pour un enfant (0-18 ans)</option>
+            </select>
+          </label>
+          <label style="display:block;margin-bottom:0.9rem;font-weight:600;">Revenu net annuel du ménage (CHF, approximatif)
+            <input type="number" id="cbRevenu" min="0" step="1000" placeholder="ex. 38000" required
+              style="display:block;width:100%;margin-top:0.35rem;padding:0.7rem;border:1.5px solid #c9d4df;border-radius:8px;font-size:1rem;font-family:inherit;">
+          </label>
+          <label style="display:block;margin-bottom:1rem;font-weight:600;">Nombre d'enfants à charge
+            <input type="number" id="cbEnfants" min="0" max="12" step="1" value="0"
+              style="display:block;width:100%;margin-top:0.35rem;padding:0.7rem;border:1.5px solid #c9d4df;border-radius:8px;font-size:1rem;font-family:inherit;">
+          </label>
+          <button type="submit" class="btn btn-primary" style="padding:0.85rem 1.75rem;background:#8B2500;color:#fff;border:none;border-radius:999px;font-size:1rem;font-weight:600;cursor:pointer;">Estimer mes droits</button>
+        </form>
+        <p style="font-size:0.82rem;color:#6a7787;margin:0.9rem 0 0;">🔒 Anonyme · aucune donnée enregistrée · calcul en mémoire uniquement.</p>
+      </section>
+
+      <section id="cbResult" style="margin-top:1.5rem;" aria-live="polite"></section>
+
+      <section class="guide-section" style="margin-top:2rem;">
+        <h2>Et ensuite ?</h2>
+        <p>D'autres droits oubliés (prestations complémentaires, allocations, bourses, aides communales) et l'orientation vers les fondations et fonds privés seront ajoutés progressivement. <a href="/">Décrivez votre situation</a> pour un triage juridique complet.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><span class="nav-mark" aria-hidden="true"></span><span>JusticePourtous</span></div>
+      <div class="footer-links">
+        <a href="/methodologie.html">Méthodologie</a>
+        <a href="/annuaire.html">Annuaire</a>
+        <a href="/confidentialite.html">Confidentialité</a>
+      </div>
+      <div class="footer-legal">JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Ce service ne remplace pas un conseil d'avocat personnalisé.</div>
+      <div class="footer-copy">© 2026 JusticePourtous</div>
+    </div>
+  </footer>
+
+  <script src="/i18n.js"></script>
+  <script src="/track.js"></script>
+  <script>
+    /* i18n : monte le sélecteur de langue (contenu FR par défaut pour ce MVP cantonal vaudois) */
+    if (typeof createLangSwitcher === 'function') {
+      var host = document.getElementById('langSwitcher');
+      if (host) host.appendChild(createLangSwitcher());
+    }
+    if (typeof getLang === 'function') document.documentElement.lang = getLang();
+
+    function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    async function estimerSubside(e) {
+      e.preventDefault();
+      if (window.jbTrack) jbTrack('claimback_started');
+      var box = document.getElementById('cbResult');
+      box.innerHTML = '<div class="card"><p>Calcul en cours…</p></div>';
+      try {
+        var res = await fetch('/api/claimback/subside-vd', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            categorie: document.getElementById('cbCategorie').value,
+            revenu_net: Number(document.getElementById('cbRevenu').value),
+            nb_enfants: Number(document.getElementById('cbEnfants').value)
+          })
+        });
+        var d = await res.json();
+        if (d.error) { box.innerHTML = '<div class="error-box">Vérifiez vos saisies (revenu et situation).</div>'; return; }
+        if (window.jbTrack) jbTrack('claimback_eligibility_shown', null);
+
+        var color = d.eligible ? '#2D6A4F' : '#B45309';
+        var titre = d.eligible ? '✓ Vous avez probablement droit à un subside' : 'À vérifier : peut-être un subside spécifique';
+        var html = '<div class="card-highlight" style="border-left:4px solid ' + color + ';">';
+        html += '<h2 style="margin:0 0 0.5rem;color:' + color + ';">' + titre + '</h2>';
+        if (d.eligible) {
+          html += '<p style="font-size:1.25rem;font-weight:700;margin:0.25rem 0;">Estimation : ' +
+            (d.subside_min_mois === d.subside_max_mois ? ('~' + d.subside_max_mois + ' CHF/mois') : ('~' + d.subside_min_mois + ' à ' + d.subside_max_mois + ' CHF/mois')) +
+            ' <span style="font-size:0.9rem;color:#6a7787;font-weight:400;">(~' + d.estimation_annuelle_min + '-' + d.estimation_annuelle_max + ' CHF/an)</span></p>';
+        }
+        html += '<p style="line-height:1.55;">' + esc(d.message) + '</p>';
+        html += '<div style="background:#fff4e5;border-radius:8px;padding:0.85rem 1rem;margin:1rem 0;font-size:0.9rem;color:#7a4a00;">⚠ ' + esc(d.avertissement) + '</div>';
+        if (Array.isArray(d.demarches)) {
+          html += '<h3 style="margin:1rem 0 0.5rem;">Vos démarches</h3><ol style="line-height:1.55;padding-left:1.2rem;">';
+          d.demarches.forEach(function(s){ html += '<li>' + esc(s) + '</li>'; });
+          html += '</ol>';
+        }
+        html += '<a href="' + esc(d.calculateur_officiel) + '" target="_blank" rel="noopener" onclick="if(window.jbTrack)jbTrack(\'claimback_official_link_clicked\')" ' +
+          'class="btn btn-primary" style="display:inline-block;margin-top:0.75rem;padding:0.8rem 1.5rem;background:#8B2500;color:#fff;border-radius:999px;text-decoration:none;font-weight:600;">Calculateur & formulaire officiels (État de Vaud) →</a>';
+        html += '<p style="font-size:0.78rem;color:#6a7787;margin:0.9rem 0 0;">Source : ' + esc(d.source) + '.</p>';
+        html += '</div>';
+        box.innerHTML = html;
+        box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } catch (err) {
+        box.innerHTML = '<div class="error-box">Erreur de connexion. Réessayez.</div>';
+      }
+    }
+    window.estimerSubside = estimerSubside;
+  </script>
+</body>
+</html>

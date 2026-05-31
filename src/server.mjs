@@ -58,6 +58,7 @@ import { generateDocx } from './services/docx-generator.mjs';
 import { sendCode, verifyCode, linkWalletToEmail, getWalletsByEmail } from './services/auth.mjs';
 import { getVulgarisationForFiche, getVulgarisationStats } from './services/vulgarisation-loader.mjs';
 import { trackPageView, trackSearch, trackPremiumAnalysis, trackLanguage, trackEvent, getStats as getAnalyticsStats } from './services/analytics.mjs';
+import { estimateSubsideVD } from './services/claimback.mjs';
 import { translateStructuredContent, translateTextContent, TRANSLATION_PIPELINE_VERSION } from './services/i18n/translation-orchestrator.mjs';
 import { resolveRequestLocale } from './services/i18n/http-locale.mjs';
 import { normalizeLocale, DEFAULT_LOCALE, isOfferedLocale } from './services/i18n/locale-registry.mjs';
@@ -378,6 +379,17 @@ const server = createServer(async (req, res) => {
       } catch { /* beacon best-effort : on ignore tout */ }
       res.writeHead(204);
       return res.end();
+    }
+
+    // ─── Justice économique / ClaimBack — éligibilité subside LAMal (VD, MVP) ───
+    if (path === '/api/claimback/subside-vd' && method === 'POST') {
+      const body = (await parseBody(req)) || {};
+      const result = estimateSubsideVD({
+        categorie: body.categorie,
+        revenu_net: body.revenu_net,
+        nb_enfants: body.nb_enfants
+      });
+      return json(res, 200, { ...result, disclaimer: DISCLAIMER });
     }
 
     // ─── Stripe routes (must be before parseBody for webhook) ───

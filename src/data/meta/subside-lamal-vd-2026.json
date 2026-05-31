@@ -1,0 +1,71 @@
+{
+  "_meta": {
+    "canton": "VD",
+    "aide": "Réduction individuelle des primes d'assurance-maladie (subside LAMal)",
+    "annee": 2026,
+    "base_legale": "art. 65 al. 1bis LAMal ; LVLAMal ; RLVLAMal",
+    "source": "Arrêté du Conseil d'État vaudois concernant les subsides aux primes de l'assurance-maladie obligatoire en 2026, du 17 décembre 2025 (en vigueur le 1er janvier 2026)",
+    "source_url": "https://www.vd.ch/fileadmin/user_upload/themes/social/Prestations__assurance_et_soutien/Assurance_maladie/Subside/Arr%C3%AAt%C3%A9_subsides_2026_du_17-12-2025_-_publi%C3%A9.pdf",
+    "calculateur_officiel": "https://www.vd.ch/sante-soins-et-handicap/assurance-maladie/subside-a-lassurance-maladie",
+    "objectif_legal": "Limiter la charge des primes à 10% du revenu déterminant (subside spécifique au-delà des seuils ordinaires).",
+    "avertissement": "Le 'revenu déterminant' OVAM n'est PAS le salaire brut : il part du revenu net de la dernière taxation, ajoute certains rachats 2e pilier (− franchise 20'000), et déduit 6'000 fr. pour le 1er enfant à charge + 7'000 fr. par enfant supplémentaire. Cet outil donne une ESTIMATION INDICATIVE ; seul l'OVAM décide. Les bénéficiaires de PC ou d'aide sociale ont droit au subside d'office.",
+    "deductions_enfant": { "premier": 6000, "par_enfant_supplementaire": 7000 },
+    "extracted_at": "2026-05-31"
+  },
+  "categories": {
+    "adulte_seul": {
+      "label": "Adulte seul (26 ans et plus)",
+      "param": "a",
+      "limite_max_subside": 17000,
+      "limite_subside_min": 40000,
+      "limite_eligibilite": 50000,
+      "subside_min_mois": 30,
+      "subside_max_mois": 331
+    },
+    "adulte_famille_enfant": {
+      "label": "Adulte (26+) avec enfant(s) à charge (famille ou parent seul)",
+      "param": "b",
+      "limite_max_subside": 24200,
+      "limite_subside_min": 55000,
+      "limite_eligibilite": 69000,
+      "subside_min_mois": 20,
+      "subside_max_mois": 336
+    },
+    "couple_sans_enfant": {
+      "label": "Couple (26+) sans enfant à charge",
+      "param": "h",
+      "limite_max_subside": 24200,
+      "limite_subside_min": 70000,
+      "limite_eligibilite": 72500,
+      "subside_min_mois": 20,
+      "subside_max_mois": 336
+    },
+    "jeune_adulte_seul": {
+      "label": "Jeune adulte (19-25 ans) vivant seul",
+      "param": "d",
+      "limite_max_subside": 16000,
+      "limite_subside_min": 34000,
+      "limite_eligibilite": 39000,
+      "subside_min_mois": 20,
+      "subside_max_mois": 255
+    },
+    "jeune_adulte_famille": {
+      "label": "Jeune adulte (19-25 ans) en famille / couple",
+      "param": "e",
+      "limite_max_subside": 20000,
+      "limite_subside_min": 55000,
+      "limite_eligibilite": 69000,
+      "subside_min_mois": 20,
+      "subside_max_mois": 255
+    },
+    "enfant": {
+      "label": "Enfant (0-18 ans)",
+      "param": "c",
+      "limite_max_subside": 26000,
+      "limite_subside_min": 63000,
+      "limite_eligibilite": 76000,
+      "subside_min_mois": 114,
+      "subside_max_mois": 114
+    }
+  }
+}

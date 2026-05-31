@@ -111,6 +111,21 @@ export function subsideNational(canton, input) {
     const r = estimateSubsideVD(input);
     return { ...r, canton, canton_nom: ce.nom, mode: 'calcul_exact', subside_url: ce.subside_url };
   }
+  // Signal ENRICHI : canton avec barèmes officiels sourcés (GE/ZH/BE…). Orientation
+  // indicative (base de revenu + seuils) SANS prétendre à un calcul exact — chaque
+  // canton a sa propre base de revenu et sa formule → renvoi au calculateur officiel.
+  if (ce && ce.subside) {
+    const s = ce.subside;
+    return {
+      canton, canton_nom: ce.nom, mode: 'signal_enrichi', indicatif: true,
+      message: `Subside d'assurance-maladie à ${ce.nom} (réduction des primes LAMal). ${s.seuils_indicatifs}`,
+      base_revenu: s.base_revenu,
+      note: s.note || null,
+      avertissement: `Estimation INDICATIVE (barèmes ${s.annee || ''}) — votre droit exact dépend de votre situation. La base de revenu cantonale (${s.base_revenu}) n'est PAS le salaire brut. Vérifiez sur le calculateur officiel.`.replace(/\s+/g, ' ').trim(),
+      calculateur_officiel: s.url,
+      source: s.source
+    };
+  }
   return {
     canton, canton_nom: ce ? ce.nom : null, mode: 'signal', indicatif: true,
     message: `Le barème du subside d'assurance-maladie est propre à chaque canton. Son but : réduire les primes des personnes à revenu modeste (souvent quand la prime dépasse ~8 à 10% du revenu déterminant). ${ce ? ce.nom : 'Votre canton'} dispose d'un calculateur officiel — vérifiez-y votre droit, beaucoup de personnes éligibles ne le réclament pas.`,

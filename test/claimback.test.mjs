@@ -275,9 +275,15 @@ describe('claimback — couverture nationale (26 cantons)', () => {
 
   it('subside autre canton = signal + lien calculateur officiel', () => {
     const r = subsideNational('GE', { categorie: 'adulte_seul', revenu_net: 20000 });
+    assert.match(r.mode, /^signal/); // 'signal' ou 'signal_enrichi' (GE/ZH/BE sourcés) — jamais calcul_exact
+    assert.ok(r.calculateur_officiel);
+    assert.ok(!('subside_estime_mois' in r)); // pas de fausse précision
+  });
+
+  it('subside canton sans données = signal générique', () => {
+    const r = subsideNational('JU', { categorie: 'adulte_seul', revenu_net: 20000 });
     assert.equal(r.mode, 'signal');
     assert.ok(r.calculateur_officiel);
-    assert.ok(!('subside_estime_mois' in r));
   });
 
   it('bilan canton non-VD : allocations au minimum fédéral + subside à vérifier', () => {

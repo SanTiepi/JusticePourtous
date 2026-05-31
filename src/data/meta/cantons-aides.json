@@ -12,8 +12,8 @@
   },
   "cantons": {
     "VD": { "nom": "Vaud", "alloc": { "e12": 322, "e3": 365, "f12": 425, "f3": 468 }, "allocations_verifie": true, "subside_calcul_exact": true, "subside_url": "https://www.vd.ch/sante-soins-et-handicap/assurance-maladie/subside-a-lassurance-maladie" },
-    "ZH": { "nom": "Zurich", "alloc": { "e12": 240, "e3": 240, "f12": 290, "f3": 290 } },
-    "BE": { "nom": "Berne", "alloc": { "e12": 250, "e3": 250, "f12": 310, "f3": 310 } },
+    "ZH": { "nom": "Zurich", "alloc": { "e12": 240, "e3": 240, "f12": 290, "f3": 290 }, "subside": { "url": "https://svazurich.ch/online-services/rechner/leistungen-berechnen/anspruch-auf-praemienverbilligung-im-kanton-zuerich-.html", "base_revenu": "revenu déterminant ajusté (bereinigtes massgebendes Einkommen)", "seuils_indicatifs": "Indicatif 2026 : personne seule éligible jusqu'à env. 38'900–64'000 CHF (selon la région de primes et l'âge), marié jusqu'à env. 67'200–102'400 CHF, davantage avec enfants. Fortune max 150'000 (seul) / 300'000 (marié ou parent seul).", "note": "Le canton de Zurich a 3 régions de primes — le seuil exact dépend de votre commune.", "source": "SVA Zürich (svazurich.ch), barèmes 2026", "annee": 2026 } },
+    "BE": { "nom": "Berne", "alloc": { "e12": 250, "e3": 250, "f12": 310, "f3": 310 }, "subside": { "url": "https://www.asv.dij.be.ch/de/start/themen/pv/pv_anrecht-auf-pv-berechnen.html", "base_revenu": "revenu imposable (steuerbares Einkommen, après déductions)", "seuils_indicatifs": "Indicatif 2026 : éligible si le revenu imposable est inférieur à env. 35'000 CHF (personne / cas général) ou env. 45'000 CHF (familles avec enfants), avec un barème dégressif. Entre 35'001 et 38'000 CHF : seules les primes des enfants sont subventionnées.", "note": "Octroi en principe automatique selon les données fiscales ; sinon, faire la demande.", "source": "Amt für Sozialversicherungen Bern (asv.dij.be.ch), 2026", "annee": 2026 } },
     "LU": { "nom": "Lucerne", "alloc": { "e12": 240, "e3": 240, "f12": 290, "f3": 290 } },
     "UR": { "nom": "Uri", "alloc": { "e12": 240, "e3": 240, "f12": 290, "f3": 290 } },
     "SZ": { "nom": "Schwytz", "alloc": { "e12": 240, "e3": 240, "f12": 290, "f3": 290 } },
@@ -35,7 +35,7 @@
     "TI": { "nom": "Tessin", "alloc": { "e12": 240, "e3": 240, "f12": 290, "f3": 290 } },
     "VS": { "nom": "Valais", "alloc": { "e12": 327, "e3": 435, "f12": 477, "f3": 585 } },
     "NE": { "nom": "Neuchâtel", "alloc": { "e12": 240, "e3": 270, "f12": 320, "f3": 350 } },
-    "GE": { "nom": "Genève", "alloc": { "e12": 311, "e3": 411, "f12": 415, "f3": 515 } },
+    "GE": { "nom": "Genève", "alloc": { "e12": 311, "e3": 411, "f12": 415, "f3": 515 }, "subside": { "url": "https://www.ge.ch/informations-generales-subside-assurance-maladie/calculer-mon-subside-ligne", "base_revenu": "RDU (revenu déterminant unifié)", "seuils_indicatifs": "Indicatif 2026 : le subside vise les revenus modestes ; beaucoup de personnes seules sous env. 50'000 CHF de RDU et de couples sous env. 115'000 CHF y ont droit (selon les enfants à charge). Aucun subside si le revenu brut dépasse 200'000 CHF ou la fortune brute 250'000 CHF (plafond officiel).", "note": "Octroi EN PRINCIPE AUTOMATIQUE selon le RDU — pas besoin de faire une demande dans la plupart des cas.", "source": "SAM Genève (ge.ch), barèmes 2026", "annee": 2026 } },
     "JU": { "nom": "Jura", "alloc": { "e12": 275, "e3": 275, "f12": 325, "f3": 325 } }
   }
 }

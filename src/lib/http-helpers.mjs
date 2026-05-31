@@ -86,6 +86,40 @@ export function parseRawBody(req, maxSize) {
 
 // ─── Static file serving ────────────────────────────────────────
 
+// Langues offertes (cf. i18n scope FR/DE/IT/EN).
+const I18N_LOCALES = ['fr', 'de', 'it', 'en'];
+
+/**
+ * Injecte le SEO multilingue dans une page HTML servie (2026-05-31, item 3).
+ * La traduction est client-side (i18n.js via ?lang=) : pour que les versions DE/IT/EN
+ * soient indexables, on déclare côté SERVEUR un cluster hreflang + on règle <html lang>
+ * + un canonical auto-référencé pour les variantes de langue (FR inchangé).
+ * Base FR = le canonical déclaré par la page (source de vérité de l'URL propre).
+ * Ne touche QUE les pages ayant un canonical (= pages de contenu indexables).
+ */
+export function injectI18nSeo(html, lang) {
+  const loc = I18N_LOCALES.includes(lang) ? lang : 'fr';
+  const m = html.match(/<link\s+rel="canonical"\s+href="([^"]+)"/i);
+  const frUrl = m && m[1];
+  if (!frUrl) return html; // pas de canonical → page non indexable, on ne touche à rien
+  const variant = (l) => l === 'fr' ? frUrl : frUrl + (frUrl.includes('?') ? '&' : '?') + 'lang=' + l;
+  // <html lang="xx">
+  html = html.replace(/<html([^>]*?)\s+lang="[^"]*"/i, `<html$1 lang="${loc}"`);
+  // canonical auto-référencé pour les variantes de langue (FR laissé tel quel)
+  if (loc !== 'fr') {
+    html = html.replace(/(<link\s+rel="canonical"\s+href=")[^"]*(")/i, `$1${variant(loc)}$2`);
+  }
+  // cluster hreflang avant </head> (idempotent)
+  if (!/hreflang=/i.test(html)) {
+    const links = [
+      ...I18N_LOCALES.map(l => `  <link rel="alternate" hreflang="${l}" href="${variant(l)}">`),
+      `  <link rel="alternate" hreflang="x-default" href="${frUrl}">`
+    ].join('\n');
+    html = html.replace(/<\/head>/i, `${links}\n</head>`);
+  }
+  return html;
+}
+
 export function serveStatic(req, res, filePath, publicDir) {
   // N'accepte QUE des fichiers : un répertoire passait le existsSync puis faisait
   // readFileSync(dir) → EISDIR APRÈS writeHead → ERR_HTTP_HEADERS_SENT dans le
@@ -111,6 +145,15 @@ export function serveStatic(req, res, filePath, publicDir) {
     cacheControl = 'public, max-age=3600';
   } else if (ext === '.png' || ext === '.svg' || ext === '.ico' || ext === '.jpg' || ext === '.jpeg' || ext === '.gif' || ext === '.webp') {
     cacheControl = 'public, max-age=86400';
+  }
+  // Pages HTML : injection SEO multilingue (hreflang + lang + canonical par ?lang).
+  if (ext === '.html') {
+    let lang = '';
+    try { lang = (new URL(req.url, 'http://h').searchParams.get('lang') || '').toLowerCase(); } catch { /* ignore */ }
+    const html = injectI18nSeo(readFileSync(filePath, 'utf-8'), lang);
+    res.writeHead(200, { 'Content-Type': mime, 'Cache-Control': cacheControl });
+    res.end(html);
+    return;
   }
   res.writeHead(200, { 'Content-Type': mime, 'Cache-Control': cacheControl });
   res.end(readFileSync(filePath));

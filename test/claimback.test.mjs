@@ -252,18 +252,18 @@ describe('claimback — couverture nationale (26 cantons)', () => {
     assert.match(r.message, /minimum fédéral/i);
   });
 
-  it('allocations : plancher fédéral garanti pour un canton au minimum (ZH formation = 290)', () => {
+  it('allocations : plancher fédéral garanti pour un canton au minimum (ZH formation = 268)', () => {
     const r = estimateAllocationsNational('ZH', { enfants_moins16: 0, enfants_formation: 2 });
-    assert.equal(r.total_mensuel, 580); // 2 × 290 (plancher fédéral 2026)
+    assert.equal(r.total_mensuel, 536); // 2 × 268 (minimum fédéral LAFam 2026, vérifié SVA ZH)
   });
 
-  it('allocations : jamais en dessous du minimum fédéral (240/290)', () => {
-    // tous les cantons, 1 enfant <16 → ≥ 240 ; 1 en formation → ≥ 290
+  it('allocations : jamais en dessous du minimum fédéral (215/268)', () => {
+    // minimum fédéral LAFam dès 2025 : 215 CHF/enfant, 268 CHF/formation.
     for (const c of listCantons()) {
       const e = estimateAllocationsNational(c.code, { enfants_moins16: 1, enfants_formation: 0 });
-      assert.ok(e.total_mensuel >= 240, c.code + ' enfant < 240');
+      assert.ok(e.total_mensuel >= 215, c.code + ' enfant < 215');
       const f = estimateAllocationsNational(c.code, { enfants_moins16: 0, enfants_formation: 1 });
-      assert.ok(f.total_mensuel >= 290, c.code + ' formation < 290');
+      assert.ok(f.total_mensuel >= 268, c.code + ' formation < 268');
     }
   });
 

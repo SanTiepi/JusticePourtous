@@ -56,13 +56,43 @@ async function buildCanonSafe(fiche, citizenCanton) {
 // fiche (issus de sa cascade) ; fallback sur les délais du DOMAINE (génériques)
 // seulement si la fiche n'en a pas. Avant ce fix, une fiche caution affichait des
 // délais bail sans rapport (contestation de congé / prolongation / loyer initial).
-function topDelaisCritiques(primary) {
+// gap 2 (audit 2026-05-31) : la cascade d'une fiche porte des délais avec consequence=null.
+// Les VRAIES conséquences + bases légales sont dans delais-procedures.json (curaté, vérifié),
+// exposées via primary.delais. On enrichit chaque délai surfacé avec la conséquence + le flag
+// péremptoire correspondant. Données vérifiées → pas de fabrication LLM (≠ gap 3A).
+function durationKey(delai) {
+  const t = (delai || '').toLowerCase();
+  const m = t.match(/(\d+)\s*(jour|mois|semaine|an)/);
+  if (m) return m[1] + (m[2][0]); // ex "10j", "3m"
+  if (/(immédiat|immediate|sans délai|aussitôt)/.test(t)) return 'imm';
+  return null;
+}
+// Signaux FORTS de perte de droit → délai péremptoire (conservateur).
+function isPeremptoire(...texts) {
+  const blob = texts.filter(Boolean).join(' ').toLowerCase();
+  return /péremptoire|forclos|déchéance|s'éteint|s’éteint|devient exécutoire|devient définiti|irrecevable|tardif|perd(?:ez|re|u|s) (?:le |votre |tout )?droit|continuation de la poursuite/.test(blob);
+}
+export function topDelaisCritiques(primary) {
   if (!primary) return [];
-  const own = primary.fiche?.reponse?.delais;
-  const list = (Array.isArray(own) && own.length)
-    ? own
-    : (primary.delais || []).filter(d => d.domaine === primary.fiche?.domaine);
-  return list.slice(0, 3).map(d => ({ procedure: d.procedure, delai: d.delai, consequence: d.consequence }));
+  const rich = (primary.delais || []).filter(d => d.domaine === primary.fiche?.domaine && d.consequence);
+  const cascade = primary.fiche?.reponse?.delais;
+  const base = (Array.isArray(cascade) && cascade.length) ? cascade : rich;
+  return base.slice(0, 3).map(d => {
+    let { consequence, base_legale, attention } = d;
+    if (!consequence) {
+      // enrichir un délai de cascade via le délai de procédure curaté de même durée
+      const key = durationKey(d.delai);
+      const m = key && rich.find(r => durationKey(r.delai) === key);
+      if (m) { consequence = m.consequence; base_legale = m.base_legale; attention = attention || m.attention; }
+    }
+    return {
+      procedure: d.procedure,
+      delai: d.delai,
+      consequence: consequence || null,
+      base_legale: base_legale || null,
+      peremptoire: isPeremptoire(consequence, attention, d.delai),
+    };
+  });
 }
 
 export async function triage(texte, canton, sessionId, reponses) {

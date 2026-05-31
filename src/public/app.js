@@ -515,7 +515,9 @@ function renderTriageAnalysis(triage, caseId) {
     html += '<div class="card triage-delais"><h3>⏱ Délais à ne pas manquer</h3><ul class="triage-delai-list">';
     triage.delaisCritiques.forEach(function(d) {
       html += '<li><strong>' + escHtmlSafe(d.procedure || '') + '</strong> — ' + escHtmlSafe(d.delai || '');
+      if (d.peremptoire) html += ' <span class="triage-delai-peremptoire" title="Délai impératif : passé ce délai, le droit est définitivement perdu">⚠ délai péremptoire</span>';
       if (d.consequence) html += '<br><span class="triage-delai-conseq">Si dépassé : ' + escHtmlSafe(d.consequence) + '</span>';
+      if (d.base_legale) html += ' <span class="triage-delai-base">(' + escHtmlSafe(d.base_legale) + ')</span>';
       html += '</li>';
     });
     html += '</ul></div>';

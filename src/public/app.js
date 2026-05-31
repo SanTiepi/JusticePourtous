@@ -688,9 +688,9 @@ async function loadResultat(ficheId) {
     html += '<div class="card"' + stagger() + '>';
     html += '<h3>' + t('result.articles_title') + '</h3>';
     r.articles.forEach(function(a) {
-      html += '<a href="' + a.lien + '" target="_blank" rel="noopener" class="article-link">';
-      html += '<span class="ref">' + a.ref + '</span> ';
-      html += '<span class="titre">&mdash; ' + a.titre + '</span>';
+      html += '<a href="' + escAttr(a.lien) + '" target="_blank" rel="noopener" class="article-link">';
+      html += '<span class="ref">' + escHtmlSafe(a.ref) + '</span> ';
+      html += '<span class="titre">&mdash; ' + escHtmlSafe(a.titre) + '</span>';
       html += '</a>';
     });
     html += '</div>';

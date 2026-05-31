@@ -8,17 +8,33 @@ const CACHE_FILE = join(CACHE_DIR, 'index.json');
 
 let cacheLoaded = false;
 let cacheData = {};
+// Le cache disque est une OPTIMISATION, jamais un bloqueur. En conteneur, /app/.cache
+// peut ne pas être inscriptible par l'utilisateur runtime (EACCES sur mkdir) — ce qui
+// faisait throw ensureLoaded() et CASSAIT toute la traduction (status failed_internal,
+// corps des pages bloqué en FR malgré une API LLM fonctionnelle). Bug diagnostiqué le
+// 2026-05-31. On bascule alors en cache MÉMOIRE best-effort, sans jamais throw.
+let cacheDiskDisabled = false;
 
 function ensureLoaded() {
   if (cacheLoaded) return;
-  if (!existsSync(CACHE_DIR)) mkdirSync(CACHE_DIR, { recursive: true });
-  cacheData = safeLoadJSON(CACHE_FILE) || {};
   cacheLoaded = true;
+  try {
+    if (!existsSync(CACHE_DIR)) mkdirSync(CACHE_DIR, { recursive: true });
+    cacheData = safeLoadJSON(CACHE_FILE) || {};
+  } catch {
+    cacheDiskDisabled = true; // disque indisponible → cache mémoire uniquement
+    cacheData = {};
+  }
 }
 
 function persist() {
   ensureLoaded();
-  atomicWriteSync(CACHE_FILE, JSON.stringify(cacheData, null, 2));
+  if (cacheDiskDisabled) return; // best-effort : pas de persistance disque
+  try {
+    atomicWriteSync(CACHE_FILE, JSON.stringify(cacheData, null, 2));
+  } catch {
+    cacheDiskDisabled = true; // l'écriture a échoué une fois → on cesse d'essayer
+  }
 }
 
 export function computeCacheKey(parts) {

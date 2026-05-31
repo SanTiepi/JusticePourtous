@@ -107,6 +107,19 @@ SANS consommer les crédits API. Les failles navigator sont donc prioritaires ET
 
 ### FAIT cette session (2026-05-31)
 gap 3A (anti-fabrication, 6→0), gap 9 (redondance canton), gap 14 (alias IDs), gap 5a (slice 3→5),
-gap 8 (permis keyword), prompt caching. Tous déployés + vérifiés live.
+gap 8 (permis keyword), gap 2 (délais péremptoires : conséquence + flag, données curatées),
+prompt caching. Tous déployés + vérifiés live.
+
+### Testé puis REJETÉ / clos par analyse
+- **gap 11 (confiance)** = NON-PROBLÈME : `nav.confiance` (auto-éval LLM) est calculé mais JETÉ par
+  le pipeline (qui utilise `primary.confiance` de la fiche + complexité structurée). Aucune surface
+  de préjudice. Pas de fix.
+- **Lot prompt 7/10/12/13/15** = testé en un bloc (5 règles d'ancrage/pivot/anti-sur-association/
+  fausses-prémisses/double-voie), éval claude -p : maintient 0 fabrication MAIS métriques de sélection
+  en léger recul (multi 9→6, any 40→39) et spot-check mitigé (chien retiré ✓ mais insalubre ajouté ✗ ;
+  salaire-entry ancré ✓ mais delai_02 régressé ✗). Bruit ≈ bénéfice → **reverté** (non déployé). Ces
+  gaps demandent un traitement CHIRURGICAL individuel + cycle de juge complet par règle, pas un lot.
+- **gap 5b (clusters graphe)** : `ficheToFiches` (312 liens) existe, mais expansion naïve ajoute du
+  bruit cross-domaine (precision↓, cf. gap 12). À faire avec filtrage de pertinence, pas naïvement.
 
 Tous les cas sont intégrés en régression permanente — ces corrections seront mesurables.

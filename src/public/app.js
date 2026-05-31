@@ -739,7 +739,7 @@ async function loadResultat(ficheId) {
   }
 
   // Pont Justice économique : si le domaine touche aux finances/aides, proposer ClaimBack.
-  if (fiche.domaine && ['social', 'assurances', 'dettes', 'famille'].indexOf(fiche.domaine) > -1) {
+  if (fiche.domaine && ['social', 'assurances', 'dettes', 'famille', 'sante'].indexOf(fiche.domaine) > -1) {
     html += '<div class="card je-promo">';
     html += '<h3>💰 Des droits financiers non réclamés ?</h3>';
     html += '<p>Subside d\'assurance-maladie, allocations familiales, prestations complémentaires… Beaucoup d\'aides ne sont jamais demandées. Vérifiez vos droits en 1 minute.</p>';

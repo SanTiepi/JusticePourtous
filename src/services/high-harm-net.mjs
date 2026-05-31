@@ -15,6 +15,14 @@
  * l'expansion pour son bruit). ⚠️ NE PAS élargir les triggers sans re-mesurer (cf. score-complex-eval) :
  * un trigger « congé » a faussement matché « congé de mon employeur » (licenciement) → bail ; un
  * trigger « excès de vitesse » a matché un accident. Étroitesse = sûreté.
+ *
+ * Extensions TESTÉES puis REJETÉES sur le snapshot (2026-05-31) — ne pas re-tenter naïvement :
+ * - travail_chomage (180j, pourtant catastrophique) : trigger large /chômage/ = 2 faux positifs
+ *   (dont un cas succession) ; trigger serré (contexte d'inscription) = 0 faux positif MAIS 0 récup
+ *   (le cas réel dit juste « chômage », trop ambigu pour déclencher sans risque). Non ajouté.
+ * - bail_resiliation_conteste (30j) : 0 récup (le navigator le couvre déjà), 0 FP → aucune valeur.
+ * → Pour rattraper le chômage et les omissions diffuses, le levier n'est PAS un trigger mais la
+ *   sélection du navigator (modèle) ou un signal de vrai usager indiquant l'omission à corriger.
  */
 
 // Chaque entrée : un trigger textuel non ambigu → la fiche à délai péremptoire à garantir.

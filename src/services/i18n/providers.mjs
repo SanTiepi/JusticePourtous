@@ -88,6 +88,19 @@ function isPollutedTranslation(text) {
   return hasQualityClaim && hasNoChangeClaim;
 }
 
+// Retire un fence markdown englobant la traduction. Bug observé en prod (2026-05-31) :
+// le LLM enrobe parfois sa sortie HTML dans ```html ... ``` et le fence fuyait dans la
+// page traduite (« ```html TRANSPARENZ … »). Le prompt l'interdit mais le modèle dévie.
+export function stripCodeFence(s) {
+  if (typeof s !== 'string') return s;
+  let t = s.trim();
+  const m = t.match(/^```[a-zA-Z]*\s*\n?([\s\S]*?)\n?```$/);
+  if (m) return m[1].trim();
+  // Fence orphelin (sortie tronquée) : retire ouverture en tête / fermeture en pied
+  t = t.replace(/^```[a-zA-Z]*\s*\n?/, '').replace(/\n?```\s*$/, '');
+  return t.trim();
+}
+
 async function callAnthropicTranslation({ text, targetLang, html = false, purpose = 'translate', glossary = {} }) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) return null;
@@ -117,7 +130,7 @@ async function callAnthropicTranslation({ text, targetLang, html = false, purpos
       return null;
     }
     const data = await response.json();
-    const translated = data.content?.[0]?.text;
+    const translated = stripCodeFence(data.content?.[0]?.text);
     if (!translated) return null;
     // Filtre anti-pollution : si le LLM a retourné du méta-commentaire au lieu
     // d'une traduction pure, fallback sur le texte d'entrée. Évite que

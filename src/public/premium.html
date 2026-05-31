@@ -136,7 +136,7 @@
         <div class="card">
           <h3 data-i18n="premium.analyze_title">Analyser votre situation</h3>
           <p class="premium-cost-hint" data-i18n="premium.analyze_cost_hint">Coût estimé : CHF 0.08 à 0.25 par analyse</p>
-          <textarea id="question" class="input" data-i18n-placeholder="premium.analyze_placeholder" placeholder="Décrivez votre situation juridique en détail..."></textarea>
+          <textarea id="question" class="input" aria-label="Décrivez votre situation juridique" data-i18n-placeholder="premium.analyze_placeholder" placeholder="Décrivez votre situation juridique en détail..."></textarea>
 
           <!-- Document upload -->
           <div class="premium-upload">
@@ -158,7 +158,7 @@
           <div class="premium-response-header">
             <h3 data-i18n="premium.analysis_label">Analyse</h3>
             <div class="premium-response-actions">
-              <select id="lettreType" class="select">
+              <select id="lettreType" class="select" aria-label="Type de lettre">
                 <option value="mise_en_demeure" data-i18n="letter.mise_en_demeure">Mise en demeure</option>
                 <option value="contestation" data-i18n="letter.contestation">Contestation</option>
                 <option value="opposition" data-i18n="letter.opposition">Opposition</option>
@@ -178,7 +178,7 @@
             <h3 data-i18n="premium.letter_generated">Lettre générée</h3>
             <div class="premium-response-actions">
               <button class="copy-btn" onclick="copyLettre()" data-i18n="action.copier_texte">Copier le texte</button>
-              <select id="docxLang" class="select" style="max-width:150px;font-size:0.85rem">
+              <select id="docxLang" class="select" aria-label="Langue du document" style="max-width:150px;font-size:0.85rem">
                 <option value="fr">Français</option>
                 <option value="de">Deutsch</option>
                 <option value="it">Italiano</option>

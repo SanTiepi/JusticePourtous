@@ -121,5 +121,15 @@ prompt caching. Tous déployés + vérifiés live.
   gaps demandent un traitement CHIRURGICAL individuel + cycle de juge complet par règle, pas un lot.
 - **gap 5b (clusters graphe)** : `ficheToFiches` (312 liens) existe, mais expansion naïve ajoute du
   bruit cross-domaine (precision↓, cf. gap 12). À faire avec filtrage de pertinence, pas naïvement.
+- **gap 5b — expansion MÊME-DOMAINE testée puis REJETÉE PAR JURY (2026-05-31, 2e passe)** :
+  mesure prod (navigator via `claude -p`, 45 cas) = recall multi-fiches **60 %** (53/89), **2,7 fiches/cas**,
+  **≥1 fiche pertinente dans 31/31 cas** (aucun citoyen les mains vides). Tenté : compléter les fiches
+  affichées par le voisin même-domaine du graphe (`relatedSameDomainFiches`, invariant 0 cross-domaine
+  sur 314 fiches). Recall vs `expected_fiches` monterait à ~70 % (~4 fiches/cas). MAIS jury LLM (juriste
+  haiku, 50 ajouts) : **seulement 26 % jugés pertinents** (multi-domaine 55 %, mais C8 for/compétence 0 %,
+  C4 0 %, C5 0 %). Le voisin même-domaine est souvent hors-faits (excès de vitesse→fiche alcoolémie,
+  accident auto→fiche piéton). **Non déployé** (gate jury non franchie, condition Robin). Leçon : le
+  recall vs `expected_fiches` est un MAUVAIS proxy de la pertinence ; le vrai levier est la SÉLECTION
+  du navigator (rattraper les fiches d'AUTRES domaines qu'il rate), pas l'expansion post-hoc.
 
 Tous les cas sont intégrés en régression permanente — ces corrections seront mesurables.

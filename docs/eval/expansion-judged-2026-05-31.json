@@ -1,0 +1,502 @@
+[
+  {
+    "case_id": "cx_multi_01",
+    "category": "multi-domaine",
+    "query": "Je suis en arrêt maladie depuis 3 semaines à cause d'un burnout, mon médecin m'a signé un certificat. Hier mon patron m'a remis ma lettre de licenciement. Et comme si ça suffisait pas, ma régie vient de me mettre un courrier pour augmenter mon loyer de 180 francs dès le prochain terme. Je sais plus où donner de la tête, je suis à Lausanne.",
+    "added": "travail_licenciement_maladie",
+    "titre": "",
+    "explication": "Le droit suisse prevoit une protection contre le licenciement pendant l'incapacité de travail pour cause de maladie (art. 336c al. 1 let. b CO). Un conge notifié pendant cette période est nul (et non ",
+    "relevant": true,
+    "raison": "Licenciement notifié pendant arrêt maladie nul"
+  },
+  {
+    "case_id": "cx_multi_01",
+    "category": "multi-domaine",
+    "query": "Je suis en arrêt maladie depuis 3 semaines à cause d'un burnout, mon médecin m'a signé un certificat. Hier mon patron m'a remis ma lettre de licenciement. Et comme si ça suffisait pas, ma régie vient de me mettre un courrier pour augmenter mon loyer de 180 francs dès le prochain terme. Je sais plus où donner de la tête, je suis à Lausanne.",
+    "added": "bail_loyer_initial_abusif",
+    "titre": "",
+    "explication": "⚠️ DÉLAI 30 JOURS PÉREMPTOIRE — passé ce délai, contestation possible uniquement si formule officielle manquante.\n\nContestation possible dans les 30 jours suivant la réception de la chose (art. 270 al",
+    "relevant": false,
+    "raison": "Art. notification hors-sujet, besoins réels: délais licenciement/loyer"
+  },
+  {
+    "case_id": "cx_multi_02",
+    "category": "multi-domaine",
+    "query": "Mon mari me frappe depuis des mois, j'ai peur pour moi et les enfants. Je veux partir mais j'ai un permis B qui dépend de lui et je sais pas si je peux rester en Suisse si je le quitte. En plus on a un crédit commun à la banque et j'ai reçu un commandement de payer à mon nom alors que c'est lui qui a tout dépensé. Je suis à Genève.",
+    "added": "violence_foyer_refuge",
+    "titre": "",
+    "explication": "Les foyers d'accueil pour femmes victimes de violences sont organisés dans chaque canton et ouverts 24h/24. Malley-Prairie (VD), Solidarité Femmes (GE, NE, BE, VS, FR), Au Cœur des Grottes (GE migrant",
+    "relevant": true,
+    "raison": "Refuge d'urgence violence, besoin immédiat prise en charge"
+  },
+  {
+    "case_id": "cx_multi_02",
+    "category": "multi-domaine",
+    "query": "Mon mari me frappe depuis des mois, j'ai peur pour moi et les enfants. Je veux partir mais j'ai un permis B qui dépend de lui et je sais pas si je peux rester en Suisse si je le quitte. En plus on a un crédit commun à la banque et j'ai reçu un commandement de payer à mon nom alors que c'est lui qui a tout dépensé. Je suis à Genève.",
+    "added": "etranger_permis_b_c",
+    "titre": "",
+    "explication": "Le permis C (établissement) est accorde en principe après 10 ans de sejour régulier en Suisse, dont 5 ans au cours des dernières années (art. 34 al. 2 LEI). Pour les ressortissants de certains pays (U",
+    "relevant": false,
+    "raison": "Permis C (10 ans) hors-sujet, question = permis B après séparation immédiate"
+  },
+  {
+    "case_id": "cx_multi_03",
+    "category": "multi-domaine",
+    "query": "J'ai eu un accident de voiture le mois dernier en allant au travail, l'autre conducteur m'est rentré dedans. J'ai un certificat médical, je suis en arrêt et j'ai mal au dos. Mon employeur ne m'a versé que la moitié de mon salaire ce mois-ci et la voiture est à la casse. Je suis dans le Valais.",
+    "added": "accident_circulation_roles_assurances",
+    "titre": "",
+    "explication": "En matière d'accident de circulation, plusieurs assurances interviennent selon le rôle de chacun. La RC du détenteur du véhicule responsable couvre les dommages corporels et matériels causés aux tiers",
+    "relevant": true,
+    "raison": "RC automobile applicable, dommages corporels/matériels couverts"
+  },
+  {
+    "case_id": "cx_multi_03",
+    "category": "multi-domaine",
+    "query": "J'ai eu un accident de voiture le mois dernier en allant au travail, l'autre conducteur m'est rentré dedans. J'ai un certificat médical, je suis en arrêt et j'ai mal au dos. Mon employeur ne m'a versé que la moitié de mon salaire ce mois-ci et la voiture est à la casse. Je suis dans le Valais.",
+    "added": "circulation_pieton_priorite",
+    "titre": "",
+    "explication": "L'art. 33 LCR consacre la priorité absolue du piéton sur les passages pour piétons NON RÉGLÉS PAR DES SIGNAUX (sans feux ou agent). Le conducteur doit accorder la priorité aux piétons engagés sur le p",
+    "relevant": false,
+    "raison": "Priorité piétons ≠ collision automobile deux véhicules"
+  },
+  {
+    "case_id": "cx_multi_03",
+    "category": "multi-domaine",
+    "query": "J'ai eu un accident de voiture le mois dernier en allant au travail, l'autre conducteur m'est rentré dedans. J'ai un certificat médical, je suis en arrêt et j'ai mal au dos. Mon employeur ne m'a versé que la moitié de mon salaire ce mois-ci et la voiture est à la casse. Je suis dans le Valais.",
+    "added": "travail_licenciement_maladie",
+    "titre": "",
+    "explication": "Le droit suisse prevoit une protection contre le licenciement pendant l'incapacité de travail pour cause de maladie (art. 336c al. 1 let. b CO). Un conge notifié pendant cette période est nul (et non ",
+    "relevant": true,
+    "raison": "Protection licenciement en incapacité travail utile"
+  },
+  {
+    "case_id": "cx_multi_04",
+    "category": "multi-domaine",
+    "query": "Mon père est décédé il y a deux semaines. On vient d'apprendre qu'il avait plein de dettes et des poursuites en cours. En plus il louait un appartement et la régie nous écrit déjà pour qu'on vide les lieux et qu'on paie les loyers. On est trois enfants et on sait pas du tout quoi faire, on a peur de devoir payer ses dettes. C'est à Fribourg.",
+    "added": "successions_renonciation",
+    "titre": "",
+    "explication": "L'héritier peut répudier la succession dans un délai de trois mois (art. 567 al. 1 CC) à compter du jour où il a eu connaissance de l'ouverture de la succession (pour les héritiers légaux) ou de la di",
+    "relevant": true,
+    "raison": "Répudiation protège contre dettes héréditaires, délai 3 mois urgent"
+  },
+  {
+    "case_id": "cx_multi_04",
+    "category": "multi-domaine",
+    "query": "Mon père est décédé il y a deux semaines. On vient d'apprendre qu'il avait plein de dettes et des poursuites en cours. En plus il louait un appartement et la régie nous écrit déjà pour qu'on vide les lieux et qu'on paie les loyers. On est trois enfants et on sait pas du tout quoi faire, on a peur de devoir payer ses dettes. C'est à Fribourg.",
+    "added": "bail_faillite_locataire",
+    "titre": "",
+    "explication": "En cas de faillite, le bailleur peut exiger des sûretés pour les loyers futurs dans un délai raisonnable (art. 266h CO). Sans sûretés, résiliation immédiate possible. La faillite ne met pas fin automa",
+    "relevant": false,
+    "raison": "Faillite du bailleur, pas succession du père décédé"
+  },
+  {
+    "case_id": "cx_multi_04",
+    "category": "multi-domaine",
+    "query": "Mon père est décédé il y a deux semaines. On vient d'apprendre qu'il avait plein de dettes et des poursuites en cours. En plus il louait un appartement et la régie nous écrit déjà pour qu'on vide les lieux et qu'on paie les loyers. On est trois enfants et on sait pas du tout quoi faire, on a peur de devoir payer ses dettes. C'est à Fribourg.",
+    "added": "successions_partage_force",
+    "titre": "",
+    "explication": "À l'ouverture de la succession, les biens deviennent la propriété commune des héritiers (communauté héréditaire, art. 602 CC). Aucun héritier n'est tenu de demeurer dans l'indivision : chaque cohériti",
+    "relevant": true,
+    "raison": "Cadre indivision héritiers, 3 enfants. Contextuel mais non-urgent."
+  },
+  {
+    "case_id": "cx_multi_05",
+    "category": "multi-domaine",
+    "query": "Je me sépare de ma femme, c'est compliqué. Elle est partie avec notre fille de 6 ans et refuse que je la voie. Du coup j'ai arrêté de payer la pension parce que je trouve ça injuste, et maintenant je reçois des papiers de poursuite pour les pensions en retard. En plus mon employeur me dit qu'il va devoir prélever directement sur mon salaire. Je suis à Neuchâtel.",
+    "added": "famille_pension_montant",
+    "titre": "",
+    "explication": "La contribution d'entretien doit couvrir les besoins concrets de l'enfant : logement, nourriture, vetements, assurance maladie, formation, activités extrascolaires (art. 285 al. 1 CC). Depuis 2017, la",
+    "relevant": false,
+    "raison": "Éducatif sur obligation, pas sur défense poursuite retard"
+  },
+  {
+    "case_id": "cx_cascade_01",
+    "category": "C2 — cascade temporelle",
+    "query": "J'ai perdu mon boulot du jour au lendemain il y a deux mois, mon patron ne m'a jamais payé mon dernier salaire ni mes vacances. Du coup je n'ai plus rien pour payer le loyer, j'ai déjà deux mois de retard et la régie m'a envoyé une lettre disant que j'ai 30 jours sinon ils résilient. Je panique, je vais me retrouver à la rue avec mes enfants.",
+    "added": "travail_contrat_oral",
+    "titre": "",
+    "explication": "En droit suisse, le contrat de travail n'exige aucune forme particulière et peut être conclu oralement (art. 320 al. 1 CO). Même le contrat de travail conclu tacitement (par comportement) est valable ",
+    "relevant": false,
+    "raison": "Parle forme du contrat, pas salaire impayé ni expulsion"
+  },
+  {
+    "case_id": "cx_cascade_01",
+    "category": "C2 — cascade temporelle",
+    "query": "J'ai perdu mon boulot du jour au lendemain il y a deux mois, mon patron ne m'a jamais payé mon dernier salaire ni mes vacances. Du coup je n'ai plus rien pour payer le loyer, j'ai déjà deux mois de retard et la régie m'a envoyé une lettre disant que j'ai 30 jours sinon ils résilient. Je panique, je vais me retrouver à la rue avec mes enfants.",
+    "added": "bail_faillite_locataire",
+    "titre": "",
+    "explication": "En cas de faillite, le bailleur peut exiger des sûretés pour les loyers futurs dans un délai raisonnable (art. 266h CO). Sans sûretés, résiliation immédiate possible. La faillite ne met pas fin automa",
+    "relevant": false,
+    "raison": "Procédure formelle; urgence immédiate: salaire impayé + loyer"
+  },
+  {
+    "case_id": "cx_cascade_01",
+    "category": "C2 — cascade temporelle",
+    "query": "J'ai perdu mon boulot du jour au lendemain il y a deux mois, mon patron ne m'a jamais payé mon dernier salaire ni mes vacances. Du coup je n'ai plus rien pour payer le loyer, j'ai déjà deux mois de retard et la régie m'a envoyé une lettre disant que j'ai 30 jours sinon ils résilient. Je panique, je vais me retrouver à la rue avec mes enfants.",
+    "added": "bail_recherche_logement",
+    "titre": "",
+    "explication": "En Suisse, il n'existe pas de droit au logement directement invocable devant les tribunaux. Toutefois, plusieurs mecanismes d'aide existent. En cas de séparation, le juge peut attribuer le logement co",
+    "relevant": false,
+    "raison": "Divorce/séparation, pas urgence loyer-résiliation"
+  },
+  {
+    "case_id": "cx_cascade_03",
+    "category": "C2 — cascade temporelle",
+    "query": "Mon ex ne paie plus la pension pour les enfants depuis presque un an, ça s'accumule. J'ai fait des poursuites contre lui mais l'office m'a dit qu'il n'a rien à saisir, ils m'ont donné un papier qui dit acte de défaut de biens. Je suis à bout, je n'arrive plus à joindre les deux bouts avec les enfants. Est-ce que je perds tout ce qu'il me doit ?",
+    "added": "dettes_acte_defaut_biens_effets",
+    "titre": "",
+    "explication": "L'acte de défaut de biens (ADB, art. 149 LP) est delivre au créancier lorsque la poursuite n'a pas permis de recouvrer la totalite de la créance (saisie infructueuse). L'ADB constaté le solde impayé e",
+    "relevant": true,
+    "raison": "ADB reçu en main — fiche explique le mécanisme exact"
+  },
+  {
+    "case_id": "cx_cascade_03",
+    "category": "C2 — cascade temporelle",
+    "query": "Mon ex ne paie plus la pension pour les enfants depuis presque un an, ça s'accumule. J'ai fait des poursuites contre lui mais l'office m'a dit qu'il n'a rien à saisir, ils m'ont donné un papier qui dit acte de défaut de biens. Je suis à bout, je n'arrive plus à joindre les deux bouts avec les enfants. Est-ce que je perds tout ce qu'il me doit ?",
+    "added": "famille_pension_montant",
+    "titre": "",
+    "explication": "La contribution d'entretien doit couvrir les besoins concrets de l'enfant : logement, nourriture, vetements, assurance maladie, formation, activités extrascolaires (art. 285 al. 1 CC). Depuis 2017, la",
+    "relevant": false,
+    "raison": "Contenu pension, pas recouvrement ni prescription"
+  },
+  {
+    "case_id": "cx_cascade_04",
+    "category": "C2 — cascade temporelle",
+    "query": "Je suis en arrêt maladie depuis 4 mois pour un burnout. La semaine dernière mon employeur m'a envoyé une lettre de licenciement. En plus, je viens de recevoir un courrier de l'Office des migrations qui dit qu'ils vont réexaminer mon permis B parce que je ne travaille plus et que je risque de dépendre de l'aide sociale. Je ne comprends plus rien, est-ce qu'ils ont le droit de me virer pendant que je suis malade ?",
+    "added": "travail_grossesse",
+    "titre": "",
+    "explication": "La travailleuse enceinte bénéficie d'une protection absolue contre le licenciement pendant toute la grossesse et les 16 semaines suivant l'accouchement (art. 336c al. 1 let. c CO). Un conge notifié pe",
+    "relevant": false,
+    "raison": "Protection maternité, aucune grossesse mentionnée dans situation"
+  },
+  {
+    "case_id": "cx_cascade_04",
+    "category": "C2 — cascade temporelle",
+    "query": "Je suis en arrêt maladie depuis 4 mois pour un burnout. La semaine dernière mon employeur m'a envoyé une lettre de licenciement. En plus, je viens de recevoir un courrier de l'Office des migrations qui dit qu'ils vont réexaminer mon permis B parce que je ne travaille plus et que je risque de dépendre de l'aide sociale. Je ne comprends plus rien, est-ce qu'ils ont le droit de me virer pendant que je suis malade ?",
+    "added": "travail_harcelement",
+    "titre": "",
+    "explication": "L'employeur à une obligation légale de protéger la personnalite de ses travailleurs (art. 328 CO) et de prevenir le harcélément. Le mobbing se definit comme des agissements hostiles répétés sur une lo",
+    "relevant": false,
+    "raison": "Mobbing non mentionné, question est licenciement + permis B"
+  },
+  {
+    "case_id": "cx_cascade_04",
+    "category": "C2 — cascade temporelle",
+    "query": "Je suis en arrêt maladie depuis 4 mois pour un burnout. La semaine dernière mon employeur m'a envoyé une lettre de licenciement. En plus, je viens de recevoir un courrier de l'Office des migrations qui dit qu'ils vont réexaminer mon permis B parce que je ne travaille plus et que je risque de dépendre de l'aide sociale. Je ne comprends plus rien, est-ce qu'ils ont le droit de me virer pendant que je suis malade ?",
+    "added": "etranger_permis_c_conditions",
+    "titre": "",
+    "explication": "Le permis C (autorisation d'établissement) est le statut le plus stable pour un étranger en Suisse. Conditions générales (art. 34 LEI) : 10 ans de sejour régulier (dont 5 dans les années precedant la ",
+    "relevant": false,
+    "raison": "Permis C long terme, citoyen a permis B urgent à défendre"
+  },
+  {
+    "case_id": "cx_cascade_04",
+    "category": "C2 — cascade temporelle",
+    "query": "Je suis en arrêt maladie depuis 4 mois pour un burnout. La semaine dernière mon employeur m'a envoyé une lettre de licenciement. En plus, je viens de recevoir un courrier de l'Office des migrations qui dit qu'ils vont réexaminer mon permis B parce que je ne travaille plus et que je risque de dépendre de l'aide sociale. Je ne comprends plus rien, est-ce qu'ils ont le droit de me virer pendant que je suis malade ?",
+    "added": "etranger_permis_b_renouvellement",
+    "titre": "",
+    "explication": "Le permis B (autorisation de sejour) est renouvele a condition que le motif d'octroi subsiste et qu'il n'y ait pas de motif de revocation (art. 33 LEI). Pour les ressortissants UE/AELE, le renouvellem",
+    "relevant": true,
+    "raison": "Motifs révocation permis B face aide sociale, directement applicable"
+  },
+  {
+    "case_id": "cx_cascade_05",
+    "category": "C2 — cascade temporelle",
+    "query": "Mon mari est décédé il y a trois semaines. En triant ses papiers je découvre qu'il avait plein de dettes, des crédits et des poursuites dont je n'avais aucune idée. J'ai peur que les créanciers viennent me réclamer tout ça, et qu'on me prenne aussi la maison. Je ne sais pas du tout quoi faire ni si je dois accepter ou refuser quelque chose. Le temps presse j'imagine ?",
+    "added": "successions_dettes_responsabilite_heritiers",
+    "titre": "",
+    "explication": "Par l'acceptation de la succession (expresse ou tacite), les héritiers deviennent propriétaires des biens mais répondent aussi solidairement et personnellement des dettes du défunt sur leur patrimoine",
+    "relevant": true,
+    "raison": "Acceptation succession = décision critique pour responsabilité dettes du mari"
+  },
+  {
+    "case_id": "cx_cascade_05",
+    "category": "C2 — cascade temporelle",
+    "query": "Mon mari est décédé il y a trois semaines. En triant ses papiers je découvre qu'il avait plein de dettes, des crédits et des poursuites dont je n'avais aucune idée. J'ai peur que les créanciers viennent me réclamer tout ça, et qu'on me prenne aussi la maison. Je ne sais pas du tout quoi faire ni si je dois accepter ou refuser quelque chose. Le temps presse j'imagine ?",
+    "added": "successions_partage_force",
+    "titre": "",
+    "explication": "À l'ouverture de la succession, les biens deviennent la propriété commune des héritiers (communauté héréditaire, art. 602 CC). Aucun héritier n'est tenu de demeurer dans l'indivision : chaque cohériti",
+    "relevant": false,
+    "raison": "Indivision technique, pas dettes/responsabilité cruciaux"
+  },
+  {
+    "case_id": "cx_delai_01",
+    "category": "C3 - délai péremptoire caché",
+    "query": "J'ai reçu une lettre de ma gérance avant-hier qui dit que mon bail se termine le 30 septembre, soi-disant parce qu'ils veulent rénover. Je suis dégoûté, ça fait 8 ans que j'habite là et j'ai jamais eu de problème. Je vais commencer à chercher un autre appart ce week-end mais franchement je trouve ça dégueulasse. Je peux faire quoi pour qu'ils me laissent au moins jusqu'à l'été prochain ?",
+    "added": "bail_loyer_abusif",
+    "titre": "",
+    "explication": "Le loyer est abusif lorsqu'il permet au bailleur d'obtenir un rendement excessif de la chose louée ou lorsqu'il résulte d'un prix d'achat manifestement exagéré (art. 269 CO).\n\nLe rendement net admissi",
+    "relevant": false,
+    "raison": "Résiliation bail ≠ loyer abusif"
+  },
+  {
+    "case_id": "cx_delai_01",
+    "category": "C3 - délai péremptoire caché",
+    "query": "J'ai reçu une lettre de ma gérance avant-hier qui dit que mon bail se termine le 30 septembre, soi-disant parce qu'ils veulent rénover. Je suis dégoûté, ça fait 8 ans que j'habite là et j'ai jamais eu de problème. Je vais commencer à chercher un autre appart ce week-end mais franchement je trouve ça dégueulasse. Je peux faire quoi pour qu'ils me laissent au moins jusqu'à l'été prochain ?",
+    "added": "bail_changement_proprietaire",
+    "titre": "",
+    "explication": "En cas de vente, le bail passe automatiquement au nouveau propriétaire (art. 261 al. 1 CO). Le locataire n a aucune demarche ; le bail continue aux memes conditions. Le nouveau propriétaire peut résil",
+    "relevant": false,
+    "raison": "Fiche sur vente/succession, situation = résiliation pour rénovation"
+  },
+  {
+    "case_id": "cx_delai_03",
+    "category": "C3 - délai péremptoire caché",
+    "query": "Je me suis fait arrêter par la police il y a 6 jours, contrôle d'alcool en sortant d'un resto. J'ai soufflé et c'était positif. La semaine d'après j'ai reçu une enveloppe du Ministère public, une 'ordonnance pénale' qui me condamne à une amende et des jours-amende avec sursis. Honnêtement le chiffre d'alcool me paraît trop élevé par rapport à ce que j'avais bu, mais bon je me dis que c'est fait c'est fait, je vais payer et passer à autre chose. Je risque quoi pour mon permis ?",
+    "added": "circulation_retrait_permis_exces_vitesse",
+    "titre": "",
+    "explication": "Les retraits de permis pour excès de vitesse sont régis par les art. 16 ss LCR. La gravité de la faute détermine la durée du retrait : faute légère (art. 16a LCR — avertissement ou 1 mois minimum), fa",
+    "relevant": false,
+    "raison": "Fiche excès vitesse vs alcool au volant — domaines distincts"
+  },
+  {
+    "case_id": "cx_delai_04",
+    "category": "C3 - délai péremptoire caché",
+    "query": "Le Service de la population m'a envoyé une décision qui dit qu'ils ne renouvellent pas mon permis B et que je dois quitter la Suisse. Ça fait 6 ans que je vis ici, je travaille, j'ai mes enfants à l'école ici. J'ai reçu ça il y a 12 jours mais j'étais tellement sous le choc que je n'ai rien fait. Un ami m'a dit qu'il fallait peut-être consulter un avocat mais que de toute façon je pouvais faire le recours quand je serais prêt. Je peux prendre mon temps pour préparer un bon dossier non ?",
+    "added": "etranger_aide_sociale_permis",
+    "titre": "",
+    "explication": "La perception de l'aide sociale peut avoir des conséquences graves sur le droit de sejour (art. 62 al. 1 let. e et art. 63 al. 1 let. c LEI). Pour le permis B, la dependance à l'aide sociale est un mo",
+    "relevant": false,
+    "raison": "Citoyen travaille, aide sociale non mentionnée."
+  },
+  {
+    "case_id": "cx_delai_04",
+    "category": "C3 - délai péremptoire caché",
+    "query": "Le Service de la population m'a envoyé une décision qui dit qu'ils ne renouvellent pas mon permis B et que je dois quitter la Suisse. Ça fait 6 ans que je vis ici, je travaille, j'ai mes enfants à l'école ici. J'ai reçu ça il y a 12 jours mais j'étais tellement sous le choc que je n'ai rien fait. Un ami m'a dit qu'il fallait peut-être consulter un avocat mais que de toute façon je pouvais faire le recours quand je serais prêt. Je peux prendre mon temps pour préparer un bon dossier non ?",
+    "added": "etranger_renvoi",
+    "titre": "",
+    "explication": "⚠️ DÉLAI DE RECOURS PÉREMPTOIRE — 30 jours en règle générale, parfois 5 jours en procédure d'asile accélérée (art. 108 al. 1 LAsi). Passé ce délai, le recours est irrecevable. Vérifiez immédiatement l",
+    "relevant": true,
+    "raison": "Délai récours 30j péremptoire, urgence critique"
+  },
+  {
+    "case_id": "cx_delai_05",
+    "category": "C3 - délai péremptoire caché",
+    "query": "Ma gérance m'a envoyé une lettre avec un formulaire officiel disant que mon loyer passe de 1450 à 1690 francs dès le prochain terme, soi-disant à cause de travaux dans l'immeuble et de l'évolution des coûts. J'ai reçu ça il y a une dizaine de jours. Ça me semble énorme pour ce que c'est, mais je suppose qu'ils ont le droit puisque c'est sur un formulaire officiel. Je vais leur téléphoner un de ces jours pour négocier à l'amiable une hausse plus douce.",
+    "added": "bail_loyer_initial_abusif",
+    "titre": "",
+    "explication": "⚠️ DÉLAI 30 JOURS PÉREMPTOIRE — passé ce délai, contestation possible uniquement si formule officielle manquante.\n\nContestation possible dans les 30 jours suivant la réception de la chose (art. 270 al",
+    "relevant": false,
+    "raison": "Art. 270 régit résiliation, pas augmentation loyer"
+  },
+  {
+    "case_id": "cx_fab_01",
+    "category": "C4-fabrication",
+    "query": "Mon patron m'a viré du jour au lendemain sans aucune raison. J'ai un collègue qui m'a dit que dans ces cas-là on a droit à 6 mois de salaire d'indemnité, c'est bien ça la loi non? Je veux récupérer mes 6 mois.",
+    "added": "travail_licenciement_maladie",
+    "titre": "",
+    "explication": "Le droit suisse prevoit une protection contre le licenciement pendant l'incapacité de travail pour cause de maladie (art. 336c al. 1 let. b CO). Un conge notifié pendant cette période est nul (et non ",
+    "relevant": false,
+    "raison": "Incapacité de travail maladie non mentionnée situation"
+  },
+  {
+    "case_id": "cx_fab_03",
+    "category": "C4-fabrication",
+    "query": "J'ai acheté un canapé en magasin il y a deux semaines mais finalement il ne me plaît pas et il est trop grand. J'ai bien 14 jours pour le ramener et me faire rembourser comme pour les achats en ligne, c'est la loi suisse non?",
+    "added": "consommation_defaut_produit_garantie",
+    "titre": "",
+    "explication": "En droit suisse de la vente, le vendeur est garant des défauts qui enlèvent à la chose sa valeur ou son aptitude à l'usage prévu (art. 197 al. 1 CO). L'acheteur doit vérifier la chose aussitôt que pos",
+    "relevant": false,
+    "raison": "Garantie défauts, pas droit rétractation/insatisfaction"
+  },
+  {
+    "case_id": "cx_fab_04",
+    "category": "C4-fabrication",
+    "query": "Ma régie veut augmenter mon loyer de 200 francs. Mon voisin m'a dit qu'une augmentation de loyer est limitée à 10% maximum par an par la loi. Donc ils n'ont pas le droit de monter de plus de 10%, je peux refuser le reste?",
+    "added": "bail_loyer_initial_abusif",
+    "titre": "",
+    "explication": "⚠️ DÉLAI 30 JOURS PÉREMPTOIRE — passé ce délai, contestation possible uniquement si formule officielle manquante.\n\nContestation possible dans les 30 jours suivant la réception de la chose (art. 270 al",
+    "relevant": false,
+    "raison": "Fiche résiliation (art. 270), pas augmentation loyer"
+  },
+  {
+    "case_id": "cx_fab_05",
+    "category": "C4-fabrication",
+    "query": "Je me suis fait flasher à 30 km/h au-dessus de la limite sur une route à 50. Un pote m'a dit que pour un premier excès de vitesse on a toujours droit à un simple avertissement sans retrait de permis, c'est garanti par la loi pour les primo-délinquants non?",
+    "added": "circulation_alcool_retrait_permis",
+    "titre": "",
+    "explication": "Le taux limite d'alcoolémie en Suisse est de 0,5 ‰ dans le sang (= 0,25 mg/l dans l'air expiré) pour les conducteurs ordinaires (art. 31 LCR et OAC). Pour les conducteurs en permis à l'essai, les chau",
+    "relevant": false,
+    "raison": "Fiche alcoolémie, situation excès vitesse uniquement."
+  },
+  {
+    "case_id": "cx_extract_02",
+    "category": "C5 — info déjà donnée (extract-first)",
+    "query": "Je travaille comme magasinière à Fribourg depuis le 1er mars 2017. Mon patron m'a licenciée le 12 mai 2026 avec effet au 31 juillet. Le problème c'est que j'ai un certificat médical : je suis en arrêt total pour dépression depuis le 28 avril 2026 et le médecin dit minimum 3 mois. J'ai un CDI normal, jamais eu d'avertissement. Est-ce qu'ils ont le droit de me virer alors que je suis malade ?",
+    "added": "travail_grossesse",
+    "titre": "",
+    "explication": "La travailleuse enceinte bénéficie d'une protection absolue contre le licenciement pendant toute la grossesse et les 16 semaines suivant l'accouchement (art. 336c al. 1 let. c CO). Un conge notifié pe",
+    "relevant": false,
+    "raison": "Fiche grossesse, situation = maladie/dépression"
+  },
+  {
+    "case_id": "cx_extract_04",
+    "category": "C5 — info déjà donnée (extract-first)",
+    "query": "Hier soir à Lausanne j'ai été flashé sur la route de Berne, en ville donc limite 50, le radar a affiché 78 km/h après déduction. Je conduis depuis 11 ans, jamais eu le moindre souci avec mon permis. Là j'ai reçu un courrier qui parle d'un possible retrait. J'ai absolument besoin de ma voiture pour mon boulot de livreur, je suis terrifié de perdre mon permis.",
+    "added": "circulation_alcool_retrait_permis",
+    "titre": "",
+    "explication": "Le taux limite d'alcoolémie en Suisse est de 0,5 ‰ dans le sang (= 0,25 mg/l dans l'air expiré) pour les conducteurs ordinaires (art. 31 LCR et OAC). Pour les conducteurs en permis à l'essai, les chau",
+    "relevant": false,
+    "raison": "Alcoolémie non mentionnée, cas excès de vitesse"
+  },
+  {
+    "case_id": "cx_marginal_01",
+    "category": "C7",
+    "query": "Je viens de recevoir mon congé de mon employeur, on me met dehors dans deux mois. Je suis dégoûté, ça fait 6 ans que je bosse là.",
+    "added": "travail_licenciement_maladie",
+    "titre": "",
+    "explication": "Le droit suisse prevoit une protection contre le licenciement pendant l'incapacité de travail pour cause de maladie (art. 336c al. 1 let. b CO). Un conge notifié pendant cette période est nul (et non ",
+    "relevant": false,
+    "raison": "Protection maladie requise; situation mentionne congé standard"
+  },
+  {
+    "case_id": "cx_marginal_01",
+    "category": "C7",
+    "query": "Je viens de recevoir mon congé de mon employeur, on me met dehors dans deux mois. Je suis dégoûté, ça fait 6 ans que je bosse là.",
+    "added": "travail_periode_essai",
+    "titre": "",
+    "explication": "La période d essai est de 1 mois sauf accord écrit different (art. 335b al. 1 CO). Elle peut être étendue jusqu a 3 mois maximum par accord écrit. Pendant cette période, chaque partie peut résilier av",
+    "relevant": false,
+    "raison": "Période d'essai expirée après 6 ans d'ancienneté"
+  },
+  {
+    "case_id": "cx_marginal_03",
+    "category": "C7",
+    "query": "Mon voisin a un nouveau-né qui hurle toutes les nuits et son chien aboie sans arrêt pendant la journée. Je n'en peux plus, je ne dors plus depuis des semaines. Je veux que ça cesse.",
+    "added": "voisinage_fumee_odeurs",
+    "titre": "",
+    "explication": "Les immissions de fumée, suie et odeurs entrent dans le champ de l'art. 684 CC, qui interdit tout excès dans l'exercice du droit de propriété nuisant au voisinage. Le seuil de l'excessif s'apprécie se",
+    "relevant": true,
+    "raison": "Art. 684 CC s'applique aux bruits excessifs du voisinage, pas seulement fumées/odeurs"
+  },
+  {
+    "case_id": "cx_marginal_04",
+    "category": "C7",
+    "query": "Mon mari et moi on se sépare et c'est la guerre pour les enfants. Il dit qu'il va les prendre et je ne le reverrai plus. J'ai peur qu'il parte avec eux. Aidez-moi vite.",
+    "added": "famille_mesures_protection",
+    "titre": "",
+    "explication": "Les mesures protectrices de l'union conjugale (MPUC, art. 172-179 CC) sont des mesures provisoires qui reglent la vie séparée sans passer par un divorce. Elles sont souvent demandees en urgence. Le ju",
+    "relevant": true,
+    "raison": "MPUC règlent garde/visite urgentes, répond directement à la crainte"
+  },
+  {
+    "case_id": "cx_marginal_04",
+    "category": "C7",
+    "query": "Mon mari et moi on se sépare et c'est la guerre pour les enfants. Il dit qu'il va les prendre et je ne le reverrai plus. J'ai peur qu'il parte avec eux. Aidez-moi vite.",
+    "added": "famille_autorite_parentale_conjointe",
+    "titre": "",
+    "explication": "Depuis 2014, l'autorité parentale conjointe est la regle, y compris pour les parents non maries (art. 296 al. 2 CC). Pour les parents maries, l'autorité parentale conjointe est automatique. Pour les p",
+    "relevant": false,
+    "raison": "Crise soustraction imminente > règles générales autorité"
+  },
+  {
+    "case_id": "cx_marginal_04",
+    "category": "C7",
+    "query": "Mon mari et moi on se sépare et c'est la guerre pour les enfants. Il dit qu'il va les prendre et je ne le reverrai plus. J'ai peur qu'il parte avec eux. Aidez-moi vite.",
+    "added": "famille_pension_montant",
+    "titre": "",
+    "explication": "La contribution d'entretien doit couvrir les besoins concrets de l'enfant : logement, nourriture, vetements, assurance maladie, formation, activités extrascolaires (art. 285 al. 1 CC). Depuis 2017, la",
+    "relevant": false,
+    "raison": "Aspect financier secondaire, urgence = garde des enfants"
+  },
+  {
+    "case_id": "cx_marginal_05",
+    "category": "C7",
+    "query": "Je me suis fait choper par un radar sur l'autoroute. J'ai eu un peu la main lourde sur l'accélérateur. Je flippe pour mon permis, j'en ai besoin pour le boulot. C'est grave ?",
+    "added": "circulation_alcool_retrait_permis",
+    "titre": "",
+    "explication": "Le taux limite d'alcoolémie en Suisse est de 0,5 ‰ dans le sang (= 0,25 mg/l dans l'air expiré) pour les conducteurs ordinaires (art. 31 LCR et OAC). Pour les conducteurs en permis à l'essai, les chau",
+    "relevant": false,
+    "raison": "Excès de vitesse ≠ alcoolémie, domaine disjoint"
+  },
+  {
+    "case_id": "cx_for_01",
+    "category": "C8",
+    "query": "J'habite à Nyon mais je loue un appartement à Genève. La régie vient de me donner mon congé et je trouve ça totalement injuste, j'y vis depuis 8 ans. Un ami m'a dit d'aller au tribunal des baux ici à Nyon vu que c'est là que j'habite. C'est bien ça ?",
+    "added": "bail_changement_proprietaire",
+    "titre": "",
+    "explication": "En cas de vente, le bail passe automatiquement au nouveau propriétaire (art. 261 al. 1 CO). Le locataire n a aucune demarche ; le bail continue aux memes conditions. Le nouveau propriétaire peut résil",
+    "relevant": false,
+    "raison": "Vente non mentionnée. Question = compétence tribunal + légitimité congé."
+  },
+  {
+    "case_id": "cx_for_03",
+    "category": "C8",
+    "query": "Je vis à Zurich. Pendant mes vacances en Valais, un automobiliste valaisan m'a embouti à un rond-point, j'ai eu le cou bloqué et ma voiture est foutue. Son assurance traîne et refuse de tout payer. Je veux les attaquer mais je ne sais pas si je dois ouvrir action à Zurich chez moi, ou en Valais là où ça s'est passé, et contre qui exactement.",
+    "added": "circulation_pieton_priorite",
+    "titre": "",
+    "explication": "L'art. 33 LCR consacre la priorité absolue du piéton sur les passages pour piétons NON RÉGLÉS PAR DES SIGNAUX (sans feux ou agent). Le conducteur doit accorder la priorité aux piétons engagés sur le p",
+    "relevant": false,
+    "raison": "Fiche piétons, accident auto-auto sans tiers"
+  },
+  {
+    "case_id": "cx_for_03",
+    "category": "C8",
+    "query": "Je vis à Zurich. Pendant mes vacances en Valais, un automobiliste valaisan m'a embouti à un rond-point, j'ai eu le cou bloqué et ma voiture est foutue. Son assurance traîne et refuse de tout payer. Je veux les attaquer mais je ne sais pas si je dois ouvrir action à Zurich chez moi, ou en Valais là où ça s'est passé, et contre qui exactement.",
+    "added": "accident_domestique_responsabilite",
+    "titre": "",
+    "explication": "Un accident hors cadre professionnel engage plusieurs régimes. Pour les salariés, la LAA couvre aussi les accidents non professionnels (art. 8 LAA) si taux d'occupation ≥ 8h/semaine. Pour les autres (",
+    "relevant": false,
+    "raison": "LAA hors-sujet, accident civil non-professionnel"
+  },
+  {
+    "case_id": "cx_for_04",
+    "category": "C8",
+    "query": "Mon mari et moi on se sépare. On s'est mariés à Berne mais on a toujours vécu à Genève. Maintenant lui est reparti vivre chez ses parents à Berne et moi je reste à Genève avec les enfants. On est d'accord pour divorcer. Je dépose la demande où, à Berne là où on s'est mariés, ou ici à Genève ?",
+    "added": "famille_divorce",
+    "titre": "",
+    "explication": "Le divorce peut être demande sur requete commune (art. 111 CC) lorsque les deux époux sont d'accord, ou sur demande unilaterale après 2 ans de séparation (art. 114 CC). La requete commune peut être av",
+    "relevant": false,
+    "raison": "Procédure oui, pas compétence territoriale"
+  },
+  {
+    "case_id": "cx_for_05",
+    "category": "C8",
+    "query": "Mon père est décédé. Il habitait depuis toujours à Sion en Valais, mais il avait un appartement à Montreux et un compte dans une banque à Zurich. Moi j'habite Lausanne. Je dois obtenir un papier qui prouve que je suis héritier pour débloquer le compte, mais je ne sais pas à quelle justice m'adresser : Lausanne où je vis, Montreux pour l'appart, Zurich pour la banque, ou Sion ?",
+    "added": "successions_testament_olographe_forme",
+    "titre": "",
+    "explication": "Le testament olographe (art. 505 CC) est la forme la plus courante en Suisse. Il est soumis à trois exigences strictes et cumulatives : (1) être écrit ENTIÈREMENT à la main par le testateur — toute pa",
+    "relevant": false,
+    "raison": "Forme testament, pas compétence territoriale"
+  },
+  {
+    "case_id": "cx_fauxami_01",
+    "category": "C9_faux_amis_complexite",
+    "query": "Ma régie refuse de me rendre ma garantie de loyer. J'ai quitté l'appartement à Lausanne il y a deux mois et entre-temps j'ai déménagé en Allemagne pour le travail. Je suis donc à l'étranger maintenant, est-ce que ça complique les choses pour récupérer mes 4500 francs ?",
+    "added": "bail_faillite_locataire",
+    "titre": "",
+    "explication": "En cas de faillite, le bailleur peut exiger des sûretés pour les loyers futurs dans un délai raisonnable (art. 266h CO). Sans sûretés, résiliation immédiate possible. La faillite ne met pas fin automa",
+    "relevant": false,
+    "raison": "Faillite bailleur non-pertinente, cas restitution caution"
+  },
+  {
+    "case_id": "cx_fauxami_02",
+    "category": "C9_faux_amis_complexite",
+    "query": "C'est une situation URGENTE et très GRAVE, j'ai de la moisissure noire qui revient sur le mur de la chambre depuis trois mois et la régie ne fait rien. C'est super compliqué et je panique, j'ai l'impression que je vais devoir prendre un avocat tellement c'est sérieux.",
+    "added": "bail_travaux_non_faits",
+    "titre": "",
+    "explication": "Le bailleur à l'obligation légale d'entretenir la chose louee en état de servir à l'usage convenu et de remédier aux défauts qui ne sont pas à la charge du locataire (art. 256 al. 1 et 259b CO). Le me",
+    "relevant": true,
+    "raison": "Obligation bailleur remédier défauts moisissure"
+  },
+  {
+    "case_id": "cx_fauxami_03",
+    "category": "C9_faux_amis_complexite",
+    "query": "Mon patron ne m'a pas payé mon salaire de mars ni d'avril, ça fait environ 9200 francs au total. C'est un gros montant et l'affaire me paraît vraiment compliquée parce qu'il y a beaucoup d'argent en jeu et il me menace. Qu'est-ce que je peux faire ?",
+    "added": "travail_contrat_oral",
+    "titre": "",
+    "explication": "En droit suisse, le contrat de travail n'exige aucune forme particulière et peut être conclu oralement (art. 320 al. 1 CO). Même le contrat de travail conclu tacitement (par comportement) est valable ",
+    "relevant": false,
+    "raison": "Forme contrat valide, ne résout pas non-paiement salaire"
+  },
+  {
+    "case_id": "cx_fauxami_05",
+    "category": "C9_faux_amis_complexite",
+    "query": "J'ai trouvé sous mon essuie-glace une amende de 40 francs pour stationnement. C'est une catastrophe, je suis terrifié, est-ce que je vais avoir un casier judiciaire et perdre mon permis à cause de ça ? L'affaire me semble très grave.",
+    "added": "circulation_retrait_permis_exces_vitesse",
+    "titre": "",
+    "explication": "Les retraits de permis pour excès de vitesse sont régis par les art. 16 ss LCR. La gravité de la faute détermine la durée du retrait : faute légère (art. 16a LCR — avertissement ou 1 mois minimum), fa",
+    "relevant": false,
+    "raison": "Fiche excès vitesse, situation stationnement — risques différents"
+  }
+]

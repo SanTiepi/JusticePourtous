@@ -133,3 +133,41 @@ prompt caching. Tous déployés + vérifiés live.
   du navigator (rattraper les fiches d'AUTRES domaines qu'il rate), pas l'expansion post-hoc.
 
 Tous les cas sont intégrés en régression permanente — ces corrections seront mesurables.
+
+## Recadrage HARM-WEIGHTED + clôture du sprint technique (2026-05-31, arbitrage Codex)
+
+Codex : « ≥1 fiche pertinente » ne suffit pas si la fiche MANQUÉE porte un enjeu grave. On ne
+vise pas un recall abstrait → on vise **0 omission DANGEREUSE**. Artefacts reproductibles
+committés : `docs/eval/complex-eval-2026-05-31.json` (45 sorties navigator+keyword),
+`docs/eval/expansion-judged-2026-05-31.json` (jury), scorer `scripts/score-complex-eval.mjs`,
+résultat `docs/eval/harm-weighted-score.json`.
+
+**Métrique harm-weighted (31 cas multi-fiches)** :
+- `au_moins_une_fiche_pertinente` : **31/31** (plancher : aucun citoyen les mains vides).
+- `recall_brut` : 53/89 (60 %).
+- **`critical_omission` : 21** (fiche manquée portant délai péremptoire / séjour / poursuite /
+  sécurité / recours) — dont 20 à délai péremptoire (sanity-check OK : dettes_opposition 10j,
+  travail_chomage 180j…). **`benign_omission` : 15.**
+- `harmful_noise` (expansion) : **74 %** (37/50 ajouts hors-faits) → expansion non shippée.
+
+**Conclusion : les 21 omissions critiques sont DIFFUSES** (19 fiches distinctes sur 6 domaines :
+travail 7, bail 6, dettes 3, étrangers 3, social 1, circulation 1 ; max 2× pour une même fiche).
+Pas de 2-3 classes dominantes à attaquer chirurgicalement.
+
+**Expansion post-hoc = cul-de-sac (toutes variantes testées + mesurées)** :
+| Stratégie | recall | bruit |
+|---|---|---|
+| même-domaine cap-1 | 60→70 % | jury 74 % hors-sujet |
+| même-domaine + péremptoire-ciblée | récupère 11/21 critiques | 170 ajouts, **6 % de hits (94 % bruit)** |
+
+Le graphe `ficheToFiches` est trop large ; "même domaine" et "même domaine + péremptoire" ne
+sont pas assez sélectifs (bcp de fiches portent un délai péremptoire). **Le seul levier technique
+restant = améliorer la SÉLECTION du navigator (prompt) sur les ratés cross-domaine** — cible
+diffuse, déjà régressée en lot, bas rendement/haut risque.
+
+**DÉCISION (règle de stop Codex)** : gain technique faible et bruyant → **on arrête l'expansion
+et on bascule sur les leviers humains** (5 testeurs réels + validation juriste de 5 fiches gold).
+Le code donne toujours ≥1 fiche pertinente et 0 fabrication ; il est assez bon pour APPRENDRE du
+réel, pas assez validé pour prétendre robuste sur tous les cas complexes. Les 21 omissions
+critiques restent un risque documenté à rouvrir si un cas réel le révèle (priorité : que la
+sélection navigator ne rate pas une 2e procédure à délai péremptoire dans un autre domaine).

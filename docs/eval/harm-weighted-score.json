@@ -1,0 +1,679 @@
+{
+  "summary": {
+    "cases_multi": 31,
+    "au_moins_une_fiche_pertinente": "31/31",
+    "recall_brut": "53/89 (60%)",
+    "critical_omission": 21,
+    "benign_omission": 15,
+    "critical_par_classe": {
+      "délai péremptoire": 20,
+      "voie de recours": 1
+    },
+    "harmful_noise": {
+      "total_additions": 50,
+      "harmful": 37,
+      "harmful_pct": 74
+    }
+  },
+  "report": [
+    {
+      "id": "cx_multi_01",
+      "category": "multi-domaine",
+      "expected": [
+        "travail_licenciement_maladie",
+        "bail_augmentation_loyer"
+      ],
+      "found": [
+        "bail_augmentation_loyer"
+      ],
+      "missing": [
+        {
+          "id": "travail_licenciement_maladie",
+          "harm": "critical",
+          "raison": "délai péremptoire",
+          "domaine": "travail"
+        }
+      ]
+    },
+    {
+      "id": "cx_multi_02",
+      "category": "multi-domaine",
+      "expected": [
+        "famille_violence_conjugale",
+        "etranger_violence_permis",
+        "dettes_commandement_payer"
+      ],
+      "found": [
+        "etranger_violence_permis",
+        "dettes_commandement_payer"
+      ],
+      "missing": [
+        {
+          "id": "famille_violence_conjugale",
+          "harm": "benign",
+          "raison": "informatif secondaire",
+          "domaine": "famille"
+        }
+      ]
+    },
+    {
+      "id": "cx_multi_03",
+      "category": "multi-domaine",
+      "expected": [
+        "accident_travail",
+        "accident_circulation",
+        "travail_salaire_impaye"
+      ],
+      "found": [
+        "accident_travail"
+      ],
+      "missing": [
+        {
+          "id": "accident_circulation",
+          "harm": "benign",
+          "raison": "informatif secondaire",
+          "domaine": "accident"
+        },
+        {
+          "id": "travail_salaire_impaye",
+          "harm": "critical",
+          "raison": "délai péremptoire",
+          "domaine": "travail"
+        }
+      ]
+    },
+    {
+      "id": "cx_multi_04",
+      "category": "multi-domaine",
+      "expected": [
+        "successions_renonciation",
+        "successions_benefice_inventaire",
+        "bail_deces_locataire"
+      ],
+      "found": [
+        "successions_benefice_inventaire"
+      ],
+      "missing": [
+        {
+          "id": "successions_renonciation",
+          "harm": "benign",
+          "raison": "informatif secondaire",
+          "domaine": "successions"
+        },
+        {
+          "id": "bail_deces_locataire",
+          "harm": "critical",
+          "raison": "délai péremptoire",
+          "domaine": "bail"
+        }
+      ]
+    },
+    {
+      "id": "cx_multi_05",
+      "category": "multi-domaine",
+      "expected": [
+        "famille_droit_visite",
+        "famille_pension_impayee",
+        "dettes_saisie_salaire"
+      ],
+      "found": [
+        "famille_pension_impayee"
+      ],
+      "missing": [
+        {
+          "id": "famille_droit_visite",
+          "harm": "benign",
+          "raison": "informatif secondaire",
+          "domaine": "famille"
+        },
+        {
+          "id": "dettes_saisie_salaire",
+          "harm": "critical",
+          "raison": "délai péremptoire",
+          "domaine": "dettes"
+        }
+      ]
+    },
+    {
+      "id": "cx_cascade_01",
+      "category": "C2 — cascade temporelle",
+      "expected": [
+        "travail_salaire_impaye",
+        "travail_chomage",
+        "bail_loyers_impayes",
+        "bail_recherche_logement"
+      ],
+      "found": [
+        "travail_salaire_impaye",
+        "bail_loyers_impayes"
+      ],
+      "missing": [
+        {
+          "id": "travail_chomage",
+          "harm": "critical",
+          "raison": "délai péremptoire",
+          "domaine": "travail"
+        },
+        {
+          "id": "bail_recherche_logement",
+          "harm": "critical",
+          "raison": "délai péremptoire",
+          "domaine": "bail"
+        }
+      ]
+    },
+    {
+      "id": "cx_cascade_02",
+      "category": "C2 — cascade temporelle",
+      "expected": [
+        "dettes_commandement_payer",
+        "dettes_opposition",
+        "dettes_mainlevee_provisoire"
+      ],
+      "found": [
+        "dettes_commandement_payer",
+        "dettes_opposition",
+        "dettes_mainlevee_provisoire"
+      ],
+      "missing": []
+    },
+    {
+      "id": "cx_cascade_03",
+      "category": "C2 — cascade temporelle",
+      "expected": [
+        "famille_pension_impayee",
+        "dettes_acte_defaut_biens",
+        "social_aide_sociale"
+      ],
+      "found": [
+        "famille_pension_impayee",
+        "dettes_acte_defaut_biens"
+      ],
+      "missing": [
+        {
+          "id": "social_aide_sociale",
+          "harm": "critical",
+          "raison": "délai péremptoire",
+          "domaine": "social"
+        }
+      ]
+    },
+    {
+      "id": "cx_cascade_04",
+      "category": "C2 — cascade temporelle",
+      "expected": [
+        "travail_licenciement_maladie",
+        "travail_maladie",
+        "etranger_aide_sociale_permis",
+        "etranger_permis_b_renouvellement"
+      ],
+      "found": [
+        "travail_licenciement_maladie",
+        "etranger_aide_sociale_permis"
+      ],
+      "missing": [
+        {
+          "id": "travail_maladie",
+          "harm": "critical",
+          "raison": "délai péremptoire",
+          "domaine": "travail"
+        },
+        {
+          "id": "etranger_permis_b_renouvellement",
+          "harm": "critical",
+          "raison": "délai péremptoire",
+          "domaine": "etrangers"
+        }
+      ]
+    },
+    {
+      "id": "cx_cascade_05",
+      "category": "C2 — cascade temporelle",
+      "expected": [
+        "successions_renonciation",
+        "successions_benefice_inventaire",
+        "successions_dettes_responsabilite_heritiers"
+      ],
+      "found": [
+        "successions_renonciation",
+        "successions_benefice_inventaire"
+      ],
+      "missing": [
+        {
+          "id": "successions_dettes_responsabilite_heritiers",
+          "harm": "benign",
+          "raison": "informatif secondaire",
+          "domaine": "successions"
+        }
+      ]
+    },
+    {
+      "id": "cx_delai_01",
+      "category": "C3 - délai péremptoire caché",
+      "expected": [
+        "bail_resiliation_conteste",
+        "bail_prolongation",
+        "bail_renovation_forcee"
+      ],
+      "found": [
+        "bail_resiliation_conteste",
+        "bail_renovation_forcee"
+      ],
+      "missing": [
+        {
+          "id": "bail_prolongation",
+          "harm": "critical",
+          "raison": "délai péremptoire",
+          "domaine": "bail"
+        }
+      ]
+    },
+    {
+      "id": "cx_delai_02",
+      "category": "C3 - délai péremptoire caché",
+      "expected": [
+        "dettes_commandement_payer",
+        "dettes_opposition"
+      ],
+      "found": [
+        "dettes_commandement_payer",
+        "dettes_opposition"
+      ],
+      "missing": []
+    },
+    {
+      "id": "cx_delai_03",
+      "category": "C3 - délai péremptoire caché",
+      "expected": [
+        "circulation_alcool_retrait_permis",
+        "circulation_refus_test_alcool"
+      ],
+      "found": [
+        "circulation_alcool_retrait_permis"
+      ],
+      "missing": [
+        {
+          "id": "circulation_refus_test_alcool",
+          "harm": "benign",
+          "raison": "informatif secondaire",
+          "domaine": "circulation"
+        }
+      ]
+    },
+    {
+      "id": "cx_delai_04",
+      "category": "C3 - délai péremptoire caché",
+      "expected": [
+        "etranger_renvoi",
+        "etranger_permis_b_renouvellement",
+        "etranger_recours_renvoi"
+      ],
+      "found": [
+        "etranger_permis_b_renouvellement"
+      ],
+      "missing": [
+        {
+          "id": "etranger_renvoi",
+          "harm": "critical",
+          "raison": "délai péremptoire",
+          "domaine": "etrangers"
+        },
+        {
+          "id": "etranger_recours_renvoi",
+          "harm": "critical",
+          "raison": "délai péremptoire",
+          "domaine": "etrangers"
+        }
+      ]
+    },
+    {
+      "id": "cx_delai_05",
+      "category": "C3 - délai péremptoire caché",
+      "expected": [
+        "bail_augmentation_loyer",
+        "bail_loyer_abusif"
+      ],
+      "found": [
+        "bail_augmentation_loyer",
+        "bail_loyer_abusif"
+      ],
+      "missing": []
+    },
+    {
+      "id": "cx_fab_02",
+      "category": "C4-fabrication",
+      "expected": [
+        "dettes_opposition",
+        "dettes_commandement_payer"
+      ],
+      "found": [
+        "dettes_opposition",
+        "dettes_commandement_payer"
+      ],
+      "missing": []
+    },
+    {
+      "id": "cx_fab_03",
+      "category": "C4-fabrication",
+      "expected": [
+        "consommation_remboursement_refuse",
+        "consommation_defaut_produit_garantie"
+      ],
+      "found": [
+        "consommation_remboursement_refuse"
+      ],
+      "missing": [
+        {
+          "id": "consommation_defaut_produit_garantie",
+          "harm": "benign",
+          "raison": "informatif secondaire",
+          "domaine": "consommation"
+        }
+      ]
+    },
+    {
+      "id": "cx_fab_04",
+      "category": "C4-fabrication",
+      "expected": [
+        "bail_augmentation_loyer",
+        "bail_loyer_abusif"
+      ],
+      "found": [
+        "bail_augmentation_loyer"
+      ],
+      "missing": [
+        {
+          "id": "bail_loyer_abusif",
+          "harm": "critical",
+          "raison": "délai péremptoire",
+          "domaine": "bail"
+        }
+      ]
+    },
+    {
+      "id": "cx_extract_02",
+      "category": "C5 — info déjà donnée (extract-first)",
+      "expected": [
+        "travail_licenciement_maladie",
+        "travail_maladie"
+      ],
+      "found": [
+        "travail_licenciement_maladie",
+        "travail_maladie"
+      ],
+      "missing": []
+    },
+    {
+      "id": "cx_extract_03",
+      "category": "C5 — info déjà donnée (extract-first)",
+      "expected": [
+        "dettes_commandement_payer",
+        "dettes_opposition"
+      ],
+      "found": [
+        "dettes_commandement_payer",
+        "dettes_opposition"
+      ],
+      "missing": []
+    },
+    {
+      "id": "cx_extract_05",
+      "category": "C5 — info déjà donnée (extract-first)",
+      "expected": [
+        "successions_renonciation",
+        "succession_repudiation",
+        "famille_dette_successorale"
+      ],
+      "found": [
+        "successions_renonciation"
+      ],
+      "missing": [
+        {
+          "id": "succession_repudiation",
+          "harm": "benign",
+          "raison": "informatif secondaire",
+          "domaine": "famille"
+        },
+        {
+          "id": "famille_dette_successorale",
+          "harm": "benign",
+          "raison": "informatif secondaire",
+          "domaine": "famille"
+        }
+      ]
+    },
+    {
+      "id": "cx_marginal_01",
+      "category": "C7",
+      "expected": [
+        "travail_licenciement_abusif",
+        "travail_licenciement_maladie",
+        "travail_maladie",
+        "travail_grossesse",
+        "travail_delai_conge"
+      ],
+      "found": [
+        "travail_licenciement_abusif",
+        "travail_delai_conge"
+      ],
+      "missing": [
+        {
+          "id": "travail_licenciement_maladie",
+          "harm": "critical",
+          "raison": "délai péremptoire",
+          "domaine": "travail"
+        },
+        {
+          "id": "travail_maladie",
+          "harm": "critical",
+          "raison": "délai péremptoire",
+          "domaine": "travail"
+        },
+        {
+          "id": "travail_grossesse",
+          "harm": "critical",
+          "raison": "délai péremptoire",
+          "domaine": "travail"
+        }
+      ]
+    },
+    {
+      "id": "cx_marginal_02",
+      "category": "C7",
+      "expected": [
+        "dettes_opposition",
+        "dettes_commandement_payer",
+        "dettes_commandement_contestation",
+        "dettes_prescription",
+        "dettes_mainlevee_provisoire"
+      ],
+      "found": [
+        "dettes_opposition",
+        "dettes_commandement_payer",
+        "dettes_commandement_contestation"
+      ],
+      "missing": [
+        {
+          "id": "dettes_prescription",
+          "harm": "critical",
+          "raison": "délai péremptoire",
+          "domaine": "dettes"
+        },
+        {
+          "id": "dettes_mainlevee_provisoire",
+          "harm": "critical",
+          "raison": "délai péremptoire",
+          "domaine": "dettes"
+        }
+      ]
+    },
+    {
+      "id": "cx_marginal_03",
+      "category": "C7",
+      "expected": [
+        "voisinage_bruit_nuisances",
+        "bail_nuisances_voisins",
+        "bail_defaut_bruit"
+      ],
+      "found": [
+        "voisinage_bruit_nuisances"
+      ],
+      "missing": [
+        {
+          "id": "bail_nuisances_voisins",
+          "harm": "critical",
+          "raison": "délai péremptoire",
+          "domaine": "bail"
+        },
+        {
+          "id": "bail_defaut_bruit",
+          "harm": "critical",
+          "raison": "délai péremptoire",
+          "domaine": "bail"
+        }
+      ]
+    },
+    {
+      "id": "cx_marginal_04",
+      "category": "C7",
+      "expected": [
+        "famille_enlevement_international",
+        "famille_mesures_provisionnelles",
+        "famille_garde",
+        "famille_mesures_protection",
+        "famille_droit_visite"
+      ],
+      "found": [
+        "famille_enlevement_international",
+        "famille_mesures_provisionnelles"
+      ],
+      "missing": [
+        {
+          "id": "famille_garde",
+          "harm": "benign",
+          "raison": "informatif secondaire",
+          "domaine": "famille"
+        },
+        {
+          "id": "famille_mesures_protection",
+          "harm": "benign",
+          "raison": "informatif secondaire",
+          "domaine": "famille"
+        },
+        {
+          "id": "famille_droit_visite",
+          "harm": "benign",
+          "raison": "informatif secondaire",
+          "domaine": "famille"
+        }
+      ]
+    },
+    {
+      "id": "cx_marginal_05",
+      "category": "C7",
+      "expected": [
+        "circulation_retrait_permis_exces_vitesse",
+        "circulation_radar_photo_contestation",
+        "circulation_amende_ordre"
+      ],
+      "found": [
+        "circulation_retrait_permis_exces_vitesse"
+      ],
+      "missing": [
+        {
+          "id": "circulation_radar_photo_contestation",
+          "harm": "critical",
+          "raison": "voie de recours",
+          "domaine": "circulation"
+        },
+        {
+          "id": "circulation_amende_ordre",
+          "harm": "benign",
+          "raison": "informatif secondaire",
+          "domaine": "circulation"
+        }
+      ]
+    },
+    {
+      "id": "cx_for_02",
+      "category": "C8",
+      "expected": [
+        "dettes_for_poursuite",
+        "dettes_opposition",
+        "dettes_commandement_payer"
+      ],
+      "found": [
+        "dettes_for_poursuite",
+        "dettes_opposition",
+        "dettes_commandement_payer"
+      ],
+      "missing": []
+    },
+    {
+      "id": "cx_for_03",
+      "category": "C8",
+      "expected": [
+        "accident_circulation",
+        "circulation_accident_responsabilite_civile",
+        "accident_circulation_roles_assurances"
+      ],
+      "found": [
+        "accident_circulation",
+        "circulation_accident_responsabilite_civile",
+        "accident_circulation_roles_assurances"
+      ],
+      "missing": []
+    },
+    {
+      "id": "cx_for_04",
+      "category": "C8",
+      "expected": [
+        "famille_divorce",
+        "famille_divorce_procedure"
+      ],
+      "found": [
+        "famille_divorce_procedure"
+      ],
+      "missing": [
+        {
+          "id": "famille_divorce",
+          "harm": "benign",
+          "raison": "informatif secondaire",
+          "domaine": "famille"
+        }
+      ]
+    },
+    {
+      "id": "cx_for_05",
+      "category": "C8",
+      "expected": [
+        "successions_certificat_heritier",
+        "famille_certificat_heritier"
+      ],
+      "found": [
+        "successions_certificat_heritier"
+      ],
+      "missing": [
+        {
+          "id": "famille_certificat_heritier",
+          "harm": "benign",
+          "raison": "informatif secondaire",
+          "domaine": "famille"
+        }
+      ]
+    },
+    {
+      "id": "cx_fauxami_04",
+      "category": "C9_faux_amis_complexite",
+      "expected": [
+        "dettes_commandement_payer",
+        "dettes_opposition"
+      ],
+      "found": [
+        "dettes_commandement_payer",
+        "dettes_opposition"
+      ],
+      "missing": []
+    }
+  ]
+}

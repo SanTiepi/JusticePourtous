@@ -1,0 +1,47 @@
+# Deploy JusticePourtous — variante DOCKER du standard studio (deploy-on-merge).
+# Push master -> gate tests déterministes -> SSH lance le script de deploy côté VPS
+# (/home/ubuntu/deploy/justicepourtous.sh : pull/build/up/healthcheck/ROLLBACK auto).
+# La clé SSH_DEPLOY_KEY est RESTREINTE côté VPS (forced-command) à ce seul script.
+# Cf. studio-portfolio/deploy/DEPLOY-STANDARD.md.
+name: Deploy
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch: {}
+
+concurrency:
+  group: deploy-justicepourtous
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Dépendances (repo zero-dep — tolérant)
+        run: npm ci --omit=dev 2>/dev/null || npm install 2>/dev/null || echo "pas de deps externes — skip"
+
+      - name: Gate — tests déterministes (hors flaky fedlex / réseau / LLM)
+        run: |
+          set -e
+          files=$(ls test/*.test.mjs | grep -v -E '(e2e|llm-nav|letter-gen|deep-analysis|premium|stress|adversarial-eval|fedlex)')
+          echo "Tests du gate :"; echo "$files"
+          LLM_MOCK=1 node --test $files
+
+      - name: Configurer la clé déployeur (scopée au script VPS)
+        run: |
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "${{ secrets.SSH_DEPLOY_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -t ed25519 83.228.221.188 >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Déployer (SSH → le forced-command VPS lance le script)
+        run: |
+          # Le forced-command côté VPS lance /home/ubuntu/deploy/justicepourtous.sh.
+          # Son exit code remonte ici : non-zéro = deploy échoué (rollback déjà fait côté VPS) → step rouge.
+          ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes -o BatchMode=yes ubuntu@83.228.221.188 true

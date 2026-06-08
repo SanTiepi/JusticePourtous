@@ -2,7 +2,7 @@ import { getFicheById } from './fiches.mjs';
 
 const DISCLAIMER = "AVERTISSEMENT : Cette analyse est generee par intelligence artificielle a titre informatif uniquement. Elle ne constitue PAS un avis juridique. Consultez un avocat ou un service d'aide juridique pour toute decision importante. JusticePourtous decline toute responsabilite quant aux consequences de l'utilisation de cette analyse.";
 
-const COST_PER_1K_INPUT = 0.3;  // cents CHF per 1K input tokens (claude-sonnet-4-20250514)
+const COST_PER_1K_INPUT = 0.3;  // cents CHF per 1K input tokens (claude-sonnet-4-6)
 const COST_PER_1K_OUTPUT = 1.5; // cents CHF per 1K output tokens
 
 function buildSystemPrompt(fiche) {
@@ -80,7 +80,7 @@ async function callClaudeAPI(systemPrompt, userPrompt) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
 
   const body = JSON.stringify({
-    model: 'claude-sonnet-4-20250514',
+    model: 'claude-sonnet-4-6',
     max_tokens: 2000,
     system: systemPrompt,
     messages: [{ role: 'user', content: userPrompt }]

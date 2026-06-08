@@ -168,7 +168,7 @@ async function step1_comprendre(texte, canton, reponsesPrec) {
   if (apiKey) {
     try {
       const body = JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
+        model: 'claude-sonnet-4-6',
         max_tokens: 1500,
         // Prompt caching : STEP1_SYSTEM embarque le catalogue ~314 fiches (stable d'un appel
         // à l'autre). cache_control met ce préfixe en cache → les appels suivants lisent le
@@ -633,7 +633,7 @@ async function step3_raisonner(dossier) {
 
 async function callClaude(system, user, apiKey) {
   const body = JSON.stringify({
-    model: 'claude-sonnet-4-20250514',
+    model: 'claude-sonnet-4-6',
     max_tokens: 2000,
     // Prompt caching : STEP3_SYSTEM (gros prompt juriste stable) mis en cache via cache_control.
     system: [{ type: 'text', text: system, cache_control: { type: 'ephemeral' } }],

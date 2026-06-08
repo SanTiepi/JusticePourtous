@@ -197,7 +197,7 @@ ${JSON.stringify(userContext)}
 Retourne UNIQUEMENT le corps de la lettre (Madame, Monsieur, ... jusqu'avant les salutations finales). Pas d'en-tête, pas de signature, pas de ligne "Objet".`;
 
   const body = JSON.stringify({
-    model: 'claude-sonnet-4-20250514',
+    model: 'claude-sonnet-4-6',
     max_tokens: 1500,
     system: systemPrompt,
     messages: [{ role: 'user', content: userPrompt }]

@@ -168,9 +168,13 @@ async function step1_comprendre(texte, canton, reponsesPrec) {
   if (apiKey) {
     try {
       const body = JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
+        model: 'claude-sonnet-4-6',
         max_tokens: 1500,
-        system: STEP1_SYSTEM,
+        // Prompt caching : STEP1_SYSTEM embarque le catalogue ~314 fiches (stable d'un appel
+        // à l'autre). cache_control met ce préfixe en cache → les appels suivants lisent le
+        // cache (~90% moins cher sur ces tokens d'input, et plus rapide). Mirroir du pattern
+        // déjà en prod dans llm-navigator.mjs.
+        system: [{ type: 'text', text: STEP1_SYSTEM, cache_control: { type: 'ephemeral' } }],
         messages: [{ role: 'user', content: userPrompt }]
       });
 
@@ -181,7 +185,8 @@ async function step1_comprendre(texte, canton, reponsesPrec) {
         headers: {
           'Content-Type': 'application/json',
           'x-api-key': apiKey,
-          'anthropic-version': '2023-06-01'
+          'anthropic-version': '2023-06-01',
+          'anthropic-beta': 'prompt-caching-2024-07-31'
         },
         body,
         signal: controller.signal
@@ -191,7 +196,12 @@ async function step1_comprendre(texte, canton, reponsesPrec) {
       if (resp.ok) {
         const data = await resp.json();
         text = data.content[0].text;
-        usage = { input: data.usage?.input_tokens || 0, output: data.usage?.output_tokens || 0 };
+        usage = {
+          input: data.usage?.input_tokens || 0,
+          output: data.usage?.output_tokens || 0,
+          cache_read: data.usage?.cache_read_input_tokens || 0,
+          cache_creation: data.usage?.cache_creation_input_tokens || 0
+        };
       } else {
         log.warn('api_error_fallback_cli', { status: resp.status });
         text = callClaudeCLI(STEP1_SYSTEM, userPrompt);
@@ -623,9 +633,10 @@ async function step3_raisonner(dossier) {
 
 async function callClaude(system, user, apiKey) {
   const body = JSON.stringify({
-    model: 'claude-sonnet-4-20250514',
+    model: 'claude-sonnet-4-6',
     max_tokens: 2000,
-    system,
+    // Prompt caching : STEP3_SYSTEM (gros prompt juriste stable) mis en cache via cache_control.
+    system: [{ type: 'text', text: system, cache_control: { type: 'ephemeral' } }],
     messages: [{ role: 'user', content: user }]
   });
 
@@ -633,7 +644,7 @@ async function callClaude(system, user, apiKey) {
   const timeout = setTimeout(() => controller.abort(), 30000);
   const resp = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01' },
+    headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01', 'anthropic-beta': 'prompt-caching-2024-07-31' },
     body,
     signal: controller.signal
   });
@@ -645,7 +656,12 @@ async function callClaude(system, user, apiKey) {
   const clean = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
   return {
     analysis: JSON.parse(clean),
-    usage: { input: data.usage?.input_tokens || 0, output: data.usage?.output_tokens || 0 },
+    usage: {
+      input: data.usage?.input_tokens || 0,
+      output: data.usage?.output_tokens || 0,
+      cache_read: data.usage?.cache_read_input_tokens || 0,
+      cache_creation: data.usage?.cache_creation_input_tokens || 0
+    },
     model: 'claude'
   };
 }

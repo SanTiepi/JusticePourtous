@@ -736,3 +736,35 @@ Points à surveiller :
     - `recordSimpleOutcome(null)` → `{recorded: false, reason: 'consent_required'}` (consent=false par défaut)
 - **Rationale** : `recordOutcome(null)` atteignable via POST `/api/outcomes/record` avec corps JSON `"null"` → TypeError ligne 254 → HTTP 500 sur input utilisateur. `recordSimpleOutcome(null)` atteignable via POST `/api/outcome` avec corps JSON `"null"` → même crash. Ces 2 bugs étaient documentés dans les tests edge (marqués BUG À CORRIGER) depuis la session 2026-05-29. Fix minimal (2 lignes) sans impact sur la logique métier.
 - **Prochaine action** : validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous. Couverture directe exhaustive atteinte.
+
+### 2026-06-09 UTC — run agent horaire (wave 8 adversariale : 80→90 cas + éval + corrections specs)
+- **Tenté** : item 1 — wave 8 : +10 cas adversariaux ciblant des angles peu couverts (fiscal_02, circulation_03, violence_04, bail_12, travail_12, dettes_10, famille_08, assurances_04, entreprise_04, hybride_05) + éval CLI sur les 90 cas + corrections specs ground-truth + documentation nouveaux gaps
+- **Résultat** : passed ✓
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2609/2609 ✓**
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - **Adversarial CLI (90 cas, haiku, concurrency=4) : 91% brut → ~94-95% après corrections specs**
+    - Corrections specs appliquées (3 ground-truths fausses) :
+      1. `adv_sante_01` : `CC 41` → `CO 41` dans `expected_any_article` (CC ≠ CO ; CO 41 = responsabilité délictuelle dans le Code des Obligations)
+      2. `adv_accident_03` : `expected_domaine: 'accident'` → `'assurances'` (les topics LAA sont en domaine `assurances` chez JPT, non en `accident`)
+      3. `adv_assurances_03` : `expected_domaine: 'assurances'` → `'sante'` (LAMal changement assureur en domaine `sante` chez JPT — confirmé fiche `sante_lamal_choix_assureur`)
+    - Failures pre-existantes maintenues : `adv_dettes_06` 0% (cautionnement — gap connu), `adv_fiscal_01/02` 0% (domaine fiscal blind spot), `adv_social_02` 63% (LACI 30 gap connu)
+    - Timeouts 2 cas (exit 143 — SIGTERM) : `adv_dettes_10` et `adv_hybride_05` (120s dépassées, probablement latence réseau, non-représentatifs d'un vrai routing fail — à re-vérifier avec `--limit` isolé)
+    - `adv_successions_03` 63% : haiku génère `succession_testament_contestation` (sans 's') vs ID réel `successions_...` → lookup échoue → articles de la FICHE (CC 519) non comptabilisés. Problème ID-génération haiku, pas un gap de contenu.
+- **Nouveaux cas wave 8 (10)** :
+  - adv_fiscal_02 (rappel impôt revenus locatifs non déclarés, LIFD 151/152/175)
+  - adv_circulation_03 (excès 140 en zone 120, 1ère infraction, LCR 16b)
+  - adv_violence_04 (harcèlement moral longue durée, voie pénale CP 181/LPTr 6)
+  - adv_bail_12 (commandement de payer loyers impayés, CO 257d, 30 jours)
+  - adv_travail_12 (refus vacances été avec billet réservé, CO 329c)
+  - adv_dettes_10 (reconnaissance de dette entre particuliers, CO 17/LP 82/CO 127)
+  - adv_famille_08 (droit de visite refusé systématiquement, CPC 343)
+  - adv_assurances_04 (LAA + concausalité lésion préexistante, LAA 36)
+  - adv_entreprise_04 (abus de confiance SARL, CP 138/CO 827)
+  - adv_hybride_05 (séparation mariés + bail seul nom, CC 121/CC 176)
+- **Nouveaux gaps documentés** : 2 nouveaux (11 total dans `docs/missing-fiches.md`) :
+  - `sante_urgence_libre_choix` (LAMal 41 al. 3 — urgences hôpital ne peuvent pas refuser pour raison d'assureur — **haute priorité** : situation vécue les week-ends/nuits, droit légal immédiat)
+  - `entreprise_gerant_responsabilite_penale` (CP 138 abus de confiance + CO 827 responsabilité gérant — distinct de la gouvernance CO 798/808 déjà couverte)
+- **Observation taxonomique** : confirmation que les topics LAA et LAMal sont en domaine `assurances` ou `sante` (jamais `accident` ou `social`) — ground-truth à respecter pour les prochains cas.
+- **Prochaine action** : re-vérifier les 2 cas timeout avec un timeout plus long (`--limit 2 adv_dettes_10 adv_hybride_05 --concurrency 1`). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

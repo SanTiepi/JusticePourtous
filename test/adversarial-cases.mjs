@@ -426,8 +426,8 @@ export const ADVERSARIAL_CASES = [
     query: "Opéré du ménisque il y a 4 mois, j'ai encore un genou qui se bloque et des douleurs permanentes. Un deuxième chirurgien pense qu'il y a eu une erreur de technique lors de l'intervention. Le premier chirurgien dit que c'est 'dans les risques normaux'. J'ai un recours contre lui ?",
     canton: 'VD',
     expected_domaine: 'sante',
-    expected_any_article: ['CO 394', 'CC 41', 'CO 97'],
-    notes: "Responsabilité médicale civile — vocabulaire : 'erreur de technique' plutôt que 'faute médicale'. Relation médecin-patient = mandat CO 394. Responsabilité délictuelle CC 41. Expertise médicale indépendante recommandée.",
+    expected_any_article: ['CO 394', 'CO 41', 'CO 97'],
+    notes: "Responsabilité médicale civile — vocabulaire : 'erreur de technique' plutôt que 'faute médicale'. Relation médecin-patient = mandat CO 394. Responsabilité délictuelle CO 41 (Code des Obligations, pas CC). Expertise médicale indépendante recommandée.",
   },
 
   // VIOLENCE — harcèlement obsessionnel ex-partenaire (stalking CP 181a)
@@ -669,7 +669,7 @@ export const ADVERSARIAL_CASES = [
     id: 'adv_accident_03',
     query: "Je me suis déchiré le ligament croisé du genou en jouant au foot un samedi. Mon assurance accident LAA refuse de payer parce que c'était 'hors des heures de travail et pas lié au travail'. Pourtant je travaille à 60% chez mon employeur. Est-ce que la LAA couvre vraiment les accidents de sport le week-end et sinon qui paie ?",
     canton: 'FR',
-    expected_domaine: 'accident',
+    expected_domaine: 'assurances',
     expected_any_article: ['LAA 7', 'LAA 6', 'LAA 8'],
     notes: "AANP (accident non-professionnel) — LAA 7 al. 1 : couverture AANP si taux d'occupation ≥ 8h/sem. 60% ≈ 24h/sem → AANP obligatoirement couverte. Refus de la LAA probablement erroné. 'Déchiré le ligament en jouant au foot' sans 'AANP' ni 'LAA 7'. Si refus confirmé, recours via opposition puis tribunal cantonal des assurances.",
   },
@@ -741,7 +741,7 @@ export const ADVERSARIAL_CASES = [
     id: 'adv_assurances_03',
     query: "Je veux changer de caisse maladie pour économiser sur la prime à partir de janvier prochain. J'ai envoyé ma résiliation fin septembre. Mon assureur répond que ma lettre est arrivée le 1er octobre et que j'ai manqué le délai de 3 mois. Ils refusent le transfert. Est-ce qu'ils ont raison ou est-ce que je peux quand même changer ?",
     canton: 'NE',
-    expected_domaine: 'assurances',
+    expected_domaine: 'sante',
     expected_any_article: ['LAMal 7', 'LAMal 64a'],
     notes: "Résiliation assurance maladie de base (LAMal 7) — délai : assureur doit RECEVOIR la résiliation avant le 30 novembre. 'Envoyé fin septembre' + 'arrivée 1er octobre' = dans le délai. 'Je veux changer de caisse' sans 'LAMal 7' ni 'résiliation délai novembre'. L'assureur a probablement tort.",
   },
@@ -784,6 +784,108 @@ export const ADVERSARIAL_CASES = [
     expected_domaine: 'entreprise',
     expected_any_article: ['CO 945', 'CO 552', 'LP 39'],
     notes: "Radiation raison individuelle au RC (ORC 155 ss) + responsabilité illimitée du titulaire (CO 945 : l'entrepreneur répond sur tout son patrimoine privé). 'Fermer ma boutique inscrite au RC' + 'rester personnellement responsable des dettes' sans 'CO 945' ni 'responsabilité illimitée'. Les dettes subsistent après radiation.",
+  },
+
+  // ─── WAVE 8 — 2026-06-09 ───────────────────────────────────────────────────
+
+  // FISCAL — revenus locatifs non déclarés, rappel d'impôt, prescription
+  {
+    id: 'adv_fiscal_02',
+    query: "Je loue une chambre chez moi depuis 4 ans et je n'ai jamais déclaré ces revenus locatifs. L'administration fiscale cantonale vient de me contacter et parle de 'rappel d'impôt sur 10 ans'. Est-ce qu'ils peuvent vraiment remonter aussi loin ? Et est-ce que j'ai une amende en plus ?",
+    canton: 'GE',
+    expected_domaine: 'fiscal',
+    expected_any_article: ['LIFD 151', 'LIFD 152', 'LIFD 175', 'LHID 53'],
+    notes: "Rappel d'impôt (LIFD 151/152 : 10 ans pour soustraction non intentionnelle, 15 ans si fraude intentionnelle) + amende pour soustraction d'impôt (LIFD 175 = 1× impôt soustrait en général). 'Louer une chambre sans déclarer' + 'rappel 10 ans' sans 'LIFD 151' ni 'soustraction fiscale'. Fiscal blind spot confirmé run précédent : domaines=[] sur adv_fiscal_01.",
+  },
+
+  // CIRCULATION — excès vitesse modéré autoroute, 1ère infraction, retrait ou non ?
+  {
+    id: 'adv_circulation_03',
+    query: "J'ai été contrôlé à 140 km/h sur l'autoroute où la limite était 120 km/h. C'est la première fois que j'ai une infraction de ce genre. L'officier a dit que ce serait traité 'administrativement' pas seulement comme une amende. Est-ce que je risque de perdre mon permis ? Pour combien de temps ?",
+    canton: 'BE',
+    expected_domaine: 'circulation',
+    expected_any_article: ['LCR 16', 'LCR 16b', 'LCR 90'],
+    notes: "Excès de 20 km/h en zone 120 = infraction moyennement grave (LCR 16b). Première infraction → retrait 1 mois minimum. 'Contrôlé à 140 en zone 120' + 'traitement administratif' sans 'LCR 16b' ni 'retrait permis'. L'adjectif 'administrativement' (employé par l'officier) est le signal adversarial — le citoyen ne connaît pas LCR 16b.",
+  },
+
+  // VIOLENCE — harcèlement moral au travail longue durée, dépôt plainte pénale
+  {
+    id: 'adv_violence_04',
+    query: "Mon chef me fait des remarques humiliantes devant les collègues depuis 2 ans, m'exclut systématiquement des réunions importantes et a changé mes horaires sans motif juste pour me nuire. J'ai tout noté dans un journal. Les RH ne font rien. Est-ce que je peux porter plainte pénalement contre lui, ou c'est uniquement du droit du travail ?",
+    canton: 'ZH',
+    expected_domaine: 'violence',
+    expected_any_article: ['CP 181', 'CP 174', 'CP 144', 'LPTr 6'],
+    notes: "Harcèlement moral systématique (mobbing) — frontalier entre droit pénal (CP 181 contrainte, CP 174 diffamation) et droit du travail (LPTr 6 protection santé, CO 328 protection personnalité). 'Remarques humiliantes + exclusion + changement horaires' sans 'CP 181' ni 'harcèlement moral' ni 'mobbing'. La question 'plainte pénale vs droit du travail' est le signal adversarial — les 2 voies coexistent.",
+  },
+
+  // BAIL — commandement de payer reçu pour loyers impayés, délai 30 jours avant résiliation
+  {
+    id: 'adv_bail_12',
+    query: "J'ai reçu ce matin un document de l'office des poursuites qui dit que mon bailleur me réclame 2 mois de loyer impayés et que je dois payer dans les 30 jours sinon il peut résilier le bail. J'ai l'argent maintenant mais j'ai eu des problèmes de santé. Si je paie dans les 30 jours, est-ce que mon appartement est sauvegardé ? Et après, est-ce qu'il peut quand même me donner congé ?",
+    canton: 'VD',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 257d', 'CO 271', 'CO 273'],
+    notes: "Mise en demeure locataire (CO 257d) : délai 30 jours pour payer, puis résiliation extraordinaire possible. Si paiement dans le délai → résiliation n'est pas possible pour ce motif. Mais bailleur peut encore résilier ordinairement (CO 271). 'Document de l'office des poursuites' + '30 jours' + 'appartement sauvegardé' sans 'CO 257d' ni 'mise en demeure'. La question sur la résiliation ultérieure est le signal adversarial.",
+  },
+
+  // TRAVAIL — refus vacances été par employeur, droits du salarié CO 329c
+  {
+    id: 'adv_travail_12',
+    query: "J'ai demandé 3 semaines de vacances en juillet et août il y a 2 mois. Mon employeur vient de refuser sans explication, en disant que c'est trop chargé cet été. J'ai déjà reservé mon billet d'avion. Est-ce qu'il a le droit de refuser ? Et si je pars quand même, qu'est-ce qui se passe ?",
+    canton: 'AG',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 329', 'CO 329a', 'CO 329c'],
+    notes: "Droit aux vacances (CO 329) et fixation (CO 329c al. 3 : l'employeur tient compte des désirs du travailleur, mais peut refuser pour raisons d'exploitation). Départ malgré refus = abandon de poste. 'Billet réservé' + 'employeur refuse sans explication' + '2 mois à l'avance' sans 'CO 329c' ni 'fixation des vacances'. Signal adversarial = 'j'ai reservé mon billet' comme fait accompli.",
+  },
+
+  // DETTES — reconnaissance de dette signée, débiteur conteste, délai prescription
+  {
+    id: 'adv_dettes_10',
+    query: "J'ai prêté 8 000 francs à un ami en 2018. Il m'a signé un papier à la main qui dit qu'il me devra rembourser d'ici fin 2019. Il n'a jamais payé. Il dit maintenant que c'était un 'cadeau' et que le papier ne vaut rien. Est-ce que ce document peut m'aider ? Et est-ce que c'est trop tard pour aller au tribunal ?",
+    canton: 'FR',
+    expected_domaine: 'dettes',
+    expected_any_article: ['CO 17', 'CO 127', 'LP 82', 'CO 312'],
+    notes: "Reconnaissance de dette + prêt entre particuliers. CO 17 : reconnaissance de dette écrite suffit (pas besoin de témoin). LP 82 : mainlevée provisoire possible sur titre. Prescription : CO 127 = 10 ans pour créances civiles ordinaires (pas prescrits en 2026). 'Papier signé à la main' + 'ami dit que c'était un cadeau' sans 'CO 17' ni 'reconnaissance de dette' ni 'mainlevée'.",
+  },
+
+  // FAMILLE — droit de visite refusé systématiquement, voies d'exécution
+  {
+    id: 'adv_famille_08',
+    query: "Mon ex-femme refuse d'amener les enfants depuis 3 mois lors de mes droits de visite fixés par le juge. J'appelle la police mais ils disent que c'est 'une affaire civile'. J'ai un jugement officiel qui dit que j'ai les enfants tous les mercredis et un week-end sur deux. Comment je peux faire appliquer ce jugement ?",
+    canton: 'NE',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 273', 'CC 274', 'CC 308', 'CPC 343'],
+    notes: "Exécution forcée droit de visite. CC 273 : droit aux relations personnelles garanti. CPC 343 : exécution des décisions — le tribunal peut prononcer une amende d'ordre ou demander l'intervention des autorités. 'Jugement officiel + police dit affaire civile' sans 'CPC 343' ni 'exécution forcée jugement'. Signal adversarial = police inactive → citoyen croit être sans recours.",
+  },
+
+  // ASSURANCES — LAA : accident travail, assureur invoque condition préexistante
+  {
+    id: 'adv_assurances_04',
+    query: "Je me suis blessé le genou en tombant sur un chantier. L'assurance accident de mon employeur a pris en charge au début, puis après 6 mois elle dit que mon problème de genou existait avant l'accident et réduit mes indemnités de 50%. J'avais un léger problème de cartilage mais l'accident a tout aggravé. Ils ont le droit ?",
+    canton: 'BS',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LAA 36', 'LAA 6', 'LAA 105', 'OLAA 49'],
+    notes: "Concausalité LAA (LAA 36 : réduction si cause étrangère, MAIS uniquement si lésion préexistante 'significative'). L'assureur peut réduire les prestations seulement si la cause étrangère est significative (pas si l'accident est la cause prépondérante d'une aggravation). LAA 105 : droit de recours contre la décision d'assurance. 'Accident aggrave une lésion préexistante mineure' + 'assureur réduit 50%' sans 'LAA 36' ni 'concausalité'.",
+  },
+
+  // ENTREPRISE — abus de confiance entre associés SARL, double voie pénale + civile
+  {
+    id: 'adv_entreprise_04',
+    query: "Je suis co-fondateur d'une SARL avec un associé. J'ai découvert que pendant 2 ans, mon associé se versait des avances sur frais fictives — environ 40 000 francs au total. Il a accès à la comptabilité. Comment est-ce que je peux récupérer cet argent et est-ce que c'est aussi pénal ?",
+    canton: 'ZG',
+    expected_domaine: 'entreprise',
+    expected_any_article: ['CP 138', 'CO 803', 'CO 827', 'CO 812'],
+    notes: "Abus de confiance (CP 138) + responsabilité du gérant/associé SARL (CO 827 renvoi CC → CO 717 = diligence du mandataire). Action civile en remboursement (CO 803 : obligations des associés). 'Avances fictives 40k sur 2 ans' sans 'CP 138' ni 'abus de confiance' ni 'gérant SARL'. Signal adversarial = vocabulaire 'avances sur frais' au lieu d'abus de confiance.",
+  },
+
+  // HYBRIDE — séparation couple marié, seul un conjoint sur le bail, attribution logement familial
+  {
+    id: 'adv_hybride_05',
+    query: "On est mariés et on vit dans un appartement loué uniquement à mon nom. On est en train de se séparer et mon mari veut partir mais je ne veux pas rester seule avec le loyer. De l'autre côté mon mari dit qu'il veut l'appartement lui. Qui décide et est-ce qu'il peut prendre l'appartement alors qu'il n'est pas sur le contrat ?",
+    canton: 'VD',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 121', 'CO 263', 'CC 176'],
+    notes: "Attribution du logement familial (CC 121 : le juge peut attribuer l'usage du logement familial à l'un des époux, même si le bail est au nom de l'autre). CC 176 : mesures protectrices de l'union conjugale. Cession du bail possible (CO 263). 'Bail uniquement à mon nom + mari veut l'appartement' sans 'CC 121' ni 'attribution logement' ni 'mesures protectrices'. Cross-domain famille+bail : l'attribution dépend du juge famille, pas du droit du bail.",
   },
 ];
 

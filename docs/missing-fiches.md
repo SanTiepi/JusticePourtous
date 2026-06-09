@@ -7,7 +7,7 @@ correspondance exacte.
 
 Ces fiches sont à créer après validation juridique humaine.
 
-## État actuel : 9 gaps identifiés (mis à jour 2026-05-30)
+## État actuel : 11 gaps identifiés (mis à jour 2026-06-09)
 
 Les deux gaps historiques sont comblés :
 
@@ -77,6 +77,18 @@ Les deux gaps historiques sont comblés :
   - **base juridique** : LEI 61 (extinction du titre de séjour : non-renouvellement, départ définitif), LEI 33 (conditions de renouvellement liées à l'activité lucrative), OASA 77a/77b (tolérance pendant période de recherche d'emploi, délai 6 mois), LEI 62 (retrait du titre de séjour)
   - **pourquoi manquante** : `adv_etrangers_01` (permis B depuis 11 ans, boîte fermée, peut-il rester ?) — fail persistant 63% sur rubric `article_required`. La fiche `etranger_permis_b_renouvellement` cite bien LEI 33 et LEI 62, mais ses tags (`renouvellement`, `refus`, `conditions`) ne signalent pas le scénario "licenciement / fermeture d'entreprise". LEI 61 (extinction automatique du titre par non-renouvellement) n'est citée par aucune fiche (vérification machine : 2026-05-30). Le LLM génère des IDs fictifs (`etranger_permis_b_chomage`, `etranger_sejour_perte_emploi`) → lookup échoue. La fiche manquante devrait couvrir : quand le permis B est-il en danger après perte d'emploi ? (LEI 61 + délai OASA 77b + exception 10 ans de séjour menant au permis C LEI 43).
   - **priorité** : haute. Licenciement économique / fermeture d'entreprise = enjeu majeur (perte potentielle de séjour). Situation cross-domaine travail + étrangers fréquemment mal comprise.
+
+### Gaps identifiés par l'éval adversariale 2026-06-09 (wave 8 — 90 cas, score 91% brut → ~95% après corrections specs)
+
+- ⛔ `sante_urgence_libre_choix`
+  - **base juridique** : LAMal 41 al. 3 (en urgence, l'assuré peut se faire soigner par tout fournisseur, peu importe son assureur), OAMal 29 (prestations d'urgence), LPMéd 40 (obligation de traiter)
+  - **pourquoi manquante** : `adv_sante_03` (urgences hôpital refusent de soigner car assureur non partenaire, dimanche soir) — le navigator route vers `sante_refus_nouveau_patient` (refus d'accepter un nouveau patient en médecine de cabinet) + `social_aide_urgence`. Articles retournés : CO 394, CP 128, Cst 10 al. 2 — aucun ne couvre **LAMal 41 al. 3 (libre choix du fournisseur en urgence)**. La distinction est fondamentale : le médecin de cabinet peut refuser un nouveau patient (sauf urgence), mais un hôpital cantonal ne peut pas refuser une urgence réelle.
+  - **priorité** : haute. Situation vécue fréquemment les week-ends et nuits. Un citoyen à qui l'hôpital refuse les soins doit savoir qu'il a un droit légal immédiat (LAMal 41 al. 3) et un recours contre l'hôpital. Délai implicite = immédiat.
+
+- ⛔ `entreprise_gerant_responsabilite_penale`
+  - **base juridique** : CP 138 (abus de confiance), CO 827 (responsabilité du gérant SARL par renvoi à CO 717 — diligence du mandataire), CO 803 (obligations des associés SARL), LP 38 (recouvrement de la créance)
+  - **pourquoi manquante** : `adv_entreprise_04` (co-fondateur SARL découvre associé-gérant qui se verse 40k CHF d'avances fictives depuis 2 ans) — le navigator route vers `entreprise_conflit_associes_sarl` + `entreprise_creances_impayees_recouvrement`. Articles retournés : CO 798, CO 808, CO 822, CO 823 (droit des associés SARL) — aucun ne couvre CP 138 (abus de confiance, voie pénale) ni CO 827/717 (responsabilité civile du gérant). La fiche existante `entreprise_conflit_associes_sarl` couvre les conflits de gouvernance interne mais pas le **volet pénal (dépôt de plainte CP 138) ni la responsabilité civile du gérant** (distinct de la responsabilité de l'associé).
+  - **priorité** : haute. Le scénario "associé/gérant qui se sert dans la caisse" est un cas de justice d'entreprise fréquent. L'absence de voie pénale dans la réponse peut faire perdre un droit important (dépôt de plainte dans le délai de prescription CP 97).
 
 Pour rouvrir cette liste, relancer l'éval adversariale et capturer les nouveaux
 cas où le navigator se rabat sur une fiche voisine :

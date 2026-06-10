@@ -7,7 +7,7 @@ correspondance exacte.
 
 Ces fiches sont à créer après validation juridique humaine.
 
-## État actuel : 11 gaps identifiés (mis à jour 2026-06-09)
+## État actuel : 13 gaps identifiés (mis à jour 2026-06-10)
 
 Les deux gaps historiques sont comblés :
 
@@ -89,6 +89,18 @@ Les deux gaps historiques sont comblés :
   - **base juridique** : CP 138 (abus de confiance), CO 827 (responsabilité du gérant SARL par renvoi à CO 717 — diligence du mandataire), CO 803 (obligations des associés SARL), LP 38 (recouvrement de la créance)
   - **pourquoi manquante** : `adv_entreprise_04` (co-fondateur SARL découvre associé-gérant qui se verse 40k CHF d'avances fictives depuis 2 ans) — le navigator route vers `entreprise_conflit_associes_sarl` + `entreprise_creances_impayees_recouvrement`. Articles retournés : CO 798, CO 808, CO 822, CO 823 (droit des associés SARL) — aucun ne couvre CP 138 (abus de confiance, voie pénale) ni CO 827/717 (responsabilité civile du gérant). La fiche existante `entreprise_conflit_associes_sarl` couvre les conflits de gouvernance interne mais pas le **volet pénal (dépôt de plainte CP 138) ni la responsabilité civile du gérant** (distinct de la responsabilité de l'associé).
   - **priorité** : haute. Le scénario "associé/gérant qui se sert dans la caisse" est un cas de justice d'entreprise fréquent. L'absence de voie pénale dans la réponse peut faire perdre un droit important (dépôt de plainte dans le délai de prescription CP 97).
+
+### Gaps identifiés par l'éval adversariale 2026-06-10 (wave 9 — 90→100 cas, score 93%)
+
+- ⛔ `famille_pension_enfant_majeur`
+  - **base juridique** : CC 277 al. 2 (obligation d'entretien de l'enfant majeur encore en formation), CC 285 (étendue de la contribution d'entretien)
+  - **pourquoi manquante** : `adv_famille_06` (ex-conjoint arrête de payer la pension à la majorité de la fille, qui est en 2ème année d'apprentissage) — le navigator route vers `famille_pension_impayee` (CC 276 + CP 217) mais aucun article ne couvre CC 277 al. 2. La fiche existante `famille_pension_impayee` traite l'exécution de la pension déjà due, pas le fondement légal (obligation d'entretien persistante malgré la majorité si formation non terminée). La distinction est cruciale : l'obligation d'entretien ne s'arrête pas automatiquement à 18 ans (CC 277 al. 2), mais la procédure est différente selon que le jugement de divorce contient ou non une clause explicite.
+  - **priorité** : haute. Croyance très répandue que la pension s'arrête à 18 ans — des milliers de jeunes adultes en formation perdent leur droit faute d'information. La fiche ciblerait spécifiquement CC 277 al. 2 + procédure si l'autre parent refuse.
+
+- ⛔ `dettes_concordat_ordinaire`
+  - **base juridique** : LP 293 (homologation du concordat par le juge), LP 295 (sursis concordataire, 4-6 mois), LP 310 (concordat par abandon d'actifs), LP 306 (concordat ordinaire — dividende)
+  - **pourquoi manquante** : `adv_dettes_07` (particulier surendetté à 60k CHF, veut éviter la faillite, parle de "concordat") — le navigator route vers `dettes_faillite_personnelle_procedure` + `dettes_arrangement_amiable_negociation`. Articles retournés : LP 191, LP 39, LP 265, CO 19, CO 75, LP 93, LP 149a — aucun ne couvre LP 293 (homologation) ni LP 295 (sursis). La fiche `dettes_arrangement_amiable` couvre la négociation privée, mais pas la procédure formelle de concordat (sursis concordataire → plan de remboursement homologué par le juge). Le concordat est radicalement différent de la faillite (LP 191) : il permet au débiteur de rester actif, de proposer un dividende aux créanciers, et d'éviter la radiation du RC.
+  - **priorité** : moyenne. Le concordat ordinaire est sous-utilisé car méconnu des particuliers-commerçants. Une fiche dédiée LP 293/295 permettrait d'orienter vers cette alternative à la faillite.
 
 Pour rouvrir cette liste, relancer l'éval adversariale et capturer les nouveaux
 cas où le navigator se rabat sur une fiche voisine :

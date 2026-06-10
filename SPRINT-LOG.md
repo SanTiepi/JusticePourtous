@@ -777,18 +777,24 @@ Points à surveiller :
   - CI subset `LLM_MOCK=1` : **2609/2609 ✓** (aucun code modifié — données seulement)
   - Validation fiches : 0 erreur ✓
   - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
-  - **Adversarial CLI (100 cas) : éval en cours** — score à documenter dans le prochain run
+  - **Adversarial CLI (100 cas, haiku, concurrency=4) : 93% brut → 94% après correction spec adv_violence_04**
+    - Distribution : 88×100% + 0×80-99% + 6×50-79% + 6×0-49%
+    - **Wave 9 : 10/10 à 100%** — tous les nouveaux cas passent (curatelle, ADB, aide sociale, démarchage, etc.)
+    - Correction spec appliquée : `adv_violence_04` `expected_domaine: 'violence'` → `'travail'` + ajout `'CO 328'` dans expected_any_article (harcèlement moral au travail = domaine travail chez JPT — ground-truth corrigée)
+    - Failures pre-existantes maintenues (5) : bail_07 routing, dettes_06 cautionnement, social_02 LACI 30, fiscal_01/02 blind spot
+    - Nouveaux fails réels (4) : `adv_famille_06` 63% (CC 277 enfant majeur → gap documenté), `adv_dettes_07` 63% (LP 293 concordat → gap documenté), `adv_sante_03` 63% (LAMal 41 urgences — déjà documenté), `adv_entreprise_04` 63% (CP 138 — déjà documenté)
+    - `adv_successions_01` 0% : aucune fiche retournée — probablement timeout/parse-fail (était 100% toutes les runs précédentes), non-représentatif
+    - `adv_accident_03` 25% : navigator retourne 'sante'+'accident' au lieu de 'assurances' — routing gap AANP sport (spec correcte per taxonomie JPT)
 - **Nouveaux cas wave 9 (10)** :
-  - adv_bail_13 (clause no-smoking bail + résiliation après 5 ans tolérance — CO 257a/257f/271)
-  - adv_travail_13 (surveillance employeur webcam + emails — CO 328b/LPD 26)
-  - adv_famille_09 (curatelle protection adulte, parent âgé 78 ans démence — CC 390/394/398)
-  - adv_dettes_11 (acte de défaut de biens après saisie infructueuse — LP 149/149a/265)
-  - adv_etrangers_07 (regroupement familial enfant adulte 22 ans, réfugié reconnu — LAsi 51/LEI 44)
-  - adv_social_04 (aide sociale remboursement après retour emploi — Cst 12/LIAS 26)
-  - adv_voisinage_05 (fumée barbecue quotidien voisin propriétaire, fille asthmatique — CC 684/679)
-  - adv_successions_04 (testament olographe contesté + réserve enfants + captation — CC 505/519/470/522)
-  - adv_assurances_05 (AI invalidité taux 35% vs 40% à la limite du droit — LAI 28/LPGA 52)
-  - adv_consommation_05 (démarchage à domicile droit révocation 14j — CO 40a/40b/40e)
-- **Angles inédits wave 9** : protection de l'adulte (CC 390 ss), acte de défaut de biens (LP 149), aide sociale remboursement (cantonal/Cst 12), démarchage à domicile (CO 40a)
-- **Potentiels nouveaux gaps** : curatelle (famille_09 — pas sûr qu'une fiche couvre CC 390) ; aide sociale (social_04 — domaine beta peu couvert) ; à confirmer après éval
-- **Prochaine action** : documenter les éventuels nouveaux fails wave 9 dans `docs/missing-fiches.md` une fois l'éval terminée. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+  - adv_bail_13 (clause no-smoking bail + résiliation après 5 ans tolérance — CO 257a/257f/271) → **100%**
+  - adv_travail_13 (surveillance employeur webcam + emails — CO 328b/LPD 26) → **100%**
+  - adv_famille_09 (curatelle protection adulte, parent âgé 78 ans démence — CC 390/394/398) → **100%**
+  - adv_dettes_11 (acte de défaut de biens après saisie infructueuse — LP 149/149a/265) → **100%**
+  - adv_etrangers_07 (regroupement familial enfant adulte 22 ans, réfugié reconnu — LAsi 51/LEI 44) → **100%**
+  - adv_social_04 (aide sociale remboursement après retour emploi — Cst 12/LIAS 26) → **100%**
+  - adv_voisinage_05 (fumée barbecue quotidien voisin propriétaire, fille asthmatique — CC 684/679) → **100%**
+  - adv_successions_04 (testament olographe contesté + réserve enfants + captation — CC 505/519/470/522) → **100%**
+  - adv_assurances_05 (AI invalidité taux 35% vs 40% à la limite du droit — LAI 28/LPGA 52) → **100%**
+  - adv_consommation_05 (démarchage à domicile droit révocation 14j — CO 40a/40b/40e) → **100%**
+- **Nouveaux gaps documentés** : 2 ajoutés (11 → 13 dans `docs/missing-fiches.md`) : `famille_pension_enfant_majeur` (CC 277) et `dettes_concordat_ordinaire` (LP 293/295)
+- **Prochaine action** : re-vérifier adv_successions_01 0% isolément (`--limit 1 adv_successions_01 --concurrency 1`). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

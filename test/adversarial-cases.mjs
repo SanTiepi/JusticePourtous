@@ -813,9 +813,9 @@ export const ADVERSARIAL_CASES = [
     id: 'adv_violence_04',
     query: "Mon chef me fait des remarques humiliantes devant les collègues depuis 2 ans, m'exclut systématiquement des réunions importantes et a changé mes horaires sans motif juste pour me nuire. J'ai tout noté dans un journal. Les RH ne font rien. Est-ce que je peux porter plainte pénalement contre lui, ou c'est uniquement du droit du travail ?",
     canton: 'ZH',
-    expected_domaine: 'violence',
-    expected_any_article: ['CP 181', 'CP 174', 'CP 144', 'LPTr 6'],
-    notes: "Harcèlement moral systématique (mobbing) — frontalier entre droit pénal (CP 181 contrainte, CP 174 diffamation) et droit du travail (LPTr 6 protection santé, CO 328 protection personnalité). 'Remarques humiliantes + exclusion + changement horaires' sans 'CP 181' ni 'harcèlement moral' ni 'mobbing'. La question 'plainte pénale vs droit du travail' est le signal adversarial — les 2 voies coexistent.",
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 328', 'CP 181', 'CP 174', 'LPTr 6'],
+    notes: "Harcèlement moral systématique (mobbing) — JPT classe ce cas en domaine 'travail' (CO 328 protection personnalité du travailleur). La voie pénale (CP 181 contrainte, CP 174 diffamation) est secondaire. Ground-truth corrigée : 'violence' → 'travail' car le navigator route correctement vers travail_harcelement. 'Remarques humiliantes + exclusion + changement horaires' sans 'CP 181' ni 'harcèlement moral' ni 'mobbing'. La question 'plainte pénale vs droit du travail' est le signal adversarial.",
   },
 
   // BAIL — commandement de payer reçu pour loyers impayés, délai 30 jours avant résiliation

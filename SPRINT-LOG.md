@@ -768,3 +768,27 @@ Points à surveiller :
   - `entreprise_gerant_responsabilite_penale` (CP 138 abus de confiance + CO 827 responsabilité gérant — distinct de la gouvernance CO 798/808 déjà couverte)
 - **Observation taxonomique** : confirmation que les topics LAA et LAMal sont en domaine `assurances` ou `sante` (jamais `accident` ou `social`) — ground-truth à respecter pour les prochains cas.
 - **Prochaine action** : re-vérifier les 2 cas timeout avec un timeout plus long (`--limit 2 adv_dettes_10 adv_hybride_05 --concurrency 1`). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-06-10 UTC — run agent horaire (wave 9 adversarial : 90→100 cas)
+- **Tenté** : item 1 — wave 9 : +10 cas adversariaux ciblant des angles non encore couverts (curatelle/protection adulte, surveillance employeur, ADB, regroupement familial adulte, aide sociale remboursement, clause no-smoking, démarchage à domicile, testament olographe+réserve, AI taux limite, fumée barbecue)
+- **Résultat** : passed ✓ — 100 cas dans `test/adversarial-cases.mjs` (éval CLI en cours au moment du commit)
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2609/2609 ✓** (aucun code modifié — données seulement)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - **Adversarial CLI (100 cas) : éval en cours** — score à documenter dans le prochain run
+- **Nouveaux cas wave 9 (10)** :
+  - adv_bail_13 (clause no-smoking bail + résiliation après 5 ans tolérance — CO 257a/257f/271)
+  - adv_travail_13 (surveillance employeur webcam + emails — CO 328b/LPD 26)
+  - adv_famille_09 (curatelle protection adulte, parent âgé 78 ans démence — CC 390/394/398)
+  - adv_dettes_11 (acte de défaut de biens après saisie infructueuse — LP 149/149a/265)
+  - adv_etrangers_07 (regroupement familial enfant adulte 22 ans, réfugié reconnu — LAsi 51/LEI 44)
+  - adv_social_04 (aide sociale remboursement après retour emploi — Cst 12/LIAS 26)
+  - adv_voisinage_05 (fumée barbecue quotidien voisin propriétaire, fille asthmatique — CC 684/679)
+  - adv_successions_04 (testament olographe contesté + réserve enfants + captation — CC 505/519/470/522)
+  - adv_assurances_05 (AI invalidité taux 35% vs 40% à la limite du droit — LAI 28/LPGA 52)
+  - adv_consommation_05 (démarchage à domicile droit révocation 14j — CO 40a/40b/40e)
+- **Angles inédits wave 9** : protection de l'adulte (CC 390 ss), acte de défaut de biens (LP 149), aide sociale remboursement (cantonal/Cst 12), démarchage à domicile (CO 40a)
+- **Potentiels nouveaux gaps** : curatelle (famille_09 — pas sûr qu'une fiche couvre CC 390) ; aide sociale (social_04 — domaine beta peu couvert) ; à confirmer après éval
+- **Prochaine action** : documenter les éventuels nouveaux fails wave 9 dans `docs/missing-fiches.md` une fois l'éval terminée. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

@@ -798,3 +798,20 @@ Points à surveiller :
   - adv_consommation_05 (démarchage à domicile droit révocation 14j — CO 40a/40b/40e) → **100%**
 - **Nouveaux gaps documentés** : 2 ajoutés (11 → 13 dans `docs/missing-fiches.md`) : `famille_pension_enfant_majeur` (CC 277) et `dettes_concordat_ordinaire` (LP 293/295)
 - **Prochaine action** : re-vérifier adv_successions_01 0% isolément (`--limit 1 adv_successions_01 --concurrency 1`). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-06-11 03:08 UTC — run agent horaire (vulgarisation-loader directs)
+- **Tenté** : item 3 — tests directs pour `vulgarisation-loader.mjs` (0 couverture directe précédemment)
+- **Résultat** : passed ✓
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (+29 tests)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Nouveaux tests : **29 tests** dans `test/vulgarisation-loader.test.mjs`
+- **Ce qui a été fait** : `test/vulgarisation-loader.test.mjs` — 4 suites / 29 tests zéro-LLM zéro-réseau sur les 4 exports du module :
+  - `loadVulgarisation` (9 cas) : shape entries/byFiche/bySource, non vide, items structurés (id/source_id/domaine/fiches_liees), cache (même référence sur 2 appels), clearCache force rechargement, byFiche fiche connue (bail_modification_contrat), byFiche inconnue → undefined, byFiche fiche la plus citée (bail_resiliation_conteste ≥5 entrées), bySource asloca_kit présent
+  - `getVulgarisationForFiche` (7 cas) : fiche inconnue → null, shape complète (ficheId/questions_citoyennes/anti_erreurs/delais/articles_cles), questions_citoyennes avec question+reponse_courte+source, anti_erreurs non vide avec erreur+source+question_ref, articles_cles sans doublons (Set interne), délai présent pour bail_loyer_initial_abusif, ficheId correct sur la fiche la plus citée
+  - `getVulgarisationByDomaine` (5 cas) : "bail" → non vide, inconnu → [], tous les items ont le bon domaine, null → [] sans crash, count bail == total entries
+  - `getVulgarisationStats` (8 cas) : tous les champs avec bons types, total_entries > 0, source asloca_kit avec count+domaines, fiches_enrichies == byFiche.keys().length, total_anti_erreurs > 0, total_delais ∈ [1, total_entries], domaines inclut bail, round-trip total_entries == getVulgarisationByDomaine("bail").length
+- **Rationale** : `vulgarisation-loader.mjs` enrichit les fiches avec le Kit ASLOCA (30 Q&A citoyennes bail). Il alimente `donnees-juridiques.mjs` via les endpoints `/api/fiches/:id`. La logique de cache, le double index (byFiche + bySource), la déduplication articles_cles et la shape de retour de `getVulgarisationForFiche` n'avaient aucun test direct. Zéro changement de source requis — `clearVulgarisationCache` était déjà exporté pour les tests.
+- **Prochaine action** : item 3 épuisé sur modules purs accessibles. Valeur restante = validation juridique humaine (5 fiches gold + avocat, hors scope autonomous) + recrutement testeurs réels (0 outcomes en prod).

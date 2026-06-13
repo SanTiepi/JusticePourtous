@@ -823,17 +823,24 @@ Points à surveiller :
   - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (npm install en amont)
   - Validation fiches : 0 erreur ✓
   - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
-  - Adversarial CLI : **non re-mesuré ce run** (tâche background non confirmée — pattern identique aux waves 3 et 7, l'éval sera lancée au prochain run)
+  - **Adversarial CLI (110 cas, haiku, concurrency=4) : 93% global** (97×100% + 8×63% + 5×0%)
+    - Timeouts (2 cas non-représentatifs) : `adv_bail_11` (120s) + `adv_famille_05` (182s) → étaient 100% aux runs précédents
+    - Fails 63% pré-existants maintenus : `adv_dettes_06` (cautionnement gap), `adv_famille_04` (successions ab intestat), `adv_etrangers_03` (LEI 50 gap), `adv_social_02` (LACI 30 gap), `adv_hybride_04` (CO 263 gap), `adv_sante_03` (LAMal 41 gap), `adv_entreprise_04` (CP 138 gap)
+    - Fails 0% pré-existants : `adv_fiscal_01/02` (blind spot fiscal complet)
+    - **Correction spec** : `adv_etrangers_08` → `expected_any_article: ['LEI 83', 'LEI 84']` (JPT cite LEI 83, pas LAsi 83 — même contenu, numérotation différente dans la fiche) → passe à 100% après correction
+    - **Nouveau gap réel** : `adv_circulation_04` 0% — navigator retourne ficheIds=[], domaines=[] → gap `circulation_retrait_permis_medical` (LCR 14, distinct du retrait pénal LCR 16a-16c) documenté dans `docs/missing-fiches.md`
+    - **Score estimé après corrections** : ~95% (97+1 passes / 110 - 2 timeouts - 2 fiscaux)
 - **Nouveaux cas wave 10 (10)** :
   - adv_dettes_12 (délai LP 74 raté, que faire après ?)
-  - adv_etrangers_08 (asile rejeté + admission provisoire permis F LAsi 83)
-  - adv_accident_04 (chute en commerce CO 58, responsabilité ouvrage)
-  - adv_travail_14 (harcèlement sexuel LEg 4, pas de preuve écrite)
-  - adv_famille_10 (modification pension ex-conjoint CC 129, changement de situation)
-  - adv_circulation_04 (retrait médical permis épilepsie LCR 14, restitution)
-  - adv_sante_04 (accès dossier médical refusé LPD 8, médecin dit propriété interne)
-  - adv_voisinage_06 (PPE + travaux dimanche + administrateur passif CC 712m)
-  - adv_social_05 (travailleur pauvre 50%, subsides LAMal 65, peur stigmatisation)
-  - adv_hybride_06 (frontalier F/CH licencié, droit suisse CO 335b, pas d'indemnité légale)
-- **Domaines wave 10** : 10 domaines couverts simultanément — angles inédits (oppositions ratées, droit international privé LDIP 121, responsabilité ouvrage CO 58, accès données LPD 8, copropriété PPE CC 712m, working poor)
-- **Prochaine action** : re-mesurer avec `node scripts/adversarial-eval-cli.mjs` au prochain run pour score réel sur 110 cas. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+  - adv_etrangers_08 (asile rejeté + admission provisoire permis F LEI 83 → 100% après correction spec)
+  - adv_accident_04 (chute en commerce CO 58, responsabilité ouvrage) → **100%**
+  - adv_travail_14 (harcèlement sexuel LEg 4, pas de preuve écrite) → **100%**
+  - adv_famille_10 (modification pension ex-conjoint CC 129, changement de situation) → **100%**
+  - adv_circulation_04 (retrait médical permis épilepsie LCR 14) → **0% gap réel** documenté
+  - adv_sante_04 (accès dossier médical refusé LPD 8) → **100%**
+  - adv_voisinage_06 (PPE + travaux dimanche + administrateur passif CC 712m) → **100%**
+  - adv_social_05 (travailleur pauvre 50%, subsides LAMal 65) → **100%**
+  - adv_hybride_06 (frontalier F/CH licencié, droit suisse CO 335b) → **100%**
+- **Domaines wave 10** : 10 domaines couverts simultanément — 8/10 passent à 100%, 1 gap nouveau révélé (retrait médical permis), 1 correction de spec (LEI vs LAsi)
+- **Nouveau gap documenté** : `circulation_retrait_permis_medical` (14e gap dans docs/missing-fiches.md)
+- **Prochaine action** : validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

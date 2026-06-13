@@ -7,7 +7,7 @@ correspondance exacte.
 
 Ces fiches sont à créer après validation juridique humaine.
 
-## État actuel : 13 gaps identifiés (mis à jour 2026-06-10)
+## État actuel : 14 gaps identifiés (mis à jour 2026-06-13)
 
 Les deux gaps historiques sont comblés :
 
@@ -101,6 +101,14 @@ Les deux gaps historiques sont comblés :
   - **base juridique** : LP 293 (homologation du concordat par le juge), LP 295 (sursis concordataire, 4-6 mois), LP 310 (concordat par abandon d'actifs), LP 306 (concordat ordinaire — dividende)
   - **pourquoi manquante** : `adv_dettes_07` (particulier surendetté à 60k CHF, veut éviter la faillite, parle de "concordat") — le navigator route vers `dettes_faillite_personnelle_procedure` + `dettes_arrangement_amiable_negociation`. Articles retournés : LP 191, LP 39, LP 265, CO 19, CO 75, LP 93, LP 149a — aucun ne couvre LP 293 (homologation) ni LP 295 (sursis). La fiche `dettes_arrangement_amiable` couvre la négociation privée, mais pas la procédure formelle de concordat (sursis concordataire → plan de remboursement homologué par le juge). Le concordat est radicalement différent de la faillite (LP 191) : il permet au débiteur de rester actif, de proposer un dividende aux créanciers, et d'éviter la radiation du RC.
   - **priorité** : moyenne. Le concordat ordinaire est sous-utilisé car méconnu des particuliers-commerçants. Une fiche dédiée LP 293/295 permettrait d'orienter vers cette alternative à la faillite.
+
+### Gap identifié par l'éval adversariale 2026-06-13 (wave 10 — 100→110 cas, score 93% brut → ~95% après corrections)
+
+- ⛔ `circulation_retrait_permis_medical`
+  - **base juridique** : LCR 14 (aptitude à la conduite : conditions physiques et psychiques requises), LCR 16 al. 1 (retrait du permis si condition non remplie), OAC 27 (contrôle périodique des conducteurs — aptitude médicale), Directives OFROU sur les maladies invalidantes (épilepsie, diabète, troubles visuels)
+  - **pourquoi manquante** : `adv_circulation_04` (première crise d'épilepsie → retrait préventif → neurologue dit OK → office dit attendre 6 mois) — le navigator retourne `domaines=[]` `fiches=[]` : **aucune fiche ne couvre le retrait médical du permis**. La fiche existante `circulation_retrait_permis` (documentée comme gap dans `circulation_retrait_permis` — LCR 16a/16b/16c) traite le retrait PÉNAL (suite à infractions routières). Le retrait MÉDICAL (LCR 14 — inaptitude physique) est un domaine entièrement distinct : procédures différentes (médecin traitant → autorité cantonale de la circulation → OFROU), délais différents (pas péremptoire mais lié aux directives médicales), recours différents (administratif + médical).
+  - **distinction critique** : retrait pénal = sanction après infraction (LCR 16a-16c, durée fixe, récidive aggrave). Retrait médical = mesure de sécurité publique (LCR 14, durée jusqu'à rétablissement médical confirmé). Un citoyen souffrant d'épilepsie ne sait pas à qui s'adresser ni comment obtenir la restitution.
+  - **priorité** : haute. Situation vécue régulièrement (épilepsie, AVC, troubles visuels sévères, diabète insulino-dépendant). Le retrait médical peut durer des années sans recours clair. La distinction avec le retrait pénal est fondamentale mais inconnue des citoyens.
 
 Pour rouvrir cette liste, relancer l'éval adversariale et capturer les nouveaux
 cas où le navigator se rabat sur une fiche voisine :

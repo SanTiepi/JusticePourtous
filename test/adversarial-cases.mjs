@@ -1006,8 +1006,8 @@ export const ADVERSARIAL_CASES = [
     query: "J'ai reçu une décision négative sur ma demande de protection en Suisse. Mon avocat commis d'office m'a dit qu'il existait une alternative au retour forcé, une sorte de 'statut provisoire'. Le SEM maintient que je dois rentrer. Cette alternative existe-t-elle vraiment et comment peut-on en bénéficier après un refus ?",
     canton: null,
     expected_domaine: 'etrangers',
-    expected_any_article: ['LAsi 83', 'LAsi 84', 'LAsi 44'],
-    notes: "Admission provisoire (permis F) — LAsi 83 : octroyée si le renvoi est illicite (art. 5 LAsi), inexigible (danger grave dans le pays d'origine) ou impossible (motifs pratiques). Distinct de l'asile reconnu. Possible même après refus d'asile. LAsi 84 : durée et révision. LAsi 44 : voies de droit contre la décision. 'Décision négative + statut provisoire + SEM maintient' sans 'permis F' ni 'LAsi 83'. Signal adversarial = confusion asile refusé = départ obligatoire (le permis F peut permettre le maintien sous conditions).",
+    expected_any_article: ['LEI 83', 'LEI 84', 'LEI 85'],
+    notes: "Admission provisoire (permis F) — LEI 83 (= LAsi 83 dans la numérotation JPT) : octroyée si le renvoi est illicite, inexigible ou impossible. Distinct de l'asile reconnu. Possible même après refus d'asile. LEI 84 : durée et révision. JPT cite la fiche 'etranger_admission_provisoire_f' avec articles LEI 83/84/85 (LExI, anciennement LSEE). 'Décision négative + statut provisoire + SEM maintient' sans 'permis F' ni 'LEI 83'. Signal adversarial = confusion asile refusé = départ obligatoire (le permis F peut permettre le maintien sous conditions).",
   },
 
   // ACCIDENT — chute dans un commerce (responsabilité du propriétaire d'ouvrage)

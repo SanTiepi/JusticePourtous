@@ -989,6 +989,106 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CO 40a', 'CO 40b', 'CO 40e'],
     notes: "Droit de révocation contrat conclu hors établissement commercial (CO 40a al. 1 : 14 jours pour révoquer, sans motif). CO 40b : le commerçant doit informer du droit de révocation. CO 40e : révocation par écrit. 'Commercial à domicile + signé hier + je regrette' sans 'CO 40a' ni 'droit de révocation' ni 'démarchage à domicile'. Signal adversarial = 'j'ai signé le bon de commande' (croyance que la signature vaut engagement définitif).",
   },
+
+  // DETTES — délai d'opposition raté (10 jours écoulés), que faire après ?
+  {
+    id: 'adv_dettes_12',
+    query: "J'ai trouvé dans ma boîte aux lettres il y a 3 semaines une lettre officielle tamponnée de l'État avec un formulaire concernant une dette de 3 800 francs envers mon ancien propriétaire. Il était écrit qu'il fallait répondre dans les 10 jours mais j'étais en voyage professionnel. Ce délai est maintenant largement dépassé. Il y a maintenant une date d'audience mentionnée. Est-ce que tout est perdu ou y a-t-il encore quelque chose à faire ?",
+    canton: 'VD',
+    expected_domaine: 'dettes',
+    expected_any_article: ['LP 74', 'LP 63', 'LP 80'],
+    notes: "Opposition tardive à commandement de payer — LP 74 (délai d'opposition 10 jours dès notification). LP 63 (continuation de la poursuite si pas d'opposition dans le délai). LP 80 (mainlevée définitive sur titre). Voies possibles après délai raté : vérifier la régularité de la notification (LP 72), restitution de délai si motif valable. 'Lettre officielle + 10 jours + dépassé + audience' sans 'commandement de payer' ni 'LP 74'. Signal adversarial = citoyen qui croit avoir 'tout perdu' alors que des voies procédurales subsistent selon les circonstances.",
+  },
+
+  // ÉTRANGERS — asile rejeté, admission provisoire (permis F) comme alternative
+  {
+    id: 'adv_etrangers_08',
+    query: "J'ai reçu une décision négative sur ma demande de protection en Suisse. Mon avocat commis d'office m'a dit qu'il existait une alternative au retour forcé, une sorte de 'statut provisoire'. Le SEM maintient que je dois rentrer. Cette alternative existe-t-elle vraiment et comment peut-on en bénéficier après un refus ?",
+    canton: null,
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LAsi 83', 'LAsi 84', 'LAsi 44'],
+    notes: "Admission provisoire (permis F) — LAsi 83 : octroyée si le renvoi est illicite (art. 5 LAsi), inexigible (danger grave dans le pays d'origine) ou impossible (motifs pratiques). Distinct de l'asile reconnu. Possible même après refus d'asile. LAsi 84 : durée et révision. LAsi 44 : voies de droit contre la décision. 'Décision négative + statut provisoire + SEM maintient' sans 'permis F' ni 'LAsi 83'. Signal adversarial = confusion asile refusé = départ obligatoire (le permis F peut permettre le maintien sous conditions).",
+  },
+
+  // ACCIDENT — chute dans un commerce (responsabilité du propriétaire d'ouvrage)
+  {
+    id: 'adv_accident_04',
+    query: "Je suis tombé dans l'allée d'un grand magasin à cause d'un carton qui dépassait d'une étagère et bloquait le passage. Je me suis cassé la clavicule. Arrêt de travail 6 semaines. Le chef de rayon m'a dit que je n'avais 'qu'à faire attention'. L'assurance du magasin répond 'en cours d'enquête' depuis 3 mois sans autre suite. Est-ce que le magasin peut être tenu responsable de mes frais médicaux et de ma perte de revenus ?",
+    canton: 'ZH',
+    expected_domaine: 'accident',
+    expected_any_article: ['CO 58', 'CO 41', 'CO 46'],
+    notes: "Responsabilité du détenteur d'ouvrage (CO 58) : établissement commercial = ouvrage, carton obstruant le passage = défaut d'entretien ou de surveillance. Responsabilité présumée sans que la faute doive être prouvée par la victime. CO 46 : réparation du dommage (frais médicaux + lucrum cessans). 'Je suis tombé dans un magasin + carton qui dépassait + chef de rayon dit ma faute' sans 'CO 58' ni 'défaut de l'ouvrage'. Signal adversarial = inversion de la charge de la preuve présentée comme normale par le commerçant.",
+  },
+
+  // TRAVAIL — harcèlement sexuel, représailles après refus, pas de preuve écrite
+  {
+    id: 'adv_travail_14',
+    query: "Mon responsable direct me fait des commentaires sur mon physique et me touche l'épaule régulièrement malgré mes refus répétés depuis 2 mois. Depuis que j'ai évité les situations où on était seuls, mes évaluations ont chuté et on m'a retiré un dossier important. Je n'ai rien par écrit. Les RH connaissent très bien mon responsable. Que puis-je faire concrètement ?",
+    canton: 'GE',
+    expected_domaine: 'travail',
+    expected_any_article: ['LEg 4', 'CO 328', 'CO 336c'],
+    notes: "Harcèlement sexuel au travail (LEg 4 : constitue une atteinte grave à la personnalité, engagement de la responsabilité de l'employeur). CO 328 : obligation de l'employeur de protéger la personnalité de l'employé. CO 336c : protection contre la résiliation pendant une procédure pour atteinte à la personnalité. Preuve : journal de bord daté, témoins, signalement par écrit à l'employeur. 'Commentaires + touche l'épaule + évaluations baissées' sans 'LEg 4' ni 'harcèlement sexuel'. Signal adversarial = 'je n'ai rien par écrit' (croyance que sans écrit on ne peut pas agir).",
+  },
+
+  // FAMILLE — modification de la contribution d'entretien au conjoint après divorce (CC 129)
+  {
+    id: 'adv_famille_10',
+    query: "Mon jugement de divorce de 2021 m'oblige à verser 650 francs par mois à mon ex-épouse pendant 5 ans. Elle a retrouvé un emploi à temps plein depuis 9 mois à un bon salaire. Les 5 ans ne sont pas encore écoulés. Est-ce que je peux demander à diminuer ou supprimer cette pension maintenant, avant le terme prévu par le jugement, et si oui, comment ?",
+    canton: 'BE',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 129', 'CC 125', 'CPC 268'],
+    notes: "Modification de la contribution d'entretien après divorce (CC 129 al. 1 : modification si les circonstances changent notablement depuis le jugement). Nouvel emploi à temps plein de l'ex-épouse = changement notable de circonstances. Procédure : demande de modification au tribunal compétent (CPC 268). CC 125 : bases légales de la rente de soutien. 'Jugement de divorce + ex a retrouvé emploi + veux réduire avant le terme' sans 'CC 129' ni 'modification de rente'. Signal adversarial = croyance que le jugement est immuable pendant la durée prévue.",
+  },
+
+  // CIRCULATION — retrait préventif du permis pour raisons médicales (épilepsie)
+  {
+    id: 'adv_circulation_04',
+    query: "Suite à une première crise d'épilepsie il y a 18 mois, mon médecin en a informé les autorités et l'office de la circulation m'a retiré le permis de façon préventive. Je n'ai eu aucune autre crise depuis. Mon neurologue dit par écrit que je suis apte à reprendre le volant. L'office dit d'attendre encore 6 mois sans explication précise. Quels sont mes droits et comment demander officiellement la restitution ?",
+    canton: 'FR',
+    expected_domaine: 'circulation',
+    expected_any_article: ['LCR 14', 'LCR 16', 'OAC 27'],
+    notes: "Retrait du permis pour inaptitude médicale (LCR 14 : conditions physiques et psychiques requises pour conduire). Restitution : expertise médicale spécialisée + décision de l'office de la circulation (OAC 27 et ss. : contrôle périodique des conducteurs). Délai sans crise exigé selon les directives médicales de l'OFROU. Recours contre refus possible (voie administrative + recours cantonal). 'Épilepsie une fois + neurologue dit OK + office dit attendre' sans 'LCR 14' ni 'aptitude médicale'. Signal adversarial = l'office ne motive pas son refus et le citoyen ignore que l'avis du médecin spécialiste est contraignant pour l'administration.",
+  },
+
+  // SANTÉ — accès au dossier médical refusé par le médecin traitant
+  {
+    id: 'adv_sante_04',
+    query: "Mon médecin de famille me suit depuis 8 ans. J'ai besoin de mon dossier médical complet pour une expertise AI et pour un deuxième avis médical à l'étranger. Il refuse de me le transmettre en disant que ces notes sont 'à usage professionnel interne' et lui appartiennent. Est-ce qu'il peut légalement refuser de me donner accès à mes propres informations médicales ?",
+    canton: 'VD',
+    expected_domaine: 'sante',
+    expected_any_article: ['LPD 8', 'CC 28', 'LS 3'],
+    notes: "Droit d'accès au dossier médical — LPD 8 (droit d'accès aux données personnelles : le patient peut demander les données le concernant). Les données médicales appartiennent au patient même si le support appartient au médecin. CC 28 (atteinte à la personnalité en cas de refus injustifié). LS cantonale VD art. 3 (droit du patient à l'information). 'Médecin refuse + dit propriété interne' sans 'LPD 8' ni 'droit d'accès aux données'. Signal adversarial = confusion entre le support matériel (propriété du médecin) et les données personnelles (droits du patient).",
+  },
+
+  // VOISINAGE — copropriété PPE, travaux bruyants les week-ends, administrateur passif
+  {
+    id: 'adv_voisinage_06',
+    query: "Je suis propriétaire d'un appartement en copropriété à Lausanne. Mon voisin du dessus fait des travaux de rénovation depuis 7 semaines avec perceuses et marteaux chaque samedi et dimanche dès 7h30. J'ai signalé la situation à l'administrateur de notre communauté de copropriétaires qui m'a répondu qu'il 'ne peut pas s'immiscer dans les affaires des copropriétaires'. Ai-je un recours concret ?",
+    canton: 'VD',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 684', 'CC 712m', 'CC 679'],
+    notes: "Double fondement : CC 684 (immissions excessives entre propriétaires voisins) + règlement de copropriété PPE (heures de tranquillité obligatoires). CC 712m al. 2 : l'administrateur a l'obligation d'exécuter les décisions de l'assemblée et d'appliquer le règlement. Son refus d'intervenir est lui-même contestable. CC 679 : action en cessation + réparation. 'PPE + travaux dimanche 7h30 + administrateur dit ne peut rien faire' sans 'CC 684' ni 'règlement PPE'. Signal adversarial = administrateur qui se défausse de son rôle exécutif obligatoire.",
+  },
+
+  // SOCIAL — travailleur pauvre (working poor), droits aux subsides et aides, peur de la stigmatisation
+  {
+    id: 'adv_social_05',
+    query: "Je travaille à 50% comme caissière depuis 2 ans. Mon salaire est de 2 200 francs. Après le loyer, les primes d'assurance maladie et les charges fixes, il me reste moins de 200 francs par mois. On m'a dit de 'demander l'aide sociale' mais j'ai peur d'être fichée ou de perdre des droits. Existe-t-il d'autres aides auxquelles j'aurais droit sans passer par l'aide sociale classique ?",
+    canton: 'GE',
+    expected_domaine: 'social',
+    expected_any_article: ['Cst 12', 'LAMal 65', 'LIAS 5'],
+    notes: "Travailleur pauvre (working poor) — subsides LAMal 65 (réduction individuelle de la prime selon revenus, accordée directement par le canton). Prestations complémentaires cantonales (Genève : Hospice général, LIAS). Aide sociale ≠ inscription permanente ou perte de droits — c'est un droit constitutionnel (Cst 12). 'Salaire insuffisant + peur aide sociale + existe d'autres aides ?' sans 'LAMal 65 subsides' ni 'aide sociale = droit'. Signal adversarial = croyance que demander de l'aide sociale crée un 'fichage' durable, alors que des subsides LAMal sont accessibles sans stigma.",
+  },
+
+  // HYBRIDE — travailleur frontalier (France/CH) licencié, quel droit applicable, indemnité ?
+  {
+    id: 'adv_hybride_06',
+    query: "J'habite en France voisine et je travaille depuis 4 ans dans une PME genevoise avec un contrat signé en Suisse. Mon employeur m'annonce un licenciement pour restructuration. En droit français j'aurais eu une indemnité légale de licenciement. Est-ce que le droit suisse prévoit quelque chose de similaire ? Et mon préavis pour 4 ans d'ancienneté, c'est combien de mois selon la loi suisse ?",
+    canton: 'GE',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 335b', 'CO 336', 'CO 336a'],
+    notes: "Travailleur frontalier — lieu de travail habituel = Genève (Suisse) → droit suisse applicable (LDIP 121 al. 1 : loi du lieu de travail habituel). En droit suisse : AUCUNE indemnité légale de licenciement économique (contrairement au droit français). Préavis CO 335b : 1 mois la 1ère année, 2 mois de 2 à 9 ans, 3 mois à partir de 10 ans → 4 ans = 2 mois. Recours si résiliation abusive : CO 336a (indemnité jusqu'à 6 mois de salaire). 'Je vis en France + entreprise suisse + indemnité de licenciement' sans 'CO 335b' ni 'droit suisse applicable'. Signal adversarial = confusion droit du travail suisse vs français (risque critique : attendre une indemnité inexistante en droit suisse).",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

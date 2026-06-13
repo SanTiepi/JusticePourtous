@@ -815,3 +815,25 @@ Points à surveiller :
   - `getVulgarisationStats` (8 cas) : tous les champs avec bons types, total_entries > 0, source asloca_kit avec count+domaines, fiches_enrichies == byFiche.keys().length, total_anti_erreurs > 0, total_delais ∈ [1, total_entries], domaines inclut bail, round-trip total_entries == getVulgarisationByDomaine("bail").length
 - **Rationale** : `vulgarisation-loader.mjs` enrichit les fiches avec le Kit ASLOCA (30 Q&A citoyennes bail). Il alimente `donnees-juridiques.mjs` via les endpoints `/api/fiches/:id`. La logique de cache, le double index (byFiche + bySource), la déduplication articles_cles et la shape de retour de `getVulgarisationForFiche` n'avaient aucun test direct. Zéro changement de source requis — `clearVulgarisationCache` était déjà exporté pour les tests.
 - **Prochaine action** : item 3 épuisé sur modules purs accessibles. Valeur restante = validation juridique humaine (5 fiches gold + avocat, hors scope autonomous) + recrutement testeurs réels (0 outcomes en prod).
+
+### 2026-06-13 UTC — run agent horaire (wave 10 adversarial : 100→110 cas)
+- **Tenté** : item 1 — wave 10 : +10 cas adversariaux ciblant des angles inédits (opposition tardive LP, asile rejeté/permis F, chute en commerce CO 58, harcèlement sexuel LEg 4, modification pension ex-conjoint CC 129, retrait médical permis LCR 14, accès dossier médical LPD 8, PPE voisinage CC 712m, travailleur pauvre LAMal 65, frontalier F/CH CO 335b)
+- **Résultat** : passed ✓ — 110 cas dans `test/adversarial-cases.mjs`
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (npm install en amont)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Adversarial CLI : **non re-mesuré ce run** (tâche background non confirmée — pattern identique aux waves 3 et 7, l'éval sera lancée au prochain run)
+- **Nouveaux cas wave 10 (10)** :
+  - adv_dettes_12 (délai LP 74 raté, que faire après ?)
+  - adv_etrangers_08 (asile rejeté + admission provisoire permis F LAsi 83)
+  - adv_accident_04 (chute en commerce CO 58, responsabilité ouvrage)
+  - adv_travail_14 (harcèlement sexuel LEg 4, pas de preuve écrite)
+  - adv_famille_10 (modification pension ex-conjoint CC 129, changement de situation)
+  - adv_circulation_04 (retrait médical permis épilepsie LCR 14, restitution)
+  - adv_sante_04 (accès dossier médical refusé LPD 8, médecin dit propriété interne)
+  - adv_voisinage_06 (PPE + travaux dimanche + administrateur passif CC 712m)
+  - adv_social_05 (travailleur pauvre 50%, subsides LAMal 65, peur stigmatisation)
+  - adv_hybride_06 (frontalier F/CH licencié, droit suisse CO 335b, pas d'indemnité légale)
+- **Domaines wave 10** : 10 domaines couverts simultanément — angles inédits (oppositions ratées, droit international privé LDIP 121, responsabilité ouvrage CO 58, accès données LPD 8, copropriété PPE CC 712m, working poor)
+- **Prochaine action** : re-mesurer avec `node scripts/adversarial-eval-cli.mjs` au prochain run pour score réel sur 110 cas. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

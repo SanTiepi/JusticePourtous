@@ -1191,6 +1191,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CO 706', 'CO 697', 'CO 704', 'CO 706b'],
     notes: "Nullité des décisions de l'AG — CO 697 al. 1 : convocation de l'AG à tous les actionnaires inscrits dans les 20 jours (défaut de convocation = vice formel). CO 706 : action en annulation dans les 2 mois dès la connaissance (défaut de convocation = motif suffisant). CO 706b : nullité absolue (cas énumérés dont suppression des droits essentiels des actionnaires sans accord). CO 704 al. 1 : augmentation du capital social requiert une majorité qualifiée des 2/3. 'AG sans moi + augmentation salaires + dilution de mes actions' sans 'CO 706' ni 'action en annulation'. Signal adversarial = croyance que la majorité peut tout décider sans respecter les droits procéduraux de la minorité.",
   },
+
+  // ─── WAVE 12 — 2026-06-14 ──────────────────────────────────────────────────
+
+  // BAIL — bail commercial, congé avec préavis court, pas de protection CO 271a
+  {
+    id: 'adv_bail_15',
+    query: "Je tiens un magasin de fleurs dans un local que je loue depuis 8 ans. Mon bailleur m'envoie un congé avec 3 mois de préavis pour récupérer le local. J'ai investi 60 000 CHF en aménagements. Mon bail est marqué 'bail commercial'. Est-ce que je peux contester ce congé comme pour un logement ?",
+    canton: 'GE',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 253a', 'CO 272a', 'CO 268'],
+    notes: "Bail commercial (locaux à usage commercial, CO 253a) — protection limitée par rapport au bail d'habitation : pas de CO 271a (congé abusif de l'habitation, liste exhaustive) ; la prolongation n'est accordée qu'en cas de besoins clairement prépondérants du locataire (CO 272a al. 1 : 1 prolongation max de 6 ans). Délai de préavis 6 mois pour bail commercial si > 1 an (CO 268). L'investissement en aménagements peut donner droit à une indemnité si le bailleur en profite (CO 260a). 'Bail commercial + congé 3 mois + 60k aménagements' sans 'CO 253a' ni 'différence bail commercial'. Signal adversarial = citoyen qui croit bénéficier de la même protection que pour un logement.",
+  },
+
+  // TRAVAIL — pourboires retenus partiellement par l'employeur
+  {
+    id: 'adv_travail_16',
+    query: "Je suis serveuse dans un restaurant. Mon contrat prévoit un salaire fixe de 3 200 CHF plus les pourboires. Depuis un mois mon patron retient 40% de tous les pourboires 'pour les redistribuer à la cuisine'. Je n'ai signé aucun avenant pour ce changement. Est-ce qu'il a le droit de faire ça ?",
+    canton: 'VD',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 322a', 'CO 322', 'CO 335'],
+    notes: "Pourboires — CO 322a al. 1 : le pourboire appartient au travailleur, pas à l'employeur. L'employeur ne peut le retenir ou le redistribuer qu'avec l'accord exprès du travailleur (ou si le contrat le prévoit). Une modification sans avenant signé est une modification unilatérale nulle (CO 320 al. 2). Si le travailleur continue à travailler sans protestation, risque de présomption d'acceptation. CO 322 : le salaire est fixé par accord. CO 335 : résiliation-modification comme seule voie légale. 'Mon patron retient 40% des pourboires + sans ma signature' sans 'CO 322a' ni 'pourboires appartiennent au travailleur'. Signal adversarial = croyance que l'employeur peut redistribuer les pourboires à discrétion.",
+  },
+
+  // DETTES — revendication par un tiers d'un objet saisi (LP 106)
+  {
+    id: 'adv_dettes_14',
+    query: "L'huissier a saisi la télévision du salon et l'ordinateur de mon appartement pour une dette que j'ai. Ces objets appartiennent à ma mère qui vit avec moi — elle a les factures à son nom et peut le prouver. Comment est-ce qu'on fait pour récupérer ces objets et montrer qu'ils ne sont pas à moi ?",
+    canton: 'BE',
+    expected_domaine: 'dettes',
+    expected_any_article: ['LP 106', 'LP 108', 'LP 275'],
+    notes: "Opposition à la saisie / revendication de tiers (LP 106 al. 1) : tout tiers qui prétend avoir des droits sur un objet saisi peut s'y opposer dans les 10 jours dès que l'office l'en a informé. LP 108 : si le créancier conteste, le tiers doit ouvrir action en revendication dans les 20 jours. Preuve : factures au nom du tiers, relevés bancaires montrant le paiement depuis son compte. Le tiers n'a pas à prouver l'absence de prêt ; le créancier doit prouver que l'objet appartient au débiteur. 'Huissier saisi les affaires de ma mère qui a les factures + comment récupérer' sans 'LP 106' ni 'revendication tierce'. Signal adversarial = ignorance totale du droit d'opposition du tiers propriétaire.",
+  },
+
+  // FAMILLE — divorce, bien acheté avant mariage avec fonds propres
+  {
+    id: 'adv_famille_12',
+    query: "Mon mari veut divorcer. Il dit qu'il a droit à la moitié de mon appartement parce que nous sommes mariés. J'ai acheté cet appartement 3 ans avant notre mariage avec l'argent de mon héritage. Nous n'avons jamais signé de contrat de mariage. Est-ce qu'il a vraiment droit à la moitié ?",
+    canton: 'VD',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 197', 'CC 198', 'CC 204', 'CC 196'],
+    notes: "Participation aux acquêts (régime légal, CC 196) — biens propres vs acquêts. CC 198 ch. 2 : les biens acquis avant le mariage par un conjoint et ceux reçus en héritage sont des biens propres, exclus du partage. CC 204 al. 1 : chaque conjoint reprend ses biens propres sans partage. CC 197 : seuls les acquêts (revenus du travail, économies) sont partagés à 50/50. L'appartement acheté avant le mariage avec un héritage = bien propre → le mari n'y a droit à RIEN (sous réserve d'un apport sur acquêts pour les remboursements hypothécaires pendant le mariage). '3 ans avant le mariage + héritage + pas de contrat' sans 'CC 197' ni 'biens propres'. Signal adversarial = croyance que le mariage donne automatiquement droit à la moitié de tous les biens.",
+  },
+
+  // ÉTRANGERS — regroupement familial refusé pour logement insuffisant
+  {
+    id: 'adv_etrangers_10',
+    query: "Je vis en Suisse avec un permis C depuis 6 ans. J'ai demandé le regroupement familial pour faire venir ma femme du Maroc. L'office des migrations refuse car mon appartement de 2 pièces (48 m²) serait 'insuffisant pour 2 personnes adultes'. Ils citent une norme cantonale. Est-ce légal et peut-on contester ?",
+    canton: 'ZH',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LEI 44', 'LEI 42', 'OASA 73', 'LEI 96'],
+    notes: "Regroupement familial + condition de logement approprié — LEI 44 al. 1 lit. b : le logement approprié est une condition légale (idem LEI 42 pour conjoint de Suisse). OASA 73 : le logement doit correspondre aux normes usuelles de la région (appréciation cantonale). 48 m² pour 2 adultes peut être considéré suffisant selon le canton. Recours : contester par voie administrative dans les 30 jours + produire un bail pour un logement plus grand ou expertise sur les normes de la région (certains cantons : 35 m² par personne). LEI 96 : obligation de proportionnalité de l'autorité. 'Permis C + femme du Maroc + appartement 2 pièces refusé' sans 'LEI 44' ni 'logement approprié'. Signal adversarial = croyance que l'autorité peut fixer des normes sans limite légale.",
+  },
+
+  // SUCCESSIONS — désigné exécuteur testamentaire, obligations et pouvoirs
+  {
+    id: 'adv_successions_06',
+    query: "Mon beau-père vient de mourir et son testament me désigne comme exécuteur testamentaire. Sa fille (l'héritière principale) me presse de lui remettre les clés de la maison et de tout lui transférer immédiatement. Elle dit que j'ai l'obligation légale d'agir dans les 24 heures. Quels sont vraiment mes droits et devoirs dans ce rôle ?",
+    canton: 'GE',
+    expected_domaine: 'successions',
+    expected_any_article: ['CC 517', 'CC 518', 'CC 553'],
+    notes: "Exécuteur testamentaire — CC 517 al. 1 : désigné par acte de dernière volonté, il administre la succession selon les instructions du testateur. CC 518 al. 1 : l'exécuteur testamentaire a la possession des biens successoraux (possession, pas propriété). CC 518 al. 2 : il inventorie les biens, paye les dettes, exécute les legs et opère la répartition. CC 553 : l'autorité peut ordonner un inventaire immédiat. L'héritière ne peut pas exiger le transfert immédiat — c'est l'exécuteur qui administre jusqu'à la liquidation. Délai raisonnable = plusieurs semaines à mois. '24h + transfert immédiat + héritière presse' sans 'CC 518' ni 'exécuteur testamentaire rôle'. Signal adversarial = confusion entre les droits de l'exécuteur (administrateur fiduciaire) et ceux de l'héritière (destinataire final).",
+  },
+
+  // ASSURANCES — AANP accident de ski, indemnité 80% contestée
+  {
+    id: 'adv_assurances_06',
+    query: "Mon mari travaille à 100% dans une entreprise. Il s'est cassé le genou en skiant le week-end dernier. L'assurance-accidents dit que comme c'est en dehors du travail, il touche seulement 80% de son salaire pendant l'arrêt. Nous pensions qu'il aurait 100%. Y a-t-il un moyen de contester ou d'obtenir les 20% manquants ?",
+    canton: 'FR',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LAA 17', 'LAA 6', 'LAA 13', 'OLAA 23'],
+    notes: "Accident non professionnel (AANP) — LAA 6 al. 2 : les travailleurs à temps plein (≥ 8h/sem) sont assurés LAA contre les AANP. LAA 17 : indemnité journalière AANP = 80% du salaire assuré (contrairement à l'accident professionnel = 80% aussi — mais souvent le contrat CCT ou police complémentaire donne 100% pour AP). Pour obtenir 100%, il faudrait une assurance complémentaire privée ou une CCT prévoyant l'indemnité complète pour AANP. OLAA 23 : base de calcul du gain assuré. Opposition possible si le calcul du salaire assuré est erroné. '80% au lieu de 100% + accident ski week-end' sans 'LAA 17' ni 'AANP'. Signal adversarial = croyance que l'assurance LAA paye toujours 100% du salaire pour tous les accidents.",
+  },
+
+  // SANTÉ — certificat médical contesté par l'employeur, menaces de sanctions
+  {
+    id: 'adv_sante_05',
+    query: "J'étais arrêtée une semaine pour maladie avec un certificat de mon médecin de famille. Mon patron dit que ce certificat est 'de complaisance' et il me menace d'un avertissement si ça se reproduit. Il veut aussi que je sois examinée par le médecin-conseil de l'entreprise. Peut-il légalement remettre en cause mon certificat médical et m'imposer ce médecin d'entreprise ?",
+    canton: 'ZH',
+    expected_domaine: 'sante',
+    expected_any_article: ['CO 324a', 'CO 328', 'LAMal 40'],
+    notes: "Contestation certificat médical — CO 324a : droit au salaire en cas de maladie empêchant le travail (pas de faute du travailleur requise). L'employeur peut légitimement demander un 2ème avis médical (médecin-conseil), mais ne peut pas unilatéralement invalider un certificat valide. LAMal 40 : libre choix du médecin traitant par l'assuré. CO 328 : le patron qui formule des accusations publiques de complaisance sans preuve porte atteinte à la personnalité. L'avertissement pour maladie attestée peut être constitutif d'une résiliation abusive (CO 336 al. 1 lit. a : exercice d'un droit constitutionnel — droit à la santé). 'Certificat de mon médecin + patron dit complaisant + médecin d'entreprise imposé' sans 'CO 324a' ni 'contestation certificat'. Signal adversarial = ignorance de la hiérarchie des preuves (certificat prime sauf expertise contraire ordonnée par autorité).",
+  },
+
+  // VOISINAGE — caméra de surveillance pointée vers propriété voisine
+  {
+    id: 'adv_voisinage_07',
+    query: "Mon voisin a installé une caméra de surveillance sur sa façade. Elle est orientée de façon à filmer directement ma cour privée et parfois ma fenêtre de chambre. Il dit qu'il a le droit de surveiller sa propre entrée. J'ai demandé à voir les images et il a refusé. Quels sont mes recours contre cette intrusion visuelle ?",
+    canton: 'VD',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['LPD 30', 'CC 28', 'CC 684', 'LPD 25'],
+    notes: "Vidéosurveillance par le voisin — LPD 25/30 (droit d'accès aux données + obligations du responsable du traitement). La caméra qui filme la propriété privée d'un voisin constitue un traitement de données personnelles (LPD 5 lit. a). LPD 30 : le responsable du traitement doit informer les personnes filmées (panneaux) et ne peut traiter que ce qui est nécessaire. CC 28 (personnalité) + CC 28a (action en cessation + réparation) : filmer la cour ou chambre d'un voisin sans nécessité = atteinte à la sphère privée. CC 684 : immissions immatérielles (l'observation continue d'une propriété peut être excessive). 'Caméra voisin filme ma cour + refus de voir les images' sans 'LPD 30' ni 'vidéosurveillance'. Signal adversarial = croyance que le droit de surveiller sa propre entrée inclut le droit de filmer la propriété voisine.",
+  },
+
+  // HYBRIDE — concubinage long, décès sans testament, famille biologique réclame tout
+  {
+    id: 'adv_hybride_07',
+    query: "Mon compagnon et moi vivons ensemble depuis 15 ans sans nous être mariés. Il est décédé sans testament. Sa famille (ses frères et sœurs) vient de m'informer qu'ils héritent de tout, y compris notre appartement commun que nous avons acheté à 50/50. Ils veulent que je parte. Quels sont mes droits en tant que partenaire de longue date non marié ?",
+    canton: 'GE',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 457', 'CC 462', 'CC 481', 'CC 652'],
+    notes: "Concubin survivant sans testament — CC 457 : en l'absence de descendants, les collatéraux (frères et sœurs) héritent par représentation. Le concubin non marié N'A AUCUN droit successoral légal (CC 457 ne mentionne pas le partenaire de vie). CC 462 : seul le conjoint marié ou partenaire enregistré (LPart) bénéficie d'une quote-part légale. Sur l'appartement acheté à 50/50 (CC 652 — copropriété) : les héritiers ne peuvent forcer la vente qu'en demandant la licitation (action en partage CC 650). Le concubin possède sa part de 50% et ne peut pas être expulsé sans son accord. CC 481 : le de cujus aurait pu avantager son partenaire par testament (jusqu'à la quotité disponible). '15 ans ensemble + décédé + famille dit tout hériter + appartement 50/50' sans 'CC 457' ni 'copropriété'. Signal adversarial = confusion entre héritage légal (nul pour concubin) et droits de copropriété (protégés).",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

@@ -871,3 +871,26 @@ Points à surveiller :
   - adv_social_06 (hébergement urgence expulsion avec enfants — Cst 12/LIAS 8) → **100%**
   - adv_entreprise_05 (actionnaire minoritaire SA AG non convoqué — CO 706/697/704) → **63% gap**
 - **Prochaine action** : validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous. 17 gaps documentés disponibles pour priorisation.
+
+### 2026-06-14 UTC — run agent horaire (wave 12 adversarial : 120→130 cas)
+- **Tenté** : item 1 — wave 12 : +10 cas adversariaux ciblant des angles inédits (bail commercial, pourboires, revendication tiers saisi, biens propres divorce, logement insuffisant regroupement familial, exécuteur testamentaire, AANP ski, certificat médical contesté, caméra voisin, concubin décédé sans testament)
+- **Résultat** : passed ✓ — 130 cas dans `test/adversarial-cases.mjs`
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (données seulement, aucun code modifié)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Adversarial CLI (130 cas) : éval en cours (résultats au run suivant)
+- **Nouveaux cas wave 12 (10)** :
+  - adv_bail_15 (bail commercial, protection limitée vs résidentiel — CO 253a/272a)
+  - adv_travail_16 (pourboires retenus par patron sans avenant — CO 322a)
+  - adv_dettes_14 (revendication tiers sur objet saisi LP 106 — LP 106/108)
+  - adv_famille_12 (divorce + appartement acheté avant mariage avec héritage — CC 197/198/204)
+  - adv_etrangers_10 (regroupement familial refusé logement insuffisant — LEI 44/OASA 73)
+  - adv_successions_06 (rôle exécuteur testamentaire, droits et devoirs — CC 517/518)
+  - adv_assurances_06 (AANP ski 80% vs 100% attendu — LAA 17/6)
+  - adv_sante_05 (certificat médical contesté par employeur — CO 324a/328)
+  - adv_voisinage_07 (caméra voisin film cour privée — LPD 30/CC 28/684)
+  - adv_hybride_07 (concubin décédé sans testament, famille réclame — CC 457/652)
+- **Domaines** : 10 domaines simultanément — bail commercial (≠ résidentiel), pourboires, exécuteur testamentaire, AANP, LPD caméra, concubinage et successions
+- **Prochaine action** : résultats éval CLI 130 cas au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

@@ -1089,6 +1089,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CO 335b', 'CO 336', 'CO 336a'],
     notes: "Travailleur frontalier — lieu de travail habituel = Genève (Suisse) → droit suisse applicable (LDIP 121 al. 1 : loi du lieu de travail habituel). En droit suisse : AUCUNE indemnité légale de licenciement économique (contrairement au droit français). Préavis CO 335b : 1 mois la 1ère année, 2 mois de 2 à 9 ans, 3 mois à partir de 10 ans → 4 ans = 2 mois. Recours si résiliation abusive : CO 336a (indemnité jusqu'à 6 mois de salaire). 'Je vis en France + entreprise suisse + indemnité de licenciement' sans 'CO 335b' ni 'droit suisse applicable'. Signal adversarial = confusion droit du travail suisse vs français (risque critique : attendre une indemnité inexistante en droit suisse).",
   },
+
+  // ─── WAVE 11 — 2026-06-14 ──────────────────────────────────────────────────
+
+  // BAIL — sous-location / Airbnb sans accord du bailleur
+  {
+    id: 'adv_bail_14',
+    query: "Je pars travailler 2 mois à l'étranger. Je voudrais louer ma chambre libre via une plateforme de vacances pendant mon absence pour payer mon loyer. Mon bail ne parle pas d'Airbnb ou de sous-location. Est-ce que j'ai le droit de le faire sans en parler à la gérance ?",
+    canton: 'VD',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 262', 'CO 257f'],
+    notes: "Sous-location — CO 262 al. 1 : le locataire peut sous-louer avec le consentement écrit du bailleur. Le silence du bail sur ce point ne vaut pas autorisation. Le bailleur peut refuser si les conditions de sous-location sont abusives ou si la sous-location cause un inconvénient majeur. CO 257f : résiliation si violation. 'Ma chambre libre pendant mon absence + Airbnb + bail ne l'interdit pas' sans 'CO 262' ni 'sous-location'. Signal adversarial = croyance que l'absence d'interdiction explicite vaut autorisation.",
+  },
+
+  // TRAVAIL — réduction unilatérale de salaire annoncée par email
+  {
+    id: 'adv_travail_15',
+    query: "Mon patron m'a envoyé un email lundi pour me dire qu'à partir du mois prochain mon salaire mensuel passe de 5 400 à 4 600 francs 'en raison des difficultés économiques de la société'. Je n'ai signé aucun avenant. Est-ce qu'il peut décider ça tout seul ? Et que se passe-t-il si je refuse ?",
+    canton: 'AG',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 319', 'CO 320', 'CO 335'],
+    notes: "Modification unilatérale du contrat — en droit suisse, l'employeur ne peut pas réduire le salaire sans accord du travailleur. La solution légale = résiliation du contrat de travail (CO 335) assortie d'une offre de nouvel engagement aux nouvelles conditions (résiliation-modification). CO 319 al. 2 : les conventions contraires à ce qui est convenu ne s'imposent pas sans accord. CO 320 : présomption de contrat si le travailleur continue. 'Mon patron m'annonce une réduction de salaire par email + je n'ai rien signé' sans 'CO 319' ni 'résiliation-modification'. Signal adversarial = croyance que l'employeur peut imposer une modification unilatérale.",
+  },
+
+  // DETTES — cession de créance à une société de recouvrement inconnue
+  {
+    id: 'adv_dettes_13',
+    query: "J'ai reçu hier une lettre d'une société de recouvrement que je ne connais pas du tout, qui réclame 5 200 francs qu'ils disent avoir 'rachetés' auprès de mon ancien opérateur télécom. Je n'ai jamais reçu de facture de cette somme de la part de l'opérateur, et je ne sais même pas si c'est réel. Est-ce que cette société a le droit de me réclamer cet argent ? Que dois-je faire avant de payer quoi que ce soit ?",
+    canton: 'BE',
+    expected_domaine: 'dettes',
+    expected_any_article: ['CO 164', 'CO 167', 'LP 80', 'LP 67'],
+    notes: "Cession de créance (CO 164) : le créancier peut céder sa créance à un tiers sans consentement du débiteur. La cession est valable mais le débiteur peut opposer au cessionnaire toutes les exceptions qu'il aurait pu faire valoir contre le cédant (CO 169). CO 167 : le débiteur qui a payé de bonne foi au cédant est libéré. Avant de payer : vérifier l'existence de la dette (bordereau, justificatifs), demander la preuve de la cession. LP 80 : la société ne peut pas lancer une poursuite sans titre valable. 'Société inconnue + rachetés + jamais reçu de facture' sans 'CO 164' ni 'cession de créance'. Signal adversarial = croyance que la cession est illégale ou que la société ment forcément.",
+  },
+
+  // ÉTRANGERS — permis C refusé après 10+ ans de permis B
+  {
+    id: 'adv_etrangers_09',
+    query: "Je vis en Suisse depuis 12 ans avec un permis B qui se renouvelle chaque année sans problème. J'ai un contrat de travail stable, je paie mes impôts, je n'ai jamais eu d'ennuis avec la police. L'office cantonal des migrations vient de rejeter ma demande de permis C sans m'expliquer clairement pourquoi. Quelles sont les conditions que je n'aurais pas remplies et quels sont mes recours ?",
+    canton: 'ZH',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LEI 34', 'LEI 38', 'LEI 96'],
+    notes: "Permis C (autorisation d'établissement) — LEI 34 al. 2 : octroi après 10 ans de séjour légal ininterrompu (5 ans pour ressortissants UE/AELE) si critères d'intégration remplis (LEI 58a : langue, participation vie économique, respect ordre juridique). LEI 38 al. 2 : l'autorité peut refuser si critères non remplis. LEI 96 : voie de recours (recours auprès de l'instance cantonale compétente dans les 30 jours). '12 ans + casier vierge + impôts payés + refus non expliqué' sans 'LEI 34' ni 'critères intégration'. Signal adversarial = croyance que la durée seule suffit sans les critères d'intégration formels (langue, participation économique).",
+  },
+
+  // FAMILLE — autorité parentale, parents non mariés, père reconnaît l'enfant
+  {
+    id: 'adv_famille_11',
+    query: "J'ai eu un enfant il y a 3 ans avec un homme avec qui je n'étais pas en couple. Il vient de reconnaître l'enfant à l'état civil. Maintenant il veut avoir son mot à dire sur le choix de l'école et les soins médicaux, et parle de 'garde partagée'. Je n'ai jamais voulu qu'il soit impliqué à ce niveau. Est-ce qu'il peut exiger ça ?",
+    canton: 'VD',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 296', 'CC 298a', 'CC 301', 'CC 273'],
+    notes: "Autorité parentale parents non mariés — CC 298a : depuis 2014, l'autorité parentale conjointe est la règle même pour les parents non mariés, dès lors que le père a reconnu l'enfant et qu'une déclaration commune a été déposée (ou décision du juge). CC 296 al. 2 : autorité parentale conjointe dans l'intérêt de l'enfant. CC 301 : décisions quotidiennes à la charge du parent gardien. CC 273 : droit de visite minimum même sans autorité parentale. 'Il a reconnu l'enfant + veut décider école et médecin + garde partagée' sans 'CC 298a' ni 'autorité parentale conjointe'. Signal adversarial = croyance que la non-relation amoureuse exclut l'autorité parentale.",
+  },
+
+  // SUCCESSIONS — pacte successoral, renonciation à la réserve héréditaire
+  {
+    id: 'adv_successions_05',
+    query: "Mon père veut me donner 150 000 francs maintenant, de son vivant, et en échange il veut que je signe un document chez un notaire pour renoncer à ce qui me reviendrait lors de sa succession. Sa compagne doit recevoir l'essentiel. Est-ce que c'est légalement possible ? Qu'est-ce que je risque à signer ?",
+    canton: 'GE',
+    expected_domaine: 'successions',
+    expected_any_article: ['CC 495', 'CC 470', 'CC 522', 'CC 494'],
+    notes: "Pacte successoral de renonciation (CC 495) : valide uniquement par acte authentique en présence du notaire et des parties ; le renonçant abandonne ses droits successoraux contre une éventuelle contre-prestation. Mais la renonciation NE PEUT PAS porter sur la réserve héréditaire future d'un descendant mineur (CC 470 al. 1, révision 2023 = 1/2 part légale). Si la contre-prestation est insuffisante, l'action en réduction reste possible (CC 522) dans les délais. CC 494 : libéralité de la part légale (alternative au pacte). '150 000 francs + renoncer à l'héritage futur + notaire' sans 'CC 495' ni 'pacte successoral'. Signal adversarial = croyance que la transaction est simple/définitive alors que la réserve héréditaire ne peut pas être totalement sacrifiée.",
+  },
+
+  // CIRCULATION — alcool au volant 0.55‰, première infraction, taux avéré
+  {
+    id: 'adv_circulation_05',
+    query: "Samedi soir j'ai été contrôlé par la police et j'ai soufflé 0.55 pour mille. C'est la première fois que j'ai ce genre d'ennuis. Je n'avais pas eu d'accident. La police a pris mon permis sur place. Est-ce que je vais perdre mon permis définitivement ou seulement un certain temps, et quelles autres conséquences est-ce que je risque ?",
+    canton: 'FR',
+    expected_domaine: 'circulation',
+    expected_any_article: ['LCR 91', 'LCR 16b', 'LCR 55'],
+    notes: "Conduite en état d'ivresse — LCR 91 al. 1 : infraction si taux d'alcool ≥ 0.5‰. LCR 55 : contrôle obligatoire à 0.5‰. Taux 0.55‰ = infraction moyennement grave (LCR 16b : retrait de permis 1 mois minimum, première infraction). Amende pénale en plus. Au-dessus de 0.8‰ ou récidive → infraction grave (LCR 16c, 3 mois min). La prise du permis sur place est une mesure conservatoire. '0.55 pour mille + permis pris sur place + première fois' sans 'LCR 91' ni 'infraction moyennement grave'. Signal adversarial = confusion entre infraction légère (avertissement) et moyennement grave (retrait effectif).",
+  },
+
+  // VIOLENCE — revenge porn / diffusion d'images intimes sans consentement
+  {
+    id: 'adv_violence_05',
+    query: "Mon ex-petit ami a publié des photos intimes de moi sur des sites pornographiques sans que je sois au courant. Une amie les a trouvées par hasard. Je n'ai plus de contact avec lui depuis 8 mois. Ces images sont encore visibles en ligne. Que puis-je faire légalement pour les faire retirer et pour qu'il soit sanctionné ?",
+    canton: 'GE',
+    expected_domaine: 'violence',
+    expected_any_article: ['CP 197', 'CC 28', 'CC 28a', 'CP 179'],
+    notes: "Revenge porn / atteinte à l'honneur et à la personnalité — CP 197 al. 4 : diffusion de représentations sexuelles non consenties = crime, peine privative de liberté jusqu'à 3 ans. CC 28 : atteinte à la personnalité (image, honneur, sphère privée). CC 28a : action civile en cessation + dommages-intérêts. CP 179quater : atteinte au domaine secret (captation d'images non autorisée si original non consenti). Signalement aux plateformes + plainte pénale + action civile en suppression. 'Ex-copain + photos intimes + sites pornographiques + sans contact' sans 'CP 197' ni 'revenge porn'. Signal adversarial = victime qui croit ne rien pouvoir faire sans contact avec l'auteur.",
+  },
+
+  // SOCIAL — expulsion avec enfants, hébergement d'urgence, obligation de l'État
+  {
+    id: 'adv_social_06',
+    query: "L'huissier est venu ce matin et mes enfants et moi sommes à la rue. Nos affaires sont dans le couloir. Mon ex-mari est parti il y a 3 mois et avait arrêté de payer le loyer sans me le dire. Nous n'avons pas d'autre logement et pas d'argent. Qui a l'obligation de nous aider ce soir et comment je fais pour trouver un hébergement d'urgence ?",
+    canton: 'VD',
+    expected_domaine: 'social',
+    expected_any_article: ['Cst 12', 'LIAS 8', 'Cst 41'],
+    notes: "Hébergement d'urgence — Cst 12 : droit fondamental à des conditions minimales d'existence, justiciable et d'application immédiate (TF 8C_622/2009). La commune ou le canton a l'obligation de fournir un hébergement d'urgence même sans démarche préalable. LIAS (loi cantonale aide sociale VD) art. 8 : aide immédiate en cas de détresse. Lignes d'urgence sociales cantonales. 'Huissier ce matin + enfants à la rue + pas d'argent + ce soir' sans 'Cst 12' ni 'hébergement d'urgence'. Signal adversarial = ne pas savoir que la commune doit agir immédiatement sans procédure longue.",
+  },
+
+  // ENTREPRISE — actionnaire minoritaire d'une SA, AG non convoqué, décisions contraires aux intérêts
+  {
+    id: 'adv_entreprise_05',
+    query: "Nous sommes 3 actionnaires à parts égales dans notre petite SA. Les deux autres ont tenu une assemblée générale en janvier à laquelle je n'ai jamais été convoqué. Ils ont voté une augmentation de leurs propres salaires de direction de 30% et une émission de nouvelles actions qui va diluer ma part de 33% à 18%. Je l'ai appris par hasard. Quels sont mes recours ?",
+    canton: 'ZH',
+    expected_domaine: 'entreprise',
+    expected_any_article: ['CO 706', 'CO 697', 'CO 704', 'CO 706b'],
+    notes: "Nullité des décisions de l'AG — CO 697 al. 1 : convocation de l'AG à tous les actionnaires inscrits dans les 20 jours (défaut de convocation = vice formel). CO 706 : action en annulation dans les 2 mois dès la connaissance (défaut de convocation = motif suffisant). CO 706b : nullité absolue (cas énumérés dont suppression des droits essentiels des actionnaires sans accord). CO 704 al. 1 : augmentation du capital social requiert une majorité qualifiée des 2/3. 'AG sans moi + augmentation salaires + dilution de mes actions' sans 'CO 706' ni 'action en annulation'. Signal adversarial = croyance que la majorité peut tout décider sans respecter les droits procéduraux de la minorité.",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

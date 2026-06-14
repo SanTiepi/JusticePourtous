@@ -844,3 +844,26 @@ Points à surveiller :
 - **Domaines wave 10** : 10 domaines couverts simultanément — 8/10 passent à 100%, 1 gap nouveau révélé (retrait médical permis), 1 correction de spec (LEI vs LAsi)
 - **Nouveau gap documenté** : `circulation_retrait_permis_medical` (14e gap dans docs/missing-fiches.md)
 - **Prochaine action** : validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-06-14 UTC — run agent horaire (wave 11 adversarial : 110→120 cas)
+- **Tenté** : item 1 — wave 11 : +10 cas adversariaux ciblant des angles inédits (sous-location Airbnb, réduction unilatérale salaire, cession créance recouvrement, permis C refusé, autorité parentale parents non mariés, pacte successoral, alcool 0.55‰, revenge porn, hébergement urgence expulsion, actionnaire SA non convoqué)
+- **Résultat** : passed ✓ — 120 cas dans `test/adversarial-cases.mjs`
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Adversarial CLI (120 cas) : en cours au moment du commit (éval lancée en background ~30min)
+- **Nouveaux cas wave 11 (10)** :
+  - adv_bail_14 (sous-location Airbnb sans accord bailleur — CO 262/257f)
+  - adv_travail_15 (réduction unilatérale salaire par email — CO 319/320/335)
+  - adv_dettes_13 (cession créance société recouvrement inconnue — CO 164/167)
+  - adv_etrangers_09 (permis C refusé après 12 ans permis B — LEI 34/38/96)
+  - adv_famille_11 (autorité parentale parents non mariés — CC 296/298a/301/273)
+  - adv_successions_05 (pacte successoral / renonciation réserve héréditaire — CC 495/470/522)
+  - adv_circulation_05 (alcool 0.55‰ première infraction — LCR 91/16b/55)
+  - adv_violence_05 (revenge porn / diffusion images intimes — CP 197/CC 28a)
+  - adv_social_06 (hébergement urgence expulsion avec enfants — Cst 12/LIAS 8)
+  - adv_entreprise_05 (actionnaire minoritaire SA AG non convoqué — CO 706/697/704)
+- **Domaines couverts** : 10 domaines simultanément — angles inédits (sous-location, modification unilatérale, cession créance, revenge porn, pacte successoral, annulation AG)
+- **Prochaine action** : re-mesurer score éval CLI sur 120 cas au prochain run si éval en cours n'aboutit pas. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

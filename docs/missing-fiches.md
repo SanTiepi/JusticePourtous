@@ -7,7 +7,7 @@ correspondance exacte.
 
 Ces fiches sont à créer après validation juridique humaine.
 
-## État actuel : 14 gaps identifiés (mis à jour 2026-06-13)
+## État actuel : 17 gaps identifiés (mis à jour 2026-06-14)
 
 Les deux gaps historiques sont comblés :
 
@@ -109,6 +109,23 @@ Les deux gaps historiques sont comblés :
   - **pourquoi manquante** : `adv_circulation_04` (première crise d'épilepsie → retrait préventif → neurologue dit OK → office dit attendre 6 mois) — le navigator retourne `domaines=[]` `fiches=[]` : **aucune fiche ne couvre le retrait médical du permis**. La fiche existante `circulation_retrait_permis` (documentée comme gap dans `circulation_retrait_permis` — LCR 16a/16b/16c) traite le retrait PÉNAL (suite à infractions routières). Le retrait MÉDICAL (LCR 14 — inaptitude physique) est un domaine entièrement distinct : procédures différentes (médecin traitant → autorité cantonale de la circulation → OFROU), délais différents (pas péremptoire mais lié aux directives médicales), recours différents (administratif + médical).
   - **distinction critique** : retrait pénal = sanction après infraction (LCR 16a-16c, durée fixe, récidive aggrave). Retrait médical = mesure de sécurité publique (LCR 14, durée jusqu'à rétablissement médical confirmé). Un citoyen souffrant d'épilepsie ne sait pas à qui s'adresser ni comment obtenir la restitution.
   - **priorité** : haute. Situation vécue régulièrement (épilepsie, AVC, troubles visuels sévères, diabète insulino-dépendant). Le retrait médical peut durer des années sans recours clair. La distinction avec le retrait pénal est fondamentale mais inconnue des citoyens.
+
+### Gaps identifiés par l'éval adversariale 2026-06-14 (wave 11 — 110→120 cas, score 94% global)
+
+- ⛔ `travail_modification_contrat_unilateral`
+  - **base juridique** : CO 319 al. 2 (les conventions contraires à ce qui est convenu doivent être acceptées), CO 320 (présomption de contrat si le travailleur continue), CO 335 (résiliation-modification comme seule voie légale pour imposer une modification substantielle)
+  - **pourquoi manquante** : `adv_travail_15` (patron annonce réduction de salaire de 800 CHF par email, travailleur n'a rien signé) — le navigator route vers `travail_licenciement_abusif` avec articles CO 336/336a/336b (résiliation abusive). Articles CO 319/320/335 entièrement absents. La fiche existante traite le cas où l'employeur résilie (CO 336), mais pas le cas où il tente de modifier unilatéralement une condition essentielle sans résiliation formelle. La distinction est cruciale : la réduction unilatérale de salaire est nulle de plein droit, le travailleur peut continuer à travailler au salaire initial, et l'employeur doit passer par la résiliation-modification s'il veut réduire le salaire.
+  - **priorité** : haute. Cas fréquent (crise économique, restructuration). Un travailleur qui "accepte" une réduction par email sans protestation risque de perdre ses droits (CO 320 — présomption tacite). L'information sur la résiliation-modification est absente du corpus.
+
+- ⛔ `violence_diffusion_images_intimes`
+  - **base juridique** : CP 197 al. 4 (diffusion de représentations sexuelles non consenties = crime, peine privative de liberté jusqu'à 3 ans), CC 28 (atteinte à la personnalité : image, honneur, sphère privée), CC 28a (action en cessation + réparation), CP 179quater (captation d'images non autorisée dans le domaine secret)
+  - **pourquoi manquante** : `adv_violence_05` (ex-copain publie des photos intimes sur des sites pornographiques sans consentement) — le navigator route vers `violence_stalking_harcelement` + `violence_psychologique_preuves`. Articles retournés : CP 179septies (cyberharcèlement), CP 180 (menaces), CP 181 (contrainte), CC 28b (protection contre les violences) — aucun ne couvre CP 197 (diffusion d'images sexuelles non consenties, le seul fondement pénal spécifique au "revenge porn"). La fiche stalking traite la persécution persistante, pas la diffusion unique et irréversible d'images. La procédure est différente : plainte pénale (CP 197) + signalement plateformes + action civile en cessation (CC 28a) + possible LEI 80 pour LSCPT (conservation des données pour identifier le contrevenant si anonyme).
+  - **priorité** : haute. Phénomène en augmentation (réseaux sociaux, deepfakes). Le délai pour déposer plainte est de 3 mois dès connaissance (CP 31). Un citoyen qui ne connaît pas CP 197 croit souvent ne rien pouvoir faire, surtout si son ex est hors contact.
+
+- ⛔ `entreprise_sa_nullite_decisions_ag`
+  - **base juridique** : CO 697 al. 1 (convocation AG : délai de 20 jours, tous les actionnaires nominatifs inscrits), CO 706 al. 1 et 2 (action en annulation dans les 2 mois dès connaissance — motifs : défaut de convocation, ordre du jour non annoncé, participation irrégulière, intérêt propre non divulgué), CO 706b (nullité absolue, imprescriptible), CO 704 al. 1 ch. 1 (augmentation du capital social : majorité qualifiée 2/3 des voix représentées)
+  - **pourquoi manquante** : `adv_entreprise_05` (actionnaire SA, AG non convoqué, les 2 autres votent augmentation de leurs salaires + émission actions dilutive) — le navigator route vers `entreprise_conflit_associes_sarl`. Articles retournés : CO 798/808/822/823 (droit des associés **SARL**) — aucun ne couvre CO 706 ni CO 704 (droit des actionnaires **SA**). La fiche `entreprise_conflit_associes_sarl` est spécifique à la SARL ; la SA a un régime distinct (CO 620 et ss. vs CO 772 et ss.). La distinction est fondamentale : dans une SA, l'action en annulation d'une décision AG prise sans convocation régulière est un droit intangible des actionnaires (CO 706), avec un délai de 2 mois dès connaissance.
+  - **priorité** : haute. Le délai de 2 mois pour agir (CO 706) est péremptoire — un actionnaire SA non convoqué qui ne réagit pas perd son recours. La confusion SA/SARL dans les fiches existantes rend cette situation invisible pour les citoyens concernés.
 
 Pour rouvrir cette liste, relancer l'éval adversariale et capturer les nouveaux
 cas où le navigator se rabat sur une fiche voisine :

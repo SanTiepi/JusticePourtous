@@ -1,5 +1,7 @@
 # CLAUDE.md — JusticePourtous
 
+> **Règles de travail universelles : `~/.claude/CLAUDE.md` (rulebook global) — il PRIME.** Ce fichier ne doit contenir que le spécifique à CE repo (stack, déploiement, conventions locales). En cas de doublon ou de conflit avec le global, le global gagne.
+
 ## Constitution (immuable)
 
 - **Mission** : Triage juridique citoyen suisse. Pas une base documentaire — un connecteur intelligent entre citoyens et ressources juridiques.

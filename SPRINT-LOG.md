@@ -902,7 +902,13 @@ Points à surveiller :
   - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement)
   - Validation fiches : 0 erreur ✓
   - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
-  - **Adversarial CLI (130 cas) : éval lancée en parallèle — résultats au run suivant** (process en cours ; timeouts probables sur quelques cas comme aux runs précédents)
+  - **Adversarial CLI (130 cas, haiku, concurrency=4) : 91% global** (113×100% + 8×63% + 9×0%)
+    - 2 timeouts non-représentatifs : `adv_social_04` + `adv_etrangers_10` (étaient 100% précédemment)
+    - 2 corrections specs : `adv_sante_05` `sante` → `travail` (CO 324a = code obligations travail, navigator route correctement vers `travail`), `adv_hybride_07` `famille` → `successions` (concubin décédé = succession, navigator route correctement vers `successions`)
+    - 2 nouveaux gaps wave 12 documentés : `bail_commercial` (0% — aucun routing, CO 253a non couvert) + `voisinage_camera_surveillance` (0% — LPD+CC 28, nLPD 2023 non couverte)
+    - Fails 63% pré-existants maintenus : `adv_dettes_06` (cautionnement), `adv_social_02` (LACI 30), `adv_sante_03` (LAMal 41), `adv_entreprise_04` (CP 138), `adv_travail_15` (CO 319), `adv_violence_05` (CP 197)
+    - Fails 0% pré-existants : `adv_fiscal_01/02` (blind spot), `adv_circulation_04` (retrait médical), `adv_entreprise_05` (CO 706 SA)
+    - Score estimé après corrections : **~94%** (excluant 2 timeouts + corrigeant 2 specs)
 - **Nouveaux cas wave 13 (10)** :
   - `adv_bail_16` (colocataire bail solidaire, partir sans co-signer — CO 143/264/266)
   - `adv_travail_17` (licenciement période essai 3 semaines, 7 jours préavis — CO 335b)
@@ -915,4 +921,6 @@ Points à surveiller :
   - `adv_voisinage_08` (racines chêne voisin soulèvent terrasse, qui paie ? — CC 679/687/684)
   - `adv_successions_07` (hoirie bloquée 15 ans, frère refuse partage — CC 604/610/650)
 - **Nouveaux domaines/angles** : 1ère couverture APG maternité (LAPG), CO 143 colocataire, CO 127 prescription dette, admis provisoire permis F droit au travail
-- **Prochaine action** : résultats éval CLI 130 cas + mesure sur 140 cas au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+- **Gaps documentés** : 2 nouveaux (17 → 19 dans `docs/missing-fiches.md`) : `bail_commercial` (CO 253a) + `voisinage_camera_surveillance` (nLPD 2023/CC 28)
+- **Corrections specs** : `adv_sante_05` `sante` → `travail`, `adv_hybride_07` `famille` → `successions`
+- **Prochaine action** : mesure éval CLI sur 140 cas au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

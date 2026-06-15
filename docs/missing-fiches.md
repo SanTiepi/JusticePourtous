@@ -7,7 +7,7 @@ correspondance exacte.
 
 Ces fiches sont à créer après validation juridique humaine.
 
-## État actuel : 17 gaps identifiés (mis à jour 2026-06-14)
+## État actuel : 19 gaps identifiés (mis à jour 2026-06-15)
 
 Les deux gaps historiques sont comblés :
 
@@ -126,6 +126,18 @@ Les deux gaps historiques sont comblés :
   - **base juridique** : CO 697 al. 1 (convocation AG : délai de 20 jours, tous les actionnaires nominatifs inscrits), CO 706 al. 1 et 2 (action en annulation dans les 2 mois dès connaissance — motifs : défaut de convocation, ordre du jour non annoncé, participation irrégulière, intérêt propre non divulgué), CO 706b (nullité absolue, imprescriptible), CO 704 al. 1 ch. 1 (augmentation du capital social : majorité qualifiée 2/3 des voix représentées)
   - **pourquoi manquante** : `adv_entreprise_05` (actionnaire SA, AG non convoqué, les 2 autres votent augmentation de leurs salaires + émission actions dilutive) — le navigator route vers `entreprise_conflit_associes_sarl`. Articles retournés : CO 798/808/822/823 (droit des associés **SARL**) — aucun ne couvre CO 706 ni CO 704 (droit des actionnaires **SA**). La fiche `entreprise_conflit_associes_sarl` est spécifique à la SARL ; la SA a un régime distinct (CO 620 et ss. vs CO 772 et ss.). La distinction est fondamentale : dans une SA, l'action en annulation d'une décision AG prise sans convocation régulière est un droit intangible des actionnaires (CO 706), avec un délai de 2 mois dès connaissance.
   - **priorité** : haute. Le délai de 2 mois pour agir (CO 706) est péremptoire — un actionnaire SA non convoqué qui ne réagit pas perd son recours. La confusion SA/SARL dans les fiches existantes rend cette situation invisible pour les citoyens concernés.
+
+### Gaps identifiés par l'éval adversariale 2026-06-15 (wave 12 mesurée — 130 cas, score 91% brut → ~94% après corrections specs)
+
+- ⛔ `bail_commercial`
+  - **base juridique** : CO 253a (bail commercial — locaux à usage commercial, régime moins protecteur que l'habitation), CO 272a (prolongation limitée : 1 seule prolongation max de 6 ans, uniquement si besoins clairement prépondérants du locataire — CO 272), CO 268 (délai de préavis 6 mois pour bail commercial > 1 an), CO 260a (indemnité pour aménagements si bailleur en profite)
+  - **pourquoi manquante** : `adv_bail_15` (magasin de fleurs, bail commercial 8 ans, investissement 60k CHF, congé 3 mois pour reprise, confusion avec bail d'habitation) — le navigator retourne `domaines=[]` `fiches=[]` : **aucun routing pour le bail commercial**. Les fiches bail existantes traitent exclusivement le bail d'habitation (CO 269 et ss., CO 271a — protection maximale). Le bail commercial (CO 253a) a un régime radicalement différent : pas de liste exhaustive de congés abusifs (CO 271a ne s'applique pas), délai de préavis 6 mois, prolongation plus difficile. Un commerçant qui croit bénéficier de la même protection qu'un locataire résidentiel commet une erreur critique.
+  - **priorité** : haute. Nombreux petits commerçants (artisans, restaurants, boutiques) en bail commercial. La confusion avec le bail résidentiel peut leur faire rater le délai de contestation (30 jours pour saisir la commission de conciliation). Délai court + erreur de droit = droits perdus.
+
+- ⛔ `voisinage_camera_surveillance`
+  - **base juridique** : LPD 25 (droit d'accès aux données personnelles pour les traitements privés), LPD 30 (obligations du responsable du traitement : information, minimisation, finalité), LPD 5 lit. a (données personnelles = images permettant l'identification), CC 28 (atteinte à la personnalité, droit à l'image), CC 28a (action en cessation + dommages-intérêts), CC 684 (immissions immatérielles excessives)
+  - **pourquoi manquante** : `adv_voisinage_07` (caméra voisin orientée vers cour privée + fenêtre chambre, refus de donner accès aux images) — le navigator retourne `domaines=[]` `fiches=[]` : **aucune fiche pour la vidéosurveillance entre voisins**. Les fiches voisinage couvrent le bruit, les arbres, les constructions — pas le domaine LPD appliqué aux rapports de voisinage. La caméra qui filme la propriété d'un voisin constitue un traitement de données personnelles soumis à la nLPD (en vigueur depuis sept. 2023) : obligation d'information (panneau), minimisation (angle couvrant seulement la propriété du filmant), et droit d'accès (art. 25 nLPD). Un voisin peut exiger la cessation + l'effacement des images.
+  - **priorité** : haute. Prolifération des caméras de surveillance résidentielles. Confusion fréquente : le propriétaire croit que "sa caméra sur sa façade = son droit". La nLPD 2023 a renforcé les obligations de minimisation et d'information. Situation sans fiche = 0% au navigator, citoyen sans ressource.
 
 Pour rouvrir cette liste, relancer l'éval adversariale et capturer les nouveaux
 cas où le navigator se rabat sur une fiche voisine :

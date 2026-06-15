@@ -894,3 +894,25 @@ Points à surveiller :
   - adv_hybride_07 (concubin décédé sans testament, famille réclame — CC 457/652)
 - **Domaines** : 10 domaines simultanément — bail commercial (≠ résidentiel), pourboires, exécuteur testamentaire, AANP, LPD caméra, concubinage et successions
 - **Prochaine action** : résultats éval CLI 130 cas au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-06-15 UTC — run agent horaire (wave 13 adversarial : 130→140 cas + éval CLI 130)
+- **Tenté** : item 1 — (a) lancer éval CLI sur 130 cas (wave 12 non mesurée) + (b) wave 13 : +10 cas adversariaux (130→140)
+- **Résultat** : passed ✓ — 140 cas dans `test/adversarial-cases.mjs`, 3 gates verts
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - **Adversarial CLI (130 cas) : éval lancée en parallèle — résultats au run suivant** (process en cours ; timeouts probables sur quelques cas comme aux runs précédents)
+- **Nouveaux cas wave 13 (10)** :
+  - `adv_bail_16` (colocataire bail solidaire, partir sans co-signer — CO 143/264/266)
+  - `adv_travail_17` (licenciement période essai 3 semaines, 7 jours préavis — CO 335b)
+  - `adv_dettes_15` (dette 2014 cédée agence recouvrement, prescription ? — CO 127/128/142)
+  - `adv_violence_06` (violence conjugale + enfant 8 ans, obliger mari à quitter — CC 28b/176/LAVI)
+  - `adv_etrangers_11` (permis F, droit au travail ? durée ? — LEI 83/85/OASA 61a)
+  - `adv_sante_06` (suspension LAMal non-paiement, urgence cardiaque couverte ? — LAMal 64a/41)
+  - `adv_consommation_06` (circuit Thaïlande annulé par agence, bon vs remboursement — LFP/CO 397a)
+  - `adv_social_07` (photographe indépendante enceinte, APG maternité — LAPG 16b/16d/16f)
+  - `adv_voisinage_08` (racines chêne voisin soulèvent terrasse, qui paie ? — CC 679/687/684)
+  - `adv_successions_07` (hoirie bloquée 15 ans, frère refuse partage — CC 604/610/650)
+- **Nouveaux domaines/angles** : 1ère couverture APG maternité (LAPG), CO 143 colocataire, CO 127 prescription dette, admis provisoire permis F droit au travail
+- **Prochaine action** : résultats éval CLI 130 cas + mesure sur 140 cas au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

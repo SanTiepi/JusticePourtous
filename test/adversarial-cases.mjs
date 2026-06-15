@@ -1293,6 +1293,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CC 457', 'CC 462', 'CC 481', 'CC 652'],
     notes: "Concubin survivant sans testament — CC 457 : en l'absence de descendants, les collatéraux (frères et sœurs) héritent par représentation. Le concubin non marié N'A AUCUN droit successoral légal (CC 457 ne mentionne pas le partenaire de vie). CC 462 : seul le conjoint marié ou partenaire enregistré (LPart) bénéficie d'une quote-part légale. Sur l'appartement acheté à 50/50 (CC 652 — copropriété) : les héritiers ne peuvent forcer la vente qu'en demandant la licitation (action en partage CC 650). Le concubin possède sa part de 50% et ne peut pas être expulsé sans son accord. CC 481 : le de cujus aurait pu avantager son partenaire par testament (jusqu'à la quotité disponible). '15 ans ensemble + décédé + famille dit tout hériter + appartement 50/50' sans 'CC 457' ni 'copropriété'. Signal adversarial = confusion entre héritage légal (nul pour concubin) et droits de copropriété (protégés).",
   },
+
+  // ========== WAVE 13 — angles inédits ==========
+
+  // BAIL — colocataire veut partir, bail solidaire à deux noms
+  {
+    id: 'adv_bail_16',
+    query: "On est deux à avoir signé le bail de cet appartement, moi et mon ami. On ne s'entend plus. Lui veut rester, moi je veux partir. La régie dit que je suis toujours responsable du loyer même si je pars. Est-ce qu'il peut garder l'appart sans moi et comment est-ce que je me dégage de la responsabilité du bail ?",
+    canton: 'VD',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 143', 'CO 264', 'CO 266'],
+    notes: "Colocataire / bail solidaire (CO 143) — en Suisse, si deux personnes signent un bail ensemble, elles sont solidairement responsables de tout le loyer. Pour que le premier locataire se dégage, il faut : (a) que le bailleur accepte formellement de le libérer, ou (b) qu'un locataire de remplacement solvable soit trouvé (analogie CO 264). On ne peut pas 'quitter' un bail solidaire sans l'accord du bailleur — le bail ne prend fin que si TOUS les locataires donnent le congé ensemble (CO 266). 'Je veux partir + lui reste + régie dit que je dois quand même payer' sans 'CO 143' ni 'solidarité'. Signal adversarial = ignorance que le bail solidaire lie le colocataire sortant jusqu'à la fin du contrat ou remplacement accepté.",
+  },
+
+  // TRAVAIL — licenciement abrupt en période d'essai, 7 jours seulement
+  {
+    id: 'adv_travail_17',
+    query: "J'ai commencé un nouveau travail il y a 3 semaines. Hier mon patron m'a dit que ça ne marchait pas et il me donnait une semaine pour partir. Aucune explication, aucune lettre, juste verbal. Est-ce que c'est légal de me virer aussi vite sans rien me dire ?",
+    canton: null,
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 335b', 'CO 335'],
+    notes: "Licenciement en période d'essai — CO 335b al. 1 : pendant le premier mois de travail (période d'essai standard), délai de résiliation de 7 jours. L'employeur n'a pas à motiver sa décision pendant la période d'essai (sauf abus manifeste CO 336). Une semaine de préavis verbal est légalement possible. Mais : si aucune lettre n'est envoyée et que le travailleur conteste avoir reçu le congé, l'employeur doit prouver la notification (recommandé ou remise en main propre). '3 semaines + une semaine pour partir + sans explication' sans 'CO 335b' ni 'période d'essai'. Signal adversarial = citoyen qui croit que le licenciement nécessite toujours un motif écrit.",
+  },
+
+  // DETTES — dette ancienne reçue par une agence de recouvrement, prescription
+  {
+    id: 'adv_dettes_15',
+    query: "J'ai reçu un appel d'une société de recouvrement qui dit que je dois CHF 4'800 pour un crédit que j'aurais pris en 2014. Je ne me souviens plus de ce crédit et je n'ai rien payé depuis au moins 8 ans. Est-ce que cette dette est encore valable et est-ce que je dois payer ?",
+    canton: null,
+    expected_domaine: 'dettes',
+    expected_any_article: ['CO 127', 'CO 128', 'CO 142'],
+    notes: "Prescription d'une dette (CO 127 : 10 ans prescription ordinaire). Une dette non reconnue depuis plus de 5 ans peut être prescrite selon le type (CO 128 : 5 ans pour les créances périodiques). La prescription doit être invoquée par le débiteur (CO 142 : le juge ne peut la suppléer d'office). Si aucun acte interruptif (reconnaissance, commandement de payer, paiement partiel) n'a eu lieu depuis 10 ans, la dette est prescrite. Le cédant (agence de recouvrement) ne peut pas exiger plus que le créancier original. 'Crédit 2014 + rien payé depuis 8 ans + société de recouvrement' sans 'CO 127' ni 'prescription'. Signal adversarial = citoyen qui ignore que les dettes anciennes peuvent être prescrites et que c'est lui qui doit l'invoquer.",
+  },
+
+  // VIOLENCE — violence conjugale physique, besoin de partir avec les enfants en urgence
+  {
+    id: 'adv_violence_06',
+    query: "Mon mari me frappe régulièrement depuis 2 ans, surtout quand il a bu. Hier soir il a aussi levé la main sur notre fils de 8 ans. J'ai peur de rester à la maison mais je ne sais pas comment partir avec les enfants sans qu'il ne nous retrouve. Est-ce qu'il y a une façon légale de l'obliger à quitter le domicile plutôt que de fuir moi-même ?",
+    canton: 'VD',
+    expected_domaine: 'violence',
+    expected_any_article: ['CC 28b', 'CC 176', 'LAVI'],
+    notes: "Violence conjugale + enfants — CC 28b : le tribunal peut ordonner une interdiction de périmètre / d'approcher la victime et les enfants. CC 176 al. 1 ch. 2 : dans le cadre des mesures protectrices de l'union conjugale, le juge peut attribuer le logement conjugal à l'un des époux. LAVI : aide aux victimes d'infractions — consultant gratuit, soutien psychologique, indemnité. La victime peut déposer une plainte pénale (CP 122/123 lésions corporelles) + une demande de mesures urgentes (CPC 261 mesures provisionnelles). L'autorité de protection de l'enfant (APEA/KESB) peut intervenir pour protéger le fils. 'Mari frappe depuis 2 ans + fils touché + partir avec enfants + obliger mari à quitter' sans 'CC 28b' ni 'mesures protectrices'. Signal adversarial = ignorance que c'est l'auteur qui peut être expulsé du domicile et non la victime qui doit fuir.",
+  },
+
+  // ÉTRANGERS — permis F (admis provisoire), droits au travail
+  {
+    id: 'adv_etrangers_11',
+    query: "Je suis arrivé de Syrie il y a 2 ans. Ma demande d'asile a été refusée mais on m'a dit que je ne pouvais pas être renvoyé pour l'instant et que j'ai un 'permis F'. Je cherche du travail mais les employeurs disent qu'ils ne savent pas si c'est autorisé. Ai-je le droit de travailler avec ce permis et pour combien de temps ?",
+    canton: 'BE',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LEI 83', 'LEI 85', 'OASA 61a'],
+    notes: "Admis provisoire (permis F) — LEI 83 : renvoi provisoirement impossible (illicite, inexigible ou matériellement impossible). LEI 85 al. 2 : les étrangers admis provisoirement ont le droit d'exercer une activité lucrative (délai d'attente de 3 mois, annulation possible si intérêt économique ou urgence). L'employeur n'a pas besoin d'une autorisation spéciale au-delà de l'annonce à l'autorité cantonale. OASA 61a : exigences simplifiées pour l'accès au marché du travail des admis provisoires. Durée : le permis F est renouvelé tant que le renvoi reste impossible. 'Permis F + employeurs disent pas sûr + droit de travailler ?' sans 'LEI 83' ni 'admis provisoire'. Signal adversarial = ignorance que le permis F donne un droit au travail légal en Suisse.",
+  },
+
+  // SANTÉ — suspension assurance maladie pour arriérés de primes, urgence médicale
+  {
+    id: 'adv_sante_06',
+    query: "J'ai des arriérés de primes d'assurance maladie depuis 6 mois. Ma caisse maladie m'a envoyé une lettre disant que mon assurance est 'suspendue'. Aujourd'hui j'ai eu de fortes douleurs dans la poitrine. J'ai peur qu'à l'hôpital ils refusent de me soigner parce que mon assurance est suspendue. Qu'est-ce qui se passe exactement quand l'assurance est suspendue ?",
+    canton: 'GE',
+    expected_domaine: 'sante',
+    expected_any_article: ['LAMal 64a', 'LAMal 41'],
+    notes: "Suspension LAMal pour non-paiement — LAMal 64a al. 7 : même en cas de suspension, l'assureur doit prendre en charge les soins urgents (c'est l'État cantonal qui paie et récupère ensuite). La suspension signifie que les soins non urgents ne sont pas remboursés, mais l'accès aux urgences reste garanti par la loi. LAMal 41 : libre choix du médecin/hôpital. La dette envers la caisse reste due (plus intérêts 5%), mais les arriérés peuvent faire l'objet d'un arrangement de paiement. Dans les cantons du concordat LCA/listes noires : le débiteur est sur liste cantonale des mauvais payeurs → seuls les soins urgents remboursés. 'Suspension assurance maladie + douleurs poitrines + peur refus soins' sans 'LAMal 64a' ni 'soins urgents toujours couverts'. Signal adversarial = croyance que la suspension = perte totale de l'accès aux soins.",
+  },
+
+  // CONSOMMATION — voyage organisé annulé par l'agence, droit au remboursement vs bon
+  {
+    id: 'adv_consommation_06',
+    query: "J'avais réservé et payé CHF 3'200 un circuit organisé en Thaïlande auprès d'une agence de voyage suisse. 3 semaines avant le départ, l'agence m'informe qu'elle annule le circuit 'faute de participants suffisants'. Elle me propose un bon valable 18 mois. J'aimerais un remboursement en cash, pas un bon. Ai-je ce droit ?",
+    canton: 'ZH',
+    expected_domaine: 'consommation',
+    expected_any_article: ['CO 397a', 'CO 119'],
+    notes: "Voyage à forfait annulé par l'organisateur — en droit suisse (Loi fédérale sur les voyages à forfait LFP, RS 944.3, en vigueur depuis 2019), si l'organisateur annule le voyage, le voyageur a droit au remboursement intégral dans les 14 jours (LFP 13 al. 1). L'organisateur ne peut pas imposer un bon à la place d'un remboursement en espèces — c'est le choix du consommateur. CO 397a (responsabilité de l'agent de voyages) s'applique subsidiairement. Si l'organisateur refuse, le consommateur peut déposer plainte auprès de la Commission de conciliation des voyages à forfait ou agir au tribunal (CPC procédure simplifiée < 30'000 CHF). 'Voyage annulé 3 semaines avant + bon imposé + je veux cash' sans 'LFP' ni 'remboursement 14 jours'. Signal adversarial = ignorance que le bon est une faveur et non un droit de l'agence.",
+  },
+
+  // SOCIAL — allocation perte de gain maternité pour travailleuse indépendante
+  {
+    id: 'adv_social_07',
+    query: "Je suis photographe indépendante, je cotise à l'AVS depuis 4 ans. Je suis enceinte de 7 mois et je prévois d'accoucher dans 2 mois. On m'a dit que j'ai droit à quelque chose pendant ma maternité mais je ne suis pas salariée. Ai-je vraiment droit à une allocation et combien ?",
+    canton: null,
+    expected_domaine: 'social',
+    expected_any_article: ['LAPG 16b', 'LAPG 16d', 'LAPG 16f'],
+    notes: "APG maternité pour indépendante — La loi sur les allocations pour perte de gain (LAPG) couvre aussi les travailleuses indépendantes qui cotisent à l'AVS depuis au moins 5 mois (LAPG 16b al. 2). Durée : 98 jours (14 semaines) à partir de l'accouchement. Montant : 80% du revenu moyen soumis à l'AVS, plafonné au gain assuré. La demande doit être faite auprès de la caisse de compensation AVS dans les 5 ans suivant l'accouchement. Pour y avoir droit, il faut avoir été affiliée à l'AVS sans interruption depuis 5 mois et avoir exercé une activité lucrative. '4 ans AVS + photographe indépendante + enceinte + allocation possible ?' sans 'LAPG' ni 'allocation maternité indépendante'. Signal adversarial = croyance que l'APG maternité est réservée aux salariées.",
+  },
+
+  // VOISINAGE — racines d'arbre voisin soulèvent ma terrasse, qui paie les dégâts ?
+  {
+    id: 'adv_voisinage_08',
+    query: "Les racines du chêne de mon voisin ont soulevé ma terrasse en béton et ma clôture. Les réparations vont coûter environ CHF 8'000. Mon voisin dit que c'est un phénomène naturel et qu'il n'est pas responsable. Qui doit payer et est-ce que j'ai le droit de couper les racines ?",
+    canton: 'FR',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 679', 'CC 687', 'CC 684'],
+    notes: "Racines empiétantes et dommages — CC 687 al. 1 : le propriétaire peut couper et garder les racines et branches qui empiètent sur son fonds, après avoir accordé un délai convenable au voisin. CC 679 al. 1 : le propriétaire qui use de son fonds en excédant ses droits de propriété et cause des dommages à un voisin en est responsable (responsabilité causale). Si les racines causent des dommages matériels, le propriétaire de l'arbre peut être tenu responsable même sans faute si l'usage est excessif (CC 684 : immissions — bruits, émanations, etc., par extension jurisprudentielle pour racines). Action en réparation + permission de couper les racines entrantes. Prescription 10 ans (CO 127). 'Racines voisin + terrasse soulevée + 8000 CHF + phénomène naturel' sans 'CC 679' ni 'responsabilité du propriétaire'. Signal adversarial = croyance que le propriétaire n'est jamais responsable des dommages causés par ses arbres.",
+  },
+
+  // SUCCESSIONS — hoirie bloquée 15 ans, un héritier refuse tout partage
+  {
+    id: 'adv_successions_07',
+    query: "Notre père est décédé il y a 15 ans. L'appartement qu'il possédait à Fribourg est toujours au nom de l'hoirie. Mon frère refuse depuis 15 ans de signer quoi que ce soit — il dit qu'il préfère 'attendre'. Les deux autres héritiers (moi et ma sœur) voulons vendre et récupérer notre part. Est-ce que mon frère peut bloquer le partage indéfiniment ?",
+    canton: 'FR',
+    expected_domaine: 'successions',
+    expected_any_article: ['CC 604', 'CC 610', 'CC 650'],
+    notes: "Partage forcé de l'hoirie — CC 604 al. 1 : chaque héritier peut demander le partage à tout moment (le droit au partage est imprescriptible). CC 610 : sauf accord contraire, les parts héréditaires sont égales. Un héritier ne peut pas bloquer indéfiniment le partage. Si le frère refuse de négocier, les autres héritiers peuvent saisir le tribunal et demander un partage judiciaire. CC 650 : si les parties ne s'entendent pas sur l'attribution de biens en nature, le juge peut ordonner la vente aux enchères (licitation). La procédure de partage judiciaire se fait selon les règles cantonales (CPC 274 pour les litiges successoraux). 'Hoirie 15 ans + frère refuse + voulons vendre + peut-il bloquer ?' sans 'CC 604' ni 'partage imprescriptible'. Signal adversarial = croyance que l'unanimité est toujours requise et qu'un héritier peut bloquer éternellement.",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

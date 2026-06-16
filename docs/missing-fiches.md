@@ -7,7 +7,7 @@ correspondance exacte.
 
 Ces fiches sont à créer après validation juridique humaine.
 
-## État actuel : 19 gaps identifiés (mis à jour 2026-06-15)
+## État actuel : 20 gaps identifiés (mis à jour 2026-06-16)
 
 Les deux gaps historiques sont comblés :
 
@@ -126,6 +126,14 @@ Les deux gaps historiques sont comblés :
   - **base juridique** : CO 697 al. 1 (convocation AG : délai de 20 jours, tous les actionnaires nominatifs inscrits), CO 706 al. 1 et 2 (action en annulation dans les 2 mois dès connaissance — motifs : défaut de convocation, ordre du jour non annoncé, participation irrégulière, intérêt propre non divulgué), CO 706b (nullité absolue, imprescriptible), CO 704 al. 1 ch. 1 (augmentation du capital social : majorité qualifiée 2/3 des voix représentées)
   - **pourquoi manquante** : `adv_entreprise_05` (actionnaire SA, AG non convoqué, les 2 autres votent augmentation de leurs salaires + émission actions dilutive) — le navigator route vers `entreprise_conflit_associes_sarl`. Articles retournés : CO 798/808/822/823 (droit des associés **SARL**) — aucun ne couvre CO 706 ni CO 704 (droit des actionnaires **SA**). La fiche `entreprise_conflit_associes_sarl` est spécifique à la SARL ; la SA a un régime distinct (CO 620 et ss. vs CO 772 et ss.). La distinction est fondamentale : dans une SA, l'action en annulation d'une décision AG prise sans convocation régulière est un droit intangible des actionnaires (CO 706), avec un délai de 2 mois dès connaissance.
   - **priorité** : haute. Le délai de 2 mois pour agir (CO 706) est péremptoire — un actionnaire SA non convoqué qui ne réagit pas perd son recours. La confusion SA/SARL dans les fiches existantes rend cette situation invisible pour les citoyens concernés.
+
+### Gap identifié par l'éval adversariale 2026-06-16 (wave 13 mesurée — 140 cas, score 91% brut → ~94% après corrections specs)
+
+- ⛔ `assurance_aanp_taux_indemnite`
+  - **base juridique** : LAA 17 (indemnité journalière AANP = 80% du salaire assuré), LAA 6 al. 2 (couverture AANP si taux d'occupation ≥ 8h/sem), LAA 13 (base de calcul du gain assuré), OLAA 23 (assiette de la cotisation AANP)
+  - **pourquoi manquante** : `adv_assurances_06` (employé 100%, ski week-end, LAA paye 80% au lieu de 100%, employeur dit "c'est la loi") — le navigator route vers `assurance_ijm` (assurance d'indemnité journalière maladie LCA) + `assurance_lamal_refus_prestation`. Articles retournés : LCA 67, LCA 46, LAMal 67-77, CO 324a — aucun ne couvre **LAA 17** (taux légal AANP 80%). La fiche `assurance_ijm` traite la garantie perte de gain privée (LCA), qui est distincte de l'assurance-accidents obligatoire (LAA). La confusion est fréquente : certains employeurs ou CCT prévoient 100% via une assurance complémentaire, mais la LAA seule garantit 80% pour l'AANP. Un citoyen qui ne comprend pas cette distinction ne sait pas s'il peut réclamer davantage (assurance complémentaire manquante ou CCT non appliquée).
+  - **distinction avec `assurance_aanp_lamal_sport`** : LAA 8 (AANP, liste des activités dangereuses exclues : parachutisme, arts martiaux...) est couverte par `adv_accident_03` qui passe à 100%. Le gap ici est sur le **taux** (80% LAA vs 100% attendu par l'employé) et la confusion LAA/IJM.
+  - **priorité** : haute. La distinction LAA (obligatoire, 80% AANP) vs assurance complémentaire (volontaire, 100%) est une source majeure de malentendus lors d'accidents non-professionnels. Plusieurs milliers d'accidents de ski/sport par an.
 
 ### Gaps identifiés par l'éval adversariale 2026-06-15 (wave 12 mesurée — 130 cas, score 91% brut → ~94% après corrections specs)
 

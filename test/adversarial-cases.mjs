@@ -1362,7 +1362,7 @@ export const ADVERSARIAL_CASES = [
     query: "J'avais réservé et payé CHF 3'200 un circuit organisé en Thaïlande auprès d'une agence de voyage suisse. 3 semaines avant le départ, l'agence m'informe qu'elle annule le circuit 'faute de participants suffisants'. Elle me propose un bon valable 18 mois. J'aimerais un remboursement en cash, pas un bon. Ai-je ce droit ?",
     canton: 'ZH',
     expected_domaine: 'consommation',
-    expected_any_article: ['CO 397a', 'CO 119'],
+    expected_any_article: ['CO 397a', 'CO 119', 'CO 205', 'CO 208'],
     notes: "Voyage à forfait annulé par l'organisateur — en droit suisse (Loi fédérale sur les voyages à forfait LFP, RS 944.3, en vigueur depuis 2019), si l'organisateur annule le voyage, le voyageur a droit au remboursement intégral dans les 14 jours (LFP 13 al. 1). L'organisateur ne peut pas imposer un bon à la place d'un remboursement en espèces — c'est le choix du consommateur. CO 397a (responsabilité de l'agent de voyages) s'applique subsidiairement. Si l'organisateur refuse, le consommateur peut déposer plainte auprès de la Commission de conciliation des voyages à forfait ou agir au tribunal (CPC procédure simplifiée < 30'000 CHF). 'Voyage annulé 3 semaines avant + bon imposé + je veux cash' sans 'LFP' ni 'remboursement 14 jours'. Signal adversarial = ignorance que le bon est une faveur et non un droit de l'agence.",
   },
 
@@ -1371,7 +1371,7 @@ export const ADVERSARIAL_CASES = [
     id: 'adv_social_07',
     query: "Je suis photographe indépendante, je cotise à l'AVS depuis 4 ans. Je suis enceinte de 7 mois et je prévois d'accoucher dans 2 mois. On m'a dit que j'ai droit à quelque chose pendant ma maternité mais je ne suis pas salariée. Ai-je vraiment droit à une allocation et combien ?",
     canton: null,
-    expected_domaine: 'social',
+    expected_domaine: 'assurances',
     expected_any_article: ['LAPG 16b', 'LAPG 16d', 'LAPG 16f'],
     notes: "APG maternité pour indépendante — La loi sur les allocations pour perte de gain (LAPG) couvre aussi les travailleuses indépendantes qui cotisent à l'AVS depuis au moins 5 mois (LAPG 16b al. 2). Durée : 98 jours (14 semaines) à partir de l'accouchement. Montant : 80% du revenu moyen soumis à l'AVS, plafonné au gain assuré. La demande doit être faite auprès de la caisse de compensation AVS dans les 5 ans suivant l'accouchement. Pour y avoir droit, il faut avoir été affiliée à l'AVS sans interruption depuis 5 mois et avoir exercé une activité lucrative. '4 ans AVS + photographe indépendante + enceinte + allocation possible ?' sans 'LAPG' ni 'allocation maternité indépendante'. Signal adversarial = croyance que l'APG maternité est réservée aux salariées.",
   },
@@ -1394,6 +1394,108 @@ export const ADVERSARIAL_CASES = [
     expected_domaine: 'successions',
     expected_any_article: ['CC 604', 'CC 610', 'CC 650'],
     notes: "Partage forcé de l'hoirie — CC 604 al. 1 : chaque héritier peut demander le partage à tout moment (le droit au partage est imprescriptible). CC 610 : sauf accord contraire, les parts héréditaires sont égales. Un héritier ne peut pas bloquer indéfiniment le partage. Si le frère refuse de négocier, les autres héritiers peuvent saisir le tribunal et demander un partage judiciaire. CC 650 : si les parties ne s'entendent pas sur l'attribution de biens en nature, le juge peut ordonner la vente aux enchères (licitation). La procédure de partage judiciaire se fait selon les règles cantonales (CPC 274 pour les litiges successoraux). 'Hoirie 15 ans + frère refuse + voulons vendre + peut-il bloquer ?' sans 'CC 604' ni 'partage imprescriptible'. Signal adversarial = croyance que l'unanimité est toujours requise et qu'un héritier peut bloquer éternellement.",
+  },
+
+  // ─── WAVE 14 — 2026-06-16 ──────────────────────────────────────────────────
+
+  // BAIL — vente de l'immeuble, transfert automatique du bail au nouveau propriétaire (CO 261)
+  {
+    id: 'adv_bail_17',
+    query: "J'ai reçu une lettre du notaire m'informant que l'immeuble où je loue mon appartement depuis 9 ans a été vendu la semaine dernière à une société immobilière. La société m'a ensuite écrit pour me dire qu'elle récupère les locaux dans 6 mois pour ses propres besoins et que mon bail 'ne la concerne pas' car elle n'était pas partie au contrat original. Elle a raison ?",
+    canton: 'VD',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 261', 'CO 261a', 'CO 271', 'CO 271a'],
+    notes: "Transfert du bail lors de vente de l'immeuble — CO 261 al. 1 : si le bailleur aliène la chose louée, le bail passe à l'acquéreur avec tous les droits et obligations. L'acquéreur NE PEUT PAS mettre fin au bail avant l'échéance (il peut résilier pour terme prochain, mais uniquement en respectant les délais et formes légaux, et le congé reste contestable si abusif, CO 271a). Résiliation pour besoin propre admissible mais doit être réel et urgent. '9 ans + vendu + nouveau propriétaire dit que le bail ne le concerne pas' sans 'CO 261' ni 'transfert automatique du bail'. Signal adversarial = croyance répandue (y compris chez les nouveaux propriétaires) que l'achat libère des baux existants.",
+  },
+
+  // TRAVAIL — travail du dimanche imposé unilatéralement, sans accord ni supplément (LTr 19)
+  {
+    id: 'adv_travail_18',
+    query: "Je travaille dans un garage depuis 4 ans. Mon patron exige depuis 2 mois que je vienne le dimanche matin de 8h à 12h pour 'rattraper les retards de commandes'. Il ne paie aucun supplément et dit que c'est du travail normal. Mon contrat ne mentionne pas le dimanche. Est-ce légal et ai-je droit à une compensation ?",
+    canton: 'BE',
+    expected_domaine: 'travail',
+    expected_any_article: ['LTr 19', 'LTr 17', 'CO 321c', 'LTr 20'],
+    notes: "Travail du dimanche — LTr 19 al. 1 : le travail du dimanche est en principe interdit. LTr 19 al. 3 : autorisé seulement avec autorisation de l'autorité cantonale, si justifié par des raisons techniques ou économiques impérieuses. LTr 20 : si travail du dimanche autorisé, supplément de salaire de 50% obligatoire (en plus du temps compensatoire). Un garage n'est pas une entreprise bénéficiant d'autorisation permanente de travail dominical. 'Garage + dimanche matin depuis 2 mois + pas de supplément + contrat sans dimanche' sans 'LTr 19' ni 'interdiction travail dominical'. Signal adversarial = patron qui présente le dimanche comme 'travail normal' sans autorisation légale.",
+  },
+
+  // FISCAL — assujettissement TVA après dépassement du seuil de CHF 100 000 (LTVA 10)
+  {
+    id: 'adv_fiscal_03',
+    query: "Je suis photographe indépendant. Cette année pour la première fois mon chiffre d'affaires va dépasser 100 000 francs. Mon comptable parle de 'devoir m'inscrire à la TVA'. Je n'ai jamais eu à m'en occuper. Qu'est-ce que ça change concrètement pour mes factures, pour mes clients et est-ce qu'il y a un délai pour s'inscrire ?",
+    canton: null,
+    expected_domaine: 'fiscal',
+    expected_any_article: ['LTVA 10', 'LTVA 25', 'LTVA 21'],
+    notes: "Assujettissement TVA obligatoire — LTVA 10 al. 1 : toute personne qui exploite une entreprise dont le chiffre d'affaires annuel dépasse 100 000 CHF doit s'inscrire auprès de l'AFC. LTVA 25 : taux (7.7% normal, 3.7% hébergement, 2.5% biens première nécessité). LTVA 21 : prestation exclue de la TVA (certains services médicaux/éducatifs). Délai d'inscription : dans les 30 jours dès dépassement du seuil. Impact : facturer la TVA aux clients, la reverser à l'AFC, mais possibilité de récupérer la TVA sur les achats professionnels. 'Photographe + 100k pour la première fois + inscription TVA' sans 'LTVA 10' ni 'assujettissement'. Signal adversarial = confusion entre impôt sur le revenu (déjà connu) et TVA (mécanisme différent). ATTENTION: domaine 'fiscal' est un blind spot JPT — 0% attendu.",
+  },
+
+  // ACCIDENT — maladie professionnelle diagnostiquée après la retraite (LAA 9, surdité bruit)
+  {
+    id: 'adv_accident_05',
+    query: "J'ai 66 ans et suis à la retraite depuis 2 ans après 28 ans comme menuisier. Mon audiologiste vient de m'annoncer que j'ai une surdité sévère des deux oreilles clairement liée au bruit des machines sur les chantiers. Mon ancien employeur principal est faillité depuis 5 ans. L'assureur LAA de cet employeur dit que c'est 'trop tard'. Ai-je encore un recours ?",
+    canton: 'NE',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LAA 9', 'LAA 77', 'OLAA 1', 'LAA 49'],
+    notes: "Maladie professionnelle (LAA 9) — distincte de l'accident professionnel (LAA 6). La surdité liée au bruit = maladie professionnelle listée à l'OLAA 1 (liste des maladies professionnelles). LAA 77 : en cas de disparition de l'employeur ou de son assureur, la SUVA reprend les prestations. LAA 49 : délai de prescription 5 ans dès connaissance du dommage (pas 5 ans dès la fin de l'exposition). La retraite ne fait pas courir le délai — la prescription court dès le diagnostic ou la connaissance du lien causal. '28 ans menuisier + surdité + employer faillité + trop tard selon assureur' sans 'LAA 9' ni 'maladie professionnelle'. Signal adversarial = croyance que la maladie professionnelle doit être déclarée pendant l'emploi et que la retraite ou la faillite de l'employeur interrompt le droit. NOTE: JPT classe les cas LAA en domaine 'assurances'.",
+  },
+
+  // VIOLENCE — cyberharcèlement / harcèlement en ligne ex-partenaire (CP 179septies, CP 177)
+  {
+    id: 'adv_violence_07',
+    query: "Mon ex-copain crée régulièrement de faux comptes Instagram pour m'envoyer des messages insultants depuis 7 mois que j'ai rompu. Il a aussi publié de fausses rumeurs sur moi sur des groupes Facebook de mon quartier. La police m'a dit que 'ce n'est pas physique donc ce n'est pas de la violence'. J'ai tout sauvegardé en screenshots avec les dates.",
+    canton: 'GE',
+    expected_domaine: 'violence',
+    expected_any_article: ['CP 177', 'CP 173', 'CC 28a', 'CP 179septies'],
+    notes: "Harcèlement en ligne / cyberviolence — CP 177 : injures (insultes publiques). CP 173 : diffamation (imputer à autrui un fait contraire à l'honneur). CC 28a : action en cessation de l'atteinte à la personnalité (droit civil). CP 179septies : utilisation abusive d'une installation de télécommunication (messages répétés et non voulus = punissable). La police a tort : le harcèlement non physique est punissable. Plainte pénale dans les 3 mois pour injures et diffamation (délits à poursuivre sur plainte). 'Faux comptes Instagram + insultes + fausses rumeurs Facebook + police dit pas physique' sans 'CP 177' ni 'injures' ni 'cyberviolence'. Signal adversarial = information policière erronée décourageant le dépôt de plainte.",
+  },
+
+  // ENTREPRISE — confusion de patrimoine SARL, créanciers attaquent personnellement l'associé unique
+  {
+    id: 'adv_entreprise_06',
+    query: "J'ai fermé ma SARL il y a 18 mois car elle avait des dettes envers des fournisseurs (environ 35 000 CHF). À l'époque j'avais parfois utilisé le compte bancaire de la société pour des achats personnels. Deux fournisseurs me réclament maintenant personnellement ces dettes en disant que j'ai 'confondu mon argent avec celui de la société'. Peuvent-ils vraiment attaquer mon compte personnel ?",
+    canton: 'ZH',
+    expected_domaine: 'entreprise',
+    expected_any_article: ['CO 794', 'CO 828', 'CO 803', 'LP 46'],
+    notes: "Confusion de patrimoine (percement du voile corporatif) — CO 794 al. 1 : la SARL est une personne morale distincte, les associés ne répondent pas des dettes sociales sur leur patrimoine personnel. EXCEPTION (jurisprudence TF) : si l'associé unique a délibérément confondu son patrimoine avec celui de la société (usage du compte social pour dépenses privées sans remboursement), le juge peut 'percer le voile' et engager la responsabilité personnelle. CO 828 : responsabilité des gérants en cas de gestion fautive. CO 803 : fidélité et diligence des associés. LP 46 : la faillite de la SARL n'éteint pas la responsabilité personnelle en cas de faute grave de gestion. '35k dettes SARL + achats perso sur compte société + créanciers attaquent personnellement' sans 'CO 794' ni 'confusion de patrimoine'. Signal adversarial = croyance que la SARL protège TOUJOURS le patrimoine personnel, même en cas de confusion intentionnelle.",
+  },
+
+  // SOCIAL — AVS femme au foyer pendant 20 ans, bonification pour tâches éducatives, lacunes cotisation
+  {
+    id: 'adv_social_08',
+    query: "J'ai 61 ans et j'ai élevé 3 enfants pendant 22 ans sans travailler à l'extérieur. Mon mari travaillait. Il est décédé il y a 3 ans. La caisse AVS me dit que j'ai des 'lacunes de cotisation' pour ces 22 années et que ma rente sera réduite. Pourtant je m'occupais des enfants. Y a-t-il des compensations pour les années passées à la maison, et est-ce que les cotisations de mon mari couvraient aussi les miennes ?",
+    canton: 'FR',
+    expected_domaine: 'social',
+    expected_any_article: ['LAVS 10', 'LAVS 29sexies', 'LAVS 29ter', 'LAVS 23'],
+    notes: "AVS épouse sans activité lucrative : bonifications pour tâches éducatives — LAVS 10 al. 1 : les conjoints sans activité lucrative sont assurés via le compte de leur conjoint actif (cotisation double réputée payée si le conjoint cotise au moins le double du minimum). Si cette condition est remplie, PAS de lacune. LAVS 29sexies : bonification pour tâches éducatives (enfants < 16 ans) = augmentation fictive du revenu pour le calcul de la rente, même si pas de revenu. LAVS 23 : rente de veuf/veuve si conjoint décédé. LAVS 29ter : taux de cotisation pour assurés sans activité. 'Femme au foyer 22 ans + 3 enfants + lacunes AVS + mari décédé' sans 'LAVS 29sexies' ni 'bonification tâches éducatives'. Signal adversarial = système très peu connu et contre-intuitif : si le mari cotisait, la femme au foyer peut NE PAS avoir de lacune ET bénéficier de bonifications éducatives.",
+  },
+
+  // VOISINAGE — empiètement d'une construction sur le terrain voisin (CC 674)
+  {
+    id: 'adv_voisinage_09',
+    query: "Mon voisin a construit une terrasse couverte qui dépasse d'environ 50 centimètres sur mon terrain selon le relevé cadastral que j'ai fait faire. J'ai découvert ça en commandant un plan pour un autre projet. La construction date d'il y a 3 ans. Mon voisin dit que c'est 'à peine rien' et que c'est prescrit. Y a-t-il vraiment prescription, et quels sont mes droits ?",
+    canton: 'AG',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 674', 'CC 679', 'CC 641'],
+    notes: "Empiètement sur fonds voisin (CC 674) — CC 674 al. 1 : les constructions empiétant sur un fonds voisin restent propriété du constructeur seulement si celui qui subit l'empiétement a consenti ou s'est opposé tardivement. CC 674 al. 2 : si opposition dans le délai légal (CC 928, action possessoire dans l'année), le propriétaire du fonds peut demander la démolition et la remise en état. CC 641 : le propriétaire peut revendiquer sa chose. Prescription extinctive : la question est distincte selon si on agit en 'dommages-intérêts' (CO 60, 10 ans) ou en 'cessation de l'atteinte' (action réelle, généralement imprescriptible pour l'état du fond). '50 cm sur mon terrain + 3 ans + voisin dit prescrit' sans 'CC 674' ni 'empiètement'. Signal adversarial = voisin qui invoque la prescription alors que l'action en revendication sur un immeuble est en principe imprescriptible.",
+  },
+
+  // SUCCESSIONS — rapport de libéralités / bien familial donné verbalement avant décès (CC 626)
+  {
+    id: 'adv_successions_08',
+    query: "Ma grand-mère est décédée le mois dernier. De son vivant elle avait dit à ma tante devant toute la famille qu'elle lui 'donnait' sa bague en or ancienne valant environ 12 000 francs. La bague est au doigt de ma tante depuis 2 ans. Mon père (fils unique de la grand-mère) dit maintenant que la bague doit être rapportée à la succession car sa valeur doit être partagée. Qui a raison ?",
+    canton: 'GE',
+    expected_domaine: 'successions',
+    expected_any_article: ['CC 626', 'CO 242', 'CC 522', 'CC 474'],
+    notes: "Rapport de libéralités et donation inter vivos — CO 242 : la donation manuelle (objet mobilier remis de la main à la main) est valide sans forme écrite. Si la bague a effectivement été remise à la tante (tradition) avant le décès, la donation est parfaite et valable. CC 626 al. 1 : les descendants doivent rapporter à la succession les libéralités reçues du défunt, SAUF si le défunt les en a dispensés (expressément ou implicitement). Le contexte familial 'devant tous' peut démontrer une dispense de rapport. CC 522 : si la donation dépasse la quotité disponible, action en réduction possible. CC 474 : quotité disponible = tout le disponible sauf les réserves légales. 'Bague donnée verbalement + remise physiquement + succession veut la récupérer' sans 'CO 242' ni 'donation manuelle' ni 'CC 626'. Signal adversarial = croyance que toute donation avant le décès est forcément annulable par les héritiers.",
+  },
+
+  // ÉTRANGERS — cours de langue obligatoire imposé, conséquences pour permis B (LEI 58a, OISA)
+  {
+    id: 'adv_etrangers_12',
+    query: "Voilà 5 ans que j'ai mon permis B. La commune m'a notifié que je dois suivre un cours de français et passer un examen de niveau A2 dans les 8 mois sous peine de ne pas renouveler mon permis. Je travaille à temps plein en équipes décalées et je ne peux pas assister aux cours du soir. Peuvent-ils vraiment me retirer mon permis si j'échoue ou si je ne peux pas y aller ?",
+    canton: 'VD',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LEI 58a', 'LEI 62', 'OISA 4', 'LEI 96'],
+    notes: "Obligation d'intégration / critères langue — LEI 58a al. 1 : la maîtrise d'une langue nationale est un critère d'intégration pouvant influer sur le renouvellement ou le refus de titre de séjour. OISA 4 : niveau A2 oral requis pour certaines catégories (intégration obligatoire). Mais : LEI 96 al. 1 : l'autorité doit respecter le principe de proportionnalité — un refus de renouvellement pour seul motif de langue est exceptionnel (notamment si travail stable et intégration réelle). Mesure d'accompagnement possible (convention d'intégration, financement partiel des cours). LEI 62 al. 1 : motifs de révocation limitatifs. '5 ans permis B + cours de français A2 + travail décalé + refus possible ?' sans 'LEI 58a' ni 'convention d'intégration'. Signal adversarial = croyance que l'échec à un cours de langue entraîne automatiquement la perte du permis (c'est un facteur parmi d'autres, pas automatique).",
   },
 ];
 

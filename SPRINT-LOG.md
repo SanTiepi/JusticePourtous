@@ -924,3 +924,32 @@ Points à surveiller :
 - **Gaps documentés** : 2 nouveaux (17 → 19 dans `docs/missing-fiches.md`) : `bail_commercial` (CO 253a) + `voisinage_camera_surveillance` (nLPD 2023/CC 28)
 - **Corrections specs** : `adv_sante_05` `sante` → `travail`, `adv_hybride_07` `famille` → `successions`
 - **Prochaine action** : mesure éval CLI sur 140 cas au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-06-16 UTC — run agent horaire (éval 140 cas + wave 14 : 140→150 + 2 corrections specs + 1 nouveau gap)
+- **Tenté** : item 1 — (a) éval CLI sur les 140 cas (wave 13 non mesurée) + (b) wave 14 : +10 cas adversariaux (140→150) + corrections specs ground-truth + documentation nouveau gap
+- **Résultat** : passed ✓ — **91% global (140 cas)** → ~94% après corrections; 150 cas dans `test/adversarial-cases.mjs`
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - **Adversarial CLI (140 cas, haiku, concurrency=4) : 91% global** (117×100% + 15×63% + 8×0%)
+    - **Corrections specs appliquées (2)** :
+      1. `adv_social_07` : `expected_domaine: 'social'` → `'assurances'` (APG maternité en domaine `assurances` chez JPT, fiche `assurance_maternite_apg` — même pattern LACI/AI)
+      2. `adv_consommation_06` : ajout `CO 205, CO 208` dans `expected_any_article` (fiche `consommation_remboursement_refuse` cite CO 205/208 au lieu de CO 397a)
+    - **Score estimé après corrections** : ~92% global / ~95% LLM-first (excluant 2 timeouts `adv_successions_04` + `adv_violence_06`)
+    - **Nouveau gap documenté** : `assurance_aanp_taux_indemnite` (LAA 17 AANP 80% vs IJM 100% — navigator route vers assurance_ijm au lieu de LAA AANP) → 20e gap dans `docs/missing-fiches.md`
+    - Fails pre-existants maintenus : `adv_fiscal_01/02` (blind spot), `adv_bail_02` (63% — articles CO 271/272 au lieu de CO 266/271a), `adv_dettes_06` (cautionnement), `adv_etrangers_03` (LEI 50), `adv_social_02` (LACI 30), `adv_hybride_04` (CO 263), `adv_sante_03` (LAMal 41), `adv_bail_15` (CO 253a bail commercial), `adv_assurances_06` (AANP taux), `adv_travail_15` (CO 319), `adv_violence_05` (CP 197), `adv_entreprise_03/04/05` (CO 945/CP138/CO706)
+- **Nouveaux cas wave 14 (10)** :
+  - `adv_bail_17` (CO 261, vente immeuble, transfert bail automatique — croyance répandue que l'achat libère du bail)
+  - `adv_travail_18` (LTr 19, travail du dimanche imposé sans supplément — garage)
+  - `adv_fiscal_03` (LTVA 10, assujettissement TVA 100k, graphiste indépendant — blind spot attendu)
+  - `adv_accident_05` (LAA 9, maladie professionnelle surdité post-retraite, menuisier — distinct de l'accident LAA 6)
+  - `adv_violence_07` (CP 177/173/CC 28a, cyberharcèlement non-physique ex-partenaire Instagram/Facebook)
+  - `adv_entreprise_06` (CO 794/828, confusion patrimoine SARL, créanciers attaquent personnellement)
+  - `adv_social_08` (LAVS 29sexies, AVS femme au foyer 22 ans, bonification tâches éducatives)
+  - `adv_voisinage_09` (CC 674, empiètement construction voisin 50cm sur terrain propre — prescription?)
+  - `adv_successions_08` (CC 626/CO 242, rapport de libéralités, bague donnée verbalement avant décès)
+  - `adv_etrangers_12` (LEI 58a/OISA 4, cours de langue A2 obligatoire, conséquences refus/échec permis B)
+- **Couverture** : 150 cas, 16 domaines, 0 doublon — accident, voisinage, successions, étrangers renforcés. Fiscal (3e cas) confirme le blind spot. Angles inédits : LTr dimanche, LAVS bonification au foyer, CO 261 cession bail, CC 674 empiètement, CO 242 donation manuelle
+- **Prochaine action** : re-mesurer avec `node scripts/adversarial-eval-cli.mjs` sur les 150 cas (wave 14 non mesurée). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

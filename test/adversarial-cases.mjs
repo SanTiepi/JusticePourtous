@@ -1497,6 +1497,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['LEI 58a', 'LEI 62', 'OISA 4', 'LEI 96'],
     notes: "Obligation d'intégration / critères langue — LEI 58a al. 1 : la maîtrise d'une langue nationale est un critère d'intégration pouvant influer sur le renouvellement ou le refus de titre de séjour. OISA 4 : niveau A2 oral requis pour certaines catégories (intégration obligatoire). Mais : LEI 96 al. 1 : l'autorité doit respecter le principe de proportionnalité — un refus de renouvellement pour seul motif de langue est exceptionnel (notamment si travail stable et intégration réelle). Mesure d'accompagnement possible (convention d'intégration, financement partiel des cours). LEI 62 al. 1 : motifs de révocation limitatifs. '5 ans permis B + cours de français A2 + travail décalé + refus possible ?' sans 'LEI 58a' ni 'convention d'intégration'. Signal adversarial = croyance que l'échec à un cours de langue entraîne automatiquement la perte du permis (c'est un facteur parmi d'autres, pas automatique).",
   },
+
+  // WAVE 15 — angles inédits : caution max, résiliation immédiate, prescription courte, voyage enfant, BNA, libre choix spécialiste, fissures chantier, délit de fuite parking, répudiation héritier insolvable, concurrence déloyale ex-employé
+
+  // BAIL — caution dépôt supérieure au maximum légal de 3 mois (CO 257e)
+  {
+    id: 'adv_bail_18',
+    query: "À la signature de mon bail il y a 2 ans, le propriétaire m'a demandé 4 mois de loyer en caution (4 × 1 800 CHF = 7 200 CHF). J'ai payé sans discuter. Un ami m'a dit récemment que la loi limite ça à 3 mois. Est-ce vrai, et puis-je récupérer le mois en trop même après 2 ans ?",
+    canton: 'VD',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 257e', 'CO 267a'],
+    notes: "Caution maximale — CO 257e al. 2 : la caution en espèces ne peut excéder 3 mois de loyer net. Toute stipulation contraire est nulle (nullité partielle, le surplus est dû au locataire). La restitution du trop-perçu peut être demandée à tout moment (pas de prescription courte), par lettre recommandée au bailleur. '4 mois de caution + signé sans discuter + 2 ans plus tard' sans 'CO 257e' ni 'caution maximum'. Signal adversarial = citoyen croit avoir accepté valablement quelque chose de nul de plein droit.",
+  },
+
+  // TRAVAIL — résiliation immédiate pour justes motifs (salaire impayé 2 mois) — CO 337
+  {
+    id: 'adv_travail_19',
+    query: "Mon patron n'a pas versé mon salaire depuis presque 3 mois. Il dit toujours 'la semaine prochaine' et me promet de rattraper. J'en ai marre mais mon contrat dit 3 mois de préavis. Si je pars maintenant sans respecter le préavis, est-ce que je lui dois des indemnités ?",
+    canton: 'BE',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 337', 'CO 322', 'CO 337c'],
+    notes: "Résiliation immédiate pour justes motifs — CO 337 al. 1 : chaque partie peut résilier immédiatement le contrat pour de justes motifs. Le non-paiement répété du salaire constitue un juste motif reconnu par la jurisprudence (ATF 127 III 153). CO 337c : si la résiliation immédiate est fondée, aucune indemnité n'est due à l'employeur ; au contraire, l'employeur doit indemniser le travailleur pour le préjudice subi (salaires dus + dommages). CO 322 al. 1 : l'employeur est tenu de payer le salaire. '3 mois sans salaire + préavis 3 mois + peur des indemnités' sans 'CO 337' ni 'résiliation immédiate'. Signal adversarial = citoyen croit devoir respecter le délai de préavis même face à un employeur défaillant.",
+  },
+
+  // DETTES — prescription courte de 5 ans pour loyers et location (CO 128 ch. 1)
+  {
+    id: 'adv_dettes_16',
+    query: "J'ai reçu une lettre d'une agence de recouvrement qui me réclame 6 800 CHF de loyers impayés d'un appartement que j'avais quitté il y a 6 ans et demi. L'agence dit avoir 'racheté' la créance. Est-ce que c'est encore possible de me poursuivre après autant de temps ?",
+    canton: 'GE',
+    expected_domaine: 'dettes',
+    expected_any_article: ['CO 128', 'CO 127', 'CO 142', 'LP 69'],
+    notes: "Prescription courte créances de loyer — CO 128 al. 1 ch. 1 : les créances de loyer (et autres périodiques analogues) se prescrivent par 5 ans, et non par 10 ans (CO 127). La prescription court dès l'exigibilité de chaque loyer. Si les derniers loyers datent de 6+ ans, la créance est prescrite. CO 142 : la prescription doit être invoquée par le débiteur (elle n'est pas relevée d'office par le juge). La cession à une agence (CO 164) ne rallonge pas la prescription. '6,5 ans + loyers impayés + agence de recouvrement' sans 'CO 128' ni 'prescription 5 ans'. Signal adversarial = citoyen croit que toutes les dettes se prescrivent en 10 ans (CO 127), ignore la règle spéciale des loyers (CO 128).",
+  },
+
+  // FAMILLE — refus de l'autre parent pour un voyage à l'étranger avec l'enfant (CC 301/304)
+  {
+    id: 'adv_famille_13',
+    query: "Je suis séparée et j'ai la garde de mes deux filles de 8 et 11 ans. Je voudrais les emmener en vacances en Espagne cet été. Leur père refuse catégoriquement de me donner une autorisation de voyage. Est-ce qu'il peut vraiment me bloquer ça, et est-ce que j'ai besoin de son accord par écrit pour passer la frontière ?",
+    canton: 'VD',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 301', 'CC 296', 'CC 298', 'CPC 343'],
+    notes: "Voyages à l'étranger et autorité parentale conjointe — CC 301 al. 3 : pour les actes qui vont au-delà des soins ordinaires (dont les voyages à l'étranger), les deux parents disposant de l'autorité parentale conjointe doivent se consulter et trouver un accord. En cas de désaccord, le parent qui veut voyager peut saisir le juge aux affaires familiales d'une demande d'autorisation urgente (CPC 343). L'autorité de protection de l'enfant peut aussi intervenir. La Police des frontières suisse (et espagnole) peut refuser l'embarquement d'un enfant voyageant avec un seul parent sans document. CC 298 al. 2 : après séparation, autorité parentale conjointe en principe. 'Vacances Espagne + garde + père refuse autorisation' sans 'CC 301' ni 'autorité parentale conjointe'. Signal adversarial = mère croit que la garde seule lui donne le droit de voyager sans l'accord du père.",
+  },
+
+  // ASSURANCES — Bureau national d'assurance (BNA) pour accident causé par conducteur non-assuré (LCR 76)
+  {
+    id: 'adv_assurances_07',
+    query: "Je circulais à vélo quand une voiture a grillé un feu rouge et m'a renversé. Le conducteur s'est enfui. La police a retrouvé la plaque : la voiture était volée et le conducteur fuyard n'a pas d'assurance. Mon genou est cassé, j'ai 6 semaines d'arrêt de travail. Comment est-ce que je vais être indemnisé ?",
+    canton: 'ZH',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LCR 76', 'LCR 64', 'LCR 65'],
+    notes: "Bureau National d'Assurance (BNA) — LCR 76 al. 1 : le BNA (Fonds de garantie / Schweizerischer Nationalfonds) indemnise les victimes d'accidents de la circulation causés par des véhicules non assurés, des véhicules dont le détenteur n'est pas identifié (délit de fuite), ou des véhicules volés. LCR 64 : assurance RC obligatoire pour tous les véhicules automobiles. LCR 65 : en cas d'insolvabilité de l'assureur ou d'absence d'assurance, le BNA intervient en lieu et place. La victime doit annoncer le sinistre directement au BNA (Fonds de garantie, Berne). '4 vélo renversé + fuite + voiture volée + conducteur non-assuré + genou cassé' sans 'LCR 76' ni 'BNA' ni 'fonds de garantie'. Signal adversarial = victime croit ne pas pouvoir être indemnisée si le responsable est inconnu ou non-assuré.",
+  },
+
+  // SANTE — libre choix du médecin spécialiste sans référence obligatoire du généraliste (LAMal 41)
+  {
+    id: 'adv_sante_07',
+    query: "Ça fait 8 mois que j'ai des douleurs chroniques au dos. Mon médecin de famille dit que c'est 'musculaire' et refuse de m'envoyer voir un rhumatologue ou un orthopédiste. Je veux un deuxième avis. Est-ce que j'ai le droit de consulter un spécialiste directement sans son accord, et est-ce que ma caisse maladie remboursera ?",
+    canton: 'BS',
+    expected_domaine: 'sante',
+    expected_any_article: ['LAMal 41', 'OAMal 36'],
+    notes: "Libre choix du prestataire — LAMal 41 al. 1 : l'assuré peut choisir librement son fournisseur de prestations parmi ceux qui sont admis (médecins, hôpitaux, etc.) dans les limites des dispositions légales. En assurance de base ordinaire (modèle standard), il n'existe pas d'obligation de passer par le médecin de famille pour consulter un spécialiste. OAMal 36 : conditions de remboursement des spécialistes admis par les caisses. EXCEPTION : si l'assuré a opté pour un modèle alternatif (médecin de famille obligatoire, HMO, TelFirst), la référence préalable est contractuellement obligatoire et le non-respect peut entraîner une réduction du remboursement. '8 mois douleurs + généraliste refuse référence + veut voir spécialiste' sans 'LAMal 41' ni 'libre choix'. Signal adversarial = citoyen croit avoir besoin d'une ordonnance du généraliste pour consulter tout spécialiste (vrai en modèle alternatif, faux en standard).",
+  },
+
+  // VOISINAGE — fissures dans la maison causées par des travaux de fondations du voisin (CC 679)
+  {
+    id: 'adv_voisinage_10',
+    query: "Mon voisin a fait construire une extension de sa maison avec excavation. Depuis la fin des travaux il y a 4 mois, j'ai d'importantes fissures dans mon mur porteur et ma cave présente des infiltrations. Un maçon m'a dit que ça vient probablement des vibrations ou du tassement du terrain. Comment prouver la responsabilité de mon voisin et obtenir réparation ?",
+    canton: 'AG',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 679', 'CC 684', 'CO 41'],
+    notes: "Responsabilité pour dommages causés par utilisation excessive du fonds — CC 679 al. 1 : si un propriétaire use de son fonds d'une façon qui excède les limites de la propriété ou dépasse ce qui est tolérable, il répond du dommage causé. Il n'est pas nécessaire de prouver une faute : la responsabilité est causale (strict liability). CC 679a (al. 2) : responsabilité en cas de travaux de construction qui affectent les fonds voisins, même en l'absence de faute. Une expertise privée (ou judiciaire CC 679 + CO 58 + CPC 158) peut établir le lien de causalité entre l'excavation et les fissures. CO 41 : action en dommages-intérêts si faute prouvée (cumulable). '4 mois après travaux + fissures mur porteur + infiltrations' sans 'CC 679' ni 'responsabilité dommages voisinage'. Signal adversarial = propriétaire croit devoir prouver une faute du voisin (erreur de travaux), alors que la responsabilité est causale.",
+  },
+
+  // CIRCULATION — délit de fuite après accrochage dans un parking privé (LCR 92)
+  {
+    id: 'adv_circulation_06',
+    query: "J'ai maladroitement abîmé la portière d'une voiture garée dans le parking d'un centre commercial en manœuvrant. J'ai paniqué et je suis parti sans laisser de note ni signaler. Le lendemain, j'ai reçu un message de la police : une caméra aurait capturé ma plaque. Qu'est-ce que je risque réellement ?",
+    canton: 'ZG',
+    expected_domaine: 'circulation',
+    expected_any_article: ['LCR 92', 'LCR 16a', 'CP 90'],
+    notes: "Délit de fuite (omission de signalement après accident) — LCR 92 al. 1 : quiconque, étant impliqué dans un accident de la route, ne s'arrête pas alors qu'il est tenu de le faire commet une infraction. Obligation : en cas d'accident avec dommages matériels, se signaler à la personne lésée ou, si elle est absente, à la police (LCR 51/LCR 92). CP 90 al. 2 : le délit de fuite avec dommages matériels est une contravention (et non un crime) mais entraîne un retrait de permis administratif. LCR 16a : retrait de permis de courte durée pour infraction légère (1 mois minimum). 'Accrochage parking + fuite + caméra police' sans 'LCR 92' ni 'délit de fuite'. Signal adversarial = citoyen pense que les dommages dans un parking privé ne relèvent pas du code de la route.",
+  },
+
+  // SUCCESSIONS — répudiation de la succession par un héritier insolvable, créanciers s'y opposent (CC 578)
+  {
+    id: 'adv_successions_09',
+    query: "J'ai des dettes importantes (environ 40 000 CHF de découverts et crédits). Ma tante vient de mourir et je vais hériter environ 70 000 CHF. Mon conseiller financier me dit de 'refuser l'héritage' pour que cet argent ne parte pas directement à mes créanciers. Est-ce que ça marche légalement ?",
+    canton: 'ZH',
+    expected_domaine: 'successions',
+    expected_any_article: ['CC 566', 'CC 578', 'CC 482', 'LP 285'],
+    notes: "Répudiation par héritier insolvable — CC 566 al. 1 : tout héritier peut répudier la succession dans un délai de 3 mois. Mais CC 578 al. 1 : si un héritier insolvable répudie, ses créanciers peuvent, dans le même délai, accepter la succession à sa place pour couvrir leurs créances. En clair : la répudiation stratégique ne protège pas les biens de l'héritage contre les créanciers — ceux-ci peuvent exercer l'action en révocation (Pauliana) ou demander l'acceptation forcée. LP 285 : action révocatoire (paulienne) contre les actes du débiteur en préjudice des créanciers. '70k héritage + 40k dettes + veut refuser' sans 'CC 578' ni 'créanciers peuvent accepter à la place'. Signal adversarial = citoyen croit que la répudiation est un bouclier légal contre ses créanciers.",
+  },
+
+  // ENTREPRISE — concurrence déloyale par un ex-employé utilisant des listes clients confidentielles (LCD 4/5)
+  {
+    id: 'adv_entreprise_07',
+    query: "Mon ancien directeur commercial est parti il y a 2 mois chez mon concurrent principal. Cette semaine, 4 de mes clients clés m'ont dit qu'il les avait contactés avec des offres reprenant exactement mes tarifs et mes projets en cours. Il avait accès à toute ma base clients confidentielle. Son contrat n'avait pas de clause de non-concurrence. Que puis-je faire ?",
+    canton: 'GE',
+    expected_domaine: 'entreprise',
+    expected_any_article: ['LCD 4', 'LCD 5', 'LCD 9', 'CO 321a'],
+    notes: "Concurrence déloyale par détournement de secrets d'affaires — LCD 4 ch. b : agit de façon déloyale celui qui exploite ou qui communique à des tiers le résultat de travail d'un tiers (liste clients), dont il sait ou devrait savoir qu'il lui a été confié dans des circonstances déterminées mais qu'il a obtenu sans son consentement. LCD 5 al. 1 ch. a : est déloyal celui qui reproduit sans autorisation des produits du travail d'autrui dont il ne pourrait normalement prendre connaissance que de manière illégitime. LCD 9 : actions civiles urgentes (mesures provisionnelles, cessation, constatation, dommages-intérêts). CO 321a al. 4 : devoir de fidélité de l'employé — persistance après la fin du contrat pour les secrets acquis pendant l'emploi. MÊME SANS clause de non-concurrence, l'utilisation d'une liste clients confidentiellement acquise est répréhensible. '2 mois parti + concurrent + liste clients confidentielle + pas de clause non-concurrence' sans 'LCD 4' ni 'concurrence déloyale'. Signal adversarial = employeur croit qu'il faut une clause de non-concurrence pour agir (la LCD s'applique indépendamment).",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

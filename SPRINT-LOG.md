@@ -953,3 +953,25 @@ Points à surveiller :
   - `adv_etrangers_12` (LEI 58a/OISA 4, cours de langue A2 obligatoire, conséquences refus/échec permis B)
 - **Couverture** : 150 cas, 16 domaines, 0 doublon — accident, voisinage, successions, étrangers renforcés. Fiscal (3e cas) confirme le blind spot. Angles inédits : LTr dimanche, LAVS bonification au foyer, CO 261 cession bail, CC 674 empiètement, CO 242 donation manuelle
 - **Prochaine action** : re-mesurer avec `node scripts/adversarial-eval-cli.mjs` sur les 150 cas (wave 14 non mesurée). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-06-17 UTC — run agent horaire (wave 15 adversarial : 150→160 cas + éval 150 lancée)
+- **Tenté** : item 1 — (a) éval CLI sur 150 cas (wave 14 non mesurée, lancée en background) + (b) wave 15 : +10 cas adversariaux (150→160)
+- **Résultat** : passed ✓ — 160 cas dans `test/adversarial-cases.mjs`, 3 gates verts
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Adversarial CLI sur 150 cas : **lancé en background** (résultats au prochain run, si disponibles)
+- **Nouveaux cas wave 15 (10)** :
+  - `adv_bail_18` (CO 257e caution maximale 3 mois — bailleur a exigé 4 mois, citoyen peut récupérer le trop-perçu)
+  - `adv_travail_19` (CO 337 résiliation immédiate pour justes motifs — salaire impayé 3 mois, citoyen croit devoir respecter le préavis)
+  - `adv_dettes_16` (CO 128 prescription courte 5 ans pour loyers — citoyen croit à la prescription décennale CO 127)
+  - `adv_famille_13` (CC 301 autorisation voyage enfant à l'étranger — père co-titulaire autorité parentale refuse)
+  - `adv_assurances_07` (LCR 76 Bureau National d'Assurance — conducteur non-assuré sur voiture volée, victime à vélo)
+  - `adv_sante_07` (LAMal 41 libre choix médecin spécialiste — généraliste refuse référence, mais modèle standard = pas obligatoire)
+  - `adv_voisinage_10` (CC 679 fissures causées par travaux de fondations du voisin — responsabilité causale)
+  - `adv_circulation_06` (LCR 92 délit de fuite parking centre commercial — citoyen croit que "parking privé" = hors LCR)
+  - `adv_successions_09` (CC 578 répudiation par héritier insolvable — créanciers peuvent accepter à sa place)
+  - `adv_entreprise_07` (LCD 4/5 concurrence déloyale ex-employé — liste clients confidentielle sans clause de non-concurrence)
+- **Domaines wave 15** : 10 domaines variés, angles inédits (BNA non-assuré, caution > 3 mois, CO 337 résiliation immédiate, CC 578 répudiation, LCD sans clause NC). 0 doublon.
+- **Prochaine action** : éval CLI sur 160 cas au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

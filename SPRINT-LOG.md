@@ -975,3 +975,25 @@ Points à surveiller :
   - `adv_entreprise_07` (LCD 4/5 concurrence déloyale ex-employé — liste clients confidentielle sans clause de non-concurrence)
 - **Domaines wave 15** : 10 domaines variés, angles inédits (BNA non-assuré, caution > 3 mois, CO 337 résiliation immédiate, CC 578 répudiation, LCD sans clause NC). 0 doublon.
 - **Prochaine action** : éval CLI sur 160 cas au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-06-18 UTC — run agent horaire (éval 160 cas lancée + wave 16 : 160→170 cas)
+- **Tenté** : item 1 — (a) éval CLI sur 160 cas (wave 15 non mesurée, lancée en background en début de run) + (b) wave 16 : +10 cas adversariaux (160→170)
+- **Résultat** : passed ✓ — 170 cas dans `test/adversarial-cases.mjs`, 3 gates verts, commit `e2b714a` poussé
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Adversarial CLI sur 160 cas : **lancé en background** (processus actif au moment du commit — résultats au prochain run)
+- **Nouveaux cas wave 16 (10)** :
+  - `adv_travail_20` (LP 219/LACI 51 — faillite employeur, salaires impayés 2 mois, citoyen croit avoir tout perdu)
+  - `adv_travail_21` (CO 330a — ex-patron refuse d'émettre le certificat de travail, angle inédit)
+  - `adv_dettes_17` (LP 74 al. 1 — opposition LP sans motivation est valide, société de recouvrement dit nulle = faux)
+  - `adv_famille_14` (CC 266 — adoption d'un adulte de 29 ans par beau-père, citoyen croit impossible)
+  - `adv_etrangers_13` (LEI 43/44 — regroupement familial enfant adulte handicapé 24 ans, permis C)
+  - `adv_circulation_07` (LCR 91a — THC résiduel 3 jours après consommation, seuils sanguins objectifs)
+  - `adv_sante_08` (LAMal 64 — facture hôpital 2300 CHF, participation 3 niveaux : franchise+quote-part 10%+15 CHF/jour)
+  - `adv_voisinage_11` (CC 695 — passage câbles fibre optique sur fonds voisin, servitude légale)
+  - `adv_successions_10` (CC 604/651 — action en partage contre cohéritier bloquant depuis 6 ans)
+  - `adv_bail_19` (CO 261/261a — vente immeuble, bail transféré à l'acquéreur, citoyen croit perdre ses droits)
+- **Domaines wave 16** : 10 domaines simultanés, angles inédits — 1ère couverture adoption adulte, THC résiduel, LP 74 opposition sans forme, LP 219 faillite employeur, CC 695 servitudes conduites, LAMal 64 participation 3 niveaux. 0 doublon (170 total).
+- **Prochaine action** : résultats éval CLI 160 cas au run suivant + éval 170 cas. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

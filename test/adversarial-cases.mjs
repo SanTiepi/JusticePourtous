@@ -1599,6 +1599,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['LCD 4', 'LCD 5', 'LCD 9', 'CO 321a'],
     notes: "Concurrence déloyale par détournement de secrets d'affaires — LCD 4 ch. b : agit de façon déloyale celui qui exploite ou qui communique à des tiers le résultat de travail d'un tiers (liste clients), dont il sait ou devrait savoir qu'il lui a été confié dans des circonstances déterminées mais qu'il a obtenu sans son consentement. LCD 5 al. 1 ch. a : est déloyal celui qui reproduit sans autorisation des produits du travail d'autrui dont il ne pourrait normalement prendre connaissance que de manière illégitime. LCD 9 : actions civiles urgentes (mesures provisionnelles, cessation, constatation, dommages-intérêts). CO 321a al. 4 : devoir de fidélité de l'employé — persistance après la fin du contrat pour les secrets acquis pendant l'emploi. MÊME SANS clause de non-concurrence, l'utilisation d'une liste clients confidentiellement acquise est répréhensible. '2 mois parti + concurrent + liste clients confidentielle + pas de clause non-concurrence' sans 'LCD 4' ni 'concurrence déloyale'. Signal adversarial = employeur croit qu'il faut une clause de non-concurrence pour agir (la LCD s'applique indépendamment).",
   },
+
+  // ========== WAVE 16 ==========
+
+  // TRAVAIL — faillite de l'employeur, salaires impayés (CO 219 / LAA 52b / LPP 53a)
+  {
+    id: 'adv_travail_20',
+    query: "Ma boîte vient de faire faillite du jour au lendemain. Je travaille là depuis 4 ans, j'ai 2 mois de salaire en retard, et je ne sais pas si mon patron a versé mes cotisances retraite. Il paraît qu'il y a un 'liquidateur' maintenant. Est-ce que je vais toucher quelque chose, et à qui est-ce que je dois m'adresser ?",
+    canton: 'NE',
+    expected_domaine: 'travail',
+    expected_any_article: ['LP 219', 'CO 337', 'CO 337a', 'LACI 51'],
+    notes: "Faillite employeur — salaires impayés et droits du travailleur. LP 219 al. 4 ch. a : les créances des travailleurs issues des 6 derniers mois sont des créances de 1ère classe (privilégiées). LACI 51 : garantie des salaires — l'assurance chômage couvre les salaires impayés si l'employeur est insolvable (délai de carence = les 3 derniers mois avant l'ouverture de la faillite ou la résiliation). CO 337a : résiliation immédiate pour justes motifs si l'employeur ne paie pas le salaire de manière persistante. LPP 53a : en cas de faillite, les avoirs LPP sont protégés (institution supplétive). 'Boîte en faillite + liquidateur + salaires en retard + cotisances LPP manquantes' sans 'LP 219 première classe' ni 'garantie de salaire LACI 51'. Signal adversarial = travailleur croit avoir tout perdu alors que 2 protections existent (créance 1ère classe LP + garantie de salaire AC).",
+  },
+
+  // TRAVAIL — certificat de travail refusé ou falsifié (CO 330a)
+  {
+    id: 'adv_travail_21',
+    query: "J'ai quitté mon emploi il y a 3 semaines. Mon ex-patron refuse catégoriquement de me donner un certificat de travail malgré mes relances. Il dit qu'il est trop occupé. J'ai une offre d'emploi chez un autre employeur qui attend ce document. Est-ce que je peux le forcer à me l'émettre, et en combien de temps ?",
+    canton: 'SO',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 330a', 'CO 330b'],
+    notes: "Droit au certificat de travail — CO 330a al. 1 : le travailleur peut en tout temps demander un certificat de travail portant sur la nature et la durée des rapports de travail, ainsi que sur la qualité de son travail et sa conduite. CO 330b : droit à une attestation simple (en cours de rapports de travail). Le délai pour émettre le certificat n'est pas fixé légalement mais doit être raisonnable (quelques jours à 2 semaines selon la jurisprudence). Le refus de délivrer un certificat constitue une violation du contrat : l'employé peut saisir le juge civil (tribunal du travail) en urgence pour obtenir une exécution forcée. 'Certificat refusé + ex-patron occupé + offre emploi en attente' sans 'CO 330a' ni 'certificat de travail obligatoire'. Signal adversarial = travailleur croit que l'employeur peut légalement refuser ou retarder indéfiniment le certificat.",
+  },
+
+  // DETTES — commandement de payer, opposition tardive mais mal rédigée (LP 74 al. 1)
+  {
+    id: 'adv_dettes_17',
+    query: "J'ai reçu un commandement de payer de la part d'une société de recouvrement pour une dette que je conteste. J'ai fait opposition le 8ème jour (dans les délais), mais j'ai juste écrit 'je refuse' sur le formulaire et remis ça au facteur. Maintenant la société me dit que mon opposition est nulle parce que mal formulée. C'est vrai ça ?",
+    canton: 'FR',
+    expected_domaine: 'dettes',
+    expected_any_article: ['LP 74', 'LP 67', 'LP 17'],
+    notes: "Opposition au commandement de payer — LP 74 al. 1 : le débiteur peut faire opposition totale ou partielle dans les dix jours dès réception du commandement de payer, par déclaration verbale ou écrite à l'office des poursuites. LP 74 al. 2 : l'opposition n'a pas à être motivée — elle n'est soumise à aucune condition de forme particulière. Toute déclaration claire de refus de payer, même sommaire ('je refuse', 'je conteste', 'j'y fais opposition') est valable. La société de recouvrement dit que l'opposition est nulle = affirmation fausse. LP 17 : recours hiérarchique contre l'office des poursuites si celui-ci refuse de traiter l'opposition. 'Opposition faite dans les délais + forme imparfaite + société dit nulle' sans 'LP 74 al. 1 aucune forme' ni 'opposition sans motivation'. Signal adversarial = citoyen croit qu'une opposition doit être motivée juridiquement pour être valable.",
+  },
+
+  // FAMILLE — adoption simple d'un adulte par son beau-père (CC 266)
+  {
+    id: 'adv_famille_14',
+    query: "Je suis né hors mariage. Mon beau-père m'a élevé depuis mes 5 ans — je suis maintenant adulte (29 ans). Mon père biologique n'a jamais été là. Mon beau-père et moi souhaitons officialiser notre lien par une adoption. Est-ce que c'est possible en Suisse pour un adulte ? Quel est le lien de parenté avec ma mère après ?",
+    canton: 'VD',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 266', 'CC 267', 'CC 268c'],
+    notes: "Adoption d'un adulte — CC 266 al. 1 : une personne majeure peut être adoptée si elle a vécu pendant au moins un an au foyer de l'adoptant avant sa majorité. CC 266 al. 2 : l'adoptant doit avoir au moins 16 ans de plus que l'adopté. CC 267 : l'adoption confère à l'adopté la situation juridique d'un enfant né du mariage (nom, nationalité, droits successoraux). CC 268c : le lien de parenté avec la famille de l'adoptant est créé ; le lien avec le père biologique est en principe rompu. En Suisse, l'adoption d'un adulte est possible sous conditions strictes (tribunal cantonal, consentement de toutes les parties). 'Beau-père m'a élevé depuis 5 ans + adulte 29 ans + père biologique absent' sans 'CC 266 adoption adulte' ni 'adoption majorité'. Signal adversarial = citoyen croit que l'adoption n'est possible qu'avec un enfant mineur.",
+  },
+
+  // ETRANGERS — regroupement familial pour enfant adulte en situation de handicap (LEI 43 / LEI 44)
+  {
+    id: 'adv_etrangers_13',
+    query: "J'ai le permis C depuis 12 ans. Ma fille de 24 ans vit encore dans mon pays d'origine (Macédoine). Elle a un handicap mental modéré et ne peut pas vivre seule. Elle n'a jamais travaillé. Est-ce que je peux la faire venir en Suisse pour vivre avec moi ? Elle est adulte donc je ne sais pas si le regroupement familial s'applique encore.",
+    canton: 'ZH',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LEI 43', 'LEI 44', 'LEI 47', 'OASA 73'],
+    notes: "Regroupement familial — enfant adulte dépendant. LEI 43 al. 1 : le conjoint et les enfants célibataires de moins de 18 ans d'un ressortissant étranger titulaire d'une autorisation d'établissement (permis C) ont droit au regroupement familial. Cependant, LEI 44 al. 3 et l'art. 73 OASA permettent le regroupement d'un enfant adulte en cas de dépendance effective et prouvée (handicap ou maladie grave rendant impossible la vie autonome), si la dépendance existait avant la majorité. La jurisprudence du TAF exige : (1) dépendance effective prouvée (certificats médicaux), (2) absence d'alternative dans le pays d'origine, (3) lien de famille prépondérant. 'Fille 24 ans + handicap mental modéré + permis C depuis 12 ans + Macédoine' sans 'LEI 43 exception adulte dépendant' ni 'LEI 44 al. 3'. Signal adversarial = parent croit que le regroupement familial ne s'applique qu'aux enfants mineurs, ignore l'exception pour adultes dépendants.",
+  },
+
+  // CIRCULATION — cannabis au volant, test salivaire (LCR 91a / LCR 2)
+  {
+    id: 'adv_circulation_07',
+    query: "J'ai été arrêté à un contrôle de police. Je n'avais pas fumé depuis 3 jours mais le test salivaire était positif au THC. Je n'étais absolument pas sous l'emprise, je me sentais normal. L'agent a dit que ça ne change rien. Qu'est-ce qui m'attend comme sanctions ? Vaut-il la peine de contester ?",
+    canton: 'BE',
+    expected_domaine: 'circulation',
+    expected_any_article: ['LCR 91a', 'LCR 16', 'LCR 2', 'OFR 34'],
+    notes: "Conduite sous l'influence de stupéfiants — LCR 91a al. 1 : condamnable quiconque conduit un véhicule automobile en état d'incapacité de conduire due aux drogues. OFR 34 (Ordonnance sur les courses de contrôle) et les seuils légaux THC : le droit suisse fixe des valeurs-limite pour le sang (1.5 μg/L THC pour urines) mais c'est la détection par test salivaire + analyse sanguine qui fait foi. Jurisprudence : le Tribunal fédéral a confirmé que même l'imprégnation résiduelle (sans effet actuel) peut être punissable si les valeurs-limite sont dépassées dans le sang. LCR 16 : retrait du permis (minimum 3 mois pour 1ère infraction). LCR 2 al. 2 : définition de la capacité de conduire. La contestation sur l'absence d'effet subjectif est rarement couronnée de succès (valeurs objectives). 'Test positif THC + 3 jours sans fumer + pas sous l'emprise' sans 'LCR 91a' ni 'valeur-limite sanguine'. Signal adversarial = conducteur croit pouvoir conduire légalement après un délai sans consommer, ignore les seuils sanguins objectifs.",
+  },
+
+  // SANTE — facture hospitalière contestée, franchise et quote-part (LAMal 64 / LAMal 64a)
+  {
+    id: 'adv_sante_08',
+    query: "J'ai été hospitalisé 5 jours en urgence. La caisse maladie me réclame maintenant 2'300 CHF de 'participation aux coûts'. J'ai payé ma franchise de 300 CHF, mais là ils disent que je dois encore une 'quote-part' de 10% sur les frais restants, plus 15 CHF par jour d'hospitalisation. J'ai l'impression qu'on m'invente des frais. Est-ce légal ?",
+    canton: 'TI',
+    expected_domaine: 'sante',
+    expected_any_article: ['LAMal 64', 'OAMal 77', 'OAMal 104'],
+    notes: "Participation aux coûts — mécanisme légal à 3 niveaux. LAMal 64 al. 1 : les assurés participent aux coûts des prestations selon un montant annuel de franchise (300–2500 CHF selon le choix). LAMal 64 al. 2 : après la franchise, l'assuré paie une quote-part de 10% des coûts restants jusqu'à concurrence d'un maximum annuel (700 CHF adulte). OAMal 77 : contribution de 15 CHF par jour d'hospitalisation (contribution aux frais d'hôtellerie). OAMal 104 : le décompte annuel cumule franchise + quote-part + contribution hospitalière. Le montant de 2'300 CHF peut être légitime si l'assuré avait une franchise basse (300 CHF) + frais importants + hospitalisé 5 jours × 15 CHF. 'Franchise 300 payée + quote-part 10% + 15 CHF/jour + facture 2300 CHF' sans 'LAMal 64 participation aux coûts' ni 'quote-part légale'. Signal adversarial = assuré croit que la franchise couvre toute sa participation et ignore la quote-part et la contribution hospitalière.",
+  },
+
+  // VOISINAGE — passage de câbles et canalisations sur un fonds voisin (CC 695)
+  {
+    id: 'adv_voisinage_11',
+    query: "Mon voisin veut faire passer des câbles de fibre optique dans mon jardin pour raccorder sa maison au réseau. Il dit que de toute façon la commune peut l'obliger à passer par chez moi. Mon jardin est petit et ça va abîmer mes massifs de fleurs. Est-ce qu'il peut me forcer à accepter ce passage ?",
+    canton: 'SG',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 695', 'CC 694', 'CC 691'],
+    notes: "Passage de conduites et câbles sur un fonds voisin — CC 695 : tout propriétaire est tenu de souffrir la pose et le passage de conduites et de canalisations nécessaires aux besoins d'autres fonds situés dans le voisinage (eau, gaz, électricité, etc.) contre pleine indemnité. Le passage de la fibre optique n'est pas explicitement mentionné dans CC 695 mais la jurisprudence et l'art. 695 al. 1 l'étendent aux conduites de télécommunication (lignes téléphoniques, câbles). La servitude est inscrite au registre foncier. CC 694 : passage nécessaire pour enclave — si la propriété ne peut être accessible autrement. CC 691 : servitudes légales en général. Condition : nécessité réelle + indemnisation équitable. 'Câbles fibre optique + jardin voisin + dommages massifs fleurs + commune peut forcer' sans 'CC 695 conduites' ni 'servitude légale'. Signal adversarial = voisin croit pouvoir imposer un passage sans compensation ni procédure formelle.",
+  },
+
+  // SUCCESSIONS — action en partage forcée contre un cohéritier récalcitrant (CC 604 / CC 650)
+  {
+    id: 'adv_successions_10',
+    query: "Notre grand-mère est décédée il y a 6 ans. On est 4 héritiers. Mon oncle bloque la vente de la maison depuis des années — il dit qu'il veut la garder mais ne peut pas racheter les parts des autres. On est coincés, on ne peut ni vendre ni récupérer notre argent. Y a-t-il quelque chose qu'on peut faire légalement pour débloquer cette situation ?",
+    canton: 'JU',
+    expected_domaine: 'successions',
+    expected_any_article: ['CC 604', 'CC 610', 'CC 651'],
+    notes: "Action en partage — CC 604 al. 1 : tout héritier peut à tout moment demander le partage de la succession (droit imprescriptible). CC 610 : si les héritiers ne peuvent se mettre d'accord sur le mode de partage, chaque héritier peut demander au juge de procéder à la licitation (vente aux enchères publiques) ou au partage en nature selon estimation. CC 651 al. 1 : si la chose est indivisible ou ne peut être partagée sans une notable diminution de valeur, le juge peut ordonner la vente aux enchères publiques ou l'attribution à l'un des héritiers avec indemnisation des autres. Le délai de prescription ne court pas pour l'action en partage (CC 604 — droit perpétuel). '6 ans bloqué + 4 héritiers + oncle refuse vente + ne peut pas racheter' sans 'CC 604 action en partage' ni 'licitation judiciaire'. Signal adversarial = cohéritiers croient qu'un héritier seul peut bloquer indéfiniment la vente ou le partage.",
+  },
+
+  // BAIL — résiliation par le bailleur pour besoin du conjoint, locataire refuse de partir (CO 261a)
+  {
+    id: 'adv_bail_19',
+    query: "Mon propriétaire vient de vendre l'appartement que j'occupe depuis 8 ans. Le nouvel acquéreur me demande de partir dans 3 mois pour que sa fille puisse s'y installer. J'ai refusé. Mon propriétaire initial dit que la vente change tout et que je n'ai plus les mêmes droits. Est-ce vrai, ou est-ce que mon bail continue ?",
+    canton: 'GE',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 261', 'CO 261a', 'CO 272'],
+    notes: "Vente de l'immeuble et transfert du bail — CO 261 al. 1 : en cas d'aliénation de la chose louée, le bail passe au nouvel acquéreur (subrogation légale). Le locataire n'a pas à accepter ni à signer un nouveau contrat. CO 261 al. 2 : le nouvel acquéreur peut résilier le bail pour besoin urgent et personnel (lui-même ou sa famille proche) au plus tôt à la fin d'une période de bail, après un préavis légal. CO 261a : malgré la résiliation pour besoin urgent, le locataire peut exiger la prolongation du bail si les conditions légales sont remplies (CO 272 : intérêts prépondérants du locataire vs bailleur). La résiliation pour besoin urgent post-vente doit respecter les délais légaux (comme tout congé ordinaire) et peut être contestée devant l'autorité de conciliation. '3 mois délai + vente appartement + fille nouvel acquéreur + 8 ans d'ancienneté' sans 'CO 261 transfert bail' ni 'bail passe à l'acquéreur'. Signal adversarial = locataire croit que la vente de l'immeuble résilie automatiquement son bail ou réduit ses droits.",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

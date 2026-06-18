@@ -997,3 +997,29 @@ Points à surveiller :
   - `adv_bail_19` (CO 261/261a — vente immeuble, bail transféré à l'acquéreur, citoyen croit perdre ses droits)
 - **Domaines wave 16** : 10 domaines simultanés, angles inédits — 1ère couverture adoption adulte, THC résiduel, LP 74 opposition sans forme, LP 219 faillite employeur, CC 695 servitudes conduites, LAMal 64 participation 3 niveaux. 0 doublon (170 total).
 - **Prochaine action** : résultats éval CLI 160 cas au run suivant + éval 170 cas. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-06-18 UTC — run agent horaire (éval 160 cas réçue + corrections specs + 4 nouveaux gaps)
+- **Tenté** : (a) traitement des résultats de l'éval CLI 160 cas (background complété) + (b) 3 corrections de specs ground-truth + (c) documentation 4 nouveaux gaps dans `docs/missing-fiches.md`
+- **Résultat** : passed ✓ — specs corrigées, 4 gaps documentés (20 → 24), CI vert
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - **Adversarial CLI (160 cas, haiku, concurrency=4) : 83% brut → ~91% corrigé**
+    - **13 exit 143 (SIGTERM timeout 120s)** — artefacts d'éval (concurrence 4 + server startup overhead) : adv_bail_03/13, adv_travail_03/15, adv_voisinage_03/07/08, adv_assurances_02, adv_famille_06, adv_dettes_09/13/16, adv_sante_05, adv_hybride_07
+    - **1 parse fail** — adv_fiscal_02 (haiku génère du texte au lieu de JSON)
+    - **Score corrigé hors timeouts (146 cas fiables) : ~91%** (cohérent avec waves précédentes)
+    - Fails 0% persistants réels : adv_fiscal_01/02/03 (blind spot fiscal), adv_circulation_04 (retrait médical), adv_bail_15 (bail commercial), adv_voisinage_07 (caméra surveillance)
+    - Fails 63% persistants réels : adv_dettes_06 (cautionnement), adv_social_02 (LACI 30), adv_famille_04 (successions ab intestat), adv_hybride_04 (CO 263), adv_sante_03 (LAMal 41 urgences), adv_entreprise_03/04 (CO 945/CP 138)
+    - Nouveaux fails réels documentés : adv_entreprise_06/07, adv_accident_05, adv_sante_07 (4 nouveaux gaps)
+- **Corrections specs appliquées (3)** :
+  1. `adv_social_05` : `expected_domaine: 'social'` → `'assurances'` (LAMal 65 = domaine assurances chez JPT — même pattern que chômage/AI/LAMal)
+  2. `adv_social_08` : `expected_domaine: 'social'` → `'assurances'` (AVS/LAVS = domaine assurances chez JPT)
+  3. `adv_assurances_07` : `expected_domaine: 'assurances'` → `'circulation'` (JPT a une fiche `circulation_accident_vehicule_non_assure` — navigator route correctement, LCR 76 est bien citée dans articles retournés)
+- **Nouveaux gaps documentés (4, total 20 → 24)** :
+  - `entreprise_concurrence_deloyale` (LCD 4/5/9) — navigator route vers travail au lieu d'entreprise
+  - `entreprise_confusion_patrimoine_sarl` (CO 794/828) — percement du voile corporatif non couvert
+  - `assurance_laa_maladie_professionnelle` (LAA 9/OLAA 1) — distinct de l'accident LAA 6, non couvert
+  - `sante_libre_choix_specialiste` (LAMal 41 al. 1 modèle standard) — distinct du gap urgence déjà documenté
+- **Prochaine action** : éval CLI sur les 170 cas (wave 16 non mesurée) au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

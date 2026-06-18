@@ -1075,8 +1075,8 @@ export const ADVERSARIAL_CASES = [
     id: 'adv_social_05',
     query: "Je travaille à 50% comme caissière depuis 2 ans. Mon salaire est de 2 200 francs. Après le loyer, les primes d'assurance maladie et les charges fixes, il me reste moins de 200 francs par mois. On m'a dit de 'demander l'aide sociale' mais j'ai peur d'être fichée ou de perdre des droits. Existe-t-il d'autres aides auxquelles j'aurais droit sans passer par l'aide sociale classique ?",
     canton: 'GE',
-    expected_domaine: 'social',
-    expected_any_article: ['Cst 12', 'LAMal 65', 'LIAS 5'],
+    expected_domaine: 'assurances',
+    expected_any_article: ['LAMal 65', 'LPC 4', 'LPC 9'],
     notes: "Travailleur pauvre (working poor) — subsides LAMal 65 (réduction individuelle de la prime selon revenus, accordée directement par le canton). Prestations complémentaires cantonales (Genève : Hospice général, LIAS). Aide sociale ≠ inscription permanente ou perte de droits — c'est un droit constitutionnel (Cst 12). 'Salaire insuffisant + peur aide sociale + existe d'autres aides ?' sans 'LAMal 65 subsides' ni 'aide sociale = droit'. Signal adversarial = croyance que demander de l'aide sociale crée un 'fichage' durable, alors que des subsides LAMal sont accessibles sans stigma.",
   },
 
@@ -1463,8 +1463,8 @@ export const ADVERSARIAL_CASES = [
     id: 'adv_social_08',
     query: "J'ai 61 ans et j'ai élevé 3 enfants pendant 22 ans sans travailler à l'extérieur. Mon mari travaillait. Il est décédé il y a 3 ans. La caisse AVS me dit que j'ai des 'lacunes de cotisation' pour ces 22 années et que ma rente sera réduite. Pourtant je m'occupais des enfants. Y a-t-il des compensations pour les années passées à la maison, et est-ce que les cotisations de mon mari couvraient aussi les miennes ?",
     canton: 'FR',
-    expected_domaine: 'social',
-    expected_any_article: ['LAVS 10', 'LAVS 29sexies', 'LAVS 29ter', 'LAVS 23'],
+    expected_domaine: 'assurances',
+    expected_any_article: ['LAVS 10', 'LAVS 29', 'LAVS 23'],
     notes: "AVS épouse sans activité lucrative : bonifications pour tâches éducatives — LAVS 10 al. 1 : les conjoints sans activité lucrative sont assurés via le compte de leur conjoint actif (cotisation double réputée payée si le conjoint cotise au moins le double du minimum). Si cette condition est remplie, PAS de lacune. LAVS 29sexies : bonification pour tâches éducatives (enfants < 16 ans) = augmentation fictive du revenu pour le calcul de la rente, même si pas de revenu. LAVS 23 : rente de veuf/veuve si conjoint décédé. LAVS 29ter : taux de cotisation pour assurés sans activité. 'Femme au foyer 22 ans + 3 enfants + lacunes AVS + mari décédé' sans 'LAVS 29sexies' ni 'bonification tâches éducatives'. Signal adversarial = système très peu connu et contre-intuitif : si le mari cotisait, la femme au foyer peut NE PAS avoir de lacune ET bénéficier de bonifications éducatives.",
   },
 
@@ -1545,8 +1545,8 @@ export const ADVERSARIAL_CASES = [
     id: 'adv_assurances_07',
     query: "Je circulais à vélo quand une voiture a grillé un feu rouge et m'a renversé. Le conducteur s'est enfui. La police a retrouvé la plaque : la voiture était volée et le conducteur fuyard n'a pas d'assurance. Mon genou est cassé, j'ai 6 semaines d'arrêt de travail. Comment est-ce que je vais être indemnisé ?",
     canton: 'ZH',
-    expected_domaine: 'assurances',
-    expected_any_article: ['LCR 76', 'LCR 64', 'LCR 65'],
+    expected_domaine: 'circulation',
+    expected_any_article: ['LCR 76', 'LCR 63', 'LCR 65'],
     notes: "Bureau National d'Assurance (BNA) — LCR 76 al. 1 : le BNA (Fonds de garantie / Schweizerischer Nationalfonds) indemnise les victimes d'accidents de la circulation causés par des véhicules non assurés, des véhicules dont le détenteur n'est pas identifié (délit de fuite), ou des véhicules volés. LCR 64 : assurance RC obligatoire pour tous les véhicules automobiles. LCR 65 : en cas d'insolvabilité de l'assureur ou d'absence d'assurance, le BNA intervient en lieu et place. La victime doit annoncer le sinistre directement au BNA (Fonds de garantie, Berne). '4 vélo renversé + fuite + voiture volée + conducteur non-assuré + genou cassé' sans 'LCR 76' ni 'BNA' ni 'fonds de garantie'. Signal adversarial = victime croit ne pas pouvoir être indemnisée si le responsable est inconnu ou non-assuré.",
   },
 

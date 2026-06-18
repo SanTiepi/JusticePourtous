@@ -7,7 +7,7 @@ correspondance exacte.
 
 Ces fiches sont à créer après validation juridique humaine.
 
-## État actuel : 20 gaps identifiés (mis à jour 2026-06-16)
+## État actuel : 24 gaps identifiés (mis à jour 2026-06-18)
 
 Les deux gaps historiques sont comblés :
 
@@ -146,6 +146,31 @@ Les deux gaps historiques sont comblés :
   - **base juridique** : LPD 25 (droit d'accès aux données personnelles pour les traitements privés), LPD 30 (obligations du responsable du traitement : information, minimisation, finalité), LPD 5 lit. a (données personnelles = images permettant l'identification), CC 28 (atteinte à la personnalité, droit à l'image), CC 28a (action en cessation + dommages-intérêts), CC 684 (immissions immatérielles excessives)
   - **pourquoi manquante** : `adv_voisinage_07` (caméra voisin orientée vers cour privée + fenêtre chambre, refus de donner accès aux images) — le navigator retourne `domaines=[]` `fiches=[]` : **aucune fiche pour la vidéosurveillance entre voisins**. Les fiches voisinage couvrent le bruit, les arbres, les constructions — pas le domaine LPD appliqué aux rapports de voisinage. La caméra qui filme la propriété d'un voisin constitue un traitement de données personnelles soumis à la nLPD (en vigueur depuis sept. 2023) : obligation d'information (panneau), minimisation (angle couvrant seulement la propriété du filmant), et droit d'accès (art. 25 nLPD). Un voisin peut exiger la cessation + l'effacement des images.
   - **priorité** : haute. Prolifération des caméras de surveillance résidentielles. Confusion fréquente : le propriétaire croit que "sa caméra sur sa façade = son droit". La nLPD 2023 a renforcé les obligations de minimisation et d'information. Situation sans fiche = 0% au navigator, citoyen sans ressource.
+
+### Gaps identifiés par l'éval adversariale 2026-06-18 (160 cas, score 83% brut → ~91% hors timeouts)
+
+Note : 13/160 cas ont terminé avec exit 143 (SIGTERM — timeout 120s). Le score corrigé hors timeouts est ~91%, cohérent avec les runs précédents. Les 4 gaps ci-dessous proviennent des fails persistants (non-timeout).
+
+- ⛔ `entreprise_concurrence_deloyale`
+  - **base juridique** : LCD 4 ch. b (exploitation des résultats du travail d'autrui), LCD 5 al. 1 ch. a (reproduction sans autorisation), LCD 9 (actions civiles — cessation, dommages-intérêts, mesures provisionnelles), CO 321a al. 4 (devoir de fidélité post-contrat)
+  - **pourquoi manquante** : `adv_entreprise_07` (ex-directeur commercial contacte clients avec tarifs confidentiels, sans clause NC) — navigator route vers `travail_secret_professionnel` + `travail_non_concurrence` + `consommation_pratiques_deloyales`. Articles retournés : CO 321a/321e/CP 162/CO 340/340a/340c/LCD 2/LCD 3 — jamais LCD 4 ni LCD 5. La fiche `travail_non_concurrence` couvre la clause de non-concurrence (CO 340 — qui n'existe pas ici), pas la concurrence déloyale au sens de la LCD. La distinction est fondamentale : LCD 4/5 s'appliquent SANS clause de non-concurrence, dès que les secrets ont été acquis pendant l'emploi et sont utilisés contre l'ancien employeur. Un employeur sans clause NC croit souvent ne rien pouvoir faire.
+  - **priorité** : haute. Scénario fréquent lors de départs en entreprise. La LCD offre une protection forte même sans clause NC. Délai pour action en cessation : mesures provisionnelles sans délai, action en dommages-intérêts prescription 3 ans (LCD 9).
+
+- ⛔ `entreprise_confusion_patrimoine_sarl`
+  - **base juridique** : CO 794 al. 1 (responsabilité limitée SARL, mais exception jurisprudentielle), CO 828 (responsabilité du gérant : renvoi CO 717), CO 803 (fidélité et diligence des associés SARL), LP 46 (non-extinction responsabilité personnelle par faillite de la société)
+  - **pourquoi manquante** : `adv_entreprise_06` (associé unique SARL a utilisé le compte social pour 35k CHF d'achats privés, créanciers l'attaquent personnellement post-faillite) — navigator route vers `entreprise_dissolution_societe` + `dettes_commandement_payer`. Articles retournés : CO 736/821/742/745 (dissolution) + LP 69/74/75 (poursuites) — aucun ne couvre CO 794 ni la théorie du percement du voile corporatif. La fiche dissolution traite la liquidation normale, pas le cas où la protection de la personnalité juridique est écartée (jurisprudence TF : confusion intentionnelle de patrimoines). La distinction est critique : normalement un associé SARL n'est pas personnellement responsable des dettes sociales — mais cette protection tombe en cas de confusion intentionnelle prouvée.
+  - **priorité** : haute. Erreur d'appréciation fréquente chez les petits entrepreneurs pensant que la SARL est un bouclier absolu. Délai de prescription de l'action en responsabilité (LP 46 + CO 828) : 10 ans (CO 127).
+
+- ⛔ `assurance_laa_maladie_professionnelle`
+  - **base juridique** : LAA 9 al. 1 (maladie professionnelle = maladie causée par des nuisances listées à l'OLAA 1), OLAA 1 (liste des maladies professionnelles — dont surdité, atteintes respiratoires, dermatoses), LAA 49 (prescription : 5 ans dès connaissance du dommage, pas dès la fin de l'exposition), LAA 77 (SUVA reprend les prestations si l'assureur n'existe plus)
+  - **pourquoi manquante** : `adv_accident_05` (ex-menuisier 66 ans, surdité professionnelle post-retraite, ancien employeur en faillite) — navigator route vers `assurances` (correct) avec fiches `assurance_laa_contestation` + `assurance_laa`. Articles retournés : LPGA 52/56/61, LAA 18/6/16/24 — jamais LAA 9 ni OLAA 1. Les fiches LAA existantes traitent l'accident professionnel (LAA 6) et les contestations générales (LPGA 52), mais pas la maladie professionnelle comme catégorie distincte. La distinction est fondamentale : l'accident (LAA 6) est un événement soudain ; la maladie professionnelle (LAA 9) est progressive et reconnue uniquement si sur la liste OLAA 1. Délai de prescription LAA 49 ne court pas dès la retraite mais dès le diagnostic.
+  - **priorité** : haute. Des milliers de retraités ignorent qu'ils ont un droit à prestation LAA pour des maladies professionnelles développées pendant leur carrière. La croyance que "la retraite ferme les droits" et que "la faillite de l'employeur empêche toute action" est très répandue et fausse dans les deux cas.
+
+- ⛔ `sante_libre_choix_specialiste`
+  - **base juridique** : LAMal 41 al. 1 (libre choix parmi les fournisseurs de prestations admis — pas d'obligation de référence en modèle standard), OAMal 36 (conditions de remboursement des spécialistes admis), exception : modèles alternatifs (HMO, médecin de famille contractuel, TelFirst) où la référence est obligatoire
+  - **pourquoi manquante** : `adv_sante_07` (8 mois de douleurs, généraliste refuse de référer un rhumatologue, citoyen veut consulter directement) — navigator route vers `sante` (correct) avec fiches `sante_medecin_traitant_continuite` + `sante_lamal_refus_prestation`. Articles retournés : CO 394/398/404 (contrat médecin-patient), LPMéd 40 (devoirs du médecin), LAMal 25/32/LPGA 49 — jamais LAMal 41 al. 1 (libre choix). La fiche `sante_medecin_traitant_continuite` couvre la continuité des soins et le refus de prendre un nouveau patient, pas le droit au libre choix en modèle standard. `sante_urgence_libre_choix` (déjà documenté) couvre LAMal 41 al. 3 (urgences) — scénario distinct. Le libre choix en consultation standard (non urgente) est la situation la plus fréquente en médecine de ville.
+  - **note taxonomique** : distinct de `sante_urgence_libre_choix` (déjà documenté — concerne les urgences hospitalières + LAMal 41 al. 3). Ce gap cible le modèle standard + consultation élective + droit de consulter directement un spécialiste sans référence du généraliste (LAMal 41 al. 1).
+  - **priorité** : haute. Croyance très répandue que le médecin de famille est un "gatekeeper" obligatoire pour tous les spécialistes (vrai en modèle alternatif seulement). Des millions d'assurés en modèle standard ignorent leur droit de consulter directement.
 
 Pour rouvrir cette liste, relancer l'éval adversariale et capturer les nouveaux
 cas où le navigator se rabat sur une fiche voisine :

@@ -1701,6 +1701,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CO 261', 'CO 261a', 'CO 272'],
     notes: "Vente de l'immeuble et transfert du bail — CO 261 al. 1 : en cas d'aliénation de la chose louée, le bail passe au nouvel acquéreur (subrogation légale). Le locataire n'a pas à accepter ni à signer un nouveau contrat. CO 261 al. 2 : le nouvel acquéreur peut résilier le bail pour besoin urgent et personnel (lui-même ou sa famille proche) au plus tôt à la fin d'une période de bail, après un préavis légal. CO 261a : malgré la résiliation pour besoin urgent, le locataire peut exiger la prolongation du bail si les conditions légales sont remplies (CO 272 : intérêts prépondérants du locataire vs bailleur). La résiliation pour besoin urgent post-vente doit respecter les délais légaux (comme tout congé ordinaire) et peut être contestée devant l'autorité de conciliation. '3 mois délai + vente appartement + fille nouvel acquéreur + 8 ans d'ancienneté' sans 'CO 261 transfert bail' ni 'bail passe à l'acquéreur'. Signal adversarial = locataire croit que la vente de l'immeuble résilie automatiquement son bail ou réduit ses droits.",
   },
+
+  // ─── WAVE 17 — 2026-06-19 ──────────────────────────────────────────────────
+
+  // BAIL — restitution appartement, bailleur retient caution pour peinture jaunie (CO 267a usure normale)
+  {
+    id: 'adv_bail_20',
+    query: "J'ai habité 11 ans dans mon appartement et je viens de le rendre. La gérance me retient 2'400 CHF sur ma caution de 2'600 CHF pour refaire toute la peinture. Je n'ai causé aucun dégât — les murs avaient juste un peu jauni avec les années. Est-ce que la gérance peut vraiment tout me facturer pour une peinture qui était là depuis 11 ans ?",
+    canton: 'VD',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 267', 'CO 267a', 'CO 257e'],
+    notes: "Restitution du logement et usure normale — CO 267a : le locataire répond des dommages résultant de sa faute mais non de l'usure due à un usage conforme au contrat. Les peintures ont une durée de vie standard (8-12 ans selon les recommandations SIA), au-delà de laquelle le remplacement est à charge du bailleur. CO 267 : état de la chose louée à restitution. CO 257e : délais pour l'état des lieux de sortie. '11 ans + peinture jaunie + 2400 CHF + pas de dégâts' sans 'CO 267a usure normale' ni 'durée de vie installations'. Signal adversarial = locataire croit intuitivement avoir raison mais ne connaît pas le mécanisme légal de l'usure normale ni la table de durée de vie.",
+  },
+
+  // TRAVAIL — licenciement pendant arrêt maladie prolongé, protection CO 336c (dépression 18 mois)
+  {
+    id: 'adv_travail_22',
+    query: "Je suis en arrêt maladie depuis 18 mois pour une dépression sévère. Mon employeur vient de me licencier par courrier recommandé avec un préavis de 2 mois. Pourtant j'ai un contrat à durée indéterminée depuis 5 ans. Mon médecin dit que je serai encore incapable de travailler pendant 6 mois. Le licenciement est-il valide ou est-ce qu'il y a quelque chose qui me protège ?",
+    canton: 'BE',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 336c', 'CO 336', 'CO 336a'],
+    notes: "Protection contre le licenciement en temps inopportun — CO 336c al. 1 let. b : après le temps d'essai, l'employeur ne peut résilier le contrat pendant une incapacité de travail totale ou partielle résultant d'une maladie ou d'un accident non imputables à sa faute, pendant les délais suivants : jusqu'à 30 jours la 1ère année, jusqu'à 90 jours de la 2e à la 5e année, jusqu'à 180 jours dès la 6e année de service. CO 336c al. 2 : la résiliation donnée pendant ce délai est nulle. Mais après 5 ans (pas encore 6) → protection 90 jours, et 18 mois > 90 jours → la résiliation est VALIDE si donnée après le délai de protection expiré. '18 mois dépression + CDI 5 ans + licencié' sans 'CO 336c délai de protection' ni 'temps inopportun'. Signal adversarial = locataire croit que la maladie protège indéfiniment du licenciement.",
+  },
+
+  // FISCAL — indépendant, déduction bureau à domicile et matériel informatique (LIFD 27/33)
+  {
+    id: 'adv_fiscal_04',
+    query: "Je suis graphiste indépendant depuis 3 ans. Je travaille depuis chez moi, j'ai une pièce de 22m² dédiée à mon activité professionnelle sur un appartement de 90m² total. J'ai aussi acheté un MacBook Pro à 3'500 CHF et un écran à 900 CHF. Mon comptable me dit que 'le fisc refuse souvent le bureau à domicile'. Est-ce que je peux quand même déduire ces frais ?",
+    canton: 'ZH',
+    expected_domaine: 'fiscal',
+    expected_any_article: ['LIFD 27', 'LIFD 33', 'LIFD 29'],
+    notes: "Déductions frais professionnels pour indépendant — LIFD 27 al. 1 : les frais justifiés par l'usage commercial sont déductibles (matériel professionnel exclusif, bureau). LIFD 33 : frais généraux d'acquisition du revenu pour salariés (moins pertinent ici). Pour un indépendant, le bureau à domicile est déductible si la pièce est réservée exclusivement à l'usage professionnel (prorata surface). LIFD 29 : la déduction porte sur les frais exposés pour l'acquisition du revenu. '22m² bureau chez soi + graphiste indépendant + MacBook professionnel + fisc refuse' sans 'LIFD 27' ni 'frais professionnels indépendant'. Signal adversarial = blind spot fiscal JPT (domaine beta non couvert) ; le citoyen confond aussi les règles salarié vs indépendant.",
+  },
+
+  // ASSURANCES — rechute après accident SUVA, assureur qualifie de 'nouvelle maladie' (LAA 21 révision)
+  {
+    id: 'adv_assurances_09',
+    query: "Il y a 3 ans j'ai eu un accident de travail au dos. La SUVA a pris en charge le traitement et a clôturé mon dossier il y a 18 mois en disant que j'étais guéri. Depuis 4 mois j'ai des douleurs chroniques qui reviennent, mon médecin est sûr que c'est lié à l'accident. La SUVA refuse de rouvrir le dossier et dit que c'est une 'nouvelle affection non assurée'. Comment puis-je contester ?",
+    canton: 'LU',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LAA 21', 'LPGA 17', 'LPGA 52', 'LPGA 61'],
+    notes: "Révision de rente/prestation après rechute — LAA 21 : si l'état de santé de l'assuré se modifie notablement après fixation de la rente, celle-ci est révisée. LPGA 17 : révision de la rente d'invalidité si le taux d'invalidité change de manière notable. LPGA 52 : opposition à la décision de la SUVA dans les 30 jours. LPGA 61 : recours au tribunal cantonal des assurances sociales. 'SUVA clôturée + rechute + nouvelle maladie refusée' sans 'LAA 21 révision' ni 'opposition LPGA 52'. Signal adversarial = citoyen ignore la distinction accident-rechute et le droit à revision de prestation ; confond 'clôture' avec 'fin définitive'.",
+  },
+
+  // FAMILLE — désaveu de paternité, test ADN révèle que le mari n'est pas le père (CC 255/256)
+  {
+    id: 'adv_famille_15',
+    query: "Ma femme et moi sommes en séparation de fait depuis 2 ans mais pas encore divorcés. Elle a eu un bébé il y a 8 mois. J'ai longtemps cru être le père mais un test ADN qu'on a fait ensemble confirme que je ne suis pas le père biologique. Est-ce que je suis automatiquement considéré comme le père légal ? Est-ce que je serai obligé de payer une pension pour cet enfant ?",
+    canton: 'SG',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 255', 'CC 256', 'CC 260a', 'CC 261'],
+    notes: "Désaveu de paternité — CC 255 al. 1 : le mari est présumé père de l'enfant né pendant le mariage ou dans les 300 jours qui suivent la dissolution du mariage. CC 256 al. 1 : le mari peut intenter action en désaveu dans le délai d'un an à compter du jour où il a connu la naissance et su qu'il n'en était pas le père ; une tardivité du délai ne se répare pas. CC 260a : reconnaissance volontaire de paternité possible par le tiers. CC 261 : action en constatation de la paternité. 'Test ADN + séparation 2 ans + présumé père légal + pension' sans 'CC 255 présomption paternité' ni 'délai 1 an action désaveu'. Signal adversarial = père biologiquement exclu mais légalement présumé ; risque de dépasser le délai péremptoire d'1 an.",
+  },
+
+  // DETTES — action en révocation (paulienne) contre donation faite avant jugement (LP 285/286)
+  {
+    id: 'adv_dettes_18',
+    query: "Mon ex-associé nous doit 50'000 CHF suite à un jugement civil obtenu l'an dernier. On a lancé des poursuites mais il n'a aucun bien saisissable. On a découvert qu'il a donné sa moto d'occasion (estimée à 18'000 CHF) à son frère exactement 2 mois avant que le jugement soit rendu. Son frère l'a revendue depuis. Est-ce qu'on peut faire quelque chose pour récupérer au moins une partie de notre dû ?",
+    canton: 'ZH',
+    expected_domaine: 'dettes',
+    expected_any_article: ['LP 285', 'LP 286', 'LP 288', 'LP 289'],
+    notes: "Action révocatoire (paulienne) — LP 285 al. 1 : sont révocables les actes accomplis par le débiteur dans les 5 ans avant la saisie ou la faillite qui ont diminué son actif ou augmenté son passif, s'il en résulte un préjudice pour les créanciers. LP 286 : révocabilité des libéralités dans les 2 ans précédant la saisie. LP 288 : responsabilité du tiers acquéreur de bonne foi. LP 289 : délai de 2 ans pour intenter l'action en révocation. 'Don moto + 2 mois avant jugement + frère + bien revendu' sans 'LP 285 action révocatoire' ni 'paulienne'. Signal adversarial = créancier ne sait pas qu'une donation faite avant la procédure peut être annulée ; ignore aussi que la revente du bien crée une action en valeur.",
+  },
+
+  // ETRANGERS — frontalier allemand permis G, changer d'employeur pendant chômage (ALCP / LEI 35)
+  {
+    id: 'adv_etrangers_14',
+    query: "Je suis allemand et je travaille en Suisse depuis 8 ans avec un permis frontalier G. Mon employeur va licencier 30 personnes et je suis dans la liste. Un autre employeur suisse m'a proposé un poste mais dans un autre canton (je passe de Zurich à Lucerne). Est-ce que je peux changer d'emploi et de canton avec mon permis G ? Et si je me retrouve au chômage entre les deux postes, est-ce que j'ai droit aux indemnités suisses ?",
+    canton: 'ZH',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LEI 35', 'ALCP 6', 'OASA 6', 'LEI 61'],
+    notes: "Permis frontalier G et mobilité professionnelle — ALCP art. 6 : les frontaliers UE/AELE disposent du libre accès au marché suisse du travail (mobilité géographique dans les régions frontalières). Après 5 ans, la restriction géographique de la 'région frontalière' est levée → libre accès sur tout le territoire suisse. LEI 35 : permis G frontalier, renouvellement automatique si emploi suisse maintenu. OASA 6 : frontalier autorisé à travailler dans tout le canton précisé sur le permis. En cas de chômage : LACI 8 + ALCP → droit aux indemnités suisses si domicile habituel en CH ou en cas d'application de l'accord bilatéral. '8 ans permis G + changer canton + chômage intermittent' sans 'ALCP libre accès' ni 'LEI 35'. Signal adversarial = frontalier croit que son permis est lié à un employeur et un canton spécifiques.",
+  },
+
+  // CONSOMMATION — abonnement fitness contracté sur tablette, résiliation bloquée par clause auto-renouvellement
+  {
+    id: 'adv_consommation_07',
+    query: "J'ai signé un abonnement de fitness annuel en 2022 sur une tablette dans la salle. Le contrat s'est renouvelé automatiquement en 2023 et 2024 sans que je reçoive aucun préavis. Maintenant je veux partir mais ils me disent qu'il fallait résilier 3 mois avant l'échéance annuelle, et que sinon je dois payer encore 12 mois. La clause est en petits caractères au dos du contrat. Ai-je un recours ?",
+    canton: 'GE',
+    expected_domaine: 'consommation',
+    expected_any_article: ['CO 8', 'LCD 8', 'CO 40a', 'CO 256'],
+    notes: "Clauses abusives dans un contrat de consommation — LCD 8 : est déloyal quiconque, en utilisant des conditions commerciales générales, prévoit une disproportion notable et injustifiée entre les droits et les obligations. CO 8 al. 2 : les clauses de tacite reconduction dans les CCG doivent être expressément signalées. CO 40a (démarchage) : révocation possible dans les 14 jours si contrat signé hors établissement ou à distance (mais ici en magasin = limite du droit de révocation). '3 mois préavis + renouvellement auto + petits caractères + tablette' sans 'LCD 8 clauses abusives' ni 'tacite reconduction'. Signal adversarial = consommateur ignore que les clauses de reconduction auto peuvent être abusives et contestables.",
+  },
+
+  // ASSURANCES — sinistre déclaré tardivement à l'assurance ménage (LCA 38 délai de déclaration)
+  {
+    id: 'adv_assurances_10',
+    query: "En janvier j'ai eu une infiltration d'eau dans ma cave sans m'en rendre compte (canalisations derrière le mur). En juin j'ai découvert que tout était moisi — mobilier, vêtements, archives. J'ai déclaré le sinistre à mon assurance ménage en juin. Ils refusent de rembourser parce que le sinistre 'n'a pas été annoncé dans les délais contractuels de 5 jours'. Pourtant c'était invisible ! Ont-ils raison ?",
+    canton: 'AG',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LCA 38', 'LCA 39', 'LCA 33', 'LCA 40'],
+    notes: "Délai de déclaration de sinistre et force majeure — LCA 38 al. 1 : l'ayant droit doit, dès qu'il a connaissance du sinistre, en aviser l'assureur. Le délai court non depuis le sinistre lui-même mais depuis la DÉCOUVERTE par l'assuré. LCA 39 : l'assureur ne peut se libérer qu'en prouvant que le retard a causé un préjudice à ses intérêts. LCA 33 : couverture des dommages aux biens assurés (eau). LCA 40 : exclusion de garantie en cas de réticence ou fraude, pas pour simple retard de déclaration bonne foi. 'Infiltration invisible + découverte 5 mois après + délai 5 jours non respecté' sans 'LCA 38 connaissance du sinistre' ni 'délai depuis découverte'. Signal adversarial = assuré croit avoir définitivement perdu son droit car 'délai dépassé', ignore que le délai court depuis la découverte et non l'événement.",
+  },
+
+  // VOISINAGE — haie mitoyenne taillée unilatéralement par le voisin sans accord (CC 697 / CC 671)
+  {
+    id: 'adv_voisinage_12',
+    query: "Mon voisin et moi avons une haie de thuyas de 3 mètres plantée exactement sur la limite entre nos jardins. La semaine dernière, pendant que j'étais en vacances, mon voisin a coupé 'son côté' à 80 cm de haut sans me demander quoi que ce soit. Maintenant la haie est asymétrique et ses arbres n'ont plus aucune feuille côté lui. Il dit que 'la moitié lui appartient donc il fait ce qu'il veut'. A-t-il le droit ?",
+    canton: 'VD',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 697', 'CC 671', 'CC 684', 'CC 666'],
+    notes: "Haie mitoyenne et copropriété forcée — CC 671 al. 1 : les plantations sur la limite sont présumées mitoyennes. CC 697 : le propriétaire peut couper les branches qui empiètent sur son fonds, mais d'une haie mitoyenne (appartenant aux deux voisins par moitié), toute modification substantielle requiert l'accord de l'autre copropriétaire (règles de la copropriété). CC 684 al. 1 : nuisances excessives des fonds voisins. CC 666 : disposition des parties communes (copropriété). La coupe unilatérale de la haie mitoyenne à 80cm sans accord peut constituer une modification substantielle illicite donnant lieu à dommages-intérêts. 'Haie sur limite + voisin coupe son côté + asymétrique + pendant vacances' sans 'CC 671 haie mitoyenne' ni 'copropriété accord requis'. Signal adversarial = voisin invoque à tort le droit de propriété sur 'sa moitié' sans respecter les règles de la copropriété mitoyenne.",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

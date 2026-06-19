@@ -1023,3 +1023,26 @@ Points à surveiller :
   - `assurance_laa_maladie_professionnelle` (LAA 9/OLAA 1) — distinct de l'accident LAA 6, non couvert
   - `sante_libre_choix_specialiste` (LAMal 41 al. 1 modèle standard) — distinct du gap urgence déjà documenté
 - **Prochaine action** : éval CLI sur les 170 cas (wave 16 non mesurée) au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-06-19 UTC — run agent horaire (wave 17 adversarial : 170→180 cas)
+- **Tenté** : item 1 — (a) éval CLI sur 170 cas (wave 16 non mesurée, lancée en background mais output perdu — process PID 4919 orphelin, output /dev/null) + (b) wave 17 : +10 cas adversariaux (170→180)
+- **Résultat** : passed ✓ — **180 cas dans `test/adversarial-cases.mjs`**, 3 gates verts
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Adversarial CLI sur 170 cas : **non capturé** (process PID 4919 orphelin, output /dev/null — `&` + `run_in_background` double-backgrounding)
+- **Nouveaux cas wave 17 (10)** :
+  - `adv_bail_20` (CO 267a usure normale — bailleur retient 2400 CHF caution pour peinture jaunie 11 ans → angle inédit) → score inconnu
+  - `adv_travail_22` (CO 336c protection maladie longue durée — licencié pendant dépression 18 mois, CDI 5 ans → angle inédit) → score inconnu
+  - `adv_fiscal_04` (LIFD 27/33 bureau à domicile indépendant — graphiste 22m² bureau, matériel 4400 CHF → blind spot attendu) → score inconnu
+  - `adv_assurances_09` (LAA 21 rechute après accident SUVA — dossier clôturé "guéri" + rechute chronique → angle inédit) → score inconnu
+  - `adv_famille_15` (CC 255/256 désaveu paternité — test ADN mari + délai 1 an péremptoire) → score inconnu
+  - `adv_dettes_18` (LP 285/286 action révocatoire/paulienne — donation moto 2 mois avant jugement) → score inconnu
+  - `adv_etrangers_14` (ALCP art. 6 / LEI 35 frontalier G changer d'employeur + canton, chômage) → score inconnu
+  - `adv_consommation_07` (LCD 8 / CO 8 abonnement gym auto-renouvellé, clause petits caractères) → score inconnu
+  - `adv_assurances_10` (LCA 38 sinistre déclaré 5 mois après découverte, délai court depuis connaissance) → score inconnu
+  - `adv_voisinage_12` (CC 697/671 haie mitoyenne taillée unilatéralement — copropriété accord requis) → score inconnu
+- **Domaines wave 17** : 9 domaines couverts. Angles inédits : usure normale CO 267a, désaveu paternité, action paulienne LP 285, rechute LAA 21, LCA 38 délai découverte, haie mitoyenne CC 671. fiscal_04 = 3e cas fiscal (blind spot attendu).
+- **Prochaine action** : éval CLI sur **180 cas** au run suivant (killer PID 4919 si encore actif, relancer sans `&`). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

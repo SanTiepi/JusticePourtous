@@ -20,6 +20,7 @@ import { generateDossierQuestions } from './marginal-questioner.mjs';
 import { analyzeWithCommittee } from './committee-engine.mjs';
 import { compile as compileNormative } from './normative-compiler.mjs';
 import { judgeResult } from './llm-judge.mjs';
+import { isMockEnabled, mockCallNavigator } from './llm-mock.mjs';
 import { createLogger } from './logger.mjs';
 
 const log = createLogger('pipeline-v3');
@@ -141,6 +142,15 @@ function callClaudeCLI(systemPrompt, userPrompt) {
   return result.trim();
 }
 
+function safeCallClaudeCLI(systemPrompt, userPrompt) {
+  try {
+    return callClaudeCLI(systemPrompt, userPrompt);
+  } catch (e) {
+    log.warn('cli_unavailable', { err: e.message });
+    return null;
+  }
+}
+
 function parseJSONResponse(text) {
   const clean = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
   // Try to find JSON in the response
@@ -150,7 +160,30 @@ function parseJSONResponse(text) {
   return JSON.parse(clean.slice(jsonStart, jsonEnd + 1));
 }
 
+async function mockStep1Comprendre(texte, canton, reponsesPrec) {
+  const { navigation } = await mockCallNavigator(texte, reponsesPrec);
+  const issues = [];
+  let i = 0;
+  for (const fid of (navigation.fiches_pertinentes || [])) {
+    const fiche = ALL_FICHES.find(f => f.id === fid);
+    if (!fiche) continue;
+    issues.push({
+      issue_id: `issue_${++i}`,
+      qualification: navigation.resume_situation || fiche.id,
+      domaine: fiche.domaine,
+      fiche_ids: [fid],
+      base_legale_probable: (fiche.reponse?.articles || []).map(a => a.ref).slice(0, 4),
+      conditions_remplies: [],
+      conditions_manquantes: [],
+      urgence: navigation.infos_extraites?.urgence || null
+    });
+  }
+  return { comprehension: { faits: texte, canton: canton || navigation.infos_extraites?.canton || null, issues }, usage: { input: 0, output: 0, mock: true } };
+}
+
 async function step1_comprendre(texte, canton, reponsesPrec) {
+  if (isMockEnabled()) { return mockStep1Comprendre(texte, canton, reponsesPrec); }
+
   let userPrompt = `SITUATION DU CITOYEN:\n${texte}`;
   if (canton) userPrompt += `\nCanton: ${canton}`;
   if (reponsesPrec && Object.keys(reponsesPrec).length > 0) {
@@ -204,19 +237,21 @@ async function step1_comprendre(texte, canton, reponsesPrec) {
         };
       } else {
         log.warn('api_error_fallback_cli', { status: resp.status });
-        text = callClaudeCLI(STEP1_SYSTEM, userPrompt);
+        text = safeCallClaudeCLI(STEP1_SYSTEM, userPrompt);
         usage = { input: 0, output: 0, mode: 'cli' };
       }
     } catch (e) {
       log.warn('api_exception_fallback_cli', { err: e.message });
-      text = callClaudeCLI(STEP1_SYSTEM, userPrompt);
+      text = safeCallClaudeCLI(STEP1_SYSTEM, userPrompt);
       usage = { input: 0, output: 0, mode: 'cli' };
     }
   } else {
     // No API key — use CLI directly
-    text = callClaudeCLI(STEP1_SYSTEM, userPrompt);
+    text = safeCallClaudeCLI(STEP1_SYSTEM, userPrompt);
     usage = { input: 0, output: 0, mode: 'cli' };
   }
+
+  if (!text) return null;
 
   // Parse JSON response
   const parsed = parseJSONResponse(text);
@@ -577,6 +612,8 @@ RÉPONDS EN JSON:
 }`;
 
 async function step3_raisonner(dossier) {
+  if (isMockEnabled()) return null;
+
   const openaiKey = process.env.OPENAI_API_KEY;
   const anthropicKey = process.env.ANTHROPIC_API_KEY;
 
@@ -635,7 +672,10 @@ async function callClaude(system, user, apiKey) {
   const body = JSON.stringify({
     model: 'claude-sonnet-4-6',
     max_tokens: 2000,
-    // Prompt caching : STEP3_SYSTEM (gros prompt juriste stable) mis en cache via cache_control.
+    // Prompt caching : cache_control posé pour parité avec STEP1/navigator, MAIS no-op en l'état —
+    // STEP3_SYSTEM ne fait que ~525 tokens, sous le minimum cache de Sonnet 4.6 (2048 tok), donc
+    // aucune entrée de cache n'est créée (mesuré 2026-06-19). Le dossier variable passe en user
+    // message, rien d'autre à cacher ici. Deviendra effectif si STEP3_SYSTEM dépasse 2048 tokens.
     system: [{ type: 'text', text: system, cache_control: { type: 'ephemeral' } }],
     messages: [{ role: 'user', content: user }]
   });

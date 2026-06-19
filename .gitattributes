@@ -1,0 +1,20 @@
+# Normalisation des fins de ligne — LF dans le dépôt, sur toutes les plateformes.
+# Tue le churn CRLF (Windows) qui faisait apparaître ~184 fichiers "modifiés".
+# Le déploiement Docker/Linux attend du LF ; Node/JS s'en moquent.
+* text=auto eol=lf
+
+# Scripts shell : LF obligatoire (sinon docker-entrypoint.sh casse).
+*.sh text eol=lf
+
+# Fichiers binaires — jamais normalisés.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.pdf  binary
+*.woff  binary
+*.woff2 binary
+*.ttf  binary
+*.eot  binary
+*.zip  binary

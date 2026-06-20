@@ -1803,6 +1803,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CC 697', 'CC 671', 'CC 684', 'CC 666'],
     notes: "Haie mitoyenne et copropriété forcée — CC 671 al. 1 : les plantations sur la limite sont présumées mitoyennes. CC 697 : le propriétaire peut couper les branches qui empiètent sur son fonds, mais d'une haie mitoyenne (appartenant aux deux voisins par moitié), toute modification substantielle requiert l'accord de l'autre copropriétaire (règles de la copropriété). CC 684 al. 1 : nuisances excessives des fonds voisins. CC 666 : disposition des parties communes (copropriété). La coupe unilatérale de la haie mitoyenne à 80cm sans accord peut constituer une modification substantielle illicite donnant lieu à dommages-intérêts. 'Haie sur limite + voisin coupe son côté + asymétrique + pendant vacances' sans 'CC 671 haie mitoyenne' ni 'copropriété accord requis'. Signal adversarial = voisin invoque à tort le droit de propriété sur 'sa moitié' sans respecter les règles de la copropriété mitoyenne.",
   },
+
+  // ========== WAVE 18 — angles inédits (180 → 190 cas) ==========
+
+  // ACCIDENT — guide de montagne fautif, passage rocheux non sécurisé (CO 41 / CO 97)
+  {
+    id: 'adv_accident_06',
+    query: "J'ai fait une randonnée guidée dans les Alpes bernoises cet été. Le guide nous a emmenés sur un passage rocheux sans nous prévenir du danger, j'ai glissé et je me suis fracturé le poignet. L'association de guides dit que 'la montagne comporte toujours des risques' et qu'ils ne sont pas responsables. J'ai une assurance accident qui couvre mes soins mais pas mes 3 semaines de perte de salaire. Est-ce que j'ai un recours contre le guide ?",
+    canton: 'BE',
+    expected_domaine: 'accident',
+    expected_any_article: ['CO 41', 'CO 97', 'CO 101', 'CO 394'],
+    notes: "Responsabilité guide de montagne — CO 41 : responsabilité délictuelle (faute prouvée si risque non signalé). CO 97 : responsabilité contractuelle du mandataire (CO 394 : contrat de guidage = mandat, le guide doit apporter tous les soins nécessaires). CO 101 : responsabilité pour les auxiliaires. La clause 'risques inhérents à la montagne' ne couvre pas la faute professionnelle. '3 semaines perte salaire + guide + passage rocheux + non prévenu' sans 'CO 41 faute' ni 'CO 97 responsabilité contractuelle'. Signal adversarial = citoyen croit que la montagne = toujours risque personnel, ignore la faute professionnelle du guide (mandat CO 394 et obligation de sécurité).",
+  },
+
+  // BAIL — résiliation CO 257d, paiement tardif après délai comminatoire (CO 273)
+  {
+    id: 'adv_bail_21',
+    query: "Mon bailleur m'a envoyé une résiliation de bail pour loyers impayés. Il dit qu'il m'avait donné 30 jours pour payer et que ce délai était dépassé. J'ai payé tout ce que je devais 3 jours après avoir reçu la résiliation. Il dit que c'est trop tard, que le bail est résilié et que je dois partir dans 2 mois. J'ai ma famille ici. Est-ce qu'il y a encore quelque chose à faire ?",
+    canton: 'VS',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 257d', 'CO 273', 'CO 271', 'CO 271a'],
+    notes: "Résiliation pour loyers impayés et contestation — CO 257d al. 1 : le délai comminatoire de 30 jours doit être pleinement écoulé avant que la résiliation ne soit valable. Si le délai est expiré au moment de la résiliation, le paiement postérieur ne la rend pas nulle. CO 273 al. 1 : toute résiliation peut être contestée devant l'autorité de conciliation dans les 30 jours. CO 271 : la résiliation est annulable si elle contrevient aux règles de la bonne foi (mais ici elle est a priori légitime). 'Payé 3 jours après résiliation + famille + 2 mois pour partir' sans 'CO 273 contestation' ni 'autorité de conciliation'. Signal adversarial = locataire croit que payer rétroactivement suffit à annuler la résiliation ; ignore qu'il peut quand même contester la résiliation (abus de droit si conditions strictes pas remplies) dans les 30 jours.",
+  },
+
+  // TRAVAIL — retour congé maternité à temps partiel, refus employeur (CO 336c / LEg 3)
+  {
+    id: 'adv_travail_23',
+    query: "Je reviens de mon congé maternité et j'ai demandé à mon patron de passer à 70% pour m'occuper de mon bébé le vendredi. Mon contrat dit '100% temps plein'. Il a refusé en disant que le poste est défini à 100% et que si je ne reprends pas à 100% il devra 'envisager d'autres solutions'. Est-ce qu'il peut me forcer à reprendre à 100% ou me licencier si je refuse ?",
+    canton: 'ZH',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 336c', 'LEg 3', 'LEg 6', 'CO 328'],
+    notes: "Protection maternité et discrimination — CO 336c al. 1 let. c : résiliation interdite pendant les 16 semaines suivant l'accouchement. LEg 3 : interdiction de discrimination à raison du sexe, directe ou indirecte ; la maternité et les responsabilités familiales sont des critères protégés. LEg 6 : si discrimination rendue vraisemblable, la charge de la preuve est renversée. L'employeur n'est pas obligé d'accorder un temps partiel non contractuel, mais un licenciement motivé par la maternité/responsabilités familiales est discriminatoire. '70% pour bébé + refus + menace licenciement + congé maternité' sans 'CO 336c protection' ni 'LEg discrimination'. Signal adversarial = mère croit qu'elle n'a aucun droit si son contrat dit 100%.",
+  },
+
+  // DETTES — commandement de payer non retiré au bureau de poste, notification fictive (LP 66 / LP 74)
+  {
+    id: 'adv_dettes_19',
+    query: "J'ai trouvé un avis de passage du facteur dans ma boîte aux lettres pendant que j'étais en vacances 2 semaines. En rentrant, j'ai vu que le recommandé était retourné à l'expéditeur. J'apprends que c'était un commandement de payer de 15'000 CHF. Une société de recouvrement me dit que le délai d'opposition de 10 jours est dépassé et que le commandement est maintenant exécutoire. Est-ce vrai ?",
+    canton: 'TI',
+    expected_domaine: 'dettes',
+    expected_any_article: ['LP 66', 'LP 74', 'LP 78', 'LP 64'],
+    notes: "Notification fictive LP — LP 66 al. 4 : si un recommandé n'est pas retiré, il est réputé notifié le 7e jour suivant le dépôt de l'avis (fiction légale, ATF 138 III 225). LP 74 al. 1 : l'opposition doit être formée dans les 10 jours après la notification. LP 78 al. 1 : restitution du délai possible si le requérant n'est pas en faute (ex. absence non anticipée, hospitalisation — mais les vacances planifiées = faute). '2 semaines vacances + recommandé non retiré + retourné expéditeur + délai 10 jours dépassé' sans 'LP 66 notification fictive 7e jour' ni 'LP 78 restitution délai'. Signal adversarial = citoyen croit que le recommandé non retiré = non reçu = délai non couru.",
+  },
+
+  // SUCCESSIONS — réserve héréditaire violée par testament, enfants du premier mariage (CC 470 / CC 519)
+  {
+    id: 'adv_successions_11',
+    query: "Mon père est décédé et laisse un testament notarié léguant tout à sa deuxième femme. Ma sœur et moi (enfants du premier mariage) ne recevons rien. Le notaire dit que le testament est valide et exécutoire. On pense que notre belle-mère avait une énorme influence sur papa qui était malade en fin de vie. Est-ce qu'on peut vraiment tout perdre ?",
+    canton: 'FR',
+    expected_domaine: 'successions',
+    expected_any_article: ['CC 470', 'CC 471', 'CC 519', 'CC 522'],
+    notes: "Réserve héréditaire et action en réduction — CC 470 al. 1 : les descendants ont une réserve héréditaire (révision 2023 : 1/2 de leur part légale). CC 471 : part légale d'un enfant. CC 519 al. 1 ch. 1 : les dispositions pour cause de mort sont annulables si le testateur n'était pas capable de disposer. CC 522 : les dispositions qui empiètent sur la réserve sont réductibles (action en réduction, délai 1 an depuis connaissance). 'Tout à la belle-mère + rien pour nous + notaire dit valide + influence' sans 'CC 470 réserve' ni 'action en réduction'. Signal adversarial = enfants croient que testament notarié = définitif et intouchable.",
+  },
+
+  // VIOLENCE — stalking physique et messages ex-petit ami, sans violence physique (CC 28b / CPC 265)
+  {
+    id: 'adv_violence_09',
+    query: "Mon ex-petit ami me suit partout depuis 4 mois — il attend devant chez moi le soir, me suit dans les magasins, m'envoie 20-30 messages par jour en changeant de numéro chaque fois que je le bloque. Je n'ai jamais été physiquement blessée mais je vis dans la peur. La police m'a dit qu'ils ne peuvent rien faire 'sans violence physique'. Que puis-je faire ?",
+    canton: 'GE',
+    expected_domaine: 'violence',
+    expected_any_article: ['CC 28b', 'CC 28', 'CPC 265', 'CP 286'],
+    notes: "Stalking / harcèlement obsessionnel — CC 28b (en vigueur depuis 2022) : protection contre la violence, les menaces ou le harcèlement ; le tribunal peut ordonner des interdictions d'approcher, de prendre contact et d'accéder à des zones déterminées. CPC 265 : mesures provisionnelles d'urgence (interdiction d'approcher, délai très court). CP 286 : empêchement d'accomplir un acte officiel si injonction ordonnée. La police se trompe : CC 28b protège sans violence physique. '20-30 messages + suit dans magasins + attend devant chez moi + change numéro + peur + pas de coups' sans 'CC 28b harcèlement' ni 'interdiction approcher'. Signal adversarial = victime croit que sans coups physiques il n'existe aucun recours légal.",
+  },
+
+  // ASSURANCES — demande AI pour burnout, franchise 365 jours (LAI 29)
+  {
+    id: 'adv_social_09',
+    query: "Je suis en arrêt de travail depuis 14 mois à cause d'un burnout sévère diagnostiqué dépression majeure par mon psychiatre. Mon employeur arrête de me payer le mois prochain. Mon médecin me dit de déposer une demande AI. Comment ça fonctionne et combien de temps avant de recevoir quelque chose ?",
+    canton: 'NE',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LAI 29', 'LAI 6', 'LAI 28', 'LPGA 52'],
+    notes: "Demande AI — burnout et délais — LAI 29 al. 1 : la rente AI prend naissance au plus tôt 6 mois après que la personne a fait valoir son droit. LAI 29 al. 3 : une incapacité de travail ininterrompue de 365 jours minimum est requise (franchise) avant que le droit à la rente ne naisse. LAI 28 al. 1 : droit à une rente entière si incapacité de gain ≥ 70%. '14 mois arrêt + burnout + dépression + combien de temps + employeur arrête de payer' sans 'LAI 29 franchise 365 jours' ni 'délai 6 mois après demande'. Signal adversarial = personne croit que sa demande AI sera traitée rapidement et génère un revenu immédiat.",
+  },
+
+  // ENTREPRISE — révocation gérant Sàrl sans convocation, confusion mandat/contrat travail (CO 810)
+  {
+    id: 'adv_entreprise_08',
+    query: "J'ai fondé une Sàrl avec deux associés il y a 6 ans. Je suis le gérant à plein temps avec un salaire. La semaine dernière mes deux autres associés ont voté ma révocation lors d'une assemblée à laquelle ils ne m'ont pas invité. Ils disent que c'est légal car ils ont 60% des parts et veulent que je parte immédiatement. Est-ce qu'ils peuvent faire ça ?",
+    canton: 'GE',
+    expected_domaine: 'entreprise',
+    expected_any_article: ['CO 810', 'CO 808a', 'CO 803', 'CO 335'],
+    notes: "Révocation gérant Sàrl — CO 810 al. 2 : l'assemblée des associés peut révoquer les gérants en tout temps, avec ou sans justes motifs. CO 803 : droit à la convocation (décision sans convocation valable peut être contestée via CO 808a). Le gérant révoqué comme organe conserve ses droits de salarié (CO 335 : contrat de travail distinct du mandat d'organe). La révocation prend effet immédiatement mais le licenciement comme salarié est soumis aux délais légaux. '6 ans + gérant + pas invité + révocation immédiate + 60% parts' sans 'CO 810 révocabilité gérant' ni 'mandat vs contrat de travail'. Signal adversarial = fondateur-gérant confond révocation du mandat d'organe (immédiate, légale) avec licenciement comme employé (soumis aux délais légaux).",
+  },
+
+  // VOISINAGE — drone voisin filmant régulièrement jardin et terrasse (LPD 30 / CC 28)
+  {
+    id: 'adv_voisinage_13',
+    query: "Mon voisin utilise un drone presque tous les week-ends et survole régulièrement mon jardin et ma terrasse. J'ai clairement vu qu'il filmait notre barbecue en famille avec nos enfants. Il dit que 'l'espace aérien est libre' et qu'il peut voler où il veut. Est-ce qu'il a le droit de me filmer dans mon jardin ?",
+    canton: 'AG',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['LPD 30', 'CC 28', 'CC 684', 'CC 679'],
+    notes: "Drone et protection vie privée / nuisances voisinage — LPD 30 (nLPD en vigueur sept. 2023) : la prise de vue de personnes dans leur espace privé sans consentement est une violation de la loi sur la protection des données. CC 28 : protection de la personnalité ; filmer le jardin privé sans consentement = atteinte illicite. CC 684 : nuisances excessives des fonds voisins (bruit drone + survol répété). L'argument 'espace aérien libre' ne tient pas face à la LPD et au CC 28. 'Drone + survol jardin + filme barbecue + enfants + espace aérien libre' sans 'LPD protection image' ni 'CC 28 personnalité'. Signal adversarial = propriétaire drone confond liberté de voler avec droit de filmer des personnes sur leur propriété.",
+  },
+
+  // CONSOMMATION — défaut révélé dans les 6 mois, renversement charge de la preuve (CO 197 / CO 210)
+  {
+    id: 'adv_consommation_08',
+    query: "J'ai acheté un téléviseur il y a 4 mois et demi pour 980 CHF. Depuis 3 semaines l'écran a des bandes verticales de couleur. Le vendeur dit que c'est un 'choc physique de ma faute' même si je n'en ai eu aucun. Il refuse la garantie et me dit que c'est à moi de prouver que c'était leur faute. Est-ce vrai que c'est à moi de prouver ?",
+    canton: 'SG',
+    expected_domaine: 'consommation',
+    expected_any_article: ['CO 197', 'CO 210', 'CO 205', 'CO 208'],
+    notes: "Garantie légale et renversement charge de preuve — CO 197 al. 1 : le vendeur répond des défauts qui diminuent la valeur de la chose. CO 210 al. 1 : délai de 2 ans depuis la délivrance pour agir en garantie. Principe jurisprudentiel (ATF 130 III 564) : si le défaut se manifeste dans les 6 mois suivant l'achat, on présume qu'il existait lors de la délivrance — c'est au vendeur de prouver que le défaut est postérieur. CO 205/208 : résolution ou réduction du prix possible. '4 mois + bandes couleur + choc physique prétendu + à moi de prouver' sans 'CO 197 garantie' ni 'présomption défaut 6 mois'. Signal adversarial = consommateur croit devoir prouver la faute du vendeur ; ignore que dans les 6 mois c'est le vendeur qui doit prouver.",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

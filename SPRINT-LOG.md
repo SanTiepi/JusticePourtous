@@ -976,27 +976,29 @@ Points à surveiller :
 - **Domaines wave 15** : 10 domaines variés, angles inédits (BNA non-assuré, caution > 3 mois, CO 337 résiliation immédiate, CC 578 répudiation, LCD sans clause NC). 0 doublon.
 - **Prochaine action** : éval CLI sur 160 cas au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
 
-### 2026-06-20 UTC — run agent horaire (wave 18 : 180→190 cas + éval 180 en background)
-- **Tenté** : item 1 — (a) constat wave 17 déjà committée (`782f180`) sans entrée SPRINT-LOG ; (b) éval CLI sur les 180 cas lancée en background ; (c) wave 18 : +10 cas adversariaux (180→190)
-- **Résultat** : passed ✓ — 190 cas dans `test/adversarial-cases.mjs`, 3 gates verts
+### 2026-06-20 UTC — run agent horaire (wave 18 : 180→190 cas + éval 190 terminée)
+- **Tenté** : item 1 — (a) constat wave 17 déjà committée (`782f180`) sans entrée SPRINT-LOG ; (b) éval CLI sur 190 cas (haiku, concurrency 4) ; (c) wave 18 : +10 cas adversariaux (180→190)
+- **Résultat** : passed ✓ — 190 cas dans `test/adversarial-cases.mjs`, 3 gates verts, éval complète
 - **Métriques** :
   - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement)
   - Validation fiches : 0 erreur ✓ (100%)
   - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
-  - Adversarial CLI sur 180 cas : **lancé en background** (résultats au run suivant)
-- **Nouveaux cas wave 18 (10)** :
-  - `adv_accident_06` (guide montagne fautif, passage rocheux — CO 41/CO 97/CO 394)
-  - `adv_bail_21` (résiliation CO 257d, paiement tardif après délai comminatoire — CO 273/CO 271)
-  - `adv_travail_23` (retour congé maternité, refus 70% employeur — CO 336c/LEg 3/LEg 6)
-  - `adv_dettes_19` (commandement payer non retiré, notification fictive LP 66 7e jour — LP 74/LP 78)
-  - `adv_successions_11` (testament notarié, enfants 1er mariage exclus — CC 470/CC 519/CC 522)
-  - `adv_violence_09` (stalking physique et messages, sans violence physique — CC 28b/CPC 265)
-  - `adv_social_09` (burnout 14 mois, demande AI, franchise 365 jours — LAI 29/LAI 28)
-  - `adv_entreprise_08` (révocation gérant Sàrl sans convocation, mandat vs contrat travail — CO 810/CO 803/CO 335)
-  - `adv_voisinage_13` (drone voisin filmant jardin + barbecue — LPD 30/CC 28/CC 684)
-  - `adv_consommation_08` (téléviseur 4 mois, défaut ≤6 mois, renversement charge preuve — CO 197/CO 210)
-- **Domaines wave 18** : 10 domaines simultanés — angles inédits : RC guide montagne (CO 41), notification fictive LP 66 7e jour, renversement charge preuve 6 mois (CO 197), drone + LPD 2023, révocation gérant vs licenciement salarié, LAI 29 franchise 365j, CC 28b stalking sans violence. 0 doublon (190 total).
-- **Prochaine action** : éval CLI sur 190 cas au run suivant + résultats 180 cas. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+  - **Adversarial CLI 190 cas (haiku) : 84% global** — distribution : 148/190 à 100%, 17/190 à 50-79%, 25/190 à 0-49%
+- **Résultats wave 18 (10 cas)** :
+  - `adv_bail_21` ✓ 100% (résiliation CO 257d)
+  - `adv_travail_23` ✓ 100% (retour maternité LEg 3)
+  - `adv_successions_11` ✓ 100% (testament notarié CC 470)
+  - `adv_violence_09` ✓ 100% (stalking CC 28b)
+  - `adv_consommation_08` ✓ 100% (défaut CO 197)
+  - `adv_entreprise_08` ⚠️ 63% (CO 810 révocation gérant → routé CO 798/CO 808 sans CO 810 ni séparation mandat/salariat)
+  - `adv_accident_06` ✗ 0% (CO 41 RC guide montagne — domaines=[] timeout/parse)
+  - `adv_dettes_19` ✗ 0% (LP 74 notification fictive 7e jour — domaines=[] timeout/parse)
+  - `adv_social_09` ✗ 0% (LAI 29 franchise 365j — domaines=[] timeout/parse)
+  - `adv_voisinage_13` ✗ 0% (LPD 30 drone — gap fiche confirmé, domaines=[])
+- **Gaps documentés** (+2 → docs/missing-fiches.md, total 26 gaps) :
+  - `dettes_action_revocatoire` : LP 285/286 action paulienne — adv_dettes_18 routé vers LP 106 revendication
+  - `voisinage_camera_surveillance` : LPD 30 + CC 28 appliqués au voisinage — confirmé aussi par adv_voisinage_13 (drone)
+- **Prochaine action** : validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous. Recruter testeurs réels (0 outcomes prod).
 
 ### 2026-06-18 UTC — run agent horaire (éval 160 cas lancée + wave 16 : 160→170 cas)
 - **Tenté** : item 1 — (a) éval CLI sur 160 cas (wave 15 non mesurée, lancée en background en début de run) + (b) wave 16 : +10 cas adversariaux (160→170)

@@ -172,6 +172,19 @@ Note : 13/160 cas ont terminé avec exit 143 (SIGTERM — timeout 120s). Le scor
   - **note taxonomique** : distinct de `sante_urgence_libre_choix` (déjà documenté — concerne les urgences hospitalières + LAMal 41 al. 3). Ce gap cible le modèle standard + consultation élective + droit de consulter directement un spécialiste sans référence du généraliste (LAMal 41 al. 1).
   - **priorité** : haute. Croyance très répandue que le médecin de famille est un "gatekeeper" obligatoire pour tous les spécialistes (vrai en modèle alternatif seulement). Des millions d'assurés en modèle standard ignorent leur droit de consulter directement.
 
+### Gaps identifiés par l'éval adversariale 2026-06-20 (190 cas, score 84% brut → ~91% hors timeouts)
+
+Note : 18 timeouts exit 143 (120s SIGTERM) sur 190 cas — le score corrigé hors timeouts est ~91%, cohérent avec les runs précédents. Les gaps ci-dessous proviennent des fails réels (non-timeout).
+
+- ⛔ `dettes_action_revocatoire`
+  - **base juridique** : LP 285 al. 1 (révocabilité des actes du débiteur dans les 5 ans ayant diminué son actif), LP 286 (révocabilité des libéralités dans les 2 ans précédant la saisie), LP 288 (responsabilité du tiers acquéreur de bonne foi), LP 289 (délai de 2 ans pour intenter l'action)
+  - **pourquoi manquante** : `adv_dettes_18` (associé doit 50k CHF, a donné sa moto à son frère 2 mois avant le jugement, frère l'a revendue) — navigator route vers `dettes_revendication` + `dettes_acte_defaut_biens`. Articles retournés : LP 106/107/109/149/149a — jamais LP 285/286. La `revendication` (LP 106) protège un tiers dont le bien a été saisi par erreur ; l'action révocatoire (LP 285) annule un acte du débiteur qui a appauvri son patrimoine avant la saisie. La confusion est typique : le créancier cherche à "récupérer" et le navigator l'oriente vers les outils du tiers saisi plutôt que vers l'action paulienne. Délai de prescription de l'action : 2 ans (LP 289), court depuis la date de la saisie.
+  - **priorité** : haute. L'action révocatoire est le seul remède quand un débiteur a organisé son insolvabilité par donations avant une procédure. Ignorée par les créanciers non assistés. Articles LP 285/286 absents de toutes les fiches dettes existantes.
+
+- ⚠️ `voisinage_camera_surveillance` (gap connu — confirmé par cas drone `adv_voisinage_13`)
+  - **confirmation** : `adv_voisinage_13` (drone filmant jardin et barbecue famille — 0%, domaines=[], fiches=[]) confirme et étend le gap `voisinage_camera_surveillance` déjà documenté. Le drone (LPD 30 + CC 28 + CC 684) frappe le même angle mort que la caméra CCTV fixe : aucune fiche ne couvre la surveillance d'un voisin par dispositif optique (fixe ou mobile) sous l'angle LPD + protection de la personnalité. La distinction drone vs caméra introduit un angle supplémentaire (OAC/FOCA — réglementation fédérale aviation), mais le gap primaire reste identique. Un seul article de fond (`voisinage_surveillance_optique`) couvrirait les deux scénarios.
+  - **priorité** : inchangée — haute. Réaffirmée.
+
 Pour rouvrir cette liste, relancer l'éval adversariale et capturer les nouveaux
 cas où le navigator se rabat sur une fiche voisine :
 

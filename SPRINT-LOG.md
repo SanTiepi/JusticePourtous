@@ -976,6 +976,28 @@ Points à surveiller :
 - **Domaines wave 15** : 10 domaines variés, angles inédits (BNA non-assuré, caution > 3 mois, CO 337 résiliation immédiate, CC 578 répudiation, LCD sans clause NC). 0 doublon.
 - **Prochaine action** : éval CLI sur 160 cas au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
 
+### 2026-06-21 UTC — run agent horaire (wave 19 adversarial : 190→200 cas)
+- **Tenté** : item 1 — wave 19 : +10 cas adversariaux ciblant des angles inédits (bail tacite reconduction, prime variable jurisprudence, prêt oral preuve, pension concubinage, cas de rigueur, décompte LAMal, assurance ménage local annexe, refus éthylomètre, impôt anticipé remboursable, succession raison individuelle)
+- **Résultat** : passed ✓ — **200 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement, aucun code modifié)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Adversarial CLI sur 200 cas : non mesuré ce run (nécessite `claude -p` actif)
+- **Nouveaux cas wave 19 (10)** :
+  - `adv_bail_22` (CO 266a tacite reconduction 20 ans, résiliation email invalide — citoyen confond durée bail et formes résiliation)
+  - `adv_travail_24` (CO 322d prime discrétionnaire 7 ans = obligation implicite TF, employeur croit clause = bouclier absolu)
+  - `adv_dettes_20` (CO 312 prêt oral 9'500 CHF entre frères, virement bancaire = preuve, prescription 10 ans CO 127)
+  - `adv_famille_16` (CC 130 al. 2 rente ex-conjoint + concubinage stable 2 ans → modification selon ATF 138 III 689 — pas seulement le remariage)
+  - `adv_etrangers_15` (LEI 30 / OASA 31 cas de rigueur, famille déboutée 10 ans, enfants nés/scolarisés CH — pas un droit automatique, procédure discrétionnaire)
+  - `adv_sante_09` (LAMal 61/64 + LPGA 52 décompte franchise erroné, délai contestation 30j, obligation de déclarer l'erreur)
+  - `adv_assurances_11` (LCA 18/39 vélo électrique volé en cave forcée, clause 'lieu assuré' / 'locaux annexes' — citoyen ignore les CG)
+  - `adv_circulation_08` (LCR 91a refus éthylomètre = même peine qu'ivresse qualifiée — droit au silence ne s'applique pas aux tests routiers)
+  - `adv_fiscal_05` (LIA 21/24 impôt anticipé 35% sur dividendes Sàrl = entièrement récupérable via déclaration cantonale — blind spot fiscal attendu)
+  - `adv_hybride_08` (CC 560/568 succession raison individuelle = dettes commerciales fondues dans l'héritage, pas de séparation possible — seule option : bénéfice d'inventaire CC 580)
+- **Angles inédits wave 19** : 1ère couverture tacite reconduction (CO 266a), gratification TF 7 ans, LIA impôt anticipé, raison individuelle succession. Fiscal (5e cas) confirme le blind spot.
+- **Prochaine action** : mesure éval CLI sur 200 cas au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
 ### 2026-06-20 UTC — run agent horaire (wave 18 : 180→190 cas + éval 190 terminée)
 - **Tenté** : item 1 — (a) constat wave 17 déjà committée (`782f180`) sans entrée SPRINT-LOG ; (b) éval CLI sur 190 cas (haiku, concurrency 4) ; (c) wave 18 : +10 cas adversariaux (180→190)
 - **Résultat** : passed ✓ — 190 cas dans `test/adversarial-cases.mjs`, 3 gates verts, éval complète

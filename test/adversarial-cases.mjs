@@ -1905,6 +1905,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CO 197', 'CO 210', 'CO 205', 'CO 208'],
     notes: "Garantie légale et renversement charge de preuve — CO 197 al. 1 : le vendeur répond des défauts qui diminuent la valeur de la chose. CO 210 al. 1 : délai de 2 ans depuis la délivrance pour agir en garantie. Principe jurisprudentiel (ATF 130 III 564) : si le défaut se manifeste dans les 6 mois suivant l'achat, on présume qu'il existait lors de la délivrance — c'est au vendeur de prouver que le défaut est postérieur. CO 205/208 : résolution ou réduction du prix possible. '4 mois + bandes couleur + choc physique prétendu + à moi de prouver' sans 'CO 197 garantie' ni 'présomption défaut 6 mois'. Signal adversarial = consommateur croit devoir prouver la faute du vendeur ; ignore que dans les 6 mois c'est le vendeur qui doit prouver.",
   },
+
+  // ===== WAVE 19 — angles inédits : tacite reconduction, prime variable, prêt oral, concubinage pension, cas de rigueur, décompte LAMal, vol vélo assurance ménage, refus éthylomètre, impôt anticipé, succession raison individuelle =====
+
+  // BAIL — bail à durée indéterminée reconduit depuis 20 ans, résiliation par lettre simple non valable (CO 266a / CO 266l / CO 267)
+  {
+    id: 'adv_bail_22',
+    query: "J'habite dans cet appartement depuis 20 ans, j'ai signé un contrat en 2004 et depuis on n'a jamais refait de papier. La semaine dernière le proprio m'a envoyé un simple email en disant qu'il voulait récupérer son bien dans 3 mois pour sa fille. Est-ce qu'il peut vraiment faire ça par email avec seulement 3 mois ? Et est-ce que 20 ans sans nouveau contrat c'est légal ?",
+    canton: 'VD',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 266a', 'CO 266l', 'CO 271', 'CO 267'],
+    notes: "Bail à durée indéterminée (CO 266a : congé 3 mois pour fin de trimestre, formule officielle cantonale obligatoire CO 266l) vs résiliation par email sans formule. CO 271 : résiliation pour besoin propre doit respecter les formes. Signal adversarial = locataire confond durée du bail (peut se poursuivre indéfiniment par tacite reconduction = légal) avec les formes impératives de résiliation (email = nul). La question sur les '20 ans sans papier' mélange deux problèmes distincts.",
+  },
+
+  // TRAVAIL — gratification vs prime contractuelle : employeur supprime bonus 'habituel' en invoquant clause discrétionnaire (CO 322d / CO 322)
+  {
+    id: 'adv_travail_24',
+    query: "Mon contrat de travail dit que je peux recevoir une 'gratification discrétionnaire' selon les résultats. J'ai touché un bonus de 4000-6000 CHF chaque année pendant 7 ans sans interruption. Cette année mon patron dit que les résultats sont 'moyens' et refuse de payer quoi que ce soit. Est-ce que la clause 'discrétionnaire' lui permet vraiment de ne rien payer après 7 ans de versement ?",
+    canton: 'ZH',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 322d', 'CO 322', 'CO 335'],
+    notes: "Gratification discrétionnaire vs prime fixe — CO 322d : la gratification n'est due que si elle a été convenue ; mais la jurisprudence du TF distingue si le versement répété et régulier l'a transformée en 'usage d'entreprise' (obligation contractuelle implicite). CO 322 : salaire au sens large inclut les primes promises. 'Clause discrétionnaire + 7 ans sans interruption + même montant à chaque fois' sans 'CO 322d jurisprudence habituel'. Signal adversarial = employé et employeur croient tous deux que la clause discrétionnaire est un bouclier absolu, alors qu'un versement régulier sur 7 ans peut créer une obligation de facto selon le TF.",
+  },
+
+  // DETTES — prêt entre particuliers sans contrat écrit, preuve par témoins/virements (CO 312 / CO 8 / CO 127)
+  {
+    id: 'adv_dettes_20',
+    query: "J'ai prêté 9'500 CHF à mon frère il y a 4 ans pour qu'il paie son loyer de retard. On n'a rien signé, c'était de la famille. Depuis il dit que c'était un cadeau et refuse de rembourser. J'ai les virements de ma banque vers son compte. Est-ce que je peux me défendre sans contrat écrit ?",
+    canton: 'BE',
+    expected_domaine: 'dettes',
+    expected_any_article: ['CO 312', 'CO 127', 'CO 8'],
+    notes: "Prêt entre particuliers (CO 312 : contrat de prêt = remise avec obligation de restituer) — le contrat de prêt est valable sans écrit (pas de forme prescrite pour ce montant). CO 8 : la preuve peut être rapportée par tous moyens (historique bancaire, SMS, emails, témoins). CO 127 : prescription 10 ans pour les créances résultant d'un prêt. 'Virement bancaire + pas de contrat + frère dit cadeau' sans 'CO 312 preuve' ni 'prescription 10 ans'. Signal adversarial = prêteur croit qu'un prêt oral sans reçu est impossible à prouver et qu'un virement bancaire ne prouve rien juridiquement.",
+  },
+
+  // FAMILLE — rente de conjoint divorcé, réduction si concubinage stable (CC 130 al. 2 / CC 129)
+  {
+    id: 'adv_famille_16',
+    query: "Je paie une pension alimentaire de 1800 CHF par mois à mon ex-femme depuis notre divorce il y a 5 ans. J'ai appris qu'elle vit avec quelqu'un depuis 2 ans, ils ont emménagé ensemble. Notre jugement de divorce ne mentionne rien sur le concubinage. Est-ce que je dois continuer à payer la même somme même si elle vit avec un nouveau partenaire ?",
+    canton: 'GE',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 130', 'CC 129', 'CC 179'],
+    notes: "Rente de conjoint et concubinage — CC 130 al. 2 : la rente s'éteint de plein droit au remariage. Le TF a admis (ATF 138 III 689) que le concubinage stable (cohabitation commune, communauté de vie) peut constituer un motif de modification voire de suppression de la rente selon CC 129. Même sans mention dans le jugement de divorce, le changement de situation peut justifier une action en modification. '1800 CHF/mois + 5 ans + cohabite depuis 2 ans' sans 'CC 130 concubinage' ni 'modification jugement'. Signal adversarial = débiteur croit que seul le remariage éteint la rente, alors que le concubinage stable suffit pour une action en modification.",
+  },
+
+  // ÉTRANGERS — cas de rigueur, famille déboutée depuis 10 ans, enfants nés et scolarisés en Suisse (LEI 30 / OASA 31)
+  {
+    id: 'adv_etrangers_15',
+    query: "Ma famille est en Suisse depuis 10 ans, ma demande d'asile a été rejetée mais on n'a jamais été renvoyés. Mes deux enfants sont nés ici, le grand a 11 ans et est en 5e primaire à Genève. On nous dit maintenant qu'on doit partir dans 30 jours. Mes enfants ne connaissent que la Suisse. Est-ce qu'il y a quelque chose à faire ?",
+    canton: 'GE',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LEI 30', 'OASA 31', 'LEI 64', 'Cst 13'],
+    notes: "Cas de rigueur — LEI 30 al. 1 let. b : dérogation aux conditions d'admission possible pour cas individuels d'une extrême gravité. OASA 31 : critères du cas de rigueur (durée séjour, intégration, scolarisation des enfants, situation personnelle, conséquences du renvoi). L'enfant né et scolarisé depuis 11 ans est un facteur fort pour le cas de rigueur (ATF 123 II 125). '10 ans en Suisse + asile rejeté + enfants nés ici + école + 30 jours pour partir' sans 'LEI 30 cas de rigueur' ni 'OASA 31 critères'. Signal adversarial = famille croit que la naissance en Suisse et la scolarisation donnent automatiquement un droit de rester, alors qu'il s'agit d'une procédure discrétionnaire qui demande à être activée.",
+  },
+
+  // SANTE — décompte LAMal erroné, franchise non créditée, contestation (LAMal 56a / LPGA 52 / LAMal 61)
+  {
+    id: 'adv_sante_09',
+    query: "J'ai choisi une franchise de 2500 CHF pour cette année. J'ai eu une opération en février qui m'a coûté 3200 CHF. Mais sur le décompte de ma caisse maladie, il est écrit que j'ai une franchise de 300 CHF et ils ont calculé ma participation sur cette base, ce qui m'a fait payer moins. Est-ce que je dois les signaler ou garder le silence ? Et s'il y avait une erreur en ma défaveur, j'aurais eu combien de temps pour contester ?",
+    canton: 'VD',
+    expected_domaine: 'sante',
+    expected_any_article: ['LAMal 56a', 'LPGA 52', 'LAMal 61', 'LAMal 64'],
+    notes: "Décompte LAMal et contestation — LAMal 61 : les primes sont fixées par contrat, la franchise choisie lie l'assuré et la caisse. LAMal 64 : participation aux frais (franchise + quote-part 10%). LPGA 52 : l'assuré peut faire opposition aux décisions de l'assureur dans les 30 jours. En cas d'erreur favorable à l'assuré (franchise trop basse calculée), l'assureur peut réclamer la différence jusqu'à la prescription. 'Franchise 2500 CHF + décompte dit 300 CHF + opération 3200 CHF + dois-je les prévenir' sans 'LPGA 52 opposition 30 jours' ni 'LAMal 64 participation'. Signal adversarial = citoyen se demande s'il doit signaler l'erreur (obligation légale) et ignore le délai de contestation.",
+  },
+
+  // ASSURANCES — vol vélo électrique en cave fermée à clé, assurance ménage refuse (clause effraction) (LCA 18 / LCA 39)
+  {
+    id: 'adv_assurances_11',
+    query: "Mon vélo électrique à 3800 CHF a été volé dans la cave fermée à clé de mon immeuble. La serrure a été forcée. Mon assurance ménage refuse d'indemniser en disant que le vélo 'ne se trouvait pas à l'intérieur du logement assuré' et que la cave est un 'local annexe non couvert pour les vélos de valeur'. J'ai bien une police ménage complète. Comment est-ce possible ?",
+    canton: 'BS',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LCA 18', 'LCA 39', 'LCA 33'],
+    notes: "Assurance ménage et locaux annexes — LCA 18 : les polices d'assurance ménage définissent le 'lieu assuré' (en général le domicile et parfois les dépendances, avec ou sans limitation pour les vélos de valeur). LCA 39 : devoirs de l'assureur en cas de sinistre. LCA 33 : étendue de la responsabilité selon les conditions générales. La cave (local annexe) peut être exclue ou couverte avec un sous-plafond selon les CG. '3800 CHF + cave forcée + assurance ménage + cave non couverte' sans 'LCA 18 lieu assuré' ni 'conditions générales locaux annexes'. Signal adversarial = assuré croit que l'assurance ménage 'complète' couvre tout vol dans son immeuble, sans lire la définition de 'lieu assuré' dans les CG.",
+  },
+
+  // CIRCULATION — refus de souffler dans l'éthylomètre, sanction identique à l'ivresse qualifiée (LCR 91a / LCR 55)
+  {
+    id: 'adv_circulation_08',
+    query: "J'ai été arrêté à un contrôle routier hier soir. Le policier voulait que je souffle dans l'éthylomètre mais j'ai refusé en lui disant que j'avais le droit de garder le silence comme dans un interrogatoire. Il m'a dit que je serais poursuivi. Est-ce que j'ai vraiment le droit de refuser l'éthylomètre et quelles sont les conséquences si je n'avais en réalité rien bu ?",
+    canton: 'AG',
+    expected_domaine: 'circulation',
+    expected_any_article: ['LCR 91a', 'LCR 55', 'LCR 91'],
+    notes: "Refus d'éthylomètre — LCR 55 : la police peut ordonner un contrôle d'alcoolémie à tout conducteur. LCR 91a al. 1 : le refus de se soumettre à un test est puni comme s'il y avait ivresse (LCR 91 al. 2 = crime si taux élevé supposé). Le droit au silence ne s'applique pas aux tests d'alcoolémie. Même si le conducteur n'avait rien bu, le refus crée une présomption légale et expose à la même sanction. 'Contrôle routier + refus de souffler + droit de garder le silence + rien bu' sans 'LCR 91a refus = même peine' ni 'présomption alcoolémie'. Signal adversarial = conducteur confond le droit au silence pénal (interrogatoire) avec l'obligation de se soumettre aux tests de sécurité routière.",
+  },
+
+  // FISCAL — impôt anticipé 35% sur dividendes Sàrl, récupération via déclaration d'impôt (LIA 21 / LIA 24)
+  {
+    id: 'adv_fiscal_05',
+    query: "Je suis actionnaire et gérant de ma Sàrl. En décembre ma société a versé un dividende de 50'000 CHF dont l'AFC a prélevé 35% soit 17'500 CHF 'à la source'. On m'a dit que ces 17'500 CHF étaient perdus définitivement car c'est l'impôt fédéral. Mais un ami comptable dit que je peux les récupérer dans ma déclaration d'impôt cantonale. Qui a raison ?",
+    canton: 'ZH',
+    expected_domaine: 'fiscal',
+    expected_any_article: ['LIA 21', 'LIA 24', 'LIA 1'],
+    notes: "Impôt anticipé (LIA) — LIA 1 : l'impôt anticipé frappe les dividendes de capitaux mobiliers suisses (taux 35% LIA 13). LIA 21 al. 1 : le remboursement est accordé au bénéficiaire domicilié en Suisse qui a déclaré le revenu dans sa déclaration d'impôt cantonal. LIA 24 al. 1 : le remboursement périme si non demandé dans les 3 ans. L'ami comptable a raison : l'impôt anticipé est un mécanisme de retenue récupérable via la déclaration, à condition de le déclarer. '50'000 CHF dividende + 35% prélevé + impôt fédéral + perdus définitivement' sans 'LIA 21 remboursement' ni 'déclaration cantonal'. Signal adversarial = actionnaire croit que l'impôt anticipé est définitif alors qu'il est entièrement remboursable si déclaré — domaine fiscal : blind spot attendu (JPT beta).",
+  },
+
+  // HYBRIDE — décès propriétaire raison individuelle, dettes commerciales réclamées aux héritiers (CC 560 / CC 568 / CO 579)
+  {
+    id: 'adv_hybride_08',
+    query: "Mon père vient de mourir et il avait une petite épicerie en raison individuelle. Il avait des dettes professionnelles d'environ 30'000 CHF envers ses fournisseurs. Ma sœur et moi on voulait accepter l'héritage pour garder l'appartement de famille, mais repousser les dettes du magasin car on n'est pas dans le commerce. Est-ce possible de séparer les deux ?",
+    canton: 'TI',
+    expected_domaine: 'successions',
+    expected_any_article: ['CC 560', 'CC 568', 'CC 580', 'CC 566'],
+    notes: "Succession raison individuelle et dettes commerciales — CC 560 al. 2 : les héritiers sont saisis de plein droit de la succession à l'ouverture, y compris les dettes. CC 568 : les héritiers répondent solidairement des dettes du défunt sur leur fortune personnelle. CO 579 : il n'y a pas de séparation entre patrimoine privé et commercial dans une raison individuelle — tout est confondu, les dettes de l'épicerie sont des dettes personnelles du défunt. La seule échappatoire est la répudiation (CC 566/580 : délai 3 mois) ou le bénéfice d'inventaire (CC 580). 'Père décédé + raison individuelle + dettes 30k fournisseurs + appartement à garder + séparer les deux' sans 'CC 568 dettes solidaires' ni 'bénéfice d'inventaire'. Signal adversarial = héritiers croient que la structure 'raison individuelle' crée une séparation patrimoine privé/professionnel (comme une Sàrl), alors que c'est le contraire absolu.",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

@@ -1101,7 +1101,7 @@ Points à surveiller :
   - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (données seulement — aucun code modifié)
   - Validation fiches : 0 erreur ✓ (100%)
   - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
-  - Adversarial CLI (210 cas) : **en cours** (PID 8253, résultats au run suivant)
+  - Adversarial CLI (210 cas) : **non mesuré** — eval background (PID 8253) tuée (trop lente ~49 min). Sanity check `--limit 10` lancé → **96%** (9×100% + 1×63% adv_bail_02 — pré-existant). Pipeline OK.
 - **Nouveaux cas wave 20 (10)** :
   - `adv_accident_07` (CC 56 responsabilité causale morsure de chien — fils mordu, chien sans laisse, dame dit faute de l'enfant)
   - `adv_social_10` (LPC 9/11 PC AVS refusées car propriétaire logement — retraité 74 ans, appartement 380k, veut garder sa maison)

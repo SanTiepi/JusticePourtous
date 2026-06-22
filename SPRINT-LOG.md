@@ -1092,3 +1092,27 @@ Points à surveiller :
   - `adv_voisinage_12` (CC 697/671 haie mitoyenne taillée unilatéralement — copropriété accord requis) → score inconnu
 - **Domaines wave 17** : 9 domaines couverts. Angles inédits : usure normale CO 267a, désaveu paternité, action paulienne LP 285, rechute LAA 21, LCA 38 délai découverte, haie mitoyenne CC 671. fiscal_04 = 3e cas fiscal (blind spot attendu).
 - **Prochaine action** : éval CLI sur **180 cas** au run suivant (killer PID 4919 si encore actif, relancer sans `&`). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-06-22 UTC — run agent horaire (wave 20 adversarial : 200→210 cas + éval CLI lancée)
+- **Tenté** : item 1 — wave 20 : +10 cas adversariaux ciblant les domaines les plus sous-représentés (accident×1, assurances/social×1, violence×1, consommation×1, entreprise×1, circulation×1, sante×1, fiscal×1, famille×1, voisinage×1) + lancement éval CLI sur 210 cas (haiku, concurrency=2, en background PID 8253)
+- **Résultat** : passed ✓ — 210 cas dans `test/adversarial-cases.mjs`, 3 gates verts, 0 doublon d'ID
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (données seulement — aucun code modifié)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Adversarial CLI (210 cas) : **en cours** (PID 8253, résultats au run suivant)
+- **Nouveaux cas wave 20 (10)** :
+  - `adv_accident_07` (CC 56 responsabilité causale morsure de chien — fils mordu, chien sans laisse, dame dit faute de l'enfant)
+  - `adv_social_10` (LPC 9/11 PC AVS refusées car propriétaire logement — retraité 74 ans, appartement 380k, veut garder sa maison)
+  - `adv_violence_10` (CP 181 violence économique conjugale — mari contrôle tout l'argent depuis 9 ans, aucun compte accessible, coupure vivres)
+  - `adv_consommation_09` (CO 97/101 hôtel surréservé, downgrade 4→2 étoiles — agence et hôtel se renvoient la balle, CO 101 auxiliaires)
+  - `adv_entreprise_09` (CO 784/785 cession parts Sàrl bloquée 4 mois — co-associés sans motif, droit de sortie forcé à valeur réelle ignoré)
+  - `adv_circulation_09` (LCR 16a récidive 3 infractions légères 18 mois — paiement amende ≠ clôture, cumul administratif)
+  - `adv_sante_10` (LAMal 52 / OAMal 71a médicament hors LS pour maladie rare — 4200 CHF/mois, prise en charge individuelle possible)
+  - `adv_fiscal_06` (CDI / LIFD 6 double imposition pension allemande — retraitée Berne, Allemagne retient 15% à la source, remboursement possible)
+  - `adv_famille_17` (CC 301a déplacement unilatéral enfant — mère déménage Genève→Zurich sans accord, croit que garde principale suffit)
+  - `adv_voisinage_14` (CC 684 immissions serre 3.5m — soleil coupé 4h/jour, commune dit permis légal, CC 684 indépendant du droit public)
+- **Couverture domaines** : 10 domaines différents simultanément — accident/violence/fiscal/famille/voisinage/assurances renforcés. fiscal_06 = 6e cas fiscal (blind spot attendu 0%).
+- **Angles inédits** : CC 56 responsabilité animale, LPC PC-AVS propriétaire, violence économique CP 181, CO 101 auxiliaires hôtellerie, CO 784/785 sortie Sàrl, LCR 16a récidive cumulative, OAMal 71a hors LS, CDI double imposition, CC 301a déplacement unilatéral, CC 684 vs permis public.
+- **Prochaine action** : traitement résultats éval CLI 210 cas au run suivant + corrections specs si nécessaire + documentation nouveaux gaps. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

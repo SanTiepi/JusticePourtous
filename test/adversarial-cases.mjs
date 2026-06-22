@@ -2007,6 +2007,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CC 560', 'CC 568', 'CC 580', 'CC 566'],
     notes: "Succession raison individuelle et dettes commerciales — CC 560 al. 2 : les héritiers sont saisis de plein droit de la succession à l'ouverture, y compris les dettes. CC 568 : les héritiers répondent solidairement des dettes du défunt sur leur fortune personnelle. CO 579 : il n'y a pas de séparation entre patrimoine privé et commercial dans une raison individuelle — tout est confondu, les dettes de l'épicerie sont des dettes personnelles du défunt. La seule échappatoire est la répudiation (CC 566/580 : délai 3 mois) ou le bénéfice d'inventaire (CC 580). 'Père décédé + raison individuelle + dettes 30k fournisseurs + appartement à garder + séparer les deux' sans 'CC 568 dettes solidaires' ni 'bénéfice d'inventaire'. Signal adversarial = héritiers croient que la structure 'raison individuelle' crée une séparation patrimoine privé/professionnel (comme une Sàrl), alors que c'est le contraire absolu.",
   },
+
+  // WAVE 20 — angles inédits, domaines sous-représentés
+
+  // ACCIDENT — morsure de chien (CC 56 responsabilité causale du détenteur d'animal)
+  {
+    id: 'adv_accident_07',
+    query: "Je me promenais dans un parc avec mon fils samedi dernier quand le chien d'une dame l'a mordu au bras, 7 points de suture à l'hôpital. La dame dit que c'est la faute de mon fils qui a couru vers le chien. Son chien n'avait pas de laisse et elle dit qu'elle n'a aucune responsabilité. Est-ce qu'on peut quand même être indemnisés ?",
+    canton: 'BE',
+    expected_domaine: 'accident',
+    expected_any_article: ['CC 56', 'CO 41', 'CC 46'],
+    notes: "Responsabilité causale du détenteur d'animal (CC 56) — la responsabilité est objective (pas besoin de prouver une faute du détenteur). La faute de la victime peut réduire l'indemnité (CC 56 al. 2) mais ne l'annule pas sauf en cas de faute grave. L'absence de laisse est un indice de négligence. 'Chien sans laisse + 7 points de suture + dame dit faute du fils' sans 'CC 56 responsabilité causale' ni 'détenteur animal'. Signal adversarial = parent croit que la dispute sur la faute empêche toute indemnisation, ignore la responsabilité causale de CC 56.",
+  },
+
+  // ASSURANCES — prestations complémentaires AVS refusées car propriétaire d'un logement (LPC 9/11)
+  {
+    id: 'adv_social_10',
+    query: "J'ai 74 ans et ma rente AVS est de 1'150 CHF par mois, plus 280 CHF de mon ancienne caisse de pension. J'ai fait une demande de prestations complémentaires car c'est insuffisant pour vivre. La caisse cantonale m'a refusé en disant que j'ai un appartement en propriété estimé à 380'000 CHF et que cela dépasse les limites de fortune. C'est mon seul logement depuis 30 ans et je ne veux pas le vendre. Ont-ils le droit de compter mon logement comme fortune ?",
+    canton: 'VS',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LPC 9', 'LPC 11', 'LPC 17a'],
+    notes: "Prestations complémentaires AVS/AI et fortune immobilière (LPC 9/11) — LPC 11 al. 1 let. c : un immeuble servant de résidence principale à l'ayant droit est pris en compte dans la fortune, mais avec une franchise (actuellement CHF 112'500 pour une personne seule). La valeur vénale ou fiscale s'applique selon les cantons. Le refus peut être justifié si la fortune nette dépasse les seuils, mais le calcul précis peut être contesté. '74 ans + AVS 1150 + PC refusées + appartement 380k + logement depuis 30 ans' sans 'LPC 11 franchise résidence principale' ni 'calcul fortune PC'. Signal adversarial = retraité ignore les règles de prise en compte de la résidence principale dans le calcul LPC, et la possibilité de contester le montant retenu.",
+  },
+
+  // VIOLENCE — violence économique dans le couple, contrôle financier total par le conjoint (CP 181 / CC 163)
+  {
+    id: 'adv_violence_10',
+    query: "Mon mari contrôle tout notre argent depuis 9 ans de mariage. Je n'ai accès à aucun compte, ni commun ni personnel. Pour acheter des vêtements à nos enfants je dois lui demander et il refuse souvent ou donne quelques francs en mauvaise humeur. Si je lui déplais il coupe les vivres pendant des jours. Je ne travaille pas car il a insisté pour que je reste à la maison. Est-ce une infraction pénale ou juste une mauvaise situation familiale ?",
+    canton: 'VD',
+    expected_domaine: 'violence',
+    expected_any_article: ['CP 181', 'CP 181a', 'CC 163', 'CC 172'],
+    notes: "Violence économique conjugale — CP 181 : la contrainte (obliger par la pression à tolérer quelque chose) couvre le contrôle financier extrême selon la jurisprudence récente. CC 163 : chaque époux contribue aux charges du ménage selon ses facultés — le refus total d'accès aux ressources viole cette obligation. CC 172 : mesures judiciaires de protection de l'union conjugale si un époux manque à ses devoirs. La violence économique est reconnue comme forme de violence domestique (Programme OMS, ATF récents). 'Mari contrôle argent + aucun compte + couper les vivres + 9 ans' sans 'CP 181 contrainte économique' ni 'CC 163 obligation contribution'. Signal adversarial = victime croit que la violence doit être physique, ignore que la contrainte économique totale est une infraction pénale.",
+  },
+
+  // CONSOMMATION — hôtel surréservé, downgrade forcé, agence et hôtel se renvoient la responsabilité (CO 97 / CO 101)
+  {
+    id: 'adv_consommation_09',
+    query: "J'avais réservé et entièrement payé via une agence de voyage 5 nuits dans un hôtel 4 étoiles à Lugano à 380 CHF la nuit. En arrivant, ils m'ont dit qu'il n'y avait plus de chambre (surréservation) et qu'ils me mettaient dans un hôtel 2 étoiles voisin. L'agence dit que c'est la faute de l'hôtel. L'hôtel dit que c'est l'agence qui gère. Personne ne veut rembourser la différence ni les frais supplémentaires. Que puis-je faire ?",
+    canton: 'TI',
+    expected_domaine: 'consommation',
+    expected_any_article: ['CO 97', 'CO 101', 'CO 398'],
+    notes: "Surréservation hôtelière et responsabilité de la chaîne contractuelle — CO 97 : inexécution du contrat (chambre promise non livrée). CO 101 : le débiteur répond des faits de ses auxiliaires d'exécution comme de ses propres (l'agence répond donc de l'hôtel qu'elle a choisi). CO 398 : diligence du mandataire. Le consommateur peut agir en priorité contre l'agence avec qui il a conclu le contrat. 'Hôtel 4 étoiles + surréservation + 2 étoiles + agence rejette sur hôtel + hôtel renvoie à agence' sans 'CO 97 inexécution' ni 'CO 101 auxiliaires d'exécution'. Signal adversarial = citoyen est piégé entre deux responsables qui se renvoient la balle, ignore qu'il peut agir contre son cocontractant direct (l'agence).",
+  },
+
+  // ENTREPRISE — associé Sàrl qui veut vendre ses parts, veto sans motif des co-associés (CO 784/785)
+  {
+    id: 'adv_entreprise_09',
+    query: "Je veux quitter la Sàrl que j'ai fondée avec deux associés il y a 6 ans. J'ai trouvé un acheteur pour mes parts à 120'000 CHF. Mes co-associés bloquent la vente depuis 4 mois sans jamais expliquer pourquoi — ils disent juste que les statuts leur donnent le droit de refuser. Je suis bloqué dans la société contre ma volonté. Peuvent-ils me bloquer indéfiniment ?",
+    canton: 'ZH',
+    expected_domaine: 'entreprise',
+    expected_any_article: ['CO 784', 'CO 785', 'CO 786'],
+    notes: "Cession de parts Sàrl et clause d'agrément (CO 784/785) — CO 784 : les parts sociales sont librement cessibles sauf restrictions statutaires. CO 785 : si l'assemblée refuse la cession, l'associé cédant peut exiger le rachat de ses parts à leur valeur réelle — le refus de cession sans offre de rachat est abusif. '120k + co-associés bloquent 4 mois + aucun motif + statuts invoqués' sans 'CO 784 cession parts' ni 'CO 785 droit au rachat valeur réelle'. Signal adversarial = associé croit être prisonnier de la Sàrl, ignore que le refus de cession lui ouvre un droit de sortie forcé à valeur réelle.",
+  },
+
+  // CIRCULATION — récidive d'infractions légères cumulées menant à un retrait de permis (LCR 16a)
+  {
+    id: 'adv_circulation_09',
+    query: "En 18 mois j'ai eu 3 amendes pour excès de vitesse, chaque fois 5 à 9 km/h au-dessus de la limite, j'ai payé à chaque fois. Le service cantonal des véhicules me menace maintenant d'un retrait de permis pour 'récidive'. Pourtant chaque infraction individuellement ne mérite qu'un avertissement. Est-il légal d'additionner des petites infractions pour retirer le permis alors que j'ai déjà payé les amendes ?",
+    canton: 'SG',
+    expected_domaine: 'circulation',
+    expected_any_article: ['LCR 16a', 'LCR 33', 'LCR 16'],
+    notes: "Cumul d'infractions légères et retrait de permis (LCR 16a) — LCR 16a : infraction légère (dépassement faible, pas de blessés). Mais LCR 16a al. 2bis : en cas de récidive dans les 10 ans, la 3e infraction légère entraîne un retrait d'au minimum 1 mois. Le paiement de l'amende est distinct de la mesure administrative de retrait. LCR 33 : l'autorité cantonale prononce les retraits. '3 amendes 18 mois + chacune légère + payée + menace retrait' sans 'LCR 16a récidive cumulative' ni 'amende ≠ mesure administrative'. Signal adversarial = conducteur croit que payer chaque amende clôt définitivement chaque affaire, ignore l'effet cumulatif sur le casier routier et la procédure administrative séparée.",
+  },
+
+  // SANTE — médicament hors liste des spécialités, prise en charge exceptionnelle possible (LAMal 52 / OAMal 71a)
+  {
+    id: 'adv_sante_10',
+    query: "Mon médecin m'a prescrit un médicament pour une maladie rare (vascularite systémique). Ma caisse maladie refuse de rembourser en disant qu'il n'est pas sur leur liste. Il coûte 4'200 CHF par mois et mon médecin dit qu'il n'y a aucun médicament équivalent sur le marché suisse. Sans ce traitement ma maladie progresse rapidement. Y a-t-il un moyen de le faire rembourser malgré tout ?",
+    canton: 'ZH',
+    expected_domaine: 'sante',
+    expected_any_article: ['LAMal 52', 'LAMal 32', 'LPGA 52'],
+    notes: "Médicament hors liste des spécialités (LS), prise en charge individuelle — LAMal 52 : la liste des spécialités (LS) fixe les médicaments remboursables. OAMal 71a : un médicament hors LS peut être pris en charge si le médecin établit qu'il est efficace, adéquat et économique dans le cas spécifique (therapeutic alternative absent). LPGA 52 : opposition à la décision de l'assureur dans les 30 jours. 'Maladie rare + 4200 CHF/mois + pas sur la liste + aucune alternative + maladie progresse' sans 'OAMal 71a prise en charge individuelle' ni 'LPGA 52 opposition 30 jours'. Signal adversarial = patient croit le refus définitif, ignore la procédure de remboursement exceptionnel hors LS.",
+  },
+
+  // FISCAL — double imposition internationale sur pension étrangère, CDI (LIFD 6 / CDI)
+  {
+    id: 'adv_fiscal_06',
+    query: "Je suis retraitée domiciliée à Berne depuis 12 ans. Je reçois une pension mensuelle d'Allemagne de 900 euros de mon ancien employeur privé allemand. En Suisse, je déclare ce revenu et paie l'impôt. Mais l'Allemagne prélève aussi 15% à la source avant de me verser la pension. Je paie donc deux fois des impôts sur le même argent. Existe-t-il un moyen légal d'éviter ça ?",
+    canton: 'BE',
+    expected_domaine: 'fiscal',
+    expected_any_article: ['LIFD 6', 'LIFD 3', 'CDI'],
+    notes: "Double imposition internationale et convention CDI — les CDI (conventions de double imposition) règlent quel pays peut imposer quoi. La CDI Suisse-Allemagne (RS 0.672.913.62) prévoit que les pensions privées sont imposées dans le pays de résidence, non dans l'État source. L'Allemagne ne devrait pas retenir un impôt à la source sur une pension privée versée à une résidente suisse. La retraitée peut demander le remboursement de la retenue à la source allemande auprès du Bundeszentralamt für Steuern. 'Pension allemande + retenue source 15% + Suisse impose aussi + double imposition' sans 'CDI Suisse-Allemagne' ni 'remboursement retenue source'. Signal adversarial = domaine fiscal = blind spot complet JPT (0% attendu).",
+  },
+
+  // FAMILLE — déplacement unilatéral de l'enfant dans une autre ville par le parent gardien (CC 301a)
+  {
+    id: 'adv_famille_17',
+    query: "Je suis séparé de la mère de ma fille de 8 ans depuis 18 mois. Ma fille vit avec sa mère à Genève et j'ai un droit de visite un week-end sur deux. La mère vient de m'annoncer par SMS qu'elle déménage à Zurich dans 6 semaines avec ma fille pour un nouveau travail. Elle dit n'avoir pas besoin de mon accord puisqu'elle a la garde principale. Est-ce qu'elle a vraiment le droit de partir avec notre fille sans mon accord ?",
+    canton: 'GE',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 301a', 'CC 298', 'CC 301'],
+    notes: "Déplacement unilatéral de l'enfant et accord parental (CC 301a) — CC 301a (en vigueur depuis 2014) : le parent qui veut changer de lieu de résidence avec l'enfant doit obtenir l'accord de l'autre parent ou, en cas de désaccord, une décision judiciaire. La garde principale ne donne PAS le droit de déménager librement avec l'enfant. '8 ans + séparation 18 mois + un week-end sur deux + SMS Zurich + dit pas besoin accord' sans 'CC 301a déplacement unilatéral interdit' ni 'accord requis ou juge'. Signal adversarial = parent gardien croit que la garde principale équivaut à une liberté totale de déménagement, alors que CC 301a l'en empêche sauf accord ou décision judiciaire.",
+  },
+
+  // VOISINAGE — serre haute du voisin qui prive de lumière (CC 684 immissions / permis communal)
+  {
+    id: 'adv_voisinage_14',
+    query: "Mon voisin a érigé une serre en verre de 3.5 mètres de haut juste de l'autre côté de notre clôture commune. Depuis la fin des travaux il y a 4 mois, notre salon n'a plus de lumière l'après-midi car la serre bloque le soleil de 13h à 17h. La commune dit qu'elle ne peut rien faire car le permis de construire était légal. Le permis communal efface-t-il vraiment mes droits de voisinage ?",
+    canton: 'ZH',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 684', 'CC 679', 'CC 686'],
+    notes: "Immissions excessives et droit de voisinage (CC 684) — CC 684 al. 1 : le propriétaire s'abstient de tout excès au détriment des fonds voisins. La privation d'ensoleillement peut constituer une immission excessive selon la jurisprudence TF (critère : intensité, durée, situation locale). Un permis de construire légal ne supprime PAS les droits fondés sur le droit civil de voisinage — le droit public (permis) et le droit privé (CC 684) sont indépendants. 'Serre 3.5m + permis valide + soleil coupé 4h/jour + commune impuissante' sans 'CC 684 immissions excessives' ni 'permis n'efface pas voisinage CC'. Signal adversarial = propriétaire croit que le permis communal légal exclut tout recours de voisinage, alors que CC 684 est autonome du droit public.",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

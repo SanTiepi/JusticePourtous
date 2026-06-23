@@ -1116,3 +1116,26 @@ Points à surveiller :
 - **Couverture domaines** : 10 domaines différents simultanément — accident/violence/fiscal/famille/voisinage/assurances renforcés. fiscal_06 = 6e cas fiscal (blind spot attendu 0%).
 - **Angles inédits** : CC 56 responsabilité animale, LPC PC-AVS propriétaire, violence économique CP 181, CO 101 auxiliaires hôtellerie, CO 784/785 sortie Sàrl, LCR 16a récidive cumulative, OAMal 71a hors LS, CDI double imposition, CC 301a déplacement unilatéral, CC 684 vs permis public.
 - **Prochaine action** : traitement résultats éval CLI 210 cas au run suivant + corrections specs si nécessaire + documentation nouveaux gaps. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-06-23 UTC — run agent horaire (wave 21 adversarial : 210→220 cas)
+- **Tenté** : item 1 — wave 21 : +10 cas adversariaux ciblant angles inédits (bail dépôt garantie, travail forfait heures sup LTr, RC privée enfant, divorce convention refusée, asile permis N travail, successions héritier pré-décédé, voisin menaçant protection civile, formation en ligne inexécutée, dossier médical nLPD, impôt gains immobiliers)
+- **Résultat** : passed ✓ — **220 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Commits** : `48770fc`
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (données seulement — aucun code modifié)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Adversarial CLI : non re-mesuré ce run (nécessite `claude -p` actif)
+- **Nouveaux cas wave 21 (10)** :
+  - `adv_bail_23` (CO 257e dépôt de garantie non restitué 3 ans après état des lieux sans réserve + CO 104 intérêts)
+  - `adv_travail_25` (CO 321c / LTr 9 forfait heures sup contractuel vs 55-60h/sem réelles, limite légale)
+  - `adv_assurances_12` (CO 41 / CC 333 RC privée refuse dommage enfant 11 ans, "intentionnel" invoqué à tort — gap LCA connu)
+  - `adv_famille_18` (CC 285 / CPC 280 divorce consentement mutuel, juge refuse convention pension enfant insuffisante)
+  - `adv_etrangers_16` (LAsi 43 / OASA 65 permis N requérant d'asile, droit au travail après 3 mois)
+  - `adv_successions_12` (CC 488 / CC 496 héritier institué pré-décède avant testateur — caducité vs représentation)
+  - `adv_violence_11` (CP 180 / CC 28b voisin menaçant/agressif, police passive, ordonnance protection civile)
+  - `adv_consommation_10` (CO 97 / CO 100 / CO 107 coach disparu 2/8 séances, clause no-refund nulle inexécution)
+  - `adv_sante_11` (LPD 25 / LPMéd 11 médecin réclame 380 CHF copie dossier, droit d'accès gratuit nLPD 2023)
+  - `adv_fiscal_07` (LHID 12 / LGIM impôt gains immobiliers 17 ans possession + rénovations — blind spot 0% attendu)
+- **Mix attendu** : 7-8 cas devraient passer à 100% (fiches existantes), 2-3 tests gaps connus (RC privée LCA, gains immobiliers fiscal, successions héritier pré-décédé)
+- **Prochaine action** : re-mesurer avec `node scripts/adversarial-eval-cli.mjs` (nécessite `claude -p` actif) pour score réel sur 220 cas. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

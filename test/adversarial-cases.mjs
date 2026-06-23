@@ -2109,6 +2109,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CC 684', 'CC 679', 'CC 686'],
     notes: "Immissions excessives et droit de voisinage (CC 684) — CC 684 al. 1 : le propriétaire s'abstient de tout excès au détriment des fonds voisins. La privation d'ensoleillement peut constituer une immission excessive selon la jurisprudence TF (critère : intensité, durée, situation locale). Un permis de construire légal ne supprime PAS les droits fondés sur le droit civil de voisinage — le droit public (permis) et le droit privé (CC 684) sont indépendants. 'Serre 3.5m + permis valide + soleil coupé 4h/jour + commune impuissante' sans 'CC 684 immissions excessives' ni 'permis n'efface pas voisinage CC'. Signal adversarial = propriétaire croit que le permis communal légal exclut tout recours de voisinage, alors que CC 684 est autonome du droit public.",
   },
+
+  // ========== WAVE 21 — 2026-06-23 ==========
+
+  // BAIL — dépôt de garantie non restitué 3 ans après l'état des lieux signé sans réserve (CO 257e)
+  {
+    id: 'adv_bail_23',
+    query: "J'ai quitté mon appartement en mars 2022 après 5 ans de location. L'état des lieux de sortie a été signé par la régie sans aucune remarque. On est maintenant en juin 2025 et je n'ai toujours pas récupéré mes 3 mois de caution, soit 4'500 CHF déposés en banque. La régie ne répond plus à mes lettres recommandées depuis 8 mois. Y a-t-il un délai légal pour qu'ils me rendent cet argent, et est-ce que des intérêts courent depuis le départ ?",
+    canton: 'VD',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 257e', 'CO 104', 'CO 257c'],
+    notes: "Restitution tardive du dépôt de garantie (CO 257e) — CO 257e al. 3 : à la fin du bail, le bailleur doit restituer la garantie dès qu'il n'a plus de prétentions à faire valoir, au plus tard dans un délai raisonnable (jurisprudence : 1 mois si état des lieux sans réserve). CO 104 : intérêts de retard sur la somme détenue. CO 257c : le dépôt est légalement limité à 3 mois de loyer. '3 ans + état des lieux signé sans réserve + régie silencieuse + 4500 CHF + intérêts ?' sans 'CO 257e délai restitution' ni 'CO 104 intérêts retard'. Signal adversarial = locataire formule par 'ils ne répondent pas' et 'est-ce légal' sans citer la restitution ni le délai légal.",
+  },
+
+  // TRAVAIL — clause contractuelle "heures sup incluses dans le salaire", réalité 55h+/semaine (CO 321c / LTr 9)
+  {
+    id: 'adv_travail_25',
+    query: "Mon contrat de travail stipule que 'toutes les heures supplémentaires éventuelles sont incluses dans le salaire mensuel'. Depuis 2 ans je travaille réellement entre 55 et 60 heures par semaine. Mon employeur refuse toute compensation en citant ce paragraphe. J'ai lu quelque part que la loi fixe une durée maximum de travail de 45 ou 50 heures. Est-ce que cette clause dans mon contrat peut vraiment m'obliger à travailler autant sans supplément ?",
+    canton: 'ZH',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 321c', 'LTr 9', 'LTr 12'],
+    notes: "Forfait heures supplémentaires et limites LTr (CO 321c / LTr 9) — CO 321c al. 3 : les heures supplémentaires doivent être compensées ou payées à 125%, sauf accord écrit d'un forfait valable. Un forfait n'est admis que si le salaire est suffisamment élevé et les heures supplémentaires prévisibles (jurisprudence TF). LTr 9 : durée maximale légale = 45h/sem (industrie) ou 50h/sem (autres). Au-delà de LTr 9, l'employeur encourt des sanctions pénales indépendamment du contrat. LTr 12 : les heures supplémentaires LTr (dépassement de la durée légale) sont distinctes du dépassement de l'horaire contractuel (CO 321c). 'Contrat forfait + 55-60h/semaine + 2 ans + refus compensation + loi 45/50h' sans 'CO 321c forfait limites' ni 'LTr 9 sanction pénale indépendante'. Signal adversarial = travailleur connaît vaguement LTr mais ignore la distinction CO 321c (heures contractuelles) / LTr 9 (durée maximale) et la nullité du forfait au-delà.",
+  },
+
+  // ASSURANCES — RC privée du voisin refuse de couvrir dégâts causés par son enfant (CO 41 / LCA gap)
+  {
+    id: 'adv_assurances_12',
+    query: "Le fils de ma voisine, qui a 11 ans, a cassé ma fenêtre en jouant au foot dans le jardin. Les dégâts se montent à 950 CHF. La voisine m'a dit que son assurance responsabilité civile prendrait en charge le sinistre. Mais l'assurance refuse en invoquant que l'acte était 'intentionnel' car l'enfant visait délibérément le ballon. La voisine dit qu'elle ne peut rien faire. Qui paie finalement ?",
+    canton: 'BE',
+    expected_domaine: 'assurances',
+    expected_any_article: ['CO 41', 'CC 333', 'CO 97'],
+    notes: "Responsabilité des parents pour dommages causés par leurs enfants mineurs (CC 333 / CO 41) — CC 333 al. 1 : le chef de famille répond des dommages causés par les personnes sous son autorité, sauf preuve d'avoir exercé toute la surveillance commandée par les circonstances. CO 41 : responsabilité délictuelle (faute + dommage + causalité). L'assurance RC privée couvre la responsabilité civile involontaire — viser un ballon (pas la fenêtre) = faute négligente, non intentionnelle, couverte. L'invocation de 'l'intentionnalité' par l'assureur est abusive : l'acte intentionnel en RC exige que le dommage ait été voulu, pas seulement l'acte déclencheur. Note : gap connu JPT — aucune fiche pour l'assurance RC privée (vs assurances sociales couvertes). 'Enfant 11 ans + fenêtre cassée + ballon + RC refuse intentionnel + voisine impuissante' sans 'CC 333 responsabilité parentale' ni 'RC = faute négligente couverte'. Signal adversarial = victime croit l'assureur sur parole, ignore que 'intentionnel' ≠ dommage voulu.",
+  },
+
+  // FAMILLE — divorce consensuel : juge refuse d'homologuer la convention sur la pension enfant (CC 285 / CPC 280)
+  {
+    id: 'adv_famille_18',
+    query: "Mon ex-mari et moi voulons divorcer par consentement mutuel. Nous avons élaboré avec un avocat un accord sur la garde alternée et une pension alimentaire de 550 CHF par mois pour notre fils de 8 ans. Le juge a refusé d'homologuer notre convention en nous disant que la pension est insuffisante au regard des besoins de l'enfant. Peut-il vraiment imposer un montant plus élevé alors que nous sommes tous les deux d'accord et que nous avons trouvé cet accord avec un professionnel ?",
+    canton: 'FR',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 285', 'CC 133', 'CPC 280', 'CC 276'],
+    notes: "Divorce consentement mutuel et contrôle judiciaire de la pension enfant (CC 285 / CPC 280) — CC 133 al. 3 : même en cas de divorce par consentement mutuel, le juge doit vérifier que les accords sur les droits des enfants correspondent à l'intérêt de ceux-ci. CC 285 : la pension est fixée selon les besoins de l'enfant ET les capacités financières des parents — le juge n'est pas lié par l'accord des parties si la pension est insuffisante. CPC 280 : homologation de la convention impossible si contraire à l'intérêt de l'enfant. '550 CHF + avocat + juge refuse + dit insuffisant' sans 'CC 285 intérêt supérieur primant l'accord' ni 'CPC 280 contrôle judiciaire obligatoire'. Signal adversarial = couple croit que le divorce consensuel = entérinement automatique par le juge, ignore que CC 133/285 confèrent au juge un contrôle substantiel sur la pension enfant.",
+  },
+
+  // ETRANGERS — demandeur d'asile permis N, droits de travailler après 3 mois (LAsi 43 / OASA 65)
+  {
+    id: 'adv_etrangers_16',
+    query: "Je suis demandeur d'asile, je suis arrivé en Suisse il y a 5 mois et j'ai un permis N. J'ai trouvé un employeur dans la restauration prêt à m'engager comme plongeur. Mais le service cantonal de l'emploi et l'employeur me disent que travailler avec un permis N est 'impossible'. Pourtant quelqu'un du foyer m'a dit qu'après 3 mois on a le droit de travailler. Qui dit vrai ?",
+    canton: 'VD',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LAsi 43', 'LEI 30', 'OASA 65'],
+    notes: "Droit au travail des requérants d'asile (LAsi 43) — LAsi 43 al. 1 : les requérants d'asile ont le droit d'exercer une activité lucrative après un délai d'attente de 3 mois dès le dépôt de la demande d'asile (modification 2018). Ce droit est subordonné à une autorisation cantonale (OASA 65) et à la priorité des résidents suisses et UE/AELE. LEI 30 al. 1 let. l : exception à l'admission (personnes en procédure d'asile). Le service cantonal peut refuser si la priorité locale n'est pas respectée, mais il ne peut pas refuser systématiquement l'accès au travail. 'Permis N + 5 mois + restauration + service emploi dit impossible + 3 mois entendus' sans 'LAsi 43 délai 3 mois' ni 'autorisation cantonale requise mais possible'. Signal adversarial = requérant entendu le bon droit mais confronté à un refus administratif non motivé ; confusion entre 'impossible' (faux) et 'soumis à autorisation' (vrai).",
+  },
+
+  // SUCCESSIONS — héritier institué dans le testament pré-décède avant le testateur (CC 488 / CC 496)
+  {
+    id: 'adv_successions_12',
+    query: "Mon père a rédigé un testament en 2016 dans lequel il léguait notre chalet de montagne à mon frère aîné, et le reste à partager entre nous trois enfants. Mon frère aîné est décédé en 2023 d'un cancer, soit un an avant mon père. Mon père n'a jamais actualisé son testament. Mon frère avait deux enfants (mes neveux). Qui hérite maintenant du chalet ? Est-ce que mes neveux prennent la place de leur père, ou est-ce que le legs tombe et le chalet revient dans la masse à partager entre nous deux restants ?",
+    canton: 'VS',
+    expected_domaine: 'successions',
+    expected_any_article: ['CC 488', 'CC 496', 'CC 539', 'CC 485'],
+    notes: "Caducité du legs par prédécès et représentation (CC 488 / CC 496) — CC 488 al. 1 : les dispositions testamentaires en faveur d'un héritier qui prédécède sans que le testateur ait prévu de substitution sont en principe caduques. CC 496 : en l'absence de disposition contraire dans le testament, les descendants de l'héritier pré-décédé n'héritent pas automatiquement du legs — la représentation au sens de la succession légale (CC 543) ne s'applique pas automatiquement aux successions testamentaires. La part caduque retombe dans la masse successorale et se répartit entre les autres héritiers institués (ou selon la loi si le testament ne règle pas la caducité). 'Frère décédé 2023 + testament 2016 + neveux ou autres héritiers + chalet + testament pas mis à jour' sans 'CC 488 caducité disposition' ni 'représentation testamentaire non automatique'. Signal adversarial = héritier croit que les descendants remplacent automatiquement leur parent pré-décédé, ignore que la représentation est légale (ab intestat) et non automatiquement testamentaire.",
+  },
+
+  // VIOLENCE — voisin menaçant et agressif, police peu réactive, mesures civiles possibles (CP 180 / CC 28b)
+  {
+    id: 'adv_violence_11',
+    query: "Mon voisin du dessus est alcoolique. Depuis 8 mois, il frappe sur mon plafond, m'insulte dans les escaliers et m'a dit deux fois 'je vais te faire regretter'. La semaine dernière il m'a poussé dans l'escalier, je me suis cogné l'épaule mais sans blessure visible. J'ai appelé la police à 5 reprises, ils viennent, ça se calme, mais ça reprend dès le lendemain. La police dit qu'elle 'ne peut rien faire sans fait grave'. Y a-t-il une procédure judiciaire pour m'en protéger même sans blessure physique sérieuse ?",
+    canton: 'GE',
+    expected_domaine: 'violence',
+    expected_any_article: ['CP 180', 'CC 28b', 'CC 28', 'CP 126'],
+    notes: "Menaces et ordonnance de protection civile (CP 180 / CC 28b) — CP 180 al. 1 : quiconque menace autrui d'un danger grave et imminent pour son intégrité corporelle ou sa vie est punissable. CP 126 : voies de fait réitérées. CC 28b : action en cessation de l'atteinte à la personnalité — le juge civil peut ordonner une interdiction de s'approcher (ordonnance de protection) sans attendre une condamnation pénale. La procédure civile CC 28b est plus rapide que la procédure pénale et ne requiert pas de blessure grave. 'Menaces verbales + push + police répétée + sans blessure grave + police impuissante' sans 'CC 28b ordonnance de protection civile' ni 'CP 180 menaces indépendamment des blessures'. Signal adversarial = victime cherche uniquement une solution policière/pénale, ignore la voie civile CC 28b qui permet une ordonnance d'interdiction d'approche sans procédure pénale.",
+  },
+
+  // CONSOMMATION — formation en ligne non livrée, CG disent no-refund, coach disparu (CO 97 / CO 107 / CO 100)
+  {
+    id: 'adv_consommation_10',
+    query: "J'ai payé 1'380 CHF pour un coaching professionnel en ligne de 8 séances sur une plateforme. Après 2 séances, le coach a arrêté de répondre à mes messages et n'a plus donné signe de vie depuis 3 mois. La plateforme me répond qu'elle n'est 'qu'un intermédiaire' et ne rembourse pas. Les conditions générales du coach stipulaient 'aucun remboursement après la première séance'. Est-ce que cette clause m'empêche vraiment de récupérer mes 1'380 CHF alors qu'il n'a pas exécuté ce qu'il avait promis ?",
+    canton: 'ZH',
+    expected_domaine: 'consommation',
+    expected_any_article: ['CO 97', 'CO 107', 'CO 100', 'CO 109'],
+    notes: "Inexécution du contrat et nullité des clauses d'exclusion en cas de dol/faute grave (CO 97 / CO 100 / CO 107) — CO 97 al. 1 : le débiteur qui n'exécute pas sa prestation doit réparer le dommage, sauf cause libératoire. CO 107 al. 2 : si le débiteur est en demeure, le créancier peut renoncer à la prestation et réclamer des dommages-intérêts ou résoudre le contrat. CO 100 al. 1 : est nulle toute clause qui exclut la responsabilité pour dol ou faute grave. Une clause 'no-refund' ne peut pas exclure les droits du créancier en cas d'inexécution totale (abandon du contrat = faute grave). '1380 CHF + 2/8 séances + coach disparu 3 mois + plateforme intermédiaire + CG no-refund' sans 'CO 97/107 inexécution' ni 'CO 100 nullité clause exclusion faute grave'. Signal adversarial = consommateur croit la clause no-refund absolue, ignore que CO 100 la rend nulle en cas d'inexécution délibérée.",
+  },
+
+  // SANTE — médecin réclame 350 CHF pour copie du dossier médical, envoie un résumé à la place (LPD 25 / LPMéd 11)
+  {
+    id: 'adv_sante_11',
+    query: "J'ai changé de médecin traitant après 6 ans. J'ai écrit à mon ancien médecin pour obtenir l'intégralité de mon dossier médical. Il m'a répondu par courrier qu'il me fournira le dossier contre paiement de 380 CHF 'pour la préparation et la numérisation'. Comme je refusais de payer, il m'a envoyé un résumé de 3 pages au lieu du dossier complet. A-t-il le droit de bloquer l'accès à mon propre dossier derrière un paiement de 380 CHF ?",
+    canton: 'BE',
+    expected_domaine: 'sante',
+    expected_any_article: ['LPD 25', 'LPMéd 11', 'Cst 13', 'LPD 5'],
+    notes: "Droit d'accès au dossier médical et tarification (LPD 25 / LPMéd 11) — LPD 25 al. 2 (nLPD, en vigueur depuis sept. 2023) : le droit d'accès est en principe gratuit ; des frais ne peuvent être mis à la charge du requérant que si la demande est manifestement abusive ou entraîne un travail disproportionné. 380 CHF pour un dossier de 6 ans n'est pas justifiable. LPMéd 11 : le patient a le droit de consulter son dossier médical. Un résumé de 3 pages ne constitue pas un accès complet au sens de LPD 25 (accès = données telles qu'elles existent, pas un résumé sélectif). 'Changement médecin + 380 CHF + résumé 3 pages + dossier complet refusé' sans 'LPD 25 accès en principe gratuit' ni 'résumé ≠ accès LPD'. Signal adversarial = patient croit que le médecin peut monétiser l'accès aux données personnelles médicales, ignore la nLPD 2023 et LPMéd 11.",
+  },
+
+  // FISCAL — impôt sur les gains immobiliers après 17 ans de possession, déductions rénovations (LIFD 218 / droit cantonal)
+  {
+    id: 'adv_fiscal_07',
+    query: "J'ai acheté ma maison en 2008 pour 560'000 CHF. Je veux la vendre maintenant, le notaire estime la valeur à 920'000 CHF. Mon comptable me parle d'un 'impôt sur les gains immobiliers'. J'ai habité et entretenu cette maison pendant 17 ans, et j'ai fait des rénovations importantes (cuisine et salle de bain pour 85'000 CHF en 2019). La durée de possession et mes travaux réduisent-ils cet impôt ?",
+    canton: 'VD',
+    expected_domaine: 'fiscal',
+    expected_any_article: ['LIFD 43', 'LIFD 218', 'LHID 12', 'LIFD 12'],
+    notes: "Impôt sur les gains immobiliers — droit cantonal exclusivement (LHID 12 / LGIM selon canton) — En Suisse, l'impôt sur les gains immobiliers est exclusivement cantonal (LHID 12 ; chaque canton a sa propre loi, ex. LGIM pour VD). La LIFD ne s'applique pas à la vente d'un bien de fortune privée (LIFD 16 al. 3 exonère les gains privés). Barème dégressif : plus la durée de possession est longue, plus le taux est bas (VD : réduction de 2% par année dès la 2e, exonération partielle possible après 25 ans). Travaux de rénovation : augmentent le prix de revient et réduisent le gain imposable (à déclarer avec factures). '17 ans + rénovations 85k + gain 360k + impôt gain immobilier + déductions ?' sans 'droit cantonal LGIM' ni 'LHID 12' ni 'réductions pour durée et travaux'. Signal adversarial = domaine fiscal = blind spot complet JPT (0% attendu sur tous les cas fiscaux).",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

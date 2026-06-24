@@ -1139,3 +1139,26 @@ Points à surveiller :
   - `adv_fiscal_07` (LHID 12 / LGIM impôt gains immobiliers 17 ans possession + rénovations — blind spot 0% attendu)
 - **Mix attendu** : 7-8 cas devraient passer à 100% (fiches existantes), 2-3 tests gaps connus (RC privée LCA, gains immobiliers fiscal, successions héritier pré-décédé)
 - **Prochaine action** : re-mesurer avec `node scripts/adversarial-eval-cli.mjs` (nécessite `claude -p` actif) pour score réel sur 220 cas. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-06-24 UTC — run agent horaire (wave 22 adversarial : 220→230 cas)
+- **Tenté** : item 1 — wave 22 : +10 cas adversariaux ciblant des angles inédits (animaux médication bail, CDD renouvelé 4×, prescription dette cédée 12 ans, morsure chien livreur, prêt associé Sàrl faillite, empiètement cadastral bornage, clause inoccupation assurance ménage 22j<30j, grands-parents décès fille, permis C algérien années études, travail non déclaré verbal 3 ans)
+- **Résultat** : passed ✓ — **230 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (données seulement — aucun code modifié)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Adversarial CLI : non re-mesuré ce run (nécessite `claude -p` actif)
+- **Nouveaux cas wave 22 (10)** :
+  - `adv_bail_24` (CO 256/257f/271 — clause interdisant animaux, chien thérapeutique médecin psychiatre, résiliation bailleur)
+  - `adv_travail_26` (CO 334/335 — CDD renouvelé 4× avec lettre exprès, non-renouvellement, transformation CDI?)
+  - `adv_dettes_21` (CO 127/135/LP 67 — commandement payer 12 ans après, dette cédée 3×, prescription interrompue?)
+  - `adv_accident_08` (CC 56/CO 55/CO 41 — morsure chien personnel livreur en service, responsabilité employeur CO 55)
+  - `adv_entreprise_10` (LP 219/CO 792 — associé Sàrl prête 80k CHF à sa propre société, rang chirographaire vs subordination en faillite)
+  - `adv_voisinage_15` (CC 641/CC 667/CC 662 — clôture voisin empiète 62 cm selon cadastre, usucapion 25 ans ≠ 30 ans, bornage imprescriptible)
+  - `adv_assurances_13` (LCA 14/LCA 6 — inondation cave après 22 jours vacances, clause exclusion >30 jours, interprétation contra proferentem)
+  - `adv_famille_19` (CC 273/CC 274 — grands-parents fille décédée, gendre coupe contact 11 mois, droit propre CC 273 al. 2)
+  - `adv_etrangers_17` (LEI 34/OASA 84 — Algérien 3 ans études + 7 ans permis B, années formation comptent? pratique cantonale)
+  - `adv_hybride_09` (CO 319/LAVS 5/CO 329 — travail verbal 3 ans non déclaré, liquide, brouille, preuves alternatives, cotisations AVS)
+- **Mix attendu** : 6-7 cas devraient passer à 100% (fiches existantes bail/travail/dettes/famille/voisinage), 2-3 testent des angles partiellement couverts (assurances LCA clause, accident chien livreur, entreprise prêt associé)
+- **Prochaine action** : re-mesurer avec `node scripts/adversarial-eval-cli.mjs` (nécessite `claude -p` actif) pour score réel sur 230 cas. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

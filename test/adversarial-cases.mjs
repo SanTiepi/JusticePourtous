@@ -2211,6 +2211,106 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['LIFD 43', 'LIFD 218', 'LHID 12', 'LIFD 12'],
     notes: "Impôt sur les gains immobiliers — droit cantonal exclusivement (LHID 12 / LGIM selon canton) — En Suisse, l'impôt sur les gains immobiliers est exclusivement cantonal (LHID 12 ; chaque canton a sa propre loi, ex. LGIM pour VD). La LIFD ne s'applique pas à la vente d'un bien de fortune privée (LIFD 16 al. 3 exonère les gains privés). Barème dégressif : plus la durée de possession est longue, plus le taux est bas (VD : réduction de 2% par année dès la 2e, exonération partielle possible après 25 ans). Travaux de rénovation : augmentent le prix de revient et réduisent le gain imposable (à déclarer avec factures). '17 ans + rénovations 85k + gain 360k + impôt gain immobilier + déductions ?' sans 'droit cantonal LGIM' ni 'LHID 12' ni 'réductions pour durée et travaux'. Signal adversarial = domaine fiscal = blind spot complet JPT (0% attendu sur tous les cas fiscaux).",
   },
+
+  // BAIL — clause interdisant les animaux, locataire adopte un chien pour raison médicale attestée (CO 256 / CO 257f / jurisprudence TF)
+  {
+    id: 'adv_bail_24',
+    query: "Mon bail interdit formellement les animaux domestiques, c'est écrit noir sur blanc. J'ai adopté un golden retriever il y a 6 mois car mon psychiatre m'a prescrit un 'animal de soutien émotionnel' suite à une dépression sévère. La régie a appris l'existence du chien par ma voisine et m'a envoyé un avertissement me sommant de m'en séparer sous 30 jours, faute de quoi elle résiliera mon bail. Est-ce qu'une attestation médicale peut faire exception à la clause d'interdiction des animaux ?",
+    canton: 'GE',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 256', 'CO 257f', 'CO 271', 'CO 272'],
+    notes: "Clause d'interdiction des animaux et obligation d'usage conforme (CO 256 / CO 257f) — CO 256 al. 1 : le bailleur est tenu de délivrer la chose dans un état approprié à l'usage convenu. Une clause interdisant tous les animaux peut être contestée si elle empêche un usage raisonnable, notamment pour des raisons médicales attestées. La jurisprudence TF (ATF 138 III 59) admet que l'interdiction générale et absolue des animaux peut être qualifiée de clause abusive selon les circonstances. CO 257f al. 2 : sanction de résiliation possible mais seulement si le manquement est grave et persistant. CO 271 : résiliation abusive si le bailleur agit de mauvaise foi ou sans intérêt légitime. 'Chien + prescription psychiatrique + avertissement régie + 30 jours + résilier' sans 'CO 256 usage approprié' ni 'jurisprudence TF clause abusive' ni 'CO 271 résiliation contestable'. Signal adversarial = locataire croit la clause absolue et incontestable, ignore la relativisation jurisprudentielle et l'obligation CO 256.",
+  },
+
+  // TRAVAIL — contrat CDD renouvelé 4 fois sur 5 ans, employeur n'offre pas de renouvellement, citoyen pense avoir un CDI (CO 334 / CO 335)
+  {
+    id: 'adv_travail_26',
+    query: "Je travaille depuis 5 ans pour la même PME avec des contrats à durée déterminée d'un an, renouvelés chaque année avec une lettre signée. Mon employeur vient de m'informer qu'il ne renouvellera pas mon contrat à l'échéance en août. Un collègue m'a dit qu'après autant de renouvellements, mon CDD s'est automatiquement transformé en CDI et qu'il ne peut pas juste me laisser partir. Est-ce vrai ? Ai-je droit à un préavis ou à une indemnité ?",
+    canton: 'ZH',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 334', 'CO 335', 'CO 335c', 'CO 336'],
+    notes: "Transformation CDD en CDI et renouvellement exprès (CO 334 / CO 335) — CO 334 al. 2 : si un contrat de durée déterminée est reconduit tacitement (sans accord exprès), il se transforme en contrat de durée indéterminée. Mais si chaque renouvellement fait l'objet d'une lettre signée (accord exprès), il n'y a pas de reconduction tacite — la transformation en CDI n'est pas automatique. Exception (jurisprudence TF) : si les renouvellements successifs visent à contourner la protection légale du CDI (notamment les délais de congé et la protection contre le licenciement abusif), le juge peut requalifier. CO 335c : les délais légaux de congé s'appliquent au CDI; sans requalification, la non-reconduction du CDD est un simple terme contractuel. '5 ans + 4 renouvellements + lettre chaque année + non-renouvellement + CDI automatique ?' sans 'CO 334 tacite vs exprès' ni 'risque de requalification seulement si contournement abusif'. Signal adversarial = travailleur confond reconduction tacite et renouvellement exprès, ignore que la lettre annuelle empêche la transformation automatique.",
+  },
+
+  // DETTES — commandement de payer reçu 12 ans après la dette originale, cédée 3x, prescription plaidée (CO 127 / CO 135 / LP 67)
+  {
+    id: 'adv_dettes_21',
+    query: "En 2012 j'avais une dette de carte de crédit de 3'800 CHF avec Cembra Bank. Je n'ai jamais pu rembourser et la banque a arrêté de me contacter en 2014. Je pensais que c'était terminé. Or hier j'ai reçu un commandement de payer d'une société de recouvrement que je ne connais pas, pour 5'600 CHF avec les intérêts. Sur le document, il y a écrit 'créancier cédant : Creditreform, cédant initial : Cembra Bank, 2012'. Est-ce que cette vieille dette peut encore être légalement réclamée après 12 ans ?",
+    canton: 'AG',
+    expected_domaine: 'dettes',
+    expected_any_article: ['CO 127', 'CO 135', 'CO 142', 'LP 67', 'LP 74'],
+    notes: "Prescription décennale et interruption par actes de poursuite (CO 127 / CO 135) — CO 127 : la prescription des créances est de 10 ans en règle générale. Si la dette date de 2012 et qu'aucun acte interruptif n'est intervenu depuis 2014, elle pourrait être prescrite depuis 2022 (10 ans). CO 135 ch. 2 : la prescription est interrompue par tout acte de poursuite (commandement de payer, LP 67) ou acte de reconnaissance de dette. Si la société de recouvrement a envoyé un commandement de payer avant 2022 (sans que le citoyen le sache car changement d'adresse, notif fictive LP 67 al. 1), la prescription a pu être interrompue. CO 142 : la prescription doit être invoquée (moyen de droit, pas d'office). LP 74 al. 1 : le débiteur peut former opposition totale sans motif — seule voie pour bloquer la poursuite sans avocat. 'Cembra 2012 + cédée + 5600 CHF + 12 ans + société inconnue' sans 'CO 127 prescription 10 ans' ni 'CO 135 interruption par poursuite antérieure' ni 'LP 74 opposition sans motif'. Signal adversarial = citoyen ignore que la cession de créance ne réinitialise pas la prescription, mais qu'un commandement de payer intermédiaire peut l'avoir interrompue.",
+  },
+
+  // ACCIDENT — morsure de chien par l'animal personnel d'un livreur en service, responsabilité employeur (CC 56 / CO 55 / CO 41)
+  {
+    id: 'adv_accident_08',
+    query: "Un livreur est venu déposer un colis chez moi la semaine passée. Il avait amené son propre chien (un berger malinois) attaché à sa camionnette. Quand il est sorti chercher le colis, le chien a sauté par la vitre baissée et m'a mordu au bras — 14 points de suture et 3 semaines d'arrêt de travail. La société de livraison (son employeur) dit qu'ils 'ne savent pas pourquoi il avait son chien' et que c'est son problème personnel. Qui est responsable et doit payer mes frais médicaux et la perte de salaire ?",
+    canton: 'LU',
+    expected_domaine: 'accident',
+    expected_any_article: ['CC 56', 'CO 55', 'CO 41', 'CO 46'],
+    notes: "Responsabilité du détenteur d'animal et de l'employeur (CC 56 / CO 55) — CC 56 al. 1 : le détenteur d'un animal répond du dommage causé par celui-ci, sauf s'il prouve toute la diligence requise ou que le dommage serait survenu même sans faute de sa part. Le livreur (détenteur du chien) est directement responsable. CO 55 al. 1 : l'employeur est responsable des dommages causés par ses auxiliaires dans l'exercice de leurs fonctions, sauf preuve que toutes les précautions nécessaires ont été observées. L'argument 'problème personnel' de l'employeur est fragile si le livreur était en mission officielle au moment du sinistre (livraison client = exercice des fonctions). CO 46 : indemnisation dommage corporel = frais médicaux + perte de gain (arrêt de travail). 'Livreur + chien personnel + morsure + 14 points + 3 semaines arrêt + employeur nie' sans 'CC 56 détenteur animal' ni 'CO 55 responsabilité employeur pour auxiliaire en mission'. Signal adversarial = victime croit l'argument de l'employeur (séparation sphère privée/professionnelle), ignore CO 55 (mission en cours = responsabilité employeur possible cumulativement).",
+  },
+
+  // ENTREPRISE — associé Sàrl prête de l'argent à sa propre société en difficulté, rang en cas de faillite (LP 219 / CO 792 / CO 757)
+  {
+    id: 'adv_entreprise_10',
+    query: "Je suis associé à 40% d'une Sàrl avec deux autres personnes. La société traverse une mauvaise passe et nous manquons de liquidités pour payer les fournisseurs. J'ai prêté personnellement 80'000 CHF à la société il y a 8 mois, avec un contrat de prêt et des intérêts à 3%. Si la société fait faillite, est-ce que je récupère mon argent comme n'importe quel créancier ? Ou le fait d'être associé me défavorise-t-il dans la répartition ?",
+    canton: 'ZG',
+    expected_domaine: 'entreprise',
+    expected_any_article: ['LP 219', 'CO 792', 'CO 757', 'CO 716a'],
+    notes: "Prêt d'associé à la société et rang en faillite (LP 219 / subordination) — LP 219 : en cas de faillite, les créanciers sont répartis en 3 classes (salaires, rentes, autres). Les créances chirographaires (prêts ordinaires) sont en 3e classe. Le prêt d'un associé est en principe une créance ordinaire (pas automatiquement subordonnée). Cependant, la jurisprudence TF (sur la base du principe de prohibition du capital apparent) peut subordonner le prêt d'associé si la société était sous-capitalisée lors du prêt — la créance passe après toutes les autres. CO 757 : l'associé ne peut pas voter sur les points du contrat le concernant (conflit d'intérêt). CO 792 : la responsabilité des associés est limitée à leur part. 'Prêt 80k + contrat + intérêts + faillite + rang créancier ?' sans 'LP 219 classes de créanciers' ni 'subordination prêt associé si sous-capitalisation'. Signal adversarial = associé croit être un créancier ordinaire, ignore le risque de subordination si la société était déjà en difficulté au moment du prêt.",
+  },
+
+  // VOISINAGE — clôture du voisin empiète de 60 cm sur le terrain selon cadastre, voisin invoque la prescription (CC 641 / CC 667 / CC 669)
+  {
+    id: 'adv_voisinage_15',
+    query: "J'ai fait faire un relevé cadastral après avoir acheté ma maison il y a 2 ans. Le géomètre confirme que la clôture en béton de mon voisin empiète de 62 cm sur mon terrain sur toute la longueur (18 mètres), soit une surface de plus de 11 m². Quand j'en ai parlé à mon voisin, il m'a dit 'ça fait 25 ans que cette clôture est là, c'est prescrit, elle est à moi maintenant'. A-t-il raison ? Est-ce qu'une clôture plantée sur mon terrain peut devenir la propriété du voisin par le simple passage du temps ?",
+    canton: 'FR',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 641', 'CC 667', 'CC 662', 'CC 669'],
+    notes: "Empiètement et prescription acquisitive (CC 641 / CC 662 / CC 667) — CC 641 al. 2 : le propriétaire peut revendiquer son bien contre quiconque le détient sans droit. CC 662 : la possession d'un immeuble à titre de propriétaire pendant 30 ans sans inscription au registre foncier ouvre la prescription acquisitive (usucapion) — mais ce délai court depuis la possession de bonne foi continue et sans interruption. 25 ans de possession d'une clôture = insuffisant pour l'usucapion ordinaire (30 ans CC 662). De plus, si la frontière n'est pas inscrite comme servitude au registre foncier, la prescription ne court pas automatiquement. CC 667 : l'action en bornage est imprescriptible — le propriétaire peut toujours demander une délimitation officielle. 'Empiètement 62 cm + 25 ans + voisin dit prescrit' sans 'CC 662 usucapion 30 ans (pas 25)' ni 'CC 667 action bornage imprescriptible'. Signal adversarial = propriétaire croit le voisin sur parole ('c'est prescrit'), ignore que la prescription acquisitive mobilière (CC 728) est 5 ans mais immobilière ordinaire (CC 662) est 30 ans, et que l'action en bornage est imprescriptible.",
+  },
+
+  // ASSURANCES — inondation cave après 3 semaines de vacances, assureur invoque une clause d'inoccupation longue durée (LCA 14 / LCA 6)
+  {
+    id: 'adv_assurances_13',
+    query: "Je suis rentré de vacances il y a 3 jours (3 semaines d'absence) et j'ai découvert que ma cave était inondée à cause d'une rupture d'un tuyau d'alimentation. Dégâts estimés à 22'000 CHF (mobilier cave, local technique). Mon assurance ménage a envoyé un expert qui m'a dit que ma police contient une clause indiquant que les dommages survenus 'pendant une période d'inoccupation prolongée de plus de 30 jours consécutifs' ne sont pas couverts. Puis il a ajouté qu'ils allaient quand même 'examiner le dossier'. J'ai été absent exactement 22 jours. Peuvent-ils vraiment refuser ?",
+    canton: 'BS',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LCA 14', 'LCA 6', 'LCA 61', 'LCA 38'],
+    notes: "Clause d'exclusion inoccupation et interprétation stricte (LCA 14 / LCA 6) — LCA 14 : les clauses d'exclusion doivent être rédigées clairement et de façon restrictive; toute ambiguïté s'interprète en faveur du preneur d'assurance (principe in dubio contra proferentem). Si la clause dit '>30 jours' et l'absence est de 22 jours, la condition d'exclusion n'est pas remplie — point final. LCA 6 : la description du risque assuré détermine la couverture; une clause d'exclusion ne peut que restreindre cette couverture, pas l'élargir par analogie. LCA 61 : l'assureur ne peut pas refuser l'indemnisation si la cause du sinistre (rupture de tuyauterie) est un risque assuré et que l'exclusion n'est pas strictement remplie. '22 jours + clause >30 jours + expert examine + 22k CHF' sans 'LCA 14 strict (22 < 30 = clause non remplie)' ni 'interprétation contra proferentem'. Signal adversarial = assuré croit que l'assureur peut 'examiner' et trouver un autre prétexte, ignore que l'absence de 22 jours exclut littéralement la clause invoquée.",
+  },
+
+  // FAMILLE — grands-parents maternels dont la fille est décédée veulent voir leurs petits-enfants, père refuse (CC 273 / CC 274)
+  {
+    id: 'adv_famille_19',
+    query: "Notre fille est décédée d'un accident de la route il y a 18 mois. Elle laisse deux enfants de 6 et 9 ans que notre gendre a la garde exclusive. Depuis le décès, notre gendre a progressivement coupé tout contact — d'abord 'les enfants ont besoin de calme', puis plus de réponse à nos appels. Nous n'avons pas vu nos petits-enfants depuis 11 mois. Avons-nous, en tant que grands-parents, un droit légal à maintenir des relations avec eux, ou cela dépend-il entièrement de la bonne volonté de leur père ?",
+    canton: 'NE',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 273', 'CC 274', 'CC 275'],
+    notes: "Droit propre aux relations des grands-parents (CC 273) — CC 273 al. 2 : les parents, grands-parents et frères et sœurs ont le droit d'entretenir des relations personnelles avec l'enfant; le juge peut ordonner un droit de visite si le titulaire de l'autorité parentale s'y oppose sans motif légitime. Il s'agit d'un droit PROPRE, pas seulement dérivé du droit de l'enfant — les grands-parents peuvent saisir le juge indépendamment. CC 274 al. 2 : le juge peut restreindre ou supprimer le droit de visite si l'intérêt de l'enfant l'exige — mais la simple résistance du parent gardien sans motif valable ne suffit pas. L'absence de contact depuis 11 mois constitue une violation des relations personnelles au sens de CC 273. 'Grands-parents + fille décédée + gendre refuse + 11 mois sans contact + droit légal ?' sans 'CC 273 al. 2 droit propre grands-parents' ni 'saisine du juge sans accord du père'. Signal adversarial = grands-parents croient dépendre de la tolérance du père, ignorent que CC 273 leur confère un droit propre actionnable en justice.",
+  },
+
+  // ETRANGERS — ressortissant algérien permis B depuis 7 ans, demande permis C, années de formation comptent-elles ? (LEI 34 / LEI 60 / OASA 84)
+  {
+    id: 'adv_etrangers_17',
+    query: "Je suis algérien, j'ai étudié en Suisse de 2016 à 2019 avec un permis d'étudiant, puis j'ai obtenu un emploi et un permis B en octobre 2019. On m'a dit que pour avoir un permis C il faut 10 ans de séjour légal en Suisse. Avec mes 3 ans d'études en plus de mes 7 ans de permis B, j'aurais techniquement 10 ans de présence en Suisse depuis cette année. Est-ce que les années passées avec un permis étudiant comptent pour le calcul de durée vers le permis C ?",
+    canton: 'ZH',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LEI 34', 'LEI 60', 'OASA 84', 'LEI 96'],
+    notes: "Durée de séjour et permis C — comptage des années d'études (LEI 34 / OASA 84) — LEI 34 al. 1 : l'autorisation d'établissement (permis C) est octroyée si l'étranger a séjourné régulièrement en Suisse pendant 10 ans. La question est de savoir si les années passées avec un permis d'étudiant (LEI 27) entrent dans le calcul. OASA 84 al. 1 : le séjour aux fins d'études (permis L ou B formation) compte en principe pour la durée de séjour, mais le SEM et les cantons ont une pratique variable — beaucoup de cantons ne comptent que les années de permis de travail (permis B activité lucrative). LEI 60 : exception pour les cas de rigueur (séjour long, intégration). La pratique ZH : les années d'études ne comptent généralement pas pour les 10 ans LEI 34 — le délai repart depuis le permis B de travail (2019), soit permis C possible en 2029. '3 ans étudiant + 7 ans B + 10 ans total + permis C ?' sans 'OASA 84 années études souvent non comptées' ni 'délai repart permis B activité lucrative'. Signal adversarial = ressortissant additionne naïvement les années sans savoir que la pratique cantonale distingue le type de permis.",
+  },
+
+  // HYBRIDE — travail non déclaré 3 ans pour un ami-employeur, brouille, citoyen veut récupérer ses droits AVS et vacances (CO 319 / LAVS 5 / CO 329)
+  {
+    id: 'adv_hybride_09',
+    query: "Pendant 3 ans j'ai travaillé pour un ancien ami qui tient une boulangerie. On avait un arrangement verbal — je bossais 4 jours par semaine, il me payait 2'800 CHF en liquide par mois, sans contrat ni fiche de salaire. On vient d'avoir un énorme conflit personnel. Il refuse de me payer mes 3 derniers mois et dit que si je le poursuis il va 'tout nier'. Je n'ai aucun document, mais des virements irréguliers et des photos de moi au travail. Ai-je des droits malgré l'absence de contrat écrit et le paiement en liquide ? Et maintenant je réalise que je n'ai probablement aucune cotisation AVS depuis 3 ans.",
+    canton: 'VS',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 319', 'CO 329', 'CO 336', 'LAVS 5', 'CO 323'],
+    notes: "Contrat de travail verbal, preuve et cotisations AVS (CO 319 / LAVS 5) — CO 319 al. 1 : le contrat de travail n'exige aucune forme particulière — un contrat oral est valable. Les photos au travail, les virements et les témoignages constituent des moyens de preuve valables. CO 323 : le salaire est dû même si non acquitté par écrit. CO 329 al. 1 : le travailleur a droit à des vacances (4 semaines min.) indépendamment de la forme du contrat. LAVS 5 : les cotisations AVS sont dues par l'employeur sur tout salaire versé — l'absence de déclaration constitue une fraude AVS, et la caisse cantonale peut récupérer 3 ans de cotisations auprès de l'employeur (délai de prescription LAVS 82). Le fait que l'employeur nie est un risque procédural mais non absolu — le tribunal du travail apprécie les preuves librement. 'Verbal + liquide + 3 ans + brouille + ni contrat ni fiches + photos + virements + AVS ?' sans 'CO 319 contrat oral valable' ni 'LAVS 5 obligation AVS indépendante de l'accord' ni 'preuves alternatives admises'. Signal adversarial = citoyen croit qu'un accord non écrit et non déclaré n'a aucune valeur juridique, ignore la validité du contrat oral et la récupération des cotisations AVS.",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

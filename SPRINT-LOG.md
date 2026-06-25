@@ -1162,3 +1162,25 @@ Points à surveiller :
   - `adv_hybride_09` (CO 319/LAVS 5/CO 329 — travail verbal 3 ans non déclaré, liquide, brouille, preuves alternatives, cotisations AVS)
 - **Mix attendu** : 6-7 cas devraient passer à 100% (fiches existantes bail/travail/dettes/famille/voisinage), 2-3 testent des angles partiellement couverts (assurances LCA clause, accident chien livreur, entreprise prêt associé)
 - **Prochaine action** : re-mesurer avec `node scripts/adversarial-eval-cli.mjs` (nécessite `claude -p` actif) pour score réel sur 230 cas. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-06-25 UTC — run agent horaire (wave 23 adversarial : 230→240 cas)
+- **Tenté** : item 1 — wave 23 : +10 cas adversariaux ciblant des angles inédits (état des lieux sans co-signature CO 267a, congé paternité CO 329g 2021, LP 93 salaire saisi en compte, mesures provisoires divorce CC 176, accident ski RC CC 41, LEI 50/51 divorce conjoint étranger enfant suisse, LCR 31a téléphone opposition CPP 356, HMO médecin parti OAMal 93a, CC 650 copropriété concubins, CDI F/CH immobilier LIFD 21)
+- **Résultat** : passed ✓ — **240 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement, aucun code modifié)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Sanity check adversarial CLI `--limit 10 --concurrency 2` : **80%** (2 fails pré-existants : adv_bail_02/04 — routing article_required, gaps documentés)
+- **Nouveaux cas wave 23 (10)** :
+  - `adv_bail_25` (CO 267a — PV de sortie unilatéral bailleur absent 12j après, 9 ans occupation, usure normale peinture/calcaire)
+  - `adv_travail_27` (CO 329g — congé paternité 2 semaines PME refuse "faveur pas obligation", impératif depuis 01.01.2021)
+  - `adv_dettes_22` (LP 93/89/130 — salaire viré sur compte saisi le jour J, minimum vital 2 enfants, demande urgente office)
+  - `adv_famille_20` (CC 176/CPC 276 — mesures provisoires divorce pendant procédure, pension sans attendre jugement final)
+  - `adv_accident_09` (CC 41/LAA 6/CC 47 — fracture ski skieur fautif, RC civile + subrogation SUVA, tort moral + manque à gagner indépendante)
+  - `adv_etrangers_18` (LEI 50/51/CC 25 — Brésilienne divorcée 3 ans, fille suisse 2 ans, droit résiduel sans le mari)
+  - `adv_circulation_10` (LCR 31a/CPP 352/356 — téléphone volant, opposition ordonnance pénale, mythe aggravation, reformatio in peius)
+  - `adv_sante_12` (LAMal 41/OAMal 93a — HMO médecin référent parti, changement refusé 10 mois, exception médicale anxiété sévère)
+  - `adv_hybride_10` (CC 646/650/651 — copropriété couple non marié séparé, l'un refuse vendre, licitation judiciaire imprescriptible)
+  - `adv_fiscal_08` (CDI art. 13/LIFD 21 — plus-value immeuble Antibes par Suisse ZH, exemption CH pas double imposition, blind spot fiscal 0% attendu)
+- **Angles inédits wave 23** : 1ère couverture CO 329g congé paternité 2021, LP 93 sur compte bancaire, CDI F/CH immobilier, CC 650 licitation copropriété, CPP 356 reformatio in peius. 5 domaines distincts dont fiscal (7e cas, blind spot confirmé).
+- **Prochaine action** : mesure éval CLI sur 240 cas au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

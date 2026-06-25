@@ -2311,6 +2311,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CO 319', 'CO 329', 'CO 336', 'LAVS 5', 'CO 323'],
     notes: "Contrat de travail verbal, preuve et cotisations AVS (CO 319 / LAVS 5) — CO 319 al. 1 : le contrat de travail n'exige aucune forme particulière — un contrat oral est valable. Les photos au travail, les virements et les témoignages constituent des moyens de preuve valables. CO 323 : le salaire est dû même si non acquitté par écrit. CO 329 al. 1 : le travailleur a droit à des vacances (4 semaines min.) indépendamment de la forme du contrat. LAVS 5 : les cotisations AVS sont dues par l'employeur sur tout salaire versé — l'absence de déclaration constitue une fraude AVS, et la caisse cantonale peut récupérer 3 ans de cotisations auprès de l'employeur (délai de prescription LAVS 82). Le fait que l'employeur nie est un risque procédural mais non absolu — le tribunal du travail apprécie les preuves librement. 'Verbal + liquide + 3 ans + brouille + ni contrat ni fiches + photos + virements + AVS ?' sans 'CO 319 contrat oral valable' ni 'LAVS 5 obligation AVS indépendante de l'accord' ni 'preuves alternatives admises'. Signal adversarial = citoyen croit qu'un accord non écrit et non déclaré n'a aucune valeur juridique, ignore la validité du contrat oral et la récupération des cotisations AVS.",
   },
+
+  // === WAVE 23 ===
+
+  // BAIL — état des lieux de sortie contesté a posteriori : bailleur absent à la remise des clés, PV unilatéral 12 jours plus tard (CO 267a / CO 257e)
+  {
+    id: 'adv_bail_25',
+    query: "J'ai rendu mon appartement le 31 mai à 9h00. Le bailleur n'est pas venu à l'état des lieux — il m'avait dit par SMS qu'il 'passerait plus tard'. J'ai laissé les clés dans la boîte aux lettres. J'ai pris des photos de chaque pièce ce matin-là. 12 jours après, je reçois un recommandé avec un 'procès-verbal de sortie' unilatéral listant 3'800 CHF de dommages : peinture entière (9 ans d'occupation), salle de bain (calcaire), rayure parquet. Il annonce retenir ma caution de 2'400 CHF. Que peut-il facturer légalement après 9 ans ?",
+    canton: 'VD',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 267a', 'CO 267', 'CO 257e', 'CO 268a'],
+    notes: "État des lieux, usure normale et PV unilatéral a posteriori (CO 267a / CO 268a) — CO 267a al. 1 : à la fin du bail, le locataire restitue la chose dans l'état résultant d'un usage conforme. CO 267a al. 2 : l'usure résultant d'un usage normal (peinture jaunie, calcaire après 9 ans) n'est PAS à la charge du locataire — l'amortissement complet de la peinture est fixé à 8-10 ans. Un PV unilatéral établi 12 jours après la remise des clés, sans signature du locataire, a une valeur probante très limitée devant la commission de conciliation bail. Les photos prises le jour J sont une preuve opposable. CO 257e : la caution ne peut être retenue que pour des dommages prouvés dépassant l'usure normale. '9 ans + bailleur absent + PV unilatéral 12 jours + peinture + calcaire' sans 'CO 267a al. 2 usure normale' ni 'PV sans co-signature = preuve faible' ni 'peinture 9 ans = amortie'. Signal adversarial = locataire croit que l'absence d'état des lieux co-signé l'expose à toutes les demandes du bailleur.",
+  },
+
+  // TRAVAIL — congé de paternité légal 2 semaines refusé par PME (CO 329g / LAPG 16e)
+  {
+    id: 'adv_travail_27',
+    query: "Mon fils est né le 15 juin. J'ai demandé à mon patron (PME de 8 employés, boulangerie) mon congé de paternité de 2 semaines. Il m'a répondu que 'ça n'existait pas dans leur secteur' et que 'le congé paternité c'est une faveur, pas une obligation'. Il m'a proposé 3 jours de congé non payé. J'ai entendu que la loi avait changé en 2021 mais mon patron semble sincèrement ignorer ça. Ai-je vraiment droit à 2 semaines et comment les indemnités sont-elles payées ?",
+    canton: 'FR',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 329g', 'LAPG 16e', 'LAPG 16i', 'CO 362'],
+    notes: "Congé de paternité légal 2 semaines depuis 1er janvier 2021 (CO 329g / LAPG 16e) — CO 329g al. 1 : le père a droit à un congé de paternité de deux semaines, à prendre dans les six mois suivant la naissance. Ce droit est impératif (CO 362) — toute convention moins favorable est nulle. La taille de l'entreprise est sans pertinence. LAPG 16e : l'indemnité APG paternité = 80% du revenu moyen soumis à l'AVS, max 220 CHF/jour. LAPG 16i : le droit s'éteint 6 mois après la naissance. L'employeur verse le salaire puis est remboursé par l'APG. 'Père + naissance + PME + patron dit faveur pas obligation + 2021' sans 'CO 329g = droit légal depuis 01.01.2021' ni 'CO 362 impératif' ni 'APG 80% remboursé'. Signal adversarial = père croit le patron qui présente le congé comme facultatif, ignore que CO 329g est entré en vigueur en 2021 et est impératif.",
+  },
+
+  // DETTES — saisie de compte bancaire : salaire déposé gelé le jour même, minimum vital (LP 93 / LP 89 / LP 130)
+  {
+    id: 'adv_dettes_22',
+    query: "L'office des poursuites a saisi mon compte bancaire UBS à la demande d'un créancier (loyer impayé 4'200 CHF). La banque a gelé la totalité de mon solde : 3'150 CHF qui correspondent exactement au salaire que mon employeur venait de virer ce matin-là. J'ai deux enfants à charge et aucun autre revenu. L'office dit que c'est au juge de décider, la banque dit qu'elle ne peut rien faire. Puis-je récupérer quelque chose rapidement pour payer loyer et épicerie ?",
+    canton: 'GE',
+    expected_domaine: 'dettes',
+    expected_any_article: ['LP 93', 'LP 89', 'LP 130', 'LP 92'],
+    notes: "Protection du minimum vital : salaire viré sur compte saisi (LP 93 / LP 89) — LP 89 al. 1 : la saisie du salaire se limite au surplus dépassant le minimum vital (LP 93). LP 93 al. 1 : le revenu insaisissable comprend le minimum vital du débiteur et de sa famille — avec 2 enfants à GE, environ 2'600–3'000 CHF. LP 130 : le salaire déjà viré sur compte devient techniquement une créance bancaire, mais les fonds provenant du salaire récemment versé conservent leur protection LP 93 si le débiteur prouve l'origine et la nécessité (minimum vital). Procédure d'urgence : demander à l'office des poursuites l'établissement du minimum vital (formulaire urgent), la banque débloque le surplus insaisissable. '3150 CHF salaire viré + gelé + 2 enfants + office dit juge + banque dit rien' sans 'LP 93 minimum vital' ni 'salaire récent protégé' ni 'demande urgente office'. Signal adversarial = citoyen croit son salaire perdu une fois saisi, ignore que LP 93 protège le minimum vital même après virement.",
+  },
+
+  // FAMILLE — pension alimentaire pendant procédure de divorce : mesures provisoires immédiates (CC 176 / CPC 276)
+  {
+    id: 'adv_famille_20',
+    query: "Mon mari a déposé une demande de divorce unilatérale en janvier. Depuis mars il ne verse plus rien pour moi ni pour nos 2 enfants (6 et 9 ans). Il dit que 'tant que le juge n'a pas statué on verra'. La procédure peut durer 2-3 ans. Je travaille à 40% (600 CHF/mois) et lui gagne 8'000 CHF/mois. Je ne peux pas attendre 3 ans pour une contribution d'entretien. Y a-t-il quelque chose à faire maintenant ?",
+    canton: 'VD',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 176', 'CC 173', 'CPC 276', 'CC 163'],
+    notes: "Mesures provisionnelles pendant procédure de divorce (CC 176 / CPC 276) — CC 176 al. 1 ch. 1 : dès le dépôt de la demande de divorce, le juge peut ordonner des mesures provisionnelles, notamment fixer la contribution d'entretien. Ces mesures s'obtiennent rapidement (4-8 semaines) et s'appliquent sans attendre le jugement final. CPC 276 al. 1 : le tribunal ordonne les mesures provisionnelles nécessaires pendant la procédure. CC 173 al. 1 : le juge du domicile de l'un ou l'autre époux peut statuer sur les mesures provisionnelles. CC 163 : les époux se doivent assistance — obligation maintenue jusqu'au prononcé du divorce. 'Divorce en cours + mari 8k CHF + rien versé mars + dure 3 ans + 2 enfants' sans 'CC 176 mesures provisionnelles immédiates' ni 'CPC 276 demande urgente' ni 'sans attendre jugement final'. Signal adversarial = épouse croit devoir attendre le jugement de divorce, ignore que CC 176 permet des mesures en quelques semaines.",
+  },
+
+  // ACCIDENT — accident de ski par skieur fautif, RC civile et subrogation LAA (CC 41 / LAA 6 / CC 47)
+  {
+    id: 'adv_accident_09',
+    query: "En janvier sur les pistes de Verbier, un skieur à grande vitesse m'a percuté par derrière sur une piste bleue. Fracture du plateau tibial gauche — opération, 3 mois plâtre, 4 mois de rééducation. Manque à gagner environ 18'000 CHF (je suis indépendante). Mon assurance accident SUVA couvre les soins et l'indemnité journalière à 80% du revenu déclaré. Je connais l'identité du skieur. Puis-je le poursuivre pour le différentiel et les souffrances ?",
+    canton: 'VS',
+    expected_domaine: 'assurances',
+    expected_any_article: ['CC 41', 'LAA 6', 'LAA 16', 'CC 47'],
+    notes: "Responsabilité civile du skieur fautif et subrogation LAA (CC 41 / LAA 6) — CC 41 al. 1 : quiconque cause illicitement un dommage à autrui par négligence est tenu à réparation — skieur percutant par derrière à grande vitesse = faute (règles FIS). CC 47 : en cas de lésions corporelles, indemnité équitable à titre de tort moral. LAA 6 : la SUVA couvre l'AANP — prestations (soins + IJM 80%) versées à titre primaire. Subrogation LAA 72/73 : la SUVA se subroge dans les droits de la victime contre le tiers responsable — la victime réclame au skieur fautif uniquement le dommage non couvert par la LAA (20% du salaire + tort moral + manque à gagner d'indépendante dépassant les IJM). La RC du skieur est typiquement couverte par son assurance ménage (clause RC). 'Fracture + LAA 80% + skieur fautif identifié + manque à gagner + tort moral' sans 'CC 41 RC directe contre skieur' ni 'subrogation LAA' ni 'CC 47 tort moral indépendant'. Signal adversarial = victime croit que la LAA règle tout, ignore que la RC CC 41 couvre le différentiel + tort moral.",
+  },
+
+  // ETRANGERS — étrangère mariée à un Suisse, divorce après 3 ans, enfant suisse : peut-elle rester ? (LEI 50 / LEI 51 / CC 25)
+  {
+    id: 'adv_etrangers_18',
+    query: "Je suis ressortissante brésilienne. J'ai épousé un Suisse en 2021, j'ai obtenu un permis B regroupement familial. Nous nous séparons maintenant (3 ans de mariage). Nous avons une fille de 2 ans née en Suisse, donc suissesse. Mon mari veut le divorce. Il m'a dit que 'sans lui' je devrai quitter la Suisse. J'ai peur de perdre mon titre de séjour. Qu'est-ce que je risque vraiment ?",
+    canton: 'GE',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LEI 50', 'LEI 51', 'LEI 44', 'CC 25'],
+    notes: "Droit de séjour résiduel après divorce, enfant suisse (LEI 50 / LEI 51 / CC 25) — LEI 50 al. 1 : après dissolution du mariage, le droit au séjour subsiste si l'union a duré au moins 3 ans ET que l'intégration est réussie (let. a) OU raisons personnelles majeures (let. b). 3 ans = seuil exactement atteint. LEI 51 al. 2 : le droit au séjour du parent étranger subsiste aussi longtemps qu'il exerce l'autorité parentale sur l'enfant et entretient des relations avec lui. CC 25 al. 1 : l'enfant né d'un parent suisse acquiert la nationalité suisse. L'enfant suisse renforce considérablement l'ancrage de la mère via LEI 51 al. 2. 'Brésilienne + 3 ans mariage + fille suisse 2 ans + divorce + mari dit partir' sans 'LEI 50 al. 1 let. a 3 ans + intégration' ni 'LEI 51 al. 2 enfant suisse = ancrage fort'. Signal adversarial = mère étrangère croit que le permis tombe avec le divorce, ignore les droits résiduels LEI 50/51 renforcés par la nationalité suisse de l'enfant.",
+  },
+
+  // CIRCULATION — téléphone au volant LCR 31a, opposition ordonnance pénale, risque d'aggravation ? (LCR 31a / CPP 352 / CPP 356)
+  {
+    id: 'adv_circulation_10',
+    query: "J'ai été contrôlé le 8 mai : téléphone tenu en main au volant à un feu rouge. Ordonnance pénale de 250 CHF + rapport à l'autorité des permis. Pas d'antécédent. Un collègue dit que si je fais opposition 'le juge peut aggraver la sanction' et qu'il vaut mieux payer. L'opposition est-elle vraiment risquée ? Et l'inscription au casier judiciaire est-elle inévitable ?",
+    canton: 'ZH',
+    expected_domaine: 'circulation',
+    expected_any_article: ['LCR 31a', 'CPP 352', 'CPP 356', 'LCR 90'],
+    notes: "LCR 31a téléphone volant et opposition ordonnance pénale (CPP 352 / CPP 356) — LCR 31a al. 1 (depuis oct. 2021) : téléphone tenu en main = infraction. CPP 352 al. 1 : opposition écrite dans les 10 jours. CPP 356 al. 3 : le tribunal ne peut prononcer une peine plus sévère sans avertissement préalable — la reformatio in peius est interdite sauf si le MP aggrave ses réquisitions. Le mythe 'l'opposition aggrave automatiquement' est faux pour les 1ères infractions simples : le risque d'aggravation par le MP est marginal. LCR 90 al. 1 : infraction légère = amende, sans inscription au casier judiciaire VOSTRA si sanction = amende uniquement. '250 CHF + 1ère infraction + feu rouge + collègue dit risque aggravation' sans 'CPP 356 reformatio in peius protège' ni 'LCR 90 infraction légère pas de casier' ni '10 jours délai'. Signal adversarial = contrevenant croit le mythe de l'aggravation, ignore la protection CPP 356.",
+  },
+
+  // SANTE — HMO médecin de famille, référent parti, changement refusé pendant 'période de blocage' (LAMal 41 / OAMal 93a)
+  {
+    id: 'adv_sante_12',
+    query: "Il y a 2 ans j'ai souscrit un modèle HMO (médecin de famille) chez CSS pour la prime réduite. Mon médecin référent a quitté le cabinet il y a 4 mois. CSS m'a désigné un nouveau médecin que je ne connais pas et avec qui le contact ne passe pas. CSS dit que je dois rester avec le médecin attribué pendant encore 10 mois (fin du contrat alternatif). Je souffre d'anxiété sévère — la relation de confiance est pour moi une condition de soins. Existe-t-il une exception légale ?",
+    canton: 'BE',
+    expected_domaine: 'sante',
+    expected_any_article: ['LAMal 41', 'OAMal 93a', 'LAMal 93', 'LAMal 7'],
+    notes: "Modèle HMO : départ du médecin référent et exception médicale (LAMal 41 / OAMal 93a) — LAMal 41 al. 4 : dans les modèles alternatifs, l'assuré limite son libre choix en échange de primes réduites. OAMal 93a : les CGA du modèle alternatif doivent prévoir une procédure de changement si le médecin référent part — l'assuré a le droit à un médecin de remplacement acceptable parmi le réseau, pas uniquement celui désigné unilatéralement. Le départ du référent (4 mois) modifie la base contractuelle : l'assuré peut légitimement demander un choix. Exception médicale psychiatrique/psychologique : la relation thérapeutique est une condition de traitement reconnue par les directives OFSP. LAMal 7 al. 2 : changement d'assureur (et de modèle) possible au 30 novembre. '2 ans HMO + médecin parti + nouveau désigné + blocage 10 mois + anxiété sévère' sans 'OAMal 93a droit à choix si référent parti' ni 'exception médicale anxiété' ni 'LAMal 7 sortie modèle nov.'. Signal adversarial = assurée croit que le blocage HMO est absolu, ignore le droit à choix si le référent quitte.",
+  },
+
+  // HYBRIDE — couple non marié copropriétaires d'un appartement, séparation, l'un refuse de vendre (CC 646 / CC 650 / CC 651)
+  {
+    id: 'adv_hybride_10',
+    query: "Mon compagnon et moi avons acheté un appartement ensemble en 2019 (50/50 au registre foncier). On se sépare. Je veux vendre car ni lui ni moi ne peut racheter la part de l'autre. Il refuse absolument, dit qu'il 'a le droit de rester'. On n'est pas mariés et sans contrat de concubinage. J'ai continué à payer ma moitié du prêt hypothécaire. Peut-il me bloquer indéfiniment ?",
+    canton: 'GE',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 646', 'CC 650', 'CC 651', 'CO 533'],
+    notes: "Copropriété et droit de partage imprescriptible (CC 646 / CC 650 / CC 651) — CC 646 al. 1 : la copropriété confère à chaque copropriétaire une quote-part sur la chose indivise. CC 650 al. 1 : tout copropriétaire peut exiger à tout moment le partage — droit imprescriptible. CC 651 al. 1 : si les copropriétaires ne s'entendent pas, le juge ordonne la vente aux enchères publiques (licitation) et répartit le produit. CO 533 : dissolution possible de la société simple tacite. L'absence de mariage est sans pertinence — CC 650 donne un droit absolu de demander le partage à tout moment. '50/50 + non mariés + séparation + refuse de vendre + hypothèque payée' sans 'CC 650 droit de partage imprescriptible' ni 'CC 651 licitation judiciaire' ni 'refus = voie judiciaire'. Signal adversarial = copropriétaire croit que le compagnon peut bloquer à vie, ignore le droit imprescriptible de CC 650.",
+  },
+
+  // FISCAL — plus-value immeuble en France par résident suisse, double imposition F/CH ? (CDI art. 13 / LIFD 21)
+  {
+    id: 'adv_fiscal_08',
+    query: "J'ai hérité il y a 3 ans d'un appartement à Antibes (France) de ma mère française. Je suis suisse, domicilié à Zurich. Je viens de vendre cet appartement et j'ai réalisé une plus-value nette de 85'000 EUR après impôt français sur les plus-values immobilières (environ 45'000 EUR prélevés en France). Ma banque suisse et l'AFC me disent que 'les revenus étrangers sont imposables en Suisse'. Est-ce que je vais être imposé deux fois ?",
+    canton: 'ZH',
+    expected_domaine: 'fiscal',
+    expected_any_article: ['LIFD 21', 'LIFD 6', 'LIFD 16'],
+    notes: "Double imposition F/CH sur plus-value immobilière (CDI art. 13 / LIFD 21) — Convention de double imposition F/CH art. 13 al. 1 : les gains provenant de l'aliénation de biens immobiliers situés en France sont imposables en France exclusivement (territorialité immobilière). LIFD 21 al. 2 (méthode d'exonération) : les revenus immobiliers étrangers sont exonérés de l'IFD suisse mais peuvent influencer le taux marginal sur les revenus suisses (progression). Au niveau cantonal ZH : même principe d'exemption avec progression. Résultat : la plus-value de 85k EUR n'est PAS réimposée en Suisse — mais elle peut augmenter le taux applicable aux autres revenus suisses de l'année. Le domaine fiscal est un blind spot complet chez JPT — 0% attendu. '85k EUR + impôt France déjà payé + AFC dit imposable + double imposition ?' sans 'CDI art. 13 France exclusive' ni 'LIFD 21 exonération + progression seulement'. Signal adversarial = contribuable suisse croit à la double imposition, ignore la CDI F/CH qui attribue l'imposition exclusive à la France.",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

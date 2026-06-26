@@ -1184,3 +1184,26 @@ Points à surveiller :
   - `adv_fiscal_08` (CDI art. 13/LIFD 21 — plus-value immeuble Antibes par Suisse ZH, exemption CH pas double imposition, blind spot fiscal 0% attendu)
 - **Angles inédits wave 23** : 1ère couverture CO 329g congé paternité 2021, LP 93 sur compte bancaire, CDI F/CH immobilier, CC 650 licitation copropriété, CPP 356 reformatio in peius. 5 domaines distincts dont fiscal (7e cas, blind spot confirmé).
 - **Prochaine action** : mesure éval CLI sur 240 cas au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-06-26 UTC — run agent horaire (wave 24 adversarial : 240→250 cas)
+- **Tenté** : item 1 — wave 24 : +10 cas adversariaux ciblant des angles inédits dans 10 domaines variés (bail prolongation famille, travail nuit LTr, dettes solidarité, famille autorité parentale absent, étrangers permis B faillite, santé off-label OAMal 71a, voisinage pompe à chaleur CC 684 vs OPB, circulation récidive qualifiante, social LPC dessaisissement, entreprise CO 697a PV AG)
+- **Résultat** : passed ✓ — **250 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement, aucun code modifié)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Adversarial CLI sur 250 cas : non mesuré ce run (nécessite `claude -p` actif)
+- **Nouveaux cas wave 24 (10)** :
+  - `adv_bail_26` (CO 272/273a prolongation bail mère seule 3 enfants, résiliation pour vente — délai 30j conciliation)
+  - `adv_travail_28` (LTr 17b/26 travail de nuit 7 ans boulanger, aucun supplément ni examen médical, contre-indication médicale)
+  - `adv_dettes_23` (CO 143/148/149 prêt cosigné 25k CHF, frère en faillite, recours interne 50% + production faillite LP 219)
+  - `adv_famille_21` (CC 296/298b/304 père absent 2 ans, autorité parentale conjointe bloquante, actes urgents école + médical)
+  - `adv_etrangers_19` (LEI 61a/62/OASA 77b permis B togolais, faillite employeur, délai 6-12 mois vs révocation immédiate — LACI protège)
+  - `adv_sante_13` (LAMal 52/OAMal 71a cancer HER2 faible, médicament hors-LS 12k CHF/mois, procédure individuelle médecin 30j)
+  - `adv_voisinage_16` (CC 684/679a pompe à chaleur 58 dB, sous seuil OPB mais CC 684 indépendant droit public)
+  - `adv_circulation_11` (LCR 16b cumul 2 infractions légères 10 ans → requalification infraction moyennement grave → retrait 1 mois)
+  - `adv_social_11` (LPC 11 gift 20k CHF fille → fortune 28k > seuil 25k → coupure PC → dessaisissement imputé 10 ans même si remboursé)
+  - `adv_entreprise_11` (CO 697/697a/697b actionnaire 12% SA familiale, CA refuse PV AG "confidentiels", droit légal de consultation + voie judiciaire)
+- **Domaines inédits wave 24** : 10 domaines simultanément. Angles nouveaux : LTr travail nocturne, OAMal 71a off-label, LPC dessaisissement PC, CO 148 recours solidarité, CC 298b parent absent, LCR 16b récidive qualifiante, CC 684 vs OPB.
+- **Prochaine action** : mesure éval CLI sur 250 cas au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

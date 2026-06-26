@@ -2413,6 +2413,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['LIFD 21', 'LIFD 6', 'LIFD 16'],
     notes: "Double imposition F/CH sur plus-value immobilière (CDI art. 13 / LIFD 21) — Convention de double imposition F/CH art. 13 al. 1 : les gains provenant de l'aliénation de biens immobiliers situés en France sont imposables en France exclusivement (territorialité immobilière). LIFD 21 al. 2 (méthode d'exonération) : les revenus immobiliers étrangers sont exonérés de l'IFD suisse mais peuvent influencer le taux marginal sur les revenus suisses (progression). Au niveau cantonal ZH : même principe d'exemption avec progression. Résultat : la plus-value de 85k EUR n'est PAS réimposée en Suisse — mais elle peut augmenter le taux applicable aux autres revenus suisses de l'année. Le domaine fiscal est un blind spot complet chez JPT — 0% attendu. '85k EUR + impôt France déjà payé + AFC dit imposable + double imposition ?' sans 'CDI art. 13 France exclusive' ni 'LIFD 21 exonération + progression seulement'. Signal adversarial = contribuable suisse croit à la double imposition, ignore la CDI F/CH qui attribue l'imposition exclusive à la France.",
   },
+
+  // WAVE 24 — 10 nouveaux cas, angles inédits, écrits sans consulter le dico du retriever
+
+  // BAIL — prolongation bail famille monoparentale, résiliation ordinaire bailleur vente (CO 272 / CO 273a)
+  {
+    id: 'adv_bail_26',
+    query: "Je suis mère seule avec trois enfants (4, 8 et 12 ans). Mon bailleur a résilié mon bail pour le 31 octobre — il dit qu'il veut vendre l'appartement. J'ai reçu le congé en bonne et due forme il y a 4 mois. Je n'ai pas trouvé de logement adapté à 4 personnes dans mon budget dans la région. Mon assistante sociale me dit que je peux demander une prolongation mais que ça ne marche pas toujours. Quelle est la procédure et combien de temps puis-je espérer ?",
+    canton: 'VD',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 272', 'CO 273', 'CO 273a', 'CO 271'],
+    notes: "Prolongation du bail et famille monoparentale (CO 272 / CO 273a) — CO 272 al. 1 : le locataire peut requérir la prolongation lorsque la fin du contrat lui causerait des conséquences pénibles et que les intérêts du bailleur ne le justifient pas. CO 272 al. 2 : les juges tiennent compte de la situation personnelle, durée du bail, présence d'enfants. CO 273 al. 1 : la demande de prolongation doit être adressée à l'autorité de conciliation dans les 30 jours suivant le congé. CO 273a : une prolongation maximum de 4 ans pour logements de famille avec enfants. '3 enfants + mère seule + résiliation vente + aucun logement trouvé + prolongation?' sans 'CO 272 pesée d'intérêts' ni 'CO 273a jusqu'à 4 ans' ni 'délai 30 jours conciliation'. Signal adversarial = locataire ignore que la procédure de prolongation est distincte de la contestation du congé.",
+  },
+
+  // TRAVAIL — travail de nuit régulier, droit aux contreparties et examen médical (LTr 17b / LTr 26)
+  {
+    id: 'adv_travail_28',
+    query: "Je suis boulanger depuis 7 ans dans la même boulangerie. Je travaille de nuit 5 nuits par semaine (22h-6h). Mon employeur ne m'a jamais proposé d'examen médical ni payé de supplément pour le travail de nuit — il dit que 'les boulangers c'est comme ça'. Depuis 1 an j'ai des troubles du sommeil sévères et mon médecin recommande de travailler de jour. Mon employeur dit qu'il n'y a pas de poste de jour disponible. Quels sont mes droits ?",
+    canton: 'FR',
+    expected_domaine: 'travail',
+    expected_any_article: ['LTr 17b', 'LTr 26', 'CO 328'],
+    notes: "Travail de nuit régulier : contreparties et protection santé (LTr 17b / LTr 26) — LTr 17b al. 1 : les travailleurs occupés régulièrement la nuit ont droit à une compensation (supplément au moins 10%). LTr 26 al. 1 : l'employeur doit proposer une visite médicale gratuite dès 12 mois de travail nocturne régulier. OLT 4 art. 16 : en cas de contre-indication médicale, l'employeur doit affecter le travailleur à un poste de jour si possible. CO 328 : protection de la santé du travailleur. '7 ans nuit + aucun examen médical + aucun supplément + troubles sommeil + médecin dit de jour + patron refuse' sans 'LTr 17b supplément 10%' ni 'LTr 26 examen médical obligatoire' ni 'reclassement si contre-indication'. Signal adversarial = travailleur nocturne croit que ces conditions sont normales, ignore ses droits LTr.",
+  },
+
+  // DETTES — codébiteurs solidaires, recours interne entre cosignataires (CO 143 / CO 148 / CO 149)
+  {
+    id: 'adv_dettes_23',
+    query: "En 2018 mon frère et moi avons cosigné un prêt personnel de 25'000 CHF à la banque Migros pour financer une voiture — à l'époque il remboursait et moi j'étais cosignataire. Depuis 2021 il ne paie plus rien et a fait une faillite personnelle. La banque me réclame maintenant la totalité des 18'400 CHF restants. J'ai payé 3 mensualités depuis. Est-ce que je peux me retourner contre mon frère même s'il est en faillite ? Et dois-je vraiment rembourser tout seul les 18'400 CHF ?",
+    canton: 'BE',
+    expected_domaine: 'dettes',
+    expected_any_article: ['CO 143', 'CO 148', 'CO 149', 'LP 219'],
+    notes: "Solidarité parfaite et recours interne entre codébiteurs (CO 143 / CO 148 / CO 149) — CO 143 al. 1 : la banque peut réclamer la totalité à l'un ou l'autre des codébiteurs solidaires. CO 148 al. 2 : le débiteur qui a payé au-delà de sa part peut exercer un recours contre les autres, au prorata (ici 50/50). CO 149 al. 1 : le débiteur subrogé peut participer à la faillite du codébiteur insolvable. LP 219 : rang des créances dans la faillite. 'Cosignataires + frère faillite + banque réclame tout + 3 mensualités payées' sans 'CO 148 recours interne 50%' ni 'CO 149 production dans faillite' ni 'je ne dois que ma moitié'. Signal adversarial = codébiteur croit devoir tout payer, ignore le recours interne CO 148.",
+  },
+
+  // FAMILLE — autorité parentale exclusive pour parent absent depuis 2 ans (CC 296 / CC 298b / CC 304)
+  {
+    id: 'adv_famille_21',
+    query: "Le père de mon fils (8 ans) ne l'a pas vu depuis 2 ans et ne paie pas la pension. Il est introuvable — la dernière adresse connue est à Zurich mais il est parti sans laisser d'adresse. J'ai l'autorité parentale conjointe depuis notre séparation (on n'était pas mariés). Je dois choisir une école secondaire cet été (inscription délai 30 juin), et un traitement médical est en attente de sa signature. Comment obtenir l'autorité exclusive sans lui ?",
+    canton: 'GE',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 296', 'CC 298b', 'CC 297', 'CC 304'],
+    notes: "Autorité parentale exclusive pour parent absent (CC 296 / CC 297 / CC 298b / CC 304) — CC 296 al. 2 : si l'autorité parentale conjointe nuit au bien de l'enfant, le juge peut l'attribuer à un seul parent. CC 298b al. 3 : le tribunal peut modifier le régime d'autorité parentale si les circonstances ont changé. CC 297 al. 2 : un parent peut exercer seul l'autorité parentale si l'autre est absent ou empêché. CC 304 al. 1 : pour les actes urgents, chaque parent peut agir seul si l'autre est injoignable. 'Père absent 2 ans + introuvable + pension impayée + autorité conjointe + école délai 30 juin + signature médicale' sans 'CC 298b modification autorité' ni 'CC 304 actes urgents seul'. Signal adversarial = mère croit bloquée, ignore que l'absence avérée permet d'agir seul.",
+  },
+
+  // ETRANGERS — ressortissant hors-UE, perte emploi faillite employeur, délai séjour (LEI 61a / OASA 77b)
+  {
+    id: 'adv_etrangers_19',
+    query: "Je suis ressortissant togolais avec un permis B depuis 4 ans. Mon employeur (garage automobile à Lausanne) a fait faillite en mars. Je suis au chômage depuis 3 mois. L'office cantonal des migrations m'a écrit que mon permis B 'peut être révoqué si je ne retrouve pas un emploi rapidement'. J'ai des entretiens mais rien de signé. Je panique — combien de temps ai-je vraiment avant qu'ils révoquent mon permis ?",
+    canton: 'VD',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LEI 61a', 'LEI 62', 'LEI 33'],
+    notes: "Permis B hors-UE et perte d'emploi : délai légal avant révocation (LEI 61a / OASA 77b) — LEI 62 al. 1 let. e : révocation possible si dépendance notable à l'aide sociale. OASA 77b : un délai raisonnable doit être accordé (6-12 mois en pratique). LACI : tant qu'il perçoit des indemnités chômage, il ne dépend pas de l'aide sociale — révocation immédiate non légale. '4 ans permis B + faillite employeur + chômage 3 mois + lettre migration révocation + entretiens en cours' sans 'OASA 77b délai 6-12 mois' ni 'LACI = pas aide sociale donc pas révocation immédiate'. Signal adversarial = citoyen hors-UE croit la révocation imminente, ignore que les indemnités chômage protègent.",
+  },
+
+  // SANTE — médicament hors LS (off-label), procédure de prise en charge individuelle (OAMal 71a / LAMal 52)
+  {
+    id: 'adv_sante_13',
+    query: "J'ai un cancer du sein rare (HER2 faible). Mon oncologue a prescrit un médicament approuvé par Swissmedic mais pas encore sur la liste des spécialités LAMal pour mon indication précise — usage 'hors-indication'. Le médicament coûte 12'000 CHF/mois. Ma caisse Helsana a refusé la prise en charge. Y a-t-il un recours légal ?",
+    canton: 'ZH',
+    expected_domaine: 'sante',
+    expected_any_article: ['LAMal 52', 'LPGA 52', 'OAMal 71a'],
+    notes: "Médicament hors-LS et prise en charge individuelle (OAMal 71a / LAMal 52) — OAMal 71a al. 1 : un médicament Swissmedic mais non listé pour l'indication peut être pris en charge si a) aucune alternative inscrite, b) avantage thérapeutique important, c) coût proportionné. La caisse doit statuer dans 30 jours sur demande du médecin. En cas de refus : opposition LPGA 52 → tribunal cantonal. 'Cancer rare + médicament Swissmedic + hors LS + 12k CHF/mois + Helsana refuse' sans 'OAMal 71a demande individuelle médecin 30 jours' ni 'LPGA 52 opposition puis tribunal'. Signal adversarial = patiente ignore la voie OAMal 71a, pense que le refus de liste est définitif.",
+  },
+
+  // VOISINAGE — pompe à chaleur air-air, nuisances sonores, CC 684 indépendant de l'OPB (CC 684 / CC 679)
+  {
+    id: 'adv_voisinage_16',
+    query: "Mon voisin a installé une pompe à chaleur air-air externe directement face à ma chambre à coucher (2,5 m de distance). Les mesures de la commune indiquent 58 dB(A) le soir — en-dessous du seuil OPB de 60 dB pour ma zone résidentielle. La commune dit que c'est 'légal' donc rien à faire. Mais je n'arrive plus à dormir avec ce ronronnement constant depuis 8 mois. Y a-t-il une autre voie légale que l'OPB ?",
+    canton: 'GE',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 684', 'CC 679', 'CC 679a'],
+    notes: "Immissions sonores pompe à chaleur : CC 684 indépendant de l'OPB (CC 684 / CC 679) — CC 684 al. 2 : les immissions excédant la mesure tolérée selon la situation des fonds sont interdites — standard civil INDÉPENDANT des seuils administratifs OPB. Le fait que 58 dB soient sous le seuil OPB (60 dB) n'est pas déterminant pour CC 684 : le juge civil apprécie selon les circonstances (2.5m de la chambre, nocturne, 8 mois). CC 679 al. 1 : responsabilité du propriétaire pour immissions excessives. CC 679a : action en cessation immédiate. '58 dB + commune dit légal OPB + chambre + 8 mois + ronronnement' sans 'CC 684 indépendant de l'OPB' ni 'CC 679a action en cessation civile'. Signal adversarial = voisin croit la décision administrative définitive, ignore que CC 684 donne une voie civile autonome.",
+  },
+
+  // CIRCULATION — cumul d'infractions légères et requalification en infraction moyennement grave (LCR 16 / LCR 16b)
+  {
+    id: 'adv_circulation_11',
+    query: "J'ai eu un stop grillé en 2023 (amende 280 CHF, avertissement sans retrait de permis) et un excès de 12 km/h en 2024 (amende 200 CHF). Maintenant l'autorité des permis m'écrit que 'la deuxième infraction légère dans les 10 ans équivaut à une infraction moyennement grave' et me menace d'un retrait de permis d'un mois. Je ne comprends pas — les deux infractions étaient 'légères' séparément. Comment peut-on les combiner pour un retrait ?",
+    canton: 'ZH',
+    expected_domaine: 'circulation',
+    expected_any_article: ['LCR 16', 'LCR 16a', 'LCR 16b'],
+    notes: "Cumul d'infractions légères et requalification en infraction moyennement grave (LCR 16b) — LCR 16 al. 2 : une infraction légère entraîne un avertissement. LCR 16b al. 1 : une infraction moyennement grave entraîne un retrait d'un mois minimum. Principe de 'récidive qualifiante' : une 2e infraction légère dans les 10 ans est requalifiée en infraction moyennement grave. Ce n'est pas un cumul de deux peines — c'est une requalification du comportement global. '2 infractions légères + 10 ans + avertissement avant + retrait 1 mois + comment combiner ?' sans 'LCR 16b récidive qualifiante' ni 'requalification infraction moyennement grave'. Signal adversarial = conducteur croit que 2 légères ne peuvent pas déclencher retrait, ignore LCR 16b.",
+  },
+
+  // ASSURANCES SOCIALES — prestations complémentaires coupées après donation (LPC 10 / LPC 11)
+  {
+    id: 'adv_social_11',
+    query: "Je suis à la retraite (71 ans) avec une rente AVS de 1'820 CHF et des prestations complémentaires de 640 CHF/mois. Mon patrimoine était de 8'400 CHF. En mai, ma fille m'a offert 20'000 CHF pour mon anniversaire (virement bancaire). L'office PC vient de me couper les prestations complémentaires 'car mon patrimoine dépasse désormais le seuil'. Ma fille veut reprendre l'argent pour éviter la coupure mais l'office dit que c'est trop tard. Ont-ils raison ?",
+    canton: 'VD',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LPC 10', 'LPC 9', 'LPGA 25', 'LPC 11'],
+    notes: "Prestations complémentaires, seuil de fortune et dessaisissement (LPC 10 / LPC 11) — LPC 9a al. 2 : les PC sont supprimées si la fortune dépasse le seuil (25'000 CHF pour une personne seule depuis 2021). LPC 11 al. 1 let. g : si la fortune a été transférée sans contre-prestation, l'office peut imputer la fortune dessaisie pendant 10 ans. Même si la fille 'reprend' les 20k CHF, l'office peut maintenir l'imputation comme dessaisissement apparent. Recours LPGA 52 : opposition dans les 30 jours. '71 ans + PC 640/mois + gift 20k fille + fortune 28k > seuil + reprendre l'argent?' sans 'LPC 11 dessaisissement imputé 10 ans' ni 'LPGA 52 opposition 30 jours'. Signal adversarial = bénéficiaire PC croit que rendre l'argent efface le dépassement, ignore la règle de dessaisissement LPC.",
+  },
+
+  // ENTREPRISE — droit d'information actionnaire SA, procès-verbaux AG refusés (CO 697 / CO 697a / CO 697b)
+  {
+    id: 'adv_entreprise_11',
+    query: "Je suis actionnaire minoritaire dans une SA familiale (j'ai 12% du capital). Je soupçonne que le CA gère mal la société — les comptes présentés à l'AG me semblent ne pas refléter la réalité. J'ai demandé par écrit les procès-verbaux des 3 dernières AG et les comptes détaillés. Le CA refuse, disant que c'est 'confidentiel' et que 'vous n'avez qu'à faire confiance à la direction'. Ai-je un droit légal d'accès à ces documents ?",
+    canton: 'ZH',
+    expected_domaine: 'entreprise',
+    expected_any_article: ['CO 697', 'CO 697a', 'CO 697b'],
+    notes: "Droit d'information de l'actionnaire SA et ses limites (CO 697 / CO 697a) — CO 697 al. 1 : chaque actionnaire peut demander à l'AG des renseignements sur les affaires. CO 697a al. 1 : tout actionnaire peut consulter les PV des AG au siège social dans les délais légaux. CO 697b : le juge peut ordonner la production si le CA s'y oppose sans motif légitime. La confidentialité 'générale' du CA ne suffit pas. 12% > 10% = seuil pour demander un contrôle spécial CO 697c. 'SA familiale + 12% + demande PV AG + CA dit confidentiel + faire confiance' sans 'CO 697a droit de consultation PV AG' ni 'CO 697b juge peut ordonner production'. Signal adversarial = actionnaire croit que la direction peut refuser arbitrairement, ignore le droit légal CO 697/697a.",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

@@ -2515,6 +2515,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CO 697', 'CO 697a', 'CO 697b'],
     notes: "Droit d'information de l'actionnaire SA et ses limites (CO 697 / CO 697a) — CO 697 al. 1 : chaque actionnaire peut demander à l'AG des renseignements sur les affaires. CO 697a al. 1 : tout actionnaire peut consulter les PV des AG au siège social dans les délais légaux. CO 697b : le juge peut ordonner la production si le CA s'y oppose sans motif légitime. La confidentialité 'générale' du CA ne suffit pas. 12% > 10% = seuil pour demander un contrôle spécial CO 697c. 'SA familiale + 12% + demande PV AG + CA dit confidentiel + faire confiance' sans 'CO 697a droit de consultation PV AG' ni 'CO 697b juge peut ordonner production'. Signal adversarial = actionnaire croit que la direction peut refuser arbitrairement, ignore le droit légal CO 697/697a.",
   },
+
+  // === WAVE 25 — 2026-06-27 ===
+
+  // BAIL — rénovation énergétique imposée par le bailleur pendant occupation, réduction loyer pendant travaux (CO 259d / CO 260)
+  {
+    id: 'adv_bail_27',
+    query: "Mon propriétaire a décidé de faire remplacer toutes les fenêtres et d'isoler les murs extérieurs de l'immeuble. Les travaux durent 7 semaines : ouvriers tous les jours à partir de 7h, poussière, bruit de perceuse, ma cuisine inutilisable une semaine entière. Il m'a juste envoyé un avis écrit et dit que 'c'est une amélioration donc vous ne pouvez rien réclamer'. Est-ce vrai que je n'ai aucun droit à une réduction de loyer pendant ces travaux même s'ils sont imposés ?",
+    canton: 'VD',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 259d', 'CO 260', 'CO 259a'],
+    notes: "Réduction loyer pendant travaux bailleur (CO 259d / CO 260) — CO 259d al. 1 : si le bailleur effectue des travaux qui rendent la chose plus ou moins impropre à l'usage convenu, le locataire peut exiger une réduction proportionnelle du loyer pour la durée de la gêne. CO 260 al. 1 : le bailleur peut effectuer des travaux de rénovation avec un préavis raisonnable — mais le locataire conserve ses droits CO 259d. L'argument 'amélioration donc pas de réduction' est partiellement faux : même les travaux d'amélioration donnent droit à réduction si l'usage est perturbé. 7 semaines × 7h/jour de bruit + cuisine inutilisable = gêne chiffrable. '7 semaines + bruit 7h + cuisine inutilisable + bailleur dit amélioration donc rien' sans 'CO 259d réduction proportionnelle usage perturbé' ni 'même travaux amélioration ouvrent droit réduction'. Signal adversarial = locataire accepte l'argument 'amélioration = pas de droits', ignore CO 259d.",
+  },
+
+  // FAMILLE — couple non-marié séparé, père refuse pension sans jugement, mesures provisoires rapides (CC 276 / CPC 276)
+  {
+    id: 'adv_famille_22',
+    query: "Je ne suis pas mariée. Mon compagnon et moi nous sommes séparés il y a 3 mois et j'ai la garde de notre fils de 4 ans. Son père ne paie rien depuis la séparation. Il dit qu'il n'a 'aucune obligation légale sans jugement de tribunal'. Je n'ai pas les moyens d'un avocat et une procédure complète prend des mois. Existe-t-il un moyen rapide et peu coûteux d'obtenir une contribution pour mon fils ?",
+    canton: 'GE',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 276', 'CC 285', 'CPC 276'],
+    notes: "Pension alimentaire enfant hors mariage et mesures provisoires urgentes (CC 276 / CPC 276) — CC 276 al. 1 : l'obligation d'entretien de l'enfant est indépendante du statut matrimonial des parents — le père doit contribuer dès la naissance. CPC 276 al. 1 : le juge peut ordonner des mesures provisoires pour assurer l'entretien de l'enfant pendant la procédure (délai = quelques semaines). Le père a tort : l'obligation alimentaire ne requiert aucun jugement préalable pour exister, seulement pour l'exécution forcée. 'Non-mariés + séparé 3 mois + fils 4 ans + père dit pas obligé sans jugement + pas d'avocat + urgent' sans 'CC 276 obligation alimentaire indépendante mariage' ni 'CPC 276 mesures provisoires rapides'. Signal adversarial = mère croit que la non-cohabitation efface l'obligation alimentaire du père non-marié.",
+  },
+
+  // DETTES — voiture indispensable au travail saisie par l'huissier malgré l'absence de transport public (LP 92)
+  {
+    id: 'adv_dettes_24',
+    query: "Un huissier est venu chez moi hier matin et a inscrit ma voiture (Toyota Yaris 2015, valeur ~4'500 CHF) sur la liste de saisie. C'est ma seule voiture et je l'utilise pour me rendre au travail — je suis aide-soignante dans une maison de retraite à 28 km de chez moi, sans aucun transport en commun sur ce trajet à 6h du matin. L'huissier a dit que 'les voitures ne sont pas protégées par la loi'. Est-ce vrai ?",
+    canton: 'FR',
+    expected_domaine: 'dettes',
+    expected_any_article: ['LP 92', 'LP 93'],
+    notes: "Biens insaisissables : outil de travail indispensable (LP 92 / LP 93) — LP 92 al. 1 ch. 11 : les objets indispensables à l'exercice de la profession du débiteur sont insaisissables à hauteur du montant nécessaire. Une voiture utilisée pour aller travailler dans une zone sans transports publics (28 km, horaire 6h) peut constituer un 'outil de travail indispensable' — doctrine et jurisprudence le reconnaissent pour soignants, artisans, agriculteurs. LP 93 al. 1 : le minimum vital comprend les frais nécessaires à l'exercice de la profession. L'huissier a tort en affirmant catégoriquement que les voitures ne sont jamais protégées. Réclamation auprès de l'office des poursuites dans les 10 jours. '28 km + 6h matin + aucun bus + Toyota 4500 CHF + huissier dit pas protégée' sans 'LP 92 outil professionnel indispensable insaisissable' ni 'délai 10 jours réclamation'. Signal adversarial = débiteur accepte la saisie croyant les voitures jamais protégées.",
+  },
+
+  // SANTE — urgence dentaire (extraction dent infectée), LAMal refuse : soins dentaires exclus, pas d'exception urgence (LAMal 31)
+  {
+    id: 'adv_sante_14',
+    query: "Ce week-end j'ai eu une violente rage de dents. Un dentiste de garde m'a extrait samedi une molaire très infectée — la note est de 750 CHF. Je pensais que c'était couvert par mon assurance maladie obligatoire (LAMal). Ma caisse refuse le remboursement en disant que 'les soins dentaires ne sont pas couverts par l'assurance de base'. Mais c'était une urgence ! Existe-t-il une exception pour les soins dentaires d'urgence ?",
+    canton: null,
+    expected_domaine: 'sante',
+    expected_any_article: ['LAMal 31', 'LAMal 34'],
+    notes: "Soins dentaires et LAMal — exclusion générale et exceptions limitées (LAMal 31 / LAMal 34) — LAMal 31 al. 1 : l'assurance obligatoire ne prend en charge les soins dentaires que dans 3 cas : a) maladie grave et non évitable du système masticatoire, b) soins rendus nécessaires par une maladie grave du reste de l'organisme, c) séquelles d'un accident LAA. LAMal 34 : l'OPAS définit les prestations remboursables. Une extraction de molaire infectée pour carie, même en urgence le week-end, ne rentre pas dans ces exceptions — c'est une maladie dentaire ordinaire. L'urgence n'est PAS un critère d'exception LAMal pour les soins dentaires. Solution : assurance complémentaire dentaire privée (LCA). '750 CHF + extraction + infection + urgence week-end + LAMal refuse + exception urgence ?' sans 'LAMal 31 exceptions dentaires limitées à 3 cas' ni 'urgence n'est pas une exception prévue'. Signal adversarial = patient croit que l'urgence médicale entraîne automatiquement la couverture LAMal.",
+  },
+
+  // SUCCESSIONS — donation 2 ans avant décès qui ampute la réserve héréditaire, action en réduction (CC 522 / CC 527)
+  {
+    id: 'adv_successions_13',
+    query: "Ma mère est décédée il y a 6 semaines. Avant de mourir, elle avait donné 180'000 CHF à ma sœur aînée 'de son vivant' 2 ans avant son décès — ma mère disait que c'était 'pour récompenser les sacrifices de ma sœur'. La succession ne comprend plus que 90'000 CHF à partager entre nous 4 enfants. Sans cette donation, ma part aurait dû être bien plus grande. Peut-on contester cette donation faite 2 ans avant le décès ?",
+    canton: 'VD',
+    expected_domaine: 'successions',
+    expected_any_article: ['CC 522', 'CC 527', 'CC 470', 'CC 475'],
+    notes: "Action en réduction et rapport des libéralités (CC 522 / CC 527 / CC 470) — CC 470 al. 1 : la réserve des descendants est de 1/2 de leur part légale (4 enfants → réserve = 1/4 × 1/2 du total reconstitué). CC 522 al. 1 : l'action en réduction est ouverte si une libéralité (donation ou legs) porte atteinte à la réserve. CC 527 ch. 1 : les libéralités entre vifs effectuées dans les 5 années avant le décès sont réductibles même si elles n'étaient pas destinées à frustrer les héritiers. CC 475 al. 1 : les donations sont imputées pour calculer la quotité disponible. Délai : 10 ans dès le décès. '180k sœur + 2 ans avant décès + succession 90k + 4 enfants + contester ?' sans 'CC 522 action en réduction' ni 'CC 527 donation dans les 5 ans réductible'. Signal adversarial = héritier croit que la donation faite de son vivant est définitivement intouchable.",
+  },
+
+  // VIOLENCE — harcèlement cybernétique anonyme, messages et photos depuis comptes inconnus, police passive (CC 28b / CP 179)
+  {
+    id: 'adv_violence_12',
+    query: "Depuis 7 mois je reçois des messages insultants et des photos de moi prises en public, envoyés depuis des comptes anonymes Instagram et des adresses email jetables. Ces messages mentionnent mes horaires précis, mon quartier, mon lieu de travail — la personne me surveille clairement. La police a dit qu'elle ne peut 'rien faire sans identité de l'auteur' et m'a conseillé de 'bloquer les comptes'. Est-ce la seule option ?",
+    canton: null,
+    expected_domaine: 'violence',
+    expected_any_article: ['CC 28b', 'CC 28a', 'CP 179'],
+    notes: "Harcèlement anonyme en ligne / stalking cybernétique (CC 28b / CC 28a / CP 179) — CC 28b al. 1 (en vigueur depuis 2022) : la victime d'atteinte à la personnalité peut demander au juge civil d'interdire à l'auteur de la contacter ou de la surveiller — applicable même si l'auteur n'est pas encore identifié si des indices suffisants existent. CC 28a al. 2 : mesures provisionnelles super-urgentes sans audition préalable de l'auteur possibles. CP 179novies : prise de photos de la sphère privée sans consentement. La police peut requérir auprès des plateformes les données d'identification (IP, compte) via voie judiciaire. '7 mois + anonyme + photos en public + horaires précis + police dit rien à faire' sans 'CC 28b ordonnance interdiction même sans auteur identifié' ni 'réquisition données aux plateformes'. Signal adversarial = victime croit que l'anonymat bloque toute action légale.",
+  },
+
+  // ACCIDENT — trottinette électrique grille stop sur piste cyclable, fracture blessé, conducteur sans assurance RC (CO 41 / LCR 37)
+  {
+    id: 'adv_accident_10',
+    query: "Je roulais à vélo sur une piste cyclable balisée quand une trottinette électrique a grillé le stop à l'intersection et m'a renversé. J'ai une fracture du poignet et mon vélo est cassé (2'200 CHF de dégâts). La personne sur la trottinette dit que 'les trottinettes ne sont pas des véhicules, je n'ai pas besoin d'assurance'. Mon assurance RC dit que ce n'est pas son problème. Qui est responsable et comment j'obtiens réparation ?",
+    canton: 'ZH',
+    expected_domaine: 'accident',
+    expected_any_article: ['CO 41', 'CO 46'],
+    notes: "Trottinette électrique : responsabilité sans assurance RC (CO 41 / LCR 37) — LCR 1 + ordonnance VCL : une trottinette électrique légère (≤25 km/h, ≤1 kW) est un cycle au sens de la loi — pas d'obligation d'assurance RC (contrairement aux voitures). Mais CO 41 al. 1 : tout acte dommageable causé par faute engage la responsabilité civile personnelle de l'auteur, indépendamment de l'assurance. LCR 37 al. 1 : griller un stop est une faute. CO 46 al. 1 : dommage corporel = frais médicaux + perte de gain + vélo. Voie : action civile directe contre le trottineteur + commandement de payer LP. '2200 CHF vélo + fracture + trottinette dit pas véhicule + pas assurance' sans 'CO 41 responsabilité civile directe sans assurance' ni 'LCR 37 faute = responsabilité'. Signal adversarial = victime croit que sans assurance RC il n'y a rien à faire.",
+  },
+
+  // CONSOMMATION — abonnement salle de sport non résiliable selon CG, déménagement à 80 km pour travail, clause abusive (CO 40a / CO 407a)
+  {
+    id: 'adv_consommation_11',
+    query: "J'avais un abonnement annuel à un fitness (560 CHF/an). J'ai dû déménager à 80 km à cause d'un changement de travail. J'ai résilié avec 1 mois de préavis. Le fitness dit que 'les abonnements annuels ne sont pas résiliables, vous devez payer les 6 mois restants selon vos conditions générales signées'. Dois-je vraiment payer 280 CHF pour un club que je ne peux plus utiliser ?",
+    canton: 'ZH',
+    expected_domaine: 'consommation',
+    expected_any_article: ['CO 40a', 'CO 407a', 'CO 8'],
+    notes: "Résiliation abonnement fitness pour juste motif et clauses abusives (CO 40a / CO 407a) — CO 407a (en vigueur depuis 2022) : les contrats de fitness conclus avec des consommateurs peuvent être résiliés en tout temps pour juste motif (déménagement à longue distance en est un). La clause 'non résiliable pendant la durée' dans les CG est nulle dans ce contexte. CO 40a / CO 8 LCD : les clauses standard abusives qui entravent de façon disproportionnée le droit de résiliation sont inopposables. 'Déménagement 80 km + travail + abonnement annuel + fitness dit 6 mois à payer + CG signées' sans 'CO 407a juste motif = résiliation de plein droit' ni 'clause non-résiliable nulle'. Signal adversarial = consommateur croit les CG inattaquables même pour clauses abusives.",
+  },
+
+  // HYBRIDE — locataire en PPE : bailleur-gérant vote des travaux coûteux à l'AG et répercute les charges sur le loyer (CO 269a / CC 712m)
+  {
+    id: 'adv_hybride_11',
+    query: "J'habite en location dans un appartement PPE. Mon propriétaire-bailleur est aussi le gérant de la PPE. Lors de la dernière AG de la PPE, il a fait voter des travaux de rénovation de l'entrée (150'000 CHF) dont je suspecte qu'ils ne sont pas urgents. Un mois après l'AG, il m'a annoncé une hausse de loyer de +190 CHF/mois pour 'répercuter la hausse des charges communes'. Je peux contester quoi et auprès de qui ?",
+    canton: 'GE',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 269a', 'CO 270', 'CO 270b', 'CC 712m'],
+    notes: "Hausse de loyer fondée sur charges PPE + conflit d'intérêts bailleur-gérant (CO 269a / CO 270b / CC 712m) — CO 270b al. 1 : le locataire peut contester une hausse de loyer à l'autorité de conciliation dans les 30 jours dès la notification. CO 269a let. b : hausse admissible si justifiée par hausse réelle des coûts — le bailleur doit démontrer la réalité et la proportionnalité. CC 712m al. 2 : l'administrateur PPE doit gérer les intérêts communs avec diligence ; un conflit d'intérêts (bailleur = gérant votant pour ses propres intérêts) peut être invoqué pour contester les décisions AG. '190 CHF hausse + PPE + bailleur = gérant + travaux votés par lui + charges répercutées' sans 'CO 270b délai 30j contestation hausse loyer' ni 'CO 269a charges justifiées + proportionnalité'. Signal adversarial = locataire ne sait pas qu'il peut contester séparément la hausse loyer ET les décisions PPE.",
+  },
+
+  // VOISINAGE — chien du voisin entre dans le jardin et tue les poules, voisin nie, commune dit litige privé (CC 56 / CC 679 / CC 641)
+  {
+    id: 'adv_voisinage_17',
+    query: "Le chien de mon voisin (labrador, jamais attaché) entre régulièrement dans mon jardin. La semaine passée il a attaqué et tué 3 de mes poules. J'ai des photos du chien dans mon jardin prises plusieurs fois ce mois. Mon voisin dit 'un chien c'est un chien, prouvez que c'était le mien'. La commune me dit que c'est un 'litige privé entre voisins, on ne peut pas intervenir'. Que puis-je faire pour faire cesser et être indemnisé ?",
+    canton: 'BE',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 56', 'CC 679', 'CC 684', 'CC 641'],
+    notes: "Intrusion chien voisin + dommages + action en cessation (CC 56 / CC 679 / CC 641) — CC 56 al. 1 : le détenteur d'animal répond du dommage causé, sauf preuve de diligence requise. Le voisin ne peut pas nier si la présence du chien dans le jardin est établie par photos horodatées. CC 641 al. 2 : le propriétaire du jardin peut exiger que son fonds soit respecté (action négatoire = cessation). CC 679 al. 1 : responsabilité du propriétaire pour immissions excessives (intrusions répétées). CC 684 al. 2 : incursions répétées d'un animal excèdent l'usage toléré. Voie : (1) mise en demeure écrite au voisin avec photos, (2) requête en mesures superprovisionnelles au juge de paix, (3) demande d'indemnisation poules. 'Labrador non-attaché + 3 poules tuées + photos + voisin nie + commune dit litige privé' sans 'CC 56 détenteur d'animal responsable + photos suffisent' ni 'CC 679 action en cessation + indemnisation'. Signal adversarial = propriétaire croit devoir prouver au-delà de tout doute, ignore que les photos constituent une preuve civile suffisante.",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

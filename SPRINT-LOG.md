@@ -1207,3 +1207,26 @@ Points à surveiller :
   - `adv_entreprise_11` (CO 697/697a/697b actionnaire 12% SA familiale, CA refuse PV AG "confidentiels", droit légal de consultation + voie judiciaire)
 - **Domaines inédits wave 24** : 10 domaines simultanément. Angles nouveaux : LTr travail nocturne, OAMal 71a off-label, LPC dessaisissement PC, CO 148 recours solidarité, CC 298b parent absent, LCR 16b récidive qualifiante, CC 684 vs OPB.
 - **Prochaine action** : mesure éval CLI sur 250 cas au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-06-27 UTC — run agent horaire (wave 25 adversarial : 250→260 cas)
+- **Tenté** : item 1 — wave 25 : +10 cas adversariaux ciblant 10 domaines variés avec angles inédits (bail CO 259d travaux bailleur, famille CC 276 non-mariés, dettes LP 92 voiture insaisissable, sante LAMal 31 dentaire, successions CC 522 action réduction, violence CC 28b stalking anonyme, accident CO 41 trottinette sans RC, consommation CO 407a fitness déménagement, hybride CO 270b PPE, voisinage CC 56/679 chien-poules)
+- **Résultat** : passed ✓ — 260 cas dans `test/adversarial-cases.mjs`, 3 gates verts, 0 doublon d'ID
+- **Commits** : `ac0b91b`
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement, aucun code modifié)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Adversarial CLI sur 260 cas : non mesuré ce run (nécessite `claude -p` actif)
+- **Nouveaux cas wave 25 (10)** :
+  - `adv_bail_27` (CO 259d réduction loyer pendant travaux bailleur — fenêtres+isolation 7 semaines, bailleur dit "amélioration = pas de réduction")
+  - `adv_famille_22` (CC 276/CPC 276 pension enfant sans mariage — père dit pas d'obligation sans jugement, mesures provisoires rapides)
+  - `adv_dettes_24` (LP 92 voiture indispensable au travail saisie — aide-soignante 28 km sans bus, huissier dit "voitures pas protégées")
+  - `adv_sante_14` (LAMal 31 soins dentaires exclus même en urgence — extraction molaire infectée, patient croit exception urgence)
+  - `adv_successions_13` (CC 522/527 action réduction donation 2 ans avant décès — 180k à sœur, 4 héritiers, délai 10 ans)
+  - `adv_violence_12` (CC 28b/CP 179 stalking cybernétique anonyme — 7 mois messages+photos comptes inconnus, police dit rien à faire)
+  - `adv_accident_10` (CO 41/LCR 37 trottinette sans assurance RC — grille stop, fracture poignet 2200 CHF, victime croit impuissante)
+  - `adv_consommation_11` (CO 407a résiliation fitness juste motif déménagement — CG "non résiliable", 80 km nouveau travail)
+  - `adv_hybride_11` (CO 270b/CC 712m bailleur-gérant PPE — vote travaux coûteux + répercute +190 CHF sur loyer, double contestation)
+  - `adv_voisinage_17` (CC 56/679/641 chien voisin tue poules — labrador non-attaché, photos, voisin nie, commune dit litige privé)
+- **Domaines wave 25** : 10 domaines simultanément — angles inédits : CO 259d travaux pendant bail (souvent méconnu), LP 92 voiture outil professionnel, LAMal 31 dentaire urgence (mythe répandu), CO 407a fitness (loi 2022), CC 712m PPE+bail hybride, stalking anonyme CC 28b 2022.
+- **Prochaine action** : mesure éval CLI sur 260 cas au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

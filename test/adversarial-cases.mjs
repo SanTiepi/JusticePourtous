@@ -2617,6 +2617,106 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CC 56', 'CC 679', 'CC 684', 'CC 641'],
     notes: "Intrusion chien voisin + dommages + action en cessation (CC 56 / CC 679 / CC 641) — CC 56 al. 1 : le détenteur d'animal répond du dommage causé, sauf preuve de diligence requise. Le voisin ne peut pas nier si la présence du chien dans le jardin est établie par photos horodatées. CC 641 al. 2 : le propriétaire du jardin peut exiger que son fonds soit respecté (action négatoire = cessation). CC 679 al. 1 : responsabilité du propriétaire pour immissions excessives (intrusions répétées). CC 684 al. 2 : incursions répétées d'un animal excèdent l'usage toléré. Voie : (1) mise en demeure écrite au voisin avec photos, (2) requête en mesures superprovisionnelles au juge de paix, (3) demande d'indemnisation poules. 'Labrador non-attaché + 3 poules tuées + photos + voisin nie + commune dit litige privé' sans 'CC 56 détenteur d'animal responsable + photos suffisent' ni 'CC 679 action en cessation + indemnisation'. Signal adversarial = propriétaire croit devoir prouver au-delà de tout doute, ignore que les photos constituent une preuve civile suffisante.",
   },
+
+  // BAIL — résiliation pour besoin propre, locataire confond délai de préavis et délai d'opposition 30 jours péremptoire (CO 272 / CO 273)
+  {
+    id: 'adv_bail_28',
+    query: "Mon bailleur m'a envoyé un congé recommandé pour son 'besoin propre' — il dit que sa fille veut habiter l'appartement. Le congé est pour fin septembre (3 mois de préavis). J'ai reçu la lettre il y a 3 semaines. Mon bailleur dit que j'ai encore 2 mois pour partir. Mais un ami m'a dit que je dois faire quelque chose rapidement si je veux contester. Qu'est-ce que je dois faire et dans quel délai ?",
+    canton: 'GE',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 272', 'CO 273'],
+    notes: "Délai péremptoire 30 jours pour s'opposer à une résiliation (CO 273 al. 1) — CO 271a al. 1 let. a : le congé pour besoin propre est attaquable si le besoin n'est pas réel ou si le congé est abusif. CO 273 al. 1 : le locataire qui entend s'opposer au congé doit le faire dans les 30 jours qui suivent la réception du congé, sous peine de forclusion absolue (délai péremptoire non prolongeable). CO 272 al. 1 : l'opposition doit être déposée à l'autorité de conciliation compétente. Ici, si le locataire a reçu la lettre il y a 3 semaines, il lui reste environ 7 jours. '3 semaines depuis réception + préavis 3 mois + bailleur dit encore 2 mois + ami dit agir vite' — le locataire confond le délai de préavis (pour quitter l'appartement) avec le délai d'opposition (pour contester juridiquement le congé). Ces deux délais sont totalement indépendants. Signal adversarial = locataire pense avoir jusqu'à la fin du préavis pour réagir juridiquement.",
+  },
+
+  // TRAVAIL — retenue directe sur salaire pour dommages causés au travail sans accord ni jugement, clause contractuelle invoquée à tort (CO 323b / CO 321e)
+  {
+    id: 'adv_travail_29',
+    query: "Je suis livreur depuis 18 mois. La semaine passée, j'ai accidentellement renversé un chariot élévateur qui a endommagé des marchandises (dégâts estimés à 4'800 CHF par l'employeur). Mon patron m'a annoncé qu'il allait retenir directement la totalité sur mes deux prochains salaires. Mon contrat dit que 'tout dommage causé par négligence est à la charge du collaborateur'. Dois-je accepter cette retenue directe ?",
+    canton: 'VD',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 323b', 'CO 321e'],
+    notes: "Retenue sur salaire pour dommages : limite légale et nécessité d'accord ou de jugement (CO 323b / CO 321e) — CO 323b al. 1 : le salaire ne peut faire l'objet de compensations ou de retenues que dans la mesure permettant la saisie selon LP (environ 1/5 du salaire net selon le minimum vital). CO 323b al. 2 : toute retenue par compensation nécessite soit le consentement écrit du travailleur, soit un jugement. CO 321e al. 2 : la réparation du dommage peut être réduite par le juge selon le degré de faute, les risques professionnels assumés et la rémunération. La clause contractuelle 'dommage à charge du collaborateur' n'autorise pas la retenue directe intégrale — CO 323b est d'ordre semi-impératif (les dérogations au détriment du travailleur sont nulles). '4'800 CHF + retenue directe deux salaires + clause contrat + négligence' sans 'CO 323b limite 1/5 et accord écrit ou jugement requis' ni 'CO 321e réduction judiciaire selon risque professionnel'. Signal adversarial = salarié croit que la clause contractuelle permet à l'employeur de retenir directement la totalité du dommage.",
+  },
+
+  // DETTES — saisie d'un compte bancaire joint, codétenteur non poursuivi croit que sa part est automatiquement protégée (LP 95 / LP 106)
+  {
+    id: 'adv_dettes_25',
+    query: "L'office des poursuites a saisi mon compte bancaire commun avec ma femme. Je suis le seul poursuivi — la dette de 6'200 CHF est à mon seul nom. L'office a bloqué 4'100 CHF sur le compte, dont environ 2'050 CHF que ma femme a virés de son propre salaire le mois passé (elle a les relevés bancaires). Ma femme dit que 'sa part ne peut pas être saisie car c'est son argent'. L'huissier dit que tout ce qui est sur le compte est saisissable. Qui a raison ?",
+    canton: 'ZH',
+    expected_domaine: 'dettes',
+    expected_any_article: ['LP 95', 'LP 106'],
+    notes: "Saisie compte joint : la part du cotitulaire non poursuivi est revendicable, pas automatiquement protégée (LP 95 / LP 106 / LP 107) — LP 95 al. 1 : les biens en copropriété ou en main commune peuvent être saisis à concurrence de la part du débiteur — en pratique, l'office saisit l'intégralité du solde du compte joint. LP 106 al. 1 : le tiers (ici l'épouse) qui prétend avoir un droit sur les biens saisis peut déposer une revendication. LP 107 al. 1 : la revendication doit être formée dans les 10 jours dès que le tiers a eu connaissance de la saisie (délai péremptoire). Preuve à apporter : relevés bancaires montrant les virements depuis le compte personnel de l'épouse. LP 106 al. 2 : si la revendication est admise, les biens sont libérés de la saisie à concurrence du montant revendiqué. '2'050 CHF wife + virements prouvables + office bloque tout' sans 'LP 106 revendication tiers dans 10 jours' ni 'LP 95 saisie limitée à la part du débiteur poursuivi'. Signal adversarial = cotitulaire croit que sa part d'un compte joint est automatiquement protégée, sans savoir qu'il faut déposer activement une revendication dans les 10 jours.",
+  },
+
+  // FAMILLE — divorce régime matrimonial légal, appartement acheté pendant le mariage avec mise de fonds héritée, épouse croit avoir droit à la moitié (CC 197/198/204)
+  {
+    id: 'adv_famille_23',
+    query: "Je divorce après 12 ans de mariage. Mon mari a acheté un appartement en 2018 avec 80'000 CHF de mise de fonds provenant d'un héritage de sa mère. Le reste (320'000 CHF) a été financé par une hypothèque remboursée conjointement. L'appartement est au nom de mon mari uniquement. Il dit que l'appartement lui appartient entièrement car la mise de fonds vient de sa famille et que c'est lui le titulaire. J'ai aussi travaillé à mi-temps et géré les enfants. Ai-je droit à une part de cet appartement ?",
+    canton: 'BE',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 197', 'CC 198', 'CC 204'],
+    notes: "Régime légal des acquêts — liquidation divorce, biens propres vs acquêts (CC 197/198/204) — CC 197 al. 1 : sous le régime légal (participation aux acquêts), les acquêts comprennent tous les biens acquis à titre onéreux pendant le mariage. CC 198 ch. 2 : les biens reçus par héritage ou donation sont des biens propres — la mise de fonds de 80'000 CHF est bien propre du mari. CC 204 al. 1 : lors du divorce, l'excédent de chaque masse d'acquêts est partagé par moitié. Calcul : la fraction hypothécaire (320k/400k = 80%) de l'appartement est un acquêt partageable ; la fraction héritée (80k/400k = 20%) est bien propre. L'épouse a droit à la moitié de la plus-value des acquêts, indépendamment du fait que l'appartement soit au nom du seul mari (CC 200 al. 3). '80k héritage + 320k hypothèque + nom du mari + mari dit tout lui appartient + 12 ans mariage' sans 'CC 197 fraction hypothécaire = acquêt partageable' ni 'CC 204 partage 50/50 des acquêts indépendamment du nom sur l'acte'. Signal adversarial = épouse croit que le nom sur l'acte détermine la propriété au divorce, ou que la mise de fonds héritée protège l'intégralité de l'appartement.",
+  },
+
+  // ÉTRANGERS — procédure Dublin III, renvoi vers premier pays d'entrée (France), requérant avec famille en Suisse (LAsi 31a / Dublin III art. 8)
+  {
+    id: 'adv_etrangers_20',
+    query: "Je suis syrien. J'ai fui la Syrie et je suis arrivé en Suisse via la Grèce et la France. À la frontière suisse on a relevé mes empreintes. Le SEM me dit maintenant que je dois retourner en France car mes empreintes y ont été enregistrées — c'est le 'pays Dublin responsable'. Mon frère est en Suisse depuis 2019 avec un permis B et il peut m'héberger. Est-ce que je peux quand même déposer une demande d'asile en Suisse ?",
+    canton: null,
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LAsi 31a', 'LAsi 3'],
+    notes: "Règlement Dublin III — exception regroupement familial ou clause de souveraineté (LAsi 31a / LAsi 3 / Dublin III art. 8 et 17) — LAsi 31a al. 1 let. b : le SEM n'entre pas en matière sur une demande si le requérant peut retourner dans un État tiers sûr (la France = État Dublin sûr). Règlement Dublin III art. 8 al. 2 : si le demandeur a un membre de sa famille (frère = proche au sens du règlement) légalement présent dans un État Dublin, cet État peut être désigné compétent si le regroupement sert l'intérêt du demandeur. Dublin III art. 17 al. 1 : clause de souveraineté — la Suisse peut décider d'examiner elle-même la demande même si un autre État est compétent pour des raisons humanitaires. LAsi 31a al. 3 : raisons humanitaires exceptionnelles peuvent fonder l'entrée en matière. Procédure : déposer formellement la demande en invoquant le lien familial et demander l'application de la clause souveraineté art. 17. 'Syrien + France Dublin + frère permis B Suisse + SEM dit retourner en France' sans 'Dublin III art. 8 regroupement familial exception' ni 'clause souveraineté art. 17 demande formelle'. Signal adversarial = requérant croit que l'enregistrement en France lui interdit automatiquement l'asile en Suisse, sans connaître les exceptions Dublin familiales.",
+  },
+
+  // ACCIDENT — chute dans escalier défectueux d'un centre commercial, propriétaire invoque clause CG, responsabilité causale CO 58 non excluable (CO 58 / CO 46 / CO 47)
+  {
+    id: 'adv_accident_11',
+    query: "J'ai glissé et chuté dans un escalier d'un centre commercial — une marche du bas était fissurée et légèrement soulevée (j'ai des photos prises juste après). Fracture de la cheville, opération, 8 semaines d'incapacité, frais médicaux 9'200 CHF non remboursés intégralement. Le responsable du magasin dit que 'nos conditions d'accès excluent notre responsabilité pour les accidents survenus dans nos locaux' et propose 500 CHF de geste commercial. Dois-je accepter ?",
+    canton: 'VD',
+    expected_domaine: 'accident',
+    expected_any_article: ['CO 58', 'CO 46', 'CO 47'],
+    notes: "Responsabilité causale du propriétaire d'ouvrage — clause CG nulle pour responsabilité légale (CO 58 / CO 100 / CO 46) — CO 58 al. 1 : le propriétaire d'un bâtiment ou d'un ouvrage répond du dommage causé par des défauts de construction ou de défaut d'entretien — c'est une responsabilité causale (sans faute à prouver), engagée dès que le défaut (marche fissurée) et le lien de causalité sont établis. CO 100 al. 1 : est nulle toute stipulation tendant à exclure ou à limiter la responsabilité dans les cas de dol ou de faute grave ; a fortiori, les responsabilités légales causales (CO 58) ne peuvent pas être exclues par des CG. CO 46 al. 1 : dommage corporel = frais médicaux + perte de gain. CO 47 : indemnité pour tort moral possible selon gravité. Marche fissurée photographiée = preuve du défaut + causalité. '9'200 CHF + 8 semaines + marche fissurée + CG excluent responsabilité + 500 CHF offerts' sans 'CO 58 responsabilité causale non excluable par CG (CO 100)' ni 'offre 500 CHF = reconnaissance implicite'. Signal adversarial = blessé croit que les CG d'un centre commercial peuvent valablement exclure la responsabilité pour défaut d'entretien.",
+  },
+
+  // SANTÉ — soins Spitex : la LAMal ne couvre que les soins infirmiers prescrits, pas l'aide ménagère ni les repas (LAMal 25a / OPAS 33)
+  {
+    id: 'adv_sante_15',
+    query: "Mon père de 84 ans vit seul depuis le décès de ma mère. Il n'arrive plus à se laver seul, préparer ses repas ou faire ses courses — mentalement il est encore lucide. Son médecin a prescrit des soins Spitex. La Spitex locale propose 4h par jour (soins + aide ménagère + préparation repas) à 28 CHF/h soit 3'360 CHF/mois. La caisse maladie dit qu'elle ne prend en charge 'qu'une petite partie'. Combien la LAMal paie-t-elle exactement et pour quoi ?",
+    canton: 'VD',
+    expected_domaine: 'sante',
+    expected_any_article: ['LAMal 25a', 'LAMal 26'],
+    notes: "Soins Spitex remboursables LAMal vs aide ménagère non couverte (LAMal 25a / OPAS 33) — LAMal 25a al. 1 : l'assurance prend en charge les soins à domicile sur prescription médicale — uniquement les prestations de soins infirmiers définis à l'OPAS 33 : évaluation/conseils (let. a), soins de base (bain assisté, prise médicaments, soins de plaies) (let. b), activités médico-techniques (injections, pansements) (let. c). L'aide ménagère (cuisine, courses, nettoyage), la préparation des repas et l'accompagnement social ne sont PAS des soins LAMal. Financement alternatif pour l'aide ménagère : aide et soins à domicile (ASD) cantonaux, prestations complémentaires (LPC), Pro Senectute/repas à domicile. Tarifs LAMal : plafonnés par l'OFSP (pas le tarif commercial Spitex). '84 ans seul + 4h/jour + 28 CHF/h + soins + repas + courses + caisse dit petite partie' sans 'LAMal 25a couvre uniquement les soins infirmiers' ni 'aide ménagère = alternatives cantonales ASD/LPC'. Signal adversarial = famille confond soins infirmiers couverts LAMal et aide à domicile générale non remboursée.",
+  },
+
+  // CONSOMMATION — aspirateur en panne après 18 mois, fabricant invoque usure normale pour refuser la garantie, acheteur ignore la garantie légale contre le vendeur (CO 197 / CO 210)
+  {
+    id: 'adv_consommation_12',
+    query: "Mon aspirateur haut de gamme acheté 480 CHF est tombé en panne après 18 mois — le moteur a lâché. La marque affiche '2 ans de garantie' sur l'emballage. Le service après-vente dit que c'est de 'l'usure normale du moteur' et refuse la prise en charge sous garantie. Le magasin où j'ai acheté l'appareil dit qu'il ne peut rien faire, que c'est une affaire entre moi et la marque. Ai-je un recours légal indépendamment de la garantie commerciale de la marque ?",
+    canton: 'GE',
+    expected_domaine: 'consommation',
+    expected_any_article: ['CO 197', 'CO 210'],
+    notes: "Garantie légale du vendeur (CO 197/210) distincte et indépendante de la garantie commerciale du fabricant — CO 197 al. 1 : le vendeur garantit à l'acheteur que la chose est exempte de défauts qui en diminuent ou en suppriment la valeur ou l'utilité prévue. CO 210 al. 1 : les actions en garantie du vendeur se prescrivent par 2 ans dès la délivrance. La garantie légale lie le vendeur (le magasin), pas le fabricant. Un moteur d'aspirateur tombant en panne après 18 mois sur un appareil prévu pour durer 5-10 ans peut constituer un vice caché CO 197. Inversion de la preuve : après 6 mois mais avant 2 ans, c'est au vendeur de prouver que le défaut n'existait pas à la vente. Voie : lettre recommandée au magasin (vendeur = débiteur de la garantie légale) — réparation, remplacement ou remboursement selon CO 206. '18 mois + panne moteur + marque dit usure normale + magasin dit ce n'est pas son problème' sans 'CO 197 garantie légale contre le magasin directement' ni 'inversion preuve après 6 mois : vendeur doit prouver absence de défaut à la vente'. Signal adversarial = acheteur croit que seule la garantie commerciale du fabricant s'applique, sans savoir qu'il a une garantie légale indépendante contre le magasin.",
+  },
+
+  // VOISINAGE — chaudière à granulés conforme OPair mais fumée/suie excessive, action civile CC 684 indépendante du droit public (CC 684 / CC 679a)
+  {
+    id: 'adv_voisinage_18',
+    query: "Mon voisin a installé une chaudière à granulés de bois en 2023. En hiver, les jours sans vent, une fumée grisâtre entre par mes fenêtres ouvertes, des traces de suie se déposent sur mes habits séchant dehors et j'ai des irritations respiratoires. La commune m'a dit que la chaudière est 'conforme à l'OPair et possède le permis de construire — nous ne pouvons pas intervenir'. Le voisin invoque la même conformité. Suis-je vraiment sans recours ?",
+    canton: 'BE',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 684', 'CC 679a'],
+    notes: "Immissions fumée/suie : droit privé CC 684 autonome du droit public OPair (CC 684 / CC 679a / LPE 74) — CC 684 al. 1 : le propriétaire est tenu, en usant de son fonds, de s'abstenir de tout excès au préjudice des propriétaires voisins — incluant fumées, suie, odeurs ou émanations. Al. 2 : dépassent les limites tolérables les immissions qui nuisent à l'utilisation du fonds voisin au-delà de la mesure ordinaire. CC 679a al. 1 (en vigueur depuis 2012) : la conformité au droit public (ici l'OPair) ne supprime pas la responsabilité fondée sur le droit privé CC 679 et CC 684. Les deux ordres juridiques sont indépendants. LPE 74 al. 2 : les propriétaires affectés peuvent agir au civil indépendamment de l'action des autorités. Action possible : action en cessation (CC 641 al. 2) + dommages-intérêts + mesures provisionnelles urgentes. 'OPair conforme + permis = intervention commune impossible + suie + irritations' sans 'CC 679a action civile indépendante de la conformité administrative' ni 'CC 684 al. 2 excès mesure ordinaire = cause d'action même si chaudière légale'. Signal adversarial = voisin lésé croit que la conformité OPair épuise tout recours civil.",
+  },
+
+  // ASSURANCES — AI exige des mesures de réadaptation professionnelle avant rente, médecin dit contre-indiqué, assuré croit perdre tous droits si refus (LAI 17 / LAI 28 / LPGA 43)
+  {
+    id: 'adv_assurances_14',
+    query: "J'ai un burnout sévère avec dépression récurrente depuis 2 ans. Mon psychiatre atteste que je suis à 100% incapable d'exercer mon métier d'enseignant. L'office AI m'a notifié que, avant tout octroi de rente, je dois 'obligatoirement participer à des mesures d'ordre professionnel' (stage de réinsertion en classe, entretiens de coaching). Mon psychiatre estime formellement que ces mesures aggraveraient mon état. Si je refuse, est-ce que je perds automatiquement tout droit à une rente AI ?",
+    canton: 'VD',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LAI 17', 'LAI 28'],
+    notes: "Refus motivé des mesures de réadaptation AI — motif valable si avis médical contraire (LAI 17 / LAI 28 / LPGA 43 / LAI 7a) — LAI 17 al. 1 : les assurés invalides ont droit à des mesures d'ordre professionnel si elles sont de nature à améliorer durablement leur capacité de gain. LAI 28 al. 1 : une rente entière est octroyée si la capacité de gain est réduite d'au moins 70%. LPGA 43 al. 3 : si l'assuré refuse sans motif valable de participer aux mesures ou de se soumettre aux examens, l'AI peut réduire ou refuser les prestations. Mais : refus motivé par avis médical attesté constitue un motif valable. LAI 7a : le principe 'réadaptation avant rente' ne s'applique pas si l'état de santé le contre-indique formellement. Procédure : déposer un refus écrit formel avec rapport psychiatrique détaillé, demander une expertise médicale indépendante (LPGA 44), recourir contre toute décision de suppression de prestations. 'Burnout 2 ans + 100% incapacité + psychiatre dit aggravation + AI exige stage' sans 'refus motivé avec rapport médical = motif valable LPGA 43' ni 'LAI 7a exception médicale à la réadaptation obligatoire'. Signal adversarial = assuré croit qu'un refus des mesures de réadaptation entraîne automatiquement la perte de tout droit AI, sans savoir qu'un avis médical contraire constitue un motif valable de refus.",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

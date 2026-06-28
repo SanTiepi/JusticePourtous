@@ -1230,3 +1230,26 @@ Points à surveiller :
   - `adv_voisinage_17` (CC 56/679/641 chien voisin tue poules — labrador non-attaché, photos, voisin nie, commune dit litige privé)
 - **Domaines wave 25** : 10 domaines simultanément — angles inédits : CO 259d travaux pendant bail (souvent méconnu), LP 92 voiture outil professionnel, LAMal 31 dentaire urgence (mythe répandu), CO 407a fitness (loi 2022), CC 712m PPE+bail hybride, stalking anonyme CC 28b 2022.
 - **Prochaine action** : mesure éval CLI sur 260 cas au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-06-28 UTC — run agent horaire (wave 26 adversarial : 260→270 cas)
+- **Tenté** : item 1 — wave 26 : +10 cas adversariaux ciblant des angles inédits (bail délai 30j opposition, travail retenue salaire CO 323b, dettes saisie compte joint LP 106, famille biens propres vs acquêts CC 197/198/204, étrangers Dublin III art.8, accident CO 58 clause CG nulle, santé Spitex LAMal 25a vs aide ménagère, consommation garantie légale vendeur CO 197/210, voisinage CC 684 vs OPair, assurances AI réadaptation motif médical LAI 17/28)
+- **Résultat** : passed ✓ — **270 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Commits** : `fa3f2f6`
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement, aucun code modifié)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Adversarial CLI sur 270 cas : non mesuré ce run (nécessite `claude -p` actif)
+- **Nouveaux cas wave 26 (10)** :
+  - `adv_bail_28` (CO 272/273 délai 30j péremptoire opposition résiliation — locataire confond préavis et délai d'opposition)
+  - `adv_travail_29` (CO 323b retenue salaire limitée 1/5 + accord requis — employeur retient 4'800 CHF directement via clause contrat)
+  - `adv_dettes_25` (LP 95/106 revendication compte joint dans 10j — codétenteur croit sa part automatiquement protégée)
+  - `adv_famille_23` (CC 197/198/204 biens propres vs acquêts divorce — épouse croit que le nom sur l'acte détermine la propriété)
+  - `adv_etrangers_20` (Dublin III art.8 exception regroupement familial, clause souveraineté art.17 — LAsi 31a/LAsi 3)
+  - `adv_accident_11` (CO 58 responsabilité causale ouvrage + CO 100 clause CG nulle — chute escalier centre commercial)
+  - `adv_sante_15` (LAMal 25a soins Spitex couverts uniquement pour soins infirmiers, pas aide ménagère)
+  - `adv_consommation_12` (CO 197/210 garantie légale vendeur 2 ans indépendante de la garantie commerciale fabricant)
+  - `adv_voisinage_18` (CC 684/679a action civile indépendante conformité OPair — chaudière granulés fumée/suie)
+  - `adv_assurances_14` (LAI 17/28 refus réadaptation AI avec avis médical contraire = motif valable LPGA 43)
+- **Angles inédits wave 26** : délai péremptoire opposition (CO 273), retenue salaire directe (CO 323b), saisie compte joint (LP 106), liquidation acquêts (CC 204), Dublin III exception familiale, responsabilité causale CO 58 non-excluable, Spitex LAMal 25a, garantie légale vendeur CO 197, OPair vs CC 684, réadaptation AI LPGA 43.
+- **Prochaine action** : mesure éval CLI sur 270 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

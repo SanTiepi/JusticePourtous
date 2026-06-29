@@ -1253,3 +1253,25 @@ Points à surveiller :
   - `adv_assurances_14` (LAI 17/28 refus réadaptation AI avec avis médical contraire = motif valable LPGA 43)
 - **Angles inédits wave 26** : délai péremptoire opposition (CO 273), retenue salaire directe (CO 323b), saisie compte joint (LP 106), liquidation acquêts (CC 204), Dublin III exception familiale, responsabilité causale CO 58 non-excluable, Spitex LAMal 25a, garantie légale vendeur CO 197, OPair vs CC 684, réadaptation AI LPGA 43.
 - **Prochaine action** : mesure éval CLI sur 270 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-06-29 UTC — run agent horaire (wave 27 adversarial : 270→280 cas)
+- **Tenté** : item 1 — wave 27 : +10 cas adversariaux ciblant des angles inédits dans 10 domaines variés + sanity check CLI `--limit 10 --concurrency 2`
+- **Résultat** : passed ✓ — **280 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement, aucun code modifié)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - **Sanity check adversarial CLI `--limit 10 --concurrency 2` : 100%** (10×100%) — pipeline opérationnel
+- **Nouveaux cas wave 27 (10)** :
+  - `adv_bail_29` (CO 271a al. 1 let. c présomption résiliation abusive après plainte conciliation — charge de preuve inversée sur bailleur)
+  - `adv_travail_30` (CO 336b al. 1 délai péremptoire opposition licenciement abusif AVANT fin contrat — droit perdu si consulté après)
+  - `adv_dettes_26` (CO 82 exception d'inexécution + CO 368 retenue proportionnelle solde travaux défectueux — maître peut refuser sans payer d'abord)
+  - `adv_famille_24` (CC 261 action judiciaire constatation paternité — SMS = commencement de preuve, contributions CC 279 rétroactives depuis naissance)
+  - `adv_voisinage_19` (CC 686 distances légales plantations cantonales violées — haie 4m à 30 cm, droit d'exiger abattage, délai 30 ans non atteint)
+  - `adv_violence_13` (LAVI 1/19 aide victimes d'infractions si auteur insolvable — frais médicaux + PTSD remboursés par l'État, délai 10 ans)
+  - `adv_sante_16` (OAMal 71a autorisation individuelle médicament hors LS urgent + LPGA 52 opposition 30j + mesures provisionnelles)
+  - `adv_accident_12` (CO 55 responsabilité commettant quasi-causale + LCR 58 détenteur véhicule — arrêt 'non planifié' ≠ rupture lien préposition)
+  - `adv_entreprise_12` (CO 725 perte 2/3 capital SA obligation CA convoquer AG immédiatement + CO 699 al. 3 actionnaire 25% peut lui-même convoquer)
+  - `adv_etrangers_21` (ALCP art. 2 / LEI 90 obligation d'annonce UE — régularisation de droit si salarié, pas d'expulsion automatique, amende seulement)
+- **Domaines wave 27** : 10 domaines simultanément — angles inédits : CO 271a présomption abuse post-procédure, CO 336b délai fatal avant fin contrat, CO 82 exception inexécution, CC 261 paternité judiciaire SMS, CC 686 distances plantations, LAVI aide victimes, OAMal 71a urgent, CO 55 commettant, CO 725 perte capital SA, ALCP régularisation UE.
+- **Prochaine action** : mesure éval CLI sur 280 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

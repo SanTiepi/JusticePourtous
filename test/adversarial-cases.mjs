@@ -2708,6 +2708,108 @@ export const ADVERSARIAL_CASES = [
     notes: "Immissions fumée/suie : droit privé CC 684 autonome du droit public OPair (CC 684 / CC 679a / LPE 74) — CC 684 al. 1 : le propriétaire est tenu, en usant de son fonds, de s'abstenir de tout excès au préjudice des propriétaires voisins — incluant fumées, suie, odeurs ou émanations. Al. 2 : dépassent les limites tolérables les immissions qui nuisent à l'utilisation du fonds voisin au-delà de la mesure ordinaire. CC 679a al. 1 (en vigueur depuis 2012) : la conformité au droit public (ici l'OPair) ne supprime pas la responsabilité fondée sur le droit privé CC 679 et CC 684. Les deux ordres juridiques sont indépendants. LPE 74 al. 2 : les propriétaires affectés peuvent agir au civil indépendamment de l'action des autorités. Action possible : action en cessation (CC 641 al. 2) + dommages-intérêts + mesures provisionnelles urgentes. 'OPair conforme + permis = intervention commune impossible + suie + irritations' sans 'CC 679a action civile indépendante de la conformité administrative' ni 'CC 684 al. 2 excès mesure ordinaire = cause d'action même si chaudière légale'. Signal adversarial = voisin lésé croit que la conformité OPair épuise tout recours civil.",
   },
 
+  // ── WAVE 27 ────────────────────────────────────────────────────────────────────
+
+  // BAIL — résiliation représailles 2 semaines après dépôt d'une plainte en conciliation (CO 271a al. 1 let. c / CO 273)
+  {
+    id: 'adv_bail_29',
+    query: "Je suis locataire depuis 8 ans et j'ai déposé en janvier une plainte formelle à l'autorité de conciliation contre mon bailleur pour des réparations non effectuées (problèmes d'humidité persistants). Deux semaines après le dépôt de la plainte, j'ai reçu un congé recommandé pour la prochaine échéance de bail. Mon bailleur affirme que les deux choses sont 'totalement indépendantes'. Comment est-ce que je me défends contre ce congé ?",
+    canton: 'GE',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 271a', 'CO 273'],
+    notes: "Résiliation représailles après procédure locative — présomption légale d'abus (CO 271a al. 1 let. c / CO 273) — CO 271a al. 1 let. c : est présumée abusive la résiliation donnée par le bailleur pendant une procédure de conciliation ou judiciaire relative au bail, à condition que le locataire n'ait pas de graves obligations à se reprocher. CO 273 al. 1 : délai d'opposition de 30 jours (péremptoire) à l'autorité de conciliation dès réception du congé. Charge de la preuve inversée : c'est au bailleur de renverser la présomption d'abus. CO 271 al. 1 : le tribunal peut annuler le congé reconnu abusif. '8 ans + plainte conciliation janvier + congé 2 semaines après + bailleur dit indépendant' sans 'CO 271a al. 1 let. c présomption d'abus post-procédure' ni 'charge de preuve renversée sur bailleur'. Signal adversarial = locataire croit devoir prouver lui-même le lien de causalité, sans savoir que la loi présume l'abus dans ce délai.",
+  },
+
+  // TRAVAIL — délai péremptoire 30 jours pour invoquer licenciement abusif doit intervenir AVANT la fin du contrat (CO 336b al. 1)
+  {
+    id: 'adv_travail_30',
+    query: "Mon employeur m'a donné mon congé le 15 mars avec 2 mois de préavis, dernier jour le 15 mai. Je suis convaincu que ce licenciement est abusif — il punissait mon refus de falsifier un bilan. Le 20 mai (5 jours après mon départ), un avocat m'a dit que j'avais peut-être un recours. Il a parlé d'un 'délai' mais n'a pas été précis. Quel est le délai exact et que dois-je faire ?",
+    canton: 'ZH',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 336b', 'CO 336a'],
+    notes: "Délai péremptoire pour invoquer le licenciement abusif — DOIT être fait avant la fin du contrat (CO 336b al. 1) — CO 336b al. 1 : la partie qui entend demander l'indemnité pour licenciement abusif (CO 336a) doit faire opposition par écrit AVANT la fin du contrat de travail. CO 336b al. 2 : si l'opposition n'est pas faite avant l'échéance, le droit à l'indemnité est définitivement perdu sauf reconnaissance écrite de l'autre partie. Dans ce cas : dernier jour du contrat = 15 mai, avocat consulté le 20 mai = délai expiré depuis 5 jours. L'indemnité est définitivement perdue. '15 mars congé + 15 mai fin contrat + 20 mai avocat + refus de falsifier bilan' sans 'CO 336b al. 1 opposition écrite requise AVANT fin du contrat = délai expiré' ni 'droit à indemnité perdu définitivement si opposition tardive'. Signal adversarial = salarié croit avoir un délai après la fin du contrat pour réagir, sans savoir que le délai expire le jour de fin de contrat lui-même.",
+  },
+
+  // DETTES — exception d'inexécution : droit de retenir le solde pour travaux défectueux sans payer d'abord (CO 82 / CO 368)
+  {
+    id: 'adv_dettes_26',
+    query: "J'ai commandé la pose d'un parquet dans mon appartement pour 7'400 CHF (30% versés à la commande). Le parqueteur a posé le parquet mais avec des défauts visibles : 8 lattes mal alignées, des clous qui ressortent et 3 zones qui craquent. Le parqueteur exige le solde de 70% (5'180 CHF) immédiatement sous menace de poursuite. Mon voisin m'a dit de 'payer d'abord, puis réclamer les réparations après'. Est-ce que je dois vraiment payer la totalité avant de pouvoir contester les défauts ?",
+    canton: 'VD',
+    expected_domaine: 'dettes',
+    expected_any_article: ['CO 82', 'CO 368'],
+    notes: "Exception d'inexécution et retenue proportionnelle sur solde — droit de refuser sans payer d'abord (CO 82 / CO 368) — CO 82 : dans un contrat bilatéral, chaque partie peut refuser d'exécuter sa prestation si l'autre partie n'a pas correctement exécuté la sienne (exceptio non adimpleti contractus). CO 368 al. 1 : si l'ouvrage est défectueux, le maître peut retenir une partie du prix proportionnelle à la valeur des défauts et réduire le prix. CO 368 al. 2 : si les défauts sont importants, refus de réception possible. Procédure : notification écrite des défauts avec délai de réparation (CO 366/367) ; retenue légale du montant correspondant à la réparation estimée. Payer d'abord est bien plus difficile à récupérer ensuite. '7'400 CHF + lattes mal alignées + clous ressortent + craquements + poursuite menacée + payer d'abord voisin dit' sans 'CO 82 droit de refuser la prestation si mal exécutée' ni 'CO 368 retenue proportionnelle légale sur solde'. Signal adversarial = maître d'ouvrage croit devoir payer le solde intégralement avant de pouvoir réclamer réparation des défauts.",
+  },
+
+  // FAMILLE — action judiciaire en constatation de paternité quand père refuse de reconnaître l'enfant hors mariage (CC 261 / CC 279)
+  {
+    id: 'adv_famille_24',
+    query: "J'ai un enfant de 3 ans (né hors mariage) dont le père biologique refuse catégoriquement de le reconnaître et ne paye rien. Il a admis par SMS être le père mais dit 'tu ne prouveras jamais rien légalement'. Un test ADN fait par une agence privée confirme la paternité à 99.99% mais il dit que ça 'ne vaut rien légalement'. Je n'ai aucun jugement, aucune contribution. Quelle est la procédure pour établir la paternité et obtenir une pension ?",
+    canton: 'GE',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 261', 'CC 279'],
+    notes: "Action en constatation judiciaire de paternité + contributions provisoires (CC 261 / CC 279) — CC 261 al. 1 : si le père ne reconnaît pas l'enfant, la mère, l'enfant ou les autorités de protection peuvent intenter une action en constatation judiciaire de paternité devant le juge. CC 261 al. 3 : sur demande du tribunal, un test ADN peut être ordonné ; les SMS admettant la paternité constituent un commencement de preuve. CC 279 al. 1 : la contribution d'entretien peut être fixée avec effet rétroactif dès la naissance. CC 303 : la contribution provisoire peut être accordée dès le dépôt de la demande, sans attendre le jugement final. Action imprescriptible tant que l'enfant est mineur. '3 ans + hors mariage + SMS admission + test privé 99.99% + refus reconnaissance + rien payé' sans 'CC 261 action judiciaire en constatation de paternité : SMS = commencement de preuve' ni 'CC 279 contributions rétroactives depuis naissance'. Signal adversarial = mère croit ne rien pouvoir faire sans reconnaissance volontaire du père, et que seul un test ADN légal officiel ouvre le recours.",
+  },
+
+  // VOISINAGE — haie plantée à distance inférieure à la limite légale cantonale, droit d'en exiger l'abattage après 5 ans (CC 686 / loi cantonale)
+  {
+    id: 'adv_voisinage_19',
+    query: "Mon voisin a planté une haie de thuyas il y a 5 ans. Elle fait maintenant 4 mètres de haut et se trouve à 30 cm de la limite de propriété (côté sud). Elle bloque complètement l'ensoleillement de mon potager et mes panneaux solaires ont perdu 40% de rendement. La commune dit 'les plantations sont légales, nous ne pouvons pas intervenir'. Le voisin refuse de tailler. Est-ce que j'ai vraiment un recours pour faire tailler ou enlever cette haie ?",
+    canton: 'VD',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 686', 'CC 679'],
+    notes: "Distances légales pour plantations — violation → droit d'exiger l'abattage ou la taille (CC 686 / règles cantonales VD) — CC 686 al. 1 : les cantons fixent les distances à observer pour les haies, arbres et autres plantations. Vaud (RATC) : haies > 2m = distance min. 1.50m de la limite. Haie de 4m à 30 cm = violation manifeste des distances légales cantonales. CC 686 al. 2 : si les distances ne sont pas observées, le propriétaire lésé peut exiger l'abattage ou la taille à la distance légale. CC 679 al. 1 : action possible pour suppression des immissions dépassant les distances légales. CC 686 al. 3 : ce droit se prescrit si les plantations existent depuis plus de 30 ans sans plainte — ici 5 ans = délai non écoulé. '4m + 30 cm + potager bloqué + panneaux -40% + commune dit légal' sans 'CC 686 violation distances légales cantonales → droit d'exiger abattage' ni 'délai 30 ans non atteint, droit intact'. Signal adversarial = propriétaire croit que si la commune dit 'légal', tout recours civil est exclu.",
+  },
+
+  // VIOLENCE / LAVI — victime d'agression, agresseur insolvable, aide LAVI de l'État pour frais médicaux et psychologiques (LAVI 1 / LAVI 19)
+  {
+    id: 'adv_violence_13',
+    query: "Il y a 7 mois, j'ai été victime d'une agression physique dans la rue (fracture du nez, contusions, 3 semaines d'arrêt de travail). L'agresseur a été condamné mais n'a aucun bien à saisir et ne peut rien payer. J'ai des frais non remboursés de 4'800 CHF (franchise LAMal, taxi hôpital, suivi psychologique pour stress post-traumatique). Mon avocat me dit qu'une poursuite civile contre l'agresseur insolvable ne donnera rien. Est-ce qu'il existe une aide de l'État pour ma situation ?",
+    canton: 'VD',
+    expected_domaine: 'violence',
+    expected_any_article: ['LAVI 1', 'LAVI 19'],
+    notes: "Aide aux victimes d'infractions LAVI — l'État rembourse si l'auteur est insolvable (LAVI 1 / LAVI 19 / LAVI 4) — LAVI 1 al. 1 : toute personne physique lésée dans son intégrité corporelle, sexuelle ou psychique par une infraction a droit à l'aide aux victimes (indépendamment de la capacité de paiement de l'auteur). LAVI 19 al. 1 : les cantons accordent une indemnité pour le dommage subi (frais médicaux non couverts, perte de gain, frais thérapeutiques) et une réparation morale si l'auteur est insolvable ou inconnu. LAVI 4 : délai de 10 ans pour déposer la demande auprès du centre LAVI cantonal. Conditions : infraction commise + plainte déposée + infraction reconnue (jugement ici = condition remplie). Prise en charge : frais médicaux non couverts LAMal, psychologue PTSD, perte de gain. 'Agression + condamné insolvable + fracture + PTSD + 4'800 CHF + avocat dit sans recours' sans 'LAVI 19 indemnisation par l'État si auteur insolvable' ni 'centre LAVI cantonal, délai 10 ans'. Signal adversarial = victime croit que l'insolvabilité de l'agresseur la prive de toute aide, sans connaître l'aide LAVI financée par les cantons.",
+  },
+
+  // SANTÉ — médicament hors liste LS pour maladie grave de l'enfant, procédure urgente d'autorisation individuelle et recours LAMal (OAMal 71a / LPGA 52)
+  {
+    id: 'adv_sante_16',
+    query: "Ma caisse maladie a refusé de rembourser un médicament prescrit par le spécialiste pour mon enfant de 5 mois (amyotrophie spinale type 1). Ce médicament n'est pas sur la liste des spécialités LAMal. La décision de refus est datée du 3 juin. Le médecin dit qu'il n'y a pas d'alternative et que chaque semaine compte pour préserver les capacités motrices. Nous n'avons pas les moyens de payer ce traitement. Que faire d'urgence et dans quel délai ?",
+    canton: 'GE',
+    expected_domaine: 'sante',
+    expected_any_article: ['LAMal 41', 'LAMal 53'],
+    notes: "Médicament hors liste LS, urgence médicale — autorisation individuelle OAMal 71a + recours LPGA 52 avec mesures provisionnelles — OAMal 71a : pour un médicament non inscrit sur la liste des spécialités, le médecin peut demander une autorisation individuelle à la caisse si le médicament est approprié et qu'aucune alternative n'existe (condition de l'unicité). LPGA 52 al. 1 : délai d'opposition à la décision de refus = 30 jours dès notification (péremptoire) — ici décision du 3 juin → opposition avant le 3 juillet. LPGA 56 : recours au tribunal cantonal des assurances dans 30 jours si l'opposition est rejetée. Mesures provisionnelles : si le risque d'atteinte irréversible est documenté médicalement, possibilité de demander mesures superprovisionnelles pour forcer le remboursement avant décision finale. '3 juin refus + bébé 5 mois + amyotrophie + pas d'alternative + urgence' sans 'LPGA 52 opposition 30j avant 3 juillet' ni 'OAMal 71a autorisation individuelle si unique alternative'. Signal adversarial = famille croit que le refus de la caisse est définitif sans avocat, sans connaître la procédure d'opposition directe et OAMal 71a.",
+  },
+
+  // ACCIDENT — chauffeur de livraison blesse un piéton avec le véhicule de société, responsabilité de l'employeur commettant quasi-causale (CO 55 / LCR 58)
+  {
+    id: 'adv_accident_12',
+    query: "Un chauffeur de livraison m'a renversé avec sa camionnette de société en marche arrière dans un parking lors de son dernier arrêt de tournée — fracture du genou, 6 semaines d'incapacité, 3'200 CHF de frais non couverts. L'assurance du chauffeur dit que c'est 'une faute personnelle, pas la faute de l'entreprise'. La société de livraison dit que cet arrêt 'n'était pas planifié dans son plan de route officiel'. Le chauffeur n'a pas les moyens de payer. Ai-je un recours contre la société ?",
+    canton: 'VD',
+    expected_domaine: 'accident',
+    expected_any_article: ['CO 55', 'CO 41'],
+    notes: "Responsabilité du commettant pour auxiliaire — quasi-causale, difficile à écarter même pour un arrêt 'non planifié' (CO 55 / LCR 58) — CO 55 al. 1 : l'employeur (commettant) répond du dommage causé par ses travailleurs (auxiliaires) dans l'accomplissement de leur travail ; CO 55 al. 2 : il peut s'exculper s'il prouve avoir pris tous les soins commandés — exculpation quasi-impossible en pratique. Condition 'dans l'accomplissement du travail' : dernier arrêt de tournée avec véhicule de société = toujours dans l'exercice de la fonction, même si arrêt 'non prévu'. LCR 58 al. 1 : responsabilité causale du détenteur du véhicule (la société) pour dommages causés par le véhicule en circulation. '3'200 CHF + camionnette société + dernier arrêt tournée non planifié + chauffeur insolvable + entreprise nie' sans 'CO 55 responsabilité commettant quasi-causale + LCR 58 détenteur' ni 'arrêt non planifié ≠ rupture du lien de préposition'. Signal adversarial = victime croit que la faute personnelle du chauffeur ou l'arrêt 'non planifié' exonère la société.",
+  },
+
+  // ENTREPRISE — perte des deux tiers du capital d'une SA, obligation du CA de convoquer l'AG et recours de l'actionnaire minoritaire (CO 725 / CO 699)
+  {
+    id: 'adv_entreprise_12',
+    query: "Je suis actionnaire à 25% d'une petite SA familiale. La révision du dernier exercice montre que les actifs nets représentent moins d'un tiers du capital-actions nominal (pertes lourdes depuis 2 ans). Le conseil d'administration (3 administrateurs dont mon frère) n'a rien fait depuis 6 mois malgré plusieurs emails. Quelle est l'obligation légale du CA et quel est mon recours si le CA ne bouge pas ?",
+    canton: 'GE',
+    expected_domaine: 'entreprise',
+    expected_any_article: ['CO 725', 'CO 699'],
+    notes: "Perte des deux tiers du capital SA — obligation légale du CA de convoquer l'AG + recours actionnaire (CO 725 / CO 699 / CO 754) — CO 725 al. 1 : si la moitié du capital-actions et des réserves légales n'est plus couverte, le CA doit immédiatement convoquer une AG extraordinaire et lui proposer des mesures d'assainissement. CO 725 al. 2 : en cas de surendettement (actifs < dettes), le CA doit aviser le juge. Ici : actifs < 1/3 du capital = situation CO 725 al. 1, obligation de convoquer. CO 699 al. 3 : un actionnaire représentant au moins 10% du capital (ou actions valant ≥ 1M CHF) peut lui-même exiger la convocation d'une AG extraordinaire. Avec 25%, l'actionnaire a ce droit. CO 754 : les administrateurs qui ne prennent pas les mesures imposées par CO 725 engagent leur responsabilité civile personnelle. '25% + actifs < 1/3 capital + CA inactif 6 mois + frère administrateur' sans 'CO 725 convocation obligatoire immédiate par CA' ni 'CO 699 al. 3 actionnaire 25% peut lui-même convoquer l'AG'. Signal adversarial = actionnaire minoritaire croit ne pas avoir les moyens de forcer une action du CA sans être majoritaire.",
+  },
+
+  // ÉTRANGERS — ressortissant UE vivant en Suisse depuis 4 ans sans permis, obligation d'annonce ALCP, régularisation de droit si conditions remplies (ALCP / LEI 90)
+  {
+    id: 'adv_etrangers_21',
+    query: "Je suis Français et je vis en Suisse depuis 4 ans. J'ai un contrat de travail suisse avec une entreprise suisse. Je n'ai jamais demandé de permis de séjour car on m'avait dit qu'en tant que citoyen UE 'pas besoin de permis grâce à la libre circulation'. Il y a deux semaines, lors d'un contrôle de police, l'agent m'a demandé mon permis de séjour et j'ai dû admettre ne pas en avoir. Il m'a dit de 'régulariser rapidement'. Mon employeur menace de suspendre mon accès aux systèmes sans permis. Que dois-je faire et est-ce que je risque une expulsion ?",
+    canton: 'GE',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LEI 90', 'ALCP 2'],
+    notes: "Ressortissant UE sans permis de séjour — obligation d'annonce et régularisation de droit si conditions remplies (ALCP art. 2 / LEI 90 / OASA 12) — ALCP art. 2 al. 1 : les ressortissants UE/AELE ont le droit de séjourner et travailler en Suisse, mais doivent obtenir une autorisation de séjour (permis B ou L UE). LEI 90 / OASA 12 : l'étranger UE doit s'annoncer auprès du service de la population dans les 8 jours suivant le début de son séjour de plus de 90 jours (ou dès le début de l'emploi). Conséquence d'un séjour non annoncé : amende contraventionnelle possible, mais pas d'expulsion automatique pour un ressortissant UE salarié régularisable. Régularisation : le permis B UE est délivré de droit si contrat de travail valide en Suisse et pas d'empêchements légaux. '4 ans + Français + employeur CH + contrôle police + pas de permis' sans 'ALCP/LEI 90 obligation d'annonce mais régularisation de droit si salarié UE' ni 'pas d'expulsion automatique : amende mais pas de renvoi'. Signal adversarial = ressortissant UE croit soit que la libre circulation exempte de toute démarche, soit qu'il risque l'expulsion en régularisant maintenant.",
+  },
+
   // ASSURANCES — AI exige des mesures de réadaptation professionnelle avant rente, médecin dit contre-indiqué, assuré croit perdre tous droits si refus (LAI 17 / LAI 28 / LPGA 43)
   {
     id: 'adv_assurances_14',

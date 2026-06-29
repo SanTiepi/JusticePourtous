@@ -1275,3 +1275,26 @@ Points à surveiller :
   - `adv_etrangers_21` (ALCP art. 2 / LEI 90 obligation d'annonce UE — régularisation de droit si salarié, pas d'expulsion automatique, amende seulement)
 - **Domaines wave 27** : 10 domaines simultanément — angles inédits : CO 271a présomption abuse post-procédure, CO 336b délai fatal avant fin contrat, CO 82 exception inexécution, CC 261 paternité judiciaire SMS, CC 686 distances plantations, LAVI aide victimes, OAMal 71a urgent, CO 55 commettant, CO 725 perte capital SA, ALCP régularisation UE.
 - **Prochaine action** : mesure éval CLI sur 280 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-06-29 UTC — run agent horaire (wave 28 adversarial : 280→290 cas)
+- **Tenté** : item 1 — wave 28 : +10 cas adversariaux ciblant des angles inédits dans 10 domaines (fiscal LIFD 33a 2022, speed pedelec LCR, aide sociale héritage sans restitution rétro, faux indépendant CO 319, chaudière panne CO 259f, non-concurrence CO 340, prescription CO 127 10 ans + CO 135 SMS, CC 679 indépendant permis, CO 197 garantie légale TV, LP 219 + LACI 51 faillite Sàrl)
+- **Résultat** : passed ✓ — **290 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Commits** : `c2720fa`
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement, aucun code modifié)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Adversarial CLI sur 290 cas : non mesuré ce run (nécessite `claude -p` actif)
+- **Nouveaux cas wave 28 (10)** :
+  - `adv_fiscal_09` (LIFD 33a déduction frais formation professionnelle depuis 2022 — plus de distinction reconversion vs entretien compétences, jusqu'à 12'800 CHF)
+  - `adv_circulation_12` (speed pedelec 45 km/h = cyclomoteur LCR 18/OCV 21 — assurance RC obligatoire, responsabilité causale LCR 58, accident piéton fracture)
+  - `adv_social_12` (aide sociale + héritage 22k — obligation déclaration mais pas de restitution rétroactive pour prestations légalement versées avant l'héritage)
+  - `adv_hybride_12` (consultant facturant → faux indépendant si 4 critères TF remplis — CO 319 requalification, préavis CO 335c, cotisations LAVS 5)
+  - `adv_bail_30` (chaudière panne hiver 6 semaines 15°C + bébé — CO 259d réduction loyer rétroactive + CO 259f résiliation pour défaut grave santé)
+  - `adv_travail_31` (clause non-concurrence 2 ans fintech Suisse + 50k CHF peine conv — CO 340/340a/340b validité + réduction judiciaire possible)
+  - `adv_dettes_27` (prêt 2017 — CO 127 = 10 ans pas 5 ans + CO 135 interruption par SMS "oui je vais m'arranger" = reconnaissance de dette)
+  - `adv_voisinage_20` (abri bois voisin + permis accordé + humidité moisissures — CC 679 action civile indépendante du permis administratif, délai 3 ans dommage)
+  - `adv_consommation_13` (TV 1'400 CHF + rayure fabrication livraison — CO 197 garantie légale défaut, CO 205 résiliation/réduction prix, CO 210 délai 7j dénonciation)
+  - `adv_entreprise_13` (Sàrl 2 mois salaires impayés + faillite imminente — LP 219 2e rang 6 derniers mois + LACI 51 insolvabilité 4 mois ICI + CO 574 pas responsabilité personnelle)
+- **Domaines wave 28** : 10 domaines simultanément — angles inédits : LIFD 33a reconversion (fiscal), speed pedelec = cyclomoteur (circulation), héritage aide sociale non rétroactif (social), faux indépendant CO 319 (hybride), défaut grave bailleur silencieux (bail), non-concurrence CO 340b (travail), prescription 10 ans + SMS (dettes), permis ≠ protection civile CC 679 (voisinage), garantie légale défaut matériel (consommation), protection salariale faillite LP 219 + LACI 51 (entreprise).
+- **Prochaine action** : mesure éval CLI sur 290 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

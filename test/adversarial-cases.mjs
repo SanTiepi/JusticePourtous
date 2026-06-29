@@ -2810,6 +2810,109 @@ export const ADVERSARIAL_CASES = [
     notes: "Ressortissant UE sans permis de séjour — obligation d'annonce et régularisation de droit si conditions remplies (ALCP art. 2 / LEI 90 / OASA 12) — ALCP art. 2 al. 1 : les ressortissants UE/AELE ont le droit de séjourner et travailler en Suisse, mais doivent obtenir une autorisation de séjour (permis B ou L UE). LEI 90 / OASA 12 : l'étranger UE doit s'annoncer auprès du service de la population dans les 8 jours suivant le début de son séjour de plus de 90 jours (ou dès le début de l'emploi). Conséquence d'un séjour non annoncé : amende contraventionnelle possible, mais pas d'expulsion automatique pour un ressortissant UE salarié régularisable. Régularisation : le permis B UE est délivré de droit si contrat de travail valide en Suisse et pas d'empêchements légaux. '4 ans + Français + employeur CH + contrôle police + pas de permis' sans 'ALCP/LEI 90 obligation d'annonce mais régularisation de droit si salarié UE' ni 'pas d'expulsion automatique : amende mais pas de renvoi'. Signal adversarial = ressortissant UE croit soit que la libre circulation exempte de toute démarche, soit qu'il risque l'expulsion en régularisant maintenant.",
   },
 
+  // ── WAVE 28 ──────────────────────────────────────────────────────────────────
+  // 10 nouveaux cas — angles inédits — écrits sans consulter le dico du retriever
+
+  // FISCAL — déduction frais de formation professionnelle (LIFD 33a en vigueur depuis 2022 supprime distinction formation continue / reconversion)
+  {
+    id: 'adv_fiscal_09',
+    query: "Je travaille en banque depuis 8 ans. J'ai payé de ma poche 4'800 CHF pour un certificat en conformité réglementaire — ça m'a permis d'obtenir un poste d'analyste. Le fisc cantonal refuse la déduction en disant que c'est une 'formation de reconversion' et non une 'formation continue d'entretien des compétences'. J'ai entendu qu'une loi avait changé en 2022. Est-ce qu'ils ont le droit de refuser ?",
+    canton: 'ZH',
+    expected_domaine: 'fiscal',
+    expected_any_article: ['LIFD 33a'],
+    notes: "Déduction frais de formation LIFD 33a (en vigueur 01.01.2022) — depuis 2022, la distinction formation continue vs reconversion est supprimée : jusqu'à 12'800 CHF (2024) déductibles pour toute formation ou perfectionnement professionnels, indépendamment du lien avec l'activité actuelle. Le fisc cantonal qui maintient l'ancienne distinction commet une erreur de droit. Délai de réclamation 30 jours (LIFD 132). '4'800 CHF + certificat compliance + fisc refuse reconversion + loi 2022' sans 'LIFD 33a' ni 'déduction reconversion autorisée depuis 2022'. Signal adversarial = domaine fiscal = blind spot attendu JPT.",
+  },
+
+  // CIRCULATION — speed pedelec (vélo électrique 45 km/h) assimilé cyclomoteur, assurance RC obligatoire, accident piéton
+  {
+    id: 'adv_circulation_12',
+    query: "J'ai percuté un piéton avec mon vélo électrique rapide — il peut monter jusqu'à 45 km/h — sur une piste cyclable. Le piéton a une fracture du poignet. Son avocat me contacte pour une indemnisation de 4'500 CHF. Mon vélo n'est pas assuré car je croyais que les vélos n'avaient pas besoin d'assurance. Qu'est-ce que je risque légalement ?",
+    canton: 'BE',
+    expected_domaine: 'circulation',
+    expected_any_article: ['LCR 18', 'LCR 63', 'OCV 21'],
+    notes: "Speed pedelec (>25 km/h, max 45 km/h) = cyclomoteur léger selon LCR 18 / OCV 21. Assurance RC obligatoire (LCR 63). Sans assurance = infraction LCR 96 + responsabilité civile personnelle intégrale du propriétaire (LCR 58 s'applique : les speed pedelec sont assimilés à des véhicules à moteur). Piéton = droit à réparation intégrale CO 41/LCR 65. Contrairement au vélo classique (pur CO 41 avec faute prouvée), un speed pedelec engage la responsabilité causale du détenteur. '45 km/h + vélo + fracture piéton + pas d'assurance + croyait pas nécessaire' sans 'speed pedelec = cyclomoteur LCR + RC obligatoire'. Signal adversarial = confusion vélo classique vs speed pedelec.",
+  },
+
+  // SOCIAL — aide sociale et héritage reçu : pas de remboursement rétroactif pour prestations légalement versées (LIAS restitution)
+  {
+    id: 'adv_social_12',
+    query: "Je reçois l'aide sociale depuis 3 ans après une dépression sévère. Il y a 5 mois, j'ai reçu un héritage de 22'000 CHF de ma grand-mère. J'en ai déjà utilisé 8'000 pour payer des dettes. La travailleuse sociale m'informe que je dois déclarer l'héritage et qu'elle peut 'exiger le remboursement des 3 dernières années d'aide'. Est-ce qu'ils peuvent vraiment récupérer les 3 ans d'aide sociale passés ?",
+    canton: 'VD',
+    expected_domaine: 'social',
+    expected_any_article: ['Cst 12', 'LIAS 42', 'LIAS 26'],
+    notes: "Aide sociale et héritage : obligation de déclaration sans restitution rétroactive — L'héritage doit être déclaré (LIAS VD 42 / équivalents cantonaux : obligation de déclarer tout changement de situation). Les futures prestations seront réduites ou supprimées tant que la fortune subsiste (franchise cantonale variable, ~10k CHF VD). MAIS : les prestations versées légalement AVANT l'héritage ne peuvent pas être réclamées rétroactivement — elles étaient dues au moment du versement et leur remboursement ne peut être exigé que si la situation avait été frauduleusement dissimulée. 22k − 8k = 14k disponible → réduction/suspension des aides futures, mais pas remboursement des 3 ans passés. 'Héritage 22k + 3 ans aide + remboursement rétroactif ?' sans 'pas de restitution pour prestations légalement versées antérieurement'. Signal adversarial = croyance que tout héritage déclenche un remboursement rétroactif total.",
+  },
+
+  // HYBRIDE (travail) — consultant facturant avec contrat prestataire = faux indépendant si 4 critères TF remplis (CO 319 requalification)
+  {
+    id: 'adv_hybride_12',
+    query: "Je travaille pour une startup depuis 2 ans avec un 'contrat de consultant indépendant'. Je gagne 8'000 CHF par mois, je n'ai qu'eux comme client, je travaille dans leurs bureaux de 9h à 18h avec leur matériel informatique et sous leurs directives. Ils stoppent notre collaboration immédiatement sans préavis ni indemnité, en disant 'vous n'êtes pas un employé'. Mon comptable parle de 'faux indépendant'. Ai-je des droits comme un salarié ?",
+    canton: 'GE',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 319', 'CO 335c'],
+    notes: "Requalification contrat consultant en contrat de travail (pseudo-indépendant) — CO 319 : le contrat de travail se définit par la subordination. Les 4 critères TF (ATF 129 III 664) : intégration dans l'organisation (bureaux + matériel), absence de risque économique propre, temps fixé par l'employeur, dépendance d'un seul client. Ici tous remplis → requalification probable en contrat de travail → préavis légal CO 335c (2 mois en 3e année d'ancienneté), droit aux vacances CO 329a, cotisations AVS/AI/AC dues. LAVS 5 al. 2 : l'activité dépendante de fait est soumise aux cotisations même si facturée en prestation de service. 'Consultant + un seul client + bureau + directives + stop immédiat + faux indépendant' sans 'CO 319 requalification' ni 'label contractuel ≠ réalité économique'. Signal adversarial = employeur croit pouvoir contourner le CO par un label contractuel.",
+  },
+
+  // BAIL — panne de chaudière en hiver, 6 semaines à 15°C, bébé, bailleur silencieux : résiliation CO 259f + réduction loyer CO 259d
+  {
+    id: 'adv_bail_30',
+    query: "Depuis 6 semaines ma chaudière est en panne et il fait 15°C dans mon appartement. J'ai un bébé de 9 mois. J'ai envoyé 3 lettres recommandées au propriétaire qui ne répond jamais. Maintenant je veux soit partir soit retenir mon loyer. Est-ce que c'est possible et puis-je récupérer une partie du loyer pour les 6 semaines sans chauffage ?",
+    canton: 'GE',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 259', 'CO 259a', 'CO 259d', 'CO 259f'],
+    notes: "Défaut grave non corrigé — réduction loyer + résiliation accélérée — CO 259a : locataire peut exiger réduction du loyer proportionnelle au défaut (absence chauffage hiver = défaut important, réduction 20-50% selon jurisprudence). CO 259d : réduction peut être exigée rétroactivement pour toute la période de défaut (6 semaines). CO 259f : si défaut grave mettant en danger la santé ou la sécurité (15°C avec bébé = oui) et non corrigé après mise en demeure avec délai raisonnable, résiliation du bail avec préavis de 30 jours possible par le locataire. Retenue directe du loyer : NON permise sans passer par l'autorité de conciliation (consignation judiciaire). '6 semaines + 15°C + bébé + 3 lettres + propriétaire silencieux + retenir loyer ?' sans 'CO 259d réduction rétroactive' ni 'CO 259f résiliation pour défaut grave santé'. Signal adversarial = ne pas savoir qu'on peut résilier et récupérer du loyer payé.",
+  },
+
+  // TRAVAIL — clause de non-concurrence 2 ans all-fintech Suisse, validité CO 340, peine conventionnelle CO 340b
+  {
+    id: 'adv_travail_31',
+    query: "Après 5 ans comme ingénieur dans une startup fintech, j'ai démissionné et rejoint un concurrent 6 semaines après. Mon ex-employeur m'envoie une lettre d'avocat réclamant 50'000 CHF de 'peine conventionnelle' pour violation d'une clause dans mon contrat qui m'interdit de travailler dans le secteur fintech en Suisse pendant 2 ans. Est-ce que cette clause est légalement valable et dois-je vraiment payer ?",
+    canton: 'ZH',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 340', 'CO 340a', 'CO 340b'],
+    notes: "Validité clause de non-concurrence (CO 340/340a/340b) — CO 340 al. 2 : clause valide si l'employé avait accès à la clientèle ou à des secrets de fabrication ET si leur utilisation peut causer un préjudice sensible. CO 340a al. 1 : limitée en durée (max 3 ans), lieu (pas nécessairement Suisse entier) et objet (pas plus large que nécessaire). 2 ans fintech Suisse entier = potentiellement trop large géographiquement mais pas au-delà de 3 ans. CO 340b al. 2 : le juge peut réduire la peine conventionnelle si excessive. TF jurisprudence : si l'employeur a résilié sans juste motif, la clause tombe (CO 340c al. 2). Si c'est l'employé qui démissionne sans juste motif imputable à l'employeur, la clause reste applicable. À analyser : est-ce que l'ingénieur avait vraiment accès à des secrets de fabrication ? '50k CHF + non-concurrence 2 ans + fintech + démission + concurrent' sans 'CO 340 conditions validité' ni 'CO 340b réduction judiciaire'. Signal adversarial = employé croit la clause automatiquement valide et applicable.",
+  },
+
+  // DETTES — prêt privé 2017, prescription CO 127 (10 ans, non 5 ans) + interruption CO 135 par reconnaissance SMS
+  {
+    id: 'adv_dettes_27',
+    query: "J'ai emprunté 12'000 CHF à un ami en 2017 via un papier signé à la main. Je n'ai jamais remboursé. Il y a 2 mois, mon ami m'a envoyé un SMS disant 'tu dois me rembourser les 12'000 CHF' et j'ai répondu 'oui je sais, je vais m'arranger'. Il parle maintenant de me poursuivre. Est-ce que c'est prescrit après 7 ans ou est-ce qu'il peut encore agir ?",
+    canton: null,
+    expected_domaine: 'dettes',
+    expected_any_article: ['CO 127', 'CO 130', 'CO 135', 'CO 138'],
+    notes: "Prescription prêt privé (CO 127 = 10 ans) + interruption par reconnaissance SMS (CO 135 lit. b) — CO 127 : délai de prescription ordinaire des créances civiles = 10 ANS (erreur très répandue : les 5 ans de CO 128 ne s'appliquent qu'aux créances périodiques comme loyers, intérêts, salaires). Un prêt de 2017 n'est pas prescrit en 2024 (échéance 2027). Double piège : CO 135 lit. b : la prescription est interrompue lorsque le débiteur reconnaît la dette — 'oui je sais, je vais m'arranger' par SMS peut constituer une reconnaissance écrite implicite, ce qui rouvre un nouveau délai de 10 ans depuis le SMS. Résultat : créancier peut agir, prescription non-atteinte ET le SMS peut avoir rouvert le délai. '2017 + prêt papier + 7 ans + SMS + prescrit ?' sans 'CO 127 = 10 ans (pas 5)' ni 'CO 135 interruption par reconnaissance'. Signal adversarial = croyance très répandue que les dettes se prescrivent en 5 ans.",
+  },
+
+  // VOISINAGE — abri de jardin contre mur mitoyen, permis accordé, humidité sur fonds voisin : CC 679 indépendant du permis
+  {
+    id: 'adv_voisinage_20',
+    query: "Mon voisin a construit un abri en bois de 12 m² contre notre mur mitoyen il y a 2 ans. Le permis de construire avait été accordé et je n'avais pas fait recours dans les 30 jours. Depuis cette construction, mon salon est beaucoup plus humide et j'ai des moisissures sur le mur commun. Puis-je encore faire quelque chose si le délai de recours contre le permis est passé ?",
+    canton: 'VD',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 679', 'CC 684'],
+    notes: "Action civile en immissions indépendante du permis public (CC 679 / CC 684) — Le permis de construire (droit public des constructions) est accordé et le délai de recours administratif est expiré. MAIS le droit privé est indépendant : CC 679 al. 1 : le propriétaire qui use de son fonds de façon à causer à d'autres propriétaires voisins des dommages ou des immissions excessives engage sa responsabilité civile même si l'ouvrage est légalement autorisé. CC 684 al. 1 : immissions excessives dépassant la mesure ordinaire tolérée (humidité mesurable, moisissures documentées = excès). Action : en cessation + dommages-intérêts CO 97/41 devant le tribunal civil. Délai : 3 ans depuis connaissance du dommage (CO 60). Le délai recours permis (administratif) et délai action civile (CC 679) sont totalement distincts. '2 ans + permis accordé + abri + humidité + moisissures + délai recours passé' sans 'CC 679 indépendant du permis' ni 'action civile délai 3 ans depuis dommage'. Signal adversarial = croyance que le permis accordé immunise définitivement contre toute action.",
+  },
+
+  // CONSOMMATION — rayure de fabrication sur TV neuf livré, marchand refuse garantie car 'cosmétique pas fonctionnel' (CO 197 / CO 205)
+  {
+    id: 'adv_consommation_13',
+    query: "J'ai commandé un téléviseur 1'400 CHF sur un site suisse en ligne. En déballant la commande, j'ai découvert une rayure de fabrication bien visible sur l'écran. Le service client dit que 'les rayures ne sont pas couvertes par la garantie car c'est cosmétique, pas fonctionnel, le TV marche'. Le délai de 10 jours pour retourner l'article est presque expiré. Ai-je des droits ?",
+    canton: null,
+    expected_domaine: 'consommation',
+    expected_any_article: ['CO 197', 'CO 205', 'CO 210'],
+    notes: "Défaut matériel à la livraison — garantie légale vendeur (CO 197 / CO 205) — CO 197 al. 1 : le vendeur répond des défauts qui diminuent notablement la valeur ou l'utilité de la chose — une rayure visible sur un écran de TV neuf diminue sa valeur marchande. CO 205 : l'acheteur peut choisir résiliation (action rédhibitoire) ou réduction de prix (action estimatoire). CO 210 : délai de dénonciation du défaut = dans les 7 jours suivant la découverte (et non le délai de 10 jours de rétractation). La garantie légale CO est distincte de la garantie commerciale du fabricant et NE peut PAS être exclue pour vice de fabrication (CO 199 : exclusion invalide si vendeur connaissait ou devait connaître le vice). Le site ne peut pas se cacher derrière 'cosmétique = non garanti'. '1400 CHF TV + rayure fabrication + cosmétique + refuse garantie + délai rétractation' sans 'CO 197 garantie légale défaut' ni 'CO 205 résiliation ou réduction prix'. Signal adversarial = confusion garantie commerciale (fonctionnel only) vs garantie légale CO.",
+  },
+
+  // ENTREPRISE — faillite Sàrl imminente, salaires 2 mois impayés : protection LP 219 2e rang + LACI 51 insolvabilité employeur
+  {
+    id: 'adv_entreprise_13',
+    query: "Je dirige ma Sàrl depuis 6 ans. Suite à la perte de mon principal client, je ne peux plus payer les salaires de mes 3 employés depuis 2 mois. Je vais probablement devoir fermer et déposer le bilan. Des gens me disent que mes employés vont 'tout perdre'. Est-ce qu'il y a une protection légale pour leurs salaires impayés si je dépose le bilan, et suis-je personnellement responsable de ces salaires ?",
+    canton: 'GE',
+    expected_domaine: 'entreprise',
+    expected_any_article: ['LP 219', 'LACI 51', 'CO 574'],
+    notes: "Protection salariale en faillite d'une Sàrl — LP 219 al. 4 ch. 2 : les créances salariales (salaires, vacances, heures supp.) sont privilégiées au 2e rang de la faillite, couvrant les 6 derniers mois impayés. LACI 51 : filet complémentaire crucial — si faillite déclarée, les employés ont droit à des 'indemnités en cas d'insolvabilité de l'employeur' (ICI) auprès des caisses de chômage, couvrant jusqu'à 4 mois de salaires impayés, indépendamment de l'actif de la faillite. Délai de demande ICI strict : 60 jours dès faillite ou clôture. CO 574 : la Sàrl limite la responsabilité au capital social — le gérant n'est PAS personnellement responsable des dettes ordinaires SAUF faute de gestion (CO 754 : retard à déposer le bilan si perte 2/3 capital). '6 ans Sàrl + 2 mois salaires impayés + déposer bilan + employés tout perdre + responsable personnellement ?' sans 'LP 219 2e rang' ni 'LACI 51 insolvabilité'. Signal adversarial = dirigeant croit ses employés sans protection, ignore filet LACI.",
+  },
+
   // ASSURANCES — AI exige des mesures de réadaptation professionnelle avant rente, médecin dit contre-indiqué, assuré croit perdre tous droits si refus (LAI 17 / LAI 28 / LPGA 43)
   {
     id: 'adv_assurances_14',

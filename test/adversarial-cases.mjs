@@ -2922,6 +2922,106 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['LAI 17', 'LAI 28'],
     notes: "Refus motivé des mesures de réadaptation AI — motif valable si avis médical contraire (LAI 17 / LAI 28 / LPGA 43 / LAI 7a) — LAI 17 al. 1 : les assurés invalides ont droit à des mesures d'ordre professionnel si elles sont de nature à améliorer durablement leur capacité de gain. LAI 28 al. 1 : une rente entière est octroyée si la capacité de gain est réduite d'au moins 70%. LPGA 43 al. 3 : si l'assuré refuse sans motif valable de participer aux mesures ou de se soumettre aux examens, l'AI peut réduire ou refuser les prestations. Mais : refus motivé par avis médical attesté constitue un motif valable. LAI 7a : le principe 'réadaptation avant rente' ne s'applique pas si l'état de santé le contre-indique formellement. Procédure : déposer un refus écrit formel avec rapport psychiatrique détaillé, demander une expertise médicale indépendante (LPGA 44), recourir contre toute décision de suppression de prestations. 'Burnout 2 ans + 100% incapacité + psychiatre dit aggravation + AI exige stage' sans 'refus motivé avec rapport médical = motif valable LPGA 43' ni 'LAI 7a exception médicale à la réadaptation obligatoire'. Signal adversarial = assuré croit qu'un refus des mesures de réadaptation entraîne automatiquement la perte de tout droit AI, sans savoir qu'un avis médical contraire constitue un motif valable de refus.",
   },
+
+  // BAIL — bail verbal sans contrat écrit, bailleur dit que les droits locataires ne s'appliquent pas : CO 253 (aucune forme requise)
+  {
+    id: 'adv_bail_31',
+    query: "J'ai emménagé dans un appartement il y a 3 ans avec un accord oral avec le propriétaire, un ami de la famille. Pas de contrat écrit, pas d'état des lieux, juste un virement mensuel de 1'100 CHF. Maintenant il veut me mettre dehors en disant 'pas de contrat signé donc pas de bail donc pas de droits pour toi, tu dois partir en 2 semaines'. A-t-il raison ?",
+    canton: 'VD',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 253', 'CO 266', 'CO 271'],
+    notes: "Bail verbal valide + protection locataire pleine (CO 253 / CO 266) — CO 253 : le contrat de bail ne requiert AUCUNE forme particulière — il peut être oral, tacite ou écrit. 3 ans de virements mensuels = preuve du bail et du loyer convenu. Conséquences : toutes les règles du CO bail s'appliquent intégralement : délais de congé légaux (3 mois pour appartement, CO 266a), protection contre résiliation abusive (CO 271), droit au relogement de remplacement (CO 272). Le bailleur NE peut PAS donner un congé de 2 semaines — délai légal minimum de 3 mois (fin de trimestre ou selon usage local). Absence de contrat écrit : difficultés probatoires sur le montant exact mais n'invalide pas le bail. '3 ans + accord oral + pas de contrat + 2 semaines + bailleur dit pas de droits' sans 'CO 253 bail valable sans forme écrite' ni 'CO 266 délais légaux de congé'. Signal adversarial = croyance très répandue qu'un bail doit être écrit pour être valable et que sans écrit on n'a aucun droit.",
+  },
+
+  // TRAVAIL — licenciement 3 semaines après plainte interne contre harcèlement : présomption représailles CO 336 al. 1 lit. c
+  {
+    id: 'adv_travail_32',
+    query: "J'ai déposé une plainte formelle interne contre mon supérieur direct pour harcèlement moral il y a 3 semaines. Hier j'ai reçu un courrier me licenciant avec mon préavis légal de 2 mois 'pour raisons économiques et restructuration'. La société se porte bien financièrement. Est-ce que ce licenciement est contestable même s'il est justifié officiellement par des motifs économiques ?",
+    canton: null,
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 336', 'CO 336a', 'CO 336b'],
+    notes: "Licenciement abusif par représailles — présomption temporelle (CO 336 al. 1 lit. c) — CO 336 al. 1 lit. c : le licenciement est abusif s'il est donné parce que le travailleur a fait valoir de bonne foi des prétentions résultant du contrat de travail — une plainte pour harcèlement = faire valoir ses droits CO 328 (obligation de l'employeur de protéger la personnalité). La jurisprudence TF reconnaît une présomption de causalité lorsque la succession temporelle est étroite (3 semaines = très proche). La justification 'motifs économiques' ne suffit pas à renverser cette présomption si l'employeur ne démontre pas des difficultés réelles et documentées. Procédure impérative : opposition écrite AVANT la fin du préavis (CO 336b al. 1 — délai fatal avant la dernière journée de travail), puis action en justice dans les 180 jours suivant la fin du contrat (CO 336b al. 2). CO 336a : indemnité jusqu'à 6 mois de salaire si abusif. '3 semaines + plainte harcèlement + licenciement motifs économiques + contestable ?' sans 'CO 336 al. 1 lit. c représailles' ni 'CO 336b délai opposition fatal avant fin contrat'. Signal adversarial = citoyen attend la fin du préavis pour consulter un avocat et perd le délai fatal d'opposition.",
+  },
+
+  // DETTES — casino suisse licencié réclame un crédit de jeu de 8000 CHF : CO 515 (jeux) vs exception LMJ 2019
+  {
+    id: 'adv_dettes_28',
+    query: "J'ai joué en ligne sur un casino suisse officiel et j'ai utilisé 8'000 CHF de 'crédit de jeu' proposé par la plateforme. J'ai tout perdu. Le casino me réclame maintenant ces 8'000 CHF via un cabinet de recouvrement. Un ami m'a dit que les dettes de jeux ne sont pas légalement exigibles en Suisse. Est-ce vrai et dois-je payer ?",
+    canton: null,
+    expected_domaine: 'dettes',
+    expected_any_article: ['CO 515', 'LP 67'],
+    notes: "Dettes de jeux — distinction jeux licenciés vs illicites (CO 515 / LMJ 2019) — CO 515 al. 1 : les dettes résultant de jeux ou de paris ne donnent pas d'action en justice (exception naturelle) — croyance historiquement vraie. MAIS : la LMJ (Loi fédérale sur les jeux d'argent, en vigueur 01.01.2019) crée une exception majeure : les casinos titulaires d'une licence CFMJ (Commission fédérale des maisons de jeu) peuvent offrir du crédit de jeu et leurs créances sont exigibles comme des dettes civiles ordinaires. Depuis 2019, les casinos suisses en ligne licenciés (SwissCasinos, Grand Casino Lucerne online, etc.) tombent dans cette exception. La défense 'dette de jeux non exigible' ne fonctionne que pour les jeux non-autorisés (paris entre particuliers, plateformes étrangères illégales). Vérification : est-ce un casino CFMJ licencié ? Si oui → dette exigible. Si plateforme étrangère ou non-licenciée → CO 515 s'applique encore. '8000 CHF + casino suisse + crédit jeu + dette non exigible ?' sans 'LMJ exception casinos licenciés depuis 2019' ni 'vérification licence CFMJ'. Signal adversarial = croyance (vraie avant 2019) que toutes les dettes de jeux sont inexigibles, sans savoir que la loi a changé.",
+  },
+
+  // FAMILLE — droit de visite des grands-parents après rupture avec leur enfant (mère des petits-enfants) : CC 274a
+  {
+    id: 'adv_famille_25',
+    query: "Depuis la séparation conflictuelle de notre fille de son partenaire, nous n'avons plus aucun contact avec nos deux petits-enfants de 6 et 9 ans. Notre fille (garde principale) refuse toute rencontre et dit qu'elle a le droit absolu de décider qui voit ses enfants. On nous dit partout que les grands-parents n'ont aucun droit légal face au parent gardien. Est-ce exact en Suisse ?",
+    canton: 'VD',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 274a'],
+    notes: "Droit de visite des grands-parents — CC 274a (droit propre, indépendant du parent) — CC 274a : si les relations entretenues par l'enfant avec des tiers (grands-parents, autres personnes de référence) sont importantes pour son développement, le juge peut ordonner un droit de contact — MÊME CONTRE l'avis du parent gardien. Ce droit est propre des grands-parents, distinct du droit de visite du parent non-gardien. Condition : démontrer l'importance de la relation pour l'enfant (durée des liens, régularité des contacts antérieurs, rôle affectif établi). Procédure : requête au tribunal cantonal compétent (autorité de protection de l'enfant ou tribunal de la famille) — mesures provisionnelles rapides si rupture brutale récente. TF ATF 130 III 737 : intérêt de l'enfant prime et relation établie avec grands-parents = facteur favorable. 'Grands-parents + petits-enfants + mère refuse contact + pas de droits légaux ?' sans 'CC 274a droit propre des grands-parents' ni 'intérêt de l'enfant pour son développement'. Signal adversarial = croyance répandue que le parent gardien dispose d'un droit absolu sur les contacts de ses enfants.",
+  },
+
+  // ETRANGERS — frontalier français licencié en Suisse, quel pays verse le chômage ? (R. 883/2004 principe résidence)
+  {
+    id: 'adv_etrangers_22',
+    query: "Je suis Français et je travaille comme frontalier à Genève depuis 4 ans — je rentre chaque soir en France. Je viens d'être licencié. J'ai cotisé à l'assurance-chômage suisse (AC déduite sur mon salaire). Au bureau de l'emploi à Genève on me dit d'aller en France, en France on me dit que c'est la Suisse qui doit payer. Qui a raison et où dois-je m'inscrire ?",
+    canton: 'GE',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LACI 8', 'LACI 13'],
+    notes: "Chômage frontalier suisse — R. 883/2004 art. 65 (résidence = compétence) — Accord bilatéraux CH-UE + R. 883/2004 : le travailleur frontalier UE qui revient chaque jour ou chaque semaine dans son pays de résidence et se retrouve au chômage complet doit s'inscrire dans son PAYS DE RÉSIDENCE (France). C'est France Travail (ex Pôle Emploi) qui verse les indemnités, calculées sur le salaire suisse en CHF converti selon taux officiel. Peu importe que les cotisations AC aient été payées en Suisse — le principe de résidence R. 883/2004 art. 65 prime. Exception très rare : travailleur frontalier qui ne rentre pas chaque semaine (postés longue distance) → peut rester en Suisse. Pour un frontalier genevois type (rentre chaque soir) : France Travail est l'unique guichet. La CDI France-Suisse ne porte que sur la fiscalité, pas sur le chômage. '4 ans frontalier GE + licencié + cotisations AC suisses + Suisse ou France + qui paie ?' sans 'R. 883/2004 art. 65 : pays de résidence compétent' ni 'France Travail = guichet unique frontalier chômage complet'. Signal adversarial = frontalier espère rester dans le système suisse (souvent plus avantageux), ignore la règle de résidence.",
+  },
+
+  // VIOLENCE — violence entre frères adultes lors d'un conflit d'héritage : CP 123 + CC 28b ne se limite pas à la violence conjugale
+  {
+    id: 'adv_violence_14',
+    query: "Mon frère de 45 ans m'a frappé à plusieurs reprises lors d'une dispute sur l'héritage de notre père — coups de poing, a claqué une porte sur mon bras, et m'a dit 'je vais te tuer si tu gardes l'appartement'. La police dit que c'est un 'conflit privé de famille' et n'a pris qu'un constat sans suite. Puis-je porter plainte pénale et obtenir une protection légale contre mon propre frère adulte ?",
+    canton: 'GE',
+    expected_domaine: 'violence',
+    expected_any_article: ['CP 123', 'CC 28b', 'CC 28'],
+    notes: "Violence entre membres de la fratrie adulte — plainte pénale + protection civile CC 28b non limitée à la violence conjugale — CP 123 : lésions corporelles simples (coups documentés) = infraction sur plainte dans les 3 mois. CP 180 : menaces graves ('je vais te tuer') = poursuite d'office, la police ne peut pas classer 'litige privé'. CC 28b : mesures de protection de la personnalité — applicables à TOUTE personne atteignant illicitement la personnalité (frère, parent, voisin, inconnu) et pas seulement en violence conjugale. Le tribunal peut ordonner interdiction de contact, distance minimale, expulsion du domicile partagé. En GE : LPO — mesures d'éloignement police dans les 72h si risque immédiat, indépendamment de toute plainte pénale. LAVI : aide aux victimes d'infractions (VD : LAVI centre, GE : LAVI Genève) — consultation gratuite, soutien procédure. '45 ans frère + coups + menaces mort + conflit héritage + litige privé + protection possible ?' sans 'CP 123 plainte pénale' ni 'CC 28b protection personnalité non limitée à violence conjugale'. Signal adversarial = croyance que la violence familiale non-conjugale échappe aux mesures légales de protection.",
+  },
+
+  // ACCIDENT — glissade sur verglas devant un commerce, qui est responsable : commerçant ou commune ? (CO 58 / règlements communaux déneigement)
+  {
+    id: 'adv_accident_13',
+    query: "J'ai glissé sur une plaque de verglas non salée directement devant l'entrée d'un magasin de chaussures au centre-ville et je me suis cassé le poignet. Fracture + arrêt 6 semaines = 4'200 CHF de frais. Le magasin dit que c'est la commune qui doit saler les trottoirs, la commune dit que c'est le commerçant riverain qui est responsable. Ils se renvoient la balle. Comment savoir qui est responsable et peut-on agir contre les deux ?",
+    canton: 'VD',
+    expected_domaine: 'accident',
+    expected_any_article: ['CO 41', 'CO 58'],
+    notes: "Responsabilité pour chute sur verglas devant un commerce — CO 58 + règlements communaux de déneigement — CO 58 al. 1 : responsabilité causale du 'détenteur de l'ouvrage' — une entrée de commerce + le trottoir attenant peuvent constituer un 'ouvrage' insuffisamment entretenu. Règlements communaux VD : la plupart des communes imposent aux propriétaires/locataires commerciaux de saler/déneiger le trottoir attenant dès 6h (ou 7h) jusqu'à 20h — obligation publique CUMULATIVE avec la responsabilité civile CO. Responsabilité multiple possible : commerçant (obligation riveraine + CO 58 si l'entrée lui appartient), propriétaire de l'immeuble (selon bail), commune (si trottoir communal avec manquement propre). Action pratique : assigner tous les responsables potentiels dans la réclamation, obtenir le rapport de police + photos + bulletin météo du jour + constat médical précis. Assurance RC professionnelle du commerçant couvre souvent ce type de sinistre. '4200 CHF + verglas + commerce + commune renvoie + commerçant renvoie + qui est responsable ?' sans 'CO 58 responsabilité causale' ni 'règlements communaux déneigement = obligation du riverain'. Signal adversarial = citoyen bloqué par le ping-pong commune/commerce, ne sait pas qu'il peut réclamer contre les deux simultanément.",
+  },
+
+  // SANTE — surcoût chambre individuelle hôpital non-demandée par patient inconscient : CO 1 / LAMal 43
+  {
+    id: 'adv_sante_17',
+    query: "J'ai été hospitalisé d'urgence inconscient suite à un accident de vélo. J'ai une assurance LAMal de base seulement, sans assurance complémentaire. L'hôpital me présente maintenant une facture avec un supplément de 3'800 CHF pour 'hospitalisation en chambre individuelle'. Quand j'étais admis je n'avais rien signé — j'étais inconscient. Suis-je obligé de payer ce supplément ?",
+    canton: 'VD',
+    expected_domaine: 'sante',
+    expected_any_article: ['LAMal 41', 'LAMal 43'],
+    notes: "Surcoût chambre individuelle non-consentie par patient inconscient — CO 1 + LAMal 43 — CO 1 : un contrat valide requiert un accord de volontés (offre + acceptation). Patient inconscient = aucun consentement exprès ni tacite possible. Un supplément pour chambre individuelle (service médical complémentaire non-couvert par LAMal) n'est valable que si le patient l'a expressément accepté ou si un représentant légal/proche autorisé a signé. LAMal 43 : la liste des prestations de base couvre l'hospitalisation en division commune — c'est la norme par défaut. L'hôpital ne peut facturer un supplément que si un contrat distinct a été conclu. Si inconscient et aucun proche n'a signé : refus du supplément justifiable. Procédure : contestation écrite motivée à l'hôpital (délai 30 jours), puis médiateur hospitalier cantonal (VD : Bureau du médiateur de la Santé), puis tribunal civil si nécessaire. '3800 CHF + chambre individuelle + inconscient + rien signé + LAMal de base' sans 'CO 1 accord de volontés requis' ni 'LAMal 43 chambre commune = norme par défaut sans supplément'. Signal adversarial = patient croit qu'il doit payer ce que l'hôpital facture sans savoir qu'un consentement est nécessaire.",
+  },
+
+  // SUCCESSIONS — objet légué dans le testament vendu par le testateur avant son décès : CC 484 caducité du legs spécifique
+  {
+    id: 'adv_successions_14',
+    query: "Mon grand-père vient de décéder. Son testament notarié de 2019 stipule 'je lègue ma montre Rolex Submariner à mon neveu Paul'. Or grand-père a vendu cette montre lui-même en 2023 pour payer des soins médicaux. Paul réclame maintenant que l'hoirie lui verse la valeur de la montre en argent (environ 12'000 CHF). Doit-on lui payer quelque chose ?",
+    canton: null,
+    expected_domaine: 'successions',
+    expected_any_article: ['CC 484', 'CC 481'],
+    notes: "Caducité d'un legs spécifique si l'objet n'existe plus dans la succession (CC 484) — CC 484 al. 1 : le legs est caduc si l'objet déterminé n'existe plus dans la succession ou n'a jamais appartenu au testateur. Si le testateur a lui-même aliéné (vendu) la chose léguée avant son décès, cette aliénation volontaire vaut révocation tacite du legs (CC 481 al. 2 par analogie, jurisprudence TF). EXCEPTION très étroite : si le testament contenait une clause générale du type 'ou de sa valeur en argent' ou 'à titre de rente équivalente' — mais sans clause expresse, la jurisprudence ne présume pas la volonté de substituer. Résultat pratique : Paul n'a en principe AUCUN droit à la valeur en argent de la montre. L'argent de la vente est entré dans la masse successorale ordinaire partagée entre héritiers selon leur part. '2019 testament Rolex + vendue 2023 + décès 2024 + neveu réclame 12000 CHF ?' sans 'CC 484 caducité legs si objet aliéné avant décès' ni 'révocation tacite par vente volontaire'. Signal adversarial = légataire croit que le legs survit à la vente de l'objet sous forme d'équivalent monétaire.",
+  },
+
+  // CONSOMMATION — vice caché voiture d'occasion achetée à un particulier avec clause "vendu en l'état" : CO 199 vs CO 203 (fraude = exclusion nulle)
+  {
+    id: 'adv_consommation_14',
+    query: "J'ai acheté une voiture d'occasion à un particulier via Ricardo pour 9'500 CHF. Le contrat de vente (formulaire trouvé sur internet) mentionnait 'vendu en l'état, sans garantie'. 6 semaines plus tard, la boîte de vitesses tombe en panne — le mécanicien dit que c'est un problème connu depuis au moins 6 mois, pas une usure normale. Le vendeur ne répond plus. Est-ce que la clause 'sans garantie' m'empêche tout recours ?",
+    canton: 'GE',
+    expected_domaine: 'consommation',
+    expected_any_article: ['CO 197', 'CO 199', 'CO 203'],
+    notes: "Vice caché C2C + clause 'sans garantie' vs CO 203 (dol) — CO 197 : le vendeur répond des défauts qui diminuent notablement la valeur ou l'utilité de la chose. CO 199 : l'exclusion de garantie est valide entre particuliers (contrairement aux ventes B2C). EXCEPTION CRITIQUE — CO 203 : la clause d'exclusion de garantie est nulle si le vendeur a dissimulé frauduleusement un vice dont il avait connaissance. Si le mécanicien peut attester que le problème de boîte de vitesses était préexistant et objectivement décelable par le propriétaire (bruit, difficulté passage vitesses), la fraude dolosive est plausible. Délai de dénonciation : CO 210 (2 ans depuis livraison), mais le délai de découverte est crucial — dénoncer immédiatement à la découverte (lettre recommandée). Action possible : résolution du contrat (action rédhibitoire) + restitution 9500 CHF, ou réduction du prix. Preuve : rapport du mécanicien + historique d'entretien si obtenu. '9500 CHF + particulier + contrat sans garantie + boîte vitesses + 6 semaines + problème préexistant ?' sans 'CO 203 : exclusion nulle si vice dissimulé sciemment' ni 'CO 197/199 : exception dol fait tomber la clause'. Signal adversarial = acheteur croit que 'sans garantie' = aucun recours possible, ignore l'exception pour dissimulation frauduleuse.",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

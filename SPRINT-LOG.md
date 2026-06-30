@@ -1298,3 +1298,26 @@ Points à surveiller :
   - `adv_entreprise_13` (Sàrl 2 mois salaires impayés + faillite imminente — LP 219 2e rang 6 derniers mois + LACI 51 insolvabilité 4 mois ICI + CO 574 pas responsabilité personnelle)
 - **Domaines wave 28** : 10 domaines simultanément — angles inédits : LIFD 33a reconversion (fiscal), speed pedelec = cyclomoteur (circulation), héritage aide sociale non rétroactif (social), faux indépendant CO 319 (hybride), défaut grave bailleur silencieux (bail), non-concurrence CO 340b (travail), prescription 10 ans + SMS (dettes), permis ≠ protection civile CC 679 (voisinage), garantie légale défaut matériel (consommation), protection salariale faillite LP 219 + LACI 51 (entreprise).
 - **Prochaine action** : mesure éval CLI sur 290 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-06-30 UTC — run agent horaire (wave 29 adversarial : 290→300 cas)
+- **Tenté** : item 1 — wave 29 : +10 cas adversariaux ciblant des angles inédits (bail verbal CO 253, travail représailles licenciement CO 336 lit. c, dettes jeux casino LMJ 2019, famille grands-parents CC 274a, étrangers chômage frontalier R. 883/2004, violence fratrie CC 28b non conjugal, accident verglas riverain CO 58, sante chambre non-consentie LAMal 43, successions legs caduc CC 484, consommation vice caché C2C CO 203)
+- **Résultat** : passed ✓ — **300 cas dans `test/adversarial-cases.mjs`** (milestone round), 3 gates verts, 0 doublon d'ID
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement, aucun code modifié)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - **Sanity check adversarial CLI `--limit 10 --concurrency 2` : 100%** (10×100%) — pipeline opérationnel
+- **Nouveaux cas wave 29 (10)** :
+  - `adv_bail_31` (bail verbal 3 ans + bailleur dit "pas de contrat = pas de droits" + délai 2 semaines — CO 253 aucune forme requise, CO 266 délais légaux s'appliquent)
+  - `adv_travail_32` (plainte harcèlement + licenciement 3 semaines après "motifs économiques" — CO 336 al. 1 lit. c représailles, CO 336b délai opposition fatal avant fin contrat)
+  - `adv_dettes_28` (casino suisse licencié + crédit jeu 8000 CHF — CO 515 exception LMJ 2019, casinos CFMJ = dette exigible contrairement à la croyance pré-2019)
+  - `adv_famille_25` (grands-parents coupés de petits-enfants par mère gardienne — CC 274a droit propre des grands-parents, indépendant du parent)
+  - `adv_etrangers_22` (frontalier français licencié à GE + cotisations AC suisses — R. 883/2004 art. 65 : France Travail compétent, pas l'APEC suisse)
+  - `adv_violence_14` (frère frappe lors conflit héritage + police dit "litige privé" — CP 123 plainte pénale, CP 180 menaces d'office, CC 28b protection non limitée à violence conjugale)
+  - `adv_accident_13` (verglas devant commerce + commune vs commerçant se renvoient la balle — CO 58 causale + règlements communaux déneigement riverains, action possible contre les deux)
+  - `adv_sante_17` (hôpital facture 3800 CHF chambre individuelle à patient inconscient — CO 1 consentement requis, LAMal 43 chambre commune = norme par défaut)
+  - `adv_successions_14` (testament lègue montre Rolex + testateur l'a vendue avant décès — CC 484 caducité du legs spécifique, pas d'équivalent argent sans clause)
+  - `adv_consommation_14` (voiture occasion particulier 9500 CHF + clause "sans garantie" + boîte vitesses défaillante pré-existante — CO 199 exclusion valide C2C MAIS CO 203 : nulle si vice dissimulé sciemment)
+- **Angles inédits wave 29** : CO 253 bail oral (mythe très répandu), CO 336 représailles timing serré, LMJ 2019 exception jeux, CC 274a grands-parents, R. 883/2004 frontalier chômage, CC 28b violence fraternelle non conjugale, déneigement riverain, CO 1 consentement hospitalier, CC 484 caducité legs, CO 203 dol C2C.
+- **Prochaine action** : mesure éval CLI sur 300 cas au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

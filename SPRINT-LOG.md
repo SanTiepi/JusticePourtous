@@ -1321,3 +1321,26 @@ Points à surveiller :
   - `adv_consommation_14` (voiture occasion particulier 9500 CHF + clause "sans garantie" + boîte vitesses défaillante pré-existante — CO 199 exclusion valide C2C MAIS CO 203 : nulle si vice dissimulé sciemment)
 - **Angles inédits wave 29** : CO 253 bail oral (mythe très répandu), CO 336 représailles timing serré, LMJ 2019 exception jeux, CC 274a grands-parents, R. 883/2004 frontalier chômage, CC 28b violence fraternelle non conjugale, déneigement riverain, CO 1 consentement hospitalier, CC 484 caducité legs, CO 203 dol C2C.
 - **Prochaine action** : mesure éval CLI sur 300 cas au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-01 UTC — run agent horaire (wave 30 adversarial : 300→310 cas)
+- **Tenté** : item 1 — wave 30 : +10 cas adversariaux ciblant 10 domaines distincts avec angles inédits (bail CO 253b logement service, travail CO 321e restitution données, dettes CO 163 clause pénale, famille CC 277 apprentissage 18+, etrangers ALCP indépendant UE, violence CP 156 extorsion/chantage, accident CO 44 faute concomitante, sante LAMal 41b telemed urgence, consommation CO 185/190 transfert risques B2C, entreprise CO 754 responsabilité administrateurs SA) + sanity check CLI `--limit 10 --concurrency 2`
+- **Résultat** : passed ✓ — **310 cas dans `test/adversarial-cases.mjs`**, 3 gates verts
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement, aucun code modifié)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - **Sanity check adversarial CLI `--limit 10 --concurrency 2` : 100%** (10×100%) — pipeline opérationnel
+- **Nouveaux cas wave 30 (10)** :
+  - `adv_bail_32` (CO 253b logement de service/fonction lié à l'emploi — délai résiliation bail distinct du contrat de travail)
+  - `adv_travail_33` (CO 321e restitution données/contacts clients à l'employeur au départ — croyance que ce qu'on a créé nous appartient)
+  - `adv_dettes_29` (CO 163 réduction judiciaire clause pénale excessive + CO 107 résiliation aux torts de l'entrepreneur)
+  - `adv_famille_26` (CC 277 al. 2 obligation alimentaire envers enfant adulte en apprentissage CFC — mythe "fini à 18 ans")
+  - `adv_etrangers_23` (ALCP Annexe I art. 12 — graphiste française indépendante en Suisse, pas de quotas pour UE)
+  - `adv_violence_15` (CP 156 extorsion/chantage par menace divulgation informations compromettantes + demande argent — distinct CP 197)
+  - `adv_accident_14` (CO 44 faute concomitante — piéton hors passage + automobiliste en excès de vitesse, réduction proportionnelle)
+  - `adv_sante_18` (LAMal 41 modèle telemed — urgence week-end sans appel hotline, exception légale aux modèles alternatifs)
+  - `adv_consommation_15` (CO 185/190/97 — achat en ligne, dommage pendant transport, vendeur responsable vis-à-vis du consommateur B2C, pas DHL)
+  - `adv_entreprise_14` (CO 754/757 responsabilité administrateurs SA — conditions strictes, actionnaire = dommage réflexe, mass faillite agit)
+- **Domaines wave 30** : 10 domaines distincts simultanément — angles inédits : CO 253b logement de fonction (méconnu), CO 321e données numériques personnelles, CO 163 réduction judiciaire, CC 277 al. 2 apprentissage, ALCP indépendants UE vs non-UE, CP 156 sans photos intimes, CO 44 piéton, LAMal 41 telemed urgence, CO 185/190 B2C transport, CO 754/757 dommage réflexe SA
+- **Prochaine action** : mesure éval CLI sur 310 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

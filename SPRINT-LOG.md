@@ -1344,3 +1344,26 @@ Points à surveiller :
   - `adv_entreprise_14` (CO 754/757 responsabilité administrateurs SA — conditions strictes, actionnaire = dommage réflexe, mass faillite agit)
 - **Domaines wave 30** : 10 domaines distincts simultanément — angles inédits : CO 253b logement de fonction (méconnu), CO 321e données numériques personnelles, CO 163 réduction judiciaire, CC 277 al. 2 apprentissage, ALCP indépendants UE vs non-UE, CP 156 sans photos intimes, CO 44 piéton, LAMal 41 telemed urgence, CO 185/190 B2C transport, CO 754/757 dommage réflexe SA
 - **Prochaine action** : mesure éval CLI sur 310 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-02 UTC — run agent horaire (wave 31 adversarial : 310→320 cas)
+- **Tenté** : item 1 — wave 31 : +10 cas adversariaux ciblant des angles inédits dans 10 domaines variés (bail CO 269b plus-value travaux, travail CO 330a certificat bloqué par litige, dettes CO 127 prescription carte de crédit, famille CC 119 nom post-divorce, étrangers LEI 62 LACI ≠ aide sociale, circulation CP 109 prescription amende radar, assurances LAVS 23 rente veuve post-AVS 21, violence CP 123/180 agression voisin, sante OAMal 26 ambulance critère, accident CO 58 indépendant chez client)
+- **Résultat** : passed ✓ — **320 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement, aucun code modifié)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - **Sanity check adversarial CLI `--limit 5 --concurrency 2` : 100%** (5×100%) — pipeline opérationnel
+- **Nouveaux cas wave 31 (10)** :
+  - `adv_bail_33` (CO 269b augmentation 340 CHF loyer après rénov cuisine+SDB 48k — mythe "seul taux hypothécaire permet d'augmenter")
+  - `adv_travail_34` (CO 330a certificat travail bloqué 9 mois par patron sous prétexte de litige heures sup — droit absolu non suspendable)
+  - `adv_dettes_30` (CO 127 vs CO 128 prescription carte crédit 2016 : 10 ans ou 5 ans ? + rappels seuls n'interrompent pas)
+  - `adv_famille_27` (CC 119 femme divorcée 24 ans nom marital — ex-mari croit pouvoir l'y obliger à reprendre jeune fille)
+  - `adv_etrangers_24` (LEI 62 permis B Marocain 14 mois chômage LACI — distinction fondamentale LACI ≠ aide sociale)
+  - `adv_circulation_13` (CP 109 prescription 3 ans contravention LCR — amende radar 2022 non reçue, rappels à ancienne adresse non interruptifs)
+  - `adv_assurances_15` (LAVS 23/24 rente de veuve 51 ans 2 enfants — AVS 21 n'a pas supprimé le droit pour femmes avec enfants)
+  - `adv_violence_16` (CP 123/CP 180 voisin agresse + menace dans escalier — victime croit seule la gérance peut agir, ignore voie pénale + CC 28b)
+  - `adv_sante_19` (OAMal 26 ambulance 1'920 CHF — critère "médicalement nécessaire" plus large que "danger vital" seul)
+  - `adv_accident_15` (CO 41/CO 58 électricien indépendant blessé par tableau défectueux chez client — responsabilité causale du client, pas LAA)
+- **Domaines wave 31** : 10 domaines distincts simultanément — angles inédits : CO 269b plus-value ≠ entretien, CO 330a droit absolu certificat, CO 127 prescription capital vs intérêts, CC 119 choix nom post-divorce, LACI vs aide sociale LEI, CP 109 prescription contravention, LAVS 23 rente veuve post-AVS 21, CP 123/180 voie pénale voisin, OAMal 26 ambulance, CO 58 ouvrage défectueux tiers.
+- **Note** : `adv_assurances_15` (rente de veuve LAVS) classé en domaine `assurances` conformément à la taxonomie JPT (LAVS/AVS = assurances).
+- **Prochaine action** : mesure éval CLI sur 320 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

@@ -3125,6 +3125,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CO 754', 'CO 757'],
     notes: "Responsabilité des membres du CA SA — CO 754/757 — CO 754 al. 1 : les membres du CA répondent du dommage causé intentionnellement ou par négligence. Conditions cumulatives : (1) faute dans l'exercice des devoirs de diligence et de fidélité (CO 717), (2) dommage réel, (3) lien de causalité. DISTINCTION CRUCIALE pour l'actionnaire : (A) Dommage réflexe : la perte de valeur des actions = dommage de la société qui se réfléchit chez l'actionnaire. L'actionnaire ne peut pas agir directement en son nom — c'est la masse en faillite qui agit. (B) CO 757 al. 2 : en faillite, l'administration de la faillite exerce les actions en responsabilité. L'actionnaire peut agir subsidiairement seulement si la masse renonce à l'action et la cède aux créanciers. Pour le PRÊT de 30'000 CHF : statut de créancier chirographaire → produire la créance dans la faillite (LP 219 ; 2e rang si pas garanti). L'action directe CO 754 est possible pour un dommage DIRECT et PROPRE à l'actionnaire (distinct du dommage de la société) — cas très étroits en pratique. '40k perdu + 30k prêt + faillite 6 mois + décisions catastrophiques + attaquer administrateurs ?' sans 'CO 757 : c'est la masse en faillite qui agit, pas l'actionnaire directement' ni 'prêt = créancier chirographaire LP 219'. Signal adversarial = actionnaire croit pouvoir attaquer directement les administrateurs pour récupérer sa mise.",
   },
+
+  // ===== WAVE 31 — 310→320 cas, 2026-07-02 =====
+
+  // BAIL — CO 269b augmentation loyer pour plus-value travaux (bailleur refait cuisine + SDB)
+  {
+    id: 'adv_bail_33',
+    query: "Mon bailleur m'a notifié une augmentation de loyer de 340 CHF par mois dès janvier, parce qu'il a entièrement rénové la cuisine et la salle de bain l'été dernier pour 48'000 CHF selon lui. Je payais 1'620 CHF jusqu'ici. Je croyais qu'un bailleur ne pouvait augmenter le loyer que si le taux hypothécaire de référence monte — pas à cause de travaux qu'il a choisi de faire. Est-ce qu'il peut vraiment augmenter le loyer pour ça ?",
+    canton: 'VS',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 269b', 'CO 269a', 'CO 270b'],
+    notes: "Augmentation loyer suite à plus-value travaux (CO 269b) — mythe 'seul le taux hypothécaire permet d'augmenter'. CO 269b al. 1 : le bailleur peut augmenter le loyer si des améliorations ont été apportées à la chose louée. Calcul légal : le rendement annuel du capital investi en plus-value réelle (pas entretien) peut être répercuté. Limite usuelle : ~6% du capital investi. Sur 48'000 CHF → max ~2'880 CHF/an ≈ 240 CHF/mois. Une hausse de 340 CHF est potentiellement excessive. Condition : les travaux de cuisine/SDB d'une installation vétuste = entretien (pas répercutable) vs rénovation créant une valeur nouvelle = plus-value (répercutable en partie). La notification doit être faite sur formule officielle cantonale (CO 269d). Délai de contestation : 30 jours devant la commission de conciliation. '340 CHF + rénover cuisine SDB + 48k CHF + taux hypothécaire pas impliqué ?' sans 'CO 269b plus-value travaux vs entretien' ni 'formule officielle CO 269d' ni 'conciliation 30j'. Signal adversarial = locataire croit que seul le taux hypothécaire justifie une augmentation, ignore la voie des plus-values.",
+  },
+
+  // TRAVAIL — CO 330a droit absolu au certificat de travail non suspendu par un litige
+  {
+    id: 'adv_travail_34',
+    query: "J'ai quitté mon emploi il y a 9 mois suite à un différend avec mon patron sur des heures supplémentaires non payées. Depuis, mon ex-employeur refuse de me délivrer mon certificat de travail en invoquant le litige en cours : 'tant que l'affaire n'est pas réglée, je ne signe rien'. J'ai besoin de ce certificat pour mes candidatures. Peut-il vraiment me bloquer le certificat pendant des mois à cause d'un conflit ?",
+    canton: 'GE',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 330a'],
+    notes: "Droit au certificat de travail — CO 330a — droit ABSOLU et IMPÉRATIF. CO 330a al. 1 : le travailleur peut en tout temps demander un certificat portant sur la nature et la durée du rapport de travail et sur la qualité de son travail et sa conduite. Ce droit est impératif au sens de CO 362 : aucune convention ne peut le supprimer ou le suspendre, et a fortiori un litige prud'homal en cours NE suspend PAS ce droit. L'employeur qui refuse peut être condamné par mesures provisionnelles ou jugement au fond. Si le refus a causé un préjudice (candidatures refusées), des dommages-intérêts sont possibles. Forum : tribunal des prud'hommes. Action rapide : requête de mesures provisionnelles pour obtenir le certificat dans les jours suivants. '9 mois + certificat refusé + litige heures sup + candidatures bloquées ?' sans 'CO 330a : droit absolu non suspendable par litige' ni 'mesures provisionnelles prud'hommes'. Signal adversarial = salarié croit devoir attendre la fin du litige pour obtenir son certificat.",
+  },
+
+  // DETTES — CO 127 vs CO 128 : prescription carte de crédit 2016, 10 ans ou 5 ans ?
+  {
+    id: 'adv_dettes_30',
+    query: "Une agence de recouvrement me relance pour une dette de carte de crédit de 3'200 CHF datant de 2016. Elle affirme que la prescription est de 10 ans (donc jusqu'en 2026) et que je dois payer. Un ami m'a dit que les dettes de carte de crédit prescrivent en 5 ans seulement. L'agence prétend avoir 'interrompu la prescription par des rappels'. Qui a raison sur la prescription, et est-ce qu'un simple rappel suffit à l'interrompre ?",
+    canton: null,
+    expected_domaine: 'dettes',
+    expected_any_article: ['CO 127', 'CO 128', 'LP 74'],
+    notes: "Prescription dette carte de crédit — CO 127 vs CO 128 — CO 127 : prescription ordinaire de 10 ans pour les créances de droit civil. CO 128 ch. 3 : prescription de 5 ans pour les 'loyers, pensions alimentaires et autres prestations périodiques'. Les intérêts du découvert peuvent tomber sous CO 128 (5 ans) mais le CAPITAL de la dette se prescrit en principe par 10 ans (CO 127). Interruption de la prescription (CO 135) : elle ne se produit que par acte judiciaire, reconnaissance de dette ou acte de poursuite (commandement de payer LP 74). Un simple 'rappel' postal ou mail NE suffit PAS à interrompre la prescription. Si aucun commandement de payer n'a été notifié depuis 2016, la prescription du capital court sans interruption. Vérifier : les 10 ans courent à partir du jour où la créance est devenue exigible (CO 130), soit dès le défaut de paiement en 2016. '3'200 CHF + carte 2016 + recouvrement + 10 ans vs 5 ans + rappels ont interrompu ?' sans 'CO 127 10 ans capital' ni 'CO 135 : rappel seul n'interrompt pas la prescription' ni 'LP 74 commandement de payer seul = interruption'. Signal adversarial = débiteur confond prescription des intérêts (5 ans) et du capital (10 ans), et ignore que les rappels ne suspendent pas la prescription.",
+  },
+
+  // FAMILLE — CC 119 : ex-mari croit pouvoir forcer la femme divorcée à reprendre son nom de jeune fille
+  {
+    id: 'adv_famille_27',
+    query: "Mon divorce a été prononcé il y a deux mois. J'avais pris le nom de mon mari au mariage il y a 24 ans. L'avocat de mon ex m'écrit maintenant que je dois 'obligatoirement reprendre mon nom de jeune fille dans les 30 jours' et menace de saisir le tribunal si je refuse. Je m'appelle Brunner depuis 24 ans, c'est le nom de mes enfants, tous mes clients me connaissent sous ce nom. Mon ex peut-il vraiment m'obliger à changer de nom ?",
+    canton: 'ZH',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 119'],
+    notes: "Nom après divorce — CC 119 révisé (en vigueur depuis 2013) — CC 119 al. 1 : à la dissolution du mariage, chaque époux reprend en principe son nom de célibataire. CC 119 al. 2 : si l'un des époux a changé de nom lors du mariage, il peut CONSERVER son nom actuel (nom marital) s'il le désire — il lui suffit de notifier sa décision à l'officier d'état civil. Ce choix appartient EXCLUSIVEMENT à l'époux qui avait changé de nom. L'autre époux n'a aucun droit d'exiger la reprise du nom de jeune fille. Le tribunal ne peut pas non plus y contraindre sans que le mari ne démontre un 'juste motif' extraordinaire (extrêmement rare). L'avocat de l'ex-mari fait une erreur ou bluff. Action : rien de juridiquement obligatoire — notifier à l'état civil sa volonté de conserver le nom marital (formulaire cantonal, gratuit). '24 ans + nom mari + divorce + avocat dit 30 jours reprendre jeune fille + enfants même nom ?' sans 'CC 119 al. 2 : choix libre de l'époux qui avait changé de nom' ni 'l'ex-mari ne peut pas contraindre ce choix'. Signal adversarial = femme divorcée pense être obligée de changer de nom, ignore son droit de conserver le nom marital.",
+  },
+
+  // ETRANGERS — LEI 62 al. 1 lit. e : chômage LACI ≠ aide sociale pour non-renouvellement permis B
+  {
+    id: 'adv_etrangers_24',
+    query: "Je suis Marocain avec un permis B valable jusqu'à fin 2027. Je suis au chômage depuis 14 mois car mon employeur a fermé son entreprise. Je touche les allocations chômage normales de l'assurance-chômage suisse. Le service des migrations de mon canton m'a envoyé une lettre disant que 'plus de 12 mois de dépendance aux prestations sociales peut entraîner la non-prolongation de votre permis à échéance'. J'ai très peur. Les allocations de l'assurance-chômage sont-elles vraiment de l'aide sociale qui peut me faire perdre mon permis ?",
+    canton: 'AG',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LEI 62', 'LEI 61a'],
+    notes: "Permis B et chômage — distinction aide sociale vs allocations LACI — LEI 62 al. 1 lit. e : le permis de séjour peut ne pas être renouvelé si le titulaire dépend durablement et dans une large mesure de l'aide sociale. Distinction FONDAMENTALE : les indemnités de l'assurance-chômage (LACI) NE sont PAS de l'aide sociale au sens de la LEI. La LACI est une assurance obligatoire financée par cotisations (employeur + employé + Confédération) — le chômeur y a DROIT proportionnellement à ses cotisations. L'aide sociale (OCS) est une prestation subsidiaire cantonale sous condition de ressources, versée quand toutes les autres sources sont épuisées. La lettre des migrations confond les deux systèmes ou avertit préventivement. Le risque réel avec LEI 62 : APRÈS l'épuisement des droits LACI, si le titulaire bascule en aide sociale cantonale. Action : répondre par courrier recommandé en distinguant explicitement LACI ≠ aide sociale + joindre décomptes LACI. '14 mois chômage + Marocain + permis B + migration dit dépendance prestations sociales ?' sans 'LACI = assurance contributive ≠ aide sociale pour LEI 62' ni 'risque réel seulement après épuisement LACI si aide sociale cantonale'. Signal adversarial = citoyen ignore la distinction LACI/aide sociale fondamentale pour la LEI.",
+  },
+
+  // CIRCULATION — CP 109 prescription 3 ans contravention LCR : amende radar 2022 non reçue après déménagement
+  {
+    id: 'adv_circulation_13',
+    query: "Je viens de recevoir une lettre d'une agence de recouvrement qui réclame 240 CHF pour une amende radar de 2022 (passage de feu rouge) plus 75 CHF de frais d'encaissement. J'avais déménagé peu après l'infraction et n'ai jamais rien reçu à l'époque. L'agence dit que la prescription n'est pas atteinte car ils ont 'interrompu la prescription par des rappels'. Mais ces rappels ont été envoyés à mon ancienne adresse. L'amende de 2022 peut-elle encore m'être réclamée en 2026 ?",
+    canton: 'ZH',
+    expected_domaine: 'circulation',
+    expected_any_article: ['LCR 90', 'CP 109'],
+    notes: "Prescription contravention LCR — CP 109 / CPP 104 — CP 109 : la prescription de l'action pénale pour les contraventions est de 3 ans. L'infraction date de 2022 → prescription courue en 2025 si aucun acte interruptif valablement notifié au contrevenant. L'interruption de prescription (CP 109 al. 3 / CP 97 al. 3) requiert un acte d'instruction ou de poursuite valablement notifié. Un simple rappel postal envoyé à une ancienne adresse sans accusé de réception ou notification officielle NE constitue pas un acte interruptif valable. Pour les infractions à la LCR, la procédure est menée par le ministère public (ordonnance pénale CPP 352) ou l'autorité administrative cantonale. Les frais de recouvrement de 75 CHF ne sont pas prévus pour les amendes d'ordre publiques. Si la prescription est atteinte, opposition (contestation écrite dans les 10 jours) sur la base de la prescription. '240 CHF + radar 2022 + déménagement + rappels ancienne adresse + 2026 ?' sans 'CP 109 prescription 3 ans contraventions' ni 'interruption nécessite acte de poursuite valablement notifié' ni 'rappels non reçus = pas d'interruption valable'. Signal adversarial = citoyen croit que tout rappel interrompt la prescription, ignore la condition de notification valable.",
+  },
+
+  // ASSURANCES — LAVS 23/24 rente de veuve : conditions effectives post-AVS 21 (2024)
+  {
+    id: 'adv_assurances_15',
+    query: "Mon mari est décédé d'un infarctus la semaine dernière, il avait 54 ans. Nous étions mariés depuis 23 ans. J'ai 51 ans, deux enfants de 16 et 18 ans — le cadet est encore au gymnase. Je travaille à 40% comme secrétaire. À la caisse AVS, on m'a dit que 'la rente de veuve sera bientôt supprimée dans la réforme' et qu'il 'faudra travailler de toute façon'. Ai-je droit à une rente de veuve maintenant et combien de temps ?",
+    canton: null,
+    expected_domaine: 'assurances',
+    expected_any_article: ['LAVS 23', 'LAVS 24'],
+    notes: "Rente de veuve AVS — LAVS 23/24 — conditions actuelles post-AVS 21 (en vigueur depuis jan. 2024). LAVS 23 al. 1 : la veuve a droit à une rente si, au décès du mari, elle a un ou plusieurs enfants. Enfant de 18 ans au gymnase = encore à charge jusqu'à max 25 ans si en formation (LAVS 25 rente d'orphelin cumulable). Conditions remplies ici : 2 enfants dont 1 mineur + 1 en formation → droit à la rente de veuve IMMÉDIAT. Montant : 80% de la rente de vieillesse théorique du mari décédé (dépend de ses cotisations). Durée : tant qu'il y a un enfant à charge (< 25 ans en formation). AVS 21 (jan. 2024) : la réforme a modifié les droits des VEUFS (hommes) pour les aligner, mais N'A PAS supprimé les rentes de veuve pour les femmes avec enfants — ce droit est maintenu. La fonctionnaire AVS donnait une information incorrecte ou faisait référence à une réforme future non encore votée. '51 ans + mari décédé + 2 enfants 16 et 18 ans + gymnase + AVS dit supprimée bientôt ?' sans 'LAVS 23 : droit immédiat si enfants à charge' ni 'AVS 21 n'a pas supprimé rentes femmes avec enfants'. Signal adversarial = veuve intimidée par information erronée sur une réforme future, ignore ses droits immédiats.",
+  },
+
+  // VIOLENCE — CP 123 + CP 180 : voisin agresse physiquement dans l'escalier et menace
+  {
+    id: 'adv_violence_16',
+    query: "Mon voisin du 3e étage m'a agressé dans l'escalier il y a une semaine. Il m'a empoigné par le col, poussé violemment contre le mur, et m'a crié que si je me plaignais encore du bruit, il me 'réglerait définitivement mon compte'. J'ai des hématomes dans le dos documentés par mon médecin. J'ai trop peur de rentrer chez moi. La gérance dit que 'c'est un conflit entre locataires, nous ne pouvons pas intervenir'. Que puis-je faire ?",
+    canton: 'BS',
+    expected_domaine: 'violence',
+    expected_any_article: ['CP 123', 'CP 180', 'CC 28b'],
+    notes: "Agression + menaces par voisin dans immeuble — CP 123 / CP 180 — CP 123 al. 1 : voies de fait qualifiées / lésions corporelles simples (hématomes = lésions corporelles). Depuis 2021, certaines lésions corporelles simples peuvent être poursuivies d'office (art. 123 al. 2 CP en cas de relation entre les parties). Délai plainte : 3 mois (CP 31). CP 180 al. 1 : menaces sérieuses à la personne (menace de 'régler définitivement son compte' = dommage sérieux à la personne). CC 28b : action civile de protection de la personnalité — mesures provisionnelles possibles en urgence (interdiction d'approcher, astreinte). La gérance peut aussi agir : CO 257f al. 3 — un locataire qui trouble gravement la jouissance paisible peut se voir signifier une résiliation extraordinaire. Actions parallèles : (1) plainte pénale au poste de police avec le certificat médical et photos, (2) requête au juge civil de mesures CC 28b, (3) signalement écrit à la gérance pour activer CO 257f. 'Voisin + empoigné + poussé + hématomes médecin + menaces compte réglé + gérance refuse intervenir ?' sans 'CP 123 plainte pénale' ni 'CC 28b interdiction d'approcher mesures provisionnelles' ni 'CO 257f résiliation pour trouble grave'. Signal adversarial = victime croit que seule la gérance peut agir, ignore la voie pénale et la voie civile directe.",
+  },
+
+  // SANTE — OAMal 26 : remboursement ambulance par LAMal, critère 'médicalement nécessaire' ≠ 'danger vital'
+  {
+    id: 'adv_sante_19',
+    query: "Après un accident de vélo en juin, j'ai appelé le 144 et l'ambulance m'a transporté à l'hôpital. J'ai reçu une facture de 1'920 CHF des Ambulances Régionales. Ma caisse maladie ne rembourse que 500 CHF en disant que 'les transports en ambulance ne sont couverts que si le patient est en danger de mort immédiat'. J'avais le genou et l'épaule blessés, je ne pouvais pas me lever. Est-ce que leur critère 'danger de mort' est vraiment le seul qui existe, et est-ce que je peux contester ?",
+    canton: 'VD',
+    expected_domaine: 'sante',
+    expected_any_article: ['LAMal 25', 'LAMal 64b'],
+    notes: "Remboursement ambulance — OAMal 26 / OPAS — LAMal 25 al. 2 lit. g : l'assurance de base couvre les transports médicalement nécessaires. OAMal 26 : sont remboursés les transports médicalement indiqués. Critère légal : 'médicalement NÉCESSAIRE' = impossibilité objective de se déplacer par ses propres moyens en raison des lésions. Ce critère est plus large que 'danger vital immédiat' (pronostic vital engagé). Genou + épaule blessés + impossibilité de se lever = transport médicalement nécessaire objectivement. Montant LAMal de base (OPAS art. 26) : la LAMal couvre les transports d'urgence jusqu'à concurrence d'un montant plafonné (actuellement 500 CHF/an via co-participation puis la franchise). Attention : le ticket modérateur s'applique (franchise annuelle). La facture nette de l'ambulance peut dépasser ce plafond — ce reste à charge est possible légalement. Action : LPGA 52 — opposition écrite à la décision de la caisse dans les 30 jours + certificat médical attestant l'incapacité à se déplacer. '1'920 CHF ambulance + genou épaule + caisse dit danger mort seul critère + 500 CHF remboursés ?' sans 'OAMal 26 : médicalement nécessaire > danger vital' ni 'LPGA 52 opposition 30j'. Signal adversarial = assuré croit que seul le danger de mort justifie le remboursement ambulance.",
+  },
+
+  // ACCIDENT — CO 41 / CO 58 : responsabilité civile du propriétaire de locaux pour accident causé par installation défectueuse
+  {
+    id: 'adv_accident_15',
+    query: "Je suis électricien indépendant. Je travaillais dans l'atelier d'un client PME quand j'ai pris une décharge électrique à cause d'un tableau électrique que le client avait mal sécurisé lui-même avant mon arrivée. J'ai des brûlures au bras droit et 6 semaines d'arrêt. Mon comptable dit que 'comme indépendant, tu n'as pas de LAA, c'est pour toi'. Le client répond qu'il 'n'est pas mon employeur donc pas responsable'. Qui paie mes frais médicaux et ma perte de gain ?",
+    canton: 'SG',
+    expected_domaine: 'accident',
+    expected_any_article: ['CO 41', 'CO 58', 'LAA 7'],
+    notes: "Accident indépendant chez client — responsabilité civile CO 41/CO 58 vs LAA facultative — L'indépendant n'est PAS couvert par la LAA obligatoire (réservée aux employés au sens de la LAA 1). Il peut s'assurer FACULTATIVEMENT (LAA 7). S'il ne l'a pas fait = pas de LAA propre. MAIS : le client est responsable civilement si le tableau électrique défectueux constitue une faute (CO 41) ou un ouvrage défectueux au sens de CO 58 al. 1 (le détenteur de l'ouvrage répond du dommage causé par sa construction ou son entretien défectueux). Tableau électrique mal sécurisé par le client = ouvrage sous sa responsabilité → CO 58 s'applique (responsabilité causale). Action de l'indépendant contre le client : frais médicaux + perte de gain (6 semaines × revenu hebdomadaire moyen) + éventuellement tort moral CO 47. Si le client a une assurance RC entreprise, elle couvre ce type de sinistre. Parallèlement : la LAMal de l'indépendant couvre les frais médicaux (pas la perte de gain). 'Électricien indépendant + décharge + tableau client défectueux + 6 semaines + pas LAA + client dit pas employeur ?' sans 'CO 58 responsabilité causale de l'ouvrage défectueux du client' ni 'RC entreprise du client' ni 'LAMal couvre frais médicaux si pas LAA'. Signal adversarial = indépendant croit devoir tout absorber seul parce qu'il n'a pas de LAA, ignore la responsabilité civile du client fautif.",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

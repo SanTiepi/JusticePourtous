@@ -1367,3 +1367,26 @@ Points à surveiller :
 - **Domaines wave 31** : 10 domaines distincts simultanément — angles inédits : CO 269b plus-value ≠ entretien, CO 330a droit absolu certificat, CO 127 prescription capital vs intérêts, CC 119 choix nom post-divorce, LACI vs aide sociale LEI, CP 109 prescription contravention, LAVS 23 rente veuve post-AVS 21, CP 123/180 voie pénale voisin, OAMal 26 ambulance, CO 58 ouvrage défectueux tiers.
 - **Note** : `adv_assurances_15` (rente de veuve LAVS) classé en domaine `assurances` conformément à la taxonomie JPT (LAVS/AVS = assurances).
 - **Prochaine action** : mesure éval CLI sur 320 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-03 UTC — run agent horaire (wave 32 adversarial : 320→330 cas)
+- **Tenté** : item 1 — wave 32 : +10 cas adversariaux ciblant des angles inédits dans 10 domaines variés (bail CO 267a état des lieux unilatéral, travail CO 324a salaire maladie barème, dettes LP 80/82 mainlevée provisoire, famille CC 298b père non marié décisions médicales, étrangers LEI 64a inexigibilité médicale, voisinage CC 712m PPE ascenseur urgence, successions CC 566/580 délais répudiation vs bénéfice inventaire, consommation CO 100 clause limitative nulle, santé LAMal 7 al. 2 résiliation hausse prime, assurances LCA 8/9 réticence bonne foi vs fraude)
+- **Résultat** : passed ✓ — **330 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Commits** : `762c14e`
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement, aucun code modifié)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - **Sanity check adversarial CLI `--limit 5 --concurrency 2` : 100%** (5×100%) — pipeline opérationnel
+- **Nouveaux cas wave 32 (10)** :
+  - `adv_bail_34` (CO 267/267a état des lieux sortie unilatéral, retenue dépôt 2'600 CHF injustifiée)
+  - `adv_travail_35` (CO 324a barème bernois : PME sans IJM, 2.5 ans service → min. 3 semaines salaire)
+  - `adv_dettes_31` (LP 80/82/83 mainlevée provisoire vs définitive sur clause reconnaissance dette bancaire)
+  - `adv_famille_28` (CC 298b/301 père non marié, opération enfant, décisions médicales importantes = accord conjoint)
+  - `adv_etrangers_25` (LEI 64a/LAsi 83 non-refoulement médical, épilepsie sévère, médicaments absents au pays)
+  - `adv_voisinage_21` (CC 712m/712s PPE ascenseur 7 semaines panne, copropriétaire handicapé, mesures urgentes sans assemblée)
+  - `adv_successions_15` (CC 566/580 bénéfice d'inventaire délai 1 mois vs répudiation 3 mois, dettes parentales inconnues)
+  - `adv_consommation_16` (CO 100/97 clause CG limitative responsabilité nulle si négligence grave, four incendie 8'400 CHF)
+  - `adv_sante_20` (LAMal 7 al. 2 résiliation extraordinaire dans le mois suivant notification hausse prime — méconnue)
+  - `adv_assurances_16` (LCA 8/9 réticence souscription : erreur bonne foi ≠ fraude intentionnelle, remboursement proportionnel)
+- **Angles inédits wave 32** : PV sortie unilatéral, barème CO 324a, LP 82 mainlevée provisoire, CC 298b père non-marié, LEI 64a médical, CC 712s urgence PPE, CC 580 délai 1 mois, CO 100 clause nulle, LAMal 7 al. 2 hausse prime, LCA 8 vs 9 réticence.
+- **Prochaine action** : mesure éval CLI sur 330 cas au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

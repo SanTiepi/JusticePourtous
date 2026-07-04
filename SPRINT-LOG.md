@@ -1390,3 +1390,26 @@ Points à surveiller :
   - `adv_assurances_16` (LCA 8/9 réticence souscription : erreur bonne foi ≠ fraude intentionnelle, remboursement proportionnel)
 - **Angles inédits wave 32** : PV sortie unilatéral, barème CO 324a, LP 82 mainlevée provisoire, CC 298b père non-marié, LEI 64a médical, CC 712s urgence PPE, CC 580 délai 1 mois, CO 100 clause nulle, LAMal 7 al. 2 hausse prime, LCA 8 vs 9 réticence.
 - **Prochaine action** : mesure éval CLI sur 330 cas au run suivant. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-04 UTC — run agent horaire (wave 33 adversarial : 330→340 cas)
+- **Tenté** : item 1 — wave 33 : +10 cas adversariaux ciblant des angles inédits dans 10 domaines variés (bail CO 272b prolongation situation difficile, travail CO 333 transfert automatique entreprise, dettes CO 147/148 recours codébiteur solidaire, famille CC 286/285 révision pension chômage, étrangers LEI 99/CEDH 8 vie familiale enfants suisses, circulation LCR 36/26 priorité droite zone 30, violence CP 189/190 agression sexuelle vs viol, accident LAA 3/OLAA 7 trajet vélo détour, entreprise CO 530/544 société simple de fait, social LAVS 29quater bonification assistance proche)
+- **Résultat** : passed ✓ — **340 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement, aucun code modifié)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - **Sanity check adversarial CLI `--limit 5 --concurrency 2` : 100%** (5×100%) — pipeline opérationnel
+- **Nouveaux cas wave 33 (10)** :
+  - `adv_bail_35` (CO 272b prolongation bail situation personnelle difficile — chômage + jumeaux nés + scolarisation enfant — VD)
+  - `adv_travail_36` (CO 333 transfert automatique entreprise : nouveau propriétaire ne peut pas refuser les salariés — ZH)
+  - `adv_dettes_32` (CO 147/148 recours codébiteur solidaire après paiement intégral — droit méconnu — GE)
+  - `adv_famille_29` (CC 286/285 révision pension enfant chômage — suspension unilatérale illicite — VD)
+  - `adv_etrangers_26` (LEI 99/CEDH 8 vie familiale vs expulsion, enfants suisses mineurs — ZH)
+  - `adv_circulation_14` (LCR 36/26 priorité droite zone 30, carrefour sans signal — BE)
+  - `adv_violence_17` (CP 189/190 agression sexuelle vs viol : distinction légale, droits victime LAVI — GE)
+  - `adv_accident_16` (LAA 3/OLAA 7 trajet domicile-travail vélo, détour 400m SUVA refuse — domaine: assurances — ZH)
+  - `adv_entreprise_15` (CO 530/544 société simple de fait sans contrat écrit, responsabilité illimitée — VD)
+  - `adv_social_13` (LAVS 29quater/29septies bonification tâches d'assistance proche invalide — domaine: assurances — VD)
+- **Angles inédits wave 33** : CO 272b prolongation bail (méconnu), CO 333 transfert salarié automatique, CO 147/148 recours entre codébiteurs, CC 286 révision unilatérale illicite, LEI 99/CEDH 8 vie familiale, LCR 36 priorité zone 30, CP 189 vs 190 distinction légale, LAA 3/OLAA 7 détour trajet, CO 530 société simple tacite, LAVS 29quater bonification assistance.
+- **Note taxonomie** : `adv_accident_16` (LAA trajet) et `adv_social_13` (LAVS bonification) classés `assurances` conformément à la taxonomie JPT (LAA/LAVS = assurances).
+- **Prochaine action** : mesure éval CLI sur 340 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

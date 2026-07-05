@@ -1413,3 +1413,24 @@ Points à surveiller :
 - **Angles inédits wave 33** : CO 272b prolongation bail (méconnu), CO 333 transfert salarié automatique, CO 147/148 recours entre codébiteurs, CC 286 révision unilatérale illicite, LEI 99/CEDH 8 vie familiale, LCR 36 priorité zone 30, CP 189 vs 190 distinction légale, LAA 3/OLAA 7 détour trajet, CO 530 société simple tacite, LAVS 29quater bonification assistance.
 - **Note taxonomie** : `adv_accident_16` (LAA trajet) et `adv_social_13` (LAVS bonification) classés `assurances` conformément à la taxonomie JPT (LAA/LAVS = assurances).
 - **Prochaine action** : mesure éval CLI sur 340 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-05 UTC — run agent horaire (wave 34 adversarial : 340→350 cas)
+- **Tenté** : item 1 — wave 34 : +10 cas adversariaux ciblant des angles inédits dans 10 domaines variés (bail CO 269d hausse sur papier libre nulle, travail CO 321c clause forfait heures sup illicite non-cadres, dettes LP 107/108 revendication tierce délai péremptoire 10j, famille CC 308/CPC 299 curatelle enfant divorce conflictuel, étrangers LEI 61a/ALCP maintien permis B UE chômage involontaire, circulation LCR 15a permis probatoire retrait = examen pratique obligatoire, violence CP 183/181 séquestration courte durée conjoint sans coups, santé LAMal 41/OAMal 93 ophtalmologue accès direct tous modèles, successions CC 497/505 codicille non daté nul, voisinage CC 684/679a immissions excessives recours civil indépendant du permis)
+- **Résultat** : passed ✓ — **350 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement, aucun code modifié)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+- **Nouveaux cas wave 34 (10)** :
+  - `adv_bail_36` (CO 269d hausse loyer sur papier libre — nullité plein droit, formulaire cantonal VD obligatoire)
+  - `adv_travail_37` (CO 321c/341 clause forfait heures sup nulle pour secrétaire 5'200 CHF BE — non-cadre salaire moyen)
+  - `adv_dettes_33` (LP 107/108 revendication tierce meubles saisis par parent, délai 10j péremptoire — VS)
+  - `adv_famille_30` (CC 308/CPC 299 curatelle représentation enfant divorce conflictuel, nomination d'office sans accord parents — NE)
+  - `adv_etrangers_27` (LEI 61a/ALCP Annexe I art. 6 al. 3 maintien permis B UE chômage involontaire >12 mois sans limite — GE)
+  - `adv_circulation_15` (LCR 15a al. 3 permis probatoire retrait = examen pratique obligatoire — règle spécifique probatoires — SO)
+  - `adv_violence_18` (CP 183/181 séquestration 4h par conjoint sans coups = crime — domicile commun ≠ immunité — BS)
+  - `adv_sante_21` (LAMal 41/OAMal 93 al. 2 ophtalmologue accès direct dans tous modèles alternatifs — information assurance incorrecte — LU)
+  - `adv_successions_16` (CC 497/505 codicille non daté = nul de plein droit, testament 2018 reste seul valable — GR)
+  - `adv_voisinage_22` (CC 684/679a immissions atelier menuiserie excessives — recours civil indépendant permis de construire — AG)
+- **Angles inédits wave 34** : CO 269d nullité hausse papier libre, CO 321c clause forfait non-cadre, LP 107 délai péremptoire 10j tiers, CPC 299 curatelle enfant d'office, ALCP Annexe I art. 6 al. 3 maintien séjour UE, LCR 15a al. 3 examen pratique post-retrait probatoire, CP 183 séquestration courte sans violence, OAMal 93 al. 2 ophtalmologue direct, CC 505 nullité testament sans date, CC 679a recours civil indépendant permis.
+- **Prochaine action** : mesure éval CLI sur 350 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

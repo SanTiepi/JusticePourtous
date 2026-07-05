@@ -3429,6 +3429,106 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['LAVS 29quater', 'LAVS 29septies'],
     notes: "Bonification pour tâches d'assistance — LAVS 29quater / LAVS 29septies — LAVS 29quater : les personnes qui fournissent des soins réguliers à un proche invalide bénéficient d'une bonification équivalente à la bonification pour tâches éducatives (maximum 43'020 CHF/an selon revenu cotisant). Conditions : (1) le proche doit percevoir une rente AI ou AVS ou une allocation pour impotent (LAI 42), (2) le soignant doit habiter dans la même commune ou à moins de 30 km du proche, (3) cotiser à l'AVS. La bonification améliore le calcul de la future rente AVS du soignant, compensant partiellement les années à temps partiel. Distincte de la bonification éducative (LAVS 29sexies). IMPORTANT : la bonification n'est PAS accordée automatiquement — elle doit être demandée auprès de la caisse de compensation cantonale (formulaire spécifique, rétroactif possible). 'Mère 82 ans AI 100% + 3 ans soins quotidiens + travail réduit 40% + cotise AVS ?' sans 'LAVS 29quater bonification tâches d'assistance' ni 'demande obligatoire à la caisse de compensation — pas automatique'. Signal adversarial = aidant familial ignore cette bonification spécifique (distincte de l'éducation), laisse des droits AVS importants inactifs.",
   },
+
+  // BAIL — CO 269d : nullité de plein droit d'une hausse sur papier libre (formulaire cantonal obligatoire VD)
+  {
+    id: 'adv_bail_36',
+    query: "Mon propriétaire m'a envoyé une simple lettre Word signée pour augmenter mon loyer de 180 CHF dès le 1er septembre. Pas de formulaire spécial, juste une lettre normale avec le montant et la date. Dans mon immeuble, la voisine a reçu la même chose. Est-ce qu'on doit payer cette hausse ?",
+    canton: 'VD',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 269d', 'CO 270b'],
+    notes: "Nullité hausse loyer sur papier libre — CO 269d al. 1 — CO 269d al. 1 : le bailleur doit utiliser la formule officielle cantonale approuvée pour toute modification du bail (hausse loyer, nouvelles conditions). Toute notification sur papier libre ou lettre ordinaire est NULLE DE PLEIN DROIT — aucune contestation n'est nécessaire, la hausse n'existe pas juridiquement. Le locataire peut simplement continuer à payer l'ancien loyer sans risque de résiliation pour non-paiement. Le canton VD (OBLF/OBLFU) exige le formulaire officiel de la Direction des ressources et de l'information géographique (DRIG). CO 270b : délai de contestation de 30 jours à l'autorité de conciliation si le locataire souhaitait quand même contester pour abus. 'Lettre Word + hausse 180 CHF + pas de formulaire spécial ?' sans 'CO 269d : formulaire officiel cantonal obligatoire — toute hausse sur papier libre nulle de plein droit' ni 'locataire peut ignorer sans risque'. Signal adversarial = locataire pense devoir contester activement alors que la hausse est déjà inexistante légalement.",
+  },
+
+  // TRAVAIL — CO 321c : clause forfait heures supplémentaires illicite pour salariés non-cadres à salaire moyen
+  {
+    id: 'adv_travail_37',
+    query: "Dans mon contrat de travail (secrétaire administrative, 5'200 CHF/mois à Berne), il y a une clause qui dit 'les éventuelles heures supplémentaires sont incluses dans le salaire mensuel et ne font l'objet d'aucune compensation supplémentaire'. J'ai accumulé 140 heures sup en 8 mois que l'employeur refuse de payer ou compenser. Cette clause est-elle valable ?",
+    canton: 'BE',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 321c', 'CO 341'],
+    notes: "Clause forfait heures sup illicite pour salariés non-cadres — CO 321c / CO 341 — CO 321c al. 3 : l'employeur est tenu de rémunérer les heures supplémentaires (majorées de 25%) ou de les compenser par du congé. CO 341 : le travailleur ne peut pas valablement renoncer pendant le rapport de travail ni dans les 30 jours qui suivent la fin du rapport à des créances résultant de dispositions impératives. Une clause contractuelle qui exclut a priori toute compensation n'est valide que si le salaire est nettement supérieur au marché ET que le travailleur est un cadre. Pour un salaire de 5'200 CHF (salaire moyen secrétaire BE) et une fonction non-cadre, la jurisprudence du Tribunal fédéral juge ces clauses nulles. Les 140h sont exigibles. '5'200 CHF secrétaire + 140h sup + clause forfait tout inclus ?' sans 'CO 321c al. 3 + CO 341 clause nulle si salaire non manifestement supérieur au marché pour non-cadre' ni 'droit exigible dans 30 jours après résiliation'. Signal adversarial = salarié croit que la clause contractuelle le barre définitivement.",
+  },
+
+  // DETTES — LP 107/108 : revendication d'un tiers sur les meubles saisis, délai péremptoire 10 jours
+  {
+    id: 'adv_dettes_33',
+    query: "L'office des poursuites est venu saisir des affaires chez mon fils qui a des dettes. Ils ont emporté le grand téléviseur Sony et la machine à laver qui m'appartiennent — j'ai les factures à mon nom. Mon fils les utilisait mais ils sont à moi. Comment récupérer mes affaires ? J'ai reçu un procès-verbal de saisie il y a 8 jours.",
+    canton: 'VS',
+    expected_domaine: 'dettes',
+    expected_any_article: ['LP 107', 'LP 108'],
+    notes: "Revendication tierce sur meubles saisis — LP 107/108 — LP 107 al. 1 : lorsqu'un tiers prétend avoir des droits (propriété, gage) sur des objets saisis, il doit déposer sa revendication à l'office des poursuites dans les 10 jours suivant la réception du PV de saisie — délai PÉREMPTOIRE, aucune prolongation possible. LP 108 : si le débiteur reconnaît la revendication (et le créancier conteste), l'office libère l'objet ; si le débiteur conteste aussi, procès civil en revendication. Preuves requises : factures au nom du tiers, quittances, relevés bancaires. '8 jours depuis PV de saisie + TV + machine à laver + factures au nom du parent ?' sans 'LP 107 délai 10 jours péremptoire = reste 2 jours maximum pour agir' ni 'revendication à déposer à l'office, pas au tribunal'. Signal adversarial = propriétaire tiers ne connaît pas ce délai court spécifique (vs délai général de 20 jours LP).",
+  },
+
+  // FAMILLE — CC 308/CPC 299 : curatelle de représentation enfant dans divorce conflictuel, nomination sans accord des parents
+  {
+    id: 'adv_famille_30',
+    query: "Mon ex-mari et moi divorsons avec un désaccord total sur la garde de nos deux enfants (7 et 9 ans). Nos avocats respectifs défendent des positions opposées. Le juge a mentionné un 'curateur' pour les enfants que ni moi ni mon mari n'avons demandé. À quoi ça sert et est-ce que l'avocat du curateur va défendre mes intérêts ou ceux de mon ex ?",
+    canton: 'NE',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 308', 'CPC 299'],
+    notes: "Curatelle de représentation enfant divorce conflictuel — CC 308 al. 2 / CPC 299 — CPC 299 al. 1 : dans les procédures judiciaires concernant les enfants (divorce avec désaccord sur garde, droits parentaux), le tribunal DOIT nommer un curateur de représentation si les intérêts de l'enfant peuvent diverger de ceux des deux parents — sans attendre la demande des parties ni leur accord. CC 308 al. 2 : l'autorité de protection ou le juge peut nommer un curateur spécial (représentation) lorsque les intérêts des parents et de l'enfant s'opposent. Ce curateur représente UNIQUEMENT les intérêts de l'enfant — pas les parents — il peut interroger l'enfant, soumettre des propositions au juge, s'opposer à des accords parentaux contraires à l'intérêt de l'enfant. Ne défend pas un parent contre l'autre. 'Divorce conflictuel + deux enfants 7/9 ans + désaccord garde + juge nomme curateur sans demande ?' sans 'CPC 299 : nomination d'office obligatoire si intérêts enfants potentiellement divergents' ni 'curateur = défenseur de l'enfant uniquement, pas des parents'. Signal adversarial = parent croit que le curateur est une menace ou un allié de l'autre parti.",
+  },
+
+  // ÉTRANGERS — LEI 61a/ALCP : maintien du permis B UE lors de chômage involontaire (minimum 6 mois d'activité)
+  {
+    id: 'adv_etrangers_27',
+    query: "Je suis française, j'habite à Genève depuis 4 ans avec un permis B UE. Je viens d'être licenciée (économique — mon poste supprimé). J'ai cotisé à l'AC depuis 4 ans. Le service des migrations m'a dit que si je reste sans emploi plus de 6 mois, mon permis ne sera pas renouvelé et je devrai rentrer en France. C'est vrai ? Je cherche activement du travail.",
+    canton: 'GE',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LEI 61a', 'ALCP'],
+    notes: "Maintien permis B UE chômage involontaire — LEI 61a / ALCP Annexe I art. 6 — ALCP Annexe I art. 6 al. 3 (accord bilatéral CH-UE) : un ressortissant UE/AELE ayant travaillé plus de 12 mois maintient son droit de séjour SANS CONDITION DE DURÉE en cas de chômage involontaire. Pour moins de 12 mois d'activité, le séjour est maintenu pendant la recherche d'emploi (minimum 6 mois). LEI 61a : une personne au chômage involontaire inscrite au chômage (LACI) ne perd pas son droit de séjour, à condition de prouver les recherches actives d'emploi. La règle des '6 mois' du service des migrations est incorrecte ou incomplète pour une personne ayant 4 ans d'activité : le séjour est maintenu sans limite précise selon l'ALCP (jurisprudence TF 2C_473/2019). '4 ans de cotisations + licenciement économique + permis B UE + office dit 6 mois limite ?' sans 'ALCP Annexe I art. 6 al. 3 : plus de 12 mois d'activité = maintien sans condition de durée' ni 'information service migrations incorrecte — droit plus favorable que communiqué'. Signal adversarial = ressortissante UE accepte à tort une information de l'autorité plus restrictive que son droit réel.",
+  },
+
+  // CIRCULATION — LCR 15a/LCR 23 : permis probatoire règles renforcées, retrait = nouvel examen pratique obligatoire
+  {
+    id: 'adv_circulation_15',
+    query: "J'ai 21 ans, mon permis depuis 18 mois (phase probatoire 3 ans). J'ai eu un excès de vitesse de 25 km/h en dehors des localités — avertissement et 1 mois de retrait de permis. L'autorité m'a dit que vu que c'est mon permis probatoire, je dois RECOMMENCER à partir de zéro l'examen pratique de conduite. Est-ce une erreur ou c'est réellement la loi ?",
+    canton: 'SO',
+    expected_domaine: 'circulation',
+    expected_any_article: ['LCR 15a', 'LCR 23'],
+    notes: "Permis probatoire retrait = examen pratique obligatoire — LCR 15a al. 3 — LCR 15a al. 3 : si le conducteur en phase probatoire (3 ans) commet une infraction entraînant un retrait de permis, il est tenu de subir un NOUVEL EXAMEN PRATIQUE de conduite à l'expiration du retrait avant de reprendre le volant. Cette règle s'applique à tout retrait durant la phase probatoire, quelle que soit la durée du retrait. LCR 23 : le retrait est prononcé par l'autorité cantonale de circulation. La phase probatoire est prolongée d'autant. Différent du conducteur chevronné : pour les permis définitifs, il n'y a pas d'examen pratique obligatoire après retrait. L'information donnée à l'autorité de Soleure est CORRECTE — pas une erreur. 'Permis probatoire 18 mois + excès vitesse 25 km/h + retrait 1 mois + doit repasser examen pratique ?' sans 'LCR 15a al. 3 : examen pratique obligatoire post-retrait pour permis probatoire — règle distincte des permis définitifs' ni 'phase probatoire prolongée'. Signal adversarial = jeune conducteur croit à une erreur administrative alors que c'est une règle légale spécifique aux probatoires.",
+  },
+
+  // VIOLENCE — CP 183/CP 181 : séquestration de courte durée par conjoint = crime même sans violence physique visible
+  {
+    id: 'adv_violence_18',
+    query: "Il y a 3 semaines, mon mari m'a enfermée à clé dans notre appartement pendant 4 heures après une dispute — il avait pris toutes les clés. Je n'ai pas pu sortir ni appeler (il avait aussi mon téléphone). Il n'y a pas eu de coups. Est-ce que c'est un crime ou juste une dispute conjugale grave ? Il dit que c'est chez nous donc ce n'est pas 'séquestration'.",
+    canton: 'BS',
+    expected_domaine: 'violence',
+    expected_any_article: ['CP 183', 'CP 181'],
+    notes: "Séquestration courte durée conjoint sans coups = crime — CP 183 — CP 183 al. 1 : se rend coupable de séquestration ou d'enlèvement quiconque, sans droit, retient une personne en l'empêchant de se mouvoir librement — peine privative de liberté jusqu'à 5 ans ou peine pécuniaire. La courte durée (4 heures), l'absence de coups et le contexte conjugal/domicile commun ne sont PAS des éléments qui excluent le crime. CP 181 : contrainte (téléphone confisqué, empêchement d'appeler) — infraction complémentaire. 'Chez nous' n'est pas un droit — le CP ne distingue pas le lieu pour la séquestration. Poursuite d'office (art. 55a CP modificatif depuis 2004) : le ministère public peut poursuivre même si la victime retire sa plainte. LAVI : victime d'un crime, droit à l'aide aux victimes (conseil, soutien, réparation). '4h enfermée à clé + téléphone confisqué + pas de coups + mari dit c'est chez nous ?' sans 'CP 183 séquestration : crime indépendamment de la durée, du lieu et de l'absence de violence physique' ni 'LAVI aide victime crime'. Signal adversarial = victime croit qu'en l'absence de coups ou dans le domicile commun ce n'est pas qualifiable pénalement.",
+  },
+
+  // SANTÉ — LAMal 41/OAMal 93 : ophtalmologue = accès direct sans renvoi du médecin de famille dans tous les modèles alternatifs
+  {
+    id: 'adv_sante_21',
+    query: "J'ai un modèle d'assurance 'médecin de famille' (HMO) à Lucerne. J'ai un problème oculaire urgent — vision trouble subitement depuis hier. Mon médecin de famille est en vacances cette semaine et son remplacement ne répond pas. Mon assurance dit que je dois avoir un renvoi médecin de famille AVANT de consulter un ophtalmologue. Est-ce correct pour une urgence oculaire ?",
+    canton: 'LU',
+    expected_domaine: 'sante',
+    expected_any_article: ['LAMal 41', 'OAMal 93'],
+    notes: "Accès direct ophtalmologue dans modèles alternatifs — OAMal 93 al. 2 — OAMal 93 al. 2 : même dans les modèles d'assurance alternatifs (médecin de famille, HMO, télémed), l'assuré peut TOUJOURS consulter directement un ophtalmologue, gynécologue, pédiatre ou un médecin en situation d'urgence sans renvoi préalable. LAMal 41 al. 4 : les cas urgents ne sont jamais soumis à restriction d'accès. La vision trouble soudaine constitue une urgence ophtalmologique (risque décollement rétine, occlusion vasculaire, glaucome aigu). L'assurance ne peut pas refuser la prise en charge de la consultation ophtalmologue dans ce cas, même sans renvoi. L'information donnée par l'assurance est INCORRECTE. 'HMO + médecin famille absent + vision trouble subite + assurance dit renvoi obligatoire ?' sans 'OAMal 93 al. 2 : ophtalmologue = accès direct autorisé dans tous les modèles alternatifs' ni 'urgence = jamais de restriction d'accès LAMal 41'. Signal adversarial = assuré accepte une information incorrecte de l'assurance pouvant retarder une consultation urgente.",
+  },
+
+  // SUCCESSIONS — CC 497/CC 505 : codicille non daté nul de plein droit, testament antérieur reste le seul valable
+  {
+    id: 'adv_successions_16',
+    query: "Ma tante est décédée en laissant un testament de 2018 qui me lègue son appartement. Mais ses enfants ont trouvé une note manuscrite non datée, signée par ma tante, qui dit 'je révoque tout ce que j'ai écrit avant et je laisse tout à mes enfants à parts égales'. Cette note a-t-elle la force d'un testament qui annule le testament de 2018 ?",
+    canton: 'GR',
+    expected_domaine: 'successions',
+    expected_any_article: ['CC 497', 'CC 505'],
+    notes: "Codicille non daté nul de plein droit — CC 505 — CC 505 al. 1 : le testament olographe (manuscrit) doit être entièrement écrit à la main par le testateur ET DATÉ (jour, mois, année) ET signé. L'absence de date rend le testament NUL DE PLEIN DROIT — pas voidable, nul ab initio, sans recours. CC 497 : l'acte de révocation d'un testament antérieur suit les mêmes formes que le testament lui-même — donc aussi soumis à la condition de date. La note non datée ne peut donc pas révoquer le testament de 2018, même si elle est signée et entièrement manuscrite. Le testament de 2018 reste donc le seul instrument valable. Exception : si la note datait du même jour que la mort et était signée devant témoins (testament d'urgence CC 506) — inapplicable ici. 'Note manuscrite signée mais non datée + prétend révoquer testament 2018 + appartement en jeu ?' sans 'CC 505 : date obligatoire dans testament olographe — absence = nullité absolue' ni 'testament 2018 reste seul valable'. Signal adversarial = héritiers croient qu'une note manuscrite signée suffit pour révoquer un testament, ignorant l'exigence formelle de la date.",
+  },
+
+  // VOISINAGE — CC 684/CC 679a : vibrations atelier artisanal = immission excessive, recours civil indépendant du permis de construire
+  {
+    id: 'adv_voisinage_22',
+    query: "Mon voisin a ouvert un atelier de menuiserie à 12 mètres de ma chambre — il commence le travail à 6h30 du matin avec des machines qui font vibrer mes murs et mes fenêtres, des poussières de bois entrent dans mon jardin. Il a un permis de construire valide pour l'atelier. La commune dit qu'elle ne peut rien faire car le permis est légal. Ai-je des recours ?",
+    canton: 'AG',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 684', 'CC 679a'],
+    notes: "Immissions excessives recours civil indépendant du permis — CC 684 / CC 679a — CC 684 al. 1 : le propriétaire est tenu, dans l'exercice de son droit, de s'abstenir de tout excès au détriment des propriétaires voisins — vibrations, bruit, poussières, odeurs sont des immissions visées. CC 684 al. 2 : sont en particulier excessives les immissions qui dépassent la mesure tolérée selon l'usage local et la nature de l'immeuble. CC 679a : l'action en cessation de trouble et en dommages-intérêts est INDÉPENDANTE de l'existence d'un permis de construire valide — le permis public ne confère pas le droit de causer des immissions excessives privées. Le juge civil apprécie selon les critères : heure (6h30 = avant l'heure légale de travaux 7h00 dans la plupart des règlements cantonaux AG), nature des vibrations, poussières. La commune a tort de dire qu'elle ne peut rien faire — la voie civile est distincte. '6h30 + vibrations murs + poussières + permis de construire valide + commune dit pas de recours ?' sans 'CC 684 immissions excessives + CC 679a recours civil indépendant du permis administratif' ni 'action juge civil possible même permis valide'. Signal adversarial = voisin croit que le permis ferme toutes les voies de recours.",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

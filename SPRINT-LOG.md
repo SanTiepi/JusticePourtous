@@ -1434,3 +1434,26 @@ Points à surveiller :
   - `adv_voisinage_22` (CC 684/679a immissions atelier menuiserie excessives — recours civil indépendant permis de construire — AG)
 - **Angles inédits wave 34** : CO 269d nullité hausse papier libre, CO 321c clause forfait non-cadre, LP 107 délai péremptoire 10j tiers, CPC 299 curatelle enfant d'office, ALCP Annexe I art. 6 al. 3 maintien séjour UE, LCR 15a al. 3 examen pratique post-retrait probatoire, CP 183 séquestration courte sans violence, OAMal 93 al. 2 ophtalmologue direct, CC 505 nullité testament sans date, CC 679a recours civil indépendant permis.
 - **Prochaine action** : mesure éval CLI sur 350 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-06 UTC — run agent horaire (wave 35 adversarial : 350→360 cas)
+- **Tenté** : item 1 — wave 35 : +10 cas adversariaux ciblant des angles inédits dans 10 domaines variés (bail CO 266a reconduction tacite ≠ même durée fixe, travail CO 324 demeure employeur, dettes CO 141 renonciation prescription, famille CC 165 contribution extraordinaire entreprise conjoint, étrangers LEI 96/CEDH 8 proportionnalité révocation, voisinage CO 41/CC 684 chute arbre tempête, successions CC 521 legs association réduction, violence CC 28b voie civile provisionnelle, santé OAMal 71a médicament hors LS, assurances LPP 47 libre passage institution supplétive)
+- **Résultat** : passed ✓ — **360 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement, aucun code modifié)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - **Sanity check adversarial CLI `--limit 5 --concurrency 2` : 80% brut** (4×100% + 1×63%) — `adv_bail_02` fail pré-existant connu, pipeline opérationnel
+- **Nouveaux cas wave 35 (10)** :
+  - `adv_bail_37` (CO 266a reconduction tacite bail durée déterminée → indéterminée, pas nouvelle durée fixe — VD)
+  - `adv_travail_38` (CO 324 al. 1 demeure de l'employeur : projet annulé, graphiste présente = salaire dû — ZH)
+  - `adv_dettes_34` (CO 141 renonciation prescription : email reconnaissance après 10 ans ≠ renonciation valable si prescription déjà acquise — GE)
+  - `adv_famille_31` (CC 165 indemnité équitable contribution extraordinaire épouse à restaurant mari bien propre — 15 ans gratuit — FR)
+  - `adv_etrangers_28` (LEI 96/CEDH 8 proportionnalité révocation permis B, 2 enfants suisses garde exclusive, sursis 8 ans — BE)
+  - `adv_voisinage_23` (CO 41/CC 684 chute arbre voisin tempête : force majeure partielle seulement si arbre sain, expertise arboriste — VD)
+  - `adv_successions_17` (CC 521 legs association caritative, héritières réservataires → réduction proportionnelle (pas annulation) — GE)
+  - `adv_violence_19` (CC 28b voie civile provisionnelle ex parte éloignement stalker, indépendante de la pénale — GE)
+  - `adv_sante_22` (LAMal 52/OAMal 71a immunothérapie cancer hors LS → remboursement exceptionnel cas par cas — VD)
+  - `adv_assurances_17` (LPP 47/CO 331d libre passage non transféré, institution supplétive, fonds conservés jusqu'à 65 ans — ZH)
+- **Angles inédits wave 35** : CO 266a reconduction tacite ≠ même durée fixe (mythe répandu), CO 324 demeure employeur risque exploitation, CO 141 renonciation prescription post-acquisition invalide, CC 165 indemnité bien propre, LEI 96 proportionnalité enfants suisses, chute arbre force majeure partielle, CC 521 réduction ≠ annulation, CC 28b voie civile rapide harcèlement, OAMal 71a hors-LS exceptionnel oncologie, LPP 47 fonds non perdus.
+- **Prochaine action** : mesure éval CLI sur 360 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

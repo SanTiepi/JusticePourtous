@@ -1457,3 +1457,24 @@ Points à surveiller :
   - `adv_assurances_17` (LPP 47/CO 331d libre passage non transféré, institution supplétive, fonds conservés jusqu'à 65 ans — ZH)
 - **Angles inédits wave 35** : CO 266a reconduction tacite ≠ même durée fixe (mythe répandu), CO 324 demeure employeur risque exploitation, CO 141 renonciation prescription post-acquisition invalide, CC 165 indemnité bien propre, LEI 96 proportionnalité enfants suisses, chute arbre force majeure partielle, CC 521 réduction ≠ annulation, CC 28b voie civile rapide harcèlement, OAMal 71a hors-LS exceptionnel oncologie, LPP 47 fonds non perdus.
 - **Prochaine action** : mesure éval CLI sur 360 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-07 UTC — run agent horaire (wave 36 adversarial : 360→370 cas)
+- **Tenté** : item 1 — wave 36 : +10 cas adversariaux ciblant des angles inédits dans 10 domaines (bail CO 257a charges incluses forfait ≠ décompte séparé, travail CO 334 requalification CDD×7 en CDI abus de forme, fiscal LIFD 26/33a déductibilité MBA formation continue, famille CC 122/124b partage LPP divorce exception invalidité AI, assurances LAA 15/OLAA 22 plafond gain assuré 148'200 CHF, consommation CO 28/LCD 8 dark pattern abonnement caché, circulation LCR 31/55 anesthésie locale dentaire ≠ infraction per se, assurances LAVS 47/LPGA 25 remise restitution rentes post-décès, entreprise CO 801/802 obligations comptables Sàrl risques fiscaux/pénaux, voisinage CC 686/688 arbre mitoyen limite cadastrale copropriété)
+- **Résultat** : passed ✓ — **370 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2747/2747 ✓** (données seulement, aucun code modifié)
+  - Validation fiches (`scripts/audit-fiches-schema.mjs`) : 0 erreur ✓ (100%)
+  - Benchmark JPT : **64.2/100 ✓** (gate >= 60)
+- **Nouveaux cas wave 36 (10)** :
+  - `adv_bail_38` (CO 257a/259a charges incluses forfait = bailleur assume le risque, pas de décompte séparé possible — VD)
+  - `adv_travail_39` (CO 334/335 requalification CDD×7 en CDI abus de forme TF ATF 129 III 35, préavis + délai action 6 mois — GE)
+  - `adv_fiscal_10` (LIFD 26 déduction illimitée si lien activité actuelle / LIFD 33a plafonné 12k — MBA HEC chef projet IT — ZH)
+  - `adv_famille_32` (CC 122 partage LPP seulement acquis pendant mariage / CC 124b exception rente invalidité AI → rente viagère — VD)
+  - `adv_accident_17` (LAA 15/OLAA 22 plafond gain assuré 148'200 CHF : 210k salaire → sous-assurance 62k, LAA surobligatoire — ZH)
+  - `adv_consommation_17` (CO 28 dol dark pattern case pré-cochée / LCD 8 clauses abusives, chargeback + ECC Switzerland — GE)
+  - `adv_circulation_16` (LCR 31/55 anesthésie locale ≠ infraction per se vs sédation systémique, expertise médicale nécessaire — BE)
+  - `adv_social_14` (LAVS 47/LPGA 25 rentes post-décès : demande de remise possible si bonne foi, délai impératif 30 jours — VD)
+  - `adv_entreprise_16` (CO 801/802 Sàrl comptabilité incomplète : taxation d'office AFC + CP 325 + responsabilité gérant — ZH)
+  - `adv_voisinage_24` (CC 686/688 arbre mitoyen tronc 50/50 : copropriété = décision unanime ou judiciaire, frais par moitié — VD)
+- **Angles inédits wave 36** : charges forfaitaires bail ≠ acomptes (mythe), CDD×7 abus de forme TF, LIFD 26 vs 33a MBA (distinction clef formation illimitée/plafonnée), LPP partage exception AI, plafond LAA 148'200 CHF sous-assurance, dark pattern dol CO 28, anesthésie locale ≠ sédation per se LCR 55, remise LPGA 25 délai 30j post-décès AVS, comptabilité Sàrl sans réviseur = risque CP 325, arbre mitoyen copropriété CC 686.
+- **Prochaine action** : mesure éval CLI sur 370 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

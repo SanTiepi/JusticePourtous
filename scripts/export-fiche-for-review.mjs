@@ -115,7 +115,7 @@ function ficheToMarkdown(fiche) {
   lines.push('Cette review est **volontaire** et **n\'engage pas votre responsabilité**.');
   lines.push('Votre retour est consultatif. Si vous identifiez une erreur, JusticePourtous corrige avant déploiement public ou ajoute le label `reviewed_by_legal_expert: <votre_nom>` (anonymisable).');
   lines.push('');
-  lines.push(`Contact : robin@batiscan.ch — Fiche en prod : https://justicepourtous.ch/api/fiches/${fiche.id}`);
+  lines.push(`Contact : info@justicepourtous.ch — Fiche en prod : https://justicepourtous.ch/api/fiches/${fiche.id}`);
   return lines.join('\n');
 }
 

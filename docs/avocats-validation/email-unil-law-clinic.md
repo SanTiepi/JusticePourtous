@@ -47,6 +47,6 @@ Disponible pour une rencontre à Lausanne (Unil ou ailleurs) quand vous voulez.
 Cordialement,
 
 **Robin Fragnière**
-robin@batiscan.ch · 📞 [TON NUMÉRO]
+info@justicepourtous.ch · 📞 [TON NUMÉRO]
 Morges (VD) · Diagnostiqueur bâtiment de formation
 GitHub : https://github.com/SanTiepi/JusticePourtous

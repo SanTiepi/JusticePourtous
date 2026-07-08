@@ -30,5 +30,5 @@ Disponible pour 30 minutes téléphoniques quand vous voulez.
 Belle journée,
 
 **Robin Fragnière**
-robin@batiscan.ch · 📞 [TON NUMÉRO]
+info@justicepourtous.ch · 📞 [TON NUMÉRO]
 Morges (VD)

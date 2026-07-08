@@ -106,4 +106,4 @@ Voir [grille-review.md](./grille-review.md). Format suggéré : 5 minutes, 6 que
 Cette review est **volontaire** et **n'engage pas votre responsabilité**.
 Votre retour est consultatif. Si vous identifiez une erreur, JusticePourtous corrige avant déploiement public ou ajoute le label `reviewed_by_legal_expert: <votre_nom>` (anonymisable).
 
-Contact : robin@batiscan.ch — Fiche en prod : https://justicepourtous.ch/api/fiches/etranger_renvoi
+Contact : info@justicepourtous.ch — Fiche en prod : https://justicepourtous.ch/api/fiches/etranger_renvoi

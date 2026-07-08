@@ -29,7 +29,7 @@ J'ai lancé [JusticePourtous.ch](https://justicepourtous.ch) — un outil gratui
 
 🤝 **Pourquoi gratuit** : projet solo, modèle 2 CHF/triage citoyen, pas de fonds pour tarif avocat (CHF 500-1500/fiche). À terme, partenariat structuré envisageable.
 
-Si vous avez 5 minutes ou un·e collègue à tagger : MP ou robin@batiscan.ch.
+Si vous avez 5 minutes ou un·e collègue à tagger : MP ou info@justicepourtous.ch.
 
 Merci 🙏
 

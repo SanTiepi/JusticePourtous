@@ -1478,3 +1478,25 @@ Points à surveiller :
   - `adv_voisinage_24` (CC 686/688 arbre mitoyen tronc 50/50 : copropriété = décision unanime ou judiciaire, frais par moitié — VD)
 - **Angles inédits wave 36** : charges forfaitaires bail ≠ acomptes (mythe), CDD×7 abus de forme TF, LIFD 26 vs 33a MBA (distinction clef formation illimitée/plafonnée), LPP partage exception AI, plafond LAA 148'200 CHF sous-assurance, dark pattern dol CO 28, anesthésie locale ≠ sédation per se LCR 55, remise LPGA 25 délai 30j post-décès AVS, comptabilité Sàrl sans réviseur = risque CP 325, arbre mitoyen copropriété CC 686.
 - **Prochaine action** : mesure éval CLI sur 370 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-08 UTC — run agent horaire (wave 37 adversarial : 370→380 cas)
+- **Tenté** : item 1 — wave 37 : +10 cas adversariaux ciblant des angles inédits dans 10 domaines variés (bail CO 266l résiliation par email preuve, travail CO 336a plafond 6 mois indemnité abusif, dettes LP 293/294 sursis concordataire TPE, famille CC 286a/CPC 276 pension provisionnelle parents non mariés, étrangers LEI 47 délai <12 ans vs >12 ans, voisinage CC 742 eaux imperméabilisation, successions CC 505 testament dactylographié nul, violence CP 179ter enregistrement participant, sante LAMal 3/6 rétroactivité assurance obligatoire, consommation CPC 114/243 procédure simplifiée sans avocat)
+- **Résultat** : passed ✓ — 380 cas dans `test/adversarial-cases.mjs`, 3 gates verts, 0 doublon d'ID
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2638/2638 ✓** (inchangé — données seulement, aucun code modifié)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Adversarial CLI sur 380 cas : non mesuré ce run (nécessite `claude -p` actif)
+- **Nouveaux cas wave 37 (10)** :
+  - `adv_bail_39` (CO 266l résiliation email sans recommandé — absence de preuve de réception — VD) → score inconnu
+  - `adv_travail_40` (CO 336a indemnité licenciement abusif plafonnée 6 mois — employé croit à 2 ans — BE) → score inconnu
+  - `adv_dettes_35` (LP 293/294 sursis concordataire artisan 92k CHF — alternative méconnue à la faillite — GE) → score inconnu
+  - `adv_famille_33` (CC 286a/CPC 276 pension provisionnelle parents non mariés, mesures superprovisionnelles 24-48h — NE) → score inconnu
+  - `adv_etrangers_29` (LEI 47 distinction délai 5 ans enfants <12 ans vs 12 mois enfants >12 ans — ZH) → score inconnu
+  - `adv_voisinage_25` (CC 742 al. 2 eaux non-naturelles depuis imperméabilisation terrasse + CC 679 — FR) → score inconnu
+  - `adv_successions_18` (CC 505 testament dactylographié nul de plein droit même signé/daté à la main — GR) → score inconnu
+  - `adv_violence_20` (CP 179ter enregistrement clandestin : participant ≠ tiers, CC 28 usage dommageable — GE) → score inconnu
+  - `adv_sante_23` (LAMal 3/6 rétroactivité assurance obligatoire dans 3 mois, refus assureur impossible — ZH) → score inconnu
+  - `adv_consommation_18` (CPC 114/243 procédure simplifiée <30k sans avocat, émoluments ~400-600 CHF — BE) → score inconnu
+- **Angles inédits wave 37** : CO 266l preuve résiliation (distinct de résiliation abusive), CO 336a plafond légal 6 mois (mythe des "dommages proportionnels"), LP 293/294 sursis concordataire TPE (vs faillite inévitable), LEI 47 double délai selon âge (très méconnu), CC 742 al. 2 exception eaux artificielles, CC 505 nul olographe dactylographié (mythe répandu), CP 179ter distinction participant/tiers, LAMal 3/6 rétroactivité + refus assureur impossible, CPC 243 procédure simplifiée sans avocat (mythe "justice trop chère").
+- **Prochaine action** : mesure éval CLI sur 380 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

@@ -58,6 +58,24 @@ const DURATION_LABELS = {
   }
 };
 
+// Abréviations des lois/codes fédéraux et particules de citation, par langue.
+// Les références d'articles sont protégées comme tokens et restaurées en FRANÇAIS
+// (token-protector) → en DE/IT une citation restait "art. 256 al. 1 CO" au lieu de
+// "Art. 256 Abs. 1 OR", incompréhensible. Post-traitement DE/IT uniquement, appliqué
+// UNIQUEMENT à l'intérieur d'un motif de citation (LEGAL_REF_RE) pour ne jamais
+// toucher un "CO"/"al" hors contexte juridique. EN garde les abréviations FR (usage).
+const LEGAL_ABBREV = {
+  de: {
+    codes: { CO: 'OR', CC: 'ZGB', CP: 'StGB', CPC: 'ZPO', CPP: 'StPO', LP: 'SchKG', LEI: 'AIG', LTF: 'BGG', Cst: 'BV' },
+    art: 'Art.', al: 'Abs.', let: 'lit.'
+  },
+  it: {
+    codes: { LP: 'LEF', LEI: 'LStrI' }, // CO/CC/CP/CPC/CPP identiques en italien
+    art: 'art.', al: 'cpv.', let: 'lett.'
+  }
+};
+const LEGAL_REF_RE = /\b(?:art\.?\s*\d+[a-z]?(?:\s*al\.?\s*\d+)?(?:\s*let\.?\s*[a-z])?(?:\s*(?:CO|CC|CP|CPC|CPP|LP|LEI|LTF|Cst))?|(?:CO|CC|CP|CPC|CPP|LP|LEI|LTF|Cst)\s*\d+[a-z]?(?:\s*al\.?\s*\d+)?)\b/giu;
+
 export async function translateStructuredContent(content, options = {}) {
   const targetLang = normalizeLocale(options.targetLang || DEFAULT_LOCALE);
   const sourceLang = normalizeLocale(options.sourceLang || DEFAULT_LOCALE);
@@ -288,6 +306,7 @@ async function translateOneString(text, ctx, keyHint = '') {
     }
 
     translated = localizeDurationExpressions(translated, ctx.targetLang);
+    translated = localizeLegalRefs(translated, ctx.targetLang);
 
     setCacheEntry(cacheKey, {
       translated_text: translated,
@@ -422,6 +441,28 @@ function localizeDurationExpressions(text, targetLang) {
     if (!pair) return `${countRaw} ${unitRaw}`;
     const translatedUnit = count === 1 ? pair[0] : pair[1];
     return `${countRaw} ${translatedUnit}`;
+  });
+}
+
+// Localise les abréviations de codes de loi DANS une citation d'article (DE/IT).
+// Ne s'applique qu'aux sous-chaînes reconnues comme référence juridique, jamais à
+// un "CO"/"al"/"art" isolé dans du texte courant.
+export function localizeLegalRefs(text, targetLang) {
+  const locale = normalizeLocale(targetLang);
+  const map = LEGAL_ABBREV[locale];
+  if (!text || typeof text !== 'string' || !map) return text;
+
+  return text.replace(LEGAL_REF_RE, (ref) => {
+    let out = ref;
+    // Codes de loi (mot entier) : CPC/CPP traités avant CP grâce aux \b.
+    for (const [fr, tgt] of Object.entries(map.codes)) {
+      out = out.replace(new RegExp('\\b' + fr + '\\b', 'g'), tgt);
+    }
+    // Particules de citation.
+    out = out.replace(/\bart\.?/gi, map.art);
+    out = out.replace(/\bal\.?/gi, map.al);
+    out = out.replace(/\blet\.?/gi, map.let);
+    return out;
   });
 }
 

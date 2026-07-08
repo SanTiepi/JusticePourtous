@@ -34,6 +34,7 @@
       <div class="nav-links">
         <a href="/">Accueil</a>
         <a href="/annuaire.html">Annuaire</a>
+        <a href="/methodologie.html">Méthodologie</a>
         <div class="lang-switcher" id="langSwitcher"></div>
       </div>
     </div>
@@ -223,7 +224,7 @@
         Ce service ne remplace pas un conseil d'avocat personnalisé.
       </div>
       <div class="footer-contact">
-        <a href="mailto:contact@justicepourtous.ch">contact@justicepourtous.ch</a>
+        <a href="mailto:info@justicepourtous.ch">info@justicepourtous.ch</a>
       </div>
       <div class="footer-copy">&copy; 2026 JusticePourtous</div>
     </div>
@@ -290,6 +291,9 @@
     var escCount = 0;
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
+        // Ne pas déclencher la sortie d'urgence si une modale/overlay est ouverte
+        // (Échap y sert à fermer) — évite de perdre la saisie sur un Échap accidentel.
+        if (document.querySelector('.modal.open, dialog[open], [aria-modal="true"], [data-modal-open]')) { escCount = 0; return; }
         escCount++;
         if (escCount >= 2) window.location.replace('https://www.meteosuisse.admin.ch');
         setTimeout(function() { escCount = 0; }, 500);
@@ -298,6 +302,22 @@
 
     var sessionCode = localStorage.getItem('jb_session');
     var lastQuery = '';
+
+    // Pré-remplissage depuis le triage gratuit : le citoyen qui vient de décrire
+    // sa situation ne doit PAS tout retaper après paiement (friction #1 du funnel
+    // payant — audit UX 2026-07).
+    (function prefillFromTriage() {
+      try {
+        var qEl = document.getElementById('question');
+        if (!qEl || qEl.value.trim()) return;
+        var raw = sessionStorage.getItem('jb_last_text');
+        if (!raw) {
+          var stored = JSON.parse(sessionStorage.getItem('jb_result') || 'null');
+          raw = stored && (stored.resumeSituation || (stored.infosExtraites && stored.infosExtraites.resume));
+        }
+        if (raw) { qEl.value = raw; lastQuery = raw; }
+      } catch (e) { /* noop */ }
+    })();
 
     var loginEmailValue = '';
 
@@ -509,7 +529,7 @@
       // Step 1: OCR if file attached
       var ocrText = '';
       if (selectedFile) {
-        txt.innerHTML = '<div class="loading">' + t('error.extraction') + '</div>';
+        txt.innerHTML = '<div class="loading-indicator" role="status" aria-live="polite"><span class="loading-spinner" aria-hidden="true"></span><span class="loading-message">' + t('error.extraction') + '</span></div>';
         ocrText = await uploadAndOCR();
         if (ocrText) {
           q = (q ? q + '\n\n' : '') + '--- Document joint ---\n' + ocrText;
@@ -556,7 +576,7 @@
       if (Object.keys(answers).length === 0) return;
 
       var txt = document.getElementById('reponseTexte');
-      txt.innerHTML = '<div class="loading">' + t('v4.refine_loading') + '</div>';
+      txt.innerHTML = '<div class="loading-indicator" role="status" aria-live="polite"><span class="loading-spinner" aria-hidden="true"></span><span class="loading-message">' + t('v4.refine_loading') + '</span></div>';
 
       try {
         var res = await fetch('/api/premium/analyze-v3/refine', {

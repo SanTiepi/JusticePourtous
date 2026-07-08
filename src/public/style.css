@@ -4379,32 +4379,10 @@ body.has-disclaimer {
   gap: 0.5rem;
   margin: 1.5rem 0 1rem;
 }
-.filter-btn {
-  padding: 0.5rem 1rem;
-  font-size: 0.85rem;
-  background: #fff;
-  color: #4a5b6e;
-  border: 1.5px solid #e3e8ef;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: all 0.15s ease;
-  font-weight: 500;
-}
-.filter-btn:hover {
-  border-color: #1d7042;
-  color: #1d7042;
-  background: #f0f9f4;
-}
-.filter-btn.active {
-  background: #1d7042;
-  color: white;
-  border-color: #1d7042;
-  font-weight: 600;
-}
-.filter-btn.active:hover {
-  background: #155433;
-  color: white;
-}
+/* NB : la définition canonique de .filter-btn (via tokens du design system,
+   couleur de marque) vit plus haut (~l.1496). L'ancienne redéfinition verte
+   codée en dur (#1d7042) qui vivait ici l'écrasait et cassait la cohérence
+   visuelle des filtres de l'annuaire — retirée (audit UX 2026-07). */
 
 /* ─── Méthodologie — listes IA fait/fait jamais avec couleurs distinctes ── */
 .method-two-col-distinct {

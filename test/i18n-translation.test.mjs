@@ -8,6 +8,7 @@ import {
   shouldRunQa,
   translateStructuredContent,
   translateTextContent,
+  localizeLegalRefs,
   _getPeakTranslationConcurrency,
   _resetPeakTranslationConcurrency
 } from '../src/services/i18n/translation-orchestrator.mjs';
@@ -53,7 +54,8 @@ describe('translation orchestrator', () => {
     assert.ok(['fresh', 'cached'].includes(first.translation_status));
     assert.ok(first.translation_pipeline_version);
     assert.match(first.fiche.reponse.explication, /\[\[de\]\]/);
-    assert.match(first.fiche.reponse.explication, /CO 271/);
+    // En allemand, la citation "CO 271" est localisée en "OR 271" (Obligationenrecht).
+    assert.match(first.fiche.reponse.explication, /OR 271/);
     assert.match(first.fiche.reponse.explication, /CHF 100/);
 
     const second = await translateStructuredContent(payload, {
@@ -264,6 +266,28 @@ describe('translation orchestrator — fallback provider down', () => {
     } finally {
       delete process.env.JB_TRANSLATION_FAKE_THROW;
     }
+  });
+});
+
+describe('localizeLegalRefs — abréviations de codes par langue', () => {
+  it('DE : art./al. + codes fédéraux localisés dans une citation', () => {
+    assert.equal(localizeLegalRefs('art. 256 al. 1 CO', 'de'), 'Art. 256 Abs. 1 OR');
+    assert.equal(localizeLegalRefs('CO 271', 'de'), 'OR 271');
+    assert.equal(localizeLegalRefs('art. 641 CC', 'de'), 'Art. 641 ZGB');
+    assert.equal(localizeLegalRefs('LP 74', 'de'), 'SchKG 74');
+  });
+  it('IT : LP→LEF, al→cpv, CO reste CO', () => {
+    assert.equal(localizeLegalRefs('art. 256 al. 1 CO', 'it'), 'art. 256 cpv. 1 CO');
+    assert.equal(localizeLegalRefs('LP 74', 'it'), 'LEF 74');
+  });
+  it('CPC/CPP ne sont pas cassés par la règle CP', () => {
+    assert.equal(localizeLegalRefs('art. 55 CPC', 'de'), 'Art. 55 ZPO');
+    assert.equal(localizeLegalRefs('art. 10 CPP', 'de'), 'Art. 10 StPO');
+  });
+  it('ne touche PAS un texte hors citation ni le français', () => {
+    assert.equal(localizeLegalRefs('CO 271', 'fr'), 'CO 271');
+    assert.equal(localizeLegalRefs('La société CO2 émet trop', 'de'), 'La société CO2 émet trop');
+    assert.equal(localizeLegalRefs('normal alinéa sans code', 'de'), 'normal alinéa sans code');
   });
 });
 

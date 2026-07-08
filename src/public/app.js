@@ -85,6 +85,7 @@ async function submitConsultText(safetyAck) {
   }
   window.jbLastQuery = texte;
   window.jbSafetyOrigin = 'triage';
+  try { sessionStorage.setItem('jb_last_text', texte); } catch (e) { /* noop */ }
   var lang = typeof getLang === 'function' ? getLang() : 'fr';
   var card = document.getElementById('questionCard');
   if (card) card.innerHTML = '<div class="loading-indicator" role="status" aria-live="polite" style="text-align:center;padding:3rem 1rem;color:#4a5b6e;font-size:1.1rem;">⚖️ Analyse en cours…</div>';
@@ -109,6 +110,20 @@ window.submitConsultText = submitConsultText;
 // Aiguillage selon la réponse triage : questions à poser OU résultat OU erreur
 function handleTriageResponse(data) {
   jbCaseId = data.case_id || data.sessionId || jbCaseId;
+
+  // Numéro de dossier RÉEL (traçable côté support) + URL reprenable, en
+  // remplacement de l'ancien Math.random affiché comme "Réf." officielle.
+  if (jbCaseId) {
+    var refEl = document.getElementById('dossierRef');
+    if (refEl) refEl.textContent = 'Réf. ' + jbCaseId;
+    try {
+      var u = new URL(window.location.href);
+      if (u.searchParams.get('case') !== jbCaseId) {
+        u.searchParams.set('case', jbCaseId);
+        window.history.replaceState(null, '', u.toString());
+      }
+    } catch (e) { /* noop */ }
+  }
 
   // 1) Le triage a besoin de plus d'info → afficher les questions LLM
   if (data.status === 'ask_questions' && Array.isArray(data.questionsManquantes) && data.questionsManquantes.length > 0) {
@@ -311,7 +326,7 @@ window.showNextQuestion = showNextQuestion;
 // Soumet toutes les réponses au backend pour affiner le triage
 async function submitTriageAnswers() {
   var card = document.getElementById('questionCard');
-  if (card) card.innerHTML = '<div class="loading" style="text-align:center;padding:3rem 1rem;color:#4a5b6e;font-size:1.1rem;">⚖️ Affinage du triage...</div>';
+  if (card) card.innerHTML = '<div class="loading-indicator" role="status" aria-live="polite"><span class="loading-spinner" aria-hidden="true"></span><span class="loading-message">⚖️ Affinage du triage…</span></div>';
   var lang = typeof getLang === 'function' ? getLang() : 'fr';
   try {
     var res = await fetch('/api/triage/refine?lang=' + encodeURIComponent(lang), {
@@ -473,7 +488,7 @@ async function submitConsultation() {
 
   // Show loading state
   var card = document.getElementById('questionCard');
-  if (card) card.innerHTML = '<div class="loading">' + t('consult.analysis_loading') + '</div>';
+  if (card) card.innerHTML = '<div class="loading-indicator" role="status" aria-live="polite"><span class="loading-spinner" aria-hidden="true"></span><span class="loading-message">' + t('consult.analysis_loading') + '</span></div>';
 
   try {
     var res = await fetch('/api/consulter', {
@@ -932,6 +947,7 @@ async function loadSearchResultat(query, safetyAck) {
   var container = document.getElementById('resultat');
   window.jbLastQuery = query;
   window.jbSafetyOrigin = 'search';
+  try { sessionStorage.setItem('jb_last_text', query); } catch (e) { /* noop */ }
   startLoadingIndicator(container);
 
   try {

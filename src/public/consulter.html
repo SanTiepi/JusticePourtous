@@ -35,6 +35,7 @@
       <div class="nav-links">
         <a href="/">Accueil</a>
         <a href="/annuaire.html">Annuaire</a>
+        <a href="/methodologie.html">Méthodologie</a>
         <a href="/premium.html" class="nav-premium">Premium</a>
         <div class="lang-switcher" id="langSwitcher"></div>
       </div>
@@ -94,7 +95,7 @@
         Ce service ne remplace pas un conseil d'avocat personnalisé.
       </div>
       <div class="footer-contact">
-        <a href="mailto:contact@justicepourtous.ch">contact@justicepourtous.ch</a>
+        <a href="mailto:info@justicepourtous.ch">info@justicepourtous.ch</a>
       </div>
       <div class="footer-copy">&copy; 2026 JusticePourtous</div>
     </div>
@@ -145,10 +146,10 @@
       }
     });
 
-    // Generate dossier ref
-    var year = new Date().getFullYear();
-    var num = String(Math.floor(Math.random() * 9000) + 1000);
-    document.getElementById('dossierRef').textContent = 'Ref. JB-' + year + '-' + num;
+    // Le numéro de dossier n'est plus un Math.random trompeur (il changeait à
+    // chaque rechargement et ne correspondait à rien de traçable). app.js
+    // renseigne #dossierRef avec le VRAI case_id dès que le triage en produit
+    // un, et rend l'URL reprenable (?case=…).
 
     var params = new URLSearchParams(window.location.search);
     var domaine = params.get('domaine');

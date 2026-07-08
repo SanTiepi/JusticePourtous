@@ -6,7 +6,7 @@ import { runQaPass, translateWithPrimaryProviders } from './providers.mjs';
 
 export const TRANSLATION_PIPELINE_VERSION = '2026-04-20-v3';
 
-const STRUCTURED_SKIP_KEYS = /(id|ids|slug|path|href|url|lien|lang|locale|code|case_id|session|resume_expires_at_iso|translated_at|translation_|source_lang|display_lang|canonical|created_at|updated_at|last_verified_at|published_at|source_id|court_id|signature|provider|filename|status|domaine|sousdomaine|sousDomaine|triage_method|verification_status|canton|court|tier|claude_review_date|claude_legal_review_date|claude_legal_review_notes|review_scope|review_expiry|maj|dateVerification|verificationOk)$/i;
+const STRUCTURED_SKIP_KEYS = /(id|ids|slug|path|href|url|lien|lang|locale|code|case_id|session|resume_expires_at_iso|translated_at|translation_|source_lang|display_lang|canonical|created_at|updated_at|last_verified_at|published_at|source_id|court_id|signature|provider|filename|status|domaine|sousdomaine|sousDomaine|triage_method|verification_status|canton|court|tier|claude_review_date|claude_legal_review_date|claude_legal_review_notes|review_scope|review_expiry|maj|dateVerification|verificationOk|icone|icon|couleur|color|colour)$/i;
 const SHORT_QA_SKIP_THRESHOLD = 120;
 const DEFAULT_TRANSLATION_CONCURRENCY = 6;
 const LONG_FORM_QA_THRESHOLD = 320;
@@ -390,7 +390,10 @@ function flushTranslationQueue() {
 }
 
 function looksLikeIdentifier(text) {
-  return /^(?:\/[^\s]+|[A-Z0-9._:-]{2,}|[a-z0-9_/-]+\.html?)$/.test(text.trim());
+  // Codes hex (#2ecc71) et identifiants techniques ne sont jamais du contenu
+  // juridique : les renvoyer verbatim évite qu'un provider LLM "explique" qu'il
+  // ne peut pas les traduire et injecte sa prose dans un champ couleur/icône.
+  return /^(?:\/[^\s]+|[A-Z0-9._:-]{2,}|[a-z0-9_/-]+\.html?|#[0-9a-fA-F]{3,8})$/.test(text.trim());
 }
 
 function looksLikeReviewerNotes(candidate, original) {

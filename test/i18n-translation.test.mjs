@@ -68,6 +68,28 @@ describe('translation orchestrator', () => {
     assert.equal(second.translation_status, 'cached');
   });
 
+  it('ne traduit JAMAIS les champs structurels (icone, couleur) ni les codes hex', async () => {
+    // Régression : /api/domaines?lang=de renvoyait icone="Startseite" (au lieu de
+    // "home") et, en EN, couleur contenait la prose du LLM ("I cannot translate
+    // this input... #f39c12"). Les champs structurels doivent ressortir verbatim.
+    const suffix = `chrome-${Date.now()}`;
+    const payload = {
+      domaines: [
+        { id: 'bail', nom: `Logement ${suffix}`, icone: 'home', couleur: '#2ecc71' }
+      ]
+    };
+    const out = await translateStructuredContent(payload, {
+      targetLang: 'de',
+      sourceLang: 'fr',
+      contentType: 'chrome/ui'
+    });
+    const d = out.domaines[0];
+    assert.equal(d.icone, 'home', `icone doit rester verbatim, reçu "${d.icone}"`);
+    assert.equal(d.couleur, '#2ecc71', `couleur (hex) doit rester verbatim, reçu "${d.couleur}"`);
+    // Contrôle : un champ texte réel EST bien traduit (marqueur [[de]] du fake provider).
+    assert.match(d.nom, /\[\[de\]\]/, 'le libellé texte doit, lui, être traduit');
+  });
+
   it('traduit un fragment HTML sans perdre les tokens protégés', async () => {
     const result = await translateTextContent('<p>CO 271 [DATE] CHF 200</p>', {
       targetLang: 'it',

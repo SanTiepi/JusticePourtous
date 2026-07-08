@@ -53,9 +53,11 @@ const CONTINUATION_RAW_API_COST = 80;
  * @param {object} p
  * @param {string} p.texte
  * @param {string} [p.canton]
+ * @param {boolean} [p.safety_ack] — l'usager a vu l'écran sécurité et choisi de
+ *   poursuivre le triage juridique quand même (bouton "continuer quand même").
  * @returns {Promise<object>} payload avec status
  */
-export async function handleTriageStart({ texte, canton } = {}) {
+export async function handleTriageStart({ texte, canton, safety_ack = false } = {}) {
   if (!texte || typeof texte !== 'string' || texte.trim().length < 3) {
     return errorPayload(
       'Décrivez votre problème en quelques mots',
@@ -80,14 +82,16 @@ export async function handleTriageStart({ texte, canton } = {}) {
   // (toujours prioritaire sur la détection langue : un cri de détresse en
   //  allemand reste un cri de détresse — on déclenche en français mais on ne
   //  rate pas le signal)
-  const safety = classifySafety(texte);
-  if (safety.triggered) {
-    return {
-      status: 'safety_stop',
-      safety_response: buildSafetyResponse(safety.signal_type),
-      signal_type: safety.signal_type,
-      log_entry: safety.log_entry
-    };
+  if (!safety_ack) {
+    const safety = classifySafety(texte);
+    if (safety.triggered) {
+      return {
+        status: 'safety_stop',
+        safety_response: buildSafetyResponse(safety.signal_type),
+        signal_type: safety.signal_type,
+        log_entry: safety.log_entry
+      };
+    }
   }
 
   // 2. Scope refuser — hors scope / tier humain

@@ -74,7 +74,7 @@ var jbAnswersGiven = {};
 // Soumet le texte au triage LLM-first puis affiche les questions follow-up
 // pertinentes (générées par le LLM en fonction du texte initial). Branching
 // vrai : chaque réponse re-triage le contexte via /api/triage/refine.
-async function submitConsultText() {
+async function submitConsultText(safetyAck) {
   var ta = document.getElementById('consultText');
   if (!ta) return;
   var texte = (ta.value || '').trim();
@@ -83,15 +83,17 @@ async function submitConsultText() {
     ta.focus();
     return;
   }
+  window.jbLastQuery = texte;
+  window.jbSafetyOrigin = 'triage';
   var lang = typeof getLang === 'function' ? getLang() : 'fr';
   var card = document.getElementById('questionCard');
-  if (card) card.innerHTML = '<div class="loading" style="text-align:center;padding:3rem 1rem;color:#4a5b6e;font-size:1.1rem;">⚖️ Analyse en cours...</div>';
+  if (card) card.innerHTML = '<div class="loading-indicator" role="status" aria-live="polite" style="text-align:center;padding:3rem 1rem;color:#4a5b6e;font-size:1.1rem;">⚖️ Analyse en cours…</div>';
 
   try {
     var res = await fetch('/api/triage?lang=' + encodeURIComponent(lang), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ texte: texte, canton: null, lang: lang })
+      body: JSON.stringify({ texte: texte, canton: null, lang: lang, safety_ack: safetyAck === true })
     });
     var data = await res.json();
     if (!res.ok) throw new Error(data.error || 'Erreur ' + res.status);
@@ -170,30 +172,7 @@ function handleTriageResponse(data) {
   if (data.status === 'safety_stop') {
     var card = document.getElementById('questionCard');
     if (!card) return;
-    var sr = data.safety_response || {};
-    var resources = sr.resources || [];
-    var resourcesHtml = resources.map(function(r) {
-      return '<a href="' + (r.tel || '#') + '" style="display:block;padding:1rem;margin-bottom:0.5rem;background:#fff;border:2px solid #c92a2a;border-radius:8px;text-decoration:none;color:#1f2a36;">' +
-        '<div style="display:flex;align-items:center;gap:0.75rem;">' +
-          '<div style="font-size:1.5rem;">📞</div>' +
-          '<div style="flex:1;">' +
-            '<div style="font-weight:700;color:#c92a2a;font-size:1.1rem;">' + escHtmlSafe(r.name) + ' · ' + escHtmlSafe(r.phone) + '</div>' +
-            (r.note ? '<div style="font-size:0.85rem;color:#4a5b6e;margin-top:0.2rem;">' + escHtmlSafe(r.note) + '</div>' : '') +
-          '</div>' +
-        '</div>' +
-      '</a>';
-    }).join('');
-    card.innerHTML =
-      '<div style="background:#fff5f5;border:2px solid #c92a2a;border-radius:12px;padding:1.5rem;">' +
-        '<h2 style="color:#c92a2a;margin:0 0 0.75rem;font-size:1.4rem;">⚠️ Votre sécurité d\'abord</h2>' +
-        (sr.preamble ? '<p style="font-size:1rem;line-height:1.55;margin:0 0 1rem;color:#1f2a36;">' + escHtmlSafe(sr.preamble) + '</p>' : '') +
-        (sr.message ? '<p style="font-weight:600;margin:0 0 1rem;color:#1f2a36;">' + escHtmlSafe(sr.message) + '</p>' : '') +
-        '<div style="margin:1rem 0;">' + resourcesHtml + '</div>' +
-        (sr.disclaimer ? '<p style="font-size:0.82rem;color:#6a7787;margin:1rem 0 0;font-style:italic;">' + escHtmlSafe(sr.disclaimer) + '</p>' : '') +
-        '<div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid #fecaca;text-align:center;">' +
-          '<a href="/" style="display:inline-block;padding:0.75rem 1.5rem;background:#fff;border:1px solid #c9d4df;border-radius:999px;color:#4a5b6e;text-decoration:none;font-size:0.9rem;">← Retour à l\'accueil</a>' +
-        '</div>' +
-      '</div>';
+    card.innerHTML = buildSafetyStopHtml(data);
     return;
   }
   // 3) Out of scope / human tier — orientation simple
@@ -215,6 +194,52 @@ function handleTriageResponse(data) {
   }
   showTriageError('Pas de résultat — réessayez avec plus de détails.');
 }
+
+// Écran sécurité (détresse / violence / mineur) — réutilisé par le triage ET
+// par la barre de recherche du hero (chemin le plus visible du site). Les
+// numéros d'urgence sont présentés en gros, cliquables (tel:). Le bouton
+// "continuer quand même" évite d'enfermer une victime qui a AUSSI un besoin
+// juridique urgent sur un simple "retour à l'accueil".
+function buildSafetyStopHtml(data) {
+  var sr = (data && data.safety_response) || {};
+  var resources = sr.resources || [];
+  var resourcesHtml = resources.map(function(r) {
+    return '<a href="' + (r.tel || '#') + '" style="display:block;padding:1rem;margin-bottom:0.5rem;background:#fff;border:2px solid #c92a2a;border-radius:8px;text-decoration:none;color:#1f2a36;">' +
+      '<div style="display:flex;align-items:center;gap:0.75rem;">' +
+        '<div style="font-size:1.5rem;" aria-hidden="true">📞</div>' +
+        '<div style="flex:1;">' +
+          '<div style="font-weight:700;color:#c92a2a;font-size:1.1rem;">' + escHtmlSafe(r.name) + ' · ' + escHtmlSafe(r.phone) + '</div>' +
+          (r.note ? '<div style="font-size:0.85rem;color:#4a5b6e;margin-top:0.2rem;">' + escHtmlSafe(r.note) + '</div>' : '') +
+        '</div>' +
+      '</div>' +
+    '</a>';
+  }).join('');
+  var continueBtn = sr.continue_anyway
+    ? '<button type="button" onclick="jbContinueAnyway()" style="display:inline-block;padding:0.75rem 1.5rem;background:#8B2500;color:#fff;border:none;border-radius:999px;cursor:pointer;text-decoration:none;font-size:0.9rem;font-weight:600;margin-right:0.5rem;">' + escHtmlSafe(sr.continue_anyway.label || 'Continuer quand même') + '</button>'
+    : '';
+  return '<div role="alert" style="background:#fff5f5;border:2px solid #c92a2a;border-radius:12px;padding:1.5rem;">' +
+      '<h2 style="color:#c92a2a;margin:0 0 0.75rem;font-size:1.4rem;">⚠️ Votre sécurité d\'abord</h2>' +
+      (sr.preamble ? '<p style="font-size:1rem;line-height:1.55;margin:0 0 1rem;color:#1f2a36;">' + escHtmlSafe(sr.preamble) + '</p>' : '') +
+      (sr.message ? '<p style="font-weight:600;margin:0 0 1rem;color:#1f2a36;">' + escHtmlSafe(sr.message) + '</p>' : '') +
+      '<div style="margin:1rem 0;">' + resourcesHtml + '</div>' +
+      (sr.disclaimer ? '<p style="font-size:0.82rem;color:#5a6472;margin:1rem 0 0;font-style:italic;">' + escHtmlSafe(sr.disclaimer) + '</p>' : '') +
+      '<div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid #fecaca;">' +
+        continueBtn +
+        '<a href="/" style="display:inline-block;padding:0.75rem 1.5rem;background:#fff;border:1px solid #c9d4df;border-radius:999px;color:#4a5b6e;text-decoration:none;font-size:0.9rem;">← Retour à l\'accueil</a>' +
+      '</div>' +
+    '</div>';
+}
+
+// "Continuer quand même" : relance le même parcours en acquittant l'écran
+// sécurité (le backend saute alors le court-circuit pour cette requête).
+function jbContinueAnyway() {
+  if (window.jbSafetyOrigin === 'search' && window.jbLastQuery != null) {
+    loadSearchResultat(window.jbLastQuery, true);
+  } else {
+    submitConsultText(true);
+  }
+}
+window.jbContinueAnyway = jbContinueAnyway;
 
 // Affiche les questions follow-up générées par le LLM, en flow étape par étape
 function renderTriageQuestions(triageData) {
@@ -394,7 +419,7 @@ function showQuestion() {
   } else {
     optionsDiv.innerHTML = q.options.map(function(opt) {
       var isSelected = currentAnswers[currentStep] === opt ? ' selected' : '';
-      return '<button class="option' + isSelected + '" onclick="selectOption(this, \'' + opt.replace(/'/g, "\\'") + '\')">' + opt + '</button>';
+      return '<button class="option' + isSelected + '" aria-pressed="' + (isSelected ? 'true' : 'false') + '" onclick="selectOption(this, \'' + opt.replace(/'/g, "\\'") + '\')">' + opt + '</button>';
     }).join('');
   }
 
@@ -413,8 +438,9 @@ function showQuestion() {
 
 function selectOption(el, value) {
   currentAnswers[currentStep] = value;
-  document.querySelectorAll('.option').forEach(function(btn) { btn.classList.remove('selected'); });
+  document.querySelectorAll('.option').forEach(function(btn) { btn.classList.remove('selected'); btn.setAttribute('aria-pressed', 'false'); });
   el.classList.add('selected');
+  el.setAttribute('aria-pressed', 'true');
   var nextBtn = document.getElementById('nextBtn');
   if (nextBtn) nextBtn.disabled = false;
 }
@@ -902,19 +928,29 @@ function stopLoadingIndicator() {
 
 // ===== Search result page =====
 
-async function loadSearchResultat(query) {
+async function loadSearchResultat(query, safetyAck) {
   var container = document.getElementById('resultat');
+  window.jbLastQuery = query;
+  window.jbSafetyOrigin = 'search';
   startLoadingIndicator(container);
 
   try {
     var lang = typeof getLang === 'function' ? getLang() : 'fr';
-    var res = await fetch('/api/search?q=' + encodeURIComponent(query) + '&lang=' + encodeURIComponent(lang));
+    var res = await fetch('/api/search?q=' + encodeURIComponent(query) + '&lang=' + encodeURIComponent(lang) + (safetyAck === true ? '&safety_ack=1' : ''));
     var data = await res.json();
     stopLoadingIndicator();
 
     if (!res.ok || data.error) {
       container.innerHTML =
         '<div class="error-box">' + (data.error || t('result.no_result')) + '<br><a href="/">' + t('result.back_home') + '</a></div>';
+      return;
+    }
+
+    // SÉCURITÉ D'ABORD — la barre de recherche du hero peut recevoir un cri de
+    // détresse/violence : afficher l'écran d'urgence, jamais une fiche générique.
+    if (data.status === 'safety_stop') {
+      container.innerHTML = buildSafetyStopHtml(data);
+      if (window.jbTrack) jbTrack('safety_stop_shown', null);
       return;
     }
 

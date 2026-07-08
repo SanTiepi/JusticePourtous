@@ -28,7 +28,9 @@
   /* Texte */
   --text-primary: #1B1B1B;
   --text-secondary: #4A4A4A;
-  --text-tertiary: #7A7A7A;
+  /* #7A7A7A était à 4.09:1 (sous WCAG AA 4.5) — foncé à #666 (~4.8:1) pour que
+     le disclaimer légal, l'aide de champ et la nav en petit texte restent lisibles. */
+  --text-tertiary: #666666;
   --text-inverse: #FAF9F7;
 
   /* Accents */
@@ -2106,6 +2108,7 @@ body.has-disclaimer {
     left: 8px;
     right: auto;
     height: auto;
+    min-height: 44px;
     padding: 8px 14px 8px 12px;
     background: #c92a2a;
     color: #fff !important;
@@ -2127,20 +2130,32 @@ body.has-disclaimer {
   .quick-exit-label { display: none !important; }
 }
 
-/* --- Notice juridique (inline — secondary pages) --- */
+/* --- Notice juridique (inline — secondary pages) ---
+   Alignée sur le bandeau ambre de la home (2026-07) : le disclaimer légal
+   obligatoire était en gris très pâle (--text-tertiary, sous AA) précisément
+   sur les pages où la réponse ressemble le plus à un conseil (résultat, premium).
+   Ambre + icône + liseré = même signal de confiance partout, contraste AA. */
 .notice-juridique {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   line-height: 1.5;
-  color: var(--text-tertiary);
+  color: #6b5212;
   padding: var(--space-sm) var(--space-md);
-  background: var(--surface-sunken);
-  border: 1px solid var(--border-subtle);
+  background: #fff8e1;
+  border: 1px solid #f0d472;
+  border-left: 4px solid #d99a00;
   border-radius: var(--radius-sm);
   margin-bottom: var(--space-xl);
 }
 
+.notice-juridique::before {
+  content: 'ⓘ ';
+  font-weight: 700;
+  color: #a06900;
+}
+
 .notice-juridique strong {
-  color: var(--text-secondary);
+  color: #5a4400;
+  font-weight: 600;
 }
 
 /* --- Notice juridique bar (homepage — thin strip between nav and hero)
@@ -2820,9 +2835,12 @@ body.has-disclaimer {
 
   .notice-juridique { font-size: 0.7rem; }
 
-  .suggestion { font-size: 0.72rem; padding: 0.3em 0.7em; }
+  .suggestion { font-size: 0.72rem; padding: 0.3em 0.7em; min-height: 32px; }
 
-  .quick-exit { width: 32px; height: 32px; }
+  /* NB : le dimensionnement mobile de .quick-exit est géré par le bloc
+     @media (max-width: 640px) plus haut (pilule rouge lisible). L'ancienne
+     règle width:32px/height:32px ici l'écrasait en carré minuscule avec le
+     label tronqué — retirée (audit UX 2026-07). */
 
   .page-title { font-size: 1.75rem; }
   .method-stats { grid-template-columns: repeat(2, 1fr); }
@@ -2849,7 +2867,7 @@ body.has-disclaimer {
 }
 .confidence-certain { background: #E8F5E9; color: #1B5E20; }
 .confidence-probable { background: #E3F2FD; color: #0D47A1; }
-.confidence-variable { background: #FFF8E1; color: #E65100; }
+.confidence-variable { background: #FFF8E1; color: #A83D00; }
 .confidence-incertain { background: #FCE4EC; color: #880E4F; }
 
 .confidence-dot {

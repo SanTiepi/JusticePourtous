@@ -58,7 +58,7 @@
         <div class="progress-bar"><div class="progress-bar-fill" id="progress" style="width:0%"></div></div>
       </div>
 
-      <div class="consult-card" id="questionCard">
+      <div class="consult-card" id="questionCard" aria-live="polite">
         <h2 id="questionText" data-i18n="consult.loading">Chargement...</h2>
         <div class="consult-options" id="options"></div>
         <div class="consult-nav">
@@ -136,6 +136,9 @@
     var escCount = 0;
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
+        // Ne pas déclencher la sortie d'urgence si une modale/overlay est ouverte
+        // (Échap y sert à fermer) — évite de perdre une consultation sur un Échap accidentel.
+        if (document.querySelector('.modal.open, dialog[open], [aria-modal="true"], [data-modal-open]')) { escCount = 0; return; }
         escCount++;
         if (escCount >= 2) window.location.replace('https://www.meteosuisse.admin.ch');
         setTimeout(function() { escCount = 0; }, 500);

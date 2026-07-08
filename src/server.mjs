@@ -62,6 +62,7 @@ import { estimateSubsideVD, estimateAllocationsVD, estimatePC, buildBilan, listC
 import { translateStructuredContent, translateTextContent, TRANSLATION_PIPELINE_VERSION } from './services/i18n/translation-orchestrator.mjs';
 import { resolveRequestLocale } from './services/i18n/http-locale.mjs';
 import { normalizeLocale, DEFAULT_LOCALE, isOfferedLocale } from './services/i18n/locale-registry.mjs';
+import { classifySafety, buildSafetyResponse } from './services/safety-classifier.mjs';
 import { renderGuideForLocale } from './services/guide-renderer.mjs';
 import {
   getAllArticles, searchArticles,
@@ -1033,7 +1034,7 @@ const server = createServer(async (req, res) => {
 
     if (path === '/api/triage' && method === 'POST') {
       const body = await parseBody(req);
-      const result = await handleTriageStart({ texte: body.texte, canton: body.canton });
+      const result = await handleTriageStart({ texte: body.texte, canton: body.canton, safety_ack: body.safety_ack === true || body.safety_ack === '1' });
       const httpStatus = result.http_status
         || (result.status === 'error' ? 500
           : result.status === 'safety_stop' ? 200
@@ -1051,7 +1052,7 @@ const server = createServer(async (req, res) => {
     if (path === '/api/triage' && method === 'GET') {
       const q = url.searchParams.get('q');
       const canton = url.searchParams.get('canton');
-      const result = await handleTriageStart({ texte: q, canton });
+      const result = await handleTriageStart({ texte: q, canton, safety_ack: url.searchParams.get('safety_ack') === '1' });
       const httpStatus = result.http_status
         || (result.status === 'error' ? 500 : 200);
       const payload = result.error
@@ -1396,6 +1397,23 @@ const server = createServer(async (req, res) => {
       const q = sanitizeUserInput(url.searchParams.get('q'), MAX_QUERY_LENGTH);
       const canton = url.searchParams.get('canton');
       if (!q) return json(res, 400, { error: 'Paramètre q requis', disclaimer: DISCLAIMER });
+
+      // SÉCURITÉ D'ABORD — la barre de recherche du hero est l'entrée la plus
+      // visible du site. Sans ce court-circuit, une victime de violence ("mon
+      // mari me frappe") recevait une fiche générique au lieu du protocole
+      // d'urgence (117, LAVI, sortie discrète) que déclenche déjà le triage.
+      // Réponse immédiate, SANS traduction : les numéros d'urgence sont
+      // universels et la latence i18n (~10s) est inacceptable ici.
+      const searchSafety = url.searchParams.get('safety_ack') === '1' ? { triggered: false } : classifySafety(q);
+      if (searchSafety.triggered) {
+        return json(res, 200, {
+          status: 'safety_stop',
+          safety_response: buildSafetyResponse(searchSafety.signal_type),
+          signal_type: searchSafety.signal_type,
+          log_entry: searchSafety.log_entry,
+          disclaimer: DISCLAIMER
+        });
+      }
 
       trackSearch();
 

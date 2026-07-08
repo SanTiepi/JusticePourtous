@@ -62,7 +62,7 @@
 
       <div class="dossier-ref" id="dossierRef"></div>
 
-      <div id="resultat">
+      <div id="resultat" aria-live="polite">
         <div class="result-loading">
           <div class="result-loading-spinner" aria-hidden="true"></div>
           <div class="result-loading-text" data-i18n="consult.analysis_loading">Analyse en cours…</div>
@@ -153,6 +153,9 @@
     var escCount = 0;
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
+        // Ne pas déclencher la sortie d'urgence si une modale/overlay est ouverte
+        // (Échap y sert à fermer) — évite de perdre une consultation sur un Échap accidentel.
+        if (document.querySelector('.modal.open, dialog[open], [aria-modal="true"], [data-modal-open]')) { escCount = 0; return; }
         escCount++;
         if (escCount >= 2) window.location.replace('https://www.meteosuisse.admin.ch');
         setTimeout(function() { escCount = 0; }, 500);

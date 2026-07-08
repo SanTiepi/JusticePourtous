@@ -164,6 +164,29 @@ describe('Server API', () => {
       'disclaimer doit mentionner que ce n\'est pas un avocat humain');
   });
 
+  it('GET /api/search court-circuite en safety_stop sur un signal de violence', async () => {
+    // Régression critique : la barre de recherche du hero (entrée la plus
+    // visible) passe par /api/search. Sans ce court-circuit, une victime de
+    // violence recevait une fiche générique au lieu du protocole d'urgence.
+    const res = await request('/api/search?q=' + encodeURIComponent('mon mari me frappe et menace de me tuer'));
+    assert.equal(res.status, 200);
+    const data = res.json();
+    assert.equal(data.status, 'safety_stop', 'doit déclencher safety_stop, pas une fiche');
+    assert.ok(data.safety_response, 'safety_response présent');
+    assert.ok(Array.isArray(data.safety_response.resources) && data.safety_response.resources.length > 0,
+      'ressources d\'urgence présentes');
+    assert.ok(data.safety_response.resources.some(r => r.phone === '117'), 'le 117 doit figurer');
+  });
+
+  it('GET /api/search?safety_ack=1 poursuit la recherche malgré le signal', async () => {
+    // "Continuer quand même" : l'usager a vu l'écran sécurité et choisit de
+    // poursuivre — on ne doit plus court-circuiter.
+    const res = await request('/api/search?safety_ack=1&q=' + encodeURIComponent('mon mari me frappe et menace de me tuer'));
+    assert.equal(res.status, 200);
+    const data = res.json();
+    assert.notEqual(data.status, 'safety_stop', 'safety_ack=1 doit lever le court-circuit');
+  });
+
   it('404 sur route inconnue', async () => {
     const res = await request('/api/inexistant');
     assert.equal(res.status, 404);

@@ -1500,3 +1500,26 @@ Points à surveiller :
   - `adv_consommation_18` (CPC 114/243 procédure simplifiée <30k sans avocat, émoluments ~400-600 CHF — BE) → score inconnu
 - **Angles inédits wave 37** : CO 266l preuve résiliation (distinct de résiliation abusive), CO 336a plafond légal 6 mois (mythe des "dommages proportionnels"), LP 293/294 sursis concordataire TPE (vs faillite inévitable), LEI 47 double délai selon âge (très méconnu), CC 742 al. 2 exception eaux artificielles, CC 505 nul olographe dactylographié (mythe répandu), CP 179ter distinction participant/tiers, LAMal 3/6 rétroactivité + refus assureur impossible, CPC 243 procédure simplifiée sans avocat (mythe "justice trop chère").
 - **Prochaine action** : mesure éval CLI sur 380 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-09 UTC — run agent horaire (wave 38 adversarial : 380→390 cas)
+- **Tenté** : item 1 — wave 38 : +10 cas adversariaux ciblant des angles inédits dans 10 domaines variés (bail CO 266h faillite locataire, famille CC 117/118 séparation de corps, assurances LCA 76/78 bénéficiaire prédécédé, assurances/chômage LACI 17/30 formation non-autorisée, circulation LCR 62/92 contravention parking charge de preuve, entreprise CO 784/786 sortie forcée Sàrl valeur réelle, consommation CO 40a/197 enchères internet particulier, sante LAMal 41/OAMal 93a urgence HMO hors réseau, famille CC 182/184 contrat mariage forme authentique, successions CC 626/628 rapport donations)
+- **Contexte** : reprise après coupure contexte — wave 38 avait été partiellement préparée mais perdue lors d'un conflit git (résolution `git checkout HEAD`). Re-appliquée + fix test `server-i18n` co-localisé (CO→OR en DE : comportement intentionnel commit 9d892bb, assertion test corrigée).
+- **Résultat** : passed ✓ — **390 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **106/106 ✓** (subset ciblé adversarial + knowledge-engine + normative-compiler + server-i18n)
+  - Validation fiches : 0 erreur ✓ (314/314)
+  - Benchmark JPT : **64.2/100 ✓** (gate >= 60)
+- **Nouveaux cas wave 38 (10)** :
+  - `adv_bail_40` (CO 266h faillite locataire : pas automatique, bailleur doit résilier activement via office faillites — BE)
+  - `adv_hybride_13` (CC 117/118 séparation de corps : 3e voie catholique, patrimoine protégé, mariage subsiste — VD)
+  - `adv_assurances_18` (LCA 76/78 bénéficiaire prédécédé sans clause substitution → capital tombe en succession — GE)
+  - `adv_social_15` (LACI 17/30 formation non-autorisée 8h/semaine : violation + suspension 31j potentiellement disproportionnée — GE)
+  - `adv_circulation_17` (LCR 62/92 contravention parking pare-brise : détenteur identifiable via plaque, présumé responsable — ZH)
+  - `adv_entreprise_17` (CO 784/786 sortie forcée Sàrl : indemnité doit être valeur réelle ATF 120 II 259, pas valeur nominale — ZH)
+  - `adv_consommation_19` (CO 40a particulier→particulier sans rétractation + CO 197 garantie défauts + CO 203 dol — VD)
+  - `adv_sante_24` (LAMal 41/OAMal 93a urgence cardiaque HMO hors réseau : couverture impérative, refus assureur illégal — ZH)
+  - `adv_famille_34` (CC 182/184 contrat mariage forme authentique : document signé entre époux = nul sans notaire — VD)
+  - `adv_successions_19` (CC 626/628 rapport donations : 80k rapportable sauf dispense expresse défunt, masse 200k→100k chacun — GE)
+- **Fix annexe** : `test/server-i18n.test.mjs` — renommage test + assertion `/OR 271|CO 271/` pour aligner sur comportement intentionnel `localizeLegalRefs` (CO→OR allemand, commit 9d892bb). Était en échec depuis ce commit.
+- **Angles inédits wave 38** : CO 266h résilier activement ≠ automatique (mythe faillite = fin bail), CC 117/118 séparation de corps méconnue (3e voie non-divorce), LCA 76/78 bénéficiaire prédécédé capital succession (mythe assurance-vie toujours hors succession), LACI 17 formation non-autorisée même si partielle, LCR détenteur présumé responsable (mythe "absent = non-responsable"), CO 786 valeur réelle ≠ valeur nominale (mythe rachat légal à pair), CO 40a B2C seulement (mythe rétractation universelle), OAMal 93a urgences HMO impératives (mythe réseau exclusif absolu), CC 184 forme authentique obligatoire mariage (mythe écrit signé suffit), CC 626 rapport donations entre héritiers légaux (mythe "donations passées, rien à voir").
+- **Prochaine action** : mesure éval CLI sur 390 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

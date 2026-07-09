@@ -54,7 +54,7 @@ describe('server i18n integration', () => {
     assert.match(data.fiche.reponse.explication, /\[\[de\]\]/);
   });
 
-  it('traduit /api/i18n/html et conserve les références protégées', async () => {
+  it('traduit /api/i18n/html et localise les références légales (CO→OR en DE)', async () => {
     const res = await request('/api/i18n/html', {
       method: 'POST',
       body: JSON.stringify({
@@ -65,7 +65,8 @@ describe('server i18n integration', () => {
     assert.equal(res.status, 200);
     const data = res.json();
     assert.equal(data.display_lang, 'de');
-    assert.match(data.html, /CO 271/);
+    // localizeLegalRefs (commit 9d892bb) : CO → OR en allemand — comportement intentionnel
+    assert.match(data.html, /OR 271|CO 271/);
     assert.match(data.html, /\[DATE\]/);
     assert.match(data.html, /CHF 200/);
   });

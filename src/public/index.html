@@ -257,7 +257,10 @@
       e.preventDefault();
       var q = document.getElementById('searchInput').value.trim();
       if (!q) return;
-      window.location.href = '/resultat.html?q=' + encodeURIComponent(q);
+      // La barre de recherche du hero mène au VRAI triage guidé (questions ciblées,
+      // plan d'action, contacts, lettre, feedback enregistré) — plus la recherche
+      // dégradée /api/search qui ne produisait ni case_id ni plan (audit UX 2026-07).
+      window.location.href = '/consulter.html?q=' + encodeURIComponent(q);
     }
 
     function fillSearch(textOrKey) {

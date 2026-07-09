@@ -153,7 +153,11 @@
 
     var params = new URLSearchParams(window.location.search);
     var domaine = params.get('domaine');
-    if (domaine) {
+    var freeText = params.get('q');
+    if (freeText) {
+      // Entrée depuis la barre de recherche du hero → vrai triage guidé.
+      startTextTriage(freeText);
+    } else if (domaine) {
       initConsultation(domaine);
     } else {
       window.location.href = '/';

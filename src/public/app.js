@@ -66,6 +66,36 @@ async function initConsultation(domaine) {
   }, 100);
 }
 
+// Triage à partir d'un texte libre (barre de recherche du hero). Rend la carte de
+// consultation, pré-remplit la situation décrite par le citoyen, puis lance le VRAI
+// triage guidé (questions ciblées → plan → contacts → lettre, avec case_id et
+// enregistrement du feedback) — au lieu de l'ancienne recherche dégradée /api/search.
+function startTextTriage(prefill) {
+  var card = document.getElementById('questionCard');
+  if (!card) return;
+  var progress = document.querySelector('.consult-progress');
+  if (progress) progress.style.display = 'none';
+  var safe = (prefill || '').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+  card.innerHTML =
+    '<h1 style="margin:0 0 0.5rem;font-size:1.5rem;">Votre situation</h1>' +
+    '<p style="color:#4a5b6e;margin:0 0 1.25rem;line-height:1.5;">Vérifiez ou complétez votre description ci-dessous. Notre IA identifie la situation juridique précise, puis vous pose les bonnes questions.</p>' +
+    '<textarea id="consultText" rows="5" aria-label="Décrivez votre situation juridique" maxlength="800" style="width:100%;padding:0.85rem 1rem;font-size:1rem;line-height:1.55;border:1.5px solid #c9d4df;border-radius:8px;font-family:inherit;resize:vertical;min-height:120px;">' + safe + '</textarea>' +
+    '<div style="display:flex;gap:0.75rem;margin-top:1rem;flex-wrap:wrap;">' +
+      '<button class="btn btn-primary" onclick="submitConsultText()" style="flex:1;min-width:200px;padding:0.85rem 1.5rem;font-size:1rem;font-weight:600;background:#8B2500;color:#fff;border:none;border-radius:999px;cursor:pointer;">Analyser ma situation</button>' +
+      '<a href="/" class="btn btn-secondary" style="padding:0.85rem 1.25rem;font-size:0.95rem;color:#4a5b6e;text-decoration:none;border:1px solid #c9d4df;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;">Retour</a>' +
+    '</div>' +
+    '<p style="color:#6a7787;font-size:0.82rem;margin-top:1rem;">🔒 Anonyme · Aucun compte requis · Gratuit</p>';
+  // Le citoyen a déjà décrit sa situation dans la barre du hero : on enchaîne
+  // directement sur le triage (pas de 2e clic). Trop court → on le laisse compléter.
+  if ((prefill || '').trim().length >= 10) {
+    submitConsultText();
+  } else {
+    var ta = document.getElementById('consultText');
+    if (ta) ta.focus();
+  }
+}
+window.startTextTriage = startTextTriage;
+
 // Variables d'état pour le flow conversationnel
 var jbCaseId = null;
 var jbCurrentQuestions = [];
@@ -173,7 +203,7 @@ function handleTriageResponse(data) {
       '<div class="card-highlight">' +
         '<h2 style="margin:0 0 0.5rem;">Approfondir votre analyse</h2>' +
         '<p style="line-height:1.55;color:#1f2a36;">Votre analyse de base est gratuite et déjà disponible. ' +
-        'Pour aller plus loin (questions de suivi, cas similaires, stratégie), l\'approfondissement coûte CHF ' + amount + '.</p>' +
+        'Pour aller plus loin (questions de suivi, cas similaires, stratégie), débloquez l\'approfondissement à partir de CHF 5.</p>' +
         '<div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:1rem;">' +
           '<a href="/premium.html" class="btn btn-primary" style="padding:0.8rem 1.5rem;background:#8B2500;color:#fff;border-radius:999px;text-decoration:none;font-weight:600;">Débloquer l\'approfondissement</a>' +
           (fid ? '<a href="/resultat.html?fiche=' + encodeURIComponent(fid) + '" class="btn btn-secondary" style="padding:0.8rem 1.25rem;border:1px solid #c9d4df;border-radius:999px;color:#4a5b6e;text-decoration:none;">Voir mon résultat actuel</a>' : '') +

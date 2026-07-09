@@ -59,7 +59,7 @@
       }
     ],
     "reponse": {
-      "explication": "L'accident de travail (accident professionnel) est couvert obligatoirement par la LAA (art. 6 LAA). L'employeur doit annoncer l'accident à l'assureur (SUVA ou assureur prive) dans les jours suivant l'événement. L'employé doit informer son employeur immédiatement. Les prestations comprennent : prise en charge intégrale des frais médicaux (art. 10 LAA), indemnités journalieres de 80% du salaire des le 3e jour d'arret (art. 16 LAA), rente d'invalidité si taux >= 10% (art. 18 LAA), indemnité pour atteinte à l'intégrité (art. 24 LAA). L'accident est défini comme toute atteinte dommageable, soudaine et involontaire, portee au corps humain par une cause extérieure extraordinaire (art. 4 LPGA). Les accidents sur le trajet domicile-travail sont consideres comme des accidents non professionnels mais restent couverts si l'employé travaille plus de 8h/semaine. En cas de faute grave de l'employé, les indemnités journalieres peuvent être réduites de 50% maximum (art. 37 al. 2 LAA) mais les frais médicaux restent couverts integralement.",
+      "explication": "L'accident de travail (accident professionnel) est couvert obligatoirement par la LAA (art. 6 LAA). L'employeur doit annoncer l'accident à l'assureur (SUVA ou assureur privé) dans les jours suivant l'événement. L'employé doit informer son employeur immédiatement. Les prestations comprennent : prise en charge intégrale des frais médicaux (art. 10 LAA), indemnités journalières de 80% du salaire dès le 3e jour d'arrêt (art. 16 LAA), rente d'invalidité si taux >= 10% (art. 18 LAA), indemnité pour atteinte à l'intégrité (art. 24 LAA). L'accident est défini comme toute atteinte dommageable, soudaine et involontaire, portée au corps humain par une cause extérieure extraordinaire (art. 4 LPGA). Les accidents sur le trajet domicile-travail sont considérés comme des accidents non professionnels mais restent couverts si l'employé travaille plus de 8h/semaine. En cas de faute grave de l'employé, les indemnités journalières peuvent être réduites de 50% maximum (art. 37 al. 2 LAA) mais les frais médicaux restent couverts intégralement.",
       "articles": [
         {
           "ref": "LAA 6",
@@ -73,12 +73,12 @@
         },
         {
           "ref": "LAA 16",
-          "titre": "Indemnité journaliere",
+          "titre": "Indemnité journalière",
           "lien": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr#art_16"
         },
         {
           "ref": "LPGA 4",
-          "titre": "Definition de l'accident",
+          "titre": "Définition de l'accident",
           "lien": "https://www.fedlex.admin.ch/eli/cc/2002/510/fr#art_4"
         }
       ],
@@ -131,7 +131,7 @@
     },
     "maj": "2026-04-07",
     "sourceLoi": "LAA/LPGA état 2025-01-01",
-    "match_description": "Le travailleur s'est blesse au travail et doit declarer l'accident ou obtenir ses prestations LAA",
+    "match_description": "Le travailleur s'est blessé au travail et doit déclarer l'accident ou obtenir ses prestations LAA",
     "profane_aliases": [
       "je me suis fait mal au travail",
       "accident sur le chantier que faire",
@@ -175,7 +175,7 @@
     "questions": [
       {
         "id": "q1",
-        "text": "Quel est votre role dans l'accident ?",
+        "text": "Quel est votre rôle dans l'accident ?",
         "options": [
           "conducteur",
           "passager",
@@ -185,7 +185,7 @@
       },
       {
         "id": "q2",
-        "text": "Y a-t-il des blesses ?",
+        "text": "Y a-t-il des blessés ?",
         "options": [
           "oui, moi",
           "oui, l'autre partie",
@@ -242,14 +242,14 @@
       "jurisprudence": [
         {
           "ref": "ATF 132 III 249",
-          "resume": "Le tort moral est fixe en fonction de la gravite objective de l'atteinte et de ses consequences sur la vie quotidienne de la victime."
+          "resume": "Le tort moral est fixé en fonction de la gravité objective de l'atteinte et de ses conséquences sur la vie quotidienne de la victime."
         },
         {
           "ref": "ATF 138 III 276",
-          "resume": "La responsabilité causale du détenteur ne cede que si l'accident est du exclusivement à la force majeure ou à la faute grave de la victime."
+          "resume": "La responsabilité causale du détenteur ne cède que si l'accident est dû exclusivement à la force majeure ou à la faute grave de la victime."
         }
       ],
-      "modeleLettre": "Objet : Declaration de sinistre — accident de circulation\n\nA [ASSURANCE RC VÉHICULE],\n\nJe soussigné(e) [NOM], titulaire de la police n° [NUMERO],\n\nDéclare l'accident de la circulation survenu le [DATE] a [HEURE] a [LIEU].\n\nCirconstances : [DESCRIPTION FACTUELLE]\n\nVehicules impliques : [MARQUE, PLAQUE]\n\nBlesses : [OUI/NON, GRAVITE]\n\nIntervention de la police : [OUI/NON, N° DE RAPPORT]\n\nDommages : [MATÉRIELS ET/OU CORPORELS]\n\nJe joins le constat amiable rempli et signé.\n\nVeuillez agréer mes salutations distinguées.\n\n[SIGNATURE]",
+      "modeleLettre": "Objet : Déclaration de sinistre — accident de circulation\n\nA [ASSURANCE RC VÉHICULE],\n\nJe soussigné(e) [NOM], titulaire de la police n° [NUMÉRO],\n\nDéclare l'accident de la circulation survenu le [DATE] a [HEURE] a [LIEU].\n\nCirconstances : [DESCRIPTION FACTUELLE]\n\nVéhicules impliqués : [MARQUE, PLAQUE]\n\nBlessés : [OUI/NON, GRAVITÉ]\n\nIntervention de la police : [OUI/NON, N° DE RAPPORT]\n\nDommages : [MATÉRIELS ET/OU CORPORELS]\n\nJe joins le constat amiable rempli et signé.\n\nVeuillez agréer mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "TCS Vaud (assistance juridique)",
@@ -293,7 +293,7 @@
     },
     "maj": "2026-04-07",
     "sourceLoi": "LCR/CO état 2025-01-01",
-    "match_description": "La personne a été impliquee dans un accident de la route et veut connaitre ses droits ou faire valoir ses dommages",
+    "match_description": "La personne a été impliquée dans un accident de la route et veut connaître ses droits ou faire valoir ses dommages",
     "profane_aliases": [
       "accident de voiture que faire",
       "on m'a rentre dedans avec la voiture",
@@ -379,7 +379,7 @@
       }
     ],
     "reponse": {
-      "explication": "La responsabilité civile en droit suisse oblige celui qui cause un dommage au réparer (art. 41 CO). Les conditions sont : un acte illicite (ou une omission), un dommage, un lien de causalité, et une faute (sauf responsabilité objective). Le dommage reparable comprend : le dommage matériel (réparation, remplacement), la perte de gain (art. 46 CO), le tort moral en cas de lésion corporelle ou décès (art. 47 CO), et les frais (médicaux, juridiques). Le fardeau de la preuve incombe au lesé (art. 8 CC). Le délai de prescription est de 3 ans des la connaissance du dommage et du responsable, et au plus tard 10 ans des le fait dommageable (art. 60 CO, revision 2020). Il est recommandé d'écrire immédiatement au responsable (ou a son assurance RC) pour faire valoir ses prétentions et interrompre la prescription. La médiation ou la tentative de conciliation sont obligatoires avant le procès pour les litiges inférieurs a CHF 100'000.",
+      "explication": "La responsabilité civile en droit suisse oblige celui qui cause un dommage au réparer (art. 41 CO). Les conditions sont : un acte illicite (ou une omission), un dommage, un lien de causalité, et une faute (sauf responsabilité objective). Le dommage réparable comprend : le dommage matériel (réparation, remplacement), la perte de gain (art. 46 CO), le tort moral en cas de lésion corporelle ou décès (art. 47 CO), et les frais (médicaux, juridiques). Le fardeau de la preuve incombe au lésé (art. 8 CC). Le délai de prescription est de 3 ans dès la connaissance du dommage et du responsable, et au plus tard 10 ans dès le fait dommageable (art. 60 CO, révision 2020). Il est recommandé d'écrire immédiatement au responsable (ou a son assurance RC) pour faire valoir ses prétentions et interrompre la prescription. La médiation ou la tentative de conciliation sont obligatoires avant le procès pour les litiges inférieurs a CHF 100'000.",
       "articles": [
         {
           "ref": "CO 41",
@@ -405,14 +405,14 @@
       "jurisprudence": [
         {
           "ref": "ATF 143 III 242",
-          "resume": "Le tort moral pour lésion corporelle est fixe en fonction de la gravite objective de l'atteinte et de ses consequences concretes sur la qualite de vie."
+          "resume": "Le tort moral pour lésion corporelle est fixé en fonction de la gravité objective de l'atteinte et de ses conséquences concrètes sur la qualité de vie."
         },
         {
           "ref": "ATF 146 III 387",
           "resume": "Le nouveau droit de la prescription (2020) s'applique aux prétentions non encore prescrites au 1er janvier 2020 (dispositions transitoires)."
         }
       ],
-      "modeleLettre": "Objet : Mise en demeure — responsabilité civile et réparation du dommage\n\nA [NOM DU RESPONSABLE / ASSURANCE RC],\n\nJe soussigné(e) [NOM, PRENOM], domicilié(e) a [ADRESSE],\n\nPar la présente, je vous tiens responsable du dommage que j'ai subi le [DATE] a [LIEU], dans les circonstances suivantes : [DESCRIPTION FACTUELLE].\n\nLe dommage se compose de :\n- Degats matériels : CHF [MONTANT]\n- Frais médicaux : CHF [MONTANT]\n- Perte de gain : CHF [MONTANT]\n- Tort moral : réserve\n\nConformément aux art. 41 ss CO, je vous mets en demeure de réparer l'intégralité du dommage dans un délai de 30 jours.\n\nPieces jointes : devis/factures, certificats médicaux, attestation employeur.\n\n[SIGNATURE]",
+      "modeleLettre": "Objet : Mise en demeure — responsabilité civile et réparation du dommage\n\nA [NOM DU RESPONSABLE / ASSURANCE RC],\n\nJe soussigné(e) [NOM, PRÉNOM], domicilié(e) a [ADRESSE],\n\nPar la présente, je vous tiens responsable du dommage que j'ai subi le [DATE] a [LIEU], dans les circonstances suivantes : [DESCRIPTION FACTUELLE].\n\nLe dommage se compose de :\n- Dégâts matériels : CHF [MONTANT]\n- Frais médicaux : CHF [MONTANT]\n- Perte de gain : CHF [MONTANT]\n- Tort moral : réserve\n\nConformément aux art. 41 ss CO, je vous mets en demeure de réparer l'intégralité du dommage dans un délai de 30 jours.\n\nPièces jointes : devis/factures, certificats médicaux, attestation employeur.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Permanence juridique du barreau VD",
@@ -425,12 +425,12 @@
           "canton": "GE"
         },
         {
-          "nom": "Ombudsman de l'assurance privee",
+          "nom": "Ombudsman de l'assurance privée",
           "url": "https://www.ombudsman-assurance.ch/fr",
           "canton": "VD"
         },
         {
-          "nom": "Federation suisse des patients",
+          "nom": "Fédération suisse des patients",
           "url": "https://www.federationdespatients.ch",
           "canton": "GE"
         }
@@ -454,7 +454,7 @@
     },
     "maj": "2026-04-07",
     "sourceLoi": "CO état 2025-01-01",
-    "match_description": "La personne a subi un dommage cause par un tiers et veut obtenir réparation (dommages-intérêts, tort moral)",
+    "match_description": "La personne a subi un dommage causé par un tiers et veut obtenir réparation (dommages-intérêts, tort moral)",
     "profane_aliases": [
       "quelqu'un m'a cause un dommage qui paie",
       "je veux des dommages et intérêts",
@@ -696,7 +696,7 @@
               },
               {
                 "si": "conflit entre assureurs ou refus",
-                "alors": "etape 4"
+                "alors": "étape 4"
               }
             ]
           },
@@ -907,7 +907,7 @@
               },
               {
                 "si": "contestation",
-                "alors": "etape 4"
+                "alors": "étape 4"
               }
             ]
           },
@@ -1449,7 +1449,7 @@
               },
               {
                 "si": "refus ou rente jugée insuffisante",
-                "alors": "etape 4 (opposition/recours)"
+                "alors": "étape 4 (opposition/recours)"
               }
             ]
           },
@@ -1658,7 +1658,7 @@
               },
               {
                 "si": "désaccord",
-                "alors": "etape 4 (action judiciaire)"
+                "alors": "étape 4 (action judiciaire)"
               }
             ]
           },
@@ -1872,7 +1872,7 @@
               },
               {
                 "si": "blocage",
-                "alors": "etape 4 (procédure judiciaire)"
+                "alors": "étape 4 (procédure judiciaire)"
               }
             ]
           },
@@ -2248,7 +2248,7 @@
               },
               {
                 "si": "refus ou montant insuffisant",
-                "alors": "etape 4 (action civile)"
+                "alors": "étape 4 (action civile)"
               }
             ]
           },
@@ -2483,7 +2483,7 @@
               },
               {
                 "si": "refus ou réduction",
-                "alors": "etape 4"
+                "alors": "étape 4"
               }
             ]
           },

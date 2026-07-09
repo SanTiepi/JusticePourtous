@@ -35,7 +35,7 @@
       },
       {
         "id": "q3",
-        "text": "Avez-vous un permis de sejour valable ?",
+        "text": "Avez-vous un permis de séjour valable ?",
         "options": [
           "citoyen suisse",
           "oui permis valable",
@@ -50,11 +50,11 @@
       }
     ],
     "reponse": {
-      "explication": "En Suisse, l'hébergement d'urgence rélevé de la compétence cantonale et communale. Chaque canton dispose de dispositifs d'accueil d'urgence accessibles même sans statut de sejour régulier (art. 12 Cst — droit à des conditions minimales d'existence). A Lausanne, la Fondation Marmotte et le Sleep-In offrent des places d'urgence. Le dispositif hivernal (novembre-mars) augmente les capacites. A Genève, l'accueil de nuit est coordonne par le 0800 47 47 47 (ligne d'urgence sociale). L'Hospice général et le CASS (Centre d'action sociale et de sante) orientent les personnes en detresse. Pour les familles avec enfants, la protection est renforcee : les communes ont une obligation d'hébergement. Les personnes sans papiers ont droit à l'aide d'urgence au sens de l'art. 12 Cst (ATF 131 I 166). Les abris de protection civile sont utilises en dernier recours dans certains cantons.",
+      "explication": "En Suisse, l'hébergement d'urgence relève de la compétence cantonale et communale. Chaque canton dispose de dispositifs d'accueil d'urgence accessibles même sans statut de séjour régulier (art. 12 Cst — droit à des conditions minimales d'existence). A Lausanne, la Fondation Marmotte et le Sleep-In offrent des places d'urgence. Le dispositif hivernal (novembre-mars) augmente les capacités. A Genève, l'accueil de nuit est coordonné par le 0800 47 47 47 (ligne d'urgence sociale). L'Hospice général et le CASS (Centre d'action sociale et de santé) orientent les personnes en détresse. Pour les familles avec enfants, la protection est renforcée : les communes ont une obligation d'hébergement. Les personnes sans papiers ont droit à l'aide d'urgence au sens de l'art. 12 Cst (ATF 131 I 166). Les abris de protection civile sont utilisés en dernier recours dans certains cantons.",
       "articles": [
         {
           "ref": "Cst 12",
-          "titre": "Droit d'obtenir de l'aide dans des situations de detresse",
+          "titre": "Droit d'obtenir de l'aide dans des situations de détresse",
           "lien": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_12"
         },
         {
@@ -70,7 +70,7 @@
         },
         {
           "ref": "ATF 139 I 272",
-          "resume": "L'aide d'urgence doit couvrir les besoins élémentaires : nourriture, vetements, hébergement et soins médicaux de base."
+          "resume": "L'aide d'urgence doit couvrir les besoins élémentaires : nourriture, vêtements, hébergement et soins médicaux de base."
         }
       ],
       "modeleLettre": "Objet : Demande d hébergement d urgence (art. 12 Cst.)\n\n[NOM DE L AUTORITÉ COMMUNALE/CANTONALE]\nService social / Service de l hébergement d urgence\n[ADRESSE DU SERVICE]\n\n[LIEU], le [DATE]\n\nMadame, Monsieur,\n\nPar la présente, je sollicite un hébergement d urgence au sens de l art. 12 de la Constitution fédérale, me trouvant actuellement sans logement.\n\nSITUATION PERSONNELLE :\nNom : [NOM, PRÉNOM]\nDate de naissance : [DATE DE NAISSANCE]\nÉtat civil : [ÉTAT CIVIL]\nNationalité : [NATIONALITÉ]\nAdresse précédente : [DERNIÈRE ADRESSE CONNUE]\n\nJe me trouve sans domicile depuis le [DATE] en raison de : [MOTIF : expulsion, violence domestique, fin de bail, etc.].\n\nJe ne dispose actuellement d aucune solution de logement et me trouve dans une situation de détresse au sens de l art. 12 Cst., qui garantit à toute personne le droit d obtenir de l aide dans des situations de détresse.\n\nConformément à l art. 41 al. 1 let. e Cst., la Confédération et les cantons s engagent à ce que toute personne en quête d un logement puisse trouver un logement approprié.\n\nJe vous demande de bien vouloir :\n- M attribuer un hébergement d urgence dans les plus brefs délais\n- M orienter vers les services d aide sociale compétents\n- M informer de mes droits en matière d aide d urgence\n\nJe me tiens à votre disposition pour tout entretien et fourniture de documents complémentaires.\n\nJe vous prie d agréer, Madame, Monsieur, mes salutations distinguées.\n\n[NOM, PRÉNOM]\n[TÉLÉPHONE]\n[SIGNATURE]",
@@ -94,7 +94,7 @@
           "canton": "GE"
         },
         {
-          "nom": "Armee du Salut — accueil de nuit GE",
+          "nom": "Armée du Salut — accueil de nuit GE",
           "url": "https://www.armeedusalut.ch",
           "canton": "GE"
         },
@@ -174,7 +174,7 @@
         "options": [
           "sans emploi",
           "working poor",
-          "en attente AI/chomage",
+          "en attente AI/chômage",
           "autre"
         ]
       },
@@ -202,11 +202,11 @@
       }
     ],
     "reponse": {
-      "explication": "L'aide sociale (revenu d'insertion/RI en VD, aide sociale de l'Hospice général en GE) est le dernier filet social en Suisse. Elle est subsidiaire a toutes les autres prestations (chomage, AI, PC, pensions). Les normes CSIAS (Conference suisse des institutions d'action sociale) fixent les standards : forfait d'entretien d'environ CHF 997/mois pour une personne seule (2024), plus loyer effectif plafonne et prime LAMal. L'aide sociale est un droit mais implique des devoirs : recherche active d'emploi, participation aux mesures d'insertion, annoncé de tout changement de situation. A Vaud, la demande se fait auprès du CSR (Centre social régional). A Genève, auprès de l'Hospice général. L'aide sociale peut être remboursable si la situation financiere s'ameliore significativement (art. 40 LASV en VD). Les étrangers bénéficiaires risquent un non-renouvellement de permis (art. 62 al. 1 let. e LEI pour le permis B). Les décisions peuvent être contestees par recours.",
+      "explication": "L'aide sociale (revenu d'insertion/RI en VD, aide sociale de l'Hospice général en GE) est le dernier filet social en Suisse. Elle est subsidiaire a toutes les autres prestations (chômage, AI, PC, pensions). Les normes CSIAS (Conférence suisse des institutions d'action sociale) fixent les standards : forfait d'entretien d'environ CHF 997/mois pour une personne seule (2024), plus loyer effectif plafonné et prime LAMal. L'aide sociale est un droit mais implique des devoirs : recherche active d'emploi, participation aux mesures d'insertion, annonce de tout changement de situation. A Vaud, la demande se fait auprès du CSR (Centre social régional). A Genève, auprès de l'Hospice général. L'aide sociale peut être remboursable si la situation financière s'améliore significativement (art. 40 LASV en VD). Les étrangers bénéficiaires risquent un non-renouvellement de permis (art. 62 al. 1 let. e LEI pour le permis B). Les décisions peuvent être contestées par recours.",
       "articles": [
         {
           "ref": "Cst 12",
-          "titre": "Droit d'obtenir de l'aide dans des situations de detresse",
+          "titre": "Droit d'obtenir de l'aide dans des situations de détresse",
           "lien": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_12"
         },
         {
@@ -223,14 +223,14 @@
       "jurisprudence": [
         {
           "ref": "ATF 146 I 1",
-          "resume": "Les normes CSIAS n'ont pas force de loi mais servent de référencée pour le calcul des prestations. Les cantons peuvent s'en ecarter à la hausse ou à la baisse."
+          "resume": "Les normes CSIAS n'ont pas force de loi mais servent de référence pour le calcul des prestations. Les cantons peuvent s'en écarter à la hausse ou à la baisse."
         },
         {
           "ref": "TF 8C_251/2019",
-          "resume": "La reduction des prestations d'aide sociale n'est admissible qu'en cas de manquement fautif aux obligations et doit respecter le minimum vital garanti par l'art. 12 Cst."
+          "resume": "La réduction des prestations d'aide sociale n'est admissible qu'en cas de manquement fautif aux obligations et doit respecter le minimum vital garanti par l'art. 12 Cst."
         }
       ],
-      "modeleLettre": "Objet : Demande d'aide sociale / revenu d'insertion\n\nA [CSR DE DISTRICT / HOSPICE GÉNÉRAL],\n\nJe soussigné(e) [NOM, PRENOM], né(e) le [DATE], domicilié(e) a [ADRESSE],\n\nMe trouve dans une situation financiere difficile et sollicite l'octroi de prestations d'aide sociale.\n\nMa situation : [DÉCRIRE BRIEVEMENT : SANS EMPLOI DEPUIS, FIN DE DROIT AU CHOMAGE, EN ATTENTE DE DÉCISION AI, ETC.]\n\nRevenus actuels : CHF [MONTANT] par mois\nCharges mensuelles : loyer CHF [MONTANT], assurance-maladie CHF [MONTANT]\nFortune : [DÉCRIRE]\n\nJe joins les pieces justificatives nécessaires.\n\nVeuillez agréer mes salutations distinguées.\n\n[SIGNATURE]",
+      "modeleLettre": "Objet : Demande d'aide sociale / revenu d'insertion\n\nA [CSR DE DISTRICT / HOSPICE GÉNÉRAL],\n\nJe soussigné(e) [NOM, PRÉNOM], né(e) le [DATE], domicilié(e) a [ADRESSE],\n\nMe trouve dans une situation financière difficile et sollicite l'octroi de prestations d'aide sociale.\n\nMa situation : [DÉCRIRE BRIÈVEMENT : SANS EMPLOI DEPUIS, FIN DE DROIT AU CHÔMAGE, EN ATTENTE DE DÉCISION AI, ETC.]\n\nRevenus actuels : CHF [MONTANT] par mois\nCharges mensuelles : loyer CHF [MONTANT], assurance-maladie CHF [MONTANT]\nFortune : [DÉCRIRE]\n\nJe joins les pièces justificatives nécessaires.\n\nVeuillez agréer mes salutations distinguées.\n\n[SIGNATURE]",
       "services": [
         {
           "nom": "Centre social régional (CSR) VD",
@@ -269,7 +269,7 @@
     },
     "maj": "2026-04-07",
     "sourceLoi": "Cst/LASoc état 2025-01-01",
-    "match_description": "La personne sans ressources suffisantes veut demander l'aide sociale ou contesté une décision de l'aide sociale",
+    "match_description": "La personne sans ressources suffisantes veut demander l'aide sociale ou contester une décision de l'aide sociale",
     "profane_aliases": [
       "je n'ai plus d'argent pour vivre",
       "comment demander le RI",
@@ -314,7 +314,7 @@
         "id": "q1",
         "text": "Quelle est votre situation administrative ?",
         "options": [
-          "deboute de l'asile (NEM)",
+          "débouté de l'asile (NEM)",
           "permis expiré",
           "sans statut légal",
           "en attente de décision"
@@ -344,11 +344,11 @@
       }
     ],
     "reponse": {
-      "explication": "Toute personne en Suisse, quel que soit son statut de sejour, a droit à des conditions minimales d'existence au sens de l'art. 12 Cst. Ce droit fondamental, confirmé par le TF (ATF 131 I 166), garantit un minimum vital comprenant : nourriture, vetements, hébergement et soins médicaux de base. Pour les personnes dont la demande d'asile a fait l'objet d'une décision de non-entree en matiere (NEM) ou d'un renvoi, l'aide d'urgence remplace l'aide sociale ordinaire (art. 82 LAsi). Les prestations sont volontairement inférieures à l'aide sociale et sont généralement versées en nature (bon alimentaire, hébergement collectif). Le montant en especes est d'environ CHF 8-12/jour selon les cantons. L'aide d'urgence doit être demandee auprès du service cantonal désigné (EVAM en VD, Hospice général en GE). Les refus peuvent être contestes judiciairement.",
+      "explication": "Toute personne en Suisse, quel que soit son statut de séjour, a droit à des conditions minimales d'existence au sens de l'art. 12 Cst. Ce droit fondamental, confirmé par le TF (ATF 131 I 166), garantit un minimum vital comprenant : nourriture, vêtements, hébergement et soins médicaux de base. Pour les personnes dont la demande d'asile a fait l'objet d'une décision de non-entrée en matière (NEM) ou d'un renvoi, l'aide d'urgence remplace l'aide sociale ordinaire (art. 82 LAsi). Les prestations sont volontairement inférieures à l'aide sociale et sont généralement versées en nature (bon alimentaire, hébergement collectif). Le montant en espèces est d'environ CHF 8-12/jour selon les cantons. L'aide d'urgence doit être demandée auprès du service cantonal désigné (EVAM en VD, Hospice général en GE). Les refus peuvent être contestés judiciairement.",
       "articles": [
         {
           "ref": "Cst 12",
-          "titre": "Droit d'obtenir de l'aide dans des situations de detresse",
+          "titre": "Droit d'obtenir de l'aide dans des situations de détresse",
           "lien": "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_12"
         },
         {
@@ -365,17 +365,17 @@
       "jurisprudence": [
         {
           "ref": "ATF 131 I 166",
-          "resume": "L'art. 12 Cst garantit un minimum vital a toute personne en Suisse, independamment de son statut migratoire."
+          "resume": "L'art. 12 Cst garantit un minimum vital a toute personne en Suisse, indépendamment de son statut migratoire."
         },
         {
           "ref": "ATF 135 I 119",
-          "resume": "L'aide d'urgence doit couvrir les besoins élémentaires. Les cantons ne peuvent pas refuser totalement l'aide au motif que la personne n'a pas quitte la Suisse."
+          "resume": "L'aide d'urgence doit couvrir les besoins élémentaires. Les cantons ne peuvent pas refuser totalement l'aide au motif que la personne n'a pas quitté la Suisse."
         }
       ],
-      "modeleLettre": "Objet : Demande d'aide d'urgence (art. 12 Cst)\n\nA [EVAM / HOSPICE GÉNÉRAL / SERVICE CANTONAL],\n\nJe soussigné(e) [NOM, PRENOM], né(e) le [DATE], national(e) de [PAYS],\n\nMe trouve actuellement en situation de detresse et sans moyens de subsistance.\n\nMa situation administrative : [DÉCRIRE : NEM, PERMIS EXPIRÉ, SANS STATUT]\n\nJe sollicite l'octroi de l'aide d'urgence au sens de l'art. 12 de la Constitution fédérale, comprenant hébergement, nourriture et soins médicaux de base.\n\nVeuillez agréer mes salutations distinguées.\n\n[SIGNATURE OU EMPREINTE]",
+      "modeleLettre": "Objet : Demande d'aide d'urgence (art. 12 Cst)\n\nA [EVAM / HOSPICE GÉNÉRAL / SERVICE CANTONAL],\n\nJe soussigné(e) [NOM, PRÉNOM], né(e) le [DATE], national(e) de [PAYS],\n\nMe trouve actuellement en situation de détresse et sans moyens de subsistance.\n\nMa situation administrative : [DÉCRIRE : NEM, PERMIS EXPIRÉ, SANS STATUT]\n\nJe sollicite l'octroi de l'aide d'urgence au sens de l'art. 12 de la Constitution fédérale, comprenant hébergement, nourriture et soins médicaux de base.\n\nVeuillez agréer mes salutations distinguées.\n\n[SIGNATURE OU EMPREINTE]",
       "services": [
         {
-          "nom": "EVAM (Etablissement vaudois d'accueil des migrants)",
+          "nom": "EVAM (Établissement vaudois d'accueil des migrants)",
           "tel": "021 557 07 07",
           "url": "https://www.evam.ch",
           "canton": "VD"
@@ -387,7 +387,7 @@
           "canton": "GE"
         },
         {
-          "nom": "Service d'aide juridique aux exiles (SAJE)",
+          "nom": "Service d'aide juridique aux exilés (SAJE)",
           "url": "https://www.saje-asbl.ch",
           "canton": "VD"
         },
@@ -403,7 +403,7 @@
     },
     "maj": "2026-04-07",
     "sourceLoi": "Cst/LAsi état 2025-01-01",
-    "match_description": "La personne sans statut légal en Suisse (deboute de l'asile, sans papiers) a besoin d'une aide minimale pour survivre",
+    "match_description": "La personne sans statut légal en Suisse (débouté de l'asile, sans papiers) a besoin d'une aide minimale pour survivre",
     "profane_aliases": [
       "sans papiers et sans rien",
       "aide d'urgence pour deboute asile",
@@ -633,7 +633,7 @@
               },
               {
                 "si": "refus ou absence de place",
-                "alors": "etape 4"
+                "alors": "étape 4"
               }
             ]
           },
@@ -853,7 +853,7 @@
               },
               {
                 "si": "maintien du refus",
-                "alors": "etape 4"
+                "alors": "étape 4"
               }
             ]
           },
@@ -1079,7 +1079,7 @@
               },
               {
                 "si": "opposition rejetée",
-                "alors": "etape 4 (recours juridictionnel)"
+                "alors": "étape 4 (recours juridictionnel)"
               }
             ]
           },
@@ -1307,7 +1307,7 @@
               },
               {
                 "si": "refus ou aide insuffisante",
-                "alors": "etape 4 (recours)"
+                "alors": "étape 4 (recours)"
               }
             ]
           },
@@ -1528,7 +1528,7 @@
               },
               {
                 "si": "maintien",
-                "alors": "etape 4"
+                "alors": "étape 4"
               }
             ]
           },
@@ -1751,7 +1751,7 @@
               },
               {
                 "si": "refus",
-                "alors": "etape 4 (recours)"
+                "alors": "étape 4 (recours)"
               }
             ]
           },
@@ -1970,7 +1970,7 @@
               },
               {
                 "si": "refus ou montant insuffisant",
-                "alors": "etape 4 (opposition/recours)"
+                "alors": "étape 4 (opposition/recours)"
               }
             ]
           },
@@ -2196,7 +2196,7 @@
               },
               {
                 "si": "saisie excessive maintenue",
-                "alors": "etape 4 (plainte LP 17)"
+                "alors": "étape 4 (plainte LP 17)"
               }
             ]
           },
@@ -2422,7 +2422,7 @@
               },
               {
                 "si": "refus ou aide insuffisante",
-                "alors": "etape 4 (recours)"
+                "alors": "étape 4 (recours)"
               }
             ]
           },
@@ -2458,7 +2458,7 @@
         "id": "q1",
         "text": "Situation actuelle ?",
         "options": [
-          "chomage fin de droit",
+          "chômage fin de droit",
           "aide sociale",
           "AI partielle",
           "jeune"
@@ -2655,7 +2655,7 @@
               },
               {
                 "si": "refus",
-                "alors": "etape 4 (opposition / recours)"
+                "alors": "étape 4 (opposition / recours)"
               }
             ]
           },

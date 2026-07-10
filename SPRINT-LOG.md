@@ -1523,3 +1523,26 @@ Points à surveiller :
 - **Fix annexe** : `test/server-i18n.test.mjs` — renommage test + assertion `/OR 271|CO 271/` pour aligner sur comportement intentionnel `localizeLegalRefs` (CO→OR allemand, commit 9d892bb). Était en échec depuis ce commit.
 - **Angles inédits wave 38** : CO 266h résilier activement ≠ automatique (mythe faillite = fin bail), CC 117/118 séparation de corps méconnue (3e voie non-divorce), LCA 76/78 bénéficiaire prédécédé capital succession (mythe assurance-vie toujours hors succession), LACI 17 formation non-autorisée même si partielle, LCR détenteur présumé responsable (mythe "absent = non-responsable"), CO 786 valeur réelle ≠ valeur nominale (mythe rachat légal à pair), CO 40a B2C seulement (mythe rétractation universelle), OAMal 93a urgences HMO impératives (mythe réseau exclusif absolu), CC 184 forme authentique obligatoire mariage (mythe écrit signé suffit), CC 626 rapport donations entre héritiers légaux (mythe "donations passées, rien à voir").
 - **Prochaine action** : mesure éval CLI sur 390 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-10 UTC — run agent horaire (wave 39 adversarial : 390→400 cas)
+- **Tenté** : item 1 — wave 39 : +10 cas adversariaux ciblant des angles inédits dans 10 domaines variés (bail CO 264 substitution locataire bail fixe, travail CO 327a/327b remboursement formation dégressivité, dettes CO 169 exceptions opposables cessionnaire, famille CC 646/649 copropriété concubinage quotes-parts réelles, étrangers LEI 44/42 fratrie adulte exclue regroupement familial, successions CC 635/636 droit préemption entre cohéritiers, violence CP 177/180 injure menaces par WhatsApp, sante LAMal 25/OAMal 35 ostéopathe non médecin, entreprise CO 568/569 sortie SNC responsabilité résiduelle 5 ans, voisinage CC 684 immissions négatives hors champ)
+- **Résultat** : passed ✓ — **400 cas dans `test/adversarial-cases.mjs`** (milestone 400), 3 gates verts, 0 doublon d'ID
+- **Commits** : `811a548`
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2645/2645 ✓** (aucun code modifié — données seulement)
+  - Validation fiches : 0 erreur ✓ (100%)
+  - Benchmark JPT : 64.2/100 ✓ (gate >= 60)
+  - Adversarial CLI sur 400 cas : non mesuré ce run (nécessite `claude -p` actif)
+- **Nouveaux cas wave 39 (10)** :
+  - `adv_bail_41` (CO 264 substitution locataire bail à durée déterminée — mythe "bail fixe = prison" — VD)
+  - `adv_travail_41` (CO 327a/327b clause remboursement formation, dégressivité judiciaire fréquente vs remboursement intégral exigé — ZH)
+  - `adv_dettes_36` (CO 169 + CO 127 prescription de 13 ans opposable au cessionnaire, cession ne repart pas à zéro — GE)
+  - `adv_famille_35` (CC 646/649 copropriété concubins selon quotes-parts réelles d'investissement, pas automatiquement 50/50 — VD)
+  - `adv_etrangers_30` (LEI 44/42 fratrie adulte 28 ans exclue du regroupement familial, même avec permis C 12 ans — GE)
+  - `adv_successions_20` (CC 635/636 droit de préemption légal entre cohéritiers dans 3 mois, au prix du marché — NE)
+  - `adv_violence_21` (CP 177/180 injure et menaces par WhatsApp = poursuivables, canal privé n'immunise pas — GE)
+  - `adv_sante_25` (LAMal 25/OAMal 35 ostéopathe non médecin non reconnu = non remboursé assurance de base, assurance complémentaire seule — VD)
+  - `adv_entreprise_18` (CO 568/569 associé sortant SNC : responsabilité résiduelle 5 ans dettes existantes, inscription RC obligatoire — FR)
+  - `adv_voisinage_26` (CC 684 immissions positives ≠ immissions négatives ; perte lumière/vue hors champ CC 684, voie droit des constructions — VD)
+- **Angles inédits wave 39** : CO 264 substitution locataire (mythe "bail fixe = impossible de partir"), CO 327b inopposabilité si licenciement sans faute, CO 169 prescription cédée (mythe "cession repart à zéro"), CC 646 présomption égalité réfutable, LEI 44 limites fratrie adulte (mythe "permis C = famille élargie"), CC 635 droit légal préemption cohéritier (très méconnu), CP 177 injure voie privée (mythe "WhatsApp = inattaquable"), OAMal 35 liste fermée fournisseurs LAMal, CO 568 al. 3 responsabilité résiduelle 5 ans SNC, CC 684 immissions négatives hors champ.
+- **Prochaine action** : mesure éval CLI sur 400 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

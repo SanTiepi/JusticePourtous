@@ -244,7 +244,7 @@ function renderGuideHtml(model) {
   <meta property="og:description" content="${escapeHtml(model.description)}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="${escapeHtml(model.canonical)}">
-  <meta property="og:image" content="${SITE_URL}/og-image.svg">
+  <meta property="og:image" content="${SITE_URL}/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   ${buildJsonLd(model)}
   <link rel="stylesheet" href="/style.css">

@@ -358,15 +358,19 @@ code {
 /* Mobile nav toggle */
 .nav-toggle {
   display: none;
-  width: 24px;
-  height: 24px;
+  /* 44x44 = cible tactile minimale (Apple HIG / WCAG 2.5.5).
+     Le padding garde les barres à 24px : zone cliquable élargie, rendu identique. */
+  width: 44px;
+  height: 44px;
+  box-sizing: border-box;
+  padding: 10px;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
   cursor: pointer;
   border: none;
   background: none;
-  padding: 0;
 }
 
 .nav-toggle span {
@@ -3639,6 +3643,12 @@ body.has-disclaimer {
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md);
   margin-bottom: var(--space-xl);
+}
+
+/* Variante 2 colonnes. En classe et non en style inline : un inline écraserait
+   la règle mobile plus bas et forcerait 2 cartes côte à côte sur un écran de 375px. */
+.premium-pricing-grid--two {
+  grid-template-columns: 1fr 1fr;
 }
 
 .premium-pricing-card {

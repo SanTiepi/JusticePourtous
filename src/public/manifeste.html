@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manifeste — JusticePourtous</title>
+  <meta name="description" content="Des outils numériques pour les citoyens face aux systèmes hostiles. Justice, sécurité, logement, négociation, anti-arnaque. Souverain, gratuit, en Suisse romande.">
+  <meta property="og:title" content="Justice pour tous — outils citoyens">
+  <meta property="og:description" content="Quand un outil existe pour les avocats, les régies, les banques — on construit pour l'autre côté.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://justicepourtous.ch/manifeste.html">
+  <meta property="og:image" content="https://justicepourtous.ch/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://justicepourtous.ch/manifeste.html">
+  <style>
+    :root {
+      --bg: #fafaf7;
+      --ink: #14181c;
+      --ink-soft: #475569;
+      --ink-muted: #94a3b8;
+      --accent: #b91c1c;
+      --accent-soft: #fef2f2;
+      --rule: #e2e8f0;
+      --card: #ffffff;
+      --serif: "Georgia", "Times New Roman", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.55; }
+
+    .back-bar {
+      max-width: 800px; margin: 0 auto; padding: 1.2rem 1.5rem 0;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    /* Cette page porte son propre CSS (héritée du portail) et ne charge pas style.css :
+       le sélecteur de langue injecté par i18n.js doit donc être stylé ici. */
+    .lang-switcher { display: flex; align-items: center; gap: 0.4rem; }
+    .lang-switcher-label {
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--ink-muted); font-weight: 600;
+    }
+    .lang-select {
+      font-family: inherit; font-size: 0.85rem; color: var(--ink-soft);
+      background: var(--card); border: 1px solid var(--rule); border-radius: 6px;
+      padding: 0.35rem 0.5rem; min-height: 44px; cursor: pointer;
+    }
+    .lang-select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-size: 0.85rem; color: var(--ink-soft); text-decoration: none;
+      font-weight: 600; padding: 0.3rem 0.1rem; border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .back-link:hover { color: var(--accent); border-color: var(--accent); }
+
+    .hero {
+      max-width: 800px; margin: 0 auto; padding: 3rem 1.5rem 3rem; text-align: center;
+    }
+    .hero-eyebrow {
+      font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.18em;
+      color: var(--accent); margin: 0 0 1rem; font-weight: 600;
+    }
+    .hero h1 {
+      font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 600; margin: 0 0 1.2rem; line-height: 1.1; letter-spacing: -0.02em;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); font-weight: 400; }
+    .hero-lead { font-size: 1.15rem; color: var(--ink-soft); max-width: 600px; margin: 0 auto 2rem; }
+    .hero-divider { width: 60px; height: 2px; background: var(--accent); margin: 2rem auto 0; }
+
+    .manifesto { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+    .manifesto h2 { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; margin: 0 0 1rem; }
+    .manifesto p { font-size: 1rem; color: var(--ink); margin: 0 0 1.2rem; }
+    .manifesto p em { background: var(--accent-soft); padding: 0 4px; border-radius: 2px; }
+
+    .pivot-section {
+      background: linear-gradient(135deg, #fef3c7 0%, #fce7f3 100%);
+      padding: 4rem 1.5rem; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    }
+    .pivot-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+    .pivot-eyebrow {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.18em;
+      color: #92400e; margin: 0 0 1rem; font-weight: 600;
+    }
+    .pivot-title {
+      font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600; margin: 0 0 1.5rem; color: var(--ink);
+    }
+    .pivot-lead { font-size: 1.1rem; color: var(--ink); margin: 0 0 1.2rem; }
+    .pivot-status { font-size: 0.88rem; color: var(--ink-soft); margin: 1.5rem 0 0; }
+    .pivot-status em { color: #92400e; font-style: italic; }
+
+    .tools { background: var(--card); border-top: 1px solid var(--rule); padding: 4rem 1.5rem; }
+    .tools-inner { max-width: 1100px; margin: 0 auto; }
+    .tools-head { text-align: center; max-width: 600px; margin: 0 auto 3rem; }
+    .tools-head h2 { font-family: var(--serif); font-size: 2rem; font-weight: 600; margin: 0 0 0.6rem; }
+    .tools-head p { color: var(--ink-soft); margin: 0; }
+
+    .tool-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem;
+    }
+    .tool {
+      background: var(--bg); border: 1px solid var(--rule); border-radius: 10px;
+      padding: 1.4rem 1.5rem; display: flex; flex-direction: column;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .tool:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .tool-status {
+      display: inline-block; font-size: 0.68rem; text-transform: uppercase;
+      letter-spacing: 0.08em; padding: 2px 8px; border-radius: 99px;
+      font-weight: 600; margin-bottom: 0.8rem; align-self: flex-start;
+    }
+    .tool-status.production { background: #dcfce7; color: #166534; }
+    .tool-status.staging    { background: #fef3c7; color: #92400e; }
+    .tool-status.dev        { background: #dbeafe; color: #1e40af; }
+    .tool-name { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; margin: 0 0 0.4rem; }
+    .tool-role { font-size: 0.92rem; color: var(--ink-soft); margin: 0 0 1rem; flex: 1; }
+    .tool-cta {
+      font-size: 0.88rem; color: var(--accent); text-decoration: none;
+      font-weight: 600; padding-top: 0.6rem; border-top: 1px solid var(--rule);
+    }
+    .tool.dev .tool-cta { color: var(--ink-muted); pointer-events: none; }
+    .tool-cta::after { content: " →"; }
+
+    footer {
+      padding: 3rem 1.5rem 2rem; text-align: center; font-size: 0.85rem;
+      color: var(--ink-muted); border-top: 1px solid var(--rule);
+    }
+    footer p { margin: 0.3rem 0; }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 720px) {
+      .hero { padding: 3rem 1rem 2rem; }
+      .hero-lead { font-size: 1rem; }
+      .manifesto { padding: 1.5rem 1rem 3rem; }
+      .manifesto h2 { font-size: 1.15rem; }
+      .manifesto p { font-size: 0.95rem; }
+      .pivot-section { padding: 2.5rem 1rem; }
+      .pivot-inner { text-align: left; }
+      .pivot-lead { font-size: 1rem; }
+      .tools { padding: 2.5rem 1rem; }
+      .tools-head h2 { font-size: 1.5rem; }
+      .tool-grid { grid-template-columns: 1fr; gap: 0.8rem; }
+      .tool { padding: 1.2rem 1.2rem; }
+      footer { padding: 2rem 1rem 1.5rem; font-size: 0.8rem; }
+    }
+    @media (max-width: 380px) {
+      .hero { padding: 2rem 0.8rem 1.5rem; }
+      .hero h1 { font-size: 1.6rem; }
+      .manifesto, .pivot-section, .tools { padding-left: 0.8rem; padding-right: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="back-bar">
+    <a href="/" class="back-link">&larr; Retour &agrave; l'outil</a>
+    <div class="lang-switcher" id="langSwitcher"></div>
+  </div>
+
+  <section class="hero">
+    <p class="hero-eyebrow">Justice pour tous</p>
+    <h1>Des outils <em>pour ceux qui font face</em><br>à des systèmes hostiles.</h1>
+    <p class="hero-lead">Quand un problème existe pour les avocats, les régies, les banques, les RH — on construit <strong>pour l'autre côté</strong>. Pour le citoyen ordinaire, en Suisse, en français.</p>
+    <div class="hero-divider"></div>
+  </section>
+
+  <section class="manifesto">
+    <h2>Pourquoi.</h2>
+    <p>Tu reçois une mise en demeure et tu ne sais pas si elle est fondée. Ta grand-mère reçoit un appel d'un « petit-fils » qui réclame de l'argent en urgence. Tu rentres seule le soir et tu veux pouvoir prouver à qui tu donnes ton adresse. Ton bailleur augmente ton loyer sans motif valable. Tu négocies ton premier salaire sans savoir comment tenir face à un RH qui le fait dix fois par jour.</p>
+    <p>Dans chaque cas, <em>il existe déjà des outils pour les pros</em>. Avocats, régies, banques, RH, escrocs organisés — tous équipés. <em>Toi, non.</em></p>
+    <p>On construit les outils manquants. Un par un. Souverains (tes données restent à toi, jamais revendues). Honnêtes (on dit ce qu'on sait, ce qu'on ne sait pas, et où trouver de l'aide humaine quand il faut). Gratuits pour la consultation, payants seulement quand on agit en ton nom.</p>
+    <p>Ce n'est pas du conseil juridique. Ce n'est pas une assurance. C'est un connecteur intelligent entre toi et les ressources publiques que tu paies déjà avec tes impôts — mais que personne ne t'a appris à utiliser.</p>
+  </section>
+
+  <section class="pivot-section">
+    <div class="pivot-inner">
+      <p class="pivot-eyebrow">Au cœur du projet</p>
+      <h2 class="pivot-title">Cortex — ton coffre souverain</h2>
+      <p class="pivot-lead">
+        Tous les outils ci-dessous partagent une même conviction : <strong>tes données ne devraient appartenir qu'à toi</strong>.
+        Cortex est le coffre où vit tout ce qui te concerne : courriers, décisions, faits, preuves.
+        Tu choisis ce qui rentre, tu choisis ce qui sort. Les autres outils viennent s'y brancher quand tu les autorises.
+      </p>
+      <p class="pivot-status">État : instance perso fonctionnelle · <em>version publique multi-utilisateur en préparation</em></p>
+    </div>
+  </section>
+
+  <section class="tools">
+    <div class="tools-inner">
+      <div class="tools-head">
+        <h2>Les outils branchés sur Cortex</h2>
+        <p>Six aujourd'hui. D'autres arrivent quand un besoin clair émerge.</p>
+      </div>
+      <div class="tool-grid">
+        <article class="tool production">
+          <span class="tool-status production">production</span>
+          <h3 class="tool-name">JusticePourTous</h3>
+          <p class="tool-role">Triage juridique — quand tu reçois une lettre admin et que tu ne sais pas si elle est fondée.</p>
+          <a class="tool-cta" href="/">Accéder à l'outil</a>
+        </article>
+        <article class="tool production">
+          <span class="tool-status production">production</span>
+          <h3 class="tool-name">Vigila</h3>
+          <p class="tool-role">Rentre en sécurité ce soir — preuve cryptographique d'un rendez-vous avec un inconnu.</p>
+          <a class="tool-cta" href="https://vigila.ch">Accéder à l'outil</a>
+        </article>
+        <article class="tool staging">
+          <span class="tool-status staging">staging</span>
+          <h3 class="tool-name">Suxe</h3>
+          <p class="tool-role">Bouclier numérique pour les travailleur·euses du sexe en Suisse.</p>
+          <a class="tool-cta" href="https://preview-p1.batiscan.ch">Voir la version preview</a>
+        </article>
+        <article class="tool staging">
+          <span class="tool-status staging">staging</span>
+          <h3 class="tool-name">NegotiateAI</h3>
+          <p class="tool-role">Entraîne-toi à négocier — salaire, achat, conflit. Jeu de rôle avec scoring.</p>
+          <a class="tool-cta" href="https://nego.batiscan.ch">Voir la version preview</a>
+        </article>
+        <article class="tool dev">
+          <span class="tool-status dev">dev</span>
+          <h3 class="tool-name">Trankill</h3>
+          <p class="tool-role">Bouclier anti-arnaque pour tes proches vulnérables (faux conseiller, faux neveu, etc.).</p>
+          <span class="tool-cta">En préparation</span>
+        </article>
+        <article class="tool dev">
+          <span class="tool-status dev">dev</span>
+          <h3 class="tool-name">Habiter</h3>
+          <p class="tool-role">Reprends le pouvoir sur ton chez-toi (logement insalubre, augmentation de loyer abusive).</p>
+          <span class="tool-cta">En préparation</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Une initiative de Robin & Claude — Morges, Suisse.</p>
+    <p>Code ouvert. Pas de tracking. Pas de pub. Tes données restent les tiennes.</p>
+  </footer>
+
+  <script src="/i18n.js"></script>
+  <script>
+    if (typeof createLangSwitcher === 'function') {
+      document.getElementById('langSwitcher').appendChild(createLangSwitcher());
+    }
+    document.documentElement.lang = getLang();
+  </script>
+</body>
+</html>

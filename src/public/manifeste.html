@@ -121,7 +121,10 @@
       font-size: 0.88rem; color: var(--accent); text-decoration: none;
       font-weight: 600; padding-top: 0.6rem; border-top: 1px solid var(--rule);
     }
-    .tool.dev .tool-cta { color: var(--ink-muted); pointer-events: none; }
+    /* Les préversions sont derrière une authentification : un visiteur qui clique
+       tomberait sur une demande de mot de passe. On annonce, on ne renvoie pas. */
+    .tool.dev .tool-cta,
+    .tool.staging .tool-cta { color: var(--ink-muted); pointer-events: none; }
     .tool-cta::after { content: " →"; }
 
     footer {
@@ -210,13 +213,13 @@
           <span class="tool-status staging">staging</span>
           <h3 class="tool-name">Suxe</h3>
           <p class="tool-role">Bouclier numérique pour les travailleur·euses du sexe en Suisse.</p>
-          <a class="tool-cta" href="https://preview-p1.batiscan.ch">Voir la version preview</a>
+          <span class="tool-cta">Pr&eacute;version priv&eacute;e</span>
         </article>
         <article class="tool staging">
           <span class="tool-status staging">staging</span>
           <h3 class="tool-name">NegotiateAI</h3>
           <p class="tool-role">Entraîne-toi à négocier — salaire, achat, conflit. Jeu de rôle avec scoring.</p>
-          <a class="tool-cta" href="https://nego.batiscan.ch">Voir la version preview</a>
+          <span class="tool-cta">Pr&eacute;version priv&eacute;e</span>
         </article>
         <article class="tool dev">
           <span class="tool-status dev">dev</span>

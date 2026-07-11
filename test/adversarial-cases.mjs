@@ -4033,6 +4033,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CC 684', 'CC 679'],
     notes: "Immissions négatives — CC 684 / CC 679 — privation de lumière et de vue — CC 684 al. 1 : le propriétaire est tenu, dans l'exercice de son droit, notamment en cas d'exploitation industrielle de sa propriété, de s'abstenir de tout excès au détriment des fonds voisins. CC 684 vise les IMMISSIONS POSITIVES excessives (bruit, fumée, odeur, vibrations, poussière, vapeur) qui émanent du fonds voisin et affectent positivement le fonds voisin. IMMISSIONS NÉGATIVES (privation de lumière, de vue, de panorama) : EN PRINCIPE hors champ d'application de CC 684 selon la jurisprudence dominante du TF — CC 684 ne protège pas contre la perte de vue ou d'ensoleillement causée par une construction légale. CC 679/680 : action en responsabilité pour dommage causé par dépassement du droit de propriété — limites à la construction fixées par le droit cantonal des constructions. PERMIS DE CONSTRUIRE : la légalité administrative (permis) n'exclut pas l'action civile CC 679 si les dommages dépassent les atteintes normales du voisinage. DISTANCES LÉGALES : recours possible si la véranda viole les distances de construction cantonales VD (règlement cantonal ou communal). RÉALISME : action CC 684 pour perte d'ensoleillement = difficile/rare; recours droit des constructions = plus efficace. 'Véranda voisin + perte lumière/vue + permis accordé + CC 684 immissions excessives ?' sans 'CC 684 : immissions négatives (perte lumière/vue) = hors champ d'application en règle générale — action droit des constructions plus adaptée' ni 'CC 679 : vérification distances légales cantonales VD = voie plus efficace'. Signal adversarial = citoyen croit que CC 684 (immissions excessives) couvre aussi la privation de lumière et de vue, ignorant que CC 684 vise les immissions positives et que les immissions négatives relèvent du droit des constructions.",
   },
+
+  // ========== WAVE 40 — angles inédits, 10 domaines ==========
+
+  // FISCAL — LIFD 26 : déduction home office salarié (non déductible si bureau disponible à l'office)
+  {
+    id: 'adv_fiscal_11',
+    query: "Je télétravaille depuis chez moi 3 jours sur 5 depuis deux ans. Mon employeur ne rembourse rien (pas internet, pas une partie du loyer). Mon collègue dit qu'on peut déduire le bureau à domicile dans la déclaration d'impôts. J'ai un espace de travail réservé au bureau, mais je n'y vais qu'2 jours par semaine.",
+    canton: 'ZH',
+    expected_domaine: 'fiscal',
+    expected_any_article: ['LIFD 26', 'LIFD 33'],
+    notes: "Déduction home office salarié — LIFD 26 al. 1 let. a — règle TF stricte — LIFD 26 al. 1 let. a : les salariés peuvent déduire les frais professionnels nécessaires. BUREAU À DOMICILE SALARIÉ : déductible UNIQUEMENT si l'employeur n'a pas de poste de travail fixe à disposition. RÈGLE TF (ATF 124 II 29) : si un bureau est disponible à l'office (même non utilisé chaque jour), la déduction est REFUSÉE. LIFD 34 let. a : choix personnel de travailler à domicile = dépense privée non déductible. 'Télétravail 3j/5 + bureau disponible au bureau + déduction impôts ?' sans 'LIFD 26 + ATF 124 II 29 : déduction refusée si poste disponible à l'office' ni 'LIFD 34 let. a : choix personnel = dépense privée'. Signal adversarial = salarié croit que le télétravail fréquent justifie une déduction, ignorant la condition sine qua non 'bureau indisponible à l'office'.",
+  },
+
+  // HYBRIDE — divorce + licenciement par conjoint-employeur (travail primary)
+  {
+    id: 'adv_hybride_14',
+    query: "Je travaille depuis 10 ans dans la société de ma femme comme directeur commercial, j'ai un contrat signé. On est en train de divorcer et elle vient de m'envoyer une lettre de licenciement 'pour restructuration'. Je pense que c'est une vengeance. Est-ce un licenciement abusif ?",
+    canton: 'GE',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 336', 'CO 336a', 'CO 336b'],
+    notes: "Licenciement par conjoint-employeur dans contexte de divorce — CO 336 licenciement abusif — CO 336 al. 1 : résiliation abusive notamment pour représailles (let. d). Contemporanéité divorce/licenciement = indice fort d'abus, mais travailleur doit prouver. CO 336a : indemnité max 6 mois salaire. CO 336b : contester formellement par écrit avant fin contrat + délai 180 jours. TF ATF 136 III 513 : mobile de représailles = cause abusive. Le licenciement reste du droit du travail (CO), pas du droit de la famille (CC). 'Directeur commercial 10 ans + licenciement pendant divorce + restructuration invoquée ?' sans 'CO 336 al. 1 : contemporanéité divorce/licenciement = indice abus' ni 'CO 336b : contestation écrite + délai 180 jours'. Signal adversarial = salarié perçoit cela comme un conflit conjugal, ignorant les règles propres du droit du travail.",
+  },
+
+  // ASSURANCES — LAI 17 / LPGA 17 : révision rente AI, amélioration légère ≠ suppression automatique
+  {
+    id: 'adv_social_16',
+    query: "J'ai une demi-rente de l'assurance invalidité depuis 7 ans pour des problèmes de dos lombaires. Mon médecin traitant dit que mon état s'est un peu amélioré grâce à la physio. Quelques semaines après j'ai reçu une lettre de l'OAI qui parle de 'révision'. Ils peuvent m'enlever ma rente parce que j'ai un peu mieux ?",
+    canton: 'BE',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LAI 17', 'LPGA 17', 'LPGA 52'],
+    notes: "Révision rente AI — LAI 17 / LPGA 17 — LAI 17 al. 1 : modification notable du taux d'invalidité requise pour changer la rente. TF ATF 130 V 71 : seuil de 5 points de pourcentage. Amélioration légère à la physio ≠ suppression automatique. LPGA 52 : opposition dans 30 jours. Rente maintenue pendant la procédure. 'Demi-rente AI 7 ans + légère amélioration + lettre révision OAI ?' sans 'LAI 17 : modification notable requise (5+ pp ATF 130 V 71)' ni 'LPGA 52 : opposition 30j + rente maintenue'. Signal adversarial = bénéficiaire croit que toute amélioration entraîne automatiquement la perte de la rente.",
+  },
+
+  // ACCIDENT — CO 58 : responsabilité propriétaire d'ouvrage, glissade piscine publique
+  {
+    id: 'adv_accident_18',
+    query: "Ma fille de 9 ans a glissé sur le bord mouillé de la piscine de la commune cet été et s'est cassé le bras. Il y avait une petite pancarte 'attention sol glissant'. La mairie dit qu'elle décline toute responsabilité grâce à cette pancarte. On a 4000 CHF de frais médicaux.",
+    canton: 'VD',
+    expected_domaine: 'accident',
+    expected_any_article: ['CO 58', 'CO 41'],
+    notes: "Responsabilité propriétaire d'ouvrage — CO 58 — piscine publique — CO 58 al. 1 : le propriétaire répond du dommage causé par des vices ou défaut d'entretien de l'ouvrage. Piscine communale = ouvrage. Pancarte insuffisante pour exonérer la commune si bord excessivement glissant. TF ATF 130 III 213 : conditions strictes pour l'exonération par mise en garde. CO 44 : faute concomitante d'un enfant de 9 ans réduit mais n'exclut pas l'indemnité. 'Glissade piscine communale enfant 9 ans + pancarte + frais 4000 CHF + mairie décline ?' sans 'CO 58 : défaut d'entretien → responsabilité commune, pancarte insuffisante pour enfant' ni 'CO 44 : faute concomitante enfant réduit sans exclure totalement'. Signal adversarial = parents croient que la pancarte exonère totalement la commune.",
+  },
+
+  // ASSURANCES — LCA 40 : déchéance totale pour fraude ou exagération sinistre
+  {
+    id: 'adv_assurances_19',
+    query: "Mon appartement a été cambriolé. J'ai fait la liste pour mon assurance ménage. Ils vérifient tout et disent qu'un objet de 800 CHF sur ma liste ne peut pas être prouvé. Ils menacent de refuser TOUTE ma demande, même pour les objets prouvés (2500 CHF de dommages certains). Ils ont vraiment ce droit ?",
+    canton: 'ZH',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LCA 40', 'LCA 39'],
+    notes: "Déchéance totale LCA 40 — si l'ayant droit a déclaré inexactement dans l'intention de tromper, l'assureur N'EST PAS LIÉ. SANCTION INTÉGRALE : même exagération partielle peut justifier refus total. INTENTION DE TROMPER requise : l'assureur doit prouver le dol. Un oubli ou estimation de bonne foi ≠ déchéance. 'Cambriolage + 1 objet non prouvé 800 CHF + assureur menace refus total ?' sans 'LCA 40 : déchéance totale légale mais intention de tromper doit être prouvée' ni 'bonne foi protège l'assuré contre la déchéance'. Signal adversarial = assuré ignore que LCA 40 prévoit une déchéance totale légale, mais seulement si intention frauduleuse prouvée.",
+  },
+
+  // CIRCULATION — LCR 28 : leçon de conduite, assurance RC auto-école intervient en premier
+  {
+    id: 'adv_circulation_18',
+    query: "J'étais en leçon d'auto-école hier. En faisant le créneau, j'ai touché la voiture garée derrière. Mon moniteur avait la main sur le frein à main de son côté. Les dégâts sont environ 1200 CHF. Qui paie — mon assurance personnelle ou l'assurance de l'auto-école ?",
+    canton: 'ZH',
+    expected_domaine: 'circulation',
+    expected_any_article: ['LCR 28', 'LCR 58', 'LCR 70'],
+    notes: "Accident en leçon de conduite — LCR 28 / LCR 58 — LCR 28 al. 1 : le moniteur doit pouvoir intervenir sur les commandes. LCR 58 : le DÉTENTEUR du véhicule (auto-école) est responsable civilement. L'assurance RC obligatoire du véhicule de l'auto-école (LCR 63/70) couvre le dommage au tiers en premier. Assurance personnelle de l'élève non nécessaire (l'élève n'est pas détenteur). 'Leçon auto-école + touche voiture garée + moniteur au frein + 1200 CHF ?' sans 'LCR 58 : détenteur = auto-école, RC du véhicule de l'auto-école intervient en premier' ni 'élève n'est pas détenteur = pas d'assurance personnelle requise'. Signal adversarial = élève croit devoir mobiliser son assurance personnelle, ignorant que l'assurance RC de l'auto-école est la couverture primaire.",
+  },
+
+  // CONSOMMATION — CO 370 al. 2 : réception sans réserve ne couvre pas les défauts cachés
+  {
+    id: 'adv_consommation_20',
+    query: "J'ai payé 14'000 CHF à une entreprise de plomberie-carrelage pour rénover ma salle de bain. À la réception j'ai signé un procès-verbal 'sans réserve'. Six mois plus tard le carrelage se décolle par plaques et il y a une fuite dans le mur. L'artisan dit que j'ai signé la réception donc c'est terminé. Il a raison ?",
+    canton: 'VD',
+    expected_domaine: 'consommation',
+    expected_any_article: ['CO 368', 'CO 367', 'CO 370'],
+    notes: "Contrat d'entreprise — CO 368 — défauts cachés — CO 370 al. 2 : réception formelle sans réserve ne couvre PAS les défauts cachés (non apparents lors de la réception). Carrelage décollé 6 mois + fuite dans le mur = défauts cachés. Délai prescription CO 371 : 5 ans dès réception (constructions). CO 370 al. 3 : avis des défauts cachés aussitôt après découverte. DÉMARCHE : lettre recommandée + mise en demeure. 'Salle de bain 14k + carrelage décolle 6 mois + fuite + procès-verbal sans réserve signé ?' sans 'CO 370 al. 2 : réception sans réserve ne couvre pas les défauts cachés' ni 'CO 368 : droit aux réparations dans 5 ans'. Signal adversarial = maître d'ouvrage croit que la signature du PV l'a privé de tout recours.",
+  },
+
+  // SANTÉ — LAMal 64a al. 7 : soins urgents maintenus malgré suspension pour arriérés de primes
+  {
+    id: 'adv_sante_26',
+    query: "J'ai perdu mon emploi il y a 4 mois et je n'arrive plus à payer mes primes LAMal. Mon assurance m'a envoyé une lettre disant qu'elle va 'suspendre les prestations dès le 1er du mois prochain'. J'ai besoin de mes médicaments contre le diabète. Est-ce qu'ils peuvent vraiment m'interdire d'aller chez le médecin ?",
+    canton: 'GE',
+    expected_domaine: 'sante',
+    expected_any_article: ['LAMal 64a', 'LAMal 41', 'LAMal 65'],
+    notes: "Suspension prestations LAMal pour arriérés — LAMal 64a al. 7 (depuis 2022) : pendant la suspension des prestations, les soins urgents sont TOUJOURS couverts. Médicaments diabète = potentiellement urgents si absence → complications immédiates. CANTON prend en charge les soins urgents et facture l'assuré (LAMal 64a al. 8). SUBSIDES CANTONAUX LAMal 65 : demande urgente à faire (GE). PLAN ÉCHELONNEMENT : demander par écrit à l'assureur. 'Chômage + arriérés + suspension + médicaments diabète ?' sans 'LAMal 64a al. 7 : soins urgents toujours couverts malgré suspension' ni 'LAMal 65 : subsides cantonaux + plan échelonnement'. Signal adversarial = assuré croit que suspension = interdiction totale de soins, ignorant LAMal 64a al. 7 et les subsides.",
+  },
+
+  // ENTREPRISE — CO 530 : société simple de fait (food truck sans contrat), CO 548 propriété commune
+  {
+    id: 'adv_entreprise_19',
+    query: "Mon ami et moi avons lancé un food truck il y a 3 ans. On a tout payé ensemble (camion à son nom 25'000 CHF, équipement cuisine 8'000 CHF dont 4'000 de moi). On partageait les bénéfices 50/50. On n'a jamais rien signé ni créé de société. Il veut arrêter et prendre tout le matériel qui est à son nom. J'ai mis 4'000 CHF au départ et 3 ans de travail. Je n'ai aucun droit ?",
+    canton: 'NE',
+    expected_domaine: 'entreprise',
+    expected_any_article: ['CO 530', 'CO 548', 'CO 533'],
+    notes: "Société simple de fait — CO 530 ss — CO 530 : contrat de société simple résultant d'actes concluants. PAS DE FORME REQUISE : 3 ans co-exploitation + partage bénéfices 50/50 + apports communs = société simple de fait valide. CO 548 : les biens apportés à la société constituent une propriété commune des associés, même si titrés au nom d'un seul. CO 533 : part égale dans bénéfices et pertes sauf convention contraire. CO 549 : liquidation au prorata des apports en cas de dissolution. PREUVE : virements bancaires + relevés comptes + communications. 'Food truck 3 ans + camion au nom ami + équipement commun + partage 50/50 + rien signé ?' sans 'CO 530 : société simple de fait par actes concluants = valide sans écrit' ni 'CO 548 : biens apportés = propriété commune même si au nom d'un seul'. Signal adversarial = associé croit que l'absence de contrat écrit l'a privé de tout droit.",
+  },
+
+  // VOISINAGE — CO 685 : distances légales vues, permis bâtir ≠ dispense droit privé fédéral
+  {
+    id: 'adv_voisinage_27',
+    query: "Mon voisin construit une grande terrasse couverte avec garde-corps vitré à 80 centimètres de ma fenêtre de chambre. Il aura une vue directe dans ma pièce. Il a le permis de construire de la commune. Est-ce que je peux encore faire quelque chose, et est-ce que le droit des distances s'applique aussi aux terrasses ?",
+    canton: 'VD',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CO 685', 'CC 684'],
+    notes: "Distances légales et vues — CO 685 / droit cantonal — CO 685 al. 1 : fenêtres et ouvertures donnant vue sur le fonds voisin : distance minimale 50 cm en cas de vues droites. CO 685 = DROIT PRIVÉ fédéral, distinct du permis de construire (droit public). TERRASSE EN ÉLÉVATION avec vue directe peut être couverte par CO 685. PERMIS DE CONSTRUIRE communal ne dispense pas de respecter CO 685. RECOURS : action civile CC 641 al. 2 + CO 685. MESURES PROVISIONNELLES CPC 261 : urgence avant achèvement. 'Terrasse 80 cm fenêtre chambre + vue directe + permis accordé ?' sans 'CO 685 : distances 50 cm minimum vue droite, droit privé distinct du permis public' ni 'CPC 261 : mesures provisionnelles urgentes avant achèvement'. Signal adversarial = riverain croit que le permis communal est définitif et clôt tout recours, ignorant CO 685 (droit privé fédéral).",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

@@ -3931,6 +3931,210 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CC 626', 'CC 628'],
     notes: "Rapport des libéralités à la succession — CC 626/628 — CC 626 al. 1 : les héritiers légaux (enfants du défunt) sont tenus de rapporter à la succession les libéralités (donations) reçues du défunt de son vivant, pour que le partage s'établisse sur l'ensemble des biens. CC 626 al. 2 : sauf si le défunt a expressément dispensé le donataire du rapport (disposition testamentaire ou déclaration écrite au moment de la donation). CC 628 : le rapport s'effectue en valeur (pas en nature) au moment du décès — si l'appartement a pris de la valeur, c'est la valeur au moment du rapport qui compte. SITUATION EN L'ESPÈCE : 80'000 CHF donné au frère il y a 5 ans → rapportable à la succession SAUF dispense expresse du père. CALCUL AVEC RAPPORT : masse de calcul = 120'000 (succession) + 80'000 (rapport frère) = 200'000 CHF. Part légale de chaque enfant = 100'000 CHF. Frère reçoit : 100'000 - 80'000 = 20'000 CHF. Sœur/narrateur reçoit : 100'000 CHF. VÉRIFIER : si le père a rédigé un testament ou fait une déclaration dispensant le frère du rapport → changer le calcul. 'Père décédé + don 80k au frère il y a 5 ans + succession 120k + frère dit c'est du passé ?' sans 'CC 626 : donation rapportable à la succession sauf dispense expresse du défunt' ni 'calcul masse avec rapport : 200k total → 100k chacun → frère ne reçoit que 20k sur les 120k'. Signal adversarial = héritier lésé croit que les donations antérieures sont 'prescrites' ou hors-succession, ignorant CC 626 (rapport obligatoire des libéralités entre héritiers légaux sauf dispense expresse).",
   },
+
+  // ========== WAVE 39 — angles inédits, 10 domaines ==========
+
+  // BAIL — CO 264 : bail à durée déterminée, sortie anticipée par substitution de locataire
+  {
+    id: 'adv_bail_41',
+    query: "J'ai signé un bail de 3 ans (durée fixe) il y a 18 mois. Je dois déménager à Berne pour un nouveau travail. Mon bailleur dit que je suis obligé de payer les 18 mois restants car c'est un bail à durée déterminée. Est-ce que je suis vraiment coincé ?",
+    canton: 'VD',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 264', 'CO 266'],
+    notes: "Bail à durée déterminée — CO 264 — sortie anticipée par présentation d'un remplaçant solvable — CO 264 al. 1 : si le locataire restitue les locaux avant le terme fixé, il reste tenu des loyers jusqu'au moment où le bail peut prendre fin ou a été repris par un tiers aux mêmes conditions. MYTHE : bail à durée déterminée = on ne peut jamais partir avant l'échéance. RÉALITÉ CO 264 : le locataire peut se libérer en présentant au bailleur un candidat locataire solvable, prêt à reprendre le bail aux mêmes conditions. Si le bailleur refuse un remplaçant acceptable sans motif valable, le locataire est libéré. PROCÉDURE : proposer par écrit un/des remplaçants solvables, délai raisonnable au bailleur pour se prononcer. DISTINCTION CO 266 : CO 266 = résiliation ordinaire (préavis + terme, bail à durée indéterminée). CO 264 = sortie anticipée bail fixe via substitution. Le locataire NE DOIT PAS payer 18 mois d'avance si un remplaçant convenable est trouvé. 'Bail 3 ans durée fixe + déménagement professionnel + bailleur exige 18 mois restants ?' sans 'CO 264 : sortie anticipée possible par présentation remplaçant solvable aux mêmes conditions — bailleur ne peut pas refuser sans motif valable'. Signal adversarial = locataire croit être totalement bloqué par la durée fixe du bail, ignorant la possibilité légale de substitution CO 264.",
+  },
+
+  // TRAVAIL — CO 327a/327b : remboursement formation par l'employé, validité et limites
+  {
+    id: 'adv_travail_41',
+    query: "Mon employeur m'a payé un CAS en management (CHF 9'200) avec une clause dans le contrat : si je pars dans les 3 ans, je dois rembourser 100% de la formation. Je veux partir après 14 mois. La clause est-elle valable ? Dois-je vraiment rembourser 9'200 CHF ?",
+    canton: 'ZH',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 327a', 'CO 327b'],
+    notes: "Remboursement formation — CO 327a/327b — validité et limites — CO 327a al. 1 : si l'employeur expose des frais de formation ou de perfectionnement qui ne sont pas requis pour l'exécution du travail convenu, l'employé peut être tenu de rembourser si la relation de travail prend fin dans un délai déterminé. VALIDITÉ : la clause doit être écrite, le délai de rétention doit être proportionnel à la durée et à l'utilité de la formation. CO 327b : si l'employé est licencié sans faute de sa part, la clause de remboursement devient inopposable — l'employé ne doit rien. PROPORTIONNALITÉ TF : le Tribunal fédéral admet des clauses de remboursement si le délai de retention (3 ans) est raisonnable par rapport à la formation (CAS 1 an). DÉGRESSIVITÉ : les tribunaux appliquent souvent une réduction proportionnelle au temps déjà écoulé (14/36 mois écoulés → ~ 39% du montant dû, soit ~3'600 CHF, pas 9'200 CHF). CO 341 : l'employé ne peut pas renoncer pendant le rapport de travail à ses droits légaux impératifs, mais les clauses de remboursement ne sont pas des droits légaux impératifs — elles sont valables si non abusives. 'CAS 9200 CHF + clause remboursement 3 ans + départ à 14 mois ?' sans 'CO 327b : licenciement sans faute = clause inopposable' ni 'dégressivité judiciaire fréquente : 14 mois/36 mois = réduction proportionnelle possible, pas remboursement intégral'. Signal adversarial = employé croit qu'il doit rembourser 100% du montant, ignorant la dégressivité et l'inopposabilité si licencié sans faute.",
+  },
+
+  // DETTES — CO 169 : exceptions opposables au cessionnaire, prescription malgré cession
+  {
+    id: 'adv_dettes_36',
+    query: "J'avais une dette de 2'800 CHF chez un dentiste en 2013. Je n'ai jamais reçu de rappel. Maintenant en 2026 je reçois une lettre d'une société de recouvrement 'RecoveryPlus SA' qui dit avoir racheté cette créance et me réclame 4'600 CHF avec intérêts. Dois-je payer ?",
+    canton: 'GE',
+    expected_domaine: 'dettes',
+    expected_any_article: ['CO 127', 'CO 169'],
+    notes: "Cession de créance et opposabilité exceptions — CO 169 / CO 127 — CO 169 al. 1 : le débiteur peut opposer au cessionnaire (la société de recouvrement) toutes les exceptions qu'il avait contre le cédant (le dentiste) au moment où la cession lui a été notifiée — y compris LA PRESCRIPTION. CO 127 : la dette de soins dentaires est une créance civile ordinaire, prescription de 5 ans (CO 128 pour honoraires médecins = 5 ans également). CALCUL : dette 2013, réclamée 2026 = 13 ans écoulés → PRESCRIPTION ACQUISE. La cession de la créance à une société de recouvrement n'efface pas la prescription, ni ne fait courir un nouveau délai. Les intérêts calculés sur une dette prescrite sont aussi prescrits. POINT CLÉ : la prescription doit être INVOQUÉE par le débiteur (CO 142) — elle ne s'applique pas d'office par le juge. Le débiteur doit répondre en invoquant la prescription par écrit. ATTENTION : si le débiteur paie ou reconnaît la dette (même partiellement), il renonce implicitement à la prescription (CO 141 al. 1). 'Dentiste 2013 + 13 ans sans contact + société recouvrement réclame 4600 CHF ?' sans 'CO 127/128 : prescription 5 ans déjà acquise' ni 'CO 169 : invoquer prescription contre le cessionnaire = opposable exactement comme contre le créancier initial'. Signal adversarial = débiteur croit que la cession de la créance à une société de recouvrement repart à zéro et que les 13 ans n'ont pas d'effet, ignorant CO 169 (mêmes exceptions opposables au cessionnaire).",
+  },
+
+  // FAMILLE — CC 648/649 : copropriété entre concubins, quotes-parts réelles et dissolution
+  {
+    id: 'adv_famille_35',
+    query: "Mon compagnon et moi avons acheté un appartement ensemble (lui a apporté 120'000 CHF, moi 40'000 CHF). Nous ne sommes pas mariés. Après 6 ans, nous nous séparons. Il dit que c'est 50/50 car 'on était en couple'. Ai-je droit à seulement 25% ?",
+    canton: 'VD',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 646', 'CC 649'],
+    notes: "Copropriété concubinage — CC 646/648/649 — quotes-parts réelles et dissolution — CC 646 al. 1 : la copropriété est constituée selon les quotes-parts inscrites au registre foncier (ou selon l'acte d'achat si non inscrit). CC 646 al. 2 : sauf disposition contraire, les parts sont présumées ÉGALES — mais cette présomption est réfutable par preuve. PREUVE DES QUOTES-PARTS : l'acte notarié d'achat ou les contrats entre parties définissent les quotes-parts réelles. Si le registre foncier indique 75%/25% (ou 3/4 et 1/4), c'est cette répartition qui prévaut, pas le mythe du 50/50 pour les couples. FINANCEMENT : 120k vs 40k = ratio 3:1 → quotes-parts 75%/25% si inscrit conformément. DISSOLUTION CC 649 : l'un des copropriétaires peut demander le partage ou la vente judiciaire si pas d'accord. CO 530/544 (société simple) : si pas d'acte de copropriété formel, la société simple entre concubins = liquidation selon apports réels. MYTHE : séparation d'un couple non marié = partage à 50/50 automatiquement. RÉALITÉ : les quotes-parts de copropriété suivent les parts inscrites/l'investissement réel. 'Appartement concubins + 120k vs 40k + séparation + compagnon dit 50/50 ?' sans 'CC 646 : quotes-parts de copropriété réelles = suivent l'acte/le financement réel, pas présumées 50/50 si preuve du contraire' ni 'CC 649 : si pas d'accord, demande de partage judiciaire possible'. Signal adversarial = conjointe de fait croit qu'elle n'a droit qu'à 25% alors que la clarification légale permet de revendiquer la quote-part réelle selon l'investissement documenté.",
+  },
+
+  // ÉTRANGERS — LEI 44/52 : regroupement familial, fratrie exclue, limites légales
+  {
+    id: 'adv_etrangers_30',
+    query: "Je vis en Suisse depuis 12 ans avec un permis C. Mon frère de 28 ans vit encore en Tunisie et aimerait venir me rejoindre en Suisse. J'ai un appartement assez grand. Y a-t-il un regroupement familial possible pour un frère adulte ?",
+    canton: 'GE',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LEI 44', 'LEI 42'],
+    notes: "Regroupement familial — LEI 42/44 — limites légales (fratrie exclue) — LEI 42 (regroupement familial pour ressortissants suisses) et LEI 44 (pour titulaires permis C) définissent limitativement les membres de la famille pouvant bénéficier du regroupement familial : conjoint, partenaire enregistré, enfants mineurs de moins de 18 ans (avec délais stricts LEI 47), et dans des cas très limités les parents âgés à charge. FRATRIE ADULTE EXCLUE : un frère ou une sœur adulte (28 ans) ne fait PAS partie des membres de la famille éligibles au regroupement familial en droit ordinaire, que le demandeur ait un permis C ou même la nationalité suisse. LEI 52 : regroupement familial pour cas de rigueur exceptionnels (dépendance économique et fonctionnelle complète) — conditions très strictes, rarement accordées pour la fratrie adulte indépendante. ALTERNATIVES : permis de travail ordinaire si emploi trouvé (contingent), formation universitaire (permis étudiant), pas de voie 'regroupement familial'. MYTHE : avec un permis C depuis longtemps, on peut faire venir toute sa famille. RÉALITÉ : le regroupement familial est strictement limité aux membres du noyau familial immédiat. 'Permis C 12 ans + frère 28 ans Tunisie + appartement grand ?' sans 'LEI 44 : regroupement familial limité conjoint/enfants mineurs — fratrie adulte EXCLUE' ni 'alternatives : permis travail ou formation, pas regroupement familial'. Signal adversarial = titulaire permis C croit que sa longue résidence et son logement lui permettent de faire venir sa fratrie adulte par regroupement familial.",
+  },
+
+  // SUCCESSIONS — CC 635 : droit de préemption légal entre cohéritiers lors cession part
+  {
+    id: 'adv_successions_20',
+    query: "Mon frère et moi avons hérité en parts égales de la maison de nos parents. Mon frère veut vendre sa part à son ami pour 180'000 CHF. Il m'a dit que je n'ai rien à dire là-dessus. Est-ce que j'ai un droit de priorité pour racheter sa part ?",
+    canton: 'NE',
+    expected_domaine: 'successions',
+    expected_any_article: ['CC 635', 'CC 636'],
+    notes: "Droit de préemption légal entre cohéritiers — CC 635/636 — CC 635 al. 1 : chaque héritier copropriétaire d'un immeuble héréditaire a un droit de préemption légal si l'un des cohéritiers veut aliéner sa quote-part à un tiers. CC 635 al. 2 : le cohéritier souhaitant exercer son droit de préemption doit le faire dans un délai de 3 mois dès qu'il a eu connaissance de la vente. CC 636 : le prix d'exercice du droit de préemption est le prix stipulé avec le tiers (180'000 CHF dans ce cas). MYTHE : une fois la succession ouverte, chaque héritier peut vendre librement sa part à qui il veut. RÉALITÉ CC 635 : le cohéritier a un droit de préemption LÉGAL (pas seulement contractuel) sur la quote-part de l'autre cohéritier. Ce droit de préemption s'exerce aux conditions du marché (même prix que l'acheteur tiers). PROCÉDURE : notification formelle de l'exercice du droit de préemption dans 3 mois → rachat aux conditions de l'offre tiers. CC 682 : droit de préemption légal s'applique aussi aux copropriétaires non-héritiers d'un immeuble. 'Frère veut vendre sa part héritage maison 180k à un ami + peut-on l'en empêcher ?' sans 'CC 635 : droit de préemption légal du cohéritier dans 3 mois, au même prix offert par le tiers' ni 'CC 636 : exercice au prix du marché (180k) — pas de décote'. Signal adversarial = cohéritier ignore qu'il dispose d'un droit de préemption légal de CC 635 et croit qu'il ne peut pas empêcher la vente à un tiers.",
+  },
+
+  // VIOLENCE — CP 177 : injure par voie privée (WhatsApp), poursuivable
+  {
+    id: 'adv_violence_21',
+    query: "Mon ex-beau-frère m'envoie depuis 3 mois des messages WhatsApp très insultants ('ordure', 'moins que rien', 'je vais te détruire'). Quand j'ai demandé à déposer plainte, le policier m'a dit que c'est une conversation privée et qu'il ne peut rien faire. Est-ce vrai ?",
+    canton: 'GE',
+    expected_domaine: 'violence',
+    expected_any_article: ['CP 177', 'CP 180'],
+    notes: "Injure par voie privée — CP 177 / CP 180 — CP 177 al. 1 : celui qui, d'une autre manière que prévu à CP 173 et 174, aura attaqué autrui dans son honneur sera puni d'une peine pécuniaire de 90 jours-amendes au plus. CP 177 s'applique INDÉPENDAMMENT du caractère privé ou public du message — une insulte sur WhatsApp (canal privé) constitue une injure au sens de CP 177 si elle atteint la dignité de la personne. CP 180 : menaces ('je vais te détruire') peuvent constituer une menace (CP 180) si l'auteur cherche à inspirer une crainte sérieuse. IMPORTANT : CP 177 (injure) est une infraction poursuivie SUR PLAINTE (pas d'office) — la victime doit déposer plainte dans 3 mois dès la connaissance de l'auteur. CP 180 (menaces) peut être d'office si menaces graves. PREUVE : captures d'écran suffisent comme preuve (art. 173 CPC sur pièces). POLICIER A TORT : la nature privée de WhatsApp n'immunise pas l'auteur des insultes — l'injure vise la dignité de la personne, pas la publicité de l'acte. 'Messages WhatsApp insultants + menaces + policier dit conversation privée = rien à faire ?' sans 'CP 177 : injure par canal privé (WhatsApp) = infraction punissable, plainte dans 3 mois' ni 'CP 180 : menaces = infraction distincte, captures écran = preuve recevable'. Signal adversarial = victime croit que les insultes par WhatsApp sont hors-droit pénal car 'conversation privée', ignorant CP 177 (injure) et CP 180 (menaces).",
+  },
+
+  // SANTÉ — LAMal 25/OAMal 35 : ostéopathe non médecin, non remboursé assurance de base
+  {
+    id: 'adv_sante_25',
+    query: "Je souffre de lombalgies chroniques. Mon médecin m'a dit d'essayer l'ostéopathie. Mon ostéopathe n'est pas médecin (pas de numéro RCC). J'ai payé 130 CHF la séance. Mon assurance de base LAMal refuse de rembourser. Ont-ils raison ?",
+    canton: 'VD',
+    expected_domaine: 'sante',
+    expected_any_article: ['LAMal 25', 'OAMal 35'],
+    notes: "Ostéopathe non médecin — LAMal 25 / OAMal 35 — OAMal 35 dresse la liste exhaustive des fournisseurs de prestations dont les prestations sont remboursées par l'assurance de base LAMal : médecins, pharmaciens, hôpitaux, sages-femmes, infirmiers, physiothérapeutes, ergothérapeutes, nutritionnistes, optométristes, chiropraticiens. OSTÉOPATHE NON MÉDECIN = NON DANS LA LISTE : les ostéopathes sans titre médecin (sans numéro RCC/numéro GLN de médecin reconnu LAMal) ne sont PAS des fournisseurs de prestations reconnus pour l'assurance de base. Remboursement IMPOSSIBLE par l'assurance de base, même avec prescription médicale (la prescription ne crée pas le droit au remboursement si le prestataire n'est pas reconnu). EXCEPTION : si l'ostéopathe est aussi médecin diplômé reconnu LAMal, ses prestations entrent dans LAMal. ASSURANCES COMPLÉMENTAIRES (LCA) : les assurances complémentaires (lamal complémentaires, médecines alternatives) peuvent couvrir l'ostéopathie — vérifier son contrat. PHYSIOTHÉRAPEUTE reconnu LAMal : alternative remboursable pour lombalgies. 'Ostéopathe non médecin + 130 CHF séance + assurance de base refuse ?' sans 'OAMal 35 : ostéopathe sans titre médecin = non reconnu comme fournisseur de prestations LAMal — refus assurance LÉGAL' ni 'assurance complémentaire LCA : vérifier couverture médecines alternatives'. Signal adversarial = patient croit que la prescription médicale suffit pour que n'importe quel thérapeute soit couvert par l'assurance de base, ignorant OAMal 35 (liste fermée des fournisseurs reconnus).",
+  },
+
+  // ENTREPRISE — CO 568/569 : sortie société en nom collectif, responsabilité 5 ans dettes existantes
+  {
+    id: 'adv_entreprise_18',
+    query: "J'ai une société en nom collectif avec mon associé depuis 7 ans (plomberie). Je veux me retirer. Mon notaire dit que même si je sors de la société, je reste responsable des dettes. Est-ce vrai ? Pendant combien de temps ?",
+    canton: 'FR',
+    expected_domaine: 'entreprise',
+    expected_any_article: ['CO 568', 'CO 569'],
+    notes: "Sortie société en nom collectif — CO 568/569 — responsabilité résiduelle 5 ans — CO 568 al. 1 : la responsabilité des associés d'une société en nom collectif est ILLIMITÉE et SOLIDAIRE pour toutes les dettes de la société. CO 568 al. 3 : l'associé qui sort reste responsable des dettes EXISTANTES au moment de son départ pendant 5 ans à compter de la radiation au registre du commerce (RC). PROCÉDURE OBLIGATOIRE CO 569 : pour que la sortie soit opposable aux tiers, elle doit être inscrite au registre du commerce (modification de la raison sociale). SANS INSCRIPTION RC : l'associé sortant reste pleinement responsable vis-à-vis des créanciers qui ne savaient pas qu'il était sorti. DETTES FUTURES : après la radiation + 5 ans, l'ex-associé n'est PAS responsable des nouvelles dettes contractées après son départ. DETTES PRÉEXISTANTES : responsable pendant 5 ans depuis la radiation. DISSOLUTION vs SORTIE : si les 2 associés partent = dissolution et liquidation de la société. CAPITAL DE LIQUIDATION : chaque associé reçoit sa part après remboursement des créanciers. 'Société en nom collectif + sortie + responsabilité des dettes ?' sans 'CO 568 al. 3 : responsabilité résiduelle 5 ans sur dettes existantes depuis radiation RC' ni 'CO 569 : inscription RC obligatoire pour opposabilité aux tiers'. Signal adversarial = associé croit que sa sortie met fin immédiatement à toute responsabilité, ignorant CO 568 al. 3 (5 ans de responsabilité résiduelle pour dettes préexistantes).",
+  },
+
+  // VOISINAGE — CC 684 : immissions négatives (privation lumière/vue) hors champ CC 684
+  {
+    id: 'adv_voisinage_26',
+    query: "Mon voisin a construit une véranda vitrée de 4 mètres de haut juste sur la limite de propriété. Ça coupe toute la lumière de mon salon et de mon jardin. Le commune dit que c'est légal car il a eu un permis. Puis-je agir sur la base des immissions excessives CC 684 ?",
+    canton: 'VD',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 684', 'CC 679'],
+    notes: "Immissions négatives — CC 684 / CC 679 — privation de lumière et de vue — CC 684 al. 1 : le propriétaire est tenu, dans l'exercice de son droit, notamment en cas d'exploitation industrielle de sa propriété, de s'abstenir de tout excès au détriment des fonds voisins. CC 684 vise les IMMISSIONS POSITIVES excessives (bruit, fumée, odeur, vibrations, poussière, vapeur) qui émanent du fonds voisin et affectent positivement le fonds voisin. IMMISSIONS NÉGATIVES (privation de lumière, de vue, de panorama) : EN PRINCIPE hors champ d'application de CC 684 selon la jurisprudence dominante du TF — CC 684 ne protège pas contre la perte de vue ou d'ensoleillement causée par une construction légale. CC 679/680 : action en responsabilité pour dommage causé par dépassement du droit de propriété — limites à la construction fixées par le droit cantonal des constructions. PERMIS DE CONSTRUIRE : la légalité administrative (permis) n'exclut pas l'action civile CC 679 si les dommages dépassent les atteintes normales du voisinage. DISTANCES LÉGALES : recours possible si la véranda viole les distances de construction cantonales VD (règlement cantonal ou communal). RÉALISME : action CC 684 pour perte d'ensoleillement = difficile/rare; recours droit des constructions = plus efficace. 'Véranda voisin + perte lumière/vue + permis accordé + CC 684 immissions excessives ?' sans 'CC 684 : immissions négatives (perte lumière/vue) = hors champ d'application en règle générale — action droit des constructions plus adaptée' ni 'CC 679 : vérification distances légales cantonales VD = voie plus efficace'. Signal adversarial = citoyen croit que CC 684 (immissions excessives) couvre aussi la privation de lumière et de vue, ignorant que CC 684 vise les immissions positives et que les immissions négatives relèvent du droit des constructions.",
+  },
+
+  // ========== WAVE 40 — angles inédits, 10 domaines ==========
+
+  // FISCAL — LIFD 26 : déduction home office salarié (non déductible si bureau disponible à l'office)
+  {
+    id: 'adv_fiscal_11',
+    query: "Je télétravaille depuis chez moi 3 jours sur 5 depuis deux ans. Mon employeur ne rembourse rien (pas internet, pas une partie du loyer). Mon collègue dit qu'on peut déduire le bureau à domicile dans la déclaration d'impôts. J'ai un espace de travail réservé au bureau, mais je n'y vais qu'2 jours par semaine.",
+    canton: 'ZH',
+    expected_domaine: 'fiscal',
+    expected_any_article: ['LIFD 26', 'LIFD 33'],
+    notes: "Déduction home office salarié — LIFD 26 al. 1 let. a — règle TF stricte — LIFD 26 al. 1 let. a : les salariés peuvent déduire les frais professionnels nécessaires. BUREAU À DOMICILE SALARIÉ : déductible UNIQUEMENT si l'employeur n'a pas de poste de travail fixe à disposition. RÈGLE TF (ATF 124 II 29) : si un bureau est disponible à l'office (même non utilisé chaque jour), la déduction est REFUSÉE. LIFD 34 let. a : choix personnel de travailler à domicile = dépense privée non déductible. 'Télétravail 3j/5 + bureau disponible au bureau + déduction impôts ?' sans 'LIFD 26 + ATF 124 II 29 : déduction refusée si poste disponible à l'office' ni 'LIFD 34 let. a : choix personnel = dépense privée'. Signal adversarial = salarié croit que le télétravail fréquent justifie une déduction, ignorant la condition sine qua non 'bureau indisponible à l'office'.",
+  },
+
+  // HYBRIDE — divorce + licenciement par conjoint-employeur (travail primary)
+  {
+    id: 'adv_hybride_14',
+    query: "Je travaille depuis 10 ans dans la société de ma femme comme directeur commercial, j'ai un contrat signé. On est en train de divorcer et elle vient de m'envoyer une lettre de licenciement 'pour restructuration'. Je pense que c'est une vengeance. Est-ce un licenciement abusif ?",
+    canton: 'GE',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 336', 'CO 336a', 'CO 336b'],
+    notes: "Licenciement par conjoint-employeur dans contexte de divorce — CO 336 licenciement abusif — CO 336 al. 1 : résiliation abusive notamment pour représailles (let. d). Contemporanéité divorce/licenciement = indice fort d'abus, mais travailleur doit prouver. CO 336a : indemnité max 6 mois salaire. CO 336b : contester formellement par écrit avant fin contrat + délai 180 jours. TF ATF 136 III 513 : mobile de représailles = cause abusive. Le licenciement reste du droit du travail (CO), pas du droit de la famille (CC). 'Directeur commercial 10 ans + licenciement pendant divorce + restructuration invoquée ?' sans 'CO 336 al. 1 : contemporanéité divorce/licenciement = indice abus' ni 'CO 336b : contestation écrite + délai 180 jours'. Signal adversarial = salarié perçoit cela comme un conflit conjugal, ignorant les règles propres du droit du travail.",
+  },
+
+  // ASSURANCES — LAI 17 / LPGA 17 : révision rente AI, amélioration légère ≠ suppression automatique
+  {
+    id: 'adv_social_16',
+    query: "J'ai une demi-rente de l'assurance invalidité depuis 7 ans pour des problèmes de dos lombaires. Mon médecin traitant dit que mon état s'est un peu amélioré grâce à la physio. Quelques semaines après j'ai reçu une lettre de l'OAI qui parle de 'révision'. Ils peuvent m'enlever ma rente parce que j'ai un peu mieux ?",
+    canton: 'BE',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LAI 17', 'LPGA 17', 'LPGA 52'],
+    notes: "Révision rente AI — LAI 17 / LPGA 17 — LAI 17 al. 1 : modification notable du taux d'invalidité requise pour changer la rente. TF ATF 130 V 71 : seuil de 5 points de pourcentage. Amélioration légère à la physio ≠ suppression automatique. LPGA 52 : opposition dans 30 jours. Rente maintenue pendant la procédure. 'Demi-rente AI 7 ans + légère amélioration + lettre révision OAI ?' sans 'LAI 17 : modification notable requise (5+ pp ATF 130 V 71)' ni 'LPGA 52 : opposition 30j + rente maintenue'. Signal adversarial = bénéficiaire croit que toute amélioration entraîne automatiquement la perte de la rente.",
+  },
+
+  // ACCIDENT — CO 58 : responsabilité propriétaire d'ouvrage, glissade piscine publique
+  {
+    id: 'adv_accident_18',
+    query: "Ma fille de 9 ans a glissé sur le bord mouillé de la piscine de la commune cet été et s'est cassé le bras. Il y avait une petite pancarte 'attention sol glissant'. La mairie dit qu'elle décline toute responsabilité grâce à cette pancarte. On a 4000 CHF de frais médicaux.",
+    canton: 'VD',
+    expected_domaine: 'accident',
+    expected_any_article: ['CO 58', 'CO 41'],
+    notes: "Responsabilité propriétaire d'ouvrage — CO 58 — piscine publique — CO 58 al. 1 : le propriétaire répond du dommage causé par des vices ou défaut d'entretien de l'ouvrage. Piscine communale = ouvrage. Pancarte insuffisante pour exonérer la commune si bord excessivement glissant. TF ATF 130 III 213 : conditions strictes pour l'exonération par mise en garde. CO 44 : faute concomitante d'un enfant de 9 ans réduit mais n'exclut pas l'indemnité. 'Glissade piscine communale enfant 9 ans + pancarte + frais 4000 CHF + mairie décline ?' sans 'CO 58 : défaut d'entretien → responsabilité commune, pancarte insuffisante pour enfant' ni 'CO 44 : faute concomitante enfant réduit sans exclure totalement'. Signal adversarial = parents croient que la pancarte exonère totalement la commune.",
+  },
+
+  // ASSURANCES — LCA 40 : déchéance totale pour fraude ou exagération sinistre
+  {
+    id: 'adv_assurances_19',
+    query: "Mon appartement a été cambriolé. J'ai fait la liste pour mon assurance ménage. Ils vérifient tout et disent qu'un objet de 800 CHF sur ma liste ne peut pas être prouvé. Ils menacent de refuser TOUTE ma demande, même pour les objets prouvés (2500 CHF de dommages certains). Ils ont vraiment ce droit ?",
+    canton: 'ZH',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LCA 40', 'LCA 39'],
+    notes: "Déchéance totale LCA 40 — si l'ayant droit a déclaré inexactement dans l'intention de tromper, l'assureur N'EST PAS LIÉ. SANCTION INTÉGRALE : même exagération partielle peut justifier refus total. INTENTION DE TROMPER requise : l'assureur doit prouver le dol. Un oubli ou estimation de bonne foi ≠ déchéance. 'Cambriolage + 1 objet non prouvé 800 CHF + assureur menace refus total ?' sans 'LCA 40 : déchéance totale légale mais intention de tromper doit être prouvée' ni 'bonne foi protège l'assuré contre la déchéance'. Signal adversarial = assuré ignore que LCA 40 prévoit une déchéance totale légale, mais seulement si intention frauduleuse prouvée.",
+  },
+
+  // CIRCULATION — LCR 28 : leçon de conduite, assurance RC auto-école intervient en premier
+  {
+    id: 'adv_circulation_18',
+    query: "J'étais en leçon d'auto-école hier. En faisant le créneau, j'ai touché la voiture garée derrière. Mon moniteur avait la main sur le frein à main de son côté. Les dégâts sont environ 1200 CHF. Qui paie — mon assurance personnelle ou l'assurance de l'auto-école ?",
+    canton: 'ZH',
+    expected_domaine: 'circulation',
+    expected_any_article: ['LCR 28', 'LCR 58', 'LCR 70'],
+    notes: "Accident en leçon de conduite — LCR 28 / LCR 58 — LCR 28 al. 1 : le moniteur doit pouvoir intervenir sur les commandes. LCR 58 : le DÉTENTEUR du véhicule (auto-école) est responsable civilement. L'assurance RC obligatoire du véhicule de l'auto-école (LCR 63/70) couvre le dommage au tiers en premier. Assurance personnelle de l'élève non nécessaire (l'élève n'est pas détenteur). 'Leçon auto-école + touche voiture garée + moniteur au frein + 1200 CHF ?' sans 'LCR 58 : détenteur = auto-école, RC du véhicule de l'auto-école intervient en premier' ni 'élève n'est pas détenteur = pas d'assurance personnelle requise'. Signal adversarial = élève croit devoir mobiliser son assurance personnelle, ignorant que l'assurance RC de l'auto-école est la couverture primaire.",
+  },
+
+  // CONSOMMATION — CO 370 al. 2 : réception sans réserve ne couvre pas les défauts cachés
+  {
+    id: 'adv_consommation_20',
+    query: "J'ai payé 14'000 CHF à une entreprise de plomberie-carrelage pour rénover ma salle de bain. À la réception j'ai signé un procès-verbal 'sans réserve'. Six mois plus tard le carrelage se décolle par plaques et il y a une fuite dans le mur. L'artisan dit que j'ai signé la réception donc c'est terminé. Il a raison ?",
+    canton: 'VD',
+    expected_domaine: 'consommation',
+    expected_any_article: ['CO 368', 'CO 367', 'CO 370'],
+    notes: "Contrat d'entreprise — CO 368 — défauts cachés — CO 370 al. 2 : réception formelle sans réserve ne couvre PAS les défauts cachés (non apparents lors de la réception). Carrelage décollé 6 mois + fuite dans le mur = défauts cachés. Délai prescription CO 371 : 5 ans dès réception (constructions). CO 370 al. 3 : avis des défauts cachés aussitôt après découverte. DÉMARCHE : lettre recommandée + mise en demeure. 'Salle de bain 14k + carrelage décolle 6 mois + fuite + procès-verbal sans réserve signé ?' sans 'CO 370 al. 2 : réception sans réserve ne couvre pas les défauts cachés' ni 'CO 368 : droit aux réparations dans 5 ans'. Signal adversarial = maître d'ouvrage croit que la signature du PV l'a privé de tout recours.",
+  },
+
+  // SANTÉ — LAMal 64a al. 7 : soins urgents maintenus malgré suspension pour arriérés de primes
+  {
+    id: 'adv_sante_26',
+    query: "J'ai perdu mon emploi il y a 4 mois et je n'arrive plus à payer mes primes LAMal. Mon assurance m'a envoyé une lettre disant qu'elle va 'suspendre les prestations dès le 1er du mois prochain'. J'ai besoin de mes médicaments contre le diabète. Est-ce qu'ils peuvent vraiment m'interdire d'aller chez le médecin ?",
+    canton: 'GE',
+    expected_domaine: 'sante',
+    expected_any_article: ['LAMal 64a', 'LAMal 41', 'LAMal 65'],
+    notes: "Suspension prestations LAMal pour arriérés — LAMal 64a al. 7 (depuis 2022) : pendant la suspension des prestations, les soins urgents sont TOUJOURS couverts. Médicaments diabète = potentiellement urgents si absence → complications immédiates. CANTON prend en charge les soins urgents et facture l'assuré (LAMal 64a al. 8). SUBSIDES CANTONAUX LAMal 65 : demande urgente à faire (GE). PLAN ÉCHELONNEMENT : demander par écrit à l'assureur. 'Chômage + arriérés + suspension + médicaments diabète ?' sans 'LAMal 64a al. 7 : soins urgents toujours couverts malgré suspension' ni 'LAMal 65 : subsides cantonaux + plan échelonnement'. Signal adversarial = assuré croit que suspension = interdiction totale de soins, ignorant LAMal 64a al. 7 et les subsides.",
+  },
+
+  // ENTREPRISE — CO 530 : société simple de fait (food truck sans contrat), CO 548 propriété commune
+  {
+    id: 'adv_entreprise_19',
+    query: "Mon ami et moi avons lancé un food truck il y a 3 ans. On a tout payé ensemble (camion à son nom 25'000 CHF, équipement cuisine 8'000 CHF dont 4'000 de moi). On partageait les bénéfices 50/50. On n'a jamais rien signé ni créé de société. Il veut arrêter et prendre tout le matériel qui est à son nom. J'ai mis 4'000 CHF au départ et 3 ans de travail. Je n'ai aucun droit ?",
+    canton: 'NE',
+    expected_domaine: 'entreprise',
+    expected_any_article: ['CO 530', 'CO 548', 'CO 533'],
+    notes: "Société simple de fait — CO 530 ss — CO 530 : contrat de société simple résultant d'actes concluants. PAS DE FORME REQUISE : 3 ans co-exploitation + partage bénéfices 50/50 + apports communs = société simple de fait valide. CO 548 : les biens apportés à la société constituent une propriété commune des associés, même si titrés au nom d'un seul. CO 533 : part égale dans bénéfices et pertes sauf convention contraire. CO 549 : liquidation au prorata des apports en cas de dissolution. PREUVE : virements bancaires + relevés comptes + communications. 'Food truck 3 ans + camion au nom ami + équipement commun + partage 50/50 + rien signé ?' sans 'CO 530 : société simple de fait par actes concluants = valide sans écrit' ni 'CO 548 : biens apportés = propriété commune même si au nom d'un seul'. Signal adversarial = associé croit que l'absence de contrat écrit l'a privé de tout droit.",
+  },
+
+  // VOISINAGE — CO 685 : distances légales vues, permis bâtir ≠ dispense droit privé fédéral
+  {
+    id: 'adv_voisinage_27',
+    query: "Mon voisin construit une grande terrasse couverte avec garde-corps vitré à 80 centimètres de ma fenêtre de chambre. Il aura une vue directe dans ma pièce. Il a le permis de construire de la commune. Est-ce que je peux encore faire quelque chose, et est-ce que le droit des distances s'applique aussi aux terrasses ?",
+    canton: 'VD',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CO 685', 'CC 684'],
+    notes: "Distances légales et vues — CO 685 / droit cantonal — CO 685 al. 1 : fenêtres et ouvertures donnant vue sur le fonds voisin : distance minimale 50 cm en cas de vues droites. CO 685 = DROIT PRIVÉ fédéral, distinct du permis de construire (droit public). TERRASSE EN ÉLÉVATION avec vue directe peut être couverte par CO 685. PERMIS DE CONSTRUIRE communal ne dispense pas de respecter CO 685. RECOURS : action civile CC 641 al. 2 + CO 685. MESURES PROVISIONNELLES CPC 261 : urgence avant achèvement. 'Terrasse 80 cm fenêtre chambre + vue directe + permis accordé ?' sans 'CO 685 : distances 50 cm minimum vue droite, droit privé distinct du permis public' ni 'CPC 261 : mesures provisionnelles urgentes avant achèvement'. Signal adversarial = riverain croit que le permis communal est définitif et clôt tout recours, ignorant CO 685 (droit privé fédéral).",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

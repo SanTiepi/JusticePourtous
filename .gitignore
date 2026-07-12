@@ -19,3 +19,5 @@ src/data/meta/adversarial-cli-report.json
 # Mock outputs du script ingest-entscheidsuche (--mock par défaut en dev/CI)
 # Le vrai corpus seed est entscheidsuche-2026-04-19.json (tracké).
 src/data/jurisprudence-cantonale/entscheidsuche-*-mock.json
+.tmp/
+eval/duel-resultats.json

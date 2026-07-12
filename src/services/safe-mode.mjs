@@ -42,18 +42,45 @@ const CONTACT_PAGE = '/annuaire.html';
  * url, note}) pour que le frontend puisse les rendre avec le même composant.
  */
 const EMERGENCY = [
-  { name: 'Police (danger immédiat)', phone: '117', tel: 'tel:117', note: '24h/24' },
+  { name: 'Police — danger immédiat', phone: '117', tel: 'tel:117', note: '24h/24' },
   { name: 'Urgences médicales', phone: '144', tel: 'tel:144', note: '24h/24' },
-  { name: 'La Main Tendue (écoute, détresse)', phone: '143', tel: 'tel:143', url: 'https://www.143.ch', note: '24h/24, anonyme, gratuit' },
-  { name: 'Aide aux victimes (LAVI)', phone: '0848 28 28 28', tel: 'tel:+41848282828', url: 'https://www.aide-aux-victimes.ch', note: 'confidentiel, frais juridiques pris en charge' }
+  // Le 142 : ligne nationale d'aide aux victimes, ouverte le 1er mai 2026. Le site
+  // servait encore l'ancien 0848 28 28 28 — voir l'avertissement dans
+  // safety-classifier.mjs. Numéros courts nationaux UNIQUEMENT (cf. RESOURCES).
+  { name: 'Aide aux victimes — ligne nationale', phone: '142', tel: 'tel:142', url: 'https://www.aide-aux-victimes.ch', note: 'gratuit, confidentiel, 24h/24' },
+  { name: 'La Main Tendue — écoute', phone: '143', tel: 'tel:143', url: 'https://www.143.ch', note: '24h/24, anonyme, gratuit' }
 ];
 
+/**
+ * ⚠ POURQUOI IL N'Y A PAS DE NUMÉROS DE TÉLÉPHONE ICI (2026-07-12)
+ *
+ * La première version de ce fichier annonçait « ASLOCA — 021 617 10 07 ».
+ * Ce numéro n'existe pas. Je l'ai écrit sans le vérifier, le soir même où je
+ * neutralisais le site parce qu'il servait des données inventées. Le vrai numéro
+ * d'ASLOCA Vaud est le 021 617 16 17 — et encore : ASLOCA Vaud a PLUSIEURS sections
+ * régionales, chacune avec son numéro, et le site officiel demande explicitement de
+ * contacter « la section qui vous concerne ». Un numéro unique est donc déjà une
+ * simplification fausse. L'annuaire du repo, lui, en contenait un TROISIÈME (faux
+ * aussi).
+ *
+ * LA LEÇON, et elle vaut pour tout ce projet : le réflexe d'écrire une donnée
+ * plausible est plus fort que la conscience du problème. Savoir ne suffit pas.
+ *
+ * LA RÈGLE QUI EN DÉCOULE : on ne recopie plus une coordonnée qu'on ne peut pas
+ * garantir. On envoie vers la SOURCE OFFICIELLE, qui est stable, maintenue par
+ * l'organisation elle-même, et qui donne la bonne antenne locale. Un lien qu'on n'a
+ * pas inventé vaut mieux qu'un numéro qu'on a cru se rappeler.
+ *
+ * Seuls restent en dur les numéros d'URGENCE À TROIS CHIFFRES : ils sont nationaux,
+ * universels, immuables, et une victime en danger n'a pas le temps de cliquer.
+ */
 const RESOURCES = [
-  { name: 'ASLOCA (locataires)', phone: '021 617 10 07', tel: 'tel:+41216171007', url: 'https://www.asloca.ch', note: 'bail, loyer, résiliation, caution — permanence par canton' },
-  { name: 'Caritas Suisse', url: 'https://www.caritas.ch', note: 'consultation sociale et juridique, dettes, précarité' },
-  { name: 'Centre social protestant (CSP)', url: 'https://www.csp.ch', note: 'consultation juridique gratuite ou à prix libre' },
-  { name: 'Unia (travail)', url: 'https://www.unia.ch', note: 'licenciement, salaire impayé, contrat de travail' },
-  { name: 'Permanences juridiques gratuites', url: CONTACT_PAGE, note: 'annuaire des autorités et permanences par canton — toujours en ligne sur ce site' }
+  { name: 'ASLOCA — défense des locataires', url: 'https://www.asloca.ch/nos-sections/', note: 'bail, loyer, résiliation, caution. Choisissez votre canton : chaque section a sa permanence.' },
+  { name: 'Caritas — consultation sociale et juridique', url: 'https://caritas-regio.ch/fr/prestations/soutien-social-juridique/conseil-juridique', note: 'dettes, précarité, aide sociale — gratuit et confidentiel' },
+  { name: 'Centre social protestant (CSP)', url: 'https://www.csp.ch/', note: 'consultation juridique gratuite ou à prix libre' },
+  { name: 'Unia — travail', url: 'https://www.unia.ch/fr/contact', note: 'licenciement, salaire impayé, contrat de travail' },
+  { name: 'Autorités de conciliation en matière de bail', url: 'https://www.bwo.admin.ch/fr/procedure-de-conciliation', note: 'liste officielle de la Confédération (Office fédéral du logement) — l’autorité compétente de votre district' },
+  { name: 'Permanences juridiques', url: CONTACT_PAGE, note: 'annuaire par canton — toujours en ligne sur ce site' }
 ];
 
 const MESSAGES = {

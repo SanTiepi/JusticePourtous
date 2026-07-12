@@ -242,13 +242,29 @@ export function buildSafetyResponse(signal_type) {
         signal: signal_type,
         preamble: EMPATHIC_PREAMBLE_VIOLENCE,
         message: 'Votre sécurité passe avant tout. Si vous êtes en danger immédiat, appelez le 117.',
+        // ⚠ CORRIGÉ LE 2026-07-12 — ces numéros étaient PÉRIMÉS, dans le protocole
+        // le plus critique du site.
+        //
+        // Depuis le 1er MAI 2026, la Suisse a une ligne nationale unique pour les
+        // victimes de violence : le 142. Gratuite, confidentielle, 24h/24, dans tout
+        // le pays (SODK / cantons — https://www.vd.ch/actualites/actualite/news/26239-142-ligne-nationale-daide-aux-victimes).
+        // Le site servait encore « LAVI 0848 28 28 28 », « VIVAVA 0800 800 300 » et
+        // « SOS Femmes 0848 800 300 » — introuvables dans les ressources officielles
+        // actuelles. Le monde a changé il y a deux mois et demi ; rien ici ne l'a vu.
+        //
+        // RÈGLE : on ne publie QUE des numéros courts nationaux (117/142/143/144/147).
+        // Ils sont immuables, gratuits, et ne dépendent d'aucune antenne régionale.
+        // Pour tout le reste, on donne le LIEN officiel — on a déjà inventé deux
+        // numéros d'ASLOCA en croyant s'en souvenir. Un lien qu'on n'a pas inventé
+        // vaut mieux qu'un numéro qu'on a cru se rappeler.
+        // Vérifié par test/ressources-reelles.test.mjs (qui appelle réellement les URL).
         resources: [
-          { name: 'Police (urgence)', phone: '117', tel: 'tel:117', note: 'en cas de danger immédiat' },
-          { name: 'VIVAVA (violence conjugale)', phone: '0800 800 300', tel: 'tel:+41800800300', url: 'https://www.aide-aux-victimes.ch', note: 'écoute 24h/24, confidentiel' },
-          { name: 'SOS Femmes', phone: '0848 800 300', tel: 'tel:+41848800300', note: 'soutien aux femmes' },
-          { name: 'LAVI (aide aux victimes)', phone: '0848 28 28 28', tel: 'tel:+41848282828', url: 'https://www.aide-aux-victimes.ch', note: 'soutien confidentiel, frais juridiques pris en charge' },
-          { name: 'La Main Tendue', phone: '143', tel: 'tel:143', url: 'https://www.143.ch', note: 'écoute 24h/24' },
-          { name: 'Urgences médicales', phone: '144', tel: 'tel:144', note: 'blessures' }
+          { name: 'Police — danger immédiat', phone: '117', tel: 'tel:117', note: '24h/24' },
+          { name: 'Aide aux victimes — ligne nationale', phone: '142', tel: 'tel:142', url: 'https://www.aide-aux-victimes.ch', note: 'gratuit, confidentiel, 24h/24 — écoute, démarches, et orientation vers le centre LAVI de votre canton' },
+          { name: 'Urgences médicales', phone: '144', tel: 'tel:144', note: 'blessures' },
+          { name: 'La Main Tendue', phone: '143', tel: 'tel:143', url: 'https://www.143.ch', note: 'écoute, 24h/24, anonyme' },
+          { name: 'Pro Juventute (enfants et jeunes)', phone: '147', tel: 'tel:147', url: 'https://www.147.ch', note: '24h/24, gratuit et anonyme' },
+          { name: 'Violence que faire — trouver de l’aide près de chez vous', url: 'https://www.violencequefaire.ch/trouver-de-laide/', note: 'centres de consultation par canton' }
         ],
         continue_anyway: CONTINUE_BUTTON,
         disclaimer: DISCLAIMER_HUMAN_FIRST,

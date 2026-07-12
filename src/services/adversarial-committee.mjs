@@ -96,9 +96,19 @@ TROIS RÈGLES ABSOLUES, elles priment sur tout le reste :
 
    Tu n'as PAS à réciter la loi de mémoire, et tu ne dois surtout pas essayer. Contente-toi
    de nommer précisément la source :
-     "preuve": { "loi": "LAI", "article": "69" }
+     "preuve": { "loi": "LAI", "article": "69", "regime": "LAI" }
    Lois que nous savons aller lire : CO, CC, CPC, LP, LPGA, LAI, LAA, LAMal, LACI, LEI, CP,
    LCR, LEg, LTF.
+
+   ⚠ LE CHAMP "regime" EST OBLIGATOIRE, ET IL PROTÈGE UN DROIT. Il dit DE QUELLE AFFAIRE ton
+   affirmation parle : "LAI" (assurance-invalidité), "LAMal" (assurance-maladie), "LAA"
+   (accidents), "LACI" (chômage), "bail", "travail", "poursuites"…
+
+   Pourquoi c'est vital : l'art. 69 LAI supprime l'opposition POUR LES DÉCISIONS DE L'AI — pas en
+   assurance-maladie, où l'opposition existe bel et bien. Une même personne, malade depuis trois
+   ans, peut très bien avoir un refus de rente AI ET un litige avec sa caisse-maladie. Si tu
+   n'indiques pas de quelle affaire tu parles, on risque de lui retirer son droit d'opposition
+   LAMal en croyant appliquer la règle de l'AI. Chaque affirmation vit dans son monde : dis lequel.
 
    Un programme ira chercher le TEXTE OFFICIEL de cet article sur Fedlex, dans sa version en
    vigueur aujourd'hui, et le posera sous les yeux du juge, à côté de ton affirmation. Le juge
@@ -221,7 +231,7 @@ JSON :
   "theses": [
     {
       "affirmation": "le droit qu'elle a / ce qu'elle peut obtenir",
-      "preuve": { "loi": "CO", "article": "271a" },
+      "preuve": { "loi": "CO", "article": "271a", "regime": "bail" },
       "conditions": ["ce qui doit être vrai pour que ça marche"],
       "faits_a_l_appui": ["ce qu'elle a déjà dit et qui l'établit"],
       "force": "solide" | "plaidable" | "audacieux"
@@ -229,7 +239,7 @@ JSON :
   ],
   "actions": [
     { "acte": "l'action concrète", "aupres_de": "quelle autorité", "delai": "...", "cout": "gratuit ou montant",
-      "preuve": { "loi": "...", "article": "..." } }
+      "preuve": { "loi": "...", "article": "...", "regime": "..." } }
   ],
   "faits_manquants": ["les faits sans lesquels je ne peux pas conclure — ce sont les questions à lui poser"]
 }`,
@@ -316,7 +326,7 @@ JSON :
     {
       "titre": "en une phrase, ce qu'elle risque de perdre",
       "mecanisme": "pourquoi ça se produit, en langage simple",
-      "preuve": { "loi": "LAI", "article": "69" },
+      "preuve": { "loi": "LAI", "article": "69", "regime": "LAI" },
       "declencheur": "LE fait du dossier qui active ce piège",
       "certitude": "certain" | "probable" | "a_verifier",
       "consequence_si_ignore": "ce qu'elle perd concrètement",
@@ -379,7 +389,7 @@ JSON :
       "affirmation_visee": "recopie l'affirmation attaquée",
       "verdict": "detruit" | "affaibli" | "survit",
       "objection": "ton attaque — ou pourquoi elle survit",
-      "preuve": { "loi": "LPGA", "article": "52" },
+      "preuve": { "loi": "LPGA", "article": "52", "regime": "LAI" },
       "gravite_si_on_l_ecoute_quand_meme": "haute" | "moyenne" | "faible"
     }
   ],
@@ -617,69 +627,257 @@ function extraireAffirmations(avis, role) {
  * numéros, « al. » la ferme (un alinéa n'est pas un article), et le nom d'une loi solde la
  * liste en cours. Rien n'est écarté sans être rattaché explicitement à sa loi.
  */
-const LOIS_CONNUES = /^(LPGA|LAVS|LAI|LAA|LAMal|LACI|LPP|LEI|LEg|CO|CC|CPC|CPP|LP|CP|LCR|LTF)[,.;:]?$/i;
+const LOIS_CONNUES = /^(LPGA|LAVS|LAI|LAA|LAMal|LACI|LPP|LEI|LEg|CO|CC|CPC|CPP|LP|CP|LCR|LTF)$/i;
 
-export function lireDerogation(texte) {
+// Après le nom de la loi, la liste d'articles est CLOSE. On ne la rouvre que si la phrase
+// enchaîne explicitement sur une seconde dérogation (« … LPGA ET À L'ART. 50a LAVS »).
+// Sans ça, on avale les articles simplement CITÉS dans la suite de la phrase.
+const CONNECTEURS = /^(et|ou|ainsi|,|à|aux?|l['’]|de|des|du)$/i;
+
+/**
+ * ⚠ CE PARSEUR SUPPRIME DES ARGUMENTS JURIDIQUES. Il doit être TIMIDE, pas malin.
+ *
+ * Deux erreurs, et elles ne se valent pas :
+ *   · SOUS-ÉCARTER → le juge voit les deux articles et peut se tromper. C'est le bug d'origine
+ *     (la rente AI). Mauvais, mais le chasseur de pièges signale encore le piège.
+ *   · SUR-ÉCARTER → on retire du dossier un article qui S'APPLIQUE. La personne perd un droit,
+ *     silencieusement, et plus personne ne peut le rattraper. C'est pire.
+ * → EN CAS DE DOUTE, ON N'ÉCARTE PAS.
+ *
+ * Confronté aux 73 dérogations RÉELLES du droit fédéral (LAI, LPGA, CO, LP, CPC, LAA, LACI,
+ * LAMal — extraites du texte officiel, pas imaginées), le parseur naïf se plantait de trois
+ * façons :
+ *
+ *   1. IL SUR-ÉCARTAIT. Art. 58 LAI : « en dérogation à l'art. 49, al. 1, LPGA, que la procédure
+ *      simplifiée prévue à l'art. 51 [LPGA] n'est pas applicable ». Il écartait AUSSI l'art. 51
+ *      LPGA — qui n'est pas dérogé, seulement CITÉ. → d'où la règle : le nom de la loi CLÔT la
+ *      liste ; on ne la rouvre que sur un connecteur explicite.
+ *
+ *   2. IL RATAIT « (CO) ». Art. 86 LP : « En dérogation à l'art. 63 du code des obligations
+ *      (CO) ». Le token lu était « (CO) », pas « CO ». → on dépouille la ponctuation, et on
+ *      reconnaît les noms longs.
+ *
+ *   3. IL RATAIT LES DÉROGATIONS INTERNES. Art. 34 LAI : « en dérogation à l'art. 28, al. 1,
+ *      let. b » — sans nom de loi, parce que c'est la MÊME loi. → on rattache à la loi de
+ *      l'article citant… mais UNIQUEMENT si aucun nom de loi n'apparaît dans la clause. Sinon on
+ *      écarterait l'art. 63 LP en lisant l'art. 86 LP (« en dérogation à l'art. 63 CO ») — et
+ *      l'art. 63 LP, ce sont justement les FÉRIES. On aurait retiré à quelqu'un le report de son
+ *      délai. Le piège se referme au millimètre.
+ */
+const NOMS_LONGS = [
+  [/code des obligations/i, 'CO'],
+  [/code civil/i, 'CC'],
+  [/code de procédure civile/i, 'CPC'],
+  [/code de procédure pénale/i, 'CPP'],
+  [/code pénal/i, 'CP'],
+  [/loi (fédérale )?sur la poursuite pour dettes/i, 'LP'],
+];
+
+export function lireDerogation(texte, loiParDefaut = null) {
+  const clause = String(texte);
+
+  // La clause s'arrête à la fin de la PHRASE. Sans ça, « … LPGA . Les rentes sont perçues … »
+  // laisse le parseur courir dans la phrase suivante et ramasser n'importe quoi.
+  // (On ne coupe pas sur tout point : « art. » en contient un. On coupe sur « . » suivi d'une
+  //  majuscule — une vraie fin de phrase.)
+  const fin = clause.search(/\.\s+[A-ZÀ-Ü]/);
+  const utile = fin > 0 ? clause.slice(0, fin) : clause;
+
   const cibles = [];
-  let mode = null;          // 'art' → les nombres qui suivent sont des articles ; 'al' → ce sont des alinéas
-  let enAttente = [];       // les numéros d'articles lus, pas encore rattachés à une loi
+  let mode = null;        // 'art' → les nombres qui suivent sont des articles ; 'al'/'let' → non
+  let enAttente = [];     // [{ num, qualifie }] — articles lus, pas encore rattachés à une loi
+  let close = false;      // une loi a soldé la liste : on n'accepte plus rien sans connecteur
 
-  for (const brut of String(texte).split(/[\s]+/)) {
-    // La loi élide : « à l'art. 32 LPGA ». Sans dépouiller le « l’ », le token « l’art. » n'est
-    // pas reconnu, la dérogation passe inaperçue, et l'article écarté revient dans le dossier.
-    const t = brut.replace(/^[«»(]+/, '').replace(/^[ldn][''’]/i, '');
+  const solder = (sigle) => {
+    for (const a of enAttente) cibles.push({ loi: sigle.toUpperCase(), article: a.num.toLowerCase(), qualifie: a.qualifie });
+    enAttente = [];
+  };
 
-    if (/^art(icle)?s?\.?$/i.test(t)) { mode = 'art'; enAttente = []; continue; }
-    if (/^al(inéa)?s?\.?$/i.test(t)) { mode = 'al'; continue; }   // un alinéa n'est PAS un article
+  for (const brut of utile.split(/\s+/)) {
+    // La loi élide (« à l'art. 32 LPGA ») et parenthèse (« (CO) »). Sans dépouiller ça, la
+    // dérogation passe inaperçue et l'article écarté revient dans le dossier.
+    const t = brut.replace(/^[«»(\[]+/, '').replace(/[»)\],.;:]+$/, '').replace(/^[ldn][''’]/i, '');
+    if (!t) continue;
 
-    const loi = t.match(LOIS_CONNUES)?.[1];
-    if (loi) {
-      // Le nom de la loi solde les articles lus juste avant : c'est là qu'ils appartiennent.
-      for (const a of enAttente) cibles.push({ loi: loi.toUpperCase(), article: a.toLowerCase() });
-      enAttente = [];
-      mode = null;
+    if (/^art(icle)?s?\.?$/i.test(t)) { mode = 'art'; enAttente = []; close = false; continue; }
+
+    // ⚠ « al. » et « let. » ne sont pas des articles — ET ILS QUALIFIENT la dérogation.
+    // Art. 34 LAI : « en dérogation à l'art. 28, AL. 1, LET. B ». La dérogation ne vise PAS tout
+    // l'art. 28 : seulement son al. 1 let. b. Écarter l'article entier serait retirer du dossier
+    // des droits parfaitement applicables. On le marque, et on ne l'écartera pas.
+    if (/^al(inéa)?s?\.?$/i.test(t) || /^let(tre)?s?\.?$/i.test(t)) {
+      if (enAttente.length) enAttente[enAttente.length - 1].qualifie = true;
+      mode = 'qualif';
       continue;
     }
 
+    const loi = t.match(LOIS_CONNUES)?.[1];
+    if (loi) {
+      solder(loi);
+      mode = null;
+      close = true;   // ⚠ la liste est CLOSE : ce qui suit n'est plus dérogé, seulement cité
+      continue;
+    }
+
+    if (close) {
+      // On ne rouvre que sur un connecteur explicite (« … LPGA ET À L'ART. 50a LAVS »).
+      // « … LPGA, QUE la procédure prévue à l'art. 51 » → « que » n'est pas un connecteur : STOP.
+      if (CONNECTEURS.test(t)) continue;
+      break;
+    }
+
     if (mode === 'art') {
-      const num = t.match(/^(\d+[a-z]?(?:bis|ter|quater)?)[,;.]?$/i)?.[1];
-      if (num) enAttente.push(num);
-      else if (!/^(et|,|ou|à|aux?|l['’]|de|des|du)$/i.test(t)) mode = null; // on est sorti de la liste
+      const num = t.match(/^(\d+[a-z]?(?:bis|ter|quater)?)$/i)?.[1];
+      if (num) enAttente.push({ num, qualifie: false });
+      else if (!CONNECTEURS.test(t)) mode = null;   // on est sorti de la liste
     }
   }
+
+  if (!cibles.length && enAttente.length) {
+    // Un nom de loi écrit en toutes lettres : « en dérogation à l'art. 63 DU CODE DES
+    // OBLIGATIONS (CO) » (art. 86 LP).
+    const long = NOMS_LONGS.find(([re]) => re.test(utile));
+    if (long) {
+      solder(long[1]);
+    } else if (loiParDefaut) {
+      // Aucun nom de loi nulle part → dérogation INTERNE (« en dérogation à l'art. 28, al. 1 »
+      // dans la LAI = art. 28 LAI). On rattache à la loi citante.
+      // ⚠ SEULEMENT dans ce cas. Sinon, en lisant l'art. 86 LP (« en dérogation à l'art. 63 du
+      // code des obligations »), on écarterait l'art. 63 LP — c'est-à-dire les FÉRIES. On aurait
+      // retiré à quelqu'un le report de son délai en croyant appliquer la loi. Le piège se
+      // referme au millimètre.
+      solder(loiParDefaut);
+    }
+  }
+
   return cibles;
+}
+
+/**
+ * ⚠ UNE DÉROGATION EST LIÉE À UN RÉGIME — PAS AU DOSSIER ENTIER.
+ *
+ * L'art. 69 LAI supprime l'opposition POUR LES DÉCISIONS DES OFFICES AI. Il ne la supprime pas en
+ * assurance-maladie, où l'art. 52 LPGA s'applique pleinement.
+ *
+ * Or une même personne peut très bien avoir les deux : un refus de rente AI ET un litige avec sa
+ * caisse-maladie. C'est même fréquent — quelqu'un de malade depuis trois ans. Deux erreurs
+ * symétriques nous guettent, et j'ai commis les deux dans la même heure :
+ *
+ *   · ÉCARTER GLOBALEMENT l'art. 52 LPGA parce que l'art. 69 LAI est invoqué → on dit à cette
+ *     personne « il n'y a pas d'opposition », Y COMPRIS pour son affaire LAMal, où l'opposition
+ *     existe. Elle perd ce droit-là, à cause du mécanisme censé la protéger.
+ *
+ *   · N'ÉCARTER RIEN dès qu'il y a deux régimes (mon premier « garde-fou ») → on rouvre le bug de
+ *     la rente : le juge revoit l'art. 52 LPGA, suit son réflexe, conseille l'opposition à
+ *     l'office AI. C'est Codex qui l'a vu. Ma prudence recréait exactement la faille qu'elle
+ *     prétendait fermer.
+ *
+ * LA SEULE SORTIE EST DE SCOPER PAR AFFIRMATION. Chaque affirmation porte le RÉGIME dont elle
+ * relève. Une dérogation issue de la LAI n'écarte que les affirmations qui parlent d'AI. L'affaire
+ * LAMal de la même personne garde son opposition. Chaque droit est jugé dans son monde.
+ */
+const FAMILLE_LPGA = new Set(['LAI', 'LAA', 'LAMAL', 'LACI', 'LAVS', 'LPP']);
+
+/** Le régime dont relève une affirmation : ce que l'agent a déclaré, sinon la loi qu'il cite. */
+function regimeDe(affirmation) {
+  const r = affirmation.preuve?.regime || affirmation.regime;
+  if (r) return String(r).toUpperCase();
+  const loi = String(affirmation.preuve?.loi || '').toUpperCase();
+  // Une affirmation fondée sur la LPGA (loi-cadre) ne dit pas d'elle-même de quel régime elle
+  // relève : c'est précisément l'ambiguïté qui a coûté la rente. On ne devine pas.
+  return FAMILLE_LPGA.has(loi) ? loi : null;
 }
 
 export function trouverDerogations(registre) {
   const derogations = [];
   const vues = new Set();
 
+  // Combien de régimes d'assurance sociale ce dossier met-il en jeu ? (sert à dire au juge
+  // quand il doit se méfier, plus à décider s'il faut écarter)
+  const regimes = new Set(registre.map(regimeDe).filter(x => x && FAMILLE_LPGA.has(x)));
+  const domaineAmbigu = regimes.size > 1;
+
   for (const r of registre) {
-    if (!r.lecture?.derogation || !r.preuve) continue;
+    if (!r.preuve) continue;
+
+    // ⚠ UN ARTICLE PEUT CONTENIR PLUSIEURS DÉROGATIONS. L'art. 97 LAA en a SIX, l'art. 84a LAMal
+    // cinq, l'art. 47 LAI trois. Ma première version n'en lisait qu'UNE (la première du texte) —
+    // et pouvait donc manquer exactement celle qui décide du cas. Trouvé par Codex en relecture ;
+    // je ne l'avais pas vu, et aucun de mes tests ne le couvrait.
+    const clauses = r.lecture?.derogations?.length
+      ? r.lecture.derogations
+      : (r.lecture?.derogation ? [r.lecture.derogation] : []);
+    if (!clauses.length) continue;
 
     const par = `art. ${r.preuve.article} ${r.preuve.loi}`;
     if (vues.has(par)) continue;      // le même article invoqué dix fois ne déroge qu'une
     vues.add(par);
 
-    const ecarte = lireDerogation(r.lecture.derogation);
-    if (!ecarte.length) continue;
+    const cibles = clauses.flatMap(c => lireDerogation(c, r.preuve.loi));
+    if (!cibles.length) continue;
 
-    derogations.push({ par, texte: r.lecture.derogation, ecarte });
+    // ⚠ ON N'ÉCARTE QUE LES DÉROGATIONS QUI VISENT L'ARTICLE ENTIER.
+    //
+    // « En dérogation aux art. 52 et 58 LPGA » (art. 69 LAI) → l'opposition n'existe pas, point.
+    // On écarte : c'est ce qui sauve la rente.
+    //
+    // « En dérogation à l'art. 19, AL. 3, LPGA » (art. 47 LAI) → seul l'al. 3 est écarté. Retirer
+    // tout l'art. 19 LPGA du dossier reviendrait à priver la personne de ses alinéas 1 et 2, qui
+    // s'appliquent parfaitement. Ce serait un droit perdu, silencieusement.
+    //
+    // Sur les 73 dérogations réelles du droit fédéral, la grande majorité sont QUALIFIÉES. Les
+    // écarter en bloc aurait transformé le mécanisme qui sauve un droit en machine à en détruire.
+    // On les signale au juge — on ne les supprime pas. En cas de doute : on n'écarte pas.
+    const ecarte = cibles.filter(c => !c.qualifie);
+    const signale = cibles.filter(c => c.qualifie);
+
+    if (ecarte.length || signale.length) {
+      derogations.push({
+        par,
+        texte: clauses.join(' | '),
+        ecarte,
+        signale,
+        // ⚠ LE RÉGIME DE LA DÉROGATION. C'est lui qui décide QUI elle écarte : une dérogation
+        // issue de la LAI ne touche que les affirmations qui parlent d'AI. Sans ce champ, on
+        // retirerait à quelqu'un son opposition en assurance-maladie parce qu'il a aussi un
+        // dossier AI.
+        regime: String(r.preuve.loi).toUpperCase(),
+        // Sert à avertir le juge que le dossier est mixte — pas à renoncer à écarter.
+        domaine_ambigu: domaineAmbigu ? [...regimes].join(' + ') : null,
+      });
+    }
   }
   return derogations;
 }
 
-/** Une affirmation s'appuie-t-elle sur un article que la loi elle-même a écarté ? */
-function estEcarteeParDerogation(affirmation, derogations) {
+/**
+ * Une affirmation s'appuie-t-elle sur un article que la loi elle-même a écarté — DANS SON RÉGIME ?
+ *
+ * ⚠ « Dans son régime » est le mot qui compte. L'art. 69 LAI supprime l'opposition pour les
+ * décisions des offices AI, pas pour l'assurance-maladie. Une personne malade depuis trois ans
+ * peut avoir les deux. Si on écarte l'art. 52 LPGA globalement, on lui retire son droit
+ * d'opposition LAMal — silencieusement, avec le mécanisme censé la protéger.
+ */
+export function estEcarteeParDerogation(affirmation, derogations) {
   if (!affirmation.preuve?.loi || !affirmation.preuve?.article) return null;
   const loi = String(affirmation.preuve.loi).toUpperCase();
   const art = String(affirmation.preuve.article).replace(/^art\.?\s*/i, '').match(/^(\d+[a-z]?)/i)?.[1]?.toLowerCase();
   if (!art) return null;
 
+  const regimeAffirmation = regimeDe(affirmation);
+
   for (const d of derogations) {
-    // Une dérogation ne s'écarte pas elle-même (art. 69 LAI ne s'auto-annule pas).
+    // Une dérogation ne s'écarte pas elle-même (l'art. 69 LAI ne s'auto-annule pas).
     if (d.par === `art. ${affirmation.preuve.article} ${affirmation.preuve.loi}`) continue;
-    if (d.ecarte.some(e => e.loi === loi && e.article === art)) return d;
+    if (!d.ecarte.some(e => e.loi === loi && e.article === art)) continue;
+
+    // Le régime décide. Si l'affirmation ne déclare aucun régime, on n'écarte QUE si le dossier
+    // n'en connaît qu'un seul — sinon on ne peut pas savoir de quelle affaire elle parle, et
+    // écarter au hasard reviendrait à tirer à pile ou face sur un droit.
+    if (regimeAffirmation && regimeAffirmation !== d.regime) continue;
+    if (!regimeAffirmation && d.domaine_ambigu) continue;
+
+    return d;
   }
   return null;
 }
@@ -730,11 +928,30 @@ function dresserLeTableau(registre, derogations) {
   // ── Ce que la LOI ELLE-MÊME a exclu. Annoncé en premier, avant tout le reste : le juge
   //    doit savoir qu'une porte est fermée avant de commencer à chercher son chemin.
   if (derogations.length) {
-    l.push('══ ⚠ LA LOI ÉCARTE ELLE-MÊME CERTAINS ARTICLES — CE N\'EST PAS NÉGOCIABLE ══\n');
+    l.push('══ ⚠ CE QUE LA LOI DIT D\'ELLE-MÊME SUR SES PROPRES EXCEPTIONS ══\n');
     for (const d of derogations) {
       l.push(`  ${d.par} dit, dans son propre texte : « ${d.texte} »`);
-      l.push(`  → Dans ce dossier, ${d.ecarte.map(e => `l'art. ${e.article} ${e.loi}`).join(' et ')} NE S'APPLIQUE PAS.`);
-      l.push(`     La règle spéciale écarte la règle générale. Le législateur l'a écrit noir sur blanc.\n`);
+
+      if (d.ecarte.length) {
+        l.push(`  → Dans ce dossier, ${d.ecarte.map(e => `l'art. ${e.article} ${e.loi}`).join(' et ')} NE S'APPLIQUE PAS.`);
+        l.push(`     La règle spéciale écarte la règle générale. Le législateur l'a écrit noir sur blanc.`);
+      }
+
+      // Une dérogation qui ne vise qu'un alinéa ne fait PAS tomber l'article entier : ses autres
+      // alinéas s'appliquent toujours. On le dit, on ne le tranche pas.
+      if (d.signale.length && !d.domaine_ambigu) {
+        l.push(`  → ⚠ Attention : ${d.signale.map(e => `l'art. ${e.article} ${e.loi}`).join(', ')} n'est dérogé QUE PARTIELLEMENT`);
+        l.push(`     (un alinéa, une lettre — pas l'article entier). Ses autres dispositions s'appliquent.`);
+      }
+
+      // ⚠ Et quand le dossier mêle plusieurs régimes, on refuse de trancher — et on le DIT.
+      // Se taire ici reviendrait à laisser le juge croire que l'article est valable partout.
+      if (d.domaine_ambigu) {
+        l.push(`  → ⚠⚠ CE DOSSIER MÊLE PLUSIEURS RÉGIMES (${d.domaine_ambigu}). Cette dérogation ne vaut QUE`);
+        l.push(`     pour le domaine de ${d.par} — pas pour les autres. Je n'ai donc RIEN écarté : à toi de`);
+        l.push(`     vérifier, pour CHAQUE démarche, de quel régime elle relève. Ne transpose pas.`);
+      }
+      l.push('');
     }
     if (ecartees.length) {
       l.push('  Les affirmations suivantes reposaient sur ces articles écartés. ELLES ONT ÉTÉ RETIRÉES');

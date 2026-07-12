@@ -17,7 +17,7 @@
 
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { COMITE, redigerDossier, lireDerogation, _internals } from '../src/services/adversarial-committee.mjs';
+import { COMITE, redigerDossier, lireDerogation, trouverDerogations, estEcarteeParDerogation, _internals } from '../src/services/adversarial-committee.mjs';
 
 describe('Le comité adverse — les garde-fous', () => {
   it('LA RÈGLE DE FER est dans TOUS les rôles : ne jamais dire « trop tard »', () => {
@@ -125,10 +125,10 @@ describe('La dérogation — le conflit de normes tranché par du code, pas par 
   // parce qu'elle n'est plus là.
 
   it('LE CAS QUI A TOUT DÉCLENCHÉ : art. 69 LAI écarte les art. 52 et 58 LPGA', () => {
-    const r = lireDerogation('En dérogation aux art. 52 et 58 LPGA');
+    const r = lireDerogation('En dérogation aux art. 52 et 58 LPGA', 'LAI');
     assert.deepEqual(r, [
-      { loi: 'LPGA', article: '52' },
-      { loi: 'LPGA', article: '58' },
+      { loi: 'LPGA', article: '52', qualifie: false },
+      { loi: 'LPGA', article: '58', qualifie: false },
     ], 'la dérogation qui supprime l\'opposition en assurance-invalidité n\'est plus lue — une personne peut de nouveau perdre sa rente');
   });
 
@@ -136,22 +136,122 @@ describe('La dérogation — le conflit de normes tranché par du code, pas par 
     // Sur-écarter est aussi grave que sous-écarter : dans les deux cas, quelqu'un perd un droit.
     // Version naïve : « attrape tous les nombres ». Sur l'art. 68bis LAI, elle écartait les
     // art. 1, 2 et 3 LPGA — lus dans « al. 1 » et « au sens des al. 2 et 3 ».
-    const r = lireDerogation("En dérogation à l’art. 32 LPGA et à l’art. 50 a , al. 1, LAVS , l’échange de données au sens des al. 2 et 3 peut aussi se faire oralement");
+    const r = lireDerogation("En dérogation à l’art. 32 LPGA et à l’art. 50 a , al. 1, LAVS , l’échange de données au sens des al. 2 et 3 peut aussi se faire oralement", 'LAI');
     const lpga = r.filter(x => x.loi === 'LPGA').map(x => x.article);
     assert.deepEqual(lpga, ['32'], `les alinéas sont relus comme des articles : on écarterait ${lpga.join(', ')} de la LPGA`);
   });
 
   it('chaque article est rattaché à SA loi, jamais à la première venue', () => {
-    const r = lireDerogation("En dérogation à l’art. 32 LPGA et à l’art. 50 a , al. 1, LAVS");
+    const r = lireDerogation("En dérogation à l’art. 32 LPGA et à l’art. 50 a , al. 1, LAVS", 'LAI');
     assert.ok(r.some(x => x.loi === 'LPGA' && x.article === '32'));
     assert.ok(!r.some(x => x.loi === 'LPGA' && x.article === '50'),
       'l\'art. 50 de la LAVS a été attribué à la LPGA — on écarterait un article qui s\'applique');
   });
 
   it('l’élision de la loi (« à l’art. 16 LPGA ») ne fait pas rater la dérogation', () => {
-    const r = lireDerogation("en dérogation à l’art. 16 LPGA, en fonction de son incapacité");
-    assert.deepEqual(r, [{ loi: 'LPGA', article: '16' }],
+    const r = lireDerogation("en dérogation à l’art. 16 LPGA, en fonction de son incapacité", 'LAI');
+    assert.deepEqual(r, [{ loi: 'LPGA', article: '16', qualifie: false }],
       'le token « l’art. » n\'est plus reconnu : la dérogation passe inaperçue et l\'article écarté revient dans le dossier');
+  });
+
+  /* ─────────────────────────────────────────────────────────────────────────────
+   * LES TROIS PIÈGES TROUVÉS EN CONFRONTANT LE PARSEUR AUX 73 DÉROGATIONS RÉELLES
+   * DU DROIT FÉDÉRAL (LAI, LPGA, CO, LP, CPC, LAA, LACI, LAMal — lues sur Fedlex).
+   * Aucun n'avait été imaginé : il a fallu aller lire.
+   * ───────────────────────────────────────────────────────────────────────────── */
+
+  it('⚠ SUR-ÉCARTEMENT : un article simplement CITÉ après la dérogation n’est pas dérogé', () => {
+    // Art. 58 LAI, texte réel : « en dérogation à l'art. 49, al. 1, LPGA, que la procédure
+    // simplifiée prévue à l'art. 51 LPGA n'est pas applicable ».
+    // L'art. 51 LPGA n'est PAS dérogé — il est mentionné dans la phrase. Le parseur naïf
+    // l'écartait quand même, retirant du dossier un article parfaitement applicable.
+    const r = lireDerogation("en dérogation à l’art. 49, al. 1, LPGA, que la procédure simplifiée prévue à l’art. 51 LPGA n’est pas applicable", 'LAI');
+    assert.ok(!r.some(c => c.article === '51'),
+      'l\'art. 51 LPGA est écarté alors qu\'il est seulement CITÉ — on retire à quelqu\'un un article qui s\'applique');
+  });
+
+  it('⚠ LES FÉRIES : « art. 63 du code des obligations » ne doit JAMAIS devenir l’art. 63 LP', () => {
+    // Art. 86 LP, texte réel : « En dérogation à l'art. 63 du code des obligations (CO), la
+    // preuve que la somme n'était pas due est la seule qui incombe au demandeur. »
+    // Le nom de la loi est écrit en toutes lettres. Si on rattachait par défaut à la loi citante
+    // (LP), on écarterait l'art. 63 LP — c'est-à-dire LES FÉRIES DE POURSUITE. On retirerait à
+    // quelqu'un le report de son délai en croyant appliquer la loi. Le piège se referme au
+    // millimètre.
+    const r = lireDerogation("En dérogation à l’art. 63 du code des obligations (CO) , la preuve que la somme n’était pas due", 'LP');
+    assert.deepEqual(r, [{ loi: 'CO', article: '63', qualifie: false }],
+      '⚠ on écarte l\'art. 63 LP (les féries !) au lieu de l\'art. 63 CO — un délai encore ouvert serait déclaré mort');
+  });
+
+  it('une dérogation à un ALINÉA ne fait pas tomber l’article entier', () => {
+    // Art. 34 LAI : « en dérogation à l'art. 28, al. 1, let. b ». Seul l'al. 1 let. b est écarté.
+    // Retirer tout l'art. 28 LAI priverait la personne de ses autres alinéas, qui s'appliquent.
+    // Sur les 73 dérogations réelles, 40 sont ainsi QUALIFIÉES : les écarter en bloc aurait
+    // transformé le mécanisme qui sauve un droit en machine à en détruire.
+    const r = lireDerogation("en dérogation à l’art. 28, al. 1, let. b, si le taux d’invalidité donne à nouveau droit", 'LAI');
+    assert.equal(r.length, 1);
+    assert.equal(r[0].qualifie, true,
+      'la dérogation partielle (al. 1 let. b) est traitée comme totale : on écarterait tout l\'art. 28 LAI');
+  });
+
+  it('une dérogation à un simple alinéa du MÊME article n’écarte rien du tout', () => {
+    // Art. 42 LAMal : « en dérogation à l'al. 1, est le débiteur de sa part de rémunération ».
+    // Aucun article n'est visé : ne rien écarter est le comportement correct.
+    assert.deepEqual(lireDerogation("en dérogation à l’al. 1, est le débiteur de sa part de rémunération", 'LAMal'), []);
+  });
+
+  it('LE CAS QUI COMPTE SURVIT À TOUS CES DURCISSEMENTS : art. 69 LAI écarte toujours', () => {
+    // Le risque, en durcissant : casser le seul mécanisme qui ait jamais sauvé un droit.
+    const r = lireDerogation("En dérogation aux art. 52 et 58 LPGA", 'LAI');
+    assert.deepEqual(r, [
+      { loi: 'LPGA', article: '52', qualifie: false },
+      { loi: 'LPGA', article: '58', qualifie: false },
+    ], 'la dérogation qui supprime l\'opposition en AI ne fonctionne plus — la rente est de nouveau perdue');
+  });
+
+  it('dossier à régime unique (AI seul) : la dérogation écarte pour de bon', () => {
+    const registre = [
+      { preuve: { loi: 'LAI', article: '69', regime: 'LAI' }, lecture: { lisible: true, derogation: 'En dérogation aux art. 52 et 58 LPGA' } },
+      { preuve: { loi: 'LPGA', article: '52', regime: 'LAI' }, lecture: { lisible: true, derogation: null } },
+    ];
+    const d = trouverDerogations(registre);
+    assert.deepEqual(d[0].ecarte.map(e => `${e.article} ${e.loi}`), ['52 LPGA', '58 LPGA'],
+      'la dérogation n\'écarte plus rien sur un dossier purement AI : on a durci jusqu\'à casser ce qui marchait');
+  });
+
+  it('⚠⚠ DOSSIER MIXTE (AI + LAMal) : chaque droit est jugé DANS SON RÉGIME', () => {
+    // LE TROU LE PLUS VICIEUX — et j'ai commis LES DEUX erreurs symétriques dans la même heure.
+    //
+    // L'art. 69 LAI supprime l'opposition POUR LES DÉCISIONS DES OFFICES AI. Pas en
+    // assurance-maladie, où l'opposition (art. 52 LPGA) existe bel et bien. Or une personne
+    // malade depuis trois ans peut très bien avoir un refus de rente AI ET un litige LAMal.
+    //
+    //   · Si j'écarte l'art. 52 LPGA GLOBALEMENT → je lui dis « il n'y a pas d'opposition », y
+    //     compris pour son affaire LAMal. ELLE PERD CE DROIT-LÀ.
+    //   · Si je n'écarte RIEN dès qu'il y a deux régimes (mon premier « garde-fou ») → le juge
+    //     revoit l'art. 52 LPGA, suit son réflexe, et reconseille l'opposition à l'office AI.
+    //     ELLE PERD SA RENTE. C'est Codex qui l'a vu : ma prudence recréait la faille qu'elle
+    //     prétendait fermer.
+    //
+    // La seule sortie : SCOPER PAR AFFIRMATION. Chaque affirmation dit de quel régime elle relève.
+    const registre = [
+      { role: 'chasseur', texte: 'pas d\'opposition en AI', preuve: { loi: 'LAI', article: '69', regime: 'LAI' },
+        lecture: { lisible: true, derogation: 'En dérogation aux art. 52 et 58 LPGA' } },
+      { role: 'avocat', texte: 'faites opposition à l\'office AI', preuve: { loi: 'LPGA', article: '52', regime: 'LAI' },
+        lecture: { lisible: true, derogation: null } },
+      { role: 'avocat', texte: 'faites opposition à votre caisse-maladie', preuve: { loi: 'LPGA', article: '52', regime: 'LAMal' },
+        lecture: { lisible: true, derogation: null } },
+    ];
+    const d = trouverDerogations(registre);
+    const estEcartee = (r) => Boolean(estEcarteeParDerogation(r, d));
+    const ecartees = registre.filter(estEcartee);
+
+    assert.equal(ecartees.length, 1, 'exactement UNE affirmation doit tomber');
+    assert.equal(ecartees[0].preuve.regime, 'LAI',
+      '⚠ on a écarté l\'opposition LAMal : cette personne perd son droit d\'opposition en assurance-maladie');
+    assert.ok(registre.some(r => r.preuve.regime === 'LAMal' && !estEcartee(r)),
+      'l\'opposition LAMal a disparu du dossier — elle EXISTE pourtant, et c\'est un droit');
+    assert.ok(registre.some(r => r.preuve.regime === 'LAI' && r.preuve.article === '52' && estEcartee(r)),
+      '⚠ l\'opposition à l\'office AI est TOUJOURS dans le dossier : le juge va la reconseiller, et la rente est perdue');
   });
 
   it('L’IRRÉVERSIBLE EST INTERDIT SANS PREUVE : en cas de doute, l’acte conservatoire', () => {

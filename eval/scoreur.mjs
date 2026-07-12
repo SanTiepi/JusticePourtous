@@ -123,9 +123,17 @@ export function juger(classement, cas) {
   const acceptables = new Set([cas.acte_correct, ...(cas.actes_acceptables || [])]);
   const conseille_le_bon_acte = acceptables.has(acte);
 
-  // ⚠ L'acte FATAL recommandé en principal = le droit est perdu.
-  // Le recommander en secondaire est moins grave, mais on le note : « faites aussi une
-  // opposition, ça ne coûte rien » est acceptable ; « faites une opposition » ne l'est pas.
+  // ⚠ UN ACTE FATAL EN SECOND N'EST PAS UN DÉTAIL — ET MON SCOREUR L'ABSOLVAIT.
+  //
+  // Codex l'a trouvé en relecture : le cas « poursuites » pouvait ressortir `droit_sauve: true`
+  // alors que la réponse conseillait, en second, de « compter sur les féries ». Or c'est
+  // exactement le conseil qui fait ATTENDRE quelqu'un pendant que la saisie arrive. Un mauvais
+  // « au cas où » ne se neutralise pas : il se suit.
+  //
+  // Un système qui hallucine avec zèle est PIRE qu'un système muet. Donc un acte fatal glissé en
+  // second fait perdre le cas, comme s'il était principal. On refuse le confort du « oui mais
+  // c'était secondaire » — c'est le genre de nuance qui fabrique les instruments incapables
+  // d'annoncer une mauvaise nouvelle, et ce projet en a déjà eu trois.
   const actes_fatals = new Set(cas.actes_fatals || []);
   const acte_fatal_conseille = actes_fatals.has(acte);
   const acte_fatal_en_second = secondaires.filter(a => actes_fatals.has(a));
@@ -136,7 +144,10 @@ export function juger(classement, cas) {
   // lui, y va quand même.
   const decourage = classement.dit_que_c_est_trop_tard === true;
 
-  const droit_sauve = conseille_le_bon_acte && !acte_fatal_conseille && !decourage;
+  const droit_sauve = conseille_le_bon_acte
+    && !acte_fatal_conseille
+    && acte_fatal_en_second.length === 0   // ⚠ un « au cas où » fatal se suit aussi
+    && !decourage;
 
   return {
     droit_sauve,

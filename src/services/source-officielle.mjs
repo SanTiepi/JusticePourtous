@@ -276,12 +276,23 @@ function normaliser(s) {
 }
 
 /**
- * L'agent affirme quelque chose en citant un article. Ce texte existe-t-il vraiment ?
+ * ⚠⚠ CETTE FONCTION NE VÉRIFIE PAS LE SENS. ELLE NE DOIT JAMAIS SERVIR DE FILTRE.
  *
- * On ne demande pas une identité mot pour mot (les agents reformulent, et l'exiger
- * transformerait le filtre en machine à tout rejeter). On demande que les mots PORTEURS de
- * la citation se retrouvent dans l'article officiel. Le seuil est haut : c'est le point où
- * une citation fabriquée s'écroule, parce qu'elle invente un sens qui n'est nulle part.
+ * Elle compare des MOTS, pas des idées. Codex l'a prouvé en relecture, et l'exemple est glaçant :
+ * une citation FABRIQUÉE prétendant que l'art. 69 LAI ouvre « une opposition devant l'office »
+ * obtient un score de 0,83 et ressort « vérifiée ». Les mots se recouvrent (art., 69, LAI,
+ * office, décisions…) alors que le sens est exactement INVERSÉ — l'article dit le contraire, et
+ * c'est ce contresens qui fait perdre la rente.
+ *
+ * Un seuil lexical valide donc des contresens. C'est précisément le genre d'instrument qui ne
+ * peut pas annoncer une mauvaise nouvelle, et ce projet en a déjà eu trois.
+ *
+ * → ELLE N'EST QU'UNE ALERTE FAIBLE : quand un agent prétend citer un texte et que même les mots
+ *   ne collent pas, c'est un signal de fabrication grossière. Une alerte qui se déclenche est
+ *   informative ; une alerte qui NE se déclenche PAS ne prouve RIEN.
+ *
+ * La vraie vérification, celle qui décide, c'est `lireArticle()` : on va chercher le texte
+ * officiel et on le pose sous les yeux du juge. Le sens, c'est lui qui le lit — pas un seuil.
  */
 export function citationEstDansLeTexte(citation, texteOfficiel, seuil = 0.72) {
   const c = normaliser(citation);
@@ -373,9 +384,12 @@ export async function lireArticle({ loi, article }, opts = {}) {
     // juste avant le mot qui décide, et le juge a de nouveau conseillé l'opposition.
     // Une donnée tronquée est pire qu'une donnée absente : elle a l'air d'avoir été fournie.
     //
-    // La loi suisse rédige ses dérogations « En dérogation aux art. X et Y LOI : … ». On lit
-    // donc jusqu'aux deux-points. Testé sur le texte réel, pas déduit de sa forme supposée —
-    // deux tentatives « malignes » avant celle-ci coupaient encore au mauvais endroit.
+    // ⚠⚠ ET IL Y EN A PLUSIEURS PAR ARTICLE. Ma première version faisait `.match()` et n'en
+    // rendait qu'UNE SEULE. Or l'art. 97 LAA en contient SIX, l'art. 84a LAMal cinq, l'art. 47
+    // LAI trois. On lisait donc la première venue — et on pouvait manquer précisément celle qui
+    // décide. (Trouvé par Codex en relecture : je ne l'avais pas vu.)
+    // On les rend TOUTES. `derogation` reste la première, pour ne pas casser les appelants.
+    derogations: [...texte.matchAll(/en dérogation[^:;]{5,150}/gi)].map(m => m[0].trim()),
     derogation: texte.match(/en dérogation[^:;]{5,150}/i)?.[0]?.trim() || null,
   };
 }

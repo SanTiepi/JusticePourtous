@@ -57,18 +57,35 @@ describe('Le lecteur de loi — hors ligne', () => {
     }
   });
 
-  it('la comparaison de citation tolère la forme, jamais le sens', () => {
+  it('⚠ la comparaison de citation NE VÉRIFIE PAS LE SENS — et ne doit jamais faire filtre', () => {
     const officiel = "En dérogation aux art. 52 et 58 LPGA : a. les décisions des offices AI cantonaux peuvent directement faire l'objet d'un recours devant le tribunal des assurances du domicile de l'office concerné";
 
-    // Les agents reformulent, changent la ponctuation, les apostrophes. Ce n'est pas mentir.
+    // Une reformulation fidèle passe : c'est le comportement attendu.
     assert.ok(citationEstDansLeTexte(
       "en dérogation aux art. 52 et 58 LPGA, les décisions des offices AI cantonaux peuvent directement faire l'objet d'un recours devant le tribunal des assurances",
-      officiel).ok, 'une reformulation fidèle est rejetée — le filtre deviendrait une machine à tout écarter');
+      officiel).ok);
 
-    // Mais inventer un contenu qui n'y est pas, ça, ça doit tomber.
-    assert.ok(!citationEstDansLeTexte(
-      "les décisions de l'office AI doivent d'abord faire l'objet d'une opposition auprès de l'office qui rend ensuite une décision sur opposition",
-      officiel).ok, 'une citation FABRIQUÉE passe le filtre — c\'est exactement ce qui a coûté la rente');
+    // ⚠⚠ MAIS LE CONTRESENS PASSE AUSSI — et ce test le DOCUMENTE au lieu de le cacher.
+    //
+    // Trouvé par Codex en relecture. La citation ci-dessous est FABRIQUÉE : elle garde tous les
+    // mots de l'article officiel et n'échange que les deux qui décident — « recours » devient
+    // « opposition », « tribunal » devient « office ». Le sens est exactement INVERSÉ. C'est
+    // très précisément le mensonge qui fait perdre la rente.
+    //
+    // Elle obtient 0,86 et elle PASSE. Un seuil lexical compte des mots ; il ne lit pas.
+    //
+    // → CETTE FONCTION N'EST DONC QU'UNE ALERTE FAIBLE. Quand elle se déclenche, c'est un
+    //   signal de fabrication grossière. Quand elle ne se déclenche PAS, ça ne prouve RIEN.
+    //   Elle ne doit JAMAIS servir de verrou de recevabilité — et elle n'en sert plus : ce qui
+    //   décide, c'est lireArticle(), qui va chercher le texte officiel et le pose sous les yeux
+    //   du juge. Le sens, c'est lui qui le lit.
+    const contresens = citationEstDansLeTexte(
+      "les décisions des offices AI cantonaux peuvent faire l'objet d'une opposition devant l'office concerné, en dérogation aux art. 52 et 58 LPGA",
+      officiel);
+    assert.ok(contresens.ok,
+      'Si ce test devient ROUGE, c\'est que la fonction s\'est mise à juger le sens. Réjouis-toi — puis vérifie-le sérieusement, et ne relâche PAS la règle : elle reste une alerte faible, jamais un filtre.');
+    assert.ok(contresens.score >= 0.8,
+      'le score du contresens a bougé : re-mesurer avant de conclure quoi que ce soit');
   });
 });
 

@@ -95,6 +95,12 @@ export const LOIS = {
   CC: '210',          // Code civil
   CPC: '272',         // Procédure civile (dont art. 145 : féries judiciaires)
   LP: '281.1',        // Poursuite pour dettes et faillite
+  // ⚠ AJOUTÉE PARCE QUE J'ALLAIS ÉCRIRE UN MOT DE TROP. J'avais dit que l'opposition à un
+  // commandement de payer était « gratuite ». Les art. 74 et 75 LP donnent bien « verbalement »,
+  // « dix jours » et « il n'est pas nécessaire de motiver » — mais AUCUN ne dit « gratuit ».
+  // C'est le tarif (OELP) qui le dit, ou ne le dit pas. Un mot plausible que personne ne vérifie,
+  // c'est très exactement la forme de mes treize erreurs du jour.
+  OELP: '281.35',     // Ordonnance sur les émoluments LP — le tarif des actes de poursuite
   LPGA: '830.1',      // Partie générale du droit des assurances sociales
   LAI: '831.20',      // Assurance-invalidité  ← l'art. 69 qui a tout déclenché
   LAA: '832.20',      // Assurance-accidents
@@ -152,6 +158,19 @@ export async function trouverTexteEnVigueur(rs, dateDuJour) {
   // croyais lire, et la requête est revenue vide. Le vrai nom est `ConsolidationAbstract`.
   // Le réflexe de compléter ce qu'on croit avoir vu ne s'éteint jamais ; seule la machine
   // qui vérifie tient.
+  // ⚠⚠ UN NUMÉRO RS EST RÉUTILISÉ D'UN TEXTE À L'AUTRE — ET LES ABROGÉS LE GARDENT.
+  //
+  // RS 281.35 (les émoluments de poursuite) est porté par TROIS œuvres : l'ordonnance en
+  // vigueur (1996) et DEUX ordonnances abrogées (1957, 1971) qui conservent la même notation.
+  // Avec un `LIMIT 1`, on prenait la première venue. Sur ce cas, ça plantait proprement
+  // (« aucune version en vigueur ») — mais rien ne garantit que le prochain plante :
+  // ON POUVAIT SERVIR UN TEXTE ABROGÉ EN LE PRÉSENTANT COMME LE DROIT EN VIGUEUR.
+  //
+  // Trouvé en allant vérifier UN MOT (« l'opposition est gratuite ») que j'étais sur le point
+  // d'écrire sans source. C'est ça, la méthode : le mot en trop mène au bug.
+  //
+  // Donc on ne choisit plus : on prend TOUTES les œuvres portant ce RS, et c'est la CONSOLIDATION
+  // EN VIGUEUR qui désigne la bonne. Un texte abrogé n'en a pas — il s'élimine de lui-même.
   const eli = await sparql(`
     PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>
     PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -161,10 +180,10 @@ export async function trouverTexteEnVigueur(rs, dateDuJour) {
       ?entry skos:notation ?n .
       FILTER(str(?n) = "${rs}")
       FILTER(CONTAINS(STR(?work), "/eli/cc/"))
-    } LIMIT 1`);
+    }`);
 
-  const workUri = eli[0]?.work?.value;
-  if (!workUri) throw new Error(`RS ${rs} introuvable dans le registre Fedlex`);
+  if (!eli.length) throw new Error(`RS ${rs} introuvable dans le registre Fedlex`);
+  const works = eli.map(e => e.work.value);
 
   // ⚠ LES DATES SE COMPARENT EN TEXTE, PAS EN xsd:date. Ce n'est pas une coquetterie.
   //
@@ -174,10 +193,14 @@ export async function trouverTexteEnVigueur(rs, dateDuJour) {
   // croyant lire le droit en vigueur. (Constaté le 12.07.2026 : filtre typé → 2022-01-01 ;
   // filtre str() → 2024-01-01, la bonne.)
   // Les dates ISO se trient correctement comme du texte, et str() ne perd rien en route.
+  // On interroge TOUTES les œuvres portant ce RS. Une seule aura une consolidation en vigueur
+  // à cette date : les abrogées n'en ont pas. C'est LA LOI qui désigne la bonne, pas nous.
+  const clauseWorks = works.map(w => `<${w}>`).join(' ');
   const b = await sparql(`
     PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>
-    SELECT ?date ?fin ?file WHERE {
-      ?cons jolux:isMemberOf <${workUri}> ;
+    SELECT ?work ?date ?fin ?file WHERE {
+      VALUES ?work { ${clauseWorks} }
+      ?cons jolux:isMemberOf ?work ;
             jolux:dateApplicability ?date ;
             jolux:isRealizedBy ?expr .
       OPTIONAL { ?cons jolux:dateEndApplicability ?fin }
@@ -190,11 +213,19 @@ export async function trouverTexteEnVigueur(rs, dateDuJour) {
     }
     ORDER BY DESC(?date) LIMIT 1`);
 
-  if (!b.length) throw new Error(`aucune version de RS ${rs} en vigueur le ${dateDuJour}`);
+  if (!b.length) {
+    throw new Error(
+      `aucune version de RS ${rs} en vigueur le ${dateDuJour} ` +
+      `(${works.length} œuvre(s) portent ce numéro — toutes abrogées ?)`
+    );
+  }
   return {
     url: b[0].file.value,
     en_vigueur_depuis: b[0].date.value,
     en_vigueur_jusqu_a: b[0].fin?.value || null,
+    // La provenance exacte : quelle ŒUVRE, parmi celles qui portent ce RS, fait foi aujourd'hui.
+    oeuvre: b[0].work.value,
+    oeuvres_portant_ce_rs: works.length,
   };
 }
 

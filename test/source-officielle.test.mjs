@@ -152,6 +152,37 @@ describe('Le lecteur de loi — contre la source réelle (Fedlex)', { skip: !AVE
       `on sert une version applicable au ${r.en_vigueur_depuis} — un droit qui n'existe pas encore`);
   });
 
+  it('⚠ UN NUMÉRO RS EST RÉUTILISÉ — les textes ABROGÉS le gardent', async () => {
+    // RS 281.35 (les émoluments de poursuite) est porté par TROIS œuvres : l'ordonnance en
+    // vigueur (1996) et DEUX ordonnances ABROGÉES (1957, 1971) qui conservent la même notation.
+    // Avec un `LIMIT 1` sur l'œuvre, on prenait la première venue. On pouvait donc SERVIR UN
+    // TEXTE ABROGÉ en le présentant comme le droit en vigueur.
+    //
+    // Trouvé en allant vérifier UN MOT que j'étais sur le point d'écrire sans source
+    // (« l'opposition est gratuite »). Le mot en trop mène au bug.
+    const r = await lireArticle({ loi: 'OELP', article: '18' }, AUJ);
+    assert.ok(r.lisible, `OELP illisible (${r.statut}) — le sélecteur d'œuvre est cassé`);
+    assert.ok(r.en_vigueur_depuis >= '1996-01-01',
+      `on sert une ordonnance de ${r.en_vigueur_depuis} : c'est un texte ABROGÉ, pas le droit en vigueur`);
+  });
+
+  it('LE FAIT QU’ON PEUT DIRE À N’IMPORTE QUI CE SOIR : l’opposition est gratuite, orale, sans motif', async () => {
+    // Ce n'est PAS du conseil juridique. C'est le texte de la loi, littéral. Des gens paient des
+    // dettes qu'ils ne doivent pas parce qu'ils l'ignorent — c'est le piège le plus courant du
+    // droit suisse, et le seul qu'on puisse énoncer sans juriste, parce qu'on ne fait que citer.
+    const a74 = await lireArticle({ loi: 'LP', article: '74' }, AUJ);
+    const a75 = await lireArticle({ loi: 'LP', article: '75' }, AUJ);
+    const o18 = await lireArticle({ loi: 'OELP', article: '18' }, AUJ);
+
+    assert.match(a74.texte, /verbalement/i,
+      '⚠ l\'art. 74 LP ne dit plus qu\'on peut s\'opposer VERBALEMENT — vérifier avant de continuer à l\'affirmer');
+    assert.match(a74.texte, /dix jours/i, 'le délai de 10 jours a disparu de l\'art. 74 LP');
+    assert.match(a75.texte, /n['’]est pas nécessaire de motiver/i,
+      '⚠ l\'art. 75 LP ne dit plus « il n\'est pas nécessaire de motiver l\'opposition »');
+    assert.match(o18.texte, /gratuit/i,
+      '⚠ l\'art. 18 OELP ne dit plus que les opérations relatives à l\'opposition sont GRATUITES — ne plus le dire à personne tant que ce n\'est pas revérifié');
+  });
+
   it('⚠ VEILLE — la date de comparaison doit rester du TEXTE, jamais du xsd:date', async () => {
     // Piège découvert le 12.07.2026 : avec un filtre de date TYPÉ, l'endpoint SPARQL écarte
     // SILENCIEUSEMENT la consolidation 2024 de la LPGA et remonte celle de 2022 — on servirait

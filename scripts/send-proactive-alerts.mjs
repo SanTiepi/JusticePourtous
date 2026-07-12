@@ -21,6 +21,7 @@ import { atomicWriteSync, safeLoadJSON } from '../src/services/atomic-write.mjs'
 import { _listAccounts, getAccount, decryptEmail } from '../src/services/citizen-account.mjs';
 import { listDueReminders, markReminderSent } from '../src/services/deadline-reminders.mjs';
 import { getCase } from '../src/services/case-store.mjs';
+import { isSafeMode } from '../src/services/safe-mode.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const LOG_PATH = join(__dirname, '..', 'src', 'data', 'meta', 'sent-alerts-log.json');
@@ -60,6 +61,22 @@ async function sendEmail(to, subject, body) {
 
 async function run() {
   const started = Date.now();
+
+  // ⚠ COUPE-CIRCUIT JURIDIQUE — même raison que send-due-reminders.mjs : ce script tourne
+  // en CRON, hors du serveur HTTP, donc hors de la neutralisation du 2026-07-11. Il envoie
+  // procédure + échéance + base légale + conséquence à de vrais citoyens. Tant qu'aucun
+  // juriste n'a validé ces délais, on n'alerte personne : une alerte fausse fait agir au
+  // mauvais moment, avec l'autorité d'une notification. (Trouvé par la revue Codex.)
+  if (isSafeMode()) {
+    console.log(JSON.stringify({
+      aborted: 'legal_safe_mode',
+      reason: "Alertes proactives suspendues : les délais n'ont pas été validés par un juriste humain.",
+      hint: 'LEGAL_SAFE_MODE=0 pour réactiver, une fois le contenu validé.',
+      sent: 0, errors: 0, total: 0
+    }));
+    return;
+  }
+
   const log = loadLog();
 
   // Collecte tous les rappels dus (global)
@@ -148,7 +165,15 @@ async function run() {
   console.log(`[send-proactive-alerts] sent=${sent} skipped=${skipped} failed=${failed} (${elapsed}ms)`);
 }
 
-run().catch(err => {
-  console.error('[send-proactive-alerts] fatal:', err.message);
-  process.exit(1);
-});
+// Exporté pour que le coupe-circuit soit VERROUILLÉ PAR UN TEST et pas seulement
+// « corrigé » : un garde-fou qu'aucun test ne couvre est un garde-fou qui sautera.
+// (Relevé par la revue Codex : la garde existait, le test manquait.)
+export { run as runProactiveAlerts };
+
+// N'exécute que si le script est lancé directement (pas quand un test l'importe).
+if (process.argv[1] && import.meta.url.endsWith(process.argv[1].replace(/\\/g, '/').split('/').pop())) {
+  run().catch(err => {
+    console.error('[send-proactive-alerts] fatal:', err.message);
+    process.exit(1);
+  });
+}

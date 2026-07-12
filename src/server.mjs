@@ -63,6 +63,7 @@ import { translateStructuredContent, translateTextContent, TRANSLATION_PIPELINE_
 import { resolveRequestLocale } from './services/i18n/http-locale.mjs';
 import { normalizeLocale, DEFAULT_LOCALE, isOfferedLocale } from './services/i18n/locale-registry.mjs';
 import { classifySafety, buildSafetyResponse } from './services/safety-classifier.mjs';
+import { isSafeMode, safeModeNotice } from './services/safe-mode.mjs';
 import { renderGuideForLocale } from './services/guide-renderer.mjs';
 import {
   getAllArticles, searchArticles,
@@ -319,6 +320,138 @@ if (STRIPE_SECRET) {
   log.info('stripe_demo_mode');
 }
 
+// ─── COUPE-CIRCUIT JURIDIQUE (LEGAL_SAFE_MODE) ──────────────────
+// POURQUOI : voir l'en-tête de services/safe-mode.mjs (audit 2026-07-11 —
+// lettres et triage pouvaient affirmer une procédure ou un délai FAUX).
+// Ici : la liste des routes neutralisées tant que le contenu n'est pas validé
+// par un juriste humain. Aucun code n'est supprimé : LEGAL_SAFE_MODE=0 rallume.
+//
+// RESTENT OUVERTES (consultation, pas d'affirmation personnalisée) :
+// /api/fiches/:id, /api/search, /api/domaines, /api/consulter, /api/annuaire,
+// /api/i18n/*, /api/health*, /api/stats, /api/claimback/*, /api/track.
+
+const SAFE_MODE_BLOCKED_POST = new Set([
+  '/api/triage',
+  '/api/triage/refine',
+  '/api/triage/next',
+  '/api/triage/escalation',   // dossier d'escalade = reprise des délais/actes du triage
+  '/api/deep-analysis',
+  '/api/compiler/execute',    // moteur brut : renvoie des délais/bases légales affirmés
+  // ⚠ /api/consulter SÉLECTIONNE une fiche à partir des RÉPONSES du citoyen : c'est du
+  // triage sous un autre nom (personnalisation), et il ressert les délais de la fiche
+  // retenue comme s'ils étaient les siens. (Revue Codex.)
+  '/api/consulter',
+  '/api/stripe/create-checkout-session'  // on ne vend plus rien tant que le contenu n'est pas validé
+]);
+
+const SAFE_MODE_BLOCKED_GET = new Set([
+  '/api/triage',
+  // ⚠ /api/action-plan est un TRIAGE sous un autre nom : ?q=<texte libre> renvoie
+  // diagnostic + étapes + délais critiques + lettres. Public, sans auth, et il ne
+  // passait PAS par la détection de détresse (« mon mari me frappe » → plan bail,
+  // zéro numéro d'urgence). Trouvé par la revue adversariale du 2026-07-11.
+  '/api/action-plan',
+  // ⚠ Même famille : ?q=<texte libre> → fiche enrichie avec délais et cascades.
+  // Du triage, sans le nom, et sans détection de détresse. (Revue Codex.)
+  '/api/query/problem',
+  // Prix d'un service qu'on a décidé de ne plus vendre.
+  '/api/triage/cost'
+]);
+
+// Lettres : POST /api/case/:id/letter + GET .../letter/:letterId/download
+const SAFE_MODE_LETTER_RE = /^\/api\/case\/[^/]+\/letter(\/[^/]+\/download)?$/;
+// Pack d'escalade téléchargeable (dérivé du triage)
+const SAFE_MODE_ESCALATION_DL_RE = /^\/api\/triage\/escalation\/[^/]+\/download\.json$/;
+// ⚠ Rappels : ils rejouent les délais calculés par le triage d'AVANT la coupure
+// (cases.json a un TTL de 72 h) et les ENVOIENT PAR MAIL. Un citoyen qui garde son
+// case_id recevrait encore un faux délai après la neutralisation.
+const SAFE_MODE_REMINDERS_RE = /^\/api\/case\/[^/]+\/reminders(\/schedule)?$/;
+// ⚠ Bibliothèque de 50 lettres pré-écrites, dont 33 avec un délai chiffré en dur.
+// Elles ne passent pas par letter-generator : un grep sur ce module ne les voyait pas.
+const SAFE_MODE_TEMPLATES_RE = /^\/api\/templates(\/[^/]+)?$/;
+// ⚠ Les calculateurs SONT du droit personnalisé : délai de congé, prescription,
+// protection en cas de maladie, saisie de salaire… Ils sortent un chiffre daté, qui
+// est exactement ce qui fait perdre un droit quand il est faux. Et le moteur de délais
+// ignore les féries judiciaires (art. 145 CPC) et de poursuite (art. 56 / 63 LP) : en
+// juillet-août, il peut annoncer « dépassé » un délai encore ouvert — et décourager
+// une action qui était encore possible et gratuite.
+const SAFE_MODE_CALCULATEURS_RE = /^\/api\/calculateurs(\/[^/]+)?$/;
+// ⚠ Compte citoyen : lier un dossier déclenche la planification automatique de rappels,
+// et /upcoming ressert les délais calculés AVANT la coupure (delai_date_iso,
+// days_remaining, base_legale). Le coupe-circuit doit valoir aussi pour le passé.
+const SAFE_MODE_CITIZEN_DEADLINES = new Set([
+  '/api/citizen/cases/link',
+  '/api/citizen/upcoming'
+]);
+
+function isBlockedInSafeMode(path, method) {
+  if (method === 'POST' && SAFE_MODE_BLOCKED_POST.has(path)) return true;
+  if (method === 'GET' && SAFE_MODE_BLOCKED_GET.has(path)) return true;
+  // Tout le premium / l'analyse approfondie (analyse, OCR, lettres, DOCX, v3…)
+  if (path.startsWith('/api/premium/')) return true;
+  if (SAFE_MODE_LETTER_RE.test(path)) return true;
+  if (SAFE_MODE_ESCALATION_DL_RE.test(path)) return true;
+  if (SAFE_MODE_REMINDERS_RE.test(path)) return true;
+  if (SAFE_MODE_TEMPLATES_RE.test(path)) return true;
+  if (SAFE_MODE_CALCULATEURS_RE.test(path)) return true;
+  if (SAFE_MODE_CITIZEN_DEADLINES.has(path)) return true;
+  return false;
+}
+
+// Le retrait des modèles de lettre sur les routes de consultation (qui restent
+// ouvertes) n'est PAS fait ici : il est appliqué à la sortie, dans le passage obligé
+// de toute réponse JSON (lib/http-helpers.js → filterOutgoingPayload). Énumérer les
+// routes dangereuses, c'est en oublier — la revue du 2026-07-11 en avait manqué cinq.
+
+// Routes qui gèrent DÉJÀ la détresse elles-mêmes (avec leur propre réponse, parfois
+// enrichie : sortie discrète, i18n court-circuitée). Le filet universel ne les
+// double pas — il rattrape tout le reste.
+const SAFETY_SCANNED_ELSEWHERE = new Set([
+  '/api/search',   // barre du hero : safety_stop dédié, sans latence de traduction
+  '/api/triage'    // scanné par le coupe-circuit puis par handleTriageStart
+]);
+
+// Routes où le citoyen tape du texte libre : on lit le corps AVANT de couper,
+// pour que la détection de détresse (violence, suicide) passe TOUJOURS.
+// Uniquement des routes à corps JSON (pas d'upload binaire → pas de faux 400).
+const SAFE_MODE_SAFETY_SCAN = new Set([
+  '/api/triage',
+  '/api/triage/refine',
+  '/api/triage/next',
+  '/api/deep-analysis',
+  // ⚠ /api/action-plan prend un ?q=<texte libre> : un citoyen en détresse peut y écrire
+  // « mon mari me frappe ». Le couper ne suffit PAS — il doit d'abord passer par la
+  // détection de détresse, sinon on lui répond « analyse suspendue » au lieu du 117.
+  // (Trouvé par la revue Codex du 2026-07-11, après que la première correction l'ait
+  // simplement bloqué sans le scanner.)
+  '/api/action-plan',
+  '/api/query/problem',
+  '/api/consulter',
+  '/api/premium/analyze-v3',
+  '/api/premium/analyze-v3/refine',
+  '/api/premium/analyser',
+  '/api/premium/analyze'
+]);
+
+function collectCitizenText(url, body) {
+  const parts = [];
+  const push = (v) => {
+    if (typeof v === 'string' && v.trim()) parts.push(v);
+    else if (v && typeof v === 'object') Object.values(v).forEach(push);
+  };
+  push(url.searchParams.get('q'));
+  push(url.searchParams.get('texte'));
+  if (body) {
+    push(body.texte);
+    push(body.text);
+    push(body.question);
+    push(body.reponses);
+    push(body.answers);
+    push(body.userContext);
+  }
+  return parts.join(' \n ').slice(0, 5000);
+}
+
 const server = createServer(async (req, res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
   const path = url.pathname;
@@ -345,6 +478,30 @@ const server = createServer(async (req, res) => {
   }
 
   try {
+    // ─── FILET DE DÉTRESSE UNIVERSEL ──────────────────────────────────────────
+    // TOUT endpoint public qui accepte un ?q= est un endroit où quelqu'un peut
+    // écrire « mon mari me frappe ». On ne peut pas savoir d'avance lequel il
+    // choisira — /api/search était protégé, /api/action-plan ne l'était pas, et
+    // il répondait par un plan de bail. On ne veut plus jamais dépendre d'une
+    // liste tenue à jour à la main : on scanne toutes les recherches publiques.
+    // Coût : une regex. Bénéfice : personne ne demande de l'aide dans le vide.
+    // (Recommandé par la revue Codex du 2026-07-11.)
+    if (method === 'GET' && path.startsWith('/api/') && !path.startsWith('/api/admin')) {
+      const q = url.searchParams.get('q');
+      const ack = url.searchParams.get('safety_ack') === '1';
+      if (q && !ack && !SAFETY_SCANNED_ELSEWHERE.has(path)) {
+        const detresse = classifySafety(q);
+        if (detresse.triggered) {
+          return json(res, 200, {
+            status: 'safety_stop',
+            safety_response: buildSafetyResponse(detresse.signal_type),
+            signal_type: detresse.signal_type,
+            disclaimer: DISCLAIMER
+          });
+        }
+      }
+    }
+
     // Rate limiting
     const clientIp = req.headers['x-forwarded-for']?.split(',')[0]?.trim() || req.socket.remoteAddress || 'unknown';
 
@@ -380,6 +537,54 @@ const server = createServer(async (req, res) => {
       } catch { /* beacon best-effort : on ignore tout */ }
       res.writeHead(204);
       return res.end();
+    }
+
+    // ─── COUPE-CIRCUIT JURIDIQUE — LEGAL_SAFE_MODE (défaut : ACTIF) ───
+    // Neutralise les routes qui AFFIRMENT un délai / un acte ou génèrent une
+    // lettre, tant qu'un juriste humain n'a pas validé le contenu (audit
+    // 2026-07-11). Réponse HTTP 200 : ce n'est pas une panne, c'est un choix
+    // éditorial assumé — et le citoyen repart avec de vraies ressources.
+    // Réversible : LEGAL_SAFE_MODE=0.
+    if (isSafeMode() && isBlockedInSafeMode(path, method)) {
+      // 1. LA SÉCURITÉ D'ABORD — la détection de détresse (violences, suicide)
+      //    n'a jamais menti et sauve des gens : elle passe AVANT la coupure.
+      let safeBody = null;
+      if (SAFE_MODE_SAFETY_SCAN.has(path)) {
+        if (method === 'POST') {
+          try { safeBody = await parseBody(req); } catch { safeBody = null; }
+        }
+        const citizenText = collectCitizenText(url, safeBody);
+        const ack = safeBody?.safety_ack === true || safeBody?.safety_ack === '1'
+          || url.searchParams.get('safety_ack') === '1';
+        if (citizenText && !ack) {
+          const safety = classifySafety(citizenText);
+          if (safety.triggered) {
+            return json(res, 200, {
+              status: 'safety_stop',
+              safety_response: buildSafetyResponse(safety.signal_type),
+              signal_type: safety.signal_type,
+              log_entry: safety.log_entry,
+              disclaimer: DISCLAIMER
+            });
+          }
+        }
+      } else if (method !== 'GET' && method !== 'HEAD') {
+        req.resume(); // on ne lit pas le corps (upload binaire possible) : on le draine
+      }
+
+      // 2. Coupure honnête (pas un 503) + orientation vers de vrais humains
+      const safeLang = normalizeLocale(resolveRequestLocale(req, url, safeBody));
+      const notice = safeModeNotice(safeLang);
+      if (path === '/api/stripe/create-checkout-session') {
+        return json(res, 200, {
+          status: 'legal_safe_mode',
+          payment_disabled: true,
+          ...notice,
+          message: 'Nous ne vendons plus rien pour l\'instant. L\'analyse juridique payante est suspendue le temps qu\'un juriste humain valide notre contenu — nous ne prenons pas votre argent pour un service que nous ne pouvons pas garantir. Les guides, l\'annuaire et l\'orientation vers les permanences restent gratuits.',
+          disclaimer: DISCLAIMER
+        });
+      }
+      return json(res, 200, { status: 'legal_safe_mode', ...notice, disclaimer: DISCLAIMER });
     }
 
     // ─── Justice économique / ClaimBack — éligibilité subside LAMal (VD, MVP) ───
@@ -594,8 +799,28 @@ const server = createServer(async (req, res) => {
 
     if (path === '/api/stripe/config' && method === 'GET') {
       return json(res, 200, {
-        enabled: !!stripe,
+        // En mode sûr, le paiement est coupé quoi qu'il arrive : le front ne
+        // doit pas proposer d'acheter (cf. /api/config).
+        enabled: !!stripe && !isSafeMode(),
         publishableKey: STRIPE_PUBLIC_KEY || null,
+        legal_safe_mode: isSafeMode(),
+      });
+    }
+
+    // ─── Config publique — le front lit ça pour savoir quoi afficher ───
+    // legal_safe_mode = true → masquer triage / lettres / paiement, afficher le
+    // bandeau d'honnêteté (contenu non validé par un juriste).
+    if (path === '/api/config' && method === 'GET') {
+      const safe = isSafeMode();
+      const cfgLang = normalizeLocale(resolveRequestLocale(req, url));
+      return json(res, 200, {
+        legal_safe_mode: safe,
+        payment_enabled: !!stripe && !safe,
+        triage_enabled: !safe,
+        letters_enabled: !safe,
+        content_status: safe ? 'en_revalidation_non_valide_par_un_juriste' : 'actif',
+        safe_mode_notice: safe ? safeModeNotice(cfgLang) : null,
+        disclaimer: DISCLAIMER
       });
     }
 

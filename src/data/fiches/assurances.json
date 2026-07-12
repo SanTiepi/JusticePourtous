@@ -226,7 +226,7 @@
       }
     ],
     "reponse": {
-      "explication": "La rente AI est accordée après un délai de carence d'un an d'incapacité de travail continue d'au moins 40% (art. 28 al. 1 let. b LAI). La réinsertion prime la rente : l'office AI propose d'abord des mesures professionnelles (art. 8 LAI). Le taux d'invalidité détermine le droit à la rente : 40% = quart de rente, 50% = demi-rente, 60% = trois-quarts de rente, 70% = rente entière (art. 28 al. 2 LAI). Le taux est calculé par comparaison entre le revenu sans invalidité et le revenu avec invalidité (méthode de comparaison des revenus, art. 16 LPGA). La demande se fait auprès de l'office AI du canton de domicile. La procédure dure en moyenne 6 a 18 mois. En cas de refus, l'assuré peut faire opposition dans les 30 jours (art. 52 LPGA) puis recours au tribunal cantonal des assurances. Les prestations complémentaires (PC) peuvent compléter la rente si elle est insuffisante.",
+      "explication": "La rente AI est accordée après un délai de carence d'un an d'incapacité de travail continue d'au moins 40% (art. 28 al. 1 let. b LAI). La réinsertion prime la rente : l'office AI propose d'abord des mesures professionnelles (art. 8 LAI). Le taux d'invalidité détermine le droit à la rente : 40% = quart de rente, 50% = demi-rente, 60% = trois-quarts de rente, 70% = rente entière (art. 28 al. 2 LAI). Le taux est calculé par comparaison entre le revenu sans invalidité et le revenu avec invalidité (méthode de comparaison des revenus, art. 16 LPGA). La demande se fait auprès de l'office AI du canton de domicile. La procédure dure en moyenne 6 a 18 mois. ATTENTION — voies de contestation en AI : avant de statuer, l'office AI envoie un PRÉAVIS (projet de décision) sur lequel l'assuré peut déposer des objections écrites dans les 30 jours (art. 57a al. 3 LAI). Une fois la DÉCISION rendue, il n'y a PAS de procédure d'opposition en assurance-invalidité : l'art. 69 al. 1 let. a LAI déroge expressément aux art. 52 et 58 LPGA, et la décision de l'office AI doit être attaquée directement par un RECOURS au tribunal cantonal des assurances, dans les 30 jours dès la notification (art. 56 al. 1 et art. 60 al. 1 LPGA). Ce délai est péremptoire : passé ce terme, la décision est définitive. Écrire une « opposition » à l'office AI ne conserve PAS le délai de recours. Faites-vous aider immédiatement (Pro Infirmis, permanence juridique AI, avocat spécialisé en assurances sociales). Les prestations complémentaires (PC) peuvent compléter la rente si elle est insuffisante.",
       "articles": [
         {
           "ref": "LAI 28",
@@ -244,9 +244,19 @@
           "lien": "https://www.fedlex.admin.ch/eli/cc/2002/510/fr#art_16"
         },
         {
-          "ref": "LPGA 52",
-          "titre": "Opposition",
-          "lien": "https://www.fedlex.admin.ch/eli/cc/2002/510/fr#art_52"
+          "ref": "LAI 57a",
+          "titre": "Préavis — objections dans les 30 jours",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr#art_57_a"
+        },
+        {
+          "ref": "LAI 69",
+          "titre": "Recours direct au tribunal cantonal des assurances (dérogation aux art. 52 et 58 LPGA — pas d'opposition en AI)",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr#art_69"
+        },
+        {
+          "ref": "LPGA 60",
+          "titre": "Délai de recours — 30 jours",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2002/510/fr#art_60"
         }
       ],
       "jurisprudence": [
@@ -290,20 +300,20 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
       "delais": [
         {
-          "procedure": "Opposition au commandement de payer",
-          "delai": "18 moi",
-          "consequence": null,
-          "extracted_from_text": true
+          "procedure": "Objections au préavis de l'office AI (art. 57a al. 3 LAI)",
+          "delai": "30 jours dès la notification du préavis",
+          "consequence": "Sans objections, l'office AI rend sa décision en l'état du dossier",
+          "extracted_from_text": false
         },
         {
-          "procedure": "Opposition au commandement de payer",
-          "delai": "30 jour",
-          "consequence": null,
-          "extracted_from_text": true
+          "procedure": "Recours au tribunal cantonal des assurances contre la DÉCISION AI (art. 69 al. 1 let. a LAI, art. 60 al. 1 LPGA) — il n'y a PAS d'opposition en AI",
+          "delai": "30 jours dès la notification de la décision",
+          "consequence": "Délai péremptoire : passé ce terme, la décision devient définitive",
+          "extracted_from_text": false
         }
       ]
     },
-    "maj": "2026-04-07",
+    "maj": "2026-07-12",
     "sourceLoi": "LAI/LPGA état 2025-01-01",
     "match_description": "La personne en incapacité de travail durable souhaite déposer une demande AI ou contester un refus de rente",
     "profane_aliases": [
@@ -324,12 +334,12 @@
       "pathologie ou atteinte à la sante",
       "canton"
     ],
-    "last_verified_at": "2026-04-07",
+    "last_verified_at": "2026-07-12",
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-07",
     "claude_review_date": "2026-04-19",
-    "claude_legal_review_date": "2026-04-29",
-    "claude_legal_review_notes": "verified"
+    "claude_legal_review_date": "2026-07-12",
+    "claude_legal_review_notes": "CORRECTION CRITIQUE 2026-07-12 : la fiche indiquait qu'en cas de refus AI on peut « faire opposition dans les 30 jours (art. 52 LPGA) ». FAUX — l'art. 69 al. 1 let. a LAI déroge aux art. 52 et 58 LPGA : la décision AI s'attaque par recours direct au tribunal cantonal des assurances dans les 30 jours (art. 60 LPGA), après un préavis susceptible d'objections dans les 30 jours (art. 57a al. 3 LAI). Corrigé + délais parasites (« opposition au commandement de payer », 18 moi/30 jour) supprimés. Sources Fedlex vérifiées. Vérification LLM — non validée par un juriste humain."
   },
   {
     "id": "assurance_prestations_complementaires",
@@ -840,40 +850,36 @@
       }
     ],
     "reponse": {
-      "explication": "Toute décision de l'Office AI peut être attaquée par opposition dans un délai de 30 jours dès sa notification (art. 52 LPGA). L'opposition s'adresse par écrit à l'Office AI qui a rendu la décision. Elle doit être motivée et contenir des conclusions. Avant la décision formelle, l'Office AI envoie un préavis (projet de décision) sur lequel l'assuré peut se déterminer dans les 30 jours (art. 57a LAI). Après décision sur opposition, un recours au tribunal cantonal des assurances est ouvert dans les 30 jours (art. 56 et 60 LPGA). Ces délais sont péremptoires : passé ce terme, la décision devient définitive. Il est recommandé de joindre tous les nouveaux rapports médicaux et de motiver précisément chaque contestation.",
+      "explication": "⚠️ IL N'Y A PAS D'OPPOSITION EN ASSURANCE-INVALIDITÉ. Contrairement aux autres assurances sociales (LAA, LAMal, chômage, AVS/PC), la procédure d'opposition des art. 52 et 58 LPGA ne s'applique PAS aux décisions des offices AI : l'art. 69 al. 1 let. a LAI y déroge expressément. Envoyer une « opposition » à l'office AI ne conserve AUCUN délai et peut vous faire perdre votre droit.\n\nLa procédure réelle comporte deux temps.\n1) LE PRÉAVIS (art. 57a LAI) : avant de statuer, l'office AI vous adresse un préavis (projet de décision). Vous pouvez déposer des OBJECTIONS écrites, avec pièces médicales, dans un délai de 30 jours (art. 57a al. 3 LAI). C'est le moment le plus utile pour faire valoir vos arguments.\n2) LA DÉCISION : une fois la décision rendue, la seule voie est le RECOURS au tribunal cantonal des assurances du domicile de l'office AI concerné (art. 69 al. 1 let. a LAI ; art. 56 al. 1 LPGA), à déposer dans les 30 jours dès la notification de la décision (art. 60 al. 1 LPGA). Pour les assurés résidant à l'étranger, le recours va au Tribunal administratif fédéral (art. 69 al. 1 let. b LAI). Ce délai de 30 jours est péremptoire et non prolongeable ; seule une restitution de délai est envisageable en cas d'empêchement non fautif.\n\nCoûts : la procédure de recours AI devant le tribunal cantonal des assurances n'est PAS gratuite — des frais judiciaires de 200 à 1000 francs sont perçus (art. 69 al. 1bis LAI). L'assistance judiciaire gratuite peut être demandée si vos moyens sont insuffisants (art. 61 let. f LPGA) et vous avez le droit de vous faire assister.\n\nCE QUE JUSTICEPOURTOUS NE FAIT PAS : nous ne rédigeons pas votre recours. Un recours au tribunal des assurances est un acte judiciaire (faits, motifs, conclusions, pièces). Contactez SANS ATTENDRE — le délai court — une permanence AI (Pro Infirmis, Procap, AVIVO, Caritas, CSP) ou un avocat spécialisé en assurances sociales. Amenez la décision, son enveloppe (date de notification) et votre dossier médical.",
       "articles": [
         {
-          "ref": "LPGA 52",
-          "titre": "Opposition",
-          "lien": "https://www.fedlex.admin.ch/eli/cc/2002/510/fr"
+          "ref": "LAI 57a",
+          "titre": "Préavis — objections dans les 30 jours",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr#art_57_a"
+        },
+        {
+          "ref": "LAI 69",
+          "titre": "Particularités du contentieux — recours direct au tribunal cantonal des assurances, en dérogation aux art. 52 et 58 LPGA (pas d'opposition en AI) ; frais judiciaires 200 à 1000 francs",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr#art_69"
+        },
+        {
+          "ref": "LPGA 56",
+          "titre": "Droit de recours — les décisions contre lesquelles la voie de l'opposition n'est pas ouverte sont directement sujettes à recours",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2002/510/fr#art_56"
         },
         {
           "ref": "LPGA 60",
-          "titre": "Délai de recours",
-          "lien": "https://www.fedlex.admin.ch/eli/cc/2002/510/fr"
+          "titre": "Délai de recours — 30 jours dès la notification de la décision",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/2002/510/fr#art_60"
         },
         {
           "ref": "LAI 54",
           "titre": "Offices AI cantonaux",
-          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr"
-        },
-        {
-          "ref": "LAI 57a",
-          "titre": "Préavis",
-          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr"
+          "lien": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr#art_54"
         }
       ],
-      "jurisprudence": [
-        {
-          "ref": "ATF 134 V 97",
-          "resume": "L opposition doit être motivée mais un degré minimal de motivation suffit ; l Office AI doit instruire d office."
-        },
-        {
-          "ref": "TF 9C_195/2015",
-          "resume": "Le délai de 30 jours LPGA 52 est péremptoire et non prolongeable ; seule la restitution du délai est possible en cas d empêchement non fautif."
-        }
-      ],
-      "modeleLettre": "Objet : Opposition à la décision du [DATE] réf. [N°]\n\nMadame, Monsieur,\n\nPar la présente et conformément à l'art. 52 LPGA, je forme opposition contre votre décision du [DATE] me [refusant/réduisant] [prestation].\n\nMotifs : [exposer les faits médicaux et juridiques pertinents].\n\nConclusions : annuler la décision attaquée et m'octroyer [prestation demandée].\n\nJe joins : [rapports médicaux, expertises].\n\nVeuillez agréer mes salutations distinguées.\n\n[Signature]",
+      "jurisprudence": [],
+      "modeleLettre": "",
       "services": [
         {
           "nom": "Pro Infirmis Vaud",
@@ -902,38 +908,26 @@
       "disclaimer": "JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Il ne remplace pas un conseil d'avocat personnalisé. Les informations sont données à titre indicatif et sans garantie d'exhaustivité. En cas de doute, consultez un professionnel du droit ou contactez les services listés.",
       "delais": [
         {
-          "procedure": "Analyse de la décision et des pièces",
-          "delai": "immédiat dès réception",
-          "consequence": null,
+          "procedure": "Objections écrites au PRÉAVIS de l'office AI (art. 57a al. 3 LAI)",
+          "delai": "30 jours dès la notification du préavis",
+          "consequence": "Sans objections, l'office AI rend sa décision en l'état du dossier",
           "from_cascade": true
         },
         {
-          "procedure": "Dépôt de l'opposition écrite",
-          "delai": "30 jours dès notification de la décision",
-          "consequence": null,
+          "procedure": "RECOURS au tribunal cantonal des assurances contre la DÉCISION (art. 69 al. 1 let. a LAI ; art. 56 et 60 LPGA) — il n'existe PAS d'opposition en AI",
+          "delai": "30 jours dès la notification de la décision",
+          "consequence": "Délai péremptoire : passé ce terme, la décision devient définitive et le droit est perdu",
           "from_cascade": true
         },
         {
-          "procedure": "Instruction et décision sur opposition",
-          "delai": "généralement 3 à 12 mois",
-          "consequence": null,
+          "procedure": "Recours au Tribunal fédéral contre le jugement cantonal (LTF 82 ss)",
+          "delai": "30 jours dès la notification du jugement",
+          "consequence": "Délai péremptoire",
           "from_cascade": true
-        },
-        {
-          "procedure": "Recours au tribunal cantonal des assurances",
-          "delai": "30 jours dès décision sur opposition",
-          "consequence": null,
-          "from_cascade": true
-        },
-        {
-          "procedure": "Opposition au commandement de payer",
-          "delai": "30 jour",
-          "consequence": null,
-          "extracted_from_text": true
         }
       ]
     },
-    "maj": "2026-04-18",
+    "maj": "2026-07-12",
     "sourceLoi": "LAI/LPGA état 2025-01-01",
     "match_description": "L'assuré conteste une décision de l'Office AI (refus, réduction, mesures)",
     "profane_aliases": [
@@ -957,54 +951,56 @@
     "review_expiry": "2027-04-07",
     "cascades": [
       {
-        "titre": "Opposition à une décision AI",
+        "titre": "Contester une décision de l'office AI (préavis, puis recours — il n'y a PAS d'opposition en AI)",
         "domaine": "assurances",
         "etapes": [
           {
             "numero": 1,
-            "action": "Analyse de la décision et des pièces",
-            "description": "Lire la décision AI, les rapports médicaux et les expertises. Identifier les points contestables (degré d'invalidité, capacité de gain, expertise insuffisante).",
+            "action": "Identifier ce que vous avez reçu : PRÉAVIS ou DÉCISION",
+            "description": "Le document le dit en tête. Un PRÉAVIS est un projet de décision (art. 57a LAI). Une DÉCISION est définitive si elle n'est pas attaquée. Conservez l'enveloppe : la date de notification fait courir le délai.",
             "delai": "immédiat dès réception",
-            "preuve_generee": "Dossier complet AI + rapports médicaux"
+            "preuve_generee": "Copie du préavis/de la décision + enveloppe datée"
           },
           {
             "numero": 2,
-            "action": "Dépôt de l'opposition écrite",
-            "description": "Opposition écrite et motivée à l'office AI cantonal, accompagnée des pièces nouvelles (rapports médicaux supplémentaires, attestations).",
-            "delai": "30 jours dès notification de la décision",
-            "base_legale": "LPGA 52 / LAI 69",
-            "preuve_generee": "Opposition recommandée + accusé de réception"
-          },
-          {
-            "numero": 3,
-            "action": "Instruction et décision sur opposition",
-            "description": "L'office AI instruit (éventuelle nouvelle expertise) et rend une décision sur opposition.",
-            "delai": "généralement 3 à 12 mois",
+            "action": "Si c'est un PRÉAVIS : objections écrites à l'office AI",
+            "description": "Objections écrites et motivées à l'office AI, accompagnées des pièces médicales nouvelles. Aucune forme particulière n'est exigée.",
+            "delai": "30 jours dès la notification du préavis",
+            "base_legale": "LAI 57a al. 3",
+            "preuve_generee": "Objections envoyées en recommandé + accusé de réception",
             "branches": [
               {
-                "si": "décision favorable",
+                "si": "l'office AI suit vos objections",
                 "alors": "fin du processus"
               },
               {
-                "si": "maintien ou rejet",
-                "alors": "étape 4"
+                "si": "l'office AI rend malgré tout une décision défavorable",
+                "alors": "étape 3"
               }
             ]
           },
           {
+            "numero": 3,
+            "action": "Si c'est une DÉCISION : recours au tribunal cantonal des assurances (PAS d'opposition)",
+            "description": "La décision de l'office AI s'attaque directement devant le tribunal cantonal des assurances du domicile de l'office (Tribunal administratif fédéral si vous résidez à l'étranger). Écrire une « opposition » à l'office AI ne conserve PAS le délai. Le recours est un acte judiciaire : faites-le rédiger par une permanence AI (Pro Infirmis, Procap, Caritas, CSP) ou un avocat spécialisé en assurances sociales — contactez-les DÈS MAINTENANT, le délai court.",
+            "delai": "30 jours dès la notification de la décision (délai péremptoire)",
+            "base_legale": "LAI 69 al. 1 (dérogation aux art. 52 et 58 LPGA) / LPGA 56 / LPGA 60",
+            "cout": "frais judiciaires de 200 à 1000 francs (LAI 69 al. 1bis) — assistance judiciaire gratuite possible (LPGA 61 let. f)",
+            "preuve_generee": "Recours déposé dans le délai + accusé du tribunal"
+          },
+          {
             "numero": 4,
-            "action": "Recours au tribunal cantonal des assurances",
-            "description": "Recours écrit motivé devant le tribunal cantonal des assurances dans les 30 jours, puis TF si nécessaire.",
-            "delai": "30 jours dès décision sur opposition",
-            "base_legale": "LPGA 56 / LTF 82",
-            "cout": "procédure gratuite en 1re instance (LPGA 61)"
+            "action": "Recours au Tribunal fédéral contre le jugement cantonal",
+            "description": "Le jugement du tribunal cantonal des assurances peut être attaqué au Tribunal fédéral. Assistance d'un avocat vivement recommandée.",
+            "delai": "30 jours dès la notification du jugement",
+            "base_legale": "LTF 82 ss / LTF 100"
           }
         ]
       }
     ],
     "claude_review_date": "2026-04-19",
-    "claude_legal_review_date": "2026-04-29",
-    "claude_legal_review_notes": "verified"
+    "claude_legal_review_date": "2026-07-12",
+    "claude_legal_review_notes": "CORRECTION CRITIQUE 2026-07-12 : la fiche affirmait une procédure d'opposition (art. 52 LPGA) et fournissait un modèle de lettre d'opposition contre les décisions AI. FAUX : l'art. 69 al. 1 let. a LAI déroge aux art. 52 et 58 LPGA — la voie est le recours direct au tribunal cantonal des assurances dans les 30 jours (art. 60 LPGA). Le modèle de lettre a été retiré (pas de rédaction d'acte judiciaire), la jurisprudence citée (fondée sur l'opposition) a été retirée, et la fiche oriente désormais vers une permanence AI / un avocat. Sources vérifiées sur Fedlex (LAI RS 831.20, LPGA RS 830.1, état au 01.01.2025). Vérification LLM — non validée par un juriste humain."
   },
   {
     "id": "assurance_ai_demande_procedure",

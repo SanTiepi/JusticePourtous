@@ -3730,19 +3730,31 @@ function injectTrustBar() {
   if (document.getElementById('jb-trust-bar')) return;
   // Skip sur dashboard (page admin interne)
   if (window.location.pathname.includes('/dashboard')) return;
+  // ⚠ 2026-07-11 — CETTE BARRE DISAIT L'INVERSE DE LA VÉRITÉ.
+  // Elle affirmait, en vert rassurant : « 314 fiches — 100% relues, articles & délais
+  // validés ». Aucune fiche n'a jamais été relue par un juriste : elles ont été écrites
+  // ET « relues » par un LLM. Un audit a trouvé des délais inexistants et une voie de
+  // recours qui n'existe pas, servis sous ce badge. C'était du marketing (le commentaire
+  // d'origine disait « boost crédibilité »), présenté au citoyen comme une garantie.
+  // Elle dit maintenant ce qui est vrai. Ne la re-« positive » pas tant qu'un juriste
+  // humain n'a pas validé le contenu — ce jour-là, ce sera vrai, et on pourra le dire.
   var labels = {
-    fr: '⚖️ 314 fiches juridiques — 100% relues structurellement par notre IA, articles & délais validés.',
-    de: '⚖️ 314 juristische Merkblätter — 100% strukturell von unserer KI überprüft, Artikel & Fristen validiert.',
-    it: '⚖️ 314 schede giuridiche — 100% riviste strutturalmente dalla nostra IA, articoli e termini convalidati.',
-    en: '⚖️ 314 legal fact-sheets — 100% structurally reviewed by our AI, articles & deadlines validated.'
+    fr: '⚠️ Contenu juridique en cours de revalidation — <strong>il n\'a pas été validé par un juriste humain</strong>. L\'analyse personnalisée est suspendue. Pour un cas réel, consultez une permanence juridique.',
+    de: '⚠️ Juristische Inhalte werden derzeit überprüft — <strong>sie wurden nicht von einer juristischen Fachperson validiert</strong>. Die personalisierte Analyse ist ausgesetzt. Wenden Sie sich für einen konkreten Fall an eine Rechtsberatungsstelle.',
+    it: '⚠️ Contenuti giuridici in fase di riconvalida — <strong>non sono stati validati da un giurista</strong>. L\'analisi personalizzata è sospesa. Per un caso reale, si rivolga a un servizio di consulenza giuridica.',
+    en: '⚠️ Legal content under revalidation — <strong>it has not been validated by a human lawyer</strong>. Personalised analysis is suspended. For a real case, contact a legal help desk.'
+  };
+  var links = {
+    fr: 'Voir les permanences', de: 'Beratungsstellen ansehen',
+    it: 'Vedere i servizi di consulenza', en: 'See legal help desks'
   };
   var lang = (typeof getLang === 'function') ? getLang() : 'fr';
   var msg = labels[lang] || labels.fr;
   var bar = document.createElement('div');
   bar.id = 'jb-trust-bar';
   bar.setAttribute('role', 'status');
-  bar.style.cssText = 'background:#f0f9f4;color:#155433;border-bottom:1px solid #c8e2d4;padding:6px 16px;font-size:.82rem;text-align:center;line-height:1.4;';
-  bar.innerHTML = msg + ' <a href="/pour-juristes.html" style="color:#1d7042;text-decoration:underline;">Pour les juristes</a>';
+  bar.style.cssText = 'background:#fdf6e3;color:#7a4a00;border-bottom:1px solid #e8d4a8;padding:8px 16px;font-size:.82rem;text-align:center;line-height:1.45;';
+  bar.innerHTML = msg + ' <a href="/annuaire.html" style="color:#8B2500;text-decoration:underline;font-weight:600;">' + (links[lang] || links.fr) + '</a>';
   // Insère APRÈS la nav, AVANT la notice-juridique-bar (disclaimer)
   var disclaimer = document.querySelector('.notice-juridique-bar');
   if (disclaimer) {

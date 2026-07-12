@@ -26,8 +26,13 @@ echo "[1/5] Running core tests (non-LLM subset)..."
 if [ "${SKIP_TESTS:-0}" = "1" ]; then
   echo "  SKIP_TESTS=1 → gate test contournée (mode hotfix)"
 else
+  # LEGAL_SAFE_MODE=0 pour la suite : le coupe-circuit juridique est ACTIF par défaut
+  # (fail-safe) et couperait le triage, faisant échouer les tests qui l'exercent.
+  # On teste donc le moteur en mode normal ici ; le coupe-circuit, lui, a son propre
+  # fichier (test/legal-safe-mode.test.mjs) qui force la variable et vérifie que la
+  # détection de détresse passe toujours. Les deux doivent être verts avant un deploy.
   TEST_FILES=$(ls test/*.test.mjs | grep -v -E '(e2e|llm-nav|letter-gen|deep-analysis|premium|stress|adversarial-eval)')
-  TEST_OUTPUT=$(LLM_MOCK=1 NODE_ENV=test ADMIN_TOKEN=deploy-gate node --test --test-timeout=30000 $TEST_FILES 2>&1)
+  TEST_OUTPUT=$(LEGAL_SAFE_MODE=0 LLM_MOCK=1 NODE_ENV=test ADMIN_TOKEN=deploy-gate CITIZEN_EMAIL_SALT=deploy-gate OUTCOMES_HASH_SALT=deploy-gate node --test --test-timeout=30000 $TEST_FILES 2>&1)
   TEST_EXIT=$?
   echo "$TEST_OUTPUT" | grep -E '^ℹ (tests|pass|fail|cancelled|duration)' | head -5
   if [ $TEST_EXIT -ne 0 ]; then

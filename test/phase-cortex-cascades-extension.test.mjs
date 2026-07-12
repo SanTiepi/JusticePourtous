@@ -32,7 +32,21 @@ const PRE_EXISTING_CASCADES = {
   travail_salaire_impaye: 'db2a0c4b89c2ee5271e378418fa18a002e63a01baac2a2216efd0f14a4697b08',
   travail_harcelement: '56e5af2747ed64770cb1c1e89f7db05dd15cbeec1013270f5b9bfe8980eed2a6',
   travail_licenciement_abusif: '4245caf6f4ae1288ffd823092c79e7c61e0d6aa0188573d43734148c37920dd2',
-  dettes_commandement_payer: '0575d37208074e668df9173a9958321bbb845f85d6dee34f788620b64afbb3fb',
+  // Hash mis à jour 2026-07-12 — correction d'une lettre MENSONGÈRE (audit du 11 juillet) :
+  // le modèle affirmait « je fais opposition dans le délai légal de 10 jours » y compris
+  // quand le moteur avait lui-même calculé le délai comme dépassé. Une lettre ne doit jamais
+  // affirmer un fait temporel que le système ne peut pas garantir : l'opposition se déclare,
+  // elle n'a pas à se prétendre dans les temps.
+  //
+  // ⚠ AVERTISSEMENT SUR CE TEST LUI-MÊME. Ces hash figent l'état des cascades et leur message
+  // d'échec dit « ne pas toucher aux fiches pré-existantes ». Ils ne vérifient AUCUN droit :
+  // ils photocopient ce que la fiche affirme et punissent tout changement — y compris une
+  // CORRECTION. Le faux délai « 7 jours » (bail) a survécu deux mois et demi derrière ce
+  // filet, et le hash a même été mis à jour le 2026-04-29 pour un fix appliqué à la cascade
+  // mais jamais recopié dans le champ `delais` de la fiche. Le test est resté vert, l'erreur
+  // est restée servie. À remplacer par un oracle qui vérifie le droit contre la source
+  // primaire (Fedlex), pas contre la version précédente de nous-mêmes.
+  dettes_commandement_payer: '71b1b54039ae41125def212f53796361668bc29705a11a9698d0461b0683616f',
   dettes_saisie_salaire: 'c949a23be8541d41cd0471e14c78e2fd4f32252582850101901d1d6f7fc09fe4',
   etranger_permis_b_renouvellement: 'fcf6447e6e1d461d7ecf891e03a10c2d4b3ca2f16b7eadaa63bb6ce846ad8e05',
   famille_pension_impayee: '81e9eebac2be9354cdc2bd86f22b58e3142561f868a6d44560b4cf284f92c544'

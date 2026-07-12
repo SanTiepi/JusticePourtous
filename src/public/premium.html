@@ -235,6 +235,44 @@
 
   <script src="/i18n.js"></script>
   <script>
+    /* ⚠ COUPE-CIRCUIT JURIDIQUE (2026-07-11)
+       Cette page ne charge pas app.js : elle échappait donc à la neutralisation, et
+       continuait d'afficher un tunnel d'achat pour une analyse qu'on a suspendue.
+       Le serveur refuse déjà de créer la session de paiement — mais laisser le bouton
+       cliquable revient à mendier de l'argent pour un service qu'on sait défaillant.
+       On coupe donc l'achat ICI aussi, et on dit pourquoi. */
+    (function neutraliserAchatSiModeSur() {
+      fetch('/api/config').then(function(r) { return r.json(); }).then(function(cfg) {
+        if (!cfg || !cfg.legal_safe_mode) return;
+
+        var bandeau = document.createElement('div');
+        bandeau.setAttribute('role', 'status');
+        bandeau.style.cssText = 'background:#fdf6e3;color:#7a4a00;border:1px solid #e8d4a8;border-radius:8px;padding:1rem 1.15rem;margin:1.25rem auto;max-width:760px;line-height:1.5;font-size:.95rem;';
+        bandeau.innerHTML =
+          '<strong>L’analyse juridique payante est suspendue.</strong><br>' +
+          'Un audit interne a montré que certaines réponses pouvaient citer une mauvaise procédure ou un mauvais délai. ' +
+          'Nous ne vendons rien tant qu’un juriste n’a pas validé le contenu — nous préférons ne rien dire plutôt que de dire faux.<br>' +
+          '<a href="/annuaire.html" style="color:#8B2500;font-weight:600;">Voir les permanences juridiques gratuites →</a>';
+
+        var main = document.querySelector('main') || document.body;
+        main.insertBefore(bandeau, main.firstChild);
+
+        // Neutralise tout ce qui déclenche un paiement ou une analyse.
+        var boutons = document.querySelectorAll('button, .btn, .premium-cta a, [onclick]');
+        for (var i = 0; i < boutons.length; i++) {
+          var b = boutons[i];
+          var txt = (b.textContent || '').toLowerCase();
+          if (/charger|payer|acheter|analyser|lancer|débloquer|premium|chf/.test(txt)) {
+            b.disabled = true;
+            b.setAttribute('aria-disabled', 'true');
+            b.style.opacity = '0.45';
+            b.style.pointerEvents = 'none';
+            b.style.cursor = 'not-allowed';
+          }
+        }
+      }).catch(function() { /* /api/config injoignable : on ne casse pas la page */ });
+    })();
+
     /* Nav shadow on scroll + auto-hide on mobile */
     var nav = document.getElementById('nav');
     var lastScrollY = 0;

@@ -185,6 +185,11 @@ function resolveFicheId(id, validIds) {
   return null;
 }
 
+const DEFAULT_NAVIGATOR_MODEL = 'claude-haiku-4-5-20251001';
+const NAVIGATOR_MAX_FICHES = 6;
+const NAVIGATOR_SIMPLE_QUERY_WORDS = 30;
+const NAVIGATOR_TIGHT_CAP = 2;
+
 /**
  * Call Claude API to navigate the user's problem
  */
@@ -216,72 +221,57 @@ async function callNavigator(userText, previousAnswers) {
 
   userPrompt += `\n\nRéponds en JSON selon ce schéma :\n${RESPONSE_SCHEMA}`;
 
-  // Prompt caching (2026-05-31) : le SYSTEM_PROMPT (~35KB : catalogue 314 fiches +
-  // règles) est identique à chaque appel. On le marque cache_control ephemeral →
-  // les appels rapprochés (rounds successifs d'une même session de triage, TTL 5min)
-  // lisent le cache à ~0.1× le prix d'entrée au lieu de re-facturer 35KB plein tarif.
+  const models = (process.env.NAVIGATOR_MODELS || process.env.NAVIGATOR_MODEL || DEFAULT_NAVIGATOR_MODEL)
+    .split(',').map(s => s.trim()).filter(Boolean);
+  if (models.length <= 1) {
+    return callNavigatorModel(userPrompt, models[0] || DEFAULT_NAVIGATOR_MODEL, apiKey);
+  }
+  return callNavigatorUnion(userPrompt, models, apiKey, userText);
+}
+
+async function callNavigatorModel(userPrompt, model, apiKey) {
   const body = JSON.stringify({
-    model: 'claude-haiku-4-5-20251001',
+    model,
     max_tokens: 3500,
     system: [{ type: 'text', text: SYSTEM_PROMPT, cache_control: { type: 'ephemeral' } }],
     messages: [{ role: 'user', content: userPrompt }]
   });
-
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 30000);
-  const resp = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
-      'anthropic-beta': 'prompt-caching-2024-07-31'
-    },
-    body,
-    signal: controller.signal
-  });
-  clearTimeout(timeout);
-
-  if (!resp.ok) {
-    const err = await resp.text();
-    throw new Error(`Anthropic API error ${resp.status}: ${err.slice(0, 200)}`);
-  }
-
-  const data = await resp.json();
-  const text = data.content[0].text;
-
-  // Parse JSON response (tolerant to truncation)
-  let parsed;
-  const clean = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+  let data;
   try {
-    parsed = JSON.parse(clean);
-  } catch (e) {
-    // Truncation recovery: try to extract at least fiches_pertinentes so
-    // we don't lose the whole navigation over a missing closing brace.
-    const recovered = recoverPartialNavigation(clean);
-    if (recovered) {
-      parsed = recovered;
-    } else {
-      throw new Error(`LLM returned invalid JSON: ${text.slice(0, 200)}`);
-    }
-  }
-
-  // Validate: all fiche IDs must exist in our catalog (avec résolution d'alias, gap 14)
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01', 'anthropic-beta': 'prompt-caching-2024-07-31' },
+      body, signal: controller.signal
+    });
+    if (!resp.ok) { const err = await resp.text(); throw new Error(`Anthropic API error ${resp.status}: ${err.slice(0,200)}`); }
+    data = await resp.json();
+  } finally { clearTimeout(timeout); }
+  const text = data.content[0].text;
+  let parsed;
+  const clean = text.replace(/```json\n?/g,'').replace(/```\n?/g,'').trim();
+  try { parsed = JSON.parse(clean); }
+  catch (e) { const recovered = recoverPartialNavigation(clean); if (recovered) parsed = recovered; else throw new Error(`LLM returned invalid JSON: ${text.slice(0,200)}`); }
   const validIds = new Set(ficheCatalog.map(line => line.split(' ')[0]));
-  parsed.fiches_pertinentes = (parsed.fiches_pertinentes || [])
-    .map(id => resolveFicheId(id, validIds)).filter(Boolean);
-
-  // Usage info for cost tracking
-  const usage = {
-    inputTokens: data.usage?.input_tokens || 0,
-    outputTokens: data.usage?.output_tokens || 0,
-    costCentimes: Math.ceil(
-      ((data.usage?.input_tokens || 0) / 1000 * 0.3) +
-      ((data.usage?.output_tokens || 0) / 1000 * 1.5)
-    )
-  };
-
+  parsed.fiches_pertinentes = (parsed.fiches_pertinentes || []).map(id => resolveFicheId(id, validIds)).filter(Boolean);
+  const usage = { inputTokens: data.usage?.input_tokens || 0, outputTokens: data.usage?.output_tokens || 0, costCentimes: Math.ceil(((data.usage?.input_tokens||0)/1000*0.3)+((data.usage?.output_tokens||0)/1000*1.5)), model };
   return { navigation: parsed, usage };
+}
+
+async function callNavigatorUnion(userPrompt, models, apiKey, userText = '') {
+  const settled = await Promise.allSettled(models.map(m => callNavigatorModel(userPrompt, m, apiKey)));
+  const ok = settled.filter(x => x.status === 'fulfilled').map(x => x.value);
+  if (ok.length === 0) { const e = settled.find(x => x.status === 'rejected'); throw e ? e.reason : new Error('all models failed'); }
+  const primary = ok[0].navigation;
+  const seen = new Set(); const unioned = [];
+  for (const r of ok) for (const id of (r.navigation.fiches_pertinentes || [])) if (!seen.has(id)) { seen.add(id); unioned.push(id); }
+  const queryWords = String(userText || '').trim().split(/\s+/).filter(Boolean).length;
+  const cap = queryWords < NAVIGATOR_SIMPLE_QUERY_WORDS ? NAVIGATOR_TIGHT_CAP : NAVIGATOR_MAX_FICHES;
+  primary.fiches_pertinentes = unioned.slice(0, cap);
+  primary.multi_fiches = primary.fiches_pertinentes.length > 1;
+  const usage = { inputTokens: ok.reduce((s,r)=>s+r.usage.inputTokens,0), outputTokens: ok.reduce((s,r)=>s+r.usage.outputTokens,0), costCentimes: ok.reduce((s,r)=>s+r.usage.costCentimes,0), models: ok.map(r=>r.usage.model) };
+  return { navigation: primary, usage };
 }
 
 /**

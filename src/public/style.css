@@ -5020,3 +5020,213 @@ body.has-disclaimer {
 .je-grid .je-label { margin-bottom: 0.75rem; }
 @media (max-width: 560px) { .je-grid { grid-template-columns: 1fr; } }
 
+
+/* ══════════════════════════════════════════════════════════════════════════
+   LEGAL_SAFE_MODE — mode sûr (2026-07-12)
+   ══════════════════════════════════════════════════════════════════════════
+   ⚠ POURQUOI : un audit a prouvé que le site générait des actes juridiques
+   faux (lettre d'opposition AI inexistante, délai « 7 jours » inventé) et
+   affichait un tampon de confiance mensonger (« relu » — 0 fiche relue par un
+   juriste humain). Décision : couper tout ce qui affirme, dire la vérité,
+   orienter vers des humains. Piloté par LEGAL_SAFE_MODE (défaut = 1 = sûr).
+   app.js pose la classe .jb-safe-mode sur <body> quand le mode est actif.
+   Rien n'est supprimé : remettre LEGAL_SAFE_MODE=0 et tout revient.
+   ────────────────────────────────────────────────────────────────────────── */
+
+/* --- 1. Tampons de confiance mensongers : SOURCES RETIRÉES ------------------
+   Ces éléments affirmaient une relecture juridique qui n'a jamais eu lieu par un
+   humain. Un premier correctif les avait simplement MASQUÉS en CSS — mais le texte
+   restait dans le HTML : lu par Google, par les lecteurs d'écran, et réaffiché au
+   moindre cache navigateur périmé. Masquer un mensonge ne le retire pas.
+   Les sources sont donc corrigées (app.js, i18n.js, guide-renderer.mjs, + les 911
+   guides régénérés/alignés). Il ne reste ici que `.legal-review-badge`, en filet.
+
+   ⚠ NE PAS masquer #jb-trust-bar ni .guide-legal-review : ils portent DÉSORMAIS
+   l'avertissement honnête (« contenu non validé par un juriste »). Les cacher
+   laisserait le citoyen sans aucun signal — l'exact inverse du but. */
+.legal-review-badge {       /* app.js — ancien « Vérification juridique critique » */
+  display: none !important;
+}
+
+/* L'avertissement des pages guides : il doit ALERTER, pas rassurer.
+   Il était stylé en vert « tout va bien » — c'était précisément le problème. */
+.guide-legal-review {
+  color: #7a4a00 !important;
+  background: #fdf6e3 !important;
+  border-left: 3px solid #b45309 !important;
+}
+
+/* --- 2. Bandeau honnête (haut de page) ------------------------------------ */
+.jb-safe-banner {
+  background: #FBF3EC;
+  border-bottom: 1px solid #E3CDBB;
+  border-left: 4px solid var(--accent-primary);
+  padding: 0.7rem 1.25rem;
+}
+.jb-safe-banner-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.jb-safe-banner-icon {
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--accent-primary);
+  flex-shrink: 0;
+}
+.jb-safe-banner-text {
+  margin: 0;
+  flex: 1 1 320px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #4A3B32;                 /* contraste ~8:1 sur #FBF3EC */
+}
+.jb-safe-banner-text strong { color: #6D1D00; }
+.jb-safe-banner-link {
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
+.jb-safe-banner-link:hover { color: var(--accent-primary-hover); }
+@media (max-width: 640px) {
+  .jb-safe-banner { padding: 0.7rem 1rem; }
+  .jb-safe-banner-inner { gap: 0.5rem; }
+  .jb-safe-banner-text { font-size: 0.85rem; }
+}
+@media print { .jb-safe-banner-link { display: none; } }
+
+/* --- 3. Panneau d'orientation (remplace toute analyse personnalisée) ------ */
+.jb-safe-panel {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--accent-primary);
+  border-radius: 10px;
+  padding: 1.75rem;
+}
+.jb-safe-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.35rem;
+  line-height: 1.35;
+  color: var(--text-primary);
+}
+.jb-safe-lead {
+  margin: 0 0 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+.jb-safe-block { margin-bottom: 1.5rem; }
+.jb-safe-block h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+.jb-safe-note {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+.jb-safe-list { margin: 0; padding-left: 1.1rem; }
+.jb-safe-list li { margin-bottom: 0.45rem; line-height: 1.5; font-size: 0.93rem; color: var(--text-secondary); }
+.jb-safe-list a, .jb-safe-notice a { color: var(--accent-primary); font-weight: 600; }
+.jb-safe-resources { list-style: none; margin: 0; padding: 0; }
+.jb-safe-res {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.75rem 0.9rem;
+  margin-bottom: 0.5rem;
+  background: var(--surface-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+}
+.jb-safe-res-name { font-weight: 700; color: var(--text-primary); font-size: 0.95rem; }
+.jb-safe-res-type { font-size: 0.85rem; color: var(--text-secondary); }
+.jb-safe-res-links { font-size: 0.85rem; }
+.jb-safe-res-links a { color: var(--accent-secondary); text-decoration: underline; text-underline-offset: 2px; }
+.jb-safe-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.5rem; }
+.jb-safe-cta {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: var(--accent-primary);
+  color: #fff !important;
+  border-radius: 999px;
+  text-decoration: none !important;
+  font-weight: 600;
+}
+.jb-safe-cta:hover { background: var(--accent-primary-hover); }
+.jb-safe-back {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8rem 1.25rem;
+  border: 1px solid var(--border-default, #C9D4DF);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+@media (max-width: 640px) {
+  .jb-safe-panel { padding: 1.25rem; }
+  .jb-safe-title { font-size: 1.2rem; }
+  .jb-safe-cta, .jb-safe-back { width: 100%; justify-content: center; text-align: center; }
+}
+
+/* --- 4. Encart « contenu non validé » en tête de fiche -------------------- */
+.jb-safe-notice {
+  background: #FBF3EC;
+  border: 1px solid #E3CDBB;
+  border-left: 4px solid var(--accent-primary);
+  border-radius: 8px;
+  padding: 1rem 1.15rem;
+  margin: 0 0 1.25rem;
+}
+.jb-safe-notice p {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #4A3B32;
+}
+.jb-safe-notice p:last-child { margin-bottom: 0; }
+.jb-safe-notice strong { color: #6D1D00; }
+
+/* --- 5. CTA morts en mode sûr : paiement, premium, génération de lettres --- */
+body.jb-safe-mode .premium-cta-section,
+body.jb-safe-mode .premium-cta-result,
+body.jb-safe-mode .upsell,
+body.jb-safe-mode .nav-premium,
+body.jb-safe-mode .nav-wallet-badge,
+body.jb-safe-mode .mobile-corner-widget a.mcw-premium,
+body.jb-safe-mode .letter-generate-btn,
+body.jb-safe-mode .letter-modal {
+  display: none !important;
+}
+
+/* --- 6. Panneau mode sûr : « pourquoi » + bloc urgence (payload serveur) --- */
+.jb-safe-why {
+  margin: -0.75rem 0 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--accent-primary);
+}
+.jb-safe-emergency {
+  background: #FFF5F5;
+  border: 1px solid #F0C9C9;
+  border-radius: 8px;
+  padding: 1rem 1.15rem;
+}
+.jb-safe-emergency h3 { color: #8B1A1A; }
+.jb-safe-res-urgent { border-color: #F0C9C9; }
+.jb-safe-res-urgent .jb-safe-tel {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #8B1A1A;
+}
+.jb-safe-tel { font-weight: 600; }

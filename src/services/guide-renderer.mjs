@@ -95,15 +95,26 @@ function buildGuideModel(intent, fiche, locale) {
     section_articles_title: 'Articles de loi applicables',
     section_delais_title: 'Délais critiques',
     section_tags_title: 'Mots-clés',
-    cta_title: 'Obtenir une analyse de votre situation',
-    cta_text: 'Décrivez votre cas et obtenez un plan d’action, les délais et les autorités utiles.',
-    cta_button: 'Lancer l’analyse',
+    // ⚠ 2026-07-11 — ce bloc promettait « un plan d'action, les délais et les autorités ».
+    // C'est précisément ce qu'on a suspendu : le triage pouvait citer une procédure ou un
+    // délai faux. Promettre une analyse qui n'est plus rendue, c'est mentir deux fois.
+    // On oriente donc vers ce qui reste vrai et utile : des humains qui répondent de ce
+    // qu'ils disent. (À rétablir quand un juriste aura validé le contenu.)
+    cta_title: 'Parler à quelqu’un qui répond de ce qu’il dit',
+    cta_text: 'Notre analyse personnalisée est suspendue le temps qu’un juriste valide notre contenu. Pour un cas réel, une permanence juridique vous répondra — c’est gratuit ou à prix libre.',
+    cta_button: 'Voir les permanences juridiques',
     disclaimer_title: 'Information juridique générale',
     disclaimer_text: 'JusticePourtous fournit des informations juridiques générales basées sur le droit suisse en vigueur. Ce service ne remplace pas un conseil d’avocat personnalisé.',
-    verified_label: fiche?.last_verified_at ? `Sources vérifiées le ${fiche.last_verified_at}.` : null,
-    legal_review_label: fiche?.claude_legal_review_date
-      ? `⚖️ Articles, délais et autorités relus par notre IA juridique le ${fiche.claude_legal_review_date}. Ne remplace pas un avocat humain.`
-      : null,
+    // ⚠ 2026-07-11 — ces deux lignes affirmaient au citoyen (et à Google, en dur dans
+    // les 314 pages) que les « articles, délais et autorités » avaient été « relus ».
+    // Un audit a montré que ce badge couvrait des délais qui n'existent pas et une voie
+    // de recours inexistante en AI. La relecture était faite par un LLM — le même
+    // procédé qui avait écrit les fiches. Le badge transformait un doute en certitude :
+    // c'est plus dangereux que pas de badge du tout.
+    // On dit maintenant la vérité. À rétablir SEULEMENT quand un juriste humain aura
+    // validé, et alors le libellé nommera l'humain, pas « notre IA ».
+    verified_label: null,
+    legal_review_label: '⚠️ Contenu non validé par un juriste humain — en cours de revalidation. Vérifiez auprès d’une permanence juridique avant d’agir : une erreur de délai peut faire perdre un droit.',
     no_articles_text: 'Cette fiche ne contient pas encore de liste d’articles publics.',
     no_delais_text: 'Cette fiche ne contient pas encore de délai critique structuré.',
     tags: (intent.tags || []).slice(0, 8),
@@ -287,7 +298,7 @@ function renderGuideHtml(model) {
       <section class="guide-section guide-cta">
         <h2>${escapeHtml(model.cta_title)}</h2>
         <p>${escapeHtml(model.cta_text)}</p>
-        <a href="/resultat.html?q=${encodeURIComponent(model.cta_query)}" class="btn btn-primary guide-cta-btn">${escapeHtml(model.cta_button)}</a>
+        <a href="/annuaire.html" class="btn btn-primary guide-cta-btn">${escapeHtml(model.cta_button)}</a>
       </section>
     </div>
   </main>

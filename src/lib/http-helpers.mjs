@@ -5,6 +5,7 @@
 
 import { readFileSync, existsSync, statSync } from 'node:fs';
 import { join, extname } from 'node:path';
+import { filterOutgoingPayload, isSafeMode } from '../services/safe-mode.mjs';
 
 // ─── Constants ──────────────────────────────────────────────────
 
@@ -38,7 +39,10 @@ export function setSecurityHeaders(res) {
 export function json(res, statusCode, data) {
   setSecurityHeaders(res);
   res.writeHead(statusCode, { 'Content-Type': 'application/json; charset=utf-8' });
-  res.end(JSON.stringify(data));
+  // Passage obligé de toute réponse JSON → dernier filet du coupe-circuit juridique :
+  // en mode sûr, aucun modèle de lettre ne sort, même par une route qu'on aurait
+  // oublié de couper (la revue du 2026-07-11 en avait manqué cinq). Voir safe-mode.mjs.
+  res.end(JSON.stringify(filterOutgoingPayload(data)));
 }
 
 // ─── Body parsing ───────────────────────────────────────────────
@@ -147,7 +151,13 @@ export function serveStatic(req, res, filePath, publicDir) {
   setSecurityHeaders(res);
   let cacheControl = 'no-cache';
   if (ext === '.css' || ext === '.js') {
-    cacheControl = 'public, max-age=3600';
+    // ⚠ En mode sûr, le JS et le CSS portent le coupe-circuit : le bandeau
+    // d'avertissement, le retrait des tampons de confiance, la désactivation des
+    // boutons d'achat. Un cache d'une heure ferait ré-exécuter l'ANCIEN script chez
+    // tout visiteur revenant — et lui réafficherait le badge « articles et délais
+    // relus » sur un contenu qu'on vient de déclarer non validé. On ne met pas une
+    // mise en garde de sécurité derrière un cache. (Repasse à 1 h avec LEGAL_SAFE_MODE=0.)
+    cacheControl = isSafeMode() ? 'no-store, must-revalidate' : 'public, max-age=3600';
   } else if (ext === '.png' || ext === '.svg' || ext === '.ico' || ext === '.jpg' || ext === '.jpeg' || ext === '.gif' || ext === '.webp') {
     cacheControl = 'public, max-age=86400';
   }

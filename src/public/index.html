@@ -243,9 +243,51 @@
   <script src="/i18n.js"></script>
   <script src="/citizen-ui.js"></script>
   <script src="/track.js"></script>
+  <!-- app.js porte le module LEGAL_SAFE_MODE (bandeau honnête + classe
+       body.jb-safe-mode qui masque les CTA payants). Chargé ici pour que la
+       home dise la vérité elle aussi, pas seulement les pages de triage. -->
+  <script src="/app.js"></script>
   <script>
     /* Funnel 2a : vue de la home + 1er focus sur le champ */
     if (window.jbTrack) jbTrack('home_view');
+
+    /* Mode sûr : le hero ne promet plus ce qu'on ne fait plus. On retire
+       data-i18n sur les éléments réécrits pour qu'un changement de langue ne
+       restaure pas la promesse (« on vous dit quoi faire, dans quel délai »). */
+    if (typeof jbFetchSafeMode === 'function') {
+      jbFetchSafeMode().then(function (on) {
+        if (!on) return;
+        var sub = document.querySelector('.hero-subtitle');
+        if (sub) {
+          sub.removeAttribute('data-i18n');
+          sub.textContent = 'Analyse personnalisée suspendue le temps de faire revalider notre contenu par un juriste. '
+            + 'Nous vous orientons vers la permanence humaine compétente, gratuitement et anonymement.';
+        }
+        var btnLabel = document.querySelector('.search-btn span');
+        if (btnLabel) {
+          btnLabel.removeAttribute('data-i18n');
+          btnLabel.textContent = 'M\'orienter';
+        }
+        var eyebrow = document.querySelector('.hero-eyebrow');
+        if (eyebrow) {
+          eyebrow.removeAttribute('data-i18n');
+          eyebrow.textContent = 'Orientation juridique — contenu en revalidation';
+        }
+        /* « Comment ça marche », étape 3 : elle promettait délais + modèle de
+           lettre. C'est précisément ce qui est coupé. */
+        var step3 = document.querySelector('[data-i18n="process.step3_text"]');
+        if (step3) {
+          step3.removeAttribute('data-i18n');
+          step3.textContent = 'Nous vous indiquons la permanence ou l\'autorité compétente près de chez vous. '
+            + 'Les délais et modèles de lettre sont suspendus tant qu\'un juriste ne les a pas validés.';
+        }
+        var step3t = document.querySelector('[data-i18n="process.step3_title"]');
+        if (step3t) {
+          step3t.removeAttribute('data-i18n');
+          step3t.textContent = 'Orientez-vous';
+        }
+      });
+    }
     (function () {
       var si = document.getElementById('searchInput');
       if (si && window.jbTrack) {

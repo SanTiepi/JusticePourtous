@@ -231,6 +231,14 @@ const FICHE_LABELS = {
   // --- ASSURANCES (5) ---
   assurance_ijm:                 { c: "J'ai un litige avec mon IJM",                       j: "Indemnité journalière maladie (IJM)" },
   assurance_ai_rente:            { c: "J'ai une question sur ma rente AI",                 j: "Rente AI — octroi / révision" },
+  // ⚠ NE PAS réintroduire le mot « opposition » ici : il n'existe PAS d'opposition en
+  // assurance-invalidité (art. 69 al. 1 let. a LAI — dérogation expresse aux art. 52 et
+  // 58 LPGA). La décision AI s'attaque par RECOURS direct au tribunal cantonal des
+  // assurances (30 jours, art. 60 LPGA), après un préavis susceptible d'objections
+  // (art. 57a LAI). L'ancien libellé « Faire opposition à une décision de l'AI » était le
+  // titre indexé par Google : il envoyait les gens faire un acte inutile pendant que leur
+  // délai de recours s'éteignait. (Audit 2026-07-11, vérifié sur Fedlex.)
+  assurance_ai_opposition:       { c: "Contester une décision de l'AI (refus ou réduction de rente)", j: "Décision AI — objections au préavis (art. 57a LAI) puis recours au tribunal cantonal des assurances (art. 69 LAI) ; PAS d'opposition" },
   assurance_prestations_complementaires: { c: "Je veux des prestations complémentaires (PC)", j: "Prestations complémentaires AVS/AI" },
   assurance_laa:                 { c: "J'ai un problème avec la LAA",                      j: "Prestations LAA" },
   assurance_laa_contestation:    { c: "Je conteste une décision LAA",                      j: "Contestation d'une décision LAA" },

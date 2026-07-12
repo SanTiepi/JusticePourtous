@@ -35,6 +35,7 @@ import {
 import { safeLoadJSON } from '../src/services/atomic-write.mjs';
 import { decryptEmail } from '../src/services/citizen-account.mjs';
 import { getCase } from '../src/services/case-store.mjs';
+import { isSafeMode } from '../src/services/safe-mode.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -146,6 +147,25 @@ async function sendViaResend(to, subject, html) {
 
 async function main() {
   const started = Date.now();
+
+  // ⚠ COUPE-CIRCUIT JURIDIQUE — ce script tourne en CRON, hors du serveur HTTP : il
+  // échappait donc entièrement à la neutralisation du 2026-07-11 (trouvé par la revue
+  // Codex). Il poste à de vrais citoyens un mail contenant une échéance, une base légale
+  // et la conséquence d'un délai manqué — c'est-à-dire précisément ce qu'on a suspendu
+  // parce qu'on l'a trouvé faux (voie de recours inexistante en AI, délai inventé en
+  // bail, moteur de délais ignorant les féries).
+  // Un rappel envoyé sur un faux délai est PIRE qu'un silence : il fait agir au mauvais
+  // moment, avec l'autorité d'une notification.
+  if (isSafeMode()) {
+    console.log(JSON.stringify({
+      aborted: 'legal_safe_mode',
+      reason: "Envoi de rappels suspendu : les délais n'ont pas été validés par un juriste humain.",
+      hint: 'LEGAL_SAFE_MODE=0 pour réactiver, une fois le contenu validé.',
+      sent: 0, skipped: 0, errors: 0, total: 0
+    }));
+    return;
+  }
+
   const due = getDueReminders({ before: BEFORE });
 
   let sent = 0;

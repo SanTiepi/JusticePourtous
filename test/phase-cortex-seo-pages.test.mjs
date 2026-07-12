@@ -44,11 +44,19 @@ describe('Phase Cortex — SEO pages generation', () => {
     }
   });
 
-  it('chaque page a un CTA vers /resultat.html?q=…', () => {
+  // ⚠ 2026-07-11 — ce test EXIGEAIT que chaque guide pousse le visiteur vers l'analyse
+  // personnalisée (/resultat.html?q=…). Cette analyse est suspendue : elle pouvait citer
+  // une procédure ou un délai faux. Un test qui impose d'envoyer les gens vers un service
+  // qu'on sait défaillant n'est pas un garde-fou, c'est un entonnoir.
+  // Le guide doit toujours offrir une sortie — mais vers un humain qui répond de ce qu'il
+  // dit. À rebasculer vers le triage quand un juriste aura validé le contenu.
+  it('chaque page offre une sortie vers de l’aide humaine (et non vers l’analyse suspendue)', () => {
     const files = readdirSync(GUIDES).filter(f => f.endsWith('.html')).slice(0, 5);
     for (const f of files) {
       const html = readFileSync(join(GUIDES, f), 'utf-8');
-      assert.match(html, /\/resultat\.html\?q=/, `${f}: CTA vers triage manquant`);
+      assert.match(html, /\/annuaire\.html/, `${f}: aucune orientation vers une permanence juridique`);
+      assert.doesNotMatch(html, /\/resultat\.html\?q=/,
+        `${f}: renvoie encore vers l'analyse personnalisée, qui est suspendue`);
     }
   });
 

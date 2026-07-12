@@ -58,12 +58,17 @@
       }
     ],
     "reponse": {
-      "explication": "En droit suisse, le bailleur est tenu de maintenir le logement dans un état approprie à l'usage convenu (art. 256 al. 1 CO). La moisissure constitue un défaut au sens de l'art. 258 CO lorsqu'elle résulte d'un problème structurel (infiltration, ventilation insuffisante) et non du comportement du locataire. Le locataire dispose de trois moyens d'action : (1) exiger la remise en état (art. 259a al. 1 let. a CO), (2) demander une réduction proportionnelle du loyer (art. 259a al. 1 let. b CO), ou (3) consigner le loyer auprès de l'autorité compétente si le bailleur reste inactif (art. 259g CO). La consignation doit être précédée d'un avis écrit fixant un délai raisonnable pour la réparation. La jurisprudence accorde généralement une réduction de 5% a 25% selon la gravite et l'étendue du défaut.",
+      "explication": "En droit suisse, le bailleur est tenu de maintenir le logement dans un état approprie à l'usage convenu (art. 256 al. 1 CO). La moisissure constitue un défaut au sens de l'art. 258 CO lorsqu'elle résulte d'un problème structurel (infiltration, ventilation insuffisante) et non du comportement du locataire. Le locataire dispose de trois moyens d'action : (1) exiger la remise en état (art. 259a al. 1 let. a CO), (2) demander une réduction proportionnelle du loyer (art. 259a al. 1 let. b CO), ou (3) consigner le loyer auprès de l'autorité compétente si le bailleur reste inactif (art. 259g CO). La consignation doit être précédée d'un avis écrit fixant un délai raisonnable pour la réparation. La jurisprudence accorde généralement une réduction de 5% a 25% selon la gravite et l'étendue du défaut.\n\nAVIS DU DÉFAUT — pas de délai chiffré : le locataire doit signaler au bailleur les défauts auxquels il n'est pas tenu de remédier lui-même (art. 257g al. 1 CO). La loi ne fixe AUCUN délai en jours : l'avis doit être donné sans retard, dès la découverte du défaut. Le locataire répond du dommage résultant de l'omission d'aviser (art. 257g al. 2 CO). Écrivez donc immédiatement, par écrit (recommandé), en datant le constat.",
       "articles": [
         {
           "ref": "CO 256",
           "titre": "Obligation de délivrer la chose",
           "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_256"
+        },
+        {
+          "ref": "CO 257g",
+          "titre": "Avis des défauts — sans retard, aucun délai chiffré dans la loi",
+          "lien": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_257_g"
         },
         {
           "ref": "CO 259a",
@@ -126,14 +131,14 @@
           "from_cascade": true
         },
         {
-          "procedure": "Notification écrite au bailleur",
-          "delai": "dans les 7 jours",
-          "consequence": null,
+          "procedure": "Avis écrit du défaut au bailleur (art. 257g CO)",
+          "delai": "sans retard, dès la découverte du défaut — la loi ne fixe aucun délai chiffré",
+          "consequence": "Le locataire répond du dommage résultant d'un avis tardif ou omis (art. 257g al. 2 CO)",
           "from_cascade": true
         },
         {
-          "procedure": "Délai de réparation",
-          "delai": "30 jours",
+          "procedure": "Délai de réparation fixé au bailleur (délai raisonnable — art. 259g al. 1 CO)",
+          "delai": "30 jours (usage courant ; la loi exige un « délai raisonnable », pas un chiffre)",
           "consequence": null,
           "from_cascade": true
         },
@@ -145,7 +150,7 @@
         }
       ]
     },
-    "maj": "2026-04-07",
+    "maj": "2026-07-12",
     "sourceLoi": "CO état 2025-01-01",
     "dateVerification": "2026-04-08",
     "verificationOk": true,
@@ -215,12 +220,12 @@
         ]
       }
     ],
-    "last_verified_at": "2026-04-07",
+    "last_verified_at": "2026-07-12",
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-07",
     "claude_review_date": "2026-04-19",
-    "claude_legal_review_date": "2026-04-29",
-    "claude_legal_review_notes": "verified"
+    "claude_legal_review_date": "2026-07-12",
+    "claude_legal_review_notes": "CORRECTION 2026-07-12 : le champ delais annonçait un avis de défaut « dans les 7 jours ». Ce délai N'EXISTE PAS. L'art. 257g al. 1 CO (RS 220, vérifié sur Fedlex) impose de signaler le défaut sans retard, dès sa découverte, sans aucun délai chiffré ; l'al. 2 rend le locataire responsable du dommage résultant de l'omission d'aviser. Formulation harmonisée avec la cascade (« sans retard ») + art. 257g ajouté aux articles + délai de réparation présenté comme un délai raisonnable (art. 259g al. 1 CO), pas comme un délai légal de 30 jours. Vérification LLM — non validée par un juriste humain."
   },
   {
     "id": "bail_defaut_bruit",
@@ -339,9 +344,9 @@
           "from_cascade": true
         },
         {
-          "procedure": "Notification écrite au bailleur",
-          "delai": "dans les 7 jours",
-          "consequence": null,
+          "procedure": "Avis écrit du défaut au bailleur (art. 257g CO)",
+          "delai": "sans retard, dès la constatation des nuisances — la loi ne fixe aucun délai chiffré",
+          "consequence": "Le locataire répond du dommage résultant d'un avis tardif ou omis (art. 257g al. 2 CO)",
           "from_cascade": true
         },
         {
@@ -364,7 +369,7 @@
         }
       ]
     },
-    "maj": "2026-04-07",
+    "maj": "2026-07-12",
     "sourceLoi": "CO état 2025-01-01",
     "dateVerification": "2026-04-08",
     "verificationOk": true,
@@ -387,7 +392,7 @@
       "signalement écrit au bailleur ou à la régie",
       "canton"
     ],
-    "last_verified_at": "2026-04-07",
+    "last_verified_at": "2026-07-12",
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-07",
     "cascades": [
@@ -404,10 +409,10 @@
           },
           {
             "numero": 2,
-            "action": "Notification écrite au bailleur",
-            "description": "Courrier recommandé à la régie/bailleur détaillant les nuisances et mise en demeure d'agir (bail = fournir chose dans état convenu).",
-            "delai": "dans les 7 jours",
-            "base_legale": "CO 259a",
+            "action": "Avis écrit du défaut au bailleur",
+            "description": "Courrier recommandé à la régie/bailleur détaillant les nuisances et mise en demeure d'agir (bail = fournir la chose dans l'état convenu). À envoyer sans retard dès la constatation : la loi n'impose aucun délai chiffré, mais un avis tardif engage la responsabilité du locataire pour le dommage qui en résulte (art. 257g CO).",
+            "delai": "sans retard (dès la constatation des nuisances) — aucun délai chiffré dans la loi",
+            "base_legale": "CO 257g / CO 259a",
             "preuve_generee": "Accusé de réception postal"
           },
           {
@@ -445,8 +450,8 @@
       }
     ],
     "claude_review_date": "2026-04-19",
-    "claude_legal_review_date": "2026-04-29",
-    "claude_legal_review_notes": "verified"
+    "claude_legal_review_date": "2026-07-12",
+    "claude_legal_review_notes": "CORRECTION 2026-07-12 : suppression du faux délai « dans les 7 jours » pour l'avis de défaut (delais + cascade). L'art. 257g CO n'impose aucun délai chiffré : avis sans retard dès la constatation. Base légale de l'étape complétée (CO 257g). Vérification LLM — non validée par un juriste humain."
   },
   {
     "id": "bail_resiliation_conteste",
@@ -5314,9 +5319,9 @@
           "from_cascade": true
         },
         {
-          "procedure": "Mise en demeure du bailleur",
-          "delai": "dans les 7 jours du constat",
-          "consequence": null,
+          "procedure": "Avis écrit du défaut / mise en demeure du bailleur (art. 257g CO)",
+          "delai": "sans retard, dès le constat — la loi ne fixe aucun délai chiffré",
+          "consequence": "Le locataire répond du dommage résultant d'un avis tardif ou omis (art. 257g al. 2 CO)",
           "from_cascade": true
         },
         {
@@ -5339,7 +5344,7 @@
         }
       ]
     },
-    "maj": "2026-04-07",
+    "maj": "2026-07-12",
     "sourceLoi": "CO état 2025-01-01",
     "dateVerification": "2026-04-08",
     "verificationOk": true,
@@ -5362,7 +5367,7 @@
       "rapport médical si impact sante",
       "canton"
     ],
-    "last_verified_at": "2026-04-07",
+    "last_verified_at": "2026-07-12",
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-07",
     "cascades": [
@@ -5379,10 +5384,10 @@
           },
           {
             "numero": 2,
-            "action": "Mise en demeure du bailleur",
-            "description": "Courrier recommandé exigeant remise en état dans un délai raisonnable, avec menace de consignation du loyer.",
-            "delai": "dans les 7 jours du constat",
-            "base_legale": "CO 259a / CO 259b",
+            "action": "Avis écrit du défaut et mise en demeure du bailleur",
+            "description": "Courrier recommandé exigeant la remise en état dans un délai raisonnable, avec menace de consignation du loyer. À envoyer sans retard dès le constat : la loi n'impose aucun délai chiffré, mais un avis tardif engage la responsabilité du locataire pour le dommage qui en résulte (art. 257g CO).",
+            "delai": "sans retard (dès le constat) — aucun délai chiffré dans la loi",
+            "base_legale": "CO 257g / CO 259a / CO 259b",
             "preuve_generee": "Accusé de réception"
           },
           {
@@ -5412,8 +5417,8 @@
       }
     ],
     "claude_review_date": "2026-04-19",
-    "claude_legal_review_date": "2026-04-29",
-    "claude_legal_review_notes": "verified"
+    "claude_legal_review_date": "2026-07-12",
+    "claude_legal_review_notes": "CORRECTION 2026-07-12 : suppression du faux délai « dans les 7 jours du constat » pour l'avis/la mise en demeure (delais + cascade). L'art. 257g CO n'impose aucun délai chiffré : avis sans retard dès le constat. Vérification LLM — non validée par un juriste humain."
   },
   {
     "id": "bail_recherche_logement",
@@ -5715,7 +5720,7 @@
         },
         {
           "procedure": "Contact avec la régie",
-          "delai": "dans les 7 jours",
+          "delai": "le plus vite possible (recommandation pratique — ce n'est pas un délai légal)",
           "consequence": null,
           "from_cascade": true
         },
@@ -5739,7 +5744,7 @@
         }
       ]
     },
-    "maj": "2026-04-07",
+    "maj": "2026-07-12",
     "sourceLoi": "CO état 2025-01-01",
     "dateVerification": "2026-04-08",
     "verificationOk": true,
@@ -5763,7 +5768,7 @@
       "canton",
       "capacite a regulariser"
     ],
-    "last_verified_at": "2026-04-07",
+    "last_verified_at": "2026-07-12",
     "review_scope": "reviewed_by_claude",
     "review_expiry": "2027-04-07",
     "cascades": [
@@ -5781,8 +5786,8 @@
           {
             "numero": 2,
             "action": "Contact avec la régie",
-            "description": "Courrier ou entretien pour proposer un plan de paiement. Ne pas ignorer — la bonne foi compte.",
-            "delai": "dans les 7 jours",
+            "description": "Courrier ou entretien pour proposer un plan de paiement. Ne pas ignorer — la bonne foi compte. (Recommandation pratique : agir le plus vite possible. Ce n'est pas un délai légal ; le seul délai légal ici est celui de la sommation comminatoire, art. 257d CO.)",
+            "delai": "le plus vite possible (recommandation pratique — pas un délai légal)",
             "preuve_generee": "Proposition écrite de plan"
           },
           {
@@ -5811,8 +5816,8 @@
       }
     ],
     "claude_review_date": "2026-04-19",
-    "claude_legal_review_date": "2026-04-29",
-    "claude_legal_review_notes": "verified"
+    "claude_legal_review_date": "2026-07-12",
+    "claude_legal_review_notes": "CORRECTION 2026-07-12 : le « contact avec la régie dans les 7 jours » était présenté comme un délai alors que c'est une simple recommandation pratique — reformulé explicitement comme tel. Le seul délai légal de cette fiche est celui de la sommation comminatoire (art. 257d CO). Vérification LLM — non validée par un juriste humain."
   },
   {
     "id": "bail_restitution_anticipee",

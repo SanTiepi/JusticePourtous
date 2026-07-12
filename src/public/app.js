@@ -6,6 +6,230 @@ var currentAnswers = [];
 var currentStep = 0;
 var currentDomaine = '';
 
+// ═══════════════════════════════════════════════════════════════════════
+// LEGAL_SAFE_MODE — interrupteur de sécurité (côté front)
+// ═══════════════════════════════════════════════════════════════════════
+// ⚠ POURQUOI CE CODE EXISTE (2026-07-12) : un audit a prouvé que le site
+// générait des actes juridiques FAUX (lettre d'opposition AI inexistante,
+// délai "7 jours" moisissure inventé, opposition "dans le délai" alors que
+// le délai était dépassé) et affichait un badge de confiance mensonger
+// ("relu par un juriste" — aucune fiche ne l'a été). Décision du
+// propriétaire : neutraliser tout ce qui AFFIRME (analyse personnalisée,
+// délais, lettres, paiement) et n'orienter que vers des humains, tant que
+// le corpus n'est pas revalidé par un vrai juriste.
+//
+// L'interrupteur est UNE variable d'env serveur : LEGAL_SAFE_MODE (défaut "1").
+// Le front ne décide RIEN : il lit le flag exposé par l'API et obéit.
+//
+// FAIL-SAFE : si le flag est illisible (API muette, endpoint absent, réseau
+// coupé), on considère le mode sûr ACTIF. On préfère se taire à tort que
+// dire faux à un citoyen. Aucun code n'est supprimé — tout revient en
+// remettant LEGAL_SAFE_MODE=0 côté serveur.
+//
+// Le safety_stop (violence / détresse) N'EST PAS concerné : il continue de
+// s'afficher normalement, c'est le seul écran plus prioritaire que celui-ci.
+
+var jbSafeModeState = null;     // null = pas encore résolu, true/false = résolu
+var jbSafeModePromise = null;
+var jbSafeNotice = null;        // payload d'orientation servi par /api/config
+
+// Ressources de repli si l'API n'en fournit pas. Volontairement SANS numéros
+// de téléphone : on ne réintroduit pas une donnée non vérifiée dans un site
+// dont on vient de couper les affirmations. Les sites officiels sont la
+// source, l'annuaire du site donne le détail cantonal.
+var JB_SAFE_RESOURCES = [
+  { nom: 'ASLOCA', type: 'Logement, bail, résiliation, caution', url: 'https://www.asloca.ch' },
+  { nom: 'Unia', type: 'Travail, licenciement, salaire impayé', url: 'https://www.unia.ch' },
+  { nom: 'Caritas', type: 'Dettes, budget, précarité', url: 'https://www.caritas.ch' },
+  { nom: 'Centre social protestant (CSP)', type: 'Aide sociale, permis de séjour, budget', url: 'https://www.csp.ch' },
+  { nom: 'Aide aux victimes (LAVI)', type: 'Victimes d\'infractions, violences', url: 'https://www.aide-aux-victimes.ch' }
+];
+
+// Lit le flag dans une réponse API, quel que soit l'emplacement choisi côté
+// serveur (racine, flags, config, meta). Tolérant sur le type (bool/0/1/"1").
+function jbExtractSafeFlag(o) {
+  if (!o || typeof o !== 'object') return null;
+  var candidates = [
+    o.legal_safe_mode, o.safe_mode,
+    o.flags && o.flags.legal_safe_mode,
+    o.config && o.config.legal_safe_mode,
+    o.meta && o.meta.legal_safe_mode
+  ];
+  for (var i = 0; i < candidates.length; i++) {
+    var v = candidates[i];
+    if (v === true || v === 1 || v === '1' || v === 'true' || v === 'on') return true;
+    if (v === false || v === 0 || v === '0' || v === 'false' || v === 'off') return false;
+  }
+  return null;
+}
+
+// Résout le mode une seule fois par page (mémoïsé).
+function jbFetchSafeMode() {
+  if (jbSafeModePromise) return jbSafeModePromise;
+
+  // Le serveur peut aussi injecter le flag directement dans la page.
+  if (typeof window.JB_LEGAL_SAFE_MODE === 'boolean') {
+    jbSafeModeState = window.JB_LEGAL_SAFE_MODE;
+    jbSafeModePromise = Promise.resolve(jbSafeModeState);
+    return jbSafeModePromise;
+  }
+
+  var endpoints = ['/api/config', '/api/health'];
+  jbSafeModePromise = (async function() {
+    for (var i = 0; i < endpoints.length; i++) {
+      try {
+        var res = await fetch(endpoints[i], { headers: { 'Accept': 'application/json' } });
+        if (!res.ok) continue;
+        var data = await res.json();
+        var flag = jbExtractSafeFlag(data);
+        if (flag !== null) {
+          jbSafeModeState = flag;
+          // /api/config sert aussi le texte + les contacts officiels du mode
+          // sûr (source unique côté serveur — on ne les recopie pas ici).
+          if (data.safe_mode_notice) jbSafeNotice = data.safe_mode_notice;
+          return flag;
+        }
+      } catch (e) { /* endpoint absent / réseau KO → on tente le suivant */ }
+    }
+    jbSafeModeState = true;  // fail-safe : dans le doute, on se tait
+    return true;
+  })();
+  return jbSafeModePromise;
+}
+
+// Version synchrone (pour les fonctions de rendu). Tant que le flag n'est pas
+// résolu → true (fail-safe). Les appelants asynchrones font `await
+// jbFetchSafeMode()` avant de rendre, donc l'état est connu à ce moment-là.
+function jbIsSafeMode() {
+  return jbSafeModeState === null ? true : jbSafeModeState;
+}
+window.jbIsSafeMode = jbIsSafeMode;
+window.jbFetchSafeMode = jbFetchSafeMode;
+
+// Bandeau honnête, présent en haut de chaque page qui charge app.js.
+// Sobre, digne, pas alarmiste. role="status" (pas alert : ce n'est pas une
+// urgence, c'est un aveu).
+function jbInjectSafeBanner() {
+  jbFetchSafeMode().then(function(on) {
+    if (!on || document.getElementById('jb-safe-banner')) return;
+    document.body.classList.add('jb-safe-mode');  // CSS masque les CTA morts
+    var bar = document.createElement('div');
+    bar.id = 'jb-safe-banner';
+    bar.className = 'jb-safe-banner';
+    bar.setAttribute('role', 'status');
+    bar.innerHTML =
+      '<div class="jb-safe-banner-inner">' +
+        '<span class="jb-safe-banner-icon" aria-hidden="true">⏸</span>' +
+        '<p class="jb-safe-banner-text">' +
+          '<strong>Analyse personnalisée suspendue.</strong> ' +
+          'Nous faisons revalider notre contenu juridique par un juriste. En attendant, nous préférons ' +
+          'vous orienter vers une permanence humaine plutôt que risquer de vous dire faux.' +
+        '</p>' +
+        '<a class="jb-safe-banner-link" href="/annuaire.html">Voir les permanences</a>' +
+      '</div>';
+    var anchor = document.querySelector('.notice-juridique-bar');
+    if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(bar, anchor.nextSibling);
+    else document.body.insertBefore(bar, document.body.firstChild);
+  });
+}
+
+// Écran d'orientation affiché à la place de toute analyse personnalisée.
+// Utilise les ressources renvoyées par l'API si elle en fournit, sinon le
+// repli local. Jamais d'écran vide, jamais d'erreur technique.
+function buildSafeModeHtml(data) {
+  // Priorité : payload de la réponse API (/api/triage renvoie la notice au
+  // top-level) → notice de /api/config → repli local. Le serveur est la source
+  // des textes et des contacts : on ne duplique pas ici ce qu'il sait déjà.
+  var p = (data && (data.legal_safe_mode_response || data.safe_mode_response)) || data || {};
+  if (!p.message && !p.resources && jbSafeNotice) p = jbSafeNotice;
+
+  var resources = p.resources || p.ressources || [];
+  if (!Array.isArray(resources) || !resources.length) resources = JB_SAFE_RESOURCES;
+  var emergency = Array.isArray(p.emergency) ? p.emergency : [];
+
+  function resItem(r, cls) {
+    var nom = r.name || r.nom || '';
+    var note = r.note || r.type || r.description || '';
+    var url = r.url || r.site || r.lien || '';
+    // `tel` peut déjà être une URI ("tel:+41…"), `phone` est l'affichage humain.
+    var telHref = r.tel || (r.phone ? 'tel:' + String(r.phone).replace(/[^0-9+]/g, '') : '');
+    if (telHref && telHref.indexOf('tel:') !== 0) telHref = 'tel:' + String(telHref).replace(/[^0-9+]/g, '');
+    var phoneTxt = r.phone || (r.tel ? String(r.tel).replace(/^tel:/, '') : '');
+    var isInternal = url && url.indexOf('/') === 0;
+    var h = '<li class="jb-safe-res' + (cls ? ' ' + cls : '') + '">';
+    h += '<span class="jb-safe-res-name">' + escHtmlSafe(nom) + '</span>';
+    if (note) h += '<span class="jb-safe-res-type">' + escHtmlSafe(note) + '</span>';
+    var links = [];
+    if (telHref && phoneTxt) links.push('<a class="jb-safe-tel" href="' + escHtmlAttr(telHref) + '">' + escHtmlSafe(phoneTxt) + '</a>');
+    if (url) {
+      links.push('<a href="' + escHtmlAttr(url) + '"' + (isInternal ? '' : ' target="_blank" rel="noopener"') + '>' +
+        escHtmlSafe(isInternal ? url : String(url).replace(/^https?:\/\//, '')) + '</a>');
+    }
+    if (links.length) h += '<span class="jb-safe-res-links">' + links.join(' · ') + '</span>';
+    h += '</li>';
+    return h;
+  }
+
+  var stillWorks = Array.isArray(p.what_still_works) && p.what_still_works.length
+    ? p.what_still_works.map(function(s) { return '<li>' + escHtmlSafe(s) + '</li>'; }).join('')
+    : '<li><a href="/guides/">Les guides juridiques</a> — information générale, non validée par un juriste.</li>' +
+      '<li><a href="/annuaire.html">L\'annuaire des autorités et permanences</a> — les vrais interlocuteurs, près de chez vous.</li>' +
+      '<li><a href="/manifeste.html">Le manifeste</a> — pourquoi ce projet existe, et pourquoi il se tait aujourd\'hui.</li>';
+
+  var lead = p.message
+    ? escHtmlSafe(p.message)
+    : 'Notre analyse personnalisée (situation, délais, démarches, modèles de lettre) est suspendue. ' +
+      'Notre contenu juridique est en cours de revalidation par un juriste : tant que ce n\'est pas fait, ' +
+      'vous dire « vous avez X jours pour faire Y » serait un risque que nous ne voulons pas vous faire courir.';
+
+  var html = '<div class="jb-safe-panel" role="status">';
+  html += '<h2 class="jb-safe-title">' + escHtmlSafe(p.title || 'Analyse personnalisée suspendue') + '</h2>';
+  html += '<p class="jb-safe-lead">' + lead + '</p>';
+  html += '<p class="jb-safe-why">' + escHtmlSafe(p.why || 'Nous préférons ne rien dire plutôt que de dire faux.') + '</p>';
+
+  html += '<div class="jb-safe-block"><h3>Ce qui reste ouvert</h3><ul class="jb-safe-list">' + stillWorks + '</ul></div>';
+
+  html += '<div class="jb-safe-block"><h3>Vers qui vous tourner maintenant</h3>';
+  html += '<p class="jb-safe-note">' + escHtmlSafe(p.what_to_do ||
+    'Contactez une permanence juridique : c\'est gratuit ou à prix libre, et un humain répond de ce qu\'il dit.') + '</p>';
+  html += '<ul class="jb-safe-resources">' + resources.map(function(r) { return resItem(r, ''); }).join('') + '</ul></div>';
+
+  if (emergency.length) {
+    html += '<div class="jb-safe-block jb-safe-emergency">';
+    html += '<h3>' + escHtmlSafe(p.emergency_intro || 'Si vous êtes en danger immédiat, n\'attendez pas :') + '</h3>';
+    html += '<ul class="jb-safe-resources">' + emergency.map(function(r) { return resItem(r, 'jb-safe-res-urgent'); }).join('') + '</ul>';
+    html += '</div>';
+  }
+
+  html += '<div class="jb-safe-actions">' +
+      '<a href="' + escHtmlAttr(p.contact_page || '/annuaire.html') + '" class="btn btn-primary jb-safe-cta">Trouver une permanence</a>' +
+      '<a href="/" class="btn btn-secondary jb-safe-back">← Retour à l\'accueil</a>' +
+    '</div>';
+  html += '</div>';
+  return html;
+}
+window.buildSafeModeHtml = buildSafeModeHtml;
+
+// Encart posé en tête des pages fiche/résultat en mode sûr : le contenu
+// documentaire reste lisible, mais il est explicitement présenté comme non
+// validé, et la personnalisation (plan, délais, lettre) est retirée.
+function buildSafeModeNoticeHtml() {
+  return '<div class="jb-safe-notice" role="status">' +
+      '<p><strong>Contenu en revalidation.</strong> Cette fiche est de l\'information juridique générale, ' +
+      '<strong>non validée par un juriste humain</strong>. Nous avons suspendu l\'analyse personnalisée, ' +
+      'les délais annoncés et les modèles de lettre : nous ne voulons pas risquer de vous faire perdre un droit.</p>' +
+      '<p class="jb-safe-notice-cta">Pour votre cas précis : <a href="/annuaire.html">contactez une permanence juridique</a>.</p>' +
+    '</div>';
+}
+
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', jbInjectSafeBanner, { once: true });
+  } else {
+    jbInjectSafeBanner();
+  }
+}
+
 // ===== Consultation flow =====
 
 // Refactor 2026-04-30 : abandon du quizz rigide template-de-fiche-1 (causait
@@ -42,12 +266,22 @@ async function initConsultation(domaine) {
   var placeholder = DOMAIN_PLACEHOLDERS[domaine] || 'Décrivez votre situation en quelques mots, comme à un ami...';
   var domaineLabel = domaine.charAt(0).toUpperCase() + domaine.slice(1);
 
+  // Mode sûr : on ne promet PLUS d'analyse. On garde volontairement le champ de
+  // description (c'est lui qui permet au serveur de détecter une situation de
+  // violence/détresse et de renvoyer l'écran d'urgence), mais on annonce
+  // franchement ce qui va se passer : une orientation, pas un verdict.
+  var safeMode = await jbFetchSafeMode();
+  var intro = safeMode
+    ? 'Notre analyse personnalisée est suspendue (contenu en revalidation par un juriste). Décrivez quand même votre situation : nous vous orientons vers la permanence compétente — et, si vous êtes en danger, vers les bons secours.'
+    : 'Décrivez votre cas en quelques mots, dans vos mots à vous. Notre IA identifie ensuite la situation juridique précise et vous oriente.';
+  var ctaLabel = safeMode ? 'Voir vers qui me tourner' : 'Analyser ma situation';
+
   card.innerHTML =
     '<h1 style="margin:0 0 0.5rem;font-size:1.5rem;">Votre situation — ' + domaineLabel + '</h1>' +
-    '<p style="color:#4a5b6e;margin:0 0 1.25rem;line-height:1.5;">Décrivez votre cas en quelques mots, dans vos mots à vous. Notre IA identifie ensuite la situation juridique précise et vous oriente.</p>' +
+    '<p style="color:#4a5b6e;margin:0 0 1.25rem;line-height:1.5;">' + intro + '</p>' +
     '<textarea id="consultText" rows="5" aria-label="Décrivez votre situation juridique" maxlength="800" placeholder="' + placeholder.replace(/"/g, '&quot;') + '" style="width:100%;padding:0.85rem 1rem;font-size:1rem;line-height:1.55;border:1.5px solid #c9d4df;border-radius:8px;font-family:inherit;resize:vertical;min-height:120px;"></textarea>' +
     '<div style="display:flex;gap:0.75rem;margin-top:1rem;flex-wrap:wrap;">' +
-      '<button class="btn btn-primary" onclick="submitConsultText()" style="flex:1;min-width:200px;padding:0.85rem 1.5rem;font-size:1rem;font-weight:600;background:#8B2500;color:#fff;border:none;border-radius:999px;cursor:pointer;">Analyser ma situation</button>' +
+      '<button class="btn btn-primary" onclick="submitConsultText()" style="flex:1;min-width:200px;padding:0.85rem 1.5rem;font-size:1rem;font-weight:600;background:#8B2500;color:#fff;border:none;border-radius:999px;cursor:pointer;">' + ctaLabel + '</button>' +
       '<a href="/" class="btn btn-secondary" style="padding:0.85rem 1.25rem;font-size:0.95rem;color:#4a5b6e;text-decoration:none;border:1px solid #c9d4df;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;">Retour</a>' +
     '</div>' +
     '<p style="color:#6a7787;font-size:0.82rem;margin-top:1rem;">🔒 Anonyme · Aucun compte requis · Gratuit</p>';
@@ -76,12 +310,17 @@ function startTextTriage(prefill) {
   var progress = document.querySelector('.consult-progress');
   if (progress) progress.style.display = 'none';
   var safe = (prefill || '').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+  // Mode sûr : jbIsSafeMode() vaut true tant que le flag n'est pas résolu
+  // (fail-safe), donc l'intro n'annonce jamais une analyse qu'on ne fera pas.
+  var introTxt = jbIsSafeMode()
+    ? 'Analyse personnalisée suspendue — nous vous orientons vers une permanence humaine.'
+    : 'Vérifiez ou complétez votre description ci-dessous. Notre IA identifie la situation juridique précise, puis vous pose les bonnes questions.';
   card.innerHTML =
     '<h1 style="margin:0 0 0.5rem;font-size:1.5rem;">Votre situation</h1>' +
-    '<p style="color:#4a5b6e;margin:0 0 1.25rem;line-height:1.5;">Vérifiez ou complétez votre description ci-dessous. Notre IA identifie la situation juridique précise, puis vous pose les bonnes questions.</p>' +
+    '<p style="color:#4a5b6e;margin:0 0 1.25rem;line-height:1.5;">' + introTxt + '</p>' +
     '<textarea id="consultText" rows="5" aria-label="Décrivez votre situation juridique" maxlength="800" style="width:100%;padding:0.85rem 1rem;font-size:1rem;line-height:1.55;border:1.5px solid #c9d4df;border-radius:8px;font-family:inherit;resize:vertical;min-height:120px;">' + safe + '</textarea>' +
     '<div style="display:flex;gap:0.75rem;margin-top:1rem;flex-wrap:wrap;">' +
-      '<button class="btn btn-primary" onclick="submitConsultText()" style="flex:1;min-width:200px;padding:0.85rem 1.5rem;font-size:1rem;font-weight:600;background:#8B2500;color:#fff;border:none;border-radius:999px;cursor:pointer;">Analyser ma situation</button>' +
+      '<button class="btn btn-primary" onclick="submitConsultText()" style="flex:1;min-width:200px;padding:0.85rem 1.5rem;font-size:1rem;font-weight:600;background:#8B2500;color:#fff;border:none;border-radius:999px;cursor:pointer;">' + (jbIsSafeMode() ? 'Voir vers qui me tourner' : 'Analyser ma situation') + '</button>' +
       '<a href="/" class="btn btn-secondary" style="padding:0.85rem 1.25rem;font-size:0.95rem;color:#4a5b6e;text-decoration:none;border:1px solid #c9d4df;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;">Retour</a>' +
     '</div>' +
     '<p style="color:#6a7787;font-size:0.82rem;margin-top:1rem;">🔒 Anonyme · Aucun compte requis · Gratuit</p>';
@@ -118,7 +357,15 @@ async function submitConsultText(safetyAck) {
   try { sessionStorage.setItem('jb_last_text', texte); } catch (e) { /* noop */ }
   var lang = typeof getLang === 'function' ? getLang() : 'fr';
   var card = document.getElementById('questionCard');
-  if (card) card.innerHTML = '<div class="loading-indicator" role="status" aria-live="polite" style="text-align:center;padding:3rem 1rem;color:#4a5b6e;font-size:1.1rem;">⚖️ Analyse en cours…</div>';
+
+  // Mode sûr : on continue d'APPELER /api/triage — c'est le serveur qui détecte
+  // la détresse/violence et renvoie safety_stop, et ce filet-là doit rester
+  // intact. Mais handleTriageResponse n'affichera aucune analyse affirmative.
+  var safeMode = await jbFetchSafeMode();
+  if (card) {
+    card.innerHTML = '<div class="loading-indicator" role="status" aria-live="polite" style="text-align:center;padding:3rem 1rem;color:#4a5b6e;font-size:1.1rem;">'
+      + (safeMode ? 'Un instant…' : '⚖️ Analyse en cours…') + '</div>';
+  }
 
   try {
     var res = await fetch('/api/triage?lang=' + encodeURIComponent(lang), {
@@ -153,6 +400,21 @@ function handleTriageResponse(data) {
         window.history.replaceState(null, '', u.toString());
       }
     } catch (e) { /* noop */ }
+  }
+
+  // 0) MODE SÛR — rien de personnalisé ne s'affiche.
+  //    Deux cas couverts :
+  //      a) l'API répond {status:"legal_safe_mode"} (backend gated) ;
+  //      b) le front est en mode sûr mais l'API a quand même renvoyé une
+  //         analyse (backend pas encore gated, flag désynchronisé) → on refuse
+  //         de l'afficher. C'est le fail-safe : le front ne montre JAMAIS un
+  //         délai ou un acte tant que LEGAL_SAFE_MODE est actif.
+  //    Exception unique : safety_stop (violence/détresse) passe toujours,
+  //    il est traité plus bas et reste prioritaire sur tout le reste.
+  if (data.status !== 'safety_stop' && (data.status === 'legal_safe_mode' || jbIsSafeMode())) {
+    var safeCard = document.getElementById('questionCard');
+    if (safeCard) safeCard.innerHTML = buildSafeModeHtml(data);
+    return;
   }
 
   // 1) Le triage a besoin de plus d'info → afficher les questions LLM
@@ -401,6 +663,13 @@ function showTriageError(msg) {
   if (window.jbTrack) jbTrack('triage_error', jbCaseId);
   var card = document.getElementById('questionCard');
   if (!card) return;
+  // En mode sûr, une panne technique ne doit pas se traduire par un écran
+  // d'erreur (ni un écran vide) : on montre l'orientation, qui est de toute
+  // façon la seule chose qu'on a le droit de dire.
+  if (jbIsSafeMode()) {
+    card.innerHTML = buildSafeModeHtml(null);
+    return;
+  }
   card.innerHTML =
     '<div class="error-box"><strong>Une erreur est survenue.</strong>' +
     '<p style="margin:0.5rem 0 1rem;">' + escHtmlSafe(msg || 'Réessayez plus tard.') + '</p>' +
@@ -561,6 +830,10 @@ var jbResultCaseId = '';
 // Renvoie '' si on n'arrive pas depuis un triage (accès direct/SEO/lien partagé).
 function renderTriageAnalysis(triage, caseId) {
   if (!triage) return '';
+  // Fail-safe : cette section AFFIRME (urgence, compte-à-rebours de délai,
+  // plan d'action, « vous pouvez agir sans avocat »). Elle ne doit jamais
+  // sortir en mode sûr, quel que soit l'appelant.
+  if (jbIsSafeMode()) return '';
   var cid = escHtmlAttr(caseId || '');
   var html = '';
 
@@ -725,6 +998,8 @@ async function loadResultat(ficheId) {
     return;
   }
 
+  var safeMode = await jbFetchSafeMode();
+
   var r = fiche.reponse;
   var html = '';
   var delay = 0;
@@ -734,42 +1009,30 @@ async function loadResultat(ficheId) {
     return ' style="animation-delay:' + delay + 's"';
   }
 
+  // Mode sûr : on annonce d'emblée que la fiche n'est pas validée par un
+  // juriste, AVANT que le citoyen lise quoi que ce soit.
+  if (safeMode) html += buildSafeModeNoticeHtml();
+
   // Summary card
   html += '<div class="card-highlight">';
   html += '<h3>' + t('result.your_situation') + '</h3>';
   html += '<p>' + r.explication + '</p>';
   html += '</div>';
 
-  // Trust badge — review juridique critique (si applicable)
-  if (fiche.claude_legal_review_date) {
-    var reviewDate = String(fiche.claude_legal_review_date);
-    var reviewNote = fiche.claude_legal_review_notes || 'verified';
-    var reviewLabel;
-    if (reviewNote === 'fixed') {
-      reviewLabel = 'Articles, délais et autorités relus et corrigés le ' + reviewDate;
-    } else if (reviewNote === 'verified_minor_imprecision') {
-      reviewLabel = 'Articles, délais et autorités relus le ' + reviewDate + ' (imprécisions mineures connues)';
-    } else if (reviewNote === 'verified_information_only') {
-      // Fiches purement informationnelles — pas de cascade ni délai péremptoire
-      reviewLabel = 'Références juridiques relues le ' + reviewDate + ' (fiche informationnelle)';
-    } else {
-      reviewLabel = 'Articles, délais et autorités relus le ' + reviewDate;
-    }
-    html += '<div class="legal-review-badge" role="status" aria-label="Vérification juridique"' + stagger() + '>';
-    html += '<span class="badge-icon" aria-hidden="true">⚖️</span>';
-    html += '<div class="badge-text">';
-    html += '<strong>Vérification juridique critique</strong>';
-    html += '<span class="badge-detail">' + reviewLabel + '</span>';
-    html += '<span class="badge-disclaimer">Relecture par IA — ne remplace pas un conseil d\'avocat humain.</span>';
-    html += '</div>';
-    html += '</div>';
-  }
+  // ⚠ SUPPRIMÉ 2026-07-12 — "Trust badge : Vérification juridique critique /
+  // Articles, délais et autorités relus". C'était un MENSONGE : les fiches ont
+  // été écrites ET relues par un LLM, aucune n'a jamais été relue par un
+  // juriste humain (0/314). Le champ claude_legal_review_date reste dans les
+  // données (traçabilité interne) mais n'est PLUS montré au citoyen comme un
+  // gage de confiance. Ne pas le réintroduire sans review humaine réelle.
 
   // Analyse personnalisée du triage (plan, urgence, délais, avocat, contacts).
   // Vide si accès direct/SEO (pas de triage en sessionStorage) → fiche brute.
-  html += renderTriageAnalysis(triage, caseId);
+  // En mode sûr : jamais rendue (elle affirme des délais et des actes) — même
+  // si un vieux résultat traîne encore dans sessionStorage.
+  if (!safeMode) html += renderTriageAnalysis(triage, caseId);
 
-  // Premium CTA
+  // Premium CTA (vide en mode sûr — le paiement est coupé)
   html += renderPremiumCTA();
 
   // Articles de loi
@@ -798,8 +1061,12 @@ async function loadResultat(ficheId) {
     html += '</div>';
   }
 
-  // Modele lettre
-  if (r.modeleLettre) {
+  // Modele lettre — COUPÉ en mode sûr. C'est le cœur du danger : des modèles
+  // de lettres ont fait faire des actes juridiques inexistants (opposition AI
+  // art. 52 LPGA alors que la voie est le recours au tribunal cantonal sous
+  // 30 jours, art. 69 LAI) ou affirmé « dans le délai légal » sur un délai
+  // déjà dépassé. Tant que le corpus n'est pas revalidé, on n'en montre aucun.
+  if (r.modeleLettre && !safeMode) {
     html += '<div class="card"' + stagger() + '>';
     html += '<h3>' + t('result.model_letter') + '</h3>';
     html += '<div class="lettre-box">';
@@ -842,12 +1109,15 @@ async function loadResultat(ficheId) {
   html += '<a href="/" class="btn btn-outline">' + t('action.nouvelle_consultation') + '</a>';
   html += '</div>';
 
-  // Upsell premium (discret)
-  html += '<div class="upsell">';
-  html += '<h3>' + t('upsell.title') + '</h3>';
-  html += '<p>' + t('upsell.text') + '</p>';
-  html += '<a href="/premium.html" class="btn btn-sm">' + t('upsell.button') + '</a>';
-  html += '</div>';
+  // Upsell premium (discret) — masqué en mode sûr : on ne vend pas une analyse
+  // approfondie qu'on vient de juger non fiable.
+  if (!safeMode) {
+    html += '<div class="upsell">';
+    html += '<h3>' + t('upsell.title') + '</h3>';
+    html += '<p>' + t('upsell.text') + '</p>';
+    html += '<a href="/premium.html" class="btn btn-sm">' + t('upsell.button') + '</a>';
+    html += '</div>';
+  }
 
   // Quick feedback widget (1-clic, anonyme, opt-in agrégat) — funnel simple
   // pour augmenter le taux d'outcomes (0 en 9 jours sur la prod). Le formulaire
@@ -980,6 +1250,10 @@ async function loadSearchResultat(query, safetyAck) {
   try { sessionStorage.setItem('jb_last_text', query); } catch (e) { /* noop */ }
   startLoadingIndicator(container);
 
+  // Résolu AVANT tout rendu : les fonctions de rendu appellent jbIsSafeMode()
+  // de manière synchrone.
+  await jbFetchSafeMode();
+
   try {
     var lang = typeof getLang === 'function' ? getLang() : 'fr';
     var res = await fetch('/api/search?q=' + encodeURIComponent(query) + '&lang=' + encodeURIComponent(lang) + (safetyAck === true ? '&safety_ack=1' : ''));
@@ -987,19 +1261,31 @@ async function loadSearchResultat(query, safetyAck) {
     stopLoadingIndicator();
 
     if (!res.ok || data.error) {
-      container.innerHTML =
-        '<div class="error-box">' + (data.error || t('result.no_result')) + '<br><a href="/">' + t('result.back_home') + '</a></div>';
+      // En mode sûr, jamais d'écran d'erreur technique : on oriente.
+      container.innerHTML = jbIsSafeMode()
+        ? buildSafeModeHtml(null)
+        : '<div class="error-box">' + (data.error || t('result.no_result')) + '<br><a href="/">' + t('result.back_home') + '</a></div>';
       return;
     }
 
     // SÉCURITÉ D'ABORD — la barre de recherche du hero peut recevoir un cri de
     // détresse/violence : afficher l'écran d'urgence, jamais une fiche générique.
+    // Reste prioritaire sur le mode sûr.
     if (data.status === 'safety_stop') {
       container.innerHTML = buildSafetyStopHtml(data);
       if (window.jbTrack) jbTrack('safety_stop_shown', null);
       return;
     }
 
+    // Mode sûr côté API (l'endpoint est gaté) → écran d'orientation.
+    if (data.status === 'legal_safe_mode') {
+      container.innerHTML = buildSafeModeHtml(data);
+      return;
+    }
+
+    // Sinon : on rend la fiche documentaire, mais les renderers retirent d'eux-
+    // mêmes tout ce qui affirme (délais, lettres, règles, CTA payants) quand le
+    // mode sûr est actif.
     if (data.type === 'taxonomie') {
       renderTaxonomieResult(data, query, container);
     } else {
@@ -1009,13 +1295,17 @@ async function loadSearchResultat(query, safetyAck) {
     if (window.jbTrack) jbTrack('triage_result_rendered', null);
   } catch (e) {
     stopLoadingIndicator();
-    container.innerHTML = '<div class="error-box">' + t('result.error_connection') + ' <a href="/">' + t('result.back_home') + '</a></div>';
+    container.innerHTML = jbIsSafeMode()
+      ? buildSafeModeHtml(null)
+      : '<div class="error-box">' + t('result.error_connection') + ' <a href="/">' + t('result.back_home') + '</a></div>';
   }
 }
 
 function renderTaxonomieResult(data, query, container) {
   var q = data.qualification || {};
   var html = '';
+
+  if (jbIsSafeMode()) html += buildSafeModeNoticeHtml();
 
   html += '<div class="result-query-echo"><span class="result-query-label">' + t('result.your_search') + '</span> ' + escHtml(query) + '</div>';
 
@@ -1042,6 +1332,10 @@ function renderTaxonomieResult(data, query, container) {
 function renderEnrichedResult(data, query, container) {
   var html = '';
   var delay = 0;
+  // Mode sûr : on garde la fiche documentaire (c'est un guide), on retire tout
+  // ce qui AFFIRME un délai ou un acte (cartes délais, modèles de lettre,
+  // règles normatives) et tout ce qui vend (CTA premium, bouton lettre).
+  var safeMode = jbIsSafeMode();
 
   function stagger() {
     delay += 0.07;
@@ -1061,6 +1355,8 @@ function renderEnrichedResult(data, query, container) {
     var label = t('tier.' + tier) || ('T' + tier);
     return '<span class="tier-badge tier-' + tier + '">' + label + '</span>';
   }
+
+  if (safeMode) html += buildSafeModeNoticeHtml();
 
   // Query echo
   html += '<div class="result-query-echo"><span class="result-query-label">' + t('result.your_search') + '</span> ' + escHtml(query) + '</div>';
@@ -1105,8 +1401,10 @@ function renderEnrichedResult(data, query, container) {
   html += '</div>';
 
   // Delais — V3 card design (show ALL, not just urgent)
+  // COUPÉ en mode sûr : c'est exactement là que vivaient les faux délais
+  // (« 7 jours » moisissure alors que l'art. 257g CO dit « sans retard »).
   var delais = data.delais || [];
-  if (delais.length) {
+  if (delais.length && !safeMode) {
     html += '<div class="card"' + stagger() + '>';
     html += '<h3>' + t('result.delais_title') + '</h3>';
     delais.slice(0, 5).forEach(function(d) {
@@ -1229,9 +1527,9 @@ function renderEnrichedResult(data, query, container) {
     html += '</div>';
   }
 
-  // Templates (modeles de lettres)
+  // Templates (modeles de lettres) — COUPÉ en mode sûr (cf. modeleLettre)
   var templates = data.templates || [];
-  if (templates.length) {
+  if (templates.length && !safeMode) {
     html += '<div class="card"' + stagger() + '>';
     html += '<h3>' + t('result.templates_title') + '</h3>';
     templates.forEach(function(tpl, i) {
@@ -1339,8 +1637,8 @@ function renderEnrichedResult(data, query, container) {
     html += '</div>';
   }
 
-  // V4: Vulgarisation deadlines (supplement existing)
-  if (vulg && vulg.delais && vulg.delais.length && (!delais || delais.length === 0)) {
+  // V4: Vulgarisation deadlines (supplement existing) — coupé en mode sûr
+  if (vulg && vulg.delais && vulg.delais.length && (!delais || delais.length === 0) && !safeMode) {
     html += '<div class="card"' + stagger() + '>';
     html += '<h3>' + t('result.delais_title') + '</h3>';
     vulg.delais.forEach(function(d) {
@@ -1354,8 +1652,9 @@ function renderEnrichedResult(data, query, container) {
   }
 
   // V4: Normative rules — applicable legal rules
+  // Coupé en mode sûr : ces règles disent au citoyen « la loi vous donne X ».
   var normRules = data.normative_rules || [];
-  if (normRules.length) {
+  if (normRules.length && !safeMode) {
     html += '<div class="card"' + stagger() + '>';
     html += '<h3>' + t('result.normative_rules_title') + '</h3>';
     normRules.slice(0, 5).forEach(function(r) {
@@ -1378,7 +1677,7 @@ function renderEnrichedResult(data, query, container) {
     .replace('{{arrets}}', meta.jurisprudenceCount || juris.length || 0);
   html += '<span>' + footerText;
   if (vulg) html += ', <span class="source-count">' + t('result.source_asloca_short') + '</span>';
-  if (normRules.length) html += ', <span class="source-count">' + t('result.source_rules').replace('{{count}}', normRules.length) + '</span>';
+  if (normRules.length && !safeMode) html += ', <span class="source-count">' + t('result.source_rules').replace('{{count}}', normRules.length) + '</span>';
   html += '</span></div>';
 
   // Suggested follow-up questions
@@ -1418,10 +1717,12 @@ function renderEnrichedResult(data, query, container) {
 
   // Hook citizen-ui.js : bouton "Générer une lettre" + outcomes prompt
   // Non-intrusif : no-op si citizen-ui.js pas chargé ou données manquantes.
+  // Mode sûr : le bouton "Générer une lettre" n'est PAS posé (génération de
+  // lettres coupée). Le prompt d'outcomes reste (il ne conseille rien).
   try {
     var caseId = data.case_id || data.sessionId;
     var ficheIdForLetter = (data.fiche && data.fiche.id) || data.ficheId;
-    if (caseId && ficheIdForLetter && typeof window.renderLetterButton === 'function') {
+    if (!safeMode && caseId && ficheIdForLetter && typeof window.renderLetterButton === 'function') {
       window.renderLetterButton({
         case_id: caseId,
         ficheId: ficheIdForLetter,
@@ -1465,6 +1766,9 @@ function renderCanonCase(c, kind) {
 }
 
 function renderPremiumCTA() {
+  // Mode sûr : aucun CTA payant. Le paiement est coupé et l'analyse
+  // approfondie qu'on vendait est justement celle qu'on ne peut plus garantir.
+  if (jbIsSafeMode()) return '';
   return '<div class="premium-cta-result">' +
     '<div class="premium-cta-result-header">' +
     '<strong>' + t('premiumcta_result.title') + '</strong>' +

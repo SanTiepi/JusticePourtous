@@ -672,10 +672,7 @@ async function callClaude(system, user, apiKey) {
   const body = JSON.stringify({
     model: 'claude-sonnet-4-6',
     max_tokens: 2000,
-    // Prompt caching : cache_control posé pour parité avec STEP1/navigator, MAIS no-op en l'état —
-    // STEP3_SYSTEM ne fait que ~525 tokens, sous le minimum cache de Sonnet 4.6 (2048 tok), donc
-    // aucune entrée de cache n'est créée (mesuré 2026-06-19). Le dossier variable passe en user
-    // message, rien d'autre à cacher ici. Deviendra effectif si STEP3_SYSTEM dépasse 2048 tokens.
+    // Prompt caching : STEP3_SYSTEM (gros prompt juriste stable) mis en cache via cache_control.
     system: [{ type: 'text', text: system, cache_control: { type: 'ephemeral' } }],
     messages: [{ role: 'user', content: user }]
   });

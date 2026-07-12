@@ -1,5 +1,84 @@
 [
   {
+    "intent_id": "assurance_ai_opposition",
+    "fiche_id": "assurance_ai_opposition",
+    "domaine": "assurances",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "LAI 57a"
+      },
+      {
+        "type": "article_present",
+        "value": "LAI 69"
+      },
+      {
+        "type": "article_present",
+        "value": "LPGA 56"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "LAI 57a"
+      },
+      {
+        "type": "delai_exists",
+        "match": "30|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "tag_present",
+        "value": "opposition"
+      }
+    ]
+  },
+  {
+    "intent_id": "assurance_lamal_subsides_refus",
+    "fiche_id": "assurance_lamal_subsides_refus",
+    "domaine": "assurances",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "LAMal 65"
+      },
+      {
+        "type": "article_present",
+        "value": "LPGA 52"
+      },
+      {
+        "type": "article_present",
+        "value": "LPGA 60"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "LAMal 65"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "delai_exists",
+        "match": "30|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "LAMal"
+      }
+    ]
+  },
+  {
     "intent_id": "bail_augmentation_loyer",
     "fiche_id": "bail_augmentation_loyer",
     "domaine": "bail",
@@ -113,7 +192,7 @@
       },
       {
         "type": "delai_exists",
-        "match": "7|jour"
+        "match": "30|jour"
       },
       {
         "type": "confiance_at_least",
@@ -140,11 +219,11 @@
       },
       {
         "type": "article_present",
-        "value": "CO 259a"
+        "value": "CO 257g"
       },
       {
         "type": "article_present",
-        "value": "CO 259g"
+        "value": "CO 259a"
       },
       {
         "type": "article_with_source_id",
@@ -172,6 +251,49 @@
       {
         "type": "tag_present",
         "value": "moisissure"
+      }
+    ]
+  },
+  {
+    "intent_id": "bail_depot_garantie",
+    "fiche_id": "bail_depot_garantie",
+    "domaine": "bail",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "CO 257e"
+      },
+      {
+        "type": "article_present",
+        "value": "CO 267"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "CO 257e"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "escalade_type_present",
+        "value": "asloca"
+      },
+      {
+        "type": "delai_exists",
+        "match": "30|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "garantie"
       }
     ]
   },
@@ -219,6 +341,96 @@
     ]
   },
   {
+    "intent_id": "bail_expulsion",
+    "fiche_id": "bail_expulsion",
+    "domaine": "bail",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "CPC 343"
+      },
+      {
+        "type": "article_present",
+        "value": "CO 267"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "CPC 343"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "escalade_type_present",
+        "value": "asloca"
+      },
+      {
+        "type": "delai_exists",
+        "match": "30|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "expulsion"
+      }
+    ]
+  },
+  {
+    "intent_id": "bail_logement_insalubre",
+    "fiche_id": "bail_logement_insalubre",
+    "domaine": "bail",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "CO 258"
+      },
+      {
+        "type": "article_present",
+        "value": "CO 259a"
+      },
+      {
+        "type": "article_present",
+        "value": "CO 259b"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "CO 258"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "escalade_type_present",
+        "value": "asloca"
+      },
+      {
+        "type": "delai_exists",
+        "match": "immédiat"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "insalubre"
+      }
+    ]
+  },
+  {
     "intent_id": "bail_loyer_abusif",
     "fiche_id": "bail_loyer_abusif",
     "domaine": "bail",
@@ -239,6 +451,53 @@
       {
         "type": "article_with_source_id",
         "ref_regex": "CO 269"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "escalade_type_present",
+        "value": "asloca"
+      },
+      {
+        "type": "delai_exists",
+        "match": "30|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "loyer"
+      }
+    ]
+  },
+  {
+    "intent_id": "bail_loyer_initial_abusif",
+    "fiche_id": "bail_loyer_initial_abusif",
+    "domaine": "bail",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "CO 270"
+      },
+      {
+        "type": "article_present",
+        "value": "CO 269"
+      },
+      {
+        "type": "article_present",
+        "value": "CO 269d"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "CO 270"
       },
       {
         "type": "jurisprudence_min_count",
@@ -297,7 +556,7 @@
       },
       {
         "type": "delai_exists",
-        "match": "7|jour"
+        "match": "30|jour"
       },
       {
         "type": "confiance_at_least",
@@ -356,6 +615,311 @@
       {
         "type": "tag_present",
         "value": "résiliation"
+      }
+    ]
+  },
+  {
+    "intent_id": "circulation_accident_responsabilite_civile",
+    "fiche_id": "circulation_accident_responsabilite_civile",
+    "domaine": "circulation",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "LCR 58"
+      },
+      {
+        "type": "article_present",
+        "value": "LCR 65"
+      },
+      {
+        "type": "article_present",
+        "value": "LCR 83"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "LCR 58"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "delai_exists",
+        "match": "14|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "accident"
+      }
+    ]
+  },
+  {
+    "intent_id": "circulation_amende_ordre",
+    "fiche_id": "circulation_amende_ordre",
+    "domaine": "circulation",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "LCR 6"
+      },
+      {
+        "type": "article_present",
+        "value": "LAO 1"
+      },
+      {
+        "type": "article_present",
+        "value": "LCR 90"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "LCR 6"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "delai_exists",
+        "match": "30|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "amende"
+      }
+    ]
+  },
+  {
+    "intent_id": "circulation_retrait_permis_exces_vitesse",
+    "fiche_id": "circulation_retrait_permis_exces_vitesse",
+    "domaine": "circulation",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "LCR 16c"
+      },
+      {
+        "type": "article_present",
+        "value": "LCR 16b"
+      },
+      {
+        "type": "article_present",
+        "value": "LCR 90"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "LCR 16c"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "delai_exists",
+        "match": "20|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "retrait permis"
+      }
+    ]
+  },
+  {
+    "intent_id": "consommation_annulation_commande_en_ligne",
+    "fiche_id": "consommation_annulation_commande_en_ligne",
+    "domaine": "consommation",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "CO 40a"
+      },
+      {
+        "type": "article_present",
+        "value": "CO 40e"
+      },
+      {
+        "type": "article_present",
+        "value": "LCD 3"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "CO 40a"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 1
+      },
+      {
+        "type": "delai_exists",
+        "match": "14|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "annulation"
+      }
+    ]
+  },
+  {
+    "intent_id": "consommation_defaut_produit_garantie",
+    "fiche_id": "consommation_defaut_produit_garantie",
+    "domaine": "consommation",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "CO 197"
+      },
+      {
+        "type": "article_present",
+        "value": "CO 201"
+      },
+      {
+        "type": "article_present",
+        "value": "CO 205"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "CO 197"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "escalade_type_present",
+        "value": "conciliation"
+      },
+      {
+        "type": "delai_exists",
+        "match": "30|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "défaut"
+      }
+    ]
+  },
+  {
+    "intent_id": "consommation_livraison_retard",
+    "fiche_id": "consommation_livraison_retard",
+    "domaine": "consommation",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "CO 102"
+      },
+      {
+        "type": "article_present",
+        "value": "CO 107"
+      },
+      {
+        "type": "article_present",
+        "value": "CO 109"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "CO 102"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "delai_exists",
+        "match": "30|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "livraison"
+      }
+    ]
+  },
+  {
+    "intent_id": "dettes_arrangement_amiable",
+    "fiche_id": "dettes_arrangement_amiable",
+    "domaine": "dettes",
+    "priority": "high",
+    "invariants": [
+      {
+        "type": "article_present",
+        "value": "LP 293"
+      },
+      {
+        "type": "article_present",
+        "value": "LP 85a"
+      },
+      {
+        "type": "article_with_source_id",
+        "ref_regex": "LP 293"
+      },
+      {
+        "type": "jurisprudence_min_count",
+        "value": 2
+      },
+      {
+        "type": "escalade_type_present",
+        "value": "caritas"
+      },
+      {
+        "type": "delai_exists",
+        "match": "7|jour"
+      },
+      {
+        "type": "confiance_at_least",
+        "value": "probable"
+      },
+      {
+        "type": "template_exists"
+      },
+      {
+        "type": "tag_present",
+        "value": "arrangement"
       }
     ]
   },
@@ -720,233 +1284,26 @@
     ]
   },
   {
-    "intent_id": "etranger_aide_urgence",
-    "fiche_id": "etranger_aide_urgence",
-    "domaine": "etrangers",
+    "intent_id": "entreprise_commandement_payer_societe",
+    "fiche_id": "entreprise_commandement_payer_societe",
+    "domaine": "entreprise",
     "priority": "high",
     "invariants": [
       {
         "type": "article_present",
-        "value": "Cst 12"
+        "value": "LP 69"
       },
       {
         "type": "article_present",
-        "value": "LAsi 82"
+        "value": "LP 74"
+      },
+      {
+        "type": "article_present",
+        "value": "LP 88"
       },
       {
         "type": "article_with_source_id",
-        "ref_regex": "Cst 12"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "delai_exists",
-        "match": "7|jour"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "aide urgence"
-      }
-    ]
-  },
-  {
-    "intent_id": "etranger_naturalisation",
-    "fiche_id": "etranger_naturalisation",
-    "domaine": "etrangers",
-    "priority": "high",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "LN 9"
-      },
-      {
-        "type": "article_present",
-        "value": "LN 11"
-      },
-      {
-        "type": "article_present",
-        "value": "LN 12"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "LN 9"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "delai_exists",
-        "match": "24|mois"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "naturalisation"
-      }
-    ]
-  },
-  {
-    "intent_id": "etranger_permis_b_renouvellement",
-    "fiche_id": "etranger_permis_b_renouvellement",
-    "domaine": "etrangers",
-    "priority": "high",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "LEI 33"
-      },
-      {
-        "type": "article_present",
-        "value": "LEI 62"
-      },
-      {
-        "type": "article_present",
-        "value": "LEI 58a"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "LEI 33"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "delai_exists",
-        "match": "3|mois"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "permis B"
-      }
-    ]
-  },
-  {
-    "intent_id": "etranger_regroupement_familial",
-    "fiche_id": "etranger_regroupement_familial",
-    "domaine": "etrangers",
-    "priority": "high",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "LEI 42"
-      },
-      {
-        "type": "article_present",
-        "value": "LEI 43"
-      },
-      {
-        "type": "article_present",
-        "value": "LEI 44"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "LEI 42"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "delai_exists",
-        "match": "5|an"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "regroupement"
-      }
-    ]
-  },
-  {
-    "intent_id": "etranger_renvoi_recours",
-    "fiche_id": "etranger_renvoi_recours",
-    "domaine": "etrangers",
-    "priority": "high",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "LEI 64"
-      },
-      {
-        "type": "article_present",
-        "value": "LEI 112"
-      },
-      {
-        "type": "article_present",
-        "value": "CEDH 8"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "LEI 64"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "delai_exists",
-        "match": "7|jour"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "renvoi"
-      }
-    ]
-  },
-  {
-    "intent_id": "etranger_violence_permis",
-    "fiche_id": "etranger_violence_permis",
-    "domaine": "etrangers",
-    "priority": "high",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "LEI 50"
-      },
-      {
-        "type": "article_present",
-        "value": "LEI 77"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "LEI 50"
+        "ref_regex": "LP 69"
       },
       {
         "type": "jurisprudence_min_count",
@@ -954,11 +1311,11 @@
       },
       {
         "type": "escalade_type_present",
-        "value": "lavi"
+        "value": "office_poursuites"
       },
       {
         "type": "delai_exists",
-        "match": "30|jour"
+        "match": "10|jour"
       },
       {
         "type": "confiance_at_least",
@@ -969,371 +1326,7 @@
       },
       {
         "type": "tag_present",
-        "value": "violence"
-      }
-    ]
-  },
-  {
-    "intent_id": "etranger_visa_schengen_refus",
-    "fiche_id": "etranger_visa_schengen_refus",
-    "domaine": "etrangers",
-    "priority": "high",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "Code des visas art. 32"
-      },
-      {
-        "type": "article_present",
-        "value": "LEI 65"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "Code des visas art\\. 32"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "tribunal"
-      },
-      {
-        "type": "delai_exists",
-        "match": "14|jour"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "Schengen"
-      }
-    ]
-  },
-  {
-    "intent_id": "famille_divorce_procedure",
-    "fiche_id": "famille_divorce_procedure",
-    "domaine": "famille",
-    "priority": "high",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "CC 111"
-      },
-      {
-        "type": "article_present",
-        "value": "CC 114"
-      },
-      {
-        "type": "article_present",
-        "value": "CPC 274"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "CC 111"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "avocat"
-      },
-      {
-        "type": "delai_exists",
-        "match": "60|jour"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "divorce"
-      }
-    ]
-  },
-  {
-    "intent_id": "famille_garde_modification",
-    "fiche_id": "famille_garde_modification",
-    "domaine": "famille",
-    "priority": "high",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "CC 134"
-      },
-      {
-        "type": "article_present",
-        "value": "CC 296"
-      },
-      {
-        "type": "article_present",
-        "value": "CC 301a"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "CC 134"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "delai_exists",
-        "match": "60|jour"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "garde"
-      }
-    ]
-  },
-  {
-    "intent_id": "famille_mesures_provisionnelles",
-    "fiche_id": "famille_mesures_provisionnelles",
-    "domaine": "famille",
-    "priority": "high",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "CPC 261"
-      },
-      {
-        "type": "article_present",
-        "value": "CPC 265"
-      },
-      {
-        "type": "article_present",
-        "value": "CC 172"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "CPC 261"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "avocat"
-      },
-      {
-        "type": "delai_exists",
-        "match": "7|jour"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "mesures provisionnelles"
-      }
-    ]
-  },
-  {
-    "intent_id": "famille_pension_impayee",
-    "fiche_id": "famille_pension_impayee",
-    "domaine": "famille",
-    "priority": "high",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "CP 217"
-      },
-      {
-        "type": "article_present",
-        "value": "CC 276"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "CP 217"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "lavi"
-      },
-      {
-        "type": "delai_exists",
-        "match": "3|mois"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "pension"
-      }
-    ]
-  },
-  {
-    "intent_id": "famille_pension_montant",
-    "fiche_id": "famille_pension_montant",
-    "domaine": "famille",
-    "priority": "high",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "CC 285"
-      },
-      {
-        "type": "article_present",
-        "value": "CC 125"
-      },
-      {
-        "type": "article_present",
-        "value": "CC 276"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "CC 285"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "avocat"
-      },
-      {
-        "type": "delai_exists",
-        "match": "30|jour"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "pension"
-      }
-    ]
-  },
-  {
-    "intent_id": "famille_succession_reserve",
-    "fiche_id": "famille_succession_reserve",
-    "domaine": "famille",
-    "priority": "high",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "CC 470"
-      },
-      {
-        "type": "article_present",
-        "value": "CC 471"
-      },
-      {
-        "type": "article_present",
-        "value": "CC 533"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "CC 470"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "avocat"
-      },
-      {
-        "type": "delai_exists",
-        "match": "6|mois"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "succession"
-      }
-    ]
-  },
-  {
-    "intent_id": "famille_violence_conjugale",
-    "fiche_id": "famille_violence_conjugale",
-    "domaine": "famille",
-    "priority": "high",
-    "invariants": [
-      {
-        "type": "article_present",
-        "value": "CC 28b"
-      },
-      {
-        "type": "article_present",
-        "value": "CP 126"
-      },
-      {
-        "type": "article_present",
-        "value": "CP 180"
-      },
-      {
-        "type": "article_with_source_id",
-        "ref_regex": "CC 28b"
-      },
-      {
-        "type": "jurisprudence_min_count",
-        "value": 2
-      },
-      {
-        "type": "escalade_type_present",
-        "value": "lavi"
-      },
-      {
-        "type": "delai_exists",
-        "match": "3|mois"
-      },
-      {
-        "type": "confiance_at_least",
-        "value": "probable"
-      },
-      {
-        "type": "template_exists"
-      },
-      {
-        "type": "tag_present",
-        "value": "violence"
+        "value": "commandement"
       }
     ]
   }

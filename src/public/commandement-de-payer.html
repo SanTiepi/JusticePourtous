@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Commandement de payer : vous avez 10 jours, et c'est gratuit</title>
+  <meta name="description" content="Vous avez reçu un commandement de payer ? Faire opposition est GRATUIT, se fait ORALEMENT au guichet, et vous n'avez PAS à vous justifier. Vous avez 10 jours. Texte de loi cité.">
+  <meta property="og:title" content="Commandement de payer : vous avez 10 jours, et c'est gratuit">
+  <meta property="og:description" content="Faire opposition est gratuit, oral, et sans justification. Des gens paient des dettes qu'ils ne doivent pas parce que personne ne leur a dit.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://justicepourtous.ch/commandement-de-payer.html">
+  <meta property="og:image" content="https://justicepourtous.ch/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://justicepourtous.ch/commandement-de-payer.html">
+  <style>
+    :root {
+      --bg: #fafaf7; --ink: #14181c; --ink-soft: #475569; --ink-muted: #94a3b8;
+      --accent: #b91c1c; --accent-soft: #fef2f2; --rule: #e2e8f0; --card: #ffffff;
+      --go: #15803d; --go-soft: #f0fdf4;
+      --serif: "Georgia", "Times New Roman", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font-family: var(--sans); line-height: 1.65; font-size: 17px;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
+    h1 { font-family: var(--serif); font-size: 2rem; line-height: 1.2; margin: 1.5rem 0 .5rem; }
+    h2 { font-family: var(--serif); font-size: 1.35rem; margin: 2.5rem 0 .75rem; }
+    .chapeau { font-size: 1.15rem; color: var(--ink-soft); margin-bottom: 2rem; }
+
+    /* Les trois faits. C'est tout le produit. Ils sont cités, pas résumés. */
+    .fait {
+      background: var(--card); border: 1px solid var(--rule); border-left: 4px solid var(--go);
+      border-radius: 4px; padding: 1.1rem 1.25rem; margin: 1rem 0;
+    }
+    .fait strong { display: block; font-size: 1.1rem; margin-bottom: .35rem; }
+    .fait .loi {
+      font-family: var(--serif); font-style: italic; color: var(--ink-soft);
+      font-size: .95rem; margin-top: .5rem; padding-top: .5rem; border-top: 1px dashed var(--rule);
+    }
+    .fait .loi b { font-style: normal; color: var(--ink); }
+
+    /* Le calcul. Arithmétique, pas conseil. */
+    .calc { background: var(--card); border: 1px solid var(--rule); border-radius: 4px; padding: 1.25rem; margin: 1.5rem 0; }
+    .calc label { display: block; font-weight: 600; margin-bottom: .4rem; }
+    .calc input[type="date"] {
+      font: inherit; padding: .6rem .7rem; border: 1px solid var(--rule); border-radius: 4px;
+      width: 100%; max-width: 260px; background: #fff;
+    }
+    #resultat { margin-top: 1rem; font-size: 1.1rem; }
+    #resultat .jours { font-size: 1.6rem; font-weight: 700; font-family: var(--serif); }
+    .urgent { color: var(--accent); }
+    .ok { color: var(--go); }
+
+    .lettre {
+      background: #fff; border: 1px solid var(--rule); border-radius: 4px; padding: 1.25rem;
+      font-family: var(--serif); white-space: pre-wrap; font-size: .95rem; margin-top: 1rem;
+    }
+    button {
+      font: inherit; font-weight: 600; background: var(--ink); color: #fff; border: 0;
+      padding: .7rem 1.2rem; border-radius: 4px; cursor: pointer; margin-top: 1rem;
+    }
+    button:hover { background: #000; }
+
+    .alerte {
+      background: var(--accent-soft); border: 1px solid #fecaca; border-radius: 4px;
+      padding: 1.1rem 1.25rem; margin: 1.5rem 0;
+    }
+    .alerte strong { color: var(--accent); }
+
+    .honnete {
+      border-top: 2px solid var(--rule); margin-top: 3.5rem; padding-top: 1.5rem;
+      color: var(--ink-soft); font-size: .95rem;
+    }
+    .honnete h2 { font-size: 1.1rem; margin-top: 0; }
+    a { color: var(--accent); }
+    .src { font-size: .85rem; color: var(--ink-muted); }
+    .src a { color: var(--ink-muted); }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Vous avez reçu un commandement de payer.</h1>
+  <p class="chapeau">
+    Vous avez <strong>10 jours</strong> pour vous y opposer. C'est <strong>gratuit</strong>,
+    ça se fait <strong>oralement au guichet</strong>, et <strong>vous n'avez pas à vous justifier</strong>.
+    <br><br>
+    Des gens paient chaque année des dettes qu'ils ne doivent pas — parce que personne ne leur a dit ces trois phrases.
+  </p>
+
+  <!-- ⚠ LES TROIS FAITS. Ce ne sont pas des conseils : ce sont des citations.
+       C'est toute la raison d'être de cette page — et c'est ce qui fait qu'elle ne peut pas nuire. -->
+  <div class="fait">
+    <strong>1. C'est gratuit.</strong>
+    Vous opposer ne vous coûte rien. Pas un franc.
+    <div class="loi">« Les opérations relatives à l'opposition sont <b>gratuites</b>. »<br>
+      — art. 18 OELP (ordonnance sur les émoluments, RS 281.35)</div>
+  </div>
+
+  <div class="fait">
+    <strong>2. Vous n'avez pas à vous justifier.</strong>
+    Pas besoin de prouver quoi que ce soit, ni d'expliquer pourquoi. Vous dites simplement que vous vous opposez.
+    <div class="loi">« Il n'est <b>pas nécessaire de motiver</b> l'opposition. »<br>
+      — art. 75 al. 1 LP (RS 281.1)</div>
+  </div>
+
+  <div class="fait">
+    <strong>3. Ça se fait à l'oral, au guichet.</strong>
+    Vous entrez à l'office des poursuites, vous dites « je fais opposition ». C'est fait.
+    Vous pouvez aussi le dire directement à la personne qui vous remet le papier.
+    <div class="loi">« Le débiteur poursuivi qui entend former opposition doit, <b>verbalement</b> ou par écrit,
+      en faire la déclaration immédiate à celui qui lui remet le commandement de payer ou à l'office
+      <b>dans les dix jours</b> à compter de la notification. »<br>
+      — art. 74 al. 1 LP</div>
+  </div>
+
+  <h2>Combien de temps vous reste-t-il ?</h2>
+  <div class="calc">
+    <label for="d">Quel jour avez-vous reçu le commandement de payer ?</label>
+    <input type="date" id="d">
+    <div id="resultat"></div>
+  </div>
+
+  <!-- ⚠ LA RÈGLE DE FER, EN DUR DANS LA PAGE.
+       Cette page ne dira JAMAIS « c'est trop tard ». En droit suisse, agir est presque toujours
+       gratuit et sans risque ; c'est le SILENCE qui est irréversible. Un conseil qui décourage
+       produit exactement l'inégalité que ce site combat : celui qui a un ami juriste, lui, y va
+       quand même. -->
+  <div class="alerte">
+    <strong>Même si vous pensez que le délai est passé — allez-y quand même.</strong>
+    Ça ne coûte rien, ça prend deux minutes, et on ne vous reprochera jamais d'y être allé.
+    L'office vous dira ce qu'il en est. Ne restez pas chez vous à vous dire que c'est fichu :
+    <em>ne rien faire</em>, ça, c'est irréversible.
+  </div>
+
+  <h2>Ce qui se passe si vous ne faites rien</h2>
+  <p>
+    C'est le point que presque personne ne connaît, et il est brutal : <strong>sans opposition, aucun juge
+    ne viendra vérifier que vous devez vraiment cet argent.</strong>
+  </p>
+  <div class="fait" style="border-left-color: var(--accent);">
+    <div class="loi" style="border-top: 0; padding-top: 0; margin-top: 0;">
+      « <b>Lorsque la poursuite n'est pas suspendue par l'opposition</b> ou par un jugement, le créancier peut
+      requérir la continuation de la poursuite à l'expiration d'un délai de 20 jours à compter de la
+      notification du commandement de payer. »<br>— art. 88 al. 1 LP
+      <br><br>
+      « Lorsque le débiteur est sujet à la poursuite par voie de saisie, l'office, après réception de la
+      réquisition de continuer la poursuite, procède <b>sans retard à la saisie</b>. »<br>— art. 89 LP
+    </div>
+  </div>
+  <p>
+    Autrement dit : si vous vous opposez, c'est au créancier de prouver sa créance devant un juge.
+    Si vous ne vous opposez pas, la saisie peut arriver <strong>sans que personne n'ait vérifié</strong> que la
+    dette existe.
+  </p>
+
+  <h2>Une lettre, si vous préférez écrire</h2>
+  <p>L'oral au guichet suffit. Mais si vous voulez envoyer une lettre, la voici. Elle n'a pas besoin d'en dire plus.</p>
+  <button id="gen">Afficher la lettre</button>
+  <div class="lettre" id="lettre" hidden></div>
+
+  <!-- ⚠ L'HONNÊTETÉ EST LA PAGE. Sans ça, ce n'est qu'un site juridique de plus. -->
+  <div class="honnete">
+    <h2>Ce que cette page ne fait pas</h2>
+    <p>
+      <strong>Je ne suis pas juriste.</strong> Cette page ne vous donne pas de conseil : elle vous <em>cite la loi</em>,
+      et vous pouvez vérifier chaque phrase vous-même en cliquant sur les liens ci-dessous.
+    </p>
+    <p>
+      Elle ne vous dit pas si vous devez cet argent — <strong>je n'en sais rien</strong>. Elle vous dit seulement
+      que vous avez le droit de contester, que ça ne coûte rien, et comment.
+    </p>
+    <p>
+      Elle ne traite <strong>que le commandement de payer</strong>. Pas la mainlevée, pas la faillite,
+      pas la suite. Si votre situation est plus compliquée, allez voir une permanence juridique
+      (elles sont souvent gratuites) ou une association de défense des consommateurs.
+    </p>
+    <p>
+      <strong>Si quelque chose est faux ici, dites-le-moi</strong> — j'ai plus besoin de le savoir que de ne pas le savoir.
+    </p>
+    <p class="src">
+      Sources, à vérifier vous-même :
+      <a href="https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_74">art. 74 LP</a> ·
+      <a href="https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_75">art. 75 LP</a> ·
+      <a href="https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_88">art. 88 LP</a> ·
+      <a href="https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_89">art. 89 LP</a> ·
+      <a href="https://www.fedlex.admin.ch/eli/cc/1996/2937_2937_2937/fr#art_18">art. 18 OELP</a>
+      <br>Textes lus sur Fedlex, la publication officielle de la Confédération, dans leur version en vigueur.
+    </p>
+  </div>
+
+</div>
+
+<script>
+  // ⚠ ARITHMÉTIQUE, PAS CONSEIL. On compte des jours ; on ne dit à personne ce qu'il doit faire.
+  // Et surtout : on ne dit JAMAIS « c'est trop tard ». Le délai de 10 jours court dès la
+  // notification (art. 74 al. 1 LP). Même échu, l'opposition reste gratuite et sans risque —
+  // et il existe des voies après (restitution du délai, art. 33 al. 4 LP). Décourager quelqu'un,
+  // ce serait produire exactement l'inégalité que ce site combat.
+  const champ = document.getElementById('d');
+  const res = document.getElementById('resultat');
+
+  function jourJ() {
+    const t = new Date();
+    return new Date(t.getFullYear(), t.getMonth(), t.getDate());
+  }
+
+  champ.addEventListener('input', () => {
+    if (!champ.value) { res.innerHTML = ''; return; }
+    const recu = new Date(champ.value + 'T00:00:00');
+    if (isNaN(recu)) { res.innerHTML = ''; return; }
+
+    const echeance = new Date(recu);
+    echeance.setDate(echeance.getDate() + 10);
+    const restants = Math.round((echeance - jourJ()) / 86400000);
+    const dateFr = echeance.toLocaleDateString('fr-CH', { day: 'numeric', month: 'long', year: 'numeric' });
+
+    if (restants > 1) {
+      res.innerHTML = `<span class="jours ok">Il vous reste ${restants} jours.</span><br>
+        Le délai court jusqu'au <strong>${dateFr}</strong>.
+        N'attendez pas le dernier jour : allez à l'office, c'est gratuit et ça prend deux minutes.`;
+    } else if (restants === 1 || restants === 0) {
+      res.innerHTML = `<span class="jours urgent">C'est aujourd'hui ou demain.</span><br>
+        Le délai court jusqu'au <strong>${dateFr}</strong>. <strong>Allez à l'office des poursuites aujourd'hui.</strong>
+        C'est gratuit, oral, et vous n'avez rien à justifier.`;
+    } else {
+      // ⚠ ICI, ET NULLE PART AILLEURS, ON POURRAIT DIRE « TROP TARD ». ON NE LE DIT PAS.
+      res.innerHTML = `<span class="jours urgent">Le délai de 10 jours semble dépassé (il courait jusqu'au ${dateFr}).</span><br>
+        <strong>Allez à l'office des poursuites quand même, aujourd'hui.</strong>
+        Ça ne coûte rien et on ne vous reprochera pas d'être venu. Dites-leur la date exacte à laquelle vous
+        avez reçu le papier — c'est elle qui compte, et vous vous en souvenez peut-être mal.
+        Demandez-leur aussi ce qu'est une « restitution de délai » (art. 33 al. 4 LP).
+        <br><br>Et surtout : <strong>ne payez pas une dette que vous ne devez pas</strong> juste parce que vous croyez
+        qu'il est trop tard. Allez demander.`;
+    }
+  });
+
+  document.getElementById('gen').addEventListener('click', () => {
+    const l = document.getElementById('lettre');
+    const d = champ.value
+      ? new Date(champ.value + 'T00:00:00').toLocaleDateString('fr-CH')
+      : '[date de réception]';
+    l.textContent =
+`[Vos nom, prénom et adresse]
+
+Office des poursuites de [votre district]
+[adresse — elle figure sur le commandement de payer]
+
+[Lieu], le ${new Date().toLocaleDateString('fr-CH')}
+
+Objet : opposition totale au commandement de payer n° [numéro figurant sur le document]
+
+Madame, Monsieur,
+
+Je forme opposition totale au commandement de payer mentionné en objet,
+qui m'a été notifié le ${d}.
+
+Veuillez agréer, Madame, Monsieur, mes salutations distinguées.
+
+[Signature manuscrite]`;
+    l.hidden = false;
+    l.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+</script>
+</body>
+</html>

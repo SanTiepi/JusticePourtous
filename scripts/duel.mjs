@@ -110,6 +110,36 @@ function autoritesDuCanton(canton) {
  * le droit. Un banc d'essai qui compare une structure de données à un texte ne mesure rien.
  * Cette fonction est la couche que le produit aurait de toute façon : ce que la personne lit.
  */
+/**
+ * Quand le comité REFUSE de conseiller parce qu'il lui manque un fait décisif, c'est une
+ * réponse à part entière — et c'est la moitié de la vision de Robin (« on récolte les infos
+ * via des questions à l'utilisateur »). Il faut la rendre lisible, pas la traiter comme un échec.
+ */
+function rendreQuestions(r) {
+  const l = [];
+  l.push('AVANT DE VOUS RÉPONDRE, IL ME MANQUE QUELQUE CHOSE');
+  l.push('Je ne veux pas vous donner un conseil qui a l\'air juste mais que j\'aurais inventé.');
+
+  // ⚠ L'acte sûr passe AVANT les questions. Un délai ne s'arrête pas pour attendre une réponse.
+  if (r.acte_sur_immediat?.acte) {
+    l.push(`\n⚠ MAIS IL Y A UNE CHOSE À FAIRE DÈS AUJOURD'HUI, QUELLE QUE SOIT LA RÉPONSE :`);
+    l.push(`• ${r.acte_sur_immediat.acte}`);
+    if (r.acte_sur_immediat.pourquoi) l.push(`  Pourquoi : ${r.acte_sur_immediat.pourquoi}`);
+  }
+
+  if (r.ce_qu_on_sait_deja?.length) {
+    l.push(`\nCE QUE J'AI DÉJÀ COMPRIS (je ne vous le redemande pas)`);
+    for (const x of r.ce_qu_on_sait_deja) l.push(`• ${x}`);
+  }
+
+  l.push('\nMES QUESTIONS');
+  for (const q of r.questions || []) {
+    l.push(`• ${q.question}`);
+    if (q.ca_change_tout_parce_que) l.push(`  (ça change tout : ${q.ca_change_tout_parce_que})`);
+  }
+  return l.join('\n');
+}
+
 function rendreEnFrancais(d) {
   if (!d || d._panne) return `[le comité n'a rien pu rendre : ${d?._detail || 'panne'}]\n${d?._brut || ''}`;
   const l = [];
@@ -172,8 +202,12 @@ async function brasComite(cas) {
   // Le texte à scorer = ce que le comité RESTITUE au citoyen, dans la langue où il le lit.
   // Pas la délibération interne : un piège trouvé par le chasseur mais écarté par le juge
   // n'a pas aidé la personne. On score ce qu'elle lit, pas ce qu'on a pensé.
+  //
+  // Et refuser de conseiller EST une réponse — la bonne, quand répondre voudrait dire inventer.
   return {
-    texte: rendreEnFrancais(r.decision),
+    texte: r.statut === 'questions' ? rendreQuestions(r) : rendreEnFrancais(r.decision),
+    statut: r.statut,
+    questions: r.questions,
     decision: r.decision,
     deliberation: r.deliberation,
     greffe: r.greffe,
@@ -269,7 +303,18 @@ Réponds en JSON : { "gagnant": "1" | "2" | "egalite", "pourquoi": "en 2 phrases
 
 // ─── Le duel ──────────────────────────────────────────────────────────────────
 
-const filtre = process.argv[2];
+const args = process.argv.slice(2);
+const filtre = args.find(a => !a.startsWith('-'));
+// ⚠ LES RÉPÉTITIONS NE SONT PAS UN LUXE — C'EST LA MESURE QUI COMPTE.
+//
+// Sur le cas vague, le modèle gratuit a INVENTÉ un délai à un tour, puis POSÉ LES BONNES
+// QUESTIONS au tour suivant. Même prompt, même cas, deux comportements opposés. Un seul
+// échantillon ne prouve donc rien — ni pour lui, ni pour nous.
+//
+// Et c'est exactement ce qu'un citoyen achète : pas « avoir raison une fois », mais POUVOIR
+// COMPTER DESSUS. Personne ne joue sa rente à pile ou face. La fiabilité EST le produit.
+const REPETITIONS = Number(args.find(a => a.startsWith('--x'))?.slice(3) || 1);
+
 const cas_a_jouer = filtre ? CAS.filter(c => c.id === filtre) : CAS;
 if (!cas_a_jouer.length) {
   console.error(`Cas inconnu : ${filtre}. Cas disponibles : ${CAS.map(c => c.id).join(', ')}`);
@@ -288,34 +333,38 @@ function ligne(score) {
 
 for (const [i, cas] of cas_a_jouer.entries()) {
   console.log(`\n${'═'.repeat(72)}`);
-  console.log(`CAS ${i + 1}/${cas_a_jouer.length} — ${cas.titre}`);
+  console.log(`CAS ${i + 1}/${cas_a_jouer.length} — ${cas.titre}${REPETITIONS > 1 ? ` (×${REPETITIONS})` : ''}`);
   console.log(`  Le bon geste : ${cas.acte_correct}`);
   console.log(`  Ce qui la tue : ${(cas.actes_fatals || []).join(', ') || '(rien de fatal)'}`);
   console.log('─'.repeat(72));
 
-  console.log('  BRAS A — modèle gratuit, un passage');
-  const a = await brasGratuit(cas);
-  const scoreA = await scorer(cas, a.texte);
-  console.log(`    ${ligne(scoreA)}  ·  ${a.cout_chf} CHF`);
+  for (let essai = 1; essai <= REPETITIONS; essai++) {
+    if (REPETITIONS > 1) console.log(`\n  ── essai ${essai}/${REPETITIONS}`);
 
-  console.log('  BRAS B — le comité (5 agents, 3 tours, greffe qui lit la loi)');
-  const b = await brasComite(cas);
-  const scoreB = await scorer(cas, b.texte);
-  console.log(`    ${ligne(scoreB)}  ·  ${b.cout_chf} CHF · ${b.appels} appels`);
-  if (b.greffe?.articles_lus?.length) console.log(`    lois lues : ${b.greffe.articles_lus.join(' · ')}`);
-  if (b.greffe?.ecartees_par_la_loi?.length) console.log(`    écartées par la loi elle-même : ${b.greffe.ecartees_par_la_loi.length} affirmation(s)`);
-  if (b.echecs.length) console.log(`    ⚠ rôles muets : ${b.echecs.join(' | ')}`);
-  if (!b.contradiction_a_eu_lieu) console.log('    ⚠ LA CONTRADICTION N\'A PAS EU LIEU (le réfutateur est tombé) — le résultat ne prouve rien');
+    console.log('  BRAS A — modèle gratuit, un passage');
+    const a = await brasGratuit(cas);
+    const scoreA = await scorer(cas, a.texte);
+    console.log(`    ${ligne(scoreA)}  ·  ${a.cout_chf} CHF`);
 
-  // L'ordre alterne : un jury LLM a un biais de position, et on ne veut pas le mesurer.
-  // Rappel : ce jury ne note QUE la lisibilité. Il n'a plus le droit de juger le droit.
-  const jury = await jurer(cas, a.texte, b.texte, i % 2 === 1);
-  console.log(`  LISIBILITÉ (aveugle) → ${jury.gagnant} : ${jury.pourquoi}`);
+    console.log('  BRAS B — le comité (enquêteur → 3 voix → réfutateur → greffe → juge)');
+    const b = await brasComite(cas);
+    const scoreB = await scorer(cas, b.texte);
+    if (b.statut === 'questions') console.log(`    (le comité REFUSE de conseiller : il pose ${b.questions?.length || 0} question(s) — il ne devine pas)`);
+    console.log(`    ${ligne(scoreB)}  ·  ${b.cout_chf} CHF · ${b.appels} appels`);
+    if (b.greffe?.articles_lus?.length) console.log(`    lois lues : ${b.greffe.articles_lus.join(' · ')}`);
+    if (b.greffe?.ecartees_par_la_loi?.length) console.log(`    écartées par la loi elle-même : ${b.greffe.ecartees_par_la_loi.length} affirmation(s)`);
+    if (b.echecs.length) console.log(`    ⚠ rôles muets : ${b.echecs.join(' | ')}`);
 
-  resultats.push({
-    cas: cas.id, titre: cas.titre, acte_correct: cas.acte_correct,
-    gratuit: { ...a, score: scoreA }, comite: { ...b, score: scoreB }, jury,
-  });
+    // L'ordre alterne : un jury LLM a un biais de position, et on ne veut pas le mesurer.
+    // Rappel : ce jury ne note QUE la lisibilité. Il n'a plus le droit de juger le droit.
+    const jury = await jurer(cas, a.texte, b.texte, (i + essai) % 2 === 1);
+    console.log(`    LISIBILITÉ (aveugle) → ${jury.gagnant}`);
+
+    resultats.push({
+      cas: cas.id, titre: cas.titre, essai, acte_correct: cas.acte_correct,
+      gratuit: { ...a, score: scoreA }, comite: { ...b, score: scoreB }, jury,
+    });
+  }
 }
 
 // ─── Le bilan ─────────────────────────────────────────────────────────────────
@@ -380,8 +429,36 @@ console.log(`\n${verdict}\n`);
 const fatals = resultats.filter(r => r.comite.score.acte_fatal_conseille || r.comite.score.decourage);
 if (fatals.length) {
   console.log('⚠⚠ LE COMITÉ A FAIT PERDRE UN DROIT DANS CES CAS — à corriger avant toute autre chose :');
-  for (const f of fatals) console.log(`   · ${f.titre} → ${f.comite.score.acte_conseille} (il fallait : ${f.acte_correct})`);
+  for (const f of fatals) console.log(`   · ${f.titre}${f.essai ? ` (essai ${f.essai})` : ''} → ${f.comite.score.acte_conseille} (il fallait : ${f.acte_correct})`);
   console.log('');
+}
+
+// ═══ LA FIABILITÉ — et c'est ELLE qu'on vend ═══════════════════════════════════
+//
+// Personne ne joue sa rente à pile ou face. « Avoir raison une fois sur deux » n'est pas un
+// produit : c'est un piège, parce que la personne ne sait pas dans quelle moitié elle est.
+// Sur le cas vague, le modèle gratuit a inventé un délai à un tour, puis posé les bonnes
+// questions au tour suivant — même prompt, même cas. Cette instabilité EST le problème que
+// notre argent achète : un garde-fou structurel ne dépend pas de l'humeur du modèle.
+if (REPETITIONS > 1) {
+  console.log('═'.repeat(72));
+  console.log(`FIABILITÉ — sur ${REPETITIONS} essais par cas. C'est ÇA qu'un citoyen achète :\n`);
+  console.log('  cas                                    gratuit      comité');
+  for (const cas of cas_a_jouer) {
+    const essais = resultats.filter(r => r.cas === cas.id);
+    const okG = essais.filter(r => r.gratuit.score.droit_sauve).length;
+    const okC = essais.filter(r => r.comite.score.droit_sauve).length;
+    const marque = (ok) => {
+      if (ok === REPETITIONS) return `${ok}/${REPETITIONS} ✓ fiable`;
+      if (ok === 0) return `${ok}/${REPETITIONS} ✗ toujours faux`;
+      return `${ok}/${REPETITIONS} ⚠ PILE OU FACE`;   // le pire des trois : indétectable de l'intérieur
+    };
+    console.log(`  ${cas.titre.slice(0, 36).padEnd(38)} ${marque(okG).padEnd(12)} ${marque(okC)}`);
+  }
+  const fiablesG = cas_a_jouer.filter(c => resultats.filter(r => r.cas === c.id).every(r => r.gratuit.score.droit_sauve)).length;
+  const fiablesC = cas_a_jouer.filter(c => resultats.filter(r => r.cas === c.id).every(r => r.comite.score.droit_sauve)).length;
+  console.log(`\n  CAS SAUVÉS À TOUS LES COUPS :          ${fiablesG}/${cas_a_jouer.length}          ${fiablesC}/${cas_a_jouer.length}`);
+  console.log('  (un cas « pile ou face » ne compte pas : on ne peut pas le vendre.)\n');
 }
 
 mkdirSync(join(RACINE, 'eval'), { recursive: true });

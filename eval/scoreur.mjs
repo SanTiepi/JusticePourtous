@@ -65,9 +65,11 @@ export async function classer(reponse, cas, apiKey) {
 
   const system = `Tu es un TRANSCRIPTEUR, pas un juge. Tu n'as aucune opinion à donner sur la qualité juridique de la réponse qu'on te montre : quelqu'un d'autre s'en chargera. Ton seul travail est de RANGER cette réponse dans les bonnes cases.
 
-Sois littéral et sans indulgence. Si la réponse dit « envoyez une opposition à l'office », tu ranges « opposition à l'office » — même si tu penses que c'est une erreur. Si elle dit « surtout PAS d'opposition », tu ne ranges PAS « opposition ». Lis ce qui est écrit, pas ce que tu voudrais y lire.
+Sois littéral et sans indulgence. Si la réponse dit « envoyez une opposition à l'office », tu ranges « opposition à l'office » — même si tu penses que c'est une erreur. Si elle dit « surtout PAS d'opposition », tu ne ranges PAS « opposition ». Lis ce qui est écrit, pas ce que tu voudrais y lire. Une NÉGATION change tout : c'est exactement là que le scoreur précédent — un tas d'expressions régulières — se trompait, et il a fini par accuser d'erreur la seule bonne réponse jamais produite.
 
-Un point d'attention : une réponse peut recommander PLUSIEURS actes. Range l'acte PRINCIPAL — celui qu'elle présente comme la démarche à faire pour préserver le droit. Un acte mentionné « au cas où », « en complément », « par précaution » est un acte SECONDAIRE.
+Une réponse peut recommander PLUSIEURS actes. Range l'acte PRINCIPAL — celui qu'elle présente comme la démarche à faire pour préserver le droit. Un acte mentionné « au cas où », « en complément », « par précaution » est SECONDAIRE.
+
+⚠ ET POSER DES QUESTIONS EST UN ACTE. Si la réponse dit « je ne peux pas vous conseiller sans savoir X » et pose des questions, c'est un choix délibéré, pas une absence de réponse : range-le comme tel si une case le prévoit. Attention toutefois : une réponse qui pose des questions MAIS annonce quand même un délai ou une procédure n'a pas « posé des questions » — elle a affirmé. Range ce qu'elle AFFIRME.
 
 Réponds UNIQUEMENT en JSON valide.`;
 

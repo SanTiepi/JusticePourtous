@@ -125,6 +125,84 @@ TROIS RÈGLES ABSOLUES, elles priment sur tout le reste :
 
 Réponds UNIQUEMENT en JSON valide, sans aucun texte autour.`;
 
+// ─── TOUR 0 : L'ENQUÊTEUR — la moitié de la vision qui manquait ───────────────
+//
+// Robin a écrit, mot pour mot : « Le but c'est qu'on RÉCOLTE LES INFOS DONT ON A BESOIN VIA
+// DES QUESTIONS À L'UTILISATEUR, et quand on a tout, on cherche la réponse de manière fiable. »
+//
+// Cette moitié-là n'existait pas. Le comité répondait toujours. Résultat mesuré le 12.07.2026,
+// sur le message « Mon propriétaire veut pas me rendre l'argent » — et rien d'autre :
+//   · le modèle gratuit a inventé une procédure et un délai ;
+//   · notre comité, avec ses cinq agents, a fait EXACTEMENT PAREIL.
+// Aucun des deux ne pouvait savoir de quel argent il s'agissait : garantie de loyer ? trop-perçu ?
+// frais accessoires ? Et si c'est une assurance-caution (SwissCaution), il n'y a AUCUN argent
+// bloqué à récupérer — toute la stratégie est différente. Répondre là, c'est inventer.
+//
+// ⚠ MAIS ATTENTION AU REMÈDE PIRE QUE LE MAL. Un enquêteur qui pose des questions à tout le
+// monde transforme le produit en formulaire — et pendant qu'on remplit le formulaire, un délai
+// de 30 jours court. C'est pourquoi la règle est étroite et testable :
+//
+//   ON NE POSE UNE QUESTION QUE SI SES DEUX RÉPONSES POSSIBLES MÈNENT À DEUX ACTES DIFFÉRENTS.
+//   Et s'il existe un acte SÛR quel que soit la réponse, on le donne D'ABORD, et on questionne
+//   ensuite. Un délai ne s'arrête pas pour attendre une réponse.
+const ENQUETEUR = {
+  id: 'investigator',
+  label: 'Enquêteur',
+  tour: 0,
+  prompt: `${SOCLE}
+
+Tu es L'ENQUÊTEUR. Tu passes AVANT tout le monde, et tu réponds à une seule question :
+
+    A-T-ON ASSEZ D'INFORMATIONS POUR CONSEILLER CETTE PERSONNE SANS INVENTER ?
+
+Ton pouvoir est celui de dire NON. C'est un pouvoir rare et précieux : tout le reste du système est fait pour répondre, et répondre quand on ne sait pas, c'est fabriquer un conseil qui a l'air vrai.
+
+⚠ MAIS N'EN ABUSE PAS. Un questionnaire n'aide personne. Pendant qu'on remplit un formulaire, un délai court. La règle est étroite :
+
+  TU NE POSES UNE QUESTION QUE SI SES DEUX RÉPONSES POSSIBLES MÈNENT À DEUX ACTES DIFFÉRENTS.
+
+  Pose-toi le test à voix haute : « Si la personne répond OUI, je lui dis de faire X. Si elle
+  répond NON, je lui dis de faire Y. X ≠ Y ? » — Si X = Y, LA QUESTION EST INUTILE. Ne la pose pas.
+  « Pour mieux comprendre », « pour affiner », « par précaution » ne sont PAS des raisons.
+
+  Contre-exemple à ne pas reproduire : quelqu'un dit « moisissure depuis 6 mois à Lausanne ».
+  Ne lui redemande NI la durée NI le canton : il vient de te les donner. Extrais d'abord ce qui
+  est déjà là.
+
+⚠ ET SURTOUT — LA RÈGLE QUI PRIME SUR TOUT : S'IL EXISTE UN ACTE SÛR MAINTENANT, ON LE DONNE.
+
+  S'il y a un délai qui court, ou un geste qui ne coûte rien et qui protège quoi qu'il arrive
+  (une opposition, une saisine gratuite, une lettre recommandée), tu le signales IMMÉDIATEMENT —
+  même si tu poses des questions par ailleurs. On ne fait jamais attendre quelqu'un dont le droit
+  s'éteint. Le silence est irréversible ; une question ne l'est pas.
+
+EXEMPLE OÙ IL FAUT QUESTIONNER (mesuré, et raté par tout le monde) :
+  « Mon propriétaire veut pas me rendre l'argent. » — et rien d'autre.
+  De quel argent ? Une garantie de loyer ? Un trop-perçu ? Un décompte de frais accessoires ?
+  Et si la garantie est une ASSURANCE-CAUTION (SwissCaution, SmartCaution), il n'y a pas de dépôt
+  à récupérer du tout : la personne payait une prime à fonds perdu. Selon la réponse, l'acte
+  change complètement. → ON QUESTIONNE. Et on n'invente NI délai NI article en attendant.
+
+JSON :
+{
+  "peut_on_conseiller": true | false,
+  "ce_qu_on_sait_deja": ["ce que la personne a DÉJÀ dit — ne le redemande pas"],
+  "acte_sur_immediat": {
+    "il_y_en_a_un": true | false,
+    "acte": "le geste qui protège quoi qu'il arrive, à faire aujourd'hui — ou null",
+    "pourquoi": "pourquoi il est sûr quelle que soit la réponse aux questions"
+  },
+  "questions": [
+    {
+      "question": "la question, en français simple, telle qu'on la poserait à quelqu'un qui panique",
+      "si_reponse_A": "ce qu'on lui conseillerait alors",
+      "si_reponse_B": "ce qu'on lui conseillerait dans l'autre cas",
+      "ca_change_tout_parce_que": "pourquoi les deux conseils diffèrent — si tu n'arrives pas à l'écrire, RETIRE LA QUESTION"
+    }
+  ]
+}`,
+};
+
 // ─── TOUR 1 ───────────────────────────────────────────────────────────────────
 
 const AVOCAT_CITOYEN = {
@@ -369,7 +447,7 @@ JSON :
 }`,
 };
 
-export const COMITE = [AVOCAT_CITOYEN, GREFFIER, CHASSEUR_DE_PIEGES, REFUTATEUR, JUGE];
+export const COMITE = [ENQUETEUR, AVOCAT_CITOYEN, GREFFIER, CHASSEUR_DE_PIEGES, REFUTATEUR, JUGE];
 
 // ─── Mécanique ────────────────────────────────────────────────────────────────
 
@@ -755,6 +833,43 @@ export async function reunirComite(dossier, { apiKey = process.env.ANTHROPIC_API
     }
   };
 
+  // ── TOUR 0 : peut-on seulement conseiller cette personne sans inventer ?
+  //
+  // C'est la moitié de la vision de Robin qui n'existait pas : « on récolte les infos dont on a
+  // besoin VIA DES QUESTIONS, et quand on a tout, on cherche la réponse ». Sans ce garde-fou,
+  // le comité répond TOUJOURS — et sur « mon propriétaire veut pas me rendre l'argent », il
+  // invente une procédure et un délai, exactement comme le modèle gratuit.
+  //
+  // Et on ne dépense pas cinq agents à deviner : si on ne peut pas savoir, on demande. C'est
+  // moins cher ET plus honnête.
+  const enquete = await jouer(ENQUETEUR, texte);
+
+  if (enquete && !enquete._panne && enquete.peut_on_conseiller === false && enquete.questions?.length) {
+    const usagesE = usages.slice();
+    return {
+      statut: 'questions',
+      // ⚠ L'acte sûr est donné MÊME quand on questionne. Un délai ne s'arrête pas pour attendre
+      // une réponse : faire patienter quelqu'un dont le droit s'éteint serait la pire des
+      // prudences.
+      acte_sur_immediat: enquete.acte_sur_immediat?.il_y_en_a_un ? enquete.acte_sur_immediat : null,
+      questions: enquete.questions,
+      ce_qu_on_sait_deja: enquete.ce_qu_on_sait_deja || [],
+      decision: null,
+      deliberation: { enquete },
+      greffe: null,
+      echecs,
+      contradiction_a_eu_lieu: false,
+      cout: {
+        appels_llm: usagesE.length,
+        tokens_entree: usagesE.reduce((n, u) => n + (u.input_tokens || 0), 0),
+        tokens_sortie: usagesE.reduce((n, u) => n + (u.output_tokens || 0), 0),
+        cout_estime_chf: Number(((usagesE.reduce((n, u) => n + (u.input_tokens || 0), 0) / 1e6) * 3
+          + (usagesE.reduce((n, u) => n + (u.output_tokens || 0), 0) / 1e6) * 15).toFixed(3)),
+        duree_ms: Date.now() - t0,
+      },
+    };
+  }
+
   // TOUR 1 — trois voix qui ne s'entendent pas (c'est la condition de la divergence).
   const [these, formes, pieges] = await Promise.all([
     jouer(AVOCAT_CITOYEN, texte),
@@ -813,8 +928,9 @@ Tranche en lisant les textes de loi ci-dessus. Ne te laisse pas emporter par ce 
   const sourcees = registre.filter(r => r.lecture.lisible);
 
   return {
+    statut: 'decision',
     decision,
-    deliberation: { these, formes, pieges, refutation },
+    deliberation: { enquete, these, formes, pieges, refutation },
     // Le greffe est rendu au citoyen : il a le droit de voir quels textes de loi ont été
     // réellement lus pour lui, et lesquelles des affirmations n'en avaient aucun. C'est la
     // partie la plus honnête de ce qu'il achète.

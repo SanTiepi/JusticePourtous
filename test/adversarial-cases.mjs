@@ -4135,6 +4135,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CO 685', 'CC 684'],
     notes: "Distances légales et vues — CO 685 / droit cantonal — CO 685 al. 1 : fenêtres et ouvertures donnant vue sur le fonds voisin : distance minimale 50 cm en cas de vues droites. CO 685 = DROIT PRIVÉ fédéral, distinct du permis de construire (droit public). TERRASSE EN ÉLÉVATION avec vue directe peut être couverte par CO 685. PERMIS DE CONSTRUIRE communal ne dispense pas de respecter CO 685. RECOURS : action civile CC 641 al. 2 + CO 685. MESURES PROVISIONNELLES CPC 261 : urgence avant achèvement. 'Terrasse 80 cm fenêtre chambre + vue directe + permis accordé ?' sans 'CO 685 : distances 50 cm minimum vue droite, droit privé distinct du permis public' ni 'CPC 261 : mesures provisionnelles urgentes avant achèvement'. Signal adversarial = riverain croit que le permis communal est définitif et clôt tout recours, ignorant CO 685 (droit privé fédéral).",
   },
+
+  // ── WAVE 41 — 2026-07-12 ──────────────────────────────────────
+
+  // BAIL — CO 269a : hausse loyer après rénovation, plafond rendement net
+  {
+    id: 'adv_bail_42',
+    query: "Mon propriétaire a refait la toiture et installé un ascenseur dans l'immeuble. Il veut augmenter mon loyer de 350 CHF par mois dès le prochain terme. Il dit que les travaux ont coûté 480'000 CHF pour tout l'immeuble donc il a le droit d'augmenter tous les loyers. Je n'ai aucun recours ?",
+    canton: 'VD',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 269a', 'CO 269c'],
+    notes: "Hausse loyer après rénovation — CO 269a let. b — CO 269a : le loyer n'est pas abusif s'il est justifié par des prestations supplémentaires du bailleur. MAIS : la hausse doit respecter le plafond du RENDEMENT NET (CO 269). Le bailleur ne peut pas répercuter 100% du coût en hausse de loyer si cela dépasse le rendement admissible. CO 269c : méthode de calcul du loyer licite. CONTESTATION : 30 jours calendriers dès réception de l'avis de majoration (CO 270b), autorité de conciliation du canton. Travaux = toiture + ascenseur = travaux d'entretien (CO 269a let. a, pas let. b si pas vraie plus-value). 'Immeuble rénovation + hausse 350 CHF + travaux 480k ?' sans 'CO 269a : hausse justifiée seulement si plus-value réelle ET dans limite rendement net' ni 'CO 270b : opposition 30 jours dès avis'. Signal adversarial = locataire croit que tout travail légitime n'importe quelle hausse sans plafond.",
+  },
+
+  // TRAVAIL — CO 337/335c : licenciement immédiat vs ordinaire, accumulation avertissements
+  {
+    id: 'adv_travail_42',
+    query: "Je travaille depuis 7 ans comme comptable dans une PME. J'ai reçu deux avertissements écrits en 18 mois pour des retards répétés. Ce matin mon employeur m'a licencié avec effet immédiat en invoquant ces deux avertissements cumulés. Il m'a remis une lettre disant que les avertissements répétés constituent une 'faute grave'. A-t-il le droit de me virer sans préavis ?",
+    canton: 'ZH',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 337', 'CO 335c'],
+    notes: "Licenciement immédiat — CO 337 — CO 337 al. 1 : justes motifs = comportement rendant impossible la continuation des rapports de travail. ACCUMULATION D'AVERTISSEMENTS ≠ justes motifs CO 337 automatiques : les avertissements documentent une faute persistante mais le licenciement immédiat exige une faute grave UNIQUE (ATF 127 III 153). Des retards répétés = motif de licenciement ORDINAIRE (CO 335a/335c) avec préavis 3 mois (7 ans d'ancienneté). Licenciement immédiat injustifié → CO 337c : indemnité jusqu'à 6 mois de salaire + salaire pendant délai de préavis dû. 'Comptable 7 ans + 2 avertissements retards + licencié immédiat ?' sans 'CO 337 al. 1 : accumulation avertissements ≠ faute grave unique → licenciement immédiat injustifié' ni 'CO 337c : indemnité 6 mois + préavis 3 mois'. Signal adversarial = employeur confond comportement répété justifiant ordinaire (CO 335c) vs faute grave unique justifiant immédiat (CO 337).",
+  },
+
+  // DETTES — LP 278 : opposition séquestre, délai 10 jours péremptoire dès notification
+  {
+    id: 'adv_dettes_37',
+    query: "J'ai reçu un avis de l'office des poursuites m'informant qu'un séquestre a été ordonné sur mon compte bancaire par un créancier. Mon compte est bloqué à hauteur de 8'000 CHF. Je suis choqué car ce créancier n'a aucun titre contre moi. Mon voisin me dit que j'ai 3 mois pour contester. Est-ce vrai ?",
+    canton: 'GE',
+    expected_domaine: 'dettes',
+    expected_any_article: ['LP 278', 'LP 279'],
+    notes: "Opposition au séquestre — LP 278 — LP 278 al. 1 : DÉLAI PÉREMPTOIRE DE 10 JOURS dès la NOTIFICATION de l'acte de séquestre pour former opposition au juge qui a ordonné le séquestre. NON SUSPENSIF : le compte reste bloqué pendant la procédure. LP 279 : après opposition accueillie, séquestre maintenu si le créancier introduit une action civile dans les 10 jours (ou validation). Le délai de 3 mois cité par le voisin est ERRONÉ — il n'existe pas pour l'opposition LP 278. DOSSIER : preuve que créance inexistante (contrats, correspondances). 'Compte bloqué 8k + séquestre + pas de titre ?' sans 'LP 278 : 10 jours péremptoires dès notification pour opposition — pas 3 mois' ni 'LP 279 : créancier doit encore valider dans 10 jours si opposition accueillie'. Signal adversarial = débiteur attend en croyant avoir 3 mois alors que le délai LP 278 de 10 jours est péremptoire et déjà en cours.",
+  },
+
+  // FAMILLE — CC 134/296 : révision garde, enfant 14 ans, audition obligatoire non vinculante
+  {
+    id: 'adv_famille_36',
+    query: "Ma fille a 14 ans et veut habiter chez moi à temps plein. Sa mère a la garde principale depuis le divorce. Ma fille dit au juge qu'elle veut vivre chez moi. Le juge est-il obligé de respecter son choix ? Elle est assez grande pour décider non ?",
+    canton: 'VD',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 134', 'CC 296'],
+    notes: "Révision garde et audition enfant — CC 134 / CC 298 — CC 296 al. 3 : l'enfant capable de discernement (en principe dès 12 ans) doit être entendu avant toute décision relative à la garde. CC 134 al. 2 : modification jugement divorce sur garde si changement notable de circonstances. MAIS : l'avis de l'enfant est PRIS EN COMPTE, il n'est PAS VINCULANT. ATF 142 III 617 : plus l'enfant est âgé, plus son souhait pèse, mais le juge décide selon le BIEN DE L'ENFANT (CC 296 al. 2). À 14 ans le souhait a un poids important mais n'est pas décisif si le bien de l'enfant commande autrement. 'Fille 14 ans + veut chez père + mère garde principale ?' sans 'CC 296 : audition obligatoire mais NON vinculante — juge décide selon bien de l'enfant' ni 'CC 134 : révision exige changement notable de circonstances, pas simple souhait'. Signal adversarial = père (et fille) croient que l'enfant de 12+ ans décide seul de son domicile.",
+  },
+
+  // ÉTRANGERS — LEI 84/85a : permis S Ukraine, travail autorisé, regroupement familial restreint
+  {
+    id: 'adv_etrangers_31',
+    query: "Je suis ukrainienne avec un permis S depuis 2022. Je veux faire venir ma mère (65 ans) et ma sœur (30 ans) qui sont encore en Ukraine. Mon frère vit en Suisse depuis 10 ans avec un permis B. Est-ce que mon permis S me donne le droit au regroupement familial pour ma mère et ma sœur ?",
+    canton: 'BE',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LEI 84', 'LEI 85a'],
+    notes: "Permis S — protection temporaire — LEI 84 al. 1 : le permis S est accordé aux personnes à protéger (Ukraine depuis mars 2022). LEI 85a : titulaires du statut S peuvent exercer une activité lucrative sans autorisation spéciale. REGROUPEMENT FAMILIAL RESTREINT pour permis S : seuls CONJOINT et ENFANTS MINEURS peuvent rejoindre (LEI 85 al. 3 applicable par analogie). Ni les parents (ascendants) ni les frères/sœurs ne sont inclus dans le regroupement familial du permis S — contrairement au permis B/C. La mère (65 ans) et la sœur (30 ans) NE PEUVENT PAS venir via le regroupement S. 'Permis S + mère 65 ans + sœur 30 ans + regroupement familial ?' sans 'LEI 84/85a : regroupement S = conjoint + enfants mineurs seulement, pas ascendants ni fratrie' ni distinction permis S vs B pour le regroupement. Signal adversarial = bénéficiaire S croit que le regroupement couvre la famille élargie comme un permis B.",
+  },
+
+  // ASSURANCES — LAVS 29quinquies : splitting AVS divorce, rente propre pas part rente ex
+  {
+    id: 'adv_assurances_20',
+    query: "Je divorce après 22 ans de mariage. J'ai travaillé à temps partiel et m'en suis occupée des enfants. Mon mari a une rente AVS de 1'800 CHF. On m'a dit que j'aurai droit à la moitié de sa rente après le divorce. Est-ce que cela signifie qu'il devra me verser 900 CHF par mois de SA rente ?",
+    canton: 'VD',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LAVS 29', 'LAVS 21'],
+    notes: "Splitting AVS divorce — LAVS 29quinquies — Partage des revenus (splitting) : les revenus des deux époux pendant le mariage sont additionnés et répartis par moitié sur leurs comptes AVS RESPECTIFS pour les années communes. Résultat : chaque époux reçoit une RENTE PROPRE calculée sur ses revenus bonifiés — l'ex-mari NE VERSE PAS une partie de SA rente. La rente de l'ex-femme sera calculée sur ses propres cotisations cumulées (temps partiel + bonifications pour tâches éducatives CC/LAVS). Si ces cotisations sont insuffisantes, la rente sera inférieure à 900 CHF. LAVS 29 : rente ordinaire. LAVS 21 : âge de la rente. BONIFICATIONS LAVS 29ter : pour tâches éducatives. 'Divorce 22 ans + temps partiel + rente mari 1800 CHF + partage ?' sans 'LAVS 29quinquies : splitting = rente propre calculée sur compte AVS personnel, pas prélèvement sur rente ex-mari' ni 'LAVS 29ter : bonifications pour tâches éducatives'. Signal adversarial = femme au foyer croit que l'ex-mari lui versera la moitié de SA rente mensuelle.",
+  },
+
+  // CONSOMMATION — CO 158 : arrhes vs acompte, restitution double si réclamant défaille
+  {
+    id: 'adv_consommation_21',
+    query: "J'ai versé 3'000 CHF d'arrhes à une agence événementielle pour organiser mon mariage. À deux mois de la date, l'agence m'annonce qu'elle fait faillite et ne peut pas assurer la prestation. Elle propose de me rembourser seulement mes 3'000 CHF. Mais j'ai dû tout réorganiser en urgence et j'ai perdu des opportunités. Est-ce que je peux récupérer plus que mes 3'000 CHF ?",
+    canton: 'NE',
+    expected_domaine: 'consommation',
+    expected_any_article: ['CO 205', 'CO 107', 'CO 97'],
+    notes: "Arrhes — CO 158 — CO 158 al. 2 : si la partie qui A REÇU les arrhes est en demeure ou résilie, elle doit restituer LE DOUBLE des arrhes reçues. Ici l'agence (réclamant = destinataire des arrhes) défaille → restitution du double = 6'000 CHF (pas seulement 3'000 CHF). CO 158 al. 3 : si le dommage dépasse le double des arrhes, la partie lésée peut réclamer la différence en prouvant le dommage supplémentaire (CO 97). FAILLITE : créance au passif de la masse si la société est en liquidation. DOMMAGES SUPPLÉMENTAIRES : coûts de réorganisation, perte sur prestataires retenus. 'Mariage + arrhes 3000 + agence faillite + veut seulement rembourser ?' sans 'CO 158 al. 2 : défaillance du réclamant = restitution du DOUBLE (6000 CHF)' ni 'CO 97/158 al. 3 : dommages supplémentaires réclamables si >double'. Signal adversarial = client croit que les arrhes sont une simple avance remboursable à l'identique, ignorant la sanction double de CO 158.",
+  },
+
+  // CIRCULATION — LCR 16c/90 : zone travaux, +30 km/h au-dessus de 80, retrait permis 3 mois
+  {
+    id: 'adv_circulation_19',
+    query: "J'ai été flashé à 127 km/h dans une zone de travaux limitée à 80 km/h sur l'A1. C'est un excès de 47 km/h. Je n'ai jamais eu de problème avec le permis. La police dit que je risque un retrait de permis de 3 mois minimum. Je pensais payer une amende et c'est tout pour une première infraction. Est-ce possible qu'ils me retirent vraiment le permis ?",
+    canton: 'BE',
+    expected_domaine: 'circulation',
+    expected_any_article: ['LCR 16c', 'LCR 90'],
+    notes: "Excès de vitesse grave — LCR 16c — LCR 16c al. 1 let. a : infraction grave = dépassement de +30 km/h sur routes avec limite ≤ 50 km/h, ou +40 km/h sur routes > 50 km/h. LCR 16c al. 1 let. b : EN ZONE DE TRAVAUX, le seuil est RÉDUIT : +20 km/h sur route à 80 km/h en zone de travaux = infraction grave (OASA 16c). 47 km/h au-dessus de 80 km/h en zone travaux = TRÈS grave (quasi LCR 16d). RETRAIT MINIMAL : LCR 16c al. 2 let. a → 3 mois MINIMUM, même pour première infraction. LCR 90 al. 2 : sanction pénale parallèle (amende ou peine pécuniaire). 'A1 travaux + flashé 127 sur 80 + 47 km/h d'excès + première infraction ?' sans 'LCR 16c : zone travaux → infraction grave → retrait 3 mois minimum même 1ère infraction, pas seulement amende' ni 'LCR 90 al. 2 : sanction pénale séparée'. Signal adversarial = conducteur croit qu'une première infraction = seulement amende, ignorant LCR 16c qui impose retrait minimum 3 mois.",
+  },
+
+  // SANTÉ — LAMal 29/64 : maternité, franchise et quote-part suspendues consultations prénatales
+  {
+    id: 'adv_sante_27',
+    query: "Je suis enceinte de 5 mois. J'ai une franchise annuelle LAMal de 2'500 CHF que je n'ai pas encore atteinte. Mon gynécologue m'a envoyé une facture de 380 CHF pour ma dernière consultation prénatale. Est-ce que je dois vraiment payer de ma poche jusqu'à ce que j'atteigne ma franchise ?",
+    canton: 'GE',
+    expected_domaine: 'sante',
+    expected_any_article: ['LAMal 64', 'LAMal 29'],
+    notes: "Maternité et franchise LAMal — LAMal 29 / OAMal 104 — LAMal 29 al. 2 : les prestations en cas de maternité (soins préventifs, consultations de contrôle de la grossesse, accouchement, soins post-partum) sont EXEMPTÉES de franchise et de quote-part. OAMal 104 : liste des examens de contrôle préventifs de grossesse pris en charge sans franchise. CONSÉQUENCE : la consultation prénatale de contrôle (gynécologue, sage-femme, dépistages T21) ne doit PAS être payée de la poche de la patiente, même si la franchise n'est pas atteinte. La facture doit être transmise à l'assureur qui prend en charge 100%. 'Enceinte 5 mois + franchise 2500 CHF + consultation gynéco 380 CHF + facture personnelle ?' sans 'LAMal 29 : maternité exemptée de franchise et quote-part' ni 'OAMal 104 : consultations prénatales de contrôle = exemptées'. Signal adversarial = patiente paie à tort sa franchise sur des soins de grossesse pourtant exemptés par LAMal 29.",
+  },
+
+  // ENTREPRISE — CO 754/718b : organe de fait, dirigeant sans inscription RC, responsabilité identique
+  {
+    id: 'adv_entreprise_20',
+    query: "J'ai fondé une SA mais je n'ai pas voulu figurer au registre du commerce pour des raisons personnelles. Un ami de confiance est l'administrateur officiel mais c'est moi qui prends toutes les décisions, signe les contrats et gère les finances. La société a des dettes importantes. Mon ami me dit qu'il est seul responsable puisque c'est son nom au RC. Est-ce vrai ?",
+    canton: 'ZH',
+    expected_domaine: 'entreprise',
+    expected_any_article: ['CO 754', 'CO 718b'],
+    notes: "Organe de fait — CO 754 / jurisprudence TF — CO 754 al. 1 : responsabilité des personnes chargées de la gestion ou de la surveillance. ORGANE DE FAIT : le TF étend la responsabilité CO 754 aux personnes qui exercent EFFECTIVEMENT des fonctions d'organe sans y être formellement désignées (ATF 128 III 29). Dirigeant de facto (toutes décisions + contrats + finances) = organe de fait = responsabilité IDENTIQUE à l'administrateur formel. L'absence d'inscription au RC NE PROTÈGE PAS contre CO 754. CO 718b : représentation de la SA engage la société envers les tiers de bonne foi même si le représentant outrepassait ses pouvoirs. En cas de faillite : LP 285 ss actions révocatoires possibles contre organe de fait. 'SA + ami administrateur nominal + moi décisions réelles + dettes ?' sans 'CO 754 + jurisprudence TF : organe de fait = responsabilité identique à administrateur formel, absence RC = pas de protection' ni 'ATF 128 III 29 : critère de l'exercice effectif des fonctions'. Signal adversarial = fondateur de fait croit que l'absence d'inscription au RC le protège totalement de la responsabilité pour les dettes.",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

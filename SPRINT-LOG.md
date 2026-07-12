@@ -1569,3 +1569,25 @@ Points à surveiller :
   - `adv_voisinage_27` (CO 685 terrasse 80 cm fenêtre : distances légales droit privé distinct du permis public, CPC 261 urgent — VD)
 - **Angles inédits wave 40** : LIFD 26 bureau disponible vs domicile (mythe "télétravail = déduction automatique"), CO 336 licenciement en contexte divorce (angle dual-domaine bail+travail), LAI 17 seuil 5pp ATF 130 V 71 (mythe "amélioration = perte automatique rente"), CO 58 pancarte insuffisante enfant (mythe "mise en garde = exonération totale"), LCA 40 dol requis (mythe "toute exagération = refus total légal"), LCR 58 détenteur auto-école primaire (mythe "élève doit mobiliser assurance personnelle"), CO 370 al.2 défauts cachés post-PV (mythe "PV signé = perd tous droits"), LAMal 64a al.7 urgences maintenus suspension (mythe "suspension = interdiction totale de soins"), CO 530 par actes concluants (mythe "sans contrat écrit = aucun droit"), CO 685 droit privé ≠ permis public (mythe "permis communal clôt tout recours").
 - **Prochaine action** : mesure éval CLI sur 410 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-12 UTC — run agent horaire (wave 41 adversarial : 410→420 cas)
+- **Tenté** : item 1 — wave 41 : +10 cas adversariaux ciblant des angles inédits dans 10 domaines variés (bail CO 269a plafond rendement net post-rénovation, travail CO 337/335c accumulation avertissements ≠ faute grave unique, dettes LP 278 délai 10 jours péremptoires opposition séquestre, famille CC 134/296 révision garde enfant 14 ans audition non vinculante, étrangers LEI 84/85a permis S regroupement familial restreint conjoint+mineurs, assurances LAVS 29quinquies splitting AVS divorce rente propre vs part rente ex, consommation CO 158 arrhes restitution double si défaillance réclamant, circulation LCR 16c zone travaux +47 km/h retrait permis 3 mois 1ère infraction, sante LAMal 29 grossesse franchise suspendue consultations prénatales, entreprise CO 754/718b organe de fait sans inscription RC responsabilité identique)
+- **Résultat** : passed ✓ — **420 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2599/2674 pass** (75 échecs pré-existants, non introduits par ce run — vérifié stash avant/après)
+  - Validation fiches : 0 erreur ✓ (314/314)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60)
+  - Adversarial CLI sur 420 cas : non mesuré ce run
+- **Nouveaux cas wave 41 (10)** :
+  - `adv_bail_42` (CO 269a hausse loyer rénovation : hausse doit respecter plafond rendement net, toiture ≠ toujours plus-value — VD)
+  - `adv_travail_42` (CO 337/335c accumulation 2 avertissements retards ≠ faute grave, licenciement immédiat injustifié → CO 337c indemnité 6 mois — ZH)
+  - `adv_dettes_37` (LP 278 opposition séquestre : délai 10 JOURS péremptoires dès notification — pas 3 mois — GE)
+  - `adv_famille_36` (CC 134/296 révision garde enfant 14 ans : audition obligatoire mais NON vinculante, juge décide selon bien de l'enfant — VD)
+  - `adv_etrangers_31` (LEI 84/85a permis S Ukraine : regroupement restreint conjoint+mineurs seulement, parents et fratrie exclus — BE)
+  - `adv_assurances_20` (LAVS 29quinquies splitting AVS : rente propre sur compte AVS personnel, ex-mari ne verse pas part de SA rente — VD)
+  - `adv_consommation_21` (CO 158 arrhes mariage : agence faillite = restitution du DOUBLE (6000 vs 3000), pas simple avance — NE)
+  - `adv_circulation_19` (LCR 16c zone travaux : +47 km/h sur 80 = infraction grave, retrait 3 mois MINIMUM même 1ère infraction — BE)
+  - `adv_sante_27` (LAMal 29/64 grossesse : franchise et quote-part suspendues consultations prénatales, patiente ne doit pas payer — GE)
+  - `adv_entreprise_20` (CO 754/718b organe de fait : dirigeant sans inscription RC = responsabilité identique administrateur formel, ATF 128 III 29 — ZH)
+- **Angles inédits wave 41** : CO 269a plafond rendement net (mythe "toute rénovation légitimise hausse illimitée"), CO 337 avertissements ≠ faute grave unique (mythe "cumuler avertissements = licenciement immédiat légal"), LP 278 10 jours péremptoires (mythe "on a 3 mois pour contester séquestre"), CC 296 audition non vinculante (mythe "enfant 12+ ans décide seul de son domicile"), LEI 85a permis S famille élargie exclue (mythe "permis S = droits B pour regroupement"), LAVS 29quinquies rente propre (mythe "ex-femme reçoit % rente ex-mari"), CO 158 al.2 double arrhes (mythe "arrhes = avance remboursable à l'identique"), LCR 16c zone travaux seuil réduit (mythe "première infraction = amende seulement"), LAMal 29 franchise suspendue grossesse (mythe "franchise s'applique toujours même en grossesse"), CO 754 organe de fait sans RC (mythe "absence inscription RC = immunité totale dettes SA").
+- **Prochaine action** : mesure éval CLI sur 420 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

@@ -1,0 +1,255 @@
+[
+ {
+  "id": "cx_fab_01",
+  "query": "Mon patron m'a viré du jour au lendemain sans aucune raison. J'ai un collègue qui m'a dit que dans ces cas-là on a droit à 6 mois de salaire d'indemnité, c'est bien ça la loi non? Je veux récupérer mes 6 mois.",
+  "expected": [
+   "travail_licenciement_abusif"
+  ],
+  "found": [
+   "travail_licenciement_abusif",
+   "travail_delai_conge",
+   "travail_licenciement_maladie",
+   "travail_indemnite_depart"
+  ],
+  "critical": []
+ },
+ {
+  "id": "cx_fab_05",
+  "query": "Je me suis fait flasher à 30 km/h au-dessus de la limite sur une route à 50. Un pote m'a dit que pour un premier excès de vitesse on a toujours droit à un simple avertissement sans retrait de permis, c'est garanti par la loi pour les primo-délinquants non?",
+  "expected": [
+   "circulation_retrait_permis_exces_vitesse"
+  ],
+  "found": [
+   "circulation_retrait_permis_exces_vitesse"
+  ],
+  "critical": []
+ },
+ {
+  "id": "cx_extract_01",
+  "query": "Bonjour, je loue un 3 pièces à Genève depuis janvier 2019. Depuis 7 mois il y a de la moisissure noire dans la chambre et la salle de bain, ça empire, mon fils tousse. J'ai signalé par lettre à la régie le 3 février 2026, ils n'ont toujours rien fait. Je paie 1850 CHF par mois et je trouve ça anormal de payer plein tarif pour un logement qui rend malade.",
+  "expected": [
+   "bail_defaut_moisissure"
+  ],
+  "found": [
+   "bail_defaut_moisissure",
+   "bail_travaux_non_faits",
+   "bail_logement_insalubre"
+  ],
+  "critical": []
+ },
+ {
+  "id": "cx_extract_04",
+  "query": "Hier soir à Lausanne j'ai été flashé sur la route de Berne, en ville donc limite 50, le radar a affiché 78 km/h après déduction. Je conduis depuis 11 ans, jamais eu le moindre souci avec mon permis. Là j'ai reçu un courrier qui parle d'un possible retrait. J'ai absolument besoin de ma voiture pour mon boulot de livreur, je suis terrifié de perdre mon permis.",
+  "expected": [
+   "circulation_retrait_permis_exces_vitesse"
+  ],
+  "found": [
+   "circulation_retrait_permis_exces_vitesse",
+   "circulation_radar_photo_contestation"
+  ],
+  "critical": []
+ },
+ {
+  "id": "cx_for_01",
+  "query": "J'habite à Nyon mais je loue un appartement à Genève. La régie vient de me donner mon congé et je trouve ça totalement injuste, j'y vis depuis 8 ans. Un ami m'a dit d'aller au tribunal des baux ici à Nyon vu que c'est là que j'habite. C'est bien ça ?",
+  "expected": [
+   "bail_resiliation_conteste"
+  ],
+  "found": [
+   "bail_resiliation_conteste",
+   "bail_prolongation"
+  ],
+  "critical": []
+ },
+ {
+  "id": "cx_fauxami_01",
+  "query": "Ma régie refuse de me rendre ma garantie de loyer. J'ai quitté l'appartement à Lausanne il y a deux mois et entre-temps j'ai déménagé en Allemagne pour le travail. Je suis donc à l'étranger maintenant, est-ce que ça complique les choses pour récupérer mes 4500 francs ?",
+  "expected": [
+   "bail_depot_garantie"
+  ],
+  "found": [
+   "bail_depot_garantie"
+  ],
+  "critical": []
+ },
+ {
+  "id": "cx_fauxami_02",
+  "query": "C'est une situation URGENTE et très GRAVE, j'ai de la moisissure noire qui revient sur le mur de la chambre depuis trois mois et la régie ne fait rien. C'est super compliqué et je panique, j'ai l'impression que je vais devoir prendre un avocat tellement c'est sérieux.",
+  "expected": [
+   "bail_defaut_moisissure"
+  ],
+  "found": [
+   "bail_defaut_moisissure",
+   "bail_travaux_non_faits",
+   "bail_logement_insalubre"
+  ],
+  "critical": []
+ },
+ {
+  "id": "cx_fauxami_03",
+  "query": "Mon patron ne m'a pas payé mon salaire de mars ni d'avril, ça fait environ 9200 francs au total. C'est un gros montant et l'affaire me paraît vraiment compliquée parce qu'il y a beaucoup d'argent en jeu et il me menace. Qu'est-ce que je peux faire ?",
+  "expected": [
+   "travail_salaire_impaye"
+  ],
+  "found": [
+   "travail_salaire_impaye",
+   "dettes_commandement_payer",
+   "travail_licenciement_abusif"
+  ],
+  "critical": []
+ },
+ {
+  "id": "cx_fauxami_05",
+  "query": "J'ai trouvé sous mon essuie-glace une amende de 40 francs pour stationnement. C'est une catastrophe, je suis terrifié, est-ce que je vais avoir un casier judiciaire et perdre mon permis à cause de ça ? L'affaire me semble très grave.",
+  "expected": [
+   "circulation_amende_ordre"
+  ],
+  "found": [
+   "circulation_amende_ordre"
+  ],
+  "critical": []
+ },
+ {
+  "id": "ho_accident_travail",
+  "query": "Je me suis blessé au dos en portant des charges sur mon lieu de travail, qui paie mes soins et mon salaire ?",
+  "expected": [
+   "accident_travail"
+  ],
+  "found": [
+   "accident_travail_prestations_laa",
+   "accident_travail"
+  ],
+  "critical": []
+ },
+ {
+  "id": "ho_bail_souslocation",
+  "query": "Je veux sous-louer ma chambre cet été pendant mon stage à l'étranger, est-ce que j'ai le droit ?",
+  "expected": [
+   "bail_sous_location"
+  ],
+  "found": [
+   "bail_sous_location",
+   "bail_sous_location_refusee"
+  ],
+  "critical": []
+ },
+ {
+  "id": "ho_bail_etatdeslieux",
+  "query": "À mon entrée dans l'appartement on n'a jamais fait d'état des lieux, maintenant la régie me reproche des dégâts.",
+  "expected": [
+   "bail_etat_des_lieux"
+  ],
+  "found": [
+   "bail_etat_des_lieux",
+   "bail_etat_lieux_conteste"
+  ],
+  "critical": []
+ },
+ {
+  "id": "ho_etranger_natu",
+  "query": "Je vis en Suisse depuis 12 ans avec un permis C, je voudrais devenir suisse, quelles sont les conditions ?",
+  "expected": [
+   "etranger_naturalisation"
+  ],
+  "found": [
+   "etranger_naturalisation",
+   "etranger_naturalisation_facilitee"
+  ],
+  "critical": []
+ },
+ {
+  "id": "ho_famille_divorce",
+  "query": "Ma femme et moi voulons divorcer à l'amiable, comment ça se passe concrètement ?",
+  "expected": [
+   "famille_divorce_procedure"
+  ],
+  "found": [
+   "famille_divorce",
+   "famille_divorce_procedure"
+  ],
+  "critical": []
+ },
+ {
+  "id": "ho_famille_garde",
+  "query": "Avec mon ex on n'arrive pas à se mettre d'accord sur la garde de notre fils, que faire ?",
+  "expected": [
+   "famille_garde"
+  ],
+  "found": [
+   "famille_garde",
+   "famille_autorite_parentale_conjointe"
+  ],
+  "critical": []
+ },
+ {
+  "id": "ho_succ_testament",
+  "query": "Mon père est décédé et je pense que son testament a été écrit sous l'influence de ma belle-mère, puis-je le contester ?",
+  "expected": [
+   "successions_testament_contestation"
+  ],
+  "found": [
+   "successions_testament_contestation",
+   "successions_heritier_reserve"
+  ],
+  "critical": []
+ },
+ {
+  "id": "ho_travail_harcelement",
+  "query": "Mon chef me rabaisse devant tout le monde et m'isole depuis des mois, je n'en peux plus au travail.",
+  "expected": [
+   "travail_harcelement"
+  ],
+  "found": [
+   "travail_harcelement",
+   "travail_burnout"
+  ],
+  "critical": []
+ },
+ {
+  "id": "ho_entreprise_surendet",
+  "query": "Mon entreprise individuelle a trop de dettes, je n'arrive plus à payer les fournisseurs, que puis-je faire ?",
+  "expected": [
+   "entreprise_surendettement"
+  ],
+  "found": [
+   "entreprise_difficultes_paiement",
+   "entreprise_faillite_personnelle"
+  ],
+  "critical": []
+ },
+ {
+  "id": "ho_circ_alcool",
+  "query": "J'ai été contrôlé avec 0,6 pour mille au volant, est-ce que je vais perdre mon permis ?",
+  "expected": [
+   "circulation_alcool_retrait_permis"
+  ],
+  "found": [
+   "circulation_alcool_retrait_permis"
+  ],
+  "critical": []
+ },
+ {
+  "id": "ho_assurance_maternite",
+  "query": "Je suis enceinte et salariée, combien de temps de congé maternité payé j'ai droit après l'accouchement ?",
+  "expected": [
+   "assurance_maternite_apg"
+  ],
+  "found": [
+   "assurance_maternite_apg",
+   "travail_grossesse"
+  ],
+  "critical": []
+ },
+ {
+  "id": "ho_testament_olographe",
+  "query": "Je veux écrire moi-même mon testament à la main, est-ce que c'est valable sans notaire ?",
+  "expected": [
+   "famille_testament_olographe"
+  ],
+  "found": [
+   "successions_testament_olographe_forme",
+   "famille_testament_olographe"
+  ],
+  "critical": []
+ }
+]

@@ -1,0 +1,622 @@
+[
+ {
+  "id": "cx_multi_02",
+  "query": "Mon mari me frappe depuis des mois, j'ai peur pour moi et les enfants. Je veux partir mais j'ai un permis B qui dépend de lui et je sais pas si je peux rester en Suisse si je le quitte. En plus on a un crédit commun à la banque et j'ai reçu un commandement de payer à mon nom alors que c'est lui qui a tout dépensé. Je suis à Genève.",
+  "expected": [
+   "famille_violence_conjugale",
+   "etranger_violence_permis",
+   "dettes_commandement_payer"
+  ],
+  "critical": [],
+  "found": [
+   "violence_domestique",
+   "etranger_violence_permis",
+   "dettes_commandement_payer",
+   "dettes_opposition"
+  ]
+ },
+ {
+  "id": "cx_multi_01",
+  "query": "Je suis en arrêt maladie depuis 3 semaines à cause d'un burnout, mon médecin m'a signé un certificat. Hier mon patron m'a remis ma lettre de licenciement. Et comme si ça suffisait pas, ma régie vient de me mettre un courrier pour augmenter mon loyer de 180 francs dès le prochain terme. Je sais plus où donner de la tête, je suis à Lausanne.",
+  "expected": [
+   "travail_licenciement_maladie",
+   "bail_augmentation_loyer"
+  ],
+  "critical": [
+   "travail_licenciement_maladie"
+  ],
+  "found": [
+   "travail_maladie",
+   "travail_licenciement_abusif",
+   "bail_augmentation_loyer"
+  ]
+ },
+ {
+  "id": "cx_multi_03",
+  "query": "J'ai eu un accident de voiture le mois dernier en allant au travail, l'autre conducteur m'est rentré dedans. J'ai un certificat médical, je suis en arrêt et j'ai mal au dos. Mon employeur ne m'a versé que la moitié de mon salaire ce mois-ci et la voiture est à la casse. Je suis dans le Valais.",
+  "expected": [
+   "accident_travail",
+   "accident_circulation",
+   "travail_salaire_impaye"
+  ],
+  "critical": [
+   "travail_salaire_impaye"
+  ],
+  "found": [
+   "accident_circulation",
+   "accident_travail_prestations_laa",
+   "travail_salaire_impaye"
+  ]
+ },
+ {
+  "id": "cx_multi_04",
+  "query": "Mon père est décédé il y a deux semaines. On vient d'apprendre qu'il avait plein de dettes et des poursuites en cours. En plus il louait un appartement et la régie nous écrit déjà pour qu'on vide les lieux et qu'on paie les loyers. On est trois enfants et on sait pas du tout quoi faire, on a peur de devoir payer ses dettes. C'est à Fribourg.",
+  "expected": [
+   "successions_renonciation",
+   "successions_benefice_inventaire",
+   "bail_deces_locataire"
+  ],
+  "critical": [
+   "bail_deces_locataire"
+  ],
+  "found": [
+   "succession_repudiation",
+   "successions_benefice_inventaire",
+   "bail_deces_locataire"
+  ]
+ },
+ {
+  "id": "cx_multi_05",
+  "query": "Je me sépare de ma femme, c'est compliqué. Elle est partie avec notre fille de 6 ans et refuse que je la voie. Du coup j'ai arrêté de payer la pension parce que je trouve ça injuste, et maintenant je reçois des papiers de poursuite pour les pensions en retard. En plus mon employeur me dit qu'il va devoir prélever directement sur mon salaire. Je suis à Neuchâtel.",
+  "expected": [
+   "famille_droit_visite",
+   "famille_pension_impayee",
+   "dettes_saisie_salaire"
+  ],
+  "critical": [
+   "dettes_saisie_salaire"
+  ],
+  "found": [
+   "famille_garde",
+   "famille_droit_visite",
+   "famille_pension",
+   "dettes_saisie_salaire"
+  ]
+ },
+ {
+  "id": "cx_cascade_03",
+  "query": "Mon ex ne paie plus la pension pour les enfants depuis presque un an, ça s'accumule. J'ai fait des poursuites contre lui mais l'office m'a dit qu'il n'a rien à saisir, ils m'ont donné un papier qui dit acte de défaut de biens. Je suis à bout, je n'arrive plus à joindre les deux bouts avec les enfants. Est-ce que je perds tout ce qu'il me doit ?",
+  "expected": [
+   "famille_pension_impayee",
+   "dettes_acte_defaut_biens",
+   "social_aide_sociale"
+  ],
+  "critical": [
+   "social_aide_sociale"
+  ],
+  "found": [
+   "famille_pension_impayee",
+   "dettes_acte_defaut_biens",
+   "dettes_acte_defaut_biens_effets"
+  ]
+ },
+ {
+  "id": "cx_cascade_02",
+  "query": "J'ai reçu un papier rose de l'office des poursuites pour une facture que je conteste, je ne savais pas trop quoi faire alors je n'ai rien fait. Maintenant je viens de recevoir un nouveau courrier qui parle de mainlevée et d'audience au tribunal. C'est quoi cette histoire, je peux encore réagir ou c'est trop tard ?",
+  "expected": [
+   "dettes_commandement_payer",
+   "dettes_opposition",
+   "dettes_mainlevee_provisoire"
+  ],
+  "critical": [],
+  "found": [
+   "dettes_opposition",
+   "dettes_mainlevee_provisoire",
+   "dettes_mainlevee_definitive"
+  ]
+ },
+ {
+  "id": "cx_cascade_01",
+  "query": "J'ai perdu mon boulot du jour au lendemain il y a deux mois, mon patron ne m'a jamais payé mon dernier salaire ni mes vacances. Du coup je n'ai plus rien pour payer le loyer, j'ai déjà deux mois de retard et la régie m'a envoyé une lettre disant que j'ai 30 jours sinon ils résilient. Je panique, je vais me retrouver à la rue avec mes enfants.",
+  "expected": [
+   "travail_salaire_impaye",
+   "travail_chomage",
+   "bail_loyers_impayes",
+   "bail_recherche_logement"
+  ],
+  "critical": [
+   "travail_chomage",
+   "bail_recherche_logement"
+  ],
+  "found": [
+   "travail_salaire_impaye",
+   "bail_loyers_impayes",
+   "travail_licenciement_abusif",
+   "bail_expulsion",
+   "assurance_chomage_inscription"
+  ]
+ },
+ {
+  "id": "cx_cascade_04",
+  "query": "Je suis en arrêt maladie depuis 4 mois pour un burnout. La semaine dernière mon employeur m'a envoyé une lettre de licenciement. En plus, je viens de recevoir un courrier de l'Office des migrations qui dit qu'ils vont réexaminer mon permis B parce que je ne travaille plus et que je risque de dépendre de l'aide sociale. Je ne comprends plus rien, est-ce qu'ils ont le droit de me virer pendant que je suis malade ?",
+  "expected": [
+   "travail_licenciement_maladie",
+   "travail_maladie",
+   "etranger_aide_sociale_permis",
+   "etranger_permis_b_renouvellement"
+  ],
+  "critical": [
+   "travail_maladie",
+   "etranger_permis_b_renouvellement"
+  ],
+  "found": [
+   "travail_licenciement_maladie",
+   "travail_burnout",
+   "etranger_permis_b_renouvellement"
+  ]
+ },
+ {
+  "id": "cx_delai_01",
+  "query": "J'ai reçu une lettre de ma gérance avant-hier qui dit que mon bail se termine le 30 septembre, soi-disant parce qu'ils veulent rénover. Je suis dégoûté, ça fait 8 ans que j'habite là et j'ai jamais eu de problème. Je vais commencer à chercher un autre appart ce week-end mais franchement je trouve ça dégueulasse. Je peux faire quoi pour qu'ils me laissent au moins jusqu'à l'été prochain ?",
+  "expected": [
+   "bail_resiliation_conteste",
+   "bail_prolongation",
+   "bail_renovation_forcee"
+  ],
+  "critical": [
+   "bail_prolongation"
+  ],
+  "found": [
+   "bail_resiliation_conteste",
+   "bail_prolongation"
+  ]
+ },
+ {
+  "id": "cx_delai_02",
+  "query": "Il y a une semaine le facteur m'a apporté un truc de l'office des poursuites, un papier rose, comme quoi je devrais 4200 francs à un opérateur télécom avec qui j'ai résilié il y a deux ans. Je suis sûr de rien leur devoir, j'avais tout payé. J'ai pas trop le temps de m'en occuper là avec le boulot, je pensais leur écrire un mail le mois prochain pour leur expliquer. C'est grave ?",
+  "expected": [
+   "dettes_commandement_payer",
+   "dettes_opposition"
+  ],
+  "critical": [],
+  "found": [
+   "dettes_commandement_payer",
+   "dettes_opposition"
+  ]
+ },
+ {
+  "id": "cx_cascade_05",
+  "query": "Mon mari est décédé il y a trois semaines. En triant ses papiers je découvre qu'il avait plein de dettes, des crédits et des poursuites dont je n'avais aucune idée. J'ai peur que les créanciers viennent me réclamer tout ça, et qu'on me prenne aussi la maison. Je ne sais pas du tout quoi faire ni si je dois accepter ou refuser quelque chose. Le temps presse j'imagine ?",
+  "expected": [
+   "successions_renonciation",
+   "successions_benefice_inventaire",
+   "successions_dettes_responsabilite_heritiers"
+  ],
+  "critical": [],
+  "found": [
+   "succession_repudiation",
+   "successions_benefice_inventaire",
+   "successions_dettes_responsabilite_heritiers"
+  ]
+ },
+ {
+  "id": "cx_fab_02",
+  "query": "J'ai reçu un commandement de payer que je conteste totalement. Sur internet j'ai lu qu'on a 7 jours pour faire opposition, c'est bien ça? Je veux être sûr de ne pas rater le délai des 7 jours.",
+  "expected": [
+   "dettes_opposition",
+   "dettes_commandement_payer"
+  ],
+  "critical": [],
+  "found": [
+   "dettes_commandement_payer",
+   "dettes_opposition"
+  ]
+ },
+ {
+  "id": "cx_delai_05",
+  "query": "Ma gérance m'a envoyé une lettre avec un formulaire officiel disant que mon loyer passe de 1450 à 1690 francs dès le prochain terme, soi-disant à cause de travaux dans l'immeuble et de l'évolution des coûts. J'ai reçu ça il y a une dizaine de jours. Ça me semble énorme pour ce que c'est, mais je suppose qu'ils ont le droit puisque c'est sur un formulaire officiel. Je vais leur téléphoner un de ces jours pour négocier à l'amiable une hausse plus douce.",
+  "expected": [
+   "bail_augmentation_loyer",
+   "bail_loyer_abusif"
+  ],
+  "critical": [],
+  "found": [
+   "bail_augmentation_loyer"
+  ]
+ },
+ {
+  "id": "cx_delai_04",
+  "query": "Le Service de la population m'a envoyé une décision qui dit qu'ils ne renouvellent pas mon permis B et que je dois quitter la Suisse. Ça fait 6 ans que je vis ici, je travaille, j'ai mes enfants à l'école ici. J'ai reçu ça il y a 12 jours mais j'étais tellement sous le choc que je n'ai rien fait. Un ami m'a dit qu'il fallait peut-être consulter un avocat mais que de toute façon je pouvais faire le recours quand je serais prêt. Je peux prendre mon temps pour préparer un bon dossier non ?",
+  "expected": [
+   "etranger_renvoi",
+   "etranger_permis_b_renouvellement",
+   "etranger_recours_renvoi"
+  ],
+  "critical": [
+   "etranger_renvoi",
+   "etranger_recours_renvoi"
+  ],
+  "found": [
+   "etranger_permis_b_renouvellement",
+   "etrangers_recours"
+  ]
+ },
+ {
+  "id": "cx_delai_03",
+  "query": "Je me suis fait arrêter par la police il y a 6 jours, contrôle d'alcool en sortant d'un resto. J'ai soufflé et c'était positif. La semaine d'après j'ai reçu une enveloppe du Ministère public, une 'ordonnance pénale' qui me condamne à une amende et des jours-amende avec sursis. Honnêtement le chiffre d'alcool me paraît trop élevé par rapport à ce que j'avais bu, mais bon je me dis que c'est fait c'est fait, je vais payer et passer à autre chose. Je risque quoi pour mon permis ?",
+  "expected": [
+   "circulation_alcool_retrait_permis",
+   "circulation_refus_test_alcool"
+  ],
+  "critical": [],
+  "found": [
+   "circulation_alcool_retrait_permis",
+   "circulation_retrait_permis_exces_vitesse"
+  ]
+ },
+ {
+  "id": "cx_fab_03",
+  "query": "J'ai acheté un canapé en magasin il y a deux semaines mais finalement il ne me plaît pas et il est trop grand. J'ai bien 14 jours pour le ramener et me faire rembourser comme pour les achats en ligne, c'est la loi suisse non?",
+  "expected": [
+   "consommation_remboursement_refuse",
+   "consommation_defaut_produit_garantie"
+  ],
+  "critical": [],
+  "found": [
+   "consommation_remboursement_refuse",
+   "consommation_defaut_produit_garantie"
+  ]
+ },
+ {
+  "id": "cx_fab_04",
+  "query": "Ma régie veut augmenter mon loyer de 200 francs. Mon voisin m'a dit qu'une augmentation de loyer est limitée à 10% maximum par an par la loi. Donc ils n'ont pas le droit de monter de plus de 10%, je peux refuser le reste?",
+  "expected": [
+   "bail_augmentation_loyer",
+   "bail_loyer_abusif"
+  ],
+  "critical": [
+   "bail_loyer_abusif"
+  ],
+  "found": [
+   "bail_augmentation_loyer"
+  ]
+ },
+ {
+  "id": "cx_extract_02",
+  "query": "Je travaille comme magasinière à Fribourg depuis le 1er mars 2017. Mon patron m'a licenciée le 12 mai 2026 avec effet au 31 juillet. Le problème c'est que j'ai un certificat médical : je suis en arrêt total pour dépression depuis le 28 avril 2026 et le médecin dit minimum 3 mois. J'ai un CDI normal, jamais eu d'avertissement. Est-ce qu'ils ont le droit de me virer alors que je suis malade ?",
+  "expected": [
+   "travail_licenciement_maladie",
+   "travail_maladie"
+  ],
+  "critical": [],
+  "found": [
+   "travail_licenciement_maladie",
+   "travail_maladie"
+  ]
+ },
+ {
+  "id": "cx_extract_03",
+  "query": "J'habite à Sion (Valais). J'ai reçu un commandement de payer de l'Office des poursuites le 18 mai 2026 pour 4200 CHF que mon ex-colocataire prétend que je lui dois, mais je ne dois rien du tout, on avait soldé nos comptes. Le facteur me l'a remis en main propre il y a deux jours. Qu'est-ce que je fais, je panique.",
+  "expected": [
+   "dettes_commandement_payer",
+   "dettes_opposition"
+  ],
+  "critical": [],
+  "found": [
+   "dettes_opposition",
+   "dettes_commandement_payer"
+  ]
+ },
+ {
+  "id": "cx_extract_05",
+  "query": "Mon père est décédé le 2 avril 2026 à Neuchâtel. On vient d'apprendre qu'il avait plein de dettes, peut-être plus de 60'000 CHF de cartes de crédit et de crédits à la consommation. Je suis son seul enfant, ma mère est déjà décédée. Je ne veux surtout pas hériter de ses dettes. Comment je fais pour ne pas être responsable de tout ça ?",
+  "expected": [
+   "successions_renonciation",
+   "succession_repudiation",
+   "famille_dette_successorale"
+  ],
+  "critical": [],
+  "found": [
+   "successions_renonciation",
+   "successions_benefice_inventaire"
+  ]
+ },
+ {
+  "id": "cx_marginal_01",
+  "query": "Je viens de recevoir mon congé de mon employeur, on me met dehors dans deux mois. Je suis dégoûté, ça fait 6 ans que je bosse là.",
+  "expected": [
+   "travail_licenciement_abusif",
+   "travail_licenciement_maladie",
+   "travail_maladie",
+   "travail_grossesse",
+   "travail_delai_conge"
+  ],
+  "critical": [
+   "travail_licenciement_maladie",
+   "travail_maladie",
+   "travail_grossesse"
+  ],
+  "found": [
+   "travail_licenciement_abusif",
+   "travail_delai_conge",
+   "travail_maladie"
+  ]
+ },
+ {
+  "id": "cx_marginal_02",
+  "query": "J'ai reçu un commandement de payer pour une facture que j'ai déjà réglée il y a longtemps. Je suis furieux, c'est une erreur, ils n'ont pas le droit. Qu'est-ce que je fais ?",
+  "expected": [
+   "dettes_opposition",
+   "dettes_commandement_payer",
+   "dettes_commandement_contestation",
+   "dettes_prescription",
+   "dettes_mainlevee_provisoire"
+  ],
+  "critical": [
+   "dettes_prescription",
+   "dettes_mainlevee_provisoire"
+  ],
+  "found": [
+   "dettes_commandement_payer",
+   "dettes_opposition"
+  ]
+ },
+ {
+  "id": "cx_marginal_03",
+  "query": "Mon voisin a un nouveau-né qui hurle toutes les nuits et son chien aboie sans arrêt pendant la journée. Je n'en peux plus, je ne dors plus depuis des semaines. Je veux que ça cesse.",
+  "expected": [
+   "voisinage_bruit_nuisances",
+   "bail_nuisances_voisins",
+   "bail_defaut_bruit"
+  ],
+  "critical": [
+   "bail_nuisances_voisins",
+   "bail_defaut_bruit"
+  ],
+  "found": [
+   "voisinage_bruit_nuisances",
+   "bail_nuisances_voisins"
+  ]
+ },
+ {
+  "id": "cx_marginal_05",
+  "query": "Je me suis fait choper par un radar sur l'autoroute. J'ai eu un peu la main lourde sur l'accélérateur. Je flippe pour mon permis, j'en ai besoin pour le boulot. C'est grave ?",
+  "expected": [
+   "circulation_retrait_permis_exces_vitesse",
+   "circulation_radar_photo_contestation",
+   "circulation_amende_ordre"
+  ],
+  "critical": [
+   "circulation_radar_photo_contestation"
+  ],
+  "found": [
+   "circulation_retrait_permis_exces_vitesse",
+   "circulation_radar_photo_contestation"
+  ]
+ },
+ {
+  "id": "cx_for_02",
+  "query": "Une entreprise de Lausanne me poursuit pour une facture que je conteste. Je viens de déménager à Fribourg il y a 3 mois. J'ai reçu un commandement de payer de l'office de Lausanne. Est-ce que je dois faire opposition à Lausanne ou à Fribourg, et est-ce que l'office de Lausanne avait le droit de m'envoyer ça vu que je vis à Fribourg maintenant ?",
+  "expected": [
+   "dettes_for_poursuite",
+   "dettes_opposition",
+   "dettes_commandement_payer"
+  ],
+  "critical": [],
+  "found": [
+   "dettes_commandement_payer",
+   "dettes_for_poursuite",
+   "dettes_opposition"
+  ]
+ },
+ {
+  "id": "cx_marginal_04",
+  "query": "Mon mari et moi on se sépare et c'est la guerre pour les enfants. Il dit qu'il va les prendre et je ne le reverrai plus. J'ai peur qu'il parte avec eux. Aidez-moi vite.",
+  "expected": [
+   "famille_enlevement_international",
+   "famille_mesures_provisionnelles",
+   "famille_garde",
+   "famille_mesures_protection",
+   "famille_droit_visite"
+  ],
+  "critical": [],
+  "found": [
+   "famille_garde",
+   "famille_mesures_provisionnelles",
+   "famille_protection_enfant"
+  ]
+ },
+ {
+  "id": "cx_for_04",
+  "query": "Mon mari et moi on se sépare. On s'est mariés à Berne mais on a toujours vécu à Genève. Maintenant lui est reparti vivre chez ses parents à Berne et moi je reste à Genève avec les enfants. On est d'accord pour divorcer. Je dépose la demande où, à Berne là où on s'est mariés, ou ici à Genève ?",
+  "expected": [
+   "famille_divorce",
+   "famille_divorce_procedure"
+  ],
+  "critical": [],
+  "found": [
+   "famille_divorce"
+  ]
+ },
+ {
+  "id": "cx_for_03",
+  "query": "Je vis à Zurich. Pendant mes vacances en Valais, un automobiliste valaisan m'a embouti à un rond-point, j'ai eu le cou bloqué et ma voiture est foutue. Son assurance traîne et refuse de tout payer. Je veux les attaquer mais je ne sais pas si je dois ouvrir action à Zurich chez moi, ou en Valais là où ça s'est passé, et contre qui exactement.",
+  "expected": [
+   "accident_circulation",
+   "circulation_accident_responsabilite_civile",
+   "accident_circulation_roles_assurances"
+  ],
+  "critical": [],
+  "found": [
+   "accident_circulation",
+   "accident_circulation_roles_assurances",
+   "accident_rc_vehicules_indemnisation"
+  ]
+ },
+ {
+  "id": "cx_for_05",
+  "query": "Mon père est décédé. Il habitait depuis toujours à Sion en Valais, mais il avait un appartement à Montreux et un compte dans une banque à Zurich. Moi j'habite Lausanne. Je dois obtenir un papier qui prouve que je suis héritier pour débloquer le compte, mais je ne sais pas à quelle justice m'adresser : Lausanne où je vis, Montreux pour l'appart, Zurich pour la banque, ou Sion ?",
+  "expected": [
+   "successions_certificat_heritier",
+   "famille_certificat_heritier"
+  ],
+  "critical": [],
+  "found": [
+   "successions_certificat_heritier",
+   "famille_certificat_heritier"
+  ]
+ },
+ {
+  "id": "cx_fauxami_04",
+  "query": "J'ai reçu hier un commandement de payer de l'office des poursuites pour une facture de leasing que je conteste. C'est une affaire vraiment compliquée et à hauts enjeux, je pense qu'il me faut absolument un avocat spécialisé en droit bancaire international vu la somme. Que dois-je faire en premier ?",
+  "expected": [
+   "dettes_commandement_payer",
+   "dettes_opposition"
+  ],
+  "critical": [],
+  "found": [
+   "dettes_commandement_payer",
+   "dettes_opposition"
+  ]
+ },
+ {
+  "id": "simple_bail_caution",
+  "query": "Ma régie ne me rend pas ma caution 4 mois après mon départ, l'appartement était nickel.",
+  "expected": [
+   "bail_depot_garantie"
+  ],
+  "critical": [],
+  "found": [
+   "bail_depot_garantie"
+  ]
+ },
+ {
+  "id": "simple_bail_moisissure",
+  "query": "Il y a de la moisissure dans ma chambre depuis des mois, ma régie ne fait rien.",
+  "expected": [
+   "bail_defaut_moisissure"
+  ],
+  "critical": [],
+  "found": [
+   "bail_defaut_moisissure"
+  ]
+ },
+ {
+  "id": "simple_travail_licenciement",
+  "query": "Mon patron m'a viré juste après que j'ai dénoncé du harcèlement au bureau, je trouve ça abusif.",
+  "expected": [
+   "travail_licenciement_abusif"
+  ],
+  "critical": [],
+  "found": [
+   "travail_licenciement_abusif",
+   "travail_harcelement"
+  ]
+ },
+ {
+  "id": "simple_travail_heuressup",
+  "query": "Je fais une dizaine d'heures en plus chaque semaine depuis un an et mon employeur refuse de me les payer.",
+  "expected": [
+   "travail_heures_sup"
+  ],
+  "critical": [],
+  "found": [
+   "travail_heures_sup"
+  ]
+ },
+ {
+  "id": "simple_dettes_cdp",
+  "query": "J'ai reçu un commandement de payer pour une facture que j'ai déjà réglée, qu'est-ce que je fais ?",
+  "expected": [
+   "dettes_commandement_payer"
+  ],
+  "critical": [],
+  "found": [
+   "dettes_commandement_payer",
+   "dettes_opposition"
+  ]
+ },
+ {
+  "id": "simple_famille_pension",
+  "query": "Mon ex ne paie plus la pension alimentaire pour nos enfants depuis trois mois.",
+  "expected": [
+   "famille_pension_impayee"
+  ],
+  "critical": [],
+  "found": [
+   "famille_pension_impayee",
+   "famille_pension"
+  ]
+ },
+ {
+  "id": "simple_conso_garantie",
+  "query": "J'ai acheté un lave-linge il y a six mois, il est déjà en panne, le vendeur refuse de le réparer.",
+  "expected": [
+   "consommation_defaut_produit_garantie"
+  ],
+  "critical": [],
+  "found": [
+   "consommation_reparation_sous_garantie",
+   "consommation_defaut_produit_garantie"
+  ]
+ },
+ {
+  "id": "simple_circ_amende",
+  "query": "J'ai reçu une amende de stationnement que je conteste, je n'étais pas mal garé.",
+  "expected": [
+   "circulation_amende_ordre"
+  ],
+  "critical": [],
+  "found": [
+   "circulation_amende_ordre"
+  ]
+ },
+ {
+  "id": "simple_etranger_permis",
+  "query": "Mon permis B n'a pas été renouvelé après que j'ai perdu mon emploi, on me dit de quitter la Suisse.",
+  "expected": [
+   "etranger_permis_b_renouvellement"
+  ],
+  "critical": [],
+  "found": [
+   "etranger_permis_b_renouvellement",
+   "etranger_renvoi_recours",
+   "etrangers_renvoi"
+  ]
+ },
+ {
+  "id": "simple_voisinage_bruit",
+  "query": "Mon voisin du dessus fait un bruit insupportable toutes les nuits, je n'en peux plus.",
+  "expected": [
+   "voisinage_bruit_nuisances"
+  ],
+  "critical": [],
+  "found": [
+   "bail_defaut_bruit",
+   "voisinage_bruit_nuisances"
+  ]
+ },
+ {
+  "id": "simple_sante_erreur",
+  "query": "Je pense que mon chirurgien a commis une erreur pendant mon opération, j'ai des séquelles, je veux porter plainte.",
+  "expected": [
+   "sante_erreur_medicale_plainte"
+  ],
+  "critical": [],
+  "found": [
+   "sante_erreur_medicale_plainte",
+   "sante_responsabilite_professionnel"
+  ]
+ },
+ {
+  "id": "simple_bail_resiliation",
+  "query": "Mon bailleur a résilié mon bail juste après que j'ai demandé une réparation, est-ce que je peux contester ?",
+  "expected": [
+   "bail_resiliation_conteste"
+  ],
+  "critical": [],
+  "found": [
+   "bail_resiliation_conteste"
+  ]
+ }
+]

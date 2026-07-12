@@ -1,0 +1,1136 @@
+{
+  "bilan": {
+    "date": "2026-07-12",
+    "cas": 1,
+    "gratuit": {
+      "pieges_trouves": 1,
+      "hamecons_mordus": 0,
+      "droits_sauves": 1,
+      "cout_total_chf": 0.016
+    },
+    "comite": {
+      "pieges_trouves": 1,
+      "hamecons_mordus": 1,
+      "droits_sauves": 0,
+      "cout_total_chf": 0.272,
+      "cout_moyen_chf": 0.272
+    },
+    "jury": {
+      "gratuit": 0,
+      "comite": 1,
+      "egalite": 0
+    }
+  },
+  "verdict": "✗ LE COMITÉ PERD (0 contre 1). La contradiction n'apporte rien ici. La thèse est fausse — il faut le dire.",
+  "resultats": [
+    {
+      "cas": "ai_refus_recours",
+      "titre": "Refus de rente AI",
+      "piege": "Il n'y a PAS d'opposition en AI — c'est un recours au tribunal cantonal, 30 jours",
+      "gratuit": {
+        "texte": "## Votre situation et ce que vous pouvez faire\n\nJe comprends que c'est une situation difficile. La bonne nouvelle : **vous avez tout à fait le droit de faire opposition**, et c'est la bonne démarche à entreprendre.\n\n---\n\n## ⏰ Délai impératif : 30 jours\n\nVous devez envoyer votre opposition **au plus tard le 27 juillet 2025** (30 jours dès la réception du 27 juin).\n\n> **Base légale : art. 52 LPGA** (Loi fédérale sur la partie générale du droit des assurances sociales)\n\n⚠️ Ce délai est **absolu** : si vous le ratez, la décision devient définitive et vous perdez vos droits de recours. **N'attendez pas.**\n\n---\n\n## 📬 À qui envoyer votre opposition ?\n\nEnvoyez votre lettre à l'office qui a rendu la décision :\n\n**Office AI du canton de Fribourg**\nRoute du Mont-Carmel 5\n1762 Givisiez\n\n📞 Tél. : 026 305 75 75\n\n> Envoyez votre lettre **par courrier recommandé** (pour avoir une preuve de dépôt dans les délais).\n\n---\n\n## ✍️ Que doit contenir votre opposition ?\n\nVotre lettre n'a pas besoin d'être parfaite juridiquement. Elle doit contenir :\n\n1. **Vos coordonnées** (nom, prénom, adresse, N° AVS)\n2. **La référence de la décision** (numéro de dossier, date du 25 juin)\n3. **La mention claire** : *\"Je fais opposition à la décision du 25 juin 2025\"*\n4. **Vos arguments**, même brièvement :\n   - Votre maladie dure depuis 3 ans\n   - Votre capacité de travail est réduite à 40% maximum\n   - Les pièces médicales qui le confirment\n5. **Votre signature**\n\n> Vous pouvez aussi **demander la motivation complète** de la décision si elle n'est pas suffisamment détaillée (art. 49 LPGA).\n\n---\n\n## 🩺 Points importants pour votre dossier\n\nUne incapacité de travail durable de 60% ou plus ouvre en principe droit à une **rente AI entière ou partielle** :\n\n| Incapacité de gain | Rente |\n|---|---|\n| 70% et plus | Rente entière |\n| 60–69% | ¾ de rente |\n| 50–59% | ½ rente |\n| 40–49% | ¼ de rente |\n\n> **Base légale : art. 28 LAI**\n\nSi vous ne pouvez travailler qu'à 40%, votre **incapacité de gain est de 60%**, ce qui devrait ouvrir droit à **¾ de rente** — il est donc crucial de contester.\n\n---\n\n## 🤝 Obtenez de l'aide (recommandé fortement)\n\nPour maximiser vos chances, contactez :\n\n- **Centre social régional (CSR) de Fribourg** – aide gratuite\n- **Pro Infirmis Fribourg** – 026 347 45 00 – spécialisés AI, gratuit\n- **Centre LAVI** ou association de patients\n- **Un avocat spécialisé en droit des assurances sociales** (les honoraires peuvent être pris en charge par l'aide juridique si vous avez de faibles revenus)\n\n---\n\n**En résumé : envoyez une lettre recommandée à l'Office AI Fribourg avant le 27 juillet, puis cherchez de l'aide pour construire votre dossier.** Vous avez des droits, et votre situation mérite d'être réexaminée.",
+        "cout_chf": 0.016,
+        "duree_ms": 21258,
+        "appels": 1,
+        "score": {
+          "piege_trouve": true,
+          "secondaires": [
+            {
+              "quoi": "le délai de 30 jours",
+              "trouve": true
+            },
+            {
+              "quoi": "corriger explicitement le mot « opposition » de la personne",
+              "trouve": false
+            }
+          ],
+          "hamecons_mordus": [],
+          "droit_sauve": true
+        }
+      },
+      "comite": {
+        "texte": "VOTRE SITUATION\nL'office AI a refusé ma rente par décision du 25 juin (reçue le 27 juin), et je veux la contester alors que je ne peux plus travailler qu'à 40%.\n\nÀ FAIRE AUJOURD'HUI\n• Écrire et envoyer une lettre de RECOURS (pas une opposition) contre la décision de l'office AI du 25 juin 2026. Une lettre courte et signée suffit pour tenir le délai : « Je recours contre la décision de l'office AI du canton de Fribourg du 25 juin 2026 qui refuse ma rente. Je demande son annulation et l'octroi d'une rente. Je compléterai ma motivation et joindrai mes documents médicaux. » Joindre une copie de la décision.\n  Auprès de : Le Tribunal cantonal fribourgeois, Cour des assurances sociales. IMPORTANT : l'adresse exacte n'est PAS dans le dossier — lis-la au bas de ta décision du 25 juin (rubrique « voie de recours »), qui l'indique obligatoirement, ou cherche-la sur le site officiel du canton de Fribourg.\n  Coût : gratuit (la procédure de recours en matière d'AI est en principe gratuite)\n  Base légale : art. 69 LAI\n  Pourquoi maintenant : En AI, il n'y a PAS d'opposition à l'office : la décision se conteste DIRECTEMENT devant le tribunal cantonal des assurances. Le délai court, il faut agir sans attendre.\n• Envoyer cette lettre en recommandé (garder le récépissé) : le délai est respecté si la lettre est remise à la Poste avant l'échéance.\n  Auprès de : N'importe quel guichet postal, adressé au Tribunal cantonal, Cour des assurances sociales\n  Coût : prix d'un recommandé\n  Base légale : art. 39 LPGA\n  Pourquoi maintenant : C'est ta preuve que tu as agi dans les temps.\n• Contacter Pro Infirmis ou un service social pour t'aider à rédiger et compléter le recours (soutien gratuit).\n  Auprès de : Pro Infirmis (voir proinfirmis.ch — je n'ai pas de numéro ni d'adresse fiable dans le dossier, ne pas inventer)\n  Coût : gratuit\n  Pourquoi maintenant : Un soutien humain t'aidera à motiver le recours et à réunir les preuves médicales.\n\nLE DÉLAI\n30 jours — à partir de : Réception de la décision : 27 juin 2026\nBase légale : art. 60 LPGA (délai de recours de 30 jours) ; voie fixée par art. 69 LAI\nSuspension / report : Je ne peux pas confirmer avec certitude si des féries s'appliquent au recours cantonal AI fribourgeois. N'y compte PAS : agis comme si l'échéance était le 27 juillet 2026. Si une suspension existe, tant mieux — mais elle ne te sauvera pas si tu attends.\nCertitude : a_verifier\n\nCE QUI POURRAIT VOUS FAIRE PERDRE VOTRE DROIT\n• Ce n'est PAS une opposition, c'est un recours au tribunal (art. 69 LAI)\n• Les commissions de conciliation en matière de bail sont hors sujet (art. 69 LAI)\n• Si la décision n'indique pas correctement la voie de recours, le délai ne te nuit pas (art. 49 LPGA)\n• Restitution du délai en cas d'empêchement non fautif (art. 41 LPGA)\n• Lire le bas de la décision : la voie de recours y figure (art. 49 LPGA)\n\nCE QU'ON A EXAMINÉ PUIS ÉCARTÉ (après contradiction)\n• « Faire opposition à l'office AI dans les 30 jours » — écarté : Détruit par le texte de l'art. 69 LAI qui déroge expressément à l'art. 52 LPGA : il n'y a pas d'opposition en AI. Le greffier s'est appuyé sur l'art. 52 LPGA, qui est précisément l'article ÉCARTÉ. C'est l'erreur exacte du 12 juillet 2026 — je ne la reproduis pas.\n• « 60% d'incapacité de travail = 60% d'invalidité » — écarté : Affaibli par le réfutateur : le taux d'invalidité résulte d'une comparaison des revenus (art. 28 LAI), pas directement du taux d'incapacité de travail. Ne pars pas du principe que ton taux est acquis.\n\nLÀ OÙ NOTRE COMITÉ N'EST PAS D'ACCORD\n• Le greffier dit qu'il faut faire OPPOSITION à l'office AI (art. 52 LPGA). Le chasseur et le réfutateur, en lisant l'art. 69 LAI, disent qu'il faut un RECOURS direct au tribunal cantonal. Je tranche pour le RECOURS : l'art. 69 LAI écarte explicitement l'art. 52 LPGA sur lequel le greffier s'appuie. Le greffier s'est trompé sur ce point.\n• Application ou non de féries d'été au recours cantonal AI fribourgeois : le greffier dit non, le chasseur évoque une possibilité. Non tranché — d'où l'urgence d'agir aujourd'hui sans en dépendre.\n\nCE QU'IL NOUS MANQUE POUR ÊTRE SÛRS\n• Que dit exactement le bas de votre décision du 25 juin, à la rubrique « voie de recours » / « Rechtsmittelbelehrung » ? Quelle autorité et quelle adresse y sont indiquées ?\n• La décision indique-t-elle bien un délai et une autorité, ou cette mention manque-t-elle ?\n• Travailliez-vous à temps plein avant votre maladie, ou à temps partiel (cela change la méthode de calcul du taux d'invalidité) ?\n• Une maladie ou un empêchement vous a-t-il empêché d'agir depuis le 27 juin (utile si le délai devenait un problème) ?\n\nCE QU'ON NE SAIT PAS\n• L'adresse exacte du tribunal cantonal fribourgeois compétent (Cour des assurances sociales) — je refuse d'inventer une adresse ; lisez-la sur votre décision ou sur le site du canton.\n• Si des féries suspendent votre délai de recours devant ce tribunal cantonal.\n• Le contenu exact de la mention des voies de recours sur votre décision.\n• Votre taux d'invalidité réel (dépend du calcul de comparaison des revenus, pas seulement du taux d'incapacité de travail).\n\nVOIR UN HUMAIN : Le calcul du taux d'invalidité et la motivation médicale du recours demandent un accompagnement (Pro Infirmis, service social). Et il faut vérifier sur votre décision l'adresse exacte du tribunal. Mais n'attendez pas cet accompagnement pour envoyer aujourd'hui une lettre de recours simple : agir est gratuit, le silence est irréversible.",
+        "decision": {
+          "situation": "L'office AI a refusé ma rente par décision du 25 juin (reçue le 27 juin), et je veux la contester alors que je ne peux plus travailler qu'à 40%.",
+          "a_faire_aujourdhui": [
+            {
+              "acte": "Écrire et envoyer une lettre de RECOURS (pas une opposition) contre la décision de l'office AI du 25 juin 2026. Une lettre courte et signée suffit pour tenir le délai : « Je recours contre la décision de l'office AI du canton de Fribourg du 25 juin 2026 qui refuse ma rente. Je demande son annulation et l'octroi d'une rente. Je compléterai ma motivation et joindrai mes documents médicaux. » Joindre une copie de la décision.",
+              "aupres_de": "Le Tribunal cantonal fribourgeois, Cour des assurances sociales. IMPORTANT : l'adresse exacte n'est PAS dans le dossier — lis-la au bas de ta décision du 25 juin (rubrique « voie de recours »), qui l'indique obligatoirement, ou cherche-la sur le site officiel du canton de Fribourg.",
+              "cout": "gratuit (la procédure de recours en matière d'AI est en principe gratuite)",
+              "base_legale": "art. 69 LAI",
+              "pourquoi_maintenant": "En AI, il n'y a PAS d'opposition à l'office : la décision se conteste DIRECTEMENT devant le tribunal cantonal des assurances. Le délai court, il faut agir sans attendre."
+            },
+            {
+              "acte": "Envoyer cette lettre en recommandé (garder le récépissé) : le délai est respecté si la lettre est remise à la Poste avant l'échéance.",
+              "aupres_de": "N'importe quel guichet postal, adressé au Tribunal cantonal, Cour des assurances sociales",
+              "cout": "prix d'un recommandé",
+              "base_legale": "art. 39 LPGA",
+              "pourquoi_maintenant": "C'est ta preuve que tu as agi dans les temps."
+            },
+            {
+              "acte": "Contacter Pro Infirmis ou un service social pour t'aider à rédiger et compléter le recours (soutien gratuit).",
+              "aupres_de": "Pro Infirmis (voir proinfirmis.ch — je n'ai pas de numéro ni d'adresse fiable dans le dossier, ne pas inventer)",
+              "cout": "gratuit",
+              "base_legale": null,
+              "pourquoi_maintenant": "Un soutien humain t'aidera à motiver le recours et à réunir les preuves médicales."
+            }
+          ],
+          "delai": {
+            "duree": "30 jours",
+            "point_de_depart": "Réception de la décision : 27 juin 2026",
+            "base_legale": "art. 60 LPGA (délai de recours de 30 jours) ; voie fixée par art. 69 LAI",
+            "suspendu_ou_reporte": "Je ne peux pas confirmer avec certitude si des féries s'appliquent au recours cantonal AI fribourgeois. N'y compte PAS : agis comme si l'échéance était le 27 juillet 2026. Si une suspension existe, tant mieux — mais elle ne te sauvera pas si tu attends.",
+            "certitude": "a_verifier"
+          },
+          "pieges_retenus": [
+            {
+              "titre": "Ce n'est PAS une opposition, c'est un recours au tribunal",
+              "base_legale": "art. 69 LAI",
+              "pourquoi_il_tient": "Le texte officiel de l'art. 69 LAI dit noir sur blanc : « En dérogation aux art. 52 et 58 LPGA, les décisions des offices AI cantonaux peuvent directement faire l'objet d'un recours devant le tribunal des assurances du domicile de l'office. » L'art. 52 LPGA (opposition) est expressément écarté. Envoyer une « opposition » à l'office AI serait la mauvaise voie."
+            },
+            {
+              "titre": "Les commissions de conciliation en matière de bail sont hors sujet",
+              "base_legale": "art. 69 LAI",
+              "pourquoi_il_tient": "Les adresses listées dans le dossier concernent le droit du bail, pas l'AI. La bonne autorité est le tribunal cantonal des assurances."
+            },
+            {
+              "titre": "Si la décision n'indique pas correctement la voie de recours, le délai ne te nuit pas",
+              "base_legale": "art. 49 LPGA",
+              "pourquoi_il_tient": "Le texte de l'art. 49 LPGA impose que la décision indique les voies de droit. Une indication absente ou fausse ne peut pas te faire perdre ton droit. C'est un filet de sécurité."
+            },
+            {
+              "titre": "Restitution du délai en cas d'empêchement non fautif",
+              "base_legale": "art. 41 LPGA",
+              "pourquoi_il_tient": "Si une maladie grave t'a empêché d'agir, tu peux demander la restitution du délai dans les 30 jours après la fin de l'empêchement, en accomplissant l'acte omis. À garder en réserve : le délai est encore ouvert aujourd'hui."
+            },
+            {
+              "titre": "Lire le bas de la décision : la voie de recours y figure",
+              "base_legale": "art. 49 LPGA",
+              "pourquoi_il_tient": "La décision doit indiquer l'autorité et l'adresse exactes. C'est ta source la plus fiable pour savoir où envoyer."
+            }
+          ],
+          "pieges_ecartes": [
+            {
+              "titre": "« Faire opposition à l'office AI dans les 30 jours »",
+              "pourquoi_ecarte": "Détruit par le texte de l'art. 69 LAI qui déroge expressément à l'art. 52 LPGA : il n'y a pas d'opposition en AI. Le greffier s'est appuyé sur l'art. 52 LPGA, qui est précisément l'article ÉCARTÉ. C'est l'erreur exacte du 12 juillet 2026 — je ne la reproduis pas."
+            },
+            {
+              "titre": "« 60% d'incapacité de travail = 60% d'invalidité »",
+              "pourquoi_ecarte": "Affaibli par le réfutateur : le taux d'invalidité résulte d'une comparaison des revenus (art. 28 LAI), pas directement du taux d'incapacité de travail. Ne pars pas du principe que ton taux est acquis."
+            }
+          ],
+          "desaccords": [
+            "Le greffier dit qu'il faut faire OPPOSITION à l'office AI (art. 52 LPGA). Le chasseur et le réfutateur, en lisant l'art. 69 LAI, disent qu'il faut un RECOURS direct au tribunal cantonal. Je tranche pour le RECOURS : l'art. 69 LAI écarte explicitement l'art. 52 LPGA sur lequel le greffier s'appuie. Le greffier s'est trompé sur ce point.",
+            "Application ou non de féries d'été au recours cantonal AI fribourgeois : le greffier dit non, le chasseur évoque une possibilité. Non tranché — d'où l'urgence d'agir aujourd'hui sans en dépendre."
+          ],
+          "erreurs_du_dossier_a_signaler": [
+            "L'analyse du greffier fonde toute la procédure sur l'art. 52 LPGA (opposition à l'office AI). C'est FAUX en matière d'AI : l'art. 69 LAI déroge expressément aux art. 52 et 58 LPGA. La bonne voie est le recours direct au tribunal cantonal des assurances, pas l'opposition. Suivre le greffier ferait envoyer la lettre à la mauvaise autorité.",
+            "Les adresses d'autorités transmises dans le dossier (commissions de conciliation en matière de bail) n'ont rien à voir avec l'AI — ne pas les utiliser.",
+            "La base légale du délai citée par le greffier (art. 52 LPGA) est écartée ; le délai de recours découle de l'art. 60 LPGA, non d'un délai d'opposition."
+          ],
+          "questions_a_lui_poser": [
+            "Que dit exactement le bas de votre décision du 25 juin, à la rubrique « voie de recours » / « Rechtsmittelbelehrung » ? Quelle autorité et quelle adresse y sont indiquées ?",
+            "La décision indique-t-elle bien un délai et une autorité, ou cette mention manque-t-elle ?",
+            "Travailliez-vous à temps plein avant votre maladie, ou à temps partiel (cela change la méthode de calcul du taux d'invalidité) ?",
+            "Une maladie ou un empêchement vous a-t-il empêché d'agir depuis le 27 juin (utile si le délai devenait un problème) ?"
+          ],
+          "ce_que_je_ne_sais_pas": [
+            "L'adresse exacte du tribunal cantonal fribourgeois compétent (Cour des assurances sociales) — je refuse d'inventer une adresse ; lisez-la sur votre décision ou sur le site du canton.",
+            "Si des féries suspendent votre délai de recours devant ce tribunal cantonal.",
+            "Le contenu exact de la mention des voies de recours sur votre décision.",
+            "Votre taux d'invalidité réel (dépend du calcul de comparaison des revenus, pas seulement du taux d'incapacité de travail)."
+          ],
+          "voir_un_humain": true,
+          "pourquoi_un_humain": "Le calcul du taux d'invalidité et la motivation médicale du recours demandent un accompagnement (Pro Infirmis, service social). Et il faut vérifier sur votre décision l'adresse exacte du tribunal. Mais n'attendez pas cet accompagnement pour envoyer aujourd'hui une lettre de recours simple : agir est gratuit, le silence est irréversible."
+        },
+        "deliberation": {
+          "these": {
+            "qualification": "Refus de rente AI par décision formelle de l'office AI cantonal : délai d'opposition de 30 jours en cours, acte urgent à poser aujourd'hui.",
+            "theses": [
+              {
+                "affirmation": "La personne a le droit de faire opposition à la décision de refus de rente dans un délai de 30 jours dès réception, directement auprès de l'office AI qui a rendu la décision.",
+                "preuve": {
+                  "loi": "LPGA",
+                  "article": "52"
+                },
+                "conditions": [
+                  "L'opposition doit être déposée dans les 30 jours dès la notification de la décision",
+                  "L'opposition peut être écrite ou, selon la pratique, adressée par courrier à l'office AI",
+                  "Aucun motif particulier n'est requis, mais il est fortement conseillé d'exposer sommairement les raisons"
+                ],
+                "faits_a_l_appui": [
+                  "La décision date du 25 juin 2026, reçue le 27 juin 2026",
+                  "Le délai de 30 jours court dès le lendemain de la réception, soit dès le 28 juin 2026",
+                  "Le délai expire donc le 28 juillet 2026 — nous sommes le 12 juillet, le délai est OUVERT",
+                  "La personne conteste le refus et souhaite faire valoir son droit à la rente"
+                ],
+                "force": "solide"
+              },
+              {
+                "affirmation": "Une incapacité de travail de 60% (travail possible à 40% seulement) peut ouvrir le droit à une rente entière AI si l'invalidité est d'au moins 70%, ou à une rente partielle si elle est entre 40% et 69%, selon le degré d'invalidité calculé par la méthode ordinaire (comparaison des revenus).",
+                "preuve": {
+                  "loi": "LAI",
+                  "article": "28"
+                },
+                "conditions": [
+                  "L'invalidité doit être d'au moins 40% pour ouvrir un droit à une rente partielle",
+                  "L'incapacité de travail doit être médicalement attestée et durable (au moins une année)",
+                  "La personne doit avoir cotisé suffisamment à l'AVS/AI"
+                ],
+                "faits_a_l_appui": [
+                  "La personne est malade depuis 3 ans, ce qui satisfait la condition de durée",
+                  "Elle ne peut travailler qu'à 40%, soit une incapacité de travail de 60%",
+                  "Selon le calcul de la méthode de comparaison des revenus, un taux d'invalidité significatif est plausible"
+                ],
+                "force": "plaidable"
+              },
+              {
+                "affirmation": "Si la décision ne mentionne pas ou mentionne incorrectement les voies de recours et délais, le délai d'opposition peut être rétabli ou ne pas avoir commencé à courir.",
+                "preuve": {
+                  "loi": "LPGA",
+                  "article": "49"
+                },
+                "conditions": [
+                  "La décision doit indiquer les voies de recours, l'autorité compétente et le délai",
+                  "Si ces mentions font défaut ou sont erronées, la personne ne peut pas se voir opposer un délai échu"
+                ],
+                "faits_a_l_appui": [
+                  "Il faut vérifier si la décision reçue le 27 juin contient bien l'indication de la voie d'opposition et du délai"
+                ],
+                "force": "plaidable"
+              },
+              {
+                "affirmation": "En cas de maladie grave ou d'autre empêchement non fautif, la restitution du délai d'opposition est possible même après son expiration.",
+                "preuve": {
+                  "loi": "LPGA",
+                  "article": "41"
+                },
+                "conditions": [
+                  "La demande de restitution doit être présentée dans les 30 jours après la fin de l'empêchement",
+                  "L'empêchement doit être non fautif (maladie grave, hospitalisation, etc.)",
+                  "L'opposition au fond doit être déposée simultanément à la demande de restitution"
+                ],
+                "faits_a_l_appui": [
+                  "La personne est gravement malade, ce qui pourrait constituer un empêchement non fautif si le délai venait à expirer"
+                ],
+                "force": "plaidable"
+              }
+            ],
+            "actions": [
+              {
+                "acte": "Rédiger et envoyer une lettre d'opposition à l'Office AI du canton de Fribourg, en mentionnant : nom, prénom, adresse, numéro AVS, référence de la décision du 25 juin 2026, et la phrase 'Je fais opposition à la décision du 25 juin 2026 refusant ma rente AI et demande sa reconsidération'. Signer et dater. Envoyer EN RECOMMANDÉ pour conserver une preuve de dépôt.",
+                "aupres_de": "Office AI du canton de Fribourg (adresse exacte à vérifier sur le site de l'office AI cantonal — le dossier ne contient pas cette adresse, NE PAS utiliser les adresses des commissions de bail ci-dessus qui sont sans rapport)",
+                "delai": "URGENT — avant le 28 juillet 2026 (30 jours dès réception le 27 juin 2026, selon LPGA art. 52). Il reste 16 jours. Agir aujourd'hui.",
+                "cout": "Gratuit (opposition administrative, aucun émolument)",
+                "preuve": {
+                  "loi": "LPGA",
+                  "article": "52"
+                }
+              },
+              {
+                "acte": "Joindre à l'opposition tous les documents médicaux disponibles attestant de l'incapacité de travail : rapports de médecins, certificats, résultats d'examens — ou les annoncer et les envoyer dans un second temps.",
+                "aupres_de": "Office AI du canton de Fribourg",
+                "delai": "Avec l'opposition ou dans les plus brefs délais",
+                "cout": "Gratuit",
+                "preuve": {
+                  "loi": "LPGA",
+                  "article": "52"
+                }
+              },
+              {
+                "acte": "Contacter le Centre social régional (CSR) ou Pro Infirmis à Fribourg pour obtenir un soutien gratuit dans la rédaction de l'opposition et la suite de la procédure. Pro Infirmis dispose d'un service de conseil juridique gratuit pour les personnes en situation de handicap ou de maladie.",
+                "aupres_de": "Pro Infirmis Fribourg (adresse exacte non disponible dans le dossier — à rechercher sur le site officiel proinfirmis.ch) ou Centre social régional",
+                "delai": "Aujourd'hui ou demain — ne pas attendre",
+                "cout": "Gratuit",
+                "preuve": {
+                  "loi": "LAI",
+                  "article": "68bis"
+                }
+              }
+            ],
+            "faits_manquants": [
+              "Quel est le numéro exact de la décision et la référence du dossier AI ? (nécessaire pour l'opposition)",
+              "La décision indique-t-elle une voie d'opposition, une autorité et un délai ? (si non ou si erroné, le délai peut ne pas courir)",
+              "Quel est le motif exact du refus mentionné dans la décision ? (taux d'invalidité insuffisant ? conditions de cotisation non remplies ? autre ?)",
+              "La personne a-t-elle un médecin traitant dont les rapports ont été soumis à l'AI ? Ces rapports ont-ils été pris en compte ?",
+              "Y a-t-il eu une expertise médicale ordonnée par l'AI, et si oui, la personne a-t-elle pu en prendre connaissance et se déterminer ?",
+              "Quel est le numéro AVS de la personne ? (nécessaire pour l'opposition)",
+              "La personne a-t-elle reçu une décision de projet (décision préalable/préavis) avant cette décision finale, et a-t-elle pu s'y opposer ?"
+            ]
+          },
+          "formes": {
+            "delai": {
+              "duree": "30 jours",
+              "point_de_depart": "Réception de la décision : 27 juin 2026",
+              "base_legale": {
+                "loi": "LPGA",
+                "article": "52"
+              },
+              "suspension_ou_report": "Les féries judiciaires de l'art. 145 CPC ne s'appliquent PAS en matière d'assurance sociale (la LPGA a ses propres règles et n'intègre pas les féries CPC). Aucune suspension automatique du délai d'opposition n'est prévue ici. Le délai court sans interruption.",
+              "echeance_estimee": "27 juillet 2026 — il reste 15 jours. AGIR IMMÉDIATEMENT.",
+              "certitude": "certain"
+            },
+            "autorite_competente": {
+              "laquelle": "L'OPPOSITION doit être adressée à L'OFFICE AI (Office de l'assurance-invalidité) qui a rendu la décision — et NON à un tribunal. En matière d'AI, la voie est : opposition à l'office AI d'abord, puis recours au tribunal cantonal des assurances en cas de décision sur opposition défavorable. Les autorités de conciliation en matière de bail listées dans le dossier sont HORS SUJET ici — elles concernent le droit du bail, pas l'AI. Ne pas les utiliser. L'adresse exacte de l'office AI du canton de Fribourg n'est pas dans le dossier transmis : elle figure sur la décision elle-même — c'est à cette adresse qu'il faut envoyer l'opposition.",
+              "base_legale": {
+                "loi": "LPGA",
+                "article": "52"
+              },
+              "certitude": "certain"
+            },
+            "formalites": [
+              {
+                "exigence": "L'opposition doit être faite par écrit (lettre signée suffisante, pas de formulaire officiel obligatoire). Elle doit indiquer les conclusions et être motivée — mais une motivation sommaire ('je conteste la décision du 25 juin 2026 et demande une rente entière') suffit pour préserver le délai. On peut compléter ensuite.",
+                "base_legale": {
+                  "loi": "LPGA",
+                  "article": "52"
+                },
+                "consequence_si_manquee": "irrecevabilité si le délai de 30 jours est laissé passer sans acte écrit"
+              },
+              {
+                "exigence": "Envoi recommandé fortement conseillé, pour avoir la preuve de la date d'envoi. En droit suisse des assurances sociales, le délai est respecté si la lettre est remise à la Poste (ou à l'autorité) avant son échéance.",
+                "base_legale": {
+                  "loi": "LPGA",
+                  "article": "39"
+                },
+                "consequence_si_manquee": "risque de ne pas pouvoir prouver l'envoi dans le délai"
+              },
+              {
+                "exigence": "Joindre une copie de la décision contestée si possible.",
+                "base_legale": null,
+                "consequence_si_manquee": "rien sur le délai, mais facilite le traitement"
+              }
+            ],
+            "pieces_a_joindre": [
+              "Copie de la décision de refus de rente (datée du 25 juin 2026)",
+              "Tout document médical récent attestant du taux d'incapacité (peut être envoyé ultérieurement dans un complément)"
+            ],
+            "risque_de_forclusion": "Le délai de 30 jours depuis la réception (27 juin 2026) échoit le 27 juillet 2026. Si aucune opposition écrite n'est remise à la Poste ou déposée à l'office AI avant cette date, la décision entre en force et ne peut plus être attaquée par cette voie. Il reste 15 jours — écrire et envoyer AUJOURD'HUI une lettre d'opposition courte et signée à l'adresse de l'office AI figurant sur la décision reçue. ATTENTION : les coordonnées de la commission de conciliation en matière de bail transmises dans le dossier concernent le droit du bail et sont sans rapport avec cette procédure AI — ne pas les utiliser."
+          },
+          "pieges": {
+            "pieges": [
+              {
+                "titre": "Elle croit pouvoir faire opposition — mais il n'y a PAS d'opposition contre une décision AI : elle perdrait son délai",
+                "mecanisme": "Pour les décisions de l'office AI, la voie ordinaire de l'opposition (art. 52 LPGA) est expressément exclue par la loi spéciale. La seule voie ouverte est le RECOURS direct auprès du tribunal cantonal des assurances sociales. Si elle envoie une 'opposition' à l'office AI en croyant que c'est correct, ce document n'a aucun effet conservatoire : le délai de recours continue à courir et elle le perdra sans s'en apercevoir.",
+                "preuve": {
+                  "loi": "LAI",
+                  "article": "69"
+                },
+                "declencheur": "La personne dit 'je veux faire opposition' — ce mot signifie qu'elle pense à la procédure d'opposition ordinaire, qui n'existe pas ici.",
+                "certitude": "certain",
+                "consequence_si_ignore": "Elle perd définitivement le droit de contester le refus de rente. La décision entre en force, elle ne peut plus rien faire.",
+                "que_faire": "Envoyer AUJOURD'HUI un recours (pas une opposition) au Tribunal cantonal des assurances sociales de Fribourg. Une lettre simple suffit : 'Je recours contre la décision de l'office AI du 25 juin 2026 qui refuse ma rente. Je demande son annulation.' Elle peut compléter sa motivation plus tard. L'adresse exacte de ce tribunal n'est pas dans le dossier — elle doit la chercher sur le site du canton de Fribourg (Kantonsgericht / Tribunal cantonal) ou appeler le tribunal cantonal. NE PAS envoyer à l'office AI."
+              },
+              {
+                "titre": "Le délai de recours de 30 jours paraît urgent — mais les féries judiciaires d'été peuvent le prolonger",
+                "mecanisme": "Le délai de recours est de 30 jours à compter de la notification. La décision a été reçue le 27 juin 2026, ce qui donnerait théoriquement une échéance au 27 juillet 2026. Cependant, les féries judiciaires (art. 145 CPC, du 15 juillet au 15 août) suspendent les délais de recours devant les tribunaux cantonaux en matière civile — mais en droit des assurances sociales fédéral, la suspension des féries s'applique selon les règles de la LPGA et des lois spéciales. Il faut vérifier si les féries s'appliquent à ce recours en assurances sociales.",
+                "preuve": {
+                  "loi": "LPGA",
+                  "article": "38"
+                },
+                "declencheur": "La décision est reçue le 27 juin 2026 et nous sommes le 12 juillet 2026 — le délai de 30 jours expire autour du 27 juillet, en pleine période de féries.",
+                "certitude": "a_verifier",
+                "consequence_si_ignore": "Si les féries ne s'appliquent pas en matière AI et qu'elle attend, elle pourrait laisser passer le délai. Inversement, si elles s'appliquent, elle a plus de temps — mais ne doit pas compter là-dessus sans vérification.",
+                "que_faire": "Agir AUJOURD'HUI sans attendre de réponse sur les féries : envoyer le recours immédiatement. Un recours anticipé ne coûte rien. Si les féries prolongent le délai, tant mieux — mais ne pas parier dessus."
+              },
+              {
+                "titre": "Les autorités listées dans le dossier (commissions de conciliation en matière de bail) sont totalement incompétentes pour ce recours AI",
+                "mecanisme": "Les trois adresses fournies dans le dossier sous 'autorités compétentes' sont des commissions de conciliation en matière de BAIL (logement). Elles n'ont aucune compétence en matière d'assurance-invalidité. Si la personne envoie son recours à l'une de ces adresses, c'est un acte nul — et le délai continue à courir.",
+                "preuve": {
+                  "loi": "LAI",
+                  "article": "69"
+                },
+                "declencheur": "Le dossier liste des adresses qui semblent 'officielles' — risque que la personne ou un conseiller mal informé les utilise.",
+                "certitude": "certain",
+                "consequence_si_ignore": "Le recours est envoyé au mauvais guichet, il n'est pas traité, le délai expire, la décision entre en force.",
+                "que_faire": "Ignorer complètement les adresses listées dans ce dossier pour ce recours. Chercher l'adresse du Tribunal cantonal fribourgeois compétent pour les assurances sociales (Cour des assurances sociales du Tribunal cantonal de l'État de Fribourg) directement sur le site officiel du canton ou sur la décision elle-même — la décision AI mentionne normalement la voie de recours et l'autorité compétente."
+              },
+              {
+                "titre": "La décision AI elle-même indique probablement la voie de recours — ce renseignement est plus fiable que tout conseil externe",
+                "mecanisme": "Les décisions des offices AI doivent indiquer la voie de recours (autorité, délai, forme) conformément aux exigences formelles du droit fédéral. Si la personne lit attentivement le dernier paragraphe de sa décision, elle y trouvera l'adresse exacte où envoyer le recours.",
+                "preuve": {
+                  "loi": "LPGA",
+                  "article": "49"
+                },
+                "declencheur": "La personne ne sait pas où envoyer sa lettre — alors que la réponse est probablement déjà dans sa décision.",
+                "certitude": "probable",
+                "consequence_si_ignore": "Elle cherche au mauvais endroit et perd du temps précieux.",
+                "que_faire": "Lire maintenant le bas de la décision du 25 juin 2026 : il y a normalement une clause 'Voie de recours' qui indique exactement l'autorité et l'adresse. Utiliser cette adresse."
+              }
+            ],
+            "fait_manquant_critique": "La décision AI du 25 juin 2026 mentionne-t-elle la voie de recours et l'autorité destinataire ? Ce texte est le document le plus important — il contient l'adresse exacte et confirme si c'est bien une décision finale (et non un projet de décision / préavis, auquel cas la procédure serait différente)."
+          },
+          "refutation": {
+            "verdicts": [
+              {
+                "cible": "piege",
+                "affirmation_visee": "Pour les décisions de l'office AI, la voie ordinaire de l'opposition (art. 52 LPGA) est expressément exclue par la loi spéciale. La seule voie ouverte est le RECOURS direct auprès du tribunal cantonal des assurances sociales.",
+                "verdict": "detruit",
+                "objection": "C'est le piège le plus dangereux du dossier parce qu'il est présenté avec une certitude absolue ('certain') et qu'il est FAUX. L'art. 69 LAI règle les voies de droit contre les décisions des offices AI cantonaux — mais il ne supprime pas la procédure d'opposition. La LPGA art. 52 pose le principe général : toute décision peut faire l'objet d'une opposition auprès de l'assureur. Les lois spéciales peuvent déroger à ce principe (art. 52 al. 3 LPGA), mais il faut que la dérogation soit explicite. Or l'art. 69 LAI, dans sa structure, organise le recours au tribunal cantonal APRÈS la procédure d'opposition — pas à sa place. Si ce piège est suivi, la personne est renvoyée vers un tribunal cantonal qui lui dira que la voie d'opposition n'a pas encore été épuisée, et elle risque de se retrouver hors délai pour les deux voies. La thèse de l'avocat (art. 52 LPGA) est donc plus sûre. MAIS : je ne peux pas affirmer avec certitude absolue le texte exact de l'art. 69 LAI de mémoire — c'est précisément pourquoi il faut aller lire les deux articles. Ce que je peux affirmer : la certitude 'certain' du chasseur n'est PAS justifiée, et un conseil aussi catégoriquement contraire à la LPGA art. 52 sans citation littérale de l'exception est gravissime.",
+                "preuve": {
+                  "loi": "LPGA",
+                  "article": "52"
+                },
+                "gravite_si_on_l_ecoute_quand_meme": "haute"
+              },
+              {
+                "cible": "these",
+                "affirmation_visee": "La personne a le droit de faire opposition à la décision de refus de rente dans un délai de 30 jours dès réception, directement auprès de l'office AI qui a rendu la décision.",
+                "verdict": "affaibli",
+                "objection": "La base légale (LPGA art. 52) est correcte comme principe général. Mais la thèse ne traite pas sérieusement la question de savoir si la LAI contient une dérogation à la procédure d'opposition. Il faut lire l'art. 69 LAI pour en avoir le cœur net. La thèse 'survit' si l'art. 69 LAI n'exclut pas l'opposition — ce qui est probable, mais doit être vérifié. En attendant cette vérification, la recommandation d'envoyer l'opposition à l'office AI reste l'acte le moins risqué : même si la voie est mal identifiée, une opposition envoyée à l'office AI qui est en réalité compétent pour le recours ne fait que retarder la procédure — elle ne fait pas perdre le droit. L'inverse (envoyer au tribunal alors que l'opposition est requise d'abord) peut causer une irrecevabilité.",
+                "preuve": {
+                  "loi": "LAI",
+                  "article": "69"
+                },
+                "gravite_si_on_l_ecoute_quand_meme": "faible"
+              },
+              {
+                "cible": "these",
+                "affirmation_visee": "Une incapacité de travail de 60% peut ouvrir le droit à une rente entière AI si l'invalidité est d'au moins 70%, ou à une rente partielle si elle est entre 40% et 69%.",
+                "verdict": "affaibli",
+                "objection": "L'art. 28 LAI fonde bien le droit à la rente selon le taux d'invalidité. Mais attention : l'incapacité de travail (60%) n'est PAS identique au taux d'invalidité. Le taux d'invalidité résulte de la méthode de comparaison des revenus (revenu sans invalidité vs revenu avec invalidité), ou de la méthode mixte si la personne n'exerçait pas à temps plein avant. Une incapacité de travail de 60% peut donner un taux d'invalidité très différent selon la situation professionnelle concrète. La thèse est 'plaidable' mais présente un raccourci potentiellement trompeur : la personne ne doit pas croire que 60% d'incapacité de travail = 60% d'invalidité automatiquement.",
+                "preuve": {
+                  "loi": "LAI",
+                  "article": "28"
+                },
+                "gravite_si_on_l_ecoute_quand_meme": "moyenne"
+              },
+              {
+                "cible": "these",
+                "affirmation_visee": "Si la décision ne mentionne pas ou mentionne incorrectement les voies de recours et délais, le délai d'opposition peut être rétabli ou ne pas avoir commencé à courir.",
+                "verdict": "survit",
+                "objection": "L'art. 49 LPGA impose effectivement que les décisions mentionnent les voies de recours. Si ces mentions font défaut, le délai ne court pas ou la personne ne peut pas se voir opposer la tardiveté. Cette thèse est correcte en droit suisse des assurances sociales et constitue un filet de sécurité utile. Elle survit.",
+                "preuve": {
+                  "loi": "LPGA",
+                  "article": "49"
+                },
+                "gravite_si_on_l_ecoute_quand_meme": "faible"
+              },
+              {
+                "cible": "these",
+                "affirmation_visee": "En cas de maladie grave ou d'autre empêchement non fautif, la restitution du délai d'opposition est possible même après son expiration.",
+                "verdict": "survit",
+                "objection": "L'art. 41 LPGA prévoit bien la restitution du délai en cas d'empêchement non fautif. Les conditions citées (demande dans les 30 jours après fin de l'empêchement, dépôt simultané de l'acte omis) sont conformes au texte légal. Utile comme filet de sécurité — mais à n'invoquer qu'en dernier recours, le délai étant encore largement ouvert aujourd'hui.",
+                "preuve": {
+                  "loi": "LPGA",
+                  "article": "41"
+                },
+                "gravite_si_on_l_ecoute_quand_meme": "faible"
+              },
+              {
+                "cible": "piege",
+                "affirmation_visee": "Le délai de recours de 30 jours paraît urgent — mais les féries judiciaires d'été peuvent le prolonger (art. 38 LPGA).",
+                "verdict": "affaibli",
+                "objection": "L'art. 38 LPGA règle la computation des délais mais ne pose pas de féries judiciaires au sens du CPC. Les féries de l'art. 145 CPC ne s'appliquent pas automatiquement aux procédures de droit des assurances sociales fédéral. Il existe des dispositions cantonales qui peuvent prévoir des féries pour les tribunaux cantonaux des assurances sociales, mais ce n'est pas uniforme et ce n'est pas garanti. La conclusion pratique du chasseur est toutefois correcte : agir AUJOURD'HUI sans compter sur une prolongation. Le piège est donc mal fondé juridiquement mais sa recommandation pratique est juste. Gravité faible si on le suit (car il dit d'agir immédiatement de toute façon).",
+                "preuve": {
+                  "loi": "LPGA",
+                  "article": "38"
+                },
+                "gravite_si_on_l_ecoute_quand_meme": "faible"
+              },
+              {
+                "cible": "piege",
+                "affirmation_visee": "Les autorités listées dans le dossier (commissions de conciliation en matière de bail) sont totalement incompétentes pour ce recours AI.",
+                "verdict": "survit",
+                "objection": "Totalement exact et utile. Les adresses fournies dans le dossier sont celles de commissions de conciliation en matière de bail — elles n'ont aucune compétence en matière d'assurance-invalidité. Ce piège est réel, la mise en garde est légitime.",
+                "preuve": {
+                  "loi": "LAI",
+                  "article": "69"
+                },
+                "gravite_si_on_l_ecoute_quand_meme": "haute"
+              },
+              {
+                "cible": "piege",
+                "affirmation_visee": "La décision AI elle-même indique probablement la voie de recours — ce renseignement est plus fiable que tout conseil externe.",
+                "verdict": "survit",
+                "objection": "Correct et fondé sur l'art. 49 LPGA. La décision doit indiquer la voie de recours, l'autorité compétente et le délai. Lire le bas de la décision est le premier réflexe à avoir — et l'adresse qui y figure est la plus fiable. Ce piège-conseil survit.",
+                "preuve": {
+                  "loi": "LPGA",
+                  "article": "49"
+                },
+                "gravite_si_on_l_ecoute_quand_meme": "faible"
+              },
+              {
+                "cible": "these",
+                "affirmation_visee": "Contacter Pro Infirmis à Fribourg pour obtenir un soutien gratuit dans la rédaction de l'opposition — Pro Infirmis dispose d'un service de conseil juridique gratuit (LAI art. 68bis).",
+                "verdict": "affaibli",
+                "objection": "L'art. 68bis LAI concerne le conseil et l'accompagnement dans le domaine de l'intégration professionnelle, pas nécessairement le conseil juridique en procédure d'opposition. Pro Infirmis offre effectivement un soutien aux personnes en situation de handicap, mais la base légale citée est imprécise pour justifier spécifiquement un 'service de conseil juridique'. La recommandation pratique reste utile, mais la fondation juridique est trop vague. Aucun numéro ni adresse ne doit être inventé — l'avocat a raison de renvoyer au site proinfirmis.ch.",
+                "preuve": {
+                  "loi": "LAI",
+                  "article": "68bis"
+                },
+                "gravite_si_on_l_ecoute_quand_meme": "faible"
+              }
+            ],
+            "ce_qui_manque_encore": [
+              "Le texte exact de l'art. 69 LAI en vigueur aujourd'hui : il est INDISPENSABLE pour trancher si l'opposition (art. 52 LPGA) est ouverte ou si le recours direct au tribunal s'applique — c'est la question centrale du dossier.",
+              "La lecture de la décision du 25 juin 2026 elle-même : elle contient normalement l'indication de la voie de recours et de l'autorité compétente, ce qui résout la question.",
+              "Le motif exact du refus dans la décision : taux d'invalidité insuffisant ? Conditions de cotisation ? Causalité médicale contestée ? Cela détermine la stratégie de l'opposition.",
+              "La méthode de calcul du taux d'invalidité utilisée par l'office AI (méthode ordinaire de comparaison des revenus, méthode mixte, ou méthode spécifique) : dépend du statut professionnel de la personne avant la maladie.",
+              "La personne travaillait-elle à temps plein ou partiel avant la maladie ? (détermine la méthode de calcul applicable)",
+              "Y a-t-il eu un préavis / projet de décision avant la décision finale, et dans quel délai a-t-il été notifié ?"
+            ],
+            "erreurs_du_dossier": [
+              "Les adresses fournies sous 'autorités compétentes' sont des commissions de conciliation en matière de BAIL — elles sont sans rapport avec une procédure AI. Leur présence dans le dossier sous une rubrique 'autorités compétentes' est trompeuse et dangereuse.",
+              "Le chasseur affirme avec certitude 'certain' que l'opposition (art. 52 LPGA) est exclue en matière AI : cette affirmation est probablement fausse et n'est étayée par aucune citation littérale de l'art. 69 LAI. La LPGA art. 52 pose le principe général de l'opposition, et une exclusion doit être explicite dans la loi spéciale. Sans lecture du texte de l'art. 69 LAI, cette certitude n'est pas justifiée.",
+              "Le calcul du délai par l'avocat ('dès le lendemain de la réception, soit dès le 28 juin 2026, le délai expire le 28 juillet 2026') mérite vérification : l'art. 38 LPGA régit la computation des délais en assurances sociales, et le point de départ exact (jour de réception inclus ou non) doit être vérifié sur le texte de cet article."
+            ]
+          }
+        },
+        "greffe": {
+          "registre": [
+            {
+              "role": "avocat du citoyen",
+              "texte": "La personne a le droit de faire opposition à la décision de refus de rente dans un délai de 30 jours dès réception, directement auprès de l'office AI qui a rendu la décision.",
+              "preuve": {
+                "loi": "LPGA",
+                "article": "52"
+              },
+              "force": "solide",
+              "lecture": {
+                "lisible": true,
+                "statut": "lu",
+                "loi": "LPGA",
+                "article": "52",
+                "texte": "id=\"art_52\"> Art. 52 Opposition Les décisions peuvent être attaquées dans les trente jours par voie d’opposition auprès de l’assureur qui les a rendues, à l’exception des décisions d’ordonnancement de la procédure. Les décisions sur opposition doivent être rendues dans un délai approprié. Elles sont motivées et indiquent les voies de recours. La procédure d’opposition est gratuite. En règle générale, il ne peut être alloué de dépens. Dans sa décision sur opposition, l’assureur peut priver tout recours de l’effet suspensif, même si cette décision porte sur une prestation en espèces. Les décisions sur opposition ordonnant la restitution de prestations versées indûment sont exceptées. Introduit par le ch. I de la LF du 21 juin 2019, en vigueur depuis le 1 janv. 2021 ( RO 2020 5137 ; FF 2018 1597 ). <article",
+                "source": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/fr/html/fedlex-data-admin-ch-eli-cc-2002-510-20240101-fr-html-3.html",
+                "en_vigueur_depuis": "2024-01-01",
+                "derogation": null
+              },
+              "citation_exacte": null,
+              "ecartee_par": {
+                "par": "art. 69 LAI",
+                "texte": "En dérogation aux art. 52 et 58 LPGA",
+                "ecarte": [
+                  {
+                    "loi": "LPGA",
+                    "article": "52"
+                  },
+                  {
+                    "loi": "LPGA",
+                    "article": "58"
+                  }
+                ]
+              }
+            },
+            {
+              "role": "avocat du citoyen",
+              "texte": "Une incapacité de travail de 60% (travail possible à 40% seulement) peut ouvrir le droit à une rente entière AI si l'invalidité est d'au moins 70%, ou à une rente partielle si elle est entre 40% et 69%, selon le degré d'invalidité calculé par la méthode ordinaire (comparaison des revenus).",
+              "preuve": {
+                "loi": "LAI",
+                "article": "28"
+              },
+              "force": "plaidable",
+              "lecture": {
+                "lisible": true,
+                "statut": "lu",
+                "loi": "LAI",
+                "article": "28",
+                "texte": "id=\"art_28\"> Art. 28 Principe L’assuré a droit à une rente aux conditions suivantes: a. sa capacité de gain ou sa capacité d’accomplir ses travaux habituels ne peut pas être rétablie, maintenue ou améliorée par des mesures de réadaptation raisonnablement exigibles; b. il a présenté une incapacité de travail (art. 6 LPGA ) d’au moins 40 % en moyenne durant une année sans interruption notable; c. au terme de cette année, il est invalide (art. 8 LPGA) à 40 % au moins. Une rente au sens de l’al. 1 n’est pas octroyée tant que toutes les possibilités de réadaptation au sens de l’art. 8, al. 1 et 1 , n’ont pas été épuisées. … Nouvelle teneur selon le ch. I de la LF du 6 oct. 2006 (5 révision AI), en vigueur depuis le 1 janv. 2008 ( RO 2007 5129 ; FF 2005 4215 ). RS 830.1 Introduit par le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), en vigueur depuis le 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). Abrogé par le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), avec effet au 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). <article",
+                "source": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1959/827_857_845/20260101/fr/html/fedlex-data-admin-ch-eli-cc-1959-827_857_845-20260101-fr-html-8.html",
+                "en_vigueur_depuis": "2026-01-01",
+                "derogation": null
+              },
+              "citation_exacte": null
+            },
+            {
+              "role": "avocat du citoyen",
+              "texte": "Si la décision ne mentionne pas ou mentionne incorrectement les voies de recours et délais, le délai d'opposition peut être rétabli ou ne pas avoir commencé à courir.",
+              "preuve": {
+                "loi": "LPGA",
+                "article": "49"
+              },
+              "force": "plaidable",
+              "lecture": {
+                "lisible": true,
+                "statut": "lu",
+                "loi": "LPGA",
+                "article": "49",
+                "texte": "id=\"art_49\"> Art. 49 Décision L’assureur doit rendre par écrit les décisions qui portent sur des prestations, créances ou injonctions importantes ou avec lesquelles l’intéressé n’est pas d’accord. Si le requérant rend vraisemblable un intérêt digne d’être protégé, l’assureur rend une décision en constatation. Les décisions indiquent les voies de droit. Elles doivent être motivées si elles ne font pas entièrement droit aux demandes des parties. La notification irrégulière d’une décision ne doit entraîner aucun préjudice pour l’intéressé. L’assureur qui rend une décision touchant l’obligation d’un autre assureur d’allouer des prestations est tenu de lui en communiquer un exemplaire. Cet autre assureur dispose des mêmes voies de droit que l’assuré. Dans sa décision, l’assureur peut priver toute opposition ou tout recours de l’effet suspensif, même si cette décision porte sur une prestation en espèces. Les décisions ordonnant la restitution de prestations versées indûment sont exceptées. Introduit par le ch. I de la LF du 21 juin 2019, en vigueur depuis le 1 janv. 2021 ( RO 2020 5137 ; FF 2018 1597 ). <article",
+                "source": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/fr/html/fedlex-data-admin-ch-eli-cc-2002-510-20240101-fr-html-3.html",
+                "en_vigueur_depuis": "2024-01-01",
+                "derogation": null
+              },
+              "citation_exacte": null
+            },
+            {
+              "role": "avocat du citoyen",
+              "texte": "En cas de maladie grave ou d'autre empêchement non fautif, la restitution du délai d'opposition est possible même après son expiration.",
+              "preuve": {
+                "loi": "LPGA",
+                "article": "41"
+              },
+              "force": "plaidable",
+              "lecture": {
+                "lisible": true,
+                "statut": "lu",
+                "loi": "LPGA",
+                "article": "41",
+                "texte": "id=\"art_41\"> Art. 41 Restitution du délai Si le requérant ou son mandataire a été empêché, sans sa faute, d’agir dans le délai fixé, celui-ci est restitué pour autant que, dans les 30 jours à compter de celui où l’empêchement a cessé, le requérant ou son mandataire ait déposé une demande motivée de restitution et ait accompli l’acte omis. Nouvelle teneur selon l’annexe ch. 106 de la loi du 17 juin 2005 sur le TAF, en vigueur depuis le 1 janv. 2007 ( RO 2006 2197 ; FF 2001 4000 ). <article",
+                "source": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/fr/html/fedlex-data-admin-ch-eli-cc-2002-510-20240101-fr-html-3.html",
+                "en_vigueur_depuis": "2024-01-01",
+                "derogation": null
+              },
+              "citation_exacte": null
+            },
+            {
+              "role": "avocat du citoyen",
+              "texte": "Rédiger et envoyer une lettre d'opposition à l'Office AI du canton de Fribourg, en mentionnant : nom, prénom, adresse, numéro AVS, référence de la décision du 25 juin 2026, et la phrase 'Je fais opposition à la décision du 25 juin 2026 refusant ma rente AI et demande sa reconsidération'. Signer et dater. Envoyer EN RECOMMANDÉ pour conserver une preuve de dépôt.",
+              "preuve": {
+                "loi": "LPGA",
+                "article": "52"
+              },
+              "acte": true,
+              "lecture": {
+                "lisible": true,
+                "statut": "lu",
+                "loi": "LPGA",
+                "article": "52",
+                "texte": "id=\"art_52\"> Art. 52 Opposition Les décisions peuvent être attaquées dans les trente jours par voie d’opposition auprès de l’assureur qui les a rendues, à l’exception des décisions d’ordonnancement de la procédure. Les décisions sur opposition doivent être rendues dans un délai approprié. Elles sont motivées et indiquent les voies de recours. La procédure d’opposition est gratuite. En règle générale, il ne peut être alloué de dépens. Dans sa décision sur opposition, l’assureur peut priver tout recours de l’effet suspensif, même si cette décision porte sur une prestation en espèces. Les décisions sur opposition ordonnant la restitution de prestations versées indûment sont exceptées. Introduit par le ch. I de la LF du 21 juin 2019, en vigueur depuis le 1 janv. 2021 ( RO 2020 5137 ; FF 2018 1597 ). <article",
+                "source": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/fr/html/fedlex-data-admin-ch-eli-cc-2002-510-20240101-fr-html-3.html",
+                "en_vigueur_depuis": "2024-01-01",
+                "derogation": null
+              },
+              "citation_exacte": null,
+              "ecartee_par": {
+                "par": "art. 69 LAI",
+                "texte": "En dérogation aux art. 52 et 58 LPGA",
+                "ecarte": [
+                  {
+                    "loi": "LPGA",
+                    "article": "52"
+                  },
+                  {
+                    "loi": "LPGA",
+                    "article": "58"
+                  }
+                ]
+              }
+            },
+            {
+              "role": "avocat du citoyen",
+              "texte": "Joindre à l'opposition tous les documents médicaux disponibles attestant de l'incapacité de travail : rapports de médecins, certificats, résultats d'examens — ou les annoncer et les envoyer dans un second temps.",
+              "preuve": {
+                "loi": "LPGA",
+                "article": "52"
+              },
+              "acte": true,
+              "lecture": {
+                "lisible": true,
+                "statut": "lu",
+                "loi": "LPGA",
+                "article": "52",
+                "texte": "id=\"art_52\"> Art. 52 Opposition Les décisions peuvent être attaquées dans les trente jours par voie d’opposition auprès de l’assureur qui les a rendues, à l’exception des décisions d’ordonnancement de la procédure. Les décisions sur opposition doivent être rendues dans un délai approprié. Elles sont motivées et indiquent les voies de recours. La procédure d’opposition est gratuite. En règle générale, il ne peut être alloué de dépens. Dans sa décision sur opposition, l’assureur peut priver tout recours de l’effet suspensif, même si cette décision porte sur une prestation en espèces. Les décisions sur opposition ordonnant la restitution de prestations versées indûment sont exceptées. Introduit par le ch. I de la LF du 21 juin 2019, en vigueur depuis le 1 janv. 2021 ( RO 2020 5137 ; FF 2018 1597 ). <article",
+                "source": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/fr/html/fedlex-data-admin-ch-eli-cc-2002-510-20240101-fr-html-3.html",
+                "en_vigueur_depuis": "2024-01-01",
+                "derogation": null
+              },
+              "citation_exacte": null,
+              "ecartee_par": {
+                "par": "art. 69 LAI",
+                "texte": "En dérogation aux art. 52 et 58 LPGA",
+                "ecarte": [
+                  {
+                    "loi": "LPGA",
+                    "article": "52"
+                  },
+                  {
+                    "loi": "LPGA",
+                    "article": "58"
+                  }
+                ]
+              }
+            },
+            {
+              "role": "avocat du citoyen",
+              "texte": "Contacter le Centre social régional (CSR) ou Pro Infirmis à Fribourg pour obtenir un soutien gratuit dans la rédaction de l'opposition et la suite de la procédure. Pro Infirmis dispose d'un service de conseil juridique gratuit pour les personnes en situation de handicap ou de maladie.",
+              "preuve": {
+                "loi": "LAI",
+                "article": "68bis"
+              },
+              "acte": true,
+              "lecture": {
+                "lisible": true,
+                "statut": "lu",
+                "loi": "LAI",
+                "article": "68bis",
+                "texte": "id=\"art_68_bis\"> Art. 68 Formes de collaboration interinstitutionnelle Afin de faciliter, pour les assurés qui ont fait l’objet d’une communication en vue d’une détection précoce ou qui ont déposé une demande à l’AI pour faire valoir leur droit aux prestations et dont la capacité de gain est en cours d’évaluation, l’accès aux mesures de réadaptation prévues par l’assurance-invalidité, par l’assurance-chômage et par les cantons, les offices AI collaborent étroitement avec: a. les assureurs et les organes d’exécution des assurances sociales; b. les entreprises d’assurance soumises à la LSA ; c. les institutions de prévoyance professionnelle soumises à la loi du 17 décembre 1993 sur le libre passage ; d. les organes d’exécution cantonaux chargés de favoriser la réadaptation professionnelle; e. les organes d’exécution des lois cantonales relatives à l’aide sociale; e . les organes d’exécution publics et privés de la législation sur l’asile, sur les étrangers et sur l’intégration; f. d’autres institutions publiques ou privées importantes pour la réadaptation des assurés. L’assurance-invalidité collabore avec les instances cantonales chargées du soutien à l’insertion professionnelle des jeunes. Elle peut en outre participer au financement des instances cantonales chargées de la coordination des mesures de soutien: a. si ces instances cantonales prennent en charge les jeunes présentant une problématique multiple, et b. si une convention règle la collaboration entre ces instances cantonales et l’office AI ainsi que la participation financière de l’assurance. Pour les mineurs dès l’âge de 13 ans et les jeunes adultes jusqu’à ce qu’ils atteignent l’âge de 25 ans qui sont menacés d’invalidité et qui ont déposé une demande de prestations de l’assurance, les offices AI peuvent participer, sur la base d’une convention avec les instances cantonales compétentes prévues à l’al. 1, let. d, aux frais des mesures préparant à une formation professionnelle initiale au sens de l’art. 16, al. 1. L’assurance-invalidité prend à sa charge un tiers au maximum des coûts par canton visés à l’al. 1 et des coûts par mesure visés à l’al. 1 . Le Conseil fédéral peut fixer le plafond de ces contributions et en subordonner l’octroi à d’autres conditions ou charges. Il peut attribuer à l’OFAS la compétence de régler les exigences minimales que les conventions doivent remplir. Les offices AI ainsi que les assureurs et les organes d’application des assurances sociales sont mutuellement déliés de l’obligation de garder le secret (art. 33 LPGA ), aux conditions suivantes: a. la loi applicable prévoit une base légale déliant les assureurs et les organes d’exécution des assurances sociales de cette obligation; b. aucun intérêt privé prépondérant ne s’y oppose; c. les renseignements et documents transmis servent: 1. soit à déterminer les mesures de réadaptation appropriées pour la personne concernée; 2. soit à clarifier les prétentions de la personne concernée envers les assurances sociales. L’obligation pour les offices AI de garder le secret est également levée, aux conditions de l’al. 2, let. b et c, à l’égard des institutions et des organes d’exécution cantonaux visés aux al. 1, let. b à f, et 1 , pour autant que la loi applicable prévoie une base légale déliant les institutions et organes d’exécution de cette obligation et qu’ils accordent la réciprocité aux offices AI. En dérogation à l’art. 32 LPGA et à l’art. 50 a , al. 1, LAVS , l’échange de données au sens des al. 2 et 3 peut aussi se faire oralement selon les cas. La personne concernée doit être informée subséquemment de l’échange de données et de son contenu. Lorsqu’un office AI rend une décision qui touche le domaine des prestations d’une institution ou d’un organe d’exécution cantonal visés aux al. 1, let. b à f, et 1 , il est tenu de lui remettre une copie de la décision. Introduit par le ch. I de la LF du 21 mars 2003 (4e révision AI) ( RO 2003 3837 ; FF 2001 3045 ). Nouvelle teneur selon le ch. I de la LF du 6 oct. 2006 (5 révision AI), en vigueur depuis le 1 janv. 2008 ( RO 2007 5129 ; FF 2005 4215 ). Nouvelle teneur selon le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), en vigueur depuis le 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). Nouvelle teneur selon l’annexe ch. 4 de la LF du 16 déc. 2016 (Intégration), en vigueur depuis le 1 janv. 2019 ( RO 2017 6521 , 2018 3171 ; FF 2013 2131 , 2016 2665 ). Nouvelle teneur selon le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), en vigueur depuis le 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). RS 961.01 RS 831.42 Introduite par l’annexe ch. 4 de la LF du 16 déc. 2016 (Intégration), en vigueur depuis le 1 janv. 2019 ( RO 2017 6521 , 2018 3171 ; FF 2013 2131 , 2016 2665 ). Introduit par le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), en vigueur depuis le 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). Introduit par le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), en vigueur depuis le 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). Introduit par le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), en vigueur depuis le 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). RS 830.1 Nouvelle teneur selon le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), en vigueur depuis le 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). RS 831.10 Nouvelle teneur selon le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), en vigueur depuis le 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). <article",
+                "source": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1959/827_857_845/20260101/fr/html/fedlex-data-admin-ch-eli-cc-1959-827_857_845-20260101-fr-html-8.html",
+                "en_vigueur_depuis": "2026-01-01",
+                "derogation": "En dérogation à l’art. 32 LPGA et à l’art. 50 a , al. 1, LAVS , l’échange de données au sens des al. 2 et 3 peut aussi se faire oralement selon les cas. La personn"
+              },
+              "citation_exacte": null
+            },
+            {
+              "role": "chasseur de pièges",
+              "texte": "Elle croit pouvoir faire opposition — mais il n'y a PAS d'opposition contre une décision AI : elle perdrait son délai",
+              "preuve": {
+                "loi": "LAI",
+                "article": "69"
+              },
+              "piege": true,
+              "certitude": "certain",
+              "que_faire": "Envoyer AUJOURD'HUI un recours (pas une opposition) au Tribunal cantonal des assurances sociales de Fribourg. Une lettre simple suffit : 'Je recours contre la décision de l'office AI du 25 juin 2026 qui refuse ma rente. Je demande son annulation.' Elle peut compléter sa motivation plus tard. L'adresse exacte de ce tribunal n'est pas dans le dossier — elle doit la chercher sur le site du canton de Fribourg (Kantonsgericht / Tribunal cantonal) ou appeler le tribunal cantonal. NE PAS envoyer à l'office AI.",
+              "lecture": {
+                "lisible": true,
+                "statut": "lu",
+                "loi": "LAI",
+                "article": "69",
+                "texte": "id=\"art_69\"> Art. 69 Particularités du contentieux En dérogation aux art. 52 et 58 LPGA : a. les décisions des offices AI cantonaux peuvent directement faire l’objet d’un recours devant le tribunal des assurances du domicile de l’office concerné; b. les décisions de l’office AI pour les assurés résidant à l’étranger peuvent directement faire l’objet d’un recours devant le Tribunal administratif fédéral. La procédure de recours en matière de contestations portant sur des prestations de l’AI devant le tribunal cantonal des assurances est soumise à des frais judiciaires. Le montant des frais est fixé en fonction de la charge liée à la procédure, indépendamment de la valeur litigieuse, et doit se situer entre 200 et 1000 francs. L’al. 1 et l’art. 85 , al. 3, LAVS s’appliquent par analogie à la procédure devant le Tribunal administratif fédéral. Les jugements des tribunaux arbitraux cantonaux rendus en vertu de l’art. 27 peuvent faire l’objet d’un recours auprès du Tribunal fédéral, conformément à la loi du 17 juin 2005 sur le Tribunal fédéral . Nouvelle teneur selon l’annexe ch. 8 de la LF du 6 oct. 2000 sur la partie générale du droit des assurances sociales, en vigueur depuis le 1 janv. 2003 ( RO 2002 3371 ; FF 1991 II 181 888 , 1994 V 897 , 1999 4168 ). RS 830.1 Nouvelle teneur selon le ch. IV 2 de la LF du 16 déc. 2005, en vigueur depuis le 1 janv. 2007 ( RO 2006 2003 ; FF 2005 2899 ). Nouvelle teneur selon le ch. I de la LF du 16 déc. 2005, en vigueur depuis le 1 juil. 2006 ( RO 2006 2003 ; FF 2005 2899 ). Nouvelle teneur selon l’annexe ch. 2 de la LF du 21 juin 2019, en vigueur depuis le 1 janv. 2021 ( RO 2020 5137 ; FF 2018 1597 ). Introduit par le ch. I de la LF du 16 déc. 2005, en vigueur depuis le 1 juil. 2006 ( RO 2006 2003 ; FF 2005 2899 ). RS 831.10 Nouvelle teneur selon le ch. IV 2 de la LF du 16 déc. 2005, en vigueur depuis le 1 janv. 2007 ( RO 2006 2003 ; FF 2005 2899 ). RS 173.110 Introduit par le ch. I de la LF du 21 mars 2003 (4e révision AI) ( RO 2003 3837 ; FF 2001 3045 ). Nouvelle teneur selon le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), en vigueur depuis le 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). <article",
+                "source": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1959/827_857_845/20260101/fr/html/fedlex-data-admin-ch-eli-cc-1959-827_857_845-20260101-fr-html-8.html",
+                "en_vigueur_depuis": "2026-01-01",
+                "derogation": "En dérogation aux art. 52 et 58 LPGA"
+              },
+              "citation_exacte": null
+            },
+            {
+              "role": "chasseur de pièges",
+              "texte": "Le délai de recours de 30 jours paraît urgent — mais les féries judiciaires d'été peuvent le prolonger",
+              "preuve": {
+                "loi": "LPGA",
+                "article": "38"
+              },
+              "piege": true,
+              "certitude": "a_verifier",
+              "que_faire": "Agir AUJOURD'HUI sans attendre de réponse sur les féries : envoyer le recours immédiatement. Un recours anticipé ne coûte rien. Si les féries prolongent le délai, tant mieux — mais ne pas parier dessus.",
+              "lecture": {
+                "lisible": true,
+                "statut": "lu",
+                "loi": "LPGA",
+                "article": "38",
+                "texte": "id=\"art_38\"> Art. 38 Calcul et suspension des délais Si le délai, compté par jours ou par mois, doit être communiqué aux parties, il commence à courir le lendemain de la communication. S’il ne doit pas être communiqué aux parties, il commence à courir le lendemain de l’événement qui le déclenche. Une communication qui n’est remise que contre la signature du destinataire ou d’un tiers habilité est réputée reçue au plus tard sept jours après la première tentative infructueuse de distribution. Lorsque le délai échoit un samedi, un dimanche ou un jour férié selon le droit fédéral ou cantonal, son terme est reporté au premier jour ouvrable qui suit. Le droit cantonal déterminant est celui du canton où la partie ou son mandataire a son domicile ou son siège. Les délais en jours ou en mois fixés par la loi ou par l’autorité ne courent pas: a. du 7 jour avant Pâques au 7 jour après Pâques inclusivement; b. du 15 juillet au 15 août inclusivement; c. du 18 décembre au 2 janvier inclusivement. Introduit par l’annexe ch. 106 de la loi du 17 juin 2005 sur le TAF, en vigueur depuis le 1 janv. 2007 ( RO 2006 2197 ; FF 2001 4000 ). Nouvelle teneur selon l’annexe ch. 106 de la loi du 17 juin 2005 sur le TAF, en vigueur depuis le 1 janv. 2007 ( RO 2006 2197 ; FF 2001 4000 ). Nouvelle teneur selon l’annexe ch. 106 de la loi du 17 juin 2005 sur le TAF, en vigueur depuis le 1 janv. 2007 ( RO 2006 2197 ; FF 2001 4000 ). <article",
+                "source": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/fr/html/fedlex-data-admin-ch-eli-cc-2002-510-20240101-fr-html-3.html",
+                "en_vigueur_depuis": "2024-01-01",
+                "derogation": null
+              },
+              "citation_exacte": null
+            },
+            {
+              "role": "chasseur de pièges",
+              "texte": "Les autorités listées dans le dossier (commissions de conciliation en matière de bail) sont totalement incompétentes pour ce recours AI",
+              "preuve": {
+                "loi": "LAI",
+                "article": "69"
+              },
+              "piege": true,
+              "certitude": "certain",
+              "que_faire": "Ignorer complètement les adresses listées dans ce dossier pour ce recours. Chercher l'adresse du Tribunal cantonal fribourgeois compétent pour les assurances sociales (Cour des assurances sociales du Tribunal cantonal de l'État de Fribourg) directement sur le site officiel du canton ou sur la décision elle-même — la décision AI mentionne normalement la voie de recours et l'autorité compétente.",
+              "lecture": {
+                "lisible": true,
+                "statut": "lu",
+                "loi": "LAI",
+                "article": "69",
+                "texte": "id=\"art_69\"> Art. 69 Particularités du contentieux En dérogation aux art. 52 et 58 LPGA : a. les décisions des offices AI cantonaux peuvent directement faire l’objet d’un recours devant le tribunal des assurances du domicile de l’office concerné; b. les décisions de l’office AI pour les assurés résidant à l’étranger peuvent directement faire l’objet d’un recours devant le Tribunal administratif fédéral. La procédure de recours en matière de contestations portant sur des prestations de l’AI devant le tribunal cantonal des assurances est soumise à des frais judiciaires. Le montant des frais est fixé en fonction de la charge liée à la procédure, indépendamment de la valeur litigieuse, et doit se situer entre 200 et 1000 francs. L’al. 1 et l’art. 85 , al. 3, LAVS s’appliquent par analogie à la procédure devant le Tribunal administratif fédéral. Les jugements des tribunaux arbitraux cantonaux rendus en vertu de l’art. 27 peuvent faire l’objet d’un recours auprès du Tribunal fédéral, conformément à la loi du 17 juin 2005 sur le Tribunal fédéral . Nouvelle teneur selon l’annexe ch. 8 de la LF du 6 oct. 2000 sur la partie générale du droit des assurances sociales, en vigueur depuis le 1 janv. 2003 ( RO 2002 3371 ; FF 1991 II 181 888 , 1994 V 897 , 1999 4168 ). RS 830.1 Nouvelle teneur selon le ch. IV 2 de la LF du 16 déc. 2005, en vigueur depuis le 1 janv. 2007 ( RO 2006 2003 ; FF 2005 2899 ). Nouvelle teneur selon le ch. I de la LF du 16 déc. 2005, en vigueur depuis le 1 juil. 2006 ( RO 2006 2003 ; FF 2005 2899 ). Nouvelle teneur selon l’annexe ch. 2 de la LF du 21 juin 2019, en vigueur depuis le 1 janv. 2021 ( RO 2020 5137 ; FF 2018 1597 ). Introduit par le ch. I de la LF du 16 déc. 2005, en vigueur depuis le 1 juil. 2006 ( RO 2006 2003 ; FF 2005 2899 ). RS 831.10 Nouvelle teneur selon le ch. IV 2 de la LF du 16 déc. 2005, en vigueur depuis le 1 janv. 2007 ( RO 2006 2003 ; FF 2005 2899 ). RS 173.110 Introduit par le ch. I de la LF du 21 mars 2003 (4e révision AI) ( RO 2003 3837 ; FF 2001 3045 ). Nouvelle teneur selon le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), en vigueur depuis le 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). <article",
+                "source": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1959/827_857_845/20260101/fr/html/fedlex-data-admin-ch-eli-cc-1959-827_857_845-20260101-fr-html-8.html",
+                "en_vigueur_depuis": "2026-01-01",
+                "derogation": "En dérogation aux art. 52 et 58 LPGA"
+              },
+              "citation_exacte": null
+            },
+            {
+              "role": "chasseur de pièges",
+              "texte": "La décision AI elle-même indique probablement la voie de recours — ce renseignement est plus fiable que tout conseil externe",
+              "preuve": {
+                "loi": "LPGA",
+                "article": "49"
+              },
+              "piege": true,
+              "certitude": "probable",
+              "que_faire": "Lire maintenant le bas de la décision du 25 juin 2026 : il y a normalement une clause 'Voie de recours' qui indique exactement l'autorité et l'adresse. Utiliser cette adresse.",
+              "lecture": {
+                "lisible": true,
+                "statut": "lu",
+                "loi": "LPGA",
+                "article": "49",
+                "texte": "id=\"art_49\"> Art. 49 Décision L’assureur doit rendre par écrit les décisions qui portent sur des prestations, créances ou injonctions importantes ou avec lesquelles l’intéressé n’est pas d’accord. Si le requérant rend vraisemblable un intérêt digne d’être protégé, l’assureur rend une décision en constatation. Les décisions indiquent les voies de droit. Elles doivent être motivées si elles ne font pas entièrement droit aux demandes des parties. La notification irrégulière d’une décision ne doit entraîner aucun préjudice pour l’intéressé. L’assureur qui rend une décision touchant l’obligation d’un autre assureur d’allouer des prestations est tenu de lui en communiquer un exemplaire. Cet autre assureur dispose des mêmes voies de droit que l’assuré. Dans sa décision, l’assureur peut priver toute opposition ou tout recours de l’effet suspensif, même si cette décision porte sur une prestation en espèces. Les décisions ordonnant la restitution de prestations versées indûment sont exceptées. Introduit par le ch. I de la LF du 21 juin 2019, en vigueur depuis le 1 janv. 2021 ( RO 2020 5137 ; FF 2018 1597 ). <article",
+                "source": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/fr/html/fedlex-data-admin-ch-eli-cc-2002-510-20240101-fr-html-3.html",
+                "en_vigueur_depuis": "2024-01-01",
+                "derogation": null
+              },
+              "citation_exacte": null
+            },
+            {
+              "role": "réfutateur",
+              "texte": "C'est le piège le plus dangereux du dossier parce qu'il est présenté avec une certitude absolue ('certain') et qu'il est FAUX. L'art. 69 LAI règle les voies de droit contre les décisions des offices AI cantonaux — mais il ne supprime pas la procédure d'opposition. La LPGA art. 52 pose le principe général : toute décision peut faire l'objet d'une opposition auprès de l'assureur. Les lois spéciales peuvent déroger à ce principe (art. 52 al. 3 LPGA), mais il faut que la dérogation soit explicite. Or l'art. 69 LAI, dans sa structure, organise le recours au tribunal cantonal APRÈS la procédure d'opposition — pas à sa place. Si ce piège est suivi, la personne est renvoyée vers un tribunal cantonal qui lui dira que la voie d'opposition n'a pas encore été épuisée, et elle risque de se retrouver hors délai pour les deux voies. La thèse de l'avocat (art. 52 LPGA) est donc plus sûre. MAIS : je ne peux pas affirmer avec certitude absolue le texte exact de l'art. 69 LAI de mémoire — c'est précisément pourquoi il faut aller lire les deux articles. Ce que je peux affirmer : la certitude 'certain' du chasseur n'est PAS justifiée, et un conseil aussi catégoriquement contraire à la LPGA art. 52 sans citation littérale de l'exception est gravissime.",
+              "preuve": {
+                "loi": "LPGA",
+                "article": "52"
+              },
+              "verdict": "detruit",
+              "vise": "Pour les décisions de l'office AI, la voie ordinaire de l'opposition (art. 52 LPGA) est expressément exclue par la loi spéciale. La seule voie ouverte est le RECOURS direct auprès du tribunal cantonal des assurances sociales.",
+              "lecture": {
+                "lisible": true,
+                "statut": "lu",
+                "loi": "LPGA",
+                "article": "52",
+                "texte": "id=\"art_52\"> Art. 52 Opposition Les décisions peuvent être attaquées dans les trente jours par voie d’opposition auprès de l’assureur qui les a rendues, à l’exception des décisions d’ordonnancement de la procédure. Les décisions sur opposition doivent être rendues dans un délai approprié. Elles sont motivées et indiquent les voies de recours. La procédure d’opposition est gratuite. En règle générale, il ne peut être alloué de dépens. Dans sa décision sur opposition, l’assureur peut priver tout recours de l’effet suspensif, même si cette décision porte sur une prestation en espèces. Les décisions sur opposition ordonnant la restitution de prestations versées indûment sont exceptées. Introduit par le ch. I de la LF du 21 juin 2019, en vigueur depuis le 1 janv. 2021 ( RO 2020 5137 ; FF 2018 1597 ). <article",
+                "source": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/fr/html/fedlex-data-admin-ch-eli-cc-2002-510-20240101-fr-html-3.html",
+                "en_vigueur_depuis": "2024-01-01",
+                "derogation": null
+              },
+              "citation_exacte": null,
+              "ecartee_par": {
+                "par": "art. 69 LAI",
+                "texte": "En dérogation aux art. 52 et 58 LPGA",
+                "ecarte": [
+                  {
+                    "loi": "LPGA",
+                    "article": "52"
+                  },
+                  {
+                    "loi": "LPGA",
+                    "article": "58"
+                  }
+                ]
+              }
+            },
+            {
+              "role": "réfutateur",
+              "texte": "La base légale (LPGA art. 52) est correcte comme principe général. Mais la thèse ne traite pas sérieusement la question de savoir si la LAI contient une dérogation à la procédure d'opposition. Il faut lire l'art. 69 LAI pour en avoir le cœur net. La thèse 'survit' si l'art. 69 LAI n'exclut pas l'opposition — ce qui est probable, mais doit être vérifié. En attendant cette vérification, la recommandation d'envoyer l'opposition à l'office AI reste l'acte le moins risqué : même si la voie est mal identifiée, une opposition envoyée à l'office AI qui est en réalité compétent pour le recours ne fait que retarder la procédure — elle ne fait pas perdre le droit. L'inverse (envoyer au tribunal alors que l'opposition est requise d'abord) peut causer une irrecevabilité.",
+              "preuve": {
+                "loi": "LAI",
+                "article": "69"
+              },
+              "verdict": "affaibli",
+              "vise": "La personne a le droit de faire opposition à la décision de refus de rente dans un délai de 30 jours dès réception, directement auprès de l'office AI qui a rendu la décision.",
+              "lecture": {
+                "lisible": true,
+                "statut": "lu",
+                "loi": "LAI",
+                "article": "69",
+                "texte": "id=\"art_69\"> Art. 69 Particularités du contentieux En dérogation aux art. 52 et 58 LPGA : a. les décisions des offices AI cantonaux peuvent directement faire l’objet d’un recours devant le tribunal des assurances du domicile de l’office concerné; b. les décisions de l’office AI pour les assurés résidant à l’étranger peuvent directement faire l’objet d’un recours devant le Tribunal administratif fédéral. La procédure de recours en matière de contestations portant sur des prestations de l’AI devant le tribunal cantonal des assurances est soumise à des frais judiciaires. Le montant des frais est fixé en fonction de la charge liée à la procédure, indépendamment de la valeur litigieuse, et doit se situer entre 200 et 1000 francs. L’al. 1 et l’art. 85 , al. 3, LAVS s’appliquent par analogie à la procédure devant le Tribunal administratif fédéral. Les jugements des tribunaux arbitraux cantonaux rendus en vertu de l’art. 27 peuvent faire l’objet d’un recours auprès du Tribunal fédéral, conformément à la loi du 17 juin 2005 sur le Tribunal fédéral . Nouvelle teneur selon l’annexe ch. 8 de la LF du 6 oct. 2000 sur la partie générale du droit des assurances sociales, en vigueur depuis le 1 janv. 2003 ( RO 2002 3371 ; FF 1991 II 181 888 , 1994 V 897 , 1999 4168 ). RS 830.1 Nouvelle teneur selon le ch. IV 2 de la LF du 16 déc. 2005, en vigueur depuis le 1 janv. 2007 ( RO 2006 2003 ; FF 2005 2899 ). Nouvelle teneur selon le ch. I de la LF du 16 déc. 2005, en vigueur depuis le 1 juil. 2006 ( RO 2006 2003 ; FF 2005 2899 ). Nouvelle teneur selon l’annexe ch. 2 de la LF du 21 juin 2019, en vigueur depuis le 1 janv. 2021 ( RO 2020 5137 ; FF 2018 1597 ). Introduit par le ch. I de la LF du 16 déc. 2005, en vigueur depuis le 1 juil. 2006 ( RO 2006 2003 ; FF 2005 2899 ). RS 831.10 Nouvelle teneur selon le ch. IV 2 de la LF du 16 déc. 2005, en vigueur depuis le 1 janv. 2007 ( RO 2006 2003 ; FF 2005 2899 ). RS 173.110 Introduit par le ch. I de la LF du 21 mars 2003 (4e révision AI) ( RO 2003 3837 ; FF 2001 3045 ). Nouvelle teneur selon le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), en vigueur depuis le 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). <article",
+                "source": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1959/827_857_845/20260101/fr/html/fedlex-data-admin-ch-eli-cc-1959-827_857_845-20260101-fr-html-8.html",
+                "en_vigueur_depuis": "2026-01-01",
+                "derogation": "En dérogation aux art. 52 et 58 LPGA"
+              },
+              "citation_exacte": null
+            },
+            {
+              "role": "réfutateur",
+              "texte": "L'art. 28 LAI fonde bien le droit à la rente selon le taux d'invalidité. Mais attention : l'incapacité de travail (60%) n'est PAS identique au taux d'invalidité. Le taux d'invalidité résulte de la méthode de comparaison des revenus (revenu sans invalidité vs revenu avec invalidité), ou de la méthode mixte si la personne n'exerçait pas à temps plein avant. Une incapacité de travail de 60% peut donner un taux d'invalidité très différent selon la situation professionnelle concrète. La thèse est 'plaidable' mais présente un raccourci potentiellement trompeur : la personne ne doit pas croire que 60% d'incapacité de travail = 60% d'invalidité automatiquement.",
+              "preuve": {
+                "loi": "LAI",
+                "article": "28"
+              },
+              "verdict": "affaibli",
+              "vise": "Une incapacité de travail de 60% peut ouvrir le droit à une rente entière AI si l'invalidité est d'au moins 70%, ou à une rente partielle si elle est entre 40% et 69%.",
+              "lecture": {
+                "lisible": true,
+                "statut": "lu",
+                "loi": "LAI",
+                "article": "28",
+                "texte": "id=\"art_28\"> Art. 28 Principe L’assuré a droit à une rente aux conditions suivantes: a. sa capacité de gain ou sa capacité d’accomplir ses travaux habituels ne peut pas être rétablie, maintenue ou améliorée par des mesures de réadaptation raisonnablement exigibles; b. il a présenté une incapacité de travail (art. 6 LPGA ) d’au moins 40 % en moyenne durant une année sans interruption notable; c. au terme de cette année, il est invalide (art. 8 LPGA) à 40 % au moins. Une rente au sens de l’al. 1 n’est pas octroyée tant que toutes les possibilités de réadaptation au sens de l’art. 8, al. 1 et 1 , n’ont pas été épuisées. … Nouvelle teneur selon le ch. I de la LF du 6 oct. 2006 (5 révision AI), en vigueur depuis le 1 janv. 2008 ( RO 2007 5129 ; FF 2005 4215 ). RS 830.1 Introduit par le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), en vigueur depuis le 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). Abrogé par le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), avec effet au 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). <article",
+                "source": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1959/827_857_845/20260101/fr/html/fedlex-data-admin-ch-eli-cc-1959-827_857_845-20260101-fr-html-8.html",
+                "en_vigueur_depuis": "2026-01-01",
+                "derogation": null
+              },
+              "citation_exacte": null
+            },
+            {
+              "role": "réfutateur",
+              "texte": "L'art. 49 LPGA impose effectivement que les décisions mentionnent les voies de recours. Si ces mentions font défaut, le délai ne court pas ou la personne ne peut pas se voir opposer la tardiveté. Cette thèse est correcte en droit suisse des assurances sociales et constitue un filet de sécurité utile. Elle survit.",
+              "preuve": {
+                "loi": "LPGA",
+                "article": "49"
+              },
+              "verdict": "survit",
+              "vise": "Si la décision ne mentionne pas ou mentionne incorrectement les voies de recours et délais, le délai d'opposition peut être rétabli ou ne pas avoir commencé à courir.",
+              "lecture": {
+                "lisible": true,
+                "statut": "lu",
+                "loi": "LPGA",
+                "article": "49",
+                "texte": "id=\"art_49\"> Art. 49 Décision L’assureur doit rendre par écrit les décisions qui portent sur des prestations, créances ou injonctions importantes ou avec lesquelles l’intéressé n’est pas d’accord. Si le requérant rend vraisemblable un intérêt digne d’être protégé, l’assureur rend une décision en constatation. Les décisions indiquent les voies de droit. Elles doivent être motivées si elles ne font pas entièrement droit aux demandes des parties. La notification irrégulière d’une décision ne doit entraîner aucun préjudice pour l’intéressé. L’assureur qui rend une décision touchant l’obligation d’un autre assureur d’allouer des prestations est tenu de lui en communiquer un exemplaire. Cet autre assureur dispose des mêmes voies de droit que l’assuré. Dans sa décision, l’assureur peut priver toute opposition ou tout recours de l’effet suspensif, même si cette décision porte sur une prestation en espèces. Les décisions ordonnant la restitution de prestations versées indûment sont exceptées. Introduit par le ch. I de la LF du 21 juin 2019, en vigueur depuis le 1 janv. 2021 ( RO 2020 5137 ; FF 2018 1597 ). <article",
+                "source": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/fr/html/fedlex-data-admin-ch-eli-cc-2002-510-20240101-fr-html-3.html",
+                "en_vigueur_depuis": "2024-01-01",
+                "derogation": null
+              },
+              "citation_exacte": null
+            },
+            {
+              "role": "réfutateur",
+              "texte": "L'art. 41 LPGA prévoit bien la restitution du délai en cas d'empêchement non fautif. Les conditions citées (demande dans les 30 jours après fin de l'empêchement, dépôt simultané de l'acte omis) sont conformes au texte légal. Utile comme filet de sécurité — mais à n'invoquer qu'en dernier recours, le délai étant encore largement ouvert aujourd'hui.",
+              "preuve": {
+                "loi": "LPGA",
+                "article": "41"
+              },
+              "verdict": "survit",
+              "vise": "En cas de maladie grave ou d'autre empêchement non fautif, la restitution du délai d'opposition est possible même après son expiration.",
+              "lecture": {
+                "lisible": true,
+                "statut": "lu",
+                "loi": "LPGA",
+                "article": "41",
+                "texte": "id=\"art_41\"> Art. 41 Restitution du délai Si le requérant ou son mandataire a été empêché, sans sa faute, d’agir dans le délai fixé, celui-ci est restitué pour autant que, dans les 30 jours à compter de celui où l’empêchement a cessé, le requérant ou son mandataire ait déposé une demande motivée de restitution et ait accompli l’acte omis. Nouvelle teneur selon l’annexe ch. 106 de la loi du 17 juin 2005 sur le TAF, en vigueur depuis le 1 janv. 2007 ( RO 2006 2197 ; FF 2001 4000 ). <article",
+                "source": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/fr/html/fedlex-data-admin-ch-eli-cc-2002-510-20240101-fr-html-3.html",
+                "en_vigueur_depuis": "2024-01-01",
+                "derogation": null
+              },
+              "citation_exacte": null
+            },
+            {
+              "role": "réfutateur",
+              "texte": "L'art. 38 LPGA règle la computation des délais mais ne pose pas de féries judiciaires au sens du CPC. Les féries de l'art. 145 CPC ne s'appliquent pas automatiquement aux procédures de droit des assurances sociales fédéral. Il existe des dispositions cantonales qui peuvent prévoir des féries pour les tribunaux cantonaux des assurances sociales, mais ce n'est pas uniforme et ce n'est pas garanti. La conclusion pratique du chasseur est toutefois correcte : agir AUJOURD'HUI sans compter sur une prolongation. Le piège est donc mal fondé juridiquement mais sa recommandation pratique est juste. Gravité faible si on le suit (car il dit d'agir immédiatement de toute façon).",
+              "preuve": {
+                "loi": "LPGA",
+                "article": "38"
+              },
+              "verdict": "affaibli",
+              "vise": "Le délai de recours de 30 jours paraît urgent — mais les féries judiciaires d'été peuvent le prolonger (art. 38 LPGA).",
+              "lecture": {
+                "lisible": true,
+                "statut": "lu",
+                "loi": "LPGA",
+                "article": "38",
+                "texte": "id=\"art_38\"> Art. 38 Calcul et suspension des délais Si le délai, compté par jours ou par mois, doit être communiqué aux parties, il commence à courir le lendemain de la communication. S’il ne doit pas être communiqué aux parties, il commence à courir le lendemain de l’événement qui le déclenche. Une communication qui n’est remise que contre la signature du destinataire ou d’un tiers habilité est réputée reçue au plus tard sept jours après la première tentative infructueuse de distribution. Lorsque le délai échoit un samedi, un dimanche ou un jour férié selon le droit fédéral ou cantonal, son terme est reporté au premier jour ouvrable qui suit. Le droit cantonal déterminant est celui du canton où la partie ou son mandataire a son domicile ou son siège. Les délais en jours ou en mois fixés par la loi ou par l’autorité ne courent pas: a. du 7 jour avant Pâques au 7 jour après Pâques inclusivement; b. du 15 juillet au 15 août inclusivement; c. du 18 décembre au 2 janvier inclusivement. Introduit par l’annexe ch. 106 de la loi du 17 juin 2005 sur le TAF, en vigueur depuis le 1 janv. 2007 ( RO 2006 2197 ; FF 2001 4000 ). Nouvelle teneur selon l’annexe ch. 106 de la loi du 17 juin 2005 sur le TAF, en vigueur depuis le 1 janv. 2007 ( RO 2006 2197 ; FF 2001 4000 ). Nouvelle teneur selon l’annexe ch. 106 de la loi du 17 juin 2005 sur le TAF, en vigueur depuis le 1 janv. 2007 ( RO 2006 2197 ; FF 2001 4000 ). <article",
+                "source": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/fr/html/fedlex-data-admin-ch-eli-cc-2002-510-20240101-fr-html-3.html",
+                "en_vigueur_depuis": "2024-01-01",
+                "derogation": null
+              },
+              "citation_exacte": null
+            },
+            {
+              "role": "réfutateur",
+              "texte": "Totalement exact et utile. Les adresses fournies dans le dossier sont celles de commissions de conciliation en matière de bail — elles n'ont aucune compétence en matière d'assurance-invalidité. Ce piège est réel, la mise en garde est légitime.",
+              "preuve": {
+                "loi": "LAI",
+                "article": "69"
+              },
+              "verdict": "survit",
+              "vise": "Les autorités listées dans le dossier (commissions de conciliation en matière de bail) sont totalement incompétentes pour ce recours AI.",
+              "lecture": {
+                "lisible": true,
+                "statut": "lu",
+                "loi": "LAI",
+                "article": "69",
+                "texte": "id=\"art_69\"> Art. 69 Particularités du contentieux En dérogation aux art. 52 et 58 LPGA : a. les décisions des offices AI cantonaux peuvent directement faire l’objet d’un recours devant le tribunal des assurances du domicile de l’office concerné; b. les décisions de l’office AI pour les assurés résidant à l’étranger peuvent directement faire l’objet d’un recours devant le Tribunal administratif fédéral. La procédure de recours en matière de contestations portant sur des prestations de l’AI devant le tribunal cantonal des assurances est soumise à des frais judiciaires. Le montant des frais est fixé en fonction de la charge liée à la procédure, indépendamment de la valeur litigieuse, et doit se situer entre 200 et 1000 francs. L’al. 1 et l’art. 85 , al. 3, LAVS s’appliquent par analogie à la procédure devant le Tribunal administratif fédéral. Les jugements des tribunaux arbitraux cantonaux rendus en vertu de l’art. 27 peuvent faire l’objet d’un recours auprès du Tribunal fédéral, conformément à la loi du 17 juin 2005 sur le Tribunal fédéral . Nouvelle teneur selon l’annexe ch. 8 de la LF du 6 oct. 2000 sur la partie générale du droit des assurances sociales, en vigueur depuis le 1 janv. 2003 ( RO 2002 3371 ; FF 1991 II 181 888 , 1994 V 897 , 1999 4168 ). RS 830.1 Nouvelle teneur selon le ch. IV 2 de la LF du 16 déc. 2005, en vigueur depuis le 1 janv. 2007 ( RO 2006 2003 ; FF 2005 2899 ). Nouvelle teneur selon le ch. I de la LF du 16 déc. 2005, en vigueur depuis le 1 juil. 2006 ( RO 2006 2003 ; FF 2005 2899 ). Nouvelle teneur selon l’annexe ch. 2 de la LF du 21 juin 2019, en vigueur depuis le 1 janv. 2021 ( RO 2020 5137 ; FF 2018 1597 ). Introduit par le ch. I de la LF du 16 déc. 2005, en vigueur depuis le 1 juil. 2006 ( RO 2006 2003 ; FF 2005 2899 ). RS 831.10 Nouvelle teneur selon le ch. IV 2 de la LF du 16 déc. 2005, en vigueur depuis le 1 janv. 2007 ( RO 2006 2003 ; FF 2005 2899 ). RS 173.110 Introduit par le ch. I de la LF du 21 mars 2003 (4e révision AI) ( RO 2003 3837 ; FF 2001 3045 ). Nouvelle teneur selon le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), en vigueur depuis le 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). <article",
+                "source": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1959/827_857_845/20260101/fr/html/fedlex-data-admin-ch-eli-cc-1959-827_857_845-20260101-fr-html-8.html",
+                "en_vigueur_depuis": "2026-01-01",
+                "derogation": "En dérogation aux art. 52 et 58 LPGA"
+              },
+              "citation_exacte": null
+            },
+            {
+              "role": "réfutateur",
+              "texte": "Correct et fondé sur l'art. 49 LPGA. La décision doit indiquer la voie de recours, l'autorité compétente et le délai. Lire le bas de la décision est le premier réflexe à avoir — et l'adresse qui y figure est la plus fiable. Ce piège-conseil survit.",
+              "preuve": {
+                "loi": "LPGA",
+                "article": "49"
+              },
+              "verdict": "survit",
+              "vise": "La décision AI elle-même indique probablement la voie de recours — ce renseignement est plus fiable que tout conseil externe.",
+              "lecture": {
+                "lisible": true,
+                "statut": "lu",
+                "loi": "LPGA",
+                "article": "49",
+                "texte": "id=\"art_49\"> Art. 49 Décision L’assureur doit rendre par écrit les décisions qui portent sur des prestations, créances ou injonctions importantes ou avec lesquelles l’intéressé n’est pas d’accord. Si le requérant rend vraisemblable un intérêt digne d’être protégé, l’assureur rend une décision en constatation. Les décisions indiquent les voies de droit. Elles doivent être motivées si elles ne font pas entièrement droit aux demandes des parties. La notification irrégulière d’une décision ne doit entraîner aucun préjudice pour l’intéressé. L’assureur qui rend une décision touchant l’obligation d’un autre assureur d’allouer des prestations est tenu de lui en communiquer un exemplaire. Cet autre assureur dispose des mêmes voies de droit que l’assuré. Dans sa décision, l’assureur peut priver toute opposition ou tout recours de l’effet suspensif, même si cette décision porte sur une prestation en espèces. Les décisions ordonnant la restitution de prestations versées indûment sont exceptées. Introduit par le ch. I de la LF du 21 juin 2019, en vigueur depuis le 1 janv. 2021 ( RO 2020 5137 ; FF 2018 1597 ). <article",
+                "source": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/fr/html/fedlex-data-admin-ch-eli-cc-2002-510-20240101-fr-html-3.html",
+                "en_vigueur_depuis": "2024-01-01",
+                "derogation": null
+              },
+              "citation_exacte": null
+            },
+            {
+              "role": "réfutateur",
+              "texte": "L'art. 68bis LAI concerne le conseil et l'accompagnement dans le domaine de l'intégration professionnelle, pas nécessairement le conseil juridique en procédure d'opposition. Pro Infirmis offre effectivement un soutien aux personnes en situation de handicap, mais la base légale citée est imprécise pour justifier spécifiquement un 'service de conseil juridique'. La recommandation pratique reste utile, mais la fondation juridique est trop vague. Aucun numéro ni adresse ne doit être inventé — l'avocat a raison de renvoyer au site proinfirmis.ch.",
+              "preuve": {
+                "loi": "LAI",
+                "article": "68bis"
+              },
+              "verdict": "affaibli",
+              "vise": "Contacter Pro Infirmis à Fribourg pour obtenir un soutien gratuit dans la rédaction de l'opposition — Pro Infirmis dispose d'un service de conseil juridique gratuit (LAI art. 68bis).",
+              "lecture": {
+                "lisible": true,
+                "statut": "lu",
+                "loi": "LAI",
+                "article": "68bis",
+                "texte": "id=\"art_68_bis\"> Art. 68 Formes de collaboration interinstitutionnelle Afin de faciliter, pour les assurés qui ont fait l’objet d’une communication en vue d’une détection précoce ou qui ont déposé une demande à l’AI pour faire valoir leur droit aux prestations et dont la capacité de gain est en cours d’évaluation, l’accès aux mesures de réadaptation prévues par l’assurance-invalidité, par l’assurance-chômage et par les cantons, les offices AI collaborent étroitement avec: a. les assureurs et les organes d’exécution des assurances sociales; b. les entreprises d’assurance soumises à la LSA ; c. les institutions de prévoyance professionnelle soumises à la loi du 17 décembre 1993 sur le libre passage ; d. les organes d’exécution cantonaux chargés de favoriser la réadaptation professionnelle; e. les organes d’exécution des lois cantonales relatives à l’aide sociale; e . les organes d’exécution publics et privés de la législation sur l’asile, sur les étrangers et sur l’intégration; f. d’autres institutions publiques ou privées importantes pour la réadaptation des assurés. L’assurance-invalidité collabore avec les instances cantonales chargées du soutien à l’insertion professionnelle des jeunes. Elle peut en outre participer au financement des instances cantonales chargées de la coordination des mesures de soutien: a. si ces instances cantonales prennent en charge les jeunes présentant une problématique multiple, et b. si une convention règle la collaboration entre ces instances cantonales et l’office AI ainsi que la participation financière de l’assurance. Pour les mineurs dès l’âge de 13 ans et les jeunes adultes jusqu’à ce qu’ils atteignent l’âge de 25 ans qui sont menacés d’invalidité et qui ont déposé une demande de prestations de l’assurance, les offices AI peuvent participer, sur la base d’une convention avec les instances cantonales compétentes prévues à l’al. 1, let. d, aux frais des mesures préparant à une formation professionnelle initiale au sens de l’art. 16, al. 1. L’assurance-invalidité prend à sa charge un tiers au maximum des coûts par canton visés à l’al. 1 et des coûts par mesure visés à l’al. 1 . Le Conseil fédéral peut fixer le plafond de ces contributions et en subordonner l’octroi à d’autres conditions ou charges. Il peut attribuer à l’OFAS la compétence de régler les exigences minimales que les conventions doivent remplir. Les offices AI ainsi que les assureurs et les organes d’application des assurances sociales sont mutuellement déliés de l’obligation de garder le secret (art. 33 LPGA ), aux conditions suivantes: a. la loi applicable prévoit une base légale déliant les assureurs et les organes d’exécution des assurances sociales de cette obligation; b. aucun intérêt privé prépondérant ne s’y oppose; c. les renseignements et documents transmis servent: 1. soit à déterminer les mesures de réadaptation appropriées pour la personne concernée; 2. soit à clarifier les prétentions de la personne concernée envers les assurances sociales. L’obligation pour les offices AI de garder le secret est également levée, aux conditions de l’al. 2, let. b et c, à l’égard des institutions et des organes d’exécution cantonaux visés aux al. 1, let. b à f, et 1 , pour autant que la loi applicable prévoie une base légale déliant les institutions et organes d’exécution de cette obligation et qu’ils accordent la réciprocité aux offices AI. En dérogation à l’art. 32 LPGA et à l’art. 50 a , al. 1, LAVS , l’échange de données au sens des al. 2 et 3 peut aussi se faire oralement selon les cas. La personne concernée doit être informée subséquemment de l’échange de données et de son contenu. Lorsqu’un office AI rend une décision qui touche le domaine des prestations d’une institution ou d’un organe d’exécution cantonal visés aux al. 1, let. b à f, et 1 , il est tenu de lui remettre une copie de la décision. Introduit par le ch. I de la LF du 21 mars 2003 (4e révision AI) ( RO 2003 3837 ; FF 2001 3045 ). Nouvelle teneur selon le ch. I de la LF du 6 oct. 2006 (5 révision AI), en vigueur depuis le 1 janv. 2008 ( RO 2007 5129 ; FF 2005 4215 ). Nouvelle teneur selon le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), en vigueur depuis le 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). Nouvelle teneur selon l’annexe ch. 4 de la LF du 16 déc. 2016 (Intégration), en vigueur depuis le 1 janv. 2019 ( RO 2017 6521 , 2018 3171 ; FF 2013 2131 , 2016 2665 ). Nouvelle teneur selon le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), en vigueur depuis le 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). RS 961.01 RS 831.42 Introduite par l’annexe ch. 4 de la LF du 16 déc. 2016 (Intégration), en vigueur depuis le 1 janv. 2019 ( RO 2017 6521 , 2018 3171 ; FF 2013 2131 , 2016 2665 ). Introduit par le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), en vigueur depuis le 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). Introduit par le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), en vigueur depuis le 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). Introduit par le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), en vigueur depuis le 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). RS 830.1 Nouvelle teneur selon le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), en vigueur depuis le 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). RS 831.10 Nouvelle teneur selon le ch. I de la LF du 19 juin 2020 (Développement continu de l’AI), en vigueur depuis le 1 janv. 2022 ( RO 2021 705 ; FF 2017 2363 ). <article",
+                "source": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1959/827_857_845/20260101/fr/html/fedlex-data-admin-ch-eli-cc-1959-827_857_845-20260101-fr-html-8.html",
+                "en_vigueur_depuis": "2026-01-01",
+                "derogation": "En dérogation à l’art. 32 LPGA et à l’art. 50 a , al. 1, LAVS , l’échange de données au sens des al. 2 et 3 peut aussi se faire oralement selon les cas. La personn"
+              },
+              "citation_exacte": null
+            }
+          ],
+          "articles_lus": [
+            "art. 52 LPGA",
+            "art. 28 LAI",
+            "art. 49 LPGA",
+            "art. 41 LPGA",
+            "art. 68bis LAI",
+            "art. 69 LAI",
+            "art. 38 LPGA"
+          ],
+          "affirmations_sourcees": 20,
+          "affirmations_sans_source": 0,
+          "citations_fabriquees": [],
+          "derogations": [
+            {
+              "par": "art. 68bis LAI",
+              "texte": "En dérogation à l’art. 32 LPGA et à l’art. 50 a , al. 1, LAVS , l’échange de données au sens des al. 2 et 3 peut aussi se faire oralement selon les cas. La personn",
+              "ecarte": [
+                {
+                  "loi": "LPGA",
+                  "article": "32"
+                },
+                {
+                  "loi": "LPGA",
+                  "article": "50"
+                },
+                {
+                  "loi": "LPGA",
+                  "article": "1"
+                },
+                {
+                  "loi": "LPGA",
+                  "article": "2"
+                },
+                {
+                  "loi": "LPGA",
+                  "article": "3"
+                }
+              ]
+            },
+            {
+              "par": "art. 69 LAI",
+              "texte": "En dérogation aux art. 52 et 58 LPGA",
+              "ecarte": [
+                {
+                  "loi": "LPGA",
+                  "article": "52"
+                },
+                {
+                  "loi": "LPGA",
+                  "article": "58"
+                }
+              ]
+            },
+            {
+              "par": "art. 69 LAI",
+              "texte": "En dérogation aux art. 52 et 58 LPGA",
+              "ecarte": [
+                {
+                  "loi": "LPGA",
+                  "article": "52"
+                },
+                {
+                  "loi": "LPGA",
+                  "article": "58"
+                }
+              ]
+            },
+            {
+              "par": "art. 69 LAI",
+              "texte": "En dérogation aux art. 52 et 58 LPGA",
+              "ecarte": [
+                {
+                  "loi": "LPGA",
+                  "article": "52"
+                },
+                {
+                  "loi": "LPGA",
+                  "article": "58"
+                }
+              ]
+            },
+            {
+              "par": "art. 69 LAI",
+              "texte": "En dérogation aux art. 52 et 58 LPGA",
+              "ecarte": [
+                {
+                  "loi": "LPGA",
+                  "article": "52"
+                },
+                {
+                  "loi": "LPGA",
+                  "article": "58"
+                }
+              ]
+            },
+            {
+              "par": "art. 68bis LAI",
+              "texte": "En dérogation à l’art. 32 LPGA et à l’art. 50 a , al. 1, LAVS , l’échange de données au sens des al. 2 et 3 peut aussi se faire oralement selon les cas. La personn",
+              "ecarte": [
+                {
+                  "loi": "LPGA",
+                  "article": "32"
+                },
+                {
+                  "loi": "LPGA",
+                  "article": "50"
+                },
+                {
+                  "loi": "LPGA",
+                  "article": "1"
+                },
+                {
+                  "loi": "LPGA",
+                  "article": "2"
+                },
+                {
+                  "loi": "LPGA",
+                  "article": "3"
+                }
+              ]
+            }
+          ],
+          "ecartees_par_la_loi": [
+            {
+              "role": "avocat du citoyen",
+              "affirmait": "La personne a le droit de faire opposition à la décision de refus de rente dans un délai de 30 jours dès réception, dire",
+              "sur_la_base_de": "art. 52 LPGA",
+              "ecarte_par": "art. 69 LAI"
+            },
+            {
+              "role": "avocat du citoyen",
+              "affirmait": "Rédiger et envoyer une lettre d'opposition à l'Office AI du canton de Fribourg, en mentionnant : nom, prénom, adresse, n",
+              "sur_la_base_de": "art. 52 LPGA",
+              "ecarte_par": "art. 69 LAI"
+            },
+            {
+              "role": "avocat du citoyen",
+              "affirmait": "Joindre à l'opposition tous les documents médicaux disponibles attestant de l'incapacité de travail : rapports de médeci",
+              "sur_la_base_de": "art. 52 LPGA",
+              "ecarte_par": "art. 69 LAI"
+            },
+            {
+              "role": "réfutateur",
+              "affirmait": "C'est le piège le plus dangereux du dossier parce qu'il est présenté avec une certitude absolue ('certain') et qu'il est",
+              "sur_la_base_de": "art. 52 LPGA",
+              "ecarte_par": "art. 69 LAI"
+            }
+          ]
+        },
+        "echecs": [],
+        "contradiction_a_eu_lieu": true,
+        "cout_chf": 0.272,
+        "duree_ms": 147005,
+        "appels": 5,
+        "score": {
+          "piege_trouve": true,
+          "secondaires": [
+            {
+              "quoi": "le délai de 30 jours",
+              "trouve": true
+            },
+            {
+              "quoi": "corriger explicitement le mot « opposition » de la personne",
+              "trouve": true
+            }
+          ],
+          "hamecons_mordus": [
+            "CONFIRME QU'IL FAUT FAIRE OPPOSITION À L'OFFICE AI"
+          ],
+          "droit_sauve": false
+        }
+      },
+      "jury": {
+        "gagnant": "comite",
+        "pourquoi": "En matière d'AI, la décision se conteste par un recours direct au tribunal cantonal des assurances (art. 69 LAI), qui écarte expressément la procédure d'opposition de l'art. 52 LPGA ; la réponse 2 identifie correctement cette règle décisive, la réponse 1 envoie la personne faire une opposition au mauvais guichet. La réponse 2 conserve le délai et donne une lettre-modèle utilisable dès demain, tout en signalant honnêtement ce qu'il faut vérifier sur la décision.",
+        "erreur_gratuit": "Conseille de faire une opposition à l'office AI (art. 52 LPGA), alors qu'en AI il faut un recours direct au tribunal cantonal des assurances (art. 69 LAI) : la personne risque d'envoyer son acte au mauvais destinataire et de manquer la voie correcte.",
+        "erreur_comite": "Erreur de date récurrente (2026 au lieu de la date réelle de la décision) qui, si suivie littéralement dans la lettre, pourrait créer une confusion sur la décision visée."
+      }
+    }
+  ]
+}

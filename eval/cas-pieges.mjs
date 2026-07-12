@@ -1,131 +1,211 @@
 /**
- * ⚠ L'ORACLE — les 5 cas où un modèle gratuit nous a battus, et le piège de chacun
+ * ⚠ L'ORACLE — ce qui sauve un droit, et ce qui le tue
  *
- * POURQUOI CE FICHIER EXISTE (2026-07-12)
+ * ═══ POURQUOI CE FICHIER A ÉTÉ RÉÉCRIT DE FOND EN COMBLE (2026-07-12) ═══════
  *
- * Trois instruments de mesure de ce projet étaient incapables d'annoncer une mauvaise
- * nouvelle :
- *   · le benchmark « ×6.4 » — le score du concurrent était écrit EN DUR dans le code ;
- *   · le badge « vérifié » — la fiche était relue par le même LLM qui l'avait écrite ;
- *   · les 282 « invariants de régression » — GÉNÉRÉS depuis les fiches, donc ils
- *     punissaient les corrections du droit (quand on a corrigé un faux délai de 7 jours,
- *     le test est passé au rouge).
+ * Première version : des expressions régulières cherchant des mots-clés dans la réponse.
+ * Elle a menti TROIS FOIS EN UN JOUR, et chaque fois dans le sens confortable :
+ *   · elle a puni le comité à tort (elle sanctionnait la présence du texte « 336b », alors que
+ *     le juge menait correctement avec la nullité de l'art. 336c et n'ajoutait l'opposition
+ *     qu'en précaution, dans la même lettre — de la bonne pratique) ;
+ *   · elle a absous le modèle gratuit à tort (elle cherchait « envoyez » là où il écrivait
+ *     « envoyer », et comptait « tribunal cantonal » comme piège trouvé alors que ces mots
+ *     décrivaient la MAUVAISE procédure) ;
+ *   · elle a crié à l'erreur sur la phrase « lettre de RECOURS (pas une opposition) » —
+ *     c'est-à-dire sur la seule bonne réponse que le comité ait jamais produite.
+ * Un regex ne voit pas une négation. Il ne pouvait pas mesurer du droit.
  *
- * Un instrument qui ne peut pas dire « tu as perdu » ne mesure rien. Celui-ci le peut,
- * et c'est sa seule raison d'être.
+ * ⚠ ET L'ORACLE LUI-MÊME ÉTAIT FAUX. Un audit contre Fedlex a trouvé 2 erreurs sur 4, TOUTES
+ * DANS LE SENS RASSURANT — le pire des biais possibles ici :
+ *   · j'avais écrit que, passé le délai d'opposition, « le créancier devra de toute façon
+ *     obtenir la mainlevée devant un juge, où le débiteur peut se défendre ». C'EST FAUX.
+ *     Art. 88 al. 1 LP : « Lorsque la poursuite n'est pas suspendue par l'opposition ou par un
+ *     jugement, le créancier peut requérir la continuation de la poursuite ». Art. 89 LP :
+ *     l'office « procède SANS RETARD à la saisie ». Aucun juge ne vient vérifier que la dette
+ *     existe. J'avais INVENTÉ UN FILET DE SÉCURITÉ — une fausse bonne nouvelle, qui endort
+ *     quelqu'un pendant que la saisie arrive.
+ *   · j'avais collé un délai de « 30 jours » sur l'art. 336b CO, où ce chiffre n'existe pas.
  *
- * ─── CE QUI EST MESURÉ, ET COMMENT ───────────────────────────────────────────
+ * Ce projet a déjà eu TROIS instruments incapables d'annoncer une mauvaise nouvelle : un
+ * benchmark dont le score du concurrent était écrit en dur (« ×6.4 »), un badge « vérifié »
+ * apposé par le LLM qui avait écrit la fiche, et 282 « invariants de régression » générés
+ * depuis les fiches qu'ils étaient censés contrôler (ils passaient au rouge quand on corrigeait
+ * une erreur de droit). Celui-ci est le quatrième. Il a le droit de dire non.
  *
- * Pour chaque cas, le PIÈGE est connu d'avance : la règle qui sauve le droit, avec son
- * article, vérifiée à la source (Fedlex, 12 juillet 2026). Elle n'est PAS l'opinion d'un
- * LLM — c'est la loi.
+ * ═══ COMMENT IL EST CONSTRUIT MAINTENANT ═══════════════════════════════════
  *
- * La mesure principale est donc MÉCANIQUE : la réponse cite-t-elle l'article qui sauve
- * le droit ? Un jury LLM intervient ensuite, en aveugle, pour la qualité d'ensemble —
- * mais il ne peut pas repeindre un piège manqué en victoire.
+ * Chaque cas définit une LISTE FERMÉE d'actes possibles. Un agent-transcripteur range la
+ * réponse dans une case (il ne juge rien, il n'a aucune opinion à défendre) ; le VERDICT est
+ * calculé par du code. Voir eval/scoreur.mjs.
  *
- * ─── LES DEUX ERREURS SYMÉTRIQUES ────────────────────────────────────────────
+ * Deux fautes symétriques, et il faut compter les deux :
+ *   · `acte_correct`  — le geste qui préserve le droit. Le manquer, c'est le perdre.
+ *   · `actes_fatals`  — les gestes qui le tuent. Un système qui hallucine avec zèle est PIRE
+ *                       qu'un système muet : il envoie la personne au mauvais guichet pendant
+ *                       que le vrai délai s'éteint.
  *
- * `piege` : ce qu'il faut TROUVER. Le manquer coûte un droit.
- * `hameçon` : ce qu'il ne faut PAS dire. L'affirmer coûte un droit aussi — envoyer
- *   quelqu'un faire « opposition » à une décision AI (qui n'admet pas l'opposition)
- *   consomme ses 30 jours de recours pendant qu'il attend une réponse qui ne viendra
- *   jamais. Un système qui hallucine avec zèle est plus dangereux qu'un système muet.
+ * ⚠ ET DÉCOURAGER EST UNE FAUTE À PART ENTIÈRE. En droit suisse, agir est presque toujours
+ * gratuit, informel et sans risque ; c'est le SILENCE qui est irréversible. Dire « c'est
+ * foutu » produit exactement l'inégalité que ce projet combat : celui qui a un ami juriste,
+ * lui, y va quand même.
+ *
+ * PROVENANCE : chaque oracle a été établi en LISANT le texte de loi sur Fedlex (version en
+ * vigueur au 12.07.2026), puis soumis à trois sceptiques indépendants (le texte / l'exception /
+ * la consolation), puis scellé sur ce qui a survécu. Les citations ci-dessous sont littérales.
  *
  * CONSOMMÉ PAR : scripts/duel.mjs
  */
 
 export const CAS = [
+  // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'bail_conge_represailles',
     titre: 'Congé de bail après une contestation',
     texte: `J'habite à Lausanne depuis 6 ans. En janvier j'ai écrit à ma régie parce que le chauffage ne marchait pas bien, et j'ai demandé une baisse de loyer. Ils ont refusé. Là je viens de recevoir une lettre recommandée qui résilie mon bail pour le 30 septembre. C'est une feuille avec le tampon de la régie. Je suis sûr que c'est parce que j'ai réclamé. J'ai reçu la lettre il y a 5 jours.`,
     canton: 'Vaud',
+    date_du_jour: '2026-07-12',
 
-    // Ce qu'un bon conseil DOIT trouver. Vérifié : art. 271a al. 1 let. a CO (congé donné
-    // parce que le locataire fait valoir des prétentions = annulable) ; art. 273 al. 1 CO
-    // (30 jours dès la réception pour saisir l'autorité de conciliation) ; art. 266l al. 2
-    // CO (le congé doit être donné sur la FORMULE OFFICIELLE agréée par le canton — une
-    // simple lettre à en-tête de régie est NULLE, art. 266o CO). Le troisième point est le
-    // vrai cadeau : il est invocable en tout temps, même si les 30 jours sont passés.
-    piege: {
-      titre: 'Le congé n\'est pas sur la formule officielle → il est NUL, sans condition de délai',
-      articles: [/266\s*l/i, /266\s*o/i],
-      pourquoi: 'Une simple lettre de régie ne vaut pas congé (art. 266l al. 2 + 266o CO). C\'est la nullité, pas l\'annulation : elle ne dépend d\'aucun délai.',
-    },
-    aussi_attendu: [
-      { quoi: 'congé-représailles', articles: [/271\s*a/i] },
-      { quoi: 'délai 30 jours pour contester', articles: [/\b273\b/] },
-      { quoi: 'autorité de conciliation (gratuite)', motifs: [/conciliation/i] },
+    // Vérifié à la source (CO, RS 220, en vigueur au 12.07.2026), et confirmé par contre-épreuve.
+    // Art. 266l al. 2 CO : le congé doit être donné « au moyen d'une formule agréée par le canton ».
+    // Art. 266o CO : « Le congé qui ne satisfait pas aux conditions prévues aux art. 266l à 266n
+    //   est NUL. » → une simple lettre à en-tête de régie ne vaut pas congé. Nullité absolue,
+    //   invocable en tout temps, relevée d'office : elle ne dépend d'AUCUN délai.
+    // Art. 271a al. 1 let. a CO : congé annulable s'il est donné parce que le locataire fait
+    //   valoir des prétentions (congé-représailles).
+    // Art. 273 al. 1 CO : mais l'annulation, elle, se demande dans les 30 JOURS dès réception,
+    //   à l'autorité de conciliation. Délai de péremption.
+    //
+    // ⚠ C'est la distinction qui décide : la NULLITÉ n'a pas de délai, l'ANNULATION en a un de
+    // 30 jours. Quelqu'un qui laisse filer les 30 jours en croyant tout perdu abandonne un
+    // droit qu'il garde pour toujours. Et quelqu'un qui ne mise QUE sur la nullité sans saisir
+    // la conciliation dans les 30 jours perd son second moyen. Le bon conseil dit LES DEUX.
+    sources: [
+      'art. 266l al. 2 CO — « au moyen d’une formule agréée par le canton »',
+      'art. 266o CO — « Le congé qui ne satisfait pas aux conditions prévues aux art. 266l à 266n est nul. »',
+      'art. 271a al. 1 let. a CO — congé-représailles, annulable',
+      'art. 273 al. 1 CO — 30 jours dès la réception, autorité de conciliation',
+      'art. 113 al. 2 let. c CPC — la conciliation en matière de bail est GRATUITE',
     ],
-    hamecons: [
-      { quoi: 'affirme que le congé est valable parce qu\'il est recommandé', motifs: [/valable.{0,40}recommand/i] },
+
+    actes_possibles: [
+      { id: 'saisir_conciliation_30j', libelle: 'saisir l\'autorité de conciliation en matière de bail dans les 30 jours (en invoquant le vice de forme et/ou le congé-représailles)' },
+      { id: 'invoquer_seulement_nullite', libelle: 'écrire à la régie que le congé est nul (formule officielle manquante), SANS saisir la conciliation dans les 30 jours' },
+      { id: 'negocier_avec_la_regie', libelle: 'discuter, négocier ou demander une prolongation à la régie, sans démarche formelle' },
+      { id: 'chercher_un_nouveau_logement', libelle: 'accepter le congé et chercher un autre logement' },
     ],
+    acte_correct: 'saisir_conciliation_30j',
+    // Invoquer la nullité est JUSTE — mais si c'est tout ce qu'on fait, on laisse filer les
+    // 30 jours de l'art. 273 CO et on perd le second moyen. C'est une demi-réponse, pas une
+    // faute fatale : la nullité, elle, reste invocable.
+    actes_fatals: ['chercher_un_nouveau_logement'],
   },
 
+  // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'travail_licenciement_arret_maladie',
     titre: 'Licenciement pendant un arrêt maladie',
     texte: `Je travaille dans cette entreprise depuis 4 ans. Je suis en arrêt maladie depuis le 20 juin (burn-out, certificat médical). Mon patron m'a envoyé mon congé le 30 juin, pour fin août. Il dit que le délai de congé est de 2 mois donc que ça tombe fin août. Je me sens complètement lâché. Je suis à Genève.`,
     canton: 'Genève',
+    date_du_jour: '2026-07-12',
 
-    // LE piège qui a fait perdre ce cas. Art. 336c al. 1 let. b CO : après 4 ans de
-    // service, la période de protection est de 90 jours. Le congé donné PENDANT cette
-    // période est NUL (al. 2) — il ne compte pas, il faudra le redonner. Le patron se
-    // trompe : le contrat ne finit pas fin août. Quelqu'un qui croit son patron cherche
-    // un travail dans la panique et signe une convention de départ qu'il n'aurait pas
-    // dû signer.
-    piege: {
-      titre: 'Le congé donné pendant l\'arrêt maladie est NUL (période de protection de 90 jours)',
-      articles: [/336\s*c/i],
-      pourquoi: 'Art. 336c al. 1 let. b + al. 2 CO : de la 2e à la 5e année de service, protection de 90 jours. Congé donné pendant = nul. Le contrat ne finit PAS fin août.',
-    },
-    aussi_attendu: [
-      { quoi: 'la nullité (pas l\'annulabilité)', motifs: [/\bnul/i] },
-      { quoi: 'écrire à l\'employeur pour contester la date de fin', motifs: [/(employeur|patron)/i] },
+    // Art. 336c al. 1 let. b CO : après le temps d'essai, l'employeur ne peut pas résilier
+    //   pendant une incapacité de travail — 90 jours de la 2e à la 5e année de service.
+    //   (4 ans d'ancienneté → 90 jours, dès le 20 juin → jusqu'à mi-septembre.)
+    // Art. 336c al. 2 CO : le congé donné PENDANT cette période est NUL.
+    //   → Le contrat NE FINIT PAS fin août. L'employeur devra redonner le congé.
+    //
+    // ⚠ La nullité n'a AUCUN délai de péremption : elle est de plein droit.
+    // C'est très exactement l'inverse du congé abusif (art. 336), qui exige une opposition
+    // écrite avant la fin du contrat (art. 336b). Confondre les deux fait courir la personne
+    // après un délai qui ne la concerne pas — et lui fait abandonner un droit qu'elle garde.
+    //
+    // ⚠ ET LE PIÈGE LE PLUS COÛTEUX EST PASSIF : croire son patron, cesser de réclamer son
+    // salaire après fin août, chercher un autre travail dans la panique, signer une convention
+    // de départ. La nullité « joue toute seule » sur le papier — mais si personne ne la fait
+    // valoir, la situation se fige dans les faits.
+    sources: [
+      'art. 336c al. 1 let. b CO — 90 jours de protection (2e à 5e année de service)',
+      'art. 336c al. 2 CO — le congé donné pendant la période de protection est NUL',
+      'art. 336b CO — l’opposition ne concerne QUE le congé abusif (art. 336), pas la nullité',
     ],
-    hamecons: [
-      // L'erreur qui coûte tout : traiter ça comme un congé abusif (art. 336) à contester
-      // en 30 jours (art. 336b, sous peine de péremption) — alors qu'un congé NUL n'a
-      // aucun délai à respecter. Envoyer la personne courir après un délai inexistant,
-      // c'est la faire renoncer à un droit qu'elle a pour toujours.
-      { quoi: 'réduit le cas à un congé abusif à contester en 30 jours', motifs: [/336\s*b/i] },
+
+    actes_possibles: [
+      { id: 'ecrire_employeur_conge_nul', libelle: 'écrire à l\'employeur que le congé est NUL (art. 336c), que le contrat ne finit pas fin août, et continuer à offrir ses services / réclamer son salaire' },
+      { id: 'contester_conge_abusif_336b', libelle: 'faire opposition au congé comme ABUSIF (art. 336/336b), en traitant le congé comme valable mais contestable' },
+      { id: 'accepter_fin_du_contrat', libelle: 'considérer que le contrat se termine fin août et chercher un autre emploi / s\'inscrire au chômage' },
+      { id: 'attendre_sans_rien_ecrire', libelle: 'ne rien écrire et attendre, en pensant que la nullité s\'applique toute seule' },
     ],
+    acte_correct: 'ecrire_employeur_conge_nul',
+    // Traiter le cas comme un simple congé abusif n'est pas fatal en soi (l'opposition ne fait
+    // pas perdre la nullité), mais c'est manquer la protection qui la sauve vraiment. En
+    // revanche, accepter la fin du contrat, ou se taire, fige la situation.
+    actes_fatals: ['accepter_fin_du_contrat', 'attendre_sans_rien_ecrire'],
   },
 
+  // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'dettes_commandement_j12',
-    titre: 'Commandement de payer reçu il y a 12 jours',
+    titre: 'Commandement de payer — le délai d’opposition est passé',
     texte: `J'ai reçu un commandement de payer il y a 12 jours, pour une facture de 1'800 francs que je conteste (une salle de sport que j'avais résiliée). J'ai rien fait parce que je savais pas quoi faire et j'avais peur. On m'a dit que j'avais 10 jours et que maintenant c'est foutu. On est le 12 juillet, j'habite à Sion.`,
     canton: 'Wallis / Valais',
     date_du_jour: '2026-07-12',
 
-    // Le cas conçu pour piéger le « c'est trop tard ». Le délai d'opposition est bien de
-    // 10 jours (art. 74 al. 1 LP). MAIS : les féries de poursuite courent du 15 juillet
-    // au 31 juillet (art. 56 ch. 2 LP) et, surtout, l'art. 33 al. 4 LP permet la
-    // RESTITUTION du délai à qui a été empêché sans sa faute. Et même délai échu, la
-    // poursuite n'est PAS un jugement : il reste l'action en annulation (art. 85a LP) et
-    // le fait que le créancier doit encore obtenir la mainlevée devant un juge, où on peut
-    // se défendre.
+    // ⚠⚠ C'EST ICI QUE MON PROPRE ORACLE ÉTAIT FAUX, ET DANS LE SENS RASSURANT.
     //
-    // ⚠ Le vrai enjeu de ce cas n'est pas juridique, il est humain : la seule réponse
-    // interdite est « c'est foutu ». Une réponse qui décourage produit exactement
-    // l'inégalité que ce projet combat.
-    piege: {
-      titre: 'Ne JAMAIS dire « c\'est foutu » — il reste des voies même après les 10 jours',
-      articles: [/\b85\s*a\b/i, /\b33\b/, /mainlev/i, /\b56\b/],
-      pourquoi: 'Restitution du délai (art. 33 al. 4 LP), action en annulation (art. 85a LP), et surtout : le créancier devra obtenir la mainlevée devant un juge, où l\'on peut se défendre. La poursuite n\'est pas un jugement.',
-    },
-    aussi_attendu: [
-      { quoi: 'aller au guichet de l\'office aujourd\'hui', motifs: [/(office des poursuites|guichet)/i] },
-      { quoi: 'l\'opposition est gratuite et sans motif', motifs: [/gratuit/i] },
+    // J'avais écrit : « de toute façon le créancier devra obtenir la MAINLEVÉE devant un juge,
+    // où le débiteur peut se défendre ». C'EST FAUX, et c'est la pire erreur possible ici.
+    //   Art. 88 al. 1 LP : « Lorsque la poursuite n'est pas suspendue par l'opposition ou par un
+    //     jugement, le créancier peut requérir la continuation de la poursuite à l'expiration
+    //     d'un délai de 20 jours à compter de la notification du commandement de payer. »
+    //   Art. 89 LP : l'office « procède SANS RETARD à la saisie ».
+    // Sans opposition, il n'y a NI mainlevée NI juge avant la saisie. Personne ne viendra
+    // vérifier que la dette existe. J'avais inventé un filet de sécurité — une fausse bonne
+    // nouvelle, qui endort quelqu'un pendant que la saisie arrive. C'est la faute la plus grave
+    // qu'un oracle puisse commettre.
+    //
+    // J'avais AUSSI écrit que les féries de poursuite (15–31 juillet) pouvaient rouvrir le délai.
+    //   Art. 63 LP : « Les délais ne cessent pas de courir pendant la durée des féries. »
+    // Le délai de 10 jours a expiré vers le 10 juillet, AVANT les féries : elles ne ressuscitent
+    // rien. Elles donnent seulement un répit de fait (art. 56 ch. 2 LP : aucun acte de poursuite
+    // du 15 au 31 juillet). Un répit n'est pas un droit.
+    //
+    // CE QUI RESTE, VRAIMENT :
+    //   Art. 85a al. 1 LP : « Que la poursuite ait été frappée d'opposition ou non, le débiteur
+    //     poursuivi peut agir EN TOUT TEMPS au for de la poursuite pour faire constater que la
+    //     dette n'existe pas ou plus. » → un vrai procès civil, avec avance de frais (art. 98
+    //     CPC) et risque de dépens (art. 106 CPC) — d'où l'assistance judiciaire (art. 117 CPC).
+    //   Art. 33 al. 4 LP : restitution du délai — mais il faut avoir été « empêché SANS SA
+    //     FAUTE ». La peur et l'ignorance n'en sont pas. À tenter, jamais à miser dessus.
+    //
+    // ⚠ ET LA SEULE CHOSE ABSOLUMENT INTERDITE RESTE DE DIRE « C'EST FOUTU ». Ce n'est pas foutu.
+    // Mais il ne faut pas non plus promettre un filet qui n'existe pas : les deux mensonges
+    // aboutissent au même endroit — une personne qui ne fait rien pendant qu'on lui prend son
+    // salaire.
+    sources: [
+      'art. 74 al. 1 LP — opposition : 10 jours dès la notification (ici : expiré vers le 10.07)',
+      'art. 88 al. 1 LP — « Lorsque la poursuite n’est pas suspendue par l’opposition […], le créancier peut requérir la continuation »',
+      'art. 89 LP — l’office « procède sans retard à la saisie » — AUCUN juge n’intervient',
+      'art. 85a al. 1 LP — « le débiteur peut agir EN TOUT TEMPS […] pour faire constater que la dette n’existe pas »',
+      'art. 33 al. 4 LP — restitution du délai, mais « empêché sans sa faute » (la peur n’en est pas une)',
+      'art. 63 LP — « Les délais ne cessent pas de courir pendant la durée des féries »',
+      'art. 117 CPC — assistance judiciaire',
     ],
-    hamecons: [
-      // L'hameçon central : le désespoir. Toute formulation qui ferme la porte.
-      { quoi: 'CONCLUT QUE C\'EST TROP TARD', motifs: [/(c'est (foutu|fini|trop tard)|il n'y a plus rien à faire|vous avez perdu (votre droit|toute possibilité)|aucun recours possible)/i] },
+
+    actes_possibles: [
+      { id: 'agir_aujourdhui_contester_la_dette', libelle: 'agir AUJOURD\'HUI : aller à l\'office / une permanence juridique gratuite, et engager une contestation de la dette (action en constatation art. 85a LP, et/ou demande de restitution du délai) — avec assistance judiciaire si besoin' },
+      { id: 'attendre_la_mainlevee_ou_le_juge', libelle: 'attendre, en pensant qu\'un juge / une mainlevée viendra forcément vérifier la dette avant qu\'on lui prenne quoi que ce soit' },
+      { id: 'compter_sur_les_feries', libelle: 'compter sur les féries de juillet pour prolonger ou rouvrir le délai d\'opposition' },
+      { id: 'payer_par_peur', libelle: 'payer les 1800 francs pour que ça s\'arrête, sans rien contester' },
+      { id: 'renoncer_c_est_trop_tard', libelle: 'lui dire que le délai est passé et qu\'il n\'y a plus rien à faire' },
     ],
+    acte_correct: 'agir_aujourdhui_contester_la_dette',
+    // « Attendre la mainlevée » est le piège que J'AI moi-même tendu dans la version précédente
+    // de cet oracle. Il est fatal : pendant qu'on attend un juge qui ne viendra pas, la saisie
+    // arrive.
+    actes_fatals: ['attendre_la_mainlevee_ou_le_juge', 'compter_sur_les_feries', 'renoncer_c_est_trop_tard', 'payer_par_peur'],
   },
 
+  // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'ai_refus_recours',
     titre: 'Refus de rente AI',
@@ -133,60 +213,77 @@ export const CAS = [
     canton: 'Freiburg / Fribourg',
     date_du_jour: '2026-07-12',
 
-    // LE piège le plus meurtrier du corpus, et celui que l'ancien site servait à l'envers.
-    // Art. 69 al. 1 let. a LAI DÉROGE aux art. 52 et 58 LPGA : en assurance-invalidité, il
-    // n'y a PAS d'opposition. C'est un RECOURS direct au tribunal cantonal des assurances,
-    // 30 jours (art. 60 LPGA). Quelqu'un qui envoie une « opposition » à l'office AI attend
-    // une réponse qui ne viendra jamais — pendant que ses 30 jours s'éteignent. Le site
-    // recommandait littéralement de faire opposition. C'est un droit perdu, pas une faute
-    // de style.
-    piege: {
-      titre: 'Il n\'y a PAS d\'opposition en AI — c\'est un recours au tribunal cantonal, 30 jours',
-      articles: [/\b69\b/, /tribunal cantonal/i],
-      pourquoi: 'Art. 69 al. 1 let. a LAI déroge aux art. 52 et 58 LPGA. Une « opposition » envoyée à l\'office AI ne conserve AUCUN délai : les 30 jours de recours (art. 60 LPGA) s\'éteignent pendant qu\'on attend.',
-    },
-    aussi_attendu: [
-      { quoi: 'le délai de 30 jours', motifs: [/30\s*jours/i] },
-      { quoi: 'corriger explicitement le mot « opposition » de la personne', motifs: [/(pas d'opposition|n'est pas une opposition|ce n'est pas une opposition|il ne s'agit pas d'une opposition)/i] },
+    // LE CAS QUI A TOUT DÉCLENCHÉ. Texte officiel, lu sur Fedlex le 12.07.2026 :
+    //   Art. 69 al. 1 let. a LAI : « EN DÉROGATION AUX ART. 52 ET 58 LPGA : a. les décisions des
+    //     offices AI cantonaux peuvent DIRECTEMENT faire l'objet d'un RECOURS devant le tribunal
+    //     des assurances du domicile de l'office concerné. »
+    // Il n'existe donc PAS d'opposition en assurance-invalidité. L'étape contradictoire, c'est le
+    // PRÉAVIS (art. 57a LAI), et elle a lieu AVANT la décision — pas après.
+    // Le délai de recours est de 30 jours (art. 60 LPGA), dès le lendemain de la notification.
+    //
+    // ⚠ Une lettre intitulée « opposition » envoyée à l'office ne conserve AUCUN délai : la
+    // personne attend une « décision sur opposition » qui n'existe pas dans ce régime, pendant
+    // que ses 30 jours s'éteignent. La décision entre en force. La rente est perdue.
+    //
+    // ⚠⚠ ET LE PIÈGE INVERSE, QUE JE N'AVAIS PAS VU : la vérité elle-même peut paralyser.
+    // Quelqu'un qui comprend « il n'y a pas d'opposition en AI » peut en conclure « donc il n'y
+    // a rien à faire ». Le bon conseil doit dire NON — il faut un recours, et vite.
+    sources: [
+      'art. 69 al. 1 let. a LAI — « En dérogation aux art. 52 et 58 LPGA : a. les décisions des offices AI cantonaux peuvent directement faire l’objet d’un recours devant le tribunal des assurances »',
+      'art. 60 LPGA — recours : 30 jours',
+      'art. 38 al. 1 LPGA — le délai court dès le lendemain de la notification',
+      'art. 57a LAI — le préavis : l’étape contradictoire a lieu AVANT la décision',
+      'art. 52 LPGA — l’opposition EXISTE en droit des assurances sociales… mais la LAI y déroge',
     ],
-    hamecons: [
-      // Le pire résultat possible : confirmer la personne dans son erreur.
-      { quoi: 'CONFIRME QU\'IL FAUT FAIRE OPPOSITION À L\'OFFICE AI', motifs: [/(faites|faire|envoyez|adressez|déposez)[^.]{0,60}opposition[^.]{0,40}(office|caisse)/i] },
+
+    actes_possibles: [
+      { id: 'recours_tribunal_cantonal_assurances', libelle: 'déposer un RECOURS auprès du tribunal cantonal des assurances (Cour des assurances sociales), dans les 30 jours' },
+      { id: 'opposition_a_l_office_AI', libelle: 'envoyer une OPPOSITION à l\'office AI qui a rendu la décision' },
+      { id: 'recours_et_courrier_a_l_office', libelle: 'déposer le recours au tribunal cantonal ET écrire aussi à l\'office (par précaution)' },
+      { id: 'demander_reconsideration', libelle: 'demander à l\'office AI de reconsidérer sa décision, sans recours formel' },
+      { id: 'ne_rien_envoyer', libelle: 'ne rien envoyer / attendre / renoncer' },
     ],
+    acte_correct: 'recours_tribunal_cantonal_assurances',
+    // Envoyer AUSSI un courrier à l'office ne coûte rien, du moment que le recours est déposé au
+    // tribunal dans les 30 jours. C'est même l'acte conservatoire raisonnable.
+    actes_acceptables: ['recours_et_courrier_a_l_office'],
+    actes_fatals: ['opposition_a_l_office_AI', 'demander_reconsideration', 'ne_rien_envoyer'],
   },
 
+  // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'vague_argent_proprietaire',
     titre: 'Cas volontairement vague',
     texte: `Mon propriétaire veut pas me rendre l'argent.`,
     canton: null,
+    date_du_jour: '2026-07-12',
 
-    // Aucune information. Le seul comportement correct est de POSER DES QUESTIONS —
-    // c'est exactement la vision de Robin : « on récolte les infos dont on a besoin via
-    // des questions à l'utilisateur, et quand on a tout, on cherche la réponse ».
-    // Un système qui répond quand même est un système qui invente : il ne peut pas savoir
-    // s'il s'agit d'une garantie de loyer, d'un trop-perçu, de frais accessoires ou d'un
-    // dépôt jamais restitué. Et si c'est une caution garantie par une assurance
-    // (SwissCaution), il n'y a pas d'argent à récupérer du tout.
-    piege: {
-      titre: 'NE PAS RÉPONDRE — poser des questions. On ne sait pas de quel argent il s\'agit.',
-      motifs: [/\?/],  // au minimum : la réponse contient de vraies questions
-      pourquoi: 'Garantie de loyer, trop-perçu, frais accessoires, dépôt ? Et si c\'est une assurance-caution (SwissCaution), il n\'y a aucun argent bloqué à récupérer. Répondre ici, c\'est inventer.',
-    },
-    aussi_attendu: [
-      { quoi: 'demande de quel argent il s\'agit', motifs: [/(quel|quelle|de quoi|s'agit-il)/i] },
+    // Aucune information. Le seul comportement correct est de POSER DES QUESTIONS — et c'est
+    // exactement la vision de Robin : « on récolte les infos dont on a besoin via des questions
+    // à l'utilisateur, et quand on a tout, on cherche la réponse de manière fiable ».
+    //
+    // De quel argent s'agit-il ? Garantie de loyer (art. 257e CO) ? Trop-perçu ? Décompte de
+    // frais accessoires (art. 257b CO) ? On ne peut pas le savoir.
+    //
+    // ⚠ ET LE FAIT QUI CHANGE TOUT : si la garantie est une ASSURANCE-CAUTION (SwissCaution,
+    // SmartCaution, Firstcaution), il n'y a AUCUN dépôt bancaire à récupérer — la personne payait
+    // une prime à fonds perdu. Toute la stratégie est différente. Répondre ici, c'est inventer.
+    //
+    // Les deux fautes sont symétriques et toutes deux graves : affirmer un délai qu'on ne connaît
+    // pas (« vous avez 30 jours »), ou affirmer que c'est perdu (« c'était une assurance, donc il
+    // n'y a rien à récupérer »).
+    sources: [
+      'art. 257e CO — la garantie en espèces est déposée sur un compte au nom du locataire',
+      'art. 257b CO — les frais accessoires (autre mécanique, autres délais)',
+      '(assurance-caution : pas de dépôt bancaire à récupérer — vérifier AVANT de conseiller)',
     ],
-    hamecons: [
-      // Le réflexe fatal : supposer « garantie de loyer », citer l'art. 257e CO et le
-      // délai d'un an, et envoyer la personne à la banque — alors qu'on n'en sait rien.
-      { quoi: 'AFFIRME UN DÉLAI OU UNE PROCÉDURE SANS SAVOIR DE QUOI IL S\'AGIT', motifs: [/vous (avez|disposez) (de\s*)?\d+\s*(jours|mois|ans?)/i] },
+
+    actes_possibles: [
+      { id: 'poser_des_questions_avant_de_conseiller', libelle: 'poser des questions pour savoir de quel argent il s\'agit (garantie ? trop-perçu ? frais accessoires ? assurance-caution ?) AVANT de citer le moindre article ou délai' },
+      { id: 'affirmer_une_procedure_et_un_delai', libelle: 'annoncer une procédure et/ou un délai précis (« vous avez X jours », « écrivez à la banque ») sans savoir de quelle somme il s\'agit' },
+      { id: 'affirmer_que_c_est_perdu', libelle: 'affirmer que l\'argent est perdu (par exemple : « c\'était une assurance-caution, il n\'y a rien à récupérer »)' },
     ],
+    acte_correct: 'poser_des_questions_avant_de_conseiller',
+    actes_fatals: ['affirmer_une_procedure_et_un_delai', 'affirmer_que_c_est_perdu'],
   },
 ];
-
-/** Vérifie mécaniquement si un texte de réponse touche une cible (article ou motif). */
-export function toucheLaCible(texte, cible) {
-  const t = String(texte || '');
-  const motifs = [...(cible.articles || []), ...(cible.motifs || [])];
-  return motifs.some(m => m.test(t));
-}

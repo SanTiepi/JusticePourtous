@@ -48,6 +48,11 @@
 > propose un **mandat ponctuel rémunéré (CHF 300–500)** pour relire **une seule fiche** —
 > « commandement de payer / opposition » (délai péremptoire de 10 jours, art. 74 LP).
 >
+> Pourquoi ce regard humain compte : notre propre système a récemment signalé que le corpus était
+> périmé sur le harcèlement obsessionnel (« stalking ») — le nouvel **art. 181b CP**, entré en vigueur
+> le **1er janvier 2026**, n'y figurait pas encore. C'est exactement ce type de contrôle qu'un·e
+> juriste tranche avec autorité.
+>
 > Concrètement : je vous envoie la fiche (telle que le citoyen la voit) + une **grille de 6 questions
 > (≈ 30–45 min)** : articles cités, délais et leur nature, autorité compétente, modèle de lettre,
 > pièges. Votre retour est **consultatif** et n'engage pas votre responsabilité ; vous choisissez

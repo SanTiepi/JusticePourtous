@@ -71,13 +71,33 @@ describe('Phase Cortex — SEO pages generation', () => {
     }
   });
 
-  it('sitemap.xml existe et contient ≥ 100 URLs', () => {
+  /**
+   * ⚠ CE TEST EXIGEAIT ≥ 100 URLs. IL ENCODAIT « PLUS DE PAGES = MIEUX ».
+   *
+   * C'est exactement l'hypothèse qu'on vient de rejeter, le 13 juillet 2026.
+   *
+   * Le sitemap contenait 921 pages, dont 912 guides générés depuis les 314 fiches. Un audit de
+   * 986 affirmations juridiques de ce corpus, vérifiées contre Fedlex : 238 correctes (24 %),
+   * 365 fausses, 383 imprécises — et 399 pouvaient FAIRE PERDRE UN DROIT.
+   *
+   * Un test qui exige du VOLUME dans un sitemap est un test qui pousse à servir du faux. Il
+   * mesurait la mauvaise chose, et il l'a mesurée pendant des mois avec zèle.
+   *
+   * Ce qu'on veut maintenant : que chaque page listée soit défendable LIGNE PAR LIGNE.
+   * Il en reste neuf. Voir test/desindexation-guides.test.mjs pour le détail.
+   */
+  it('sitemap.xml ne contient QUE des pages défendables — le volume n’est pas une qualité', () => {
     assert.ok(existsSync(SITEMAP), 'sitemap.xml manquant');
     const xml = readFileSync(SITEMAP, 'utf-8');
     assert.match(xml, /^<\?xml version/);
     assert.match(xml, /<urlset[^>]+xmlns=/);
-    const urlMatches = xml.match(/<url>/g) || [];
-    assert.ok(urlMatches.length >= 100, `attendu ≥ 100 URLs sitemap, reçu ${urlMatches.length}`);
+
+    const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
+    assert.ok(urls.length >= 1, 'sitemap vide');
+
+    const guides = urls.filter(u => u.includes('/guides'));
+    assert.deepEqual(guides, [],
+      `⚠⚠ ${guides.length} guide(s) sont de retour dans le sitemap. Ils viennent d'un corpus dont 76 % des affirmations sont fausses ou dangereusement incomplètes. On ne les remet PAS avant qu'un juriste humain les ait validées.`);
   });
 
   it('robots.txt existe, autorise crawl + référence sitemap', () => {

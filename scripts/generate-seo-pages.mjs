@@ -160,27 +160,54 @@ ${sections}
 `;
 }
 
-// Sitemap basé sur les fichiers RÉELLEMENT présents (sur toutes les locales offertes,
-// pas seulement celles régénérées ce run) → pas de 404 listés, pas de guides existants
-// dropés quand on ne régénère que le FR.
-function buildSitemap(intents, guidesDir) {
-  const urls = MAIN_PAGES.map((p) => `${SITE_URL}${p}`);
-  for (const intent of intents) {
-    if (fs.existsSync(path.join(guidesDir, `${intent.id}.html`))) {
-      urls.push(`${SITE_URL}/guides/${intent.id}.html`);
-    }
-    for (const locale of OFFERED_LOCALES) {
-      if (locale === 'fr') continue;
-      if (fs.existsSync(path.join(guidesDir, locale, `${intent.id}.html`))) {
-        urls.push(`${SITE_URL}/guides/${locale}/${intent.id}.html`);
-      }
-    }
-  }
+/**
+ * ⚠ LE SITEMAP NE CONTIENT PLUS QUE CE QU'ON PEUT DÉFENDRE LIGNE PAR LIGNE — 2026-07-13
+ *
+ * Il en contenait 921. Dont 912 guides, générés depuis les 314 fiches.
+ *
+ * Un audit de 986 affirmations juridiques de ce corpus, vérifiées contre Fedlex, a établi :
+ * 238 correctes (24 %), 365 fausses, 383 imprécises — et 399 pouvaient FAIRE PERDRE UN DROIT.
+ *
+ * Le 12 juillet on a coupé le triage, les lettres et le paiement. Mais ces 912 pages continuaient
+ * d'être servies par Google, à des gens qui cherchaient, en ce moment même. Le même contenu, par
+ * une autre porte. Un avertissement en tête de page n'a jamais empêché personne de croire ce qui
+ * est écrit dessous.
+ *
+ * ⚠ ET IL Y A UNE SECONDE RAISON, PRATIQUE. On tente une seule expérience : deux pages vérifiées
+ * (« commandement de payer » FR/DE), dont chaque phrase est une citation de la loi, doivent être
+ * trouvées par quelqu'un qui cherche déjà. Noyées parmi 912 pages douteuses, elles ne le seront
+ * pas — et le site entier sera jugé sur les autres.
+ *
+ * Les fichiers restent sur le disque. On les remettra le jour où un juriste humain les aura
+ * validées. On arrête juste de les servir. Ils portent désormais un `noindex` (guide-renderer.mjs).
+ */
+const PAGES_DEFENDABLES = [
+  // Les deux seules pages dont chaque affirmation est une citation littérale du droit fédéral,
+  // vérifiée à la source et verrouillée par des tests (test/page-commandement.test.mjs).
+  '/commandement-de-payer.html',
+  '/zahlungsbefehl.html',
+  // Les pages qui n'affirment rien de juridique : elles ne peuvent pas nuire.
+  '/', '/manifeste.html', '/methodologie.html', '/annuaire.html',
+  '/confidentialite.html', '/cgu.html', '/mentions-legales.html',
+];
+
+function buildSitemap(/* intents, guidesDir — volontairement ignorés, voir plus haut */) {
+  const existe = (p) => p === '/' || fs.existsSync(path.join(ROOT, 'src', 'public', p.replace(/^\//, '')));
+  const urls = PAGES_DEFENDABLES.filter(existe).map((p) => `${SITE_URL}${p}`);
   const body = urls.map((url) => `  <url><loc>${url}</loc></url>`).join('\n');
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`;
 }
 
 function buildRobots() {
+  // ⚠ On NE met PAS `Disallow: /guides/`.
+  //
+  // C'est contre-intuitif, et c'est le piège classique : un Disallow empêche Google de CRAWLER la
+  // page — donc de LIRE le `noindex` qu'elle contient. Une page déjà indexée resterait alors dans
+  // les résultats, pour toujours, sans qu'on puisse la faire sortir.
+  //
+  // Pour retirer 912 pages de l'index, il faut au contraire LAISSER Google les visiter, y lire le
+  // `noindex`, et les désindexer lui-même. On pourra bloquer le crawl plus tard, quand elles auront
+  // disparu des résultats.
   return `User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /dashboard\nSitemap: ${SITE_URL}/sitemap.xml\n`;
 }
 

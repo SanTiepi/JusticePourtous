@@ -137,7 +137,7 @@ async function sparql(query, timeoutMs = 20000) {
  * avance : au moment d'écrire, la LAI a déjà une consolidation applicable au 01.01.2027.
  * La servir à quelqu'un aujourd'hui, c'est lui donner un droit qui n'existe pas encore.
  */
-export async function trouverTexteEnVigueur(rs, dateDuJour) {
+export async function trouverTexteEnVigueur(rs, dateDuJour, langue = 'fr') {
   // ⚠ Le numéro RS n'est PAS un littéral simple : Fedlex le type
   // (`^^…/notation-type/id-systematique`). Comparer avec "831.20" tout court ne renvoie
   // RIEN — silencieusement. On compare donc sur str(), après avoir sondé le graphe plutôt
@@ -206,7 +206,7 @@ export async function trouverTexteEnVigueur(rs, dateDuJour) {
       OPTIONAL { ?cons jolux:dateEndApplicability ?fin }
       ?expr jolux:isEmbodiedBy ?manif .
       ?manif jolux:isExemplifiedBy ?file .
-      FILTER(CONTAINS(STR(?expr), "/fr"))
+      FILTER(CONTAINS(STR(?expr), "/${langue}"))
       FILTER(CONTAINS(STR(?file), "html"))
       FILTER(STR(?date) <= "${dateDuJour}")
       FILTER(!BOUND(?fin) || STR(?fin) >= "${dateDuJour}")
@@ -245,12 +245,20 @@ function nettoyer(html) {
  * Charge une loi (réseau + cache disque). Le cache porte sa date de lecture et son URL :
  * une donnée sans provenance est une donnée qu'on finira par croire sans savoir pourquoi.
  */
-export async function chargerLoi(nom, { dateDuJour = new Date().toISOString().slice(0, 10), forcerReseau = false } = {}) {
+export async function chargerLoi(nom, {
+  dateDuJour = new Date().toISOString().slice(0, 10),
+  forcerReseau = false,
+  // ⚠ LA SUISSE A QUATRE LANGUES OFFICIELLES, ET LA LOI EST PUBLIÉE DANS TROIS.
+  // Quand on écrit une page en allemand, on ne TRADUIT pas le texte français : on va chercher
+  // la version allemande, qui fait foi au même titre. Traduire une loi, c'est la réécrire — et
+  // c'est très exactement le geste qui a produit les 314 fiches hallucinées de ce projet.
+  langue = 'fr',
+} = {}) {
   const rs = LOIS[nom];
   if (!rs) throw new Error(`Loi inconnue : ${nom}. Ajoute son numéro RS dans LOIS — ne devine pas.`);
 
   mkdirSync(CACHE_DIR, { recursive: true });
-  const fichier = join(CACHE_DIR, `${nom}.json`);
+  const fichier = join(CACHE_DIR, langue === 'fr' ? `${nom}.json` : `${nom}.${langue}.json`);
 
   if (!forcerReseau && existsSync(fichier)) {
     const c = JSON.parse(readFileSync(fichier, 'utf8'));
@@ -261,9 +269,9 @@ export async function chargerLoi(nom, { dateDuJour = new Date().toISOString().sl
     if (encoreValide) return c;
   }
 
-  const meta = await trouverTexteEnVigueur(rs, dateDuJour);
+  const meta = await trouverTexteEnVigueur(rs, dateDuJour, langue);
   const html = await fetch(meta.url).then(r => {
-    if (!r.ok) throw new Error(`téléchargement de ${nom} : HTTP ${r.status}`);
+    if (!r.ok) throw new Error(`téléchargement de ${nom} (${langue}) : HTTP ${r.status}`);
     return r.text();
   });
 
@@ -283,6 +291,7 @@ export async function chargerLoi(nom, { dateDuJour = new Date().toISOString().sl
   const loi = {
     loi: nom,
     rs,
+    langue,
     source: meta.url,
     en_vigueur_depuis: meta.en_vigueur_depuis,
     en_vigueur_jusqu_a: meta.en_vigueur_jusqu_a,

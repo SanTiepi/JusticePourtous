@@ -45,10 +45,15 @@ const PAGE = readFileSync(join(__dirname, '..', 'src', 'public', 'commandement-d
  * source ; il aurait dû vérifier la PAGE. Un garde-fou qui ne regarde pas au bon endroit ne garde
  * rien — il donne juste l'illusion de garder.
  */
-const VU_PAR_LE_CITOYEN = PAGE
+const sansCommentaires = (html) => html
   .replace(/<!--[\s\S]*?-->/g, ' ')     // les commentaires HTML
   .replace(/\/\/[^\n]*/g, ' ')          // les commentaires JS
   .replace(/\/\*[\s\S]*?\*\//g, ' ');   // les blocs JS
+
+const VU_PAR_LE_CITOYEN = sansCommentaires(PAGE);
+
+const PAGE_DE = readFileSync(join(__dirname, '..', 'src', 'public', 'zahlungsbefehl.html'), 'utf8');
+const VU_EN_ALLEMAND = sansCommentaires(PAGE_DE);
 
 describe('La page « commandement de payer » — ce qui ne doit jamais en disparaître', () => {
   it('LES TROIS FAITS SONT CITÉS, PAS RÉSUMÉS — c’est toute sa raison d’être', () => {
@@ -125,10 +130,78 @@ describe('La page « commandement de payer » — ce qui ne doit jamais en dispa
       'la page n\'indique plus que l\'adresse de l\'office est SUR le document — elle va donc être tentée de l\'inventer');
   });
 
+  it('LE TITRE EST CE QUE LA PERSONNE TAPE — pas ce qu’on voudrait dire', () => {
+    // C'est le SEUL canal qui n'exige de Robin aucun coup de téléphone, aucune confiance à
+    // construire, aucune honte à surmonter : la page se fait trouver par quelqu'un qui cherche
+    // DÉJÀ. À 23h, seul, avec la lettre sur la table. Un titre qui ne contient pas ses mots à lui
+    // rend la page invisible — et une page invisible n'aide personne, exactement comme le site.
+    assert.match(PAGE, /<title>[^<]*commandement de payer[^<]*que faire/i,
+      '⚠ le titre ne contient plus « commandement de payer » ET « que faire ». C\'est ce que la personne tape. Sans ça, la page n\'existe pas.');
+    assert.match(PAGE_DE, /<title>[^<]*Zahlungsbefehl[^<]*was tun/i,
+      '⚠ le titre allemand ne contient plus « Zahlungsbefehl » ET « was tun »');
+  });
+
   it('ELLE NE FAIT PAS SEMBLANT D’ÊTRE PLUS QU’ELLE N’EST', () => {
     assert.match(PAGE, /que le commandement de payer/i,
       'la page ne borne plus son périmètre — elle va se mettre à conseiller sur la mainlevée, la faillite, la suite');
-    assert.doesNotMatch(PAGE, /\b(IA|intelligence artificielle|chatbot|triage)\b/i,
+    assert.doesNotMatch(VU_PAR_LE_CITOYEN, /\b(IA|intelligence artificielle|chatbot|triage)\b/i,
       '⚠ la page parle d\'IA. Elle ne doit RIEN promettre d\'autre que trois citations de la loi — c\'est exactement ce qui la rend montrable sans honte.');
+  });
+});
+
+describe('La page allemande — le texte est LU, jamais traduit', () => {
+  // ⚠ ON NE TRADUIT PAS UNE LOI. On va chercher la version allemande sur Fedlex, qui fait foi au
+  // même titre que la française. Traduire un texte de loi, c'est le RÉÉCRIRE — et c'est très
+  // exactement le geste qui a produit les 314 fiches hallucinées de ce projet.
+  // Les mots ci-dessous sont ceux de la Confédération, pas les miens.
+
+  it('les trois faits sont dans le texte ALLEMAND OFFICIEL, mot pour mot', () => {
+    assert.match(PAGE_DE, /Die mit dem Rechtsvorschlag verbundenen Verrichtungen sind <b>gebührenfrei<\/b>/,
+      '⚠ la citation littérale de l\'art. 18 GebV SchKG a disparu (« gebührenfrei »)');
+    assert.match(PAGE_DE, /<b>Der Rechtsvorschlag bedarf keiner Begründung\.<\/b>/,
+      '⚠ la citation littérale de l\'art. 75 SchKG a disparu');
+    assert.match(PAGE_DE, /<b>mündlich<\/b> oder schriftlich/,
+      '⚠ « mündlich » a disparu — c\'est CE mot qui dit aux gens qu\'ils peuvent simplement entrer et parler');
+    assert.match(PAGE_DE, /<b>innert zehn Tagen<\/b>/, 'le délai de dix jours a disparu du texte allemand');
+    assert.match(PAGE_DE, /<b>unverzüglich die Pfändung zu vollziehen<\/b>/,
+      '⚠ l\'art. 89 SchKG a disparu — c\'est lui qui dit que personne ne viendra vérifier la dette');
+  });
+
+  it('⚠ LA RÈGLE DE FER TIENT AUSSI EN ALLEMAND : jamais « zu spät »', () => {
+    assert.doesNotMatch(VU_EN_ALLEMAND, /(es ist zu spät|nichts mehr zu machen|Sie haben verloren)/i,
+      '⚠⚠ LA PAGE ALLEMANDE DÉCOURAGE QUELQU\'UN. Ne rien faire est irréversible ; y aller ne coûte rien.');
+    assert.match(PAGE_DE, /Gehen Sie trotzdem heute zum Betreibungsamt/,
+      '⚠ quand la frist paraît écoulée, la page allemande n\'envoie plus la personne au guichet');
+    assert.match(PAGE_DE, /Wiederherstellung der Frist/,
+      'la restitution du délai (art. 33 al. 4 SchKG) a disparu — c\'est la seule porte qui reste');
+  });
+
+  it('elle avoue les mêmes limites, en allemand', () => {
+    assert.match(PAGE_DE, /Ich bin kein Jurist/i,
+      '⚠ la page allemande ne dit plus que Robin n\'est pas juriste — elle devient du conseil juridique');
+    assert.match(PAGE_DE, /Wenn hier etwas falsch ist, sagen Sie es mir/i,
+      'le « dites-moi où c\'est faux » a disparu de la version allemande');
+  });
+
+  it('les liens Fedlex pointent vers la version ALLEMANDE (/de), pas la française', () => {
+    // Envoyer un lecteur germanophone vérifier dans un texte français, c'est lui dire
+    // « fais-moi confiance ». C'est exactement ce qu'on ne veut plus jamais demander à personne.
+    for (const art of ['art_74', 'art_75', 'art_88', 'art_89']) {
+      assert.match(PAGE_DE, new RegExp(`fedlex\\.admin\\.ch[^"]*/de#${art}`),
+        `le lien allemand vers ${art} SchKG a disparu (ou pointe vers le français)`);
+    }
+    assert.match(PAGE_DE, /fedlex\.admin\.ch[^"]*\/de#art_18/, 'le lien allemand vers l\'art. 18 GebV SchKG a disparu');
+  });
+
+  it('les deux pages se connaissent (hreflang) — sinon Google les traite comme des doublons', () => {
+    assert.match(PAGE, /hreflang="de"[^>]*zahlungsbefehl\.html/, 'la page FR ne déclare plus sa jumelle allemande');
+    assert.match(PAGE_DE, /hreflang="fr"[^>]*commandement-de-payer\.html/, 'la page DE ne déclare plus sa jumelle française');
+  });
+
+  it('aucune coordonnée inventée non plus en allemand', () => {
+    const numeros = VU_EN_ALLEMAND.match(/\b0\d{2}[\s.]?\d{3}[\s.]?\d{2}[\s.]?\d{2}\b/g) || [];
+    assert.deepEqual(numeros, [], `⚠ la page allemande publie un numéro (${numeros.join(', ')})`);
+    assert.match(PAGE_DE, /sie steht auf dem Zahlungsbefehl/i,
+      'la page allemande n\'indique plus que l\'adresse du Betreibungsamt est SUR le document');
   });
 });

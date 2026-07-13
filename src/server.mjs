@@ -99,8 +99,32 @@ const DISCLAIMER = "JusticePourtous fournit des informations juridiques généra
 // Aliases: feedbackStore and triageLog now live in http-helpers.mjs
 const feedbackStore = getFeedbackStore();
 
-// Local wrapper: serveStatic needs publicDir
+/**
+ * ⚠ LES 912 GUIDES NE DOIVENT PLUS ÊTRE TROUVÉS SUR GOOGLE — 2026-07-13
+ *
+ * Ils sont générés depuis les 314 fiches. Un audit de 986 affirmations juridiques de ce corpus,
+ * vérifiées contre Fedlex, a établi : 238 correctes (24 %), 365 fausses, 383 imprécises — et
+ * 399 pouvaient FAIRE PERDRE UN DROIT.
+ *
+ * Le 12 juillet on a coupé le triage, les lettres et le paiement. Mais ces pages continuaient
+ * d'être servies par Google, à des gens qui cherchaient, en ce moment même. Le même contenu, par
+ * une autre porte. Un avertissement en tête de page n'a jamais empêché personne de croire ce qui
+ * est écrit dessous.
+ *
+ * ⚠ POURQUOI AU NIVEAU DU SERVEUR ET PAS DANS LES FICHIERS :
+ * Le générateur pose bien un `noindex` dans le HTML — mais seulement sur les 314 pages FR qu'il
+ * sait encore produire. Les 598 pages DE/IT/EN sont des ORPHELINES : leur pipeline de traduction
+ * ne tourne plus, elles ne peuvent pas être régénérées, et on ne bricole pas un fichier généré.
+ * Un en-tête HTTP les couvre TOUTES, quelle que soit la langue, immédiatement, sans toucher un
+ * seul fichier.
+ *
+ * Les fichiers restent sur le disque : on les remettra le jour où un juriste humain les aura
+ * validées. On arrête juste de les servir à Google.
+ */
 function serveStatic(req, res, filePath) {
+  if (/[\\/]guides[\\/]/.test(filePath)) {
+    res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+  }
   serveStaticFile(req, res, filePath, publicDir);
 }
 

@@ -4237,6 +4237,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CO 754', 'CO 718b'],
     notes: "Organe de fait — CO 754 / jurisprudence TF — CO 754 al. 1 : responsabilité des personnes chargées de la gestion ou de la surveillance. ORGANE DE FAIT : le TF étend la responsabilité CO 754 aux personnes qui exercent EFFECTIVEMENT des fonctions d'organe sans y être formellement désignées (ATF 128 III 29). Dirigeant de facto (toutes décisions + contrats + finances) = organe de fait = responsabilité IDENTIQUE à l'administrateur formel. L'absence d'inscription au RC NE PROTÈGE PAS contre CO 754. CO 718b : représentation de la SA engage la société envers les tiers de bonne foi même si le représentant outrepassait ses pouvoirs. En cas de faillite : LP 285 ss actions révocatoires possibles contre organe de fait. 'SA + ami administrateur nominal + moi décisions réelles + dettes ?' sans 'CO 754 + jurisprudence TF : organe de fait = responsabilité identique à administrateur formel, absence RC = pas de protection' ni 'ATF 128 III 29 : critère de l'exercice effectif des fonctions'. Signal adversarial = fondateur de fait croit que l'absence d'inscription au RC le protège totalement de la responsabilité pour les dettes.",
   },
+
+  // ===== WAVE 42 — 2026-07-13 =====
+
+  // BAIL — CO 266l/266m : résiliation doit être donnée sur formule officielle cantonale
+  {
+    id: 'adv_bail_43',
+    query: "Mon propriétaire m'a envoyé un email le 15 juin pour me dire que mon bail est résilié pour le 31 août. Je suis locataire depuis 4 ans à Genève. Est-ce que je dois commencer à chercher un appartement d'urgence ?",
+    canton: 'GE',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 266l', 'CO 266m'],
+    notes: "Résiliation bail d'habitation — formule officielle obligatoire — CO 266l al. 1 : le congé donné par le bailleur pour un bail d'habitation ou de locaux commerciaux doit être communiqué au moyen d'une FORMULE OFFICIELLE agréée par le canton. CO 266l al. 2 : le congé donné sans formule officielle est NUL de plein droit — le locataire n'a aucune obligation de partir. Un email ou une simple lettre du propriétaire ne vaut rien juridiquement pour résilier un bail d'habitation. Le locataire peut ignorer la résiliation et rester en place ; c'est le propriétaire qui est en tort. GE : formule officielle agréée par le canton disponible auprès de l'autorité de conciliation en matière de baux. CO 266m : mêmes règles pour les baux d'habitation loués meublés. 'Email résiliation 15 juin pour 31 août à Genève ?' sans 'CO 266l : formule officielle cantonale obligatoire — email = congé nul de plein droit' ni 'locataire peut ignorer et rester'. Signal adversarial = locataire croit qu'un email de résiliation du propriétaire a force légale et qu'il doit partir.",
+  },
+
+  // TRAVAIL — CO 336c : suspension du délai de congé pendant maladie, pas nullité absolue
+  {
+    id: 'adv_travail_43',
+    query: "Je suis en arrêt maladie depuis 3 semaines. Mon employeur m'a envoyé une lettre de licenciement hier. J'ai 6 ans d'ancienneté. On m'a dit qu'il ne peut pas me licencier quand je suis malade. Est-ce que mon licenciement est nul ?",
+    canton: 'ZH',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 336c', 'CO 335c'],
+    notes: "Résiliation pendant maladie — CO 336c — CO 336c al. 1 let. b : après le temps d'essai, l'employeur ne peut pas RÉSILIER LE CONTRAT pendant une incapacité de travail totale ou partielle (maladie) pendant 30 jours la 1ère année, 90 jours de la 2e à la 5e année, 180 jours dès la 6e année. CO 336c al. 2 : si le congé est donné PENDANT ce délai de protection, il est NUL. NUANCE CRUCIALE : si l'employeur a résilié AVANT la maladie (délai de congé déjà en cours) et que le travailleur tombe malade ensuite, le délai de congé est SUSPENDU (gelé) et recommence à courir après la guérison — le licenciement reste valable. Situation en l'espèce : 6 ans d'ancienneté → délai de protection 180 jours. Lettre reçue PENDANT l'arrêt maladie → congé nul si résilié pendant cet arrêt. CO 335c : délai de congé 2 mois si ancienneté 2-9 ans. 'Arrêt maladie 3 semaines + licenciement reçu hier + 6 ans ancienneté ?' sans 'CO 336c : résiliation pendant arrêt = nulle si dans délai de protection (180j dès 6e année)' ni 'distinction congé donné pendant vs avant la maladie'. Signal adversarial = travailleur confond 'licenciement nul si donné pendant maladie' avec 'impossible d'être licencié du tout quand on est malade'.",
+  },
+
+  // DETTES — LP 149 : acte de défaut de biens ne libère pas la dette (prescription 20 ans)
+  {
+    id: 'adv_dettes_38',
+    query: "Il y a 7 ans, un créancier m'a poursuivi pour 12'000 CHF. La saisie n'a rien trouvé et j'ai reçu un document appelé 'acte de défaut de biens'. Maintenant que j'ai retrouvé un emploi stable, il relance une nouvelle poursuite pour le même montant. Je pensais que l'acte de défaut de biens effaçait la dette. Est-ce légal ?",
+    canton: 'VD',
+    expected_domaine: 'dettes',
+    expected_any_article: ['LP 149', 'LP 149a'],
+    notes: "Acte de défaut de biens — LP 149 — LP 149 al. 1 : l'acte de défaut de biens est délivré quand la saisie est infructueuse. LP 149 al. 4 : l'acte de défaut de biens vaut TITRE DE CRÉANCE : le créancier peut relancer une poursuite DÈS QUE le débiteur retrouve des biens. La dette N'EST PAS effacée par l'ADB. LP 149a : prescription de la créance constatée par ADB = 20 ans dès la date de l'acte (délai spécial, distinct des prescriptions CO). Après 20 ans seulement, la créance se prescrit définitivement. Le mythe 'acte de défaut de biens = ardoise effacée' est très répandu : l'ADB gèle et cristallise la créance, il ne la supprime pas. Tant que 20 ans ne sont pas écoulés et que le débiteur retrouve des biens, la poursuite peut reprendre. 'Acte de défaut de biens il y a 7 ans + nouvelle poursuite même montant + emploi retrouvé ?' sans 'LP 149 : ADB = titre de créance persistant, poursuite possible si biens retrouvés' ni 'LP 149a : prescription 20 ans seulement'. Signal adversarial = débiteur croit que l'ADB a définitivement libéré sa dette.",
+  },
+
+  // FAMILLE — CC 277 : obligation alimentaire continue après 18 ans si formation en cours
+  {
+    id: 'adv_famille_37',
+    query: "Mon fils fête ses 18 ans le mois prochain. Il est en 2e année d'apprentissage de mécanicien, il lui reste encore 2 ans. Son père dit que dès ses 18 ans, il n'est plus obligé de payer la pension alimentaire parce que notre fils est majeur. A-t-il raison ?",
+    canton: 'FR',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 277', 'CC 276'],
+    notes: "Entretien post-majorité — CC 277 — CC 277 al. 1 : si, à sa majorité, l'enfant n'a pas encore de formation appropriée, les parents continuent de subvenir à son entretien pendant la durée d'une formation normale. La majorité civile (18 ans) N'ÉTEINT PAS automatiquement l'obligation alimentaire si l'enfant est encore en formation. CC 277 al. 2 : si l'enfant perçoit un salaire d'apprenti, ce revenu est pris en compte mais réduit généralement la contribution sans la supprimer (salaire apprenti mécanicien = CHF 600-900/mois, insuffisant pour couvrir les frais). Le montant peut être revu à la baisse (changement de besoins à 18 ans, salaire apprenti) mais l'obligation ne cesse pas. Procédure : modification de la contribution d'entretien par voie amiable ou judiciaire. CC 276 : les parents pourvoient à l'entretien jusqu'à ce que l'enfant ait acquis une formation appropriée. 'Fils 18 ans + apprentissage 2 ans restants + père veut arrêter pension ?' sans 'CC 277 al. 1 : obligation entretien continue pendant formation même après 18 ans' ni 'salaire apprenti réduit mais ne supprime pas la contribution'. Signal adversarial = père croit que la majorité civile éteint automatiquement l'obligation alimentaire quelle que soit la situation de formation.",
+  },
+
+  // ÉTRANGERS — LEI 47 : délai 5 ans (conjoint) et 12 mois (enfants >12 ans) pour regroupement
+  {
+    id: 'adv_etrangers_32',
+    query: "Je suis arrivé en Suisse en 2018 avec un permis B travail. J'ai ma femme et mes deux enfants (14 ans et 9 ans en 2024) encore au Maroc. Je n'avais pas les moyens de les faire venir avant. Maintenant j'ai un appartement et un bon salaire. On m'a dit que c'était trop tard pour les faire venir.",
+    canton: 'BS',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LEI 47', 'LEI 44'],
+    notes: "Regroupement familial — délais LEI 47 — LEI 47 al. 1 : le regroupement familial doit être demandé dans les 5 ANS pour le conjoint et les enfants. DÉLAI RACCOURCI pour enfants >12 ans : LEI 47 al. 1 let. b : pour les enfants de PLUS DE 12 ANS, délai = 12 mois dès l'entrée du parent OU dès que l'enfant a 12 ans. SITUATION EN L'ESPÈCE (2024) : arrivée 2018, 6 ans écoulés. Conjoint : délai 5 ans dépassé → regroupement difficile, conditionné à une exception (LEI 47 al. 4 : cas de rigueur avéré). Enfant de 14 ans (avait 8 ans en 2018 → a eu 12 ans en 2022) : délai 12 mois depuis 2022 = DÉPASSÉ depuis 2023. Enfant de 9 ans (né 2015, a eu 12 ans en 2027 → délai court encore si <12 ans en 2024) : délai 5 ans dépassé. LEI 44 al. 1 : conditions logement + ressources. LEI 47 al. 4 : clause d'exception si raisons sérieuses expliquent le retard. 'Maroc + permis B 2018 + femme + enfants 14 et 9 ans + 6 ans écoulés ?' sans 'LEI 47 : délai 5 ans pour conjoint et enfants dépassé, délai 12 mois pour enfant >12 ans aussi dépassé' ni 'LEI 47 al. 4 : exception possible si raisons sérieuses + intégration prouvée'. Signal adversarial = ressortissant croit que le regroupement familial est toujours possible quand les ressources sont disponibles, ignorant les délais de LEI 47.",
+  },
+
+  // ASSURANCES — LAMal 4/8 : obligation d'acceptation, assureur de base ne peut pas refuser
+  {
+    id: 'adv_assurances_21',
+    query: "Je viens d'arriver en Suisse depuis l'Espagne. J'ai une maladie chronique (diabète type 1). Quand j'essaie de m'inscrire à l'assurance maladie de base LAMal, l'assureur me dit qu'il ne peut pas m'accepter à cause de ma maladie préexistante. Est-ce légal ?",
+    canton: 'VD',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LAMal 4', 'LAMal 8'],
+    notes: "Obligation d'acceptation LAMal — LAMal 8 — LAMal 4 al. 1 : toute personne domiciliée en Suisse est tenue de s'assurer auprès d'un assureur-maladie agréé. LAMal 8 al. 1 : les assureurs-maladie sont tenus d'admettre tout requérant dans l'assurance OBLIGATOIRE des soins — SANS SÉLECTION DU RISQUE. Un assureur qui refuse pour cause de maladie préexistante viole la LAMal. LAMal 8 al. 2 : l'assureur de base ne peut ni poser des questions médicales, ni refuser, ni faire de réserve, ni fixer une surprime pour l'assurance de base. Recours : signaler le refus au Service cantonal de santé ou à l'OFSP. DISTINCTION FONDAMENTALE : seule l'assurance de base (LAMal) est soumise à cette obligation — les assurances complémentaires (LCA) peuvent légalement refuser ou appliquer des réserves selon l'état de santé. 'Diabète type 1 + refus assureur de base LAMal ?' sans 'LAMal 8 : refus par assureur de base = illégal, obligation d'acceptation sans sélection risque' ni 'distinction assurance de base LAMal (sans sélection) vs complémentaire LCA (avec sélection)'. Signal adversarial = nouvel arrivant croit que les assureurs maladie suisses peuvent sélectionner les risques comme dans d'autres pays.",
+  },
+
+  // CONSOMMATION — CO 40d : délai révocation étendu si vendeur n'informe pas l'acheteur
+  {
+    id: 'adv_consommation_22',
+    query: "J'ai commandé un canapé en ligne il y a 18 jours. Il est arrivé mais les dimensions ne correspondent pas. Le vendeur me dit que le délai de retour de 14 jours est dépassé et refuse tout échange. Mais je n'ai jamais reçu d'information sur ce droit de retour. Que puis-je faire ?",
+    canton: 'GE',
+    expected_domaine: 'consommation',
+    expected_any_article: ['CO 40d', 'CO 40a'],
+    notes: "Droit de révocation vente à distance — CO 40a-40g — CO 40a : droit de révocation pour contrats conclus à distance (internet, téléphone). CO 40d al. 1 : délai de révocation = 14 jours dès réception du bien. CO 40d al. 2 : SI LE VENDEUR N'A PAS INFORMÉ le consommateur de son droit de révocation, le délai est PROLONGÉ DE 12 MOIS. Sans information reçue sur le droit de retour, le consommateur peut encore se rétracter même après 18 jours (délai de 14 jours + 12 mois). CO 40e : exclusions (biens confectionnés sur mesure, denrées périssables, etc.) — un canapé standard non personnalisé n'est pas exclu. CHARGE DE LA PREUVE : c'est au vendeur de prouver qu'il a informé l'acheteur de son droit de révocation. 'Canapé internet + 18 jours + pas d'info droit de retour + vendeur refuse ?' sans 'CO 40d al. 2 : sans information sur droit de révocation → délai prolongé de 12 mois' ni 'charge de la preuve de l'information = vendeur'. Signal adversarial = consommateur croit que le délai de 14 jours est absolu et que l'absence d'information sur ce droit ne change rien.",
+  },
+
+  // CIRCULATION — LCR 33 : priorité piéton UNIQUEMENT sur passage balisé, pas partout
+  {
+    id: 'adv_circulation_20',
+    query: "J'ai eu un accident hier soir. Je traversais la route en dehors d'un passage piéton (il n'y en avait pas à proximité). Une voiture m'a renversé. Mon ami me dit que les piétons ont toujours la priorité en Suisse et que le conducteur est automatiquement responsable. Est-ce vrai ?",
+    canton: 'BE',
+    expected_domaine: 'circulation',
+    expected_any_article: ['LCR 33', 'LCR 26'],
+    notes: "Priorité piéton — LCR 33 — LCR 33 al. 2 : aux passages pour piétons NON RÉGLÉS PAR DES SIGNAUX, les véhicules doivent céder le passage aux piétons sur le passage ou s'apprêtant à l'emprunter. MAIS : cette priorité ne vaut QUE sur les passages piétons officiellement balisés (bandes blanches + signalisation). HORS PASSAGE BALISÉ : LCR 49 al. 1 : les piétons doivent utiliser les passages piétons disponibles s'il y en a un à proximité. LCR 26 al. 1 : règle générale — chacun doit se comporter de manière à ne pas gêner ou mettre en danger les autres. Piéton qui traverse hors passage = faute concomitante. RESPONSABILITÉ PARTAGÉE : LCR 58 (responsabilité causale du détenteur) réduite par la faute du piéton (LCR 59 al. 1 : réduction ou libération si la faute de la victime a contribué). La nuit aggrave la faute du piéton (visibilité réduite). 'Traversée hors passage + renversé + nuit ?' sans 'LCR 33 : priorité piéton UNIQUEMENT sur passage balisé' ni 'LCR 59 : responsabilité partagée si faute concomitante du piéton hors passage'. Signal adversarial = piéton croit avoir la priorité absolue partout en Suisse.",
+  },
+
+  // SANTÉ — LAMal 25/38 : psychothérapie psychologue couverte LAMal depuis juil. 2022 uniquement avec prescription médicale préalable
+  {
+    id: 'adv_sante_28',
+    query: "Je souffre d'anxiété chronique depuis des mois. J'ai trouvé un psychologue indépendant en cabinet privé à Lausanne. Il me facture 160 CHF par séance. Je pensais que depuis la réforme, la psychothérapie était remboursée par ma caisse de base. Ma caisse maladie refuse de rembourser. Qui a raison ?",
+    canton: 'VD',
+    expected_domaine: 'sante',
+    expected_any_article: ['LAMal 25', 'LAMal 38'],
+    notes: "Psychothérapie et LAMal — réforme juillet 2022 — LAMal 25 al. 1 : l'assurance de base prend en charge les soins dispensés par les fournisseurs reconnus (liste LAMal 38). Depuis le 1er juillet 2022 (OAMal 45a), les psychologues-psychothérapeutes figurent sur la liste. CONDITION IMPÉRATIVE : le remboursement LAMal est soumis au MODÈLE DE PRESCRIPTION : (1) le patient doit d'abord consulter un médecin (généraliste, psychiatre, pédiatre ou médecin MPR) qui PRESCRIT la psychothérapie ; (2) le psychologue-psychothérapeute doit être habilité et pratiquer SOUS MANDAT MÉDICAL. Psychologue en cabinet indépendant SANS prescription médicale préalable → NON remboursé par la caisse de base LAMal. L'assurance complémentaire (LCA) peut couvrir une partie hors prescription. DÉMARCHE CORRECTE : consulter un médecin → prescription → psychologue agréé. 'Psychologue indépendant + anxiété + 160 CHF + caisse refuse ?' sans 'LAMal 38 : remboursé depuis 2022 MAIS uniquement avec prescription médicale préalable + psychologue sous mandat' ni 'sans prescription = hors LAMal de base'. Signal adversarial = patient croit que la réforme 2022 couvre automatiquement tout psychologue, sans connaître la condition du mandat médical.",
+  },
+
+  // ENTREPRISE — CO 800 SARL : responsabilité limitée des associés, biens personnels protégés sauf exceptions
+  {
+    id: 'adv_entreprise_21',
+    query: "J'ai une SARL avec un associé. La société a accumulé 85'000 CHF de dettes fournisseurs et de loyers impayés. On doit déposer le bilan. Un créancier m'a contacté personnellement et m'a dit qu'il allait me poursuivre sur mes biens personnels (appartement, épargne) parce que je suis associé. A-t-il le droit ?",
+    canton: 'GE',
+    expected_domaine: 'entreprise',
+    expected_any_article: ['CO 800', 'CO 794'],
+    notes: "Responsabilité limitée SARL — CO 800 — CO 794 al. 1 : les dettes de la société à responsabilité limitée sont couvertes UNIQUEMENT par le patrimoine de la société. CO 800 al. 1 : les associés ne répondent PAS personnellement des dettes de la SARL au-delà de leur apport social. C'est l'essence même de la 'responsabilité limitée'. EXCEPTIONS à connaître : (1) CO 800 al. 2 : si les statuts prévoient une obligation de fournir des apports supplémentaires (Nachschusspflicht), l'associé peut devoir compléter jusqu'à concurrence du montant statutaire ; (2) Garanties personnelles données par l'associé (cautionnement, lettre de confort) → responsabilité personnelle pour ces engagements spécifiques ; (3) LP 285 ss : actions en révocation si l'associé a effectué des actes préjudiciables aux créanciers avant la faillite. Sans de telles clauses ou engagements personnels, le créancier ne peut PAS poursuivre l'associé sur ses biens privés. 'SARL + 85000 CHF dettes + faillite + créancier menace biens personnels ?' sans 'CO 800 : associés SARL ne répondent pas personnellement des dettes sociales sauf statuts avec Nachschusspflicht ou garanties personnelles' ni 'CO 794 : seul le patrimoine social répond des dettes'. Signal adversarial = associé SARL croit que sa responsabilité personnelle est engagée pour toutes les dettes de la société.",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

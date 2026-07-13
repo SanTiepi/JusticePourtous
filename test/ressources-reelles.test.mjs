@@ -47,7 +47,7 @@ async function estVivant(url) {
 }
 
 describe('Les ressources qu’on donne à un citoyen en détresse', () => {
-  it('chaque lien d’aide répond réellement (aucune URL inventée)', { timeout: 90000 }, async () => {
+  it('chaque lien d’aide répond réellement (aucune URL inventée)', { timeout: 90000, skip: !process.env.TEST_SOURCES }, async () => {
     // Les liens internes (/annuaire.html) sont servis par le site lui-même : couverts
     // par la suite HTTP. Ici on ne teste que ce qui pointe vers le MONDE EXTÉRIEUR —
     // c'est là qu'on invente, et c'est là que les choses meurent sans prévenir.

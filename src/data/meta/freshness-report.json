@@ -3741,122 +3741,122 @@
     {
       "ref": "ALCP 4",
       "url": "https://www.fedlex.admin.ch/eli/cc/2002/243/fr#art_4",
-      "status": "ok",
-      "code": 200
+      "status": "error",
+      "code": 403
     },
     {
       "ref": "CC 212",
       "url": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_212",
-      "status": "ok",
-      "code": 200
+      "status": "error",
+      "code": 403
     },
     {
       "ref": "CC 304",
       "url": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_304",
-      "status": "ok",
-      "code": 200
+      "status": "error",
+      "code": 403
     },
     {
       "ref": "CC 41",
       "url": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_41",
-      "status": "ok",
-      "code": 200
+      "status": "error",
+      "code": 403
     },
     {
       "ref": "CC 548",
       "url": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_548",
-      "status": "ok",
-      "code": 200
+      "status": "error",
+      "code": 403
     },
     {
       "ref": "CC 742",
       "url": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_742",
-      "status": "ok",
-      "code": 200
+      "status": "error",
+      "code": 403
     },
     {
       "ref": "CC 952",
       "url": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_952",
-      "status": "ok",
-      "code": 200
+      "status": "error",
+      "code": 403
     },
     {
       "ref": "CO 1146",
       "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_1146",
-      "status": "ok",
-      "code": 200
+      "status": "error",
+      "code": 403
     },
     {
       "ref": "CO 256",
       "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_256",
-      "status": "ok",
-      "code": 200
+      "status": "error",
+      "code": 403
     },
     {
       "ref": "CO 339b",
       "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_339b",
-      "status": "ok",
-      "code": 200
+      "status": "error",
+      "code": 403
     },
     {
       "ref": "CO 489",
       "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_489",
-      "status": "ok",
-      "code": 200
+      "status": "error",
+      "code": 403
     },
     {
       "ref": "CO 691",
       "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_691",
-      "status": "ok",
-      "code": 200
+      "status": "error",
+      "code": 403
     },
     {
       "ref": "CO 875",
       "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_875",
-      "status": "ok",
-      "code": 200
+      "status": "error",
+      "code": 403
     },
     {
       "ref": "CPC 15",
       "url": "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_15",
-      "status": "ok",
-      "code": 200
+      "status": "error",
+      "code": 403
     },
     {
       "ref": "CPC 337",
       "url": "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_337",
-      "status": "ok",
-      "code": 200
+      "status": "error",
+      "code": 403
     },
     {
       "ref": "LACI 36",
       "url": "https://www.fedlex.admin.ch/eli/cc/1982/2184_2184_2184/fr#art_36",
-      "status": "ok",
-      "code": 200
+      "status": "error",
+      "code": 403
     },
     {
       "ref": "LAVS 29",
       "url": "https://www.fedlex.admin.ch/eli/cc/63/837_843_843/fr#art_29",
-      "status": "ok",
-      "code": 200
+      "status": "error",
+      "code": 403
     },
     {
       "ref": "LN 12",
       "url": "https://www.fedlex.admin.ch/eli/cc/2016/404/fr#art_12",
-      "status": "ok",
-      "code": 200
+      "status": "error",
+      "code": 403
     },
     {
       "ref": "LP 225",
       "url": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_225",
-      "status": "ok",
-      "code": 200
+      "status": "error",
+      "code": 403
     },
     {
       "ref": "LP 80",
       "url": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_80",
-      "status": "ok",
-      "code": 200
+      "status": "error",
+      "code": 403
     }
   ],
   "summary": {
@@ -3867,7 +3867,7 @@
     },
     "freshness_rate": "86%",
     "stale_rate": "14%",
-    "broken_urls": 0,
+    "broken_urls": 20,
     "url_check_sample_size": 20,
     "needs_reharvest": true
   }

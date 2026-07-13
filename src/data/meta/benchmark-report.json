@@ -3,8 +3,8 @@
   "golden_cases": [
     {
       "id": "bail_moisissure_vd",
-      "articles_count": 3,
-      "articles_sourced": 3,
+      "articles_count": 4,
+      "articles_sourced": 4,
       "articles_sourced_pct": 100,
       "jurisprudence_count": 2,
       "delais_count": 4,
@@ -13,12 +13,12 @@
       "contacts_count": 4,
       "template_available": 1,
       "confiance": "probable",
-      "last_verified_at": "2026-04-07",
+      "last_verified_at": "2026-07-12",
       "readiness": "production",
       "review_scope": "reviewed_by_claude",
-      "jpt_score": 68,
+      "jpt_score": 74,
       "llm_brut_score": 10,
-      "advantage_delta": 58
+      "advantage_delta": 64
     },
     {
       "id": "bail_caution_ge",
@@ -117,22 +117,22 @@
     },
     {
       "id": "dettes_commandement_payer",
-      "articles_count": 3,
-      "articles_sourced": 3,
+      "articles_count": 6,
+      "articles_sourced": 6,
       "articles_sourced_pct": 100,
       "jurisprudence_count": 2,
-      "delais_count": 5,
+      "delais_count": 4,
       "cascades_steps": 4,
       "anti_erreurs_count": 0,
       "contacts_count": 3,
       "template_available": 1,
       "confiance": "probable",
-      "last_verified_at": "2026-04-07",
+      "last_verified_at": "2026-07-12",
       "readiness": "production",
       "review_scope": "reviewed_by_claude",
-      "jpt_score": 66,
+      "jpt_score": 78,
       "llm_brut_score": 10,
-      "advantage_delta": 56
+      "advantage_delta": 68
     },
     {
       "id": "dettes_saisie_salaire",
@@ -196,9 +196,9 @@
     "total_cases": 10,
     "valid_cases": 10,
     "errors": 0,
-    "jpt_avg_score": 64.2,
+    "jpt_avg_score": 66,
     "llm_brut_reference": 10,
-    "avantage_moyen_delta": 54.2,
-    "advantage_ratio": 6.4
+    "avantage_moyen_delta": 56,
+    "advantage_ratio": 6.6
   }
 }

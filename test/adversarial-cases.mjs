@@ -4339,6 +4339,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CO 800', 'CO 794'],
     notes: "Responsabilité limitée SARL — CO 800 — CO 794 al. 1 : les dettes de la société à responsabilité limitée sont couvertes UNIQUEMENT par le patrimoine de la société. CO 800 al. 1 : les associés ne répondent PAS personnellement des dettes de la SARL au-delà de leur apport social. C'est l'essence même de la 'responsabilité limitée'. EXCEPTIONS à connaître : (1) CO 800 al. 2 : si les statuts prévoient une obligation de fournir des apports supplémentaires (Nachschusspflicht), l'associé peut devoir compléter jusqu'à concurrence du montant statutaire ; (2) Garanties personnelles données par l'associé (cautionnement, lettre de confort) → responsabilité personnelle pour ces engagements spécifiques ; (3) LP 285 ss : actions en révocation si l'associé a effectué des actes préjudiciables aux créanciers avant la faillite. Sans de telles clauses ou engagements personnels, le créancier ne peut PAS poursuivre l'associé sur ses biens privés. 'SARL + 85000 CHF dettes + faillite + créancier menace biens personnels ?' sans 'CO 800 : associés SARL ne répondent pas personnellement des dettes sociales sauf statuts avec Nachschusspflicht ou garanties personnelles' ni 'CO 794 : seul le patrimoine social répond des dettes'. Signal adversarial = associé SARL croit que sa responsabilité personnelle est engagée pour toutes les dettes de la société.",
   },
+
+  // ========== WAVE 43 — 2026-07-16 ==========
+
+  // SOCIAL — Cst 12 / LIAS : seuil fortune avant aide sociale, mythe "zéro centime d'abord"
+  {
+    id: 'adv_social_17',
+    query: "Mon chômage s'est terminé il y a 3 semaines. J'ai demandé l'aide sociale à ma commune. L'assistante sociale m'a dit que je devais d'abord utiliser toutes mes économies jusqu'au dernier franc avant qu'ils m'accordent quoi que ce soit. J'ai 5'800 CHF de côté pour des urgences. Est-ce que c'est vraiment obligatoire de tout dépenser ?",
+    canton: 'VD',
+    expected_domaine: 'social',
+    expected_any_article: ['Cst 12', 'LIAS 11'],
+    notes: "Aide sociale + fortune résiduelle — Cst 12 + LIAS 11 — L'aide sociale est subsidiaire (LIAS 5) : la personne doit d'abord utiliser ses propres ressources. MAIS : les lois cantonales prévoient généralement un SEUIL DE FORTUNE résiduelle admissible (fortune exemptée avant d'être tenue d'épuiser son capital). En VD : LASV art. 11 permet de conserver une réserve modeste. MYTHE ADVERSARIAL : l'assistante sociale simplifie à tort en disant 'zéro centime'. En réalité, la plupart des cantons fixent un seuil de fortune exemptée (selon composition du ménage). La fortune dépassant ce seuil doit certes être mobilisée progressivement, mais pas la totalité immédiatement. 'Aide sociale + 5800 CHF + doit-on tout dépenser ?' sans 'Cst 12 : droit à l'aide dans des situations de détresse' ni 'fortune exemptée — seuil cantonal VD' ni 'LIAS : subsidiarité ≠ épuisement total immédiat'. Signal adversarial = citoyen prend la règle de subsidiarité pour une obligation de dénuement absolu.",
+  },
+
+  // SOCIAL — Cst 12 / LIAS : héritage modeste et aide sociale, réduction vs suppression immédiate
+  {
+    id: 'adv_social_18',
+    query: "Je suis à l'aide sociale depuis 14 mois. Ma mère vient de décéder et j'hérite de 11'500 CHF. L'office social me dit que mon aide est suspendue immédiatement et que je dois utiliser cet argent en priorité. Ont-ils le droit de me couper l'aide d'un coup dès maintenant ?",
+    canton: 'GE',
+    expected_domaine: 'social',
+    expected_any_article: ['Cst 12', 'LIAS 26'],
+    notes: "Aide sociale + héritage — LIAS 26 + subsidiarité — L'aide sociale est subsidiaire : l'héritage est une ressource qui doit être déclarée et prise en compte (LIAS 26 al. 1 : obligation de rembourser si retour à meilleure fortune). PROCÉDURE : (1) déclaration immédiate obligatoire de l'héritage à l'office social ; (2) révision du budget — l'héritage est intégré comme ressource disponible ; (3) la prestation est réduite ou suspendue selon les règles cantonales, mais pas nécessairement d'un coup. GE (LIASI) : l'héritage inférieur au seuil cantonal peut être conservé en partie (réserve). MYTHE ADVERSARIAL : l'office dit 'suspension immédiate' alors que la pratique est une réévaluation du budget avec prise en compte progressive ou partielle selon montant. 11'500 CHF est un montant modeste qui dépasse le seuil ordinaire → aide suspendue pendant épuisement du capital, mais selon procédure — pas d'un claquement. 'Aide sociale + héritage 11500 CHF + coupure immédiate ?' sans 'LIAS 26 : obligation déclaration + remboursement mais procédure de réévaluation, pas suspension instantanée arbitraire' ni 'seuil fortune exemptée'. Signal adversarial = bénéficiaire pense que toute ressource = coupure instantanée sans recours ni procédure.",
+  },
+
+  // ACCIDENT — CO 55 / CO 58 : équipement scolaire défectueux, responsabilité de la commune
+  {
+    id: 'adv_accident_19',
+    query: "Mon fils de 9 ans s'est cassé le bras la semaine dernière pendant un cours de gym à l'école. Un banc suédois mal fixé au mur s'est renversé sur lui. La directrice m'a dit que c'est un 'accident malheureux' et que l'école n'est pas responsable. Mon fils va avoir besoin d'une opération qui coûte 4'000 CHF après franchise. Que puis-je faire ?",
+    canton: 'VD',
+    expected_domaine: 'accident',
+    expected_any_article: ['CO 55', 'CO 58', 'CO 41'],
+    notes: "Responsabilité commune pour équipement scolaire défectueux — CO 55 / CO 58 — CO 58 : responsabilité causale pour les ouvrages et les bâtiments — un équipement sportif fixé au mur est assimilé à un 'ouvrage' au sens de CO 58 ; si son installation ou entretien était défectueux, la commune (ou l'État comme propriétaire) répond causalement. CO 55 : responsabilité de l'employeur (maître) pour ses auxiliaires (enseignant de gym qui n'a pas vérifié la fixation). CO 41 : responsabilité délictuelle si faute prouvable (entretien insuffisant documenté). DÉMARCHE : (1) conserver les preuves (photos, rapport médical, rapport d'incident école) ; (2) demander le rapport de sécurité de l'équipement ; (3) mise en demeure à la commune ; (4) assurance accidents personnelle de l'enfant = première ligne, puis recours contre la commune. 'Fils + banc suédois + bras cassé + école dit pas responsable ?' sans 'CO 58 : responsabilité causale propriétaire ouvrage défectueux — banc = ouvrage' ni 'CO 55 : responsabilité auxiliaires (enseignant gym)'. Signal adversarial = parent accepte 'accident malheureux' comme réponse finale, ne connaît pas la responsabilité causale CO 58.",
+  },
+
+  // ACCIDENT — CO 41 / CO 55 : glissade eau supermarché, responsabilité pour auxiliaires
+  {
+    id: 'adv_accident_20',
+    query: "Je suis tombée dans un supermarché en marchant dans une flaque d'eau près du rayon frais. Aucun panneau d'avertissement. Je me suis fracturé la cheville, 3 semaines d'arrêt et des soins à 2'800 CHF. Le manager m'a dit que c'est un accident et qu'ils n'en sont pas responsables. Est-ce qu'ils doivent quand même payer quelque chose ?",
+    canton: 'BE',
+    expected_domaine: 'accident',
+    expected_any_article: ['CO 55', 'CO 41'],
+    notes: "Responsabilité supermarché pour sol glissant — CO 41 / CO 55 — CO 55 : le maître (supermarché) répond du dommage causé par ses auxiliaires (employés qui n'ont pas nettoyé ou signalé la flaque). La preuve requise est l'absence de diligence dans la surveillance et l'entretien. L'employeur doit prouver qu'il a pris toutes les précautions nécessaires (CO 55 al. 1 : libération si preuve de diligence). CO 41 : faute par omission — ne pas signaler une flaque d'eau visible = violation du devoir de diligence envers les clients. DÉMARCHE : (1) rapport d'accident écrit au manager le jour même ; (2) témoins + photos du lieu ; (3) factures médicales + certificat incapacité ; (4) mise en demeure à l'enseigne (siège social), pas seulement au magasin. 'Flaque eau + cheville fracturée + manager dit pas responsable ?' sans 'CO 55 : responsabilité maître pour auxiliaires = supermarché doit prouver diligence, pas la victime' ni 'CO 41 : absence panneau + flaque visible = faute par omission'. Signal adversarial = victime accepte la réponse du manager et ignore que le fardeau de preuve est inversé sous CO 55.",
+  },
+
+  // VIOLENCE — CP 177 / CP 180 / CP 261bis / CC 28b : insultes racistes et menaces voisin, plainte pénale
+  {
+    id: 'adv_violence_22',
+    query: "Mon voisin m'insulte avec des termes racistes et me menace depuis 8 mois, presque quotidiennement depuis son balcon ou dans la cage d'escalier. La police est venue une fois et a dit que c'est un litige de voisinage et qu'il faut s'arranger entre nous. Je ne sais plus quoi faire légalement.",
+    canton: 'GE',
+    expected_domaine: 'violence',
+    expected_any_article: ['CP 177', 'CP 180', 'CC 28b'],
+    notes: "Insultes racistes et menaces voisin — CP 177 + CP 180 + CP 261bis — CP 177 al. 1 : injure (Beschimpfung) — insultes racistes répétées = injure punissable, poursuite sur plainte, délai 3 mois dès connaissance de l'auteur. CP 180 : menaces — les menaces graves d'un tort sérieux sont poursuivies d'office si graves, sinon sur plainte. CIRCONSTANCE AGGRAVANTE : CP 261bis (discrimination raciale) — insultes à caractère raciste constituent une infraction autonome, poursuite d'OFFICE (pas besoin de plainte formelle de la victime). VOIE CIVILE PARALLÈLE : CC 28b (protection de la personnalité) — mesures provisionnelles d'éloignement ou d'interdiction d'approcher prononcées rapidement par le juge civil, indépendamment de la pénale. MYTHE : police = seule voie. En réalité : (1) dépôt de plainte formelle au commissariat ; (2) CP 261bis = infraction d'office pour discrimination raciale ; (3) CC 28b : voie civile urgente en parallèle. 'Insultes racistes + menaces voisin + police passive ?' sans 'CP 261bis : discrimination raciale = infraction d'office, pas besoin de plainte' ni 'CC 28b : mesures provisionnelles civiles urgentes indépendantes de la pénale'. Signal adversarial = victime croit être bloquée par la passivité policière, ignore la plainte formelle et la voie civile rapide.",
+  },
+
+  // CONSOMMATION — CO 197 / CO 210 : garantie légale 2 ans vs garantie commerciale 1 an
+  {
+    id: 'adv_consommation_23',
+    query: "J'ai acheté un robot pâtissier à 780 CHF dans une grande enseigne il y a 15 mois. Le moteur est tombé en panne lors d'une utilisation normale. Le vendeur me répond que la garantie du fabricant d'un an est expirée et qu'il ne peut rien faire. Est-ce que j'ai vraiment aucun recours ?",
+    canton: 'ZH',
+    expected_domaine: 'consommation',
+    expected_any_article: ['CO 197', 'CO 210', 'CO 205'],
+    notes: "Garantie légale 2 ans — CO 197 / CO 210 — CO 197 al. 1 : le vendeur garantit à l'acheteur que la chose livrée est exempte de défauts qui en suppriment ou en diminuent notablement la valeur ou l'utilité. CO 210 al. 1 (révisé 2013) : l'action en garantie se prescrit par 2 ANS dès la livraison pour les meubles. Cette garantie légale CO est DISTINCTE et CUMULATIVE avec la garantie commerciale du fabricant. Le fait que la garantie commerciale (1 an) soit expirée ne supprime PAS la garantie légale CO (2 ans). CONDITIONS : (1) défaut annoncé sans délai dès découverte (CO 201) ; (2) défaut ne résultant pas d'une usure anormale ; (3) présomption favorable acheteur dans les 6 premiers mois (ATF 133 III 229). RECOURS : réduction du prix (CO 205) ou résolution. 'Robot 780 CHF + panne 15 mois + vendeur dit garantie expirée ?' sans 'CO 210 : garantie légale 2 ans INDÉPENDANTE de la garantie commerciale' ni 'CO 197 : action garantie légale possible jusqu'à 24 mois'. Signal adversarial = consommateur confond garantie commerciale (fabricant, 1 an) et garantie légale CO (vendeur, 2 ans).",
+  },
+
+  // ENTREPRISE — CO 530 / CO 62 : société simple de fait + enrichissement illégitime, startup sweat equity
+  {
+    id: 'adv_entreprise_22',
+    query: "J'ai travaillé bénévolement pendant 18 mois avec deux amis pour développer une application. On s'était mis d'accord verbalement sur 30% des parts chacun. L'app marche bien, l'entreprise est valorisée à 500'000 CHF. Mes deux associés refusent maintenant de me donner des parts et disent que la promesse verbale n'était pas contraignante. J'ai des emails et messages prouvant ma contribution et l'accord.",
+    canton: 'GE',
+    expected_domaine: 'entreprise',
+    expected_any_article: ['CO 530', 'CO 62', 'CO 41'],
+    notes: "Société simple de fait + enrichissement illégitime — CO 530 / CO 62-67 — CO 530 : il y a société simple dès que plusieurs personnes s'unissent pour atteindre un but commun en mettant en commun des ressources (ici : travail + compétences + temps). Une société simple de fait se forme même sans contrat écrit si les éléments constitutifs sont présents (apports + but commun + affectio societatis). CO 544 : les associés répondent solidairement et les droits sur les bénéfices sont proportionnels aux apports. PARALLÈLE : CO 62-63 : action en enrichissement illégitime — si la société simple est niée, les 2 fondateurs se sont enrichis de la valeur apportée par le demandeur (travail, code, design) sans cause légitime. CO 41 : si dol prouvé (promesse délibérément mensongère pour exploiter le travail). PREUVES : les emails et messages attestant l'accord et les contributions sont valables (CO 1 + Cst 9). DÉMARCHE : mise en demeure + action en reconnaissance de société simple et partage OU enrichissement illégitime. 'Startup + travail 18 mois + accord verbal 30% + refus ?' sans 'CO 530 : société simple de fait par actes concluants = droits sur les bénéfices' ni 'CO 62 : enrichissement illégitime si société simple niée'. Signal adversarial = fondateur croit que sans contrat écrit signé, aucun droit sur l'entreprise co-créée.",
+  },
+
+  // CIRCULATION — LCR 58 / LCR 65 / LCA 21 : conduite véhicule d'autrui, exclusion RC assurance
+  {
+    id: 'adv_circulation_21',
+    query: "J'ai conduit la voiture de mon ami avec sa permission verbale. J'ai percuté un véhicule garé (2'400 CHF de dégâts). L'assurance RC de mon ami a refusé de payer en disant que je ne figure pas comme conducteur autorisé dans la police. Mon ami est hors de lui. Qui doit payer ?",
+    canton: 'ZH',
+    expected_domaine: 'circulation',
+    expected_any_article: ['LCR 58', 'LCR 65'],
+    notes: "Conduite véhicule d'autrui + exclusion RC — LCR 58 / LCR 65 / LCA 21 — LCR 58 al. 1 : le DÉTENTEUR du véhicule (l'ami propriétaire) est responsable causalement des dommages causés par le véhicule, même s'il ne conduisait pas. LCR 65 : la RC de véhicule est obligatoire. Pour les TIERS (victime du véhicule garé), la LCR impose un paiement direct de l'assureur (LCR 65 al. 2 : l'assureur répond directement envers le lésé). L'exclusion interne (conducteur non inscrit) ne protège PAS la victime tiers. ENTRE ASSUREUR ET ASSURÉ : LCA 21 permet à l'assureur d'exercer un droit de recours contre le détenteur ou le conducteur pour violation des clauses contractuelles. RÉSUMÉ : (1) la victime SERA indemnisée par l'assurance RC ; (2) l'assureur peut exercer un recours contre l'ami (détenteur) et/ou contre le conducteur ; (3) entre ami et conducteur : CO 143/148 pour la répartition interne. 'Voiture ami + accident + assurance RC refuse car non-inscrit ?' sans 'LCR 65 al. 2 : tiers toujours indemnisés même si exclusion contractuelle' ni 'LCA 21 : exclusion RC interne ≠ refus d'indemniser le tiers'. Signal adversarial = conducteur croit que 'exclusion RC' = personne ne sera payé.",
+  },
+
+  // ÉTRANGERS — ALCP Annexe I art. 6 / LEI 61a : UE permis B + chômage involontaire maintien séjour
+  {
+    id: 'adv_etrangers_33',
+    query: "Je suis ressortissant espagnol et je vis en Suisse depuis 9 ans avec un permis B UE. J'ai perdu mon emploi il y a 6 mois suite à une restructuration. Je reçois des indemnités chômage et suis inscrit à l'ORP. La police des étrangers me demande de prouver que je retrouverai un emploi dans 3 mois sinon mon permis B ne sera pas renouvelé. Ont-ils le droit ?",
+    canton: 'GE',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LEI 61a', 'LEI 43'],
+    notes: "UE permis B + chômage involontaire — ALCP Annexe I art. 6 + LEI 61a — ALCP Annexe I art. 6 : les ressortissants UE/AELE qui perdent involontairement leur emploi bénéficient d'un droit de séjour maintenu pendant la recherche d'emploi, à condition d'être inscrits auprès d'un office de placement et d'avoir des chances réelles d'être engagés. LEI 61a al. 1 : le droit de séjour du travailleur UE est maintenu s'il est en chômage involontaire ET inscrit à l'ORP. DURÉE : si le travailleur a exercé plus de 12 mois → maintien 12 mois minimum (ALCP Annexe I art. 6 al. 3). MYTHE ADVERSARIAL : délai 3 mois imposé par la police des étrangers est erroné pour un travailleur UE avec 9 ans d'activité + chômage involontaire + ORP inscrit. Après 12 mois de chômage, réévaluation mais pas suppression automatique. LEI 61a al. 2 : le maintien s'applique aussi aux non-UE qui tombent au chômage involontaire. '9 ans + permis B + chômage involontaire + ORP inscrit + menace non-renouvellement 3 mois ?' sans 'ALCP Annexe I art. 6 : maintien séjour UE chômage involontaire ≥12 mois' ni 'LEI 61a : protection légale chômage involontaire'. Signal adversarial = citoyen UE pense que perdre son emploi = perdre automatiquement son droit de séjour.",
+  },
+
+  // DETTES — CO 127 / CO 135 : prescription interrompue par paiements partiels, délai repart à zéro
+  {
+    id: 'adv_dettes_39',
+    query: "Je viens de recevoir un commandement de payer pour un prêt bancaire de 2012 d'un montant de 22'000 CHF. J'avais fait deux petits versements de 500 CHF en 2016 et 400 CHF en 2018 pour montrer ma bonne volonté. La banque dit que la prescription de 10 ans est repartie de zéro à chaque versement et que donc je leur dois encore tout. Ont-ils raison ?",
+    canton: 'VD',
+    expected_domaine: 'dettes',
+    expected_any_article: ['CO 127', 'CO 135'],
+    notes: "Prescription + interruption par paiements partiels — CO 127 / CO 135 — CO 127 : prescription ordinaire de 10 ans pour les créances commerciales (prêt bancaire). CO 135 al. 1 : la prescription est interrompue notamment par (let. b) la RECONNAISSANCE DE DETTE — un paiement partiel volontaire vaut reconnaissance de dette et interrompt la prescription. CONSÉQUENCE : après chaque paiement partiel (2016, 2018), le délai de 10 ans REPART À ZÉRO depuis la date du dernier paiement. Si dernier paiement = 2018 → prescription s'achève en 2028. La banque a donc raison sur le principe. MYTHE ADVERSARIAL : le débiteur croit que la prescription court depuis la date originale du prêt (2012) et qu'elle serait prescrite depuis 2022. En réalité, CO 135 let. b : tout paiement = reconnaissance de dette = délai repart. NUANCE : les paiements sans réserve expresse sont des reconnaissances implicites. Pour éviter d'interrompre la prescription, il aurait fallu ne plus payer après la prescription acquise OU payer sous réserve expresse. '22000 CHF + prêt 2012 + versements 2016-2018 + prescription repart ?' sans 'CO 135 al. 1 let. b : paiement partiel = reconnaissance de dette = interruption prescription + délai repart' ni 'délai CO 127 repart depuis chaque paiement'. Signal adversarial = débiteur confond prescription courant depuis l'origine et prescription interrompue par ses propres paiements.",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

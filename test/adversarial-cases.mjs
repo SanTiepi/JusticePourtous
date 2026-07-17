@@ -4441,6 +4441,106 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CO 127', 'CO 135'],
     notes: "Prescription + interruption par paiements partiels — CO 127 / CO 135 — CO 127 : prescription ordinaire de 10 ans pour les créances commerciales (prêt bancaire). CO 135 al. 1 : la prescription est interrompue notamment par (let. b) la RECONNAISSANCE DE DETTE — un paiement partiel volontaire vaut reconnaissance de dette et interrompt la prescription. CONSÉQUENCE : après chaque paiement partiel (2016, 2018), le délai de 10 ans REPART À ZÉRO depuis la date du dernier paiement. Si dernier paiement = 2018 → prescription s'achève en 2028. La banque a donc raison sur le principe. MYTHE ADVERSARIAL : le débiteur croit que la prescription court depuis la date originale du prêt (2012) et qu'elle serait prescrite depuis 2022. En réalité, CO 135 let. b : tout paiement = reconnaissance de dette = délai repart. NUANCE : les paiements sans réserve expresse sont des reconnaissances implicites. Pour éviter d'interrompre la prescription, il aurait fallu ne plus payer après la prescription acquise OU payer sous réserve expresse. '22000 CHF + prêt 2012 + versements 2016-2018 + prescription repart ?' sans 'CO 135 al. 1 let. b : paiement partiel = reconnaissance de dette = interruption prescription + délai repart' ni 'délai CO 127 repart depuis chaque paiement'. Signal adversarial = débiteur confond prescription courant depuis l'origine et prescription interrompue par ses propres paiements.",
   },
+
+  // ASSURANCES — LPP 30c / OLP 3a : retrait anticipé LPP logement principal, consentement conjoint obligatoire
+  {
+    id: 'adv_assurances_22',
+    query: "Mon épouse et moi voulons acheter un appartement à Lausanne. J'ai 180'000 CHF dans mon 2e pilier. Je voulais en retirer 120'000 CHF pour financer le projet. Ma caisse de pension me demande une signature de mon épouse en plus de la mienne. Je lui en ai parlé mais elle est réticente. Est-ce vraiment nécessaire qu'elle signe ?",
+    canton: 'VD',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LPP 30c'],
+    notes: "LPP retrait anticipé + consentement écrit conjoint obligatoire — LPP 30c al. 5 / OLP 3a — LPP 30c al. 5 : le versement anticipé pour l'acquisition d'un logement principal nécessite le CONSENTEMENT ÉCRIT du conjoint ou du partenaire enregistré. Ce consentement ne peut pas être remplacé par une décision de justice. Si l'épouse refuse, le retrait est bloqué. RATIO : les avoirs LPP accumulés durant le mariage sont soumis au partage en cas de divorce (CC 122/LFLP 22). Permettre un retrait sans consentement permettrait de réduire unilatéralement les avoirs partagés en cas de divorce futur. OLP 3a : le consentement doit être authentifié ou établi par écrit. ALTERNATIVE : l'épouse peut signer mais formuler des conditions (ex. désintéressement de sa quote-part future). MYTHE : le citoyen croit que ses avoirs LPP lui appartiennent entièrement et qu'il peut en disposer librement. En réalité, le régime matrimonial implique des droits de l'autre conjoint sur les avoirs accumulés pendant le mariage. 'LPP + logement + signature conjoint ?' sans 'LPP 30c al. 5 : consentement écrit conjoint OBLIGATOIRE, pas remplaçable par jugement' ni 'OLP 3a : forme écrite authentifiée'. Signal adversarial = époux pense que ses avoirs LPP lui appartiennent exclusivement et que la signature est une simple formalité.",
+  },
+
+  // SUCCESSIONS — CC 505 : testament olographe tapé à l'ordinateur = nul
+  {
+    id: 'adv_successions_21',
+    query: "Mon père est décédé il y a 3 semaines. Il avait rédigé un testament sur son ordinateur, l'avait imprimé, signé et daté de sa main. Dans ce document il me laisse tout (j'ai 2 sœurs). Le notaire dit que ce testament n'est peut-être pas valable. Comment est-ce possible ? Il était de plein lucide et avait bien signé.",
+    canton: 'GE',
+    expected_domaine: 'successions',
+    expected_any_article: ['CC 505', 'CC 520'],
+    notes: "Testament olographe nul si tapé à l'ordinateur — CC 505 al. 1 — CC 505 al. 1 : pour être valable, le testament olographe doit être ENTIÈREMENT ÉCRIT, daté et signé DE LA MAIN du testateur. Un testament tapé à l'ordinateur ou à la machine à écrire est NUL MÊME s'il est signé et daté manuellement, car la loi exige que TOUT le texte soit manuscrit. CC 520 : les héritiers lésés peuvent demander l'annulation en justice dans l'année suivant la connaissance du vice. ALTERNATIVE VALABLE : testament authentique devant notaire (CC 499/501) ou testament public. CONSÉQUENCE PRATIQUE : si le testament est nul, la succession est réglée par la loi (dévolution légale CC 457ss) : les 3 enfants héritent à parts égales. MYTHE : le citoyen confond 'signature de la main' et 'entièrement écrit de la main'. La signature ne suffit pas — le texte intégral doit être manuscrit. '2 sœurs + testament imprimé signé + notaire conteste ?' sans 'CC 505 al. 1 : testament olographe = TOUT écrit à la main, pas seulement signé' ni 'CC 520 : annulation dans l'année dès connaissance'. Signal adversarial = héritier confond conditions de forme du testament olographe (tout manuscrit) avec une simple signature.",
+  },
+
+  // ACCIDENT — CO 41 / CO 44 : piéton hors passage balisé renverse un cycliste, faute concomitante
+  {
+    id: 'adv_accident_21',
+    query: "Je suis cycliste. En traversant une intersection à vitesse normale et sur ma voie, un piéton a surgi d'entre deux voitures en dehors d'un passage piéton balisé. Je n'ai pas pu l'éviter et me suis blessé en chutant (épaule cassée, 6 semaines d'arrêt). Le piéton dit que 'les cyclistes doivent faire attention aux piétons' et refuse de payer. Ai-je un recours ?",
+    canton: 'BE',
+    expected_domaine: 'accident',
+    expected_any_article: ['CO 41', 'CO 44'],
+    notes: "Faute concomitante piéton hors passage balisé — CO 41 / CO 44 / LCR 33 — LCR 33 al. 2 : les piétons bénéficient de la priorité sur les passages pour piétons balisés UNIQUEMENT. Hors passage balisé, c'est la circulation ordinaire qui s'applique : le piéton qui traverse doit céder le passage aux véhicules. CO 41 al. 1 : faute du piéton prouvable — surgir entre des voitures hors passage est une violation de la règle de la prudence. CO 44 al. 1 : la faute concomitante de la victime peut réduire son indemnité (et peut même jouer sur la responsabilité des deux parties). MÉCANIQUE : le cycliste (victime blessée) peut invoquer la responsabilité délictuelle du piéton fautif via CO 41. La faute du cycliste (vitesse adaptée ?) sera aussi évaluée. DÉMARCHE : (1) constat de police ou rapport d'incident ; (2) témoins visuels ; (3) demande à l'assurance RC du piéton (si elle existe) ; (4) si pas d'assurance RC : action directe contre le piéton en responsabilité civile. 'Cycliste blessé + piéton hors passage + faute concomitante ?' sans 'LCR 33 : priorité piéton uniquement sur passage BALISÉ — hors passage le piéton doit céder' ni 'CO 41 : faute du piéton + CO 44 : répartition des fautes'. Signal adversarial = cycliste victime croit que 'cyclistes responsables envers piétons' est une règle absolue.",
+  },
+
+  // SOCIAL — LAPG 1 / LAPG 8 : indépendant + service civil, droit à l'APG
+  {
+    id: 'adv_social_19',
+    query: "Je suis graphiste indépendant depuis 5 ans. Je dois effectuer 21 jours de service civil le mois prochain. Mes collègues salariés touchent une allocation perte de gain pendant le service. On m'a dit que les indépendants n'ont pas droit à l'APG. Est-ce vrai ?",
+    canton: 'ZH',
+    expected_domaine: 'social',
+    expected_any_article: ['LAPG 1', 'LAPG 8'],
+    notes: "APG indépendants service civil/militaire — LAPG 1 / LAPG 8 — LAPG 1 al. 1 : le régime des allocations pour perte de gain (APG) couvre les personnes astreintes au service militaire, au service civil ou à la protection civile QUI EXERCENT UNE ACTIVITÉ LUCRATIVE. Cela inclut explicitement les INDÉPENDANTS. LAPG 8 : l'indemnité est calculée sur le revenu soumis à cotisations AVS (pas sur un salaire). Pour l'indépendant : revenu déterminant = revenu AVS moyen des dernières années. MONTANT : maximum 196 CHF/jour (2024). CONDITIONS : être inscrit à l'AVS et cotiser en tant qu'indépendant. Pratiquement tous les indépendants qui paient l'AVS ont droit à l'APG. MYTHE : l'indépendant croit que l'APG est réservée aux salariés. En réalité l'obligation de service s'accompagne du droit à l'indemnisation quel que soit le statut professionnel. DÉMARCHE : formulaire APG rempli avant le début du service, envoyé à la caisse AVS. 'Graphiste indépendant + 21 jours service civil + APG ?' sans 'LAPG 1 : APG couvre aussi les INDÉPENDANTS astreints au service' ni 'LAPG 8 : calcul sur revenu AVS, pas uniquement sur salaire'. Signal adversarial = indépendant croit à tort que l'APG est exclusivement réservée aux salariés.",
+  },
+
+  // FISCAL — Impôt sur gains immobiliers + remploi résidence principale (droit cantonal)
+  {
+    id: 'adv_fiscal_12',
+    query: "J'ai vendu ma maison principale à Zurich après 8 ans (gain net 180'000 CHF). L'agent immobilier m'a dit que je devrai payer environ 40'000 CHF d'impôt sur le gain immobilier. Mais j'ai entendu qu'on pouvait 'remployer' le gain dans un nouvel achat pour éviter l'impôt. Est-ce possible ?",
+    canton: 'ZH',
+    expected_domaine: 'fiscal',
+    expected_any_article: ['LICD', 'StHG 12'],
+    notes: "Gain immobilier résidence principale + remploi — droit cantonal — StHG 12 al. 3 let. a (et droit cantonal zurichois § 221 StG ZH) : le gain réalisé sur la vente de la résidence principale PEUT être différé (report d'imposition) si le produit est remployé dans un délai raisonnable (généralement 2 ans) pour acquérir un nouveau logement principal de valeur équivalente ou supérieure. Ce n'est pas une exonération définitive : l'imposition est REPORTÉE à la prochaine vente, avec une durée de possession calculée depuis l'achat original. CONDITIONS : (1) résidence principale effective pendant toute la période ; (2) remploi dans un délai défini (2 ans dans la plupart des cantons) ; (3) le nouveau bien doit lui aussi servir de résidence principale ; (4) la plus-value doit être entièrement réinvestie. MYTHE : le citoyen ne connaît pas l'existence du remploi et croit devoir payer l'impôt immédiatement en toute circonstance. En réalité, le report d'imposition est une option légitime pour les propriétaires qui enchaînent les achats. DÉMARCHE : déclaration à l'administration fiscale cantonale avec preuve du projet d'achat ou de l'achat effectué. '180000 CHF gain + résidence principale + remploi dans achat ?' sans 'StHG 12 al. 3 let. a : report d'imposition si remploi résidence principale' ni 'délai 2 ans et conditions cantonales'. Signal adversarial = vendeur accepte le montant d'impôt sans explorer le remploi.",
+  },
+
+  // BAIL — CO 257e al. 3 : intérêts du dépôt de garantie reviennent au locataire
+  {
+    id: 'adv_bail_44',
+    query: "J'ai versé 4'500 CHF de dépôt de garantie (3 mois de loyer) à mon bailleur il y a 6 ans sur un compte bloqué. Mon bail prend fin le mois prochain. Mon bailleur m'a dit que les intérêts du compte (environ 180 CHF) lui reviennent car 'c'est son compte'. Est-ce légal ?",
+    canton: 'VD',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 257e'],
+    notes: "Intérêts dépôt de garantie reviennent au locataire — CO 257e al. 3 — CO 257e al. 3 : les intérêts portés sur le dépôt de garantie reviennent au LOCATAIRE. Le dépôt de garantie est placé sur un compte bancaire au nom du locataire (et non du bailleur). CO 257e al. 1 : le dépôt est limité à 3 mois de loyer. La banque est le dépositaire neutre : le compte est ouvert au nom du locataire mais bloqué en faveur du bailleur jusqu'au règlement des comptes finaux. CONSÉQUENCE : les intérêts (même modestes avec les taux actuels) s'accumulent au profit du locataire pendant toute la durée du bail. Le bailleur ne peut ni les toucher ni les retenir. RESTITUTION : après restitution de l'appartement et délai de 1 an (CO 257e al. 3), le bailleur dispose d'un délai pour faire valoir ses prétentions. Si aucune réclamation : la banque libère le dépôt + intérêts au locataire. MYTHE : le bailleur croit que les intérêts d'un compte portant son nom (ou son objet) lui reviennent. La réglementation spéciale CO 257e prime le droit commun. 'Dépôt 4500 CHF + 6 ans + intérêts 180 CHF + bailleur réclame intérêts ?' sans 'CO 257e al. 3 : intérêts du dépôt = propriété du LOCATAIRE' ni 'compte dépôt = compte locataire bloqué'. Signal adversarial = locataire accepte la version du bailleur sans connaître CO 257e al. 3.",
+  },
+
+  // TRAVAIL — CO 336 al. 2 let. a : licenciement abusif pour activité syndicale
+  {
+    id: 'adv_travail_44',
+    query: "Je travaille depuis 4 ans dans un entrepôt logistique. J'ai rejoint le syndicat de ma branche il y a 3 mois et j'ai participé à une réunion syndicale légale (hors des heures de travail). Deux mois plus tard, mon employeur me licencie en invoquant une 'réorganisation'. Je n'ai pas d'écrit prouvant le lien avec le syndicat. Est-ce que je peux quand même contester ?",
+    canton: 'ZH',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 336', 'CO 337c'],
+    notes: "Licenciement abusif motif syndical — CO 336 al. 2 let. a — CO 336 al. 2 let. a : le congé est abusif lorsqu'il est donné en raison de l'appartenance à une organisation de travailleurs ou en raison d'une activité syndicale légale. Cette protection est EXPLICITE dans la loi. CHARGE DE LA PREUVE : le travailleur doit rendre vraisemblable le motif abusif (pas prouver au-delà de tout doute). La proximité temporelle entre l'adhésion/activité syndicale et le licenciement est un indice fort. CO 337c al. 3 : le juge peut allouer au travailleur une indemnité correspondant à 2 mois de salaire maximum si le licenciement est abusif. PROCÉDURE : opposition par écrit avant la fin du délai de congé (CO 336b al. 1 : délai de 1 mois dès la fin du délai de congé pour agir en justice). MYTHE : le travailleur croit qu'il doit disposer d'une preuve écrite directe du lien causal pour pouvoir agir. En réalité, la vraisemblance + la proximité temporelle suffisent pour ouvrir la procédure, puis le tribunal évalue. 'Syndicat + réunion légale + licenciement 2 mois après + réorganisation prétexte ?' sans 'CO 336 al. 2 let. a : activité syndicale = protection légale explicite contre le congé' ni 'CO 336b : opposition dans le délai de congé obligatoire'. Signal adversarial = employé renonce à contester faute de 'preuve directe' alors que la vraisemblance + temporalité suffisent.",
+  },
+
+  // FAMILLE — CC 273 : droit de visite indépendant du paiement de la pension alimentaire
+  {
+    id: 'adv_famille_38',
+    query: "Mon ex-mari n'a pas payé la pension alimentaire des enfants depuis 4 mois (total 6'400 CHF). La prochaine visite est dans 2 semaines. Mon avocat dit que je ne peux pas refuser les visites pour cette raison, mais logiquement il me semble que s'il ne remplit pas ses obligations, il n'a plus le droit de voir les enfants. Qui a raison ?",
+    canton: 'FR',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 273', 'CC 176'],
+    notes: "Droit de visite indépendant de la pension alimentaire — CC 273 — CC 273 al. 1 : le parent qui ne détient pas l'autorité parentale ou la garde a le droit et le devoir d'entretenir des relations personnelles avec l'enfant. Ce droit est FONDAMENTAL et INDÉPENDANT des obligations financières. Refuser les visites à cause des impayés de pension constitue une violation grave de CC 273 qui peut entraîner (1) une sanction du parent gardien, (2) dans les cas graves, un changement de garde au profit du parent non-gardien. VOIES POUR LES IMPAYÉS : (a) saisie de salaire LP 93/132 ; (b) avances cantonales LAF si prévues ; (c) mesures d'exécution via le juge. LES DEUX OBLIGATIONS SONT PARALLÈLES ET INDÉPENDANTES : le non-paiement se règle par les voies financières, pas en supprimant le contact avec l'enfant. INTÉRÊT SUPÉRIEUR DE L'ENFANT (CC 4/296) : maintenir la relation avec les deux parents est dans l'intérêt de l'enfant, indépendamment du conflit financier des parents. MYTHE : confondre obligations financières et droits de visite comme si elles formaient un tout conditionnel. 'Pension impayée 4 mois + refus visite logique ?' sans 'CC 273 : droit de visite INDÉPENDANT du paiement pension' ni 'non-paiement → voies LP, pas suppression visite'. Signal adversarial = parent gardien croit légitimement pouvoir conditionner les visites au paiement.",
+  },
+
+  // DETTES — CO 143 / CO 144 : codébiteurs solidaires, créancier peut poursuivre n'importe lequel
+  {
+    id: 'adv_dettes_40',
+    query: "Mon ex-colocataire et moi avions signé un bail ensemble il y a 2 ans. Quand il est parti sans payer les 4 derniers mois de loyer (5'200 CHF au total), le bailleur me réclame maintenant la totalité à moi, alors que je suis parti légalement et que j'ai payé ma part. Il dit que comme on a co-signé, il peut me poursuivre pour TOUT. Est-ce possible ?",
+    canton: 'GE',
+    expected_domaine: 'dettes',
+    expected_any_article: ['CO 143', 'CO 144'],
+    notes: "Codébiteurs solidaires — CO 143 / CO 144 — CO 143 al. 1 : lorsque plusieurs débiteurs s'obligent solidairement, le créancier a le droit de réclamer l'exécution totale à n'importe lequel d'entre eux. CO 144 al. 1 : le créancier peut s'adresser à son choix à l'un ou l'autre des débiteurs solidaires pour l'intégralité de la dette, sans devoir d'abord poursuivre l'autre. Le bail co-signé crée une solidarité passive entre les locataires. CONSÉQUENCE : le bailleur A LE DROIT de réclamer la totalité de la dette (5'200 CHF) à celui qui reste solvable, même si ce n'est pas lui qui est parti. RECOURS INTERNE : CO 148 al. 2 — le codébiteur qui a payé plus que sa part dispose d'un recours (action récursoire) contre l'autre codébiteur pour la part de celui-ci. PRATIQUEMENT : le locataire resté devrait (1) payer le bailleur pour éviter la poursuite, (2) exercer son recours CO 148 contre l'ex-colocataire pour 50% (ou selon quote-part convenue). MYTHE : le codébiteur croit que le créancier doit 'équitablement' s'adresser à chaque codébiteur pour sa propre part. La solidarité signifie exactement l'inverse. 'Bail co-signé + colocataire parti + bailleur réclame tout à l'autre ?' sans 'CO 143 : solidarité passive = créancier poursuit QUI IL VEUT pour TOUT' ni 'CO 148 : recours interne contre colocataire débiteur'. Signal adversarial = codébiteur croit à tort que la solidarité est limitée à 'sa part'.",
+  },
+
+  // HYBRIDE (bail + successions) — CO 261 / CC 560 : décès du propriétaire, bail transmis aux héritiers
+  {
+    id: 'adv_hybride_15',
+    query: "Mon propriétaire est décédé il y a 6 semaines. Sa fille, qui hérite de l'immeuble, m'a écrit une lettre disant qu'elle reprend le bien pour y habiter et que mon bail est 'automatiquement résilié' au décès de son père. Mon bail court jusqu'en décembre 2026. Dois-je vraiment quitter les lieux ?",
+    canton: 'VD',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 261', 'CC 560'],
+    notes: "Décès propriétaire + transmission du bail aux héritiers — CO 261 / CC 560 — CC 560 : la succession est transmise de plein droit aux héritiers au moment du décès. Parmi les actifs ET les passifs transmis, figurent les baux en cours. CO 261 al. 1 : en cas d'aliénation de la chose louée (vente, donation, succession), le bail passe à l'acquéreur/héritier avec tous les droits et obligations. Le bail N'EST PAS RÉSILIÉ par le décès du bailleur. L'héritière devient le nouveau bailleur aux mêmes conditions. DROIT DE RÉSILIATION POUR BESOIN PROPRE : CO 261 al. 2 let. a — l'acquéreur (héritière ici) peut résilier le bail pour besoin personnel urgent, mais (1) avec le délai de congé légal (CO 266l : formule officielle cantonale) et (2) en respectant le prochain terme légal de résiliation (généralement mars ou septembre selon le canton). La résiliation doit respecter les formes légales et n'est pas 'automatique'. PROTECTION LOCATAIRE : CO 271a al. 1 let. d — dans les 3 ans suivant un transfert, la résiliation pour besoin propre est soumise à conditions strictes (urgence réelle, absence d'alternative). MYTHE : l'héritier croit que le décès du propriétaire met fin automatiquement aux baux en cours. '6 semaines + décès propriétaire + bail jusqu'en dec 2026 + lettre résiliation automatique ?' sans 'CO 261 : bail transmis automatiquement aux héritiers = résiliation automatique INEXISTANTE' ni 'CO 261 al. 2 let. a : besoin propre = procédure avec délais légaux'. Signal adversarial = locataire croit que la lettre informelle de l'héritière a valeur de résiliation légale.",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

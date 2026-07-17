@@ -1637,3 +1637,25 @@ Points à surveiller :
   - `adv_dettes_39` (CO 127 / CO 135 prêt 2012 + paiements 2016/2018 : prescription 10 ans interrompue par chaque paiement partiel = reconnaissance de dette CO 135 let. b, délai repart depuis 2018 → prescription 2028, pas 2022 — VD)
 - **Angles inédits wave 43** : seuil fortune aide sociale cantonale ≠ LACI/LAI (mythe "sans revenu = allocations fédérales"), récupération aide sur succession (mythe "l'aide sociale n'a pas à être remboursée"), CO 58 responsabilité détenteur établissement vs LAA (mythe "accident école = assurance accident"), CO 55 responsabilité commettant supermarché (mythe "glissade = problème d'assurance personnelle"), CP 177/180 injures/menaces avec CC 28b protection (mythe "insultes voisin = uniquement civil"), CO 197 garantie légale 2 ans vs garantie commerciale facultative (mythe "passé 1 an plus rien"), CO 530 société simple de fait par actes concluants (mythe "sans contrat écrit = rien à réclamer"), LCR 58 obligation RC non opposable aux tiers (mythe "exclusion contrat = victime sans recours"), ALCP Annexe I art. 6 maintien séjour UE chômage involontaire (mythe "chômage = perte permis B automatique"), CO 135 al. 1 let. b paiement partiel interrompt prescription (mythe "prescription court depuis la date originale du prêt").
 - **Prochaine action** : mesure éval CLI sur 440 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-17 UTC — run agent horaire (wave 44 adversarial : 440→450 cas)
+- **Tenté** : item 1 — wave 44 : +10 cas adversariaux ciblant des mythes juridiques sur des domaines sous-couverts (assurances/LPP, successions, accident, social/APG, fiscal, bail, travail/syndicat, famille, dettes/solidarité, hybride bail+succession)
+- **Résultat** : passed ✓ — **450 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Métriques** :
+  - CI subset `LEGAL_SAFE_MODE=0 LLM_MOCK=1` : **2728/2728 pass, 0 fail, 2 skip** ✓
+  - Validation fiches : 0 erreur ✓ (314/314)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60, ×6.6 vs LLM brut)
+  - Adversarial CLI sur 450 cas : non mesuré ce run (nécessite `claude -p` actif)
+- **Nouveaux cas wave 44 (10)** :
+  - `adv_assurances_22` (LPP 30c al. 5 + OLP 3a retrait anticipé logement : consentement ÉCRIT conjoint obligatoire, pas remplaçable par jugement — mythe "avoirs LPP = propriété exclusive du titulaire" — VD)
+  - `adv_successions_21` (CC 505 al. 1 testament olographe imprimé nul : TOUT doit être manuscrit, signature seule ne suffit pas — mythe "signature = testament valable même tapé à l'ordi" — GE)
+  - `adv_accident_21` (CO 41 + CO 44 piéton hors passage balisé : faute concomitante, cycliste victime peut agir en CO 41 — mythe "cyclistes toujours responsables envers piétons" — BE)
+  - `adv_social_19` (LAPG 1 + LAPG 8 APG indépendant service civil : couverture explicite, calcul sur revenu AVS — mythe "APG réservée aux salariés" — ZH)
+  - `adv_fiscal_12` (StHG 12 al. 3 let. a gain immobilier résidence principale : remploi possible dans 2 ans = report d'imposition — mythe "impôt gain immo toujours dû immédiatement" — ZH, blind spot fiscal attendu)
+  - `adv_bail_44` (CO 257e al. 3 intérêts dépôt de garantie : reviennent au LOCATAIRE, pas au bailleur — mythe "intérêts du compte dépôt = propriété bailleur" — VD)
+  - `adv_travail_44` (CO 336 al. 2 let. a licenciement abusif activité syndicale : vraisemblance suffit, pas preuve directe — mythe "sans écrit prouvant le lien syndicat-congé, on ne peut rien faire" — ZH)
+  - `adv_famille_38` (CC 273 droit de visite indépendant de la pension : impayés → voies LP, pas suppression visites — mythe "non-paiement pension = suspension des droits de visite" — FR)
+  - `adv_dettes_40` (CO 143 + CO 144 codébiteurs solidaires : créancier poursuit QUI IL VEUT pour TOUT, recours interne CO 148 — mythe "solidarité = chacun paye sa part uniquement" — GE)
+  - `adv_hybride_15` (CO 261 + CC 560 décès propriétaire : bail transmis aux héritiers, résiliation automatique INEXISTANTE, besoin propre = procédure légale — mythe "décès bailleur met fin au bail" — VD)
+- **Angles inédits wave 44** : LPP 30c consentement conjoint (mythe "LPP = argent personnel"), CC 505 testament tapé-signé nul (mythe "signature = testament valide"), faute concomitante piéton hors passage (mythe "cyclistes responsables envers piétons en toutes circonstances"), APG indépendants service civil (mythe "APG = salariés uniquement"), remploi gain immo résidence principale (mythe "impôt gain immédiat"), intérêts dépôt garantie locataire (mythe "intérêts au bailleur"), syndicat + vraisemblance CO 336 (mythe "preuve directe obligatoire"), CC 273 visite indépendant pension (mythe "pension ↔ visite conditionnelles"), solidarité CO 143 "tout ou rien" (mythe "solidarité = quotités"), CO 261 bail survit au décès (mythe "décès = résiliation automatique").
+- **Prochaine action** : mesure éval CLI sur 450 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

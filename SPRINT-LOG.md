@@ -1659,3 +1659,26 @@ Points à surveiller :
   - `adv_hybride_15` (CO 261 + CC 560 décès propriétaire : bail transmis aux héritiers, résiliation automatique INEXISTANTE, besoin propre = procédure légale — mythe "décès bailleur met fin au bail" — VD)
 - **Angles inédits wave 44** : LPP 30c consentement conjoint (mythe "LPP = argent personnel"), CC 505 testament tapé-signé nul (mythe "signature = testament valide"), faute concomitante piéton hors passage (mythe "cyclistes responsables envers piétons en toutes circonstances"), APG indépendants service civil (mythe "APG = salariés uniquement"), remploi gain immo résidence principale (mythe "impôt gain immédiat"), intérêts dépôt garantie locataire (mythe "intérêts au bailleur"), syndicat + vraisemblance CO 336 (mythe "preuve directe obligatoire"), CC 273 visite indépendant pension (mythe "pension ↔ visite conditionnelles"), solidarité CO 143 "tout ou rien" (mythe "solidarité = quotités"), CO 261 bail survit au décès (mythe "décès = résiliation automatique").
 - **Prochaine action** : mesure éval CLI sur 450 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-18 UTC — run agent horaire (wave 45 adversarial : 450→460 cas)
+- **Tenté** : item 1 — wave 45 : +10 cas adversariaux ciblant des angles inédits dans 10 domaines — focus sur mythes courants non encore couverts (biens propres par succession, soustraction vs fraude fiscale, RHT/chômage partiel, responsabilité propriétaire ouvrage, délit de fuite mot laissé, substitution fidéicommissaire, logement de service concierge, distances haies bambou, séjour post-divorce conjoint étranger, exclusion garantie entre particuliers)
+- **Résultat** : passed ✓ — **460 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Commit** : `2ce00cd`
+- **Métriques** :
+  - CI subset `LEGAL_SAFE_MODE=0 LLM_MOCK=1` : **2724/2724 pass, 0 fail, 1 skip** ✓
+  - Validation fiches : 0 erreur ✓ (314/314)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60, ×6.6 vs LLM brut)
+  - Adversarial CLI sur 460 cas : non mesuré ce run (nécessite `claude -p` actif)
+- **Nouveaux cas wave 45 (10)** :
+  - `adv_famille_39` (CC 197 / CC 198 al. 2 biens propres par succession : héritage reçu pendant le mariage = bien propre, pas acquêt — mythe "tout acquis pendant le mariage = partagé moitié-moitié" — VD)
+  - `adv_fiscal_13` (LIFD 175 vs LIFD 186 soustraction vs fraude fiscale : omission revenus étrangers = amende administrative (175), pas prison (186 = faux documents) — mythe "non-déclaration = fraude = prison" — GE)
+  - `adv_social_20` (LACI 31 / LACI 32 réduction de l'horaire de travail RHT : salarié à 3j/5j peut toucher 80% des heures perdues — mythe "chômage partiel impossible si on garde son emploi" — ZH)
+  - `adv_accident_22` (CO 58 responsabilité propriétaire d'ouvrage : passerelle communale + planche pourrie = responsabilité de la commune — mythe "randonnée = risque personnel, pas de recours" — VD)
+  - `adv_circulation_22` (LCR 51 devoir d'arrêt et d'annonce : mot sous essuie-glace ≠ équivalent annonce police — mythe "laisser un mot suffit après accrochage de nuit" — GE)
+  - `adv_successions_22` (CC 488 / CC 491 substitution fidéicommissaire : héritier grevé ne peut pas aliéner le bien, droit inscriptible RF — mythe "héritier peut vendre même si testament dit 'transmettre aux petits-enfants'" — VD)
+  - `adv_hybride_16` (CO 319 / CO 266a logement de service concierge : licenciement ≠ expulsion immédiate, CO 272 protection applicable — mythe "logement de service = même délai que contrat travail" — GE)
+  - `adv_voisinage_28` (CC 688 / CC 679 haie bambou distance limite : bambous 4m à 30cm = infraction (VD min 75cm), rhizomes = trouble excessif — mythe "bambou ≠ arbre donc pas de règle de distance" — VD)
+  - `adv_etrangers_34` (LEI 50 maintien séjour conjoint étranger après divorce : 6 ans mariage + 2 enfants = droit propre LEI 50 — mythe "divorce = annulation automatique du permis B" — VD)
+  - `adv_consommation_24` (CO 199 / CO 197 exclusion garantie entre particuliers : clause 'sans garantie' valide entre particuliers sauf dol — mythe "garantie légale 2 ans toujours applicable même entre particuliers" — BE)
+- **Angles inédits wave 45** : CC 198 al.2 propres par succession (mythe "pendant le mariage = partagé"), LIFD 175 vs 186 soustraction vs fraude (mythe "omission = prison"), LACI 31 RHT chômage partiel (mythe "chômage = sans emploi uniquement"), CO 58 ouvrage communal (mythe "plein air = risque assumé"), LCR 51 mot laissé ≠ annonce police (mythe "mot = OK"), CC 491 aliénation interdite si substitution (mythe "héritier = propriétaire libre"), CO 272 logement de service protection autonome (mythe "logement lié = même délai que travail"), CC 688 bambou = hauteur détermine distance (mythe "bambou ≠ arbre"), LEI 50 droit propre post-divorce (mythe "divorce = expulsion"), CO 199 exclusion valable entre particuliers sauf dol (mythe "garantie 2 ans impérative").
+- **Prochaine action** : mesure éval CLI sur 460 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

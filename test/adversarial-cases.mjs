@@ -4632,6 +4632,108 @@ export const ADVERSARIAL_CASES = [
     notes: "Maintien de l'autorisation de séjour après dissolution du mariage — LEI 50 — LEI 50 al. 1 let. a : après la dissolution de l'union conjugale, le droit du conjoint à l'autorisation de séjour subsiste si l'union conjugale a duré au moins 3 ans ET si l'intégration est réussie. 6 ans de mariage → condition de durée LARGEMENT remplie. L'intégration est présumée (présence de longue durée, enfants, langue). LEI 50 al. 1 let. b (en alternative) : raisons personnelles majeures — enfants de nationalité suisse ou scolarisés en Suisse = intérêt supérieur des enfants → raison personnelle majeure reconnue par le TF. CC 296 al. 3 / CDE art. 9 : intérêt de l'enfant à maintenir contact avec les deux parents → renforce le droit de séjour du père/mère étranger. PROCÉDURE : le service des migrations examine le dossier APRÈS le divorce. Le permis B n'est PAS automatiquement annulé au jour du jugement de divorce. MYTHE : 'divorce = annulation automatique du permis B du conjoint étranger'. LEI 50 crée un droit propre au séjour après 3 ans de mariage + intégration, indépendant du conjoint suisse. '6 ans mariage + 2 enfants nés en Suisse + divorce + annulation automatique permis B ?' sans 'LEI 50 al. 1 : maintien du séjour après 3 ans de mariage + intégration' ni 'LEI 50 al. 1 let. b : enfants en Suisse = raison personnelle majeure'. Signal adversarial = conjoint étranger croit à une expulsion automatique post-divorce.",
   },
 
+  // ========== WAVE 46 — 10 domaines, angles inédits (bail/travail/dettes/famille/assurances/entreprise/sante/violence/successions/voisinage) ==========
+
+  // BAIL — CO 270 : contestation du loyer initial dans les 30 jours
+  {
+    id: 'adv_bail_45',
+    query: "J'ai signé un bail pour un appartement à Lausanne à 1'980 CHF par mois. En cherchant sur Internet, j'ai trouvé l'annonce de location publiée il y a 3 mois sur un site d'immobilier — le loyer annoncé était exactement le même. Est-ce que je peux encore contester ce loyer, et si oui comment ? Ça fait 3 semaines que j'ai reçu les clés.",
+    canton: 'VD',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 270', 'CO 269'],
+    notes: "Contestation loyer initial dans les 30 jours avec annonce comme preuve de rendement excessif — CO 270 al. 1 : délai de 30 jours dès remise des clés pour saisir l'autorité de conciliation. CO 269 : loyer abusif si rendement excessif ou non conforme aux loyers usuels du quartier. L'annonce de location peut être produite comme preuve. À 3 semaines, le délai de 30 jours est encore ouvert. MYTHE : 'loyer initial non contestable si on a signé le bail'. CO 270 réserve explicitement ce droit même après signature. '1'980 CHF + annonce identique + 3 semaines depuis clés ?' sans 'CO 270 : 30 jours pour contester le loyer initial à compter de la remise des clés'.",
+  },
+
+  // TRAVAIL — CO 329d / CO 341 : vacances non compensables en argent en cours d'emploi
+  {
+    id: 'adv_travail_45',
+    query: "Mon employeur m'a proposé de me payer mes 3 semaines de vacances restantes de l'année en argent plutôt qu'en congés, parce qu'on est débordés. Il dit que ça m'arrange aussi car j'aurais besoin de cet argent. Est-ce que j'ai le droit d'accepter ? Mon contrat ne dit rien là-dessus.",
+    canton: 'ZH',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 329d', 'CO 341'],
+    notes: "Indemnisation des vacances en argent en cours d'emploi — CO 329d al. 2 : les vacances doivent être accordées pendant le rapport de travail et ne peuvent pas être compensées pécuniairement SAUF lors de la fin du rapport de travail. CO 341 al. 1 : nullité absolue des conventions contraires aux dispositions protectrices du CO sur les vacances — même si le salarié y consent. L'accord proposé est NUL de plein droit. L'employeur doit accorder les vraies vacances. MYTHE : 'l'employeur peut racheter les vacances non prises contre paiement si le salarié accepte'. La protection CO 329d est d'ordre public — le consentement du salarié ne la rend pas valable. '3 semaines vacances + paiement en argent + accord salarié ?' sans 'CO 329d al. 2 : interdiction de compenser les vacances en argent pendant le contrat' ni 'CO 341 : nullité de tout accord contraire, même consenti'.",
+  },
+
+  // DETTES — CO 120 / CO 124 : compensation légale de créances réciproques
+  {
+    id: 'adv_dettes_41',
+    query: "Je dois 4'200 CHF à mon ancien associé suite à un jugement. Lui me doit 3'800 CHF de travaux que j'ai effectués pour lui et qu'il n'a pas payés — j'ai une facture acceptée. Est-ce que je peux simplement lui payer la différence de 400 CHF et considérer l'affaire réglée ? Ou dois-je payer les 4'200 CHF et ensuite le poursuivre pour les 3'800 CHF ?",
+    canton: 'GE',
+    expected_domaine: 'dettes',
+    expected_any_article: ['CO 120', 'CO 124'],
+    notes: "Compensation légale de créances réciproques exigibles — CO 120 al. 1 : lorsque deux personnes se doivent réciproquement des sommes d'argent, chaque débiteur peut compenser sa dette avec sa créance si les deux créances sont exigibles. CO 124 al. 1 : la compensation s'opère par déclaration faite à l'autre partie. La compensation réduit les deux dettes à concurrence de la plus faible. Si les 3'800 CHF de travaux sont exigibles (facture acceptée = créance liquide), la compensation est valable. Solde restant : 400 CHF dus à l'ancien associé. ATTENTION : si la dette de 4'200 CHF est née d'un jugement, vérifier si une clause d'exécution provisoire bloque la compensation (CPC 336). MYTHE : 'un débiteur ne peut pas unilatéralement compenser — il faut l'accord du créancier'. CO 120/124 permettent la compensation légale par déclaration unilatérale si les conditions sont remplies. '4'200 CHF jugement + 3'800 CHF facture acceptée + compensation possible ?' sans 'CO 120 al. 1 : compensation légale si créances réciproques exigibles' ni 'CO 124 : par déclaration unilatérale'.",
+  },
+
+  // FAMILLE — CC 120 / CC 121 : séparation de biens judiciaire pour surendettement
+  {
+    id: 'adv_famille_40',
+    query: "Mon mari a accumulé des dettes importantes à cause de sa société qui a fait faillite — environ 180'000 CHF de créances non couvertes. Nous sommes mariés sous le régime de la participation aux acquêts. Ses créanciers peuvent-ils venir saisir nos biens communs, y compris notre appartement qui est à mon nom ? Est-ce que je peux faire quelque chose pour me protéger ?",
+    canton: 'VD',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 120', 'CC 121'],
+    notes: "Séparation de biens judiciaire pour surendettement — CC 120 al. 1 : un époux peut demander au juge la séparation de biens si son conjoint est surendetté. CC 121 : la séparation de biens peut aussi être demandée si une poursuite a été engagée pour des dettes nées pendant le mariage. RÉGIME DE PARTICIPATION AUX ACQUÊTS : chaque époux répond de ses propres dettes sur ses propres biens (CC 202 al. 1). Les biens propres de l'épouse (appartement à son seul nom) ne peuvent pas être saisis pour les dettes personnelles du mari. MAIS liquidation du régime : à la fin du mariage (divorce ou décès), les acquêts sont partagés — les créanciers du mari peuvent avoir des droits sur sa part de participation. La séparation de biens judiciaire PROTÈGE contre cette liquidation future. Procédure : action devant le tribunal civil. MYTHE : 'séparation de biens = uniquement possible par contrat de mariage notarié'. CC 120 permet la séparation judiciaire en cours de mariage sans contrat. 'Dettes mari 180'000 CHF faillite + appartement à mon nom + saisie possible ?' sans 'CC 202 : responsabilité personnelle des dettes propres' ni 'CC 120 : séparation de biens judiciaire protège contre la liquidation future'.",
+  },
+
+  // ASSURANCES — LAVS 35 / LAVS 21 : rente AVS anticipée et réduction permanente
+  {
+    id: 'adv_assurances_23',
+    query: "J'ai 62 ans et je pense prendre ma retraite anticipée de 2 ans. Mon conseiller de la caisse de compensation m'a dit que ma rente AVS serait réduite de 6,8% par année d'anticipation. J'ai entendu dire que cette réduction disparaît dès que j'atteins 65 ans et que ma rente sera ensuite calculée normalement. Est-ce exact ?",
+    canton: 'ZH',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LAVS 35', 'LAVS 21'],
+    notes: "Rente AVS anticipée — réduction permanente et définitive — LAVS 35 al. 1 : les personnes qui souhaitent devancer leur rente peuvent le faire dès 63 ans (femmes) ou 63 ans (hommes après réforme AVS 21). La réduction est calculée selon LAVS 35 et le règlement. LAVS 21 : la réduction est PERMANENTE — elle ne disparaît PAS à 65 ans. Un retrait anticipé de 2 ans = réduction de 13,6% (2 × 6,8%) sur TOUTE la durée de vie. Si rente normale à 65 ans = 2'400 CHF/mois → avec anticipation 2 ans = 2'073 CHF/mois À VIE. MYTHE : 'la réduction disparaît à 65 ans et la rente revient au montant normal'. C'est une croyance répandue mais totalement fausse — la réduction est actuarielle et définitive. L'anticipation se calcule sur espérance de vie, pas sur une date calendaire. '62 ans + retraite anticipée 2 ans + réduction 6,8%/an + disparaît à 65 ans ?' sans 'LAVS 35 : réduction PERMANENTE, calculée sur la durée de vie entière' ni 'mythe : récupération à 65 ans = inexistante'.",
+  },
+
+  // ENTREPRISE — CO 675 / CO 671 : interdiction de dividendes en cas de perte ou de réserves insuffisantes
+  {
+    id: 'adv_entreprise_23',
+    query: "Notre SA a eu une mauvaise année — nous avons subi une perte de 85'000 CHF. Malgré ça, les trois actionnaires veulent voter en assemblée générale pour se distribuer un dividende de 30'000 CHF puisqu'il reste encore des bénéfices reportés des années précédentes au bilan. Est-ce que c'est légal de voter ce dividende ?",
+    canton: 'ZH',
+    expected_domaine: 'entreprise',
+    expected_any_article: ['CO 675', 'CO 671'],
+    notes: "Dividendes interdits en cas de perte et réserves insuffisantes — CO 675 al. 2 : il ne peut être distribué de dividendes que sur le bénéfice résultant du bilan et sur les réserves constituées à cet effet, pour autant que les réserves légales soient entièrement dotées. CO 671 al. 1 : la société doit affecter 5% du bénéfice annuel à la réserve légale jusqu'à ce qu'elle atteigne 20% du capital-actions. ANALYSE : la perte de 85'000 CHF doit d'abord être imputée sur les bénéfices reportés avant toute distribution. Si les réserves légales ne sont pas entièrement dotées, aucun dividende n'est possible. Distribution malgré perte = décision AG nulle (CO 675 al. 2 + CO 706 al. 2). Les administrateurs engagent leur responsabilité CO 754 si une distribution illégale est effectuée. MYTHE : 'l'assemblée générale peut décider librement des dividendes si elle est unanime'. L'AG est liée par CO 675 — l'unanimité ne rend pas légale une distribution prohibée. '85'000 CHF perte + bénéfices reportés + dividende 30'000 CHF + vote AG unanime ?' sans 'CO 675 al. 2 : dividende impossible si perte non couverte / réserves insuffisantes' ni 'nullité de la décision AG contraire'.",
+  },
+
+  // SANTE — LAMal 25 / OAMal 12 : médecines complémentaires remboursées sous conditions
+  {
+    id: 'adv_sante_29',
+    query: "Mon médecin de famille pratique l'acupuncture et me l'a prescrite pour des douleurs chroniques au dos. Ma caisse maladie refuse de rembourser en disant que 'les médecines alternatives ne sont pas couvertes par la LaMal'. Mon médecin a un diplôme ASCA reconnu et travaille en cabinet. Est-ce que ma caisse a raison ?",
+    canton: 'VD',
+    expected_domaine: 'sante',
+    expected_any_article: ['LAMal 25', 'OAMal 12'],
+    notes: "Remboursement des médecines complémentaires par l'AOS — LAMal 25 / OAMal 12 — OAMal 12 : certaines médecines complémentaires (acupuncture, médecine anthroposophique, homéopathie, phytothérapie, médecine chinoise traditionnelle) sont remboursées par l'AOS sous condition que le médecin ait une formation spécifique reconnue par la FMH (Foederatio Medicorum Helveticorum). Diploma ASCA seul = thérapeute non-médecin → non remboursable par l'AOS de base. DISTINCTION CRITIQUE : si le médecin de famille a le TITRE FMH spécialisé (p.ex. 'praticien en médecine chinoise' accrédité FMH), le remboursement est possible. ASCA reconnu ≠ formation FMH. Question à poser : le médecin a-t-il un titre de formation complémentaire reconnu par la FMH ? MYTHE : 'médecines complémentaires = jamais remboursées par la caisse maladie de base'. OAMal 12 les intègre si le médecin a la qualification FMH idoine. 'Acupuncture + médecin cabinet + diplôme ASCA + refus caisse ?' sans 'OAMal 12 : remboursement AOS si médecin avec formation FMH reconnue' ni 'ASCA ≠ qualification FMH suffisante'.",
+  },
+
+  // VIOLENCE — CC 28b / CPC 261 : mesures de protection civile indépendantes de la plainte pénale
+  {
+    id: 'adv_violence_23',
+    query: "Mon ex-partenaire (pas un ex-conjoint, juste un ex-petit ami de 2 ans) me harcèle depuis 4 mois — messages incessants, se poste devant chez moi, s'est présenté sur mon lieu de travail. Je n'ai pas envie de porter plainte pénale car j'ai peur des représailles et que ça prenne des mois. Est-ce qu'il existe une protection juridique rapide sans passer par la police ou la procédure pénale ?",
+    canton: 'GE',
+    expected_domaine: 'violence',
+    expected_any_article: ['CC 28b', 'CPC 261'],
+    notes: "Protection civile contre harcèlement par ex-partenaire non-conjugal — CC 28b al. 1 : en cas de violence, de menaces ou de harcèlement, le tribunal peut interdire à l'auteur de l'atteinte d'approcher la victime, de la contacter ou de la suivre. La mesure est CIVILE et indépendante de toute plainte pénale. CPC 261 : mesures provisionnelles d'urgence sans même entendre l'autre partie si périculum in mora (danger imminent). PROCÉDURE : requête directe au tribunal civil → audition possible en 24-48h → ordonnance d'interdiction d'approche. DURÉE : jusqu'à 2 ans, renouvelable. VIOLATION : constitue une infraction pénale (CP 292). L'ordonnance civile est souvent plus rapide que la procédure pénale (CP 179a, CP 180). La victime n'est pas obligée de porter plainte pénale pour obtenir la protection civile. MYTHE : 'protection juridique contre harceleur = uniquement via plainte pénale, procédure longue'. CC 28b donne accès à une protection civile rapide et autonome. 'Harcèlement ex-petit ami 4 mois + messages + surveillance + pas de plainte pénale voulue ?' sans 'CC 28b : interdiction d'approche civile sans plainte pénale' ni 'CPC 261 : urgence = audition sous 48h'.",
+  },
+
+  // SUCCESSIONS — CC 509 / CC 505 : révocabilité du testament notarié
+  {
+    id: 'adv_successions_23',
+    query: "Il y a 10 ans, j'ai fait un testament chez le notaire en faveur de mes deux fils. Depuis, je me suis réconcilié avec ma fille aînée que j'avais exclue, et je veux maintenant la réintégrer dans ma succession. Mon notaire n'est plus disponible. Est-ce que je peux faire un testament écrit à la main qui modifie ou remplace le testament notarié d'il y a 10 ans, ou est-ce que le testament notarié est 'plus fort' ?",
+    canton: 'VD',
+    expected_domaine: 'successions',
+    expected_any_article: ['CC 509', 'CC 505'],
+    notes: "Révocabilité du testament et hiérarchie entre formes testamentaires — CC 509 al. 1 : le testateur peut révoquer son testament en tout temps par un acte de même nature ou d'une forme différente postérieure. CC 505 al. 1 : le testament olographe (entièrement écrit, daté, signé de la main du testateur) est une forme valable. Un testament olographe postérieur RÉVOQUE ou MODIFIE le testament notarié antérieur si c'est l'intention du testateur. Il n'y a pas de hiérarchie entre les formes testamentaires — seule la DATE détermine. Le testament le plus RÉCENT prévaut. ATTENTION : l'acte notarié reste au greffe du tribunal ou chez un notaire — il faut soit le révoquer explicitement dans le nouveau testament, soit déposer le nouveau testament auprès du même registre. MYTHE : 'testament notarié = irrévocable, plus fort qu'un testament manuscrit'. CC 509 al. 1 est clair : tout testament peut être révoqué par tout acte testamentaire valable postérieur, quelle qu'en soit la forme. 'Testament notarié 10 ans + réintégrer fille + testament olographe = valable ?' sans 'CC 509 : révocabilité absolue' ni 'CC 505 : testament olographe = forme valable révocatoire'.",
+  },
+
+  // VOISINAGE — CC 700 / CC 679 : droit d'accès nécessaire sur fonds voisin pour travaux
+  {
+    id: 'adv_voisinage_29',
+    query: "Je dois refaire le crépi extérieur de mon chalet de montagne. Le mur côté nord est à moins d'un mètre de la limite de propriété — un ouvrier ne peut pas travailler depuis mon terrain. J'ai demandé à mon voisin l'autorisation de poser un échafaudage sur son terrain pour 3 semaines. Il a refusé catégoriquement. Qu'est-ce que je peux faire ?",
+    canton: 'FR',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 700', 'CC 679'],
+    notes: "Droit d'accès nécessaire sur fonds voisin pour travaux d'entretien — CC 700 al. 1 : le propriétaire est tenu de permettre que des travaux soient exécutés sur son fonds lorsqu'ils sont nécessaires et ne peuvent être accomplis autrement, moyennant réparation intégrale du dommage éventuel. Ce droit existe même sans accord du voisin et même si le voisin refuse. PROCÉDURE EN CAS DE REFUS : requête de mesures provisionnelles au tribunal civil (CPC 261) pour autorisation d'accéder au fonds voisin — accordée si travaux nécessaires, durée limitée, dommage indemnisé. Le requérant peut offrir de payer une indemnité ou une caution. CC 679 al. 1 : si le refus d'accès crée un préjudice excessif au propriétaire voisin, action en troubles du voisinage envisageable. MYTHE : 'le voisin peut toujours refuser l'accès à son terrain pour des travaux chez moi'. CC 700 crée une servitude légale d'accès temporaire pour travaux nécessaires — le refus n'est pas absolu. 'Crépi mur nord + 1m limite + échafaudage voisin refus + CC 700 accès nécessaire ?' sans 'CC 700 al. 1 : droit d'accès légal si travaux nécessaires' ni 'CPC 261 : mesures provisionnelles pour forcer l'accès si refus'.",
+  },
+
   // CONSOMMATION — CO 199 / CO 197 : exclusion de la garantie des vices entre particuliers
   {
     id: 'adv_consommation_24',

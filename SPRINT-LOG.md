@@ -1682,3 +1682,25 @@ Points à surveiller :
   - `adv_consommation_24` (CO 199 / CO 197 exclusion garantie entre particuliers : clause 'sans garantie' valide entre particuliers sauf dol — mythe "garantie légale 2 ans toujours applicable même entre particuliers" — BE)
 - **Angles inédits wave 45** : CC 198 al.2 propres par succession (mythe "pendant le mariage = partagé"), LIFD 175 vs 186 soustraction vs fraude (mythe "omission = prison"), LACI 31 RHT chômage partiel (mythe "chômage = sans emploi uniquement"), CO 58 ouvrage communal (mythe "plein air = risque assumé"), LCR 51 mot laissé ≠ annonce police (mythe "mot = OK"), CC 491 aliénation interdite si substitution (mythe "héritier = propriétaire libre"), CO 272 logement de service protection autonome (mythe "logement lié = même délai que travail"), CC 688 bambou = hauteur détermine distance (mythe "bambou ≠ arbre"), LEI 50 droit propre post-divorce (mythe "divorce = expulsion"), CO 199 exclusion valable entre particuliers sauf dol (mythe "garantie 2 ans impérative").
 - **Prochaine action** : mesure éval CLI sur 460 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-19 UTC — run agent horaire (wave 46 adversarial : 460→470 cas)
+- **Tenté** : item 1 — wave 46 : +10 cas adversariaux couvrant 10 domaines — focus sur mythes courants non encore couverts (loyer initial contestable 30j, vacances non monétisables CO 341, compensation légale créances réciproques, séparation de biens judiciaire, rente AVS anticipée réduction permanente, dividendes SA interdits en perte, médecines complémentaires avec qualification FMH, protection civile sans pénal CC 28b, testament notarié révocable, accès nécessaire sur fonds voisin CC 700)
+- **Résultat** : passed ✓ — **470 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Métriques** :
+  - CI subset `LEGAL_SAFE_MODE=0 LLM_MOCK=1` : **2834/2834 pass, 0 fail, 2 skip** ✓
+  - Validation fiches : 0 erreur ✓ (314/314)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60, ×6.6 vs LLM brut)
+  - Adversarial CLI sur 470 cas : non mesuré ce run (nécessite `claude -p` actif)
+- **Nouveaux cas wave 46 (10)** :
+  - `adv_bail_45` (CO 270/269 contestation loyer initial 30j : annonce de location = preuve rendement excessif, délai court depuis remise des clés — mythe "loyer signé = non contestable" — VD)
+  - `adv_travail_45` (CO 329d/341 vacances non compensables en argent en cours d'emploi : nullité absolue même si salarié accepte — mythe "employeur peut racheter vacances non prises" — ZH)
+  - `adv_dettes_41` (CO 120/124 compensation légale créances réciproques exigibles : déclaration unilatérale suffit — mythe "compensation = accord des deux parties obligatoire" — GE)
+  - `adv_famille_40` (CC 120/121 séparation de biens judiciaire pour surendettement : le tribunal ordonne la séparation même sans contrat notarié — mythe "séparation de biens = uniquement notaire" — VD)
+  - `adv_assurances_23` (LAVS 35/21 rente AVS anticipée réduction PERMANENTE 6.8%/an : ne disparaît pas à 65 ans — mythe "rente récupérée au taux normal à 65 ans" — ZH)
+  - `adv_entreprise_23` (CO 675/671 dividendes SA interdits si perte non couverte/réserves insuffisantes : décision AG nulle — mythe "AG unanime = libre de distribuer" — ZH)
+  - `adv_sante_29` (LAMal 25/OAMal 12 médecines complémentaires remboursées si médecin avec formation FMH : ASCA ≠ qualification suffisante — mythe "jamais remboursées par la caisse de base" — VD)
+  - `adv_violence_23` (CC 28b/CPC 261 ordonnance d'interdiction d'approche civile sans plainte pénale : urgence 24-48h — mythe "protection = uniquement via pénal" — GE)
+  - `adv_successions_23` (CC 509/505 testament notarié révocable par testament olographe postérieur : pas de hiérarchie entre formes — mythe "notarié = plus fort / irrévocable" — VD)
+  - `adv_voisinage_29` (CC 700/679 droit d'accès légal sur fonds voisin pour travaux nécessaires : CPC 261 si refus — mythe "voisin peut toujours refuser l'accès" — FR)
+- **Angles inédits wave 46** : CO 270 loyer initial + annonce comme preuve (mythe "signé = accepté"), CO 329d/341 nullité rachat vacances consenti (mythe "accord salarié = valable"), CO 120 compensation unilatérale créances réciproques (mythe "accord bilatéral obligatoire"), CC 120 séparation judiciaire sans notaire (mythe "séparation = contrat notarié uniquement"), LAVS 35 réduction AVS anticipée définitive (mythe "rattrapée à 65 ans"), CO 675 dividendes nuls si perte (mythe "AG = souveraine"), OAMal 12 médecines complémentaires avec formation FMH (mythe "jamais remboursées"), CC 28b voie civile sans pénal (mythe "protection = uniquement plainte pénale"), CC 509 révocation testament notarié par olographe (mythe "notarié = irrévocable"), CC 700 servitude légale d'accès pour travaux (mythe "refus absolu du voisin").
+- **Prochaine action** : mesure éval CLI sur 470 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

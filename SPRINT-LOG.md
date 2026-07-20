@@ -1704,3 +1704,26 @@ Points à surveiller :
   - `adv_voisinage_29` (CC 700/679 droit d'accès légal sur fonds voisin pour travaux nécessaires : CPC 261 si refus — mythe "voisin peut toujours refuser l'accès" — FR)
 - **Angles inédits wave 46** : CO 270 loyer initial + annonce comme preuve (mythe "signé = accepté"), CO 329d/341 nullité rachat vacances consenti (mythe "accord salarié = valable"), CO 120 compensation unilatérale créances réciproques (mythe "accord bilatéral obligatoire"), CC 120 séparation judiciaire sans notaire (mythe "séparation = contrat notarié uniquement"), LAVS 35 réduction AVS anticipée définitive (mythe "rattrapée à 65 ans"), CO 675 dividendes nuls si perte (mythe "AG = souveraine"), OAMal 12 médecines complémentaires avec formation FMH (mythe "jamais remboursées"), CC 28b voie civile sans pénal (mythe "protection = uniquement plainte pénale"), CC 509 révocation testament notarié par olographe (mythe "notarié = irrévocable"), CC 700 servitude légale d'accès pour travaux (mythe "refus absolu du voisin").
 - **Prochaine action** : mesure éval CLI sur 470 cas au run suivant (nécessite `claude -p` actif). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-20 UTC — run agent horaire (wave 47 adversarial : 470→480 cas)
+- **Tenté** : item 1 — wave 47 : +10 cas adversariaux couvrant 10 domaines — focus sur mythes procéduraux et seuils légaux méconnus (remèdes CO 259b pour défaut non-réparé, vacances légales indépendantes de l'ancienneté, répétition de l'indu CO 62/63, somme personnelle du conjoint au foyer CC 164, retraité UE sans visa ALCP, infraction légère LCR = admonestration seule, voies de fait partenaires = office CP 126 al.2, seuil LPP 22'050 CHF, soins dentaires LAMal 31 si maladie grave, unanimité succession CC 648 al.3)
+- **Résultat** : passed ✓ — **480 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : 2280 pass / 19 fail (échecs pré-existants : `docx` manquant, reminders, i18n, circuit-breaker — confirmés identiques avant/après mes changements par stash test) ✓
+  - Validation fiches : 0 erreur ✓ (314/314)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60, ×6.6 vs LLM brut)
+  - Adversarial CLI : non mesuré ce run (nécessite `claude -p` actif)
+- **Nouveaux cas wave 47 (10)** :
+  - `adv_bail_46` (CO 259a/259b remèdes locataire pour défaut non-réparé : consignation judiciaire CO 259g ≠ arrêt de paiement unilatéral — GE)
+  - `adv_travail_46` (CO 329a minimum légal 4 semaines vacances sans égard à l'ancienneté : 5e semaine = CCT/contrat, pas la loi — ZH)
+  - `adv_dettes_42` (CO 62/63 répétition de l'indu : bonne foi du créancier ne l'exonère pas — remboursement obligatoire — VD)
+  - `adv_famille_41` (CC 164 somme personnelle du conjoint au foyer : droit impératif, montant fixé par juge si désaccord — FR)
+  - `adv_etrangers_35` (LEI 38/ALCP Annexe I art. 24 retraité UE : séjour direct sans visa, permis B à l'arrivée — mythe "visa de long séjour requis" — VD)
+  - `adv_circulation_23` (LCR 16a infraction légère = admonestration seule : retrait seulement si 2e infraction dans 2 ans ou catégorie grave — BE)
+  - `adv_violence_24` (CP 126 al.2 voies de fait répétées entre partenaires = infraction d'office : retrait plainte ne suffit pas à stopper le MP — GE)
+  - `adv_assurances_24` (LPP 2 seuil 22'050 CHF : en dessous = pas d'assujettissement obligatoire, LPP 46 cumul multi-employeurs possible — ZH)
+  - `adv_sante_30` (LAMal 31/OAMal 18 soins dentaires remboursés par AOS si causés par maladie grave : ostéoradionécrose post-radio = cas couvert — VD)
+  - `adv_successions_24` (CC 602/648 al.3 unanimité requise pour acte dispositif sur immeuble indivis : 50% ne suffit pas à décider seul — GE)
+- **Angles inédits wave 47** : CO 259g consignation judiciaire vs arrêt unilatéral (mythe "seule option = réduction loyer"), CO 329a ancienneté ≠ semaines légales (mythe "20 ans → 5e semaine légale"), CO 62 bonne foi créancier ≠ cause de conservation (mythe "s'il a dépensé il garde"), CC 164 al.1 somme personnelle impérative (mythe "salaire du travailleur = ses règles"), ALCP Annexe I art.24 retraité UE sans visa (mythe "même procédure que ressortissants tiers"), LCR 16a admonestration 1re infraction (mythe "tout excès = retrait"), CP 126 al.2 poursuite d'office partenaires (mythe "retrait plainte = arrêt poursuites"), LPP 2 seuil 22'050 CHF (mythe "LPP = universel dès 1er franc"), LAMal 31 soins dentaires séquelles oncologie (mythe "jamais remboursés"), CC 648 al.3 unanimité acte dispositif (mythe "50% = majorité suffisante").
+- **Commit** : `13158eb`
+- **Prochaine action** : mesure éval CLI sur 480 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

@@ -1727,3 +1727,26 @@ Points à surveiller :
 - **Angles inédits wave 47** : CO 259g consignation judiciaire vs arrêt unilatéral (mythe "seule option = réduction loyer"), CO 329a ancienneté ≠ semaines légales (mythe "20 ans → 5e semaine légale"), CO 62 bonne foi créancier ≠ cause de conservation (mythe "s'il a dépensé il garde"), CC 164 al.1 somme personnelle impérative (mythe "salaire du travailleur = ses règles"), ALCP Annexe I art.24 retraité UE sans visa (mythe "même procédure que ressortissants tiers"), LCR 16a admonestration 1re infraction (mythe "tout excès = retrait"), CP 126 al.2 poursuite d'office partenaires (mythe "retrait plainte = arrêt poursuites"), LPP 2 seuil 22'050 CHF (mythe "LPP = universel dès 1er franc"), LAMal 31 soins dentaires séquelles oncologie (mythe "jamais remboursés"), CC 648 al.3 unanimité acte dispositif (mythe "50% = majorité suffisante").
 - **Commit** : `13158eb`
 - **Prochaine action** : mesure éval CLI sur 480 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-21 UTC — run agent horaire (wave 48 adversarial : 480→490 cas)
+- **Tenté** : item 1 — wave 48 : +10 cas adversariaux couvrant 10 domaines — focus sur mythes procéduraux et seuils légaux méconnus (sous-location CO 262 al.2, inventions semi-libres CO 332, séquestre LP 278 caducité 10j, garde alternée CC 298 al.2bis sans accord parental, étrangers 2e génération LEI 53/CEDH 8, immixtion CC 570 acceptation tacite succession, ANP SUVA LAA 7 seuil 8h, rétractation CO 40a magasin physique, chômage LACI 13 délai 12 mois, actions au porteur SA CO 697j)
+- **Résultat** : passed ✓ — **490 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : 2728/2730 pass, 0 fail, 2 skip ✓
+  - Validation fiches : 0 erreur ✓ (314/314)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60, ×6.6 vs LLM brut)
+  - Adversarial CLI : non mesuré ce run (nécessite `claude -p` actif)
+- **Nouveaux cas wave 48 (10)** :
+  - `adv_bail_47` (CO 262 al.2 refus sous-location : 3 motifs exhaustifs seulement, politique générale = inopposable — mythe "bailleur peut interdire discrétionnairement" — VD)
+  - `adv_travail_47` (CO 332 invention semi-libre : notification obligatoire même sur temps libre dans domaine de l'employeur, 6 mois pour rachat — mythe "tout ce que je fais hors travail m'appartient" — ZH)
+  - `adv_dettes_43` (LP 278 caducité séquestre : 10 jours pour requérir poursuite même sans opposition débiteur — mythe "séquestre dure indéfiniment si pas d'opposition" — GE)
+  - `adv_famille_42` (CC 298 al.2bis garde alternée sans accord depuis réforme 2017 : juge peut ordonner même contre volonté d'un parent, distance non dirimante — mythe "impossible sans accord des 2 parents" — BE)
+  - `adv_etrangers_36` (LEI 53 al.4 + CEDH 8 + ATF 146 I 185 étrangers 2e génération : pesée d'intérêts renforcée si né en Suisse et jamais vécu dans pays d'origine — mythe "infraction grave = expulsion automatique" — GE)
+  - `adv_successions_25` (CC 570 immixtion = acceptation tacite succession : vider appartement + prendre voiture + résilier bail = privation du droit de répudier — mythe "sans signature on peut encore renoncer" — VD)
+  - `adv_assurances_25` (LAA 7 al.1 ANP couverte dès 8h/sem : 12h/sem → fracture ski couverte par SUVA — mythe "temps partiel = SUVA uniquement au travail" — ZH)
+  - `adv_consommation_25` (CO 40a rétractation limitée aux achats à distance : pas de droit légal de retour en magasin physique si produit conforme, contrairement à l'UE — mythe "14 jours partout comme en Europe" — GE)
+  - `adv_assurances_26` (LACI 13 délai cotisation 12 mois minimum : 9 mois insuffisants même si cotisé ; totalisation UE/AELE via formulaire U1 — mythe "tout cotisant a droit aux indemnités" — ZH)
+  - `adv_entreprise_24` (CO 697j actions au porteur SA supprimées depuis 01.11.2019 : conversion obligatoire en nominatives avant 01.05.2021, sinon droits suspendus — mythe "actions créées légalement avant 2019 restent valables" — ZH)
+- **Angles inédits wave 48** : CO 262 motifs limitatifs sous-location (mythe "politique interne = droit de refus"), CO 332 notification invention semi-libre (mythe "propriété absolue des créations hors travail"), LP 278 caducité séquestre 10j (mythe "séquestre = sécurité durable sans action"), CC 298 al.2bis garde alternée imposée (mythe "accord bilatéral nécessaire"), CEDH 8 / ATF 146 protection 2e génération (mythe "condamnation grave = expulsion incontestable"), CC 570 immixtion tacite (mythe "actes physiques sans signature = sans conséquences juridiques"), LAA 7 seuil 8h ANP (mythe "temps partiel = couverture SUVA limitée"), CO 40a rétractation achat en magasin (mythe "droit UE applicable en Suisse"), LACI 13 délai 12 mois (mythe "cotisation = droit immédiat"), CO 697j actions au porteur SA (mythe "droits acquis avant loi préservés").
+- **Commit** : `ff5be87`
+- **Prochaine action** : mesure éval CLI sur 490 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

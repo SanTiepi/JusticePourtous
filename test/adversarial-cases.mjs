@@ -5043,6 +5043,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['LCR 57a', 'LCR 93'],
     notes: "Obligation continue d'état conforme — contrôle technique ≠ franchise — LCR 57a : les véhicules automobiles et leurs remorques doivent être en état irréprochable de fonctionnement et satisfaire aux prescriptions en tout temps — pas seulement lors du contrôle périodique. OETV 36 / OETV Annexe 4 : profondeur minimale de sculpture des pneus = 1,6 mm (tous pneus). En dessous = véhicule non conforme, infraction à LCR 93 al. 2. CONSÉQUENCE : le contrôle technique périodique certifie l'état du véhicule au moment du contrôle. L'usure des pneus peut atteindre le seuil en quelques mois. Le conducteur reste responsable en permanence de maintenir son véhicule en conformité. SANCTION LCR 93 al. 2 : amende (infraction simple), voire retrait de permis en cas de récidive ou de danger grave. Contrôle technique valable = aucun effet sur l'infraction constatée postérieurement. MYTHE : 'un contrôle technique récent et positif me protège légalement contre tout PV technique pendant la durée de validité'. LCR 57a impose une obligation EN TOUT TEMPS, pas seulement lors du contrôle. Le certificat technique n'est pas un bouclier contre des infractions constatées ultérieurement. '1,2mm sculpture + contrôle technique OK 5 mois + GE ?' sans 'LCR 57a : conformité requise en permanence, pas seulement à la date du contrôle' ni 'OETV 36 : seuil 1,6 mm continu, non garanti par certificat technique'. Signal adversarial = conducteur croit que le contrôle technique lui crée une immunité technique temporaire.",
   },
+
+  // WAVE 50 — 10 nouveaux cas adversariaux (500→510) — 2026-07-23
+
+  // BAIL — CO 266f décès locataire : bail repris par héritiers, pas extinction automatique
+  {
+    id: 'adv_bail_49',
+    query: "Mon père est décédé en mai à Zurich. Il était locataire d'un appartement. Le bailleur nous a écrit qu'avec le décès, le bail était automatiquement résilié et qu'on devait vider l'appartement d'ici la fin du mois. Est-ce que le bail s'éteint vraiment automatiquement à la mort du locataire ?",
+    canton: 'ZH',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 266f', 'CC 560'],
+    notes: "Transmission successorale du bail — CO 266f — le décès du locataire ne résilie PAS automatiquement le bail. Le bail passe AUX HÉRITIERS qui y sont tenus solidairement. Les héritiers disposent d'un droit de résiliation extraordinaire à la prochaine échéance légale (avec délai de préavis légal). CC 560 : les héritiers acquièrent de plein droit la succession (y compris le bail) au moment du décès. Le bailleur NE PEUT PAS imposer une résiliation d'urgence. Si les héritiers ne veulent pas du bail, ils peuvent le résilier avec le délai légal (généralement 3 mois, pour la prochaine échéance contractuelle). MYTHE : 'décès du locataire = bail éteint automatiquement, appartement à vider immédiatement'. Faux — les héritiers héritent du bail. Lettre du bailleur erronée sur le fond du droit. '?père décédé + bail à ZH + bailleur dit résilié automatiquement?' sans 'CO 266f : le bail passe aux héritiers' ni 'héritiers peuvent résilier mais ont le délai légal'. Signal adversarial = bailleur (et citoyen) confondent décès avec résiliation automatique.",
+  },
+
+  // TRAVAIL — LSAM GE : salaire minimum cantonal genevois 24.32 CHF/h
+  {
+    id: 'adv_travail_49',
+    query: "Mon employeur à Genève me paie 22 francs de l'heure. Il me dit qu'il respecte le code des obligations et qu'il n'existe pas de salaire minimum national en Suisse — donc mon salaire est légal. Mais j'ai entendu parler d'un salaire minimum genevois. Est-ce vrai et que puis-je faire ?",
+    canton: 'GE',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 357a'],
+    notes: "Salaire minimum cantonal genevois — LSAM GE (Loi sur le salaire minimum, 2020) — fixé à 24.32 CHF/h en 2024 (révisé annuellement selon IPC). Droit cantonal qui PRIME sur l'absence de salaire minimum fédéral. CO 357a : les CCT de force obligatoire peuvent imposer des salaires minimaux, mais la LSAM GE est une loi cantonale générale, pas une CCT. L'employeur se trompe : le code des obligations ne fixe pas de minimum, mais la LSAM GE (droit cantonal) s'impose à TOUS les employeurs genevois, quel que soit le secteur. Recours : demander le différentiel à l'employeur, saisir l'OCIRT (Office cantonal de l'inspection et des relations du travail) si refus. MYTHE : 'pas de salaire minimum national = aucun minimum légal à Genève'. Faux — LSAM GE = salaire minimum cantonal depuis 2020. '22 CHF/h + employeur + GE + 'code des obligations' ?' sans 'LSAM GE : salaire minimum cantonal 24.32 CHF/h' ni 'OCIRT compétent'. Signal adversarial = confusion entre absence de minimum fédéral et existence de minima cantonaux.",
+  },
+
+  // DETTES — LP 17 / LP 85 : plainte autorité surveillance vs annulation poursuite
+  {
+    id: 'adv_dettes_45',
+    query: "Je reçois un commandement de payer à Genève pour une dette que j'ai déjà entièrement remboursée il y a 6 mois — j'ai le reçu. Le créancier me poursuit quand même. Mon voisin me dit que je dois aller au tribunal pour faire annuler la poursuite. Est-ce bien la seule voie ?",
+    canton: 'GE',
+    expected_domaine: 'dettes',
+    expected_any_article: ['LP 17', 'LP 85'],
+    notes: "Deux voies distinctes selon la preuve disponible — LP 17 plainte à l'autorité de surveillance (Office des poursuites) : délai 10 jours pour contester une irrégularité formelle de la poursuite — efficace mais limité aux vices de forme. LP 85 action en annulation de la poursuite au tribunal (pas du juge ordinaire) : si le débiteur prouve par titre (quittance, virement) que la dette est éteinte, le juge annule la poursuite immédiatement sans procès au fond. Avec une quittance de remboursement, LP 85 est la voie directe : action en annulation → le juge peut statuer rapidement sur la base du titre. Pas besoin d'un procès long au fond. MYTHE : 'seule voie = procès ordinaire au tribunal pour annuler'. Faux — LP 85 permet annulation judiciaire rapide sur titre, LP 17 pour les vices formels. '?commandement de payer + dette remboursée + reçu + GE?' sans 'LP 85 : annulation sur titre, procédure rapide' ni 'LP 17 plainte : délai 10j pour vices formels'. Signal adversarial = citoyen ne connaît pas la distinction LP 17 / LP 85.",
+  },
+
+  // FAMILLE — CC 134 al.1 révision garde post-divorce
+  {
+    id: 'adv_famille_44',
+    query: "J'ai divorcé il y a 3 ans à Lausanne. Le jugement de divorce accordait la garde de mes deux enfants à mon ex-femme. Depuis, elle a déménagé plusieurs fois, les enfants ont des problèmes à l'école et me disent qu'ils préfèrent vivre chez moi. Est-ce que le jugement de divorce est définitif sur la garde ou puis-je le faire modifier ?",
+    canton: 'VD',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 134', 'CC 298'],
+    notes: "Révision du jugement de divorce concernant les enfants — CC 134 al. 1 : le juge modifie le jugement sur demande d'un parent si des faits nouveaux et importants l'exigent. Conditions cumulatives : (1) faits nouveaux significatifs survenus depuis le jugement (déménagements répétés, difficultés scolaires, souhait des enfants selon leur âge), (2) modification durable, pas transitoire, (3) intérêt supérieur de l'enfant. CC 298 : le juge tient compte de l'avis de l'enfant selon son âge et sa maturité. Le jugement de divorce n'est PAS définitif sur les questions relatives aux enfants si les circonstances changent substantiellement. Procédure : requête au tribunal de protection de l'adulte et de l'enfant (TPAE) en VD. MYTHE : 'jugement divorce = définitif et inamovible sur la garde'. Faux — CC 134 permet la révision si faits nouveaux. 'garde accordée ex-femme + déménagements + problèmes scolaires + enfants veulent père + VD?' sans 'CC 134 : révision possible si faits nouveaux significatifs' ni 'TPAE VD compétent'. Signal adversarial = citoyen croit que le jugement de divorce est toujours définitif.",
+  },
+
+  // ÉTRANGERS — LEI 63 / LEI 96 révocation permis C : pesée stricte de proportionnalité
+  {
+    id: 'adv_etrangers_38',
+    query: "J'ai un permis C depuis 15 ans à Lucerne, j'ai 3 enfants nés en Suisse. J'ai été condamné à 2 ans de prison pour une fraude fiscale importante. Le canton veut révoquer mon permis C. Est-ce automatique avec une telle condamnation ?",
+    canton: 'LU',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['LEI 63', 'LEI 96'],
+    notes: "Révocation permis C — LEI 63 al. 1 let. a : condamnation à une peine privative de liberté de longue durée (>1 an) = motif de révocation possible (pas automatique). LEI 96 : principe de proportionnalité — l'autorité doit peser : durée du séjour (15 ans = très significatif), degré d'intégration, situation familiale (3 enfants en Suisse = poids énorme), gravité de l'infraction, comportement depuis. ATF 139 I 145 / ATF 146 II 49 : le TF a posé des exigences strictes de proportionnalité pour révoquer un permis C d'une personne bien intégrée avec enfants en Suisse. CEDH art. 8 : vie familiale protégée. La révocation n'est PAS automatique même pour 2 ans de prison. MYTHE : 'condamnation grave (>1 an) + permis C = révocation automatique'. Faux — LEI 96 impose une pesée des intérêts très stricte, surtout avec 15 ans de séjour et enfants. 'permis C 15 ans + 3 enfants + condamné 2 ans fraude + LU?' sans 'LEI 96 : pesée proportionnalité stricte' ni 'enfants et durée séjour = poids décisif contre révocation'. Signal adversarial = citoyen et parfois autorités croient que la condamnation déclenche automatiquement la révocation.",
+  },
+
+  // SANTÉ — OAMal 73b : remboursement au prix générique si substitution refusée
+  {
+    id: 'adv_sante_32',
+    query: "Mon médecin m'a prescrit un médicament de marque à Lausanne. Le pharmacien m'a proposé le générique moins cher, j'ai refusé car je préfère la marque. La caisse-maladie m'a remboursé seulement le prix du générique — pas de la marque. Elle a-t-elle le droit de ne rembourser que le prix du générique alors que j'ai acheté la marque prescrite ?",
+    canton: 'VD',
+    expected_domaine: 'sante',
+    expected_any_article: ['LAMal 52', 'OAMal 73b'],
+    notes: "Remboursement partiel si générique disponible et substitution refusée — OAMal 73b (depuis 2017) : si un médicament avec générique existe dans la liste des spécialités (LS), le pharmacien doit proposer le générique. Si l'assuré refuse la substitution SANS raison médicale valable, l'assureur rembourse seulement le prix du générique le moins cher dans la même substance active. L'assuré paie la différence de sa poche. LAMal 52 : les médicaments remboursés sont ceux de la LS au prix fixé. EXCEPTION : si le médecin a inscrit 'ne pas substituer' (raison médicale documentée), l'assureur DOIT rembourser la marque. Ici : pas d'indication médicale → assureur a le droit. MYTHE : 'médecin prescrit marque = assurance paie toujours le prix de la marque intégralement'. Faux — OAMal 73b : si générique disponible + refus de substitution sans motif médical → remboursement au prix du générique. '?médicament marque + générique refusé + caisse rembourse que générique + VD?' sans 'OAMal 73b : remboursement au prix du générique si substitution refusée' ni 'exception : ordonnance médicale explicite = remboursement marque'. Signal adversarial = patient confond ordonnance nominative avec obligation de remboursement intégral.",
+  },
+
+  // SUCCESSIONS — CC 484 legs vs institution héritier : légataire ne paie pas les dettes
+  {
+    id: 'adv_successions_26',
+    query: "Mon oncle est décédé à Genève. Son testament dit 'je lègue ma montre de valeur et 10 000 CHF à mon neveu'. Mais l'oncle avait aussi des dettes importantes. Les héritiers me disent que je dois contribuer au paiement des dettes car j'ai reçu un legs. Est-ce vrai ?",
+    canton: 'GE',
+    expected_domaine: 'successions',
+    expected_any_article: ['CC 484', 'CC 562'],
+    notes: "Distinction legs vs institution héritier — CC 484 al. 1 : le legs confère au légataire une créance contre la succession — il n'est PAS héritier. CC 562 : le légataire n'est pas tenu des dettes du défunt. Les héritiers paient les dettes avec la masse successorale, puis le légataire reçoit son legs SI la masse successorale est suffisante. Si la succession est insolvable : les héritiers paient les dettes d'abord, et le legs est réduit proportionnellement si nécessaire (CC 578 réduction). Mais le légataire NE PAIE PAS LES DETTES DE SA PROPRE POCHE. MYTHE : 'recevoir un legs = devenir héritier = supporter les dettes'. Faux — le légataire est un créancier de la succession, pas un héritier responsable des dettes. 'legs montre + 10k CHF + dettes oncle + héritiers demandent contribution + GE?' sans 'CC 484 : légataire = créancier, pas héritier' ni 'CC 562 : légataire ne répond pas des dettes'. Signal adversarial = citoyen confond legs (créance contre succession) et institution héritier (responsable des dettes).",
+  },
+
+  // ASSURANCES — LCA 77 assurance-vie privée saisissable vs LPP insaisissable
+  {
+    id: 'adv_assurances_27',
+    query: "J'ai des dettes importantes à Zurich. J'ai un 3ème pilier A en banque et une assurance-vie privée (3ème pilier B). Mon conseiller me dit que toutes mes assurances-vie sont insaisissables comme le LPP. Est-ce vrai ou mes créanciers peuvent-ils saisir mon assurance-vie ?",
+    canton: 'ZH',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LP 92', 'LCA 77'],
+    notes: "Distinction cruciale pilier 2 (LPP) / pilier 3a / pilier 3b — LP 92 al. 1 ch. 10 : les prestations LPP (pilier 2) et le pilier 3a SONT insaisissables. MAIS l'assurance-vie privée (pilier 3b, hors compte bancaire 3a) = régie par LCA (Loi sur le contrat d'assurance). LCA 77 : la valeur de rachat d'une assurance-vie peut être saisie par les créanciers du preneur d'assurance, SAUF si un bénéficiaire irrévocable a été désigné (LCA 79). CONSÉQUENCE : pilier 3a (banque ou assurance) = insaisissable. Pilier 3b (assurance-vie libre) = saisissable sauf bénéficiaire irrévocable. MYTHE : 'toute assurance-vie = insaisissable comme le LPP'. Faux — LCA 77 : assurance-vie privée 3b est saisissable par défaut. '?dettes + 3ème pilier B assurance-vie + conseiller dit insaisissable + ZH?' sans 'LCA 77 : assurance-vie 3b saisissable sauf bénéficiaire irrévocable' ni 'LP 92 : seuls LPP et pilier 3a sont insaisissables'. Signal adversarial = citoyen confond protection LPP (LP 92) avec assurance-vie LCA (saisissable).",
+  },
+
+  // VOISINAGE — CC 689 ruissellement naturel : fonds supérieur non fautif
+  {
+    id: 'adv_voisinage_31',
+    query: "J'habite en bas d'une pente à Fribourg. Lors des fortes pluies, l'eau de pluie qui tombe sur le terrain de mon voisin du dessus coule naturellement chez moi et inonde ma cave. Mon voisin refuse de construire quelque chose pour retenir l'eau. Peut-il vraiment laisser l'eau couler chez moi sans rien faire ?",
+    canton: 'FR',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 689', 'CC 684'],
+    notes: "Ruissellement naturel des eaux — CC 689 al. 1 : les fonds inférieurs sont assujettis à recevoir les eaux qui découlent naturellement des fonds supérieurs. Le propriétaire du fonds supérieur NE PEUT PAS modifier l'écoulement naturel au détriment du fonds inférieur (al. 2), mais il N'EST PAS OBLIGÉ de construire des ouvrages pour retenir l'eau de pluie naturelle. DISTINCTION cruciale : (1) écoulement naturel pré-existant = fonds inférieur doit le subir ; (2) si le fonds supérieur a MODIFIÉ l'écoulement (terrassement, nouvelle construction) → responsabilité ; (3) si l'eau vient d'une installation (gouttière, tuyau) → CC 684 trouble de voisinage. MYTHE : 'eau qui coule du terrain du voisin chez moi = le voisin est toujours responsable et doit agir'. Faux — ruissellement naturel = servitude légale supportée par le fonds inférieur. 'cave inondée + eau voisin du dessus + pluie + pas de modification + FR?' sans 'CC 689 : servitude légale d'écoulement naturel' ni 'distinction : écoulement naturel vs. écoulement modifié par travaux'. Signal adversarial = voisin d'aval croit toujours avoir un droit d'exiger que le voisin d'amont construise des rétentions.",
+  },
+
+  // ENTREPRISE — CO 659 rachat actions propres : limite 10% règle d'ordre public
+  {
+    id: 'adv_entreprise_25',
+    query: "Je suis administrateur d'une SA à Berne. Les actionnaires veulent que la société rachète massivement ses propres actions — environ 25% du capital — pour concentrer la propriété. Un actionnaire dit que si l'AG vote à l'unanimité, on peut dépasser la limite de 10% fixée par la loi. Est-ce que l'unanimité de l'AG permet de déroger à cette limite ?",
+    canton: 'BE',
+    expected_domaine: 'entreprise',
+    expected_any_article: ['CO 659', 'CO 659b'],
+    notes: "Limite 10% rachat actions propres SA — règle d'ordre public — CO 659 al. 1 : la SA ne peut acquérir ses propres actions que dans la mesure où des réserves libres suffisantes sont disponibles, et à concurrence de 10% du capital-actions. CO 659b al. 2 : si la société acquiert des actions propres au-delà de 10%, elle doit aliéner l'excédent dans les 2 ans. CARACTÈRE D'ORDRE PUBLIC : cette limite NE PEUT PAS être dérogée par les statuts ni par une décision de l'AG unanime. Ratio légis : protection des créanciers (capital social = garantie des créanciers), éviter la manipulation de cours, protection des actionnaires minoritaires éventuels futurs. DISTINCTION : certaines règles du CO peuvent être dérogées par l'AG unanime (CO 706a), mais pas les règles de protection des créanciers = ordre public. MYTHE : 'AG unanime peut autoriser la SA à racheter plus de 10% de ses propres actions'. Faux — CO 659 est d'ordre public, l'AG unanime ne peut pas y déroger. '?SA + rachat 25% actions propres + AG unanime + BE?' sans 'CO 659 : limite 10%, règle d'ordre public' ni 'AG unanime ≠ peut déroger aux règles protégeant les créanciers'. Signal adversarial = administrateur confond dérogations statuaires (permises) avec règles d'ordre public (intangibles).",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

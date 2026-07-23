@@ -1773,3 +1773,25 @@ Points à surveiller :
   - `adv_circulation_24` (LCR 57a / OETV 36 obligation continue ≠ franchise : contrôle technique positif 5 mois avant ≠ immunité contre PV technique ultérieur, seuil 1.6mm continu — mythe "contrôle technique récent = protection contre infraction technique" — GE)
 - **Angles inédits wave 49** : CO 258 refus prise de possession (mythe "clés reçues = défauts acceptés"), CO 362 impérativité clause all-inclusive (mythe "signé = valable même contre droit impératif"), LP 82 mainlevée provisoire sans jugement (mythe "reconnaissance de dette ≠ titre sans procès"), CC 176 MPUC urgentes indépendantes du divorce (mythe "pension = attendre jugement"), ALCP Annexe I art. 5 prestataire UE sans permis (mythe "travail en Suisse = permis quel que soit la durée"), LAMal 41 al. 4 modèle alternatif librement souscrit (mythe "libre choix = droit absolu même en modèle alternatif"), CC 688 + CcVD distance plantations selon hauteur (mythe "haies = sans règle distance"), LAA 72 subrogation partielle (mythe "assurance absorbe tous droits civils"), CP 180 menaces électroniques (mythe "internet ≠ pénal"), LCR 57a obligation continue (mythe "certificat technique = immunité").
 - **Prochaine action** : mesure éval CLI sur 500 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-23 UTC — run agent horaire (wave 50 adversarial : 500→510 cas)
+- **Tenté** : item 1 — wave 50 : +10 cas adversariaux ciblant des angles inédits dans 10 domaines — focus sur mythes successoraux/assurantiels/procéduraux (CO 266f décès locataire, LSAM GE salaire cantonal, LP 85 plainte vs jurisprudence, CC 134 révision garde, LEI 63 révocation C, OAMal 73b générique vs marque, CC 484 legs vs héritier, LCA 77 assurance-vie saisissable, CC 689 ruissellement naturel, CO 659 rachat actions 10%)
+- **Résultat** : passed ✓ — **510 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Métriques** :
+  - CI subset `LEGAL_SAFE_MODE=0 LLM_MOCK=1` : **2728/2728 pass, 0 fail, 2 skip** ✓
+  - Validation fiches : 0 erreur ✓ (314/314)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60, ×6.6 vs LLM brut)
+  - Adversarial CLI sur 510 cas : non mesuré ce run (nécessite `claude -p` actif)
+- **Nouveaux cas wave 50 (10)** :
+  - `adv_bail_49` (CO 266f succession bail locataire décédé : héritiers reprennent le bail + droit résiliation extraordinaire — mythe "décès locataire = bail éteint automatiquement" — ZH)
+  - `adv_travail_49` (LSAM GE salaire minimum cantonal 24.32 CHF/h : droit cantonal prime sur CO — mythe "salaire minimum = CCT nationale ou rien" — GE)
+  - `adv_dettes_45` (LP 17 / LP 85 procédures distinctes : plainte autorité de surveillance vs annulation judiciaire sur titre — mythe "seule voie = procès ordinaire" — GE)
+  - `adv_famille_44` (CC 134 al.1 révision garde post-divorce : jugement non définitif si faits nouveaux significatifs — mythe "jugement divorce garde = définitif et non modifiable" — VD)
+  - `adv_etrangers_38` (LEI 63 / LEI 96 révocation permis C : seuil très élevé + pesée proportionnalité absolue (durée séjour, enfants) — mythe "condamnation grave = révocation C automatique" — LU)
+  - `adv_sante_32` (OAMal 73b remboursement au prix générique si substitution refusée : médecin prescrit marque ≠ assurance paie marque si générique disponible — mythe "ordonnance marque = remboursement intégral marque" — VD)
+  - `adv_successions_26` (CC 484 / CC 562 legs ≠ institution héritier : légataire = créancier de la succession, ne supporte pas les dettes — mythe "legs = devenir héritier avec les dettes" — GE)
+  - `adv_assurances_27` (LCA 77 / LP 92 assurance-vie privée saisissable : seuls LPP + pilier 3a insaisissables — mythe "toute assurance-vie = insaisissable comme LPP" — ZH)
+  - `adv_voisinage_31` (CC 689 ruissellement naturel : fonds supérieur ne doit pas modifier l'écoulement mais n'est pas obligé de le retenir — mythe "eau chez voisin = toujours responsable du fonds d'amont" — FR)
+  - `adv_entreprise_25` (CO 659 / CO 659b rachat actions propres SA limité 10% : règle d'ordre public, AG unanime ne peut pas déroger — mythe "AG unanime peut autoriser rachat illimité d'actions propres" — BE)
+- **Angles inédits wave 50** : CO 266f continuité bail post-mortem (mythe "décès = extinction bail"), LSAM GE salaire cantonal (mythe "CCT nationale prime"), LP 17 vs 85 procédures distinctes (mythe "1 seule voie de recours"), CC 134 révision garde (mythe "jugement divorce définitif"), LEI 63 pesée proportionnalité (mythe "condamnation grave = révocation C automatique"), OAMal 73b remboursement générique (mythe "médecin prescrit = assurance paie 100%"), CC 484 légat ≠ héritage (mythe "legs = héritier avec dettes"), LCA 77 assurance-vie saisissable (mythe "assurance-vie = protection LP 92"), CC 689 ruissellement naturel non fautif (mythe "eau chez voisin = responsabilité amont"), CO 659 rachat 10% ordre public (mythe "AG unanime = peut tout déroger").
+- **Prochaine action** : mesure éval CLI sur 510 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

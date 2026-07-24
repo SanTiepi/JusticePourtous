@@ -1795,3 +1795,18 @@ Points à surveiller :
   - `adv_entreprise_25` (CO 659 / CO 659b rachat actions propres SA limité 10% : règle d'ordre public, AG unanime ne peut pas déroger — mythe "AG unanime peut autoriser rachat illimité d'actions propres" — BE)
 - **Angles inédits wave 50** : CO 266f continuité bail post-mortem (mythe "décès = extinction bail"), LSAM GE salaire cantonal (mythe "CCT nationale prime"), LP 17 vs 85 procédures distinctes (mythe "1 seule voie de recours"), CC 134 révision garde (mythe "jugement divorce définitif"), LEI 63 pesée proportionnalité (mythe "condamnation grave = révocation C automatique"), OAMal 73b remboursement générique (mythe "médecin prescrit = assurance paie 100%"), CC 484 légat ≠ héritage (mythe "legs = héritier avec dettes"), LCA 77 assurance-vie saisissable (mythe "assurance-vie = protection LP 92"), CC 689 ruissellement naturel non fautif (mythe "eau chez voisin = responsabilité amont"), CO 659 rachat 10% ordre public (mythe "AG unanime = peut tout déroger").
 - **Prochaine action** : mesure éval CLI sur 510 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-24 UTC — run agent horaire (fix régression CI : 74 tests fails → 0)
+- **Tenté** : item 3 (robustesse) — corriger 74 tests fails causés par `LEGAL_SAFE_MODE` actif par défaut depuis le commit `f25c5f4` (12 juillet, coupe-circuit juridique). Le gate CI `LLM_MOCK=1 node --test ...` ne préfixait pas `LEGAL_SAFE_MODE=0`, alors que `npm test` le fait. Les 11 fichiers de test HTTP qui testaient des endpoints bloqués (triage, query/problem, templates, compiler, escalade, lettres) échouaient tous en production.
+- **Résultat** : passed ✓ — **régression résolue**
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` (sans préfixe externe) : **2730/2730 pass, 0 fail, 2 skip** ✓ (était 2654/2730 = 74 fails)
+  - Validation fiches : 0 erreur ✓ (314/314)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60)
+- **Ce qui a été fait** : ajout de `process.env.LEGAL_SAFE_MODE = '0';` au niveau module (après les imports) dans les 11 fichiers de test HTTP qui testaient l'état fonctionnel du serveur (pas le mode safe-mode) :
+  - `test/donnees-juridiques.test.mjs`, `test/knowledge-engine.test.mjs`, `test/triage.test.mjs`, `test/integration-triage-scenarios.test.mjs`, `test/phase6-frontend-triage.test.mjs`, `test/normative-compiler.test.mjs`, `test/server.test.mjs`, `test/phase-cortex-citizen-account.test.mjs`, `test/deadline-reminders.test.mjs`, `test/phase-cortex-actionable-outputs.test.mjs`, `test/phase-cortex-escalation.test.mjs`
+  - **Vérification** : `test/legal-safe-mode.test.mjs` (25/25 ✓) — gère son propre env var (save/restore), non impacté.
+  - **Analyse de la cause** : `isSafeMode()` lit `process.env.LEGAL_SAFE_MODE` à chaque requête (pas à l'import). Défaut = `true` quand non défini. Le package.json `"test"` script préfixe `LEGAL_SAFE_MODE=0` mais le gate CI du prompt ne le faisait pas. Depuis wave 43-50, les agents ajoutaient des cas data-only et "voyaient" 2638 tests verts — probablement avec `LEGAL_SAFE_MODE=0` dans leur environnement ou en oubliant de re-vérifier.
+- **Rationale** : les tests qui échouaient testaient la FONCTIONNALITÉ réelle du serveur (endpoints triage, knowledge engine, normative compiler, etc.). Il est correct qu'ils tournent avec `LEGAL_SAFE_MODE=0`. Le comportement de safe-mode est déjà testé séparément dans `test/legal-safe-mode.test.mjs`.
+- **Prochaine action** : mesure éval CLI sur 510 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

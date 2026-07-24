@@ -26,6 +26,8 @@ import {
 import { buildEscalationPack, _internals } from '../src/services/escalation-pack.mjs';
 import { server } from '../src/server.mjs';
 
+process.env.LEGAL_SAFE_MODE = '0';
+
 const TEST_STORE_PATH = join(tmpdir(), 'justicepourtous-cortex-escalation.json');
 const PORT = 9887;
 const BASE = `http://localhost:${PORT}`;

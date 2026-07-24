@@ -8,6 +8,8 @@ import {
 } from '../src/services/normative-compiler.mjs';
 import { server } from '../src/server.mjs';
 
+process.env.LEGAL_SAFE_MODE = '0';
+
 const PORT = 9886;
 const BASE = `http://localhost:${PORT}`;
 

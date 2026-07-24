@@ -38,6 +38,8 @@ import {
   _linkCaseToAccount
 } from '../src/services/case-store.mjs';
 
+process.env.LEGAL_SAFE_MODE = '0';
+
 const TEST_CASE_STORE = join(tmpdir(), 'jpt-deadline-cases.json');
 const TEST_REMINDERS_STORE = join(tmpdir(), 'jpt-deadline-reminders.json');
 

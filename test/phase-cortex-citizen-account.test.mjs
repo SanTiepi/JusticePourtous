@@ -23,6 +23,7 @@ const TEST_ACCOUNTS_PATH = join(tmpdir(), 'jpt-citizen-accounts-test.json');
 const TEST_CASES_PATH = join(tmpdir(), 'jpt-citizen-cases-test.json');
 const TEST_REMINDERS_PATH = join(tmpdir(), 'jpt-citizen-reminders-test.json');
 
+process.env.LEGAL_SAFE_MODE = '0';
 process.env.CITIZEN_ACCOUNTS_PATH = TEST_ACCOUNTS_PATH;
 process.env.CASE_STORE_PATH = TEST_CASES_PATH;
 process.env.REMINDERS_STORE_PATH = TEST_REMINDERS_PATH;

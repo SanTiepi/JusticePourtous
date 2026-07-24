@@ -47,6 +47,8 @@ import {
 
 import { server } from '../src/server.mjs';
 
+process.env.LEGAL_SAFE_MODE = '0';
+
 const TEST_CASE_STORE = join(tmpdir(), 'justicepourtous-actionable-cases.json');
 const TEST_REMINDERS_STORE = join(tmpdir(), 'justicepourtous-actionable-reminders.json');
 const TEST_LETTERS_DIR = join(tmpdir(), 'justicepourtous-actionable-letters');

@@ -16,6 +16,8 @@ import assert from 'node:assert/strict';
 import http from 'node:http';
 import { server } from '../src/server.mjs';
 
+process.env.LEGAL_SAFE_MODE = '0';
+
 let BASE = '';
 
 const VALID_STATUSES = new Set([

@@ -2,6 +2,8 @@ import { describe, it, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { server } from '../src/server.mjs';
 
+process.env.LEGAL_SAFE_MODE = '0';
+
 const PORT = 3099;
 const BASE = `http://localhost:${PORT}`;
 

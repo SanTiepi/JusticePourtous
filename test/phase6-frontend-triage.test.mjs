@@ -18,6 +18,8 @@ import { createCase, advancePaymentGate, _resetStoreForTests } from '../src/serv
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 
+process.env.LEGAL_SAFE_MODE = '0';
+
 const PORT = 9881;
 const BASE = `http://localhost:${PORT}`;
 const STORE_PATH = join(tmpdir(), 'justicepourtous-phase6-front.json');

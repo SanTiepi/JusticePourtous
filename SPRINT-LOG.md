@@ -1810,3 +1810,24 @@ Points à surveiller :
   - **Analyse de la cause** : `isSafeMode()` lit `process.env.LEGAL_SAFE_MODE` à chaque requête (pas à l'import). Défaut = `true` quand non défini. Le package.json `"test"` script préfixe `LEGAL_SAFE_MODE=0` mais le gate CI du prompt ne le faisait pas. Depuis wave 43-50, les agents ajoutaient des cas data-only et "voyaient" 2638 tests verts — probablement avec `LEGAL_SAFE_MODE=0` dans leur environnement ou en oubliant de re-vérifier.
 - **Rationale** : les tests qui échouaient testaient la FONCTIONNALITÉ réelle du serveur (endpoints triage, knowledge engine, normative compiler, etc.). Il est correct qu'ils tournent avec `LEGAL_SAFE_MODE=0`. Le comportement de safe-mode est déjà testé séparément dans `test/legal-safe-mode.test.mjs`.
 - **Prochaine action** : mesure éval CLI sur 510 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-25 UTC — run agent horaire (wave 51 adversarial : 510→520 cas)
+- **Tenté** : item 1 (adversarial harness) — wave 51, +10 cas, 510→520, domaines : bail/travail/dettes/famille/etrangers/voisinage/successions/consommation/circulation/assurances
+- **Résultat** : passed ✓ — **520 cas, gates verts**
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2728/2730 pass, 0 fail, 2 skip** ✓
+  - Validation fiches : 0 erreur ✓ (314/314)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60)
+  - Mesure adversarial CLI : skip (`claude -p` indisponible dans sandbox)
+- **Nouveaux cas wave 51** (mythes juridiques distincts, écrits sans consulter le catalogue fiches) :
+  - `adv_bail_50` : CO 256/267a — PV d'entrée signé sans réserve ≠ pas de recours pour défauts cachés ultérieurs (VD)
+  - `adv_travail_50` : CO 341 — délai de protection 1 mois post-résiliation vs prescription 5 ans CO 128 pour créances salariales (ZH)
+  - `adv_dettes_46` : LP 219 — créancier hypothécaire primé sur produit de réalisation du bien grevé en faillite (GE)
+  - `adv_famille_45` : CC 166 — représentation de l'union conjugale : conjoint engage les deux pour dépenses courantes sans co-signature (VD)
+  - `adv_etrangers_39` : ALCP Annexe I / LEI 14 — ressortissant UE : droit au travail dès contrat conclu, permis B déclaratif (GE)
+  - `adv_voisinage_32` : CC 712c/712s — administrateur PPE limité aux actes ordinaires, travaux importants requièrent AG des copropriétaires (VD)
+  - `adv_successions_27` : CC 551 — mise sous scellés : mesure conservatoire immédiate possible dès le décès sur demande héritier (GE)
+  - `adv_consommation_26` : CO 40e let. b — exception droit de révocation 14j : biens confectionnés sur mesure selon spécifications (BE)
+  - `adv_circulation_25` : OAC 44 — échange permis étranger obligatoire dans 12 mois dès domicile en Suisse ; permis UE non valable indéfiniment (ZH)
+  - `adv_assurances_28` : LACI 2/31 — actionnaire-gérant majoritaire SA/Sàrl exclu du droit au chômage malgré cotisations (ZH)
+- **Prochaine action** : mesure éval CLI sur 520 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

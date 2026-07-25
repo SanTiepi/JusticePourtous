@@ -5145,6 +5145,108 @@ export const ADVERSARIAL_CASES = [
     expected_any_article: ['CO 659', 'CO 659b'],
     notes: "Limite 10% rachat actions propres SA — règle d'ordre public — CO 659 al. 1 : la SA ne peut acquérir ses propres actions que dans la mesure où des réserves libres suffisantes sont disponibles, et à concurrence de 10% du capital-actions. CO 659b al. 2 : si la société acquiert des actions propres au-delà de 10%, elle doit aliéner l'excédent dans les 2 ans. CARACTÈRE D'ORDRE PUBLIC : cette limite NE PEUT PAS être dérogée par les statuts ni par une décision de l'AG unanime. Ratio légis : protection des créanciers (capital social = garantie des créanciers), éviter la manipulation de cours, protection des actionnaires minoritaires éventuels futurs. DISTINCTION : certaines règles du CO peuvent être dérogées par l'AG unanime (CO 706a), mais pas les règles de protection des créanciers = ordre public. MYTHE : 'AG unanime peut autoriser la SA à racheter plus de 10% de ses propres actions'. Faux — CO 659 est d'ordre public, l'AG unanime ne peut pas y déroger. '?SA + rachat 25% actions propres + AG unanime + BE?' sans 'CO 659 : limite 10%, règle d'ordre public' ni 'AG unanime ≠ peut déroger aux règles protégeant les créanciers'. Signal adversarial = administrateur confond dérogations statuaires (permises) avec règles d'ordre public (intangibles).",
   },
+
+  // === WAVE 51 — 10 nouveaux cas adversariaux (520 total) ===
+
+  // BAIL — CO 267a / CO 256 : PV d'entrée signé sans réserve ≠ pas de recours pour défauts cachés
+  {
+    id: 'adv_bail_50',
+    query: "J'ai emménagé dans un appartement à Lausanne il y a 3 semaines. Au moment de l'état des lieux d'entrée j'ai signé le procès-verbal sans noter de défauts. Mais maintenant je réalise qu'il y a des traces de moisissure derrière les meubles du salon que je n'avais pas vus. Mon propriétaire dit que puisque j'ai signé le PV sans réserve, je ne peux plus rien exiger. Est-ce vrai ?",
+    canton: 'VD',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 256', 'CO 267a'],
+    notes: "PV d'entrée signé sans réserve ne fait pas perdre le droit de signaler des défauts cachés — CO 256 al. 1 : le bailleur est tenu de délivrer la chose dans un état propre à l'usage convenu. CO 267a : les défauts qui ne pouvaient pas être découverts lors de l'état des lieux d'entrée (défauts cachés ou non apparents) peuvent être annoncés dès leur découverte, même si le PV a été signé sans réserve. RÈGLE : le PV d'entrée signé sans réserve présume que les défauts visibles ont été acceptés, mais NE couvre PAS les défauts qui n'étaient pas apparents lors de l'état des lieux (moisissures derrière meubles = non apparent). PROCÉDURE : annoncer le défaut par écrit au bailleur sans délai dès la découverte. MYTHE : 'PV d'entrée signé = plus aucun recours possible pour les défauts'. Faux — CO 256/267a : les défauts cachés peuvent être signalés dès leur découverte. '?emménagement + PV signé sans réserve + moisissure derrière meuble + VD?' sans 'CO 256 : défaut caché non couvert par PV signé' ni 'annoncer par écrit sans délai dès découverte'. Signal adversarial = locataire croit que le PV signé l'empêche tout recours ultérieur.",
+  },
+
+  // TRAVAIL — CO 341 : délai péremptoire 6 mois post-résiliation pour créances impératives
+  {
+    id: 'adv_travail_50',
+    query: "J'ai été licencié de mon employeur à Zurich il y a 8 mois. Je viens de calculer que mon ex-employeur ne m'a pas payé toutes mes heures supplémentaires — environ 4000 CHF. Quelqu'un m'a dit que j'ai 5 ans pour réclamer des créances de salaire. Est-ce que je peux encore agir ?",
+    canton: 'ZH',
+    expected_domaine: 'travail',
+    expected_any_article: ['CO 341', 'CO 128'],
+    notes: "Délai péremptoire CO 341 vs prescription CO 128 — distinction cruciale — CO 128 ch. 3 : les créances de salaire se prescrivent en 5 ans (règle générale). MAIS CO 341 al. 1 : pendant les rapports de service et dans le mois qui suit leur fin, le travailleur ne peut pas valablement renoncer aux créances résultant de dispositions impératives de la loi ou d'une CCT. ATF 118 II 447 + doctrine dominante : certaines créances issues de dispositions impératives (heures sup imposées CO 321c, compensation congé maternité etc.) ont un DÉLAI DE FORCLUSION de 6 mois post-résiliation s'il y a une clause de renonciation ou un accord de sortie — si le travailleur a signé une quittance pour solde de tout compte, le délai pour la contester est plus court. NUANCE : pour les simples créances de salaire (heures sup contractuelles), CO 128 = 5 ans s'applique. Mais si l'employeur a fait signer un décompte final ou une quittance, la contester = délai plus court. MYTHE simplifié : '5 ans pour toutes les créances de salaire sans exception'. Faux — CO 341 interdit la renonciation pendant et 1 mois après les rapports ; les délais varient selon la nature de la créance et les documents signés. '?licencié il y a 8 mois + heures supplémentaires non payées + ZH?' sans 'CO 341 : délai de protection 1 mois post-résiliation contre renonciation' ni 'distinction prescription 5 ans (CO 128) vs délais plus courts si quittance signée'. Signal adversarial = travailleur croit disposer toujours de 5 ans sans considérer CO 341.",
+  },
+
+  // DETTES — LP 219 / LP 817 : créancier hypothécaire primé sur la masse en faillite
+  {
+    id: 'adv_dettes_46',
+    query: "Mon débiteur à Genève vient d'être déclaré en faillite. J'ai une hypothèque sur son appartement pour garantir un prêt de 200 000 CHF. Un ami me dit qu'en faillite, tous les créanciers sont traités de façon égale et que je vais recevoir seulement un pourcentage comme les autres créanciers chirographaires. Est-ce exact pour ma créance hypothécaire ?",
+    canton: 'GE',
+    expected_domaine: 'dettes',
+    expected_any_article: ['LP 219', 'LP 198'],
+    notes: "Privilège du créancier hypothécaire en faillite — LP 198 : en cas de faillite, les biens du débiteur forment la masse. LP 219 al. 1 : les créanciers munis de gages (hypothèque, gage mobilier) sont remboursés sur le produit de réalisation du bien grevé PAR PRIORITÉ sur les autres créanciers. MÉCANISME : (1) l'appartement est réalisé (vendu aux enchères) ; (2) le créancier hypothécaire est remboursé en premier jusqu'à concurrence de sa créance sur le produit de vente ; (3) SEULEMENT si le produit dépasse la créance hypothécaire, l'excédent tombe dans la masse pour les créanciers chirographaires. Si le produit est insuffisant : le solde non couvert = créance chirographaire ordinaire (3e classe LP 219 al. 4). MYTHE : 'faillite = tous les créanciers sont égaux, même ceux avec garanties réelles'. Faux — LP 219 : créancier hypothécaire est primé sur le produit de réalisation du bien grevé. '?faillite débiteur + hypothèque 200k CHF + GE + traitement égal créanciers?' sans 'LP 219 : créancier hypothécaire primé sur produit de réalisation' ni 'distinction: créances gagées (primées) vs chirographaires (dividende)'. Signal adversarial = créancier avec sûreté réelle ignore son privilège de collocation.",
+  },
+
+  // FAMILLE — CC 166 : représentation de l'union conjugale, engagement du conjoint pour dépenses courantes
+  {
+    id: 'adv_famille_45',
+    query: "Mon conjoint a signé seul un contrat de location de voiture pour 3 mois à Lausanne pour les besoins de la famille — 1500 CHF/mois. Il n'a pas ma signature. L'entreprise de location me réclame maintenant la moitié du paiement car nous sommes mariés. Peuvent-ils me poursuivre alors que je n'ai rien signé ?",
+    canton: 'VD',
+    expected_domaine: 'famille',
+    expected_any_article: ['CC 166', 'CC 163'],
+    notes: "Représentation de l'union conjugale — CC 166 al. 1 : chaque conjoint représente l'union conjugale pour les besoins courants du ménage (PENDANT le mariage). CC 163 : les époux contribuent aux charges du mariage selon leurs facultés. CONSÉQUENCE CC 166 al. 2 : les dettes contractées par un époux pour les besoins courants du ménage ENGAGENT SOLIDAIREMENT les deux époux envers les tiers, même sans signature de l'autre. CONDITION : la dépense doit correspondre aux besoins courants de la famille (nourriture, vêtements, mobilier courant, location véhicule familial raisonnable). LIMITE CC 166 al. 3 : pour les engagements qui dépassent les besoins courants, les deux signatures sont nécessaires. MYTHE : 'mon conjoint ne peut pas contracter à ma charge sans ma signature'. Faux — CC 166 : pour les besoins courants du ménage, la signature d'un seul conjoint engage les deux. '?conjoint signé seul + voiture famille + 1500 CHF/mois + VD + mariage?' sans 'CC 166 : représentation union conjugale = solidarité des époux pour besoins courants' ni 'distinction: dépenses courantes vs. extraordinaires (2 signatures requises)'. Signal adversarial = époux croit échapper à toute dette contractée par le conjoint sans sa signature.",
+  },
+
+  // ÉTRANGERS — ALCP Annexe I art. 9 / LEI 14 : permis B UE déclaratif, travail autorisé dès contrat
+  {
+    id: 'adv_etrangers_39',
+    query: "Je suis ressortissant français et j'ai trouvé un emploi à Genève. Mon futur employeur a déposé la demande de permis B mais les délais administratifs sont longs. Le service cantonal me dit que mon permis n'est pas encore émis physiquement. Puis-je commencer à travailler avant de recevoir le permis B physique ou dois-je absolument attendre ?",
+    canton: 'GE',
+    expected_domaine: 'etrangers',
+    expected_any_article: ['ALCP', 'LEI 14'],
+    notes: "Permis B UE/AELE : caractère déclaratif, droit au travail dès le contrat — ALCP (Accord sur la libre circulation des personnes) Annexe I art. 9 : le ressortissant UE/AELE qui a conclu un contrat de travail d'une durée d'au moins 1 an a droit au permis de séjour. Ce droit naît DÈS LA CONCLUSION DU CONTRAT, pas à la délivrance physique du permis. LEI 14 : le permis est déclaratif (constate un droit existant) et non constitutif. OASA (Ordonnance sur l'admission, le séjour et l'exercice d'une activité lucrative) art. 82 : le ressortissant UE peut commencer à travailler DÈS LE DÉPÔT DE LA DEMANDE. L'employeur reçoit une confirmation de dépôt qui suffit. Délai d'attente du permis plastifié = délai administratif, pas une interdiction de travailler. MYTHE : 'ressortissant UE doit attendre le permis B physique avant de commencer à travailler'. Faux — ALCP : droit au travail naît dès le contrat, permis B = déclaratif, travail autorisé dès dépôt demande. '?Français + emploi GE + permis B demandé + pas encore reçu physiquement + peut commencer?' sans 'ALCP : droit au travail dès contrat conclu' ni 'LEI 14 : permis déclaratif = droit existant avant délivrance physique'. Signal adversarial = ressortissant UE croit devoir attendre le document physique comme un ressortissant hors-UE.",
+  },
+
+  // VOISINAGE — CC 712c / CC 712s : administrateur PPE limité aux actes d'administration ordinaire
+  {
+    id: 'adv_voisinage_32',
+    query: "Je suis copropriétaire d'un appartement en PPE à Lausanne. L'administrateur (régie) a décidé seul de faire des travaux de rénovation de la façade pour 120 000 CHF et de signer un contrat avec une entreprise. Il dit qu'il a le droit de prendre toutes les décisions de gestion courante. Les copropriétaires n'ont-ils vraiment aucun mot à dire sur ce genre de travaux importants ?",
+    canton: 'VD',
+    expected_domaine: 'voisinage',
+    expected_any_article: ['CC 712c', 'CC 712s'],
+    notes: "Pouvoirs limités de l'administrateur PPE — distinction administration ordinaire vs. décisions importantes — CC 712s al. 1 : l'administrateur de la PPE exécute les décisions de la communauté et prend les mesures d'administration ordinaire urgentes. CC 712c al. 1 : les décisions qui dépassent l'administration ordinaire (travaux importants, dépenses élevées, contrats pluriannuels) requièrent une décision de l'assemblée des copropriétaires. La doctrine et la jurisprudence fixent un seuil (variable selon la valeur de l'immeuble) au-delà duquel les travaux nécessitent un vote de l'AG — typiquement plusieurs dizaines de milliers de francs = ne peut PAS être décidé seul par le gérant. CC 712m : convocation de l'assemblée par l'administrateur ou 1/5 des copropriétaires. RECOURS : contester la décision devant le juge dans un délai bref. MYTHE : 'l'administrateur PPE peut décider seul de tous les travaux de gestion courante sans limites de montant'. Faux — CC 712c/712s : au-delà de l'administration ordinaire (travaux importants, gros montants), l'AG des copropriétaires doit décider. '?PPE + gérant signe contrat travaux 120k CHF seul + VD?' sans 'CC 712c : limite pouvoirs administrateur aux actes ordinaires' ni 'CC 712s : décisions importantes = assemblée copropriétaires requise'. Signal adversarial = copropriétaire ignore que le gérant PPE a des pouvoirs limités.",
+  },
+
+  // SUCCESSIONS — CC 551 : mise sous scellés, protection immédiate de la succession avant partage
+  {
+    id: 'adv_successions_27',
+    query: "Mon père est décédé à Genève il y a 2 jours. Je suis l'un des héritiers légaux. Mon frère aîné a accès à la maison et je soupçonne qu'il est en train de retirer des objets de valeur et de vider les comptes bancaires avant qu'on puisse faire l'inventaire. Un ami me dit qu'on ne peut rien faire avant l'ouverture officielle de la succession. Est-ce vrai ?",
+    canton: 'GE',
+    expected_domaine: 'successions',
+    expected_any_article: ['CC 551', 'CC 554'],
+    notes: "Mise sous scellés — mesure conservatoire immédiate — CC 551 : l'autorité compétente (autorité des successions, à GE = Justice de Paix) prend d'office les mesures nécessaires à la conservation de la succession. L'un des héritiers peut demander IMMÉDIATEMENT (même le jour du décès) la mise sous scellés des biens successoraux. MÉCANISME : les scellés empêchent physiquement tout accès aux biens jusqu'à l'inventaire officiel. CC 554 : mesures de sûreté complémentaires (désignation d'un curateur, blocage des comptes). PROCÉDURE GE : demande urgente à la Justice de Paix du lieu du décès. L'héritier soupçonnant une dilapidation peut agir sans attendre le jugement d'ouverture. DÉLAI : agir SANS DÉLAI car les biens peuvent disparaître très vite. MYTHE : 'on ne peut rien faire avant l'ouverture officielle de la succession et le partage'. Faux — CC 551 : mise sous scellés possible immédiatement sur demande d'un héritier pour protéger la masse successorale. '?décès père + frère vide biens + GE + que faire avant partage?' sans 'CC 551 : mise sous scellés immédiate possible sur demande héritier' ni 'Justice de Paix GE compétente pour mesures conservatoires urgentes'. Signal adversarial = héritier croit être impuissant face à la dilapidation avant le partage.",
+  },
+
+  // CONSOMMATION — CO 40e / LCD : exceptions au droit de révocation 14 jours e-commerce
+  {
+    id: 'adv_consommation_26',
+    query: "J'ai commandé sur un site suisse à Berne un costume de scène fait sur mesure à mes mensurations exactes pour 800 CHF. Quand j'ai reçu la commande j'ai changé d'avis. Le site refuse mon retour en invoquant que c'est une commande sur mesure. Je pensais avoir 14 jours pour retourner tout achat en ligne sans condition. Le site a-t-il raison de refuser ?",
+    canton: 'BE',
+    expected_domaine: 'consommation',
+    expected_any_article: ['CO 40e', 'CO 40a'],
+    notes: "Exceptions légales au droit de révocation dans les contrats à distance — CO 40a al. 1 : droit de révocation de 14 jours dans les contrats de vente à distance (e-commerce) conclus avec un professionnel. CO 40e al. 1 let. b : EXCEPTION — le droit de révocation ne s'applique PAS aux biens confectionnés selon les spécifications du consommateur ou nettement personnalisés. Un costume sur mesure aux mensurations exactes = bien confectionné selon spécifications = exception légale au droit de révocation. Autres exceptions CO 40e : denrées alimentaires périssables (let. a), enregistrements audio/vidéo/logiciels déscellés (let. d), journaux (let. e). CONDITION : le professionnel doit avoir INFORMÉ le consommateur de cette exception avant la commande (art. 40b CO). Si l'information préalable manquait, le droit de révocation pourrait s'appliquer malgré l'exception. MYTHE : 'tout achat en ligne en Suisse = 14 jours de rétractation sans exception'. Faux — CO 40e : exception pour biens sur mesure. '?commande sur mesure + site suisse + retour refusé + BE?' sans 'CO 40e let. b : exception légale biens confectionnés sur spécifications' ni 'condition : information préalable du consommateur requise'. Signal adversarial = consommateur croit que le droit de révocation est absolu pour e-commerce.",
+  },
+
+  // CIRCULATION — LCR 42 / OAC 44 : conversion permis étranger, délai 12 mois dès domicile en Suisse
+  {
+    id: 'adv_circulation_25',
+    query: "Je suis Allemand et j'ai établi mon domicile à Zurich il y a 14 mois. J'ai toujours mon permis de conduire allemand valide. Un collègue me dit que le permis UE est valable indéfiniment en Suisse. Mais j'ai reçu un courrier du canton me demandant d'échanger mon permis. Est-ce que mon permis allemand est vraiment encore valable ou dois-je le faire convertir ?",
+    canton: 'ZH',
+    expected_domaine: 'circulation',
+    expected_any_article: ['LCR 42', 'OAC 44'],
+    notes: "Obligation de conversion du permis étranger après 12 mois de domicile en Suisse — OAC (Ordonnance sur le contrôle de la circulation routière) art. 44 al. 1 : toute personne qui transfère son domicile en Suisse DOIT échanger son permis étranger contre un permis suisse dans les 12 mois suivant l'établissement du domicile. LCR 42 : le Conseil fédéral règle les conditions de reconnaissance des permis étrangers. CONSÉQUENCE : après 12 mois de domicile, le permis étranger N'EST PLUS VALABLE pour conduire en Suisse (même s'il est valable dans son pays d'origine). Conduire avec un permis étranger périmé (12 mois dépassés) = infraction. Procédure : demande d'échange au Service des véhicules cantonal (ZH : Strassenverkehrsamt). Exception : séjour temporaire (touriste, frontalier sans domicile) = permis étranger valable. MYTHE : 'permis UE valable indéfiniment en Suisse tant qu'il est valide dans le pays d'origine'. Faux — OAC 44 : obligation d'échange dans les 12 mois dès l'établissement du domicile en Suisse. '?Allemand + domicile Zurich 14 mois + permis allemand + encore valable?' sans 'OAC 44 : échange obligatoire dans 12 mois dès domicile' ni 'infraction si conduite avec permis étranger après délai'. Signal adversarial = ressortissant UE confond validité du permis (durée nationale) avec validité en Suisse après établissement du domicile.",
+  },
+
+  // ASSURANCES — LACI 2 al. 1 let. d / LACI 31 : actionnaire-gérant majoritaire exclu du droit au chômage
+  {
+    id: 'adv_assurances_28',
+    query: "Je suis actionnaire à 60% et gérant d'une Sàrl à Zurich. La société traverse des difficultés et je veux me mettre en chômage partiel ou, si la société ferme, toucher le chômage. Je cotise à l'assurance-chômage depuis 5 ans. Mon comptable me dit que je n'ai pas droit au chômage en raison de ma position. Est-ce vraiment le cas malgré mes cotisations ?",
+    canton: 'ZH',
+    expected_domaine: 'assurances',
+    expected_any_article: ['LACI 31', 'LACI 2'],
+    notes: "Exclusion des associés-gérants majoritaires de l'assurance-chômage — LACI 2 al. 1 let. d : sont assujettis à l'assurance-chômage les travailleurs salariés — EXCEPTION : les personnes qui fixent les décisions de l'employeur ou peuvent les influencer de manière déterminante. Jurisprudence constante (ATF 123 V 234 et suivants) : l'actionnaire-gérant détenant une participation majoritaire (>50%) dans une Sàrl ou SA NE PEUT PAS être mis en chômage pour cette société, car il n'est pas dans un rapport de subordination typique d'un salarié. Il peut DÉCIDER lui-même de son licenciement = risque d'abus. LACI 31 al. 3 let. c : exclut du chômage partiel les associés qui déterminent les décisions de la société. CONSÉQUENCE : même avec 5 ans de cotisations prélevées, le droit aux indemnités n'existe pas. Les cotisations prélevées sont restituées partiellement ou le calcul ne donne droit à rien en cas de demande. MYTHE : 'je cotise à l'AC depuis des années donc j'y ai droit quelle que soit ma position dans l'entreprise'. Faux — LACI 2/31 : associé-gérant majoritaire exclu du droit aux indemnités de chômage. '?actionnaire-gérant 60% Sàrl + cotise AC + veut chômage + ZH?' sans 'LACI 2 : exclusion associés-gérants majoritaires' ni 'jurisprudence : rapport de subordination fictif = pas de droit AC'. Signal adversarial = entrepreneur confond obligation de cotiser (légale) avec droit aux prestations (conditionnel à un rapport de subordination réel).",
+  },
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

@@ -1831,3 +1831,24 @@ Points à surveiller :
   - `adv_circulation_25` : OAC 44 — échange permis étranger obligatoire dans 12 mois dès domicile en Suisse ; permis UE non valable indéfiniment (ZH)
   - `adv_assurances_28` : LACI 2/31 — actionnaire-gérant majoritaire SA/Sàrl exclu du droit au chômage malgré cotisations (ZH)
 - **Prochaine action** : mesure éval CLI sur 520 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-26 UTC — run agent horaire (wave 52 adversarial : 520→530 cas)
+- **Tenté** : item 1 (adversarial harness) — wave 52, +10 cas, 520→530, domaines : bail/travail/dettes/famille/etrangers/voisinage/successions/consommation/circulation/assurances
+- **Résultat** : passed ✓ — **530 cas, gates verts**
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2728/2730 pass, 0 fail, 2 skip** ✓
+  - Validation fiches : 0 erreur ✓ (314/314)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60)
+  - Mesure adversarial CLI : skip (`claude -p` indisponible dans sandbox)
+- **Nouveaux cas wave 52** (mythes juridiques distincts, écrits sans consulter le catalogue fiches) :
+  - `adv_bail_51` : CO 261b — transformation PPE : locataire protégé, acquéreur reprend le bail (GE)
+  - `adv_travail_51` : CO 328 — employeur obligation active contre mobbing inter-collègues (BE)
+  - `adv_dettes_47` : LP 207 — sursis légal 3 mois aux poursuites après décès du débiteur (FR)
+  - `adv_famille_46` : CC 288/328/329 — obligation alimentaire des enfants envers parents en EMS (VD)
+  - `adv_etrangers_40` : ALCP Annexe I — séjour chercheur d'emploi UE 3→6 mois, inscription ORP obligatoire (ZH)
+  - `adv_voisinage_33` : CC 690 — propriétaire ne peut pas dévier le cours d'eau naturel au détriment fonds inférieur (VS)
+  - `adv_successions_28` : CC 540 — indignité successorale de plein droit pour tentative de meurtre sur le défunt (GE)
+  - `adv_consommation_27` : CO 107/108 — résolution contrat pour retard sans preuve de préjudice concret (VD)
+  - `adv_circulation_26` : LCR 100/CP 117 — responsabilité pénale conducteur indépendante de l'indemnisation RC auto (BS)
+  - `adv_assurances_29` : LPP 20 — rente conjoint survivant = 60% rente LPP défunt (conditions mariage ≥5 ans + âge >45 ans) (GE)
+- **Prochaine action** : mesure éval CLI sur 530 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

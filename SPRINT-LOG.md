@@ -1852,3 +1852,25 @@ Points à surveiller :
   - `adv_circulation_26` : LCR 100/CP 117 — responsabilité pénale conducteur indépendante de l'indemnisation RC auto (BS)
   - `adv_assurances_29` : LPP 20 — rente conjoint survivant = 60% rente LPP défunt (conditions mariage ≥5 ans + âge >45 ans) (GE)
 - **Prochaine action** : mesure éval CLI sur 530 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-27 UTC — run agent horaire (wave 53 adversarial : 530→540 cas)
+- **Tenté** : item 1 (adversarial harness) — wave 53, +10 cas, 530→540, domaines : bail/travail/dettes/famille/etrangers/voisinage/successions/consommation/circulation/assurances
+- **Résultat** : passed ✓ — **540 cas, gates verts**
+- **Note infra** : environnement container frais sans `node_modules` → `npm install` requis avant gates (docx dep manquante). Root cause identifiée et corrigée dans la session.
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2728/2730 pass, 0 fail, 2 skip** ✓
+  - Validation fiches : 0 erreur ✓ (314/314)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60)
+  - Mesure adversarial CLI : skip (`claude -p` indisponible dans sandbox)
+- **Nouveaux cas wave 53** (mythes juridiques distincts, écrits sans consulter le catalogue fiches) :
+  - `adv_bail_52` : CO 270b — loyer initial contestable dans les 30j même après signature du bail (GE)
+  - `adv_travail_52` : CO 327a — frais professionnels remboursables sans clause expresse si nécessaires à l'exécution (BE)
+  - `adv_dettes_48` : LP 265 — acte de défaut de biens ≠ extinction de la dette ; créance subsiste 20 ans (VD)
+  - `adv_famille_47` : CC 286 — modification pension alimentaire enfant : requiert changement circonstances + jugement (FR)
+  - `adv_etrangers_41` : LEI 50 — maintien permis B après divorce si mariage ≥3 ans + intégration réussie (ZH)
+  - `adv_voisinage_34` : CC 695/LTC 36 — servitude légale Swisscom sur façade privée imposable contre indemnité (VD)
+  - `adv_successions_29` : CC 509/511 — testament révocable à tout moment sans accord du bénéficiaire (BE)
+  - `adv_consommation_28` : CO 197/210 — garantie légale 1 an min. B2C non supprimable même pour véhicule occasion (NE)
+  - `adv_circulation_27` : LCR 51/92 — obligation s'arrêter après accident liée à l'implication, pas à la faute (GE)
+  - `adv_assurances_30` : LAMal 64a/64b — soins urgents toujours couverts malgré suspension pour non-paiement primes (GE)
+- **Prochaine action** : mesure éval CLI sur 540 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

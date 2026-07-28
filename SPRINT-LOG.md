@@ -1874,3 +1874,25 @@ Points à surveiller :
   - `adv_circulation_27` : LCR 51/92 — obligation s'arrêter après accident liée à l'implication, pas à la faute (GE)
   - `adv_assurances_30` : LAMal 64a/64b — soins urgents toujours couverts malgré suspension pour non-paiement primes (GE)
 - **Prochaine action** : mesure éval CLI sur 540 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-28 UTC — run agent horaire (wave 54 adversarial : 540→550 cas)
+- **Tenté** : item 1 (adversarial harness) — wave 54, +10 cas, 540→550, 10 domaines simultanés
+- **Résultat** : passed ✓ — **550 cas, gates verts** (note : conflit git résolu en cours de run — pull requis avant réapplication)
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2728/2730 pass, 0 fail, 2 skip** ✓
+  - Validation fiches : 0 erreur ✓ (314/314)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60)
+  - Mesure adversarial CLI : skip (`claude -p` indisponible dans sandbox)
+- **Nouveaux cas wave 54** (mythes juridiques distincts, écrits sans consulter le catalogue fiches) :
+  - `adv_bail_53` : CO 269/269a — rendement net est la MÉTHODE PRIMAIRE du loyer abusif (pas la conformité au marché) ; délai 30j contestation CO 270b (GE)
+  - `adv_travail_53` : CO 323b al. 3 — droit légal d'inspection des pièces comptables servant à calculer les commissions ; refus employeur illégal (VD)
+  - `adv_dettes_49` : CO 63 al. 3 — paiement volontaire d'une dette prescrite en connaissance de cause = non répétible ; prescription ≠ extinction de la dette (ZH)
+  - `adv_famille_48` : CC 197-198-209 — biens propres pré-mariage non partagés au divorce ; rénovation commune = récompense financière (CC 209), pas transfert de propriété (FR)
+  - `adv_etrangers_42` : ALCP Annexe I art. 4 / LEI 43 — retraité UE doit avoir moyens financiers suffisants + LAMal (pas liberté sans conditions) (NE)
+  - `adv_voisinage_35` : CC 737/730 — servitude de passage s'interprète restrictivement ; usage intensif ou construction sur le fonds servant peut excéder les droits (BE)
+  - `adv_successions_30` : CC 470-471-522 — quotité disponible max 50% avec 2 enfants adultes sans conjoint (réforme 2023 : réserve = 1/4 par enfant) (GE)
+  - `adv_consommation_29` : LCD 8 / CO 8 — clauses CG créant disproportion notable au détriment consommateur nulles même si acceptées (ZH)
+  - `adv_circulation_28` : ORC 41b / LCR 36 — priorité dans les giratoires aux véhicules circulant dedans ; exception expresse à la règle de priorité de droite (BS)
+  - `adv_assurances_31` : LAI 28 / LPGA 17 — révision rente AI proportionnelle au nouveau taux d'invalidité ; reprise partielle ≠ suppression automatique (VD)
+- **Angles inédits wave 54** : CO 269 rendement net vs marché (méthode primaire), CO 323b inspection commissions, CO 63 al. 3 répétition prescription, CC 209 récompense vs propriété, ALCP Annexe I art. 4 retraité UE conditions, CC 737 interprétation restrictive servitude, CC 470/471 réforme 2023 quotité disponible, LCD 8 clauses CG abusives, ORC 41b giratoire exception priorité droite, LPGA 17 révision AI proportionnelle.
+- **Prochaine action** : mesure éval CLI sur 550 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

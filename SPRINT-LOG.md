@@ -1896,3 +1896,26 @@ Points à surveiller :
   - `adv_assurances_31` : LAI 28 / LPGA 17 — révision rente AI proportionnelle au nouveau taux d'invalidité ; reprise partielle ≠ suppression automatique (VD)
 - **Angles inédits wave 54** : CO 269 rendement net vs marché (méthode primaire), CO 323b inspection commissions, CO 63 al. 3 répétition prescription, CC 209 récompense vs propriété, ALCP Annexe I art. 4 retraité UE conditions, CC 737 interprétation restrictive servitude, CC 470/471 réforme 2023 quotité disponible, LCD 8 clauses CG abusives, ORC 41b giratoire exception priorité droite, LPGA 17 révision AI proportionnelle.
 - **Prochaine action** : mesure éval CLI sur 550 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-28 UTC — run agent horaire #2 (wave 55 adversarial : 550→560 cas)
+- **Tenté** : item 1 (adversarial harness) — wave 55, +10 cas, 550→560, 10 domaines (bail/travail/dettes/famille/etrangers/fiscal/social/accident/violence/entreprise)
+- **Résultat** : passed ✓ — **560 cas, gates verts**
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2728/2730 pass, 0 fail, 2 skip** ✓
+  - Validation fiches : 0 erreur ✓ (314/314)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60)
+  - Mesure adversarial CLI : skip (`claude -p` indisponible dans sandbox)
+- **Nouveaux cas wave 55** (mythes juridiques distincts, écrits sans consulter le catalogue fiches) :
+  - `adv_bail_54` : CO 267/267a — usure normale après 8 ans à charge du bailleur ; tables SVIT durée vie peinture 8-10 ans (VS)
+  - `adv_travail_54` : CO 336c al. 3 — délai congé suspendu dès début maladie même si licenciement notifié avant (AG)
+  - `adv_dettes_50` : LP 93 — minimum vital (Existenzminimum) toujours garanti ; saisie = excédent uniquement, jamais en dessous Notbedarf (ZG)
+  - `adv_famille_49` : CC 285 — contribution entretien enfant contrôlée par le juge sur intérêt enfant ; accord parental à CHF 200 non homologable si insuffisant (TI)
+  - `adv_etrangers_43` : LEI 50 — droit autonome séjour conjoint tiers-pays après 3 ans union + intégration réussie ; départ du ressortissant EU n'entraîne pas perte automatique (GR)
+  - `adv_fiscal_14` : LIFD 26 — déduction transport domicile-travail plafonnée CHF 3'000 IFD ; parking non déductible en principe (GE)
+  - `adv_social_21` : LAVS 41 — lacunes AVS prescrites après 5 ans (délai écoulé pour années 25-29) ; alternatives LPP rachat / pilier 3a / conventions bilatérales (NE)
+  - `adv_accident_24` : LAA 16/17 — indemnité journalière accident professionnel = 80% gain assuré (pas 60% comme LAMal perte de gain) (SO)
+  - `adv_violence_26` : CP 123 al. 2 / CP 55a — lésions corporelles simples entre partenaires = poursuite d'office ; retrait plainte ne suffit pas à arrêter la procédure (LU)
+  - `adv_entreprise_26` : CO 794 — responsabilité associé Sàrl limitée au capital souscrit ; créanciers sociaux ne peuvent pas poursuivre l'associé personnellement (ZH)
+- **Angles inédits wave 55** : CO 267 usure normale + tables SVIT, CO 336c al.3 suspension délai congé, LP 93 minimum vital Existenzminimum, CC 285 contrôle judiciaire pension accord parental, LEI 50 autonomisation séjour conjoint tiers-pays, LIFD 26 plafond transport CHF 3000, LAVS 41 prescription lacunes AVS + alternatives, LAA 16/17 80% vs 60% LAMal, CP 123 al.2 poursuite d'office violence domestique, CO 794 responsabilité limitée Sàrl.
+- **Distribution domaines** : bail 54, travail 54, dettes 50, famille 49, etrangers 43, voisinage 36, successions 31, consommation 30, circulation 29, assurances 32, social 21, sante 32, violence 26, accident 24, entreprise 26, hybride 16, fiscal 14
+- **Prochaine action** : mesure éval CLI sur 560 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

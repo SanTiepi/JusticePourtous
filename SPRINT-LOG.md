@@ -1919,3 +1919,26 @@ Points à surveiller :
 - **Angles inédits wave 55** : CO 267 usure normale + tables SVIT, CO 336c al.3 suspension délai congé, LP 93 minimum vital Existenzminimum, CC 285 contrôle judiciaire pension accord parental, LEI 50 autonomisation séjour conjoint tiers-pays, LIFD 26 plafond transport CHF 3000, LAVS 41 prescription lacunes AVS + alternatives, LAA 16/17 80% vs 60% LAMal, CP 123 al.2 poursuite d'office violence domestique, CO 794 responsabilité limitée Sàrl.
 - **Distribution domaines** : bail 54, travail 54, dettes 50, famille 49, etrangers 43, voisinage 36, successions 31, consommation 30, circulation 29, assurances 32, social 21, sante 32, violence 26, accident 24, entreprise 26, hybride 16, fiscal 14
 - **Prochaine action** : mesure éval CLI sur 560 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-29 UTC — run agent horaire (wave 56 adversarial : 560→570 cas)
+- **Tenté** : item 1 (adversarial harness) — wave 56, +10 cas, 560→570, 10 domaines (bail/travail/dettes/famille/etrangers/voisinage/successions/consommation/circulation/sante)
+- **Résultat** : passed ✓ — **570 cas, gates verts**
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2728/2730 pass, 0 fail, 2 skip** ✓
+  - Validation fiches : 0 erreur ✓ (314/314)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60)
+  - Mesure adversarial CLI : skip (`claude -p` indisponible dans sandbox)
+- **Nouveaux cas wave 56** (mythes juridiques distincts, écrits sans consulter le catalogue fiches) :
+  - `adv_bail_55` : CO 273/271a — opposition résiliation bail : locataire reste dans les lieux pendant toute la procédure d'autorité de conciliation (VD)
+  - `adv_travail_55` : CO 329d al.2 — vacances non payables en espèces pendant le contrat ; obligation légale de les prendre effectivement (BE)
+  - `adv_dettes_51` : CO 119/185 — extinction obligation par impossibilité subséquente non fautive ; transfert risque selon CO 185 (GE)
+  - `adv_famille_50` : CC 133/296 — autorité parentale conjointe = règle par défaut depuis 2014 même sans accord parental (FR)
+  - `adv_etrangers_44` : LEI 85/45 — permis F → regroupement familial : délai min. 3 ans + conditions strictes décidées par autorité cantonale (ZH)
+  - `adv_voisinage_37` : CC 681 — droit de préemption légal des copropriétaires entre eux ; priorité sur tout acheteur tiers (VS)
+  - `adv_successions_32` : CC 612/604 — licitation judiciaire si partage amiable impossible ; tribunal ordonne vente aux enchères et distribution du produit (GE)
+  - `adv_consommation_31` : CO 101/97 — vendeur responsable des actes et fautes de ses auxiliaires (sous-traitants) comme de ses propres fautes (ZH)
+  - `adv_circulation_30` : LCR 58 — responsabilité causale du détenteur même si véhicule prêté ; le preneur n'exonère pas le détenteur (BS)
+  - `adv_sante_33` : LAMal 41 — hospitalisation dans tout hôpital sur liste cantonale, y compris hors-canton ; assurance couvre tarif cantonal minimum (VD)
+- **Angles inédits wave 56** : CO 273/271a opposition résiliation (reste dans les lieux), CO 329d al.2 vacances non monétisables pendant contrat, CO 119/185 impossibilité subséquente + transfert risque, CC 133/296 autorité parentale conjointe par défaut 2014, LEI 85/45 permis F regroupement familial 3 ans, CC 681 préemption légale copropriétaires, CC 612/604 licitation judiciaire partage impossible, CO 101/97 responsabilité auxiliaires vendeur, LCR 58 responsabilité causale détenteur véhicule prêté, LAMal 41 hospitalisation hors-canton liste cantonale.
+- **Distribution domaines** : bail 55, travail 55, dettes 51, famille 50, etrangers 44, voisinage 37, successions 32, consommation 31, circulation 30, assurances 32, social 21, sante 33, violence 26, accident 24, entreprise 26, hybride 16, fiscal 14
+- **Prochaine action** : mesure éval CLI sur 570 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

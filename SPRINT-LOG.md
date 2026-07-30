@@ -1942,3 +1942,27 @@ Points à surveiller :
 - **Angles inédits wave 56** : CO 273/271a opposition résiliation (reste dans les lieux), CO 329d al.2 vacances non monétisables pendant contrat, CO 119/185 impossibilité subséquente + transfert risque, CC 133/296 autorité parentale conjointe par défaut 2014, LEI 85/45 permis F regroupement familial 3 ans, CC 681 préemption légale copropriétaires, CC 612/604 licitation judiciaire partage impossible, CO 101/97 responsabilité auxiliaires vendeur, LCR 58 responsabilité causale détenteur véhicule prêté, LAMal 41 hospitalisation hors-canton liste cantonale.
 - **Distribution domaines** : bail 55, travail 55, dettes 51, famille 50, etrangers 44, voisinage 37, successions 32, consommation 31, circulation 30, assurances 32, social 21, sante 33, violence 26, accident 24, entreprise 26, hybride 16, fiscal 14
 - **Prochaine action** : mesure éval CLI sur 570 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-30 UTC — run agent horaire (wave 57 adversarial : 570→580 cas)
+- **Tenté** : item 1 (adversarial harness) — wave 57, +10 cas, 570→580, 10 domaines (bail/travail/dettes/famille/etrangers/voisinage/successions/assurances/consommation/circulation)
+- **Résultat** : passed ✓ — **580 cas, gates verts**
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` : **2728/2730 pass, 0 fail, 2 skip** ✓
+  - Validation fiches : 0 erreur ✓ (314/314)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60)
+  - Mesure adversarial CLI : skip (`claude -p` indisponible dans sandbox)
+- **Nouveaux cas wave 57** (mythes juridiques distincts, écrits sans consulter le catalogue fiches) :
+  - `adv_bail_56` : CO 271/CO 271a — résiliation besoin propre : contestable si besoin non effectif/sérieux ; délai 30j déchéance (GE)
+  - `adv_travail_56` : CO 339b/CO 339c — indemnité de départ exige 20 ans minimum (pas 18) et souvent absorbée par LPP (BE)
+  - `adv_dettes_52` : LP 297/LP 293 — sursis concordataire suspend TOUTES poursuites même antérieures au sursis (GE)
+  - `adv_famille_51` : CC 307/CC 310 — retrait garde = ultima ratio après mesures graduées ; APEA n'enlève pas à 1ère audience (VD)
+  - `adv_etrangers_45` : LEI 61 — extinction automatique permis B après 6 mois absence ; date titre ≠ droit retour garanti (NE)
+  - `adv_voisinage_38` : CC 679a/CC 684 — permis construire n'exclut pas recours civil pour immissions excessives (fissures chantier) (FR)
+  - `adv_successions_33` : CC 493/CC 512 — pacte successoral nul si pas forme authentique (notaire + 2 témoins) ; accord famille privé = nul (ZH)
+  - `adv_assurances_32` : LCA 53/LCA 54 — règle proportionnelle sous-assurance réduit indemnisation même si sinistre < somme assurée (ZH)
+  - `adv_consommation_32` : CO 100/CO 97 — clause CG nulle pour faute grave ; contrat de dépôt vestiaire club fitness = obligation restitution (ZH)
+  - `adv_circulation_31` : LCR 83/LCR 87 — nemo tenetur ≠ droit refuser identifier conjoint conducteur ; refus = infraction séparée (BE)
+- **Angles inédits wave 57** : CO 271 besoin propre non irréfutable, CO 339b seuil 20 ans (pas 18), LP 297 effet suspensif universel sursis concordataire, CC 307 gradation mesures APEA, LEI 61 extinction automatique absence 6 mois, CC 679a permis construire ≠ immunité civile, CC 512 forme authentique pacte successoral, LCA 54 règle proportionnelle sous-assurance partielle, CO 100 nullité clause faute grave, LCR 87 obligation identifier tiers distincte du nemo tenetur.
+- **Distribution domaines** : bail 56, travail 56, dettes 52, famille 51, etrangers 45, voisinage 38, successions 33, consommation 32, circulation 31, assurances 32, social 21, sante 33, violence 26, accident 24, entreprise 26, hybride 16, fiscal 14
+- **Commit** : `1428a02`
+- **Prochaine action** : mesure éval CLI sur 580 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

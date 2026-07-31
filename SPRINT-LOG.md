@@ -1988,5 +1988,5 @@ Points à surveiller :
   - `adv_violence_27` : CP 190 — viol conjugal = infraction pénale sans exception conjugale depuis 1992 ; 'devoir conjugal' = mythe sans base légale (GE)
 - **Angles inédits wave 58** : CO 260a al.2 proportionnalité travaux amélioration, CO 335c al.3 minimums impératifs délais congé, CO 135 ch.2 interruption prescription par commandement payer, CC 285a enfant majeur créancier direct, LEI 50 let.b exception violence conjugale < 3 ans, CC 684 immissions civiles indépendantes autorisation admin, CO 55 responsabilité commettant quasi-objective, LACI 13 cotisation 12 mois sine qua non, LIFD 33a institutions suisses exonérées, CP 190 viol conjugal infraction depuis 1992.
 - **Distribution domaines** : bail 57, travail 57, dettes 53, famille 52, etrangers 46, voisinage 39, successions 33, consommation 32, circulation 31, assurances 32, social 22, sante 33, violence 27, accident 25, entreprise 26, hybride 16, fiscal 15
-- **Commit** : à venir
+- **Commit** : `3ee1dee`
 - **Prochaine action** : wave 59 — domaines sous-représentés (entreprise 26, hybride 16) ou thèmes nouveaux. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

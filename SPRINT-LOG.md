@@ -1966,3 +1966,27 @@ Points à surveiller :
 - **Distribution domaines** : bail 56, travail 56, dettes 52, famille 51, etrangers 45, voisinage 38, successions 33, consommation 32, circulation 31, assurances 32, social 21, sante 33, violence 26, accident 24, entreprise 26, hybride 16, fiscal 14
 - **Commit** : `1428a02`
 - **Prochaine action** : mesure éval CLI sur 580 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-07-31 UTC — run agent horaire (wave 58 adversarial : 580→590 cas)
+- **Tenté** : item 1 (adversarial harness) — wave 58, +10 cas, 580→590, 10 domaines (bail/travail/dettes/famille/etrangers/voisinage/accident/social/fiscal/violence)
+- **Résultat** : passed ✓ — **590 cas, gates verts**
+- **Métriques** :
+  - CI subset `LEGAL_SAFE_MODE=0 LLM_MOCK=1` : **2728/2730 pass, 0 fail, 2 skip** ✓
+  - Validation fiches : 0 erreur ✓ (314/314)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60)
+  - Mesure adversarial CLI : skip (`claude -p` indisponible dans sandbox)
+- **Nouveaux cas wave 58** (mythes juridiques distincts, écrits sans consulter le catalogue fiches) :
+  - `adv_bail_57` : CO 260a al.2 — travaux d'amélioration non urgents refusables si inconvénients disproportionnés ; CO 259d réduction loyer pendant travaux (GE)
+  - `adv_travail_57` : CO 335c al.1/al.3 — délais légaux de congé = minimums impératifs ; contrat peut allonger, jamais réduire en dessous du légal (BS)
+  - `adv_dettes_53` : CO 135 ch.2/CO 137 — commandement de payer interrompt prescription et la fait repartir à zéro pour 10 ans (ZH)
+  - `adv_famille_52` : CC 285a al.1 — enfant majeur peut exiger versement direct de sa contribution d'entretien, l'ex-conjoint perd le droit de percevoir (VD)
+  - `adv_etrangers_46` : LEI 50 al.1 let.b — violence conjugale documentée = droit séjour autonome même si mariage < 3 ans (FR)
+  - `adv_voisinage_39` : CC 684 — odeurs restaurant en immeuble résidentiel = immissions excessives civiles illicites même si activité administrativement autorisée (ZH)
+  - `adv_accident_25` : CO 55 al.1 — responsabilité commettant : employeur répond quasi-objectivement des fautes employé dans exercice fonctions ; double responsabilité (BE)
+  - `adv_social_22` : LACI 13 al.1 — diplômé sans 12 mois cotisation = pas d'indemnités chômage ordinaires ; ORP = placement, pas versement (VD)
+  - `adv_fiscal_15` : LIFD 33a — dons à institutions suisses exonérées utilité publique déductibles jusqu'à 20% revenu net ; pas seulement grandes ONG internationales (VD)
+  - `adv_violence_27` : CP 190 — viol conjugal = infraction pénale sans exception conjugale depuis 1992 ; 'devoir conjugal' = mythe sans base légale (GE)
+- **Angles inédits wave 58** : CO 260a al.2 proportionnalité travaux amélioration, CO 335c al.3 minimums impératifs délais congé, CO 135 ch.2 interruption prescription par commandement payer, CC 285a enfant majeur créancier direct, LEI 50 let.b exception violence conjugale < 3 ans, CC 684 immissions civiles indépendantes autorisation admin, CO 55 responsabilité commettant quasi-objective, LACI 13 cotisation 12 mois sine qua non, LIFD 33a institutions suisses exonérées, CP 190 viol conjugal infraction depuis 1992.
+- **Distribution domaines** : bail 57, travail 57, dettes 53, famille 52, etrangers 46, voisinage 39, successions 33, consommation 32, circulation 31, assurances 32, social 22, sante 33, violence 27, accident 25, entreprise 26, hybride 16, fiscal 15
+- **Commit** : à venir
+- **Prochaine action** : wave 59 — domaines sous-représentés (entreprise 26, hybride 16) ou thèmes nouveaux. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

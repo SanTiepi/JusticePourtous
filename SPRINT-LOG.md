@@ -1990,3 +1990,27 @@ Points à surveiller :
 - **Distribution domaines** : bail 57, travail 57, dettes 53, famille 52, etrangers 46, voisinage 39, successions 33, consommation 32, circulation 31, assurances 32, social 22, sante 33, violence 27, accident 25, entreprise 26, hybride 16, fiscal 15
 - **Commit** : `3ee1dee`
 - **Prochaine action** : wave 59 — domaines sous-représentés (entreprise 26, hybride 16) ou thèmes nouveaux. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-08-01 UTC — run agent horaire (wave 59 adversarial : 590→600 cas)
+- **Tenté** : item 1 — wave 59 : +10 cas adversariaux ciblant les domaines sous-représentés (hybride×2, fiscal×2, social×1, entreprise×1, accident×1, violence×1, assurances×1, sante×1)
+- **Résultat** : passed ✓ — **600 cas dans `test/adversarial-cases.mjs`** (milestone rond), 3 gates verts, 0 doublon d'ID
+- **Commits** : `64a0af4`
+- **Métriques** :
+  - CI subset `LEGAL_SAFE_MODE=0 LLM_MOCK=1` : **2728/2730 pass, 0 fail, 2 skip** ✓
+  - Validation fiches : 0 erreur ✓ (314/314, 100%)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60, avantage ×6.6)
+  - Mesure adversarial CLI : skip (`claude -p` indisponible dans sandbox)
+- **Nouveaux cas wave 59** (mythes juridiques distincts, écrits sans consulter le catalogue fiches) :
+  - `adv_hybride_17` : CO 143 solidarité cotitulaires bail — courrier unilatéral du partant ne suffit pas à libérer de la solidarité sans accord bailleur (GE)
+  - `adv_hybride_18` : CC 571 immixtion dans succession — prendre des meubles du défunt = acceptation tacite de la succession avec ses dettes (VD)
+  - `adv_fiscal_16` : LIFD 16 al.3 gains en capital fortune privée exonérés d'impôt (sauf négoce professionnel LIFD 18 al.2) — mythe très répandu
+  - `adv_fiscal_17` : LIFD 17 al.1 indemnité de départ = revenu du travail imposable même si qualifiée "dédommagement" ; exception LIFD 37b limitée à la part prévoyance (ZH)
+  - `adv_social_23` : franchise d'intégration aide sociale LIAS VD — revenu du travail ne réduit pas l'aide franc à franc, franchise d'environ 20% pour inciter au travail (VD)
+  - `adv_entreprise_27` : CO 777c apports en nature Sàrl autorisés avec contrat d'apport écrit + vérification — le notaire disant "impossible" avait tort (GE)
+  - `adv_accident_26` : CC 333 al.1 responsabilité parentale causale présumée — parents responsables même absents, charge de preuve inversée sur eux (VD)
+  - `adv_violence_28` : CP 180 menaces verbales graves = infraction pénale sans violence physique requise + CC 28b voie civile d'éloignement (BE)
+  - `adv_assurances_33` : LPP 30d libre passage — avoir transféré à institution de libre passage, pas versé en capital sur compte bancaire ordinaire ; exceptions LPP 5 strictes (ZH)
+  - `adv_sante_34` : OAMal 52b tarif de référence génériques — caisse rembourse au prix du générique sauf "dispensa" médicale documentée sur ordonnance (VD)
+- **Distribution domaines** : bail 57, travail 57, dettes 53, famille 52, etrangers 46, voisinage 39, successions 34, consommation 32, circulation 31, assurances 33, social 23, sante 34, violence 28, accident 26, entreprise 27, hybride 18, fiscal 16
+- **Note** : fix syntaxe appliqué (double quotes imbriquées dans string notes adv_fiscal_17 → retirées). 0 doublon d'ID sur 600 cas.
+- **Prochaine action** : wave 60 — domaines encore sous-représentés (hybride 18, fiscal 16, social 23) ou mesure éval CLI sur 600 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

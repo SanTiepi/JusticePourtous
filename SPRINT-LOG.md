@@ -2014,3 +2014,26 @@ Points à surveiller :
 - **Distribution domaines** : bail 57, travail 57, dettes 53, famille 52, etrangers 46, voisinage 39, successions 34, consommation 32, circulation 31, assurances 33, social 23, sante 34, violence 28, accident 26, entreprise 27, hybride 18, fiscal 16
 - **Note** : fix syntaxe appliqué (double quotes imbriquées dans string notes adv_fiscal_17 → retirées). 0 doublon d'ID sur 600 cas.
 - **Prochaine action** : wave 60 — domaines encore sous-représentés (hybride 18, fiscal 16, social 23) ou mesure éval CLI sur 600 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-08-02 UTC — run agent horaire (wave 60 adversarial : 600→610 cas)
+- **Tenté** : item 1 — wave 60 : +10 cas adversariaux ciblant les domaines les plus sous-représentés (fiscal×3, hybride×3, social×2, entreprise×2)
+- **Résultat** : passed ✓ — **610 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID
+- **Commits** : `65bec6f`
+- **Métriques** :
+  - CI subset `LEGAL_SAFE_MODE=0 LLM_MOCK=1` : **2728/2730 pass, 0 fail, 2 skip** ✓
+  - Validation fiches : 0 erreur ✓ (314/314, 100%)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60, avantage ×6.6)
+  - Mesure adversarial CLI : skip (`claude -p` indisponible dans sandbox)
+- **Nouveaux cas wave 60** (mythes juridiques distincts, écrits sans consulter le catalogue fiches) :
+  - `adv_fiscal_18` : LIFD 33 al.1 let.a intérêts dettes privées déductibles pour TOUS contribuables, pas seulement les indépendants (GE)
+  - `adv_fiscal_19` : LIFD 175 al.3 dénonciation spontanée avant taxation = immunité pénale, correction n'est PAS punissable comme soustraction (BE)
+  - `adv_fiscal_20` : LIFD 16 al.3 gain immobilier résidence privée exonéré d'IFD (seulement impôt cantonal LHID 12) — le notaire avait tort (VD)
+  - `adv_hybride_19` : LAA 16 indemnités journalières lors d'accident = assureur LAA de l'employeur, PAS RC auto de l'auteur de l'accident (ZH)
+  - `adv_hybride_20` : CO 266m résiliation bail familial doit être notifiée aux DEUX conjoints même si un seul est titulaire du bail — sinon nulle (FR)
+  - `adv_hybride_21` : CC 289 al.2 cession légale pension alimentaire à l'État limitée aux montants avancés — bénéficiaire garde ses droits sur le solde (LU)
+  - `adv_social_24` : CC 163 obligation entretien = entre époux seulement ; revenus du concubin non marié ne sont pas automatiquement ressource légale pour aide sociale (BS)
+  - `adv_social_25` : LAI 87 al.3 période d'essai protégée — reprise partielle ne déclenche pas suppression immédiate rente AI ; LAI 28a rente par paliers (BE)
+  - `adv_entreprise_28` : CO 796/801 versements supplémentaires Sàrl imposables UNIQUEMENT si clause statutaire préalable — vote majoritaire seul insuffisant (VD)
+  - `adv_entreprise_29` : CO 333 achat fonds de commerce = reprise automatique de TOUS les contrats de travail avec ancienneté intacte (pas de base vierge) (GE)
+- **Distribution domaines** : bail 57, travail 57, dettes 53, famille 52, etrangers 46, voisinage 39, successions 34, consommation 32, circulation 31, assurances 33, social 25, sante 34, violence 28, accident 26, entreprise 29, hybride 21, fiscal 19
+- **Prochaine action** : wave 61 — continuer les domaines sous-représentés (hybride 21, fiscal 19, consommation 32, circulation 31) ou mesure éval CLI sur 610 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

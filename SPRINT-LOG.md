@@ -2037,3 +2037,27 @@ Points à surveiller :
   - `adv_entreprise_29` : CO 333 achat fonds de commerce = reprise automatique de TOUS les contrats de travail avec ancienneté intacte (pas de base vierge) (GE)
 - **Distribution domaines** : bail 57, travail 57, dettes 53, famille 52, etrangers 46, voisinage 39, successions 34, consommation 32, circulation 31, assurances 33, social 25, sante 34, violence 28, accident 26, entreprise 29, hybride 21, fiscal 19
 - **Prochaine action** : wave 61 — continuer les domaines sous-représentés (hybride 21, fiscal 19, consommation 32, circulation 31) ou mesure éval CLI sur 610 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+- **Distribution domaines (wave 60)** : bail 57, travail 57, dettes 53, famille 52, etrangers 46, voisinage 39, successions 34, consommation 32, circulation 31, assurances 33, social 25, sante 34, violence 28, accident 26, entreprise 29, hybride 21, fiscal 19
+
+### 2026-08-03 UTC — run agent horaire (wave 61 adversarial : 610→620 cas)
+- **Tenté** : item 1 — wave 61 : +10 cas adversariaux ciblant les domaines sous-représentés (fiscal×3, hybride×3, consommation×2, circulation×2)
+- **Résultat** : passed ✓ — **620 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID. Bug mineur corrigé en cours : guillemets non échappés dans notes `adv_circulation_32` → SyntaxError → fix immédiat.
+- **Commits** : à pousser
+- **Métriques** :
+  - CI subset `LEGAL_SAFE_MODE=0 LLM_MOCK=1` : **2728/2730 pass, 0 fail, 2 skip** ✓
+  - Validation fiches : 0 erreur ✓ (314/314, 100%)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60, avantage ×6.6)
+  - Mesure adversarial CLI : skip (`claude -p` indisponible dans sandbox)
+- **Nouveaux cas wave 61** (mythes juridiques distincts, écrits sans consulter le catalogue fiches) :
+  - `adv_fiscal_21` : LIA 21/23 impôt anticipé 35% sur dividendes = RESTITUABLE via déclaration fiscale pour résidents suisses — pas une taxe définitive (ZG)
+  - `adv_fiscal_22` : LIFD 26 al.1 lit.b déduction bureau à domicile exclue si employeur met un bureau à disposition — télétravail volontaire ne crée pas ce droit (AG)
+  - `adv_fiscal_23` : LPP 79b al.3 rachat 2e pilier + retrait capital dans les 3 ans = déduction fiscale annulée rétroactivement — pas une économie définitivement acquise (GE)
+  - `adv_hybride_22` : LP 93 al.1 saisie de salaire = seul l'excédent du minimum vital individuel saisissable — le loyer et l'assurance maladie font partie du minimum protégé (ZH)
+  - `adv_hybride_23` : CC 560 al.2 arriérés de pension alimentaire = dettes transmises aux héritiers du débiteur décédé — ne s'éteignent pas avec le décès (VS)
+  - `adv_hybride_24` : CO 257f al.3 + CO 259a bailleur obligé d'agir contre le locataire bruyant — inaction du bailleur = droit à réduction de loyer pour la victime (BE)
+  - `adv_consommation_33` : CO 40b + CO 40f billets d'avion et hôtels EXCLUS du droit de révocation 14j — la règle internet ne s'applique pas aux prestations à date fixe (ZH)
+  - `adv_consommation_34` : CO 210 al.1bis garantie légale 2 ans impérative distincte de la garantie commerciale d'un an — 14 mois = toujours dans la garantie légale (VD)
+  - `adv_circulation_32` : OCR 41b al.1 giratoires signalisés = priorité aux véhicules sur l'anneau — règle de priorité à droite LCR 36 non applicable (GE)
+  - `adv_circulation_33` : LCR 33 al.2 priorité absolue aux piétons sur passages non signalisés — pas de règle "premier arrivé", le piéton manifeste l'intention = le conducteur doit s'arrêter (NE)
+- **Distribution domaines** : bail 57, travail 57, dettes 53, famille 52, etrangers 46, voisinage 38, sante 34, consommation 33, successions 32, circulation 32, assurances 32, entreprise 29, violence 27, accident 26, social 25, hybride 24, fiscal 23
+- **Prochaine action** : wave 62 — domaines encore sous-représentés (social 25, accident 26, violence 27) ou mesure éval CLI sur 620 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

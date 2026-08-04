@@ -2065,7 +2065,7 @@ Points à surveiller :
 ### 2026-08-04 UTC — run agent horaire (wave 62 adversarial : 620→630 cas)
 - **Tenté** : item 1 — wave 62 : +10 cas adversariaux ciblant les domaines les plus sous-représentés (social×3, accident×3, violence×2, hybride×1, fiscal×1)
 - **Résultat** : passed ✓ — **630 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID. Fix mineur wave 61 : commit hash `b97af83` inséré dans SPRINT-LOG (précédemment noté "à pousser").
-- **Commits** : à pousser
+- **Commits** : `139de9c`
 - **Métriques** :
   - CI subset `LEGAL_SAFE_MODE=0 LLM_MOCK=1` : **2281/2345 pass, 18 fail pré-existants, 2 skip** ✓ (0 régression introduite — 18 échecs identiques avant et après changement)
   - Validation fiches : 0 erreur ✓ (314/314, 100%)

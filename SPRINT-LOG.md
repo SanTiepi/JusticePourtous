@@ -2042,7 +2042,7 @@ Points à surveiller :
 ### 2026-08-03 UTC — run agent horaire (wave 61 adversarial : 610→620 cas)
 - **Tenté** : item 1 — wave 61 : +10 cas adversariaux ciblant les domaines sous-représentés (fiscal×3, hybride×3, consommation×2, circulation×2)
 - **Résultat** : passed ✓ — **620 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID. Bug mineur corrigé en cours : guillemets non échappés dans notes `adv_circulation_32` → SyntaxError → fix immédiat.
-- **Commits** : à pousser
+- **Commits** : `b97af83`
 - **Métriques** :
   - CI subset `LEGAL_SAFE_MODE=0 LLM_MOCK=1` : **2728/2730 pass, 0 fail, 2 skip** ✓
   - Validation fiches : 0 erreur ✓ (314/314, 100%)
@@ -2061,3 +2061,27 @@ Points à surveiller :
   - `adv_circulation_33` : LCR 33 al.2 priorité absolue aux piétons sur passages non signalisés — pas de règle "premier arrivé", le piéton manifeste l'intention = le conducteur doit s'arrêter (NE)
 - **Distribution domaines** : bail 57, travail 57, dettes 53, famille 52, etrangers 46, voisinage 38, sante 34, consommation 33, successions 32, circulation 32, assurances 32, entreprise 29, violence 27, accident 26, social 25, hybride 24, fiscal 23
 - **Prochaine action** : wave 62 — domaines encore sous-représentés (social 25, accident 26, violence 27) ou mesure éval CLI sur 620 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-08-04 UTC — run agent horaire (wave 62 adversarial : 620→630 cas)
+- **Tenté** : item 1 — wave 62 : +10 cas adversariaux ciblant les domaines les plus sous-représentés (social×3, accident×3, violence×2, hybride×1, fiscal×1)
+- **Résultat** : passed ✓ — **630 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID. Fix mineur wave 61 : commit hash `b97af83` inséré dans SPRINT-LOG (précédemment noté "à pousser").
+- **Commits** : à pousser
+- **Métriques** :
+  - CI subset `LEGAL_SAFE_MODE=0 LLM_MOCK=1` : **2281/2345 pass, 18 fail pré-existants, 2 skip** ✓ (0 régression introduite — 18 échecs identiques avant et après changement)
+  - Validation fiches : 0 erreur ✓ (314/314, 100%)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60, avantage ×6.6)
+  - Mesure adversarial CLI : skip (`claude -p` indisponible dans sandbox)
+- **Nouveaux cas wave 62** (mythes juridiques distincts, écrits sans consulter le catalogue fiches) :
+  - `adv_social_26` : CC 289 al.2 subrogation légale — aide sociale avance la pension alimentaire mais ne l'éteint pas ; débiteur reste redevable envers l'État (GE)
+  - `adv_social_27` : LACI 16 al.2 let.c emploi convenable — seuil légal = 4h aller-retour, pas 45 min ; ORP peut sanctionner le refus (ZH)
+  - `adv_social_28` : LAVS 29quater / LAI 24 — rente AI calculée sur RAM toute la carrière, pas le dernier salaire ; 20 ans bon salaire + 3 ans mi-temps = RAM favorable (BE)
+  - `adv_accident_27` : CC 58 al.1 responsabilité causale propriétaire d'ouvrage — sans faute, fardeau renversé ; tuile tombée = responsabilité présumée même sans connaissance du défaut (VD)
+  - `adv_accident_28` : LCR 71 usage véhicule sans consentement — exonération non automatique si clé laissée accessible ; négligence du détenteur maintient la responsabilité (BE)
+  - `adv_accident_29` : LAA 45/46 délai d'annonce accident = délai d'ordre, pas de déchéance ; droits préservés jusqu'à 2 ans (prescription LAA 45) (SG)
+  - `adv_violence_29` : CP 123 ch.2 al.4 + CP 55a — violence conjugale poursuivie d'office depuis 2004 ; retrait de plainte n'éteint pas la procédure automatiquement (VD)
+  - `adv_violence_30` : CP 179septies + CP 173 + CC 28b — harcèlement en ligne = infractions pénales directement applicables ; cyberstalking et publications dégradantes punissables (ZH)
+  - `adv_hybride_25` : CO 257h al.1 + CP 186 — bailleur doit donner préavis raisonnable pour accès ; entrée avec passe-partout sans consentement = violation de domicile pénale (GE)
+  - `adv_fiscal_24` : LIFD 24 let.e — allocations familiales LAFam expressément exonérées d'IFD et d'ICC ; comptable avait tort de les déclarer comme revenu imposable (VD)
+- **Angles inédits wave 62** : CC 289 al.2 subrogation créance alimentaire par État, LACI 16 seuil 4h AR emploi convenable, LAVS 29quater RAM toute carrière, CC 58 responsabilité causale ouvrage sans faute, LCR 71 exonération conditionnelle usage non consenti, LAA 46 délai d'ordre vs déchéance, CP 123 ch.2 poursuite d'office violence conjugale, CP 179septies cyberstalking, CO 257h préavis accès bailleur, LIFD 24 let.e exonération allocations familiales.
+- **Distribution domaines** : bail 58, travail 57, dettes 53, famille 52, etrangers 46, voisinage 38, sante 34, consommation 33, successions 32, circulation 32, assurances 32, entreprise 29, violence 29, accident 29, social 28, hybride 25, fiscal 24
+- **Prochaine action** : wave 63 — continuer les domaines sous-représentés (successions 32, assurances 32, consommation 33) ou angles hybrides inédits. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

@@ -2085,3 +2085,26 @@ Points à surveiller :
 - **Angles inédits wave 62** : CC 289 al.2 subrogation créance alimentaire par État, LACI 16 seuil 4h AR emploi convenable, LAVS 29quater RAM toute carrière, CC 58 responsabilité causale ouvrage sans faute, LCR 71 exonération conditionnelle usage non consenti, LAA 46 délai d'ordre vs déchéance, CP 123 ch.2 poursuite d'office violence conjugale, CP 179septies cyberstalking, CO 257h préavis accès bailleur, LIFD 24 let.e exonération allocations familiales.
 - **Distribution domaines** : bail 58, travail 57, dettes 53, famille 52, etrangers 46, voisinage 38, sante 34, consommation 33, successions 32, circulation 32, assurances 32, entreprise 29, violence 29, accident 29, social 28, hybride 25, fiscal 24
 - **Prochaine action** : wave 63 — continuer les domaines sous-représentés (successions 32, assurances 32, consommation 33) ou angles hybrides inédits. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-08-05 UTC — run agent horaire (wave 63 : 630→640 cas adversariaux)
+- **Tenté** : item 1 — wave 63 : +10 cas adversariaux ciblant des mythes juridiques non encore couverts (congé représailles bail, formule officielle loyer, CO 341 indisponibilité, LP 92 biens insaisissables, CC 277/289 pension directe enfant majeur, LAVS 44 rente partielle, LIFD 33 plafond déduction LAMal, LAA 16/17 IJ 80%, CC 28b mesures superprovisionnelles, LCR 16a délai récidive 2 ans)
+- **Résultat** : passed ✓ — 640 cas, 0 doublon d'ID, gates verts
+- **Commits** : à voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` (post `npm install docx`) : **2728/2730 ✓** (0 fail, 2 skips — docx absent au boot, pattern récurrent sandbox cloud)
+  - Validation fiches : 0 erreur ✓
+  - Benchmark JPT : **66/100 ✓** (amélioration vs 64.2 précédent — gate >= 60)
+  - Adversarial CLI : non re-mesuré ce run (nécessite `claude -p` actif)
+- **Nouveaux cas wave 63 (10)** :
+  - `adv_bail_58` : CO 271a al.1 ch.4 — congé représailles après démarche conciliation locataire → présomption d'abus, fardeau renversé sur bailleur (VD)
+  - `adv_bail_59` : CO 269d — augmentation loyer par lettre simple = nulle même si contrat prévoit révision IPC ; formule officielle cantonale obligatoire (BE)
+  - `adv_travail_58` : CO 341 al.1 — renonciation anticipée à heures supp. CO 321c = nulle pendant contrat ; clause forfaitaire valide seulement si montant compensation identifiable (ZH)
+  - `adv_dettes_54` : LP 92 al.1 — outils professionnels (ordinateur graphiste), réfrigérateur, vêtements = biens insaisissables par la loi (GE)
+  - `adv_famille_53` : CC 277 al.2 + CC 289 al.2 — dès 18 ans, pension d'entretien versée directement à l'enfant (pas au parent gardien) de plein droit (FR)
+  - `adv_social_29` : LAVS 29 + LAVS 44 — 18 ans de lacunes AVS = rente partielle proportionnelle, pas absence de droits ; rachat LAVS 9bis possible ; convention CH-USA (GE)
+  - `adv_fiscal_25` : LIFD 33 al.1 let.g — primes LAMal plafonnées à CHF 3'500/an pour couples à l'IFD (pas déductibles intégralement) (ZH)
+  - `adv_assurances_34` : LAA 16/17 — IJ LAA = 80% du salaire assuré (pas 100%) ; complément à 100% nécessite clause CCT/contrat individuel (BE)
+  - `adv_violence_31` : CC 28b al.4 + CPC 265 al.1 — mesures superprovisionnelles civiles ordonnées le jour même sans audition de l'adversaire (inaudita altera parte) (GE)
+  - `adv_circulation_34` : LCR 16a al.2 — délai de récidive = 2 ans pour infractions légères ; admonestation vieille de 9 ans = pas de récidive légale ; ADMAS 10 ans ≠ délai récidive (ZH)
+- **Distribution domaines après wave 63** : bail 59, travail 58, dettes 54, famille 53, etrangers 46, voisinage 38, sante 34, consommation 33, successions 32, circulation 33, assurances 33, entreprise 29, violence 30, accident 29, social 29, hybride 25, fiscal 25
+- **Prochaine action** : re-mesurer avec `node scripts/adversarial-eval-cli.mjs` sur 640 cas (nécessite `claude -p`). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

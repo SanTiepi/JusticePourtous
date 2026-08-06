@@ -2108,3 +2108,27 @@ Points à surveiller :
   - `adv_circulation_34` : LCR 16a al.2 — délai de récidive = 2 ans pour infractions légères ; admonestation vieille de 9 ans = pas de récidive légale ; ADMAS 10 ans ≠ délai récidive (ZH)
 - **Distribution domaines après wave 63** : bail 59, travail 58, dettes 54, famille 53, etrangers 46, voisinage 38, sante 34, consommation 33, successions 32, circulation 33, assurances 33, entreprise 29, violence 30, accident 29, social 29, hybride 25, fiscal 25
 - **Prochaine action** : re-mesurer avec `node scripts/adversarial-eval-cli.mjs` sur 640 cas (nécessite `claude -p`). Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-08-06 UTC — run agent horaire (wave 64 adversarial : 640→650 cas)
+- **Tenté** : item 1 — wave 64 : +10 cas adversariaux ciblant les domaines les plus sous-représentés (fiscal×2, social×2, accident×2, entreprise×2, hybride×2)
+- **Résultat** : passed ✓ — **650 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID. Fix sandbox : `npm install docx` requis pour débloquer 448 tests supplémentaires (pattern récurrent — docx absent au boot cloud).
+- **Commits** : voir ci-dessous
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` (post `npm install docx`) : **2728/2730 pass, 0 fail, 2 skip** ✓
+  - Validation fiches : 0 erreur ✓ (314/314, 100%)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60, avantage ×6.6)
+  - Mesure adversarial CLI : skip (`claude -p` indisponible dans sandbox)
+- **Nouveaux cas wave 64** (mythes juridiques distincts, écrits sans consulter le catalogue fiches) :
+  - `adv_fiscal_26` : LTVA 10 al.2 let.a — seuil assujettissement TVA CHF 100'000 = CA MONDIAL (suisse + étranger) ; exports exonérés comptent quand même pour le seuil (GE)
+  - `adv_fiscal_27` : LIFD 12 al.3 — amendes fiscales du défunt ne se transmettent PAS aux héritiers ; seuls impôts + intérêts + frais de rappel (10 ans max) sont à payer (ZH)
+  - `adv_social_30` : LACI 30 al.1 let.a — démission sans raison valable = suspension temporaire 31-60 jours (pas perte définitive des droits) ; harcèlement documenté = raison valable (BE)
+  - `adv_social_31` : LAVS 10 al.1 — retraite anticipée ≠ fin des cotisations AVS ; personnes sans activité lucrative cotisent jusqu'à l'âge légal selon fortune/rentes (VD)
+  - `adv_accident_30` : LCR 74 al.2 + OFG — conducteur non assuré : Fonds de garantie pour véhicules à moteur couvre les victimes pour dommages corporels (BS)
+  - `adv_accident_31` : LAA 10 al.1 — accidents non professionnels couverts par la LAA SANS restriction géographique ; accident de vacances à l'étranger = LAA, pas LAMal (SO)
+  - `adv_entreprise_30` : CO 786 al.1 — cession parts sociales Sàrl soumise par défaut à approbation assemblée des associés ; blocage légal possible par les autres associés (GE)
+  - `adv_entreprise_31` : CO 810 al.2 — 6 compétences inaliénables de la gérance Sàrl (haute direction, comptabilité, rapport gestion...) ; ne peuvent être déléguées à un directeur externe (VD)
+  - `adv_hybride_26` : LPP 19/20a — rente de survivant LPP = droit propre du conjoint hors succession CC ; testament excluant le conjoint ne peut pas supprimer les droits LPP (ZH)
+  - `adv_hybride_27` : CP 169 + LP 97/98 — soustraire des biens saisis laissés en garde chez le débiteur = infraction pénale 3 ans max ; possession physique ≠ droit d'aliéner (BE)
+- **Angles inédits wave 64** : LTVA 10 seuil CA mondial, LIFD 12 al.3 amendes fiscales non transmissibles, LACI 30 suspension temporaire vs. perte définitive, LAVS 10 cotisations sans activité lucrative, LCR 74 Fonds de garantie véhicules, LAA 10 portée mondiale ANP, CO 786 approbation cession parts Sàrl, CO 810 al.2 compétences inaliénables gérance, LPP 19/20a droits LPP hors succession, CP 169 soustraction biens saisis.
+- **Distribution domaines** : bail 59, travail 58, dettes 54, famille 53, etrangers 46, voisinage 39, sante 34, consommation 34, successions 33, circulation 34, assurances 34, entreprise 31, violence 31, accident 31, social 31, hybride 27, fiscal 27
+- **Prochaine action** : wave 65 — domaines encore sous-représentés (hybride 27, fiscal 27) ou mesure éval CLI sur 650 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

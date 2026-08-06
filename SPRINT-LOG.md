@@ -13,13 +13,19 @@ Mesure adversarial : via `claude -p` CLI (abonnement Max), PAS via ANTHROPIC_API
 
 - [ ] `test/adversarial-cases.mjs` : 40 cas (20 existants + 20 nouveaux, écrits **sans consulter** le dictionnaire de synonymes du retriever — sinon les cas testeraient le dico contre lui-même cf. session 2026-04-09)
 - [ ] Métrique LLM-first adversarial maintenue à >= 95% sur les 40 cas (avant le sprint : 97% sur 20 cas)
-- [ ] Pour chaque nouveau cas qui fail : entry dans `docs/missing-fiches.md` avec : `id`, `base_juridique`, `pourquoi_manquante`, `priorité`. **PAS de création de fiche réelle** (`src/data/fiches/*.md`) — validation juridique humaine requise, hors scope autonomous.
+- [ ] Pour chaque nouveau cas qui fail : entry dans `docs/missing-fiches.md` avec : `id`, `base_juridique`, `pourquoi_manquante`, `priorité`. **PAS de création de fiche réelle** (`src/data/fiches/*.json`) — validation juridique humaine requise, hors scope autonomous.
 - [ ] Benchmark JPT (`node scripts/benchmark-vs-llm-brut.mjs`) score >= 60 (CI gate non régressé)
 - [ ] Cette SPRINT-LOG.md mis à jour à chaque run
 
 ## Garde-fous spécifiques JusticePourtous
 
-- ❌ JAMAIS modifier `src/data/fiches/*.md` (contenu juridique = validation humaine obligatoire)
+- ❌ JAMAIS modifier `src/data/fiches/*.json` (contenu juridique = validation humaine obligatoire)
+  > Corrigé le 2026-08-06 : cette ligne visait `*.md`. Le dossier contient **15 fichiers `.json`**
+  > (`accident.json`, `bail.json`, `circulation.json`…) et **aucun `.md`** — le garde-fou ne
+  > protégeait donc rien, pendant que les vraies fiches juridiques étaient à découvert. Un garde-fou
+  > qui ne peut pas se déclencher est pire qu'aucun : il fait croire que la protection existe.
+  > ⚠ À noter : ce garde-fou ne vit que dans ce journal de sprint (terminé). Sa place est
+  > `CLAUDE.md`, lu à chaque session — déplacement non fait ici, hors périmètre.
 - ❌ JAMAIS modifier `src/services/llm-navigator.mjs` sans rerun complet adversarial harness avant push (c'est le chemin prod, régression silencieuse = boîte noire)
 - ❌ JAMAIS modifier les golden cases — ils saturent volontairement, on étend l'adversarial à la place
 - ❌ JAMAIS commit/push si `node scripts/benchmark-vs-llm-brut.mjs` retourne score < 60

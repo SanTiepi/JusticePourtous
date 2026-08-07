@@ -2138,3 +2138,27 @@ Points à surveiller :
 - **Angles inédits wave 64** : LTVA 10 seuil CA mondial, LIFD 12 al.3 amendes fiscales non transmissibles, LACI 30 suspension temporaire vs. perte définitive, LAVS 10 cotisations sans activité lucrative, LCR 74 Fonds de garantie véhicules, LAA 10 portée mondiale ANP, CO 786 approbation cession parts Sàrl, CO 810 al.2 compétences inaliénables gérance, LPP 19/20a droits LPP hors succession, CP 169 soustraction biens saisis.
 - **Distribution domaines** : bail 59, travail 58, dettes 54, famille 53, etrangers 46, voisinage 39, sante 34, consommation 34, successions 33, circulation 34, assurances 34, entreprise 31, violence 31, accident 31, social 31, hybride 27, fiscal 27
 - **Prochaine action** : wave 65 — domaines encore sous-représentés (hybride 27, fiscal 27) ou mesure éval CLI sur 650 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-08-07 UTC — run agent horaire (wave 65 adversarial : 650→660 cas)
+- **Tenté** : item 1 — wave 65 : +10 cas adversariaux ciblant les domaines les plus sous-représentés (fiscal×3, hybride×3, social×2, accident×1, entreprise×1)
+- **Résultat** : passed ✓ — **660 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID. Fix sandbox : `npm install docx` requis (pattern récurrent — docx absent au boot cloud).
+- **Commits** : `6c4e922`
+- **Métriques** :
+  - CI subset `LLM_MOCK=1` (post `npm install docx`) : **2728/2730 pass, 0 fail, 2 skip** ✓
+  - Validation fiches : 0 erreur ✓ (314/314, 100%)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60, avantage ×6.6)
+  - Mesure adversarial CLI : skip (`claude -p` indisponible dans sandbox)
+- **Nouveaux cas wave 65** (mythes juridiques distincts, écrits sans consulter le catalogue fiches) :
+  - `adv_fiscal_28` : LIFD 24 let.a — successions et donations exonérées de l'IFD fédéral ; le fiduciaire confondait impôt sur le revenu futur et impôt sur l'héritage (GE)
+  - `adv_fiscal_29` : LIFD 33 al.1 let.j — reconversion professionnelle déductible jusqu'à CHF 12'900 depuis la réforme 2016, même vers un autre secteur (BE)
+  - `adv_fiscal_30` : LIFD 37a — versements en capital LPP/pilier 3a imposés SÉPARÉMENT à 1/5 du barème, pas au taux marginal du contribuable (ZH)
+  - `adv_hybride_28` : CO 259g — consignation du loyer auprès de l'autorité = voie légale ; rétention unilatérale = résiliation possible par le bailleur (CO 257d) (GE)
+  - `adv_hybride_29` : CO 481 — bénéficiaire désigné dans une assurance-vie acquiert un droit propre hors succession ; testament du souscripteur ne peut pas annuler la désignation (VD)
+  - `adv_hybride_30` : CO 125 ch.2 + LP 92 — pension alimentaire d'enfants incompensable unilatéralement par le débiteur alimentaire (FR)
+  - `adv_social_32` : LACI 14 al.1 — congé maternité libère de l'obligation de cotiser 12 mois ; accès aux IC possible malgré seulement 6 mois cotisés (BE)
+  - `adv_social_33` : LAPG 16d — allocation maternité légale = 80% plafonné CHF 220/jour (APG) ; complément à 100% = CCT/contrat, pas obligation légale minimale (ZH)
+  - `adv_accident_32` : LAA 37/38 — faute grave (ivresse) = réduction max 50% des IJ/rentes ; traitement médical toujours intégralement couvert, jamais refusable (SO)
+  - `adv_entreprise_32` : CO 731b — SA sans administrateur expose à procédure judiciaire et dissolution ; pas une simple irregularité formelle tolérable (GE)
+- **Angles inédits wave 65** : LIFD 24 exonération IFD successions, LIFD 33 al.1 let.j reconversion 2016, LIFD 37a imposition séparée 1/5 barème, CO 259g consignation vs rétention, CO 481 bénéficiaire assurance-vie hors succession, CO 125 ch.2 incompensabilité aliments, LACI 14 libération obligation cotiser maternité, LAPG 16d 80% + plafond CHF 220, LAA 37/38 réduction partielle jamais totale, CO 731b dissolution judiciaire carence organes SA.
+- **Distribution domaines** : bail 60, travail 58, dettes 54, famille 54, etrangers 46, voisinage 39, sante 34, consommation 34, successions 33, circulation 34, assurances 35, entreprise 32, violence 31, accident 32, social 33, hybride 30, fiscal 30
+- **Prochaine action** : wave 66 — domaines sous-représentés (voisinage 39, successions 33, violence 31) ou mesure éval CLI sur 660 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

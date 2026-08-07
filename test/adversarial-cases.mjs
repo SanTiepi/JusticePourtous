@@ -6555,6 +6555,106 @@ export const ADVERSARIAL_CASES = [
     notes: "Soustraction de biens saisis laissés chez le débiteur = infraction pénale CP 169. LP 97 al.1 : lors de la saisie, l'officier dresse un inventaire des biens saisis. LP 98 al.1 : si les biens saisis sont laissés en possession du débiteur, celui-ci en devient le GARDIEN responsable de leur conservation. LP 97 al.2 : tout acte d'aliénation des biens saisis est NUL. CP 169 al.1 : celui qui soustrait à un créancier des valeurs patrimoniales, notamment en les aliénant, dissimulant ou rendant inaccessibles, alors qu'une poursuite est engagée contre lui, est puni d'une peine privative de liberté de 3 ans au plus ou d'une peine pécuniaire. CONSÉQUENCE : prêter, vendre ou cacher un bien saisi constitue CP 169 même si le bien reste physiquement chez le débiteur. La propriété formelle conservée par le débiteur ne lui confère pas le droit d'aliéner les biens saisis. VOIE LÉGALE : si le véhicule est nécessaire à l'activité professionnelle, le débiteur peut contester la saisie au motif de l'insaisissabilité LP 92 al.1 — mais DEVANT L'OFFICE, pas par une action unilatérale. MYTHE : les biens saisis laissés à mon domicile restent sous ma pleine disposition — je peux les vendre ou prêter discrètement. Faux — CP 169 + LP 97/98 : soustraire des biens saisis, même laissés chez le débiteur, constitue une infraction pénale de 3 ans max. Signal adversarial = le débiteur confond possession physique avec droit d'aliéner, ignorant que CP 169 érige en infraction pénale grave toute soustraction de biens saisis.",
   },
 
+  // FISCAL — LIFD 24 let.a : successions et donations exonérées de l'IFD fédéral
+  {
+    id: 'adv_fiscal_28',
+    query: "Ma mère vient de décéder à Genève et je suis son héritier unique. La succession comprend CHF 800'000 (appartement + compte bancaire). Mon fiduciaire m'a dit que je dois prévoir environ CHF 80'000 d'impôt fédéral direct sur les CHF 800'000 reçus. Est-ce vraiment le cas ou y a-t-il une exonération pour les héritages ?",
+    canton: 'GE',
+    expected_domaine: 'fiscal',
+    expected_any_article: ['LIFD 24'],
+    notes: "Successions et donations exonérées de l'IFD fédéral. LIFD 24 let.a : sont exonérés de l'IFD les successions, les avances sur héritage et les donations reçues. PORTÉE : cette exonération est TOTALE au niveau fédéral — aucun impôt fédéral direct ne frappe la fortune reçue par héritage ou donation, quel que soit le montant. NIVEAU CANTONAL : GE applique un impôt successoral cantonal, mais entre parents directs (enfant d'un parent décédé), GE exonère également. MYTHE : recevoir un héritage de CHF 800'000 = impôt fédéral direct d'environ 10%. Faux — LIFD 24 let.a exonère expressément les successions de l'IFD. Signal adversarial = le fiduciaire confond impôt sur le revenu (applicable aux revenus futurs générés par l'héritage) avec impôt sur l'héritage lui-même (non soumis à l'IFD).",
+  },
+
+  // FISCAL — LIFD 33 al.1 let.j : reconversion professionnelle déductible jusqu'à CHF 12'900 même dans un autre domaine
+  {
+    id: 'adv_fiscal_29',
+    query: "Je travaille depuis 10 ans comme comptable à Berne. Cette année, j'ai décidé de me reconvertir dans l'informatique et j'ai suivi une formation de CHF 9'500 en développement web. Mon conseiller fiscal m'a dit que ces frais ne sont déductibles que si la formation est dans le même domaine professionnel que mon activité actuelle — une reconversion vers un autre secteur n'est jamais déductible. A-t-il raison ?",
+    canton: 'BE',
+    expected_domaine: 'fiscal',
+    expected_any_article: ['LIFD 33'],
+    notes: "Reconversion professionnelle — frais déductibles depuis la réforme 2016. LIFD 33 al.1 let.j (en vigueur depuis 1er janvier 2016) : les frais de formation et de perfectionnement en vue de l'exercice d'une activité lucrative sont déductibles jusqu'à CHF 12'900 par an (montant 2024). PORTÉE LARGE : cette disposition s'applique aussi bien au perfectionnement dans le domaine actuel qu'à la reconversion professionnelle dans un autre secteur. CONDITION : la formation doit avoir un rapport avec une activité lucrative future (pas une formation purement de loisir). AVANT 2016 : seul le perfectionnement dans l'activité actuelle était déductible — la réforme a expressément étendu la déduction à la reconversion. MYTHE : seule la formation dans le même domaine professionnel est déductible — une reconversion vers un autre secteur n'ouvre pas droit à déduction. Faux — LIFD 33 al.1 let.j (depuis 2016) : la reconversion dans un autre domaine est explicitement couverte par la déduction formation jusqu'à CHF 12'900. Signal adversarial = le conseiller fiscal applique l'ancienne règle pré-2016 qui limitait la déduction au perfectionnement dans l'activité actuelle.",
+  },
+
+  // FISCAL — LIFD 37a : imposition séparée des versements en capital de prévoyance à taux réduit
+  {
+    id: 'adv_fiscal_30',
+    query: "Je pars à la retraite à Zurich et je vais percevoir CHF 350'000 de capital depuis ma caisse de pension (2e pilier) + CHF 85'000 de mon pilier 3a. Mon conseiller fiscal m'a averti que ces CHF 435'000 s'ajouteront à mon revenu de retraite et seront taxés à mon taux marginal — environ 34% cantonaux + fédéraux. Je serais imposé à CHF 147'900 sur ces retraits. Est-ce exact ?",
+    canton: 'ZH',
+    expected_domaine: 'fiscal',
+    expected_any_article: ['LIFD 37a'],
+    notes: "Imposition séparée des versements en capital de prévoyance (2e pilier et pilier 3a). LIFD 37a al.1 : les versements en capital provenant de la prévoyance professionnelle (LPP) et du pilier 3a sont imposés SÉPARÉMENT des autres revenus, à un taux réduit correspondant au 1/5 du barème ordinaire appliqué à la totalité du capital (non cumulé avec les autres revenus). LHID 11 al.3 : même règle au niveau cantonal. CONSÉQUENCE : le taux effectif d'imposition sur CHF 435'000 est calculé séparément — nettement inférieur au taux marginal du contribuable. Pour CHF 435'000 à ZH, l'impôt réel est environ 6-8% au lieu des 34% calculés sur le revenu marginal. MYTHE : les versements en capital 2e pilier et pilier 3a s'ajoutent aux revenus ordinaires et sont taxés au taux marginal du contribuable. Faux — LIFD 37a : imposition SÉPARÉE à taux réduit (1/5 du barème). Signal adversarial = le conseiller fiscal cumule les revenus et le capital de prévoyance, ignorant la règle de l'imposition séparée.",
+  },
+
+  // HYBRIDE (bail/procédure) — CO 259g : consignation du loyer = voie légale quand bailleur ne répare pas un défaut
+  {
+    id: 'adv_hybride_28',
+    query: "Mon appartement à Genève a des moisissures importantes depuis 3 mois. J'ai informé le bailleur par écrit deux fois, aucune réparation n'a été faite. Un ami me conseille de simplement arrêter de payer le loyer jusqu'à ce que le bailleur répare. Un autre ami dit que je dois déposer le loyer à la banque. Quelle est la bonne procédure légale ?",
+    canton: 'GE',
+    expected_domaine: 'bail',
+    expected_any_article: ['CO 259g'],
+    notes: "Consignation du loyer — voie légale pour forcer la réparation d'un défaut. CO 259a al.1 : le locataire peut exiger du bailleur la suppression d'un défaut de la chose louée. CO 259g al.1 : si le bailleur refuse ou néglige de remédier au défaut, le locataire peut consigner les loyers auprès d'un office désigné par le canton après avoir mis le bailleur en demeure. CO 259g al.2 : la consignation suspend l'obligation de payer le loyer au bailleur — le montant reste bloqué en attente de résolution. PROCÉDURE : 1) mise en demeure écrite au bailleur avec délai raisonnable (10-15 jours), 2) consignation des loyers auprès de l'Office du logement cantonal ou autorité désignée. DIFFÉRENCE CRITIQUE : simplement refuser de payer sans consignation = manquement au contrat ouvrant droit au bailleur de résilier le bail (CO 257d). MYTHE : quand le bailleur ne répare pas, le locataire peut simplement arrêter de payer jusqu'à résolution. Faux — CO 259g : la voie légale est la CONSIGNATION auprès de l'autorité, pas la rétention unilatérale. Signal adversarial = la distinction entre rétention illégale du loyer (expose à l'expulsion) et consignation légale (protège le locataire) est méconnue mais cruciale.",
+  },
+
+  // HYBRIDE (assurances/successions) — CO 481 : bénéficiaire désigné dans une assurance-vie acquiert un droit propre hors succession
+  {
+    id: 'adv_hybride_29',
+    query: "J'ai une assurance-vie pilier 3b auprès d'une compagnie privée valant CHF 120'000, avec ma compagne non mariée désignée comme bénéficiaire dans la police. Je viens de rédiger un testament où je laisse TOUT à mes enfants. Ma notaire me dit que le testament prime sur tout et que les CHF 120'000 feront partie de la succession à répartir entre mes enfants. Ma compagne ne pourra rien toucher. Est-ce correct ?",
+    canton: 'VD',
+    expected_domaine: 'assurances',
+    expected_any_article: ['CO 481'],
+    notes: "Désignation de bénéficiaire assurance-vie — droit propre hors succession. CO 481 al.1 : lorsqu'une assurance sur la vie prévoit un versement au décès de l'assuré en faveur d'un bénéficiaire désigné, ce bénéficiaire acquiert un droit direct à la prestation contre l'assureur. CO 481 al.2 : cette prestation ne fait PAS partie de la succession de l'assuré — elle passe directement au bénéficiaire désigné, indépendamment du testament et des règles successorales CC. TESTAMENT : le testament du souscripteur ne peut pas modifier la désignation de bénéficiaire dans la police — pour changer le bénéficiaire, il faut modifier la police directement auprès de l'assureur. LIMITE : si la prestation dépasse notablement le but de prévoyance, la partie excédentaire peut être soumise aux règles d'imputation sur les réserves CC (jurisprudence ATF). MYTHE : le testament prime sur toutes les dispositions patrimoniales — une désignation de bénéficiaire dans une assurance-vie peut être annulée par testament. Faux — CO 481 : le bénéficiaire d'une police d'assurance-vie acquiert un droit propre direct contre l'assureur, hors succession. Signal adversarial = la notaire confond dispositions testamentaires (CC 498 ss) avec désignation de bénéficiaire dans une police d'assurance (CO 481), deux régimes totalement distincts.",
+  },
+
+  // HYBRIDE (dettes/famille) — CO 125 ch.2 + LP 92 : pension alimentaire insaisissable et incompensable unilatéralement
+  {
+    id: 'adv_hybride_30',
+    query: "Mon ex-conjoint me doit CHF 18'000 de pensions alimentaires arriérées pour nos enfants, prononcées par jugement. Par ailleurs, j'ai emprunté CHF 15'000 à mon ex-conjoint avant notre divorce pour rénover la cuisine, dette non remboursée. Mon ex-conjoint veut faire une compensation : il me paierait seulement CHF 3'000 au lieu de CHF 18'000. Il dit que la compensation est un principe fondamental du droit des obligations. Est-ce que cette compensation est légalement possible ?",
+    canton: 'FR',
+    expected_domaine: 'famille',
+    expected_any_article: ['CO 125', 'LP 92'],
+    notes: "Pension alimentaire incompensable unilatéralement. CO 120 : la compensation est possible en principe lorsque deux personnes sont réciproquement débitrices l'une de l'autre. CO 125 ch.2 : toutefois, les créances dont la nature spéciale exige le paiement effectif au créancier — notamment les créances alimentaires — ne peuvent être éteintes par compensation si cela prive le créancier des moyens nécessaires à son entretien ou à celui de sa famille. LP 92 al.1 ch.2 : les pensions alimentaires courantes sont insaisissables jusqu'à concurrence du minimum vital. JURISPRUDENCE ATF : le TF a confirmé que les pensions alimentaires d'enfants — destinées à couvrir leurs besoins vitaux — ne peuvent pas être éteintes par compensation unilatérale imposée par le débiteur. COMPENSATION VOLONTAIRE : si le créancier (bénéficiaire des aliments) accepte expressément la compensation, ce n'est pas interdit — c'est seulement la compensation imposée unilatéralement par le débiteur qui est illicite. MYTHE : la compensation est un droit général applicable à toute créance réciproque — mon ex peut légalement compenser les pensions dues avec la dette de prêt. Faux — CO 125 ch.2 : les créances alimentaires d'enfants ne peuvent pas être éteintes par compensation unilatérale du débiteur. Signal adversarial = l'ex-conjoint applique le principe général de la compensation (CO 120) sans connaître l'exception protégeant les créances alimentaires.",
+  },
+
+  // SOCIAL — LACI 14 al.1 : libération de l'obligation de cotiser après maternité
+  {
+    id: 'adv_social_32',
+    query: "Je viens de terminer un congé maternité de 14 semaines puis j'ai été licenciée par mon employeur à Berne. Avant la maternité, je travaillais depuis seulement 6 mois dans cette entreprise. Mon ORP me dit que je n'ai pas droit aux indemnités de chômage car je n'ai pas les 12 mois de cotisation requis dans les 2 dernières années. Est-ce exact pour quelqu'un qui sort de maternité ?",
+    canton: 'BE',
+    expected_domaine: 'social',
+    expected_any_article: ['LACI 14'],
+    notes: "Libération de l'obligation de cotiser pour les personnes sortant de maternité. LACI 8 al.1 let.e : pour avoir droit aux indemnités de chômage, l'assuré doit avoir cotisé pendant au moins 12 mois dans le délai-cadre de cotisation (les 2 ans précédant l'inscription). LACI 14 al.1 : sont libérées de l'obligation de cotiser les personnes qui, pendant le délai-cadre, n'ont pas pu travailler pour cause de maternité (entre autres). CONSÉQUENCE : la période de maternité (APG) compte comme période de cotisation fictive — la jeune mère n'a pas à justifier des 12 mois réels de cotisation si elle était en congé maternité. DÉLAI-CADRE ÉTENDU : le délai-cadre peut être étendu de 2 à 4 ans pour les personnes libérées (LACI 9 al.3). MYTHE : une personne ayant moins de 12 mois de cotisations effectives n'a jamais droit aux indemnités chômage. Faux — LACI 14 : la maternité libère de l'obligation de cotiser et ouvre quand même droit aux indemnités. Signal adversarial = l'ORP applique la règle générale des 12 mois sans appliquer l'exception LACI 14 al.1 pour la maternité.",
+  },
+
+  // SOCIAL — LAPG 16b/16d : allocation maternité = 80% du revenu plafonnée, pas 100% imposé à l'employeur
+  {
+    id: 'adv_social_33',
+    query: "Je suis enceinte et mon employeur à Zurich m'a dit que pendant mon congé maternité de 14 semaines, il ne me versera que 80% de mon salaire habituel. Mes collègues m'ont dit que la loi oblige l'employeur à verser 100% du salaire pendant toute la durée du congé maternité légal. Le RH dit que l'allocation légale n'est que 80% et qu'il ne doit pas compléter. Qui a raison ?",
+    canton: 'ZH',
+    expected_domaine: 'social',
+    expected_any_article: ['LAPG 16b', 'CO 324a'],
+    notes: "Allocation maternité APG : 80% du revenu plafonnée — complément à 100% selon contrat/CCT, pas obligation légale minimale. LAPG 16b al.1 : les femmes salariées ont droit à 14 semaines (98 jours) d'allocation de maternité. LAPG 16d al.1 : l'allocation de maternité est fixée à 80% du revenu moyen de l'activité lucrative avant l'accouchement, plafonné à CHF 220 par jour (2024). VERSEMENT : l'APG maternité est versée par la caisse de compensation AVS — l'employeur avance et se fait rembourser. CO 324a : l'employeur doit verser le salaire en cas d'empêchement non fautif — mais uniquement pour les premières semaines selon ancienneté (échelle bernoise/zurichoise), pas 14 semaines automatiques à 100%. COMPLÉMENT CONTRACTUEL : certains CCT ou contrats individuels prévoient un complément à 100% — c'est une obligation contractuelle, pas légale minimale. MYTHE : l'employeur doit légalement verser 100% du salaire pendant les 14 semaines de congé maternité. Faux — LAPG 16d : l'allocation légale est 80% plafonnée à CHF 220/jour ; le complément à 100% dépend du contrat ou de la CCT applicable. Signal adversarial = les collègues confondent une pratique contractuelle courante (complément à 100% via CCT) avec l'obligation légale minimale (APG 80%).",
+  },
+
+  // ACCIDENT — LAA 37/38 : faute grave = réduction des prestations en espèces (max 50%), jamais refus du traitement médical
+  {
+    id: 'adv_accident_32',
+    query: "J'ai eu un grave accident de moto à Soleure en conduisant sous l'influence de l'alcool (0.92 pour mille). Je suis hospitalisé avec des fractures sérieuses. Mon assureur LAA m'a envoyé un courrier annonçant que, en raison de ma faute grave (ivresse au volant), il refusera de couvrir l'intégralité de mes frais médicaux et mon incapacité de travail. Est-ce légalement possible de refuser TOUTES les prestations LAA pour faute grave ?",
+    canton: 'SO',
+    expected_domaine: 'accident',
+    expected_any_article: ['LAA 37', 'LAA 38'],
+    notes: "Faute grave LAA — réduction possible des prestations en espèces mais jamais refus du traitement médical. LAA 37 al.2 : si l'assuré a provoqué l'accident par une faute grave (négligence grave, y compris ivresse), l'assureur peut réduire les rentes et les indemnités journalières. LAA 38 al.1 : réduction maximale pour accidents non professionnels avec faute grave = 50% des IJ et rentes. LIMITES ABSOLUES : la réduction ne s'applique PAS aux soins médicaux. LAA 10 al.1 : le traitement médical est toujours couvert — un assureur LAA ne peut jamais refuser la prise en charge des frais médicaux et hospitaliers, même pour faute grave. DISTINCTION : prestations en espèces (IJ, rentes) = réductibles jusqu'à 50% ; prestations en nature (traitement médical, hospitalisation, médicaments) = jamais réductibles. MYTHE : une faute grave (ivresse) permet à l'assureur LAA de refuser TOUTES ses prestations, y compris le traitement médical. Faux — LAA 37/38 : seules les prestations en espèces peuvent être réduites (max 50% pour ANP) ; le traitement médical reste intégralement couvert. Signal adversarial = le courrier de l'assureur menace d'un refus total qui serait illégal — la réduction partielle des IJ est la seule sanction possible.",
+  },
+
+  // ENTREPRISE — CO 731b : SA sans organes requis — tribunal peut ordonner dissolution ou nommer commissaire
+  {
+    id: 'adv_entreprise_32',
+    query: "Notre SA genevoise de 3 actionnaires est dans l'impasse : notre unique administrateur a démissionné il y a 4 mois et nous ne trouvons pas de remplaçant. La SA n'a plus de conseil d'administration valablement constitué. Mon fiduciaire dit que ce n'est pas grave, que la SA peut fonctionner provisoirement sans administrateur tant qu'on ne fait pas d'actes importants. Est-ce exact ?",
+    canton: 'GE',
+    expected_domaine: 'entreprise',
+    expected_any_article: ['CO 731b'],
+    notes: "Carence d'organes SA — risque de dissolution judiciaire. CO 698 al.2 ch.2 : le conseil d'administration est un organe obligatoire de toute SA. CO 731b al.1 : si une SA ne dispose plus des organes prescrits par la loi, un actionnaire, un créancier ou le registre du commerce peut requérir du tribunal les mesures nécessaires. CO 731b al.2 : ces mesures peuvent inclure la fixation d'un délai pour régulariser, la nomination d'un organe par le tribunal, ou la désignation d'un commissaire liquidateur. CO 731b al.3 : si la carence n'est pas résolue dans le délai, le tribunal peut prononcer la dissolution de la SA. REGISTRE DU COMMERCE : le RC peut signaler la carence d'office et déclencher la procédure sans demande d'un actionnaire. MYTHE : une SA peut fonctionner provisoirement sans administrateur si les actionnaires évitent les actes importants — la carence est une irregularité formelle mineure sans conséquence immédiate. Faux — CO 731b : la carence d'organes expose la SA à une procédure judiciaire immédiate pouvant aboutir à sa dissolution. Signal adversarial = le fiduciaire sous-estime la gravité juridique de l'absence d'administrateur, ignorant CO 731b qui permet la dissolution judiciaire sur demande de tout intéressé.",
+  },
+
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

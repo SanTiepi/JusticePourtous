@@ -6655,6 +6655,108 @@ export const ADVERSARIAL_CASES = [
     notes: "Carence d'organes SA — risque de dissolution judiciaire. CO 698 al.2 ch.2 : le conseil d'administration est un organe obligatoire de toute SA. CO 731b al.1 : si une SA ne dispose plus des organes prescrits par la loi, un actionnaire, un créancier ou le registre du commerce peut requérir du tribunal les mesures nécessaires. CO 731b al.2 : ces mesures peuvent inclure la fixation d'un délai pour régulariser, la nomination d'un organe par le tribunal, ou la désignation d'un commissaire liquidateur. CO 731b al.3 : si la carence n'est pas résolue dans le délai, le tribunal peut prononcer la dissolution de la SA. REGISTRE DU COMMERCE : le RC peut signaler la carence d'office et déclencher la procédure sans demande d'un actionnaire. MYTHE : une SA peut fonctionner provisoirement sans administrateur si les actionnaires évitent les actes importants — la carence est une irregularité formelle mineure sans conséquence immédiate. Faux — CO 731b : la carence d'organes expose la SA à une procédure judiciaire immédiate pouvant aboutir à sa dissolution. Signal adversarial = le fiduciaire sous-estime la gravité juridique de l'absence d'administrateur, ignorant CO 731b qui permet la dissolution judiciaire sur demande de tout intéressé.",
   },
 
+  // === WAVE 66 — social×4, accident×2, violence×2, fiscal×2 ===
+
+  // SOCIAL — Cst 12 : droit à l'aide d'urgence inconditionnel même pour déboutés asile
+  {
+    id: 'adv_social_34',
+    query: "Je suis ressortissant érythréen débouté de ma demande d'asile à Bâle. Mon permis N est échu depuis 2 mois et j'attends l'exécution de mon renvoi. Je n'ai plus d'argent, pas de logement et je souffre d'une infection qui nécessite des médicaments. Le foyer d'hébergement d'urgence m'a dit qu'ils ne peuvent rien faire car je suis débouté. L'aide sociale est-elle accessible pour quelqu'un dans ma situation ?",
+    canton: 'BS',
+    expected_domaine: 'social',
+    expected_any_article: ['Cst 12'],
+    notes: "Droit à l'aide d'urgence — inconditionnel même pour personnes déboutées de l'asile. Cst 12 : quiconque est dans une situation de détresse et n'est pas en mesure de subvenir à ses besoins a droit, à titre d'aide d'urgence notamment, à de l'aide et à des soins indispensables. INCONDITIONNEL : ce droit constitutionnel est absolu — il ne peut être subordonné ni à la régularité du séjour ni à la nationalité. ATF 131 I 166 : le TF a confirmé que même les personnes déboutées de l'asile ont droit à l'aide d'urgence au titre de Cst 12 — leur renvoi non encore exécuté ne supprime pas ce droit. AIDE D'URGENCE ≠ AIDE SOCIALE : l'aide d'urgence (Nothilfe) est une prestation minimale (logement, alimentation, soins de santé urgents) distincte de l'aide sociale ordinaire — elle est accordée même après la fin du droit à l'aide sociale. MYTHE : un débouté de l'asile sans statut légal n'a droit à aucune aide publique en Suisse. Faux — Cst 12 : l'aide d'urgence est un droit fondamental absolu, sans condition de séjour. Signal adversarial = le foyer répond en termes de droit des étrangers (permis échu) sans connaître le droit constitutionnel à l'aide d'urgence.",
+  },
+
+  // SOCIAL — LAI 17 : révision de rente AI — amélioration de l'état de santé
+  {
+    id: 'adv_social_35',
+    query: "Je perçois une rente entière AI depuis 6 ans à Lucerne suite à une dépression sévère. L'office AI m'a convoqué pour une révision d'office car mon médecin psychiatre a signalé une amélioration notable dans les deux dernières années. L'office veut réduire ma rente à une demi-rente. Mon assistante sociale me dit qu'une rente AI accordée depuis plus de 5 ans ne peut plus être réduite — il existerait une 'règle de protection' passé un certain délai. Est-ce vrai ?",
+    canton: 'LU',
+    expected_domaine: 'social',
+    expected_any_article: ['LAI 17'],
+    notes: "Révision de rente AI pour amélioration de l'état de santé — pas de 'règle de protection' basée sur la durée. LAI 17 al.1 : si le taux d'invalidité de l'assuré subit une modification notable, la rente est, d'office ou sur demande, augmentée, réduite ou supprimée pour l'avenir. RÉVISION D'OFFICE : l'AI procède périodiquement à des révisions de rente (tous les 3-5 ans environ) sans délai d'immuabilité. PAS DE PROTECTION TEMPORELLE : il n'existe aucune règle légale protégeant une rente accordée depuis plus de 5 ans contre toute réduction — la durée d'octroi ne crée pas d'immunité. CONDITION DE RÉVISION : le changement de taux d'invalidité doit être notable et durable (pas une simple amélioration passagère). DÉLAI D'ATTENTE POUR EXÉCUTION : la réduction prend effet au plus tôt 3 mois après que l'AI a informé l'assuré (LAI 88a). MYTHE : une rente AI accordée depuis plus de 5 ans est protégée contre toute réduction. Faux — LAI 17 : toute amélioration notable et durable de l'état de santé peut entraîner une réduction, quel que soit le temps écoulé depuis l'octroi. Signal adversarial = l'assistante sociale invente une 'règle de protection' inexistante en droit fédéral.",
+  },
+
+  // SOCIAL — LAVS 25 : rente d'orphelin due dès qu'UN seul parent est décédé
+  {
+    id: 'adv_social_36',
+    query: "Ma sœur vient de décéder à Berne. Elle laisse deux enfants de 8 et 13 ans. Elle était salariée et cotisait à l'AVS depuis 17 ans. Le père des enfants est vivant et a obtenu la garde exclusive. Ma mère me dit que comme le père est vivant et capable de subvenir aux besoins des enfants, les enfants n'ont PAS droit à une rente d'orphelin AVS — cette rente ne serait versée que si les DEUX parents sont décédés. Est-ce exact ?",
+    canton: 'BE',
+    expected_domaine: 'social',
+    expected_any_article: ['LAVS 25'],
+    notes: "Rente d'orphelin AVS — due dès qu'un seul parent est décédé, indépendamment du père vivant. LAVS 25 al.1 : les enfants dont le père ou la mère est décédé(e) ont droit à une rente d'orphelin. CONDITIONS : enfant de moins de 18 ans (ou jusqu'à 25 ans si en formation), parent décédé ayant cotisé à l'AVS. MONTANT : 40% de la rente de vieillesse de la personne décédée par enfant. VERSEMENT : la rente est versée à l'enfant (via le parent survivant ou le représentant légal) — le fait que le père soit vivant et capable de subvenir aux besoins ne supprime pas le droit légal. DOUBLE ORPHELIN : si les deux parents sont décédés, la rente est doublée (80% par enfant) — LAVS 25 al.2. MYTHE : la rente d'orphelin n'est due que si les deux parents sont décédés — un parent survivant capable exclut le droit. Faux — LAVS 25 : un seul parent décédé suffit pour ouvrir le droit à la rente d'orphelin. Signal adversarial = confusion entre l'orphelin au sens civil (deux parents décédés) et l'orphelin au sens AVS (un seul parent décédé).",
+  },
+
+  // SOCIAL — LACI 16/30 : emploi convenable — seuil de 2h par direction, pas 2h aller-retour
+  {
+    id: 'adv_social_37',
+    query: "Je suis au chômage à Zurich depuis 4 mois. L'ORP m'a proposé un poste à Saint-Gall (trajet de 1h45 aller en train). J'ai refusé car le trajet aller-retour total de 3h30 par jour me paraissait déraisonnable. Mon ORP me menace d'une suspension de 31 jours pour refus d'emploi convenable. Un ami me dit que la loi protège contre les trajets de plus de 2 heures par jour aller-retour — je serais donc protégé. Est-ce exact ?",
+    canton: 'ZH',
+    expected_domaine: 'social',
+    expected_any_article: ['LACI 16', 'LACI 30'],
+    notes: "Emploi convenable — seuil légal de 2 heures par DIRECTION (pas aller-retour). LACI 16 al.2 let.d : un emploi n'est pas réputé convenable et peut être refusé sans sanction lorsqu'il implique un trajet de plus de 2 heures par direction pour un plein-temps (soit plus de 4 heures aller-retour). CALCUL : Saint-Gall depuis Zurich = 1h45 par direction → 3h30 aller-retour. DÉCISION : 1h45 < 2h par direction → emploi réputé convenable → refus = sanction possible. LACI 30 al.1 let.d : l'assuré qui refuse sans motif valable un emploi convenable peut être suspendu dans l'exercice du droit à l'indemnité. MYTHE : un trajet total de 3h30 par jour protège le chômeur contre une sanction. Faux — LACI 16 : la limite est 2 heures PAR DIRECTION (4 heures aller-retour), et 1h45 par direction est en-dessous du seuil. Signal adversarial = l'ami confond la durée totale aller-retour (3h30) avec la limite légale par direction (2h) — erreur de lecture classique du texte légal.",
+  },
+
+  // ACCIDENT — LAA 77/OLAA 99 : rechute — compétence de l'assureur au moment de l'accident initial
+  {
+    id: 'adv_accident_33',
+    query: "J'ai eu un accident de travail il y a 4 ans dans une entreprise genevoise — ma caisse LAA était Allianz. Guéri et déclaré consolidé à l'époque. Je travaille maintenant pour une autre entreprise à Zurich avec la SUVA comme assureur LAA. Mon genou accidenté est à nouveau douloureux : mon médecin parle de rechute de l'accident initial. Mon nouvel employeur me dit de déclarer à la SUVA car c'est mon assureur actuel. Allianz dit que c'est la SUVA désormais. Qui est compétent ?",
+    canton: 'GE',
+    expected_domaine: 'accident',
+    expected_any_article: ['LAA 77'],
+    notes: "Rechute d'accident LAA — compétence de l'assureur au moment de l'accident INITIAL. LAA 77 al.1 : en cas de rechute ou de séquelles tardives d'un accident, l'assureur compétent au moment de l'accident primitif reste tenu de prendre en charge les prestations. OLAA 99 : les rechutes (Rückfall) et séquelles tardives (Spätfolgen) d'un accident sont à la charge de l'assureur qui était compétent lors de l'accident d'origine — peu importe que l'assuré ait changé d'employeur ou d'assureur depuis. CONSÉQUENCE : Allianz (assureur au moment de l'accident d'il y a 4 ans) est compétent pour prendre en charge la rechute — pas la SUVA (assureur actuel). MYTHE : lors d'une rechute, c'est l'assureur LAA actuel du travailleur qui est compétent. Faux — LAA 77 : la compétence reste à l'assureur initial. Signal adversarial = les deux assureurs se renvoient la balle alors que la loi est claire : l'assureur initial (Allianz) reste compétent.",
+  },
+
+  // ACCIDENT — LPGA 16 / LAA 18 : taux d'invalidité LAA et AI peuvent légitimement diverger
+  {
+    id: 'adv_accident_34',
+    query: "Suite à un accident de travail grave à Bâle, j'ai une incapacité partielle permanente. La SUVA m'a accordé une rente LAA calculée sur un taux d'invalidité de 22%. L'AI de son côté a calculé un taux d'invalidité de 38% et me verse une rente AI en conséquence. Mon médecin-conseil m'affirme que les deux assurances sont légalement tenues d'appliquer le même taux d'invalidité — cette divergence serait illégale. Est-ce exact ?",
+    canton: 'BS',
+    expected_domaine: 'accident',
+    expected_any_article: ['LPGA 16', 'LAA 18'],
+    notes: "Taux d'invalidité LAA vs AI — peuvent légitimement diverger, sans obligation d'alignement. LPGA 16 : le taux d'invalidité est en principe calculé selon la méthode de comparaison des revenus (revenu sans invalidité vs revenu d'invalide). LAA 18 al.1 + LAI 28 al.1 : les deux lois utilisent ce même principe de base. DIVERGENCE LÉGALE : les deux assurances peuvent néanmoins aboutir à des taux différents car elles appliquent des bases de calcul distinctes (revenus statistiques de référence différents, prise en compte ou non de gains résiduels hypothétiques dans d'autres secteurs). COORDINATION : LAA 40 prévoit des règles de coordination pour éviter la surindemnisation — mais cela n'implique pas l'identité des taux. JURISPRUDENCE : le TF a confirmé que la divergence de taux entre LAA et LAI n'est pas en soi illégale — chaque assureur applique son propre régime légal. MYTHE : LAA et AI doivent impérativement appliquer le même taux d'invalidité — toute divergence est illégale. Faux — LPGA 16 / LAA 18 : les deux assureurs calculent leur taux indépendamment selon leur réglementation propre. Signal adversarial = le médecin confond l'unité de méthode (LPGA 16 : comparaison des revenus pour les deux) avec l'obligation d'un résultat identique.",
+  },
+
+  // VIOLENCE — CP 123 al.2 : voies de fait répétées entre époux = poursuite d'office, retrait plainte sans effet
+  {
+    id: 'adv_violence_32',
+    query: "Mon mari m'a frappée à plusieurs reprises au cours des derniers mois à Lausanne. J'ai porté plainte la semaine dernière après une nouvelle gifle. Maintenant qu'il s'est excusé et promet de changer, je veux retirer ma plainte. Mon amie me dit que si je retire la plainte, le dossier sera automatiquement classé car la violence conjugale est une 'affaire de couple' qui s'arrête au retrait de plainte. Le procureur peut-il continuer malgré mon retrait ?",
+    canton: 'VD',
+    expected_domaine: 'violence',
+    expected_any_article: ['CP 123', 'CP 30'],
+    notes: "Violence conjugale répétée — poursuite d'office, retrait de plainte sans effet. CP 123 al.2 ch.1 : les voies de fait qualifiées (violence répétée ou causant une atteinte à la santé) commises sur un conjoint ou partenaire enregistré sont poursuivies D'OFFICE par le Ministère public. CP 30 : le retrait de plainte n'est efficace QUE pour les infractions poursuivies SUR PLAINTE (infractions à plainte). Pour les infractions d'office comme CP 123 al.2 en contexte conjugal, le retrait de la déclaration de plainte de la victime ne lie pas le procureur — les poursuites peuvent continuer. DISTINCTION CRITIQUE : voies de fait simples CP 126 al.1 = sur plainte → retrait possible ; voies de fait répétées entre conjoints CP 123 al.2 = d'office → retrait de plainte sans effet. PROTECTION SYSTÉMIQUE : la loi retire volontairement ce choix à la victime pour la protéger des pressions à retirer la plainte. MYTHE : retirer la plainte suffit à classer les poursuites pénales pour violence conjugale. Faux — CP 123 al.2 : la poursuite est d'office et le retrait de plainte n'y change rien. Signal adversarial = l'amie applique la règle des délits à plainte (CP 30) à une infraction qui est expressément d'office en contexte conjugal.",
+  },
+
+  // VIOLENCE — CC 28b : mesures civiles d'interdiction de contact sans violence physique préalable
+  {
+    id: 'adv_violence_33',
+    query: "Mon ex-compagnon me harcèle à Zurich depuis 4 mois : messages incessants, passages devant chez moi, appels téléphoniques nocturnes. Il n'y a pas eu de violence physique. La police m'a dit qu'elle ne peut pas l'éloigner sans preuve de violence réelle — les messages harcelants ne seraient pas suffisants pour une mesure d'éloignement. Existe-t-il une protection légale contre ce type de harcèlement sans violence physique ?",
+    canton: 'ZH',
+    expected_domaine: 'violence',
+    expected_any_article: ['CC 28b'],
+    notes: "Harcèlement sans violence physique — protection civile par CC 28b et pénale par CP 179septies. CC 28b al.1 : la victime de violence, de menaces ou de harcèlement peut requérir du juge d'interdire à l'auteur de s'approcher d'elle ou de ses proches, de la contacter ou de fréquenter certains lieux. VOIE CIVILE : le juge civil ordonne ces mesures sans qu'une infraction pénale soit prouvée ou qu'une violence physique ait eu lieu — la vraisemblance d'une atteinte grave à la personnalité suffit. PROCÉDURE : requête au tribunal civil, mesure provisionnelle possible en urgence, opposable pénalement (violation = CP 292 insoumission). CP 179septies (en vigueur depuis septembre 2023) : le harcèlement obsessionnel systématique (stalking) est désormais une infraction pénale punissable de 3 ans d'emprisonnement. MYTHE : sans violence physique, aucun recours légal n'existe contre le harcèlement — la police est l'unique voie. Faux — CC 28b : la voie civile permet des mesures d'interdiction de contact et d'éloignement sans violence physique préalable. Signal adversarial = la police répond en termes de droit pénal (violence réelle requise) sans mentionner la voie civile CC 28b, plus accessible et plus rapide.",
+  },
+
+  // FISCAL — LTVA 21 al.2 ch.3 : soins thérapeutiques des thérapeutes complémentaires exclus du champ TVA
+  {
+    id: 'adv_fiscal_31',
+    query: "Je me suis installée comme thérapeute naturopathe à Berne. Mon chiffre d'affaires 2024 est de CHF 92'000. Mon comptable me dit que je devrai m'assujettir à la TVA si je dépasse CHF 100'000, et que les prestations de naturopathie sont soumises à la TVA au taux normal — seuls les médecins agréés AMFi et les physiothérapeutes reconnus bénéficieraient d'une exonération. Ma collègue ostéopathe dit que toutes les médecines complémentaires sont exclues. Qui a raison ?",
+    canton: 'BE',
+    expected_domaine: 'fiscal',
+    expected_any_article: ['LTVA 21'],
+    notes: "Soins thérapeutiques médecines complémentaires — exclusion du champ TVA (LTVA 21 al.2 ch.3). LTVA 21 al.2 ch.3 : sont exclus du champ de l'impôt les traitements dans le domaine de la médecine humaine, notamment les soins médicaux, diagnostics et traitements de maladies exercés par des personnes autorisées à pratiquer ces activités. PORTÉE : l'exclusion couvre les médecines complémentaires (naturopathie, ostéopathie, acupuncture, homéopathie, etc.) lorsqu'elles sont dispensées par des praticiens habilités à exercer dans leur canton. EXCLUSION ≠ EXONÉRATION : les prestations EXCLUES ne sont pas soumises à la TVA et ne comptent pas dans le chiffre d'affaires déterminant pour le seuil d'assujettissement de CHF 100'000. CONSÉQUENCE : si la totalité des prestations d'une naturopathe habilitée est exclue, elle ne devra jamais s'assujettir à la TVA, même au-delà de CHF 100'000. MYTHE : seuls les médecins conventionnels et physiothérapeutes AMFi bénéficient de l'exclusion TVA — les naturopathes sont soumis au taux normal. Faux — LTVA 21 al.2 ch.3 : les médecines complémentaires pratiquées par des thérapeutes habilités sont exclues du champ TVA. Signal adversarial = le comptable confond médecine conventionnelle (toujours exclue) avec médecines complémentaires (également exclues si praticien habilité).",
+  },
+
+  // FISCAL — LIFD 33a : dons aux communes déductibles de l'IFD au même titre que les associations
+  {
+    id: 'adv_fiscal_32',
+    query: "J'habite à Zurich et en 2024 j'ai versé CHF 7'000 à la Croix-Rouge suisse et CHF 5'000 à la commune de Zurich pour la restauration du musée municipal. Mon conseiller fiscal me dit que les CHF 5'000 versés à la commune ne sont PAS déductibles de l'IFD — seuls les dons aux associations et fondations d'utilité publique figurant sur la liste de l'AFC sont déductibles. Les communes ne seraient pas éligibles car elles ne sont pas dans la liste. Est-ce exact ?",
+    canton: 'ZH',
+    expected_domaine: 'fiscal',
+    expected_any_article: ['LIFD 33a'],
+    notes: "Déductibilité des dons aux communes — expressément prévue par LIFD 33a al.1. LIFD 33a al.1 : les dons en espèces faits à des personnes morales qui ont leur siège en Suisse et sont exonérées de l'impôt en raison de leurs buts d'utilité publique OU les dons faits à la Confédération, aux cantons ET AUX COMMUNES sont déductibles — dans la limite de 20% du revenu net. TEXTE LÉGAL : LIFD 33a al.1 mentionne expressément les communes (Gemeinden) comme bénéficiaires admissibles des dons déductibles, sans renvoi à la liste AFC. LISTE AFC : la liste de l'AFC répertorie les associations et fondations privées d'utilité publique exonérées — elle est indicative pour les personnes morales privées, mais les collectivités publiques (Confédération, cantons, communes) bénéficient directement de la déductibilité par le texte de LIFD 33a al.1. MYTHE : seuls les dons aux organisations listées par l'AFC sont déductibles — les communes ne sont pas éligibles. Faux — LIFD 33a al.1 : les communes sont expressément mentionnées dans le texte légal comme bénéficiaires admissibles, indépendamment de la liste AFC. Signal adversarial = le conseiller fiscal considère la liste AFC comme exhaustive et ignore la mention explicite des communes dans LIFD 33a al.1.",
+  },
+
 ];
 
 export const TOTAL_ADVERSARIAL = ADVERSARIAL_CASES.length;

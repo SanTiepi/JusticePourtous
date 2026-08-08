@@ -2162,3 +2162,26 @@ Points à surveiller :
 - **Angles inédits wave 65** : LIFD 24 exonération IFD successions, LIFD 33 al.1 let.j reconversion 2016, LIFD 37a imposition séparée 1/5 barème, CO 259g consignation vs rétention, CO 481 bénéficiaire assurance-vie hors succession, CO 125 ch.2 incompensabilité aliments, LACI 14 libération obligation cotiser maternité, LAPG 16d 80% + plafond CHF 220, LAA 37/38 réduction partielle jamais totale, CO 731b dissolution judiciaire carence organes SA.
 - **Distribution domaines** : bail 60, travail 58, dettes 54, famille 54, etrangers 46, voisinage 39, sante 34, consommation 34, successions 33, circulation 34, assurances 35, entreprise 32, violence 31, accident 32, social 33, hybride 30, fiscal 30
 - **Prochaine action** : wave 66 — domaines sous-représentés (voisinage 39, successions 33, violence 31) ou mesure éval CLI sur 660 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-08-08 UTC — run agent horaire (wave 66 adversarial : 660→670 cas)
+- **Tenté** : item 1 — wave 66 : +10 cas adversariaux ciblant les domaines les plus sous-représentés par ID (social 33, successions 32, entreprise 32, fiscal 30, violence 31)
+- **Résultat** : passed ✓ — **670 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID.
+- **Métriques** :
+  - CI subset `LEGAL_SAFE_MODE=0 LLM_MOCK=1` (post `npm install docx`) : **2728/2730 pass, 0 fail, 2 skip** ✓
+  - Validation fiches : 0 erreur ✓ (314/314, 100%)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60, avantage ×6.6)
+  - Mesure adversarial CLI : skip (`claude -p` indisponible dans sandbox)
+- **Nouveaux cas wave 66** (mythes juridiques distincts, écrits sans consulter le catalogue fiches) :
+  - `adv_social_34` : Cst 12 — aide d'urgence inconditionnel même pour déboutés asile ; droit fondamental absolu sans condition de séjour (BS)
+  - `adv_social_35` : LAI 17 — révision rente AI pour amélioration santé possible à tout moment ; aucune règle de protection liée à la durée (LU)
+  - `adv_social_36` : LAVS 25 — rente d'orphelin due dès qu'UN seul parent est décédé ; père vivant ≠ suppression du droit AVS de l'enfant (BE)
+  - `adv_social_37` : LACI 16 al.2 let.d + LACI 30 — emploi convenable : seuil 2h par DIRECTION (pas aller-retour) ; 1h45/direction < 2h → refus sanctionnable (ZH)
+  - `adv_accident_33` : LAA 77 — rechute d'accident : compétence reste à l'assureur INITIAL (Allianz), pas au nouvel assureur actuel (Suva) (GE)
+  - `adv_accident_34` : LPGA 16 / LAA 18 — taux d'invalidité LAA et AI peuvent légitimement diverger ; aucune obligation d'alignement (BS)
+  - `adv_violence_32` : CP 123 al.2 + CP 30 — voies de fait répétées entre époux = poursuite d'office ; retrait de plainte sans effet sur les poursuites (VD)
+  - `adv_violence_33` : CC 28b — harcèlement sans violence physique : voie civile d'interdiction de contact possible sans preuve d'infraction pénale (ZH)
+  - `adv_fiscal_31` : LTVA 21 al.2 ch.3 — soins thérapeutiques des médecines complémentaires (naturopathie) exclus du champ TVA si praticien habilité (BE)
+  - `adv_fiscal_32` : LIFD 33a al.1 — dons aux communes déductibles de l'IFD directement par la loi ; liste AFC = indicative pour associations privées seulement (ZH)
+- **Angles inédits wave 66** : Cst 12 inconditionnel déboutés asile, LAI 17 révision sans protection temporelle, LAVS 25 orphelin dès un parent décédé, LACI 16 seuil 2h par direction, LAA 77 rechute compétence assureur initial, LPGA 16/LAA 18 divergence taux légale, CP 123 al.2 poursuite d'office conjugale, CC 28b harcèlement voie civile sans violence, LTVA 21 ch.3 médecines complémentaires exclues, LIFD 33a communes déductibles hors liste AFC.
+- **Distribution domaines après wave 66** (par ID) : bail 59, travail 58, dettes 54, famille 53, etrangers 46, voisinage 38, sante 34, consommation 33, successions 32, circulation 33, assurances 33, entreprise 32, violence 32, accident 34, social 37, hybride 30, fiscal 32
+- **Prochaine action** : wave 67 — domaines sous-représentés (successions 32, consommation 33, voisinage 38) ou mesure éval CLI sur 670 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

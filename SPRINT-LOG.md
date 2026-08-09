@@ -2185,3 +2185,26 @@ Points à surveiller :
 - **Angles inédits wave 66** : Cst 12 inconditionnel déboutés asile, LAI 17 révision sans protection temporelle, LAVS 25 orphelin dès un parent décédé, LACI 16 seuil 2h par direction, LAA 77 rechute compétence assureur initial, LPGA 16/LAA 18 divergence taux légale, CP 123 al.2 poursuite d'office conjugale, CC 28b harcèlement voie civile sans violence, LTVA 21 ch.3 médecines complémentaires exclues, LIFD 33a communes déductibles hors liste AFC.
 - **Distribution domaines après wave 66** (par ID) : bail 59, travail 58, dettes 54, famille 53, etrangers 46, voisinage 38, sante 34, consommation 33, successions 32, circulation 33, assurances 33, entreprise 32, violence 32, accident 34, social 37, hybride 30, fiscal 32
 - **Prochaine action** : wave 67 — domaines sous-représentés (successions 32, consommation 33, voisinage 38) ou mesure éval CLI sur 670 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-08-09 UTC — run agent horaire (wave 67 adversarial : 670→680 cas)
+- **Tenté** : item 1 — wave 67 : +10 cas adversariaux ciblant les domaines sous-représentés (successions×3, consommation×3, voisinage×2, sante×2)
+- **Résultat** : passed ✓ — **680 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID.
+- **Métriques** :
+  - CI subset `LEGAL_SAFE_MODE=0 LLM_MOCK=1` (post `npm install docx`) : **2728/2730 pass, 0 fail, 2 skip** ✓
+  - Validation fiches : 0 erreur ✓ (314/314, 100%)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60, avantage ×6.6)
+  - Mesure adversarial CLI : skip (`claude -p` indisponible dans sandbox)
+- **Nouveaux cas wave 67** (mythes juridiques distincts, écrits sans consulter le catalogue fiches) :
+  - `adv_successions_34` : CC 471/522 — réserve héréditaire ne protège PAS contre la vente de biens du vivant du disposant ; droit successoral s'ouvre au décès seulement (GE)
+  - `adv_successions_35` : CC 566/567 — délai répudiation 3 mois court dès CONNAISSANCE du décès ; silence = acceptation tacite et responsabilité sur biens propres (VD)
+  - `adv_successions_36` : CC 494 — pacte successoral exige acte authentique bilatéral devant notaire ; accord familial signé même par tous = nul (BE)
+  - `adv_consommation_35` : CO 40a/40f — droit de révocation 14 jours pour contrats > CHF 100 conclus hors établissement commercial (démarchage à domicile) ; vendeur ne peut pas réclamer frais (ZH)
+  - `adv_consommation_36` : CO 197/210 — garantie légale 2 ans lie tout vendeur professionnel même pour articles d'occasion ; CGV excluant la garantie pour vices cachés = nulles (BE)
+  - `adv_consommation_37` : LCD 8 — clause reconduction automatique 12 mois + délai dénonciation 3 mois dans CGV abonnement fitness = potentiellement abusive et nulle (GE)
+  - `adv_voisinage_40` : CC 684/679 — chantier dans heures légales n'immunise PAS contre responsabilité civile pour immissions excessives ; règlement communal ≠ immunité CC 684 (BS)
+  - `adv_voisinage_41` : CC 679 al.1 — responsabilité objective du propriétaire pour infiltrations depuis son fonds ; pas besoin de prouver la faute subjective (VD)
+  - `adv_sante_35` : LAMal 36/41 — autorisation cantonale d'exercer ≠ admission AOS ; sans numéro RCC/OFSP, honoraires non remboursables par AOS obligatoire (GE)
+  - `adv_sante_36` : LAMal 64a — primes impayées notifiées au canton → suspension remboursements non-urgents légale ; urgences toujours couvertes (ZH)
+- **Angles inédits wave 67** : CC 471/522 réserve post-mortem seulement, CC 566 acceptation tacite par silence, CC 494 acte authentique bilatéral obligatoire, CO 40a révocation 14j hors établissement, CO 197 vices cachés occasion, LCD 8 clauses abusives fitness/reconduction, CC 684 immissions légales heures ≠ immunité civile, CC 679 responsabilité objective infiltrations, LAMal 36/41 admission AOS vs autorisation cantonale, LAMal 64a suspension non-urgences impayés.
+- **Distribution domaines après wave 67** : bail 59, travail 58, dettes 54, famille 53, etrangers 46, voisinage 40, sante 36, consommation 36, successions 35, circulation 33, assurances 33, entreprise 32, violence 32, accident 34, social 37, hybride 30, fiscal 32
+- **Prochaine action** : wave 68 — domaines sous-représentés (hybride 30, entreprise 32, violence 32) ou mesure éval CLI sur 680 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

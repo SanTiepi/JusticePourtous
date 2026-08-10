@@ -2208,3 +2208,26 @@ Points à surveiller :
 - **Angles inédits wave 67** : CC 471/522 réserve post-mortem seulement, CC 566 acceptation tacite par silence, CC 494 acte authentique bilatéral obligatoire, CO 40a révocation 14j hors établissement, CO 197 vices cachés occasion, LCD 8 clauses abusives fitness/reconduction, CC 684 immissions légales heures ≠ immunité civile, CC 679 responsabilité objective infiltrations, LAMal 36/41 admission AOS vs autorisation cantonale, LAMal 64a suspension non-urgences impayés.
 - **Distribution domaines après wave 67** : bail 59, travail 58, dettes 54, famille 53, etrangers 46, voisinage 40, sante 36, consommation 36, successions 35, circulation 33, assurances 33, entreprise 32, violence 32, accident 34, social 37, hybride 30, fiscal 32
 - **Prochaine action** : wave 68 — domaines sous-représentés (hybride 30, entreprise 32, violence 32) ou mesure éval CLI sur 680 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-08-10 UTC — run agent horaire (wave 68 adversarial : 680→690 cas)
+- **Tenté** : item 1 — wave 68 : +10 cas adversariaux ciblant les domaines sous-représentés (hybride×3, entreprise×3, violence×2, circulation×1, assurances×1)
+- **Résultat** : passed ✓ — **690 cas dans `test/adversarial-cases.mjs`**, 3 gates verts, 0 doublon d'ID.
+- **Métriques** :
+  - CI subset `LEGAL_SAFE_MODE=0 LLM_MOCK=1` (post `npm install docx`) : **2728/2730 pass, 0 fail, 2 skip** ✓
+  - Validation fiches : 0 erreur ✓ (314/314, 100%)
+  - Benchmark JPT : **66/100 ✓** (gate >= 60, avantage ×6.6)
+  - Mesure adversarial CLI : skip (`claude -p` indisponible dans sandbox)
+- **Nouveaux cas wave 68** (mythes juridiques distincts, écrits sans consulter le catalogue fiches) :
+  - `adv_hybride_31` : droit du travail applicable au frontalier = loi du lieu d'exécution (Suisse), PAS droit français du domicile ; CO 337 résiliation immédiate (GE)
+  - `adv_hybride_32` : CO 261 — bail transféré de plein droit à l'héritier propriétaire ; expulsion impossible sans procédure de besoin propre urgent (BE)
+  - `adv_hybride_33` : rente AI pour enfant d'assuré invalide ≠ déduction automatique de la pension alimentaire fixée par jugement — modification judiciaire requise (VD)
+  - `adv_entreprise_33` : CO 786/791 — parts de Sàrl non librement cessibles ; préemption statutaire des associés légalement opposable (ZH)
+  - `adv_entreprise_34` : raison individuelle = zéro séparation patrimoniale ; créanciers professionnels peuvent saisir biens personnels (BS)
+  - `adv_entreprise_35` : LAVS 52 — administrateur de SA personnellement responsable pour cotisations AVS/AI impayées, même sous forme SA (GE)
+  - `adv_violence_34` : CC 28b — mesures d'urgence protection domestique sur base de vraisemblance, sans preuve formelle préalable ; CP 123 al.2 poursuite d'office (FR)
+  - `adv_violence_35` : CP 238a (01.07.2023) — stalking est infraction pénale sans violence physique ; surveillance/messages répétés non-désirés = constitutifs (VD)
+  - `adv_circulation_35` : Bureau national d'assurance (BNA/LCR 76) — couvre les victimes d'accidents de véhicules non-assurés ; auteur fautif remboursera le BNA (BE)
+  - `adv_assurances_35` : LAI 28 — système par quarts de rente : 40% invalidité = 1/4 rente (25% du max), pas 40% de la rente maximale (ZH)
+- **Angles inédits wave 68** : conflit de lois travail frontalier, CO 261 bail transféré par succession, interaction rente AI / pension alimentaire jugement, cessibilité parts Sàrl CO 786, responsabilité illimitée raison individuelle, LAVS 52 responsabilité personnelle organes SA, CC 28b vraisemblance mesures urgence, CP 238a stalking 2023, BNA fonds de garantie LCR, LAI 28 paliers quarts rente.
+- **Distribution domaines après wave 68** : bail 59, travail 58, dettes 54, famille 53, etrangers 46, voisinage 40, sante 36, consommation 36, successions 35, circulation 34, assurances 34, entreprise 35, violence 34, accident 34, social 37, hybride 33, fiscal 32
+- **Prochaine action** : wave 69 — domaines sous-représentés (bail 59 — peut encore croître, dettes 54, famille 53) ou domaines restés stables (etrangers 46, successions 35). Mesure éval CLI sur 690 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.

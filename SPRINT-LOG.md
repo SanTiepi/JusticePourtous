@@ -2231,3 +2231,21 @@ Points à surveiller :
 - **Angles inédits wave 68** : conflit de lois travail frontalier, CO 261 bail transféré par succession, interaction rente AI / pension alimentaire jugement, cessibilité parts Sàrl CO 786, responsabilité illimitée raison individuelle, LAVS 52 responsabilité personnelle organes SA, CC 28b vraisemblance mesures urgence, CP 238a stalking 2023, BNA fonds de garantie LCR, LAI 28 paliers quarts rente.
 - **Distribution domaines après wave 68** : bail 59, travail 58, dettes 54, famille 53, etrangers 46, voisinage 40, sante 36, consommation 36, successions 35, circulation 34, assurances 34, entreprise 35, violence 34, accident 34, social 37, hybride 33, fiscal 32
 - **Prochaine action** : wave 69 — domaines sous-représentés (bail 59 — peut encore croître, dettes 54, famille 53) ou domaines restés stables (etrangers 46, successions 35). Mesure éval CLI sur 690 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
+
+### 2026-08-16 UTC — run agent horaire (wave 69 adversarial : 690→700 cas)
+- **Tenté** : item 1 — wave 69 : +10 cas adversariaux ciblant les 10 domaines les moins représentés (fiscal×2, hybride×1, successions×1, consommation×1, sante×1, circulation×1, assurances×2, accident×1, violence×1)
+- **Résultat** : passed ✓ — 700 cas dans test/adversarial-cases.mjs, 3 gates verts, 0 doublon d'ID.
+- **Métriques** : CI 2728/2730 ✓, fiches 0 erreur ✓, benchmark 66/100 ✓, adversarial CLI : skip (claude -p absent du sandbox)
+- **Nouveaux cas wave 69** (mythes juridiques distincts, écrits sans consulter le catalogue fiches) :
+  - `adv_fiscal_33` (BE) : LIFD 16 al.1 — commerce professionnel de titres, gains en capital pas toujours exonérés pour traders intensifs
+  - `adv_fiscal_34` (ZH) : LIFD 31 al.1 — report des pertes activité indépendante limité à 7 ans, pas illimité
+  - `adv_hybride_34` (VD) : CO 319/253 — logement de service lié à l'emploi, fin emploi = fin logement
+  - `adv_successions_37` (GE) : CC 488 — substitution fidéicommissaire, héritier grevé ne peut pas vendre librement
+  - `adv_consommation_38` (BS) : CO 197/199 — clause "vendu en l'état" nulle si vice dissimulé connu du vendeur
+  - `adv_sante_37` (GE) : LAMal 52/OAMal 71a — médicament hors liste spécialités pas remboursé automatiquement
+  - `adv_circulation_36` (ZH) : LCR 58 — responsabilité causale détenteur, prêt véhicule n'exonère pas
+  - `adv_assurances_36` (BS) : LAA 19 al.1 — rente LAA maintenue à vie, pas substituée par l'AVS
+  - `adv_accident_35` (GE) : LAA 14 — allocation pour impotence, prestation distincte de la rente d'invalidité
+  - `adv_violence_36` (VD) : LAVI 1 al.1 — LAVI couvre violence psychologique/économique sans blessure physique
+- **Distribution domaines après wave 69** : bail 59, travail 59, dettes 54, famille 53, etrangers 46, voisinage 40, sante 37, consommation 37, successions 36, circulation 35, assurances 36, entreprise 35, violence 35, accident 35, social 37, hybride 34, fiscal 34
+- **Prochaine action** : wave 70 — domaines stagnants (voisinage 40, etrangers 46) ou mesure éval CLI sur 700 cas si `claude -p` disponible. Validation juridique humaine (5 fiches gold + avocat) — hors scope autonomous.
